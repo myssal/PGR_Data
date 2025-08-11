@@ -1,0 +1,1392 @@
+[
+    {
+        "Id": 1,
+        "CoreId": 1001,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "攻击、生命+5%",
+        "BuffId": [
+            81000
+        ]
+    },
+    {
+        "Id": 2,
+        "CoreId": 1001,
+        "CoreLevel": 2,
+        "DecomposeMoney": 20,
+        "Description": "攻击、生命+10%",
+        "BuffId": [
+            81001
+        ]
+    },
+    {
+        "Id": 3,
+        "CoreId": 1001,
+        "CoreLevel": 3,
+        "DecomposeMoney": 30,
+        "Description": "攻击、生命+15%",
+        "BuffId": [
+            81002
+        ]
+    },
+    {
+        "Id": 4,
+        "CoreId": 1002,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "每场战斗中可抵御1次致命伤害，抵御成功后会回复当前角色20%生命值",
+        "BuffId": [
+            81027
+        ]
+    },
+    {
+        "Id": 5,
+        "CoreId": 1003,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "进入战斗后每10秒恢复5%生命值，每场战斗生效3次",
+        "BuffId": [
+            81031
+        ]
+    },
+    {
+        "Id": 6,
+        "CoreId": 1003,
+        "CoreLevel": 2,
+        "DecomposeMoney": 20,
+        "Description": "进入战斗后每10秒恢复7.5%生命值，每场战斗生效3次",
+        "BuffId": [
+            81032
+        ]
+    },
+    {
+        "Id": 7,
+        "CoreId": 1003,
+        "CoreLevel": 3,
+        "DecomposeMoney": 30,
+        "Description": "进入战斗后每10秒恢复10%生命值，每场战斗生效3次",
+        "BuffId": [
+            81033
+        ]
+    },
+    {
+        "Id": 8,
+        "CoreId": 1004,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "开局回复10%最大生命值",
+        "BuffId": [
+            81034
+        ]
+    },
+    {
+        "Id": 9,
+        "CoreId": 1004,
+        "CoreLevel": 2,
+        "DecomposeMoney": 20,
+        "Description": "开局回复15%最大生命值",
+        "BuffId": [
+            81035
+        ]
+    },
+    {
+        "Id": 10,
+        "CoreId": 1004,
+        "CoreLevel": 3,
+        "DecomposeMoney": 30,
+        "Description": "开局回复20%最大生命值",
+        "BuffId": [
+            81036
+        ]
+    },
+    {
+        "Id": 11,
+        "CoreId": 1005,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "每击杀1名敌人回复3%最大生命值",
+        "BuffId": [
+            81037
+        ]
+    },
+    {
+        "Id": 12,
+        "CoreId": 1005,
+        "CoreLevel": 2,
+        "DecomposeMoney": 20,
+        "Description": "每击杀1名敌人回复5%最大生命值",
+        "BuffId": [
+            81038
+        ]
+    },
+    {
+        "Id": 13,
+        "CoreId": 1005,
+        "CoreLevel": 3,
+        "DecomposeMoney": 30,
+        "Description": "每击杀1名敌人回复8%最大生命值",
+        "BuffId": [
+            81039
+        ]
+    },
+    {
+        "Id": 14,
+        "CoreId": 1006,
+        "CoreLevel": 1,
+        "DecomposeMoney": 10,
+        "Description": "战斗结束后恢复当前在场角色7.5%最大生命值",
+        "BuffId": [
+            81040
+        ]
+    },
+    {
+        "Id": 15,
+        "CoreId": 1006,
+        "CoreLevel": 2,
+        "DecomposeMoney": 20,
+        "Description": "战斗结束后恢复当前在场角色15%最大生命值",
+        "BuffId": [
+            81041
+        ]
+    },
+    {
+        "Id": 16,
+        "CoreId": 1006,
+        "CoreLevel": 3,
+        "DecomposeMoney": 30,
+        "Description": "战斗结束后恢复当前在场角色22.5%最大生命值",
+        "BuffId": [
+            81042
+        ]
+    },
+    {
+        "Id": 17,
+        "CoreId": 2001,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "火属性伤害增加18%",
+        "BuffId": [
+            81012
+        ]
+    },
+    {
+        "Id": 18,
+        "CoreId": 2001,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "火属性伤害增加26%",
+        "BuffId": [
+            81013
+        ]
+    },
+    {
+        "Id": 19,
+        "CoreId": 2001,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "火属性伤害增加35%",
+        "BuffId": [
+            81014
+        ]
+    },
+    {
+        "Id": 20,
+        "CoreId": 2002,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "雷属性伤害增加18%",
+        "BuffId": [
+            81015
+        ]
+    },
+    {
+        "Id": 21,
+        "CoreId": 2002,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "雷属性伤害增加26%",
+        "BuffId": [
+            81016
+        ]
+    },
+    {
+        "Id": 22,
+        "CoreId": 2002,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "雷属性伤害增加35%",
+        "BuffId": [
+            81017
+        ]
+    },
+    {
+        "Id": 23,
+        "CoreId": 2003,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "冰属性伤害增加18%",
+        "BuffId": [
+            81018
+        ]
+    },
+    {
+        "Id": 24,
+        "CoreId": 2003,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "冰属性伤害增加26%",
+        "BuffId": [
+            81019
+        ]
+    },
+    {
+        "Id": 25,
+        "CoreId": 2003,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "冰属性伤害增加35%",
+        "BuffId": [
+            81020
+        ]
+    },
+    {
+        "Id": 26,
+        "CoreId": 2004,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "暗属性伤害增加18%",
+        "BuffId": [
+            81021
+        ]
+    },
+    {
+        "Id": 27,
+        "CoreId": 2004,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "暗属性伤害增加26%",
+        "BuffId": [
+            81022
+        ]
+    },
+    {
+        "Id": 28,
+        "CoreId": 2004,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "暗属性伤害增加35%",
+        "BuffId": [
+            81023
+        ]
+    },
+    {
+        "Id": 29,
+        "CoreId": 2005,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "物理伤害增加18%",
+        "BuffId": [
+            81024
+        ]
+    },
+    {
+        "Id": 30,
+        "CoreId": 2005,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "物理伤害增加26%",
+        "BuffId": [
+            81025
+        ]
+    },
+    {
+        "Id": 31,
+        "CoreId": 2005,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "物理伤害增加35%",
+        "BuffId": [
+            81026
+        ]
+    },
+    {
+        "Id": 32,
+        "CoreId": 2006,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "普通攻击伤害增加18%",
+        "BuffId": [
+            81028
+        ]
+    },
+    {
+        "Id": 33,
+        "CoreId": 2006,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "普通攻击伤害增加26%",
+        "BuffId": [
+            81029
+        ]
+    },
+    {
+        "Id": 34,
+        "CoreId": 2006,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "普通攻击伤害增加35%",
+        "BuffId": [
+            81030
+        ]
+    },
+    {
+        "Id": 35,
+        "CoreId": 2007,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "50%概率格挡1次伤害，格挡成功后2s内不受任何伤害，冷却15s",
+        "BuffId": [
+            81043
+        ]
+    },
+    {
+        "Id": 36,
+        "CoreId": 2007,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "75%概率格挡1次伤害，格挡成功后3s内不受任何伤害，冷却15s",
+        "BuffId": [
+            81044
+        ]
+    },
+    {
+        "Id": 37,
+        "CoreId": 2007,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "100%概率格挡1次伤害，格挡成功后5s内不受任何伤害，冷却15s",
+        "BuffId": [
+            81045
+        ]
+    },
+    {
+        "Id": 38,
+        "CoreId": 2008,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "开场获得生命15%护盾",
+        "BuffId": [
+            81058
+        ]
+    },
+    {
+        "Id": 39,
+        "CoreId": 2008,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "开场获得生命30%护盾",
+        "BuffId": [
+            81059
+        ]
+    },
+    {
+        "Id": 40,
+        "CoreId": 2008,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "开场获得生命45%护盾",
+        "BuffId": [
+            81060
+        ]
+    },
+    {
+        "Id": 41,
+        "CoreId": 2009,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "受击时有40%的概率获得一个生命5%的护盾，持续5秒",
+        "BuffId": [
+            81061
+        ]
+    },
+    {
+        "Id": 42,
+        "CoreId": 2009,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "受击时有50%的概率获得一个生命10%的护盾，持续5秒",
+        "BuffId": [
+            81062
+        ]
+    },
+    {
+        "Id": 43,
+        "CoreId": 2009,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "受击时有60%的概率获得一个生命15%的护盾，持续5秒",
+        "BuffId": [
+            81063
+        ]
+    },
+    {
+        "Id": 44,
+        "CoreId": 2010,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "每击杀1个敌人掉落1个随机的信号球",
+        "BuffId": [
+            81070
+        ]
+    },
+    {
+        "Id": 45,
+        "CoreId": 2010,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "每击杀1个敌人掉落2个随机的信号球",
+        "BuffId": [
+            81071
+        ]
+    },
+    {
+        "Id": 46,
+        "CoreId": 2010,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "每击杀1个敌人掉落3个随机的信号球",
+        "BuffId": [
+            81072
+        ]
+    },
+    {
+        "Id": 47,
+        "CoreId": 2011,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "近战伤害增加18%",
+        "BuffId": [
+            81079
+        ]
+    },
+    {
+        "Id": 48,
+        "CoreId": 2011,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "近战伤害增加23%",
+        "BuffId": [
+            81080
+        ]
+    },
+    {
+        "Id": 49,
+        "CoreId": 2011,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "近战伤害增加28%",
+        "BuffId": [
+            81081
+        ]
+    },
+    {
+        "Id": 50,
+        "CoreId": 2012,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "远程伤害增加18%",
+        "BuffId": [
+            81083
+        ]
+    },
+    {
+        "Id": 51,
+        "CoreId": 2012,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "远程伤害增加23%",
+        "BuffId": [
+            81084
+        ]
+    },
+    {
+        "Id": 52,
+        "CoreId": 2012,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "远程伤害增加28%",
+        "BuffId": [
+            81085
+        ]
+    },
+    {
+        "Id": 53,
+        "CoreId": 2013,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "qte冷却时间减少1秒",
+        "BuffId": [
+            81089
+        ]
+    },
+    {
+        "Id": 54,
+        "CoreId": 2013,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "qte冷却时间减少2秒",
+        "BuffId": [
+            81090
+        ]
+    },
+    {
+        "Id": 55,
+        "CoreId": 2013,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "qte冷却时间减少3秒",
+        "BuffId": [
+            81091
+        ]
+    },
+    {
+        "Id": 56,
+        "CoreId": 2014,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "连击数达到50以上时，伤害增加15%",
+        "BuffId": [
+            81107
+        ]
+    },
+    {
+        "Id": 57,
+        "CoreId": 2014,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "连击数达到50以上时，伤害增加20%",
+        "BuffId": [
+            81108
+        ]
+    },
+    {
+        "Id": 58,
+        "CoreId": 2014,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "连击数达到50以上时，伤害增加25%",
+        "BuffId": [
+            81109
+        ]
+    },
+    {
+        "Id": 59,
+        "CoreId": 2015,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "连击数达到50以上时，15%概率攻击使敌人晕眩3秒(对boss无效)",
+        "BuffId": [
+            81110
+        ]
+    },
+    {
+        "Id": 60,
+        "CoreId": 2015,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "连击数达到50以上时，30%概率攻击使敌人晕眩3秒(对boss无效)",
+        "BuffId": [
+            81111
+        ]
+    },
+    {
+        "Id": 61,
+        "CoreId": 2015,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "连击数达到50以上时，45%概率攻击使敌人晕眩3秒(对boss无效)",
+        "BuffId": [
+            81112
+        ]
+    },
+    {
+        "Id": 62,
+        "CoreId": 2016,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "队伍中每少1个人(包括空和死亡)，剩余成员全伤害增加10%",
+        "BuffId": [
+            81129
+        ]
+    },
+    {
+        "Id": 63,
+        "CoreId": 2016,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "队伍中每少1个人(包括空和死亡)，剩余成员全伤害增加20%",
+        "BuffId": [
+            81130
+        ]
+    },
+    {
+        "Id": 64,
+        "CoreId": 2016,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "队伍中每少1个人(包括空和死亡)，剩余成员全伤害增加30%",
+        "BuffId": [
+            81131
+        ]
+    },
+    {
+        "Id": 65,
+        "CoreId": 2017,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "切换成员入场冷却时间减少3秒",
+        "BuffId": [
+            81132
+        ]
+    },
+    {
+        "Id": 66,
+        "CoreId": 2017,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "切换成员入场冷却时间减少6秒",
+        "BuffId": [
+            81133
+        ]
+    },
+    {
+        "Id": 67,
+        "CoreId": 2017,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "切换成员入场冷却时间减少9秒",
+        "BuffId": [
+            81134
+        ]
+    },
+    {
+        "Id": 68,
+        "CoreId": 2018,
+        "CoreLevel": 1,
+        "DecomposeMoney": 15,
+        "Description": "切换成员入场时，立刻获得1个随机信号球",
+        "BuffId": [
+            81138
+        ]
+    },
+    {
+        "Id": 69,
+        "CoreId": 2018,
+        "CoreLevel": 2,
+        "DecomposeMoney": 30,
+        "Description": "切换成员入场时，立刻获得2个随机信号球",
+        "BuffId": [
+            81139
+        ]
+    },
+    {
+        "Id": 70,
+        "CoreId": 2018,
+        "CoreLevel": 3,
+        "DecomposeMoney": 45,
+        "Description": "切换成员入场时，立刻获得3个同色信号球",
+        "BuffId": [
+            81140
+        ]
+    },
+    {
+        "Id": 71,
+        "CoreId": 3001,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "技能伤害增加 20%(不包含普攻、必杀技)",
+        "BuffId": [
+            81003
+        ]
+    },
+    {
+        "Id": 72,
+        "CoreId": 3001,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "技能伤害增加 30%(不包含普攻、必杀技)",
+        "BuffId": [
+            81004
+        ]
+    },
+    {
+        "Id": 73,
+        "CoreId": 3001,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "技能伤害增加 40%(不包含普攻、必杀技)",
+        "BuffId": [
+            81005
+        ]
+    },
+    {
+        "Id": 74,
+        "CoreId": 3002,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "必杀技伤害增加 20%",
+        "BuffId": [
+            81006
+        ]
+    },
+    {
+        "Id": 75,
+        "CoreId": 3002,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "必杀技伤害增加 40%",
+        "BuffId": [
+            81007
+        ]
+    },
+    {
+        "Id": 76,
+        "CoreId": 3002,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "必杀技伤害增加 60%",
+        "BuffId": [
+            81008
+        ]
+    },
+    {
+        "Id": 77,
+        "CoreId": 3003,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "开局获得60点能量",
+        "BuffId": [
+            81009
+        ]
+    },
+    {
+        "Id": 78,
+        "CoreId": 3003,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "开局获得80点能量",
+        "BuffId": [
+            81010
+        ]
+    },
+    {
+        "Id": 79,
+        "CoreId": 3003,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "开局获得100点能量",
+        "BuffId": [
+            81011
+        ]
+    },
+    {
+        "Id": 80,
+        "CoreId": 3004,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "攻击50%概率引爆敌人，爆炸造成攻击力30%火属性范围伤害(半径2m)",
+        "BuffId": [
+            81046
+        ]
+    },
+    {
+        "Id": 81,
+        "CoreId": 3004,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "攻击50%概率引爆敌人，爆炸造成攻击力40%火属性范围伤害(半径2m)",
+        "BuffId": [
+            81047
+        ]
+    },
+    {
+        "Id": 82,
+        "CoreId": 3004,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "攻击50%概率引爆敌人，爆炸造成攻击力50%火属性范围伤害(半径2m)",
+        "BuffId": [
+            81048
+        ]
+    },
+    {
+        "Id": 83,
+        "CoreId": 3005,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "闪避槽上限增加400",
+        "BuffId": [
+            81049
+        ]
+    },
+    {
+        "Id": 84,
+        "CoreId": 3005,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "闪避槽上限增加700",
+        "BuffId": [
+            81050
+        ]
+    },
+    {
+        "Id": 85,
+        "CoreId": 3005,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "闪避槽上限增加1000",
+        "BuffId": [
+            81051
+        ]
+    },
+    {
+        "Id": 86,
+        "CoreId": 3006,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "\"每次闪避增加15%移动速度和3%的全伤害，持续5秒,最多叠加5层\"",
+        "BuffId": [
+            81052
+        ]
+    },
+    {
+        "Id": 87,
+        "CoreId": 3006,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "\"每次闪避增加15%移动速度和4%的全伤害，持续5秒,最多叠加5层\"",
+        "BuffId": [
+            81053
+        ]
+    },
+    {
+        "Id": 88,
+        "CoreId": 3006,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "\"每次闪避增加15%移动速度和5%的全伤害，持续5秒,最多叠加5层\"",
+        "BuffId": [
+            81054
+        ]
+    },
+    {
+        "Id": 89,
+        "CoreId": 3007,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "进入超算空间时，以角色为中心半径3m释放一次冲击波，造成600%物理伤害",
+        "BuffId": [
+            81055
+        ]
+    },
+    {
+        "Id": 90,
+        "CoreId": 3007,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "进入超算空间时，以角色为中心半径3m释放一次冲击波，造成900%物理伤害",
+        "BuffId": [
+            81056
+        ]
+    },
+    {
+        "Id": 91,
+        "CoreId": 3007,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "进入超算空间时，以角色为中心半径3m释放一次冲击波，造成1200%物理伤害",
+        "BuffId": [
+            81057
+        ]
+    },
+    {
+        "Id": 92,
+        "CoreId": 3008,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "角色有护盾时，全伤害增加12%",
+        "BuffId": [
+            81064
+        ]
+    },
+    {
+        "Id": 93,
+        "CoreId": 3008,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "角色有护盾时，全伤害增加23%",
+        "BuffId": [
+            81065
+        ]
+    },
+    {
+        "Id": 94,
+        "CoreId": 3008,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "角色有护盾时，全伤害增加35%",
+        "BuffId": [
+            81066
+        ]
+    },
+    {
+        "Id": 95,
+        "CoreId": 3009,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "入场时额外获得1个信号球；满级获得3个相同的信号球",
+        "BuffId": [
+            81067
+        ]
+    },
+    {
+        "Id": 96,
+        "CoreId": 3009,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "入场时额外获得2个信号球；满级获得3个相同的信号球",
+        "BuffId": [
+            81068
+        ]
+    },
+    {
+        "Id": 97,
+        "CoreId": 3009,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "入场时额外获得3个相同颜色的信号球",
+        "BuffId": [
+            81069
+        ]
+    },
+    {
+        "Id": 98,
+        "CoreId": 3010,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "每消除1个球可使自身额外伤害加成提升3%，持续5秒，可叠加5层。",
+        "BuffId": [
+            81073
+        ]
+    },
+    {
+        "Id": 99,
+        "CoreId": 3010,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "每消除1个球可使自身额外伤害加成提升4%，持续5秒，可叠加5层。",
+        "BuffId": [
+            81074
+        ]
+    },
+    {
+        "Id": 100,
+        "CoreId": 3010,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "每消除1个球可使自身额外伤害加成提升6%，持续5秒，可叠加5层。",
+        "BuffId": [
+            81075
+        ]
+    },
+    {
+        "Id": 101,
+        "CoreId": 3011,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "5秒内连续消除三色球后，全伤害增加10%，持续5秒",
+        "BuffId": [
+            81076
+        ]
+    },
+    {
+        "Id": 102,
+        "CoreId": 3011,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "5秒内连续消除三色球后，全伤害增加20%，持续6秒",
+        "BuffId": [
+            81077
+        ]
+    },
+    {
+        "Id": 103,
+        "CoreId": 3011,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "5秒内连续消除三色球后，全伤害增加30%，持续8秒",
+        "BuffId": [
+            81078
+        ]
+    },
+    {
+        "Id": 104,
+        "CoreId": 3012,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "每秒对半径4m内所有敌人造成攻击力100%火属性伤害",
+        "BuffId": [
+            81082
+        ]
+    },
+    {
+        "Id": 105,
+        "CoreId": 3013,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "攻击时有50%概率对目标周围2m造成攻击力80%的雷属性伤害(不分敌我)，3s内只能触发1次",
+        "BuffId": [
+            81086
+        ]
+    },
+    {
+        "Id": 106,
+        "CoreId": 3013,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "攻击时有50%概率对目标周围2m造成攻击力160%的雷属性伤害(不分敌我)，3s内只能触发1次",
+        "BuffId": [
+            81087
+        ]
+    },
+    {
+        "Id": 107,
+        "CoreId": 3013,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "攻击时有50%概率对目标周围2m造成攻击力240%的雷属性伤害(不分敌我)，3s内只能触发1次",
+        "BuffId": [
+            81088
+        ]
+    },
+    {
+        "Id": 108,
+        "CoreId": 3014,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "qte登场时会给操控角色增加10%攻击力，持续5秒",
+        "BuffId": [
+            81092
+        ]
+    },
+    {
+        "Id": 109,
+        "CoreId": 3014,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "qte登场时会给操控角色增加15%攻击力，持续5秒",
+        "BuffId": [
+            81093
+        ]
+    },
+    {
+        "Id": 110,
+        "CoreId": 3014,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "qte登场时会给操控角色增加20%攻击力，持续5秒",
+        "BuffId": [
+            81094
+        ]
+    },
+    {
+        "Id": 111,
+        "CoreId": 3015,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "qte登场时降低目标物理防御20%，持续5秒",
+        "BuffId": [
+            81095
+        ]
+    },
+    {
+        "Id": 112,
+        "CoreId": 3015,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "qte登场时降低目标物理防御25%，持续5秒",
+        "BuffId": [
+            81096
+        ]
+    },
+    {
+        "Id": 113,
+        "CoreId": 3015,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "qte登场时降低目标物理防御30%，持续5秒",
+        "BuffId": [
+            81097
+        ]
+    },
+    {
+        "Id": 114,
+        "CoreId": 3016,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "qte登场时降低目标属性抗性20%，持续5秒",
+        "BuffId": [
+            81098
+        ]
+    },
+    {
+        "Id": 115,
+        "CoreId": 3016,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "qte登场时降低目标属性抗性25%，持续5秒",
+        "BuffId": [
+            81099
+        ]
+    },
+    {
+        "Id": 116,
+        "CoreId": 3016,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "qte登场时降低目标属性抗性30%，持续5秒",
+        "BuffId": [
+            81100
+        ]
+    },
+    {
+        "Id": 117,
+        "CoreId": 3017,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "召唤qte后，以角色为半径3m释放一次冲击波，造成300%物理伤害。",
+        "BuffId": [
+            81101
+        ]
+    },
+    {
+        "Id": 118,
+        "CoreId": 3017,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "召唤qte后，以角色为半径3m释放一次冲击波，造成450%物理伤害。",
+        "BuffId": [
+            81102
+        ]
+    },
+    {
+        "Id": 119,
+        "CoreId": 3017,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "召唤qte后，以角色为半径3m释放一次冲击波，造成600%物理伤害。",
+        "BuffId": [
+            81103
+        ]
+    },
+    {
+        "Id": 120,
+        "CoreId": 3018,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "每次攻击都有30%概率使本次伤害增幅30%",
+        "BuffId": [
+            81104
+        ]
+    },
+    {
+        "Id": 121,
+        "CoreId": 3018,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "每次攻击都有40%概率使本次伤害增幅40%",
+        "BuffId": [
+            81105
+        ]
+    },
+    {
+        "Id": 122,
+        "CoreId": 3018,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "每次攻击都有50%概率使本次伤害增幅60%",
+        "BuffId": [
+            81106
+        ]
+    },
+    {
+        "Id": 123,
+        "CoreId": 3019,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "造成暗属性伤害时，30%的概率追加本次伤害量60%的额外暗属性伤害",
+        "BuffId": [
+            81123
+        ]
+    },
+    {
+        "Id": 124,
+        "CoreId": 3019,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "造成暗属性伤害时，40%的概率追加本次伤害量70%的额外暗属性伤害",
+        "BuffId": [
+            81124
+        ]
+    },
+    {
+        "Id": 125,
+        "CoreId": 3019,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "造成暗属性伤害时，50%的概率追加本次伤害量80%的额外暗属性伤害",
+        "BuffId": [
+            81125
+        ]
+    },
+    {
+        "Id": 126,
+        "CoreId": 3020,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "攻击有30%概率冻结敌人3s，计时结束后对目标半径3m范围内造成80%冰属性伤害",
+        "BuffId": [
+            81126
+        ]
+    },
+    {
+        "Id": 127,
+        "CoreId": 3020,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "攻击有40%概率冻结敌人3s，计时结束后对目标半径3m范围内造成100%冰属性伤害",
+        "BuffId": [
+            81127
+        ]
+    },
+    {
+        "Id": 128,
+        "CoreId": 3020,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "攻击有50%概率冻结敌人3s，计时结束后对目标半径3m范围内造成120%冰属性伤害",
+        "BuffId": [
+            81128
+        ]
+    },
+    {
+        "Id": 129,
+        "CoreId": 3021,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "切换成员入场时，全伤害增幅10%，持续5s",
+        "BuffId": [
+            81135
+        ]
+    },
+    {
+        "Id": 130,
+        "CoreId": 3021,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "切换成员入场时，全伤害增幅20%，持续5s",
+        "BuffId": [
+            81136
+        ]
+    },
+    {
+        "Id": 131,
+        "CoreId": 3021,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "切换成员入场时，全伤害增幅30%，持续5s",
+        "BuffId": [
+            81137
+        ]
+    },
+    {
+        "Id": 132,
+        "CoreId": 3022,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "切换成员入场时，对角色周围半径3m范围内的敌人造成300%的伤害",
+        "BuffId": [
+            81141
+        ]
+    },
+    {
+        "Id": 133,
+        "CoreId": 3022,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "切换成员入场时，对角色周围半径3m范围内的敌人造成500%的伤害",
+        "BuffId": [
+            81142
+        ]
+    },
+    {
+        "Id": 134,
+        "CoreId": 3022,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "切换成员入场时，对角色周围半径3m范围内的敌人造成700%的伤害",
+        "BuffId": [
+            81143
+        ]
+    },
+    {
+        "Id": 135,
+        "CoreId": 3023,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "切换成员入场时，降低周围4m内敌人20%属性抗性，持续8s",
+        "BuffId": [
+            81144
+        ]
+    },
+    {
+        "Id": 136,
+        "CoreId": 3023,
+        "CoreLevel": 2,
+        "DecomposeMoney": 36,
+        "Description": "切换成员入场时，降低周围4m内敌人25%属性抗性，持续8s",
+        "BuffId": [
+            81145
+        ]
+    },
+    {
+        "Id": 137,
+        "CoreId": 3023,
+        "CoreLevel": 3,
+        "DecomposeMoney": 54,
+        "Description": "切换成员入场时，降低周围4m内敌人30%属性抗性，持续8s",
+        "BuffId": [
+            81146
+        ]
+    },
+    {
+        "Id": 138,
+        "CoreId": 3024,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "开局获得100点能量",
+        "BuffId": [
+            81011
+        ]
+    },
+    {
+        "Id": 139,
+        "CoreId": 3025,
+        "CoreLevel": 1,
+        "DecomposeMoney": 18,
+        "Description": "入场时额外获得3个相同颜色的信号球",
+        "BuffId": [
+            81069
+        ]
+    }
+]

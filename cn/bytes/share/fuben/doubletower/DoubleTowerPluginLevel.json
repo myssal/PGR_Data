@@ -1,0 +1,380 @@
+[
+    {
+        "Id": 1,
+        "Name": "战斗适应",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 34001,
+        "Desc": "机体伤害增幅，每30秒获得并刷新护盾（机体战力参数越低获得的伤害增幅/护盾量越高）"
+    },
+    {
+        "Id": 2,
+        "Name": "守护者",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 34002,
+        "Desc": "狩猎者伤害/抗性增加，攻击频率提升，每秒恢复3%最大生命"
+    },
+    {
+        "Id": 3,
+        "Name": "机关师",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 34003,
+        "Desc": "准备阶段战术资源+1"
+    },
+    {
+        "Id": 4,
+        "Name": "守备",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 772490,
+        "Desc": "经过改造的阿枪，装甲性能大幅强化"
+    },
+    {
+        "Id": 5,
+        "Name": "突破",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 772491,
+        "Desc": "经过改造的蝾螈，射击性能大幅强化，机动性较差"
+    },
+    {
+        "Id": 6,
+        "Name": "协力",
+        "PluginId": 0,
+        "Level": 0,
+        "UpgradeSpend": 0,
+        "FightEventId": 772492,
+        "Desc": "经过改造的阿箭，各项性能相对均衡"
+    },
+    {
+        "Id": 7,
+        "Name": "烧夷装置",
+        "PluginId": 1,
+        "Level": 1,
+        "UpgradeSpend": 0,
+        "FightEventId": 34007,
+        "Desc": "点燃区域内敌人2/3/5秒(准备阶段升级)，每秒造成400%火属性伤害"
+    },
+    {
+        "Id": 8,
+        "Name": "烧夷装置",
+        "PluginId": 1,
+        "Level": 2,
+        "UpgradeSpend": 1250,
+        "FightEventId": 34008,
+        "Desc": "区域内构造体伤害与抗性提升30%"
+    },
+    {
+        "Id": 9,
+        "Name": "烧夷装置",
+        "PluginId": 1,
+        "Level": 3,
+        "UpgradeSpend": 1750,
+        "FightEventId": 34009,
+        "Desc": "区域内我方单位伤害、抗性、移速提升20%，持续5秒"
+    },
+    {
+        "Id": 10,
+        "Name": "补给装置",
+        "PluginId": 2,
+        "Level": 1,
+        "UpgradeSpend": 750,
+        "FightEventId": 34010,
+        "Desc": "区域内我方单位每秒恢复150/200/250生命值(准备阶段升级)"
+    },
+    {
+        "Id": 11,
+        "Name": "补给装置",
+        "PluginId": 2,
+        "Level": 2,
+        "UpgradeSpend": 1250,
+        "FightEventId": 34011,
+        "Desc": "受治疗单位每损失20%生命值恢复量提升25%"
+    },
+    {
+        "Id": 12,
+        "Name": "补给装置",
+        "PluginId": 2,
+        "Level": 3,
+        "UpgradeSpend": 1750,
+        "FightEventId": 34012,
+        "Desc": "将区域内溢出治疗量的3000%转化为物理伤害"
+    },
+    {
+        "Id": 13,
+        "Name": "暗质装置",
+        "PluginId": 3,
+        "Level": 1,
+        "UpgradeSpend": 750,
+        "FightEventId": 34013,
+        "Desc": "每4/3/2秒(准备阶段升级)对射程内1名敌人造成900%暗属性伤害"
+    },
+    {
+        "Id": 14,
+        "Name": "暗质装置",
+        "PluginId": 3,
+        "Level": 2,
+        "UpgradeSpend": 1250,
+        "FightEventId": 34014,
+        "Desc": "射程2倍范围内每存在1枚相同装置装置伤害+12%，每存在1枚不同装置角色伤害+12%"
+    },
+    {
+        "Id": 15,
+        "Name": "暗质装置",
+        "PluginId": 3,
+        "Level": 3,
+        "UpgradeSpend": 1750,
+        "FightEventId": 34015,
+        "Desc": "射程内每存在2名我方单位，暗质装置攻击目标+1（上限+3）"
+    },
+    {
+        "Id": 16,
+        "Name": "轰雷装置",
+        "PluginId": 4,
+        "Level": 1,
+        "UpgradeSpend": 750,
+        "FightEventId": 34016,
+        "Desc": "区域内每2/1.5/1秒(准备阶段升级)在随机位置落雷，对半径2米内敌人造成1200%雷属性伤害"
+    },
+    {
+        "Id": 17,
+        "Name": "轰雷装置",
+        "PluginId": 4,
+        "Level": 2,
+        "UpgradeSpend": 1250,
+        "FightEventId": 34017,
+        "Desc": "敌人受到雷击后所有抗性-5%，持续3.5秒（可叠加）"
+    },
+    {
+        "Id": 18,
+        "Name": "轰雷装置",
+        "PluginId": 4,
+        "Level": 3,
+        "UpgradeSpend": 1750,
+        "FightEventId": 34018,
+        "Desc": "区域内敌人受到伤害提升10%，越靠近中心提升越高；额外追加一道雷击"
+    },
+    {
+        "Id": 19,
+        "Name": "冰凝装置",
+        "PluginId": 5,
+        "Level": 1,
+        "UpgradeSpend": 750,
+        "FightEventId": 34019,
+        "Desc": "区域内敌人移速降低30/40/50%(准备阶段升级)"
+    },
+    {
+        "Id": 20,
+        "Name": "冰凝装置",
+        "PluginId": 5,
+        "Level": 2,
+        "UpgradeSpend": 1250,
+        "FightEventId": 34020,
+        "Desc": "区域内敌人每2秒受到最大生命10%的冰属性伤害"
+    },
+    {
+        "Id": 21,
+        "Name": "冰凝装置",
+        "PluginId": 5,
+        "Level": 3,
+        "UpgradeSpend": 1750,
+        "FightEventId": 34021,
+        "Desc": "装置造成伤害后有10%概率冻结敌人2秒"
+    },
+    {
+        "Id": 22,
+        "Name": "增幅核心",
+        "PluginId": 6,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772421,
+        "Desc": "狩猎者伤害+25%"
+    },
+    {
+        "Id": 23,
+        "Name": "增幅核心",
+        "PluginId": 6,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772422,
+        "Desc": "狩猎者伤害+35%"
+    },
+    {
+        "Id": 24,
+        "Name": "增幅核心",
+        "PluginId": 6,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772423,
+        "Desc": "狩猎者伤害+50%"
+    },
+    {
+        "Id": 25,
+        "Name": "能量核心",
+        "PluginId": 7,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772425,
+        "Desc": "狩猎者生命+25%"
+    },
+    {
+        "Id": 26,
+        "Name": "能量核心",
+        "PluginId": 7,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772426,
+        "Desc": "狩猎者生命+35%"
+    },
+    {
+        "Id": 27,
+        "Name": "能量核心",
+        "PluginId": 7,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772427,
+        "Desc": "狩猎者生命+50%"
+    },
+    {
+        "Id": 28,
+        "Name": "增幅力场",
+        "PluginId": 8,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772462,
+        "Desc": "狩猎者6米范围内友军伤害+5%"
+    },
+    {
+        "Id": 29,
+        "Name": "增幅力场",
+        "PluginId": 8,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772463,
+        "Desc": "狩猎者6米范围内友军伤害+8%"
+    },
+    {
+        "Id": 30,
+        "Name": "增幅力场",
+        "PluginId": 8,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772464,
+        "Desc": "狩猎者6米范围内友军伤害+12%"
+    },
+    {
+        "Id": 31,
+        "Name": "守护力场",
+        "PluginId": 9,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772472,
+        "Desc": "狩猎者6米范围内友军抗性+5%"
+    },
+    {
+        "Id": 32,
+        "Name": "守护力场",
+        "PluginId": 9,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772473,
+        "Desc": "狩猎者6米范围内友军抗性+8%"
+    },
+    {
+        "Id": 33,
+        "Name": "守护力场",
+        "PluginId": 9,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772474,
+        "Desc": "狩猎者6米范围内友军抗性+12%"
+    },
+    {
+        "Id": 34,
+        "Name": "维续组件",
+        "PluginId": 10,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772429,
+        "Desc": "狩猎者造成伤害后基于伤害量恢复少量生命"
+    },
+    {
+        "Id": 35,
+        "Name": "维续组件",
+        "PluginId": 10,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772430,
+        "Desc": "狩猎者造成伤害后基于伤害量恢复中量生命"
+    },
+    {
+        "Id": 36,
+        "Name": "维续组件",
+        "PluginId": 10,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772431,
+        "Desc": "狩猎者造成伤害后基于伤害量恢复大量生命"
+    },
+    {
+        "Id": 37,
+        "Name": "熔火核心",
+        "PluginId": 11,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772436,
+        "Desc": "狩猎者攻击时25%概率点燃敌人2秒，每秒造成敌人最大生命6%的火属性伤害"
+    },
+    {
+        "Id": 38,
+        "Name": "熔火核心",
+        "PluginId": 11,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772437,
+        "Desc": "狩猎者攻击时35%概率点燃敌人3秒，每秒造成敌人最大生命6%的火属性伤害"
+    },
+    {
+        "Id": 39,
+        "Name": "熔火核心",
+        "PluginId": 11,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772438,
+        "Desc": "狩猎者攻击时50%概率点燃敌人4秒，每秒造成敌人最大生命6%的火属性伤害"
+    },
+    {
+        "Id": 40,
+        "Name": "极冻核心",
+        "PluginId": 12,
+        "Level": 1,
+        "UpgradeSpend": 600,
+        "FightEventId": 772450,
+        "Desc": "狩猎者攻击时有10%的概率冻结敌人1秒"
+    },
+    {
+        "Id": 41,
+        "Name": "极冻核心",
+        "PluginId": 12,
+        "Level": 2,
+        "UpgradeSpend": 800,
+        "FightEventId": 772451,
+        "Desc": "狩猎者攻击时有15%的概率冻结敌人1.5秒"
+    },
+    {
+        "Id": 42,
+        "Name": "极冻核心",
+        "PluginId": 12,
+        "Level": 3,
+        "UpgradeSpend": 1100,
+        "FightEventId": 772452,
+        "Desc": "狩猎者攻击时有20%的概率冻结敌人2秒"
+    }
+]

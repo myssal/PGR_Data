@@ -1,0 +1,1128 @@
+[
+    {
+        "Id": 1,
+        "OptionRound": 1,
+        "OptionId": 1,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 1,
+        "RuleName": "摆置·水池",
+        "RuleType": 8001,
+        "RuleScore": 2,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 1,
+        "TimeDuration": 14,
+        "RuleParams": [
+            3
+        ],
+        "RuleTime": [
+            1
+        ],
+        "Map": [
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999
+        ]
+    },
+    {
+        "Id": 2,
+        "OptionRound": 1,
+        "OptionId": 2,
+        "OptionBlock": 54,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 2,
+        "RuleName": "相邻·桃花流水",
+        "RuleType": 1001,
+        "RuleScore": 2,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            4,
+            3
+        ],
+        "RuleTime": [
+            1
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 3,
+        "OptionRound": 1,
+        "OptionId": 3,
+        "OptionBlock": 66,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 3,
+        "RuleName": "包围·叠石为山",
+        "RuleType": 1006,
+        "RuleScore": 10,
+        "RuleIsHide": 1,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            2001
+        ],
+        "RuleTime": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 4,
+        "OptionRound": 2,
+        "OptionId": 4,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 4,
+        "RuleName": "摆置·市肆",
+        "RuleType": 8001,
+        "RuleScore": 2,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            1
+        ],
+        "RuleTime": [
+            1
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            2001,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 5,
+        "OptionRound": 2,
+        "OptionId": 5,
+        "OptionBlock": 277,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            4,
+            0,
+            2001,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 6,
+        "OptionRound": 2,
+        "OptionId": 6,
+        "OptionBlock": 107,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            2001,
+            0,
+            0,
+            2007,
+            0,
+            4,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 7,
+        "OptionRound": 3,
+        "OptionId": 7,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            4,
+            0,
+            0,
+            4,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 8,
+        "OptionRound": 3,
+        "OptionId": 8,
+        "OptionBlock": 107,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 9,
+        "OptionRound": 3,
+        "OptionId": 9,
+        "OptionBlock": 65,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 10,
+        "OptionRound": 4,
+        "OptionId": 10,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            9999
+        ]
+    },
+    {
+        "Id": 11,
+        "OptionRound": 4,
+        "OptionId": 11,
+        "OptionBlock": 75,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999,
+            9999
+        ]
+    },
+    {
+        "Id": 12,
+        "OptionRound": 4,
+        "OptionId": 12,
+        "OptionBlock": 73,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 13,
+        "OptionRound": 5,
+        "OptionId": 13,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 14,
+        "OptionRound": 5,
+        "OptionId": 14,
+        "OptionBlock": 25,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 15,
+        "OptionRound": 5,
+        "OptionId": 15,
+        "OptionBlock": 275,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 16,
+        "OptionRound": 6,
+        "OptionId": 16,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 17,
+        "OptionRound": 6,
+        "OptionId": 17,
+        "OptionBlock": 107,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 18,
+        "OptionRound": 6,
+        "OptionId": 18,
+        "OptionBlock": 75,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 19,
+        "OptionRound": 7,
+        "OptionId": 19,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 20,
+        "OptionRound": 7,
+        "OptionId": 20,
+        "OptionBlock": 277,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 21,
+        "OptionRound": 7,
+        "OptionId": 21,
+        "OptionBlock": 75,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 22,
+        "OptionRound": 8,
+        "OptionId": 22,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 23,
+        "OptionRound": 8,
+        "OptionId": 23,
+        "OptionBlock": 107,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 24,
+        "OptionRound": 8,
+        "OptionId": 24,
+        "OptionBlock": 277,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 25,
+        "OptionRound": 9,
+        "OptionId": 25,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 26,
+        "OptionRound": 9,
+        "OptionId": 26,
+        "OptionBlock": 66,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 27,
+        "OptionRound": 9,
+        "OptionId": 27,
+        "OptionBlock": 16,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 28,
+        "OptionRound": 10,
+        "OptionId": 28,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 29,
+        "OptionRound": 10,
+        "OptionId": 29,
+        "OptionBlock": 103,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 30,
+        "OptionRound": 10,
+        "OptionId": 30,
+        "OptionBlock": 107,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 31,
+        "OptionRound": 11,
+        "OptionId": 31,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 32,
+        "OptionRound": 11,
+        "OptionId": 32,
+        "OptionBlock": 66,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 33,
+        "OptionRound": 11,
+        "OptionId": 33,
+        "OptionBlock": 16,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 34,
+        "OptionRound": 12,
+        "OptionId": 34,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 35,
+        "OptionRound": 12,
+        "OptionId": 35,
+        "OptionBlock": 16,
+        "OptionReward": 1,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 36,
+        "OptionRound": 12,
+        "OptionId": 36,
+        "OptionBlock": 25,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 37,
+        "OptionRound": 13,
+        "OptionId": 37,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 38,
+        "OptionRound": 13,
+        "OptionId": 38,
+        "OptionBlock": 276,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 39,
+        "OptionRound": 13,
+        "OptionId": 39,
+        "OptionBlock": 278,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 40,
+        "OptionRound": 14,
+        "OptionId": 40,
+        "OptionBlock": -1,
+        "OptionReward": 0,
+        "OptionSpend": 0,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 41,
+        "OptionRound": 14,
+        "OptionId": 41,
+        "OptionBlock": 75,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    },
+    {
+        "Id": 42,
+        "OptionRound": 14,
+        "OptionId": 42,
+        "OptionBlock": 25,
+        "OptionReward": 0,
+        "OptionSpend": 1,
+        "RuleId": 0,
+        "RuleType": 0,
+        "RuleScore": 0,
+        "RuleIsHide": 0,
+        "Rule4Grid": 0,
+        "Time": 0,
+        "TimeDuration": 0,
+        "RuleParams": [
+            0
+        ],
+        "RuleTime": [
+            0
+        ],
+        "Map": [
+            0
+        ]
+    }
+]

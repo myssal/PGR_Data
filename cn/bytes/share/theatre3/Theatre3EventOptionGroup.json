@@ -1,0 +1,4595 @@
+[
+    {
+        "Id": 1,
+        "GroupId": 101,
+        "OptionDesc": "取走沉甸甸的大包裹",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 2,
+        "GroupId": 101,
+        "OptionDesc": "取走精致的小包裹",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 3,
+        "GroupId": 101,
+        "OptionDesc": "强者并不需要施舍",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 4,
+        "GroupId": 201,
+        "OptionDesc": "打开箱子",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 5,
+        "GroupId": 201,
+        "OptionDesc": "让她物归原主",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 6,
+        "GroupId": 302,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 7,
+        "GroupId": 302,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 8,
+        "GroupId": 402,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 9,
+        "GroupId": 402,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 10,
+        "GroupId": 502,
+        "OptionDesc": "进入工坊（装备定向重铸）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 11,
+        "GroupId": 502,
+        "OptionDesc": "原地休整（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 12,
+        "GroupId": 601,
+        "OptionDesc": "投入算力单元",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 60101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 13,
+        "GroupId": 601,
+        "OptionDesc": "还是算了",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 60102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 14,
+        "GroupId": 601,
+        "OptionDesc": "作弊",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 60103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020285,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9029
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "GroupId": 609,
+        "OptionDesc": "继续运行",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 60901,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 16,
+        "GroupId": 609,
+        "OptionDesc": "还是算了",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 60902,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 17,
+        "GroupId": 609,
+        "OptionDesc": "继续作弊",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 60903,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020285,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9029
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "GroupId": 617,
+        "OptionDesc": "继续运行",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 61701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 19,
+        "GroupId": 617,
+        "OptionDesc": "还是算了",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 61702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 20,
+        "GroupId": 617,
+        "OptionDesc": "继续作弊",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 61703,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020285,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9029
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "GroupId": 625,
+        "OptionDesc": "继续运行",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 62501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 22,
+        "GroupId": 625,
+        "OptionDesc": "还是算了",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 62502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 23,
+        "GroupId": 625,
+        "OptionDesc": "继续作弊",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 62503,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020285,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9029
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "GroupId": 701,
+        "OptionDesc": "同意",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 70101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 25,
+        "GroupId": 701,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 70102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 26,
+        "GroupId": 703,
+        "OptionDesc": "<color=#EA4323>「皇后」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 70301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 27,
+        "GroupId": 703,
+        "OptionDesc": "<color=#FBBC05>「女仆」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 70302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 28,
+        "GroupId": 703,
+        "OptionDesc": "<color=#34A853>「猫娘」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 70303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 29,
+        "GroupId": 713,
+        "OptionDesc": "继续",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 71301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 30,
+        "GroupId": 713,
+        "OptionDesc": "离桌",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 71302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 31,
+        "GroupId": 714,
+        "OptionDesc": "<color=#EA4323>「皇后」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 71401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 32,
+        "GroupId": 714,
+        "OptionDesc": "<color=#FBBC05>「女仆」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 71402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 33,
+        "GroupId": 714,
+        "OptionDesc": "<color=#34A853>「猫娘」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 71403,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 34,
+        "GroupId": 724,
+        "OptionDesc": "继续",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 72401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 35,
+        "GroupId": 724,
+        "OptionDesc": "离桌",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 72402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 36,
+        "GroupId": 725,
+        "OptionDesc": "<color=#EA4323>「皇后」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 72501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 37,
+        "GroupId": 725,
+        "OptionDesc": "<color=#FBBC05>「女仆」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 72502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 38,
+        "GroupId": 725,
+        "OptionDesc": "<color=#34A853>「猫娘」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 72503,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 39,
+        "GroupId": 735,
+        "OptionDesc": "梭哈",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 73501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            150
+        ]
+    },
+    {
+        "Id": 40,
+        "GroupId": 735,
+        "OptionDesc": "离桌",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 73502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 41,
+        "GroupId": 736,
+        "OptionDesc": "<color=#EA4323>「皇后」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 73601,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 42,
+        "GroupId": 736,
+        "OptionDesc": "<color=#FBBC05>「女仆」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 73602,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 43,
+        "GroupId": 736,
+        "OptionDesc": "<color=#34A853>「猫娘」</color>",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 73603,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 44,
+        "GroupId": 30102,
+        "OptionDesc": "呼喊洁塔薇躲开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 45,
+        "GroupId": 30202,
+        "OptionDesc": "检查洁塔薇的身体",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 46,
+        "GroupId": 30202,
+        "OptionDesc": "询问洁塔薇怎么样",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 47,
+        "GroupId": 30203,
+        "OptionDesc": "询问那个烙印",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 48,
+        "GroupId": 30203,
+        "OptionDesc": "询问她疼不疼",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 49,
+        "GroupId": 30208,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020801,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 50,
+        "GroupId": 30208,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3020802,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 51,
+        "GroupId": 30302,
+        "OptionDesc": "推开洁塔薇",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 52,
+        "GroupId": 30403,
+        "OptionDesc": "问她为什么揍你",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3040301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 53,
+        "GroupId": 30403,
+        "OptionDesc": "问她为什么抱你",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3040302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 54,
+        "GroupId": 30409,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3040901,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 55,
+        "GroupId": 30409,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3040902,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 56,
+        "GroupId": 50102,
+        "OptionDesc": "握紧洁塔薇的手",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 5010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 57,
+        "GroupId": 50201,
+        "OptionDesc": "拿出<color=#b73a3a>「权限秘钥」</color>",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 5020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2005
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "GroupId": 60102,
+        "OptionDesc": "并肩前行",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 6010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 59,
+        "GroupId": 100101,
+        "OptionDesc": "朝声音源头探索",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 60,
+        "GroupId": 100101,
+        "OptionDesc": "就地回收工具箱",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 61,
+        "GroupId": 100102,
+        "OptionDesc": "拆下它的显示屏",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 62,
+        "GroupId": 100102,
+        "OptionDesc": "原路返回",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10010202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 63,
+        "GroupId": 100201,
+        "OptionDesc": "去花园里浇水",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 64,
+        "GroupId": 100201,
+        "OptionDesc": "拿着芯片离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 65,
+        "GroupId": 100201,
+        "OptionDesc": "去书房看一看",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10020103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 66,
+        "GroupId": 101101,
+        "OptionDesc": "近距离观赏断臂维纳斯",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10110101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 67,
+        "GroupId": 101101,
+        "OptionDesc": "近距离观赏大卫的仿品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10110102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 68,
+        "GroupId": 101103,
+        "OptionDesc": "取走胶囊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10110301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 69,
+        "GroupId": 101103,
+        "OptionDesc": "保持原样",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10110302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 70,
+        "GroupId": 200103,
+        "OptionDesc": "检视高大的熊布偶",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20010301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 71,
+        "GroupId": 200103,
+        "OptionDesc": "检视护士装的人形",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20010302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 72,
+        "GroupId": 200103,
+        "OptionDesc": "转头看向自己背后",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20010303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 73,
+        "GroupId": 200201,
+        "OptionDesc": "拿出一些算力单元给他",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 20020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            70
+        ]
+    },
+    {
+        "Id": 74,
+        "GroupId": 200201,
+        "OptionDesc": "拒绝交换，就此离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 75,
+        "GroupId": 201101,
+        "OptionDesc": "拒绝展示胶囊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20110101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 76,
+        "GroupId": 201101,
+        "OptionDesc": "展示胶囊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20110102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 77,
+        "GroupId": 201102,
+        "OptionDesc": "收起胶囊离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 78,
+        "GroupId": 201102,
+        "OptionDesc": "接过水咽下胶囊",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 20110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2004
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "GroupId": 201202,
+        "OptionDesc": "帮助他",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 80,
+        "GroupId": 201202,
+        "OptionDesc": "抛下他",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 81,
+        "GroupId": 201302,
+        "OptionDesc": "带女孩回去找她弟弟",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 82,
+        "GroupId": 201302,
+        "OptionDesc": "询问女孩昆虫的品种",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 83,
+        "GroupId": 300101,
+        "OptionDesc": "剪断电源线解救它",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 84,
+        "GroupId": 300101,
+        "OptionDesc": "优先启动档案库",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 85,
+        "GroupId": 300201,
+        "OptionDesc": "接入游戏机终端",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 86,
+        "GroupId": 300201,
+        "OptionDesc": "取走游戏机的芯片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 87,
+        "GroupId": 300301,
+        "OptionDesc": "打开实验日志阅读",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30030101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 88,
+        "GroupId": 300301,
+        "OptionDesc": "翻走口袋中的金币",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30030102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 89,
+        "GroupId": 301103,
+        "OptionDesc": "进入战斗",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30110301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 90,
+        "GroupId": 301103,
+        "OptionDesc": "逃离这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30110302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 91,
+        "GroupId": 301202,
+        "OptionDesc": "撕开巨幅油画",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 92,
+        "GroupId": 301202,
+        "OptionDesc": "先原地睡一觉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 93,
+        "GroupId": 301302,
+        "OptionDesc": "不理会可怜的男人",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 94,
+        "GroupId": 301302,
+        "OptionDesc": "询问他关于怪物的事",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 95,
+        "GroupId": 301304,
+        "OptionDesc": "替男人继续追踪怪物",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30130401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 96,
+        "GroupId": 301304,
+        "OptionDesc": "简单安慰对方后离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30130402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 97,
+        "GroupId": 301402,
+        "OptionDesc": "调查耍蝴蝶刀的灰发男孩",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30140201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 98,
+        "GroupId": 301402,
+        "OptionDesc": "调查缩在墙角的紫发少女",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30140202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 99,
+        "GroupId": 301402,
+        "OptionDesc": "调查活泼开朗的粉发莉莉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30140203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 100,
+        "GroupId": 301502,
+        "OptionDesc": "拒绝莉莉的请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30150201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 101,
+        "GroupId": 301502,
+        "OptionDesc": "接受莉莉的请求",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 30150202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            150
+        ]
+    },
+    {
+        "Id": 102,
+        "GroupId": 400101,
+        "OptionDesc": "接受少女的好意",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 103,
+        "GroupId": 400101,
+        "OptionDesc": "掀开少女的面纱",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 104,
+        "GroupId": 400101,
+        "OptionDesc": "提起树的死亡",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020229,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 105,
+        "GroupId": 400105,
+        "OptionDesc": "询问她发生了什么",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 106,
+        "GroupId": 400105,
+        "OptionDesc": "不再过问转身离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 107,
+        "GroupId": 400106,
+        "OptionDesc": "接受祷告",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010601,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 108,
+        "GroupId": 400106,
+        "OptionDesc": "拒绝她",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40010602,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 109,
+        "GroupId": 400111,
+        "OptionDesc": "制服对方",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40011101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 110,
+        "GroupId": 400111,
+        "OptionDesc": "向她道歉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40011102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 111,
+        "GroupId": 400202,
+        "OptionDesc": "让她试试",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40020201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 112,
+        "GroupId": 400202,
+        "OptionDesc": "离开这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40020202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 113,
+        "GroupId": 400203,
+        "OptionDesc": "用尽全力拉回绳子",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40020301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 114,
+        "GroupId": 400203,
+        "OptionDesc": "相信洁塔薇能独自处理",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40020302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 115,
+        "GroupId": 400302,
+        "OptionDesc": "关于旅行者的故事",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 116,
+        "GroupId": 400302,
+        "OptionDesc": "关于背叛者的故事",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 117,
+        "GroupId": 400302,
+        "OptionDesc": "不听",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40030203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 118,
+        "GroupId": 400401,
+        "OptionDesc": "拿出一些算力单元给他",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 40040101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 119,
+        "GroupId": 400401,
+        "OptionDesc": "拒绝交换，就此离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40040102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 120,
+        "GroupId": 401102,
+        "OptionDesc": "跟她道歉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 121,
+        "GroupId": 401102,
+        "OptionDesc": "朝她挥拳",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 122,
+        "GroupId": 401202,
+        "OptionDesc": "接受她的祝福",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 123,
+        "GroupId": 401202,
+        "OptionDesc": "拒绝她的祝福",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 124,
+        "GroupId": 401302,
+        "OptionDesc": "接受洁塔薇的建议",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 125,
+        "GroupId": 401302,
+        "OptionDesc": "毫不犹豫转身离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 126,
+        "GroupId": 401402,
+        "OptionDesc": "消除恐惧的最好方法就是面对它！",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40140201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 127,
+        "GroupId": 401402,
+        "OptionDesc": "将宝物抛向一旁",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 40140202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2007
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 128,
+        "GroupId": 500102,
+        "OptionDesc": "调查机器人的芯片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 129,
+        "GroupId": 500102,
+        "OptionDesc": "调查观星台的系统",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50010202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 130,
+        "GroupId": 500202,
+        "OptionDesc": "答应他的请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50020201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 131,
+        "GroupId": 500202,
+        "OptionDesc": "拒绝他的请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50020202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 132,
+        "GroupId": 500202,
+        "OptionDesc": "告诉罗伯特真相",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50020203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020228,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 133,
+        "GroupId": 500302,
+        "OptionDesc": "花钱向对方买诗",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 134,
+        "GroupId": 500302,
+        "OptionDesc": "卖诗给对方赚钱",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 135,
+        "GroupId": 501102,
+        "OptionDesc": "即使是无数次，这就是我站在这里的原因",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 136,
+        "GroupId": 501102,
+        "OptionDesc": "重复的失败不会诞生奇迹，放弃进入门扉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 137,
+        "GroupId": 501202,
+        "OptionDesc": "直面强敌",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 138,
+        "GroupId": 501202,
+        "OptionDesc": "临阵脱逃",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 139,
+        "GroupId": 100302,
+        "OptionDesc": "油画散发的香气",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 140,
+        "GroupId": 100302,
+        "OptionDesc": "场馆播放的歌曲",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 141,
+        "GroupId": 100302,
+        "OptionDesc": "夜里撒入的月光",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10030203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 142,
+        "GroupId": 101203,
+        "OptionDesc": "绝境的希望",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10120301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 143,
+        "GroupId": 101203,
+        "OptionDesc": "童话的幻灭",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10120302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 144,
+        "GroupId": 101204,
+        "OptionDesc": "上前取下纸条",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10120401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 145,
+        "GroupId": 101204,
+        "OptionDesc": "转身去追女人",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 10120402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 146,
+        "GroupId": 200302,
+        "OptionDesc": "去看看保险柜",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 147,
+        "GroupId": 200302,
+        "OptionDesc": "去调查储物间",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 148,
+        "GroupId": 200402,
+        "OptionDesc": "挖掘",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 149,
+        "GroupId": 200402,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 150,
+        "GroupId": 200404,
+        "OptionDesc": "搜索坟场周边",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 151,
+        "GroupId": 200404,
+        "OptionDesc": "搜索坟场后院",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 152,
+        "GroupId": 200404,
+        "OptionDesc": "搜索水井",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040403,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 153,
+        "GroupId": 200405,
+        "OptionDesc": "安葬骸骨",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 154,
+        "GroupId": 200405,
+        "OptionDesc": "继续搜索",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20040502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 155,
+        "GroupId": 200503,
+        "OptionDesc": "先吃紫里透红的兔肉火锅",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20050301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 156,
+        "GroupId": 200503,
+        "OptionDesc": "先吃五彩斑斓的蘑菇拼盘",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20050302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 157,
+        "GroupId": 200503,
+        "OptionDesc": "先吃不可名状的爆炒时蔬",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20050303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 158,
+        "GroupId": 201402,
+        "OptionDesc": "挺身迎击",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20140201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 159,
+        "GroupId": 201402,
+        "OptionDesc": "转身逃离",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20140202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 160,
+        "GroupId": 201402,
+        "OptionDesc": "拿出孤儿院工作证",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 20140203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2011
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 161,
+        "GroupId": 201407,
+        "OptionDesc": "将工作证交给她。",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 20140701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2011
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 162,
+        "GroupId": 201407,
+        "OptionDesc": "保持沉默",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 20140702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 163,
+        "GroupId": 300402,
+        "OptionDesc": "这是工作人员愚蠢的失误",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30040201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 164,
+        "GroupId": 300402,
+        "OptionDesc": "这是一场布局精妙的谋杀",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30040202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 165,
+        "GroupId": 301603,
+        "OptionDesc": "寻找安全区",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30160301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 166,
+        "GroupId": 301603,
+        "OptionDesc": "注射血清（迎接战斗）",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 30160302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2015
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "GroupId": 301604,
+        "OptionDesc": "出示实验室工作证",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 30160401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2017
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "GroupId": 301604,
+        "OptionDesc": "转身准备战斗",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30160402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 169,
+        "GroupId": 301702,
+        "OptionDesc": "进入里面",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30170201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 170,
+        "GroupId": 301702,
+        "OptionDesc": "转身离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30170202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 171,
+        "GroupId": 301703,
+        "OptionDesc": "不顾一切取走资料集",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30170301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 172,
+        "GroupId": 301703,
+        "OptionDesc": "静待火焰燃尽",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30170302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 173,
+        "GroupId": 401502,
+        "OptionDesc": "冒险进入其中",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40150201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 174,
+        "GroupId": 401502,
+        "OptionDesc": "向里面丢石子",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40150202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 175,
+        "GroupId": 401503,
+        "OptionDesc": "试图冲过去夺下",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 40150301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 176,
+        "GroupId": 401503,
+        "OptionDesc": "让洁塔薇跑起来",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 40150302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020112,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2018
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 177,
+        "GroupId": 500402,
+        "OptionDesc": "询问游民“洁塔薇”用的武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50040201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 178,
+        "GroupId": 500402,
+        "OptionDesc": "询问游民“洁塔薇”说了什么",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50040202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 179,
+        "GroupId": 500403,
+        "OptionDesc": "施舍物资",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 50040301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 180,
+        "GroupId": 500403,
+        "OptionDesc": "转身离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50040302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 181,
+        "GroupId": 501302,
+        "OptionDesc": "将手中的数据结晶摆到镜前",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 50130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020113,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2021
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "GroupId": 501302,
+        "OptionDesc": "将血滴石放入镜子的凹槽中",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 50130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2020
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 183,
+        "GroupId": 501302,
+        "OptionDesc": "让洁塔薇看看",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50130203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 184,
+        "GroupId": 501309,
+        "OptionDesc": "补给",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50130901,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 185,
+        "GroupId": 501309,
+        "OptionDesc": "保持沉默",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50130902,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 186,
+        "GroupId": 501309,
+        "OptionDesc": "100个愿望",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 50130903,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 187,
+        "GroupId": 9000102,
+        "OptionDesc": "继续靠近",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 188,
+        "GroupId": 9000102,
+        "OptionDesc": "萌生退意",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900010202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 189,
+        "GroupId": 9000103,
+        "OptionDesc": "强制启动（跳过剧情）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900010301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020224,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 190,
+        "GroupId": 9000103,
+        "OptionDesc": "进行观测",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900010302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 191,
+        "GroupId": 9000203,
+        "OptionDesc": "调整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900020301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 192,
+        "GroupId": 9000203,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900020302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 193,
+        "GroupId": 9000303,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900030301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 194,
+        "GroupId": 9000303,
+        "OptionDesc": "直接离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900030302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 195,
+        "GroupId": 9000402,
+        "OptionDesc": "进入工坊（装备定向重铸）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900040201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 196,
+        "GroupId": 9000402,
+        "OptionDesc": "原地休整（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900040202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 197,
+        "GroupId": 9000503,
+        "OptionDesc": "读取数据",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900050301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020232,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 198,
+        "GroupId": 9000503,
+        "OptionDesc": "读取数据",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900050302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020233,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 199,
+        "GroupId": 9000503,
+        "OptionDesc": "拒绝",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900050303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 200,
+        "GroupId": 9000603,
+        "OptionDesc": "读取数据",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900060301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020232,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 201,
+        "GroupId": 9000603,
+        "OptionDesc": "读取数据",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900060302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020233,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 202,
+        "GroupId": 9000603,
+        "OptionDesc": "拒绝",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900060303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 203,
+        "GroupId": 9000703,
+        "OptionDesc": "读取数据",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900070301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 204,
+        "GroupId": 9000703,
+        "OptionDesc": "拒绝",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900070302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 205,
+        "GroupId": 9001003,
+        "OptionDesc": "开枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900100301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 206,
+        "GroupId": 9001105,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900110501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 207,
+        "GroupId": 9001105,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900110502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 208,
+        "GroupId": 9001202,
+        "OptionDesc": "使用武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 209,
+        "GroupId": 9001202,
+        "OptionDesc": "拿出<color=#ff6767>「超限秘钥」</color>",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9005
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 210,
+        "GroupId": 9001203,
+        "OptionDesc": "高速突进",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900120301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 211,
+        "GroupId": 9001204,
+        "OptionDesc": "投掷秘钥",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900120401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 212,
+        "GroupId": 9001204,
+        "OptionDesc": "收起秘钥",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900120402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 213,
+        "GroupId": 30502,
+        "OptionDesc": "拿出<color=#b73a3a>「黑桃皇后」</color>",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 3050201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9003
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 214,
+        "GroupId": 30502,
+        "OptionDesc": "呼喊洁塔薇躲开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3050202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 215,
+        "GroupId": 30507,
+        "OptionDesc": "莉莉，你究竟是谁？",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3050203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 216,
+        "GroupId": 30606,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3060601,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 217,
+        "GroupId": 30606,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3060602,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 218,
+        "GroupId": 70104,
+        "OptionDesc": "别挡道",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 7010401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 219,
+        "GroupId": 70104,
+        "OptionDesc": "门后面是中枢吗？",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 7010402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 220,
+        "GroupId": 9001302,
+        "OptionDesc": "接受交换",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 221,
+        "GroupId": 9001302,
+        "OptionDesc": "拒绝交换",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 222,
+        "GroupId": 9001303,
+        "OptionDesc": "借给商人",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900130301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2,
+        "OptionItemId": [
+            9003
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 223,
+        "GroupId": 9001303,
+        "OptionDesc": "换取报酬",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900130302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020235,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9003
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 224,
+        "GroupId": 9001303,
+        "OptionDesc": "拒绝请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900130303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 225,
+        "GroupId": 30703,
+        "OptionDesc": "收下卡牌",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3070301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 226,
+        "GroupId": 30703,
+        "OptionDesc": "拿出投影仪",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 3070302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020341,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9001
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 227,
+        "GroupId": 30703,
+        "OptionDesc": "离开这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3070303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 228,
+        "GroupId": 9001403,
+        "OptionDesc": "交出「红桃皇后」和「黑桃皇后」",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900140301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2,
+        "OptionItemId": [
+            9004,
+            9003
+        ],
+        "OptionItemCount": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "GroupId": 9001403,
+        "OptionDesc": "交出两张「黑桃皇后」",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900140302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2,
+        "OptionItemId": [
+            9003
+        ],
+        "OptionItemCount": [
+            2
+        ]
+    },
+    {
+        "Id": 230,
+        "GroupId": 9001403,
+        "OptionDesc": "拒绝交换",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900140303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 231,
+        "GroupId": 9210002,
+        "OptionDesc": "发动奇袭",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 921000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 232,
+        "GroupId": 9210002,
+        "OptionDesc": "邀请怪物和自己对决",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 921000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 233,
+        "GroupId": 9210005,
+        "OptionDesc": "先发制人（<color=#ff6767>小概率成功</color>）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 921000501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 234,
+        "GroupId": 9210005,
+        "OptionDesc": "公平对决",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 921000502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 235,
+        "GroupId": 210002,
+        "OptionDesc": "转动齿轮",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 21000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 236,
+        "GroupId": 210002,
+        "OptionDesc": "离开这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 21000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 237,
+        "GroupId": 9310001,
+        "OptionDesc": "选择三号门",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 238,
+        "GroupId": 9310001,
+        "OptionDesc": "选择七号门",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 239,
+        "GroupId": 9310001,
+        "OptionDesc": "选择九号门",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 240,
+        "GroupId": 9310002,
+        "OptionDesc": "答应交出芯片",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 931000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 241,
+        "GroupId": 9310002,
+        "OptionDesc": "暴力打开门扉",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 242,
+        "GroupId": 9310006,
+        "OptionDesc": "答应",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 931000601,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            50
+        ]
+    },
+    {
+        "Id": 243,
+        "GroupId": 9310006,
+        "OptionDesc": "放弃武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000602,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 244,
+        "GroupId": 9310009,
+        "OptionDesc": "释放怪物",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000901,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 245,
+        "GroupId": 9310009,
+        "OptionDesc": "拒绝怪物",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 931000902,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 246,
+        "GroupId": 9410002,
+        "OptionDesc": "停下数数转过头",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 941000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 247,
+        "GroupId": 9410002,
+        "OptionDesc": "遵守约定数完数",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 941000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 248,
+        "GroupId": 9410003,
+        "OptionDesc": "朝天空开枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 941000301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 249,
+        "GroupId": 9410003,
+        "OptionDesc": "默默收起枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 941000302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 250,
+        "GroupId": 9510002,
+        "OptionDesc": "转动齿轮",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 951000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 2
+    },
+    {
+        "Id": 251,
+        "GroupId": 9510002,
+        "OptionDesc": "离开这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 951000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 252,
+        "GroupId": 310002,
+        "OptionDesc": "进入公馆",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 253,
+        "GroupId": 310002,
+        "OptionDesc": "追逐火焰",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 254,
+        "GroupId": 310004,
+        "OptionDesc": "填入夜明珠",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 255,
+        "GroupId": 310004,
+        "OptionDesc": "填入奇石",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 256,
+        "GroupId": 310007,
+        "OptionDesc": "观察月亮的方向",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 257,
+        "GroupId": 310007,
+        "OptionDesc": "观察公馆的方向",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 31000702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 258,
+        "GroupId": 410001,
+        "OptionDesc": "使用复合弓",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 41000101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 259,
+        "GroupId": 410001,
+        "OptionDesc": "找点吃的来试试",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 41000102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 260,
+        "GroupId": 410003,
+        "OptionDesc": "使用复合弓",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 41000301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 261,
+        "GroupId": 410003,
+        "OptionDesc": "驻足欣赏",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 41000302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 262,
+        "GroupId": 510001,
+        "OptionDesc": "步入斗兽场中央",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 51000102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 263,
+        "GroupId": 510001,
+        "OptionDesc": "赶紧离开这里",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 51000101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 264,
+        "GroupId": 510005,
+        "OptionDesc": "先发制人（<color=#b73a3a>小概率成功</color>）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 51000501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 265,
+        "GroupId": 510005,
+        "OptionDesc": "静待时机",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 51000502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 1
+    },
+    {
+        "Id": 266,
+        "GroupId": 9200102,
+        "OptionDesc": "优先击倒邪教成员",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 267,
+        "GroupId": 9200102,
+        "OptionDesc": "优先解救被困少女",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920010202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 268,
+        "GroupId": 9200105,
+        "OptionDesc": "带着少女离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920010501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 269,
+        "GroupId": 9200105,
+        "OptionDesc": "让少女接受教徒拥戴",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920010502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 270,
+        "GroupId": 9200202,
+        "OptionDesc": "调查机器人的芯片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920020201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 271,
+        "GroupId": 9200202,
+        "OptionDesc": "调查观星台的系统",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920020202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 272,
+        "GroupId": 9200203,
+        "OptionDesc": "插入新的芯片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920020303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 273,
+        "GroupId": 9200203,
+        "OptionDesc": "取走损坏芯片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920020304,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 274,
+        "GroupId": 9200302,
+        "OptionDesc": "花费时间消灭怪物",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 275,
+        "GroupId": 9200302,
+        "OptionDesc": "摆脱游民赶路",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 276,
+        "GroupId": 9300101,
+        "OptionDesc": "杀死巨树",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 277,
+        "GroupId": 9300101,
+        "OptionDesc": "开导少女",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 278,
+        "GroupId": 9300201,
+        "OptionDesc": "给巨鼠些吃的",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 279,
+        "GroupId": 9300201,
+        "OptionDesc": "举枪对准巨鼠",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 280,
+        "GroupId": 9300201,
+        "OptionDesc": "尝试与它沟通",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930020103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 281,
+        "GroupId": 9300302,
+        "OptionDesc": "「与天选者的相遇」",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 282,
+        "GroupId": 9300302,
+        "OptionDesc": "「天选者消失那天」",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 283,
+        "GroupId": 9300302,
+        "OptionDesc": "合上日记",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930030203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 284,
+        "GroupId": 9400101,
+        "OptionDesc": "接入该游戏机进行游玩",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 285,
+        "GroupId": 9400101,
+        "OptionDesc": "尝试对游戏机进行编程",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 286,
+        "GroupId": 9400201,
+        "OptionDesc": "开枪击退两头感染体",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 287,
+        "GroupId": 9400201,
+        "OptionDesc": "询问科学家在做什么",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 288,
+        "GroupId": 9400301,
+        "OptionDesc": "向她索要酬金",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940030101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 289,
+        "GroupId": 9400301,
+        "OptionDesc": "拒绝她的请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940030102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 290,
+        "GroupId": 9500101,
+        "OptionDesc": "开枪解决感染体",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950010101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 291,
+        "GroupId": 9500101,
+        "OptionDesc": "提高武器输出功率",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950010102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 292,
+        "GroupId": 9500102,
+        "OptionDesc": "查看向导机器人",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 293,
+        "GroupId": 9500102,
+        "OptionDesc": "回收感染体的零件",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950010202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 294,
+        "GroupId": 9500201,
+        "OptionDesc": "看向高大的熊布偶",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950020101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 295,
+        "GroupId": 9500201,
+        "OptionDesc": "看向护士装的人形",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950020102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 296,
+        "GroupId": 9500201,
+        "OptionDesc": "转头看向自己背后",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950020103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 297,
+        "GroupId": 9500302,
+        "OptionDesc": "去小花园调查",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 298,
+        "GroupId": 9500302,
+        "OptionDesc": "去图书馆调查",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950030202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 299,
+        "GroupId": 9500304,
+        "OptionDesc": "随意输入密码",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950030401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 300,
+        "GroupId": 9500304,
+        "OptionDesc": "依靠第六感",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950030402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 1020231,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 301,
+        "GroupId": 9500401,
+        "OptionDesc": "射击大的捕虫袋",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950040101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 302,
+        "GroupId": 9500401,
+        "OptionDesc": "射击小的捕虫袋",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950040102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 303,
+        "GroupId": 9500401,
+        "OptionDesc": "直接射杀猪笼草",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950040103,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 304,
+        "GroupId": 9500502,
+        "OptionDesc": "让他交出物资",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950050201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 305,
+        "GroupId": 9500502,
+        "OptionDesc": "让他带路",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950050202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 306,
+        "GroupId": 9201101,
+        "OptionDesc": "推门而入",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920110101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 307,
+        "GroupId": 9201101,
+        "OptionDesc": "询问少女",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920110102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 308,
+        "GroupId": 9201102,
+        "OptionDesc": "献上祭品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 309,
+        "GroupId": 9201102,
+        "OptionDesc": "摧毁祭坛",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 310,
+        "GroupId": 9301102,
+        "OptionDesc": "直接攻击信号源",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 311,
+        "GroupId": 9301102,
+        "OptionDesc": "不动声色",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 312,
+        "GroupId": 9401101,
+        "OptionDesc": "前进",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940110101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 313,
+        "GroupId": 9401101,
+        "OptionDesc": "歇息",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940110102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 314,
+        "GroupId": 9401102,
+        "OptionDesc": "观察四周",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940110201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 315,
+        "GroupId": 9401102,
+        "OptionDesc": "使用武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940110202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 316,
+        "GroupId": 9401103,
+        "OptionDesc": "献上「双眼」",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 940110301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9017
+        ],
+        "OptionItemCount": [
+            2
+        ]
+    },
+    {
+        "Id": 317,
+        "GroupId": 9401103,
+        "OptionDesc": "撕下巨画",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940110302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 318,
+        "GroupId": 9201202,
+        "OptionDesc": "协助黑衣人",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 319,
+        "GroupId": 9201202,
+        "OptionDesc": "从正面进入圣殿",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 320,
+        "GroupId": 9201203,
+        "OptionDesc": "用拳开路",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 321,
+        "GroupId": 9201203,
+        "OptionDesc": "朝天鸣枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 322,
+        "GroupId": 9201207,
+        "OptionDesc": "退出圣殿",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 323,
+        "GroupId": 9201207,
+        "OptionDesc": "开枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920120702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 324,
+        "GroupId": 9301201,
+        "OptionDesc": "解救羔羊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930120101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 325,
+        "GroupId": 9301201,
+        "OptionDesc": "捉住羔羊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930120102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 326,
+        "GroupId": 9301202,
+        "OptionDesc": "花钱买下羔羊",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 930120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 327,
+        "GroupId": 9301202,
+        "OptionDesc": "拿出武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 328,
+        "GroupId": 9301207,
+        "OptionDesc": "伊甸园",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930120701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 329,
+        "GroupId": 9301207,
+        "OptionDesc": "毒蛇",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930120702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 330,
+        "GroupId": 9401203,
+        "OptionDesc": "出示信物",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 940120301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9020,
+            9021
+        ],
+        "OptionItemCount": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 331,
+        "GroupId": 9401203,
+        "OptionDesc": "拒绝交出",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940120302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 332,
+        "GroupId": 9301302,
+        "OptionDesc": "射击怪物",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 333,
+        "GroupId": 9301302,
+        "OptionDesc": "继续观察",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 334,
+        "GroupId": 9401301,
+        "OptionDesc": "答应帮忙",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940130101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 335,
+        "GroupId": 9401301,
+        "OptionDesc": "留下武器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940130102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 336,
+        "GroupId": 9401302,
+        "OptionDesc": "拿出「血液样本」",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 940130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9023
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 337,
+        "GroupId": 9401302,
+        "OptionDesc": "尝试自己制备",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 338,
+        "GroupId": 9501101,
+        "OptionDesc": "调查雕塑区",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950110101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 339,
+        "GroupId": 9501101,
+        "OptionDesc": "调查画廊",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950110102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 340,
+        "GroupId": 9501107,
+        "OptionDesc": "准备战斗",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950110701,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 341,
+        "GroupId": 9501107,
+        "OptionDesc": "使用工作证",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 950110702,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9024
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 342,
+        "GroupId": 9301402,
+        "OptionDesc": "接受挑战",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930140201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 343,
+        "GroupId": 9301402,
+        "OptionDesc": "拒绝挑战",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930140202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 344,
+        "GroupId": 9401402,
+        "OptionDesc": "打招呼",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940140201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 345,
+        "GroupId": 9401402,
+        "OptionDesc": "询问出口",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940140202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 346,
+        "GroupId": 9401403,
+        "OptionDesc": "想学",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 940140301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 347,
+        "GroupId": 9401403,
+        "OptionDesc": "不想学",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940140302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 348,
+        "GroupId": 9501202,
+        "OptionDesc": "发起挑战",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950120201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 349,
+        "GroupId": 9501202,
+        "OptionDesc": "拒绝挑战",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 950120202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 350,
+        "GroupId": 9201302,
+        "OptionDesc": "寻找虚空商人",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920130201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 351,
+        "GroupId": 9201302,
+        "OptionDesc": "寻找异界通讯点",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920130202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 352,
+        "GroupId": 9201304,
+        "OptionDesc": "支付芯片",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 920130401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 353,
+        "GroupId": 9201304,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920130402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 354,
+        "GroupId": 301802,
+        "OptionDesc": "接受请求",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30180201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 355,
+        "GroupId": 301802,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 30180202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 356,
+        "GroupId": 9401501,
+        "OptionDesc": "开枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940150101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 357,
+        "GroupId": 9401501,
+        "OptionDesc": "保护机器",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940150102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 358,
+        "GroupId": 9001501,
+        "OptionDesc": "进入裂痕",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900150101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 359,
+        "GroupId": 9001501,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900150102,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 360,
+        "GroupId": 9001503,
+        "OptionDesc": "查询关键变量",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900150301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 361,
+        "GroupId": 9001503,
+        "OptionDesc": "查询出口",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900150302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 362,
+        "GroupId": 9001601,
+        "OptionDesc": "尝试启动",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900160101,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9034
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 363,
+        "GroupId": 9001602,
+        "OptionDesc": "开枪",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900160201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 364,
+        "GroupId": 9001602,
+        "OptionDesc": "尝试沟通",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900160202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 365,
+        "GroupId": 9001705,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900170501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 366,
+        "GroupId": 9001705,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900170502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 367,
+        "GroupId": 30802,
+        "OptionDesc": "谨慎观察",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 3080201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2005
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 368,
+        "GroupId": 30802,
+        "OptionDesc": "冒险进入",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 3080202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9031
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "GroupId": 30802,
+        "OptionDesc": "离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3080203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 370,
+        "GroupId": 30804,
+        "OptionDesc": "拒绝",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 3080401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 371,
+        "GroupId": 50302,
+        "OptionDesc": "拿出秘钥",
+        "OptionType": 1,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 5030201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            2005,
+            9005
+        ],
+        "OptionItemCount": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 372,
+        "GroupId": 80102,
+        "OptionDesc": "拉住洁塔薇",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 8010201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9035
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 373,
+        "GroupId": 9001904,
+        "OptionDesc": "休整状态（装备位置调整）",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900190401,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 374,
+        "GroupId": 9001904,
+        "OptionDesc": "直接出发",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 900190402,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 375,
+        "GroupId": 9002002,
+        "OptionDesc": "检查邀请函",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900200201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9032,
+            9033
+        ],
+        "OptionItemCount": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 376,
+        "GroupId": 9002002,
+        "OptionDesc": "交出邀请函",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 900200202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9032
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 377,
+        "GroupId": 9002002,
+        "OptionDesc": "交出一些算力单元",
+        "OptionType": 1,
+        "OptionItemType": 1,
+        "OptionNextStepGroupId": 900200203,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            96189
+        ],
+        "OptionItemCount": [
+            100
+        ]
+    },
+    {
+        "Id": 378,
+        "GroupId": 9201403,
+        "OptionDesc": "完全品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140301,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 379,
+        "GroupId": 9201403,
+        "OptionDesc": "劣等品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140302,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 380,
+        "GroupId": 9201403,
+        "OptionDesc": "残缺品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140303,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 381,
+        "GroupId": 9201406,
+        "OptionDesc": "完全品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140601,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 382,
+        "GroupId": 9201406,
+        "OptionDesc": "劣等品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140602,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 383,
+        "GroupId": 9201406,
+        "OptionDesc": "残缺品",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 920140603,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 384,
+        "GroupId": 9301502,
+        "OptionDesc": "放入骰子",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 930150201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9037
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    },
+    {
+        "Id": 385,
+        "GroupId": 9301502,
+        "OptionDesc": "转身离开",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 930150202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 386,
+        "GroupId": 9401602,
+        "OptionDesc": "捧起鲜花",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940160201,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 387,
+        "GroupId": 9401602,
+        "OptionDesc": "打扫周围",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940160202,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 388,
+        "GroupId": 9401605,
+        "OptionDesc": "收起照片",
+        "OptionType": 3,
+        "OptionItemType": 0,
+        "OptionNextStepGroupId": 940160501,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0
+    },
+    {
+        "Id": 389,
+        "GroupId": 9401605,
+        "OptionDesc": "拿出另一半照片",
+        "OptionType": 2,
+        "OptionItemType": 2,
+        "OptionNextStepGroupId": 940160502,
+        "OptionCondition": 0,
+        "OptionShowCondition": 0,
+        "QuantumEffectShowType": 0,
+        "OptionItemId": [
+            9038
+        ],
+        "OptionItemCount": [
+            1
+        ]
+    }
+]

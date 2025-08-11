@@ -1,0 +1,651 @@
+[
+    {
+        "Id": 1,
+        "NpcId": 1111002,
+        "Name": "苏菲亚",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D08.png",
+        "SmartPutDownBlock": 100,
+        "TextStageEnter": [
+            "指挥官，要一起合作吗？"
+        ],
+        "TextStageSettle": [
+            "一次完美的合作。"
+        ],
+        "TextRefreshBlock": [
+            "...还没有做出决定吗。",
+            "谨慎一些确实不容易出错。"
+        ],
+        "TextChooseBlock": [
+            "苏菲亚也觉得这里不错。",
+            "指挥官选择了这里吗？"
+        ],
+        "TextMoveBlock": [
+            "嗯......确实难以抉择。",
+            "要试试放在那里吗？"
+        ],
+        "TextRotateBlock": [
+            "...眼睛有点花。",
+            "它也在“跳舞”吗。"
+        ],
+        "TextCancelBlock": [
+            "唔，这里不合适吗。",
+            "嗯，那就试试别的地方吧。"
+        ],
+        "TextFail": [
+            "下次会做得更好，再来。"
+        ]
+    },
+    {
+        "Id": 2,
+        "NpcId": 1261003,
+        "Name": "回音",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D010.png",
+        "SmartPutDownBlock": 80,
+        "TextStageEnter": [
+            "让我们规划的庙会变得井井有条。"
+        ],
+        "TextStageSettle": [
+            "太好了！我就知道你一定可以。"
+        ],
+        "TextRefreshBlock": [
+            "指挥官还没有做好决定吗？",
+            "无法做出选择吗？让我思考一下。"
+        ],
+        "TextChooseBlock": [
+            "这个吗？嗯，我也觉得很合适。",
+            "这里.......的确是更好的选择。"
+        ],
+        "TextMoveBlock": [
+            "该放在哪里好呢，让我想想......",
+            "要试试看放在这里吗？"
+        ],
+        "TextRotateBlock": [
+            "唉？好吧，那就再转一次。",
+            "我也认为这样更加合理。"
+        ],
+        "TextCancelBlock": [
+            "这样啊......那还是换一个吧。",
+            "觉得不合适吗？"
+        ],
+        "TextFail": [
+            "我做了复盘记录，要一起看看吗？"
+        ]
+    },
+    {
+        "Id": 3,
+        "NpcId": 1021004,
+        "Name": "露西亚",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D09.png",
+        "SmartPutDownBlock": 60,
+        "TextStageEnter": [
+            "嗯，我们会携手走过每一年的春天。"
+        ],
+        "TextStageSettle": [
+            "胜利是我们之间的誓言，指挥官。"
+        ],
+        "TextRefreshBlock": [
+            "嗯……我也在思考怎么选择。",
+            "我们先试着迈出一步。"
+        ],
+        "TextChooseBlock": [
+            "这类规划果然是指挥官更精通。",
+            "我也看中了这个模块。"
+        ],
+        "TextMoveBlock": [
+            "正在向目标地点移动。",
+            "我们的目的地一致，指挥官。"
+        ],
+        "TextRotateBlock": [
+            "原来如此，还有这种方式……",
+            "要是能拆开会不会更好？"
+        ],
+        "TextCancelBlock": [
+            "规划模块已回收，指挥官。",
+            "好，让我们重新规划。"
+        ],
+        "TextFail": [
+            "和预期有些偏差，我们再来一次。"
+        ]
+    },
+    {
+        "Id": 4,
+        "NpcId": 1011004,
+        "Name": "里",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D01.png",
+        "SmartPutDownBlock": 40,
+        "TextStageEnter": [
+            "在我们规划的庙会上迎接新年吧。"
+        ],
+        "TextStageSettle": [
+            "今年…也是在你身边的一年。"
+        ],
+        "TextRefreshBlock": [
+            "谨慎的选择确实需要仔细的思考。",
+            "重头来过有时候也是合适的战略。"
+        ],
+        "TextChooseBlock": [
+            "相信你自己的判断就好。",
+            "这个位置我也很喜欢。"
+        ],
+        "TextMoveBlock": [
+            "嗯……要放在这里吗？",
+            "我们还有很多时间思考。"
+        ],
+        "TextRotateBlock": [
+            "模块原来可以这样高速转动……",
+            "你好像很喜欢尝试不同的视角。"
+        ],
+        "TextCancelBlock": [
+            "好，那就再试试别的方案吧。",
+            "时间还有很多，我们可以慢慢尝试。"
+        ],
+        "TextFail": [
+            "再试一遍吧，我们还有很多时间。"
+        ]
+    },
+    {
+        "Id": 5,
+        "NpcId": 1031001,
+        "Name": "丽芙",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D07.png",
+        "SmartPutDownBlock": 20,
+        "TextStageEnter": [
+            "这个规划里有你的话……我很高兴。"
+        ],
+        "TextStageSettle": [
+            "好漂亮…我能在花灯上写个愿望吗？"
+        ],
+        "TextRefreshBlock": [
+            "这个也很不错……好难选……",
+            "指挥官想选哪个？"
+        ],
+        "TextChooseBlock": [
+            "啊……我喜欢这个。",
+            "它已经准备好了。"
+        ],
+        "TextMoveBlock": [
+            "嗯......我们可以放在......",
+            "送到更热闹的地方去吧。"
+        ],
+        "TextRotateBlock": [
+            "它让我想起了旋转的雪花。",
+            "地块会被转到头晕吗？"
+        ],
+        "TextCancelBlock": [
+            "那就……趁它不注意。",
+            "变得干净了，有点空荡荡的……"
+        ],
+        "TextFail": [
+            "不行吗？指挥官的规划明明很好…"
+        ]
+    },
+    {
+        "Id": 6,
+        "NpcId": 1171003,
+        "Name": "露娜",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D06.png",
+        "SmartPutDownBlock": 0,
+        "TextStageEnter": [
+            "庙会？我确实……有些怀念。"
+        ],
+        "TextStageSettle": [
+            "这就是你所期待的新年吗？"
+        ],
+        "TextRefreshBlock": [
+            "看得越多，越难抉择。",
+            "犯难了吗？真是的。"
+        ],
+        "TextChooseBlock": [
+            "决定选这个？随便你吧。",
+            "倒是不差的选择……"
+        ],
+        "TextMoveBlock": [
+            "想好放在哪了吗？",
+            "先找到合适的位置。"
+        ],
+        "TextRotateBlock": [
+            "你在做什么……",
+            "转来转去的，真讨厌。"
+        ],
+        "TextCancelBlock": [
+            "不行的话就多试试。",
+            "不需要一条路走到黑……"
+        ],
+        "TextFail": [
+            "我不觉得你的实力只有这种程度。"
+        ]
+    },
+    {
+        "Id": 7,
+        "NpcId": 1521004,
+        "Name": "曲",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D011.png",
+        "SmartPutDownBlock": 100,
+        "TextStageEnter": [
+            "规划庙会之事，与我协作如何？"
+        ],
+        "TextStageSettle": [
+            "你果然没让我失望，再接再厉。"
+        ],
+        "TextRefreshBlock": [
+            "俗话说万事开头难……",
+            "当断不断，必受其乱。"
+        ],
+        "TextChooseBlock": [
+            "眼光不错，值得期待。",
+            "看来，你做了最佳选择。"
+        ],
+        "TextMoveBlock": [
+            "规划的学问，需要我传授你吗？",
+            "摆放的位置绝不能马虎。"
+        ],
+        "TextRotateBlock": [
+            "别把你自己转晕。",
+            "方向性的问题很重要。"
+        ],
+        "TextCancelBlock": [
+            "你有其他更好的选择吧。",
+            "多做尝试，愚公移山。"
+        ],
+        "TextFail": [
+            "祸兮福所依，福兮祸所伏……"
+        ]
+    },
+    {
+        "Id": 8,
+        "NpcId": 1121003,
+        "Name": "库洛姆",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D05.png",
+        "SmartPutDownBlock": 80,
+        "TextStageEnter": [
+            "指挥官，请接受我的合作邀约。"
+        ],
+        "TextStageSettle": [
+            "这是我们共同的荣光。"
+        ],
+        "TextRefreshBlock": [
+            "嗯，的确需要考虑得更加周全。",
+            "看来是值得思考的难题。"
+        ],
+        "TextChooseBlock": [
+            "这会是一个不错的选择。",
+            "赞同。"
+        ],
+        "TextMoveBlock": [
+            "放在那里如何？",
+            "应该放在什么地方？我思考一下。"
+        ],
+        "TextRotateBlock": [
+            "嗯......还好，没有很晕。",
+            "......这也是你的策略之一吗？"
+        ],
+        "TextCancelBlock": [
+            "要考虑换一个选择吗？",
+            "不合适的话还是及时止损比较好。"
+        ],
+        "TextFail": [
+            "道路艰难，但我们不会轻易言弃。"
+        ]
+    },
+    {
+        "Id": 9,
+        "NpcId": 1131002,
+        "Name": "薇拉",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D04.png",
+        "SmartPutDownBlock": 60,
+        "TextStageEnter": [
+            "和你合作？倒也不错。"
+        ],
+        "TextStageSettle": [
+            "真是一场简单的胜利。"
+        ],
+        "TextRefreshBlock": [
+            "这有什么好纠结的？",
+            "你，需要我的建议吗？"
+        ],
+        "TextChooseBlock": [
+            "怎样都好，快点决定吧。",
+            "勉勉强强~"
+        ],
+        "TextMoveBlock": [
+            "选得好，也得摆得好才行。",
+            "别小看，这也是要技巧的。"
+        ],
+        "TextRotateBlock": [
+            "再怎么转也没用的。",
+            "这么喜欢旋转，你是陀螺吗？"
+        ],
+        "TextCancelBlock": [
+            "不行就换，总有用着顺手的。",
+            "再试试吧，我还有一些耐心。"
+        ],
+        "TextFail": [
+            "不怎么熟练呢，再来一次。"
+        ]
+    },
+    {
+        "Id": 10,
+        "NpcId": 1071004,
+        "Name": "卡列尼娜",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D03.png",
+        "SmartPutDownBlock": 40,
+        "TextStageEnter": [
+            "嗯？我…我才没有在等你邀请！！"
+        ],
+        "TextStageSettle": [
+            "完成了——果然很轻松嘛！"
+        ],
+        "TextRefreshBlock": [
+            "还要想多久啊……大、笨、蛋！",
+            "如果你需要建议的话也不是不行……"
+        ],
+        "TextChooseBlock": [
+            "就这样确定了吗？",
+            "还挺聪明的嘛。"
+        ],
+        "TextMoveBlock": [
+            "这里也许不错……那边也可以吧？",
+            "要换一个吗？我是没意见啦。",
+            "真让人纠结！可恶！"
+        ],
+        "TextRotateBlock": [
+            "你有什么特殊兴趣吗！",
+            "是别人的话已经被我揍飞了……！"
+        ],
+        "TextCancelBlock": [
+            "从结构上看可能不太合理……",
+            "要不要换一个试试？"
+        ],
+        "TextFail": [
+            "刚才不算！我们再来一次！"
+        ]
+    },
+    {
+        "Id": 11,
+        "NpcId": 1041003,
+        "Name": "比安卡",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D02.png",
+        "SmartPutDownBlock": 20,
+        "TextStageEnter": [
+            "指挥官阁下，来一起完成吧。"
+        ],
+        "TextStageSettle": [
+            "出色的表现…不愧是指挥官阁下。"
+        ],
+        "TextRefreshBlock": [
+            "还在思考如何抉择吗？",
+            "既然如此，让我也助您一臂之力吧。"
+        ],
+        "TextChooseBlock": [
+            "我也觉得这里十分合适。",
+            "我和指挥官阁下看法一致。"
+        ],
+        "TextMoveBlock": [
+            "那么，您的决定会是？",
+            "看起来选择很多。"
+        ],
+        "TextRotateBlock": [
+            "指挥官阁下，您这是要……",
+            "进行适当的调整是合理的。"
+        ],
+        "TextCancelBlock": [
+            "似乎还有其他的选择。",
+            "唔，看来可以另做决定？"
+        ],
+        "TextFail": [
+            "没关系……让我陪您再试一次吧。"
+        ]
+    },
+    {
+        "Id": 12,
+        "NpcId": 1091003,
+        "Name": "艾拉",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D22.png",
+        "SmartPutDownBlock": 0,
+        "TextStageEnter": [
+            "指挥官！快快，活动要开始啦！"
+        ],
+        "TextStageSettle": [
+            "呼，大获成功！不愧是指挥官。"
+        ],
+        "TextRefreshBlock": [
+            "不用想那么多，先选一个试试吧！",
+            "噢，很不错的选择！"
+        ],
+        "TextChooseBlock": [
+            "决定了就放下去吧。",
+            "锁定了画面中心！"
+        ],
+        "TextMoveBlock": [
+            "要在哪里落笔呢？",
+            "嗯…构图确实是很困难。"
+        ],
+        "TextRotateBlock": [
+            "呜啊…好像看到了抽象派画面…",
+            "指挥官！再怎么转装饰都不会变的！"
+        ],
+        "TextCancelBlock": [
+            "优秀作品都是反复修改出来的呢。",
+            "好~草稿擦除。"
+        ],
+        "TextFail": [
+            "没关系，我们换个创意再试一次！"
+        ]
+    },
+    {
+        "Id": 13,
+        "NpcId": 1571003,
+        "Name": "诺安",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D31.png",
+        "SmartPutDownBlock": 100,
+        "TextStageEnter": [
+            "当然，我在等你，指挥官。"
+        ],
+        "TextStageSettle": [
+            "好，接下来……你应该有空了吧？"
+        ],
+        "TextRefreshBlock": [
+            "有时，运气也很重要。",
+            "这个不错，是个机会。"
+        ],
+        "TextChooseBlock": [
+            "嗯……选这个啊……",
+            "我也认为这很不错。"
+        ],
+        "TextMoveBlock": [
+            "我们要不要跟它一起出去走走？",
+            "嗯？我在看你思考时的表情。"
+        ],
+        "TextRotateBlock": [
+            "换个方向……好，这样更融洽了。",
+            "嗯……"
+        ],
+        "TextCancelBlock": [
+            "合格的商人要学会及时止损。",
+            "看来你有更好的方案了。"
+        ],
+        "TextFail": [
+            "再试试吧，嗯，我们一起。"
+        ]
+    },
+    {
+        "Id": 14,
+        "NpcId": 1231002,
+        "Name": "邦比娜塔",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D21.png",
+        "SmartPutDownBlock": 80,
+        "TextStageEnter": [
+            "邦比娜塔，期待您的协力。"
+        ],
+        "TextStageSettle": [
+            "邦比娜塔，好想记住这一天…"
+        ],
+        "TextRefreshBlock": [
+            "指挥官......还没有想好吗？",
+            "嗯......这里会合适吗？"
+        ],
+        "TextChooseBlock": [
+            "这个吗？嗯，邦比娜塔觉得很棒。",
+            "很合适，不愧是指挥官。"
+        ],
+        "TextMoveBlock": [
+            "要换一个地块吗，唔......",
+            "真令人苦恼，应该放在哪里......"
+        ],
+        "TextRotateBlock": [
+            "转起来......好像在跳舞的样子呢。",
+            "唔，邦比娜塔好像有点头晕......"
+        ],
+        "TextCancelBlock": [
+            "需、需要换一个吗？嗯，好的。",
+            "邦比娜塔......也觉得可以换一下呢。"
+        ],
+        "TextFail": [
+            "抱歉，邦比娜塔不太擅长这个…"
+        ]
+    },
+    {
+        "Id": 15,
+        "NpcId": 1081004,
+        "Name": "渡边",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D29.png",
+        "SmartPutDownBlock": 60,
+        "TextStageEnter": [
+            "能跟你再一次携手协作，也不错。"
+        ],
+        "TextStageSettle": [
+            "你的指挥总是让人印象深刻。"
+        ],
+        "TextRefreshBlock": [
+            "需要我给点建议吗？",
+            "不必担心那么多，相信自己。"
+        ],
+        "TextChooseBlock": [
+            "这个位置不错。",
+            "这样规划就不会出错。"
+        ],
+        "TextMoveBlock": [
+            "要搬到别的位置吗？",
+            "移动营地也是有技巧的。"
+        ],
+        "TextRotateBlock": [
+            "停，停下，不要转了…",
+            "咳，我是说你的旋转速度可以慢一点。"
+        ],
+        "TextCancelBlock": [
+            "了解，那就搬去别的地方吧。",
+            "没关系，返工也是常事。"
+        ],
+        "TextFail": [
+            "我知道你不会轻易放弃。"
+        ]
+    },
+    {
+        "Id": 16,
+        "NpcId": 1141003,
+        "Name": "罗塞塔",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D012.png",
+        "SmartPutDownBlock": 40,
+        "TextStageEnter": [
+            "有兴趣一起试试新的规划吗？"
+        ],
+        "TextStageSettle": [
+            "指挥官果然是幸运的象征。"
+        ],
+        "TextRefreshBlock": [
+            "慢慢来，我相信你的决定。",
+            "指挥官一定有深谋远虑。"
+        ],
+        "TextChooseBlock": [
+            "想选这个？嗯，一定会带来好运的。",
+            "这个吗？我相信你的判断。"
+        ],
+        "TextMoveBlock": [
+            "唔……有更恰当的安排吗？",
+            "放在哪里好呢……"
+        ],
+        "TextRotateBlock": [
+            "唔，这也是一种训练吗？",
+            "稍微有点头晕。"
+        ],
+        "TextCancelBlock": [
+            "看来还有更合适的呢。",
+            "嗯，换一个新的会更好。"
+        ],
+        "TextFail": [
+            "没关系，我们一起跨过这个障碍！"
+        ]
+    },
+    {
+        "Id": 17,
+        "NpcId": 1051004,
+        "Name": "七实",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D013.png",
+        "SmartPutDownBlock": 20,
+        "TextStageEnter": [
+            "七实想和指挥官试试新的计划！"
+        ],
+        "TextStageSettle": [
+            "好耶，继续向前冲！"
+        ],
+        "TextRefreshBlock": [
+            "嗯……七实也觉得很难选呢。",
+            "七实已经跃跃欲试啦。"
+        ],
+        "TextChooseBlock": [
+            "选这里吗？七实也觉得很合适！",
+            "决定这一块吗？英雄所见略同！"
+        ],
+        "TextMoveBlock": [
+            "哼哼，放在哪里好呢？",
+            "这里吗，还是那里？"
+        ],
+        "TextRotateBlock": [
+            "呜哇，脑袋晕乎乎的。",
+            "呃啊，小，小星星……"
+        ],
+        "TextCancelBlock": [
+            "一起试试另一个吧。",
+            "欸嘿！指挥官发现更好的选择了！"
+        ],
+        "TextFail": [
+            "不算不算，就当是热身了！"
+        ]
+    },
+    {
+        "Id": 18,
+        "NpcId": 1021004,
+        "Name": "露西亚",
+        "Body": "Assets/Product/Texture/Image/UiTemple/UiTemple3D09.png",
+        "SmartPutDownBlock": 60,
+        "TextStageEnter": [
+            "让我留在你身边吧，指挥官。"
+        ],
+        "TextStageSettle": [
+            "我可以…拍一张你和花灯照片吗？"
+        ],
+        "TextRefreshBlock": [
+            "我们有了新的选择。",
+            "这个机会也很不错。"
+        ],
+        "TextChooseBlock": [
+            "准备进入下阶段规划。",
+            "嗯，我会跟随指挥官的选择。"
+        ],
+        "TextMoveBlock": [
+            "我猜，指挥官的目标点是那里。",
+            "看来你已经计划好了。"
+        ],
+        "TextRotateBlock": [
+            "这样会变得更合适一些。",
+            "好，那就再转一次。"
+        ],
+        "TextCancelBlock": [
+            "规划模块已回收，指挥官。",
+            "好，让我们重新规划。"
+        ],
+        "TextFail": [
+            "我们在一起就不会失败，再来。"
+        ]
+    }
+]

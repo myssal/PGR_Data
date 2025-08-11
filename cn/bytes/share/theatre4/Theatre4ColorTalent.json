@@ -1,0 +1,3018 @@
+[
+    {
+        "Id": 1,
+        "Name": "测试",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Desc": "测试",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1001,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 10,
+        "Name": "<color=#A42623>持续增伤</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Desc": "每5秒，额外伤害加成+15%，上限75%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 10,
+        "EffectGroupId": 1001,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "定时",
+            "增伤"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "<color=#A42623>必杀强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianghua2.png",
+        "Desc": "每5秒，下次造成的必杀伤害提高60%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 11,
+        "EffectGroupId": 1002,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "必杀",
+            "增伤"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "<color=#A42623>三消增伤</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Desc": "3消时，额外伤害加成+15%，上限75%，持续8秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 12,
+        "EffectGroupId": 1003,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "三消",
+            "增伤"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "<color=#A42623>定时补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTime.png",
+        "Desc": "每隔5秒，随机获得6颗同色信号球",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 13,
+        "EffectGroupId": 1004,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 14,
+        "Name": "<color=#A42623>属性增伤</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifuA1.png",
+        "Desc": "每秒对周边敌人造成攻击力*1200%的属性伤害",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 14,
+        "EffectGroupId": 1005,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 15,
+        "Name": "<color=#A42623>换防补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSSS1.png",
+        "Desc": "每次出场时，获得12颗信号球",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 15,
+        "EffectGroupId": 1006,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 16,
+        "Name": "<color=#A42623>换防强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png",
+        "Desc": "每次切人，额外伤害加成+15%，上限75%，持续10秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 16,
+        "EffectGroupId": 1007,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "轮切",
+            "增伤"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "<color=#A42623>入场增伤</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Yongyechaohexin1.png",
+        "Desc": "入场时，额外伤害加成+50%，加成效果每5秒-10%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 17,
+        "EffectGroupId": 1008,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "入场",
+            "增伤"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 18,
+        "Name": "<color=#A42623>冷却缩短</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lianghexin1.png",
+        "Desc": "3消时，后台其他成员的切换冷却时间-5秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 18,
+        "EffectGroupId": 1009,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "三消",
+            "切人冷却"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 19,
+        "Name": "<color=#A42623>入场伤害</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3yongyechaodazhao1.png",
+        "Desc": "入场时，对场上所有敌人造成【轮切次数】*攻击力*5000%的真实伤害",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 19,
+        "EffectGroupId": 1010,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "轮切",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 20,
+        "Name": "<color=#A42623>进攻·湮灭强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R32BS1.png",
+        "Desc": "队伍内每存在1名进攻型/湮灭型，全队攻击力+50%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1011,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "职业",
+            "攻击加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 21,
+        "Name": "<color=#A42623>独狼强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Desc": "队伍内仅有1名角色时，攻击力+200%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1012,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "单角色",
+            "攻击加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 22,
+        "Name": "<color=#A42623>攻击强化I</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon6.png",
+        "Desc": "攻击力+20%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1013,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 23,
+        "Name": "<color=#A42623>攻击强化Ⅱ</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon6.png",
+        "Desc": "攻击力+35%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1014,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 24,
+        "Name": "<color=#A42623>属性强化I</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon5.png",
+        "Desc": "全属性伤害+20%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1015,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 25,
+        "Name": "<color=#A42623>属性强化Ⅱ</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon5.png",
+        "Desc": "全属性伤害+35%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1016,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 26,
+        "Name": "<color=#A42623>以牙还牙</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32141.png",
+        "Desc": "造成伤害时，附加已损失生命值*1000%的属性伤害，冷却2秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 26,
+        "EffectGroupId": 1017,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "生命值",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "<color=#A42623>背水一战</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32131.png",
+        "Desc": "造成伤害时，消耗最大生命值10%，附加消耗值*120的属性伤害，冷却2秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 27,
+        "EffectGroupId": 1018,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗生命",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "<color=#A42623>生命加成I</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png",
+        "Desc": "生命值+20%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 28,
+        "EffectGroupId": 1019,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 29,
+        "Name": "<color=#A42623>生命加成Ⅱ</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png",
+        "Desc": "生命值+30%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 29,
+        "EffectGroupId": 1020,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 30,
+        "Name": "<color=#A42623>受击回转</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon2.png",
+        "Desc": "受到伤害时，生命值上限+800点，上限5000点，冷却0.5秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 30,
+        "EffectGroupId": 1021,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "受到伤害",
+            "生命加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 31,
+        "Name": "<color=#A42623>属性反击</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png",
+        "Desc": "造成伤害时，附加1800%最大生命值的属性伤害，冷却1秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 31,
+        "EffectGroupId": 1022,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "生命值",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 32,
+        "Name": "<color=#A42623>燃血绝杀</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13041.png",
+        "Desc": "触发QTE时，消耗QTE角色最大生命值90%，对场上所有敌人造成消耗值*10000%的属性伤害",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 32,
+        "EffectGroupId": 1023,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 33,
+        "Name": "<color=#A42623>能量转化</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon3.png",
+        "Desc": "释放必杀时，消耗全部能量值，并增加【消耗值*20】的生命值上限，上限5000点",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 33,
+        "EffectGroupId": 1024,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "必杀能量",
+            "生命加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 34,
+        "Name": "<color=#A42623>瞬击破盾</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinghua2.png",
+        "Desc": "触发QTE时，场上所有敌人全属性抗性-30%，持续10秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1025,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "抗性削减"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 35,
+        "Name": "<color=#A42623>瞬击护防</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerSupportIcon1.png",
+        "Desc": "触发QTE时，场上角色受到伤害-50%，持续5秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1026,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "伤害减免"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 36,
+        "Name": "<color=#A42623>属性减抗I</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon024.png",
+        "Desc": "场上所有敌人全属性抗性-20%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1027,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "抗性削减"
+        ],
+        "TagBgColors": [
+            "A42623"
+        ]
+    },
+    {
+        "Id": 37,
+        "Name": "<color=#A42623>属性减抗Ⅱ</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon024.png",
+        "Desc": "场上所有敌人全属性抗性-35%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1028,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "抗性削减"
+        ],
+        "TagBgColors": [
+            "A42623"
+        ]
+    },
+    {
+        "Id": 38,
+        "Name": "<color=#A42623>受击护盾</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon027.png",
+        "Desc": "受到伤害超过当前生命值30%时，固定为30%，冷却10秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1029,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "伤害减免"
+        ],
+        "TagBgColors": [
+            "A42623"
+        ]
+    },
+    {
+        "Id": 39,
+        "Name": "<color=#A42623>伤害减免I</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon019.png",
+        "Desc": "角色受到伤害-5%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1030,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 40,
+        "Name": "<color=#A42623>伤害减免Ⅱ</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon019.png",
+        "Desc": "角色受到伤害-10%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1031,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 41,
+        "Name": "<color=#A42623>霸体护盾</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool14.png",
+        "Desc": "持有护盾时，获得霸体效果",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1032,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "免疫受击"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 42,
+        "Name": "<color=#A42623>装甲强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Desc": "队伍内每存在1名装甲型，全队生命值+30%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1033,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "职业",
+            "生命加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 43,
+        "Name": "<color=#A42623>独狼加成</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png",
+        "Desc": "队伍内仅有1名角色时，生命值+200%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1034,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "单角色",
+            "生命加成"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 44,
+        "Name": "<color=#A42623>紧急防御</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJiegoujiagu.png",
+        "Desc": "生命值低于50%时，获得已损失生命值50%的护盾值",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1035,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "生命值",
+            "护盾"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 45,
+        "Name": "<color=#A42623>高效疗愈</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Desc": "治疗效率+50%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 45,
+        "EffectGroupId": 1036,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 46,
+        "Name": "<color=#A42623>受击治疗</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon003.png",
+        "Desc": "受到伤害时，在5秒内恢复自身12%最大生命值，冷却6秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 46,
+        "EffectGroupId": 1037,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "生命恢复"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 47,
+        "Name": "<color=#A42623>瞬击治愈</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon009.png",
+        "Desc": "触发QTE时，恢复全队20%最大生命值。冷却8秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 47,
+        "EffectGroupId": 1038,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "全体恢复"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 48,
+        "Name": "<color=#A42623>生命炸弹</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Desc": "受到治疗时，对场上所有敌人造成治疗量9000%的真实伤害",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 48,
+        "EffectGroupId": 1039,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "治疗",
+            "附加伤害"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 49,
+        "Name": "<color=#A42623>生命续航</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool4.png",
+        "Desc": "每2秒，恢复自身3%最大生命值",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 49,
+        "EffectGroupId": 1040,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "自动恢复",
+            "生命值"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 50,
+        "Name": "<color=#A42623>出击补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon008.png",
+        "Desc": "战斗开始时，获得3组3消球",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1041,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "信号球"
+        ],
+        "TagBgColors": [
+            "A42623"
+        ]
+    },
+    {
+        "Id": 51,
+        "Name": "<color=#A42623>信号重构</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon7.png",
+        "Desc": "三消后，重排信号球，冷却4秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1042,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "信号球",
+            "排序"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 52,
+        "Name": "<color=#A42623>瞬击补给</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png",
+        "Desc": "触发QTE时，场上角色获得6颗同色信号球",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1043,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "信号球"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 53,
+        "Name": "<color=#A42623>瞬击充能</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon013.png",
+        "Desc": "触发QTE时，场上角色必杀能量恢复30%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1044,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "QTE",
+            "必杀能量"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 54,
+        "Name": "<color=#A42623>自动补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon016.png",
+        "Desc": "信号球少于3个时，获得4组3球，冷却8秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1045,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "信号球"
+        ],
+        "TagBgColors": [
+            "A42623"
+        ]
+    },
+    {
+        "Id": 55,
+        "Name": "<color=#A42623>辅助·增幅强化</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataSSS1.png",
+        "Desc": "队伍内每存在1名辅助/增幅型，QTE和切人冷却-2秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1046,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "职业",
+            "冷却降低"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 56,
+        "Name": "<color=#A42623>独狼减伤</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Desc": "队伍内仅有1名角色时，伤害减免+20%",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1047,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "单角色",
+            "伤害减免"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 57,
+        "Name": "<color=#A42623>换防重置</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconChange.png",
+        "Desc": "切人时，重置后台所有角色的切人冷却，冷却8秒",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1048,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "轮切",
+            "冷却重置"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 58,
+        "Name": "<color=#A42623>闪避补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Desc": "闪避时，获得1颗信号球",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1049,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "闪避",
+            "信号球"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 59,
+        "Name": "<color=#A42623>闪避充能</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
+        "Desc": "每次闪避恢复30%必杀能量",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1050,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "闪避",
+            "必杀能量"
+        ],
+        "TagBgColors": [
+            "A42623",
+            "A42623"
+        ]
+    },
+    {
+        "Id": 60,
+        "Name": "<color=#A42623>自动超算</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTime.png",
+        "Desc": "每12秒进入一次超算",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1051,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 61,
+        "Name": "<color=#A42623>战力跃升</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/UiTheatre4IconLv2501.png",
+        "Desc": "在军事支援等级2、5、8、11、14、17、20级节点各额外抽取2个专属天赋",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 49,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 101,
+        "Name": "<color=#4682B4>建筑施工：供能站</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon08.png",
+        "Desc": "供能站：预览十字方向2格内区域内容，每天永久提供1施工许可",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 0,
+        "EffectGroupId": 1101,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "视野",
+            "施工许可"
+        ],
+        "TagBgColors": [
+            "4682B4",
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 102,
+        "Name": "<color=#4682B4>节约能耗</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Desc": "建造<color=#4682B4>供能站</color>的<color=#4682B4>施工许可消耗下降1</color>点",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1102,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            101
+        ]
+    },
+    {
+        "Id": 103,
+        "Name": "<color=#4682B4>探照荒土</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet2YangSkillzhudong06.png",
+        "Desc": "创建<color=#4682B4>供能站</color>时，<color=#4682B4>自动探索</color>距离供能站最近的<color=#4682B4>1个区域</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1103,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "自动探索"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            101
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "<color=#4682B4>拓荒工程</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3BatSkillzhudong06.png",
+        "Desc": "每天开始时，<color=#4682B4>自动探索</color>供能站范围内的<color=#4682B4>1个区域</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1104,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "自动探索"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            101
+        ]
+    },
+    {
+        "Id": 105,
+        "Name": "<color=#4682B4>建筑施工：岗哨塔</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon09.png",
+        "Desc": "岗哨塔：随机清理范围内1个危险区域",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 0,
+        "EffectGroupId": 1105,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 106,
+        "Name": "<color=#4682B4>定时移除</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon014.png",
+        "Desc": "<color=#4682B4>岗哨塔</color>生效后<color=#4682B4>自行移除</color>，<color=#4682B4>获得2施工许可</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1106,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "自毁",
+            "返还消耗"
+        ],
+        "TagBgColors": [
+            "4682B4",
+            "4682B4"
+        ],
+        "ParentNode": [
+            105,
+            113
+        ]
+    },
+    {
+        "Id": 107,
+        "Name": "<color=#4682B4>歼敌行动</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Desc": "<color=#4682B4>岗哨塔</color>清理范围内<color=#4682B4>所有危险区域</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1107,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "大范围",
+            "清理敌人"
+        ],
+        "TagBgColors": [
+            "4682B4",
+            "4682B4"
+        ],
+        "ParentNode": [
+            105
+        ]
+    },
+    {
+        "Id": 108,
+        "Name": "<color=#4682B4>特化工事</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHamlet2.png",
+        "Desc": "<color=#4682B4>岗哨塔能对首领生效</color>，但只扣除首领30%当前生命值",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1108,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "首领",
+            "生命削减"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            105
+        ]
+    },
+    {
+        "Id": 109,
+        "Name": "<color=#4682B4>建筑施工：物资库</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon10.png",
+        "Desc": "物资库：影响范围内区域的颜色资源+150",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 109,
+        "EffectGroupId": 1109,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "额外资源"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 110,
+        "Name": "<color=#4682B4>简易仓库</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Desc": "建造<color=#4682B4>物资库</color>的<color=#4682B4>施工许可消耗下降1</color>点",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1110,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            109
+        ]
+    },
+    {
+        "Id": 111,
+        "Name": "<color=#4682B4>战利加成</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Desc": "清理<color=#4682B4>物资库范围</color>内的<color=#4682B4>危险区域</color>，<color=#4682B4>三色倍率+2</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1111,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "三色倍率"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            109,
+            105
+        ]
+    },
+    {
+        "Id": 112,
+        "Name": "<color=#4682B4>仓储收益</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian2.png",
+        "Desc": "每次<color=#4682B4>探索物资库范围</color>内的区域，<color=#4682B4>累计3次</color>后，<color=#4682B4>三色倍率+2</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1112,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "三色倍率"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            109
+        ]
+    },
+    {
+        "Id": 113,
+        "Name": "<color=#4682B4>修造增益</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3XiaoSkillbeidong03.png",
+        "Desc": "<color=#4682B4>每天开始</color>时，获得的<color=#4682B4>施工许可+1</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1113,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "施工许可"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 114,
+        "Name": "<color=#4682B4>产能返还</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo3.png",
+        "Desc": "<color=#4682B4>建筑影响范围内</color>，区域<color=#4682B4>改造返还1点施工许可</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1114,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "施工许可"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            101,
+            105,
+            109,
+            120,
+            122,
+            123,
+            124
+        ]
+    },
+    {
+        "Id": 115,
+        "Name": "<color=#4682B4>高效生产</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaS1.png",
+        "Desc": "当前<color=#4682B4>地区建筑</color>，每回合都可以<color=#4682B4>产出30银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1115,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "银币",
+            "建筑数量"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 116,
+        "Name": "<color=#4682B4>太阳能废弃</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool19.png",
+        "Desc": "当前<color=#4682B4>地区建筑</color>，每回合都可以<color=#4682B4>产出1施工许可</color>",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1116,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "施工许可",
+            "建筑数量"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 117,
+        "Name": "<color=#4682B4>弱化</color>",
+        "Desc": "fightevent未正式-在建筑范围内作战，降低危险区域10/20/30%伤害、提升危险区域10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1117,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            101,
+            105,
+            109,
+            120
+        ]
+    },
+    {
+        "Id": 118,
+        "Name": "<color=#4682B4>弱化2</color>",
+        "Desc": "fightevent未正式-在建筑范围内作战，降低危险区域10/20/30%伤害、提升危险区域10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1118,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            101,
+            105,
+            109,
+            120
+        ]
+    },
+    {
+        "Id": 119,
+        "Name": "<color=#4682B4>弱化3</color>",
+        "Desc": "fightevent未正式-在建筑范围内作战，降低危险区域10/20/30%伤害、提升危险区域10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1119,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            101,
+            105,
+            109,
+            120
+        ]
+    },
+    {
+        "Id": 120,
+        "Name": "<color=#4682B4>建筑施工：居住区</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon11.png",
+        "Desc": "居住区：(地区唯一)本地区<color=#4682B4>每回合行动力+2</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 0,
+        "EffectGroupId": 1120,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "行动点"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 121,
+        "Name": "<color=#4682B4>战利回收</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon001.png",
+        "Desc": "<color=#4682B4>清理危险区域</color>后，恢复<color=#4682B4>1点施工许可</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1121,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "施工许可",
+            "清理敌人"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            105,
+            113
+        ]
+    },
+    {
+        "Id": 122,
+        "Name": "<color=#4682B4>区域改造：基建</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan2.png",
+        "Desc": "<color=#4682B4>非蓝色</color>区域改成<color=#4682B4>蓝色</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 122,
+        "EffectGroupId": 1122,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "颜色修改"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 123,
+        "Name": "<color=#4682B4>区域改造：军事</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong2.png",
+        "Desc": "<color=#4682B4>非红色</color>区域改成<color=#4682B4>红色</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 123,
+        "EffectGroupId": 1123,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "颜色修改"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 124,
+        "Name": "<color=#4682B4>区域改造：经济</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang2.png",
+        "Desc": "<color=#4682B4>非黄色</color>区域改成<color=#4682B4>黄色</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 124,
+        "EffectGroupId": 1124,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "颜色修改"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 125,
+        "Name": "<color=#4682B4>同携改造</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon011.png",
+        "Desc": "区域改造时，会同步将<color=#4682B4>十字范围</color>内的1个非对应颜色区域<color=#4682B4>改成对应颜色</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1125,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "颜色修改"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            122,
+            123,
+            124
+        ]
+    },
+    {
+        "Id": 126,
+        "Name": "<color=#4682B4>军事能效</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan2.png",
+        "Desc": "<color=#4682B4>区域改造：军事</color>的<color=#4682B4>消耗下降1</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1126,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            123
+        ]
+    },
+    {
+        "Id": 127,
+        "Name": "<color=#4682B4>基建能效</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong2.png",
+        "Desc": "<color=#4682B4>区域改造：基建</color>的<color=#4682B4>消耗下降1</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1127,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            122
+        ]
+    },
+    {
+        "Id": 128,
+        "Name": "<color=#4682B4>经济能效</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang2.png",
+        "Desc": "<color=#4682B4>区域改造：经济</color>的<color=#4682B4>消耗下降1</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1128,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            124
+        ]
+    },
+    {
+        "Id": 129,
+        "Name": "<color=#4682B4>改建：移平废墟</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4KalieninaExqiu1.png",
+        "Desc": "移除1个废墟",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 129,
+        "EffectGroupId": 1129,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理地图"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 130,
+        "Name": "<color=#4682B4>建材回收</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet2BeiSkillbeidong04.png",
+        "Desc": "每<color=#4682B4>移除1个废墟</color>，可以获得<color=#4682B4>50银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1130,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "银币"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            129
+        ]
+    },
+    {
+        "Id": 131,
+        "Name": "<color=#4682B4>同步清拆</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon011.png",
+        "Desc": "移除时，同步<color=#4682B4>移除十字范围</color>内随机1个<color=#4682B4>废墟</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1131,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "额外移除"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            129
+        ]
+    },
+    {
+        "Id": 132,
+        "Name": "<color=#4682B4>一视同仁</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongZhongliyindao.png",
+        "Desc": "现在<color=#4682B4>低危区</color>和<color=#4682B4>高危区</color>也<color=#4682B4>视作废墟</color>，但消耗+2",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1132,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            129
+        ]
+    },
+    {
+        "Id": 133,
+        "Name": "<color=#4682B4>改造削弱</color>",
+        "Desc": "fightevent未正式-改造后，区域&相邻区域危险区域伤害降低10/20/30%、10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1133,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            122,
+            123,
+            124,
+            129
+        ]
+    },
+    {
+        "Id": 134,
+        "Name": "<color=#4682B4>改造削弱</color>",
+        "Desc": "fightevent未正式-改造后，区域&相邻区域危险区域伤害降低10/20/30%、10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1134,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            122,
+            123,
+            124,
+            129
+        ]
+    },
+    {
+        "Id": 135,
+        "Name": "<color=#4682B4>改造削弱</color>",
+        "Desc": "fightevent未正式-改造后，区域&相邻区域危险区域伤害降低10/20/30%、10/20/30%受到的伤害",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1135,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "ParentNode": [
+            122,
+            123,
+            124,
+            129
+        ]
+    },
+    {
+        "Id": 136,
+        "Name": "<color=#4682B4>建材返还</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihexin1.png",
+        "Desc": "<color=#4682B4>区域改造</color>后，下1次<color=#4682B4>建筑施工返还1点施工许可</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1136,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "返还消耗"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 137,
+        "Name": "<color=#4682B4>强化2废弃</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool6.png",
+        "Desc": "所有区域产出的颜色天赋提升5点",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1137,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "资源提升"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 138,
+        "Name": "<color=#4682B4>生产增益</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/lanse003.png",
+        "Desc": "<color=#4682B4>区域改造</color>时，额外<color=#4682B4>获得</color>1次受影响区域的<color=#4682B4>颜色资源</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1138,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "颜色资源"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ],
+        "ParentNode": [
+            122,
+            123,
+            124,
+            129
+        ]
+    },
+    {
+        "Id": 139,
+        "Name": "<color=#4682B4>临时基地</color>",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEventIcon18.png",
+        "Desc": "可建造同时具有供能站、岗哨塔和物资库的功能的临时基地",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 0,
+        "EffectGroupId": 48,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 3,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人"
+        ],
+        "TagBgColors": [
+            "4682B4"
+        ]
+    },
+    {
+        "Id": 201,
+        "Name": "<color=#9A6A16>援助：军事补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3YalishaA1.png",
+        "Desc": "<color=#9A6A16>召唤军事补给处</color>，召唤消耗逐步提升(每天重置)，获取此天赋<color=#9A6A16>银币+400</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 126,
+        "EffectGroupId": 1201,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "军事商店",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 202,
+        "Name": "<color=#9A6A16>援助：基建补给</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3YalishaA1.png",
+        "Desc": "<color=#9A6A16>召唤基建补给处</color>，召唤消耗逐步提升(每天重置)，获取此天赋<color=#9A6A16>银币+400</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 1,
+        "RelationGroup": 127,
+        "EffectGroupId": 1202,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "基建商店",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 203,
+        "Name": "<color=#9A6A16>首单酬宾</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon028.png",
+        "Desc": "新发现的物资商人，<color=#9A6A16>首个商品免费</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1203,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "免费商品"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 204,
+        "Name": "<color=#9A6A16>永久降价</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "Desc": "所有<color=#9A6A16>商品7折</color>优惠",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1204,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "商店折扣"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 205,
+        "Name": "<color=#9A6A16>贵宾待遇</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconChange.png",
+        "Desc": "<color=#9A6A16>解锁商品刷新</color>，且首次刷新不消耗银币",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1205,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "商品刷新"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 206,
+        "Name": "<color=#9A6A16>行动：代理作战</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BuouxiongS1.png",
+        "Desc": "现在可以消耗银币<color=#9A6A16>执行代理作战</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1206,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "雇佣敌人",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 207,
+        "Name": "<color=#9A6A16>敏捷行动</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Desc": "<color=#9A6A16>代理作战</color>的银币<color=#9A6A16>消耗-20%</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1207,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "消耗降低"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 208,
+        "Name": "<color=#9A6A16>高额回报</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Desc": "执行<color=#9A6A16>代理作战</color>后，每回合<color=#9A6A16>利息+25</color>（上限叠加1次）",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1208,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "雇佣",
+            "利息"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 209,
+        "Name": "<color=#9A6A16>利息加成</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaSS1.png",
+        "Desc": "利息<color=#9A6A16>上限+10</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1209,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "利息上限"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 210,
+        "Name": "<color=#9A6A16>差额补正</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet2YangSkillbeidong04.png",
+        "Desc": "<color=#9A6A16>未满利息</color>结算时，<color=#9A6A16>银币+5</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1211,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "利息",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 211,
+        "Name": "<color=#9A6A16>满息奖励</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill01.png",
+        "Desc": "<color=#9A6A16>满利息</color>结算时，<color=#9A6A16>利息上限+2</color>，上限20",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 128,
+        "EffectGroupId": 1212,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "利息上限"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 212,
+        "Name": "<color=#9A6A16>工程基金</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon018.png",
+        "Desc": "每<color=#9A6A16>消耗</color>1点<color=#9A6A16>施工许可</color>，<color=#9A6A16>银币+50</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1213,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "施工许可",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 213,
+        "Name": "<color=#9A6A16>建造补贴</color>",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3XiaoSkillbeidong04.png",
+        "Desc": "每次<color=#9A6A16>执行建造操作、改造操作</color>时，<color=#9A6A16>银币+50</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1214,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "建造改造",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 214,
+        "Name": "<color=#9A6A16>专精奖赏</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Pod4.png",
+        "Desc": "<color=#9A6A16>探索黄色</color>格时<color=#9A6A16>银币+30</color>，<color=#9A6A16>下次触发额外+20</color>，翻到非黄色格重置叠加层数",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1215,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "连续探索",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 215,
+        "Name": "<color=#9A6A16>高悬赏目标</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BlackrockA1.png",
+        "Desc": "地图会<color=#9A6A16>生成</color>1个<color=#9A6A16>小库洛洛</color>(击败获得银币×99，特别报名函×1，普通资料箱×1)",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1216,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "特殊敌人"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 216,
+        "Name": "<color=#9A6A16>跨界入侵</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3A2hexin1.png",
+        "Desc": "所有<color=#9A6A16>低危区敌人</color>替换为：<color=#9A6A16>神秘库洛洛</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1217,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "特殊敌人"
+        ],
+        "TagBgColors": [
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 217,
+        "Name": "<color=#9A6A16>购物基金</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifuS1.png",
+        "Desc": "进入<color=#9A6A16>新商店</color>时，<color=#9A6A16>银币+80</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1218,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "商店",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 218,
+        "Name": "<color=#9A6A16>贸易奖励</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4LiangSSS1.png",
+        "Desc": "<color=#9A6A16>每日结算</color>时，获得本局<color=#9A6A16>购物次数×10的银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1219,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "购物次数",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 219,
+        "Name": "<color=#9A6A16>大笔补贴</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaSS1.png",
+        "Desc": "获得<color=#9A6A16>200银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1220,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 220,
+        "Name": "<color=#9A6A16>赏金猎人</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Desc": "每<color=#9A6A16>消灭</color>一个<color=#9A6A16>危险区域</color>，<color=#9A6A16>银币+30</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1221,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 221,
+        "Name": "<color=#9A6A16>小笔补贴</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaS1.png",
+        "Desc": "获得<color=#9A6A16>100银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1222,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 222,
+        "Name": "<color=#9A6A16>熟练赏金猎人</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Desc": "每<color=#9A6A16>清理</color>一个<color=#9A6A16>危险区域</color>，<color=#9A6A16>银币+100</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1224,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 223,
+        "Name": "<color=#9A6A16>高额专精奖赏</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaSS1.png",
+        "Desc": "利息<color=#9A6A16>上限+15</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1225,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 224,
+        "Name": "<color=#9A6A16>额度拓展</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill01.png",
+        "Desc": "<color=#9A6A16>未满利息</color>结算时，<color=#9A6A16>银币+8</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1226,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "利息",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 225,
+        "Name": "<color=#9A6A16>高额差额补正</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill01.png",
+        "Desc": "<color=#9A6A16>满利息</color>结算时，<color=#9A6A16>利息上限+4</color>，上限20",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1227,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 226,
+        "Name": "<color=#9A6A16>高额满息奖励</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/lanse06.png",
+        "Desc": "<color=#9A6A16>探索黄色</color>区域<color=#9A6A16>银币+45</color>，<color=#9A6A16>下次触发额外+30</color>，探索非黄色区域重置层数",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1228,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "连续探索",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 227,
+        "Name": "<color=#9A6A16>高额购物基金</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifuS1.png",
+        "Desc": "进入<color=#9A6A16>新商店</color>时，<color=#9A6A16>银币+120</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1229,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "商店",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 228,
+        "Name": "<color=#9A6A16>中等赏金猎人</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Desc": "每<color=#9A6A16>清理</color>一个<color=#9A6A16>危险区域</color>，<color=#9A6A16>银币+45</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1230,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "清理敌人",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 229,
+        "Name": "<color=#9A6A16>金矿开采</color>",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill04.png",
+        "Desc": "<color=#9A6A16>每天</color>获得<color=#9A6A16>233银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1231,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 230,
+        "Name": "<color=#9A6A16>行动：代理作战</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BuouxiongS1.png",
+        "Desc": "现在可以消耗银币<color=#9A6A16>执行代理作战</color>",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 1232,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": [],
+        "Tags": [
+            "雇佣敌人",
+            "银币"
+        ],
+        "TagBgColors": [
+            "9A6A16",
+            "9A6A16"
+        ]
+    },
+    {
+        "Id": 231,
+        "Name": "<color=#9A6A16>特大补贴</color>",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaSS1.png",
+        "Desc": "获得<color=#9A6A16>600银币</color>",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 125,
+        "EffectGroupId": 1233,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 232,
+        "Name": "<color=#9A6A16>天降之力</color>",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/UiTheatre4IconLv2502.png",
+        "Desc": "立即在地图空白区域开启一个商店格",
+        "Type": 2,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 50,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 1,
+        "ColorType": 2,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1001,
+        "Name": "攻击·1",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+8%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21001,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1002,
+        "Name": "攻击·2",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+11%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21002,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1003,
+        "Name": "攻击·3",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+14%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21003,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1004,
+        "Name": "攻击·4",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+19%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21004,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1005,
+        "Name": "攻击·5",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+23%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21005,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1006,
+        "Name": "攻击·6",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+26%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21006,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1007,
+        "Name": "攻击·7",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+29%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21007,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1008,
+        "Name": "攻击·8",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+31%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21008,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1009,
+        "Name": "攻击·9",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+34%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21009,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1010,
+        "Name": "生命值",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png",
+        "Desc": "血量+300",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21010,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1011,
+        "Name": "防御",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3TwentyoneS1.png",
+        "Desc": "防御+100",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21011,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1012,
+        "Name": "减抗·1",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3A2SS1.png",
+        "Desc": "敌方全属性抗性-12%（同名支援效果不叠加）",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21012,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1013,
+        "Name": "减抗·2",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3A2SS1.png",
+        "Desc": "敌方全属性抗性-18%（同名支援效果不叠加）",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21013,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1014,
+        "Name": "减抗·3",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3A2SS1.png",
+        "Desc": "敌方全属性抗性-20%（同名支援效果不叠加）",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21014,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    },
+    {
+        "Id": 1015,
+        "Name": "攻击·10",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bulijitehexin1.png",
+        "Desc": "攻击+38%",
+        "Type": 1,
+        "ShowLevel": 0,
+        "IsSkill": 0,
+        "RelationGroup": 0,
+        "EffectGroupId": 21015,
+        "JoinSettle": 0,
+        "JoinAdventureSettle": 0,
+        "ColorType": 1,
+        "Condition": 0,
+        "Param": []
+    }
+]

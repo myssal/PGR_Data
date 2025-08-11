@@ -1,0 +1,896 @@
+[
+    {
+        "Id": 1,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30001,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "调优Ⅰ",
+        "Desc": "生命值+5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点"
+    },
+    {
+        "Id": 2,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30003,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅰ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "NeedStrengthenPoint": 24,
+        "PointType": 3,
+        "EffectGroupId": 30015,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "协同Ⅰ",
+        "Desc": "商店折扣位置+1",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "Note": "大节点",
+        "PreId": [
+            2
+        ]
+    },
+    {
+        "Id": 4,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30002,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅰ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30007,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅱ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            4
+        ]
+    },
+    {
+        "Id": 6,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30004,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅱ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            5
+        ]
+    },
+    {
+        "Id": 7,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30005,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "防壁Ⅰ",
+        "Desc": "防御+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            6
+        ]
+    },
+    {
+        "Id": 8,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30006,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "拓扑Ⅰ",
+        "Desc": "初始招募能量+1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree004.png",
+        "Note": "中节点",
+        "PreId": [
+            7
+        ]
+    },
+    {
+        "Id": 9,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30008,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "再构Ⅰ",
+        "Desc": "生命值+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30009,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "防壁Ⅱ",
+        "Desc": "防御+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            9
+        ]
+    },
+    {
+        "Id": 11,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30010,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅲ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            10
+        ]
+    },
+    {
+        "Id": 12,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30011,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅲ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            11
+        ]
+    },
+    {
+        "Id": 13,
+        "NeedStrengthenPoint": 24,
+        "PointType": 3,
+        "EffectGroupId": 30012,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "嵌刻Ⅰ",
+        "Desc": "演算开始时，额外获得一件随机藏品",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree002.png",
+        "Note": "大节点",
+        "PreId": [
+            12
+        ]
+    },
+    {
+        "Id": 14,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30013,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "调优Ⅱ",
+        "Desc": "生命值+5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点",
+        "PreId": [
+            2
+        ]
+    },
+    {
+        "Id": 15,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30014,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "对抗Ⅰ",
+        "Desc": "攻击力+5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10001.png",
+        "Note": "小节点",
+        "PreId": [
+            14
+        ]
+    },
+    {
+        "Id": 16,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30016,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅳ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30018,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅴ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            16
+        ]
+    },
+    {
+        "Id": 18,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30019,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "防壁Ⅲ",
+        "Desc": "防御+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            16
+        ]
+    },
+    {
+        "Id": 19,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30020,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "再构Ⅱ",
+        "Desc": "生命值+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            18
+        ]
+    },
+    {
+        "Id": 20,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30021,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "迭代Ⅰ",
+        "Desc": "全属性伤害+15%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "Note": "中节点",
+        "PreId": [
+            19
+        ]
+    },
+    {
+        "Id": 21,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30022,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "调优Ⅲ",
+        "Desc": "生命值+5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点",
+        "PreId": [
+            20
+        ]
+    },
+    {
+        "Id": 22,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30023,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅳ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            21
+        ]
+    },
+    {
+        "Id": 23,
+        "NeedStrengthenPoint": 24,
+        "PointType": 3,
+        "EffectGroupId": 0,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "部署Ⅰ",
+        "Desc": "进入演算后，首场战斗额外掉落一个随机装备箱",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree003.png",
+        "Note": "大节点",
+        "PreId": [
+            22
+        ]
+    },
+    {
+        "Id": 24,
+        "NeedStrengthenPoint": 24,
+        "PointType": 3,
+        "EffectGroupId": 30017,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "负荷Ⅰ",
+        "Desc": "所有成员装备负重+1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree005.png",
+        "Note": "大节点",
+        "PreId": [
+            16
+        ]
+    },
+    {
+        "Id": 25,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30025,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅴ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            24
+        ]
+    },
+    {
+        "Id": 26,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30026,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "外溢Ⅰ",
+        "Desc": "额外伤害加成+5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Note": "小节点",
+        "PreId": [
+            25
+        ]
+    },
+    {
+        "Id": 27,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30027,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "渗透Ⅵ",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30028,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "卷积Ⅵ",
+        "Desc": "初始算力单元+50",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            27
+        ]
+    },
+    {
+        "Id": 29,
+        "NeedStrengthenPoint": 8,
+        "PointType": 1,
+        "EffectGroupId": 30029,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "再构Ⅲ",
+        "Desc": "生命值+500",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            28
+        ]
+    },
+    {
+        "Id": 30,
+        "NeedStrengthenPoint": 16,
+        "PointType": 2,
+        "EffectGroupId": 30030,
+        "Condition": 0,
+        "Page": 1,
+        "Name": "拓扑Ⅱ",
+        "Desc": "初始招募能量+1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree004.png",
+        "Note": "中节点",
+        "PreId": [
+            29
+        ]
+    },
+    {
+        "Id": 31,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30101,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "调优Ⅰ",
+        "Desc": "生命值+3%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点"
+    },
+    {
+        "Id": 32,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30103,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅰ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            31
+        ]
+    },
+    {
+        "Id": 33,
+        "NeedStrengthenPoint": 9,
+        "PointType": 3,
+        "EffectGroupId": 30115,
+        "Condition": 1020255,
+        "Page": 2,
+        "Name": "熵变Ⅰ",
+        "Desc": "【绯质核心】事件出现权重提高",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill01.png",
+        "Note": "大节点",
+        "PreId": [
+            32
+        ]
+    },
+    {
+        "Id": 34,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30102,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅰ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            31
+        ]
+    },
+    {
+        "Id": 35,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30107,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅱ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            34
+        ]
+    },
+    {
+        "Id": 36,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30104,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅱ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            35
+        ]
+    },
+    {
+        "Id": 37,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30105,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "访问Ⅰ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            36
+        ]
+    },
+    {
+        "Id": 38,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30106,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "调优Ⅳ",
+        "Desc": "生命值+8%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree004.png",
+        "Note": "中节点",
+        "PreId": [
+            37
+        ]
+    },
+    {
+        "Id": 39,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30108,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "再构Ⅰ",
+        "Desc": "生命值+250",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            32
+        ]
+    },
+    {
+        "Id": 40,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30109,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "访问Ⅱ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            39
+        ]
+    },
+    {
+        "Id": 41,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30110,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅲ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            40
+        ]
+    },
+    {
+        "Id": 42,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30111,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅲ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            41
+        ]
+    },
+    {
+        "Id": 43,
+        "NeedStrengthenPoint": 9,
+        "PointType": 3,
+        "EffectGroupId": 30112,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "迭代Ⅰ",
+        "Desc": "装备箱免费刷新次数+1",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree002.png",
+        "Note": "大节点",
+        "PreId": [
+            42
+        ]
+    },
+    {
+        "Id": 44,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30113,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "调优Ⅱ",
+        "Desc": "生命值+3%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点",
+        "PreId": [
+            32
+        ]
+    },
+    {
+        "Id": 45,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30114,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "对抗Ⅰ",
+        "Desc": "攻击力+3%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10001.png",
+        "Note": "小节点",
+        "PreId": [
+            44
+        ]
+    },
+    {
+        "Id": 46,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30116,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅳ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            31
+        ]
+    },
+    {
+        "Id": 47,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30118,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅴ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            46
+        ]
+    },
+    {
+        "Id": 48,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30119,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "访问Ⅲ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32021.png",
+        "Note": "小节点",
+        "PreId": [
+            46
+        ]
+    },
+    {
+        "Id": 49,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30120,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "再构Ⅱ",
+        "Desc": "生命值+250",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            48
+        ]
+    },
+    {
+        "Id": 50,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30121,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "迭代Ⅰ",
+        "Desc": "全属性伤害+10%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "Note": "中节点",
+        "PreId": [
+            49
+        ]
+    },
+    {
+        "Id": 51,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30122,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "调优Ⅲ",
+        "Desc": "生命值+3%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Note": "小节点",
+        "PreId": [
+            50
+        ]
+    },
+    {
+        "Id": 52,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30123,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅳ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            51
+        ]
+    },
+    {
+        "Id": 53,
+        "NeedStrengthenPoint": 9,
+        "PointType": 3,
+        "EffectGroupId": 30131,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "迭代Ⅱ",
+        "Desc": "装备箱付费刷新价格-50%",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree003.png",
+        "Note": "大节点",
+        "PreId": [
+            52
+        ]
+    },
+    {
+        "Id": 54,
+        "NeedStrengthenPoint": 9,
+        "PointType": 3,
+        "EffectGroupId": 30117,
+        "Condition": 1020255,
+        "Page": 2,
+        "Name": "量化Ⅰ",
+        "Desc": "正量化buff持续时间大幅缩短，逆量化buff持续时间大幅延长",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill02.png",
+        "Note": "大节点",
+        "PreId": [
+            46
+        ]
+    },
+    {
+        "Id": 55,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30125,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅴ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            54
+        ]
+    },
+    {
+        "Id": 56,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30126,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "外溢Ⅰ",
+        "Desc": "额外伤害加成+3%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Note": "小节点",
+        "PreId": [
+            55
+        ]
+    },
+    {
+        "Id": 57,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30127,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "渗透Ⅵ",
+        "Desc": "攻击力+30",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Note": "中节点",
+        "PreId": [
+            31
+        ]
+    },
+    {
+        "Id": 58,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30128,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "卷积Ⅵ",
+        "Desc": "初始算力单元+30",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree001.png",
+        "Note": "小节点",
+        "PreId": [
+            57
+        ]
+    },
+    {
+        "Id": 59,
+        "NeedStrengthenPoint": 3,
+        "PointType": 1,
+        "EffectGroupId": 30129,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "再构Ⅲ",
+        "Desc": "生命值+250",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Note": "小节点",
+        "PreId": [
+            58
+        ]
+    },
+    {
+        "Id": 60,
+        "NeedStrengthenPoint": 5,
+        "PointType": 2,
+        "EffectGroupId": 30130,
+        "Condition": 0,
+        "Page": 2,
+        "Name": "再构Ⅳ",
+        "Desc": "生命值+600",
+        "Icon": "Assets/Product/Texture/Image/UiTheatre3/Theatre3StrengthenTree004.png",
+        "Note": "中节点",
+        "PreId": [
+            59
+        ]
+    }
+]

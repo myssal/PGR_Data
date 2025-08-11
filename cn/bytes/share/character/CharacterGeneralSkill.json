@@ -1,0 +1,218 @@
+[
+    {
+        "Id": 1,
+        "Name": "紊乱",
+        "Desc": "引发目标的信息场紊乱，暂时削弱拥有稳态力场的敌人的护盾功能",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeGeneralSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeGeneralSkill01A.png",
+        "FightEventId": 5001,
+        "SkillId": [
+            129216,
+            129221,
+            117417,
+            117421,
+            132317,
+            132321
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "焚烧",
+        "Desc": "将机体装载的压缩氮气更换为新研发的化学原料，优化点燃流程，使其能更轻易地为攻击手段附着火焰，赋予目标持续性伤害",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeBurnSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeBurnSkill01A.png",
+        "FightEventId": 5002,
+        "SkillId": [
+            130211,
+            130217,
+            130221,
+            105517,
+            105518,
+            105521,
+            132217,
+            132221,
+            132201,
+            136321
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "真意斩",
+        "Desc": "在战斗中调整机体的运转流程，以达到短时间内算力集中输出的目的，爆发出超常规威力的攻击，对目标造成伤害。",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeSwordPowerSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeSwordPowerSkill01A.png",
+        "FightEventId": 5004,
+        "SkillId": [
+            124321,
+            135301,
+            135311,
+            135316,
+            135317,
+            135321
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "EnhanceSkillId": [
+            104428,
+            104429,
+            104430
+        ],
+        "EnhanceSkillLevel": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "电束",
+        "Desc": "短时间内释放强大的能量扰乱周围的电场，散布带电粒子，对目标周期性造成伤害",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeThunderShieldSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeThunderShieldSkill01A.png",
+        "FightEventId": 5003,
+        "SkillId": [
+            102611,
+            102616,
+            102617,
+            102621,
+            133316,
+            133317
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "EnhanceSkillId": [
+            107428,
+            107430
+        ],
+        "EnhanceSkillLevel": [
+            9,
+            9
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "覆冰",
+        "Desc": "通过战斗模组迭代后新增的深冷技术，机体可在作战时制造小范围的低温环境。环境内的各项参数随时间变化达到预设数值时，可进一步解锁相应的攻击手段。",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeFreezeSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeFreezeSkill01A.png",
+        "FightEventId": 5005,
+        "SkillId": [
+            121301,
+            121306,
+            121311,
+            121316,
+            121317,
+            121321,
+            131211,
+            131217,
+            131221,
+            153517
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "EnhanceSkillId": [
+            126328,
+            126329,
+            126330
+        ],
+        "EnhanceSkillLevel": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "黯衍",
+        "Desc": "通过新式加速器技术，在强压环境下生成并收集暗粒子，积蓄至临界后释放辐射波，与周围目标产生对消效应。",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeRadiateSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeRadiateSkill01A.png",
+        "FightEventId": 5006,
+        "SkillId": [
+            113401,
+            113416,
+            113417,
+            113421
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0
+        ],
+        "EnhanceSkillId": [
+            102528,
+            102530,
+            108428
+        ],
+        "EnhanceSkillLevel": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "熠光",
+        "Desc": "晶簇聚焦等离子体后，微发射器矩阵在电弧拘束的条件下将其释放，形成“光熠”，能够在短时间内对目标造成大量伤害。",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconTypeLightNoiseSkill01B.png",
+        "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeLightNoiseSkill01A.png",
+        "FightEventId": 5007,
+        "SkillId": [
+            104506,
+            104511,
+            104516,
+            104517,
+            104528
+        ],
+        "SkillLevel": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    }
+]

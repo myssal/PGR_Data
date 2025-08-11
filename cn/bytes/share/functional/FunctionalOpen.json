@@ -1,0 +1,2832 @@
+[
+    {
+        "Id": 1,
+        "Name": "目标",
+        "Priority": 1,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770100
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "预留",
+        "Priority": 2,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 3,
+        "Name": "充值",
+        "Priority": 3,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 4,
+        "Name": "设置",
+        "Priority": 4,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 5,
+        "Name": "签到",
+        "Priority": 4,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770200
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "反馈",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 7,
+        "Name": "福利",
+        "Priority": 5,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 8,
+        "Name": "兑换码",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 9,
+        "Name": "备案号",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 101,
+        "Name": "泛用机体",
+        "Priority": 7,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 102,
+        "Name": "成员-晋升",
+        "Priority": 8,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 103,
+        "Name": "成员-进化",
+        "Priority": 9,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 104,
+        "Name": "成员-技能",
+        "Priority": 10,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 105,
+        "Name": "成员军团",
+        "Priority": 55,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774400
+        ]
+    },
+    {
+        "Id": 106,
+        "Name": "成员-独域机体",
+        "Priority": 10,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8005
+        ]
+    },
+    {
+        "Id": 107,
+        "Name": "成员-技能跃升",
+        "Priority": 11,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 108,
+        "Name": "成员-独域跃迁",
+        "Priority": 11,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 109,
+        "Name": "成员-解放",
+        "Priority": 11,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8001
+        ]
+    },
+    {
+        "Id": 201,
+        "Name": "装备",
+        "Priority": 11,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 202,
+        "Name": "装备-强化",
+        "Priority": 12,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 203,
+        "Name": "装备-共鸣",
+        "Priority": 13,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 204,
+        "Name": "装备-一键强化",
+        "Priority": 14,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770400
+        ]
+    },
+    {
+        "Id": 206,
+        "Name": "装备-一键培养",
+        "Priority": 14,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 207,
+        "Name": "装备目标-推荐",
+        "Priority": 14,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 208,
+        "Name": "装备目标-设定",
+        "Priority": 14,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 209,
+        "Name": "装备-谐振",
+        "Priority": 14,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770405
+        ]
+    },
+    {
+        "Id": 301,
+        "Name": "仓库",
+        "Priority": 15,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 401,
+        "Name": "研发",
+        "Priority": 16,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770402
+        ]
+    },
+    {
+        "Id": 402,
+        "Name": "研发-装备",
+        "Priority": 17,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 403,
+        "Name": "研发-限定/节日活动",
+        "Priority": 17,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770402
+        ]
+    },
+    {
+        "Id": 501,
+        "Name": "任务",
+        "Priority": 18,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 502,
+        "Name": "任务-剧情",
+        "Priority": 19,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 503,
+        "Name": "任务-每日",
+        "Priority": 20,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770500
+        ]
+    },
+    {
+        "Id": 504,
+        "Name": "任务-活动",
+        "Priority": 21,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 505,
+        "Name": "任务-每周",
+        "Priority": 22,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770500
+        ]
+    },
+    {
+        "Id": 601,
+        "Name": "战队",
+        "Priority": 23,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 602,
+        "Name": "战队-烙印（找不到，应该下架了）",
+        "Priority": 24,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862836
+        ]
+    },
+    {
+        "Id": 603,
+        "Name": "战队-成就",
+        "Priority": 25,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 604,
+        "Name": "战队-回顾",
+        "Priority": 26,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 701,
+        "Name": "邮件",
+        "Priority": 27,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 801,
+        "Name": "好友",
+        "Priority": 28,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770700
+        ]
+    },
+    {
+        "Id": 802,
+        "Name": "频道聊天",
+        "Priority": 29,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            6000
+        ]
+    },
+    {
+        "Id": 803,
+        "Name": "频道聊天--世界聊天",
+        "Priority": 29,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770700
+        ]
+    },
+    {
+        "Id": 901,
+        "Name": "基建-基地装备",
+        "Priority": 30,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770800
+        ]
+    },
+    {
+        "Id": 902,
+        "Name": "宿舍",
+        "Priority": 31,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862838
+        ]
+    },
+    {
+        "Id": 903,
+        "Name": "宿舍委托",
+        "Priority": 32,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862838
+        ]
+    },
+    {
+        "Id": 1001,
+        "Name": "常规商店",
+        "Priority": 32,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 1002,
+        "Name": "活动商店",
+        "Priority": 33,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 1003,
+        "Name": "凭据商店-凭据兑换台",
+        "Priority": 34,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 1004,
+        "Name": "累充商店",
+        "Priority": 102,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 1201,
+        "Name": "派遣",
+        "Priority": 35,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771200
+        ]
+    },
+    {
+        "Id": 1301,
+        "Name": "赏金任务（旧活动，维系者前身）",
+        "Priority": 47,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771400
+        ]
+    },
+    {
+        "Id": 1302,
+        "Name": "维系者行动",
+        "Priority": 47,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771400
+        ]
+    },
+    {
+        "Id": 1303,
+        "Name": "指导",
+        "Priority": 110,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            870003
+        ]
+    },
+    {
+        "Id": 1304,
+        "Name": "终焉福音",
+        "Priority": 111,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84101226
+        ]
+    },
+    {
+        "Id": 1305,
+        "Name": "尼尔副本",
+        "Priority": 112,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            5001
+        ]
+    },
+    {
+        "Id": 1306,
+        "Name": "空想环廊",
+        "Priority": 115,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            601000
+        ]
+    },
+    {
+        "Id": 1307,
+        "Name": "追击玩法",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            5001
+        ]
+    },
+    {
+        "Id": 1308,
+        "Name": "节日副本活动",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772250
+        ]
+    },
+    {
+        "Id": 1309,
+        "Name": "白色情人节约会活动",
+        "Priority": 118,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 1310,
+        "Name": "伊甸文化纪",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601200
+        ]
+    },
+    {
+        "Id": 1400,
+        "Name": "信赖度",
+        "Priority": 48,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            773500
+        ]
+    },
+    {
+        "Id": 1401,
+        "Name": "信赖度-档案",
+        "Priority": 49,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            773600
+        ]
+    },
+    {
+        "Id": 1402,
+        "Name": "信赖度-剧情",
+        "Priority": 50,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            773700
+        ]
+    },
+    {
+        "Id": 1403,
+        "Name": "信赖度-礼物",
+        "Priority": 51,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            773800
+        ]
+    },
+    {
+        "Id": 1404,
+        "Name": "信赖度-偶遇",
+        "Priority": 52,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            773900
+        ]
+    },
+    {
+        "Id": 1501,
+        "Name": "自定义控件",
+        "Priority": 46,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774000
+        ]
+    },
+    {
+        "Id": 1601,
+        "Name": "意识营救战",
+        "Priority": 53,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862859
+        ]
+    },
+    {
+        "Id": 1701,
+        "Name": "间章旧闻/角色碎片",
+        "Priority": 35,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774200
+        ]
+    },
+    {
+        "Id": 1800,
+        "Name": "赛利卡补习班",
+        "Priority": 79,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774501
+        ]
+    },
+    {
+        "Id": 1801,
+        "Name": "辅助机教学",
+        "Priority": 80,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8006
+        ]
+    },
+    {
+        "Id": 1802,
+        "Name": "法奥斯评级委员会",
+        "Priority": 79,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774500
+        ]
+    },
+    {
+        "Id": 1803,
+        "Name": "教学数据演习",
+        "Priority": 79,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 1901,
+        "Name": "公会",
+        "Priority": 38,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862840
+        ]
+    },
+    {
+        "Id": 1902,
+        "Name": "公会-创建",
+        "Priority": 38,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 1903,
+        "Name": "公会-加入",
+        "Priority": 38,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 1904,
+        "Name": "拟真围剿",
+        "Priority": 38,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772310
+        ]
+    },
+    {
+        "Id": 2001,
+        "Name": "支援系统",
+        "Priority": 39,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862842
+        ]
+    },
+    {
+        "Id": 2100,
+        "Name": "收藏系统",
+        "Priority": 99,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 2101,
+        "Name": "勋章墙",
+        "Priority": 100,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862844
+        ]
+    },
+    {
+        "Id": 2102,
+        "Name": "聊天铭牌系统",
+        "Priority": 100,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862861
+        ]
+    },
+    {
+        "Id": 2200,
+        "Name": "图鉴系统",
+        "Priority": 101,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774700
+        ]
+    },
+    {
+        "Id": 2300,
+        "Name": "2级菜单",
+        "Priority": 113,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 2400,
+        "Name": "拍照系统",
+        "Priority": 114,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 2500,
+        "Name": "预下载",
+        "Priority": 125,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 3000,
+        "Name": "累计充值",
+        "Priority": 102,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 4000,
+        "Name": "伊甸二型",
+        "Priority": 103,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 4001,
+        "Name": "投票",
+        "Priority": 104,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 5001,
+        "Name": "辅助机",
+        "Priority": 117,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8006
+        ]
+    },
+    {
+        "Id": 6000,
+        "Name": "日历系统【这个要屏蔽，开启条件改成120000，开启改成5004】",
+        "Priority": 123,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            120000
+        ]
+    },
+    {
+        "Id": 8001,
+        "Name": "邀请码分享",
+        "Priority": 105,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10101,
+        "Name": "普通剧情",
+        "Priority": 40,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10102,
+        "Name": "隐藏剧情",
+        "Priority": 41,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771400
+        ]
+    },
+    {
+        "Id": 10103,
+        "Name": "据点模式",
+        "Priority": 35,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771500
+        ]
+    },
+    {
+        "Id": 10201,
+        "Name": "挑战副本",
+        "Priority": 35,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10202,
+        "Name": "挑战-雷蒙盖顿之书",
+        "Priority": 35,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771600
+        ]
+    },
+    {
+        "Id": 10203,
+        "Name": "挑战-幻痛囚笼",
+        "Priority": 35,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862846
+        ]
+    },
+    {
+        "Id": 10204,
+        "Name": "挑战-纷争战区",
+        "Priority": 43,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862848
+        ]
+    },
+    {
+        "Id": 10205,
+        "Name": "诺曼复兴战",
+        "Priority": 116,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            870006
+        ]
+    },
+    {
+        "Id": 10206,
+        "Name": "诺曼复兴战供电站",
+        "Priority": 119,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            870006
+        ]
+    },
+    {
+        "Id": 10300,
+        "Name": "活动简介",
+        "Priority": 44,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10301,
+        "Name": "活动副本",
+        "Priority": 44,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10302,
+        "Name": "协同作战",
+        "Priority": 44,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772000
+        ]
+    },
+    {
+        "Id": 10303,
+        "Name": "活动【质量流失】",
+        "Priority": 44,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772100
+        ]
+    },
+    {
+        "Id": 10304,
+        "Name": "超难关",
+        "Priority": 44,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772200
+        ]
+    },
+    {
+        "Id": 10305,
+        "Name": "试验区",
+        "Priority": 45,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772300
+        ]
+    },
+    {
+        "Id": 10306,
+        "Name": "节日副本活动",
+        "Priority": 46,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772250
+        ]
+    },
+    {
+        "Id": 10307,
+        "Name": "巴别塔",
+        "Priority": 47,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772280
+        ]
+    },
+    {
+        "Id": 10308,
+        "Name": "活动主线",
+        "Priority": 48,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772260
+        ]
+    },
+    {
+        "Id": 10309,
+        "Name": "拟战场域",
+        "Priority": 49,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10310,
+        "Name": "爬塔活动",
+        "Priority": 50,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772290
+        ]
+    },
+    {
+        "Id": 10311,
+        "Name": "挑战-边界公约",
+        "Priority": 44,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774900
+        ]
+    },
+    {
+        "Id": 10312,
+        "Name": "合众战局",
+        "Priority": 51,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8004
+        ]
+    },
+    {
+        "Id": 10313,
+        "Name": "列阵",
+        "Priority": 50,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775000
+        ]
+    },
+    {
+        "Id": 10314,
+        "Name": "外篇旧闻",
+        "Priority": 50,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1007017
+        ]
+    },
+    {
+        "Id": 10315,
+        "Name": "异聚迷宫",
+        "Priority": 50,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84700201
+        ]
+    },
+    {
+        "Id": 10316,
+        "Name": "特训关",
+        "Priority": 51,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775600
+        ]
+    },
+    {
+        "Id": 10317,
+        "Name": "特训关小游戏",
+        "Priority": 51,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10318,
+        "Name": "虚像地平线",
+        "Priority": 52,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775100
+        ]
+    },
+    {
+        "Id": 10319,
+        "Name": "中元节小游戏",
+        "Priority": 53,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10320,
+        "Name": "世界Boss",
+        "Priority": 107,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            5001
+        ]
+    },
+    {
+        "Id": 10321,
+        "Name": "RPG玩法",
+        "Priority": 108,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            5001
+        ]
+    },
+    {
+        "Id": 10322,
+        "Name": "荣耀勋阶",
+        "Priority": 109,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            844001,
+            844002
+        ]
+    },
+    {
+        "Id": 10323,
+        "Name": "中元节副本",
+        "Priority": 54,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10324,
+        "Name": "拼图小游戏",
+        "Priority": 55,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10325,
+        "Name": "角色教学关",
+        "Priority": 56,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774501
+        ]
+    },
+    {
+        "Id": 10326,
+        "Name": "圣诞节小游戏",
+        "Priority": 57,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10327,
+        "Name": "元旦节小游戏",
+        "Priority": 58,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10328,
+        "Name": "对联小游戏",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10329,
+        "Name": "猜拳小游戏",
+        "Priority": 60,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10330,
+        "Name": "模拟作战",
+        "Priority": 61,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775100
+        ]
+    },
+    {
+        "Id": 10331,
+        "Name": "翻牌小游戏",
+        "Priority": 62,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10333,
+        "Name": "翻点拼斗乐",
+        "Priority": 64,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10334,
+        "Name": "剧情投放-晨星剪辑",
+        "Priority": 65,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10335,
+        "Name": "扫雷小游戏",
+        "Priority": 66,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10336,
+        "Name": "骇入玩法",
+        "Priority": 67,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            5001
+        ]
+    },
+    {
+        "Id": 10337,
+        "Name": "改造玩法",
+        "Priority": 68,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775600
+        ]
+    },
+    {
+        "Id": 10338,
+        "Name": "五一刮刮乐",
+        "Priority": 63,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775400
+        ]
+    },
+    {
+        "Id": 10339,
+        "Name": "杀戮无双",
+        "Priority": 69,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10340,
+        "Name": "深蓝战域",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601500
+        ]
+    },
+    {
+        "Id": 10341,
+        "Name": "系列涂装活动",
+        "Priority": 120,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10342,
+        "Name": "战斗通行证",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775500
+        ]
+    },
+    {
+        "Id": 10343,
+        "Name": "双人同行",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8005
+        ]
+    },
+    {
+        "Id": 10345,
+        "Name": "2021-端午玩法",
+        "Priority": 121,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10346,
+        "Name": "2021-拍照玩法",
+        "Priority": 122,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10347,
+        "Name": "超丽芙消消乐",
+        "Priority": 71,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10348,
+        "Name": "音频解谜",
+        "Priority": 72,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10349,
+        "Name": "全服决战",
+        "Priority": 73,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601200
+        ]
+    },
+    {
+        "Id": 10350,
+        "Name": "超限乱斗",
+        "Priority": 59,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601800
+        ]
+    },
+    {
+        "Id": 10351,
+        "Name": "意识营救战-玩法",
+        "Priority": 53,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10352,
+        "Name": "浮点纪实",
+        "Priority": 124,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10353,
+        "Name": "mini改造玩法",
+        "Priority": 68,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775600
+        ]
+    },
+    {
+        "Id": 10401,
+        "Name": "资源副本",
+        "Priority": 33,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10402,
+        "Name": "资源-无1",
+        "Priority": 34,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772500
+        ]
+    },
+    {
+        "Id": 10403,
+        "Name": "资源-无2",
+        "Priority": 36,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772600
+        ]
+    },
+    {
+        "Id": 10404,
+        "Name": "资源-无3",
+        "Priority": 37,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772700
+        ]
+    },
+    {
+        "Id": 10405,
+        "Name": "黄金之涡",
+        "Priority": 54,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774300
+        ]
+    },
+    {
+        "Id": 10406,
+        "Name": "资源-成员特训",
+        "Priority": 38,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10407,
+        "Name": "资源-作战补给",
+        "Priority": 39,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10408,
+        "Name": "资源-军备突破",
+        "Priority": 40,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10409,
+        "Name": "资源-后勤保养",
+        "Priority": 41,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10410,
+        "Name": "资源-螺母大作战",
+        "Priority": 42,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10411,
+        "Name": "资源-战技演习",
+        "Priority": 46,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772800
+        ]
+    },
+    {
+        "Id": 10412,
+        "Name": "资源-辅助加装",
+        "Priority": 47,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            8006
+        ]
+    },
+    {
+        "Id": 10413,
+        "Name": "三消玩法",
+        "Priority": 47,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10414,
+        "Name": "赛跑小游戏",
+        "Priority": 74,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10415,
+        "Name": "骰子小游戏",
+        "Priority": 75,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10416,
+        "Name": "异构阵线",
+        "Priority": 76,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10417,
+        "Name": "奖券小游戏",
+        "Priority": 77,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10418,
+        "Name": "预热打地鼠小游戏",
+        "Priority": 78,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10419,
+        "Name": "预热接头霸王",
+        "Priority": 79,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10450,
+        "Name": "资源商店",
+        "Priority": 106,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            771000
+        ]
+    },
+    {
+        "Id": 109001,
+        "Name": "成员特训 RS-2",
+        "Priority": 81,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109002,
+        "Name": "成员特训 RS-3",
+        "Priority": 82,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109003,
+        "Name": "成员特训 RS-4",
+        "Priority": 83,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 109101,
+        "Name": "作战补给 AE-2",
+        "Priority": 84,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109102,
+        "Name": "作战补给 AE-3",
+        "Priority": 85,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109103,
+        "Name": "作战补给 AE-4",
+        "Priority": 86,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 109201,
+        "Name": "军备突破 AB-2",
+        "Priority": 87,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109202,
+        "Name": "军备突破 AB-3",
+        "Priority": 88,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109203,
+        "Name": "军备突破 AB-4",
+        "Priority": 89,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 109301,
+        "Name": "后勤保养 LM-2",
+        "Priority": 90,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109302,
+        "Name": "后勤保养 LM-3",
+        "Priority": 91,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109303,
+        "Name": "后勤保养 LM-4",
+        "Priority": 92,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 109401,
+        "Name": "螺母大作战 NF-2",
+        "Priority": 93,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109402,
+        "Name": "螺母大作战 NF-3",
+        "Priority": 94,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109403,
+        "Name": "螺母大作战 NF-4",
+        "Priority": 95,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 109501,
+        "Name": "战技演习 BE-2",
+        "Priority": 96,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9501
+        ]
+    },
+    {
+        "Id": 109502,
+        "Name": "战技演习 BE-3",
+        "Priority": 97,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9502
+        ]
+    },
+    {
+        "Id": 109503,
+        "Name": "战技演习 BE-4",
+        "Priority": 98,
+        "Hint": 0,
+        "Type": 2,
+        "FunctionType": 1,
+        "Condition": [
+            9503
+        ]
+    },
+    {
+        "Id": 10420,
+        "Name": "宣叙妄响",
+        "Priority": 70,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1002036
+        ]
+    },
+    {
+        "Id": 10421,
+        "Name": "末日玩法",
+        "Priority": 71,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10422,
+        "Name": "SP枢纽作战",
+        "Priority": 72,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601800
+        ]
+    },
+    {
+        "Id": 10423,
+        "Name": "大逃杀",
+        "Priority": 73,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10424,
+        "Name": "塔防",
+        "Priority": 66,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10425,
+        "Name": "众志行征",
+        "Priority": 74,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10426,
+        "Name": "黄金矿工",
+        "Priority": 80,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10428,
+        "Name": "周挑战任务",
+        "Priority": 81,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10430,
+        "Name": "太鼓达人",
+        "Priority": 81,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10427,
+        "Name": "极域协作",
+        "Priority": 73,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10431,
+        "Name": "心象风景（正逆塔）",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10432,
+        "Name": "活动研发",
+        "Priority": 16,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770402
+        ]
+    },
+    {
+        "Id": 10433,
+        "Name": "多维演绎-厄愿潮声",
+        "Priority": 70,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1005045
+        ]
+    },
+    {
+        "Id": 10434,
+        "Name": "盛夏心绪",
+        "Priority": 123,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30404
+        ]
+    },
+    {
+        "Id": 10435,
+        "Name": "新手入门",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770100
+        ]
+    },
+    {
+        "Id": 10436,
+        "Name": "本我回廊",
+        "Priority": 1,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            10436000
+        ]
+    },
+    {
+        "Id": 10437,
+        "Name": "映像潜渊",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            84601800
+        ]
+    },
+    {
+        "Id": 10439,
+        "Name": "光辉同行",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10438,
+        "Name": "调色板战争",
+        "Priority": 47,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            860742
+        ]
+    },
+    {
+        "Id": 10440,
+        "Name": "序列公约",
+        "Priority": 124,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            841207
+        ]
+    },
+    {
+        "Id": 10441,
+        "Name": "亚卡数界",
+        "Priority": 125,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10442,
+        "Name": "涂装名投票活动",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10443,
+        "Name": "露记大排档",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10444,
+        "Name": "异构阵线",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10445,
+        "Name": "云雀歌未眠",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775600
+        ]
+    },
+    {
+        "Id": 10446,
+        "Name": "行星环游记",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10447,
+        "Name": "战双BVB",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10448,
+        "Name": "三头犬玩法",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10449,
+        "Name": "能源回收作战",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10451,
+        "Name": "历战映射",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            412
+        ]
+    },
+    {
+        "Id": 10452,
+        "Name": "日程助理",
+        "Priority": 123,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30402
+        ]
+    },
+    {
+        "Id": 10453,
+        "Name": "矩阵循生",
+        "Priority": 70,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1020005
+        ]
+    },
+    {
+        "Id": 10454,
+        "Name": "夏日幸运星",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10455,
+        "Name": "箱庭棋域",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10456,
+        "Name": "连线小游戏",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10457,
+        "Name": "肉鸽模拟经营",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10458,
+        "Name": "魔方嘉年华DLC",
+        "Priority": 125,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10459,
+        "Name": "言灵玩法",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10460,
+        "Name": "周年活动主界面",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30404
+        ]
+    },
+    {
+        "Id": 10461,
+        "Name": "消灭方块",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10462,
+        "Name": "周年回顾",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            862417
+        ]
+    },
+    {
+        "Id": 10463,
+        "Name": "新岁游园",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10464,
+        "Name": "多人联机",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800,
+            770700
+        ]
+    },
+    {
+        "Id": 10465,
+        "Name": "联界枢行",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10466,
+        "Name": "缘绘敦煌",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10467,
+        "Name": "Boss跃升",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10468,
+        "Name": "万事连线",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10469,
+        "Name": "机制玩法",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10470,
+        "Name": "寒境曙光",
+        "Priority": 70,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1020681
+        ]
+    },
+    {
+        "Id": 10471,
+        "Name": "高难boss继承玩法",
+        "Priority": 2,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            772280
+        ]
+    },
+    {
+        "Id": 10472,
+        "Name": "新版庙会",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10473,
+        "Name": "背包整理",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10474,
+        "Name": "数据演习",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774700,
+            774501
+        ]
+    },
+    {
+        "Id": 10475,
+        "Name": "2048休闲",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 10476,
+        "Name": "数织预热关",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10477,
+        "Name": "首席FPS",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10478,
+        "Name": "轮椅手册",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770303
+        ]
+    },
+    {
+        "Id": 10479,
+        "Name": "归途之旅",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10480,
+        "Name": "策划精选关",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10481,
+        "Name": "幸运租客",
+        "Priority": 130,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10482,
+        "Name": "音乐主题预热关",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10483,
+        "Name": "孤胆枪手",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10484,
+        "Name": "随机场景",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10485,
+        "Name": "打牌",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10486,
+        "Name": "新翻牌猜大小",
+        "Priority": 99,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10487,
+        "Name": "合版本活动",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            870003
+        ]
+    },
+    {
+        "Id": 10488,
+        "Name": "新矿区",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10489,
+        "Name": "自选卡池系统Gacha",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1050115
+        ]
+    },
+    {
+        "Id": 10490,
+        "Name": "吃豆人玩法",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10491,
+        "Name": "西部魔影",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
+        ]
+    },
+    {
+        "Id": 10492,
+        "Name": "悬赏挑战",
+        "Priority": 1,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774700
+        ]
+    },
+    {
+        "Id": 10493,
+        "Name": "联机共斗",
+        "Priority": 40,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
+        ]
+    },
+    {
+        "Id": 20000,
+        "Name": "空花本体",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            1050141
+        ]
+    },
+    {
+        "Id": 200001,
+        "Name": "空花商店街",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001002
+        ]
+    },
+    {
+        "Id": 200002,
+        "Name": "空花咖啡厅",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001001
+        ]
+    },
+    {
+        "Id": 200003,
+        "Name": "空花宿舍",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001003
+        ]
+    },
+    {
+        "Id": 200004,
+        "Name": "空花历程",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001004
+        ]
+    },
+    {
+        "Id": 200005,
+        "Name": "空花短信",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001005
+        ]
+    },
+    {
+        "Id": 200006,
+        "Name": "空花拍照",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 2,
+        "Condition": [
+            50001006
+        ]
+    }
+]

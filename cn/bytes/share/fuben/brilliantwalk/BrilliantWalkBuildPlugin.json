@@ -1,0 +1,535 @@
+[
+    {
+        "Id": 1011,
+        "Name": "聚焦逻辑",
+        "Desc": "聚焦逻辑中提供强化伤害以及提升续航的被动技能，适合专注于单一武器的战斗风格",
+        "TrenchType": 1,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96141,
+        "FightEventIds": [
+            2270160
+        ]
+    },
+    {
+        "Id": 1012,
+        "Name": "并行逻辑",
+        "Desc": "并行逻辑允许同时携带两个武装模块阵列，适合复杂多变的战斗风格",
+        "TrenchType": 1,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96142,
+        "FightEventIds": [
+            2270161
+        ]
+    },
+    {
+        "Id": 1021,
+        "Name": "落地星陨",
+        "Desc": "每使用1次技能积蓄1层能量，积蓄满6层能量后可直接释放落地星陨，牵引大范围敌方单位造成共3500%物理伤害。闪避和普攻3/6段均可积蓄能量层数。",
+        "TrenchType": 2,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96143,
+        "FightEventIds": [
+            2270150
+        ]
+    },
+    {
+        "Id": 1022,
+        "Name": "巨拳弹幕",
+        "Desc": "点击必杀消耗100必杀能量，短暂蓄力后对身前目标进行多段高速连击，共造成3500%物理伤害。",
+        "TrenchType": 2,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96144,
+        "FightEventIds": [
+            2270149
+        ]
+    },
+    {
+        "Id": 1023,
+        "Name": "广域打击",
+        "Desc": "装备该模块后，能量武装模式的基础伤害提高50%，普攻速度降低25%，主动释放时，消耗30点必杀能量开启蓄能模式，再次点击必杀释放广域打击造成2000%的大范围物理伤害，蓄能模式持续5秒，蓄能期间每消耗一个信号球，伤害提升5%。",
+        "TrenchType": 2,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96145,
+        "FightEventIds": [
+            2270151
+        ]
+    },
+    {
+        "Id": 1024,
+        "Name": "斩星光刃",
+        "Desc": "装备该模块后，普攻获得的必杀能量额外增加4点，每增加5米光刃长度，造成伤害提升20%，主动释放时消耗100点能量，对正前方光刃长度范围内的敌人造成2700%的物理伤害。",
+        "TrenchType": 2,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96146,
+        "FightEventIds": [
+            2270152
+        ]
+    },
+    {
+        "Id": 1031,
+        "Name": "拳刃武装",
+        "Desc": "近战格斗为主的武装模块，拳刃武装模式下光辉行进者会使用3个具有冷却时间的技能",
+        "TrenchType": 3,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96147,
+        "FightEventIds": [
+            2270111
+        ]
+    },
+    {
+        "Id": 1032,
+        "Name": "能量武装",
+        "Desc": "使用炮击与光刃的武装模块，能量武装模式下光辉行进者会使用3个信号球模式的技能",
+        "TrenchType": 3,
+        "Type": 1,
+        "NeedEnergy": 0,
+        "PrePluginId": 0,
+        "ItemId": 96148,
+        "FightEventIds": [
+            2270112
+        ]
+    },
+    {
+        "Id": 2011,
+        "Name": "能源搜寻",
+        "Desc": "每30秒空中支援会扫描机体坐标，空投装甲整备箱，拾取后替换损毁部件回复25点模块稳定度，并临时治疗回复25%最大生命值。",
+        "TrenchType": 1,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1011,
+        "ItemId": 96150,
+        "FightEventIds": [
+            2270116
+        ]
+    },
+    {
+        "Id": 2012,
+        "Name": "释能武装",
+        "Desc": "聚焦能量充满时，下一技能倍率提升100%，并清空聚焦能量。",
+        "TrenchType": 1,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1011,
+        "ItemId": 96149,
+        "FightEventIds": [
+            2270113
+        ]
+    },
+    {
+        "Id": 2021,
+        "Name": "武装重组",
+        "Desc": "可以装备两个武装模块并随时进行武装切换，切换时将清空聚焦能量。当拳刃武装模式切换至能量武装模式时，每10点聚焦能量随机提供一个信号球，当能量武装模式切换至拳刃武装模式时，每20点聚焦能量减少所有技能1秒冷却。",
+        "TrenchType": 1,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1012,
+        "ItemId": 96151,
+        "FightEventIds": [
+            2270119
+        ]
+    },
+    {
+        "Id": 2022,
+        "Name": "能源搜寻",
+        "Desc": "每30秒空中支援会扫描机体坐标，空投装甲整备箱，拾取后替换损毁部件回复25点模块稳定度，并临时治疗回复25%最大生命值。",
+        "TrenchType": 1,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1012,
+        "ItemId": 96152,
+        "FightEventIds": [
+            2270122
+        ]
+    },
+    {
+        "Id": 2031,
+        "Name": "格挡",
+        "Desc": "技能冷却结束后点击红球，引导光束对目标造成700%物理伤害，并形成短暂格挡，技能冷却6秒。格挡成功时，打断敌方攻击，并击退目标。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1031,
+        "ItemId": 96153,
+        "FightEventIds": [
+            2270125
+        ]
+    },
+    {
+        "Id": 2032,
+        "Name": "子弹拳",
+        "Desc": "技能冷却结束后点击蓝球，短暂蓄力后向目标突进，造成900%物理伤害，技能冷却8秒。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1031,
+        "ItemId": 96154,
+        "FightEventIds": [
+            2270129
+        ]
+    },
+    {
+        "Id": 2033,
+        "Name": "扬升拳",
+        "Desc": "技能冷却结束时点击黄球，利用反重力能量起跳，同时使用拳刃将身前目标击飞至空中，造成1200%物理伤害，技能冷却10秒。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1031,
+        "ItemId": 96155,
+        "FightEventIds": [
+            2270133
+        ]
+    },
+    {
+        "Id": 2041,
+        "Name": "光刃旋突",
+        "Desc": "使用光刃对敌人进行旋转突进攻击，根据消球数，造成共计390%/780%/1170%物理伤害。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1032,
+        "ItemId": 96156,
+        "FightEventIds": [
+            2270137
+        ]
+    },
+    {
+        "Id": 2042,
+        "Name": "光刃疾走",
+        "Desc": "使用光刃对敌人进行斩击，根据消球数，造成共计680%/1360%/2040%的物理伤害。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1032,
+        "ItemId": 96157,
+        "FightEventIds": [
+            2270141
+        ]
+    },
+    {
+        "Id": 2043,
+        "Name": "集束导弹",
+        "Desc": "胸甲打开发射12枚追踪导弹对敌人进行攻击，根据消球数，造成共计510%/1020%/1530%物理伤害。",
+        "TrenchType": 3,
+        "Type": 2,
+        "NeedEnergy": 1,
+        "PrePluginId": 1032,
+        "ItemId": 96158,
+        "FightEventIds": [
+            2270145
+        ]
+    },
+    {
+        "Id": 3011,
+        "Name": "高热掠夺",
+        "Desc": "击杀敌人后随机掉落能量模块，可掠夺回复少量模块稳定度，但因拼凑部件的不相容性导致入场时每个模块有30%的几率损坏。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2011,
+        "ItemId": 96161,
+        "FightEventIds": [
+            2270117
+        ]
+    },
+    {
+        "Id": 3012,
+        "Name": "更替引燃",
+        "Desc": "任一模块损坏时，可点击按钮更换备用机体，并将原机体直接引爆造成3000%范围物理伤害，冷却时间200秒。空投不再用于回复模块稳定度和生命值，改为提供备用机体部件，每拾取1个空投减少20秒冷却时间。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2011,
+        "ItemId": 96162,
+        "FightEventIds": [
+            2270118
+        ]
+    },
+    {
+        "Id": 3021,
+        "Name": "聚焦能级",
+        "Desc": "聚焦能量的充能上限提高100%，提供的伤害加成上限提高100%。每次连击都会积蓄气势获得1%的额外伤害加成，最高可累计至100%额外伤害加成。每次使用技能或普攻获得额外1点必杀能量。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2012,
+        "ItemId": 96159,
+        "FightEventIds": [
+            2270114
+        ]
+    },
+    {
+        "Id": 3022,
+        "Name": "高效集聚",
+        "Desc": "聚焦能量充能速度提高50%。技能或普攻每次命中有30%概率减少1秒冷却或获得1个信号球。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2012,
+        "ItemId": 96160,
+        "FightEventIds": [
+            2270115
+        ]
+    },
+    {
+        "Id": 3031,
+        "Name": "武装引擎",
+        "Desc": "三消时附带持续1秒的无敌效果，释放技能时同时释放蓝球一消，并享有其连接电路的效果.",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2021,
+        "ItemId": 96163,
+        "FightEventIds": [
+            2270120
+        ]
+    },
+    {
+        "Id": 3032,
+        "Name": "悬空处决",
+        "Desc": "必杀能量和聚焦能量满值时，进入能量武装模式，将消耗全部必杀能量和聚焦能量，进入浮空状态，浮空期间可凌空发射子弹，每颗子弹造成250%的伤害，浮空状态结束后释放斩星光刃",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2021,
+        "ItemId": 96164,
+        "FightEventIds": [
+            2270121
+        ]
+    },
+    {
+        "Id": 3041,
+        "Name": "过热",
+        "Desc": "进入超载模式，该模式下，模块稳定度下降的更快，技能CD减少30%，回球效率增加50%，每损坏一个模块，机体伤害提高20%，当只有一个模块可用时，技能无CD且每秒产生8个信号球。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2022,
+        "ItemId": 96165,
+        "FightEventIds": [
+            2270123
+        ]
+    },
+    {
+        "Id": 3042,
+        "Name": "星标唤起",
+        "Desc": "任一模块损坏时，可点击按钮更换备用机体，并将原机体直接引爆造成3000%范围物理伤害，冷却时间200秒。空投不再用于回复模块稳定度和生命值，改为提供备用机体部件，每拾取1个空投减少20秒冷却时间。",
+        "TrenchType": 1,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2022,
+        "ItemId": 96166,
+        "FightEventIds": [
+            2270124
+        ]
+    },
+    {
+        "Id": 3051,
+        "Name": "爆裂反震",
+        "Desc": "格挡成功时，附加反弹伤害后并立即跃空下砸，以落点为中心造成500%小范围物理伤害。下一技能有30%概率处决敌方单位。（对BOSS无效）",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2031,
+        "ItemId": 96167,
+        "FightEventIds": [
+            2270126
+        ]
+    },
+    {
+        "Id": 3052,
+        "Name": "游刃有余",
+        "Desc": "格挡成功时，闪避值回满并在8秒内闪避不再消耗闪避值。下一技能伤害提升100%。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2031,
+        "ItemId": 96168,
+        "FightEventIds": [
+            2270127
+        ]
+    },
+    {
+        "Id": 3053,
+        "Name": "湮灭之手",
+        "Desc": "格挡转换为响指波，湮灭以自身为中心的大范围内所有飞弹类攻击，并击退所有敌方单位。回复40点必杀能量，每个被湮灭的飞弹额外提供2点必杀能量，冷却时间增加6秒。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2031,
+        "ItemId": 96169,
+        "FightEventIds": [
+            2270128
+        ]
+    },
+    {
+        "Id": 3061,
+        "Name": "贯通拳",
+        "Desc": "短暂蓄力后向目标突进，并用臂展光束炮对直线路径上敌人造成1200%物理伤害。使用技能后有30%概率刷新冷却。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2032,
+        "ItemId": 96170,
+        "FightEventIds": [
+            2270130
+        ]
+    },
+    {
+        "Id": 3062,
+        "Name": "闪身架势",
+        "Desc": "闪避后点击蓝球，取消蓄力时间，并减少2秒技能冷却时间。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2032,
+        "ItemId": 96171,
+        "FightEventIds": [
+            2270131
+        ]
+    },
+    {
+        "Id": 3063,
+        "Name": "吸力拳",
+        "Desc": "可长按蓝球蓄力3秒，将以自身为中心6米内敌方单位牵引至身前。冷却时间增加8秒，回复20点必杀能量。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2032,
+        "ItemId": 96172,
+        "FightEventIds": [
+            2270132
+        ]
+    },
+    {
+        "Id": 3071,
+        "Name": "超力扬升",
+        "Desc": "被命中目标血量低于30%可将其击飞，直接将目标处决。（对BOSS无效）",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2033,
+        "ItemId": 96173,
+        "FightEventIds": [
+            2270134
+        ]
+    },
+    {
+        "Id": 3072,
+        "Name": "扬升降坠",
+        "Desc": "扬升拳命中后有30%概率触发下砸攻击，造成750%物理伤害。释放技能后每秒回复2点必杀能量，持续5秒。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2033,
+        "ItemId": 96174,
+        "FightEventIds": [
+            2270135
+        ]
+    },
+    {
+        "Id": 3073,
+        "Name": "拳上加拳",
+        "Desc": "扬升拳命中后有30%概率触发空中连击，共造成750%物理伤害。冷却时间增加6秒，回复40点必杀能量。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2033,
+        "ItemId": 96175,
+        "FightEventIds": [
+            2270136
+        ]
+    },
+    {
+        "Id": 3082,
+        "Name": "快速充能",
+        "Desc": "5秒内连续释放红球三消，三消红球伤害增加50%且释放的更快，最多叠加三次。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2041,
+        "ItemId": 96177,
+        "FightEventIds": [
+            2270139
+        ]
+    },
+    {
+        "Id": 3083,
+        "Name": "瞬时氦闪",
+        "Desc": "红球三消时在闪光时精准长按普攻，可触发氦闪爆炸，消耗全部红球增加额外伤害，每额外消耗一个红球伤害增加60%。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2041,
+        "ItemId": 96178,
+        "FightEventIds": [
+            2270140
+        ]
+    },
+    {
+        "Id": 3092,
+        "Name": "能源回收",
+        "Desc": "消除黄球时，消耗所有黄球，每个黄球造成680%物理伤害，并提供持续3秒的20%额外伤害加成，每个黄球消耗时刷新持续时间。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2042,
+        "ItemId": 96180,
+        "FightEventIds": [
+            2270143
+        ]
+    },
+    {
+        "Id": 3093,
+        "Name": "光刃延展",
+        "Desc": "每次三消黄球时，增加5米光刃长度，总上限15米。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2042,
+        "ItemId": 96181,
+        "FightEventIds": [
+            2270144
+        ]
+    },
+    {
+        "Id": 3102,
+        "Name": "追踪弹",
+        "Desc": "消除蓝球时，消耗所有蓝球，每个蓝球造成510%物理伤害，并提供持续3秒可累加的导弹援助，每1.5秒对敌人释放追踪导弹。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2043,
+        "ItemId": 96183,
+        "FightEventIds": [
+            2270147
+        ]
+    },
+    {
+        "Id": 3103,
+        "Name": "热能释放",
+        "Desc": "蓝球三消时，消耗全部聚焦能量，每100点聚焦能量增加10米光刃长度，总上限15米，并对敌方单位发射导弹。",
+        "TrenchType": 3,
+        "Type": 3,
+        "NeedEnergy": 0,
+        "PrePluginId": 2043,
+        "ItemId": 96184,
+        "FightEventIds": [
+            2270148
+        ]
+    }
+]

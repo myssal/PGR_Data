@@ -1,0 +1,262 @@
+[
+    {
+        "Id": 1,
+        "TimeId": 0,
+        "Name": "集雪散霰",
+        "SecondName": "第一章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower05.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss1.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss1.png",
+        "EndPointId": 4,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg13.png",
+        "OverviewDesc": "受到怪物攻击时，大幅降低角色<color=#037a75>移动速度</color>。<color=#037a75>切换角色</color>后清除效果",
+        "PointIds": [
+            1,
+            2,
+            3
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 2,
+        "TimeId": 0,
+        "Name": "磐峙斧礴",
+        "SecondName": "第二章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower05.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss2.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss2.png",
+        "EndPointId": 14,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg14.png",
+        "OverviewDesc": "怪物拥有<color=#037a75>壁垒</color>效果，周期性获得护盾。击破护盾后移除壁垒效果，并降低怪物<color=#037a75>30%抗性</color>",
+        "UnlockChapterIds": [
+            1
+        ],
+        "PointIds": [
+            11,
+            12,
+            13
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 3,
+        "TimeId": 0,
+        "Name": "穿笼剪羽",
+        "SecondName": "第三章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss3.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss3.png",
+        "EndPointId": 25,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg15.png",
+        "OverviewDesc": "怪物获得<color=#037a75>暴走</color>，攻击欲望提升，每隔一段时间闪现接近角色。进入超算空间时，<color=#037a75>解除暴走状态10秒</color>",
+        "UnlockChapterIds": [
+            2
+        ],
+        "PointIds": [
+            21,
+            22,
+            23,
+            24
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 4,
+        "TimeId": 0,
+        "Name": "游鸟横镰",
+        "SecondName": "第四章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss4.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss4.png",
+        "EndPointId": 35,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg16.png",
+        "OverviewDesc": "场上存在<color=#037a75>母体怪物</color>，每隔<color=#037a75>6秒</color>召唤1个<color=#037a75>子体怪物</color>，上限3个。场上每个子体为母体增加一层<color=#037a75>复苏</color>",
+        "UnlockChapterIds": [
+            3
+        ],
+        "PointIds": [
+            31,
+            32,
+            33,
+            34
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 5,
+        "TimeId": 0,
+        "Name": "攀黎越髓",
+        "SecondName": "第五章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss5.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss5.png",
+        "EndPointId": 45,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg17.png",
+        "OverviewDesc": "能源核心超频所需充能层数减少到2层，每层提升的<color=#037a75>角色攻击力提高至10%</color>。强化状态下，进入超算空间，以玩家为中心生成一次暗爆，造成范围内<color=#037a75>20W真实伤害</color>",
+        "UnlockChapterIds": [
+            4
+        ],
+        "PointIds": [
+            41,
+            42,
+            43,
+            44
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 6,
+        "TimeId": 0,
+        "Name": "雷嗔云谲",
+        "SecondName": "第一章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower05.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss6.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss6.png",
+        "EndPointId": 104,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg18.png",
+        "OverviewDesc": "<color=#037a75>每隔10s</color>，将在<color=#037a75>己方角色位置召唤雷电</color>，对玩家角色造成伤害",
+        "PointIds": [
+            101,
+            102,
+            103
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 7,
+        "TimeId": 0,
+        "Name": "落玉余冉",
+        "SecondName": "第二章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower05.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss7.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss7.png",
+        "EndPointId": 114,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg19.png",
+        "OverviewDesc": "<color=#037a75>每隔7s</color>，将在<color=#037a75>己方角色位置召唤陨石</color>，对玩家角色造成伤害",
+        "UnlockChapterIds": [
+            6
+        ],
+        "PointIds": [
+            111,
+            112,
+            113
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 8,
+        "TimeId": 0,
+        "Name": "涌潮覆火",
+        "SecondName": "第三章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss8.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss8.png",
+        "EndPointId": 125,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg20.png",
+        "OverviewDesc": "战斗开始时场上构造体数目大于感染体时，所有敌方获得统领。战斗开始时场上感染体数目大于构造体时，所有敌方获得暴走",
+        "UnlockChapterIds": [
+            7
+        ],
+        "PointIds": [
+            121,
+            122,
+            123,
+            124
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 9,
+        "TimeId": 0,
+        "Name": "嘶猎奔啸",
+        "SecondName": "第四章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss9.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss9.png",
+        "EndPointId": 135,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg21.png",
+        "OverviewDesc": "在场怪物中将有一只被寄生，在25秒后孵化一只感染体，随后场上另一随机敌方被寄生",
+        "UnlockChapterIds": [
+            8
+        ],
+        "PointIds": [
+            131,
+            132,
+            133,
+            134
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    },
+    {
+        "Id": 10,
+        "TimeId": 0,
+        "Name": "梦界终许",
+        "SecondName": "第五章",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/FuBenTwoSideTower/FuBenTwoSideTower04.prefab",
+        "Icon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBgBoss10.png",
+        "MonsterBg": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerMainLineBoss10.png",
+        "EndPointId": 145,
+        "OverviewIcon": "Assets/Product/Texture/Image/UiTwoSideTower/UiTwoSideTowerImg22.png",
+        "OverviewDesc": "不同的尖塔将提供不同的增益",
+        "UnlockChapterIds": [
+            9
+        ],
+        "PointIds": [
+            141,
+            142,
+            143,
+            144
+        ],
+        "ScoreLevel": [
+            3500,
+            4000,
+            4500,
+            5000
+        ]
+    }
+]

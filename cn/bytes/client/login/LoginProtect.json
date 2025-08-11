@@ -1,0 +1,26 @@
+[
+    {
+        "Id": 1,
+        "LoginTime": 0,
+        "Interval": 0,
+        "Hint": "登录失败，请重试"
+    },
+    {
+        "Id": 2,
+        "LoginTime": 3,
+        "Interval": 10,
+        "Hint": "登录失败，约需等待10秒再尝试"
+    },
+    {
+        "Id": 3,
+        "LoginTime": 6,
+        "Interval": 300,
+        "Hint": "登录失败，约需等待5分钟再尝试"
+    },
+    {
+        "Id": 4,
+        "LoginTime": 10,
+        "Interval": 600,
+        "Hint": "登录失败，约需等待10分钟再尝试"
+    }
+]

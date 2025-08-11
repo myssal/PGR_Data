@@ -1,0 +1,176 @@
+[
+    {
+        "Id": 1,
+        "GroupId": 1,
+        "Note": "床类家具交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "躺下",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "SLEEP"
+    },
+    {
+        "Id": 2,
+        "GroupId": 2,
+        "Note": "椅子类家具交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "坐下",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "CHAIR"
+    },
+    {
+        "Id": 3,
+        "GroupId": 3,
+        "Note": "板凳类家具交互（动作高度和椅子不同）",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "坐下",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "BENCH"
+    },
+    {
+        "Id": 4,
+        "GroupId": 4,
+        "Note": "柜子类家具交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "翻一翻",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "CABINET"
+    },
+    {
+        "Id": 5,
+        "GroupId": 5,
+        "Note": "烟花家具交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "放烟花",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "FIREWORK"
+    },
+    {
+        "Id": 101,
+        "GroupId": 100,
+        "Note": "战术终端家具交互，打开拟真围剿界面",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "拟真围剿",
+        "ButtonType": 2,
+        "ButtonArg": 84040,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 102,
+        "GroupId": 200,
+        "Note": "音乐播放器交互，打开播放器界面",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "播放器",
+        "ButtonType": 2,
+        "ButtonArg": 85014,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 103,
+        "GroupId": 300,
+        "Note": "妙算神机未签到交互，主要是按钮显示内容不同",
+        "ConditionType": 3,
+        "ConditionArg": "CONDITION_GUILD_SIGN_REWARD",
+        "ConditionState": 1,
+        "ShowButtonName": "算一签",
+        "ButtonType": 2,
+        "ButtonArg": 88001,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 104,
+        "GroupId": 300,
+        "Note": "妙算神机已签到交互，主要是按钮显示内容不同",
+        "ConditionType": 3,
+        "ConditionArg": "CONDITION_GUILD_SIGN_REWARD",
+        "ConditionState": 0,
+        "ShowButtonName": "查看签文",
+        "ButtonType": 2,
+        "ButtonArg": 88001,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 6,
+        "GroupId": 6,
+        "Note": "烟花家具交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "放烟花",
+        "ButtonType": 1,
+        "InteractPoint": 1,
+        "BehaviorType": "NEWFIREWORK"
+    },
+    {
+        "Id": 7,
+        "GroupId": 7,
+        "Note": "垃圾桶交互",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "翻一翻",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 8,
+        "GroupId": 8,
+        "Note": "饮料机",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "喝什么",
+        "ButtonType": 5,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 9,
+        "GroupId": 9,
+        "Note": "雕像",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "凝视雕像",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 10,
+        "GroupId": 10,
+        "Note": "欧式茶桌",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "仔细查看",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 11,
+        "GroupId": 11,
+        "Note": "荷花",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "仔细查看",
+        "ButtonType": 4,
+        "InteractPoint": 1
+    },
+    {
+        "Id": 12,
+        "GroupId": 400,
+        "Note": "我要弹钢琴",
+        "ConditionType": 0,
+        "ConditionState": 0,
+        "ShowButtonName": "弹钢琴",
+        "ButtonType": 1,
+        "ButtonArg": 90019,
+        "InteractPoint": 1,
+        "BehaviorType": "PLAYPIANO"
+    }
+]

@@ -1,0 +1,66 @@
+[
+    {
+        "Id": 1,
+        "Name": "堆栈潜伏 <color=#5A80A4><size=26>普通</size></color>",
+        "Desc": "<size=25>· 战斗内重启次数：8</size>",
+        "StoryDesc": "虚妄的平静也难能可贵 ——",
+        "ConditionId": 0,
+        "ChapterGroupId": 1,
+        "FirstPassFlag": 1,
+        "CharacterExpRate": 0.5,
+        "BPExpRate": 1.0,
+        "RebootId": 1,
+        "InitialItem": 0,
+        "FightEvents": [
+            2251201
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "堆栈潜伏 <color=#5A80A4><size=26>普通</size></color>",
+        "Desc": "<size=25>· 战斗内重启次数：8</size>",
+        "StoryDesc": "虚妄的平静也难能可贵 ——",
+        "ConditionId": 0,
+        "ChapterGroupId": 100,
+        "FirstPassFlag": 0,
+        "CharacterExpRate": 0.5,
+        "BPExpRate": 1.0,
+        "RebootId": 1,
+        "InitialItem": 0,
+        "FightEvents": [
+            2251202
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "底层感染 <color=#C76F3F><size=26>困难</size></color>",
+        "Desc": "<size=25>· 战斗内重启次数：5\\n· 重启消耗+50%\\n· 敌人意志上升</size>",
+        "StoryDesc": "灾厄袭来，向末路前行吧 ——",
+        "ConditionId": 1020001,
+        "ChapterGroupId": 200,
+        "FirstPassFlag": 0,
+        "CharacterExpRate": 1.0,
+        "BPExpRate": 2.0,
+        "RebootId": 2,
+        "InitialItem": 0,
+        "FightEvents": [
+            2251203
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "漏洞爆发 <color=#B95E5E><size=26>噩梦</size></color>",
+        "Desc": "<size=25>· 战斗内重启次数：3\\n· 重启消耗+150%\\n· <color=#CD5555>敌人意志高昂</color>\\n· <color=#CD5555>推荐角色战力7500</color></size>",
+        "StoryDesc": "环顾四周，已无驻足之地 ——",
+        "ConditionId": 1020009,
+        "ChapterGroupId": 300,
+        "FirstPassFlag": 0,
+        "CharacterExpRate": 1.2,
+        "BPExpRate": 2.5,
+        "RebootId": 3,
+        "InitialItem": 1,
+        "FightEvents": [
+            2251204
+        ]
+    }
+]

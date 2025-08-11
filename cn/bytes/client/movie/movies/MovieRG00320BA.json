@@ -1,0 +1,762 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory161.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            205
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1081001
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "神威",
+            "每场战斗之后都要进行整备这件事在现实还是游戏世界都不会变呢。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "虽然说要赶紧追上丽芙好保护她，但是战斗之后的整备可不能马虎。"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 3001,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500166
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "毕竟有装备耐久度这种东西存在，多花点时间来做整备也是为了之后的每一场战斗。",
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 3002,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1081001
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "神威",
+            "这么说也对呢，好，那我就负责检查队员的状态吧，有人中毒了吗~",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "指挥官，你有中毒吗？",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 3003,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "直接查看菜单就好了吧？",
+            9,
+            "我想应该没有。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 9,
+        "NextActionId": 1003,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "啊，也对哦！",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 10,
+        "NextActionId": 1001,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "没有吗……那我收集回来的解毒药要怎么办？",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 1001,
+        "NextActionId": 1002,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 1002,
+        "NextActionId": 11,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500173,
+            -400
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 11,
+        "NextActionId": 12,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "里",
+            "指挥官没中毒这件事有这么让你失望吗，再说检查buff这种事情直接从菜单栏检查不就好了？",
+            2
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 12,
+        "NextActionId": 1003,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "菜单，对哦，我差点忘记这个了！",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 1003,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在得到提示以后神威立刻打开了自己的菜单，然后快速翻到队员的页面。"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 3004,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1081001
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "神威",
+            "唔……大家状态都很好呢，虽然不知道丽芙在那里，但看上去也没有受伤。",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "通过这个系统面板来确认丽芙的状况也是露西亚经常做的事情，她就是通过这个状态栏来猜测丽芙的处境，然后决定队伍的行进。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "神威",
+            "话说……",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 3005,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "怎么了？",
+            17,
+            "果然有谁受伤了吗？"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 17,
+        "NextActionId": 3006,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "我只是突然发现队伍栏里少了一个卡列尼娜而已。",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 18,
+        "NextActionId": 3006,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "不，我只是发现队伍栏里少了一个卡列尼娜而已。",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 3006,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 3007,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500180,
+            -400
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "卡列尼娜",
+            "哈，队伍栏里有没有我有关系吗？",
+            2
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "神威",
+            "可是我们现在是一起行动的伙伴呀，队伍名单里面没有你不是怪怪的吗。",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜",
+            "有什么好奇怪的，再说我又不是【kuroname】，别以为在一起行动我就是你们的队友！",
+            2
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 3008,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500173,
+            400
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "里",
+            "但是就像我们可以推断丽芙状况那样，还身处卡穆队伍的你可能会被薇拉或者卡穆推断出状况然后特定到位置也说不定。",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜",
+            "你这是在说我是累赘吗。",
+            2
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "里",
+            "我只是从安全性的角度阐述，而且你也应该不会再回去那边了吧？",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜",
+            "不回去也不代表我要加入你们，再说我参加这场游戏也是为了要赢过露西亚……",
+            2
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 3070,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500166,
+            1,
+            400
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "那到要分胜负的时候再解除组队不就好了，卡列尼娜你会和我们一起行动而不是回到那边也是因为有自己的打算对吧？",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜",
+            "啧……",
+            2
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 3009,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 3010,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1081001,
+            2
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "神威",
+            "指挥官，你也来劝劝卡列尼娜呗。",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 3011,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我想和卡列尼娜组队！",
+            2001,
+            "就当是帮帮我们如何？"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 2001,
+        "NextActionId": 29,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500180,
+            6
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 29,
+        "NextActionId": 31,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "卡列尼娜",
+            "你突然说什么话呢，你这个……",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 2002,
+        "NextActionId": 30,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500180,
+            6
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 30,
+        "NextActionId": 31,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "卡列尼娜",
+            "唔……",
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜在听见这边的话以后显得有些困惑，实际上在知道队伍能够自由转换以后她就一直在盯着自己的队伍栏目。"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "任谁都知道她实际上在考虑些什么。"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "卡列尼娜",
+            "哼，先说好这是临时组队！临时的！",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "所以，卡列尼娜加入了队伍。"
+        ]
+    }
+]

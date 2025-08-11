@@ -1,0 +1,1275 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "NextActionId": 0,
+        "Type": 102,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "重返极夜",
+            "Assets/Product/Texture/Atlas/CommonLogo/BgLogo1.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 4001,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "ThemeEnable"
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 4002,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory53.jpg"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            208
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "在空中花园的预备作战区域附近，有好几支小队正在忙碌地搬运物资和武器装备。"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 1001,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500166
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 1002,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500026,
+            600
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 1003,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            1031001,
+            -600
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "看来出现了什么紧急任务。",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "丽芙",
+            "大家都挺紧张的，希望不会是什么可怕的任务就好了。",
+            3
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "里",
+            "那里面也有熟悉战斗的人员，不需要为他们担心，倒是指挥官，我们之后要进行新一轮的机体数据采集对吧？",
+            2
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "嗯。",
+            8,
+            "数据采集？"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 8,
+        "NextActionId": 9,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "虽然不知道会进行什么采集实验。",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 9,
+        "NextActionId": 1004,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "……但假若能找到解决机能不能完全发挥的方法就好了。",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 10,
+        "NextActionId": 11,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "里",
+            "指挥官……你不会是没看上面发过来的讯息吧。",
+            2
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 11,
+        "NextActionId": 5000,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "里",
+            "因为机体的实际运用不如数据般的那么理想，所以上层打算让我们灰鸦协助进行一系列的数据采集好确认到底是哪个部分出现了问题。",
+            2
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 5000,
+        "NextActionId": 12,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 12,
+        "NextActionId": 1004,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "数据采集指的就是这件事，指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 1004,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 1005,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500214,
+            8
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "罗塞塔",
+            "灰鸦小队吗，正好。",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这时候一个意料之外的人物从忙碌的小队群体中走过来，就如最初在极地时见面的那样，她还是保持着一副冷漠的表情。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 1006,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔？",
+            15,
+            "请问有什么事吗？"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 15,
+        "NextActionId": 1007,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "为什么要在这种地方愣住……不过在空中花园里面和你这么对话应该也是第一次，也罢。",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 16,
+        "NextActionId": 1007,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "还真是有够冷静的，不过也好。",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 1007,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "尼科拉，还有一个指挥官就用灰鸦的吧——报告完毕。",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她似乎到刚才都在和尼科拉司令进行通讯，大概能明白她话语的意思，但还是不太清楚为什么要做出这样的安排。"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 1008,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -400
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 1009,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1031001,
+            400
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "丽芙",
+            "虽然不知道罗塞塔小姐你身上有什么任务，但我们接下来需要做数据采集，或许没办法参加……",
+            2
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "你们照常去数据采集就可以了，我这边缺的是指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 1010,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500166,
+            400
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "到底是……？",
+            2
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "航线联合发来了求援的请求，听说整个联合都遭到了严重的打击，所以我必须要尽快带空中花园的援兵过去。",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "敌人是升格者吗？",
+            2
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "不是……但我也不能确定，总之把你们的指挥官借给我，我现在必须要赶紧回航线联合那边去进行救援。",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "但是只有指挥官的话……",
+            2
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "我会保证你们指挥官的安全，一定。",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "……",
+            2
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "……",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "假若是这样的话……指挥官，你的想法是？",
+            2
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 1011,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我就去一趟航线联合吧。",
+            30,
+            "就算拒绝也会被司令强加任务吧？"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 30,
+        "NextActionId": 1012,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "既然指挥官也这么说的话那就没问题了，罗塞塔，指挥官暂时就交给你了。",
+            2
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 3000,
+        "NextActionId": 31,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 31,
+        "NextActionId": 1012,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "对不起，用了像是强迫一样的方法，但请你相信我，我一定会保护你的。",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 1012,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 1013,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory227.png"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 1014,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "——"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "从近处传来了战斗的声音，身体同时也感受到了阵阵寒意。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 1016,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500214
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "罗塞塔",
+            "我可不会让你们靠近。",
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "RImgBg1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "映入眼帘的是握住长枪的罗塞塔和一批与之敌对的仿生机械，就如释放了全部野性一般，仿生机械不断向这边冲锋和突击。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "很好，你醒过来了吧。",
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 1017,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "现在的状况是？",
+            39,
+            "你没事吧？"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 39,
+        "NextActionId": 41,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "状况不好不坏……不，应该坏的部分要更多一些才对，没想到竟然会立刻碰上这些机械。",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 40,
+        "NextActionId": 41,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "比起我你应该要先担心你自己，你在雪地上躺了至少30分钟了。",
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "总之看上去也没什么问题，我要冲过去了！",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 1018,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 1019,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            10002001
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "从罗塞塔手中射出的长矛如同流星刺穿敌人，趁其余仿生机械注意力被吸引住的时候罗塞塔直接飞到空中，展开了自己的盾牌。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 1020,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500214
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "罗塞塔",
+            "瞄准。",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "——发射！",
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 1021,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            10007501
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 1022,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "RImgBg1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "能量弹如雨点般分散，直接打落在仿生机械身上。"
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 1023,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500208
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "仿生机械",
+            "——！撤退。",
+            1
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 1024,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "而后仿生机械们做出了及时的判断，它们在抛弃损毁的部分以后就立刻退开，撤离了这个战斗区域。"
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 1025,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500214,
+            8
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "罗塞塔",
+            "呼……还真是有够不走运。",
+            1
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在确认敌人离开以后，罗塞塔才减弱光翼的功率降落，拔出紧插在地上的长矛。"
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 1026,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "罗塞塔",
+            "这下就……【kuroname】，我们继续本来的任务吧。",
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 1027,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "本来的任务？",
+            51,
+            "这里是什么地方。"
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 51,
+        "NextActionId": 53,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "……你这是在捉弄我吗，还是你不会特意去记这些事？",
+            1
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 52,
+        "NextActionId": 53,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "这里是北极航线联合的管辖区域，难道是刚才的冲击让你出现了记忆相关的问题吗……真不走运。",
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "总之——",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "没想到乘坐的运输机竟然会被防空炮命中，直接坠落到雪地上……真是不走运。",
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 1029,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500208
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "仿生机械",
+            "吼——！！！",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在准备进一步询问以决定下个行动时一批仿生机械突然从之前撤离的方向中涌出，恐怕刚才的敌人并不是撤退，而是去通知同伴了。"
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 2444,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500214,
+            8
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "罗塞塔",
+            "没办法……其他事之后再说，【kuroname】，不，指挥官，请和我一起作战吧！",
+            1
+        ]
+    }
+]

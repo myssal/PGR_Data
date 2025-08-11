@@ -1,0 +1,41 @@
+[
+    {
+        "Id": 1,
+        "TimeId": 28,
+        "Title": "资源下载",
+        "Desc": "资源下载内容",
+        "StyleType": 2,
+        "BtnIcon": "Assets/Product/Texture/Atlas/UiMain/UiMainIconDownLoad.png",
+        "SkipId": 89010,
+        "ConditionId": 860745,
+        "RedPointParam": [],
+        "RedPointCondition": [
+            "CONDITION_SUB_PACKAGE_DOWNLOAD_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 2,
+        "TimeId": 0,
+        "Title": "库街区",
+        "Desc": "跳转库街区",
+        "StyleType": 2,
+        "BtnIcon": "Assets/Product/Texture/Atlas/UiMain/UiMainIconKujiequNew.png",
+        "SkipId": 89014,
+        "ConditionId": 860826,
+        "RedPointParam": []
+    },
+    {
+        "Id": 3,
+        "TimeId": 28,
+        "Title": "预下载",
+        "Desc": "预下载",
+        "StyleType": 0,
+        "BtnIcon": "Assets/Product/Texture/Atlas/UiMain/UiMainIconTimeDownLoad.png",
+        "SkipId": 89042,
+        "ConditionId": 860748,
+        "RedPointParam": [],
+        "RedPointCondition": [
+            "CONDITION_PRELOAD_NEW_VERSION"
+        ]
+    }
+]

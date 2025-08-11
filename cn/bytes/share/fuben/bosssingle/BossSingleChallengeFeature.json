@@ -1,0 +1,563 @@
+[
+    {
+        "Id": 1,
+        "Name": "侵袭Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到暴击伤害显著提升，最多可叠加4层。",
+        "FightEventIds": [
+            2300001
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "锋锐Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到物理伤害显著提升，最多可叠加4层。",
+        "FightEventIds": [
+            2300002
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "雷暴Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成雷伤害时，角色获得雷盾，雷盾对周围持续造成雷属性伤害，且使角色自身雷属性伤害显著提升。",
+        "FightEventIds": [
+            2300003
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "雷潮Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时，获得雷盾，雷盾辐射范围内单位受到雷属性伤害显著提升。",
+        "FightEventIds": [
+            2300004
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "凝暗Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "受到暗属性伤害时，掉落暗球，拾取后角色暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使角色造成暗属性伤害显著提升。",
+        "FightEventIds": [
+            2300006
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "暗蚀Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "受到暗属性伤害时，掉落暗球，拾取后自身暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使单位受到暗属性伤害显著提升。",
+        "FightEventIds": [
+            2300005
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "强袭Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，角色自身全属性伤害显著提升。",
+        "FightEventIds": [
+            2300008
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "不继Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，单位受到全属性伤害显著提升。",
+        "FightEventIds": [
+            2300007
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "易燃Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "极易受高温点燃并引发剧烈的爆炸，基于此特性受到的火属性伤害会显著提升。",
+        "FightEventIds": [
+            2300009
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "霜结Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "低温情况下会出现膨胀式冻结效应，基于此特性受到的冰属性伤害会显著提升。",
+        "FightEventIds": [
+            2300010
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "侵袭Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1001.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到暴击伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300011
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "锋锐Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "受到物理伤害时，积累创伤槽，满层后进入创伤状态，受到物理伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300012
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "雷暴Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1003.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成雷伤害时，角色获得雷盾，雷盾对周围持续造成雷属性伤害，且使角色自身雷属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300013
+        ]
+    },
+    {
+        "Id": 14,
+        "Name": "雷潮Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时，获得雷盾，雷盾辐射范围内单位受到雷属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300014
+        ]
+    },
+    {
+        "Id": 15,
+        "Name": "凝暗Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "受到暗属性伤害时，掉落暗球，拾取后角色暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使角色造成暗属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300016
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "暗蚀Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1006.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "受到暗属性伤害时，掉落暗球，拾取后自身暗属性伤害提升。暗球数量达到上限后，下次攻击将释放全部暗球引发爆炸，使单位受到暗属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300015
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "强袭Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，角色自身全属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300018
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "Name": "不继Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1008.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "Boss最大生命值的50%转换为稳态力场。击碎稳态力场时，单位受到全属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300017
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "Name": "易燃Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "极易受高温点燃并引发剧烈的爆炸，基于此特性受到的火属性伤害会显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300019
+        ]
+    },
+    {
+        "Id": 20,
+        "Name": "霜结Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "低温情况下会出现膨胀式冻结效应，基于此特性受到的冰属性伤害会显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300020
+        ]
+    },
+    {
+        "Id": 21,
+        "Name": "潸然残疮Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "消球时积累创伤槽，攒满后进入创伤状态，受到物理伤害显著提升，最多可叠加2层。",
+        "FightEventIds": [
+            2300021
+        ]
+    },
+    {
+        "Id": 22,
+        "Name": "暗翳晚沫Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
+        "FightEventIds": [
+            2300022
+        ]
+    },
+    {
+        "Id": 23,
+        "Name": "噬殄消弭Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
+        "FightEventIds": [
+            2300023
+        ],
+        "ShowRecommendIds": [
+            3
+        ]
+    },
+    {
+        "Id": 24,
+        "Name": "森骨浊域Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，角色必杀技造成伤害显著提升。",
+        "FightEventIds": [
+            2300024
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "Name": "鸣昼闪垩Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "角色进入电暴鸣闪状态时，Boss受到电束伤害显著提升。",
+        "FightEventIds": [
+            2300025
+        ],
+        "ShowRecommendIds": [
+            4
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "炙赫业火Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。",
+        "FightEventIds": [
+            2300026
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "轰涌雷暴Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。",
+        "FightEventIds": [
+            2300027
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "沧皑霜壑Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成冰属性伤害可积累霜冻槽，使Boss受到冰属性伤害显著提升，最多可叠加3层。",
+        "FightEventIds": [
+            2300028
+        ]
+    },
+    {
+        "Id": 29,
+        "Name": "潸然残疮Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "消球时积累创伤槽，攒满后进入创伤状态，受到物理伤害显著提升，最多可叠加2层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300029
+        ]
+    },
+    {
+        "Id": 30,
+        "Name": "暗翳晚沫Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300030
+        ]
+    },
+    {
+        "Id": 31,
+        "Name": "噬殄消弭Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300031
+        ],
+        "ShowRecommendIds": [
+            3
+        ]
+    },
+    {
+        "Id": 32,
+        "Name": "森骨浊域Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，角色必杀技造成伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300032
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "Name": "鸣昼闪垩Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1010.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "角色进入电暴鸣闪状态时，Boss受到电束伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300033
+        ],
+        "ShowRecommendIds": [
+            4
+        ]
+    },
+    {
+        "Id": 34,
+        "Name": "炙赫业火Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300034
+        ]
+    },
+    {
+        "Id": 35,
+        "Name": "轰涌雷暴Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300035
+        ]
+    },
+    {
+        "Id": 36,
+        "Name": "沧皑霜壑Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成冰属性伤害可积累霜冻槽，使Boss受到冰属性伤害显著提升，最多可叠加3层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300036
+        ]
+    },
+    {
+        "Id": 37,
+        "Name": "明烛劫火Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。",
+        "FightEventIds": [
+            2300037
+        ]
+    },
+    {
+        "Id": 38,
+        "Name": "阗雷烨电Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。",
+        "FightEventIds": [
+            2300038
+        ]
+    },
+    {
+        "Id": 39,
+        "Name": "明烛劫火Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerhuo.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放必杀技后进入愤怒状态，在该状态下每造成2次火属性伤害，自身火属性伤害显著提升，最多可叠加5层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300039
+        ]
+    },
+    {
+        "Id": 40,
+        "Name": "阗雷烨电Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "造成雷伤害时可获得雷盾，雷盾叠满时将自动引爆，使Boss受到雷属性伤害显著提升，最多可叠加4层。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300040
+        ]
+    },
+    {
+        "Id": 41,
+        "Name": "幻宙失调Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。",
+        "FightEventIds": [
+            2300041
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "Name": "幻宙失调Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。全员切换入场时，造成伤害提升，持续10秒。",
+        "FightEventIds": [
+            2300042
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "Name": "暗殒噬流Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
+        "FightEventIds": [
+            2300043
+        ]
+    },
+    {
+        "Id": 44,
+        "Name": "幻宙失调Ⅲ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1007.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "Boss最大生命值的40%转换为稳态力场。击碎稳态力场时，使Boss受到空属性伤害显著提升。",
+        "FightEventIds": [
+            2300044
+        ],
+        "ShowRecommendIds": [
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "Name": "暗殒噬流Ⅲ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成暗属性伤害时可获得暗球，拾取后下次攻击将打出暗球造成暗属性伤害，并使自身暗属性伤害显著提升，最多可叠加6层。",
+        "FightEventIds": [
+            2300045
+        ]
+    },
+    {
+        "Id": 46,
+        "Name": "沉虐溃击Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1002.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "暴击时使Boss受到物理伤害显著提升，最多可叠加6层。",
+        "FightEventIds": [
+            2300046
+        ]
+    },
+    {
+        "Id": 47,
+        "Name": "欲壑凌霜Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1012.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "覆冰效应造成伤害时，Boss受到覆冰伤害显著提升，最多可叠加5层。",
+        "FightEventIds": [
+            2300047
+        ],
+        "ShowRecommendIds": [
+            5
+        ]
+    },
+    {
+        "Id": 48,
+        "Name": "焚天炽地Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成焚烧伤害时，Boss受到焚烧伤害显著提升，最多可叠加8层，持续10秒，全员切换入场时刷新持续时间。",
+        "FightEventIds": [
+            2300048
+        ],
+        "ShowRecommendIds": [
+            2
+        ]
+    },
+    {
+        "Id": 49,
+        "Name": "噬殄消弭Ⅲ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1011.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "释放真意斩时，使自身物理伤害和Boss受到真意斩伤害显著提升，最多可叠加5层。",
+        "FightEventIds": [
+            2300049
+        ],
+        "ShowRecommendIds": [
+            3
+        ]
+    },
+    {
+        "Id": 50,
+        "Name": "晖光日新Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "每消除一个球，Boss受到雷属性及电束伤害显著提升，最多可叠加5层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300050
+        ],
+        "ShowRecommendIds": [
+            7
+        ]
+    },
+    {
+        "Id": 51,
+        "Name": "暮沉殆殒Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1005.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "造成暗属性伤害时，Boss受到暗属性伤害显著提升，最多可叠加6层，持续10秒，重复触发刷新持续时间。",
+        "FightEventIds": [
+            2300051
+        ]
+    }
+]

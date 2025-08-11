@@ -1,0 +1,70 @@
+[
+    {
+        "Id": 1,
+        "TxtName1": 1,
+        "TxtName2": "基准",
+        "TxtName3": "A级角色&武器狙击",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaJichu.png",
+        "Priority": 8,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 2,
+        "TxtName1": 2,
+        "TxtName2": "活动",
+        "TxtName3": "S级角色狙击",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaHuodong.png",
+        "Priority": 7,
+        "ParentName": "PanelCardsActivity"
+    },
+    {
+        "Id": 3,
+        "TxtName1": 3,
+        "TxtName2": "限定活动",
+        "TxtName3": "心选狙击&夏令限定",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaHuodong.png",
+        "Priority": 9,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 4,
+        "TxtName1": 4,
+        "TxtName2": "独域专属",
+        "TxtName3": "独域机体狙击",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaShougezhe.png",
+        "Priority": 12,
+        "ParentName": "PanelCardsActivity",
+        "Condition": [
+            8005
+        ]
+    },
+    {
+        "Id": 5,
+        "TxtName1": 5,
+        "TxtName2": "联动",
+        "TxtName3": "但丁&维吉尔卡池",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaLiandong3.png",
+        "Priority": 10,
+        "ParentName": "PanelCardsStandard"
+    },
+    {
+        "Id": 6,
+        "TxtName1": 6,
+        "TxtName2": "苍蓝无尽夏",
+        "TxtName3": "限定涂装",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaTuzhuang.png",
+        "Priority": 11
+    },
+    {
+        "Id": 7,
+        "TxtName1": 7,
+        "TxtName2": "随行支援单位",
+        "TxtName3": "辅助机",
+        "TabBg": "Assets/Product/Texture/Image/UiChouka/UiChoukaFuzhuji.png",
+        "Priority": 13,
+        "ParentName": "PanelCardsActivity",
+        "Condition": [
+            8006
+        ]
+    }
+]

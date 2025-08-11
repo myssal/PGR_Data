@@ -1,0 +1,1626 @@
+[
+    {
+        "Id": 99999,
+        "Type": 99,
+        "Quality": 0,
+        "Name": "删除币",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess99998.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "造型奇特的硬币，可以在背包里<color=#0f70bc>删除</color>指定<color=#0f70bc>棋子</color>。"
+        ]
+    },
+    {
+        "Id": 99998,
+        "Type": 98,
+        "Quality": 0,
+        "Name": "刷新币",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess99999.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "造型奇特的硬币，可以在补棋阶段<color=#0f70bc>刷新棋子</color>组。"
+        ]
+    },
+    {
+        "Id": 1,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "武器碎片",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess001.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "不锈钢武器碎片",
+            "每回合会随机增加1个<color=#72b772>【枪】</color>或1个<color=#72b772>【复合弓】</color>。",
+            "2回合后，该棋子消除自身，消除自身的回合不增加新棋子。"
+        ],
+        "SkillId": [
+            102,
+            101
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "进阶材料",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess002.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 1,
+        "Desc": [
+            "升级！突破！共鸣！我变强啦！",
+            "与<color=#fa5826>【武器】</color>棋子相邻时会被消除，并使该<color=#fa5826>【武器】</color>的被消除分数+2"
+        ],
+        "SkillId": [
+            201
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "太刀碎片",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess003.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "太刀了，所以碎了",
+            "1回合后消除自身，增加1个<color=#72b772>【太刀】</color>棋子。"
+        ],
+        "SkillId": [
+            301
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "帕弥什病毒",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess004.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 3,
+        "Desc": [
+            "本剧唯一反派",
+            "与<color=#72b772>【铁憨憨】</color>相邻时，消除自身并让<color=#72b772>【铁憨憨】</color>立即变成<color=#fa5826>【怪物】</color>棋子。"
+        ],
+        "SkillId": [
+            401
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 2,
+        "Quality": 1,
+        "Name": "枪",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess005.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 2,
+        "Desc": [
+            "战力+1",
+            "与<color=#fa5826>【战斗角色】</color>棋子相邻时会被消除，并使该<color=#fa5826>【战斗角色】</color>的基础分数+<color=#72b772>【枪】</color>的基础分数"
+        ],
+        "SkillId": [
+            501
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 2,
+        "Quality": 2,
+        "Name": "复合弓",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 4,
+        "Desc": [
+            "战力+2",
+            "与<color=#fa5826>【战斗角色】</color>棋子相邻时会被消除，并使该<color=#fa5826>【战斗角色】</color>的基础分数+<color=#72b772>【复合弓】</color>的基础分数"
+        ],
+        "SkillId": [
+            601
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "太刀",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess007.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 8,
+        "Desc": [
+            "战力+4",
+            "与<color=#fa5826>【战斗角色】</color>棋子相邻时会被消除，并使该<color=#fa5826>【战斗角色】</color>的基础分数+<color=#72b772>【太刀】</color>的基础分数",
+            "被消除后，增加1个<color=#72b772>【太刀碎片】</color>。"
+        ],
+        "SkillId": [
+            701,
+            702
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 3,
+        "Quality": 1,
+        "Name": "修理机工",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess008.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 3,
+        "Desc": [
+            "不小心路过的经验素材",
+            "与<color=#fa5826>【战斗角色】</color>相邻时会被消除，并使该<color=#fa5826>【战斗角色】</color>基础分数+1。",
+            "与<color=#72b772>【母体】</color>相邻时会被消除，并使该<color=#72b772>【母体】</color>的基础分数+自身基础分数",
+            "被消除后，增加1个<color=#72b772>【铁憨憨】</color>。"
+        ],
+        "SkillId": [
+            803,
+            801,
+            802
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 14,
+        "Quality": 1,
+        "Name": "铁憨憨",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess009.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "加热一下就变成铁沸物啦",
+            "1回合后，消除自身，增加1个蓝/绿色品质的<color=#fa5826>【怪物】</color>棋子。（蓝/绿色品质的怪物棋子：<color=#72b772>【修理机工】</color><color=#72b772>【库洛洛】</color><color=#72b772>【蔷薇之剑】</color>）",
+            "若与<color=#72b772>【小辉辉】</color>相邻时，会被消除。"
+        ],
+        "SkillId": [
+            901
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 3,
+        "Quality": 1,
+        "Name": "库洛洛",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess010.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 1,
+        "Desc": [
+            "不小心路过的金币素材",
+            "与<color=#fa5826>【战斗角色】</color>棋子相邻时会被消除。",
+            "与<color=#72b772>【母体】</color>相邻时会被消除，并使该<color=#72b772>【母体】</color>的基础分数+自身基础分数",
+            "被消除后增加2个<color=#72b772>【金币】</color>"
+        ],
+        "SkillId": [
+            1003,
+            1001,
+            1002
+        ],
+        "Tag": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 3,
+        "Quality": 2,
+        "Name": "蔷薇之剑",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess011.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 3,
+        "Desc": [
+            "晚安指挥官",
+            "与<color=#fa5826>【战斗角色】</color>相邻时会被消除，并使该<color=#fa5826>【战斗角色】</color>基础分数+2。",
+            "与<color=#72b772>【母体】</color>相邻时会被消除，并使该<color=#72b772>【母体】</color>的基础分数+自身基础分数",
+            "被消除后，增加1个<color=#72b772>【铁憨憨】</color>。"
+        ],
+        "SkillId": [
+            1103,
+            1101,
+            1102
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "Type": 3,
+        "Quality": 3,
+        "Name": "喷涂机械",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess012.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 5,
+        "Desc": [
+            "喷射战士",
+            "与<color=#fa5826>【战斗角色】</color>相邻时会被消除。",
+            "被消除后，增加2个<color=#fa5826>【武器】</color>棋子和1个<color=#72b772>【进阶材料】</color>"
+        ],
+        "SkillId": [
+            1201,
+            1202,
+            1203
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "鲨士碧儿",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess013.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 35,
+        "Desc": [
+            "吃饭，睡觉，揍碧儿",
+            "消除相邻的<color=#72b772>【拉弥亚】</color>。",
+            "与基础分数≥15的<color=#fa5826>【战斗角色】</color>同时存在于棋盘上，被<color=#fa5826>【战斗角色】</color>消除。"
+        ],
+        "SkillId": [
+            1301
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "Type": 4,
+        "Quality": 3,
+        "Name": "小辉辉",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess014.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "欧拉欧拉欧拉欧拉欧拉",
+            "消除相邻的<color=#72b772>【铁憨憨】</color>，每消除1个<color=#72b772>【铁憨憨】</color>可额外获得10分。"
+        ],
+        "SkillId": [
+            1401
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "母体",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess015.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "弹刀模拟器",
+            "消除相邻的<color=#72b772>【修理机工】</color><color=#72b772>【库洛洛】</color><color=#72b772>【蔷薇之剑】</color>，优先级高于<color=#fa5826>【战斗角色】</color>消除<color=#fa5826>【怪物】</color>。",
+            "与基础分数≥10的<color=#fa5826>【战斗角色】</color>相邻，会被消除。"
+        ],
+        "SkillId": [
+            1502
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "红潮",
+        "Value": 10,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess016.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "红色小水洼",
+            "每2回合，随机增加2个<color=#fa5826>【怪物】</color>棋子。（<color=#72b772>铁憨憨</color>除外）",
+            "消除相邻的<color=#72b772>【拉弥亚】</color>。"
+        ],
+        "SkillId": [
+            1601
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "Type": 5,
+        "Quality": 1,
+        "Name": "阿箭",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess017.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "生来就是要战斗，塔塔开",
+            "普通的<color=#fa5826>【战斗角色】</color>。"
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 5,
+        "Quality": 2,
+        "Name": "里",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess018.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "在时间的尽头......一口气上吧！",
+            "消除相邻的<color=#72b772>【螺母】</color>。",
+            "消除相邻的<color=#72b772>【导航仪】</color>。"
+        ],
+        "Tag": [
+            1,
+            3,
+            8
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 5,
+        "Quality": 2,
+        "Name": "露西亚",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess019.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "说到底我才是女主",
+            "每2回合，自身基础分数+1。"
+        ],
+        "SkillId": [
+            1901
+        ],
+        "Tag": [
+            1,
+            8,
+            9
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 5,
+        "Quality": 2,
+        "Name": "诺克提",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess020.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "载具杀手来也",
+            "每2回合增加1个<color=#72b772>【武器碎片】</color>棋子。"
+        ],
+        "SkillId": [
+            2001
+        ],
+        "Tag": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 21,
+        "Type": 5,
+        "Quality": 3,
+        "Name": "蒲牢",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess021.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "嗨嗨嗨！蒲牢来算钱啦！",
+            "<color=#72b772>【蒲牢】</color>初始基础分数为[3，7]之间的随机值。",
+            "每消除1个<color=#72b772>【金币】</color>，基础分数+1，优先级高于<color=#72b772>【苏菲亚】</color>消除<color=#72b772>【金币】</color>。"
+        ],
+        "SkillId": [
+            2101
+        ],
+        "Tag": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 22,
+        "Type": 5,
+        "Quality": 3,
+        "Name": "阿尔法",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess022.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "宿命的囚笼！由我来，+3分！",
+            "每消除1个<color=#fa5826>【怪物】</color>棋子，可额外获得3分。"
+        ],
+        "SkillId": [
+            2201
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "Type": 5,
+        "Quality": 4,
+        "Name": "莉莉丝",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess023.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "优势在我！",
+            "棋盘上每发生1次<color=#fa5826>【战斗角色】</color>消除<color=#fa5826>【怪物】【精英boss】</color>的行为，基础分数+2。"
+        ],
+        "SkillId": [
+            2301
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "Type": 5,
+        "Quality": 4,
+        "Name": "丽芙",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess024.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "今天大家拖丽芙后腿了吗？",
+            "每回合基础分数+1。",
+            "与<color=#72b772>【丽芙】</color>相邻的<color=#fa5826>【后勤角色】【战斗角色】</color>基础分数+1。"
+        ],
+        "SkillId": [
+            2401,
+            2402
+        ],
+        "Tag": [
+            1,
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 25,
+        "Type": 5,
+        "Quality": 5,
+        "Name": "露娜",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess025.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "乘法，在此降临",
+            "每回合露娜的临时基础分数=棋盘上所有<color=#fa5826>【战斗角色】</color>基础分数*该<color=#fa5826>【战斗角色】</color>所在行数（1-4）的值的总和"
+        ],
+        "SkillId": [
+            2501
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "Type": 6,
+        "Quality": 4,
+        "Name": "猫",
+        "Value": 20,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess026.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "与阿尔法短暂相处过的小猫",
+            "每回合增加1个随机<color=#fa5826>【武器】</color>棋子。"
+        ],
+        "SkillId": [
+            2601
+        ],
+        "Tag": [
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "小血清",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess027.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "生命之星特供",
+            "2回合后消除自身，增加1个<color=#72b772>【S辅助机碎片】</color>。"
+        ],
+        "SkillId": [
+            2701
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 28,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "S辅助机碎片",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess028.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 1,
+        "Desc": [
+            "辅助机睡了，变成碎片了",
+            "与<color=#fa5826>【后勤角色】</color>相邻会被消除，增加1个<color=#72b772>【S型辅助机】</color>。"
+        ],
+        "SkillId": [
+            2801
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 29,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "假血清",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess029.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "来路不明的血清，一针下去可能会寄",
+            "每与1个棋子相邻，可额外获得1分。",
+            "3回合后消除自身。"
+        ],
+        "SkillId": [
+            2901,
+            2902
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 30,
+        "Type": 8,
+        "Quality": 1,
+        "Name": "A型辅助机",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess030.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "辅助机狙击池常驻居民",
+            "与<color=#fa5826>【后勤角色】</color>棋子相邻时，临时基础分数+2。",
+            "与<color=#72b772>【小东西】</color>相邻会被消除，并使<color=#72b772>【小东西】</color>的基础分数+自身基础分数"
+        ],
+        "SkillId": [
+            3001,
+            3002
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 31,
+        "Type": 8,
+        "Quality": 2,
+        "Name": "S型辅助机",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess031.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "能来帮帮辅助机吗？",
+            "与<color=#fa5826>【后勤角色】</color>棋子相邻时，基础分数+1。",
+            "与<color=#72b772>【小东西】</color>相邻会被消除，并使<color=#72b772>【小东西】</color>的基础分数+自身基础分数"
+        ],
+        "SkillId": [
+            3101,
+            3102
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 32,
+        "Type": 9,
+        "Quality": 3,
+        "Name": "小东西",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess032.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "辅助机中的辅助机",
+            "消除相邻的<color=#fa5826>【辅助机】</color>。"
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 33,
+        "Type": 10,
+        "Quality": 1,
+        "Name": "邦比娜塔",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess033.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "哎呀，掉螺母了",
+            "每回合增加1个<color=#72b772>【螺母】</color>。",
+            "每回合结算分数时可额外获得1-3分。"
+        ],
+        "SkillId": [
+            3302,
+            3301
+        ],
+        "Tag": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 34,
+        "Type": 10,
+        "Quality": 1,
+        "Name": "常羽",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess034.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "赚钱糕手",
+            "每回合增加1个<color=#72b772>【金币】</color>。"
+        ],
+        "SkillId": [
+            3401
+        ],
+        "Tag": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 35,
+        "Type": 10,
+        "Quality": 1,
+        "Name": "21号",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess035.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "嗅嗅，21号今天找到了好东西",
+            "每2回合，增加1个<color=#72b772>【能量饮料】</color>。"
+        ],
+        "SkillId": [
+            3501
+        ],
+        "Tag": [
+            2,
+            6
+        ]
+    },
+    {
+        "Id": 36,
+        "Type": 10,
+        "Quality": 2,
+        "Name": "布偶熊",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess036.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "传奇黑客！",
+            "与<color=#fa5826>【后勤角色】</color>相邻时，每回合可额外获得3-5分的结算分数。"
+        ],
+        "SkillId": [
+            3601
+        ],
+        "Tag": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 37,
+        "Type": 10,
+        "Quality": 2,
+        "Name": "苏菲亚",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess037.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "敛财糕手",
+            "消除相邻的<color=#72b772>【金币】</color>。"
+        ],
+        "Tag": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 38,
+        "Type": 10,
+        "Quality": 3,
+        "Name": "罗兰",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess038.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "罗兰的模仿秀",
+            "每回合的结算分数=棋盘上最高基础分数。"
+        ],
+        "SkillId": [
+            3801
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 39,
+        "Type": 10,
+        "Quality": 3,
+        "Name": "卡列尼娜",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess039.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "我也是后勤部队？",
+            "每消除1个<color=#72b772>【螺母】</color>，基础分数+1，优先级高于<color=#72b772>【里】</color>消除<color=#72b772>【螺母】</color>。"
+        ],
+        "Tag": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 40,
+        "Type": 10,
+        "Quality": 3,
+        "Name": "含英",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess040.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "一阵劲爆的电琵琶",
+            "与自身相邻的<color=#fa5826>【后勤角色】</color>基础分数+1（不包括自身）。",
+            "与<color=#fa5826>【后勤角色】</color>棋子相邻时，增加1个<color=#72b772>【黑卡】</color>，每回合最多增加1个。"
+        ],
+        "SkillId": [
+            4001,
+            4002
+        ],
+        "Tag": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 41,
+        "Type": 10,
+        "Quality": 3,
+        "Name": "曲",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess041.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "噔噔噔，踩下楼梯",
+            "<color=#72b772>【曲】</color>所在行上所有棋子基础分数+1（不包括自身）。"
+        ],
+        "SkillId": [
+            4101
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 42,
+        "Type": 10,
+        "Quality": 3,
+        "Name": "薇拉",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess042.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "好巧，又是我们三个",
+            "当棋盘上同时出现<color=#72b772>【薇拉】</color><color=#72b772>【21号】</color><color=#72b772>【诺克提】</color>时，<color=#fa5826>三头犬成员</color>棋子自身基础分数+1。",
+            "（三头犬成员：<color=#72b772>薇拉，21号，诺克提</color>）"
+        ],
+        "SkillId": [
+            4201
+        ],
+        "Tag": [
+            2,
+            6
+        ]
+    },
+    {
+        "Id": 43,
+        "Type": 10,
+        "Quality": 4,
+        "Name": "赛琳娜",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess043.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "流浪的吟游诗人",
+            "每与1个棋子相邻，可额外获得3分结算分数。"
+        ],
+        "SkillId": [
+            4301
+        ],
+        "Tag": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 44,
+        "Type": 10,
+        "Quality": 4,
+        "Name": "拉弥亚",
+        "Value": 10,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess044.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 15,
+        "Desc": [
+            "皮皮虾！我们走！",
+            "拉弥亚在棋盘上时，增加1个<color=#fa5826>【刷新币】</color>或<color=#fa5826>【删除币】</color>。",
+            "与<color=#72b772>【鲨士碧儿】【红潮】</color>相邻会被消除。"
+        ],
+        "SkillId": [
+            4401,
+            4402,
+            4403
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 45,
+        "Type": 11,
+        "Quality": 5,
+        "Name": "赛利卡",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess045.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "天空的霸王驾到！",
+            "当赛利卡出现在棋盘上时，棋盘上所有<color=#fa5826>【后勤角色】</color><color=#fa5826>【战斗角色】</color>基础分数+3。",
+            "当赛利卡出现在棋盘上，自身基础分数=棋盘上所有<color=#fa5826>【后勤角色】</color>基础分数之和。"
+        ],
+        "SkillId": [
+            4502,
+            4501
+        ],
+        "Tag": [
+            2
+        ]
+    },
+    {
+        "Id": 46,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "螺母",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess046.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 2,
+        "Desc": [
+            "随处可见的螺母",
+            "与<color=#72b772>【里】【卡列】</color>相邻会被消除。",
+            "一无是处的螺母，就像一无是处的我。"
+        ],
+        "SkillId": [
+            4602,
+            4601
+        ],
+        "Tag": [
+            3
+        ]
+    },
+    {
+        "Id": 47,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "导航仪",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess047.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 5,
+        "Desc": [
+            "精准导航！",
+            "与<color=#72b772>【里】</color>相邻会被消除，被消除后增加3个<color=#72b772>【螺母】</color>。"
+        ],
+        "SkillId": [
+            4701
+        ],
+        "Tag": [
+            3
+        ]
+    },
+    {
+        "Id": 48,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "怪物扭蛋",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess048.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "奇怪的扭蛋，扭~扭~扭~看看扭出了啥",
+            "累计消除2个<color=#72b772>【螺母】</color>后，消除自身，增加1个<color=#72b772>【蔷薇之剑】</color>。"
+        ],
+        "SkillId": [
+            4801
+        ],
+        "Tag": [
+            3
+        ]
+    },
+    {
+        "Id": 49,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "辅助扭蛋",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "奇怪的扭蛋，扭~扭~扭~看看扭出了啥",
+            "累计消除2个<color=#72b772>【螺母】</color>后，消除自身，增加1个<color=#72b772>【S型辅助机】</color>。"
+        ],
+        "SkillId": [
+            4901
+        ],
+        "Tag": [
+            3
+        ]
+    },
+    {
+        "Id": 50,
+        "Type": 13,
+        "Quality": 2,
+        "Name": "作弊指令",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess050.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "“超水平表现”",
+            "使棋盘上的<color=#72b772>【布偶熊】</color><color=#72b772>【赛琳娜】</color>的结算分数+3。",
+            "在<color=#72b772>背包内也可以生效</color>。"
+        ],
+        "SkillId": [
+            5001
+        ],
+        "Tag": [
+            4
+        ]
+    },
+    {
+        "Id": 51,
+        "Type": 13,
+        "Quality": 3,
+        "Name": "直接开挂",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess051.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "你开了？",
+            "使棋盘上的<color=#72b772>【布偶熊】</color><color=#72b772>【赛琳娜】</color>的基础分数+2。",
+            "在<color=#72b772>背包内也可以生效</color>。"
+        ],
+        "SkillId": [
+            5101
+        ],
+        "Tag": [
+            4
+        ]
+    },
+    {
+        "Id": 52,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "金币",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess052.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 2,
+        "Desc": [
+            "钱，是可以生钱的",
+            "每回合有20%概率增加1个<color=#72b772>【金币】</color>。",
+            "2回合后，该棋子消除自身，消除自身的回合不增加新棋子。"
+        ],
+        "SkillId": [
+            5204,
+            5203,
+            5202,
+            5201
+        ],
+        "Tag": [
+            5
+        ]
+    },
+    {
+        "Id": 53,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "怪物福袋",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess053.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "神秘的福袋，谁也不知道里面能开出什么东西",
+            "累计消除2个<color=#72b772>【金币】</color>后，消除自身，增加1个<color=#72b772>【蔷薇之剑】</color>。"
+        ],
+        "SkillId": [
+            5301
+        ],
+        "Tag": [
+            5
+        ]
+    },
+    {
+        "Id": 54,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "辅助福袋",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess054.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "神秘的福袋，谁也不知道里面能开出什么东西",
+            "累计消除2个<color=#72b772>【金币】</color>后，消除自身，增加1个<color=#72b772>【S型辅助机】</color>。"
+        ],
+        "SkillId": [
+            5401
+        ],
+        "Tag": [
+            5
+        ]
+    },
+    {
+        "Id": 55,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "能量饮料",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess055.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "知名粮食作物的果汁二次发酵产物",
+            "棋盘上存在2种<color=#fa5826>三头犬成员</color>棋子时会被消除。",
+            "每消除1个<color=#72b772>【能量饮料】</color>，棋盘上的<color=#fa5826>三头犬成员</color>基础分数+1。",
+            "（三头犬成员：<color=#72b772>薇拉，21号，诺克提</color>）"
+        ],
+        "SkillId": [
+            5501
+        ],
+        "Tag": [
+            6
+        ]
+    },
+    {
+        "Id": 56,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "军用警犬",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess056.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 4,
+        "Desc": [
+            "汪！汪汪！汪汪汪！",
+            "与<color=#fa5826>三头犬成员</color>棋子相邻时会被消除，增加1个<color=#72b772>【能量饮料】</color>。",
+            "（三头犬成员：<color=#72b772>薇拉，21号，诺克提</color>）"
+        ],
+        "SkillId": [
+            5601
+        ],
+        "Tag": [
+            6
+        ]
+    },
+    {
+        "Id": 57,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "黑卡",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess057.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "指挥官的抽卡记录",
+            "1回合后消除自身，在<color=#fa5826>【战斗角色】【后勤角色】【武器】</color>中任选1个绿色品质的棋子放入背包。"
+        ],
+        "SkillId": [
+            5702,
+            5701
+        ],
+        "Tag": [
+            7
+        ]
+    },
+    {
+        "Id": 58,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "虹卡",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess058.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "陆肆捌的实力",
+            "2回合后消除自身，增加2个<color=#72b772>【黑卡】</color>。"
+        ],
+        "SkillId": [
+            5801
+        ],
+        "Tag": [
+            7
+        ]
+    },
+    {
+        "Id": 59,
+        "Type": 12,
+        "Quality": 3,
+        "Name": "非鸦指挥官",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess059.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "这就是首席的实力",
+            "与<color=#72b772>【露西亚】</color>相邻会增加1个<color=#72b772>【阿呆蛙】</color>。",
+            "每回合有percent%的概率消除自身变成<color=#72b772>【欧皇指挥官】</color>，与<color=#72b772>【虹卡】</color>相邻的回合，基础概率永久+5%（可叠加）"
+        ],
+        "SkillId": [
+            5902,
+            5901
+        ],
+        "Tag": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "Id": 60,
+        "Type": 12,
+        "Quality": 5,
+        "Name": "欧皇指挥官",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess060.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "这也是首席的实力",
+            "每回合的结算得分+50分。",
+            "<color=#fa5826>唯一的欧皇</color>：背包里只能存在<color=#fa5826>1个欧皇指挥官</color>棋子，若背包里已有欧皇指挥官，其他非鸦指挥官无法变成欧皇指挥官。",
+            "偷渡成功：只能<color=#fa5826>由非鸦指挥官转变而来</color>。"
+        ],
+        "SkillId": [
+            6001
+        ],
+        "Tag": [
+            7
+        ]
+    },
+    {
+        "Id": 61,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "灰鸦的标志",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess061.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "灰鸦的翅膀",
+            "与<color=#72b772>【露西亚】</color><color=#72b772>【里】</color><color=#72b772>【丽芙】</color><color=#72b772>【非鸦指挥官】</color>同时出现在棋盘时，消除自身，可获得额外得分。额外得分=棋盘上<color=#fa5826>【灰鸦小队】</color>棋子基础分数之和。",
+            "（灰鸦小队：<color=#72b772>露西亚、里、丽芙、非鸦指挥官</color>）"
+        ],
+        "SkillId": [
+            6101
+        ],
+        "Tag": [
+            8
+        ]
+    },
+    {
+        "Id": 62,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "炊具",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess062.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 4,
+        "Desc": [
+            "万能的炊具",
+            "与<color=#72b772>【露西亚】</color>相邻会被消除。"
+        ],
+        "SkillId": [
+            6201
+        ],
+        "Tag": [
+            9
+        ]
+    },
+    {
+        "Id": 63,
+        "Type": 1,
+        "Quality": 1,
+        "Name": "食材",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess063.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 1,
+        "Desc": [
+            "万能的食材",
+            "与<color=#72b772>【露西亚】</color>相邻会被消除。"
+        ],
+        "SkillId": [
+            6301
+        ],
+        "Tag": [
+            9
+        ]
+    },
+    {
+        "Id": 64,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "调料",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess064.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 3,
+        "Desc": [
+            "亿点点调料",
+            "与<color=#72b772>【露西亚】</color>相邻会被消除，并使<color=#72b772>【露西亚】</color>基础分数+1。"
+        ],
+        "SkillId": [
+            6401
+        ],
+        "Tag": [
+            9
+        ]
+    },
+    {
+        "Id": 65,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "阿呆蛙",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess065.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "能让露西亚开心很久的礼物",
+            "2回合后消除自身，增加1个<color=#72b772>【食材】</color>，1个<color=#72b772>【炊具】</color>，1个<color=#72b772>【调料】</color>。"
+        ],
+        "SkillId": [
+            6504,
+            6505
+        ],
+        "Tag": [
+            9
+        ]
+    },
+    {
+        "Id": 66,
+        "Type": 12,
+        "Quality": 3,
+        "Name": "非鸦指挥官",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess059.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "这就是首席的实力",
+            "与<color=#72b772>【露西亚】</color>相邻会增加1个<color=#72b772>【阿呆蛙】</color>。",
+            "每回合有20%的概率消除自身变成<color=#72b772>【欧皇指挥官】</color>，与<color=#72b772>【虹卡】</color>相邻的回合，基础概率永久+5%（可叠加）"
+        ],
+        "SkillId": [
+            6601,
+            5902
+        ],
+        "Tag": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "Id": 67,
+        "Type": 12,
+        "Quality": 3,
+        "Name": "非鸦指挥官",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess059.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "这就是首席的实力",
+            "与<color=#72b772>【露西亚】</color>相邻会增加1个<color=#72b772>【阿呆蛙】</color>。",
+            "每回合有20%的概率消除自身变成<color=#72b772>【欧皇指挥官】</color>，与<color=#72b772>【虹卡】</color>相邻的回合，基础概率永久+5%（可叠加）"
+        ],
+        "SkillId": [
+            6701,
+            5902
+        ],
+        "Tag": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "Id": 68,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "灰鸦的标志",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess061.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "灰鸦的翅膀",
+            "与<color=#72b772>【露西亚】</color><color=#72b772>【里】</color><color=#72b772>【丽芙】</color><color=#72b772>【非鸦指挥官】</color>同时出现在棋盘时，消除自身，可获得额外得分。额外得分=棋盘上<color=#fa5826>【灰鸦小队】</color>棋子基础分数之和。",
+            "（灰鸦小队：<color=#72b772>露西亚、里、丽芙、非鸦指挥官</color>）"
+        ],
+        "SkillId": [
+            6801
+        ],
+        "Tag": [
+            8
+        ]
+    },
+    {
+        "Id": 69,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "灰鸦的标志",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess061.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 0,
+        "ValueUponDeletion": 0,
+        "Desc": [
+            "灰鸦的翅膀",
+            "与<color=#72b772>【露西亚】</color><color=#72b772>【里】</color><color=#72b772>【丽芙】</color><color=#72b772>【非鸦指挥官】</color>同时出现在棋盘时，消除自身，可获得额外得分。额外得分=棋盘上<color=#fa5826>【灰鸦小队】</color>棋子基础分数之和。",
+            "（灰鸦小队：<color=#72b772>露西亚、里、丽芙、非鸦指挥官</color>）"
+        ],
+        "SkillId": [
+            6901
+        ],
+        "Tag": [
+            8
+        ]
+    }
+]

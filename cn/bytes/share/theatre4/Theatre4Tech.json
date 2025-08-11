@@ -1,0 +1,250 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10001,
+        "Condition": 0,
+        "Name": "磨尖拭锐",
+        "Desc": "攻击力+50",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon001.png"
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10002,
+        "Condition": 0,
+        "Name": "强身健体",
+        "Desc": "生命值+500",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon006.png",
+        "PreIds": [
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10003,
+        "Condition": 0,
+        "Name": "以半击倍",
+        "Desc": "攻击力+10%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon002.png",
+        "PreIds": [
+            2
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Cost": 50,
+        "EffectGroupId": 10004,
+        "Condition": 0,
+        "Name": "全般精通",
+        "Desc": "全属性伤害+15%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon008.png",
+        "PreIds": [
+            3
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 1,
+        "Cost": 100,
+        "EffectGroupId": 10005,
+        "Condition": 0,
+        "Name": "势不可挡",
+        "Desc": "额外伤害加成+15%",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon031.png",
+        "PreIds": [
+            4
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10011,
+        "Condition": 0,
+        "Name": "启动资金",
+        "Desc": "初始新苏菲亚币+20",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BuouxiongSSS1.png"
+    },
+    {
+        "Id": 7,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10012,
+        "Condition": 0,
+        "Name": "交易补贴",
+        "Desc": "进入商店时获得50新苏菲亚币",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon021.png",
+        "PreIds": [
+            6
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10013,
+        "Condition": 0,
+        "Name": "富裕资产",
+        "Desc": "初始新苏菲亚币+40",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaS1.png",
+        "PreIds": [
+            7
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 2,
+        "Cost": 50,
+        "EffectGroupId": 10014,
+        "Condition": 0,
+        "Name": "谈判手腕",
+        "Desc": "商店中商品价格降低10%",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "PreIds": [
+            8
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 2,
+        "Cost": 100,
+        "EffectGroupId": 10015,
+        "Condition": 0,
+        "Name": "操盘大手",
+        "Desc": "利息上限+10",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaSS1.png",
+        "PreIds": [
+            9
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10021,
+        "Condition": 0,
+        "Name": "白手起家",
+        "Desc": "初始获得1个施工许可",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4KalieninaExqiu1.png"
+    },
+    {
+        "Id": 12,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10022,
+        "Condition": 0,
+        "Name": "多样决策",
+        "Desc": "每次营地支援刷新价格-10",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33031.png",
+        "PreIds": [
+            11
+        ]
+    },
+    {
+        "Id": 13,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10023,
+        "Condition": 0,
+        "Name": "一应俱全",
+        "Desc": "初始获得2个施工许可",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4KalieninaExhexin2.png",
+        "PreIds": [
+            12
+        ]
+    },
+    {
+        "Id": 14,
+        "Type": 3,
+        "Cost": 50,
+        "EffectGroupId": 10024,
+        "Condition": 0,
+        "Name": "精打细算",
+        "Desc": "每次营地支援刷新价格-15",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33032.png",
+        "PreIds": [
+            13
+        ]
+    },
+    {
+        "Id": 15,
+        "Type": 3,
+        "Cost": 100,
+        "EffectGroupId": 10025,
+        "Condition": 0,
+        "Name": "深计远虑",
+        "Desc": "营地支援首次刷新免费",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2KamuZhongjieji1.png",
+        "PreIds": [
+            14
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 46,
+        "Condition": 1020770,
+        "Name": "茧中初醒",
+        "Desc": "可在局内获得觉醒值",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX01.png"
+    },
+    {
+        "Id": 17,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 47,
+        "Condition": 0,
+        "Name": "逆流重构",
+        "Desc": "解锁沙盘重构：使用后可回到3天前并返还期间消耗的部分资源，每章可使用1次且次数无法累计，进入当前地图3天后才可使用",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX03.png",
+        "PreIds": [
+            16
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 10037,
+        "Condition": 0,
+        "Name": "拟合递归",
+        "Desc": "沙盘重构后额外获得100银币",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX04.png",
+        "PreIds": [
+            17
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 4,
+        "Cost": 50,
+        "EffectGroupId": 10038,
+        "Condition": 0,
+        "Name": "溯洄沙漏",
+        "Desc": "沙盘重构后额外获得行动点+1",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX05.png",
+        "PreIds": [
+            18
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 4,
+        "Cost": 100,
+        "EffectGroupId": 10039,
+        "Condition": 0,
+        "Name": "樊外窥梦",
+        "Desc": "获得的觉醒值额外增加50%",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/UiTheatre4SkillIconJX02.png",
+        "PreIds": [
+            19
+        ]
+    }
+]

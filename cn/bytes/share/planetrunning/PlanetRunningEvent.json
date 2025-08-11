@@ -1,0 +1,2458 @@
+[
+    {
+        "Id": 1,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "睡觉",
+        "Desc": "经过起点时，恢复50%队伍生命值",
+        "UseDesc": "基地的回血",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1001
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 2,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "采集",
+        "Desc": "每圈首次经过时，星矿+55",
+        "UseDesc": "矿场的回血",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1002
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 3,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "星际海盗",
+        "Desc": "与【星域训练场】相邻时，每圈生成2名星际海盗，击败后星矿+30",
+        "UseDesc": "矿场与训练场之间的联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32032.png",
+        "IsIncrease": 2,
+        "Effects": [
+            1003
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 4,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "训练",
+        "Desc": "每圈首次经过时队伍攻击+3，生命值+5",
+        "UseDesc": "训练场的加攻血",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon6.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1004,
+            1005
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 5,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "流浪者",
+        "Desc": "每圈在周边道路上生成3名星域流浪者",
+        "UseDesc": "矿场召",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "IsIncrease": 2,
+        "Effects": [
+            1006
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 6,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "精准",
+        "Desc": "队伍暴击率+20%，暴击伤害+25%",
+        "UseDesc": "射击馆的固定暴击率",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingzhungongji.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1007,
+            1032
+        ]
+    },
+    {
+        "Id": 7,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "强化训练",
+        "Desc": "与【星域训练场】相邻时，队伍获得30%暴击伤害",
+        "UseDesc": "射击馆与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1008
+        ]
+    },
+    {
+        "Id": 8,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "补给",
+        "Desc": "每圈首次经过时队伍恢复8%最大生命值",
+        "UseDesc": "酒吧回血",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1009
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 9,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "功能饮料",
+        "Desc": "与【星域训练场】相邻时，额外恢复8%最大生命值",
+        "UseDesc": "酒吧与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1010
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 10,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "占卜",
+        "Desc": "每圈首次经过时随机获得1个道具",
+        "UseDesc": "占卜馆抽道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1011
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 11,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "VVIP占卜",
+        "Desc": "与【诺曼星际矿场】相邻时，每圈经过时额外抽取1个道具",
+        "UseDesc": "占卜馆与矿场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2SufeiyaS1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1011
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 12,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "很有精神",
+        "Desc": "队伍速度加成+28%",
+        "UseDesc": "离子塔",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11013.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1013
+        ]
+    },
+    {
+        "Id": 13,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "超级精神",
+        "Desc": "与【诺曼星际矿场】相邻时，额外获得20%攻速加成但每圈需要消耗50星矿",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1013,
+            1014
+        ],
+        "Conditions": [
+            1001,
+            1005
+        ]
+    },
+    {
+        "Id": 14,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "掉落",
+        "Desc": "被击败后，队伍星矿+15",
+        "UseDesc": "矿场连携的怪物身上配星矿事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1031
+        ]
+    },
+    {
+        "Id": 101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "攻击连携",
+        "Desc": "与【星域训练场】相邻时，队伍攻击+3",
+        "UseDesc": "变异岩石与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1015
+        ]
+    },
+    {
+        "Id": 102,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "持续放松",
+        "Desc": "每圈额外恢复队伍生命值 1点",
+        "UseDesc": "变异草地",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1017
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 103,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "立即放松",
+        "Desc": "队伍生命值 +1",
+        "UseDesc": "变异草地",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1018
+        ]
+    },
+    {
+        "Id": 104,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "持续放松",
+        "Desc": "每圈额外恢复队伍生命值 1点",
+        "UseDesc": "冰星岩石",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1019
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 105,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "立即放松",
+        "Desc": "队伍生命值 +1",
+        "UseDesc": "冰星岩石",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1020
+        ]
+    },
+    {
+        "Id": 106,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "攻速连携",
+        "Desc": "与【跃迁星塔】相邻时，队伍攻速加成+1%",
+        "UseDesc": "冰星冰面与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1021
+        ]
+    },
+    {
+        "Id": 107,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "持续放松",
+        "Desc": "每圈额外恢复队伍生命值 1点",
+        "UseDesc": "沙星绿洲",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1022
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 108,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "立即放松",
+        "Desc": "队伍生命值 +1",
+        "UseDesc": "沙星绿洲",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1023
+        ]
+    },
+    {
+        "Id": 109,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "攻击连携",
+        "Desc": "与【华彩星象馆】相邻时，队伍攻击+3",
+        "UseDesc": "沙星岩石与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1024
+        ]
+    },
+    {
+        "Id": 110,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "持续放松",
+        "Desc": "每圈额外恢复队伍生命值 1点",
+        "UseDesc": "火星岩浆",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11001.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1025
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 111,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "立即放松",
+        "Desc": "队伍生命值 +1",
+        "UseDesc": "火星岩浆",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1026
+        ]
+    },
+    {
+        "Id": 112,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "暴击连携",
+        "Desc": "与【拟相靶场】相邻时暴击率+1%，暴击伤害+1%",
+        "UseDesc": "火星结晶与训练场联动",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1027,
+            1028
+        ]
+    },
+    {
+        "Id": 113,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "能力提升",
+        "Desc": "攻击力+5，生命值+10",
+        "UseDesc": "甜品星红丝绒",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon6.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1033,
+            1034
+        ]
+    },
+    {
+        "Id": 114,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "星矿连携",
+        "Desc": "与【诺曼星际矿场】相邻时，星矿+50",
+        "UseDesc": "甜品星杏仁",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon6.png",
+        "IsIncrease": 1,
+        "Effects": [
+            1035
+        ]
+    },
+    {
+        "Id": 501,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "1-2主题",
+        "Desc": "·每次<color=#b89cfe>击败敌人</color>时攻击+1，当前生命-2",
+        "UseDesc": "1-2主题",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2001,
+            2002
+        ]
+    },
+    {
+        "Id": 502,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": true,
+        "Name": "神经延迟",
+        "Desc": "·起点<color=#b89cfe>恢复效果</color>降为25%",
+        "UseDesc": "1-4主题纯展示，实现上，通过换基地来实现",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 503,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "神经延迟",
+        "Desc": "起点恢复效果降为25%（挂载）",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 504,
+        "ActivateCount": 0,
+        "TriggerType": 6,
+        "IsDirectTrigger": false,
+        "Name": "2-2主题",
+        "Desc": "废弃",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2005
+        ]
+    },
+    {
+        "Id": 505,
+        "ActivateCount": 0,
+        "TriggerType": 6,
+        "IsDirectTrigger": false,
+        "Name": "2-4主题",
+        "Desc": "废弃",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2006,
+            2007
+        ]
+    },
+    {
+        "Id": 506,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-1建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-1建造任务 1 矿场X3",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2008
+        ],
+        "Conditions": [
+            2011
+        ]
+    },
+    {
+        "Id": 507,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-2建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-2建造任务 1 矿场X3",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2008
+        ],
+        "Conditions": [
+            2021
+        ]
+    },
+    {
+        "Id": 508,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-3建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-3建造任务 1 矿场X6",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2008
+        ],
+        "Conditions": [
+            2031
+        ]
+    },
+    {
+        "Id": 509,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-4建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-4建造任务 1 矿场X6",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2008
+        ],
+        "Conditions": [
+            2041
+        ]
+    },
+    {
+        "Id": 510,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-5建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-5建造任务 1 矿场X2",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2008
+        ],
+        "Conditions": [
+            2051
+        ]
+    },
+    {
+        "Id": 511,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-3属性建造任务",
+        "Desc": "·<color=#b89cfe>完成全部</color>建造任务后，每圈额外获得<color=#b89cfe>属性加成</color>",
+        "UseDesc": "2-3建造任务 1",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2009
+        ],
+        "Conditions": [
+            2031,
+            2032,
+            2033
+        ]
+    },
+    {
+        "Id": 512,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "特别强化",
+        "Desc": "·队伍每圈攻击+5，生命值+10",
+        "UseDesc": "完成建造任务后每圈加属性",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyadazhao1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2010,
+            2011
+        ]
+    },
+    {
+        "Id": 513,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "低效建造",
+        "Desc": "·<color=#b89cfe>极寒天气</color>下，建造后<color=#b89cfe>额外消耗</color>999星矿（建造地形不受影响）",
+        "UseDesc": "极寒扣钱的纯展示信息",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 514,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "交替",
+        "Desc": "·极寒和晴天交替会更加频繁",
+        "UseDesc": "2-5主题纯展示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 515,
+        "ActivateCount": 0,
+        "TriggerType": 6,
+        "IsDirectTrigger": false,
+        "Name": "沙星主题1",
+        "Desc": "·<color=#b89cfe>获得道具</color>时，攻击+5，生命+10",
+        "UseDesc": "沙星主题1",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2020,
+            2021
+        ]
+    },
+    {
+        "Id": 516,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "沙尘暴",
+        "Desc": "·<color=#b89cfe>沙暴天气</color>将更危险，<color=#b89cfe>星域训练场</color>无法建造",
+        "UseDesc": "沙漠星球的 沙尘暴变更效果环境提示，纯提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 2
+    },
+    {
+        "Id": 517,
+        "ActivateCount": 0,
+        "TriggerType": 6,
+        "IsDirectTrigger": false,
+        "Name": "沙星主题2",
+        "Desc": "·<color=#b89cfe>获得道具</color>时，星矿+10",
+        "UseDesc": "沙星主题2",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2022
+        ]
+    },
+    {
+        "Id": 518,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "火星环境1",
+        "Desc": "·每圈<color=#b89cfe>经过起点</color>时，星矿+200",
+        "UseDesc": "火星主题1",
+        "Show": 1,
+        "IsIncrease": 1,
+        "Effects": [
+            2030
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 519,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2-1",
+        "Desc": "·<color=#b89cfe>诺曼星际矿场</color>仅可建造<color=#b89cfe>3座</color>",
+        "UseDesc": "火星主题2 纯展示，通过建筑表配置限造",
+        "Show": 1,
+        "IsIncrease": 1
+    },
+    {
+        "Id": 520,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2-2",
+        "Desc": "·<color=#b89cfe>诺曼星际矿场</color>仅可建造<color=#b89cfe>2座</color>",
+        "UseDesc": "火星主题2 4-2纯展示，通过建筑表配置限造",
+        "Show": 1,
+        "IsIncrease": 1
+    },
+    {
+        "Id": 521,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2-3",
+        "Desc": "·<color=#b89cfe>诺曼星际矿场</color>仅可建造<color=#b89cfe>1座</color>",
+        "UseDesc": "火星主题2 4-3纯展示，通过建筑表配置限造",
+        "Show": 1,
+        "IsIncrease": 1
+    },
+    {
+        "Id": 522,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2-4",
+        "Desc": "·<color=#b89cfe>诺曼星际矿场</color>不可建造",
+        "UseDesc": "火星主题2 4-4纯展示，通过建筑表配置限造",
+        "Show": 1,
+        "IsIncrease": 1
+    },
+    {
+        "Id": 523,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2-4",
+        "Desc": "·<color=#b89cfe>雷雨</color>预警，会出现更强力的敌人",
+        "UseDesc": "火星主题2 4-4纯展示",
+        "Show": 1,
+        "IsIncrease": 1
+    },
+    {
+        "Id": 524,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "火星环境2",
+        "Desc": "·每圈<color=#b89cfe>经过起点</color>时，星矿+500",
+        "UseDesc": "火星主题4、5",
+        "Show": 1,
+        "IsIncrease": 1,
+        "Effects": [
+            2031
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 560,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-1建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-1建造任务 2",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2100
+        ],
+        "Conditions": [
+            2012
+        ]
+    },
+    {
+        "Id": 561,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-2建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-2建造任务 2",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2100
+        ],
+        "Conditions": [
+            2022
+        ]
+    },
+    {
+        "Id": 562,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-3建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-3建造任务 2",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2100
+        ],
+        "Conditions": [
+            2032
+        ]
+    },
+    {
+        "Id": 563,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-4建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-4建造任务 2",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2100
+        ],
+        "Conditions": [
+            2042
+        ]
+    },
+    {
+        "Id": 564,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-5建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-5建造任务 2",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2100
+        ],
+        "Conditions": [
+            2052
+        ]
+    },
+    {
+        "Id": 565,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-1建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-1建造任务 3",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2101
+        ],
+        "Conditions": [
+            2013
+        ]
+    },
+    {
+        "Id": 566,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-2建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-2建造任务 3",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2101
+        ],
+        "Conditions": [
+            2023
+        ]
+    },
+    {
+        "Id": 567,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-3建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-3建造任务 3",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2101
+        ],
+        "Conditions": [
+            2033
+        ]
+    },
+    {
+        "Id": 568,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-4建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-4建造任务 3",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2101
+        ],
+        "Conditions": [
+            2043
+        ]
+    },
+    {
+        "Id": 569,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "2-5建造任务",
+        "Desc": "·每<color=#b89cfe>完成一项</color>建造任务，星矿+100",
+        "UseDesc": "2-5建造任务 3",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            2101
+        ],
+        "Conditions": [
+            2053
+        ]
+    },
+    {
+        "Id": 580,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境1",
+        "Desc": "·<color=#b89cfe>地形</color>造价提升至50星矿",
+        "UseDesc": "甜品星纯展示1",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 581,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境2",
+        "Desc": "·<color=#b89cfe>星域训练场</color>在<color=#b89cfe>幻梦</color>天气提供特殊效果",
+        "UseDesc": "甜品星纯展示2",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 582,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境2",
+        "Desc": "·<color=#b89cfe>诺曼星际矿场</color>在<color=#b89cfe>幻梦</color>天气提供特殊效果",
+        "UseDesc": "甜品星纯展示2",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 583,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境3",
+        "Desc": "·领主将在<color=#b89cfe>第一圈</color>后降临",
+        "UseDesc": "甜品星纯展示3",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 584,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境4",
+        "Desc": "·<color=#b89cfe>矿场无法建造</color>，初始星矿+9800",
+        "UseDesc": "甜品星纯展示4",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 585,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境5",
+        "Desc": "·杏仁慕斯<color=#b89cfe>已售罄</color>",
+        "UseDesc": "甜品星纯展示5",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 586,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境6",
+        "Desc": "·<color=#b89cfe>星域训练场</color>不限制建造数量",
+        "UseDesc": "甜品星纯展示6",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 587,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境7",
+        "Desc": "·<color=#b89cfe>无法建造地形</color>",
+        "UseDesc": "甜品星纯展示7",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 588,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境8",
+        "Desc": "·<color=#b89cfe>起点</color>不提供恢复效果",
+        "UseDesc": "甜品星纯展示7",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 589,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境9",
+        "Desc": "·杏仁慕斯<color=#b89cfe>已售罄</color>",
+        "UseDesc": "甜品星纯展示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 590,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境10",
+        "Desc": "·杏仁慕斯<color=#b89cfe>恢复供应</color>",
+        "UseDesc": "甜品星纯展示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 591,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "甜品星环境1",
+        "Desc": "·<color=#b89cfe>红丝绒山脉</color>造价提升至140星矿",
+        "UseDesc": "甜品星纯展示5-4",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 1001,
+        "ActivateCount": 0,
+        "TriggerType": 4,
+        "IsDirectTrigger": true,
+        "Name": "晴天",
+        "Desc": "击败敌人后，星矿+20",
+        "UseDesc": "冰星晴天",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3024
+        ]
+    },
+    {
+        "Id": 1002,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "爆矿",
+        "Desc": "被击败后，星矿+20",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3025
+        ]
+    },
+    {
+        "Id": 1003,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "极寒",
+        "Desc": "敌人变得更强",
+        "UseDesc": "极寒纯展示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21111.png",
+        "IsIncrease": 2
+    },
+    {
+        "Id": 1004,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "低效建造",
+        "Desc": "极寒天气，建造后会额外消耗999星矿（建造地形除外）",
+        "UseDesc": "极寒下，，每次建造，都要给建筑添加一个-999星矿的事件，地块不加",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon2.png",
+        "IsIncrease": 2,
+        "Effects": [
+            3026,
+            3027,
+            3028,
+            3029,
+            3030
+        ]
+    },
+    {
+        "Id": 1005,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "低效建造",
+        "Desc": "极寒天气，建造后会额外消耗999星矿（建造地形除外）",
+        "UseDesc": "极寒扣钱事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerNewBookIcon2.png",
+        "IsIncrease": 2,
+        "Effects": [
+            3031
+        ]
+    },
+    {
+        "Id": 1010,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": true,
+        "Name": "废弃",
+        "Desc": "华彩星象馆每圈额外产出1个随机道具",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3040
+        ]
+    },
+    {
+        "Id": 1011,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "废弃",
+        "Desc": "每圈首次经过时额外产出1个随机道具",
+        "UseDesc": "废弃",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3041
+        ]
+    },
+    {
+        "Id": 1012,
+        "ActivateCount": 0,
+        "TriggerType": 4,
+        "IsDirectTrigger": true,
+        "Name": "沙尘暴击",
+        "Desc": "非领主的敌方单位暴击率+100%",
+        "UseDesc": "沙星3-2沙尘暴",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png",
+        "IsIncrease": 2,
+        "Effects": [
+            3045,
+            3046
+        ]
+    },
+    {
+        "Id": 1013,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "暴击提升",
+        "Desc": "沙暴天气下，暴击率+100%",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3047
+        ]
+    },
+    {
+        "Id": 1014,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": true,
+        "Name": "沙尘试炼",
+        "Desc": "沙暴天气下，每圈经过诺曼星际矿场时额外获得1个道具",
+        "UseDesc": "沙星3-2沙尘暴",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3048
+        ]
+    },
+    {
+        "Id": 1015,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "沙尘试炼",
+        "Desc": "每圈经过诺曼星际矿场时，额外获得1个道具",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3049
+        ],
+        "Conditions": [
+            1001
+        ]
+    },
+    {
+        "Id": 1030,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "炎热晴天",
+        "Desc": "每圈经过起点时，星矿+200",
+        "UseDesc": "沙漠晴天给星矿",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3042
+        ]
+    },
+    {
+        "Id": 1031,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "额外产出",
+        "Desc": "每圈经过起点时，星矿+200",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3043
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 1050,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "流浪者+",
+        "Desc": "每圈在随机道路上生成3名流浪者",
+        "UseDesc": "火星雨天道路每圈随机招",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "IsIncrease": 2,
+        "Effects": [
+            3100
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 1051,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": true,
+        "Name": "无主机械",
+        "Desc": "拟相靶场每圈在随机道路上生成3名无主机械，击败后暴击伤害+21%，星矿+240",
+        "UseDesc": "火星星火射击馆在该天气下召唤精英怪，事件挂载",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3101
+        ]
+    },
+    {
+        "Id": 1052,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "无主机械",
+        "Desc": "每圈在随机道路上生成3名无主机械，击败后暴击伤害+21%，星矿+240",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32031.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3102
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 1053,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "强化训练",
+        "Desc": "精英海盗被击败后，队伍爆伤+20%",
+        "UseDesc": "火星星火挂载怪物身上的加爆伤事件",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3103
+        ]
+    },
+    {
+        "Id": 1054,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "幻梦天气",
+        "Desc": "每存在一座诺曼星际矿场，建造地形时星矿+10 （上限50）",
+        "UseDesc": "甜品星天气，红丝绒+杏仁",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3150,
+            3155
+        ],
+        "Conditions": [
+            2080
+        ]
+    },
+    {
+        "Id": 1055,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "二层",
+        "UseDesc": "第二层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3151,
+            3156
+        ],
+        "Conditions": [
+            2081
+        ]
+    },
+    {
+        "Id": 1056,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "三层",
+        "UseDesc": "第三层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3152,
+            3157
+        ],
+        "Conditions": [
+            2082
+        ]
+    },
+    {
+        "Id": 1057,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "四层",
+        "UseDesc": "第四层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3153,
+            3158
+        ],
+        "Conditions": [
+            2083
+        ]
+    },
+    {
+        "Id": 1058,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "五层",
+        "UseDesc": "第五层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3154,
+            3159
+        ],
+        "Conditions": [
+            2084
+        ]
+    },
+    {
+        "Id": 1059,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "幻梦天气",
+        "Desc": "每存在一座诺曼星际矿场，建造地形时星矿+10 （上限50）",
+        "UseDesc": "甜品星天气，红丝绒+杏仁",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3150,
+            3155
+        ],
+        "Conditions": [
+            2085
+        ]
+    },
+    {
+        "Id": 1060,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "二层",
+        "UseDesc": "第二层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3151,
+            3156
+        ],
+        "Conditions": [
+            2086
+        ]
+    },
+    {
+        "Id": 1061,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "三层",
+        "UseDesc": "第三层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3152,
+            3157
+        ],
+        "Conditions": [
+            2087
+        ]
+    },
+    {
+        "Id": 1062,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "四层",
+        "UseDesc": "第四层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3153,
+            3158
+        ],
+        "Conditions": [
+            2088
+        ]
+    },
+    {
+        "Id": 1063,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "五层",
+        "UseDesc": "第五层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3154,
+            3159
+        ],
+        "Conditions": [
+            2089
+        ]
+    },
+    {
+        "Id": 1080,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "1座，10块",
+        "UseDesc": "幻梦返钱1层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3180
+        ]
+    },
+    {
+        "Id": 1081,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "2座，20块",
+        "UseDesc": "幻梦返钱2层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3180
+        ]
+    },
+    {
+        "Id": 1082,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "3座，30块",
+        "UseDesc": "幻梦返钱3层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3180
+        ]
+    },
+    {
+        "Id": 1083,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "4座，40块",
+        "UseDesc": "幻梦返钱4层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3180
+        ]
+    },
+    {
+        "Id": 1084,
+        "ActivateCount": 0,
+        "TriggerType": 2,
+        "IsDirectTrigger": false,
+        "Name": "子幻梦",
+        "Desc": "5座，50块",
+        "UseDesc": "幻梦返钱5层",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3180
+        ]
+    },
+    {
+        "Id": 1100,
+        "ActivateCount": 0,
+        "TriggerType": 4,
+        "IsDirectTrigger": true,
+        "Name": "幻梦",
+        "Desc": "击败敌人后，星矿+10",
+        "UseDesc": "5-5幻梦",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3190
+        ]
+    },
+    {
+        "Id": 1101,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "幻梦爆矿",
+        "Desc": "被击败后，星矿+10",
+        "UseDesc": "子事件",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3191
+        ]
+    },
+    {
+        "Id": 1102,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "索雾",
+        "Desc": "·每次<color=#b89cfe>击败敌人</color>时攻击+1，当前生命-2",
+        "UseDesc": "5-5索雾",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuA1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            3192,
+            3193
+        ]
+    },
+    {
+        "Id": 1103,
+        "ActivateCount": 0,
+        "TriggerType": 1,
+        "IsDirectTrigger": false,
+        "Name": "星际海盗+",
+        "Desc": "每圈在随机道路上生成3名星际海盗",
+        "UseDesc": "火星雷雨道路每圈随机招",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32032.png",
+        "IsIncrease": 2,
+        "Effects": [
+            3200
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 2001,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "变晴",
+        "Desc": "使用后，当前天气将变更为晴天，持续1圈",
+        "UseDesc": "沙漠，放晴道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSSS1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4001
+        ]
+    },
+    {
+        "Id": 2002,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "紧急训练",
+        "Desc": "使用后，队伍攻击+3，生命+5",
+        "UseDesc": "沙漠，强化道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4002,
+            4003
+        ]
+    },
+    {
+        "Id": 2003,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "降温",
+        "Desc": "使用后，场上所有敌方单位暴击率-100%",
+        "UseDesc": "沙漠减敌人暴击道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4004
+        ]
+    },
+    {
+        "Id": 2004,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "资源箱",
+        "Desc": "使用后，获得50星矿",
+        "UseDesc": "沙漠给钱道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4005
+        ]
+    },
+    {
+        "Id": 2005,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "磁暴",
+        "Desc": "使用后，场上非领主单位生命值上限-99%",
+        "UseDesc": "沙漠减敌人血量",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12003.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4006,
+            4007
+        ]
+    },
+    {
+        "Id": 2006,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "磁暴",
+        "Desc": "单位生命值-99%",
+        "UseDesc": "子事件",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12003.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4008
+        ]
+    },
+    {
+        "Id": 2007,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "鲨鲨冰沙",
+        "Desc": "使用后，恢复队伍10%生命值",
+        "UseDesc": "沙星回血道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11002.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4009
+        ]
+    },
+    {
+        "Id": 2008,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "只有1个",
+        "Desc": "使用后，获得1星矿",
+        "UseDesc": "沙星给钱道具（干扰型）",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4010
+        ]
+    },
+    {
+        "Id": 2009,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "再来一次！",
+        "Desc": "使用后，获得420星矿",
+        "UseDesc": "甜品星给钱",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4011
+        ]
+    },
+    {
+        "Id": 2010,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "再来两次！！",
+        "Desc": "使用后，获得840星矿",
+        "UseDesc": "甜品星给钱2",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4012
+        ]
+    },
+    {
+        "Id": 2011,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "攻击 Up !",
+        "Desc": "使用后，攻击力+7",
+        "UseDesc": "三相之力道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/kamupugong1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4013
+        ]
+    },
+    {
+        "Id": 2012,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "生命 Up !",
+        "Desc": "使用后，生命值+77",
+        "UseDesc": "三相之力道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataA1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4014
+        ]
+    },
+    {
+        "Id": 2013,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "暴击率 Up !",
+        "Desc": "使用后，暴击率+7.7%",
+        "UseDesc": "三相之力道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingzhungongji.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4015
+        ]
+    },
+    {
+        "Id": 2014,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "暴击伤害 Up !",
+        "Desc": "使用后，暴击伤害+7.7%",
+        "UseDesc": "三相之力道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R32BS1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4016
+        ]
+    },
+    {
+        "Id": 2015,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "速度 Up！！！",
+        "Desc": "使用后，速度加成+7.7%",
+        "UseDesc": "三相之力道具",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "IsIncrease": 1,
+        "Effects": [
+            4017
+        ]
+    },
+    {
+        "Id": 5001,
+        "ActivateCount": 0,
+        "TriggerType": 4,
+        "IsDirectTrigger": false,
+        "Name": "寄",
+        "UseDesc": "BOSS保底事件",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "IsIncrease": 1,
+        "Effects": [
+            5001,
+            5002
+        ]
+    },
+    {
+        "Id": 10001,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "战斗本能",
+        "Desc": "探索小队的攻击+1 (不在队伍内也可生效)",
+        "UseDesc": "21号",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/kamupugong1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            10001
+        ]
+    },
+    {
+        "Id": 10101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "小金库",
+        "Desc": "探索小队的初始星矿+5 (不在队伍内也可生效)",
+        "UseDesc": "薇拉",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            10101
+        ]
+    },
+    {
+        "Id": 10201,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "体能强化",
+        "Desc": "探索小队的生命+1 (不在队伍内也可生效)",
+        "UseDesc": "诺克提",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataA1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            10201
+        ]
+    },
+    {
+        "Id": 10301,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "精准攻击",
+        "Desc": "探索小队的暴击率+1% (不在队伍内也可生效)",
+        "UseDesc": "露娜",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingzhungongji.png",
+        "IsIncrease": 1,
+        "Effects": [
+            10301
+        ]
+    },
+    {
+        "Id": 20101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "小金库",
+        "Desc": "探索小队的初始星矿+5 (不在队伍内也可生效)",
+        "UseDesc": "万事",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            20101
+        ]
+    },
+    {
+        "Id": 20201,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "频率更新",
+        "Desc": "探索小队的攻速加成+1% (不在队伍内也可生效)",
+        "UseDesc": "露西亚",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "IsIncrease": 1,
+        "Effects": [
+            20201
+        ]
+    },
+    {
+        "Id": 20301,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "武器更新",
+        "Desc": "探索小队的暴击伤害+1% (不在队伍内也可生效)",
+        "UseDesc": "罗塞塔",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R32BS1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            20301
+        ]
+    },
+    {
+        "Id": 30101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "战斗本能",
+        "Desc": "探索小队的攻击+1 (不在队伍内也可生效)",
+        "UseDesc": "苏菲亚",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/kamupugong1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            30101
+        ]
+    },
+    {
+        "Id": 30201,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "体能强化",
+        "Desc": "探索小队的生命+1 (不在队伍内也可生效)",
+        "UseDesc": "渡边",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataA1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            30201
+        ]
+    },
+    {
+        "Id": 30301,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "精准攻击",
+        "Desc": "探索小队的暴击率+1% (不在队伍内也可生效)",
+        "UseDesc": "阿枪",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingzhungongji.png",
+        "IsIncrease": 1,
+        "Effects": [
+            30301
+        ]
+    },
+    {
+        "Id": 40101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "小金库",
+        "Desc": "探索小队的初始星矿+5 (不在队伍内也可生效)",
+        "UseDesc": "卡列尼娜",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            40101
+        ]
+    },
+    {
+        "Id": 40201,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "武器更新",
+        "Desc": "探索小队的暴击伤害+1% (不在队伍内也可生效)",
+        "UseDesc": "里",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R32BS1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            40201
+        ]
+    },
+    {
+        "Id": 40301,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "战斗本能",
+        "Desc": "探索小队的攻击+1 (不在队伍内也可生效)",
+        "UseDesc": "罗兰",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/kamupugong1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            40301
+        ]
+    },
+    {
+        "Id": 50101,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "频率更新",
+        "Desc": "探索小队的攻速加成+1% (不在队伍内也可生效)",
+        "UseDesc": "喷涂机械",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "IsIncrease": 1,
+        "Effects": [
+            50101
+        ]
+    },
+    {
+        "Id": 50201,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "精准攻击",
+        "Desc": "探索小队的暴击率+1% (不在队伍内也可生效)",
+        "UseDesc": "七实",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingzhungongji.png",
+        "IsIncrease": 1,
+        "Effects": [
+            50201
+        ]
+    },
+    {
+        "Id": 50301,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "战斗本能",
+        "Desc": "探索小队的攻击+1 (不在队伍内也可生效)",
+        "UseDesc": "鲨士碧儿",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/kamupugong1.png",
+        "IsIncrease": 1,
+        "Effects": [
+            50301
+        ]
+    },
+    {
+        "Id": 80001,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "星矿+",
+        "Desc": "探索小队的初始星矿+1",
+        "UseDesc": "冰星山脉天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80001
+        ]
+    },
+    {
+        "Id": 80002,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "星矿+",
+        "Desc": "探索小队的初始星矿+1",
+        "UseDesc": "冰星山川天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80002
+        ]
+    },
+    {
+        "Id": 80003,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "锻炼+",
+        "Desc": "探索小队的生命值+1",
+        "UseDesc": "训练场天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80003
+        ]
+    },
+    {
+        "Id": 80004,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "锻炼++",
+        "Desc": "探索小队的生命值+2",
+        "UseDesc": "酒吧天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80004
+        ]
+    },
+    {
+        "Id": 80005,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "锻炼+",
+        "Desc": "探索小队的生命值+1",
+        "UseDesc": "矿场天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80005
+        ]
+    },
+    {
+        "Id": 80006,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "武装+",
+        "Desc": "探索小队的攻击+1",
+        "UseDesc": "射击馆天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80006
+        ]
+    },
+    {
+        "Id": 80007,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "武装+",
+        "Desc": "探索小队的攻击+1",
+        "UseDesc": "离子塔天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80007
+        ]
+    },
+    {
+        "Id": 80008,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "武装+",
+        "Desc": "探索小队的攻击+1",
+        "UseDesc": "占卜馆天赋",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png",
+        "IsIncrease": 1,
+        "Effects": [
+            80008
+        ]
+    },
+    {
+        "Id": 90001,
+        "ActivateCount": 0,
+        "TriggerType": 3,
+        "IsDirectTrigger": false,
+        "Name": "打盹",
+        "Desc": "经过起点时全队恢复25%最大生命值",
+        "UseDesc": "1-4专属基地的回血",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1,
+        "Effects": [
+            90001
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 90010,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "极寒提醒",
+        "Desc": "·<color=#b89cfe>极寒</color>天气预警",
+        "UseDesc": "第二章天气的环境提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 90011,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "沙尘暴提醒",
+        "Desc": "·<color=#b89cfe>沙暴</color>天气预警",
+        "UseDesc": "第三章天气的环境提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 90012,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "热浪提醒",
+        "Desc": "·<color=#b89cfe>热浪</color>天气预报",
+        "UseDesc": "第四章天气的环境提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 90013,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "幻梦提醒",
+        "Desc": "·<color=#b89cfe>幻梦</color>天气，按<color=#b89cfe>矿场</color>数返还<color=#b89cfe>地形建造</color>消耗的星矿",
+        "UseDesc": "第五章天气的环境提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 90015,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "无环境提示",
+        "Desc": "·暂无效果",
+        "UseDesc": "无环境提示",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11003.png",
+        "IsIncrease": 1
+    },
+    {
+        "Id": 90016,
+        "ActivateCount": 0,
+        "TriggerType": 0,
+        "IsDirectTrigger": false,
+        "Name": "引导用道具",
+        "Desc": "引导用道具",
+        "UseDesc": "引导用道具",
+        "Show": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQuestion.png",
+        "IsIncrease": 1,
+        "Effects": [
+            90002
+        ],
+        "Conditions": [
+            1003
+        ]
+    },
+    {
+        "Id": 90050,
+        "ActivateCount": 0,
+        "TriggerType": 5,
+        "IsDirectTrigger": false,
+        "Name": "无主宝库",
+        "Desc": "被击败后，星矿+80",
+        "UseDesc": "第四章星火杀怪给钱",
+        "Show": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33091.png",
+        "IsIncrease": 1,
+        "Effects": [
+            90050
+        ]
+    }
+]

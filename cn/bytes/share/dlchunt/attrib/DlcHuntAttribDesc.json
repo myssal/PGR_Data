@@ -1,0 +1,421 @@
+[
+    {
+        "Name": "Life",
+        "Id": 1001,
+        "Type": 1,
+        "Des": "生命",
+        "Power": 0.2,
+        "IsPercent": false,
+        "DescEn": "HEALTH"
+    },
+    {
+        "Name": "Attack",
+        "Id": 1002,
+        "Type": 1,
+        "Des": "攻击",
+        "Power": 1,
+        "IsPercent": false,
+        "DescEn": "DAMAGE"
+    },
+    {
+        "Name": "AttackIntensity",
+        "Id": 1003,
+        "Type": 1,
+        "Des": "攻击强度",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "Defense",
+        "Id": 1004,
+        "Type": 1,
+        "Des": "防御",
+        "Power": 0.5,
+        "IsPercent": false,
+        "DescEn": "DEFENCE"
+    },
+    {
+        "Name": "DefensePierceP",
+        "Id": 1005,
+        "Type": 1,
+        "Des": "防御穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "CritP",
+        "Id": 2001,
+        "Type": 2,
+        "Des": "暴击率",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "CritResistanceP",
+        "Id": 2002,
+        "Type": 2,
+        "Des": "暴击抵抗",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "CritDmgRateP",
+        "Id": 2003,
+        "Type": 2,
+        "Des": "暴击伤害率",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "CritDmgRateReductionP",
+        "Id": 2004,
+        "Type": 2,
+        "Des": "暴击伤害率减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldEfficiencyP",
+        "Id": 3001,
+        "Type": 3,
+        "Des": "护盾效率",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldAmpP",
+        "Id": 3002,
+        "Type": 3,
+        "Des": "护盾加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldReductionP",
+        "Id": 3003,
+        "Type": 3,
+        "Des": "护盾削减",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldGainBonusP",
+        "Id": 3004,
+        "Type": 3,
+        "Des": "承受护盾加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ShieldGainReductionP",
+        "Id": 3005,
+        "Type": 3,
+        "Des": "承受护盾减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalAmpP",
+        "Id": 4001,
+        "Type": 4,
+        "Des": "物理属性伤害提升",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1AmpP",
+        "Id": 4002,
+        "Type": 4,
+        "Des": "火属性伤害提升",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2AmpP",
+        "Id": 4003,
+        "Type": 4,
+        "Des": "雷属性伤害提升",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3AmpP",
+        "Id": 4004,
+        "Type": 4,
+        "Des": "冰属性伤害提升",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4AmpP",
+        "Id": 4005,
+        "Type": 4,
+        "Des": "暗属性伤害提升",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalReductionP",
+        "Id": 4006,
+        "Type": 4,
+        "Des": "物理属性伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1ReductionP",
+        "Id": 4007,
+        "Type": 4,
+        "Des": "火属性伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2ReductionP",
+        "Id": 4008,
+        "Type": 4,
+        "Des": "雷属性伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3ReductionP",
+        "Id": 4009,
+        "Type": 4,
+        "Des": "冰属性伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4ReductionP",
+        "Id": 4010,
+        "Type": 4,
+        "Des": "暗属性伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "PhysicalPierceP",
+        "Id": 4011,
+        "Type": 4,
+        "Des": "物理属性伤害穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element1PierceP",
+        "Id": 4012,
+        "Type": 4,
+        "Des": "火属性伤害穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element2PierceP",
+        "Id": 4013,
+        "Type": 4,
+        "Des": "雷属性伤害穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element3PierceP",
+        "Id": 4014,
+        "Type": 4,
+        "Des": "冰属性伤害穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "Element4PierceP",
+        "Id": 4015,
+        "Type": 4,
+        "Des": "暗属性伤害穿透",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "SignalSkillDmgAmpP",
+        "Id": 5001,
+        "Type": 5,
+        "Des": "信号球技能伤害加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "SpecialSkillDmgAmpP",
+        "Id": 5002,
+        "Type": 5,
+        "Des": "特殊技能伤害加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "NormalAtkDmgAmpP",
+        "Id": 5003,
+        "Type": 5,
+        "Des": "普攻技能伤害加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ExSkillDmgAmpP",
+        "Id": 5004,
+        "Type": 5,
+        "Des": "必杀技能伤害加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "HuntSkillDmgAmpP",
+        "Id": 5005,
+        "Type": 5,
+        "Des": "猎矛技能伤害加成",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "SignalSkillDmgReductionP",
+        "Id": 5006,
+        "Type": 5,
+        "Des": "信号球技能伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "SpecialSkillDmgReductionP",
+        "Id": 5007,
+        "Type": 5,
+        "Des": "特殊技能伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "NormalAtkDmgReductionP",
+        "Id": 5008,
+        "Type": 5,
+        "Des": "普攻技能伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ExSkillDmgReductionP",
+        "Id": 5009,
+        "Type": 5,
+        "Des": "必杀技能伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "HuntSkillDmgReductionP",
+        "Id": 5010,
+        "Type": 5,
+        "Des": "猎矛技能伤害减免",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "ThreatRate",
+        "Id": 6001,
+        "Type": 6,
+        "Des": "伤害转仇恨率",
+        "Power": 0,
+        "IsPercent": true
+    },
+    {
+        "Name": "CharacterValue",
+        "Id": 6002,
+        "Type": 6,
+        "Des": "角色值",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "ExSkillPoint",
+        "Id": 6003,
+        "Type": 6,
+        "Des": "大招点数",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "IdleSpinningSpeed",
+        "Id": 6004,
+        "Type": 6,
+        "Des": "待机转身速度",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "RunSpinningSpeed",
+        "Id": 6005,
+        "Type": 6,
+        "Des": "跑步转身速度",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "DodgeEnergy",
+        "Id": 6006,
+        "Type": 6,
+        "Des": "闪避能量",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "JumpEnergy",
+        "Id": 6007,
+        "Type": 6,
+        "Des": "跳跃能量",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "DodgeEnergyRegen",
+        "Id": 6008,
+        "Type": 6,
+        "Des": "闪避能量再生",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "JumpEnergyRegen",
+        "Id": 6009,
+        "Type": 6,
+        "Des": "跳跃能量再生",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "CustomEnergyGroup1",
+        "Id": 6010,
+        "Type": 6,
+        "Des": "自定义能量组1",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "CustomEnergyGroup2",
+        "Id": 6011,
+        "Type": 6,
+        "Des": "自定义能量组2",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "CustomEnergyGroup3",
+        "Id": 6012,
+        "Type": 6,
+        "Des": "自定义能量组3",
+        "Power": 0,
+        "IsPercent": false
+    },
+    {
+        "Name": "CustomEnergyGroup4",
+        "Id": 6013,
+        "Type": 6,
+        "Des": "自定义能量组4",
+        "Power": 0,
+        "IsPercent": false
+    }
+]

@@ -1,0 +1,3962 @@
+[
+    {
+        "Id": 1,
+        "Name": "效果1",
+        "Type": 1,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "每回合首次移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill001.png",
+        "Desc": "每回合前1次移动不消耗行动点-薇拉",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "效果2",
+        "Type": 15,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "提升作品展览等级，现在只需要消耗5点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill003.png",
+        "Desc": "提升研究等级现在只需要消耗5个研究点-里",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "效果3",
+        "Type": 18,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "从颜料工坊获取的颜料数量+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill004.png",
+        "Desc": "从能量点获取的数据数量+2-艾拉",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "效果4",
+        "Type": 3,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料储存无上限",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill005.png",
+        "Desc": "三色数据储存无上限-卡列",
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "效果5",
+        "Type": 22,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "力作呈现、灵感爆发不进行随机，改为提升角色所在颜色的大师等级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill007.png",
+        "Desc": "常规&爆发不进行随机，改为提升角色所在颜色的BOSS强度-指挥官"
+    },
+    {
+        "Id": 6,
+        "Name": "效果6",
+        "Type": 2,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，在绿色区域上移动不消耗行动力",
+        "Desc": "本回合，在绿色区域上移动不消耗行动力（起点判断）",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "效果7",
+        "Type": 4,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-方块等级从3级开始",
+        "Desc": "关卡-方块等级从3级开始",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "效果8",
+        "Type": 5,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-方块等级提升时，提升数值+1",
+        "Desc": "关卡-方块等级提升时，提升数值+1",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "效果9",
+        "Type": 6,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合治疗时，需要额外花费1点颜料",
+        "Desc": "本回合，每次治疗时，需要额外花费1点对应颜色的数据",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "效果10",
+        "Type": 6,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "每次治疗时，需要额外花费1点颜料",
+        "Desc": "关卡-每次治疗时，需要额外花费1点对应颜色的数据",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "效果11",
+        "Type": 7,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，禁止使用红色治疗",
+        "Desc": "本回合，禁止使用红色治疗",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "效果12",
+        "Type": 7,
+        "LifeType": 3,
+        "ShowType": 1,
+        "ShowDesc": "本回合，禁止使用红色治疗",
+        "Desc": "下回合，禁止使用红色治疗",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "效果13",
+        "Type": 8,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，红色只能治疗1次",
+        "Desc": "本回合，红色只能治疗1次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1
+        ],
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "Name": "效果14",
+        "Type": 8,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，绿色只能治疗1次",
+        "Desc": "本回合，绿色只能治疗1次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "Name": "效果15",
+        "Type": 8,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，蓝色只能治疗1次",
+        "Desc": "本回合，蓝色只能治疗1次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            3
+        ],
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "效果16",
+        "Type": 9,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，全部颜色只能合计治疗3次",
+        "Desc": "本回合，全部颜色只能合计治疗3次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "效果17",
+        "Type": 9,
+        "LifeType": 3,
+        "ShowType": 1,
+        "ShowDesc": "本回合，全部颜色只能合计治疗3次",
+        "Desc": "下回合，全部颜色只能合计治疗3次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 18,
+        "Name": "效果18",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "红色颜料+3",
+        "Desc": "红色数据提升3",
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 19,
+        "Name": "效果19",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "绿色颜料+3",
+        "Desc": "绿色数据提升3",
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 20,
+        "Name": "效果20",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "蓝色颜料+3",
+        "Desc": "蓝色数据提升3",
+        "Params": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 21,
+        "Name": "效果21",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "下回合，红色BOSS等级提升1",
+        "Desc": "下回合，红色BOSS等级提升1",
+        "ShowOnPointTypes": [
+            101
+        ],
+        "ShowOnColors": [
+            1
+        ],
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "Name": "效果22",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "下回合，绿色BOSS等级提升1",
+        "Desc": "下回合，绿色BOSS等级提升1",
+        "ShowOnPointTypes": [
+            101
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "Name": "效果23",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "下回合，蓝色BOSS等级提升1",
+        "Desc": "下回合，蓝色BOSS等级提升1",
+        "ShowOnPointTypes": [
+            101
+        ],
+        "ShowOnColors": [
+            3
+        ],
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "Name": "效果24",
+        "Type": 12,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "本回合，所有颜色颜料变成7",
+        "Desc": "本回合，所有颜色数据变成7",
+        "Params": [
+            7
+        ]
+    },
+    {
+        "Id": 25,
+        "Name": "效果25",
+        "Type": 12,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "下回合，所有颜色颜料变成7",
+        "Desc": "下回合，所有颜色数据变成7",
+        "Params": [
+            7
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "效果26",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "红色研究等级+1",
+        "Desc": "红色研究等级提升1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "效果27",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "绿色研究等级+1",
+        "Desc": "绿色研究等级提升1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "效果28",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "蓝色研究等级+1",
+        "Desc": "蓝色研究等级提升1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "Name": "效果29",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "本回合，行动点+3",
+        "Desc": "本回合，行动点增加3点",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 30,
+        "Name": "效果30",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，提升研究等级现在只需要消耗4个研究颜料",
+        "Desc": "本回合，提升研究等级现在只需要消耗4个研究数据",
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Id": 31,
+        "Name": "效果31",
+        "Type": 17,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-每回合首次执行地点行动后，扣除该区域颜色的1点颜料",
+        "Desc": "关卡-每回合首次执行地点行动后，扣除该区域颜色的1点数据",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "Name": "效果32",
+        "Type": 17,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，首次执行地点行动后，扣除该区域颜色的1点颜料",
+        "Desc": "本回合，首次执行地点行动后，扣除该区域颜色的1点数据",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "Name": "效果33",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合首次获得颜料时，获得量+2",
+        "Desc": "本回合首次获得数据时，获得量+2",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 34,
+        "Name": "效果34",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，绿色可额外获得1次颜料（能量点）",
+        "Desc": "本回合，绿色可额外获得1次数据（能量点）",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 35,
+        "Name": "效果35",
+        "Type": 20,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-无法执行绿色地块行动，绿色病毒爆发后，其等级调整为4",
+        "Desc": "关卡-无法执行绿色地块行动，绿色病毒爆发后，其等级调整为4",
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 36,
+        "Name": "效果36",
+        "Type": 21,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合结算时，不走时间轴结算，但进度照常",
+        "Desc": "本回合结算时，不走时间轴结算，但进度照常"
+    },
+    {
+        "Id": 37,
+        "Name": "效果37",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合首次站立或经过中央区域时，获得1点红色资源",
+        "Desc": "本回合首次站立或经过中央区域时，获得1点红色资源",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "Name": "效果38",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合首次站立或经过中央区域时，获得1点绿色资源",
+        "Desc": "本回合首次站立或经过中央区域时，获得1点绿色资源",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "Name": "效果39",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合首次站立或经过中央区域时，获得1点蓝色资源",
+        "Desc": "本回合首次站立或经过中央区域时，获得1点蓝色资源",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "Name": "效果40",
+        "Type": 24,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合结算时，时间轴结算事件执行2次",
+        "Desc": "本回合结算时，时间轴结算事件执行2次",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 41,
+        "Name": "效果41",
+        "Type": 25,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "下回合开始时，角色所在颜色的BOSS，等级下降1",
+        "Desc": "下回合开始时，角色所在颜色的BOSS，等级下降1",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "Name": "效果42",
+        "Type": 26,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-现在研究只能获得3或4点",
+        "Desc": "关卡-现在研究只能获得3或4点",
+        "Params": [
+            3,
+            3,
+            3,
+            4,
+            4,
+            4
+        ]
+    },
+    {
+        "Id": 43,
+        "Name": "效果43",
+        "Type": 27,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，执行研究时，可重新roll2次骰子",
+        "Desc": "本回合，执行研究时，可重新roll2次骰子",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 44,
+        "Name": "效果44",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，前2次治疗，效果+1",
+        "Desc": "本回合，前2次治疗，效果+1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "Name": "效果45",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，研究或治疗可混合使用红、绿颜料",
+        "Desc": "本回合，研究或治疗可混合使用红、绿数据",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 46,
+        "Name": "效果46",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，研究或治疗可混合使用绿、蓝颜料",
+        "Desc": "本回合，研究或治疗可混合使用绿、蓝数据",
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 47,
+        "Name": "效果47",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合，研究或治疗可混合使用红、蓝颜料",
+        "Desc": "本回合，研究或治疗可混合使用红、蓝数据",
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 48,
+        "Name": "效果48",
+        "Type": 5,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "关卡-方块等级提升时，提升数值+2",
+        "Desc": "关卡-方块等级提升时，提升数值+2",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 49,
+        "Name": "瞬移Ⅰ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "每回合首次移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合前1次移动不消耗行动点（注意检查跟队长技是否叠加）",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "Name": "瞬移Ⅱ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "每回合前2次移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合前2次移动不消耗行动点（注意检查跟队长技是否叠加）",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 51,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "每回合前3次移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合前3次移动不消耗行动点（注意检查跟队长技是否叠加）",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 52,
+        "Name": "额外数据1",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，可额外获得2点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合获取数据时，额外获得2点数据",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 53,
+        "Name": "额外数据2",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，可额外获得3点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合获取数据时，额外获得3点数据",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            3
+        ]
+    },
+    {
+        "Id": 54,
+        "Name": "额外数据3",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，可额外获得4点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合获取数据时，额外获得4点数据",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            4
+        ]
+    },
+    {
+        "Id": 55,
+        "Name": "强效治疗1",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合议论可额外降低大师1级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合治疗效果提升1",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "Name": "强效治疗2",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合议论可额外降低大师2级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合治疗效果提升2",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 57,
+        "Name": "强效治疗3",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合议论可额外降低大师3级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合治疗效果提升3",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            3
+        ]
+    },
+    {
+        "Id": 58,
+        "Name": "很多数据1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得2点三色颜料",
+        "Desc": "红色数据提升2",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 59,
+        "Name": "很多数据1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得2点三色颜料",
+        "Desc": "绿色数据提升2",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 60,
+        "Name": "很多数据1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得2点三色颜料",
+        "Desc": "蓝色数据提升2",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 61,
+        "Name": "很多数据2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得4点三色颜料",
+        "Desc": "红色数据提升4",
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 62,
+        "Name": "很多数据2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得4点三色颜料",
+        "Desc": "绿色数据提升4",
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 63,
+        "Name": "很多数据2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得4点三色颜料",
+        "Desc": "蓝色数据提升4",
+        "Params": [
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 64,
+        "Name": "很多数据3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得7点三色颜料",
+        "Desc": "红色数据提升7",
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 65,
+        "Name": "很多数据3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得7点三色颜料",
+        "Desc": "绿色数据提升7",
+        "Params": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 66,
+        "Name": "很多数据3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "获得7点三色颜料",
+        "Desc": "蓝色数据提升7",
+        "Params": [
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 67,
+        "Name": "高效研究1",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需5点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，提升研究等级现在只需要消耗5个研究数据（注意检查与队长技叠加，是否取最低）",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 68,
+        "Name": "高效研究2",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需3点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，提升研究等级现在只需要消耗3个研究数据（注意检查与队长技叠加，是否取最低）",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Id": 69,
+        "Name": "高效研究3",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需2点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，提升研究等级现在只需要消耗2个研究数据（注意检查与队长技叠加，是否取最低）",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 70,
+        "Name": "时间静止",
+        "Type": 21,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "本回合结算时，大师不会提升等级",
+        "Desc": "本回合结算时，不走时间轴结算，但进度照常"
+    },
+    {
+        "Id": 71,
+        "Name": "病毒下降1",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "所有派系大师下降1级",
+        "Desc": "红色BOSS等级下降1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 72,
+        "Name": "病毒下降1",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有派系大师下降1级",
+        "Desc": "绿色BOSS等级下降1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 73,
+        "Name": "病毒下降1",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有派系大师下降1级",
+        "Desc": "蓝色BOSS等级下降1",
+        "Params": [
+            3,
+            -1
+        ]
+    },
+    {
+        "Id": 74,
+        "Name": "病毒下降2",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "所有派系大师下降3级",
+        "Desc": "红色BOSS等级下降3",
+        "Params": [
+            1,
+            -3
+        ]
+    },
+    {
+        "Id": 75,
+        "Name": "病毒下降2",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有派系大师下降3级",
+        "Desc": "绿色BOSS等级下降3",
+        "Params": [
+            2,
+            -3
+        ]
+    },
+    {
+        "Id": 76,
+        "Name": "病毒下降2",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有派系大师下降3级",
+        "Desc": "蓝色BOSS等级下降3",
+        "Params": [
+            3,
+            -3
+        ]
+    },
+    {
+        "Id": 77,
+        "Name": "研究提升1",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "所有作品展览提升1级",
+        "Desc": "红色研究等级提升1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 78,
+        "Name": "研究提升1",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有作品展览提升1级",
+        "Desc": "绿色研究等级提升1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 79,
+        "Name": "研究提升1",
+        "Type": 13,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "所有作品展览提升1级",
+        "Desc": "蓝色研究等级提升1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 80,
+        "Name": "红绿混合",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论或提升展览可混合使用红、绿颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，研究或治疗可混合使用红、绿数据",
+        "ShowOnPointTypes": [
+            1,
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2
+        ],
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 81,
+        "Name": "绿蓝混合",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论或提升展览可混合使用绿、蓝颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，研究或治疗可混合使用绿、蓝数据",
+        "ShowOnPointTypes": [
+            1,
+            2
+        ],
+        "ShowOnColors": [
+            2,
+            3
+        ],
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 82,
+        "Name": "红蓝混合",
+        "Type": 29,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论或提升展览可混合使用红、蓝颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，研究或治疗可混合使用红、蓝数据",
+        "ShowOnPointTypes": [
+            1,
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            3
+        ],
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 83,
+        "Name": "沉重的治疗1",
+        "Type": 6,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合每次议论，需要额外花费1点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合每次治疗时，需要额外花费1点对应颜色的数据",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 84,
+        "Name": "沉重的治疗2",
+        "Type": 6,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合每次议论，需要额外花费2点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合每次治疗时，需要额外花费2点对应颜色的数据",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 85,
+        "Name": "沉重的治疗3",
+        "Type": 6,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合每次议论，需要额外花费3点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合每次治疗时，需要额外花费3点对应颜色的数据",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 86,
+        "Name": "有限治疗1",
+        "Type": 9,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，总共只能议论2次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合，全部颜色只能合计治疗2次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 87,
+        "Name": "有限治疗2",
+        "Type": 9,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，总共只能议论1次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合，全部颜色只能合计治疗1次",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 88,
+        "Name": "数据散失1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "三色颜料全部减少1点",
+        "Desc": "红色数据减少1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 89,
+        "Name": "数据散失1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少1点",
+        "Desc": "绿色数据减少1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 90,
+        "Name": "数据散失1",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少1点",
+        "Desc": "蓝色数据减少1",
+        "Params": [
+            3,
+            -1
+        ]
+    },
+    {
+        "Id": 91,
+        "Name": "数据散失2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "三色颜料全部减少2点",
+        "Desc": "红色数据减少2",
+        "Params": [
+            1,
+            -2
+        ]
+    },
+    {
+        "Id": 92,
+        "Name": "数据散失2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少2点",
+        "Desc": "绿色数据减少2",
+        "Params": [
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 93,
+        "Name": "数据散失2",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少2点",
+        "Desc": "蓝色数据减少2",
+        "Params": [
+            3,
+            -2
+        ]
+    },
+    {
+        "Id": 94,
+        "Name": "数据散失3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "三色颜料全部减少4点",
+        "Desc": "红色数据减少4",
+        "Params": [
+            1,
+            -4
+        ]
+    },
+    {
+        "Id": 95,
+        "Name": "数据散失3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少4点",
+        "Desc": "绿色数据减少4",
+        "Params": [
+            2,
+            -4
+        ]
+    },
+    {
+        "Id": 96,
+        "Name": "数据散失3",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "三色颜料全部减少4点",
+        "Desc": "蓝色数据减少4",
+        "Params": [
+            3,
+            -4
+        ]
+    },
+    {
+        "Id": 97,
+        "Name": "低效获取1",
+        "Type": 32,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量-1",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合获取数据时，丢失1个对应颜色数据",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "Name": "低效获取2",
+        "Type": 32,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量-2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合获取数据时，丢失2个对应颜色数据",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 99,
+        "Name": 404,
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "失去所有颜料",
+        "Desc": "红色数据减少999",
+        "Params": [
+            1,
+            -999
+        ]
+    },
+    {
+        "Id": 100,
+        "Name": 404,
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "失去所有颜料",
+        "Desc": "绿色数据减少999",
+        "Params": [
+            2,
+            -999
+        ]
+    },
+    {
+        "Id": 101,
+        "Name": 404,
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "ShowDesc": "失去所有颜料",
+        "Desc": "蓝色数据减少999",
+        "Params": [
+            3,
+            -999
+        ]
+    },
+    {
+        "Id": 102,
+        "Name": "红色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(红)等级提升1",
+        "Desc": "下回合，红色BOSS等级提升1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "Name": "红色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(红)等级提升2",
+        "Desc": "下回合，红色BOSS等级提升2",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "红色强化3",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(红)等级提升3",
+        "Desc": "下回合，红色BOSS等级提升3",
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 105,
+        "Name": "绿色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(绿)等级提升1",
+        "Desc": "下回合，绿色BOSS等级提升1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "Name": "绿色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(绿)等级提升2",
+        "Desc": "下回合，绿色BOSS等级提升2",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 107,
+        "Name": "绿色强化3",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(绿)等级提升3",
+        "Desc": "下回合，绿色BOSS等级提升3",
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 108,
+        "Name": "蓝色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(蓝)等级提升1",
+        "Desc": "下回合，蓝色BOSS等级提升1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "Name": "蓝色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(蓝)等级提升2",
+        "Desc": "下回合，蓝色BOSS等级提升2",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 110,
+        "Name": "蓝色强化3",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(蓝)等级提升3",
+        "Desc": "下回合，蓝色BOSS等级提升3",
+        "Params": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 111,
+        "Name": "红色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "所有大师等级提升1",
+        "Desc": "下回合，红色BOSS等级提升1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "Name": "绿色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "ShowDesc": "所有大师等级提升1",
+        "Desc": "下回合，绿色BOSS等级提升1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 113,
+        "Name": "蓝色强化1",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "ShowDesc": "所有大师等级提升1",
+        "Desc": "下回合，蓝色BOSS等级提升1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "Name": "红色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "所有大师等级提升2",
+        "Desc": "下回合，红色BOSS等级提升2",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 115,
+        "Name": "绿色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "ShowDesc": "所有大师等级提升2",
+        "Desc": "下回合，绿色BOSS等级提升2",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 116,
+        "Name": "蓝色强化2",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "ShowDesc": "所有大师等级提升2",
+        "Desc": "下回合，蓝色BOSS等级提升2",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 117,
+        "Name": "结算强化",
+        "Type": 31,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "回合结算时，普通、爆发、大流行导致的病毒等级额外+1"
+    },
+    {
+        "Id": 118,
+        "Name": "行动削弱1",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "失去1点行动点",
+        "Desc": "本回合，行动点降低1点",
+        "Params": [
+            -1
+        ]
+    },
+    {
+        "Id": 119,
+        "Name": "行动削弱2",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "失去2点行动点",
+        "Desc": "本回合，行动点降低2点",
+        "Params": [
+            -2
+        ]
+    },
+    {
+        "Id": 120,
+        "Name": "地点延缓1",
+        "Type": 17,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合执行地点行动后，扣除该区域2点同色颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合执行地点行动后，扣除该区域颜色的2点数据",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 121,
+        "Name": "地点延缓2",
+        "Type": 17,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合执行地点行动后，扣除该区域3点同色颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "本回合执行地点行动后，扣除该区域颜色的3点数据",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            3
+        ]
+    },
+    {
+        "Id": 122,
+        "Name": "高效研究4",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览等级只需要消耗1点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "本回合，提升研究等级现在只需要消耗1个研究数据",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 123,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉时间轴2-本回合移动不消耗行动点",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 124,
+        "Name": "作战提升",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论可额外降低大师1级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉时间轴2-本回合治疗效果+1",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 125,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师等级提升3",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉4-下回合BOSS等级+3",
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 126,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉4-下回合BOSS等级+3",
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 127,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉4-下回合BOSS等级+3",
+        "Params": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 128,
+        "Name": "作战提升Ⅱ",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合议论效果+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉4-本回合治疗效果+2",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 129,
+        "Name": "作战提升Ⅲ",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合议论效果+3",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉6-本回合治疗效果+3",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            3
+        ]
+    },
+    {
+        "Id": 130,
+        "Name": "危险的结算",
+        "Type": 24,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "薇拉6本回合时间轴结算将执行2次",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 131,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得2点行动点",
+        "Desc": "里2-行动点+2",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 132,
+        "Name": "强效获取",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量+1",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "里2-本回合获取能量效果+1",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得3点行动点，获得7点三色颜料",
+        "Desc": "里4-行动点+3",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 134,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里4-三色数据+7",
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 135,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里4-三色数据+7",
+        "Params": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 136,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里4-三色数据+7",
+        "Params": [
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 137,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "里6-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 138,
+        "Name": "能量次数不限",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数不限制",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "里6-本回合获取能量次数不限制",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1,
+            999
+        ]
+    },
+    {
+        "Id": 139,
+        "Name": "能量次数不限",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数不限制",
+        "Desc": "里6-本回合获取能量次数不限制",
+        "Params": [
+            2,
+            999
+        ]
+    },
+    {
+        "Id": 140,
+        "Name": "能量次数不限",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数不限制",
+        "Desc": "里6-本回合获取能量次数不限制",
+        "Params": [
+            3,
+            999
+        ]
+    },
+    {
+        "Id": 141,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(蓝)等级+3，红、绿大师等级-1",
+        "Desc": "艾拉2-下回合蓝色病毒等级+3",
+        "Params": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 142,
+        "Name": "红色下降",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉2-下回合红色病毒等级-1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 143,
+        "Name": "绿色下降",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉2-下回合绿色病毒等级-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 144,
+        "Name": "时间轴结算",
+        "Type": 24,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "艾拉4-时间轴结算执行2次",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 145,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得7点三色颜料",
+        "Desc": "艾拉4-三色数据+7",
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 146,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "艾拉4-三色数据+7",
+        "Params": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 147,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "艾拉4-三色数据+7",
+        "Params": [
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 148,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "艾拉6-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 149,
+        "Name": "高效研究",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需5点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "艾拉6-本回合，提升研究等级现在只需要消耗5个研究数据",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 150,
+        "Name": "强效获取",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列2-本回合获取能量效果+2",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 151,
+        "Name": "重roll",
+        "Type": 27,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "获取颜料时，可重ROLL2次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列2-获取能量时roll2次骰子",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 152,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点三色颜料",
+        "Desc": "卡列4-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 153,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "卡列4-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 154,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "卡列4-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 155,
+        "Name": "重roll",
+        "Type": 27,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "获取能量时，可重ROLL3次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列4-获取能量时roll3次骰子",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 156,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "卡列6-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 157,
+        "Name": "多次获得",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列6-三色各可额外获取2次能量",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 158,
+        "Name": "多次获得",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数+2",
+        "Desc": "卡列6-三色各可额外获取2次能量",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 159,
+        "Name": "多次获得",
+        "Type": 19,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料次数+2",
+        "Desc": "卡列6-三色各可额外获取2次能量",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 160,
+        "Name": "能量限制",
+        "Type": 33,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "本关无法获取颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "薇拉困难-无法获取能量",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            0,
+            3
+        ]
+    },
+    {
+        "Id": 161,
+        "Name": "能量限制",
+        "Type": 36,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "每次移动后，可获得该区域同色颜料1点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉困难-每次移动都能获得对应颜色数据1点",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            1,
+            999
+        ]
+    },
+    {
+        "Id": 162,
+        "Name": "高效研究",
+        "Type": 34,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "提升作品展览的颜料需求量，每回合-1，提升后重置",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "里困难-每回合研究所需数据-1，研究后重置（注意检查里哥技能混合，应该要从6点往下扣）",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 163,
+        "Name": "研究限制",
+        "Type": 33,
+        "LifeType": 1,
+        "ShowType": 0,
+        "ShowDesc": "无法提升作品展览等级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill008.png",
+        "Desc": "艾拉困难-无法执行研究",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 164,
+        "Name": "换一种方式研究",
+        "Type": 35,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "艾拉困难-回合开始时，病毒等级等于6，提升对应颜色研究等级1",
+        "Params": [
+            6,
+            1
+        ]
+    },
+    {
+        "Id": 165,
+        "Name": "痛苦的结算Ⅰ",
+        "Type": 30,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "普通、爆发导致的病毒等级提升效果+1"
+    },
+    {
+        "Id": 166,
+        "Name": "痛苦的结算Ⅱ",
+        "Type": 31,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "普通、爆发、大流行导致的病毒等级提升效果+1"
+    },
+    {
+        "Id": 167,
+        "Name": "作战提升",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论可额外降低大师1级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉简单1-本回合治疗效果+1",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得1点行动点",
+        "Desc": "薇拉简单1-行动点+1",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 169,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉简单2-本回合移动不消耗行动点",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 170,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "所有大师等级提升1",
+        "Desc": "薇拉困难1-下回合BOSS等级+1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉困难1-下回合BOSS等级+1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 172,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉困难1-下回合BOSS等级+1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "Name": "作战提升Ⅱ",
+        "Type": 28,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，议论可额外降低大师1级",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉困难1-本回合治疗效果+2",
+        "ShowOnPointTypes": [
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 174,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "薇拉困难2-本回合移动不消耗行动点",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 175,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "所有大师等级提升2",
+        "Desc": "薇拉困难2-下回合BOSS等级+2",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 176,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉困难2-下回合BOSS等级+2",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 177,
+        "Name": "BOSS强化",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "薇拉困难2-下回合BOSS等级+2",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 178,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得2点行动点",
+        "Desc": "里简单1-行动点+2",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 179,
+        "Name": "强效获取",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量+1",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "里简单1-本回合获取能量效果+1",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点，5点三色颜料",
+        "Desc": "里简单2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 181,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里简单2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 182,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里简单2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 183,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里简单2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 184,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得2点行动点",
+        "Desc": "里困难1-行动点+2",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 185,
+        "Name": "强效获取",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "里困难1-本回合获取能量效果+2",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 186,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点，5点三色颜料",
+        "Desc": "里困难2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 187,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里困难2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 188,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里困难2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 189,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "里困难2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 190,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(蓝)等级+3，红、绿大师等级-1",
+        "Desc": "艾拉简单1-下回合蓝色病毒等级+1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 191,
+        "Name": "红色下降",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉简单1-下回合红色病毒等级-1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 192,
+        "Name": "绿色下降",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉简单1-下回合绿色病毒等级-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 193,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "艾拉简单2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 194,
+        "Name": "高效研究",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需5点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "艾拉简单2-本回合，提升研究等级现在只需要消耗5个研究数据",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 195,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得4点三色颜料",
+        "Desc": "艾拉困难1-三色数据+4",
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 196,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "艾拉困难1-三色数据+4",
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 197,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "艾拉困难1-三色数据+4",
+        "Params": [
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 198,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "所有大师等级提升1",
+        "Desc": "艾拉困难1-下回合蓝色病毒等级+1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 199,
+        "Name": "红色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉困难1-下回合红色病毒等级+1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "Name": "绿色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "艾拉困难1-下回合绿色病毒等级+1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 201,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "艾拉困难2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 202,
+        "Name": "高效研究",
+        "Type": 15,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合，提升作品展览只需5点颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "艾拉困难2-本回合，提升研究等级现在只需要消耗5个研究数据",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 203,
+        "Name": "强效获取",
+        "Type": 18,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料时，获取数量+2",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列简单1-本回合获取能量效果+2",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999,
+            2
+        ]
+    },
+    {
+        "Id": 204,
+        "Name": "重roll",
+        "Type": 27,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "获取颜料时，可重ROLL2次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列简单1-执行研究可roll2次骰子",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 205,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "卡列简单2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 206,
+        "Name": "多次获得",
+        "Type": 26,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取颜料的数量一定为最大值",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列简单2-本回合通过能量点获取的数据一定为最大值",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 207,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得3点三色颜料",
+        "Desc": "卡列困难1-三色数据+3",
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 208,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "卡列困难1-三色数据+3",
+        "Params": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 209,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "卡列困难1-三色数据+3",
+        "Params": [
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 210,
+        "Name": "重roll",
+        "Type": 27,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "获取颜料时，可重ROLL2次",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列困难1-执行研究可roll3次骰子",
+        "ShowOnPointTypes": [
+            1
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 211,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点",
+        "Desc": "卡列困难2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 212,
+        "Name": "多次获得",
+        "Type": 26,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合获取的颜料一定为最大值",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "卡列困难2-本回合通过能量点获取的数据一定为最大值",
+        "ShowOnPointTypes": [
+            3
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 213,
+        "Name": "绿色下降",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(绿)下降1级",
+        "Desc": "指挥官1简单1-绿色BOSS等级-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 214,
+        "Name": "无需行动",
+        "Type": 2,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合在绿色区域上移动不消耗行动力",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "指挥官1简单1-本回合在绿色区域上移动不消耗行动力",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 215,
+        "Name": "数据丢失",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "失去5点绿色颜料",
+        "Desc": "指挥官1简单2-绿色数据-5",
+        "Params": [
+            2,
+            -5
+        ]
+    },
+    {
+        "Id": 216,
+        "Name": "时间静止",
+        "Type": 21,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "指挥官1简单2-本回合结算时，不走时间轴结算，但进度照常"
+    },
+    {
+        "Id": 217,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得3点行动点，失去1点三色颜料",
+        "Desc": "指挥官2简单1-行动点+3",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 218,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单1-三色数据-1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 219,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单1-三色数据-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 220,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单1-三色数据-1",
+        "Params": [
+            3,
+            -1
+        ]
+    },
+    {
+        "Id": 221,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点，获得5点三色颜料",
+        "Desc": "指挥官2简单2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 222,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 223,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 224,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2简单2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 225,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "指挥官3简单1-本回合移动不消耗行动点",
+        "ShowOnPointTypes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 226,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师等级提升1",
+        "Desc": "指挥官3简单1-下回合蓝色病毒等级+1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 227,
+        "Name": "红色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "指挥官3简单1-下回合红色病毒等级+1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 228,
+        "Name": "绿色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "指挥官3简单1-下回合绿色病毒等级+1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 229,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "派系大师等级下降2",
+        "Desc": "指挥官3简单2-蓝色病毒等级-2",
+        "Params": [
+            3,
+            -2
+        ]
+    },
+    {
+        "Id": 230,
+        "Name": "红色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3简单2-红色病毒等级-2",
+        "Params": [
+            1,
+            -2
+        ]
+    },
+    {
+        "Id": 231,
+        "Name": "绿色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3简单2-绿色病毒等级-2",
+        "Params": [
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 232,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点三色颜料",
+        "Desc": "指挥官3简单2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 233,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3简单2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 234,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3简单2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 235,
+        "Name": "绿色下降",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "派系大师(绿)下降1级",
+        "Desc": "指挥官1困难1-绿色BOSS等级-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 236,
+        "Name": "无需行动",
+        "Type": 2,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合在绿色区域上移动不消耗行动力",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "指挥官1困难1-本回合在绿色区域上移动不消耗行动力",
+        "ShowOnPointTypes": [
+            1,
+            2
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 237,
+        "Name": "数据丢失",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "失去5点绿色颜料",
+        "Desc": "指挥官1困难2-绿色数据-5",
+        "Params": [
+            2,
+            -5
+        ]
+    },
+    {
+        "Id": 238,
+        "Name": "时间静止",
+        "Type": 21,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "指挥官1困难2-本回合结算时，不走时间轴结算，但进度照常"
+    },
+    {
+        "Id": 239,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得3点行动点，失去1点三色颜料",
+        "Desc": "指挥官2困难1-行动点+3",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 240,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难1-三色数据-1",
+        "Params": [
+            1,
+            -1
+        ]
+    },
+    {
+        "Id": 241,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难1-三色数据-1",
+        "Params": [
+            2,
+            -1
+        ]
+    },
+    {
+        "Id": 242,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难1-三色数据-1",
+        "Params": [
+            3,
+            -1
+        ]
+    },
+    {
+        "Id": 243,
+        "Name": "行动力",
+        "Type": 14,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点行动点，获得5点三色颜料",
+        "Desc": "指挥官2困难2-行动点+5",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 244,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 245,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 246,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 247,
+        "Name": "瞬移Ⅲ",
+        "Type": 1,
+        "LifeType": 2,
+        "ShowType": 0,
+        "ShowDesc": "本回合移动不消耗行动点",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "指挥官3困难1-本回合移动不消耗行动点",
+        "ShowOnPointTypes": [
+            1,
+            2
+        ],
+        "ShowOnColors": [
+            1,
+            2,
+            3
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 248,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 1,
+        "ShowDesc": "派系大师等级提升1",
+        "Desc": "指挥官3困难1-下回合蓝色病毒等级+1",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "Name": "红色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "指挥官3困难1-下回合红色病毒等级+1",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 250,
+        "Name": "绿色提升",
+        "Type": 11,
+        "LifeType": 6,
+        "ShowType": 0,
+        "Desc": "指挥官3困难1-下回合绿色病毒等级+1",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 251,
+        "Name": "蓝色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "派系大师等级下降2",
+        "Desc": "指挥官3困难2-蓝色病毒等级-2",
+        "Params": [
+            3,
+            -2
+        ]
+    },
+    {
+        "Id": 252,
+        "Name": "红色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3困难2-红色病毒等级-2",
+        "Params": [
+            1,
+            -2
+        ]
+    },
+    {
+        "Id": 253,
+        "Name": "绿色提升",
+        "Type": 11,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官3困难2-绿色病毒等级-2",
+        "Params": [
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 254,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 1,
+        "ShowDesc": "获得5点三色颜料",
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 255,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 256,
+        "Name": "数据获得",
+        "Type": 10,
+        "LifeType": 4,
+        "ShowType": 0,
+        "Desc": "指挥官2困难2-三色数据+5",
+        "Params": [
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 257,
+        "Name": "红色行动禁止",
+        "Type": 20,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "新手专用，禁止红色区块行动",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 258,
+        "Name": "蓝色行动禁止",
+        "Type": 20,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "新手专用，禁止蓝色区块行动",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 259,
+        "Name": "中央区域红奖励",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "经过或站立在核心区域时，获得7点红色颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "中央区域红奖励",
+        "ShowOnPointTypes": [
+            4
+        ],
+        "ShowOnColors": [
+            1
+        ],
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 260,
+        "Name": "中央区域绿奖励",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "经过或站立在核心区域时，获得7点绿色颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "中央区域蓝奖励",
+        "ShowOnPointTypes": [
+            4
+        ],
+        "ShowOnColors": [
+            2
+        ],
+        "Params": [
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 261,
+        "Name": "中央区域蓝奖励",
+        "Type": 23,
+        "LifeType": 2,
+        "ShowType": 1,
+        "ShowDesc": "经过或站立在核心区域时，获得7点蓝色颜料",
+        "Icon": "Assets/Product/Texture/Image/UiColorTable/Skill/UiColorTableSkill010.png",
+        "Desc": "中央区域绿奖励",
+        "ShowOnPointTypes": [
+            4
+        ],
+        "ShowOnColors": [
+            3
+        ],
+        "Params": [
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 262,
+        "Name": "新手第一关",
+        "Type": 26,
+        "LifeType": 3,
+        "ShowType": 0,
+        "ShowDesc": "新手第一关第二回合专用效果，roll点锁定为5",
+        "Desc": "新手第一关第二回合专用效果，roll点锁定为5，第一回合挂，下回合持续",
+        "Params": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 263,
+        "Name": "新手第一关关卡",
+        "Type": 37,
+        "LifeType": 1,
+        "ShowType": 0,
+        "Desc": "关卡效果，常规爆发不进行随机，锁定提升绿色BOSS的等级",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 264,
+        "Name": "新手第二关关卡",
+        "Type": 37,
+        "LifeType": 2,
+        "ShowType": 0,
+        "Desc": "一回合有效的关卡效果，用于指定提升绿色boss等级",
+        "Params": [
+            2
+        ]
+    }
+]

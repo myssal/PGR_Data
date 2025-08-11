@@ -1,0 +1,345 @@
+[
+    {
+        "Id": 101,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 0,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "开局·教学Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第5回合布置棋盘后，玩家得分≥70分。",
+        "ShowDeleteOption": false,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage001.png",
+        "InitialPiece": [
+            46,
+            5,
+            30
+        ],
+        "InitialPieceNum": [
+            3,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 101,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "开局·教学Ⅱ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第10回合布置棋盘后，玩家得分≥150分。",
+        "ShowDeleteOption": false,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage002.png",
+        "InitialPiece": [
+            52
+        ],
+        "InitialPieceNum": [
+            5
+        ]
+    },
+    {
+        "Id": 103,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 102,
+        "FirstSupplyCnt": 2,
+        "BagCapacity": 255,
+        "Name": "开局·挑战Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第10回合布置棋盘后，玩家得分≥180分。",
+        "ShowDeleteOption": false,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage003.png",
+        "InitialPiece": [
+            46
+        ],
+        "InitialPieceNum": [
+            5
+        ]
+    },
+    {
+        "Id": 104,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 103,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "中局·教学Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第10回合布置棋盘后，玩家得分≥770分。",
+        "ShowDeleteOption": false,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage004.png",
+        "InitialPiece": [
+            36,
+            43
+        ],
+        "InitialPieceNum": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 105,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 104,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "中局·教学Ⅱ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥1050分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage005.png",
+        "InitialPiece": [
+            46,
+            69,
+            19,
+            18,
+            24,
+            67
+        ],
+        "InitialPieceNum": [
+            16,
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 106,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 105,
+        "FirstSupplyCnt": 2,
+        "BagCapacity": 255,
+        "Name": "中局·挑战Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥800分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage006.png",
+        "InitialPiece": [
+            35,
+            29,
+            1,
+            57,
+            55
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 106,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "残局·教学Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥1450分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage007.png",
+        "InitialPiece": [
+            27,
+            30,
+            28
+        ],
+        "InitialPieceNum": [
+            10,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 108,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 107,
+        "FirstSupplyCnt": 2,
+        "BagCapacity": 255,
+        "Name": "残局·挑战Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥500分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage008.png",
+        "InitialPiece": [
+            27,
+            30,
+            28
+        ],
+        "InitialPieceNum": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 109,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 108,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "终局·教学Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第5回合布置棋盘后，玩家得分≥380分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage009.png",
+        "InitialPiece": [
+            7,
+            2,
+            13
+        ],
+        "InitialPieceNum": [
+            12,
+            6,
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 109,
+        "FirstSupplyCnt": 0,
+        "BagCapacity": 255,
+        "Name": "终局·教学Ⅱ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第10回合布置棋盘后，玩家得分≥950分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": false,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage010.png",
+        "InitialPiece": [
+            8,
+            9,
+            11,
+            15
+        ],
+        "InitialPieceNum": [
+            12,
+            3,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 110,
+        "FirstSupplyCnt": 2,
+        "BagCapacity": 255,
+        "Name": "终局·挑战Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥1200分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 0,
+        "InitialPieceGroupAmount": 0,
+        "IsChallenge": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage011.png",
+        "InitialPiece": [
+            16,
+            17,
+            1,
+            5,
+            57
+        ],
+        "InitialPieceNum": [
+            1,
+            1,
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActivityId": 1,
+        "TimeId": 888,
+        "PreStage": 111,
+        "FirstSupplyCnt": 2,
+        "BagCapacity": 255,
+        "Name": "终局·决战Ⅰ",
+        "SpecialPieceType": [],
+        "SpecialScore": [],
+        "Row": 4,
+        "Column": 5,
+        "Desc": "第15回合布置棋盘后，玩家得分≥1200分。",
+        "ShowDeleteOption": true,
+        "InitialPieceGroup": 32,
+        "InitialPieceGroupAmount": 5,
+        "IsChallenge": true,
+        "CoverImage": "Assets/Product/Texture/Image/UiLuckyTenant/stage012.png"
+    }
+]

@@ -1,0 +1,717 @@
+[
+    {
+        "Index": 1,
+        "Name": "生命",
+        "Attrib": "Life"
+    },
+    {
+        "Index": 2,
+        "Name": "必杀能量",
+        "Attrib": "Energy"
+    },
+    {
+        "Index": 3,
+        "Name": "跑速度",
+        "Attrib": "RunSpeed"
+    },
+    {
+        "Index": 4,
+        "Name": "走速度",
+        "Attrib": "WalkSpeed"
+    },
+    {
+        "Index": 5,
+        "Name": "转身角速度",
+        "Attrib": "TurnRoundSpeed"
+    },
+    {
+        "Index": 6,
+        "Name": "出球间隔",
+        "Attrib": "BallInterval"
+    },
+    {
+        "Index": 7,
+        "Name": "物理伤害免疫",
+        "Attrib": "DamageNormalImmunity"
+    },
+    {
+        "Index": 8,
+        "Name": "元素伤害免疫",
+        "Attrib": "DamageMagicImmunity"
+    },
+    {
+        "Index": 9,
+        "Name": "反物理伤害免疫",
+        "Attrib": "AntiDamageNormalImmunity"
+    },
+    {
+        "Index": 10,
+        "Name": "反元素伤害免疫",
+        "Attrib": "AntiDamageMagicImmunity"
+    },
+    {
+        "Index": 11,
+        "Name": "攻击",
+        "Attrib": "AttackNormal"
+    },
+    {
+        "Index": 12,
+        "Name": "火元素攻击",
+        "Attrib": "AttackMagic1"
+    },
+    {
+        "Index": 13,
+        "Name": "雷元素攻击",
+        "Attrib": "AttackMagic2"
+    },
+    {
+        "Index": 14,
+        "Name": "冰元素攻击",
+        "Attrib": "AttackMagic3"
+    },
+    {
+        "Index": 15,
+        "Name": "暗元素攻击",
+        "Attrib": "AttackMagic4"
+    },
+    {
+        "Index": 16,
+        "Name": "空元素攻击",
+        "Attrib": "AttackMagic5"
+    },
+    {
+        "Index": 17,
+        "Name": "反物理攻击",
+        "Attrib": "AntiAttackNormal"
+    },
+    {
+        "Index": 18,
+        "Name": "反火元素攻击",
+        "Attrib": "AntiAttackMagic1"
+    },
+    {
+        "Index": 19,
+        "Name": "反雷元素攻击",
+        "Attrib": "AntiAttackMagic2"
+    },
+    {
+        "Index": 20,
+        "Name": "反冰元素攻击",
+        "Attrib": "AntiAttackMagic3"
+    },
+    {
+        "Index": 21,
+        "Name": "反暗元素攻击",
+        "Attrib": "AntiAttackMagic4"
+    },
+    {
+        "Index": 22,
+        "Name": "反空元素攻击",
+        "Attrib": "AntiAttackMagic5"
+    },
+    {
+        "Index": 23,
+        "Name": "防御",
+        "Attrib": "DefenseNormal"
+    },
+    {
+        "Index": 24,
+        "Name": "反防御",
+        "Attrib": "AntiDefenseNormal"
+    },
+    {
+        "Index": 25,
+        "Name": "额外伤害加成",
+        "Attrib": "DamageChangeP"
+    },
+    {
+        "Index": 26,
+        "Name": "物理伤害加成",
+        "Attrib": "DamageNormalChangeP"
+    },
+    {
+        "Index": 27,
+        "Name": "火属性伤害加成",
+        "Attrib": "DamageMagic1ChangeP"
+    },
+    {
+        "Index": 28,
+        "Name": "雷属性伤害加成",
+        "Attrib": "DamageMagic2ChangeP"
+    },
+    {
+        "Index": 29,
+        "Name": "冰属性伤害加成",
+        "Attrib": "DamageMagic3ChangeP"
+    },
+    {
+        "Index": 30,
+        "Name": "暗属性伤害加成",
+        "Attrib": "DamageMagic4ChangeP"
+    },
+    {
+        "Index": 31,
+        "Name": "空元素伤害加成",
+        "Attrib": "DamageMagic5ChangeP"
+    },
+    {
+        "Index": 32,
+        "Name": "额外伤害减免",
+        "Attrib": "AntiDamageChangeP"
+    },
+    {
+        "Index": 33,
+        "Name": "物理抗性",
+        "Attrib": "AntiDamageNormalChangeP"
+    },
+    {
+        "Index": 34,
+        "Name": "火属性抗性",
+        "Attrib": "AntiDamageMagic1ChangeP"
+    },
+    {
+        "Index": 35,
+        "Name": "雷属性抗性",
+        "Attrib": "AntiDamageMagic2ChangeP"
+    },
+    {
+        "Index": 36,
+        "Name": "冰属性抗性",
+        "Attrib": "AntiDamageMagic3ChangeP"
+    },
+    {
+        "Index": 37,
+        "Name": "暗属性抗性",
+        "Attrib": "AntiDamageMagic4ChangeP"
+    },
+    {
+        "Index": 38,
+        "Name": "空元素抗性",
+        "Attrib": "AntiDamageMagic5ChangeP"
+    },
+    {
+        "Index": 39,
+        "Name": "类型伤害起始-仅标记",
+        "Attrib": "DamagePBegin"
+    },
+    {
+        "Index": 40,
+        "Name": "机械伤害率",
+        "Attrib": "Damage1P"
+    },
+    {
+        "Index": 41,
+        "Name": "异能伤害率",
+        "Attrib": "Damage2P"
+    },
+    {
+        "Index": 42,
+        "Name": "生物伤害率",
+        "Attrib": "Damage3P"
+    },
+    {
+        "Index": 43,
+        "Name": "类型伤害结束-仅标记",
+        "Attrib": "DamagePEnd"
+    },
+    {
+        "Index": 44,
+        "Name": "会心",
+        "Attrib": "Crit"
+    },
+    {
+        "Index": 45,
+        "Name": "暴击率",
+        "Attrib": "CritP"
+    },
+    {
+        "Index": 46,
+        "Name": "暴击伤害率",
+        "Attrib": "CritDamageP"
+    },
+    {
+        "Index": 47,
+        "Name": "反暴击率",
+        "Attrib": "AntiCritP"
+    },
+    {
+        "Index": 48,
+        "Name": "反暴击伤害率",
+        "Attrib": "AntiCritDamageP"
+    },
+    {
+        "Index": 49,
+        "Name": "吸血",
+        "Attrib": "Lifesteal"
+    },
+    {
+        "Index": 50,
+        "Name": "吸血率",
+        "Attrib": "LifestealP"
+    },
+    {
+        "Index": 51,
+        "Name": "治疗加深率",
+        "Attrib": "CureChangeP"
+    },
+    {
+        "Index": 52,
+        "Name": "反治疗加深率",
+        "Attrib": "AntiCureChangeP"
+    },
+    {
+        "Index": 53,
+        "Name": "霸体值-黄条",
+        "Attrib": "Endure"
+    },
+    {
+        "Index": 54,
+        "Name": "仇恨生成速率",
+        "Attrib": "ThreatRateP"
+    },
+    {
+        "Index": 55,
+        "Name": "闪避能量值",
+        "Attrib": "DodgeEnergy"
+    },
+    {
+        "Index": 56,
+        "Name": "闪避能量自动回复（能量值/秒）",
+        "Attrib": "DodgeEnergyAutoRecovery"
+    },
+    {
+        "Index": 57,
+        "Name": "自定义能量值",
+        "Attrib": "CustomEnergy"
+    },
+    {
+        "Index": 58,
+        "Name": "积蓄抗性1",
+        "Attrib": "AccuResistance1"
+    },
+    {
+        "Index": 59,
+        "Name": "积蓄抗性2",
+        "Attrib": "AccuResistance2"
+    },
+    {
+        "Index": 60,
+        "Name": "积蓄抗性3",
+        "Attrib": "AccuResistance3"
+    },
+    {
+        "Index": 61,
+        "Name": "积蓄抗性4",
+        "Attrib": "AccuResistance4"
+    },
+    {
+        "Index": 62,
+        "Name": "积蓄抗性5",
+        "Attrib": "AccuResistance5"
+    },
+    {
+        "Index": 63,
+        "Name": "积蓄抗性6",
+        "Attrib": "AccuResistance6"
+    },
+    {
+        "Index": 64,
+        "Name": "积蓄抗性7",
+        "Attrib": "AccuResistance7"
+    },
+    {
+        "Index": 65,
+        "Name": "积蓄抗性8",
+        "Attrib": "AccuResistance8"
+    },
+    {
+        "Index": 66,
+        "Name": "积蓄抗性9",
+        "Attrib": "AccuResistance9"
+    },
+    {
+        "Index": 67,
+        "Name": "积蓄抗性10",
+        "Attrib": "AccuResistance10"
+    },
+    {
+        "Index": 68,
+        "Name": "蹲走速度",
+        "Attrib": "SquatSpeed"
+    },
+    {
+        "Index": 69,
+        "Name": "物理弱点",
+        "Attrib": "NormalWeaknessP"
+    },
+    {
+        "Index": 70,
+        "Name": "火属性弱点",
+        "Attrib": "Magic1WeaknessP"
+    },
+    {
+        "Index": 71,
+        "Name": "雷属性弱点",
+        "Attrib": "Magic2WeaknessP"
+    },
+    {
+        "Index": 72,
+        "Name": "冰属性弱点",
+        "Attrib": "Magic3WeaknessP"
+    },
+    {
+        "Index": 73,
+        "Name": "暗属性弱点",
+        "Attrib": "Magic4WeaknessP"
+    },
+    {
+        "Index": 74,
+        "Name": "疾跑速度（逻辑单位/帧）",
+        "Attrib": "SprintSpeed"
+    },
+    {
+        "Index": 75,
+        "Name": "自定义能量组1",
+        "Attrib": "CustomEnergyGroup1"
+    },
+    {
+        "Index": 76,
+        "Name": "自定义能量组2",
+        "Attrib": "CustomEnergyGroup2"
+    },
+    {
+        "Index": 77,
+        "Name": "自定义能量组3",
+        "Attrib": "CustomEnergyGroup3"
+    },
+    {
+        "Index": 78,
+        "Name": "自定义能量组4",
+        "Attrib": "CustomEnergyGroup4"
+    },
+    {
+        "Index": 79,
+        "Name": "处决值",
+        "Attrib": "Hack"
+    },
+    {
+        "Index": 80,
+        "Name": "处决加深率",
+        "Attrib": "HackChangeP"
+    },
+    {
+        "Index": 81,
+        "Name": "处决抵抗率",
+        "Attrib": "AntiHackChangeP"
+    },
+    {
+        "Index": 82,
+        "Name": "可触发终结技的处决值剩余比例",
+        "Attrib": "HackExecuteSkillTriggerP"
+    },
+    {
+        "Index": 83,
+        "Name": "技能倍率加深率",
+        "Attrib": "SkillDamageChangeP"
+    },
+    {
+        "Index": 84,
+        "Name": "怪物处决值减少时的动态评分系数",
+        "Attrib": "ReduceHackDynamicScoringCoe"
+    },
+    {
+        "Index": 85,
+        "Name": "怪物受到处决的动态评分系数",
+        "Attrib": "BeExecutedDynamicScoringCoe"
+    },
+    {
+        "Index": 86,
+        "Name": "动态评分点数获取提升率",
+        "Attrib": "DynamicScoringScoreChangeP"
+    },
+    {
+        "Index": 87,
+        "Name": "动态评分点数获取提升值",
+        "Attrib": "DynamicScoringScoreChangeV"
+    },
+    {
+        "Index": 88,
+        "Name": "动态评分每秒固定点数下降提升率",
+        "Attrib": "ReduceDynamicScoringScorePerSecondChangeP"
+    },
+    {
+        "Index": 89,
+        "Name": "动态评分每秒固定点数下降提升值",
+        "Attrib": "ReduceDynamicScoringScorePerSecondChangeV"
+    },
+    {
+        "Index": 90,
+        "Name": "受伤时动态评分点数下降提升率",
+        "Attrib": "ReduceDynamicScoringScoreWhenBeDamagedChangeP"
+    },
+    {
+        "Index": 91,
+        "Name": "受伤时动态评分点数下降提升值",
+        "Attrib": "ReduceDynamicScoringScoreWhenBeDamagedChangeV"
+    },
+    {
+        "Index": 92,
+        "Name": "伤害增幅",
+        "Attrib": "DamageAmplificationFactorP"
+    },
+    {
+        "Index": 93,
+        "Name": "基础破盾效率",
+        "Attrib": "BrokenProtectorHp"
+    },
+    {
+        "Index": 94,
+        "Name": "额外破盾提升",
+        "Attrib": "BrokenProtectorHpChangeP"
+    },
+    {
+        "Index": 95,
+        "Name": "额外破盾抗性",
+        "Attrib": "AntiBrokenProtectorHpChangeP"
+    },
+    {
+        "Index": 96,
+        "Name": "全属性增伤",
+        "Attrib": "AllMagicDamageChangeP"
+    },
+    {
+        "Index": 97,
+        "Name": "全属性减抗",
+        "Attrib": "AllMagicAntiChangeP"
+    },
+    {
+        "Index": 98,
+        "Name": "空元素弱点",
+        "Attrib": "Magic5WeaknessP"
+    },
+    {
+        "Index": 99,
+        "Name": "稳态力场",
+        "Attrib": "ProtectorHp"
+    },
+    {
+        "Index": 100,
+        "Name": "技能异常积蓄值加深率",
+        "Attrib": "SkillAccumulatorP"
+    },
+    {
+        "Index": 101,
+        "Name": "点燃伤害额外加成",
+        "Attrib": "BurnDamageExtraP"
+    },
+    {
+        "Index": 102,
+        "Name": "点燃伤害抵抗",
+        "Attrib": "AntiBurnDamageP"
+    },
+    {
+        "Index": 103,
+        "Name": "点燃积蓄槽效率提升",
+        "Attrib": "BurnAccumulatorP"
+    },
+    {
+        "Index": 104,
+        "Name": "点燃积蓄槽效率抗性",
+        "Attrib": "BurnAntiAccumulatorP"
+    },
+    {
+        "Index": 105,
+        "Name": "剑气积蓄槽效率提升",
+        "Attrib": "SwordPowerAccumulatorP"
+    },
+    {
+        "Index": 106,
+        "Name": "剑气积蓄槽效率抗性",
+        "Attrib": "SwordPowerAntiAccumulatorP"
+    },
+    {
+        "Index": 107,
+        "Name": "次元斩基础伤害加成",
+        "Attrib": "SwordPowerDamageP"
+    },
+    {
+        "Index": 108,
+        "Name": "次元斩额外伤害加成",
+        "Attrib": "SwordPowerDamageExtraP"
+    },
+    {
+        "Index": 109,
+        "Name": "次元斩伤害抗性",
+        "Attrib": "AntiSwordPowerP"
+    },
+    {
+        "Index": 110,
+        "Name": "次元斩弱点",
+        "Attrib": "SwordPowerWeaknessP"
+    },
+    {
+        "Index": 111,
+        "Name": "点燃伤害弱点",
+        "Attrib": "BurnDamageWeaknessP"
+    },
+    {
+        "Index": 112,
+        "Name": "雷盾积蓄槽效率提升",
+        "Attrib": "ThunderShieldAccumulatorP"
+    },
+    {
+        "Index": 113,
+        "Name": "雷盾积蓄槽效率抗性",
+        "Attrib": "ThunderShieldAntiAccumulatorP"
+    },
+    {
+        "Index": 114,
+        "Name": "雷盾额外伤害加成",
+        "Attrib": "ThunderShieldDamageExtraP"
+    },
+    {
+        "Index": 115,
+        "Name": "雷盾伤害抗性",
+        "Attrib": "AntiThunderShieldP"
+    },
+    {
+        "Index": 116,
+        "Name": "雷盾伤害弱点",
+        "Attrib": "ThunderShieldWeaknessP"
+    },
+    {
+        "Index": 117,
+        "Name": "冰结积蓄槽效率提升",
+        "Attrib": "FreezeAccumulatorP"
+    },
+    {
+        "Index": 118,
+        "Name": "冰结积蓄槽效率抗性",
+        "Attrib": "FreezeAntiAccumulatorP"
+    },
+    {
+        "Index": 119,
+        "Name": "冰结额外伤害加成",
+        "Attrib": "FreezeDamageExtraP"
+    },
+    {
+        "Index": 120,
+        "Name": "冰结伤害抗性",
+        "Attrib": "AntiFreezeP"
+    },
+    {
+        "Index": 121,
+        "Name": "冰结伤害弱点",
+        "Attrib": "FreezeWeaknessP"
+    },
+    {
+        "Index": 122,
+        "Name": "走跳速度",
+        "Attrib": "IdleJumpSpeed"
+    },
+    {
+        "Index": 123,
+        "Name": "跑跳速度",
+        "Attrib": "RunJumpSpeed"
+    },
+    {
+        "Index": 124,
+        "Name": "跳跃转角速度",
+        "Attrib": "JumpTurnRoundSpeed"
+    },
+    {
+        "Index": 125,
+        "Name": "落地硬直",
+        "Attrib": "LandingFreeze"
+    },
+    {
+        "Index": 126,
+        "Name": "锁血",
+        "Attrib": "LockedLife"
+    },
+    {
+        "Index": 127,
+        "Name": "辐射伤害额外加成",
+        "Attrib": "FalloutDamageExtraP"
+    },
+    {
+        "Index": 128,
+        "Name": "辐射伤害抵抗",
+        "Attrib": "FalloutAntiDamageP"
+    },
+    {
+        "Index": 129,
+        "Name": "辐射弱点",
+        "Attrib": "FalloutWeaknessP"
+    },
+    {
+        "Index": 130,
+        "Name": "辐射积蓄槽效率提升",
+        "Attrib": "FalloutAccumulatorP"
+    },
+    {
+        "Index": 131,
+        "Name": "辐射积蓄槽效率抗性",
+        "Attrib": "FalloutAntiAccumulatorP"
+    },
+    {
+        "Index": 132,
+        "Name": "跳跃加速度",
+        "Attrib": "JumpAcceleration"
+    },
+    {
+        "Index": 133,
+        "Name": "虚血",
+        "Attrib": "BloodBorne"
+    },
+    {
+        "Index": 134,
+        "Name": "虚血衰减（毫秒）",
+        "Attrib": "BloodBorneAttenuationTime"
+    },
+    {
+        "Index": 135,
+        "Name": "虚血扣除速度（/秒）",
+        "Attrib": "BloodBorneDeductSpeed"
+    },
+    {
+        "Index": 136,
+        "Name": "虚血恢复CD（毫秒）",
+        "Attrib": "BloodBorneResetCD"
+    },
+    {
+        "Index": 137,
+        "Name": "虚血转化比率",
+        "Attrib": "BloodBorneChangeRateP"
+    },
+    {
+        "Index": 138,
+        "Name": "光噪积蓄槽效率提升",
+        "Attrib": "LightNoiseAccumulatorP"
+    },
+    {
+        "Index": 139,
+        "Name": "光噪积蓄槽效率抗性",
+        "Attrib": "LightNoiseAntiAccumulatorP"
+    },
+    {
+        "Index": 140,
+        "Name": "光噪额外伤害加成",
+        "Attrib": "LightNoiseDamageExtraP"
+    },
+    {
+        "Index": 141,
+        "Name": "光噪伤害抗性",
+        "Attrib": "AntiLightNoiseP"
+    },
+    {
+        "Index": 142,
+        "Name": "光噪伤害弱点",
+        "Attrib": "LightNoiseWeaknessP"
+    },
+    {
+        "Index": 143,
+        "Name": "伤害倍率强化",
+        "Attrib": "DamageChangePEx"
+    }
+]

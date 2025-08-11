@@ -1,0 +1,258 @@
+[
+    {
+        "Id": 991,
+        "GroupId": 99,
+        "TimeId": 99900,
+        "Priority": 1,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "测试配置：春节公会，指定时间内，角色随配置的时间刷新",
+        "NpcGroupIds": [
+            3901
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 992,
+        "GroupId": 99,
+        "TimeId": 99906,
+        "Priority": 2,
+        "RefreshType": 2,
+        "RefreshInterval": 1,
+        "Desc": "测试配置：春节公会，每隔 1 天，随机 1 组角色",
+        "NpcGroupIds": [
+            3902,
+            3903,
+            3904,
+            3905,
+            3906
+        ],
+        "NpcGroupWeights": [
+            50,
+            50,
+            50,
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 993,
+        "GroupId": 99,
+        "TimeId": 0,
+        "Priority": 3,
+        "RefreshType": 3,
+        "RefreshInterval": 1,
+        "Desc": "测试配置：每隔1天，固定切换角色",
+        "NpcGroupIds": [
+            3907,
+            3908,
+            3909,
+            3910,
+            3911
+        ],
+        "NpcGroupWeights": [
+            50,
+            50,
+            50,
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 301,
+        "GroupId": 3,
+        "TimeId": 15410,
+        "Priority": 1,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "春节配置：指定时间（初一~初七，每天出现一个NPC）",
+        "NpcGroupIds": [
+            3101
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 302,
+        "GroupId": 3,
+        "TimeId": 0,
+        "Priority": 2,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "春节配置：场景时间过后，固定NPC（赛利卡）",
+        "NpcGroupIds": [
+            3001
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 401,
+        "GroupId": 4,
+        "TimeId": 20021,
+        "Priority": 1,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "空岛夏活配置：指定时间（版本五周），每周 2 个NPC",
+        "NpcGroupIds": [
+            4101
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 402,
+        "GroupId": 4,
+        "TimeId": 0,
+        "Priority": 2,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "空岛夏活配置：场景时间过后，固定NPC（赛利卡）",
+        "NpcGroupIds": [
+            4001
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 501,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 1,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5001
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 502,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 2,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5002
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 503,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 3,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5003
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 504,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 4,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5004
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 505,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 5,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5005
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 506,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 6,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5006
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 507,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 7,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5007
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 508,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 8,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5008
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    },
+    {
+        "Id": 509,
+        "GroupId": 5,
+        "TimeId": 99900,
+        "Priority": 9,
+        "RefreshType": 1,
+        "RefreshInterval": 0,
+        "Desc": "2024春节配置：指定时间（初一~初七，每天出现一组NPC）",
+        "NpcGroupIds": [
+            5009
+        ],
+        "NpcGroupWeights": [
+            50
+        ]
+    }
+]

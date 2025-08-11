@@ -1,0 +1,1885 @@
+[
+    {
+        "Id": 1001,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "恢复全队50%最大生命值",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            5000
+        ]
+    },
+    {
+        "Id": 1002,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "经过矿场时获得50金币",
+        "BubbleControllerId": 3,
+        "Params": [
+            2,
+            55
+        ]
+    },
+    {
+        "Id": 1003,
+        "Type": 3,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "矿场连携召唤怪物",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 1004,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "永久增加全队3攻击力",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 1005,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "永久增加全队5生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 1006,
+        "Type": 3,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "矿场召唤1只怪物",
+        "BubbleControllerId": 0,
+        "Params": [
+            1,
+            3,
+            0
+        ]
+    },
+    {
+        "Id": 1007,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "射击馆临时增加全队35%暴击率",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            4,
+            2,
+            2000
+        ]
+    },
+    {
+        "Id": 1008,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "射击馆与训练场相邻临时增加全队30%暴击伤害",
+        "BubbleControllerId": 0,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            3000
+        ]
+    },
+    {
+        "Id": 1009,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "恢复全队8%最大生命值",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            800
+        ]
+    },
+    {
+        "Id": 1010,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "恢复全队8%最大生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            800
+        ]
+    },
+    {
+        "Id": 1011,
+        "Type": 8,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "抽取1个道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 1012,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "额外抽道具扣50金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            -50
+        ]
+    },
+    {
+        "Id": 1013,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "离子塔给范围内加攻速",
+        "BubbleControllerId": 0,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            6,
+            2,
+            2800
+        ]
+    },
+    {
+        "Id": 1014,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "离子塔连携扣50金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            -50
+        ]
+    },
+    {
+        "Id": 1015,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "变异岩石与训练场相邻加3攻击力",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 1017,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "变异草地恢复1生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1018,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "草地立即生效，生命值+1",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1019,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星岩石恢复1生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1020,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星岩石立即生效，生命值+1",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1021,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星冰面与训练场相邻加攻速",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            6,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 1022,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙星绿洲恢复1生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1023,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙星绿洲立即生效，生命值+1",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1024,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙星岩石与占卜馆连携加攻击",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 1025,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星岩浆恢复1生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1026,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星岩浆立即生效，生命值+1",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1027,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星结晶与射击馆连携加暴击率",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            2,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 1028,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星结晶与射击馆连携加暴击伤害",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 1031,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "连携：杀怪给10金币",
+        "BubbleControllerId": 0,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            15
+        ]
+    },
+    {
+        "Id": 1032,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "射击馆临时增加全队25%暴击伤害",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            2,
+            5,
+            2,
+            2500
+        ]
+    },
+    {
+        "Id": 1033,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "红丝绒蛋糕，攻击+5，拆除后移除",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            2,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 1034,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "红丝绒蛋糕，生命+10，拆除后移除",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            2,
+            1,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 1035,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "杏仁蛋糕与矿场连携后，星矿+50",
+        "BubbleControllerId": 0,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            50
+        ]
+    },
+    {
+        "Id": 2001,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "每次杀敌减少全队2点当前生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 2002,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "每次杀敌永久增加全队1点攻击",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 2003,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "瘴雾天气，添加基地事件，基地不回血",
+        "BubbleControllerId": 0,
+        "Params": [
+            503,
+            0,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 2004,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "瘴雾天气，基地不能回血，和基地回血量对冲",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            -5000
+        ]
+    },
+    {
+        "Id": 2005,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "每次获得道具增加全队20点攻击",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            20
+        ]
+    },
+    {
+        "Id": 2006,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "每次获得道具增加全队10%爆伤",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            5,
+            1,
+            1000
+        ]
+    },
+    {
+        "Id": 2007,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "每次获得道具增加全队5%生命",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            1,
+            500
+        ]
+    },
+    {
+        "Id": 2008,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 1,
+        "Desc": "冰星主题，完成建造任务1后给100钱",
+        "BubbleControllerId": 3,
+        "Params": [
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 2009,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 1,
+        "Desc": "冰星主题，完成建造任务后添加个每圈加属性BUFF",
+        "BubbleControllerId": 0,
+        "Params": [
+            512,
+            0,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2010,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "永久增加全队3攻击力",
+        "BubbleControllerId": 0,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 2011,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "永久增加全队10生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2020,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙星主题，每次获得道具增加全队5攻击",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 2021,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙星主题，每次获得道具增加全队10生命",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2022,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星主题2，获得道具给50金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2030,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星主题1，每圈给200金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2031,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星主题4，5，每圈给500金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 2100,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 1,
+        "Desc": "冰星主题，完成建造任务2后给100钱",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 2101,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 1,
+        "Desc": "冰星主题，完成建造任务3后给100钱",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 3024,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星晴天，给怪添加爆金币事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1002,
+            0,
+            4
+        ]
+    },
+    {
+        "Id": 3025,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星晴天，杀怪掉金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            20
+        ]
+    },
+    {
+        "Id": 3026,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "极寒天气，给矿场添加扣钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1005,
+            0,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 3027,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "极寒天气，给训练场添加扣钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1005,
+            0,
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 3028,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "极寒天气，给射击馆添加扣钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1005,
+            0,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 3029,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "极寒天气，给酒吧添加扣钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1005,
+            0,
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 3030,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "极寒天气，给离子塔添加扣钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1005,
+            0,
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 3031,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "冰星极寒，建造扣钱999",
+        "BubbleControllerId": 6,
+        "Params": [
+            2,
+            -999
+        ]
+    },
+    {
+        "Id": 3040,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠晴天，给占卜馆添加给道具事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1011,
+            0,
+            3,
+            6
+        ]
+    },
+    {
+        "Id": 3041,
+        "Type": 8,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "3040抽取1个道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 3042,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠晴天，给基地添加给钱事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1031,
+            0,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3043,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠晴天，基地经过给钱",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 3045,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "3-1沙尘暴，给流浪者加100%暴击率事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1013,
+            0,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 3046,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "3-1沙尘暴，给海盗加100%暴击率事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1013,
+            0,
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 3047,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙尘暴所有单位暴击率+100%",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            2,
+            4,
+            2,
+            10000
+        ]
+    },
+    {
+        "Id": 3048,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "3-1沙尘暴，给矿场加3049",
+        "BubbleControllerId": 0,
+        "Params": [
+            1015,
+            0,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 3049,
+        "Type": 8,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙尘暴下，经过矿场给一个道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 3100,
+        "Type": 3,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星晴天在随机道路召普通怪",
+        "BubbleControllerId": 0,
+        "Params": [
+            1,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3101,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "火星星火天气，给射击馆添加召怪事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1052,
+            0,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 3102,
+        "Type": 3,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星星火，在随机道路上召唤精英怪",
+        "BubbleControllerId": 0,
+        "Params": [
+            3,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 3103,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "杀怪暴击伤害+7%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            700
+        ]
+    },
+    {
+        "Id": 3150,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给红丝绒添加10块返钱，1层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1080,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3151,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给红丝绒添加10块返钱，2层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1081,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3152,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给红丝绒添加10块返钱，3层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1082,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3153,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给红丝绒添加10块返钱，4层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1083,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3154,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给红丝绒添加10块返钱，5层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1084,
+            0,
+            3,
+            109
+        ]
+    },
+    {
+        "Id": 3155,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给杏仁添加10块返钱，1层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1080,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3156,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给杏仁添加10块返钱，2层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1081,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3157,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给杏仁添加10块返钱，3层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1082,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3158,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给杏仁添加10块返钱，4层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1083,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3159,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦，给杏仁添加10块返钱，5层",
+        "BubbleControllerId": 0,
+        "Params": [
+            1084,
+            0,
+            3,
+            110
+        ]
+    },
+    {
+        "Id": 3180,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "幻梦返钱",
+        "BubbleControllerId": 6,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 3190,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "5-5幻梦，给怪添加爆金币事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            1101,
+            0,
+            4
+        ]
+    },
+    {
+        "Id": 3191,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "5-5幻梦，杀怪掉金币",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 3192,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "5-5索雾，每次杀敌减少全队2点当前生命值",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            0,
+            2,
+            -2
+        ]
+    },
+    {
+        "Id": 3193,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "5-5索雾，每次杀敌永久增加全队1点攻击",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 3200,
+        "Type": 3,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "火星雷雨在随机道路召海盗",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 4001,
+        "Type": 5,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠放晴道具（天气ID待修订）",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 4002,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠强化道具，队伍攻击+3",
+        "BubbleControllerId": 2,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            4,
+            1,
+            2,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 4003,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠强化道具，队伍生命+5",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 4004,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠降温道具，暴击率-100%",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            4,
+            2,
+            -10000
+        ]
+    },
+    {
+        "Id": 4005,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠给50金币道具",
+        "BubbleControllerId": 3,
+        "Params": [
+            2,
+            50
+        ]
+    },
+    {
+        "Id": 4006,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "给小工加扣血事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            2006,
+            0,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 4007,
+        "Type": 4,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "给阿箭添加扣血事件",
+        "BubbleControllerId": 0,
+        "Params": [
+            2006,
+            0,
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 4008,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "使用道具后，小工和阿箭血量-99%",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            1,
+            1,
+            -9900
+        ]
+    },
+    {
+        "Id": 4009,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "使用道具后，队伍恢复10%血量",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            4,
+            1,
+            0,
+            1,
+            1000
+        ]
+    },
+    {
+        "Id": 4010,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "沙漠给1金币道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 4011,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 再来一次道具",
+        "BubbleControllerId": 3,
+        "Params": [
+            2,
+            420
+        ]
+    },
+    {
+        "Id": 4012,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 再来两次道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            840
+        ]
+    },
+    {
+        "Id": 4013,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 攻击",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            2,
+            2,
+            7
+        ]
+    },
+    {
+        "Id": 4014,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 生命",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            1,
+            2,
+            77
+        ]
+    },
+    {
+        "Id": 4015,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 暴击率",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            4,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 4016,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 暴击伤害",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            5,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 4017,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "甜品星 速度加成",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            6,
+            2,
+            770
+        ]
+    },
+    {
+        "Id": 5001,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "BOSS降低70%攻击力",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            2,
+            1,
+            -8500
+        ]
+    },
+    {
+        "Id": 5002,
+        "Type": 2,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "BOSS降低10%攻击速度",
+        "BubbleControllerId": 0,
+        "Params": [
+            4,
+            1,
+            6,
+            2,
+            -1000
+        ]
+    },
+    {
+        "Id": 10001,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10101,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的初始金币+5",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 10201,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的生命+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10301,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的暴击率+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 20101,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的初始金币+5",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 20201,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻速加成+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            6,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 20301,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的暴击伤害+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 30101,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 30201,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的生命+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 30301,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的暴击率+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 40101,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的初始金币+5",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 40201,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的暴击伤害+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            5,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 40301,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 50101,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻速加成+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            6,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 50201,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的暴击率+1%",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            4,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 50301,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80001,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的初始金币+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80002,
+        "Type": 6,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的初始金币+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80003,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的生命值+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80004,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的生命值+2",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 80005,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的生命值+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80006,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80007,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 80008,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "探索小队的攻击+1",
+        "BubbleControllerId": 0,
+        "Params": [
+            2,
+            1,
+            2,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 90001,
+        "Type": 2,
+        "Overlying": true,
+        "TriggerCountLimit": 0,
+        "Desc": "恢复全队25%最大生命值",
+        "BubbleControllerId": 1,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJhuifu.prefab",
+        "Params": [
+            2,
+            1,
+            0,
+            1,
+            2500
+        ]
+    },
+    {
+        "Id": 90002,
+        "Type": 8,
+        "Overlying": false,
+        "TriggerCountLimit": 1,
+        "Desc": "引导抽取1个道具",
+        "BubbleControllerId": 0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 90050,
+        "Type": 6,
+        "Overlying": false,
+        "TriggerCountLimit": 0,
+        "Desc": "星火杀怪给80",
+        "BubbleControllerId": 3,
+        "PlayEffect": "Assets/Product/Effect/Prefab/FxWanfa/FxXXHYJbuff.prefab",
+        "Params": [
+            2,
+            80
+        ]
+    }
+]

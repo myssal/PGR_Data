@@ -1,0 +1,78 @@
+[
+    {
+        "Id": 1,
+        "Name": "指挥局排名",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": 0,
+        "RankingTarget": 0,
+        "RoundId": 0
+    },
+    {
+        "Id": 2,
+        "Name": "指挥局排名",
+        "TabType": "BtnSecondAll",
+        "FatherTab": 1,
+        "RankingTarget": 1,
+        "RoundId": 0,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "指挥局汇报",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": 0,
+        "RankingTarget": 0,
+        "RoundId": 0
+    },
+    {
+        "Id": 4,
+        "Name": "累计汇报",
+        "TabType": "BtnSecondTop",
+        "FatherTab": 3,
+        "RankingTarget": 2,
+        "RoundId": 0,
+        "Params": [
+            2,
+            0
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "首轮汇报",
+        "TabType": "BtnSecond",
+        "FatherTab": 3,
+        "RankingTarget": 2,
+        "RoundId": 1,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "次轮汇报",
+        "TabType": "BtnSecond",
+        "FatherTab": 3,
+        "RankingTarget": 2,
+        "RoundId": 2,
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "三轮汇报",
+        "TabType": "BtnSecondBottom",
+        "FatherTab": 3,
+        "RankingTarget": 2,
+        "RoundId": 3,
+        "Params": [
+            2,
+            3
+        ]
+    }
+]

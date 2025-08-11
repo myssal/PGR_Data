@@ -1,0 +1,958 @@
+[
+    {
+        "Id": 30162534,
+        "StageType": 1,
+        "Name": "选材",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 101,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20010
+        ],
+        "StarNeedScore": [
+            500,
+            1000,
+            1500
+        ]
+    },
+    {
+        "Id": 99950110,
+        "StageType": 1,
+        "Name": "加工",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 104,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20020
+        ],
+        "StarNeedScore": [
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162535,
+        "StageType": 1,
+        "Name": "切削",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 103,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20030
+        ],
+        "StarNeedScore": [
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162536,
+        "StageType": 1,
+        "Name": "切削-困难",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "RecommendCharacterGroupId": 103,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20040
+        ],
+        "StarNeedScore": [
+            400,
+            800,
+            1200,
+            1350,
+            1500
+        ]
+    },
+    {
+        "Id": 99950109,
+        "StageType": 1,
+        "Name": "装配",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 102,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20050
+        ],
+        "StarNeedScore": [
+            150,
+            300,
+            500
+        ],
+        "PlayerAmountLimitAffix": [
+            20501
+        ],
+        "PlayerAmountLimit": [
+            1
+        ]
+    },
+    {
+        "Id": 99950116,
+        "StageType": 1,
+        "Name": "装配-困难",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "RecommendCharacterGroupId": 102,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20060
+        ],
+        "StarNeedScore": [
+            150,
+            300,
+            500,
+            600,
+            700
+        ],
+        "PlayerAmountLimitAffix": [
+            20601
+        ],
+        "PlayerAmountLimit": [
+            1
+        ]
+    },
+    {
+        "Id": 30162537,
+        "StageType": 1,
+        "Name": "检测",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 105,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20070
+        ],
+        "StarNeedScore": [
+            200,
+            350,
+            500
+        ]
+    },
+    {
+        "Id": 30162538,
+        "StageType": 1,
+        "Name": "检测-困难",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "RecommendCharacterGroupId": 105,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20080
+        ],
+        "StarNeedScore": [
+            100,
+            250,
+            400,
+            500,
+            600
+        ]
+    },
+    {
+        "Id": 99950104,
+        "StageType": 1,
+        "Name": "成型",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 106,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20090
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            600
+        ]
+    },
+    {
+        "Id": 99950111,
+        "StageType": 1,
+        "Name": "成型-困难",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 0,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "RecommendCharacterGroupId": 106,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            20100
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            600,
+            700,
+            800
+        ]
+    },
+    {
+        "Id": 30162522,
+        "StageType": 1,
+        "Name": "界限-1",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "RecommendCharacterGroupId": 101,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10040
+        ],
+        "RecommendCharacterIds": [
+            1011002,
+            1021001,
+            1031001
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162523,
+        "StageType": 1,
+        "Name": "界限-2",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90210,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2400,
+        "UnlockStageId": 30162522,
+        "FullPoint": 5,
+        "StageGoalDesc": "消灭3个“邪恶”敌人",
+        "RecommendCharacterGroupId": 102,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10040
+        ],
+        "RecommendCharacterIds": [
+            1231002,
+            1051003,
+            1111002
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162524,
+        "StageType": 1,
+        "Name": "界限-3",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90610,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 3000,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "StageGoalDesc": "一个波次里，没有相同颜色词缀的敌人",
+        "RecommendCharacterGroupId": 103,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10040
+        ],
+        "RecommendCharacterIds": [
+            1521003,
+            1241002,
+            1551003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162525,
+        "StageType": 1,
+        "Name": "界限-4",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90460,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 3000,
+        "UnlockStageId": 30162524,
+        "FullPoint": 5,
+        "StageGoalDesc": "一个波次里，存在相同颜色词缀的敌人",
+        "RecommendCharacterGroupId": 104,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10040
+        ],
+        "RecommendCharacterIds": [
+            1091003,
+            1531004,
+            1051004
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162526,
+        "StageType": 1,
+        "Name": "界限-5",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90890,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 4000,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "StageGoalDesc": "连击数达到200",
+        "RecommendCharacterGroupId": 105,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10050
+        ],
+        "RecommendCharacterIds": [
+            1251002,
+            1131002,
+            1221002
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162527,
+        "StageType": 1,
+        "Name": "界限-6",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90250,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 4200,
+        "UnlockStageId": 30162526,
+        "FullPoint": 5,
+        "StageGoalDesc": "在5秒内连续击杀2个敌人",
+        "RecommendCharacterGroupId": 106,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10060
+        ],
+        "RecommendCharacterIds": [
+            1251002,
+            1131003,
+            1221003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162528,
+        "StageType": 1,
+        "Name": "界限-7",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90850,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 4400,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "StageGoalDesc": "利用词缀让场上存在超过5个怪物",
+        "RecommendCharacterGroupId": 107,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10070
+        ],
+        "RecommendCharacterIds": [
+            1171003,
+            1071004,
+            1531004
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162529,
+        "StageType": 1,
+        "Name": "界限-8",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90770,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 5300,
+        "UnlockStageId": 30162528,
+        "FullPoint": 5,
+        "StageGoalDesc": "单次造成10000伤害",
+        "RecommendCharacterGroupId": 108,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10080
+        ],
+        "RecommendCharacterIds": [
+            1041004,
+            1141003,
+            1031003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162530,
+        "StageType": 1,
+        "Name": "界限-9",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90090,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 5300,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "StageGoalDesc": "不让敌人成功复活",
+        "RecommendCharacterGroupId": 109,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10090
+        ],
+        "RecommendCharacterIds": [
+            1021004,
+            1091003,
+            1121003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162531,
+        "StageType": 1,
+        "Name": "界限-10",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90190,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 4800,
+        "UnlockStageId": 30162530,
+        "FullPoint": 5,
+        "StageGoalDesc": "两个敌人的击杀间隔不超过10秒",
+        "RecommendCharacterGroupId": 110,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10100
+        ],
+        "RecommendCharacterIds": [
+            1011004,
+            1051004,
+            1031004
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162532,
+        "StageType": 1,
+        "Name": "界限-11",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 93160,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 3200,
+        "UnlockStageId": 0,
+        "FullPoint": 5,
+        "StageGoalDesc": "2分钟内结束战斗",
+        "RecommendCharacterGroupId": 111,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10110
+        ],
+        "RecommendCharacterIds": [
+            1251002,
+            1131003,
+            1221003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162533,
+        "StageType": 1,
+        "Name": "界限-12",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 836000,
+        "OpenTimeId": 28,
+        "ShowFightEventIds": [],
+        "RecommendScore": 5000,
+        "UnlockStageId": 30162532,
+        "FullPoint": 5,
+        "StageGoalDesc": "2分钟内结束战斗",
+        "RecommendCharacterGroupId": 112,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            10120
+        ],
+        "RecommendCharacterIds": [
+            1251002,
+            1131003,
+            1221003
+        ],
+        "StarNeedScore": [
+            200,
+            400,
+            800,
+            1200
+        ]
+    },
+    {
+        "Id": 30162540,
+        "StageType": 1,
+        "Name": "元素预兆",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            30010
+        ],
+        "StarNeedScore": [
+            100,
+            300,
+            500
+        ]
+    },
+    {
+        "Id": 30162541,
+        "StageType": 1,
+        "Name": "炽狱狂舞",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 202,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 2,
+        "UseCharaGroup": 2,
+        "StageDiff": [
+            30020
+        ],
+        "StarNeedScore": [
+            100,
+            300,
+            450
+        ]
+    },
+    {
+        "Id": 30162542,
+        "StageType": 1,
+        "Name": "幻影协奏",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 203,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 2,
+        "UseCharaGroup": 3,
+        "StageDiff": [
+            30030
+        ],
+        "StarNeedScore": [
+            100,
+            300,
+            500
+        ]
+    },
+    {
+        "Id": 30162543,
+        "StageType": 1,
+        "Name": "虹彩崩解",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 1,
+        "StageDiff": [
+            30040
+        ],
+        "StarNeedScore": [
+            100,
+            350,
+            600
+        ]
+    },
+    {
+        "Id": 30162544,
+        "StageType": 1,
+        "Name": "刹那领域",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 1,
+        "StageDiff": [
+            30050
+        ],
+        "StarNeedScore": [
+            100,
+            300,
+            450
+        ]
+    },
+    {
+        "Id": 30162545,
+        "StageType": 1,
+        "Name": "兄弟羁绊",
+        "Difficulty": 1,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 3,
+        "RecommendCharacterGroupId": 204,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            30060
+        ],
+        "StarNeedScore": [
+            100,
+            350,
+            600
+        ]
+    },
+    {
+        "Id": 30162546,
+        "StageType": 1,
+        "Name": "炽狱狂舞-返场",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 202,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 2,
+        "UseCharaGroup": 2,
+        "StageDiff": [
+            30021
+        ],
+        "StarNeedScore": [
+            1000,
+            1300
+        ]
+    },
+    {
+        "Id": 30162547,
+        "StageType": 1,
+        "Name": "幻影协奏-返场",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38500,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 203,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 2,
+        "UseCharaGroup": 3,
+        "StageDiff": [
+            30031
+        ],
+        "StarNeedScore": [
+            1000,
+            1200
+        ]
+    },
+    {
+        "Id": 30162548,
+        "StageType": 1,
+        "Name": "虹彩崩解-返场",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38501,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 1,
+        "StageDiff": [
+            30041
+        ],
+        "StarNeedScore": [
+            1300,
+            1800
+        ]
+    },
+    {
+        "Id": 30162549,
+        "StageType": 1,
+        "Name": "刹那领域-返场",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38501,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 201,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 1,
+        "UseCharaGroup": 1,
+        "StageDiff": [
+            30051
+        ],
+        "StarNeedScore": [
+            1200,
+            1650
+        ]
+    },
+    {
+        "Id": 30162550,
+        "StageType": 1,
+        "Name": "兄弟羁绊-返场",
+        "Difficulty": 2,
+        "BaseStageId": 0,
+        "ShowNpcId": 90030,
+        "OpenTimeId": 38501,
+        "ShowFightEventIds": [],
+        "RecommendScore": 2200,
+        "UnlockStageId": 0,
+        "FullPoint": 2,
+        "RecommendCharacterGroupId": 204,
+        "PressureEasy": 1000,
+        "PressureHard": 1500,
+        "PlayerAmountLimitDefault": 0,
+        "UseCharaGroup": 0,
+        "StageDiff": [
+            30061
+        ],
+        "StarNeedScore": [
+            1200,
+            1600
+        ]
+    }
+]

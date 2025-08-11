@@ -1,0 +1,601 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "帮助Key",
+        "Params": [
+            "Theatre4"
+        ]
+    },
+    {
+        "Key": "CameraDistanceRange",
+        "Note": "相机缩放距离区域",
+        "Params": [
+            50,
+            200
+        ]
+    },
+    {
+        "Key": "CameraMoveSpeedRange",
+        "Note": "相机移动速度区域",
+        "Params": [
+            3,
+            9,
+            1.5,
+            5
+        ]
+    },
+    {
+        "Key": "CameraDragMaxRange",
+        "Note": "相机拖拽最大范围-原点是全图中心",
+        "Params": [
+            425,
+            375
+        ]
+    },
+    {
+        "Key": "CameraDragMinRange",
+        "Note": "相机拖拽最小范围-原点是全图中心",
+        "Params": [
+            400,
+            350
+        ]
+    },
+    {
+        "Key": "CameraZoomSpeed",
+        "Note": "相机缩放速度(千分比)",
+        "Params": [
+            100,
+            90000
+        ]
+    },
+    {
+        "Key": "CameraDefaultDistance",
+        "Note": "相机默认距离",
+        "Params": [
+            70
+        ]
+    },
+    {
+        "Key": "ClickGridLensFocusOffset",
+        "Note": "点击格子时镜头聚焦偏移 参数1是X轴的偏移 参数2是Y轴的偏移",
+        "Params": [
+            7,
+            0
+        ]
+    },
+    {
+        "Key": "MapFirstFloorRange",
+        "Note": "地图1层的距离范围-参数2=相机最远距离",
+        "Params": [
+            120,
+            200
+        ]
+    },
+    {
+        "Key": "MapSecondFloorRange",
+        "Note": "地图2层的距离范围-参数1=相机最近距离",
+        "Params": [
+            50,
+            120
+        ]
+    },
+    {
+        "Key": "ClickGridLensFocusTime",
+        "Note": "点击格子时镜头聚焦时长（ms）",
+        "Params": [
+            300
+        ]
+    },
+    {
+        "Key": "RecoverGridLensFocusTime",
+        "Note": "恢复格子镜头聚焦时长（ms）",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "IsOpenGridFocusRecover",
+        "Note": "是否开启镜头聚焦恢复 1开启，0不开启",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Key": "LocationBtnFocusToMapTime",
+        "Note": "点击定位按钮镜头聚焦时长（ms）",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "NewAreaFocusToMapBigCameraTime",
+        "Note": "新区域聚焦到大镜头时长（ms）",
+        "Params": [
+            1000
+        ]
+    },
+    {
+        "Key": "NewAreaFocusToMapBaseCameraTime",
+        "Note": "新区域聚焦到基础镜头时长（ms）",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "NewAreaFocusCueId",
+        "Note": "新区域聚焦音频Id",
+        "Params": [
+            4840
+        ]
+    },
+    {
+        "Key": "PopupNewAreaShowTime",
+        "Note": "新区域弹框显示时长（ms）",
+        "Params": [
+            1500
+        ]
+    },
+    {
+        "Key": "CountDownIcon",
+        "Note": "BOSS倒计时图标",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiTheatre4/UiTheatre4BossGridBg04.png"
+        ]
+    },
+    {
+        "Key": "CountDownDesc",
+        "Note": "BOSS倒计时描述",
+        "Params": [
+            "{0}天后进攻",
+            "<color=#FD1414>即将进攻</color>"
+        ]
+    },
+    {
+        "Key": "DisableCountDownIcon",
+        "Note": "自毁倒计时图标",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiTheatre4/UiTheatre4BossGridBg04.png"
+        ]
+    },
+    {
+        "Key": "DisableCountDownDesc",
+        "Note": "自毁倒计时描述",
+        "Params": [
+            "{0}天后坠毁",
+            "<color=#FD1414>即将自毁</color>"
+        ]
+    },
+    {
+        "Key": "TimelineDays",
+        "Note": "时间轴显示的天数",
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Key": "ArchieveTypeText",
+        "Note": "图鉴藏品分栏",
+        "Params": [
+            "金色图纸",
+            "紫色图纸",
+            "蓝色图纸",
+            "信物"
+        ]
+    },
+    {
+        "Key": "FateExclamationMarkIcon",
+        "Note": "时间轴感叹号图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEvent.png"
+        ]
+    },
+    {
+        "Key": "ShopItemCostColor",
+        "Note": "商店商品成本颜色",
+        "Params": [
+            "D0DFE7",
+            "FF001F"
+        ]
+    },
+    {
+        "Key": "SettlementDataContent",
+        "Note": "结算数据文本",
+        "Params": [
+            "通关地区",
+            "发展指数",
+            "探索区域",
+            "结局倍率",
+            "奖励倍率",
+            "三星奖励"
+        ]
+    },
+    {
+        "Key": "EntryProgressDesc",
+        "Note": "入口BP描述",
+        "Params": [
+            "当前等级：%s/%s"
+        ]
+    },
+    {
+        "Key": "StartGridName",
+        "Note": "起点格子名称",
+        "Params": [
+            "驻扎点"
+        ]
+    },
+    {
+        "Key": "StartGridDesc",
+        "Note": "起点格子描述",
+        "Params": [
+            "每持有{0}银币\\n每日结算时获得{1}银币\\n<color=#A0522D>当前利息：{2}</color>\\n<color=#A0522D>利息上限：{3}</color>"
+        ]
+    },
+    {
+        "Key": "BpRewardName",
+        "Note": "BP按钮名称",
+        "Params": [
+            "考核进度",
+            "任务奖励"
+        ]
+    },
+    {
+        "Key": "InGameOpenSkillTip",
+        "Note": "游戏中打开天赋树提示",
+        "Params": [
+            "游戏中无法激活天赋"
+        ]
+    },
+    {
+        "Key": "HandBookTagText",
+        "Note": "藏品界面标签文本",
+        "Params": [
+            "图纸列册",
+            "后勤支援",
+            "地图总览"
+        ]
+    },
+    {
+        "Key": "DiscoverGridColorBg",
+        "Note": "发现状态格子背景颜色",
+        "Params": [
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgRed.png",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgYellow.png",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgBlue.png"
+        ]
+    },
+    {
+        "Key": "EmptyGridProcessedName",
+        "Note": "空格子已处理状态的名称",
+        "Params": [
+            "已完成"
+        ]
+    },
+    {
+        "Key": "GameBossInfoTips",
+        "Note": "游戏主界面Boss繁荣度提示",
+        "Params": [
+            "还需%d发展指数",
+            "要求达成"
+        ]
+    },
+    {
+        "Key": "HurdleGridName",
+        "Note": "障碍格子名称",
+        "Params": [
+            "废墟"
+        ]
+    },
+    {
+        "Key": "ColorResourceAnimTime",
+        "Note": "颜色资源动画时长(ms)",
+        "Params": [
+            1500
+        ]
+    },
+    {
+        "Key": "ProsperityAnimTime",
+        "Note": "繁荣度动画时长(ms)",
+        "Params": [
+            1000
+        ]
+    },
+    {
+        "Key": "GeniusLevelIcon",
+        "Note": "天赋等级图标",
+        "Params": [
+            "Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv.png",
+            "Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv2.png",
+            "Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv3.png"
+        ]
+    },
+    {
+        "Key": "SkillActiveText",
+        "Note": "天赋激活按钮描述",
+        "Params": [
+            "激活",
+            "未解锁",
+            "已激活"
+        ]
+    },
+    {
+        "Key": "TimelineAnimTime",
+        "Note": "时间轴移动时长（ms）",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "GuideActiveMapId",
+        "Note": "触发引导的MapId",
+        "Params": [
+            11002,
+            11003
+        ]
+    },
+    {
+        "Key": "ShopSureText",
+        "Note": "商店确认按钮文本",
+        "Params": [
+            "离 开",
+            "购 买"
+        ]
+    },
+    {
+        "Key": "BtnClickCoolingTime",
+        "Note": "按钮点击冷却时间(ms)",
+        "Params": [
+            500
+        ]
+    },
+    {
+        "Key": "FirstEntryStoryId",
+        "Note": "首次剧情",
+        "Params": [
+            "RG00801BA"
+        ]
+    },
+    {
+        "Key": "NotFoundItemAndGeniusDesc",
+        "Note": "藏品和天赋未发现描述文本",
+        "Params": [
+            "暂未发现"
+        ]
+    },
+    {
+        "Key": "BossAttackDrainLifeTip",
+        "Note": "Boss攻击扣血提示",
+        "Params": [
+            "驻扎点<color=#FF9519>受到攻击</color>防御值-1，请尽快清理首领"
+        ]
+    },
+    {
+        "Key": "RestartGoldName",
+        "Note": "重启消耗货币名称",
+        "Params": [
+            "银币"
+        ]
+    },
+    {
+        "Key": "ResourceRollingNumberTime",
+        "Note": "颜色资源滚动时长(ms)",
+        "Params": [
+            600
+        ]
+    },
+    {
+        "Key": "LevelRollingNumberTime",
+        "Note": "颜色等级滚动时长(ms)",
+        "Params": [
+            600
+        ]
+    },
+    {
+        "Key": "ProsperityRollingNumberTime",
+        "Note": "繁荣度滚动时长(ms)",
+        "Params": [
+            600
+        ]
+    },
+    {
+        "Key": "AssetNotEnoughTextColor",
+        "Note": "探索消耗不足时文本颜色",
+        "Params": [
+            "D0DFE7",
+            "FF676B"
+        ]
+    },
+    {
+        "Key": "BuildPointDailyAdd",
+        "Note": "建造点每日提示",
+        "Params": [
+            "每日+{0}"
+        ]
+    },
+    {
+        "Key": "BossUnknowIcon",
+        "Note": "boss未解锁时左上角显示图标",
+        "Params": [
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4BossGridBg05.png"
+        ]
+    },
+    {
+        "Key": "BossUnknowName",
+        "Note": "boss未解锁时左上角显示名称",
+        "Params": [
+            "???"
+        ]
+    },
+    {
+        "Key": "BossUnknowProsperity",
+        "Note": "boss未解锁时左上角显示繁荣度",
+        "Params": [
+            "???"
+        ]
+    },
+    {
+        "Key": "ItemRepeatLimitTips",
+        "Note": "藏品重复获取提示",
+        "Params": [
+            "该图纸不可重复获取"
+        ]
+    },
+    {
+        "Key": "TechItemCountUnEnough",
+        "Note": "科技树科技点不足提示",
+        "Params": [
+            "补给券不足"
+        ]
+    },
+    {
+        "Key": "BpFullLevelTip",
+        "Note": "Bp等级满提示",
+        "Params": [
+            "达到等级上限"
+        ]
+    },
+    {
+        "Key": "BuildPointEffectShowValue",
+        "Note": "建造点特效显示值（大于等于配置时显示）",
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Key": "AttackPopupTitle",
+        "Note": "进攻预警标题",
+        "Params": [
+            "提示"
+        ]
+    },
+    {
+        "Key": "AttackPopupDesc",
+        "Note": "进攻预警描述",
+        "Params": [
+            "驻扎点即将遭受攻击!"
+        ]
+    },
+    {
+        "Key": "AttackPopupHpDesc",
+        "Note": "进攻预警血量描述",
+        "Params": [
+            "当前防御值：{0}",
+            "扣除防御值：{0}"
+        ]
+    },
+    {
+        "Key": "AdventureFailedPopupTitle",
+        "Note": "冒险失败弹框标题",
+        "Params": [
+            "提示"
+        ]
+    },
+    {
+        "Key": "AdventureFailedPopupContent",
+        "Note": "冒险失败弹框文本内容",
+        "Params": [
+            "基地防御值归零，挑战失败"
+        ]
+    },
+    {
+        "Key": "AdventureFailedPopupConfirmText",
+        "Note": "冒险失败弹框确认文本",
+        "Params": [
+            "退出挑战"
+        ]
+    },
+    {
+        "Key": "ViewMapTipContent",
+        "Note": "查看地图提示文本",
+        "Params": [
+            "未{0}时无法继续行动"
+        ]
+    },
+    {
+        "Key": "ViewMapBtnClickTipContent",
+        "Note": "查看地图时点击按钮提示文本",
+        "Params": [
+            "{0}时无法点击"
+        ]
+    },
+    {
+        "Key": "EntryViewMapPopupName",
+        "Note": "那个界面进行的查看地图",
+        "Params": [
+            "替换图纸",
+            "选择图纸",
+            "选择奖励",
+            "选择支援"
+        ]
+    },
+    {
+        "Key": "SwitchFloorCueId",
+        "Note": "切换层级音频Id",
+        "Params": [
+            557
+        ]
+    },
+    {
+        "Key": "EventOptionStageScoreNotEnough",
+        "Note": "事件选项分数提示",
+        "Params": [
+            "事件选项关卡分数不满足"
+        ]
+    },
+    {
+        "Key": "EffectForbiddenFight",
+        "Note": "411禁止战斗提示",
+        "Params": [
+            "该战斗类型禁止交战"
+        ]
+    },
+    {
+        "Key": "EffectRecruitCostNotEnoughTip",
+        "Note": "效果410金币不足时提示",
+        "Params": [
+            "银币不足，可保留行动点，在下一天转化为银币",
+            "银币不足，剩余行动点下一天可转化为{0}银币"
+        ]
+    },
+    {
+        "Key": "EffectRecruitRedCostNotEnoughTip",
+        "Note": "效果422红色买死不足时提示",
+        "Params": [
+            "当前持有军事建设度不足"
+        ]
+    },
+    {
+        "Key": "EffectRecruitHalfDiscount",
+        "Note": "\"拥有effect421, 红色买死附属effect, 金钱消耗减半\"",
+        "Params": [
+            "(只减少怪物血量的%s%%)"
+        ]
+    },
+    {
+        "Key": "TimeBackTips1",
+        "Params": [
+            "返还前3回合已使用行动点数%s点，下一章清空",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconActionpoint.png"
+        ]
+    },
+    {
+        "Key": "TimeBackTips2",
+        "Params": [
+            "返还前3回合消耗的部分银币，共计%s",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconCoin.png"
+        ]
+    },
+    {
+        "Key": "TimeBackTips3",
+        "Params": [
+            "返还前3回合消耗的施工许可%s，拆除对应建筑",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconXuke.png"
+        ]
+    },
+    {
+        "Key": "TimeBackTips4",
+        "Params": [
+            "扣减前3回合获得的三色倍率%s",
+            "Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconGou.png"
+        ]
+    }
+]

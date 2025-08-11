@@ -1,0 +1,756 @@
+[
+    {
+        "Id": 101,
+        "Name": "教学-1",
+        "ChapterId": 1,
+        "Order": 1,
+        "PreStageId": 0,
+        "PlanetId": 101,
+        "WeatherGroupId": 101,
+        "BossGroupId": 101,
+        "ItemGroupId": 0,
+        "InitCoin": 200,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59780,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 101,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar03.png",
+        "TargetGroupId": 101,
+        "EnvironmentEvents": [
+            90015
+        ],
+        "CompelUsedBuilding": [
+            2,
+            3
+        ],
+        "DisableBuilding": [
+            4,
+            5,
+            6,
+            7
+        ]
+    },
+    {
+        "Id": 102,
+        "Name": "教学-2",
+        "ChapterId": 1,
+        "Order": 2,
+        "PreStageId": 101,
+        "PlanetId": 102,
+        "WeatherGroupId": 101,
+        "BossGroupId": 102,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59781,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 102,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar03.png",
+        "TargetGroupId": 102,
+        "EnvironmentEvents": [
+            501
+        ],
+        "CompelUsedBuilding": [
+            2,
+            3,
+            5,
+            101,
+            102
+        ],
+        "DisableBuilding": [
+            4,
+            6,
+            7
+        ]
+    },
+    {
+        "Id": 103,
+        "Name": "普通-3",
+        "ChapterId": 1,
+        "Order": 3,
+        "PreStageId": 102,
+        "PlanetId": 103,
+        "WeatherGroupId": 101,
+        "BossGroupId": 103,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59782,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 102,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar03.png",
+        "TargetGroupId": 103,
+        "EnvironmentEvents": [
+            501
+        ],
+        "CompelUsedBuilding": [
+            101,
+            102
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "挑战-1",
+        "ChapterId": 1,
+        "Order": 4,
+        "PreStageId": 103,
+        "PlanetId": 104,
+        "WeatherGroupId": 101,
+        "BossGroupId": 104,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59783,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 102,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar03.png",
+        "TargetGroupId": 104,
+        "EnvironmentEvents": [
+            501,
+            502
+        ],
+        "CompelUsedBuilding": [
+            101,
+            102
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 201,
+        "Name": "普通-1",
+        "ChapterId": 2,
+        "Order": 5,
+        "PreStageId": 0,
+        "PlanetId": 201,
+        "WeatherGroupId": 201,
+        "BossGroupId": 201,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59784,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 201,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar01.png",
+        "TargetGroupId": 201,
+        "EnvironmentEvents": [
+            506,
+            560,
+            565
+        ],
+        "CompelUsedBuilding": [
+            105,
+            106
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 202,
+        "Name": "普通-2",
+        "ChapterId": 2,
+        "Order": 6,
+        "PreStageId": 201,
+        "PlanetId": 202,
+        "WeatherGroupId": 202,
+        "BossGroupId": 202,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59785,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 201,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar01.png",
+        "TargetGroupId": 202,
+        "EnvironmentEvents": [
+            507,
+            90010,
+            561,
+            566
+        ],
+        "CompelUsedBuilding": [
+            105,
+            106
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 203,
+        "Name": "普通-3",
+        "ChapterId": 2,
+        "Order": 7,
+        "PreStageId": 202,
+        "PlanetId": 203,
+        "WeatherGroupId": 203,
+        "BossGroupId": 203,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59786,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 203,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar01.png",
+        "TargetGroupId": 203,
+        "EnvironmentEvents": [
+            508,
+            511,
+            562,
+            567
+        ],
+        "CompelUsedBuilding": [
+            105,
+            106
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 204,
+        "Name": "挑战-1",
+        "ChapterId": 2,
+        "Order": 8,
+        "PreStageId": 203,
+        "PlanetId": 204,
+        "WeatherGroupId": 204,
+        "BossGroupId": 204,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59787,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 203,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar01.png",
+        "TargetGroupId": 204,
+        "EnvironmentEvents": [
+            509,
+            513,
+            563,
+            568
+        ],
+        "CompelUsedBuilding": [
+            105,
+            106
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 205,
+        "Name": "挑战-2",
+        "ChapterId": 2,
+        "Order": 9,
+        "PreStageId": 204,
+        "PlanetId": 205,
+        "WeatherGroupId": 205,
+        "BossGroupId": 205,
+        "ItemGroupId": 0,
+        "InitCoin": 300,
+        "CarryItemCount": 0,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59788,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 203,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar01.png",
+        "TargetGroupId": 205,
+        "EnvironmentEvents": [
+            510,
+            513,
+            514,
+            564,
+            569
+        ],
+        "CompelUsedBuilding": [
+            105,
+            106
+        ],
+        "DisableBuilding": [
+            6
+        ]
+    },
+    {
+        "Id": 301,
+        "Name": "普通-1",
+        "ChapterId": 3,
+        "Order": 10,
+        "PreStageId": 0,
+        "PlanetId": 301,
+        "WeatherGroupId": 301,
+        "BossGroupId": 301,
+        "ItemGroupId": 301,
+        "InitCoin": 500,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59789,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 301,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar02.png",
+        "TargetGroupId": 301,
+        "EnvironmentEvents": [
+            515,
+            90016
+        ],
+        "CompelUsedBuilding": [
+            103,
+            104
+        ]
+    },
+    {
+        "Id": 302,
+        "Name": "普通-2",
+        "ChapterId": 3,
+        "Order": 11,
+        "PreStageId": 301,
+        "PlanetId": 302,
+        "WeatherGroupId": 302,
+        "BossGroupId": 302,
+        "ItemGroupId": 302,
+        "InitCoin": 500,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59790,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 302,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar02.png",
+        "TargetGroupId": 302,
+        "EnvironmentEvents": [
+            515,
+            90011
+        ],
+        "CompelUsedBuilding": [
+            103,
+            104
+        ]
+    },
+    {
+        "Id": 303,
+        "Name": "普通-3",
+        "ChapterId": 3,
+        "Order": 12,
+        "PreStageId": 302,
+        "PlanetId": 303,
+        "WeatherGroupId": 303,
+        "BossGroupId": 303,
+        "ItemGroupId": 303,
+        "InitCoin": 500,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59791,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 302,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar02.png",
+        "TargetGroupId": 303,
+        "EnvironmentEvents": [
+            515,
+            517
+        ],
+        "CompelUsedBuilding": [
+            103,
+            104
+        ]
+    },
+    {
+        "Id": 304,
+        "Name": "挑战-1",
+        "ChapterId": 3,
+        "Order": 13,
+        "PreStageId": 303,
+        "PlanetId": 304,
+        "WeatherGroupId": 304,
+        "BossGroupId": 304,
+        "ItemGroupId": 304,
+        "InitCoin": 500,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59792,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 304,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar02.png",
+        "TargetGroupId": 304,
+        "EnvironmentEvents": [
+            515,
+            516
+        ],
+        "CompelUsedBuilding": [
+            103,
+            104
+        ],
+        "DisableBuilding": [
+            3
+        ]
+    },
+    {
+        "Id": 305,
+        "Name": "挑战-2",
+        "ChapterId": 3,
+        "Order": 14,
+        "PreStageId": 304,
+        "PlanetId": 305,
+        "WeatherGroupId": 305,
+        "BossGroupId": 305,
+        "ItemGroupId": 305,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59793,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 304,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar02.png",
+        "TargetGroupId": 305,
+        "EnvironmentEvents": [
+            515,
+            516
+        ],
+        "CompelUsedBuilding": [
+            103,
+            104
+        ],
+        "DisableBuilding": [
+            3
+        ]
+    },
+    {
+        "Id": 401,
+        "Name": "普通-1",
+        "ChapterId": 4,
+        "Order": 15,
+        "PreStageId": 0,
+        "PlanetId": 401,
+        "WeatherGroupId": 401,
+        "BossGroupId": 401,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59794,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 401,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar05.png",
+        "TargetGroupId": 401,
+        "EnvironmentEvents": [
+            518,
+            519
+        ],
+        "CompelUsedBuilding": [
+            107,
+            108
+        ]
+    },
+    {
+        "Id": 402,
+        "Name": "普通-2",
+        "ChapterId": 4,
+        "Order": 16,
+        "PreStageId": 401,
+        "PlanetId": 402,
+        "WeatherGroupId": 402,
+        "BossGroupId": 402,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59795,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 401,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar05.png",
+        "TargetGroupId": 402,
+        "EnvironmentEvents": [
+            518,
+            520,
+            90012
+        ],
+        "CompelUsedBuilding": [
+            107,
+            108
+        ]
+    },
+    {
+        "Id": 403,
+        "Name": "普通-3",
+        "ChapterId": 4,
+        "Order": 17,
+        "PreStageId": 402,
+        "PlanetId": 403,
+        "WeatherGroupId": 403,
+        "BossGroupId": 403,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59796,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 401,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar05.png",
+        "TargetGroupId": 403,
+        "EnvironmentEvents": [
+            518,
+            521
+        ],
+        "CompelUsedBuilding": [
+            107,
+            108
+        ]
+    },
+    {
+        "Id": 404,
+        "Name": "挑战-1",
+        "ChapterId": 4,
+        "Order": 18,
+        "PreStageId": 403,
+        "PlanetId": 404,
+        "WeatherGroupId": 404,
+        "BossGroupId": 404,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59797,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 404,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar05.png",
+        "TargetGroupId": 404,
+        "EnvironmentEvents": [
+            524,
+            522,
+            523
+        ],
+        "CompelUsedBuilding": [
+            107,
+            108
+        ],
+        "DisableBuilding": [
+            2
+        ]
+    },
+    {
+        "Id": 405,
+        "Name": "挑战-2",
+        "ChapterId": 4,
+        "Order": 19,
+        "PreStageId": 404,
+        "PlanetId": 405,
+        "WeatherGroupId": 405,
+        "BossGroupId": 405,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59798,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 404,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar05.png",
+        "TargetGroupId": 405,
+        "EnvironmentEvents": [
+            524,
+            522,
+            523
+        ],
+        "CompelUsedBuilding": [
+            107,
+            108
+        ],
+        "DisableBuilding": [
+            2
+        ]
+    },
+    {
+        "Id": 501,
+        "Name": "普通-1",
+        "ChapterId": 5,
+        "Order": 20,
+        "PreStageId": 0,
+        "PlanetId": 501,
+        "WeatherGroupId": 501,
+        "BossGroupId": 501,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59799,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 501,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar04.png",
+        "TargetGroupId": 501,
+        "EnvironmentEvents": [
+            580,
+            589,
+            90013
+        ],
+        "CompelUsedBuilding": [
+            109
+        ]
+    },
+    {
+        "Id": 502,
+        "Name": "普通-2",
+        "ChapterId": 5,
+        "Order": 21,
+        "PreStageId": 501,
+        "PlanetId": 502,
+        "WeatherGroupId": 502,
+        "BossGroupId": 502,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59800,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 501,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar04.png",
+        "TargetGroupId": 502,
+        "EnvironmentEvents": [
+            580,
+            590,
+            90013
+        ],
+        "CompelUsedBuilding": [
+            109,
+            110
+        ]
+    },
+    {
+        "Id": 503,
+        "Name": "普通-3",
+        "ChapterId": 5,
+        "Order": 22,
+        "PreStageId": 502,
+        "PlanetId": 503,
+        "WeatherGroupId": 503,
+        "BossGroupId": 503,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59801,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 503,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar04.png",
+        "TargetGroupId": 503,
+        "EnvironmentEvents": [
+            580,
+            583,
+            90013
+        ],
+        "CompelUsedBuilding": [
+            109,
+            110
+        ]
+    },
+    {
+        "Id": 504,
+        "Name": "挑战-1",
+        "ChapterId": 5,
+        "Order": 23,
+        "PreStageId": 503,
+        "PlanetId": 504,
+        "WeatherGroupId": 504,
+        "BossGroupId": 504,
+        "ItemGroupId": 401,
+        "InitCoin": 9800,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59802,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 504,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar04.png",
+        "TargetGroupId": 504,
+        "EnvironmentEvents": [
+            591,
+            584,
+            585
+        ],
+        "CompelUsedBuilding": [
+            111
+        ],
+        "DisableBuilding": [
+            2
+        ]
+    },
+    {
+        "Id": 505,
+        "Name": "挑战-2",
+        "ChapterId": 5,
+        "Order": 24,
+        "PreStageId": 504,
+        "PlanetId": 505,
+        "WeatherGroupId": 505,
+        "BossGroupId": 505,
+        "ItemGroupId": 401,
+        "InitCoin": 300,
+        "CarryItemCount": 100,
+        "CarryBuildingCount": 5,
+        "LevelUpProgress": 1,
+        "RewardId": 59803,
+        "DefaultBuilding": [],
+        "BuildingRecommend": 505,
+        "FightLoseCoinProportion": 1.0,
+        "Icon": "Assets/Product/Texture/Image/UiPlanet/UiPlanetImgStar04.png",
+        "TargetGroupId": 505,
+        "EnvironmentEvents": [
+            586,
+            587
+        ]
+    }
+]

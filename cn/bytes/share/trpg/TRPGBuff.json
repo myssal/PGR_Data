@@ -1,0 +1,643 @@
+[
+    {
+        "Id": 3001,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "出力下降",
+        "Desc": "作战推演能力减弱2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon07.png",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 3002,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "金属侵蚀",
+        "Desc": "作战推演能力减弱4点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon10.png",
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 3003,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "信道杂音",
+        "Desc": "感知推演能力减弱2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon09.png",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 3004,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "电磁屏蔽",
+        "Desc": "感知推演能力减弱4点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon12.png",
+        "Params": [
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 3005,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "电算障碍",
+        "Desc": "运算推演能力减弱2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon08.png",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 3006,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "逻辑死链",
+        "Desc": "运算推演能力减弱4点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon11.png",
+        "Params": [
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 3007,
+        "EffectType": 3,
+        "Type": 11,
+        "Name": "链路崩溃",
+        "Desc": "全部推演能力减弱3点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon13.png",
+        "Params": [
+            1,
+            3,
+            2,
+            3,
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 10001,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "动力外装",
+        "Desc": "作战推演能力增强1点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10002,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "极限动力外装",
+        "Desc": "作战推演能力增强2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon04.png",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 10003,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "侦查僚机",
+        "Desc": "感知推演能力增强1点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon03.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10004,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "广域侦查僚机",
+        "Desc": "感知推演能力增强2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon06.png",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 10005,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "处理元件",
+        "Desc": "运算推演能力增强1点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon02.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 10006,
+        "EffectType": 2,
+        "Type": 2,
+        "Name": "超频处理元件",
+        "Desc": "运算推演能力增强2点，持续1天",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon05.png",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 20101,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon03.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20102,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20103,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-作战",
+        "Desc": "链接者作战能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            1,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20104,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon03.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20105,
+        "EffectType": 1,
+        "Type": 1,
+        "Name": "超算增强",
+        "Desc": "实体作战时，闪避值恢复速度提升50%",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon09.png",
+        "Params": [
+            190233
+        ]
+    },
+    {
+        "Id": 20106,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-运算",
+        "Desc": "链接者运算能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            3,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20107,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon02.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20108,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon03.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20109,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-感知",
+        "Desc": "链接者感知能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            2,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20110,
+        "EffectType": 1,
+        "Type": 1,
+        "Name": "超荷承载",
+        "Desc": "实体作战时，必杀技伤害增加40%",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon09.png",
+        "Params": [
+            81005
+        ]
+    },
+    {
+        "Id": 20201,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon02.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20202,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon03.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20203,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-运算",
+        "Desc": "链接者运算能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            3,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20204,
+        "EffectType": 1,
+        "Type": 7,
+        "Name": "资源回收",
+        "Desc": "完成遭遇战事件后将额外获得战地配额",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon07.png",
+        "Params": [
+            9,
+            400500
+        ]
+    },
+    {
+        "Id": 20205,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon02.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20206,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-感知",
+        "Desc": "链接者感知能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            2,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20207,
+        "EffectType": 1,
+        "Type": 7,
+        "Name": "战略优化",
+        "Desc": "完成遭遇战事件后将额外获得探索经验",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon14.png",
+        "Params": [
+            9,
+            400501
+        ]
+    },
+    {
+        "Id": 20208,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20209,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-作战",
+        "Desc": "链接者作战能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            1,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20210,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon02.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20301,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20302,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon03.png",
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20303,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-运算",
+        "Desc": "链接者运算能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            3,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20304,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-作战",
+        "Desc": "链接者作战能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            1,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20305,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20306,
+        "EffectType": 1,
+        "Type": 1,
+        "Name": "弱点追踪",
+        "Desc": "实体作战时，对敌伤害提升15%",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon08.png",
+        "Params": [
+            91002
+        ]
+    },
+    {
+        "Id": 20307,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon02.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20308,
+        "EffectType": 1,
+        "Type": 4,
+        "Name": "精准推演-感知",
+        "Desc": "链接者感知能力获得增幅，\\n增加投点出现最大值的概率。",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon05.png",
+        "Params": [
+            2,
+            3,
+            100
+        ]
+    },
+    {
+        "Id": 20309,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强1点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon01.png",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20310,
+        "EffectType": 1,
+        "Type": 1,
+        "Name": "连携增强",
+        "Desc": "实体作战时，QTE冷却时间减少3s",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon12.png",
+        "Params": [
+            90905
+        ]
+    },
+    {
+        "Id": 20401,
+        "EffectType": 1,
+        "Type": 5,
+        "Name": "应急预案",
+        "Desc": "增强推演失败时，不遭遇恶意事件的概率",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon06.png",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 20402,
+        "EffectType": 1,
+        "Type": 3,
+        "Name": "额外补给",
+        "Desc": "完成【检定事件】后将额外获得战地配额",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon15.png",
+        "Params": [
+            400500
+        ]
+    },
+    {
+        "Id": 20403,
+        "EffectType": 1,
+        "Type": 10,
+        "Name": "辎重整备",
+        "Desc": "可携带的功能道具上限增加1格",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon18.png",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 20404,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "机动增强",
+        "Desc": "链接者作战能力永久增强2点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon04.png",
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 20405,
+        "EffectType": 1,
+        "Type": 6,
+        "Name": "幸运儿",
+        "Desc": "随机事件出现奖励事件的概率增加",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon13.png",
+        "Params": [
+            6,
+            20
+        ]
+    },
+    {
+        "Id": 20406,
+        "EffectType": 1,
+        "Type": 8,
+        "Name": "谈判专家",
+        "Desc": "商店购买道具享受9折优惠",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon16.png",
+        "Params": [
+            0,
+            90
+        ]
+    },
+    {
+        "Id": 20407,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "知觉理论",
+        "Desc": "链接者感知能力永久增强2点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon06.png",
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 20408,
+        "EffectType": 1,
+        "Type": 9,
+        "Name": "支援协力",
+        "Desc": "商店每日贩卖的道具增加1格",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon17.png",
+        "Params": [
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 20409,
+        "EffectType": 1,
+        "Type": 2,
+        "Name": "算力调度",
+        "Desc": "链接者运算能力永久增强2点",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgbufficon05.png",
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 20410,
+        "EffectType": 1,
+        "Type": 1,
+        "Name": "带宽增强",
+        "Desc": "实体作战时，每击败1个敌人额外获得1个随机信号球",
+        "Icon": "Assets/Product/Texture/Image/UiTRPG/Trpgtaleticon11.png",
+        "Params": [
+            81070
+        ]
+    }
+]

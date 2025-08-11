@@ -1,0 +1,153 @@
+[
+    {
+        "Id": 1,
+        "Name": "露娜被动",
+        "Type": 1,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33131.png",
+        "Desc": "露娜被动，一局只生效一次，对国王不生效",
+        "Params": [
+            1,
+            9999,
+            1021005,
+            6
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "露娜大招被动增加伤害",
+        "Type": 2,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "一局生效3次，每次生效数值",
+        "Params": [
+            3,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "露娜大招被动增加射程",
+        "Type": 3,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "一局生效3次，每次生效数值",
+        "Params": [
+            3,
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "露娜大招被动增加移动距离",
+        "Type": 4,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "一局生效3次，每次生效数值",
+        "Params": [
+            3,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "薇拉大招增加的伤害",
+        "Type": 5,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "每次增加伤害，技能id",
+        "Params": [
+            3,
+            32
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "薇拉大招增加的能量消耗",
+        "Type": 6,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "\"每次增加消耗,技能id\"",
+        "Params": [
+            30,
+            32
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "薇拉大招复活临时棋子",
+        "Type": 7,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "血量系数，存活回合，排除棋子类型",
+        "Params": [
+            50,
+            2,
+            6
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "扳手小子增加移动距离",
+        "Type": 4,
+        "RoundDuration": 5,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "距离增加值",
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "扳手跳劈增加技能范围",
+        "Type": 8,
+        "RoundDuration": 5,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "技能宽度，技能id",
+        "Params": [
+            5,
+            21
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "扳手跳劈减少技能cd",
+        "Type": 9,
+        "RoundDuration": 5,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "cd减少值，CD表技能id",
+        "Params": [
+            -2,
+            19
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "薇拉对异色格遮天碧碧的伤害增加",
+        "Type": 10,
+        "RoundDuration": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Desc": "异色格伤害增加值",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "遮天碧碧受伤减少技能cd",
+        "Type": 9,
+        "RoundDuration": 0,
+        "Desc": "异色格受伤切换间隔缩减值",
+        "Params": [
+            -1,
+            22
+        ]
+    }
+]

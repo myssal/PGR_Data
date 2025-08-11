@@ -1,0 +1,1904 @@
+[
+    {
+        "Id": 1,
+        "TimeId": 24,
+        "Name": "日常签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgDailyLoginNew.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignDaily.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelDailyLoginNew.png",
+        "Type": 1,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 2,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": true,
+        "RoundDays": [
+            28
+        ],
+        "SubRoundId": [
+            101
+        ]
+    },
+    {
+        "Id": 2,
+        "TimeId": 24,
+        "Name": "新手签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 10010203,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1001,
+            1002
+        ]
+    },
+    {
+        "Id": 5,
+        "TimeId": 0,
+        "Name": "圣诞签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1003
+        ]
+    },
+    {
+        "Id": 6,
+        "TimeId": 0,
+        "Name": "元宵签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1004
+        ]
+    },
+    {
+        "Id": 7,
+        "TimeId": 0,
+        "Name": "新春签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1005
+        ]
+    },
+    {
+        "Id": 8,
+        "TimeId": 0,
+        "Name": "列车签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1006
+        ]
+    },
+    {
+        "Id": 9,
+        "TimeId": 0,
+        "Name": "夜航船签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1007
+        ]
+    },
+    {
+        "Id": 10,
+        "TimeId": 0,
+        "Name": "九龙环城签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1008
+        ]
+    },
+    {
+        "Id": 11,
+        "TimeId": 0,
+        "Name": "湛蓝曙日签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1009,
+            1010
+        ]
+    },
+    {
+        "Id": 12,
+        "TimeId": 0,
+        "Name": "重返极夜签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1011
+        ]
+    },
+    {
+        "Id": 13,
+        "TimeId": 0,
+        "Name": "金秋巡礼",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1012
+        ]
+    },
+    {
+        "Id": 14,
+        "TimeId": 0,
+        "Name": "古铭遗章签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1013
+        ]
+    },
+    {
+        "Id": 15,
+        "TimeId": 0,
+        "Name": "终焉福音签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1014
+        ]
+    },
+    {
+        "Id": 16,
+        "TimeId": 0,
+        "Name": "周年贺礼",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1015
+        ]
+    },
+    {
+        "Id": 17,
+        "TimeId": 0,
+        "Name": "寄渊残响签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1016,
+            1017
+        ]
+    },
+    {
+        "Id": 18,
+        "TimeId": 0,
+        "Name": "寅月福临",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1018
+        ]
+    },
+    {
+        "Id": 19,
+        "TimeId": 0,
+        "Name": "新春颂献签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 3,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1019,
+            1020
+        ]
+    },
+    {
+        "Id": 20,
+        "TimeId": 0,
+        "Name": "熹年贺岁签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 3,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1021
+        ]
+    },
+    {
+        "Id": 21,
+        "TimeId": 0,
+        "Name": "咏叹回声签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1022
+        ]
+    },
+    {
+        "Id": 22,
+        "TimeId": 0,
+        "Name": "视线囚笼签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1023
+        ]
+    },
+    {
+        "Id": 23,
+        "TimeId": 0,
+        "Name": "迷境刻痕签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1024
+        ]
+    },
+    {
+        "Id": 24,
+        "TimeId": 0,
+        "Name": "伊甸文化纪",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 52,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1025,
+            1026
+        ]
+    },
+    {
+        "Id": 25,
+        "TimeId": 0,
+        "Name": "绝海星火签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1027
+        ]
+    },
+    {
+        "Id": 26,
+        "TimeId": 0,
+        "Name": "夏风馈赠",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1028
+        ]
+    },
+    {
+        "Id": 27,
+        "TimeId": 0,
+        "Name": "永夜胎动",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1029
+        ]
+    },
+    {
+        "Id": 28,
+        "TimeId": 0,
+        "Name": "月明千里",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1030
+        ]
+    },
+    {
+        "Id": 29,
+        "TimeId": 0,
+        "Name": "湮灭残昼",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1031
+        ]
+    },
+    {
+        "Id": 30,
+        "TimeId": 0,
+        "Name": "宣叙妄响",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1032
+        ]
+    },
+    {
+        "Id": 31,
+        "TimeId": 0,
+        "Name": "周年贺礼",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1033
+        ]
+    },
+    {
+        "Id": 32,
+        "TimeId": 0,
+        "Name": "游云鲸梦",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1034
+        ]
+    },
+    {
+        "Id": 33,
+        "TimeId": 0,
+        "Name": "恭贺元旦",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1035
+        ]
+    },
+    {
+        "Id": 36,
+        "TimeId": 0,
+        "Name": "曙星致意",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1036
+        ]
+    },
+    {
+        "Id": 35,
+        "TimeId": 0,
+        "Name": "桃符授春",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1037
+        ]
+    },
+    {
+        "Id": 37,
+        "TimeId": 0,
+        "Name": "遥岸方舟",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1038
+        ]
+    },
+    {
+        "Id": 38,
+        "TimeId": 0,
+        "Name": "空晓界限",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1039
+        ]
+    },
+    {
+        "Id": 39,
+        "TimeId": 0,
+        "Name": "五一纪行",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1040
+        ]
+    },
+    {
+        "Id": 40,
+        "TimeId": 0,
+        "Name": "枯朽为灯",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1041
+        ]
+    },
+    {
+        "Id": 41,
+        "TimeId": 0,
+        "Name": "鸢纸刻历",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1042
+        ]
+    },
+    {
+        "Id": 42,
+        "TimeId": 24,
+        "Name": "森螺万象-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInCelica.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand2.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInCelica.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 10010203,
+        "PreSignId": 0,
+        "CreateTimeId": 30,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1043
+        ]
+    },
+    {
+        "Id": 43,
+        "TimeId": 0,
+        "Name": "烬海异途",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1044
+        ]
+    },
+    {
+        "Id": 44,
+        "TimeId": 0,
+        "Name": "未语庭言",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1045
+        ]
+    },
+    {
+        "Id": 45,
+        "TimeId": 0,
+        "Name": "秋月渐盈",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1046
+        ]
+    },
+    {
+        "Id": 46,
+        "TimeId": 0,
+        "Name": "刻命螺旋",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1047
+        ]
+    },
+    {
+        "Id": 47,
+        "TimeId": 0,
+        "Name": "创绘映想-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1048
+        ]
+    },
+    {
+        "Id": 48,
+        "TimeId": 0,
+        "Name": "千日盛彩-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1049
+        ]
+    },
+    {
+        "Id": 49,
+        "TimeId": 0,
+        "Name": "凛桎鸣渊-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1050
+        ]
+    },
+    {
+        "Id": 50,
+        "TimeId": 0,
+        "Name": "万象更新-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1051
+        ]
+    },
+    {
+        "Id": 51,
+        "TimeId": 0,
+        "Name": "恭贺新禧-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1052
+        ]
+    },
+    {
+        "Id": 52,
+        "TimeId": 0,
+        "Name": "浮英枕梦行-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1053
+        ]
+    },
+    {
+        "Id": 53,
+        "TimeId": 900,
+        "Name": "S级自选礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgSCharacterWelfare.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignSCharacterWelfare.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelSCharacterWelfare.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 900,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            1
+        ],
+        "SubRoundId": [
+            1054
+        ]
+    },
+    {
+        "Id": 54,
+        "TimeId": 0,
+        "Name": "萦森歧路-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1055
+        ]
+    },
+    {
+        "Id": 55,
+        "TimeId": 0,
+        "Name": "劳动便签-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1056
+        ]
+    },
+    {
+        "Id": 56,
+        "TimeId": 0,
+        "Name": "怒逐沉沙-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1057
+        ]
+    },
+    {
+        "Id": 57,
+        "TimeId": 0,
+        "Name": "乔阳纪叙-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1058
+        ]
+    },
+    {
+        "Id": 58,
+        "TimeId": 0,
+        "Name": "爝火长明-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1059
+        ]
+    },
+    {
+        "Id": 59,
+        "TimeId": 0,
+        "Name": "摇篮游行-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1060
+        ]
+    },
+    {
+        "Id": 60,
+        "TimeId": 0,
+        "Name": "镜焰迷城-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1061
+        ]
+    },
+    {
+        "Id": 61,
+        "TimeId": 0,
+        "Name": "探阑盛月-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1062
+        ]
+    },
+    {
+        "Id": 62,
+        "TimeId": 0,
+        "Name": "碑火铸脊-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1063
+        ]
+    },
+    {
+        "Id": 63,
+        "TimeId": 0,
+        "Name": "光影印迹-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1064
+        ]
+    },
+    {
+        "Id": 64,
+        "TimeId": 0,
+        "Name": "络勾陈-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1065
+        ]
+    },
+    {
+        "Id": 65,
+        "TimeId": 0,
+        "Name": "禧夜灯火-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1066
+        ]
+    },
+    {
+        "Id": 66,
+        "TimeId": 0,
+        "Name": "源解信标-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1067
+        ]
+    },
+    {
+        "Id": 67,
+        "TimeId": 0,
+        "Name": "新颂盈宵-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1068
+        ]
+    },
+    {
+        "Id": 68,
+        "TimeId": 0,
+        "Name": "镜像星尘-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1069
+        ]
+    },
+    {
+        "Id": 69,
+        "TimeId": 0,
+        "Name": "幽塔黎光-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1070
+        ]
+    },
+    {
+        "Id": 70,
+        "TimeId": 0,
+        "Name": "云梁觅影-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1071
+        ]
+    },
+    {
+        "Id": 71,
+        "TimeId": 0,
+        "Name": "天道酬勤-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1072
+        ]
+    },
+    {
+        "Id": 72,
+        "TimeId": 0,
+        "Name": "暮往长离-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1073
+        ]
+    },
+    {
+        "Id": 73,
+        "TimeId": 0,
+        "Name": "龙游韶光-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1074
+        ]
+    },
+    {
+        "Id": 74,
+        "TimeId": 0,
+        "Name": "剪身成蝶-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1075
+        ]
+    },
+    {
+        "Id": 76,
+        "TimeId": 24,
+        "Name": "七日馈赠-礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeekCard.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignWeekCard.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelWeekCardV215.png",
+        "Type": 4,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": true,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            201
+        ]
+    },
+    {
+        "Id": 77,
+        "TimeId": 0,
+        "Name": "晨昏庭影-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1076
+        ]
+    },
+    {
+        "Id": 78,
+        "TimeId": 0,
+        "Name": "瑶月澄秋-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1077
+        ]
+    },
+    {
+        "Id": 79,
+        "TimeId": 0,
+        "Name": "遥行循星-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1078
+        ]
+    },
+    {
+        "Id": 80,
+        "TimeId": 0,
+        "Name": "拾忆同辰-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1079
+        ]
+    },
+    {
+        "Id": 81,
+        "TimeId": 0,
+        "Name": "锈夜逐光-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1080
+        ]
+    },
+    {
+        "Id": 82,
+        "TimeId": 0,
+        "Name": "穹隙流宿-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7,
+            7
+        ],
+        "SubRoundId": [
+            1081,
+            1082
+        ]
+    },
+    {
+        "Id": 83,
+        "TimeId": 0,
+        "Name": "醉狱谲笼-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1083
+        ]
+    },
+    {
+        "Id": 84,
+        "TimeId": 0,
+        "Name": "贺岁鸣新-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1084
+        ]
+    },
+    {
+        "Id": 85,
+        "TimeId": 0,
+        "Name": "梦赴光寥之乡-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1085
+        ]
+    },
+    {
+        "Id": 86,
+        "TimeId": 0,
+        "Name": "万祥沐春-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseSignInNewPlayer.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignNewhand.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelSignInNewPlayer.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1086
+        ]
+    },
+    {
+        "Id": 87,
+        "TimeId": 24,
+        "Name": "七日馈赠-礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeekCardSpringFestival.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignWeekCardSpringFestival.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelWeekCardV302.png",
+        "Type": 4,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": true,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            201
+        ]
+    },
+    {
+        "Id": 88,
+        "TimeId": 0,
+        "Name": "逐生复始-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgJietaweiV303.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainJietaweiV303.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelJietaweiV303.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1087
+        ]
+    },
+    {
+        "Id": 89,
+        "TimeId": 0,
+        "Name": "末路燎原-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgWeilaV304.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainWeilaV304.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelWeilaV304.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1088
+        ]
+    },
+    {
+        "Id": 90,
+        "TimeId": 0,
+        "Name": "幻寂鸣泣曲-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgGuiqiV305.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainGuiqiV305.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelGuiqiV305.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1089
+        ]
+    },
+    {
+        "Id": 91,
+        "TimeId": 0,
+        "Name": "箬香盈岸-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgDuanwuV305.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDuanwuV305.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelDuanwuV305.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1090
+        ]
+    },
+    {
+        "Id": 92,
+        "TimeId": 0,
+        "Name": "暇时小歇-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBg202551V304.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMain202551.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabel202551V304.png",
+        "Type": 2,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            3
+        ],
+        "SubRoundId": [
+            1091
+        ]
+    },
+    {
+        "Id": 93,
+        "TimeId": 24,
+        "Name": "七日馈赠-礼包",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeekCardV306.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignWeekCardV306.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLabelWeekCardV306.png",
+        "Type": 4,
+        "OpenLevel": 0,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            201
+        ]
+    },
+    {
+        "Id": 94,
+        "TimeId": 39452,
+        "Name": "覆海归途-签到",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgGuiqiV305.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainGuiqiV305.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelGuiqiV305.png",
+        "Type": 2,
+        "OpenLevel": 20,
+        "OpenStage": 0,
+        "PreSignId": 0,
+        "CreateTimeId": 0,
+        "IsShowWhenDayOver": false,
+        "IsShowWhenSignOver": false,
+        "RoundDays": [
+            7
+        ],
+        "SubRoundId": [
+            1092
+        ]
+    }
+]

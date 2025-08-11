@@ -1,0 +1,834 @@
+[
+    {
+        "Id": 1,
+        "Name": "聊天信息",
+        "ParentId": 0,
+        "SelectPriority": 1,
+        "OrderPriority": 10,
+        "ContentType": 0
+    },
+    {
+        "Id": 2,
+        "Name": "玩家昵称",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 1
+    },
+    {
+        "Id": 3,
+        "Name": "玩家简介",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 2
+    },
+    {
+        "Id": 4,
+        "Name": "宿舍名称",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 5,
+        "Name": "游戏行为",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 6,
+        "Name": "公告昵称",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 1
+    },
+    {
+        "Id": 7,
+        "Name": "公告信息",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 3
+    },
+    {
+        "Id": 8,
+        "Name": "内部通信",
+        "ParentId": 0,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 4
+    },
+    {
+        "Id": 101,
+        "Name": "嘲讽辱骂",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 102,
+        "Name": "政治敏感",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 103,
+        "Name": "低俗色情",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 104,
+        "Name": "欺诈广告",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 105,
+        "Name": "涉嫌赌博",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 106,
+        "Name": "外挂作弊",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 107,
+        "Name": "线下交易",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 108,
+        "Name": "举报其他",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 109,
+        "Name": "未成年有害信息",
+        "ParentId": 1,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 111,
+        "Name": "嘲讽辱骂",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 112,
+        "Name": "政治敏感",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 113,
+        "Name": "低俗色情",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 114,
+        "Name": "欺诈广告",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 115,
+        "Name": "涉嫌赌博",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 116,
+        "Name": "外挂作弊",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 117,
+        "Name": "线下交易",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 118,
+        "Name": "举报其他",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 119,
+        "Name": "未成年有害信息",
+        "ParentId": 2,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 121,
+        "Name": "嘲讽辱骂",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 122,
+        "Name": "政治敏感",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 123,
+        "Name": "低俗色情",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 124,
+        "Name": "欺诈广告",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 125,
+        "Name": "涉嫌赌博",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 126,
+        "Name": "外挂作弊",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 127,
+        "Name": "线下交易",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 128,
+        "Name": "举报其他",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 129,
+        "Name": "未成年有害信息",
+        "ParentId": 3,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 131,
+        "Name": "嘲讽辱骂",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 132,
+        "Name": "政治敏感",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 133,
+        "Name": "低俗色情",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 134,
+        "Name": "欺诈广告",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 135,
+        "Name": "涉嫌赌博",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 136,
+        "Name": "外挂作弊",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 137,
+        "Name": "线下交易",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 138,
+        "Name": "举报其他",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 139,
+        "Name": "未成年有害信息",
+        "ParentId": 4,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 141,
+        "Name": "嘲讽辱骂",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 142,
+        "Name": "政治敏感",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 143,
+        "Name": "低俗色情",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 144,
+        "Name": "欺诈广告",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 145,
+        "Name": "涉嫌赌博",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 146,
+        "Name": "外挂作弊",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 147,
+        "Name": "线下交易",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 148,
+        "Name": "举报其他",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 149,
+        "Name": "未成年有害信息",
+        "ParentId": 5,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 151,
+        "Name": "嘲讽辱骂",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 152,
+        "Name": "政治敏感",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 153,
+        "Name": "低俗色情",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 154,
+        "Name": "欺诈广告",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 155,
+        "Name": "涉嫌赌博",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 156,
+        "Name": "外挂作弊",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 157,
+        "Name": "线下交易",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 158,
+        "Name": "举报其他",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 159,
+        "Name": "未成年有害信息",
+        "ParentId": 6,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 161,
+        "Name": "嘲讽辱骂",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 162,
+        "Name": "政治敏感",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 163,
+        "Name": "低俗色情",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 164,
+        "Name": "欺诈广告",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 165,
+        "Name": "涉嫌赌博",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 166,
+        "Name": "外挂作弊",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 167,
+        "Name": "线下交易",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 168,
+        "Name": "举报其他",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 169,
+        "Name": "未成年有害信息",
+        "ParentId": 7,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 171,
+        "Name": "嘲讽辱骂",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 9,
+        "ContentType": 0
+    },
+    {
+        "Id": 172,
+        "Name": "政治敏感",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 8,
+        "ContentType": 0
+    },
+    {
+        "Id": 173,
+        "Name": "低俗色情",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 7,
+        "ContentType": 0
+    },
+    {
+        "Id": 174,
+        "Name": "欺诈广告",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 6,
+        "ContentType": 0
+    },
+    {
+        "Id": 175,
+        "Name": "涉嫌赌博",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 5,
+        "ContentType": 0
+    },
+    {
+        "Id": 176,
+        "Name": "外挂作弊",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 4,
+        "ContentType": 0
+    },
+    {
+        "Id": 177,
+        "Name": "线下交易",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 178,
+        "Name": "举报其他",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 179,
+        "Name": "未成年有害信息",
+        "ParentId": 8,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1001,
+        "Name": "多人联机",
+        "ParentId": 106,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1002,
+        "Name": "纷争战区",
+        "ParentId": 106,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1003,
+        "Name": "幻痛囚笼",
+        "ParentId": 106,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1101,
+        "Name": "多人联机",
+        "ParentId": 116,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1102,
+        "Name": "纷争战区",
+        "ParentId": 116,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1103,
+        "Name": "幻痛囚笼",
+        "ParentId": 116,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1201,
+        "Name": "多人联机",
+        "ParentId": 126,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1202,
+        "Name": "纷争战区",
+        "ParentId": 126,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1203,
+        "Name": "幻痛囚笼",
+        "ParentId": 126,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1301,
+        "Name": "多人联机",
+        "ParentId": 136,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1302,
+        "Name": "纷争战区",
+        "ParentId": 136,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1303,
+        "Name": "幻痛囚笼",
+        "ParentId": 136,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1401,
+        "Name": "多人联机",
+        "ParentId": 146,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1402,
+        "Name": "纷争战区",
+        "ParentId": 146,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1403,
+        "Name": "幻痛囚笼",
+        "ParentId": 146,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1501,
+        "Name": "多人联机",
+        "ParentId": 156,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1502,
+        "Name": "纷争战区",
+        "ParentId": 156,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1503,
+        "Name": "幻痛囚笼",
+        "ParentId": 156,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1601,
+        "Name": "多人联机",
+        "ParentId": 166,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1602,
+        "Name": "纷争战区",
+        "ParentId": 166,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1603,
+        "Name": "幻痛囚笼",
+        "ParentId": 166,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    },
+    {
+        "Id": 1701,
+        "Name": "多人联机",
+        "ParentId": 176,
+        "SelectPriority": 0,
+        "OrderPriority": 3,
+        "ContentType": 0
+    },
+    {
+        "Id": 1702,
+        "Name": "纷争战区",
+        "ParentId": 176,
+        "SelectPriority": 0,
+        "OrderPriority": 2,
+        "ContentType": 0
+    },
+    {
+        "Id": 1703,
+        "Name": "幻痛囚笼",
+        "ParentId": 176,
+        "SelectPriority": 0,
+        "OrderPriority": 1,
+        "ContentType": 0
+    }
+]

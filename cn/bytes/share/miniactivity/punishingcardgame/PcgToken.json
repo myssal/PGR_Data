@@ -1,0 +1,886 @@
+[
+    {
+        "Id": 1,
+        "Name": "刚体",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Desc": "受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。",
+        "EffectType": 1,
+        "Effects": [
+            1000001,
+            1000002,
+            1000003,
+            1000004
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "嗜黄",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconYellow.png",
+        "Desc": "玩家三消<color=#FAD364FF>黄球</color>时，怪物获得[刚体]*10。<size=24><color=#FFFFFF2D><size=24><color=#FFFFFF2D>\\n- [刚体]：受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000005
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "嗜红",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconRed.png",
+        "Desc": "玩家三消<color=#CD2F30FF>红球</color>时，怪物获得[暴走]*1。<size=24><color=#FFFFFF2D><size=24><color=#FFFFFF2D>\\n- [暴走]：可以叠加，造成伤害时，每层使伤害值+1。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000006
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "嗜蓝",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconBlue.png",
+        "Desc": "玩家三消<color=#59CCFFFF>蓝球</color>时，召唤1个自爆原虫。",
+        "EffectType": 1,
+        "Effects": [
+            1000007
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "脆弱",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Desc": "受到的伤害增加50%，受伤后移除1层。",
+        "EffectType": 2,
+        "Effects": [
+            1000008,
+            1000009
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "暴走",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Desc": "可以叠加，造成伤害时，每层使伤害值+1。",
+        "EffectType": 1,
+        "Effects": [
+            1000010
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "虚弱",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Desc": "造成的伤害减少25%，造成伤害后移除1层。",
+        "EffectType": 2,
+        "Effects": [
+            1000011,
+            1000012
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "倒数",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png",
+        "Desc": "行动时移除1层，层数为0时怪物自爆，对玩家造成10点伤害。",
+        "EffectType": 0
+    },
+    {
+        "Id": 9,
+        "Name": "苦旅Ⅰ",
+        "RoundClear": 0,
+        "MaxLayer": 12,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P1.png",
+        "Desc": "玩家每行动12次，怪物获得[刚体]*20。怪物受到单次伤害≥12时，重置行动计数。<size=24><color=#FFFFFF2D>\\n- [刚体]：受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000020,
+            1000021
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "苦旅Ⅱ",
+        "RoundClear": 0,
+        "MaxLayer": 12,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P2.png",
+        "Desc": "玩家每行动12次，怪物获得[暴走]*1。怪物受到单次伤害≥12时，重置行动计数。<size=24><color=#FFFFFF2D>\\n- [暴走]：可以叠加，造成伤害时，每层使伤害值+1。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000030,
+            1000031
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "苦旅Ⅲ",
+        "RoundClear": 0,
+        "MaxLayer": 12,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P3.png",
+        "Desc": "玩家每行动12次，怪物获得[刚体]*20，并将两张【苦刑】牌加入抽牌堆。怪物受到单次伤害≥24时，重置行动计数。<size=24><color=#FFFFFF2D>\\n-【苦刑】牌： <Icon=IconHeart|24|24/> K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000060,
+            1000061
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "苦旅Ⅳ",
+        "RoundClear": 0,
+        "MaxLayer": 12,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P4.png",
+        "Desc": "玩家每行动12次，怪物获得[暴走]*1，并将两张【苦刑】牌加入抽牌堆。怪物受到单次伤害≥24时，重置行动计数。<size=24><color=#FFFFFF2D>\\n-【苦刑】牌：<Icon=IconHeart|24|24/> K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000070,
+            1000071
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "感染",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png",
+        "Desc": "阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>",
+        "EffectType": 0,
+        "Effects": [
+            1000080
+        ]
+    },
+    {
+        "Id": 14,
+        "Name": "感染",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png",
+        "Desc": "阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>",
+        "EffectType": 0,
+        "Effects": [
+            1000090
+        ]
+    },
+    {
+        "Id": 15,
+        "Name": "感染",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png",
+        "Desc": "阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>",
+        "EffectType": 0,
+        "Effects": [
+            1000100
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "蹇修",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Desc": "对指挥官造成的单次伤害＞10时，将1张【苦刑】牌加入抽牌堆；<size=24><color=#FFFFFF2D>\\n-【苦刑】牌：红桃K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>",
+        "EffectType": 1,
+        "Effects": [
+            1000110
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "更多！",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Desc": "行动开始时，若苦刑之女HP<120，获得20护甲，移除[苦旅Ⅲ]，获得[苦旅Ⅳ]。",
+        "EffectType": 1,
+        "Effects": [
+            1000120,
+            1000121,
+            1000122,
+            1000123,
+            1000124,
+            1000125
+        ]
+    },
+    {
+        "Id": 18,
+        "Name": "安保检查Ⅰ",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P1.png",
+        "Desc": "行动开始时，若玩家手中有<color=#CD2F30FF>点数A</color>的牌，召唤1个自律警卫。",
+        "EffectType": 1,
+        "Effects": [
+            1000140
+        ]
+    },
+    {
+        "Id": 19,
+        "Name": "安保检查Ⅱ",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P2.png",
+        "Desc": "行动开始时，若玩家手中有<color=#CD2F30FF>点数A或2</color>的牌，召唤1个自律警卫。",
+        "EffectType": 1,
+        "Effects": [
+            1000150
+        ]
+    },
+    {
+        "Id": 20,
+        "Name": "安保检查Ⅲ",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P3.png",
+        "Desc": "行动开始时，若玩家手中有<color=#CD2F30FF>红球牌</color>，召唤1个自律警卫。",
+        "EffectType": 1,
+        "Effects": [
+            1000160
+        ]
+    },
+    {
+        "Id": 21,
+        "Name": "飞行",
+        "RoundClear": 0,
+        "MaxLayer": 2,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22110.png",
+        "Desc": "受到的伤害减少50%，受到伤害后移除1层，失去最后1层[飞行]后，怪物在1回合内无法行动。",
+        "EffectType": 1,
+        "Effects": [
+            1000170,
+            1000171
+        ]
+    },
+    {
+        "Id": 22,
+        "Name": "坠地",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Desc": "无法行动，触发后移除，并获得[飞行]*2。",
+        "EffectType": 2,
+        "Effects": [
+            1000180,
+            1000181,
+            1000182,
+            1000183
+        ]
+    },
+    {
+        "Id": 23,
+        "Name": "苦旅Ⅰ计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 13,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000190,
+            1000191,
+            1000192,
+            1000193,
+            1000194
+        ]
+    },
+    {
+        "Id": 24,
+        "Name": "苦旅Ⅱ计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 13,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000200,
+            1000201,
+            1000202,
+            1000203,
+            1000204
+        ]
+    },
+    {
+        "Id": 25,
+        "Name": "苦旅Ⅲ计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 13,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000210,
+            1000211,
+            1000212,
+            1000213,
+            1000214,
+            1000215
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "苦旅Ⅳ计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 13,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000220,
+            1000221,
+            1000222,
+            1000223,
+            1000224,
+            1000225
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "飞行计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 3,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000230,
+            1000231
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "无尽馈赠",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32113.png",
+        "Desc": "击败此怪物后，指挥官回复1点行动点并抽3张牌！",
+        "EffectType": 0,
+        "Effects": [
+            1000260,
+            1000261
+        ]
+    },
+    {
+        "Id": 29,
+        "Name": "无尽怒火",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32032.png",
+        "Desc": "可以叠加，造成伤害时，每层使伤害值+2。",
+        "EffectType": 1,
+        "Effects": [
+            1000270
+        ]
+    },
+    {
+        "Id": 30,
+        "Name": "必杀牌-红莲",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyadazhao1.png",
+        "Desc": "打出红莲必杀牌时，若红莲未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 31,
+        "Name": "必杀牌-风暴",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2yongyechaodazhao1.png",
+        "Desc": "打出风暴必杀牌时，若风暴未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 32,
+        "Name": "必杀牌-蚀暗",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifudazhao1.png",
+        "Desc": "打出蚀暗必杀牌时，若蚀暗未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 33,
+        "Name": "必杀牌-零度",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2biankadazhao1.png",
+        "Desc": "打出零度必杀牌时，若零度未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 34,
+        "Name": "必杀牌-凛冽",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Luosaitadazhao1.png",
+        "Desc": "打出凛冽必杀牌时，若凛冽未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 35,
+        "Name": "必杀牌-清商",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Hanyindazhao1.png",
+        "Desc": "打出清商必杀牌时，若清商未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 36,
+        "Name": "必杀牌-银冕",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png",
+        "Desc": "打出银冕必杀牌时，若银冕未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 37,
+        "Name": "必杀牌-辉晓",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Kalieninadazhao1.png",
+        "Desc": "打出辉晓必杀牌时，若辉晓未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 38,
+        "Name": "必杀牌-幻奏",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnadazhao1.png",
+        "Desc": "打出幻奏必杀牌时，若幻奏未出场，切换出场。",
+        "EffectType": 0
+    },
+    {
+        "Id": 39,
+        "Name": "衍生牌",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png",
+        "Desc": "由角色技能或怪物效果衍生的特殊卡牌。",
+        "EffectType": 0
+    },
+    {
+        "Id": 40,
+        "Name": "倒数计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            1000013,
+            1000014
+        ]
+    },
+    {
+        "Id": 41,
+        "Name": "意识海战神",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21255.png",
+        "Desc": "任意友方角色造成伤害时，使伤害值+999。",
+        "EffectType": 1,
+        "Effects": [
+            1000290
+        ]
+    },
+    {
+        "Id": 1010,
+        "Name": "双刀术",
+        "RoundClear": 1,
+        "MaxLayer": 1,
+        "RoundClearLayer": 1,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png",
+        "Desc": "持续1回合。造成伤害后，额外造成1次等值的伤害。",
+        "EffectType": 1,
+        "Effects": [
+            1010
+        ]
+    },
+    {
+        "Id": 1020,
+        "Name": "双刀术回能计数隐藏Token",
+        "RoundClear": 1,
+        "MaxLayer": 99,
+        "RoundClearLayer": 99,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    },
+    {
+        "Id": 2010,
+        "Name": "壁垒",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Desc": "下一回合开始时，指挥官的护甲不会消失。",
+        "EffectType": 1,
+        "Effects": [
+            2010,
+            2011
+        ]
+    },
+    {
+        "Id": 4010,
+        "Name": "饶恕",
+        "RoundClear": 0,
+        "MaxLayer": 3,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2biankahexin1.png",
+        "Desc": "可以叠加，最大层数3。造成伤害时，每层使伤害值+1。达到3层时，将零度的必杀牌从抽牌堆或弃牌堆置于牌堆顶。",
+        "EffectType": 1,
+        "Effects": [
+            4010,
+            4011
+        ]
+    },
+    {
+        "Id": 4020,
+        "Name": "零度必杀空效果占位Token",
+        "RoundClear": 1,
+        "MaxLayer": 20,
+        "RoundClearLayer": 20,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    },
+    {
+        "Id": 5010,
+        "Name": "曼舞",
+        "RoundClear": 0,
+        "MaxLayer": 3,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Hanyinhexin1.png",
+        "Desc": "可以叠加，最大层数3。达到3层时，将清商的必杀牌从抽牌堆或弃牌堆置于牌堆顶。",
+        "EffectType": 1,
+        "Effects": [
+            5010
+        ]
+    },
+    {
+        "Id": 5020,
+        "Name": "力量",
+        "RoundClear": 1,
+        "MaxLayer": 99,
+        "RoundClearLayer": 99,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png",
+        "Desc": "持续1回合，可以叠加。任意友方角色造成伤害时，每层使伤害值+1",
+        "EffectType": 1,
+        "Effects": [
+            5020
+        ]
+    },
+    {
+        "Id": 6010,
+        "Name": "脆弱",
+        "RoundClear": 0,
+        "MaxLayer": 0,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Desc": "受到的伤害增加50%，受伤后移除1层。",
+        "EffectType": 2,
+        "Effects": [
+            6010,
+            6011
+        ]
+    },
+    {
+        "Id": 7010,
+        "Name": "湮灭",
+        "RoundClear": 0,
+        "MaxLayer": 999,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png",
+        "Desc": "可以叠加，最大层数999。",
+        "EffectType": 1
+    },
+    {
+        "Id": 7020,
+        "Name": "帕弥什",
+        "RoundClear": 0,
+        "MaxLayer": 999,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png",
+        "Desc": "可以叠加，回合开始时，失去当前层数的生命值，然后移除1层。",
+        "EffectType": 2,
+        "Effects": [
+            7020,
+            7021,
+            7022
+        ]
+    },
+    {
+        "Id": 7030,
+        "Name": "湮灭计数隐藏Token",
+        "RoundClear": 1,
+        "MaxLayer": 999,
+        "RoundClearLayer": 999,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            7030,
+            7031
+        ]
+    },
+    {
+        "Id": 7040,
+        "Name": "奇点",
+        "RoundClear": 0,
+        "MaxLayer": 4,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Lunahexin1.png",
+        "Desc": "可以叠加，最大层数4。回合开始时，若银冕已出场，弃置X张点数最小的手牌，然后抽X张牌，X为银冕拥有的[奇点]层数，然后移除所有[奇点]。",
+        "EffectType": 1,
+        "Effects": [
+            7040,
+            7041
+        ]
+    },
+    {
+        "Id": 7050,
+        "Name": "奇点抽牌计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 4,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            7042,
+            7043,
+            7044,
+            7045,
+            7046,
+            7047,
+            7048
+        ]
+    },
+    {
+        "Id": 7060,
+        "Name": "奇点空效果占位Token",
+        "RoundClear": 0,
+        "MaxLayer": 1,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    },
+    {
+        "Id": 7070,
+        "Name": "银冕必杀空效果占位Token",
+        "RoundClear": 1,
+        "MaxLayer": 20,
+        "RoundClearLayer": 20,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    },
+    {
+        "Id": 8010,
+        "Name": "幻奏必杀计数Token",
+        "RoundClear": 0,
+        "MaxLayer": 11,
+        "RoundClearLayer": 0,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            8010,
+            8011,
+            8012,
+            8013
+        ]
+    },
+    {
+        "Id": 8020,
+        "Name": "重奏",
+        "RoundClear": 0,
+        "MaxLayer": 3,
+        "RoundClearLayer": 0,
+        "IsShow": 1,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png",
+        "Desc": "可以叠加，最大层数3。任意角色切换出场时，触发1次幻奏QTE效果，触发后移除1层。",
+        "EffectType": 1,
+        "Effects": [
+            8020,
+            8021
+        ]
+    },
+    {
+        "Id": 9010,
+        "Name": "辉晓必杀抽牌计数Token",
+        "RoundClear": 1,
+        "MaxLayer": 99,
+        "RoundClearLayer": 99,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    },
+    {
+        "Id": 9020,
+        "Name": "辉晓核心计数Token1",
+        "RoundClear": 1,
+        "MaxLayer": 9999,
+        "RoundClearLayer": 9999,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            9020
+        ]
+    },
+    {
+        "Id": 9030,
+        "Name": "辉晓核心计数Token2",
+        "RoundClear": 1,
+        "MaxLayer": 9999,
+        "RoundClearLayer": 9999,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            9030
+        ]
+    },
+    {
+        "Id": 9040,
+        "Name": "辉晓核心计数Token3",
+        "RoundClear": 1,
+        "MaxLayer": 9999,
+        "RoundClearLayer": 9999,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0,
+        "Effects": [
+            9040
+        ]
+    },
+    {
+        "Id": 9050,
+        "Name": "辉晓必杀空效果占位Token",
+        "RoundClear": 1,
+        "MaxLayer": 20,
+        "RoundClearLayer": 20,
+        "IsShow": 0,
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Desc": "只做显示用无实际效果，后续加功能隐藏。",
+        "EffectType": 0
+    }
+]

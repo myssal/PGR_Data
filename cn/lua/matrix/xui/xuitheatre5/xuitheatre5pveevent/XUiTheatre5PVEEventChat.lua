@@ -1,0 +1,84 @@
+--- 章节主界面事件节点
+---@class XUiTheatre5PVEEventChat: XUiNode
+---@field protected _Control XTheatre5Control
+local XUiTheatre5PVEEventChat = XClass(XUiNode, 'XUiTheatre5PVEEventChat')
+local XUiTheatre5GetPVERewardItem = require("XUi/XUiTheatre5/XUiTheatre5PopupGetReward/XUiTheatre5GetPVERewardItem")
+function XUiTheatre5PVEEventChat:OnStart()
+    self._CurEventId = nil
+    self._ItemGridList = {}
+    XUiHelper.RegisterClickEvent(self, self.BtnSure, self.OnClickConfirm, true, true, 0.5) 
+end
+
+function XUiTheatre5PVEEventChat:UpdateData(eventCfg)
+    if not eventCfg then
+        return
+    end
+    self._CurEventId = eventCfg.Id
+    self.TxtContent.text = XUiHelper.ReplaceTextNewLine(eventCfg.Desc)
+    self.BtnSure:SetName(eventCfg.ConfirmContent)
+    self:UpdateReward(eventCfg)     
+end
+
+function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
+    local curChapterData = self._Control.PVEControl:GetCurChapterBattleData()
+    local chapterCfg = self._Control.PVEControl:GetPveChapterCfg(curChapterData.ChapterId)
+    local chapterLevelCfg = self._Control.PVEControl:GetChapterLevelCfg(chapterCfg.LevelGroup ,curChapterData.CurPveChapterLevel.Level) 
+    local hasReward = XTool.IsNumberValid(eventCfg.EventLevelGroup) and XTool.IsNumberValid(chapterLevelCfg.EventLevel)
+    self.NodeReward.gameObject:SetActiveEx(hasReward)       
+    if not hasReward then
+        return
+    end
+    local eventLevelCfgs = self._Control.PVEControl:GetPveEventLevelCfgs(eventCfg.EventLevelGroup)
+    local eventLevelCfg
+    for _, cfg in pairs(eventLevelCfgs) do
+        if cfg.EventLevel == chapterLevelCfg.EventLevel then
+            eventLevelCfg = cfg
+            break
+        end    
+    end
+    if not eventLevelCfg then
+        return
+    end    
+    --拿到验证是否双倍奖励事件id
+    local doubleEventId,isDouble
+    if not XTool.IsTableEmpty(curChapterData.CurPveChapterLevel.RunEvents) then --有执行的事件时执行链最后一个事件是验证事件id
+        doubleEventId = curChapterData.CurPveChapterLevel.RunEvents[#curChapterData.CurPveChapterLevel.RunEvents]
+    else
+        doubleEventId = eventCfg.Id  --没有执行的事件那么当前事件是验证事件id
+    end
+   
+    local isDouble = true
+    if not XTool.IsTableEmpty(curChapterData.HandleEvents) then
+        for _, eventId in pairs(curChapterData.HandleEvents) do
+            if eventId == doubleEventId then
+                isDouble = false
+            end     
+        end
+    end
+    local itemList = {}
+    if not XTool.IsTableEmpty(eventLevelCfg.ItemType) then
+        for i = 1, #eventLevelCfg.ItemType do
+            table.insert(itemList, {Id = eventLevelCfg.ItemId[i], Type = eventLevelCfg.ItemType[i], Count = eventLevelCfg.ItemCount[i]})
+        end
+    end
+    if not XTool.IsTableEmpty(eventLevelCfg.BonusItemTypes) then
+        for i = 1, #eventLevelCfg.BonusItemTypes do
+            table.insert(itemList, {Id = eventLevelCfg.BonusItemIds[i], Type = eventLevelCfg.BonusItemTypes[i], 
+            Count = eventLevelCfg.BonusItemCounts[i], IsFirst = true})
+        end
+    end    
+    if not XTool.IsTableEmpty(itemList) then
+        XTool.UpdateDynamicItem(self._ItemGridList, itemList, self.GridTheatre5Item, XUiTheatre5GetPVERewardItem, self)
+    end     
+end
+
+function XUiTheatre5PVEEventChat:OnClickConfirm()
+    XMVCA.XTheatre5.PVEAgency:RequestPveEventPromote(self._CurEventId)
+end
+
+function XUiTheatre5PVEEventChat:OnDestroy()
+    self._CurEventId = nil
+    self._ItemGridList = nil
+end
+
+return XUiTheatre5PVEEventChat

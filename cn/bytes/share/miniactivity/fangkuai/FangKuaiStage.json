@@ -1,0 +1,1138 @@
+[
+    {
+        "Id": 1011,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "教学-1",
+        "BossName": "小小扳手",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadBanshou3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 36,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 3,
+        "InitLineCount": 3,
+        "MaxRound": 20,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "来热身吧，但扳手不会放水。"
+        ],
+        "ShowItem": [
+            2,
+            6
+        ]
+    },
+    {
+        "Id": 1012,
+        "PreStageId": 1011,
+        "TimeId": 0,
+        "Name": "常规-2",
+        "BossName": "准准阿枪",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleChangQiang3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 33,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 3,
+        "MaxRound": 20,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "更长的方块，更长的对局。"
+        ],
+        "ShowItem": [
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 1013,
+        "PreStageId": 1012,
+        "TimeId": 0,
+        "Name": "常规-3",
+        "BossName": "迅迅阿箭",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleChangmao3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 34,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 4,
+        "MaxRound": 25,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "新的特殊方块！只要再再再破坏一次……"
+        ],
+        "ShowItem": [
+            1,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 1014,
+        "PreStageId": 1013,
+        "TimeId": 0,
+        "Name": "常规-4",
+        "BossName": "大大喷涂",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadGuer3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 35,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 4,
+        "MaxRound": 25,
+        "EnvironmentId": 1014,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "有时上升一行，有时上升两行。"
+        ],
+        "ShowItem": [
+            1,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 1021,
+        "PreStageId": 1011,
+        "TimeId": 0,
+        "Name": "拓展-1",
+        "BossName": "准准阿枪",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleChangQiang3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterB1New.png",
+        "NpcId": 33,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 999,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "取消回合上限，到达顶部才会结束。"
+        ],
+        "ShowItem": [
+            2,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 1022,
+        "PreStageId": 1012,
+        "TimeId": 0,
+        "Name": "拓展-2",
+        "BossName": "迅迅阿箭",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleChangmao3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterB2New.png",
+        "NpcId": 34,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 999,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "难缠方块归来！"
+        ],
+        "ShowItem": [
+            1,
+            2,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 1023,
+        "PreStageId": 1013,
+        "TimeId": 0,
+        "Name": "拓展-3",
+        "BossName": "大大喷涂",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadGuer3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterB3New.png",
+        "NpcId": 35,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 999,
+        "EnvironmentId": 1023,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "上升的规律？喷涂才不会告诉你。"
+        ],
+        "ShowItem": [
+            1,
+            2,
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 1024,
+        "PreStageId": 1014,
+        "TimeId": 0,
+        "Name": "拓展-4",
+        "BossName": "鲨士壮壮",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadShashibier3Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterB4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 999,
+        "EnvironmentId": 1024,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "集合全部力量，再下一层！"
+        ],
+        "ShowItem": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 10111,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-1",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 25,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "来开始新的热身吧"
+        ],
+        "ShowItem": [
+            1,
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 10112,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-1",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "来开始新的热身吧"
+        ],
+        "ShowItem": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 10121,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-2",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "蓝色阿呆蛙出击"
+        ],
+        "ShowItem": [
+            13,
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 10122,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-2",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "蓝色阿呆蛙出击"
+        ],
+        "ShowItem": [
+            13,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10131,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-3",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "阿呆蛙是不灭的"
+        ],
+        "ShowItem": [
+            8,
+            3,
+            4
+        ]
+    },
+    {
+        "Id": 10132,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-3",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "阿呆蛙是不灭的"
+        ],
+        "ShowItem": [
+            8,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 10141,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-4",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "阿呆蛙的集结"
+        ],
+        "ShowItem": [
+            11,
+            8,
+            13,
+            4
+        ]
+    },
+    {
+        "Id": 10142,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "A1-4",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Lamiya2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 38,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 100,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "阿呆蛙的集结"
+        ],
+        "ShowItem": [
+            11,
+            8,
+            13
+        ]
+    },
+    {
+        "Id": 20111,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-1",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "真正的游戏从现在才开始"
+        ],
+        "ShowItem": [
+            12,
+            2,
+            4
+        ]
+    },
+    {
+        "Id": 20112,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-1",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "真正的游戏从现在才开始"
+        ],
+        "ShowItem": [
+            12,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 20121,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-2",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 30,
+        "EnvironmentId": 20121,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "方块，上升！（回合：放开我）"
+        ],
+        "ShowItem": [
+            7,
+            8,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20122,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-2",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 20122,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "方块，上升！（回合：放开我）"
+        ],
+        "ShowItem": [
+            7,
+            8,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 20131,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-3",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "方块掉落什么的很碍事"
+        ],
+        "ShowItem": [
+            7,
+            8,
+            5,
+            3
+        ]
+    },
+    {
+        "Id": 20132,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-3",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "方块掉落什么的很碍事"
+        ],
+        "ShowItem": [
+            7,
+            8,
+            5,
+            3
+        ]
+    },
+    {
+        "Id": 20141,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-4",
+        "BossName": "常规",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 30,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "对首席来说，一切都是必然的"
+        ],
+        "ShowItem": [
+            9,
+            10
+        ]
+    },
+    {
+        "Id": 20142,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "B2-4",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Buouxiong2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 40,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "对首席来说，一切都是必然的"
+        ],
+        "ShowItem": [
+            9,
+            10
+        ]
+    },
+    {
+        "Id": 30112,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "C3-1",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA1New.png",
+        "NpcId": 39,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 6,
+        "MaxRound": 1000,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "跟我一起向着999前进吧，首席"
+        ],
+        "ShowItem": [
+            7,
+            1,
+            13,
+            2,
+            8
+        ]
+    },
+    {
+        "Id": 30122,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "C3-2",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA2New.png",
+        "NpcId": 39,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 6,
+        "MaxRound": 1000,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "谁来再陪我玩一把呢"
+        ],
+        "ShowItem": [
+            12,
+            8,
+            13,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 30132,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "C3-3",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA3New01.png",
+        "NpcId": 39,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 6,
+        "MaxRound": 1000,
+        "EnvironmentId": 30132,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "仅有一次的机会哦"
+        ],
+        "ShowItem": [
+            12,
+            8,
+            13,
+            7,
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 30142,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "C3-4",
+        "BossName": "拓展",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 39,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 6,
+        "MaxRound": 1000,
+        "EnvironmentId": 30142,
+        "MaxUseCount": 3,
+        "SettleDesc": "代码修复完成，您已超过全空中花园1000%的终端！",
+        "FevExctiedValue": 0,
+        "FevStageMulti": 0,
+        "InitialFev": 0,
+        "BuffDesc": [
+            "成为破坏之王吧，首席"
+        ],
+        "ShowItem": [
+            9,
+            10
+        ]
+    },
+    {
+        "Id": 3011,
+        "PreStageId": 0,
+        "TimeId": 39101,
+        "Name": "幕后试演-1",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 25,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 900000,
+        "BuffTitle": [
+            "鲨鲨来袭"
+        ],
+        "BuffDesc": [
+            "嗷呜~嗷呜~"
+        ]
+    },
+    {
+        "Id": 3012,
+        "PreStageId": 3011,
+        "TimeId": 39101,
+        "Name": "幕后试演-2",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 3,
+        "InitLineCount": 4,
+        "MaxRound": 99,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3013,
+        "PreStageId": 3012,
+        "TimeId": 39101,
+        "Name": "幕后试演-3",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 99,
+        "EnvironmentId": 3013,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "音浪飙升"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ],
+        "InitialItemIds": [
+            1
+        ]
+    },
+    {
+        "Id": 3014,
+        "PreStageId": 3013,
+        "TimeId": 39101,
+        "Name": "幕后试演-4",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 8,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 4,
+        "MaxRound": 200,
+        "EnvironmentId": 3014,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "音浪飙升"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ]
+    },
+    {
+        "Id": 3021,
+        "PreStageId": 0,
+        "TimeId": 39102,
+        "Name": "合作协奏-1",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 25,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "灰鸦登场",
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "呼叫空花支援！",
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3022,
+        "PreStageId": 3021,
+        "TimeId": 39102,
+        "Name": "合作协奏-2",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 200,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3023,
+        "PreStageId": 3022,
+        "TimeId": 39102,
+        "Name": "合作协奏-3",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 200,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3024,
+        "PreStageId": 3023,
+        "TimeId": 39102,
+        "Name": "合作协奏-4",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 3024,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 10000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "音浪飙升"
+        ],
+        "BuffDesc": [
+            "有概率一回合上升两行方块"
+        ]
+    },
+    {
+        "Id": 3031,
+        "PreStageId": 0,
+        "TimeId": 39103,
+        "Name": "开场热唱-1",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 4,
+        "InitLineCount": 5,
+        "MaxRound": 500,
+        "EnvironmentId": 3031,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 20000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "狂热韵律",
+            "音浪飙升"
+        ],
+        "BuffDesc": [
+            "狂热值获取效率翻倍",
+            "有概率一回合上升两行方块"
+        ]
+    },
+    {
+        "Id": 3032,
+        "PreStageId": 3031,
+        "TimeId": 39103,
+        "Name": "开场热唱-2",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 999,
+        "EnvironmentId": 0,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 20000,
+        "InitialFev": 0,
+        "BuffTitle": [
+            "狂热韵律",
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "狂热值获取效率翻倍",
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3033,
+        "PreStageId": 3032,
+        "TimeId": 39103,
+        "Name": "开场热唱-3",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 1000,
+        "EnvironmentId": 3033,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 20000,
+        "InitialFev": 900000,
+        "BuffTitle": [
+            "狂热韵律",
+            "音浪飙升",
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "狂热值获取效率翻倍",
+            "有概率一回合上升两行方块",
+            "棋盘上方有概率掉落方块"
+        ]
+    },
+    {
+        "Id": 3034,
+        "PreStageId": 3033,
+        "TimeId": 39103,
+        "Name": "开场热唱-4",
+        "BossName": "无",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR3Twentyone2Q.png",
+        "Icon": "Assets/Product/Texture/Image/UiFangKuai/UiFangKuaiChapterA4New.png",
+        "NpcId": 37,
+        "SizeX": 9,
+        "SizeY": 9,
+        "MaxBlockLength": 5,
+        "InitLineCount": 5,
+        "MaxRound": 1000,
+        "EnvironmentId": 3034,
+        "MaxUseCount": 3,
+        "FevExctiedValue": 1000000,
+        "FevStageMulti": 20000,
+        "InitialFev": 900000,
+        "BuffTitle": [
+            "狂热韵律",
+            "音浪飙升",
+            "即兴方块"
+        ],
+        "BuffDesc": [
+            "狂热值获取效率翻倍",
+            "有概率一回合上升两行方块",
+            "棋盘上方有概率掉落方块"
+        ]
+    }
+]

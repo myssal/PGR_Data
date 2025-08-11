@@ -1,0 +1,108 @@
+[
+    {
+        "Id": 1,
+        "TimeId": 0,
+        "Name": "映像潜渊",
+        "ResetNoCdTimes": 0,
+        "ResetCdIncrease": 1,
+        "ResetCdMax": 1,
+        "DailySweepTimes": 3,
+        "PluginPeakloadInit": 7,
+        "PluginPeakloadMax": 30,
+        "AttrLevelSetCount": 5,
+        "PeriodTimeIds": [],
+        "RankLayerLimits": [],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 0,
+        "SeasonTaskGroupId": 172,
+        "AttrSetNameLength": 7,
+        "MopupCd": 0,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 0,
+        "ShopId": [
+            1236,
+            1235
+        ],
+        "TaskGroupId": [
+            171,
+            172
+        ]
+    },
+    {
+        "Id": 2,
+        "TimeId": 0,
+        "Name": "映像潜渊",
+        "ResetNoCdTimes": 0,
+        "ResetCdIncrease": 1,
+        "ResetCdMax": 1,
+        "DailySweepTimes": 3,
+        "PluginPeakloadInit": 7,
+        "PluginPeakloadMax": 30,
+        "AttrLevelSetCount": 5,
+        "PeriodTimeIds": [],
+        "RankLayerLimits": [],
+        "MaxLuckyValue": 50,
+        "RankLayerLimit": 1,
+        "SeasonTaskGroupId": 282,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 0,
+        "ShopId": [
+            1296,
+            1295,
+            1290
+        ],
+        "TaskGroupId": [
+            277,
+            278
+        ],
+        "BackLayers": [
+            90,
+            90,
+            90,
+            90
+        ],
+        "PeriodDesc": [
+            "源初时序:怪物附带辐射效果对所有角色造成伤害，角色在场每10秒会增加15%额外伤害，最高225%离场后清空",
+            "演变时序:怪物在存活15秒后会生成护盾",
+            "终末时序:怪物5米范围内没有其他怪物时，造成伤害与减伤都会增加",
+            "循环时序:杀死怪物会提升角色造成伤害，持续5秒，重复触发刷新并叠加层数"
+        ],
+        "PeriodName": [
+            "源初时序",
+            "演变时序",
+            "终末时序",
+            "循环时序"
+        ]
+    },
+    {
+        "Id": 3,
+        "TimeId": 0,
+        "Name": "寰维逐星",
+        "ResetNoCdTimes": 0,
+        "ResetCdIncrease": 1,
+        "ResetCdMax": 1,
+        "DailySweepTimes": 3,
+        "PluginPeakloadInit": 18,
+        "PluginPeakloadMax": 30,
+        "AttrLevelSetCount": 5,
+        "PeriodTimeIds": [],
+        "RankLayerLimits": [],
+        "MaxLuckyValue": 200,
+        "RankLayerLimit": 1,
+        "SeasonTaskGroupId": 0,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 0,
+        "ShopId": [
+            1432,
+            1433
+        ],
+        "TaskGroupId": [
+            391,
+            392
+        ]
+    }
+]

@@ -1,0 +1,314 @@
+[
+    {
+        "Id": 1101,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "弹匣扩装",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lianghexin1.png",
+        "Desc": "每次获得弹药的数量提升一定数量",
+        "Fightevents": [
+            225615
+        ]
+    },
+    {
+        "Id": 1102,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "迎敌疾闪",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2liSSS1.png",
+        "Desc": "10米范围内有敌人时闪避值每秒额外回复100点",
+        "Fightevents": [
+            225616
+        ]
+    },
+    {
+        "Id": 1103,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "致命近距",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3liS1.png",
+        "Desc": "对10米范围内的敌人造成伤害增加25%",
+        "Fightevents": [
+            225617
+        ]
+    },
+    {
+        "Id": 1201,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "惊鸿余音",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3HanyingA1.png",
+        "Desc": "每次消灭怪物自身伤害提升3.5%，持续12秒，可叠加5层，每次叠加刷新",
+        "Fightevents": [
+            225635
+        ]
+    },
+    {
+        "Id": 1202,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "落梅暗香",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Hanyinghexin1.png",
+        "Desc": "每次攻击使怪物额外伤害减免降低2.5%，持续8秒，可叠加8层，每次叠加刷新",
+        "Fightevents": [
+            225636
+        ]
+    },
+    {
+        "Id": 1203,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "止水微澜",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2HanyinSS1.png",
+        "Desc": "停止移动时自身伤害增加25%",
+        "Fightevents": [
+            225637
+        ]
+    },
+    {
+        "Id": 1301,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "永燃之誓",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R6LuxiyaSSS1.png",
+        "Desc": "即将死亡时免疫死亡，进入8秒无敌，冷却40秒",
+        "Fightevents": [
+            225638
+        ]
+    },
+    {
+        "Id": 1302,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "辉泽续芒",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4LifuExqiu1.png",
+        "Desc": "攻击怪物时会回复点150生命值，冷却10秒",
+        "Fightevents": [
+            225639
+        ]
+    },
+    {
+        "Id": 1303,
+        "Type": 1,
+        "NeedItemCount": 150,
+        "Condition": 0,
+        "Name": "焕源复盈",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyaA1.png",
+        "Desc": "每次消灭怪物会所有弹药增加1",
+        "Fightevents": [
+            225640
+        ]
+    },
+    {
+        "Id": 2001,
+        "Type": 2,
+        "NeedItemCount": 0,
+        "Condition": 0,
+        "Name": "息流溯源",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuZidongxiufu.png",
+        "Desc": "立即回复300点生命值，并在接下来5秒内持续每秒回复100点生命值",
+        "Fightevents": [
+            225618
+        ]
+    },
+    {
+        "Id": 2002,
+        "Type": 2,
+        "NeedItemCount": 50,
+        "Condition": 0,
+        "Name": "矩界障幕",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTankeZhandouxuxing.png",
+        "Desc": "获得1000点护盾，持续15秒",
+        "Fightevents": [
+            225619
+        ]
+    },
+    {
+        "Id": 2003,
+        "Type": 2,
+        "NeedItemCount": 50,
+        "Condition": 0,
+        "Name": "空蚀湮体",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJiegoujiagu.png",
+        "Desc": "进入无敌+霸体状态8秒",
+        "Fightevents": [
+            225620
+        ]
+    },
+    {
+        "Id": 2004,
+        "Type": 2,
+        "NeedItemCount": 50,
+        "Condition": 0,
+        "Name": "零点裕能",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R32BA1.png",
+        "Desc": "8秒内不再消耗弹药",
+        "Fightevents": [
+            225621
+        ]
+    },
+    {
+        "Id": 2005,
+        "Type": 2,
+        "NeedItemCount": 50,
+        "Condition": 0,
+        "Name": "复维弹仓",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninahexin1.png",
+        "Desc": "当前持有枪术获得初始上限200%的弹药",
+        "Fightevents": [
+            225622
+        ]
+    },
+    {
+        "Id": 2006,
+        "Type": 2,
+        "NeedItemCount": 50,
+        "Condition": 0,
+        "Name": "超限激荡",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuchuGuozaiqinxie.png",
+        "Desc": "造成伤害提升30%，持续10秒",
+        "Fightevents": [
+            225623
+        ]
+    },
+    {
+        "Id": 2007,
+        "Type": 2,
+        "NeedItemCount": 200,
+        "Condition": 1050003,
+        "Name": "战域制裁",
+        "Icon": "Assets/Product/Texture/Image/IconPetSkill/Pet3MaSkillbeidong05.png",
+        "Desc": "召唤飞机进行全屏攻击，全图伤害6666",
+        "Fightevents": [
+            225624
+        ]
+    },
+    {
+        "Id": 3001,
+        "Type": 3,
+        "NeedItemCount": 250,
+        "Condition": 1050018,
+        "Name": "枪术替换Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDlcHunt010.png",
+        "Desc": "普通攻击替换为枪术·黄，没有弹药数量限制",
+        "Fightevents": [
+            225625
+        ]
+    },
+    {
+        "Id": 3002,
+        "Type": 3,
+        "NeedItemCount": 250,
+        "Condition": 1050019,
+        "Name": "枪术替换Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDlcHunt012.png",
+        "Desc": "普通攻击替换为枪术·蓝，没有弹药数量限制",
+        "Fightevents": [
+            225626
+        ]
+    },
+    {
+        "Id": 3003,
+        "Type": 3,
+        "NeedItemCount": 250,
+        "Condition": 1050020,
+        "Name": "枪术替换Ⅲ",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDlcHunt011.png",
+        "Desc": "普通攻击替换为枪术·红，没有弹药数量限制",
+        "Fightevents": [
+            225627
+        ]
+    },
+    {
+        "Id": 3004,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050000,
+        "Name": "高能补给",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDlcHunt019.png",
+        "Desc": "掉落弹药数量增加初始的30%",
+        "Fightevents": [
+            225628
+        ]
+    },
+    {
+        "Id": 3005,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050000,
+        "Name": "毁灭装填",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconActivityConsume1901001.png",
+        "Desc": "弹药消耗数量翻倍，威力翻倍",
+        "Fightevents": [
+            225629
+        ]
+    },
+    {
+        "Id": 3006,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050001,
+        "Name": "战前物储Ⅰ",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2013001.png",
+        "Desc": "开场携带随机种类枪术",
+        "Fightevents": [
+            225630
+        ]
+    },
+    {
+        "Id": 3007,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050002,
+        "Name": "战前物储Ⅱ",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2103001.png",
+        "Desc": "开场携带2种随机枪术",
+        "Fightevents": [
+            225631
+        ]
+    },
+    {
+        "Id": 3008,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050001,
+        "Name": "疾行律动",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2035001.png",
+        "Desc": "角色移动速度增加250",
+        "Fightevents": [
+            225632
+        ]
+    },
+    {
+        "Id": 3009,
+        "Type": 3,
+        "NeedItemCount": 0,
+        "Condition": 0,
+        "Name": "坚甲增幅",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconActivityChessPursuit01.png",
+        "Desc": "角色最大生命值增加1000",
+        "Fightevents": [
+            225633
+        ]
+    },
+    {
+        "Id": 3010,
+        "Type": 3,
+        "NeedItemCount": 100,
+        "Condition": 1050002,
+        "Name": "源能蓄核",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconPokemonHexinmokuai01.png",
+        "Desc": "开场获得100点必杀能量",
+        "Fightevents": [
+            225634
+        ]
+    }
+]

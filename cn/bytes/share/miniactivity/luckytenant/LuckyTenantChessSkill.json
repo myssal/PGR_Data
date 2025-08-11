@@ -1,0 +1,1546 @@
+[
+    {
+        "Id": 101,
+        "Type": 45,
+        "Name": "待定",
+        "Desc": "每回合会随机生成一个基础枪支/复合弓。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 102,
+        "Type": 26,
+        "Name": "待定",
+        "Desc": "2回合后，该棋子消除自身。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 201,
+        "Type": 46,
+        "Name": "待定",
+        "Desc": "与【武器】棋子相邻会被消除，被消除后使武器消除价值+2",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 301,
+        "Type": 10,
+        "Name": "待定",
+        "Desc": "1回合后消除自身，增加1个【太刀】棋子。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 401,
+        "Type": 11,
+        "Name": "待定",
+        "Desc": "和【怪物】铁憨憨相邻时消除自身，并让铁憨憨直接完成转化，若场上有两个帕弥什病毒，按照排序依次消耗帕弥什病毒",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9
+        ]
+    },
+    {
+        "Id": 501,
+        "Type": 3,
+        "Name": "待定",
+        "Desc": "与【战斗角色】棋子相邻会被消除，同时战斗角色基础价值=原基础价值+武器基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 601,
+        "Type": 3,
+        "Name": "待定",
+        "Desc": "与【战斗角色】棋子相邻会被消除，同时战斗角色基础价值=原基础价值+武器基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 701,
+        "Type": 3,
+        "Name": "待定",
+        "Desc": "与【战斗角色】棋子相邻会被消除，同时战斗角色基础价值=原基础价值+武器基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 702,
+        "Type": 61,
+        "Name": "待定",
+        "Desc": "被消除后变成蓝色【道具】太刀碎片",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 801,
+        "Type": 2,
+        "Name": "待定",
+        "Desc": "与【战斗角色】棋子相邻会被消除，同时战斗角色基础价值=原基础价值+武器基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 802,
+        "Type": 61,
+        "Name": "待定",
+        "Desc": "被消除后转化变成【怪物】铁憨憨",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9,
+            1
+        ]
+    },
+    {
+        "Id": 803,
+        "Type": 67,
+        "Name": "待定",
+        "Desc": "与【母体】相邻时会被消除，并使该【母体】的基础价值+自身基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 901,
+        "Type": 4,
+        "Name": "待定",
+        "Desc": "1回合后，消除自身，生成1个蓝/绿色品质的【怪物类】棋子。（蓝/绿色品质的怪物棋子：【修理机工】【库洛洛】【蔷薇之剑】）",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            1,
+            8,
+            10,
+            11
+        ]
+    },
+    {
+        "Id": 1001,
+        "Type": 2,
+        "Name": "待定",
+        "Desc": "与战斗角色相邻会被消除，被消除后获得0分，基础价值+0分",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5,
+            0
+        ]
+    },
+    {
+        "Id": 1002,
+        "Type": 61,
+        "Name": "待定",
+        "Desc": "被消除后增加2个金币",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            52,
+            2
+        ]
+    },
+    {
+        "Id": 1003,
+        "Type": 67,
+        "Name": "待定",
+        "Desc": "与【母体】相邻时会被消除，并使该【母体】的基础价值+自身基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 1101,
+        "Type": 2,
+        "Name": "待定",
+        "Desc": "与战斗角色相邻会被消除，战斗角色基础价值+2",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 1102,
+        "Type": 61,
+        "Name": "待定",
+        "Desc": "被消除后转化变成【怪物】铁憨憨",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9,
+            1
+        ]
+    },
+    {
+        "Id": 1103,
+        "Type": 67,
+        "Name": "待定",
+        "Desc": "与【母体】相邻时会被消除，并使该【母体】的基础价值+自身基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 1201,
+        "Type": 65,
+        "Name": "待定",
+        "Desc": "与战斗角色相邻会被消除，与63同时在场会被跳过",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 1202,
+        "Type": 61,
+        "Name": "待定",
+        "Desc": "被消除后变成进阶材料",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 1203,
+        "Type": 66,
+        "Name": "待定",
+        "Desc": "被消除后从武器池里拿2个棋子",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            33,
+            2
+        ]
+    },
+    {
+        "Id": 1301,
+        "Type": 19,
+        "Name": "待定",
+        "Desc": "可以被基础价值大于等于15的相邻【战斗角色】消除，消除给予1倍自身基础价值得分",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            15,
+            5
+        ]
+    },
+    {
+        "Id": 1302,
+        "Type": 29,
+        "Name": "废弃技能",
+        "Desc": "消除相邻的【拉弥亚】",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            44
+        ]
+    },
+    {
+        "Id": 1401,
+        "Type": 15,
+        "Name": "待定",
+        "Desc": "消除相邻的【怪物】铁憨憨，每消除一个额外得分+10",
+        "Score": 10,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9
+        ]
+    },
+    {
+        "Id": 1501,
+        "Type": 16,
+        "Name": "废弃技能",
+        "Desc": "吸收棋盘上所有蓝色绿色怪物，这里的消除不给分数，自身价值=基础价值加上吸收怪物价值总和（优先级最高）(没支持配置，个人觉得这个不需要",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false
+    },
+    {
+        "Id": 1502,
+        "Type": 17,
+        "Name": "待定",
+        "Desc": "可以被基础价值大于等于10的相邻【战斗角色】消除，消除给予两倍自身基础价值得分",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            10,
+            5,
+            2
+        ]
+    },
+    {
+        "Id": 1601,
+        "Type": 21,
+        "Name": "待定",
+        "Desc": "每2回合，随机产出2个【怪物类】棋子。（铁憨憨除外）",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            25,
+            2
+        ]
+    },
+    {
+        "Id": 1602,
+        "Type": 29,
+        "Name": "废弃技能",
+        "Desc": "消除相邻的【拉弥亚】",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            44
+        ]
+    },
+    {
+        "Id": 1801,
+        "Type": 7,
+        "Name": "废弃技能",
+        "Desc": "消除相邻【道具】螺母",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            46
+        ]
+    },
+    {
+        "Id": 1901,
+        "Type": 8,
+        "Name": "待定",
+        "Desc": "【说到底我才是女主】每2回合，自身基础价值+1",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2001,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "每2回合，产出1个【道具】五星武器碎片",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2101,
+        "Type": 13,
+        "Name": "待定",
+        "Desc": "\"【蒲牢】初始基础价值为[3,7]之间的随机值。\"",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            3,
+            7
+        ]
+    },
+    {
+        "Id": 2102,
+        "Type": 14,
+        "Name": "废弃技能",
+        "Desc": "每消除1个【金币】，自身价值+1。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            52,
+            1
+        ]
+    },
+    {
+        "Id": 2201,
+        "Type": 63,
+        "Name": "待定",
+        "Desc": "消除相邻怪物时，消除得分额外+3",
+        "Score": 3,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 2301,
+        "Type": 18,
+        "Name": "待定",
+        "Desc": "棋盘每发生一次【战斗角色】消除【怪物】or【特殊怪物】，自身基础价值+2",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 2401,
+        "Type": 8,
+        "Name": "待定",
+        "Desc": "【灰鸦小队的buff】每回合，自身基础价值+1",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1
+        ]
+    },
+    {
+        "Id": 2402,
+        "Type": 20,
+        "Name": "待定",
+        "Desc": "【成功的C位背后必然有一个强大的辅助】每回合相邻的【后勤角色】or【战斗角色】基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            5,
+            10
+        ]
+    },
+    {
+        "Id": 2501,
+        "Type": 64,
+        "Name": "待定",
+        "Desc": "【乘法！降临！】每回合露娜的临时基础价值=所在行列全部【战斗角色】棋子价值总和",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 2601,
+        "Type": 21,
+        "Name": "待定",
+        "Desc": "【旅行小猫】每回合随机产出一个【武器】棋子",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            26,
+            1
+        ]
+    },
+    {
+        "Id": 2701,
+        "Type": 48,
+        "Name": "待定",
+        "Desc": "2回合后消除自身，转化为1个【道具】S辅助机碎片",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2,
+            1,
+            28
+        ]
+    },
+    {
+        "Id": 2801,
+        "Type": 23,
+        "Name": "待定",
+        "Desc": "与后勤角色相邻时被消除，转化成【辅助机】S专属辅助机",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            10,
+            31
+        ]
+    },
+    {
+        "Id": 2901,
+        "Type": 49,
+        "Name": "待定",
+        "Desc": "每与一个棋子相邻，可额外获得1分",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true
+    },
+    {
+        "Id": 2902,
+        "Type": 26,
+        "Name": "待定",
+        "Desc": "3回合后消除自身",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 3001,
+        "Type": 31,
+        "Name": "待定",
+        "Desc": "相邻棋子有【后勤角色】棋子时，自身基础价值临时+2",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            10,
+            2
+        ]
+    },
+    {
+        "Id": 3002,
+        "Type": 3,
+        "Name": "待定",
+        "Desc": "与【高阶辅助机】棋子相邻会被消除，同时高阶辅助机基础价值=原基础价值+辅助机基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9
+        ]
+    },
+    {
+        "Id": 3101,
+        "Type": 62,
+        "Name": "待定",
+        "Desc": "相邻棋子有【后勤角色】棋子时，自身基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 3102,
+        "Type": 3,
+        "Name": "待定",
+        "Desc": "与【高阶辅助机】棋子相邻会被消除，同时高阶辅助机基础价值=原基础价值+辅助机基础价值",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            9
+        ]
+    },
+    {
+        "Id": 3201,
+        "Type": 50,
+        "Name": "待定",
+        "Desc": "消除相邻的【辅助机】棋子，消除时，额外获得被消除，【辅助机】棋子的基础价值，每消除一次，自身基础价值+1",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            8,
+            1
+        ]
+    },
+    {
+        "Id": 3301,
+        "Type": 25,
+        "Name": "待定",
+        "Desc": "每回合结算分数时可额外获得1-3分。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 3302,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "每回合增加1个【螺母】。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1,
+            46
+        ]
+    },
+    {
+        "Id": 3401,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "【赚钱糕手】每回合产出1个【道具】金币",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1,
+            52
+        ]
+    },
+    {
+        "Id": 3501,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "每2回合，21号会产出1个【道具】能量饮料",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            1,
+            55
+        ]
+    },
+    {
+        "Id": 3601,
+        "Type": 28,
+        "Name": "待定",
+        "Desc": "相邻棋子有【后勤角色】棋子时，每回合结算分数时可额外获得3-5分",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            10,
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 3701,
+        "Type": 7,
+        "Name": "废弃技能",
+        "Desc": "【敛财高手】消除相邻的【道具】金币",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            52
+        ]
+    },
+    {
+        "Id": 3801,
+        "Type": 30,
+        "Name": "待定",
+        "Desc": "【罗兰的模仿秀】每回合的结算分数=棋盘上基础价值最高的棋子",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true
+    },
+    {
+        "Id": 3901,
+        "Type": 7,
+        "Name": "废弃技能",
+        "Desc": "消除相邻的【道具】螺母",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            46
+        ]
+    },
+    {
+        "Id": 3902,
+        "Type": 53,
+        "Name": "废弃技能",
+        "Desc": "消除【道具】螺母的回合，自身基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            46
+        ]
+    },
+    {
+        "Id": 3903,
+        "Type": 14,
+        "Name": "待定",
+        "Desc": "每消除1个【螺母】，自身价值+1。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            46,
+            1
+        ]
+    },
+    {
+        "Id": 4001,
+        "Type": 20,
+        "Name": "待定",
+        "Desc": "与自身相邻的【后勤角色】基础价值+1（不包括自身）。",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 4002,
+        "Type": 32,
+        "Name": "待定",
+        "Desc": "与【后勤角色】棋子相邻时，增加1个【黑卡】，每回合最多增加1个。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            10,
+            57
+        ]
+    },
+    {
+        "Id": 4101,
+        "Type": 33,
+        "Name": "待定",
+        "Desc": "【上楼梯啦】5列棋子，曲所在行上所有棋子基础价值+1（不包括自身）",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 4201,
+        "Type": 44,
+        "Name": "待定",
+        "Desc": "【三头犬要加钱】当棋盘上同时出现【薇拉】、【21号】、【诺克提】时，3人的自身基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            20,
+            35,
+            42
+        ]
+    },
+    {
+        "Id": 4301,
+        "Type": 35,
+        "Name": "待定",
+        "Desc": "赛琳娜每与一个棋子相邻，可额外获得3分",
+        "Score": 3,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true
+    },
+    {
+        "Id": 4401,
+        "Type": 45,
+        "Name": "待定",
+        "Desc": "拉弥亚在棋盘上时，会随机奖励一个刷新or删除道具。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            1,
+            99999,
+            99998
+        ]
+    },
+    {
+        "Id": 4402,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【鲨碧】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            13
+        ]
+    },
+    {
+        "Id": 4403,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【红潮】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            16
+        ]
+    },
+    {
+        "Id": 4501,
+        "Type": 36,
+        "Name": "待定",
+        "Desc": "每回合自身基础价值=sum（棋盘上所有【后勤角色】棋子基础价值）",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 4502,
+        "Type": 37,
+        "Name": "待定",
+        "Desc": "赛利卡在棋盘上时【后勤角色】or【战斗角色】基础价值+3",
+        "Score": 3,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            10,
+            5
+        ]
+    },
+    {
+        "Id": 4601,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【里】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 4602,
+        "Type": 59,
+        "Name": "待定",
+        "Desc": "与卡列相邻会被消除，使卡列基础分数+1分",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            39
+        ]
+    },
+    {
+        "Id": 4701,
+        "Type": 52,
+        "Name": "待定",
+        "Desc": "与【里】相邻会被消除，被消除后产生3个螺母",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            18,
+            3,
+            46
+        ]
+    },
+    {
+        "Id": 4801,
+        "Type": 38,
+        "Name": "待定",
+        "Desc": "累计消除2个【道具】螺母后，福袋变成1个蓝色【怪物】蔷薇之剑",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            46,
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 4901,
+        "Type": 38,
+        "Name": "待定",
+        "Desc": "累计消除2个【道具】螺母后，福袋变成1个蓝色【辅助机】S型辅助机",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            46,
+            1,
+            31
+        ]
+    },
+    {
+        "Id": 5001,
+        "Type": 39,
+        "Name": "待定",
+        "Desc": "每回合使棋盘上的【布偶熊】、【赛琳娜】额外得分+3，技能在背包里生效",
+        "Score": 3,
+        "Priority": 0,
+        "IsPassive": true,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            36,
+            43
+        ]
+    },
+    {
+        "Id": 5101,
+        "Type": 40,
+        "Name": "待定",
+        "Desc": "每回合使棋盘上的【布偶熊】、【赛琳娜】基础价值+2，技能在背包里生效",
+        "Score": 2,
+        "Priority": 0,
+        "IsPassive": true,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            36,
+            43
+        ]
+    },
+    {
+        "Id": 5201,
+        "Type": 54,
+        "Name": "待定",
+        "Desc": "每回合20%概率复制自身产出1个【道具】金币",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            20,
+            1,
+            52
+        ]
+    },
+    {
+        "Id": 5202,
+        "Type": 26,
+        "Name": "待定",
+        "Desc": "2回合后，该棋子消除自身。",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 5203,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【苏菲亚】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            37
+        ]
+    },
+    {
+        "Id": 5204,
+        "Type": 59,
+        "Name": "待定",
+        "Desc": "与蒲牢相邻会被消除，使蒲牢基础分数+1分",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            21
+        ]
+    },
+    {
+        "Id": 5301,
+        "Type": 38,
+        "Name": "待定",
+        "Desc": "累计消除2个【道具】金币后，福袋变成1个蓝色【怪物】蔷薇之剑",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            52,
+            1,
+            11
+        ]
+    },
+    {
+        "Id": 5401,
+        "Type": 38,
+        "Name": "待定",
+        "Desc": "累计消除2个【道具】金币后，福袋变成1个蓝色【辅助机】S型辅助机",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            52,
+            1,
+            31
+        ]
+    },
+    {
+        "Id": 5501,
+        "Type": 42,
+        "Name": "待定",
+        "Desc": "棋盘上存在2个【三头犬成员】时会被消除，每被消除一次，棋盘上的【三头犬成员】基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            2,
+            20,
+            35,
+            42
+        ]
+    },
+    {
+        "Id": 5601,
+        "Type": 43,
+        "Name": "待定",
+        "Desc": "相邻的棋子有【三头犬成员】时被消除，变成1个【道具】能量饮料",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            55,
+            20,
+            35,
+            42
+        ]
+    },
+    {
+        "Id": 5701,
+        "Type": 66,
+        "Name": "待定",
+        "Desc": "自身被消除后随机生成一个绿色【战斗角色】/【后勤角色】/【武器】",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            24,
+            1
+        ]
+    },
+    {
+        "Id": 5702,
+        "Type": 26,
+        "Name": "待定",
+        "Desc": "1回合后消除自身",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 5801,
+        "Type": 10,
+        "Name": "待定",
+        "Desc": "2回合后消除自身，生成2黑卡",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2,
+            2,
+            57
+        ]
+    },
+    {
+        "Id": 5901,
+        "Type": 55,
+        "Name": "待定",
+        "Desc": "初始20%的基础概率消除自身变成【主角】欧皇指挥官，相邻棋子有【道具】虹卡的回合，基础概率+5%",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            20,
+            60,
+            58,
+            5,
+            60
+        ]
+    },
+    {
+        "Id": 5902,
+        "Type": 57,
+        "Name": "待定",
+        "Desc": "与露西亚相邻会产出1个【道具】阿呆蛙",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            19,
+            65
+        ]
+    },
+    {
+        "Id": 6001,
+        "Type": 25,
+        "Name": "待定",
+        "Desc": "【欧皇无敌】结算得分+50",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            1,
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 6101,
+        "Type": 56,
+        "Name": "待定",
+        "Desc": "与【露西亚】、【里】、【丽芙】、【非鸦指挥官】一起出现在棋盘时，消除自身，额外得分=四名角色基础价值之和",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19,
+            18,
+            24,
+            59
+        ]
+    },
+    {
+        "Id": 6201,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【露西亚】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19
+        ]
+    },
+    {
+        "Id": 6301,
+        "Type": 58,
+        "Name": "待定",
+        "Desc": "与【露西亚】相邻会被消除",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19
+        ]
+    },
+    {
+        "Id": 6401,
+        "Type": 59,
+        "Name": "待定",
+        "Desc": "与【露西亚】相邻会被消除，【露西亚】基础价值+1",
+        "Score": 1,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19
+        ]
+    },
+    {
+        "Id": 6501,
+        "Type": 10,
+        "Name": "待定",
+        "Desc": "2回合后消除自身，变成1个炊具",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2,
+            1,
+            62
+        ]
+    },
+    {
+        "Id": 6502,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "2回合后变成1个食材",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2,
+            1,
+            63
+        ]
+    },
+    {
+        "Id": 6503,
+        "Type": 9,
+        "Name": "待定",
+        "Desc": "2回合后变成1个调料",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2,
+            1,
+            64
+        ]
+    },
+    {
+        "Id": 6504,
+        "Type": 26,
+        "Name": "阿呆蛙",
+        "Desc": "2回合后消除自身",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 6505,
+        "Type": 66,
+        "Name": "阿呆蛙",
+        "Desc": "被消除后，从随机池里随机拿出3个棋子",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            34,
+            3
+        ]
+    },
+    {
+        "Id": 6601,
+        "Type": 55,
+        "Name": "待定",
+        "Desc": "初始20%的基础概率消除自身变成【主角】欧皇指挥官，相邻棋子有【道具】虹卡的回合，基础概率+5%",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            100,
+            60,
+            58,
+            5,
+            60
+        ]
+    },
+    {
+        "Id": 6701,
+        "Type": 55,
+        "Name": "待定",
+        "Desc": "初始20%的基础概率消除自身变成【主角】欧皇指挥官，相邻棋子有【道具】虹卡的回合，基础概率+5%",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": false,
+        "EffectJustOnFirstRound": true,
+        "Params": [
+            0,
+            60,
+            58,
+            0,
+            60
+        ]
+    },
+    {
+        "Id": 6801,
+        "Type": 56,
+        "Name": "待定",
+        "Desc": "与【露西亚】、【里】、【丽芙】、【非鸦指挥官】一起出现在棋盘时，消除自身，额外得分=四名角色基础价值之和",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19,
+            18,
+            24,
+            66
+        ]
+    },
+    {
+        "Id": 6901,
+        "Type": 56,
+        "Name": "待定",
+        "Desc": "与【露西亚】、【里】、【丽芙】、【非鸦指挥官】一起出现在棋盘时，消除自身，额外得分=四名角色基础价值之和",
+        "Score": 0,
+        "Priority": 0,
+        "IsPassive": false,
+        "IsEffectUponJoining": true,
+        "EffectJustOnFirstRound": false,
+        "Params": [
+            19,
+            18,
+            24,
+            67
+        ]
+    }
+]

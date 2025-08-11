@@ -1,0 +1,181 @@
+[
+    {
+        "Id": 1,
+        "Desc": "算力世界里面遗落的数据结晶。回收到一定数量后，即可接通逃生车的呼救频道。",
+        "Type": 1,
+        "Name": "算力结晶",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon07.png"
+    },
+    {
+        "Id": 2,
+        "Desc": "逃生车，跳关车，万能载具……随便你怎么叫，它的功能都不会改变。",
+        "Type": 2,
+        "Name": "逃生车",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon15.png"
+    },
+    {
+        "Id": 3,
+        "Desc": "碰一下就能获得一格生命。至于原理……别纠结，算力世界里一切皆有可能。",
+        "Type": 3,
+        "Name": "生命结晶",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "Desc": "拾取后，地图上的所有怪兽都会变为食物，并能被吞下。尽情对它们展开报复吧！",
+        "Type": 4,
+        "Name": "暴风吸入",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 5,
+        "Desc": "拾取后，一定时间内移动速度变快，地图上的怪物都会变成跑鞋，触碰跑鞋即可刷新持续时间。",
+        "Type": 5,
+        "Name": "加速冲刺",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 6,
+        "Desc": "算力世界里面最常见的怪兽，虽然没有技能，但是碰到就会扣掉一格生命值。",
+        "Type": 6,
+        "Name": "混种怪",
+        "Speed": 23,
+        "TurningDuration": 0,
+        "AlertX": 3,
+        "AlertY": 3,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon02.png"
+    },
+    {
+        "Id": 7,
+        "Desc": "算力世界里的怪兽，会在直线范围内横冲直撞。但是貌似不怎么灵活。",
+        "Type": 7,
+        "Name": "月蚀怪",
+        "Speed": 30,
+        "TurningDuration": 1,
+        "AlertX": 4,
+        "AlertY": 4,
+        "AlertVisibility": true,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png"
+    },
+    {
+        "Id": 8,
+        "Desc": "算力世界里的怪兽，能让自身一定范围内的流速变慢。靠近它的时候会自动获得减速效果。",
+        "Type": 8,
+        "Name": "异魔怪",
+        "Speed": 18,
+        "TurningDuration": 0,
+        "AlertX": 4,
+        "AlertY": 4,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png",
+        "Params": [
+            90,
+            3,
+            3
+        ]
+    },
+    {
+        "Id": 9,
+        "Desc": "跑鞋（1=持续时间（待删除），2=吃的时候变成多少速度，3=叠层加速）",
+        "Type": 9,
+        "Name": "鞋子",
+        "Speed": 18,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png",
+        "Params": [
+            5,
+            35,
+            2
+        ]
+    },
+    {
+        "Id": 10,
+        "Desc": "拾取后，马上在地图上创造一个吸引怪兽的分身，触碰分身的怪物会被眩晕。分身一样拥有可吞噬算力结晶的效果。",
+        "Type": 10,
+        "Name": "幻影分身",
+        "Speed": 30,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png",
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "Desc": "食物怪",
+        "Type": 11,
+        "Name": "食物",
+        "Speed": 21,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon06.png"
+    },
+    {
+        "Id": 12,
+        "Desc": "拾取后，自动在地图上开启一条逃生通道。“看好了，这就是我的逃跑路线！”",
+        "Type": 12,
+        "Name": "次元门",
+        "Speed": 0,
+        "TurningDuration": 0,
+        "AlertX": 0,
+        "AlertY": 0,
+        "AlertVisibility": false,
+        "Score": 0,
+        "Icon": "Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png"
+    }
+]

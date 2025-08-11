@@ -1,0 +1,372 @@
+[
+    {
+        "Id": 101,
+        "RuleType": 1,
+        "Name": "异色",
+        "RuleDesc": "颜色不同的地块相连时分数增加2分。",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 201,
+        "RuleType": 2,
+        "Name": "同色",
+        "RuleDesc": "同色地块组合在一起的时候，每有一格增加2分。",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 301,
+        "RuleType": 3,
+        "Name": "异色翻倍",
+        "RuleDesc": "跟此地块直接相连的不同色地块最终分数X2",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleDouble",
+        "IconGrid": "IconGridDouble",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 401,
+        "RuleType": 4,
+        "Name": "同色翻倍",
+        "RuleDesc": "跟此地块直接相连的同色地块最终分数X2",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleDouble",
+        "IconGrid": "IconGridDouble",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 601,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "八咫：日料小摊",
+        "Bubble": 101,
+        "NpcId": 1001,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 602,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "露西亚：小玩具摊",
+        "Bubble": 102,
+        "NpcId": 1002,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 603,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "里：四驱车拼装小店",
+        "Bubble": 103,
+        "NpcId": 1003,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 604,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "赛琳娜：钢琴",
+        "Bubble": 104,
+        "NpcId": 1004,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 605,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "丽芙：花卉店",
+        "Bubble": 105,
+        "NpcId": 1005,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 606,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "七实：诺曼英雄游戏机",
+        "Bubble": 106,
+        "NpcId": 1006,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 607,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "比安卡：和风电影海报",
+        "Bubble": 107,
+        "NpcId": 1007,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 608,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "万事：气球打靶游戏摊",
+        "Bubble": 108,
+        "NpcId": 1008,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 609,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "库洛姆：西装店",
+        "Bubble": 109,
+        "NpcId": 1009,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleLike",
+        "IconGrid": "IconGridLike"
+    },
+    {
+        "Id": 701,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "八咫：日料小摊",
+        "Bubble": 301,
+        "NpcId": 1001,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 702,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "露西亚：小玩具摊",
+        "Bubble": 302,
+        "NpcId": 1002,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 703,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "里：四驱车拼装小店",
+        "Bubble": 303,
+        "NpcId": 1003,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 704,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "赛琳娜：钢琴",
+        "Bubble": 304,
+        "NpcId": 1004,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 705,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "丽芙：花卉店",
+        "Bubble": 305,
+        "NpcId": 1005,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 706,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "七实：诺曼英雄游戏机",
+        "Bubble": 306,
+        "NpcId": 1006,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 707,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "比安卡：和风电影海报",
+        "Bubble": 307,
+        "NpcId": 1007,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 708,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "万事：气球打靶游戏摊",
+        "Bubble": 308,
+        "NpcId": 1008,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 709,
+        "RuleType": 5,
+        "Name": "特殊",
+        "RuleDesc": "库洛姆：西装店",
+        "Bubble": 309,
+        "NpcId": 1009,
+        "EffectiveTimes": 0
+    },
+    {
+        "Id": 801,
+        "RuleType": 7,
+        "Name": "不相连",
+        "RuleDesc": "周围没有和任何东西相连",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleTask",
+        "IconGrid": "IconGridTask",
+        "Params": [
+            1000
+        ]
+    },
+    {
+        "Id": 901,
+        "RuleType": 8,
+        "Name": "不可思议",
+        "RuleDesc": "周围有超过10分的艺术品",
+        "Bubble": 0,
+        "NpcId": 0,
+        "EffectiveTimes": 0,
+        "IconRule": "IconRuleTask",
+        "IconGrid": "IconGridTask",
+        "Params": [
+            1000,
+            1,
+            10
+        ]
+    },
+    {
+        "Id": 1001,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "八咫超过一定分数后，播放剧情",
+        "Bubble": 201,
+        "NpcId": 1001,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1002,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "露西亚超过一定分数后，播放剧情",
+        "Bubble": 202,
+        "NpcId": 1002,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1003,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "里超过一定分数后，播放剧情",
+        "Bubble": 203,
+        "NpcId": 1003,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1004,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "赛琳娜超过一定分数后，播放剧情",
+        "Bubble": 204,
+        "NpcId": 1004,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1005,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "丽芙超过一定分数后，播放剧情",
+        "Bubble": 205,
+        "NpcId": 1005,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1006,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "七实超过一定分数后，播放剧情",
+        "Bubble": 206,
+        "NpcId": 1006,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1007,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "比安卡超过一定分数后，播放剧情",
+        "Bubble": 207,
+        "NpcId": 1007,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1008,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "万事超过一定分数后，播放剧情",
+        "Bubble": 208,
+        "NpcId": 1008,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 1009,
+        "RuleType": 9,
+        "Name": "剧情",
+        "RuleDesc": "库洛姆超过一定分数后，播放剧情",
+        "Bubble": 209,
+        "NpcId": 1009,
+        "EffectiveTimes": 0,
+        "Params": [
+            0
+        ]
+    }
+]

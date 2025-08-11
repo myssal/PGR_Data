@@ -1,0 +1,161 @@
+[
+    {
+        "ChapterId": 1,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 5,
+        "Order": 1,
+        "Name": "基础操作课程",
+        "LockDesc": "默认解锁",
+        "StageIds": [
+            30110001,
+            30110002,
+            30110003
+        ]
+    },
+    {
+        "ChapterId": 2,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 30,
+        "Order": 1,
+        "Name": "基础技巧课程",
+        "LockDesc": "指挥官等级30解锁",
+        "StageIds": [
+            30110004,
+            30110005,
+            30110006
+        ]
+    },
+    {
+        "ChapterId": 3,
+        "StageType": 2,
+        "ClearPoint": 9,
+        "UnlockLessonPoint": 80,
+        "UnlockLv": 0,
+        "Order": 1,
+        "Name": "TC-B 执照升阶考核",
+        "LockDesc": "总绩点达到80",
+        "StageIds": [
+            30110007,
+            30110008,
+            30110009
+        ]
+    },
+    {
+        "ChapterId": 4,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 40,
+        "Order": 1,
+        "Name": "协同技巧专项",
+        "LockDesc": "指挥官等级40解锁",
+        "StageIds": [
+            30110010,
+            30110011,
+            30110012
+        ]
+    },
+    {
+        "ChapterId": 5,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 52,
+        "Order": 1,
+        "Name": "独域作战专项",
+        "LockDesc": "指挥官等级52解锁",
+        "StageIds": [
+            30110013,
+            30110014,
+            30110015
+        ]
+    },
+    {
+        "ChapterId": 6,
+        "StageType": 2,
+        "ClearPoint": 9,
+        "UnlockLessonPoint": 180,
+        "UnlockLv": 0,
+        "Order": 1,
+        "Name": "TC-A 执照升阶考核",
+        "LockDesc": "TC-B考核达到9星，且总绩点达到180",
+        "PrevChapterIds": [
+            3
+        ],
+        "StageIds": [
+            30110016,
+            30110017,
+            30110018
+        ]
+    },
+    {
+        "ChapterId": 7,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 61,
+        "Order": 1,
+        "Name": "高阶协同专项",
+        "LockDesc": "指挥官等级61解锁",
+        "StageIds": [
+            30110019,
+            30110020,
+            30110021
+        ]
+    },
+    {
+        "ChapterId": 8,
+        "StageType": 1,
+        "ClearPoint": 0,
+        "UnlockLessonPoint": 0,
+        "UnlockLv": 70,
+        "Order": 1,
+        "Name": "高阶技巧专项",
+        "LockDesc": "指挥官等级70解锁",
+        "StageIds": [
+            30110022,
+            30110023,
+            30110024
+        ]
+    },
+    {
+        "ChapterId": 9,
+        "StageType": 2,
+        "ClearPoint": 9,
+        "UnlockLessonPoint": 280,
+        "UnlockLv": 0,
+        "Order": 1,
+        "Name": "TC-S 执照升阶考核",
+        "LockDesc": "TC-A考核达到9星，且总绩点达到280",
+        "PrevChapterIds": [
+            6
+        ],
+        "StageIds": [
+            30110025,
+            30110026,
+            30110027
+        ]
+    },
+    {
+        "ChapterId": 10,
+        "StageType": 2,
+        "ClearPoint": 9,
+        "UnlockLessonPoint": 300,
+        "UnlockLv": 0,
+        "Order": 1,
+        "Name": "TC-X 执照升阶考核",
+        "LockDesc": "TC-S考核达到9星，且总绩点达到300",
+        "PrevChapterIds": [
+            9
+        ],
+        "StageIds": [
+            30110028,
+            30110029,
+            30110030
+        ]
+    }
+]

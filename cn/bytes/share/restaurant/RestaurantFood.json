@@ -1,0 +1,408 @@
+[
+    {
+        "Id": 1,
+        "Name": "梨花木梳",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood48.png",
+        "Quality": 1,
+        "ProduceNeedTime": 240,
+        "Price": 24,
+        "SaleNeedTime": 240,
+        "Priority": 1,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1
+        ],
+        "ConsumeIngredientCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "舞狮剪纸",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormLionTheaterFlag002_02.png",
+        "Quality": 1,
+        "ProduceNeedTime": 240,
+        "Price": 30,
+        "SaleNeedTime": 240,
+        "Priority": 2,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            2
+        ],
+        "ConsumeIngredientCounts": [
+            2
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "蜀锦",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood45.png",
+        "Quality": 2,
+        "ProduceNeedTime": 200,
+        "Price": 32,
+        "SaleNeedTime": 220,
+        "Priority": 3,
+        "IsDefault": false,
+        "PerformId": 14,
+        "ConsumeIngredientIds": [
+            2,
+            3
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1
+        ],
+        "UnlockItemIds": [
+            63605
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "手工布娃娃",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood47.png",
+        "Quality": 1,
+        "ProduceNeedTime": 400,
+        "Price": 42,
+        "SaleNeedTime": 220,
+        "Priority": 4,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            2
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "泥咕咕",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood53.png",
+        "Quality": 2,
+        "ProduceNeedTime": 480,
+        "Price": 50,
+        "SaleNeedTime": 250,
+        "Priority": 5,
+        "IsDefault": false,
+        "PerformId": 15,
+        "ConsumeIngredientIds": [
+            3,
+            4
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1
+        ],
+        "UnlockItemIds": [
+            63606
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "桌面屏风",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormLionTheaterScreen001.png",
+        "Quality": 2,
+        "ProduceNeedTime": 480,
+        "Price": 60,
+        "SaleNeedTime": 220,
+        "Priority": 6,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            2,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "梅花扇",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood46.png",
+        "Quality": 2,
+        "ProduceNeedTime": 480,
+        "Price": 60,
+        "SaleNeedTime": 240,
+        "Priority": 7,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            4,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "赏梅图",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormTheaterDraw001.png",
+        "Quality": 2,
+        "ProduceNeedTime": 600,
+        "Price": 64,
+        "SaleNeedTime": 410,
+        "Priority": 8,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            2,
+            3
+        ],
+        "ConsumeIngredientCounts": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "喜鹊挂件",
+        "Icon": "Assets/Product/Texture/Image/UiCollection/Iconcollection021.png",
+        "Quality": 3,
+        "ProduceNeedTime": 600,
+        "Price": 66,
+        "SaleNeedTime": 410,
+        "Priority": 9,
+        "IsDefault": false,
+        "PerformId": 16,
+        "ConsumeIngredientIds": [
+            2,
+            4,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1,
+            1
+        ],
+        "UnlockItemIds": [
+            63607
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "Name": "金边灯笼",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormWulingLamp001.png",
+        "Quality": 3,
+        "ProduceNeedTime": 600,
+        "Price": 80,
+        "SaleNeedTime": 400,
+        "Priority": 10,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            4,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "九龙篆章",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood44.png",
+        "Quality": 3,
+        "ProduceNeedTime": 600,
+        "Price": 88,
+        "SaleNeedTime": 360,
+        "Priority": 11,
+        "IsDefault": false,
+        "PerformId": 17,
+        "ConsumeIngredientIds": [
+            4,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            1,
+            2
+        ],
+        "UnlockItemIds": [
+            63608
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "微型家具",
+        "Icon": "Assets/Product/Texture/Image/IconTools/It209Peacock002.png",
+        "Quality": 3,
+        "ProduceNeedTime": 1000,
+        "Price": 125,
+        "SaleNeedTime": 700,
+        "Priority": 12,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "七彩龙船",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormJiulongShipSushe001.png",
+        "Quality": 3,
+        "ProduceNeedTime": 1100,
+        "Price": 138,
+        "SaleNeedTime": 800,
+        "Priority": 13,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            1,
+            3
+        ],
+        "ConsumeIngredientCounts": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "Name": "双环白玉杯",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood55.png",
+        "Quality": 4,
+        "ProduceNeedTime": 880,
+        "Price": 142,
+        "SaleNeedTime": 660,
+        "Priority": 14,
+        "IsDefault": false,
+        "PerformId": 18,
+        "ConsumeIngredientIds": [
+            3
+        ],
+        "ConsumeIngredientCounts": [
+            4
+        ],
+        "UnlockItemIds": [
+            63609
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "Name": "冷骨瓷器",
+        "Icon": "Assets/Product/Texture/Image/UiCollection/Iconcollection098.png",
+        "Quality": 4,
+        "ProduceNeedTime": 1000,
+        "Price": 155,
+        "SaleNeedTime": 600,
+        "Priority": 15,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            3,
+            4
+        ],
+        "ConsumeIngredientCounts": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "龙泉青瓷",
+        "Icon": "Assets/Product/Texture/Image/UiRestaurant/UiRestaurantFood51.png",
+        "Quality": 4,
+        "ProduceNeedTime": 1080,
+        "Price": 172,
+        "SaleNeedTime": 720,
+        "Priority": 16,
+        "IsDefault": false,
+        "PerformId": 19,
+        "ConsumeIngredientIds": [
+            3,
+            4
+        ],
+        "ConsumeIngredientCounts": [
+            3,
+            2
+        ],
+        "UnlockItemIds": [
+            63610
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "九龙薰炉",
+        "Icon": "Assets/Product/Texture/Image/UiCollection/Iconcollection147.png",
+        "Quality": 4,
+        "ProduceNeedTime": 1080,
+        "Price": 240,
+        "SaleNeedTime": 800,
+        "Priority": 17,
+        "IsDefault": true,
+        "PerformId": 0,
+        "ConsumeIngredientIds": [
+            4,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 18,
+        "Name": "戏鼓",
+        "Icon": "Assets/Product/Texture/Image/IconTools/IconDormTheaterDrum001.png",
+        "Quality": 4,
+        "ProduceNeedTime": 1200,
+        "Price": 315,
+        "SaleNeedTime": 800,
+        "Priority": 18,
+        "IsDefault": false,
+        "PerformId": 20,
+        "ConsumeIngredientIds": [
+            1,
+            2,
+            5
+        ],
+        "ConsumeIngredientCounts": [
+            2,
+            3,
+            1
+        ],
+        "UnlockItemIds": [
+            63611
+        ],
+        "UnlockItemCounts": [
+            1
+        ]
+    }
+]

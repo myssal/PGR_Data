@@ -1,0 +1,290 @@
+[
+    {
+        "Id": 101,
+        "Name": "连接系统",
+        "Des": "从伊甸园连接到灰鸦小队基地的核心系统，是基地运转的核心",
+        "BelongType": 0,
+        "Type": 1,
+        "Level": 1,
+        "ConditionId": 0,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0
+    },
+    {
+        "Id": 102,
+        "Name": "连接系统",
+        "Des": "从伊甸园连接到灰鸦小队基地的核心系统，是基地运转的核心",
+        "BelongType": 0,
+        "Type": 1,
+        "Level": 2,
+        "ConditionId": 30401,
+        "CostId": 15,
+        "CostCount": 100,
+        "CostTime": 1200
+    },
+    {
+        "Id": 103,
+        "Name": "连接系统",
+        "Des": "从伊甸园连接到灰鸦小队基地的核心系统，是基地运转的核心",
+        "BelongType": 0,
+        "Type": 1,
+        "Level": 3,
+        "ConditionId": 30402,
+        "CostId": 15,
+        "CostCount": 100,
+        "CostTime": 480
+    },
+    {
+        "Id": 104,
+        "Name": "连接系统",
+        "Des": "从伊甸园连接到灰鸦小队基地的核心系统，是基地运转的核心",
+        "BelongType": 0,
+        "Type": 1,
+        "Level": 4,
+        "ConditionId": 30403,
+        "CostId": 15,
+        "CostCount": 100,
+        "CostTime": 840
+    },
+    {
+        "Id": 105,
+        "Name": "连接系统",
+        "Des": "从伊甸园连接到灰鸦小队基地的核心系统，是基地运转的核心",
+        "BelongType": 0,
+        "Type": 1,
+        "Level": 5,
+        "ConditionId": 30404,
+        "CostId": 15,
+        "CostCount": 100,
+        "CostTime": 1200
+    },
+    {
+        "Id": 201,
+        "Name": "粒子发生装置",
+        "Des": "产生基地运转所需的电子的设备。放置不管的情况也会自动产生粒子，但有工作人员照看的情况下，会获得更多。",
+        "BelongType": 0,
+        "Type": 2,
+        "Level": 1,
+        "ConditionId": 0,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            1200,
+            60,
+            2000,
+            0
+        ]
+    },
+    {
+        "Id": 202,
+        "Name": "粒子发生装置",
+        "Des": "产生基地运转所需的电子的设备。放置不管的情况也会自动产生粒子，但有工作人员照看的情况下，会获得更多。",
+        "BelongType": 0,
+        "Type": 2,
+        "Level": 2,
+        "ConditionId": 30101,
+        "CostId": 15,
+        "CostCount": 1000,
+        "CostTime": 7200,
+        "FunctionParam": [
+            1200,
+            60,
+            2000,
+            10
+        ]
+    },
+    {
+        "Id": 20001,
+        "Name": "发电槽位1",
+        "Des": "委托构造体管理粒子发生器的工作，获得更多粒子",
+        "BelongType": 2,
+        "Type": 201,
+        "Level": 1,
+        "ConditionId": 30201,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            3,
+            20,
+            20,
+            50
+        ]
+    },
+    {
+        "Id": 20002,
+        "Name": "发电槽位2",
+        "Des": "委托构造体管理粒子发生器的工作，获得更多粒子",
+        "BelongType": 2,
+        "Type": 202,
+        "Level": 1,
+        "ConditionId": 30202,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            3,
+            20,
+            20,
+            50
+        ]
+    },
+    {
+        "Id": 20003,
+        "Name": "发电槽位3",
+        "Des": "委托构造体管理粒子发生器的工作，获得更多粒子",
+        "BelongType": 2,
+        "Type": 203,
+        "Level": 1,
+        "ConditionId": 30203,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            3,
+            20,
+            20,
+            50
+        ]
+    },
+    {
+        "Id": 301,
+        "Name": "工厂",
+        "Des": "利用回收的废物再生产产品的工厂，需要工作人员照看",
+        "BelongType": 0,
+        "Type": 3,
+        "Level": 1,
+        "ConditionId": 0,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            0
+        ]
+    },
+    {
+        "Id": 302,
+        "Name": "工厂",
+        "Des": "利用回收的废物再生产产品的工厂，需要工作人员照看",
+        "BelongType": 0,
+        "Type": 3,
+        "Level": 2,
+        "ConditionId": 30101,
+        "CostId": 15,
+        "CostCount": 1000,
+        "CostTime": 300,
+        "FunctionParam": [
+            10
+        ]
+    },
+    {
+        "Id": 30001,
+        "Name": "工厂槽位1",
+        "Des": "工厂槽位1",
+        "BelongType": 3,
+        "Type": 301,
+        "Level": 1,
+        "ConditionId": 30301,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            1,
+            50
+        ]
+    },
+    {
+        "Id": 30002,
+        "Name": "工厂槽位2",
+        "Des": "工厂槽位2",
+        "BelongType": 3,
+        "Type": 302,
+        "Level": 1,
+        "ConditionId": 30302,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            1,
+            50
+        ]
+    },
+    {
+        "Id": 30003,
+        "Name": "工厂槽位3",
+        "Des": "工厂槽位3",
+        "BelongType": 3,
+        "Type": 303,
+        "Level": 1,
+        "ConditionId": 30303,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            1,
+            50
+        ]
+    },
+    {
+        "Id": 30004,
+        "Name": "工厂槽位4",
+        "Des": "工厂槽位4",
+        "BelongType": 3,
+        "Type": 304,
+        "Level": 1,
+        "ConditionId": 30301,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            16,
+            50
+        ]
+    },
+    {
+        "Id": 30005,
+        "Name": "工厂槽位5",
+        "Des": "工厂槽位5",
+        "BelongType": 3,
+        "Type": 305,
+        "Level": 1,
+        "ConditionId": 30302,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            16,
+            50
+        ]
+    },
+    {
+        "Id": 30006,
+        "Name": "工厂槽位6",
+        "Des": "工厂槽位6",
+        "BelongType": 3,
+        "Type": 306,
+        "Level": 1,
+        "ConditionId": 30303,
+        "CostId": 0,
+        "CostCount": 0,
+        "CostTime": 0,
+        "FunctionParam": [
+            300,
+            20,
+            16,
+            50
+        ]
+    }
+]

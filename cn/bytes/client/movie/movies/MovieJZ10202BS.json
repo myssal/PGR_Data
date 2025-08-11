@@ -1,0 +1,993 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            207
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory17.jpg"
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "在那之后经过了一段时间，我和指挥官都在空中花园的模拟训练场中进行着各种训练。"
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "虽然有想要踏上战场的意愿，但在队员不足的情况下空中花园是不可能准许的。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官A",
+            "喂，那边的不是首席吗？"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官B",
+            "【kuroname】啊，还真是悠闲呢。"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官A",
+            "谁让别人是首席呢，恐怕现在带着的那个构造体也不过是个幌子，回头就会直接晋升到指挥部了吧。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官B",
+            "就是所谓的内定吗，真让人羡慕，特意选个编制空缺的小队也是为了不用出击吧。"
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官没有对那种充满污蔑的说辞进行反驳，作为队员的我自然也不会冲动行事。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但这些全是因为指挥官选择了我才会造成这样的局面。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "每次听闻类似言论之后，我都会忍不住向指挥官提问，问当初为什么不选择其他小队。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官很是优秀，假若能到战场上的话大家肯定都会明白其真正的实力。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 200,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我甚至萌生出了自己让上面重新为指挥官匹配的请求。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但指挥官每次都会说同样的话，然后让我打消这种念头。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "现在这样就好。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官是这么说的，而在心中逐渐萌生出类似‘情感’的东西。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 300,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "感受到名为‘自私’情感的我，也没有再发出反驳的话。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "没错，在和指挥官的相处之中我还学会的感情。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但对于构造体来说感情是原本就具备的东西，因为我们曾经是人，我们懂得这些感情的意义。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "可正因为指挥官，我重新学会了这些感情，也就是大家经常说的——‘重启’。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "偶尔递过来的礼物让我学会了喜悦，我最初会觉得那是一种对任务和行动结果的肯定，没有去太注意。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但我逐渐明白到这并不是奖赏，报酬，而是一种给予。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 201,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官把自己的分予给我，而我因为得到这样的物品而感到雀跃。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这便是喜悦的感情，在那之后我总想要回报指挥官些什么，于是我又得到了回答。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "微笑就好。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这是……多么困难的命令。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "然后我学会了悲伤的感情，对于指挥官的诽谤日渐严重，我还是一如既往地克制住自己退避这些诽谤。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但无论如何都会传递到我的耳边，触动我的意识海。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这就是悲伤的感觉，不是因自己，而是因他人，因为指挥官，正因为站在指挥官的身边所以我才不愿意听见这些诽谤。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "所以一直都在挥刀，为了能在某天证明指挥官的实力。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "再然后我学会了指挥官思考的方式，注意了指挥官行动的方法。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "虽然一方是人，一方是构造体，但我总是希望自己能更接近指挥官，能成为指挥官手下最优秀的队员。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "——所以我也学会了愤怒。",
+            "000000ff",
+            1,
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png",
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory52.jpg"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1021001,
+            -400
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            500019,
+            400
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "构造体",
+            "露西亚，你会接受挑战的吧？",
+            3
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "这是……怎么回事？",
+            2
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "指挥官也有休息的日子，而在这样的日子中我被某支待匹配的小队叫到了训练室，他们准备了我和他们的武器，并且把指挥官当作了赌注。"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "输了的话就把指挥官交给你们，是这个意思吗？",
+            2
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "构造体",
+            "毕竟是我们的话马上就能投入战斗，和你在一起的话恐怕再过多少个月也……",
+            3
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "哈！",
+            2
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            10002001
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 100,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "构造体",
+            "什么！？",
+            3
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我毫不犹豫地向对方发起了攻击，战斗在双方握住武器的那刻就开始了。"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            101
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor3Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "构造体",
+            "你这家伙为了赢竟然不择手段吗！",
+            3
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 101,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在一个人倒下以后其余人立刻反应过来，他们开始构筑阵型，摆出态势。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 102,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1021001,
+            4
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "RImgBg1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "不择手段的是你们才对，多对一也配叫作挑战吗？",
+            2
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 103,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500019,
+            -400
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 104,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            500019,
+            400
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "构造体B",
+            "啧，这可是小队战斗的基本战术，我们一起上！",
+            2
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "构造体C",
+            "嗯！",
+            3
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            2
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "只是想要打败我，分出高低的话，我或许就不会迎战了，因为在这种地方获胜也不会有任何作用。"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "但假若是赌上指挥官的话那就另当别论。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我清楚地知道，自己讨厌指挥官离开自己的那一天，我讨厌别人把指挥官放在赌注的位置之上。"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "所以我拾起刚才被打败的构造体的刀，然后向对方阵型的那个空缺冲去。"
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 105,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1021001
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "来多少人都不会是我的对手，指挥官是……我的指挥官！",
+            2
+        ]
+    }
+]

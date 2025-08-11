@@ -1,0 +1,333 @@
+[
+    {
+        "Key": "BattlePoolMaxLen",
+        "Desc": "阵容池最大长度",
+        "Values": [
+            1000
+        ]
+    },
+    {
+        "Key": "PvpHealth",
+        "Desc": "PvP模式生命数量",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PvpTarget",
+        "Desc": "PvP模式目标奖杯数",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ReduceRankFailCount",
+        "Desc": "连续失败3次后匹配时调低对段位",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "BagItemGridMaxNum",
+        "Desc": "背包格子最大允许数量",
+        "Values": [
+            6
+        ]
+    },
+    {
+        "Key": "SkillGridMaxNum",
+        "Desc": "技能格子最大允许数量",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "RuneGridMinNum",
+        "Desc": "宝珠格子初始化数量（PVP用，PVE初始化数量在Theatre5PveChapter表控制）",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "RuneGridMaxNum",
+        "Desc": "宝珠格子最大允许数量上限",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ShopItemDiscountWeight",
+        "Desc": "商店折扣权重(随机出X个物品折扣的权重)",
+        "Values": [
+            5,
+            4,
+            1
+        ]
+    },
+    {
+        "Key": "PvpShopGridsTotalCount",
+        "Desc": "商店格子总数",
+        "Values": [
+            6
+        ]
+    },
+    {
+        "Key": "WDraw",
+        "Desc": "战斗平局W系数（万分比）",
+        "Values": [
+            5000
+        ]
+    },
+    {
+        "Key": "WLose",
+        "Desc": "战斗失败W系数（万分比）",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "WWin",
+        "Desc": "战斗胜利W系数（万分比）",
+        "Values": [
+            10000
+        ]
+    },
+    {
+        "Key": "InitRating",
+        "Desc": "初始化天梯分",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "RobotHeadPortraits",
+        "Desc": "机器人可选头像列表",
+        "Values": [
+            9000001
+        ]
+    },
+    {
+        "Key": "RobotHeadHeadFrames",
+        "Desc": "机器人可选头像框列表",
+        "Values": [
+            9090008
+        ]
+    },
+    {
+        "Key": "TeachingPveStoryLineId",
+        "Desc": "教学故事线id",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "TeachingPveCharacterId",
+        "Desc": "教学故事线角色id",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "ChapterCoin",
+        "Desc": "章节章节币",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "TempItemBagGridMaxNum",
+        "Desc": "临时背包格子最大允许数量",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "PvpGridUnlockDiscount",
+        "Desc": "pvp背包回合数折扣（pve用的配置在PveChapter表中）",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "PveHealth",
+        "Desc": "Pve模式生命数量",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PveBattleCheckOpen",
+        "Desc": "是否开放战斗校验(0关闭)",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "PveBattleTimeLimit",
+        "Desc": "pve战斗时长限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveMyTotalDamageLimit",
+        "Desc": "pve我方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveMyTotalCureLimit",
+        "Desc": "pve我方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveEnemyTotalDamageLimit",
+        "Desc": "pve敌方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveEnemyTotalCureLimit",
+        "Desc": "pve战斗敌方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpBattleTimeLimit",
+        "Desc": "pvp战斗时长限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpMyTotalDamageLimit",
+        "Desc": "pvp我方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpMyTotalCureLimit",
+        "Desc": "pvp我方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpEnemyTotalDamageLimit",
+        "Desc": "pvp敌方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpEnemyTotalCureLimit",
+        "Desc": "pvp战斗敌方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveChatWriteTime",
+        "Desc": "pve对话聊天速度(毫秒)",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "BattleCheckFailTimesLimit",
+        "Desc": "战斗校验失败次数限制，达到限制次数将直接结算处理",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "DeduceTipsTime",
+        "Desc": "推演tips时间，1是普通时间，2时回答正确时间",
+        "Values": [
+            1000,
+            2000
+        ]
+    },
+    {
+        "Key": "ClueBoardScaleLimitPoint",
+        "Desc": "线索板缩放变化的临界点(缩放值*1000)",
+        "Values": [
+            650
+        ]
+    },
+    {
+        "Key": "MainClueBoardRect",
+        "Desc": "核心线索板的外扩宽高",
+        "Values": [
+            4800,
+            3500
+        ]
+    },
+    {
+        "Key": "ClueBoardFocusTime",
+        "Desc": "点击线索聚焦时间",
+        "Values": [
+            200
+        ]
+    },
+    {
+        "Key": "Theatre5ShopCurrencyId",
+        "Desc": "兑换商店id",
+        "Values": [
+            97054
+        ]
+    },
+    {
+        "Key": "KLoseMin",
+        "Desc": "最小重开惩罚K值",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "PveTimeId",
+        "Desc": "PVE模式开启时间",
+        "Values": [
+            34
+        ]
+    },
+    {
+        "Key": "PveVersion",
+        "Desc": "PVE模式版本号",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "SkipSotryPage",
+        "Desc": "图鉴跳转页签",
+        "Values": [
+            14
+        ]
+    },
+    {
+        "Key": "MainVideoId",
+        "Desc": "主界面videoId",
+        "Values": [
+            20004
+        ]
+    },
+    {
+        "Key": "ShopShowRewards",
+        "Desc": "两个一组，第一个是id，第二是数量",
+        "Values": [
+            50005,
+            1,
+            50006,
+            1,
+            50007,
+            1
+        ]
+    }
+]

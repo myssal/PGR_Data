@@ -1,0 +1,1243 @@
+[
+    {
+        "Id": 1,
+        "Name": "拾叶载梦",
+        "ManagerName": "RpgTowerManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner21.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10321,
+        "SkipId": 11736,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "RPG玩法",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_RPGTOWER_TASK_RED",
+            "CONDITION_RPGTOWER_DAILYREWARD_RED"
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "巴别塔·黯潮蚀光",
+        "ManagerName": "FubenBabelTowerManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner197.png",
+        "TimeId": 39801,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10307,
+        "SkipId": 20015,
+        "Order": 6,
+        "RedParam": 0,
+        "Note": "巴别塔",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD"
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "鹊巧祈星",
+        "ManagerName": "PokerGuessingManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner155.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10333,
+        "SkipId": 11761,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "七夕翻牌",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_POKER_GUESSING_RED"
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "拟战场域",
+        "ManagerName": "FubenRepeatChallengeManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner146.png",
+        "TimeId": 28,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10309,
+        "SkipId": 20017,
+        "Order": 1,
+        "RedParam": 0,
+        "Note": "复刷关",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "溟渊寂息",
+        "ManagerName": "FubenActivityBossSingleManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner198.png",
+        "TimeId": 39901,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10304,
+        "SkipId": 11724,
+        "Order": 5,
+        "RedParam": 0,
+        "Note": "超难关",
+        "IsAgency": 0,
+        "IsRecord": true,
+        "RedPointConditions": [
+            "CONDITION_ACTIVITYBRIE_BOSSSINGLE"
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "独域特攻",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner60.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10422,
+        "SkipId": 82070,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "独域特攻",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_PIVOTCOMBAT_ALL_RED_POINT"
+        ]
+    },
+    {
+        "Id": 8,
+        "Name": "寰维逐星",
+        "ManagerName": "XRiftAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner163.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10437,
+        "SkipId": 88003,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "深蓝2.0",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_RIFT_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "联机玩法",
+        "ManagerName": "DlcHuntManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBannerDlcHunt.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 0,
+        "SkipId": 87001,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "狩猎DLC",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 10,
+        "Name": "喵星淘金",
+        "ManagerName": "XGoldenMinerAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner165.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10426,
+        "SkipId": 20177,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "黄金矿工",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_GOLDEN_MINER_REWARD"
+        ]
+    },
+    {
+        "Id": 11,
+        "Name": "分光双星",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner68.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10343,
+        "SkipId": 82001,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "双人成行",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_COUPLE_COMBAT_TASK_REWARD"
+        ]
+    },
+    {
+        "Id": 12,
+        "Name": "苍蓝无尽夏",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner86.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 0,
+        "SkipId": 11773,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_FASHION_STORY_HAVE_STAGE"
+        ]
+    },
+    {
+        "Id": 13,
+        "Name": "调色板战争",
+        "ManagerName": "ColorTableManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner94.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 0,
+        "SkipId": 0,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "调色板战争",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_COLORTABLE_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 14,
+        "Name": "光辉同行",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner92.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10439,
+        "SkipId": 89001,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "小辉辉活动",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 15,
+        "Name": "意识营救战·绘历",
+        "ManagerName": "MemorySaveManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner91.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10351,
+        "SkipId": 88005,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "意识营救战",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MEMORYSAVE_ALL_RED_POINT"
+        ]
+    },
+    {
+        "Id": 16,
+        "Name": "溯光者启颂",
+        "ManagerName": "FubenNewCharActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner193.png",
+        "TimeId": 39705,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10325,
+        "SkipId": 20235,
+        "Order": 2,
+        "RedParam": 0,
+        "Note": "角色试玩关",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ]
+    },
+    {
+        "Id": 17,
+        "Name": "超限乱斗-缚囚死战",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner99.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10350,
+        "SkipId": 20104,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "超限乱斗",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 18,
+        "Name": "露记工房",
+        "ManagerName": "XRestaurantAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner142.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10443,
+        "SkipId": 89008,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "模拟餐厅",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_RESTAURANT_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 19,
+        "Name": "本我回廊·诺安",
+        "ManagerName": "CharacterTowerManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner124.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10436,
+        "SkipId": 11795,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "本我回廊",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 20,
+        "Name": "异构阵线",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner98.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10445,
+        "SkipId": 89011,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "异构阵线",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MAVERICK2"
+        ]
+    },
+    {
+        "Id": 21,
+        "Name": "白梦游弋·复刻",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner102.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050114,
+        "FunctionNameId": 403,
+        "SkipId": 20260,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 22,
+        "Name": "觅迹寻踪",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner65.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10345,
+        "SkipId": 20128,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "推箱子",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_RPG_MAKER_GAME_RED"
+        ]
+    },
+    {
+        "Id": 23,
+        "Name": "奔行日夜",
+        "ManagerName": "XTwoSideTowerAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner103.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10431,
+        "SkipId": 85013,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "正逆塔",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_TWO_SIDE_TOWER_TASK"
+        ]
+    },
+    {
+        "Id": 24,
+        "Name": "云雀歌未眠",
+        "ManagerName": "MazeManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner104.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10445,
+        "SkipId": 89013,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "情人节迷宫",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MAZE"
+        ]
+    },
+    {
+        "Id": 25,
+        "Name": "行星环游记",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner108.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10446,
+        "SkipId": 89015,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "行星环游记",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_PLANET_RUNNING_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "拟聚纷争",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner110.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10447,
+        "SkipId": 89016,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "BVB",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MONSTER_COMBAT_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "界限构解",
+        "ManagerName": "Reform2ndManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner115.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10337,
+        "SkipId": 81104,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "界限构解",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_REFORM_All_RED_POINT"
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "全境特遣·协阵绎演",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner149.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10349,
+        "SkipId": 80176,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "全境特遣",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "XRedPointConditionAreaWarActivity"
+        ]
+    },
+    {
+        "Id": 29,
+        "Name": "远歌深潜",
+        "ManagerName": "AreaWarManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner116.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10339,
+        "SkipId": 20083,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "杀戮无双",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "XRedPointConditionKillZoneActivity"
+        ]
+    },
+    {
+        "Id": 30,
+        "Name": "御电携鸣·复刻",
+        "ManagerName": "XCerberusGame",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner131.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050135,
+        "FunctionNameId": 10448,
+        "SkipId": 90034,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "三头犬小队",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CERBERUSE_GAME_CHECK_BTN_FASHION_STORY_RED",
+            "CERBERUSE_GAME_CHECK_BTN_FASHION_CHALLENGE_RED"
+        ]
+    },
+    {
+        "Id": 31,
+        "Name": "噬潮逃生:时隙之潮",
+        "ManagerName": "EscapeManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner58.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10423,
+        "SkipId": 82080,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "大逃杀",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "XRedPointConditionEscapeTask"
+        ]
+    },
+    {
+        "Id": 32,
+        "Name": "盛夏洄影纪",
+        "ManagerName": "FubenSpecialTrainManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner80.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10316,
+        "SkipId": 89025,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "联机休闲",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_SPECIALTRAIN_RED"
+        ]
+    },
+    {
+        "Id": 33,
+        "Name": "众志行征",
+        "ManagerName": "GuildWarManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner119.png",
+        "TimeId": 39301,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10425,
+        "SkipId": 85016,
+        "Order": 7,
+        "RedParam": 0,
+        "Note": "公会战",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_GUILDWAR_Main"
+        ]
+    },
+    {
+        "Id": 34,
+        "Name": "步步荆棋",
+        "ManagerName": "XBlackRockChessAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBannerFubenActivityBanner171.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10455,
+        "SkipId": 89028,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "步步荆棋",
+        "IsAgency": 1,
+        "IsRecord": true,
+        "RedPointConditions": [
+            "CONDITION_BLACK_ROCK_CHESS_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 35,
+        "Name": "清夏漫迹",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner195.png",
+        "TimeId": 39110,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10341,
+        "SkipId": 89095,
+        "Order": 4,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_FASHION_STORY_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 36,
+        "Name": "镜焰迷城",
+        "ManagerName": "XBlackRockStageAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner127.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10443,
+        "SkipId": 89030,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "黑岩联动剧情",
+        "IsAgency": 1,
+        "IsRecord": false
+    },
+    {
+        "Id": 37,
+        "Name": "舞动绮音",
+        "ManagerName": "XTaikoMasterAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner69.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10430,
+        "SkipId": 84010,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "战双音游",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_ACTIVITY_TAIKO_MASTER_TASK"
+        ]
+    },
+    {
+        "Id": 38,
+        "Name": "另世构想·海沙奇旅",
+        "ManagerName": "XRogueSimAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner132.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10457,
+        "SkipId": 89044,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "肉鸽模拟经营",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_ROGUESIM_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 39,
+        "Name": "魔方弹跳乐",
+        "ManagerName": "XDlcCasualAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner73.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10458,
+        "SkipId": 89045,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "DLC魔方",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_DLC_CASUAL_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 40,
+        "Name": "蒲牢修仙记",
+        "ManagerName": "XKotodamaActivityAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner145.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10459,
+        "SkipId": 89050,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "蒲牢修仙记",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_KOTODAMA_MAIN"
+        ]
+    },
+    {
+        "Id": 41,
+        "Name": "鲨鲨破坏王",
+        "ManagerName": "XFangKuaiAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner153.png",
+        "TimeId": 39100,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10461,
+        "SkipId": 89049,
+        "Order": 9,
+        "RedParam": 0,
+        "Note": "消灭方块",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_FANGKUAI_MAIN"
+        ]
+    },
+    {
+        "Id": 42,
+        "Name": "新岁游园",
+        "ManagerName": "XTempleAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner137.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10463,
+        "SkipId": 89052,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "布置庙会",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_TEMPLE_MAIN"
+        ]
+    },
+    {
+        "Id": 43,
+        "Name": "联界枢行",
+        "ManagerName": "XLinkCraftActivityAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner140.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10465,
+        "SkipId": 89058,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "联界枢行",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_LINKCRAFT_MAIN"
+        ]
+    },
+    {
+        "Id": 44,
+        "Name": "拟像试炼",
+        "ManagerName": "XBossInshotAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner178.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10467,
+        "SkipId": 89061,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "Boss跃升",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_BOSS_INSHOT"
+        ]
+    },
+    {
+        "Id": 45,
+        "Name": "卧猫藏鼠",
+        "ManagerName": "XDlcMultiMouseHunterAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner143.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10464,
+        "SkipId": 89057,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "DLC躲猫猫",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_DLC_MOUSE_HUNTER_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 46,
+        "Name": "缘绘敦煌",
+        "ManagerName": "XDunhuangAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner144.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10466,
+        "SkipId": 89060,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "缘绘敦煌",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_DUNHUANG"
+        ]
+    },
+    {
+        "Id": 47,
+        "Name": "衍变测算",
+        "ManagerName": "XMechanismActivityAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner147.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10469,
+        "SkipId": 89063,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "机制玩法",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MECHANISM_MAIN"
+        ]
+    },
+    {
+        "Id": 48,
+        "Name": "安梦小憩",
+        "ManagerName": "XLineArithmeticAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner148.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10468,
+        "SkipId": 89062,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "万事连线",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_LINE_ARITHMETIC"
+        ]
+    },
+    {
+        "Id": 49,
+        "Name": "花见游园",
+        "ManagerName": "XTemple2Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner162.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10472,
+        "SkipId": 89074,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "游园庙会",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_TEMPLE2"
+        ]
+    },
+    {
+        "Id": 50,
+        "Name": "全息回溯",
+        "ManagerName": "XSimulateTrainAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner158.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10474,
+        "SkipId": 89071,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "全息回溯",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_SIMULATE_TRAIN"
+        ]
+    },
+    {
+        "Id": 51,
+        "Name": "偷闲专递",
+        "ManagerName": "XBagOrganizeActivityAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner184.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10473,
+        "SkipId": 90020,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "背包整理",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_BAGORGANIZE_ANY"
+        ]
+    },
+    {
+        "Id": 52,
+        "Name": "擐甲执械",
+        "ManagerName": "XSucceedBossAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner161.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10471,
+        "SkipId": 89073,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "新高难boss",
+        "IsAgency": 1,
+        "IsRecord": true,
+        "RedPointConditions": [
+            "CONDITION_SUCCEED_BOSS"
+        ]
+    },
+    {
+        "Id": 53,
+        "Name": "烬锋破浪",
+        "ManagerName": "XGame2048Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner164.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10475,
+        "SkipId": 89075,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "2048休闲",
+        "IsAgency": 1,
+        "IsRecord": true,
+        "RedPointConditions": [
+            "CONDITION_GAME2048_MAIN"
+        ]
+    },
+    {
+        "Id": 54,
+        "Name": "鸣神叹妙·复刻",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner154.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050112,
+        "FunctionNameId": 10306,
+        "SkipId": 20256,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 55,
+        "Name": "溺梦游歌·复刻",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner136.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050113,
+        "FunctionNameId": 10306,
+        "SkipId": 20258,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 56,
+        "Name": "拟论区行动",
+        "ManagerName": "XFpsGameAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBannerFubenActivityBanner170.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10477,
+        "SkipId": 89079,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "首席FPS",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_FPSGAME_MAIN"
+        ]
+    },
+    {
+        "Id": 57,
+        "Name": "战术研析汇编",
+        "ManagerName": "XStageMemoryAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBannerStageMemory.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10480,
+        "SkipId": 90010,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "策划精选关",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_STAGE_MEMORY"
+        ]
+    },
+    {
+        "Id": 58,
+        "Name": "焚朽魇月·复刻",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner170.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050134,
+        "FunctionNameId": 10306,
+        "SkipId": 90030,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 59,
+        "Name": "异构阵线·绝境先锋",
+        "ManagerName": "XMaverick3Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner173.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10483,
+        "SkipId": 90011,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "孤胆枪手",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_MAVERICK3_MAIN"
+        ]
+    },
+    {
+        "Id": 60,
+        "Name": "星罗棋布",
+        "ManagerName": "XLuckyTenantAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner172.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10481,
+        "SkipId": 90014,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "幸运租客",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_LUCKY_TENANT"
+        ]
+    },
+    {
+        "Id": 61,
+        "Name": "寰格牌律",
+        "ManagerName": "XPcgAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner179.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10485,
+        "SkipId": 90016,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "战双打牌",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_PCG_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 62,
+        "Name": "恋谱绘奏",
+        "ManagerName": "XPokerGuessing2Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner176.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10486,
+        "SkipId": 90018,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "情人节翻牌2",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_POKER_GUESSING2"
+        ]
+    },
+    {
+        "Id": 63,
+        "Name": "恋屿千年歌",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner180.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10432,
+        "SkipId": 20245,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 64,
+        "Name": "永封裂隙",
+        "ManagerName": "XScoreTowerAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner183.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10488,
+        "SkipId": 89091,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "永封裂隙",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_SCORETOWER_MAIN"
+        ]
+    },
+    {
+        "Id": 65,
+        "Name": "淬身斩烬",
+        "ManagerName": "XConnectingLineAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner189.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10456,
+        "SkipId": 90023,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "薇拉连线",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_CONNECTING_LINE"
+        ]
+    },
+    {
+        "Id": 66,
+        "Name": "幻寂鸣泣曲",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner188.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10306,
+        "SkipId": 90024,
+        "Order": 0,
+        "RedParam": 15010306,
+        "Note": "鬼泣联动剧情",
+        "IsAgency": 0,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_ACTIVITY_FESTIVAL_DMC"
+        ]
+    },
+    {
+        "Id": 67,
+        "Name": "算力吞吞怪",
+        "ManagerName": "XPacMan2Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner192.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10490,
+        "SkipId": 90025,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "吃豆人玩法",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_PACMAN2_NEW_STAGE"
+        ]
+    },
+    {
+        "Id": 68,
+        "Name": "心映繁景·复刻",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner121.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050136,
+        "FunctionNameId": 10306,
+        "SkipId": 90031,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 69,
+        "Name": "憩梦穹森·复刻",
+        "ManagerName": "FubenFestivalActivityManager",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner83.png",
+        "TimeId": 0,
+        "ShowConditionId": 1050137,
+        "FunctionNameId": 10306,
+        "SkipId": 90032,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 70,
+        "Name": "梦栖宵暮",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner196.png",
+        "TimeId": 39200,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10432,
+        "SkipId": 90036,
+        "Order": 3,
+        "RedParam": 0,
+        "Note": "涂装剧情",
+        "IsAgency": 0,
+        "IsRecord": false
+    },
+    {
+        "Id": 71,
+        "Name": "疾速追缉",
+        "ManagerName": "XBountyChallengeAgency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner194.png",
+        "TimeId": 39601,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10492,
+        "SkipId": 89093,
+        "Order": 8,
+        "RedParam": 0,
+        "Note": "悬赏挑战",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_BOUNTY_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 72,
+        "Name": "mini改造",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner158.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10353,
+        "SkipId": 89094,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "mini改造",
+        "IsAgency": 1,
+        "IsRecord": false,
+        "RedPointConditions": [
+            "CONDITION_FPSGAME_MAIN"
+        ]
+    },
+    {
+        "Id": 73,
+        "Name": "连线2",
+        "ManagerName": "XLineArithmetic2Agency",
+        "Icon": "Assets/Product/Texture/Image/UiFubenActivityBanner/FubenActivityBanner148.png",
+        "TimeId": 0,
+        "ShowConditionId": 0,
+        "FunctionNameId": 10468,
+        "SkipId": 89062,
+        "Order": 0,
+        "RedParam": 0,
+        "Note": "连线2",
+        "IsAgency": 1,
+        "IsRecord": false
+    }
+]

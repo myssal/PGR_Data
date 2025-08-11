@@ -1,0 +1,1075 @@
+[
+    {
+        "Id": 1,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第一章剧情",
+        "Name": "第一章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "StoryPointTypeParams": [
+            30110277
+        ]
+    },
+    {
+        "Id": 2,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "角色教学关",
+        "Name": "角色教学关",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            1
+        ],
+        "StoryPointTypeParams": [
+            30110200,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "角色教学"
+        ],
+        "BuffDescs": [
+            "重新熟悉三头犬的战斗操作"
+        ]
+    },
+    {
+        "Id": 3,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "第二章剧情+精切教学",
+        "Name": "第二章剧情+精切教学",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            2
+        ],
+        "StoryPointTypeParams": [
+            30110202,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "连携教学"
+        ],
+        "BuffDescs": [
+            "核心被动、大招后，可以召唤三头犬小队成员出战"
+        ]
+    },
+    {
+        "Id": 4,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第三章剧情",
+        "Name": "第三章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            3
+        ],
+        "StoryPointTypeParams": [
+            30110278
+        ]
+    },
+    {
+        "Id": 5,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "常规关",
+        "Name": "常规关",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            4
+        ],
+        "StoryPointTypeParams": [
+            30110203,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png"
+        ],
+        "BuffTitle": [
+            "常规作战"
+        ],
+        "BuffDescs": [
+            "击杀所有怪物"
+        ]
+    },
+    {
+        "Id": 6,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "第四章剧情+常规",
+        "Name": "第四章剧情+常规",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            5
+        ],
+        "StoryPointTypeParams": [
+            30110204,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png"
+        ],
+        "BuffTitle": [
+            "刚体Ⅱ"
+        ],
+        "BuffDescs": [
+            "怪物霸体值提升，存在霸体时降低50%受到的伤害，连携切换薇拉可快速击破霸体"
+        ]
+    },
+    {
+        "Id": 7,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第五章剧情",
+        "Name": "第五章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            6
+        ],
+        "StoryPointTypeParams": [
+            30110279
+        ]
+    },
+    {
+        "Id": 8,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "第六章剧情+特殊",
+        "Name": "第六章剧情+特殊",
+        "GridShowType": 2,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            7
+        ],
+        "StoryPointTypeParams": [
+            30110285,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png",
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_024.png"
+        ],
+        "BuffTitle": [
+            "异合虫巢",
+            "亡者复活"
+        ],
+        "BuffDescs": [
+            "击破三个异合虫巢",
+            "异合虫巢将持续出生小怪，注意优先击杀"
+        ]
+    },
+    {
+        "Id": 9,
+        "StoryPointType": 3,
+        "OpenCondition": 861055,
+        "Title": "某人机制",
+        "Name": "某人机制",
+        "GridShowType": 1,
+        "ExtraRobotId": 9183,
+        "PrePointIds": [
+            8
+        ],
+        "StoryPointTypeParams": [
+            30110205,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10032.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
+        ],
+        "BuffTitle": [
+            "守护纸壳",
+            "双人成行"
+        ],
+        "BuffDescs": [
+            "怪物首次死亡时，每秒回复5%护盾，持续8秒，连携切换诺克提快速击破",
+            "本关只能使用诺克提、21号"
+        ]
+    },
+    {
+        "Id": 10,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "另一个人机制",
+        "Name": "另一个人机制",
+        "GridShowType": 1,
+        "ExtraRobotId": 9183,
+        "PrePointIds": [
+            9
+        ],
+        "StoryPointTypeParams": [
+            30110206,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
+        ],
+        "BuffTitle": [
+            "毒雾",
+            "双人成行"
+        ],
+        "BuffDescs": [
+            "每5秒对所有角色叠加剧毒，每层剧毒每秒扣除1%最大生命，连携切换21号清除剧毒",
+            "本关只能使用诺克提、21号"
+        ]
+    },
+    {
+        "Id": 11,
+        "StoryPointType": 2,
+        "OpenCondition": 0,
+        "Title": "双人通讯",
+        "Name": "双人通讯",
+        "GridShowType": 5,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            10
+        ],
+        "StoryPointTypeParams": [
+            1001
+        ]
+    },
+    {
+        "Id": 12,
+        "StoryPointType": 3,
+        "OpenCondition": 861056,
+        "Title": "熟悉角色",
+        "Name": "熟悉角色",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            8
+        ],
+        "StoryPointTypeParams": [
+            30110207,
+            1131003
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png"
+        ],
+        "BuffTitle": [
+            "独自执行"
+        ],
+        "BuffDescs": [
+            "本关只能使用薇拉进行挑战"
+        ]
+    },
+    {
+        "Id": 13,
+        "StoryPointType": 2,
+        "OpenCondition": 0,
+        "Title": "单人通讯",
+        "Name": "单人通讯",
+        "GridShowType": 5,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            12
+        ],
+        "StoryPointTypeParams": [
+            1002
+        ]
+    },
+    {
+        "Id": 14,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第七章剧情",
+        "Name": "第七章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            9,
+            12
+        ],
+        "StoryPointTypeParams": [
+            30110280
+        ]
+    },
+    {
+        "Id": 15,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "大招开启",
+        "Name": "大招开启",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            14
+        ],
+        "StoryPointTypeParams": [
+            30110208,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "连携教学Ⅱ"
+        ],
+        "BuffDescs": [
+            "持续连携可提升大招能量，点击释放连携大招！"
+        ]
+    },
+    {
+        "Id": 16,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "第八章剧情+大招实战",
+        "Name": "第八章剧情+大招实战",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            15
+        ],
+        "StoryPointTypeParams": [
+            30110209,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_011.png"
+        ],
+        "BuffTitle": [
+            "常规作战"
+        ],
+        "BuffDescs": [
+            "击杀所有怪物"
+        ]
+    },
+    {
+        "Id": 17,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第九章剧情",
+        "Name": "第九章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            16
+        ],
+        "StoryPointTypeParams": [
+            30110281
+        ]
+    },
+    {
+        "Id": 18,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "第十章剧情+特殊",
+        "Name": "第十章剧情+特殊",
+        "GridShowType": 2,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            17
+        ],
+        "StoryPointTypeParams": [
+            30110286,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "认知措糅体",
+            "怪物潮"
+        ],
+        "BuffDescs": [
+            "怪物融合成措揉体，集中火力击杀！",
+            "源源不断的怪物如潮水涌出"
+        ]
+    },
+    {
+        "Id": 19,
+        "StoryPointType": 3,
+        "OpenCondition": 861060,
+        "Title": "某人机制",
+        "Name": "某人机制",
+        "GridShowType": 1,
+        "ExtraRobotId": 9185,
+        "PrePointIds": [
+            18
+        ],
+        "StoryPointTypeParams": [
+            30110252,
+            1131003,
+            1221003
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12112.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
+        ],
+        "BuffTitle": [
+            "重伤",
+            "双人成行"
+        ],
+        "BuffDescs": [
+            "每秒扣除角色15%HP，持续5秒，连携切换21号回复全队血量",
+            "本关只能使用薇拉、21号"
+        ]
+    },
+    {
+        "Id": 20,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "另一个人机制",
+        "Name": "另一个人机制",
+        "GridShowType": 1,
+        "ExtraRobotId": 9185,
+        "PrePointIds": [
+            19
+        ],
+        "StoryPointTypeParams": [
+            30110253,
+            1131003,
+            1221003
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff03.png"
+        ],
+        "BuffTitle": [
+            "刚体Ⅱ",
+            "双人成行"
+        ],
+        "BuffDescs": [
+            "怪物霸体值提升，存在霸体时降低50%受到的伤害，连携切换薇拉可快速击破霸体",
+            "本关只能使用薇拉、21号"
+        ]
+    },
+    {
+        "Id": 21,
+        "StoryPointType": 2,
+        "OpenCondition": 0,
+        "Title": "双人通讯",
+        "Name": "双人通讯",
+        "GridShowType": 5,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            20
+        ],
+        "StoryPointTypeParams": [
+            1003
+        ]
+    },
+    {
+        "Id": 22,
+        "StoryPointType": 3,
+        "OpenCondition": 861061,
+        "Title": "熟悉角色",
+        "Name": "熟悉角色",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            18
+        ],
+        "StoryPointTypeParams": [
+            30110256,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png"
+        ],
+        "BuffTitle": [
+            "独自执行"
+        ],
+        "BuffDescs": [
+            "本关只能使用诺克提进行挑战"
+        ]
+    },
+    {
+        "Id": 23,
+        "StoryPointType": 2,
+        "OpenCondition": 0,
+        "Title": "单人通讯",
+        "Name": "单人通讯",
+        "GridShowType": 5,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            22
+        ],
+        "StoryPointTypeParams": [
+            1004
+        ]
+    },
+    {
+        "Id": 24,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "第十一章剧情",
+        "Name": "第十一章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            19,
+            22
+        ],
+        "StoryPointTypeParams": [
+            30110282
+        ]
+    },
+    {
+        "Id": 25,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "三人特殊",
+        "Name": "三人特殊",
+        "GridShowType": 2,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            24
+        ],
+        "StoryPointTypeParams": [
+            30110287,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "怪物潮Ⅱ"
+        ],
+        "BuffDescs": [
+            "源源不断的怪物如潮水涌出"
+        ]
+    },
+    {
+        "Id": 26,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "三人常规",
+        "Name": "三人常规",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            25
+        ],
+        "StoryPointTypeParams": [
+            30110255,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff06.png"
+        ],
+        "BuffTitle": [
+            "毒雾",
+            "引导伤害"
+        ],
+        "BuffDescs": [
+            "每5秒对所有角色叠加剧毒，每层剧毒每秒扣除1%最大生命，连携切换21号清除剧毒",
+            "回复所有霸体值并释放全屏伤害技能，连携切换薇拉可快速击破霸体"
+        ]
+    },
+    {
+        "Id": 27,
+        "StoryPointType": 2,
+        "OpenCondition": 0,
+        "Title": "三人通讯",
+        "Name": "三人通讯",
+        "GridShowType": 5,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            26
+        ],
+        "StoryPointTypeParams": [
+            1005
+        ]
+    },
+    {
+        "Id": 28,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "十三章剧情+BOSS",
+        "Name": "十三章剧情+BOSS",
+        "GridShowType": 3,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            25
+        ],
+        "StoryPointTypeParams": [
+            30110288,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "不明废弃机械体",
+            "护卫群"
+        ],
+        "BuffDescs": [
+            "关底首领登场，谨慎应对",
+            "有4名守卫保护首领，请快速击杀"
+        ]
+    },
+    {
+        "Id": 29,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "十四章剧情",
+        "Name": "十四章剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            28
+        ],
+        "StoryPointTypeParams": [
+            30110283
+        ]
+    },
+    {
+        "Id": 30,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "困难1",
+        "Name": "困难1",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "StoryPointTypeParams": [
+            30110289,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_024.png"
+        ],
+        "BuffTitle": [
+            "困难关卡",
+            "亡者复活"
+        ],
+        "BuffDescs": [
+            "怪物获得大幅加强，小心应对！",
+            "异合虫巢将持续出生小怪，注意优先击杀"
+        ]
+    },
+    {
+        "Id": 31,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "困难2",
+        "Name": "困难2",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            30
+        ],
+        "StoryPointTypeParams": [
+            30110290,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png"
+        ],
+        "BuffTitle": [
+            "困难关卡",
+            "认知措糅体"
+        ],
+        "BuffDescs": [
+            "怪物获得大幅加强，小心应对！",
+            "怪物融合成措揉体，集中火力击杀！"
+        ]
+    },
+    {
+        "Id": 32,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "困难3",
+        "Name": "困难3",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            31
+        ],
+        "StoryPointTypeParams": [
+            30110291,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "困难关卡",
+            "怪物潮Ⅱ"
+        ],
+        "BuffDescs": [
+            "怪物获得大幅加强，小心应对！",
+            "源源不断的怪物如潮水涌出"
+        ]
+    },
+    {
+        "Id": 33,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "困难4",
+        "Name": "困难4",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            32
+        ],
+        "StoryPointTypeParams": [
+            30110292,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11047.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png"
+        ],
+        "BuffTitle": [
+            "困难关卡",
+            "不明废弃机械体"
+        ],
+        "BuffDescs": [
+            "怪物获得大幅加强，小心应对！",
+            "关底首领登场，谨慎应对"
+        ]
+    },
+    {
+        "Id": 40,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-1-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "StoryPointTypeParams": [
+            30110221
+        ]
+    },
+    {
+        "Id": 41,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "完成薇拉教学",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            40
+        ],
+        "StoryPointTypeParams": [
+            30110215,
+            1131003
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "角色教学"
+        ],
+        "BuffDescs": [
+            "重新熟悉薇拉的战斗操作"
+        ]
+    },
+    {
+        "Id": 42,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "完成21号教学",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            40
+        ],
+        "StoryPointTypeParams": [
+            30110216,
+            1221003
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "角色教学"
+        ],
+        "BuffDescs": [
+            "重新熟悉21号的战斗操作"
+        ]
+    },
+    {
+        "Id": 43,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "完成诺克提教学",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            40
+        ],
+        "StoryPointTypeParams": [
+            30110217,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "角色教学"
+        ],
+        "BuffDescs": [
+            "重新熟悉诺克提的战斗操作"
+        ]
+    },
+    {
+        "Id": 44,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "完成连携切换教学（本活动所有试玩角色，均为SS品质并携带专武）",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            41,
+            42,
+            43
+        ],
+        "StoryPointTypeParams": [
+            30110218,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png"
+        ],
+        "BuffTitle": [
+            "连携教学"
+        ],
+        "BuffDescs": [
+            "核心被动、大招后，可以召唤三头犬小队成员出战"
+        ]
+    },
+    {
+        "Id": 45,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-2-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            44
+        ],
+        "StoryPointTypeParams": [
+            30110222
+        ]
+    },
+    {
+        "Id": 46,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "打败帮派成员",
+        "GridShowType": 3,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            45
+        ],
+        "StoryPointTypeParams": [
+            30110293,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "剧情关1",
+            "词缀标题"
+        ],
+        "BuffDescs": [
+            "剧情关1",
+            "词缀描述"
+        ]
+    },
+    {
+        "Id": 47,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-3-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            46
+        ],
+        "StoryPointTypeParams": [
+            30110223
+        ]
+    },
+    {
+        "Id": 48,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "击败所有敌人",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            47
+        ],
+        "StoryPointTypeParams": [
+            30110219,
+            1131003,
+            1221003,
+            1251002
+        ]
+    },
+    {
+        "Id": 49,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-4-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            48
+        ],
+        "StoryPointTypeParams": [
+            30110224
+        ]
+    },
+    {
+        "Id": 50,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "迎战动作演员",
+        "GridShowType": 2,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            49
+        ],
+        "StoryPointTypeParams": [
+            30110294,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiGuild/IconGuildTalent/UIGuildTalent_028.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "剧情关2",
+            "词缀标题"
+        ],
+        "BuffDescs": [
+            "剧情关2",
+            "词缀描述"
+        ]
+    },
+    {
+        "Id": 51,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-5-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            50
+        ],
+        "StoryPointTypeParams": [
+            30110225
+        ]
+    },
+    {
+        "Id": 52,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "击败所有敌人",
+        "GridShowType": 1,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            51
+        ],
+        "StoryPointTypeParams": [
+            30110220,
+            1131003,
+            1221003,
+            1251002
+        ]
+    },
+    {
+        "Id": 53,
+        "StoryPointType": 3,
+        "OpenCondition": 0,
+        "Title": "迎战动，作，巨，星……？",
+        "GridShowType": 3,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            52
+        ],
+        "StoryPointTypeParams": [
+            30110295,
+            1131003,
+            1221003,
+            1251002
+        ],
+        "BuffIcon": [
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33283.png",
+            "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png"
+        ],
+        "BuffTitle": [
+            "动作明星",
+            "护卫群"
+        ],
+        "BuffDescs": [
+            "我是关底BOSS",
+            "有4名守卫保护首领，请快速击杀"
+        ]
+    },
+    {
+        "Id": 54,
+        "StoryPointType": 1,
+        "OpenCondition": 0,
+        "Title": "三头犬-6-纯剧情",
+        "GridShowType": 4,
+        "ExtraRobotId": 0,
+        "PrePointIds": [
+            53
+        ],
+        "StoryPointTypeParams": [
+            30110226
+        ]
+    }
+]

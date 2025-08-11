@@ -1,0 +1,201 @@
+[
+    {
+        "Key": "CameraDistance",
+        "Comment": "摄像机距离调节： 1：最小距离；2：最大距离",
+        "Values": [
+            10,
+            20
+        ]
+    },
+    {
+        "Key": "PrefabPath",
+        "Comment": "预制资源路径",
+        "Values": [
+            "Assets/Product/Scene/ArenaWar/Prefabs/AreaWarScene.prefab"
+        ]
+    },
+    {
+        "Key": "CameraZoomSpeed",
+        "Comment": "摄像机缩放速度",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "CameraSmallDisRatio",
+        "Comment": "点位缩小的相机距离比例",
+        "Values": [
+            0.4
+        ]
+    },
+    {
+        "Key": "ArticleTips",
+        "Comment": "文章相关提示",
+        "Values": [
+            "文章未解锁！",
+            "%s    %s 发布"
+        ]
+    },
+    {
+        "Key": "ArticleGroupTip",
+        "Comment": "文章组提示",
+        "Values": [
+            "板块未解锁！"
+        ]
+    },
+    {
+        "Key": "ArticleLikeCountBoundary",
+        "Comment": "1. 点赞分界线，低于这个数，则显示具体的数量，高于则显示对应单位；2. 单位",
+        "Values": [
+            10000,
+            "W"
+        ]
+    },
+    {
+        "Key": "EndTimeTips",
+        "Comment": "时间结束文本提示",
+        "Values": [
+            "%s后结束"
+        ]
+    },
+    {
+        "Key": "GiftsRewardIds",
+        "Comment": "打脸奖励Id",
+        "Values": [
+            "6002806|1",
+            "80082|1",
+            "102|2000",
+            "50005|1000",
+            "11000205|1"
+        ]
+    },
+    {
+        "Key": "FirstPlayStoryId",
+        "Comment": "首次进入玩法剧情"
+    },
+    {
+        "Key": "UnlockAnimationInfo",
+        "Comment": "解锁动画信息 1.动画类型；2.动画时长；3.动画位移高度",
+        "Values": [
+            2,
+            1.2,
+            0.82,
+            8
+        ]
+    },
+    {
+        "Key": "IdleAnimationInfo",
+        "Comment": "呼吸动画信息 1.动画类型；2.动画时长；3.动画位移高度",
+        "Values": [
+            0,
+            5,
+            0.82
+        ]
+    },
+    {
+        "Key": "PlateLiftUpInfo",
+        "Comment": "板块上升动画 1: Y向下偏移，隐藏在地图外；2.从地图外上升所需时间",
+        "Values": [
+            -3,
+            0.8
+        ]
+    },
+    {
+        "Key": "StageDetailFightTip",
+        "Comment": "关卡详情在鞭尸期与非鞭尸期时战斗描述",
+        "Values": [
+            "限时内，评分越高，奖励越丰富",
+            "参与作战，获得奖励"
+        ]
+    },
+    {
+        "Key": "StageDetailBtnChallenge",
+        "Values": [
+            "作战准备",
+            "多重挑战"
+        ]
+    },
+    {
+        "Key": "ItemNotEnough",
+        "Values": [
+            "调度申请不足, 请通过援护任务获取",
+            "当前体力不足，是否将多重挑战次数调整至<color=#4dc5ff>X%d</color>?",
+            "当前体力不足，无法继续作战"
+        ]
+    },
+    {
+        "Key": "QuestName",
+        "Comment": "探索任务Name",
+        "Values": [
+            "特派任务",
+            "特派任务",
+            "援护任务"
+        ]
+    },
+    {
+        "Key": "QuestDesc",
+        "Comment": "探索任务Desc",
+        "Values": [
+            "个人任务",
+            "个人任务",
+            "互助任务"
+        ]
+    },
+    {
+        "Key": "BlockLevelTypeIcon",
+        "Comment": "详情图标",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png",
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png"
+        ]
+    },
+    {
+        "Key": "BlockLevelTypeMapIcon",
+        "Comment": "地图图标",
+        "Values": [
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame02.png",
+            "Assets/Product/Texture/Atlas/UiAreaWar/UiAreaWarIconGame01.png"
+        ]
+    },
+    {
+        "Key": "GrowBuffLockTip",
+        "Comment": "buff解锁提示",
+        "Values": [
+            "等级达到%s解锁"
+        ]
+    },
+    {
+        "Key": "FinishAllQuestTip",
+        "Values": [
+            "已完成本日所有异常调查",
+            "已完成本日所有救援任务"
+        ]
+    },
+    {
+        "Key": "RescueDetailText",
+        "Values": [
+            "请 求 支 援",
+            "队友遇到危险，请求救援"
+        ]
+    },
+    {
+        "Key": "RescuedDetailText",
+        "Values": [
+            "获 得 帮 助",
+            "其他玩家向你提供了帮助"
+        ]
+    },
+    {
+        "Key": "TrailEffectUrl",
+        "Values": [
+            "Assets/Product/Ui/Prefab/UiEffect/UiAreaWar/FxUiAreaWarMainBtnTuowei.prefab"
+        ]
+    },
+    {
+        "Key": "CancelBtnText",
+        "Values": [
+            "取消",
+            "兑换体力"
+        ]
+    }
+]

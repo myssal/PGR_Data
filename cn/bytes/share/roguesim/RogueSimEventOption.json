@@ -1,0 +1,8418 @@
+[
+    {
+        "Id": 12010101,
+        "Name": "欣然接受",
+        "Desc": "需要主城6级",
+        "Condition": 12010101,
+        "NextEventId": 120102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12010102,
+        "Name": "委婉拒绝",
+        "Desc": "我们还是发展中城邦",
+        "Condition": 0,
+        "NextEventId": 120103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12010201,
+        "Name": "收下谢礼",
+        "Desc": "金贝<color=#FF0000>+15000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161002
+        ]
+    },
+    {
+        "Id": 12010301,
+        "Name": "彼此彼此",
+        "Desc": "金贝<color=#FF0000>+5000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161003
+        ]
+    },
+    {
+        "Id": 12020101,
+        "Name": "试，都可以试",
+        "Desc": "需要主城6级",
+        "Condition": 12020101,
+        "NextEventId": 120202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12020102,
+        "Name": "啊？",
+        "Desc": "这都是些啥",
+        "Condition": 0,
+        "NextEventId": 120203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12020201,
+        "Name": "大获成功",
+        "Desc": "2季度内<b>所有商品</b>售价<color=#FF0000>+15%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61003
+        ]
+    },
+    {
+        "Id": 12020301,
+        "Name": "这也行？",
+        "Desc": "2季度内<b>所有商品</b>售价<color=#FF0000>+5%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61004
+        ]
+    },
+    {
+        "Id": 12030101,
+        "Name": "俺寻思能行",
+        "Desc": "需要联通3个城邦",
+        "Condition": 12030101,
+        "NextEventId": 120302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12030102,
+        "Name": "你说得对，但是…",
+        "Desc": "对不起，做不到",
+        "Condition": 0,
+        "NextEventId": 120303,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12030201,
+        "Name": "市场繁荣",
+        "Desc": "2季度内<b>所有商品</b>售价<color=#FF0000>+15%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61003
+        ]
+    },
+    {
+        "Id": 12030301,
+        "Name": "结果也不坏",
+        "Desc": "2季度内<b>所有商品</b>售价<color=#FF0000>+5%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61004
+        ]
+    },
+    {
+        "Id": 12040101,
+        "Name": "积极参与",
+        "Desc": "需要联通3个城邦",
+        "Condition": 12040101,
+        "NextEventId": 120402,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12040102,
+        "Name": "量力而行",
+        "Desc": "全盘接受不是我们的风格",
+        "Condition": 0,
+        "NextEventId": 120403,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12040201,
+        "Name": "市场稳定",
+        "Desc": "2季度内<b>所有商品</b>季度波动上限和下限<color=#FF0000>+10%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61005
+        ]
+    },
+    {
+        "Id": 12040301,
+        "Name": "一如既往",
+        "Desc": "2季度内<b>所有商品</b>季度波动上限和下限<color=#FF0000>+5%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61006
+        ]
+    },
+    {
+        "Id": 12050101,
+        "Name": "没有问题！",
+        "Desc": "需要完成4个城邦任务",
+        "Condition": 12050101,
+        "NextEventId": 120502,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12050102,
+        "Name": "暂时不行",
+        "Desc": "你先别急，急也没用",
+        "Condition": 0,
+        "NextEventId": 120503,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12050201,
+        "Name": "友邦满足",
+        "Desc": "2季度内<b>所有商品</b>销售暴击率<color=#FF0000>+10%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61007
+        ]
+    },
+    {
+        "Id": 12050301,
+        "Name": "闭门谢客",
+        "Desc": "2季度内<b>所有商品</b>销售暴击率<color=#FF0000>+5%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61008
+        ]
+    },
+    {
+        "Id": 12060101,
+        "Name": "状况良好",
+        "Desc": "需要完成4个城邦任务",
+        "Condition": 12060101,
+        "NextEventId": 120602,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12060102,
+        "Name": "拒不接受",
+        "Desc": "你不合作有得是人合作！",
+        "Condition": 0,
+        "NextEventId": 120603,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12060201,
+        "Name": "友邦满足",
+        "Desc": "2季度内<b>所有商品</b>最终售价额外<color=#FF0000>+5</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61009
+        ]
+    },
+    {
+        "Id": 12060301,
+        "Name": "给我等着",
+        "Desc": "2季度内<b>所有商品</b>最终售价额外<color=#FF0000>+2</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            61010
+        ]
+    },
+    {
+        "Id": 12070101,
+        "Name": "一手交钱一手交货",
+        "Desc": "需要10000金贝",
+        "Condition": 12070101,
+        "NextEventId": 120702,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 12070102,
+        "Name": "表示质疑",
+        "Desc": "这种骗术已经不适合版本了",
+        "Condition": 0,
+        "NextEventId": 120703,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12070201,
+        "Name": "真有好东西",
+        "Desc": "获得建筑图纸<color=#FF0000>幸运屋</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161004
+        ]
+    },
+    {
+        "Id": 12070301,
+        "Name": "啊这？",
+        "Desc": "获得建筑图纸<color=#FF0000>椰椰坊Lv.1</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161005
+        ]
+    },
+    {
+        "Id": 12080101,
+        "Name": "这点代价买不了吃亏买不了上当",
+        "Desc": "需要250单位<color=#a46800>椰子</color>",
+        "Condition": 12080101,
+        "NextEventId": 120802,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostCommodityIds": [
+            1
+        ],
+        "CostCommodityCounts": [
+            250
+        ],
+        "CostCommodityRates": [
+            0
+        ]
+    },
+    {
+        "Id": 12080102,
+        "Name": "表示质疑",
+        "Desc": "真的吗，我不信",
+        "Condition": 0,
+        "NextEventId": 120803,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12080201,
+        "Name": "挥手离开",
+        "Desc": "获得建筑图纸<color=#FF0000>监察塔Lv.3</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161006
+        ]
+    },
+    {
+        "Id": 12080301,
+        "Name": "啊这？",
+        "Desc": "获得建筑图纸<color=#FF0000>兔木厂Lv.1</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161007
+        ]
+    },
+    {
+        "Id": 12090101,
+        "Name": "我这里有！",
+        "Desc": "需要500单位<color=#a46800>木材</color>",
+        "Condition": 12090101,
+        "NextEventId": 120902,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostCommodityIds": [
+            2
+        ],
+        "CostCommodityCounts": [
+            500
+        ],
+        "CostCommodityRates": [
+            0
+        ]
+    },
+    {
+        "Id": 12090102,
+        "Name": "对不起做不到",
+        "Desc": "现在没货了",
+        "Condition": 0,
+        "NextEventId": 120903,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12090201,
+        "Name": "皆大欢喜",
+        "Desc": "获得建筑图纸<color=#FF0000>月亮池Lv.3</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161008
+        ]
+    },
+    {
+        "Id": 12090301,
+        "Name": "啊这？",
+        "Desc": "获得建筑图纸<color=#FF0000>炼油厂Lv.2</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161009
+        ]
+    },
+    {
+        "Id": 12100101,
+        "Name": "看看这是啥",
+        "Desc": "需要50单位<color=#a46800>石油</color>",
+        "Condition": 12100101,
+        "NextEventId": 121002,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostCommodityIds": [
+            3
+        ],
+        "CostCommodityCounts": [
+            50
+        ],
+        "CostCommodityRates": [
+            0
+        ]
+    },
+    {
+        "Id": 12100102,
+        "Name": "但是我拒绝！",
+        "Desc": "有也不给，何况没有",
+        "Condition": 0,
+        "NextEventId": 121003,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 12100201,
+        "Name": "双喜临门",
+        "Desc": "获得建筑图纸<color=#FF0000>铸宝工坊</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161010
+        ]
+    },
+    {
+        "Id": 12100301,
+        "Name": "啊这？",
+        "Desc": "获得建筑图纸<color=#FF0000>猫仓Lv.2</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            161011
+        ]
+    },
+    {
+        "Id": 15010101,
+        "Name": "真是个好消息",
+        "Desc": "2季度内<color=#a46800>椰子</color>的生产效率+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64001
+        ]
+    },
+    {
+        "Id": 15020101,
+        "Name": "真是个好消息",
+        "Desc": "2季度内<color=#a46800>木材</color>的生产效率+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64002
+        ]
+    },
+    {
+        "Id": 15030101,
+        "Name": "真是个好消息",
+        "Desc": "2季度内<color=#a46800>石油</color>的生产效率+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64003
+        ]
+    },
+    {
+        "Id": 15040101,
+        "Name": "哭笑不得",
+        "Desc": "2季度内<color=#a46800>椰子</color>的售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64004
+        ]
+    },
+    {
+        "Id": 15050101,
+        "Name": "哭笑不得",
+        "Desc": "2季度内<color=#a46800>木材</color>的售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64005
+        ]
+    },
+    {
+        "Id": 15060101,
+        "Name": "哭笑不得",
+        "Desc": "2季度内<color=#a46800>石油</color>的售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64006
+        ]
+    },
+    {
+        "Id": 15110101,
+        "Name": "选择<color=#a46800>椰子</color>",
+        "Desc": "2季度内<color=#a46800>椰子</color>生产效率+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64101
+        ]
+    },
+    {
+        "Id": 15110102,
+        "Name": "选择<color=#a46800>石油</color>",
+        "Desc": "2季度内<color=#a46800>石油</color>生产效率+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64102
+        ]
+    },
+    {
+        "Id": 15120101,
+        "Name": "选择<color=#a46800>木材</color>",
+        "Desc": "2季度内<color=#a46800>木材</color>生产效率+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64111
+        ]
+    },
+    {
+        "Id": 15120102,
+        "Name": "选择<color=#a46800>椰子</color>",
+        "Desc": "2季度内<color=#a46800>椰子</color>生产效率+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64112
+        ]
+    },
+    {
+        "Id": 15130101,
+        "Name": "选择<color=#a46800>石油</color>",
+        "Desc": "2季度内<color=#a46800>石油</color>生产效率+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64121
+        ]
+    },
+    {
+        "Id": 15130102,
+        "Name": "选择<color=#a46800>木材</color>",
+        "Desc": "2季度内<color=#a46800>木材</color>生产效率+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64122
+        ]
+    },
+    {
+        "Id": 15140101,
+        "Name": "选择<color=#a46800>椰子</color>",
+        "Desc": "2季度内<color=#a46800>椰子</color>售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64131
+        ]
+    },
+    {
+        "Id": 15140102,
+        "Name": "选择<color=#a46800>石油</color>",
+        "Desc": "2季度内<color=#a46800>石油</color>售价+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64132
+        ]
+    },
+    {
+        "Id": 15150101,
+        "Name": "选择<color=#a46800>木材</color>",
+        "Desc": "2季度内<color=#a46800>木材</color>售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64141
+        ]
+    },
+    {
+        "Id": 15150102,
+        "Name": "选择<color=#a46800>椰子</color>",
+        "Desc": "2季度内<color=#a46800>椰子</color>售价+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64142
+        ]
+    },
+    {
+        "Id": 15160101,
+        "Name": "选择<color=#a46800>石油</color>",
+        "Desc": "2季度内<color=#a46800>石油</color>售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64151
+        ]
+    },
+    {
+        "Id": 15160102,
+        "Name": "选择<color=#a46800>木材</color>",
+        "Desc": "2季度内<color=#a46800>木材</color>售价+10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64152
+        ]
+    },
+    {
+        "Id": 15210101,
+        "Name": "猛猛涨薪",
+        "Desc": "需要30000金贝",
+        "Condition": 15210101,
+        "NextEventId": 152102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            30000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15210102,
+        "Name": "发点奖金",
+        "Desc": "需要10000金贝",
+        "Condition": 15210102,
+        "NextEventId": 152103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15210103,
+        "Name": "这不能够啊",
+        "Desc": "我一毛钱都不会给！",
+        "Condition": 0,
+        "NextEventId": 152104,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15210201,
+        "Name": "生产<color=#a46800>椰子</color>吧",
+        "Desc": "3季度内<color=#a46800>椰子</color>生产效率+25%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64201
+        ]
+    },
+    {
+        "Id": 15210202,
+        "Name": "生产<color=#a46800>木材</color>吧",
+        "Desc": "3季度内<color=#a46800>木材</color>生产效率+25%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64202
+        ]
+    },
+    {
+        "Id": 15210203,
+        "Name": "生产<color=#a46800>石油</color>吧",
+        "Desc": "3季度内<color=#a46800>石油</color>生产效率+25%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64203
+        ]
+    },
+    {
+        "Id": 15210301,
+        "Name": "干劲提升，但不多",
+        "Desc": "2季度内<b>所有商品</b>的生产效率<color=#FF0000>+10%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64204
+        ]
+    },
+    {
+        "Id": 15210401,
+        "Name": "结束事件",
+        "Desc": "无事发生",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15220101,
+        "Name": "正有此意",
+        "Desc": "合作才能共赢",
+        "Condition": 0,
+        "NextEventId": 152202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15220102,
+        "Name": "兴趣缺缺",
+        "Desc": "卷不过的懦夫罢了",
+        "Condition": 0,
+        "NextEventId": 152203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15220201,
+        "Name": "选择<color=#a46800>椰子</color>吧",
+        "Desc": "3季度内<color=#a46800>椰子</color>售价+25%，但<color=#a46800>木材</color>和<color=#a46800>石油</color>售价-10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64211
+        ]
+    },
+    {
+        "Id": 15220202,
+        "Name": "选择<color=#a46800>木材</color>吧",
+        "Desc": "3季度内<color=#a46800>木材</color>售价+25%，但<color=#a46800>椰子</color>和<color=#a46800>石油</color>售价-10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64213
+        ]
+    },
+    {
+        "Id": 15220203,
+        "Name": "选择<color=#a46800>石油</color>吧",
+        "Desc": "3季度内<color=#a46800>石油</color>售价+25%，但<color=#a46800>椰子</color>和<color=#a46800>木材</color>售价-10%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64215
+        ]
+    },
+    {
+        "Id": 15220301,
+        "Name": "还得是卷",
+        "Desc": "3季度内<b>所有商品</b>售价<color=#FF0000>+5%</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64217
+        ]
+    },
+    {
+        "Id": 15310101,
+        "Name": "好人有好报",
+        "Desc": "<color=#a46800>椰子</color><color=#FF0000>+100</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164301
+        ]
+    },
+    {
+        "Id": 15320101,
+        "Name": "好人有好报",
+        "Desc": "<color=#a46800>木材</color><color=#FF0000>+250</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164302
+        ]
+    },
+    {
+        "Id": 15330101,
+        "Name": "好人有好报",
+        "Desc": "<color=#a46800>石油</color><color=#FF0000>+20</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164303
+        ]
+    },
+    {
+        "Id": 15340101,
+        "Name": "好人有好报",
+        "Desc": "金贝<color=#FF0000>+4000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164304
+        ]
+    },
+    {
+        "Id": 15410101,
+        "Name": "收购他们的商品",
+        "Desc": "需要10000金贝",
+        "Condition": 15410101,
+        "NextEventId": 154102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15410102,
+        "Name": "收下他们的金贝",
+        "Desc": "还是金贝实在",
+        "Condition": 0,
+        "NextEventId": 154103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15410201,
+        "Name": "收下商品",
+        "Desc": "<color=#a46800>椰子</color>+100，<color=#a46800>木材</color>+250",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164401,
+            164402
+        ]
+    },
+    {
+        "Id": 15410301,
+        "Name": "收下报酬",
+        "Desc": "金贝<color=#FF0000>+5000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164403
+        ]
+    },
+    {
+        "Id": 15420101,
+        "Name": "收购他们的商品",
+        "Desc": "需要10000金贝",
+        "Condition": 15420101,
+        "NextEventId": 154202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15420102,
+        "Name": "收下他们的金贝",
+        "Desc": "还是金贝实在",
+        "Condition": 0,
+        "NextEventId": 154203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15420201,
+        "Name": "收下商品",
+        "Desc": "<color=#a46800>木材</color>+250，<color=#a46800>石油</color>+20",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164404,
+            164405
+        ]
+    },
+    {
+        "Id": 15420301,
+        "Name": "收下报酬",
+        "Desc": "金贝<color=#FF0000>+5000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164406
+        ]
+    },
+    {
+        "Id": 15430101,
+        "Name": "收购他们的商品",
+        "Desc": "需要10000金贝",
+        "Condition": 15430101,
+        "NextEventId": 154302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15430102,
+        "Name": "收下他们的金贝",
+        "Desc": "还是金贝实在",
+        "Condition": 0,
+        "NextEventId": 154303,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15430201,
+        "Name": "收下商品",
+        "Desc": "<color=#a46800>椰子</color>+100，<color=#a46800>石油</color>+20",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164407,
+            164408
+        ]
+    },
+    {
+        "Id": 15430301,
+        "Name": "收下报酬",
+        "Desc": "金贝<color=#FF0000>+5000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164409
+        ]
+    },
+    {
+        "Id": 15440101,
+        "Name": "收下设备",
+        "Desc": "看看是什么好东西",
+        "Condition": 0,
+        "NextEventId": 154402,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15440201,
+        "Name": "收下设备",
+        "Desc": "2季度内，生产力<color=#FF0000>+2</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            64218
+        ]
+    },
+    {
+        "Id": 15510101,
+        "Name": "小孩子才做选择，我全都要",
+        "Desc": "需要100000金贝",
+        "Condition": 15510301,
+        "NextEventId": 155102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            100000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15510102,
+        "Name": "挑选需要的商品",
+        "Desc": "需要30000金贝",
+        "Condition": 15510201,
+        "NextEventId": 155103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            30000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 15510103,
+        "Name": "表示自己只是随便看看",
+        "Desc": "花钱的事我不做的",
+        "Condition": 0,
+        "NextEventId": 155104,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15510201,
+        "Name": "买下商店",
+        "Desc": "生产力永久<color=#FF0000>+1</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164504
+        ]
+    },
+    {
+        "Id": 15510301,
+        "Name": "挑选商品",
+        "Desc": "随机获得一件秘藏",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164505
+        ]
+    },
+    {
+        "Id": 15510401,
+        "Name": "薅下羊毛",
+        "Desc": "金贝<color=#FF0000>+5000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164403
+        ]
+    },
+    {
+        "Id": 15520101,
+        "Name": "前往核心设备间",
+        "Desc": "需要专业防水设备（主城达到6级）",
+        "Condition": 15520301,
+        "NextEventId": 155202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15520102,
+        "Name": "前往船长的保险库",
+        "Desc": "需要普通防水设备（主城达到5级）",
+        "Condition": 15520201,
+        "NextEventId": 155203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15520103,
+        "Name": "在外围小心探索",
+        "Desc": "小心行事",
+        "Condition": 0,
+        "NextEventId": 155204,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 15520201,
+        "Name": "表达感谢",
+        "Desc": "生产力永久<color=#FF0000>+1</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164507
+        ]
+    },
+    {
+        "Id": 15520301,
+        "Name": "表达感谢",
+        "Desc": "金贝<color=#FF0000>+50000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164508
+        ]
+    },
+    {
+        "Id": 15520401,
+        "Name": "表达感谢",
+        "Desc": "<color=#a46800>椰子</color>+100，<color=#a46800>木材</color>+250，<color=#a46800>石油</color>+20",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            164506,
+            164509,
+            164510
+        ]
+    },
+    {
+        "Id": 22010101,
+        "Name": "帮！必须帮！",
+        "Desc": "需要200w金贝",
+        "Condition": 22010101,
+        "NextEventId": 220102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2000000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 22010102,
+        "Name": "残忍拒绝",
+        "Desc": "这也信，不如信我是秦始皇",
+        "Condition": 0,
+        "NextEventId": 220103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 22010201,
+        "Name": "好像有哪里不对，但是又好像没什么不对",
+        "Desc": "收下乐器",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            22010201,
+            22010202,
+            22010203
+        ]
+    },
+    {
+        "Id": 22010301,
+        "Name": "这是历史上的选择",
+        "Desc": "获得50w金贝",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            220103
+        ]
+    },
+    {
+        "Id": 81000101,
+        "Name": "多送点多送点",
+        "Desc": "金贝<color=#FF0000>+4000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            91010301
+        ]
+    },
+    {
+        "Id": 81010101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要5000金贝；必定成功拍下拍卖品",
+        "Condition": 81010101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820101
+        ]
+    },
+    {
+        "Id": 81010102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要1500金贝；50%概率成功拍下，但若失败将涨价",
+        "Condition": 81010102,
+        "NextEventId": 0,
+        "WinningRate": 5000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            1500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820102
+        ],
+        "FailedNextEvents": [
+            810111
+        ]
+    },
+    {
+        "Id": 81010103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            820104
+        ]
+    },
+    {
+        "Id": 81011101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要6500金贝；必定成功拍下拍卖品",
+        "Condition": 81011101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            6500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820101
+        ]
+    },
+    {
+        "Id": 81011102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要2600金贝；60%概率成功拍下，但若失败将涨价",
+        "Condition": 81011102,
+        "NextEventId": 0,
+        "WinningRate": 6000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820102
+        ],
+        "FailedNextEvents": [
+            810112
+        ]
+    },
+    {
+        "Id": 81011103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            820104
+        ]
+    },
+    {
+        "Id": 81011201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要8450金贝；必定成功拍下拍卖品",
+        "Condition": 81011201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8450
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820101
+        ]
+    },
+    {
+        "Id": 81011202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要4225金贝；70%概率成功拍下，但若失败将涨价",
+        "Condition": 81011202,
+        "NextEventId": 0,
+        "WinningRate": 7000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            4225
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820102
+        ],
+        "FailedNextEvents": [
+            810113
+        ]
+    },
+    {
+        "Id": 81011203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            820104
+        ]
+    },
+    {
+        "Id": 81011301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要8450金贝；必定成功拍下拍卖品",
+        "Condition": 81011301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8450
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            820101
+        ]
+    },
+    {
+        "Id": 81011302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            820104
+        ]
+    },
+    {
+        "Id": 82010101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要5000金贝；必定成功拍下拍卖品",
+        "Condition": 82010101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830101
+        ]
+    },
+    {
+        "Id": 82010102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要1500金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 82010102,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            1500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830102
+        ],
+        "FailedNextEvents": [
+            820111
+        ]
+    },
+    {
+        "Id": 82010103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            830104
+        ]
+    },
+    {
+        "Id": 82011101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要6500金贝；必定成功拍下拍卖品",
+        "Condition": 82011101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            6500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830101
+        ]
+    },
+    {
+        "Id": 82011102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要2600金贝；40%概率成功拍下，但若失败将涨价",
+        "Condition": 82011102,
+        "NextEventId": 0,
+        "WinningRate": 4000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830102
+        ],
+        "FailedNextEvents": [
+            820112
+        ]
+    },
+    {
+        "Id": 82011103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            830104
+        ]
+    },
+    {
+        "Id": 82011201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要8450金贝；必定成功拍下拍卖品",
+        "Condition": 82011201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8450
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830101
+        ]
+    },
+    {
+        "Id": 82011202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要4225金贝；50%概率成功拍下，但若失败将涨价",
+        "Condition": 82011202,
+        "NextEventId": 0,
+        "WinningRate": 5000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            4225
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830102
+        ],
+        "FailedNextEvents": [
+            820113
+        ]
+    },
+    {
+        "Id": 82011203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            830104
+        ]
+    },
+    {
+        "Id": 82011301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要8450金贝；必定成功拍下拍卖品",
+        "Condition": 82011301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8450
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            830101
+        ]
+    },
+    {
+        "Id": 82011302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            830104
+        ]
+    },
+    {
+        "Id": 83010101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要8000金贝；必定成功拍下拍卖品",
+        "Condition": 83010101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840101
+        ]
+    },
+    {
+        "Id": 83010102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要2400金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83010102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840102
+        ],
+        "FailedNextEvents": [
+            830111
+        ]
+    },
+    {
+        "Id": 83010103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            840104
+        ]
+    },
+    {
+        "Id": 83011101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要10400金贝；必定成功拍下拍卖品",
+        "Condition": 83011101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840101
+        ]
+    },
+    {
+        "Id": 83011102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要4160金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83011102,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            4160
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840102
+        ],
+        "FailedNextEvents": [
+            830112
+        ]
+    },
+    {
+        "Id": 83011103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            840104
+        ]
+    },
+    {
+        "Id": 83011201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要13520金贝；必定成功拍下拍卖品",
+        "Condition": 83011201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            13520
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840101
+        ]
+    },
+    {
+        "Id": 83011202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要6760金贝；40%概率成功拍下，但若失败将涨价",
+        "Condition": 83011202,
+        "NextEventId": 0,
+        "WinningRate": 4000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            6760
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840102
+        ],
+        "FailedNextEvents": [
+            830113
+        ]
+    },
+    {
+        "Id": 83011203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            840104
+        ]
+    },
+    {
+        "Id": 83011301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要13520金贝；必定成功拍下拍卖品",
+        "Condition": 83011301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            13520
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            840101
+        ]
+    },
+    {
+        "Id": 83011302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            840104
+        ]
+    },
+    {
+        "Id": 84010101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84010201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84010301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84010401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81110101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要8000金贝；必定成功拍下拍卖品",
+        "Condition": 81110101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821101
+        ]
+    },
+    {
+        "Id": 81110102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要2400金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 81110102,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821102
+        ],
+        "FailedNextEvents": [
+            811111
+        ]
+    },
+    {
+        "Id": 81110103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            821104
+        ]
+    },
+    {
+        "Id": 81111101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要10400金贝；必定成功拍下拍卖品",
+        "Condition": 81111101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821101
+        ]
+    },
+    {
+        "Id": 81111102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要4160金贝；40%概率成功拍下，但若失败将涨价",
+        "Condition": 81111102,
+        "NextEventId": 0,
+        "WinningRate": 4000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            4160
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821102
+        ],
+        "FailedNextEvents": [
+            811112
+        ]
+    },
+    {
+        "Id": 81111103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            821104
+        ]
+    },
+    {
+        "Id": 81111201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要13520金贝；必定成功拍下拍卖品",
+        "Condition": 81111201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            13520
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821101
+        ]
+    },
+    {
+        "Id": 81111202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要6760金贝；50%概率成功拍下，但若失败将涨价",
+        "Condition": 81111202,
+        "NextEventId": 0,
+        "WinningRate": 5000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            6760
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821102
+        ],
+        "FailedNextEvents": [
+            811113
+        ]
+    },
+    {
+        "Id": 81111203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            821104
+        ]
+    },
+    {
+        "Id": 81111301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要13520金贝；必定成功拍下拍卖品",
+        "Condition": 81111301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            13520
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            821101
+        ]
+    },
+    {
+        "Id": 81111302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            821104
+        ]
+    },
+    {
+        "Id": 82110101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要10000金贝；必定成功拍下拍卖品",
+        "Condition": 82110101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831101
+        ]
+    },
+    {
+        "Id": 82110102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要3000金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82110102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            3000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831102
+        ],
+        "FailedNextEvents": [
+            821111
+        ]
+    },
+    {
+        "Id": 82110103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            831104
+        ]
+    },
+    {
+        "Id": 82111101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要13000金贝；必定成功拍下拍卖品",
+        "Condition": 82111101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            13000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831101
+        ]
+    },
+    {
+        "Id": 82111102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要5200金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82111102,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831102
+        ],
+        "FailedNextEvents": [
+            821112
+        ]
+    },
+    {
+        "Id": 82111103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            831104
+        ]
+    },
+    {
+        "Id": 82111201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要16900金贝；必定成功拍下拍卖品",
+        "Condition": 82111201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            16900
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831101
+        ]
+    },
+    {
+        "Id": 82111202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要8450金贝；45%概率成功拍下，但若失败将涨价",
+        "Condition": 82111202,
+        "NextEventId": 0,
+        "WinningRate": 4500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8450
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831102
+        ],
+        "FailedNextEvents": [
+            821113
+        ]
+    },
+    {
+        "Id": 82111203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            831104
+        ]
+    },
+    {
+        "Id": 82111301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要16900金贝；必定成功拍下拍卖品",
+        "Condition": 82111301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            16900
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            831101
+        ]
+    },
+    {
+        "Id": 82111302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            831104
+        ]
+    },
+    {
+        "Id": 83110101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要20000金贝；必定成功拍下拍卖品",
+        "Condition": 83110101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            20000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841101
+        ]
+    },
+    {
+        "Id": 83110102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要6000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 83110102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            6000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841102
+        ],
+        "FailedNextEvents": [
+            831111
+        ]
+    },
+    {
+        "Id": 83110103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            841104
+        ]
+    },
+    {
+        "Id": 83111101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要26000金贝；必定成功拍下拍卖品",
+        "Condition": 83111101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            26000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841101
+        ]
+    },
+    {
+        "Id": 83111102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要10400金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 83111102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841102
+        ],
+        "FailedNextEvents": [
+            831112
+        ]
+    },
+    {
+        "Id": 83111103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            841104
+        ]
+    },
+    {
+        "Id": 83111201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要33800金贝；必定成功拍下拍卖品",
+        "Condition": 83111201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            33800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841101
+        ]
+    },
+    {
+        "Id": 83111202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要16900金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 83111202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            16900
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841102
+        ],
+        "FailedNextEvents": [
+            831113
+        ]
+    },
+    {
+        "Id": 83111203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            841104
+        ]
+    },
+    {
+        "Id": 83111301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要33800金贝；必定成功拍下拍卖品",
+        "Condition": 83111301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            33800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            841101
+        ]
+    },
+    {
+        "Id": 83111302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            841104
+        ]
+    },
+    {
+        "Id": 84110101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84110201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84110301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84110401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81210101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要40000金贝；必定成功拍下拍卖品",
+        "Condition": 81210101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            40000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822101
+        ]
+    },
+    {
+        "Id": 81210102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要12000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 81210102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            12000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822102
+        ],
+        "FailedNextEvents": [
+            812111
+        ]
+    },
+    {
+        "Id": 81210103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            822104
+        ]
+    },
+    {
+        "Id": 81211101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要52000金贝；必定成功拍下拍卖品",
+        "Condition": 81211101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            52000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822101
+        ]
+    },
+    {
+        "Id": 81211102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要20800金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 81211102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            20800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822102
+        ],
+        "FailedNextEvents": [
+            812112
+        ]
+    },
+    {
+        "Id": 81211103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            822104
+        ]
+    },
+    {
+        "Id": 81211201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要67600金贝；必定成功拍下拍卖品",
+        "Condition": 81211201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822101
+        ]
+    },
+    {
+        "Id": 81211202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要33800金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 81211202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            33800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822102
+        ],
+        "FailedNextEvents": [
+            812113
+        ]
+    },
+    {
+        "Id": 81211203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            822104
+        ]
+    },
+    {
+        "Id": 81211301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要67600金贝；必定成功拍下拍卖品",
+        "Condition": 81211301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            822101
+        ]
+    },
+    {
+        "Id": 81211302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            822104
+        ]
+    },
+    {
+        "Id": 82210101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要40000金贝；必定成功拍下拍卖品",
+        "Condition": 82210101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            40000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832101
+        ]
+    },
+    {
+        "Id": 82210102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要12000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 82210102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            12000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832102
+        ],
+        "FailedNextEvents": [
+            822111
+        ]
+    },
+    {
+        "Id": 82210103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            832104
+        ]
+    },
+    {
+        "Id": 82211101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要52000金贝；必定成功拍下拍卖品",
+        "Condition": 82211101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            52000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832101
+        ]
+    },
+    {
+        "Id": 82211102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要20800金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82211102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            20800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832102
+        ],
+        "FailedNextEvents": [
+            822112
+        ]
+    },
+    {
+        "Id": 82211103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            832104
+        ]
+    },
+    {
+        "Id": 82211201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要67600金贝；必定成功拍下拍卖品",
+        "Condition": 82211201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832101
+        ]
+    },
+    {
+        "Id": 82211202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要33800金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82211202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            33800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832102
+        ],
+        "FailedNextEvents": [
+            822113
+        ]
+    },
+    {
+        "Id": 82211203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            832104
+        ]
+    },
+    {
+        "Id": 82211301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要67600金贝；必定成功拍下拍卖品",
+        "Condition": 82211301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            832101
+        ]
+    },
+    {
+        "Id": 82211302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            832104
+        ]
+    },
+    {
+        "Id": 83210101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要60000金贝；必定成功拍下拍卖品",
+        "Condition": 83210101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842101
+        ]
+    },
+    {
+        "Id": 83210102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要18000金贝；10%概率成功拍下，但若失败将涨价",
+        "Condition": 83210102,
+        "NextEventId": 0,
+        "WinningRate": 1000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            18000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842102
+        ],
+        "FailedNextEvents": [
+            832111
+        ]
+    },
+    {
+        "Id": 83210103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            842104
+        ]
+    },
+    {
+        "Id": 83211101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要78000金贝；必定成功拍下拍卖品",
+        "Condition": 83211101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            78000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842101
+        ]
+    },
+    {
+        "Id": 83211102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要31200金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83211102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            31200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842102
+        ],
+        "FailedNextEvents": [
+            832112
+        ]
+    },
+    {
+        "Id": 83211103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            842104
+        ]
+    },
+    {
+        "Id": 83211201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 83211201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842101
+        ]
+    },
+    {
+        "Id": 83211202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要50700金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83211202,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50700
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842102
+        ],
+        "FailedNextEvents": [
+            832113
+        ]
+    },
+    {
+        "Id": 83211203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            842104
+        ]
+    },
+    {
+        "Id": 83211301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 83211301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            842101
+        ]
+    },
+    {
+        "Id": 83211302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            842104
+        ]
+    },
+    {
+        "Id": 84210101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84210201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84210301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84210401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81310101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要60000金贝；必定成功拍下拍卖品",
+        "Condition": 81310101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823101
+        ]
+    },
+    {
+        "Id": 81310102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要18000金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 81310102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            18000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823102
+        ],
+        "FailedNextEvents": [
+            813111
+        ]
+    },
+    {
+        "Id": 81310103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            823104
+        ]
+    },
+    {
+        "Id": 81311101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要78000金贝；必定成功拍下拍卖品",
+        "Condition": 81311101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            78000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823101
+        ]
+    },
+    {
+        "Id": 81311102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要31200金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 81311102,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            31200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823102
+        ],
+        "FailedNextEvents": [
+            813112
+        ]
+    },
+    {
+        "Id": 81311103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            823104
+        ]
+    },
+    {
+        "Id": 81311201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 81311201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823101
+        ]
+    },
+    {
+        "Id": 81311202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要50700金贝；40%概率成功拍下，但若失败将涨价",
+        "Condition": 81311202,
+        "NextEventId": 0,
+        "WinningRate": 4000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50700
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823102
+        ],
+        "FailedNextEvents": [
+            813113
+        ]
+    },
+    {
+        "Id": 81311203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            823104
+        ]
+    },
+    {
+        "Id": 81311301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 81311301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            823101
+        ]
+    },
+    {
+        "Id": 81311302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            823104
+        ]
+    },
+    {
+        "Id": 82310101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要80000金贝；必定成功拍下拍卖品",
+        "Condition": 82310101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            80000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833101
+        ]
+    },
+    {
+        "Id": 82310102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要24000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 82310102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            24000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833102
+        ],
+        "FailedNextEvents": [
+            823111
+        ]
+    },
+    {
+        "Id": 82310103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            833104
+        ]
+    },
+    {
+        "Id": 82311101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要104000金贝；必定成功拍下拍卖品",
+        "Condition": 82311101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833101
+        ]
+    },
+    {
+        "Id": 82311102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要41600金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82311102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            41600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833102
+        ],
+        "FailedNextEvents": [
+            823112
+        ]
+    },
+    {
+        "Id": 82311103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            833104
+        ]
+    },
+    {
+        "Id": 82311201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要135200金贝；必定成功拍下拍卖品",
+        "Condition": 82311201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            135200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833101
+        ]
+    },
+    {
+        "Id": 82311202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要67600金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82311202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833102
+        ],
+        "FailedNextEvents": [
+            823113
+        ]
+    },
+    {
+        "Id": 82311203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            833104
+        ]
+    },
+    {
+        "Id": 82311301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要135200金贝；必定成功拍下拍卖品",
+        "Condition": 82311301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            135200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            833101
+        ]
+    },
+    {
+        "Id": 82311302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            833104
+        ]
+    },
+    {
+        "Id": 83310101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要120000金贝；必定成功拍下拍卖品",
+        "Condition": 83310101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            120000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843101
+        ]
+    },
+    {
+        "Id": 83310102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要36000金贝；10%概率成功拍下，但若失败将涨价",
+        "Condition": 83310102,
+        "NextEventId": 0,
+        "WinningRate": 1000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            36000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843102
+        ],
+        "FailedNextEvents": [
+            833111
+        ]
+    },
+    {
+        "Id": 83310103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            843104
+        ]
+    },
+    {
+        "Id": 83311101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要156000金贝；必定成功拍下拍卖品",
+        "Condition": 83311101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            156000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843101
+        ]
+    },
+    {
+        "Id": 83311102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要62400金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83311102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            62400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843102
+        ],
+        "FailedNextEvents": [
+            833112
+        ]
+    },
+    {
+        "Id": 83311103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            843104
+        ]
+    },
+    {
+        "Id": 83311201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要202800金贝；必定成功拍下拍卖品",
+        "Condition": 83311201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            202800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843101
+        ]
+    },
+    {
+        "Id": 83311202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要101400金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83311202,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843102
+        ],
+        "FailedNextEvents": [
+            833113
+        ]
+    },
+    {
+        "Id": 83311203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            843104
+        ]
+    },
+    {
+        "Id": 83311301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要202800金贝；必定成功拍下拍卖品",
+        "Condition": 83311301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            202800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            843101
+        ]
+    },
+    {
+        "Id": 83311302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            843104
+        ]
+    },
+    {
+        "Id": 84310101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84310201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84310301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84310401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81410101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要200000金贝；必定成功拍下拍卖品",
+        "Condition": 81410101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            200000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824101
+        ]
+    },
+    {
+        "Id": 81410102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要60000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 81410102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824102
+        ],
+        "FailedNextEvents": [
+            814111
+        ]
+    },
+    {
+        "Id": 81410103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            824104
+        ]
+    },
+    {
+        "Id": 81411101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要260000金贝；必定成功拍下拍卖品",
+        "Condition": 81411101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            260000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824101
+        ]
+    },
+    {
+        "Id": 81411102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要104000金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 81411102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824102
+        ],
+        "FailedNextEvents": [
+            814112
+        ]
+    },
+    {
+        "Id": 81411103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            824104
+        ]
+    },
+    {
+        "Id": 81411201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 81411201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824101
+        ]
+    },
+    {
+        "Id": 81411202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要169000金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 81411202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            169000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824102
+        ],
+        "FailedNextEvents": [
+            814113
+        ]
+    },
+    {
+        "Id": 81411203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            824104
+        ]
+    },
+    {
+        "Id": 81411301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 81411301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            824101
+        ]
+    },
+    {
+        "Id": 81411302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            824104
+        ]
+    },
+    {
+        "Id": 82410101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要200000金贝；必定成功拍下拍卖品",
+        "Condition": 82410101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            200000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834101
+        ]
+    },
+    {
+        "Id": 82410102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要60000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 82410102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834102
+        ],
+        "FailedNextEvents": [
+            824111
+        ]
+    },
+    {
+        "Id": 82410103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            834104
+        ]
+    },
+    {
+        "Id": 82411101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要260000金贝；必定成功拍下拍卖品",
+        "Condition": 82411101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            260000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834101
+        ]
+    },
+    {
+        "Id": 82411102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要104000金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82411102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834102
+        ],
+        "FailedNextEvents": [
+            824112
+        ]
+    },
+    {
+        "Id": 82411103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            834104
+        ]
+    },
+    {
+        "Id": 82411201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 82411201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834101
+        ]
+    },
+    {
+        "Id": 82411202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要169000金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82411202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            169000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834102
+        ],
+        "FailedNextEvents": [
+            824113
+        ]
+    },
+    {
+        "Id": 82411203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            834104
+        ]
+    },
+    {
+        "Id": 82411301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 82411301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            834101
+        ]
+    },
+    {
+        "Id": 82411302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            834104
+        ]
+    },
+    {
+        "Id": 83410101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要350000金贝；必定成功拍下拍卖品",
+        "Condition": 83410101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            350000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844101
+        ]
+    },
+    {
+        "Id": 83410102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要105000金贝；10%概率成功拍下，但若失败将涨价",
+        "Condition": 83410102,
+        "NextEventId": 0,
+        "WinningRate": 1000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            105000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844102
+        ],
+        "FailedNextEvents": [
+            834111
+        ]
+    },
+    {
+        "Id": 83410103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            844104
+        ]
+    },
+    {
+        "Id": 83411101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要455000金贝；必定成功拍下拍卖品",
+        "Condition": 83411101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            455000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844101
+        ]
+    },
+    {
+        "Id": 83411102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要182000金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83411102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            182000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844102
+        ],
+        "FailedNextEvents": [
+            834112
+        ]
+    },
+    {
+        "Id": 83411103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            844104
+        ]
+    },
+    {
+        "Id": 83411201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要591500金贝；必定成功拍下拍卖品",
+        "Condition": 83411201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            591500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844101
+        ]
+    },
+    {
+        "Id": 83411202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要295750金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83411202,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            295750
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844102
+        ],
+        "FailedNextEvents": [
+            834113
+        ]
+    },
+    {
+        "Id": 83411203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            844104
+        ]
+    },
+    {
+        "Id": 83411301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要591500金贝；必定成功拍下拍卖品",
+        "Condition": 83411301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            591500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            844101
+        ]
+    },
+    {
+        "Id": 83411302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            844104
+        ]
+    },
+    {
+        "Id": 84410101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84410201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84410301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84410401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81510101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要60000金贝；必定成功拍下拍卖品",
+        "Condition": 81510101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825101
+        ]
+    },
+    {
+        "Id": 81510102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要18000金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 81510102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            18000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825102
+        ],
+        "FailedNextEvents": [
+            815111
+        ]
+    },
+    {
+        "Id": 81510103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            825104
+        ]
+    },
+    {
+        "Id": 81511101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要78000金贝；必定成功拍下拍卖品",
+        "Condition": 81511101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            78000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825101
+        ]
+    },
+    {
+        "Id": 81511102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要31200金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 81511102,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            31200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825102
+        ],
+        "FailedNextEvents": [
+            815112
+        ]
+    },
+    {
+        "Id": 81511103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            825104
+        ]
+    },
+    {
+        "Id": 81511201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 81511201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825101
+        ]
+    },
+    {
+        "Id": 81511202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要50700金贝；40%概率成功拍下，但若失败将涨价",
+        "Condition": 81511202,
+        "NextEventId": 0,
+        "WinningRate": 4000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50700
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825102
+        ],
+        "FailedNextEvents": [
+            815113
+        ]
+    },
+    {
+        "Id": 81511203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            825104
+        ]
+    },
+    {
+        "Id": 81511301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要101400金贝；必定成功拍下拍卖品",
+        "Condition": 81511301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            825101
+        ]
+    },
+    {
+        "Id": 81511302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            825104
+        ]
+    },
+    {
+        "Id": 82510101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要80000金贝；必定成功拍下拍卖品",
+        "Condition": 82510101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            80000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835101
+        ]
+    },
+    {
+        "Id": 82510102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要24000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 82510102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            24000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835102
+        ],
+        "FailedNextEvents": [
+            825111
+        ]
+    },
+    {
+        "Id": 82510103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            835104
+        ]
+    },
+    {
+        "Id": 82511101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要104000金贝；必定成功拍下拍卖品",
+        "Condition": 82511101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835101
+        ]
+    },
+    {
+        "Id": 82511102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要41600金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82511102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            41600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835102
+        ],
+        "FailedNextEvents": [
+            825112
+        ]
+    },
+    {
+        "Id": 82511103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            835104
+        ]
+    },
+    {
+        "Id": 82511201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要135200金贝；必定成功拍下拍卖品",
+        "Condition": 82511201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            135200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835101
+        ]
+    },
+    {
+        "Id": 82511202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要67600金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82511202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            67600
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835102
+        ],
+        "FailedNextEvents": [
+            825113
+        ]
+    },
+    {
+        "Id": 82511203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            835104
+        ]
+    },
+    {
+        "Id": 82511301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要135200金贝；必定成功拍下拍卖品",
+        "Condition": 82511301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            135200
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            835101
+        ]
+    },
+    {
+        "Id": 82511302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            835104
+        ]
+    },
+    {
+        "Id": 83510101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要120000金贝；必定成功拍下拍卖品",
+        "Condition": 83510101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            120000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845101
+        ]
+    },
+    {
+        "Id": 83510102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要36000金贝；10%概率成功拍下，但若失败将涨价",
+        "Condition": 83510102,
+        "NextEventId": 0,
+        "WinningRate": 1000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            36000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845102
+        ],
+        "FailedNextEvents": [
+            835111
+        ]
+    },
+    {
+        "Id": 83510103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            845104
+        ]
+    },
+    {
+        "Id": 83511101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要156000金贝；必定成功拍下拍卖品",
+        "Condition": 83511101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            156000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845101
+        ]
+    },
+    {
+        "Id": 83511102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要62400金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83511102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            62400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845102
+        ],
+        "FailedNextEvents": [
+            835112
+        ]
+    },
+    {
+        "Id": 83511103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            845104
+        ]
+    },
+    {
+        "Id": 83511201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要202800金贝；必定成功拍下拍卖品",
+        "Condition": 83511201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            202800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845101
+        ]
+    },
+    {
+        "Id": 83511202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要101400金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83511202,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            101400
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845102
+        ],
+        "FailedNextEvents": [
+            835113
+        ]
+    },
+    {
+        "Id": 83511203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            845104
+        ]
+    },
+    {
+        "Id": 83511301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要202800金贝；必定成功拍下拍卖品",
+        "Condition": 83511301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            202800
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            845101
+        ]
+    },
+    {
+        "Id": 83511302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            845104
+        ]
+    },
+    {
+        "Id": 84510101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84510201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84510301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84510401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 81610101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要200000金贝；必定成功拍下拍卖品",
+        "Condition": 81610101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            200000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826101
+        ]
+    },
+    {
+        "Id": 81610102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要60000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 81610102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826102
+        ],
+        "FailedNextEvents": [
+            816111
+        ]
+    },
+    {
+        "Id": 81610103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            826104
+        ]
+    },
+    {
+        "Id": 81611101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要260000金贝；必定成功拍下拍卖品",
+        "Condition": 81611101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            260000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826101
+        ]
+    },
+    {
+        "Id": 81611102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要104000金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 81611102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826102
+        ],
+        "FailedNextEvents": [
+            816112
+        ]
+    },
+    {
+        "Id": 81611103,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            826104
+        ]
+    },
+    {
+        "Id": 81611201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 81611201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826101
+        ]
+    },
+    {
+        "Id": 81611202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要169000金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 81611202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            169000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826102
+        ],
+        "FailedNextEvents": [
+            816113
+        ]
+    },
+    {
+        "Id": 81611203,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            826104
+        ]
+    },
+    {
+        "Id": 81611301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 81611301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            826101
+        ]
+    },
+    {
+        "Id": 81611302,
+        "Name": "高手不买第一件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            826104
+        ]
+    },
+    {
+        "Id": 82610101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要200000金贝；必定成功拍下拍卖品",
+        "Condition": 82610101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            200000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836101
+        ]
+    },
+    {
+        "Id": 82610102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要60000金贝；15%概率成功拍下，但若失败将涨价",
+        "Condition": 82610102,
+        "NextEventId": 0,
+        "WinningRate": 1500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            60000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836102
+        ],
+        "FailedNextEvents": [
+            826111
+        ]
+    },
+    {
+        "Id": 82610103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            836104
+        ]
+    },
+    {
+        "Id": 82611101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要260000金贝；必定成功拍下拍卖品",
+        "Condition": 82611101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            260000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836101
+        ]
+    },
+    {
+        "Id": 82611102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要104000金贝；25%概率成功拍下，但若失败将涨价",
+        "Condition": 82611102,
+        "NextEventId": 0,
+        "WinningRate": 2500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            104000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836102
+        ],
+        "FailedNextEvents": [
+            826112
+        ]
+    },
+    {
+        "Id": 82611103,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            836104
+        ]
+    },
+    {
+        "Id": 82611201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 82611201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836101
+        ]
+    },
+    {
+        "Id": 82611202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要169000金贝；35%概率成功拍下，但若失败将涨价",
+        "Condition": 82611202,
+        "NextEventId": 0,
+        "WinningRate": 3500,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            169000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836102
+        ],
+        "FailedNextEvents": [
+            826113
+        ]
+    },
+    {
+        "Id": 82611203,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            836104
+        ]
+    },
+    {
+        "Id": 82611301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要338000金贝；必定成功拍下拍卖品",
+        "Condition": 82611301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            338000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            836101
+        ]
+    },
+    {
+        "Id": 82611302,
+        "Name": "高手不买第二件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            836104
+        ]
+    },
+    {
+        "Id": 83610101,
+        "Name": "花钱，爽！直接一口价！",
+        "Desc": "需要350000金贝；必定成功拍下拍卖品",
+        "Condition": 83610101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            350000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846101
+        ]
+    },
+    {
+        "Id": 83610102,
+        "Name": "凑个热闹玩玩",
+        "Desc": "需要105000金贝；10%概率成功拍下，但若失败将涨价",
+        "Condition": 83610102,
+        "NextEventId": 0,
+        "WinningRate": 1000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            105000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846102
+        ],
+        "FailedNextEvents": [
+            836111
+        ]
+    },
+    {
+        "Id": 83610103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            846104
+        ]
+    },
+    {
+        "Id": 83611101,
+        "Name": "长痛不如短痛！直接一口价！",
+        "Desc": "需要455000金贝；必定成功拍下拍卖品",
+        "Condition": 83611101,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            455000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846101
+        ]
+    },
+    {
+        "Id": 83611102,
+        "Name": "多大点事，跟！",
+        "Desc": "需要182000金贝；20%概率成功拍下，但若失败将涨价",
+        "Condition": 83611102,
+        "NextEventId": 0,
+        "WinningRate": 2000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            182000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846102
+        ],
+        "FailedNextEvents": [
+            836112
+        ]
+    },
+    {
+        "Id": 83611103,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            846104
+        ]
+    },
+    {
+        "Id": 83611201,
+        "Name": "略加思索，要不还是一口价",
+        "Desc": "需要591500金贝；必定成功拍下拍卖品",
+        "Condition": 83611201,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            591500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846101
+        ]
+    },
+    {
+        "Id": 83611202,
+        "Name": "跟你杠上了，接着跟",
+        "Desc": "需要295750金贝；30%概率成功拍下，但若失败将涨价",
+        "Condition": 83611202,
+        "NextEventId": 0,
+        "WinningRate": 3000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            295750
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846102
+        ],
+        "FailedNextEvents": [
+            836113
+        ]
+    },
+    {
+        "Id": 83611203,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            846104
+        ]
+    },
+    {
+        "Id": 83611301,
+        "Name": "跟他们爆了，直接一口价！",
+        "Desc": "需要591500金贝；必定成功拍下拍卖品",
+        "Condition": 83611301,
+        "NextEventId": 0,
+        "WinningRate": 10000,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            591500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "WinningNextEvents": [
+            846101
+        ]
+    },
+    {
+        "Id": 83611302,
+        "Name": "高手不买第三件",
+        "Desc": "从长计议，下次一定",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "FailedNextEvents": [
+            846104
+        ]
+    },
+    {
+        "Id": 84610101,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84610201,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84610301,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 84610401,
+        "Name": "结束嘞",
+        "Desc": "已经结束嘞",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91000101,
+        "Name": "还有这种好事？",
+        "Desc": "金贝<color=#FF0000>+2000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            91010201
+        ]
+    },
+    {
+        "Id": 91000201,
+        "Name": "还有这种好事？",
+        "Desc": "金贝<color=#FF0000>+4000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            91010301
+        ]
+    },
+    {
+        "Id": 91000301,
+        "Name": "还有这种好事？",
+        "Desc": "金贝<color=#FF0000>+4000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            91010301
+        ]
+    },
+    {
+        "Id": 91010101,
+        "Name": "我的心里只有稳健",
+        "Desc": "投资10000金贝",
+        "Condition": 91010101,
+        "NextEventId": 910111,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91010102,
+        "Name": "富有让我选择百分比伤害",
+        "Desc": "投资30%当前金贝",
+        "Condition": 0,
+        "NextEventId": 910112,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91010103,
+        "Name": "把钱还我，我不玩了",
+        "Desc": "离开这里",
+        "Condition": 0,
+        "NextEventId": 910103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91010201,
+        "Name": "财神保佑",
+        "Desc": "怀着期待离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91010301,
+        "Name": "溜了溜了",
+        "Desc": "回头看一眼算我输",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 91011101,
+        "Name": "稳健型",
+        "Desc": "90%概率<color=#EC5B38>+10%</color>额外收益，10%概率亏损<color=#409B7E>10%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            11000,
+            9000
+        ],
+        "GambleRewardWeights": [
+            9000,
+            1000
+        ]
+    },
+    {
+        "Id": 91011102,
+        "Name": "激进型",
+        "Desc": "70%概率<color=#EC5B38>+30%</color>额外收益，30%概率亏损<color=#409B7E>20%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            13000,
+            8000
+        ],
+        "GambleRewardWeights": [
+            7000,
+            3000
+        ]
+    },
+    {
+        "Id": 91011103,
+        "Name": "玩的就是心跳",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            18000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 91011201,
+        "Name": "稳健型",
+        "Desc": "90%概率<color=#EC5B38>+10%</color>额外收益，10%概率亏损<color=#409B7E>10%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            3000
+        ],
+        "GambleRewardRates": [
+            11000,
+            9000
+        ],
+        "GambleRewardWeights": [
+            9000,
+            1000
+        ]
+    },
+    {
+        "Id": 91011202,
+        "Name": "激进型",
+        "Desc": "70%概率<color=#EC5B38>+30%</color>额外收益，30%概率亏损<color=#409B7E>20%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            3000
+        ],
+        "GambleRewardRates": [
+            13000,
+            8000
+        ],
+        "GambleRewardWeights": [
+            7000,
+            3000
+        ]
+    },
+    {
+        "Id": 91011203,
+        "Name": "玩的就是心跳",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 910102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            3000
+        ],
+        "GambleRewardRates": [
+            18000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 92010101,
+        "Name": "我的心里只有稳健",
+        "Desc": "投资50000金贝",
+        "Condition": 92010101,
+        "NextEventId": 920111,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 92010102,
+        "Name": "富有让我选择百分比伤害",
+        "Desc": "投资40%当前金贝",
+        "Condition": 0,
+        "NextEventId": 920112,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 92010103,
+        "Name": "把钱还我，我不玩了",
+        "Desc": "离开这里",
+        "Condition": 0,
+        "NextEventId": 920103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 92010201,
+        "Name": "财神保佑",
+        "Desc": "怀着期待离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 92010301,
+        "Name": "溜了溜了",
+        "Desc": "回头看一眼算我输",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 92011101,
+        "Name": "稳健型",
+        "Desc": "80%概率<color=#EC5B38>+30%</color>额外收益，20%概率亏损<color=#409B7E>20%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            13000,
+            8000
+        ],
+        "GambleRewardWeights": [
+            8000,
+            2000
+        ]
+    },
+    {
+        "Id": 92011102,
+        "Name": "激进型",
+        "Desc": "70%概率<color=#EC5B38>+60%</color>额外收益，30%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            16000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            7000,
+            3000
+        ]
+    },
+    {
+        "Id": 92011103,
+        "Name": "玩的就是心跳",
+        "Desc": "50%概率<color=#EC5B38>+130%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            50000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            23000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 92011201,
+        "Name": "稳健型",
+        "Desc": "80%概率<color=#EC5B38>+30%</color>额外收益，20%概率亏损<color=#409B7E>20%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            4000
+        ],
+        "GambleRewardRates": [
+            13000,
+            8000
+        ],
+        "GambleRewardWeights": [
+            8000,
+            2000
+        ]
+    },
+    {
+        "Id": 92011202,
+        "Name": "激进型",
+        "Desc": "70%概率<color=#EC5B38>+60%</color>额外收益，30%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            4000
+        ],
+        "GambleRewardRates": [
+            16000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            7000,
+            3000
+        ]
+    },
+    {
+        "Id": 92011203,
+        "Name": "玩的就是心跳",
+        "Desc": "50%概率<color=#EC5B38>+130%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 920102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            4000
+        ],
+        "GambleRewardRates": [
+            23000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 93010101,
+        "Name": "我的心里只有稳健",
+        "Desc": "投资150000金贝",
+        "Condition": 93010101,
+        "NextEventId": 930111,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 93010102,
+        "Name": "梭哈是一种艺术",
+        "Desc": "投资50%当前金贝",
+        "Condition": 0,
+        "NextEventId": 930112,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 93010103,
+        "Name": "把钱还我，我不玩了",
+        "Desc": "离开这里",
+        "Condition": 0,
+        "NextEventId": 930103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 93010201,
+        "Name": "财神保佑",
+        "Desc": "怀着期待离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 93010301,
+        "Name": "溜了溜了",
+        "Desc": "回头看一眼算我输",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 93011101,
+        "Name": "稳健型",
+        "Desc": "60%概率<color=#EC5B38>+50%</color>额外收益，40%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            15000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            6000,
+            4000
+        ]
+    },
+    {
+        "Id": 93011102,
+        "Name": "激进型",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            18000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 93011103,
+        "Name": "玩的就是心跳",
+        "Desc": "30%概率<color=#EC5B38>+200%</color>额外收益，70%概率亏损<color=#409B7E>60%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            30000,
+            4000
+        ],
+        "GambleRewardWeights": [
+            3000,
+            7000
+        ]
+    },
+    {
+        "Id": 93011201,
+        "Name": "稳健型",
+        "Desc": "60%概率<color=#EC5B38>+50%</color>额外收益，40%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            15000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            6000,
+            4000
+        ]
+    },
+    {
+        "Id": 93011202,
+        "Name": "激进型",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            18000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 93011203,
+        "Name": "玩的就是心跳",
+        "Desc": "30%概率<color=#EC5B38>+200%</color>额外收益，70%概率亏损<color=#409B7E>60%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 930102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            30000,
+            4000
+        ],
+        "GambleRewardWeights": [
+            3000,
+            7000
+        ]
+    },
+    {
+        "Id": 94010101,
+        "Name": "我的心里只有稳健",
+        "Desc": "投资150000金贝",
+        "Condition": 94010101,
+        "NextEventId": 940111,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 94010102,
+        "Name": "梭哈是一种艺术",
+        "Desc": "投资50%当前金贝",
+        "Condition": 0,
+        "NextEventId": 940112,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 94010103,
+        "Name": "把钱还我，我不玩了",
+        "Desc": "离开这里",
+        "Condition": 0,
+        "NextEventId": 940103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 94010201,
+        "Name": "财神保佑",
+        "Desc": "怀着期待离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 94010301,
+        "Name": "溜了溜了",
+        "Desc": "回头看一眼算我输",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 94011101,
+        "Name": "稳健型",
+        "Desc": "60%概率<color=#EC5B38>+50%</color>额外收益，40%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            15000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            6000,
+            4000
+        ]
+    },
+    {
+        "Id": 94011102,
+        "Name": "激进型",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            18000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 94011103,
+        "Name": "玩的就是心跳",
+        "Desc": "30%概率<color=#EC5B38>+200%</color>额外收益，70%概率亏损<color=#409B7E>60%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            150000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "GambleRewardRates": [
+            30000,
+            4000
+        ],
+        "GambleRewardWeights": [
+            3000,
+            7000
+        ]
+    },
+    {
+        "Id": 94011201,
+        "Name": "稳健型",
+        "Desc": "60%概率<color=#EC5B38>+50%</color>额外收益，40%概率亏损<color=#409B7E>40%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            15000,
+            6000
+        ],
+        "GambleRewardWeights": [
+            6000,
+            4000
+        ]
+    },
+    {
+        "Id": 94011202,
+        "Name": "激进型",
+        "Desc": "50%概率<color=#EC5B38>+80%</color>额外收益，50%概率亏损<color=#409B7E>50%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            18000,
+            5000
+        ],
+        "GambleRewardWeights": [
+            5000,
+            5000
+        ]
+    },
+    {
+        "Id": 94011203,
+        "Name": "玩的就是心跳",
+        "Desc": "30%概率<color=#EC5B38>+200%</color>额外收益，70%概率亏损<color=#409B7E>60%</color>投入金贝",
+        "Condition": 0,
+        "NextEventId": 940102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 1,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            0
+        ],
+        "CostResourceRates": [
+            5000
+        ],
+        "GambleRewardRates": [
+            30000,
+            4000
+        ],
+        "GambleRewardWeights": [
+            3000,
+            7000
+        ]
+    },
+    {
+        "Id": 1001,
+        "Name": "收下报酬",
+        "Desc": "金贝<color=#FF0000>+1000</color>",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            11
+        ]
+    },
+    {
+        "Id": 1101,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1010001,
+        "Name": "针对游客宣传，提高网站上的评分。",
+        "Desc": "2季度内，商品售价+20%，生产效率<color=#16D100>-10%</color>",
+        "Condition": 0,
+        "NextEventId": 10101,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80011,
+            80046
+        ]
+    },
+    {
+        "Id": 1010002,
+        "Name": "针对本地人宣传，注重口碑的维护。",
+        "Desc": "2季度内，商品生产效率+30%，售价<color=#16D100>-10%</color>",
+        "Condition": 0,
+        "NextEventId": 10102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80012,
+            80013
+        ]
+    },
+    {
+        "Id": 1010101,
+        "Name": "开店真是不容易啊……",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1010201,
+        "Name": "开店真是不容易啊……",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1020101,
+        "Name": "把店铺开大，扩招人手。",
+        "Desc": "3季度内，商品生产效率+30%",
+        "Condition": 1020101,
+        "NextEventId": 10202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80021
+        ]
+    },
+    {
+        "Id": 1020102,
+        "Name": "减少营业时间，降低运营压力。",
+        "Desc": "3季度内，商品生产效率+15%",
+        "Condition": 0,
+        "NextEventId": 10203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80022
+        ]
+    },
+    {
+        "Id": 1020201,
+        "Name": "这段时间的辛苦都是值得的。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1020301,
+        "Name": "果然还是得优化工作流。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1030101,
+        "Name": "断然拒绝，大不了换地开店。",
+        "Desc": "2季度内，商品生产暴击效果+50%",
+        "Condition": 1030101,
+        "NextEventId": 10302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            10000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80036
+        ]
+    },
+    {
+        "Id": 1030102,
+        "Name": "入乡随俗，只能先忍了。",
+        "Desc": "2季度内，商品生产暴击率+30%",
+        "Condition": 1030102,
+        "NextEventId": 10303,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            8000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80035
+        ]
+    },
+    {
+        "Id": 1030103,
+        "Name": "摆出实绩，证明店铺的带动能力。",
+        "Desc": "获得特殊秘藏：“命运”",
+        "Condition": 0,
+        "NextEventId": 10304,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1030103
+        ]
+    },
+    {
+        "Id": 1030201,
+        "Name": "底线才是最重要的。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1030301,
+        "Name": "总有一天会把这笔钱拿回来。",
+        "Desc": "商会代表：“又要到饭了，朋友们！”",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1030401,
+        "Name": "事实胜于雄辩。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1040101,
+        "Name": "到海边收集",
+        "Desc": "<color=#a46800>椰子</color><color=#FF0000>+50</color>，<color=#a46800>木材</color><color=#FF0000>+300</color>",
+        "Condition": 0,
+        "NextEventId": 10402,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1040101,
+            1040102
+        ]
+    },
+    {
+        "Id": 1040102,
+        "Name": "到山上收集",
+        "Desc": "<color=#a46800>木材</color><color=#FF0000>+600</color>",
+        "Condition": 0,
+        "NextEventId": 10403,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1040103
+        ]
+    },
+    {
+        "Id": 1040201,
+        "Name": "原来她也很喜欢大海。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1040301,
+        "Name": "早知道就带点驱蚊水了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1050101,
+        "Name": "可爱梦幻的少女风格",
+        "Desc": "2季度内，商品销售暴击率+20%",
+        "Condition": 0,
+        "NextEventId": 10502,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80023
+        ]
+    },
+    {
+        "Id": 1050102,
+        "Name": "符合热带印象的风格",
+        "Desc": "2季度内，<color=#a46800>椰子</color>和<color=#a46800>木材</color>的生产效率+40%",
+        "Condition": 0,
+        "NextEventId": 10503,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80024
+        ]
+    },
+    {
+        "Id": 1050201,
+        "Name": "她居然那么擅长公主风！",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1050301,
+        "Name": "因地适宜就是最好的设计。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1060101,
+        "Name": "就当互惠互利了，答应。",
+        "Desc": "金贝+50000，商品生产效率-30%，持续1季度",
+        "Condition": 0,
+        "NextEventId": 10602,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80025
+        ],
+        "EffectIds": [
+            1060101
+        ]
+    },
+    {
+        "Id": 1060102,
+        "Name": "关闭一天店铺太亏了，拒绝。",
+        "Condition": 0,
+        "NextEventId": 10603,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1060103,
+        "Name": "给他介绍一个更适合拍照的位置。",
+        "Desc": "商品售价永久+30%",
+        "Condition": 0,
+        "NextEventId": 10604,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80026
+        ]
+    },
+    {
+        "Id": 1060201,
+        "Name": "算是皆大欢喜……吧？",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1060301,
+        "Name": "经营“网红店”果然不太适合我们。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1060401,
+        "Name": "看来有段时间忙活了，真是幸福的烦恼。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1070101,
+        "Name": "就当互惠互利了，答应。",
+        "Desc": "金贝+50000，商品生产效率-30%，持续1季度",
+        "Condition": 0,
+        "NextEventId": 10702,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80025
+        ],
+        "EffectIds": [
+            1060101
+        ]
+    },
+    {
+        "Id": 1070102,
+        "Name": "关闭一天店铺太亏了，拒绝。",
+        "Condition": 0,
+        "NextEventId": 10703,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1070103,
+        "Name": "干脆喊上所有人，一起进行采访。",
+        "Desc": "商品生产效率永久+30%",
+        "Condition": 0,
+        "NextEventId": 10704,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80030
+        ]
+    },
+    {
+        "Id": 1070201,
+        "Name": "真是皆大欢喜。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1070301,
+        "Name": "经营“网红店”果然不太适合我们。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1070401,
+        "Name": "看来有段时间忙活了，真是幸福的烦恼。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1080101,
+        "Name": "有所顾忌，还是选择独立建设。",
+        "Condition": 0,
+        "NextEventId": 10802,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1080102,
+        "Name": "不计前嫌，去邀请商会加入。",
+        "Desc": "2个季度内，生产力+1",
+        "Condition": 0,
+        "NextEventId": 10803,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80027
+        ]
+    },
+    {
+        "Id": 1080201,
+        "Name": "还是谨慎行事吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1080301,
+        "Name": "那就一起好好合作吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1090101,
+        "Name": "信不过这些人，还是独立建设吧。",
+        "Condition": 0,
+        "NextEventId": 10902,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1090102,
+        "Name": "不计前嫌，同意商会加入。",
+        "Desc": "3个季度内，生产力+1",
+        "Condition": 0,
+        "NextEventId": 10903,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80028
+        ]
+    },
+    {
+        "Id": 1090201,
+        "Name": "加油，物流网络快铺设完成了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1090301,
+        "Name": "那就一起好好合作吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1100101,
+        "Name": "欣然同意。",
+        "Condition": 0,
+        "NextEventId": 11002,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1100102,
+        "Name": "表示还要再思考一下。",
+        "Condition": 0,
+        "NextEventId": 11003,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1100201,
+        "Name": "众人拾柴火焰高。",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    },
+    {
+        "Id": 1100301,
+        "Name": "还是求稳比较重要。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1110101,
+        "Name": "尽情地散心。",
+        "Desc": "获得特殊秘藏：“信条”",
+        "Condition": 0,
+        "NextEventId": 11102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1110101
+        ]
+    },
+    {
+        "Id": 1110201,
+        "Name": "真是美好的一天。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1110301,
+        "Name": "置之不理。",
+        "Condition": 0,
+        "NextEventId": 11104,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1110302,
+        "Name": "抄小路追上那道身影。",
+        "Desc": "金贝+50000",
+        "Condition": 0,
+        "NextEventId": 11105,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1060101
+        ]
+    },
+    {
+        "Id": 1110401,
+        "Name": "真是美好的一天。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1110501,
+        "Name": "改邪归正就好。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1120101,
+        "Name": "拜托七实去宣传",
+        "Condition": 0,
+        "NextEventId": 11202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1120102,
+        "Name": "拜托七实去收集材料",
+        "Condition": 0,
+        "NextEventId": 11203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1120201,
+        "Name": "看来可以期待她的宣传效果了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1120301,
+        "Name": "她会带什么东西回来呢。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1130101,
+        "Name": "再单独开辟一个机械体分店。",
+        "Condition": 0,
+        "NextEventId": 11302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1130102,
+        "Name": "去和七实商量一下。",
+        "Desc": "2季度内，<color=#a46800>石油</color>生产效率+20%",
+        "Condition": 0,
+        "NextEventId": 11303,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80029
+        ]
+    },
+    {
+        "Id": 1130201,
+        "Name": "那就听她的吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1130301,
+        "Name": "机械体成为店员，好像也没什么不行。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1140101,
+        "Name": "答应它们的请求。",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 11402,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    },
+    {
+        "Id": 1140102,
+        "Name": "拒绝，机械体也有拿工资的权利。",
+        "Desc": "2季度内，<color=#a46800>石油</color>生产效率+20%",
+        "Condition": 0,
+        "NextEventId": 11403,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80029
+        ]
+    },
+    {
+        "Id": 1140201,
+        "Name": "帮手变多了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1140301,
+        "Name": "这样一来，我们也是朋友了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1150101,
+        "Name": "守护好这间商店。",
+        "Desc": "商品生产效率永久+30%",
+        "Condition": 0,
+        "NextEventId": 11502,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80030
+        ]
+    },
+    {
+        "Id": 1150102,
+        "Name": "让更多机械体成为我们的朋友。",
+        "Desc": "获得特殊秘藏：“友谊的小船”",
+        "Condition": 0,
+        "NextEventId": 11503,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1150102
+        ]
+    },
+    {
+        "Id": 1150201,
+        "Name": "我们都记住了。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1150301,
+        "Name": "一起去认识更多朋友吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1160101,
+        "Name": "守护好这间商店。",
+        "Desc": "商品生产效率永久+30%",
+        "Condition": 0,
+        "NextEventId": 11602,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80030
+        ]
+    },
+    {
+        "Id": 1160201,
+        "Name": "我们都记住了。",
+        "Desc": "金贝+3000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1170101
+        ]
+    },
+    {
+        "Id": 1170101,
+        "Name": "如实相告，暂时不需要帮忙。",
+        "Condition": 0,
+        "NextEventId": 11702,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1170102,
+        "Name": "绞尽脑汁，为她安排一个岗位。",
+        "Desc": "2个季度内，<color=#a46800>椰子</color>生产效率+30%",
+        "Condition": 1170102,
+        "NextEventId": 11703,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            1000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80031
+        ]
+    },
+    {
+        "Id": 1170201,
+        "Name": "考验果然还是开始了……",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1170301,
+        "Name": "果然还是拗不过她……",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1180101,
+        "Name": "苏菲亚和常羽",
+        "Desc": "2季度内，商品销售暴击率+20%",
+        "Condition": 0,
+        "NextEventId": 11802,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80023
+        ]
+    },
+    {
+        "Id": 1180102,
+        "Name": "艾拉和卡列尼娜",
+        "Desc": "2季度内，商品售价+20%",
+        "Condition": 0,
+        "NextEventId": 11803,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80032
+        ]
+    },
+    {
+        "Id": 1180201,
+        "Name": "果然是小孩子联盟会玩的游戏。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1180301,
+        "Name": "是气场的原因吗……",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1190101,
+        "Name": "我也玩得很开心。",
+        "Desc": "金贝+100000",
+        "Condition": 0,
+        "NextEventId": 11902,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1190101
+        ]
+    },
+    {
+        "Id": 1190102,
+        "Name": "还有一个地方想带她去看看。",
+        "Desc": "获得特殊秘藏：“小绿瓶”",
+        "Condition": 0,
+        "NextEventId": 11903,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1190102
+        ]
+    },
+    {
+        "Id": 1190201,
+        "Name": "我也是。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1190301,
+        "Name": "我们一起记住吧。",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1201,
+        "Name": "瓶颈：建造3个建筑",
+        "Desc": "奖励：<color=#a46800>椰子</color>、<color=#a46800>木材</color>、<color=#a46800>石油</color>",
+        "Condition": 4001,
+        "NextEventId": 1201,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1201
+        ]
+    },
+    {
+        "Id": 120101,
+        "Name": "瓶颈：建造8个建筑",
+        "Desc": "奖励：生产力+1",
+        "Condition": 4002,
+        "NextEventId": 1202,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1202
+        ]
+    },
+    {
+        "Id": 120201,
+        "Name": "瓶颈：建造12个建筑",
+        "Desc": "奖励：免费建造次数+1",
+        "Condition": 4003,
+        "NextEventId": 1203,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1203
+        ]
+    },
+    {
+        "Id": 120301,
+        "Name": "瓶颈：购入2个岛屿",
+        "Desc": "奖励：铸宝作坊*1",
+        "Condition": 4004,
+        "NextEventId": 1204,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1204
+        ]
+    },
+    {
+        "Id": 120401,
+        "Name": "瓶颈：建造20个建筑",
+        "Desc": "奖励：幸运屋*1",
+        "Condition": 4005,
+        "NextEventId": 1205,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1205
+        ]
+    },
+    {
+        "Id": 120501,
+        "Name": "瓶颈：主城升至4级",
+        "Desc": "奖励：生产力+3",
+        "Condition": 4006,
+        "NextEventId": 1206,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1206
+        ]
+    },
+    {
+        "Id": 120601,
+        "Name": "瓶颈：建造30个建筑",
+        "Desc": "奖励：建筑生产的商品数量+20%",
+        "Condition": 4007,
+        "NextEventId": 1207,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80033
+        ]
+    },
+    {
+        "Id": 120701,
+        "Name": "瓶颈：购入5个岛屿",
+        "Desc": "奖励：生产力+5",
+        "Condition": 4008,
+        "NextEventId": 1208,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1207
+        ]
+    },
+    {
+        "Id": 120801,
+        "Name": "瓶颈：主城升至9级",
+        "Desc": "奖励：？？？",
+        "Condition": 4009,
+        "NextEventId": 1209,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1208
+        ]
+    },
+    {
+        "Id": 120901,
+        "Name": "穿过虚空隧道",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 121001,
+        "Name": "你醒啦！",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1301,
+        "Name": "购入两极岛",
+        "Desc": "奖励：铸宝作坊*1，解锁岛上特殊区域",
+        "Condition": 4010,
+        "NextEventId": 1301,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1204,
+            1301
+        ]
+    },
+    {
+        "Id": 1302,
+        "Name": "拿上图纸，与机器人告别",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 1401,
+        "Name": "花钱学习",
+        "Desc": "行商经验+200",
+        "Condition": 1401,
+        "NextEventId": 1401,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            100000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "EffectIds": [
+            1401
+        ]
+    },
+    {
+        "Id": 1402,
+        "Name": "花钱学习",
+        "Desc": "行商经验+400",
+        "Condition": 1402,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            200000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "EffectIds": [
+            1402
+        ]
+    },
+    {
+        "Id": 2010001,
+        "Name": "雇佣专家",
+        "Condition": 2010001,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            1000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 2010002,
+        "Name": "放弃搜索",
+        "Condition": 0,
+        "NextEventId": 20102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 2010101,
+        "Name": "放过它",
+        "Desc": "椰子+500",
+        "Condition": 0,
+        "NextEventId": 20103,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1501
+        ]
+    },
+    {
+        "Id": 2010102,
+        "Name": "顷刻炼化",
+        "Desc": "石油+100",
+        "Condition": 0,
+        "NextEventId": 20104,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1502
+        ]
+    },
+    {
+        "Id": 2010201,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3010001,
+        "Name": "至少你还有思考的自由",
+        "Desc": "2季度内，商品售价+20%",
+        "Condition": 0,
+        "NextEventId": 30101,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80011
+        ]
+    },
+    {
+        "Id": 3010002,
+        "Name": "呃，整点薯条？",
+        "Desc": "金贝+3000",
+        "Condition": 0,
+        "NextEventId": 30102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1170101
+        ]
+    },
+    {
+        "Id": 3010101,
+        "Name": "爱，哲学，机器人",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3010201,
+        "Name": "虽然不太理解它在说什么，但你刚刚是真的想去整点薯条",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3020001,
+        "Name": "思考的意义，必定在思考之外",
+        "Desc": "2季度内，商品销售暴击率+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80023
+        ]
+    },
+    {
+        "Id": 3021101,
+        "Name": "西西弗斯薯条店，敬不完美的自由",
+        "Desc": "2季度内，商品售价+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80032
+        ]
+    },
+    {
+        "Id": 3030001,
+        "Name": "她一定会回来的",
+        "Condition": 0,
+        "NextEventId": 30301,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3030002,
+        "Name": "你需要更直白的表达",
+        "Condition": 0,
+        "NextEventId": 30302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3030101,
+        "Name": "收下馈赠。",
+        "Desc": "金贝+5000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3030001
+        ]
+    },
+    {
+        "Id": 3030201,
+        "Name": "他去哪了？",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3040001,
+        "Name": "“如果是他的话，一定也会这样做。”",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    },
+    {
+        "Id": 3041101,
+        "Name": "“最后的时间里，我不想留下遗憾。”",
+        "Desc": "获得特殊秘藏：“勇气”",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3040101
+        ]
+    },
+    {
+        "Id": 3050001,
+        "Name": "我也要变成光 （帮助他们）",
+        "Desc": "2季度内，商品销售暴击率+20%",
+        "Condition": 3050001,
+        "NextEventId": 30501,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80023
+        ]
+    },
+    {
+        "Id": 3050002,
+        "Name": "这给我干哪来了？ （赶走他们）",
+        "Condition": 0,
+        "NextEventId": 30502,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3050101,
+        "Name": "加油啊，黄金时代的大哥哥",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3050201,
+        "Name": "爽，最烦带孩子了",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3060001,
+        "Name": "从反击时代安全撤离！",
+        "Desc": "3季度内，商品销售暴击效果+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80034
+        ]
+    },
+    {
+        "Id": 3061101,
+        "Name": "当然，分红你也有份",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    },
+    {
+        "Id": 3070001,
+        "Name": "战！ （和他们玩两把）",
+        "Desc": "2季度内，商品生产效率+30%",
+        "Condition": 3070101,
+        "NextEventId": 30701,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            2000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 3070002,
+        "Name": "气氛不对，润！ （顺便向当局举报）",
+        "Desc": "椰子+200",
+        "Condition": 0,
+        "NextEventId": 30702,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3070201
+        ]
+    },
+    {
+        "Id": 3070101,
+        "Name": "你们两个，看起来很勇哦",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80012
+        ]
+    },
+    {
+        "Id": 3070201,
+        "Name": "生活就像一盒巧克力，你永远不知道会取出哪一颗",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3080001,
+        "Name": "谁问你了？",
+        "Desc": "3季度内，商品生产效率+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80021
+        ]
+    },
+    {
+        "Id": 3081101,
+        "Name": "你亲手终结了传说之夜",
+        "Desc": "2季度内，商品售价+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80032
+        ]
+    },
+    {
+        "Id": 3090001,
+        "Name": "亲自指导她",
+        "Condition": 0,
+        "NextEventId": 30901,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3090002,
+        "Name": "在一旁鼓励她",
+        "Desc": "金贝+5000",
+        "Condition": 0,
+        "NextEventId": 30902,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3030001
+        ]
+    },
+    {
+        "Id": 3090101,
+        "Name": "曾几何时，也有人要和你组一辈子的乐队",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3090201,
+        "Name": "意外收获",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3100001,
+        "Name": "这条斑马线，是不是很适合拍专辑封面？",
+        "Desc": "获得特殊秘藏：“孤独乐谱”",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3100001
+        ]
+    },
+    {
+        "Id": 3101101,
+        "Name": "我渴望这个冠军好久好久了",
+        "Desc": "商品售价+20%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80011
+        ]
+    },
+    {
+        "Id": 3110001,
+        "Name": "当然有！",
+        "Desc": "2季度内，椰子和木材生产暴击率+20%",
+        "Condition": 0,
+        "NextEventId": 31101,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80037
+        ]
+    },
+    {
+        "Id": 3110002,
+        "Name": "当然没有！",
+        "Desc": "椰子+100，木材+250",
+        "Condition": 0,
+        "NextEventId": 31102,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3200002
+        ]
+    },
+    {
+        "Id": 3110101,
+        "Name": "现募集外星人、未来人、异世界来客！",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3110201,
+        "Name": "长大了，世上就不再有超能力和魔法了",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3120001,
+        "Name": "美好的每一天，非连续的存在",
+        "Desc": "3季度内，椰子和木材生产暴击率+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80038
+        ]
+    },
+    {
+        "Id": 3121101,
+        "Name": "总会有人在虚构故事中寻找真实感",
+        "Desc": "3季度内，椰子和木材销售暴击率+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80039
+        ]
+    },
+    {
+        "Id": 3130001,
+        "Name": "给他烤肠",
+        "Desc": "石油+50",
+        "Condition": 3130001,
+        "NextEventId": 31301,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            500
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "EffectIds": [
+            3140001
+        ]
+    },
+    {
+        "Id": 3130002,
+        "Name": "残忍拒绝 （烤肠是我的！只能是我的！）",
+        "Condition": 0,
+        "NextEventId": 31302,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3130101,
+        "Name": "快说，谢谢小狗",
+        "Desc": "金贝+5000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            3030001
+        ]
+    },
+    {
+        "Id": 3130201,
+        "Name": "不愧是我",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3140001,
+        "Name": "果然，小狗就是坠好的",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    },
+    {
+        "Id": 3141101,
+        "Name": "果然，小狗就是坠好的",
+        "Desc": "3季度内，石油销售暴击效果+40%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80040
+        ]
+    },
+    {
+        "Id": 3150001,
+        "Name": "加班生产",
+        "Desc": "2季度内，商品生产效率+40%",
+        "Condition": 3150001,
+        "NextEventId": 31501,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5000
+        ],
+        "CostResourceRates": [
+            0
+        ],
+        "BuffIds": [
+            80041
+        ]
+    },
+    {
+        "Id": 3150002,
+        "Name": "保持节奏 （别卷了别卷了）",
+        "Condition": 0,
+        "NextEventId": 31502,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3150101,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3150201,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3160001,
+        "Name": "继续保持",
+        "Desc": "3季度内，商品售价+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80042
+        ]
+    },
+    {
+        "Id": 3161101,
+        "Name": "继续保持",
+        "Desc": "3季度内，商品售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80043
+        ]
+    },
+    {
+        "Id": 3170001,
+        "Name": "拒绝提议 （甚至反手一个举报）",
+        "Condition": 0,
+        "NextEventId": 31701,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3170002,
+        "Name": "答应提议 （赚了再说）",
+        "Desc": "2季度内，商品生产效率+30%",
+        "Condition": 0,
+        "NextEventId": 31702,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80012
+        ]
+    },
+    {
+        "Id": 3170101,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3170201,
+        "Name": "离开",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3180001,
+        "Name": "离开",
+        "Desc": "2季度内，商品售价+30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80044
+        ]
+    },
+    {
+        "Id": 3181101,
+        "Name": "离开",
+        "Desc": "2季度内，商品售价-30%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80045
+        ]
+    },
+    {
+        "Id": 3190001,
+        "Name": "我选择为梦想转身",
+        "Condition": 3190001,
+        "NextEventId": 31901,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "CostResourceIds": [
+            2
+        ],
+        "CostResourceCounts": [
+            5000
+        ],
+        "CostResourceRates": [
+            0
+        ]
+    },
+    {
+        "Id": 3190002,
+        "Name": "信他不如信我是秦始皇",
+        "Condition": 0,
+        "NextEventId": 31902,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3190101,
+        "Name": "加油呀",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3190201,
+        "Name": "洗洗睡吧",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0
+    },
+    {
+        "Id": 3200001,
+        "Name": "离开",
+        "Desc": "3个季度内，商品销售暴击率+30%，暴击效果+50%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80047,
+            80048
+        ]
+    },
+    {
+        "Id": 3201101,
+        "Name": "离开",
+        "Desc": "3个季度内，商品售价+15%",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "BuffIds": [
+            80043
+        ]
+    },
+    {
+        "Id": 3210001,
+        "Name": "一定要成为阿迪莱传奇！",
+        "Desc": "金贝+20000",
+        "Condition": 0,
+        "NextEventId": 0,
+        "WinningRate": 0,
+        "GambleRewardDelay": 0,
+        "EffectIds": [
+            1100201
+        ]
+    }
+]

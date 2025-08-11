@@ -1,0 +1,1702 @@
+[
+    {
+        "TalentId": 101,
+        "CharacterId": 1041003,
+        "LayerId": 1,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "疾电",
+        "Description": "只需消除任意蓝球即可进入核心状态",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankahexin1.png",
+        "EventIds": [
+            110701
+        ]
+    },
+    {
+        "TalentId": 102,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "海森",
+        "Description": "攻击+3%，雷属性伤害+7%；攻击时有25%概率引发雷暴使敌人感电降低8%雷属性抗性，持续5秒，且攻击感电敌人有20%概率造成250%雷属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanA1.png",
+        "EventIds": [
+            110142
+        ]
+    },
+    {
+        "TalentId": 103,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层；消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 104,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "康德丽娜",
+        "Description": "普攻伤害增加15%，普攻有25%概率进入暴怒状态，普通攻击的额外伤害加成提升15%，暴击率提升5%，持续5秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "EventIds": [
+            110128
+        ]
+    },
+    {
+        "TalentId": 105,
+        "CharacterId": 1041003,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "强弩",
+        "Description": "每次核心状态只能发动一次攻击，但攻击伤害+200%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankaS1.png",
+        "EventIds": [
+            110702
+        ]
+    },
+    {
+        "TalentId": 106,
+        "CharacterId": 1041003,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "闪电充能",
+        "Description": "角色出场后获取信号球时，不再获得红球：获得红球时，替换为等量蓝球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankalan1.png",
+        "EventIds": [
+            110703
+        ]
+    },
+    {
+        "TalentId": 107,
+        "CharacterId": 1041003,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "齐发",
+        "Description": "升级“强弩”效果：狙击状态下的攻击额外射出2根箭矢，每一根箭矢独立计算伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3DubianExlanqiu1.png",
+        "EventIds": [
+            110704
+        ]
+    },
+    {
+        "TalentId": 108,
+        "CharacterId": 1041003,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "骤雨",
+        "Description": "普攻回球效率+100%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankaSS1.png",
+        "EventIds": [
+            110705
+        ]
+    },
+    {
+        "TalentId": 109,
+        "CharacterId": 1041003,
+        "LayerId": 5,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "灭尽",
+        "Description": "消除蓝球时：聚拢大范围内的所有怪物至角色正面，并降下雷击，对所有敌人造成20%最大生命值伤害；如果目标是boss级敌人，改为10%当前生命值伤害；冷却时间30秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankalan1.png",
+        "EventIds": [
+            110706
+        ]
+    },
+    {
+        "TalentId": 110,
+        "CharacterId": 1041003,
+        "LayerId": 6,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号增幅",
+        "Description": "每消除一个信号球，攻击力+5%，最多+100%，持续时间无限；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2QuS1.png",
+        "EventIds": [
+            110475
+        ]
+    },
+    {
+        "TalentId": 111,
+        "CharacterId": 1041003,
+        "LayerId": 1,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "叱雷",
+        "Description": "以自身出场位置释放一个范围更大的必杀技，并留下一个持续7秒的雷阵",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankadazhao1.png",
+        "EventIds": [
+            110707
+        ]
+    },
+    {
+        "TalentId": 112,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "海森",
+        "Description": "攻击+3%，雷属性伤害+7%；攻击时有25%概率引发雷暴使敌人感电降低8%雷属性抗性，持续5秒，且攻击感电敌人有20%概率造成250%雷属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanA1.png",
+        "EventIds": [
+            110142
+        ]
+    },
+    {
+        "TalentId": 113,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层；消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 114,
+        "CharacterId": 1041003,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "康德丽娜",
+        "Description": "普攻伤害增加15%，普攻有25%概率进入暴怒状态，普通攻击的额外伤害加成提升15%，暴击率提升5%，持续5秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "EventIds": [
+            110128
+        ]
+    },
+    {
+        "TalentId": 115,
+        "CharacterId": 1041003,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "雷御",
+        "Description": "雷阵范围内我方闪避回复+100%，并获得30%额外伤害减免",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuchuShanbifanji.png",
+        "EventIds": [
+            110708
+        ]
+    },
+    {
+        "TalentId": 116,
+        "CharacterId": 1041003,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "进攻指令",
+        "Description": "全队成员切换入场时额外伤害加成+50%，持续10秒（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2PulaoSS1.png",
+        "EventIds": [
+            110473
+        ]
+    },
+    {
+        "TalentId": 117,
+        "CharacterId": 1041003,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "雷怒",
+        "Description": "雷阵范围内我方获得霸体，且额外伤害加成+20%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingChuliqiangji.png",
+        "EventIds": [
+            110709
+        ]
+    },
+    {
+        "TalentId": 118,
+        "CharacterId": 1041003,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号充能",
+        "Description": "全队成员切换入场时随机回3个同色球（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanSS1.png",
+        "EventIds": [
+            110474
+        ]
+    },
+    {
+        "TalentId": 119,
+        "CharacterId": 1041003,
+        "LayerId": 5,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "回响",
+        "Description": "离场时也会触发“叱雷”效果：自身离场位置释放一个范围更大的必杀技，并留下一个持续7秒的雷阵",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankadazhao1.png",
+        "EventIds": [
+            110710
+        ]
+    },
+    {
+        "TalentId": 120,
+        "CharacterId": 1041003,
+        "LayerId": 6,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号增幅",
+        "Description": "每消除一个信号球，攻击力+5%，最多+100%，持续时间无限；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2QuS1.png",
+        "EventIds": [
+            110475
+        ]
+    },
+    {
+        "TalentId": 201,
+        "CharacterId": 1531004,
+        "LayerId": 1,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "繁星",
+        "Description": "流星球造成的最终伤害值+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnapugong1.png",
+        "EventIds": [
+            110711
+        ]
+    },
+    {
+        "TalentId": 202,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "萨贺芬",
+        "Description": "攻击+5%，暗属性伤害+5%；重奏基础伤害+100%；受到幻奏治疗的友方单位获得+10%暗属性伤害，持续8秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaS1.png",
+        "EventIds": [
+            110183
+        ]
+    },
+    {
+        "TalentId": 203,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "库莉珂",
+        "Description": "消球额外获得20%的能量；必杀技所需能量减少20%。释放必杀技时，提升15%额外伤害加成，持续10秒；并获得霸体状态、提升自身额外伤害减免20%，持续5秒，重复触发刷新持续时间",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool16.png",
+        "EventIds": [
+            110112
+        ]
+    },
+    {
+        "TalentId": 204,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "爱因斯坦娜",
+        "Description": "QTE、3消使目标相关属性抗性降低15%持续8秒，冷却时间10秒。受到伤害时，展开属性光环，光环存在时获得属性抗性同时造成的属性伤害增加15%持续5秒，冷却时间8秒。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool15.png",
+        "EventIds": [
+            110141
+        ]
+    },
+    {
+        "TalentId": 205,
+        "CharacterId": 1531004,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "星云",
+        "Description": "流星球命中敌人后，必杀期间重奏·双星造成的伤害+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaA1.png",
+        "EventIds": [
+            110712
+        ]
+    },
+    {
+        "TalentId": 206,
+        "CharacterId": 1531004,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "幻奏领域",
+        "Description": "必杀期间幻奏领域内的额外伤害减免提升至80%，且在领域消失后额外持续5秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaS1.png",
+        "EventIds": [
+            110713
+        ]
+    },
+    {
+        "TalentId": 207,
+        "CharacterId": 1531004,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "流星充能",
+        "Description": "使用流星球时额外获得4点必杀能量",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyaSS1.png",
+        "EventIds": [
+            110714
+        ]
+    },
+    {
+        "TalentId": 208,
+        "CharacterId": 1531004,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "流星重构",
+        "Description": "每消耗一个流星球，流星耗尽释放重奏·双星后随机获得一组三消球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4luxiyahexin1.png",
+        "EventIds": [
+            110715
+        ]
+    },
+    {
+        "TalentId": 209,
+        "CharacterId": 1531004,
+        "LayerId": 5,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "银河组曲",
+        "Description": "每次释放重奏·双星后，必杀造成的最终伤害值+30%，最多提升至+150%，持续时间无限",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnadazhao1.png",
+        "EventIds": [
+            110716
+        ]
+    },
+    {
+        "TalentId": 210,
+        "CharacterId": 1531004,
+        "LayerId": 6,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "生命增幅",
+        "Description": "当前每有1%生命值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuKuaisuxiufu.png",
+        "EventIds": [
+            110495
+        ]
+    },
+    {
+        "TalentId": 211,
+        "CharacterId": 1531004,
+        "LayerId": 1,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "幻乐",
+        "Description": "退场后8秒内：友方角色释放3消时，赛琳娜释放一个对应颜色的赛琳娜3消派生，有2秒冷却时间",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png",
+        "EventIds": [
+            110717
+        ]
+    },
+    {
+        "TalentId": 212,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "萨贺芬",
+        "Description": "攻击+5%，暗属性伤害+5%；重奏基础伤害+100%；受到幻奏治疗的友方单位获得+10%暗属性伤害，持续8秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaS1.png",
+        "EventIds": [
+            110183
+        ]
+    },
+    {
+        "TalentId": 213,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "芭斯隆",
+        "Description": "攻击增加3%，暗属性伤害增加7%。攻击时有20%的概率召唤暗区域，持续5秒，攻击区域内目标时，20%的获得1个信号球，冷却时间12秒；并降低被侵蚀目标8%暗属性抗性",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSS1.png",
+        "EventIds": [
+            110126
+        ]
+    },
+    {
+        "TalentId": 214,
+        "CharacterId": 1531004,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "爱因斯坦娜",
+        "Description": "QTE、3消使目标相关属性抗性降低15%持续8秒，冷却时间10秒。受到伤害时，展开属性光环，光环存在时获得属性抗性同时造成的属性伤害增加15%持续5秒，冷却时间8秒。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool15.png",
+        "EventIds": [
+            110141
+        ]
+    },
+    {
+        "TalentId": 215,
+        "CharacterId": 1531004,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "永恒鸣奏",
+        "Description": "幻奏离场后触发派生时，还会为在场角色提供50%攻击的治疗效果并在3秒内额外伤害加成+30%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool4.png",
+        "EventIds": [
+            110718
+        ]
+    },
+    {
+        "TalentId": 216,
+        "CharacterId": 1531004,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "协作指令",
+        "Description": "全队成员激活一个QTE时，唤醒另一QTE（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/QTE1.png",
+        "EventIds": [
+            110494
+        ]
+    },
+    {
+        "TalentId": 217,
+        "CharacterId": 1531004,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "安可",
+        "Description": "友方角色消球时，有20%概率返还释放技能的信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSSS1.png",
+        "EventIds": [
+            110719
+        ]
+    },
+    {
+        "TalentId": 218,
+        "CharacterId": 1531004,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "必杀充能",
+        "Description": "全队成员切换入场时获得50必杀能量（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Sufeiyadazhao1.png",
+        "EventIds": [
+            110484
+        ]
+    },
+    {
+        "TalentId": 219,
+        "CharacterId": 1531004,
+        "LayerId": 5,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "殿堂首席",
+        "Description": "升级“幻乐”与“永恒鸣奏”效果：退场后15秒内，友方角色3消时，赛琳娜释放一个对应颜色的赛琳娜3消派生，有1秒冷却时间；派生触发时为在场角色提供的额外伤害加成提升至+60%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png",
+        "EventIds": [
+            110720
+        ]
+    },
+    {
+        "TalentId": 220,
+        "CharacterId": 1531004,
+        "LayerId": 6,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "生命增幅",
+        "Description": "当前每有1%生命值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuKuaisuxiufu.png",
+        "EventIds": [
+            110495
+        ]
+    },
+    {
+        "TalentId": 301,
+        "CharacterId": 1231002,
+        "LayerId": 1,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "提线牵丝",
+        "Description": "任意消球即可获得满跃痕值，并且获得的能量值按照3消计算",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bangbinatahexin1.png",
+        "EventIds": [
+            110721
+        ]
+    },
+    {
+        "TalentId": 302,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "辰积原",
+        "Description": "攻击+3%，冰属性伤害+7%；攻击时有30%概率引发霜冻使敌人降低8%冰属性抗性与20%移速，持续5秒，且攻击霜冻敌人有20%概率造成420%冰属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2ChangyuSS1.png",
+        "EventIds": [
+            110182
+        ]
+    },
+    {
+        "TalentId": 303,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "汉娜",
+        "Description": "3消额外伤害加成提高25%，每30秒，下次3消会进入超算空间，并随机获得1个信号球。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool19.png",
+        "EventIds": [
+            110111
+        ]
+    },
+    {
+        "TalentId": 304,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层；消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 305,
+        "CharacterId": 1231002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "记忆契约",
+        "Description": "每次遗忘信号球永久+25%额外伤害加成，叠加上限225%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2ailaS1.png",
+        "EventIds": [
+            110722
+        ]
+    },
+    {
+        "TalentId": 306,
+        "CharacterId": 1231002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "人偶之舞",
+        "Description": "每次进入超算回复20%最大生命值",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataA1.png",
+        "EventIds": [
+            110723
+        ]
+    },
+    {
+        "TalentId": 307,
+        "CharacterId": 1231002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "遗忘契约",
+        "Description": "每次遗忘信号球时，随机获得一组信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Luolanhexin1.png",
+        "EventIds": [
+            110724
+        ]
+    },
+    {
+        "TalentId": 308,
+        "CharacterId": 1231002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "人形剧场",
+        "Description": "释放必杀后进入超算",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bangbinatadazhao1.png",
+        "EventIds": [
+            110725
+        ]
+    },
+    {
+        "TalentId": 309,
+        "CharacterId": 1231002,
+        "LayerId": 5,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "时序守则",
+        "Description": "核心状态成功闪避敌人攻击，立即进入超算并重置超算冷却",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataSSS1.png",
+        "EventIds": [
+            110726
+        ]
+    },
+    {
+        "TalentId": 310,
+        "CharacterId": 1231002,
+        "LayerId": 6,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号增幅",
+        "Description": "每消除一个信号球，攻击力+5%，最多+100%，持续时间无限；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2QuS1.png",
+        "EventIds": [
+            110475
+        ]
+    },
+    {
+        "TalentId": 311,
+        "CharacterId": 1231002,
+        "LayerId": 1,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "记忆折叠",
+        "Description": "切换入场后，额外遗忘一种信号球，并且获取60必杀能量与大量信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2BangbinataSS1.png",
+        "EventIds": [
+            110727
+        ]
+    },
+    {
+        "TalentId": 312,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "辰积原",
+        "Description": "攻击+3%，冰属性伤害+7%；攻击时有30%概率引发霜冻使敌人降低8%冰属性抗性与20%移速，持续5秒，且攻击霜冻敌人有20%概率造成420%冰属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2ChangyuSS1.png",
+        "EventIds": [
+            110182
+        ]
+    },
+    {
+        "TalentId": 313,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "汉娜",
+        "Description": "3消额外伤害加成提高25%，每30秒，下次3消会进入超算空间，并随机获得1个信号球。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool19.png",
+        "EventIds": [
+            110111
+        ]
+    },
+    {
+        "TalentId": 314,
+        "CharacterId": 1231002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层；消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 315,
+        "CharacterId": 1231002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "舞台律动",
+        "Description": "连续消同色球额外伤害加成+20%，最多叠加至200%，持续10秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2biankaS1.png",
+        "EventIds": [
+            110728
+        ]
+    },
+    {
+        "TalentId": 316,
+        "CharacterId": 1231002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "进攻指令",
+        "Description": "全队成员切换入场时额外伤害加成+50%，持续10秒（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2PulaoSS1.png",
+        "EventIds": [
+            110473
+        ]
+    },
+    {
+        "TalentId": 317,
+        "CharacterId": 1231002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "镜隐霜丝",
+        "Description": "升级“记忆折叠”效果：切换入场后，必定遗忘黄球与蓝球并保留红球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Bangbinatahong1.png",
+        "EventIds": [
+            110729
+        ]
+    },
+    {
+        "TalentId": 318,
+        "CharacterId": 1231002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号充能",
+        "Description": "全队成员切换入场时随机回3个同色球（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanSS1.png",
+        "EventIds": [
+            110474
+        ]
+    },
+    {
+        "TalentId": 319,
+        "CharacterId": 1231002,
+        "LayerId": 5,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "追踪变换",
+        "Description": "切换入场后4秒内，消除信号球时立即获取等量信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2biankaSS1.png",
+        "EventIds": [
+            110730
+        ]
+    },
+    {
+        "TalentId": 320,
+        "CharacterId": 1231002,
+        "LayerId": 6,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "信号增幅",
+        "Description": "每消除一个信号球，攻击力+5%，最多+100%，持续时间无限；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2QuS1.png",
+        "EventIds": [
+            110475
+        ]
+    },
+    {
+        "TalentId": 401,
+        "CharacterId": 1221002,
+        "LayerId": 1,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": 21,
+        "Description": "每连击21次，获得2%额外伤害加成，最多叠加到200%，持续时间无限",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2KamuA1.png",
+        "EventIds": [
+            110731
+        ]
+    },
+    {
+        "TalentId": 402,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "芭斯隆",
+        "Description": "攻击增加3%，暗属性伤害增加7%。攻击时有20%的概率召唤暗区域，持续5秒，攻击区域内目标时，20%的获得1个信号球，冷却时间12秒；并降低被侵蚀目标8%暗属性抗性",
+        "SpecialAbility": 50,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSS1.png",
+        "EventIds": [
+            110126
+        ]
+    },
+    {
+        "TalentId": 403,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "爱因斯坦娜",
+        "Description": "QTE、3消使目标相关属性抗性降低15%持续8秒，冷却时间10秒。受到伤害时，展开属性光环，光环存在时获得属性抗性同时造成的属性伤害增加15%持续5秒，冷却时间8秒。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool15.png",
+        "EventIds": [
+            110141
+        ]
+    },
+    {
+        "TalentId": 404,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层。消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 405,
+        "CharacterId": 1221002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“诺克提”",
+        "Description": "在场上额外召唤一只“诺克提”，为21号和小家伙提供靶子",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3ShenweiSSS1.png",
+        "EventIds": [
+            110732
+        ]
+    },
+    {
+        "TalentId": 406,
+        "CharacterId": 1221002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": 210,
+        "Description": "每连击210次，薇拉将会治疗并强化21号，立即恢复20%生命值并在8秒内+30%暗属性伤害加成",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2KamuSSS1.png",
+        "EventIds": [
+            110733
+        ]
+    },
+    {
+        "TalentId": 407,
+        "CharacterId": 1221002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": 42,
+        "Description": "每连击42次，回复一颗信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2KamuZhongjieji1.png",
+        "EventIds": [
+            110734
+        ]
+    },
+    {
+        "TalentId": 408,
+        "CharacterId": 1221002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": 2100,
+        "Description": "每连击2100次，薇拉将会协助21号，秒杀所有敌人；如果目标是boss级敌人，改为造成40%最大生命值伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2dubianSSS1.png",
+        "EventIds": [
+            110735
+        ]
+    },
+    {
+        "TalentId": 409,
+        "CharacterId": 1221002,
+        "LayerId": 5,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“喜悦”",
+        "Description": "造成伤害时，额外附加一次50%该伤害值的真实伤害并计入连击",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Twentyone1.png",
+        "EventIds": [
+            110736
+        ]
+    },
+    {
+        "TalentId": 410,
+        "CharacterId": 1221002,
+        "LayerId": 6,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "机动增幅",
+        "Description": "当前每有1%闪避值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
+        "EventIds": [
+            110485
+        ]
+    },
+    {
+        "TalentId": 411,
+        "CharacterId": 1221002,
+        "LayerId": 1,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“boom”",
+        "Description": "每次切换入场时，诺克提会协助发起一次轰炸，对大范围内敌人造成2200%真实伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongShezhiyoubao.png",
+        "EventIds": [
+            110737
+        ]
+    },
+    {
+        "TalentId": 412,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "芭斯隆",
+        "Description": "攻击增加3%，暗属性伤害增加7%。攻击时有20%的概率召唤暗区域，持续5秒，攻击区域内目标时，20%的获得1个信号球，冷却时间12秒；并降低被侵蚀目标8%暗属性抗性",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4SailinnaSS1.png",
+        "EventIds": [
+            110126
+        ]
+    },
+    {
+        "TalentId": 413,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "爱因斯坦娜",
+        "Description": "QTE、3消使目标相关属性抗性降低15%持续8秒，冷却时间10秒。受到伤害时，展开属性光环，光环存在时获得属性抗性同时造成的属性伤害增加15%持续5秒，冷却时间8秒。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool15.png",
+        "EventIds": [
+            110141
+        ]
+    },
+    {
+        "TalentId": 414,
+        "CharacterId": 1221002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "达尔文",
+        "Description": "每消1个球额外伤害加成提升3%，持续4秒，最多叠5层。消除某一颜色信号球时标记，3种颜色信号球都被标记后，释放一次600%的物理伤害的冲击波，并刷新标记。",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EventIds": [
+            110117
+        ]
+    },
+    {
+        "TalentId": 415,
+        "CharacterId": 1221002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“恐惧”",
+        "Description": "轰炸后留下一个区域，区域内敌人行动速率降低30%，区域持续3秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJingmixingdong.png",
+        "EventIds": [
+            110738
+        ]
+    },
+    {
+        "TalentId": 416,
+        "CharacterId": 1221002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "防御指令",
+        "Description": "全队成员切换入场时获得30%额外伤害减免，持续10秒（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipShuxingJiegoujiagu.png",
+        "EventIds": [
+            110486
+        ]
+    },
+    {
+        "TalentId": 417,
+        "CharacterId": 1221002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“boom”“boom”",
+        "Description": "切换入场的轰炸次数+2",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongShezhiyoubao.png",
+        "EventIds": [
+            110739
+        ]
+    },
+    {
+        "TalentId": 418,
+        "CharacterId": 1221002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "护盾充能",
+        "Description": "全队成员切换入场时获得20%最大生命值护盾，并且护盾时霸体（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihexin1.png",
+        "EventIds": [
+            110483
+        ]
+    },
+    {
+        "TalentId": 419,
+        "CharacterId": 1221002,
+        "LayerId": 5,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "“boom”“boom”“boom”",
+        "Description": "每次爆炸都有50%概率提升100%伤害，若成功提升则可以继续判定，最高可造成400%爆炸伤害；每次爆炸单独计算概率",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongZhongliyindao.png",
+        "EventIds": [
+            110740
+        ]
+    },
+    {
+        "TalentId": 420,
+        "CharacterId": 1221002,
+        "LayerId": 6,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "机动增幅",
+        "Description": "当前每有1%闪避值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
+        "EventIds": [
+            110485
+        ]
+    },
+    {
+        "TalentId": 501,
+        "CharacterId": 1031002,
+        "LayerId": 1,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "圣裁",
+        "Description": "触发EX引雷时：对所有受到EX引雷伤害的敌人额外造成一次1700%的雷属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2luxiyaS1.png",
+        "EventIds": [
+            110741
+        ]
+    },
+    {
+        "TalentId": 502,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "海森",
+        "Description": "攻击+3%，雷属性伤害+7%；攻击时有25%概率引发雷暴使敌人感电降低8%雷属性抗性，持续5秒，且攻击感电敌人有20%概率造成250%雷属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanA1.png",
+        "EventIds": [
+            110142
+        ]
+    },
+    {
+        "TalentId": 503,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "桂尼",
+        "Description": "治疗效果增加10%，使治疗目标属性伤害、抗性增加10%，持续5秒，cd8秒。每次治疗充能无人机，充满后，下次治疗清空充能召唤一个无人机，自动跟随角色，范围内每秒恢复2%的最大生命值，增加15%的属性攻击，持续5秒，cd12秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuZidongxiufu.png",
+        "EventIds": [
+            110179
+        ]
+    },
+    {
+        "TalentId": 504,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "库莉珂",
+        "Description": "消球额外获得20%的能量；必杀技所需能量减少20%。释放必杀技时，提升15%额外伤害加成，持续10秒；并获得霸体状态、提升自身额外伤害减免20%，持续5秒，重复触发刷新持续时间",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool16.png",
+        "EventIds": [
+            110112
+        ]
+    },
+    {
+        "TalentId": 505,
+        "CharacterId": 1031002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "豁免空间",
+        "Description": "黄球的持续时间提升100%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhuang1.png",
+        "EventIds": [
+            110742
+        ]
+    },
+    {
+        "TalentId": 506,
+        "CharacterId": 1031002,
+        "LayerId": 3,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "虚构障碍",
+        "Description": "蓝球的持续时间提升100%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifulan1.png",
+        "EventIds": [
+            110743
+        ]
+    },
+    {
+        "TalentId": 507,
+        "CharacterId": 1031002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "雷电充能",
+        "Description": "触发EX引雷时，随机获取一颗信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kuluomuS1.png",
+        "EventIds": [
+            110744
+        ]
+    },
+    {
+        "TalentId": 508,
+        "CharacterId": 1031002,
+        "LayerId": 4,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "电力循环",
+        "Description": "累计消除15个球后，随机获取一颗信号球",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhexin1.png",
+        "EventIds": [
+            110745
+        ]
+    },
+    {
+        "TalentId": 509,
+        "CharacterId": 1031002,
+        "LayerId": 5,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "电能澎湃",
+        "Description": "任意数目消球均视为3消",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuS1.png",
+        "EventIds": [
+            110746
+        ]
+    },
+    {
+        "TalentId": 510,
+        "CharacterId": 1031002,
+        "LayerId": 6,
+        "TalentType": 1,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "生命增幅",
+        "Description": "当前每有1%生命值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuKuaisuxiufu.png",
+        "EventIds": [
+            110495
+        ]
+    },
+    {
+        "TalentId": 511,
+        "CharacterId": 1031002,
+        "LayerId": 1,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "赋能",
+        "Description": "治疗其他角色后，其他角色的普通攻击也可以为目标添加引雷标记，其他角色的普通攻击也可以触发引雷",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuSSS1.png",
+        "EventIds": [
+            110747
+        ]
+    },
+    {
+        "TalentId": 512,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "海森",
+        "Description": "攻击+3%，雷属性伤害+7%；攻击时有25%概率引发雷暴使敌人感电降低8%雷属性抗性，持续5秒，且攻击感电敌人有20%概率造成250%雷属性伤害",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2NuoanA1.png",
+        "EventIds": [
+            110142
+        ]
+    },
+    {
+        "TalentId": 513,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "桂尼",
+        "Description": "治疗效果增加10%，使治疗目标属性伤害、抗性增加10%，持续5秒，cd8秒。每次治疗充能无人机，充满后，下次治疗清空充能召唤一个无人机，自动跟随角色，范围内每秒恢复2%的最大生命值，增加15%的属性攻击，持续5秒，cd12秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuZidongxiufu.png",
+        "EventIds": [
+            110179
+        ]
+    },
+    {
+        "TalentId": 514,
+        "CharacterId": 1031002,
+        "LayerId": 2,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "库莉珂",
+        "Description": "消球额外获得20%的能量；必杀技所需能量减少20%。释放必杀技时，提升15%额外伤害加成，持续10秒；并获得霸体状态、提升自身额外伤害减免20%，持续5秒，重复触发刷新持续时间",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool16.png",
+        "EventIds": [
+            110112
+        ]
+    },
+    {
+        "TalentId": 515,
+        "CharacterId": 1031002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "领域掌控",
+        "Description": "任意成员触发引雷后：所有成员获得30%额外伤害加成，持续3秒",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuA1.png",
+        "EventIds": [
+            110748
+        ]
+    },
+    {
+        "TalentId": 516,
+        "CharacterId": 1031002,
+        "LayerId": 3,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "协作指令",
+        "Description": "全队成员激活一个QTE时，唤醒另一QTE（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/QTE1.png",
+        "EventIds": [
+            110494
+        ]
+    },
+    {
+        "TalentId": 517,
+        "CharacterId": 1031002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "超额供能",
+        "Description": "触发核心被动引雷时，无论自身是否在场回复10必杀能量",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuSS1.png",
+        "EventIds": [
+            110749
+        ]
+    },
+    {
+        "TalentId": 518,
+        "CharacterId": 1031002,
+        "LayerId": 4,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "必杀充能",
+        "Description": "全队成员切换入场时获得50必杀能量（同名效果唯一生效，不叠加）",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Sufeiyadazhao1.png",
+        "EventIds": [
+            110484
+        ]
+    },
+    {
+        "TalentId": 519,
+        "CharacterId": 1031002,
+        "LayerId": 5,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "雷电领域",
+        "Description": "若能量达到必杀需求，召唤流光QTE时将释放必杀",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifudazhao1.png",
+        "EventIds": [
+            110749
+        ]
+    },
+    {
+        "TalentId": 520,
+        "CharacterId": 1031002,
+        "LayerId": 6,
+        "TalentType": 2,
+        "ConsumeCount": 1,
+        "AttribPoolGroupId": 0,
+        "SkillIds": [],
+        "SkillLevels": [],
+        "Name": "生命增幅",
+        "Description": "当前每有1%生命值，攻击力+1%，最多+100%；且额外伤害减免永久+50%",
+        "SpecialAbility": 200,
+        "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipFuzhuKuaisuxiufu.png",
+        "EventIds": [
+            110495
+        ]
+    }
+]

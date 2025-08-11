@@ -1,0 +1,165 @@
+[
+    {
+        "Id": 0,
+        "Name": "空旷道路",
+        "IsRecord": 1,
+        "RecordText": "来到了空旷道路，无事发生",
+        "HintText": "来到了空旷道路，无事发生",
+        "DescText": "无事发生。"
+    },
+    {
+        "Id": 1,
+        "Name": "移动",
+        "IsRecord": 1,
+        "RecordText": "移动了%d步",
+        "HintText": "移动了%d步"
+    },
+    {
+        "Id": 2,
+        "Name": "战斗任务",
+        "IsRecord": 1,
+        "RecordText": "完成了任务%s",
+        "DescText": "冲突，劫掠，攻击……不管是什么，都是需要你们马上介入的事态。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon1.png"
+    },
+    {
+        "Id": 3,
+        "Name": "支援箱",
+        "IsRecord": 1,
+        "RecordText": "抵达了支援点",
+        "HintText": "获得了支援物资",
+        "DescText": "支援部队投下的补给箱子在此静静等待。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon2.png"
+    },
+    {
+        "Id": 4,
+        "Name": "调动+%d",
+        "IsRecord": 1,
+        "RecordText": "向前调动%d步",
+        "HintText": "向前调动%d步",
+        "DescText": "调动命令指示你们向前方%d步的区域移动。"
+    },
+    {
+        "Id": 5,
+        "Name": "调动-%d",
+        "IsRecord": 1,
+        "RecordText": "向后调动%d步",
+        "HintText": "向后调动%d步",
+        "DescText": "调动命令指示你们向后方%d步的区域移动。"
+    },
+    {
+        "Id": 6,
+        "Name": "计划有变",
+        "IsRecord": 1,
+        "RecordText": "的巡逻计划发生了变动。",
+        "HintText": "巡逻计划%d被改成了巡逻计划%d",
+        "DescText": "你们接到了新的巡逻指令。"
+    },
+    {
+        "Id": 7,
+        "Name": "临时改制",
+        "IsRecord": 1,
+        "RecordText": "接到改变方向的命令。",
+        "HintText": "被颠倒了方向",
+        "DescText": "因为计划变动，你们的前进方向发生了改变。"
+    },
+    {
+        "Id": 8,
+        "Name": "士气高涨",
+        "IsRecord": 1,
+        "RecordText": "今日行动次数上限+%d",
+        "HintText": "今日行动次数上限+%d",
+        "DescText": "小队的状态奇佳，今天也许可以走得更远。"
+    },
+    {
+        "Id": 9,
+        "Name": "未知区域",
+        "IsRecord": 0,
+        "DescText": "尚未探索的区域，可能隐藏着什么……"
+    },
+    {
+        "Id": 10,
+        "Name": "起点",
+        "IsRecord": 1,
+        "RecordText": "回到了起点",
+        "HintText": "回到了起点",
+        "DescText": "沿着巡逻路径回到了出发的地方，也许可以暂时休整一下。"
+    },
+    {
+        "Id": 11,
+        "Name": "外部支援",
+        "IsRecord": 1,
+        "RecordText": "完成了一次战斗任务",
+        "HintText": "外部支援协助完成了一次战斗任务",
+        "DescText": "获得来自空中花园的外部支援，直接完成一次战斗任务。"
+    },
+    {
+        "Id": 12,
+        "Name": "起点",
+        "IsRecord": 1,
+        "RecordText": "回到了起点，行动次数上限+%d",
+        "HintText": "回到了起点，今日行动次数上限+%d",
+        "DescText": "沿着巡逻路径回到了出发的地方，也许可以暂时休整一下。"
+    },
+    {
+        "Id": 13,
+        "Name": "额外行动",
+        "IsRecord": 1,
+        "RecordText": "今日行动次数上限+%d",
+        "HintText": "今日行动次数上限+%d",
+        "DescText": "获准执行2次额外的行动。"
+    },
+    {
+        "Id": 14,
+        "Name": "废弃仓库",
+        "IsRecord": 1,
+        "RecordText": "抵达了废弃仓库",
+        "HintText": "抵达了废弃仓库",
+        "DescText": "一个荒无人烟，但看起来还没完全倒塌的仓库遗骸。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon4.png"
+    },
+    {
+        "Id": 15,
+        "Name": "精确遥感",
+        "IsRecord": 1,
+        "RecordText": "提交了遥感申请。",
+        "HintText": "成功对区域进行了遥感侦察。",
+        "DescText": "一个信号绿区，可以在此向空中花园申请精确遥感。"
+    },
+    {
+        "Id": 16,
+        "Name": "交叉验证",
+        "IsRecord": 1,
+        "RecordText": "激活了交叉验证请求",
+        "HintText": "激活了交叉验证请求",
+        "DescText": "%s发现了未激活的交叉验证请求。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon5.png"
+    },
+    {
+        "Id": 17,
+        "Name": "交叉验证",
+        "IsRecord": 1,
+        "RecordText": "激活了交叉验证请求",
+        "HintText": "激活了交叉验证请求",
+        "DescText": "%s请求已激活，等待协作指导成员的响应中。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon6.png"
+    },
+    {
+        "Id": 18,
+        "Name": "交叉验证",
+        "IsRecord": 1,
+        "RecordText": "完成了交叉验证请求",
+        "HintText": "完成了交叉验证请求",
+        "DescText": "已被%s激活，等待响应中。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon6.png"
+    },
+    {
+        "Id": 19,
+        "Name": "交叉验证",
+        "IsRecord": 1,
+        "RecordText": "经过了已完成的交叉验证请求",
+        "HintText": "经过了已完成的交叉验证请求",
+        "DescText": "已和%s完成交叉验证请求。",
+        "EventIcon": "Assets/Product/Texture/Atlas/UiFubenMaintaineraction/MaintaineractionIcon7.png"
+    }
+]

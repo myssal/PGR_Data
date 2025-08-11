@@ -1,0 +1,391 @@
+[
+    {
+        "Key": "GoldClose",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_02X01.prefab",
+        "Name": "终点",
+        "Desc": "消除关键库洛洛后，终点开启。到达开启的终点即可结束关卡。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon01.png",
+        "Scale": []
+    },
+    {
+        "Key": "Gap",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_01Langan01.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "TriggerType3",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_02Dici.prefab",
+        "Name": "尖刺",
+        "Desc": "经过后，地面将冒出尖刺，无法通过。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon07.png",
+        "Scale": []
+    },
+    {
+        "Key": "ViewArea",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleAttack.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "TriggerType1",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleSafe.prefab",
+        "Name": "石门",
+        "Desc": "踩中石门机关后，所有的石门将会降下，允许通过。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon05.png",
+        "Scale": []
+    },
+    {
+        "Key": "GoldOpen",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleOpen.prefab",
+        "Name": "终点",
+        "Desc": "消除关键库洛洛后，终点开启。到达开启的终点即可结束关卡。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon23.png",
+        "Scale": []
+    },
+    {
+        "Key": "MoveLine",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleWarning.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "TriggerType2",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_01Fangkuai.prefab",
+        "Name": "石门机关",
+        "Desc": "踩中石门机关后，所有的石门将会降下，允许通过。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon06.png",
+        "Scale": []
+    },
+    {
+        "Key": "RoleMoveArrow",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTongyong/FxQRPursuitJiantou.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "MonsterTriggerEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleSuodibiaoji.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "ElectricFence",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_07Dianwang.prefab",
+        "Name": "电墙",
+        "Desc": "通电状态下，与之碰撞将会被消除。可以通过踩中开关将其关闭。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon11.png",
+        "Scale": []
+    },
+    {
+        "Key": "Trap",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_03Didong.prefab",
+        "Name": "陷阱",
+        "Desc": "经过陷阱时，会掉下陷阱并被消除。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon22.png",
+        "Scale": []
+    },
+    {
+        "Key": "SentryLine",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzleShiye.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "Sentry",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzle01Tanhao.prefab",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon08.png",
+        "Scale": []
+    },
+    {
+        "Key": "SentryRoand",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzle01Shuzi.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "TriggerElectricFenceOpen",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_03ON.prefab",
+        "Name": "电墙开关",
+        "Desc": "电墙的开关，踩中后将改变电墙的通电状态。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon11.png",
+        "Scale": []
+    },
+    {
+        "Key": "TriggerElectricFenceClose",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle01/Prefabs/ScenePuzzle01_03OFF.prefab",
+        "Name": "电墙开关",
+        "Desc": "电墙的开关，踩中后将改变电墙的通电状态。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon11.png",
+        "Scale": []
+    },
+    {
+        "Key": "ElectricFenceEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzle01Dianwang.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "KillByElectricFenceEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzleDianji.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "BeAtkEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxUi/FxUiPuzzle/FxUiPuzzleDead.prefab",
+        "Scale": []
+    },
+    {
+        "Key": "ShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxSceneEffect/ScenePuzzle01EffectPrefab/FxScenePuzzleYingzi.prefab",
+        "Name": "影子",
+        "Desc": "影子会跟随主控角色一起移动，但是无法消除敌人。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon08.png",
+        "Scale": []
+    },
+    {
+        "Key": "Grass",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle02/Prefabs/ScenePuzzle02_04Box.prefab",
+        "Name": "草圃",
+        "Desc": "阻挡经过的角色。遇火则会燃烧，和雷元素接触则会生长。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon15.png",
+        "Scale": []
+    },
+    {
+        "Key": "Pool",
+        "ModelPath": "Assets/Product/Scene/Pursuit/Common/ScenePuzzle02/Prefabs/ScenePuzzle02_05Box.prefab",
+        "Name": "水池",
+        "Desc": "经过水池的角色，会掉入池中并被消除。冰元素可以冻结水面，形成通路。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon13.png",
+        "Size": "0.8|0.8|0.8",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointLoopColor1",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansongLoop01.prefab",
+        "Name": "传送迷雾",
+        "Desc": "可以与携带暗元素的角色共鸣，实现传送的作用。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon17.png",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointLoopColor2",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansongLoop02.prefab",
+        "Name": "传送迷雾",
+        "Desc": "可以与携带暗元素的角色共鸣，实现传送的作用。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon17.png",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointLoopColor3",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansongLoop03.prefab",
+        "Name": "传送迷雾",
+        "Desc": "可以与携带暗元素的角色共鸣，实现传送的作用。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon17.png",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointColor1",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansong01.prefab",
+        "Name": "绿色的传送特效（散开又闭合）",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointColor2",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansong02.prefab",
+        "Name": "黄色的传送特效（散开又闭合）",
+        "Scale": []
+    },
+    {
+        "Key": "TransferPointColor3",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansong03.prefab",
+        "Name": "紫色的传送特效（散开又闭合）",
+        "Scale": []
+    },
+    {
+        "Key": "Steel",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzGangbanLoop.prefab",
+        "Name": "雷之阵",
+        "Desc": "将经过的雷元素角色吸住。与暗元素接触则会破碎消失，露出下方地形。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon16.png",
+        "Scale": []
+    },
+    {
+        "Key": "SteelBroken",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzGangbanPosui.prefab",
+        "Name": "钢板破碎",
+        "Scale": []
+    },
+    {
+        "Key": "Freeze",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzJiebing.prefab",
+        "Name": "冰面",
+        "Desc": "凝结在水面的浮冰，可以被火元素轻松融化。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon14.png",
+        "Scale": []
+    },
+    {
+        "Key": "Melt",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxRonghua.prefab",
+        "Name": "融化",
+        "Scale": []
+    },
+    {
+        "Key": "Drown",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzLuoshui.prefab",
+        "Name": "淹死特效",
+        "Scale": []
+    },
+    {
+        "Key": "Burn",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzRanshao.prefab",
+        "Name": "燃烧",
+        "Scale": []
+    },
+    {
+        "Key": "WaterRipper",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzShuibowen.prefab",
+        "Name": "水波纹",
+        "Scale": []
+    },
+    {
+        "Key": "DarkSkillEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxGuangMiaobian.prefab",
+        "Name": "暗元素库洛洛",
+        "Scale": []
+    },
+    {
+        "Key": "CrystalSkillEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxBingMiaobian.prefab",
+        "Name": "冰元素库洛洛",
+        "Scale": []
+    },
+    {
+        "Key": "FlameSkillEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxAnMiaobian.prefab",
+        "Name": "火元素库洛洛",
+        "Scale": []
+    },
+    {
+        "Key": "RaidenSkillEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxLeiMiaobian.prefab",
+        "Name": "雷元素库洛洛",
+        "Scale": []
+    },
+    {
+        "Key": "PhysicsSkillEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxHuoMiaobian.prefab",
+        "Name": "物理元素库洛洛",
+        "Scale": []
+    },
+    {
+        "Key": "DarkSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxGuangMiaobian.prefab",
+        "Name": "暗元素影子",
+        "Desc": "影子会跟随本体角色一起移动，携带暗元素后经过钢板能使其破碎消失。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon62.png",
+        "Scale": []
+    },
+    {
+        "Key": "CrystalSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxBingMiaobian.prefab",
+        "Name": "冰元素影子",
+        "Desc": "影子会跟随本体角色一起移动，携带冰元素能扎破泡泡使其消失。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon60.png",
+        "Scale": []
+    },
+    {
+        "Key": "FlameSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxAnMiaobian.prefab",
+        "Name": "火元素影子",
+        "Desc": "影子会跟随本体角色一起移动，携带火元素后经过冰面能使其融化。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon61.png",
+        "Scale": []
+    },
+    {
+        "Key": "RaidenSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxLeiMiaobian.prefab",
+        "Name": "雷元素影子",
+        "Desc": "影子会跟随本体角色一起移动，携带雷元素后接触草丛能使其生长。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon59.png",
+        "Scale": []
+    },
+    {
+        "Key": "PhysicsSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxHuoMiaobian.prefab",
+        "Name": "物理元素影子",
+        "Desc": "影子会跟随本体角色一起移动，也能够消除敌人及触碰各类型机关。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon67.png",
+        "Scale": []
+    },
+    {
+        "Key": "NoneSkillShadowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxHuoMiaobian.prefab",
+        "Name": "影子",
+        "Desc": "影子会跟随本体角色一起移动，也能够消除敌人及触碰各类型机关。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon67.png",
+        "Scale": []
+    },
+    {
+        "Key": "Bubble",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzPaopao.prefab",
+        "Name": "泡泡",
+        "Desc": "透亮又轻盈的泡泡，仅物理属性能轻触且推动，与冰元素接触将会被撞破消失。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon46.png",
+        "Scale": []
+    },
+    {
+        "Key": "Drop1",
+        "ModelPath": "Assets/Product/Scene/SuShe/Furniture/Kalie/KaliePotted001/KaliePotted002.prefab",
+        "Name": "小兔子",
+        "Desc": "掉落在方块上的小兔子，触碰时即可拾取。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon44.png",
+        "Size": "0.8|0.8|0.8",
+        "Scale": []
+    },
+    {
+        "Key": "Drop2",
+        "ModelPath": "Assets/Product/Scene/SuShe/Furniture/Kalie/KaliePotted001/KaliePotted002.prefab",
+        "Name": "小兔子",
+        "Desc": "掉落在方块上的小兔子，触碰时即可拾取。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon44.png",
+        "Size": "0.8|0.8|0.8",
+        "Scale": []
+    },
+    {
+        "Key": "Drop3",
+        "ModelPath": "Assets/Product/Scene/SuShe/Furniture/Kalie/KaliePotted001/KaliePotted002.prefab",
+        "Name": "小兔子",
+        "Desc": "掉落在方块上的小兔子，触碰时即可拾取。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon44.png",
+        "Size": "0.8|0.8|0.8",
+        "Scale": []
+    },
+    {
+        "Key": "Drop4",
+        "ModelPath": "Assets/Product/Scene/SuShe/Furniture/Kalie/KaliePotted001/KaliePotted002.prefab",
+        "Name": "小兔子",
+        "Desc": "掉落在方块上的小兔子，触碰时即可拾取。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon44.png",
+        "Size": "0.8|0.8|0.8",
+        "Scale": []
+    },
+    {
+        "Key": "Magic",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzFazhen.prefab",
+        "Name": "换位法阵",
+        "Desc": "散发亮光的神奇法阵，可以使停留此处的己方单位与另一单位对互换位置。",
+        "Icon": "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon45.png",
+        "Scale": []
+    },
+    {
+        "Key": "MagicDisEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansongXiaoshi.prefab",
+        "Name": "魔法阵消失特效",
+        "Scale": []
+    },
+    {
+        "Key": "MagicShowEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzChuansongChuxian.prefab",
+        "Name": "魔法阵出现特效",
+        "Scale": []
+    },
+    {
+        "Key": "BubbleBrokenEffect",
+        "ModelPath": "Assets/Product/Effect/Prefab/FxTuixiangzi/FxTxzShuihua.prefab",
+        "Name": "气泡爆破特效",
+        "Scale": []
+    }
+]

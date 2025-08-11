@@ -1,0 +1,56 @@
+[
+    {
+        "Id": 1,
+        "Name": "战斗面板",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/MainAggregateChapter.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZongmianban.png",
+        "ProxyPath": "XUi/XUiFuben/Main/XUiPanelMain",
+        "UiParentName": "PanelMain",
+        "ConditionDesc": "指挥官等级达到1级开启"
+    },
+    {
+        "Id": 2,
+        "Name": "主 线",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/MainLineChapter.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhuxian.png",
+        "ProxyPath": "XUi/XUiFuben/MainLine/XUiPanelMainLine",
+        "UiParentName": "PanelMainLine",
+        "ConditionDesc": "指挥官等级达到1级开启"
+    },
+    {
+        "Id": 3,
+        "Name": "支 线",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/BranchLineChapter.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhixian.png",
+        "ProxyPath": "XUi/XUiFuben/ExtralLine/XUiPanelExtralLine",
+        "UiParentName": "PanelExtralLine",
+        "ConditionDesc": "通关普通剧情3-8副本后开启"
+    },
+    {
+        "Id": 4,
+        "Name": "研 习",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/CollegeBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconYanxi.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelCollegeStudy",
+        "UiParentName": "PanelCollegeBanner",
+        "ConditionDesc": "指挥官等级达到1级开启"
+    },
+    {
+        "Id": 5,
+        "Name": "资 源",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/DailyBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZiyuan.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelResourceCollection",
+        "UiParentName": "PanelResource",
+        "ConditionDesc": "通关普通剧情2-2副本后开启"
+    },
+    {
+        "Id": 6,
+        "Name": "挑 战",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/ChallengeBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconTiaozhan.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelSimulationChallenge",
+        "UiParentName": "PanelChallengeBanner",
+        "ConditionDesc": "通关普通剧情2-11副本后开启"
+    }
+]

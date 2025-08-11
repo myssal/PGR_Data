@@ -1,0 +1,501 @@
+[
+    {
+        "Id": 1,
+        "SkillId": 102101,
+        "Level": 1,
+        "Name": "红莲-起手式",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahong1.png",
+        "EntryId": [],
+        "TypeDes": "红色信号球",
+        "Tag": [],
+        "Title": [
+            "红色信号球 — <color=#40B0FF>消除红色信号球</color>"
+        ],
+        "BriefDes": [
+            "朝前突刺，拉扯命中的目标，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "朝前突刺，拉扯命中的目标，造成物理伤害。\\n-根据消球数造成<color=#FF8C5F>200%</color>/<color=#FF8C5F>400%</color>/<color=#FF8C5F>600%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 2,
+        "SkillId": 102102,
+        "Level": 1,
+        "Name": "红莲-闪击",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahuang1.png",
+        "EntryId": [],
+        "TypeDes": "黄色信号球",
+        "Tag": [],
+        "Title": [
+            "黄色信号球 — <color=#40B0FF>消除黄色信号球</color>"
+        ],
+        "BriefDes": [
+            "向目标快速发动一次攻击，击飞命中目标，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "向目标快速发动一次攻击，击飞命中目标，造成物理伤害。\\n-根据消球数造成<color=#FF8C5F>250%</color>/<color=#FF8C5F>500%</color>/<color=#FF8C5F>750%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 3,
+        "SkillId": 102103,
+        "Level": 1,
+        "Name": "红莲-波动斩",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyalan1.png",
+        "EntryId": [],
+        "TypeDes": "蓝色信号球",
+        "Tag": [],
+        "Title": [
+            "蓝色信号球 — <color=#40B0FF>消除蓝色信号球</color>"
+        ],
+        "BriefDes": [
+            "武器爆发造成物理伤害，同时在一定时间内为所有攻击附加火属性伤害。"
+        ],
+        "SpecificDes": [
+            "武器爆发造成物理伤害，同时在一定时间内为所有攻击附加火属性伤害。\\n-根据消球数造成<color=#FF8C5F>200%</color>/<color=#FF8C5F>400%</color>/<color=#FF8C5F>600%</color>的物理伤害。\\n-根据消球数附加<color=#FF8C5F>8%</color>/<color=#FF8C5F>16%</color>/<color=#FF8C5F>24%</color>的攻击力，持续<color=#FF8C5F>7</color>秒。"
+        ]
+    },
+    {
+        "Id": 4,
+        "SkillId": 102104,
+        "Level": 1,
+        "Name": "红莲-迅刀式",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "EntryId": [],
+        "TypeDes": "普通攻击",
+        "Tag": [],
+        "Title": [
+            "普通攻击 — <color=#40B0FF>点击普通攻击</color>"
+        ],
+        "BriefDes": [
+            "使用红莲迅刀式连续攻击敌人，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "使用红莲迅刀式连续攻击敌人，造成物理伤害。\\n-共造成<color=#FF8C5F>660%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 5,
+        "SkillId": 102105,
+        "Level": 1,
+        "Name": "红莲-双刀术",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png",
+        "EntryId": [],
+        "TypeDes": "核心被动",
+        "Tag": [],
+        "Title": [
+            "核心被动 — <color=#40B0FF>任意3消+消除红色信号球</color>"
+        ],
+        "BriefDes": [
+            "任意3消后，4秒内再次消除红色信号时，露西亚·红莲进入爆发状态，将使用<color=#FF8C5F>双刀术</color>代替普通攻击。红莲-双刀术：连续攻击敌人造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "任意3消后，4秒内再次消除红色信号时，露西亚·红莲进入爆发状态，将使用<color=#FF8C5F>双刀术</color>代替普通攻击。红莲-双刀术：连续攻击敌人造成物理伤害。\\n-共造成<color=#FF8C5F>1050%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 6,
+        "SkillId": 102106,
+        "Level": 1,
+        "Name": "流刃式",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightPugong.png",
+        "EntryId": [],
+        "TypeDes": "狩捕普攻",
+        "Tag": [],
+        "Title": [
+            "狩捕 — <color=#40B0FF>点击狩捕按钮</color>",
+            "流刃式 — <color=#40B0FF>进入狩捕后+点击普攻</color>"
+        ],
+        "BriefDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。",
+            "在空中对目标连续投掷飞刃，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。\\n-造成<color=#FF8C5F>120%</color>的物理伤害。",
+            "在空中对目标连续投掷飞刃，造成物理伤害。\\n-共造成<color=#FF8C5F>665%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 7,
+        "SkillId": 102107,
+        "Level": 1,
+        "Name": "飞刃莲华",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EntryId": [],
+        "TypeDes": "狩捕消球",
+        "Tag": [],
+        "Title": [
+            "飞刃莲华  — <color=#40B0FF>进入狩捕后+消除信号球</color>"
+        ],
+        "BriefDes": [
+            "蓄力并对目标投出飞刀，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "蓄力并对目标投出飞刀，造成物理伤害。\\n-根据连消次数造成<color=#FF8C5F>280%</color>/<color=#FF8C5F>1260%</color>/<color=#FF8C5F>2100%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 8,
+        "SkillId": 102109,
+        "Level": 1,
+        "Name": "红莲极意",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyadazhao1.png",
+        "EntryId": [],
+        "TypeDes": "狩捕终结",
+        "Tag": [],
+        "Title": [
+            "红莲极意— <color=#40B0FF>完成狩捕</color>"
+        ],
+        "BriefDes": [
+            "在空中对钉入部位进行数次斩击后将限制装置完全钉入目标部位，斩击造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "在空中对钉入部位进行数次斩击后将限制装置完全钉入目标部位，斩击造成物理伤害。\\n-共造成<color=#FF8C5F>6300%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 9,
+        "SkillId": 104301,
+        "Level": 1,
+        "Name": "疾雷之矢",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankahong1.png",
+        "EntryId": [],
+        "TypeDes": "红色信号球",
+        "Tag": [],
+        "Title": [
+            "红色信号球 — <color=#40B0FF>消除红色信号球</color>"
+        ],
+        "BriefDes": [
+            "原地拉弓蓄力，朝前方发射一支远距离能量箭，能量箭可贯通地方，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "原地拉弓蓄力，朝前方发射一支远距离能量箭，能量箭可贯通地方，造成物理伤害。\\n-根据消球数最高共造成<color=#FF8C5F>375%</color>/<color=#FF8C5F>750%</color>/<color=#FF8C5F>1125%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 10,
+        "SkillId": 104302,
+        "Level": 1,
+        "Name": "超频骤雷",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankahuang1.png",
+        "EntryId": [],
+        "TypeDes": "黄色信号球",
+        "Tag": [],
+        "Title": [
+            "黄色信号球 — <color=#40B0FF>消除黄色信号球</color>"
+        ],
+        "BriefDes": [
+            "闪现至空中，朝目标方向发射一支充能箭，充能箭爆炸时造成物理伤害。爆炸产生能量区域，持续造物理伤害。"
+        ],
+        "SpecificDes": [
+            "闪现至空中，朝目标方向发射一支充能箭，充能箭爆炸时造成物理伤害。爆炸产生能量区域，持续造物理伤害。\\n-根据消球数，充能箭造成<color=#FF8C5F>150%</color>/<color=#FF8C5F>300%</color>/<color=#FF8C5F>450%</color>的物理伤害。\\n-根据消球数，能量区域持续造成<color=#FF8C5F>30%</color>/<color=#FF8C5F>60%</color>/<color=#FF8C5F>90%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 11,
+        "SkillId": 104303,
+        "Level": 1,
+        "Name": "磁力引雷",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankalan1.png",
+        "EntryId": [],
+        "TypeDes": "蓝色信号球",
+        "Tag": [],
+        "Title": [
+            "蓝色信号球 — <color=#40B0FF>消除蓝色信号球</color>",
+            "蓝色信号球 — <color=#40B0FF>闪电充能+点击普通攻击/消除红色信号球/触发核心被动</color>"
+        ],
+        "BriefDes": [
+            "引爆箭矢能量，击退自身周围的目标，并造成物理伤害。同时获得<color=#FF8C5F>闪电充能</color>。",
+            "<color=#FF8C5F>闪电充能</color>状态下，普通攻击会产生额外<color=#FF8C5F>1</color>支闪电箭，造成物理伤害，红色信号球及核心被动会产生额外<color=#FF8C5F>2</color>支闪电箭，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "引爆箭矢能量，击退自身周围的目标，并造成物理伤害。同时获得<color=#FF8C5F>闪电充能</color>。\\n-根据消球数，引爆造成<color=#FF8C5F>180%</color>/<color=#FF8C5F>360%</color>/<color=#FF8C5F>540%</color>的物理伤害。",
+            "<color=#FF8C5F>闪电充能</color>状态下，普通攻击会产生额外<color=#FF8C5F>1</color>支闪电箭，造成物理伤害，红色信号球及核心被动会产生额外<color=#FF8C5F>2</color>支闪电箭，造成物理伤害。\\n-根据消球数，<color=#FF8C5F>闪电充能</color>状态下普通攻击产生的闪电箭造成<color=#FF8C5F>15%</color>/<color=#FF8C5F>30%</color>/<color=#FF8C5F>45%</color>的物理伤害。\\n-根据消球数，红色信号球及核心被动产生的闪电箭每支造成<color=#FF8C5F>40%</color>/<color=#FF8C5F>80%</color>/<color=#FF8C5F>120%</color>的物理伤害。\\n-<color=#FF8C5F>闪电充能</color>状态持续<color=#FF8C5F>8</color>秒。"
+        ]
+    },
+    {
+        "Id": 12,
+        "SkillId": 104304,
+        "Level": 1,
+        "Name": "流电惊雷",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/biankapugong1.png",
+        "EntryId": [],
+        "TypeDes": "普通攻击",
+        "Tag": [],
+        "Title": [
+            "普通攻击 — <color=#40B0FF>点击普通攻击</color>"
+        ],
+        "BriefDes": [
+            "连续向目标快速发射7只箭矢，最后发射1支远距离穿透箭，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "连续向目标快速发射7只箭矢，最后发射1支远距离穿透箭，造成物理伤害。\\n-最高共造成<color=#FF8C5F>1030%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 13,
+        "SkillId": 104305,
+        "Level": 1,
+        "Name": "千钧一发",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankahexin1.png",
+        "EntryId": [],
+        "TypeDes": "核心被动",
+        "Tag": [],
+        "Title": [
+            "核心被动 — <color=#40B0FF>3消红色信号球+消除蓝色信号球</color>",
+            "核心被动 — <color=#40B0FF>狙击状态+点击普通攻击</color>",
+            "核心被动 — <color=#40B0FF>狙击状态+点击闪避</color>"
+        ],
+        "BriefDes": [
+            "3消红色信号球后，再次消除蓝色信号球时，进入<color=#FF8C5F>狙击状态</color>。",
+            "<color=#FF8C5F>狙击状态</color>下普通攻击发射一支远距离能量箭，狙击状态中的能量箭可贯通敌方，造成多段物理伤害。<color=#FF8C5F>狙击状态</color>下普通攻击将不再回复信号球。",
+            "<color=#FF8C5F>狙击状态</color>下进行闪避时，紧接的下一次普通攻击蓄力时间会有所减少。"
+        ],
+        "SpecificDes": [
+            "3消红色信号球后，再次消除蓝色信号球时，进入<color=#FF8C5F>狙击状态</color>。",
+            "<color=#FF8C5F>狙击状态</color>下普通攻击发射一支远距离能量箭，狙击状态中的能量箭可贯通敌方，造成多段物理伤害。<color=#FF8C5F>狙击状态</color>下普通攻击将不再回复信号球。\\n-每支能量箭最高共造成<color=#FF8C5F>800%</color>的物理伤害。",
+            "<color=#FF8C5F>狙击状态</color>下进行闪避时，紧接的下一次普通攻击蓄力时间会有所减少。"
+        ]
+    },
+    {
+        "Id": 14,
+        "SkillId": 104306,
+        "Level": 1,
+        "Name": "狂雷骤雨",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightPugong.png",
+        "EntryId": [],
+        "TypeDes": "狩捕普攻",
+        "Tag": [],
+        "Title": [
+            "狩捕 — <color=#40B0FF>点击狩捕按钮</color>",
+            "狂雷骤雨 — <color=#40B0FF>进入狩捕后+点击普攻</color>"
+        ],
+        "BriefDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。",
+            "在空中对目标连续射击，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。\\n-造成<color=#FF8C5F>80%</color>的物理伤害。",
+            "在空中对目标连续射击，造成物理伤害。\\n-共造成<color=#FF8C5F>615%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 15,
+        "SkillId": 104307,
+        "Level": 1,
+        "Name": "聚能雷矢",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EntryId": [],
+        "TypeDes": "狩捕消球",
+        "Tag": [],
+        "Title": [
+            "聚能雷矢  — <color=#40B0FF>进入狩捕后+消除信号球</color>"
+        ],
+        "BriefDes": [
+            "蓄力并对目标射出能量箭，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "蓄力并对目标射出能量箭，造成物理伤害。\\n-根据连消次数造成<color=#FF8C5F>240%</color>/<color=#FF8C5F>850%</color>/<color=#FF8C5F>1600%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 16,
+        "SkillId": 104308,
+        "Level": 1,
+        "Name": "辉蓝猎标",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightBianka1.png",
+        "EntryId": [],
+        "TypeDes": "狩捕被动",
+        "Tag": [],
+        "Title": [
+            "辉蓝猎标  — <color=#40B0FF>进入狩捕后+连消蓄力时精准松开攻击</color>"
+        ],
+        "BriefDes": [
+            "在1次连消，或2次连消的蓄力状态时，在音效提示时松开按键进行精准狙击射击，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "在1次连消，或2次连消的蓄力状态时，在音效提示时松开按键进行精准狙击射击，造成物理伤害。\\n-根据连消次数造成<color=#FF8C5F>1200%</color>/<color=#FF8C5F>2400%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 17,
+        "SkillId": 104309,
+        "Level": 1,
+        "Name": "轰弩终鸣",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3biankadazhao1.png",
+        "EntryId": [],
+        "TypeDes": "狩捕终结",
+        "Tag": [],
+        "Title": [
+            "轰弩终鸣 — <color=#40B0FF>完成狩捕</color>"
+        ],
+        "BriefDes": [
+            "在空中对钉入部位进行数次射击后将限制装置完全钉入目标部位，斩击造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "在空中对钉入部位进行数次射击后将限制装置完全钉入目标部位，斩击造成物理伤害。\\n-共造成<color=#FF8C5F>6150%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 18,
+        "SkillId": 107201,
+        "Level": 1,
+        "Name": "散弹",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninahong1.png",
+        "EntryId": [],
+        "TypeDes": "红色信号球",
+        "Tag": [],
+        "Title": [
+            "红色信号球 — <color=#40B0FF>消除红色信号球</color>"
+        ],
+        "BriefDes": [
+            "向前方发射炮弹，对目标造成物理伤害并回复热度值。"
+        ],
+        "SpecificDes": [
+            "向前方发射6颗炮弹，对目标造成物理伤害并恢复热度值。\\n-根据消球数，每枚炮弹造成<color=#FF8C5F>40%</color>/<color=#FF8C5F>80%</color>/<color=#FF8C5F>120%</color>的物理伤害。\\n-根据消球数，每枚炮弹回复<color=#FF8C5F>30</color>/<color=#FF8C5F>60</color>/<color=#FF8C5F>90</color>的热度值。"
+        ]
+    },
+    {
+        "Id": 19,
+        "SkillId": 107202,
+        "Level": 1,
+        "Name": "引信弹",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninahuang1.png",
+        "EntryId": [],
+        "TypeDes": "黄色信号球",
+        "Tag": [],
+        "Title": [
+            "黄色信号球 — <color=#40B0FF>消除黄色信号球</color>"
+        ],
+        "BriefDes": [
+            "向目标快速发动1次炮击，对目标造成物理伤害，并标记目标，使目标接下来受到卡列尼娜·爆裂攻击时，有概率发生爆炸，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "向目标快速发动1次炮击，对目标造成物理伤害，并标记目标，使目标接下来受到卡列尼娜·爆裂攻击时，有概率发生爆炸，造成物理伤害。\\n-根据消球数，造成<color=#FF8C5F>200%</color>/<color=#FF8C5F>400%</color>/<color=#FF8C5F>600%</color>的物理伤害。\\n-攻击被标记目标时有75%概率发生爆炸，根据消球数造成<color=#FF8C5F>30%</color>/<color=#FF8C5F>60%</color>/<color=#FF8C5F>90%</color>的物理伤害。\\n-根据消球数，回复<color=#FF8C5F>200</color>/<color=#FF8C5F>400</color>/<color=#FF8C5F>600</color>的热度值。"
+        ]
+    },
+    {
+        "Id": 20,
+        "SkillId": 107203,
+        "Level": 1,
+        "Name": "旋火弹",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninalan1.png",
+        "EntryId": [],
+        "TypeDes": "蓝色信号球",
+        "Tag": [],
+        "Title": [
+            "蓝色信号球 — <color=#40B0FF>消除蓝色信号球</color>"
+        ],
+        "BriefDes": [
+            "向前方地面发射一发特殊炮弹，命中敌人后造成物理伤害，并对所在区域的敌人持续造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "向前方地面发射一发特殊炮弹，命中敌人后造成物理伤害，并对所在区域的敌人持续造成物理伤害。\\n-根据消球数，造成<color=#FF8C5F>150%</color>/<color=#FF8C5F>300%</color>/<color=#FF8C5F>450%</color>的物理伤害。\\n-对所在区域的敌人每秒造成<color=#FF8C5F>5%</color>/<color=#FF8C5F>10%</color>/<color=#FF8C5F>15%</color>的物理伤害，最多造成<color=#FF8C5F>20</color>次伤害。\\n-根据消球数，每次持续伤害回复<color=#FF8C5F>8</color>/<color=#FF8C5F>16</color>/<color=#FF8C5F>24</color>的热度值。"
+        ]
+    },
+    {
+        "Id": 21,
+        "SkillId": 107204,
+        "Level": 1,
+        "Name": "炮斗术",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightPugong.png",
+        "EntryId": [],
+        "TypeDes": "普通攻击",
+        "Tag": [],
+        "Title": [
+            "普通攻击 — <color=#40B0FF>点击普通攻击</color>"
+        ],
+        "BriefDes": [
+            "使用大炮连续攻击敌人造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "使用大炮连续攻击敌人造成物理伤害。\\n-共造成<color=#FF8C5F>540%</color>的物理伤害。\\n-共回复<color=#FF8C5F>350</color>热度值。"
+        ]
+    },
+    {
+        "Id": 22,
+        "SkillId": 107205,
+        "Level": 1,
+        "Name": "超温旋刃",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninahexin1.png",
+        "EntryId": [],
+        "TypeDes": "核心被动",
+        "Tag": [],
+        "Title": [
+            "热度值 — <color=#40B0FF>释放任意技能获取</color>",
+            "离子能 — <color=#40B0FF>拥有800以上热度值+进行三消</color>",
+            "超温旋刃 — <color=#40B0FF>拥有离子能+长按普攻</color>"
+        ],
+        "BriefDes": [
+            "释放任意技能可以获取热度值，热度值上限为<color=#FF8C5F>1000</color>。",
+            "热度值高于<color=#FF8C5F>800</color>时，使用任意三消将所有热度转换为离子能。",
+            "发射强力光柱并对面前区域进行大范围横扫，造成多段物理伤害并对命中的所有部位施加<color=#FF8C5F>熔融</color>效果。任何角色对带有<color=#FF8C5F>熔融</color>效果的部位进行攻击时提升自身攻击力。"
+        ],
+        "SpecificDes": [
+            "释放任意技能可以获取热度值，热度值上限为<color=#FF8C5F>1000</color>。",
+            "热度值高于<color=#FF8C5F>800</color>时，使用任意三消将所有热度转换为离子能。",
+            "发射强力光柱并对面前区域进行大范围横扫，造成多段物理伤害并对命中的所有部位施加<color=#FF8C5F>熔融</color>效果。任何角色对带有<color=#FF8C5F>熔融</color>效果的部位进行攻击时提升自身攻击力。\\n-最多造成<color=#FF8C5F>700%</color>的物理伤害。\\n-<color=#FF8C5F>熔融</color>效果使攻击者提升攻击力<color=#FF8C5F>20%</color>，持续<color=#FF8C5F>2</color>秒，重复攻击可刷新持续时间，<color=#FF8C5F>熔融</color>效果持续<color=#FF8C5F>10</color>秒。"
+        ]
+    },
+    {
+        "Id": 23,
+        "SkillId": 107206,
+        "Level": 1,
+        "Name": "密集阵",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightPugong.png",
+        "EntryId": [],
+        "TypeDes": "狩捕普攻",
+        "Tag": [],
+        "Title": [
+            "狩捕 — <color=#40B0FF>点击狩捕按钮</color>",
+            "密集阵 — <color=#40B0FF>进入狩捕后+点击普攻</color>"
+        ],
+        "BriefDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。",
+            "点击普攻按钮进入持续射击状态造成物理伤害。可通过调整左摇杆控制普攻命中位置。对命中的部位添加<color=#FF8C5F>熔融</color>效果。"
+        ],
+        "SpecificDes": [
+            "使用数据狩捕定位锚跃向空中，后对敌方冲刺造成物理伤害。\\n-造成<color=#FF8C5F>100%</color>的物理伤害。",
+            "点击普攻按钮进入持续射击状态造成物理伤害。可通过调整左摇杆控制普攻命中位置。对命中的部位添加<color=#FF8C5F>熔融</color>效果。\\n-每次扫射造成<color=#FF8C5F>90%</color>物理伤害。\\n-每次扫射回复<color=#FF8C5F>15</color>热度值。"
+        ]
+    },
+    {
+        "Id": 24,
+        "SkillId": 107207,
+        "Level": 1,
+        "Name": "过载膛压",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/DlcFightXiaoqiu.png",
+        "EntryId": [],
+        "TypeDes": "狩捕消球",
+        "Tag": [],
+        "Title": [
+            "过载膛压  — <color=#40B0FF>进入狩捕后+消除信号球</color>"
+        ],
+        "BriefDes": [
+            "朝前方连发射炮弹，造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "朝前方连发射炮弹，造成物理伤害。\\n-无连消时，造成<color=#FF8C5F>240%</color>的物理伤害，回复<color=#FF8C5F>100</color>热度值。此时若热度值高于<color=#FF8C5F>50%</color>，则不会打断普攻。\\n-1连消时，造成<color=#FF8C5F>850%</color>的物理伤害，回复<color=#FF8C5F>200</color>热度值。\\n-2连消时，造成<color=#FF8C5F>1300%</color>的物理伤害，回复<color=#FF8C5F>400</color>热度值，并对怪物全身造成<color=#FF8C5F>熔融</color>效果，此时若拥有离子能，则会消耗剩余的所有信号球，并消耗所有的离子能、根据触发2消的时消耗信号球总数额外造成伤害，每颗信号球造成<color=#FF8C5F>150%</color>的物理伤害。"
+        ]
+    },
+    {
+        "Id": 25,
+        "SkillId": 107209,
+        "Level": 1,
+        "Name": "光热聚变",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kalieninadazhao1.png",
+        "EntryId": [],
+        "TypeDes": "狩捕终结",
+        "Tag": [],
+        "Title": [
+            "光热聚变 — <color=#40B0FF>完成狩捕</color>"
+        ],
+        "BriefDes": [
+            "钉入部位后，在空中对以重炮滑板蓄能，落地后在怪物位置生成巨型物理焰龙卷，斩击造成物理伤害。"
+        ],
+        "SpecificDes": [
+            "钉入部位后，在空中对以重炮滑板蓄能，落地后在怪物位置生成巨型物理焰龙卷，斩击造成物理伤害。\\n-共造成<color=#FF8C5F>6200%</color>的物理伤害。\\n-共回复<color=#FF8C5F>400</color>热度值."
+        ]
+    }
+]

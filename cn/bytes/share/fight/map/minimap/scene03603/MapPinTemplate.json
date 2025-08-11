@@ -1,0 +1,163 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "主线目标点",
+        "Desc": "追踪此目标以推进关卡",
+        "TemplateDesc": "流程主要目标点",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint01.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Name": "次要目标点",
+        "Desc": "点击图钉后的详细描述信息（次要目标点）",
+        "TemplateDesc": "流程次要目标点",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint02.png"
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Name": "敌人",
+        "Desc": "敌人/感染体/其他描述",
+        "TemplateDesc": "敌人",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint03.png"
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Name": "友方",
+        "Desc": "友方NPC/可交互NPC/其他",
+        "TemplateDesc": "友方",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint04.png"
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 1,
+        "Name": "出入口",
+        "Desc": "出入口",
+        "TemplateDesc": "出入口或不同地图连接点",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint05.png"
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 1,
+        "Name": "调查点（物品）",
+        "TemplateDesc": "可交互/调查物件",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint06.png"
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 2,
+        "Name": "地点名字号36",
+        "Desc": "地点位置信息（text类的描述不会显示）",
+        "TemplateDesc": "（text类的描述不会显示）",
+        "CBText": [],
+        "CBFunc": [],
+        "IntParams": [
+            36
+        ],
+        "FloatParams": [
+            0.8773,
+            0.8773,
+            0.8773,
+            0.7058
+        ],
+        "StrParams": [
+            "LocationPin"
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 2,
+        "Name": "<i><b>地点名粗斜体字号</b></i>",
+        "Desc": "地点位置信息（text类的描述不会显示）",
+        "TemplateDesc": "（text类的描述不会显示）",
+        "CBText": [],
+        "CBFunc": [],
+        "IntParams": [
+            45
+        ],
+        "FloatParams": [
+            0.8784,
+            0.8784,
+            0.8784,
+            0.7058
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 1,
+        "Name": "当前位置",
+        "Desc": "角色当前位置",
+        "TemplateDesc": "当前位置",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPlayer.png"
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 2,
+        "Name": "<i>地点名字号</i>",
+        "CBText": [],
+        "CBFunc": [],
+        "IntParams": [
+            30
+        ],
+        "FloatParams": [
+            0.9056,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 1,
+        "Name": "已调查",
+        "Desc": "此处已记录",
+        "TemplateDesc": "已记录的成就关联点",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint07.png"
+        ]
+    },
+    {
+        "Id": 12,
+        "Type": 1,
+        "Name": "调查点",
+        "TemplateDesc": "可选调查目标",
+        "CBText": [],
+        "CBFunc": [],
+        "StrParams": [
+            "Assets/Product/Texture/Image/UiFightMiniMap/Icon/UiFightMiniMapPoint02.png"
+        ]
+    }
+]

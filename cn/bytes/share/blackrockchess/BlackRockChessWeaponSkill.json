@@ -1,0 +1,777 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Cost": 0,
+        "Range": 2,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "射程2，斜向拥有不同的攻击范围",
+        "Name": "岩石炮普攻",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill1.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips08.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            3,
+            2
+        ],
+        "HitEffectId": [
+            7
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Cost": 4,
+        "Range": 2,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": true,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "射程2，附带眩晕效果，阻止敌方行动，斜向拥有不同的攻击范围",
+        "Name": "闪光射击",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill3.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips02.png",
+        "UnlockDesc": "通关ST-02解锁",
+        "Params": [
+            5,
+            3
+        ],
+        "HitEffectId": [
+            8
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 3,
+        "Cost": 8,
+        "Range": 3,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": true,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "射程3，附带眩晕效果，阻止敌方行动，斜向拥有不同的攻击范围",
+        "Name": "全弹爆发",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill2.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips01.png",
+        "UnlockDesc": "通关ST-04解锁",
+        "Params": [
+            7,
+            5
+        ],
+        "HitEffectId": [
+            13
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 4,
+        "Cost": 0,
+        "Range": 1,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "射程1，命中后可获得额外回合",
+        "Name": "漆黑之刃普攻",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill4.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips07.png",
+        "UnlockDesc": "通关ST-06解锁",
+        "Params": [
+            5,
+            1,
+            -3
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 5,
+        "Cost": 3,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": true,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "本回合造成伤害+1、移动距离+2且可以越过敌方单位",
+        "Name": "焰燃我心",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill6.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips03.png",
+        "UnlockDesc": "通关ST-06解锁",
+        "Params": [
+            2,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 6,
+        "Cost": 5,
+        "Range": 1,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "射程1，攻击横向3个敌方单位，命中后可获得额外回合",
+        "Name": "焰气动斩",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill5.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips06.png",
+        "UnlockDesc": "通关ST-08解锁",
+        "Params": [
+            8,
+            1,
+            -3
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 7,
+        "Cost": 0,
+        "Range": 2,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "造成2点伤害，并呼叫场边的露西亚支援攻击",
+        "Name": "猩红晶簇",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill1.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesslunaTips01.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            2,
+            2,
+            4
+        ],
+        "HitEffectId": [
+            51
+        ],
+        "AssistHitEffectId": [
+            55
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 8,
+        "Cost": 0,
+        "Range": 3,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "移动最多3格，对起跳、落地位置周围造成2点伤害",
+        "Name": "绯空月轮",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill2.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesslunaTips03.png",
+        "UnlockDesc": "通关ST-02解锁",
+        "Params": [
+            2,
+            2
+        ],
+        "HitEffectId": [
+            51
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 9,
+        "Cost": 0,
+        "Range": 2,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "造成4点伤害，并呼叫场边的露西亚支援攻击",
+        "Name": "湮灭低语",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill3.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesslunaTips04.png",
+        "UnlockDesc": "通关ST-04解锁",
+        "Params": [
+            4,
+            2,
+            8
+        ],
+        "HitEffectId": [
+            51
+        ],
+        "AssistHitEffectId": [
+            55
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 10,
+        "Cost": 15,
+        "Range": 2,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "造成5点伤害，前3次释放可在当前关卡中，永久提升自身1点伤害&射程，并呼叫露西亚下场助战",
+        "Name": "终月降临",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill4.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesslunaTips06.png",
+        "UnlockDesc": "通关ST-06解锁",
+        "Params": [
+            5,
+            1021005,
+            2,
+            2,
+            3,
+            4
+        ],
+        "HitEffectId": [
+            51
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 11,
+        "Cost": 0,
+        "Range": 1,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "造成单体6点伤害（缠住刀刃的雷电改变了光的折射率，使得剑的形状不可见)",
+        "Name": "深红剑斩",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill5.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessluciaTips01.png",
+        "UnlockDesc": "通关ST-06解锁",
+        "Params": [
+            6,
+            0,
+            -3
+        ],
+        "HitEffectId": [
+            55
+        ]
+    },
+    {
+        "Id": 12,
+        "Type": 13,
+        "Cost": 0,
+        "Range": 4,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "移动最多4格，并对沿途的敌人造成9点伤害",
+        "Name": "囚影鸣闪",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill7.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessluciaTips03.png",
+        "UnlockDesc": "通关ST-07解锁",
+        "Params": [
+            9,
+            0,
+            -3
+        ],
+        "HitEffectId": [
+            55
+        ]
+    },
+    {
+        "Id": 13,
+        "Type": 12,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": false,
+        "DelayRound": 0,
+        "Desc": "与露娜换位，落地后对周围造成6点伤害",
+        "Name": "曳影掠光",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill6.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessluciaTips02.png",
+        "UnlockDesc": "通关ST-08解锁",
+        "Params": [
+            6,
+            0,
+            -3
+        ],
+        "HitEffectId": [
+            55
+        ]
+    },
+    {
+        "Id": 14,
+        "Type": 14,
+        "Cost": 0,
+        "Range": 2,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>横竖</color>方向<color=#FFD584>范围大</color>，<color=#FFD584>斜角</color>方向<color=#FFD584>伤害高</color>，命中敌人时<color=#FFD584>怒气+15点</color>",
+        "Name": "斥挞",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill1.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips03.png",
+        "UnlockDesc": "默认解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Blue.png",
+        "Params": [
+            8,
+            12,
+            -1,
+            15
+        ]
+    },
+    {
+        "Id": 15,
+        "Type": 15,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>当前回合</color>内<color=#FFD584>免疫1次伤害</color>，格挡成功时<color=#FFD584>怒气+50点</color>",
+        "Name": "格挡",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill3.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips04.png",
+        "UnlockDesc": "通过序章1/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Blue.png",
+        "Params": [
+            1,
+            50
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 16,
+        "Cost": 50,
+        "Range": 0,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>当前回合</color>内<color=#FFD584>免疫1次伤害</color>，格挡成功时释放<color=#FFD584>反击并击退相邻敌方</color>（首领无法击退）\\n\\n<color=#FFD584>击退</color>时被<color=#FFD584>地形/其他单位阻挡</color>会受到<color=#FFD584>10点碰撞伤害</color>（阻挡单位受相同伤害）",
+        "Name": "燃魂·反击",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill7.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips06.png",
+        "UnlockDesc": "通过序章1/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Red.png",
+        "Params": [
+            1,
+            1,
+            1,
+            18,
+            10
+        ]
+    },
+    {
+        "Id": 17,
+        "Type": 17,
+        "Cost": 0,
+        "Range": 3,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "对<color=#FFD584>范围内所有敌人</color>造成伤害，命中时<color=#FFD584>怒气+15点</color>，<color=#FFD584>每多命中1名</color>敌人，<color=#FFD584>怒气额外+5点</color>",
+        "Name": "迸发",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill2.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips05.png",
+        "UnlockDesc": "通过序章2/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Blue.png",
+        "Params": [
+            15,
+            3,
+            15,
+            5
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 18,
+        "Cost": 50,
+        "Range": 5,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "对更大<color=#FFD584>范围内所有敌人</color>造成伤害",
+        "Name": "燃魂·迸发",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill6.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips07.png",
+        "UnlockDesc": "通过序章2/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Red.png",
+        "Params": [
+            22,
+            3,
+            15
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 19,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>怒气满额</color>可释放，瞬移至任意单位<color=#FFD584>相邻格</color>并造成<color=#FFD584>范围伤害</color>，<color=#FFD584>击杀敌人</color>则<color=#FFD584>刷新技能冷却</color>。提高下次释放的<color=#FFD584>怒气消耗、伤害与范围</color>",
+        "Name": "燃魂·淬骨",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill4.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips08.png",
+        "UnlockDesc": "通过序章2/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg4Blue.png",
+        "Params": [
+            15,
+            100,
+            50,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 20,
+        "Cost": 0,
+        "Range": 1,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对目标造成伤害",
+        "Name": "不想讲道理",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21121.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips17.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 21,
+        "Type": 21,
+        "Cost": 0,
+        "Range": 4,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对范围内所有目标造成伤害",
+        "Desc2": "对更大范围内所有目标造成伤害，技能冷却缩减【必杀强化】",
+        "Name": "扳手有力量",
+        "Name2": "扳手有力量",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon029.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips18.png",
+        "MapIcon2": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips19.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            20,
+            3
+        ]
+    },
+    {
+        "Id": 22,
+        "Type": 22,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "获得强化效果：<color=#FFD584>移动距离+1</color>\\n【扳手有力量】<color=#FFD584>范围扩大</color>、<color=#FFD584>冷却缩短</color>\\n强化效果持续5回合",
+        "Name": "超级大强化",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon031.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips20.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            21,
+            8,
+            9,
+            10
+        ]
+    },
+    {
+        "Id": 23,
+        "Type": 23,
+        "Cost": 0,
+        "Range": 1,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对目标造成伤害",
+        "Name": "戳你一下",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon001.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips27.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 24,
+        "Type": 24,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "每隔<color=#FFD584>4回合</color>切换白形态，当前<color=#FFD584>受白格伤害+5</color>，受伤时<color=#FFD584>切换形态间隔-1</color>",
+        "Name": "黑之碧",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon014.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips22.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            8
+        ]
+    },
+    {
+        "Id": 25,
+        "Type": 25,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对所有<color=#FFD584>黑格</color>释放雷击",
+        "Name": "碧打雷劈·黑",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon012.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips23.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 26,
+        "Type": 26,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "自身进入<color=#FFD584>免伤蓄力状态</color>并召唤多名临时棋子助战，4回合后对<color=#FFD584>所有格子释放雷击</color>并摧毁临时棋子",
+        "Name": "碧碧滔天",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon028.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips25.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            60,
+            2,
+            4,
+            31001,
+            1,
+            99,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008,
+            1009,
+            1010,
+            1011,
+            1012,
+            1013,
+            1014,
+            1015,
+            1016
+        ]
+    },
+    {
+        "Id": 27,
+        "Type": 23,
+        "Cost": 0,
+        "Range": 1,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对目标造成伤害",
+        "Name": "戳你一下",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon001.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips26.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 28,
+        "Type": 24,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "每隔<color=#FFD584>4回合</color>切换黑形态，当前<color=#FFD584>受黑格伤害+5</color>，受伤时<color=#FFD584>切换形态间隔-1</color>",
+        "Name": "白之碧",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon005.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips21.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            9,
+            29,
+            30,
+            0
+        ]
+    },
+    {
+        "Id": 29,
+        "Type": 25,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "该技能默认封印，每回合结束时<color=#FFD584>未受伤</color>则<color=#FFD584>下回合释放该技能</color>，对所有<color=#FFD584>白格</color>释放雷击",
+        "Name": "碧打雷劈·白",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon012.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips24.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 30,
+        "Type": 26,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "自身进入<color=#FFD584>免伤蓄力状态</color>并召唤多名临时棋子助战，4回合后对<color=#FFD584>所有格子释放雷击</color>并摧毁临时棋子",
+        "Name": "碧碧滔天",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon028.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips25.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            60,
+            2,
+            4,
+            31001,
+            1,
+            99,
+            1001,
+            1002,
+            1003,
+            1004,
+            1005,
+            1006,
+            1007,
+            1008,
+            1009,
+            1010,
+            1011,
+            1012,
+            1013,
+            1014,
+            1015,
+            1016
+        ]
+    },
+    {
+        "Id": 31,
+        "Type": 14,
+        "Cost": 0,
+        "Range": 2,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>横竖</color>方向<color=#FFD584>范围大</color>，<color=#FFD584>斜角</color>方向<color=#FFD584>伤害高</color>，命中敌人时<color=#FFD584>怒气+20点</color>",
+        "Name": "燃魂·斥挞",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill5.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips03.png",
+        "UnlockDesc": "默认解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg1Red.png",
+        "Params": [
+            8,
+            12,
+            -1,
+            20
+        ]
+    },
+    {
+        "Id": 32,
+        "Type": 19,
+        "Cost": 0,
+        "Range": 0,
+        "IsDefault": false,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 0,
+        "Desc": "<color=#FFD584>怒气满额</color>可释放，瞬移至任意单位<color=#FFD584>相邻格</color>并造成<color=#FFD584>范围伤害</color>，<color=#FFD584>击杀敌人</color>则<color=#FFD584>刷新技能冷却</color>。提高下次释放的<color=#FFD584>怒气消耗、伤害与范围</color>",
+        "Name": "燃魂·淬骨",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkill8.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips08.png",
+        "UnlockDesc": "通过序章2/3解锁",
+        "IconBg": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSkillBg4Red.png",
+        "Params": [
+            15,
+            100,
+            50,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 33,
+        "Type": 21,
+        "Cost": 0,
+        "Range": 4,
+        "IsDefault": true,
+        "IsPassive": false,
+        "IsDizzy": false,
+        "IsPenetrate": true,
+        "DelayRound": 1,
+        "Desc": "对范围内所有目标造成伤害",
+        "Name": "扳手有力量",
+        "Name2": "扳手有力量",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon029.png",
+        "MapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips18.png",
+        "MapIcon2": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips19.png",
+        "UnlockDesc": "默认解锁",
+        "Params": [
+            20,
+            3
+        ]
+    }
+]

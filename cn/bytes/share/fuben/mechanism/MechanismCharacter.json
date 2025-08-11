@@ -1,0 +1,202 @@
+[
+    {
+        "Id": 1,
+        "Name": "比安卡·深痕",
+        "CharacterId": 1041004,
+        "RobotId": 171002,
+        "FightEventIds": [
+            2265101,
+            2265102
+        ],
+        "BuffConditions": [
+            774800,
+            1046903
+        ],
+        "CharacterTitles": [
+            "爆发",
+            "藏锋"
+        ],
+        "CharacterDesc": [
+            "根据当前积累的真意值，提供爆发输出伤害",
+            "普攻和3消可获得藏锋值"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod2001.png",
+            "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png"
+        ],
+        "BuffNames": [
+            "圣誓折光",
+            "耀变共鸣"
+        ],
+        "BuffDesc": [
+            "释放灯影剑舞时，每次剑气命中敌人造成伤害，若有足够的藏锋值则触发一次真意斩",
+            "释放二段必杀【照渊】时，消耗所有当前的真意值（最多30点），额外造成200%*真意值倍率的真意斩伤害"
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "含英·檀心",
+        "CharacterId": 1241003,
+        "RobotId": 171001,
+        "FightEventIds": [
+            2265103,
+            2265104
+        ],
+        "BuffConditions": [
+            1046901,
+            1046904
+        ],
+        "CharacterTitles": [
+            "循环"
+        ],
+        "CharacterDesc": [
+            "可以持续快速打出真意斩，累计真意值"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+            "Assets/Product/Texture/Image/IconAffix/IconAffixDuyuUp.png"
+        ],
+        "BuffNames": [
+            "幽蝶回翩",
+            "和弦连奏"
+        ],
+        "BuffDesc": [
+            "藏锋值获取效率提升100%",
+            "自身每次触发真意斩时，每点真意斩充能次数触发的斩击次数翻倍"
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "亚里莎·回音",
+        "CharacterId": 1261003,
+        "RobotId": 171003,
+        "FightEventIds": [
+            2265105,
+            2265106
+        ],
+        "BuffConditions": [
+            774800,
+            1046902
+        ],
+        "CharacterTitles": [
+            "增益",
+            "藏锋"
+        ],
+        "CharacterDesc": [
+            "提供真意斩buff和暴击伤害",
+            "3消和密语球可获得藏锋值"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+            "Assets/Product/Texture/Image/IconAffix/AffixIconBudong.png"
+        ],
+        "BuffNames": [
+            "利箭庇护",
+            "断罪审判"
+        ],
+        "BuffDesc": [
+            "QTE下场后，在5秒内每秒回复100点藏锋值；重复触发刷新持续时间",
+            "每次回音释放核心被动-裁定合击，提升50%的真意斩暴击伤害，最高叠加至100%"
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "曲·启明",
+        "CharacterId": 1521004,
+        "RobotId": 171005,
+        "FightEventIds": [
+            2265201,
+            2265202
+        ],
+        "BuffConditions": [
+            774800,
+            1046907
+        ],
+        "CharacterTitles": [
+            "爆发",
+            "覆冰"
+        ],
+        "CharacterDesc": [
+            "可在冰刺激活期间造成大量额外覆冰伤害",
+            "普攻和3消可获得覆冰值"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing.png",
+            "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png"
+        ],
+        "BuffNames": [
+            "飞雪凌霜",
+            "冽冬萧瑟"
+        ],
+        "BuffDesc": [
+            "冰刺激活期间，3消将引发冰聚造成额外覆冰伤害",
+            "冰刺激活时释放二段必杀【君临镇魄】，基于累计的冰结值造成额外的覆冰伤害"
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "万事·明晰梦",
+        "CharacterId": 1211003,
+        "RobotId": 171004,
+        "FightEventIds": [
+            2265203,
+            2265204
+        ],
+        "BuffConditions": [
+            1046905,
+            1046908
+        ],
+        "CharacterTitles": [
+            "循环"
+        ],
+        "CharacterDesc": [
+            "快速累计极冰层并激活冰刺"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/IconAffix/AffixIconYubing.png",
+            "Assets/Product/Texture/Image/IconAffix/IconAffixBingshuangUp.png"
+        ],
+        "BuffNames": [
+            "白鸮狙猎",
+            "沉潜晦暝"
+        ],
+        "BuffDesc": [
+            "生成冰刺时，冰刺的持续时长增加12秒",
+            "每次触发冰聚伤害，将使敌人受到的覆冰伤害额外提升20%，持续5秒，最高可叠加至100%"
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "21号·森息",
+        "CharacterId": 1221003,
+        "RobotId": 171006,
+        "FightEventIds": [
+            2265205,
+            2265206
+        ],
+        "BuffConditions": [
+            774800,
+            1046906
+        ],
+        "CharacterTitles": [
+            "增益",
+            "覆冰"
+        ],
+        "CharacterDesc": [
+            "提供信号球回复与输出增益",
+            "普攻和3消可获得覆冰值"
+        ],
+        "BuffIcons": [
+            "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+            "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png"
+        ],
+        "BuffNames": [
+            "暗径寻踪",
+            "蓄势待发"
+        ],
+        "BuffDesc": [
+            "QTE/造成治疗时，额外提供100覆冰值与100%覆冰伤害加成，有5秒冷却时间",
+            "QTE/造成治疗时，在场角色获得2组信号球，有5秒冷却时间"
+        ]
+    }
+]

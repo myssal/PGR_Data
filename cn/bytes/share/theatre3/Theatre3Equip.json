@@ -1,0 +1,2377 @@
+[
+    {
+        "Id": 101,
+        "EquipName": "列文虎克·I",
+        "Level": 1,
+        "AttType": 1,
+        "SuitId": 1,
+        "EffectDesc": "· 暴击时，物理伤害<color=#4a70b9>+10%</color>，叠加上限<color=#4a70b9>30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20011,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELiewenhukeI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 暴击时，获得物理伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21011,
+        "QubitEffectDesc": "· 暴击时，物理伤害<color=#17f5cf>+10%</color>，叠加上限<color=#17f5cf>50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 暴击时，获得物理伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "物理",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 102,
+        "EquipName": "列文虎克·II",
+        "Level": 1,
+        "AttType": 1,
+        "SuitId": 1,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的物理伤害，冷却时间<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20012,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELiewenhukeI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加物理伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21012,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的物理伤害，冷却时间<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加物理伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "物理",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 103,
+        "EquipName": "列文虎克·III",
+        "Level": 1,
+        "AttType": 1,
+        "SuitId": 1,
+        "EffectDesc": "· 造成伤害时，敌方物理抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20013,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELiewenhukeI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方物理抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21013,
+        "QubitEffectDesc": "· 造成伤害时，敌方物理抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方物理抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "物理",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 201,
+        "EquipName": "莎士比亚·I",
+        "Level": 1,
+        "AttType": 2,
+        "SuitId": 2,
+        "EffectDesc": "· 三消造成伤害时，火属性伤害<color=#4a70b9>+10%</color>，叠加上限<color=#4a70b9>30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20021,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EShashibiyaI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 三消造成伤害时，获得火属性伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21021,
+        "QubitEffectDesc": "· 三消造成伤害时，火属性伤害<color=#17f5cf>+10%</color>，叠加上限<color=#17f5cf>50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 三消造成伤害时，获得火属性伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "火属性",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 202,
+        "EquipName": "莎士比亚·II",
+        "Level": 1,
+        "AttType": 2,
+        "SuitId": 2,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的火属性伤害，冷却时间<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20022,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EShashibiyaI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加火属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21022,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的火属性伤害，冷却时间<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加火属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "火属性",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 203,
+        "EquipName": "莎士比亚·III",
+        "Level": 1,
+        "AttType": 2,
+        "SuitId": 2,
+        "EffectDesc": "· 造成伤害时，敌方火属性抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20023,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EShashibiyaI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方火属性抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21023,
+        "QubitEffectDesc": "· 造成伤害时，敌方火属性抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方火属性抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "火属性",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 301,
+        "EquipName": "海森·I",
+        "Level": 1,
+        "AttType": 3,
+        "SuitId": 3,
+        "EffectDesc": "· 长按攻击键超过<color=#4a70b9>3</color>秒后，雷属性伤害<color=#4a70b9>+30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20031,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EHaisenbaoI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 长按攻击键时，获得雷属性伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21031,
+        "QubitEffectDesc": "· 长按攻击键超过<color=#17f5cf>3</color>秒后，雷属性伤害<color=#17f5cf>+50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 长按攻击键时，获得雷属性伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "雷属性",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 302,
+        "EquipName": "海森·II",
+        "Level": 1,
+        "AttType": 3,
+        "SuitId": 3,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的雷属性伤害，冷却时间1秒",
+        "EffectGroupId": 20032,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EHaisenbaoI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加雷属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21032,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的雷属性伤害，冷却时间1秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加雷属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "雷属性",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 303,
+        "EquipName": "海森·III",
+        "Level": 1,
+        "AttType": 3,
+        "SuitId": 3,
+        "EffectDesc": "· 造成伤害时，敌方雷属性抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20033,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EHaisenbaoI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方雷属性抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21033,
+        "QubitEffectDesc": "· 造成伤害时，敌方雷属性抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方雷属性抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "雷属性",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 401,
+        "EquipName": "辰积原·I",
+        "Level": 1,
+        "AttType": 4,
+        "SuitId": 4,
+        "EffectDesc": "· 释放必杀时，冰属性伤害<color=#4a70b9>+30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20041,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EZuwenyuanI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 释放必杀技时，获得冰属性伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21041,
+        "QubitEffectDesc": "· 释放必杀时，冰属性伤害<color=#17f5cf>+50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 释放必杀技时，获得冰属性伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "冰属性",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 402,
+        "EquipName": "辰积原·II",
+        "Level": 1,
+        "AttType": 4,
+        "SuitId": 4,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的冰属性伤害，冷却时间<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20042,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EZuwenyuanI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加冰属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21042,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的冰属性伤害，冷却时间<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加冰属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "冰属性",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 403,
+        "EquipName": "辰积原·III",
+        "Level": 1,
+        "AttType": 4,
+        "SuitId": 4,
+        "EffectDesc": "· 造成伤害时，敌方冰属性抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20043,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EZuwenyuanI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方冰属性抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21043,
+        "QubitEffectDesc": "· 造成伤害时，敌方冰属性抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方冰属性抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "冰属性",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 501,
+        "EquipName": "勒梅·I",
+        "Level": 1,
+        "AttType": 5,
+        "SuitId": 5,
+        "EffectDesc": "· 造成伤害时，暗属性伤害<color=#4a70b9>+10%</color>，叠加上限<color=#4a70b9>30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20051,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELemeiI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 造成伤害时，获得暗属性伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21051,
+        "QubitEffectDesc": "· 造成伤害时，暗属性伤害<color=#17f5cf>+10%</color>，叠加上限<color=#17f5cf>50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，获得暗属性伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "暗属性",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 502,
+        "EquipName": "勒梅·II",
+        "Level": 1,
+        "AttType": 5,
+        "SuitId": 5,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的暗属性伤害，冷却时间<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20052,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELemeiI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加暗属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21052,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的暗属性伤害，冷却时间<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加暗属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "暗属性",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 503,
+        "EquipName": "勒梅·III",
+        "Level": 1,
+        "AttType": 5,
+        "SuitId": 5,
+        "EffectDesc": "· 造成伤害时，敌方暗属性抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20053,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELemeiI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方暗属性抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21053,
+        "QubitEffectDesc": "· 造成伤害时，敌方暗属性抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方暗属性抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "暗属性",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 601,
+        "EquipName": "狄瑟尔·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 6,
+        "EffectDesc": "· 三消后，重排信号球，冷却<color=#4a70b9>2</color>秒",
+        "EffectGroupId": 20061,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDiseerI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 三消后，重排信号球，冷却<color=#4a70b9>2</color>秒",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21061,
+        "QubitEffectDesc": "· 三消后，重排信号球，冷却<color=#17f5cf>2</color>秒\\n· 重排信号球后，每有<color=#17f5cf>1</color>组三消信号球，攻击力<color=#17f5cf>+20%</color>，持续<color=#17f5cf>3</color>秒",
+        "QubitSampleEffectDesc": "· 三消后，重排信号球，冷却<color=#17f5cf>2</color>秒\\n· 重排信号球后，三消信号球组数越多攻击加成越高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "信号球"
+        ]
+    },
+    {
+        "Id": 602,
+        "EquipName": "狄瑟尔·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 6,
+        "EffectDesc": "· 每消除<color=#4a70b9>1</color>个信号球，获得额外伤害加成<color=#4a70b9>+10%</color>，上限<color=#4a70b9>300%</color>，持续<color=#4a70b9>10</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20062,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDiseerI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 消除信号球会获得额外伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21062,
+        "QubitEffectDesc": "· 每消除<color=#17f5cf>1</color>个信号球，获得额外伤害加成<color=#17f5cf>+25%</color>，上限<color=#17f5cf>425%</color>，持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 消除信号球会获得额外伤害加成",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "信号球"
+        ]
+    },
+    {
+        "Id": 603,
+        "EquipName": "狄瑟尔·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 6,
+        "EffectDesc": "· 信号球少于<color=#4a70b9>8</color>时，补充信号球至<color=#4a70b9>8</color>个，冷却<color=#4a70b9>12</color>秒",
+        "EffectGroupId": 20063,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDiseerI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 信号球较少时，自动补充，冷却<color=#4a70b9>12</color>秒",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21063,
+        "QubitEffectDesc": "· 信号球少于<color=#17f5cf>8</color>时，补充信号球至<color=#17f5cf>16</color>个，冷却<color=#17f5cf>8</color>秒",
+        "QubitSampleEffectDesc": "· 信号球较少时，自动补充，冷却<color=#17f5cf>8</color>秒",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "信号球"
+        ]
+    },
+    {
+        "Id": 701,
+        "EquipName": "布恩·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 7,
+        "EffectDesc": "· 释放放必杀技消耗的能量<color=#4a70b9>-20%</color>",
+        "EffectGroupId": 20071,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EBuenI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 必杀消耗能量小幅降低",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21071,
+        "QubitEffectDesc": "· 释放放必杀技消耗的能量<color=#17f5cf>-40%</color>",
+        "QubitSampleEffectDesc": "· 必杀消耗能量大幅降低",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "必杀"
+        ]
+    },
+    {
+        "Id": 702,
+        "EquipName": "布恩·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 7,
+        "EffectDesc": "· 每次释放必杀技时，后续的必杀伤害<color=#4a70b9>+40%</color>，叠加上限<color=#4a70b9>200%</color>",
+        "EffectGroupId": 20072,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EBuenI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 释放必杀技时，获得可叠加的必杀伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21072,
+        "QubitEffectDesc": "· 每次释放必杀技时，后续的必杀伤害<color=#17f5cf>+80%</color>，叠加上限<color=#17f5cf>400%</color>",
+        "QubitSampleEffectDesc": "· 释放必杀技时，获得可叠加的必杀伤害加成",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "必杀"
+        ]
+    },
+    {
+        "Id": 703,
+        "EquipName": "布恩·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 7,
+        "EffectDesc": "· 战斗开始时，填满必杀能量",
+        "EffectGroupId": 20073,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EBuenI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 战斗开始时，填满必杀能量",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21073,
+        "QubitEffectDesc": "· 战斗开始时，全队填满必杀能量",
+        "QubitSampleEffectDesc": "· 战斗开始时，全队填满必杀能量",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "必杀"
+        ]
+    },
+    {
+        "Id": 801,
+        "EquipName": "图灵·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 8,
+        "EffectDesc": "· 普攻造成伤害时，会对敌方施加<color=#4a70b9>1</color>层【<u>伤口</u>】，冷却<color=#4a70b9>0.5</color>秒",
+        "EffectGroupId": 20081,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETulingI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 普攻伤害会对敌方施加【<u>伤口</u>】",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21081,
+        "QubitEffectDesc": "· 普攻造成伤害时，会对敌方施加<color=#17f5cf>2</color>层【<u>撕裂</u>】，冷却<color=#17f5cf>0.5</color>秒",
+        "QubitSampleEffectDesc": "· 普攻伤害会对敌方施加【<u>撕裂</u>】",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "普攻"
+        ],
+        "TraitName": [
+            "伤口"
+        ],
+        "TraitDesc": [
+            "· 受到普攻伤害时，额外造成伤口层数*<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>4</color>秒\\n· 伤口叠加上限为<color=#4a70b9>20</color>层，持续<color=#4a70b9>10</color>秒（重复时刷新）"
+        ],
+        "QubitTraitName": [
+            "撕裂"
+        ],
+        "QubitTraitDesc": [
+            "· 受到普攻伤害时，额外造成撕裂层数*<color=#17f5cf>200%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>4</color>秒\\n· 撕裂叠加上限为<color=#17f5cf>20</color>层"
+        ]
+    },
+    {
+        "Id": 802,
+        "EquipName": "图灵·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 8,
+        "EffectDesc": "· 普攻伤害<color=#4a70b9>+50%</color>，每层【<u>伤口</u>】额外提供<color=#4a70b9>4%</color>加成（取层数最高的目标）",
+        "EffectGroupId": 20082,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETulingI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 普攻伤害提高，且基于【<u>伤口</u>】层数会获得进一步加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21082,
+        "QubitEffectDesc": "· 普攻伤害<color=#17f5cf>+100%</color>，每层【<u>撕裂</u>】额外提供<color=#17f5cf>5%</color>加成（取层数最高的目标）",
+        "QubitSampleEffectDesc": "· 普攻伤害提高，且基于【<u>撕裂</u>】层数会获得进一步加成",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "普攻"
+        ],
+        "TraitName": [
+            "伤口"
+        ],
+        "TraitDesc": [
+            "· 受到普攻伤害时，额外造成伤口层数*<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>4</color>秒\\n· 伤口叠加上限为<color=#4a70b9>20</color>层，持续<color=#4a70b9>10</color>秒（重复时刷新）"
+        ],
+        "QubitTraitName": [
+            "撕裂"
+        ],
+        "QubitTraitDesc": [
+            "· 受到普攻伤害时，额外造成撕裂层数*<color=#17f5cf>200%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>4</color>秒\\n· 撕裂叠加上限为<color=#17f5cf>20</color>层"
+        ]
+    },
+    {
+        "Id": 803,
+        "EquipName": "图灵·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 8,
+        "EffectDesc": "· 每隔<color=#4a70b9>1</color>秒，下次普攻造成的最终伤害提高<color=#4a70b9>200%+5%</color>*【<u>伤口</u>】层数（取层数最高的目标）",
+        "EffectGroupId": 20083,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETulingI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 基于【<u>伤口</u>】层数定期获得普攻最终伤害的强化",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21083,
+        "QubitEffectDesc": "· 每隔<color=#17f5cf>1</color>秒，下次普攻造成的最终伤害提高<color=#17f5cf>250%+6%</color>*【<u>撕裂</u>】层数（取层数最高的目标）",
+        "QubitSampleEffectDesc": "· 基于【<u>撕裂</u>】层数定期获得普攻最终伤害的强化",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "普攻"
+        ],
+        "TraitName": [
+            "伤口"
+        ],
+        "TraitDesc": [
+            "· 受到普攻伤害时，额外造成伤口层数*<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>4</color>秒\\n· 伤口叠加上限为<color=#4a70b9>20</color>层，持续<color=#4a70b9>10</color>秒（重复时刷新）"
+        ],
+        "QubitTraitName": [
+            "撕裂"
+        ],
+        "QubitTraitDesc": [
+            "· 受到普攻伤害时，额外造成撕裂层数*<color=#17f5cf>200%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>4</color>秒\\n· 撕裂叠加上限为<color=#17f5cf>20</color>层"
+        ]
+    },
+    {
+        "Id": 901,
+        "EquipName": "夏洛蒂·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 9,
+        "EffectDesc": "· 每<color=#4a70b9>20</color>次连击，暴击率<color=#4a70b9>+10%</color>，叠加上限<color=#4a70b9>100%</color>，持续<color=#4a70b9>10</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20091,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXialuodiI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 基于连击获得暴击率加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21091,
+        "QubitEffectDesc": "· 每<color=#17f5cf>12</color>次连击，暴击率<color=#17f5cf>+12%</color>，叠加上限<color=#17f5cf>100%</color>，持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 基于连击获得暴击率加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "连击",
+            "暴击率"
+        ]
+    },
+    {
+        "Id": 902,
+        "EquipName": "夏洛蒂·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 9,
+        "EffectDesc": "· 每<color=#4a70b9>20</color>次连击，暴击伤害<color=#4a70b9>+30%</color>，叠加上限<color=#4a70b9>120%</color>，持续<color=#4a70b9>8</color>秒（每层持续时间独立计算）",
+        "EffectGroupId": 20092,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXialuodiI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 基于连击获得暴击伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21092,
+        "QubitEffectDesc": "· 每<color=#17f5cf>12</color>次连击，暴击伤害<color=#17f5cf>+30%</color>，叠加上限<color=#17f5cf>180%</color>，持续<color=#17f5cf>8</color>秒（每层持续时间独立计算）",
+        "QubitSampleEffectDesc": "· 基于连击获得暴击伤害加成",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "连击",
+            "暴击伤害"
+        ]
+    },
+    {
+        "Id": 903,
+        "EquipName": "夏洛蒂·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 9,
+        "EffectDesc": "· 造成伤害时，会额外造成<color=#4a70b9>1</color>次连击数*<color=#4a70b9>1000</color>的真实伤害，冷却<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20093,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXialuodiI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 基于连击数定期对敌方造成真实伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21093,
+        "QubitEffectDesc": "· 造成伤害时，会额外造成<color=#17f5cf>1</color>次连击数*<color=#17f5cf>1750</color>的真实伤害，冷却<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 基于连击数定期对敌方造成真实伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "连击",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1001,
+        "EquipName": "萨曼达·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 10,
+        "EffectDesc": "· 战斗结算时，获取【算力单元】数量<color=#4a70b9>+40%</color>",
+        "EffectGroupId": 20101,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ESamandaI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 战斗结算获取的【<u>算力单元</u>】提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21101,
+        "QubitEffectDesc": "· 战斗结算时，获取【算力单元】数量<color=#17f5cf>+60%</color>",
+        "QubitSampleEffectDesc": "· 战斗结算获取的【<u>算力单元</u>】提高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "算力单元",
+            "额外获取"
+        ],
+        "TraitName": [
+            "算力单元"
+        ],
+        "TraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ],
+        "QubitTraitName": [
+            "算力单元"
+        ],
+        "QubitTraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ]
+    },
+    {
+        "Id": 1002,
+        "EquipName": "萨曼达·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 10,
+        "EffectDesc": "· 每持有<color=#4a70b9>100</color>【算力单元】，额外伤害加成<color=#4a70b9>+10%</color>",
+        "EffectGroupId": 20102,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ESamandaI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 持有【<u>算力单元</u>】数量越多，额外伤害加成越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21102,
+        "QubitEffectDesc": "· 每持有<color=#17f5cf>100</color>【算力单元】，额外伤害加成<color=#17f5cf>+20%</color>",
+        "QubitSampleEffectDesc": "· 持有【<u>算力单元</u>】数量越多，额外伤害加成越高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "算力单元",
+            "增伤"
+        ],
+        "TraitName": [
+            "算力单元"
+        ],
+        "TraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ],
+        "QubitTraitName": [
+            "算力单元"
+        ],
+        "QubitTraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ]
+    },
+    {
+        "Id": 1003,
+        "EquipName": "萨曼达·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 10,
+        "EffectDesc": "· 每持有<color=#4a70b9>100</color>【算力单元】，最大生命值<color=#4a70b9>+3%</color>",
+        "EffectGroupId": 20103,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ESamandaI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 持有【<u>算力单元</u>】数量越多，生命值加成越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21103,
+        "QubitEffectDesc": "· 每持有<color=#17f5cf>100</color>【算力单元】，最大生命值<color=#17f5cf>+5%</color>",
+        "QubitSampleEffectDesc": "· 持有【<u>算力单元</u>】数量越多，生命值加成越高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "算力单元",
+            "生命值"
+        ],
+        "TraitName": [
+            "算力单元"
+        ],
+        "TraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ],
+        "QubitTraitName": [
+            "算力单元"
+        ],
+        "QubitTraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ]
+    },
+    {
+        "Id": 1101,
+        "EquipName": "弗兰·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 11,
+        "EffectDesc": "· 伤害减免<color=#4a70b9>+20%</color>\\n· 受到伤害时，该加成额外<color=#4a70b9>+10%</color>，叠加上限<color=#4a70b9>40%</color>，额外效果持续<color=#4a70b9>10</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20111,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFulanI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 伤害减免提高，受到伤害时，该效果会累计提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21111,
+        "QubitEffectDesc": "· 伤害减免<color=#17f5cf>+20%</color>\\n· 受到伤害时，该加成额外<color=#17f5cf>+20%</color>，叠加上限<color=#17f5cf>50%</color>，额外效果持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 伤害减免提高，受到伤害时，该效果会累计提高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "受击",
+            "减伤"
+        ]
+    },
+    {
+        "Id": 1102,
+        "EquipName": "弗兰·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 11,
+        "EffectDesc": "· 额外伤害加成<color=#4a70b9>+20%</color>\\n· 受到伤害时，该加成额外<color=#4a70b9>+20%</color>，叠加上限<color=#4a70b9>60%</color>，额外效果持续<color=#4a70b9>10</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20112,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFulanI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 额外伤害加成提高，受到伤害时，该效果会累计提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21112,
+        "QubitEffectDesc": "· 额外伤害加成<color=#17f5cf>+30%</color>\\n· 受到伤害时，该加成额外<color=#17f5cf>+20%</color>，叠加上限<color=#17f5cf>70%</color>，额外效果持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 额外伤害加成提高，受到伤害时，该效果会累计提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "受击",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 1103,
+        "EquipName": "弗兰·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 11,
+        "EffectDesc": "· 每秒对周边敌方造成攻击力<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性）\\n· 受到伤害时，该倍率<color=#4a70b9>+200%</color>，叠加上限<color=#4a70b9>1200%</color>，额外效果持续<color=#4a70b9>10</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20113,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFulanI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 定期对周边敌人造成属性伤害，受到伤害时，该效果会累计提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21113,
+        "QubitEffectDesc": "· 每秒对周边敌方造成攻击力<color=#17f5cf>300%</color>的属性伤害（基于当前角色属性）\\n· 受到伤害时，该倍率<color=#17f5cf>+200%</color>，叠加上限<color=#17f5cf>1600%</color>，额外效果持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 定期对周边敌人造成属性伤害，受到伤害时，该效果会累计提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "受击",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1201,
+        "EquipName": "提法·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 12,
+        "EffectDesc": "· 进入超算空间时，消耗<color=#b73a3a>10%</color>最大生命值，对场上所有敌方造成攻击力<color=#4a70b9>（消耗生命值*10）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "EffectGroupId": 20121,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETifaI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 超算时，消耗生命值对所有敌方造成属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21121,
+        "QubitEffectDesc": "· 进入超算空间时，消耗<color=#b73a3a>15%</color>最大生命值，对场上所有敌方造成攻击力<color=#17f5cf>（消耗生命值*18）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "QubitSampleEffectDesc": "· 超算时，消耗生命值对所有敌方造成属性伤害",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "燃血",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1202,
+        "EquipName": "提法·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 12,
+        "EffectDesc": "· 三消时，消耗<color=#b73a3a>2%</color>最大生命值，对场上所有敌方造成攻击力<color=#4a70b9>（消耗生命值*10）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "EffectGroupId": 20122,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETifaI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 三消时，消耗生命值对所有敌方造成属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21122,
+        "QubitEffectDesc": "· 三消时，消耗<color=#b73a3a>3%</color>最大生命值，对场上所有敌方造成攻击力<color=#17f5cf>（消耗生命值*18）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "QubitSampleEffectDesc": "· 三消时，消耗生命值对所有敌方造成属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "燃血",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1203,
+        "EquipName": "提法·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 12,
+        "EffectDesc": "· 释放必杀技时，消耗<color=#b73a3a>30%</color>最大生命值，对场上所有敌方造成攻击力<color=#4a70b9>（消耗生命值*10）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "EffectGroupId": 20123,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ETifaI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 释放必杀时，消耗生命值对所有敌方造成伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21123,
+        "QubitEffectDesc": "· 释放必杀技时，消耗<color=#b73a3a>35%</color>最大生命值，对场上所有敌方造成攻击力<color=#17f5cf>（消耗生命值*18）%</color>属性伤害（基于当前角色属性）\\n· 生命值小于等于<color=#b73a3a>1</color>时，不再消耗生命值，但伤害仍然生效",
+        "QubitSampleEffectDesc": "· 释放必杀时，消耗生命值对所有敌方造成伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "燃血",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1301,
+        "EquipName": "萨贺芬·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 13,
+        "EffectDesc": "· 受到治疗时，对当前锁定的敌方造成治疗量<color=#4a70b9>2800%</color>的真实伤害",
+        "EffectGroupId": 20131,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFanniI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 治疗时对敌方造成真实伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21131,
+        "QubitEffectDesc": "· 受到治疗时，对当前锁定的敌方造成治疗量<color=#17f5cf>4200%</color>的真实伤害",
+        "QubitSampleEffectDesc": "· 治疗时对敌方造成真实伤害",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "治疗",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1302,
+        "EquipName": "萨贺芬·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 13,
+        "EffectDesc": "· 自身的治疗效果<color=#4a70b9>+100%</color>",
+        "EffectGroupId": 20132,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFanniI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 治疗效果大幅提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21132,
+        "QubitEffectDesc": "· 自身的治疗效果<color=#17f5cf>+150%</color>",
+        "QubitSampleEffectDesc": "· 治疗效果大幅提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "治疗效率"
+        ]
+    },
+    {
+        "Id": 1303,
+        "EquipName": "萨贺芬·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 13,
+        "EffectDesc": "· 每秒恢复<color=#4a70b9>10%</color>最大生命值",
+        "EffectGroupId": 20133,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFanniI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 每秒恢复少量生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21133,
+        "QubitEffectDesc": "· 每秒恢复<color=#17f5cf>10%</color>最大生命值\\n· 治疗时，溢出生命值的<color=#17f5cf>20%</color>转化为护盾，转化上限为<color=#17f5cf>50%</color>最大生命值，护盾持续<color=#17f5cf>10</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 每秒恢复少量生命值\\n· 部分溢出治疗值转化为护盾",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "治疗",
+            "自动恢复"
+        ]
+    },
+    {
+        "Id": 1401,
+        "EquipName": "坎宁安·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 14,
+        "EffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#4a70b9>2</color>次【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20141,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EKanninganI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 闪避时对范围内敌方进行【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21141,
+        "QubitEffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#17f5cf>3</color>次【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 闪避时对范围内敌方进行【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数提高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "闪避",
+            "附加伤害"
+        ],
+        "TraitName": [
+            "斩击"
+        ],
+        "TraitDesc": [
+            "· 造成攻击力<color=#4a70b9>210%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#4a70b9>+80%</color>，倍率总上限<color=#4a70b9>450%</color>，持续<color=#4a70b9>5</color>秒（重复获取时刷新）"
+        ],
+        "QubitTraitName": [
+            "重斩击"
+        ],
+        "QubitTraitDesc": [
+            "· 造成攻击力<color=#17f5cf>290%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#17f5cf>+80%</color>，倍率总上限<color=#17f5cf>530%</color>，持续<color=#17f5cf>5</color>秒（重复获取时刷新）"
+        ]
+    },
+    {
+        "Id": 1402,
+        "EquipName": "坎宁安·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 14,
+        "EffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#4a70b9>2</color>次【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20142,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EKanninganI01001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 闪避时对范围内敌方进行【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21142,
+        "QubitEffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#17f5cf>3</color>次【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 闪避时对范围内敌方进行【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "闪避",
+            "附加伤害"
+        ],
+        "TraitName": [
+            "斩击"
+        ],
+        "TraitDesc": [
+            "· 造成攻击力<color=#4a70b9>210%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#4a70b9>+80%</color>，倍率总上限<color=#4a70b9>450%</color>，持续<color=#4a70b9>5</color>秒（重复获取时刷新）"
+        ],
+        "QubitTraitName": [
+            "重斩击"
+        ],
+        "QubitTraitDesc": [
+            "· 造成攻击力<color=#17f5cf>290%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#17f5cf>+80%</color>，倍率总上限<color=#17f5cf>530%</color>，持续<color=#17f5cf>5</color>秒（重复获取时刷新）"
+        ]
+    },
+    {
+        "Id": 1403,
+        "EquipName": "坎宁安·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 14,
+        "EffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#4a70b9>2</color>次【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20143,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EKanninganI01001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 闪避时对范围内敌方进行【<u>斩击</u>】\\n· 极限闪避时，【<u>斩击</u>】次数提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21143,
+        "QubitEffectDesc": "· 常规闪避时，对范围内所有敌方释放<color=#17f5cf>3</color>次【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 闪避时对范围内敌方进行【<u>重斩击</u>】\\n· 极限闪避时，【<u>重斩击</u>】次数提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "闪避",
+            "附加伤害"
+        ],
+        "TraitName": [
+            "斩击"
+        ],
+        "TraitDesc": [
+            "· 造成攻击力<color=#4a70b9>210%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#4a70b9>+80%</color>，倍率总上限<color=#4a70b9>450%</color>，持续<color=#4a70b9>5</color>秒（重复获取时刷新）"
+        ],
+        "QubitTraitName": [
+            "重斩击"
+        ],
+        "QubitTraitDesc": [
+            "· 造成攻击力<color=#17f5cf>290%</color>的属性伤害（基于当前角色属性）\\n· 每次释放后，斩击倍率<color=#17f5cf>+80%</color>，倍率总上限<color=#17f5cf>530%</color>，持续<color=#17f5cf>5</color>秒（重复获取时刷新）"
+        ]
+    },
+    {
+        "Id": 1501,
+        "EquipName": "伏尔泰·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 15,
+        "EffectDesc": "· 战斗结算时，最大生命值上限<color=#4a70b9>+300</color>（单局演算内永久累计）{0}",
+        "EffectGroupId": 20151,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFuertaiI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 战斗结算时，局内永久提高固定生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21151,
+        "QubitEffectDesc": "· 战斗结算时，最大生命值上限<color=#17f5cf>+450</color>（单局演算内永久累计）{0}",
+        "QubitSampleEffectDesc": "· 战斗结算时，局内永久提高固定生命值",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "成长",
+            "生命值"
+        ]
+    },
+    {
+        "Id": 1502,
+        "EquipName": "伏尔泰·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 15,
+        "EffectDesc": "· 战斗结算时，攻击力<color=#4a70b9>+200</color>（单局演算内永久累计）{0}",
+        "EffectGroupId": 20152,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFuertaiI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 战斗结算时，局内永久提高固定攻击力",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21152,
+        "QubitEffectDesc": "· 战斗结算时，攻击力<color=#17f5cf>+300</color>（单局演算内永久累计）{0}",
+        "QubitSampleEffectDesc": "· 战斗结算时，局内永久提高固定攻击力",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "成长",
+            "攻击"
+        ]
+    },
+    {
+        "Id": 1503,
+        "EquipName": "伏尔泰·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 15,
+        "EffectDesc": "· 战斗结算时，获取的【算力单元】数量<color=#4a70b9>+10</color>（单局演算内永久累计）{0}",
+        "EffectGroupId": 20153,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EFuertaiI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 战斗结算时，获取的【<u>算力单元</u>】数量永久增加",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21153,
+        "QubitEffectDesc": "· 战斗结算时，获取的【算力单元】数量<color=#17f5cf>+20</color>（单局演算内永久累计）{0}",
+        "QubitSampleEffectDesc": "· 战斗结算时，获取的【<u>算力单元</u>】数量永久增加",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "成长",
+            "算力单元"
+        ],
+        "TraitName": [
+            "算力单元"
+        ],
+        "TraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ],
+        "QubitTraitName": [
+            "算力单元"
+        ],
+        "QubitTraitDesc": [
+            "· 演算中用于【战斗内重启】和【鲨士多】购物的货币"
+        ]
+    },
+    {
+        "Id": 1601,
+        "EquipName": "希格娜·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 16,
+        "EffectDesc": "· 敌方入场时，获得<color=#4a70b9>10</color>层【<u>中毒</u>】",
+        "EffectGroupId": 20161,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXigenaI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 敌方入场时，获得【<u>中毒</u>】",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21161,
+        "QubitEffectDesc": "· 敌方入场时，获得<color=#17f5cf>20</color>层【<u>中毒</u>】",
+        "QubitSampleEffectDesc": "· 敌方入场时，获得【<u>中毒</u>】",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "持续伤害"
+        ],
+        "TraitName": [
+            "中毒"
+        ],
+        "TraitDesc": [
+            "· 中毒状态下，每秒受到角色攻击力<color=#4a70b9>600%</color>的真实伤害，上限<color=#4a70b9>30</color>层，持续<color=#4a70b9>5</color>秒（重复获取时刷新，每层伤害独立计算）"
+        ],
+        "GlobalFightEventIds": [
+            2251061
+        ],
+        "QubitTraitName": [
+            "剧毒"
+        ],
+        "QubitTraitDesc": [
+            "· 剧毒状态下，每秒受到角色攻击力<color=#17f5cf>600%</color>的真实伤害，上限<color=#17f5cf>30</color>层"
+        ],
+        "QubitGlobalFightEventIds": [
+            2253035
+        ]
+    },
+    {
+        "Id": 1602,
+        "EquipName": "希格娜·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 16,
+        "EffectDesc": "· 超算时，以自身为中心生成毒圈，持续<color=#4a70b9>5</color>秒，处在圈内的所有敌方，每秒获得<color=#4a70b9>1</color>层【<u>中毒</u>】",
+        "EffectGroupId": 20162,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXigenaI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 超算时生成毒圈，持续期间，圈内所有敌方定期获得【<u>中毒</u>】",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21162,
+        "QubitEffectDesc": "· 超算时，以自身为中心生成毒圈，持续<color=#17f5cf>10</color>秒，处在圈内的所有敌方，每秒获得<color=#17f5cf>1</color>层【<u>中毒</u>】",
+        "QubitSampleEffectDesc": "· 超算时生成毒圈，持续期间，圈内所有敌方定期获得【<u>中毒</u>】",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "持续伤害"
+        ],
+        "TraitName": [
+            "中毒"
+        ],
+        "TraitDesc": [
+            "· 中毒状态下，每秒受到角色攻击力<color=#4a70b9>600%</color>的真实伤害，上限<color=#4a70b9>30</color>层，持续<color=#4a70b9>5</color>秒（重复获取时刷新，每层伤害独立计算）"
+        ],
+        "QubitTraitName": [
+            "剧毒"
+        ],
+        "QubitTraitDesc": [
+            "· 剧毒状态下，每秒受到角色攻击力<color=#17f5cf>600%</color>的真实伤害，上限<color=#17f5cf>30</color>层"
+        ]
+    },
+    {
+        "Id": 1603,
+        "EquipName": "希格娜·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 16,
+        "EffectDesc": "· 造成伤害时，对敌施加<color=#4a70b9>1</color>层【<u>中毒</u>】，冷却<color=#4a70b9>0.5</color>秒",
+        "EffectGroupId": 20163,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXigenaI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，对敌施加【<u>中毒</u>】",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21163,
+        "QubitEffectDesc": "· 造成伤害时，对敌施加<color=#17f5cf>2</color>层【<u>中毒</u>】，冷却<color=#17f5cf>0.5</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，对敌施加【<u>中毒</u>】",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "持续伤害"
+        ],
+        "TraitName": [
+            "中毒"
+        ],
+        "TraitDesc": [
+            "· 中毒状态下，每秒受到角色攻击力<color=#4a70b9>600%</color>的真实伤害，上限<color=#4a70b9>30</color>层，持续<color=#4a70b9>5</color>秒（重复获取时刷新，每层伤害独立计算）"
+        ],
+        "QubitTraitName": [
+            "剧毒"
+        ],
+        "QubitTraitDesc": [
+            "· 剧毒状态下，每秒受到角色攻击力<color=#17f5cf>600%</color>的真实伤害，上限<color=#17f5cf>30</color>层"
+        ]
+    },
+    {
+        "Id": 1701,
+        "EquipName": "德珂朵·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 17,
+        "EffectDesc": "· 战斗开始时，消耗<color=#b73a3a>20%</color>最大生命值，攻击力<color=#4a70b9>+60%</color>\\n· 生命值低于<color=#b73a3a>80%</color>时，每降低<color=#b73a3a>10%</color>，攻击力<color=#4a70b9>+5%</color>，叠加上限<color=#4a70b9>40%</color>",
+        "EffectGroupId": 20251,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDekeduoI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 战斗开始时，消耗生命值获得攻击加成\\n· 当前生命值越低，攻击加成越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21251,
+        "QubitEffectDesc": "· 战斗开始时，消耗<color=#b73a3a>30%</color>最大生命值，攻击力<color=#17f5cf>+70%</color>\\n· 生命值低于<color=#b73a3a>70%</color>时，每降低<color=#b73a3a>10%</color>，攻击力<color=#17f5cf>+10%</color>，叠加上限<color=#17f5cf>70%</color>",
+        "QubitSampleEffectDesc": "· 战斗开始时，消耗生命值获得攻击加成\\n· 当前生命值越低，攻击加成越高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "背水",
+            "攻击"
+        ]
+    },
+    {
+        "Id": 1702,
+        "EquipName": "德珂朵·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 17,
+        "EffectDesc": "· 战斗开始时，消耗<color=#b73a3a>20%</color>最大生命值，伤害减免<color=#4a70b9>+8%</color>\\n· 生命值低于<color=#b73a3a>80%</color>时，每降低<color=#b73a3a>10%</color>，伤害减免<color=#4a70b9>+1.5%</color>，叠加上限<color=#4a70b9>12%</color>",
+        "EffectGroupId": 20252,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDekeduoI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 战斗开始时，消耗生命值获得伤害减免\\n· 当前生命值越低，伤害减免越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21252,
+        "QubitEffectDesc": "· 战斗开始时，消耗<color=#b73a3a>20%</color>最大生命值，伤害减免<color=#17f5cf>+10%</color>\\n· 生命值低于<color=#b73a3a>70%</color>时，每降低<color=#b73a3a>10%</color>，伤害减免<color=#17f5cf>+2%</color>，叠加上限<color=#17f5cf>14%</color>",
+        "QubitSampleEffectDesc": "· 战斗开始时，消耗生命值获得伤害减免\\n· 当前生命值越低，伤害减免越高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "背水",
+            "减伤"
+        ]
+    },
+    {
+        "Id": 1703,
+        "EquipName": "德珂朵·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 17,
+        "EffectDesc": "· 当前生命值低于<color=#b73a3a>50%</color>时，每<color=#4a70b9>10</color>秒获得一个已损失生命值<color=#4a70b9>40%</color>的护盾，持续<color=#4a70b9>8</color>秒",
+        "EffectGroupId": 20253,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EDekeduoI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 当前生命值较低时，定期获得护盾",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21253,
+        "QubitEffectDesc": "· 当前生命值低于<color=#b73a3a>50%</color>时，每<color=#17f5cf>10</color>秒获得一个已损失生命值<color=#17f5cf>55%</color>的护盾，持续<color=#17f5cf>8</color>秒",
+        "QubitSampleEffectDesc": "· 当前生命值较低时，定期获得护盾",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "护盾"
+        ]
+    },
+    {
+        "Id": 1801,
+        "EquipName": "莫扎特·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 18,
+        "EffectDesc": "· 三消单段伤害，超过敌方<color=#4a70b9>1%</color>最大生命值时，额外造成<color=#4a70b9>1</color>次伤害值<color=#4a70b9>120%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#4a70b9>4%</color>最大生命值，冷却<color=#4a70b9>1</color>秒（记录值在触发后清除）",
+        "EffectGroupId": 20261,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EMozateI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 三消单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21261,
+        "QubitEffectDesc": "· 三消单段伤害，超过敌方<color=#17f5cf>1%</color>最大生命值时，额外造成<color=#17f5cf>1</color>次伤害值<color=#17f5cf>150%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#17f5cf>5%</color>最大生命值，冷却<color=#17f5cf>1</color>秒（记录值在触发后清除）",
+        "QubitSampleEffectDesc": "· 三消单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "单段爆发",
+            "治疗"
+        ]
+    },
+    {
+        "Id": 1802,
+        "EquipName": "莫扎特·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 18,
+        "EffectDesc": "· 普攻单段伤害，超过敌方<color=#4a70b9>2%</color>最大生命值时，额外造成<color=#4a70b9>1</color>次伤害值<color=#4a70b9>120%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#4a70b9>2%</color>最大生命值，冷却<color=#4a70b9>1</color>秒（记录值在触发后清除）",
+        "EffectGroupId": 20262,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EMozateI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 普攻单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21262,
+        "QubitEffectDesc": "· 普攻单段伤害，超过敌方<color=#17f5cf>2%</color>最大生命值时，额外造成<color=#17f5cf>1</color>次伤害值<color=#17f5cf>150%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#17f5cf>3%</color>最大生命值，冷却<color=#17f5cf>1</color>秒（记录值在触发后清除）",
+        "QubitSampleEffectDesc": "· 普攻单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "单段爆发",
+            "治疗"
+        ]
+    },
+    {
+        "Id": 1803,
+        "EquipName": "莫扎特·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 18,
+        "EffectDesc": "· 必杀单段伤害，超过敌方<color=#4a70b9>5%</color>最大生命值时，额外造成<color=#4a70b9>1</color>次伤害值<color=#4a70b9>120%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#4a70b9>5%</color>最大生命值，冷却<color=#4a70b9>2</color>秒（记录值在触发后清除）",
+        "EffectGroupId": 20263,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EMozateI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 必杀单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21263,
+        "QubitEffectDesc": "· 必杀单段伤害，超过敌方<color=#17f5cf>5%</color>最大生命值时，额外造成<color=#17f5cf>1</color>次伤害值<color=#17f5cf>150%</color>的真实伤害\\n· 未超过时，记录伤害值并恢复<color=#17f5cf>6%</color>最大生命值，冷却<color=#17f5cf>2</color>秒（记录值在触发后清除）",
+        "QubitSampleEffectDesc": "· 必杀单段伤害达标时，额外造成真实伤害\\n· 未达标时，记录伤害并恢复少量生命值",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "单段爆发",
+            "治疗"
+        ]
+    },
+    {
+        "Id": 1901,
+        "EquipName": "卢克雷齐娅·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 19,
+        "EffectDesc": "· 每位移<color=#4a70b9>3m</color>，恢复<color=#4a70b9>1%</color>最大生命值（溢出生命值转化为护盾，转化上限为最大生命值<color=#4a70b9>30%</color>）",
+        "EffectGroupId": 20331,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELukeleiqiyaI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 每位移一段距离，恢复固定比例生命值（部分溢出值将转化为护盾）",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21331,
+        "QubitEffectDesc": "· 每位移<color=#17f5cf>3m</color>，恢复<color=#17f5cf>2%</color>最大生命值（溢出生命值转化为护盾，转化上限为最大生命值<color=#17f5cf>100%</color>）",
+        "QubitSampleEffectDesc": "· 每位移一段距离，恢复固定比例生命值（部分溢出值将转化为护盾）",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "位移",
+            "护盾"
+        ]
+    },
+    {
+        "Id": 1902,
+        "EquipName": "卢克雷齐娅·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 19,
+        "EffectDesc": "· 每位移<color=#4a70b9>3m</color>，下次攻击附带攻击力*<color=#4a70b9>（累计位移距离*50）%</color>的属性伤害（基于当前角色属性）\\n· 累计位移距离上限<color=#4a70b9>500m</color>",
+        "EffectGroupId": 20332,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELukeleiqiyaI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 每位移一段距离，下次攻击附带额外属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21332,
+        "QubitEffectDesc": "· 每位移<color=#17f5cf>3m</color>，下次攻击附带攻击力*<color=#17f5cf>（累计位移距离*100）%</color>的属性伤害（基于当前角色属性）\\n· 累计位移距离上限<color=#17f5cf>1000m</color>",
+        "QubitSampleEffectDesc": "· 每位移一段距离，下次攻击附带额外属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "位移",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 1903,
+        "EquipName": "卢克雷齐娅·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 19,
+        "EffectDesc": "· 每位移<color=#4a70b9>3m</color>，额外伤害加成<color=#4a70b9>+30%</color>，叠加上限<color=#4a70b9>150%</color>",
+        "EffectGroupId": 20333,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELukeleiqiyaI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 每位移一段距离，获得额外伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21333,
+        "QubitEffectDesc": "· 每位移<color=#17f5cf>3m</color>，额外伤害加成<color=#17f5cf>+40%</color>，叠加上限<color=#17f5cf>200%</color>",
+        "QubitSampleEffectDesc": "· 每位移一段距离，获得额外伤害加成",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "位移",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 2001,
+        "EquipName": "艾夏·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 20,
+        "EffectDesc": "· 每存在<color=#4a70b9>1点</color>未使用的招募能量，额外伤害加成<color=#4a70b9>+20%</color>\\n· 队伍套装上限<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20301,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAixiaI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 未使用的招募能量越多，额外伤害加成越高 \\n· 队伍套装上限提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21301,
+        "QubitEffectDesc": "· 每存在<color=#17f5cf>1点</color>未使用的招募能量，额外伤害加成<color=#17f5cf>+40%</color>\\n· 队伍套装上限<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 未使用的招募能量越多，额外伤害加成越高 ·\\n 队伍套装上限提高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "招募能量",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 2002,
+        "EquipName": "艾夏·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 20,
+        "EffectDesc": "· 每存在<color=#4a70b9>1点</color>未使用的招募能量，生命值<color=#4a70b9>+20%</color>\\n· 队伍套装上限<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20302,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAixiaI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 未使用的招募能量越多，生命值加成越高 \\n· 队伍套装上限提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21302,
+        "QubitEffectDesc": "· 每存在<color=#17f5cf>1点</color>未使用的招募能量，生命值<color=#17f5cf>+25%</color>\\n· 队伍套装上限<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 未使用的招募能量越多，生命值加成越高 ·\\n 队伍套装上限提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "招募能量",
+            "生命值"
+        ]
+    },
+    {
+        "Id": 2003,
+        "EquipName": "艾夏·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 20,
+        "EffectDesc": "· 每存在<color=#4a70b9>1点</color>未使用的招募能量，敌人受到的属性伤害<color=#4a70b9>+10%</color>\\n· 队伍套装上限<color=#4a70b9>+1</color>",
+        "EffectGroupId": 20303,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAixiaI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 未使用的招募能量越多，敌人受到的属性伤害越高 \\n· 队伍套装上限提高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21303,
+        "QubitEffectDesc": "· 每存在<color=#17f5cf>1点</color>未使用的招募能量，敌人受到的属性伤害<color=#17f5cf>+15%</color>\\n· 队伍套装上限<color=#17f5cf>+1</color>",
+        "QubitSampleEffectDesc": "· 未使用的招募能量越多，敌人受到的属性伤害越高 ·\\n 队伍套装上限提高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "招募能量",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 2101,
+        "EquipName": "雪莱·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 21,
+        "EffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】生成攻击光环，范围内角色攻击力<color=#4a70b9>+（机械等级*10）%</color>",
+        "EffectGroupId": 20321,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXueLaiI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】\\n · 【<u>机械</u>】生成攻击光环，光环内角色获得攻击力加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21321,
+        "QubitEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】携带攻击光环，范围内角色攻击力<color=#4a70b9>+（机械等级*15）%</color>",
+        "QubitSampleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】\\n · 【<u>机械</u>】获得攻击光环，光环内角色获得攻击力加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "召唤物",
+            "攻击"
+        ],
+        "TraitName": [
+            "机械"
+        ],
+        "TraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ],
+        "QubitTraitName": [
+            "机械"
+        ],
+        "QubitTraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ]
+    },
+    {
+        "Id": 2102,
+        "EquipName": "雪莱·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 21,
+        "EffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】生成防御光环，分摊范围内角色受到伤害的<color=#4a70b9>（机械等级*1）%</color>",
+        "EffectGroupId": 20322,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXueLaiI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】\\n· 【<u>机械</u>】生成防御光环，分摊光环内角色受到的伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21322,
+        "QubitEffectDesc": "· 作战时，召唤一名助战【<u>机械体</u>】（已被其他部位召唤时则【<u>机械体</u>】等级<color=#17f5cf>+5</color>）\\n· 【<u>机械体</u>】携带防御光环，分摊范围内角色受到伤害的<color=#17f5cf>（【<u>机械体</u>】等级*2）%</color>",
+        "QubitSampleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】携带防御光环，分摊范围内角色受到伤害的<color=#4a70b9>（机械等级*2）%</color>",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "召唤物",
+            "分摊伤害"
+        ],
+        "TraitName": [
+            "机械"
+        ],
+        "TraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ],
+        "QubitTraitName": [
+            "机械"
+        ],
+        "QubitTraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ]
+    },
+    {
+        "Id": 2103,
+        "EquipName": "雪莱·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 21,
+        "EffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】生命值低于<color=#4a70b9>30%</color>时，停止行动并进入修复状态（免疫伤害并持续恢复生命值，期间光环失效）",
+        "EffectGroupId": 20323,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EXueLaiI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】\\n · 【<u>机械</u>】生命值较低时会进行自我修复（修复期间光环失效）",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21323,
+        "QubitEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】（已被其他部位召唤时则机械等级<color=#4a70b9>+5</color>）\\n· 【<u>机械</u>】免疫伤害",
+        "QubitSampleEffectDesc": "· 作战时，召唤一名助战【<u>机械</u>】\\n · 【<u>机械</u>】免疫伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "召唤物",
+            "自我修复"
+        ],
+        "TraitName": [
+            "机械"
+        ],
+        "TraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ],
+        "QubitTraitName": [
+            "机械"
+        ],
+        "QubitTraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ]
+    },
+    {
+        "Id": 2201,
+        "EquipName": "武安君·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 22,
+        "EffectDesc": "· 造成伤害时，获得<color=#4a70b9>10%</color>最大生命值的护盾，叠加上限为<color=#4a70b9>100%</color>最大生命值，护盾持续<color=#4a70b9>5</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20311,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EWuanjunI01001Sp.png",
+        "UseType": 2,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 造成伤害时获得护盾",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21311,
+        "QubitEffectDesc": "· 造成伤害时，获得<color=#17f5cf>15%</color>最大生命值的护盾，叠加上限为<color=#17f5cf>150%</color>最大生命值，护盾持续<color=#17f5cf>5</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时获得护盾",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "护盾"
+        ]
+    },
+    {
+        "Id": 2202,
+        "EquipName": "武安君·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 22,
+        "EffectDesc": "· 造成伤害时，消耗<color=#b73a3a>30%</color>护盾值对周边敌人造成消耗值*<color=#4a70b9>4500%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>2</color>秒",
+        "EffectGroupId": 20312,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EWuanjunI02001Sp.png",
+        "UseType": 2,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 消耗部分护盾造成额外属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21312,
+        "QubitEffectDesc": "· 造成伤害时，消耗<color=#b73a3a>50%</color>护盾值对周边敌人造成消耗值*<color=#17f5cf>9000%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>2</color>秒",
+        "QubitSampleEffectDesc": "· 消耗部分护盾造成额外属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "护盾",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 2203,
+        "EquipName": "武安君·III",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 22,
+        "EffectDesc": "· 受到伤害时，对周围敌人造成护盾值*<color=#4a70b9>5000%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>2</color>秒",
+        "EffectGroupId": 20313,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EWuanjunI03001Sp.png",
+        "UseType": 2,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 受到伤害时，基于护盾值对敌人造成额外伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21313,
+        "QubitEffectDesc": "· 受到伤害时，对周围敌人造成护盾值*<color=#17f5cf>10000%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>2</color>秒",
+        "QubitSampleEffectDesc": "· 受到伤害时，基于护盾值对敌人造成额外伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "护盾",
+            "受击"
+        ]
+    },
+    {
+        "Id": 2301,
+        "EquipName": "克娄帕特拉·I",
+        "Level": 1,
+        "AttType": 6,
+        "SuitId": 23,
+        "EffectDesc": "· 造成伤害时，空属性伤害<color=#4a70b9>+15%</color>，叠加上限<color=#4a70b9>30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20291,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ECleopatraI01001Sp.png",
+        "UseType": 1,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 造成伤害时，获得空属性伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21291,
+        "QubitEffectDesc": "· 造成伤害时，空属性伤害<color=#17f5cf>+15%</color>，叠加上限<color=#17f5cf>50%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，获得空属性伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "空属性",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 2302,
+        "EquipName": "克娄帕特拉·II",
+        "Level": 1,
+        "AttType": 6,
+        "SuitId": 23,
+        "EffectDesc": "· 造成伤害时，附加攻击力<color=#4a70b9>720%</color>的空属性伤害，冷却时间<color=#4a70b9>1</color>秒",
+        "EffectGroupId": 20292,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ECleopatraI02001Sp.png",
+        "UseType": 1,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 造成伤害时，额外附加空属性伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21292,
+        "QubitEffectDesc": "· 造成伤害时，附加攻击力<color=#17f5cf>1080%</color>的空属性伤害，冷却时间<color=#17f5cf>1</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害时，额外附加空属性伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "空属性",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 2303,
+        "EquipName": "克娄帕特拉·III",
+        "Level": 1,
+        "AttType": 6,
+        "SuitId": 23,
+        "EffectDesc": "· 造成伤害时，敌方空属性抗性<color=#4a70b9>-30%</color>，持续<color=#4a70b9>15</color>秒（重复获取时刷新）",
+        "EffectGroupId": 20293,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ECleopatraI03001Sp.png",
+        "UseType": 1,
+        "PosType": 3,
+        "SimpleEffectDesc": "· 造成伤害时，降低敌方空属性抗性",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21293,
+        "QubitEffectDesc": "· 造成伤害时，敌方空属性抗性<color=#17f5cf>-40%</color>，持续<color=#17f5cf>15</color>秒（重复获取时刷新）",
+        "QubitSampleEffectDesc": "· 造成伤害时，降低敌方空属性抗性",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "空属性",
+            "减抗"
+        ]
+    },
+    {
+        "Id": 5001,
+        "EquipName": "艾琳·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 50,
+        "EffectDesc": "· 造成伤害时（包含QTE），敌方的额外伤害减免<color=#4a70b9>-50%</color>，持续<color=#4a70b9>8</color>秒",
+        "EffectGroupId": 20171,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYileinuoyaI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 造成伤害后，一定时间内大幅降低敌方的额外伤害减免",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21171,
+        "QubitEffectDesc": "· 造成伤害时（包含QTE），敌方的额外伤害减免<color=#17f5cf>-70%</color>，持续<color=#17f5cf>8</color>秒",
+        "QubitSampleEffectDesc": "· 造成伤害后，一定时间内大幅降低敌方的额外伤害减免",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "QTE"
+        ]
+    },
+    {
+        "Id": 5002,
+        "EquipName": "艾琳·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 50,
+        "EffectDesc": "· QTE出场时，触发超算和另一角色的QTE，冷却<color=#4a70b9>8</color>秒",
+        "EffectGroupId": 20172,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYileinuoyaI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· QTE出场时，触发超算和另一角色的QTE，冷却<color=#4a70b9>8</color>秒",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21172,
+        "QubitEffectDesc": "· QTE出场时，触发超算和另一角色的QTE，冷却<color=#17f5cf>5</color>秒",
+        "QubitSampleEffectDesc": "· QTE出场时，触发超算和另一角色的QTE，冷却<color=#17f5cf>5</color>秒",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "QTE",
+            "超算"
+        ]
+    },
+    {
+        "Id": 5101,
+        "EquipName": "黎塞留·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 51,
+        "EffectDesc": "· 治疗目标时，目标获得额外伤害加成<color=#4a70b9>+60%</color>，持续<color=#4a70b9>8</color>秒",
+        "EffectGroupId": 20181,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELisailiuI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 治疗目标时，短时间内提高目标的大量额外伤害加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21181,
+        "QubitEffectDesc": "· 治疗目标时，目标获得额外伤害加成<color=#17f5cf>+100%</color>，持续<color=#17f5cf>8</color>秒",
+        "QubitSampleEffectDesc": "· 治疗目标时，短时间内提高目标的大量额外伤害加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "治疗",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 5102,
+        "EquipName": "黎塞留·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 51,
+        "EffectDesc": "· 治疗目标时，目标随机获得<color=#4a70b9>1</color>组<color=#4a70b9>3</color>消球与<color=#4a70b9>500</color>点闪避值，冷却<color=#4a70b9>3</color>秒",
+        "EffectGroupId": 20182,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELisailiuI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 治疗目标时，目标获得<color=#4a70b9>3</color>消球和闪避值，冷却<color=#4a70b9>3</color>秒",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21182,
+        "QubitEffectDesc": "· 治疗目标时，目标随机获得<color=#17f5cf>2</color>组<color=#17f5cf>3</color>消球与<color=#17f5cf>500</color>点闪避值，冷却<color=#17f5cf>3</color>秒",
+        "QubitSampleEffectDesc": "· 治疗目标时，目标获得<color=#17f5cf>3</color>消球和闪避值，冷却<color=#17f5cf>3</color>秒",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "信号球",
+            "闪避值"
+        ]
+    },
+    {
+        "Id": 5201,
+        "EquipName": "艾克·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 52,
+        "EffectDesc": "· 切换出场时，必杀能量<color=#4a70b9>+100%</color>，<color=#4a70b9>10</color>秒后清空自身必杀能量",
+        "EffectGroupId": 20191,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAikeI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 切换出场时获得大量必杀能量，一段时间后移除",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21191,
+        "QubitEffectDesc": "· 切换出场时，必杀能量和必杀伤害<color=#17f5cf>+100%</color>，<color=#17f5cf>10</color>秒后清空自身必杀能量和必杀伤害加成",
+        "QubitSampleEffectDesc": "· 切换出场时获得大量必杀能量和必杀伤害加成，一段时间后移除",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "轮切",
+            "必杀能量"
+        ]
+    },
+    {
+        "Id": 5202,
+        "EquipName": "艾克·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 52,
+        "EffectDesc": "· 切换出场时，额外伤害加成<color=#4a70b9>+100%</color>并获得<color=#4a70b9>5</color>组<color=#4a70b9>3</color>消球，<color=#4a70b9>10</color>秒后清空该效果",
+        "EffectGroupId": 20192,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAikeI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 切换出场时获得大量额外伤害加成和多组信号球，一段时间后移除",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21192,
+        "QubitEffectDesc": "· 切换出场时，额外伤害加成<color=#17f5cf>+200%</color>并获得<color=#17f5cf>5</color>组<color=#17f5cf>3</color>消球，<color=#17f5cf>10</color>秒后清空该效果",
+        "QubitSampleEffectDesc": "· 切换出场时获得大量额外伤害加成和多组信号球，一段时间后移除",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "轮切",
+            "增伤"
+        ]
+    },
+    {
+        "Id": 5301,
+        "EquipName": "爱芙·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 53,
+        "EffectDesc": "· 释放必杀技时，后台角色获得当前角色消耗值<color=#4a70b9>50%</color>的必杀能量",
+        "EffectGroupId": 20201,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAifuI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 释放必杀技时，后台角色获得部分当前角色消耗的必杀能量",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21201,
+        "QubitEffectDesc": "· 释放必杀技时，后台角色获得当前角色消耗值<color=#17f5cf>50%</color>的必杀能量并提高等额的能量上限",
+        "QubitSampleEffectDesc": "· 释放必杀技时，后台角色获得部分当前角色消耗的必杀能量并提高等额的能量上限",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "后台增益",
+            "必杀能量"
+        ]
+    },
+    {
+        "Id": 5302,
+        "EquipName": "爱芙·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 53,
+        "EffectDesc": "· 出场和离场时，触发超算",
+        "EffectGroupId": 20202,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAifuI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 出场和离场时，触发超算",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21202,
+        "QubitEffectDesc": "· 出场和离场时，触发超算和QTE",
+        "QubitSampleEffectDesc": "· 出场和离场时，触发超算和QTE",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "轮切"
+        ]
+    },
+    {
+        "Id": 5401,
+        "EquipName": "伊丽莎白·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 54,
+        "EffectDesc": "· 处于后台时，为场上的角色提供自身<color=#4a70b9>50%</color>攻击力和生命值的加成",
+        "EffectGroupId": 20211,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYilishabaiI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 处于后台时，为场上角色提供攻击力和生命值加成（基于自身属性值）",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21211,
+        "QubitEffectDesc": "· 处于后台时，为场上的角色提供自身<color=#17f5cf>100%</color>攻击力和生命值的加成",
+        "QubitSampleEffectDesc": "· 处于后台时，为场上角色提供攻击力和生命值加成（基于自身属性值）",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "场上增益"
+        ]
+    },
+    {
+        "Id": 5402,
+        "EquipName": "伊丽莎白·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 54,
+        "EffectDesc": "· 处于后台时，分摊场上角色受到伤害的<color=#4a70b9>50%</color>，自身生命值低于<color=#b73a3a>20%</color>后失效",
+        "EffectGroupId": 20212,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYilishabaiI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 处于后台时，为场上角色分摊部分伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21212,
+        "QubitEffectDesc": "· 处于后台时，分摊场上角色受到伤害的<color=#17f5cf>70%</color>，自身生命值低于<color=#b73a3a>10%</color>后失效",
+        "QubitSampleEffectDesc": "· 处于后台时，为场上角色分摊部分伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "分摊伤害"
+        ]
+    },
+    {
+        "Id": 5501,
+        "EquipName": "尤尼梅特·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 55,
+        "EffectDesc": "· 队伍内，每存在<color=#4a70b9>1</color>个职业不同的角色，全队攻击力和生命值<color=#4a70b9>+30%</color>，叠加上限<color=#4a70b9>60%</color>",
+        "EffectGroupId": 20221,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYounimeiteI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 队伍内不同职业角色越多，全队攻击力和生命值加成越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21221,
+        "QubitEffectDesc": "· 队伍内，每存在<color=#17f5cf>1</color>个职业不同的角色，全队攻击力和生命值<color=#17f5cf>+40%</color>，叠加上限<color=#17f5cf>80%</color>",
+        "QubitSampleEffectDesc": "· 队伍内不同职业角色越多，全队攻击力和生命值加成越高",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "职业增益"
+        ]
+    },
+    {
+        "Id": 5502,
+        "EquipName": "尤尼梅特·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 55,
+        "EffectDesc": "· 队伍内，每存在<color=#4a70b9>1</color>个职业不同的角色，全队每秒获得<color=#4a70b9>2</color>点必杀能量，叠加上限<color=#4a70b9>4</color>点",
+        "EffectGroupId": 20222,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EYounimeiteI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 队伍内不同职业角色越多，全队每秒获得必杀能量越高",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21222,
+        "QubitEffectDesc": "· 队伍内，每存在<color=#17f5cf>1</color>个职业不同的角色，全队每秒获得<color=#17f5cf>3</color>点必杀能量，叠加上限<color=#17f5cf>6</color>点",
+        "QubitSampleEffectDesc": "· 队伍内不同职业角色越多，全队每秒获得必杀能量越高",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "职业增益"
+        ]
+    },
+    {
+        "Id": 5601,
+        "EquipName": "爱丽丝·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 56,
+        "EffectDesc": "· 出场（含QTE）时，消耗<color=#b73a3a>45%</color>最大生命值，对场上的所有敌方造成攻击力<color=#4a70b9>（消耗值*4）%</color>属性伤害（基于当前角色属性，生命值不足时，不触发效果）\\n· 处于后台时，每秒恢复<color=#4a70b9>10%</color>最大生命值",
+        "EffectGroupId": 20231,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAliceI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 出场（含QTE）时，消耗生命值对场上所有敌方造成属性伤害\\n· 处于后台时，持续恢复生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21231,
+        "QubitEffectDesc": "· 出场（含QTE）时，消耗<color=#b73a3a>45%</color>最大生命值，对场上的所有敌方造成攻击力<color=#17f5cf>（消耗值*6）%</color>属性伤害（基于当前角色属性，生命值不足时，不触发效果）\\n· 处于后台时，每秒恢复<color=#17f5cf>10%</color>最大生命值",
+        "QubitSampleEffectDesc": "· 出场（含QTE）时，消耗生命值对场上所有敌方造成属性伤害\\n· 处于后台时，持续恢复生命值",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "燃血",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 5602,
+        "EquipName": "爱丽丝·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 56,
+        "EffectDesc": "· 出场（含QTE）时，消耗<color=#b73a3a>45%</color>最大生命值，对场上的所有敌方造成攻击力<color=#4a70b9>（消耗值*4）%</color>属性伤害（基于当前角色属性，生命值不足时，不触发效果）\\n· 处于后台时，每秒恢复<color=#4a70b9>10%</color>最大生命值",
+        "EffectGroupId": 20232,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAliceI01001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 出场（含QTE）时，消耗生命值对场上所有敌方造成属性伤害\\n· 处于后台时，持续恢复生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21232,
+        "QubitEffectDesc": "· 出场（含QTE）时，消耗<color=#b73a3a>45%</color>最大生命值，对场上的所有敌方造成攻击力<color=#17f5cf>（消耗值*6）%</color>属性伤害（基于当前角色属性，生命值不足时，不触发效果）\\n· 处于后台时，每秒恢复<color=#17f5cf>10%</color>最大生命值",
+        "QubitSampleEffectDesc": "· 出场（含QTE）时，消耗生命值对场上所有敌方造成属性伤害\\n· 处于后台时，持续恢复生命值",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "燃血",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 5701,
+        "EquipName": "歌罗达·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 57,
+        "EffectDesc": "· 处于后台时，场上角色每消耗<color=#b73a3a>7</color>个信号球，获得<color=#4a70b9>1</color>次导弹支援，造成当前角色攻击力<color=#4a70b9>777%</color>的属性伤害（基于当前角色属性）",
+        "EffectGroupId": 20241,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EGeluodaI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· 处于后台时，场上角色消耗固定量的信号球时，获得导弹支援",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21241,
+        "QubitEffectDesc": "· 处于后台时，场上角色每消耗<color=#b73a3a>7</color>个信号球，获得<color=#17f5cf>1</color>次导弹支援，造成当前角色攻击力<color=#17f5cf>1111%</color>的属性伤害（基于当前角色属性）",
+        "QubitSampleEffectDesc": "· 处于后台时，场上角色消耗固定量的信号球时，获得导弹支援",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "支援",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 5702,
+        "EquipName": "歌罗达·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 57,
+        "EffectDesc": "· 处于后台时，场上角色每消耗<color=#b73a3a>70</color>点必杀能量，获得<color=#4a70b9>1</color>次导弹支援，造成当前角色攻击力<color=#4a70b9>777%</color>的属性伤害（基于当前角色属性）",
+        "EffectGroupId": 20242,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EGeluodaI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 处于后台时，场上角色消耗固定量的必杀能量时，获得导弹支援",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21242,
+        "QubitEffectDesc": "· 处于后台时，场上角色每消耗<color=#b73a3a>70</color>点必杀能量，获得<color=#17f5cf>1</color>次导弹支援，造成当前角色攻击力<color=#17f5cf>1111%</color>的属性伤害（基于当前角色属性）",
+        "QubitSampleEffectDesc": "· 处于后台时，场上角色消耗固定量的必杀能量时，获得导弹支援",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "支援",
+            "附加伤害"
+        ]
+    },
+    {
+        "Id": 5801,
+        "EquipName": "嘉莉埃妮·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 58,
+        "EffectDesc": "· 切换成员时，自身攻击力<color=#4a70b9>+20%</color>，叠加上限<color=#4a70b9>80%</color>",
+        "EffectGroupId": 20271,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELongmeierI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "·切换成员时，自身获得攻击力加成",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21271,
+        "QubitEffectDesc": "· 切换成员时，自身攻击力<color=#17f5cf>+20%</color>，叠加上限<color=#17f5cf>120%</color>",
+        "QubitSampleEffectDesc": "·切换成员时，自身获得攻击力加成",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "轮切",
+            "攻击"
+        ]
+    },
+    {
+        "Id": 5802,
+        "EquipName": "嘉莉埃妮·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 58,
+        "EffectDesc": "· 三消时，后台成员的切换冷却时间<color=#4a70b9>-5</color>秒",
+        "EffectGroupId": 20272,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/ELongmeierI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· 三消时，减少后台成员的切换冷却",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21272,
+        "QubitEffectDesc": "· 三消或释放必杀时，后台成员的切换冷却时间<color=#17f5cf>-5</color>秒",
+        "QubitSampleEffectDesc": "· 三消或释放必杀时，减少后台成员的切换冷却",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "轮切"
+        ]
+    },
+    {
+        "Id": 5901,
+        "EquipName": "阿尔冯斯·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 59,
+        "EffectDesc": "· 处于后台时，每秒获取场上角色<color=#4a70b9>3%</color>攻击力和最大生命值，至多获取<color=#4a70b9>15</color>次（次数成员共用）",
+        "EffectGroupId": 20281,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAlphonseI01001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "·处于后台时，持续获取场上角色的攻击力和生命值",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21281,
+        "QubitEffectDesc": "· 处于后台时，每秒获取场上角色<color=#17f5cf>5%</color>攻击力和最大生命值，至多获取<color=#17f5cf>15</color>次（次数成员共用）",
+        "QubitSampleEffectDesc": "·处于后台时，持续获取场上角色的攻击力和生命值",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "BaseAttDesc": [
+            "后台增益"
+        ]
+    },
+    {
+        "Id": 5902,
+        "EquipName": "阿尔冯斯·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 59,
+        "EffectDesc": "· QTE出场时，记录场上角色<color=#4a70b9>8</color>秒内造成的伤害，冷却<color=#4a70b9>8</color>秒（重复触发时重置记录值）\\n· 切换入场时，对场上所有敌人造成伤害记录值<color=#4a70b9>45%</color>的真实伤害（造成伤害后记录值清空）",
+        "EffectGroupId": 20282,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EAlphonseI02001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· QTE出场时，记录场上角色造成的伤害\\n·切换出场后，基于记录值对场上所有敌人造成真实伤害",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21282,
+        "QubitEffectDesc": "· QTE出场时，记录场上角色<color=#17f5cf>8</color>秒内造成的伤害，冷却<color=#17f5cf>8</color>秒（重复触发时重置记录值）\\n· 切换入场时，对场上所有敌人造成伤害记录值<color=#17f5cf>65%</color>的真实伤害（造成伤害后记录值清空）",
+        "QubitSampleEffectDesc": "· QTE出场时，记录场上角色造成的伤害\\n·切换出场后，基于记录值对场上所有敌人造成真实伤害",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "BaseAttDesc": [
+            "后台增益",
+            "伤害记录"
+        ]
+    },
+    {
+        "Id": 6001,
+        "EquipName": "科亚·I",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 60,
+        "EffectDesc": "· QTE出场时，生成持续<color=#4a70b9>10</color>秒的【<u>缓速领域</u>】（重复触发时覆盖旧领域）",
+        "EffectGroupId": 20341,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EKeyaI02001Sp.png",
+        "UseType": 3,
+        "PosType": 1,
+        "SimpleEffectDesc": "· QTE时生成【<u>缓速领域</u>】",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21341,
+        "QubitEffectDesc": "· QTE出场时，生成持续<color=#17f5cf>10</color>秒的【<u>静滞领域</u>】（重复触发时覆盖旧领域）",
+        "QubitSampleEffectDesc": "· QTE时生成【<u>静滞领域</u>】",
+        "BaseAttFightEventIds": [
+            2251097
+        ],
+        "TraitName": [
+            "缓速领域"
+        ],
+        "TraitDesc": [
+            "· 领域内所有敌人速度<color=#4a70b9>-60%</color>\\n· 领域内所有单位攻击力<color=#4a70b9>+100%</color>（包括敌方）"
+        ],
+        "QubitTraitName": [
+            "静滞领域"
+        ],
+        "QubitTraitDesc": [
+            "· 领域内所有敌人速度<color=#17f5cf>-90%</color>\\n· 领域内所有单位攻击力<color=#17f5cf>+200%</color>（包括敌方）"
+        ]
+    },
+    {
+        "Id": 6002,
+        "EquipName": "科亚·II",
+        "Level": 1,
+        "AttType": 0,
+        "SuitId": 60,
+        "EffectDesc": "· QTE出场时，场上角色获得【<u>加速</u>】效果",
+        "EffectGroupId": 20342,
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/EKeyaI03001Sp.png",
+        "UseType": 3,
+        "PosType": 2,
+        "SimpleEffectDesc": "· QTE出场时，场上角色获得【<u>加速</u>】效果",
+        "RecordDamage": false,
+        "QubitEffectGroupId": 21342,
+        "QubitEffectDesc": "· QTE出场时，场上角色获得【<u>超加速</u>】效果",
+        "QubitSampleEffectDesc": "· QTE出场时，场上角色获得【<u>超加速</u>】效果",
+        "BaseAttFightEventIds": [
+            2251098
+        ],
+        "TraitName": [
+            "加速"
+        ],
+        "TraitDesc": [
+            "· 对减速状态下的敌方造成伤害时，减少所有成员QTE冷却<color=#4a70b9>1</color>秒"
+        ],
+        "QubitTraitName": [
+            "超加速"
+        ],
+        "QubitTraitDesc": [
+            "· 对减速状态下的敌方造成伤害时，减少所有成员QTE冷却<color=#17f5cf>1</color>秒\\n· 造成伤害时，附加攻击力*<color=#17f5cf>（角色与敌方移动速度差值*10）%</color>的属性伤害（基于当前角色属性）"
+        ]
+    }
+]

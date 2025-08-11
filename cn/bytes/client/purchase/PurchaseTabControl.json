@@ -1,0 +1,109 @@
+[
+    {
+        "Id": 1,
+        "Name": "兑换",
+        "GroupId": 4,
+        "GroupName": "黑卡兑换",
+        "GroupIcon": "UiChange",
+        "GroupOrder": 5,
+        "UiType": 3,
+        "IsOpen": 1
+    },
+    {
+        "Id": 2,
+        "Name": "限购补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 1,
+        "UiType": 5,
+        "IsOpen": 1
+    },
+    {
+        "Id": 3,
+        "Name": "日常补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 2,
+        "UiType": 6,
+        "IsOpen": 1
+    },
+    {
+        "Id": 4,
+        "Name": "其他补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 7,
+        "UiType": 7,
+        "IsOpen": 1
+    },
+    {
+        "Id": 5,
+        "Name": "月卡",
+        "GroupId": 3,
+        "GroupName": "月卡",
+        "GroupIcon": "UICard",
+        "GroupOrder": 4,
+        "UiType": 2,
+        "IsOpen": 1,
+        "ReqUiTypes": [
+            6
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "充值",
+        "GroupId": 1,
+        "GroupName": "充值",
+        "GroupIcon": "UiPay",
+        "GroupOrder": 6,
+        "UiType": 1,
+        "IsOpen": 1
+    },
+    {
+        "Id": 7,
+        "Name": "涂装补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 3,
+        "UiType": 8,
+        "IsOpen": 1
+    },
+    {
+        "Id": 8,
+        "Name": "热门推荐",
+        "GroupId": 5,
+        "GroupName": "热门推荐",
+        "GroupIcon": "UiRecommend",
+        "GroupOrder": 0,
+        "UiType": 0,
+        "IsOpen": 1,
+        "ReqUiTypes": [
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "勋业补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 8,
+        "UiType": 11,
+        "IsOpen": 1
+    },
+    {
+        "Id": 10,
+        "Name": "场景补给包",
+        "GroupId": 2,
+        "GroupName": "补给包",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 9,
+        "UiType": 10,
+        "IsOpen": 1
+    }
+]

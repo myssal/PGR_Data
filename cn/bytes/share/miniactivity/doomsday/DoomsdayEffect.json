@@ -1,0 +1,5853 @@
+[
+    {
+        "Id": 1,
+        "Desc": "建筑：小废墟：正常工作时，每个回合获得300木头300钢",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            300,
+            300
+        ]
+    },
+    {
+        "Id": 2,
+        "Desc": "建筑：小废墟：正常工作时，1回合后，建筑转变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "Desc": "建筑：中废墟：正常工作时，每个回合获得600木头，600钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            600,
+            600
+        ]
+    },
+    {
+        "Id": 4,
+        "Desc": "建筑：中废墟：正常工作时，1回合后，建筑变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "Desc": "建筑：大废墟：正常工作时，每个回合获得1000木头，1000钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            1000,
+            1000
+        ]
+    },
+    {
+        "Id": 6,
+        "Desc": "建筑：大废墟：正常工作时，1回合后，建筑变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "Desc": "建筑：医疗站：每一天，产出5血清",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            5
+        ]
+    },
+    {
+        "Id": 8,
+        "Desc": "建筑：补给站：每一天，产出5食物",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            5
+        ]
+    },
+    {
+        "Id": 9,
+        "Desc": "建筑：前哨站：解锁探索小队",
+        "Trigger": 13,
+        "EffectType": 2003,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "Desc": "建筑：前哨站：解锁探索功能",
+        "Trigger": 13,
+        "EffectType": 2006
+    },
+    {
+        "Id": 10101,
+        "Desc": "第一关初始化：300木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10102,
+        "Desc": "第一关初始化：300钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10103,
+        "Desc": "第一关初始化：10血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 10104,
+        "Desc": "第一关初始化：10食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 10105,
+        "Desc": "第一关初始化：10个人，60属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            10,
+            60,
+            60,
+            100
+        ]
+    },
+    {
+        "Id": 10106,
+        "Desc": "第一关初始化：拥有 2 座小的废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10107,
+        "Desc": "第一关初始化：拥有 1 座【前哨站】",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            7,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10109,
+        "Desc": "第一关固定事件1：获得20药物20食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            20,
+            20
+        ]
+    },
+    {
+        "Id": 10110,
+        "Desc": "第一关固定事件1：召唤5个壮汉",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            5,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 10111,
+        "Desc": "第一关固定事件2：扣减8健康、8饱腹",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -8,
+            -8,
+            0
+        ]
+    },
+    {
+        "Id": 10151,
+        "Desc": "第一关地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            215,
+            2,
+            135
+        ]
+    },
+    {
+        "Id": 10152,
+        "Desc": "第一关地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            260,
+            2,
+            325
+        ]
+    },
+    {
+        "Id": 10153,
+        "Desc": "第一关地点3",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 10154,
+        "Desc": "第一关地点4",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            25,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 10155,
+        "Desc": "第一关地点4",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            4,
+            60,
+            60,
+            100
+        ]
+    },
+    {
+        "Id": 10156,
+        "Desc": "第一关地点5",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            120,
+            2,
+            140
+        ]
+    },
+    {
+        "Id": 10157,
+        "Desc": "第一关地点6",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            210,
+            2,
+            225
+        ]
+    },
+    {
+        "Id": 10158,
+        "Desc": "第一关地点7",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            15,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 10159,
+        "Desc": "第一关地点7",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            60,
+            60,
+            100
+        ]
+    },
+    {
+        "Id": 10201,
+        "Desc": "第二关初始化：300木材，300钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            300,
+            300
+        ]
+    },
+    {
+        "Id": 10202,
+        "Desc": "第二关初始化：30药物，30食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            30,
+            30
+        ]
+    },
+    {
+        "Id": 10203,
+        "Desc": "第二关初始化：25个人，60属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            25,
+            60,
+            60,
+            100
+        ]
+    },
+    {
+        "Id": 10204,
+        "Desc": "第二关初始化：拥有2座小的废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10205,
+        "Desc": "第二关初始化：拥有2座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            2,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10207,
+        "Desc": "第二关固定事件1：收到 25 药物和 25 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            25,
+            25
+        ]
+    },
+    {
+        "Id": 10208,
+        "Desc": "第二关固定事件2：失去5血清，5食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3,
+            4
+        ],
+        "SourceCount": [
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 10209,
+        "Desc": "第二关固定事件3：失去10血清，10食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3,
+            4
+        ],
+        "SourceCount": [
+            10,
+            10
+        ]
+    },
+    {
+        "Id": 10210,
+        "Desc": "第二关固定事件4：失去15血清，15食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3,
+            4
+        ],
+        "SourceCount": [
+            15,
+            15
+        ]
+    },
+    {
+        "Id": 10212,
+        "Desc": "第二关支线【归家之路：同意】选项结果：解锁【乱石河滩】",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            10213
+        ]
+    },
+    {
+        "Id": 10218,
+        "Desc": "第二关支线【归家之路-2：肯定】选项结果：收到 50 木材、50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 10220,
+        "Desc": "第二关支线【归家之路-2：否定】选项结果：收到 50 木材、50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 10222,
+        "Desc": "第二关支线【归家之路-3：齐格纳死亡】：收到 50 木材、50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 10224,
+        "Desc": "第二关支线【归家之路-3：齐格纳存活】：增加 1 位新成员",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            1,
+            80,
+            80,
+            100
+        ]
+    },
+    {
+        "Id": 10251,
+        "Desc": "第二关地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            165,
+            2,
+            180
+        ]
+    },
+    {
+        "Id": 10252,
+        "Desc": "第二关地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            135,
+            2,
+            120
+        ]
+    },
+    {
+        "Id": 10253,
+        "Desc": "第二关地点3",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            240,
+            2,
+            200,
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 10254,
+        "Desc": "第二关地点4",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            95,
+            2,
+            110
+        ]
+    },
+    {
+        "Id": 10255,
+        "Desc": "第二关地点5",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            260,
+            2,
+            260
+        ]
+    },
+    {
+        "Id": 10256,
+        "Desc": "第二关地点5",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            1,
+            50,
+            50,
+            100
+        ]
+    },
+    {
+        "Id": 10257,
+        "Desc": "第二关地点6",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            75,
+            2,
+            85
+        ]
+    },
+    {
+        "Id": 10258,
+        "Desc": "第二关地点7",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            35
+        ]
+    },
+    {
+        "Id": 10259,
+        "Desc": "第二关地点7",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            11,
+            60,
+            60,
+            80
+        ]
+    },
+    {
+        "Id": 10260,
+        "Desc": "第二关地点8",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            55,
+            2,
+            90
+        ]
+    },
+    {
+        "Id": 10261,
+        "Desc": "第二关地点9",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            260,
+            2,
+            245
+        ]
+    },
+    {
+        "Id": 10262,
+        "Desc": "第二关地点10",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            425,
+            2,
+            455
+        ]
+    },
+    {
+        "Id": 10263,
+        "Desc": "第二关地点11",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            25,
+            4,
+            25
+        ]
+    },
+    {
+        "Id": 10264,
+        "Desc": "第二关地点11",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            10,
+            60,
+            60,
+            100
+        ]
+    },
+    {
+        "Id": 10265,
+        "Desc": "第二关支线地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            170,
+            2,
+            150
+        ]
+    },
+    {
+        "Id": 10266,
+        "Desc": "第二关支线地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            60,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 10301,
+        "Desc": "第三关初始化：300木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10302,
+        "Desc": "第三关初始化：300钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10303,
+        "Desc": "第三关初始化：10血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 10304,
+        "Desc": "第三关初始化：10食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 10305,
+        "Desc": "第三关初始化：28个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            28,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 10306,
+        "Desc": "第三关初始化：拥有1座小废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            1,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10307,
+        "Desc": "第三关初始化：拥有1座大废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            3,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10309,
+        "Desc": "第三关固定事件：扣25健康值，25饱腹值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -25,
+            -25,
+            0
+        ]
+    },
+    {
+        "Id": 10310,
+        "Desc": "第三关固定事件：扣30健康值，30饱腹值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -30,
+            -30,
+            0
+        ]
+    },
+    {
+        "Id": 10311,
+        "Desc": "第三关固定事件：扣35健康值，35饱腹值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -35,
+            -35,
+            0
+        ]
+    },
+    {
+        "Id": 10312,
+        "Desc": "第三关支线【父亲：我会尽力】选项结果：解锁【河边营地】",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            10314
+        ]
+    },
+    {
+        "Id": 10322,
+        "Desc": "第三关支线【父亲：两颗子弹】选项结果：解锁【“果林”1】",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            10315
+        ]
+    },
+    {
+        "Id": 10326,
+        "Desc": "第三关支线【父亲：蛛丝】选项结果：解锁【“果林”2】",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            10316
+        ]
+    },
+    {
+        "Id": 10328,
+        "Desc": "第三关支线【父亲：团聚】事件结果：获得 75 木材、 75 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            75,
+            75
+        ]
+    },
+    {
+        "Id": 10351,
+        "Desc": "第三关地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            21,
+            4,
+            25
+        ]
+    },
+    {
+        "Id": 10352,
+        "Desc": "第三关地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            25
+        ]
+    },
+    {
+        "Id": 10353,
+        "Desc": "第三关地点3",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            45,
+            4,
+            35
+        ]
+    },
+    {
+        "Id": 10354,
+        "Desc": "第三关地点4",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            15,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 10355,
+        "Desc": "第三关地点5",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            70,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 10356,
+        "Desc": "第三关地点6",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            250,
+            2,
+            260
+        ]
+    },
+    {
+        "Id": 10357,
+        "Desc": "第三关地点7",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            355,
+            2,
+            360
+        ]
+    },
+    {
+        "Id": 10358,
+        "Desc": "第三关地点8",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 10359,
+        "Desc": "第三关地点8",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            7,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 10360,
+        "Desc": "第三关地点9",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            22,
+            4,
+            26
+        ]
+    },
+    {
+        "Id": 10361,
+        "Desc": "第三关地点9",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            8,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 10362,
+        "Desc": "第三关地点10",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            425,
+            2,
+            400
+        ]
+    },
+    {
+        "Id": 10363,
+        "Desc": "第三关地点11",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            285,
+            2,
+            350
+        ]
+    },
+    {
+        "Id": 10364,
+        "Desc": "第三关地点12",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            25,
+            2,
+            15
+        ]
+    },
+    {
+        "Id": 10365,
+        "Desc": "第三关支线地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            12,
+            4,
+            9
+        ]
+    },
+    {
+        "Id": 10366,
+        "Desc": "第三关支线地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            16,
+            4,
+            18
+        ]
+    },
+    {
+        "Id": 10401,
+        "Desc": "第四关初始化：300木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10402,
+        "Desc": "第四关初始化：300钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            300
+        ]
+    },
+    {
+        "Id": 10403,
+        "Desc": "第四关初始化：30血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            30
+        ]
+    },
+    {
+        "Id": 10404,
+        "Desc": "第四关初始化：30食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            30
+        ]
+    },
+    {
+        "Id": 10405,
+        "Desc": "第四关初始化：30个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            30,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 10406,
+        "Desc": "第四关初始化：拥有2座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 10407,
+        "Desc": "第四关初始化：拥有1座大废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            3,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10410,
+        "Desc": "第四关固定事件：人口+5",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            5,
+            50,
+            50,
+            100
+        ]
+    },
+    {
+        "Id": 10417,
+        "Desc": "第四关支线【母亲：同意】选项结果：获得 8 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            8
+        ]
+    },
+    {
+        "Id": 10422,
+        "Desc": "第四关支线【母亲-2：同意】选项结果：获得 10 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 10427,
+        "Desc": "第四关支线【母亲-3：同意】选项结果：获得 5 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            5
+        ]
+    },
+    {
+        "Id": 10431,
+        "Desc": "第四关支线【母亲-4认命】结果：回收 10 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 10451,
+        "Desc": "第四关地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            60,
+            2,
+            65
+        ]
+    },
+    {
+        "Id": 10452,
+        "Desc": "第四关地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            80,
+            2,
+            95
+        ]
+    },
+    {
+        "Id": 10453,
+        "Desc": "第四关地点3",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            485,
+            2,
+            380
+        ]
+    },
+    {
+        "Id": 10454,
+        "Desc": "第四关地点4",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            25,
+            4,
+            25
+        ]
+    },
+    {
+        "Id": 10455,
+        "Desc": "第四关地点5",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            505,
+            2,
+            555
+        ]
+    },
+    {
+        "Id": 10456,
+        "Desc": "第四关地点6",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            18,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 10457,
+        "Desc": "第四关地点7",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            37,
+            4,
+            28
+        ]
+    },
+    {
+        "Id": 10458,
+        "Desc": "第四关地点7",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            6,
+            50,
+            50,
+            100
+        ]
+    },
+    {
+        "Id": 10459,
+        "Desc": "第四关地点8",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 10460,
+        "Desc": "第四关地点9",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            12
+        ]
+    },
+    {
+        "Id": 10461,
+        "Desc": "第四关地点9",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            50,
+            50,
+            100
+        ]
+    },
+    {
+        "Id": 10462,
+        "Desc": "第四关地点10",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            310,
+            2,
+            360,
+            3,
+            26,
+            4,
+            31
+        ]
+    },
+    {
+        "Id": 10463,
+        "Desc": "第四关地点10",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            6,
+            50,
+            50,
+            100
+        ]
+    },
+    {
+        "Id": 10464,
+        "Desc": "第四关地点11",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            15,
+            4,
+            16
+        ]
+    },
+    {
+        "Id": 10501,
+        "Desc": "第五关初始化：200木材、200钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            200,
+            200
+        ]
+    },
+    {
+        "Id": 10502,
+        "Desc": "第五关初始化：31血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            31
+        ]
+    },
+    {
+        "Id": 10503,
+        "Desc": "第五关初始化：31食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            31
+        ]
+    },
+    {
+        "Id": 10504,
+        "Desc": "第五关初始化：30个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            30,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 10505,
+        "Desc": "第五关初始化：拥有1座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            2,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10506,
+        "Desc": "第五关初始化：拥有1座大废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            3,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10507,
+        "Desc": "第五关初始化：拥有1座前哨站",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            7,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 10508,
+        "Desc": "第五关固定事件1",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            -25,
+            0
+        ]
+    },
+    {
+        "Id": 10509,
+        "Desc": "第五关固定事件2",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            -30,
+            0
+        ]
+    },
+    {
+        "Id": 10510,
+        "Desc": "第五关固定事件3",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            -35,
+            0
+        ]
+    },
+    {
+        "Id": 10511,
+        "Desc": "第五关固定事件4",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -10,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 10512,
+        "Desc": "第五关固定事件5",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -10,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 10513,
+        "Desc": "第五关固定事件6",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -10,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 10514,
+        "Desc": "赈灾1",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            20,
+            20
+        ]
+    },
+    {
+        "Id": 10515,
+        "Desc": "赈灾2",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            30,
+            30
+        ]
+    },
+    {
+        "Id": 10551,
+        "Desc": "第五关地点1",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10552,
+        "Desc": "第五关地点2",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10553,
+        "Desc": "第五关地点3",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10554,
+        "Desc": "第五关地点4",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10555,
+        "Desc": "第五关地点5",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10556,
+        "Desc": "第五关地点6",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10557,
+        "Desc": "第五关地点7",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10558,
+        "Desc": "第五关地点8",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10559,
+        "Desc": "第五关地点9",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10560,
+        "Desc": "第五关地点10",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 10561,
+        "Desc": "第五关地点11",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            500,
+            2,
+            500
+        ]
+    },
+    {
+        "Id": 11001,
+        "Desc": "关卡事件结果：精神值降低 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 11002,
+        "Desc": "关卡事件结果：精神值提高 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 11004,
+        "Desc": "关卡事件结果：精神值降低 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 11005,
+        "Desc": "关卡事件结果：精神值提高 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 11007,
+        "Desc": "关卡事件结果：精神值降低 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 11008,
+        "Desc": "关卡事件结果：精神值提高 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 11011,
+        "Desc": "关卡事件结果：失去 20 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 11015,
+        "Desc": "关卡事件结果：失去 100 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            100
+        ]
+    },
+    {
+        "Id": 11017,
+        "Desc": "关卡事件结果：获得 50 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 11019,
+        "Desc": "关卡事件结果：获得 50 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 11021,
+        "Desc": "关卡事件结果：失去 100 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            100
+        ]
+    },
+    {
+        "Id": 11023,
+        "Desc": "关卡事件结果：获得 50 食物、 50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            2,
+            4
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 11025,
+        "Desc": "关卡事件结果：健康值、精神值降低 30",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -30,
+            0,
+            -30
+        ]
+    },
+    {
+        "Id": 11027,
+        "Desc": "关卡事件结果：获得 50 食物、 50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            2,
+            4
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 11029,
+        "Desc": "关卡事件结果：健康值、精神值降低 30",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -30,
+            0,
+            -30
+        ]
+    },
+    {
+        "Id": 11031,
+        "Desc": "关卡事件结果：获得 50 食物、 50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            2,
+            4
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 11033,
+        "Desc": "关卡事件结果：健康值、精神值降低 30",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -30,
+            0,
+            -30
+        ]
+    },
+    {
+        "Id": 11035,
+        "Desc": "关卡事件结果：失去 100 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            100
+        ]
+    },
+    {
+        "Id": 11037,
+        "Desc": "关卡事件结果：获得 50 木材、 50 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 201,
+        "Desc": "大型医疗站：每一天，产出10血清",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 202,
+        "Desc": "大型补给站：每一天，产出10食物",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 203,
+        "Desc": "小废墟：正常工作时，每个回合获得100木材100钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 204,
+        "Desc": "小废墟：正常工作时，1回合后，建筑转变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 205,
+        "Desc": "中废墟：正常工作时，每个回合获得100木材100钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 206,
+        "Desc": "中废墟：正常工作时，2回合后，建筑变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            2
+        ]
+    },
+    {
+        "Id": 207,
+        "Desc": "大废墟：正常工作时，每个回合获得170木材170钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            170,
+            170
+        ]
+    },
+    {
+        "Id": 208,
+        "Desc": "大废墟：正常工作时，3回合后，建筑变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            3
+        ]
+    },
+    {
+        "Id": 209,
+        "Desc": "医疗站：每一天，产出15血清",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 210,
+        "Desc": "补给站：每一天，产出15食物",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 211,
+        "Desc": "前哨站：解锁探索小队",
+        "Trigger": 13,
+        "EffectType": 2003,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 212,
+        "Desc": "前哨站：解锁探索功能",
+        "Trigger": 13,
+        "EffectType": 2006
+    },
+    {
+        "Id": 20101,
+        "Desc": "第一关初始化：180木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            180
+        ]
+    },
+    {
+        "Id": 20102,
+        "Desc": "第一关初始化：180钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            180
+        ]
+    },
+    {
+        "Id": 20103,
+        "Desc": "第一关初始化：30血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            30
+        ]
+    },
+    {
+        "Id": 20104,
+        "Desc": "第一关初始化：30食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            30
+        ]
+    },
+    {
+        "Id": 20105,
+        "Desc": "第一关初始化：15个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            15,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 20106,
+        "Desc": "第一关初始化：拥有 1 座小废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            203,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20107,
+        "Desc": "第一关初始化：拥有 1 座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            204,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20108,
+        "Desc": "第一关初始化：拥有 1 座【前哨站】",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            209,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 201030,
+        "Desc": "第一关事件：获得 7 个居民",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            7,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 201050,
+        "Desc": "第一关事件：降低 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 201070,
+        "Desc": "第一关事件：降低 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 201090,
+        "Desc": "第一关事件：获得 300 木材、300 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            300,
+            300
+        ]
+    },
+    {
+        "Id": 1103,
+        "Desc": "晴天事件：获得 15 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1105,
+        "Desc": "晴天事件：获得 20 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1107,
+        "Desc": "晴天事件：获得 15 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1109,
+        "Desc": "晴天事件：获得 20 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1111,
+        "Desc": "晴天事件：恢复 5 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            5
+        ]
+    },
+    {
+        "Id": 1113,
+        "Desc": "晴天事件：恢复 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            10
+        ]
+    },
+    {
+        "Id": 1203,
+        "Desc": "雨天事件：失去 20 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1205,
+        "Desc": "雨天事件：失去 30 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            30
+        ]
+    },
+    {
+        "Id": 1207,
+        "Desc": "雨天事件：失去 20 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1209,
+        "Desc": "雨天事件：失去 30 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            30
+        ]
+    },
+    {
+        "Id": 1211,
+        "Desc": "雨天事件：降低 5 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -5
+        ]
+    },
+    {
+        "Id": 1213,
+        "Desc": "雨天事件：降低 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 1215,
+        "Desc": "雨天事件：失去 15 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1216,
+        "Desc": "雨天事件：恢复 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            15
+        ]
+    },
+    {
+        "Id": 1218,
+        "Desc": "雨天事件：失去 20 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1219,
+        "Desc": "雨天事件：恢复 20 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 1303,
+        "Desc": "雪天事件： 医疗站 暂停工作，持续 1 天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            207,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 1305,
+        "Desc": "雪天事件： 补给站暂停工作，持续 1 天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            208,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 1307,
+        "Desc": "雪天事件：失去 40 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            40
+        ]
+    },
+    {
+        "Id": 1309,
+        "Desc": "雪天事件：失去 50 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            50
+        ]
+    },
+    {
+        "Id": 1311,
+        "Desc": "雪天事件：失去 40 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            40
+        ]
+    },
+    {
+        "Id": 1313,
+        "Desc": "雪天事件：失去 50 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            50
+        ]
+    },
+    {
+        "Id": 1315,
+        "Desc": "雪天事件：降低 5 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -5
+        ]
+    },
+    {
+        "Id": 1317,
+        "Desc": "雪天事件：降低 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 1319,
+        "Desc": "雪天事件：降低 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -15
+        ]
+    },
+    {
+        "Id": 1321,
+        "Desc": "雪天事件：失去 15 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1322,
+        "Desc": "雪天事件：恢复 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            15
+        ]
+    },
+    {
+        "Id": 1324,
+        "Desc": "雪天事件：失去 20 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1325,
+        "Desc": "雪天事件：恢复 20 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 1403,
+        "Desc": "红潮事件： 医疗站 暂停工作，持续 2 天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            207,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 1405,
+        "Desc": "红潮事件： 补给站暂停工作，持续 2 天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            208,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 1407,
+        "Desc": "红潮事件：失去 40 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            40
+        ]
+    },
+    {
+        "Id": 1409,
+        "Desc": "红潮事件：失去 50 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            50
+        ]
+    },
+    {
+        "Id": 1411,
+        "Desc": "红潮事件：失去 40 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            40
+        ]
+    },
+    {
+        "Id": 1413,
+        "Desc": "红潮事件：失去 50 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            50
+        ]
+    },
+    {
+        "Id": 1415,
+        "Desc": "红潮事件：降低 5 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -5
+        ]
+    },
+    {
+        "Id": 1417,
+        "Desc": "红潮事件：降低 10 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 1419,
+        "Desc": "红潮事件：降低 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -15
+        ]
+    },
+    {
+        "Id": 1421,
+        "Desc": "红潮事件：失去 15 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1422,
+        "Desc": "红潮事件：恢复 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            15
+        ]
+    },
+    {
+        "Id": 1424,
+        "Desc": "红潮事件：失去 20 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1425,
+        "Desc": "红潮事件：恢复 20 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 1427,
+        "Desc": "红潮事件：失去 15 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            15
+        ]
+    },
+    {
+        "Id": 1428,
+        "Desc": "红潮事件：恢复 15 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            15
+        ]
+    },
+    {
+        "Id": 1430,
+        "Desc": "红潮事件：失去 20 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            4
+        ],
+        "SourceCount": [
+            20
+        ]
+    },
+    {
+        "Id": 1431,
+        "Desc": "红潮事件：恢复 20 精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 2010101,
+        "Desc": "第一关地点 1 ： 200 木材、200 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2010201,
+        "Desc": "第一关地点 2 主事件选项 1 ：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010204
+        ]
+    },
+    {
+        "Id": 2010202,
+        "Desc": "第一关地点 2 主事件选项 2 ：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010208
+        ]
+    },
+    {
+        "Id": 2010203,
+        "Desc": "第一关地点 2 主事件选项 3 ：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010212
+        ]
+    },
+    {
+        "Id": 2010205,
+        "Desc": "第一关地点 2 子事件-1 选项：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010206
+        ]
+    },
+    {
+        "Id": 2010209,
+        "Desc": "第一关地点 2 子事件-2 选项：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010210
+        ]
+    },
+    {
+        "Id": 2010213,
+        "Desc": "第一关地点 2 子事件-3 选项：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010214
+        ]
+    },
+    {
+        "Id": 2010215,
+        "Desc": "第一关地点 2 总效果：200 木材、200 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2010216,
+        "Desc": "第一关地点 2 总效果：1 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            1,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2010217,
+        "Desc": "第一关地点 2 总效果：解锁地点 10",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20109
+        ]
+    },
+    {
+        "Id": 2010301,
+        "Desc": "获得 15 药物、10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            15,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2010401,
+        "Desc": "第一关地点3：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010403
+        ]
+    },
+    {
+        "Id": 2010402,
+        "Desc": "获得 120 木材、100钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            120,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 2010405,
+        "Desc": "4 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            4,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2010501,
+        "Desc": "获得 10 药物 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2010502,
+        "Desc": "6 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            6,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2010601,
+        "Desc": "获得 70 木材、 125 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            70,
+            2,
+            125
+        ]
+    },
+    {
+        "Id": 2010701,
+        "Desc": "获得 30 木材、 45 钢材、 20 药物、 20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            30,
+            2,
+            45,
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2010801,
+        "Desc": "获得 300 木材、300 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300
+        ]
+    },
+    {
+        "Id": 2010901,
+        "Desc": "第一关地点 10 选项结果",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010903
+        ]
+    },
+    {
+        "Id": 2010902,
+        "Desc": "第一关地点 10 选项结果",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010905
+        ]
+    },
+    {
+        "Id": 2010904,
+        "Desc": "第一关地点 10 选项结果",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2010905
+        ]
+    },
+    {
+        "Id": 2010906,
+        "Desc": "20药物、20食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2010907,
+        "Desc": "2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2011001,
+        "Desc": "400 木材、 400 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            400,
+            2,
+            400
+        ]
+    },
+    {
+        "Id": 2011002,
+        "Desc": "2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2011101,
+        "Desc": "获得幸存者 7 名",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            7,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 20201,
+        "Desc": "第二关初始化：200 木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            200
+        ]
+    },
+    {
+        "Id": 20202,
+        "Desc": "第二关初始化：200 钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            200
+        ]
+    },
+    {
+        "Id": 20203,
+        "Desc": "第二关初始化：50 血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 20204,
+        "Desc": "第二关初始化：50 食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 20205,
+        "Desc": "第二关初始化：15 个人，50健康、50饱腹、100精神",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            15,
+            50,
+            50,
+            80
+        ]
+    },
+    {
+        "Id": 20206,
+        "Desc": "第二关初始化：拥有 1 座小废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            203,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20207,
+        "Desc": "第二关初始化：拥有 1 座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            204,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20208,
+        "Desc": "第二关初始化：拥有 1 座【前哨站】",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            209,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20209,
+        "Desc": "第二关【通讯设备】特殊效果：触发【通讯设备】事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202004
+        ]
+    },
+    {
+        "Id": 20210,
+        "Desc": "第二关【通讯设备】特殊效果：触发【远方来信】事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202100
+        ]
+    },
+    {
+        "Id": 202005,
+        "Desc": "第二关【通讯设备】事件效果：解锁地点 4",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20203
+        ]
+    },
+    {
+        "Id": 202006,
+        "Desc": "第二关【通讯设备】事件效果：解锁地点 12",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20212
+        ]
+    },
+    {
+        "Id": 202007,
+        "Desc": "第二关【通讯设备】事件效果：触发事件【南方的海】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202016
+        ]
+    },
+    {
+        "Id": 202009,
+        "Desc": "第二关【天气改变】事件效果：天气模式变更",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            203,
+            204
+        ]
+    },
+    {
+        "Id": 202013,
+        "Desc": "第二关【天气改变】事件效果：天气模式变更",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            205,
+            206
+        ]
+    },
+    {
+        "Id": 202101,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202103
+        ]
+    },
+    {
+        "Id": 202102,
+        "Desc": "第二关【远方来信-1】选项 2 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202116
+        ]
+    },
+    {
+        "Id": 202104,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202106
+        ]
+    },
+    {
+        "Id": 202105,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202108
+        ]
+    },
+    {
+        "Id": 202107,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202108
+        ]
+    },
+    {
+        "Id": 202109,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202110
+        ]
+    },
+    {
+        "Id": 202111,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202112
+        ]
+    },
+    {
+        "Id": 202113,
+        "Desc": "第二关【远方来信-1】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202114
+        ]
+    },
+    {
+        "Id": 202211,
+        "Desc": "第二关【远方来信-2-A】选项效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202213
+        ]
+    },
+    {
+        "Id": 202212,
+        "Desc": "第二关【远方来信-2-A】选项效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202215
+        ]
+    },
+    {
+        "Id": 202214,
+        "Desc": "第二关【远方来信-2-A】选项效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202215
+        ]
+    },
+    {
+        "Id": 202216,
+        "Desc": "第二关【远方来信-2-A】选项效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202217
+        ]
+    },
+    {
+        "Id": 202221,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202223
+        ]
+    },
+    {
+        "Id": 202222,
+        "Desc": "第二关【远方来信-2-B】选项 2 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202234
+        ]
+    },
+    {
+        "Id": 202224,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202226
+        ]
+    },
+    {
+        "Id": 202225,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202228
+        ]
+    },
+    {
+        "Id": 202227,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202228
+        ]
+    },
+    {
+        "Id": 202229,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202230
+        ]
+    },
+    {
+        "Id": 202231,
+        "Desc": "第二关【远方来信-2-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202232
+        ]
+    },
+    {
+        "Id": 202311,
+        "Desc": "第二关【远方来信-3-A】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202313
+        ]
+    },
+    {
+        "Id": 202312,
+        "Desc": "第二关【远方来信-3-A】选项 2 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202315
+        ]
+    },
+    {
+        "Id": 202321,
+        "Desc": "第二关【远方来信-3-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202323
+        ]
+    },
+    {
+        "Id": 202322,
+        "Desc": "第二关【远方来信-3-B】选项 2 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202331
+        ]
+    },
+    {
+        "Id": 202324,
+        "Desc": "第二关【远方来信-3-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202325
+        ]
+    },
+    {
+        "Id": 202326,
+        "Desc": "第二关【远方来信-3-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202327
+        ]
+    },
+    {
+        "Id": 202328,
+        "Desc": "第二关【远方来信-3-B】选项 1 效果：触发下一页",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202329
+        ]
+    },
+    {
+        "Id": 2020101,
+        "Desc": "第二关地点 1 【废弃驿站】事件结果：100 木材、100钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150
+        ]
+    },
+    {
+        "Id": 2020201,
+        "Desc": "第二关地点 2 【山脚村落】事件结果：100 木材、 100 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            120,
+            2,
+            120
+        ]
+    },
+    {
+        "Id": 2020202,
+        "Desc": "第二关地点 2 【山脚村落】事件结果：触发【白桦小院】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202014
+        ]
+    },
+    {
+        "Id": 2020301,
+        "Desc": "第二关地点 3 【登山索道】事件结果：150 木材、 150 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150
+        ]
+    },
+    {
+        "Id": 2020302,
+        "Desc": "第二关地点 3 【登山索道】事件结果： 1 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            1,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2020401,
+        "Desc": "第二关地点 4 【较为平坦的山路】事件结果：150 木材、150 钢材、 60 药物、 60 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150,
+            3,
+            60,
+            4,
+            60
+        ]
+    },
+    {
+        "Id": 2020501,
+        "Desc": "第二关地点 5 【山顶鸟瞰点】事件结果：100 木材、 100 钢材、 70 药物、 70 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            70,
+            4,
+            70
+        ]
+    },
+    {
+        "Id": 2020502,
+        "Desc": "第二关地点 5 【山顶鸟瞰点】事件结果： 2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2020901,
+        "Desc": "第二关地点 9 【资源转运点】事件结果：30 药物、30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2021001,
+        "Desc": "第二关地点 10 【东部资源站】事件结果：60 药物、60 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300,
+            3,
+            60,
+            4,
+            60
+        ]
+    },
+    {
+        "Id": 2021002,
+        "Desc": "第二关地点 10 【东部资源站】事件结果： 3 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            3,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2021101,
+        "Desc": "第二关地点 11 【落叶小径】事件结果：10 木材、10钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            10,
+            2,
+            10
+        ]
+    },
+    {
+        "Id": 2021102,
+        "Desc": "第二关地点 11 【落叶小径】事件结果：触发事件【乔伊】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202010
+        ]
+    },
+    {
+        "Id": 2021211,
+        "Desc": "第二关地点 12 【森林边缘-A】事件结果：150 木材、 150 钢材、 15 药物、 15 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150,
+            3,
+            15,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 2021212,
+        "Desc": "第二关地点 12 【森林边缘-A】事件结果：触发【远方来信-2-A】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202210
+        ]
+    },
+    {
+        "Id": 2021221,
+        "Desc": "第二关地点 12 【森林边缘-B】事件结果：150 木材、 150 钢材、 15 药物、 15 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150,
+            3,
+            15,
+            4,
+            15
+        ]
+    },
+    {
+        "Id": 2021222,
+        "Desc": "第二关地点 12 【森林边缘-B】事件结果：触发【远方来信-2-B】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202220
+        ]
+    },
+    {
+        "Id": 2021311,
+        "Desc": "第二关地点 13 【烧焦森林-A】事件结果：300 木材、 300 钢材、 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300,
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2021312,
+        "Desc": "第二关地点 13 【烧焦森林-A】事件结果：触发【远方来信-3-A】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202310
+        ]
+    },
+    {
+        "Id": 2021321,
+        "Desc": "第二关地点 13 【烧焦森林-B】事件结果：300 木材、 300 钢材、 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300,
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2021322,
+        "Desc": "第二关地点 13 【烧焦森林-B】事件结果：触发【远方来信-3-B】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202320
+        ]
+    },
+    {
+        "Id": 2021411,
+        "Desc": "第二关地点 14 【漆黑小路-A】事件结果：触发【远方来信-4-A】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202410
+        ]
+    },
+    {
+        "Id": 2021421,
+        "Desc": "第二关地点 14 【漆黑小路-B】事件结果：触发【远方来信-4-B】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202420
+        ]
+    },
+    {
+        "Id": 2021431,
+        "Desc": "第二关地点 14 【漆黑小路-C】事件结果：触发【远方来信-4-C】",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            202430
+        ]
+    },
+    {
+        "Id": 2021511,
+        "Desc": "第二关地点 15【捕猎陷阱-A】事件结果：获得 50 药物、40 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2021512,
+        "Desc": "第二关地点 15【捕猎陷阱-A】事件结果：5 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2021513,
+        "Desc": "第二关地点 15【捕猎陷阱-A】事件效果：子事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2021512
+        ]
+    },
+    {
+        "Id": 2021521,
+        "Desc": "第二关地点 15【捕猎陷阱-B】事件结果：获得 20 药物、20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2021522,
+        "Desc": "第二关地点 15【捕猎陷阱-B】事件结果：2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            50,
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 2021523,
+        "Desc": "第二关地点 15【捕猎陷阱-B】事件效果：子事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            2021522
+        ]
+    },
+    {
+        "Id": 2021531,
+        "Desc": "第二关地点 15【捕猎陷阱-C】事件结果：获得 20 药物、20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2021601,
+        "Desc": "第二关地点 16 【猎人小屋】事件结果：300 木材、 300 钢材、 20 药物、 20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300,
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2021602,
+        "Desc": "第二关地点 16 【猎人小屋】事件结果： 2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2021701,
+        "Desc": "第二关地点 17 【乱石河滩】事件结果：240 木材、 240 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            240,
+            2,
+            240
+        ]
+    },
+    {
+        "Id": 2021702,
+        "Desc": "第二关地点 17 【乱石河滩】事件结果： 2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2021801,
+        "Desc": "第二关地点 18 【伐木小屋】事件结果：350 木材、 350 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            350,
+            2,
+            350
+        ]
+    },
+    {
+        "Id": 2021802,
+        "Desc": "第二关地点 18 【伐木小屋】事件结果： 3 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            3,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2021901,
+        "Desc": "第二关地点 19 【老伐木场】事件结果：480 木材、 480 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            480,
+            2,
+            480
+        ]
+    },
+    {
+        "Id": 2021902,
+        "Desc": "第二关地点 19 【老伐木场】事件结果：2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 20301,
+        "Desc": "第三关初始化：40血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            40
+        ]
+    },
+    {
+        "Id": 20302,
+        "Desc": "第三关初始化：40食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            40
+        ]
+    },
+    {
+        "Id": 20303,
+        "Desc": "第三关初始化：20个人，80属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            20,
+            80,
+            80,
+            30
+        ]
+    },
+    {
+        "Id": 20304,
+        "Desc": "第三关初始化：拥有 2 座住宅",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            206,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20305,
+        "Desc": "第三关初始化：拥有 2 座大型医疗站",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            201,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20306,
+        "Desc": "第三关初始化：拥有 2 座大型补给站",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            202,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20307,
+        "Desc": "第三关：解锁破旧农场",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20307
+        ]
+    },
+    {
+        "Id": 203011,
+        "Desc": "80 药物、 80 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            80,
+            4,
+            80
+        ]
+    },
+    {
+        "Id": 203012,
+        "Desc": "3 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            3,
+            60,
+            60,
+            60
+        ]
+    },
+    {
+        "Id": 203031,
+        "Desc": "100 药物、 100 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            100,
+            4,
+            100
+        ]
+    },
+    {
+        "Id": 203041,
+        "Desc": "50 药物、 50 食物、300木材、300钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            300,
+            2,
+            300,
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 203051,
+        "Desc": "50食物、50药物、200钢材、200木板",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200,
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 203080,
+        "Desc": "天气结局阶段更改",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            30002
+        ]
+    },
+    {
+        "Id": 203081,
+        "Desc": "180钢材、180木板",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            180,
+            2,
+            180
+        ]
+    },
+    {
+        "Id": 203082,
+        "Desc": "增加20精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 203085,
+        "Desc": "5 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            60,
+            60,
+            60
+        ]
+    },
+    {
+        "Id": 203091,
+        "Desc": "天气二阶段更改",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            30003
+        ]
+    },
+    {
+        "Id": 203092,
+        "Desc": "5 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            60,
+            60,
+            90
+        ]
+    },
+    {
+        "Id": 203093,
+        "Desc": "第四关废弃学校选项 1 ：触发后续事件",
+        "Trigger": 0,
+        "EffectType": 1012,
+        "Args": [
+            20350,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20310,
+        "Desc": "前哨站：解锁后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            20313
+        ]
+    },
+    {
+        "Id": 20311,
+        "Desc": "药品店停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            201,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20312,
+        "Desc": "补给站停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            202,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20313,
+        "Desc": "随机一个药品店停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            201,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20314,
+        "Desc": "随机一个补给站停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            202,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20315,
+        "Desc": "前哨站事件：5 药物、 5 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 20322,
+        "Desc": "药品店停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            201,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20324,
+        "Desc": "补给站停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            202,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20326,
+        "Desc": "药品店停止工作2天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            201,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 20328,
+        "Desc": "补给站停止工作2天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            202,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 20330,
+        "Desc": "降低10精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 20332,
+        "Desc": "降低15精神值",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -15
+        ]
+    },
+    {
+        "Id": 20334,
+        "Desc": "随机一个药品店停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            201,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20336,
+        "Desc": "随机一个补给站停止工作1天",
+        "Trigger": 0,
+        "EffectType": 3003,
+        "Args": [
+            202,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20338,
+        "Desc": "获得10 幸存者",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            10,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 20351,
+        "Desc": "7 幸存者",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            7,
+            50,
+            50,
+            40
+        ]
+    },
+    {
+        "Id": 20401,
+        "Desc": "第四关初始化：35 血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            25
+        ]
+    },
+    {
+        "Id": 20402,
+        "Desc": "第四关初始化：35 食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            25
+        ]
+    },
+    {
+        "Id": 20403,
+        "Desc": "第四关初始化：2个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            2,
+            90,
+            90,
+            40
+        ]
+    },
+    {
+        "Id": 20404,
+        "Desc": "第四关初始化：拥有 1 座避难所",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            20405,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20405,
+        "Desc": "第四关初始化：拥有 1 座不太小废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            20403,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20406,
+        "Desc": "第四关初始化：80木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            80
+        ]
+    },
+    {
+        "Id": 20407,
+        "Desc": "第四关初始化：80钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            80
+        ]
+    },
+    {
+        "Id": 20408,
+        "Desc": "第四关初始化：拥有 1 座不算大废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            20404,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20410,
+        "Desc": "不太小废墟：正常工作时，每个回合获得200木材200钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            200,
+            200
+        ]
+    },
+    {
+        "Id": 20411,
+        "Desc": "不太小废墟：正常工作时，1回合后，建筑转变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 20412,
+        "Desc": "不算大废墟：正常工作时，每个回合获得350木材350钢材",
+        "Trigger": 2,
+        "EffectType": 2001,
+        "TargetType": [
+            1,
+            2
+        ],
+        "TargetCount": [
+            350,
+            350
+        ]
+    },
+    {
+        "Id": 20413,
+        "Desc": "不算大废墟：正常工作时，1回合后，建筑转变为空地",
+        "Trigger": 2,
+        "EffectType": 2004,
+        "Args": [
+            1
+        ]
+    },
+    {
+        "Id": 20414,
+        "Desc": "3 幸存者",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            3,
+            60,
+            60,
+            60
+        ]
+    },
+    {
+        "Id": 20415,
+        "Desc": "10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            10,
+            10
+        ]
+    },
+    {
+        "Id": 20416,
+        "Desc": "5 幸存者",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            5,
+            60,
+            60,
+            60
+        ]
+    },
+    {
+        "Id": 20417,
+        "Desc": "天气二阶段更改",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            40002
+        ]
+    },
+    {
+        "Id": 20418,
+        "Desc": "天气结局阶段更改",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            40003
+        ]
+    },
+    {
+        "Id": 20419,
+        "Desc": "前哨站：解锁后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            20419
+        ]
+    },
+    {
+        "Id": 20420,
+        "Desc": "通讯设备：解锁后续事件",
+        "Trigger": 0,
+        "EffectType": 1009,
+        "Args": [
+            20421
+        ]
+    },
+    {
+        "Id": 20432,
+        "Desc": "晴天事件：10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            10,
+            10
+        ]
+    },
+    {
+        "Id": 20434,
+        "Desc": "雾霾事件：扣减8健康、8饱腹",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -8,
+            -8,
+            0
+        ]
+    },
+    {
+        "Id": 204031,
+        "Desc": "50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 204081,
+        "Desc": "1000 木材、1000 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            1000,
+            2,
+            1000
+        ]
+    },
+    {
+        "Id": 20501,
+        "Desc": "第五关初始化1：住宅*1",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            206,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20502,
+        "Desc": "第五关初始化2：50药物、50食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 20503,
+        "Desc": "第五关初始化3：12个人，100属性值",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            12,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 20504,
+        "Desc": "第五关初始化4：小废墟*2",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            203,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20505,
+        "Desc": "第五关初始化5：中废墟*1",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            204,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2050114,
+        "Desc": "第五关主城：获得5食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            5
+        ]
+    },
+    {
+        "Id": 2050118,
+        "Desc": "第五关主城：10药物、10食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            10,
+            10
+        ]
+    },
+    {
+        "Id": 2050203,
+        "Desc": "第五关探索：获得3位岛民，80属性值",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            3,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2050204,
+        "Desc": "第五关探索：获得50 药物、 50 食物、180木材、180钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            180,
+            2,
+            180,
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2050207,
+        "Desc": "第五关探索：获得60 药物、 60 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            60,
+            4,
+            60
+        ]
+    },
+    {
+        "Id": 2050305,
+        "Desc": "第五关探索：获得100木材，100钢材，10药物，10食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2050307,
+        "Desc": "第五关探索：获得100木材，100钢材，20 药物、 20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2050309,
+        "Desc": "第五关探索：获得100木材，100钢材，30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2050405,
+        "Desc": "第五关探索：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2050411,
+        "Desc": "第五关主城：获得30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            30,
+            30
+        ]
+    },
+    {
+        "Id": 2050413,
+        "Desc": "第五关主城：失去5个药物、5个食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3,
+            4
+        ],
+        "SourceCount": [
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 2050415,
+        "Desc": "第五关主城：健康值下降 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -10,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2050501,
+        "Desc": "第五关探索：获得25 药物、 25 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            25,
+            4,
+            25
+        ]
+    },
+    {
+        "Id": 2050601,
+        "Desc": "第五关探索：获得85 药物、 85 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            85,
+            4,
+            85
+        ]
+    },
+    {
+        "Id": 2050602,
+        "Desc": "第五关探索：获得5位岛民，80属性值",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2050705,
+        "Desc": "第五关探索：获得20 药物、 20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2050711,
+        "Desc": "第五关主城：获得10 药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            10
+        ]
+    },
+    {
+        "Id": 2050903,
+        "Desc": "第五关探索：获得50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2051005,
+        "Desc": "第五关探索：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2051105,
+        "Desc": "第五关探索：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2051111,
+        "Desc": "第五关探索：获得5 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            5
+        ]
+    },
+    {
+        "Id": 2051113,
+        "Desc": "第五关主城：精神值下降 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -10
+        ]
+    },
+    {
+        "Id": 2051115,
+        "Desc": "第五关主城：健康值下降 10",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -10,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2051204,
+        "Desc": "第五关探索：获得20 药物、 20 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2051206,
+        "Desc": "第五关探索：获得5 药物、 5 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            5,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 2051303,
+        "Desc": "第五关探索：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2051404,
+        "Desc": "第五关探索：获得30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2051406,
+        "Desc": "第五关探索：获得30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2051504,
+        "Desc": "第五关探索：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2051617,
+        "Desc": "第五关主城：获得10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            10,
+            10
+        ]
+    },
+    {
+        "Id": 2051619,
+        "Desc": "第五关主城：精神值下降 5",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            -5
+        ]
+    },
+    {
+        "Id": 2051621,
+        "Desc": "第五关主城：健康值下降 5",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            -5,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 2051912,
+        "Desc": "第五关结局事件C：主城获得 1 幸存者，100属性值",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            1,
+            100,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 2052005,
+        "Desc": "第五关红潮事件1：主城失去5个药物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "SourceType": [
+            3,
+            4
+        ],
+        "SourceCount": [
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 2052008,
+        "Desc": "第五关红潮事件2：主城1个居民死亡",
+        "Trigger": 0,
+        "EffectType": 1013,
+        "Args": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2052010,
+        "Desc": "第五关彩虹事件1：主城精神值恢复20",
+        "Trigger": 0,
+        "EffectType": 1002,
+        "Args": [
+            0,
+            0,
+            20
+        ]
+    },
+    {
+        "Id": 2050600,
+        "Desc": "第五关天气阶段二：转暴雪【事件6】",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            50021
+        ]
+    },
+    {
+        "Id": 2051000,
+        "Desc": "第五关天气阶段三：暴雪+红潮【事件10】",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            50031,
+            50032,
+            50033,
+            50034
+        ]
+    },
+    {
+        "Id": 2051700,
+        "Desc": "第五关天气阶段四：彩虹【事件17】",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            50041,
+            50042,
+            50043
+        ]
+    },
+    {
+        "Id": 2052012,
+        "Desc": "第五关天气阶段五：触发晴天天气",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            50051
+        ]
+    },
+    {
+        "Id": 2051701,
+        "Desc": "第五关发生【事件17】后第5天触发晴天事件",
+        "Trigger": 0,
+        "EffectType": 1012,
+        "Args": [
+            2052011,
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 205041,
+        "Desc": "地点 4 解锁：完成地点 6 探索事件",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20504
+        ]
+    },
+    {
+        "Id": 205071,
+        "Desc": "地点 7 解锁：完成地点 10 探索事件",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20507
+        ]
+    },
+    {
+        "Id": 205111,
+        "Desc": "地点 11 解锁：完成地点 15 探索事件",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20511
+        ]
+    },
+    {
+        "Id": 205161,
+        "Desc": "地点 16 解锁：完成地点 17 探索事件",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20516
+        ]
+    },
+    {
+        "Id": 20601,
+        "Desc": "第六关初始化：500木材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            1
+        ],
+        "TargetCount": [
+            280
+        ]
+    },
+    {
+        "Id": 20602,
+        "Desc": "第六关初始化：500钢材",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            2
+        ],
+        "TargetCount": [
+            280
+        ]
+    },
+    {
+        "Id": 20603,
+        "Desc": "第六关初始化：60血清",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            3
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 20604,
+        "Desc": "第六关初始化：60食物",
+        "Trigger": 1,
+        "EffectType": 1001,
+        "TargetType": [
+            4
+        ],
+        "TargetCount": [
+            50
+        ]
+    },
+    {
+        "Id": 20605,
+        "Desc": "\"第六关初始化：15个人，80,80,100属性值\"",
+        "Trigger": 1,
+        "EffectType": 1005,
+        "Args": [
+            15,
+            80,
+            80,
+            100
+        ]
+    },
+    {
+        "Id": 20606,
+        "Desc": "第六关初始化：拥有 1 座小废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            203,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 20607,
+        "Desc": "第六关初始化：拥有 2 座中废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            204,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 20608,
+        "Desc": "第六关初始化：拥有 2 座大废墟",
+        "Trigger": 1,
+        "EffectType": 1007,
+        "Args": [
+            205,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 206030,
+        "Desc": "第六关 6 ~ 10 天天气",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            602
+        ]
+    },
+    {
+        "Id": 206050,
+        "Desc": "第六关 11~15 天天气",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            603
+        ]
+    },
+    {
+        "Id": 206070,
+        "Desc": "第六关 15~20 天天气",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            604
+        ]
+    },
+    {
+        "Id": 206090,
+        "Desc": "第六关【地图更新】事件结果：解锁地点【废弃工业园】",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20627
+        ]
+    },
+    {
+        "Id": 20615,
+        "Desc": "获得 5 个 90 属性难民",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            10,
+            90,
+            90,
+            80
+        ]
+    },
+    {
+        "Id": 20616,
+        "Desc": "获得 25 药物、 25 食物 、120 木材、 120 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "TargetCount": [
+            50,
+            50,
+            120,
+            120
+        ]
+    },
+    {
+        "Id": 20617,
+        "Desc": "获得 5 个 80 属性难民",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            5,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 20618,
+        "Desc": "获得 40 药物、 40 食物、 100 木材、 100 钢材",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4,
+            1,
+            2
+        ],
+        "TargetCount": [
+            40,
+            40,
+            100,
+            100
+        ]
+    },
+    {
+        "Id": 20619,
+        "Desc": "获得 5 个 60 属性难民",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            5,
+            60,
+            60,
+            80
+        ]
+    },
+    {
+        "Id": 20620,
+        "Desc": "获得 50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            50,
+            50
+        ]
+    },
+    {
+        "Id": 20621,
+        "Desc": "获得 4 个 80 属性难民",
+        "Trigger": 0,
+        "EffectType": 1005,
+        "Args": [
+            4,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 20622,
+        "Desc": "获得 120 药物、 120 食物",
+        "Trigger": 0,
+        "EffectType": 1001,
+        "TargetType": [
+            3,
+            4
+        ],
+        "TargetCount": [
+            120,
+            120
+        ]
+    },
+    {
+        "Id": 2060101,
+        "Desc": "获得 120 钢材、 120 木材、 10 食物、 10药物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            120,
+            2,
+            120,
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2060102,
+        "Desc": "获得 3 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            3,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2060201,
+        "Desc": "获得 100 钢材、 100 木材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100
+        ]
+    },
+    {
+        "Id": 2060301,
+        "Desc": "获得 200 钢材、 200 木材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2060302,
+        "Desc": "获得 4 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            4,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2060401,
+        "Desc": "解锁地点 11",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20611
+        ]
+    },
+    {
+        "Id": 2060612,
+        "Desc": "50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2060813,
+        "Desc": "解锁地点信号站",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20609
+        ]
+    },
+    {
+        "Id": 2061311,
+        "Desc": "解锁地点 5",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20605
+        ]
+    },
+    {
+        "Id": 2061312,
+        "Desc": "天气改变：红潮出现",
+        "Trigger": 0,
+        "EffectType": 5001,
+        "Args": [
+            607
+        ]
+    },
+    {
+        "Id": 2061401,
+        "Desc": "50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2061501,
+        "Desc": "获得  100 木材、 100 钢材、 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2061502,
+        "Desc": "获得 10 药物、 10 食物、 50 木材、 50 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            50,
+            2,
+            50,
+            3,
+            10,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2061601,
+        "Desc": "获得 20 药物、 20食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            20,
+            4,
+            20
+        ]
+    },
+    {
+        "Id": 2061602,
+        "Desc": "解锁地点 3",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20603
+        ]
+    },
+    {
+        "Id": 2061701,
+        "Desc": "获得 25 药物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50
+        ]
+    },
+    {
+        "Id": 2061801,
+        "Desc": "200 木材、 200 钢材、 40 药物、40 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200,
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 2061901,
+        "Desc": "获得 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2062001,
+        "Desc": "获得 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2062101,
+        "Desc": "获得 200 钢材、 200 木材、 60 药物、60 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            200,
+            2,
+            200,
+            3,
+            60,
+            4,
+            60
+        ]
+    },
+    {
+        "Id": 2062201,
+        "Desc": "获得 40 药物、 40 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 2062202,
+        "Desc": "解锁地点 19",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20619
+        ]
+    },
+    {
+        "Id": 2062301,
+        "Desc": "获得 30 药物、 30 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2062401,
+        "Desc": "获得 15 药物、10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            15,
+            4,
+            10
+        ]
+    },
+    {
+        "Id": 2062501,
+        "Desc": "获得 10 药物、 10 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            30,
+            4,
+            30
+        ]
+    },
+    {
+        "Id": 2062601,
+        "Desc": "获得 50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    },
+    {
+        "Id": 2062701,
+        "Desc": "获得 220 钢材、 220 木材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            220,
+            2,
+            200
+        ]
+    },
+    {
+        "Id": 2062702,
+        "Desc": "获得 5 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            5,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2062801,
+        "Desc": "获得 40 食物、 40 药物、 150 木材、 150 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            150,
+            2,
+            150,
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 2062802,
+        "Desc": "解锁地点 29",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20629
+        ]
+    },
+    {
+        "Id": 2062901,
+        "Desc": "获得 40 食物、 40 药物、 100木材、 100 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 2062902,
+        "Desc": "获得 2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2063001,
+        "Desc": "获得 40 食物、 40 药物、 100木材、 100 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            40,
+            4,
+            40
+        ]
+    },
+    {
+        "Id": 2063002,
+        "Desc": "解锁地点 17",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20617
+        ]
+    },
+    {
+        "Id": 2063003,
+        "Desc": "解锁地点 18",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20618
+        ]
+    },
+    {
+        "Id": 2063004,
+        "Desc": "解锁地点 21",
+        "Trigger": 0,
+        "EffectType": 1008,
+        "Args": [
+            20621
+        ]
+    },
+    {
+        "Id": 2063005,
+        "Desc": "获得 60 食物、 60 药物、 100木材、 100 钢材",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            1,
+            100,
+            2,
+            100,
+            3,
+            60,
+            4,
+            60
+        ]
+    },
+    {
+        "Id": 2063006,
+        "Desc": "获得 2 幸存者",
+        "Trigger": 0,
+        "EffectType": 4002,
+        "Args": [
+            2,
+            80,
+            80,
+            80
+        ]
+    },
+    {
+        "Id": 2061101,
+        "Desc": "第二天触发【卫生中心的孩子们】",
+        "Trigger": 0,
+        "EffectType": 1012,
+        "Args": [
+            20620,
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 2061102,
+        "Desc": "获得 50 药物、 50 食物",
+        "Trigger": 0,
+        "EffectType": 4001,
+        "Args": [
+            3,
+            50,
+            4,
+            50
+        ]
+    }
+]

@@ -1,0 +1,682 @@
+[
+    {
+        "Id": 998,
+        "Name": "邀请好友",
+        "GroupId": 3,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 4,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6InviteFriend.png",
+        "ActivityTitle": "邀请好友",
+        "ActivityDes": "您可以把邀请码分享给等级≥40级的回归指挥官，若对方成功输入邀请码，即可邀请成功",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelSendInvitation.prefab",
+        "ConditionId": 0,
+        "Params": [
+            2,
+            10015,
+            3
+        ]
+    },
+    {
+        "Id": 999,
+        "Name": "邀请码",
+        "GroupId": 3,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 5,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase5OtherInviteCode.png",
+        "ActivityTitle": "邀请码",
+        "ActivityDes": "欢迎回到灰鸦指挥部，您可以输入其他指挥官的邀请码，领取相应奖励",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelAcceptInvitation.prefab",
+        "ConditionId": 0,
+        "Params": [
+            2,
+            10016
+        ]
+    },
+    {
+        "Id": 980,
+        "Name": "问卷调查",
+        "GroupId": 16,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 7,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuestionnaire.png",
+        "ActivityTitle": "问卷调查",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n为了给指挥官提供更好的支援，指挥部决定进行一次问卷调查，请指挥官点击下面的【前往】按钮，发表自己的意见吧！填写了问卷的指挥官，可以获得奖励哦。",
+        "ConditionId": 0,
+        "Params": [
+            1,
+            29,
+            1
+        ]
+    },
+    {
+        "Id": 981,
+        "Name": "回归玩家体验调查",
+        "GroupId": 16,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 11,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuestionnaire.png",
+        "ActivityTitle": "回归玩家体验调查",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n为了给指挥官提供更好的支援，指挥部决定进行一次回归玩家体验问卷调查，请指挥官点击下面的【前往】按钮，发表自己的意见吧！填写了问卷的指挥官，可以获得奖励哦。",
+        "ConditionId": 0,
+        "Params": [
+            2,
+            11641,
+            1
+        ]
+    },
+    {
+        "Id": 970,
+        "Name": "回归支援",
+        "GroupId": 5,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityTitle": "回归支援",
+        "ActivityDes": "活动期间，处于“回归状态”的指挥官，完成相应任务可获得奖励（若回归状态结束，则活动相应结束）",
+        "ConditionId": 845020,
+        "Params": [
+            0,
+            31
+        ]
+    },
+    {
+        "Id": 960,
+        "Name": "阶段奖励",
+        "GroupId": 152,
+        "SortId": 1,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualStepReward.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 961,
+        "Name": "勋业奖励",
+        "GroupId": 152,
+        "SortId": 2,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualPassport.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 962,
+        "Name": "阶段任务",
+        "GroupId": 152,
+        "SortId": 3,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTask.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 963,
+        "Name": "疾雷研发",
+        "GroupId": 152,
+        "SortId": 4,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualLotto.prefab",
+        "ConditionId": 862858,
+        "ShowEndTime": "常驻",
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Id": 964,
+        "Name": "勋业补给",
+        "GroupId": 152,
+        "SortId": 5,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGiftPack.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 965,
+        "Name": "疾雷教学",
+        "GroupId": 152,
+        "SortId": 6,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTeaching.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            6
+        ]
+    },
+    {
+        "Id": 966,
+        "Name": "活动指引",
+        "GroupId": 152,
+        "SortId": 7,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGuide.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            7
+        ]
+    },
+    {
+        "Id": 900,
+        "Name": "妄婪研发",
+        "GroupId": 153,
+        "SortId": 1,
+        "TimeId": 908,
+        "ActivityType": 14,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV214.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiGachaCanLiver/UiGachaCanLiverDraw.prefab",
+        "ConditionId": 1050098,
+        "ShowEndTime": "常驻"
+    },
+    {
+        "Id": 120,
+        "Name": "幻寂鸣泣曲",
+        "GroupId": 186,
+        "SortId": 1,
+        "TimeId": 38654,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLineV305.png",
+        "ActivityTitle": "幻寂鸣泣曲",
+        "ActivityDes": "活动说明：体验全新故事【幻寂鸣泣曲】，完成系列任务",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            0,
+            502
+        ]
+    },
+    {
+        "Id": 121,
+        "Name": "拟战场域",
+        "GroupId": 186,
+        "SortId": 2,
+        "TimeId": 38602,
+        "ActivityType": 12,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
+        "ActivityTitle": "拟战场域",
+        "ActivityDes": "「参与条件」：通关普通剧情2-2副本后开启\\n\\n「副本说明」：\\n1、通关关卡可获得拟战绩分\\n2、消耗拟战绩分可在拟战商店购买物品\\n3、版本限定商店兑换结束：2025-07-03 07:00\\n4、版本时间内通关拟战场域关卡，累计消耗一定血清可领取奖励。",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
+        "ConditionId": 770403,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            20017,
+            501
+        ]
+    },
+    {
+        "Id": 122,
+        "Name": "拟像试炼",
+        "GroupId": 186,
+        "SortId": 3,
+        "TimeId": 38101,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePingfenV305.png",
+        "ActivityTitle": "拟像试炼",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n1、操控特定角色，开启试炼见招拆招完成挑战\\n2、活动共有3个敌人可挑战，每个敌人拥有3个难度，会随着时间逐步开放敌人\\n3、活动内指挥官们只可使用活动规定范围内的试用角色。\\n4、活动内角色本身的伤害将变为1点，由活动内根据角色技能的风险与时长赋予新的倍率。\\n5、完成指定挑战后，可完成任务领取「铭牌」、「黑卡」等道具\\n6、完成指定挑战后，还可获得回音机体涂装——「沙飞虹芒」，武器涂装——「热夏虹弦」。",
+        "ConditionId": 770401,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            89061
+        ]
+    },
+    {
+        "Id": 123,
+        "Name": "算力吞吞怪",
+        "GroupId": 186,
+        "SortId": 4,
+        "TimeId": 38200,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseChidourenV305.png",
+        "ActivityTitle": "算力吞吞怪",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n1、操控特定角色，收集算力结晶！\\n2、活动共有12个关卡\\n3、活动内指挥官们需要操控角色躲避怪兽收集算力结晶后完成逃生\\n4、活动内将会提供多种道具帮助指挥官们完成撤离\\n5、完成指定挑战后，可完成任务领取「鬼泣角色研发券」、「贸易凭据」等道具",
+        "ConditionId": 770401,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            90025
+        ]
+    },
+    {
+        "Id": 124,
+        "Name": "界限解构",
+        "GroupId": 186,
+        "SortId": 5,
+        "TimeId": 38500,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseGaizaoV305.png",
+        "ActivityTitle": "界限解构",
+        "ActivityDes": "「参与条件」：指挥官等级达到52级\\n\\n「活动说明」：\\n1、界限构解有6个普通关卡和5个困难关卡，且随时间逐渐开放，玩家可以使用自己拥有的角色进行挑战。\\n2、每个关卡都有对应的环境主题和改造内容。\\n3、玩家可根据环境主题效果，来对敌人、词缀维度进行改造来调节难度。\\n4、所有的改造都将增加解析度与关卡等级，累计获得等级后可获得对应奖励，通关所有普通关卡将会解锁困难关卡。",
+        "ConditionId": 8005,
+        "Params": [
+            81104
+        ]
+    },
+    {
+        "Id": 125,
+        "Name": "终末诗篇",
+        "GroupId": 186,
+        "SortId": 6,
+        "TimeId": 38701,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultV305.png",
+        "ActivityTitle": "终末诗篇",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n1、挑战关卡共分为6个难度，均为高难度挑战，将与【镜像维吉尔】进行对战。\\n2、在挑战过程中，指挥官的角色在死亡时会重启，帮助指挥官完成挑战。\\n3、各关卡有3星条件，所有关卡中累计获得3星即可获得收藏品奖励。继续挑战获得更高星级可提升收藏品的品质。",
+        "ConditionId": 770401,
+        "Params": [
+            11724
+        ]
+    },
+    {
+        "Id": 126,
+        "Name": "浮影述忆",
+        "GroupId": 186,
+        "SortId": 7,
+        "TimeId": 38658,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase4in1EffectCoatingV305.png",
+        "ActivityTitle": "浮影述忆",
+        "ActivityDes": "「参与条件」：指挥官等级达到40且通关主线剧情1-8\\n\\n「活动说明」：\\n涂装复刻自选活动，指挥官可选择一款心仪涂装进行研发；\\n参与活动的涂装包含：【罪妄月华】、【绮影凛然】、【炸裂霓虹☆】、【绮愿稚梦】；\\n指挥官选择其中1款涂装后，可进行研发，且选择不可更改。",
+        "ConditionId": 1050138,
+        "Params": [
+            90033
+        ]
+    },
+    {
+        "Id": 127,
+        "Name": "泛用机体狙击-但丁",
+        "GroupId": 186,
+        "SortId": 8,
+        "TimeId": 38657,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterV305.png",
+        "ActivityTitle": "泛用机体狙击-但丁",
+        "ActivityDes": "「全新角色」：\\n※概念级火系进攻型【但丁】\\n\\n「新武器」：\\n※6星【魔剑但丁】（魔剑）\\n\\n「说明」：\\n1.角色研发：\\n※【但丁】将进入【联动主题研发】研发池，\\n占概念级出率100%\\n2.武器研发：\\n※【魔剑但丁】将进入【联动武器研发】研发池，\\n规则和出率与其他武器相同",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10050
+        ]
+    },
+    {
+        "Id": 128,
+        "Name": "异界装备狙击-科沃兹",
+        "GroupId": 186,
+        "SortId": 9,
+        "TimeId": 38657,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerV305.png",
+        "ActivityTitle": "异界装备狙击-科沃兹",
+        "ActivityDes": "「全新异界装备」：\\n※ 概念级异界装备【科沃兹】\\n※ 推荐搭配角色【但丁】\\n※【科沃兹】 将进入【异界装备研发】研发池。\\n 指挥官进行异界装备研发时，可以选择任意概念级异界装备进行狙击研发\\n 活动期间若选择【科沃兹】进行狙击，则【科沃兹】占概念级异界装备出率的100%",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10051
+        ]
+    },
+    {
+        "Id": 129,
+        "Name": "泛用机体狙击-维吉尔",
+        "GroupId": 186,
+        "SortId": 10,
+        "TimeId": 38657,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacter2V305.png",
+        "ActivityTitle": "泛用机体狙击-维吉尔",
+        "ActivityDes": "「全新角色」：\\n※概念级物理系进攻型【维吉尔】\\n\\n「新武器」：\\n※6星【阎魔刀】（阎魔刀）\\n\\n「说明」：\\n1.角色研发：\\n※【维吉尔】将进入【联动主题研发】研发池，\\n占概念级出率100%\\n2.武器研发：\\n※【阎魔刀】将进入【联动武器研发】研发池，\\n规则和出率与其他武器相同",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10049
+        ]
+    },
+    {
+        "Id": 130,
+        "Name": "异界装备狙击-幻影剑",
+        "GroupId": 186,
+        "SortId": 11,
+        "TimeId": 38657,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartner2V305.png",
+        "ActivityTitle": "异界装备狙击-幻影剑",
+        "ActivityDes": "「全新异界装备」：\\n※ 概念级异界装备【幻影剑】\\n※ 推荐搭配角色【维吉尔】\\n※【幻影剑】 将进入【异界装备研发】研发池。\\n 指挥官进行异界装备研发时，可以选择任意概念级异界装备进行狙击研发\\n 活动期间若选择【幻影剑】进行狙击，则【幻影剑】占概念级异界装备出率的100%",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10051
+        ]
+    },
+    {
+        "Id": 131,
+        "Name": "巫渺魂祀",
+        "GroupId": 186,
+        "SortId": 12,
+        "TimeId": 38655,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCibeizheCoatingV305.png",
+        "ActivityTitle": "巫渺魂祀",
+        "ActivityDes": "「新涂装」：\\n泛用机体【伊什梅尔·幻日】涂装【巫渺魂祀】\\n\\n「说明」：\\n活动期间【巫渺魂祀】在“采购-涂装补给包”中以原价“7折”出售",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            20020
+        ]
+    },
+    {
+        "Id": 132,
+        "Name": "沙飞虹芒",
+        "GroupId": 186,
+        "SortId": 13,
+        "TimeId": 38101,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseEchoCoatingV305.png",
+        "ActivityTitle": "沙飞虹芒",
+        "ActivityDes": "「新涂装」：\\n泛用机体【亚里莎·回音】涂装【沙飞虹芒】\\n\\n「说明」：\\n活动期间【沙飞虹芒】可在【拟像试炼】玩法中获取。",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            89061
+        ]
+    },
+    {
+        "Id": 133,
+        "Name": "战略评定手册",
+        "GroupId": 186,
+        "SortId": 14,
+        "TimeId": 38656,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPV305.png",
+        "ActivityTitle": "战略评定手册",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」\\n1.玩家完成每日.每轮及本期情报手册的评定任务积累情报值\\n2.积累一定的情报值可以提升本期评定等级\\n3.达到指定评定等级可以获得对应奖励\\n4.指挥官还可以购买额外的情报获得更为丰厚的奖励\\n",
+        "ConditionId": 770401,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            20171
+        ]
+    },
+    {
+        "Id": 134,
+        "Name": "除魔者不朽·维吉尔",
+        "GroupId": 187,
+        "SortId": 1,
+        "TimeId": 38301,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTry2V305.png",
+        "ActivityTitle": "除魔者不朽·维吉尔",
+        "ActivityDes": "「参与条件」：通关普通剧情1-8副本",
+        "ConditionId": 774501,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            20273,
+            503
+        ]
+    },
+    {
+        "Id": 135,
+        "Name": "适配拟合·幻影剑",
+        "GroupId": 188,
+        "SortId": 1,
+        "TimeId": 38301,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTry2V305.png",
+        "ActivityTitle": "适配拟合·幻影剑",
+        "ActivityDes": "「参与条件」：指挥官等级达到61。",
+        "ConditionId": 8006,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            7107,
+            504
+        ]
+    },
+    {
+        "Id": 136,
+        "Name": "除魔者不朽·但丁",
+        "GroupId": 189,
+        "SortId": 1,
+        "TimeId": 38301,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryV305.png",
+        "ActivityTitle": "除魔者不朽·但丁",
+        "ActivityDes": "「参与条件」：通关普通剧情1-8副本",
+        "ConditionId": 774501,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            20274,
+            505
+        ]
+    },
+    {
+        "Id": 137,
+        "Name": "适配拟合·科沃兹",
+        "GroupId": 190,
+        "SortId": 1,
+        "TimeId": 38301,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryV305.png",
+        "ActivityTitle": "适配拟合·科沃兹",
+        "ActivityDes": "「参与条件」：指挥官等级达到61。",
+        "ConditionId": 8006,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            7107,
+            506
+        ]
+    },
+    {
+        "Id": 138,
+        "Name": "巫渺魂祀",
+        "GroupId": 191,
+        "SortId": 1,
+        "TimeId": 38801,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCibeizheEffectCoatingV305.png",
+        "ActivityTitle": "巫渺魂祀",
+        "ActivityDes": "「新涂装」：\\n泛用机体【伊什梅尔·幻日】涂装【巫渺魂祀】",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10035,
+            507
+        ]
+    },
+    {
+        "Id": 139,
+        "Name": "沙飞虹芒",
+        "GroupId": 192,
+        "SortId": 1,
+        "TimeId": 38802,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseEchoEffectCoatingV305.png",
+        "ActivityTitle": "沙飞虹芒",
+        "ActivityDes": "「新涂装」：\\n泛用机体【亚里莎·回音 】涂装【沙飞虹芒】",
+        "ConditionId": 0,
+        "ShowBeginTime": "2025-05-22 更新后",
+        "Params": [
+            10035,
+            508
+        ]
+    },
+    {
+        "Id": 140,
+        "Name": "绮愿稚梦",
+        "GroupId": 193,
+        "SortId": 1,
+        "TimeId": 38658,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseChaolifuEffectCoatingTryV210.png",
+        "ActivityTitle": "绮愿稚梦",
+        "ActivityDes": "「活动说明」：活动期间【绮愿稚梦】可通过“主界面-绮愿稚梦”涂装研发活动限时获取。",
+        "ConditionId": 1050133,
+        "Params": [
+            90029,
+            509
+        ]
+    },
+    {
+        "Id": 141,
+        "Name": "炸裂霓虹☆",
+        "GroupId": 194,
+        "SortId": 1,
+        "TimeId": 38658,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseKalieEffectCoatingTryV206.png",
+        "ActivityTitle": "炸裂霓虹☆",
+        "ActivityDes": "「活动说明」：活动期间【炸裂霓虹☆】可通过“主界面-炸裂霓虹☆”涂装研发活动限时获取。",
+        "ConditionId": 1050132,
+        "Params": [
+            90028,
+            510
+        ]
+    },
+    {
+        "Id": 142,
+        "Name": "绮影凛然",
+        "GroupId": 195,
+        "SortId": 1,
+        "TimeId": 38658,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseWeilaEffectCoatingV305.png",
+        "ActivityTitle": "绮影凛然",
+        "ActivityDes": "「活动说明」：活动期间【绮影凛然】可通过“主界面-绮影凛然”涂装研发活动限时获取。",
+        "ConditionId": 1050131,
+        "Params": [
+            90027,
+            511
+        ]
+    },
+    {
+        "Id": 143,
+        "Name": "罪妄月华",
+        "GroupId": 196,
+        "SortId": 1,
+        "TimeId": 38658,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLunaEffectCoatingV300.png",
+        "ActivityTitle": "罪妄月华",
+        "ActivityDes": "「活动说明」：活动期间【罪妄月华】可通过“主界面-罪妄月华”涂装研发活动限时获取。",
+        "ConditionId": 1050130,
+        "Params": [
+            90026,
+            512
+        ]
+    },
+    {
+        "Id": 144,
+        "Name": "幻镜虚像",
+        "GroupId": 179,
+        "SortId": 1,
+        "TimeId": 37402,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV304.png",
+        "ActivityTitle": "幻镜虚像",
+        "ActivityDes": "「活动说明」：完成每日任务，获得【红魔魂石】",
+        "ConditionId": 0,
+        "Params": [
+            20266,
+            479
+        ]
+    },
+    {
+        "Id": 145,
+        "Name": "幽潮循光",
+        "GroupId": 185,
+        "SortId": 1,
+        "TimeId": 38609,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV305.png",
+        "ActivityTitle": "幽潮循光",
+        "ActivityDes": "「活动说明」：完成活动任务，获取【泡影】",
+        "ConditionId": 0,
+        "Params": [
+            89077,
+            500
+        ]
+    },
+    {
+        "Id": 146,
+        "Name": "一锤叮咚",
+        "GroupId": 197,
+        "SortId": 1,
+        "TimeId": 39704,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV304.png",
+        "ActivityTitle": "一锤叮咚",
+        "ActivityDes": "「活动说明」：完成活动任务，获取【OK绷一绷】",
+        "ConditionId": 0,
+        "Params": [
+            20182,
+            500
+        ]
+    }
+]

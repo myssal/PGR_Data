@@ -1,0 +1,90 @@
+[
+    {
+        "Id": 1,
+        "HandbookType": 1,
+        "Param": 2001,
+        "Hp": 0,
+        "Interval": 0,
+        "Condition": 0
+    },
+    {
+        "Id": 2,
+        "HandbookType": 1,
+        "Param": 2002,
+        "Hp": 0,
+        "Interval": 0,
+        "Condition": 0
+    },
+    {
+        "Id": 3,
+        "HandbookType": 2,
+        "Param": 1,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessSoldier.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "前进攻击敌人，到达棋盘底部会升变成除国王外的棋子。",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips09.png",
+        "Condition": 0,
+        "Name": "士兵"
+    },
+    {
+        "Id": 4,
+        "HandbookType": 2,
+        "Param": 2,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessKnight.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "棋局中的骑士，跳跃着进攻对手。",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips10.png",
+        "Condition": 0,
+        "Name": "骑士"
+    },
+    {
+        "Id": 5,
+        "HandbookType": 2,
+        "Param": 3,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessBishop.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "棋局中的主教，进攻斜线的敌人。",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips11.png",
+        "Condition": 0,
+        "Name": "主教"
+    },
+    {
+        "Id": 6,
+        "HandbookType": 2,
+        "Param": 4,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessCastle.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "棋局中的城堡，进攻直线的敌人。",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips12.png",
+        "Condition": 0,
+        "Name": "城堡"
+    },
+    {
+        "Id": 7,
+        "HandbookType": 2,
+        "Param": 5,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessQueen.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "棋局中的皇后，沿着直线、斜线进攻。",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips13.png",
+        "Condition": 0,
+        "Name": "皇后"
+    },
+    {
+        "Id": 8,
+        "HandbookType": 2,
+        "Param": 6,
+        "HeadIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessKing.png",
+        "Hp": 10,
+        "Interval": 1,
+        "Desc": "棋局中的国王，击败它就能获胜！",
+        "MoveMapIcon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChessTips14.png",
+        "Condition": 0,
+        "Name": "国王"
+    }
+]

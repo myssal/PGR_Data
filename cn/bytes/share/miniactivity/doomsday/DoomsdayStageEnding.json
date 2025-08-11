@@ -1,0 +1,162 @@
+[
+    {
+        "Id": 1,
+        "Name": "通用失败条件：全员死亡",
+        "Desc": "最后一个人也死去了",
+        "EventId": 1010,
+        "IsSuccess": false,
+        "ConditionId": 1010
+    },
+    {
+        "Id": 2,
+        "Name": "通用失败条件：全员死亡",
+        "Desc": "最后一个人也陷入了绝望",
+        "EventId": 1020,
+        "IsSuccess": false,
+        "ConditionId": 1020
+    },
+    {
+        "Id": 101,
+        "Name": "营地人数超过24人",
+        "Desc": "我们成功了",
+        "EventId": 2010,
+        "IsSuccess": true,
+        "ConditionId": 2010
+    },
+    {
+        "Id": 201,
+        "Name": "完美结局",
+        "Desc": "回到故乡的路",
+        "EventId": 2020,
+        "IsSuccess": true,
+        "ConditionId": 2020
+    },
+    {
+        "Id": 202,
+        "Name": "普通结局",
+        "Desc": "一直延续的梦",
+        "EventId": 2022,
+        "IsSuccess": true,
+        "ConditionId": 2022
+    },
+    {
+        "Id": 203,
+        "Name": "坏结局",
+        "Desc": "没有人的未来",
+        "EventId": 2024,
+        "IsSuccess": true,
+        "ConditionId": 2024
+    },
+    {
+        "Id": 301,
+        "Name": "营地35人及精神值大于60",
+        "Desc": "勇敢的探险者",
+        "EventId": 20305,
+        "IsSuccess": true,
+        "ConditionId": 20303
+    },
+    {
+        "Id": 302,
+        "Name": "营地35人及精神值小于60",
+        "Desc": "成为英雄的代价",
+        "EventId": 20307,
+        "IsSuccess": true,
+        "ConditionId": 20304
+    },
+    {
+        "Id": 303,
+        "Name": "营地30人及精神值大于60",
+        "Desc": "小镇的守护者",
+        "EventId": 20301,
+        "IsSuccess": true,
+        "ConditionId": 20301
+    },
+    {
+        "Id": 304,
+        "Name": "营地30人及精神值小于60",
+        "Desc": "无力的弱者",
+        "EventId": 20303,
+        "IsSuccess": true,
+        "ConditionId": 20302
+    },
+    {
+        "Id": 401,
+        "Name": "我们成功了",
+        "Desc": "漫长的等待",
+        "EventId": 20405,
+        "IsSuccess": true,
+        "ConditionId": 20406
+    },
+    {
+        "Id": 402,
+        "Name": "我们成功了",
+        "Desc": "世界再无齐娜",
+        "EventId": 20407,
+        "IsSuccess": true,
+        "ConditionId": 20407
+    },
+    {
+        "Id": 403,
+        "Name": "我们成功了",
+        "Desc": "与世界重修旧好",
+        "EventId": 20401,
+        "IsSuccess": true,
+        "ConditionId": 20408
+    },
+    {
+        "Id": 404,
+        "Name": "我们成功了",
+        "Desc": "我们回家吧",
+        "EventId": 20403,
+        "IsSuccess": true,
+        "ConditionId": 20409
+    },
+    {
+        "Id": 501,
+        "Name": "普通结局",
+        "Desc": "无能为力——未能拯救任何人",
+        "EventId": 2052101,
+        "IsSuccess": true,
+        "ConditionId": 20501
+    },
+    {
+        "Id": 502,
+        "Name": "普通结局",
+        "Desc": "独自一人——只有你活了下来",
+        "EventId": 2052103,
+        "IsSuccess": true,
+        "ConditionId": 20502
+    },
+    {
+        "Id": 503,
+        "Name": "完美结局",
+        "Desc": "生的希望——最后的幸存者",
+        "EventId": 2052105,
+        "IsSuccess": true,
+        "ConditionId": 20503
+    },
+    {
+        "Id": 601,
+        "Name": "第六关结局-A",
+        "Desc": "邙山的归客",
+        "EventId": 2060,
+        "IsSuccess": true,
+        "ConditionId": 2060
+    },
+    {
+        "Id": 602,
+        "Name": "第六关结局-B",
+        "Desc": "迟到的告别",
+        "EventId": 2062,
+        "IsSuccess": true,
+        "ConditionId": 2062
+    },
+    {
+        "Id": 603,
+        "Name": "第六关结局-C",
+        "Desc": "沉默的代价",
+        "EventId": 2064,
+        "IsSuccess": true,
+        "ConditionId": 2064
+    }
+]

@@ -1,0 +1,1074 @@
+[
+    {
+        "Id": 1,
+        "TitleCN": "成员狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 1,
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 40,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "基准模式",
+            "狙击模式",
+            "新角色加入",
+            "特别说明"
+        ],
+        "BaseRules": [
+            "选择基准模式，每研发十次，必有随机A级或以上角色加入队伍",
+            "选择某角色的狙击模式，每研发十次，必有A级或以上泛用机体。若产出的泛用机体为A级泛用机体，则所选狙击的角色占A级角色产出率UP",
+            "新的A级角色进入狙击模式的时间请参考相关公告说明",
+            "在成员狙击卡池中，A级及S级角色的保底次数均不会因狙击角色的变更而受影响，即保底次数继承"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 2,
+        "TitleCN": "武器研发",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "BottomText": "6星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器"
+        ],
+        "BaseRuleTitles": [
+            "10连保底五星武器",
+            "30连保底六星武器"
+        ],
+        "BaseRules": [
+            "每研发10次必出五星或以上武器。",
+            "每研发30次必出六星武器。"
+        ]
+    },
+    {
+        "Id": 4,
+        "TitleCN": "狙击武器研发",
+        "TitleEN": "Optional Mode",
+        "RareRank": 0,
+        "BottomText": "6星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "任选一组UP，占6星出率80%",
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器"
+        ],
+        "BaseRuleTitles": [
+            "自选组合",
+            "狙击模式详解",
+            "校准系统"
+        ],
+        "BaseRules": [
+            "选择1种装备组合进行抽取，特定组合获得概率提升。",
+            "狙击武器可以选择你想要的武器进行大幅度概率提升。",
+            "抽出六星武器时，如果没有抽到当前选中的目标武器，则会触发校准系统，下次抽出六星武器时，必定为当前选中的自选目标武器。（校准保底同名卡池继承）"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>6星武器</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>5星</color>或以上武器"
+        ]
+    },
+    {
+        "Id": 6,
+        "TitleCN": "宿舍研发",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "UpQuality": "<color=#fee82a>6星</color>",
+        "UpProbability": "<color=#fee82a>80%</color>",
+        "BottomText": "保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必出涂装设计草稿。"
+        ],
+        "BaseRuleTitles": [
+            "抽取内容",
+            "抽取备注"
+        ],
+        "BaseRules": [
+            "可抽取家具、改造图纸、涂装设计草稿、入住凭证。",
+            "版本新型家具暂不加入卡池。"
+        ]
+    },
+    {
+        "Id": 10,
+        "TitleCN": "主题狙击武器",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "UpType": "武器",
+        "UpQuality": "<color=#fee82a>6星</color>",
+        "UpProbability": "<color=#fee82a>80%</color>",
+        "BottomText": "6星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器"
+        ],
+        "BaseRuleTitles": [
+            "10连保底五星武器",
+            "30连保底六星武器"
+        ],
+        "BaseRules": [
+            "每研发10次必出五星或以上武器。",
+            "每研发30次必出六星武器。"
+        ],
+        "EventRuleTitles": [
+            "占6星出率"
+        ],
+        "EventRules": [
+            "若研发时抽出6星武器，则有80%几率判定为UP武器。"
+        ]
+    },
+    {
+        "Id": 11,
+        "TitleCN": "主题活动角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 12,
+        "TitleCN": "降临狙击角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "60连保底S级",
+            "卡池保底继承规则",
+            "校准系统"
+        ],
+        "BaseRules": [
+            "每研发60次，必有S级泛用机体加入队伍，产出的S级泛用机体必定为当期降临活动的机体。选择某角色的狙击模式，自选狙击的S级泛用机体占S级泛用机体产出率UP",
+            "名字类型相同的卡池继承保底，否则不继承。（校准系统同理）例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。",
+            "抽出S级角色时，如果没有抽到当前选中的目标角色，则会触发校准系统，下次抽出S级角色时，必定为当前选中的自选目标角色。（校准保底同名卡池继承）"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 13,
+        "TitleCN": "命运降临狙击角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与降临角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则",
+            "校准系统"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%，产出的S级泛用机体必定为当期降临活动的机体。选择某角色的狙击模式，则所选狙击的角色占S级角色产出率UP",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。（校准系统同理）例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。",
+            "抽出S级角色时，如果没有抽到当前选中的目标角色，则会触发校准系统，下次抽出S级角色时，必定为当前选中的自选目标角色。（校准保底同名卡池继承）"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 14,
+        "TitleCN": "降临活动角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>70%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则有70%几率判定为UP角色。"
+        ]
+    },
+    {
+        "Id": 15,
+        "TitleCN": "命运主题活动角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与主题角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上角色"
+        ]
+    },
+    {
+        "Id": 16,
+        "TitleCN": "独域机体狙击角色",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "独域机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有S级独域机体"
+        ],
+        "BaseRuleTitles": [
+            "碎片转化",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "重复获取独域机体，转换成18个相应角色的逆元碎片",
+            "S级独域机体基础掉率5%。",
+            "S级独域机体综合掉率12.45%",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级角色</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>S级</color>独域机体"
+        ]
+    },
+    {
+        "Id": 17,
+        "TitleCN": "周年限定",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
+        ]
+    },
+    {
+        "Id": 18,
+        "TitleCN": "命运周年限定",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与主题角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。例如【降临限定角色池】结束后，新的【降临限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
+        ]
+    },
+    {
+        "Id": 19,
+        "TitleCN": "联动狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体",
+            "抽10返3活动中"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池独立保底"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
+        ],
+        "EventRuleTitles": [
+            "占S级出率",
+            "抽10返3"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。",
+            "每10回研发后，额外奖励3回研发（750联动角色研发券）"
+        ]
+    },
+    {
+        "Id": 20,
+        "TitleCN": "命运联动狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.S级角色基础掉落概率提升",
+            "4.抽10返3活动中"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池独立保底"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
+        ],
+        "EventRuleTitles": [
+            "占S级出率",
+            "抽10返3"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。",
+            "每10回研发后，额外奖励3回研发（750联动角色研发券）"
+        ]
+    },
+    {
+        "Id": 21,
+        "TitleCN": "联动武器狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "BottomText": "6星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "任选一组UP，占6星出率80%",
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器"
+        ],
+        "BaseRuleTitles": [
+            "自选组合",
+            "狙击模式详解",
+            "卡池独立保底"
+        ],
+        "BaseRules": [
+            "选择1种装备组合进行抽取，特定组合获得概率提升。",
+            "狙击武器可以选择你想要的武器进行大幅度概率提升。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
+        ]
+    },
+    {
+        "Id": 22,
+        "TitleCN": "辅助机狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "UpType": "辅助机",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上辅助机",
+            "每20回必有S级辅助机"
+        ],
+        "BaseRuleTitles": [
+            "自选组合",
+            "狙击模式详解",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "选择1种辅助机进行抽取，特定目标获得概率提升。",
+            "狙击辅助机可以选择你想要的辅助机进行大幅度概率提升。",
+            "在辅助机狙击卡池中，A级及S级的保底次数均不会因狙击目标的变更而受影响，即保底次数继承"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "DrawRules": [
+            "<color=#ff5f2d>S级辅助机</color>",
+            "<color=#ff5f2d>10回</color>必出<color=#ff5f2d>A级</color>或以上辅助机"
+        ]
+    },
+    {
+        "Id": 23,
+        "TitleCN": "心选狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。本次【心选狙击】卡池结束后，只有新的【心选狙击】卡池继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 24,
+        "TitleCN": "命运心选狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与降临角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则",
+            "校准系统"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。本次【命运心选狙击】卡池结束后，只有新的【命运心选狙击】卡池会继承保底"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 25,
+        "TitleCN": "成员狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 1,
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "基准模式",
+            "狙击模式",
+            "研发独立保底"
+        ],
+        "BaseRules": [
+            "每研发十次，必有A级或以上角色加入队伍",
+            "狙击模式选择BRS，若产出的泛用机体为A级泛用机体，则BRS占A级角色产出率100%",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 26,
+        "TitleCN": "武器狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "BottomText": "六星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器。【★黑岩巨炮】占六星出率80%"
+        ],
+        "BaseRuleTitles": [
+            "10连保底五星武器",
+            "30连保底六星武器",
+            "研发独立保底"
+        ],
+        "BaseRules": [
+            "每研发10次必出五星或以上武器。",
+            "每研发30次必出六星武器。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池"
+        ],
+        "EventRuleTitles": [
+            "占六星出率"
+        ]
+    },
+    {
+        "Id": 27,
+        "TitleCN": "夏令限定狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "名字类型相同的卡池继承保底，否则不继承。例如【初夏限定角色池】结束后，新的【初夏限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 28,
+        "TitleCN": "命运夏令限定狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": true,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.综合概率与主题角色池一致",
+            "4.S级角色基础掉落概率提升"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "名字类型相同的卡池继承保底，否则不继承。例如【命运初夏限定角色池】结束后，新的【命运初夏限定角色池】继承保底。"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为当前选中的UP角色。"
+        ],
+        "CharFilterElementList": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "Id": 29,
+        "TitleCN": "但丁狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体",
+            "卡池活动中"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池独立保底",
+            "卡池活动"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
+            "任一卡池获得【但丁】时，可额外获得一名【但丁】，活动期间最多额外获得2次"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ]
+    },
+    {
+        "Id": 30,
+        "TitleCN": "命运但丁狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.S级角色基础掉落概率提升",
+            "4.卡池活动中"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池独立保底",
+            "卡池活动"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
+            "任一卡池获得【但丁】时，可额外获得一名【但丁】，活动期间最多额外获得2次"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ]
+    },
+    {
+        "Id": 31,
+        "TitleCN": "维吉尔狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "每10回必有A级或以上泛用机体",
+            "每60回必有S级泛用机体",
+            "卡池活动中"
+        ],
+        "BaseRuleTitles": [
+            "10连保底A级",
+            "60连保底S级",
+            "卡池独立保底",
+            "卡池活动"
+        ],
+        "BaseRules": [
+            "每研发10次，必有A级或以上泛用机体加入队伍。",
+            "每研发60次，必有S级泛用机体加入队伍。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
+            "任一卡池获得【维吉尔】时，可额外获得一名【维吉尔】，活动期间最多额外获得2次"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ]
+    },
+    {
+        "Id": 32,
+        "TitleCN": "命运维吉尔狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 2,
+        "UpType": "泛用机体",
+        "UpQuality": "<color=#fee82a>S级</color>",
+        "UpProbability": "<color=#fee82a>100%</color>",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 80,
+        "SpecialBottomMax": 100,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 0,
+        "MainRules": [
+            "1.每10回必有A级或以上泛用机体",
+            "2.每80~100回必有S级泛用机体",
+            "3.S级角色基础掉落概率提升",
+            "4.卡池活动中"
+        ],
+        "BaseRuleTitles": [
+            "浮动保底",
+            "基础掉率（不含保底）",
+            "综合掉率（含保底）",
+            "卡池独立保底",
+            "卡池活动"
+        ],
+        "BaseRules": [
+            "系统会在80-100随机一个值，比如随机到90，那么本次S级保底次数为90，抽出S级后重新随机保底次数。",
+            "S级泛用机体基础掉率1.5%。",
+            "S级泛用机体综合掉率和其他卡池一致（1.9%）",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
+            "任一卡池获得【维吉尔】时，可额外获得一名【维吉尔】，活动期间最多额外获得2次"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ],
+        "EventRules": [
+            "若研发时抽出S级泛用机体，则必为UP角色。"
+        ]
+    },
+    {
+        "Id": 33,
+        "TitleCN": "联动武器狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "BottomText": "6星保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "任选一组UP，占6星出率80%",
+            "每研发10次必出五星或以上武器",
+            "每研发30次必出六星武器"
+        ],
+        "BaseRuleTitles": [
+            "自选组合",
+            "狙击模式详解",
+            "卡池独立保底",
+            "校准系统"
+        ],
+        "BaseRules": [
+            "选择1种装备组合进行抽取，特定组合获得概率提升。",
+            "狙击武器可以选择你想要的武器进行大幅度概率提升。",
+            "该卡池为特殊的联动卡池，保底次数只从相同的联动卡池继承，不继承到其他卡池",
+            "抽出六星武器时，如果没有抽到当前选中的目标武器，则会触发校准系统，下次抽出六星武器时，必定为当前选中的自选目标武器。（校准保底同名卡池继承）"
+        ]
+    },
+    {
+        "Id": 34,
+        "TitleCN": "异界装备狙击",
+        "TitleEN": "Standard Mode",
+        "RareRank": 0,
+        "UpType": "异界装备",
+        "BottomText": "S级保底",
+        "NewHandBottomCount": 0,
+        "SpecialBottomMin": 0,
+        "SpecialBottomMax": 0,
+        "IsNotSelectDefault": false,
+        "IsShowFilter": 1,
+        "MainRules": [
+            "每10回必有A级或以上异界装备",
+            "每20回必有S级异界装备"
+        ],
+        "BaseRuleTitles": [
+            "自选组合",
+            "狙击模式详解",
+            "卡池保底继承规则"
+        ],
+        "BaseRules": [
+            "选择1种异界装备进行抽取，特定目标获得概率提升。",
+            "狙击异界装备可以选择你想要的异界装备进行大幅度概率提升。",
+            "在异界装备狙击卡池中，A级及S级的保底次数均不会因狙击目标的变更而受影响，即保底次数继承"
+        ],
+        "EventRuleTitles": [
+            "占S级出率"
+        ]
+    }
+]

@@ -1,0 +1,114 @@
+[
+    {
+        "Id": 1,
+        "FightEventId": 200070,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconSufu.png",
+        "Name": "束缚",
+        "Desc": "三消有30%概率造成1.25倍伤害并眩晕目标3秒，各角色独立计算冷却，冷却时间10秒",
+        "Brief": "三消造成伤害时，有30%概率造成1.25倍伤害并眩晕目标",
+        "Color": "FF5887",
+        "SubRuneId": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 2,
+        "FightEventId": 200074,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconFusu.png",
+        "Name": "复苏",
+        "Desc": "三消后全队进入“复苏”状态，持续8秒，每秒恢复最大生命值的1%，冷却15秒且各成员独立，可叠加至3层",
+        "Brief": "三消后全队进入持续8秒的“复苏”状态，8秒内每秒恢复最大生命值的1%",
+        "Color": "59F5FF",
+        "SubRuneId": [
+            4,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 3,
+        "FightEventId": 200078,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconYinli.png",
+        "Name": "引力",
+        "Desc": "三消后进入“过载”状态，持续6秒，获得一个随机信号球并增加30%移动速度，冷却15秒且各成员独立",
+        "Brief": "三消后进入持续6秒的“过载”状态，获得一个信号球并提高30%移动速度",
+        "Color": "AFCCF0",
+        "SubRuneId": [
+            7,
+            8,
+            9
+        ]
+    },
+    {
+        "Id": 4,
+        "FightEventId": 200082,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconChaosuan.png",
+        "Name": "超算",
+        "Desc": "三消造成伤害时为目标赋予“冰冻”效果（触发间隔1秒），每层减缓10%移动速度，最多叠加5层，5层时触发单体超算，触发后清空层数并进入5s冷却",
+        "Brief": "三消时对目标施加“冰冻”效果，每层减缓移速，5层时触发单体超算",
+        "Color": "106FFF",
+        "SubRuneId": [
+            10,
+            11,
+            12
+        ]
+    },
+    {
+        "Id": 5,
+        "FightEventId": 200086,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconMicai.png",
+        "Name": "迷彩",
+        "Desc": "三消后恢复200点闪避值",
+        "Brief": "三消后恢复200点闪避值",
+        "Color": "FFFD6C",
+        "SubRuneId": [
+            13,
+            14,
+            15
+        ]
+    },
+    {
+        "Id": 6,
+        "FightEventId": 200090,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconWenliu.png",
+        "Name": "紊流",
+        "Desc": "每15秒进行一次骰点，根据点数获得强化效果：0-24消球伤害提高30% 25-49必杀伤害提高30% 50-74普攻伤害提高30% 75-89 触发上述所有增益 90-98角色造成伤害减半 99当前角色扣除100%血量",
+        "Brief": "战斗中，每15秒进行一次天命点随机，根据点数获得对应强化效果",
+        "Color": "FFFFFF",
+        "SubRuneId": [
+            16,
+            17,
+            18
+        ]
+    },
+    {
+        "Id": 7,
+        "FightEventId": 200094,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconSilie.png",
+        "Name": "撕裂",
+        "Desc": "三消后进入持续8秒的“影舞”状态，该状态下所有伤害会追加一次15%的伤害并记入连击，冷却15秒且各成员独立",
+        "Brief": "三消后进入持续8秒的“影舞”状态，该状态下所有伤害会额外追加并记入连击",
+        "Color": "BB59FF",
+        "SubRuneId": [
+            19,
+            20,
+            21
+        ]
+    },
+    {
+        "Id": 8,
+        "FightEventId": 200098,
+        "Icon": "Assets/Product/Texture/Atlas/UiStronghold/UiStrongholdIconXushi.png",
+        "Name": "蓄势",
+        "Desc": "三消后进入持续5秒的“整备”状态，该状态下造成伤害可降低换人冷却时间0.5秒（触发间隔1秒），重复触发刷新持续时间",
+        "Brief": "三消后进入持续5秒的“整备”状态，该状态下造成伤害可降低换人的冷却时间",
+        "Color": "FFC052",
+        "SubRuneId": [
+            22,
+            23,
+            24
+        ]
+    }
+]

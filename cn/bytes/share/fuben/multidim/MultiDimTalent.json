@@ -1,0 +1,890 @@
+[
+    {
+        "Id": 1,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>28秒</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 2,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>28秒</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240321
+        ]
+    },
+    {
+        "Id": 3,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>23秒</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240322
+        ]
+    },
+    {
+        "Id": 4,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>18秒</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240323
+        ]
+    },
+    {
+        "Id": 5,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>14秒</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240324
+        ]
+    },
+    {
+        "Id": 6,
+        "ClassId": 1,
+        "TalentType": 1,
+        "Name": "主动超算",
+        "Desc": "主动技能。释放后全队进入<color=#34aff8>超算</color>并恢复自身<color=#34aff8>8%生命</color>，冷却<color=#34aff8>11秒</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240325
+        ]
+    },
+    {
+        "Id": 7,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>5秒</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 8,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>5秒</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240326
+        ]
+    },
+    {
+        "Id": 9,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>6秒</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240327
+        ]
+    },
+    {
+        "Id": 10,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>7秒</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240328
+        ]
+    },
+    {
+        "Id": 11,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>8秒</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240329
+        ]
+    },
+    {
+        "Id": 12,
+        "ClassId": 1,
+        "TalentType": 2,
+        "Name": "伤害强化",
+        "Desc": "触发机制判定时，全队每次攻击可<color=#34aff8>附加1段20%攻击</color>的伤害，持续<color=#34aff8>9秒</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240330
+        ]
+    },
+    {
+        "Id": 13,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>5%攻击</color>",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 14,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>5%攻击</color>",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240331
+        ]
+    },
+    {
+        "Id": 15,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>7%攻击</color>",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240332
+        ]
+    },
+    {
+        "Id": 16,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>9%攻击</color>",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240333
+        ]
+    },
+    {
+        "Id": 17,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>12%攻击</color>",
+        "Level": 4,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240334
+        ]
+    },
+    {
+        "Id": 18,
+        "ClassId": 1,
+        "TalentType": 3,
+        "Name": "强效超算",
+        "Desc": "超算中伤害提升<color=#34aff8>25%</color>。进场后，提升自身<color=#34aff8>15%攻击</color>",
+        "Level": 5,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240335
+        ]
+    },
+    {
+        "Id": 19,
+        "ClassId": 1,
+        "TalentType": 4,
+        "Name": "进攻核心",
+        "Desc": "FEVER状态下，每10秒进入一次<color=#34aff8>超算</color>，超算冷却降低<color=#34aff8>10%</color>",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0
+    },
+    {
+        "Id": 20,
+        "ClassId": 1,
+        "TalentType": 4,
+        "Name": "进攻核心",
+        "Desc": "FEVER状态下，每10秒进入一次<color=#34aff8>超算</color>，超算冷却降低<color=#34aff8>10%</color>",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240336
+        ]
+    },
+    {
+        "Id": 21,
+        "ClassId": 1,
+        "TalentType": 4,
+        "Name": "进攻核心",
+        "Desc": "FEVER状态下，每10秒进入一次<color=#34aff8>超算</color>，超算冷却降低<color=#34aff8>12%</color>",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240337
+        ]
+    },
+    {
+        "Id": 22,
+        "ClassId": 1,
+        "TalentType": 4,
+        "Name": "进攻核心",
+        "Desc": "FEVER状态下，每10秒进入一次<color=#34aff8>超算</color>，超算冷却降低<color=#34aff8>18%</color>\\n被动:所有职业伤害+10%",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240338
+        ]
+    },
+    {
+        "Id": 23,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>28秒</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 24,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>28秒</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240339
+        ]
+    },
+    {
+        "Id": 25,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>23秒</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240340
+        ]
+    },
+    {
+        "Id": 26,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>18秒</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240341
+        ]
+    },
+    {
+        "Id": 27,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>14秒</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240342
+        ]
+    },
+    {
+        "Id": 28,
+        "ClassId": 2,
+        "TalentType": 1,
+        "Name": "主动抑制",
+        "Desc": "主动技能。释放后可使自身及队友场上怪物额外伤害减免<color=#34aff8>降低40%</color>，持续8秒，技能冷却<color=#34aff8>11秒</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240343
+        ]
+    },
+    {
+        "Id": 29,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>30%闪避值</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 30,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>30%闪避值</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240344
+        ]
+    },
+    {
+        "Id": 31,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>40%闪避值</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240345
+        ]
+    },
+    {
+        "Id": 32,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>50%闪避值</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240346
+        ]
+    },
+    {
+        "Id": 33,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>60%闪避值</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240347
+        ]
+    },
+    {
+        "Id": 34,
+        "ClassId": 2,
+        "TalentType": 2,
+        "Name": "闪避回复",
+        "Desc": "触发机制判定时，全队可恢复<color=#34aff8>70%闪避值</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240348
+        ]
+    },
+    {
+        "Id": 35,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>5%</color>，最高级时获得霸体",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 36,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>5%</color>，最高级时获得霸体",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240349
+        ]
+    },
+    {
+        "Id": 37,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>8%</color>，最高级时获得霸体",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240350
+        ]
+    },
+    {
+        "Id": 38,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>11%</color>，最高级时获得霸体",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240351
+        ]
+    },
+    {
+        "Id": 39,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>14%</color>，最高级时获得霸体",
+        "Level": 4,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240352
+        ]
+    },
+    {
+        "Id": 40,
+        "ClassId": 2,
+        "TalentType": 3,
+        "Name": "虚数护盾",
+        "Desc": "角色身上存在护盾时，角色受到伤害降低<color=#34aff8>17%</color>，最高级时获得霸体",
+        "Level": 5,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240353
+        ]
+    },
+    {
+        "Id": 41,
+        "ClassId": 2,
+        "TalentType": 4,
+        "Name": "装甲核心",
+        "Desc": "FEVER状态下，角色每10秒获得20%生命上限的<color=#34aff8>护盾</color>，闪避值<color=#34aff8>每秒恢复60点</color>",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0
+    },
+    {
+        "Id": 42,
+        "ClassId": 2,
+        "TalentType": 4,
+        "Name": "装甲核心",
+        "Desc": "FEVER状态下，角色每10秒获得20%生命上限的<color=#34aff8>护盾</color>，闪避值<color=#34aff8>每秒恢复60点</color>",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240354
+        ]
+    },
+    {
+        "Id": 43,
+        "ClassId": 2,
+        "TalentType": 4,
+        "Name": "装甲核心",
+        "Desc": "FEVER状态下，角色每9秒获得20%生命上限的<color=#34aff8>护盾</color>，闪避值<color=#34aff8>每秒恢复60点</color>",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240355
+        ]
+    },
+    {
+        "Id": 44,
+        "ClassId": 2,
+        "TalentType": 4,
+        "Name": "装甲核心",
+        "Desc": "FEVER状态下，角色每8秒获得20%生命上限的<color=#34aff8>护盾</color>，闪避值<color=#34aff8>每秒恢复60点</color>\\n被动:所有职业受到伤害-10%",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240356
+        ]
+    },
+    {
+        "Id": 45,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>28秒</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 46,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>28秒</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240357
+        ]
+    },
+    {
+        "Id": 47,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>23秒</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240358
+        ]
+    },
+    {
+        "Id": 48,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>18秒</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240359
+        ]
+    },
+    {
+        "Id": 49,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>14秒</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240360
+        ]
+    },
+    {
+        "Id": 50,
+        "ClassId": 3,
+        "TalentType": 1,
+        "Name": "主动充能",
+        "Desc": "主动技能。释放后恢复全队<color=#34aff8>20%生命值</color>及一组同色信号球，冷却<color=#34aff8>11秒</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240361
+        ]
+    },
+    {
+        "Id": 51,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>5秒</color>",
+        "Level": 0,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 52,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>5秒</color>",
+        "Level": 1,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240362
+        ]
+    },
+    {
+        "Id": 53,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>6秒</color>",
+        "Level": 2,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240363
+        ]
+    },
+    {
+        "Id": 54,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>7秒</color>",
+        "Level": 3,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240364
+        ]
+    },
+    {
+        "Id": 55,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>8秒</color>",
+        "Level": 4,
+        "UseOwn": 1,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240365
+        ]
+    },
+    {
+        "Id": 56,
+        "ClassId": 3,
+        "TalentType": 2,
+        "Name": "移速强化",
+        "Desc": "触发机制判定时，全队提升<color=#34aff8>25%移速</color>，持续<color=#34aff8>10秒</color>",
+        "Level": 5,
+        "UseOwn": 1,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240366
+        ]
+    },
+    {
+        "Id": 57,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升5点</color>",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 58,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升5点</color>",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240367
+        ]
+    },
+    {
+        "Id": 59,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升6点</color>",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240368
+        ]
+    },
+    {
+        "Id": 60,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升7点</color>",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240369
+        ]
+    },
+    {
+        "Id": 61,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升8点</color>",
+        "Level": 4,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240370
+        ]
+    },
+    {
+        "Id": 62,
+        "ClassId": 3,
+        "TalentType": 3,
+        "Name": "能量回充",
+        "Desc": "机制结算时，全队获得<color=#34aff8>FEVER值提升10点</color>",
+        "Level": 5,
+        "UseOwn": 0,
+        "CostItemId": 0,
+        "CostItemCount": 0,
+        "FightEventId": [
+            2240371
+        ]
+    },
+    {
+        "Id": 63,
+        "ClassId": 3,
+        "TalentType": 4,
+        "Name": "辅助核心",
+        "Desc": "FEVER状态下，复活所有队友，全队一血不死，且每秒恢复<color=#34aff8>10%生命值</color>，每12秒获得2组同色信号球",
+        "Level": 0,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90
+    },
+    {
+        "Id": 64,
+        "ClassId": 3,
+        "TalentType": 4,
+        "Name": "辅助核心",
+        "Desc": "FEVER状态下，复活所有队友，全队一血不死，且每秒恢复<color=#34aff8>10%生命值</color>，每12秒获得2组同色信号球",
+        "Level": 1,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240372
+        ]
+    },
+    {
+        "Id": 65,
+        "ClassId": 3,
+        "TalentType": 4,
+        "Name": "辅助核心",
+        "Desc": "FEVER状态下，复活所有队友，全队一血不死，且每秒恢复<color=#34aff8>11%生命值</color>，每12秒获得2组同色信号球",
+        "Level": 2,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240373
+        ]
+    },
+    {
+        "Id": 66,
+        "ClassId": 3,
+        "TalentType": 4,
+        "Name": "辅助核心",
+        "Desc": "FEVER状态下，复活所有队友，全队一血不死，且每秒恢复<color=#34aff8>12%生命值</color>，每12秒获得2组同色信号球\\n被动:所有职业信号球回复间隔-20%",
+        "Level": 3,
+        "UseOwn": 0,
+        "CostItemId": 96116,
+        "CostItemCount": 90,
+        "FightEventId": [
+            2240374
+        ]
+    }
+]

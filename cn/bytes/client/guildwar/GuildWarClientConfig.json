@@ -1,0 +1,392 @@
+[
+    {
+        "Key": "StageMainCostItems",
+        "Comment": "关卡主界面用消耗道具栏",
+        "Values": [
+            96114
+        ]
+    },
+    {
+        "Key": "DayRefreshTime",
+        "Comment": "每日刷新时间(怪物移动等)单位：24小时制小时(例：早上8点 = 8 晚上8点 = 20)",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "HourRefreshTime",
+        "Comment": "定时刷新时间（单位：分钟）",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PathMarkMaxCount",
+        "Comment": "最大标记点数",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "StageTypeName",
+        "Comment": "关卡类型名",
+        "Values": [
+            "资源保障区",
+            "关口",
+            "资源富地",
+            "伏击前哨",
+            "险峻隘口",
+            "高危绝壁",
+            "高危绝壁",
+            "高危绝壁",
+            "高危绝壁",
+            "高危绝壁",
+            "隐藏区域",
+            "协援哨所",
+            "隐藏区域",
+            "高危绝壁",
+            "高危绝壁",
+            "孤崖关塞",
+            "资源保障区",
+            "资源保障区",
+            "高危绝壁"
+        ]
+    },
+    {
+        "Key": "StageTypeIcon",
+        "Comment": "关卡类型图标",
+        "Values": [
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon1.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon2.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon6.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon3.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon7.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon11.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon10.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon11.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon14.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon15.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon15.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png"
+        ]
+    },
+    {
+        "Key": "LogCount",
+        "Comment": "显示最近几条战报",
+        "Values": [
+            30
+        ]
+    },
+    {
+        "Key": "AutoSelectDifficultyTime",
+        "Comment": "自动选择难度的时间(24小时制)",
+        "Values": [
+            23
+        ]
+    },
+    {
+        "Key": "EntryRewardId",
+        "Comment": "入口的奖励展示",
+        "Values": [
+            550600
+        ]
+    },
+    {
+        "Key": "SpecialRoleIcon1",
+        "Comment": "特攻图标1",
+        "Values": [
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon1.png"
+        ]
+    },
+    {
+        "Key": "SpecialRoleIcon2",
+        "Comment": "特攻图标2",
+        "Values": [
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon2.png"
+        ]
+    },
+    {
+        "Key": "PassRewardShow",
+        "Comment": "难度选择界面奖励预览",
+        "Values": [
+            65497,
+            65498,
+            65499
+        ]
+    },
+    {
+        "Key": "PlanPath1",
+        "Comment": "\"推荐线路, 难度1\"",
+        "Values": [
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+        ]
+    },
+    {
+        "Key": "PlanPath2",
+        "Comment": "\"推荐线路, 难度2\"",
+        "Values": [
+            202,
+            203,
+            204,
+            205,
+            206,
+            207
+        ]
+    },
+    {
+        "Key": "PlanPath3",
+        "Comment": "\"推荐线路, 难度3\"",
+        "Values": [
+            302,
+            303,
+            304,
+            305,
+            306,
+            307
+        ]
+    },
+    {
+        "Key": "ShopSkipId",
+        "Comment": "商店界面跳转的Id，对应SkipFunctional",
+        "Values": [
+            88002
+        ]
+    },
+    {
+        "Key": "CancelDefend",
+        "Comment": "取消驻守弹窗提示",
+        "Values": [
+            "是否取消驻守？"
+        ]
+    },
+    {
+        "Key": "ChangeDefend",
+        "Comment": "驻守（但已驻守）时弹窗提示",
+        "Values": [
+            "您已驻守其他资源点，是否更换驻守位置?"
+        ]
+    },
+    {
+        "Key": "DefendSuccess",
+        "Comment": "驻守成功提示",
+        "Values": [
+            "驻守成功"
+        ]
+    },
+    {
+        "Key": "DefendBtnDisplay",
+        "Comment": "驻守按钮的文本显示",
+        "Values": [
+            "进入驻守",
+            "取消驻守"
+        ]
+    },
+    {
+        "Key": "DefendTime",
+        "Comment": "炮击倒计时文本",
+        "Values": [
+            "炮击倒计时:{0}"
+        ]
+    },
+    {
+        "Key": "DefendPercentDetail",
+        "Comment": "详细页的驻守占比文本",
+        "Values": [
+            "驻守占比:{0}%"
+        ]
+    },
+    {
+        "Key": "MemberLevel",
+        "Values": [
+            "等级: {0}"
+        ]
+    },
+    {
+        "Key": "AttackLeftTimes",
+        "Values": [
+            "剩余{0}次"
+        ]
+    },
+    {
+        "Key": "BuffShowTimeEvents",
+        "Comment": "需要显示炮击倒计时等信息的EventId填这里",
+        "Values": [
+            2240408
+        ]
+    },
+    {
+        "Key": "BuffUnshowRebuilTagEvents",
+        "Comment": "资源点重建的时候不需要显示重建tag的EventId填这里",
+        "Values": [
+            2240409
+        ]
+    },
+    {
+        "Key": "ResNodeRebuildIcons",
+        "Values": [
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon18.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon19.png",
+            "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon20.png"
+        ]
+    },
+    {
+        "Key": "GuildQuitLastMemberInWar",
+        "Values": [
+            "退出后指挥局将会解散，8小时内将无法加入指挥局，如果已参与众志行征，本轮再次加入其他公会无法继续参与众志行征，是否继续？"
+        ]
+    },
+    {
+        "Key": "ReinforcementsRushDesc",
+        "Comment": "援军进攻描述",
+        "Values": [
+            "攻坚战车可以进攻敌方点位，对敌方节点造成大量伤害！"
+        ]
+    },
+    {
+        "Key": "ReinforcementsRushNextTime",
+        "Comment": "援军行动倒计时",
+        "Values": [
+            "(剩余时间: {0} )"
+        ]
+    },
+    {
+        "Key": "ReinforcementsRushStateDesc",
+        "Comment": "援军行动状态描述",
+        "Values": [
+            "攻坚战车准备中",
+            "攻坚战车进攻中"
+        ]
+    },
+    {
+        "Key": "BuffShowReinforceEvents",
+        "Comment": "需要显示当前援助进度信息的eventId填这里",
+        "Values": [
+            2240410
+        ]
+    },
+    {
+        "Key": "ReinforcementsSupportDetail",
+        "Comment": "援助物资情况",
+        "Values": [
+            "<color=#FF1111FF>已累计援助: {0} 物资 血量提升{1}</color>"
+        ]
+    },
+    {
+        "Key": "LockBossNode",
+        "Comment": "目前Boss有两种形态，是否要锁定只有一个形态（仅left节点）",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "ReinforcementSupportTxt",
+        "Comment": "援军详情页援助按钮文本显示",
+        "Values": [
+            "援助物资",
+            "已援助"
+        ]
+    },
+    {
+        "Key": "ReinforcementSupportResultTxt",
+        "Comment": "点击援助按钮成功后的文本提示",
+        "Values": [
+            "援助物资成功",
+            "取消援助成功"
+        ]
+    },
+    {
+        "Key": "ReinforceSupportListEntranceTxt",
+        "Comment": "援助列表入口按钮的文本",
+        "Values": [
+            "援助成员"
+        ]
+    },
+    {
+        "Key": "ReinforcementsReadyDoneTxt",
+        "Values": [
+            "{0}后完成准备"
+        ]
+    },
+    {
+        "Key": "NodeShowReinforcementEvents",
+        "Comment": "如果援军里的showevent在这里配置了，则会继承到关卡上",
+        "Values": [
+            2240411,
+            2240412,
+            2240413
+        ]
+    },
+    {
+        "Key": "NodeAttackedByReinforementBuffTime",
+        "Comment": "被援军攻击的节点上的buff剩余时间文本格式",
+        "Values": [
+            "(剩余时间: {0} )"
+        ]
+    },
+    {
+        "Key": "BossRewardEntranceIntercept",
+        "Comment": "boss奖励入口（主界面左边【领主】）的拦截提示文本",
+        "Values": [
+            "曾在其他指挥局参与行征，本轮无法领取领主奖励"
+        ]
+    },
+    {
+        "Key": "ReinforcementSupportInCDTips",
+        "Values": [
+            "操作过于频繁，请稍后再试"
+        ]
+    },
+    {
+        "Key": "DragonRageLevelTips",
+        "Comment": "红潮等级描述",
+        "Values": [
+            "红潮等级随周目提升，所有关卡难度将会随红潮等级同步提升。"
+        ]
+    },
+    {
+        "Key": "DragonRageLevel",
+        "Comment": "红潮等级格式",
+        "Values": [
+            "LV.{0}"
+        ]
+    },
+    {
+        "Key": "DragonRageToRelicTitle",
+        "Comment": "红潮玩法节点切废墟弹窗标题",
+        "Values": [
+            "领主变得更加狂暴，以下节点成为废墟"
+        ]
+    },
+    {
+        "Key": "DragonRageEffectShowLowerLimit",
+        "Comment": "红潮玩法进度条显示特效下限百分比",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "DragonRageSweepTips",
+        "Comment": "红潮玩法下的周目扫荡",
+        "Values": [
+            "当前周目尚未手动通关，扫荡积分将使用上次手动通关积分计算"
+        ]
+    },
+    {
+        "Key": "DragonRageRoundNoTips",
+        "Values": [
+            "本周目不再提示"
+        ]
+    }
+]

@@ -1,0 +1,352 @@
+[
+    {
+        "Id": 1,
+        "Name": "常温",
+        "Temperature": "0°C",
+        "ConditionId": 0,
+        "DifficultRate": 1.0,
+        "BPExpRate": 2.0,
+        "BPExpMax": 1800,
+        "TechPointRate": 0.1,
+        "TechPointMax": 100,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 7,
+        "HpActionPoint": 0,
+        "Energy": 4,
+        "ReEnergy": 1,
+        "ActionGroup": 1,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            25666,
+            30000
+        ],
+        "HpFactor": [
+            8000,
+            9828,
+            6340,
+            1540,
+            1438
+        ],
+        "EffectGroup": [
+            10031
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "初冷",
+        "Temperature": "-3°C",
+        "ConditionId": 1020677,
+        "DifficultRate": 1.0,
+        "BPExpRate": 2.5,
+        "BPExpMax": 2200,
+        "TechPointRate": 0.1,
+        "TechPointMax": 100,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 7,
+        "HpActionPoint": 0,
+        "Energy": 4,
+        "ReEnergy": 1,
+        "ActionGroup": 2,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性小幅提升</color></size>",
+            "<size=32><color=#C02331>异常点提前进攻</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            19041,
+            12285,
+            12679,
+            3080,
+            2516
+        ],
+        "EffectGroup": [
+            10032
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "微寒",
+        "Temperature": "-5°C",
+        "ConditionId": 1020677,
+        "DifficultRate": 1.0,
+        "BPExpRate": 3.0,
+        "BPExpMax": 3000,
+        "TechPointRate": 0.1,
+        "TechPointMax": 100,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 5,
+        "HpActionPoint": 0,
+        "Energy": 4,
+        "ReEnergy": 1,
+        "ActionGroup": 3,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性提升</color></size>",
+            "<size=32><color=#C02331>代理作战消耗提升</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            21421,
+            18428,
+            15849,
+            3850,
+            3773
+        ],
+        "EffectGroup": [
+            10033
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "冰冽",
+        "Temperature": "-10°C",
+        "ConditionId": 1020678,
+        "DifficultRate": 1.0,
+        "BPExpRate": 3.5,
+        "BPExpMax": 3500,
+        "TechPointRate": 0.1,
+        "TechPointMax": 150,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 5,
+        "HpActionPoint": 0,
+        "Energy": 2,
+        "ReEnergy": 1,
+        "ActionGroup": 4,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性提升</color></size>",
+            "<size=32><color=#C02331>初始物资减半</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            28562,
+            24570,
+            21132,
+            5134,
+            5031
+        ],
+        "EffectGroup": [
+            10034
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 5,
+        "Name": "严霜",
+        "StoryDesc": "气温较低，决策难度上升",
+        "Temperature": "-18°C",
+        "ConditionId": 1020678,
+        "DifficultRate": 1.0,
+        "BPExpRate": 4.0,
+        "BPExpMax": 3800,
+        "TechPointRate": 0.1,
+        "TechPointMax": 150,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 5,
+        "HpActionPoint": 0,
+        "Energy": 2,
+        "ReEnergy": 1,
+        "ActionGroup": 5,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性提升</color></size>",
+            "<size=32><color=#C02331>代理作战消耗提升</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            35702,
+            30713,
+            21132,
+            5134,
+            5390
+        ],
+        "EffectGroup": [
+            10035
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "极寒",
+        "StoryDesc": "气温过低，需要谨慎决策",
+        "Temperature": "-25°C",
+        "ConditionId": 1020679,
+        "DifficultRate": 1.0,
+        "BPExpRate": 4.0,
+        "BPExpMax": 4100,
+        "TechPointRate": 0.1,
+        "TechPointMax": 150,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 3,
+        "HpActionPoint": 0,
+        "Energy": 0,
+        "ReEnergy": 1,
+        "ActionGroup": 6,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性大幅提升</color></size>",
+            "<size=32><color=#C02331>异常点提前进攻</color></size>",
+            "<size=32><color=#C02331>初始不携带物资</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            42842,
+            36855,
+            25358,
+            6160,
+            6468
+        ],
+        "EffectGroup": [
+            10036
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    },
+    {
+        "Id": 7,
+        "Name": "绝地",
+        "StoryDesc": "气温极低，难度大幅上升",
+        "Temperature": "-55°C",
+        "ConditionId": 1020782,
+        "DifficultRate": 1.0,
+        "BPExpRate": 4.0,
+        "BPExpMax": 4400,
+        "TechPointRate": 0.1,
+        "TechPointMax": 150,
+        "DistanceGroup": 0,
+        "RebootId": 1,
+        "ActionPoint": 3,
+        "Hp": 3,
+        "HpActionPoint": 0,
+        "Energy": 0,
+        "ReEnergy": 1,
+        "ActionGroup": 6,
+        "StarGroupIds": [],
+        "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
+        "Desc": [
+            "<size=32><color=#C02331>地区指标提升</color></size>",
+            "<size=32><color=#C02331>敌方属性大幅提升</color></size>",
+            "<size=32><color=#C02331>异常点提前进攻</color></size>",
+            "<size=32><color=#C02331>初始不携带物资</color></size>"
+        ],
+        "AtkFactor": [
+            10000,
+            12500,
+            16667,
+            30000,
+            40000
+        ],
+        "HpFactor": [
+            53553,
+            46069,
+            31698,
+            7700,
+            8085
+        ],
+        "EffectGroup": [
+            10036
+        ],
+        "RewardDrop": [
+            10023,
+            10023,
+            10023,
+            10023,
+            10023
+        ]
+    }
+]

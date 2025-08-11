@@ -1,0 +1,1161 @@
+[
+    {
+        "Id": 10101,
+        "Name": "死亡竞速",
+        "Des": "敌我单位死亡时，场上所有剩余单位获得20%的全伤害提升，并降低20%全伤害减免",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene25.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "死亡竞速",
+        "FightEventIds": [
+            97127
+        ]
+    },
+    {
+        "Id": 10102,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 500,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 10201,
+        "Name": "小心越界I",
+        "Des": "离开光圈外的单位会持续受到大量伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene34.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "小心越界I",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 10202,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 400,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 10203,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 400,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 10301,
+        "Name": "信号干扰",
+        "Des": "闪避需要消耗1个信号球，三消随机获得1个信号球",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene22.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "信号干扰",
+        "FightEventIds": [
+            2230103
+        ]
+    },
+    {
+        "Id": 10302,
+        "Name": "机械降神",
+        "Des": "当敌我受到致命伤害时不会立刻死亡，而是恢复总血量的护盾，此护盾将持续衰减",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene14.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "机械降神",
+        "FightEventIds": [
+            97113
+        ]
+    },
+    {
+        "Id": 10303,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 10401,
+        "Name": "稳固战线",
+        "Des": "敌人受到伤害时，会将所受伤害平均分摊到所有敌人身上",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene23.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "稳固战线",
+        "FightEventIds": [
+            97119
+        ]
+    },
+    {
+        "Id": 10402,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 10403,
+        "Name": "火焰风暴",
+        "Des": "场地中将定时随机召唤火焰风暴，对敌我造成10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene2.png",
+        "AddScore": 500,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "火焰风暴",
+        "FightEventIds": [
+            97102
+        ]
+    },
+    {
+        "Id": 10501,
+        "Name": "归于一",
+        "Des": "\"每次三消后普通攻击伤害提高120%,三消伤害降低20%(可叠加5次)\"",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene30.png",
+        "AddScore": 650,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "归于一",
+        "FightEventIds": [
+            2230100
+        ]
+    },
+    {
+        "Id": 10502,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 550,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 10503,
+        "Name": "信号干扰",
+        "Des": "闪避需要消耗1个信号球，三消随机获得1个信号球",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene22.png",
+        "AddScore": 550,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "信号干扰",
+        "FightEventIds": [
+            2230103
+        ]
+    },
+    {
+        "Id": 10504,
+        "Name": "回光返照",
+        "Des": "敌我受到致命伤害时，立即回复所有生命值并大幅提升移速与全伤害，但每秒会损失10%最大生命",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene20.png",
+        "AddScore": 450,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "回光返照",
+        "FightEventIds": [
+            97120
+        ]
+    },
+    {
+        "Id": 10601,
+        "Name": "紧急避让I",
+        "Des": "出现1名分解者，每隔15秒会面向我方释放1次飞镖，被命中单位冻结2秒，累计3次后将损失30%生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene37.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "紧急避让I",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 10602,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10603,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 10604,
+        "Name": "死亡竞速",
+        "Des": "敌我单位死亡时，场上所有剩余单位获得20%的全伤害提升，并降低20%全伤害减免",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene25.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "死亡竞速",
+        "FightEventIds": [
+            97127
+        ]
+    },
+    {
+        "Id": 10701,
+        "Name": "紧急避让II",
+        "Des": "出现2名分解者，每隔10秒随机1名分解者向我方释放一次飞镖，被命中单位冻结3秒，累计3次后将损失30%生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene38.png",
+        "AddScore": 750,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "紧急避让I",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 10702,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 650,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10703,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 650,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 10704,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 550,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 10801,
+        "Name": "生命传递",
+        "Des": "敌方阵亡后，其最大生命值会均摊给存活的敌人，每获得1次加成，受到的伤害会提高30%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene33.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "生命传递",
+        "FightEventIds": [
+            2230104
+        ]
+    },
+    {
+        "Id": 10802,
+        "Name": "归于一",
+        "Des": "\"每次三消后普通攻击伤害提高120%,三消伤害降低20%(可叠加5次)\"",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene30.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "归于一",
+        "FightEventIds": [
+            2230100
+        ]
+    },
+    {
+        "Id": 10803,
+        "Name": "致命毒素",
+        "Des": "全场所有单位每秒将减少2%的血量，且治疗效果降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene13.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "致命毒素",
+        "FightEventIds": [
+            97112
+        ]
+    },
+    {
+        "Id": 10804,
+        "Name": "回光返照",
+        "Des": "敌我受到致命伤害时，立即回复所有生命值并大幅提升移速与全伤害，但每秒会损失10%最大生命",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene20.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "回光返照",
+        "FightEventIds": [
+            97120
+        ]
+    },
+    {
+        "Id": 10901,
+        "Name": "极速对战",
+        "Des": "所有单位攻击力提高999%，死亡立即复活，每次复活获得10秒无敌，受到1次攻击时降低1秒，间隔1秒，至多复活3次",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene32.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "极速对战",
+        "FightEventIds": [
+            2230102
+        ]
+    },
+    {
+        "Id": 10902,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10903,
+        "Name": "动能转换",
+        "Des": "闪避恢复速度提高50%，移动速度降低30%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene40.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "动能转换",
+        "FightEventIds": [
+            2230106
+        ]
+    },
+    {
+        "Id": 10904,
+        "Name": "信号干扰",
+        "Des": "闪避需要消耗1个信号球，三消随机获得1个信号球",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene22.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "信号干扰",
+        "FightEventIds": [
+            2230103
+        ]
+    },
+    {
+        "Id": 11001,
+        "Name": "小心越界II",
+        "Des": "离开光圈的单位会持续受到大量伤害，每隔25秒会刷新1只极地机兵冲撞我方，冲撞完毕后离场",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene35.png",
+        "AddScore": 850,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "小心越界II",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 11002,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 750,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 11003,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 750,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 11004,
+        "Name": "死亡竞速",
+        "Des": "敌我单位死亡时，场上所有剩余单位获得20%的全伤害提升，并降低20%全伤害减免",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene25.png",
+        "AddScore": 650,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "死亡竞速",
+        "FightEventIds": [
+            97127
+        ]
+    },
+    {
+        "Id": 11101,
+        "Name": "极限决斗",
+        "Des": "我方获得霸体效果但只有首发成员能进行对战",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene12.png",
+        "AddScore": 550,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "极限决斗",
+        "FightEventIds": [
+            97103
+        ]
+    },
+    {
+        "Id": 11102,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 450,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 11103,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 450,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 11104,
+        "Name": "死亡竞速",
+        "Des": "敌我单位死亡时，场上所有剩余单位获得20%的全伤害提升，并降低20%全伤害减免",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene25.png",
+        "AddScore": 350,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "死亡竞速",
+        "FightEventIds": [
+            97127
+        ]
+    },
+    {
+        "Id": 11201,
+        "Name": "致命毒素",
+        "Des": "全场所有单位每秒将减少2%的血量，且治疗效果降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene13.png",
+        "AddScore": 850,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "致命毒素",
+        "FightEventIds": [
+            97112
+        ]
+    },
+    {
+        "Id": 11202,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 750,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 11203,
+        "Name": "治疗污染",
+        "Des": "敌我造成的额外治疗将会转化为100%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene7.png",
+        "AddScore": 750,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "治疗污染",
+        "FightEventIds": [
+            97107
+        ]
+    },
+    {
+        "Id": 11204,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 650,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 11301,
+        "Name": "频率阻断",
+        "Des": "普通攻击不再获得信号球；每次闪避后，获得一个信号球",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene24.png",
+        "AddScore": 1000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "频率阻断",
+        "FightEventIds": [
+            97126
+        ]
+    },
+    {
+        "Id": 11302,
+        "Name": "生命传递",
+        "Des": "敌方阵亡后，其最大生命值会均摊给存活的敌人，每获得1次加成，受到的伤害会提高30%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene33.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "生命传递",
+        "FightEventIds": [
+            2230104
+        ]
+    },
+    {
+        "Id": 11303,
+        "Name": "归于一",
+        "Des": "\"每次三消后普通攻击伤害提高120%,三消伤害降低20%(可叠加5次)\"",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene30.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "归于一",
+        "FightEventIds": [
+            2230100
+        ]
+    },
+    {
+        "Id": 11304,
+        "Name": "机械降神",
+        "Des": "当敌我受到致命伤害时不会立刻死亡，而是恢复总血量的护盾，此护盾将持续衰减",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene14.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "机械降神",
+        "FightEventIds": [
+            97113
+        ]
+    },
+    {
+        "Id": 11401,
+        "Name": "四试炼",
+        "Des": "只有信号球和普攻伤害可以使目标死亡，目标死后满血复活，并免疫致死伤害的类型【红球、黄球、蓝球、普攻】，受到的伤害提高30%（叠加），至多复活3次",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene31.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "四试炼",
+        "FightEventIds": [
+            2230101
+        ]
+    },
+    {
+        "Id": 11402,
+        "Name": "红球爆破",
+        "Des": "每次释放红色球技能，将召唤闪电攻击，被击中则受到10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene17.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "红球爆破",
+        "FightEventIds": [
+            97111
+        ]
+    },
+    {
+        "Id": 11403,
+        "Name": "黄球爆破",
+        "Des": "每次释放黄色球技能，将召唤闪电攻击，被击中则受到10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene16.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "黄球爆破",
+        "FightEventIds": [
+            97110
+        ]
+    },
+    {
+        "Id": 11404,
+        "Name": "蓝球爆破",
+        "Des": "每次释放蓝色球技能，将召唤闪电攻击，被击中则受到10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene8.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "蓝球爆破",
+        "FightEventIds": [
+            97109
+        ]
+    },
+    {
+        "Id": 11501,
+        "Name": "小心越界III",
+        "Des": "离开光圈的单位会持续受到大量伤害，每隔15秒会刷新2只极地机兵冲撞我方，冲撞完毕后离场",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene36.png",
+        "AddScore": 1000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "小心越界III",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 11502,
+        "Name": "极性不定",
+        "Des": "所有敌人随机免疫1种信号球造成的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene21.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "极性不定",
+        "FightEventIds": [
+            97122
+        ]
+    },
+    {
+        "Id": 11503,
+        "Name": "极限决斗",
+        "Des": "我方获得霸体效果但只有首发成员能进行对战",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene12.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "极限决斗",
+        "FightEventIds": [
+            97103
+        ]
+    },
+    {
+        "Id": 11504,
+        "Name": "死亡竞速",
+        "Des": "敌我单位死亡时，场上所有剩余单位获得20%的全伤害提升，并降低20%全伤害减免",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene25.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "死亡竞速",
+        "FightEventIds": [
+            97127
+        ]
+    },
+    {
+        "Id": 11505,
+        "Name": "持续感染",
+        "Des": "敌人造成伤害后，对受伤目标施加生命流失效果，每秒流失3%最大生命值，持续时间无限",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene19.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "持续感染",
+        "FightEventIds": [
+            97118
+        ]
+    },
+    {
+        "Id": 11601,
+        "Name": "稳固战线",
+        "Des": "敌人受到伤害时，会将所受伤害平均分摊到所有敌人身上",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene23.png",
+        "AddScore": 900,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "稳固战线",
+        "FightEventIds": [
+            97119
+        ]
+    },
+    {
+        "Id": 11602,
+        "Name": "蓝球爆破",
+        "Des": "每次释放蓝色球技能，将召唤闪电攻击，被击中则受到10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene8.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "蓝球爆破",
+        "FightEventIds": [
+            97109
+        ]
+    },
+    {
+        "Id": 11603,
+        "Name": "红球爆破",
+        "Des": "每次释放红色球技能，将召唤闪电攻击，被击中则受到10%最大生命值的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene17.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "红球爆破",
+        "FightEventIds": [
+            97111
+        ]
+    },
+    {
+        "Id": 11604,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 800,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 11605,
+        "Name": "回光返照",
+        "Des": "敌我受到致命伤害时，立即回复所有生命值并大幅提升移速与全伤害，但每秒会损失10%最大生命",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene20.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "回光返照",
+        "FightEventIds": [
+            97120
+        ]
+    },
+    {
+        "Id": 11701,
+        "Name": "极限决斗",
+        "Des": "我方获得霸体效果但只有首发成员能进行对战",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene12.png",
+        "AddScore": 1300,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "极限决斗",
+        "FightEventIds": [
+            97103
+        ]
+    },
+    {
+        "Id": 11702,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 1200,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 11703,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 1200,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 11801,
+        "Name": "紧急避让III",
+        "Des": "场地出现3名特殊分解者，每隔8秒随机2名分解者向玩家释放一次飞镖，被命中单位冻结5秒，累计2次后将损失30%生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene39.png",
+        "AddScore": 700,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "紧急避让III",
+        "FightEventIds": [
+            2230105
+        ]
+    },
+    {
+        "Id": 11802,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 11803,
+        "Name": "持久战斗",
+        "Des": "敌我的血量增加1倍，且伤害降低50%",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene1.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall1.png",
+        "PreviewText": "持久战斗",
+        "FightEventIds": [
+            97101
+        ]
+    },
+    {
+        "Id": 11804,
+        "Name": "生命汲取",
+        "Des": "敌人造成伤害时，回复10%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene26.png",
+        "AddScore": 600,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "生命汲取",
+        "FightEventIds": [
+            97125
+        ]
+    },
+    {
+        "Id": 11805,
+        "Name": "极性不定",
+        "Des": "所有敌人随机免疫1种信号球造成的伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene21.png",
+        "AddScore": 500,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "极性不定",
+        "FightEventIds": [
+            97122
+        ]
+    },
+    {
+        "Id": 11901,
+        "Name": "信号干扰",
+        "Des": "闪避需要消耗1个信号球，三消随机获得1个信号球",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene22.png",
+        "AddScore": 1200,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "信号干扰",
+        "FightEventIds": [
+            2230103
+        ]
+    },
+    {
+        "Id": 11902,
+        "Name": "归于一",
+        "Des": "\"每次三消后普通攻击伤害提高120%,三消伤害降低20%(可叠加5次)\"",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformNormal.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene30.png",
+        "AddScore": 1000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "归于一",
+        "FightEventIds": [
+            2230100
+        ]
+    },
+    {
+        "Id": 11903,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 1000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 12001,
+        "Name": "四试炼",
+        "Des": "只有信号球和普攻伤害可以使目标死亡，目标死后满血复活，并免疫致死伤害的类型【红球、黄球、蓝球、普攻】，受到的伤害提高30%（叠加），至多复活3次",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene31.png",
+        "AddScore": 2500,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "四试炼",
+        "FightEventIds": [
+            2230101
+        ]
+    },
+    {
+        "Id": 12002,
+        "Name": "凝固立场",
+        "Des": "敌人将无视超算，在超算空间将受到额外50%伤害",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformHard.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene6.png",
+        "AddScore": 2000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall2.png",
+        "PreviewText": "凝固立场",
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 12003,
+        "Name": "刀刀致命",
+        "Des": "敌我每次收到伤害将额外附加500点额外伤害（受抗性削弱）",
+        "Icon": "Assets/Product/Texture/Image/UiReform/UiReformEasy.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/UiReformScene11.png",
+        "AddScore": 2000,
+        "PreviewIcon": "Assets/Product/Texture/Atlas/UiReform/UiReformSceneSmall3.png",
+        "PreviewText": "刀刀致命",
+        "FightEventIds": [
+            97105
+        ]
+    },
+    {
+        "Id": 10001,
+        "Name": "色谱同调",
+        "Des": "用与敌人<color=#34aff9>相同颜色的球</color>攻击时，能造成一定范围的色彩爆发<color=#34aff9>击飞</color>敌人，并且立刻获得3颗同色球。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformCai.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10002,
+        "Name": "崩雷角斗",
+        "Des": "敌人存在<color=#34aff9>高额的抗性</color>，但只要被击飞到地图边缘的雷霆线圈就会<color=#34aff9>立即死亡</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformCai2.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10003,
+        "Name": "风暴攻势",
+        "Des": "敌人会极其频繁地使用<color=#34aff9>选定的招式</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformFudu.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10004,
+        "Name": "构限增幅",
+        "Des": "敌人的特定招式会附带<color=#34aff9>额外的攻击效果</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformGedou.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10005,
+        "Name": "荷战死斗",
+        "Des": "角色的攻击力和血量固定，且玩家必须要选择一种<color=#34aff9>自我限制或敌方强化</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformDan.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10006,
+        "Name": "织命缠绕",
+        "Des": "敌人的获得<color=#34aff9>高额抗性</color>，且命中角色后，会给角色挂上丝线的<color=#34aff9>负面效果</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33143.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformShan.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10007,
+        "Name": "毫厘疾速",
+        "Des": "角色每次成功<color=#34aff9>极限闪避</color>敌人的攻击，就会对敌人造成高额的<color=#34aff9>反击伤害</color>，并恢复闪避值。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33143.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformShan2.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 10008,
+        "Name": "歼灭指令",
+        "Des": "玩家<color=#34aff9>只能上一个角色</color>进行挑战。露娜攻击时，会<color=#34aff9>召唤特定敌人</color>对角色进行追击。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10044.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFightReformTishen.png",
+        "AddScore": 10,
+        "FightEventIds": [
+            97104
+        ]
+    },
+    {
+        "Id": 20001,
+        "Name": "回球加快",
+        "Des": "每隔一段时间获得信号球。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform2.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230111
+        ]
+    },
+    {
+        "Id": 20002,
+        "Name": "弱点抗性",
+        "Des": "敌人<color=#00b48a>对应属性弱点</color>增加20%，<color=#B14722>其他属性抗性</color>增加10%，消灭5个敌人后获胜。",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform1.png",
+        "AddScore": 0
+    },
+    {
+        "Id": 20003,
+        "Name": "固定属性",
+        "Des": "角色<color=#00b48a>初始生命</color>固定为1000，<color=#00b48a>攻击力</color>固定为10，<color=#00b48a>辅助机攻击力</color>固定为10。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform3.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230115
+        ]
+    },
+    {
+        "Id": 20004,
+        "Name": "召唤物攻击降低抗性",
+        "Des": "敌人<color=#B14722>抗性增加20%</color>，<color=#00b48a>被召唤物攻击</color>抗性下降30%。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform4.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230121
+        ]
+    },
+    {
+        "Id": 20005,
+        "Name": "同色攻击进入特殊状态",
+        "Des": "敌人初始携带颜色，<color=#B14722>增加50%抗性</color>，<color=#00b48a>受到同色伤害</color>后移除13秒，期间<color=#00b48a>被攻击</color>可触发44444点范围伤害。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform5.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230127
+        ]
+    },
+    {
+        "Id": 20006,
+        "Name": "闪避造成伤害",
+        "Des": "<color=#00b48a>极限闪避</color>对敌人造成777777点真实伤害，并恢复500闪避值和1500生命值，但敌人<color=#B14722>不再受到超算空间影响</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12241.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform6.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230131
+        ]
+    },
+    {
+        "Id": 20007,
+        "Name": "闪避恢复",
+        "Des": "闪避值<color=#00b48a>恢复速度增加200%</color>，敌人具有<color=#B14722>霸体</color>效果，<color=#B14722>抗性增加10%</color>。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33143.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform7.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230132
+        ]
+    },
+    {
+        "Id": 20008,
+        "Name": "QTE及登场破盾",
+        "Des": "敌人每5秒获得10%最大生命值<color=#B14722>护盾</color>，受到<color=#00b48a>QTE</color>或<color=#00b48a>登场伤害</color>时清除。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33143.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform8.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230138
+        ]
+    },
+    {
+        "Id": 20009,
+        "Name": "急速",
+        "Des": "<color=#00b48a>QTE冷却时间</color>减少2秒，<color=#00b48a>角色切换冷却时间</color>减少5秒。",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33143.png",
+        "TextIcon": "Assets/Product/Texture/Image/UiReform/BgFight6Reform10.png",
+        "AddScore": 0,
+        "FightEventIds": [
+            2230139
+        ]
+    }
+]

@@ -1,0 +1,69 @@
+[
+    {
+        "Type": 1,
+        "Name": "小飞碟",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerShip.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "TriggerSoundId": 0,
+        "MoveSpeed": 260,
+        "RangeXMin": 0,
+        "RangeXMax": 1000000,
+        "RangeYMin": -30000,
+        "RangeYMax": 779555,
+        "IgnoreStoneConfigKey": "PartnerShipIgnore",
+        "StringParam": [],
+        "IntParam": [
+            373152,
+            843555,
+            150
+        ],
+        "FloatParam": [
+            0.3,
+            3.0,
+            0.5,
+            0.6,
+            1.0
+        ]
+    },
+    {
+        "Type": 2,
+        "Name": "扫描线",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerScan.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "TriggerSoundId": 0,
+        "MoveSpeed": 500,
+        "RangeXMin": 0,
+        "RangeXMax": 1000000,
+        "RangeYMin": -79555,
+        "RangeYMax": 779555,
+        "IgnoreStoneConfigKey": "PartnerScanIgnore",
+        "StringParam": [],
+        "IntParam": [
+            3,
+            2
+        ]
+    },
+    {
+        "Type": 3,
+        "Name": "雷达",
+        "Prefab": "Assets/Product/Ui/ComponentPrefab/GoldenMiner/PartnerRadar.prefab",
+        "TriggerEffect": "Assets/Product/Effect/Prefab/FxUi/FxUiGoldenMinerBattle/FxUiGoldenMinerBattleEliminate.prefab",
+        "TriggerSoundId": 0,
+        "MoveSpeed": 0,
+        "RangeXMin": 0,
+        "RangeXMax": 1000000,
+        "RangeYMin": -79555,
+        "RangeYMax": 779555,
+        "StringParam": [],
+        "IntParam": [
+            633152,
+            843555,
+            3,
+            4
+        ],
+        "FloatParam": [
+            10.0,
+            1.0
+        ]
+    }
+]

@@ -1,0 +1,841 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "展示用",
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Name": "buff名字1",
+        "Condition": 0,
+        "EffectId": 41
+    },
+    {
+        "Id": 23,
+        "Type": 104,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "能量值+5，复活触发",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21081.png",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            -1
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 24,
+        "Type": 104,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "能量值+10，复活触发",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21082.png",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            -1
+        ],
+        "Params": [
+            10
+        ]
+    },
+    {
+        "Id": 25,
+        "Type": 104,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "能量值回满，复活触发",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21083.png",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            -1
+        ],
+        "Params": [
+            9999
+        ]
+    },
+    {
+        "Id": 26,
+        "Type": 105,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "技能cd清0，复活触发",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            -1
+        ],
+        "Params": [
+            26
+        ]
+    },
+    {
+        "Id": 31001,
+        "Type": 2,
+        "RoundDuration": 5,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "碧无霸在必杀释放期间燃起金色之力，免疫所有伤害",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Name": "滔天之力",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            200
+        ],
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 5001,
+        "Type": 1,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "摧毁黑色方的国王",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22110.png",
+        "Name": "毁灭",
+        "Condition": 0,
+        "EffectId": 41
+    },
+    {
+        "Id": 50,
+        "Type": 108,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "每次融合，所有技能当前CD-1",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31071.png",
+        "Name": "士兵加速",
+        "Condition": 0,
+        "EffectId": 41,
+        "Params": [
+            -1
+        ]
+    },
+    {
+        "Id": 51,
+        "Type": 107,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "每次融合，可再次移动",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31072.png",
+        "Name": "骑士跳板",
+        "Condition": 0,
+        "EffectId": 41,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "Type": 16,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "融合时，吞噬棋子并将当前50%血量转移给其他友方棋子（同步增加血量上限）",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png",
+        "Name": "主教献祭",
+        "Condition": 0,
+        "EffectId": 41,
+        "Params": [
+            5000
+        ]
+    },
+    {
+        "Id": 53,
+        "Type": 109,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "融合时免疫1次伤害，免疫成功时，城堡将被销毁",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21021.png",
+        "Name": "城堡守护",
+        "Condition": 0,
+        "EffectId": 41,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "Type": 104,
+        "RoundDuration": 0,
+        "NodeDuration": 0,
+        "MaxOverlays": 1,
+        "Desc": "每次融合，怒气+20点",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13021.png",
+        "Name": "皇后仪式",
+        "Condition": 0,
+        "EffectId": 41,
+        "Params": [
+            20
+        ]
+    },
+    {
+        "Id": 100,
+        "Type": 101,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "初始怒气+30点【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
+        "Name": "盛怒",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            100
+        ],
+        "Params": [
+            30
+        ]
+    },
+    {
+        "Id": 101,
+        "Type": 101,
+        "RoundDuration": 1,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "初始怒气+15点【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11040.png",
+        "Name": "愤怒",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            100
+        ],
+        "Params": [
+            15
+        ]
+    },
+    {
+        "Id": 102,
+        "Type": 102,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "技能消耗的怒气-25点【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png",
+        "Name": "高效",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            100
+        ],
+        "Params": [
+            -25
+        ]
+    },
+    {
+        "Id": 103,
+        "Type": 14,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "处于黑格时，薇拉造成伤害+5【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "Name": "漆黑之力",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            100
+        ],
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 104,
+        "Type": 14,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "处于白格时，薇拉造成伤害+5【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21251.png",
+        "Name": "纯白之力",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            100
+        ],
+        "Params": [
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 105,
+        "Type": 11,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方主教阵亡时，其他友方棋子血量+10【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png",
+        "Name": "牺牲",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            3
+        ],
+        "Params": [
+            7,
+            10
+        ]
+    },
+    {
+        "Id": 106,
+        "Type": 5,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方士兵移动距离+1，同效果不叠加【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33001.png",
+        "Name": "急行军",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 107,
+        "Type": 5,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方士兵移动距离+2，同效果不叠加【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33002.png",
+        "Name": "急行军II",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 108,
+        "Type": 4,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方棋子与堡垒相邻时，免疫伤害【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32161.png",
+        "Name": "壁垒",
+        "Condition": 0,
+        "EffectId": 32,
+        "TargetType": [
+            1,
+            2,
+            3,
+            5
+        ],
+        "Params": [
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "Type": 2,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "所有友方棋子免疫1次伤害【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32061.png",
+        "Name": "防爆",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "Type": 2,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方士兵免疫2次伤害【仅当前关卡】",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32062.png",
+        "Name": "特种兵",
+        "Condition": 0,
+        "EffectId": 42,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 111,
+        "Type": 7,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "友方皇后阵亡后，生成2名1星皇后",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33021.png",
+        "Name": "分裂",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            5
+        ],
+        "Params": [
+            1,
+            2,
+            5
+        ]
+    },
+    {
+        "Id": 1001,
+        "Type": 3,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "皇后存活时，国王免疫伤害",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32001.png",
+        "Name": "守护",
+        "Condition": 0,
+        "EffectId": 22,
+        "TargetType": [
+            6
+        ],
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 1002,
+        "Type": 11,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡时，在场皇后、国王的血量+5",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png",
+        "Name": "牺牲",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            3
+        ],
+        "Params": [
+            5,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 1003,
+        "Type": 8,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "国王受到攻击时，在其周围生成2个士兵",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "Name": "士兵招募",
+        "Condition": 0,
+        "EffectId": 21,
+        "TargetType": [
+            6
+        ],
+        "Params": [
+            2,
+            2,
+            3030602
+        ]
+    },
+    {
+        "Id": 1004,
+        "Type": 4,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "士兵与堡垒相邻时，免疫伤害",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12151.png",
+        "Name": "壁垒",
+        "Condition": 0,
+        "EffectId": 32,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            4,
+            1
+        ]
+    },
+    {
+        "Id": 1005,
+        "Type": 1,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "为周围的士兵提供保护",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png",
+        "Name": "防护",
+        "Condition": 0,
+        "EffectId": 29
+    },
+    {
+        "Id": 1006,
+        "Type": 15,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "远离薇拉！",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11045.png",
+        "Name": "恐惧",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            5
+        ],
+        "Params": [
+            1131003
+        ]
+    },
+    {
+        "Id": 1007,
+        "Type": 10,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "每次移动生成2名士兵",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png",
+        "Name": "士兵招募",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            5
+        ],
+        "Params": [
+            2,
+            2,
+            3040202,
+            5
+        ]
+    },
+    {
+        "Id": 1008,
+        "Type": 11,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡时，在场国王的血量+5",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Name": "牺牲",
+        "Condition": 0,
+        "EffectId": 25,
+        "TargetType": [
+            3
+        ],
+        "Params": [
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 1009,
+        "Type": 7,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后，在周围重新复生但血量减半",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon38381.png",
+        "Name": "卷土",
+        "Condition": 0,
+        "EffectId": 25,
+        "TargetType": [
+            3
+        ],
+        "Params": [
+            1,
+            1,
+            3040308
+        ]
+    },
+    {
+        "Id": 1010,
+        "Type": 5,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "移动距离+1格",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33003.png",
+        "Name": "急行军",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 1011,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3050218,
+            0
+        ]
+    },
+    {
+        "Id": 1012,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3050219,
+            0
+        ]
+    },
+    {
+        "Id": 1013,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3050220,
+            0
+        ]
+    },
+    {
+        "Id": 1014,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3050221,
+            0
+        ]
+    },
+    {
+        "Id": 1016,
+        "Type": 7,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后，在周围重新复生但血量减半",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon38381.png",
+        "Name": "卷土",
+        "Condition": 0,
+        "EffectId": 25,
+        "TargetType": [
+            3
+        ],
+        "Params": [
+            1,
+            1,
+            3140308
+        ]
+    },
+    {
+        "Id": 1017,
+        "Type": 8,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "国王受到攻击时，在其周围生成2个士兵",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "Name": "士兵招募",
+        "Condition": 0,
+        "EffectId": 21,
+        "TargetType": [
+            6
+        ],
+        "Params": [
+            2,
+            2,
+            3130602
+        ]
+    },
+    {
+        "Id": 1018,
+        "Type": 10,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "每次移动生成2名士兵",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11121.png",
+        "Name": "士兵招募",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            5
+        ],
+        "Params": [
+            2,
+            2,
+            3140202,
+            5
+        ]
+    },
+    {
+        "Id": 1020,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3150218,
+            0
+        ]
+    },
+    {
+        "Id": 1021,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3150219,
+            0
+        ]
+    },
+    {
+        "Id": 1022,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3150220,
+            0
+        ]
+    },
+    {
+        "Id": 1023,
+        "Type": 6,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "死亡后转生成未知棋子",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "Name": "转生",
+        "Condition": 0,
+        "EffectId": 41,
+        "TargetType": [
+            1
+        ],
+        "Params": [
+            3150221,
+            0
+        ]
+    },
+    {
+        "Id": 2001,
+        "Type": 1,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "皇后存活时，国王免疫伤害",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32001.png",
+        "Name": "守护",
+        "Condition": 0,
+        "EffectId": 23,
+        "TargetType": [
+            5
+        ]
+    },
+    {
+        "Id": 2002,
+        "Type": 17,
+        "RoundDuration": 0,
+        "NodeDuration": 1,
+        "MaxOverlays": 1,
+        "Desc": "原地不动",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12151.png",
+        "Name": "不动",
+        "Condition": 0,
+        "EffectId": 30
+    }
+]

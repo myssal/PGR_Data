@@ -1,0 +1,556 @@
+[
+    {
+        "Id": 1,
+        "AttType": 1,
+        "SuitName": "列文虎克",
+        "UseType": 1,
+        "SuitEffectGroupId": 1,
+        "Desc": "· 敌方受到的物理伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ELiewenhukeI01001.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的物理伤害提高",
+        "QubitSuitEffectGroupId": 1001,
+        "QubitDesc": "· 敌方受到的物理伤害<color=#17f5cf>+120%</color>\\n· 每隔10秒，向敌方投放<color=#17f5cf>1</color>次【<u>锚定</u>】",
+        "QubitSampleEffectDesc": "· 敌方受到的物理伤害提高\\n· 定期向敌方投放1次【<u>锚定</u>】",
+        "QubitTraitName": [
+            "锚定"
+        ],
+        "QubitTraitDesc": [
+            "召唤锚点对敌方造成物理伤害"
+        ]
+    },
+    {
+        "Id": 2,
+        "AttType": 2,
+        "SuitName": "莎士比亚",
+        "UseType": 1,
+        "SuitEffectGroupId": 2,
+        "Desc": "· 敌方受到的火属性伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EShashibiyaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的火属性伤害提高",
+        "QubitSuitEffectGroupId": 1002,
+        "QubitDesc": "· 敌方受到的火属性伤害<color=#17f5cf>+120%</color>\\n· 每隔10秒，向敌方投放<color=#17f5cf>1</color>次【<u>地火</u>】",
+        "QubitSampleEffectDesc": "· 敌方受到的火属性伤害提高\\n· 定期向敌方投放1次【<u>地火</u>】",
+        "QubitTraitName": [
+            "地火"
+        ],
+        "QubitTraitDesc": [
+            "召唤地火对敌方造成火属性伤害"
+        ]
+    },
+    {
+        "Id": 3,
+        "AttType": 3,
+        "SuitName": "海森",
+        "UseType": 1,
+        "SuitEffectGroupId": 3,
+        "Desc": "· 敌方受到的雷属性伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EHaisenbaoI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的雷属性伤害提高",
+        "QubitSuitEffectGroupId": 1003,
+        "QubitDesc": "· 敌方受到的雷属性伤害<color=#17f5cf>+120%</color>\\n· 每隔10秒，向敌方投放<color=#17f5cf>1</color>次【<u>电球</u>】",
+        "QubitSampleEffectDesc": "· 敌方受到的雷属性伤害提高\\n· 定期向敌方投放1次【<u>电球</u>】",
+        "QubitTraitName": [
+            "电球"
+        ],
+        "QubitTraitDesc": [
+            "召唤电球对敌方造成雷属性伤害"
+        ]
+    },
+    {
+        "Id": 4,
+        "AttType": 4,
+        "SuitName": "辰积原",
+        "UseType": 1,
+        "SuitEffectGroupId": 4,
+        "Desc": "· 敌方受到的冰属性伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EZuwenyuanI01001.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的冰属性伤害提高",
+        "QubitSuitEffectGroupId": 1004,
+        "QubitDesc": "· 敌方受到的冰属性伤害<color=#17f5cf>+120%</color>\\n· 每隔10秒，向敌方投放<color=#17f5cf>1</color>次【<u>霜阵</u>】",
+        "QubitSampleEffectDesc": "· 敌方受到的冰属性伤害提高\\n· 定期向敌方投放1次【<u>霜阵</u>】",
+        "QubitTraitName": [
+            "霜阵"
+        ],
+        "QubitTraitDesc": [
+            "召唤霜阵对敌方造成冰属性伤害，同时有概率冰冻敌方"
+        ]
+    },
+    {
+        "Id": 5,
+        "AttType": 5,
+        "SuitName": "勒梅",
+        "UseType": 1,
+        "SuitEffectGroupId": 5,
+        "Desc": "· 敌方受到的暗属性伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ELemeiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的暗属性伤害提高",
+        "QubitSuitEffectGroupId": 1005,
+        "QubitDesc": "· 敌方受到的暗属性伤害<color=#17f5cf>+120%</color>\\n· 每隔10秒，向敌方投放<color=#17f5cf>1</color>次【<u>漏洞</u>】",
+        "QubitSampleEffectDesc": "· 敌方受到的暗属性伤害提高\\n· 定期向敌方投放1次【<u>漏洞</u>】",
+        "QubitTraitName": [
+            "漏洞"
+        ],
+        "QubitTraitDesc": [
+            "召唤漏洞持续牵引并对敌方造成暗属性伤害"
+        ]
+    },
+    {
+        "Id": 6,
+        "AttType": 0,
+        "SuitName": "狄瑟尔",
+        "UseType": 2,
+        "SuitEffectGroupId": 6,
+        "Desc": "· 消球时，额外消除所有同色信号球\\n· <color=#4a70b9>III</color>冷却移除",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EDiseerI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 消球时，额外消除所有同色信号球\\n· <color=#4a70b9>III</color>冷却移除",
+        "QubitSuitEffectGroupId": 1006,
+        "QubitDesc": "· 消球时，额外消除所有同色信号球\\n· <color=#17f5cf>III</color>冷却移除\\n· 每持有<color=#17f5cf>1</color>个信号球，额外伤害加成<color=#17f5cf>+10%</color>",
+        "QubitSampleEffectDesc": "· 消球时，额外消除所有同色信号球\\n· <color=#17f5cf>III</color>冷却移除\\n· 根据持有信号球数量获得额外伤害加成"
+    },
+    {
+        "Id": 7,
+        "AttType": 0,
+        "SuitName": "布恩",
+        "UseType": 2,
+        "SuitEffectGroupId": 7,
+        "Desc": "· 释放必杀时，<color=#4a70b9>50%</color>概率恢复<color=#4a70b9>100%</color>的消耗能量值",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EBuenI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 释放必杀时，概率恢复消耗的能量",
+        "QubitSuitEffectGroupId": 1007,
+        "QubitDesc": "· 释放必杀时，<color=#17f5cf>50%</color>概率恢复<color=#17f5cf>100%</color>的消耗能量值\\n· 释放必杀时，全队每有<color=#17f5cf>10点</color>能量，必杀伤害<color=#17f5cf>+10%</color>",
+        "QubitSampleEffectDesc": "· 释放必杀时，概率恢复消耗的能量\\n · 释放必杀时，基于全队持有的能量提升必杀伤害"
+    },
+    {
+        "Id": 8,
+        "AttType": 0,
+        "SuitName": "图灵",
+        "UseType": 2,
+        "SuitEffectGroupId": 8,
+        "Desc": "· 【<u>伤口</u>】叠加层数上限<color=#4a70b9>+20</color>\\n·  战斗开始时，对所有敌方施加<color=#4a70b9>20</color>层【<u>伤口</u>】",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 【<u>伤口</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>伤口</u>】",
+        "QubitSuitEffectGroupId": 1008,
+        "QubitDesc": "· 【<u>撕裂</u>】叠加层数上限<color=#17f5cf>+30</color>\\n·  战斗开始时，对所有敌方施加<color=#17f5cf>30</color>层【<u>撕裂</u>】",
+        "QubitSampleEffectDesc": "· 【<u>撕裂</u>】叠加层数提高\\n·  战斗开始时，对所有敌方施加高层数【<u>撕裂</u>】",
+        "TraitName": [
+            "伤口"
+        ],
+        "TraitDesc": [
+            "· 受到普攻伤害时，额外造成伤口层数*<color=#4a70b9>200%</color>的属性伤害（基于当前角色属性），冷却<color=#4a70b9>4</color>秒\\n· 伤口叠加上限为<color=#4a70b9>20</color>层，持续<color=#4a70b9>10</color>秒（重复时刷新）"
+        ],
+        "QubitTraitName": [
+            "撕裂"
+        ],
+        "QubitTraitDesc": [
+            "· 受到普攻伤害时，额外造成撕裂层数*<color=#17f5cf>200%</color>的属性伤害（基于当前角色属性），冷却<color=#17f5cf>4</color>秒\\n· 撕裂叠加上限为<color=#17f5cf>20</color>层"
+        ]
+    },
+    {
+        "Id": 9,
+        "AttType": 0,
+        "SuitName": "夏洛蒂",
+        "UseType": 2,
+        "SuitEffectGroupId": 9,
+        "Desc": "· <color=#4a70b9>II</color>的叠加上限提高至<color=#4a70b9>360%</color>，每层持续时间变更为<color=#4a70b9>999</color>秒\\n· 每溢出<color=#4a70b9>5%</color>暴击率，获得<color=#4a70b9>5%</color>暴击伤害",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXialuodiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 溢出的暴击率按比例转换为暴击伤害\\n· <color=#4a70b9>II</color>效果提高",
+        "QubitSuitEffectGroupId": 1009,
+        "QubitDesc": "· <color=#17f5cf>II</color>的叠加上限提高至<color=#17f5cf>560%</color>，每层持续时间变更为<color=#17f5cf>999</color>秒\\n· 每溢出<color=#17f5cf>5%</color>暴击率，获得<color=#17f5cf>6%</color>暴击伤害",
+        "QubitSampleEffectDesc": "· 溢出的暴击率按比例转换为暴击伤害\\n· <color=#17f5cf>II</color>效果提高"
+    },
+    {
+        "Id": 10,
+        "AttType": 0,
+        "SuitName": "萨曼达",
+        "UseType": 2,
+        "SuitEffectGroupId": 10,
+        "Desc": "· <color=#4a70b9>I</color>算力单元掉落加成提高至<color=#4a70b9>60%</color>\\n· <color=#4a70b9>II</color>伤害加成提高至<color=#4a70b9>20%</color>\\n· <color=#4a70b9>III</color>生命值加成提高至<color=#4a70b9>5%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ESamandaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· <color=#4a70b9>I</color>、<color=#4a70b9>II</color>、<color=#4a70b9>III</color>的效果大幅提高",
+        "QubitSuitEffectGroupId": 1010,
+        "QubitDesc": "· <color=#17f5cf>I</color>算力单元掉落加成提高至<color=#17f5cf>80%</color>\\n· <color=#17f5cf>II</color>伤害加成提高至<color=#17f5cf>33%</color>\\n· <color=#17f5cf>III</color>生命值加成提高至<color=#17f5cf>8%</color>",
+        "QubitSampleEffectDesc": "· <color=#17f5cf>I</color>、<color=#17f5cf>II</color>、<color=#17f5cf>III</color>的效果大幅提高"
+    },
+    {
+        "Id": 11,
+        "AttType": 0,
+        "SuitName": "弗兰",
+        "UseType": 2,
+        "SuitEffectGroupId": 11,
+        "Desc": "· 每<color=#4a70b9>5</color>秒，获得<color=#4a70b9>1</color>层套装内各部位的额外效果\\n· <color=#4a70b9>I</color>伤害减免上限提高至<color=#4a70b9>60%</color>\\n· <color=#4a70b9>II</color>额外伤害加成提高至<color=#4a70b9>120%</color>\\n· <color=#4a70b9>III</color>倍率上限提高至<color=#4a70b9>2400%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFulanI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 定期获得套装内各部位的效果\\n· 各部位效果叠加上限提高",
+        "QubitSuitEffectGroupId": 1011,
+        "QubitDesc": "· 每<color=#17f5cf>5</color>秒，获得<color=#17f5cf>1</color>层套装内各部位的额外效果\\n· <color=#17f5cf>I</color>伤害减免上限提高至<color=#17f5cf>70%</color>\\n· <color=#17f5cf>II</color>额外伤害加成提高至<color=#17f5cf>160%</color>\\n· <color=#17f5cf>III</color>倍率上限提高至<color=#17f5cf>3200%</color>",
+        "QubitSampleEffectDesc": "· 定期获得套装内各部位的效果\\n· 各部位效果叠加上限提高"
+    },
+    {
+        "Id": 12,
+        "AttType": 0,
+        "SuitName": "提法",
+        "UseType": 2,
+        "SuitEffectGroupId": 12,
+        "Desc": "· 每损失<color=#b73a3a>1000</color>点生命值，生命值上限<color=#4a70b9>+200</color>点，至多<color=#4a70b9>20000</color>点",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ETifaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 损失生命值时，提高生命值上限",
+        "QubitSuitEffectGroupId": 1012,
+        "QubitDesc": "· 生命值<color=#17f5cf>+30000</color>",
+        "QubitSampleEffectDesc": "· 生命值大幅提升"
+    },
+    {
+        "Id": 13,
+        "AttType": 0,
+        "SuitName": "萨贺芬",
+        "UseType": 2,
+        "SuitEffectGroupId": 13,
+        "Desc": "· 治疗伤害对场上所有敌方生效\\n· 只有<color=#4a70b9>1</color>名敌方时，伤害值<color=#4a70b9>+100%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFanniI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 治疗伤害对场上所有敌方生效\\n· 敌方数量较少时，伤害值提高",
+        "QubitSuitEffectGroupId": 1013,
+        "QubitDesc": "· 治疗伤害对场上所有敌方生效\\n· 只有<color=#17f5cf>1</color>名敌方时，伤害值<color=#17f5cf>+100%</color>",
+        "QubitSampleEffectDesc": "· 治疗伤害对场上所有敌方生效\\n· 敌方数量较少时，伤害值提高"
+    },
+    {
+        "Id": 14,
+        "AttType": 0,
+        "SuitName": "坎宁安",
+        "UseType": 2,
+        "SuitEffectGroupId": 14,
+        "Desc": "· 闪避恢复效率<color=#4a70b9>+200%</color>\\n· 每次闪避视为极限闪避",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EKanninganI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 闪避恢复效率大幅提高\\n· 每次闪避视为极限闪避",
+        "QubitSuitEffectGroupId": 1014,
+        "QubitDesc": "· 闪避无消耗\\n· 每次闪避视为极限闪避",
+        "QubitSampleEffectDesc": "· 闪避无消耗\\n· 每次闪避视为极限闪避"
+    },
+    {
+        "Id": 15,
+        "AttType": 0,
+        "SuitName": "伏尔泰",
+        "UseType": 2,
+        "SuitEffectGroupId": 15,
+        "Desc": "· 战斗结算时，获得<color=#4a70b9>1</color>层【<u>处决</u>】效果（单局演算内永久累计）\\n· BOSS战提供<color=#4a70b9>4</color>层{0}",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
+        "QubitSuitEffectGroupId": 1015,
+        "QubitDesc": "· 战斗结算时，获得<color=#17f5cf>2</color>层【<u>处决</u>】效果（单局演算内永久累计）\\n· BOSS战提供<color=#17f5cf>5</color>层{0}",
+        "QubitSampleEffectDesc": "· 通过战斗节点时，局内永久获得固定层数的【<u>处决</u>】效果\\n· BOSS战额外提供层数",
+        "TraitName": [
+            "处决"
+        ],
+        "TraitDesc": [
+            "· 对目标造成伤害时，若目标生命值比例低于处决层数，将其秒杀"
+        ],
+        "QubitTraitName": [
+            "处决"
+        ],
+        "QubitTraitDesc": [
+            "· 对目标造成伤害时，若目标生命值比例低于处决层数，将其秒杀"
+        ]
+    },
+    {
+        "Id": 16,
+        "AttType": 0,
+        "SuitName": "希格娜",
+        "UseType": 2,
+        "SuitEffectGroupId": 16,
+        "Desc": "· 敌方【<u>中毒</u>】层数上限<color=#4a70b9>+30</color>\\n· 施加【<u>中毒</u>】时，额外施加<color=#4a70b9>1</color>层",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方【<u>中毒</u>】层数上限提高\\n· 施加【<u>中毒</u>】时，获得额外层数",
+        "QubitSuitEffectGroupId": 1016,
+        "QubitDesc": "· 敌方【<u>剧毒</u>】层数上限<color=#17f5cf>+40</color>\\n· 施加【<u>剧毒</u>】时，额外施加<color=#17f5cf>1</color>层",
+        "QubitSampleEffectDesc": "· 敌方【<u>剧毒</u>】层数上限提高\\n· 施加【<u>剧毒</u>】时，获得额外层数",
+        "TraitName": [
+            "中毒"
+        ],
+        "TraitDesc": [
+            "· 中毒状态下，每秒受到角色攻击力<color=#4a70b9>600%</color>的真实伤害，上限<color=#4a70b9>30</color>层，持续<color=#4a70b9>5</color>秒（重复获取时刷新，每层伤害独立计算）"
+        ],
+        "QubitTraitName": [
+            "剧毒"
+        ],
+        "QubitTraitDesc": [
+            "· 剧毒状态下，每秒受到角色攻击力<color=#17f5cf>600%</color>的真实伤害，上限<color=#17f5cf>30</color>层"
+        ]
+    },
+    {
+        "Id": 17,
+        "AttType": 0,
+        "SuitName": "德珂朵",
+        "UseType": 2,
+        "SuitEffectGroupId": 17,
+        "Desc": "· <color=#4a70b9>I</color>、<color=#4a70b9>II</color>加成效果提高<color=#4a70b9>100%</color>\\n· <color=#4a70b9>III</color>冷却降低至<color=#4a70b9>7</color>秒，护盾持续时间提高至<color=#4a70b9>10</color>秒",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EDekeduoI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 各部位加成效果提高",
+        "QubitSuitEffectGroupId": 1017,
+        "QubitDesc": "· <color=#17f5cf>I</color>、<color=#17f5cf>II</color>加成效果提高<color=#17f5cf>120%</color>\\n· <color=#17f5cf>III</color>冷却降低至<color=#17f5cf>5</color>秒，护盾持续时间提高至<color=#17f5cf>10</color>秒",
+        "QubitSampleEffectDesc": "· 各部位加成效果提高"
+    },
+    {
+        "Id": 18,
+        "AttType": 0,
+        "SuitName": "莫扎特",
+        "UseType": 2,
+        "SuitEffectGroupId": 18,
+        "Desc": "· 任意单段伤害，超过敌方<color=#4a70b9>1%</color>最大生命值时，额外造成<color=#4a70b9>1</color>次伤害值<color=#4a70b9>65%</color>的真实伤害，冷却<color=#4a70b9>2</color>秒\\n· <color=#4a70b9>I</color>、<color=#4a70b9>II</color>、<color=#4a70b9>III</color>达标时额外提供治疗效果",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EMozateI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 任意单段伤害达标时，额外造成等量真实伤害\\n· 各部位达标时额外提供治疗效果",
+        "QubitSuitEffectGroupId": 1018,
+        "QubitDesc": "· 任意单段伤害，超过敌方<color=#17f5cf>1%</color>最大生命值时，额外造成<color=#17f5cf>1</color>次伤害值<color=#17f5cf>85%</color>的真实伤害，冷却<color=#17f5cf>2</color>秒\\n· <color=#17f5cf>I</color>、<color=#17f5cf>II</color>、<color=#17f5cf>III</color>达标时额外提供治疗效果",
+        "QubitSampleEffectDesc": "· 任意单段伤害达标时，额外造成等量真实伤害\\n· 各部位达标时额外提供治疗效果"
+    },
+    {
+        "Id": 19,
+        "AttType": 0,
+        "SuitName": "卢克雷齐娅",
+        "UseType": 2,
+        "SuitEffectGroupId": 19,
+        "Desc": "· 位移时生成持续<color=#4a70b9>2</color>秒的跟随火圈（重复获取时刷新），圈内所有敌方每<color=#4a70b9>0.5</color>秒受到<color=#4a70b9>1</color>次攻击力*<color=#4a70b9>（累计位移距离*10）%</color>的属性伤害（基于当前角色属性），累计位移距离上限<color=#4a70b9>500m</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ELukeleiqiyaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 位移时生成跟随火圈，对周边敌方造成持续伤害",
+        "QubitSuitEffectGroupId": 1019,
+        "QubitDesc": "· 位移时生成持续<color=#4a70b9>2</color>秒的跟随火圈（重复获取时刷新），圈内所有敌方每<color=#4a70b9>0.5</color>秒受到<color=#4a70b9>1</color>次攻击力*<color=#4a70b9>（累计位移距离*20）%</color>的属性伤害（基于当前角色属性），累计位移距离上限<color=#4a70b9>1000m</color>",
+        "QubitSampleEffectDesc": "· 位移时生成跟随火圈，对周边敌方造成持续伤害"
+    },
+    {
+        "Id": 20,
+        "AttType": 0,
+        "SuitName": "艾夏",
+        "UseType": 2,
+        "SuitEffectGroupId": 20,
+        "Desc": "· I、II、III加成效果提高150%（套装上限不受影响）",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EAixiaI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 各部位加成效果提高",
+        "QubitSuitEffectGroupId": 1020,
+        "QubitDesc": "· I、II、III加成效果提高<color=#17f5cf>150%</color>（套装上限不受影响）",
+        "QubitSampleEffectDesc": "· 各部位加成效果提高"
+    },
+    {
+        "Id": 21,
+        "AttType": 0,
+        "SuitName": "雪莱",
+        "UseType": 2,
+        "SuitEffectGroupId": 21,
+        "Desc": "·【<u>机械</u>】每<color=#4a70b9>10</color>级进化一次，解锁更强的形态和效果",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "·【<u>机械</u>】依据等级进化",
+        "QubitSuitEffectGroupId": 1021,
+        "QubitDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
+        "QubitSampleEffectDesc": "·【<u>机械</u>】升至满级，并突破上限进化至终极形态",
+        "TraitName": [
+            "机械"
+        ],
+        "TraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ],
+        "QubitTraitName": [
+            "机械"
+        ],
+        "QubitTraitDesc": [
+            "· 机械跟随角色作战，战中阵亡时无法复活\\n· 机械攻击力和生命值随等级提高\\n· 战斗结算时，机械等级<color=#4a70b9>+1</color>，上限<color=#4a70b9>30</color>级"
+        ]
+    },
+    {
+        "Id": 22,
+        "AttType": 0,
+        "SuitName": "武安君",
+        "UseType": 2,
+        "SuitEffectGroupId": 22,
+        "Desc": "· 持有护盾期间获得霸体\\n· I护盾获取效率提升至15%最大生命值，叠加上限提升至150%最大生命值",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EWuanjunI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 持有护盾期间获得霸体\\n· I获取护盾的效率和叠加上限提高",
+        "QubitSuitEffectGroupId": 1022,
+        "QubitDesc": "· 持有护盾期间获得霸体\\n· I护盾获取效率提升至<color=#17f5cf>25%</color>最大生命值，叠加上限提升至<color=#17f5cf>250%</color>最大生命值",
+        "QubitSampleEffectDesc": "· 持有护盾期间获得霸体\\n· I获取护盾的效率和叠加上限提高"
+    },
+    {
+        "Id": 23,
+        "AttType": 6,
+        "SuitName": "克娄帕特拉",
+        "UseType": 1,
+        "SuitEffectGroupId": 23,
+        "Desc": "· 敌方受到的空属性伤害<color=#4a70b9>+120%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ECleopatraI01002.png",
+        "RecommendDesc": "-推荐驻场角色-",
+        "SimpleEffectDesc": "· 敌方受到的空属性伤害提高",
+        "QubitSuitEffectGroupId": 1023,
+        "QubitDesc": "· 敌方受到的空属性伤害<color=#17f5cf>+120%</color>\\n· 队内每存在<color=#17f5cf>1</color>个不同属性的角色，敌方受到的全属性伤害<color=#17f5cf>+50%</color>",
+        "QubitSampleEffectDesc": "· 敌方受到的空属性伤害提高\\n· 队伍不同属性角色越多，敌方受到的全属性伤害越高"
+    },
+    {
+        "Id": 50,
+        "AttType": 0,
+        "SuitName": "艾琳",
+        "UseType": 3,
+        "SuitEffectGroupId": 50,
+        "Desc": "· 造成伤害时，使敌方受到的全属性伤害<color=#4a70b9>+100%</color>，持续<color=#4a70b9>8</color>秒",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EYileinuoyaI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 造成伤害时，一定时间内使敌方受到的全属性伤害提高",
+        "QubitSuitEffectGroupId": 1050,
+        "QubitDesc": "· 造成伤害时，使敌方受到的全属性伤害<color=#17f5cf>+150%</color>（重复触发不叠加）",
+        "QubitSampleEffectDesc": "· 造成伤害时，使敌方受到的全属性伤害提高"
+    },
+    {
+        "Id": 51,
+        "AttType": 0,
+        "SuitName": "黎塞留",
+        "UseType": 3,
+        "SuitEffectGroupId": 51,
+        "Desc": "· 治疗目标时，目标的攻击力<color=#4a70b9>+150%</color>，持续8秒",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ELisailiuI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 治疗目标时，一定时间内目标攻击力大幅提高",
+        "QubitSuitEffectGroupId": 1051,
+        "QubitDesc": "· 治疗目标时，目标的攻击力<color=#17f5cf>+150%</color>（重复触发不叠加）",
+        "QubitSampleEffectDesc": "· 治疗目标时，目标攻击力大幅提高"
+    },
+    {
+        "Id": 52,
+        "AttType": 0,
+        "SuitName": "艾克",
+        "UseType": 3,
+        "SuitEffectGroupId": 52,
+        "Desc": "· 下一名入场角色也会获得套装内各部位的效果（套装效果不计入）\\n· <color=#4a70b9>II</color>效果提升至<color=#4a70b9>200%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EAikeI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 下一名入场角色也会获得套装内各部位的效果（套装效果不计入）\\n· <color=#4a70b9>II</color>效果提升",
+        "QubitSuitEffectGroupId": 1052,
+        "QubitDesc": "· 下一名入场角色也会获得套装内各部位的效果（套装效果不计入）\\n· <color=#17f5cf>II</color>效果提升至<color=#17f5cf>300%</color>",
+        "QubitSampleEffectDesc": "· 下一名入场角色也会获得套装内各部位的效果（套装效果不计入）\\n· <color=#17f5cf>II</color>效果提升"
+    },
+    {
+        "Id": 53,
+        "AttType": 0,
+        "SuitName": "爱芙",
+        "UseType": 3,
+        "SuitEffectGroupId": 53,
+        "Desc": "· 出场时，重置后台角色切人冷却时间",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EAifuI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 出场时，重置后台角色切人冷却时间",
+        "QubitSuitEffectGroupId": 1053,
+        "QubitDesc": "· 出场时，重置后台角色切人冷却时间\\n· 触发超算时，全队额外伤害加成<color=#17f5cf>+100%</color>，持续<color=#17f5cf>15</color>秒",
+        "QubitSampleEffectDesc": "· 出场时，重置后台角色切人冷却时间\\n· 触发超算时，全队获得额外伤害加成"
+    },
+    {
+        "Id": 54,
+        "AttType": 0,
+        "SuitName": "伊丽莎白",
+        "UseType": 3,
+        "SuitEffectGroupId": 54,
+        "Desc": "· <color=#4a70b9>I</color>的加成比例提高至<color=#4a70b9>100%</color>\\n· 场上角色受到致命伤害时，替代场上角色<color=#b73a3a>死亡</color>，并使场上角色在<color=#4a70b9>2</color>秒内免疫所有伤害，恢复<color=#4a70b9>100%</color>生命值",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EYilishabaiI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· <color=#4a70b9>I</color>和<color=#4a70b9>II</color>的加成比例提高\\n· 场上角色受到致命伤害时，替代场上角色死亡，并恢复场上角色生命值",
+        "QubitSuitEffectGroupId": 1054,
+        "QubitDesc": "· <color=#17f5cf>I</color>的加成比例提高至<color=#17f5cf>150%</color>\\n· 场上角色受到致命伤害时，替代场上角色<color=#b73a3a>死亡</color>，并使场上角色在<color=#17f5cf>10</color>秒内免疫所有伤害，恢复<color=#17f5cf>100%</color>生命值",
+        "QubitSampleEffectDesc": "· <color=#17f5cf>I</color>和<color=#17f5cf>II</color>的加成比例提高\\n· 场上角色受到致命伤害时，替代场上角色死亡，并恢复场上角色生命值"
+    },
+    {
+        "Id": 55,
+        "AttType": 0,
+        "SuitName": "尤尼梅特",
+        "UseType": 3,
+        "SuitEffectGroupId": 55,
+        "Desc": "· 队伍角色的职业均不相同时，额外获得<color=#4a70b9>1</color>次各部位加成效果",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EYounimeiteI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 队伍角色的职业均不相同时，额外获得<color=#4a70b9>1</color>次各部位加成效果",
+        "QubitSuitEffectGroupId": 1055,
+        "QubitDesc": "· 队伍角色的职业均不相同时，额外获得<color=#17f5cf>2</color>次各部位加成效果",
+        "QubitSampleEffectDesc": "· 队伍角色的职业均不相同时，额外获得<color=#17f5cf>2</color>次各部位加成效果"
+    },
+    {
+        "Id": 56,
+        "AttType": 0,
+        "SuitName": "爱丽丝",
+        "UseType": 3,
+        "SuitEffectGroupId": 56,
+        "Desc": "· 处于后台时，生命值上限每秒<color=#4a70b9>+900</color>点，上限<color=#4a70b9>9000</color>点",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EAliceI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 处于后台时，持续提高自身生命值上限",
+        "QubitSuitEffectGroupId": 1056,
+        "QubitDesc": "· 处于后台时，生命值上限每秒<color=#17f5cf>+1200</color>点，上限<color=#17f5cf>12000</color>点",
+        "QubitSampleEffectDesc": "· 处于后台时，持续大幅提高自身生命值上限"
+    },
+    {
+        "Id": 57,
+        "AttType": 0,
+        "SuitName": "歌罗达",
+        "UseType": 3,
+        "SuitEffectGroupId": 57,
+        "Desc": "· 导弹支援数目翻倍，伤害倍率提高至<color=#4a70b9>1777%</color>\\n· 导弹支援有<color=#4a70b9>77%</color>的概率将伤害倍率提高至<color=#4a70b9>7777%</color>",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EGeluodaI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 导弹支援能力Up!\\n· 导弹支援有概率获得超级Up!!!",
+        "QubitSuitEffectGroupId": 1057,
+        "QubitDesc": "· 导弹支援数目翻倍，伤害倍率提高至<color=#17f5cf>2333%</color>\\n· 导弹支援有<color=#17f5cf>77%</color>的概率将伤害倍率提高至<color=#17f5cf>11111%</color>",
+        "QubitSampleEffectDesc": "· 导弹支援能力Up!\\n· 导弹支援有概率获得究极Up!!!!!!"
+    },
+    {
+        "Id": 58,
+        "AttType": 0,
+        "SuitName": "嘉莉埃妮",
+        "UseType": 3,
+        "SuitEffectGroupId": 58,
+        "Desc": "· <color=#4a70b9>I</color>切换加成提升至<color=#4a70b9>40%</color>，叠加上限提升至<color=#4a70b9>160%</color>\\n· <color=#4a70b9>II</color>效果全队生效",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/ELongmeierI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· <color=#4a70b9>I</color>切换加成提高\\n· <color=#4a70b9>II</color>效果全队生效",
+        "QubitSuitEffectGroupId": 1058,
+        "QubitDesc": "· <color=#17f5cf>I</color>切换加成提升至<color=#17f5cf>50%</color>，叠加上限提升至<color=#17f5cf>200%</color>\\n· <color=#17f5cf>II</color>效果全队生效",
+        "QubitSampleEffectDesc": "· <color=#17f5cf>I</color>切换加成提高\\n· <color=#17f5cf>II</color>效果全队生效"
+    },
+    {
+        "Id": 59,
+        "AttType": 0,
+        "SuitName": "阿尔冯斯",
+        "UseType": 3,
+        "SuitEffectGroupId": 59,
+        "Desc": "· 切换入场时，离场角色记录场上角色 <color=#4a70b9>10</color>秒内造成的伤害\\n·离场角色切换入场时，对场上所有敌方造成伤害记录值 <color=#4a70b9>90%</color>的真实伤害（造成伤害后记录值清空）",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EAlphonseI01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 切换入场时，离场角色记录场上角色造成的伤害\\n· 离场角色切换入场时，基于记录值对场上所有敌方造成真实伤害",
+        "QubitSuitEffectGroupId": 1059,
+        "QubitDesc": "· 切换入场时，离场角色记录场上角色 <color=#17f5cf>10</color>秒内造成的伤害\\n·离场角色切换入场时，对场上所有敌方造成伤害记录值 <color=#17f5cf>130%</color>的真实伤害（造成伤害后记录值清空）",
+        "QubitSampleEffectDesc": "· 切换入场时，离场角色记录场上角色造成的伤害\\n· 离场角色切换入场时，基于记录值对场上所有敌方造成真实伤害"
+    },
+    {
+        "Id": 60,
+        "AttType": 0,
+        "SuitName": "科亚",
+        "UseType": 3,
+        "SuitEffectGroupId": 60,
+        "Desc": "· 记录缓速领域持续期间，内部所有敌方承受的伤害值，领域结束后，对内部所有敌方造成记录值*<color=#4a70b9>20%</color>的真实伤害",
+        "Icon": "Assets/Product/Texture/Image/RoleWaferBag/EKeya01002.png",
+        "RecommendDesc": "-推荐后台角色-",
+        "SimpleEffectDesc": "· 记录缓速领域持续期间，内部所有敌方承受的伤害值，领域结束后，基于记录值对内部所有敌方造成真实伤害",
+        "QubitSuitEffectGroupId": 1060,
+        "QubitDesc": "· 记录缓速领域持续期间，内部所有敌方承受的伤害值，领域结束后，对内部所有敌方造成记录值*<color=#17f5cf>40%</color>的真实伤害",
+        "QubitSampleEffectDesc": "· 记录缓速领域持续期间，内部所有敌方承受的伤害值，领域结束后，基于记录值对内部所有敌方造成真实伤害"
+    }
+]

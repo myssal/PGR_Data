@@ -1,0 +1,6667 @@
+[
+    {
+        "Id": 10101,
+        "Content": "指挥官，我在这里。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10102,
+        "Content": "夏天吗？我很喜欢这种暖融融的感觉……不过只要和灰鸦的大家在一起，无论是哪个季节，这种温暖都一直存在。指挥官呢，也会这样想吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10103,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10103,
+        "Content": "有点热？嗯……我记得在那边还有冰镇西瓜和冷饮，丽芙那里应该也准备了降暑的东西。不，不行，如果我来降温的话，指挥官会被冻伤的！",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10104,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10104,
+        "Content": "呼……也许可以吃点冰淇淋降温……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10105,
+        "Content": "那边好像还有烧烤架，这种户外假期应该会比较适合做野餐吧？不过丽芙嘱咐我要谨慎对待这个烧烤架，不知道是什么意思……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10106,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10106,
+        "Content": "指挥官，不知道你注意到了没有，我们刚刚踏上这座小岛在沙滩上留下的脚印，现在都已经被大海冲刷抹去了……但大海会记得，我也会记得。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10107,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10107,
+        "Content": "已经规划好我们的假期该如何度过了吗，指挥官。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10102,
+            10105,
+            10108
+        ]
+    },
+    {
+        "Id": 10108,
+        "Content": "最近我会一直在这儿的，指挥官。",
+        "BehaviorId": "SummerNpc_Luxiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10201,
+        "Content": "指挥官，有什么需要我帮忙的吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10202,
+        "Content": "在抵达这座海岛之前，我已经全方位扫描侦测过了，没有任何问题，岛上唯一可能发生危险的地方是……那边的烧烤架。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10203,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10203,
+        "Content": "指挥官也注意到那个舞台了吗？上面还有乐器，据说那是专门提供给游客的，指挥官想要去试试吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10204,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10204,
+        "Content": "即便是孤岛，这里也足够温暖了。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10205,
+        "Content": "我吗？如果可以的话，我想带一颗椰子回去试种一下，不知道在太空里椰子树会变成什么样子……不，当然不会直接种在我们的准备室里的！",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10206,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10206,
+        "Content": "我觉得……很安心。海风、阳光，还有温热的沙滩，会让我觉得很放松……指挥官也有这样的感觉吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10207,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10207,
+        "Content": "和指挥官共同度过的这段假期，我会牢记在心。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于丽芙",
+            "再见"
+        ],
+        "SkipIds": [
+            10202,
+            10205,
+            10208
+        ]
+    },
+    {
+        "Id": 10208,
+        "Content": "再见，指挥官，我一直都在这里。",
+        "BehaviorId": "SummerNpc_Lifu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10301,
+        "Content": "你好啊，指挥官。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10302,
+        "Content": "我记忆中的夏季要么无时无刻飘荡着足够让人窒息的灰尘，要么是几十天也下不完的一场雨，都不如这里宽敞明亮，最重要的是，这里很舒服。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10303,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10303,
+        "Content": "你看过《盛夏大乱斗》吗？这是一部黄金时代的动画，感觉很适合在这种放松热闹的时候看一看。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10304,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10304,
+        "Content": "像这样能安稳地度过一个夏天，我就已经很高兴了。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10305,
+        "Content": "那边！那是海鸥吧。虽说同样只是见过插画，但还是能一眼就认出来。多好啊，能自由地在蓝天和大海间飞翔……当然，这也是我的愿望之一。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10306,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10306,
+        "Content": "其实我关于大海的第一印象还是挺糟糕的，不过现在终于有机会像这样安静地看看大海了……不知道大海的那一边是什么呢？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10307,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10307,
+        "Content": "去看看吧，你眼中的风景，想必也是我想看的。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10302,
+            10305,
+            10308
+        ]
+    },
+    {
+        "Id": 10308,
+        "Content": "再见，指挥官。",
+        "BehaviorId": "SummerNpc_Nuoan_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10401,
+        "Content": "唔……有什么事吗，指挥官？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10402,
+        "Content": "春困夏乏，秋盹冬眠，你看，不存在不适合睡觉的季节……唔，你也这么觉得么？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10403,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10403,
+        "Content": "你喜欢这个季节么？这样的季节就是容易让人提不起精神啊……嗯？不必了，我不太想再去其他地方了，这里很舒服，你替我去吧……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10404,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10404,
+        "Content": "至少这里阳光还不错，不是吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10405,
+        "Content": "之前倒是也做过海岸线的侦查工作，不过像今天这样放松还是第一次……嗯？假期吗？那我先去睡一会……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10406,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10406,
+        "Content": "说起这个，这种沙滩椅睡觉很舒服，尤其是在有海风的时候……你要不要也试一下？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10407,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10407,
+        "Content": "唔，神威一直缠着我，要我陪他去海里玩……什么，你没看到神威在哪儿？谢天谢地……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于海岛",
+            "再见"
+        ],
+        "SkipIds": [
+            10402,
+            10405,
+            10408
+        ]
+    },
+    {
+        "Id": 10408,
+        "Content": "晚安……哦不是，回见。",
+        "BehaviorId": "SummerNpc_Wanshi_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10501,
+        "Content": "您好，指挥官阁下。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10502,
+        "Content": "在我的回忆里，大海意味着更危险的任务，但信仰和使命如同礁石，不可动摇……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10503,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10503,
+        "Content": "您是怎样看待大海的呢？毕竟大海也不会一直像这样风平浪静，也会有惊涛骇浪令人恐惧的一面……对于那时的大海，您还会抱有和今天一样的心情吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10504,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10504,
+        "Content": "这样的大海，还真是令人怀念。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10505,
+        "Content": "关于机体……您会在意这个吗？她们都是我的一部分，但我想用更轻松的样子度过闲暇时光。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10506,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10506,
+        "Content": "对清理部队而言，待命的片刻歇息就相当于假期了……执行部队呢？指挥官阁下平时也很少休假吧？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10507,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10507,
+        "Content": "我会在这儿的看着的，指挥官阁下，无论是大海还是您。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于大海",
+            "关于比安卡",
+            "再见"
+        ],
+        "SkipIds": [
+            10502,
+            10505,
+            10508
+        ]
+    },
+    {
+        "Id": 10508,
+        "Content": "回见，指挥官阁下。",
+        "BehaviorId": "SummerNpc_Bianka_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10601,
+        "Content": "啊！指挥官！又见面了！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10602,
+        "Content": "指挥官？那个，你看到那边的小吃摊了吗？对，那个叫汉堡的东西……啊，是叫快餐吗？闻起来好香……不知道味道怎么样。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10603,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10603,
+        "Content": "九龙夏天里好吃的可多了！糖水啊，凉粉啊，还有各种水果，听说之前还有一种叫冰碗的小吃，可惜我没吃过……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10604,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10604,
+        "Content": "有机会的话，一定要带指挥官尝尝九龙夏天的小吃！",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10605,
+        "Content": "在夜航船上的时候，每天都能看到大海，不如说视野里除了大海也没有别的了……嗯……我也有点说不清，总而言之，我还是更喜欢这里的大海！",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10606,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10606,
+        "Content": "说起来，海上夜晚的星空和空中花园看到的是不一样的，指挥官应该还没见过吧？等到晚上，我们一起看吧！",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10607,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10607,
+        "Content": "指挥官，如果去海里玩的话要带上我哦。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于小吃",
+            "关于大海",
+            "再见"
+        ],
+        "SkipIds": [
+            10602,
+            10605,
+            10608
+        ]
+    },
+    {
+        "Id": 10608,
+        "Content": "再见啦，指挥官。",
+        "BehaviorId": "SummerNpc_Pulao_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10701,
+        "Content": "嗯？原来你在这儿啊。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10702,
+        "Content": "经验告诉我，那边的沙滩里藏着几个感染体，当然，天上掉下来几个升格者这种事也有可能……嗯，没错，就是这个表情，你可以再紧张一些，没关系。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10703,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10703,
+        "Content": "指挥官，帮我去拿一下那边的冷饮。你也可以给自己拿一份，但你最好不要拿错，先说好，我可没有救治人类错喝冷却液的经验。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10704,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10704,
+        "Content": "这座小岛还挺适合度假的，而且也没那么无聊。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10705,
+        "Content": "大海、夏天和你联系在一起的时候意味着什么，你应该记得吧？啧……你最好是还记得。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10706,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10706,
+        "Content": "有时候我在想，要不要像以前一样，跟着季节来改换自己的衣服，或者说，涂装。毕竟夏天可不是一个安稳的季节呢，你说是吧？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10707,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10707,
+        "Content": "想要和我分享这片阴凉，就得付出一些代价……你要想好哦？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            10702,
+            10705,
+            10708
+        ]
+    },
+    {
+        "Id": 10708,
+        "Content": "嗯？这就要走了吗？",
+        "BehaviorId": "SummerNpc_Weila_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10801,
+        "Content": "您好，指挥。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10802,
+        "Content": "从大海发出的气息，才能将我们的灵魂归还。您也能感受到吧，指挥，就是那从五浔深处吹来的海风……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10803,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10803,
+        "Content": "也许只有可怕的暴风雨过后，太阳重新为广袤的世界洒下光芒时，我们才能记起共同经历过的盛夏吧。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10804,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10804,
+        "Content": "暴风雨已然退去，能让我们在这座小岛上分享阳光。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10805,
+        "Content": "是的，当然，我们都有上场的时候，也都有下场的时候。我只是很怀念这种感觉，但这些乐器却……如此陌生。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10806,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10806,
+        "Content": "您想听些什么吗？也许我可以试着演奏些什么，但舞会上的音乐大多无法独奏……指挥想试试吗？",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10807,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10807,
+        "Content": "一个舞台令我无法隐藏，一个舞台令我在场。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于舞台",
+            "再见"
+        ],
+        "SkipIds": [
+            10802,
+            10805,
+            10808
+        ]
+    },
+    {
+        "Id": 10808,
+        "Content": "安好，指挥。",
+        "BehaviorId": "SummerNpc_Sailinna_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 10901,
+        "Content": "你好，指挥官，有什么需要我帮忙的吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10902,
+        "Content": "说起来，我们都已经很久没有像这样特意闲下来休息一阵子了吧，“适时修整、以退为进也是一种战术”，我记得当时法奥斯的教官们也是这样说的。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10903,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10903,
+        "Content": "如果一年到头总是假期，那么假期恐怕也要和工作一样了吧？也正因如此，如今的假期才显得这么珍贵。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10904,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10904,
+        "Content": "如果想要歇息一下，我随时都在。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10905,
+        "Content": "这样突如其来的休息反而让我有些无所适从，一时还没有什么规划……指挥官有什么计划吗？我想听听您的建议。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10906,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10906,
+        "Content": "……嗯？抱歉，刚刚有些出神了，没有注意到您在叫我。闲暇时，偶尔我会像这样放空自己，什么也不想。这也是放松的方法，您也可以试试，指挥官。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 10907,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10907,
+        "Content": "为队员和自己安排合适的休息，这自然也是指挥官和队长职责的一部分。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "关于库洛姆",
+            "再见"
+        ],
+        "SkipIds": [
+            10902,
+            10905,
+            10908
+        ]
+    },
+    {
+        "Id": 10908,
+        "Content": "再见，指挥官。",
+        "BehaviorId": "SummerNpc_Kuluomu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 11001,
+        "Content": "怎么？开始享受假期了吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11002,
+        "Content": "这里的环境确实很适合休假，感觉还挺不错的，……你要不要试试在这里躺一会？既然是休假，也就没必要顾忌那么多了吧。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 11003,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11003,
+        "Content": "……不必了，我在这里吹吹海风就很好了。如果你胃口足够好的话，那边好像还有小吃什么的，不过不知道味道怎么样。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 11004,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11004,
+        "Content": "我很好奇那个舞台的能源是从哪儿来的，总不会是什么夏日神秘能量吧……",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11005,
+        "Content": "你说我吗？对我来说没什么喜欢不喜欢的，只是在这里看看海，会觉得很安心，时间也一不留神就过去了。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 11006,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11006,
+        "Content": "你还真是奇怪，这是你的假期，而你却这么关心别人的想法……我知道了，我很好，如果你想的话，我还可以变得更好些。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 11007,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11007,
+        "Content": "你可以把这次休假理解成我们共同的假期，因为我也是这么想的。",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于海岛",
+            "关于里",
+            "再见"
+        ],
+        "SkipIds": [
+            11002,
+            11005,
+            11008
+        ]
+    },
+    {
+        "Id": 11008,
+        "Content": "没有其他的事了吗？也好。",
+        "BehaviorId": "SummerNpc_Li_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30001,
+        "Content": "你来了啊。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于赛利卡",
+            "再见"
+        ],
+        "SkipIds": [
+            30002,
+            30004
+        ]
+    },
+    {
+        "Id": 30002,
+        "Content": "我为什么在这里？如果我说，是来监督联合指挥局的工作，你会有什么想法？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30003,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30003,
+        "Content": "——别紧张，说是监督，其实只是偶尔过来看看罢了。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于赛利卡",
+            "再见"
+        ],
+        "SkipIds": [
+            30002,
+            30004
+        ]
+    },
+    {
+        "Id": 30004,
+        "Content": "最近我会一直在这里的，可别故意躲着我哦~",
+        "BehaviorId": "CommonNpc_Sailika_Endtalk",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30101,
+        "Content": "指挥官，新年快乐。",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "露西亚怎么在这里？",
+            "要尝尝这里的菜肴吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30102,
+            30107,
+            30110
+        ]
+    },
+    {
+        "Id": 30102,
+        "Content": "今天是新年的第一天，本来应该是休息日。早上我和丽芙去过你的休息室，但是你已经出门了。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30103,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30103,
+        "Content": "里猜这个时候，你要么去指挥局和其他指挥官交流了，要么就在靶场练习。我去过靶场，所以来指挥局看看你在不在这里。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30104,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30104,
+        "Content": "不是什么要紧的事。今天晚上，我、丽芙还有里准备一起回顾一下这一整年来灰鸦的改变，指挥官当然也是不可或缺的人。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30105,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30105,
+        "Content": "不是讨论战术，难得有机会，灰鸦的大家能够轻松地坐下来聊聊。丽芙和我会提前准备好一些点心的。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30106,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30106,
+        "Content": "虽然可以通过终端给指挥官留言，但是我更希望能够当面邀请，应该怎么说……更有仪式感？总之，指挥官可以期待一下。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "露西亚怎么在这里？",
+            "要尝尝这里的菜肴吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30102,
+            30107,
+            30110
+        ]
+    },
+    {
+        "Id": 30107,
+        "Content": "谢谢，指挥官，不用了。我只是对菜谱有些好奇，如果有机会能够进行一些学习就好了。",
+        "BehaviorId": "No_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30108,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30108,
+        "Content": "最近我认识到，或许烹饪并不是调料越多就能让食材变得更加美味，但是要将认知落实到实践，还需要继续努力。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30109,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30109,
+        "Content": "等到能拿出自信的作品那天，我一定会邀请指挥官作为第一位品尝者，请放心。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "露西亚怎么在这里？",
+            "要尝尝这里的菜肴吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30102,
+            30106,
+            30110
+        ]
+    },
+    {
+        "Id": 30110,
+        "Content": "好的，指挥官你先忙。",
+        "BehaviorId": "SpringNpc_Luxiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30201,
+        "Content": "……新年快乐。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对做风筝有兴趣吗？",
+            "难得的休息日……",
+            "再见"
+        ],
+        "SkipIds": [
+            30202,
+            30206,
+            30210
+        ]
+    },
+    {
+        "Id": 30202,
+        "Content": "小时候做过一次，可惜虽然做好了风筝，但是莫瑞那时却不能像其他小孩一样可以随意地在室外跑来跑去。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30203,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30203,
+        "Content": "过来看到这里有很多材料和样品，一时间还挺怀念的。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30204,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30204,
+        "Content": "……你是想说你想试试吗？我倒是没什么，只是这几天空中花园的天气都是降雪吧，不是放飞的最佳条件。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30205,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30205,
+        "Content": "你说的很对，放风筝确实不急，况且也不一定一次就能做成功。不过我会和你一起把它调整到最优为止。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对做风筝有兴趣吗？",
+            "难得的休息日……",
+            "再见"
+        ],
+        "SkipIds": [
+            30202,
+            30206,
+            30210
+        ]
+    },
+    {
+        "Id": 30206,
+        "Content": "是的，正是因为是休息日，我才出来随便走走。不要误会，我不是特地来这里找你的。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30207,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30207,
+        "Content": "早上和莫瑞聊了一会儿，准备回去的休息室的时候，想到某个不会劳逸结合的人，就想着绕路过来看看。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30208,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30208,
+        "Content": "果然，在这里遇见了你。我说，记得提醒别人今天是休息，怎么自己就不知道呢？",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30209,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30209,
+        "Content": "……只是过来散散步？……就假设你说的是实话吧。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对做风筝有兴趣吗？",
+            "难得的休息日……",
+            "再见"
+        ],
+        "SkipIds": [
+            30202,
+            30206,
+            30210
+        ]
+    },
+    {
+        "Id": 30210,
+        "Content": "嗯。",
+        "BehaviorId": "SpringNpc_Li_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30301,
+        "Content": "新年的第一场雪，指挥官已经好好看过了吗？",
+        "BehaviorId": "Talk_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "丽芙，新年快乐。",
+            "丽芙今日的运势如何？",
+            "再见"
+        ],
+        "SkipIds": [
+            30302,
+            30307,
+            30310
+        ]
+    },
+    {
+        "Id": 30302,
+        "Content": "新年快乐，指挥官。啊，本该由我先祝福指挥官才对……",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30303,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30303,
+        "Content": "指挥官，从一年新开始的时候就皱着眉头可不行，前几天小队聚会夜话的时候也是……",
+        "BehaviorId": "No_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30304,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30304,
+        "Content": "我知道指挥官在担忧许多事情，但是就像露西亚那天晚上说的，只要我们还在一起，就没有什么是无法克服的。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30305,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30305,
+        "Content": "如果真的很苦恼的话，就再依靠丽芙一些吧。今年的我，一定会比过去更加可靠。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30306,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30306,
+        "Content": "嗯，就是这样的笑容。让指挥官露出轻松的表情，是大家心照不宣的期望。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "丽芙，新年快乐。",
+            "丽芙今日的运势如何？",
+            "再见"
+        ],
+        "SkipIds": [
+            30302,
+            30307,
+            30310
+        ]
+    },
+    {
+        "Id": 30307,
+        "Content": "刚刚不小心按到机器的按钮，被指挥官看到了吗？真是的……",
+        "BehaviorId": "Think_Cry",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30308,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30308,
+        "Content": "票据上写着中吉，宜大扫除，忌……什么都想要。太贪心果然是不可以的。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30309,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30309,
+        "Content": "那么今天，从现在开始，丽芙就只看着眼前的东西好了，雪景，还有——身边的大家。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "丽芙，新年快乐。",
+            "丽芙今日的运势如何？",
+            "再见"
+        ],
+        "SkipIds": [
+            30302,
+            30307,
+            30310
+        ]
+    },
+    {
+        "Id": 30310,
+        "Content": "好的，指挥官，晚些见。",
+        "BehaviorId": "SpringNpc_Lifu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30401,
+        "Content": "……你的表情，需要这么吃惊吗？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "你怎么会在这里！",
+            "没有想到，你会对观赏竹有兴趣。",
+            "再见"
+        ],
+        "SkipIds": [
+            30402,
+            30407,
+            30410
+        ]
+    },
+    {
+        "Id": 30402,
+        "Content": "在你的逻辑里，“新年”不应该正是问候亲友的时候吗？",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30403,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30403,
+        "Content": "还是说，我对你的认识存在偏颇，你其实完全不企盼任何这样的回应？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30404,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30404,
+        "Content": "不用这么局促，我现在还能够很好地压制我的力量，我也没有计划在今天让这艘人类方舟沉没。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30405,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30405,
+        "Content": "……围巾？没有准备只好用这个作为新年礼物？我不是为了向你索要利益而来。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30406,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30406,
+        "Content": "只是……即便你有你的选择，我有我的道路，我依然保有偶尔拒绝命运束缚的自由。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "你怎么会在这里！",
+            "没有想到，你会对观赏竹有兴趣。",
+            "再见"
+        ],
+        "SkipIds": [
+            30402,
+            30407,
+            30410
+        ]
+    },
+    {
+        "Id": 30407,
+        "Content": "不，只是这里的一切，都无一例外地带着“改良”的味道，无论是植物还是天气，都和地面上能感受到的不同而已。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30408,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30408,
+        "Content": "记住它们的气息吧。下一次，或许降雪的时候，如果我碰巧看到了竹林，我会来把你带过去。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30409,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30409,
+        "Content": "这样你就能知道，我感受到的差别到底在哪里。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "你怎么会在这里！",
+            "没有想到，你会对观赏竹有兴趣。",
+            "再见"
+        ],
+        "SkipIds": [
+            30402,
+            30407,
+            30410
+        ]
+    },
+    {
+        "Id": 30410,
+        "Content": "你走就行了，要找你的时候，我自然能找到你。",
+        "BehaviorId": "SpringNpc_LuxiyaR3_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30501,
+        "Content": "贵安，指挥官阁下，以及——新年快乐。",
+        "BehaviorId": "Talk_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对烟花有兴趣吗？",
+            "这几天也在忙吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30502,
+            30506,
+            30509
+        ]
+    },
+    {
+        "Id": 30502,
+        "Content": "之前卡列尼娜有时会让我帮助她测试一些爆破性的小发明，我记得其中有一种，就和烟花类似。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30503,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30503,
+        "Content": "不过不是在地上燃放，而是卡列投掷到空中之后，再由我用箭发动。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30504,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30504,
+        "Content": "为了能观测作用范围，卡列尼娜在里面添加了颜色鲜艳的粉末。虽然是武器测试，但不得不承认，爆破的场景和烟花一样美丽呢。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30505,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30505,
+        "Content": "如果指挥官阁下也有兴趣的话，即使不是节庆时期，我也能借助我的箭再现彩焰横空的景象。当然，我会拜托卡列尼娜把用量控制在观赏用的范畴之内。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对烟花有兴趣吗？",
+            "这几天也在忙吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30502,
+            30506,
+            30509
+        ]
+    },
+    {
+        "Id": 30506,
+        "Content": "清理部队需要时刻有人待命，作为队长，自然应当以身作则。不过这几日并没有什么任务，所以实际上也算是休整时间。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30507,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30507,
+        "Content": "不过闲暇之余，我会抽时间进行一些祝祷。毕竟现在是周而复始，万物更新的时节吧？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30508,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30508,
+        "Content": "况且这几日空中花园都安排了降雪，雪景本身，也会让我想起许多值得祷念的回忆。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "对烟花有兴趣吗？",
+            "这几天也在忙吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30502,
+            30506,
+            30509
+        ]
+    },
+    {
+        "Id": 30509,
+        "Content": "嗯，再见，指挥官阁下。",
+        "BehaviorId": "SpringNpc_Bianka_Endtalk",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30601,
+        "Content": "啊，指挥官！新年快乐~",
+        "BehaviorId": "Greet_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "蒲牢在写什么？",
+            "今天不放假吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30602,
+            30606,
+            30610
+        ]
+    },
+    {
+        "Id": 30602,
+        "Content": "这个、这个……我只是随便写着玩玩而已！",
+        "BehaviorId": "Shy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30603,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30603,
+        "Content": "绝对不是写得不好看拿不出手哦！",
+        "BehaviorId": "Refuse_Concentrate",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30604,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30604,
+        "Content": "呜……都被看到了吗……其、其实就是发现这里也有笔墨，想给指挥官露一手嘛……",
+        "BehaviorId": "Think_Cry",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30605,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30605,
+        "Content": "书法这种东西，竟然和算术一样难……回去蒲牢一定要好好练习，争取明年送指挥官一副亲笔对联！",
+        "BehaviorId": "Think_Cry",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "蒲牢在写什么？",
+            "今天不放假吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30602,
+            30606,
+            30610
+        ]
+    },
+    {
+        "Id": 30606,
+        "Content": "放假？当然啦！在九龙，这几天都是非常重要的节日，街上有好多好吃的和好玩的东西呢！",
+        "BehaviorId": "Victory_Happy2",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30607,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30607,
+        "Content": "我吗？工作时间，蒲牢要承担应有的职责才行！而且这几天的加班工资也……",
+        "BehaviorId": "Think_Drool",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30608,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30608,
+        "Content": "咳咳，总之，蒲牢要认真当值才可以让九龙的大家过好节日，这一点我是不会忘的啦。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30609,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30609,
+        "Content": "对了，九龙的庆典今天还不会结束，指挥官要是有空的话，要不要顺路跟蒲牢一起去九龙呀？",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "蒲牢在写什么？",
+            "今天不放假吗？",
+            "再见"
+        ],
+        "SkipIds": [
+            30602,
+            30606,
+            30610
+        ]
+    },
+    {
+        "Id": 30610,
+        "Content": "嗯，指挥官先去忙吧。",
+        "BehaviorId": "SpringNpc_Pulao_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30701,
+        "Content": "嗯？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "是想吃糖葫芦吗？",
+            "新年快乐！",
+            "再见"
+        ],
+        "SkipIds": [
+            30702,
+            30706,
+            30709
+        ]
+    },
+    {
+        "Id": 30702,
+        "Content": "我只是认为回去向贾米拉汇报的时候，这是种值得带上的特产。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30703,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30703,
+        "Content": "根据列车所在的区域和时节，这种有地方特色的节日商品会在对应时间很受欢迎。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30704,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30704,
+        "Content": "让我先尝一尝再决定？你说的也对。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30705,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30705,
+        "Content": "……唔，好甜。",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "是想吃糖葫芦吗？",
+            "新年快乐！",
+            "再见"
+        ],
+        "SkipIds": [
+            30702,
+            30706,
+            30709
+        ]
+    },
+    {
+        "Id": 30706,
+        "Content": "……新年快乐。依据九龙礼节，这种时刻，我应该怎么做？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30707,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30707,
+        "Content": "享受这种氛围就行吗？嗯，我知道了。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 30708,
+        "RepeatId": 0
+    },
+    {
+        "Id": 30708,
+        "Content": "下一次你再去阿迪莱商业联盟号作客的时候，我也会带你享受特别的氛围，作为回礼，不，作为邀请。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "是想吃糖葫芦吗？",
+            "新年快乐！",
+            "再见"
+        ],
+        "SkipIds": [
+            30702,
+            30706,
+            30709
+        ]
+    },
+    {
+        "Id": 30709,
+        "Content": "差不多了。",
+        "BehaviorId": "SpringNpc_Sufeiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40101,
+        "Content": "终于又见到指挥官了。",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于灰鸦",
+            "再见"
+        ],
+        "SkipIds": [
+            40102,
+            40105,
+            40108
+        ]
+    },
+    {
+        "Id": 40102,
+        "Content": "虽然并不能保证这里的安全性，不过这里的采光很好，风景也很不错，那边的喷泉……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40103,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40103,
+        "Content": "指挥官，要去喷泉那里扔许愿硬币吗？似乎听说过有这种传统……你想许什么样的愿望？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40104,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40104,
+        "Content": "我的愿望当然是能学会做好吃的饭菜给大家——诶，指挥官的表情好奇怪！",
+        "BehaviorId": "Stand_Happy_Cry",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于灰鸦",
+            "再见"
+        ],
+        "SkipIds": [
+            40102,
+            40105,
+            40108
+        ]
+    },
+    {
+        "Id": 40105,
+        "Content": "闲下来的时候，还是会第一时间想到灰鸦小队的大家。第一时间总想着和大家一起做些什么。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40106,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40106,
+        "Content": "毕竟，灰鸦已经像家人一样不能分开了吧？不过有时候会显得有些麻烦别人了。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40107,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40107,
+        "Content": "话虽如此，还是想让指挥官帮忙一起想想，在此之前要不要先去餐厅？",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于灰鸦",
+            "再见"
+        ],
+        "SkipIds": [
+            40102,
+            40105,
+            40108
+        ]
+    },
+    {
+        "Id": 40108,
+        "Content": "我一直都在这里，指挥官。",
+        "BehaviorId": "SkyNpc_Common_PatrolEndtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40201,
+        "Content": "指挥官。接下来要去做什么？",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40202,
+            40205,
+            40208
+        ]
+    },
+    {
+        "Id": 40202,
+        "Content": "这里可以看见下方的大海……海面上的一点点波纹都能看得很清楚。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40203,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40203,
+        "Content": "感觉就像和天空融为了一体，和在空中花园见到的完全不同……指挥官能感受到这种心情吗？",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40204,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40204,
+        "Content": "想象自己是天空或是大海，像风一样能自由地——啊，果然还是想留在指挥官和大家的身边。",
+        "BehaviorId": "Think_Close_StandHappy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40202,
+            40205,
+            40208
+        ]
+    },
+    {
+        "Id": 40205,
+        "Content": "小时候对夏天的记忆不深，要说第一个想到的，就是家庭旅行时看见远处山坡上的羊妈妈和小羊。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40206,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40206,
+        "Content": "后来季节变化也变得模糊起来，大家都没有时间在乎身边的风景了。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40207,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40207,
+        "Content": "让我们留下更多关于夏天的回忆吧，指挥官。",
+        "BehaviorId": "Stand_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40202,
+            40205,
+            40208
+        ]
+    },
+    {
+        "Id": 40208,
+        "Content": "需要帮忙的地方请务必叫上我，指挥官！",
+        "BehaviorId": "SkyNpc_Common_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40301,
+        "Content": "指挥官在假期有什么安排？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40302,
+            40305,
+            40308
+        ]
+    },
+    {
+        "Id": 40302,
+        "Content": "为了让整个区域都能够安全地在空中航行，需要调整的参数很多。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40303,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40303,
+        "Content": "而且要适应各种各样的天气状况，线路的排布不能因为极端天气受影响……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40304,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40304,
+        "Content": "你说这些有专门的人来负责？是这样没错，不过涉及到你们的安全，还是亲自维护一遍才能放心。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40302,
+            40305,
+            40308
+        ]
+    },
+    {
+        "Id": 40305,
+        "Content": "对夏天的感受？没有什么特别的，长时间在地表各处战斗，对季节的更替其实并没有什么实感。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40306,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40306,
+        "Content": "不过露西亚和丽芙看上去都很期待。毕竟，夏日的确经常用来代表一些……珍贵的回忆。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40307,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40307,
+        "Content": "所以，如果指挥官接下来有空，要一起做点什么吗？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40302,
+            40305,
+            40308
+        ]
+    },
+    {
+        "Id": 40308,
+        "Content": "接下来的天气是——晴天，继续享受假日吧，指挥官。",
+        "BehaviorId": "SkyNpc_Common_PatrolEndtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40401,
+        "Content": "要放松一会吗，指挥官。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40402,
+            40405,
+            40408
+        ]
+    },
+    {
+        "Id": 40402,
+        "Content": "如果想要找一些不被打扰的休息场所，我能给你很多建议哦。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40403,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40403,
+        "Content": "毕竟对于狙击手来说，找到每一个地区最隐蔽的地方……是再容易不过的事情。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40404,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40404,
+        "Content": "唔……不需要吗？那，还有“最适合一起玩的场所”，“美食最多的场所”和“最适合看书的场所”，每一个都好评如潮哦。",
+        "BehaviorId": "Think_Idle_StandIdle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40402,
+            40405,
+            40408
+        ]
+    },
+    {
+        "Id": 40405,
+        "Content": "想要在夏天做的事情？唔……这个问题，你在问我之前心里就已经有答案了吧。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40406,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40406,
+        "Content": "不过……现在的我正好充能完毕，有干劲做一些其他事情了呢。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40407,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40407,
+        "Content": "我找到了最适合观测空岛全貌的位置，正想去看看……要一起吗？换一个视角，感受也会完全不同哦。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40402,
+            40405,
+            40408
+        ]
+    },
+    {
+        "Id": 40408,
+        "Content": "早安哦，指挥官……",
+        "BehaviorId": "SkyNpc_Common_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40501,
+        "Content": "什么事什么事？",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40502,
+            40505,
+            40508
+        ]
+    },
+    {
+        "Id": 40502,
+        "Content": "虽然设计一个稳定的空中小岛不是难事，但是兼具美观和实用可是很难的！",
+        "BehaviorId": "Show_Serious",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40503,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40503,
+        "Content": "用来休息的地方只能使用特殊的静音装置掩盖掉飞行引擎的声音……还要考虑到引力和各种安全设施 ——",
+        "BehaviorId": "Talk_Serious",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40504,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40504,
+        "Content": "——笨蛋指挥官有没有在好好听啦！这种精妙的设计只有我的工程部队才能做到！不打算赞赏一下吗！",
+        "BehaviorId": "Refuse_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40502,
+            40505,
+            40508
+        ]
+    },
+    {
+        "Id": 40505,
+        "Content": "一到夏天就要调整机体的散热系统，最麻烦了！",
+        "BehaviorId": "Refuse_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40506,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40506,
+        "Content": "尤其是到了夏天，建筑材料也都热得烫手，对工程进度可没什么好处。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40507,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40507,
+        "Content": "不过指挥官你在休假的话，我就，我就勉为其难调整一下散热功率，陪你去走走吧——只是因为想看海鸥——谁要穿裙子了！",
+        "BehaviorId": "Show_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40502,
+            40505,
+            40508
+        ]
+    },
+    {
+        "Id": 40508,
+        "Content": "这就走了吗——我之后可是很忙的！",
+        "BehaviorId": "SkyNpc_Common_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40601,
+        "Content": "要带七实去哪里玩吗！出发吧！",
+        "BehaviorId": "Greet_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40602,
+            40605,
+            40608
+        ]
+    },
+    {
+        "Id": 40602,
+        "Content": "这里看上去好好玩！那边也是！不过控制室在哪里？现在的速度太慢了，七实想要让这里再加速一点！",
+        "BehaviorId": "Jump_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40603,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40603,
+        "Content": "再加上大炮就更好啦！可以改装在帕瓦身上吗？可以吗可以吗！",
+        "BehaviorId": "Jump_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40604,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40604,
+        "Content": "诶——不能这样改装帕瓦好可惜，但七实自己很厉害！下一个任务：潜入控制室！",
+        "BehaviorId": "Think_Jump_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40602,
+            40605,
+            40608
+        ]
+    },
+    {
+        "Id": 40605,
+        "Content": "七实喜欢夏天，因为夏天有好玩的东西，不过七实觉得什么都好玩啦。",
+        "BehaviorId": "Jump_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40606,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40606,
+        "Content": "而且，夏天的七实是最强的！因为七实什么时候都很强！嗯？原来指挥官只是喜欢夏天。",
+        "BehaviorId": "Show_Serious",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40607,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40607,
+        "Content": "好！挑战对象是太阳！帕瓦就位！出发！开玩笑啦，还是和指挥官一起玩更有意思吧？",
+        "BehaviorId": "Jump_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40602,
+            40605,
+            40608
+        ]
+    },
+    {
+        "Id": 40608,
+        "Content": "不玩了吗？七实一直都在这里哦！",
+        "BehaviorId": "SkyNpc_Common_PatrolEndtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40701,
+        "Content": "嘘……害怕被认出来，别告诉别人……",
+        "BehaviorId": "Think_Scared",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40702,
+            40705,
+            40708
+        ]
+    },
+    {
+        "Id": 40702,
+        "Content": "我看起来……也不像会在这里出现的样子吧……没关系，我能伪装好的……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40703,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40703,
+        "Content": "不过……还是在这里说说话就好了吧……靠近边缘会掉下去的……还是乖乖待在安全的地方比较好。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40704,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40704,
+        "Content": "这样一想来找你还真是……还要考虑待会怎么回去，不如就你来送我回去吧？真好，不用考虑躲起来的事情了。",
+        "BehaviorId": "Think_Happy",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40702,
+            40705,
+            40708
+        ]
+    },
+    {
+        "Id": 40705,
+        "Content": "一提到夏天，很多人都想去游泳吧……成为这个样子之前，似乎没有学过游泳……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40706,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40706,
+        "Content": "现在已经不用特意去学了，什么时候都能安静地躲在水下……不会有人发现的……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40707,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40707,
+        "Content": "我说的和你想到的游泳一定不一样吧——嗯？我什么时候都不会和鱼讲话的。",
+        "BehaviorId": "Think_Cry",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40702,
+            40705,
+            40708
+        ]
+    },
+    {
+        "Id": 40708,
+        "Content": "想要逃走……",
+        "BehaviorId": "SkyNpc_Common_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40801,
+        "Content": "你好，指挥官。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40802,
+            40805,
+            40808
+        ]
+    },
+    {
+        "Id": 40802,
+        "Content": "这里，有很大的商业潜力… …个人角度来说，可以在这里开设阿迪莱的商店。",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40803,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40803,
+        "Content": "……是说苏菲亚自己的感觉吗，我很喜欢这里，这里和天空很近，天空……很自由，感觉和宇宙不一样，而且很安静。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40804,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40804,
+        "Content": "如果是和指挥官在一起的话，还会感觉到安心……指挥官，那里的话，似乎可以做成熟食店的区域。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40802,
+            40805,
+            40808
+        ]
+    },
+    {
+        "Id": 40805,
+        "Content": "以前对夏天的记忆很模糊，列车上的夏天……很闷热，容易让人中暑。如果太热的话，工作就会慢下来，无法完成。",
+        "BehaviorId": "Think_Close",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40806,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40806,
+        "Content": "我很喜欢吃冰淇淋，如果可以把冰淇淋机放在这边，就能和指挥官一起吃了。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40807,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40807,
+        "Content": "这样算不算开始学会照顾别人……？如果指挥官来买冰淇淋的话，我可以给指挥官成本价。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            40802,
+            40805,
+            40808
+        ]
+    },
+    {
+        "Id": 40808,
+        "Content": "指挥官，慢走。",
+        "BehaviorId": "SkyNpc_Common_PatrolEndtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40901,
+        "Content": "有什么能帮到您的吗，指挥官。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于罗塞塔",
+            "再见"
+        ],
+        "SkipIds": [
+            40902,
+            40905,
+            40908
+        ]
+    },
+    {
+        "Id": 40902,
+        "Content": "北地的夏天，并不是想象中那样寒冷的。指挥官有去苔原上走过吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40903,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40903,
+        "Content": "还有很多生物在那里呢，指挥官有看过北极狐吗？曾经有见过一家北极狐去捕猎……它们跑动的样子很可爱。一些胆子大一些的还会朝守林人的方向叫呢。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40904,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40904,
+        "Content": "不管是陆地，天空还是大海，大家都在努力地生活。有时间的话，一起去我的家乡看看吧，指挥官。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于罗塞塔",
+            "再见"
+        ],
+        "SkipIds": [
+            40902,
+            40905,
+            40908
+        ]
+    },
+    {
+        "Id": 40905,
+        "Content": "到一个浮空的地方还要继续保持漂浮吗……总觉得有些怪怪的。这座岛在空中看起来也有些孤独……",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40906,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40906,
+        "Content": "好在我已经习惯了这样的生活，如果一个人承担不走运的事情，就能坦然更多呢。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 40907,
+        "RepeatId": 0
+    },
+    {
+        "Id": 40907,
+        "Content": "对不起！一不小心就讲了这么多……指挥官接下来要做什么呢？要我带指挥官在这里飞一小段吗？天空的感觉很好哦。",
+        "BehaviorId": "Stand_Happy_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于夏天",
+            "关于罗塞塔",
+            "再见"
+        ],
+        "SkipIds": [
+            40902,
+            40905,
+            40908
+        ]
+    },
+    {
+        "Id": 40908,
+        "Content": "再会，指挥官。",
+        "BehaviorId": "SkyNpc_Common_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 41001,
+        "Content": "咦？是指挥官，21号正在“巡视领地”。",
+        "BehaviorId": "Jump_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            41002,
+            41005,
+            41008
+        ]
+    },
+    {
+        "Id": 41002,
+        "Content": "地面好远……21号并不害怕掉下去，但一直站在这上面，指挥官会不安全。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 41003,
+        "RepeatId": 0
+    },
+    {
+        "Id": 41003,
+        "Content": "诺克提去哪里了？21号揍他的时候就不会感觉有什么担心的了。如果从这里把他扔下去就更好。",
+        "BehaviorId": "Show_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 41004,
+        "RepeatId": 0
+    },
+    {
+        "Id": 41004,
+        "Content": "这样也算是“巡视领地”的一部分了吧，21号已经完全理解了这一点，指挥官。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            41002,
+            41005,
+            41008
+        ]
+    },
+    {
+        "Id": 41005,
+        "Content": "夏天可以出去玩……不过21号除了薇拉和诺克提不知道要和谁一起。嗯……21号自己和自己玩也可以。",
+        "BehaviorId": "Think_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 41006,
+        "RepeatId": 0
+    },
+    {
+        "Id": 41006,
+        "Content": "嗯？指挥官要和21号一起吗？但21号没有学习过两个人一起玩的游戏，21号最擅长的双人游戏是“揍飞”。",
+        "BehaviorId": "Stand_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 41007,
+        "RepeatId": 0
+    },
+    {
+        "Id": 41007,
+        "Content": "不过，21号不想揍飞指挥官。指挥官，好人。好人，可以一起抢零食吃。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 1500,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于空岛",
+            "关于夏天",
+            "再见"
+        ],
+        "SkipIds": [
+            41002,
+            41005,
+            41008
+        ]
+    },
+    {
+        "Id": 41008,
+        "Content": "要再见了吗，再见，指挥官。",
+        "BehaviorId": "SkyNpc_Common_PatrolEndtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50101,
+        "Content": "新年快乐，你也是带着“任务”来的吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于年货",
+            "关于伙伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50102,
+            50105,
+            50108
+        ]
+    },
+    {
+        "Id": 50102,
+        "Content": "贾米拉说，九龙过春节的时候，有采购“年货”的习俗，让我过来参观，顺便选购一些回去。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50103,
+        "Options": [
+            "关于年货",
+            "再见"
+        ],
+        "SkipIds": [
+            50102,
+            50108
+        ]
+    },
+    {
+        "Id": 50103,
+        "Content": "但年货，具体是指什么呢？食物？用具？这个灯也是“年货”的一种吗？它看起来很精致，会不会很昂贵……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50104,
+        "Options": [
+            "关于年货",
+            "再见"
+        ],
+        "SkipIds": [
+            50102,
+            50108
+        ]
+    },
+    {
+        "Id": 50104,
+        "Content": "啊……你要送给我吗？多谢。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于伙伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50105,
+            50108
+        ]
+    },
+    {
+        "Id": 50105,
+        "Content": "小孩子联盟约好过几天聚会，我想给他们带一些“年货”，可以麻烦你帮我一起挑选吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50106,
+        "Options": [
+            "关于伙伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50105,
+            50108
+        ]
+    },
+    {
+        "Id": 50106,
+        "Content": "食物……应该就可以吧。这个摊位上的糕是甜的，对面那家却是辣的，奇怪。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50107,
+        "Options": [
+            "关于伙伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50105,
+            50108
+        ]
+    },
+    {
+        "Id": 50107,
+        "Content": "每种都买一点尝尝吧。你喜欢什么口味？我也给你买一份。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于年货",
+            "再见"
+        ],
+        "SkipIds": [
+            50102,
+            50108
+        ]
+    },
+    {
+        "Id": 50108,
+        "Content": "再去那边看看吧，那边出售的是什么商品？",
+        "BehaviorId": "2024SpringNpc_Sufeiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50201,
+        "Content": "是你呀，新年好呀，恭喜发财！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于采购",
+            "关于列车",
+            "再见"
+        ],
+        "SkipIds": [
+            50202,
+            50205,
+            50208
+        ]
+    },
+    {
+        "Id": 50202,
+        "Content": "采购需要的技能可多了，首先你要有一双慧眼，学会挑选最好的货品；还要会讲价……你看，前面就有个摊位，我去给你示范一下。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50203,
+        "Options": [
+            "关于采购",
+            "再见"
+        ],
+        "SkipIds": [
+            50202,
+            50208
+        ]
+    },
+    {
+        "Id": 50203,
+        "Content": "学会了吗？砍价就要这样，先“腰斩”一半的价钱，再一点点往上加。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50204,
+        "Options": [
+            "关于采购",
+            "再见"
+        ],
+        "SkipIds": [
+            50202,
+            50208
+        ]
+    },
+    {
+        "Id": 50204,
+        "Content": "是不是第一次见到这么低的成交价？下次你也试试，能省下不少呢。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于列车",
+            "再见"
+        ],
+        "SkipIds": [
+            50205,
+            50208
+        ]
+    },
+    {
+        "Id": 50205,
+        "Content": "列车的大伙也想趁着这个节日热闹热闹，一起来吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50206,
+        "Options": [
+            "关于列车",
+            "再见"
+        ],
+        "SkipIds": [
+            50205,
+            50208
+        ]
+    },
+    {
+        "Id": 50206,
+        "Content": "老话说到，春节之后，就是新的开始，新年新气象，所以，新年一定会更好的，对吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50207,
+        "Options": [
+            "关于列车",
+            "再见"
+        ],
+        "SkipIds": [
+            50205,
+            50208
+        ]
+    },
+    {
+        "Id": 50207,
+        "Content": "新的一年，我们一定能拓展出新的贸易区，连接起更多人，更多地区……嘿嘿，真是想想就高兴！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于采购",
+            "再见"
+        ],
+        "SkipIds": [
+            50202,
+            50208
+        ]
+    },
+    {
+        "Id": 50208,
+        "Content": "哦？要走了吗？再见！要记得我教给你的砍价技巧！",
+        "BehaviorId": "2024SpringNpc_Changyu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50301,
+        "Content": "您好，指挥官。接下来的一年，也请您多多关照了。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50302,
+            50305,
+            50308
+        ]
+    },
+    {
+        "Id": 50302,
+        "Content": "指挥官，听说这里出现了许多怪事，爆竹自燃，年兽伏击……真的会有年兽这样的生物吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50303,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            50302,
+            50308
+        ]
+    },
+    {
+        "Id": 50303,
+        "Content": "无论如何，请遵守安全条例，正确燃放烟花爆竹，还要小心奇怪的生物……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50304,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            50302,
+            50308
+        ]
+    },
+    {
+        "Id": 50304,
+        "Content": "呼，安全条例大概就是这些内容，假期也一定要注意安全啊，指挥官。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50305,
+            50308
+        ]
+    },
+    {
+        "Id": 50305,
+        "Content": "这些礼物是在那边买的，本来想着“只是逛逛，绝对不买”，但一圈走下来，总觉得这个很适合指挥官，那个很适合姐姐，还是不知不觉地买了很多……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50306,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50305,
+            50308
+        ]
+    },
+    {
+        "Id": 50306,
+        "Content": "还有一部分姐姐帮我拿着，就在后面……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50307,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50305,
+            50308
+        ]
+    },
+    {
+        "Id": 50307,
+        "Content": "啊，姐姐！对，对不起！我买太多了！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            50302,
+            50308
+        ]
+    },
+    {
+        "Id": 50308,
+        "Content": "指挥官，等你休息的时候，我们一起去那边逛逛吧。",
+        "BehaviorId": "2024SpringNpc_Yalisha_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50401,
+        "Content": "凑这么近做什么……你有东西要给我？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于汤圆",
+            "关于雪花",
+            "再见"
+        ],
+        "SkipIds": [
+            50402,
+            50405,
+            50408
+        ]
+    },
+    {
+        "Id": 50402,
+        "Content": "什么东西？汤圆？我勉强尝尝看……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50403,
+        "Options": [
+            "关于汤圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50402,
+            50408
+        ]
+    },
+    {
+        "Id": 50403,
+        "Content": "烫！把那边那个……冰过的电解液拿来！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50404,
+        "Options": [
+            "关于汤圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50402,
+            50408
+        ]
+    },
+    {
+        "Id": 50404,
+        "Content": "……吹凉之后再吃，倒是还不错。外皮软糯，馅料看似普通，但也还算别有风味……有趣。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于雪花",
+            "再见"
+        ],
+        "SkipIds": [
+            50405,
+            50408
+        ]
+    },
+    {
+        "Id": 50405,
+        "Content": "不用帮我遮挡，我不冷，这些静从天上落下的雪花……很干净。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50406,
+        "Options": [
+            "关于雪花",
+            "再见"
+        ],
+        "SkipIds": [
+            50405,
+            50408
+        ]
+    },
+    {
+        "Id": 50406,
+        "Content": "但雪落在桌子上就融化了，有点可惜，不如我让这里再冷一些，留住它们……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50407,
+        "Options": [
+            "关于雪花",
+            "再见"
+        ],
+        "SkipIds": [
+            50405,
+            50408
+        ]
+    },
+    {
+        "Id": 50407,
+        "Content": "算了，还是保持现在这个温度吧，再冷下去，恐怕你承受不住那样的严寒。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于汤圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50402,
+            50408
+        ]
+    },
+    {
+        "Id": 50408,
+        "Content": "你先走吧，我再多坐一会。",
+        "BehaviorId": "2024SpringNpc_Luna_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50501,
+        "Content": "你在这里做什么？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于饮茶",
+            "关于愿望",
+            "再见"
+        ],
+        "SkipIds": [
+            50502,
+            50505,
+            50508
+        ]
+    },
+    {
+        "Id": 50502,
+        "Content": "这就是你为了庆祝新年，新买的茶叶？罐口怎么密封得这么紧？稍等……好了，帮你打开了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50503,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50502,
+            50508
+        ]
+    },
+    {
+        "Id": 50503,
+        "Content": "九龙的茶道，繁琐而复杂，我并不精于此道，但也不介意在此品尝简单冲泡的饮品。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50504,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50502,
+            50508
+        ]
+    },
+    {
+        "Id": 50504,
+        "Content": "……嗯，还不错的味道。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于愿望",
+            "再见"
+        ],
+        "SkipIds": [
+            50505,
+            50508
+        ]
+    },
+    {
+        "Id": 50505,
+        "Content": "新年愿望？不，我一向不许愿。想要的东西太多，会像沙子一样握不住。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50506,
+        "Options": [
+            "关于愿望",
+            "再见"
+        ],
+        "SkipIds": [
+            50505,
+            50508
+        ]
+    },
+    {
+        "Id": 50506,
+        "Content": "有些东西我绝不会放弃，有些东西也不会去刻意追逐。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50507,
+        "Options": [
+            "关于愿望",
+            "再见"
+        ],
+        "SkipIds": [
+            50505,
+            50508
+        ]
+    },
+    {
+        "Id": 50507,
+        "Content": "但如果是你的愿望……说出来，我也许会帮你实现。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50502,
+            50508
+        ]
+    },
+    {
+        "Id": 50508,
+        "Content": "还会再见的。",
+        "BehaviorId": "2024SpringNpc_Luxiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50601,
+        "Content": "好巧，真是命运的相遇。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于展台",
+            "关于团圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50602,
+            50605,
+            50608
+        ]
+    },
+    {
+        "Id": 50602,
+        "Content": "这个展台布置得不错嘛，听说今晚有……晚会？需要我上场表演吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50603,
+        "Options": [
+            "关于展台",
+            "再见"
+        ],
+        "SkipIds": [
+            50602,
+            50608
+        ]
+    },
+    {
+        "Id": 50603,
+        "Content": "我倒是有准备好的剧目。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50604,
+        "Options": [
+            "关于展台",
+            "再见"
+        ],
+        "SkipIds": [
+            50602,
+            50608
+        ]
+    },
+    {
+        "Id": 50604,
+        "Content": "当然，如果你愿意的话，我也可以私下为你单独表演……嗯哼？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于团圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50605,
+            50608
+        ]
+    },
+    {
+        "Id": 50605,
+        "Content": "家人团聚？真是欢乐的节目，但我不喜欢——想来一些更有趣的东西吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50606,
+        "Options": [
+            "关于团圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50605,
+            50608
+        ]
+    },
+    {
+        "Id": 50606,
+        "Content": "比如，我现在带走你，我们跑去那群构造体谁都找不到的地方，一定十分精彩吧？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50607,
+        "Options": [
+            "关于团圆",
+            "再见"
+        ],
+        "SkipIds": [
+            50605,
+            50608
+        ]
+    },
+    {
+        "Id": 50607,
+        "Content": "或者，我现在为你表演我准备好的节目？那是一出无趣，老套，又无足轻重的可笑喜剧……想看看吗？哈，你的选择总会让我惊讶……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于展台",
+            "再见"
+        ],
+        "SkipIds": [
+            50602,
+            50608
+        ]
+    },
+    {
+        "Id": 50608,
+        "Content": "啊，真是一场短暂的相遇……",
+        "BehaviorId": "2024SpringNpc_Luolan_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50701,
+        "Content": "应该没人能发现我吧？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于陪伴",
+            "关于吃鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            50702,
+            50705,
+            50708
+        ]
+    },
+    {
+        "Id": 50702,
+        "Content": "你……你怎么神出鬼没的！偷看？没……没有啊！你不要乱说，我才没有在偷看你，我只是……我只是在看风景！对，看风景。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50703,
+        "Options": [
+            "关于陪伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50702,
+            50708
+        ]
+    },
+    {
+        "Id": 50703,
+        "Content": "倒是你，怎么一个人跑到这种角落里来？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50704,
+        "Options": [
+            "关于陪伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50702,
+            50708
+        ]
+    },
+    {
+        "Id": 50704,
+        "Content": "要……要是这会儿你不跟其他人在一起的话，我也不是不能陪陪你。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于吃鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            50705,
+            50708
+        ]
+    },
+    {
+        "Id": 50705,
+        "Content": "年年有鱼、年年有余……噫，这菜名，光是看着尾巴就开始疼了……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50706,
+        "Options": [
+            "关于吃鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            50705,
+            50708
+        ]
+    },
+    {
+        "Id": 50706,
+        "Content": "话说回来，这些鱼的个头都好小，你要真的想吃，我可以专门帮你弄几网大的回来……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50707,
+        "Options": [
+            "关于吃鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            50705,
+            50708
+        ]
+    },
+    {
+        "Id": 50707,
+        "Content": "吃人嘴短，到时候……啊不，没什么，你记得到时候感谢我就行。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于陪伴",
+            "再见"
+        ],
+        "SkipIds": [
+            50702,
+            50708
+        ]
+    },
+    {
+        "Id": 50708,
+        "Content": "又要走吗……哦，还会回来啊，那我还在这里等你？",
+        "BehaviorId": "2024SpringNpc_Lamiya_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50801,
+        "Content": "指挥官，我们又一同走进了新的一年。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于时间",
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50802,
+            50805,
+            50808
+        ]
+    },
+    {
+        "Id": 50802,
+        "Content": "常听人说，时间是连续流动的河，不会因为庆祝新年而改变。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50803,
+        "Options": [
+            "关于时间",
+            "再见"
+        ],
+        "SkipIds": [
+            50802,
+            50808
+        ]
+    },
+    {
+        "Id": 50803,
+        "Content": "但对现在的我来说，有灰鸦小队在，有你在，这一天就不止是节日，更是相伴至今的纪念日。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50804,
+        "Options": [
+            "关于时间",
+            "再见"
+        ],
+        "SkipIds": [
+            50802,
+            50808
+        ]
+    },
+    {
+        "Id": 50804,
+        "Content": "这一年里灰鸦经历了很多艰难困苦，可没有什么能阻止我们，阻止我走向你。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50805,
+            50808
+        ]
+    },
+    {
+        "Id": 50805,
+        "Content": "指挥官，可以拆礼物了，最近的天气还是很冷，所以我选了一条围巾。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50806,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50805,
+            50808
+        ]
+    },
+    {
+        "Id": 50806,
+        "Content": "选颜色的时候，我在店里犹豫了很久，最后还是选了最温暖的红色。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50807,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            50805,
+            50808
+        ]
+    },
+    {
+        "Id": 50807,
+        "Content": "至于上面的阿呆蛙……抱歉，这是我……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于时间",
+            "关于礼物"
+        ],
+        "SkipIds": [
+            50802,
+            50808
+        ]
+    },
+    {
+        "Id": 50808,
+        "Content": "我拿到了一箱烟花，要不要现在就一起去广场？",
+        "BehaviorId": "2024SpringNpc_LuxiyaB_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 50901,
+        "Content": "指挥官，这里。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于娱乐",
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50902,
+            50906,
+            50909
+        ]
+    },
+    {
+        "Id": 50902,
+        "Content": "轮到你出牌了，指挥官。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50903,
+        "Options": [
+            "关于娱乐",
+            "再见"
+        ],
+        "SkipIds": [
+            50902,
+            50909
+        ]
+    },
+    {
+        "Id": 50903,
+        "Content": "我猜你手里还有几张比较小的牌，你确定现在要出这么大的底牌吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50904,
+        "Options": [
+            "关于娱乐",
+            "再见"
+        ],
+        "SkipIds": [
+            50902,
+            50909
+        ]
+    },
+    {
+        "Id": 50904,
+        "Content": "……我输了……不，我没有放水，只是确实没有想到还有这样出牌的方法。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50905,
+        "Options": [
+            "关于娱乐",
+            "再见"
+        ],
+        "SkipIds": [
+            50902,
+            50909
+        ]
+    },
+    {
+        "Id": 50905,
+        "Content": "惩罚就是……在头上贴这种纸片？嗯……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50906,
+            50909
+        ]
+    },
+    {
+        "Id": 50906,
+        "Content": "指挥官，稍等一下，第二次滚水需要十五秒……三，二，一，好了，把杯子给我。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50907,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50906,
+            50909
+        ]
+    },
+    {
+        "Id": 50907,
+        "Content": "我特意学习了九龙的茶艺。书上说，需要严格把控茶水的冲泡时间，才能沏出最好的口感。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 50908,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            50906,
+            50909
+        ]
+    },
+    {
+        "Id": 50908,
+        "Content": "还喜欢这个味道吧？我记下了，下次的咖啡，可以适当替换成茶饮。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于娱乐",
+            "再见"
+        ],
+        "SkipIds": [
+            50902,
+            50909
+        ]
+    },
+    {
+        "Id": 50909,
+        "Content": "指挥官，来尝尝另一种茶水吧。",
+        "BehaviorId": "2024SpringNpc_Li_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51001,
+        "Content": "我们一起喝杯茶吧。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于茶点",
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            51002,
+            51005,
+            51008
+        ]
+    },
+    {
+        "Id": 51002,
+        "Content": "我找到了这只暖炉，可以和围在一起烤些茶点。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51003,
+        "Options": [
+            "关于茶点",
+            "再见"
+        ],
+        "SkipIds": [
+            51002,
+            51008
+        ]
+    },
+    {
+        "Id": 51003,
+        "Content": "嗯……这次和平时不一样，不是事先准备好的……因为我想和指挥官一起围在暖炉旁边，然后……再一起做出茶点。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51004,
+        "Options": [
+            "关于茶点",
+            "再见"
+        ],
+        "SkipIds": [
+            51002,
+            51008
+        ]
+    },
+    {
+        "Id": 51004,
+        "Content": "能和你一起做些什么，一直都是我的愿望，去年是这样，今年也是这样。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            51005,
+            51008
+        ]
+    },
+    {
+        "Id": 51005,
+        "Content": "坐在这里，一抬头就能看见那些盛开的花了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51006,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            51005,
+            51008
+        ]
+    },
+    {
+        "Id": 51006,
+        "Content": "你看，那边好像还藏着一棵白梅。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51007,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            51005,
+            51008
+        ]
+    },
+    {
+        "Id": 51007,
+        "Content": "我一直都期盼着能和指挥官一起在庭院里赏花，现在，这个愿望已经实现了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于茶点",
+            "再见"
+        ],
+        "SkipIds": [
+            51002,
+            51008
+        ]
+    },
+    {
+        "Id": 51008,
+        "Content": "指挥官，可以帮我折下一支白梅花吗？",
+        "BehaviorId": "2024SpringNpc_Lifu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51101,
+        "Content": "请坐。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于春节",
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51102,
+            51105,
+            51108
+        ]
+    },
+    {
+        "Id": 51102,
+        "Content": "春节是九龙重要的节日，每到这个时间，九龙人都会回到家人的身边团聚，庆贺新一年的到来。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51103,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51102,
+            51108
+        ]
+    },
+    {
+        "Id": 51103,
+        "Content": "除你之外，“家人”于我而言，已经是遥远的记忆。但转念思索，九龙又何尝不算是我的家？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51104,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51102,
+            51108
+        ]
+    },
+    {
+        "Id": 51104,
+        "Content": "这样，就已经足够。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51105,
+            51108
+        ]
+    },
+    {
+        "Id": 51105,
+        "Content": "……你说得对，坐镇九龙重建工程许久，也许是时候该休息一下。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51106,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51105,
+            51108
+        ]
+    },
+    {
+        "Id": 51106,
+        "Content": "在这个节日相会，池边听雪，品茶赏花，听起来也不错。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51107,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51105,
+            51108
+        ]
+    },
+    {
+        "Id": 51107,
+        "Content": "不如，与我一同在这里享受片刻闲暇？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51102,
+            51108
+        ]
+    },
+    {
+        "Id": 51108,
+        "Content": "有事情要忙吗？也好，去吧。",
+        "BehaviorId": "2024SpringNpc_Qu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51201,
+        "Content": "一个、两个……又可以收进小金库了~",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于红包",
+            "关于比赛",
+            "再见"
+        ],
+        "SkipIds": [
+            51202,
+            51205,
+            51208
+        ]
+    },
+    {
+        "Id": 51202,
+        "Content": "今年又收了好多新年红包，明明已经是大人了……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51203,
+        "Options": [
+            "关于红包",
+            "再见"
+        ],
+        "SkipIds": [
+            51202,
+            51208
+        ]
+    },
+    {
+        "Id": 51203,
+        "Content": "咦，你怎么在这里？你什么都没看见，对吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51204,
+        "Options": [
+            "关于红包",
+            "再见"
+        ],
+        "SkipIds": [
+            51202,
+            51208
+        ]
+    },
+    {
+        "Id": 51204,
+        "Content": "怎么你手里也拿着红包？是专门给我的？那……哈哈，那我还是会收下！多谢指挥官！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于比赛",
+            "再见"
+        ],
+        "SkipIds": [
+            51205,
+            51208
+        ]
+    },
+    {
+        "Id": 51205,
+        "Content": "指挥官！你来得正好！这几天有大胃王比赛，和我搭档吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51206,
+        "Options": [
+            "关于比赛",
+            "再见"
+        ],
+        "SkipIds": [
+            51205,
+            51208
+        ]
+    },
+    {
+        "Id": 51206,
+        "Content": "比赛内容？是挑战最快速度吃完这条街上的所有摊位！要是我们拿到第一名，会有丰厚奖励！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51207,
+        "Options": [
+            "关于比赛",
+            "再见"
+        ],
+        "SkipIds": [
+            51205,
+            51208
+        ]
+    },
+    {
+        "Id": 51207,
+        "Content": "不要拒绝嘛，这也是九龙习俗哦，传说吃得越多明年就越红火……喂！是真的啦！真的是真的！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于红包",
+            "关于比赛",
+            "再见"
+        ],
+        "SkipIds": [
+            51202,
+            51205,
+            51208
+        ]
+    },
+    {
+        "Id": 51208,
+        "Content": "再见啦指挥官！下次一起尝尝别的小吃吧！",
+        "BehaviorId": "2024SpringNpc_Pulao_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51301,
+        "Content": "新春快乐，指挥官。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于春节",
+            "关于食物",
+            "再见"
+        ],
+        "SkipIds": [
+            51302,
+            51305,
+            51308
+        ]
+    },
+    {
+        "Id": 51302,
+        "Content": "九龙的春节啊……真是怀念。难得今年可以与你和蒲牢共同度过这个节日，真好。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51303,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51302,
+            51308
+        ]
+    },
+    {
+        "Id": 51303,
+        "Content": "遵循旧俗，我们来燃放爆竹吧，爆竹声声，碎红满地，灿若云锦，除旧迎新",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51304,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51302,
+            51308
+        ]
+    },
+    {
+        "Id": 51304,
+        "Content": "爆竹驱散阴霾，指挥官，祝你新的一年，平安吉祥，事事顺心。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于食物",
+            "再见"
+        ],
+        "SkipIds": [
+            51305,
+            51308
+        ]
+    },
+    {
+        "Id": 51305,
+        "Content": "虽然之前未必每年都能像这样平和地度过这个节日，但只要到这个时间，我总会亲手制作一些食物，分送给周围的朋友。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51306,
+        "Options": [
+            "关于食物",
+            "再见"
+        ],
+        "SkipIds": [
+            51305,
+            51308
+        ]
+    },
+    {
+        "Id": 51306,
+        "Content": "倒也不是什么九龙习俗，只是一种祝福吧，希望大家都能按照自己的心意，幸福快乐地生活下去。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51307,
+        "Options": [
+            "关于食物",
+            "再见"
+        ],
+        "SkipIds": [
+            51305,
+            51308
+        ]
+    },
+    {
+        "Id": 51307,
+        "Content": "指挥官，要尝尝看这份我亲手做的糕点吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于春节",
+            "再见"
+        ],
+        "SkipIds": [
+            51302,
+            51308
+        ]
+    },
+    {
+        "Id": 51308,
+        "Content": "祈愿鸿钧运转，岁岁安康。",
+        "BehaviorId": "2024SpringNpc_Hanying_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51401,
+        "Content": "指挥官，今天你有什么特殊的安排吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于闲暇",
+            "关于节日",
+            "再见"
+        ],
+        "SkipIds": [
+            51402,
+            51405,
+            51408
+        ]
+    },
+    {
+        "Id": 51402,
+        "Content": "指挥官？我现在并没有任务，劳逸结合是必修课程，在这样的节日里，适当休息才能更好的放松下来。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51403,
+        "Options": [
+            "关于闲暇",
+            "再见"
+        ],
+        "SkipIds": [
+            51402,
+            51408
+        ]
+    },
+    {
+        "Id": 51403,
+        "Content": "要和我一起看这本书吗？《九龙年俗文化概观》，里面讲解了很多有趣的节日习俗，我想，你大概会和我一样，对这样的内容有些兴趣。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51404,
+        "Options": [
+            "关于闲暇",
+            "再见"
+        ],
+        "SkipIds": [
+            51402,
+            51408
+        ]
+    },
+    {
+        "Id": 51404,
+        "Content": "嗯，看得到这一边的屏幕吧？刚好，我们可以一起继续阅读下去。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于节日",
+            "再见"
+        ],
+        "SkipIds": [
+            51405,
+            51408
+        ]
+    },
+    {
+        "Id": 51405,
+        "Content": "热闹的节日，也要注意安全。想去那边走走啊……需要我的陪同吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51406,
+        "Options": [
+            "关于节日",
+            "再见"
+        ],
+        "SkipIds": [
+            51405,
+            51408
+        ]
+    },
+    {
+        "Id": 51406,
+        "Content": "节日前，我思考了很多如何在这样的场合保护你的方案，但无论如何，似乎都不如我跟随在你身边更加妥当。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51407,
+        "Options": [
+            "关于节日",
+            "再见"
+        ],
+        "SkipIds": [
+            51405,
+            51408
+        ]
+    },
+    {
+        "Id": 51407,
+        "Content": "如果你允许的话，我们就出发吧。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于闲暇",
+            "再见"
+        ],
+        "SkipIds": [
+            51402,
+            51408
+        ]
+    },
+    {
+        "Id": 51408,
+        "Content": "要离开了吗？好的，我就在这边等你。",
+        "BehaviorId": "2024SpringNpc_Kuluomu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51501,
+        "Content": "指挥官，你来啦！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于烟花",
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            51502,
+            51505,
+            51509
+        ]
+    },
+    {
+        "Id": 51502,
+        "Content": "九龙的新年嘛，最值得期待的当然是放！烟！花！指挥官，我准备了好大一箱，快来！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51503,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            51502,
+            51509
+        ]
+    },
+    {
+        "Id": 51503,
+        "Content": "小心！我要点火了！你说——什么？我听不到……反了？什么反了……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51504,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            51502,
+            51509
+        ]
+    },
+    {
+        "Id": 51504,
+        "Content": "哇啊！怎么整箱烟花都飞出去了——指挥官小心！！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            51505,
+            51509
+        ]
+    },
+    {
+        "Id": 51505,
+        "Content": "看到那边的水池了吗？我已经研究过了，里面真的有鱼！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51506,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            51505,
+            51509
+        ]
+    },
+    {
+        "Id": 51506,
+        "Content": "但刚刚万事在那边坐了半天，一条都没有钓上来！哈哈哈！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51507,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            51505,
+            51509
+        ]
+    },
+    {
+        "Id": 51507,
+        "Content": "看他太可怜，我偷偷潜下去，捉到一条好大的，挂在他的鱼钩上了……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51508,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            51505,
+            51509
+        ]
+    },
+    {
+        "Id": 51508,
+        "Content": "这也算是钓上来了吧！嘿嘿~",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            51502,
+            51509
+        ]
+    },
+    {
+        "Id": 51509,
+        "Content": "还有别的事吗？那，等下记得来找我玩！",
+        "BehaviorId": "2024SpringNpc_Shenwei_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51601,
+        "Content": "我在冬眠，不要打扰我……嗯？指挥官？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于许愿",
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            51602,
+            51605,
+            51608
+        ]
+    },
+    {
+        "Id": 51602,
+        "Content": "唔，这几天还挺热闹的，似乎很多人在这许愿……大概这也是春节要做的事情之一吧。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51603,
+        "Options": [
+            "关于许愿",
+            "再见"
+        ],
+        "SkipIds": [
+            51602,
+            51608
+        ]
+    },
+    {
+        "Id": 51603,
+        "Content": "但这时候许愿，真的能带来好运吗？我大概不会使用这种方式来达成我自己的祈愿。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51604,
+        "Options": [
+            "关于许愿",
+            "再见"
+        ],
+        "SkipIds": [
+            51602,
+            51608
+        ]
+    },
+    {
+        "Id": 51604,
+        "Content": "但如果你愿意告诉我你的愿望，那……今天你的愿望就能实现也说不定……谁知道呢？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            51605,
+            51608
+        ]
+    },
+    {
+        "Id": 51605,
+        "Content": "我完成了一项任务，耗费了我的全部精力，所以准备申请长期休眠。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51606,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            51605,
+            51608
+        ]
+    },
+    {
+        "Id": 51606,
+        "Content": "休眠之前，神威说这边有很有趣的活动，我才过来看看……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51607,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            51605,
+            51608
+        ]
+    },
+    {
+        "Id": 51607,
+        "Content": "钓鱼还算是一种不错的游戏，很安静，我喜欢。但……这个池子里，真的有鱼吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于许愿",
+            "再见"
+        ],
+        "SkipIds": [
+            51602,
+            51608
+        ]
+    },
+    {
+        "Id": 51608,
+        "Content": "这就要走了吗？嗯……好吧，等你回来，随时喊我起来。",
+        "BehaviorId": "2024SpringNpc_Wanshi_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51701,
+        "Content": "指挥官！来尝尝看！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于口味",
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51702,
+            51705,
+            51708
+        ]
+    },
+    {
+        "Id": 51702,
+        "Content": "你尝过刚才的鱼了吧，那是我做的，这样的大鱼，就要放大料。我放了辣椒和豆豉进去，怎么样，味道应该还不错。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51703,
+        "Options": [
+            "关于口味",
+            "再见"
+        ],
+        "SkipIds": [
+            51702,
+            51708
+        ]
+    },
+    {
+        "Id": 51703,
+        "Content": "我看过九龙的书，上面写了，过这个节日，一定要吃鱼，这样才能年年有余……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51704,
+        "Options": [
+            "关于口味",
+            "再见"
+        ],
+        "SkipIds": [
+            51702,
+            51708
+        ]
+    },
+    {
+        "Id": 51704,
+        "Content": "年年有余……嗯……大概就是每年都能吃到鱼的意思吧，听起来也还不赖，是吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51705,
+            51708
+        ]
+    },
+    {
+        "Id": 51705,
+        "Content": "你怎么看起来还是匆匆忙忙的……难道还有什么任务吗？不会吧，空中花园不给指挥官放假的吗？！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51706,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51705,
+            51708
+        ]
+    },
+    {
+        "Id": 51706,
+        "Content": "没有别的任务啊……那就好，今天你就应该好好休息！在这个院子溜达溜达，散散心，今天就是应该偷懒的时间！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51707,
+        "Options": [
+            "关于假期",
+            "再见"
+        ],
+        "SkipIds": [
+            51705,
+            51708
+        ]
+    },
+    {
+        "Id": 51707,
+        "Content": "不许工作！我就在这边盯着你！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于口味",
+            "再见"
+        ],
+        "SkipIds": [
+            51702,
+            51708
+        ]
+    },
+    {
+        "Id": 51708,
+        "Content": "这种大伙都聚在一起的感觉，似乎也不差。",
+        "BehaviorId": "2024SpringNpc_Kamu_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51801,
+        "Content": "指挥官，来和七实一起玩吧！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于堆雪人",
+            "关于铲雪",
+            "再见"
+        ],
+        "SkipIds": [
+            51802,
+            51805,
+            51808
+        ]
+    },
+    {
+        "Id": 51802,
+        "Content": "指挥官，昨晚下了好大的雪，地上都堆起来厚厚一层，这可是堆雪人的最好时机呀！快来快来，七实已经滚好一个雪球啦。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51803,
+        "Options": [
+            "关于堆雪人",
+            "再见"
+        ],
+        "SkipIds": [
+            51802,
+            51808
+        ]
+    },
+    {
+        "Id": 51803,
+        "Content": "眼睛、鼻子……都贴好啦，不如就给这个雪人起名叫“指挥官”吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51804,
+        "Options": [
+            "关于堆雪人",
+            "再见"
+        ],
+        "SkipIds": [
+            51802,
+            51808
+        ]
+    },
+    {
+        "Id": 51804,
+        "Content": "等等，你先别动，胡萝卜还不牢固……哎呀！“指挥官”的鼻子掉了！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于铲雪",
+            "再见"
+        ],
+        "SkipIds": [
+            51805,
+            51808
+        ]
+    },
+    {
+        "Id": 51805,
+        "Content": "这是七实的最新发明！超级铲雪机！你看，小铲能把很重很重的雪都铲起来哦，就连石板地面都不在话下！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51806,
+        "Options": [
+            "关于铲雪",
+            "再见"
+        ],
+        "SkipIds": [
+            51805,
+            51808
+        ]
+    },
+    {
+        "Id": 51806,
+        "Content": "不过，小铲今天的首要目标还是——把指挥官铲走！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51807,
+        "Options": [
+            "关于铲雪",
+            "再见"
+        ],
+        "SkipIds": [
+            51805,
+            51808
+        ]
+    },
+    {
+        "Id": 51807,
+        "Content": "冲冲冲！指挥官！今天一整天都要陪着七实！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于堆雪人",
+            "再见"
+        ],
+        "SkipIds": [
+            51802,
+            51808
+        ]
+    },
+    {
+        "Id": 51808,
+        "Content": "七实会好好保护“指挥官”的！",
+        "BehaviorId": "2024SpringNpc_Qishi_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 51901,
+        "Content": "需要记录更多九龙节日习俗。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于鞭炮",
+            "关于穿着",
+            "再见"
+        ],
+        "SkipIds": [
+            51902,
+            51905,
+            51908
+        ]
+    },
+    {
+        "Id": 51902,
+        "Content": "这里是我准备的鞭炮，请点燃吧，指挥官。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51903,
+        "Options": [
+            "关于鞭炮",
+            "再见"
+        ],
+        "SkipIds": [
+            51902,
+            51908
+        ]
+    },
+    {
+        "Id": 51903,
+        "Content": "按照九龙年俗，放鞭炮是为了驱逐年兽，虽然我的资料库中显示并没有这种生物，但通过分析九龙的民俗资料，我认为这是一种驱逐灾厄，迎接美好的愿景。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51904,
+        "Options": [
+            "关于鞭炮",
+            "再见"
+        ],
+        "SkipIds": [
+            51902,
+            51908
+        ]
+    },
+    {
+        "Id": 51904,
+        "Content": "所以，请继续燃放鞭炮，无须担心地面清洁，我会处理妥当。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于穿着",
+            "再见"
+        ],
+        "SkipIds": [
+            51905,
+            51908
+        ]
+    },
+    {
+        "Id": 51905,
+        "Content": "请放心，我的机体运行一切正常，不会被低温环境影响。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51906,
+        "Options": [
+            "关于穿着",
+            "再见"
+        ],
+        "SkipIds": [
+            51905,
+            51908
+        ]
+    },
+    {
+        "Id": 51906,
+        "Content": "但我观察到您的四肢末端温度较低……需要回去更换更加保暖的衣物吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 51907,
+        "Options": [
+            "关于穿着",
+            "再见"
+        ],
+        "SkipIds": [
+            51905,
+            51908
+        ]
+    },
+    {
+        "Id": 51907,
+        "Content": "或者，您也可以选择握住我的手，我的机体拥有温度调节功能，我可以为您调节到更高的温度……这样，可以吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于鞭炮",
+            "再见"
+        ],
+        "SkipIds": [
+            51902,
+            51908
+        ]
+    },
+    {
+        "Id": 51908,
+        "Content": "您先去忙吧，我会留在这里，搜集更多信息。",
+        "BehaviorId": "2024SpringNpc_Hakama_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52001,
+        "Content": "哦？是来祝我节日快乐吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于约定",
+            "关于美食",
+            "再见"
+        ],
+        "SkipIds": [
+            52002,
+            52005,
+            52008
+        ]
+    },
+    {
+        "Id": 52002,
+        "Content": "我说了今天会给你这个面子，你看，我可是准时来了。那么，你的诚意呢？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52003,
+        "Options": [
+            "关于约定",
+            "再见"
+        ],
+        "SkipIds": [
+            52002,
+            52008
+        ]
+    },
+    {
+        "Id": 52003,
+        "Content": "让我决定的话……就在这里与我独处一天，怎么样？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52004,
+        "Options": [
+            "关于约定",
+            "再见"
+        ],
+        "SkipIds": [
+            52002,
+            52008
+        ]
+    },
+    {
+        "Id": 52004,
+        "Content": "无聊？和你待在一起，当然不会无聊。或者，你的意思是，想做一些更“危险”的事？哼，那也不是不行，我奉陪到底。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于美食",
+            "再见"
+        ],
+        "SkipIds": [
+            52005,
+            52008
+        ]
+    },
+    {
+        "Id": 52005,
+        "Content": "这里的糕点还不错，尤其是这个……只是这样看着做什么？拿着，这一份是给你的。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52006,
+        "Options": [
+            "关于美食",
+            "再见"
+        ],
+        "SkipIds": [
+            52005,
+            52008
+        ]
+    },
+    {
+        "Id": 52006,
+        "Content": "在这种悠闲时间里多尝尝吧，贪心一点也不是不行。等执行任务的时候，可没有机会吃到这些精致的小东西……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52007,
+        "Options": [
+            "关于美食",
+            "再见"
+        ],
+        "SkipIds": [
+            52005,
+            52008
+        ]
+    },
+    {
+        "Id": 52007,
+        "Content": "要再来一份吗？放心，没人敢在我面前嘲笑你。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于约定",
+            "再见"
+        ],
+        "SkipIds": [
+            52002,
+            52008
+        ]
+    },
+    {
+        "Id": 52008,
+        "Content": "好了，去里面休息一下吧。",
+        "BehaviorId": "2024SpringNpc_Weila_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52101,
+        "Content": "我准备了很多好东西，你肯定喜欢！",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于烟花",
+            "关于“红色”",
+            "再见"
+        ],
+        "SkipIds": [
+            52102,
+            52105,
+            52108
+        ]
+    },
+    {
+        "Id": 52102,
+        "Content": "我搞来了一份超级厉害的烟花，绝对让你看过就这辈子都忘不掉，来，试试看！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52103,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            52102,
+            52108
+        ]
+    },
+    {
+        "Id": 52103,
+        "Content": "咳、咳咳……怎么样？厉害吧！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52104,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            52102,
+            52108
+        ]
+    },
+    {
+        "Id": 52104,
+        "Content": "这种烟花可是被严格管制的，因为总被误以为是炸弹引来安保人员……喂，你的衣角怎么焦了？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于“红色”",
+            "再见"
+        ],
+        "SkipIds": [
+            52105,
+            52108
+        ]
+    },
+    {
+        "Id": 52105,
+        "Content": "九龙这个节日还不错嘛！到处都红彤彤的，好像不自觉地买了很多东西，钱包大概已经亏空了……果然，已经没剩几个子了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52106,
+        "Options": [
+            "关于“红色”",
+            "再见"
+        ],
+        "SkipIds": [
+            52105,
+            52108
+        ]
+    },
+    {
+        "Id": 52106,
+        "Content": "这还算多？只不过是红色的春联纸两沓、红色的福字一箱、红色的剪纸一百张……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52107,
+        "Options": [
+            "关于“红色”",
+            "再见"
+        ],
+        "SkipIds": [
+            52105,
+            52108
+        ]
+    },
+    {
+        "Id": 52107,
+        "Content": "怎么看都不够啊！果然，必须回去把休息室贴满才行！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于烟花",
+            "再见"
+        ],
+        "SkipIds": [
+            52102,
+            52108
+        ]
+    },
+    {
+        "Id": 52108,
+        "Content": "哈哈哈！我还有一个更厉害的烟花！等下偷偷来找我！",
+        "BehaviorId": "2024SpringNpc_Nuoketi_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52201,
+        "Content": "新年快乐，红包拿来——薇拉教我这么说的。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于秋千",
+            "关于节日的气味",
+            "再见"
+        ],
+        "SkipIds": [
+            52202,
+            52205,
+            52208
+        ]
+    },
+    {
+        "Id": 52202,
+        "Content": "……秋千很好玩，但刚才21号从秋千，飞到对面的草坪里了，薇拉说21号身上全是泥，不清理干净，不准回休息室……唔，好像也没那么好玩了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52203,
+        "Options": [
+            "关于秋千",
+            "再见"
+        ],
+        "SkipIds": [
+            52202,
+            52208
+        ]
+    },
+    {
+        "Id": 52203,
+        "Content": "但如果你想帮21号推秋千的话，21号愿意再玩一次。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52204,
+        "Options": [
+            "关于秋千",
+            "再见"
+        ],
+        "SkipIds": [
+            52202,
+            52208
+        ]
+    },
+    {
+        "Id": 52204,
+        "Content": "荡得高一点……再推高一点，再高一点——呜嗷嗷，起飞！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于节日的气味",
+            "再见"
+        ],
+        "SkipIds": [
+            52205,
+            52208
+        ]
+    },
+    {
+        "Id": 52205,
+        "Content": "21号喜欢这个节日，空气中有很多气味，很安心，21号把它们都收集下来了，21号可以分享给你。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52206,
+        "Options": [
+            "关于节日的气味",
+            "再见"
+        ],
+        "SkipIds": [
+            52205,
+            52208
+        ]
+    },
+    {
+        "Id": 52206,
+        "Content": "这是花，香的，这是雪花，没有味道……唔，已经不见了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52207,
+        "Options": [
+            "关于节日的气味",
+            "再见"
+        ],
+        "SkipIds": [
+            52205,
+            52208
+        ]
+    },
+    {
+        "Id": 52207,
+        "Content": "没关系，还有这个，这是刚刚捡的鞭炮……为什么又站得那么远？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于秋千",
+            "再见"
+        ],
+        "SkipIds": [
+            52202,
+            52208
+        ]
+    },
+    {
+        "Id": 52208,
+        "Content": "附近没有危险，你为什么要回去拿防护服？",
+        "BehaviorId": "2024SpringNpc_21_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52301,
+        "Content": "邦比娜塔……也喜欢这个节日。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于下雪",
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            52302,
+            52305,
+            52308
+        ]
+    },
+    {
+        "Id": 52302,
+        "Content": "唔，邦比娜塔在看雪花……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52303,
+        "Options": [
+            "关于下雪",
+            "再见"
+        ],
+        "SkipIds": [
+            52302,
+            52308
+        ]
+    },
+    {
+        "Id": 52303,
+        "Content": "一片片从天上落下来，然后落到邦比娜塔身上，凉凉的。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52304,
+        "Options": [
+            "关于下雪",
+            "再见"
+        ],
+        "SkipIds": [
+            52302,
+            52308
+        ]
+    },
+    {
+        "Id": 52304,
+        "Content": "邦比娜塔不觉得冷，因为指挥官身边很温暖。指挥官……愿意陪邦比娜塔再多待一会吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            52305,
+            52308
+        ]
+    },
+    {
+        "Id": 52305,
+        "Content": "谢谢指挥官送给我新年礼物，邦比娜塔会好好收起来的……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52306,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            52305,
+            52308
+        ]
+    },
+    {
+        "Id": 52306,
+        "Content": "不，红包，主人说过不可以收……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52307,
+        "Options": [
+            "关于礼物",
+            "再见"
+        ],
+        "SkipIds": [
+            52305,
+            52308
+        ]
+    },
+    {
+        "Id": 52307,
+        "Content": "邦比娜塔知道，这个节日一年只有一次，很珍贵，邦比娜塔回去后，会好好保存这份新年的记忆。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于下雪",
+            "再见"
+        ],
+        "SkipIds": [
+            52302,
+            52308
+        ]
+    },
+    {
+        "Id": 52308,
+        "Content": "非常感谢您，指挥官。",
+        "BehaviorId": "2024SpringNpc_Bangbinata_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52401,
+        "Content": "指挥官阁下，您来了。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于水池",
+            "关于毛毯",
+            "再见"
+        ],
+        "SkipIds": [
+            52402,
+            52405,
+            52408
+        ]
+    },
+    {
+        "Id": 52402,
+        "Content": "……指挥官？我没有在发呆。这里很安静，景色适宜，所以我在这里小坐片刻。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52403,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            52402,
+            52408
+        ]
+    },
+    {
+        "Id": 52403,
+        "Content": "九龙的文化我也略知一二，这样的节日总会让人开心……我吗？我当然也很开心，能在这里见到您，更是意料之外的惊喜。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52404,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            52402,
+            52408
+        ]
+    },
+    {
+        "Id": 52404,
+        "Content": "去那边看看吗？那边的景致别有一番创意，我似乎曾经在哪部九龙电影中看到过这样的景色……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于毛毯",
+            "再见"
+        ],
+        "SkipIds": [
+            52405,
+            52408
+        ]
+    },
+    {
+        "Id": 52405,
+        "Content": "指挥官阁下，外面下雪了，去连廊那边会暖和一点……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52406,
+        "Options": [
+            "关于毛毯",
+            "再见"
+        ],
+        "SkipIds": [
+            52405,
+            52408
+        ]
+    },
+    {
+        "Id": 52406,
+        "Content": "啊，这是之前送您的毛毯吗？没想到能在这里见到它……看样子，您很喜欢这个礼物。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52407,
+        "Options": [
+            "关于毛毯",
+            "再见"
+        ],
+        "SkipIds": [
+            52405,
+            52408
+        ]
+    },
+    {
+        "Id": 52407,
+        "Content": "……能坐过来一些吗，指挥官？嗯，这样就好。这样，我们就能共同分享这份温暖了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于水池",
+            "再见"
+        ],
+        "SkipIds": [
+            52402,
+            52408
+        ]
+    },
+    {
+        "Id": 52408,
+        "Content": "期待下次与您相见，指挥官阁下。",
+        "BehaviorId": "2024SpringNpc_Bianka_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52501,
+        "Content": "指挥官喜欢这种花灯吗？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于花灯",
+            "关于冰淇淋",
+            "再见"
+        ],
+        "SkipIds": [
+            52502,
+            52505,
+            52508
+        ]
+    },
+    {
+        "Id": 52502,
+        "Content": "这种水里的花灯好精巧……我之前在北极的时候，河面经常被冰封，没有机会制作这种漂亮的河灯。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52503,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            52502,
+            52508
+        ]
+    },
+    {
+        "Id": 52503,
+        "Content": "但我们偶尔会做冰雕，你见过冰雕吗？有些手巧的姐妹做出来的也很精致，还可以在里面点上烛火。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52504,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            52502,
+            52508
+        ]
+    },
+    {
+        "Id": 52504,
+        "Content": "嗯……如果指挥官感兴趣的话，我给指挥官制作一个冰雕怎么样？你喜欢什么形状的？我看看，这个位置应该就可以……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于冰淇淋",
+            "再见"
+        ],
+        "SkipIds": [
+            52505,
+            52508
+        ]
+    },
+    {
+        "Id": 52505,
+        "Content": "哎，怎么他们都在看我……难道这里的人不会在这个季节吃冰淇淋吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52506,
+        "Options": [
+            "关于冰淇淋",
+            "再见"
+        ],
+        "SkipIds": [
+            52505,
+            52508
+        ]
+    },
+    {
+        "Id": 52506,
+        "Content": "不会感觉到很冷的，这样的天气吃冰淇淋才不会融化的那么快……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52507,
+        "Options": [
+            "关于冰淇淋",
+            "再见"
+        ],
+        "SkipIds": [
+            52505,
+            52508
+        ]
+    },
+    {
+        "Id": 52507,
+        "Content": "指挥官，你要一起试试看吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            52502,
+            52508
+        ]
+    },
+    {
+        "Id": 52508,
+        "Content": "要再来一个冰淇淋吗？",
+        "BehaviorId": "2024SpringNpc_Luosaita_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52601,
+        "Content": "没想到能在这里见到你。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于饮茶",
+            "关于值班",
+            "再见"
+        ],
+        "SkipIds": [
+            52602,
+            52605,
+            52608
+        ]
+    },
+    {
+        "Id": 52602,
+        "Content": "今天？我当然不会在这种节日安排别的工作，或者说，我今天的工作安排，就是和你一起坐在这里喝茶。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52603,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            52602,
+            52608
+        ]
+    },
+    {
+        "Id": 52603,
+        "Content": "呼……不需要应付奇怪的家伙和笨蛋，只需要和你一起在这里享受这份点心……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52604,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            52602,
+            52608
+        ]
+    },
+    {
+        "Id": 52604,
+        "Content": "真是愉快的一天。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于值班",
+            "再见"
+        ],
+        "SkipIds": [
+            52605,
+            52608
+        ]
+    },
+    {
+        "Id": 52605,
+        "Content": "工程部队的值班安排乱的就像一团毛线，多看两眼就会影响心情。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52606,
+        "Options": [
+            "关于值班",
+            "再见"
+        ],
+        "SkipIds": [
+            52605,
+            52608
+        ]
+    },
+    {
+        "Id": 52606,
+        "Content": "不过没关系，我已经帮他们整理完所有的表格了，新的排班表就像我写的代码一样优美，顺带把莫名其妙给自己排了连续五天班的家伙也丢出了工程部队。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52607,
+        "Options": [
+            "关于值班",
+            "再见"
+        ],
+        "SkipIds": [
+            52605,
+            52608
+        ]
+    },
+    {
+        "Id": 52607,
+        "Content": "这样的时间，就应该好好享受，好好休息……呼~要再来一杯吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于饮茶",
+            "再见"
+        ],
+        "SkipIds": [
+            52602,
+            52608
+        ]
+    },
+    {
+        "Id": 52608,
+        "Content": "待会记得回来哦，你的茶都还没有喝完。",
+        "BehaviorId": "2024SpringNpc_Buouxiong_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52701,
+        "Content": "是不是饵料还不够？",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于钓鱼",
+            "关于工程部队",
+            "再见"
+        ],
+        "SkipIds": [
+            52702,
+            52705,
+            52709
+        ]
+    },
+    {
+        "Id": 52702,
+        "Content": "别问我钓竿和饵料是从哪来的，我来的时候就在这里了。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52703,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            52702,
+            52709
+        ]
+    },
+    {
+        "Id": 52703,
+        "Content": "钓鱼这种活动还是太考验耐心了，但我暂时不能放弃，不、能、放、弃！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52704,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            52702,
+            52709
+        ]
+    },
+    {
+        "Id": 52704,
+        "Content": "我一定能钓上来……看！上钩了！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于工程部队",
+            "再见"
+        ],
+        "SkipIds": [
+            52705,
+            52709
+        ]
+    },
+    {
+        "Id": 52705,
+        "Content": "那个拐角处的栏杆做的是九十度直角，要是有人撞上去肯定不好受……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52706,
+        "Options": [
+            "关于工程部队",
+            "再见"
+        ],
+        "SkipIds": [
+            52705,
+            52709
+        ]
+    },
+    {
+        "Id": 52706,
+        "Content": "但现在它已经不是了，因为我刚刚把那块直角敲掉了，工程部队值班的同伴一会儿就来改建。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52707,
+        "Options": [
+            "关于工程部队",
+            "再见"
+        ],
+        "SkipIds": [
+            52705,
+            52709
+        ]
+    },
+    {
+        "Id": 52707,
+        "Content": "当然要有人值班啦，即使是节假日，也要有人负责维护机械……原本我给自己排了好几天的工作，但不知道谁改了我精心整理的值班表……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52708,
+        "Options": [
+            "关于工程部队",
+            "再见"
+        ],
+        "SkipIds": [
+            52705,
+            52709
+        ]
+    },
+    {
+        "Id": 52708,
+        "Content": "算了，就这样休息一下也还不错……快看！鱼咬钩了！",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于钓鱼",
+            "再见"
+        ],
+        "SkipIds": [
+            52702,
+            52709
+        ]
+    },
+    {
+        "Id": 52709,
+        "Content": "看！又上钩了一条鱼！哼哼。",
+        "BehaviorId": "2024SpringNpc_Kalienina_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52801,
+        "Content": "这里的建筑很适合做漫画的背景参考……",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于绘画",
+            "关于作品",
+            "再见"
+        ],
+        "SkipIds": [
+            52802,
+            52805,
+            52809
+        ]
+    },
+    {
+        "Id": 52802,
+        "Content": "虽然把这里的风景都都画进去了，但总感觉缺了点什么……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52803,
+        "Options": [
+            "关于绘画",
+            "再见"
+        ],
+        "SkipIds": [
+            52802,
+            52809
+        ]
+    },
+    {
+        "Id": 52803,
+        "Content": "啊，指挥官！太好了！对，你就站在那边，不会挡住风景的——",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52804,
+        "Options": [
+            "关于绘画",
+            "再见"
+        ],
+        "SkipIds": [
+            52802,
+            52809
+        ]
+    },
+    {
+        "Id": 52804,
+        "Content": "画面完整多了……果然，这才是我想要的感觉！嘿嘿，接下来，把我自己也加进去……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于作品",
+            "再见"
+        ],
+        "SkipIds": [
+            52805,
+            52809
+        ]
+    },
+    {
+        "Id": 52805,
+        "Content": "这幅画吗？放心，这会成为我的私人收藏，不会轻易给外人看到。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52806,
+        "Options": [
+            "关于作品",
+            "再见"
+        ],
+        "SkipIds": [
+            52805,
+            52809
+        ]
+    },
+    {
+        "Id": 52806,
+        "Content": "你作为模特的报酬嘛……不如，我把我最得意的作品赠送给你怎么样？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52807,
+        "Options": [
+            "关于作品",
+            "再见"
+        ],
+        "SkipIds": [
+            52805,
+            52809
+        ]
+    },
+    {
+        "Id": 52807,
+        "Content": "放心啦，我可不会做亏本的生意。如果觉得这个交换我吃亏的话……不如，下次也送我一份你的作品吧？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52808,
+        "Options": [
+            "关于作品",
+            "再见"
+        ],
+        "SkipIds": [
+            52805,
+            52809
+        ]
+    },
+    {
+        "Id": 52808,
+        "Content": "画什么都可以哦，指挥官~",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于绘画",
+            "再见"
+        ],
+        "SkipIds": [
+            52802,
+            52809
+        ]
+    },
+    {
+        "Id": 52809,
+        "Content": "再见，指挥官，我也要继续“工作模式”啦！",
+        "BehaviorId": "2024SpringNpc_Aila_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 52901,
+        "Content": "您好，指挥。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于赏花",
+            "关于灯笼",
+            "再见"
+        ],
+        "SkipIds": [
+            52902,
+            52905,
+            52908
+        ]
+    },
+    {
+        "Id": 52902,
+        "Content": "我短暂停留过许多地方，也见过许多这样盛开的花朵。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52903,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            52902,
+            52908
+        ]
+    },
+    {
+        "Id": 52903,
+        "Content": "但没有一处，像它们这般清雅。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52904,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            52902,
+            52908
+        ]
+    },
+    {
+        "Id": 52904,
+        "Content": "能与我一同演奏吗？指挥，我想用音乐奏出我们一同赏花的光景。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于灯笼",
+            "再见"
+        ],
+        "SkipIds": [
+            52905,
+            52908
+        ]
+    },
+    {
+        "Id": 52905,
+        "Content": "灯笼与影壁都可供游人书写留念吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52906,
+        "Options": [
+            "关于灯笼",
+            "再见"
+        ],
+        "SkipIds": [
+            52905,
+            52908
+        ]
+    },
+    {
+        "Id": 52906,
+        "Content": "那么，指挥执笔，我来谱出方才那段乐曲，怎么样？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 52907,
+        "Options": [
+            "关于灯笼",
+            "再见"
+        ],
+        "SkipIds": [
+            52905,
+            52908
+        ]
+    },
+    {
+        "Id": 52907,
+        "Content": "留下的墨痕，是我与你一同到来的见证，无论多久之后，它们都会摇晃在这里的风中，絮絮我们之间的故事。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于赏花",
+            "再见"
+        ],
+        "SkipIds": [
+            52902,
+            52908
+        ]
+    },
+    {
+        "Id": 52908,
+        "Content": "长久停留吧，留在这份令我不舍的恬静时光之中……",
+        "BehaviorId": "2024SpringNpc_Sailinna_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 53001,
+        "Content": "有很多要忙的事……",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于物质",
+            "关于闲谈",
+            "再见"
+        ],
+        "SkipIds": [
+            53002,
+            53005,
+            53008
+        ]
+    },
+    {
+        "Id": 53002,
+        "Content": "今年绿洲的物资还算充足，遗忘者中有不少人重视这个节日，所以，我们准备了很多“年货”。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53003,
+        "Options": [
+            "关于物质",
+            "再见"
+        ],
+        "SkipIds": [
+            53002,
+            53008
+        ]
+    },
+    {
+        "Id": 53003,
+        "Content": "虽然不能照顾到每个人的口味，但仍然希望大家都能在这个节日中留下美好的回忆。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53004,
+        "Options": [
+            "关于物质",
+            "再见"
+        ],
+        "SkipIds": [
+            53002,
+            53008
+        ]
+    },
+    {
+        "Id": 53004,
+        "Content": "想和我们一起度过这个节日吗？等这边事情结束，我就带你一起回绿洲。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于闲谈",
+            "再见"
+        ],
+        "SkipIds": [
+            53005,
+            53008
+        ]
+    },
+    {
+        "Id": 53005,
+        "Content": "现在确实是闲谈的好时机，你有什么烦恼吗？可以和我聊聊，有什么开心的事情，也可以和我一同分享。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53006,
+        "Options": [
+            "关于闲谈",
+            "再见"
+        ],
+        "SkipIds": [
+            53005,
+            53008
+        ]
+    },
+    {
+        "Id": 53006,
+        "Content": "想听我说说我的故事？嗯……也未尝不可。但我来时走过的路太远，也许一时半刻讲不完。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53007,
+        "Options": [
+            "关于闲谈",
+            "再见"
+        ],
+        "SkipIds": [
+            53005,
+            53008
+        ]
+    },
+    {
+        "Id": 53007,
+        "Content": "你愿意慢慢听我讲吗？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于物质",
+            "再见"
+        ],
+        "SkipIds": [
+            53002,
+            53008
+        ]
+    },
+    {
+        "Id": 53008,
+        "Content": "嗯，不急，我会在这里等你，继续我们的闲谈。",
+        "BehaviorId": "2024SpringNpc_Dubian_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    },
+    {
+        "Id": 53101,
+        "Content": "新年快乐，指挥官。",
+        "BehaviorId": "Talk_Idle",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于花灯",
+            "关于冬雪",
+            "再见"
+        ],
+        "SkipIds": [
+            53102,
+            53105,
+            53107
+        ]
+    },
+    {
+        "Id": 53102,
+        "Content": "听说在花灯上写下新年的愿望，它就有可能会实现……",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53103,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            53102,
+            53107
+        ]
+    },
+    {
+        "Id": 53103,
+        "Content": "嗯？好奇我写了什么？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53104,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            53102,
+            53107
+        ]
+    },
+    {
+        "Id": 53104,
+        "Content": "如果你也愿意告诉我，我就说……怎么样？",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于冬雪",
+            "再见"
+        ],
+        "SkipIds": [
+            53105,
+            53107
+        ]
+    },
+    {
+        "Id": 53105,
+        "Content": "这里的雪一直很平静，它只和雪人或新年有关。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 53106,
+        "Options": [
+            "关于冬雪",
+            "再见"
+        ],
+        "SkipIds": [
+            53105,
+            53107
+        ]
+    },
+    {
+        "Id": 53106,
+        "Content": "如果你在意那时问过我的事，就留在这里和我一起散散步吧。",
+        "OptionShowTime": 800,
+        "EmptySkipId": 0,
+        "RepeatId": 0,
+        "Options": [
+            "关于花灯",
+            "再见"
+        ],
+        "SkipIds": [
+            53102,
+            53107
+        ]
+    },
+    {
+        "Id": 53107,
+        "Content": "稍等，指挥官……雪落在头发上了。",
+        "BehaviorId": "2024SpringNpc_Nuoan_Endtalk",
+        "OptionShowTime": 0,
+        "EmptySkipId": 0,
+        "RepeatId": 0
+    }
+]

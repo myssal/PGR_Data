@@ -1,0 +1,88 @@
+[
+    {
+        "Id": 1001,
+        "TimeId": 0,
+        "Type": 1,
+        "Name": "第一章",
+        "PreChapter": 0,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            10011,
+            10012,
+            10013
+        ]
+    },
+    {
+        "Id": 1002,
+        "TimeId": 0,
+        "Type": 1,
+        "Name": "第二章",
+        "PreChapter": 1001,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            10021,
+            10022,
+            10023
+        ]
+    },
+    {
+        "Id": 1003,
+        "TimeId": 0,
+        "Type": 2,
+        "Name": "第三章",
+        "PreChapter": 1002,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            10031,
+            10032,
+            10033
+        ],
+        "CanSweep": [
+            true,
+            true
+        ]
+    },
+    {
+        "Id": 2001,
+        "TimeId": 0,
+        "Type": 1,
+        "Name": "第一章",
+        "PreChapter": 0,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            20011,
+            20012,
+            20013
+        ]
+    },
+    {
+        "Id": 2002,
+        "TimeId": 0,
+        "Type": 1,
+        "Name": "第二章",
+        "PreChapter": 2001,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            20021,
+            20022,
+            20023
+        ]
+    },
+    {
+        "Id": 2003,
+        "TimeId": 0,
+        "Type": 2,
+        "Name": "第三章",
+        "PreChapter": 2002,
+        "TeamLimitCount": 3,
+        "MonsterGroupIds": [
+            20031,
+            20032,
+            20033
+        ],
+        "CanSweep": [
+            true,
+            true
+        ]
+    }
+]

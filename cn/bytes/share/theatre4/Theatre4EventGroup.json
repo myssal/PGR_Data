@@ -1,0 +1,2691 @@
+[
+    {
+        "Id": 1,
+        "Des": "选项跳转用事件组",
+        "GroupId": 10010,
+        "EventId": 10010,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 2,
+        "Des": "选项跳转用事件组",
+        "GroupId": 10011,
+        "EventId": 10011,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 3,
+        "Des": "选项跳转用事件组",
+        "GroupId": 10012,
+        "EventId": 10012,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 4,
+        "Des": "选项跳转用事件组",
+        "GroupId": 10013,
+        "EventId": 10013,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 5,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10002,
+        "EventId": 10002,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 6,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10003,
+        "EventId": 10003,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 7,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10004,
+        "EventId": 10004,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 8,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10006,
+        "EventId": 10006,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 9,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10007,
+        "EventId": 10007,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 10,
+        "Des": "暂时用着，要删的",
+        "GroupId": 10008,
+        "EventId": 10008,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 11,
+        "Des": "测试用随机3选1",
+        "GroupId": 10009,
+        "EventId": 10001,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 12,
+        "Des": "测试用随机3选1",
+        "GroupId": 10009,
+        "EventId": 10005,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 13,
+        "Des": "测试用随机3选1",
+        "GroupId": 10009,
+        "EventId": 10009,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 14,
+        "Des": "蓝图真假门结局",
+        "GroupId": 30001,
+        "EventId": 30001,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 15,
+        "Des": "凑数cost金币1",
+        "GroupId": 21001,
+        "EventId": 11001,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 1020603
+    },
+    {
+        "Id": 16,
+        "Des": "凑数cost金币2",
+        "GroupId": 21001,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 1020603
+    },
+    {
+        "Id": 17,
+        "Des": "凑数cost金币3",
+        "GroupId": 21001,
+        "EventId": 11017,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 1020603
+    },
+    {
+        "Id": 18,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11001,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 19,
+        "Des": "通用事件-前两章不刷",
+        "GroupId": 20001,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 20,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11017,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 21,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11025,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 22,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11033,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 23,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11041,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 24,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11075,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 25,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11133,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 26,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11146,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 27,
+        "Des": "通用事件组",
+        "GroupId": 20001,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 28,
+        "Des": "捉迷藏传送事件",
+        "GroupId": 30180,
+        "EventId": 30180,
+        "Weight": 100,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 29,
+        "Des": "捉迷藏传送到达事件",
+        "GroupId": 30200,
+        "EventId": 30200,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 30,
+        "Des": "无上之戒起手",
+        "GroupId": 31001,
+        "EventId": 31001,
+        "Weight": 100,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 31,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 31006,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            99999
+        ],
+        "AddWeightCondition": [
+            1020619
+        ]
+    },
+    {
+        "Id": 32,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 31013,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            99999
+        ],
+        "AddWeightCondition": [
+            1020620
+        ]
+    },
+    {
+        "Id": 33,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 34,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 35,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 36,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 37,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 38,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 39,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 40,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 41,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 42,
+        "Des": "无上之戒图3",
+        "GroupId": 31002,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 43,
+        "Des": "无上之戒图4事件",
+        "GroupId": 31003,
+        "EventId": 31017,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 44,
+        "Des": "芙莉莲事件",
+        "GroupId": 31004,
+        "EventId": 31019,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 45,
+        "Des": "科研站，黄图3开门事件",
+        "GroupId": 31005,
+        "EventId": 31028,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 46,
+        "Des": "黄色结局开门事件，不减权了，结局图必出",
+        "GroupId": 31006,
+        "EventId": 31035,
+        "Weight": 9999,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 47,
+        "Des": "黄色神秘商店",
+        "GroupId": 31007,
+        "EventId": 31038,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 48,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 30060,
+        "Weight": 0,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            99999
+        ],
+        "AddWeightCondition": [
+            1020631
+        ]
+    },
+    {
+        "Id": 49,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 50,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 51,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 52,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 53,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 54,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 55,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 56,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 57,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 58,
+        "Des": "冬日之影蓝色图2",
+        "GroupId": 31008,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 59,
+        "Des": "大扫除蓝色图3",
+        "GroupId": 31009,
+        "EventId": 30410,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 60,
+        "Des": "冬日之影蓝色图1",
+        "GroupId": 31010,
+        "EventId": 30050,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 61,
+        "Des": "朋友蓝色图4",
+        "GroupId": 31011,
+        "EventId": 30420,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 62,
+        "Des": "救晚钟蓝色图4",
+        "GroupId": 31012,
+        "EventId": 30434,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 63,
+        "Des": "机械蠕虫蓝色图5",
+        "GroupId": 31013,
+        "EventId": 30445,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 64,
+        "Des": "蓝色结局真假门选择",
+        "GroupId": 31014,
+        "EventId": 31080,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 65,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 30030,
+        "Weight": 10,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 66,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 67,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 68,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 69,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 70,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 71,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 72,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 73,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 74,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 75,
+        "Des": "战马瑞恩红色图1",
+        "GroupId": 31015,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 76,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 30036,
+        "Weight": 0,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            99999
+        ],
+        "AddWeightCondition": [
+            1020615
+        ]
+    },
+    {
+        "Id": 77,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 30040,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            99999
+        ],
+        "AddWeightCondition": [
+            1020616
+        ]
+    },
+    {
+        "Id": 78,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 79,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 80,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 81,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 82,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 83,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 84,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 85,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 86,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 87,
+        "Des": "战马瑞恩红色图2",
+        "GroupId": 31016,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 88,
+        "Des": "红色结局事件-结局必出",
+        "GroupId": 31017,
+        "EventId": 31110,
+        "Weight": 1,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 89,
+        "Des": "章节1主线，前两次加权，后面50%概率出",
+        "GroupId": 31018,
+        "EventId": 31130,
+        "Weight": 10,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            9999,
+            9999,
+            -19998
+        ],
+        "AddWeightCondition": [
+            1020649,
+            1020650,
+            1020691
+        ]
+    },
+    {
+        "Id": 90,
+        "GroupId": 31018,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 91,
+        "GroupId": 31018,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 92,
+        "GroupId": 31018,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 93,
+        "GroupId": 31018,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 94,
+        "GroupId": 31018,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 95,
+        "GroupId": 31018,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 96,
+        "GroupId": 31018,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 97,
+        "GroupId": 31018,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 98,
+        "GroupId": 31018,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 99,
+        "GroupId": 31018,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 100,
+        "Des": "章节2主线，前两次加权，后面50%概率出",
+        "GroupId": 31019,
+        "EventId": 31140,
+        "Weight": 10,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            9999,
+            9999,
+            -19998
+        ],
+        "AddWeightCondition": [
+            1020651,
+            1020652,
+            1020692
+        ]
+    },
+    {
+        "Id": 101,
+        "GroupId": 31019,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 102,
+        "GroupId": 31019,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 103,
+        "GroupId": 31019,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 104,
+        "GroupId": 31019,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 105,
+        "GroupId": 31019,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 106,
+        "GroupId": 31019,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 107,
+        "GroupId": 31019,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 108,
+        "GroupId": 31019,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 109,
+        "GroupId": 31019,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 110,
+        "GroupId": 31019,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 111,
+        "Des": "章节4主线，前两次加权，后面50%概率出",
+        "GroupId": 31020,
+        "EventId": 31170,
+        "Weight": 10,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            9999,
+            9999,
+            -19998
+        ],
+        "AddWeightCondition": [
+            1020653,
+            1020654,
+            1020693
+        ]
+    },
+    {
+        "Id": 112,
+        "GroupId": 31020,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 113,
+        "GroupId": 31020,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 114,
+        "GroupId": 31020,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 115,
+        "GroupId": 31020,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 116,
+        "GroupId": 31020,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 117,
+        "GroupId": 31020,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 118,
+        "GroupId": 31020,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 119,
+        "GroupId": 31020,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 120,
+        "GroupId": 31020,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 121,
+        "GroupId": 31020,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 122,
+        "Des": "章节3主线，前两次加权，后面50%概率出",
+        "GroupId": 31021,
+        "EventId": 31185,
+        "Weight": 10,
+        "GameRepeatable": 0,
+        "ConditionId": 0,
+        "AddWeight": [
+            9999,
+            9999,
+            -19998
+        ],
+        "AddWeightCondition": [
+            1020655,
+            1020656,
+            1020694
+        ]
+    },
+    {
+        "Id": 123,
+        "GroupId": 31021,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 124,
+        "GroupId": 31021,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 125,
+        "GroupId": 31021,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 126,
+        "GroupId": 31021,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 127,
+        "GroupId": 31021,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 128,
+        "GroupId": 31021,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 129,
+        "GroupId": 31021,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 130,
+        "GroupId": 31021,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 131,
+        "GroupId": 31021,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 132,
+        "GroupId": 31021,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 133,
+        "Des": "红色结局事件-必出",
+        "GroupId": 31022,
+        "EventId": 31110,
+        "Weight": 1,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 134,
+        "Des": "前有陷阱事件内部随机区域用",
+        "GroupId": 31030,
+        "EventId": 30098,
+        "Weight": 1,
+        "GameRepeatable": 0,
+        "ConditionId": 1020670
+    },
+    {
+        "Id": 135,
+        "GroupId": 31030,
+        "EventId": 30099,
+        "Weight": 1,
+        "GameRepeatable": 0,
+        "ConditionId": 1020670
+    },
+    {
+        "Id": 136,
+        "GroupId": 31030,
+        "EventId": 30100,
+        "Weight": 1,
+        "GameRepeatable": 0,
+        "ConditionId": 1020671
+    },
+    {
+        "Id": 138,
+        "Des": "红色路线1，前有陷阱事件",
+        "GroupId": 31031,
+        "EventId": 30090,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 139,
+        "GroupId": 31031,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 140,
+        "GroupId": 31031,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 141,
+        "GroupId": 31031,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 142,
+        "GroupId": 31031,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 143,
+        "GroupId": 31031,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 144,
+        "GroupId": 31031,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 145,
+        "GroupId": 31031,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 146,
+        "GroupId": 31031,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 147,
+        "GroupId": 31031,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 148,
+        "GroupId": 31031,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 149,
+        "Des": "新手地图1事件1",
+        "GroupId": 1001,
+        "EventId": 1001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 150,
+        "Des": "新手地图2事件1",
+        "GroupId": 1002,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 151,
+        "Des": "新手地图2事件1",
+        "GroupId": 1003,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 152,
+        "Des": "红色路线1，我们的故乡-前置-第三章",
+        "GroupId": 31032,
+        "EventId": 30501,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 153,
+        "GroupId": 31032,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 154,
+        "GroupId": 31032,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 155,
+        "GroupId": 31032,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 156,
+        "GroupId": 31032,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 157,
+        "GroupId": 31032,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 158,
+        "GroupId": 31032,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 159,
+        "GroupId": 31032,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 160,
+        "GroupId": 31032,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 161,
+        "GroupId": 31032,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 162,
+        "GroupId": 31032,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 163,
+        "Des": "红色路线1，我们的故乡-结尾-第四章",
+        "GroupId": 31033,
+        "EventId": 30520,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 164,
+        "Des": "混色路线1，奔赴战场1-第二章",
+        "GroupId": 31040,
+        "EventId": 30300,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 165,
+        "GroupId": 31040,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 166,
+        "GroupId": 31040,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 167,
+        "GroupId": 31040,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 168,
+        "GroupId": 31040,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 169,
+        "GroupId": 31040,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 170,
+        "GroupId": 31040,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 171,
+        "GroupId": 31040,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 172,
+        "GroupId": 31040,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 173,
+        "GroupId": 31040,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 174,
+        "GroupId": 31040,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 175,
+        "Des": "混色路线1，奔赴战场2-第三章",
+        "GroupId": 31041,
+        "EventId": 30320,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 1020695
+    },
+    {
+        "Id": 176,
+        "GroupId": 31041,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 177,
+        "GroupId": 31041,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 178,
+        "GroupId": 31041,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 179,
+        "GroupId": 31041,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 180,
+        "GroupId": 31041,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 181,
+        "GroupId": 31041,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 182,
+        "GroupId": 31041,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 183,
+        "GroupId": 31041,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 184,
+        "GroupId": 31041,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 185,
+        "GroupId": 31041,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 186,
+        "Des": "混色路线1，奔赴战场3-第四章",
+        "GroupId": 31042,
+        "EventId": 30370,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 1020696
+    },
+    {
+        "Id": 187,
+        "GroupId": 31042,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 188,
+        "GroupId": 31042,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 189,
+        "GroupId": 31042,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 190,
+        "GroupId": 31042,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 191,
+        "GroupId": 31042,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 192,
+        "GroupId": 31042,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 193,
+        "GroupId": 31042,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 194,
+        "GroupId": 31042,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 195,
+        "GroupId": 31042,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 196,
+        "GroupId": 31042,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 197,
+        "Des": "混色路线1，忠诚守卫1-第四章",
+        "GroupId": 31043,
+        "EventId": 30221,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 198,
+        "GroupId": 31043,
+        "EventId": 11001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 199,
+        "GroupId": 31043,
+        "EventId": 11009,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 200,
+        "GroupId": 31043,
+        "EventId": 11017,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 201,
+        "GroupId": 31043,
+        "EventId": 11025,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 202,
+        "GroupId": 31043,
+        "EventId": 11033,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 203,
+        "GroupId": 31043,
+        "EventId": 11041,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 204,
+        "GroupId": 31043,
+        "EventId": 11075,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 205,
+        "GroupId": 31043,
+        "EventId": 11133,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 206,
+        "GroupId": 31043,
+        "EventId": 11146,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 207,
+        "GroupId": 31043,
+        "EventId": 11159,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            1
+        ],
+        "AddWeightCondition": [
+            1020614
+        ]
+    },
+    {
+        "Id": 208,
+        "Des": "混色路线1，忠诚守卫2-第四章",
+        "GroupId": 31044,
+        "EventId": 30250,
+        "Weight": 1000,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 209,
+        "Des": "白银城系列初始",
+        "GroupId": 60001,
+        "EventId": 60001,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 210,
+        "Des": "白银城首次劝退",
+        "GroupId": 60008,
+        "EventId": 60008,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 211,
+        "Des": "白银城翻倍",
+        "GroupId": 60011,
+        "EventId": 60011,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 212,
+        "Des": "白银城减半",
+        "GroupId": 60015,
+        "EventId": 60015,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 213,
+        "Des": "白银城-100",
+        "GroupId": 60019,
+        "EventId": 60019,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 214,
+        "Des": "白银城+100",
+        "GroupId": 60021,
+        "EventId": 60021,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 215,
+        "Des": "白银城+400",
+        "GroupId": 60024,
+        "EventId": 60024,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 216,
+        "Des": "战前",
+        "GroupId": 60026,
+        "EventId": 60026,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 217,
+        "Des": "战后",
+        "GroupId": 60030,
+        "EventId": 60030,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 218,
+        "Des": "逆风小径初始",
+        "GroupId": 60034,
+        "EventId": 60034,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 219,
+        "Des": "逆风小径劝退",
+        "GroupId": 60040,
+        "EventId": 60040,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 220,
+        "Des": "逆风小径-项链",
+        "GroupId": 60043,
+        "EventId": 60043,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 221,
+        "Des": "逆风小径-数值奖励",
+        "GroupId": 60046,
+        "EventId": 60046,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 222,
+        "Des": "逆风小径-试炼",
+        "GroupId": 60048,
+        "EventId": 60048,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 223,
+        "Des": "逆风小径-boss战后",
+        "GroupId": 60051,
+        "EventId": 60051,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 224,
+        "Des": "逆风小径-第二章开局奖励",
+        "GroupId": 60058,
+        "EventId": 60058,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 225,
+        "Des": "极地复兴计划1",
+        "GroupId": 60059,
+        "EventId": 60059,
+        "Weight": 0,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 226,
+        "Des": "极地复兴计划2",
+        "GroupId": 60059,
+        "EventId": 60071,
+        "Weight": 0,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 227,
+        "Des": "极地复兴计划3",
+        "GroupId": 60059,
+        "EventId": 60077,
+        "Weight": 0,
+        "GameRepeatable": 0,
+        "ConditionId": 0
+    },
+    {
+        "Id": 228,
+        "Des": "黄金城+100倒下的石柱",
+        "GroupId": 60125,
+        "EventId": 60125,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 229,
+        "Des": "黄金城+100前人遗物",
+        "GroupId": 60128,
+        "EventId": 60128,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 230,
+        "Des": "觉醒事件-蓝-无名实验室",
+        "GroupId": 60132,
+        "EventId": 60132,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 231,
+        "Des": "觉醒事件-蓝-冰层下的遗物",
+        "GroupId": 60143,
+        "EventId": 60143,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 232,
+        "Des": "觉醒事件-黄-塔顶的占星师",
+        "GroupId": 60153,
+        "EventId": 60153,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 233,
+        "Des": "觉醒事件-黄-实现心愿的温泉",
+        "GroupId": 60164,
+        "EventId": 60164,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 234,
+        "Des": "觉醒事件-红-幻想之兽",
+        "GroupId": 60183,
+        "EventId": 60183,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 235,
+        "Des": "觉醒事件-红-不止之梦",
+        "GroupId": 60194,
+        "EventId": 60194,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 236,
+        "Des": "觉醒事件-崩毁的前奏1",
+        "GroupId": 60205,
+        "EventId": 60205,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 237,
+        "Des": "觉醒事件-崩毁的前奏2",
+        "GroupId": 60211,
+        "EventId": 60211,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020840
+        ]
+    },
+    {
+        "Id": 238,
+        "Des": "觉醒事件-崩毁的前奏3",
+        "GroupId": 60215,
+        "EventId": 60215,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020848
+        ]
+    },
+    {
+        "Id": 239,
+        "Des": "觉醒事件-崩毁的前奏终",
+        "GroupId": 60216,
+        "EventId": 60216,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020839
+        ]
+    },
+    {
+        "Id": 240,
+        "Des": "觉醒事件-奇点1",
+        "GroupId": 60205,
+        "EventId": 60221,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 241,
+        "Des": "觉醒事件-奇点2",
+        "GroupId": 60211,
+        "EventId": 60230,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020842
+        ]
+    },
+    {
+        "Id": 242,
+        "Des": "觉醒事件-奇点3",
+        "GroupId": 60215,
+        "EventId": 60234,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020849
+        ]
+    },
+    {
+        "Id": 243,
+        "Des": "觉醒事件-奇点4",
+        "GroupId": 60216,
+        "EventId": 60238,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020850
+        ]
+    },
+    {
+        "Id": 244,
+        "Des": "觉醒事件-奇点5",
+        "GroupId": 60244,
+        "EventId": 60244,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020851
+        ]
+    },
+    {
+        "Id": 245,
+        "Des": "被封锁的档案1",
+        "GroupId": 60252,
+        "EventId": 60252,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 246,
+        "Des": "被封锁的档案2",
+        "GroupId": 60259,
+        "EventId": 60259,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020786
+        ]
+    },
+    {
+        "Id": 247,
+        "Des": "被封锁的档案3",
+        "GroupId": 60265,
+        "EventId": 60265,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020787
+        ]
+    },
+    {
+        "Id": 248,
+        "Des": "梦中的回响1",
+        "GroupId": 60252,
+        "EventId": 60272,
+        "Weight": 100,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 249,
+        "Des": "梦中的回响2",
+        "GroupId": 60259,
+        "EventId": 60277,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020852
+        ]
+    },
+    {
+        "Id": 250,
+        "Des": "梦中的回响3",
+        "GroupId": 60265,
+        "EventId": 60280,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020853
+        ]
+    },
+    {
+        "Id": 251,
+        "Des": "沙盘提示",
+        "GroupId": 60259,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 252,
+        "Des": "沙盘提示",
+        "GroupId": 60265,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 253,
+        "Des": "沙盘提示",
+        "GroupId": 60211,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 254,
+        "Des": "沙盘提示",
+        "GroupId": 60215,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 255,
+        "Des": "沙盘提示",
+        "GroupId": 60216,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 256,
+        "Des": "沙盘提示",
+        "GroupId": 60244,
+        "EventId": 60282,
+        "Weight": 1,
+        "GameRepeatable": 1,
+        "ConditionId": 0
+    },
+    {
+        "Id": 257,
+        "Des": "第二格选过事件2直接刷3崩毁",
+        "GroupId": 60211,
+        "EventId": 60215,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020848
+        ]
+    },
+    {
+        "Id": 258,
+        "Des": "第二格选过事件2直接刷3奇点",
+        "GroupId": 60211,
+        "EventId": 60234,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020849
+        ]
+    },
+    {
+        "Id": 259,
+        "Des": "第二格选过事件3直接刷4崩毁",
+        "GroupId": 60211,
+        "EventId": 60216,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020839
+        ]
+    },
+    {
+        "Id": 260,
+        "Des": "第二格选过事件3直接刷4奇点",
+        "GroupId": 60211,
+        "EventId": 60238,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020850
+        ]
+    },
+    {
+        "Id": 261,
+        "Des": "第三格没选过2刷2崩毁",
+        "GroupId": 60215,
+        "EventId": 60211,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020840
+        ]
+    },
+    {
+        "Id": 262,
+        "Des": "第三格没选过2刷2奇点",
+        "GroupId": 60215,
+        "EventId": 60230,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020842
+        ]
+    },
+    {
+        "Id": 263,
+        "Des": "第三格选过事件3直接刷4崩毁",
+        "GroupId": 60215,
+        "EventId": 60216,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020839
+        ]
+    },
+    {
+        "Id": 264,
+        "Des": "第三格选过事件3直接刷4奇点",
+        "GroupId": 60215,
+        "EventId": 60238,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020850
+        ]
+    },
+    {
+        "Id": 265,
+        "Des": "第四格没选过2刷2崩毁",
+        "GroupId": 60216,
+        "EventId": 60211,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020840
+        ]
+    },
+    {
+        "Id": 266,
+        "Des": "第四格没选过2刷2奇点",
+        "GroupId": 60216,
+        "EventId": 60230,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020842
+        ]
+    },
+    {
+        "Id": 267,
+        "Des": "第四格没选过2刷3崩毁",
+        "GroupId": 60216,
+        "EventId": 60215,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020848
+        ]
+    },
+    {
+        "Id": 268,
+        "Des": "第四格没选过3刷3奇点",
+        "GroupId": 60216,
+        "EventId": 60234,
+        "Weight": 0,
+        "GameRepeatable": 1,
+        "ConditionId": 0,
+        "AddWeight": [
+            100
+        ],
+        "AddWeightCondition": [
+            1020849
+        ]
+    }
+]
