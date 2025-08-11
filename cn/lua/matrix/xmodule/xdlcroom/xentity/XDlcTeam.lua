@@ -128,11 +128,6 @@ function XDlcTeam:GetMemberNumber()
 end
 
 ---@return XDlcMember
-function XDlcTeam:GetMember(pos)
-    return self._Members[pos]
-end
-
----@return XDlcMember
 function XDlcTeam:GetSelfMember()
     local amount = self:GetMemberNumber()
 

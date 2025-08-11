@@ -14,17 +14,20 @@ function XUiTheatre5PVEClueBoard:OnAwake()
     self._ClueBoardCfgs = nil
     self._CurSelectClueBoardId = nil
     self._CurSelectIndex = nil
+    self._EnterMainClueId = nil
     self._FirstMainClueList = {}
     self._FirstMinorClueList = {}
     self._SecondMainClueList = {}
     self._SecondMinorClueList = {}
     self._IsDetailsShow = true --用于打开切换
+    self._LastRecordPage = nil --战斗、剧情销毁界面前的页签
     self:RegisterClickEvent(self.BtnBack, self.Close, true)
-    --self:BindHelpBtn(self.BtnHelp, 'Theatre5') --先占坑
+    self:BindHelpBtn(self.BtnHelp, 'Theatre5')
     self:RegisterClickEvent(self.BtnHandbook, self.OnClickHandbook, true)
 end
 
-function XUiTheatre5PVEClueBoard:OnStart()
+function XUiTheatre5PVEClueBoard:OnStart(mainClueId)
+    self._EnterMainClueId = mainClueId
     self.UiTheatre5PVEClueBoardMoveScale = XUiTheatre5PVEClueBoardMoveScale.New(self.GameObject, self)
     self:InitClueBoardList()
 end
@@ -42,6 +45,16 @@ function XUiTheatre5PVEClueBoard:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_CLUE_BOARD_TAG, self.OnClickClueBoardTag, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLUE_BOARD_SWITCH, self.OnSwitchClueShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_SIMPLE_CLUE, self.OnClickSimpleClue, self)
+end
+
+function XUiTheatre5PVEClueBoard:OnReleaseInst()
+    return self._CurSelectIndex
+end
+
+function XUiTheatre5PVEClueBoard:OnResume(index)
+    if XTool.IsNumberValid(index) then
+        self._LastRecordPage = index
+    end    
 end
 
 function XUiTheatre5PVEClueBoard:InitClueBoardList()
@@ -62,13 +75,11 @@ function XUiTheatre5PVEClueBoard:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
           --默认选中第一个解锁的页签
         if not XTool.IsTableEmpty(self._ClueBoardCfgs) then
-            for i = 1, #self._ClueBoardCfgs do
-                if self._Control.PVEControl:IsUnlockDeduceClueBoard(self._ClueBoardCfgs[i].Id) then
-                    self._CurSelectIndex = i
-                    self:OnClickClueBoardTag(i)
-                    break
-                end      
-            end
+            local selectIndex = XTool.IsNumberValid(self._LastRecordPage) and self._LastRecordPage or self:GetDefaultSelectIndex()
+            if XTool.IsNumberValid(selectIndex) then
+                self._CurSelectIndex = selectIndex
+                self:OnClickClueBoardTag(selectIndex)
+            end    
             self:SwitchClueShow(not self._IsDetailsShow)
         end    
     end       
@@ -180,8 +191,8 @@ function XUiTheatre5PVEClueBoard:RefreshLineRelation(curLineTrans, allClueCfgs)
             local active = true
             for part in string.gmatch(name, "[^_]+") do
                 local clueState = self:GetClueStateByIndex(allClueCfgs, part)
-                if clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Unlock or clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce
-                    or clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
+                if clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Unlock and clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce
+                    and clueState ~= XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
                         active = false
                         break
                 end        
@@ -220,6 +231,43 @@ function XUiTheatre5PVEClueBoard:RefreshClueCells(clueCellList, parentTrans, dat
     end
 end
 
+--打开默认选择有推演的页签
+function XUiTheatre5PVEClueBoard:GetDefaultSelectIndex()
+    if XTool.IsTableEmpty(self._ClueBoardCfgs) then
+        return
+    end
+    --先找第一个能推演的
+    local canDeduceIndex = 0
+    for i = 1, #self._ClueBoardCfgs do
+        local clueGroupCfgs = self._Control.PVEControl:GetDeduceClueGroupCfgs(self._ClueBoardCfgs[i].ClueGroupId)
+        if not XTool.IsTableEmpty(clueGroupCfgs) then
+            for _, clueGroupCfg in pairs(clueGroupCfgs) do
+                local clueCfg = self._Control.PVEControl:GetDeduceClueCfg(clueGroupCfg.ClueId)
+                if clueCfg.Type ==  XMVCA.XTheatre5.EnumConst.PVEClueType.Core then
+                    local clueState = self._Control.PVEControl:GetClueState(clueCfg.Id)
+                    if clueCfg.Id == self._EnterMainClueId then --指定进入的优先级最高
+                        return i
+                    end    
+                    if not XTool.IsNumberValid(canDeduceIndex) and clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce then
+                        canDeduceIndex = i
+                    end    
+                end 
+            end
+        end    
+    end
+
+    if XTool.IsNumberValid(canDeduceIndex) then --然后选第一个能推演的
+        return canDeduceIndex
+    end    
+
+    --推演的没有找第一个解锁的
+    for i = 1, #self._ClueBoardCfgs do
+        if self._Control.PVEControl:IsUnlockDeduceClueBoard(self._ClueBoardCfgs[i].Id) then
+            return i
+        end      
+    end 
+end
+
 function XUiTheatre5PVEClueBoard:GetClueStateByIndex(allClueCfgs, indexStr)
     local index = tonumber(indexStr)
     if not XTool.IsNumberValid(index) then
@@ -245,8 +293,9 @@ function XUiTheatre5PVEClueBoard:OnClickHandbook()
     if not XMVCA.XSubPackage:CheckSubpackage() then
         return
     end
-    local storySkipPage = self._Control.PVEControl:GetStorySkipPage()
-    XLuaUiManager.Open("UiArchiveStory", storySkipPage)
+    --local storySkipPage = self._Control.PVEControl:GetStorySkipPage()
+    --XLuaUiManager.Open("UiArchiveStory", storySkipPage)
+    XLuaUiManager.Open("UiTheatre5Story")
 end
 
 function XUiTheatre5PVEClueBoard:OnDestroy()
@@ -258,6 +307,8 @@ function XUiTheatre5PVEClueBoard:OnDestroy()
     self._SecondMinorClueList = nil
     self._IsDetailsShow = nil
     self._CurSelectIndex = nil
+    self._LastRecordPage = nil
+    self._EnterMainClueId = nil
 end
 
 

@@ -1,5 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiGachaSelenaMain : XLuaUi 露西亚卡池
+---@field SafeAreaContentPane UnityEngine.CanvasGroup
 local XUiGachaSelenaMain = XLuaUiManager.Register(XLuaUi, "UiGachaSelenaMain")
 
 function XUiGachaSelenaMain:OnAwake()
@@ -40,7 +41,15 @@ function XUiGachaSelenaMain:OnStart(gachaId, autoOpenStory)
     local state = isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal
     self.BtnSkip:SetButtonState(state)
 
-    self._CanPlayEnableAnim = true
+    if not self._IsGoFight then
+        -- 如果是进入剧情或者战斗返回 沿用进入之前的状态 不重新设置
+        if autoOpenStory then
+            -- 如果初始时不跳过演出 从剧情返回抽卡时 需要播一次入场动画；如果初始时跳过演出，即使后续改为不跳过演出，也不会播入场动画
+            self._CanPlayEnableAnim = not isSelect
+        else
+            self._CanPlayEnableAnim = true
+        end
+    end
 
     local timeId = self._GachaCfg.TimeId
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
@@ -54,7 +63,6 @@ function XUiGachaSelenaMain:OnStart(gachaId, autoOpenStory)
         end
     end, nil, 0)
 
-    self.BtnTemp.gameObject:SetActiveEx(false)
     self._AnimDisableLong = self:FindTransform("AnimDisableLong")
 
     -- 资源栏
@@ -63,6 +71,7 @@ function XUiGachaSelenaMain:OnStart(gachaId, autoOpenStory)
     self.AssetPanel:SetButtonCb(3, function()
         self:OpenGachaItemShop()
     end)
+    self.BtnTemp.gameObject:SetActiveEx(false)
 end
 
 function XUiGachaSelenaMain:OnEnable()
@@ -81,7 +90,7 @@ function XUiGachaSelenaMain:OnEnable()
     elseif self._CanPlayEnableAnim then
         self:PlayEnableAnim()
     else
-        self:PlayAnimation("AnimStart1")
+        self:PlayAnimationWithMask("AnimStart1")
         self:RefreshReddot()
         self:SetXPostFaicalControllerActive(true)
     end
@@ -125,13 +134,15 @@ end
 -- 记录战斗前后数据
 function XUiGachaSelenaMain:OnReleaseInst()
     return {
-        IsGoFight = true
+        IsGoFight = true,
+        CanPlayEnableAnim = self._CanPlayEnableAnim,
     }
 end
 
 function XUiGachaSelenaMain:OnResume(data)
     data = data or {}
     self._IsGoFight = data.IsGoFight
+    self._CanPlayEnableAnim = data.CanPlayEnableAnim
 end
 
 function XUiGachaSelenaMain:SetSelfActive(flag)
@@ -157,7 +168,7 @@ function XUiGachaSelenaMain:InitButton()
         self:OnBtnGachaClick(self._GachaCfg.BtnGachaCount[2])
     end)
     self:RegisterClickEvent(self.BtnSkipGacha, self.OnBtnSkipGachaClick)
-    self:RegisterClickEvent(self.BtnStoryLine, self.OnBtnStoryLineClick)
+    self:RegisterClickEvent(self.BtnStoryLine, function() self:OnBtnStoryLineClick() end)
     self:RegisterClickEvent(self.BtnAward, function()
         XLuaUiManager.Open("UiGachaSelenaLog", self._GachaCfg, 1)
     end)
@@ -167,7 +178,6 @@ function XUiGachaSelenaMain:InitButton()
     self:RegisterClickEvent(self.BtnSet, function()
         XLuaUiManager.Open("UiSet")
     end)
-    self.BtnTemp.CallBack = handler(self, self.PlayInteraction)
 end
 
 function XUiGachaSelenaMain:Init3DSceneInfo()
@@ -203,7 +213,7 @@ function XUiGachaSelenaMain:OnChildClose()
     if self._CanPlayEnableAnim then
         self:PlayEnableAnim()
     else
-        self:PlayAnimation("AnimStart1")
+        self:PlayAnimationWithMask("AnimStart1")
         self.Panel3D.AnimDisableStory.gameObject:SetActiveEx(true)
         self.Panel3D.AnimDisableStory:PlayTimelineAnimation()
         self:RefreshReddot()
@@ -281,42 +291,27 @@ function XUiGachaSelenaMain:PlayEnableAnim()
 end
 
 function XUiGachaSelenaMain:PlayLongEnableAnim()
+    local timeEnableLong = self.UiSceneInfo.Transform:Find("Animations/AnimEnableLong")
     local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
     self._Volume:PlayStart()
     self.Panel3D.AnimStart1:StopTimelineAnimation()
     self:PlayAnimation("AnimEnableLong")
     self:_PlayAnimNextFrame(function()
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
+        timeEnableLong.gameObject:SetActiveEx(true)
         self:_PlayTimeLineAnim(self.Panel3D.AnimEnableLong)
     end)
+    self.SafeAreaContentPane.blocksRaycasts = false
     self._LongAnimTimer = XScheduleManager.ScheduleOnce(function()
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
-        self:StopAnimation("AnimEnableLong")
-        self.BtnTemp.gameObject:SetActiveEx(true)
+        timeEnableLong.gameObject:SetActiveEx(false)
+        self._Volume:PlayEnd()
+        self.SafeAreaContentPane.blocksRaycasts = true
     end, math.ceil(animEnableLong.duration * XScheduleManager.SECOND))
 end
 
--- 点击首席的手继续入场表现
-function XUiGachaSelenaMain:PlayInteraction()
-    self.BtnTemp.gameObject:SetActiveEx(false)
-    self:PlayAnimation("AnimDisableLong")
-    self:_PlayAnimNextFrame(function()
-        self:_PlayTimeLineAnim(self.Panel3D.AnimDisableLong, nil, nil, function()
-            -- 必须要在enable动画完成后打开视线跟随
-            self:SetXPostFaicalControllerActive(true)
-            self:RefreshReddot()
-            self._Volume:PlayEnd()
-        end)
-    end)
-    --self.Panel3D.AnimDisableLong:PlayTimelineAnimation(function()
-    --    self:SetXPostFaicalControllerActive(true)
-    --    self:RefreshReddot()
-    --    self._Volume:PlayEnd()
-    --end)
-end
-
 function XUiGachaSelenaMain:PlayShortEnableAnim(cb)
-    self.AnimEnableShort:PlayTimelineAnimation()
+    self:PlayAnimationWithMask("AnimEnableShort")
     self.Panel3D.AnimEnableShort:PlayTimelineAnimation(function()
         self:SetXPostFaicalControllerActive(true)
         if cb then
@@ -416,6 +411,7 @@ function XUiGachaSelenaMain:RefreshUiShow()
             gridReward.GameObject:SetActiveEx(true)
             gridReward:Refresh(item)
             gridReward:SetReceived(isReceived)
+            gridReward:ShowCount(not isReceived)
         end
     end
     -- 如果抽完卡达到历程奖励 弹奖励提示
@@ -443,7 +439,7 @@ function XUiGachaSelenaMain:RefreshUiShow()
     self.BtnGacha.transform:GetComponent("RawImage").enabled = self.IsCanGacha1
     GridBtnGachas[2].BtnGacha2.enabled = self.IsCanGacha10
     --GridBtnGachas[2].RImg1.gameObject:SetActiveEx(leftCanGachaCount >= 1 and leftCanGachaCount < 10)
-    GridBtnGachas[2].RImg2.gameObject:SetActiveEx(self.IsGachaTimesEnd)
+    --GridBtnGachas[2].RImg2.gameObject:SetActiveEx(self.IsGachaTimesEnd)
 
     if not self.IsCanGacha1 then
         GridBtnGachas[1].ImgUseItemIcon.gameObject:SetActiveEx(false)

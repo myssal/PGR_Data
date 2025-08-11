@@ -84,6 +84,14 @@ function XUiModelTheatre5ChooseCharacter3D:RefreshCharacterShow(charaCfg)
     end
 end
 
+function XUiModelTheatre5ChooseCharacter3D:RefreshAllCharacterAnimation()
+    if not XTool.IsTableEmpty(self.CharaId2AnimFSMMap) then
+        for i, fsm in pairs(self.CharaId2AnimFSMMap) do
+            fsm:RefreshState()
+        end
+    end
+end
+
 function XUiModelTheatre5ChooseCharacter3D:SetCharactersVisible(characters, enable)
     if XTool.IsTableEmpty(characters) then
         return

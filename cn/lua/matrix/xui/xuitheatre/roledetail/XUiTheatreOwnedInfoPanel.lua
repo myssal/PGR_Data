@@ -518,7 +518,7 @@ end
 function XPanelRoleEnter:SetData(adventureRole)
     local charViewModel = adventureRole:GetCharacterViewModel()
     local isLocalRole = adventureRole:GetIsLocalRole()
-    local character = charViewModel:GetCharacter()
+    --local character = charViewModel:GetCharacter()
 
     local icon = XTheatreConfigs.GetRoleDetailLevelIcon()
     self.ImgNormalIcon:SetSprite(icon)
@@ -539,16 +539,16 @@ function XPanelRoleEnter:SetData(adventureRole)
     self.TxtMaxLevel.text = XUiHelper.GetText("TheatreDetailRoleMaxLevel", maxLevel)
 
     --经验
-    local curExp = charViewModel:GetCurExp()
-    local nextLevelExp = charViewModel:GetNextLevelExp()
+    local curExp = adventureRole:GetCurExp()
+    local nextLevelExp = adventureRole:GetNextLevelExp()
     local showExpDesc = string.format("%s/%s", curExp, nextLevelExp)
     local expPercent = curExp / nextLevelExp
     self.TxtExp.text = showExpDesc
     self.ImgFill.fillAmount = expPercent
 
     --属性
-    local rawData = adventureRole:GetRawData()
-    local attribs = charViewModel:GetAttributes(rawData.GetEquipViewModels and rawData:GetEquipViewModels())
+    --local rawData = adventureRole:GetRawData()
+    local attribs = adventureRole:GetAttributes()
     self.TxtAttack.text = attribs and FixToInt(attribs[XNpcAttribType.AttackNormal])
     self.TxtLife.text = attribs and FixToInt(attribs[XNpcAttribType.Life])
     self.TxtDefense.text = attribs and FixToInt(attribs[XNpcAttribType.DefenseNormal])

@@ -70,6 +70,10 @@ function XBWCourseTaskProgressEntity:GetProgressIcon()
     return self._ParentEntity:GetTaskRewardIcon()
 end
 
+function XBWCourseTaskProgressEntity:GetProgressIconNoneColor()
+    return self._ParentEntity:GetTaskRewardIconNoneColor()
+end
+
 function XBWCourseTaskProgressEntity:GetRewardId()
     if not self:IsNil() then
         return self._Model:GetBigWorldCourseTaskProgressRewardRewardIdById(self:GetProgressId())

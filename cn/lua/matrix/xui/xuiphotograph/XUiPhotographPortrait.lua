@@ -1076,7 +1076,7 @@ function XUiPhotographPortrait:PlaySceneAnim(element)
     local animRoot = self.UiModelGo.transform
     local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
     local sighBoardId = element.SignBoardConfig.Id
-    XMVCA.XFavorability:LoadSceneAnim(animRoot, self.CameraFar, self.CameraNear, sceneId, sighBoardId, self)
+    XMVCA.XFavorability:LoadSceneAnim(animRoot, self.CameraFar, self.CameraNear, self.CameraComponentFar, self.CameraComponentNear, sceneId, sighBoardId, self)
     XMVCA.XFavorability:SceneAnimPlay()
 end
 

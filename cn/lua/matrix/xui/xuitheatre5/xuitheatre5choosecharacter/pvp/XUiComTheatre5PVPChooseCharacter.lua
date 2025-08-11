@@ -3,6 +3,27 @@ local XUiComTheatre5ChooseCharacter = require('XUi/XUiTheatre5/XUiTheatre5Choose
 ---@class XUiComTheatre5PVPChooseCharacter: XUiComTheatre5ChooseCharacter
 local XUiComTheatre5PVPChooseCharacter = XClass(XUiComTheatre5ChooseCharacter, 'XUiComTheatre5PVPChooseCharacter')
 
+function XUiComTheatre5PVPChooseCharacter:OnStart()
+    self._StartRun = true
+    self._Control.PVPControl:StartPVPTimer()
+end
+
+function XUiComTheatre5PVPChooseCharacter:OnEnable()
+    if self._StartRun then
+        self._StartRun = false
+    else
+        if self:CheckIsShowDetail() then
+            self:PlayAnimation('Enable')
+        end
+        
+        self.Model3D:RefreshAllCharacterAnimation()
+    end
+end
+
+function XUiComTheatre5PVPChooseCharacter:OnDestroy()
+    self._Control.PVPControl:StopPVPTimer()
+end
+
 ---@overload
 function XUiComTheatre5PVPChooseCharacter:_InitButtons()
     self.BtnRank.gameObject:SetActiveEx(true)

@@ -110,7 +110,6 @@ function XCharacterModel:OnInit()
     self.EnhanceGroupIdCharacterIdDic = {}		-- 角色补强技能组id和角色Id字典
     self.CharGradeTemplates = {}                -- 角色阶级配置字典， k = charId = { grade1 = config1, grade2 = config2 ... }
     self.CharSkillQualityApartDic = {}          -- 角色升阶技能拆分字典
-    self.CharSkillGroupDic = {}                 -- 角色技能组配置
     self.CharSkillIdToGroupDic = {}             -- 角色技能Id,技能组字典
     self.CharacterSkillDictTemplates = {}       -- 角色技能配置字典
     self.CharMaxLiberationSkillIdDic = {}       -- 角色终阶解放技能Id字典
@@ -590,11 +589,6 @@ function XCharacterModel:InitSkillGroupDic()
         local skillGroupId = config.Id
         local skillIds = config.SkillId
 
-        local skillIdConfig = self.CharSkillGroupDic[skillGroupId]
-        if not skillIdConfig then
-            skillIdConfig = {}
-            self.CharSkillGroupDic[skillGroupId] = skillIdConfig
-        end
 
         for index, skillId in pairs(skillIds) do
             if skillId > 0 then
@@ -602,7 +596,6 @@ function XCharacterModel:InitSkillGroupDic()
                     Index = index,
                     GroupId = skillGroupId,
                 }
-                table.insert(skillIdConfig, skillId)
             end
         end
     end
@@ -757,6 +750,16 @@ function XCharacterModel:GetEnhanceSkillIdGeneralSkillIdsDic()
     end
 
     return self.EnhanceSkillIdGeneralSkillIdsDic
+end
+
+-- 设置当前选中成员Id(武器超限引导用)
+function XCharacterModel:SetCurSelectCharacterId(characterId)
+    self.CurSelectCharacterId = characterId
+end
+
+-- 获取当前选中成员Id(武器超限引导用)
+function XCharacterModel:GetCurSelectCharacterId()
+    return self.CurSelectCharacterId
 end
 
 -- 初始化相关数据 结束

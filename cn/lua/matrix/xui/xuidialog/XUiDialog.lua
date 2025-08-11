@@ -114,6 +114,7 @@ function XUiDialog:OnEnable()
     if CS.XInputManager.CurInputMapID ~= CS.XInputMapId.System then
         CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
         XMVCA.XBigWorldGamePlay:TrySetControlCameraByDrag(true)
+        self._IsChangeInputMap = true
     end
     if self.EnableAnimation then
         self:PlayAnimation(self.EnableAnimation)
@@ -218,7 +219,7 @@ end
 
 function XUiDialog:OnDestroy()
     self:AutoRemoveListener()
-    if CS.XInputManager.CurInputMapID ~= self.LastOperationType then
+    if CS.XInputManager.CurInputMapID ~= self.LastOperationType and self._IsChangeInputMap then
         CS.XInputManager.SetCurInputMap(self.LastOperationType)
         XMVCA.XBigWorldGamePlay:TrySetControlCameraByDrag(false)
     end

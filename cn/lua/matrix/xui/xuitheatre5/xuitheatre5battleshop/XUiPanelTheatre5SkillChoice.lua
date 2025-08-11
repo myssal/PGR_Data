@@ -17,13 +17,14 @@ function XUiPanelTheatre5SkillChoice:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshSkillChoiceShow, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SKILL_CHOICE_END, self.RefreshSkillSlotAfterSelect, self)
-
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
 end
 
 function XUiPanelTheatre5SkillChoice:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshSkillChoiceShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SKILL_CHOICE_END, self.RefreshSkillSlotAfterSelect, self)
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
 end
 
 function XUiPanelTheatre5SkillChoice:InitStoreContainers()
@@ -90,10 +91,20 @@ function XUiPanelTheatre5SkillChoice:OnShopAreaPointerEnter(eventData)
 end
 
 function XUiPanelTheatre5SkillChoice:OnShopAreaPointerExit(eventData)
+    self:_DoShopAreaExit()
+end
+
+function XUiPanelTheatre5SkillChoice:_DoShopAreaExit()
     self._Control.ShopControl:SetFocusContainer(nil, nil)
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_EXIT_FULLSHOPAREA)
     if self.RawImgLight then
         self.RawImgLight.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiPanelTheatre5SkillChoice:OnApplicationPauseEvent()
+    if self._Control.ShopControl:CheckIsSameContainer(XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillSelection, 0) then
+        self:_DoShopAreaExit()
     end
 end
 

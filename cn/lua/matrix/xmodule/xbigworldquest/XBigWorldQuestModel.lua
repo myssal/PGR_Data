@@ -32,13 +32,17 @@ local PopViewType = {
     --通用
     Small = 1,
     
-    --全屏
-    FullScreen = 2,
+    --全屏通用
+    FullScreenNormal = 2,
+    
+    --全屏好感
+    FullScreenFavorable = 3,
 }
 
 local PopViewType2UiName = {
     [PopViewType.Small] = "UiBigWorldTaskObtain",
-    [PopViewType.FullScreen] = "UiBigWorldTaskObtainDrama",
+    [PopViewType.FullScreenNormal] = "UiBigWorldTaskObtainDrama",
+    [PopViewType.FullScreenFavorable] = "UiBigWorldTaskObtainDramaHeart",
 }
 
 local QuestViewShieldTypeList = {
@@ -47,6 +51,8 @@ local QuestViewShieldTypeList = {
     [2] = QuestViewShield.ShieldWhenFinish,
     [3] = QuestViewShield.ShieldWhenReceive | QuestViewShield.ShieldWhenFinish
 }
+
+local FavorableQuestType = 1
 
 function XBigWorldQuestModel:OnInit()
     self._QuestDataDict = false
@@ -217,6 +223,10 @@ end
 function XBigWorldQuestModel:GetQuestType(questId)
     local template = self:GetQuestTemplate(questId)
     return template and template.Type or 0
+end
+
+function XBigWorldQuestModel:IsFavorableQuestType(questId)
+    return self:GetQuestType(questId) == FavorableQuestType
 end
 
 function XBigWorldQuestModel:IsDefaultTrackQuest(questId)
@@ -477,15 +487,7 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
         XLog.Error(string.format("任务:%s, 弹窗类型:%s, 不存在对应弹窗类型", questId, popViewType))
         return
     end
-    --XMVCA.XBigWorldUI:Open(uiName, questId, isFinish)
-    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_OPEN_UI_BY_SEQUENTIAL_SYSTEM, {
-        Serial = CS.StatusSyncFight.ESequentialJobsSerial.Main:GetHashCode(),
-        UiName = uiName,
-        OpenArgs = {
-            questId,
-            isFinish,
-        },
-    })
+    XMVCA.XBigWorldUI:OpenWithFightSequence(uiName, questId, isFinish)
 end
 
 --endregion Config
@@ -586,6 +588,7 @@ end
 ---@field Category number
 ---@field LevelId number
 ---@field QuestIcon string
+---@field QuestBanner string
 ---@field QuestText string
 ---@field QuestDesc string
 ---@field Condition number

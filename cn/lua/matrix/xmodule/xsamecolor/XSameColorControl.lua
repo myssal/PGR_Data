@@ -113,7 +113,7 @@ end
 
 function XSameColorControl:GetCfgHelpId()
     local helpId = tonumber(self:GetClientCfgStringValue("HelpId"))
-    return XHelpCourseConfig.GetHelpCourseTemplateById(helpId).Function
+    return XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId).Function
 end
 
 function XSameColorControl:GetCfgAssetItemIds()

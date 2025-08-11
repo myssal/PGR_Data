@@ -28,12 +28,6 @@ function XGuildDormFurniture:GetFurnitureId()
     return self.FurnitureModel and self.FurnitureModel.FurnitureId
 end
 --================
---获取家具名称
---================
-function XGuildDormFurniture:GetName()
-    return self.FurnitureModel and self.FurnitureModel.Name
-end
---================
 --获取家具交互信息列表
 --================
 function XGuildDormFurniture:GetInteractInfoList()

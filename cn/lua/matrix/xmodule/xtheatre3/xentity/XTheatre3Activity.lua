@@ -278,21 +278,6 @@ function XTheatre3Activity:CheckHasPassEnding(difficultyId, endingId)
     end
     return table.indexof(self.PassDifficultyRecords[difficultyId], endingId)
 end
-
-function XTheatre3Activity:CheckEndingIsPass(endingId)
-    if XTool.IsTableEmpty(self.PassDifficultyRecords) then
-        return false
-    end
-    if not XTool.IsNumberValid(endingId) then
-        return true
-    end
-    for _, list in pairs(self.PassDifficultyRecords) do
-        if table.indexof(list, endingId) then
-            return true
-        end
-    end
-    return false
-end
 --endregion
 
 --region Record - TotalAllPassCount

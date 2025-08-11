@@ -51,11 +51,18 @@ function XUiTheatre5Loading:PVELoading()
     if chapterData and chapterData.CurPveChapterLevel then
         level = chapterData.CurPveChapterLevel.Level
     end
-    XMVCA.XTheatre5.BattleCom:RequestDlcSingleEnterFight(level, function(worldData)
+
+    -- 允许延时一定时间再请求和进入战斗，确保前半段有一小段时间流程播放匹配动画
+    local delayTime = self._Control:GetClientConfigMatchLoadingDelay(false)
+    if not XTool.IsNumberValid(delayTime) then
+        delayTime = 0
+    end    
+
+    XMVCA.XTheatre5.BattleCom:RequestDlcSingleEnterFight(level, nil, function(worldData)
         if worldData and worldData.AutoChessGameplayData and worldData.AutoChessGameplayData.EnemyData then
             self:RefreshPVEEnemyInfo(worldData.AutoChessGameplayData.EnemyData)
-        end    
-    end)
+        end
+    end, delayTime * XScheduleManager.SECOND)
 end
 
 function XUiTheatre5Loading:RefreshPVEEnemyInfo(enemyData)
@@ -114,16 +121,7 @@ function XUiTheatre5Loading:OnFinishFightEnter()
         CS.StatusSyncFight.XFightClient.FightInstance:OnPauseForClient()
     end
     
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
-        local delayTime = self._Control:GetClientConfigMatchLoadingDelay(false)
-        if not XTool.IsNumberValid(delayTime) then
-            delayTime = 0
-        end
-        self._DelayTimeId = XScheduleManager.ScheduleOnce(handler(self, self.PlayFightEnterAnim), delayTime * XScheduleManager.SECOND)
-    else
-        self:PlayFightEnterAnim()
-    end        
-    
+    self:PlayFightEnterAnim()
 end
 
 function XUiTheatre5Loading:PlayFightEnterAnim()

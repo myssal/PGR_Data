@@ -1,3 +1,5 @@
+---@class XMovieActionBgMoveAnimation
+---@field UiRoot XUiMovie
 local XMovieActionBgMoveAnimation = XClass(XMovieActionBase,"XMovieActionBgMoveAnimation")
 local DefaultBgIndex = 1
 
@@ -17,8 +19,8 @@ function XMovieActionBgMoveAnimation:Ctor(actionData)
 end
 
 function XMovieActionBgMoveAnimation:OnUiRootInit()
-    self.RImgBg = self.UiRoot["RImgBg".. tostring(self.BgIndex)] 
-    self.RImgAnimBg = self.BgIndex == DefaultBgIndex and self.UiRoot.RImgBg2 or nil
+    self.RImgBg = self.UiRoot.UiMovieBg:GetBg(self.BgIndex)
+    self.RImgAnimBg = self.BgIndex == DefaultBgIndex and self.UiRoot.UiMovieBg:GetBg(2) or nil
 end
 
 function XMovieActionBgMoveAnimation:OnRunning()
@@ -29,12 +31,12 @@ function XMovieActionBgMoveAnimation:OnRunning()
     end
 
     if self.RImgBg then
-        self.RImgBg.transform:DOComplete()
-        self.RImgBg.transform:DOLocalMove(self.Pos, self.Duration)
+        self.RImgBg:DOComplete()
+        self.RImgBg:DOLocalMove(self.Pos, self.Duration)
     end
     if self.RImgAnimBg then
-        self.RImgAnimBg.transform:DOComplete()
-        self.RImgAnimBg.transform:DOLocalMove(self.Pos, self.Duration)
+        self.RImgAnimBg:DOComplete()
+        self.RImgAnimBg:DOLocalMove(self.Pos, self.Duration)
     end
 end
 

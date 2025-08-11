@@ -2426,25 +2426,32 @@ function XCharacterAgency:GetSkillAbility(skillList)
     return ability
 end
 
--- 获取角色的“战前切换”的技能(因为该表只会配置该角色的一个技能，和选中无关)，没有返回nil
+-- 获取角色的“战前切换”的技能(因为该表只会配置该角色的一个技能，和选中无关)，没有返回nil，兼容RobotId
 function XCharacterAgency:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
-    local xCharacter = self:GetCharacter(characterId)
     local isHasSwitchSkill = false
     local switchSkillId = nil
     local skillExchangeConfig = nil
-    if xCharacter then
-        local skillList = xCharacter.SkillList
-        for i, v in ipairs(skillList) do
-            local skillId = v.Id
-            local skillLevel = v.Level
-            local groupSkillIds = self:GetGroupSkillIds(skillId)
-            for index, skillId2 in ipairs(groupSkillIds) do
-                skillExchangeConfig = self:GetCharacterSkillExchangeDesBySkillIdAndLevel(skillId2, skillLevel)
-                if skillExchangeConfig ~= nil then
-                    isHasSwitchSkill = true
-                    switchSkillId = skillId2
-                    return switchSkillId, skillExchangeConfig
-                end
+    local skillList = nil
+    
+    local isRobot = XRobotManager.CheckIsRobotId(characterId)
+    if isRobot then
+        local xRobot = XRobotManager.GetRobotById(characterId)
+        skillList = xRobot.Character.SkillList
+    else
+        local xCharacter = self:GetCharacter(characterId)
+        skillList = xCharacter.SkillList
+    end
+
+    for i, v in ipairs(skillList) do
+        local skillId = v.Id
+        local skillLevel = v.Level
+        local groupSkillIds = self:GetGroupSkillIds(skillId)
+        for index, skillId2 in ipairs(groupSkillIds) do
+            skillExchangeConfig = self:GetCharacterSkillExchangeDesBySkillIdAndLevel(skillId2, skillLevel)
+            if skillExchangeConfig ~= nil then
+                isHasSwitchSkill = true
+                switchSkillId = skillId2
+                return switchSkillId, skillExchangeConfig
             end
         end
     end
@@ -3806,7 +3813,8 @@ function XCharacterAgency:GetCharSkillGroupTemplatesById(id)
 end
 
 function XCharacterAgency:GetGroupSkillIdsByGroupId(skillGroupId)
-    return self._Model.CharSkillGroupDic[skillGroupId] or {}
+    local config = self:GetModelCharacterSkillGroup()[skillGroupId]
+    return config and config.SkillId
 end
 
 function XCharacterAgency:GetSkillGroupIdAndIndex(skillId)
@@ -3874,6 +3882,27 @@ end
 function XCharacterAgency:GetCharacterIdBySkillId(skillId)
     local skillGroupId = self:GetSkillGroupIdAndIndex(skillId)
     return self._Model.CharSkillIdToCharacterIdDic[skillGroupId]
+end
+
+-- 获取角色的全部的SkillId(兼容没有自机的情况)
+function XCharacterAgency:GetAllSkillIdsByCharacterId(characterId)
+    if self._Model.TempWholeDic[characterId] then
+        return self._Model.TempWholeDic[characterId]
+    end
+
+    local config = self:GetModelCharacterSkill()[characterId]
+    if not config then
+        return
+    end
+    local res = {}
+    for _, skillGroupId in pairs(config.SkillGroupId) do
+        local skillIds = self:GetGroupSkillIdsByGroupId(skillGroupId)
+        for _, skillId in pairs(skillIds) do
+            tableInsert(res, skillId)
+        end
+    end
+    self._Model.TempWholeDic[characterId] = res
+    return res
 end
 
 function XCharacterAgency:GetCharacterSkillPoolSkillInfo(skillId)
@@ -4474,6 +4503,16 @@ end
 
 function XCharacterAgency:GetUiCharacterV2P6LastTag() -- 目前只有涂装界面有用到
     return self._Model.TempWholeDic.UiCharacterV2P6LastTag
+end
+
+-- 设置当前选中成员Id(武器超限引导用)
+function XCharacterAgency:SetCurSelectCharacterId(characterId)
+    self._Model:SetCurSelectCharacterId(characterId)
+end
+
+-- 获取当前选中成员Id(武器超限引导用)
+function XCharacterAgency:GetCurSelectCharacterId()
+    return self._Model:GetCurSelectCharacterId()
 end
 
 -- Notify协议相关

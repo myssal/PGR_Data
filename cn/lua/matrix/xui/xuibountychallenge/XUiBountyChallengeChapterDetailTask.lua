@@ -62,6 +62,7 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
                 imgCanReceive.gameObject:SetActive(true)
             end
         end
+        self.Button.gameObject:SetActive(true)
     else
         for i = 1, #self._GridRewards do
             ---@type XUiGridCommon
@@ -71,6 +72,7 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
                 imgCanReceive.gameObject:SetActive(false)
             end
         end
+        self.Button.gameObject:SetActive(false)
     end
 end
 

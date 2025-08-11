@@ -158,7 +158,7 @@ XTransfiniteManagerCreator = function()
         end
         
         --分包拦截
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Transfinite) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Transfinite) then
             return
         end
         XLuaUiManager.Open("UiTransfiniteMain")

@@ -33,8 +33,9 @@ function XFangKuaiFever:ResetFeverData()
     self._FevRadio = 1
 end
 
-function XFangKuaiFever:AddFevValueByCombo()
-    local combo = self._MainControl:GetComboNum()
+-- 道具消除N个combo时，狂热值获取应该从1加到N，而不是直接加N
+function XFangKuaiFever:AddFevValueByCombo(i)
+    local combo = self._MainControl:GetComboNum() + i
     local comboGain = self._MainControl:GetFevComboGain(combo)
     local multi = self:GetStageMulti()
     local add = comboGain * multi

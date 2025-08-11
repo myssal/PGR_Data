@@ -459,7 +459,7 @@ XFubenExperimentManagerCreator = function()
     end
 
     function XFubenExperimentManager:ExOpenMainUi()
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenActivityTrial) then
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Experiment) then
             return
         end
         XLuaUiManager.Open("UiFubenExperiment")

@@ -149,11 +149,14 @@ function XSkyGardenShoppingStreetControl:SgStreetShopBuildRequest(ShopId, Positi
             self._Model:UpdateCurrentTurnInsideBuilds(res.CurrentTurnInsideBuilds)
             local shopAreaData = self._Model:GetShopAreaByShopId(ShopId)
 
+            local isInside = shopAreaData:IsInside()
             local areaId = self._Model:GetAreaIdByShopId(ShopId)
             local X3CEShopEffectType = XMVCA.XSkyGardenShoppingStreet.X3CEShopEffectType
-            self:X3CPlayShopEffect(areaId, X3CEShopEffectType.ShopCreate)
-
-            local isInside = shopAreaData:IsInside()
+            local showLevel = nil
+            if not isInside then
+                showLevel = 1
+            end
+            self:X3CPlayShopEffect(areaId, X3CEShopEffectType.ShopCreate, showLevel)
             if not isInside then
                 if cb then cb() end
                 if self._Model:GetFirstOutsideBuildTurn() == 0 then
@@ -733,7 +736,7 @@ function XSkyGardenShoppingStreetControl:X3CPlayShopEffect(areaId, EffectType, L
     return XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_SHOPSTREET_PLAY_SHOP_EFFECT, {
         PlaceId = placeId,
         EffectType = EffectType,
-        Level = Level or 0,
+        Level = Level or -1,
     })
 end
 
@@ -1527,6 +1530,7 @@ function XSkyGardenShoppingStreetControl:UnlockShop(shopId, uiPos, isInside, cb)
     -- NeedCustomerNum
     -- local position = self._Model:GetAreaIdByUiPos(uiPos, isInside)
     self:SgStreetShopBuildRequest(shopId, uiPos, cb)
+    return true
 end
 
 -- 拆除商店

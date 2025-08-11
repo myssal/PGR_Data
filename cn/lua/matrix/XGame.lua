@@ -16,7 +16,7 @@ end
 XGame.Start2 = function()
     XLoginManager.Init()
 
-    XDataCenter.Init()
+    XDataCenter.InitDependency()
         
     if XDataCenter.UiPcManager.IsPc() then
         -- 检测分辨率, 超过表格最大分辨率的强制使用窗口

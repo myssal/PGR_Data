@@ -31,7 +31,7 @@ function XBigWorldGamePlayAgency:OnInit()
     self._ActivityAgency = {}
     self._Level2Agency = {}
     self._MarkUiName = {}
-
+    
     XMVCA.XBigWorldGamePlay.CheckOpenGuideDisable()
 end
 
@@ -44,15 +44,15 @@ function XBigWorldGamePlayAgency:InitEvent()
     self._OnExitFight = Handler(self, self.OnEventExitFight)
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
-
-
+    
+    
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.InitAfterOpenGuide, self)
 end
 
 function XBigWorldGamePlayAgency:RemoveEvent()
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
-
+    
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.InitAfterOpenGuide, self)
 end
 
@@ -162,6 +162,7 @@ function XBigWorldGamePlayAgency:EnterGame()
         self:_InitLevelId(worldData.LevelId)
         self:RegisterMVCA()
         self:InitConfig()
+        self:LaunchWorld()
         self:LoadGuide()
         self:PullModuleData(res)
     end)
@@ -178,7 +179,7 @@ function XBigWorldGamePlayAgency:PullModuleData(response)
         self._EnterResponse = response
         self:UpdatePlayerData(response.PlayerData)
         self:CsStatusSyncFightInit()
-
+        
         self:GetCurrentAgency():BeginOpenGuide()
     end, nil, function()
         self:EnterGameError()
@@ -206,6 +207,7 @@ function XBigWorldGamePlayAgency:EnterGameError()
     self:DisposeConfig()
     --移除掉MVCA
     self:UnRegisterMVCA()
+    self:UnLaunchWorld()
     self:ExitGame()
 end
 
@@ -258,6 +260,8 @@ function XBigWorldGamePlayAgency:DoEnterGame(worldData, fightData, levelData)
     -- 进入战斗
     self:CsStatusSyncEnterFight(worldData, fightData, levelData, XPlayer.Id)
     XMVCA.XDlcWorld:OnEnterFight(self:GetCurrentWorldId())
+    --首次进入战斗会有黑幕进行开场引导，这里尝试关闭
+    XMVCA.XBigWorldUI:SafeClose("UiBigWorldBlackMaskNormal")
     -- 对应大世界执行进入战斗后逻辑
     self:GetCurrentAgency():AfterEnterGame()
 end
@@ -268,7 +272,6 @@ function XBigWorldGamePlayAgency:ExitGame()
         return
     end
 
-    pcall(CS.XAssetDebugManager.ExportCurBundles) -- UNITY_EDITOR || HARU_DEV_BUILD
     --退出玩法前，先将相关界面全部关闭
     self:ClearBigWorldUI(function()
         self:CsStatusSyncExitFight()
@@ -318,8 +321,8 @@ function XBigWorldGamePlayAgency:CompletelyExit()
     self:UnloadGuide()
     self:TryExitOpenGuide()
     self:DisposeConfig()
+    self:UnLaunchWorld()
     self:UnRegisterMVCA()
-    XMVCA.XBigWorldUI:ReleaseData()
     XMVCA:ReleaseModule(self._CurrentModuleId)
     self._CurrentModuleId = 0
 end
@@ -482,7 +485,7 @@ end
 --region 关卡切换事件
 
 -- 设置虚拟摄像机
-function XBigWorldGamePlayAgency:ActivateVCamera(VCameraName, Duration, DeactivateAllPreVCam)
+function XBigWorldGamePlayAgency:ActivateVCamera(VCameraName, Duration, DeactivateAllPreVCam, DepthOfFieldId)
     if string.IsNilOrEmpty(VCameraName) then
         return
     end
@@ -490,6 +493,7 @@ function XBigWorldGamePlayAgency:ActivateVCamera(VCameraName, Duration, Deactiva
         VCameraName = VCameraName,
         Duration = Duration or 0,
         DeactivateAllPreVCam = DeactivateAllPreVCam or false,
+        DepthOfFieldId = DepthOfFieldId or 0,
     })
 end
 
@@ -544,7 +548,7 @@ function XBigWorldGamePlayAgency:OnOpenMainUi(data)
         local agency = self:GetActivityAgencyById(id)
         if agency and agency:CheckFunctionOpen() then
             local config = agency:GetConfig()
-            self:ActivateVCamera(config.VirtureCamera, config.CameraDuration)
+            self:ActivateVCamera(config.VirtureCamera, config.CameraDuration, false, config.CamDepthOfFieldId)
             agency:OpenMainUi(id, data.Args)
         end
     end
@@ -642,7 +646,7 @@ function XBigWorldGamePlayAgency:OnFightUiEnable(data)
     if not data then
         return
     end
-
+    
     local name = data.UiName
     self._MarkUiName[name] = nil
     if XTool.IsTableEmpty(self._MarkUiName) then
@@ -701,6 +705,14 @@ end
 
 function XBigWorldGamePlayAgency:_InitLevelId(levelId)
     self._Model:SetCurrentLevelId(levelId)
+end
+
+function XBigWorldGamePlayAgency:LaunchWorld()
+    CS.XWorldEngine.Launch()
+end
+
+function XBigWorldGamePlayAgency:UnLaunchWorld()
+    CS.XWorldEngine.Exit()
 end
 
 function XBigWorldGamePlayAgency:InitConfig()

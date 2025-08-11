@@ -615,6 +615,7 @@ end
 
 -- 黑幕打开
 function XSkyGardenShoppingStreetAgency:AddOpenBlackMaskLoading(time, cb)
+    if self._maskCallbackCb then return end
     local waitTime = time or 0.3
     -- 移除定时器
     self:RemoveBlackMaskLoadingTimer()

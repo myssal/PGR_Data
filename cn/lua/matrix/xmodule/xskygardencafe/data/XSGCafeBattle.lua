@@ -1,8 +1,6 @@
 ---@class XSGCafeBattle 对局信息
 local XSGCafeBattle = XClass(nil, "XSGCafeBattle")
 
-local IsDebugBuild = CS.XApplication.Debug
-
 function XSGCafeBattle:Ctor()
    self:Reset()
 end
@@ -38,6 +36,7 @@ function XSGCafeBattle:UpdateDataFromServer(battleInfo)
     self._Round = battleInfo.Round or 1
     self._Score = battleInfo.SumSales or 0
     self._ActPoint = battleInfo.ActPoint or 0
+    self._DeckCount = battleInfo.HandCardPosNum or 0
     self._Review = battleInfo.ReviewNum or 0
     self._DeckCards = battleInfo.HandCards or {}
     self._LibCards = battleInfo.CardsWarehouse or {}
@@ -131,6 +130,7 @@ end
 
 function XSGCafeBattle:ResetWhenDataSync(ignoreClone)
     self._AddActPoint = 0
+    self._AddDeckCount = 0
     self._AddReview = 0
     self._AddScore = 0
 
@@ -213,7 +213,6 @@ end
 ---@param value number
 function XSGCafeBattle:AddCardScore(value)
     self._AddCardScore = math.max(0, self._AddCardScore + value)
-    XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_APPLY_BUFF, true, true, false, self._TriggerRoundResourceDict)
 end
 
 --- 重置卡牌加成分数
@@ -255,7 +254,6 @@ end
 ---@param value number
 function XSGCafeBattle:AddCardReview(value)
     self._AddCardReview = self._AddCardReview + value
-    XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_APPLY_BUFF, true, true, false, self._TriggerRoundResourceDict)
 end
 
 --- 重置卡牌加成好感
@@ -281,7 +279,7 @@ end
 
 function XSGCafeBattle:AddDeckCount(count)
     self._AddDeckCount = self._AddDeckCount + count
-    end
+end
 
 function XSGCafeBattle:GetDealLimit()
     return self._ActPoint + self._AddActPoint

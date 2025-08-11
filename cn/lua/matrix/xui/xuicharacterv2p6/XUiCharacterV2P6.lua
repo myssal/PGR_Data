@@ -157,6 +157,7 @@ function XUiCharacterV2P6:OnDisable()
 end
 
 function XUiCharacterV2P6:OnDestroy()
+    XMVCA.XCharacter:SetCurSelectCharacterId(nil)
     local allRecordClickedNewCharList = {}
     for charId, v in pairs(self.NewCharRecord) do
         if XMVCA.XCharacter:IsOwnCharacter(charId) and XTool.IsNumberValid(XMVCA.XCharacter:GetCharacter(charId).NewFlag)then
@@ -174,6 +175,9 @@ end
 
 -- 只有角色Id进行切换时该方法才会被调用
 function XUiCharacterV2P6:OnSelectCharacter(character)
+    XMVCA.XCharacter:SetCurSelectCharacterId(character.Id)
+    self:CheckGuideOpen()
+    
     if self.NextNotRefreshCharInfoTrigger then
         self.NextNotRefreshCharInfoTrigger = false
         return
@@ -217,6 +221,21 @@ function XUiCharacterV2P6:OnSelectCharacter(character)
     self.BtnFashion:ShowReddot(isRed)
     
     self:RefreshButtonShow()
+end
+
+-- 检测触发引导
+function XUiCharacterV2P6:CheckGuideOpen()
+    local str = CS.XGame.ClientConfig:GetString("CharacterGuideId")
+    if not str then return end
+
+    local guideIds = string.Split(str, "|")
+    for _, guideId in pairs(guideIds) do
+        local isFinish = XDataCenter.GuideManager.CheckIsGuide(tonumber(guideId))
+        if not isFinish then
+            XDataCenter.GuideManager.CheckGuideOpen()
+            return
+        end
+    end
 end
 
 function XUiCharacterV2P6:CheckPanelExsit(panelName)

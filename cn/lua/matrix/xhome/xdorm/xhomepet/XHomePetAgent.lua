@@ -137,11 +137,6 @@ function XHomePetAgent:SetObstackeEnable(obstackeEnable)
     self.HomePetObj:SetObstackeEnable(obstackeEnable)
 end
 
---爱抚结束
-function XHomePetAgent:DequeueFondleType()
-    self.HomePetObj:DequeueFondleType()
-end
-
 --朝向交互家具
 function XHomePetAgent:SetForwardToFurniture(forward)
     return self.HomePetObj:SetForwardToFurniture(forward)

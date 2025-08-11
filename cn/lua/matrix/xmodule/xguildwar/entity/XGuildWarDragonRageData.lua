@@ -3,6 +3,7 @@
 local XGuildWarDragonRageData = XClass(nil, 'XGuildWarDragonRageData')
 
 function XGuildWarDragonRageData:ResetData()
+    self.OwnRoundId = nil
     self.GameThrough = nil
     self.DragonRage = nil
     self.FullDragonRageTime = nil
@@ -28,7 +29,7 @@ end
 function XGuildWarDragonRageData:UpdateDragonRageData(data)
     local dragonRageValueChanged = self.DragonRage ~= nil and self.DragonRage ~= data.DragonRage
     local gameThoughChanged = self.GameThrough ~= nil and  self.GameThrough ~= data.GameThrough
-
+    self.OwnRoundId = data.RoundId
     self.GameThrough = data.GameThrough -- 周目
     self.DragonRage = data.DragonRage -- 龙怒值
     self.FullDragonRageTime = data.FullDragonRageTime --满龙怒次数
@@ -41,6 +42,11 @@ function XGuildWarDragonRageData:UpdateDragonRageData(data)
     if dragonRageValueChanged or gameThoughChanged then
         XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_DRAGONRAGE_CHANGE)
     end
+end
+
+--- 获取当前龙怒数据所属的轮次
+function XGuildWarDragonRageData:GetOwnRoundId()
+    return self.OwnRoundId or 0
 end
 
 --- 是否开启龙怒系统玩法

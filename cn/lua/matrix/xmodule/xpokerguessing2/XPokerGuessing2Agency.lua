@@ -30,10 +30,10 @@ function XPokerGuessing2Agency:StartNewPokerGuessing2Request(stageId, callback)
         Stage = stageId,
     }, function(res)
         if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
             if callback then
                 callback(false)
             end
-            XUiManager.TipCode(res.Code)
             return
         end
         XSaveTool.SaveData("XPokerGuessing2StageCanChallenge" .. XPlayer.Id .. stageId, true)
@@ -119,6 +119,10 @@ function XPokerGuessing2Agency:HasTaskCanReceive()
 end
 
 function XPokerGuessing2Agency:IsShowRedDot()
+    if not self._Model:IsActivityOpen() then
+        return false
+    end
+    
     if self:HasTaskCanReceive() then
         return true
     end
@@ -129,10 +133,21 @@ function XPokerGuessing2Agency:IsShowRedDot()
 end
 
 function XPokerGuessing2Agency:HasStageCanChallenge()
-    local stages = self._Model:GetPokerGuessing2StageConfigs()
-    for i, stage in pairs(stages) do
-        if self._Model:IsStageCanChallenge(stage.Id) and not self._Model:IsStagePassed(stage.Id) then
-            if XSaveTool.GetData("XPokerGuessing2StageCanChallenge" .. XPlayer.Id .. stage.Id) == nil then
+    local curActivityId = self._Model:GetActivityId()
+
+    if not XTool.IsNumberValid(curActivityId) then
+        return false
+    end
+    
+    local curActivityCfg = self._Model:GetPokerGuessing2ActivityConfigById(curActivityId)
+
+    if not curActivityCfg or XTool.IsTableEmpty(curActivityCfg.StageIds) then
+        return false
+    end
+    
+    for i, stageId in pairs(curActivityCfg.StageIds) do
+        if self._Model:IsStageCanChallenge(stageId) and not self._Model:IsStagePassed(stageId) then
+            if XSaveTool.GetData("XPokerGuessing2StageCanChallenge" .. XPlayer.Id .. stageId) == nil then
                 return true
             end
         end
@@ -141,13 +156,26 @@ function XPokerGuessing2Agency:HasStageCanChallenge()
 end
 
 function XPokerGuessing2Agency:ExGetProgressTip()
-    local stages = self._Model:GetPokerGuessing2StageConfigs()
-    local progress, max = 0, #stages
-    for i, stage in pairs(stages) do
-        if self._Model:IsStagePassed(stage.Id) then
-            progress = progress + 1
+    local progress, max = 0, 0
+    local curActivityId = self._Model:GetActivityId()
+
+    if not XTool.IsNumberValid(curActivityId) then
+        -- 没开活动不显示进度
+        return ''
+    end
+    
+    local activityCfg = self._Model:GetPokerGuessing2ActivityConfigById(curActivityId)
+
+    if activityCfg and not XTool.IsTableEmpty(activityCfg.StageIds) then
+        max = #activityCfg.StageIds
+        
+        for i, stageId in pairs(activityCfg.StageIds) do
+            if self._Model:IsStagePassed(stageId) then
+                progress = progress + 1
+            end
         end
     end
+    
     return XUiHelper.GetText("BossSingleProgress", progress, max)
 end
 

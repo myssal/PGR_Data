@@ -60,7 +60,7 @@ function XUiGridArchiveAwareness:Refresh(dataList,index)
         else
             local icon
             if isBigIcon then
-                icon = XMVCA.XEquip:GetEquipSuitBigIconPath(suitId)
+                icon = XMVCA.XEquip:GetEquipSuitWaferBagPath(suitId)
             else
                 icon = XMVCA.XEquip:GetEquipSuitIconPath(suitId)
             end

@@ -24,7 +24,10 @@
         "Priority": 3,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 4,
@@ -59,7 +62,10 @@
         "Priority": 5,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 8,
@@ -72,6 +78,38 @@
     {
         "Id": 9,
         "Name": "备案号",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10,
+        "Name": "主界面右侧活动按钮",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 11,
+        "Name": "主界面左侧活动按钮",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 12,
+        "Name": "打脸图",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 13,
+        "Name": "CV入口检测",
         "Priority": 6,
         "Hint": 0,
         "Type": 1,
@@ -343,7 +381,10 @@
         "Priority": 25,
         "Hint": 1,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 604,
@@ -413,7 +454,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            862838
+            200000
         ]
     },
     {
@@ -424,7 +465,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            862838
+            200000
         ]
     },
     {
@@ -597,7 +638,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            773500
+            200000
         ]
     },
     {
@@ -608,7 +649,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            773600
+            200000
         ]
     },
     {
@@ -619,7 +660,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            773700
+            200000
         ]
     },
     {
@@ -630,7 +671,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            773800
+            200000
         ]
     },
     {
@@ -641,7 +682,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            773900
+            200000
         ]
     },
     {
@@ -773,7 +814,10 @@
         "Priority": 99,
         "Hint": 1,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 2101,
@@ -783,7 +827,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            862844
+            200000
         ]
     },
     {
@@ -794,7 +838,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            862861
+            200000
         ]
     },
     {
@@ -805,7 +849,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            774700
+            200000
         ]
     },
     {
@@ -814,7 +858,10 @@
         "Priority": 113,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 2400,
@@ -822,7 +869,10 @@
         "Priority": 114,
         "Hint": 1,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 2500,
@@ -838,7 +888,10 @@
         "Priority": 102,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 4000,
@@ -887,7 +940,10 @@
         "Priority": 105,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            200000
+        ]
     },
     {
         "Id": 10101,
@@ -918,6 +974,14 @@
         "Condition": [
             771500
         ]
+    },
+    {
+        "Id": 10104,
+        "Name": "主线副本",
+        "Priority": 35,
+        "Hint": 1,
+        "Type": 1,
+        "FunctionType": 1
     },
     {
         "Id": 10201,
@@ -1541,10 +1605,7 @@
         "Priority": 68,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1,
-        "Condition": [
-            775600
-        ]
+        "FunctionType": 1
     },
     {
         "Id": 10401,
@@ -2123,7 +2184,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770100
+            200000
         ]
     },
     {
@@ -2474,10 +2535,7 @@
         "Priority": 1,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1,
-        "Condition": [
-            30406
-        ]
+        "FunctionType": 1
     },
     {
         "Id": 10469,
@@ -2670,10 +2728,7 @@
         "Priority": 99,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1,
-        "Condition": [
-            774800
-        ]
+        "FunctionType": 1
     },
     {
         "Id": 10487,

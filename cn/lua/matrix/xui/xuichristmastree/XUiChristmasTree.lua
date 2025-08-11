@@ -180,7 +180,7 @@ end
 
 -- 搬运function XUiManager.ShowHelpTip(helpDataKey, cb)接口
 function XUiChristmasTree:OnBtnHelpClick()
-    local config = XHelpCourseConfig.GetHelpCourseTemplateByFunction("ChristmasTree")
+    local config = XMVCA.XHelpCourse:GetHelpCourseCfgByFunction("ChristmasTree")
     if not config then
         return
     end

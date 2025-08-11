@@ -18,13 +18,20 @@ function XUiPassport:OnAwake()
     self.CurWeeklyGroupId = self._Control:GetPassportTaskGroupIdByType(XEnumConst.PASSPORT.TASK_TYPE.WEEKLY)      --记录当前第几周
 end
 
-function XUiPassport:OnStart()
+function XUiPassport:OnStart(params)
     self:InitData()
     self:InitPanel()
     self:RegisterButtonEvent()
     self:InitUi()
     self:InitTab()
     self:InitRedPoint()
+    
+    if params then
+        -- 打开最后一个按钮
+        if params.OpenLastPassport then
+            self.PassportPanel:OpenLastPassport()
+        end
+    end
 end
 
 function XUiPassport:OnEnable()
@@ -97,6 +104,7 @@ function XUiPassport:InitRedPoint()
 end
 
 function XUiPassport:InitPanel()
+    ---@type XUiPassportPanel
     self.PassportPanel = XUiPassportPanel.New(self.PanelPassport, self)
     self.PassportPanelTaskActivity = XUiPassportPanelTaskActivity.New(self.PanelTaskActivity, self)
     self.PassportPanelTaskDaily = XUiPassportPanelTaskDaily.New(self.PanelTaskDaily, self)

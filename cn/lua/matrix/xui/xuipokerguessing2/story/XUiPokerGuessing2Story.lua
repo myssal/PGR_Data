@@ -15,7 +15,7 @@ function XUiPokerGuessing2Story:OnAwake()
     self.ToggleFilter.isOn = XSaveTool.GetData("PokerGuessing2ShowUnplayedStoriesFirst") or false
 
     self.AssetActivityPanel = XUiHelper.NewPanelActivityAssetSafe({
-        XDataCenter.ItemManager.ItemId.PokerGuessing2ItemId
+        self._Control:GetConfigItemId()
     }, self.PanelSpecialTool, self)
 end
 

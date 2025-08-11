@@ -125,7 +125,7 @@ function XUiBigWorldMessageTips:_AutoOpenMessage()
     if messageData then
         --self:BeginOpenOperatorAfterClose("UiBigWorldPopupMessageSingle", messageData.MessageId)
         XMVCA.XBigWorldUI:Close(self.Name, function() 
-            XMVCA.XBigWorldUI:Open("UiBigWorldPopupMessageSingle", messageData.MessageId)
+            XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupMessageSingle", messageData.MessageId)
         end)
     else
         self:Close()

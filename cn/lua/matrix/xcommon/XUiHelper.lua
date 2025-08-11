@@ -156,26 +156,24 @@ end
 
 function XUiHelper.CreateScrollItem(datas, template, parent, cb, scrollstyle)
     scrollstyle = scrollstyle or XGlobalVar.ScrollViewScrollDir.ScrollDown
-    local width, height =
-        template.gameObject:GetComponent("RectTransform").rect.width,
-        template.gameObject:GetComponent("RectTransform").rect.height
+    local width, height = XTool.GetUIRectWidthHeight(template)
 
     if scrollstyle == XGlobalVar.ScrollViewScrollDir.ScrollDown then
-        parent:GetComponent("RectTransform").sizeDelta = CS.UnityEngine.Vector2(0, #datas * height)
+        XTool.SetUISizeDelta(parent, 0, #datas * height)
     elseif scrollstyle == XGlobalVar.ScrollViewScrollDir.ScrollRight then
-        parent:GetComponent("RectTransform").sizeDelta = CS.UnityEngine.Vector2(#datas * width, 0)
+        XTool.SetUISizeDelta(parent, #datas * width, 0)
     end
 
     for i = 1, #datas do
         local obj = CS.UnityEngine.Object.Instantiate(template)
         obj.gameObject:SetActive(true)
         if scrollstyle == XGlobalVar.ScrollViewScrollDir.ScrollDown then
-            obj.transform.localPosition = CS.UnityEngine.Vector3(width / 2, -height / 2 - height * (i - 1), 0)
+            XTool.SetLocalPosition(obj, width / 2, -height / 2 - height * (i - 1), 0)
         elseif scrollstyle == XGlobalVar.ScrollViewScrollDir.ScrollRight then
-            obj.transform.localPosition = CS.UnityEngine.Vector3(width * (i - 1), 0, 0)
+            XTool.SetLocalPosition(obj, width * (i - 1), 0, 0)
         end
-        obj.transform.localScale = CS.UnityEngine.Vector3(1, 1, 1)
-        obj.transform.localEulerAngles = CS.UnityEngine.Vector3(0, 0, 0)
+        XTool.SetLocalScale(obj, 1, 1, 1)
+        XTool.SetLocalPosition(obj, 0, 0, 0)
         obj.transform:SetParent(parent, false)
         cb(obj, datas[i])
     end

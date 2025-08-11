@@ -20,6 +20,7 @@ function XUiGridSGBuffItem:OnStart(buffListId)
         self:OnClickBuff()
     end
     self._OnBubbleFinishCb = function()
+        self._IsPlaying = false
         if XTool.UObjIsNil(self.PanelBubble) then
             return
         end
@@ -63,6 +64,9 @@ function XUiGridSGBuffItem:OnBuffUp()
 end
 
 function XUiGridSGBuffItem:OnClickBuff()
+    if self._IsPlaying then
+        return
+    end
     self._IsShowDetail = not self._IsShowDetail
     self:PlayBubbleAnimation()
 end
@@ -76,6 +80,7 @@ function XUiGridSGBuffItem:PlayBubbleAnimation()
         grid = self.Disable
     end
     if grid then
+        self._IsPlaying = true
         grid:PlayTimelineAnimation(self._OnBubbleFinishCb)
     end
 end

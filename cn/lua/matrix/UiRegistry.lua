@@ -314,6 +314,8 @@ local UiRegistry = {
     UiMoeWarRankingList = "XUi/XUiMoeWar/XUiMoeWarRankingList",
     UiMoeWarSupportTips = "XUi/XUiMoeWar/XUiMoeWarSupportTips",
     UiHelpNew = "XUi/XUiHelpCourse/XUiHelpNew",
+    UiPopupTeach = "XUi/XUiHelpCourse/XTeachPopType/Popup/XUiPopupTeach",
+    UiCollectionTeach = "XUi/XUiHelpCourse/XTeachCollectionType/XUiCollectionTeach",
     UiAssignSelectOccupy = "XUi/XUiAssign/UiAssignSelectOccupy",
     UiSuperSmashBrosSettle = "XUi/XUiSuperSmashBros/Settle/XUiSuperSmashBrosSettle",
     UiAreaWarHangUpJs = "XUi/XUiAreaWar/XUiAreaWarHangUpJs",
@@ -903,6 +905,7 @@ local UiRegistry = {
     UiAreaWarJingHua = "XUi/XUiAreaWar/XUiAreaWarJingHua",
     UiCharacterSkillSwich = "XUi/XUiCharacter/XUiCharacterSkillSwich",
     UiCharacterBattleRoomSkillSwitch = "XUi/XUiCharacterV2P6/XUiCharacterBattleRoomSkillSwitch",
+    UiRobotBattleRoomSkillSwitch = "XUi/XUiCharacterV2P6/XUiRobotBattleRoomSkillSwitch",
     UiCharacterEnhacneSkillSwitch = "XUi/XUiCharacterV2P6/XUiCharacterEnhacneSkillSwitch",
     UiLogin = "XUi/XUiLogin/XUiLogin",
     UiPartnerCompose = "XUi/XUiPartner/PartnerCompose/XUiPartnerCompose",
@@ -1703,6 +1706,7 @@ local UiRegistry = {
     UiDunhuangHandbook = "XUi/XUiDunhuang/XUiDunhuangHandbook",
     UiDunhuangEdit = "XUi/XUiDunhuang/XUiDunhuangEdit",
     UiDlcMultiPlayerInvitationPopup = "XUi/XUiDlcMultiPlayer/XUiDlcMultiPlayerInvitationPopup",
+    --region 大连线1
     UiLineArithmeticGame = "XUi/XUiLineArithmetic/XUiLineArithmeticGame",
     UiLineArithmeticTargetPopup = "XUi/XUiLineArithmetic/XUiLineArithmeticTargetPopup",
     UiLineArithmeticMain = "XUi/XUiLineArithmetic/XUiLineArithmeticMain",
@@ -1710,6 +1714,16 @@ local UiRegistry = {
     UiLineArithmeticTask = "XUi/XUiLineArithmetic/XUiLineArithmeticTask",
     UiLineArithmeticTips = "XUi/XUiLineArithmetic/XUiLineArithmeticTips",
     UiLineArithmeticTargetPopupTips = "XUi/XUiLineArithmetic/XUiLineArithmeticTargetPopupTips",
+    --endregion 大连线1
+    --region 大连线2
+    UiLineArithmetic2Game = "XUi/XUiLineArithmetic2/XUiLineArithmetic2Game",
+    UiLineArithmetic2Main = "XUi/XUiLineArithmetic2/XUiLineArithmetic2Main",
+    UiLineArithmetic2Chapter = "XUi/XUiLineArithmetic2/XUiLineArithmetic2Chapter",
+    UiLineArithmetic2Task = "XUi/XUiLineArithmetic2/XUiLineArithmetic2Task",
+    UiLineArithmetic2PopupTips = "XUi/XUiLineArithmetic2/XUiLineArithmetic2PopupTips",
+    UiLineArithmetic2PopupSettlement = "XUi/XUiLineArithmetic2/XUiLineArithmetic2PopupSettlement",
+    UiLineArithmetic2PopupCommon = "XUi/XUiLineArithmetic2/XUiLineArithmetic2PopupCommon",
+    --endregion 大连线2
     UiDlcMultiPlayerMatchingPopup = "XUi/XUiDlcMultiPlayer/XUiDlcMultiPlayerMatchingPopup",
     UiFightLevelMusicGame = "XUi/XUiFightMiniGame/XUiFightLevelMusicGame",
     UiFightLevelMusicGameDebug = "XUi/XUiFightMiniGame/XUiFightLevelMusicGameDebug",
@@ -1804,6 +1818,7 @@ local UiRegistry = {
     UiBigWorldPopupDelivery = "XUi/XUiBigWorld/XQuest/XUiBigWorldPopupDelivery",
     UiBigWorldTaskObtain = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtain",
     UiBigWorldTaskObtainDrama = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtainDrama",
+    UiBigWorldTaskObtainDramaHeart = "XUi/XUiBigWorld/XQuest/XUiBigWorldTaskObtainDramaHeart",
     UiBigWorldLineChapter = "XUi/XUiBigWorld/XStory/XUiBigWorldLineChapter",
     UiBigWorldStoryStageDetail = "XUi/XUiBigWorld/XStory/XUiBigWorldStoryStageDetail",
     UiBigWorldRoleRoom = "XUi/XUiBigWorld/XRoleRoom/XUiBigWorldRoleRoom",
@@ -2098,7 +2113,11 @@ local UiRegistry = {
     UiTheatre5RewardShop = "XUi/XUiTheatre5/XUiTheatre5RewardShop/XUiTheatre5RewardShop",
     UiTheatre5PVEReasoningEnd = "XUi/XUiTheatre5/XUiTheatre5PVEReasoningEnd/XUiTheatre5PVEReasoningEnd",
     UiTheatre5PVEClueBoard = "XUi/XUiTheatre5/XUiTheatre5PVEClueBoard/XUiTheatre5PVEClueBoard",
+    UiTheatre5SkillHandbook = "XUi/XUiTheatre5/XUiTheatre5SkillHandbook/XUiTheatre5SkillHandbook",
+    UiTheatre5Story = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5Story",
+    UiTheatre5PopupHandBook = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5PopupHandBook",
     --endregion
+    
     --region 悬赏任务
     UiBountyChallengeMain = "XUi/XUiBountyChallenge/XUiBountyChallengeMain",
     UiBountyChallengeChapterDetail = "XUi/XUiBountyChallenge/XUiBountyChallengeChapterDetail",
@@ -2113,6 +2132,15 @@ local UiRegistry = {
     UiRelinkPopupChooseCharacter = "XUi/XUiDlcRelink/Room/XUiRelinkPopupChooseCharacter",
     UiRelinkSettlement = "XUi/XUiDlcRelink/Settlement/XUiRelinkSettlement",
     --endregion
+
+    --region mini改造
+    UiSoloReformMain = "XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformMain",
+    UiSoloReformChapterDetail = "XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterDetail",
+    UiSoloReformSettlement = "XUi/XUiSoloReform/XUiSoloReformSettlement/XUiSoloReformSettlement",
+    UiSoloReformPopupReward = "XUi/XUiSoloReform/XUiSoloReformPopupReward/XUiSoloReformPopupReward",
+    --endregion
+
+    UiCloudGamingPopupMain = "XUi/XUiCloudGame/XUiCloudGamingPopupMain",
 }
 
 return UiRegistry

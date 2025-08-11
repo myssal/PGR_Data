@@ -285,7 +285,7 @@ end
 --@separator: 分割符
 --@return 字符串数组
 --==============================--
-function string.Split(str, separator)
+function string.Split(str, separator, removeEmpty)
     if str == nil or str == "" then
         return {}
     end
@@ -303,7 +303,11 @@ function string.Split(str, separator)
         end
 
         local elem = str:sub(startPos, endPos - 1)
-        tableInsert(result, elem)
+
+        if not removeEmpty or not string.IsNilOrEmpty(elem) then
+            tableInsert(result, elem)
+        end
+        
         startPos = endPos + #separator
     end
 

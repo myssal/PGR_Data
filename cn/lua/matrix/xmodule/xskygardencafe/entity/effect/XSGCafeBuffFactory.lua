@@ -288,17 +288,17 @@ function XSGCafePool2DeckBuff:OnApply()
     self:ChangeEffectCount(false, 1)
 end
 
---function XSGCafePool2DeckBuff:OnDismiss()
---    if not self._Count or self._Count == 0 then
---        return
---    end
---    --触发类型为弃牌时，不复原，否则会造成，弃牌时增加上限，弃掉之后又减少上限了
---    if self._TriggerId == XMVCA.XSkyGardenCafe.EffectTriggerId.Discard then
---        return
---    end
---    self._OwnControl:GetMainControl():AddDeckCount(-self._Count)
---    self:ChangeEffectCount(false, -1)
---end
+function XSGCafePool2DeckBuff:OnDismiss()
+    if not self._Count or self._Count == 0 then
+        return
+    end
+    --只有增加上限才复原
+    if self._Count > 0 then
+        --下个回合增加上限，buff被销毁时应该减少上限
+        self._OwnControl:GetMainControl():AddDeckCount(-self._Count)
+    end
+    self:ChangeEffectCount(false, -1)
+end
 
 function XSGCafePool2DeckBuff:AddBuffArgs()
     if not self._Card then
@@ -417,7 +417,7 @@ function XSGCafeCopyBuff:AddBuffArgs()
     if not self._Card or not self._TargetCard then
         return
     end
-    self._Card:SetCustomerDetails(self._TargetCard:GetCustomerDetails())
+    self._Card:SetCustomerDetails(self._Model:GetCustomerDetails(self._TargetCard:GetCardId()))
 end
 
 function XSGCafeCopyBuff:OnDestroy()

@@ -30,6 +30,7 @@ XFubenBabelTowerManagerCreator = function()
     local CurTeamList = nil             -- 当前组队信息
     local CurCaptainPos = nil
     local CurFirstFightPos = nil
+    local CurGeneralSkill = nil
     local CurStageLevel = nil
     local ChallengeBuffList = nil       -- 当前选择的挑战信息
     local SupportBuffList = nil         -- 当前选择的支援信息
@@ -124,7 +125,7 @@ XFubenBabelTowerManagerCreator = function()
 
     -- stageInfo刷新
     -- 选中的关卡临时数据
-    function XFubenBabelTowerManager.SaveCurStageInfo(stageId, teamId, guideId, teamList, challengeBuffs, supportBuffs, captainPos, stageLevel, firstFightPos)
+    function XFubenBabelTowerManager.SaveCurStageInfo(stageId, teamId, guideId, teamList, challengeBuffs, supportBuffs, captainPos, stageLevel, firstFightPos, generalSkill)
         CurStageId = stageId
         CurTeamId = teamId
         CurStageGuideId = guideId
@@ -134,13 +135,14 @@ XFubenBabelTowerManagerCreator = function()
         CurCaptainPos = captainPos
         CurStageLevel = stageLevel
         CurFirstFightPos = firstFightPos
+        CurGeneralSkill = generalSkill
         CurTeamScore = XDataCenter.FubenBabelTowerManager.GetTeamMaxScore(stageId, teamId)
         CurActivityMaxScore = XFubenBabelTowerManager.GetCurrentActivityMaxScore()
     end
 
     function XFubenBabelTowerManager.GetCurStageInfo()
         return CurStageId, CurTeamId, CurStageGuideId, CurTeamList, ChallengeBuffList, SupportBuffList
-            , CurCaptainPos, CurStageLevel, CurFirstFightPos, CurTeamScore, CurActivityMaxScore
+            , CurCaptainPos, CurStageLevel, CurFirstFightPos, CurTeamScore, CurActivityMaxScore, CurGeneralSkill
     end
 
     function XFubenBabelTowerManager.ClearCurStageInfo()
@@ -152,6 +154,7 @@ XFubenBabelTowerManagerCreator = function()
         SupportBuffList = nil
         CurCaptainPos = nil
         CurFirstFightPos = nil
+        CurGeneralSkill = nil
         CurStageLevel = nil
         CurTeamScore = nil
         CurActivityMaxScore = nil
@@ -730,12 +733,13 @@ XFubenBabelTowerManagerCreator = function()
         return CurrentRankLevel
     end
 
-    function XFubenBabelTowerManager.SetTeamChace(stageId, teamId, team, captainPos, firstFightPos)
+    function XFubenBabelTowerManager.SetTeamChace(stageId, teamId, team, captainPos, firstFightPos, generalSkill)
         local teamData = GetTeamData(stageId, teamId)
         if teamData:IsSyned() then return end --如果该关卡下已经有通关记录，那么不进行队伍配置缓存
         teamData:UpdateCharacterIds(team)
         teamData:SetCaptainPos(captainPos)
         teamData:SetFirstFightPos(firstFightPos)
+        teamData:SetGeneralSkill(generalSkill)
     end
 
     function XFubenBabelTowerManager.ClearTeamChace(stageId)
@@ -800,16 +804,22 @@ XFubenBabelTowerManagerCreator = function()
         return teamData:GetFirstFightPos()
     end
 
+    function XFubenBabelTowerManager.GetTeamGeneralSkill(stageId, teamId)
+        local teamData = GetTeamData(stageId, teamId)
+        return teamData:GetGeneralSkill()
+    end
+
     function XFubenBabelTowerManager.CheckTeamHasCaptain(stageId, teamId)
         local teamData = GetTeamData(stageId, teamId)
         return teamData:HasCaptain()
     end
 
-    function XFubenBabelTowerManager.GetCacheTeam(stageId, teamId, characterIds, captainPos, firstFightPos)
+    function XFubenBabelTowerManager.GetCacheTeam(stageId, teamId, characterIds, captainPos, firstFightPos, generalSkill)
         local curTeam = {
             TeamData = characterIds or XFubenBabelTowerManager.GetTeamCharacterIds(stageId, teamId),
             CaptainPos = captainPos or XFubenBabelTowerManager.GetTeamCaptainPos(stageId, teamId),
             FirstFightPos = firstFightPos or XFubenBabelTowerManager.GetTeamFirstFightPos(stageId, teamId),
+            SelectedGeneralSkill = generalSkill or XFubenBabelTowerManager.GetTeamGeneralSkill(stageId, teamId),
         }
         return curTeam
     end
@@ -831,6 +841,10 @@ XFubenBabelTowerManagerCreator = function()
 
     -- 打开巴贝塔之前检查是否需要播剧情
     function XFubenBabelTowerManager.OpenBabelTowerCheckStory()
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.BabelTower) then
+            return false
+        end
+
         local value = XFubenBabelTowerManager.GetBabelTowerPrefs(XFubenBabelTowerConfigs.HAS_PLAY_BEGINSTORY, 0)
         local activityNo = XFubenBabelTowerManager.GetCurrentActivityNo()
         local hasPlay = value == 1
@@ -848,6 +862,7 @@ XFubenBabelTowerManagerCreator = function()
         else
             XLuaUiManager.Open("UiBabelTowerMainNew")
         end
+        return true
     end
 
     local function UpdateBabelActivityStages(activityNo, stageDatas)
@@ -1005,8 +1020,9 @@ XFubenBabelTowerManagerCreator = function()
             return taskA.Id < taskB.Id
         end)
         local result = {}
-        local lastEndId = tonumber(XFubenBabelTowerConfigs.GetActivityConfigValue("TaskGroupEndId")[1])
-        local taskGroupEndId = tonumber(XFubenBabelTowerConfigs.GetActivityConfigValue("TaskGroupEndId")[3])
+        local taskGroupIds = XFubenBabelTowerConfigs.GetActivityConfigValue("TaskGroupEndId")
+        local lastEndId = tonumber(taskGroupIds[1])
+        local taskGroupEndId = tonumber(taskGroupIds[#taskGroupIds])
         for _, task in ipairs(allTasks) do
             if task.Id >= lastEndId and task.Id <= taskGroupEndId then
                 table.insert(result, task)

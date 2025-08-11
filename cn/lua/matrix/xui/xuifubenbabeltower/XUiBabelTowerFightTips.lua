@@ -172,7 +172,7 @@ function XUiBabelTowerFightTips:OnStart(stageId, battleStatus, babelTowerSettleR
     self.StageId = stageId
     self.BattleStatus = battleStatus
     self.CurStageId, self.CurTeamId, self.CurStageGuideId, self.CurTeamList, self.ChallengeBuffs, self.SupportBuffs
-        , self.CurCaptainPos, self.CurStageLevel, self.CurFirstFightPos, self.CurTeamScore, self.curActivityMaxScore
+        , self.CurCaptainPos, self.CurStageLevel, self.CurFirstFightPos, self.CurTeamScore, self.curActivityMaxScore, self.CurGeneralSkill
         = XDataCenter.FubenBabelTowerManager.GetCurStageInfo()
 
     if self.StageId ~= self.CurStageId then

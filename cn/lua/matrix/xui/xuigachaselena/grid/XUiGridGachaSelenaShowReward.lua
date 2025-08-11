@@ -365,16 +365,16 @@ end
 
 -- 加载3d 通讯线特效
 function XUiGridGachaSelenaShowReward:Load3dLineEffect(model, effectKey)
-    local effectPath = XUiHelper.GetClientConfig(effectKey, XUiHelper.ClientConfigType.String)
-    local effectGo = self.ImgEffectXuxian:LoadPrefab(effectPath, true, false)
-    if not effectGo then
-        return
-    end
-    local binder = effectGo.transform:GetComponent(typeof(CS.XMaterialAnimation3StepBinder))
-    if binder then
-        binder.TargetModel = model
-    end
-    effectGo.gameObject:SetActiveEx(true)
+    --local effectPath = XUiHelper.GetClientConfig(effectKey, XUiHelper.ClientConfigType.String)
+    --local effectGo = self.ImgEffectXuxian:LoadPrefab(effectPath, true, false)
+    --if not effectGo then
+    --    return
+    --end
+    --local binder = effectGo.transform:GetComponent(typeof(CS.XMaterialAnimation3StepBinder))
+    --if binder then
+    --    binder.TargetModel = model
+    --end
+    --effectGo.gameObject:SetActiveEx(true)
 end
 
 function XUiGridGachaSelenaShowReward:OnDestroy()

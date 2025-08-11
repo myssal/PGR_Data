@@ -1,3 +1,5 @@
+---@class XMovieActionBgEffect
+---@field UiRoot XUiMovie
 local XMovieActionBgEffect = XClass(XMovieActionBase, "XMovieActionBgEffect")
 
 function XMovieActionBgEffect:Ctor(actionData)
@@ -22,10 +24,11 @@ function XMovieActionBgEffect:OnInit()
     end
 
     if self.EffectType == self.EFFECT_TYPE.SCREENSHOT then
-        local fullScreenBackground = self.UiRoot.RImgBg1.transform.parent
+        local fullScreenBackground = self.UiRoot.Transform:Find("FullScreenBackground")
         self:LoadScreenshotEffect(fullScreenBackground)
     else
-        self:LoadEffect(self.UiRoot.RImgBg1)
+        local rImgBg = self.UiRoot.UiMovieBg:GetBg(1):GetRImgBg()
+        self:LoadEffect(rImgBg)
     end
 end
 

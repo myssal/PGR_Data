@@ -698,7 +698,7 @@ function XUiPhotograph:PlaySceneAnim(element)
     local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
     local sighBoardId = element.SignBoardConfig.Id
     -- CG重播时 需要重播场景摄像机动画
-    XMVCA.XFavorability:LoadSceneAnim(animRoot, self.CameraFar, self.CameraNear, sceneId, sighBoardId, self, self.CG:IsCGShow())
+    XMVCA.XFavorability:LoadSceneAnim(animRoot, self.CameraFar, self.CameraNear, self.CameraComponentFar, self.CameraComponentNear, sceneId, sighBoardId, self, self.CG:IsCGShow())
     XMVCA.XFavorability:SceneAnimPlay()
 end
 

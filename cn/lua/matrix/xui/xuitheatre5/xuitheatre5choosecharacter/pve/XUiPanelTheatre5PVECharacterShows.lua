@@ -37,14 +37,14 @@ function XUiPanelTheatre5PVECharacterShows:InitBtnList()
             local btnName = btn.gameObject.name
             local startPos, _ = string.find(btnName, "^Character")
             if not startPos then
-                buttons[i].CallBack = function() 
+                buttons[i]:AddEventListener(function() 
                     self:CheckPVEChat(btnName, function()
                         local success = self.Parent:OnSelectCharacter(nil, btnName)
                         if success then
                             self:Close()
                         end    
                     end)  
-                end
+                end, true, true, 0.5)
             end    
         end
     end   
@@ -67,8 +67,18 @@ function XUiPanelTheatre5PVECharacterShows:CheckPVEChat(btnName, cb)
         end
         return
     end          
-    local entranceCfg = self._Control.PVEControl:GetPveStoryEntranceCfg(btnName)  --点的是一个没有故事线的普通物体
-    if not entranceCfg then
+    local entranceCfg = self._Control.PVEControl:GetPveStoryEntranceCfg(btnName)
+    local canCheck = not entranceCfg  --点的是一个没有故事线的普通物体
+    if entranceCfg then
+        local storylineCfg = self._Control.PVEControl:GetStoryLineCfg(entranceCfg.StoryLine)
+        --教学线入口完成可以接对话
+        if storylineCfg and storylineCfg.StoryLineType == XMVCA.XTheatre5.EnumConst.PVEStoryLineType.Guide and 
+            not self._Control.PVEControl:IsInTeachingStoryLine() then
+            canCheck = true
+        end
+    end        
+                
+    if canCheck then
         local chatGroupId,characters = self._Control.PVEControl:GetPveSceneChatClickObjectChatData(btnName)
         if not XTool.IsNumberValid(chatGroupId) then   
             return

@@ -27,18 +27,6 @@ local DefaultOfTypeNew = {
     [21] = tableEmpty,
 }
 
-function BinaryTable.New(path)
-    local temp = {}
-    setmetatable(temp, { __index = BinaryTable })
-    temp:Ctor(path)
-    return temp
-end
-
-function BinaryTable:Ctor(path)
-    self.FilePath = path
-    self.ReadPoolStringByIndexCallback = handler(self, self.ReadPoolStringByIndex)
-end
-
 --读取全部
 function BinaryTable.ReadAll(path, identifier)
     local bt = BinaryTable.ReadHandle(path)
@@ -47,8 +35,7 @@ function BinaryTable.ReadAll(path, identifier)
         return nil
     end
 
-    local tab = bt:ReadAllContent(identifier)
-
+    local tab = bt:ReadAllContent(identifier, nil, true)
     bt:ReleaseFull()
     bt = nil
 
@@ -59,24 +46,18 @@ end
 function BinaryTable.ReadHandle(path)
     local bt = BinaryTable.New(path)
 
-    if not bt or not bt:InitBinary() then
+    if not bt or not bt:IsTableExist() then
         return nil
     end
 
     return bt
 end
 
-function BinaryTable:InitBinary()
-    self.Bytes = BinaryManager.LoadBytes(self.FilePath)
-
-    if not self.Bytes then
-        XLog.Error(string.format("BinaryTable.InitBinary 加载文件失败 %s", self.FilePath))
-        return nil
-    end
-    self.Length = string.len(self.Bytes)
-
-    local result = self:Init()
-    return result
+function BinaryTable.New(path)
+    local temp = {}
+    setmetatable(temp, { __index = BinaryTable })
+    temp:Ctor(path)
+    return temp
 end
 
 function BinaryTable:__ReadInt()
@@ -96,7 +77,7 @@ function BinaryTable:__GetReader(len, offset)
     end
     local reader = ReaderPool.GetReader()
     reader:LoadBytes(self.Bytes, len, offset + 1)
-    reader:SetStringPoolCallback(self.ReadPoolStringByIndexCallback)
+    reader:SetBinaryFileFolder(self)
     return reader
 end
 
@@ -109,7 +90,12 @@ function BinaryTable:__ResetReader(reader, len, offset)
     reader:Reset(len, offset + 1)
 end
 
-function BinaryTable:InitMetaTable()
+-- 关闭读取器
+function BinaryTable:__CloseReader(reader)
+    ReaderPool.ReleaseReader(reader)
+end
+
+function BinaryTable:_InitMetaTable()
     local colType = self.colTypes
     local colNames = self.colNames
     local colNameIndex = {}
@@ -121,7 +107,6 @@ function BinaryTable:InitMetaTable()
     local metaTable = {}
     metaTable.__index = function(tbl, colName)
         local idx = colNameIndex[colName]
-
         if not idx or not tbl then
             return nil
         end
@@ -129,7 +114,6 @@ function BinaryTable:InitMetaTable()
         local result = rawget(tbl, idx)
         if not result then
             local resultType = colType[idx]
-
             if not resultType then
                 XLog.Error(string.format("找不到键值 Key:%s 请检查该键值和表头是否匹配", colName))
             end
@@ -145,8 +129,8 @@ function BinaryTable:InitMetaTable()
     end
 
     metaTable.__metatable = "readonly table"
-
     metaTable.__pairs = function(t)
+        self:InitBinary()
         local function stateless_iter(tbl, key)
             local nk, v = next(tbl, key)
 
@@ -160,6 +144,33 @@ function BinaryTable:InitMetaTable()
     end
 
     self.MetaTable = metaTable
+end
+
+function BinaryTable:Ctor(path)
+    self.FilePath = path
+end
+
+function BinaryTable:IsTableExist()
+    return CS.XTableManager.FileExists(self.FilePath)
+end
+
+function BinaryTable:GetRowCount()
+    self:InitBinary()
+    return self.row
+end
+
+function BinaryTable:InitBinary()
+    if self.m_initialized then return end
+
+    self.Bytes = BinaryManager.LoadBytes(self.FilePath)
+    if not self.Bytes then
+        XLog.Error(string.format("BinaryTable.InitBinary 加载文件失败 %s", self.FilePath))
+        return nil
+    end
+    self.Length = string.len(self.Bytes)
+
+    local result = self:Init()
+    return result
 end
 
 --初始化表头
@@ -178,11 +189,8 @@ function BinaryTable:Init()
         table.insert(self.colNames, name)
     end
 
-    local hasPrimarykey = reader:ReadBool()
-    self.primarykeyCount = 0
-
-    if hasPrimarykey then
-        self.primarykeyCount = 1
+    self.hasPrimarykey = reader:ReadBool()
+    if self.hasPrimarykey then
         local primarykeyIndex = reader:ReadInt() or 0
         self.primarykey = self.colNames[primarykeyIndex + 1]
         -- self.primarykey = reader:ReadString()
@@ -197,8 +205,9 @@ function BinaryTable:Init()
     end
 
     self.rowTrunkLen = reader:ReadInt()
-    self.row = reader:ReadInt()
+    self.row = reader:ReadInt() or 0
     self.contentTrunkLen = reader:ReadInt()
+    self.m_initialized = true
 
     if not self.contentTrunkLen then
         if XMain.IsDebug then
@@ -208,22 +217,27 @@ function BinaryTable:Init()
         return
     end
 
-    self:InitMetaTable()
+    self:_InitMetaTable()
     self:__CloseReader(reader)
-    self.caches = {}
+
     self.cachesCount = 0
+    if not self.m_skipCache then
+        self.caches = {}
+    end
     self.m_poolColumnSize = -1
 
     return true
 end
 
+-- 获取表头后的位置，后面是行信息块
 function BinaryTable:GetIndexTrunkPosition()
+    self:InitBinary()
     return self.infoTrunkLen + HEAD_LEN
 end
 
 function BinaryTable:GetAfterPrimaryKeyTrunkPosition()
     local position = self:GetIndexTrunkPosition()
-    if self.primarykeyCount > 0 then
+    if self.hasPrimarykey then
         position = position + self.primarykeyLen
     end
     return position
@@ -234,10 +248,12 @@ function BinaryTable:GetContentTrunkPosition()
     return self:GetAfterPrimaryKeyTrunkPosition() + self.rowTrunkLen
 end
 
+-- 获取字符串池偏移数组的开始位置
 function BinaryTable:GetPoolOffsetTrunkStartPosition()
     return self:GetContentTrunkPosition() + self.contentTrunkLen
 end
 
+-- 获取字符串池内容的开始位置
 function BinaryTable:GetPoolContentTrunkStartPosition()
     return self:GetPoolOffsetTrunkStartPosition() + self.m_poolContentStartPos
 end
@@ -254,15 +270,9 @@ function BinaryTable:GetContentTrunkReader()
     return reader
 end
 
-
-function BinaryTable:ReadAllContent(identifier, isPair)
-    --if self.Bytes == nil then
-    --    XLog.Error("Re Open All")
-    --    self:InitBinary()
-    --    if self.Bytes == nil then
-    --        return tableEmpty
-    --    end
-    --end
+-- 获取所有数据
+function BinaryTable:ReadAllContent(identifier, isPair, skipCache)
+    self.m_skipCache = skipCache
 
     local reader = self:GetContentTrunkReader()
     if not reader then
@@ -302,7 +312,7 @@ function BinaryTable:ReadAllContent(identifier, isPair)
             local keyValue = nil
 
             for j = 1, col do
-                reader:SetUseStringPool(self:IsStringPoolColumn(j))
+                reader:SetReadColumn(j)
                 local type = colType[j]
                 local value = reader:Read(type)
                 temp[j] = value
@@ -318,7 +328,9 @@ function BinaryTable:ReadAllContent(identifier, isPair)
             setmetatable(temp, self.MetaTable)
             tab[keyValue] = temp
 
-            self.caches[keyValue] = temp
+            if not self.m_skipCache then
+                self.caches[keyValue] = temp
+            end
         else
             local tail = self.m_rowIndexArray[i]
             tail = tail + trunkPos + 1 --下一个读取要+1
@@ -326,38 +338,28 @@ function BinaryTable:ReadAllContent(identifier, isPair)
         end
     end
 
-    self.cachesCount = self.row
+    if not self.m_skipCache then
+        self.cachesCount = self.row
+    end
     self:__CloseReader(reader)
     return tab
 end
 
-function BinaryTable:__CloseReader(reader)
-    ReaderPool.ReleaseReader(reader)
-end
-
-function BinaryTable:GetRowCount()
-    return self.row
-end
-
+-- 获取Key字段
 function BinaryTable:Get(key)
+    self:InitBinary()
+    if not self.caches then return end
+
     local v = self.caches[key]
     if v then
         return v
     end
 
-    --if self.Bytes == nil then
-    --    XLog.Error("Re Open Get")
-    --    self:InitBinary()
-    --    if self.Bytes == nil then
-    --        return nil
-    --    end
-    --end
     if self.cachesCount == self.row then --遍历完了还没找到的
         return nil
     end
 
     local t, index = self:ReadElement(key)
-
     if t ~= nil then
         self.caches[key] = t
         self.cachesCount = self.cachesCount + 1
@@ -387,7 +389,7 @@ function BinaryTable:ReadIndexTrunk()
             break
         end
     end
-    reader:SetUseStringPool(self:IsStringPoolColumn(colNum))
+    reader:SetReadColumn(colNum)
     for i = 1, self.row do
         local temp = reader:Read(self.primarykeyType) or 0
         self.primaryKeyList[temp] = i
@@ -396,7 +398,6 @@ function BinaryTable:ReadIndexTrunk()
     self:__CloseReader(reader)
     return true
 end
-
 
 -- 读取每行的位置和长度
 function BinaryTable:ReadRowIndexTrunk()
@@ -416,7 +417,7 @@ function BinaryTable:ReadRowIndexTrunk()
     self:__CloseReader(reader)
 end
 
---读取条目
+-- 读取条目
 function BinaryTable:ReadElement(key)
     if not self.primarykey then
         XLog.Error(string.format("%s,主键未初始化 ", self.FilePath))
@@ -441,7 +442,8 @@ function BinaryTable:ReadElement(key)
     return element, index
 end
 
-function BinaryTable:ReadRow(index)
+-- 读取行条目
+function BinaryTable:_ReadRow(index)
     if not self.m_rowIndexArray then
         self:ReadRowIndexTrunk()
     end
@@ -466,9 +468,9 @@ function BinaryTable:ReadRow(index)
     return reader
 end
 
-
+-- 读取行内部数据
 function BinaryTable:ReadElementInner(index, keyName)
-    local reader = self:ReadRow(index)
+    local reader = self:_ReadRow(index)
     if not reader then
         XLog.Warning(string.format("%s,BinaryTable:ReadElementInner,查询数据失败 %s = %s", self.FilePath, self.primarykey, keyName))
         return
@@ -477,7 +479,7 @@ function BinaryTable:ReadElementInner(index, keyName)
     local colType = self.colTypes
     local temp = {}
     for j = 1, self.col do
-        reader:SetUseStringPool(self:IsStringPoolColumn(j))
+        reader:SetReadColumn(j)
         local type = colType[j]
         local value = reader:Read(type)
         temp[j] = value
@@ -581,6 +583,7 @@ function BinaryTable:ReadPoolStringByIndex(index)
     return str
 end
 
+-- 释放缓存
 function BinaryTable:ReleaseCache()
     self.caches = {}
     self.cachesCount = 0
@@ -589,21 +592,16 @@ function BinaryTable:ReleaseCache()
     end
 end
 
+-- 释放所有
 function BinaryTable:ReleaseFull()
-    self.caches = {}
+    self:ReleaseCache()
     self.Bytes = nil
-    self.cachesCount = 0
-    if self.cachesRow then
-        self.cachesRow = {}
-    end
 end
 
-function BinaryTable:ReleaseBytes()
-    --self.Bytes = nil --释放字节数据(由于进战斗啥的还会把caches给清理掉, 所以不适合把bytes干掉)
-end
-
-
+-- 关闭，好像没调用
 function BinaryTable:Close()
+    -- XLog.Error("BinaryTable:Close", self.FilePath)
+    -- self:ReleaseFull()
 end
 
 return BinaryTable

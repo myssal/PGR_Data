@@ -4,9 +4,16 @@ local XUiPanelTheatre5TopInfo = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/X
 local XUiPanelTheatre5SettleTopInfo = XClass(XUiPanelTheatre5TopInfo, 'XUiPanelTheatre5SettleTopInfo')
 local XUiGridTheatre5SettleCup = require('XUi/XUiTheatre5/XUiTheatre5RoundSettlement/XUiGridTheatre5SettleCup')
 
+---@overload
 function XUiPanelTheatre5SettleTopInfo:OnStart()
     XUiPanelTheatre5TopInfo.OnStart(self)
     self._CupList = {}
+end
+
+---@overload
+function XUiPanelTheatre5SettleTopInfo:OnDisable()
+    XUiPanelTheatre5TopInfo.OnDisable(self)
+    self:StopLifeChangeTimer()
 end
 
 function XUiPanelTheatre5SettleTopInfo:ShowBattleResult(isWin)
@@ -92,5 +99,40 @@ function XUiPanelTheatre5SettleTopInfo:RefreshPVECupsShow()
     end
 
 end
+
+---@overload
+function XUiPanelTheatre5SettleTopInfo:RefreshLifeShow()
+    local health = self._Control.ShopControl:GetHealth()
+    local healthMax = self._Control.PVPControl:GetPVPHealthMaxFromConfig()
+
+    if not self.IsWin then
+        -- 扣血都是-1，直接分两步显示，后面迭代扣血数存在>1 时再使用Tween
+        self.TxtLifeNum.text = XUiHelper.FormatText(self._Control.PVPControl:GetHealthShowTextFromClientConfig(), health + 1, healthMax)
+        self:PlayAnimation('Chunk')
+        self:StartLifeChangeTimer(health, healthMax)
+    else
+        self.TxtLifeNum.text = XUiHelper.FormatText(self._Control.PVPControl:GetHealthShowTextFromClientConfig(), health, healthMax)
+    end
+end
+
+--region 生命数变化动画
+
+function XUiPanelTheatre5SettleTopInfo:StopLifeChangeTimer()
+    if self._LifeChangeTimerId then
+        XScheduleManager.UnSchedule(self._LifeChangeTimerId)
+        self._LifeChangeTimerId = nil
+    end
+end
+
+function XUiPanelTheatre5SettleTopInfo:StartLifeChangeTimer(health, healthMax)
+    self:StopLifeChangeTimer()
+    
+    self._LifeChangeTimerId = XScheduleManager.ScheduleOnce(function()
+        self.TxtLifeNum.text = XUiHelper.FormatText(self._Control.PVPControl:GetHealthShowTextFromClientConfig(), health, healthMax)
+        self._LifeChangeTimerId = nil
+    end, self._Control:GetClientConfigBattleLoseLifeChangeDelay() * XScheduleManager.SECOND)
+end
+
+--endregion
 
 return XUiPanelTheatre5SettleTopInfo

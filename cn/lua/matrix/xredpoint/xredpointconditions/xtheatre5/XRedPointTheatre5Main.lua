@@ -7,6 +7,8 @@ function XRedPointTheatre5Main.GetSubConditions()
     SubCondition = SubCondition or {
         XRedPointConditions.Types.CONDITION_THEATRE5_NEW_ACTIVITY,
         XRedPointConditions.Types.CONDITION_THEATRE5_PVP_NEW_ACTIVITY,
+        XRedPointConditions.Types.CONDITION_THEATRE5_LIMIT_SHOP,
+        XRedPointConditions.Types.CONDITION_THEATRE5_TASK,
     }
 
     return SubCondition

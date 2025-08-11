@@ -265,7 +265,7 @@ function XUiBabelTowerMainNew:UpdateStageDetails()
     for i = 1, #self.CurrentActivityTemplate.StageId do
         local curStageId = self.CurrentActivityTemplate.StageId[i]
         if not self.StageGridChapter[i] then
-            local go = self.PanelStageContent:Find(string.format("Stage%d", i))
+            local go = self.PanelStageContent:FindTransform(string.format("Stage%d", i))
             table.insert(self.StageGridChapter, XUiGridBabelStageItem.New(go, self, curStageId))
         end
         self.StageGridChapter[i].GameObject:SetActiveEx(true)

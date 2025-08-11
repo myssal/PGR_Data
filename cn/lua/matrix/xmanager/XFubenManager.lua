@@ -240,8 +240,8 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:EnterRogueLikeFight(stage, curTeam, isAssist, nodeId, func)
     end
 
-    function XFubenManager.EnterBabelTowerFight(stageId, team, captainPos, firstFightPos)
-        return XMVCA.XFuben:EnterBabelTowerFight(stageId, team, captainPos, firstFightPos)
+    function XFubenManager.EnterBabelTowerFight(stageId, team, captainPos, firstFightPos, generalSkill)
+        return XMVCA.XFuben:EnterBabelTowerFight(stageId, team, captainPos, firstFightPos, generalSkill)
     end
 
     function XFubenManager.EnterBfrtFight(stageId, team, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)

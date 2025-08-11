@@ -34,9 +34,19 @@ function XUiPokerGuessing2PopupSettlement:Update()
     if settlement.IsWin then
         self.PanelWin.gameObject:SetActiveEx(true)
         self.SFX_SettleWin.gameObject:SetActiveEx(true)
+
+        local playerScore = self._Control:GetScore()
+
+        if self.TxtScoreNum then
+            self.TxtScoreNum.text = playerScore
+        end
     else
         self.PanelLost.gameObject:SetActiveEx(true)
         self.SFX_SettleLose.gameObject:SetActiveEx(true)
+
+        if self.TxtLost then
+            self.TxtLost.text = XUiHelper.GetText('PokerGuessing2GameLoseTips')
+        end
     end
     self.TxtRoundNum.text = settlement.Round
     if #settlement.Rewards > 0 then

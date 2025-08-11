@@ -41,17 +41,27 @@ function XUiTheatre5PopupRewardDetail:RefreshGold(itemId)
     self.TxtCount.text = self._Control:GetGoldNum()
 end
 
-function XUiTheatre5PopupRewardDetail:RefreshCommonItem(itemId)
-    local itemData = XDataCenter.ItemManager.GetItem(itemId)
-    if not itemData then
-        return
-    end    
-    local icon = XDataCenter.ItemManager.GetItemIcon(itemId)
-    self.RImgIcon:SetRawImage(icon)
-    self.TxtDescription.text = XDataCenter.ItemManager.GetItemDescription(itemId)
-    self.TxtWorldDesc.text = XDataCenter.ItemManager.GetItemWorldDesc(itemId)
-    self.TxtName.text = XDataCenter.ItemManager.GetItemName(itemId)
-    self.TxtCount.text = itemData.Count
+function XUiTheatre5PopupRewardDetail:RefreshCommonItem(templateId)
+    local goodsShowParams = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(templateId)
+    self.RImgIcon:SetRawImage(goodsShowParams.Icon)
+    local desc = XGoodsCommonManager.GetGoodsDescription(templateId)
+    self.TxtDescription.text = desc
+    local worldDesc = XGoodsCommonManager.GetGoodsWorldDesc(templateId)
+    self.TxtWorldDesc.text = worldDesc
+    self.TxtName.text = goodsShowParams.Name
+    self.TxtCount.text = XGoodsCommonManager.GetGoodsCurrentCount(templateId)
+
+
+    -- local itemData = XDataCenter.ItemManager.GetItem(itemId)
+    -- if not itemData then
+    --     return
+    -- end    
+    -- local icon = XDataCenter.ItemManager.GetItemIcon(itemId)
+    -- self.RImgIcon:SetRawImage(icon)
+    -- self.TxtDescription.text = XDataCenter.ItemManager.GetItemDescription(itemId)
+    -- self.TxtWorldDesc.text = XDataCenter.ItemManager.GetItemWorldDesc(itemId)
+    -- self.TxtName.text = XDataCenter.ItemManager.GetItemName(itemId)
+    -- self.TxtCount.text = itemData.Count
 end
 
 return XUiTheatre5PopupRewardDetail

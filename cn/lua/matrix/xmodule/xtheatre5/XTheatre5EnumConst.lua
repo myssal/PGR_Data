@@ -16,7 +16,7 @@ local Theatre5EnumConst = {
     --- 物品类型
     ItemType = {
         Skill = 1, -- 技能
-        Equip = 2, -- 装备
+        Equip = 2, -- 装备/符文(游戏里的包装是符文)
         ItemBox = 3, --道具箱
         Gold = 4, --金币
         Clue = 5, --线索

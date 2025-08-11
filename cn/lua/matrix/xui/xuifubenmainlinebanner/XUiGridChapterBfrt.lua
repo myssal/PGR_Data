@@ -204,7 +204,7 @@ end
 
 function XUiGridChapterBfrt:OnOpenChapter()
     --分包资源检测
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Bfrt, self._ChapterId) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Bfrt, self._ChapterId) then
         return
     end
     local chapterCfg = XDataCenter.BfrtManager.GetChapterCfg(self._ChapterId)

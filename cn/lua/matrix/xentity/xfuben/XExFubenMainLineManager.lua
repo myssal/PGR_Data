@@ -397,4 +397,8 @@ function XExFubenMainLineManager:GetHardChapterViewModel(viewModel)
     return self:GetChapterViewModel(extralData.MainId, XDataCenter.FubenManager.DifficultHard, extralData.Index)
 end
 
+function XExFubenMainLineManager:ExGetFunctionNameType()
+    return XFunctionManager.FunctionName.MainLine
+end
+
 return XExFubenMainLineManager

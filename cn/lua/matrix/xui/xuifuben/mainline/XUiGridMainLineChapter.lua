@@ -97,7 +97,7 @@ function XUiGridMainLineChapter:SetData(index, viewModel)
 end
 
 function XUiGridMainLineChapter:OnBtnSelfClicked()
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MainLine, self.ChapterViewModel:GetId()) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, self.ChapterViewModel:GetId()) then
         return
     end
     if self.ClickFunc then

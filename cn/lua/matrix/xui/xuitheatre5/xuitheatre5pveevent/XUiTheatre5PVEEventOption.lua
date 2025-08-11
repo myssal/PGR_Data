@@ -15,6 +15,7 @@ function XUiTheatre5PVEEventOption:UpdateData(eventCfg)
     if not eventCfg then
         return
     end
+    self._CurOptionId = nil
     self._CurEventId = eventCfg.Id
     self.TxtContent.text = XUiHelper.ReplaceTextNewLine(eventCfg.Desc)
     self.BtnSure:SetName(eventCfg.ConfirmContent)
@@ -53,7 +54,8 @@ function XUiTheatre5PVEEventOption:OnClickConfirm()
     if not XTool.IsNumberValid(self._CurOptionId) then
         return
     end    
-    XMVCA.XTheatre5.PVEAgency:RequestPveEventPromote(self._CurEventId, self._CurOptionId)  
+    XMVCA.XTheatre5.PVEAgency:RequestPveEventPromote(self._CurEventId, self._CurOptionId)
+    self._CurOptionId = nil  
 end
 
 function XUiTheatre5PVEEventOption:OnDestroy()

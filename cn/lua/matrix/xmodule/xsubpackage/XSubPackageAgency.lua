@@ -226,7 +226,7 @@ end
 --- Res粒度开始下载
 --------------------------
 function XSubPackageAgency:AddResToDownload(resId)
-    XLog.Warning("hyx AddResToDownload", resId, self._ResWaitDnLdQueue)
+    -- XLog.Warning("SP/DN AddResToDownload", resId, self._ResWaitDnLdQueue)
     if self._DownloadingResId == resId then
         return
     end
@@ -237,7 +237,7 @@ function XSubPackageAgency:AddResToDownload(resId)
 end
 
 function XSubPackageAgency:DoResDownload()
-    XLog.Warning("hyx DoResDownload", self._DownloadingResId, self._ResWaitDnLdQueue)
+    -- XLog.Warning("SP/DN DoResDownload", self._DownloadingResId, self._ResWaitDnLdQueue)
     if XTool.IsNumberValid(self._DownloadingResId) then
         return
     end
@@ -253,12 +253,17 @@ function XSubPackageAgency:DoResDownload()
 end
 
 function XSubPackageAgency:OnResDownloadRelease()
-    XLog.Warning("hyx OnResDownloadRelease", self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
+    -- XLog.Warning("SP/DN OnResDownloadRelease", self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
 
     if self._DownloadCenter then
         self._DownloadCenter:SetFailedTaskGroupMethod(2)
     end
-    self._DownloadingResId = nil
+    -- 记录下载完成 不然登录会变成热更新
+    if self._DownloadingResId then
+        self._LaunchDlcManager.SetLaunchDownloadRecord(self._DownloadingResId)
+        CS.UnityEngine.PlayerPrefs.Save()
+        self._DownloadingResId = nil
+    end
 
     if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
         local item = self._Model:GetSubpackageItem(self._PreparePauseSubpackageId)
@@ -284,7 +289,7 @@ end
 ---@param subpackageId number  分包Id
 --------------------------
 function XSubPackageAgency:AddToDownload(subpackageId)
-    XLog.Warning("hyx AddToDownload", subpackageId, self._IsDownloading, self._SubpackageWaitDnLdQueue)
+    -- XLog.Warning("SP/DN AddToDownload", subpackageId, self._IsDownloading, self._SubpackageWaitDnLdQueue)
     if not self:IsOpen() then
         return
     end
@@ -316,7 +321,7 @@ end
 --- Subpackage粒度开始下载
 --------------------------
 function XSubPackageAgency:StartDownload()
-    XLog.Warning("hyx StartDownload", self._SubpackageWaitDnLdQueue)
+    -- XLog.Warning("SP/DN StartDownload", self._SubpackageWaitDnLdQueue)
     --没有需要下载的了
     if XTool.IsTableEmpty(self._SubpackageWaitDnLdQueue) or XTool.IsNumberValid(self._DownloadingResId) then
         return
@@ -344,7 +349,7 @@ end
 
 --执行下载逻辑
 function XSubPackageAgency:DoDownload()
-    XLog.Warning("hyx DoDownload 1 ", self._SubpackageWaitDnLdQueue, self._IsDownloading, self._DownloadPackageId)
+    -- XLog.Warning("SP/DN DoDownload 1 ", self._SubpackageWaitDnLdQueue, self._IsDownloading, self._DownloadPackageId)
 
     if not self:IsOpen() then
         return
@@ -352,7 +357,7 @@ function XSubPackageAgency:DoDownload()
     if XTool.IsTableEmpty(self._SubpackageWaitDnLdQueue) or self._IsDownloading or XTool.IsNumberValid(self._DownloadPackageId) then
         return
     end
-    XLog.Warning("hyx DoDownload 2 ", self._SubpackageWaitDnLdQueue, self._IsDownloading, self._DownloadPackageId)
+    -- XLog.Warning("SP/DN DoDownload 2 ", self._SubpackageWaitDnLdQueue, self._IsDownloading, self._DownloadPackageId)
 
     local index = 1
     local subpackageId = self._SubpackageWaitDnLdQueue[index]
@@ -363,9 +368,9 @@ function XSubPackageAgency:DoDownload()
 
     local item = self._Model:GetSubpackageItem(subpackageId)
     --更新状态
-    XLog.Warning("hyx DoDownload 3 ", subpackageId, item:GetState())
+    -- XLog.Warning("SP/DN DoDownload 3 ", subpackageId, item:GetState())
     item:StartDownload()
-    XLog.Warning("hyx DoDownload 4 ", subpackageId, item:GetState())
+    -- XLog.Warning("SP/DN DoDownload 4 ", subpackageId, item:GetState())
     --恢复下载状态
     self._IsPause = false
     --开始下载
@@ -376,7 +381,7 @@ end
 
 --标记为暂停状态
 function XSubPackageAgency:PauseDownload(subpackageId)
-    XLog.Warning("hyx PauseDownload", subpackageId, self._SubpackageWaitDnLdQueue)
+    -- XLog.Warning("SP/DN PauseDownload", subpackageId, self._SubpackageWaitDnLdQueue)
     local subpackageItem = self._Model:GetSubpackageItem(subpackageId)
     subpackageItem:PreparePause()
     subpackageItem._WaitPause = true
@@ -393,7 +398,7 @@ function XSubPackageAgency:PauseDownload(subpackageId)
         local resItem = self._Model:GetResourceItem(resId)
         if resItem:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING then
             targetPauseResId = resId
-            XLog.Warning("hyx 暂停TG 0 ", targetPauseResId, resItem:GetTaskGroup().State)
+            -- XLog.Warning("SP/DN 暂停TG 0 ", targetPauseResId, resItem:GetTaskGroup().State)
         end
     end
     table.sort(removeIndices, function (a, b)
@@ -405,9 +410,9 @@ function XSubPackageAgency:PauseDownload(subpackageId)
     end
     if self._DownloadCenter and targetPauseResId then
         local resItem = self._Model:GetResourceItem(targetPauseResId)
-        XLog.Warning("hyx 暂停TG 1 ", targetPauseResId, resItem:GetTaskGroup().State)
+        -- XLog.Warning("SP/DN 暂停TG 1 ", targetPauseResId, resItem:GetTaskGroup().State)
         self._DownloadCenter:PauseById(targetPauseResId)
-        XLog.Warning("hyx 暂停TG 2 ", targetPauseResId, resItem:GetTaskGroup().State)
+        -- XLog.Warning("SP/DN 暂停TG 2 ", targetPauseResId, resItem:GetTaskGroup().State)
     end
 
     --等待暂停
@@ -442,7 +447,7 @@ end
 
 --释放下载器
 function XSubPackageAgency:OnDownloadRelease()
-    XLog.Warning("hyx OnDownloadRelease", self._PreparePauseSubpackageId, self._SubpackageWaitDnLdQueue, self._IsDownloading)
+    -- XLog.Warning("SP/DN OnDownloadRelease", self._PreparePauseSubpackageId, self._SubpackageWaitDnLdQueue, self._IsDownloading)
     if not self:IsOpen() then
         return
     end
@@ -507,15 +512,13 @@ function XSubPackageAgency:OnComplete(subpackageId)
     self._CompleteIdCache = id
     self._DownloadPackageId = 0
 
-    -- 记录下载完成 不然登录会变成热更新
-    self._LaunchDlcManager.SetLaunchDownloadRecord(id)
     -- 如果有相关任务 告诉服务端完成
     local subpackageCfg = self._Model:GetSubpackageTemplate(id)
     if subpackageCfg and XTool.IsNumberValid(subpackageCfg.DownloadTaskId) then
         self:RequestTask(subpackageCfg.DownloadTaskId)
     end
 
-    XLog.Warning("hyx OnComplete", id, self._SubpackageWaitDnLdQueue, self._ResWaitDnLdQueue)
+    -- XLog.Warning("SP/DN OnComplete", id, self._SubpackageWaitDnLdQueue, self._ResWaitDnLdQueue)
     XUiManager.PopupLeftTip(XUiHelper.GetText("DlcDownloadCompleteTitle"), self._Model:GetSubPackageName(id))
     local item = self._Model:GetSubpackageItem(id)
     item:Complete()
@@ -831,14 +834,14 @@ function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
         if not ignorePopUi then
             self:DoRecordIntercept(enterType, param)
             XLuaUiManager.Open("UiDownloadPreview", subIds)
-            XLog.Debug("hyx 打开UiDownloadPreview ", enterType, subIds)
+            -- XLog.Debug("SP/DN 打开UiDownloadPreview ", enterType, subIds)
         end
         return false
     end
     return true
 end
 
--- 拦截则返回false tips:目前基本是给系统侧临时拦截视频分包用
+-- 拦截则返回false tips:目前基本是给系统侧临时拦截视频分包用(已弃用)
 function XSubPackageAgency:CheckSubpackageByIdAndIntercept(subpackageId)
     if not self:IsOpen() then
         return true
@@ -846,7 +849,7 @@ function XSubPackageAgency:CheckSubpackageByIdAndIntercept(subpackageId)
 
     local isComplete = self:CheckSubpackageComplete(subpackageId)
     if not isComplete then
-        self:DoRecordIntercept(XEnumConst.SUBPACKAGE.ENTRY_TYPE.SUBPACKAGE,subpackageId)
+        self:DoRecordIntercept(nil, subpackageId)
         XLuaUiManager.Open("UiDownloadPreview", {subpackageId})
         return false
     end
@@ -856,7 +859,7 @@ end
 function XSubPackageAgency:CheckSubpackageByCvType(cvType)
     local isComplete = self:CheckCvDownload(cvType)
     if not isComplete then
-        local subpackageIds = self._Model:GetAllSubpackageIds(XEnumConst.SUBPACKAGE.ENTRY_TYPE.CHARACTER_VOICE, cvType)
+        local subpackageIds = self._Model:GetAllSubpackageIds(XFunctionManager.FunctionName.CharacterVoice, cvType)
         if not XTool.IsTableEmpty(subpackageIds) then
             XLog.Warning(stringFormat("[Subpackage Intercept(CV)]:\n\tCVType:%s\tSubpackageIds:%s",
                     tostring(cvType), table.concat(subpackageIds, ", ")))
@@ -873,7 +876,7 @@ function XSubPackageAgency:CheckCvDownload(cvType)
         return true
     end
 
-    local subId = self._Model:GetEntrySubpackageId(XEnumConst.SUBPACKAGE.ENTRY_TYPE.CHARACTER_VOICE, cvType)
+    local subId = self._Model:GetEntrySubpackageId(XFunctionManager.FunctionName.CharacterVoice, cvType)
     return self:CheckSubpackageComplete(subId)
 end
 

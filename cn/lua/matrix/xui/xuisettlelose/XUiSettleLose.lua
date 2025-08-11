@@ -194,9 +194,9 @@ function XUiSettleLose:OnClickBtnRestart()
             XLuaUiManager.Remove("UiBabelTowerSelectDiffcult")
         end
 
-        local curStageId, curTeamId, curStageGuideId, teamList, challengeBuffList, supportBuffList, captainPos, curStageLevel, firstFightPos = XDataCenter.FubenBabelTowerManager.GetCurStageInfo()
+        local curStageId, curTeamId, curStageGuideId, teamList, challengeBuffList, supportBuffList, captainPos, curStageLevel, firstFightPos, _, _, generalSkill = XDataCenter.FubenBabelTowerManager.GetCurStageInfo()
         XDataCenter.FubenBabelTowerManager.SelectBabelTowerStage(curStageId, curStageGuideId, teamList, challengeBuffList, supportBuffList, function()
-            XDataCenter.FubenManager.EnterBabelTowerFight(curStageId, teamList, captainPos, firstFightPos)
+            XDataCenter.FubenManager.EnterBabelTowerFight(curStageId, teamList, captainPos, firstFightPos, generalSkill)
         end, curStageLevel, curTeamId)
     elseif type == XDataCenter.FubenManager.StageType.PracticeBoss then
         local beginPreData = XDataCenter.FubenManager.GetFightBeginClientPreData()

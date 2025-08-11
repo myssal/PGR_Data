@@ -177,7 +177,7 @@ function XUiMoeWarMain:RegisterButtonEvent()
         local mainHelpId = XMoeWarConfig.GetMainHelpId()
         self.BtnHelp.CallBack = function ()
             if mainHelpId > 0 then
-                local template = XHelpCourseConfig.GetHelpCourseTemplateById(mainHelpId)
+                local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(mainHelpId)
                 XUiManager.ShowHelpTip(template.Function)
             end
         end

@@ -84,7 +84,7 @@ end
 --     if not viewPortRect then return end
 --     local realWidth = viewPortRect.rect.width
 --     -- self.LimitPosX = realWidth * datumLinePrecent
---     self.LimitPosX = realWidth * 0.5 --hyxtest
+--     self.LimitPosX = realWidth * 0.5
 -- end
 
 -- function XUiGridChapter:RefreshAutoChangeBgStageIndex()

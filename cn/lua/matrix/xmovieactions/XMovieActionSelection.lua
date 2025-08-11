@@ -53,7 +53,10 @@ function XMovieActionSelection:GetSelectedActionId()
 end
 
 function XMovieActionSelection:GetBeginAnim()
-    return self.BeginAnim or "SelectEnable"
+    if self.BeginAnim then
+        return self.BeginAnim
+    end
+    return self.IsLeft and "SelectLeftEnable" or "SelectEnable"
 end
 
 function XMovieActionSelection:OnUiRootDestroy()

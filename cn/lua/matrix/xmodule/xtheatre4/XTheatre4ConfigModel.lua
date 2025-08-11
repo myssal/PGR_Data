@@ -489,11 +489,6 @@ function XTheatre4ConfigModel:GetEventOptionOptionDescById(id)
     return config.OptionDesc
 end
 
-function XTheatre4ConfigModel:GetEventOptionOptionTypeById(id)
-    local config = self:GetEventOptionConfigById(id)
-    return config.OptionType
-end
-
 function XTheatre4ConfigModel:GetEventOptionOptionDownDescById(id)
     local config = self:GetEventOptionConfigById(id)
     return config.OptionDownDesc
@@ -1768,10 +1763,6 @@ end
 --endregion
 
 --region talent tree
-function XTheatre4ConfigModel:GetColorTreeName(color)
-    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(Theatre4TableKey.Theatre4ColorTalentTree, color)
-    return config and config.Name or ""
-end
 
 function XTheatre4ConfigModel:GetColorTreeName(color)
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(Theatre4TableKey.Theatre4ColorTalentTree, color)

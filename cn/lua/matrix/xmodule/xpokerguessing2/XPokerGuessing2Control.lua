@@ -1,5 +1,6 @@
 local XPokerGuessing2Game = require("XModule/XPokerGuessing2/Game/XPokerGuessing2Game")
 local XPokerGuessing2Enum = require("XModule/XPokerGuessing2/XPokerGuessing2Enum")
+local XPokerGuessing2RandomSpeak = require('XModule/XPokerGuessing2/Game/XPokerGuessing2RandomSpeak')
 
 ---@class XPokerGuessing2Control : XControl
 ---@field private _Model XPokerGuessing2Model
@@ -52,6 +53,10 @@ function XPokerGuessing2Control:OnInit()
 
     ---@type XPokerGuessing2Game
     self._Game = XPokerGuessing2Game.New()
+    ---@type XPokerGuessing2RandomSpeak
+    self._PlayerRandomSpeak = XPokerGuessing2RandomSpeak.New()
+    ---@type XPokerGuessing2RandomSpeak
+    self._EnemyRandomSpeak = XPokerGuessing2RandomSpeak.New()
 end
 
 function XPokerGuessing2Control:AddAgencyEvent()
@@ -84,12 +89,7 @@ function XPokerGuessing2Control:Restart(callback)
             return
         end
         self:SetCurrentStageId(stageId, 1)
-        self._Game:Reset()
-        local cards = res.PlayerCards
-        self._Game:SetPlayerCards(cards)
-        self._Game:SetEnemyCards(cards)
-        local maxTipsAmount = self._Model:GetPokerGuessing2ActivityMaxTipsCountById(self._Model:GetActivityId())
-        self._Game:SetMaxTipsAmount(maxTipsAmount)
+        self:_InitGameData(res)
         if callback then
             callback()
         end
@@ -101,16 +101,46 @@ end
 function XPokerGuessing2Control:StartGame()
     local stageId = self._Main.StageId
     XMVCA.XPokerGuessing2:StartNewPokerGuessing2Request(stageId, function(res)
-        self:SetCurrentStageId(stageId, 1)
-        self._GameStageId = stageId
-        self._Game:Reset()
-        local cards = res.PlayerCards
-        self._Game:SetPlayerCards(cards)
-        self._Game:SetEnemyCards(cards)
-        local maxTipsAmount = self._Model:GetPokerGuessing2ActivityMaxTipsCountById(self._Model:GetActivityId())
-        self._Game:SetMaxTipsAmount(maxTipsAmount)
-        XLuaUiManager.Open("UiPokerGuessing2Game")
+        if res then
+            self:SetCurrentStageId(stageId, 1)
+            self._GameStageId = stageId
+            self:_InitGameData(res)
+            XLuaUiManager.Open("UiPokerGuessing2Game")
+        end
     end)
+end
+
+function XPokerGuessing2Control:_InitGameData(res)
+    self._Game:Reset()
+    local cards = res.PlayerCards
+    self._Game:SetPlayerCards(cards)
+    self._Game:SetEnemyCards(cards)
+    
+    local activityId = self._Model:GetActivityId()
+    self._Game:InitMaxChangePlayerCardCount(self._Model:GetPokerGuessing2ActivityMaxChangeSelfCardCountById(activityId))
+    self._Game:InitMaxChangeRobotCardCount(self._Model:GetPokerGuessing2ActivityMaxChangeEnemyCardCountById(activityId))
+    self:_InitSpeaks()
+end
+
+function XPokerGuessing2Control:_InitSpeaks()
+    local stageConfig = self:GetStagePerformConfig()
+    local characterConfig = self:GetCharacterConfig()
+    
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineGameWin, #characterConfig.EmojiGameWin, XPokerGuessing2Enum.Speak.GameWin)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineGameLose, #characterConfig.EmojiGameLose, XPokerGuessing2Enum.Speak.GameLose)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineRoundWin, #characterConfig.EmojiRoundWin, XPokerGuessing2Enum.Speak.RoundWin)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineRoundLose, #characterConfig.EmojiRoundLose, XPokerGuessing2Enum.Speak.RoundLose)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineRoundDraw, #characterConfig.EmojiRoundDraw, XPokerGuessing2Enum.Speak.RoundDraw)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineChangeSelfCard, #characterConfig.EmojiChangeSelfCard, XPokerGuessing2Enum.Speak.PlayerCardChanged)
+    self._PlayerRandomSpeak:AddRandomGroup(#characterConfig.LineChangeEnemyCard, #characterConfig.EmojiChangeEnemyCard, XPokerGuessing2Enum.Speak.EnemyCardChanged)
+
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineGameWin, #stageConfig.EmojiGameWin, XPokerGuessing2Enum.Speak.GameWin)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineGameLose, #stageConfig.EmojiGameLose, XPokerGuessing2Enum.Speak.GameLose)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineRoundWin, #stageConfig.EmojiRoundWin, XPokerGuessing2Enum.Speak.RoundWin)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineRoundLose, #stageConfig.EmojiRoundLose, XPokerGuessing2Enum.Speak.RoundLose)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineRoundDraw, #stageConfig.EmojiRoundDraw, XPokerGuessing2Enum.Speak.RoundDraw)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineChangePlayerCard, #stageConfig.EmojiChangePlayerCard, XPokerGuessing2Enum.Speak.PlayerCardChanged)
+    self._EnemyRandomSpeak:AddRandomGroup(#stageConfig.LineChangeSelfCard, #stageConfig.EmojiChangeSelfCard, XPokerGuessing2Enum.Speak.EnemyCardChanged)
 end
 
 function XPokerGuessing2Control:GetScore()
@@ -123,16 +153,22 @@ function XPokerGuessing2Control:GetStageList()
     end
     local stageList = {}
     local activityId = self._Model:GetActivityId()
-    local stages = self._Model:GetPokerGuessing2StageConfigs()
-    for i, stageConfig in pairs(stages) do
-        if stageConfig.ActivityId == activityId then
-            stageList[#stageList + 1] = stageConfig
+    local activityCfg = self._Model:GetPokerGuessing2ActivityConfigById(activityId)
+
+    if activityCfg and not XTool.IsTableEmpty(activityCfg.StageIds) then
+        for i, stageId in pairs(activityCfg.StageIds) do
+            local stageCfg = self._Model:GetPokerGuessing2StageConfigById(stageId)
+
+            if stageCfg then
+                stageList[#stageList + 1] = stageCfg
+            end
         end
+        table.sort(stageList, function(a, b)
+            return a.Id < b.Id
+        end)
+        self._StageConfigList = stageList
     end
-    table.sort(stageList, function(a, b)
-        return a.Id < b.Id
-    end)
-    self._StageConfigList = stageList
+
     return stageList
 end
 
@@ -196,7 +232,7 @@ function XPokerGuessing2Control:GetUiMain()
     local stageList = self:GetStageList()
     local selectStageId = self._Main.StageId
     if selectStageId ~= 0 then
-        local stageConfig = self._Model:GetPokerGuessing2StageConfigById(selectStageId)
+        local stageConfig = self._Model:GetPokerGuessing2StagePerformCfgById(selectStageId)
         self._Main.StageId = selectStageId
         self._Main.IsOpen = self._Model:IsStageCanChallenge(selectStageId)
         self._Main.IsPassed = self._Model:IsStagePassed(selectStageId)
@@ -240,38 +276,99 @@ function XPokerGuessing2Control:GetUiMain()
 end
 
 function XPokerGuessing2Control:GetDialogue(speak)
-    local stageConfig = self:GetStageConfig()
+    local stageConfig = self:GetStagePerformConfig()
     local characterConfig = self:GetCharacterConfig()
     local enemyText, playerText
+    local enemyIsEmoji, playerIsEmoji
     if speak == XPokerGuessing2Enum.Speak.GameWin then
-        enemyText = self:RandomSpeak(stageConfig.LineGameLose)
-        playerText = self:RandomSpeak(characterConfig.LineGameWin)
+        enemyText, enemyIsEmoji = self:GetRandomSpeak(stageConfig.LineGameLose, stageConfig.EmojiGameLose, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.GameWin)
+        playerText, playerIsEmoji = self:GetRandomSpeak(characterConfig.LineGameWin, characterConfig.EmojiGameWin, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.GameWin)
     elseif speak == XPokerGuessing2Enum.Speak.GameLose then
-        enemyText = self:RandomSpeak(stageConfig.LineGameWin)
-        playerText = self:RandomSpeak(characterConfig.LineGameLose)
+        enemyText, enemyIsEmoji = self:GetRandomSpeak(stageConfig.LineGameWin, stageConfig.EmojiGameWin, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.GameLose)
+        playerText, playerIsEmoji = self:GetRandomSpeak(characterConfig.LineGameLose, characterConfig.EmojiGameLose, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.GameLose)
     elseif speak == XPokerGuessing2Enum.Speak.RoundWin then
-        enemyText = self:RandomSpeak(stageConfig.LineRoundLose)
-        playerText = self:RandomSpeak(characterConfig.LineRoundWin)
+        enemyText, enemyIsEmoji = self:GetRandomSpeak(stageConfig.LineRoundLose, stageConfig.EmojiRoundLose, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.RoundWin)
+        playerText, playerIsEmoji = self:GetRandomSpeak(characterConfig.LineRoundWin, characterConfig.EmojiRoundWin, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.RoundWin)
     elseif speak == XPokerGuessing2Enum.Speak.RoundLose then
-        enemyText = self:RandomSpeak(stageConfig.LineRoundWin)
-        playerText = self:RandomSpeak(characterConfig.LineRoundLose)
+        enemyText, enemyIsEmoji = self:GetRandomSpeak(stageConfig.LineRoundWin, stageConfig.EmojiRoundWin, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.RoundLose)
+        playerText, playerIsEmoji = self:GetRandomSpeak(characterConfig.LineRoundLose, characterConfig.EmojiRoundLose, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.RoundLose)
     elseif speak == XPokerGuessing2Enum.Speak.RoundDraw then
-        enemyText = self:RandomSpeak(stageConfig.LineRoundDraw)
-        playerText = self:RandomSpeak(characterConfig.LineRoundDraw)
+        enemyText, enemyIsEmoji = self:GetRandomSpeak(stageConfig.LineRoundDraw, stageConfig.EmojiRoundDraw, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.RoundDraw)
+        playerText, playerIsEmoji = self:GetRandomSpeak(characterConfig.LineRoundDraw, characterConfig.EmojiRoundDraw, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.RoundDraw)
 
     elseif speak == XPokerGuessing2Enum.Speak.RoundStart then
         local round = self._Game:GetRound()
-        enemyText = stageConfig.LineLevelStart[round]
+        if string.IsNilOrEmpty(stageConfig.EmojiLevelStart[round]) then
+            enemyText = stageConfig.LineLevelStart[round]
+        else
+            enemyText = stageConfig.EmojiLevelStart[round]
+            enemyIsEmoji = true
+        end
+        enemyText = string.IsNilOrEmpty(stageConfig.EmojiLevelStart[round]) and stageConfig.LineLevelStart[round] or stageConfig.EmojiLevelStart[round]
         playerText = false
 
         --if isTipsAlways then
         --    playerText = characterConfig.LineLevelStart[round]
         --end
     end
+    
+    -- 除了回合开始外如果有改牌记录，则替换对方的对话内容
+    if speak ~= XPokerGuessing2Enum.Speak.RoundStart then
+
+        -- 先判断双方出的牌是不是被改过的
+        local enemyLastCardId = self._Game:GetLastEnemyCardOriginId()
+        local playerLastCardId = self._Game:GetLastPlayerCardOriginId()
+        
+        local isEnemyLastCardChanged = self._Game:CheckEnemyCardIsChanged(enemyLastCardId)
+        local isPlayerLastCardChanged = self._Game:CheckPlayerCardIsChanged(playerLastCardId)
+        
+        -- 只有任意一方当局出的牌存在被修改的情况，才处理
+        if isEnemyLastCardChanged or isPlayerLastCardChanged then
+
+            -- 当不是双方的牌都修改的前提下，以改了牌的一方为准显示文本
+            local showSideWithNotBothChanged = not isEnemyLastCardChanged and isPlayerLastCardChanged
+
+            if isEnemyLastCardChanged and isPlayerLastCardChanged then
+                -- 如果双方出的牌都是被改过的，那么以最后一次更改为准
+                local isPlayerSide = self._Game:GetLatestChangeCardSide() == XPokerGuessing2Enum.PokerPlaySide.Player
+                enemyText, enemyIsEmoji = self:GetEnemyDialogAfterChangedCard(isPlayerSide)
+
+                self._Game:SetLatestChangeCardSide(nil)
+            else
+                enemyText, enemyIsEmoji = self:GetEnemyDialogAfterChangedCard(showSideWithNotBothChanged)
+            end
+        end
+    end
+
+    self._Game:SetLastEnemyCardOriginId(nil)
+    self._Game:SetLastPlayerCardOriginId(nil)
+    
     return {
         Enemy = enemyText,
         Player = playerText,
+        EnemyIsEmoji = enemyIsEmoji,
+        PlayerIsEmoji = playerIsEmoji,
     }
+end
+
+function XPokerGuessing2Control:GetPlayerDialogAfterChangedCard(isChangedPlayerSide)
+    local characterConfig = self:GetCharacterConfig()
+
+    if isChangedPlayerSide then
+        return self:GetRandomSpeak(characterConfig.LineChangeSelfCard, characterConfig.EmojiChangeSelfCard, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.PlayerCardChanged)
+    else
+        return self:GetRandomSpeak(characterConfig.LineChangeEnemyCard, characterConfig.EmojiChangeEnemyCard, self._PlayerRandomSpeak, XPokerGuessing2Enum.Speak.EnemyCardChanged)
+    end
+end
+
+function XPokerGuessing2Control:GetEnemyDialogAfterChangedCard(isChangedPlayerSide)
+    local stageConfig = self:GetStagePerformConfig()
+
+    if isChangedPlayerSide then
+        return self:GetRandomSpeak(stageConfig.LineChangePlayerCard, stageConfig.EmojiChangePlayerCard, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.PlayerCardChanged)
+    else
+        return self:GetRandomSpeak(stageConfig.LineChangeSelfCard, stageConfig.EmojiChangeSelfCard, self._EnemyRandomSpeak, XPokerGuessing2Enum.Speak.EnemyCardChanged)
+    end
 end
 
 function XPokerGuessing2Control:RandomSpeak(array)
@@ -280,6 +377,30 @@ function XPokerGuessing2Control:RandomSpeak(array)
         return array[i]
     end
     return ""
+end
+
+---@param randomSpeaker XPokerGuessing2RandomSpeak
+function XPokerGuessing2Control:GetRandomSpeak(dialogArray, emojiArray, randomSpeaker, speakPeriod)
+    local val = randomSpeaker:GetRandomValBySpeakPeriod(speakPeriod)
+
+    if XTool.IsNumberValid(val) then
+        local showType = math.floor(val / 100)
+        local index = math.floor(val % 100)
+
+        if showType == XPokerGuessing2Enum.SpeakShowType.Text then
+            return dialogArray[index]
+        else
+            return emojiArray[index], true
+        end
+    end
+    
+    --[[
+    if not XTool.IsTableEmpty(emojiArray) then
+        return self:RandomSpeak(emojiArray), true
+    end
+    
+    return self:RandomSpeak(dialogArray)
+    --]]
 end
 
 function XPokerGuessing2Control:GetActivityConfig()
@@ -329,6 +450,9 @@ function XPokerGuessing2Control:Confirm()
         XUiManager.TipText("PokerGuessing2PleaseSelectCard")
         return
     end
+    
+    local playerOriginalCardId = card:GetId()
+    
     ---@param res ActionPokerGuessing2Response
     XMVCA.XPokerGuessing2:ActionPokerGuessing2Request(card, function(res)
         self._Game:RemoveCardFromPlayer(card:GetUid())
@@ -344,7 +468,9 @@ function XPokerGuessing2Control:Confirm()
 
         self._Game:SetEnemyScore(res.RobotScore)
         self._Game:SetPlayerScore(res.PlayerScore)
-
+        self._Game:SetLastPlayerCardOriginId(playerOriginalCardId)
+        self._Game:SetLastEnemyCardOriginId(res.RobotCard)
+        
         local state = res.State
         local roundState = res.RoundState
 
@@ -378,11 +504,78 @@ function XPokerGuessing2Control:UseTips()
         XMVCA.XPokerGuessing2:UseTips2Request(function(res)
             self._Game:SetTipsAmount(self._Game:GetTipsAmount() - 1)
             self._Game:SetTipsCard(res.RobotCard)
-            XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_UPDATE_TIPS)
+            XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_UPDATE_SKILL_SHOW)
         end)
     else
         XUiManager.TipText("PokerGuessing2HelpOver")
     end
+end
+
+--- 使用技能修改自己出的牌
+function XPokerGuessing2Control:UseSkillChangeSelfCard()
+    if self._Game:IsOver() then
+        XLog.Warning("[XPokerGuessing2Control] 游戏已结束")
+        return
+    end
+
+    -- 检查是否有打出牌
+    local card = self._Game:GetPlayerCard()
+    if not card then
+        XUiManager.TipText("PokerGuessing2UseSkillInNoCardTips")
+        return
+    end
+    if not XTool.IsNumberValid(card:GetId()) or not card:IsSelected() then
+        XUiManager.TipText("PokerGuessing2UseSkillInNoCardTips")
+        return
+    end
+    
+    if self:CheckHasChangeSelfSkillCount() then
+        XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, true, card:GetId())
+    else
+        XUiManager.TipText("PokerGuessing2ChangeSelfCardSkillOver")
+    end
+end
+
+--- 使用技能修改敌人出的牌
+function XPokerGuessing2Control:UseSkillChangeEnemyCard()
+    if self._Game:IsOver() then
+        XLog.Warning("[XPokerGuessing2Control] 游戏已结束")
+        return
+    end
+
+    -- 检查是否有打出牌
+    local card = self._Game:GetEnemyCard()
+    if not card or not card:IsSelected() or not XTool.IsNumberValid(card:GetId()) then
+        return
+    end
+    
+    if self:CheckHasChangeEnemySkillCount() then
+        XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, false, 0)
+    else
+        XUiManager.TipText("PokerGuessing2ChangeEnemyCardSkillOver")
+    end
+end
+
+--- 尝试生效修改牌的技能
+function XPokerGuessing2Control:TrySummitSkillChange(playSide, originId, changedId, cb)
+    if self._Game:IsOver() then
+        XLog.Warning("[XPokerGuessing2Control] 游戏已结束")
+        return
+    end
+
+    playSide = playSide and XPokerGuessing2Enum.PokerPlaySide.Player or XPokerGuessing2Enum.PokerPlaySide.Robot
+    
+    self:RequestChangeCardPokerGuessing2(playSide, originId, changedId, cb)
+end
+
+--- 判断是否还能使用改自己手牌的技能
+function XPokerGuessing2Control:CheckHasChangeSelfSkillCount()
+    return self._Game:GetChangePlayerCardCount() > 0
+end
+
+--- 判断是否还能使用改敌人手牌的技能
+function XPokerGuessing2Control:CheckHasChangeEnemySkillCount()
+    return self._Game:GetChangeRobotCardCount() > 0
 end
 
 function XPokerGuessing2Control:GetTipsAmount()
@@ -421,10 +614,12 @@ function XPokerGuessing2Control:GetEnemy()
     end
 
     local stageConfig = self:GetStageConfig()
+    local stagePerformConfig = self:GetStagePerformConfig()
+    
     ---@class XUiPokerGuessing2CharacterData
     local enemy = {
-        Name = stageConfig.NpcName,
-        Icon = stageConfig.Icon,
+        Name = stagePerformConfig.NpcName,
+        Icon = stagePerformConfig.Icon,
         Card = cardData,
         Cards = cards,
         PreviewCards = previewCards,
@@ -460,12 +655,50 @@ function XPokerGuessing2Control:GetPlayer()
     return self._Main.Player
 end
 
+function XPokerGuessing2Control:GetPlayerSelectCardData()
+    local cardData
+    local playerCard = self._Game:GetPlayerCard()
+    if not playerCard:IsEmpty() then
+        cardData = playerCard:GetUiData(self._Model)
+    end
+    
+    return cardData
+end
+
+function XPokerGuessing2Control:GetEnemySelectCardData()
+    local cardData
+    local enemyCard = self._Game:GetEnemyCard()
+    if not enemyCard:IsEmpty() then
+        cardData = enemyCard:GetUiData(self._Model)
+    end
+
+    return cardData
+end
+
+--- 获取服务端下发的牌组Id列表
+function XPokerGuessing2Control:GetCardGroup()
+    return self._Game:GetCardGroup()
+end
+
 function XPokerGuessing2Control:GetStageConfig()
     return self._Model:GetPokerGuessing2StageConfigById(self._Main.StageId)
 end
 
+function XPokerGuessing2Control:GetStagePerformConfig()
+    return self._Model:GetPokerGuessing2StagePerformCfgById(self._Main.StageId)
+end
+
 function XPokerGuessing2Control:GetCharacterConfig()
     return self._Model:GetPokerGuessing2CharacterConfig(self._SelectedCharacterId)
+end
+
+--- 获取当前选择角色的改牌图案
+function XPokerGuessing2Control:GetCharacterChangeCardIcon()
+    local cfg = self:GetCharacterConfig()
+
+    if cfg then
+        return cfg.ChangeCardIcon
+    end
 end
 
 ---@param data XUiPokerGuessing2CardData
@@ -475,6 +708,15 @@ function XPokerGuessing2Control:SetSelectedCard(data)
         return
     end
     self._Game:SetPlayerCard(data.Uid)
+end
+
+---@param data XUiPokerGuessing2CardData
+function XPokerGuessing2Control:SetEnemySelectedCard(data)
+    if not data then
+        self._Game:SetEnemyCard(nil)
+        return
+    end
+    self._Game:SetEnemyCard(data.Uid)
 end
 
 ---@param data XUiPokerGuessing2CardData
@@ -508,7 +750,7 @@ function XPokerGuessing2Control:GetRewards()
 end
 
 function XPokerGuessing2Control:GetStageCards()
-    local stageConfig = self:GetStageConfig()
+    local stageConfig = self:GetStagePerformConfig()
     local icons = stageConfig.CardIcon
     local cards = {}
     for i = 1, #icons do
@@ -644,23 +886,27 @@ end
 
 function XPokerGuessing2Control:GetStoryList()
     local configs = self._Model:GetPokerGuessing2StoryConfigs()
-    local list = {}
+    local list = {} 
+    local curActivityId = self._Model:GetActivityId()
+    
     for id, config in pairs(configs) do
-        local storyId = config.StoryId
-        local characterId = config.CharacterId
-        local name = XMVCA.XCharacter:GetCharacterName(characterId)
-        ---@class XUiPokerGuessing2StoryGridData
-        local data = {
-            Id = config.Id,
-            Name = name,
-            Icon = config.Icon,
-            IsUnlock = self._Model:IsStoryUnlock(config.Id),
-            StoryId = storyId,
-            TicketId = config.UnlockItemId,
-            TicketCost = config.Cost,
-            IsPlayed = XSaveTool.GetData("PokerGuessing2StoryPlayed" .. XPlayer.Id .. storyId) or false
-        }
-        table.insert(list, data)
+        if config.ActivityId == curActivityId then
+            local storyId = config.StoryId
+            local characterId = config.CharacterId
+            local name = XMVCA.XCharacter:GetCharacterName(characterId)
+            ---@class XUiPokerGuessing2StoryGridData
+            local data = {
+                Id = config.Id,
+                Name = name,
+                Icon = config.Icon,
+                IsUnlock = self._Model:IsStoryUnlock(config.Id),
+                StoryId = storyId,
+                TicketId = config.UnlockItemId,
+                TicketCost = config.Cost,
+                IsPlayed = XSaveTool.GetData("PokerGuessing2StoryPlayed" .. XPlayer.Id .. tostring(storyId)) or false
+            }
+            table.insert(list, data)
+        end
     end
     table.sort(list, function(a, b)
         return a.Id < b.Id
@@ -682,5 +928,69 @@ function XPokerGuessing2Control:SetCurrentStageId(stageId, round)
     XMVCA.XPokerGuessing2:SetCurrentStageId(stageId)
     XMVCA.XPokerGuessing2:SetCurrentRound(round)
 end
+
+function XPokerGuessing2Control:GetPokerGuessing2CardSmallAssetPathById(id)
+    return self._Model:GetPokerGuessing2CardSmallAssetPathById(id)
+end
+
+function XPokerGuessing2Control:GetPokerGuessing2CardChangedFrontAssetPathById(id)
+    return self._Model:GetPokerGuessing2CardChangedFrontAssetPathById(id)
+end
+
+--region 局内协议
+
+function XPokerGuessing2Control:RequestChangeCardPokerGuessing2(playSide, originalCard, changedCard, cb)
+    local content = {
+        PlaySide = playSide,
+        OriginalCard = originalCard,
+        ChangedCard = changedCard,
+    }
+    
+    
+    XNetwork.Call("ChangeCardPokerGuessing2Request", content, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            
+            if cb then
+                cb(false)
+            end
+            
+            return
+        end
+        
+        local isChangedPlayerSide = res.PlaySide == XPokerGuessing2Enum.PokerPlaySide.Player
+
+        if isChangedPlayerSide then
+            -- 扣除本地缓存的使用次数
+            self._Game:ModifyChangePlayerCardCount(-1)
+            
+            self._Game:SetPlayerCardsChangedMap(res.ChangedCards)
+        else
+            -- 扣除本地缓存的使用次数
+            self._Game:ModifyChangeRobotCardCount(-1)
+
+            self._Game:SetEnemyCardsChangedMap(res.ChangedCards)
+        end
+        
+        self._Game:SetLatestChangeCardSide(res.PlaySide)
+
+        if cb then
+            cb(true, res)
+        end
+
+        XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_UPDATE_SKILL_SHOW)
+        XEventManager.DispatchEvent(XEventId.EVENT_POKER_GUESSING2_CHANGE_CARD_SUCCESS, isChangedPlayerSide)
+    end)
+end
+
+--endregion
+
+--region Config
+
+function XPokerGuessing2Control:GetConfigItemId()
+    return self._Model:GetPokerGuessing2ConfigParamById(XPokerGuessing2Enum.ConfigId.ItemId)
+end
+
+--endregion
 
 return XPokerGuessing2Control

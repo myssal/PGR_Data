@@ -18,11 +18,25 @@ function XLottoGroupEntity:UpdateData(data)
 end
 
 function XLottoGroupEntity:CreateDrawDataDic()
-    self.DrawDataDic = {}
-    for _,drawInfo in pairs(self.DrawInfoList) do
-        local entity = XLottoDrawEntity.New(drawInfo.Id)
+    self.DrawDataDic = self.DrawDataDic or {}
+
+    local tmpDic = {}
+    -- 一、遍历当前信息，创建或更新实体
+    for _, drawInfo in pairs(self.DrawInfoList or {}) do
+        local entity = self.DrawDataDic[drawInfo.Id]
+        if not entity then
+            entity = XLottoDrawEntity.New(drawInfo.Id)
+            self.DrawDataDic[drawInfo.Id] = entity
+        end
         entity:UpdateData(drawInfo)
-        self.DrawDataDic[drawInfo.Id] = entity
+        tmpDic[drawInfo.Id] = entity
+    end
+
+    -- 二、删除不再需要的实体
+    for id, _ in pairs(self.DrawDataDic) do
+        if not tmpDic[id] then
+            self.DrawDataDic[id] = nil
+        end
     end
 end
 

@@ -6,6 +6,7 @@ local XUiBigWorldProcessCoreStoryGrid = require("XUi/XUiBigWorld/XProcess/Core/X
 ---@field ListStory UnityEngine.RectTransform
 ---@field GridStory UnityEngine.RectTransform
 ---@field SingleGridStory UnityEngine.RectTransform
+---@field SpineBanner UnityEngine.RectTransform
 ---@field Parent XUiBigWorldProcessCore
 ---@field _Control XBigWorldCourseControl
 local XUiBigWorldProcessCoreStory = XClass(XUiNode, "XUiBigWorldProcessCoreStory")
@@ -51,8 +52,8 @@ end
 ---@param coreEntity XBWCourseCoreEntity
 function XUiBigWorldProcessCoreStory:Refresh(coreEntity)
     self._Entity = coreEntity
-    self.RImgBanner:SetImage(coreEntity:GetBanner())
     self.TxtName.text = coreEntity:GetName()
+    self:_RefreshBanner(coreEntity)
     self:_RefreshElements(coreEntity)
 end
 
@@ -113,6 +114,25 @@ end
 function XUiBigWorldProcessCoreStory:_RefreshCurrentElementRecord()
     if self._Entity then
         self._Control:RecordCoreElementsByCoreEntity(self._Entity)
+    end
+end
+
+---@param coreEntity XBWCourseCoreEntity
+function XUiBigWorldProcessCoreStory:_RefreshBanner(coreEntity)
+    local spineBanner = coreEntity:GetSpineBanner()
+    local banner = coreEntity:GetBanner()
+
+    if string.IsNilOrEmpty(banner) and string.IsNilOrEmpty(coreEntity) then
+        self.RImgBanner.gameObject:SetActiveEx(false)
+        self.SpineBanner.gameObject:SetActiveEx(false)
+    elseif not string.IsNilOrEmpty(spineBanner) then
+        self.RImgBanner.gameObject:SetActiveEx(false)
+        self.SpineBanner.gameObject:SetActiveEx(true)
+        self.SpineBanner:LoadPrefab(spineBanner)
+    else
+        self.RImgBanner.gameObject:SetActiveEx(true)
+        self.SpineBanner.gameObject:SetActiveEx(false)
+        self.RImgBanner:SetImage(spineBanner)
     end
 end
 

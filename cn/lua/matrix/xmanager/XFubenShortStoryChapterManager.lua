@@ -418,7 +418,7 @@ XFubenShortStoryChapterManagerCreator = function()
                 XUiManager.TipMsg(checkDesription)
                 return
             end
-            if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.ShortStory, chapterId) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ShortStory, chapterId) then
                 return
             end
             local chapterMainId = XFubenShortStoryChapterConfigs.GetChapterMainIdByChapterId(chapterId)

@@ -94,6 +94,7 @@ local function Median(tbl)
     end
 end
 
+--XLog.Error("最低分:" .. minScore .. "/中位数" .. Median(recordScore) .. "/回合数是:" .. minRound, ",随机种子是" .. tostring(minSeed) .. ":运行" .. times .. "次")
 function XLuckyTenantAgency:TestRandomSelect(stageId, round, times, seed)
     local XLuckyTenantEnum = require("XModule/XLuckyTenant/Game/XLuckyTenantEnum")
     local GameState = XLuckyTenantEnum.GameState
@@ -176,9 +177,9 @@ function XLuckyTenantAgency:TestRandomSelect(stageId, round, times, seed)
         end
     end
     XLog.Error("最低分:" .. minScore .. "/中位数" .. Median(recordScore) .. "/回合数是:" .. minRound, ",随机种子是" .. tostring(minSeed) .. ":运行" .. times .. "次")
-    self._IsDebugLog = true
     XLog.Error("每回合的选择是:", table.concat(minSelect, ","))
     XLog.Error("耗时:" .. os.clock() - time)
+    self._IsDebugLog = true
 end
 
 function XLuckyTenantAgency:LuckyTenantStagesNotify(data)

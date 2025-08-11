@@ -33,20 +33,12 @@ function XNormalDrawGroupBtnEntity:GetRuleType()
     return XDrawConfigs.RuleType.Normal
 end
 
-function XNormalDrawGroupBtnEntity:GetRuleType()
-    return XDrawConfigs.RuleType.Normal
-end
-
 function XNormalDrawGroupBtnEntity:GetName()
     return self:GetCfg().TitleCN
 end
 
 function XNormalDrawGroupBtnEntity:GetRareRank()
     return self:GetCfg().RareRank
-end
-
-function XNormalDrawGroupBtnEntity:GetGroupBtnBg()
-    return self:GetCfg().GroupBtnBg
 end
 
 function XNormalDrawGroupBtnEntity:GetGroupBtnBg()

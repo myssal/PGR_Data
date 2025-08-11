@@ -9,10 +9,11 @@ function XTheatre5PVEChatNode:_OnEnter()
     self._SceneChatCfgs = self._MainModel:GetPveSceneChatCfgs(sceneChatStoryPoolCfg.SceneChatGroup)
     --chatGroupId, characters
     self._MainControl:OpenPVEChat(sceneChatStoryPoolCfg.SceneChatGroup, sceneChatStoryPoolCfg.Characters, function()
+        local nodeCompletedCallback = self._NodeCompletedCallback
         XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(self._StoryLineId, self._StoryLineContentId, function(success)
             if success then
-                if self._NodeCompletedCallback then
-                    self._NodeCompletedCallback()
+                if nodeCompletedCallback then
+                    nodeCompletedCallback()
                 end
             end        
         end)

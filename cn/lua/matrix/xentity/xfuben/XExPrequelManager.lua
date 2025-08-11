@@ -13,7 +13,7 @@ function XExPrequelManager:ExOpenChapterUi(viewModel)
         return
     end
     
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Prequel, viewModel:GetConfig().Id) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Prequel, viewModel:GetConfig().Id) then
         return
     end
     XLuaUiManager.Open("UiPrequelMain", viewModel:GetConfig().ExtralData.PequelChapterCfg)

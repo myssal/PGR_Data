@@ -180,11 +180,6 @@ end
 
 -----------------PassportTypeInfo 通行证类型 begin-----------------------
 
-function XPassportControl:GetPassportTypeInfoRewardId(id)
-    local config = self._Model:GetPassportTypeInfoConfig(id)
-    return config.RewardId
-end
-
 function XPassportControl:GetPassportTypeInfoName(id)
     local config = self._Model:GetPassportTypeInfoConfig(id)
     return config.Name or ""
@@ -207,6 +202,26 @@ end
 
 function XPassportControl:GetPassportTypeInfoBuyDesc(id)
     local config = self._Model:GetPassportTypeInfoConfig(id)
+
+    -- 云游戏
+    if config.BuyDescCloudGame and config.BuyDescCloudGame ~= "" then
+        -- 在这些官方渠道下，额外显示云游戏说明
+        local channelId = CS.XHeroSdkAgent.GetChannelId()
+        local found = false
+        local channelIds = CS.XGame.Config:GetString("CloudGameChannelIds")
+        if channelIds then
+            for v in string.gmatch(channelIds, "[^|]+") do
+                if tonumber(v) == channelId then
+                    found = true
+                    break
+                end
+            end
+        end
+        if found or XMain.IsEditorDebug then
+            return string.format("%s\n%s", config.BuyDesc, config.BuyDescCloudGame)
+        end
+    end
+
     return config.BuyDesc or ""
 end
 

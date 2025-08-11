@@ -10,6 +10,8 @@ function XFangKuaiMove:OnInit()
     self._BlockHeight = tonumber(self._MainControl:GetClientConfig("BlockHeight"))
     self._FevLineMoveUp = tonumber(self._MainControl:GetClientConfig("FevLineMoveUp"))
     self._FevLineMoveDown = tonumber(self._MainControl:GetClientConfig("FevLineMoveDown"))
+    self._FevLineMoveUpMin = tonumber(self._MainControl:GetClientConfig("FevLineMoveUp", 2))
+    self._FevLineMoveDownMin = tonumber(self._MainControl:GetClientConfig("FevLineMoveDown", 2))
 end
 
 function XFangKuaiMove:AddAgencyEvent()
@@ -30,6 +32,10 @@ end
 
 function XFangKuaiMove:GetPosByGridY(index)
     return (index - 1) * self._BlockHeight
+end
+
+function XFangKuaiMove:GetGridYByPos(posY)
+    return posY / self._BlockHeight + 1
 end
 
 ---@param block XFangKuaiBlock
@@ -101,7 +107,7 @@ function XFangKuaiMove:GetMoveYTime()
     return self._SpeedY
 end
 
-function XFangKuaiMove:GetFevMoveUpTime(lineCount)
+function XFangKuaiMove:GetFevMoveUpWaitTime(lineCount)
     if not lineCount or lineCount <= 0 then
         return 0
     end
@@ -109,12 +115,20 @@ function XFangKuaiMove:GetFevMoveUpTime(lineCount)
     return tonumber(time)
 end
 
-function XFangKuaiMove:GetFevMoveDownTime(lineCount)
+function XFangKuaiMove:GetFevMoveUpTime(lineCount)
+    return math.max(self._FevLineMoveUpMin, self:GetFevMoveUpWaitTime(lineCount))
+end
+
+function XFangKuaiMove:GetFevMoveDownWaitTime(lineCount)
     if not lineCount or lineCount <= 0 then
         return 0
     end
     local time = string.format("%.1f", self._FevLineMoveDown * lineCount)
     return tonumber(time)
+end
+
+function XFangKuaiMove:GetFevMoveDownTime(lineCount)
+    return math.max(self._FevLineMoveDownMin, self:GetFevMoveDownWaitTime(lineCount))
 end
 
 return XFangKuaiMove

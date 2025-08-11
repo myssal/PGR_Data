@@ -7,16 +7,28 @@ function XUiTheatre5MainTeaching:OnStart()
     XUiHelper.RegisterClickEvent(self, self.BtnStart, self.OnClickStartEvent,true)
 end
 
---eventData = {EventId = number, IsNew = bool}
 function XUiTheatre5MainTeaching:OnEnable()
-    --test 暂时隐藏
-    -- local isTeaching = self._Control.PVEControl:IsInTeachingStoryLine()
-    -- self.PanelFirst.gameObject:SetActiveEx(isTeaching)
-    -- self.PanelSecond.gameObject:SetActiveEx(not isTeaching)  
+    local isTeaching = self._Control.PVEControl:IsInTeachingStoryLine()
+    self.PanelFirst.gameObject:SetActiveEx(isTeaching)
+    self.PanelSecond.gameObject:SetActiveEx(not isTeaching)  
 end
 
 function XUiTheatre5MainTeaching:OnClickStartEvent()
-    self._Control.FlowControl:EnterModel()
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+        XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
+            if success then
+                self:EnterPVEMode()
+            end    
+        end)
+    else
+        self:EnterPVEMode()
+    end    
+end
+
+function XUiTheatre5MainTeaching:EnterPVEMode()
+    self:PlayAnimationWithMask("Enter", function()
+        self._Control.FlowControl:EnterModel()
+    end)
 end
 
 return XUiTheatre5MainTeaching

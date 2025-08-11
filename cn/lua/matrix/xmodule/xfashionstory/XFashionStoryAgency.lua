@@ -64,6 +64,10 @@ function XFashionStoryAgency:ShowReward(winData)
     if not winData then
         return
     end
+    
+    -- 旧的系统通关后没有做通关下发，依靠客户端自行更新，重登后才依赖服务端下推
+    local stageId = winData.StageId
+    XMVCA.XFuben:SetStagePassed(stageId)
 
     XLuaUiManager.Open("UiSettleWin", winData)
 end
@@ -420,8 +424,8 @@ end
 --endregion
 
 function XFashionStoryAgency:NotifyFashionStoryData(stageList)
-    if stageList then
-        for i, stageId in pairs(stageList) do
+    if stageList and stageList.FinishStageList then
+        for i, stageId in pairs(stageList.FinishStageList) do
             XMVCA.XFuben:SetStagePassed(stageId)
         end
     end

@@ -25,6 +25,8 @@ function XUiPanelWheelchairManualLotto:OnEnable()
         self:UpdatePanelAll()
     end
     self:AddEventListener()
+    
+    XDataCenter.ItemManager.CheckAutoGiftRewardShow()
 end
 
 function XUiPanelWheelchairManualLotto:OnDisable()
@@ -130,6 +132,10 @@ function XUiPanelWheelchairManualLotto:OnDraw()
         self.IsCanDraw = false
         characterRecord.Record()
         local drawData = self.LottoGroupData:GetDrawData()
+        
+        -- 请求前锁定自开型礼包弹窗
+        XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
+        
         XDataCenter.LottoManager.DoLotto(drawData:GetId(), function(rewardList, extraRewardList, lottoRewardId)
             local lottoRewardEntity = self.LottoGroupData:GetDrawData():GetRewardDataById(lottoRewardId)
             XDataCenter.AntiAddictionManager.BeginDrawCardAction()
@@ -141,9 +147,13 @@ function XUiPanelWheelchairManualLotto:OnDraw()
             end
             rewardList = XDataCenter.LottoManager.HandleDrawShowRewardEffect(rewardList, lottoRewardEntity:GetShowEffectId())
             rewardList = XDataCenter.LottoManager.HandleDrawShowRewardQuality(rewardList, lottoRewardEntity:GetRareLevel())
-            XLuaUiManager.Open("UiLottoCommonDrawShow", drawData, rewardList)
+            XLuaUiManager.OpenWithCloseCallback("UiLottoCommonDrawShow", function()
+                -- 只解锁不弹窗，等回到卡池界面后再手动检查弹窗
+                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false, true)
+            end, drawData, rewardList)
         end, function()
             self.IsCanDraw = true
+            XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
         end)
     end
 end

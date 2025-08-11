@@ -119,7 +119,7 @@ function XUiFuben:OnClickTabCallBack(tabIndex)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenChallenge) then
             return
         end
-        self.BtnTrial.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.FubenActivityTrial))
+        self.BtnTrial.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Experiment))
         XDataCenter.FubenManager.RefreshNewChallengeRedPoint() --刷新挑战页签红点
         self:OpenOneChildUi("UiFubenChallengeBanner", true)
     elseif tabIndex == self.BtnTabIndex.Daily then
@@ -239,7 +239,7 @@ end
 
 -- auto
 function XUiFuben:OnBtnTrialClick()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenActivityTrial) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Experiment) then
         return
     end
     XLuaUiManager.Open("UiFubenExperiment")

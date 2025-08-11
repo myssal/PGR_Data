@@ -138,7 +138,7 @@ end
 
 function XUiClickClearGame.OnBtnHelpClick()
     local helpId = XDataCenter.XClickClearGameManager.GetHelpId()
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
 
     local gameInfo = XDataCenter.XClickClearGameManager.GetGameInfo()
     if gameInfo.CurGameState == XDataCenter.XClickClearGameManager.GameState.Playing then

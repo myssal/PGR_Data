@@ -22,6 +22,7 @@ function XUiBabelTowerBase:OnStart(stageId, teamId)
     local teamList = cacheTeamData.TeamData
     local captainPos = cacheTeamData.CaptainPos
     local firstFightPos = cacheTeamData.FirstFightPos
+    local generalSkill = cacheTeamData.SelectedGeneralSkill
 
     self.StageId = stageId
     local stageTemplate = XFubenBabelTowerConfigs.GetBabelTowerStageTemplate(stageId)
@@ -30,6 +31,7 @@ function XUiBabelTowerBase:OnStart(stageId, teamId)
     self.TeamList = teamList
     self.CaptainPos = captainPos
     self.FirstFightPos = firstFightPos
+    self.GeneralSkill = generalSkill
     self.ProtectRobotCount = stageTemplate.ProtectRobotCount or 0
     self.ChallengeBuffInfos = {}
     self.SupportBuffInfos = {}
@@ -170,26 +172,27 @@ function XUiBabelTowerBase:OnBtnFightClick()
     local onFight = function()
         local selectDifficult = XDataCenter.FubenBabelTowerManager.GetTeamSelectDifficult(self.StageId, self.TeamId)
         XDataCenter.FubenBabelTowerManager.SelectBabelTowerStage(self.StageId, self.GuideId, self.TeamList, challengeBuffs, supportBuffs, function()
-            XDataCenter.FubenBabelTowerManager.SaveCurStageInfo(self.StageId, self.TeamId, self.GuideId, self.TeamList, challengeBuffs, supportBuffs, captainPos, selectDifficult, firstFightPos)
+            XDataCenter.FubenBabelTowerManager.SaveCurStageInfo(self.StageId, self.TeamId, self.GuideId, self.TeamList, challengeBuffs, supportBuffs, captainPos, selectDifficult, firstFightPos, self.GeneralSkill)
 
             if XDataCenter.FubenBabelTowerManager.IsStageGuideAuto(self.GuideId) then
                 XDataCenter.FubenBabelTowerManager.UpdateBuffListCache(self.StageId, challengeBuffs, self.TeamId)
             end
 
             XDataCenter.FubenBabelTowerManager.UpdateSupportBuffListCache(self.StageId, supportBuffs, self.TeamId)
-            XDataCenter.FubenBabelTowerManager.SetTeamChace(self.StageId, self.TeamId, self.TeamList, captainPos, firstFightPos)
+            XDataCenter.FubenBabelTowerManager.SetTeamChace(self.StageId, self.TeamId, self.TeamList, captainPos, firstFightPos, self.GeneralSkill)
 
-            XDataCenter.FubenManager.EnterBabelTowerFight(buffStageId, self.TeamList, captainPos, firstFightPos)
+            XDataCenter.FubenManager.EnterBabelTowerFight(buffStageId, self.TeamList, captainPos, firstFightPos, self.GeneralSkill)
         end, selectDifficult, self.TeamId)
     end
     
     self:CheckAbility(onFight)
 end
 
-function XUiBabelTowerBase:UpdateTeamList(teamList, captainPos, firstFightPos)
+function XUiBabelTowerBase:UpdateTeamList(teamList, captainPos, firstFightPos, generalSkill)
     self.TeamList = teamList
     self.CaptainPos = captainPos
     self.FirstFightPos = firstFightPos
+    self.GeneralSkill = generalSkill
     self:SetChallengeBuffLoseEfficacy()
     self:FilterChooseChallengeList()
 end
@@ -250,7 +253,7 @@ function XUiBabelTowerBase:SetBabelTowerPhase()
         self.BtnLast.gameObject:SetActiveEx(true)
         self.BtnFight.gameObject:SetActiveEx(true)
 
-        self:OpenOneChildUi(XFubenBabelTowerConfigs.SUPPORT_CHILD_UI, self, self.StageId, self.GuideId, self.TeamId, self.TeamList, self.CaptainPos, self.FirstFightPos)
+        self:OpenOneChildUi(XFubenBabelTowerConfigs.SUPPORT_CHILD_UI, self, self.StageId, self.GuideId, self.TeamId, self.TeamList, self.CaptainPos, self.FirstFightPos, self.GeneralSkill)
         if not self.IsFirstOpenChildSupport then
             self:FindChildUiObj(XFubenBabelTowerConfigs.SUPPORT_CHILD_UI):RestoreSupportBuff()
         else

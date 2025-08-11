@@ -6,6 +6,8 @@ local XUiTheatre5PVEEventOptionItem = XClass(XUiNode, 'XUiTheatre5PVEEventOption
 function XUiTheatre5PVEEventOptionItem:OnStart()
     self._OptionData = nil
     self._IsSelect = false
+    self._Unlock = nil
+    self._LockDesc = nil
     XUiHelper.RegisterClickEvent(self, self.BtnOption, self.OnClickOption, true, true)
 end
 
@@ -13,16 +15,19 @@ end
 function XUiTheatre5PVEEventOptionItem:Update(optionData, index)
     self._OptionData = optionData
     local optionCfg = self._Control.PVEControl:GetPveEventOptionCfg(optionData.EventOptionId)
-    self._Unlock = XConditionManager.CheckConditionAndDefaultPass(optionCfg.OptionCondition)
+    self._Unlock,self._LockDesc = XConditionManager.CheckConditionAndDefaultPass(optionCfg.OptionCondition)
     self.BtnOption:SetName(optionCfg.OptionDesc)  
     self.PanelItem.gameObject:SetActiveEx(optionCfg.OptionType ~= XMVCA.XTheatre5.EnumConst.PVEOptionType.NormalChat)
     if optionCfg.OptionType ~= XMVCA.XTheatre5.EnumConst.PVEOptionType.NormalChat then
       self:UpdateItem(optionCfg)
     end
-    self.BtnOption:SetDisable(not self._Unlock)    
+    self.BtnOption:SetDisable(not self._Unlock)
+    self._IsSelect = false
+     self.BtnOption.enabled = true    
 end
 
 function XUiTheatre5PVEEventOptionItem:UpdateItem(optionCfg)
+    local eventOptionIncomplete = self._Control.PVEControl:GetEventOptionIncomplete()
     if optionCfg.OptionType == XMVCA.XTheatre5.EnumConst.PVEOptionType.CostItem then
         if optionCfg.OptionCostType == XMVCA.XTheatre5.EnumConst.ItemType.Gold then  --花费的只能配金币
             local currencyCfg = self._Control:GetRouge5CurrencyCfg(optionCfg.OptionCostId)
@@ -31,6 +36,9 @@ function XUiTheatre5PVEEventOptionItem:UpdateItem(optionCfg)
             local ownGoldCount = self._Control:GetGoldNum()
             if self._Unlock then
                 self._Unlock = ownGoldCount >= optionCfg.OptionCostCount
+                if not self._Unlock then
+                    self._LockDesc = XUiHelper.FormatText(eventOptionIncomplete, currencyCfg.Name)
+                end    
             end    
         end    
     elseif optionCfg.OptionType == XMVCA.XTheatre5.EnumConst.PVEOptionType.HasItem then
@@ -41,6 +49,9 @@ function XUiTheatre5PVEEventOptionItem:UpdateItem(optionCfg)
             self.TextItemCount.gameObject:SetActiveEx(false)
             if self._Unlock then
                 self._Unlock = self._Control:CheckHasEquipOrSkill(optionCfg.OptionType, optionCfg.OptionCostId)
+                if not self._Unlock then
+                    self._LockDesc = XUiHelper.FormatText(eventOptionIncomplete, itemCfg.Name)
+                end    
             end    
         elseif optionCfg.OptionCostType == XMVCA.XTheatre5.EnumConst.ItemType.Clue then
              local clueCfg = self._Control.PVEControl:GetDeduceClueCfg(optionCfg.OptionCostId)
@@ -48,6 +59,9 @@ function XUiTheatre5PVEEventOptionItem:UpdateItem(optionCfg)
              self.TextItemCount.gameObject:SetActiveEx(false)
              if self._Unlock then
                 self._Unlock = self._Control.PVEControl:CheckHasClue(optionCfg.OptionCostId)
+                if not self._Unlock then
+                    self._LockDesc = XUiHelper.FormatText(eventOptionIncomplete, clueCfg.Title)
+                end    
              end   
         end
     end                 
@@ -64,6 +78,7 @@ end
 
 function XUiTheatre5PVEEventOptionItem:OnClickOption()
     if not self._Unlock then
+        XUiManager.TipMsg(self._LockDesc) 
         return
     end
     if self._IsSelect then
@@ -77,6 +92,8 @@ end
 function XUiTheatre5PVEEventOptionItem:OnDestroy()
     self._OptionData = nil
     self._IsSelect = nil
+    self._Unlock = nil
+    self._LockDesc = nil
 end
 
 return XUiTheatre5PVEEventOptionItem

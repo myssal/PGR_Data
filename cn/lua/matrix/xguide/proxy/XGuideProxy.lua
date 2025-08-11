@@ -54,6 +54,14 @@ function XGuideProxy:GetAllGuideCompleteTemplate()
     return XGuideConfig.GetGuideCompleteTemplates()
 end
 
+function XGuideProxy:GetGuideIcon(iconId)
+    return XGuideConfig.GetGuideIcon(iconId)
+end
+
+function XGuideProxy:GetGuideTextTemplate(textId)
+    return XGuideConfig.GetGuideTextTemplate(textId)
+end
+
 ---@param guideGroupTemplates table<number, XTableGuideGroup>
 function XGuideProxy:GetAvailableGuideTemplates(guideGroupTemplates)
     local dict = {}

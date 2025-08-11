@@ -9,17 +9,17 @@ local XTheatre5Agency = XClass(XFubenSimulationChallengeAgency, "XTheatre5Agency
 function XTheatre5Agency:OnInit()
     self.EnumConst = require('XModule/XTheatre5/XTheatre5EnumConst')
     self.EventId = require('XModule/XTheatre5/XTheatre5EventId')
-    
+
     ---@type XTheatre5PVPAgencyCom
     self.PVPCom = require('XModule/XTheatre5/PVP/XTheatre5PVPAgencyCom').New()
     self.PVPCom:Init(self, self._Model)
     self.PVEAgency = require('XModule/XTheatre5/PVE/XTheatre5PVEAgency').New()
     self.PVEAgency:Init(self, self._Model)
-    
+
     ---@type XTheatre5BattleAgencyCom
     self.BattleCom = require('XModule/XTheatre5/Common/XTheatre5BattleAgencyCom').New()
     self.BattleCom:Init(self, self._Model)
-    
+
     self:RegisterChapterAgency()
 end
 
@@ -66,7 +66,7 @@ function XTheatre5Agency:ExOpenMainUi()
     end
 
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre5, true) then
-        if XTool.IsNumberValid(self._Model:GetActivityId()) then
+        if self:ExCheckInTime() and self._Model:GetHasActivityData() then
             self:PlayMainVideo(function()
                 XLuaUiManager.Open('UiTheatre5Main')
             end)
@@ -75,12 +75,12 @@ function XTheatre5Agency:ExOpenMainUi()
             XUiManager.TipText('CommonActivityNotStart')
         end
     end
-    
+
     return false
 end
 
 function XTheatre5Agency:GetMainVideoId()
-    return self._Model:GetTheatre5ConfigValByKey('MainVideoId') 
+    return self._Model:GetTheatre5ConfigValByKey('MainVideoId')
 end
 
 function XTheatre5Agency:IsNeedPlayMainVideo()
@@ -88,26 +88,26 @@ function XTheatre5Agency:IsNeedPlayMainVideo()
     if not XTool.IsNumberValid(videoId) then
         return false
     end
-    local result = XSaveTool.GetData(string.format("Theatre5_MainVideo_%s", XPlayer.Id))    
+    local result = XSaveTool.GetData(string.format("Theatre5_MainVideo_%s", XPlayer.Id))
     if result == true then
         return false
     end
-    return true    
+    return true
 end
 
 function XTheatre5Agency:PlayMainVideo(cb)
     if self:IsNeedPlayMainVideo() then
-         XLuaVideoManager.PlayUiVideo(self:GetMainVideoId(), function()
+        XLuaVideoManager.PlayUiVideo(self:GetMainVideoId(), function()
             XSaveTool.SaveData(string.format("Theatre5_MainVideo_%s", XPlayer.Id), true)
             if cb then
                 cb()
-            end    
-         end, true, true)
+            end
+        end, true, true)
     else
         if cb then
             cb()
-        end    
-    end        
+        end
+    end
 end
 
 --- 通用跳转接口（SkipId）
@@ -116,7 +116,7 @@ function XTheatre5Agency:ExOnSkip(skipDatas)
     if self:ExOpenMainUi() then
         return true
     end
-    
+
     return false
 end
 
@@ -127,7 +127,7 @@ end
 --- 是否有限时显示
 function XTheatre5Agency:ExCheckInTimerShow()
     local timeId = self:GetPVPActivityTimeId()
-    
+
     return XFunctionManager.CheckInTimeByTimeId(timeId)
 end
 
@@ -139,7 +139,7 @@ function XTheatre5Agency:ExGetTimerShowStr()
         local now = XTime.GetServerNowTimestamp()
         local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
         local leftTime = math.max(endTime - now, 0)
-        
+
         return XUiHelper.FormatText(self._Model:GetTheatre5ClientConfigText('EntranceTimeLabel'), XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY))
     else
         return ''
@@ -152,21 +152,32 @@ end
 
 --- 技能三选一
 function XTheatre5Agency:RequestTheatre5SkillChoice(instanceId, isEquipped, targetIndex, cb)
-    XNetwork.Call("XTheatre5SkillChoiceRequest", {InstanceId = instanceId, IsEquipped = isEquipped, TargetIndex = targetIndex}, function(res)
+    XNetwork.Call("XTheatre5SkillChoiceRequest", { InstanceId = instanceId, IsEquipped = isEquipped, TargetIndex = targetIndex }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
+
+            -- 保底同步状态
+            if XTool.IsNumberValid(res.Status) then
+                self._Model.CurAdventureData:UpdateCurPlayStatus(res.Status)
+
+                if res.Status == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping then
+                    self._Model.CurAdventureData:UpdateFullSkillChoiceData(nil)
+                end
+            end
 
             if cb then
                 cb(false)
             end
-            
+
             return
         end
 
-        self._Model.CurAdventureData:UpdateCurPlayStatus(XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping)
+        local newStatus = XTool.IsNumberValid(res.Status) and res.Status or XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
+
+        self._Model.CurAdventureData:UpdateCurPlayStatus(newStatus)
         -- 清空技能三选一数据
         self._Model.CurAdventureData:UpdateFullSkillChoiceData(nil)
-        
+
         if cb then
             cb(true)
         end
@@ -175,14 +186,14 @@ end
 
 --- 购买背包槽位
 function XTheatre5Agency:RequestTheatre5ShopUnlockGridRequest(itemType, cb)
-    XNetwork.Call("XTheatre5ShopUnlockGridRequest", {GridType = itemType}, function(res)
+    XNetwork.Call("XTheatre5ShopUnlockGridRequest", { GridType = itemType }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
 
             if cb then
                 cb(false)
             end
-            
+
             return
         end
 
@@ -218,7 +229,7 @@ end
 
 --- 请求购买商品
 function XTheatre5Agency:RequestTheatre5ShopBuyItem(instanceId, isEquipped, targetIndex, cb)
-    XNetwork.Call("XTheatre5ShopBuyItemRequest", {InstanceId = instanceId, IsEquipped = isEquipped, TargetIndex = targetIndex }, function(res)
+    XNetwork.Call("XTheatre5ShopBuyItemRequest", { InstanceId = instanceId, IsEquipped = isEquipped, TargetIndex = targetIndex }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
 
@@ -241,7 +252,7 @@ end
 
 --- 请求卖出商品
 function XTheatre5Agency:RequestTheatre5ShopSellItem(instanceId, itemType, isEquipped, cb)
-    XNetwork.Call("XTheatre5ShopSellItemRequest", {InstanceId = instanceId, IsEquipped = isEquipped, ItemType = itemType }, function(res)
+    XNetwork.Call("XTheatre5ShopSellItemRequest", { InstanceId = instanceId, IsEquipped = isEquipped, ItemType = itemType }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
 
@@ -344,7 +355,7 @@ function XTheatre5Agency:RequestPveOrPvpChange(cb)
             if cb then
                 cb(false)
             end
-            
+
             return
         end
         self._Model:ChangePlayingMode()
@@ -358,7 +369,7 @@ end
 
 --region Network - Fight
 function XTheatre5Agency:RequestDlcSingleEnterFight(worldId, levelId, cb)
-    XNetwork.Call("DlcSingleEnterFightRequest", {WorldId = worldId, LevelId = levelId}, function(res)
+    XNetwork.Call("DlcSingleEnterFightRequest", { WorldId = worldId, LevelId = levelId }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
 
@@ -380,14 +391,16 @@ end
 
 function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
     if XTool.IsTableEmpty(data) then
+        self._Model:SetHasActivityData(false)
         return
     end
-    
+
     local theatre5DataDb = data.Theatre5DataDb
-    
+
+    self._Model:SetHasActivityData(not XTool.IsTableEmpty(data.Theatre5DataDb))
     self._Model:SetActivityId(theatre5DataDb.ActivityId)
     self._Model:SetCurPlayingMode(theatre5DataDb.PvpType)
-    self._Model.PVPAdventureData:UpdatePVPAdventureData(theatre5DataDb.PvpAdventureData) 
+    self._Model.PVPAdventureData:UpdatePVPAdventureData(theatre5DataDb.PvpAdventureData)
     self._Model.PVPCharacterData:UpdatePVPCharacters(theatre5DataDb.Characters)
     self._Model.PVEAdventureData:UpdatePVEAdventureData(theatre5DataDb.PveAdventureData)
 
@@ -400,10 +413,7 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
     self._Model.PVERougeData:UpdatePveScripts(theatre5DataDb.PveScripts)
     self._Model.PVERougeData:UpdateHistoryChapters(theatre5DataDb.HistoryChapters)
 
-    if not XTool.IsTableEmpty(theatre5DataDb) and XTool.IsNumberValid(theatre5DataDb.ActivityId) then
-        --- 内部已经做了防止多次初始化判断
-        CS.StatusSyncFight.XFight.Init()
-    end
+    self._Model:SetCharacterWinGameCountData(theatre5DataDb.CommonFightCnt)
 end
 
 function XTheatre5Agency:OnNotifyTheatre5UnlockCharacter(data)
@@ -432,7 +442,7 @@ function XTheatre5Agency:OnNotifyPveStoryLineUnlock(data)
 end
 
 function XTheatre5Agency:OnNotifyTheatre5AddItem(data)
-    
+
 end
 
 function XTheatre5Agency:OnNotifyTheatre5BagDataUpdate(data)
@@ -453,7 +463,7 @@ function XTheatre5Agency:RequestTheatre5CharacterSkinSet(characterId, fashionId,
             if cb then
                 cb(false)
             end
-            
+
             return
         end
 
@@ -461,9 +471,9 @@ function XTheatre5Agency:RequestTheatre5CharacterSkinSet(characterId, fashionId,
         if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
             self._Model.PVPCharacterData:UpdateCharacterFashionId(characterId, fashionId)
         else
-            
+
         end
-        
+
         if cb then
             cb(true)
         end
@@ -527,7 +537,71 @@ function XTheatre5Agency:CheckInPVPActivityTime()
             return XFunctionManager.CheckInTimeByTimeId(cfg.TimeId)
         end
     end
-    
+
+    return false
+end
+
+--- 判断指定角色是否达成指定的段位
+function XTheatre5Agency:CheckCharacterIsAchieveAimRank(charaId, rankId)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre5, true, true) then
+        return false
+    end
+
+    -- PVP未开启时默认未达成
+    if not self:CheckInPVPActivityTime() then
+        return false
+    end
+
+    -- 指定段位对应的下限积分
+    ---@type XTableTheatre5Rank
+    local rankCfg = self._Model:GetTheatre5RankCfgById(rankId)
+
+    if rankCfg then
+        if XTool.IsNumberValid(charaId) then
+            ---@type XTheatre5PVPCharacter
+            local charaData = self._Model.PVPCharacterData:GetPVPCharacterById(charaId)
+
+            if charaData then
+                return charaData.Rating >= rankCfg.Rating
+            end
+        else
+            local charaDataList = self._Model.PVPCharacterData:GetPVPCharacters()
+
+            if not XTool.IsTableEmpty(charaDataList) then
+                for i, v in pairs(charaDataList) do
+                    if v.Rating >= rankCfg.Rating then
+                        return true
+                    end
+                end
+            end
+        end
+    end
+
+    return false
+end
+
+--- 判断指定角色的胜利次数是否达到指定值
+function XTheatre5Agency:CheckCharacterIsAchieveAimWinFightCount(charaId, winCount)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre5, true, true) then
+        return false
+    end
+
+    if XTool.IsNumberValid(charaId) then
+        return self._Model:GetCharacterWinGameCountById(charaId) >= winCount
+    else
+        -- 不指定角色时表示所有角色合计胜利次数
+        local totalWinCount = 0
+        local data = self._Model:GetCharacterWinGameCountData()
+
+        if not XTool.IsTableEmpty(data) then
+            for i, v in pairs(data) do
+                totalWinCount = totalWinCount + v
+            end
+
+            return totalWinCount >= winCount
+        end
+    end
+
     return false
 end
 --endregion
@@ -588,6 +662,87 @@ function XTheatre5Agency:ExGetDlcPortraitByCharacterIdAndFashionId(templateId, f
     end
 end
 
+function XTheatre5Agency:CheckShopConfigCanBuyGoods(shopCfg)
+    --商店过期
+    if not XFunctionManager.CheckInTimeByTimeId(shopCfg.TimeLimitId) then
+        return false
+    end
+    local currencyCoinId = self:GetActivityCoinInActivity()
+    --货币过期
+    if not XTool.IsNumberValid(currencyCoinId) then
+        return false
+    end
+    --取消掉打印，防止策划前后端配置不一致，红点每秒检测打印    
+    local shopDatas = XShopManager.GetShopGoodsList(shopCfg.ShopId, true)
+    if XTool.IsTableEmpty(shopDatas) then
+        return false
+    end
+    for _, shopData in pairs(shopDatas) do
+        --还有购买次数
+        if shopData.TotalBuyTimes < shopData.BuyTimesLimit then
+            --解锁了
+            local isLock = false
+            for _, v in pairs(shopData.ConditionIds) do
+                local ret = XConditionManager.CheckCondition(v)
+                if not ret then
+                    isLock = true
+                    break
+                end
+            end
+            if not isLock then
+                for _, priceData in pairs(shopData.ConsumeList) do
+                    local itemCount = XDataCenter.ItemManager.GetCount(priceData.Id)
+                    --钱够了
+                    if itemCount >= priceData.Count then
+                        return true
+                    end
+                end
+            end
+        end
+    end
+    return false
+end
+
+--限时能对换商品
+function XTheatre5Agency:CheckLimitShopCanBuyGoods()
+    local limitShopId = self._Model:GetTheatre5ConfigValByKey('Theatre5LimitShop')
+    if not XTool.IsNumberValid(limitShopId) then
+        return false
+    end
+    local shopCfg = self._Model:GetTaskOrShopCfg(limitShopId)
+    if not shopCfg then
+        return false
+    end
+    return self:CheckShopConfigCanBuyGoods(shopCfg)
+end
+
+--获取活动时间内的限时货币
+function XTheatre5Agency:GetActivityCoinInActivity()
+    local activityId = self._Model:GetActivityId()
+    if XTool.IsNumberValid(activityId) then
+        local activityCfg = self._Model:GetTheatre5ActivityCfgById(activityId)
+        if XFunctionManager.CheckInTimeByTimeId(activityCfg.TimeId) and XTool.IsNumberValid(activityCfg.ActivityCoin) then
+            return activityCfg.ActivityCoin
+        end
+    end
+end
+
+--当前是否是教学故事线
+function XTheatre5Agency:IsInTeachingStoryLine()
+    local teachingStoryLineId = self._Model:GetTheatre5ConfigValByKey('TeachingPveStoryLineId')
+    if not XTool.IsNumberValid(teachingStoryLineId) then
+        return false
+    end
+
+    local curContentId = self._Model.PVERougeData:GetStoryLineContentId(teachingStoryLineId)
+    if not curContentId or curContentId > 0 then
+        --教学线完成，初始时contentId是nil
+        return true
+    end
+    return false
+end
+
+
 --region 蓝点相关
 
 --- 活动初见未进入的蓝点
@@ -600,6 +755,80 @@ function XTheatre5Agency:CheckHasNewPVPActivityReddot()
     return self._Model:CheckHasNewPVPActivityReddot()
 end
 
+function XTheatre5Agency:CheckHasNewPVEActivityReddot()
+    return self._Model:CheckHasNewPVEActivityReddot()
+end
+
+function XTheatre5Agency:CheckLimitShopReddot()
+    return self._Model:CheckLimitShopReddot()
+end
+
+function XTheatre5Agency:CheckShopNewGoods()
+    local shopConfigs = self._Model:GetTaskOrShopCfgs(XMVCA.XTheatre5.EnumConst.TaskShopType.Shop)
+    for i = 1, #shopConfigs do
+        local shopConfig = shopConfigs[i]
+        if self:CheckShopNewGoodsByShopConfig(shopConfig) then
+            return true
+        end
+    end
+    return false
+end
+
+-- 有新增的任务
+---@param taskCfg XTableTheatre5TaskShop
+function XTheatre5Agency:CheckNewTaskByTaskConfig(taskCfg)
+    local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(taskCfg.TaskTimeLimitId)
+    if taskTimeLimitCfg and taskTimeLimitCfg.TaskId then
+        for _, taskId in pairs(taskTimeLimitCfg.TaskId) do
+            if self._Model:CheckTaskNewReddot(taskId) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+-- 有新增的商品
+---@param taskCfg XTableTheatre5TaskShop
+function XTheatre5Agency:CheckShopNewGoodsByShopConfig(shopCfg)
+    --商店过期
+    if shopCfg.TimeLimitId ~= 0 then
+        if not XFunctionManager.CheckInTimeByTimeId(shopCfg.TimeLimitId) then
+            return false
+        end
+    end
+    --local currencyCoinId = self:GetActivityCoinInActivity()
+    ----货币过期
+    --if not XTool.IsNumberValid(currencyCoinId) then
+    --    return false
+    --end
+    --取消掉打印，防止策划前后端配置不一致，红点每秒检测打印    
+    local shopDatas = XShopManager.GetShopGoodsList(shopCfg.ShopId, true)
+    if XTool.IsTableEmpty(shopDatas) then
+        return false
+    end
+    for _, shopData in pairs(shopDatas) do
+        if self._Model:CheckShopNewReddot(shopData.Id) then
+            return true
+        end
+    end
+    return false
+end
+
 --endregion
+
+function XTheatre5Agency:GetValidShopOrTaskList(type)
+    local validTaskShopCfgs = {}
+    local taskShopCfgs = self._Model:GetTaskOrShopCfgs(type)
+    if XTool.IsTableEmpty(taskShopCfgs) then
+        return validTaskShopCfgs
+    end
+    for _, taskShopCfg in pairs(taskShopCfgs) do
+        if XFunctionManager.CheckInTimeByTimeId(taskShopCfg.TimeLimitId, true) then
+            table.insert(validTaskShopCfgs, taskShopCfg)
+        end
+    end
+    return validTaskShopCfgs
+end
 
 return XTheatre5Agency

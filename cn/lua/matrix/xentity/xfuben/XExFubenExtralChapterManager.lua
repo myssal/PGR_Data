@@ -10,7 +10,7 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
     local chapterCfg = XDataCenter.ExtraChapterManager.GetChapterDetailsCfgByChapterIdAndDifficult(chapterInfo.ChapterMainId, difficulty)
     if chapterInfo.Unlock then
         local id = chapterCfg and chapterCfg.ChapterId or nil
-        if id and not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.ExtralChapter, id)then
+        if id and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, id)then
             return
         end
         XLuaUiManager.Open("UiFubenMainLineChapterFw", chapterCfg, nil, false)
@@ -31,7 +31,7 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
 end
 
 function XExFubenExtralChapterManager:ExGetFunctionNameType()
-    return XFunctionManager.FunctionName.Extra
+    return XFunctionManager.FunctionName.ExtralChapter
 end
 
 -- 检查是否展示红点

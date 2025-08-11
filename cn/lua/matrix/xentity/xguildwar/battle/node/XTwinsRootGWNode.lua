@@ -105,13 +105,7 @@ end
 function XTwinsRootGWNode:GetIsRuinsStatus()
     return self:GetIsDead()
 end
--- 获取离BOSS节点发动攻击剩余时间
-function XTwinsRootGWNode:GetTimeToBossAttack()
-    if self:GetIsDead() then
-        return 0
-    end
-    return (self.NextBossAttackTime or 0) - XTime.GetServerNowTimestamp()
-end
+
 -- 获取离BOSS节点发动回复剩余时间(强化伏兵)
 function XTwinsRootGWNode:GetTimeToBossAttack()
     if self:GetIsDead() then

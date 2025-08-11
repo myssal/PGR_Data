@@ -90,3 +90,5 @@ function XUiBigWorldTaskObtainDrama:StopTimer()
     XScheduleManager.UnSchedule(self._TimerId)
     self._TimerId = nil
 end
+
+return XUiBigWorldTaskObtainDrama

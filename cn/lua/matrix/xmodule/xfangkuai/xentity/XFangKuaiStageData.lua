@@ -147,7 +147,6 @@ function XFangKuaiStageData:AddPoint(score, combo, comboCount, fevRadio)
 end
 
 function XFangKuaiStageData:AddCombo(num)
-    num = num or 1
     self.Combo = self.Combo + num
     self.HistoryMaxCombo = math.max(self.HistoryMaxCombo, self.Combo)
 end
@@ -240,7 +239,7 @@ end
 
 -- 如果当前回合数等于服务端记录的回合数 说明数据已经同步过了 不需要再发同步协议了
 function XFangKuaiStageData:IsNeedSendInitBlockData()
-    return self.Round == 0 and not self.RecordRound
+    return self.Round == 0 and self.RecordRound == 0
 end
 
 function XFangKuaiStageData:GetStageId()

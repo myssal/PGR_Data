@@ -23,6 +23,7 @@ function XUiFangKuaiFight:OnAwake()
     self._NoticeBlocks = {}
     self._Effects = {}
     self._EffectTimer = {}
+    self._UltimaSlashEffectTimer = {}
     self._ItemGrids = {}
     self._FlyingItemMap = {}
     self._MinShowCombo = self._Control:GetMinShowCombo()
@@ -36,6 +37,7 @@ function XUiFangKuaiFight:OnAwake()
 
     self._FevLineTop = tonumber(self._Control:GetClientConfig("FevLineTop"))
     self._FevLineBottom = tonumber(self._Control:GetClientConfig("FevLineBottom"))
+    self._ClearBlockTime = tonumber(self._Control:GetClientConfig("ClearBlockTime")) * 1000
 
     self._BlockPool = XObjectPool.New(function()
         return self:OnBlockCreate()
@@ -79,6 +81,7 @@ function XUiFangKuaiFight:OnStart(game, isNewGame)
     self.EffectAddFevNine.gameObject:SetActiveEx(false)
     self.EffectAddFevEight.gameObject:SetActiveEx(false)
     self.PanelTailEffect.gameObject:SetActiveEx(false)
+    self.PaneSingleLineRemoveEffect.gameObject:SetActiveEx(false)
     self.ImgRound1.gameObject:SetActiveEx(self._IsNormal)
     self.ImgRound2.gameObject:SetActiveEx(not self._IsNormal)
     self.TxtNum.gameObject:SetActiveEx(self._IsNormal)
@@ -117,6 +120,7 @@ function XUiFangKuaiFight:OnEnable()
     self:UpdateFevLineState()
     self:AddEventListener()
     self:StartCreateInitBlock(self._IsNewGame)
+    self._Game:InitExitFevGuideFlag()
 end
 
 function XUiFangKuaiFight:OnDisable()
@@ -257,6 +261,7 @@ end
 ---移动结束
 ---@param blockData XFangKuaiBlock
 function XUiFangKuaiFight:OnBlockDragEnd(blockData, isMoved)
+    self.PanelBtnMask.gameObject:SetActiveEx(false)
     self._Panel3D:PlayRoleAnimation(XEnumConst.FangKuai.RoleAnim.Standby)
     if isMoved then
         self._Control:ReduceFevStep()
@@ -265,7 +270,6 @@ function XUiFangKuaiFight:OnBlockDragEnd(blockData, isMoved)
     end
     self:HideOriginalBlock()
     self:HideCompareBg()
-    self.PanelBtnMask.gameObject:SetActiveEx(false)
     self.PanelScoreMask.gameObject:SetActiveEx(false)
 end
 
@@ -373,21 +377,30 @@ end
 
 ---播消除行特效
 function XUiFangKuaiFight:OnLineClear(gridYs)
-    for gridY, clearType in pairs(gridYs) do
-        if clearType == XEnumConst.FangKuai.ClearType.UltimaSlash then
+    for gridY, op in pairs(gridYs) do
+        local normalOp = op & XEnumConst.FangKuai.ClearType.Normal
+        local chiefOp = op & XEnumConst.FangKuai.ClearType.Chief
+        local ultimaSlashOp = op & XEnumConst.FangKuai.ClearType.UltimaSlash
+        
+        if ultimaSlashOp ~= 0 then
             -- 真意斩特效只会有一个
             self:OnUltimaSlashLineClear(gridY)
-            goto CONTINUE
+            -- 真意斩和首席特效可能同时播放
+            if chiefOp == 0 then
+                goto CONTINUE
+            end
         end
+
+        -- 首席特效优先级高于普通特效
+        local clearType = chiefOp == 0 and normalOp or chiefOp
         local effectData = self._Effects[gridY]
         if not effectData then
             effectData = {}
             effectData.Effects = {}
-            if XTool.IsTableEmpty(self._Effects) then
-                effectData.Root = self.PaneSingleLineRemoveEffect -- 放到第一个消除行那
-            else
-                effectData.Root = XUiHelper.Instantiate(self.PaneSingleLineRemoveEffect, self.PaneSingleLineRemoveEffect.parent)
-            end
+            effectData.Root = CS.UnityEngine.GameObject(string.format("Line%s", gridY)).transform
+            local parent = self.PaneSingleLineRemoveEffect.parent
+            effectData.Root:SetParent(parent, false)
+            effectData.Root:SetLayerRecursively(parent.gameObject.layer)
             local posX = effectData.Root.localPosition.x
             local posY = self._Control:GetPosByGridY(gridY)
             effectData.Root.localPosition = CS.UnityEngine.Vector3(posX, posY - 10, 0)
@@ -396,7 +409,9 @@ function XUiFangKuaiFight:OnLineClear(gridYs)
 
         local effect = effectData.Effects[clearType]
         if XTool.UObjIsNil(effect) then
-            effect = effectData.Root:LoadUiEffect(self._Control:GetSingleLineRemoveEffect(self._IsBigMap, clearType))
+            local effectName = self._Control:GetSingleLineRemoveEffect(self._IsBigMap, clearType)
+            effect = XUiHelper.Instantiate(self.PaneSingleLineRemoveEffect, effectData.Root).gameObject
+            effect:LoadUiEffect(effectName)
             effectData.Effects[clearType] = effect
         end
 
@@ -414,10 +429,9 @@ function XUiFangKuaiFight:OnLineClear(gridYs)
                 end
             end
             effectData.Root.gameObject:SetActiveEx(false)
-        end, 800)
+        end, self._ClearBlockTime)
         :: CONTINUE ::
     end
-    self:HideUltimaSlashEffect()
 end
 
 function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
@@ -425,15 +439,16 @@ function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
     v3.y = self._Control:GetPosByGridY(gridY)
     self.PanelUltimaSlashEffect.localPosition = v3
 
-    if self._EffectTimer[gridY] then
-        XScheduleManager.UnSchedule(self._EffectTimer[gridY])
-        self._EffectTimer[gridY] = nil
+    if self._UltimaSlashEffectTimer[gridY] then
+        XScheduleManager.UnSchedule(self._UltimaSlashEffectTimer[gridY])
+        self._UltimaSlashEffectTimer[gridY] = nil
     end
 
+    self:HideUltimaSlashEffect()
     self.PanelUltimaSlashEffect.gameObject:SetActiveEx(true)
-    self._EffectTimer[gridY] = XScheduleManager.ScheduleOnce(function()
+    self._UltimaSlashEffectTimer[gridY] = XScheduleManager.ScheduleOnce(function()
         self.PanelUltimaSlashEffect.gameObject:SetActiveEx(false)
-    end, 800)
+    end, self._ClearBlockTime)
 end
 
 -- 执行道具操作期间 屏蔽方块和道具点击
@@ -492,6 +507,7 @@ function XUiFangKuaiFight:OnRestart()
     self:StartCreateInitBlock(true)
     self:UpdateFeverProgress()
     self:UpdateFevLineState()
+    self._Game:InitExitFevGuideFlag()
 end
 
 function XUiFangKuaiFight:OnDrop()
@@ -553,16 +569,13 @@ function XUiFangKuaiFight:OnFevLineMove(isUp)
         end
         self:SetFevLineArrow(false)
     end)
-
-    local initGridY = self._Game:GetExistBlockLayerNum()
-    local dimGridY = isUp and self._Game:GetFevUseItemAddLine() or self._Game:GetExitFevRetainLine()
-    self._CurAddLineCount = math.abs(dimGridY - initGridY)
 end
 
 ---@param blockData XFangKuaiBlock
 function XUiFangKuaiFight:OnBlockFevMoveY(blockData, gridY, isUp)
     local block = self:GetBlock(blockData)
-    self._Control:FevMoveY(block.Transform, gridY, isUp, self._CurAddLineCount, function()
+    local curGridY = block:GetCurGridY()
+    self._Control:FevMoveY(block.Transform, gridY, isUp, math.abs(curGridY - gridY), function()
         if not isUp and gridY <= 0 then
             self:OnBlockRemove(blockData, true)
         end
@@ -1204,7 +1217,7 @@ function XUiFangKuaiFight:OnClickHelp()
 end
 
 function XUiFangKuaiFight:OnClickExit()
-    if self._CurClickBlock then
+    if self._IsForbidClick then
         return -- 避免正在拖动方块时点ESC关闭界面
     end
     XLuaUiManager.Remove("UiFangKuaiChapterDetail")
@@ -1223,6 +1236,7 @@ end
 
 -- 方块掉落、生成和上移期间不能移动和使用道具
 function XUiFangKuaiFight:ForbidClick(bo)
+    self._IsForbidClick = bo
     self.PanelBlockMask.gameObject:SetActiveEx(bo)
     self.PanelItemMask.gameObject:SetActiveEx(bo)
     self.PanelBtnMask.gameObject:SetActiveEx(bo)
@@ -1252,12 +1266,14 @@ function XUiFangKuaiFight:RemoveTipTimer()
 end
 
 function XUiFangKuaiFight:RemoveEffectTimer()
-    if self._EffectTimer then
-        for _, timer in pairs(self._EffectTimer) do
-            XScheduleManager.UnSchedule(timer)
-        end
+    for _, timer in pairs(self._EffectTimer) do
+        XScheduleManager.UnSchedule(timer)
+    end
+    for _, timer in pairs(self._UltimaSlashEffectTimer) do
+        XScheduleManager.UnSchedule(timer)
     end
     self._EffectTimer = {}
+    self._UltimaSlashEffectTimer = {}
 end
 
 function XUiFangKuaiFight:RemoveCreateTimer()
@@ -1328,7 +1344,7 @@ function XUiFangKuaiFight:PlayGuide(x, y, dir)
     local gridX = tonumber(x)
     local gridY = tonumber(y)
     local dimGridX = gridX + tonumber(dir)
-    local blockData = self._Game:FindGuideBlock(gridX, gridY, dimGridX)
+    local blockData = self._Game:FindGuideBlock(gridX, gridY)
     if not blockData then
         return
     end
@@ -1337,6 +1353,10 @@ function XUiFangKuaiFight:PlayGuide(x, y, dir)
         return
     end
     block:ForceMoveX(dimGridX)
+end
+
+function XUiFangKuaiFight:GetExitFevGuideFlag()
+    return self._Game:GetExitFevGuideFlag()
 end
 
 --endregion

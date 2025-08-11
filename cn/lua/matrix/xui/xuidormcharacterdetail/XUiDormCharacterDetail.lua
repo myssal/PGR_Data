@@ -21,8 +21,9 @@ function XUiDormCharacterDetail:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_MOOD_CHANGED, self.UpdateMoodInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_VITALITY_CHANGED, self.UpdateVitalityInfo, self)
 
-    if self.Resource then
-        self.Resource:Release()
+    if self.LoadUrl then
+        XSceneResourceManager.Unload(self.LoadUrl)
+        self.LoadUrl = nil
     end
 
     if self.Model then
@@ -122,8 +123,10 @@ function XUiDormCharacterDetail:InitModelInfo()
     local root = self.UiModelGo.transform
     local target = root:FindTransform("PanelRoleModel")
 
-    self.Resource = CS.XResourceManager.Load(charStyleConfig.Model)
-    self.Model = CS.UnityEngine.Object.Instantiate(self.Resource.Asset)
+    local url = charStyleConfig.Model
+    self.LoadUrl = url
+    local asset = XSceneResourceManager.LoadSync(url)
+    self.Model = CS.UnityEngine.Object.Instantiate(asset)
     self.Model.transform:SetParent(target, false)
     self.Model.gameObject:SetLayerRecursively(target.gameObject.layer)
     self.PanelDrag.Target = self.Model.transform

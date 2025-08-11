@@ -807,7 +807,7 @@ XTheatreManagerCreator = function()
         end
 
         --分包资源检测
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Theatre) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Theatre) then
             return false
         end
 

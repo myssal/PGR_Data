@@ -64,6 +64,7 @@
 ---@field FubenAssignManager XFubenAssignManager
 ---@field InputManagerPc InputManagerPc
 ---@field FubenActivityBossSingleManager XFubenActivityBossSingleManager
+---@field CloudGameManager XCloudGameManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -97,7 +98,7 @@ function XDataCenter.InitBeforeLogin()
     CsXGameEventManager.Instance:Clear()
 end
 
-function XDataCenter.Init()
+function XDataCenter.InitDependency()
     if XMain.IsEditorDebug then
         CS.XLuaEngine.Reload()
     end
@@ -285,12 +286,12 @@ function XDataCenter.Init()
     InitManager("InvertCardGameManager", XInvertCardGameManagerCreator)
     InitManager("MovieAssembleManager", XMovieAssembleManagerCreator)
     InitManager("MineSweepingManager", XMineSweepingManagerCreator)
-    --InitManager("LivWarmActivityManager", XLivWarmActivityManagerCreator)
+    InitManager("LivWarmActivityManager", XLivWarmActivityManagerCreator)
 
     InitManager("SameColorActivityManager", XSameColorGameActivityManagerCreator)
     InitManager("ActivityCalendarManager", XActivityCalendarManagerCreator)
-    --InitManager("LivWarmSoundsActivityManager", XLivWarmSoundsActivityCreator)
-    --InitManager("LivWarmExtActivityManager", XLivWarmExtActivityCreator)
+    InitManager("LivWarmSoundsActivityManager", XLivWarmSoundsActivityCreator)
+    InitManager("LivWarmExtActivityManager", XLivWarmExtActivityCreator)
     InitManager("PickFlipManager", XPickFlipManagerCreator)
     InitManager("NewRegressionManager", XNewRegressionManagerCreator)
     InitManager("Regression3rdManager", XRegression3rdManagerCreator)
@@ -319,9 +320,15 @@ function XDataCenter.Init()
     InitManager("KickOutManager", XKickOutManagerCreator)
     InitManager("XQualityManager", XQualityManagerCreator)
 
+    InitManager("CloudGameManager", XCloudGameManagerCreator)
+
     XDataCenter.FubenManagerEx.Init()
 
     CS.XLuaMethodManager.RefreshAll()
     DataCenterProfiler:Stop()
     -- XLog.Debug(DataCenterProfiler)
+end
+
+function XDataCenter.InitRepeat()
+    XDataCenter.InitDependency()
 end

@@ -49,6 +49,7 @@ function XUiLogin:OnEnable()
     CS.XAudioManager.RemoveCDCueStopStampDic()
     CS.XAudioManager.ClearAisacCurValueDic()
     XLuaAudioManager.ResetSystemAudioVolume()
+    XDataCenter.CloudGameManager.HotPatchEnterGame()
 end
 
 function XUiLogin:CheckFool()
@@ -224,6 +225,10 @@ end
 
 function XUiLogin:GetProtocolContent()
     local protocolData = nil
+    -- 云游戏不需要协议
+    if XDataCenter.UiPcManager.IsCloudGame() then 
+        return nil
+    end
     if XUserManager.IsKuroSdk() then 
         -- KuroSDK 接口不一样
         if CS.XHeroSdkAgent.GetKuroProtocolData then

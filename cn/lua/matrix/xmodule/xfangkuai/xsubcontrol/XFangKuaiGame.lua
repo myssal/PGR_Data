@@ -593,6 +593,26 @@ function XFangKuaiGame:AddOperate(operate, args)
     table.insert(self._OperateMap[operate], args)
 end
 
+-- 消除模式可以叠加，比如同时是斩击和首席消除
+function XFangKuaiGame:AddClearOperate(gridY, op)
+    local extraArgs = nil
+    local datas = self._OperateMap[OperateMode.Clear]
+    if not XTool.IsTableEmpty(datas) then
+        for _, arg in ipairs(datas) do
+            if arg[1] == gridY then
+                extraArgs = arg
+                break
+            end
+        end
+    end
+    if extraArgs then
+        local extraOp = extraArgs[2]
+        extraArgs[2] = op | extraOp
+    else
+        self:AddOperate(OperateMode.Clear, { gridY, op })
+    end
+end
+
 function XFangKuaiGame:RunOperate(operate)
     local clearLineDict = {}
     local maxOperateTime = 0
@@ -638,18 +658,6 @@ function XFangKuaiGame:RunAllOperate()
         maxTime = math.max(maxTime, time)
     end
     return maxTime
-end
-
-function XFangKuaiGame:IsExistClearOperate(line)
-    local args = self._OperateMap[OperateMode.Clear]
-    if not XTool.IsTableEmpty(args) then
-        for _, arg in ipairs(args) do
-            if arg[1] == line then
-                return true
-            end
-        end
-    end
-    return false
 end
 
 function XFangKuaiGame:AddNewBlocks(line)
@@ -908,11 +916,9 @@ function XFangKuaiGame:CheckAllClearUp()
             end
         end
         if canClearUp then
-            if not self:IsExistClearOperate(y) then
-                self:AddOperate(OperateMode.Clear, { y, XEnumConst.FangKuai.ClearType.Normal })
-            end
             -- 检查是否消除了首席方块
             self:CheckClearChiefBlock(y)
+            self:AddClearOperate(y, XEnumConst.FangKuai.ClearType.Normal)
         end
     end
 end
@@ -1243,11 +1249,11 @@ function XFangKuaiGame:CheckWaitFevLine()
             -- 等待预览线上升到方块最高行+1的位置
             waitLine = self:GetExistBlockLayerNum() + 1 - self._FevLineBottom
         end
-        waitTime = self._MainControl:GetFevMoveUpTime(waitLine)
+        waitTime = self._MainControl:GetFevMoveUpWaitTime(waitLine)
     else
         -- 等待预览线下降到方块最高行+1的位置
         waitLine = self._FevLineTop - self:GetExistBlockLayerNum() - 1
-        waitTime = self._MainControl:GetFevMoveDownTime(waitLine)
+        waitTime = self._MainControl:GetFevMoveDownWaitTime(waitLine)
     end
 
     XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_LINE_MOVE, isUp)
@@ -1494,11 +1500,7 @@ end
 
 --region 引导
 
-function XFangKuaiGame:FindGuideBlock(gridX, gridY, dimGridX)
-    if not self:CheckGridEmpty(dimGridX, gridY) then
-        XLog.Error(string.format("引导播放失败：(%s,%s)位置上已有其他方块"), dimGridX, gridY)
-        return
-    end
+function XFangKuaiGame:FindGuideBlock(gridX, gridY)
     local dimBlockData
     for blockData, _ in pairs(self._BlockToGridMap) do
         local grid = blockData:GetHeadGrid()
@@ -1512,6 +1514,14 @@ function XFangKuaiGame:FindGuideBlock(gridX, gridY, dimGridX)
         return
     end
     return dimBlockData
+end
+
+function XFangKuaiGame:InitExitFevGuideFlag()
+    self._GuideExitFevFlag = false
+end
+
+function XFangKuaiGame:GetExitFevGuideFlag()
+    return self._GuideExitFevFlag
 end
 
 --endregion
@@ -1586,6 +1596,8 @@ function XFangKuaiGame:CheckEnterOrExitFever()
         self:AddFevAction(FeverState.WaitLineUp, true)
         return true
     elseif isExit then
+        self._GuideExitFevFlag = true
+        XDataCenter.GuideManager.CheckGuideOpen()
         self:AddFevAction(FeverState.ExitDown)
         self:AddFevAction(FeverState.WaitLineUp, false)
         return true

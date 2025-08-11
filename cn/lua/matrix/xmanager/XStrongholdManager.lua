@@ -256,7 +256,7 @@ XStrongholdManagerCreator = function()
         end
 
         --分包资源检测
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Stronghold) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Stronghold) then
             return false
         end
 

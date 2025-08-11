@@ -182,6 +182,14 @@ function XBWCourseContentEntity:GetTaskRewardIcon()
     return ""
 end
 
+function XBWCourseContentEntity:GetTaskRewardIconNoneColor()
+    if not self:IsNil() then
+        return self._OwnControl:GetTaskRewardItemIconNoneColor(self:GetContentId())
+    end
+
+    return ""
+end
+
 ---@return XBWCourseExploreEntity[]
 function XBWCourseContentEntity:GetExploreEntitys()
     return self._ExploreEntitys or {}

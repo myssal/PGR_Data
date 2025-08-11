@@ -7,6 +7,11 @@ local XUiGridTheatre5ShopItem = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/U
 
 function XUiGridTheatre5ShopContainer:OnStart()
     self:InitBindItem()
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
+end
+
+function XUiGridTheatre5Container:OnDestroy()
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
 end
 
 function XUiGridTheatre5ShopContainer:InitBindItem()
@@ -51,6 +56,10 @@ end
 
 ---@param eventData UnityEngine.EventSystems.PointerEventData
 function XUiGridTheatre5ShopContainer:OnPointerExit(eventData)
+    self:CancelFocus()
+end
+
+function XUiGridTheatre5ShopContainer:CancelFocus()
     if self.ImgSelect then
         self.ImgSelect.gameObject:SetActiveEx(false)
     end
@@ -60,6 +69,12 @@ function XUiGridTheatre5ShopContainer:OnPointerExit(eventData)
     end
 
     self._Control.ShopControl:SetFocusContainer(nil, nil)
+end
+
+function XUiGridTheatre5ShopContainer:OnApplicationPauseEvent(isPause)
+    if self._Control.ShopControl:CheckIsSameContainer(self.ContainerType, self.ContainerIndex) then
+        self:CancelFocus()
+    end
 end
 
 return XUiGridTheatre5ShopContainer

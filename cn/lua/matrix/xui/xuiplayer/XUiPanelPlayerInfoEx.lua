@@ -174,6 +174,12 @@ function XUiPanelPlayerInfoEx:AutoAddListener()
     else
         self:RegisterClickEvent(self.BtnDetails, self.OnBtnDetailsClick)
     end
+
+    if self.BtnLogout then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+            self.BtnLogout.gameObject:SetActiveEx(false)
+        end
+    end
 end
 -- auto
 

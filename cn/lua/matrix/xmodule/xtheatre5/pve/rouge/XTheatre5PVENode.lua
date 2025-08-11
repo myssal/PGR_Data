@@ -79,7 +79,8 @@ function XTheatre5PVENode:ClearNodeData()
 end
 
 function XTheatre5PVENode:OpenUiPanel(uiName, ...)
-    local topUiName =  XLuaUiManager.GetTopUiName()
+    local topUiName = XLuaUiManager.GetUIStackTopUiName()
+    --local topUiName =  XLuaUiManager.GetTopUiName()
     --主界面不能关闭
     if topUiName == "UiTheatre5Main" then
         XLuaUiManager.Open(uiName, ...)

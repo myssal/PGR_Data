@@ -19,31 +19,43 @@ function XUiGuideNew:OnAwake()
     self.LastClickTime = 0
     self.ContinueClickTimes = 0
     self.ClickInterval = 0.5
+    self.MaskClickAreaType = nil  --V3.6 增加点击区域设置
 end
 
 function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, callback, offsetX, offsetY, maskClickAreaType)
     --V3.6 增加点击区域设置  以防万一加个默认值
-    if maskClickAreaType == nil then
-        maskClickAreaType = 0
+    self.MaskClickAreaType = maskClickAreaType
+    if self.MaskClickAreaType == nil then
+        self.MaskClickAreaType = 0
     end
+
     self.Guide = self.BtnPanelMaskGuide:GetComponent("XGuide")
     if (not self.Guide) then
         self.Guide = self.BtnPanelMaskGuide.gameObject:AddComponent(typeof(CS.XGuide))
     end
     self.Guide:SetPass(false)
     self.Guide:SetTimeText(self.TxtTime)
-
     self.Callback = callback
     self.IsWeakGuide = isWeakGuide
+    
+    --V3.7 点击区域是全屏时 0.5秒内点击无反应
+    if(self.MaskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickAnyWhere) then
+        self:ShowBtnMask(true)
+        self.Timer = XScheduleManager.ScheduleOnce(function()
+            self:ShowBtnMask(false)
+        end,  500)
+    end
+    
     if targetImg then
         CS.XGuideEventPass.IsPassEvent = true
         CS.XGuideEventPass.IsFightGuide = true
         CS.XGuideEventPass.IsPassAll = false
         self.IsFight = true
-        self:ShowMark(true, true)
+        self:ShowMarkNew(true, true)
         local anchor = CS.UnityEngine.Vector2(0, 1)
         self:ShowDialog(icon, name, guideDesc, anchor, anchor, CS.UnityEngine.Vector2(500 + offsetX, -380 + offsetY))
         self:FocusOnFightPanel(targetImg)
+        
         self.UiWidget = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass").gameObject:AddComponent(typeof(CS.XUiWidget))
         self.UiWidget:AddPointerDownListener(function(eventData)
             self.Transform:Find("SafeAreaContentPane").gameObject:SetActive(false)
@@ -52,7 +64,7 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         end)
         --V3.6 增加点击区域设置 
         self.UiWidget:AddPointerUpListener(function(eventData)
-            if(maskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickMaskArea) then
+            if(self.MaskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickMaskArea) then
                 self:OnBtnPassClick()
             end
         end)
@@ -66,7 +78,7 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
             end)
             --V3.6 增加点击区域设置 
             maskWidget:AddPointerUpListener(function(eventData)
-                if(maskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickAnyWhere) then
+                if(self.MaskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickAnyWhere) then
                     self:OnBtnPassClick()
                 end
             end)
@@ -87,7 +99,11 @@ function XUiGuideNew:OnDestroy()
         self.Callback = nil
     end
     -- end)
-
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = false
+    end
+    
     self:SendCloseUiClick()
 end
 
@@ -239,3 +255,7 @@ function XUiGuideNew:ShowMarkNew(isShowMask, isShowRay)
     self.BtnPanelMaskGuide.gameObject:SetActive(isShowRay)
     self.Guide:SetPass(not isShowMask)
 end
+
+function XUiGuideNew:ShowBtnMask(Enable)
+    self.BtnMaskAll.gameObject:SetActive(Enable)
+end 

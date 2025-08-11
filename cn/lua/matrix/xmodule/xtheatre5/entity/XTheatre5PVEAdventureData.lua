@@ -34,6 +34,7 @@ function XTheatre5PVEAdventureData:UpdatePVENextEvent(nextEventId)
         self.Status = XMVCA.XTheatre5.EnumConst.PlayStatus.PveEveHandle
     else
         self.Status = XMVCA.XTheatre5.EnumConst.PlayStatus.NotStart
+        
     end    
 end
 
@@ -73,6 +74,15 @@ function XTheatre5PVEAdventureData:GetCurEventId()
     end    
 end
 
+function XTheatre5PVEAdventureData:GetFirstEventId()
+    if self.PveChapterData and self.PveChapterData.CurPveChapterLevel then
+        if not XTool.IsTableEmpty(self.PveChapterData.CurPveChapterLevel.RunEvents) then
+            local count = #self.PveChapterData.CurPveChapterLevel.RunEvents
+            return self.PveChapterData.CurPveChapterLevel.RunEvents[count]
+        end    
+    end    
+end
+
 --获取制定关卡给敌人上的buff
 function XTheatre5PVEAdventureData:GetLevelEnemyMagicDict(level)
     if not self.PveChapterData then
@@ -80,10 +90,7 @@ function XTheatre5PVEAdventureData:GetLevelEnemyMagicDict(level)
     end    
     local chapterCfg = self.OwnerModel:GetPveChapterCfg(self.PveChapterData.ChapterId)
     local chapterLevelCfg = self.OwnerModel:GetChapterLevelCfg(chapterCfg.LevelGroup, level)
-    if XTool.IsTableEmpty(chapterLevelCfg.EnemyBuff) or XTool.IsTableEmpty(chapterLevelCfg.EnemyBuffLevel) then
-        return
-    end
-    if #chapterLevelCfg.EnemyBuff ~= #chapterLevelCfg.EnemyBuffLevel then
+    if XTool.IsTableEmpty(chapterLevelCfg.EnemyBuff) and XTool.IsTableEmpty(chapterLevelCfg.MonsterNerfBuff) then
         return
     end
     local buffDict = {}        

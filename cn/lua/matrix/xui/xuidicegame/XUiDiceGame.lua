@@ -75,7 +75,7 @@ end
 
 function XUiDiceGame:OnBtnHelpClick()
 	local helpId = tonumber(XDataCenter.DiceGameManager.GetActivityConfigValue("HelpId"))
-	local helpDataKey = XHelpCourseConfig.GetHelpCourseTemplateById(helpId).Function or "DiceGameHelp"
+	local helpDataKey = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId).Function or "DiceGameHelp"
 	XUiManager.ShowHelpTip(helpDataKey)
 end
 

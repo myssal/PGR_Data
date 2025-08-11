@@ -415,7 +415,7 @@ function XActivityBrieIsOpen.FubenActivityTrial()
     --        endTime = chapterEndTime
     --    end
     --end
-    local functionId = XFunctionManager.FunctionName.FubenActivityTrial
+    local functionId = XFunctionManager.FunctionName.Experiment
     local beginTime, endTime = XDataCenter.FubenExperimentManager.GetSkinTrialTime()
     local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, endTime, endTime)
 

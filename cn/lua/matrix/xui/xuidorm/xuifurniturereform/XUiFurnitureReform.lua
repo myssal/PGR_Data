@@ -357,7 +357,7 @@ end
 
 --设置动态列表数据
 function XUiFurnitureReform:SetupDynamicTable()
-    if not self.TabIndex then
+    if not self.TabIndex or not self.ChildType then
         return
     end
     self.SViewTemplatePanel:ClearCache()

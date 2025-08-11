@@ -85,8 +85,28 @@ function XUiNode:_CheckUIActive()
     if XLuaUiManager.IsWindowsEditor() then
         if self._StateFlag == XUiNodeState.Enable then
             if not self.GameObject.activeInHierarchy then
-                XLog.Error(string.format("子节点 %s 显示后, activeInHierarchy依旧为false, go name : %s",
-                        self.__cname, CS.XUnityEx.GetPath(self.Transform)))
+                -- 向上找到这个transform.activeSelf == false的父节点
+                local transform = self.Transform
+                ---@type UnityEngine.Transform
+                local parentBad
+                if transform then
+                    for i = 1, 99 do
+                        transform = transform.parent
+                        if not transform then
+                            break
+                        end
+                        if not transform.gameObject.activeSelf then
+                            parentBad = transform
+                        end
+                    end
+                end
+                if parentBad then
+                    XLog.Error(string.format("子节点 %s 显示后, activeInHierarchy依旧为false, 未激活的父节点为: %s, go name : %s",
+                            self.__cname, parentBad.name, CS.XUnityEx.GetPath(self.Transform)))
+                else
+                    XLog.Error(string.format("子节点 %s 显示后, activeInHierarchy依旧为false, go name : %s",
+                            self.__cname, CS.XUnityEx.GetPath(self.Transform)))
+                end
             end
         elseif self._StateFlag == XUiNodeState.Disable then
             --暂时用不了, 因为是先OnDisable再SetActive
@@ -550,5 +570,10 @@ end
 
 function XUiNode:_RemoveTimerIdAndDoCallback(timerId, cb)
     self._TweenAnimationAgency:_RemoveTimerIdAndDoCallback(timerId, cb)
+end
+
+function XUiNode:DelayCall(func, delayTime)
+    local timeId = XScheduleManager.ScheduleOnce(func, delayTime * XScheduleManager.SECOND)
+    self._TweenAnimationAgency:_AddTimerId(timeId)
 end
 --endregion

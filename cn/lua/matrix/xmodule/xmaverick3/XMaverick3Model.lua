@@ -88,11 +88,6 @@ function XMaverick3Model:IsTalentUnlock(id)
     return true
 end
 
-function XMaverick3Model:IsStagePlaying(stageId)
-    local saved = self.ActivityData:GetStageSavedData(stageId)
-    return saved and saved.StageSavePoint > 0
-end
-
 function XMaverick3Model:IsShopRed()
     if not XTool.IsNumberValid(self._ActivityId) then
         return false

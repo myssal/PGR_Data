@@ -110,8 +110,8 @@ function XUiFubenMainLineBanner:InitTabBtnGroup()
         self.BtnTabFW,
     }
     self.BtnTabDZ:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Prequel))
-    self.BtnTabJD:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.FubenNightmare))
-    self.BtnTabFW:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Extra))
+    self.BtnTabJD:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Bfrt))
+    self.BtnTabFW:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ExtralChapter))
     self.BtnTabDP:SetDisable(not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ShortStory)) 
     self.PanelTab:Init(tabGroup, function(tabIndex) self:OnClickTabCallBack(tabIndex) end)
 
@@ -143,12 +143,12 @@ function XUiFubenMainLineBanner:OnClickTabCallBack(tabIndex)
         end
         self:RefreshPrequel(true)
     elseif tabIndex == TAB_BTN_INDEX.BFRT then
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenNightmare) then
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Bfrt) then
             return
         end
         self:RefreshBfrt(true)
     elseif tabIndex == TAB_BTN_INDEX.EXTRA then
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Extra) then
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ExtralChapter) then
             return
         end
         self:RefreshExtra(true)

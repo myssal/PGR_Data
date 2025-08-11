@@ -91,7 +91,7 @@ function XMaverick3Agency:GetIsOpen(noTips, activityId)
 end
 
 function XMaverick3Agency:ExOpenMainUi(activityId)
-    if not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.GAMEPLAY) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Maverick3) then
         return
     end
     

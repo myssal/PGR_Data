@@ -68,10 +68,13 @@ end
 
 function XUiPanelWheelChairManualPassport:OnRecieveAllClick()
     if XMVCA.XWheelchairManual:CheckManualAnyRewardCanGet() then
+        XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
         XMVCA.XWheelchairManual:RequestWheelchairManualGetManualReward(0, function(success, rewardGoodsList)
             if success then
                 self._PassportPanel:Refresh()
                 self._Control:ShowRewardList(rewardGoodsList)
+            else
+                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
             end
         end)
     end

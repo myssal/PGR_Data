@@ -201,7 +201,7 @@ end
 
 --打开图文面板
 function XUiFubenExperimentDetail:OnBtnHelpClick()
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(self.TrialLevelInfo.HelpCourseId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(self.TrialLevelInfo.HelpCourseId)
     XUiManager.ShowHelpTip(template.Function)
 end
 

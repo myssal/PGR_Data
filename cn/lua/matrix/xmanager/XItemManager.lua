@@ -18,6 +18,10 @@ XItemManagerCreator = function()
     local RedEnvelopeInfos = {}                      -- 红包道具使用记录
     local ItemCollectionIds = {}                     -- 已解锁收藏道具Id 
 
+    ---@type XQueue
+    local AutoGiftRewardQueue = XQueue.New()        -- 自开型礼包的奖励队列，用于延迟展示
+    local LockAutoGiftRewardShow = false            -- 是否锁定自开型礼包奖励弹窗
+    
     local BuyAssetCoinBase = 0
     local BuyAssetCoinMul = 0
     -- local BuyAssetCoinCritProb = 0
@@ -109,7 +113,6 @@ XItemManagerCreator = function()
         RepeatChallengeCoin = 62738, -- 复刷关代币
         DlcMultiplayerCoin = 97020,  --DLC多人联机玩法货币
         DlcMultiplayerBpExp = 97045, --DLC多人联机玩法Bp经验
-        PokerGuessing2ItemId = 97044, -- 情人节玩法
         ScoreTowerCoin = 96203, -- 新矿区代币
         Theatre5Coin = 97054, -- 肉鸽5货币
     }
@@ -330,6 +333,8 @@ XItemManagerCreator = function()
         end)
 
         XItemManager.InitAllItems()
+
+        AutoGiftRewardQueue:Clear()
     end
 
     function XItemManager.InitAllItems()
@@ -1887,14 +1892,53 @@ XItemManagerCreator = function()
                         end
                         rewardAmount = rewardAmount - 1
                         if rewardAmount == 0 then
-                            XUiManager.OpenUiObtain(allReward)
+                            --- 锁定或者在战斗内都入列，不直接弹出
+                            if LockAutoGiftRewardShow or not CS.XFightInterface.IsOutFight then
+                                -- 锁定情况下不弹窗，将结果先缓存下来
+                                AutoGiftRewardQueue:Enqueue(allReward)
+                            else
+                                -- 可能之前锁定了，但解锁时没有立刻检查，这里触发后要尝试把队列里存在的奖励也弹出来
+                                XItemManager.CheckAutoGiftRewardShow()
+                                
+                                XUiManager.OpenUiObtain(allReward)
+                            end
                         end
                     end)
                 end
             end
         end 
     end
+    
+    --- 设置自开型礼包弹窗锁定
+    function XItemManager.SetAutoGiftRewardShowLock(isLock, noPop)
+        LockAutoGiftRewardShow = isLock
 
+        if not isLock and not noPop then
+            -- 解锁时，立刻检查队列
+            XItemManager._TryPopAllAutoGiftRewardShow()
+        end
+    end
+    
+    --- 手动检查是否有礼包弹窗
+    function XItemManager.CheckAutoGiftRewardShow()
+        if LockAutoGiftRewardShow then
+            return false
+        end
+
+        if AutoGiftRewardQueue:Count() > 0 then
+            XItemManager._TryPopAllAutoGiftRewardShow()
+            return true
+        end
+        return false
+    end
+    
+    function XItemManager._TryPopAllAutoGiftRewardShow()
+        while AutoGiftRewardQueue:Count() > 0 do
+            local rewardList = AutoGiftRewardQueue:Dequeue()
+
+            XUiManager.OpenUiObtain(rewardList)
+        end
+    end
 
     XItemManager.Init()
     return XItemManager

@@ -122,6 +122,15 @@ function XLuaVector2.GetLinesCrossPoint(line1P1, line1P2, line2P1, line2P2)
     crossLine:Update(x, y)
     return crossLine
 end
+
+--- 计算两个向量的夹角（欧拉角）
+function XLuaVector2.Angle(fromX, fromY, toX, toY)
+    local dot = fromX * toX + fromY * toY
+    local cos0 = dot / (math.sqrt(fromX * fromX + fromY * fromY) * math.sqrt(toX * toX + toY * toY))
+    local radians = math.acos(cos0) -- 弧度
+    
+    return radians * 180 / math.pi
+end
 --endregion
 
 --region public

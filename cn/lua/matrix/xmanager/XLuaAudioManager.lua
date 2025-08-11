@@ -9,6 +9,12 @@ XLuaAudioManager.SoundType = {
     Voice = 1 << 2,
 }
 
+XLuaAudioManager.Sound2PlayType = {
+    [XLuaAudioManager.SoundType.Music] = XAudioManager.PlayType.Music,
+    [XLuaAudioManager.SoundType.SFX] = XAudioManager.PlayType.SFX,
+    [XLuaAudioManager.SoundType.Voice] = XAudioManager.PlayType.Cv,
+}
+
 XLuaAudioManager.PlayFunc = {
     [XLuaAudioManager.SoundType.Music] = XAudioManager.PlayMusic,
     [XLuaAudioManager.SoundType.SFX] = XAudioManager.PlayAudio,
@@ -380,7 +386,8 @@ function XLuaAudioManager.SetWholeSelector(selectorName, labelName)
 end
 
 function XLuaAudioManager.MuteAisacByPlayType(type, isMute)
-    XAudioManager.MuteAisacByPlayType(type, isMute)
+    local curType = XLuaAudioManager.Sound2PlayType[type]
+    XAudioManager.MuteAisacByPlayType(curType, isMute)
 end
 
 function XLuaAudioManager.SetMusicSourceFirstBlockIndex(index)

@@ -244,6 +244,9 @@ function XUiMainTerminal:RefreshSubMenu()
 end
 
 function XUiMainTerminal:GetSubMenuList()
+    if CS.XRemoteConfig.IsHideFunc or CS.XRemoteConfig.IsHideFuncAndroid then
+        return
+    end
     local func = function(list, subType)
         local newList = {}
         for _, item in ipairs(list or {}) do

@@ -102,6 +102,7 @@ function XUiBountyChallengeMainGrid:Update(data)
         if self.TagComplete then
             if data.IsClear then
                 self.TagComplete.gameObject:SetActive(true)
+                self.RImgBgComplete.color = XUiHelper.Hexcolor2Color("B2B2B2FF")
             else
                 self.TagComplete.gameObject:SetActive(false)
             end

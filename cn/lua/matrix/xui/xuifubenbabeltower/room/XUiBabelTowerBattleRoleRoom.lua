@@ -71,11 +71,6 @@ function XUiBabelTowerBattleRoleRoom:AOPOnStartAfter(rootUi)
     rootUi.BtnEnterFight:SetNameByGroup(0, CSXTextManagerGetText("BabelTowerNewRoomBtnName"))
 end
 
--- 检查是否开启效应选择
-function XUiBabelTowerBattleRoleRoom:CheckIsEnableGeneralSkillSelection()
-    return false
-end
-
 -- 检查是否开启自选动画
 function XUiBabelTowerBattleRoleRoom:CheckShowAnimationSet()
     return false

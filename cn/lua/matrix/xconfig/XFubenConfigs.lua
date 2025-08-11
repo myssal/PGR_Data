@@ -414,6 +414,10 @@ function XFubenConfigs.GetStageTypeRobot(stageType)
     return XMVCA.XFuben:GetStageTypeRobot(stageType)
 end
 
+function XFubenConfigs.GetStageRobotIdList(stageId, ignoreError)
+    return XMVCA.XFuben:GetStageRobotIdList(stageId, ignoreError)
+end
+
 function XFubenConfigs.IsAllowRepeatChar(stageType)
     return XMVCA.XFuben:IsAllowRepeatChar(stageType)
 end

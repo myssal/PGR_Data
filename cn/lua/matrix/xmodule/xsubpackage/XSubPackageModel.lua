@@ -293,7 +293,7 @@ end
 --玩法入口依赖的所有Subpackage
 function XSubPackageModel:GetAllSubpackageIds(entryType, param)
     local subId = self:GetEntrySubpackageId(entryType, param)
-    XLog.Debug("hyx GetAllSubpackageIds 拿到 ", entryType,param,  subId)
+    -- XLog.Debug("SP/DN GetAllSubpackageIds 拿到 ", entryType,param,  subId)
     --不依赖分包
     if subId == XEnumConst.SUBPACKAGE.CUSTOM_SUBPACKAGE_ID.INVALID then
         return nil
@@ -301,14 +301,14 @@ function XSubPackageModel:GetAllSubpackageIds(entryType, param)
         -- 必要资源SubPackageId
         local list = self:GetNecessarySubIds()
 
-        XLog.Debug("hyx GetAllSubpackageIds 拿 NECESSARY ", entryType,param,  list)
+        -- XLog.Debug("SP/DN GetAllSubpackageIds 拿 NECESSARY ", entryType,param,  list)
 
         -- ExtraSubPackageIds 的作用是策划可以自定义配置不同的SubPackageId
         if entryType then
             local tempList = self._SubIntercept["ExtraSubPackageIds"][entryType]
             local extraSubPackageIds = tempList and tempList[subId] 
 
-            XLog.Debug("hyx  GetAllSubpackageIds 追 NECESSARY", entryType,  extraSubPackageIds)
+            -- XLog.Debug("SP/DN  GetAllSubpackageIds 追 NECESSARY", entryType,  extraSubPackageIds)
 
             if not XTool.IsTableEmpty(extraSubPackageIds) then
                 for _, subpackageId in ipairs(extraSubPackageIds) do
@@ -325,13 +325,13 @@ function XSubPackageModel:GetAllSubpackageIds(entryType, param)
             list[#list + 1] = subpackageId
         end
 
-        XLog.Debug("hyx GetAllSubpackageIds 拿 普通 ", entryType,param,  list)
+        -- XLog.Debug("SP/DN GetAllSubpackageIds 拿 普通 ", entryType,param,  list)
 
         if entryType then
             local tempList = self._SubIntercept["ExtraSubPackageIds"][entryType]
             local extraSubPackageIds = tempList and tempList[subId] 
 
-            XLog.Debug("hyx  GetAllSubpackageIds 追 普通", entryType,  extraSubPackageIds)
+            -- XLog.Debug("SP/DN  GetAllSubpackageIds 追 普通", entryType,  extraSubPackageIds)
 
             if not XTool.IsTableEmpty(extraSubPackageIds) then
                 for _, subpackageId in ipairs(extraSubPackageIds) do

@@ -22,6 +22,7 @@ end
 
 function XWheelchairManualControl:OnRelease()
     --self:StopTickOutCheckTimer()
+    XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
 end
 
 --region ActivityData
@@ -860,11 +861,13 @@ function XWheelchairManualControl:ShowRewardList(rewardList)
             -- 先展示成员、武器，最后再弹窗汇总
             XLuaUiManager.Open("UiWheelchairManualDrawShowNew", nil, weaponAndCharacterList, nil, 1, function()
                 XUiManager.OpenUiObtain(rewardList, nil, nil, nil)
+                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
                 -- 领完奖要刷新下页签红点
                 XEventManager.DispatchEvent(XEventId.EVENT_WHEELCHAIRMANUAL_REFRESH_TABS_REDDOT)
             end, true)
         else
             XUiManager.OpenUiObtain(rewardList, nil, nil, nil)
+            XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
             -- 领完奖要刷新下页签红点
             XEventManager.DispatchEvent(XEventId.EVENT_WHEELCHAIRMANUAL_REFRESH_TABS_REDDOT)
         end

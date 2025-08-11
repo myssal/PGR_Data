@@ -34,6 +34,7 @@ function XUiBigWorldBackpack:OnAwake()
 
     self._CurrentSelectItemIndex = false
     self._CurrentSelectIndex = 0
+    self._DefaultIndex = 4
 
     self:_InitUi()
     self:_InitTabs()
@@ -71,12 +72,14 @@ function XUiBigWorldBackpack:OnBagTagsClick(index)
     local selectType = self._IndexTypeMap[index]
 
     if selectType and self._CurrentSelectIndex ~= index then
+        if self._CurrentSelectIndex ~= 0 then
+            self:PlayAnimation("QieHuan")
+        end
         self._CurrentSelectIndex = index
         self._CurrentSelectItemIndex = false
         self._DetailUi:Close()
         self:_RefreshTitle()
         self:_RefreshDynamicTable()
-        self:PlayAnimation("QieHuan")
     end
 end
 
@@ -124,11 +127,12 @@ function XUiBigWorldBackpack:OnDynamicTableEvent(event, index, grid)
             if index <= self.MaxCount then
                 local col = math.ceil(index / self.ColCount)
                 local row = (index - 1) % self.ColCount + 1
-                grid:PlayEnableAnimation(col + row - 1)
+                grid:PlayEnableAnimation(col + row - 1 + self._DefaultIndex)
             else
                 grid:PlayEnableAnimation(1)
             end
         end
+        self._DefaultIndex = 0
     end
 end
 

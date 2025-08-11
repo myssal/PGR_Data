@@ -87,7 +87,7 @@ end
 
 function XUiCoupletGame:RegisterHelpBtn()
     local helpId = XDataCenter.CoupletGameManager.GetHelpId()
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
     self:BindHelpBtn(self.BtnHelp, template.Function)
 end
 
@@ -159,7 +159,7 @@ function XUiCoupletGame:CheckHitFaceHelp()
     local hitFaceData = XSaveTool.GetData(string.format( "%s%s", XCoupletGameConfigs.COUPLET_GAME_HELP_HIT_KEY, XPlayer.Id))
     if not hitFaceData or hitFaceData == XCoupletGameConfigs.HitFaceHelpState.NotHit then
         local helpId = XDataCenter.CoupletGameManager.GetHelpId()
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
         XUiManager.ShowHelpTip(template.Function)
         XSaveTool.SaveData(string.format( "%s%s", XCoupletGameConfigs.COUPLET_GAME_HELP_HIT_KEY, XPlayer.Id), XCoupletGameConfigs.HitFaceHelpState.Hited)
     end

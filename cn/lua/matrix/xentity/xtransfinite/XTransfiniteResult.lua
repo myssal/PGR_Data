@@ -163,10 +163,6 @@ function XTransfiniteResult:IsShowExtraCondition()
     return self._IsShowExtraCondition
 end
 
-function XTransfiniteResult:GetStageId()
-    return self._StageId
-end
-
 function XTransfiniteResult:GetStageGroupId()
     return self._StageGroupId
 end

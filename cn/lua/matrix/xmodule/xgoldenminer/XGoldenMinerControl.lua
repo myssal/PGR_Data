@@ -570,10 +570,6 @@ function XGoldenMinerControl:GetCharacterIdList()
     return characterIdList
 end
 
-function XGoldenMinerControl:CatchCurCharacterId(characterId)
-    self._Model:SetCacheData("_CurCharacterId", characterId)
-end
-
 function XGoldenMinerControl:GetUseCharacterId()
     local characterId = self._Model:GetMineDb():GetCurPlayCharacterId()
     if XTool.IsNumberValid(characterId) and self:IsCharacterUnLock(characterId) then

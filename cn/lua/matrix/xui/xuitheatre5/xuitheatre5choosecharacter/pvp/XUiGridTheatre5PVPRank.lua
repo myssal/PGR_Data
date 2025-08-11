@@ -36,7 +36,7 @@ function XUiGridTheatre5PVPRank:InitStars()
     end
 end
 
-function XUiGridTheatre5PVPRank:Refresh(configId)
+function XUiGridTheatre5PVPRank:Refresh(configId, isShowName)
     self.CharaConfigId = configId
     local characterData = self._Control.PVPControl:GetPVPCharacterDataById(configId, true)
 
@@ -46,10 +46,10 @@ function XUiGridTheatre5PVPRank:Refresh(configId)
         rating = characterData.Rating or 0
     end
 
-    self:RefreshByScore(rating)
+    self:RefreshByScore(rating, nil, isShowName or false)
 end
 
-function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress)
+function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress, isShowName)
     ---@type XTableTheatre5Rank
     local rankCfg = self._Control.PVPControl:GetPVPRankCfgByRatingScore(rating)
     ---@type XTableTheatre5Rank
@@ -57,6 +57,7 @@ function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress)
 
     --设置段位显示
     self.RImgDan:SetRawImage(rankCfg.IconRes)
+    self:ShowRankName(isShowName or false, rankCfg.RankName)
 
     for i, uiObject in ipairs(self.StarGrids) do
         local imgStarOn = uiObject:GetObject('ImgStarOn')
@@ -77,6 +78,10 @@ function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress)
         self.TxtLegendNum.gameObject:SetActiveEx(not hasNextRank)
     end
 
+    if self.ImgLegendNum then
+        self.ImgLegendNum.gameObject:SetActiveEx(not hasNextRank)
+    end
+
     if self.ListStar then
         self.ListStar.gameObject:SetActiveEx(hasNextRank)
     end
@@ -89,6 +94,10 @@ function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress)
 
         if self.TxtLegendNum then
             self.TxtLegendNum.gameObject:SetActiveEx(false)
+        end
+
+        if self.ImgLegendNum then
+            self.ImgLegendNum.gameObject:SetActiveEx(false)
         end
         
         return
@@ -119,6 +128,20 @@ function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress)
 
         if self.TxtLegendNum then
             self.TxtLegendNum.text = rating
+        end
+    end
+end
+
+function XUiGridTheatre5PVPRank:ShowRankName(isShow, rankName)
+    if isShow == nil then
+        isShow = true
+    end
+
+    if self.TxtNameRank then
+        self.TxtNameRank.gameObject:SetActiveEx(isShow)
+
+        if isShow then
+            self.TxtNameRank.text = rankName
         end
     end
 end

@@ -1,5 +1,7 @@
 local stringFormat = string.format
 
+---@class XMovieActionUnLoad
+---@field UiRoot XUiMovie
 local XMovieActionUnLoad = XClass(XMovieActionBase, "XMovieActionUnLoad")
 
 function XMovieActionUnLoad:Ctor(actionData)
@@ -27,7 +29,7 @@ function XMovieActionUnLoad:OnRunning()
     end
 
     if animName then
-        local anim = self.UiRoot[animName]
+        local anim = self.UiRoot:GetUiAnimation(animName)
         if not XTool.UObjIsNil(anim) then
             anim.gameObject:SetActiveEx(false)
         end

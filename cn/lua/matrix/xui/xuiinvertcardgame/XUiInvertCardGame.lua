@@ -91,7 +91,7 @@ end
 
 function XUiInvertCardGame:RegisterHelpBtn()
     local helpId = XDataCenter.InvertCardGameManager.GetHelpId()
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
     self:BindHelpBtn(self.BtnHelp, template.Function)
 end
 
@@ -180,7 +180,7 @@ function XUiInvertCardGame:CheckHitFaceHelp()
     local hitFaceData = XSaveTool.GetData(string.format( "%s%s%s", XInvertCardGameConfig.INVERT_CARD_GAME_HELP_HIT_KEY, XPlayer.Id, XDataCenter.InvertCardGameManager.ActId))
     if not hitFaceData or hitFaceData == XInvertCardGameConfig.HitFaceHelpState.NotHit then
         local helpId = XDataCenter.InvertCardGameManager.GetHelpId()
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
         XUiManager.ShowHelpTip(template.Function)
         XSaveTool.SaveData(string.format( "%s%s%s", XInvertCardGameConfig.INVERT_CARD_GAME_HELP_HIT_KEY, XPlayer.Id, XDataCenter.InvertCardGameManager.ActId), XInvertCardGameConfig.HitFaceHelpState.Hited)
     end

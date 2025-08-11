@@ -184,12 +184,6 @@ function XPcgModel:GetNextStageId(stageId)
     end
 end
 
--- 获取关卡类型
-function XPcgModel:GetStageType(id)
-    local stageCfg = self:GetConfigStage(id)
-    return stageCfg and stageCfg.Type or 0
-end
-
 -- 获取关卡星级条件
 function XPcgModel:GetStageStarConditions(id)
     local stageCfg = self:GetConfigStage(id)

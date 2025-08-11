@@ -8,6 +8,7 @@ local XUiBountyChallengeChapterDetail = XLuaUiManager.Register(XLuaUi, "UiBounty
 
 function XUiBountyChallengeChapterDetail:OnAwake()
     self:BindExitBtns()
+    self:BindHelpBtn(nil, "BountyChallengeHelp")
     XUiHelper.RegisterClickEvent(self, self.BtnDetail, self._OnClickDetail)
     XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self._OnClickFight)
 

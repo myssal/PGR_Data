@@ -39,7 +39,11 @@ function XUiTheatre5Settlement:OnGameDetailNextEvent()
         -- 播放动画
         if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
             self.PanelReward:ShowRankAnimation()
+            -- 检查弹窗
+            XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_RESULT_WIN)
         end
+        -- 检查引导
+        XDataCenter.GuideManager.CheckGuideOpen()
     end)
 end
 

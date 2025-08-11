@@ -96,6 +96,10 @@ function XSkyGardenCafeRound:InitData()
         [EffectTriggerId.CardResourceChanged] = true,
     }
 
+    self._TriggerRoundResourceChanged = {
+        [XMVCA.XSkyGardenCafe.EffectTriggerId.RoundResourceChanged] = true
+    }
+
     self._TriggerDictWhenInDeck = {
         [EffectTriggerId.RoundBegin] = true,
         [EffectTriggerId.Deck2Deal] = true,
@@ -118,6 +122,10 @@ function XSkyGardenCafeRound:InitData()
     self._TriggerDictWhenDeckRoundEnd = {
         [EffectTriggerId.KeepInDeck] = true,
         [EffectTriggerId.RoundEnd] = true,
+    }
+    
+    self._TriggerDictWhenShuffleCard = {
+        [EffectTriggerId.Shuffle] = true,
     }
 end
 
@@ -143,6 +151,9 @@ function XSkyGardenCafeRound:ResetData()
     self._TriggerDictWhenDeckRoundEnd = nil
     self._TriggerDictWhenDealCountChanged = nil
     self._TriggerCardResourceChanged = nil
+    self._TriggerRoundResourceChanged = nil
+    self._DebugAddDeckCards = nil
+    self._TriggerDictWhenShuffleCard = nil
     --清除掉NPC随机点位数据
     self._Model:ClearNpcRandomPoint()
 end
@@ -172,12 +183,20 @@ function XSkyGardenCafeRound:AddEvent()
     end
 
     XMVCA.XSkyGardenCafe:AddInnerEvent(DlcEventId.EVENT_CAFE_APPLY_BUFF, self.OnEventApplyBuff, self)
+
+    if IsDebugBuild then
+        XEventManager.AddEventListener("EVENT_SG_DEBUG_POOL_TO_DECK", self.DebugPoolToDeck, self)
+    end
 end
 
 function XSkyGardenCafeRound:SubEvent()
     self._SortCardFunc = nil
 
     XMVCA.XSkyGardenCafe:RemoveInnerEvent(DlcEventId.EVENT_CAFE_APPLY_BUFF, self.OnEventApplyBuff, self)
+
+    if IsDebugBuild then
+        XEventManager.RemoveEventListener("EVENT_SG_DEBUG_POOL_TO_DECK", self.DebugPoolToDeck, self)
+    end
 end
 
 function XSkyGardenCafeRound:ContinueGame()
@@ -494,16 +513,20 @@ function XSkyGardenCafeRound:DiscardDeckCards(record)
         local cardId = card:GetCardId()
         local isBan = info:IsBanCard(cardId)
         local isStay = info:IsStayInHand(cardId)
+        local isDebugAdd = self:IsDebugAddCard(card)
         --不保留在手上
         if not isStay or isBan then
             card:DoApplyBuff(self._TriggerDictWhenDiscard)
 
-            if not isBan then
+            if not isBan and not isDebugAdd then
                 record[#record + 1] = cardId
             end
             csRemoveIndex[#csRemoveIndex + 1] = i - 1
+            self:RemoveDebugAddCard(card)
             factory:RemoveEntity(card)
             self:RemoveDeck(i)
+        else
+            card:ClearBuffArgs()
         end
     end
 
@@ -528,6 +551,7 @@ function XSkyGardenCafeRound:ClearDeckCards()
     local factory = self._OwnControl:GetCardFactory()
     for i = #self._DeckEntities, 1, -1 do
         local card = self._DeckEntities[i]
+        self:RemoveDebugAddCard(card)
         factory:RemoveEntity(card)
         self:RemoveDeck(i)
     end
@@ -546,9 +570,10 @@ function XSkyGardenCafeRound:DiscardDealCards(record)
     for i = #dealCards, 1, -1 do
         local card = dealCards[i]
         local cardId = card:GetCardId()
-        if not info:IsBanCard(cardId) then
+        if not info:IsBanCard(cardId) and not self:IsDebugAddCard(card) then
             record[#record + 1] = cardId
         end
+        self:RemoveDebugAddCard(card)
         factory:RemoveEntity(card)
         self:RemoveDeal(i)
     end
@@ -573,6 +598,7 @@ function XSkyGardenCafeRound:ClearDealCards()
     local factory = self._OwnControl:GetCardFactory()
     for i = #self._DealEntities, 1, -1 do
         local card = self._DealEntities[i]
+        self:RemoveDebugAddCard(card)
         factory:RemoveEntity(card)
         self:RemoveDeal(i)
     end
@@ -720,6 +746,8 @@ function XSkyGardenCafeRound:DeckToDeal(deckIndex, dealIndex)
     self:DoApplyBuff(true, true, false, self._TriggerDictWhenDealCountChanged, nil)
     --更新出牌区卡牌信息
     self:UpdateDealCardInfo()
+    --触发回合资源改变
+    self:DoApplyBuff(true, true, false, self._TriggerRoundResourceChanged)
     --预览手牌在手中
     self:DoPreviewBuff(true, true, false, self._TriggerDictWhenInDeck, nil)
     --事件通知界面刷新
@@ -1058,6 +1086,7 @@ function XSkyGardenCafeRound:Shuffle()
     --再次随机打乱
     cardIds = XTool.RandomArray(cardIds, os.time(), true)
     self:InitPoolCards(cardIds)
+    self:DoApplyBuff(false, false, true, self._TriggerDictWhenShuffleCard)
     info:SyncAbandonCards({}, false)
 end
 
@@ -1078,6 +1107,18 @@ function XSkyGardenCafeRound:GetDifferentPriorityCards(sources)
         else
             normal[#normal + 1] = card
         end
+    end
+    if #precede > 1 then
+        ---@param a XSkyGardenCafeCardEntity
+        ---@param b XSkyGardenCafeCardEntity
+        tableSort(precede, function(a, b) 
+            local pA = self._Model:GetCustomerPriority(a:GetCardId())
+            local pB = self._Model:GetCustomerPriority(b:GetCardId())
+            if pA ~= pB then
+                return pA > pB
+            end
+            return a:GetCardId() > b:GetCardId()
+        end)
     end
     return precede, normal
 end
@@ -1589,6 +1630,81 @@ function XSkyGardenCafeRound:DebugPrintInfo()
         log[#log + 1] = string.format("第%s回合出牌：[%s]", round, table.concat(info, ", "))
     end
     XLog.Warning(table.concat(log, "\n"))
+end
+
+function XSkyGardenCafeRound:DebugPoolToDeck(cardId, count)
+    if not IsDebugBuild then
+        return
+    end
+    if self:IsStory() then
+        XLog.Error("剧情模式无法添加！")
+        return
+    end
+    if not self._DebugAddDeckCards then
+        self._DebugAddDeckCards = {}
+    end
+    local limit = self._Model:GetMaxDeckCount()
+    local current = #self._DeckEntities
+    count = mathMin(count, limit - current)
+    if count <= 0 then
+        XLog.Error("手牌已满，无法再添加！")
+        return
+    end
+    local cards = {}
+    local factory = self._OwnControl:GetCardFactory()
+    for _ = 1, count do
+        local card = factory:CreateCard(cardId)
+        cards[#cards + 1] = card
+        self._DebugAddDeckCards[card] = true
+    end
+    self:DoDebugPoolToDeck(cards)
+    if not XTool.IsTableEmpty(cards) then
+        local argDict = { [EffectTriggerId.DrawCard] = { DrawCardType.Round, cards } }
+        --触发关卡buff
+        self._OwnControl:ApplyStageBuff(self._TriggerDictWhenDrawCard, argDict)
+        --触发抽卡buff
+        self:DoApplyBuff(true, true, true, self._TriggerDictWhenDrawCard, argDict)
+    end
+    --预览在手上的buff
+    self:DoPreviewBuff(true, true, false, self._TriggerDictWhenInDeck, nil)
+end
+
+---@param cards XSkyGardenCafeCardEntity[]
+function XSkyGardenCafeRound:DoDebugPoolToDeck(cards)
+    if not IsDebugBuild then
+        return
+    end
+    local count = cards and #cards or 0
+    if count <= 0 then
+        return
+    end
+    local dict = {}
+    for _, card in pairs(cards) do
+        --放进手牌
+        self:InsertDeck(card)
+        self:RecordCount(dict, card)
+    end
+    --插入卡下标
+    local indexList = self:CalcDeckInsertIndexList(dict)
+    self._OwnControl:Pool2DeckWithList(indexList)
+end
+
+function XSkyGardenCafeRound:IsDebugAddCard(card)
+    if not IsDebugBuild or XTool.IsTableEmpty(self._DebugAddDeckCards) then
+        return false
+    end
+    return self._DebugAddDeckCards[card]
+end
+
+---@param card XSkyGardenCafeCardEntity
+function XSkyGardenCafeRound:RemoveDebugAddCard(card)
+    if not IsDebugBuild then
+        return
+    end
+    if not self:IsDebugAddCard(card) then
+        return
+    end
+    self._DebugAddDeckCards[card] = nil
 end
 
 --endregion

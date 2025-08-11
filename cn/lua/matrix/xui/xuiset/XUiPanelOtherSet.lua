@@ -191,7 +191,11 @@ function XUiPanelOtherSet:ShowAgreement()
     if self.BtnUserCenter then 
         local channelId = CS.XHeroSdkAgent.GetChannelId()
         --国服官服渠道18、56 只有安卓母包跟iOS开放
-        if (channelId == 18 or channelId == 56) and not XDataCenter.UiPcManager.IsPc() and CS.XHeroSdkAgent.ShowUserCenter then          
+        if (channelId == XDataCenter.UiPcManager.Channel.Android
+                or channelId == XDataCenter.UiPcManager.Channel.IOS
+                -- 云游戏
+                or XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame)
+                and not (XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc) and CS.XHeroSdkAgent.ShowUserCenter then         
             self.BtnUserCenter.gameObject:SetActiveEx(true)
             self.BtnUserCenter:SetNameByGroup(0, CsXTextManagerGetText("UserCenterSetting"))
             self.BtnUserCenter.CallBack = function()
@@ -207,7 +211,7 @@ function XUiPanelOtherSet:ShowAgreement()
 
     if self.BtnUserLogoff then
         local channelId = CS.XHeroSdkAgent.GetChannelId()
-        if (channelId == 11 or channelId == 2) and not XDataCenter.UiPcManager.IsPc() then
+        if (channelId == XDataCenter.UiPcManager.Channel.Huawei or channelId == XDataCenter.UiPcManager.Channel.Vivo) and not (XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc) then
             self.BtnUserLogoff.gameObject:SetActiveEx(true)
             self.BtnUserLogoff.CallBack = function()
                 XLuaUiManager.Open("UiUserLogoffDialog")

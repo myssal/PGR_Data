@@ -14,21 +14,25 @@ local XUiPanelFightSetPc = XClass(XUiPanelFightSet, "XUiPanelFightSetPc")
 function XUiPanelFightSetPc:OnStart(secondIndex)
     self.SecondIndex = secondIndex
     XUiPanelFightSetPc.Super.OnStart(self)
-    local isPc = XDataCenter.UiPcManager.IsPc()
+    local isShowKeyboard = XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
     self.PanelJoystick.gameObject:SetActiveEx(false)    --移到布局设置里了
-    self.PanelSwitch.gameObject:SetActiveEx(not isPc)
+    self.PanelSwitch.gameObject:SetActiveEx(not isShowKeyboard)
     if self.KeyboardText then
-        self.KeyboardText.gameObject:SetActiveEx(isPc)
+        self.KeyboardText.gameObject:SetActiveEx(isShowKeyboard)
     end
 
-    local btnTouchName = isPc and "UiSetPCBtnTabTouchName" or "UiSetBtnTabTouchName"
+    local btnTouchName = isShowKeyboard and "UiSetPCBtnTabTouchName" or "UiSetBtnTabTouchName"
     self.BtnTabTouch:SetName(XUiHelper.GetText(btnTouchName))
 
-    if not isPc then
+    if not isShowKeyboard then
         local gameControllerPos = self.BtnTabGameController.transform.localPosition
         local keyboardPos = self.BtnTabKeyboard.transform.localPosition
         self.BtnTabGameController.transform.localPosition = keyboardPos
         self.BtnTabKeyboard.transform.localPosition = gameControllerPos
+
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+            self.BtnTabKeyboard.gameObject:SetActiveEx(false)
+        end
     end
 
     self._IsShowFPS = XInputManager.GetFPSActive()
@@ -38,7 +42,7 @@ function XUiPanelFightSetPc:OnStart(secondIndex)
     self._IsDirtyPc = false
     self:InitPc()
     
-    self:SetVisiblePcToggle(isPc)
+    self:SetVisiblePcToggle(isShowKeyboard)
 end
 
 function XUiPanelFightSetPc:InitDrdSort()
@@ -110,11 +114,15 @@ function XUiPanelFightSetPc:GetInputMapIdEnum()
 end
 
 function XUiPanelFightSetPc:GetDefaultIndex()
-    return XDataCenter.UiPcManager.IsPc() and self.PageType.Keyboard or self.PageType.Touch
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        return self.PageType.Keyboard
+    end
+    return self.PageType.Touch
 end
 
 function XUiPanelFightSetPc:RefreshKeyboardPanel()
-    if XDataCenter.UiPcManager.IsPc() then
+    local isShowKeyboard = XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
+    if isShowKeyboard then
         self.PanelKeyboardSet.gameObject:SetActiveEx(true)
     else
         self.Super.RefreshKeyboardPanel(self)
@@ -165,7 +173,9 @@ function XUiPanelFightSetPc:ResetToDefault()
                 self.PanelBtnGroup:SelectIndex(defaultIndex)
             end
             self:InitControllerPanel(true)
-            self:_UpdatePanelBtnGroup()
+            if self.PanelBtnGroup then
+                self:_UpdatePanelBtnGroup()
+            end
         end)
     elseif self.CurPageType == self.PageType.Keyboard then
         self:ResetToDefaultTips(function()
@@ -309,7 +319,7 @@ function XUiPanelFightSetPc:_UpdatePanelBtnGroup(lastJoystickType)
             defaultIndex = self._SelectIndex
         end
     else
-        local isDefault = CS.XInputManager.IsDefaultMainButton(self._lastJoystickType)
+        local isDefault = CS.XInputManager.IsDefaultMainButton(self._lastJoystickType or self:GetCurKeySetType())
         defaultIndex = isDefault and 1 or 2
     end
     self._isSwichGroupInit = true

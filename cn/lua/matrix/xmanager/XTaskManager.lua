@@ -1624,7 +1624,8 @@ XTaskManagerCreator = function()
             return {}
         end
         local tasks = GetTaskList(taskDataGroup)
-        return XTaskManager.AddReceiveDataIfAchieved(tasks)
+        --return XTaskManager.AddReceiveDataIfAchieved(tasks)
+        return tasks
     end
 
     function XTaskManager:GetMaverick3DailyTaskList()

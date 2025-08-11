@@ -1,3 +1,5 @@
+---@class XMovieActionAnimationPlay
+---@field UiRoot XUiMovie
 local XMovieActionAnimationPlay = XClass(XMovieActionBase, "XMovieActionAnimationPlay")
 
 function XMovieActionAnimationPlay:Ctor(actionData)
@@ -7,12 +9,12 @@ end
 
 function XMovieActionAnimationPlay:OnRunning()
     local animName = self.AnimName
-    local anim = self.UiRoot[animName]
+    local anim = self.UiRoot:GetUiAnimation(animName)
     if not anim then
         XLog.Error("XMovieActionAnimationPlay:OnRunning error: Animation not Exist, animName is: " .. animName)
         return
     end
-    
+
     self:StopAnimtion(anim)
     anim.gameObject:SetActiveEx(true)
     anim:PlayTimelineAnimation(function()

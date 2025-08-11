@@ -12,6 +12,10 @@ end
 function XPokerGuessing2Model:ClearPrivate()
 end
 
+function XPokerGuessing2Model:ResetAll()
+    self:SetServerData(nil)
+end
+
 function XPokerGuessing2Model:SetServerData(serverData)
     self._ServerData = serverData
 end

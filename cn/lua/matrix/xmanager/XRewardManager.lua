@@ -781,8 +781,8 @@ end
 
 
 function XRewardManager.Init()
-    RewardSubIds = XTableManager.ReadAllByIntKey(TABLE_REWARD_PATH, XTable.XTableReward, "Id")
-    RewardGoodsTable = XTableManager.ReadAllByIntKey(TABLE_REWARD_GOODS_PATH, XTable.XTableRewardGoods, "Id")
+    RewardSubIds = XTableManager.ReadByIntKey(TABLE_REWARD_PATH, XTable.XTableReward, "Id")
+    RewardGoodsTable = XTableManager.ReadByIntKey(TABLE_REWARD_GOODS_PATH, XTable.XTableRewardGoods, "Id")
 end
 
 function XRewardManager.GetRewardSubId(id, index)

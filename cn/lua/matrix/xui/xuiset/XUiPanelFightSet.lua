@@ -194,7 +194,7 @@ function XUiPanelFightSet:ShowSubPanel(type)
     end
     self.PanelGameController.gameObject:SetActiveEx(type == self.PageType.GameController)
     self.PanelKeyboard.gameObject:SetActiveEx(type == self.PageType.Keyboard)
-    self:RefreshKeyboardItem(type == self.PageType.Keyboard and (self.TogEnableKeyboard:GetToggleState() or XDataCenter.UiPcManager.IsPc()))
+    self:RefreshKeyboardItem(type == self.PageType.Keyboard and (self.TogEnableKeyboard:GetToggleState() or (XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc)))
     self:RefreshJoystickItem(type == self.PageType.GameController and self.TogEnableJoystick:GetToggleState())
 end
 
@@ -279,7 +279,7 @@ function XUiPanelFightSet:OnTogEnableJoystickClick(value)
         XInputManager.SetEnableInputJoystick(self.TogEnableJoystick:GetToggleState())
     end
 
-    if XInputManager.EnableInputJoystick and not XDataCenter.UiPcManager.IsPc() then
+    if XInputManager.EnableInputJoystick and not (XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc) then
         XInputManager.SetEnableInputKeyboard(false)
         self:RefreshKeyboardPanel()
     end
@@ -305,7 +305,7 @@ end
 
 function XUiPanelFightSet:RefreshJoystickPanel()
     local enable = XInputManager.EnableInputJoystick
-    local isPc = XDataCenter.UiPcManager.IsPc()
+    local isPc = XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
     self.TogEnableJoystick:SetButtonState(enable and XUiButtonState.Select or XUiButtonState.Normal)
     if enable then
         self.PanelJoystickSet.gameObject:SetActiveEx(true)
@@ -337,7 +337,7 @@ function XUiPanelFightSet:OnTogEnableKeyboardClick(value)
         self:SetEnableInputKeyboard(self.TogEnableKeyboard:GetToggleState())
     end
 
-    if XInputManager.EnableInputKeyboard and not XDataCenter.UiPcManager.IsPc() then
+    if XInputManager.EnableInputKeyboard and not (XDataCenter.UiPcManager.IsPc() == XDataCenter.UiPcManager.XUiPcMode.Pc) then
         XInputManager.SetEnableInputJoystick(false)
         self:RefreshJoystickPanel()
     end
@@ -370,7 +370,10 @@ function XUiPanelFightSet:RefreshKeyboardPanel()
         self.Parent.BtnDefault.gameObject:SetActiveEx(true)
         self.Parent.BtnSave.gameObject:SetActiveEx(true)
         self.PanelKeyboardOperationType.gameObject:SetActiveEx(true)
-        if not XDataCenter.UiPcManager.IsPc() then
+        --if not XDataCenter.UiPcManager.IsPc() then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Default
+                or XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame
+        then
             XInputManager.SetEnableInputJoystick(false)
         end
     else

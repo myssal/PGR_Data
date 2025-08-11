@@ -97,7 +97,7 @@ function XUiGridExtralLineChapter:SetData(index, viewModel)
 end
 
 function XUiGridExtralLineChapter:OnBtnSelfClicked()
-    if not XMVCA.XSubPackage:CheckSubpackage(self.Manager:ExGetChapterType(), self.ChapterViewModel:GetId()) then
+    if not XMVCA.XSubPackage:CheckSubpackage(self.Manager:ExGetFunctionNameType(), self.ChapterViewModel:GetId()) then
         return
     end
     if self.ClickFunc then

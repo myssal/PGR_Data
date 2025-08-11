@@ -57,6 +57,7 @@ function XUiTheatre5GetPVERewardItem:UpdateItemBox(itemData)
     local itemCfg = self._Control:GetTheatre5ItemCfgById(itemData.Id)
     self.RawImgBoxBg:SetImage(itemCfg.IconRes)
     --self.TxtBoxName.text = itemCfg.Name
+    self.TxtBoxCount.text = string.format("x%s", itemData.Count)
     --self.TxtBoxCount.gameObject:SetActiveEx(false)
 end
 

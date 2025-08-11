@@ -387,11 +387,6 @@ function XTheatre3Model:GetEquipById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre3Equip, id)
 end
 
----@return XTableTheatre3EquipBox
-function XTheatre3Model:GetEquipBoxById(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre3EquipBox, id)
-end
-
 ---@return XTableTheatre3EquipSuit[]
 function XTheatre3Model:GetEquipSuitConfigs()
     return self._ConfigUtil:GetByTableKey(TableKey.Theatre3EquipSuit)

@@ -35,14 +35,17 @@ function XGuideShowDialogNode:OnAwake()
         return
     end
 
-    if self.Fields["Image"] == nil or self.Fields["Name"] == nil or self.Fields["Content"] == nil then
+    if self.Fields["Image"] == nil or self.Fields["TextId"] == nil then
         self.Node.Status = CsNodeStatus.ERROR
         return
     end
+    local iconId = self.Fields["Image"]
+    self.ImageString = XDataCenter.GuideManager.GetGuideIcon(iconId)
+    
+    local template = XDataCenter.GuideManager.GetGuideTextTemplate(self.Fields["TextId"])
 
-    self.ImageString = self.Fields["Image"]
-    self.RoleName = self.Fields["Name"]
-    self.Content = self.Fields["Content"]
+    self.RoleName = template.Name
+    self.Content = template.Content
     self.Pos = self.Fields["Pos"]
     self.UiName = self.Fields["UiName"]
     self.GridName = self.Fields["GridName"]

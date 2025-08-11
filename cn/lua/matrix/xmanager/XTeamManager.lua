@@ -31,6 +31,8 @@ XTeamManagerCreator = function()
     -- XTeam
     -- 缓存预设队伍数据
     local TeamPrefabDic = {}
+    ---@type XTeam
+    local BattleRoomCacheTeam = nil
 
     --SetTeamPos
     function XTeamManager.Init()
@@ -859,6 +861,21 @@ XTeamManagerCreator = function()
         end
         
         return false, false, nil
+    end
+
+    function XTeamManager.SetBattleRoomCacheTeam(xTeam)
+        if not xTeam then
+            return
+        end
+        BattleRoomCacheTeam = xTeam
+    end
+
+    function XTeamManager.ClearBattleRoomCacheTeam()
+        BattleRoomCacheTeam = nil
+    end
+
+    function XTeamManager.GetBattleRoomCacheTeam()
+        return BattleRoomCacheTeam
     end
 
     --- 根据传入的实体Id列表, 按照既定规则返回一个默认效应技能id(提供通用接口用于支持那些不会转换到XTeam处理的情况）

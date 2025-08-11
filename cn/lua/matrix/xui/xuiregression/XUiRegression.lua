@@ -92,7 +92,7 @@ function UiRegression:OnBtnHelpClick()
         local activityId = XDataCenter.RegressionManager.GetTaskActivityId()
         local activityTemplate = XRegressionConfigs.GetActivityTemplateByActivityId(activityId)
         local helpId = activityTemplate.HelpId
-        local helpCourseTemplate = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+        local helpCourseTemplate = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
         XUiManager.ShowHelpTip(helpCourseTemplate.Function)
     end
 end

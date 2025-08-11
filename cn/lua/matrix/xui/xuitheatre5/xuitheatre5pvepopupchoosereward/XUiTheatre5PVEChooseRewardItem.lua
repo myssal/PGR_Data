@@ -26,8 +26,9 @@ function XUiTheatre5PVEChooseRewardItem:Update(theatre5Item, index)
     elseif isGem then
         self:UpdateGem(itemCfg)
     end 
-    
-  
+    if self.StoryGroup then
+        self.StoryGroup.gameObject:SetActiveEx(isGem)
+    end    
 end
 
 function XUiTheatre5PVEChooseRewardItem:UpdateCommon(itemCfg)

@@ -555,10 +555,12 @@ function XUiPanelSignBoard:PlaySceneAnim(element)
     local animRoot = self.Parent.UiModelGo.transform
     local cameraFar = self.Parent:FindVirtualCamera("CamFarMain")
     local cameraNear = self.Parent:FindVirtualCamera("CamNearMain")
+    local uiFarCam = animRoot:FindTransform("UiFarCamera")
+    local uiNearCam = animRoot:FindTransform("UiNearCamera")
     if not cameraFar or not cameraNear then
         return
     end
-    XMVCA.XFavorability:LoadSceneAnim(animRoot, cameraFar, cameraNear, XDataCenter.PhotographManager.GetCurSceneId(), element.SignBoardConfig.Id, self.Parent)
+    XMVCA.XFavorability:LoadSceneAnim(animRoot, cameraFar, cameraNear, uiFarCam, uiNearCam, XDataCenter.PhotographManager.GetCurSceneId(), element.SignBoardConfig.Id, self.Parent)
     XMVCA.XFavorability:SceneAnimPlay()
 end
 

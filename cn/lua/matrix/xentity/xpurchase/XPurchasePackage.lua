@@ -281,10 +281,6 @@ end
 
 --######################## 将旧Ui耦合的逻辑直接迁移到数据层中处理 END ########################
 
-function XPurchasePackage:GetUiType()
-    return self.Data.UiType
-end
-
 function XPurchasePackage:GetUiTypes()
     local result = {}
     local config = XPurchaseConfigs.GetUiTypeConfigByType(self:GetUiType())

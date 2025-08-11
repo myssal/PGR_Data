@@ -166,11 +166,7 @@ end
 -- 刷新成就列表
 function XUiMainLine2DetailBattle:RefreshAchievements()
     local achieveInfos = self._Control:GetStagesAchievementInfos(self.StageId, false, false)
-    
-    local isShow = #achieveInfos > 0
-    self.PanelAchievement.gameObject:SetActiveEx(isShow)
-    if not isShow then return end
-
+    local isPanelShow = false
     for _, uiObj in ipairs(self.AchievementUiObjs) do
         uiObj.gameObject:SetActiveEx(false)
     end
@@ -191,6 +187,7 @@ function XUiMainLine2DetailBattle:RefreshAchievements()
             goto CONTINUE
         end
 
+        isPanelShow = true
         -- 解锁状态
         uiObj:GetObject("PanelOn").gameObject:SetActiveEx(info.IsUnLock)
         uiObj:GetObject("PanelOff").gameObject:SetActiveEx(not info.IsUnLock)
@@ -222,6 +219,8 @@ function XUiMainLine2DetailBattle:RefreshAchievements()
 
         ::CONTINUE::
     end
+    -- 无配置成就 / 配置隐藏成就但是隐藏成就完成没显示出来，都不显示整个成就面板
+    self.PanelAchievement.gameObject:SetActiveEx(isPanelShow)
 end
 
 -- 刷新出站成员

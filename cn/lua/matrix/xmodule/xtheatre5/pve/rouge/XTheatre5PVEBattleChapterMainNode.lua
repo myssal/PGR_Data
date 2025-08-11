@@ -28,13 +28,16 @@ end
 
 function XTheatre5PVEBattleChapterMainNode:PlayAvg(chapterCfg)
     self._MainControl:LockControl()
-    XDataCenter.MovieManager.PlayMovie(chapterCfg.StartStory,function()
-        XMVCA.XTheatre5.PVEAgency:RequestPveAvgPlay(self._ChapterData.ChapterId, true, function(success)
-            if success then
-                self:OpenPVEGamePanel()
-            end
-            self._MainControl:UnLockControl()        
-        end)
+    --角色选择界面有个火炉的常驻音效，所以要把之前的界面干掉
+    XDataCenter.MovieManager.PlayMovie(chapterCfg.StartStory, handler(self, self.RequestPveAvgPlay))
+end
+
+function XTheatre5PVEBattleChapterMainNode:RequestPveAvgPlay()
+    XMVCA.XTheatre5.PVEAgency:RequestPveAvgPlay(self._ChapterData.ChapterId, true, function(success)
+        if success then
+            self:OpenPVEGamePanel()
+        end
+        self._MainControl:UnLockControl() 
     end)
 end
 

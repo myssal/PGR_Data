@@ -234,8 +234,6 @@ function XUiGridFangKuaiBlock:CheckOperateEnd()
         self._InitGridX = nil
         if isMoved then
             self._Control:SignGridOccupyAuto(self.BlockData)
-        else
-            self.Parent:HideUltimaSlashEffect()
         end
         self:PlayExpression(XEnumConst.FangKuai.Expression.Standby)
         self.Parent:ClearClickBlockId()
@@ -348,5 +346,9 @@ function XUiGridFangKuaiBlock:ForceMoveX(gridX)
 end
 
 --endregion
+
+function XUiGridFangKuaiBlock:GetCurGridY()
+    return self._Control:GetGridYByPos(self.Transform.localPosition.y)
+end
 
 return XUiGridFangKuaiBlock

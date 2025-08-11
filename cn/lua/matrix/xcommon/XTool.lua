@@ -288,7 +288,11 @@ XTool.MatchEmoji = function(text)
 end
 
 XTool.CopyToClipboard = function(text)
-    CS.XAppPlatBridge.CopyStringToClipboard(tostring(text))
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        XDataCenter.CloudGameManager.ClipBoardCopy(tostring(text))
+    else
+        CS.XAppPlatBridge.CopyStringToClipboard(tostring(text))
+    end
     XUiManager.TipText("Clipboard", XUiManager.UiTipType.Tip)
 end
 
@@ -1180,6 +1184,64 @@ function XTool.UpdateDynamicItem(gridArray, dataArray, uiObject, class, parent)
     end
 end
 
+---!!! 警告，此函数在双层uiNode下有父节点未激活的提示
+---考虑到目前使用频率不高，不予把此功能移动到UiNode中，并且不解决此问题，如果有需要，请联系zlb，谢谢
+--- UpdateDynamicItem的延迟加载版本
+---@param gridArray XUiNode[]
+---@param parent XUiNode
+---@param loadPerFrame number@ 每帧加载的数量
+function XTool.UpdateDynamicItemLazy(gridArray, dataArray, uiObject, class, parent, loadPerFrame)
+    if parent._TimerDelayInit then
+        XScheduleManager.UnSchedule(parent._TimerDelayInit)
+        parent:_RemoveTimerIdAndDoCallback(parent._TimerDelayInit)
+    end
+
+    if #dataArray > 100 then
+        XLog.Error("[XUiTheatre5SkillHandbook] 需要instantiate的grid数量太多，可能要考虑其他方式")
+    end
+
+    local dataCount = dataArray and #dataArray or 0
+    local step = 1
+    loadPerFrame = loadPerFrame or 1
+    local lazyLoad = function()
+        if #gridArray == 0 and uiObject then
+            uiObject.gameObject:SetActiveEx(false)
+        end
+        local nextStep = math.min(step + loadPerFrame - 1, dataCount)
+        for i = step, nextStep do
+            local grid = gridArray[i]
+            if not grid then
+                local ui = CS.UnityEngine.Object.Instantiate(uiObject, uiObject.transform.parent)
+                grid = class.New(ui, parent)
+                gridArray[i] = grid
+            end
+            grid:Open()
+            if not grid.GameObject.activeSelf then
+                print(grid.Transform.name, grid.GameObject.activeSelf)
+            end
+            grid:Update(dataArray[i], i)
+        end
+        if nextStep >= dataCount then
+            XScheduleManager.UnSchedule(parent._TimerDelayInit)
+            parent._TimerDelayInit = nil
+        else
+            step = nextStep + 1
+        end
+    end
+    parent._TimerDelayInit = parent:Tween(10, lazyLoad, function()
+        if step < dataCount then
+            XLog.Error("[XTool] 延迟加载，10秒还没加载完？是不是有问题")
+        end
+        parent._TimerDelayInit = nil
+    end)
+
+    for i = #dataArray + 1, #gridArray do
+        local grid = gridArray[i]
+        grid:Close()
+    end
+    lazyLoad()
+end
+
 function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent)
     if #gridArray == 0 then
         uiObject.gameObject:SetActiveEx(false)
@@ -1403,3 +1465,74 @@ function XTool.NoExitFightPreOpen3DUi()
         effectRoot.gameObject:SetActiveEx(false)
     end
 end 
+
+--region transform设置相关
+XTool.SetPosition = function(go, x, y, z)
+    if not XTool.UObjIsNil(go) then
+        CS.XUnityEx.SetPosition(go.transform, x, y, z)
+    end    
+end
+
+XTool.GetPosition = function(go)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.GetPosition(go.transform, 0, 0, 0)
+    end
+    return 0,0,0
+end
+
+XTool.SetLocalPosition = function(go, x, y, z)
+    if not XTool.UObjIsNil(go) then
+        CS.XUnityEx.SetLocalPosition(go.transform, x, y, z)
+    end
+end
+
+XTool.GetLocalPosition = function(go)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.GetLocalPosition(go.transform, 0, 0, 0)
+    end
+    return 0,0,0
+end
+
+XTool.SetLocalScale = function(go, x, y, z)
+    if not XTool.UObjIsNil(go) then
+        CS.XUnityEx.SetLocalScale(go.transform, x, y, z)
+    end
+end
+
+XTool.GetLocalScale = function(go)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.GetLocalScale(go.transform, 0, 0, 0)
+    end
+end
+
+XTool.SetLocalRotation = function(go, x, y, z)
+    if not XTool.UObjIsNil(go) then
+        CS.XUnityEx.SetLocalRotation(go.transform, x, y, z)
+    end
+end
+
+XTool.SetRotation = function(go, x, y,z,w )
+    if not XTool.UObjIsNil(go) then
+        CS.XUnityEx.SetRotation(go.transform, x, y, z, w)
+    end
+end
+
+XTool.GetLocalRotation = function(go)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.GetLocalRotation(go.transform, 0, 0, 0)
+    end
+end
+
+XTool.GetUIRectWidthHeight = function(go)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.GetUIRectWidthHeight(go.transform, 0, 0)
+    end
+end
+
+XTool.SetUISizeDelta = function(go, x, y)
+    if not XTool.UObjIsNil(go) then
+        return CS.XUnityEx.SetUISizeDelta(go.transform, x, y)
+    end
+end
+
+--endregion

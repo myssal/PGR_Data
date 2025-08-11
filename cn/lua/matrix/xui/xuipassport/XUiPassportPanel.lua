@@ -339,4 +339,12 @@ function XUiPassportPanel:GetLevelIdList()
     return self.LevelIdListNormal
 end
 
+function XUiPassportPanel:OpenLastPassport()
+    local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
+    local lastOne = typeInfoIdList[#typeInfoIdList]
+    if lastOne then
+        self:OnBtnUnlockLeftGridClick(lastOne)
+    end
+end
+
 return XUiPassportPanel

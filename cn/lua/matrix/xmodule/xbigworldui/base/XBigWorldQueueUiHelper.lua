@@ -135,6 +135,7 @@ end
 
 function XBigWorldQueueUiHelper:Release()
     self._IsOperator = false
+    self._IsRegistering = false
     self._OpeningUiName = false
     self._OperatorStack = {}
     self:_ClearQueue()

@@ -7,6 +7,11 @@ function XRedPoinTheatre5PVPNewActivity.Check()
         return false
     end
     
+    -- 判断是否过了PVE教学
+    if XMVCA.XTheatre5:IsInTeachingStoryLine() then
+        return false
+    end
+    
     -- 再判断是否在赛季时间内
     if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
         return false

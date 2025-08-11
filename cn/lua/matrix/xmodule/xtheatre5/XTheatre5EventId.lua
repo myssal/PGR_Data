@@ -63,6 +63,21 @@ local Theatre5EventIds = {
     
     --- 宝珠出售特效
     EVENT_THEATRE5_GEM_SELLOUT_EFFECT_SHOW = 'EVENT_THEATRE5_GEM_SELLOUT_EFFECT_SHOW',
+    
+    --- 取消容器的聚焦 用于切屏触发应用进入后台时
+    EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS = 'EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS',
+    
+    --- 播放技能放置音效
+    EVENT_THEATRE5_ITEM_SKILL_PLACED = 'EVENT_THEATRE5_ITEM_SKILL_PLACED',
+
+    --- 播放宝珠放置音效
+    EVENT_THEATRE5_ITEM_GEM_PLACED = 'EVENT_THEATRE5_ITEM_GEM_PLACED',
+    
+    --- 播放冻结/解冻音效，参数1表示是否冻结
+    EVENT_THEATRE5_PLAY_GOODS_FREEZE_SFX = 'EVENT_THEATRE5_PLAY_GOODS_FREEZE_SFX',
+    
+    --- 检查和修复拖拽物品的状态
+    EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE = 'EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE',
     --endregion
 
     --region PVE
@@ -118,6 +133,11 @@ local Theatre5EventIds = {
 
     --- 战斗结算
     EVENT_COMMON_BATTLE_SETTLE = "EVENT_COMMON_BATTLE_SETTLE",
+    --endregion
+
+    --region 引导
+    --返回主界面
+    EVENT_GUIDE_THEATRE5_RETURN_MAIN = "EVENT_GUIDE_THEATRE5_RETURN_MAIN",
     --endregion
 }
 

@@ -26,7 +26,7 @@ function XUiDrawSuitPreview:UpdatePanel()
     end
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.PanelContent)
     self.TxtName.text = XMVCA.XEquip:GetSuitName(self.SuitId)
-    self.RImgIco:SetRawImage(XMVCA.XEquip:GetEquipSuitBigIconPath(self.SuitId))
+    self.RImgIco:SetRawImage(XMVCA.XEquip:GetEquipSuitWaferBagPath(self.SuitId))
     local ids = XMVCA.XEquip:GetSuitEquipIds(self.SuitId)
 
     table.sort(ids, function(a, b)

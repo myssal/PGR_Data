@@ -42,6 +42,7 @@ function XUiGridTheatre5PVPRankDetail:ShowMaxRank()
 
     if rankCfg then
         self.RImgDan:SetRawImage(rankCfg.IconRes)
+        self:ShowRankName(true, rankCfg.RankName)
 
         for i, uiObject in ipairs(self.StarGrids) do
             local imgStarOn = uiObject:GetObject('ImgStarOn')
@@ -50,6 +51,8 @@ function XUiGridTheatre5PVPRankDetail:ShowMaxRank()
                 imgStarOn.gameObject:SetActiveEx(i <= rankCfg.RankStar)
             end
         end
+    else
+        self:ShowRankName(false)
     end
 end
 
@@ -58,21 +61,30 @@ function XUiGridTheatre5PVPRankDetail:ShowEmptyRank()
 
     if rankCfg then
         self.RImgDan:SetRawImage(rankCfg.IconRes)
+        self:ShowRankName(true, rankCfg.RankName)
+        -- 这里显示的是大段位，约定最高小段位独占一个大段位，否则此处逻辑需要调整
+        local isMaxRank = self.MajorCfg.MinRank == self.MajorCfg.MaxRank
 
-        for i, uiObject in ipairs(self.StarGrids) do
-            local imgStarOn = uiObject:GetObject('ImgStarOn')
+        self.ListStar.gameObject:SetActiveEx(not isMaxRank)
 
-            if imgStarOn then
-                imgStarOn.gameObject:SetActiveEx(false)
+        if not isMaxRank then
+            for i, uiObject in ipairs(self.StarGrids) do
+                local imgStarOn = uiObject:GetObject('ImgStarOn')
+
+                if imgStarOn then
+                    imgStarOn.gameObject:SetActiveEx(false)
+                end
             end
         end
+    else
+        self:ShowRankName(false)
     end
 end
 
 function XUiGridTheatre5PVPRankDetail:ShowCurRankState(charaCfgId)
     self.TagNow.gameObject:SetActiveEx(true)
     
-    self:Refresh(charaCfgId)
+    self:Refresh(charaCfgId, true)
 end
 
 function XUiGridTheatre5PVPRankDetail:ResetShow()

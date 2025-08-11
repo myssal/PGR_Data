@@ -184,7 +184,11 @@ function XUiBigWorldSetPanelVoice:_RegisterRedPointEvents()
 end
 
 function XUiBigWorldSetPanelVoice:_InitUi()
-    self.PanelMute.gameObject:SetActiveEx(XDataCenter.UiPcManager.IsPc())
+    local isShowMute = false
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        isShowMute = true
+    end
+    self.PanelMute.gameObject:SetActiveEx(isShowMute)
 end
 
 function XUiBigWorldSetPanelVoice:_Refresh()

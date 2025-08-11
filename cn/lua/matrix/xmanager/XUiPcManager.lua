@@ -1,7 +1,32 @@
 XUiPcManagerCreator = function()
     ---@class XUiPcManager
-    local XUiPcManager = {}
+    local XUiPcManager = {
 
+        ---@field Default number@ 默认移动端
+        ---@field Pc number@ PC
+        ---@field CloudGame number@ 云游戏
+        ---@class XUiPcMode@方便lua跳转
+        ---@type XUiPcMode
+        XUiPcMode = CS.XUiPc.XUiPcMode,
+
+        Channel = {
+            Oppo = 1,
+            Vivo = 2,
+            Huawei = 11,
+            Android = 18,
+            Pc = 19,
+            JiuYou = 20,
+            XiaoMi = 23,
+            X4399 = 24,
+            YingYongBao = 35,
+            Bilibili = 46,
+            IOS = 56,
+            Mumu = 94,
+            HeiSha = 147,
+            DouYin = 243,
+        }
+    }
+    
     local FullScreenMode = CS.UnityEngine.FullScreenMode
     local PlayerPrefs = CS.UnityEngine.PlayerPrefs
 
@@ -470,16 +495,26 @@ XUiPcManagerCreator = function()
         return ExitingGame
     end
 
-    XUiPcManager.IsPc = function()
-        return CS.XUiPc.XUiPcManager.IsPcMode()
-    end
-
     XUiPcManager.IsOverSea = function()
         return false
     end
 
+    --region !!!这些接口与ui模式分离, 供狗哥专用, 业务层请使用GetUiPcMode自行判断
+    XUiPcManager.IsPc = function()
+        return CS.XUiPc.XUiPcManager.IsPcMode()
+    end
+
+    XUiPcManager.IsCloudGame = function()
+        return CS.XInfo.IsCloudGame
+    end
+
     XUiPcManager.IsPcServer = function()
         return CS.XUiPc.XUiPcManager.IsPcModeServer()
+    end
+    --endregion !!!这些接口与ui模式分离, 供狗哥专用, 业务层请使用GetUiPcMode自行判断
+    
+    XUiPcManager.GetUiPcMode = function()
+        return CS.XUiPc.XUiPcManager.GetUiPcMode()
     end
 
     -- 设备分辨率,非游戏分辨率
@@ -530,6 +565,17 @@ XUiPcManagerCreator = function()
     end
 
     XUiPcManager.FullScreenableCheck = function()
+        if XUiPcManager.IsCloudGame() then
+            -- 云游戏分辨率不随表格，随手机设备
+            local width = CS.XWLinkAgent.ScreenWidth
+            local height = CS.XWLinkAgent.ScreenHeight
+            CS.XLog.Debug("CloudGame Fix Screen Resolution", width, height)
+            CS.XSettingHelper.ForceWindow = true;
+            XUiPcManager.SetResolution(width, height, FullScreenMode.Windowed);
+            -- XUiPcManager.SetResolution(width, height, FullScreenMode.FullScreenWindow);
+            -- XUiPcManager.SaveResolution(width, height)
+             return
+        end
         local width, height = XUiPcManager.GetDeviceScreenResolution(); -- 获取设备分辨率
         local resolutions = XUiPcManager.GetOriginPcResolution();       -- 获取配置表最大分辨率
         local lastResolution = XUiPcManager.GetLastResolution();        -- 获取上一次设备分辨率

@@ -98,6 +98,22 @@ function XFubenAgency:OnInit()
     self.LastPrologueStageId = 10010003
 
     self._IsListen = false
+
+    self.CacheBattleRoleRoomRobotSkillIdChange = {}
+end
+
+function XFubenAgency:GetCacheBattleRoleRoomRobotSkillIdChangeData(robotId)
+    return self.CacheBattleRoleRoomRobotSkillIdChange[robotId]
+end
+
+function XFubenAgency:SetCacheBattleRoleRoomRobotSkillIdChangeData(robotId, skillId)
+    self.CacheBattleRoleRoomRobotSkillIdChange[robotId] = skillId
+end
+
+function XFubenAgency:ClearCacheBattleRoleRoomRobotSkillIdChangeData()
+    for robotId, _ in pairs(self.CacheBattleRoleRoomRobotSkillIdChange) do
+        self.CacheBattleRoleRoomRobotSkillIdChange[robotId] = nil
+    end
 end
 
 function XFubenAgency:InitCustomFuncIdsTab()
@@ -1641,12 +1657,12 @@ function XFubenAgency:OpenFubenByStageId(stageId)
             XUiManager.TipMsg(CSTextManagerGetText("FubenMainLineNoneOpen"))
             return
         end
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MainLine, chapter.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapter.ChapterId) then
             return
         end
         XLuaUiManager.Open("UiFubenMainLineChapter", chapter, stageId)
     elseif stageType == StageType.Bfrt then
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenNightmare) then
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Bfrt) then
             return
         end
 
@@ -1655,7 +1671,7 @@ function XFubenAgency:OpenFubenByStageId(stageId)
             return
         end
 
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Bfrt, chapter.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Bfrt, chapter.ChapterId) then
             return
         end
 
@@ -2016,46 +2032,6 @@ end
 --        end
 --    end
 --end
-
-function XFubenAgency:GetDailyDungeonRules()
-    local dailyDungeonRules = XDailyDungeonConfigs.GetDailyDungeonRulesList()
-
-    local tmpDataList = {}
-
-    for _, v in pairs(dailyDungeonRules) do
-        local tmpData = {}
-        local tmpDay = XDataCenter.FubenDailyManager.IsDayLock(v.Id)
-        local tmpCon = XDataCenter.FubenDailyManager.GetConditionData(v.Id).IsLock
-        local tmpOpen = XDataCenter.FubenDailyManager.GetEventOpen(v.Id).IsOpen
-        tmpData.Lock = tmpCon or (tmpDay and not tmpOpen)
-        tmpData.Rule = v
-        tmpData.Open = tmpOpen and not tmpCon
-        if not XFunctionManager.CheckFunctionFitter(XDataCenter.FubenDailyManager.GetConditionData(v.Id).functionNameId) then
-            table.insert(tmpDataList, tmpData)
-        end
-    end
-
-    table.sort(tmpDataList, function(a, b)
-        if not a.Lock and not b.Lock then
-            if (a.Open and b.Open) or (not a.Open and not b.Open) then
-                return a.Rule.Priority < b.Rule.Priority
-            else
-                return a.Open and not b.Open
-            end
-        elseif a.Lock and b.Lock then
-            return a.Rule.Priority < b.Rule.Priority
-        else
-            return not a.Lock and b.Lock
-        end
-    end)
-
-    dailyDungeonRules = {}
-    for _, v in pairs(tmpDataList) do
-        table.insert(dailyDungeonRules, v.Rule)
-    end
-
-    return dailyDungeonRules
-end
 
 -- 意识公约战斗
 function XFubenAgency:EnterAwarenessFight(stageId, charIdList, captainPos, startCb, errorCb, firstFightPos, generalSkillId)
@@ -2434,7 +2410,7 @@ function XFubenAgency:GetStageData(stageId)
 end
 
 -- 巴别塔战斗
-function XFubenAgency:EnterBabelTowerFight(stageId, team, captainPos, firstFightPos)
+function XFubenAgency:EnterBabelTowerFight(stageId, team, captainPos, firstFightPos, generalSkill)
     local stage = self:GetStageCfg(stageId)
     if not self:CheckPreFight(stage) then
         return
@@ -2446,6 +2422,7 @@ function XFubenAgency:EnterBabelTowerFight(stageId, team, captainPos, firstFight
     preFight.StageId = stageId
     preFight.CaptainPos = captainPos
     preFight.FirstFightPos = firstFightPos
+    preFight.GeneralSkill = generalSkill
 
     for i, v in pairs(team) do
         local isRobot = XEntityHelper.GetIsRobot(v)
@@ -2512,7 +2489,7 @@ function XFubenAgency:GoToCurrentMainLine(stageId)
         return
     end
 
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MainLine, stageInfo.ChapterId) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, stageInfo.ChapterId) then
         return
     end
 
@@ -3927,6 +3904,8 @@ end
 function XFubenAgency:NetWorkPreFightRequest(request, ...)
     local args = {...}
     local stageId = request.PreFightData.StageId
+
+    -- 视频弹窗检测
     if not XTool.IsNumberValid(stageId) then
         XLog.Error("XFubenAgency:NetWorkPreFightRequest 视频弹窗检测 stageId is invalid:", request)
         return
@@ -3936,6 +3915,22 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
     if styId then
         XMVCA.XSubPackage:SetHasResIdCheckStoryId(styId)
     end
+
+    -- 机器人技能切换检测
+    local robotIds = request.PreFightData.RobotIds
+    local robotReplaceSkillIdDict = {}
+    if not XTool.IsTableEmpty(robotIds) then
+        for i, robotId in ipairs(robotIds) do
+            local switchSkillId = self:GetCacheBattleRoleRoomRobotSkillIdChangeData(robotId)
+            if switchSkillId then
+                robotReplaceSkillIdDict[robotId] = switchSkillId
+            end
+        end
+    end
+    if not XTool.IsTableEmpty(robotReplaceSkillIdDict) then
+        request.PreFightData.RobotReplaceSkillIdDict = robotReplaceSkillIdDict
+    end
+
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({stageId}, function ()
         XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
     end)

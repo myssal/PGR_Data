@@ -42,7 +42,7 @@ function XUiGridActivityButton:OnBtnClick()
         return
     end
     local activityId = self.Config.Id or 0
-    if activityId > 0 and not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.SUBPACKAGE.ENTRY_TYPE.MAIN_LEFT_TOP_ACTIVITY, activityId) then
+    if activityId > 0 and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLeftTopActivity, activityId) then
         return
     end
 

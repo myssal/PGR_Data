@@ -24,6 +24,7 @@ XMedalManagerCreator = function()
     local ScoreTitleDataList = {}       -- 收藏品ID为索引，存放收藏品配置
     local ScoreTitleShowStateList = {}
     local NewCollectionList = {}
+    local NewNameplateList = nil
     local QualityUpCollectionList = {}
     local IsCanCheckQualityUp
     local MedalUpdateTimeId --勋章持续刷新Id
@@ -36,6 +37,7 @@ XMedalManagerCreator = function()
         XMedalManager.InitScoreTitleList()
         XMedalManager.InitMedalList()
         IsCanCheckQualityUp = true
+        NewNameplateList = {}
     end
 
     function XMedalManager.GetMedals()
@@ -895,6 +897,7 @@ XMedalManagerCreator = function()
     local NameplateLastEqu = {}
     local CurWearNameplate = 0 --当前穿戴的铭牌
     local UiNameplateIsOpen = false
+    local IsLockNewNamplateAutoWin = false -- 锁定新铭牌获得弹窗弹出
     --登陆下推
     function XMedalManager.AsyncNameplateLogin(data)
         CurWearNameplate = data.CurrentWearNameplate
@@ -1011,7 +1014,16 @@ XMedalManagerCreator = function()
                     lastNameplateData = nil
                 end
                 XEventManager.DispatchEvent(XEventId.EVENT_NAMEPLATE_CHANGE)
-                XLuaUiManager.Open("UiObtainNameplate", nameplateData, lastNameplateData)
+
+                if not CS.XFightInterface.IsOutFight or IsLockNewNamplateAutoWin then
+                    table.insert(NewNameplateList, {
+                        NewData = nameplateData,
+                        OldData = lastNameplateData
+                    })
+                else
+                    XLuaUiManager.Open("UiObtainNameplate", nameplateData, lastNameplateData)
+                end
+                
                 UiNameplateIsOpen = true
             end
 
@@ -1119,6 +1131,24 @@ XMedalManagerCreator = function()
     function XMedalManager.CheckNameplateGroupUnluck(group)
         return NameplateGroupDic[group]
     end
+    
+    function XMedalManager.CheckCanGetNewNameplates()
+        if IsLockNewNamplateAutoWin then
+            return
+        end
+        
+        if not XTool.IsTableEmpty(NewNameplateList) then
+            for i, v in pairs(NewNameplateList) do
+                XLuaUiManager.Open("UiObtainNameplate", v.NewData, v.OldData)
+            end
+
+            XMedalManager.ClearNewNameplateList()
+        end
+    end
+    
+    function XMedalManager.SetNewNameplateAutoWinLock(isLock)
+        IsLockNewNamplateAutoWin = isLock
+    end
 
     --获取当前装备的铭牌
     function XMedalManager.GetNameplateCurId()
@@ -1213,6 +1243,10 @@ XMedalManagerCreator = function()
                 end
                 XEventManager.DispatchEvent(XEventId.EVENT_NAMEPLATE_CHANGE)
             end)
+    end
+    
+    function XMedalManager.ClearNewNameplateList()
+        NewNameplateList = {}
     end
 
     ------------------------------------------铭牌--------------------------------------

@@ -11,6 +11,8 @@ local XSpecialTrainActionRandom = require("XUi/XUiSpecialTrainBreakthrough/XSpec
 
 local MAX_ROLE_COUNT = 3
 local LONG_TIMER = 1
+local StageId2ArgData = nil -- 关卡参数缓存，用于重复挑战时读取参数
+
 --[[
     基本描述：通用编队界面，支持所有类型角色编队（XCharacter, XRobot, 其他自定义实体）
     参数说明：stageId : Stage表的Id
@@ -65,14 +67,14 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
     -- 判断是否有重复挑战
     if XRoomSingleManager.AgainBtnType[stageConfig.FunctionLeftBtn] 
         or XRoomSingleManager.AgainBtnType[stageConfig.FunctionRightBtn] then
-        XUiBattleRoleRoom.__StageId2ArgData = XUiBattleRoleRoom.__StageId2ArgData or {}
-        local argData = XUiBattleRoleRoom.__StageId2ArgData[stageId]
+        StageId2ArgData = StageId2ArgData or {}
+        local argData = StageId2ArgData[stageId]
         if isReadArgsByCacheWithAgain and argData then
             team = argData.team
             proxy = argData.proxy
             challengeCount = argData.challengeCount
         end
-        XUiBattleRoleRoom.__StageId2ArgData[stageId] = {
+        StageId2ArgData[stageId] = {
             stageId = stageId,
             team = team,
             proxy = proxy,
@@ -119,6 +121,7 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
     end)
     
     self:CheckTeamMemberValid(self.StageId, self.Team)
+    XDataCenter.TeamManager.SetBattleRoomCacheTeam(self.Team)
     
     local isStop = self.Proxy:AOPOnStartBefore(self)
     if isStop then return end
@@ -236,6 +239,9 @@ function XUiBattleRoleRoom:OnDestroy()
     self.XUiButtonLongClick1:Destroy()
     self.XUiButtonLongClick2:Destroy()
     self.XUiButtonLongClick3:Destroy()
+
+    XMVCA.XFuben:ClearCacheBattleRoleRoomRobotSkillIdChangeData()
+    XDataCenter.TeamManager.ClearBattleRoomCacheTeam()
 end
 
 --######################## 私有方法 ########################
@@ -305,16 +311,29 @@ end
 
 function XUiBattleRoleRoom:OnBtnChangeModeClicked(pos)
     local entityId = self.Team:GetEntityIdByTeamPos(pos)
-    if not XTool.IsNumberValid(entityId) then return end
+    if not XTool.IsNumberValid(entityId) then 
+        return 
+    end
+
+    local isRobot = XRobotManager.CheckIsRobotId(entityId)
+    ---@type XRobot
+    local XRobot = isRobot and XRobotManager.GetRobotById(entityId)
 
     local skillId, exchangeDesConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(entityId)
-    if not skillId then return end
+    if not skillId then 
+        return 
+    end
     
     local finCb = function ()
         self:RefreshRoleModels()
     end
-    local skillLevel = XMVCA.XCharacter:GetSkillLevel(skillId)
-    XLuaUiManager.Open("UiCharacterBattleRoomSkillSwitch", skillId, skillLevel, finCb, exchangeDesConfig)
+    if isRobot then
+        local skillLevel = XRobot:GetSkillGroupLevelBySkillId(skillId)
+        XLuaUiManager.Open("UiRobotBattleRoomSkillSwitch", skillId, skillLevel, finCb, exchangeDesConfig, XRobot)
+    else
+        local skillLevel = XMVCA.XCharacter:GetSkillLevel(skillId)
+        XLuaUiManager.Open("UiCharacterBattleRoomSkillSwitch", skillId, skillLevel, finCb, exchangeDesConfig)
+    end
 end
 
 function XUiBattleRoleRoom:OnBtnSupportToggleClicked(state)
@@ -598,6 +617,17 @@ function XUiBattleRoleRoom:InitUiPanelRoleModels()
     end
 end
 
+function XUiBattleRoleRoom:GetCurPosEntityRealCharId(pos)
+    local entityId = self.Team:GetEntityIdByTeamPos(pos)
+    local characterViewModel = self.Proxy:GetCharacterViewModelByEntityId(entityId)
+    if not characterViewModel then return end
+    local sourceEntityId = characterViewModel:GetSourceEntityId()
+    if XRobotManager.CheckIsRobotId(sourceEntityId) then
+        return XRobotManager.GetCharacterId(sourceEntityId)
+    end
+    return self.Proxy:GetCharacterIdByEntityId(entityId)
+end
+
 function XUiBattleRoleRoom:RefreshRoleModels()
     local characterViewModel
     local entityId
@@ -649,12 +679,28 @@ function XUiBattleRoleRoom:RefreshRoleModels()
         end
 
         -- 检测技能切换
-        local xCharacter = XMVCA.XCharacter:GetCharacter(entityId)
+        local tempEntityId = nil
+        if characterViewModel then
+            tempEntityId = characterViewModel:GetSourceEntityId()
+        end
+        local xRobot = nil
+        if tempEntityId and XRobotManager.CheckIsRobotId(tempEntityId) then
+            xRobot = XRobotManager.GetRobotById(tempEntityId)
+        end
+
+        local xCharacter = XMVCA.XCharacter:GetCharacter(tempEntityId)
         local isHasSwitchSkill = false
         local switchSkillId = nil
         local skillExchangeConfig = nil
-        if xCharacter then
-            local skillList = xCharacter.SkillList
+
+        local skillList = nil
+        if xRobot then
+            skillList = xRobot.Character.SkillList
+        elseif xCharacter then
+            skillList = xCharacter.SkillList
+        end
+
+        if skillList then
             for i, v in ipairs(skillList) do
                 local skillId = v.Id
                 local skillLevel = v.Level
@@ -675,21 +721,49 @@ function XUiBattleRoleRoom:RefreshRoleModels()
         end
 
         local curPanelChangeMode = self["PanelChangeMode"..pos]
-        curPanelChangeMode.gameObject:SetActiveEx(isHasSwitchSkill)
-        if isHasSwitchSkill then
-            local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
-            local curSelectSkillId = nil
-            for index, skillId in ipairs(groupSkillIds) do
-                if XMVCA.XCharacter:IsSkillUsing(skillId) then
-                    curSelectSkillId = skillId
-                    local skillLevel = XMVCA.XCharacter:GetSkillLevel(curSelectSkillId)
-                    local skillDetail = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(curSelectSkillId, skillLevel)
-                    curPanelChangeMode:FindTransform("RImgModeIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(skillDetail.Icon)
-                    curPanelChangeMode:FindTransform("TxtMode"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillDetail.Name
-                    curPanelChangeMode:FindTransform("TxtModeName"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillExchangeConfig.Title[index]
+        local isShowCurPanelChangeMode = false
+        if xRobot and XTool.IsNumberValid(xRobot:GetConfig().SwitchSkillGroupId) then
+            if isHasSwitchSkill then
+                local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
+                local curSelectSkillId = nil
+                for index, skillId in ipairs(groupSkillIds) do
+                    if xRobot:IsSkillUsing(skillId) then
+                        curSelectSkillId = skillId
+                        local skillLevel = xRobot:GetSkillLevel(curSelectSkillId)
+                        local skillDetail = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(curSelectSkillId, skillLevel)
+                        curPanelChangeMode:FindTransform("RImgModeIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(skillDetail.Icon)
+                        curPanelChangeMode:FindTransform("TxtMode"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillDetail.Name
+                        curPanelChangeMode:FindTransform("TxtModeName"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillExchangeConfig.Title[index]
+                        break
+                    end
                 end
+                XMVCA.XFuben:SetCacheBattleRoleRoomRobotSkillIdChangeData(xRobot:GetId(), curSelectSkillId) -- 该行代码会将数据同步到服务器
+                isShowCurPanelChangeMode = true
+            else
+                isShowCurPanelChangeMode = false
+            end
+        elseif xCharacter then
+            if isHasSwitchSkill then
+                local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
+                local curSelectSkillId = nil
+                for index, skillId in ipairs(groupSkillIds) do
+                    if XMVCA.XCharacter:IsSkillUsing(skillId) then
+                        curSelectSkillId = skillId
+                        local skillLevel = XMVCA.XCharacter:GetSkillLevel(curSelectSkillId)
+                        local skillDetail = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(curSelectSkillId, skillLevel)
+                        curPanelChangeMode:FindTransform("RImgModeIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(skillDetail.Icon)
+                        curPanelChangeMode:FindTransform("TxtMode"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillDetail.Name
+                        curPanelChangeMode:FindTransform("TxtModeName"):GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillExchangeConfig.Title[index]
+                        break
+                    end
+                end
+                isShowCurPanelChangeMode = true
+            else
+                isShowCurPanelChangeMode = false
             end
         end
+        
+        curPanelChangeMode.gameObject:SetActiveEx(isShowCurPanelChangeMode)
     end
 
     -- 最后再刷新q版状态机

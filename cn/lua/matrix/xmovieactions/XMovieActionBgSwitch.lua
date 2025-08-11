@@ -1,8 +1,8 @@
-local DefaultPos = CS.UnityEngine.Vector3(0, 0, 0)
-local DefaultScale = CS.UnityEngine.Vector3(1.1, 1.1, 1.1)
 local DefaultAspectRatio = 1
 local DefaultBgIndex = 1
 
+---@field UiRoot XUiMovie
+---@class XMovieActionBgSwitch
 local XMovieActionBgSwitch = XClass(XMovieActionBase, "XMovieActionBgSwitch")
 
 function XMovieActionBgSwitch:Ctor(actionData)
@@ -21,26 +21,26 @@ function XMovieActionBgSwitch:Ctor(actionData)
 end
 
 function XMovieActionBgSwitch:OnUiRootInit()
-    self.RImgBg = self.UiRoot["RImgBg".. tostring(self.BgIndex)] 
+    self.RImgBg = self.UiRoot.UiMovieBg:GetBg(self.BgIndex)
 
     if self.RImgBg then
-        self.AspectRatioFitter = self.RImgBg.transform:GetComponent("XAspectRatioFitter")
-        self.CanvasGroup = self.RImgBg.transform:GetComponent("CanvasGroup")
+        self.AspectRatioFitter = self.RImgBg:GetXAspectRatioFitter()
+        self.CanvasGroup = self.RImgBg:GetCanvasGroup()
         DefaultAspectRatio = self.AspectRatioFitter.aspectRatio
     end
 
     -- 支持动画时，RImgBg1为原图，RImgBg2为新图，RImgBg2的透明度从0缓变为1
     if self.NeedSupportAnim and self.BgIndex == DefaultBgIndex then
-        self.RImgAnimBg = self.UiRoot.RImgBg2
-        self.AspectRatioFitter2 = self.RImgAnimBg.transform:GetComponent("XAspectRatioFitter")
+        self.RImgAnimBg = self.UiRoot.UiMovieBg:GetBg(2)
+        self.AspectRatioFitter2 = self.RImgAnimBg:GetXAspectRatioFitter()
     end
 
     -- FullScreenBackground下的背景图，仍按照旧逻辑改动FullScreenBackground的透明度
-    local isInFullScreenBackground = self.RImgBg.transform.parent == self.UiRoot.FullScreenBackground.transform
+    local isInFullScreenBackground = self.RImgBg.Link.transform.parent == self.UiRoot.FullScreenBackground.transform
     if isInFullScreenBackground then
         self.CanvasGroupBg = self.UiRoot.FullScreenBackground:GetComponent("CanvasGroup")
     else
-        self.CanvasGroupBg = self.RImgBg:GetComponent("CanvasGroup")
+        self.CanvasGroupBg = self.RImgBg:GetCanvasGroup()
     end
 end
 
@@ -52,8 +52,8 @@ function XMovieActionBgSwitch:OnUiRootDestroy()
 end
 
 function XMovieActionBgSwitch:OnInit()
-    self.RImgBg.gameObject:SetActiveEx(not self.IsHide)
     if self.IsHide then
+        self.RImgBg:Hide()
         return
     end
 
@@ -61,24 +61,21 @@ function XMovieActionBgSwitch:OnInit()
     local aspectRatioPercent = self.AspectRatioPercent
     local ratio = aspectRatioPercent > 0 and DefaultAspectRatio * aspectRatioPercent or DefaultAspectRatio
     local rImgBg = self.RImgBg
-    local loadRawImage = rImgBg.gameObject:GetComponent("XLoadRawImage")
-    if loadRawImage then
-        self.Record.BgPath = loadRawImage.AssetUrl
-    end
-    rImgBg.rectTransform.anchoredPosition3D = DefaultPos
-    rImgBg.transform.localScale = DefaultScale
+    self.Record.BgPath = rImgBg:GetBgPath()
+    rImgBg:ResetPosition()
+    rImgBg:ResetScale()
     self.AspectRatioFitter.aspectRatio = ratio
-    rImgBg.gameObject:SetActiveEx(true)
+    rImgBg:Show()
 
     if self.NeedSupportAnim and self.RImgAnimBg then
         rImgBg = self.RImgAnimBg
-        rImgBg:SetRawImage(bgPath)
-        rImgBg.transform.localScale = DefaultScale
-        rImgBg.rectTransform.anchoredPosition3D = DefaultPos
+        rImgBg:SetBgPath(bgPath)
+        rImgBg:ResetScale()
+        rImgBg:ResetPosition()
         self.AspectRatioFitter2.aspectRatio = ratio
-        rImgBg.gameObject:SetActiveEx(true)
+        rImgBg:Show()
     else
-        rImgBg:SetRawImage(bgPath)
+        rImgBg:SetBgPath(bgPath)
     end
 
     local bgAlpha = self.BgAlpha
@@ -91,17 +88,17 @@ function XMovieActionBgSwitch:OnExit()
     if self.NeedSupportAnim then
         self.CanvasGroup.alpha = 1
         if not self.IsHide then
-            self.RImgBg:SetRawImage(self.BgPath)
+            self.RImgBg:SetBgPath(self.BgPath)
         end
         if self.RImgAnimBg then
-            self.RImgAnimBg.gameObject:SetActiveEx(false)
+            self.RImgAnimBg:Hide()
         end
     end
 end
 
 function XMovieActionBgSwitch:OnUndo()
     if self.Record.BgPath then
-        self.RImgBg:SetRawImage(self.Record.BgPath)
+        self.RImgBg:SetBgPath(self.Record.BgPath)
     end
 end
 

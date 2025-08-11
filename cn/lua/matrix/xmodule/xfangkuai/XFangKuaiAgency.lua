@@ -27,7 +27,7 @@ end
 
 ---功能是否有红点
 function XFangKuaiAgency:CheckRedPoint()
-    if not self._Model.ActivityData then
+    if not self._Model.ActivityData or not self:GetIsOpen(true) then
         return false
     end
     return self._Model:CheckTaskRedPoint() or self._Model:CheckAllChapterRedPoint()
@@ -35,7 +35,7 @@ end
 
 ---当有未通关的关卡时显示红点
 function XFangKuaiAgency:CheckChallangeRedPoint()
-    if not self._Model.ActivityData then
+    if not self._Model.ActivityData or not self:GetIsOpen(true) then
         return false
     end
     return self._Model:CheckChapterChallengeRedPoint()
@@ -73,6 +73,26 @@ end
 
 function XFangKuaiAgency:IsCurStageId(stageId)
     return XLuaUiManager.IsUiShow("UiFangKuaiFight") and self._Model:GetCurStageIdGuide() == stageId
+end
+
+-- 引导
+function XFangKuaiAgency:IsCurChapterDetailStageId(stageId)
+    ---@type XUiFangKuaiChapterDetail
+    local chapterDetail = XLuaUiManager.GetTopLuaUi("UiFangKuaiChapterDetail")
+    if chapterDetail ~= nil then
+        return chapterDetail:GetStageId() == stageId
+    end
+    return false
+end
+
+-- 引导
+function XFangKuaiAgency:IsGuideExitFever(isMeet)
+    ---@type XUiFangKuaiFight
+    local fight = XLuaUiManager.GetTopLuaUi("UiFangKuaiFight")
+    if fight ~= nil then
+        return fight:GetExitFevGuideFlag() == isMeet
+    end
+    return false
 end
 
 --region 副本入口扩展

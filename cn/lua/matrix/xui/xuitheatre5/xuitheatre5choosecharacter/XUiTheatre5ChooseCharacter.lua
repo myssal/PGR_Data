@@ -31,8 +31,16 @@ function UiTheatre5ChooseCharacter:OnStart(gameMode)
         ---@type XUiTheatre5CharacterTeaching
         self.CharacterTeaching = XUiTheatre5CharacterTeaching.New(self.GameObject, self)
         self.CharacterTeaching:Open()
-    end
-    self:PVEChatCheck()    
+    end  
+end
+
+function UiTheatre5ChooseCharacter:OnEnable()
+    XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_GUIDE_THEATRE5_RETURN_MAIN, self.PlayReturnMainGuide, self)
+    self:PVEStoryNodeCheck()  
+end
+
+function UiTheatre5ChooseCharacter:OnDisable()
+    XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_GUIDE_THEATRE5_RETURN_MAIN, self.PlayReturnMainGuide, self)
 end
 
 function UiTheatre5ChooseCharacter:OnPveOpenOrCloseChat(isOpen, characters)
@@ -68,11 +76,18 @@ function UiTheatre5ChooseCharacter:OnPveOpenOrCloseChat(isOpen, characters)
     self.ComChooseCharacter:SetCharactersVisible(operateCharacters, enable)    
 end
 
-function UiTheatre5ChooseCharacter:PVEChatCheck()
+function UiTheatre5ChooseCharacter:PVEStoryNodeCheck()
     local mode = self._Control:GetCurPlayingMode()
-    if mode == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if mode ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
         return
     end
+    --先触发ending
+    local isTrigger = self._Control.FlowControl:CheckEndingTrigger()
+    if isTrigger then
+        return
+    end    
+
+    --再触发对话    
     local success = self._Control.FlowControl:CheckChatTrigger(XMVCA.XTheatre5.EnumConst.ChatTriggerType.UIPanel, self.Name, function()
         if self.SafeAreaContentPane then
             self.SafeAreaContentPane.gameObject:SetActiveEx(true)
@@ -80,7 +95,8 @@ function UiTheatre5ChooseCharacter:PVEChatCheck()
     end)
     if success and self.SafeAreaContentPane then
         self.SafeAreaContentPane.gameObject:SetActiveEx(false)
-    end         
+    end  
+
 end
 
 function UiTheatre5ChooseCharacter:ResetShow()
@@ -120,6 +136,10 @@ function UiTheatre5ChooseCharacter:OnBtnBackClickEvent()
     else
         self._Control:ReturnTheatre5Main()
     end
+end
+
+function UiTheatre5ChooseCharacter:PlayReturnMainGuide()
+    self._Control:ReturnTheatre5Main()
 end
 
 function UiTheatre5ChooseCharacter:OnDestroy()

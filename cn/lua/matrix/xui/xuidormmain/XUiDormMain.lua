@@ -536,7 +536,7 @@ function XUiDormMain:CheckOpenHelp()
     end
     
     XLuaUiManager.SetMask(true)
-    local count = XHelpCourseConfig.GetImageAssetCount(self.HelpCourseKey) or 0
+    local count = XMVCA.XHelpCourse:GetHelpCourseImageAssetCountByFunction(self.HelpCourseKey) or 0
     local index = math.min(configJumpIndex, count)
     XScheduleManager.ScheduleOnce(function()
         XLuaUiManager.SetMask(false)

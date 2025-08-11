@@ -19,7 +19,7 @@ function XUiGridFangKuaiChapter:Update()
 
     self.PanelOngoing.gameObject:SetActiveEx(self._IsPlaying)
     --self.Effect.gameObject:SetActiveEx(self._IsPlaying)
-    self.TxtName.text = self._IsUnlock and self._Chapter.Name or ""
+    self.TxtName.text = self._Chapter.Name
 
     local isRed = self._Control:CheckChapterRedPoint(self._Chapter.Id)
     self.GridChapter:ShowReddot(isRed)

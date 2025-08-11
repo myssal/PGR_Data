@@ -734,11 +734,6 @@ function XBlackRockChessModel:GetWeaponCircleIcon(weaponId)
     return template.CircleIcon
 end
 
-function XBlackRockChessModel:GetWeaponCircleIcon(weaponId)
-    local template = self:_GetWeaponConfig(weaponId)
-    return template.CircleIcon
-end
-
 function XBlackRockChessModel:GetWeaponModelUrl(weaponId)
     local template = self:_GetWeaponConfig(weaponId)
     return template.ModelUrl

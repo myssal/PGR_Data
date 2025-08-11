@@ -146,10 +146,10 @@ local DoRunLogin = function()
     XMVCA.XBigWorldGamePlay:OnExitFight()
     XHomeSceneManager.LeaveScene()
 
-    XDataCenter.Init()
+    XDataCenter.InitRepeat()
     XMVCA:Init()
 
-    XLuaUiManager.Open("UiLogin")
+    XLoginManager.BackToUiLogin()
 end
 
 function XUserManager.SignOut()
@@ -189,7 +189,7 @@ function XUserManager.GetUniqueUserId()
         prefix = "dev"
     elseif XUserManager.Channel == XUserManager.CHANNEL.HERO then
         local channelId = CS.XHeroSdkAgent.GetChannelId()
-        if channelId == 18 or channelId == 56 then          --Hero（国服官服渠道18、56）
+        if channelId == XDataCenter.UiPcManager.Channel.Android or channelId == XDataCenter.UiPcManager.Channel.IOS then          --Hero（国服官服渠道18、56）
             prefix = "Hero"
         else                                                --国内其他安卓渠道使用英雄提供的渠道Id
             prefix = tostring(channelId)

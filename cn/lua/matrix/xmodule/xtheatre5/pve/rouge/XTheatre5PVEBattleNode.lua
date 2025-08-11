@@ -27,7 +27,7 @@ function XTheatre5PVEBattleNode:_OnEnter()
                     self:Exit()
                     mainControl:ExitModel()
                 else
-                    XLuaUiManager.Open("UiTheatre5Loading")
+                    XMVCA.XTheatre5.BattleCom:OpenMatchLoadingUi()
                 end
             end
         end)
@@ -90,13 +90,14 @@ function XTheatre5PVEBattleNode:OnWholeBattleExit(resultData)
     local chapterCfg = self._MainModel:GetPveChapterCfg(self._ChapterBattleData.ChapterId)
     local isPassAvgPlay = self._MainModel.PVERougeData:IsPassAvgPlay(self._ChapterBattleData.ChapterId)
     if not isPassAvgPlay and not string.IsNilOrEmpty(chapterCfg.EndStory) then
+        local chapterId = self._ChapterBattleData.ChapterId
         XDataCenter.MovieManager.PlayMovie(chapterCfg.EndStory,function()
-            XMVCA.XTheatre5.PVEAgency:RequestPveAvgPlay(self._ChapterBattleData.ChapterId, false, function(success)
+            XMVCA.XTheatre5.PVEAgency:RequestPveAvgPlay(chapterId, false, function(success)
                 if success then
                     self:ChapterCompleted()
                 end        
             end)  
-        end)
+        end, nil, nil, false)
         return
     end
     self:ChapterCompleted()

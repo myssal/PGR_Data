@@ -134,7 +134,7 @@ function XTheatre5PVELink:AddCurNodeCompletedCallback(nodeType ,cb)
         return
     end    
     if self._HeadNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Running and
-        self._HeadNode:GetPveChapterType() == nodeType then
+        self._HeadNode.NodeType == nodeType then
         self._HeadNode:AddCurNodeCompletedCallback(cb)
     end    
 end

@@ -27,7 +27,7 @@ function XUiTheatre5PVEMainClue:Update(clueId)
     if clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
         desc = clueCfg.CompleteDesc  
     end      
-    self.TxtDetail.text = desc   
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)   
     self.TxtTitle.text = clueCfg.Title
     self.BtnVideo:SetRawImage(clueCfg.Img)   
     self.BtnVideo.gameObject:SetActiveEx(clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Completed and not string.IsNilOrEmpty(clueCfg.StoryId))
@@ -47,24 +47,31 @@ function XUiTheatre5PVEMainClue:UpdateCuleBoard(localPosition, visible, playAnim
     end      
 end
 
+--region 外部做定制化
 function XUiTheatre5PVEMainClue:UpdateDesc(desc)
-    self.TxtDetail.text = desc   
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)   
 end
 
 function XUiTheatre5PVEMainClue:HideDeduceBtn()
     self.DeduceBtn.gameObject:SetActiveEx(false)
 end
 
+function XUiTheatre5PVEMainClue:HideVideoBtn()
+    self.BtnVideo.gameObject:SetActiveEx(false)
+end
+
+--endregion
+
 function XUiTheatre5PVEMainClue:OnClickVideo()
     if not string.IsNilOrEmpty(self._AvgId) then
-        XDataCenter.MovieManager.PlayMovie(self._AvgId)
+        XDataCenter.MovieManager.PlayMovie(self._AvgId, nil, nil, nil, false)
     end    
 end
 
 function XUiTheatre5PVEMainClue:OnClickDeduce()
     local storyLineId = self._Control.PVEControl:GetStoryLineIdByScriptId(self._DeduceId)
     if not XTool.IsNumberValid(storyLineId) then
-        XLog.Error(string.format("当前没有故事线出于推演状态,deduceId:%s",self._DeduceId))
+        XUiManager.TipMsg(self._Control.PVEControl:GetPveVersionError())
         return
     end
     self._Control.FlowControl:EnterStroryLineContent(storyLineId)    

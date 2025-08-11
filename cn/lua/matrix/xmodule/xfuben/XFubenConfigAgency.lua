@@ -302,6 +302,10 @@ function XFubenConfigAgency:GetStageTypeCfg(stageId)
     return self._Model:GetStageTypeCfg(stageId)
 end
 
+function XFubenConfigAgency:GetStageRobotIdList(stageId, ignoreError)
+    return self._Model:GetStageRobotIdList(stageId, ignoreError)
+end
+
 ---
 --- 活动特殊关卡配置机器人列表获取
 function XFubenConfigAgency:GetStageTypeRobot(stageType)

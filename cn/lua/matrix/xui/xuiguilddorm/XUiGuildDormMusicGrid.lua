@@ -10,8 +10,6 @@ function XUiGuildDormMusicGrid:Ctor()
     XEventManager.AddEventListener(XEventId.EVENT_DORM_UPDATE_MUSIC, self.UpdateMusic, self)
     -- todo_gd 到时初始化读取正式名称
     self:UpdateMusic()
-    -- 停止背景音乐 （暂停音乐后使用PlayMusicWithAnalyzer同一首音乐不会播放）
-    CS.XAudioManager.StopMusic()
     local bgmId = XDataCenter.GuildDormManager.GetPlayedBgmId()
     XDataCenter.GuildDormManager.PlayBgm(bgmId)
 end

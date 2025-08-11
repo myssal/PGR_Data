@@ -8,7 +8,7 @@ local Vector3 = CS.UnityEngine.Vector3
 ---@field Parent XUiPokerGuessing2Character
 local XUiPokerGuessing2Card = XClass(XUiNode, "XUiPokerGuessing2Card")
 
-function XUiPokerGuessing2Card:OnStart()
+function XUiPokerGuessing2Card:OnStart(isPlayerCard)
     if self.TxtNum then
         self.TxtNum.gameObject:SetActiveEx(false)
     end
@@ -40,6 +40,10 @@ function XUiPokerGuessing2Card:OnStart()
     self._IsPutOnGround = false
 
     self._PositionZ = 0
+
+    if self.PanelWhite then
+        self.PanelWhite.gameObject:SetActiveEx(isPlayerCard)
+    end
 end
 
 function XUiPokerGuessing2Card:SetIsCanDrag(value)
@@ -55,7 +59,7 @@ function XUiPokerGuessing2Card:SetVisibleCardBack(value)
 end
 
 ---@param data XUiPokerGuessing2CardData
-function XUiPokerGuessing2Card:Update(data)
+function XUiPokerGuessing2Card:Update(data, index, noShowChanged)
     self._Data = data
     if self.ImgBg then
         self.ImgBg:SetSprite(data.Icon)
@@ -63,7 +67,55 @@ function XUiPokerGuessing2Card:Update(data)
     if self.RImgCardFace then
         self.RImgCardFace:SetRawImage(data.Icon)
     end
-    --self.PanelWin
+
+    if noShowChanged then
+        self:_HideChangedPanel()
+    else
+        self:TryShowChangedCard(false)
+    end
+end
+
+function XUiPokerGuessing2Card:_HideChangedPanel()
+    if self.PanelChange then
+        self.PanelChange.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiPokerGuessing2Card:TryShowChangedCard(playAnimation, animDelayTime)
+    if not self._Data or not XTool.IsNumberValid(self._Data.ChangedId) then
+        self:_HideChangedPanel()
+        return
+    end
+
+    if self.PanelChange then
+        self.PanelChange.gameObject:SetActiveEx(true)
+
+        if self.RImgChange then
+            self.RImgChange:SetRawImage(self._Control:GetPokerGuessing2CardChangedFrontAssetPathById(self._Data.ChangedId))
+        end
+
+        if self.RImgGift then
+            local url = self._Control:GetCharacterChangeCardIcon()
+
+            if not string.IsNilOrEmpty(url) then
+                self.RImgGift:SetRawImage(url)
+            end
+        end
+    end
+    
+    if playAnimation then
+        if XTool.IsNumberValid(animDelayTime) then
+            self:DelayCall(function()
+                self:PlayAnimation('ChangeCard')
+            end, animDelayTime)
+        else
+            self:PlayAnimation('ChangeCard')
+        end
+    end
+end
+
+function XUiPokerGuessing2Card:ShowChangeCardAnimOnly()
+    self:PlayAnimation('ChangeCard')
 end
 
 function XUiPokerGuessing2Card:SetParentOnDrag(transform)
@@ -164,6 +216,10 @@ function XUiPokerGuessing2Card:IsOnOriginalParent()
     return self._IsOnOriginalParent
 end
 
+function XUiPokerGuessing2Card:GetCardId()
+    return self._Data and self._Data.Id or 0
+end
+
 function XUiPokerGuessing2Card:PlayAnimationCardToPutDown(duration)
     self._IsOnOriginalParent = false
     self._IsPutOnGround = true
@@ -175,6 +231,7 @@ function XUiPokerGuessing2Card:PlayAnimationCardToPutDown(duration)
     self:DoMove(self.Transform, rectTransform.anchoredPosition3D, duration, nil, function()
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
         self.Parent:ShowEffectPutDown()
+        self._Control:SetEnemySelectedCard(self._Data)
     end)
 end
 
@@ -210,6 +267,8 @@ end
 
 function XUiPokerGuessing2Card:PlayAnimationRevealTheCard()
     self:SetVisibleCardFace(false)
+    self:_HideChangedPanel()
+    self:TryShowChangedCard(false)
     self:PlayAnimation("ShowCard", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
 end
 

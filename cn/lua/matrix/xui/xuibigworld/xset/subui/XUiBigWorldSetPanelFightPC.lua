@@ -408,7 +408,7 @@ function XUiBigWorldSetPanelFightPC:_UpdatePanelBtnGroup(lastJoystickType)
             defaultIndex = self._SelectIndex
         end
     else
-        local isDefault = CS.XInputManager.IsDefaultMainButton(self._lastJoystickType)
+        local isDefault = CS.XInputManager.IsDefaultMainButton(self._lastJoystickType or self:GetCurKeySetType())
         defaultIndex = isDefault and 1 or 2
     end
     self._isSwichGroupInit = true

@@ -121,7 +121,8 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_BIG_WORLD_OPEN_TEACH_POPUP, XMVCA.XBigWorldTeach.OnOpenTeachPopup, XMVCA.XBigWorldTeach)
     
     -- Loading
-    register(X3C_CMD.CMD_FIGHT_OPEN_BLACK_LOADING, XMVCA.XBigWorldLoading.OnOpenBlackTransitionLoading, XMVCA.XBigWorldLoading)
+    register(X3C_CMD.CMD_FIGHT_OPEN_LOADING, XMVCA.XBigWorldLoading.OnCmdOpenLoading, XMVCA.XBigWorldLoading)
+    register(X3C_CMD.CMD_FIGHT_CLOSE_LOADING, XMVCA.XBigWorldLoading.OnCmdCloseLoading, XMVCA.XBigWorldLoading)
     
     -- 功能屏蔽
     register(X3C_CMD.CMD_SYSTEM_FUNCTION_ENABLE_CHANGED, XMVCA.XBigWorldFunction.OnFunctionsShieldChanged, XMVCA.XBigWorldFunction)
@@ -143,9 +144,11 @@ end
 
 function XBigWorldAgency:InitConfig()
     CsBigWorldConfig.Instance:Init()
+    XMVCA.XBigWorldUI:OnEnterBigWorld()
 end
 
 function XBigWorldAgency:DisposeConfig()
+    XMVCA.XBigWorldUI:OnExitBigWorld()
     CsBigWorldConfig.Instance:Dispose()
 end
 

@@ -91,7 +91,7 @@ function XBigWorldLoadingAgency:OpenLoadingByType(loadingType, ...)
     elseif loadingType == self.LoadingType.BlackTransition then
         self:OpenBlackTransitionLoading()
     elseif loadingType == self.LoadingType.BlackMask then
-        self:OpenBlackMaskLoading()
+        self:OpenBlackMaskLoading(...)
     end
 end
 
@@ -132,8 +132,34 @@ function XBigWorldLoadingAgency:CloseCurrentLoading(callback)
     end
 end
 
-function XBigWorldLoadingAgency:OnOpenBlackTransitionLoading()
-    self:OpenLoadingByType(self.LoadingType.BlackTransition)
+function XBigWorldLoadingAgency:OnCmdOpenLoading(data)
+    if data then
+        local loadingType = data.LoadingType
+        local args = data.Args
+        
+        if XTool.IsNumberValid(loadingType) then
+            if not XTool.IsTableEmpty(args) then
+                self:OpenLoadingByType(loadingType, table.unpack(args))
+            else
+                self:OpenLoadingByType(loadingType)
+            end
+        end
+    end
+end
+
+function XBigWorldLoadingAgency:OnCmdCloseLoading(data)
+    if data then
+        local loadingType = data.LoadingType
+        local callback = data.Callback
+        
+        if XTool.IsNumberValid(loadingType) then
+            self:CloseLoadingByType(loadingType, callback)
+        else
+            self:CloseCurrentLoading(callback)
+        end
+    else
+        self:CloseCurrentLoading()
+    end
 end
 
 return XBigWorldLoadingAgency

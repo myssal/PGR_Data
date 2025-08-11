@@ -1136,7 +1136,7 @@ end
 
 function XEquipAgency:GetEquipStarByEquipId(equipId)
     local templateId = self:GetEquipTemplateId(equipId)
-    local quality = self:GetEquipQuality(templateId)
+    local quality = self:GetEquipStar(templateId)
     return quality
 end
 
@@ -1594,6 +1594,7 @@ end
 ---------------------------------------- #region EquipSuit ----------------------------------------
 --- 获取装备配置表
 --- @param id number 套装Id
+--- @return XTableEquipSuit
 function XEquipAgency:GetConfigEquipSuit(id)
     return self._Model:GetConfigEquipSuit(id)
 end
@@ -1602,8 +1603,12 @@ function XEquipAgency:GetEquipSuitIconPath(suitId)
     return self._Model:GetSuitIconPath(suitId)
 end
 
-function XEquipAgency:GetEquipSuitBigIconPath(suitId)
-    return self._Model:GetSuitBigIconPath(suitId)
+function XEquipAgency:GetEquipSuitWaferBagPath(suitId)
+    return self._Model:GetSuitWaferBagPath(suitId)
+end
+
+function XEquipAgency:GetEquipSuitClearIconPath(suitId)
+    return self._Model:GetSuitClearIconPath(suitId)
 end
 
 function XEquipAgency:GetSuitName(suitId)
@@ -1940,11 +1945,6 @@ end
 --- 获取武器等级对应的UI显示
 function XEquipAgency:GetConfigWeaponDeregulateUI(lv)
     return self._Model:GetConfigWeaponDeregulateUI(lv)
-end
-
---- 检测超限引导
-function XEquipAgency:CheckOverrunGuide(weaponId)
-    return self._Model:CheckOverrunGuide(weaponId)
 end
 ---------------------------------------- #endregion WeaponOverrun ----------------------------------------
 

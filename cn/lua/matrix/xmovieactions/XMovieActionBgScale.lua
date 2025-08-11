@@ -1,3 +1,5 @@
+---@class XMovieActionBgScale
+---@field UiRoot XUiMovie
 local XMovieActionBgScale = XClass(XMovieActionBase, "XMovieActionBgScale")
 local DefaultBgIndex = 1
 
@@ -17,19 +19,19 @@ function XMovieActionBgScale:Ctor(actionData)
 end
 
 function XMovieActionBgScale:OnUiRootInit()
-    self.RImgBg = self.UiRoot["RImgBg".. tostring(self.BgIndex)] 
-    self.RImgAnimBg = self.BgIndex == DefaultBgIndex and self.UiRoot.RImgBg2 or nil
+    self.RImgBg = self.UiRoot.UiMovieBg:GetBg(self.BgIndex)
+    self.RImgAnimBg = self.BgIndex == DefaultBgIndex and self.UiRoot.UiMovieBg:GetBg(2) or nil
 end
 
 function XMovieActionBgScale:OnRunning()
     if self.RImgBg then
-        self.RImgBg.transform.localScale = CS.UnityEngine.Vector3.one * self.Scale
-        self.RImgBg.transform.localPosition = self.Pos
+        self.RImgBg:SetLocalScale(CS.UnityEngine.Vector3.one * self.Scale)
+        self.RImgBg:SetLocalPosition(self.Pos)
     end
 
     if self.RImgAnimBg then
-        self.RImgAnimBg.transform.localScale = CS.UnityEngine.Vector3.one * self.Scale
-        self.RImgAnimBg.transform.localPosition = self.Pos
+        self.RImgAnimBg:SetLocalScale(CS.UnityEngine.Vector3.one * self.Scale)
+        self.RImgAnimBg:SetLocalPosition(self.Pos)
     end
 end
 

@@ -290,16 +290,16 @@ XFunctionalSkipManagerCreator = function()
     -- 前往巴别塔
     function XFunctionalSkipManager.OnOpenBabelTower()
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.BabelTower) then
-            return
+            return false
         end
 
         local currentActivityNo = XDataCenter.FubenBabelTowerManager.GetCurrentActivityNo()
         if not currentActivityNo or not XDataCenter.FubenBabelTowerManager.IsInActivityTime(currentActivityNo) then
             XUiManager.TipMsg(CS.XTextManager.GetText("RougeLikeNotInActivityTime"))
-            return
+            return false
         end
 
-        XDataCenter.FubenBabelTowerManager.OpenBabelTowerCheckStory()
+        return XDataCenter.FubenBabelTowerManager.OpenBabelTowerCheckStory()
     end
 
     -- 前往新角色教学活动
@@ -330,7 +330,7 @@ XFunctionalSkipManagerCreator = function()
             needVideoSubPackTip = true
         end
         
-        if needVideoSubPackTip and not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.GAMEPLAY) then
+        if needVideoSubPackTip and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Experiment) then
             return
         end
 
@@ -543,7 +543,7 @@ XFunctionalSkipManagerCreator = function()
             return false
         end
 
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Prequel, data.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Prequel, data.ChapterId) then
             return
         end
         
@@ -742,7 +742,7 @@ XFunctionalSkipManagerCreator = function()
         end
 
         if stageInfo.Type == XDataCenter.FubenManager.StageType.Bfrt then
-            if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenNightmare) then
+            if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Bfrt) then
                 return
             end
         end
@@ -756,7 +756,7 @@ XFunctionalSkipManagerCreator = function()
             XUiManager.TipMsg(CS.XTextManager.GetText("FubenMainLineNoneOpen"))
             return
         end
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MainLine, stageInfo.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, stageInfo.ChapterId) then
             return
         end
         if openStageDetail then
@@ -873,7 +873,7 @@ XFunctionalSkipManagerCreator = function()
         elseif param1 == XEnumConst.Archive.SubSystemType.Awareness then
             XLuaUiManager.Open("UiArchiveAwareness")
         elseif param1 == XEnumConst.Archive.SubSystemType.Story then
-            if not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.STORY) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Archive) then
                 return
             end
 
@@ -887,7 +887,7 @@ XFunctionalSkipManagerCreator = function()
         elseif param1 == XEnumConst.Archive.SubSystemType.Partner then
             XLuaUiManager.Open("UiArchivePartner")
         elseif param1 == XEnumConst.Archive.SubSystemType.PV then
-            if not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.STORY) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Archive) then
                 return
             end
 
@@ -1018,7 +1018,7 @@ XFunctionalSkipManagerCreator = function()
         if not jumpData then
             return
         end
-        if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Extra) then
+        if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ExtralChapter) then
             local extraManager = XDataCenter.ExtraChapterManager
             if not jumpData.CustomParams then
                 extraManager.JumpToExtraBanner()
@@ -1836,6 +1836,10 @@ XFunctionalSkipManagerCreator = function()
         end
         XLuaUiManager.Open("UiPreloadMain")
     end
+    
+    function XFunctionalSkipManager.SkipToCloudGame()
+        XLuaUiManager.Open("UiCloudGamingPopupMain")
+    end
 
     function XFunctionalSkipManager.SkipToNewDrawMain(list)
         local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
@@ -2112,10 +2116,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager:SkipToFangKuai()
         if not XMVCA.XFangKuai:ExCheckInTime() then
             XUiManager.TipText("FubenRepeatNotInActivityTime")
-            return
+            return false
         end
 
         XLuaUiManager.Open("UiFangKuaiMain")
+        return true
     end
 
     function XFunctionalSkipManager:SkipToTemple()
@@ -2204,7 +2209,8 @@ XFunctionalSkipManagerCreator = function()
     end
     
     function XFunctionalSkipManager:SkipToLineArithmetic()
-        XMVCA.XLineArithmetic:OpenMainUi() 
+        --XMVCA.XLineArithmetic:OpenMainUi()
+        return XMVCA.XLineArithmetic2:ExOnSkip()
     end
 
     function XFunctionalSkipManager:SkipToBossInshot()

@@ -13,23 +13,26 @@ function XTheatre5Control:OnInit()
     self.PVEControl = self:AddSubControl(require('XModule/XTheatre5/PVE/XTheatre5PVEControl'))
     ---@type XTheatre5CharacterControl
     self.CharacterControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5CharacterControl'))
-    ---@type XTheatre5FlowControl
+    ---@type XTheatre5FlowController
     self.FlowControl = self:AddSubControl(require('XModule/XTheatre5/XTheatre5FlowController'))
     ---@type XTheatre5GameEntityControl
     self.GameEntityControl = self:AddSubControl(require('XModule/XTheatre5/Common/XTheatre5GameEntityControl'))
-    
+
     self._EnterFightHandler = handler(self, self.OnFightEnterEvent)
     self._ExitFightHandler = handler(self, self.OnFightExitEvent)
 
     CsGameEventManager:RegisterEvent(XEventId.EVENT_DLC_FIGHT_ENTER, self._EnterFightHandler)
     CsGameEventManager:RegisterEvent(XEventId.EVENT_DLC_FIGHT_EXIT, self._ExitFightHandler)
-    self:SetDelayReleaseTime(10) --战斗、剧情之后，栈中的界面被Release, 后续当PopThenOpen关闭瞬间会释放control，故做延迟
+    -- 开发过程中，关闭界面后立即热更代码，会出错，故zlb开发过程中，不做延迟
+    if not XMain.IsZlbDebug then
+        self:SetDelayReleaseTime(10) --战斗、剧情之后，栈中的界面被Release, 后续当PopThenOpen关闭瞬间会释放control，故做延迟
+    end
 
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_SET_BATTLE_PAUSEORCONTINUE, self.OnFightPauseOrResumeEvent, self)
 end
 
 function XTheatre5Control:AddAgencyEvent()
-    
+
 end
 
 function XTheatre5Control:RemoveAgencyEvent()
@@ -43,6 +46,9 @@ function XTheatre5Control:OnRelease()
     CsGameEventManager:RemoveEvent(XEventId.EVENT_DLC_FIGHT_EXIT, self._ExitFightHandler)
 
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE5_SET_BATTLE_PAUSEORCONTINUE, self.OnFightPauseOrResumeEvent, self)
+
+    -- 保底逻辑，因为在UI界面中存在对铭牌弹窗的锁定设置，为防止漏解锁，当退出该玩法时手动解锁
+    XDataCenter.MedalManager.SetNewNameplateAutoWinLock(false)
 end
 
 --region ActivityData
@@ -55,12 +61,12 @@ function XTheatre5Control:RefreshCharacterStatusAdds()
     if not self._Model.CurAdventureData:GetIsNeedUpdateAdds() then
         return
     end
-    
+
     -- 记录各个属性加成值的字典
     local runeDict = self._Model.CurAdventureData:GetRuneDict()
 
     local attrAddsMap = nil
-    
+
     if not XTool.IsTableEmpty(runeDict) then
         attrAddsMap = {}
 
@@ -155,7 +161,7 @@ end
 --- 获取敌人的技能列表（包含普攻）
 function XTheatre5Control:GetCurEnemySkillIdListWithNormalATK()
     local skillIds = self._Model.CurAdventureData:GetEnemySkillIds()
-    
+
     local charaId = self._Model.CurAdventureData:GetEnemyCharacterId()
 
     if XTool.IsNumberValid(charaId) then
@@ -166,7 +172,7 @@ function XTheatre5Control:GetCurEnemySkillIdListWithNormalATK()
             table.insert(skillIds, 1, charaCfg.NormalAttack)
         end
     end
-    
+
     return skillIds
 end
 
@@ -231,31 +237,40 @@ function XTheatre5Control:OnFightExitEvent()
     self:UnLockRef()
 end
 
-function XTheatre5Control:OnFightPauseOrResumeEvent(type)
+function XTheatre5Control:OnFightPauseOrResumeEvent(eventType)
     if not CS.StatusSyncFight.XFightClient.FightInstance then
         return
     end
-    
-    if type == XMVCA.XTheatre5.EnumConst.FightPauseOrResumeType.Pause then
+
+    if type(eventType) == 'string' then
+        if not string.IsNilOrEmpty(eventType) and string.IsNumeric(eventType) then
+            eventType = tonumber(eventType)
+        else
+            XLog.Error('战斗暂停控制事件传入了的type不是数值格式:' .. tostring(eventType))
+            return
+        end
+    end
+
+    if eventType == XMVCA.XTheatre5.EnumConst.FightPauseOrResumeType.Pause then
         CS.StatusSyncFight.XFightClient.FightInstance:OnPauseForClient()
-    elseif type == XMVCA.XTheatre5.EnumConst.FightPauseOrResumeType.Resume then
+    elseif eventType == XMVCA.XTheatre5.EnumConst.FightPauseOrResumeType.Resume then
         CS.StatusSyncFight.XFightClient.FightInstance:OnResumeForClient()
     else
-        XLog.Error('战斗暂停控制事件传入了错误的type:'..tostring(type))
+        XLog.Error('战斗暂停控制事件传入了错误的type:' .. tostring(eventType))
     end
-    
+
 end
 
 function XTheatre5Control:ReturnTheatre5Main()
     local uiTheatre5Main = "UiTheatre5Main"
     local isOpen = XLuaUiManager.IsStackUiOpen(uiTheatre5Main)
     if isOpen then
-        XLuaUiManager.CloseAllUpperUi(uiTheatre5Main) 
+        XLuaUiManager.CloseAllUpperUi(uiTheatre5Main)
     else
         XLuaUiManager.Open(uiTheatre5Main)
         XLog.Debug("theatre5:打开主界面异常,主界面不应该被关闭")
     end
-    self.FlowControl:ExitModel()        
+    self.FlowControl:ExitModel()
 end
 
 --region Configs 
@@ -266,19 +281,19 @@ function XTheatre5Control:GetTheatre5CharacterCfgs()
     local allCfgs = self._Model:GetTheatre5CharacterCfgs()
     if XTool.IsTableEmpty(allCfgs) then
         return
-    end    
+    end
     local characterCfgs = {}
     for _, cfg in pairs(allCfgs) do
         if XTool.IsNumberValid(cfg.Priority) then
-            table.insert(characterCfgs,cfg)
-        end    
+            table.insert(characterCfgs, cfg)
+        end
     end
-    table.sort(characterCfgs, function (a, b)
+    table.sort(characterCfgs, function(a, b)
         if a.Priority ~= b.Priority then
             return a.Priority < b.Priority
         else
             return a.Id < b.Id
-        end        
+        end
     end)
     return characterCfgs
 end
@@ -328,7 +343,7 @@ function XTheatre5Control:GetTheatre5ItemTagCfgById(id, notips)
 end
 
 function XTheatre5Control:GetTheatre5ItemKeyWordCfgById(id, notips)
-    return self._Model:GetTheatre5ItemKeyWordCfgById(id, notips) 
+    return self._Model:GetTheatre5ItemKeyWordCfgById(id, notips)
 end
 
 function XTheatre5Control:GetTheatre5ItemRuneAttrCfgById(id, notips)
@@ -445,7 +460,12 @@ end
 
 --video
 function XTheatre5Control:GetMainVideoId()
-    return self._Model:GetTheatre5ConfigValByKey('MainVideoId') 
+    return self._Model:GetTheatre5ConfigValByKey('MainVideoId')
+end
+
+--- 获取战斗失败后生命数变化延时时长
+function XTheatre5Control:GetClientConfigBattleLoseLifeChangeDelay()
+    return self._Model:GetTheatre5ClientConfigNum('BattleLoseLifeChangeDelay')
 end
 
 --endregion
@@ -482,21 +502,11 @@ function XTheatre5Control:GetValidShopIdlist()
             table.insert(shopIdList, taskShopCfg.ShopId)
         end
     end
-    return shopIdList    
+    return shopIdList
 end
 
 function XTheatre5Control:GetValidShopOrTaskList(type)
-    local validTaskShopCfgs = {}
-    local taskShopCfgs = self._Model:GetTaskOrShopCfgs(type)
-    if XTool.IsTableEmpty(taskShopCfgs) then
-        return validTaskShopCfgs
-    end    
-    for _, taskShopCfg in pairs(taskShopCfgs) do
-        if XFunctionManager.CheckInTimeByTimeId(taskShopCfg.TimeLimitId, true) then
-            table.insert(validTaskShopCfgs, taskShopCfg)        
-        end    
-    end
-    return validTaskShopCfgs
+    return XMVCA.XTheatre5:GetValidShopOrTaskList(type)
 end
 
 --商店按钮旁边需要展示的奖励
@@ -504,25 +514,25 @@ function XTheatre5Control:GetShopShowRewards()
     local values = self._Model:GetTheatre5ConfigValListByKey("ShopShowRewards")
     if XTool.IsTableEmpty(values) then
         return
-    end    
+    end
     local rewards = {}
     for i = 1, #values, 2 do
         local value = values[i]
-        table.insert(rewards, XRewardManager.CreateRewardGoods(value, values[i+1]))
+        table.insert(rewards, XRewardManager.CreateRewardGoods(value, values[i + 1]))
     end
     return rewards
 end
 
 function XTheatre5Control:GetTheatre5CoinIds()
-    local resourceBarCoins = {XDataCenter.ItemManager.ItemId.Theatre5Coin}      
+    local resourceBarCoins = { XDataCenter.ItemManager.ItemId.Theatre5Coin }
     local activityId = self._Model:GetActivityId()
     if XTool.IsNumberValid(activityId) then
         local activityCfg = self._Model:GetTheatre5ActivityCfgById(activityId)
         if XFunctionManager.CheckInTimeByTimeId(activityCfg.TimeId) and XTool.IsNumberValid(activityCfg.ActivityCoin) then
             table.insert(resourceBarCoins, activityCfg.ActivityCoin)
         end
-    end 
-    return resourceBarCoins       
+    end
+    return resourceBarCoins
 end
 
 --region 蓝点相关
@@ -537,6 +547,178 @@ function XTheatre5Control:MarkNewPVPActivityReddot()
     self._Model:MarkNewPVPActivityReddot()
 end
 
+function XTheatre5Control:MarkNewPVEActivityReddot()
+    self._Model:MarkNewPVEActivityReddot()
+end
+
+function XTheatre5Control:MarkLimitShopReddot()
+    self._Model:MarkLimitShopReddot()
+end
+
 --endregion
+
+function XTheatre5Control:RemoveTaskNewReddot(taskCfg)
+    local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(taskCfg.TaskTimeLimitId)
+    if taskTimeLimitCfg and taskTimeLimitCfg.TaskId then
+        for _, taskId in pairs(taskTimeLimitCfg.TaskId) do
+            self._Model:MarkTaskNewReddot(taskId)
+        end
+    end
+end
+
+function XTheatre5Control:RemoveShopNewReddot(shopCfg)
+    local shopDatas = XShopManager.GetShopGoodsList(shopCfg.ShopId, true)
+    if XTool.IsTableEmpty(shopDatas) then
+        return
+    end
+    for _, shopData in pairs(shopDatas) do
+        self._Model:MarkShopNewReddot(shopData.Id)
+    end
+end
+
+function XTheatre5Control:GetDataHandBook(itemType)
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+        -- 技能按照characterId区分
+        local tab = {}
+        local itemConfigs = self._Model:GetTheatre5ItemCfgs()
+        for id, config in pairs(itemConfigs) do
+            -- 配置了IsShow的才显示
+            if config.IsShow then
+                if config.Type == itemType then
+                    -- 技能按角色区分
+                    local characterId = config.CharacterId
+                    if characterId and characterId > 0 then
+                        ---@class XUiTheatre5SkillHandbookTabGridData
+                        ---@field TagName string
+                        ---@field Items XUiTheatre5SkillHandbookItemGridData[]
+                        tab[characterId] = tab[characterId] or {
+                            Items = {},
+                            TagName = nil,
+                            Order = characterId
+                        }
+                        ---@class XUiTheatre5SkillHandbookItemGridData
+                        local data = {
+                            Id = id,
+                            Order = config.Order,
+                            Name = config.Name,
+                            Quality = 0,
+                            Icon = config.IconRes,
+                            Desc = config.Desc,
+                            Tags = config.Tags,
+                        }
+                        table.insert(tab[characterId].Items, data)
+                    end
+                end
+            end
+        end
+        -- 排序
+        for characterId, data in pairs(tab) do
+            table.sort(data.Items, function(a, b)
+                return a.Order < b.Order
+            end)
+        end
+        for characterId, data in pairs(tab) do
+            local characterConfig = self._Model:GetTheatre5CharacterCfgById(characterId)
+            if characterConfig then
+                data.TagName = characterConfig.Name
+            else
+                data.TagName = "???"
+                XLog.Error("[XTheatre5Control] GetDataHangBook characterId not found: " .. characterId)
+            end
+        end
+        local tabSorted = {}
+        for characterId, data in pairs(tab) do
+            table.insert(tabSorted, data)
+        end
+        table.sort(tabSorted, function(a, b)
+            return a.Order < b.Order
+        end)
+        return tabSorted
+    end
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+        local tab = {}
+
+        -- 直接从所有tag中收集，比从item里收集tag要快
+        local allTags = self._Model:GetTheatre5ItemTagCfgs()
+        for id, config in pairs(allTags) do
+            local tag = {
+                TagName = config.Name,
+                Id = id,
+                Items = {},
+                Order = id,
+            }
+            tab[id] = tag
+        end
+
+        local itemConfigs = self._Model:GetTheatre5ItemCfgs()
+        for id, config in pairs(itemConfigs) do
+            -- 配置了IsShow的才显示
+            if config.IsShow then
+                if config.Type == itemType then
+                    -- 符文/宝珠 按tag区分
+                    ---@type XUiTheatre5SkillHandbookItemGridData
+                    local data = {
+                        Id = id,
+                        Order = config.Order,
+                        Name = config.Name,
+                        Quality = 0,
+                        Icon = config.IconRes,
+                        Desc = config.Desc,
+                        Tags = config.Tags,
+                    }
+                    -- 同一个物品会出现在多个tag分类里
+                    for i = 1, #config.Tags do
+                        local tagId = config.Tags[i]
+                        if tab[tagId] then
+                            table.insert(tab[tagId].Items, data)
+                        end
+                    end
+                end
+            end
+        end
+        --排除掉items为空的
+        for tagId, data in pairs(tab) do
+            if #data.Items == 0 then
+                tab[tagId] = nil
+            end
+        end
+        local tabSorted = {}
+        for tagId, data in pairs(tab) do
+            table.insert(tabSorted, data)
+        end
+        -- 排序
+        table.sort(tabSorted, function(a, b)
+            return a.Order < b.Order
+        end)
+        for tagId, data in pairs(tabSorted) do
+            table.sort(data.Items, function(a, b)
+                return a.Order < b.Order
+            end)
+        end
+        return tabSorted
+    end
+    XLog.Error("[XTheatre5Control] unimplemented item type")
+    return {}
+end
+
+---@return XTableTheatre5Story[]
+function XTheatre5Control:GetStoryData(groupId)
+    local data = {}
+    for i = 1, 99 do
+        local id = groupId * 1000 + i
+        local config = self._Model:GetStoryById(id)
+        if config then
+            data[#data + 1] = config
+        else
+            break
+        end
+    end
+    return data
+end
+
+function XTheatre5Control:GetStoryTab()
+    local configs = self._Model:GetStoryGroup()
+    return configs
+end
 
 return XTheatre5Control

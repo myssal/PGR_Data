@@ -220,6 +220,7 @@ function XUiMain:OnDestroy()
 end
 
 function XUiMain:OnNotify(evt, ...)
+    local arg = {...}
     if evt == XEventId.EVENT_CHAT_OPEN then
         --打开聊天界面
         self:PlayMainChatIn()
@@ -234,10 +235,22 @@ function XUiMain:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_SCENE_SET_NONE_STATE then
         self:ChangeLowPowerState(self.LowPowerState.None)
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        local argUguiVideo = arg[1]
+        local curUguiVideo = self.CG:GetVideoPlayer()
+        if not XTool.UObjIsNil(argUguiVideo) and not XTool.UObjIsNil(curUguiVideo) and curUguiVideo.gameObject ~= argUguiVideo.gameObject then
+            return
+        end
+
         if not self.CG:IsLanguagePreparing() then
             self.CG:OnCGPlay()
         end
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+        local argUguiVideo = arg[1]
+        local curUguiVideo = self.CG:GetVideoPlayer()
+        if not XTool.UObjIsNil(argUguiVideo) and not XTool.UObjIsNil(curUguiVideo) and curUguiVideo.gameObject ~= argUguiVideo.gameObject then
+            return
+        end
+        
         self.CG:OnCGStop()
     end
 

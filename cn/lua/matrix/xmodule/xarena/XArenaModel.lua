@@ -513,7 +513,9 @@ end
 -- endregion
 
 function XArenaModel:GetStatus()
-    return self._ActivityData:GetStatus()
+    if self._ActivityData then
+        return self._ActivityData:GetStatus()
+    end
 end
 
 return XArenaModel

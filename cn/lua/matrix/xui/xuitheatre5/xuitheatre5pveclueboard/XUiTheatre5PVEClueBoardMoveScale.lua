@@ -4,23 +4,36 @@
 local XUiTheatre5PVEClueBoardMoveScale = XClass(XUiNode, 'XUiTheatre5PVEClueBoardMoveScale')
 local Vector3 = CS.UnityEngine.Vector3
 local Vector2 = CS.UnityEngine.Vector2
+local Vector3Zero = CS.UnityEngine.Vector3.zero
+local Screen = CS.UnityEngine.Screen
+local UiCamera = CS.XUiManager.Instance.UiCamera
 local Offset = 0.001 --数值误差
 function XUiTheatre5PVEClueBoardMoveScale:OnStart()
     self._BoundCorner = {}
     self:InitData()
     XUiHelper.RegisterSliderChangeEvent(self, self.ScaleSlider, self.OnSliderChanged, true)
+    self.BtnAdd:AddEventListener(handler(self, self.OnClickAdd))
+    self.BtnMinus:AddEventListener(handler(self, self.OnClickMinus))
     self._Timer = XScheduleManager.ScheduleForever(handler(self, self.OnRefreshSliderScale), 100, 0)
+    self._MaskScaleTimer = XScheduleManager.ScheduleForever(handler(self, self.OnRefreshMaskScale), 20, 0) --频率高些，不然卡ppt
 end
 
 function XUiTheatre5PVEClueBoardMoveScale:InitData()
-    self.ScaleSlider.maxValue = self.DragArea.MaxScale
-    self.ScaleSlider.minValue = self.DragArea.MinScale
-    self.ScaleSlider.value = self.DragArea.MinScale
-    self.DragArea.transform.localScale = Vector3(self.DragArea.MinScale, self.DragArea.MinScale, 1)
+    self._DragAreaMinValue = self.DragArea.MinScale
+    self._DragAreaMaxValue = self.DragArea.MaxScale
+    self._MaskMinValue = self._Control.PVEControl:GetClueBoardMaskScaleMinOrMax(true)
+    self._MaskMaxValue = self._Control.PVEControl:GetClueBoardMaskScaleMinOrMax()
+    self.ScaleSlider.minValue = self._DragAreaMinValue
+    self.ScaleSlider.maxValue = self._DragAreaMaxValue
+    self.ScaleSlider.value = self._DragAreaMinValue
+    self.DragArea.transform.localScale = Vector3(self._DragAreaMinValue, self._DragAreaMinValue, 1)
+    self.RImgBgMask.transform.localScale = Vector3(self._MaskMaxValue, self._MaskMaxValue, 1)
     self._ClueBoardScaleLimitPoint = self._Control.PVEControl:GetClueBoardScaleLimitPoint()
     self._AreaWidth = self._Control.PVEControl:GetMainClueBoardRect(true)
     self._AreaHeight = self._Control.PVEControl:GetMainClueBoardRect()
     self._FocusTime = self._Control.PVEControl:GetClueBoardFocusTime()
+    local processStep = self._Control.PVEControl:GetClueBoardProcessStep()
+    self._StepValue = (self.DragArea.MaxScale - self.DragArea.MinScale) /processStep
 
 end
 
@@ -89,9 +102,10 @@ end
 function XUiTheatre5PVEClueBoardMoveScale:FocusTarget(focusPosTrans)
     if not focusPosTrans then
         return
-    end    
-    local scale = self.DragArea.transform.localScale.x
-    self.DragArea:FocusTarget(focusPosTrans, scale, 0.25, CS.UnityEngine.Vector3.zero)
+    end
+        
+    local scale = self:GetDragAreaScaleX()
+    self.DragArea:FocusTarget(focusPosTrans, scale, 0.25, Vector3Zero)
 end
 
 function XUiTheatre5PVEClueBoardMoveScale:FocusToDetailClue(focusPosTrans)
@@ -99,24 +113,49 @@ function XUiTheatre5PVEClueBoardMoveScale:FocusToDetailClue(focusPosTrans)
         return
     end
     self.ScaleSlider.value = self._ClueBoardScaleLimitPoint 
-    self.DragArea:FocusTarget(focusPosTrans, self._ClueBoardScaleLimitPoint, self._FocusTime, CS.UnityEngine.Vector3.zero)   
+    self.DragArea:FocusTarget(focusPosTrans, self._ClueBoardScaleLimitPoint, self._FocusTime, Vector3Zero)   
 end
 
 function XUiTheatre5PVEClueBoardMoveScale:OnSliderChanged(value)
-    local changeValue = math.abs(value - self.DragArea.transform.localScale.x)
-    if changeValue < Offset then
-        return
-    end    
-    self:OnChangeScale(value)  
-end
-
-function XUiTheatre5PVEClueBoardMoveScale:OnRefreshSliderScale()
-    local changeValue = math.abs(self.ScaleSlider.value - self.DragArea.transform.localScale.x)
+    local scaleX = self:GetDragAreaScaleX()
+    local changeValue = math.abs(value - scaleX)
     if changeValue < Offset then
         return
     end
-    self.ScaleSlider.value = self.DragArea.transform.localScale.x
+    local centerPos = UiCamera:ScreenToWorldPoint(Vector3(Screen.width / 2, Screen.height / 2, self.DragArea.transform.position.z))
+    self.DragArea:FocusPos(centerPos, value, 0, Vector3Zero)  --给C#组件的缩放赋值，不然两端不一致  
+    self:OnChangeScale(value)  
+end
+
+function XUiTheatre5PVEClueBoardMoveScale:OnClickAdd()
+    self.ScaleSlider.value = self.ScaleSlider.value + self._StepValue
+end
+
+function XUiTheatre5PVEClueBoardMoveScale:OnClickMinus()
+    self.ScaleSlider.value = self.ScaleSlider.value - self._StepValue
+end
+
+--手指或滚轮缩放时
+function XUiTheatre5PVEClueBoardMoveScale:OnRefreshSliderScale()
+    local scaleX = self:GetDragAreaScaleX()
+    local changeValue = math.abs(self.ScaleSlider.value - scaleX)
+    if changeValue < Offset then
+        return
+    end
+    self.ScaleSlider.value = scaleX
     self:OnChangeScale(self.ScaleSlider.value)    
+end
+
+function XUiTheatre5PVEClueBoardMoveScale:OnRefreshMaskScale()
+    local scaleX = self:GetDragAreaScaleX()
+    local DragAreaInterval = self._DragAreaMaxValue - self._DragAreaMinValue
+    local maskInterval = self._MaskMaxValue - self._MaskMinValue
+    if not XTool.IsNumberValid(DragAreaInterval) then
+        return
+    end
+    local factor =  maskInterval/DragAreaInterval
+    local targetValue = self._MaskMaxValue - (scaleX - self._DragAreaMinValue) * factor
+    self.RImgBgMask.transform.localScale = Vector3(targetValue, targetValue, 1)  
 end
 
 function XUiTheatre5PVEClueBoardMoveScale:OnChangeScale(value)
@@ -128,9 +167,13 @@ function XUiTheatre5PVEClueBoardMoveScale:OnChangeScale(value)
         if value + Offset >= self._ClueBoardScaleLimitPoint then
             self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_CLUE_BOARD_SWITCH, true)
         end
-    end                 
-    self.DragArea.transform.localScale = Vector3(value, value, 1)
+    end
+    self.DragArea.transform.localScale = Vector3(value, value, 1)            
     self.DragArea:ActiveCheckArea()
+end
+
+function XUiTheatre5PVEClueBoardMoveScale:GetDragAreaScaleX()
+     return self.DragArea.transform.localScale.x
 end
 
 function XUiTheatre5PVEClueBoardMoveScale:OnDestroy()
@@ -138,11 +181,20 @@ function XUiTheatre5PVEClueBoardMoveScale:OnDestroy()
         XScheduleManager.UnSchedule(self._Timer)
         self._Timer = false
     end
+
+    if self._MaskScaleTimer then
+        XScheduleManager.UnSchedule(self._MaskScaleTimer)
+        self._MaskScaleTimer = false
+    end    
     self._BoundCorner = nil
     self._ClueBoardScaleLimitPoint = nil
     self._AreaWidth = nil
     self._AreaHeight = nil
     self._FocusTime = nil
+    self._DragAreaMinValue = nil
+    self._DragAreaMaxValue = nil
+    self._MaskMinValue = nil
+    self._MaskMaxValue = nil
 end
 
 return XUiTheatre5PVEClueBoardMoveScale

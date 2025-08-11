@@ -27,7 +27,7 @@ end
 --region   ------------------副本入口扩展 start-------------------
 
 function XBlackRockStageAgency:ExOpenMainUi()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenActivityFestival) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FestivalActivity) then
         return
     end
 

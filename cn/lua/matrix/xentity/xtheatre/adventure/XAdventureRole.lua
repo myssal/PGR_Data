@@ -323,19 +323,19 @@ function XAdventureRole:GetSkill()
 end
 
 function XAdventureRole:GetCurExp()
-    local charViewModel = self:GetCharacterViewModel()
-    local curExp = charViewModel:GetCurExp()
     if self:GetIsLocalRole() then
-        return curExp
+        local charViewModel = self:GetCharacterViewModel()
+        return charViewModel:GetCurExp()
     end
-
-    local isMaxLevel = self:GetLevel() == self:GetMaxLevel()
-    return isMaxLevel and curExp or 0 
+    return 0
 end
 
 function XAdventureRole:GetNextLevelExp()
     local charViewModel = self:GetCharacterViewModel()
-    return charViewModel:GetNextLevelExp()
+    if self:GetIsLocalRole() then
+        return charViewModel:GetNextLevelExp()
+    end
+    return XMVCA.XCharacter:GetNextLevelExp(charViewModel:GetId(), charViewModel:GetLevel())
 end
 
 function XAdventureRole:GetMaxLevel()
@@ -344,6 +344,14 @@ function XAdventureRole:GetMaxLevel()
         return charViewModel:GetMaxLevel()
     end
     return XTheatreConfigs.GetMaxLevel()
+end
+
+function XAdventureRole:GetAttributes()
+    local rawData = self:GetRawData()
+    if self:GetIsLocalRole() then
+        return rawData:GetAttributes()
+    end
+    return rawData:GetAtrributes()
 end
 
 return XAdventureRole

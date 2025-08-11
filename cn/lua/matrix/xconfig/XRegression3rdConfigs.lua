@@ -151,7 +151,7 @@ end
 
 function XRegression3rdConfigs.GetHelpKey(activityId)
     local helpId = GetActivityConfig(activityId).HelpId
-    return XHelpCourseConfig.GetHelpCourseTemplateById(helpId).Function
+    return XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId).Function
 end
 
 function XRegression3rdConfigs.GetPackageUiType(activityId)

@@ -78,7 +78,7 @@ function XUiTutoriaBattleRoleRoom:CheckShowAnimationSet()
     return false
 end
 
-function XUiBattleRoleRoomDefaultProxy:CheckStageRobotIsUseCustomProxy(robotIds)
+function XUiTutoriaBattleRoleRoom:CheckStageRobotIsUseCustomProxy(robotIds)
     return true
 end
 

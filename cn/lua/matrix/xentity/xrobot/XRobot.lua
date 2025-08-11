@@ -412,6 +412,47 @@ function XRobot:GetSkillLevelDic(forDisplay)
     return skillLevelDic
 end
 
+function XRobot:RemoveSkillId(skillId)
+    local removeLevle = nil
+    for i, skillData in pairs(self.Character.SkillList) do
+        if skillData.Id == skillId then
+            removeLevle = skillData.Level
+            table.remove(self.Character.SkillList, i)
+            break
+        end
+    end
+    self:GetCharacterViewModel():UpdateWithData(self.Character) -- videoModel同步刷新
+    return removeLevle
+end
+
+function XRobot:AddSkillId(skillId, addLevel)
+    if table.containsKey(self.Character.SkillList, "Id",  skillId) then
+        return
+    end
+    tableInsert(self.Character.SkillList, { Id = skillId, Level = addLevel })
+    self:GetCharacterViewModel():UpdateWithData(self.Character) -- videoModel同步刷新
+end
+
+function XRobot:IsSkillUsing(skillId)
+    return table.containsKey(self.Character.SkillList, "Id",  skillId)
+end
+
+function XRobot:GetSkillLevel(skillId)
+    local skillLevelDic = self:GetSkillLevelDic()
+    return skillLevelDic[skillId]
+end
+
+function XRobot:GetSkillGroupLevelBySkillId(skillId)
+    local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(skillId)
+    local level = nil
+    for k, skillId in pairs(groupSkillIds) do
+        level = self:GetSkillLevel(skillId) 
+        if level then
+            return level
+        end
+    end
+end
+
 ---机器人单独技能等级
 ---于v2.4添加,由于升阶拆分更改了核心被动技能等级robot表又只有一个字段控制所有技能
 ---导致个别玩法机器人SS品质配1级技能却没有升阶拆分的技能,因此添加了字段单独配置某个技能的等级供其他玩法使用

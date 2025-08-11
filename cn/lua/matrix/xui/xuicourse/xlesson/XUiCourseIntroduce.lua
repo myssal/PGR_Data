@@ -117,7 +117,7 @@ function XUiCourseIntroduce:AddButtonListenr()
 end
 
 function XUiCourseIntroduce:OnEnterChapter()
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Course, self.ChapterId) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Course, self.ChapterId) then
         return
     end
     XLuaUiManager.PopThenOpen("UiCourseTutorial", self.ChapterId)

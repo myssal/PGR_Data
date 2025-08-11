@@ -166,7 +166,7 @@ function XUiGoldenMinerMain:CheckAndOpenHelpTip()
         return
     end
 
-    if XHelpCourseConfig.GetHelpCourseTemplateByFunction(helpKey) and self._Control:CheckFirstOpenHelp() then
+    if XMVCA.XHelpCourse:GetHelpCourseCfgByFunction(helpKey) and self._Control:CheckFirstOpenHelp() then
         XUiManager.ShowHelpTip(helpKey)
     end
 end

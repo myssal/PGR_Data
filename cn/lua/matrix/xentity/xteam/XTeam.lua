@@ -205,6 +205,29 @@ function XTeam:GetCharacterIdsOrder()
     return res
 end
 
+-- 按顺序返回对应位置的charId，若是robotId则会转换为对应的charId，下标即是pos
+function XTeam:GetRealCharacterIdsOrder()
+    local res = {}
+    for k, id in pairs(self.EntitiyIds) do
+        res[k] = XRobotManager.GetCharacterId(id)
+    end
+    return res
+end
+
+-- 判断目标Id是否在队伍里，(若为robotId)全部转换为charId检查
+function XTeam:GetCharIdIsInTeamWithRobotCheck(entityId)
+    entityId = XRobotManager.GetCharacterId(entityId)
+    if not XTool.IsNumberValid(entityId) then
+        return false
+    end
+    for pos, v in ipairs(self:GetRealCharacterIdsOrder()) do
+        if v == entityId then
+            return true
+        end
+    end
+    return false
+end
+
 function XTeam:GetEntityIdByTeamPos(pos)
     return self.EntitiyIds[pos] or 0
 end

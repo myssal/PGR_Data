@@ -280,6 +280,7 @@ XEnumConst = {
             Maverick3 = 97, --孤胆枪手
             ScoreTower = 98, -- 新矿区
             BountyChallenge = 99, -- 悬赏挑战
+            SoloReform = 100, -- mini改造
         },
         ChapterType = {
             MainLine = 0,
@@ -354,7 +355,7 @@ XEnumConst = {
             TwoSideTower = 69, --正逆塔
             Doomsday = 70, --模拟经营
             Bfrt = 71, --据点
-            Experiment = 72, --试玩关
+            Experiment = 72, --试玩区
             Daily = 73, -- 日常
             ExtralChapter = 74, -- 外篇旧闻
             Festival = 75, -- 活动记录
@@ -373,7 +374,7 @@ XEnumConst = {
             Maze = 88, -- 情人节活动2023
             PlanetRunning = 89,
             CerberusGame = 90,
-            Transfinite = 91, -- 超限连战
+            Transfinite = 91, -- 历战映射
             Theatre3 = 92, -- 肉鸽3.0
             RogueSim = 93, -- 肉鸽模拟经营
             DlcCasual = 94, -- Dlc魔方嘉年华
@@ -1382,22 +1383,10 @@ XEnumConst = {
             INVALID = -1, --无效Id
             NECESSARY = 0, --必要资源
         },
-        ENTRY_TYPE = {
-            MAIN_RIGHT_TOP_ACTIVITY = 9994, --主界面右侧活动按钮
-            MAIN_LEFT_TOP_ACTIVITY = 9995, --主界面左侧活动按钮
-            AUTO_WINDOW = 9996, --打脸图
-            CHARACTER_VOICE = 9997, --CV-入口检测参数
-            MATERIAL_COLLECTION = 9998, --战斗-资源-入口检测参数
-            DRAW = 9999, --研发检测参数
-        },
         SUBPACKAGE_TYPE = {
             NECESSARY = 1, --必要资源
             OPTIONAL = 2, --可选资源
         },
-        TEMP_VIDEO_SUBPACKAGE_ID = {
-            STORY = 904, --剧情视频
-            GAMEPLAY = 905, --玩法视频
-        }
     },
     CV_TYPE = {
         JPN = 1,
@@ -1914,9 +1903,9 @@ XEnumConst = {
             WaitLineUp = 11, -- 等待预览线上升
         },
         ClearType = {
-            Normal = 1, -- 正常消除
-            Chief = 2, -- 首席造成的消除
-            UltimaSlash = 3, -- 真意斩造成的消除
+            Normal = 1 << 0, -- 正常消除
+            Chief = 1 << 1, -- 首席造成的消除
+            UltimaSlash = 1 << 2, -- 真意斩造成的消除
         },
     },
     GOLDEN_MINER = {
@@ -3338,5 +3327,13 @@ XEnumConst = {
         Unknown3 = 160,--这3个不知道加在了哪里
         BountyChallenge = 170,
         --友情提示，需要在TeamType.tab增加配置，这是保存在服务端的队伍数据，不然会报错
+    },
+    HelpCourse = {
+        UiHelpType = {
+            Default = 1, -- 常规动态列表图片样式
+            SimpleContent = 2, -- 纯文本样式
+            PopStyle = 3,
+            Collections = 4, -- 集成样式，包含多个子教学
+        }   
     }
 }

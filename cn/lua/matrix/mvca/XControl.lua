@@ -165,7 +165,7 @@ function XControl:Release()
     self._RefUi = nil
 
     if self._MainControl == nil then
-        self._Model:ClearPrivate()
+        self._Model:ClearAllPrivate()
         self._Model:ClearPrivateConfig()
         if self._Loader then --只有主loader才需要从C#层释放
             CS.XLoaderUtil.ClearModuleLoader(self._Id)

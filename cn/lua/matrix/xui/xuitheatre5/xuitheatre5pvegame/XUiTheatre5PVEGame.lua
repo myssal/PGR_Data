@@ -107,10 +107,11 @@ function XUiTheatre5PVEGame:_RefreshLevels()
 end
 
 function XUiTheatre5PVEGame:_IsEventCompleted(targetEventId)
-    if not self._chapterData.HandleEvents then
+    local finishEvents = self._Control.PVEControl:GetHistoryFinishEvents(self._chapterData.ChapterId)
+    if not finishEvents then
         return false
     end
-    for _, eventId in pairs(self._chapterData.HandleEvents) do
+    for _, eventId in pairs(finishEvents) do
         if eventId == targetEventId then
             return true
         end    
@@ -148,7 +149,7 @@ function XUiTheatre5PVEGame:OnDynamicTableEvent(event, index, grid)
             XScheduleManager.ScheduleOnce(function()
                 if not XTool.UObjIsNil(grid.GameObject) then
                     grid.GameObject:SetActiveEx(true)
-                    local animTrans = XUiHelper.TryGetComponent(grid.Transform, "Animation/AnimEnable", nil)
+                    local animTrans = XUiHelper.TryGetComponent(grid.Transform, "Animation/Enable", nil)
                     if animTrans then
                         animTrans:PlayTimelineAnimation()
                     end
