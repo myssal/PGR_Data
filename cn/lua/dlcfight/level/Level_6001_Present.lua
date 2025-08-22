@@ -133,9 +133,8 @@ function XLevelScript6001:HandleEvent(eventType, eventArgs)
         elseif eventArgs.HostSceneObjectPlaceId == self.SaveBoxPlaceId1 then
             self._StartPos = self._proxy:GetSceneObjectPositionByPlaceId(self.SaveBoxPlaceId1)
         elseif eventArgs.HostSceneObjectPlaceId == self.TransformBoxPlaceId then
-            XLog.Warning("跳跳乐：掉入死区传送回起点")
             --死区传送回出发点
-            XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, self._proxy:GetLocalPlayerNpcId(), self._StartPos)
+            self._proxy:TeleportWithBlackUi(self._proxy:GetLocalPlayerNpcId(), self._StartPos)
             self:SetMoveLimitActive(true)
             self._proxy:AddTimerTask(2.5, function()
                 self:SetMoveLimitActive(false)

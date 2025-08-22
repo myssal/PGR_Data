@@ -425,6 +425,12 @@ end
 function XDlcCSharpFuncs:CheckCanCastSkill(npcId)
 end
 
+---@desc 检查Npc当前技能已经释放完或到后摇阶段（当前没有正在释放技能也算完成)
+---@param npcId int 要检查的NpcUUID
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcCurSkillIsDone(npcId)
+end
+
 ---@desc 检测Npc与目标距离是否在指定值内
 ---@param npc int 
 ---@param target int 
@@ -752,6 +758,15 @@ end
 ---@param uuid int 
 ---@return void 
 function XDlcCSharpFuncs:TeleportResetNpcOnGround(uuid)
+end
+
+---@desc 带黑幕传送NPC(仅客户端使用)
+---@param npcId int NpcUUID
+---@param position Vector3 目标地点
+---@param rotation Vector3 传送后朝向
+---@param cb Action 传送后回调
+---@return void 
+function XDlcCSharpFuncs:TeleportWithBlackUi(npcId, position, rotation, cb)
 end
 
 ---@desc 设置Npc动画控制器层
@@ -1178,7 +1193,7 @@ end
 ---@desc 获取首个搜索目标的UID，若无则返回0。
 ---@param uuid int 当前Npc的uuid
 ---@param npcTargetType int Npc目标类型(ENpcTargetType)
----@return int 
+---@return long 
 function XDlcCSharpFuncs:GetFirstSearchTarget(uuid, npcTargetType)
 end
 
@@ -1187,6 +1202,68 @@ end
 ---@param npcTargetType int Npc目标类型(ENpcTargetType)
 ---@return LuaTable 
 function XDlcCSharpFuncs:GetSearchTargetList(uuid, npcTargetType)
+end
+
+---@desc 获取当前锁定的目标（优先级 强制>硬锁>软锁）
+---@param actorUUID out int 返回锁定目标所属的ActorUUID
+---@return long 返回锁定目标的UID
+function XDlcCSharpFuncs:GetLockTarget(actorUUID)
+end
+
+---@desc 设置软锁基础配置
+---@param configId int 软锁配置Id
+---@return void 
+function XDlcCSharpFuncs:SetBaseSoftLockTargetConfig(configId)
+end
+
+---@desc 设置指定NPC软锁配置
+---@param npcUUID int NpcUUID
+---@param configId int 软锁配置Id
+---@return void 
+function XDlcCSharpFuncs:SetNpcSoftLockTargetConfig(npcUUID, configId)
+end
+
+---@desc 设置软锁目标
+---@param targetUID long 锁定目标的UID
+---@return void 
+function XDlcCSharpFuncs:SetSoftLock(targetUID)
+end
+
+---@desc 设置软锁目标到指定部位
+---@param npcUUID int 要锁的NpcUUID
+---@param partId int 部位Id
+---@return void 
+function XDlcCSharpFuncs:SetSoftLockToPart(npcUUID, partId)
+end
+
+---@desc 取消软锁目标
+---@return void 
+function XDlcCSharpFuncs:CancelSoftLockTarget()
+end
+
+---@desc 设置硬锁锁目标
+---@param targetUID long 锁定目标的UID
+---@return void 
+function XDlcCSharpFuncs:SetHardLock(targetUID)
+end
+
+---@desc 设置硬锁锁目标到指定部位
+---@param npcUUID int 要锁的NpcUUID
+---@param partId int 部位Id
+---@return void 
+function XDlcCSharpFuncs:SetHardLockToPart(npcUUID, partId)
+end
+
+---@desc 取消硬锁目标
+---@return void 
+function XDlcCSharpFuncs:CancelHardLockTarget()
+end
+
+---@desc 设置强制锁定到指定Npc的部位
+---@param npcUUID int 要锁定的NpcUUID
+---@param partId int 部位Id
+---@return void 
+function XDlcCSharpFuncs:SetAllPlayerForceLockToPart(npcUUID, partId)
 end
 
 ---@desc 检查Npc对应key的Int类型字典值是否存在
@@ -1853,8 +1930,9 @@ end
 ---@param dramaName string 
 ---@param referencePos Vector3 
 ---@param referenceRot Vector3 
+---@param combineKey int
 ---@return void 
-function XDlcCSharpFuncs:PlayDrama(questId, actorList, dramaName, referencePos, referenceRot)
+function XDlcCSharpFuncs:PlayDrama(questId, actorList, dramaName, referencePos, referenceRot, combineKey)
 end
 
 ---@desc 播放简易台词
@@ -2004,6 +2082,16 @@ end
 ---@param screenEffectId int 屏幕特效Id，引自Product\Table\Client\StatusSyncFight\ScreenEffect.tab
 ---@return void 
 function XDlcCSharpFuncs:KillStayScreenEffectById(screenEffectId)
+end
+
+---@desc 为指定关卡物体播放特效
+---@param sceneObjectPlaceId int 关卡物体的PlaceId
+---@param effectName string 特效名
+---@param posOffset Vector3 特效位置偏移
+---@param rotOffset Vector3 特效旋转偏移
+---@param scale Vector3 特效缩放
+---@return void 
+function XDlcCSharpFuncs:BindSceneObjectEffect(sceneObjectPlaceId, effectName, posOffset, rotOffset, scale)
 end
 
 ---@desc 播放背景音乐

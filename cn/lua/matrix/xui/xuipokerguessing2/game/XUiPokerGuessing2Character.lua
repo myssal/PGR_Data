@@ -7,11 +7,11 @@ local XUiPokerGuessing2Character = XClass(XUiNode, "XUiPokerGuessing2Character")
 function XUiPokerGuessing2Character:OnStart(isPlayer)
     ---@type XUiPokerGuessing2Card[]
     self._Cards = {
-        self.GridCard1 and XUiPokerGuessing2Card.New(self.GridCard1, self),
-        self.GridCard2 and XUiPokerGuessing2Card.New(self.GridCard2, self),
-        self.GridCard3 and XUiPokerGuessing2Card.New(self.GridCard3, self),
-        self.GridCard4 and XUiPokerGuessing2Card.New(self.GridCard4, self),
-        self.GridCard5 and XUiPokerGuessing2Card.New(self.GridCard5, self),
+        self.GridCard1 and XUiPokerGuessing2Card.New(self.GridCard1, self, isPlayer),
+        self.GridCard2 and XUiPokerGuessing2Card.New(self.GridCard2, self, isPlayer),
+        self.GridCard3 and XUiPokerGuessing2Card.New(self.GridCard3, self, isPlayer),
+        self.GridCard4 and XUiPokerGuessing2Card.New(self.GridCard4, self, isPlayer),
+        self.GridCard5 and XUiPokerGuessing2Card.New(self.GridCard5, self, isPlayer),
     }
     if self._Data then
         XLog.Warning("[XUiPokerGuessing2Character] data已经赋值了")
@@ -129,6 +129,28 @@ function XUiPokerGuessing2Character:Update(data)
     end
 end
 
+---@param data XUiPokerGuessing2CardData
+function XUiPokerGuessing2Character:UpdateAfterChangedCard(data)
+    if not XTool.IsTableEmpty(data) then
+        for i, v in pairs(self._Cards) do
+            if v:GetCardId() == data.Id then
+                v:Update(data, nil, true)
+                v:TryShowChangedCard(true)
+            end
+        end
+    end 
+end
+
+function XUiPokerGuessing2Character:ShowChangeCardAnimOnly(data)
+    if not XTool.IsTableEmpty(data) then
+        for i, v in pairs(self._Cards) do
+            if v:GetCardId() == data.Id then
+                v:ShowChangeCardAnimOnly()
+            end
+        end
+    end
+end
+
 function XUiPokerGuessing2Character:UpdateTimeForLockedStage()
     -- 如果是因为时间导致的,改成倒计时
     if self._Data.IsLock4Time then
@@ -149,13 +171,34 @@ function XUiPokerGuessing2Character:UpdateTimeForLockedStage()
     end
 end
 
-function XUiPokerGuessing2Character:Speak(text)
-    if text and text ~= "" then
-        self.PanelTalk.gameObject:SetActiveEx(true)
-        self.TxtTalk.text = text
-    else
-        self.PanelTalk.gameObject:SetActiveEx(false)
+function XUiPokerGuessing2Character:Speak(text, isEmoji)
+    self.TxtTalk.gameObject:SetActiveEx(not isEmoji)
+
+    if self.RImgEmoji then
+        self.RImgEmoji.gameObject:SetActiveEx(isEmoji)
     end
+    
+    if isEmoji then
+        local url = text
+
+        if not string.IsNilOrEmpty(url) then
+            self.PanelTalk.gameObject:SetActiveEx(true)
+
+            if self.RImgEmoji then
+                self.RImgEmoji:SetRawImage(url)
+            end
+        else
+            self.PanelTalk.gameObject:SetActiveEx(false)
+        end
+    else
+        if text and text ~= "" then
+            self.PanelTalk.gameObject:SetActiveEx(true)
+            self.TxtTalk.text = text
+        else
+            self.PanelTalk.gameObject:SetActiveEx(false)
+        end
+    end
+    
 end
 
 function XUiPokerGuessing2Character:PlayAnimationCardToPutDownRandom(duration)

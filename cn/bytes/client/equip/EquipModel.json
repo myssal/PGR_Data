@@ -7868,6 +7868,21 @@
         ]
     },
     {
+        "Id": 24170311,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3JianMd040011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3JianMd040011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3JianMd040011.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Jian/JianMdCommon/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Jian/JianMdCommon/Fight/Fight.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart"
+        ]
+    },
+    {
         "Id": 14240111,
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E2HeadsetMd010011.prefab",
@@ -9302,6 +9317,36 @@
             "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3RevolverMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3RevolverMd020011.prefab"
+        ]
+    },
+    {
+        "Id": 24660211,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Revolver/E3RevolverMdCommon/Uistand01/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart"
+        ]
+    },
+    {
+        "Id": 24660212,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab"
+        ]
+    },
+    {
+        "Id": 24660214,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E1CommonEmptyMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3RevolverMd030011.prefab"
         ]
     },
     {
@@ -11458,10 +11503,17 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd010011.prefab"
         ],
         "AnimController": [
-            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
+        ],
+        "UiAnimStateName": [
+            "UiStandstart",
+            "BoardAct1002"
         ]
     },
     {
@@ -11469,10 +11521,17 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ChainswordMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E2ChainswordMd020011.prefab"
         ],
         "AnimController": [
-            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
+        ],
+        "UiAnimStateName": [
+            "UiStandstart",
+            "BoardAct1002"
         ]
     },
     {
@@ -11480,16 +11539,25 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P01.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P01.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P01.prefab"
         ],
         "AnimController": [
             "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand01/Uistand.controller",
             "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
-            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand/Uistand.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
         ],
         "UiAnimStateName": [
             "UiStandstart",
-            "Changestart01"
+            "Changestart01",
+            "BoardAct1002"
+        ],
+        "UiAnimCueId": [
+            7012
+        ],
+        "UiAnimDelay": [
+            300
         ]
     },
     {
@@ -11497,16 +11565,25 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P02.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P02.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P02.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P02.prefab"
         ],
         "AnimController": [
             "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P02/Uistand01/Uistand.controller",
             "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
-            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P02/Uistand/Uistand.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P02/Uistand/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
         ],
         "UiAnimStateName": [
             "UiStandstart",
-            "Changestart02"
+            "Changestart02",
+            "BoardAct1002"
+        ],
+        "UiAnimCueId": [
+            7013
+        ],
+        "UiAnimDelay": [
+            300
         ]
     },
     {
@@ -11514,16 +11591,25 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P03.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P03.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P03.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P03.prefab"
         ],
         "AnimController": [
             "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P03/Uistand01/Uistand.controller",
             "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
-            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P03/Uistand/Uistand.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P03/Uistand/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
         ],
         "UiAnimStateName": [
             "UiStandstart",
-            "Changestart03"
+            "Changestart03",
+            "BoardAct1002"
+        ],
+        "UiAnimCueId": [
+            7014
+        ],
+        "UiAnimDelay": [
+            300
         ]
     },
     {
@@ -11531,16 +11617,25 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P04.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P04.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P04.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd010011P04.prefab"
         ],
         "AnimController": [
             "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P04/Uistand01/Uistand.controller",
             "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
-            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P04/Uistand/Uistand.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P04/Uistand/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
         ],
         "UiAnimStateName": [
             "UiStandstart",
-            "Changestart04"
+            "Changestart04",
+            "BoardAct1002"
+        ],
+        "UiAnimCueId": [
+            7015
+        ],
+        "UiAnimDelay": [
+            300
         ]
     },
     {
@@ -11548,10 +11643,160 @@
         "ModelName": [
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ChainswordMd020011.prefab",
             "Assets/Product/Role/WeaponPrefab/E3ChainswordMd020011.prefab"
         ],
         "AnimController": [
-            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller"
+            "Assets/Product/Role/WeaponAnimation/Chainsword/E3ChainswordMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Chainsword/ChainswordCommon/Uistand/BoardAct1002.controller"
+        ],
+        "UiAnimStateName": [
+            "UiStandstart",
+            "BoardAct1002"
+        ]
+    },
+    {
+        "Id": 15840111,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd010011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd010011.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart01"
+        ]
+    },
+    {
+        "Id": 15850111,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E2ShearsMd020011.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart01"
+        ]
+    },
+    {
+        "Id": 15860111,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P01.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P01.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart01"
+        ],
+        "UiAnimCueId": [
+            7016
+        ],
+        "UiAnimDelay": [
+            300
+        ]
+    },
+    {
+        "Id": 15860121,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P02.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P02.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P02.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P02/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P02/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart02"
+        ],
+        "UiAnimCueId": [
+            7017
+        ],
+        "UiAnimDelay": [
+            300
+        ]
+    },
+    {
+        "Id": 15860131,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P03.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P03.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P03.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P03/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P03/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart03"
+        ],
+        "UiAnimCueId": [
+            7018
+        ],
+        "UiAnimDelay": [
+            300
+        ]
+    },
+    {
+        "Id": 15860141,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P04.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P04.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd010011P04.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P04/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P04/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart04"
+        ],
+        "UiAnimCueId": [
+            7019
+        ],
+        "UiAnimDelay": [
+            300
+        ]
+    },
+    {
+        "Id": 25870111,
+        "ModelName": [
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd020011.prefab",
+            "Assets/Product/Role/WeaponPrefab/E3ShearsMd020011.prefab"
+        ],
+        "AnimController": [
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand01/Uistand.controller",
+            "Assets/Product/Role/WeaponAnimation/R2XiezouMd010021Shears/R2XiezouMd010021ShearsCommon/Fight/Fight.controller",
+            "Assets/Product/Role/WeaponAnimation/Shears/E3ShearsMd010011P01/Uistand/Uistand.controller"
+        ],
+        "UiAnimStateName": [
+            "Uistandstart",
+            "Changestart01"
         ]
     },
     {

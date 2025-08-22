@@ -492,6 +492,16 @@ local UIBindControl = {
     UiLineArithmeticTask = ModuleId.XLineArithmetic,
     UiLineArithmeticTips = ModuleId.XLineArithmetic,
     UiLineArithmeticTargetPopupTips = ModuleId.XLineArithmetic,
+    UiLineArithmetic2PopupCommon = ModuleId.XLineArithmetic2,
+    --endregion
+
+    --region 连线游戏2
+    UiLineArithmetic2Game = ModuleId.XLineArithmetic2,
+    UiLineArithmetic2Main = ModuleId.XLineArithmetic2,
+    UiLineArithmetic2Chapter = ModuleId.XLineArithmetic2,
+    UiLineArithmetic2Task = ModuleId.XLineArithmetic2,
+    UiLineArithmetic2PopupTips = ModuleId.XLineArithmetic2,
+    UiLineArithmetic2PopupSettlement = ModuleId.XLineArithmetic2,
     --endregion
 
     --region 2.14机制玩法
@@ -617,6 +627,7 @@ local UIBindControl = {
     UiBigWorldTaskMain = ModuleId.XBigWorldQuest,
     UiBigWorldTaskObtain = ModuleId.XBigWorldQuest,
     UiBigWorldTaskObtainDrama = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskObtainDramaHeart = ModuleId.XBigWorldQuest,
     UiBigWorldLineChapter = ModuleId.XBigWorldQuest,
     UiBigWorldStoryStageDetail = ModuleId.XBigWorldQuest,
     UiBigWorldPopupDelivery = ModuleId.XBigWorldQuest,
@@ -926,8 +937,12 @@ local UIBindControl = {
     UiTheatre5PVEPopupClueDetail = ModuleId.XTheatre5,
     UiTheatre5RewardShop = ModuleId.XTheatre5,
     UiTheatre5PVEReasoningEnd = ModuleId.XTheatre5, 
-    UiTheatre5PVEClueBoard = ModuleId.XTheatre5, 
+    UiTheatre5PVEClueBoard = ModuleId.XTheatre5,
+    UiTheatre5SkillHandbook = ModuleId.XTheatre5,
+    UiTheatre5Story = ModuleId.XTheatre5,
+    UiTheatre5PopupHandBook = ModuleId.XTheatre5,
     --endregion
+    
     --region 悬赏挑战
     UiBountyChallengeMain = ModuleId.XBountyChallenge,
     UiBountyChallengeChapterDetail = ModuleId.XBountyChallenge,
@@ -942,6 +957,20 @@ local UIBindControl = {
     UiRelinkPopupChooseCharacter = ModuleId.XDlcRelink,
     UiRelinkPopupChooseRoom = ModuleId.XDlcRelink,
     --endregion
+
+    --region mini改造
+    UiSoloReformMain = ModuleId.XSoloReform,
+    UiSoloReformChapterDetail = ModuleId.XSoloReform,
+    UiSoloReformSettlement = ModuleId.XSoloReform,
+    UiSoloReformPopupReward = ModuleId.XSoloReform,
+    --endregion
+    
+    --region 图文教学
+    UiPopupTeach = ModuleId.XHelpCourse,
+    UiCollectionTeach = ModuleId.XHelpCourse,
+    --endregion
+
+    UiCloudGamingPopupMain = ModuleId.XCloudGame,
 }
 
 return UIBindControl

@@ -6,16 +6,44 @@
         "Type": 101,
         "IsBlock": 0,
         "IsEnd": 0,
-        "BeginAnim": "AniZhuanchangEnd",
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
         ]
     },
     {
         "Id": 2,
         "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "200|50|-150",
+            0
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -23,13 +51,441 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            201
+            2599
         ]
     },
     {
-        "Id": 3,
-        "ActionId": 3,
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "3月10日的下午，在骑马返程的路上，天空还飘着小雪。从云层中透出几缕纤薄的光柱，让周遭的景色显得更加黯淡。"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4432
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "翻身下马，栓好马扣，就这样快步走入教堂。"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2599
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 800.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory504.jpg"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2887
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            229
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "悠扬的钟声如期响起——已经5点了，与比安卡约好的时间晚了将近一个小时。"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            500259,
+            250,
+            200,
+            -250,
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "威尼斯",
+            "比安卡姐姐，然后呢然后呢？",
+            18
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            501280,
+            1,
+            -160,
+            50,
+            100,
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "嗯……字已经练完了吗？",
+            18
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 300.0,
+        "Params": [
+            "0|30|-20",
+            0.25
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "0|0|-50",
+            0.3
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "远远的房间里传来比安卡教导孩子们的声音；正要继续加快脚步，小队长的声音忽然从身后叫住自己。"
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "指挥官，你们那边情况怎么样？",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "……不是很乐观。",
+            29
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1513
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "他小跑着跟上来，而自己也放慢脚步，示意他边走边说。"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "西面的雪下得很大。",
+            33
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "白天铲一轮雪，晚上就会有新雪重新堆积。",
+            34
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -39,12 +495,7275 @@
         "EndDelay": 0.0,
         "Params": [
             1,
-            "测试1"
+            "小队长",
+            "…………",
+            1
         ]
     },
     {
-        "Id": 4,
-        "ActionId": 4,
+        "Id": 36,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "你们那边怎么样，有从东面离开的可能吗？",
+            37
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "没有……情况比你前几天去看的时候更加糟糕，那些怪物越来越多了。",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "这几天按照你的安排，一队人马负责扫除西面的积雪，另一队人马负责监视东面的情况。",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "然而事实却是……用于让我们撤退的西面天寒地冻，积雪难以清除，而东面的积雪却在暖流下快速融化。",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "那群之前追着我们跑的怪物也从东面找上门来了，它们就等着雪融的那一天……",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4557
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "言谈之间，只见一个担架从二人身边经过。上面躺着的伤员双眼紧闭，神情痛苦不堪——正是前几日病重的托比。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4557
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "他不是在养病吗，怎么被从外面抬回来了？",
+            48
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "他说既然得了绝症，不如在死之前多帮点忙，硬是要跟着我们一起去东面侦查敌情。",
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "这几天他一直咳血，昏迷的时候张牙舞爪的，醒来一点记忆都没有。我们想着他自己留在教堂也很不方便，干脆带在旁边有个照应。",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡看过了吗？",
+            52
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "圣女大人看过了，但他的病只能找医生治，唉……",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "前几天，斯诺神父也和托比一样病倒了。他很老了，身体不方便动弹，叫我们帮他瞒着，别让圣女大人操心……",
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory708.jpg"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "150|0|-150",
+            0
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "言谈之间，两人一同来到花庭旁边的走廊。"
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            500726
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小莎",
+            "有些悲伤……后来呢，比安卡姐姐？",
+            18
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            501280,
+            1,
+            -160,
+            50,
+            100,
+            1
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "后来呀……",
+            18
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "嗯……",
+            65
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "他们俩都该让大夫看看了。但西面道路的积雪还很厚，我怕再过几天会来不及。",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "打了个手势，示意小队长压低声音。"
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "<size=28>如果圣女大人能够动用她的力量的话…</size>",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她为了守护我们而祈祷，用尽了力量。",
+            70
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "现在的身体很虚弱。",
+            71
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "就算圣女的力量也不是万能的，托比的病她就无能为力……",
+            72
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我晚一点还会再去一趟的。",
+            73
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "孩子们都还在这里，暂时先这样吧。",
+            74
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "那我先去看看托比的情况。",
+            1
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "好。",
+            76
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|0|-150",
+            0.9
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            13081710
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在小队长离开后，自己也悄悄找了个后排的位置坐下，在抬眼的瞬间便与那双温婉的瞳眸对视……"
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "若干年后，大英雄在黑森林中遇到了那条被世人所恐惧的毒蛇……",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她轻声念着童话，话语有一种抚慰人心的魔力。"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "直到听完整个故事，孩子们才意犹未尽地离开。比安卡也合上绘本，向自己所在的位置走去。"
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "指挥官阁下，不好好给孩子们做好榜样可是不行的。",
+            1
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -50,
+            -100
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她轻柔地拍落军服上的落雪，又拿出手娟擦去雪融化后的水渍。"
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "抱歉，比安卡，今天有些迟到了。",
+            93
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "我听说，指挥官阁下带着士兵们去山道扫除积雪了……发生了什么，能和我好好聊一聊吗？",
+            1
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "积雪比想象中的要深，恐怕这两天很难清理干净了。",
+            96
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这的确是事实——一部分的。另一部分则在思忖过后被选择性地隐瞒了。东面山路的积雪就要融化，而怪物聚集，自己只告诉了她西面的事。"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "原因自然相当简单。"
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory504.jpg"
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500055,
+            1
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "检查过了，这段时间以来，为了向神明祈幅，过度使用圣女的力量，身体快崩溃了。",
+            1
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "邦妮",
+            "这段时间她留在教堂，不要让她再用力了，否则下次可不只是昏迷一个星期这么简单的事了，清楚了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4388
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab"
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory708.jpg"
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "…………",
+            116
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "我希望您能明白，无论发生了什么，都不需要您一个人承担。",
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "两个人的温度，可以抵过这个世界上最冷的寒冬。",
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "…………",
+            121
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "圣女的力量能够做到的事很有限，至少不包括清除需要身体力行才能铲除的积雪……而东面的怪物又会让她拔出不祥的圣剑。"
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "嗯。",
+            124
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "所以自己只是简单地应承了她的关心，但仍未吐露实情。"
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            500565,
+            -80,
+            -80,
+            100
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "指挥官——",
+            18
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "远处传来了士兵的呼唤。"
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡……",
+            131
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1,
+            -50,
+            -50
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "没关系。",
+            1
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5286
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡松开了自己，双手温柔地整理好指挥服的衣领。"
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "一路顺风。",
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她微笑着说道。"
+        ]
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "3月15日——突如其来的暴雪打破了连日以来的平静。"
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            50
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "望着乌云堆积的天际，比安卡莫名地有些惴惴不安。在思忖片刻后，她也一同跨上了马背。"
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500055
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "真是的……搞不懂为什么非要在这种天出行，还非要绕远路从西边走，不知道这帮小屁点会感冒吗？",
+            1
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "一旁的邦妮不满地抱怨着，一边望向了在马车后面瑟瑟发抖的孩子们。"
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "……指挥官阁下判断今天正是迁往南方小镇的时机，一定有<M>他</M><W>她</W>的道理，不然也不会选在暴雪天。",
+            1
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -450
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500055,
+            450
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "为什么他们不和我们一起走？",
+            2
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "军队带来的马匹和马车都很有限，我们要尽可能快地撤离，把孩子们送到安全的地方，然后再请援军带着载具回来接他们。",
+            1
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/Bgstory511.jpg"
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory511.jpg"
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "0|0|-150",
+            0
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡望向教堂，神父正强撑着腰杆向她道别。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "神父，您的身体……",
+            1
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "去吧，他们需要你的指引。",
+            1
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "神父，我不明白……神说要爱人，要爱仇敌。若我正是因为爱人而无法爱仇敌……",
+            1
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "你指的是那些怪物吗？",
+            1
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "是的……它们引来瘟疫，使士兵死亡，使你染病，让我们流离失所……",
+            1
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            9
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "我无法原谅……比安卡有罪，神父。",
+            1
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "世人皆是戴罪之身，包括……我。遵循你的内心做出选择，我的孩子。",
+            1
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "……我想带着大家走出去。",
+            1
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "嗯，走出去，你很勇敢，我的孩子。",
+            1
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            7,
+            1
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "……神父，您是打算……留下来吗？",
+            1
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            -100,
+            1
+        ]
+    },
+    {
+        "Id": 186,
+        "ActionId": 186,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "我……需要留下来，我必须留下来……这……是我的选择，也是我的信仰，比安卡。",
+            1
+        ]
+    },
+    {
+        "Id": 187,
+        "ActionId": 187,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "去吧，比安卡，进入光明吧——",
+            1
+        ]
+    },
+    {
+        "Id": 188,
+        "ActionId": 188,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "带领大家到神能看到的地方，我会在此为你们祈祷，为——所有人祈祷。",
+            1
+        ]
+    },
+    {
+        "Id": 189,
+        "ActionId": 189,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "神佑世人，比安卡。",
+            1
+        ]
+    },
+    {
+        "Id": 190,
+        "ActionId": 190,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 191,
+        "ActionId": 191,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 192,
+        "ActionId": 192,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 193,
+        "ActionId": 193,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2599
+        ]
+    },
+    {
+        "Id": 194,
+        "ActionId": 194,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 195,
+        "ActionId": 195,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 196,
+        "ActionId": 196,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "0|0|0",
+            0
+        ]
+    },
+    {
+        "Id": 197,
+        "ActionId": 197,
+        "NextActionId": 0,
+        "Type": 107,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "教堂的另外一侧"
+        ]
+    },
+    {
+        "Id": 198,
+        "ActionId": 198,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "教堂的另外一侧"
+        ]
+    },
+    {
+        "Id": 199,
+        "ActionId": 199,
+        "NextActionId": 0,
+        "Type": 108,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 200,
+        "ActionId": 200,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            397
+        ]
+    },
+    {
+        "Id": 201,
+        "ActionId": 201,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 202,
+        "ActionId": 202,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "……已经两个小时了，分了三支小队去东面探查敌情，只有我们一支队伍回来了。",
+            1
+        ]
+    },
+    {
+        "Id": 203,
+        "ActionId": 203,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "而且……托比也没有回来……",
+            1
+        ]
+    },
+    {
+        "Id": 204,
+        "ActionId": 204,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "……",
+            205
+        ]
+    },
+    {
+        "Id": 205,
+        "ActionId": 205,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡他们呢？",
+            206
+        ]
+    },
+    {
+        "Id": 206,
+        "ActionId": 206,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "已经从西面撤离了，其他士兵们都已经按您的吩咐严阵以待……",
+            1
+        ]
+    },
+    {
+        "Id": 207,
+        "ActionId": 207,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 208,
+        "ActionId": 208,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 200.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 209,
+        "ActionId": 209,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 150.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg109_1.jpg",
+            0,
+            1,
+            0.1
+        ]
+    },
+    {
+        "Id": 210,
+        "ActionId": 210,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg109_1.jpg"
+        ]
+    },
+    {
+        "Id": 211,
+        "ActionId": 211,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 212,
+        "ActionId": 212,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在茫茫的风雪之中，一簇红光若隐若现……"
+        ]
+    },
+    {
+        "Id": 213,
+        "ActionId": 213,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg",
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 214,
+        "ActionId": 214,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 215,
+        "ActionId": 215,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999
+        ]
+    },
+    {
+        "Id": 216,
+        "ActionId": 216,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 217,
+        "ActionId": 217,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 218,
+        "ActionId": 218,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "小心！！！",
+            1
+        ]
+    },
+    {
+        "Id": 219,
+        "ActionId": 219,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.1,
+            -100,
+            -80,
+            -100
+        ]
+    },
+    {
+        "Id": 220,
+        "ActionId": 220,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 221,
+        "ActionId": 221,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            790
+        ]
+    },
+    {
+        "Id": 222,
+        "ActionId": 222,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 200.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 223,
+        "ActionId": 223,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2593
+        ]
+    },
+    {
+        "Id": 224,
+        "ActionId": 224,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            2593
+        ]
+    },
+    {
+        "Id": 225,
+        "ActionId": 225,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 150.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            0,
+            1,
+            0.1
+        ]
+    },
+    {
+        "Id": 226,
+        "ActionId": 226,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 227,
+        "ActionId": 227,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长一个飞扑，血箭顿时飚射眼前——"
+        ]
+    },
+    {
+        "Id": 228,
+        "ActionId": 228,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4807
+        ]
+    },
+    {
+        "Id": 229,
+        "ActionId": 229,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 230,
+        "ActionId": 230,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "“怪物”",
+            "（狰狞的嘶鸣）"
+        ]
+    },
+    {
+        "Id": 231,
+        "ActionId": 231,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png",
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 232,
+        "ActionId": 232,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 233,
+        "ActionId": 233,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 234,
+        "ActionId": 234,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 235,
+        "ActionId": 235,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 236,
+        "ActionId": 236,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "还未来得及下达撤退指令，身边的士兵便一个接一个地倒下。"
+        ]
+    },
+    {
+        "Id": 237,
+        "ActionId": 237,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 238,
+        "ActionId": 238,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500141
+        ]
+    },
+    {
+        "Id": 239,
+        "ActionId": 239,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "那不出意料的模样，正是为世界带来死亡与灾厄的帕弥什，而为首的那一个……"
+        ]
+    },
+    {
+        "Id": 240,
+        "ActionId": 240,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "托比？",
+            "指挥……官……",
+            1
+        ]
+    },
+    {
+        "Id": 241,
+        "ActionId": 241,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 242,
+        "ActionId": 242,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 244,
+        "ActionId": 244,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 245,
+        "ActionId": 245,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 246,
+        "ActionId": 246,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory751.jpg"
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500131
+        ]
+    },
+    {
+        "Id": 248,
+        "ActionId": 248,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "托比",
+            "指挥……官……",
+            1
+        ]
+    },
+    {
+        "Id": 249,
+        "ActionId": 249,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 250,
+        "ActionId": 250,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "3月10日，离开与比安卡温存的庭院，看望正在重病中的托比·戴维斯。"
+        ]
+    },
+    {
+        "Id": 251,
+        "ActionId": 251,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "那个曾身强体壮的青年此刻正蜷卧床头，身形枯槁。即便如此，那抹豁达的笑意也一直挂在嘴边。"
+        ]
+    },
+    {
+        "Id": 252,
+        "ActionId": 252,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "……病得这么重了，为什么还非要去参加侦查？",
+            253
+        ]
+    },
+    {
+        "Id": 253,
+        "ActionId": 253,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500131
+        ]
+    },
+    {
+        "Id": 254,
+        "ActionId": 254,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "托比",
+            "哈哈，圣女大人都治不了的病，怕是时日无多了。",
+            1
+        ]
+    },
+    {
+        "Id": 255,
+        "ActionId": 255,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "托比",
+            "别看我这副样子，以前在老家可有人缘了，我什么忙都帮，帮老婆婆烧饭，帮铁匠打铁，帮船长放帆，和小朋友捉迷藏……",
+            1
+        ]
+    },
+    {
+        "Id": 256,
+        "ActionId": 256,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "托比",
+            "我总是乐此不疲，总是无法满足，想着有朝一日成为大家的英雄。",
+            1
+        ]
+    },
+    {
+        "Id": 257,
+        "ActionId": 257,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "托比",
+            "现在也是一样……我不想就这么死去啊，无论是自杀还是病死，都太窝囊了……",
+            1
+        ]
+    },
+    {
+        "Id": 258,
+        "ActionId": 258,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "托比",
+            "战死也好，被你们杀死也好，请让我……",
+            1
+        ]
+    },
+    {
+        "Id": 259,
+        "ActionId": 259,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 260,
+        "ActionId": 260,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 261,
+        "ActionId": 261,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 262,
+        "ActionId": 262,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 263,
+        "ActionId": 263,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 264,
+        "ActionId": 264,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 265,
+        "ActionId": 265,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 266,
+        "ActionId": 266,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500141
+        ]
+    },
+    {
+        "Id": 267,
+        "ActionId": 267,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "托比？",
+            "成为……英雄……吧……",
+            1
+        ]
+    },
+    {
+        "Id": 268,
+        "ActionId": 268,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            500565,
+            -80,
+            -80,
+            100
+        ]
+    },
+    {
+        "Id": 269,
+        "ActionId": 269,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "可恶，这小子不认识我了！",
+            18
+        ]
+    },
+    {
+        "Id": 270,
+        "ActionId": 270,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1543
+        ]
+    },
+    {
+        "Id": 271,
+        "ActionId": 271,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            1
+        ]
+    },
+    {
+        "Id": 272,
+        "ActionId": 272,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.2,
+            -80,
+            -150
+        ]
+    },
+    {
+        "Id": 273,
+        "ActionId": 273,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            819043
+        ]
+    },
+    {
+        "Id": 274,
+        "ActionId": 274,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 275,
+        "ActionId": 275,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 276,
+        "ActionId": 276,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 277,
+        "ActionId": 277,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "一把将小队长重伤的身体拖回身边，托比的刀锋便砸在小队长原来身处的位置上。"
+        ]
+    },
+    {
+        "Id": 278,
+        "ActionId": 278,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab"
+        ]
+    },
+    {
+        "Id": 279,
+        "ActionId": 279,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "（挥刀）",
+            280
+        ]
+    },
+    {
+        "Id": 280,
+        "ActionId": 280,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 100.0,
+        "Params": [
+            2,
+            2905
+        ]
+    },
+    {
+        "Id": 281,
+        "ActionId": 281,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 282,
+        "ActionId": 282,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            9389038
+        ]
+    },
+    {
+        "Id": 283,
+        "ActionId": 283,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1Shake"
+        ]
+    },
+    {
+        "Id": 284,
+        "ActionId": 284,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "叮——虎口却被“托比”的身体震得发麻。"
+        ]
+    },
+    {
+        "Id": 285,
+        "ActionId": 285,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 286,
+        "ActionId": 286,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在这个世界里没有现代化武器，更没有构造体，只靠一群人类的体术，无法与感染体抗衡。"
+        ]
+    },
+    {
+        "Id": 287,
+        "ActionId": 287,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 288,
+        "ActionId": 288,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "其他地方都失守了，只能往花庭撤了！",
+            1
+        ]
+    },
+    {
+        "Id": 289,
+        "ActionId": 289,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 290,
+        "ActionId": 290,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 291,
+        "ActionId": 291,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 292,
+        "ActionId": 292,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 293,
+        "ActionId": 293,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory503.jpg"
+        ]
+    },
+    {
+        "Id": 294,
+        "ActionId": 294,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 295,
+        "ActionId": 295,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1504
+        ]
+    },
+    {
+        "Id": 296,
+        "ActionId": 296,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "越过走廊上同伴的残肢，与小队长向花庭撤退。"
+        ]
+    },
+    {
+        "Id": 297,
+        "ActionId": 297,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 298,
+        "ActionId": 298,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "所有人都按照您的指令聚集了，只要越过花庭就可以从后门离——",
+            1
+        ]
+    },
+    {
+        "Id": 299,
+        "ActionId": 299,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5321
+        ]
+    },
+    {
+        "Id": 300,
+        "ActionId": 300,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 301,
+        "ActionId": 301,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长",
+            "呃！！",
+            1
+        ]
+    },
+    {
+        "Id": 302,
+        "ActionId": 302,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 303,
+        "ActionId": 303,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 550.0,
+        "Params": [
+            1,
+            0.5,
+            -50
+        ]
+    },
+    {
+        "Id": 304,
+        "ActionId": 304,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 305,
+        "ActionId": 305,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 306,
+        "ActionId": 306,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501148,
+            1
+        ]
+    },
+    {
+        "Id": 307,
+        "ActionId": 307,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺？",
+            "守护……花庭……",
+            1
+        ]
+    },
+    {
+        "Id": 308,
+        "ActionId": 308,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 309,
+        "ActionId": 309,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 310,
+        "ActionId": 310,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 311,
+        "ActionId": 311,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 312,
+        "ActionId": 312,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 313,
+        "ActionId": 313,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 314,
+        "ActionId": 314,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 315,
+        "ActionId": 315,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory708.jpg"
+        ]
+    },
+    {
+        "Id": 316,
+        "ActionId": 316,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            207
+        ]
+    },
+    {
+        "Id": 317,
+        "ActionId": 317,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022
+        ]
+    },
+    {
+        "Id": 318,
+        "ActionId": 318,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "孩子……也许你会腾出些时间，同我这个老人聊一聊？",
+            1
+        ]
+    },
+    {
+        "Id": 319,
+        "ActionId": 319,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 320,
+        "ActionId": 320,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在圣祈仪式结束后，与神父漫步在种满种子的花庭。"
+        ]
+    },
+    {
+        "Id": 321,
+        "ActionId": 321,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "听比安卡说，您不久前曾不告而别？",
+            322
+        ]
+    },
+    {
+        "Id": 322,
+        "ActionId": 322,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022
+        ]
+    },
+    {
+        "Id": 323,
+        "ActionId": 323,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "为比安卡带回一些百合花的种子，那是雪原没有的东西。",
+            1
+        ]
+    },
+    {
+        "Id": 324,
+        "ActionId": 324,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "别看这处花庭冬天荒芜了点，到了春天会长出各种各样的花朵——",
+            1
+        ]
+    },
+    {
+        "Id": 325,
+        "ActionId": 325,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "我看着比安卡在这里奔跑，长大，拔下杂草，再亲手种下百合……",
+            1
+        ]
+    },
+    {
+        "Id": 326,
+        "ActionId": 326,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "或许她以后会去当花店的店员，她还很喜欢看故事，或许会成为一个剧作家。",
+            1
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "那些想法都没有得到实现。因为她被神选为了圣女，作为一个神父，我必须践行神的旨意……",
+            1
+        ]
+    },
+    {
+        "Id": 328,
+        "ActionId": 328,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "但是作为一个父辈，我只希望我的孩子能度过一个平凡、幸福的人生。",
+            1
+        ]
+    },
+    {
+        "Id": 329,
+        "ActionId": 329,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "所以我很高兴能看到，她已经找到了与她携手种下花种的人……咳……咳……",
+            1
+        ]
+    },
+    {
+        "Id": 330,
+        "ActionId": 330,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "您怎么了？",
+            331
+        ]
+    },
+    {
+        "Id": 331,
+        "ActionId": 331,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "患了点病……怕是无法再撑到春天了……",
+            1
+        ]
+    },
+    {
+        "Id": 332,
+        "ActionId": 332,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "指挥官，能答应我吗？和她一起见证繁花盛开的那一天，守护好这座花庭。",
+            1
+        ]
+    },
+    {
+        "Id": 333,
+        "ActionId": 333,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我答应您。",
+            334,
+            "……",
+            334
+        ]
+    },
+    {
+        "Id": 334,
+        "ActionId": 334,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 335,
+        "ActionId": 335,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4388
+        ]
+    },
+    {
+        "Id": 336,
+        "ActionId": 336,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 337,
+        "ActionId": 337,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 338,
+        "ActionId": 338,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            152
+        ]
+    },
+    {
+        "Id": 339,
+        "ActionId": 339,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 340,
+        "ActionId": 340,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory503.jpg"
+        ]
+    },
+    {
+        "Id": 341,
+        "ActionId": 341,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 342,
+        "ActionId": 342,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501148,
+            1
+        ]
+    },
+    {
+        "Id": 343,
+        "ActionId": 343,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺？",
+            "守护……花庭……",
+            1
+        ]
+    },
+    {
+        "Id": 344,
+        "ActionId": 344,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5321
+        ]
+    },
+    {
+        "Id": 345,
+        "ActionId": 345,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 346,
+        "ActionId": 346,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565,
+            1
+        ]
+    },
+    {
+        "Id": 347,
+        "ActionId": 347,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "呃！！",
+            1
+        ]
+    },
+    {
+        "Id": 348,
+        "ActionId": 348,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 349,
+        "ActionId": 349,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.25,
+            -1200
+        ]
+    },
+    {
+        "Id": 350,
+        "ActionId": 350,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 351,
+        "ActionId": 351,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "小队长在踏入花庭的瞬间被突然冒出的剑刃贯穿。花庭的走廊旁边，横七竖八的躺着赶来的士兵遗体。"
+        ]
+    },
+    {
+        "Id": 352,
+        "ActionId": 352,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            501148,
+            1
+        ]
+    },
+    {
+        "Id": 353,
+        "ActionId": 353,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor2Shake",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺？",
+            "守护……花庭……",
+            2
+        ]
+    },
+    {
+        "Id": 354,
+        "ActionId": 354,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 355,
+        "ActionId": 355,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab"
+        ]
+    },
+    {
+        "Id": 356,
+        "ActionId": 356,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 357,
+        "ActionId": 357,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            0.1,
+            0,
+            -100,
+            -150
+        ]
+    },
+    {
+        "Id": 358,
+        "ActionId": 358,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 359,
+        "ActionId": 359,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "贯穿着小队长的刀锋迎面袭来。"
+        ]
+    },
+    {
+        "Id": 360,
+        "ActionId": 360,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 361,
+        "ActionId": 361,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 362,
+        "ActionId": 362,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 363,
+        "ActionId": 363,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 364,
+        "ActionId": 364,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg"
+        ]
+    },
+    {
+        "Id": 365,
+        "ActionId": 365,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "一路颠簸，终于平安将孩子们带到了南方小镇的教堂。在记忆中本应春暖花开的地方，此刻也落满了雪花。"
+        ]
+    },
+    {
+        "Id": 366,
+        "ActionId": 366,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500055
+        ]
+    },
+    {
+        "Id": 367,
+        "ActionId": 367,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "这边的军队答应我们，很快就出发去雪原迎接他们……",
+            1
+        ]
+    },
+    {
+        "Id": 368,
+        "ActionId": 368,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "邦妮",
+            "我劝你不要太担心，最近只是天气冷了点。等你的指挥官阁下回来，我们就一起在南方住上一个月，天气暖了再回去……",
+            1
+        ]
+    },
+    {
+        "Id": 369,
+        "ActionId": 369,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "穷追不舍的北风掠去心头的宁静。静默祈祷了半个小时，那股不祥的预感始终挥之不去。"
+        ]
+    },
+    {
+        "Id": 371,
+        "ActionId": 371,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500055
+        ]
+    },
+    {
+        "Id": 372,
+        "ActionId": 372,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "比安卡，等等，你要去哪？！",
+            1
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280
+        ]
+    },
+    {
+        "Id": 374,
+        "ActionId": 374,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "回雪原看看，我还是放心不下。",
+            1
+        ]
+    },
+    {
+        "Id": 375,
+        "ActionId": 375,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 376,
+        "ActionId": 376,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500055,
+            -400
+        ]
+    },
+    {
+        "Id": 377,
+        "ActionId": 377,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "快陪我坐下，亲爱的圣女，他们不会有事的，留在这里吧。",
+            2
+        ]
+    },
+    {
+        "Id": 378,
+        "ActionId": 378,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 379,
+        "ActionId": 379,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4297
+        ]
+    },
+    {
+        "Id": 380,
+        "ActionId": 380,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 350.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            1,
+            0.3
+        ]
+    },
+    {
+        "Id": 381,
+        "ActionId": 381,
+        "NextActionId": 0,
+        "Type": 307,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不要回去，千万不要回去——心中的声音朝她呐喊。",
+            60
+        ]
+    },
+    {
+        "Id": 382,
+        "ActionId": 382,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500024,
+            -1500
+        ]
+    },
+    {
+        "Id": 383,
+        "ActionId": 383,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "不要回去，千万不要回去——心中的声音朝她呐喊。"
+        ]
+    },
+    {
+        "Id": 384,
+        "ActionId": 384,
+        "NextActionId": 0,
+        "Type": 307,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 385,
+        "ActionId": 385,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.5,
+            0.5,
+            0
+        ]
+    },
+    {
+        "Id": 386,
+        "ActionId": 386,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0,
+            150,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 387,
+        "ActionId": 387,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500055,
+            1
+        ]
+    },
+    {
+        "Id": 388,
+        "ActionId": 388,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮？",
+            "狼狈一点也好，普通一点也好，过上幸福、平凡的一生。和我一样做个普通的修女，晨祷晚祷，诵读经文……",
+            2
+        ]
+    },
+    {
+        "Id": 389,
+        "ActionId": 389,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "邦妮？",
+            "这是斯诺神父所期望的，也是指挥官阁下所期望的——留在那里的所有人，都是为了让你获得安宁才要浴血奋战。",
+            2
+        ]
+    },
+    {
+        "Id": 390,
+        "ActionId": 390,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 391,
+        "ActionId": 391,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 392,
+        "ActionId": 392,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 393,
+        "ActionId": 393,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.5,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 394,
+        "ActionId": 394,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮？",
+            "留下吧，去过你本该过的人生。",
+            1
+        ]
+    },
+    {
+        "Id": 395,
+        "ActionId": 395,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 396,
+        "ActionId": 396,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png",
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 397,
+        "ActionId": 397,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            501280,
+            9,
+            1
+        ]
+    },
+    {
+        "Id": 398,
+        "ActionId": 398,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "…………",
+            3
+        ]
+    },
+    {
+        "Id": 399,
+        "ActionId": 399,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 400,
+        "ActionId": 400,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 401,
+        "ActionId": 401,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+        ]
+    },
+    {
+        "Id": 402,
+        "ActionId": 402,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png",
+            1,
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 403,
+        "ActionId": 403,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<i>去过原本的人生，原本的人生应该是怎样的？</i>",
+            "000000ff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -1
+        ]
+    },
+    {
+        "Id": 404,
+        "ActionId": 404,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<i>像一个普通的女孩一样，在下雪的日子里快乐地打雪仗，在下雨的日子里与与另一个人共撑一把伞……</i>",
+            "000000ff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -1
+        ]
+    },
+    {
+        "Id": 405,
+        "ActionId": 405,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<i>又或是在教堂，聆听人们或虔诚或的祷告，</i>",
+            "000000ff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -1
+        ]
+    },
+    {
+        "Id": 406,
+        "ActionId": 406,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<i>或悲伤或虚伪的忏悔……在教堂的花庭照料新生的花朵，再看着孩子们一起长大。</i>",
+            "000000ff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -1
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<i>只要她还有可回去的地方，只要那个人仍然平安……</i>",
+            "000000ff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -1
+        ]
+    },
+    {
+        "Id": 408,
+        "ActionId": 408,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1007,
+            "Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png",
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 409,
+        "ActionId": 409,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg"
+        ]
+    },
+    {
+        "Id": 410,
+        "ActionId": 410,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4885,
+            0.5
+        ]
+    },
+    {
+        "Id": 411,
+        "ActionId": 411,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500813
+        ]
+    },
+    {
+        "Id": 412,
+        "ActionId": 412,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "援军士兵",
+            "这里有从雪原来的难民吗？",
+            1
+        ]
+    },
+    {
+        "Id": 413,
+        "ActionId": 413,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            1
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "我就是，有什么问题吗？",
+            1
+        ]
+    },
+    {
+        "Id": 415,
+        "ActionId": 415,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500813,
+            1
+        ]
+    },
+    {
+        "Id": 416,
+        "ActionId": 416,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "援军士兵",
+            "哨兵在东北方向发现了怪物集群，起码有一百多个——",
+            1
+        ]
+    },
+    {
+        "Id": 417,
+        "ActionId": 417,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4885
+        ]
+    },
+    {
+        "Id": 418,
+        "ActionId": 418,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            9,
+            1
+        ]
+    },
+    {
+        "Id": 419,
+        "ActionId": 419,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "…………",
+            1
+        ]
+    },
+    {
+        "Id": 420,
+        "ActionId": 420,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0
+        ]
+    },
+    {
+        "Id": 421,
+        "ActionId": 421,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "如她的预感一般，耳际的杂音都消失了，她沉默地提剑起身，向门外走去。"
+        ]
+    },
+    {
+        "Id": 422,
+        "ActionId": 422,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            400
+        ]
+    },
+    {
+        "Id": 423,
+        "ActionId": 423,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500055,
+            -150
+        ]
+    },
+    {
+        "Id": 424,
+        "ActionId": 424,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "邦妮",
+            "等等——这边的援军还有半个小时就会赶过去了——",
+            2
+        ]
+    },
+    {
+        "Id": 425,
+        "ActionId": 425,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 426,
+        "ActionId": 426,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "……邦妮，愿神保佑你，保佑所有的孩子们。",
+            1
+        ]
+    },
+    {
+        "Id": 427,
+        "ActionId": 427,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.5,
+            1200
+        ]
+    },
+    {
+        "Id": 428,
+        "ActionId": 428,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 429,
+        "ActionId": 429,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogDisable"
+        ]
+    },
+    {
+        "Id": 430,
+        "ActionId": 430,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1
+        ]
+    },
+    {
+        "Id": 431,
+        "ActionId": 431,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1500.0,
+        "Params": [
+            1,
+            36,
+            1
+        ]
+    },
+    {
+        "Id": 432,
+        "ActionId": 432,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1290.jpg"
+        ]
+    },
+    {
+        "Id": 433,
+        "ActionId": 433,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 434,
+        "ActionId": 434,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 435,
+        "ActionId": 435,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2599
+        ]
+    },
+    {
+        "Id": 436,
+        "ActionId": 436,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "马匹奔驰，教堂的轮廓浮现眼前。苍白的楼宇，在呜呜吹打的雪花中格外寂静。"
+        ]
+    },
+    {
+        "Id": 437,
+        "ActionId": 437,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            844006
+        ]
+    },
+    {
+        "Id": 438,
+        "ActionId": 438,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "循着刀剑铮鸣的声音，走向露天的庭院，浓烈的血腥味扑鼻而来。"
+        ]
+    },
+    {
+        "Id": 439,
+        "ActionId": 439,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1800.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 440,
+        "ActionId": 440,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab"
+        ]
+    },
+    {
+        "Id": 441,
+        "ActionId": 441,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
+        ]
+    },
+    {
+        "Id": 442,
+        "ActionId": 442,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2599
+        ]
+    },
+    {
+        "Id": 443,
+        "ActionId": 443,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500565
+        ]
+    },
+    {
+        "Id": 444,
+        "ActionId": 444,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "小队长",
+            "呃！！",
+            1
+        ]
+    },
+    {
+        "Id": 445,
+        "ActionId": 445,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            7
+        ]
+    },
+    {
+        "Id": 446,
+        "ActionId": 446,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "！！",
+            1
+        ]
+    },
+    {
+        "Id": 447,
+        "ActionId": 447,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6223
+        ]
+    },
+    {
+        "Id": 448,
+        "ActionId": 448,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安……卡……",
+            449
+        ]
+    },
+    {
+        "Id": 449,
+        "ActionId": 449,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "踏入门扉的瞬间，身着指挥服的人类遍体鳞伤，身体无力地瘫倒在地上。"
+        ]
+    },
+    {
+        "Id": 451,
+        "ActionId": 451,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 452,
+        "ActionId": 452,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500141
+        ]
+    },
+    {
+        "Id": 453,
+        "ActionId": 453,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "？？",
+            "成为……英雄……",
+            1
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501148
+        ]
+    },
+    {
+        "Id": 455,
+        "ActionId": 455,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "？？",
+            "守护……花庭……",
+            1
+        ]
+    },
+    {
+        "Id": 456,
+        "ActionId": 456,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 457,
+        "ActionId": 457,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在横七竖八躺倒在地上的尸骸之上，突兀地立着两个畸形的怪物。"
+        ]
+    },
+    {
+        "Id": 458,
+        "ActionId": 458,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她站在纷扬的大雪中，极力辨清二人血肉模糊的面孔。"
+        ]
+    },
+    {
+        "Id": 459,
+        "ActionId": 459,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            7
+        ]
+    },
+    {
+        "Id": 460,
+        "ActionId": 460,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "斯诺神父……托比先生……？",
+            1
+        ]
+    },
+    {
+        "Id": 461,
+        "ActionId": 461,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 462,
+        "ActionId": 462,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500141,
+            -400
+        ]
+    },
+    {
+        "Id": 463,
+        "ActionId": 463,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            501148,
+            400
+        ]
+    },
+    {
+        "Id": 464,
+        "ActionId": 464,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 465,
+        "ActionId": 465,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor3Shake"
+        ]
+    },
+    {
+        "Id": 466,
+        "ActionId": 466,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "“怪物”被她的声音惊动，两双无神的瞳孔不约而同地朝她望来。"
+        ]
+    },
+    {
+        "Id": 467,
+        "ActionId": 467,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3,
+            1
+        ]
+    },
+    {
+        "Id": 468,
+        "ActionId": 468,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            9
+        ]
+    },
+    {
+        "Id": 469,
+        "ActionId": 469,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "雪花变得慢，比安卡痛苦地闭上眼睛。"
+        ]
+    },
+    {
+        "Id": 470,
+        "ActionId": 470,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "神啊——如果此时您能听见我的呼唤。",
+            1
+        ]
+    },
+    {
+        "Id": 471,
+        "ActionId": 471,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "比安卡……满身罪孽。",
+            1
+        ]
+    },
+    {
+        "Id": 472,
+        "ActionId": 472,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 473,
+        "ActionId": 473,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 474,
+        "ActionId": 474,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 475,
+        "ActionId": 475,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 476,
+        "ActionId": 476,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab"
+        ]
+    },
+    {
+        "Id": 477,
+        "ActionId": 477,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory708.jpg"
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            1
+        ]
+    },
+    {
+        "Id": 479,
+        "ActionId": 479,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斯诺",
+            "……比安卡……你一直是个温柔、坚强又勇敢的孩子，好孩子。……",
+            1
+        ]
+    },
+    {
+        "Id": 480,
+        "ActionId": 480,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 481,
+        "ActionId": 481,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4388
+        ]
+    },
+    {
+        "Id": 482,
+        "ActionId": 482,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 483,
+        "ActionId": 483,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 484,
+        "ActionId": 484,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
+        ]
+    },
+    {
+        "Id": 485,
+        "ActionId": 485,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            9,
+            1
+        ]
+    },
+    {
+        "Id": 486,
+        "ActionId": 486,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "……必将一力承担。",
+            1
+        ]
+    },
+    {
+        "Id": 487,
+        "ActionId": 487,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            10042608
+        ]
+    },
+    {
+        "Id": 488,
+        "ActionId": 488,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            5
+        ]
+    },
+    {
+        "Id": 489,
+        "ActionId": 489,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "剑刃与鞘壁摩擦的细微震颤从虎口传来，银质的吞口处迸出几点幽蓝火花。"
+        ]
+    },
+    {
+        "Id": 490,
+        "ActionId": 490,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "在此之前……",
+            1
+        ]
+    },
+    {
+        "Id": 491,
+        "ActionId": 491,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 492,
+        "ActionId": 492,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png",
+            0,
+            1,
+            0.2
+        ]
+    },
+    {
+        "Id": 493,
+        "ActionId": 493,
+        "NextActionId": 0,
+        "Type": 304,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "<size=50>比安卡，如果再给你一次机会，你会怎么选？</size>",
+            "ffffffff",
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront48.png",
+            -3
+        ]
+    },
+    {
+        "Id": 494,
+        "ActionId": 494,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            1005,
+            "Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png",
+            0,
+            0,
+            0.1
+        ]
+    },
+    {
+        "Id": 495,
+        "ActionId": 495,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            9
+        ]
+    },
+    {
+        "Id": 496,
+        "ActionId": 496,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "我必须再次犯下罪行——",
+            1
+        ]
+    },
+    {
+        "Id": 497,
+        "ActionId": 497,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4387
+        ]
+    },
+    {
+        "Id": 498,
+        "ActionId": 498,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 499,
+        "ActionId": 499,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 500,
+        "ActionId": 500,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 501,
+        "ActionId": 501,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory708.jpg"
+        ]
+    },
+    {
+        "Id": 502,
+        "ActionId": 502,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500022,
+            1
+        ]
+    },
+    {
+        "Id": 503,
+        "ActionId": 503,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斯诺",
+            "……遵循你的内心做出选择，我的孩子……",
+            1
+        ]
+    },
+    {
+        "Id": 504,
+        "ActionId": 504,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 505,
+        "ActionId": 505,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4388
+        ]
+    },
+    {
+        "Id": 506,
+        "ActionId": 506,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 508,
+        "ActionId": 508,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory707.jpg"
+        ]
+    },
+    {
+        "Id": 509,
+        "ActionId": 509,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501280,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 510,
+        "ActionId": 510,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "比安卡",
+            "进行裁决——",
+            1
+        ]
+    },
+    {
+        "Id": 511,
+        "ActionId": 511,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -80,
+            -150
+        ]
+    },
+    {
+        "Id": 512,
+        "ActionId": 512,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 513,
+        "ActionId": 513,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 200.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4276
+        ]
+    },
+    {
+        "Id": 514,
+        "ActionId": 514,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 515,
+        "ActionId": 515,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab"
+        ]
+    },
+    {
+        "Id": 516,
+        "ActionId": 516,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab"
+        ]
+    },
+    {
+        "Id": 517,
+        "ActionId": 517,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "当最后一寸锋刃挣脱束缚，无数雪花在血槽上跌碎，化作千百颗银砂滚向剑尖。"
+        ]
+    },
+    {
+        "Id": 518,
+        "ActionId": 518,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4331
+        ]
+    },
+    {
+        "Id": 519,
+        "ActionId": 519,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 520,
+        "ActionId": 520,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 521,
+        "ActionId": 521,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "“这样就没有痛苦。”——逼近要害的瞬间，她惊觉自己并不生疏，仿佛曾经无数次这么做，杀死过无数个人。"
+        ]
+    },
+    {
+        "Id": 522,
+        "ActionId": 522,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4223
+        ]
+    },
+    {
+        "Id": 523,
+        "ActionId": 523,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 524,
+        "ActionId": 524,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryHitNew.prefab"
+        ]
+    },
+    {
+        "Id": 525,
+        "ActionId": 525,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 526,
+        "ActionId": 526,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab"
+        ]
+    },
+    {
+        "Id": 527,
+        "ActionId": 527,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 500.0,
+        "Params": [
+            2,
+            772
+        ]
+    },
+    {
+        "Id": 528,
+        "ActionId": 528,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 529,
+        "ActionId": 529,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 530,
+        "ActionId": 530,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogEnable"
+        ]
+    },
+    {
+        "Id": 531,
+        "ActionId": 531,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "然而将剑锋对准身前的这两个人时——斯诺与托比，那仿若这段苦旅的起点，无穷的悲伤与愤慨还是难以抑制地攥紧心头。"
+        ]
+    },
+    {
+        "Id": 532,
+        "ActionId": 532,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500141
+        ]
+    },
+    {
+        "Id": 533,
+        "ActionId": 533,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "PanelActor1Shake",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "托比？",
+            "得救……了……呢……",
+            1
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            3077
+        ]
+    },
+    {
+        "Id": 535,
+        "ActionId": 535,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -1200
+        ]
+    },
+    {
+        "Id": 536,
+        "ActionId": 536,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 350.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 537,
+        "ActionId": 537,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "比安卡",
+            "…………"
+        ]
+    },
+    {
+        "Id": 538,
+        "ActionId": 538,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySnowNew.prefab",
+            2
+        ]
+    },
+    {
+        "Id": 539,
+        "ActionId": 539,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -53,8 +7772,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            "测试2"
+            "大雪纷纷落下。"
         ]
     }
 ]

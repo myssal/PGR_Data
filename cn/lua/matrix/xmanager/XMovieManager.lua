@@ -25,6 +25,7 @@ local ActionClass = {
     [109] = require("XMovieActions/XMovieActionTextAppear"), -- 文本出现
     [110] = require("XMovieActions/XMovieActionTextDisAppear"), -- 文本消失
     [111] = require("XMovieActions/XMovieActionBgEffect"), -- 背景特效
+    [112] = require("XMovieActions/XMovieActionTextAnim"), -- 文本动画
 
     [201] = require("XMovieActions/XMovieActionActorAppear"), --演员出现
     [202] = require("XMovieActions/XMovieActionActorDisappear"), --演员消失

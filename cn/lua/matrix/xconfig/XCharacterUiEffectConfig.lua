@@ -243,9 +243,14 @@ end
 
 --- 检查指定模型的动画的结束回调是否同步执行
 function XCharacterUiEffectConfig.CheckCharaAnimaIsSyncCallBack(modelName, animaName)
+    ---@type XTableCharacterAnimaSyncCallBack
     local cfg = CharacterAnimaSyncCallBackDict[modelName]
 
     if cfg then
+        if cfg.IsAllAnimaSync then
+            return true
+        end
+        
         if not XTool.IsTableEmpty(cfg.AnimaNames) then
             for i, name in pairs(cfg.AnimaNames) do
                 if animaName == name then
@@ -255,5 +260,41 @@ function XCharacterUiEffectConfig.CheckCharaAnimaIsSyncCallBack(modelName, anima
         end
     end
     
+    return false
+end
+
+--- 检查指定模型的动画关联的武器加载，是否立刻显示
+function XCharacterUiEffectConfig.CheckCharaAnimaWeaponLoadDefaultShow(modelName, animaName)
+    ---@type XTableCharacterAnimaSyncCallBack
+    local cfg = CharacterAnimaSyncCallBackDict[modelName]
+
+    if cfg then
+        if not XTool.IsTableEmpty(cfg.WeaponLoadDefaultShow) then
+            for i, name in pairs(cfg.WeaponLoadDefaultShow) do
+                if animaName == name then
+                    return true
+                end
+            end
+        end
+    end
+
+    return false
+end
+
+--- 检查指定模型的动画关联的武器加载，是否立刻隐藏
+function XCharacterUiEffectConfig.CheckCharaAnimaWeaponLoadDefaultHide(modelName, animaName)
+    ---@type XTableCharacterAnimaSyncCallBack
+    local cfg = CharacterAnimaSyncCallBackDict[modelName]
+
+    if cfg then
+        if not XTool.IsTableEmpty(cfg.WeaponLoadDefaultHide) then
+            for i, name in pairs(cfg.WeaponLoadDefaultHide) do
+                if animaName == name then
+                    return true
+                end
+            end
+        end
+    end
+
     return false
 end 

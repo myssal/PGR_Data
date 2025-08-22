@@ -27,7 +27,7 @@ function XUiGridSuitPrefab:Refresh(suitPrefabInfo, index, isPreafabSaved)
     -- 套装预设图标
     local presentSuitId = suitPrefabInfo:GetPresentSuitId()
     if presentSuitId then
-        self.RImgIcon:SetRawImage(XMVCA.XEquip:GetEquipSuitBigIconPath(presentSuitId))
+        self.RImgIcon:SetRawImage(XMVCA.XEquip:GetEquipSuitWaferBagPath(presentSuitId))
         self.ImgDefaultIcon.gameObject:SetActiveEx(false)
         self.RImgIcon.gameObject:SetActiveEx(true)
     else

@@ -5,7 +5,14 @@ local ADJUST_DISTANCE = 0.2
 local FADE_TIME = 0.1
 local DURATION_TIME = 0.25
 
-function XUiBlackScreen:OnStart(targetTrans, isTweenCamera, paramName, cb)
+function XUiBlackScreen:OnStart(targetTrans, isTweenCamera, paramName, cb, startAlpha)
+    --作为黑屏等待其他界面加载时，dotween会卡帧，黑屏不黑，可以直接置黑
+    if XTool.IsNumberValid(startAlpha) then
+        local color = self.ImgBackground.color
+        color.a = startAlpha
+        self.ImgBackground.color = color
+    end    
+
     local distance
     local cameraController = XHomeSceneManager.GetSceneCameraController()
 

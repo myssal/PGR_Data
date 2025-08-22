@@ -65,18 +65,18 @@ function XLevel4001Present:HandleEvent(eventType, eventArgs) --事件响应逻�
         if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then --是玩家发起的交互
             if eventArgs.TargetId == self._streetMall2F_ElevatorCallerUUID then
                 --传送到露天广场
-                XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, eventArgs.LauncherId, self._streetMall3F_ElevatorPortPos, 0.5, 0.5)
+                self._proxy:TeleportWithBlackUi(eventArgs.LauncherId, self._streetMall3F_ElevatorPortPos)
             elseif eventArgs.TargetId == self._streetMall3F_ElevatorCallerUUID then
                 --传送到时序广场
-                XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, eventArgs.LauncherId, self._streetMall2F_ElevatorPortPos, 0.5, 0.5)
+                self._proxy:TeleportWithBlackUi(eventArgs.LauncherId, self._streetMall2F_ElevatorPortPos)
             elseif eventArgs.TargetId == self._streetMall1F_ElevatorCallerUUID then
                 --从商业街传送回时序广场
-                XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, eventArgs.LauncherId, self._streetMall1F_ElevatorPortPos, 0.5, 0.5)
+                self._proxy:TeleportWithBlackUi(eventArgs.LauncherId, self._streetMall1F_ElevatorPortPos)
             elseif eventArgs.TargetId == self._streetMall4F_ElevatorCallerUUID then
                 --从时序广场传送到商业街
-                XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, eventArgs.LauncherId, self._streetMall4F_ElevatorPortPos, 0.5, 0.5)
+                self._proxy:TeleportWithBlackUi(eventArgs.LauncherId, self._streetMall4F_ElevatorPortPos)
             elseif eventArgs.TargetId == self._tempLevelSwitcherBackUUID then
-                local pos = { x = 18.43, y = 1.63, z = 17.55 }
+                local pos = { x = 18.43, y = 1.14, z = 17.55 }
                 self._proxy:SwitchLevel(4003, pos)
             --elseif eventArgs.TargetId == self._cafeObjSwitchUUID then
             --    self._proxy:OpenGameplayMainEntrance(1, { 555.03, 169.44, 1174.21 })

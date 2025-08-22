@@ -4,7 +4,7 @@
 local XUiTheatre5PVEChapterEventItem = XClass(XUiNode, 'XUiTheatre5PVEChapterEventItem')
 
 function XUiTheatre5PVEChapterEventItem:OnStart()
-    XUiHelper.RegisterClickEvent(self, self.UiTheatre5BtnYes, self.OnClickStartEvent,true)
+    XUiHelper.RegisterClickEvent(self, self.UiTheatre5BtnYes, self.OnClickStartEvent, true, true, 0.5)
     self._EventId = nil 
 end
 
@@ -22,12 +22,29 @@ function XUiTheatre5PVEChapterEventItem:Update(eventData, index)
         self.RImgBg:SetRawImage(eventCfg.Icon)
         self.TxtTitle.text = eventCfg.LocationName
         self.TxtDetail.text = eventCfg.LocationDesc
-    end    
+    end
   
+    self:ForceRebuildLayout()
 end
 
 function XUiTheatre5PVEChapterEventItem:OnClickStartEvent()
+    if not XTool.IsNumberValid(self._EventId) then
+        return
+    end    
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_PVE_EVENT_SELECT, self._EventId)
+    self._EventId = nil --防止连点
+
+end
+
+function XUiTheatre5PVEChapterEventItem:ForceRebuildLayout()
+    if self.Transform then
+        local rectTrans = self.Transform:GetComponent("RectTransform")
+        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(rectTrans)
+    end    
+end
+
+function XUiTheatre5PVEChapterEventItem:OnDestroy()
+    self._EventId = nil
 end
 
 return XUiTheatre5PVEChapterEventItem

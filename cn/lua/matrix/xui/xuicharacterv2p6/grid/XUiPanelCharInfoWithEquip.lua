@@ -151,7 +151,6 @@ function XUiPanelCharInfoWithEquip:UpdateRoleView()
     self.WeaponGrid:Open()
     local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
     self.WeaponGrid:Refresh(usingWeaponId)
-    XMVCA.XEquip:CheckOverrunGuide(usingWeaponId)
 
     -- 辅助机
     local imgEmptyBan = self.PanelNoPartner:FindTransform("ImgEmptyBanClick") -- 禁用点击图标

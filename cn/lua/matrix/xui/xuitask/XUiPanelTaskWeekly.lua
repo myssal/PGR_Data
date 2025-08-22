@@ -51,6 +51,8 @@ function XUiPanelTaskWeekly:CheckRefreshLeftNewTask()
 end
 
 function XUiPanelTaskWeekly:Refresh(isMulti)
+    if not self:IsNodeShow() then return end
+
     if isMulti and self:CheckRefreshLeftNewTask() then
         return
     end

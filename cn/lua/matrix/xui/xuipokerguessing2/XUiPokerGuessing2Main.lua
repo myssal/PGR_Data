@@ -23,7 +23,7 @@ function XUiPokerGuessing2Main:OnAwake()
     self:BindExitBtns()
 
     self.AssetActivityPanel = XUiHelper.NewPanelActivityAssetSafe({
-        XDataCenter.ItemManager.ItemId.PokerGuessing2ItemId
+        self._Control:GetConfigItemId()
     }, self.PanelSpecialTool, self)
     ---@type XUiPokerGuessing2Character
     self._Player = XUiPokerGuessing2Character.New(self.PanelRight, self, true)
@@ -85,7 +85,10 @@ function XUiPokerGuessing2Main:UpdateStage()
     self.TxtStageIndex.text = string.format("%s/%s", index, maxIndex)
 
     local enemyDialogue = data.EnemyDialogue
-    self._Enemy:Speak(enemyDialogue)
+
+    if data.IsOpen or data.IsPassed then
+        self._Enemy:Speak(enemyDialogue)
+    end
 
     -- 新增按钮 第二次挑战改为 "重温对局"
     if data.IsPassed then
@@ -125,6 +128,7 @@ function XUiPokerGuessing2Main:UpdateEnemy()
     local enemy = self._Control:GetEnemy()
     self._Enemy:Update(enemy)
     self._Enemy:UpdateTimeForLockedStage()
+    self:UpdateStage()
 end
 
 function XUiPokerGuessing2Main:UpdatePlayer()

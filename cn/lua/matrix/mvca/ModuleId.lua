@@ -49,6 +49,7 @@ ModuleId = {
   XFightLevelMusicGame = "XFightLevelMusicGame",
   XUiFightTutorial = "XUiFightTutorial",
   XLineArithmetic = "XLineArithmetic",
+  XLineArithmetic2 = "XLineArithmetic2",
   XArena = "XArena",
   XMechanismActivity = "XMechanismActivity",
   XUiFightAchievement = "XUiFightAchievement",
@@ -115,4 +116,7 @@ ModuleId = {
   XDlcHelper = "XDlcHelper",
   XDlcRelink = "XDlcRelink",
   XFashionStory = "XFashionStory",
+  XSoloReform = "XSoloReform",
+  XHelpCourse = "XHelpCourse",
+  XCloudGame = "XCloudGame",
 }

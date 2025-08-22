@@ -26,6 +26,7 @@ function XBountyChallengeControl:OnInit()
         List = {},
         Name = "",
         Index = 1,
+        BossId = 0,
     }
     self._SelectedBossId = 0
     self._DifficultyLevel = 0
@@ -381,7 +382,10 @@ function XBountyChallengeControl:GetUiBossDetail()
         return
     end
     local data = self._BossDetail
-    data.Index = 1
+    if data.BossId == self._SelectedBossId then
+        return data
+    end
+    data.BossId = self._SelectedBossId
     data.List = {}
     for i = 1, #stageDescConfig.GameplayDescription do
         local videoConfigId

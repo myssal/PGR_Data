@@ -173,6 +173,37 @@ function XTheatre5AdventureDataBase:GetItemInBagByIndex(index)
     end
 end
 
+function XTheatre5AdventureDataBase:GetItemIndexInBag(itemData)
+    if self.BagData and self.BagData.BagItemDict then
+        for i, v in pairs(self.BagData.BagItemDict) do
+            if v.InstanceId == itemData.InstanceId then
+                return i
+            end
+        end
+    end
+end
+
+function XTheatre5AdventureDataBase:GetSkillIndexInSkillBag(itemData)
+    if self.BagData and self.BagData.SkillDict then
+        for i, v in pairs(self.BagData.SkillDict) do
+            if v.InstanceId == itemData.InstanceId then
+                return i
+            end
+        end
+    end
+end
+
+function XTheatre5AdventureDataBase:GetRuneIndexInRuneBag(itemData)
+    if self.BagData and self.BagData.RuneDict then
+        for i, v in pairs(self.BagData.RuneDict) do
+            if v.InstanceId == itemData.InstanceId then
+                return i
+            end
+        end
+    end
+end
+
+
 --- 获取临时背包栏指定位置的物品数据
 function XTheatre5AdventureDataBase:GetItemInTempBagByIndex(index)
     if self.BagData and self.BagData.TempItemDict then
@@ -186,8 +217,11 @@ function XTheatre5AdventureDataBase:GetEmptyBagIndex()
     if not XTool.IsNumberValid(totalCount) then
         return
     end
-    if not self.BagData or XTool.IsTableEmpty(self.BagData.BagItemDict) then
-        return
+    if not self.BagData then
+        return 1
+    end
+    if XTool.IsTableEmpty(self.BagData.BagItemDict) then
+        return 1
     end
     for i = 1, totalCount do
         if not self.BagData.BagItemDict[i] then

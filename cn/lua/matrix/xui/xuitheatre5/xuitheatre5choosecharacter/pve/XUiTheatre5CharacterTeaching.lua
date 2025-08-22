@@ -87,8 +87,8 @@ function XUiTheatre5CharacterTeaching:SetModelVisible(enable)
             model.gameObject:SetActiveEx(enable)
         end
     end
-    self._ReCordModelActiveDic[self._UiModelGo.FxHeiban.gameObject] = not enable
-    self._UiModelGo.FxHeiban.gameObject:SetActiveEx(enable)
+    --self._ReCordModelActiveDic[self._UiModelGo.FxHeiban.gameObject] = not enable
+    --self._UiModelGo.FxHeiban.gameObject:SetActiveEx(enable)
 
     --乌鸦反着来的，教学才显示
     self._ReCordModelActiveDic[self._UiModelGo.FxWuya.gameObject] = enable

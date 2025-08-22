@@ -30,6 +30,12 @@ function XUiGuildWarStageResults:OnAwake()
     self.GridReward.gameObject:SetActiveEx(false)
     self.RewardDatas = nil
     self:RegisterUiEvents()
+    
+    -- 正常情况打开结算界面后应当是没有遮罩
+    -- 如果还有则说明前面存在错误的计数，直接清空
+    if XLuaUiManager.IsMaskShow(XGuildWarConfig.MASK_KEY) then
+        XLuaUiManager.ClearMask(true)
+    end
 end
 
 function XUiGuildWarStageResults:OnStart(nodeIds, callBack)

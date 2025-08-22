@@ -32,8 +32,13 @@ end
 function XUiPanelAudioSet:InitUi()
     self.BtnDownloadCN.gameObject:SetActiveEx(false)
 
-    if not XDataCenter.UiPcManager.IsPc() and self.PanelMute then
-        self.PanelMute.gameObject:SetActiveEx(false)
+    if self.PanelMute then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame
+                or XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Default
+        then
+            --XLog.Debug("[云游戏] 隐藏了静音选项")
+            self.PanelMute.gameObject:SetActiveEx(false)
+        end
     end
     self.TogMute.isOn = CS.XSettingHelper.MuteInBackground
 end

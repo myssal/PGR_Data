@@ -392,13 +392,13 @@ ObjectiveDefines.Obj2002048 = {
         LevelId = 4001,
         TracePosArgs = {
             {
-                Position = { x = 601.3, y = 189.73, z = 1149.51 },                 -- 目标位置（初始为空，后续需要赋值）
+                Position = { x = 574.94, y = 185.2567, z = 1156.24 },                 -- 目标位置（初始为空，后续需要赋值）
                 DisplayOffset = { x = 0, y = 0.3, z = 0 }, -- 显示偏移量
                 ShowEffect = true,                      -- 是否显示特效
                 ForceMapPinActive = false,               -- 是否强制激活地图标记
             },                                           -- 这里加上逗号，方便后续扩展
         },
-        TargetPosition = { x = 601.3, y = 189.73, z = 1149.51 },                   -- 后续替换为锚点坐标
+        TargetPosition = { x = 574.94, y = 185.2567, z = 1156.24},                   -- 后续替换为锚点坐标
         ReachDistance = 10,                               -- 到达锚点3米范围内
     },
     ---@param obj QuestObjective2002048

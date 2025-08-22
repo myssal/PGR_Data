@@ -26,6 +26,7 @@ function XBuffScript1015318:Init()
     self.magicId = ConfigMagicIdDict[self._buffId]  --增伤Magic
     self.magicLevel = 1
     self.runeId = ConfigRuneIdDict[self._buffId] --宝珠id，用于ui和记录次数
+    self.isBuffActive = false
     ------------执行------------
 end
 
@@ -46,12 +47,14 @@ function XBuffScript1015318:Update(dt)
     self.percentSelf = self._proxy:GetNpcAttribRate(self._uuid,ENpcAttrib.Life)
     self.percentEnemy = self._proxy:GetNpcAttribRate(self.enemyId,ENpcAttrib.Life)
     -- 加buff
-    if self.percentSelf < self.percentEnemy then
+    if self.percentSelf < self.percentEnemy and (not self.isBuffActive) then
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
         self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
-    else
+        self.isBuffActive = true
+    elseif self.percentSelf >= self.percentEnemy and self.isBuffActive then
         self._proxy:RemoveBuff(self._uuid, self.magicId)
         self._proxy:SetAutoChessGemData(self._uuid, self.runeId, 0, 0)
+        self.isBuffActive = false
     end
 end
 

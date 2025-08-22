@@ -509,7 +509,7 @@ function XFubenBossSingleAgency:OpenBossSingleView(skipId)
     if not self:IsBossSingleDataEmpty() then
         local levelType = self:GetBossSingleData():GetBossSingleLevelType()
 
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.BossSingle, levelType) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FubenChallengeBossSingle, levelType) then
             return false
         end
 

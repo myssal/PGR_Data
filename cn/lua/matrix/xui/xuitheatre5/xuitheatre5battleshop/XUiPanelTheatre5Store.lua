@@ -20,11 +20,15 @@ end
 function XUiPanelTheatre5Store:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PLAY_GOODS_FREEZE_SFX, self.PlayFreezeSFX, self)
 end
 
 function XUiPanelTheatre5Store:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PLAY_GOODS_FREEZE_SFX, self.PlayFreezeSFX, self)
 end
 
 function XUiPanelTheatre5Store:InitStoreContainers()
@@ -113,10 +117,20 @@ function XUiPanelTheatre5Store:OnShopAreaPointerEnter(eventData)
 end
 
 function XUiPanelTheatre5Store:OnShopAreaPointerExit(eventData)
+    self:_DoShopAreaExit()
+end
+
+function XUiPanelTheatre5Store:_DoShopAreaExit()
     self._Control.ShopControl:SetFocusContainer(nil, nil)
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_EXIT_FULLSHOPAREA)
     if self.RawImgLight then
         self.RawImgLight.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiPanelTheatre5Store:OnApplicationPauseEvent(isPause)
+    if self._Control.ShopControl:CheckIsSameContainer(XMVCA.XTheatre5.EnumConst.ItemContainerType.Goods, 0) then
+        self:_DoShopAreaExit()
     end
 end
 
@@ -147,9 +161,13 @@ end
 function XUiPanelTheatre5Store:OnBtnFreezeAllClickEvent()
     -- 判断是否有商品
     if not self._Control.ShopControl:CheckAllGoodsAreSellOut() then
+        local isFreezeAll = self.IsFreezeAll
+        
         XMVCA.XTheatre5:RequestTheatre5ShopFreeze(FreezeTargetAll, not self.IsFreezeAll, function(success)
             if success then
                 self._Control.ShopControl:RefreshAfterFreezeRequest()
+                
+                self:PlayFreezeSFX(not isFreezeAll)
             end
         end)
     else
@@ -175,6 +193,22 @@ function XUiPanelTheatre5Store:OnBtnRefreshClickEvent()
             XUiManager.TipMsg(self._Control.ShopControl:GetShopRefreshErrorTips())
         end
     end
+end
+
+--- 播放解冻音效
+function XUiPanelTheatre5Store:PlayFreezeSFX(isFreeze)
+    if isFreeze then
+        if self.SFX_Freeze then
+            self.SFX_Freeze.gameObject:SetActiveEx(false)
+            self.SFX_Freeze.gameObject:SetActiveEx(true)
+        end
+    else
+        if self.SFX_UnFreeze then
+            self.SFX_UnFreeze.gameObject:SetActiveEx(false)
+            self.SFX_UnFreeze.gameObject:SetActiveEx(true)
+        end
+    end
+
 end
 
 return XUiPanelTheatre5Store

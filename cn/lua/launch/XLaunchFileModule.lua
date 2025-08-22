@@ -103,6 +103,8 @@ local module_creator = function()
     local AllUpdateSize = 0
 
     local DownloadedMap = {}
+    local CacheFileToolGetFileTable = nil -- 记录临时缓存的所有文件
+    local AllFiles = nil
 
     -- 
     local HasLocalFiles = false
@@ -428,6 +430,21 @@ local module_creator = function()
             end
         end
 
+        if CacheFileToolGetFileTable == nil or not next(CacheFileToolGetFileTable) then
+            CacheFileToolGetFileTable = {}
+            if NeedLaunchTest then
+                AllFiles = CS.XFileTool.GetAllFiles(LaunchTestDirDoc .. "/" .. ResFileType)
+            else
+                AllFiles = CS.XFileTool.GetFiles(DocumentFilePath .. "/" .. ResFileType)
+            end
+
+            for i = 0, AllFiles.Count - 1 do
+                local file = AllFiles[i]
+                local name = CS.XFileTool.GetFileName(file)
+                CacheFileToolGetFileTable[name] = true
+            end
+        end
+
         CurrentFileTable = {} -- 当前需下载资源
         AllFileTableDlc = {} -- DLC完整资源
 
@@ -480,7 +497,7 @@ local module_creator = function()
                     end
                     isSelectFullOrSelectRemove = isSelectFullOrSelectRemove or isFull or XLaunchDlcManager.IsAllDlcIdRecord()
                 end
-                print("hyx checkFull", isFull, isSelectFullOrSelectRemove, isRemoveResIdsEmpty)
+                -- print("SP/DN checkFull", isFull, isSelectFullOrSelectRemove, isRemoveResIdsEmpty, NeedShowSelect)
 
                 -- 分包补丁
                 ResSizeDic = {}
@@ -491,7 +508,7 @@ local module_creator = function()
                     --XLaunchDlcManager.SetDlcIndexInfo(resId, dlcTable)
 
                     -- 是否需要下载分包资源 = 全量下载 or 分包已经下载完成了，下次热更直接更补丁，不用到游戏内再次点击分包下载  记录玩家选择
-                    print("hyx removeResIdsRecord[resId]", resId, removeResIdsRecord[resId])
+                    -- print("SP/DN removeResIdsRecord[resId]", resId, removeResIdsRecord[resId], XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect))
                     local needDownloadDlc = (isSelectFullOrSelectRemove or XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect)) and (not removeResIdsRecord[resId])
                     needDownloadMap[resId] = needDownloadDlc
 
@@ -501,7 +518,7 @@ local module_creator = function()
                         NeedFileSet[info[1]] = true
 
                         if ApplicationIndexTable[asset] and ApplicationIndexTable[asset][1] == info[1]then
-                            print("hyx 在ApplicationIndexTable ", ApplicationIndexTable[asset][1])
+                            -- print("SP/DN 在ApplicationIndexTable ", ApplicationIndexTable[asset][1])
                             dlcUseAppCount = dlcUseAppCount + 1
                         else
                             if needDownloadDlc then
@@ -577,16 +594,15 @@ local module_creator = function()
                     dlcTable[asset] = nil -- 不统计到总大小
                 elseif needLog then
                     if DownloadedMark[name] == nil then
-                        DownloadedMark[name] = CS.System.IO.File.Exists(documentFilePath .. name) -- 已下载
+                        DownloadedMark[name] = CacheFileToolGetFileTable[name] -- 已下载
                     end
                     if DownloadedMark[name] then
-                        local downloaded = DownloadedMark[name]
                         downloadedCount = downloadedCount + 1
                         downloadedSize = downloadedSize + info[3]
                     end
                 end
 
-                if DownloadedMark[name] or CS.System.IO.File.Exists(documentFilePath .. name) then
+                if DownloadedMark[name] or CacheFileToolGetFileTable[name] then
                     ResSizeDic[dlcId] = ResSizeDic[dlcId] - info[3]
                 end
             end
@@ -601,6 +617,9 @@ local module_creator = function()
             
             XLaunchDlcManager.SetDlcIndexInfo(dlcId, dlcTable) -- 记录总需下载资源
         end
+
+        CacheFileToolGetFileTable = nil
+        
         if IsDebugBuild and #logTab > 0 then
             CsLog.Debug("DLC各分包下载情况：\n" .. table.concat(logTab, "\n"))
         end
@@ -694,12 +713,7 @@ local module_creator = function()
         
         CsLog.Debug("[Download] 上一版本资源key: " .. tostring(deleteKey) .. ", type: " .. tostring(ResFileType) .. ", checkClean: " .. tostring(checkClean) .. ", force:" .. tostring(isForceClean) .. ", CsInfo.Version:" .. tostring(CsInfo.Version))
 
-        local files
-        if NeedLaunchTest then
-            files = CS.XFileTool.GetAllFiles(LaunchTestDirDoc .. "/" .. ResFileType)
-        else
-            files = CS.XFileTool.GetFiles(DocumentFilePath .. "/" .. ResFileType)
-        end
+        local files = AllFiles
         
         local lastVerCount = 0
         local otherCount = 0
@@ -906,7 +920,7 @@ local module_creator = function()
                     for asset, info in pairs(dlcTable) do
                         UpdateTable[info[1]] = nil
                         removeSize = removeSize + info[3]
-                        print("hyx 测试剔除", asset, info[1])
+                        -- print("SP/DN 测试剔除", asset, info[1])
                     end
                 end
             end
@@ -916,7 +930,7 @@ local module_creator = function()
     end
 
     local OnDoneSelect = function(isFullDownload, removeResIds)
-        print("hyx OnDoneSelect", isFullDownload, UpdateTableCount, removeResIds, type(removeResIds) == "table" and table.unpack(removeResIds))
+        -- print("SP/DN OnDoneSelect", isFullDownload, UpdateTableCount, removeResIds, type(removeResIds) == "table" and table.unpack(removeResIds))
         XLaunchDlcManager.DoneSelect(CsInfo.Version)
         XLaunchDlcManager.SetIsFullDownload(isFullDownload)
         local isRemoveResIdsHasValue = removeResIds and type(removeResIds) == "table" and next(removeResIds)
@@ -974,6 +988,11 @@ local module_creator = function()
 
         if ResFileType == RES_FILE_TYPE.MATRIX_FILE and not IsInGame and not TipsOnce then
             TipsOnce = true
+            if CS.XInfo.IsCloudGame then 
+                -- 云游戏直接更新，不需要弹窗
+                DownloadFiles()
+                return
+            end
             local sizeTxt = string.format("%0.2f%s", num, unit)
             local tmpStr = ""
             if CS.XUiPc.XUiPcManager.IsPcMode() then
@@ -1568,6 +1587,8 @@ local module_creator = function()
         NeedFileSet = nil
         DlcNeedFileMap = nil
         DownloadedMap = nil
+        CacheFileToolGetFileTable = nil
+        AllFiles = nil
     end
     OnCompleteResFilesInit = function()
         if IsInGame then

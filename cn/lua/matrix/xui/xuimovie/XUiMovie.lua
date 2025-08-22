@@ -6,6 +6,7 @@ local XUiGridMovieActor = require("XUi/XUiMovie/XUiGridMovieActor")
 local XUiGridMovieSpineActor = require("XUi/XUiMovie/XUiGridMovieSpineActor")
 local XUiPanelMovie3D = require("XUi/XUiMovie/XUiPanelMovie3D")
 ---@field UiPanelText XUiPanelText
+---@field UiMovieBg XUiMovieBg
 ---@class XUiMovie
 local XUiMovie = XLuaUiManager.Register(XLuaUi, "UiMovie")
 
@@ -24,9 +25,9 @@ local InsertPanelDisableAnimationDic = {
     [InsertDirection.Right] = "PanelinsertRightDisable"
 }
 
-
 function XUiMovie:OnAwake()
     self.RImgBg1.gameObject:SetActiveEx(false)
+    self.UiMovieBg = require("XUi/XUiMovie/XUiMovieBg").New(self)
     self:AddListener()
 end
 
@@ -52,6 +53,7 @@ function XUiMovie:OnDisable()
 end
 
 function XUiMovie:OnDestroy()
+    self.UiMovieBg:OnDestroy()
     XLuaAudioManager.SetMusicSourceFirstBlockIndex(0)
     XDataCenter.MovieManager.RestSpeed()
     self:ClearAutoTimer()
@@ -180,6 +182,7 @@ function XUiMovie:OnClickBtnSkip()
     local skipSummaryCfg = XDataCenter.MovieManager.TryGetMovieSkipSummaryCfg()
     local openTime = XTime.GetServerNowTimestamp()
     local closeCb = function()
+        XLuaUiManager.Remove("UiVideoPlayer")
         local stayTime = math.max(0, XTime.GetServerNowTimestamp() - openTime)
         
         XDataCenter.MovieManager.RecordStorylineSkip(XDataCenter.MovieManager.GetCurPlayingMovieId(), XPlayer.GetLevel(), XPlayer.Gender, stayTime, XDataCenter.MovieManager.GetCurPlayingActionId())
@@ -346,7 +349,7 @@ end
 
 function XUiMovie:Switch3DMovie()
     self.Bg.gameObject:SetActiveEx(false)
-    self.RImgBg1.gameObject:SetActiveEx(false)
+    self.UiMovieBg:GetBg(1):Hide()
     self.TopBtn.gameObject:SetActiveEx(false)
     self.Panel3d.gameObject:SetActiveEx(true)
 end
@@ -484,6 +487,22 @@ function XUiMovie:LoadResource(path)
     return resource
 end
 
+--============================================================== #region Animtion ==============================================================
+-- 获取UI动画
+function XUiMovie:GetUiAnimation(animName)
+    if string.sub(animName, 1, 6) == "RImgBg" then
+        local bgIndex = tonumber(string.sub(animName, 7, 7))
+        local bg = self.UiMovieBg:GetBg(bgIndex)
+        local bgAnimName = "RImgBg" .. string.sub(animName, 8)
+        bg:Show() -- 需要节点显示才能播放动画，否则动画的activeInHierarchy为false
+        return bg:GetAnim(bgAnimName)
+    else
+        return self[animName]
+    end
+end
+--============================================================== #endregion Animtion ==============================================================
+
+
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
     if self:SelectPanelShowing() then
@@ -547,6 +566,11 @@ function XUiMovie:StartAutoTimer()
     end, XScheduleManager.SECOND, 0)
 end
 
+function XUiMovie:UpdateLastActionTime()
+    local nowTime = CS.UnityEngine.Time.realtimeSinceStartup
+    self.LastActionTime = nowTime
+end
+
 function XUiMovie:ClearAutoTimer()
     if self.AutoTimer then
         XScheduleManager.UnSchedule(self.AutoTimer)
@@ -566,13 +590,13 @@ end
 
 --============================================================== #region PanelText ==============================================================
 -- 显示文本
-function XUiMovie:AppearText(layer, id, content, posX, posY, rotation, isAnim)
+function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
     if not self.UiPanelText then
         local XUiPanelText = require("XUi/XUiMovie/XUiPanelText")
         self.UiPanelText = XUiPanelText.New(self.PanelText, self)
         self.UiPanelText:Open()
     end
-    return self.UiPanelText:AppearText(layer, id, content, posX, posY, rotation, isAnim)
+    return self.UiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
 end
 
 -- 隐藏指定id的文本
@@ -585,6 +609,11 @@ function XUiMovie:DisAppearAllText()
     if self.UiPanelText then
         self.UiPanelText:DisAppearAllText()
     end
+end
+
+-- 播放文本动画
+function XUiMovie:TextPlayAnim(id, time, pos, rotation, scale)
+    return self.UiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
 end
 --============================================================== #endregion PanelText ==============================================================
 

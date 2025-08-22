@@ -289,4 +289,8 @@ function XUiPanelCharacterCG:IsLanguagePreparing()
     return self.VideoPlayer.IsLanguagePreparing
 end
 
+function XUiPanelCharacterCG:GetVideoPlayer()
+    return self.VideoPlayer
+end
+
 return XUiPanelCharacterCG

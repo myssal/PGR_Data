@@ -103,6 +103,7 @@ function XUiMainRightMid:OnStart(rootUi)
 
     --Filter
     self:CheckFilterFunctions()
+    self:SetBtnActivityEntryHide()
     self:InitBtnActivityEntry()
     self:InitDragProxy()
 end
@@ -320,7 +321,7 @@ function XUiMainRightMid:RefreshFubenProgress()
     if not isClear then return end
 
     -- 主线与外章普通全部完成，据点战未完成时，显示据点战
-    if XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.FubenNightmare) then
+    if XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Bfrt) then
         local chapterId = XDataCenter.BfrtManager.GetActiveChapterId()
         if chapterId then
             local passCount = XDataCenter.BfrtManager.GetChapterPassCount(chapterId)
@@ -423,7 +424,7 @@ end
 -------------活动简介 End-------------------
 -------------活动入口 Begin-------------------
 function XUiMainRightMid:InitBtnActivityEntry()
-    self:SetBtnActivityEntryHide()
+    --self:SetBtnActivityEntryHide()
     self:InitBtnActivityEntryRedPointEventIds()
     if XUiManager.IsHideFunc then return end
 
@@ -442,6 +443,12 @@ function XUiMainRightMid:InitBtnActivityEntry()
             else
                 btn:ShowReddot(false)
             end
+        end
+    end
+    for i = #configs + 1, BtnActivityEntryMaxCount do
+        local btn = self["BtnActivityEntry" .. i]
+        if btn then
+            btn.gameObject:SetActiveEx(false)
         end
     end
 end
@@ -467,7 +474,7 @@ function XUiMainRightMid:SetBtnActivityEntryHide()
 end
 
 function XUiMainRightMid:OnClickBtnActivityEntry(id, index)
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.SUBPACKAGE.ENTRY_TYPE.MAIN_RIGHT_TOP_ACTIVITY, id) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainRightTopActivity, id) then
         return
     end
     local dict = {}

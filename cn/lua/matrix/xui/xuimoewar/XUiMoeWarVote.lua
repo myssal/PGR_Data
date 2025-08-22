@@ -315,7 +315,7 @@ function XUiMoeWarVote:RegisterButtonEvent()
         local voteHelpId = XMoeWarConfig.GetVoteHelpId()
         self.BtnHelp.CallBack = function()
             if voteHelpId > 0 then
-                local template = XHelpCourseConfig.GetHelpCourseTemplateById(voteHelpId)
+                local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(voteHelpId)
                 XUiManager.ShowHelpTip(template.Function)
             end
         end

@@ -327,7 +327,7 @@ XMaintainerActionManagerCreator = function()
     
     function XMaintainerActionManager.Open()
         XDataCenter.MaintainerActionManager.ClearMessageTypeList()
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MaintainerAction) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MaintainerAction) then
             return false
         end
         XLuaUiManager.Open("UiFubenMaintaineraction")

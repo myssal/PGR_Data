@@ -121,6 +121,9 @@ function XUiLogin:OnStart()
 
     --特殊按键监听
     self:KeyboardWatching()
+
+    -- 云游戏自动登录
+    self:CloudGameAutoLogin()
 end
 
 function XUiLogin:PrintJoystickDeviceNames()
@@ -224,6 +227,10 @@ end
 
 function XUiLogin:GetProtocolContent()
     local protocolData = nil
+    -- 云游戏不需要协议
+    if XDataCenter.UiPcManager.IsCloudGame() then 
+        return nil
+    end
     if XUserManager.IsKuroSdk() then 
         -- KuroSDK 接口不一样
         if CS.XHeroSdkAgent.GetKuroProtocolData then
@@ -288,6 +295,7 @@ function XUiLogin:OnGetEvents()
         XEventId.EVENT_LOGIN_PC_SELECT_SERVER,
         XEventId.EVENT_NOTICE_REQUEST_SUCCESS,
         CS.XEventId.EVENT_UI_DESTROY,
+        XEventId.EVENT_SDK_LOGIN_SUCCESS,
     }
 end
 
@@ -302,6 +310,8 @@ function XUiLogin:OnNotify(evt, ...)
         self:SelectServer(...)
     elseif evt == CS.XEventId.EVENT_UI_DESTROY then
         self:OnUiDestroy(...)
+    elseif evt == XEventId.EVENT_SDK_LOGIN_SUCCESS then
+        self:OnSDKLoginSuccess(...)
     end
 end
 
@@ -310,6 +320,9 @@ function XUiLogin:OnDisable()
         self.LongClicker:Destroy()
     end
     self.LongClicker = nil
+end
+
+function XUiLogin:OnDestroy()
 end
 
 function XUiLogin:OnUsernameChanged(userName)
@@ -329,6 +342,20 @@ function XUiLogin:OnUidChanged(userId)
     self.TxtUid.text = userId
     if self.BtnCode then
         self.BtnCode.gameObject:SetActiveEx(userId ~= nil and CS.XHeroSdkAgent.IsScanQRCode() and not CS.XRemoteConfig.IsHideFunc)
+    end
+end
+
+function XUiLogin:OnSDKLoginSuccess()
+    if XDataCenter.UiPcManager.IsCloudGame() then 
+        -- 云游戏SDK登录成功后直接登录游戏，不需要那些乱七八糟的拦截
+        self:DoLogin()
+    end
+end
+
+function XUiLogin:CloudGameAutoLogin()
+    if XDataCenter.UiPcManager.IsCloudGame() then 
+        -- 云游戏触发自动登录，防止一直起奇怪怪的逻辑导致拦截
+        XUserManager.ShowLogin()
     end
 end
 
@@ -673,6 +700,8 @@ function XUiLogin:DoLogin()
             self.BlackMask.color = CS.UnityEngine.Color(0, 0, 0, 0)
             self.BlackMask.gameObject:SetActiveEx(true)
             self.BlackMask:DOFade(1.1, 0.3):OnComplete(function()
+                -- 黑幕转动画完成的时候通知云游戏可以转画面了
+                XDataCenter.CloudGameManager.HotPatchEnterGame()
                 local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
                 if guideFight then
                     self:Close()
@@ -866,6 +895,11 @@ end
 -- 3.1登录优化 自动登录接口，用SDK的情况下才执行
 function XUiLogin:OnAutoLogin()
     -- 自动登录在整个生命周期只给他触发一次
+    if XDataCenter.UiPcManager.IsCloudGame() then 
+        -- 云游戏有自己的自动登录
+        return
+    end
+
     if HasAutoLogin then 
         return 
     end

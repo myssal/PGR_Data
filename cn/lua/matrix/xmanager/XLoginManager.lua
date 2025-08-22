@@ -193,10 +193,13 @@ function XLoginManager.DoDisconnect(text)
     XLuaUiManager.ClearAllMask(true)
     CS.XRecord.Record("24014", "SocketDisconnect")
 
+    text = text or CS.XTextManager.GetText("HeartbeatTimeout")
     if XDataCenter.FunctionEventManager.CheckFuncDisable() then
-        XLoginManager.BackToLogin()
+        XLoginManager.BackToLogin(text)
     else
-        XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), text or CS.XTextManager.GetText("HeartbeatTimeout"), XUiManager.DialogType.OnlySure, nil, XLoginManager.BackToLogin)
+        XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), text, XUiManager.DialogType.OnlySure, nil, function()
+            XLoginManager.BackToLogin(text)
+        end)
     end
 
     XEventManager.DispatchEvent(XEventId.EVENT_USER_LOGOUT)
@@ -217,7 +220,7 @@ function XLoginManager.ClearGame()
 end
 
 -- 清理返回登陆界面
-function XLoginManager.BackToLogin()
+function XLoginManager.BackToLogin(text)
     --在事件清除前抛出事件
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
     -- 清除所有定时器
@@ -233,8 +236,19 @@ function XLoginManager.BackToLogin()
     IsRelogining = false
 
     XLoginManager.ClearGame()
+    XLoginManager.BackToUiLogin(text)
+end
 
-    XLuaUiManager.Open(UI_LOGIN)
+function XLoginManager.BackToUiLogin(text)
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        --XLog.Error("[XLoginManager] 云游戏需要返回登录大厅，而不是登录界面")
+        XDataCenter.CloudGameManager.Exit(text or XUiHelper.GetText("CloudGameExitMsg"))
+        if XMain.IsEditorDebug then
+            XLuaUiManager.Open(UI_LOGIN)
+        end
+    else
+        XLuaUiManager.Open(UI_LOGIN)
+    end
 end
 
 --将检查水印的逻辑放到这里来
@@ -651,8 +665,8 @@ function XLoginManager.DoLogin(cb)
             XServerManager.NextLoginUrlIndex()
             XLog.Error("login network error，url is " .. loginUrl .. ", message is " .. request.error)
             XLuaUiManager.SetAnimationMask("RequestLoginHttpSever", false)
-            XUiManager.SystemDialogTip("", LoginNetworkError, XUiManager.DialogType.OnlySure, nil, function()
-                OnLogin(XCode.Fail)
+            XLoginManager.LoginErrorTips("", LoginNetworkError, function () 
+                OnLogin(XCode.Fail)    
             end)
             CS.XRecord.Record("24010", "RequestLoginHttpSeverNetWorkError")
             return
@@ -662,8 +676,8 @@ function XLoginManager.DoLogin(cb)
             XServerManager.NextLoginUrlIndex()
             XLog.Error("login http error，url is " .. loginUrl .. ", message is " .. request.error)
             XLuaUiManager.SetAnimationMask("RequestLoginHttpSever", false)
-            XUiManager.SystemDialogTip("", LoginHttpError, XUiManager.DialogType.OnlySure, nil, function()
-                OnLogin(XCode.Fail)
+            XLoginManager.LoginErrorTips("", LoginHttpError, function () 
+                OnLogin(XCode.Fail)    
             end)
             CS.XRecord.Record("24011", "RequestLoginHttpSeverHttpError")
             return
@@ -674,8 +688,8 @@ function XLoginManager.DoLogin(cb)
             XServerManager.NextLoginUrlIndex()
             XLog.Error("login http error，url is " .. loginUrl .. ", message is json decode error")
             XLuaUiManager.SetAnimationMask("RequestLoginHttpSever", false)
-            XUiManager.SystemDialogTip("", LoginHttpError, XUiManager.DialogType.OnlySure, nil, function()
-                OnLogin(XCode.Fail)
+            XLoginManager.LoginErrorTips("", LoginHttpError, function () 
+                OnLogin(XCode.Fail)    
             end)
             CS.XRecord.Record("24038", "RequestLoginHttpSeverDecodeError")
             return
@@ -708,7 +722,7 @@ function XLoginManager.DoLogin(cb)
             end
 
             XLuaUiManager.SetAnimationMask("RequestLoginHttpSever", false)
-            XUiManager.SystemDialogTip("", tipMsg, XUiManager.DialogType.OnlySure, nil, function()
+            XLoginManager.LoginErrorTips("", tipMsg, function()
                 if LoginCb then
                     -- 如果是登录失效的话，需要注销登录
                     if result.code == RetCode.LoginServiceInvalidToken then 
@@ -804,8 +818,8 @@ function XLoginManager.DoLoginGame(cb)
                 msgtab.retry_login_count = ServerFullRetryLoginCount
                 CS.XRecord.Record(msgtab, "24017", "DoLoginGameRequestError")
                 local tips = DoLoginOnServerFull()
-                XUiManager.SystemDialogTip("", tips, XUiManager.DialogType.OnlySure, nil, function()
-                    OnLogin(res.Code)
+                XLoginManager.LoginErrorTips("", tips, function () 
+                    OnLogin(res.Code)  
                 end)
             else
                 local msgtab = {}
@@ -813,8 +827,8 @@ function XLoginManager.DoLoginGame(cb)
                 CS.XRecord.Record(msgtab, "24017", "DoLoginGameRequestError")
                 RetryLoginCount = 0
                 XLuaUiManager.ClearAnimationMask()
-                XUiManager.SystemDialogTip("", CS.XTextManager.GetCodeText(res.Code), XUiManager.DialogType.OnlySure, nil, function()
-                    OnLogin(res.Code)
+                XLoginManager.LoginErrorTips("", CS.XTextManager.GetCodeText(res.Code), function () 
+                    OnLogin(res.Code)  
                 end)
             end
         else
@@ -858,7 +872,7 @@ end
 function XLoginManager.Login(cb)
     CS.XRecord.Record("24007", "InvokeLoginStart")
     if not IsRelogining then -- 游戏内重登不需要重载
-        XDataCenter.Init()
+        XDataCenter.InitRepeat()
         XMVCA:_HotReloadAll()
         XMVCA:Init()
     end
@@ -1155,7 +1169,10 @@ function XLoginManager.OnReconnectFailed()
             if code == XCode.Fail then
                 code = XCode.ReconnectUnable
             end
-            XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetCodeText(code), XUiManager.DialogType.OnlySure, nil, XLoginManager.BackToLogin)
+            local text =  CS.XTextManager.GetCodeText(code)
+            XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), text, XUiManager.DialogType.OnlySure, nil, function ()
+                XLoginManager.BackToLogin(text)
+            end)
         else
             -- 重连成功
             XLoginManager.BackToMain() -- 默认关闭Normal上的所有UI，回到主界面。后续针对当前停留的ui来保留
@@ -1203,8 +1220,7 @@ XRpc.ForceLogoutNotify = function(res)
         CsXUiManager.Instance:Clear()
         XMVCA.XBigWorldGamePlay:OnExitFight()
         XHomeSceneManager.LeaveScene()
-
-        XLuaUiManager.Open(UI_LOGIN)
+        XLoginManager.BackToUiLogin(CS.XTextManager.GetCodeText(res.Code))
     end)
 end
 
@@ -1245,7 +1261,7 @@ XRpc.GameUpdateNotify = function(res)
         CsXUiManager.Instance:Clear()
         XMVCA.XBigWorldGamePlay:OnExitFight()
         XHomeSceneManager.LeaveScene()
-        XLuaUiManager.Open(UI_LOGIN)
+        XLoginManager.BackToUiLogin(res.Msg)
     end)
 end
 
@@ -1305,4 +1321,18 @@ function XLoginManager.Test()
 
         XLog.Error(string.format("+++++++++++++++++++++++++++++++++ tcp ping. id = %d, delta = %d, average = <color=red>%s</color>", i, delta, tostring(average)))
     end)
+end
+
+-- 登录流程错误弹窗
+function XLoginManager.LoginErrorTips(title, content, action)
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        --XLog.Error("[XLoginManager] 云游戏需要返回登录大厅，而不是登录界面")
+        XDataCenter.CloudGameManager.Exit(content or XUiHelper.GetText("CloudGameExitMsg"))
+    else
+        XUiManager.SystemDialogTip(title, content, XUiManager.DialogType.OnlySure, nil, function ()
+            if action then 
+                action()
+            end
+        end)
+    end
 end

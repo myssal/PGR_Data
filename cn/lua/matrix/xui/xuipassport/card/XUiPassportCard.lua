@@ -53,6 +53,7 @@ end
 function XUiPassportCard:InitBtnXqActive(passportId)
     local fashionId = self._Control:GetPassportBuyFashionShowFashionId(passportId)
     self.BtnXq.gameObject:SetActiveEx(XTool.IsNumberValid(fashionId))
+    self.PanelTopSecret.gameObject:SetActiveEx(XTool.IsNumberValid(fashionId))
 end
 
 function XUiPassportCard:Refresh()

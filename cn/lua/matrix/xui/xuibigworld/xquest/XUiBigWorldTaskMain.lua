@@ -85,8 +85,10 @@ function XUiBigWorldTaskMain:OnSelectTab(tabIndex)
         return
     end
 
+    if self._TabIndex then
+        self:PlayAnimation("QieHuan")
+    end
     self._TabIndex = tabIndex
-    self:PlayAnimation("QieHuan")
     self:RefreshRedPoint()
     self:RefreshTaskGroup()
 end

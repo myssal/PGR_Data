@@ -210,10 +210,13 @@ end
 
 function XUiPanelWheelChairManualPassportPanel:GridOnClick(isCommon)
     if XMVCA.XWheelchairManual:CheckManualAnyRewardCanGet() then
+        XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
         XMVCA.XWheelchairManual:RequestWheelchairManualGetManualReward(isCommon and self._Control:GetCurActivityCommanManualId() or self._Control:GetCurActivitySeniorManualId(), function(success, rewardGoodsList)
             if success then
                 self:Refresh()
                 self._Control:ShowRewardList(rewardGoodsList)
+            else
+                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
             end
         end)
     end

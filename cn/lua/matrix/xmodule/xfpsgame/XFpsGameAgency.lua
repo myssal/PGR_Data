@@ -90,7 +90,7 @@ function XFpsGameAgency:ExOpenMainUi()
         return
     end
     
-    if not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.GAMEPLAY) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FpsGame) then
         return
     end
 

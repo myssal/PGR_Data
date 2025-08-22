@@ -81,7 +81,7 @@ end
 
 function XFangKuaiItem:ExecuteSingleLineRemove(itemIdx, chooseBlockData)
     local grid = chooseBlockData:GetHeadGrid()
-    self._MainControl:AddOperate(OperateMode.Clear, { grid.y, XEnumConst.FangKuai.ClearType.Normal })
+    self._MainControl:AddClearOperate(grid.y, XEnumConst.FangKuai.ClearType.Normal)
     self._MainControl:PlayUseItemSound()
     self:RemoveItemId(itemIdx)
 end
@@ -370,19 +370,15 @@ end
 function XFangKuaiItem:ExecuteChief(chiefBlockData, maxY)
     local grid = chiefBlockData:GetHeadGrid()
     for y = grid.y, maxY do
-        if not self._MainControl:IsExistClearOperate(y) then
-            local blocks = self._MainControl:GetLayerBlocks(y)
-            if not XTool.IsTableEmpty(blocks) then
-                self._MainControl:AddOperate(OperateMode.Clear, { y, XEnumConst.FangKuai.ClearType.Chief })
-            end
+        local blocks = self._MainControl:GetLayerBlocks(y)
+        if not XTool.IsTableEmpty(blocks) then
+            self._MainControl:AddClearOperate(y, XEnumConst.FangKuai.ClearType.Chief)
         end
     end
 end
 
 function XFangKuaiItem:ExecuteUltimaSlash(gridY)
-    if not self._MainControl:IsExistClearOperate(gridY) then
-        self._MainControl:AddOperate(OperateMode.Clear, { gridY, XEnumConst.FangKuai.ClearType.UltimaSlash })
-    end
+    self._MainControl:AddClearOperate(gridY, XEnumConst.FangKuai.ClearType.UltimaSlash)
 end
 
 --endregion

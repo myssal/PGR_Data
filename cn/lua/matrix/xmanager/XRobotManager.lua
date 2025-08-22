@@ -91,6 +91,7 @@ function XRobotManager.GetCharacterId(robotId)
     return charId
 end
 
+---@return XTableRobot
 function XRobotManager.GetRobotTemplate(robotId)
     if not XTool.IsNumberValid(robotId) then return end
 
@@ -413,6 +414,19 @@ function XRobotManager.GetRobotCharactersActiveGeneralSkillIdList(robotId)
     return res
 end
 
+-- 根据skillId找到对应的Config，会搜索其Group组里的所有skillId
+----@return XTableCharacterSkillExchangeDes[]
+function XRobotManager.GetRobotSkillExchangeDesConfigBySkillId(robotId, skillId)
+    local xRobot = XRobotManager.GetRobotById(robotId)
+    local skillLevel = xRobot:GetSkillGroupLevelBySkillId(skillId) -- 因为另一个技能是假的，重登可能没有数据，所以这里需要判断一下，用另一个技能的等级
+    if skillLevel then 
+        local skillExchangeConfig = XMVCA.XCharacter:GetCharacterSkillExchangeDesBySkillIdAndLevel(skillId, skillLevel)
+        if skillExchangeConfig ~= nil then
+            return skillExchangeConfig
+        end
+    end
+    return nil
+end
 function XRobotManager.GetRebuildNpcId(robotId)
     ---@type XTableRobot
     local cfg = XRobotManager.GetRobotTemplate(robotId)

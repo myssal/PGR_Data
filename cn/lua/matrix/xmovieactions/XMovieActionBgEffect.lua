@@ -1,3 +1,5 @@
+---@class XMovieActionBgEffect
+---@field UiRoot XUiMovie
 local XMovieActionBgEffect = XClass(XMovieActionBase, "XMovieActionBgEffect")
 
 function XMovieActionBgEffect:Ctor(actionData)
@@ -13,19 +15,28 @@ function XMovieActionBgEffect:Ctor(actionData)
 end
 
 function XMovieActionBgEffect:OnInit()
-    -- 隐藏特效
-    if not self.IsShowEffect then
-        if self.UiRoot.BgEffectGo then
-            self.UiRoot.BgEffectGo.gameObject:SetActiveEx(false)
-        end
-        return
-    end
-
     if self.EffectType == self.EFFECT_TYPE.SCREENSHOT then
-        local fullScreenBackground = self.UiRoot.RImgBg1.transform.parent
-        self:LoadScreenshotEffect(fullScreenBackground)
+        local fullScreenBackground = self.UiRoot.Transform:Find("FullScreenBackground")
+        if self.IsShowEffect then
+            self:LoadScreenshotEffect(fullScreenBackground)
+        else
+            self:ReleaseEffect(fullScreenBackground)
+        end
     else
-        self:LoadEffect(self.UiRoot.RImgBg1)
+        local rImgBg = self.UiRoot.UiMovieBg:GetBg(1):GetRImgBg()
+        if self.IsShowEffect then
+            self:LoadEffect(rImgBg)
+        else
+            self:ReleaseEffect(rImgBg)
+        end
+    end
+end
+
+-- 释放特效
+function XMovieActionBgEffect:ReleaseEffect(link)
+    local loader = link:GetComponent(typeof(CS.XUiLoadPrefab))
+    if loader then
+        CS.UnityEngine.Object.DestroyImmediate(loader)
     end
 end
 
@@ -54,7 +65,6 @@ function XMovieActionBgEffect:LoadEffect(parent)
     local effectGo = parent.transform:LoadPrefab(self.EffectPath)
     effectGo.gameObject:SetActive(false)
     effectGo.gameObject:SetActive(true)
-    self.UiRoot.BgEffectGo = effectGo
 
     -- 通用组件处理
     -- 动态模糊组件

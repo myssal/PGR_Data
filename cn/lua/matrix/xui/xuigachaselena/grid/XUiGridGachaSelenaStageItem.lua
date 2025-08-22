@@ -40,8 +40,8 @@ function XUiGridGachaSelenaStageItem:UpdateNode(index, festivalId, stageId)
     for i = 0, uiObj.NameList.Count - 1 do
         self[uiObj.NameList[i]] = uiObj.ObjList[i]
     end
-    self.RImgStory.transform:SetCanvasSortingOrder()
-    self.PanelStagePass:SetCanvasSortingOrder(1)
+    --self.RImgStory.transform:SetCanvasSortingOrder()
+    --self.PanelStagePass:SetCanvasSortingOrder(1)
     self.BtnStage.CallBack = function()
         self:OnBtnStageClick()
     end

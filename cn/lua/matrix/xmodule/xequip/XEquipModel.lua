@@ -1699,10 +1699,15 @@ function XEquipModel:GetSuitIconPath(suitId)
     return suitCfg and suitCfg.IconPath or ""
 end
 
---- 获取套装大图标
-function XEquipModel:GetSuitBigIconPath(suitId)
+--- 获取套装WaferBagPath
+function XEquipModel:GetSuitWaferBagPath(suitId)
     local suitCfg = self:GetConfigEquipSuit(suitId)
-    return suitCfg and suitCfg.BigIconPath or ""
+    return suitCfg and suitCfg.WaferBagPath or ""
+end
+
+function XEquipModel:GetSuitClearIconPath(suitId)
+    local suitCfg = self:GetConfigEquipSuit(suitId)
+    return suitCfg and suitCfg.ClearIconPath or ""
 end
 
 function XEquipModel:GetSuitName(suitId)
@@ -2882,41 +2887,6 @@ function XEquipModel:GetConfigWeaponDeregulateUI(lv)
         end
     else
         return cfgs
-    end
-end
-
---- 检测超限引导
-function XEquipModel:CheckOverrunGuide(weaponId)
-    -- debug模式下，禁用引导时不播放
-    if XMain.IsDebug then
-        local isGuideDisable = XDataCenter.GuideManager.CheckFuncDisable()
-        if isGuideDisable then
-            return
-        end
-    end
-
-    -- 功能未开启
-    local isOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun)
-    if not isOpen then
-        return
-    end
-
-    -- 装备不可超限
-    local equip = self:GetEquip(weaponId)
-    local canOverrun = self:CanOverrunByTemplateId(equip.TemplateId)
-    if not canOverrun then
-        return
-    end
-
-    -- 播放引导，已播过会跳过
-    local guideId = CS.XGame.ClientConfig:GetInt("EquipOverrunGuideId")
-    if guideId ~= 0 then
-        local guide = XDataCenter.GuideManager.GetGuideGroupTemplatesById(guideId)
-        local isFinish = XDataCenter.GuideManager.CheckIsGuide(guideId)
-        local isGuiding = XDataCenter.GuideManager.CheckIsInGuide()
-        if not isFinish and not isGuiding then
-            XDataCenter.GuideManager.TryActiveGuide(guide)
-        end
     end
 end
 ---------------------------------------- #endregion WeaponOverrun ----------------------------------------

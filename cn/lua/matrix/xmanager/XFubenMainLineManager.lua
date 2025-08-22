@@ -1361,7 +1361,7 @@ XFubenMainLineManagerCreator = function()
     end
 
     local OpenChapterOrStageUi = function(closeLastStage, chapter, stageId)
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.MainLine, chapter.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapter.ChapterId) then
             return
         end
         if closeLastStage then

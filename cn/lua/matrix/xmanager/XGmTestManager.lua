@@ -815,7 +815,7 @@ local function AddPlannerUse()
             "连线教学导出",
             function()
                 -- 导出上一次游戏纪录，成为图文教学配置
-                XMVCA.XLineArithmetic:SaveCurrentGameData2Config()
+                XMVCA.XLineArithmetic2:SaveCurrentGameData2Config()
             end
     )
     Panel:AddToggle("品阶切换", function(res)
@@ -1001,6 +1001,13 @@ local function AddAudioDebugFunction()
         "打印停止音频日志",
         function()
             CS.XAudioManager.SetIsAudioStopLogInConsole()
+        end
+    )
+
+    Panel:AddToggle(
+        "打印音频组件日志",
+        function()
+            CS.XAudioManager.SetIsComponentLogInConsole()
         end
     )
 

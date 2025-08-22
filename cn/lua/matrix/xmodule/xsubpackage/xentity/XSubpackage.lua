@@ -101,28 +101,28 @@ function XSubpackage:StartResDownload()
 end
 
 function XSubpackage:PrepareDownload()
-    XLog.Debug("hyx _State PREPARE_DOWNLOAD |", self._Id)
+    -- XLog.Debug("SP/DN _State PREPARE_DOWNLOAD |", self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
 end
 
 function XSubpackage:StartDownload()
-    XLog.Debug("hyx _State DOWNLOADING", self._Id)
+    -- XLog.Debug("SP/DN _State DOWNLOADING", self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
 end
 
 --等待状态
 function XSubpackage:PreparePause()
-    XLog.Debug("hyx _State PREPARE_DOWNLOAD +", self._Id)
+    -- XLog.Debug("SP/DN _State PREPARE_DOWNLOAD +", self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
 end
 
 function XSubpackage:Pause()
-    XLog.Debug("hyx _State PAUSE |", self._Id)
+    -- XLog.Debug("SP/DN _State PAUSE |", self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
 end
 
 function XSubpackage:Complete()
-    XLog.Debug("hyx _State COMPLETE |", self._Id)
+    -- XLog.Debug("SP/DN _State COMPLETE |", self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
     self:Release()
 end
@@ -203,18 +203,30 @@ function XSubpackage:OnStateChanged(resState)
         end
     else
         -- 同步所有ResItem的TaskGroup状态
-        state = taskGroups[1].State
-        if #taskGroups > 1 then
-            for i = 2, #taskGroups do
-                if taskGroups[i].State ~= state then
-                    return
+        -- 先检查完成状态
+        local isResStateComplete = true
+        for k, resItem in pairs(self._ResItemDic) do
+            if resItem:GetState() ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+                isResStateComplete = false
+            end
+        end
+
+        if isResStateComplete then
+            state = CS.XMTDownloadTaskGroupState.Complete
+        else
+            state = taskGroups[1].State
+            if #taskGroups > 1 then
+                for i = 2, #taskGroups do
+                    if taskGroups[i].State ~= state then
+                        return
+                    end
+                    state = taskGroups[i].State
                 end
-                state = taskGroups[i].State
             end
         end
     end
 
-    print("hyx OnStateChanged", self._Id, resState, state, self._WaitPause)
+    -- print("SP/DN OnStateChanged", self._Id, resState, state, self._WaitPause)
 
     if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnDownloadRelease()
@@ -228,7 +240,7 @@ function XSubpackage:OnStateChanged(resState)
 
         -- 最后使用 table.concat 将所有格式化的字符串合并为一个完整的字符串
         local stringRes = table.concat(formattedStrings)
-        print("hyx OnStateChanged 全子Res 完成？\n ",stringRes)
+        -- print("SP/DN OnStateChanged 全子Res 完成？\n ",stringRes)
 
         XMVCA.XSubPackage:OnComplete(self._Id)
         XMVCA.XSubPackage:OnDownloadRelease()

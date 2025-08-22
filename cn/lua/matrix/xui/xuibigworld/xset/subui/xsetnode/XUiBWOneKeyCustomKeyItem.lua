@@ -17,14 +17,14 @@ function XUiBWOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId
         self.GroupRecommend.gameObject:SetActiveEx(not isKeyboard)
 
         local keyCodeType = XCSInputManager.GetKeyCodeTypeByInt(operationKey, self.CurInputMapId, self.CurOperationType)
-        local isCustom = CS.XCustomUi.PCForceSetKeyCode or XCSInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
-        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XCustomUi.PCForceSetKeyCode
+        local isCustom = CS.XUiPcManager.PCForceSetKeyCode or XCSInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
+        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XUiPcManager.PCForceSetKeyCode
         self.BtnKeyItem.enabled = isCustom or oneKeyIsCustom
         local name = XCSInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.One)
         self.BtnKeyItem:SetName(name)
         if isCustom or oneKeyIsCustom then
             self.BtnKeyItem.CallBack = function()
-                if keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom and not CS.XCustomUi.PCForceSetKeyCode then
+                if keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom and not CS.XUiPcManager.PCForceSetKeyCode then
                     XLuaUiManager.Open("UiMouseButtonConfig")
                 elseif oneKeyIsCustom then
                     XUiManager.TipMsg(CS.XTextManager.GetText("PcKeyBoardButtonNoCusTip"))

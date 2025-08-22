@@ -111,10 +111,6 @@ function XPreloadAgency:SetAutoResume(value)
     self._CheckNetWork = value
 end
 
-function XPreloadAgency:OnRelease()
-    --本地一键重登需要做释放兼容
-end
-
 function XPreloadAgency:InitRpc()
     --实现服务器事件注册
     --XRpc.XXX

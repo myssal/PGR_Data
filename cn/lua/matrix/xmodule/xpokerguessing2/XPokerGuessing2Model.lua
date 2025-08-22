@@ -12,6 +12,10 @@ end
 function XPokerGuessing2Model:ClearPrivate()
 end
 
+function XPokerGuessing2Model:ResetAll()
+    self:SetServerData(nil)
+end
+
 function XPokerGuessing2Model:SetServerData(serverData)
     self._ServerData = serverData
 end
@@ -148,6 +152,14 @@ function XPokerGuessing2Model:SetStoryUnlock(storyId)
         end
     end
     table.insert(self._ServerData.UnlockStorys, storyId)
+end
+
+function XPokerGuessing2Model:CheckIsFirstTimeStory()
+    return self._SaveUtil:GetData('XPokerGuessing2FirstTimeStory') == true
+end
+
+function XPokerGuessing2Model:SetIsFirstTimeStory(data)
+    self._SaveUtil:SaveData('XPokerGuessing2FirstTimeStory', data)
 end
 
 return XPokerGuessing2Model

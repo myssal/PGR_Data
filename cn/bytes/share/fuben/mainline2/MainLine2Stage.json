@@ -4405,7 +4405,19 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "海渊独歌"
+        ],
+        "AchievementDescs": [
+            "她行走在荒芜的海底。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
     },
     {
         "Id": 10350102,
@@ -4505,7 +4517,26 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            2
+        ],
+        "AchievementNames": [
+            "逆流而上",
+            "水中异象"
+        ],
+        "AchievementDescs": [
+            "寻找前进的方向。",
+            "水里……那是什么？"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※不被触手击中</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※不被触手击中</color>"
+        ]
     },
     {
         "Id": 10350112,
@@ -4535,7 +4566,19 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "逃离海洋馆"
+        ],
+        "AchievementDescs": [
+            "这一切，就要结束了。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
     },
     {
         "Id": 10350115,
@@ -4545,7 +4588,26 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            2
+        ],
+        "AchievementNames": [
+            "再见，千子",
+            "滞空危机"
+        ],
+        "AchievementDescs": [
+            "每一声再见，都是一次接近死亡的丧钟。",
+            "她听到来自红潮中的回响。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※摔落次数小于3次</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※摔落次数小于3次</color>"
+        ]
     },
     {
         "Id": 10350116,
@@ -4645,7 +4707,19 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "未尽之路"
+        ],
+        "AchievementDescs": [
+            "死局已被更改，离开这里吧。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
     },
     {
         "Id": 10350126,
@@ -4696,6 +4770,26 @@
         "UnlockCondition": 0,
         "ProgressConditions": [],
         "VideoId": 0,
+        "AchievementTpyes": [
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "丽芙也来帮忙！",
+            "我来助你！"
+        ],
+        "AchievementDescs": [
+            "无论在哪里，丽芙都会帮助你。",
+            "小心！卡列尼娜来了！"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※使用丽芙占领一个据点</color>",
+            "<color=#989898>※解锁卡列的支援</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※使用丽芙占领一个据点</color>",
+            "<color=#989898>※解锁卡列的支援</color>"
+        ],
         "MonsterHeads": [
             "Assets/Product/Texture/Image/Role/RoleHeadLifu.png"
         ],
@@ -4712,11 +4806,26 @@
         "UnlockCondition": 1007128,
         "ProgressConditions": [],
         "VideoId": 0,
-        "MonsterHeads": [
-            "Assets/Product/Texture/Image/Role/RoleHeadLifu.png"
-        ],
-        "MonsterReplaceOrders": [
+        "Specialorder": "A",
+        "AchievementTpyes": [
+            3,
             3
+        ],
+        "AchievementNames": [
+            "《九龙英雄传1》",
+            "《九龙英雄传2》"
+        ],
+        "AchievementDescs": [
+            "传说曾经有一个伟大英雄……",
+            "真的英雄敢于直面可怖存在。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※不重启击杀国王</color>",
+            "<color=#989898>※boss据点难度大于等于3的情况下通关</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※不重启击杀国王</color>",
+            "<color=#989898>※boss据点难度大于等于3的情况下通关</color>"
         ]
     },
     {
@@ -4737,7 +4846,31 @@
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            2,
+            3
+        ],
+        "AchievementNames": [
+            "注定的选择",
+            "疏而不漏",
+            "险中求胜"
+        ],
+        "AchievementDescs": [
+            "月亮一千次坠落，这是注定的选择。",
+            "他们总会保护好她。",
+            "即使再险恶的战场，月亮都将高悬于天上。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※再次战胜塞勒涅</color>",
+            "<color=#989898>※保护露娜的过程中露娜受到的伤害少于30%</color>",
+            "<color=#989898>※保护露娜的过程中露娜剩余血量小于5%</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※保护露娜的过程中露娜受到的伤害少于30%</color>",
+            "<color=#989898>※保护露娜的过程中露娜剩余血量小于5%</color>"
+        ]
     },
     {
         "Id": 10350133,
@@ -4761,13 +4894,41 @@
     },
     {
         "Id": 10350135,
-        "StageDetailType": 4,
+        "StageDetailType": 5,
         "TransformCondition": 0,
         "TransformStageId": 0,
         "Ignore": false,
         "UnlockCondition": 0,
         "ProgressConditions": [],
-        "VideoId": 0
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            2,
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "胜利者的结局",
+            "灰鸦，冲啊！",
+            "真实的宿命",
+            "丽芙会保护你"
+        ],
+        "AchievementDescs": [
+            "过去的无法否认，未来终将升起。",
+            "这就是灰鸦小队的羁绊！",
+            "无论故事怎样变化，真实的宿命都已然注定。",
+            "有丽芙在，不用担心。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※再次击败冯·内古特</color>",
+            "<color=#989898>※被丽芙救起次数小于5次</color>",
+            "<color=#989898>※不死的情况下击败冯·内古特</color>",
+            "<color=#989898>※被丽芙救起次数大于10次</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※被丽芙救起次数小于5次</color>",
+            "<color=#989898>※不死的情况下击败冯·内古特</color>"
+        ]
     },
     {
         "Id": 10350136,
@@ -4778,5 +4939,362 @@
         "UnlockCondition": 0,
         "ProgressConditions": [],
         "VideoId": 0
+    },
+    {
+        "Id": 15021500,
+        "StageDetailType": 2,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 10187
+    },
+    {
+        "Id": 15021501,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021502,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021503,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "日暮途穷",
+            "叮咚",
+            "谜语人"
+        ],
+        "AchievementDescs": [
+            "昨日、藕断丝连",
+            "好听就是好琴",
+            "又不是说了就能明白的"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※与钢琴完成交互</color>",
+            "<color=#989898>※与三名分身完成交互</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※与钢琴完成交互</color>",
+            "<color=#989898>※与三名分身完成交互</color>"
+        ],
+        "MonsterHeads": [
+            "Assets/Product/Texture/Image/Role/RoleHeadR2Xiezou1Q.png"
+        ],
+        "MonsterReplaceOrders": [
+            2
+        ]
+    },
+    {
+        "Id": 15021504,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "逃脱结束"
+        ],
+        "AchievementDescs": [
+            "和？？？玩得开心吗？"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
+    },
+    {
+        "Id": 15021505,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021506,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            3
+        ],
+        "AchievementNames": [
+            "推理大师",
+            "剪了就是了"
+        ],
+        "AchievementDescs": [
+            "抽丝剥茧",
+            "废话少说"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※选择不调查</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※选择不调查</color>"
+        ]
+    },
+    {
+        "Id": 15021507,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            3
+        ],
+        "AchievementNames": [
+            "契诃夫之“门”"
+        ],
+        "AchievementDescs": [
+            "如果出现了一扇门，那它一定不能从这一侧打开"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※和那扇不能开的门交互5次以上</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※和那扇不能开的门交互5次以上</color>"
+        ]
+    },
+    {
+        "Id": 15021597,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": true,
+        "UnlockCondition": 1007132,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "Specialorder": "A"
+    },
+    {
+        "Id": 15021596,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": true,
+        "UnlockCondition": 1007133,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "Specialorder": "B",
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "听话"
+        ],
+        "AchievementDescs": [
+            "情绪不是任务中应该出现的东西"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
+    },
+    {
+        "Id": 15021508,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "梭影",
+            "沉默",
+            "循环"
+        ],
+        "AchievementDescs": [
+            "裁开旧日，缝补裂痕",
+            "这就是结局吗？",
+            "混沌的仆人"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成Ω结局（真结局）</color>",
+            "<color=#989898>※完成α结局</color>",
+            "<color=#989898>※完成β结局</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※完成α结局</color>",
+            "<color=#989898>※完成β结局</color>"
+        ],
+        "MonsterHeads": [
+            "Assets/Product/Texture/Image/Role/RoleHeadR2Xiezou1Q.png"
+        ],
+        "MonsterReplaceOrders": [
+            2
+        ]
+    },
+    {
+        "Id": 15021509,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021510,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021511,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021512,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021513,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021514,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "谢幕"
+        ],
+        "AchievementDescs": [
+            "幕布落下才算结束"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
+    },
+    {
+        "Id": 15021515,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 15021599,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "问候"
+        ],
+        "AchievementDescs": [
+            "如果再也不能见到你，祝你早安午安和晚安"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ]
+    },
+    {
+        "Id": 15021598,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": true,
+        "UnlockCondition": 1007134,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "Specialorder": "A",
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "很有精神"
+        ],
+        "AchievementDescs": [
+            "真得好好锻炼你了"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成和渡边教官的战斗</color>"
+        ]
     }
 ]

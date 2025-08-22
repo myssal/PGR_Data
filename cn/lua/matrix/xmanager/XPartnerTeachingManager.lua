@@ -158,7 +158,7 @@ XPartnerTeachingManagerCreator = function()
         if not XFunctionManager.DetectionFunction(self:ExGetFunctionNameType()) then
             return
         end
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.PartnerTeaching) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.PartnerTeaching) then
             return
         end
 

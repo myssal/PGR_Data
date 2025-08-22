@@ -26,7 +26,7 @@ function XBuffScript1015412:Init()
     self.range = 1  --路径半径
     self.areaCnt = 10   --路径点数量
     self.durTime = 10   --生成路径的时间，每个路径点的寿命配置在子弹表里
-    self.cd = 1         --路径生成间隔
+    self.cd = 0.5         --路径生成间隔
 
     self.missileId = ConfigMissileIdDict[self._buffId]  --子弹id
     self.missileLevel = 1
@@ -74,6 +74,9 @@ end
 function XBuffScript1015412:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
     --当存在目标时，不用走设定目标的逻辑
     if self.targetId ~= 0 then
+        return
+    end
+    if elementType ~= 3 then
         return
     end
     --记录敌人的id，更新buff激活时间

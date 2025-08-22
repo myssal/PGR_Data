@@ -34,7 +34,7 @@ function XUiTheatre5PVEMinorClue:Update(clueId)
     elseif clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
         desc = clueCfg.CompleteDesc
     end      
-    self.TxtDetail.text = desc        
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)        
 end
 
 function XUiTheatre5PVEMinorClue:UpdateCuleBoard(localPosition, visible, playAnim)

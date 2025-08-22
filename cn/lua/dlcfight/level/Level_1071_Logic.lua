@@ -135,6 +135,9 @@ function XLevelScript1071:Init()
     self._proxy:ResetCamera(false,-80,false) --重置相机方向
     ------开局UI管理--------------------------------------------------------------------------------------------------
     self._proxy:SetAutoChessUiActive(false, "FightUiEnable")                             --开局清空UI
+    ------BGM管理--------------------------------------------------------------------------------------------------
+    self._proxy:PlayMusicInOut(6219,-1,-1,-1,-1,0,0)                                   --战斗BGM 3首随机
+
 end
 
 function XLevelScript1071:IsMonsterNpc(NpcUUID)                          --判断是否是怪物类型(3\4\5)的Npc
@@ -237,7 +240,7 @@ end
 function XLevelScript1071:OnEnterPhase(phase)
     --进入一个关卡阶段时需要做的事情在这里实现（最好不要在这里跳转关卡阶段
     if phase == Phase.Start then
-       
+        
     elseif phase == Phase.Show then
         --展示阶段
         self._proxy:AbortSkill(self.fighter1UUID, true)                                               --打断出场动作
@@ -254,7 +257,7 @@ function XLevelScript1071:OnEnterPhase(phase)
         self._proxy:AddNpcAttribAdditive(self._robotUUID,ENpcAttrib.Attack,self._robotAttack,0)                                        --重置NPC攻击力为初始值
         --宝珠技能加快疲劳时间，开始疲劳设置为20
         if self._proxy:CheckBuffByKind(self._playerNpcUUID,1015696) == true then           --判断玩家身上是否有这个宝珠效果buff
-            self._tiredTime = 20     --疲劳阶段开始时间
+            self._tiredTime = 20 + self._battleTime     --疲劳阶段开始时间（预留出战斗前开始计时的时间）
         end
     elseif phase == Phase.Settle then
         --倒计时阶段，开始通知倒计时逻辑          
@@ -272,6 +275,9 @@ function XLevelScript1071:OnEnterPhase(phase)
             self.isFighter2AiOpen = true
             self._proxy:ApplyMagic(self.fighter1UUID,self.fighter1UUID,1015992,1)                                                --NPC1AI开启的BUFF标记
             self._proxy:ApplyMagic(self.fighter2UUID,self.fighter2UUID,1015992,1)                                                --NPC2AI开启的BUFF标记
+
+            self._proxy:ApplyMagic(self.fighter1UUID,self.fighter1UUID,1015993,1)                                                --用来控制属性提升特效的buff
+            self._proxy:ApplyMagic(self.fighter2UUID,self.fighter2UUID,1015993,1)                                                --用来控制属性提升特效的buff
         end
     elseif phase == Phase.Tired then
         --开始疲劳阶段
@@ -461,13 +467,15 @@ function XLevelScript1071:CheckFightEnd()
             if self._isTiredTime then                                                                 --删除疲劳特效
                 self._proxy:KillStayScreenEffectById(1071001)
             end
-            self._proxy:ApplyMagic(self.fighter2UUID,self.fighter2UUID,1010051,0,1)
-            self._proxy:RemoveBuff(self.fighter2UUID,1015992)
+            if self._proxy:CheckNpc(self.fighter2UUID) then
+                self._proxy:ApplyMagic(self.fighter2UUID,self.fighter2UUID,1010051,0,1)                 --锁血
+                self._proxy:RemoveBuff(self.fighter2UUID,1015992)                                       --移除AI启动标记
+            end
         end
-        if self._levelTime >= self._fightUiDisableTime + self._deadToEndTime then                                     --手动延时0.5s,因为FightUiDisable的动画时长就是0.5s
+        if self._levelTime >= self._fightUiDisableTime + self._deadToEndTime then                       --手动延时0.5s,因为FightUiDisable的动画时长就是0.5s
             self.isEndBattle = true
             self._proxy:SettleFight(false)
-            return                                                                          --加上return，防止下方的判断条件继续判断导致双方一起死
+            return                                                                                      --加上return，防止下方的判断条件继续判断导致双方一起死
         end
     end
     
@@ -479,10 +487,12 @@ function XLevelScript1071:CheckFightEnd()
             if self._isTiredTime then                                                                 --删除疲劳特效
                 self._proxy:KillStayScreenEffectById(1071001)
             end
-            self._proxy:ApplyMagic(self.fighter1UUID,self.fighter1UUID,1010051,0,1)
-            self._proxy:RemoveBuff(self.fighter1UUID,1015992)
+            if self._proxy:CheckNpc(self.fighter1UUID) then
+                self._proxy:ApplyMagic(self.fighter1UUID,self.fighter1UUID,1010051,0,1)                --锁血
+                self._proxy:RemoveBuff(self.fighter1UUID,1015992)                                      --移除AI启动标记
+            end
         end
-        if self._levelTime >= self._fightUiDisableTime + self._deadToEndTime   then                                   --手动延时0.5s,因为FightUiDisable的动画时长就是0.5s
+        if self._levelTime >= self._fightUiDisableTime + self._deadToEndTime   then                    --手动延时0.5s,因为FightUiDisable的动画时长就是0.5s
             self.isEndBattle = true
             self._proxy:SettleFight(true)
             return

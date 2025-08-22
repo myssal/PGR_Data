@@ -43,7 +43,7 @@ function XFangKuaiControl:EnterGame(stageId, isNewGame)
     end
     self._Model:RecordInitRound()
     CS.XAudioManager.SetUpMusicSourceTimeStretch()
-    CS.XAudioManager.SetMusicSourcePlayerSpeed(1)
+    self:UpdateCueSpeed()
     XLuaUiManager.Open("UiFangKuaiFight", self._Game, isNewGame)
 end
 
@@ -78,8 +78,8 @@ function XFangKuaiControl:AddOperate(operate, args)
     self._Game:AddOperate(operate, args)
 end
 
-function XFangKuaiControl:IsExistClearOperate(line)
-    return self._Game:IsExistClearOperate(line)
+function XFangKuaiControl:AddClearOperate(gridY, op)
+    self._Game:AddClearOperate(gridY, op)
 end
 
 ---@return table<XFangKuaiBlock,boolean>
@@ -756,8 +756,16 @@ function XFangKuaiControl:GetMoveYTime()
     return self._BlockMove:GetMoveYTime()
 end
 
+function XFangKuaiControl:GetFevMoveUpWaitTime(lineCount)
+    return self._BlockMove:GetFevMoveUpWaitTime(lineCount)
+end
+
 function XFangKuaiControl:GetFevMoveUpTime(lineCount)
     return self._BlockMove:GetFevMoveUpTime(lineCount)
+end
+
+function XFangKuaiControl:GetFevMoveDownWaitTime(lineCount)
+    return self._BlockMove:GetFevMoveDownWaitTime(lineCount)
 end
 
 function XFangKuaiControl:GetFevMoveDownTime(lineCount)
@@ -780,6 +788,10 @@ end
 
 function XFangKuaiControl:GetPosByGridY(len)
     return self._BlockMove:GetPosByGridY(len)
+end
+
+function XFangKuaiControl:GetGridYByPos(posY)
+    return self._BlockMove:GetGridYByPos(posY)
 end
 
 function XFangKuaiControl:GetBlockWarnDistance()
@@ -888,7 +900,10 @@ function XFangKuaiControl:AddScore(blockData, waneLen)
 end
 
 function XFangKuaiControl:AddCombo(num)
-    self._Fever:AddFevValueByCombo()
+    num = num or 1
+    for i = 0, num - 1 do
+        self._Fever:AddFevValueByCombo(i)
+    end
     self:GetCurStageData():AddCombo(num)
 end
 

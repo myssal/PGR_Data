@@ -13,10 +13,10 @@ local ConfigMagicIdDict = {
     [1015146] = 1015147
 }
 local ConfigRuneIdDict = {
-    [1015110] = 20111,
-    [1015142] = 20143,
-    [1015144] = 20145,
-    [1015146] = 20147
+    [1015110] = 20110,
+    [1015142] = 20142,
+    [1015144] = 20144,
+    [1015146] = 20146
 }
 
 function XBuffScript1015110:Init()
@@ -26,7 +26,7 @@ function XBuffScript1015110:Init()
     self.magicId = ConfigMagicIdDict[self._buffId]
     self.magicLevel = 1
     self.isHit = true
-    self.hitCd = 2
+    self.hitCd = 0.5
     self.hitTimer = 0
     self.isAdd = false
     self.runeId = ConfigRuneIdDict[self._buffId]

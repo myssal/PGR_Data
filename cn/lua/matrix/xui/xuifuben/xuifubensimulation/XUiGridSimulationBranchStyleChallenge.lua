@@ -82,7 +82,7 @@ function XUiGridSimulationBranchStyleChallenge:SetData(index, manager)
 end
 
 function XUiGridSimulationBranchStyleChallenge:OnBtnSelfClicked()
-    if not XMVCA.XSubPackage:CheckSubpackage(self.Manager:ExGetChapterType()) then
+    if not XMVCA.XSubPackage:CheckSubpackage(self.Manager:ExGetFunctionNameType()) then
         return
     end
     if self.ClickFunc then

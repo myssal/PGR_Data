@@ -551,7 +551,7 @@ local type = {
     CONDITION_MECHANISM_NEWCHAPTER = "XMechanismActivity/XRedPointMechanismNewChapter",
     CONDITION_MECHANISM_EXCHANGEABLE = "XMechanismActivity/XRedPointMechanismExchangeable",
     -- 大连线
-    CONDITION_LINE_ARITHMETIC = "XRedPointConditionLineArithmetic",
+    CONDITION_LINE_ARITHMETIC = "XRedPointConditionLineArithmetic2",
     -- 敦煌
     CONDITION_DUNHUANG = "XRedPointConditionDunhuang",
     -- 猫鼠游戏Dlc
@@ -652,6 +652,15 @@ local type = {
     CONDITION_THEATRE5_MAIN = "XTheatre5/XRedPointTheatre5Main", -- 活动总蓝点
     CONDITION_THEATRE5_NEW_ACTIVITY = "XTheatre5/XRedPointTheatre5NewActivity", -- 活动初见提示参与蓝点
     CONDITION_THEATRE5_PVP_NEW_ACTIVITY = "XTheatre5/XRedPoinTheatre5PVPNewActivity", -- PVP新赛季提示蓝点
+    CONDITION_THEATRE5_PVE_NEW_ACTIVITY = "XTheatre5/XRedPoinTheatre5PVENewActivity", -- PVE提示蓝点
+    CONDITION_THEATRE5_LIMIT_SHOP = "XTheatre5/XRedPoinTheatre5LimitShop", -- 商店提示蓝点
+    CONDITION_THEATRE5_TASK = "XTheatre5/XRedPointTheatre5Task", -- 任务红点
+
+    --mini改造
+    CONDITION_SOLO_REFORM_MAIN = "XSoloReform/XRedPointSoloReformMain", -- 主红点
+    CONDITION_SOLO_REFORM_CHAPTER = "XSoloReform/XRedPointSoloReformChapter", --章节蓝点
+    CONDITION_SOLO_REFORM_TASK = "XSoloReform/XRedPointSoloReformTask", --任务蓝点
+    CONDITION_SOLO_REFORM_STRENGTH = "XSoloReform/XRedPointSoloReformStrength", --强化蓝点
 }
 XRedPointConditions.Conditions = type
 

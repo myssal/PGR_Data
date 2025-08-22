@@ -29,7 +29,7 @@ function XPanelRoleListActionRandom:Play()
 end
 
 function XPanelRoleListActionRandom:Stop()
-    self.Super:Stop()
+    self.Super.Stop(self)
     self._PanelRoleModelList = false
 end
 

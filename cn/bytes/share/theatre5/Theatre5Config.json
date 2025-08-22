@@ -59,8 +59,8 @@
         "Key": "ShopItemDiscountWeight",
         "Desc": "商店折扣权重(随机出X个物品折扣的权重)",
         "Values": [
-            5,
-            4,
+            90,
+            10,
             1
         ]
     },
@@ -265,7 +265,7 @@
         "Key": "MainClueBoardRect",
         "Desc": "核心线索板的外扩宽高",
         "Values": [
-            4800,
+            7500,
             3500
         ]
     },
@@ -301,14 +301,14 @@
         "Key": "PveVersion",
         "Desc": "PVE模式版本号",
         "Values": [
-            0
+            1
         ]
     },
     {
         "Key": "SkipSotryPage",
         "Desc": "图鉴跳转页签",
         "Values": [
-            14
+            16
         ]
     },
     {
@@ -323,11 +323,40 @@
         "Desc": "两个一组，第一个是id，第二是数量",
         "Values": [
             50005,
-            1,
-            50006,
-            1,
-            50007,
+            1500,
+            102,
+            3000,
+            11000268,
             1
+        ]
+    },
+    {
+        "Key": "PveSlideButton",
+        "Desc": "pve线索板+-按钮，点{参数1}下到最大/最小值",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "Theatre5LimitShop",
+        "Desc": "pve限时商店id对应的taskshop表id",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveWorldId",
+        "Desc": "pve读取的worldid",
+        "Values": [
+            200
+        ]
+    },
+    {
+        "Key": "ClueBoardMaskMinAndMax",
+        "Desc": "pve线索板缩放光圈变化的配置",
+        "Values": [
+            1000,
+            2000
         ]
     }
 ]

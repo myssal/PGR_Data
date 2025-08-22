@@ -855,7 +855,7 @@ function XLuaUi:BindHelpBtn(btn, helpDataKey, cb, openCb)
 end
 
 function XLuaUi:BindHelpBtnByHelpId(btn, helpId, cb, openCb)
-    local config = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local config = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
 
     if not config then
         return

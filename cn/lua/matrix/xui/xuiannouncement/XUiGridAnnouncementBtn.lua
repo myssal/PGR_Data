@@ -1,5 +1,4 @@
-
-
+---@class XUiGridAnnouncementBtn
 local XUiGridAnnouncementBtn = XClass(nil, "XUiGridAnnouncementBtn")
 
 ---@desc 公告标签
@@ -16,12 +15,12 @@ local NoticeTag = {
 local HtmlIndex = 1
 
 
-function XUiGridAnnouncementBtn:Ctor(ui, clickCb)
+function XUiGridAnnouncementBtn:Ctor(ui)
     XTool.InitUiObjectByUi(self, ui)
-    self.ClickCb = clickCb
-    self.BtnTab.CallBack = function() 
-        self:OnBtnClick()
-    end
+end
+
+function XUiGridAnnouncementBtn:GetClickBtn()
+    return self.BtnTab
 end
 
 function XUiGridAnnouncementBtn:Refresh(info)
@@ -43,15 +42,14 @@ function XUiGridAnnouncementBtn:SetSelect(select)
     self.BtnTab:SetButtonState(select and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
+--- 这个方法由动态列表的Touch事件来调用
+--- 组件上的XUiButton不激活响应，仅保留它的显示相关的功能
 function XUiGridAnnouncementBtn:OnBtnClick()
     local htmlKey = XDataCenter.NoticeManager.GetGameNoticeReadDataKey(self.Info, HtmlIndex)
     XDataCenter.NoticeManager.ChangeInGameNoticeReadStatus(htmlKey, true)
     self.BtnTab:ShowReddot(false)
+    
     self:SetSelect(true)
-
-    if self.ClickCb then
-        self.ClickCb(self)
-    end
 end
 
 return XUiGridAnnouncementBtn

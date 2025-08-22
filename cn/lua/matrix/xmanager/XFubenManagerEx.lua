@@ -419,6 +419,9 @@ XFubenManagerExCreator = function()
         end
 
         -- 如果上锁的标签有多个入口，返回列表第一个manager的拦截提示
+        if not allManagers[1] then
+            return false, "" 
+        end
         return false, allManagers[1]:ExGetLockTip()
     end
 

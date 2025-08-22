@@ -105,8 +105,8 @@ function XFavorabilityModel:OnInit()
     self._Timer=nil
     self._StopTime=0
     self._Delay = 10
-    ---@type XSignBoardCamAnim
-    self._sceneAnim=require("XEntity/XSignBoard/XSignBoardCamAnim").New()
+    ---@type XSignBoardCamAnimEntity
+    self._sceneAnim=require("XEntity/XSignBoard/XSignBoardCamAnimEntity").New()
     self._PlayedList={}
     
     self._CharacterFavorabilityDatas= {}
@@ -183,7 +183,7 @@ function XFavorabilityModel:ResetAll()
     self._Timer=nil
     self._StopTime=0
     self._Delay = 10
-    self._sceneAnim=require("XEntity/XSignBoard/XSignBoardCamAnim").New()
+    self._sceneAnim=require("XEntity/XSignBoard/XSignBoardCamAnimEntity").New()
     self._PlayedList={}
 end
 

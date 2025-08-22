@@ -71,6 +71,8 @@ function XSkyGardenCafeAgency:OnInit()
         RoundEnd = 8,
         --出牌区数量发生变化时
         DealCountChanged = 9,
+        --洗牌
+        Shuffle = 10,
     }
     
     self.EffectType = {
@@ -265,7 +267,6 @@ function XSkyGardenCafeAgency:OnLevelBeginUpdate()
         return
     end
     XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_ENTER_FIGHT, data.StageId, data.DeckId)
-    XMVCA.XBigWorldUI:Remove("UiBigWorldBlackMaskNormal")
 end
 
 function XSkyGardenCafeAgency:OnLeaveLevel()

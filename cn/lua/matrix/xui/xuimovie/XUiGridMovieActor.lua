@@ -2,9 +2,9 @@ local CSXUiPlayTimelineAnimation = CS.XUiPlayTimelineAnimation
 local DefaultScale = CS.UnityEngine.Vector3(1, 1, 1)
 local DefaultColor = CS.UnityEngine.Color.white
 local FrontScale = CS.UnityEngine.Vector3(1.02, 1.02, 1)
-local DefaultReverseScale = CS.UnityEngine.Vector3(-1, 1, 1)
-local FrontReverseScale = CS.UnityEngine.Vector3(-1.02, 1.02, 1)
 local BackColor = CS.UnityEngine.Color(0.39, 0.39, 0.39, 1)
+local DefaultRotation = CS.UnityEngine.Vector3(0, 0, 0)
+local DefaultReverseRotation = CS.UnityEngine.Vector3(0, 180, 0)
 
 local AnimNameHead = "PanelActor"
 local AnimNames = {
@@ -154,13 +154,14 @@ function XUiGridMovieActor:RevertActorPanel()
 
     local alpha = self.CanvasGroup.alpha
     local color = DefaultColor
-    local scale = self.IsReverse and DefaultReverseScale or DefaultScale
+    local scale = DefaultScale
+    local angle = self.IsReverse and DefaultReverseRotation or DefaultRotation
     local status = self.Status
     if status == ShowStatus.Back then
         color = BackColor
     elseif status == ShowStatus.Front then
         self.PanelActor.Transform:SetAsLastSibling()
-        scale = self.IsReverse and FrontReverseScale or FrontScale
+        scale = FrontScale
     elseif status == ShowStatus.Hide then
         alpha = 0
         self.PanelActor.gameObject:SetActiveEx(false)
@@ -172,6 +173,7 @@ function XUiGridMovieActor:RevertActorPanel()
     rImgActor.color = color
     rImgFace.color = color
     rImgActor.rectTransform.localScale = scale
+    rImgActor.rectTransform.eulerAngles = angle
 end
 
 function XUiGridMovieActor:PlayAnimEnable(skipAnim)

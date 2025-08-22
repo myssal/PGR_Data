@@ -12,6 +12,7 @@ function XUiBountyChallengeMain:OnAwake()
         XUiBountyChallengeMainGrid.New(self.GridChapter4, self),
     }
     self:BindExitBtns()
+    self:BindHelpBtn(nil, "BountyChallengeHelp")
 
     self._IsStartPlayed = false
 end

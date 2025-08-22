@@ -188,7 +188,7 @@ end
 
 function XUiPanelMain:RefreshCurrentChapter()
     local currentChapter, currentChapterManager = self.FubenManagerEx.GetCurrentRecordChapterAndManager()
-    self.EntryType = (currentChapterManager and currentChapterManager.ExGetChapterType) and currentChapterManager:ExGetChapterType() or nil
+    self.EntryType = (currentChapterManager and currentChapterManager.ExGetFunctionNameType) and currentChapterManager:ExGetFunctionNameType() or nil
     self.CurrentChapter = currentChapter
     self.CurrentChapterManager = currentChapterManager
     self.PanelChapterHave.gameObject:SetActiveEx(currentChapter ~= nil)

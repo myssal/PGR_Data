@@ -32,6 +32,7 @@ function XBuffScript1010009:Init() --初始化
     }
     self.lastSkillIsBackDash = nil
     self.lastSkillIsForwardDash =nil
+    self.partnerDict ={}
 end
 
 ---@param dt number @ delta time 
@@ -68,6 +69,14 @@ function XBuffScript1010009:Update(dt)
     end
 end
 
+function XBuffScript1010009:Terminate()
+    Base.Terminate(self)
+    for partnerUUID, value in pairs(self.partnerDict) do--遍历伙伴组，把所有伙伴干掉
+        self:KillPartner(partnerUUID)
+    end
+    self.partnerDict = nil
+end
+
 function XBuffScript1010009:CallPartner(callIndex,isForwardDash)
     local id= self.partnerId
     local camp = self.partnerCamp
@@ -79,8 +88,6 @@ function XBuffScript1010009:CallPartner(callIndex,isForwardDash)
     local pos = self._proxy:GetNpcOffsetPositionByFacing(self._uuid,euler,distance)
     local partnerUUID = self._proxy:GenerateNpc(id,camp,pos,rota)
     local target = self._proxy:GetFightTargetId(self._uuid)
-    local targetPosition = self._proxy:GetNpcPosition(target)
-    
     if isForwardDash then --如果是前闪，就设置为前闪
         skillId=self.forwardDashPartnerSkillId
     end
@@ -91,15 +98,22 @@ function XBuffScript1010009:CallPartner(callIndex,isForwardDash)
         self._proxy:CastSkill(partnerUUID,skillId)
     else
         --self._proxy:SetNpcLookAtNpc(partnerUUID,target)
-        self._proxy:SetNpcLookAtPosition(partnerUUID,targetPosition)
+        self._proxy:SetNpcLookAtPosition(partnerUUID,self._proxy:GetNpcPosition(target))
         self._proxy:CastSkillToTarget(partnerUUID,skillId,target)
         --XLog.Warning("看向目标攻击")
     end
-    
+    self.partnerDict[partnerUUID] = true
     -- 0.45s后删除分身
     self._proxy:AddTimerTask(0.45, function()
-        self._proxy:DestroyNpc(partnerUUID)
+        self:KillPartner(partnerUUID)
     end)
+end
+
+function XBuffScript1010009:KillPartner(partnerUUID) --干掉伙伴
+    if self.partnerDict[partnerUUID] then
+        self._proxy:DestroyNpc(partnerUUID)
+    end
+    self.partnerDict[partnerUUID] = false
 end
 
 --region EventCallBack

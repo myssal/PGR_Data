@@ -257,7 +257,7 @@ XNewRegressionManagerCreator = function()
 
     -- 获取活动帮助id
     function XNewRegressionManager.GetHelpId()
-        return XHelpCourseConfig.GetHelpCourseTemplateById(Config.HelpId).Function
+        return XMVCA.XHelpCourse:GetHelpCourseCfgById(Config.HelpId).Function
     end
 
     function XNewRegressionManager.GetEnableChildManagers()

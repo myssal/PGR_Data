@@ -25,6 +25,7 @@ end
 ---@param deduceScriptId 推演脚本id
 function XUiTheatre5PVEReasoning:OnStart(deduceScriptId, completedCb)
     self._DeduceScriptId = deduceScriptId
+    self._CurQuestionId = nil
     self._CompletedCb = completedCb
     local clueCfg = self._Control.PVEControl:GetDeduceClueCfgByScriptId(deduceScriptId)
     if not clueCfg or clueCfg.Type ~= XMVCA.XTheatre5.EnumConst.PVEClueShowType.Core then
@@ -36,6 +37,8 @@ function XUiTheatre5PVEReasoning:OnStart(deduceScriptId, completedCb)
     local deduceScriptCfg = self._Control.PVEControl:GetDeduceScriptCfg(deduceScriptId)
     self._QuestionCfgs = self._Control.PVEControl:GetPveDeduceQuestionCfgs(deduceScriptCfg.QuestionGroupId)
     self:InitPanels()
+    self._DeduceRecodedata = self._Control.PVEControl:GetDeduceRecodeData(deduceScriptId)
+
 end
 
 function XUiTheatre5PVEReasoning:OnEnable()
@@ -51,6 +54,7 @@ function XUiTheatre5PVEReasoning:RefreshAll()
     if XTool.IsTableEmpty(self._QuestionCfgs) then
         return
     end
+    self.ImgComplete.gameObject:SetActiveEx(false)   
     local scriptData = self._Control.PVEControl:GetScriptData(self._DeduceScriptId)
     if scriptData and scriptData.IsComplete then
         return
@@ -66,6 +70,7 @@ function XUiTheatre5PVEReasoning:RefreshAll()
             end    
         end
     end
+    self._CurQuestionId = questionCfg.Id
     self._CurSelectClueId = nil
     self._MainCluePanel:Update(self._MainClueId)
     self._MainCluePanel:UpdateDesc(questionCfg.Info)
@@ -73,7 +78,7 @@ function XUiTheatre5PVEReasoning:RefreshAll()
     self._MinorCluePanel:Close()
     self:RefreshQuestionShow(questionCfg) 
     self.BtnReasoning:SetDisable(true, false)
-    self:UpdateSelected()   
+ 
 end
 
 function XUiTheatre5PVEReasoning:InitPanels()
@@ -150,7 +155,8 @@ function XUiTheatre5PVEReasoning:OnClickDeduce()
                     if res.IsScriptCompleted then
                         if self._CompletedCb then
                             self._CompletedCb()
-                        end    
+                        end
+                        self._Control.PVEControl:DeduceRecode(self._DeduceRecodedata)    
                         XLuaUiManager.PopThenOpen('UiTheatre5PVEReasoningEnd', self._DeduceScriptId, self._MainClueId)
                     else
                         self:RefreshAll()
@@ -160,7 +166,7 @@ function XUiTheatre5PVEReasoning:OnClickDeduce()
                 self:PlayAnimationWithMask("LoadFail", function()
                     self:RefreshAll()
                 end)
-              
+                self._Control.PVEControl:AddOnceAnswerError(self._DeduceRecodedata, self._CurQuestionId)
             end          
         end        
     end)
@@ -185,17 +191,52 @@ end
 function XUiTheatre5PVEReasoning:PlayRightAnswerAnim(isCompleted, cb)
     self:PlayAnimationWithMask("LoadUp", function()
         if not isCompleted then
-             self:PlayAnimationWithMask("QieHuan", function()
-                if cb then
-                    cb()
-                end    
-             end)
+            self:AnimDelayRefresh(cb)
+            self:PlayAnimationWithMask("QieHuan",function() 
+                self:PlayAnimationWithMask("LoadReset", function()
+                    if cb then cb() end
+                end)
+            end)
         else
-            if cb then
-                cb()
-            end
+            if cb then cb() end
         end             
     end)
+    self:PlayBulletAnim()
+end
+
+function XUiTheatre5PVEReasoning:PlayBulletAnim()
+    self:StopBulletTimer()   
+    self.ImgComplete.gameObject:SetActiveEx(false)
+    self._TimerBulletId = XScheduleManager.ScheduleOnce(function()
+        --取消随机
+        -- if not self.PanelQuestion then
+        --     return
+        -- end 
+        -- local offset = 80
+        -- local buttetTrans = self.ImgComplete:GetComponent("RectTransform")
+        -- -- 获取父容器尺寸
+        -- local parentSize = self.PanelQuestion.rect.size
+        -- local maxX = parentSize.x * 0.5 - offset
+        -- local minX = -maxX
+        -- local maxY = parentSize.y * 0.5 - offset
+        -- local minY = -maxY
+        
+        -- -- 生成随机位置
+        -- local randomX = math.random() * (maxX - minX) + minX
+        -- local randomY = math.random() * (maxY - minY) + minY
+        
+        -- buttetTrans.anchoredPosition = CS.UnityEngine.Vector2(randomX, randomY)
+        self.ImgComplete.gameObject:SetActiveEx(true)
+     end, 1100)
+end
+
+function XUiTheatre5PVEReasoning:AnimDelayRefresh(cb)
+    self:StopRefreshTimer()
+    self._TimerRefreshId = XScheduleManager.ScheduleOnce(function()
+        if cb then
+            cb()
+        end    
+    end, 500)
 end
 
 function XUiTheatre5PVEReasoning:OnClickClose()
@@ -203,7 +244,23 @@ function XUiTheatre5PVEReasoning:OnClickClose()
     XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_STORY_LINE_PROCESS_UPDATE)
 end
 
+function XUiTheatre5PVEReasoning:StopBulletTimer()
+    if self._TimerBulletId then
+        XScheduleManager.UnSchedule(self._TimerBulletId)
+        self._TimerBulletId = nil
+    end
+end
+
+function XUiTheatre5PVEReasoning:StopRefreshTimer()
+    if self._TimerRefreshId then
+        XScheduleManager.UnSchedule(self._TimerRefreshId)
+        self._TimerRefreshId = nil
+    end
+end
+
 function XUiTheatre5PVEReasoning:OnDestroy()
+    self:StopBulletTimer()
+    self:StopRefreshTimer()
     if self._UpdateScheduleId then
         XScheduleManager.UnSchedule(self._UpdateScheduleId)
         self._UpdateScheduleId = nil
@@ -218,6 +275,7 @@ function XUiTheatre5PVEReasoning:OnDestroy()
     self._UpdateScheduleId = nil
     self._CompletedCb = nil
     self._QuestionCellList = nil
+    self._CurQuestionId = nil
 end
 
 return XUiTheatre5PVEReasoning

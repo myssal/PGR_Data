@@ -96,22 +96,6 @@ function XSentinelGWNode:GetStageId()
     return XSentinelGWNode.Super.GetStageId(self)
 end
 
--- 检查是否能够扫荡
-function XSentinelGWNode:CheckCanSweep(checkCostEnergy)    
-    if self:GetStutesType() == XGuildWarConfig.NodeStatusType.Revive then
-        if self:GetHistoryMaxRebuildTime() <= 0 then
-            return false
-        end
-    end
-    if self:GetMaxDamage() <= 0 then
-        return false
-    end
-    if checkCostEnergy then
-        return XDataCenter.GuildWarManager.GetCurrentActionPoint() >= self.Config.SweepCostEnergy
-    end
-    return true
-end
-
 -- 获取当前节点当场最高伤害
 function XSentinelGWNode:GetMaxDamage()
     local aliveType = XGuildWarConfig.FightRecordAliveType.Die

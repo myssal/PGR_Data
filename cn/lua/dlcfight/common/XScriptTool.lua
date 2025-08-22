@@ -172,14 +172,16 @@ function XScriptTool.GetJumperSettleData(proxy, timeRewordScore, questId, object
     }
 end
 
-function XScriptTool.JumperLevelSettle(proxy, timeRewordScore, questId, objectiveIds, isWin)
+function XScriptTool.JumperLevelSettle(proxy, timeRewordScore, questId, objectiveIds, isWin, isNotLevelPlay)
     local settleData = XScriptTool.GetJumperSettleData(proxy, timeRewordScore, questId, objectiveIds, isWin)
     proxy:OpenInstLevelSettleUi(EInstLevelSettleType.Jumper, settleData)
     proxy:RecordInstLevelSettleData(EInstLevelSettleType.Jumper, settleData)
     if isWin then
         -- 暂停倒计时
         proxy:PauseLevelPlayTimer()
-        proxy:CompleteLevelPlay(settleData.StarCount >= 3)
+        if not isNotLevelPlay then
+            proxy:CompleteLevelPlay(settleData.StarCount >= 3)
+        end
         proxy:FinishInstLevel()
     end
 end

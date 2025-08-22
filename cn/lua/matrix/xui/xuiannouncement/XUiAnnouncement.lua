@@ -70,7 +70,7 @@ function XUiAnnouncement:InitUi()
     --动态列表
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTjTabEx)
     self.DynamicTable:SetDelegate(self)
-    self.DynamicTable:SetProxy(XUiGridAnnouncementBtn, handler(self, self.OnSelectGrid))
+    self.DynamicTable:SetProxy(XUiGridAnnouncementBtn)
     self.GridBtn.gameObject:SetActiveEx(false)
     --页签
     self.BtnTabs = {}
@@ -318,18 +318,24 @@ function XUiAnnouncement:GetValidIndex(index)
     return nil
 end
 
+---@param grid XUiGridAnnouncementBtn
 function XUiAnnouncement:OnDynamicTableEvent(evt, index, grid)
-    if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+    if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
+        
+    elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.NoticeInfo[index])
+        self:CheckGridSelectionAtIndex(grid, index)
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         if XTool.IsNumberValid(self.NoticeIndex) then
             local selectGrid = self.DynamicTable:GetGridByIndex(self.NoticeIndex)
             if selectGrid then
-                selectGrid:OnBtnClick()
+                self:OnSelectGrid(selectGrid, self.NoticeIndex, true)
             end
         end
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
         grid:SetSelect(false)
+    elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
+        self:OnSelectGrid(grid, index)
     end
 end
 
@@ -372,7 +378,11 @@ function XUiAnnouncement:OnSelectTag(index)
     self:RefreshChildView(self.TabIndex)
 end
 
-function XUiAnnouncement:OnSelectGrid(grid)
+function XUiAnnouncement:OnSelectGrid(grid, index, force)
+    if self._SelectIndex == index and not force then
+        return
+    end
+    
     if self.LastGrid then
         self.LastGrid:SetSelect(false)
     end
@@ -381,6 +391,25 @@ function XUiAnnouncement:OnSelectGrid(grid)
     self:PlayAnimation("QiehuanLeft")
     self.LastGrid = grid
     self:RefreshWebView(grid.Info.Content[1].Url)
+
+    if grid then
+        grid:OnBtnClick(true)
+    end
+    
+    self._SelectIndex = index
+end
+
+--- 因为动态列表复用节点，所以同一个节点在不同时刻代表的页签数据不同，需要在被复用时重新检查并刷新显示
+function XUiAnnouncement:CheckGridSelectionAtIndex(grid, index)
+    if self.LastGrid == grid then
+        -- 如果当前刷出的格子和选中格子一样，那么要检查索引是否一致
+        if index ~= self._SelectIndex then
+            -- 如果索引不一致，那么该格子不应该表现为选中
+            self.LastGrid:SetSelect(false)
+        else
+            self.LastGrid:SetSelect(true)
+        end
+    end
 end
 
 ---@param vec2 UnityEngine.Vector2

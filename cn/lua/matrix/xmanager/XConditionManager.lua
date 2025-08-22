@@ -1879,7 +1879,13 @@ PlayerCondition = {
     -- 大连线 LineArithmetic 当前处于某一关卡
     [10233] = function(condition)
         local stageId = condition.Params[1]
-        return XMVCA.XLineArithmetic:IsOnStage(stageId)
+        return XMVCA.XLineArithmetic2:IsOnStage(stageId)
+    end,
+    -- 大连线 LineArithmetic 分数 >= 指定值
+    [10235] = function(condition)
+    end,
+    -- 大连线 LineArithmetic 完成的终点数量
+    [10236] = function(condition)
     end,
     [10250] = function(condition)
         -- 判断处于某一矿区ID下的关卡详情界面
@@ -2379,7 +2385,68 @@ PlayerCondition = {
             return false, condition.Desc
         end
     end,
+    
+    --region ------ 肉鸽5 ------>>>
+    
+    --pve指定content是否通关
+    [17826] = function(condition)
+        local conditionId = condition.Params[1]
+        local value = condition.Params[2]
+        local completed = XMVCA.XTheatre5.PVEAgency:IsCompletedByContentId(conditionId)
+        if value == 1 then --1是通关
+            return completed, condition.Desc
+        else
+            return not completed, condition.Desc
+        end             
+    end,
+
+    --判断肉鸽5的模式
+    [17833] = function(condition)
+        local targetMode = condition.Params[1] --1=PVE, 2=PVP
+        local curMode = XMVCA.XTheatre5:GetCurPlayingMode()
+        if targetMode == 1 then
+            return curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE, condition.Desc
+        else
+            return curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP, condition.Desc
+        end        
+    end,
+    
+    --- PVP中指定角色达成配置段位
+    [17831] = function(condition)
+        -- 指定的角色
+        local charaId = condition.Params[1]
+        
+        -- 指定段位Id
+        local rankId = condition.Params[2]
+        
+        return XMVCA.XTheatre5:CheckCharacterIsAchieveAimRank(charaId, rankId), condition.Desc
+    end,
+    
+    --- 指定角色完成x次战斗
+    [17832] = function(condition)
+        -- 指定的角色
+        local charaId = condition.Params[1]
+        
+        -- 指定战斗次数
+        local fightCount = condition.Params[2]
+        
+        return XMVCA.XTheatre5:CheckCharacterIsAchieveAimWinFightCount(charaId, fightCount), condition.Desc
+    end,
+    
+    --endregion <<<-------------------
+    
     --endregion
+
+    [17435] = function(condition)
+        -- 熊熊3.0 当前是否处于某关卡的关卡详情界面
+        local stageId = condition.Params[1]
+        return XMVCA.XFangKuai:IsCurChapterDetailStageId(stageId), condition.Desc
+    end,
+    [17436] = function(condition)
+        -- 熊熊3.0 当前是否满足退出狂热的引导条件
+        local isMeet = condition.Params[1] == 1
+        return XMVCA.XFangKuai:IsGuideExitFever(isMeet), condition.Desc
+    end,
 }
 
 local CharacterCondition = {
@@ -2714,6 +2781,21 @@ local CharacterCondition = {
         else
             return false, condition.Desc
         end
+    end,
+    -- 当前选中成员是否装备了对应星级的武器
+    [13122] = function(condition)
+        local star = tonumber(condition.Params[1])
+        local characterId = XMVCA.XCharacter:GetCurSelectCharacterId()
+        if characterId then
+            local weaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+            if weaponId then
+                local weaponStar = XMVCA.XEquip:GetEquipStarByEquipId(weaponId)
+                if weaponStar >= star then
+                    return true
+                end
+            end
+        end
+        return false, condition.Desc
     end,
 }
 
@@ -3105,6 +3187,15 @@ local TeamCondition = {
         end
 
         return total >= chechCount, condition.Desc
+    end,
+    [18113] = function(condition)
+        -- 当前战斗房间队伍里是否包含指定角色
+        local targetCharId = condition.Params[1]
+        local xTeam = XDataCenter.TeamManager.GetBattleRoomCacheTeam()
+        if not xTeam then
+            return false, condition.Desc
+        end
+        return xTeam:GetCharIdIsInTeamWithRobotCheck(targetCharId), condition.Desc
     end,
 }
 

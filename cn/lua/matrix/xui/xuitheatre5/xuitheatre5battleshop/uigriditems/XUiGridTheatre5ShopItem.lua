@@ -6,6 +6,7 @@ local XUiGridTheatre5ShopItem = XClass(XUiGridTheatre5Item, 'XUiGridTheatre5Shop
 
 local DragMoveLimit = nil
 local Vector3Cache = Vector3.zero
+local UNITY = CS.UnityEngine
 
 function XUiGridTheatre5ShopItem:OnStart()
     XUiGridTheatre5Item.OnStart(self)
@@ -17,8 +18,24 @@ function XUiGridTheatre5ShopItem:OnStart()
     self._AfterEndDragCallBackHandler = handler(self, self._AfterEndDragCallBack)
 end
 
+function XUiGridTheatre5ShopItem:OnEnable()
+    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE, self.TryFixDragError, self)
+end
+
 function XUiGridTheatre5ShopItem:OnDisable()
+    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE, self.TryFixDragError, self)
+
     self:RemoveDraggingEvent()
+    self:StopEndDragErrorCheckTimer()
+end
+
+---@overload
+function XUiGridTheatre5ShopItem:OnGridBtnClickEvent()
+    if self._Control.ShopControl:GetIsDraggingItem() then
+        return
+    end
+    
+    XUiGridTheatre5Item.OnGridBtnClickEvent(self)
 end
 
 --region 商店拖拽
@@ -38,6 +55,21 @@ end
 
 ---@param eventData UnityEngine.EventSystems.PointerEventData
 function XUiGridTheatre5ShopItem:OnBeginDrag(eventData)
+    if self._IsOnEndDrag or self._IsDragging then
+        if XMain.IsEditorDebug then
+            XLog.Debug('[仅Debug模式输出]触发OnBeginDrag，当状态缓存 _IsOnEndDrag: '..tostring(self._IsOnEndDrag)..' ;_IsDragging: '..tostring(self._IsDragging)..' 时')
+        end
+        -- 如果字段正在拖拽
+        if self._Control.ShopControl:GetIsDraggingItem() then
+            if self._Control.ShopControl:CheckIsSameItem(self.ItemData) then
+                if XMain.IsEditorDebug then
+                    XLog.Debug('[仅Debug模式输出]缓存中正在拖拽的数据与该UI携带的数据一致')
+                end
+                return
+            end
+        end
+    end
+    
     -- 缓存拖拽起点屏幕坐标
     self._BeginScreenPos = eventData.position
     self._IsDragging = false
@@ -66,19 +98,30 @@ end
 
 ---@param eventData UnityEngine.EventSystems.PointerEventData
 function XUiGridTheatre5ShopItem:OnEndDrag(eventData)
-    self._IsDragging = false
-
+    self._IsOnEndDrag = true
+    
+    self:StopEndDragErrorCheckTimer()
+    
     if self.CanvasGroup then
         self.CanvasGroup.blocksRaycasts = true
-    end
-    
-    if not self._Control.ShopControl:OnEndDragging(self._AfterEndDragCallBackHandler) then
-        self._AfterEndDragCallBackHandler()
     end
 
     if self.RawImgSelectNo then
         self.RawImgSelectNo.gameObject:SetActiveEx(false)
     end
+    
+    -- 如果该物品没有被真的拖拽，则不处理数据
+    if not self._IsDragging then
+        return
+    end
+
+    self._IsDragging = false
+    
+    if not self._Control.ShopControl:OnEndDragging(self._AfterEndDragCallBackHandler) then
+        self._AfterEndDragCallBackHandler()
+    end
+
+    self._IsOnEndDrag = false
 end
 
 function XUiGridTheatre5ShopItem:_AfterEndDragCallBack(opType)
@@ -108,6 +151,7 @@ end
 function XUiGridTheatre5ShopItem:RemoveDraggingEvent()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ENTER_FULLSHOPAREA, self.OnFullShopEnterEvent, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_EXIT_FULLSHOPAREA, self.OnFullShopExitEvent, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_APPLICATION_PAUSE, self.OnApplicationPauseEvent, self)
 end
 
 ---@param eventData UnityEngine.EventSystems.PointerEventData
@@ -128,6 +172,11 @@ end
 --- 检查是否满足拖拽
 function XUiGridTheatre5ShopItem:_CheckIsCanDrag(eventData)
     if not self._IsDragging then
+        -- 如果已经有正在拖拽的了则不能再拖
+        if self._Control.ShopControl:GetIsDraggingItem() then
+            return false
+        end
+        
         if Vector2.Distance(self._BeginScreenPos, eventData.position) > DragMoveLimit then
             self._IsDragging = true
 
@@ -154,6 +203,13 @@ function XUiGridTheatre5ShopItem:_CheckIsCanDrag(eventData)
             -- 添加进入和退出商店区域的事件监听
             self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ENTER_FULLSHOPAREA, self.OnFullShopEnterEvent, self)
             self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_EXIT_FULLSHOPAREA, self.OnFullShopExitEvent, self)
+            
+            -- 添加应用切后台的监听
+            XEventManager.AddEventListener(XEventId.EVENT_APPLICATION_PAUSE, self.OnApplicationPauseEvent, self)
+            
+            -- 添加保底逻辑定时器
+            self:StopEndDragErrorCheckTimer()
+            self.EndErrorCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.EndDragErrorCheckTimer), 0)
             
             return true
         end
@@ -186,6 +242,70 @@ end
 function XUiGridTheatre5ShopItem:OnFullShopExitEvent()
     if self.OwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.Goods and self.OwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillSelection then
         self.PanelSellPrice.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiGridTheatre5ShopItem:OnApplicationPauseEvent(isPause)
+    self._IsDragging = false
+
+    if self.CanvasGroup then
+        self.CanvasGroup.blocksRaycasts = true
+    end
+    
+    self:_AfterEndDragCallBack()
+
+    if self.RawImgSelectNo then
+        self.RawImgSelectNo.gameObject:SetActiveEx(false)
+    end
+    
+    self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, isPause)
+end
+
+--- 保底逻辑，检查当未拖拽，且OnEndDrag未触发时手动触发
+function XUiGridTheatre5ShopItem:EndDragErrorCheckTimer()
+    if self._IsDragging then
+        if UNITY.Input.GetMouseButtonUp(0) or (UNITY.Input.touchCount > 0 and UNITY.Input.GetTouch(0).phase == UNITY.TouchPhase.Ended) then
+            if XMain.IsEditorDebug then
+                XLog.Debug('触发拖拽结束的保底逻辑')
+            end
+            self:OnEndDrag(nil)
+            self:StopEndDragErrorCheckTimer()
+        end
+    end
+end
+
+function XUiGridTheatre5ShopItem:StopEndDragErrorCheckTimer()
+    if self.EndErrorCheckTimeId then
+        XScheduleManager.UnSchedule(self.EndErrorCheckTimeId)
+        self.EndErrorCheckTimeId = nil
+    end
+end
+
+--- 保底逻辑：检查当前是否卡缓存了
+function XUiGridTheatre5ShopItem:TryFixDragError()
+    local needFix = false
+    
+    -- 先检查是否卡缓存
+    if self._Control.ShopControl:CheckIsSameItem(self.ItemData) or self._IsDragging then
+        needFix = true
+        if XMain.IsEditorDebug then
+            XLog.Debug('[仅Debug模式输出]触发检查缓存状态异常，当状态缓存 SameDraggingData: '..tostring(self._Control.ShopControl:CheckIsSameItem(self.ItemData))..' ;_IsDragging: '..tostring(self._IsDragging)..' 时')
+        end
+    end
+    
+    -- 再检查是否UI卡状态
+    if self.Transform.parent.gameObject ~= self.ContainerObj or self.Transform.localPosition ~= self.DefaultLocalPosition then
+        needFix = true
+        if XMain.IsEditorDebug then
+            XLog.Debug('[仅Debug模式输出]触发检查UI状态异常')
+        end
+    end
+
+    if needFix then
+        self:OnApplicationPauseEvent(false)
+        if XMain.IsEditorDebug then
+            XLog.Debug('[仅Debug模式输出]尝试修复状态')
+        end
     end
 end
 --endregion

@@ -30,6 +30,7 @@ function XBuffScript1015308:Init()
     self.timeDis = 10
     self.runeId = ConfigRuneIdDict[self._buffId] --宝珠id，用于ui和记录次数
     self.initTimeTrigger = true
+    self.battleStartBuffId = 1015992    --战斗开始标记buff
     ------------执行------------
     self.timer = self._proxy:GetNpcTime(self._uuid)
 end
@@ -39,6 +40,10 @@ function XBuffScript1015308:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行------------
+    if not self._proxy:CheckBuffByKind(self._uuid, self.battleStartBuffId) then
+        return
+    end
+
     if self.initTimeTrigger then
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.timeDis
         self.initTimeTrigger = false

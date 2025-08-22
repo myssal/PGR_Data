@@ -4,7 +4,6 @@
 local XUiPanelTheatre5SettleReward = XClass(XUiNode, 'XUiPanelTheatre5SettleReward')
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridTheatre5SettleRank = require('XUi/XUiTheatre5/XUiTheatre5Settlement/XUiGridTheatre5SettleRank')
-local PVE_CURRENCY_ID = 2  --服务器不下发，默认2
 
 ---@param resultData XDlcFightSettleData
 function XUiPanelTheatre5SettleReward:OnStart(resultData)
@@ -21,6 +20,8 @@ function XUiPanelTheatre5SettleReward:OnStart(resultData)
     local invisible = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE and not self._Control.PVEControl:CanAgainBattle(resultData)
     self.BtnAgain.gameObject:SetActiveEx(not invisible)
     self:RefreshShow()
+    
+    XDataCenter.MedalManager.SetNewNameplateAutoWinLock(false)
 end
 
 function XUiPanelTheatre5SettleReward:RefreshShow()
@@ -64,23 +65,38 @@ function XUiPanelTheatre5SettleReward:ShowRankAnimation()
 end
 
 function XUiPanelTheatre5SettleReward:RefreshPVERewardShow()
-    local currencyCfg = self._Control.PVEControl:GetRouge5CurrencyCfg(PVE_CURRENCY_ID)
     local pveRewardShow = self.ResultData.XAutoChessGameplayResult.RewardShow
-    local hasReward = pveRewardShow and pveRewardShow.TotalCoin and pveRewardShow.TotalCoin > 0
+    --服务器不发自己构建
+    if not pveRewardShow then
+        pveRewardShow = 
+        {
+            TotalCoin = 0,
+            IsWin = false,
+            BaseRewardCoin = 0,
+            FinishLevel = 0,
+            LevelRewardCoin = 0,
+            HpRewardCoin = 0,
+            LeftHp = 0,
+            LossRewardFactor = 0,
+        }
+    end    
+    local hasReward = pveRewardShow and pveRewardShow.TotalCoin >= 0 --0也要显示
     self.ListReward.gameObject:SetActiveEx(hasReward)
     self.CoinLayer.gameObject:SetActiveEx(hasReward)
     if hasReward then
         XUiHelper.RefreshCustomizedList(self.ListReward.transform, self.Grid256New, 1, function(index, go)
             ---@type XUiGridCommon
             local grid = XUiGridCommon.New(self.Parent, go)
-            grid:ShowIcon(currencyCfg.IconRes)
+            local currencyId = XDataCenter.ItemManager.ItemId.Theatre5Coin
+            grid:ShowIcon(XDataCenter.ItemManager.GetItemIcon(currencyId))
             grid:ShowCount(true)
             grid:SetCount(pveRewardShow.TotalCoin)
             grid:SetUiActive(grid.ImgQuality, false)
             grid:SetProxyClickFunc(function()
-            XLuaUiManager.Open("UiTheatre5PopupRewardDetail", PVE_CURRENCY_ID, XMVCA.XTheatre5.EnumConst.ItemType.Gold)
+            XLuaUiManager.Open("UiTheatre5PopupRewardDetail", currencyId, XMVCA.XTheatre5.EnumConst.ItemType.Common)
             end)
-        end)
+        end)   
+
         local goldRewardLayers
         if pveRewardShow.IsWin then
             goldRewardLayers = {pveRewardShow.BaseRewardCoin, 
@@ -125,7 +141,7 @@ end
 
 function XUiPanelTheatre5SettleReward:OnBtnLeaveClickEvent()
     if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
-        self.Parent:Close()
+        self._Control:ReturnTheatre5Main()
     else
         XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_WHOLE_BATTLE_EXIT, self.ResultData)
     end
@@ -133,6 +149,45 @@ end
 
 function XUiPanelTheatre5SettleReward:OnBtnPreviousPageClickEvent()
     self.Parent:OnRewardPreEvent()
+end
+
+function XUiPanelTheatre5SettleReward:StopRankChangeSFX()
+    -- 关闭循环音效
+    if self.SFX_PiontUp_Loop then
+        self.SFX_PiontUp_Loop.gameObject:SetActiveEx(false)
+    end
+
+    if self.SFX_PiontDown_Loop then
+        self.SFX_PiontDown_Loop.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiPanelTheatre5SettleReward:PlayRatingChangeSFX(isAdd)
+    if isAdd then
+        if self.SFX_PiontUp_Loop then
+            self.SFX_PiontUp_Loop.gameObject:SetActiveEx(false)
+            self.SFX_PiontUp_Loop.gameObject:SetActiveEx(true)
+        end
+    else
+        if self.SFX_PiontDown_Loop then
+            self.SFX_PiontDown_Loop.gameObject:SetActiveEx(false)
+            self.SFX_PiontDown_Loop.gameObject:SetActiveEx(true)
+        end
+    end
+end
+
+function XUiPanelTheatre5SettleReward:PlayRankDownSFX()
+    if self.SFX_Star_Down then
+        self.SFX_Star_Down.gameObject:SetActiveEx(false)
+        self.SFX_Star_Down.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiPanelTheatre5SettleReward:PlayRankUpSFX()
+    if self.SFX_Star_Up then
+        self.SFX_Star_Up.gameObject:SetActiveEx(false)
+        self.SFX_Star_Up.gameObject:SetActiveEx(true)
+    end
 end
 
 return XUiPanelTheatre5SettleReward

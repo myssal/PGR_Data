@@ -241,7 +241,9 @@ function XLuaUiManager.RunMain(notDialogTip)
         "UiFubenMainLineChapter",
         "UiFubenMainLineChapterFw",
         "UiFubenMainLineChapterDP",
-        "UiPrequel"
+        "UiPrequel",
+        "UiTheatre5PVEClueBoard",
+        "XUiSoloReformChapterDetail",
     }
     for _, uiName in pairs(needClearUiName) do
         XLuaUiManager.RemoveUiData(uiName)
@@ -398,6 +400,14 @@ end
 
 function XLuaUiManager.GetTopUiName()
     return CsXUiManager.Instance:GetTopUiName()
+end
+
+--拿到栈容器的顶部UI
+function XLuaUiManager.GetUIStackTopUiName()
+    local xui = CsXUiManager.Instance:GetTopUi(CS.XUiType.Normal)
+    if xui and xui.UiData then
+        return xui.UiData.UiName
+    end    
 end
 
 -- 等待uiname页面signalName信号

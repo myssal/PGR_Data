@@ -1,4 +1,3 @@
-local XUiGridTask = require("XUi/XUiTask/XUiGridTask")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XDynamicGridTask
 local XDynamicGridTask = XClass(nil, "XDynamicGridTask")
@@ -54,6 +53,10 @@ function XDynamicGridTask:ResetData(data)
             local childCount = self.PanelAnimation.childCount
             for i = 0, childCount - 1 do
                 self.PanelAnimation:GetChild(i).gameObject:SetActiveEx(true)
+            end
+            -- 修复: 后增加的txtLock应该是默认隐藏的
+            if self.TxtLock then
+                self.TxtLock.gameObject:SetActiveEx(false)
             end
             if self.PanelTime then
                 self.PanelTime.gameObject:SetActiveEx(false)

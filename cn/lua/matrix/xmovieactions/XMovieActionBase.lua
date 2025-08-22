@@ -10,6 +10,8 @@ local ActionStatus = {
     TERMINATED = "TERMINATED"
 }
 
+---@class XMovieActionBase
+---@field UiRoot XUiMovie
 XMovieActionBase = XClass(nil, "XMovieActionBase")
 
 function XMovieActionBase:Ctor(actionData)
@@ -191,7 +193,7 @@ function XMovieActionBase:ChangeStatus(delay, animName)
             return
         end
 
-        local anim = self.UiRoot[animName]
+        local anim = self.UiRoot:GetUiAnimation(animName)
         if not anim then
             XLog.Error("animName配置错误，找不到" .. animName .. "对应的动画，请检查节点: " .. self.ActionId)
             return
@@ -200,17 +202,19 @@ function XMovieActionBase:ChangeStatus(delay, animName)
         self:StopAnimtion(anim)
         anim.gameObject:SetActiveEx(true)
         if not anim.gameObject.activeInHierarchy then
+            XLog.Warning(string.format("动画%s当前activeInHierarchy为false，直接跳过播放动画执行回调！", animName))
+            animCb()
             return
         end
         anim:PlayTimelineAnimation(
-            function()
-                XLuaUiManager.SetMask(false)
-                anim.gameObject:SetActiveEx(false)
-                animCb()
-            end,
-            function()
-                XLuaUiManager.SetMask(true)
-            end
+                function()
+                    XLuaUiManager.SetMask(false)
+                    anim.gameObject:SetActiveEx(false)
+                    animCb()
+                end,
+                function()
+                    XLuaUiManager.SetMask(true)
+                end
         )
     else
         animCb()

@@ -3,6 +3,8 @@ local tableInsert = table.insert
 local SPINE_INDEX_OFFSET = 100 -- spine位置的偏移值
 local ALL_BG_INDEX = 999
 
+---@class XMovieActionSetGray
+---@field UiRoot XUiMovie
 local XMovieActionSetGray = XClass(XMovieActionBase, "XMovieActionSetGray")
 
 function XMovieActionSetGray:Ctor(actionData)
@@ -72,12 +74,8 @@ function XMovieActionSetGray:SetBgGray(index, value)
         self:SetAllBgGray(value)
     else
         local bgIndex = index % 1000
-        local rImgBg = self.UiRoot["RImgBg" .. bgIndex]
-        local component = rImgBg:GetComponent("XUiMaterialController")
-        if not component then
-            component = rImgBg.gameObject:AddComponent(typeof(CS.XUiMaterialController))
-        end
-        component:SetGrayScale(value)
+        local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
+        rImgBg:SetGrayScale(value)
     end
 end
 
@@ -85,14 +83,10 @@ end
 function XMovieActionSetGray:SetAllBgGray(value)
     local index = 1
     while(true) do
-        local bg = self.UiRoot["RImgBg" .. index]
+        local bg = self.UiRoot.UiMovieBg:GetBg(index)
         if not bg then break end
-
-        local component = bg:GetComponent("XUiMaterialController")
-        if not component then
-            component = bg.gameObject:AddComponent(typeof(CS.XUiMaterialController))
-        end
-        component:SetGrayScale(value)
+        
+        bg:SetGrayScale(value)
         index = index + 1
     end
 end

@@ -109,7 +109,7 @@ end
 function XUiPanelSendInvitation:OnBtnHelpClick()
     if not self.ActivityCfg then return end
     local helpId = self.ActivityCfg.Params[2]
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
     XUiManager.ShowHelpTip(template.Function)
 end
 

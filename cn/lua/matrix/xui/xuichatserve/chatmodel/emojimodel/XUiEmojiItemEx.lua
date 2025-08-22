@@ -22,6 +22,13 @@ function XUiEmojiItemEx:Refresh(emoji)
         self:SetCountDownTimer()
     end
     self:RefreshRedPoint()
+    
+    local connotationDesc = self.EmojiData:GetEmojiConnotationDesc()
+
+    if self.TxtName then
+        self.TxtName.gameObject:SetActiveEx(not string.IsNilOrEmpty(connotationDesc))
+        self.TxtName.text = connotationDesc or ''
+    end
 end
 
 function XUiEmojiItemEx:RefreshRedPoint()

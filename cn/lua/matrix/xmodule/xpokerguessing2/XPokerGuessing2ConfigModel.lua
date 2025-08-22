@@ -6,6 +6,7 @@ local PokerGuessing2TableKey = {
     PokerGuessing2Card = { },
     PokerGuessing2Effect = { },
     PokerGuessing2Stage = { CacheType = XConfigUtil.CacheType.Normal },
+    PokerGuessing2StagePerform = { CacheType = XConfigUtil.CacheType.Private },
     PokerGuessing2Story = { },
     PokerGuessing2Config = { DirPath = XConfigUtil.DirectoryType.Client, },
     PokerGuessing2Character = { DirPath = XConfigUtil.DirectoryType.Client, },
@@ -36,6 +37,21 @@ function XPokerGuessing2ConfigModel:GetPokerGuessing2ActivityMaxTipsCountById(id
 
     return config.MaxTipsCount
 end
+
+--- 获取当期活动局内修改自己手牌的最大次数
+function XPokerGuessing2ConfigModel:GetPokerGuessing2ActivityMaxChangeSelfCardCountById(id)
+    local config = self:GetPokerGuessing2ActivityConfigById(id)
+
+    return config.MaxChangePlayerCardCount
+end
+
+--- 获取当期活动局内修改敌人手牌的最大次数
+function XPokerGuessing2ConfigModel:GetPokerGuessing2ActivityMaxChangeEnemyCardCountById(id)
+    local config = self:GetPokerGuessing2ActivityConfigById(id)
+
+    return config.MaxChangeRobotCardCount
+end
+
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2ActivityBackAssetPathById(id)
     local config = self:GetPokerGuessing2ActivityConfigById(id)
@@ -83,6 +99,12 @@ function XPokerGuessing2ConfigModel:GetPokerGuessing2CardSmallAssetPathById(id)
     return config.SmallCardPath
 end
 
+function XPokerGuessing2ConfigModel:GetPokerGuessing2CardChangedFrontAssetPathById(id)
+    local config = self:GetPokerGuessing2CardConfigById(id)
+
+    return config.ChangedFrontAssetPath
+end
+
 ---@return XTablePokerGuessing2Effect[]
 function XPokerGuessing2ConfigModel:GetPokerGuessing2EffectConfigs()
     return self._ConfigUtil:GetByTableKey(PokerGuessing2TableKey.PokerGuessing2Effect) or {}
@@ -117,14 +139,14 @@ function XPokerGuessing2ConfigModel:GetPokerGuessing2EffectEffectValueById(id)
     return config.EffectValue
 end
 
----@return XTablePokerGuessing2Stage[]
-function XPokerGuessing2ConfigModel:GetPokerGuessing2StageConfigs()
-    return self._ConfigUtil:GetByTableKey(PokerGuessing2TableKey.PokerGuessing2Stage) or {}
-end
-
 ---@return XTablePokerGuessing2Stage
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PokerGuessing2TableKey.PokerGuessing2Stage, id, false) or {}
+end
+
+---@return XTablePokerGuessing2StagePerform
+function XPokerGuessing2ConfigModel:GetPokerGuessing2StagePerformCfgById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PokerGuessing2TableKey.PokerGuessing2StagePerform, id, false)
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageActivityIdById(id)
@@ -170,69 +192,69 @@ function XPokerGuessing2ConfigModel:GetPokerGuessing2StageEffectById(id)
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageNameById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.Name
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageNpcNameById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.NpcName
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageIconById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.Icon
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageEffectDescById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.EffectDesc
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineLevelById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineLevel
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineLevelStartById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineLevelStart
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineRoundWinById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineRoundWin
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineRoundLoseById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineRoundLose
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineRoundDrawById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineRoundDraw
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineGameWinById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
     return config.LineGameWin
 end
 
 function XPokerGuessing2ConfigModel:GetPokerGuessing2StageLineGaneLoseById(id)
-    local config = self:GetPokerGuessing2StageConfigById(id)
+    local config = self:GetPokerGuessing2StagePerformCfgById(id)
 
-    return config.LineGaneLose
+    return config.LineGameLose
 end
 
 ---@return XTablePokerGuessing2Story[]

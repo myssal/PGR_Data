@@ -84,7 +84,7 @@ end
 --     if not viewPortRect then return end
 --     local realWidth = viewPortRect.rect.width
 --     -- self.LimitPosX = realWidth * datumLinePrecent
---     self.LimitPosX = realWidth * 0.5 --hyxtest
+--     self.LimitPosX = realWidth * 0.5
 -- end
 
 -- function XUiGridChapter:RefreshAutoChangeBgStageIndex()
@@ -658,6 +658,11 @@ function XUiGridChapter:ClickStageGrid(grid)
     if not isUnlock then
         XUiManager.TipMsg(XDataCenter.FubenManager.GetFubenOpenTips(grid.Stage.StageId))
         return
+    end
+
+    -- 缓存点击的StageId
+    if self.RootUi and self.RootUi.SetLastClickStageId then
+        self.RootUi:SetLastClickStageId(grid.Stage.StageId)
     end
 
     -- 选中回调

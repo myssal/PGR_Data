@@ -456,12 +456,9 @@
         "ScriptId": 0,
         "UseDistanceDither": true,
         "DefaultActionId": 0,
-        "DyingTime": 2.0,
+        "DyingTime": 1.5,
         "StreamingLoadRange": 0.0,
         "InteractEffectNames": [
-            "FxChestlv08"
-        ],
-        "DeathEffectNames": [
             "FxChestlv08"
         ]
     },
@@ -472,12 +469,9 @@
         "ScriptId": 0,
         "UseDistanceDither": true,
         "DefaultActionId": 0,
-        "DyingTime": 2.0,
+        "DyingTime": 1.5,
         "StreamingLoadRange": 0.0,
         "InteractEffectNames": [
-            "FxChestlv09"
-        ],
-        "DeathEffectNames": [
             "FxChestlv09"
         ]
     },
@@ -488,12 +482,9 @@
         "ScriptId": 0,
         "UseDistanceDither": true,
         "DefaultActionId": 0,
-        "DyingTime": 2.0,
+        "DyingTime": 1.5,
         "StreamingLoadRange": 0.0,
         "InteractEffectNames": [
-            "FxChestlv10"
-        ],
-        "DeathEffectNames": [
             "FxChestlv10"
         ]
     },
@@ -1320,7 +1311,7 @@
     {
         "Id": 135,
         "Name": "咖啡杯",
-        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Res_WG_Coffee02_06.prefab",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Com_JH_004Kafeibei01.prefab",
         "ScriptId": 0,
         "UseDistanceDither": true,
         "DefaultActionId": 0,
@@ -1588,7 +1579,7 @@
     },
     {
         "Id": 161,
-        "Name": "筑梦之境",
+        "Name": "筑梦之境（美术）",
         "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Com_JH_Zhuangzhi_Ani.prefab",
         "ScriptId": 0,
         "UseDistanceDither": true,
@@ -2130,6 +2121,186 @@
         "Id": 215,
         "Name": "幻影特效",
         "Model": "Assets/Product/Effect/DlcPrefab/BigWorld/SkyGarden/Prefab/FxSkyGardenTask/FxSkyGardenLSLRaoluan.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 216,
+        "Name": "蓝色传送终点",
+        "Model": "Assets/Product/BigWorld/SkyGarden_JumpPlayer/TempPrefabs/SG_JumpPortalEnd.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 217,
+        "Name": "绿色传送终点",
+        "Model": "Assets/Product/BigWorld/SkyGarden_JumpPlayer/TempPrefabs/SG_JumpPortalEndGreen.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 218,
+        "Name": "黄色传送终点",
+        "Model": "Assets/Product/BigWorld/SkyGarden_JumpPlayer/TempPrefabs/SG_JumpPortalEndYellow.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 219,
+        "Name": "绿色传送",
+        "Model": "Assets/Product/BigWorld/SkyGarden_JumpPlayer/TempPrefabs/SG_JumpPortalGreen.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 220,
+        "Name": "黄色传送",
+        "Model": "Assets/Product/BigWorld/SkyGarden_JumpPlayer/TempPrefabs/SG_JumpPortalYellow.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 221,
+        "Name": "空高脚杯",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Com_JH_004Jiubei01.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 222,
+        "Name": "空酒杯",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_005Jiubei05.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 223,
+        "Name": "饮品酒杯1",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_005Jiubei03.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 224,
+        "Name": "饮品酒杯2",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_005Jiubei01.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 225,
+        "Name": "饮品酒杯3",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_005Jiubei02.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 226,
+        "Name": "饮品酒杯4",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_005Jiubei04.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 227,
+        "Name": "酒瓶1",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_004Jiuping01.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 228,
+        "Name": "酒瓶2",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_004Jiuping02.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 229,
+        "Name": "酒瓶3",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_004Jiuping03.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 230,
+        "Name": "酒瓶4",
+        "Model": "Assets/Product/BigWorld/SkyGarden/TempPrefabs/SG_Bar_WG_004Jiuping04.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 231,
+        "Name": "空花盆",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Com_JH_004Huapena.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 232,
+        "Name": "筑梦之境",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Com_JH_004Zhuangzhi01.prefab",
+        "ScriptId": 0,
+        "UseDistanceDither": true,
+        "DefaultActionId": 0,
+        "DyingTime": 0.0,
+        "StreamingLoadRange": 0.0
+    },
+    {
+        "Id": 233,
+        "Name": "咖啡机",
+        "Model": "Assets/Product/BigWorld/SkyGarden/SceneObjectPrefabs/SG_Res_JH_Coffee01_02.prefab",
         "ScriptId": 0,
         "UseDistanceDither": true,
         "DefaultActionId": 0,

@@ -399,11 +399,13 @@ XActivityBriefManagerCreator = function()
         local needPlayAnimGroupIdList = {}
         local groupIdList = XActivityBriefConfigs.GetGroupIdList(panelType)
         for _, groupId in ipairs(groupIdList) do
-            local inTime, _ = XActivityBrieIsOpen.Get(groupId)
-            local isRemindWhenOpen = XTool.IsNumberValid(XActivityBriefConfigs.GetActivityBriefGroupIsRemindWhenOpen(groupId))
-            -- 活动时间内,有解锁动画且解锁条件达标且没有播放缓存则加入播放列表
-            if isRemindWhenOpen and inTime and not XActivityBriefManager.GetIsPlayedUnlockAnim(groupId) then
-                table.insert(needPlayAnimGroupIdList, groupId)
+            if groupId ~= 0 then
+                local inTime, _ = XActivityBrieIsOpen.Get(groupId)
+                local isRemindWhenOpen = XTool.IsNumberValid(XActivityBriefConfigs.GetActivityBriefGroupIsRemindWhenOpen(groupId))
+                -- 活动时间内,有解锁动画且解锁条件达标且没有播放缓存则加入播放列表
+                if isRemindWhenOpen and inTime and not XActivityBriefManager.GetIsPlayedUnlockAnim(groupId) then
+                    table.insert(needPlayAnimGroupIdList, groupId)
+                end
             end
         end
         if not XTool.IsTableEmpty(needPlayAnimGroupIdList) then

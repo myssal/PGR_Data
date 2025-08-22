@@ -269,7 +269,8 @@ function XBigWorldQuestAgency:OnQuestUndertaken(data)
     questData:UpdateData(data)
     if self:IsInstQuest(data.Id) then
         --记录上次追踪的任务
-        self:UpdateTrackQuestCache(self._Model:GetTrackQuestId())
+        local tracId = self:GetLastTrackQuestId()
+        self:UpdateTrackQuestCache(tracId)
         --强制追踪副本任务
         self:TrackQuest(data.Id)
     else
@@ -359,7 +360,8 @@ function XBigWorldQuestAgency:OnQuestRelaunch(data)
         questData:UpdateData(quest)
         if self:IsInstQuest(quest.Id) then
             --更新追踪任务缓存
-            self:UpdateTrackQuestCache(self._Model:GetTrackQuestId())
+            local tracId = self:GetLastTrackQuestId()
+            self:UpdateTrackQuestCache(tracId)
             --强制追踪副本任务
             self:TrackQuest(quest.Id)
             trackId = quest.Id
@@ -436,8 +438,9 @@ function XBigWorldQuestAgency:UpdateTrackQuestCache(questId)
         end
         --记录上次追踪的任务
         self._TrackQuestIdCache = questId
+    else
+        self._TrackQuestIdCache = questId
     end
-    self._TrackQuestIdCache = questId
 end
 
 ---@return XBigWorldQuest
@@ -526,6 +529,15 @@ end
 
 function XBigWorldQuestAgency:GetTrackQuestId()
     return self._Model:GetTrackQuestId()
+end
+
+function XBigWorldQuestAgency:GetLastTrackQuestId()
+    --更新追踪任务缓存
+    local tracId = self._Model:GetTrackQuestId()
+    if not tracId or tracId <= 0 then
+        tracId = self._TrackQuestIdCache
+    end
+    return tracId
 end
 
 --- 尝试还原追踪任务，如果在副本内完成了任务，此时不能立即还原，需要等切换到正常场景后才能切换
@@ -775,6 +787,12 @@ function XBigWorldQuestAgency:GetQuestIcon(questId)
     return t and t.QuestIcon or ""
 end
 
+function XBigWorldQuestAgency:GetQuestBanner(questId)
+    local t = self._Model:GetQuestTemplate(questId)
+
+    return t and t.QuestBanner or ""
+end
+
 function XBigWorldQuestAgency:GetQuestText(questId)
     local t = self._Model:GetQuestTemplate(questId)
 
@@ -791,6 +809,10 @@ function XBigWorldQuestAgency:GetQuestRewardId(questId)
     local t = self._Model:GetQuestTemplate(questId)
 
     return t and t.RewardId or 0
+end
+
+function XBigWorldQuestAgency:IsFavorableQuestType(questId)
+    return self._Model:IsFavorableQuestType(questId)
 end
 
 function XBigWorldQuestAgency:IsDefaultTrackQuest(questId)

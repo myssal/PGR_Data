@@ -11,7 +11,7 @@
         "StoryLineId": 1,
         "ContentType": 3,
         "ContentId": 0,
-        "AvgContent": "RG00901BA",
+        "AvgContent": "RG01000EA",
         "NextScript": 0
     },
     {
@@ -86,7 +86,7 @@
         "StoryLineId": 2,
         "ContentType": 3,
         "ContentId": 0,
-        "AvgContent": "RG00901BA",
+        "AvgContent": "RG01003BA",
         "NextScript": 0,
         "CharacterStoryDesc": "种种迹象表明，钢铁军团很有可能会经过锈轭镇，朝着那里继续前进吧。"
     },
@@ -193,7 +193,7 @@
         "StoryLineId": 3,
         "ContentType": 3,
         "ContentId": 0,
-        "AvgContent": "RG00901BA",
+        "AvgContent": "RG01008BA",
         "NextScript": 0
     },
     {
@@ -215,7 +215,7 @@
         "Id": 312,
         "StoryLineId": 3,
         "ContentType": 2,
-        "ContentId": 1,
+        "ContentId": 305,
         "NextScript": 0
     },
     {
@@ -238,7 +238,7 @@
         "Id": 316,
         "StoryLineId": 3,
         "ContentType": 2,
-        "ContentId": 305,
+        "ContentId": 306,
         "NextScript": 0
     },
     {
@@ -253,7 +253,7 @@
         "Id": 318,
         "StoryLineId": 3,
         "ContentType": 2,
-        "ContentId": 306,
+        "ContentId": 307,
         "NextScript": 0
     },
     {
@@ -261,7 +261,7 @@
         "StoryLineId": 3,
         "ContentType": 3,
         "ContentId": 0,
-        "AvgContent": "RG00901BA",
+        "AvgContent": "RG01010BA",
         "NextScript": 0
     },
     {
@@ -298,8 +298,130 @@
     {
         "Id": 401,
         "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 401,
+        "NextScript": 0
+    },
+    {
+        "Id": 402,
+        "StoryLineId": 4,
+        "ContentType": 5,
+        "ContentId": 401,
+        "NextScript": 4100,
+        "CharacterStoryDesc": "先前的负伤导致记忆仍有些模糊不清，和万事一边在村镇中调查，一边整理一下手上的现有情报吧。"
+    },
+    {
+        "Id": 403,
+        "StoryLineId": 4,
+        "ContentType": 1,
+        "ContentId": 4100,
+        "NextScript": 0,
+        "CharacterStoryDesc": "在万事的引导下，回忆起了和他签订契约的起因。"
+    },
+    {
+        "Id": 404,
+        "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 402,
+        "NextScript": 0
+    },
+    {
+        "Id": 405,
+        "StoryLineId": 4,
+        "ContentType": 5,
+        "ContentId": 402,
+        "NextScript": 4200,
+        "CharacterStoryDesc": "在火车大劫案告一段落后，为了协助万事一起调查天灾的起源，二人一起来到了他建立的孤儿院。"
+    },
+    {
+        "Id": 406,
+        "StoryLineId": 4,
+        "ContentType": 1,
+        "ContentId": 4200,
+        "NextScript": 0,
+        "CharacterStoryDesc": "在前往孤儿院的路上，万事诉说了几年来他在调查中搜集到的情报。"
+    },
+    {
+        "Id": 407,
+        "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 403,
+        "NextScript": 0
+    },
+    {
+        "Id": 408,
+        "StoryLineId": 4,
+        "ContentType": 5,
+        "ContentId": 403,
+        "NextScript": 4300,
+        "CharacterStoryDesc": "刚发现黑袍祭司的尸体后不久，二人便被林中成群结队的活死人包围了。为了逃出腐尸的陷阱，也为了赐予他们解脱，万事再次举起了武器。"
+    },
+    {
+        "Id": 409,
+        "StoryLineId": 4,
+        "ContentType": 1,
+        "ContentId": 4300,
+        "NextScript": 0,
+        "CharacterStoryDesc": "万事从活死人的尸体上发现了不少蛛丝马迹，一切都在指向在这背后隐藏着一个更大的秘密。"
+    },
+    {
+        "Id": 410,
+        "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 404,
+        "NextScript": 0
+    },
+    {
+        "Id": 411,
+        "StoryLineId": 4,
         "ContentType": 4,
-        "ContentId": 101,
+        "ContentId": 404,
+        "NextScript": 0,
+        "CharacterStoryDesc": "万事开始着手调查林间干尸的身份，却意外在死者的灵魂里见到了一位“老熟人”。"
+    },
+    {
+        "Id": 412,
+        "StoryLineId": 4,
+        "ContentType": 3,
+        "ContentId": 0,
+        "AvgContent": "RG01104BA",
+        "NextScript": 0
+    },
+    {
+        "Id": 413,
+        "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 405,
+        "NextScript": 0
+    },
+    {
+        "Id": 414,
+        "StoryLineId": 4,
+        "ContentType": 4,
+        "ContentId": 405,
+        "NextScript": 0,
+        "CharacterStoryDesc": "万事和灰鸦一起进入乌列尔编织出来的“茧房”，从不停搏动的琥珀中看到了曾经属于“枢机主神”的记忆。"
+    },
+    {
+        "Id": 415,
+        "StoryLineId": 4,
+        "ContentType": 2,
+        "ContentId": 406,
+        "NextScript": 0
+    },
+    {
+        "Id": 416,
+        "StoryLineId": 4,
+        "ContentType": 4,
+        "ContentId": 406,
+        "NextScript": 0,
+        "CharacterStoryDesc": "乌列尔希望万事和枢机主神的记忆融合，成为圣堂新的神明，但万事因为曾被人类的善意抚育，拒绝了这个只会让三界陷入狂日持久战争的建议。乌列尔恼羞成怒，想要抢夺“茧”中的力量加冕为神，大战一触即发。"
+    },
+    {
+        "Id": 417,
+        "StoryLineId": 4,
+        "ContentType": 6,
+        "ContentId": 4,
         "NextScript": 0
     }
 ]

@@ -35,7 +35,7 @@ function XUiBabelTowerChildSupport:OnAwake()
     XEventManager.AddEventListener(XEventId.EVNET_BABEL_CHALLENGE_BUFF_CHANGED, self.CheckTeamBanCharacterList, self)
 end
 
-function XUiBabelTowerChildSupport:OnStart(uiRoot, stageId, guideId, teamId, teamList, captainPos, firstFightPos)
+function XUiBabelTowerChildSupport:OnStart(uiRoot, stageId, guideId, teamId, teamList, captainPos, firstFightPos, generalSkill)
     self.UiRoot = uiRoot
     self.StageId = stageId
     self.GuideId = guideId
@@ -43,6 +43,7 @@ function XUiBabelTowerChildSupport:OnStart(uiRoot, stageId, guideId, teamId, tea
     self.TeamList = teamList
     self.CaptainPos = captainPos
     self.FirstFightPos = firstFightPos
+    self.GeneralSkill = generalSkill
     self.BabelTowerStageTemplate = XFubenBabelTowerConfigs.GetBabelTowerStageTemplate(self.StageId)
 
     self:GetTotalSupportPoint()
@@ -161,7 +162,7 @@ function XUiBabelTowerChildSupport:OnBtnBackClick()
 end
 
 function XUiBabelTowerChildSupport:OnBtnGoClick()
-    local teamList = XDataCenter.FubenBabelTowerManager.GetCacheTeam(self.StageId, self.TeamId, self.TeamList, self.CaptainPos, self.FirstFightPos)
+    local teamList = XDataCenter.FubenBabelTowerManager.GetCacheTeam(self.StageId, self.TeamId, self.TeamList, self.CaptainPos, self.FirstFightPos, self.GeneralSkill)
     local team = XDataCenter.TeamManager.CreateTeam(self.TeamId)
     team:UpdateAutoSave(true)
     team:UpdateLocalSave(false)
@@ -171,6 +172,7 @@ function XUiBabelTowerChildSupport:OnBtnGoClick()
         self.TeamList = inTeam:GetEntityIds()
         self.CaptainPos = inTeam:GetCaptainPos()
         self.FirstFightPos = inTeam:GetFirstFightPos()
+        self.GeneralSkill = inTeam:GetCurGeneralSkill()
         self:ReportTeamList()
     end)
     XLuaUiManager.Open("UiBattleRoleRoom",
@@ -460,5 +462,5 @@ function XUiBabelTowerChildSupport:ReportSupportChoice()
 end
 
 function XUiBabelTowerChildSupport:ReportTeamList()
-    self.UiRoot:UpdateTeamList(self.TeamList, self.CaptainPos, self.FirstFightPos)
+    self.UiRoot:UpdateTeamList(self.TeamList, self.CaptainPos, self.FirstFightPos, self.GeneralSkill)
 end

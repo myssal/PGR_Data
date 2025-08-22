@@ -89,10 +89,13 @@ end
 
 function XUiGridWheelchairManualStepRewardPlan:OnClickEvent()
     if self._Control:CheckAnyPlanCanGetReward() then
+        XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
         XMVCA.XWheelchairManual:RequestWheelchairManualGetPlanReward(function(success, rewardList)
             if success then
                 self.Parent:RefreshPlanShow()
                 self._Control:ShowRewardList(rewardList)
+            else
+                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
             end
         end)
     end

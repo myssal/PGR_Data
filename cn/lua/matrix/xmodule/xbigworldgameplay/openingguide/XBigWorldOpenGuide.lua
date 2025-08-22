@@ -38,6 +38,9 @@ end
 
 --- 开场引导开始
 function XBigWorldOpenGuide:Start()
+    if self._Queue:IsEmpty() then
+        return self:Finish()
+    end
     -- 打开按键检测冲突
     CS.XInputManager.InputMapper:SetIsOpenInputMapSectionCheck(true)
     self:PreLaunch()
@@ -69,16 +72,16 @@ end
 
 function XBigWorldOpenGuide:OnFinish()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH)
-
-    XMVCA.XBigWorldUI:Close("UiBigWorldBlackMaskNormal")
+    --这里关太早了，在活动界面会露馅
+    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldBlackMaskNormal")
 end
 
 function XBigWorldOpenGuide:PreLaunch()
     if self.IsPreLaunch then
         return
     end
-    --预先初始化开场需要的系统
-    CS.XWorldEngine.PreLaunch()
+    ----预先初始化开场需要的系统
+    --CS.XWorldEngine.PreLaunch()
     --初始化输入后系统
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():InitInputMapStack()
     --设置大世界状态
@@ -90,8 +93,8 @@ function XBigWorldOpenGuide:PreExit()
     if not self.IsPreLaunch then
         return
     end
-    --移除掉开场的系统，交由正式流程去控制
-    CS.XWorldEngine.PreExit()
+    ----移除掉开场的系统，交由正式流程去控制
+    --CS.XWorldEngine.PreExit()
     --设置大世界状态
     XMVCA.XBigWorldGamePlay:DeinitCurrentBigWorldType()
     self.IsPreLaunch = false

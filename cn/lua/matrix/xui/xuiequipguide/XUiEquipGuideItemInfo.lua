@@ -21,7 +21,7 @@ function XUiEquipGuideItemInfo:InitView()
     self.PanelWeapon.gameObject:SetActiveEx(self.EquipType == XEquipGuideConfigs.EquipType.Weapon)
     
     if self.EquipType == XEquipGuideConfigs.EquipType.Weapon then  --武器
-        self.RImgIcon:SetRawImage(XMVCA.XEquip:GetEquipIconPath(self.Id))
+        self.RImgIcon:SetRawImage(XMVCA.XEquip:GetEquipBigIconPath(self.Id))
         self.TxtName.text = XMVCA.XEquip:GetEquipName(self.Id)
         local weaponTemplate = XMVCA.XEquip:GetConfigEquip(self.Id)
         local skillTemplate = XMVCA.XEquip:GetConfigWeaponSkill(weaponTemplate.WeaponSkillId)
@@ -36,7 +36,7 @@ function XUiEquipGuideItemInfo:InitView()
         self.ImgQuality:SetSprite(XMVCA.XEquip:GetEquipQualityPath(self.Id))
     elseif self.EquipType == XEquipGuideConfigs.EquipType.Suit then --意识
         local template = XMVCA.XEquip:GetConfigEquipSuit(self.Id)
-        self.RImgIcon:SetRawImage(template.IconPath)
+        self.RImgIcon:SetRawImage(XMVCA.XEquip:GetEquipSuitClearIconPath(self.Id))
         self.TxtName.text = template.Name
         local skillData = XMVCA.XEquip:GetSuitActiveSkillDesList(self.Id, XEnumConst.EQUIP.MAX_SUIT_COUNT)
         self:RefreshTemplateGrids(self.GridSkillDes, skillData, self.SkillPaneContent, nil, "GridSkillDes",

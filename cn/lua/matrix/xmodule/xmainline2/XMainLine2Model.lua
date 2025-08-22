@@ -1032,8 +1032,14 @@ function XMainLine2Model:CacheMainReleaseData(mainId, data)
 end
 
 -- 获取主章节上次释放时的数据
-function XMainLine2Model:GetMainReleaseData(mainId)
-    return self.CacheMainReleaseDataDic and self.CacheMainReleaseDataDic[mainId] or nil
+function XMainLine2Model:GetMainReleaseData(mainId, isRemove)
+    if self.CacheMainReleaseDataDic then
+        local data = self.CacheMainReleaseDataDic[mainId]
+        if isRemove then
+            self.CacheMainReleaseDataDic[mainId] = nil
+        end
+        return data
+    end
 end
 
 -- 获取章节上一次的解锁入口下标

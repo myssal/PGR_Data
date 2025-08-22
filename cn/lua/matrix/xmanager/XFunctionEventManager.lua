@@ -107,10 +107,14 @@ XFunctionEventManagerCreator = function()
             FunctionState = FunctionEvenState.PLAYING
         elseif XDataCenter.MedalManager.CheckCanGetNewCollection() then -- 获得收藏品
             FunctionState = FunctionEvenState.PLAYING
+        elseif XDataCenter.MedalManager.CheckCanGetNewNameplates() then -- 获得铭牌
+            FunctionState = FunctionEvenState.PLAYING
         elseif XDataCenter.CommunicationManager.ShowBirthdayStory() then -- 生日通讯
             FunctionState = FunctionEvenState.PLAYING
         elseif InMainUi and XMVCA.XAnniversary:AutoOpenReview() then -- 回顾活动
             FunctionState = FunctionEvenState.PLAYING
+        elseif XDataCenter.ItemManager.CheckAutoGiftRewardShow() then -- 自开型礼包弹窗
+            FunctionState = FunctionEvenState.PLAYING    
         end
 
         if FunctionState ~= FunctionEvenState.PLAYING then

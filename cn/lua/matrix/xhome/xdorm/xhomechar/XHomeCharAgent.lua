@@ -140,11 +140,6 @@ function XHomeCharAgent:SetObstackeEnable(obstackeEnable)
     self.HomeCharObj:SetObstackeEnable(obstackeEnable)
 end
 
---爱抚结束
-function XHomeCharAgent:DequeueFondleType()
-    self.HomeCharObj:DequeueFondleType()
-end
-
 --朝向交互家具
 function XHomeCharAgent:SetForwardToFurniture(forward)
     return self.HomeCharObj:SetForwardToFurniture(forward)

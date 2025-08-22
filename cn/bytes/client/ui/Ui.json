@@ -855,17 +855,6 @@
         "HideSetPosition": false
     },
     {
-        "UiName": "UiFightDlcDramaNew",
-        "ParentUiName": "UiFightDLC",
-        "LoadWithParent": false,
-        "UiResType": "Bundle",
-        "PrefabUrl": "Assets/Product/Ui/Prefab/BigWorld/Common/UiBigWorldFight/UiBigWorldDrama.prefab",
-        "CacheTime": 0,
-        "Recycle": false,
-        "FightingStay": 0,
-        "HideSetPosition": false
-    },
-    {
         "UiName": "UiFightComponentDLC",
         "ParentUiName": "UiFightDLC",
         "LoadWithParent": false,
@@ -6196,6 +6185,17 @@
         "HideSetPosition": false
     },
     {
+        "UiName": "UiRobotBattleRoomSkillSwitch",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiCharacterSkillSwich.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
         "UiName": "UiFubenMaintaineractionRecording",
         "LoadWithParent": false,
         "UiType": "NormalPopup",
@@ -8908,6 +8908,17 @@
         "UiType": "NormalPopup",
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiNewRoomSingleTip.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiStrongholdRune",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiStrongholdRune.prefab",
         "CacheTime": 5000,
         "Recycle": false,
         "FightingStay": 0,
@@ -19447,6 +19458,83 @@
         "HideSetPosition": false
     },
     {
+        "UiName": "UiLineArithmetic2Game",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2Game.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2Main",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2Main.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2Chapter",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2Chapter.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2Task",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2Task.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2PopupTips",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2PopupTips.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2PopupSettlement",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2PopupSettlement.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiLineArithmetic2PopupCommon",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiLineArithmetic2/UiLineArithmetic2PopupCommon.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
         "UiName": "UiMechanismMain",
         "LoadWithParent": false,
         "UiType": "Normal",
@@ -20031,6 +20119,17 @@
         "UiType": "Normal",
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/BigWorld/Common/UiBigWorldTask/UiBigWorldTaskObtainDrama.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainDramaHeart",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/BigWorld/Common/UiBigWorldTask/UiBigWorldTaskObtainDramaHeart.prefab",
         "CacheTime": 5000,
         "Recycle": false,
         "FightingStay": 0,
@@ -23501,6 +23600,39 @@
         "HideSetPosition": false
     },
     {
+        "UiName": "UiTheatre5SkillHandbook",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiTheatre5/UiTheatre5SkillHandbook.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiTheatre5Story",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiTheatre5/UiTheatre5Story.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiTheatre5PopupHandBook",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiTheatre5/UiTheatre5PopupHandBook.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
         "UiName": "UiBountyChallengeMain",
         "LoadWithParent": false,
         "UiType": "Normal",
@@ -23674,6 +23806,83 @@
         "UiResType": "Bundle",
         "PrefabUrl": "Assets/Product/Ui/Prefab/UiMainLinePOSWarFare/UiMainLinePOSWarFarePopupBoss.prefab",
         "CacheTime": 0,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiSoloReformMain",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiSoloReform/UiSoloReformMain.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiSoloReformChapterDetail",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiSoloReform/UiSoloReformChapterDetail.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiSoloReformSettlement",
+        "LoadWithParent": false,
+        "UiType": "Normal",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiSoloReform/UiSoloReformSettlement.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiSoloReformPopupReward",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiSoloReform/UiSoloReformPopupReward.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiPopupTeach",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiTeach/UiTeachType1.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiCollectionTeach",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiTeach/UiTeachType2.prefab",
+        "CacheTime": 5000,
+        "Recycle": false,
+        "FightingStay": 0,
+        "HideSetPosition": false
+    },
+    {
+        "UiName": "UiCloudGamingPopupMain",
+        "LoadWithParent": false,
+        "UiType": "NormalPopup",
+        "UiResType": "Bundle",
+        "PrefabUrl": "Assets/Product/Ui/Prefab/UiCloudGaming/UiCloudGamingPopupMain.prefab",
+        "CacheTime": 5000,
         "Recycle": false,
         "FightingStay": 0,
         "HideSetPosition": false

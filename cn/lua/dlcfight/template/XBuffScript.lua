@@ -71,11 +71,11 @@ function XBuffScriptXXXX:OnBehavior2ScriptMsgEvent(npcUUID, msgType, intList, fl
     
 end
 
-function XBuffScriptXXXX:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffTableId, buffKinds)
+function XBuffScriptXXXX:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     
 end
 
-function XBuffScriptXXXX:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffTableId, buffKinds) 
+function XBuffScriptXXXX:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     
 end
 

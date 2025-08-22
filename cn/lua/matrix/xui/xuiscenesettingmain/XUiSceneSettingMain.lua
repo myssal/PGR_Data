@@ -453,7 +453,10 @@ function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
             self:LoadUiScene(scenePath, modelPath, function() self:OnUiSceneLoaded(self.FirstLoad, scenePath) end, false)
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
-        if self.CurSelectedBackgroundGrid == grid then return end
+        local sceneId = self.SceneIdList[index]
+        if self.CurSelectedBackgroundId == sceneId then
+            return 
+        end
 
         grid:SetSelect(true)
         if self.CurSelectedBackgroundGrid then
@@ -461,7 +464,6 @@ function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
         end
         self.CurSelectedBackgroundGrid = grid
 
-        local sceneId = self.SceneIdList[index]
         XDataCenter.PhotographManager.RemoveNewSceneTempData(sceneId)
         grid:RefreshRedPoint()
 

@@ -3,7 +3,7 @@ local XRedPointConditionBabelTowerReward = {}
 -- activityType : XFubenBabelTowerConfigs.ActivityType
 function XRedPointConditionBabelTowerReward.Check(activityType)
     local taskDatas = nil
-    if activityType == nil then
+    if activityType == nil or activityType == 0 then
         taskDatas = XDataCenter.FubenBabelTowerManager.GetFullTaskList()
     elseif activityType == XFubenBabelTowerConfigs.ActivityType.Normal then
         taskDatas = XDataCenter.FubenBabelTowerManager.GetTasksByGroupIndex(1, false)

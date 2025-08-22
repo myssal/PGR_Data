@@ -30,6 +30,7 @@ function XBabelTowerTeamData:Ctor(teamId)
     self.StageLevel = XFubenBabelTowerConfigs.Difficult.Easy
     self.CaptainPos = XFubenBabelTowerConfigs.LEADER_POSITION
     self.FirstFightPos = XFubenBabelTowerConfigs.FIRST_FIGHT_POSITION
+    self.GeneralSkill = 0
 end
 
 -- 更新服务器下发的队伍数据
@@ -44,6 +45,7 @@ function XBabelTowerTeamData:UpdateData(data)
     self.StageLevel = data.StageLevel and data.StageLevel ~= 0 and data.StageLevel or XFubenBabelTowerConfigs.Difficult.Easy
     self.CaptainPos = data.CaptainPos and data.CaptainPos ~= 0 and data.CaptainPos or XFubenBabelTowerConfigs.LEADER_POSITION
     self.FirstFightPos = data.FirstFightPos and data.FirstFightPos ~= 0 and data.FirstFightPos or XFubenBabelTowerConfigs.FIRST_FIGHT_POSITION
+    self.GeneralSkill = data.GeneralSkill or 0
 
     self:UpdateChallengeBuffDic(data.ChallengeBuffInfos)
 
@@ -135,6 +137,7 @@ function XBabelTowerTeamData:ClearCharacterIds()
     self.CharacterIds = { 0, 0, 0 }
     self.CaptainPos = XFubenBabelTowerConfigs.LEADER_POSITION
     self.FirstFightPos = XFubenBabelTowerConfigs.FIRST_FIGHT_POSITION
+    self.GeneralSkill = 0
 end
 
 function XBabelTowerTeamData:GetScore(ignoreReset)
@@ -168,12 +171,20 @@ function XBabelTowerTeamData:GetFirstFightPos()
     return self.FirstFightPos
 end
 
+function XBabelTowerTeamData:GetGeneralSkill()
+    return self.GeneralSkill
+end
+
 function XBabelTowerTeamData:SetCaptainPos(captainPos)
     self.CaptainPos = captainPos
 end
 
 function XBabelTowerTeamData:SetFirstFightPos(firstFightPos)
     self.FirstFightPos = firstFightPos
+end
+
+function XBabelTowerTeamData:SetGeneralSkill(generalSkill)
+    self.GeneralSkill = generalSkill
 end
 
 function XBabelTowerTeamData:HasCaptain()

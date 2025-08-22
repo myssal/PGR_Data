@@ -120,10 +120,10 @@ function XTheatre5ShopControl:GetShopGoodsPriceByItemInstanceId(instanceId)
     local goods = self._Model.CurAdventureData:GetShopGoodsByItemInstanceId(instanceId)
 
     if XTool.IsTableEmpty(goods) then
-        XLog.Error('实例Id:'..tostring(instanceId)..' 找不到对应商品数据')
+        XLog.Error('实例Id:' .. tostring(instanceId) .. ' 找不到对应商品数据')
         return false
     end
-    
+
     ---@type XTableTheatre5Item
     local itemCfg = self._Model:GetTheatre5ItemCfgById(goods.ItemInfo.ItemId)
 
@@ -147,7 +147,7 @@ function XTheatre5ShopControl:GetSkillChoiceListCount()
     if self._Model.CurAdventureData then
         return XTool.GetTableCount(self._Model.CurAdventureData:GetSkillChoiceSkillGroup())
     end
-    
+
     return 0
 end
 
@@ -175,7 +175,7 @@ end
 
 --- 获取购买时背包格子占用提示文本
 function XTheatre5ShopControl:GetShopBuyBagContainerIndexIsFullTips(containerType)
-    return self._Model:GetTheatre5ClientConfigText('ShopBuyBagContainer'..tostring(containerType)..'IndexIsFull')
+    return self._Model:GetTheatre5ClientConfigText('ShopBuyBagContainer' .. tostring(containerType) .. 'IndexIsFull')
 end
 
 --- 获取单个商品的冻结按钮文本
@@ -201,9 +201,9 @@ end
 --- 商品售出后的价格栏显示文本
 function XTheatre5ShopControl:GetClientConfigGoodsPriceShowOnSellout()
     local content = self._Model:GetTheatre5ClientConfigText('GoodsPriceShowOnSellout')
-    
+
     content = string.gsub(content, '\\', '')
-    
+
     return content
 end
 
@@ -262,7 +262,7 @@ function XTheatre5ShopControl:GetCurTurnsGemSlotUnlockCost()
     ---@type XTableTheatre5GridUnlockCost
     local cfg = self:GetTheatre5GridUnlockCostCfg()
     local reduce = self._MainControl.GameEntityControl:GetCurRoundGridUnlockCostReduce()
-    
+
     return math.max(cfg.GoldCost - reduce, 1)
 end
 
@@ -322,9 +322,21 @@ function XTheatre5ShopControl:GetDraggingItemData()
     return self._DraggingItemData
 end
 
+function XTheatre5ShopControl:CheckIsSameItem(itemData)
+    if self._DraggingItemData then
+        return self._DraggingItemData.InstanceId == itemData.InstanceId
+    end
+
+    return false
+end
+
 function XTheatre5ShopControl:SetFocusContainer(containerType, index)
     self._FocusContainerType = containerType
     self._FocusContainerIndex = index
+end
+
+function XTheatre5ShopControl:CheckIsSameContainer(containerType, index)
+    return self._FocusContainerType == containerType and self._FocusContainerIndex == index
 end
 
 --- 判断目标容器是否可容纳拖拽的物品
@@ -336,9 +348,9 @@ function XTheatre5ShopControl:CheckDraggingItemIsFitInContainer()
     if self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillBlock and self._DraggingItemData.ItemType ~= XMVCA.XTheatre5.EnumConst.ItemType.Skill then
         return false
     elseif self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.EquipBlock and self._DraggingItemData.ItemType ~= XMVCA.XTheatre5.EnumConst.ItemType.Equip then
-        return false    
+        return false
     end
-    
+
     return true
 end
 
@@ -347,19 +359,19 @@ function XTheatre5ShopControl:OnEndDragging(cb)
     if self._DraggingItemData and self._FocusContainerIndex and self._FocusContainerType then
         -- 判断是买入/卖出/装备调整
         local originIsFromGoods = self._DraggingItemOwnerContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.Goods
-        local targetIsGoods = self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.Goods 
+        local targetIsGoods = self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.Goods
 
         -- 判断是否三选一
         local originIsFromSkillChoice = self._DraggingItemOwnerContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillSelection
         local targetIsSkillChoice = self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillSelection
-        
+
         if originIsFromSkillChoice then
             if not targetIsSkillChoice then
                 if not self:_EndDragForSkillChoice(cb) then
                     return false
                 end
             else
-                return false    
+                return false
             end
         elseif originIsFromGoods and not targetIsGoods then
             -- 买入
@@ -412,23 +424,26 @@ function XTheatre5ShopControl:_EndDragForBuyFromNormalShop(cb)
     end
 
     local isEquipped = self._FocusContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock
+    local itemType = self._DraggingItemData.ItemType
 
     XMVCA.XTheatre5:RequestTheatre5ShopBuyItem(self._DraggingItemData.InstanceId, isEquipped, self._FocusContainerIndex, function(success)
         if success then
             self:RefreshAfterBuyRequest()
+
+            self:PlayItemPlacedSFX(itemType)
         end
 
         if cb then
             cb()
         end
     end)
-    
+
     return true
 end
 
 function XTheatre5ShopControl:_EndDragForSellToNormalShop(cb)
     local isEquipped = self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock and
-        self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
+            self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
 
     -- 卖出
     XMVCA.XTheatre5:RequestTheatre5ShopSellItem(self._DraggingItemData.InstanceId, self._DraggingItemData.ItemType, isEquipped, function(success)
@@ -440,7 +455,7 @@ function XTheatre5ShopControl:_EndDragForSellToNormalShop(cb)
             cb(XMVCA.XTheatre5.EnumConst.ShopOperationType.SellGem)
         end
     end)
-    
+
     return true
 end
 
@@ -455,25 +470,31 @@ function XTheatre5ShopControl:_EndDragForEquipArrange(cb)
     end
 
     local isEquipped = self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock and
-        self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
+            self._DraggingItemOwnerContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
     local isTargetEquip = self._FocusContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock
     local isTempBag = self._DraggingItemOwnerContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
-    
+
+    -- 获取存在的被交换的道具的类型，用于音效播放
+    local item = self._Model.CurAdventureData:GetItemInBagByIndex(self._FocusContainerIndex)
+    local targetItemType = nil
+
+    if item then
+        targetItemType = item.ItemType
+    end
+
     -- 如果是从装备栏上拖到背包，需要判断背包中被交换的物品是否能放到该装备栏上
     if isEquipped and not isTargetEquip then
         -- 判断背包指定位置是否有物品
-        local item = self._Model.CurAdventureData:GetItemInBagByIndex(self._FocusContainerIndex)
-
         if item then
             if not self:CheckItemTypeFitInContainerType(item.ItemType, self._DraggingItemOwnerContainerType) then
                 return false
             end
         end
     end
-    
-    self:SendItemSwitch(self._DraggingItemData.InstanceId, self._DraggingItemData.ItemType, isEquipped, 
-    self._DraggingItemBelongIndex, isTempBag, isTargetEquip, self._FocusContainerIndex, cb)
-    
+
+    self:SendItemSwitch(self._DraggingItemData.InstanceId, self._DraggingItemData.ItemType, isEquipped,
+            self._DraggingItemBelongIndex, isTempBag, isTargetEquip, self._FocusContainerIndex, cb, targetItemType)
+
     return true
 end
 
@@ -484,7 +505,7 @@ function XTheatre5ShopControl:CheckItemTypeFitInContainerType(itemType, containe
         if not notips then
             XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('RuneToSkillContainerTips'))
         end
-        
+
         return false
     end
 
@@ -493,21 +514,76 @@ function XTheatre5ShopControl:CheckItemTypeFitInContainerType(itemType, containe
         if not notips then
             XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('SkillToRuneContainerTips'))
         end
-        
+
         return false
     end
-    
+
     return true
 end
 
+---@param itemData XTheatre5Item
+function XTheatre5ShopControl:EquipItem(itemData)
+    if itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+        if not self._Model.CurAdventureData:CheckHasEmptySkillSlot() then
+            XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('DressItemFieldIsFull'))
+            return
+        end
+    elseif itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+        if not self._Model.CurAdventureData:CheckHasEmptyRuneSlot() then
+            XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('DressItemFieldIsFull'))
+            return
+        end
+    end
+
+    local index = self._Model.CurAdventureData:GetItemIndexInBag(itemData)
+    if index then
+        local indexToEquip
+        if itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+            indexToEquip = self._Model.CurAdventureData:GetEmptyBagSkillIndex()
+        elseif itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+            indexToEquip = self._Model.CurAdventureData:GetEmptyBagRuneIndex()
+        end
+        self:SendItemSwitch(itemData.InstanceId, itemData.ItemType, false, index, false, true, indexToEquip)
+    else
+        XLog.Error('[XTheatre5ShopControl:EquipItem] itemData not found')
+    end
+end
+
+function XTheatre5ShopControl:UndressItem(itemData)
+    -- 背包已满要提示
+    if not self._Model.CurAdventureData:CheckHasEmptyBagSlot() then
+        XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('RemoveItemBagIsFull'))
+        return
+    end
+
+    local index
+    if itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+        index = self._Model.CurAdventureData:GetSkillIndexInSkillBag(itemData)
+    elseif itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+        index = self._Model.CurAdventureData:GetRuneIndexInRuneBag(itemData)
+    end
+    if index then
+        local indexToUndress = self._Model.CurAdventureData:GetEmptyBagIndex() or 1
+        self:SendItemSwitch(itemData.InstanceId, itemData.ItemType, true, index, false, false, indexToUndress)
+    else
+        XLog.Error("[XTheatre5ShopControl:UndressItem] index is nil")
+    end
+end
+
 --发生物品交换协议
-function XTheatre5ShopControl:SendItemSwitch(instanceId, itemType, srcEquipped, srcIndex, srcIsTempItem, targetEquipped, targetIndex, cb)
+function XTheatre5ShopControl:SendItemSwitch(instanceId, itemType, srcEquipped, srcIndex, srcIsTempItem, targetEquipped, targetIndex, cb, targetItemType)
     XMVCA.XTheatre5:RequestTheatre5BagItemMove(instanceId, itemType, srcEquipped, srcIndex, srcIsTempItem, targetEquipped, targetIndex, function(success)
         if success then
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW)
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_SKILL_SHOW)
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
+
+            self:PlayItemPlacedSFX(itemType)
+
+            if targetItemType then
+                self:PlayItemPlacedSFX(targetItemType)
+            end
         end
 
         if cb then
@@ -517,6 +593,10 @@ function XTheatre5ShopControl:SendItemSwitch(instanceId, itemType, srcEquipped, 
 end
 
 function XTheatre5ShopControl:_EndDragForSkillChoice(cb)
+    if not self._DraggingItemData then
+        return
+    end
+
     -- 判断位置是否对
     if self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillBlock and self._DraggingItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
         XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText('RuneToSkillContainerTips'))
@@ -539,11 +619,14 @@ function XTheatre5ShopControl:_EndDragForSkillChoice(cb)
     XMVCA.XTheatre5:RequestTheatre5SkillChoice(self._DraggingItemData.InstanceId, isTargetEquip, self._FocusContainerIndex, function(success)
         if success then
             self:RefreshAfterBuyRequest()
+            self:PlayItemPlacedSFX(XMVCA.XTheatre5.EnumConst.ItemType.Skill)
         end
 
         -- 请求完数据会立刻清除，需要客户端手动标记选择用于表现
-        self._DraggingItemData.IsSelected = true
-        
+        if self._DraggingItemData then
+            self._DraggingItemData.IsSelected = true
+        end
+
         if cb then
             cb()
         end
@@ -615,20 +698,20 @@ function XTheatre5ShopControl:GetShopChatCfg(shopChatTriggerType)
     for k, cfg in pairs(shopChatCfgs) do
         if XConditionManager.CheckConditionAndDefaultPass(cfg.Condition) then
             weighTotal = weighTotal + cfg.Weigh
-            table.insert(showShopChatCfg,cfg)
-        end    
+            table.insert(showShopChatCfg, cfg)
+        end
     end
     if weighTotal <= 0 then
         return
     end
-    local random = math.random(1, weighTotal)  
+    local random = math.random(1, weighTotal)
     local curAdd = 0
-    for _,cfg in ipairs(showShopChatCfg) do
+    for _, cfg in ipairs(showShopChatCfg) do
         curAdd = curAdd + cfg.Weigh
         if curAdd >= random then
             return cfg
-        end    
-    end  
+        end
+    end
 
 end
 
@@ -663,6 +746,15 @@ end
 --- 判断技能栏是否有空位
 function XTheatre5ShopControl:CheckHasEmptySkillSlot()
     return self._Model.CurAdventureData:CheckHasEmptySkillSlot()
+end
+
+--- 播放物品放置（购买、穿戴）音效
+function XTheatre5ShopControl:PlayItemPlacedSFX(itemType)
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+        self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_SKILL_PLACED)
+    elseif itemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+        self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_GEM_PLACED)
+    end
 end
 
 --region 杂项表

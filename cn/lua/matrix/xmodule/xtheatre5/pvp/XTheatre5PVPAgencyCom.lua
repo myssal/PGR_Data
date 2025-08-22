@@ -96,9 +96,15 @@ function XTheatre5PVPAgencyCom:OnCommonBattleSettleEvent(autoChessResult)
     if self._Model:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVP then
         return
     end
+
+    self._Model.PVPAdventureData:UpdateTrophyNum(autoChessResult.TrophyNum)
+
+    -- 回合结算仅同步胜利杯数
+    if not autoChessResult.IsFinish then
+        return
+    end
     
     local oldRating = self:_UpdateCharacterRating(autoChessResult.Rating, autoChessResult.RankProtectNum)
-    self._Model.PVPAdventureData:UpdateTrophyNum(autoChessResult.TrophyNum)
 
     --- 根据积分变化累计量和实际变化量判断是否触发段位保护
     local isUsedRankProtect = false

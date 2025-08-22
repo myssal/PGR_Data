@@ -605,8 +605,7 @@ function XUiEquipDetailChildV2P6:UpdateOverrun()
     if not self.CanOverrun then 
         return
     end
-
-    XMVCA.XEquip:CheckOverrunGuide(self.EquipId)
+    
     local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     local lv = equip:GetOverrunLevel()
     local btnName = XUiHelper.GetText("EquipOverrun")

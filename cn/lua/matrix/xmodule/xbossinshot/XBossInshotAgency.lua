@@ -152,7 +152,7 @@ function XBossInshotAgency:ExOpenMainUi()
         return false
     end
 
-    if not XMVCA.XSubPackage:CheckSubpackageByIdAndIntercept(XEnumConst.SUBPACKAGE.TEMP_VIDEO_SUBPACKAGE_ID.GAMEPLAY) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.BossInshot) then
         return false
     end
 

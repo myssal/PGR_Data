@@ -50,7 +50,7 @@ end
 function XUiPanelDownloadTips:GetRemoveResIdList()
     local res = {}
     for k, grid in pairs(self.DynamicTable:GetGrids()) do
-        print("hyx GetRemoveResIdList ", k, grid, grid:GetDownFlag())
+        -- print("SP/DN GetRemoveResIdList ", k, grid, grid:GetDownFlag())
         if not grid:GetDownFlag() then
             local resIdlist = grid.ResIdList
             for i = 1, #resIdlist do

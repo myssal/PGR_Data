@@ -42,28 +42,6 @@ end
 local MapTransform = XGuildDormMapGridManager.GetMapGridTransform()
 local GroundRoot = GetGroundRoot()
 local WallRoot = GetWallRoot()
---=============
---初始化主场景
---=============
-local function InitMapGrid(model)
-    local data = XGuildDormMapGridManager.GetMapGridData()
-    data.Transform = model.transform
-    data.GroundRoot = data.Transform:Find("@GroundRoot")
-    data.WallRoot = data.Transform:Find("@WallRoot")
-    data.Transform:SetParent(nil)
-    data.Transform.gameObject:SetActiveEx(false)
-    --TODO 复用了宿舍的网格脚本，跑通后应逐步替换
-    data.MapGridManager = model:GetComponent("XHomeMapManager")
-    data.MapGridManager:Init()
-end
---=============
---初始化地图网格
---=============
-function XGuildDormMapGridManager.InitMapGrid()
-    local mapGridPrefab = XDataCenter.GuildDormManager.ResourceManager.InstantiateMapGrid()
-    if not mapGridPrefab then return end
-    InitMapGrid(mapGridPrefab)
-end
 
 function XGuildDormMapGridManager.HideMapGrid()
     MapTransform.gameObject:SetActiveEx(false)

@@ -114,7 +114,7 @@ function XUiSpringFestivalSmashEggs:RegisterButtonClick()
     end
 
     if self.BtnHelpCourse then
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(XSpringFestivalActivityConfigs.GetSmashEggsHelpId())
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(XSpringFestivalActivityConfigs.GetSmashEggsHelpId())
         self:BindHelpBtn(self.BtnHelpCourse, template.Function)
     end
     for i = 1, MODEL_COUNT do
@@ -146,7 +146,7 @@ end
 function XUiSpringFestivalSmashEggs:ShowHelp()
     local helpId = XSpringFestivalActivityConfigs.GetSmashEggsHelpId()
     if helpId > 0 then
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
         XUiManager.ShowHelpTip(template.Function)
     end
 end

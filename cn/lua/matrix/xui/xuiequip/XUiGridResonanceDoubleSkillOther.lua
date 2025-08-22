@@ -36,7 +36,7 @@ function XUiGridResonanceDoubleSkillOther:RefreshResonanceSkill()
     local resonanceSkillNum = 0
     local resonanceInfo = self.EquipData.ResonanceInfo
     if resonanceInfo then
-        resonanceSkillNum = #resonanceInfo
+        resonanceSkillNum = XTool.GetTableCount(resonanceInfo)
     end
     if resonanceSkillNum == 0 then
         --穿戴中的装备无共鸣技能

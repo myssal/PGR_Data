@@ -3,7 +3,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 
 ---@class XUiTheatre5TaskPanel: XUiNode
 local XUiTheatre5TaskPanel = XLuaUiManager.Register(XUiNode, "XUiTheatre5TaskPanel")
-
+local MaskKey = "XUiTheatre5TaskPanel"
 function XUiTheatre5TaskPanel:OnStart()
     self._TaskIds = nil
     self:InitDynamicTable()
@@ -18,6 +18,9 @@ end
 function XUiTheatre5TaskPanel:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.OnTaskFinish, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_MULTI, self.OnTaskFinish, self)
+    if XLuaUiManager.IsMaskShow(MaskKey) then
+        XLuaUiManager.SetMask(false, MaskKey)
+    end    
 end
 function XUiTheatre5TaskPanel:InitDynamicTable()
     self._DynamicTable = XDynamicTableNormal.New(self.PanelTaskStoryList)
@@ -62,14 +65,14 @@ function XUiTheatre5TaskPanel:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         local grids = self._DynamicTable:GetGrids()
         local gridCount = XTool.GetTableCount(grids)
-        if XTool.IsTableEmpty(grids) then
+        if XTool.IsTableEmpty(grids) or #grids <= 0 then
             return
         end    
         for i,grid in ipairs(grids) do
             grid.GameObject:SetActiveEx(false)
         end
         local index = 0
-        XLuaUiManager.SetMask(true)
+        XLuaUiManager.SetMask(true, MaskKey)
         for i,grid in ipairs(grids) do
             XScheduleManager.ScheduleOnce(function()
                 if not XTool.UObjIsNil(grid.GameObject) then
@@ -80,7 +83,7 @@ function XUiTheatre5TaskPanel:OnDynamicTableEvent(event, index, grid)
                     end
                     index = index + 1
                     if index >= gridCount then
-                        XLuaUiManager.SetMask(false)
+                        XLuaUiManager.SetMask(false, MaskKey)
                     end    
                 end        
             end, 100 * i)

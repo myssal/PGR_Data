@@ -101,18 +101,11 @@ function XBigWorldMessageAgency:TryOpenMessageTipUi()
         local messageData = self._Model:PeekForceMessageData()
 
         if messageData then
-            if not XMVCA.XBigWorldUI:CheckAllowOpenWithImpact("UiBigWorldMessageTips") then
-                return false
+            local state = XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldMessageTips", messageData)
+            if state then
+                self._Model:DequeueForceMessageData()
             end
-            XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_OPEN_UI_BY_SEQUENTIAL_SYSTEM, {
-                Serial = CS.StatusSyncFight.ESequentialJobsSerial.Main:GetHashCode(),
-                UiName = "UiBigWorldMessageTips",
-                OpenArgs = {
-                    messageData
-                },
-            })
-            self._Model:DequeueForceMessageData()
-            return true
+            return state
         end
     end
 

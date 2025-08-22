@@ -61,6 +61,7 @@ function XSkyGardenCafeCardEntity:OnRelease()
     agency:RemoveInnerEvent(DlcEventId.EVENT_CAFE_RESET_BUFF_PREVIEW, self.OnPreviewReset, self)
     agency:RemoveInnerEvent(DlcEventId.EVENT_CAFE_DEAL_INDEX_UPDATE, self.OnPreviewReset, self)
     self:ReleaseBuff()
+    self:ClearBuffArgs()
     self._Id = 0
 end
 
@@ -94,10 +95,12 @@ end
 --- 获取卡牌的细节描述
 ---@return string
 function XSkyGardenCafeCardEntity:GetCustomerDetails()
+    local detail
     if self._DetailDesc then
-        return self._DetailDesc
+        detail = self._DetailDesc
+    else
+        detail = self._Model:GetCustomerDetails(self._Id)
     end
-    local detail = self._Model:GetCustomerDetails(self._Id)
     return XUiHelper.ReplaceTextNewLine(detail:gsub(Pattern, self._ReplaceHandler))
 end
 
@@ -403,6 +406,16 @@ end
 
 function XSkyGardenCafeCardEntity:AddBuffArgs(key, value)
     self._BuffArgs[key] = value
+end
+
+function XSkyGardenCafeCardEntity:ClearBuffArgs()
+    if XTool.IsTableEmpty(self._BuffArgs) then
+        return
+    end
+    for key, _ in pairs(self._BuffArgs) do
+        self._BuffArgs[key] = nil
+    end
+    self._DetailDesc = false
 end
 
 function XSkyGardenCafeCardEntity:SetCustomerDetails(value)

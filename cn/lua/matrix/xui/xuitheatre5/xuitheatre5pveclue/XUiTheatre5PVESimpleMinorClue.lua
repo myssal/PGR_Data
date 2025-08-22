@@ -21,10 +21,19 @@ function XUiTheatre5PVESimpleMinorClue:Update(clueId)
     self.RImgSpecialBg.gameObject:SetActiveEx(clueCfg.ShowType == XMVCA.XTheatre5.EnumConst.PVEClueShowType.RImgSpecialBg)
     self.RImgClue:SetRawImage(clueCfg.Img)
     self.TxtTitle.text = clueCfg.Title
-    self.Lock.gameObject:SetActiveEx(clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Lock) 
+    self.Lock.gameObject:SetActiveEx(clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Lock)
+    local desc = ""
+    if clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Lock then
+        desc = clueCfg.LockDesc
+    elseif clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Unlock then
+        desc = clueCfg.UnlockDesc
+    elseif clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
+        desc = clueCfg.CompleteDesc
+    end      
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)         
 end
 
-function XUiTheatre5PVESimpleMinorClue:UpdateCuleBoard(localPosition, visible)
+function XUiTheatre5PVESimpleMinorClue:UpdateCuleBoard(localPosition, visible, playAnim)
     local clueCfg = self._Control.PVEControl:GetDeduceClueCfg(self._ClueId)
     if not clueCfg then
         return
@@ -32,6 +41,9 @@ function XUiTheatre5PVESimpleMinorClue:UpdateCuleBoard(localPosition, visible)
     self.GameObject.name = string.format("%s_%s", self.__cname, clueCfg.Index)
     self.Transform.localPosition = localPosition 
     self:SetVisible(visible)
+    if visible and playAnim then
+        self:PlayAnimation("Storage")
+    end   
 end
 
 function XUiTheatre5PVESimpleMinorClue:OnClickClue()

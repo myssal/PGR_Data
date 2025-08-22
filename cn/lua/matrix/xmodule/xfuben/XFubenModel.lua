@@ -324,10 +324,6 @@ end
 
 ----配置表相关start
 
-function XFubenModel:GetStageTypeCfg(stageId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.StageType, stageId)
-end
-
 ------获取整个副本配置表
 function XFubenModel:GetStageCfgs()
     return self._ConfigUtil:GetByTableKey(TableKey.Stage)
@@ -1239,6 +1235,11 @@ end
 function XFubenModel:GetStageTypeCfg(stageId)
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.StageType, stageId, true)
     return config
+end
+
+function XFubenModel:GetStageRobotIdList(stageId, ignoreError)
+    local config = self:GetStageCfg(stageId, ignoreError)
+    return config and config.RobotId or {}
 end
 
 ---

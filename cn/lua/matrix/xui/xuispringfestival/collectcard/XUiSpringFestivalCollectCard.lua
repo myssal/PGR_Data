@@ -87,7 +87,7 @@ function XUiSpringFestivalCollectCard:RegisterButtonEvent()
         end
     end
     if self.BtnHelpCourse then
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(XSpringFestivalActivityConfigs.GetCollectHelpId())
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(XSpringFestivalActivityConfigs.GetCollectHelpId())
         self:BindHelpBtn(self.BtnHelpCourse,template.Function)
     end
 end
@@ -126,7 +126,7 @@ end
 function XUiSpringFestivalCollectCard:ShowHelp()
     local helpId = XSpringFestivalActivityConfigs.GetCollectHelpId()
     if helpId > 0 then
-        local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+        local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
         XUiManager.ShowHelpTip(template.Function)
     end
 end

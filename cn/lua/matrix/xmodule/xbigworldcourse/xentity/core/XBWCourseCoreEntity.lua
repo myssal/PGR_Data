@@ -123,6 +123,14 @@ function XBWCourseCoreEntity:GetBanner()
     return ""
 end
 
+function XBWCourseCoreEntity:GetSpineBanner()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseCoreSpineBannerByCoreId(self:GetCoreId())
+    end
+
+    return ""
+end
+
 function XBWCourseCoreEntity:GetGroupType()
     local groupId = self:GetGroupId()
 

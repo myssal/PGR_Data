@@ -25,6 +25,13 @@ function XMovieActionFullScreenDialog:Ctor(actionData)
     self.IsReset = paramToNumber(params[8]) ~= 0
     self.IsClose = paramToNumber(params[9]) ~= 0
     self.IsCenter = paramToNumber(params[10]) ~= 0
+    
+    -- 判断是否分成了多段
+    if string.find(self.DialogContent, '<para\\>') then
+        self.IsMultyContent = true
+        self.DialogContentList = string.Split(self.DialogContent, '<para\\>', true)
+        self.DialogParaCount = #self.DialogContentList
+    end
 end
 
 function XMovieActionFullScreenDialog:GetEndDelay()
@@ -59,35 +66,32 @@ function XMovieActionFullScreenDialog:OnInit()
         self:CreateEmptyGrid(math.abs(self.ChangeLinePlus))
     end
 
-    local dialogContent = XMVCA.XMovie:ExtractGenderContent(self.DialogContent)
-    local grid = self:GetDialogGridFromPool()
-    grid:Refresh(dialogContent, self.IsCenter, self.Color, self.Duration, function()
-        self:OnTypeWriterComplete()
-    end)
-    grid.GameObject:SetActiveEx(true)
-    self.IsTyping = true
-
-    -- 在对话后创建空行
-    if self.ChangeLinePlus > 0 then
-        self:CreateEmptyGrid(self.ChangeLinePlus)
+    local dialogContent = nil
+    
+    if self.IsMultyContent then
+        dialogContent = self.DialogContentList[1]
+        self.MultyIndex = 1
+    else
+        dialogContent = self.DialogContent
     end
 
-    local imgNext = self.UiRoot.ImgNext
-    imgNext.transform:SetParent(grid.Transform, false)
-    imgNext.gameObject:SetActiveEx(false)
+    dialogContent = XMVCA.XMovie:ExtractGenderContent(dialogContent)
+    
+    self:ShowOneContent(dialogContent)
 
-    local iconNext = self.UiRoot.IconNext
-    local color = self.Color and self.Color or DefaultColor
-    iconNext.color = XUiHelper.Hexcolor2Color(color)
+    --- 多段文本的处理放在最后一段显示时
+    if not self.IsMultyContent then
+        -- 在对话后创建空行
+        if self.ChangeLinePlus > 0 then
+            self:CreateEmptyGrid(self.ChangeLinePlus)
+        end
+    end
 
     local cvId = self.CvId
     if cvId ~= 0 then
         self:StopLastCv()
         PlayingCvInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId)
     end
-
-    local dialogName = ""
-    XDataCenter.MovieManager.PushInReviewDialogList(dialogName, dialogContent)
 end
 
 function XMovieActionFullScreenDialog:OnDestroy()
@@ -118,9 +122,11 @@ function XMovieActionFullScreenDialog:OnClickBtnSkipDialog()
         grid:StopTypeWriter()
         self.UiRoot.ImgNext.gameObject:SetActiveEx(true)
     else
-        self.Skipped = true
+        if not self:ShowNextParaContent() then
+            self.Skipped = true
 
-        self:OnTypeWriterComplete()
+            self:OnTypeWriterComplete()
+        end
     end
 end
 
@@ -128,6 +134,14 @@ function XMovieActionFullScreenDialog:OnTypeWriterComplete()
     self.IsTyping = false
     self.UiRoot.ImgNext.gameObject:SetActiveEx(true)
 
+    if not self.IsAutoPlay and not self.Skipped then
+        return
+    end
+
+    if self:CheckHasNextPara() then
+        return
+    end
+    
     if self.IsAutoPlay or self.Skipped then
         self.Skipped = nil
         local ignoreLock = self.IsAutoPlay
@@ -139,7 +153,9 @@ function XMovieActionFullScreenDialog:OnSwitchAutoPlay(autoPlay)
     self.IsAutoPlay = autoPlay
     self:ClearDelayId() -- 清理定时器
     if autoPlay and self.IsTyping == false then
-        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
+        if not self:CheckHasNextPara() then
+            XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
+        end
     end
 end
 
@@ -168,7 +184,8 @@ end
 function XMovieActionFullScreenDialog:ClearAllDialogGrids()
     self.UiRoot.FullScreenDialogUsingIndex = 1
     self.CurIndex = nil
-
+    self.MultyIndex = 1
+    
     local gridList = self.UiRoot.FullScreenDialogGrids
     for _, grid in pairs(gridList) do
         grid:Reset()
@@ -197,6 +214,66 @@ function XMovieActionFullScreenDialog:CreateEmptyGrid(num)
         tmpGrid:Refresh(tmpDialogContent)
         tmpGrid.GameObject:SetActiveEx(true)
     end
+end
+
+--- 封装的设置文本接口
+function XMovieActionFullScreenDialog:ShowOneContent(content)
+    local grid = self:GetDialogGridFromPool()
+    grid:Refresh(content, self.IsCenter, self.Color, self.Duration, function()
+        self:OnTypeWriterComplete()
+    end)
+    grid.GameObject:SetActiveEx(true)
+    self.IsTyping = true
+
+    local imgNext = self.UiRoot.ImgNext
+    imgNext.transform:SetParent(grid.Transform, false)
+    imgNext.gameObject:SetActiveEx(false)
+
+    local iconNext = self.UiRoot.IconNext
+    local color = self.Color and self.Color or DefaultColor
+    iconNext.color = XUiHelper.Hexcolor2Color(color)
+
+    local dialogName = ""
+    XDataCenter.MovieManager.PushInReviewDialogList(dialogName, content)
+    
+    return grid
+end
+
+--- 封装的设置下一个文本的接口
+function XMovieActionFullScreenDialog:ShowNextParaContent()
+    if self:CheckHasNextPara() then
+        self.CurIndex = self.CurIndex + 1
+        self.MultyIndex = self.MultyIndex + 1
+        
+        local dialogContent = self.DialogContentList[self.MultyIndex]
+        dialogContent = XMVCA.XMovie:ExtractGenderContent(dialogContent)
+
+        self:ShowOneContent(dialogContent)
+
+        if self.MultyIndex == self.DialogParaCount then
+            -- 在对话后创建空行
+            if self.ChangeLinePlus > 0 then
+                self:CreateEmptyGrid(self.ChangeLinePlus)
+            end
+        end
+
+        self.UiRoot:UpdateLastActionTime()
+        
+        return true
+    end
+    
+    return false
+end
+
+--- 判断是否有下一段
+function XMovieActionFullScreenDialog:CheckHasNextPara()
+    if self.IsMultyContent then
+        if self.MultyIndex < self.DialogParaCount then
+            return true
+        end
+    end
+    
+    return false
 end
 
 return XMovieActionFullScreenDialog

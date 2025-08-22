@@ -112,54 +112,54 @@ function XUiSkyGardenCafeGame:InitCb()
     self._ResetCb = function()
         self._Control:GetBattle():GetRoundEntity():DoRoundReStart()
     end
-
-    self.BtnGiveup.CallBack = function()
+    
+    self.BtnGiveup:AddEventListener(function()
         local data = XMVCA.XBigWorldCommon:GetPopupConfirmData()
         data:InitInfo(nil, self._Control:GetQuitGameText()):InitToggleActive(false):InitSureClick(nil, self.GiveUpCb)
 
         XMVCA.XBigWorldUI:Open("UiSkyGardenCafePopupDetail", data)
-    end
+    end)
 
-    self.BtnLeave.CallBack = function()
+    self.BtnLeave:AddEventListener(function()
         self:Close()
-    end
+    end)
 
     self.BtnCollapse.CallBack = function()
         self:OnBtnCollapseClick()
     end
 
-    self.BtnStart.CallBack = function()
+    self.BtnStart:AddEventListener(function()
         self:OnBtnStartClick()
-    end
+    end)
 
-    self.BtnClick.CallBack = function()
+    self.BtnClick:AddEventListener(function()
         self:OnBtnRoleClick()
-    end
+    end)
 
-    self.BtnReDraw.CallBack = function()
+    self.BtnReDraw:AddEventListener(function()
         self:OnBtnReDrawClick()
-    end
+    end)
 
-    self.BtnLibrary.CallBack = function()
+    self.BtnLibrary:AddEventListener(function()
         self:OnBtnLibraryClick()
-    end
+    end)
 
-    self.BtnCloseDetail.CallBack = function()
+    self.BtnCloseDetail:AddEventListener(function()
         self:RefreshBigItem(false)
-    end
+    end)
 
-    self.BtnSwitch.CallBack = function()
+    self.BtnSwitch:AddEventListener(function()
         self:OnBtnSwitchClick()
-    end
+    end)
 
-    self.BtnReset.CallBack = function()
+    self.BtnReset:AddEventListener(function()
         self:OnBtnResetClick()
-    end
+    end)
 
     if self.BtnHelp then
-        self.BtnHelp.CallBack = function()
+        self.BtnHelp:AddEventListener(function()
             self:OnBtnHelpClick()
-        end
+        end)
     end
 
     self._Control:SetCardUpdateHandler(handler(self, self.CardUpdate))

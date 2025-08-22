@@ -131,7 +131,10 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XFubenSkyGarden XFubenSkyGardenAgency
 ---@field XDlcHelper XDlcHelperAgency
 ---@field XDlcRelink XDlcRelinkAgency
+---@field XLineArithmetic2 XLineArithmetic2Agency
 ---@field XFashionStory XFashionStoryAgency
+---@field XHelpCourse XHelpCourseAgency
+---@field XSoloReform XSoloReformAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -190,7 +193,6 @@ end
 
 function XMVCACls:Init()
     if self._IsInit then
-        self:_ReleaseAllDelayControl() --这里全部移除掉
         self:_Reset()
     end
     self._IsInit = true --避免第一次进来就reset
@@ -199,22 +201,19 @@ end
 
 function XMVCACls:_InitAllAgencyEvent()
     for _, v in pairs(self._AgencyDict) do
-        v:InitEvent() --跨模块事件
-        v:AfterInitManager()
+        v:_InitAgencyEvent() --跨模块事件
     end
 end
 
 function XMVCACls:_Reset()
-    --for _, v in pairs(self._ControlDict) do
-    --    v:ResetAll()
-    --end
+    self:_ReleaseAllDelayControl() --这里全部移除掉
+    for _, v in pairs(self._ControlDict) do
+        v:Release()
+    end
+    self._ControlDict = {}
     for _, v in pairs(self._AgencyDict) do
         v:_CallResetAll()
     end
-    --model在agency里调用了
-    --for _, v in pairs(self._ModelDict) do
-    --    v:ResetAll()
-    --end
 end
 
 ---获取Agency
@@ -320,7 +319,7 @@ end
 
 --直接移除所有的延迟释放control
 function XMVCACls:_ReleaseAllDelayControl()
-    for _, control in ipairs(self._ControlReleaseDict) do
+    for _, control in pairs(self._ControlReleaseDict) do
         control:Release()
     end
     self._ControlReleaseDict = {}
@@ -365,16 +364,19 @@ function XMVCACls:_GetOrRegisterModel(id)
 end
 
 function XMVCACls:_ReleaseAll()
+    self:_ReleaseAllDelayControl()
+
+    for _, control in pairs(self._ControlDict) do
+        control:Release()
+    end
+
     for _, agency in pairs(self._AgencyDict) do
         agency:Release()
     end
     for moduleId, _ in pairs(self._AgencyDict) do
         self[moduleId] = nil
     end
-    for _, control in pairs(self._ControlDict) do
-        control:Release()
-    end
-    self:_ReleaseAllDelayControl()
+
     for _, model in pairs(self._ModelDict) do
         model:Release()
     end
@@ -627,7 +629,10 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XTheatre5)
     self:RegisterAgency(ModuleId.XBountyChallenge)
     self:RegisterAgency(ModuleId.XDlcRelink)
+    self:RegisterAgency(ModuleId.XLineArithmetic2)
     self:RegisterAgency(ModuleId.XFashionStory)
+    self:RegisterAgency(ModuleId.XSoloReform)
+    self:RegisterAgency(ModuleId.XHelpCourse)
 end
 
 function XMVCACls:AddPreloadConfig(path)

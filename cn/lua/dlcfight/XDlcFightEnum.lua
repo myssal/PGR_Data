@@ -77,6 +77,7 @@ ELuaEventTarget = {
     Level = 1,
     Npc = 2,
     Buff = 4,
+    NpcAllScript = 6,
     All = 7,
 }
 ENpcCampType = {
@@ -499,6 +500,7 @@ EQuestObjectiveType = {
     OnLevelTimeOut = 10,
     CheckIntVar = 11,
     NarrativeComplete = 12,
+    CollectSceneObject = 13,
 }
 EIntCheckType = {
     GreaterThan = 1,

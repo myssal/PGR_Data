@@ -3,6 +3,7 @@ local Character = {}
 local DlcCharacter = {}
 local DlcFuben = {}
 local DlcCondition = {}
+local BigWorld = {}
 local Player = {}
 local SetConfigs = {}
 local LoginManager = {}
@@ -182,6 +183,14 @@ end
 function SetConfigs.IsControllerMapSetButtonType(id)
     local cfg = XSetConfigs.GetControllerMapCfg()
     return cfg[id] and cfg[id].Type == XSetConfigs.ControllerSetItemType.SetButton
+end
+
+function SetConfigs.GetStageName(stageId, ignoreError)
+    return XFubenConfigs.GetStageName(stageId, ignoreError)
+end
+
+function SetConfigs.GetStageRobotIdList(stageId, ignoreError)
+    return XFubenConfigs.GetStageRobotIdList(stageId, ignoreError)
 end
 
 function LoginManager.SetHeartbeatTimeout(heartbeatTimeout)
@@ -494,6 +503,13 @@ function ConditionManager.CheckCondition(conditionId)
     return XConditionManager.CheckCondition(conditionId)
 end
 
+function BigWorld.OpenBigWorldUi(uiName, args)
+    if args then
+        return XMVCA.XBigWorldUI:Open(uiName, table.unpack(args))
+    end
+    return XMVCA.XBigWorldUI:Open(uiName)
+end
+
 function UiDialog.CheckOpenExitFightTips(stageId)
     if not XMVCA.XFubenBossSingle:IsBossSingleStage(stageId) then
         return false
@@ -527,6 +543,7 @@ CsCallLua.Fuben = Fuben
 CsCallLua.Character = Character
 CsCallLua.DlcFuben = DlcFuben
 CsCallLua.DlcCondition = DlcCondition
+CsCallLua.BigWorld = BigWorld
 CsCallLua.Player = Player
 CsCallLua.SetConfigs = SetConfigs
 CsCallLua.LoginManager = LoginManager

@@ -4,12 +4,23 @@
 local XDragonRageControl = XClass(XControl, 'XDragonRageControl')
 
 function XDragonRageControl:OnInit()
-
+    -- 保底检查数据是否对得上
+    self:_CheckDragonRageDataIsValid()
 end
 
 
 function XDragonRageControl:OnRelease()
 
+end
+
+-- 保底检查龙怒数据是否属于当前轮次
+function XDragonRageControl:_CheckDragonRageDataIsValid()
+    local curRoundId = XDataCenter.GuildWarManager.GetCurrentRoundId()
+    local dragonRageOwnRoundId = self._Model:GetDragonRageData():GetOwnRoundId()
+    
+    if curRoundId ~= dragonRageOwnRoundId then
+        XLog.CustomReport(ModuleId.XGuildWar, '检查发现龙怒不是当前轮次的数据，龙怒数据所属轮次：'..tostring(dragonRageOwnRoundId)..' 实际轮次: '..tostring(curRoundId))
+    end
 end
 
 --- 是否开启龙怒系统玩法

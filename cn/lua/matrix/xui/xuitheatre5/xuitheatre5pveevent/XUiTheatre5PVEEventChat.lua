@@ -7,6 +7,9 @@ function XUiTheatre5PVEEventChat:OnStart()
     self._CurEventId = nil
     self._ItemGridList = {}
     XUiHelper.RegisterClickEvent(self, self.BtnSure, self.OnClickConfirm, true, true, 0.5) 
+    
+    self.TxtList = self.TxtList or XUiHelper.TryGetComponent(self.Transform, "TxtList", "RectTransform")
+    self.TxtListNoReward = self.TxtListNoReward or XUiHelper.TryGetComponent(self.Transform, "TxtListNoReward", "RectTransform")
 end
 
 function XUiTheatre5PVEEventChat:UpdateData(eventCfg)
@@ -14,9 +17,28 @@ function XUiTheatre5PVEEventChat:UpdateData(eventCfg)
         return
     end
     self._CurEventId = eventCfg.Id
-    self.TxtContent.text = XUiHelper.ReplaceTextNewLine(eventCfg.Desc)
     self.BtnSure:SetName(eventCfg.ConfirmContent)
-    self:UpdateReward(eventCfg)     
+    if self:UpdateReward(eventCfg) then
+        self.TxtContent.text = XUiHelper.ReplaceTextNewLine(eventCfg.Desc)
+        self.TxtContent.gameObject:SetActiveEx(true)
+        self.TxtDesc.gameObject:SetActiveEx(false)
+        if self.TxtList then
+            self.TxtList.gameObject:SetActiveEx(true)
+        end
+        if self.TxtListNoReward then
+            self.TxtListNoReward.gameObject:SetActiveEx(false)
+        end
+    else
+        self.TxtDesc.text = XUiHelper.ReplaceTextNewLine(eventCfg.Desc)
+        self.TxtDesc.gameObject:SetActiveEx(true)
+        self.TxtContent.gameObject:SetActiveEx(false)
+        if self.TxtList then
+            self.TxtList.gameObject:SetActiveEx(false)
+        end
+        if self.TxtListNoReward then
+            self.TxtListNoReward.gameObject:SetActiveEx(true)
+        end
+    end
 end
 
 function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
@@ -26,7 +48,7 @@ function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
     local hasReward = XTool.IsNumberValid(eventCfg.EventLevelGroup) and XTool.IsNumberValid(chapterLevelCfg.EventLevel)
     self.NodeReward.gameObject:SetActiveEx(hasReward)       
     if not hasReward then
-        return
+        return false
     end
     local eventLevelCfgs = self._Control.PVEControl:GetPveEventLevelCfgs(eventCfg.EventLevelGroup)
     local eventLevelCfg
@@ -37,7 +59,7 @@ function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
         end    
     end
     if not eventLevelCfg then
-        return
+        return false
     end    
     --拿到验证是否双倍奖励事件id
     local doubleEventId,isDouble
@@ -48,10 +70,12 @@ function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
     end
    
     local isDouble = true
-    if not XTool.IsTableEmpty(curChapterData.HandleEvents) then
-        for _, eventId in pairs(curChapterData.HandleEvents) do
+    local finishEvents = self._Control.PVEControl:GetHistoryFinishEvents(curChapterData.ChapterId)
+    if not XTool.IsTableEmpty(finishEvents) then
+        for _, eventId in pairs(finishEvents) do
             if eventId == doubleEventId then
                 isDouble = false
+                break
             end     
         end
     end
@@ -61,19 +85,26 @@ function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
             table.insert(itemList, {Id = eventLevelCfg.ItemId[i], Type = eventLevelCfg.ItemType[i], Count = eventLevelCfg.ItemCount[i]})
         end
     end
-    if not XTool.IsTableEmpty(eventLevelCfg.BonusItemTypes) then
-        for i = 1, #eventLevelCfg.BonusItemTypes do
-            table.insert(itemList, {Id = eventLevelCfg.BonusItemIds[i], Type = eventLevelCfg.BonusItemTypes[i], 
-            Count = eventLevelCfg.BonusItemCounts[i], IsFirst = true})
+    if isDouble then
+        if not XTool.IsTableEmpty(eventLevelCfg.BonusItemTypes) then
+            for i = 1, #eventLevelCfg.BonusItemTypes do
+                table.insert(itemList, {Id = eventLevelCfg.BonusItemIds[i], Type = eventLevelCfg.BonusItemTypes[i], 
+                Count = eventLevelCfg.BonusItemCounts[i], IsFirst = true})
+            end
         end
-    end    
+    end        
     if not XTool.IsTableEmpty(itemList) then
         XTool.UpdateDynamicItem(self._ItemGridList, itemList, self.GridTheatre5Item, XUiTheatre5GetPVERewardItem, self)
     end     
+    return true
 end
 
 function XUiTheatre5PVEEventChat:OnClickConfirm()
+    if not XTool.IsNumberValid(self._CurEventId) then
+        return
+    end    
     XMVCA.XTheatre5.PVEAgency:RequestPveEventPromote(self._CurEventId)
+    self._CurEventId = nil  --点击后清空防止弹窗关闭了快速连点
 end
 
 function XUiTheatre5PVEEventChat:OnDestroy()

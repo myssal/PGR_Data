@@ -192,4 +192,9 @@ function XUiFangKuaiChapterDetail:OnClickItem()
     XLuaUiManager.Open("UiFangKuaiPropDetail", self._StageId)
 end
 
+-- 引导用
+function XUiFangKuaiChapterDetail:GetStageId()
+    return self._StageId
+end
+
 return XUiFangKuaiChapterDetail

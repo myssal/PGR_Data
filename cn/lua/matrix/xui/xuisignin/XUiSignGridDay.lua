@@ -170,12 +170,6 @@ function XUiSignGridDay:SetBtnCardActive(isActive)
     end
 end
 
-function XUiSignGridDay:SetPanelDisableActive(isActive)
-    if self.PanelDisable then
-        self.PanelDisable.gameObject:SetActiveEx(isActive)
-    end
-end
-
 function XUiSignGridDay:SetPanelDisableParentActive(isActive)
     local parent = self.PanelDisable and self.PanelDisable.transform.parent
     if parent then

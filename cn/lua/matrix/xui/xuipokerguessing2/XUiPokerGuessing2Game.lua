@@ -1,6 +1,7 @@
 local XUiPokerGuessing2Character = require("XUi/XUiPokerGuessing2/Game/XUiPokerGuessing2Character")
 local XUiPokerGuessing2Card = require("XUi/XUiPokerGuessing2/Game/XUiPokerGuessing2Card")
 local XPokerGuessing2Enum = require("XModule/XPokerGuessing2/XPokerGuessing2Enum")
+local XUiPanelPokerGuessing2ChangeCard = require('XUi/XUiPokerGuessing2/Game/XUiPanelPokerGuessing2ChangeCard')
 
 ---@class XUiPokerGuessing2Game : XLuaUi
 ---@field _Control XPokerGuessing2Control
@@ -16,10 +17,16 @@ function XUiPokerGuessing2Game:OnAwake()
     self._Player = XUiPokerGuessing2Character.New(self.PanelRight, self, true)
     ---@type XUiPokerGuessing2Character
     self._Enemy = XUiPokerGuessing2Character.New(self.PanelLeft, self)
+    ---@type XUiPanelPokerGuessing2ChangeCard
+    self.PanelChangeCard = XUiPanelPokerGuessing2ChangeCard.New(self.PanelChangeCard, self, self.BtnClose)
+    self.PanelChangeCard:Close()
+    
     XUiHelper.RegisterClickEvent(self, self.BtnPlay, self.OnClickPlay, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnHelp, self.OnClickHelp, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnClickBack, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnClickMain, nil, true)
+    
+    self.BtnSkillChangeSelf:AddEventListener(handler(self, self.OnBtnSkillChangeSelfClick))
+    self.BtnSkillChangeEnemy:AddEventListener(handler(self, self.OnBtnSkillChangeEnemyClick))
 
     self.PanelDraw = self.PanelDraw or self.TxtDraw
     if self.PanelDraw then
@@ -39,30 +46,33 @@ function XUiPokerGuessing2Game:OnStart()
     self:UpdateStageDesc()
     self:UpdatePlayer()
     self:UpdateEnemy()
-    self:UpdateTips()
+    self:UpdateSkillShow()
     self:PlayAnimationStartRound()
 end
 
 function XUiPokerGuessing2Game:OnEnable()
-    XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_TIPS, self.UpdateTips, self)
+    XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_SKILL_SHOW, self.UpdateSkillShow, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_SPEAK, self.UpdateSpeak, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_PLAY_GAME_ANIMATION_CONFIRM_RESULT, self.PlayAnimationConfirmResult, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_PLAY_GAME_ANIMATION_START_ROUND, self.PlayAnimationStartRound, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_RESTART, self.Restart, self)
     XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_SELECT_PLAYER_CARD, self.PlayAnimationPlayerPutCard, self)
-    
+    XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, self.OnOpenChangeCardSkillPanel, self)
+    XEventManager.AddEventListener(XEventId.EVENT_POKER_GUESSING2_CHANGE_CARD_SUCCESS, self.OnChangeCardSuccess, self)
     -- 任务会导致卡顿, 因此延迟到游戏界面关闭时进行更新
     XDataCenter.TaskManager.CloseSyncTasksEvent()
 end
 
 function XUiPokerGuessing2Game:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_TIPS, self.UpdateTips, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_SKILL_SHOW, self.UpdateSkillShow, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_UPDATE_SPEAK, self.UpdateSpeak, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_PLAY_GAME_ANIMATION_CONFIRM_RESULT, self.PlayAnimationConfirmResult, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_PLAY_GAME_ANIMATION_START_ROUND, self.PlayAnimationStartRound, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_RESTART, self.Restart, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_SELECT_PLAYER_CARD, self.PlayAnimationPlayerPutCard, self)
-    
+    XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_OPEN_CHANGE_SKILL, self.OnOpenChangeCardSkillPanel, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_POKER_GUESSING2_CHANGE_CARD_SUCCESS, self.OnChangeCardSuccess, self)
+
     XDataCenter.TaskManager.OpenSyncTasksEvent()
 end
 
@@ -147,11 +157,11 @@ function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState)
     local speak = self._Control:GetDialogue(state)
     self:TimerQuick(function()
         if speak.Player then
-            self._Player:Speak(speak.Player)
+            self._Player:Speak(speak.Player, speak.PlayerIsEmoji)
         end
     end, 0.7)
     self:TimerQuick(function()
-        self._Enemy:Speak(speak.Enemy)
+        self._Enemy:Speak(speak.Enemy, speak.EnemyIsEmoji)
     end, 0.7)
 
     -- 判断是否结束
@@ -205,13 +215,36 @@ function XUiPokerGuessing2Game:OnClickPlay()
     self._Control:Confirm()
 end
 
-function XUiPokerGuessing2Game:OnClickHelp()
-    self._Control:UseTips()
+function XUiPokerGuessing2Game:OnBtnSkillChangeSelfClick()
+    self._Control:UseSkillChangeSelfCard()
 end
 
-function XUiPokerGuessing2Game:UpdateTips()
-    local tipsAmount, tipsMax = self._Control:GetTipsAmount()
-    self.BtnHelp:SetNameByGroup(0, tipsAmount .. "/" .. tipsMax)
+function XUiPokerGuessing2Game:OnBtnSkillChangeEnemyClick()
+    self._Control:UseSkillChangeEnemyCard()
+end
+
+function XUiPokerGuessing2Game:OnOpenChangeCardSkillPanel(isPlayer, originId)
+    self.PanelChangeCard:Open()
+    self.PanelChangeCard:RefreshShowWithSide(isPlayer, originId)
+end
+
+function XUiPokerGuessing2Game:OnChangeCardSuccess(isChangedPlayerSide)
+    if isChangedPlayerSide then
+        -- 改牌后目前只有玩家的牌需要立刻刷新
+        self._Player:UpdateAfterChangedCard(self._Control:GetPlayerSelectCardData())
+    else
+        self._Enemy:ShowChangeCardAnimOnly(self._Control:GetEnemySelectCardData())
+    end
+    
+    -- 己方角色显示对应的对话
+    local content, isEmoji = self._Control:GetPlayerDialogAfterChangedCard(isChangedPlayerSide)
+    
+    self._Player:Speak(content, isEmoji)
+end
+
+function XUiPokerGuessing2Game:UpdateSkillShow()
+    self.BtnSkillChangeSelf:SetButtonState(self._Control:CheckHasChangeSelfSkillCount() and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self.BtnSkillChangeEnemy:SetButtonState(self._Control:CheckHasChangeEnemySkillCount() and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
 
     local tipsCardSpeak = self._Control:GetTipsCardSpeak()
     if tipsCardSpeak then
@@ -244,9 +277,9 @@ end
 
 function XUiPokerGuessing2Game:UpdateSpeak(state)
     local speak = self._Control:GetDialogue(state)
-    self._Enemy:Speak(speak.Enemy)
+    self._Enemy:Speak(speak.Enemy, speak.EnemyIsEmoji)
     if speak.Player then
-        self._Player:Speak(speak.Player)
+        self._Player:Speak(speak.Player, speak.PlayerIsEmoji)
     else
         self._Player:Speak()
     end
@@ -258,7 +291,7 @@ function XUiPokerGuessing2Game:Restart()
         self:UpdateStageDesc()
         self:UpdatePlayer()
         self:UpdateEnemy()
-        self:UpdateTips()
+        self:UpdateSkillShow()
         self._Player:Reset()
         self._Enemy:Reset()
         self.PanelDraw.gameObject:SetActiveEx(false)

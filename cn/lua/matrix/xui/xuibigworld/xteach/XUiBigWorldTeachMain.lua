@@ -70,10 +70,12 @@ function XUiBigWorldTeachMain:ChangeSelect(index, teachId)
         end
     end
 
+    if index ~= self._SelectTeachIndex then
+        self.ContentQieHuan:PlayTimelineAnimation()
+    end
     self._SelectTeachIndex = index
     self:_RefreshTeachContent(teachId)
     self:_RefreshTabReddot()
-    self.ContentQieHuan:PlayTimelineAnimation()
 end
 
 function XUiBigWorldTeachMain:OnBtnBackClick()
@@ -82,16 +84,19 @@ end
 
 function XUiBigWorldTeachMain:OnTabBtnGroupClick(index)
     if self._SelectTabIndex ~= index then
+        if self._SelectTabIndex ~= 0 then
+            self.QieHuan:PlayTimelineAnimation()
+        end
         self._SelectTabIndex = index
         self._SearchKey = ""
         self.InputField.text = ""
         self:_RefreshDynamicTable(index)
-        self.QieHuan:PlayTimelineAnimation()
     end
 end
 
 function XUiBigWorldTeachMain:OnBtnDeleteClick()
     self.InputField.text = ""
+    self:_InitSearch(true)
     self:_RefreshDynamicTable(self._SelectTabIndex)
 end
 
@@ -103,8 +108,8 @@ function XUiBigWorldTeachMain:OnBtnSearchClick()
 
         self._SearchKey = searchKey
         self:_RefreshDynamicTableWithTeachs(teachs)
+        self:_InitSearch(false)
     end
-    self:_InitSearch(false)
 end
 
 function XUiBigWorldTeachMain:OnInputChanged(value)

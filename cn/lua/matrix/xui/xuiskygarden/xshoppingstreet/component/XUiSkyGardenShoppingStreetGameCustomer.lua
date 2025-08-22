@@ -26,6 +26,8 @@ function XUiSkyGardenShoppingStreetGameCustomer:BindingCustomer(customerId, targ
     end
     self.UiSkyGardenShoppingStreetGameGridEvent.gameObject:SetActive(false)
     self.UiSkyGardenShoppingStreetGameGridFeedback.gameObject:SetActive(false)
+
+    self.UiSkyGardenShoppingStreetGameGridFeedbackCanvasGroup = self.UiSkyGardenShoppingStreetGameGridFeedback.gameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     -- if self._FeedbackUi then self._FeedbackUi:Close() end
 
     self.RImgHead:SetRawImage(self._Control:GetCustomerHeadIcon(customerId))
@@ -82,6 +84,14 @@ function XUiSkyGardenShoppingStreetGameCustomer:SetTaskEvent(taskData)
     self.UiSkyGardenShoppingStreetGameGridEvent:SetButtonState(CS.UiButtonState.Normal)
     self.UiSkyGardenShoppingStreetGameGridEvent.gameObject:SetActive(isDiscontent)
     self.UiSkyGardenShoppingStreetGameGridFeedback.gameObject:SetActive(not isDiscontent)
+    if not isDiscontent then
+        self.UiSkyGardenShoppingStreetGameGridFeedbackCanvasGroup.alpha = 1
+        if not self._Icon2CanvasGroup then
+            local tr = self.UiSkyGardenShoppingStreetGameGridFeedback.transform:Find("Normal/ImgIcon2")
+            self._Icon2CanvasGroup = tr:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+        end
+        self._Icon2CanvasGroup.alpha = 0
+    end
     self.IsDiscontent = isDiscontent and 1 or 2
     self:AddBubbleCount()
 

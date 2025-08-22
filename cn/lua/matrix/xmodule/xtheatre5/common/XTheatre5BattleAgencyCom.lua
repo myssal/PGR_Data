@@ -128,13 +128,18 @@ function XTheatre5BattleAgencyCom:RequestTheatre5AdvanceSettle(cb)
         if res.DlcFightSettleData and res.DlcFightSettleData.XAutoChessGameplayResult then
             ---@type XAutoChessGameplayResult
             local autoChessResult = res.DlcFightSettleData.XAutoChessGameplayResult
+
+            if not XTool.IsTableEmpty(autoChessResult.CommonFightCnt) then
+                self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
+            end
             
             self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+                self._Model.PVEAdventureData:UpdateTempChapterData()
+                self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
+                self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
+            end    
         end
-        if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
-            self._Model.PVEAdventureData:UpdateTempChapterData()
-            self._Model.PVEAdventureData:UpdatePVEChapterData()
-        end    
 
         if cb then
             cb(true, res)
@@ -174,6 +179,11 @@ function XTheatre5BattleAgencyCom:RequestTheatre5GiveUpSettle(cb)
                 end
                 isFinish = true
             end
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+                self._Model.PVEAdventureData:UpdateTempChapterData()
+                self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
+                self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
+            end    
         end
 
         if cb then
@@ -214,7 +224,8 @@ function XTheatre5BattleAgencyCom:RequestTheatre5InterruptBattle(cb)
             if autoChessResult.IsFinish then
                 if curPlayMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
                     self._Model.PVEAdventureData:UpdateTempChapterData()
-                    self._Model.PVEAdventureData:UpdatePVEChapterData()
+                    self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
+                    self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
                 end        
                 isFinish = true
             end
@@ -232,12 +243,16 @@ end
 
 --- 请求游戏正常结算
 function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryData, cb)
+    if self:_CheckPVPTimeEndInSettle() then
+        return
+    end
+    
     local contentBytes = result:GetFightsResultsBytes()
 
     XNetwork.Call("DlcSingleFightSettleRequest", contentBytes, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
-
+            self:_CheckPVPTimeEndInSettle()
             if cb then
                 cb(false)
             end
@@ -250,6 +265,11 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
             local autoChessResult = res.DlcFightSettleData.XAutoChessGameplayResult
             self._Model.CurAdventureData:UpdateHealth(autoChessResult.Health)
             self._Model.CurAdventureData:UpdateRoundNum(autoChessResult.RoundNum)
+
+            if not XTool.IsTableEmpty(autoChessResult.CommonFightCnt) then
+                self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
+            end
+            
             if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
                 self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
             else
@@ -279,15 +299,26 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                             nil, finalSettleFunc, nil, nil, true)
                 else
                     local restartFunc = function()
+                        if self:_CheckPVPTimeEndInSettle() then
+                            return
+                        end
+                        
                         self:RequestDlcSingleEnterFight(0)
                     end
 
                     local finalSettleFunc = function()
+                        if self:_CheckPVPTimeEndInSettle() then
+                            return
+                        end
+                        
                         -- 未达校验上限时需要手动请求提前结算
                         self:RequestTheatre5AdvanceSettle(function(success, advanceSettleRes)
                             if success then
                                 CS.StatusSyncFight.XFightClient.RequestExitFight()
-                                XLuaUiManager.Open('UiTheatre5Settlement', advanceSettleRes.DlcFightSettleData)
+
+                                if advanceSettleRes then
+                                    XLuaUiManager.Open('UiTheatre5Settlement', advanceSettleRes.DlcFightSettleData)
+                                end
                             end
                         end)
                     end
@@ -340,8 +371,16 @@ function XTheatre5BattleAgencyCom:RequestTheatre5Match(cb)
     end)
 end
 
+--- 打开匹配-加载界面
+function XTheatre5BattleAgencyCom:OpenMatchLoadingUi(...)
+    -- 打开前先锁定栈
+    CsXUiManager.Instance:SetRevertAllLock(true)
+
+    XLuaUiManager.Open("UiTheatre5Loading", ...)
+end
+
 --- 请求进入战斗
-function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb)
+function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, successCb, delayEnterTime)
     -- 获取当前活动的worldId
     local worldId = self._Model:GetTheatre5WorldIdByActivityId(self._Model:GetActivityId())
 
@@ -361,6 +400,10 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb)
                 if worldData.AutoChessGameplayData.EnemyData then
                     self:_CalNpcAttribsAfterEnterFightRequest(worldData.AutoChessGameplayData.SelfData.AutoChessData)
                 end
+
+                if successCb then
+                    successCb(worldData)
+                end    
                 
                 local enterFunc = function()
                     CsXBehaviorManager.Instance:Clear()
@@ -383,17 +426,18 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb)
                     end
                 end
 
-
-
+                if not XTool.IsNumberValid(delayEnterTime) then
+                    delayEnterTime = 0
+                end
                 if CS.StatusSyncFight.XFightClient.FightInstance ~= nil then
                     CS.StatusSyncFight.XFightClient.RequestExitFight()
                     --todo: 目前战斗结束是异步逻辑，且暂未支持回调，先手动延迟
-                    XScheduleManager.ScheduleOnce(function()
-                        enterFunc()
-                    end, XScheduleManager.SECOND * 2)
-                else
+                    delayEnterTime = delayEnterTime + XScheduleManager.SECOND * 2
+                end    
+
+                XScheduleManager.ScheduleOnce(function()
                     enterFunc()
-                end
+                end, delayEnterTime)
             end
         end
     end)
@@ -537,7 +581,6 @@ function XTheatre5BattleAgencyCom:_GetXFightClientArgs()
 
     args.CloseLoadingUiCb = function()
         self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FIGHT_ENTER_FINISHED)
-        --XLuaUiManager.SafeClose("UiTheatre5Loading")
     end
 
     args.SettleCb = function(result, summary)
@@ -557,6 +600,21 @@ function XTheatre5BattleAgencyCom:TestCalNpcAttribsAndBackXAutoChessData(autoChe
     self:_CalNpcAttribsAfterEnterFightRequest(autoChessData)
 
     return self:_GetXAutoChessData(autoChessData)
+end
+
+--- 用于结算检查是否活动结束
+function XTheatre5BattleAgencyCom:_CheckPVPTimeEndInSettle(inBattle)
+    if not (XMVCA.XTheatre5:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP) then
+        return false
+    end
+    
+    if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
+        CS.StatusSyncFight.XFightClient.RequestExitFight()
+        XUiManager.TipText('ActivityMainLineEnd')
+        return true
+    end
+    
+    return false
 end
 
 return XTheatre5BattleAgencyCom

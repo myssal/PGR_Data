@@ -20,6 +20,16 @@ function XUiFubenExtraChapter:OnStart(chapter, stageId, hideDiffTog)
     self.Chapter = chapter
     self.StageId = stageId
     self.HideDiffTog = hideDiffTog
+    self.MainId = XFubenExtraChapterConfigs.GetMainIdByChapterId(chapter.ChapterId)
+
+    -- 进战斗/播剧情后恢复界面
+    local resumeData = XMVCA.XMainLine2:GetMainReleaseData(self.MainId, true)
+    if resumeData then
+        local configs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
+        self.Chapter = configs[resumeData.ChapterId]
+        self:SetLastClickStageId(resumeData.LastClickStageId)
+    end
+    
     self.Opened = false
     self.IsOnZhouMu = false
     self.GridTreasureList = {}
@@ -116,6 +126,15 @@ function XUiFubenExtraChapter:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_AUTO_FIGHT_START, self.OnAutoFightStart, self)
 end
 
+function XUiFubenExtraChapter:OnReleaseInst()
+    local data = { ChapterId = self.Chapter.ChapterId, LastClickStageId = self.LastClickStageId }
+    XMVCA.XMainLine2:CacheMainReleaseData(self.MainId, data)
+end
+
+function XUiFubenExtraChapter:SetLastClickStageId(stageId)
+    self.LastClickStageId = stageId
+end
+
 function XUiFubenExtraChapter:InitPanelBottom()
     self.PanelExploreBottom.Transform = self.PanelExploreBottomObj.transform
     self.PanelExploreBottom.GameObject = self.PanelExploreBottomObj.gameObject
@@ -140,7 +159,7 @@ function XUiFubenExtraChapter:GoToLastPassStage()
             end
         else
             if not self.Opened then
-                local lastPassStageId = XDataCenter.ExtraChapterManager.GetLastPassStage(self.Chapter.ChapterId)
+                local lastPassStageId = self.LastClickStageId or XDataCenter.ExtraChapterManager.GetLastPassStage(self.Chapter.ChapterId)
                 self.CurChapterGrid:GoToStage(lastPassStageId)
                 self.Opened = true
             end
@@ -301,7 +320,7 @@ function XUiFubenExtraChapter:OnBtnHardClick(IsAutoMove)
                 return false
             end
             if XTool.IsNumberValid(chapterId) then
-                if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.ExtralChapter, chapterId) then
+                if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, chapterId) then
                     return false
                 end
             end

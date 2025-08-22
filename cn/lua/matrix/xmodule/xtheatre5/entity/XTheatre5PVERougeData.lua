@@ -120,6 +120,20 @@ function XTheatre5PVERougeData:UpdateChapterAVGCompleted(chapterId, isEnterAvg)
     end            
 end
 
+function XTheatre5PVERougeData:UpdateHistoryEvent(chapterId, eventId)
+    if not self.HistoryChapters then
+        self.HistoryChapters = {}
+    end
+    if not self.HistoryChapters[chapterId] then
+        self.HistoryChapters[chapterId] = {}
+        self.HistoryChapters[chapterId].ChapterId = chapterId
+    end
+    if not self.HistoryChapters[chapterId].FinishEvents then
+        self.HistoryChapters[chapterId].FinishEvents = {}
+    end
+    table.insert(self.HistoryChapters[chapterId].FinishEvents, eventId)    
+end
+
 function XTheatre5PVERougeData:UpdateChapterData(storyLineId, contentId, chapterData)     
     if not self.PveStoryLines or not self.PveStoryLines[storyLineId] then
         XLog.Error(string.format("故事线没有初始化,storyLineId:%d,contentId:%d", storyLineId, contentId))
@@ -127,6 +141,20 @@ function XTheatre5PVERougeData:UpdateChapterData(storyLineId, contentId, chapter
     end
     self.PveStoryLines[storyLineId].PveChapterData = chapterData
     self.PveStoryLines[storyLineId].CurContentId = contentId
+end
+
+function XTheatre5PVERougeData:UpdateFinishChapterData(storyLineId, contentId)
+    if not XTool.IsNumberValid(storyLineId) or not XTool.IsNumberValid(contentId) then
+        return
+    end    
+    if not self.PveStoryLines or not self.PveStoryLines[storyLineId] then
+        XLog.Error(string.format("故事线没有初始化,storyLineId:%d,contentId:%d", storyLineId, contentId))
+        return
+    end
+    if not self.PveStoryLines[storyLineId].FinishContents then
+        self.PveStoryLines[storyLineId].FinishContents = {}
+    end
+    table.insert(self.PveStoryLines[storyLineId].FinishContents, contentId)       
 end
 
 --故事线解锁
@@ -165,6 +193,14 @@ function XTheatre5PVERougeData:GetCurStoryEntranceId()
     return self.CurStoryEntranceId
 end
 
+--判断事件双倍的
+function XTheatre5PVERougeData:GetHistoryFinishEvents(chapterId)
+    if not self.HistoryChapters then
+        return
+    end    
+    return self.HistoryChapters[chapterId] and self.HistoryChapters[chapterId].FinishEvents
+end
+
 --contentId是否完成或解锁
 function XTheatre5PVERougeData:IsCompletedOrUnlockByContentId(contentId)
     if not self.PveStoryLines then
@@ -174,6 +210,22 @@ function XTheatre5PVERougeData:IsCompletedOrUnlockByContentId(contentId)
         if storyLineData.CurContentId == contentId then
             return true
         end
+        if not XTool.IsTableEmpty(storyLineData.FinishContents) then
+            for _, completedContentId in pairs(storyLineData.FinishContents) do
+                if completedContentId == contentId then
+                    return true
+                end    
+            end    
+        end    
+    end
+    return false
+end
+
+function XTheatre5PVERougeData:IsCompletedByContentId(contentId)
+    if not self.PveStoryLines then
+        return false
+    end
+    for _, storyLineData in pairs(self.PveStoryLines) do
         if not XTool.IsTableEmpty(storyLineData.FinishContents) then
             for _, completedContentId in pairs(storyLineData.FinishContents) do
                 if completedContentId == contentId then

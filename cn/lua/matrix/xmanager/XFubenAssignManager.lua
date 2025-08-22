@@ -1140,7 +1140,7 @@ XFubenAssignManagerCreator = function()
             return
         end
 
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Assign) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FubenAssign) then
             return
         end
 
@@ -1153,7 +1153,7 @@ XFubenAssignManagerCreator = function()
         end
 
         --分包资源检测
-        if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Assign) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FubenAssign) then
             return
         end
         

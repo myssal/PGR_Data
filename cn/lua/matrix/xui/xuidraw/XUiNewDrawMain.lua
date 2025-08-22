@@ -5,6 +5,7 @@ local XLottoDrawGroupBtnEntity = require("XEntity/XDrawMianButton/XLottoDrawGrou
 local XUiDrawControl = require("XUi/XUiDraw/XUiDrawControl")
 local XUiDrawScene = require("XUi/XUiDraw/XUiDrawScene")
 local XUiNewGridDrawBanner = require("XUi/XUiDraw/XUiNewGridDrawBanner")
+local XUiDrawPanelLbItem = require("XUi/XUiDraw/XUiDrawPanelLbItem")
 local XModelHX = require("XModule/XModel/XModelHX")
 
 ---@class XUiNewDrawMain:XLuaUi
@@ -42,6 +43,7 @@ function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool)
     self.DefaultDrawId = defaultDrawId
     self.IsFirstIn = true
     self.CurrentSelectTemplateId = false
+    self.CurPanelLbItem = XUiDrawPanelLbItem.New(self.PanelLbItem, self)
 
     --2.7处理多卡池情况
     self:FindDrawGroupId()
@@ -89,6 +91,7 @@ function XUiNewDrawMain:Refresh()
     self:RefreshPanelTwoForOne()
     self:_RefreshCharacterDrawTarget()
     self:UpdateBtnDiscount()
+    self.CurPanelLbItem:Refresh(self.DrawInfo)
 end
 
 -- region 鬼泣五相关
@@ -345,11 +348,14 @@ end
 
 --region Ui - AssetPanel
 function XUiNewDrawMain:InitAssetPanel()
+    ---@type XUiPanelActivityAsset
     self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelSpecialTool, self)
+    self.AssetActivityPanel:Close() -- 收到协议后再显示 避免Ui上出现数字9999
 end
 
 function XUiNewDrawMain:RefreshAssetPanel(index)
     local data = self.AllTabEntityList[index]
+    self.AssetActivityPanel:Open()
     self.AssetActivityPanel:Refresh(data:GetUseItemIdList())
     XDataCenter.ItemManager.AddCountUpdateListener(self.AllTabEntityList[self.CurSelectId]:GetUseItemIdList(),
             function()
@@ -741,14 +747,6 @@ end
 --- 一级标签的按钮状态为Disable时传入的index为它自己的index，否则为它的第一个子标签的index
 --- 只有一级标签类才会判断是否能打开卡池
 function XUiNewDrawMain:OnSelectedTog(index)
-    ---@type XUiComponent.XUiButton
-    local btn = self.AllBtnList[index]
-    ---@type XDrawTabBtnEntity
-    local entity = self.AllTabEntityList[btn.SubGroupIndex > 0 and btn.SubGroupIndex or btn.GroupIndex]
-    if entity and not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.SUBPACKAGE.ENTRY_TYPE.DRAW, entity:GetId()) then
-        self.PanelNoticeTitleBtnGroup:SelectIndex(self.CurSelectId or 1, false)
-        return
-    end
     if self.AllTabEntityList[index] then
         local IsTypeTab = self.AllTabEntityList[index]:GetRuleType() == XDrawConfigs.RuleType.Tab
         self.RuleType = not IsTypeTab and
@@ -774,7 +772,9 @@ function XUiNewDrawMain:OnSelectedTog(index)
             self.AllTabEntityList[index].MaxBottomTimes = self.DrawInfo.MaxBottomTimes
             self.AllTabEntityList[index].BottomTimes = self.DrawInfo.BottomTimes
             self.AllTabEntityList[index]:DoSelect(self)
-            self:UpdatePurchase()
+            self:UpdatePurchase(function ()
+                self.CurPanelLbItem:Refresh(self.DrawInfo) -- 这玩意和礼包BtnDrawPurchaseLB不一样，可以直接依赖字段显示，这玩意需要依赖PurchaseInfo由服务端返回的数据判断，所以需要在回调中刷新
+            end)
             if not self.DrawControl then
                 ---@type XUiDrawControl
                 self.DrawControl = XUiDrawControl.New(self, drawInfo, function()
@@ -935,13 +935,13 @@ end
 --endregion
 
 --region Ui - Purchase
-function XUiNewDrawMain:UpdatePurchase()
+function XUiNewDrawMain:UpdatePurchase(cb)
     if self.DrawInfo then
         if self.DrawInfo.PurchaseId and next(self.DrawInfo.PurchaseId) then
             self.BtnDrawPurchaseLB.gameObject:SetActiveEx(true)
             if self.DrawInfo.PurchaseUiType and self.DrawInfo.PurchaseUiType ~= 0 then
                 local uiType = self.DrawInfo.PurchaseUiType
-                XDataCenter.PurchaseManager.GetPurchaseListRequest(uiType)
+                XDataCenter.PurchaseManager.GetPurchaseListRequest(uiType, cb)
             end
         else
             self.BtnDrawPurchaseLB.gameObject:SetActiveEx(false)

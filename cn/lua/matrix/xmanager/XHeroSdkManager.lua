@@ -99,6 +99,8 @@ function XHeroSdkManager.OnLoginSuccess(uid, username, token, loginChannel)
     CS.XRecord.Record("24024", "HeroSdkLoginSuccess")
 
     CleanPayCallbacks()
+    
+    CsXGameEventManager.Instance:Notify(XEventId.EVENT_SDK_LOGIN_SUCCESS)
 end
 
 function XHeroSdkManager.OnLoginFailed(msg)

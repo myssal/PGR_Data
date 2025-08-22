@@ -72,7 +72,7 @@ function XUiFubenExperimentBanner:OnBtnEnter()
         XUiManager.TipError(self.LockText)
         return
     end
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Experiment, self.TrialLevelInfo.GroupID) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Experiment, self.TrialLevelInfo.GroupID) then
         return
     end
     self.Callback(self.Index, self.CurType)

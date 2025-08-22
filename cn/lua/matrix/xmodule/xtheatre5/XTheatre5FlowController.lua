@@ -153,15 +153,29 @@ function XTheatre5FlowController:CheckChatTrigger(chatTriggerType, name, chatCom
                 --self._WaitOpenUI = {UIName = uiName, Params = table.pack(...)}
                 local chatStoryPoolCfg = self._Model:GetPveSceneChatStoryPoolCfg(storyLineContentCfg.ContentId)
                 if chatStoryPoolCfg.Type == chatTriggerType and chatStoryPoolCfg.Param == name then
-                    self:EnterStroryLineContent(pveStoryLineData.StoryLineId)  --多个时只执行一个
-                    if self._PVEStroryLineLink then
-                        self._PVEStroryLineLink:AddCurNodeCompletedCallback(XMVCA.XTheatre5.EnumConst.PVENodeType.Chat, chatCompletedCallback)
-                    end    
+                    --多个时只执行一个
+                    self:EnterStroryLineContentWithCb(pveStoryLineData.StoryLineId, nil, nil, XMVCA.XTheatre5.EnumConst.PVENodeType.Chat, chatCompletedCallback) 
                     return true
                 end    
             end
         end        
     end        
+end
+
+function XTheatre5FlowController:CheckEndingTrigger()
+    local endingNodeData = self._Model.PVERougeData:GetStoryLineEndingNodeData()
+    if endingNodeData then
+        self:EnterStroryLineContent(endingNodeData.StoryLineId)
+        return true
+    end
+    return false    
+end
+
+function XTheatre5FlowController:EnterStroryLineContentWithCb(storyLineId, storyEntranceId, characterId, nodeType ,cb)
+    self:EnterStroryLineContent(storyLineId, storyEntranceId, characterId)
+    if self._PVEStroryLineLink then
+        self._PVEStroryLineLink:AddCurNodeCompletedCallback(nodeType, cb)
+    end    
 end
 
 function XTheatre5FlowController:OpenPVEChat(chatGroupId, characters, cb)

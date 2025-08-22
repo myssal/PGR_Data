@@ -77,7 +77,13 @@ function XBuffScript1015774:OnNpcDamageEvent(launcherId, targetId, magicId, kind
         end
     end
 end
-function XBuffScript1015774:OnNpcRemoveBuffEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
+function XBuffScript1015774:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if npcUUID ~= self._uuid then
+        return
+    end
+    if buffId ~= self._buffId then
+        return
+    end
     if self._proxy:CheckBuffByKind(self._uuid, self.BuffId) then
         return
     else

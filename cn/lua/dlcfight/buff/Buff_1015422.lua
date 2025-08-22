@@ -14,9 +14,9 @@ local ConfigMagicIdDict = {
 }
 local ConfigRuneIdDict = {
     [1015422] = 20422,
-    [1015442] = 20443,
-    [1015444] = 20445,
-    [1015446] = 20447
+    [1015442] = 20442,
+    [1015444] = 20444,
+    [1015446] = 20446
 }
 
 function XBuffScript1015422:Init()

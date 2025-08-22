@@ -40,7 +40,7 @@ function XMainLine2Agency:ExGetChapterViewModelBySubChapterId(chapterId)
     return nil
 end
 
--- region rpc start -------------------------------------------------------------------------------------------------
+--region rpc
 function XMainLine2Agency:OnLoginNotify(fubenMainLine2Data)
     self._Model:OnLoginNotify(fubenMainLine2Data)
 end
@@ -81,7 +81,7 @@ function XMainLine2Agency:ReceiveMainTreasureRequest(mainId, cb)
         if cb then cb() end
     end)
 end
---endregion ---------------------------------------------------------------------------------------------------------
+--endregion
 
 
 --- 主章节是否存在
@@ -469,7 +469,18 @@ function XMainLine2Agency:GetClientConfigParams(key, index)
 end
 
 
---region Fuben ----------------------------------------------------------------------------------------------------------------------
+-- 缓存主章节释放的数据
+function XMainLine2Agency:CacheMainReleaseData(mainId, data)
+    self._Model:CacheMainReleaseData(mainId, data)
+end
+
+-- 获取主章节上次释放时的数据
+function XMainLine2Agency:GetMainReleaseData(mainId, isRemove)
+    return self._Model:GetMainReleaseData(mainId, isRemove)
+end
+
+
+--region Fuben
 --- 开始战斗前获取数据
 ---@param stage XTableStage
 function XMainLine2Agency:PreFight(stage, teamId, isAssist, challengeCount)
@@ -533,6 +544,8 @@ function XMainLine2Agency:ShowReward(winData)
         -- 打开黑幕避免进入战斗前打开关卡界面
         XLuaUiManager.Open("UiBiancaTheatreBlack")
         local team = XDataCenter.TeamManager.GetXTeamByStageId(teleportInfo.SkipStageId)
+        local stageConfig = XMVCA.XFuben:GetStageCfg(teleportInfo.SkipStageId)
+        team:UpdateEntityIds(stageConfig.RobotId)
         fubenAgency:EnterFightByStageId(teleportInfo.SkipStageId, team:GetId(), nil, nil, nil, function()
             XLuaUiManager.Remove("UiBiancaTheatreBlack")
         end)
@@ -541,10 +554,10 @@ function XMainLine2Agency:ShowReward(winData)
         XLuaUiManager.Open("UiMainLine2Settlement", winData)
     end
 end
---endregion ----------------------------------------------------------------------------------------------------------------------------------
+--endregion
 
 
---region open ui start ----------------------------------------------------------------------------------------------------------------------
+--region open ui
 
 --- 打开章节UI界面
 ---@param mainId number 主章节Id
@@ -628,7 +641,7 @@ function XMainLine2Agency:GetUiMainProgress(mainId)
     end
 end
 
---endregion ----------------------------------------------------------------------------------------------------------------------------------
+--endregion
 
 
 return XMainLine2Agency

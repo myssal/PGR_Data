@@ -2561,6 +2561,58 @@
         "IsShowExplain": false
     },
     {
+        "SkipId": 40129,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 130,
+        "Explain": "v3.6pv预告",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40130,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 131,
+        "Explain": "v3.7版本打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40131,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 132,
+        "Explain": "v3.7万事涂装打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40132,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 133,
+        "Explain": "v3.7曲涂装打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
         "SkipId": 40756,
         "Origin": 7,
         "UiName": "OnOpenRepeatChallengeActivity",
@@ -4193,7 +4245,20 @@
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
-        "TimeId": 0,
+        "TimeId": 39452,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 50103,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 95,
+        "Explain": "3.7版本七日签到",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 40602,
         "IsHideFunc": true,
         "IsShowExplain": false
     },
@@ -8591,11 +8656,27 @@
         ]
     },
     {
+        "SkipId": 527,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ParamId": 0,
+        "Explain": "新主线浮点纪实ER13章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10308,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2013
+        ]
+    },
+    {
         "SkipId": 700,
         "Origin": 3,
         "UiName": "UiNewFuben",
         "ParamId": 12010102,
-        "Explain": "前往据点模式",
+        "Explain": 3,
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10103,
@@ -17826,6 +17907,22 @@
         ]
     },
     {
+        "SkipId": 7134,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "ParamId": 0,
+        "Explain": "前往辅助机教学试玩-第二十七章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1801,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            27
+        ]
+    },
+    {
         "SkipId": 7200,
         "Origin": 3,
         "UiName": "UiNewFuben",
@@ -24473,6 +24570,23 @@
         ]
     },
     {
+        "SkipId": 19073,
+        "Origin": 7,
+        "UiName": "OnOpenExhibition",
+        "ParamId": 0,
+        "Explain": "成员-泛用机体",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 105,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1371002,
+            1
+        ]
+    },
+    {
         "SkipId": 20000,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -24715,7 +24829,7 @@
         "UiName": "OnOpenBabelTower",
         "ParamId": 0,
         "Explain": "巴别塔",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10307,
         "TimeId": 0,
@@ -28188,14 +28302,13 @@
         "ParamId": 0,
         "Explain": "新角色主题试玩（33期之后，修改期数）",
         "IsRecord": false,
-        "ConditionId": 10325,
-        "FunctionalId": 0,
+        "ConditionId": 0,
+        "FunctionalId": 10325,
         "TimeId": 0,
-        "CloseTime": 40,
-        "IsHideFunc": false,
+        "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            1
+            41
         ]
     },
     {
@@ -28944,6 +29057,166 @@
         "CustomParams": [
             1,
             99
+        ]
+    },
+    {
+        "SkipId": 20280,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "ParamId": 0,
+        "Explain": "赛利卡补习班跳转（33期之后，新增跳转）",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 10325,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            40
+        ]
+    },
+    {
+        "SkipId": 20281,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "【比安卡·晖暮】前往主题卡池",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 0,
+        "StartTime": "2025/7/3 7:00",
+        "CloseTime": "2025/8/21 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            11
+        ]
+    },
+    {
+        "SkipId": 20282,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "【比安卡·晖暮】前往涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 3,
+        "TimeId": 0,
+        "StartTime": "2025/7/3 7:00",
+        "CloseTime": "2025/8/21 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 20283,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "ParamId": 0,
+        "Explain": "完成“贯击鸣穹”活动任务",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            99
+        ]
+    },
+    {
+        "SkipId": 20284,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往比安卡好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1041005
+        ]
+    },
+    {
+        "SkipId": 20293,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeCharacterDetail",
+        "ParamId": 0,
+        "Explain": "跳转赛利卡教学（渡边跃升）",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1800,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1081004,
+            30100166
+        ]
+    },
+    {
+        "SkipId": 20294,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "【斜奏·裁律】前往主题卡池",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1
+        ]
+    },
+    {
+        "SkipId": 20295,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "【斜奏·裁律】前往涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 3,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 20296,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "ParamId": 0,
+        "Explain": "斜奏赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 10325,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            41
         ]
     },
     {
@@ -39222,8 +39495,8 @@
         "SkipId": 80252,
         "Origin": 2,
         "UiName": "UiSignBanner",
-        "ParamId": 88,
-        "Explain": "前往【逐生复始】签到",
+        "ParamId": 94,
+        "Explain": "前往【覆海归途】签到",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -39232,6 +39505,140 @@
         "CloseTime": "2025/8/21 5:00",
         "IsHideFunc": true,
         "IsShowExplain": false
+    },
+    {
+        "SkipId": 80253,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "购买涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 80254,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "购买涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 80255,
+        "Origin": 7,
+        "UiName": "OnOpenPassport",
+        "ParamId": 0,
+        "Explain": "战略评定手册",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10342,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 4:59",
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 80256,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "购买涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 80257,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "涂装商店",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1001,
+        "TimeId": 0,
+        "StartTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            504
+        ]
+    },
+    {
+        "SkipId": 80258,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "购买涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
+    },
+    {
+        "SkipId": 80259,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "购买涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/8/21 7:00",
+        "CloseTime": "2025/9/25 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            3
+        ]
     },
     {
         "SkipId": 81001,
@@ -40686,7 +41093,7 @@
         "UiName": "SkipToFangKuai",
         "ParamId": 0,
         "Explain": "消灭方块",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10461,
         "TimeId": 0,
@@ -41084,6 +41491,18 @@
         "IsShowExplain": false
     },
     {
+        "SkipId": 189070,
+        "Origin": 9,
+        "ParamId": 11,
+        "Explain": "幻想归途",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false
+    },
+    {
         "SkipId": 89074,
         "Origin": 7,
         "UiName": "SkipToTemple2",
@@ -41102,7 +41521,7 @@
         "UiName": "SkipToGame2048Activity",
         "ParamId": 0,
         "Explain": "2048休闲",
-        "IsRecord": true,
+        "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10475,
         "TimeId": 0,
@@ -41364,10 +41783,11 @@
     {
         "SkipId": 89094,
         "Origin": 10,
+        "UiName": "XSoloReform",
         "ParamId": 0,
         "Explain": "mini改造",
         "IsRecord": false,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10353,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -41725,7 +42145,7 @@
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10487,
-        "TimeId": 39502,
+        "TimeId": 40101,
         "IsHideFunc": false,
         "IsShowExplain": false
     },
@@ -42169,6 +42589,19 @@
         "FunctionalId": 10493,
         "TimeId": 0,
         "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 90048,
+        "Origin": 7,
+        "UiName": "SkipToCloudGame",
+        "ParamId": 0,
+        "Explain": "云游戏",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
         "IsShowExplain": false
     }
 ]

@@ -136,6 +136,25 @@ function XUiPurchaseLBListItem:SetData()
         self.TxtHk.text = self.ItemData.ConsumeCount or ""
     end
 
+    --是否已拥有
+    local isShowHave = false
+    if self.ImgHave then
+        isShowHave = XDataCenter.PurchaseManager.IsLBHave(self.ItemData)
+        self.ImgHave.gameObject:SetActive(isShowHave)
+    end
+
+    if self.ImgLock then
+        --是否锁定(如果显示了已拥有，则不需要显示锁定）
+        if not self.ImgHave or not isShowHave then
+            local isLock, lockDesc = XDataCenter.PurchaseManager.IsLBLock(self.ItemData)
+
+            self.ImgLock.gameObject:SetActiveEx(isLock)
+            self.TxtLock.text = lockDesc or ''
+        else
+            self.ImgLock.gameObject:SetActiveEx(false)
+        end
+    end
+
     -- 达到限购次数
     if self.ItemData.BuyLimitTimes and self.ItemData.BuyLimitTimes > 0 and self.ItemData.BuyTimes == self.ItemData.BuyLimitTimes then
         self.TxtPutawayTime.gameObject:SetActive(false)
@@ -145,20 +164,6 @@ function XUiPurchaseLBListItem:SetData()
         self.TxtHk.gameObject:SetActive(false)
         self:SetBuyDes()
         return
-    end
-
-    --是否已拥有
-    local isShowHave = false
-    if self.ImgHave then
-        isShowHave = XDataCenter.PurchaseManager.IsLBHave(self.ItemData)
-        self.ImgHave.gameObject:SetActive(isShowHave)
-    end
-    
-    --是否锁定(如果显示了已拥有，则不需要显示锁定）
-    if self.ImgLock and (not self.ImgHave or not isShowHave)then
-        local isLock, lockDesc = XDataCenter.PurchaseManager.IsLBLock(self.ItemData)
-        self.ImgLock.gameObject:SetActiveEx(isLock)
-        self.TxtLock.text = lockDesc or ''
     end
 
     -- 上架时间

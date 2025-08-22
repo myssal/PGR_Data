@@ -158,6 +158,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseContentTaskProgressItemIdBy
     return config.TaskProgressItemId
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseContentTaskProgressItemIconByContentId(contentId)
+    local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
+
+    return config.TaskProgressItemIcon
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseContentExploreRewardIdByContentId(contentId)
     local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
 
@@ -376,6 +382,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreBannerByCoreId(coreId)
     local config = self:GetBigWorldCourseCoreConfigByCoreId(coreId)
 
     return config.Banner
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreSpineBannerByCoreId(coreId)
+    local config = self:GetBigWorldCourseCoreConfigByCoreId(coreId)
+
+    return config.SpineBanner
 end
 
 function XBigWorldCourseConfigModel:GetBigWorldCourseCoreConditionIdByCoreId(coreId)

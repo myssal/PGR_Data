@@ -39,6 +39,10 @@ function XChatEmoji:GetPackId()
     return XChatConfigs.GetEmojiPackId(self.Id)
 end
 
+function XChatEmoji:GetEmojiConnotationDesc()
+    return XChatConfigs.GetEmojiConnotationDesc(self.Id)
+end
+
 -- 判断是不是刚刚获得的，通过本地缓存记录
 function XChatEmoji:GetIsNew()
     local key = self.Id.."EmojiId"

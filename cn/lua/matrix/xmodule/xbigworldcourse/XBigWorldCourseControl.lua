@@ -133,6 +133,10 @@ function XBigWorldCourseControl:GetTaskRewardItemIcon(contentId)
     return ""
 end
 
+function XBigWorldCourseControl:GetTaskRewardItemIconNoneColor(contentId)
+    return self._Model:GetBigWorldCourseContentTaskProgressItemIconByContentId(contentId) or ""
+end
+
 function XBigWorldCourseControl:GetTaskIdsByContentId(contentId)
     return self._Model:GetTaskIdsByContentId(contentId)
 end

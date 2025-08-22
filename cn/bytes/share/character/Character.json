@@ -1569,7 +1569,7 @@
         "Type": 1,
         "Sex": 2,
         "StoryChapterId": 1,
-        "Intro": "\"由遗忘者独立开发,专为应对严苛的作战而设计的机体。在意识海的搭载模块上，采用了与以往完全不同的设计理念。\"",
+        "Intro": "由遗忘者独立开发,专为应对严苛的作战而设计的机体。在意识海的搭载模块上，采用了与以往完全不同的设计理念。",
         "ItemId": 567,
         "LevelUpTemplateId": 1,
         "Priority": 2330,
@@ -1586,7 +1586,13 @@
         "ShowTimeId": 0,
         "LinkageType": 0,
         "GeneralElement": [],
-        "Career": 2
+        "Career": 2,
+        "GeneralSkillIds": [
+            6
+        ],
+        "IsAddGeneral": [
+            true
+        ]
     },
     {
         "Id": 1521004,
@@ -2090,7 +2096,7 @@
         "Type": 1,
         "Sex": 1,
         "StoryChapterId": 1,
-        "Intro": "比安卡",
+        "Intro": "在对溯源装置进一步验证的基础上，由科学理事会研发的新型特化机体。机体能够一定程度打乱帕弥什的信息，从而达到削弱帕弥什的效果。",
         "ItemId": 584,
         "LevelUpTemplateId": 1,
         "Priority": 2500,
@@ -2102,7 +2108,7 @@
         "CaptainSkillId": 104522,
         "MissionInfo": "未命名",
         "NeedFirstShow": 0,
-        "Code": "待定",
+        "Code": "BPO-87",
         "Element": 5,
         "ShowTimeId": 0,
         "LinkageType": 0,
@@ -2110,6 +2116,37 @@
         "Career": 1,
         "GeneralSkillIds": [
             7
+        ]
+    },
+    {
+        "Id": 1371002,
+        "Name": "斜奏",
+        "TradeName": "裁律",
+        "LogName": "斜奏·裁律",
+        "EnName": "Discord",
+        "Type": 1,
+        "Sex": 1,
+        "StoryChapterId": 1,
+        "Intro": "空中花园设计的新机体，与黑野的旧机体相比意识海不够稳定，输出率起伏较大。",
+        "ItemId": 585,
+        "LevelUpTemplateId": 1,
+        "Priority": 2510,
+        "EquipType": 58,
+        "EquipId": 2584001,
+        "EmotionIcon": "Assets/Product/Texture/Image/IconType/IconCharacter3.png",
+        "Foreshow": 0,
+        "DefaultNpcFashtionId": 6005401,
+        "CaptainSkillId": 137222,
+        "MissionInfo": "未命名",
+        "NeedFirstShow": 0,
+        "Code": "BPN-49",
+        "Element": 1,
+        "ShowTimeId": 0,
+        "LinkageType": 0,
+        "GeneralElement": [],
+        "Career": 1,
+        "GeneralSkillIds": [
+            3
         ]
     }
 ]

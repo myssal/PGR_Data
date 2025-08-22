@@ -23,15 +23,21 @@ function XGridDownloadTipSubpackage:RegisterClickCb(cb)
 end
 
 function XGridDownloadTipSubpackage:Init(data)
-    self.ResIdList = data.ResIdList
     local totalSize = 0
     local fileModule = XLaunchDlcManager.GetFileModule()
     local resSizeDic = fileModule.GetResSizeDic()
     
+    local validResIds = {}
     for _, resId in ipairs(data.ResIdList) do
         local size = resSizeDic[resId]
-        totalSize = totalSize + size
+        if size then
+            totalSize = totalSize + size
+            table.insert(validResIds, resId)
+        else
+            print("XGridDownloadTipSubpackage:Init resId %s not found", resId)
+        end
     end
+    self.ResIdList = validResIds
 
     local num, unit = self:GetSizeAndUnit(totalSize)
     self.TotalNum = num

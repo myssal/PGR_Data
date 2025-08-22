@@ -93,7 +93,7 @@ function XUiFubenChallengeBanner:OnClickChapterGrid(chapter)
     elseif chapterType == XDataCenter.FubenManager.ChapterType.Explore then
         if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenExplore) then
             --分包资源检测
-            if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Explore) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.FubenExplore) then
                 return
             end
             self.ParentUi:PushUi(function()
@@ -158,7 +158,7 @@ function XUiFubenChallengeBanner:OnClickChapterGrid(chapter)
         XDataCenter.StrongholdManager.EnterUiMain(beforeOpenUiCb)
     elseif chapterType == XDataCenter.FubenManager.ChapterType.PartnerTeaching then
         if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.PartnerTeaching) then
-            if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.PartnerTeaching) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.PartnerTeaching) then
                 return
             end
             self.ParentUi:PushUi(function()

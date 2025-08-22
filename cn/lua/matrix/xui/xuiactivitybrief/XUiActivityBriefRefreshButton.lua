@@ -38,20 +38,22 @@ end
 function XUiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
     -- Btn刷新
     for index, groupId in ipairs(XActivityBriefConfigs.GetGroupIdList(self.PanelType)) do
-        local funcName = XActivityBriefConfigs.GetActivityGroupBtnInitMethodName(groupId)
-        local func = XUiActivityBriefRefreshButton[funcName]
+        if groupId ~= 0 then
+            local funcName = XActivityBriefConfigs.GetActivityGroupBtnInitMethodName(groupId)
+            local func = XUiActivityBriefRefreshButton[funcName]
 
-        self:InitActivityBriefButton(index, groupId)
-        -- 通用跳转函数临时ActivityGroupId(BtnId)
-        self.ActivityGroupId = groupId
-        if func then
-            func(self)
-        else
-            self:RefreshNormal()
+            self:InitActivityBriefButton(index, groupId)
+            -- 通用跳转函数临时ActivityGroupId(BtnId)
+            self.ActivityGroupId = groupId
+            if func then
+                func(self)
+            else
+                self:RefreshNormal()
+            end
+            self:RefreshReward()
+            -- 重置临时ActivityGroupId
+            self.ActivityGroupId = 0
         end
-        self:RefreshReward()
-        -- 重置临时ActivityGroupId
-        self.ActivityGroupId = 0
     end
 end
 

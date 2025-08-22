@@ -2356,12 +2356,12 @@
     {
         "Id": 1041005,
         "Type": 2,
-        "Model": "Assets/Product/Role/Room/Prefab/QR3DanteMd010011.prefab",
-        "Name": "比安卡",
+        "Model": "Assets/Product/Role/Room/Prefab/QR5BiankaMd010011.prefab",
+        "Name": "比安卡 晖暮",
         "NameFrist": "比安卡",
-        "NameLast": "比安卡",
-        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Danding1Q.png",
-        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Danding2Q.png",
+        "NameLast": "晖暮",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Bianka1Q.png",
+        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadR5Bianka2Q.png",
         "ExpFondleWidgetHeight": 0.85,
         "ExpDetailWidgetHeight": 0.6999,
         "PutOnWidgetHight": 1.2,
@@ -2370,6 +2370,46 @@
         "EffectWidgetHight": 1.0,
         "TouchWidgetHight": 0.6,
         "LoveType": 2,
-        "LikeType": 3
+        "LikeType": 1,
+        "LikeCharIds": [
+            1071002,
+            1071003,
+            1071004
+        ],
+        "QuestAttrib": [
+            1,
+            3,
+            5
+        ]
+    },
+    {
+        "Id": 1371002,
+        "Type": 2,
+        "Model": "Assets/Product/Role/Room/Prefab/QR2XiezouMd010011.prefab",
+        "Name": "斜奏 裁律",
+        "NameFrist": "斜奏",
+        "NameLast": "裁律",
+        "HeadIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Xiezou1Q.png",
+        "HeadRoundIcon": "Assets/Product/Texture/Image/Role/RoleHeadR2Xiezou2Q.png",
+        "ExpFondleWidgetHeight": 0.85,
+        "ExpDetailWidgetHeight": 0.6999,
+        "PutOnWidgetHight": 1.2,
+        "DailogWidgetHight": 1.3999,
+        "DailogTouchHight": 0.5099,
+        "EffectWidgetHight": 1.0,
+        "TouchWidgetHight": 0.6,
+        "LoveType": 3,
+        "LikeType": 2,
+        "LikeCharIds": [
+            1311002
+        ],
+        "LikePetIds": [
+            1001,
+            1002
+        ],
+        "QuestAttrib": [
+            1,
+            6
+        ]
     }
 ]

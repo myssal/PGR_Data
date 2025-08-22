@@ -194,7 +194,7 @@ function XUiTaikoMasterMain:AddBtnListener()
     local uiData = self._Control:GetUiData()
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
     if uiData.HelpId then
-        self:BindHelpBtn(self.BtnHelp, XHelpCourseConfig.GetHelpCourseTemplateById(uiData.HelpId).Function)
+        self:BindHelpBtn(self.BtnHelp, XMVCA.XHelpCourse:GetHelpCourseCfgById(uiData.HelpId).Function)
     end
     self:RegisterClickEvent(self.PanelBtnTask, self.OpenUiTask)
     self:RegisterClickEvent(self.PanelBtnTeaching, self.OpenUiTraining)

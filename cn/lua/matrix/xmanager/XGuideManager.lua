@@ -531,6 +531,24 @@ XGuideManagerCreator = function()
         end
         return CurrentProxy:GetGuideCompleteTemplate(completeId)
     end
+
+    ---@return string
+    function XGuideManager.GetGuideIcon(iconId)
+        if not CurrentProxy then
+            XLog.Error("获取引导配置异常, 当前无引导代理")
+            return XGuideConfig.GetGuideIcon(iconId)
+        end
+        return CurrentProxy:GetGuideIcon(iconId)
+    end
+
+    ---@return XTableGuideText
+    function XGuideManager.GetGuideTextTemplate(textId)
+        if not CurrentProxy then
+            XLog.Error("获取引导配置异常, 当前无引导代理")
+            return XGuideConfig.GetGuideTextTemplate(textId)
+        end
+        return CurrentProxy:GetGuideTextTemplate(textId)
+    end
     
     --endregion
     
@@ -630,19 +648,9 @@ XGuideManagerCreator = function()
             return true
         end
         for _, node in ipairs(nodes) do
-            --如果配置了路径格式
-            local findIndex = string.find(node, "/")
-            ---@type UnityEngine.Transform
-            local tmp
-            if findIndex then
-                --根据路径查找
-                tmp = luaUi.Transform:FindTransformWithSplit(node)
-            else
-                --根据名称查找
-                tmp = luaUi.Transform:FindTransform(node)
-            end
-
-            if not XTool.UObjIsNil(tmp) and tmp.gameObject.activeInHierarchy then
+            --根据名称查找, 这个接口找不到会返回lua.Transform 还需要判断节点名
+            local tmp = luaUi.Transform:FindActiveTransformWithSplit(node)
+            if not XTool.UObjIsNil(tmp) and tmp.gameObject.activeInHierarchy and tmp.name == node then
                 return true
             end
         end

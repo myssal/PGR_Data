@@ -156,7 +156,7 @@ end
 ---@param center XMTDownloadCenter
 function XResource:OnStateChanged()
     local state = self._TaskGroup.State
-    print("hyx XResource:OnStateChanged", self._Id, state)
+    -- print("SP/DN XResource:OnStateChanged", self._Id, state)
     if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnResDownloadRelease()
         self._WaitPause = false

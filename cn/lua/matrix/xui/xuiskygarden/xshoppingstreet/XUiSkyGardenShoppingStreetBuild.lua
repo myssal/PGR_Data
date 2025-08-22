@@ -72,6 +72,10 @@ function XUiSkyGardenShoppingStreetBuild:OnEnable()
     end
 end
 
+function XUiSkyGardenShoppingStreetBuild:OnDestroy()
+    self:RemoveOutSideEffect()
+end
+
 function XUiSkyGardenShoppingStreetBuild:_UpdateSaleButton()
     local hasSale = self._Control:HasPromotion()
     local delayTurn = tonumber(self._Control:GetGlobalConfigByKey("PromotionStartTurnAfterOutsideBuild")) or 0
@@ -343,7 +347,27 @@ function XUiSkyGardenShoppingStreetBuild:RefreshShopInScene()
     else
         local areaId = self._Control:GetAreaIdByShopId(self._SelectShopId)
         self:UIX3CSetVirtualCamera(areaId, self._ShopAreaData)
+
+        self:RemoveOutSideEffect(areaId)
+        if not self._HasShop then
+            self._Control:X3CBuildingChange(areaId, 1)
+            local X3CEShopEffectType = XMVCA.XSkyGardenShoppingStreet.X3CEShopEffectType
+            self._Control:X3CPlayShopEffect(areaId, X3CEShopEffectType.ShopPreview, 1)
+            self.HasEffectAreaId = areaId
+        end
     end
+end
+
+function XUiSkyGardenShoppingStreetBuild:RemoveOutSideEffect(areaId)
+    if self._HasShop and areaId == self.HasEffectAreaId then
+        self.HasEffectAreaId = false
+        return
+    end
+    if not self.HasEffectAreaId then return end
+    local X3CEShopEffectType = XMVCA.XSkyGardenShoppingStreet.X3CEShopEffectType
+    self._Control:X3CPlayShopEffect(self.HasEffectAreaId, X3CEShopEffectType.None)
+    self._Control:X3CBuildingChange(self.HasEffectAreaId, 0)
+    self.HasEffectAreaId = false
 end
 
 function XUiSkyGardenShoppingStreetBuild:RefreshOutsideShopList(isForce)
@@ -364,7 +388,7 @@ function XUiSkyGardenShoppingStreetBuild:OnBtnUnlockClick()
     end
 
     local uiPos = self._IsInside and self._Pos or self._Control:GetUiPositionByShopId(self._SelectShopId, self._IsInside)
-    self._Control:UnlockShop(self._SelectShopId, uiPos, self._IsInside, function()
+    local isFinish = self._Control:UnlockShop(self._SelectShopId, uiPos, self._IsInside, function()
         -- if self._SelectAreaId then
         --     local X3CEShopEffectType = XMVCA.XSkyGardenShoppingStreet.X3CEShopEffectType
         --     self._Control:X3CPlayShopEffect(self._SelectAreaId, X3CEShopEffectType.None)
@@ -379,7 +403,9 @@ function XUiSkyGardenShoppingStreetBuild:OnBtnUnlockClick()
                 self:RefreshOutsideShopList(true)
             end
         end
+        self._IsNotClose = false
     end)
+    self._IsNotClose = isFinish
 end
 
 function XUiSkyGardenShoppingStreetBuild:OnBtnUpgradeClick()
@@ -413,6 +439,7 @@ function XUiSkyGardenShoppingStreetBuild:OnBtnRecommendClick()
 end
 
 function XUiSkyGardenShoppingStreetBuild:OnBtnBackClick()
+    if self._IsNotClose then return end
     XMVCA.XSkyGardenShoppingStreet:AddOpenBlackMaskLoading(nil, function()
         -- if self._SelectAreaId then
         --     local X3CEShopEffectType = XMVCA.XSkyGardenShoppingStreet.X3CEShopEffectType

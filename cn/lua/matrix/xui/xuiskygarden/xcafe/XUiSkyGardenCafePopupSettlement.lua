@@ -53,6 +53,9 @@ end
 function XUiSkyGardenCafePopupSettlement:InitUi()
     self._GridTargets = {}
     self._GridRewards = {}
+    self.BtnAgain.IsOpenClickCD = true
+    self.BtnRechallenge.IsOpenClickCD = true
+    self.BtnContinue.IsOpenClickCD = true
 end
 
 function XUiSkyGardenCafePopupSettlement:InitCb()
@@ -146,8 +149,10 @@ function XUiSkyGardenCafePopupSettlement:OnBtnRechallengeClick()
     self:Close()
     XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_EXIT_FIGHT, stageId)
     if isStoryStage then
-        XMVCA.XBigWorldUI:PopThenOpen("UiBigWorldBlackMaskNormal")
-        XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_ENTER_FIGHT, stageId, 0)
+        XMVCA.XBigWorldUI:Open("UiBigWorldBlackMaskNormal", function()
+            XMVCA.XBigWorldUI:Remove("UiSkyGardenCafeGame")
+            XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_ENTER_FIGHT, stageId, 0)
+        end)
     else
         XMVCA.XBigWorldUI:Close("UiSkyGardenCafeGame")
     end

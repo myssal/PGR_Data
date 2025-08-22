@@ -90,6 +90,14 @@ function XChatConfigs.GetEmojiPackId(emojiId)
     return EmojiTemplates[emojiId].PackageId or 0
 end
 
+function XChatConfigs.GetEmojiConnotationDesc(emojiId)
+    if not EmojiTemplates[emojiId] then
+        return ''
+    end
+
+    return EmojiTemplates[emojiId].ConnotationDesc or ''
+end
+
 function XChatConfigs.GetEffectTemplates()
     return EffectTemplates
 end

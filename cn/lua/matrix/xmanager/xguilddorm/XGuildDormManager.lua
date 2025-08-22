@@ -35,16 +35,6 @@ XGuildDormManagerCreator = function()
     local IsShowUiGuildDormCommon = false
     local UiCommonSortingOrder = 49 --默认SortingOrder
     --===============
-    --获取资源管理器
-    --===============
-    local function GetResourceManager()
-        if not SubManagers.Resource then
-            SubManagers.Resource = require("XManager/XGuildDorm/XGuildDormResourceManager")
-        end
-        return SubManagers.Resource
-    end
-    GuildDormManager.ResourceManager = SubManagers.Resource or GetResourceManager()
-    --===============
     --获取场景管理器
     --===============
     local function GetSceneManager()
@@ -233,9 +223,6 @@ XGuildDormManagerCreator = function()
     --开始进入场景
     --==============
     function GuildDormManager.StartGuildDorm(onLoadCompleteCb, onExitCb, onLoadingStart)
-        --①初始化地图网格(第一期暂时不需要网格)
-        --GuildDormManager.MapGridManager.InitMapGrid()
-        --②加载首个场景
         --修改全局光照
         XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
         --获取首场景名与地址
@@ -1618,7 +1605,6 @@ XGuildDormManagerCreator = function()
     --初始化房间数据
     InitRoomDataOnFirst()
     --GuildDormManager.TestSceneManagerFunc()
-    --GuildDormManager.TestResourceManagerFunc()
     return GuildDormManager 
 end
 

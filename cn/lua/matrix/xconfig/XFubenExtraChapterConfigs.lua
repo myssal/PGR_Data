@@ -92,3 +92,14 @@ function XFubenExtraChapterConfigs.GetNextChapterCfgByChapterId(chapterId)
     local config = ExtraNextChapterCfgs[chapterId]
     return config
 end
+
+function XFubenExtraChapterConfigs.GetMainIdByChapterId(chapterId)
+    local configs = XFubenExtraChapterConfigs.GetExtraChapterCfgs()
+    for _, config in pairs(configs) do
+        for _, cId in pairs(config.ChapterId) do
+            if cId == chapterId then
+                return config.Id
+            end
+        end
+    end
+end 

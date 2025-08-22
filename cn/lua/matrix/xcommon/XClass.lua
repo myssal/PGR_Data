@@ -10,6 +10,15 @@ end
 
 local _classNameDicForPartial = {}
 
+local function create(class, obj, ...)
+    if class.Super then
+        create(class.Super, obj, ...)
+    end
+
+    if class.Ctor then
+        class.Ctor(obj, ...)
+    end
+end    
 
 function XClass(super, className, setPartial)
     local class
@@ -18,6 +27,23 @@ function XClass(super, className, setPartial)
         local fullClassName = className .. getinfo(2, "S").source
         class = _classNameDic[fullClassName]
         if class then
+            -- 热重载重定义时先把之前的定义清空，防止误报重定义
+            local vtbl = _class[class]
+            
+            if vtbl then
+                local keyList = {}
+                
+                for k, v in pairs(vtbl) do
+                    if rawget(vtbl, k) ~= nil and k ~= 'Super' then
+                        table.insert(keyList, k)
+                    end
+                end
+
+                for i, k in ipairs(keyList) do
+                    rawset(vtbl, k, nil)
+                end
+            end
+            
             return class
         end
 
@@ -34,33 +60,39 @@ function XClass(super, className, setPartial)
         obj.__cname = className
         obj.__class = class --for typeof
         setmetatable(obj, { __index = _class[class] })
-        do
-            local create
-            create = function(c, ...)
-                if c.Super then
-                    create(c.Super, ...)
-                end
-
-                if c.Ctor then
-                    c.Ctor(obj, ...)
-                end
-            end
-            create(class, ...)
-        end
+        create(class, obj, ...)
         return obj
     end
 
     local vtbl = {}
     _class[class] = vtbl
 
-    setmetatable(class, {
-        __newindex = function(_, k, v)
-            vtbl[k] = v
-        end,
-        __index = function(_, k)
-            return vtbl[k]
-        end
-    })
+    if XMain.IsEditorDebug then
+        setmetatable(class, {
+            __newindex = function(_, k, v)
+                local data = rawget(vtbl, k)
+                
+                if data ~= nil then 
+                    XLog.Error('重复定义字段或方法 className: ' .. tostring(className) .. ' key: ' .. tostring(k))    
+                end
+                
+                vtbl[k] = v
+            end,
+            __index = function(_, k)
+                return vtbl[k]
+            end
+        })
+    else
+        setmetatable(class, {
+            __newindex = function(_, k, v)
+                vtbl[k] = v
+            end,
+            __index = function(_, k)
+                return vtbl[k]
+            end
+        })
+    end
+
 
     if super then
         vtbl.Super = super

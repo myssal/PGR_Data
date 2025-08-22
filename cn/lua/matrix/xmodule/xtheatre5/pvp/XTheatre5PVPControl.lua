@@ -16,7 +16,7 @@ function XTheatre5PVPControl:RemoveAgencyEvent()
 end
 
 function XTheatre5PVPControl:OnRelease()
-
+    self:StopPVPTimer()
 end
 
 --region 服务端数据
@@ -287,6 +287,59 @@ function XTheatre5PVPControl:GetClientConfigRankListGridAnimationInterval()
     return self._Model:GetTheatre5ClientConfigNum('RankListGridAnimationInterval')
 end
 
+--endregion
+
+--region 踢出检查
+
+function XTheatre5PVPControl:StopPVPTimer()
+    if self._PVPTimerId then
+        XScheduleManager.UnSchedule(self._PVPTimerId)
+        self._PVPTimerId = nil
+    end
+end
+
+function XTheatre5PVPControl:StartPVPTimer(tickCb)
+    self:StopPVPTimer()
+    
+    self._TickoutCallBack = tickCb
+    self.PVPTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
+
+    if XTool.IsNumberValid(self.PVPTimeId) and XFunctionManager.CheckInTimeByTimeId(self.PVPTimeId) then
+        self:UpdatePVPTimer()
+        self._PVPTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdatePVPTimer), XScheduleManager.SECOND)
+    else
+        self:DoTickoutCallBack()
+    end
+end
+
+function XTheatre5PVPControl:UpdatePVPTimer()
+    local endTime = XFunctionManager.GetEndTimeByTimeId(self.PVPTimeId)
+
+    if endTime <= 0 then
+        XLog.Error('PVP结束时间异常，结束时间：'..tostring(endTime)..' TimeId:'..tostring(self.PVPTimeId))
+        self:StopPVPTimer()
+        self:DoTickoutCallBack()
+    end
+
+    local now = XTime.GetServerNowTimestamp()
+    local leftTime = math.max(endTime - now, 0)
+
+    if leftTime <= 0 then
+        self:StopPVPTimer()
+        self:DoTickoutCallBack()
+    end
+end
+
+function XTheatre5PVPControl:DoTickoutCallBack()
+    if self._TickoutCallBack then
+        self._TickoutCallBack()
+        self._TickoutCallBack = nil
+    end
+    
+    -- 目前统一踢出看板主界面即可
+    XLuaUiManager.RunMain()
+    XUiManager.TipText('ActivityMainLineEnd')
+end
 --endregion
 
 return XTheatre5PVPControl

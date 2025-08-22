@@ -1295,11 +1295,6 @@
         "Value": "Assets/Product/Texture/Atlas/UIEquipNew/EquipBreakThroughSmall4.png"
     },
     {
-        "Key": "EquipOverrunGuideId",
-        "Type": "int",
-        "Value": 61210
-    },
-    {
         "Key": "EquipResonanceIcon",
         "Type": "string",
         "Value": "Assets/Product/Texture/Atlas/UIEquipNew/EquipResonanceIcon.png"
@@ -1901,11 +1896,6 @@
     },
     {
         "Key": "GuideData",
-        "Type": "string",
-        "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
-    },
-    {
-        "Key": "SkyGardenGuideData",
         "Type": "string",
         "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
     },
@@ -2913,6 +2903,11 @@
         "Key": "RestaurantData",
         "Type": "string",
         "Value": "Assets/Product/Behavior/Restaurant/Restaurant.bytes"
+    },
+    {
+        "Key": "SkyGardenGuideData",
+        "Type": "string",
+        "Value": "Assets/Product/Behavior/BigWorld/SkyGarden/Guide/SkyGardenGuideData.bytes"
     },
     {
         "Key": "RogueLikeBossNode",
@@ -4400,6 +4395,11 @@
         "Value": 1
     },
     {
+        "Key": "DefaultAutoSwitchVideoAudioLanguage",
+        "Type": "int",
+        "Value": 1
+    },
+    {
         "Key": "WeekCardTipRepurchaseRemainDays",
         "Type": "int",
         "Value": 2
@@ -4590,6 +4590,21 @@
         "Value": "Assets/Product/Texture/Image/RoleCharacter/V230zhgNormal01.png"
     },
     {
+        "Key": "Fangkuai3GuideRoleHeadPath1",
+        "Type": "string",
+        "Value": "Assets/Product/Texture/Image/Role/RoleHeadFangKuai01.png"
+    },
+    {
+        "Key": "Fangkuai3GuideRoleHeadPath2",
+        "Type": "string",
+        "Value": "Assets/Product/Texture/Image/Role/RoleHeadFangKuai02.png"
+    },
+    {
+        "Key": "Fangkuai3GuideRoleHeadPath3",
+        "Type": "string",
+        "Value": "Assets/Product/Texture/Image/Role/RoleHeadFangKuai03.png"
+    },
+    {
         "Key": "NewFashionFilterShopList",
         "Type": "string",
         "Value": "501|502|1438"
@@ -4683,5 +4698,20 @@
         "Key": "SlotMachineBestRewardScrollTime",
         "Type": "float",
         "Value": 1
+    },
+    {
+        "Key": "PopupTeachDragLimit",
+        "Type": "int",
+        "Value": 100
+    },
+    {
+        "Key": "PopupTeachDragAngleLimit",
+        "Type": "int",
+        "Value": 30
+    },
+    {
+        "Key": "CharacterGuideId",
+        "Type": "string",
+        "Value": 61210
     }
 ]

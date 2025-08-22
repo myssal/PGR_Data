@@ -614,10 +614,6 @@ function XTempleModel:GetRewardId()
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.TempleConstConfig, "RewardId").Value
 end
 
-function XTempleModel:GetRewardId()
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.TempleConstConfig, "RewardId").Value
-end
-
 function XTempleModel:GetMusicChangeTime()
     return tonumber(self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.TempleConstConfig, "TimeChangeVoice").ValueStr)
 end

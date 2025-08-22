@@ -106,7 +106,6 @@ function XUiPanelEquipV2P6:UpdateRoleView()
     self.WeaponGrid:Open()
     local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
     self.WeaponGrid:Refresh(usingWeaponId)
-    XMVCA.XEquip:CheckOverrunGuide(usingWeaponId)
 
     -- 推荐按钮
     local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)

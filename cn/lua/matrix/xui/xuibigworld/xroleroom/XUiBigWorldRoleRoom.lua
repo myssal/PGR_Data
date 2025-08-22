@@ -101,6 +101,12 @@ function XUiBigWorldRoleRoom:InitCharBtn()
         uiModelRoot:Find("UiNearRoot/PanelRoleEffect2"),
         uiModelRoot:Find("UiNearRoot/PanelRoleEffect3"),
     }
+    
+    self._FxRoleBg = {
+        uiModelRoot:Find("UiNearRoot/PanelBgEffect1"),
+        uiModelRoot:Find("UiNearRoot/PanelBgEffect2"),
+        uiModelRoot:Find("UiNearRoot/PanelBgEffect3"),
+    }
 
     local vRoot = uiModelRoot:FindTransform("VirtualCameraRoot")
     self._VirtualCameraDict = {
@@ -247,6 +253,7 @@ function XUiBigWorldRoleRoom:OnBtnDetailClicked()
     if self._PanelRoleVList and self._PanelRoleVList:IsNodeShow() then
         self:UpdateCamera(VirtualCamera.Main)
         self._PanelRoleVList:Close()
+        self:SetFxRoleBgShow(-1)
         self._PanelRoleInfo:Close()
         self.PanelRoom.gameObject:SetActiveEx(true)
     end
@@ -274,7 +281,7 @@ function XUiBigWorldRoleRoom:OnClickRole(index)
         local ui = self.PanelCharacterFilter:LoadPrefab(url)
         self._PanelRoleVList = require("XUi/XUiBigWorld/XRoleRoom/Panel/XUiPanelBWRoleList").New(ui, self, true)
     end
-
+    self:SetFxRoleBgShow(index)
     local data = self._RoleCameraPoints[index]
     if data then
         self._VirtualCameraDict[VirtualCamera.Role].transform.localPosition = data.Point
@@ -428,4 +435,10 @@ end
 
 function XUiBigWorldRoleRoom:PlayDisableAnimation(finCb)
     self:PlayAnimation("Disable", finCb)
+end
+
+function XUiBigWorldRoleRoom:SetFxRoleBgShow(index)
+    for i = 1, #self._FxRoleBg do
+        self._FxRoleBg[i].gameObject:SetActiveEx(i == index)
+    end
 end

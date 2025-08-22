@@ -4,6 +4,7 @@ local TableNormal = {
     Theatre5Rank = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
     Theatre5Config = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.String, Identifier='Key' },
     Theatre5ClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier='Key' },
+    Theatre5TaskShop = {DirPath = XConfigUtil.DirectoryType.Client},
 }
 
 local TablePrivate = {
@@ -29,7 +30,8 @@ local TablePrivate = {
     Theatre5ShopNpcChat = {DirPath = XConfigUtil.DirectoryType.Client},
     Theatre5Currency = {},
     Theatre5ItemBox = {},
-    Theatre5TaskShop = {DirPath = XConfigUtil.DirectoryType.Client},
+    Theatre5Story = {DirPath = XConfigUtil.DirectoryType.Client},
+    Theatre5StoryGroup = {DirPath = XConfigUtil.DirectoryType.Client},
 }
 
 local PVETableKey = {
@@ -108,13 +110,18 @@ function XTheatre5Model:GetTheatre5ActivityCfgById(activityId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5Activity, activityId, notips)
 end
 
-function XTheatre5Model:GetTheatre5WorldIdByActivityId(activityId)
+function XTheatre5Model:GetTheatre5PVPWorldIdByActivityId(activityId)
     ---@type XTableTheatre5Activity
     local cfg = self:GetTheatre5ActivityCfgById(activityId)
 
     if cfg then
         return cfg.WorldId
     end
+end
+
+function XTheatre5Model:GetTheatre5PVEWorldIdByActivityId()
+    local worldId = self:GetTheatre5ConfigValByKey('PveWorldId')
+    return worldId or 0
 end
 --endregion
 
@@ -162,6 +169,11 @@ function XTheatre5Model:GetTheatre5ItemCfgById(itemId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5Item, itemId, notips)
 end
 
+---@return XTableTheatre5Item[]
+function XTheatre5Model:GetTheatre5ItemCfgs()
+    return self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5Item)
+end
+
 function XTheatre5Model:GetTheatre5SkillCfgById(id, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemSkill, id, notips)
 end
@@ -172,6 +184,10 @@ end
 
 function XTheatre5Model:GetTheatre5ItemTagCfgById(id, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemTag, id, notips)
+end
+
+function XTheatre5Model:GetTheatre5ItemTagCfgs()
+    return self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5ItemTag)
 end
 
 function XTheatre5Model:GetTheatre5ItemKeyWordCfgById(id, notips)
@@ -532,6 +548,14 @@ function XTheatre5Model:GetItemBoxCfg(itemBoxId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemBox, itemBoxId)
 end
 
+function XTheatre5Model:GetStoryById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5Story, id, true)
+end
+
+function XTheatre5Model:GetStoryGroup()
+    return self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5StoryGroup)
+end
+
 function XTheatre5Model:GetPveStoryEntranceCfg(entranceName)
     if not self._StoryEntranceCfgsDic then
         self._StoryEntranceCfgsDic = {}
@@ -674,7 +698,7 @@ end
 function XTheatre5Model:GetTaskOrShopCfgs(taskShopType)
     if not self._TaskShopCfgsDic then
         self._TaskShopCfgsDic = {}
-        local allCfgs = self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5TaskShop)
+        local allCfgs = self._ConfigUtil:GetByTableKey(TableNormal.Theatre5TaskShop)
         for _, cfg in pairs(allCfgs) do
             if not self._TaskShopCfgsDic[cfg.Type] then
                 self._TaskShopCfgsDic[cfg.Type] = {}
@@ -693,6 +717,10 @@ function XTheatre5Model:GetTaskOrShopCfgs(taskShopType)
     end
     return self._TaskShopCfgsDic[taskShopType]
 
+end
+
+function XTheatre5Model:GetTaskOrShopCfg(taskShopId, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5TaskShop, taskShopId, notips)
 end
 
 function XTheatre5Model:SaveData(key, value)

@@ -446,7 +446,7 @@ function XTheatre3Agency:ExOpenMainUi()
     end
 
     --分包资源检测
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Theatre3) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Theatre3) then
         return
     end
     

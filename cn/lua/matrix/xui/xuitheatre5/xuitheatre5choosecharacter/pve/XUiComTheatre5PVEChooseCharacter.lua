@@ -8,10 +8,43 @@ function XUiComTheatre5PVEChooseCharacter:OnStart()
     XUiComTheatre5PVEChooseCharacter.Super.OnStart(self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_CHARACTER_HEAD, self.OnClickCharacterHead, self)
     if self.Parent.UiModelGo then
-        local uiModel = XTool.InitUiObjectByUi({}, self.Parent.UiModelGo)
-        uiModel.FxWuya.gameObject:SetActiveEx(false)
-        uiModel.FxHeiban.gameObject:SetActiveEx(true)
+        self._UiModelGo = XTool.InitUiObjectByUi({}, self.Parent.UiModelGo)
+        self._UiModelGo.FxWuya.gameObject:SetActiveEx(false)
     end    
+end
+
+---@overload
+function XUiComTheatre5PVEChooseCharacter:OnEnable()
+    XUiComTheatre5PVEChooseCharacter.Super.OnEnable(self)
+    if not self._UiModelGo then
+        return
+    end
+    if self._UiModelGo.FxHeiban then
+        self._UiModelGo.FxHeiban.gameObject:SetActiveEx(self:CanDeduce())
+    end    
+end
+
+function XUiComTheatre5PVEChooseCharacter:CanDeduce()
+    local ClueBoardCfgs = self._Control.PVEControl:GetDeduceClueBoardCfgs()
+    if XTool.IsTableEmpty(ClueBoardCfgs) then
+        return false
+    end    
+    for _, ClueBoardCfg in pairs(ClueBoardCfgs) do
+        local clueGroupCfgs = self._Control.PVEControl:GetDeduceClueGroupCfgs(ClueBoardCfg.ClueGroupId)
+        if not XTool.IsTableEmpty(clueGroupCfgs) then
+            for _, clueGroupCfg in pairs(clueGroupCfgs) do
+                local clueCfg = self._Control.PVEControl:GetDeduceClueCfg(clueGroupCfg.ClueId)
+                if clueCfg.Type ==  XMVCA.XTheatre5.EnumConst.PVEClueType.Core then
+                    local clueState = self._Control.PVEControl:GetClueState(clueCfg.Id)  
+                    if clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce then
+                        local storyLineId = self._Control.PVEControl:GetStoryLineIdByScriptId(clueCfg.ScriptId) --能推演的同时在推演故事线节点
+                        return XTool.IsNumberValid(storyLineId)
+                    end    
+                end 
+            end
+        end    
+    end
+    return false
 end
 
 ---@overload
@@ -49,8 +82,10 @@ function XUiComTheatre5PVEChooseCharacter:OnSelectCharacter(index, BtnName)
             XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(entranceCfg.StoryLine, nil, function()
                 self._Control.FlowControl:EnterStroryLineContent(entranceCfg.StoryLine, nil, characterId)
             end)
+            self:TeachingLineRecord()
         elseif XTool.IsNumberValid(curContentId) then    --教学故事线处于某节点
             self._Control.FlowControl:EnterStroryLineContent(entranceCfg.StoryLine, nil, characterId)
+            self:TeachingLineRecord()
         end
         --否则教学故事线完成结束直接返回
         return false   
@@ -67,18 +102,14 @@ function XUiComTheatre5PVEChooseCharacter:OnSelectCharacter(index, BtnName)
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_CLICK_SCENE_OBJECT)
     self._CharacterId = index   
     XUiComTheatre5PVEChooseCharacter.Super.OnSelectCharacter(self,index)
-    local isUnlock = self._Control.PVEControl:IsCharacterAndStoryLineUnlock(self._CharacterId,self._EntranceName)
-    self.BtnStart:SetDisable(not isUnlock, isUnlock)
-    local curStoryLineType = self._Control.PVEControl:GetStoryLineCurNodeType(entranceCfg.StoryLine, self._EntranceName)
-    local isTalk = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Chat
-    local isAVG = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.AVG
-    local isDeduce = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Deduce
-    self.BtnStart.gameObject:SetActiveEx(not isTalk and not isAVG and not isDeduce)
-    self.BtnTalk.gameObject:SetActiveEx(isTalk)
-    self.BtnAVG.gameObject:SetActiveEx(isAVG)
-    self.BtnDeduction.gameObject:SetActiveEx(isDeduce)
-    self:CheckRepeatCharpter()
+    self:UpdateActionBtns(self._EntranceName, index)
     return true
+end
+
+function XUiComTheatre5PVEChooseCharacter:TeachingLineRecord()
+    local dict = {}
+	dict["click_times"] = 1
+    CS.XRecord.Record(dict, "30243", "Theatre5ClickTeachingLine")
 end
 
 function XUiComTheatre5PVEChooseCharacter:GetEntranceName()
@@ -97,8 +128,22 @@ function XUiComTheatre5PVEChooseCharacter:OnBtnStartClickEvent()
         if self:CheckIsShowDetail() then
             self:SwitchToFullView()
         end
-        XLuaUiManager.Open('UiTheatre5PVEClueBoard')
+        local contentId = self._Control.PVEControl:GetStoryLineContentId(storyEntranceCfg.StoryLine)
+        local contentCfg = self._Control.PVEControl:GetStoryLineContentCfg(contentId)
+        local mainClueId
+        if contentCfg then
+            local clueCfg = self._Control.PVEControl:GetDeduceClueCfgByScriptId(contentCfg.ContentId)
+            mainClueId = clueCfg and clueCfg.Id
+        end    
+        XLuaUiManager.Open('UiTheatre5PVEClueBoard', mainClueId)
         return
+    elseif curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Chat then
+        self:SetChooseDetailShow(false, self._CharacterId)
+        self._Control.FlowControl:EnterStroryLineContentWithCb(storyEntranceCfg.StoryLine, storyEntranceCfg.Id, self._CharacterId,
+        XMVCA.XTheatre5.EnumConst.PVENodeType.Chat, function()
+            self:SetChooseDetailShow(true, self._CharacterId)
+        end)
+        return       
     elseif curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.NormalAttack or 
         curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.DeduceBattle then
         local contentId = self._Control.PVEControl:GetStoryLineContentId(storyEntranceCfg.StoryLine)
@@ -127,9 +172,28 @@ function XUiComTheatre5PVEChooseCharacter:OnBtnStartClickEvent()
 end
 
 function XUiComTheatre5PVEChooseCharacter:OnClickCharacterHead(entranceName, characterId)
-    self.BtnStart:SetDisable(false)
     self._EntranceName = entranceName
     self._CharacterId = characterId
+    self:UpdateActionBtns(entranceName, characterId)
+
+end
+
+--更新行动按钮
+function XUiComTheatre5PVEChooseCharacter:UpdateActionBtns(entranceName, characterId)
+    local entranceCfg = self._Control.PVEControl:GetPveStoryEntranceCfg(entranceName)
+    if not entranceCfg then
+        return false
+    end
+    local isUnlock = self._Control.PVEControl:IsCharacterAndStoryLineUnlock(characterId,entranceName)
+    self.BtnStart:SetDisable(not isUnlock, isUnlock)
+    local curStoryLineType = self._Control.PVEControl:GetStoryLineCurNodeType(entranceCfg.StoryLine, entranceName)
+    local isTalk = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Chat
+    local isAVG = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.AVG
+    local isDeduce = isUnlock and curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Deduce
+    self.BtnStart.gameObject:SetActiveEx(not isTalk and not isAVG and not isDeduce)
+    self.BtnTalk.gameObject:SetActiveEx(isTalk)
+    self.BtnAVG.gameObject:SetActiveEx(isAVG)
+    self.BtnDeduction.gameObject:SetActiveEx(isDeduce)
     self:CheckRepeatCharpter()
 end
 
@@ -143,9 +207,25 @@ function XUiComTheatre5PVEChooseCharacter:CheckRepeatCharpter()
     self.BtnStart.gameObject:SetActiveEx(hasRepeatChapter)
 end
 
+--把镜头推进去掉
+function XUiComTheatre5PVEChooseCharacter:SetChooseDetailShow(isShow, index)
+    if isShow then
+        self.PanelCharacterList:OnBtnSelect(index, true)
+        self:UpdateActionBtns(self._EntranceName, self._CharacterId)
+        self.DetailRoot.gameObject:SetActiveEx(true)
+        self.PanelCharacterDetail:Open()
+        self.PanelCharacterList:Open()
+    else
+        self.PanelCharacterDetail:Close()
+        self.PanelCharacterList:Close()
+        self.DetailRoot.gameObject:SetActiveEx(false)
+    end
+end
+
 function XUiComTheatre5PVEChooseCharacter:OnDestroy()
     XUiComTheatre5PVEChooseCharacter.Super.OnDestroy(self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_CHARACTER_HEAD, self.OnClickCharacterHead, self)
+    self._UiModelGo = nil
 end
 
 return XUiComTheatre5PVEChooseCharacter

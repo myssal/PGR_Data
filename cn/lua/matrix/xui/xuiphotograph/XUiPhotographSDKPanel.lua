@@ -64,7 +64,7 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
             self.RootUi:OnBtnSaveCallBack()
         end
     end
-    if XDataCenter.UiPcManager.IsPc() then
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
         if self.BtnExplorerPc then
             self.BtnExplorerPc.gameObject:SetActiveEx(true)
             self.BtnExplorerPc.CallBack = function()

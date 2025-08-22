@@ -1734,7 +1734,7 @@ local CheckAnimeCrossFinish = function(animator, behaviour, animaName, roleModel
     end
     
     if isFinish then --normalizedTime的值为0~1，0为开始，1为结束。
-        roleModel:DoAnimaCrossFinishCallBack(true)
+        roleModel:DoAnimaCrossFinishCallBack(true, true)
         behaviour.enabled = false
         behaviour.LuaUpdate = nil
         
@@ -1810,6 +1810,16 @@ local AddPlayingAnimCrossCallBack = function(roleModel, animator, animaName, lay
     behaviour.LuaUpdate = function()
         CheckAnimeCrossFinish(animator, behaviour, animaName, roleModel, layer)
     end
+end
+
+--- 立刻清除状态机检查回调
+local ClearPlayingAnimCrossCallBack = function(roleModel)
+    local behaviour = roleModel.Transform:GetComponent(typeof(CS.XLuaBehaviour))
+    if not behaviour then
+        behaviour = roleModel.GameObject:AddComponent(typeof(CS.XLuaBehaviour))
+    end
+
+    behaviour.LuaUpdate = nil
 end
 
 ---根据模型名和动作名解除武器绑定角色同名骨骼
@@ -1997,15 +2007,19 @@ function XUiPanelRoleModel:PlayAnimaCross(AnimaName, fromBegin, callBack, errorC
 end
 
 -- 处理融合动画的回调，目前逻辑仅针对融合动画调整，因此单独方法及字段
-function XUiPanelRoleModel:DoAnimaCrossFinishCallBack(async)
+function XUiPanelRoleModel:DoAnimaCrossFinishCallBack(sync, ignoreBehaviorClear)
     if not XTool.IsTableEmpty(self._AnimaCrossFinishCbList) then
-        if async or XCharacterUiEffectConfig.CheckCharaAnimaIsSyncCallBack(self.CurRoleName, self._CurAnimaName) then
+        if sync or XCharacterUiEffectConfig.CheckCharaAnimaIsSyncCallBack(self.CurRoleName, self._CurAnimaName) then
             for i, cb in pairs(self._AnimaCrossFinishCbList) do
                 cb()
             end
 
             self._AnimaCrossFinishCbList = nil
             self._CurAnimaName = nil
+
+            if not ignoreBehaviorClear then
+                ClearPlayingAnimCrossCallBack(self)
+            end
         end
     end
 
@@ -2094,6 +2108,25 @@ function XUiPanelRoleModel:PlayWeaponAnima(actionId)
         weaponModelList, weaponAnimatorList = self:LoadWeaponModelWhenPlayAnima(actionId)
 
         if weaponModelList then
+            local needActiveControl = false
+            local isShow = false
+
+            -- 判断是否要强制控制资源的默认状态
+            if XCharacterUiEffectConfig.CheckCharaAnimaWeaponLoadDefaultShow(self.CurRoleName, actionId) then
+                needActiveControl = true
+                isShow = true
+            elseif XCharacterUiEffectConfig.CheckCharaAnimaWeaponLoadDefaultHide(self.CurRoleName, actionId) then
+                needActiveControl = true
+                isShow = false
+            end
+            
+            if needActiveControl then
+                for i = 1, #weaponModelList do
+                    weaponModelList[i].gameObject:SetActiveEx(isShow)
+                end
+            end
+            
+            
             local callback = function()
                 for i = 1, #weaponModelList do
                     weaponModelList[i].gameObject:SetActiveEx(true)
@@ -3159,5 +3192,13 @@ function XUiPanelRoleModel:GetEffectByKey(key)
     XLog.Warning("[XUiPanelRoleModel] 根据key找不到要获取的特效", tostring(key))
 end
 --endregion
+
+function XUiPanelRoleModel:AddRoleShadow()
+    CS.XShadowHelper.SetCharRealtimeShadow(self.GameObject, true)
+end
+
+function XUiPanelRoleModel:RemoveRoleShadow()
+    CS.XShadowHelper.SetCharRealtimeShadow(self.GameObject, false)
+end
 
 return XUiPanelRoleModel

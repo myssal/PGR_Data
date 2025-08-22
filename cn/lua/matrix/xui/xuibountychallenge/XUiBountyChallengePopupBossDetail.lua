@@ -1,16 +1,20 @@
 ---@class XUiBountyChallengePopupBossDetail : XLuaUi
 ---@field _Control XBountyChallengeControl
+---@field Video XVideoPlayerBase
 local XUiBountyChallengePopupBossDetail = XLuaUiManager.Register(XLuaUi, "UiBountyChallengePopupBossDetail")
 
 function XUiBountyChallengePopupBossDetail:OnAwake()
     self:BindExitBtns(self.BtnTanchuangCloseBig)
     XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnClickLeft)
+    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnClickRight)
     --self.Video = XLuaVideoManager.LoadVideoPlayerUguiWithPrefab(self.PanelVideo)
     --self.Video.IsLooping = true
     self._PageGrids = { self.GameObject }
 end
 
 function XUiBountyChallengePopupBossDetail:OnStart()
+    local detail = self._Control:GetUiBossDetail()
+    detail.Index = 1
 end
 
 function XUiBountyChallengePopupBossDetail:OnEnable()
@@ -38,7 +42,7 @@ function XUiBountyChallengePopupBossDetail:UpdateDetail()
         if self.Video then
             if data.VideoConfigId then
                 self.Video:SetInfoByVideoId(data.VideoConfigId)
-                self.Video:Play()
+                self.Video:RePlay()
             end
         end
     end
@@ -46,7 +50,11 @@ end
 
 function XUiBountyChallengePopupBossDetail:OnClickLeft()
     local detail = self._Control:GetUiBossDetail()
-    detail.Index = math.max(detail.Index - 1, 1)
+    local index = math.max(detail.Index - 1, 1)
+    if index == detail.Index then
+        return
+    end
+    detail.Index = index
     self:UpdateDetail()
     self:UpdateArrowVisible()
     self:UpdatePage()
@@ -54,7 +62,11 @@ end
 
 function XUiBountyChallengePopupBossDetail:OnClickRight()
     local detail = self._Control:GetUiBossDetail()
-    detail.Index = math.min(detail.Index + 1, #detail.List)
+    local index = math.min(detail.Index + 1, #detail.List)
+    if index == detail.Index then
+        return
+    end
+    detail.Index = index
     self:UpdateDetail()
     self:UpdateArrowVisible()
     self:UpdatePage()
@@ -91,12 +103,6 @@ function XUiBountyChallengePopupBossDetail:UpdatePage()
         else
             grid:Find("On").gameObject:SetActiveEx(false)
             grid:Find("Off").gameObject:SetActiveEx(true)
-        end
-    end
-    for i = 1, pageAmount do
-        local grid = self._PageGrids[i]
-        if grid then
-            grid.gameObject:SetActive(i == detail.Index)
         end
     end
 end

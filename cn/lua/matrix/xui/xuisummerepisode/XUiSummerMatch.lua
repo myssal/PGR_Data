@@ -45,7 +45,7 @@ end
 function XUiSummerMatch:TryShowHelpTip()
     local value = XDataCenter.EliminateGameManager.GetEliminateGamePrefs(self.GameId)
     if value == 0 then
-        local config = XHelpCourseConfig.GetHelpCourseTemplateById(self.GameData.Config.HelpId)
+        local config = XMVCA.XHelpCourse:GetHelpCourseCfgById(self.GameData.Config.HelpId)
         XUiManager.ShowHelpTip(config.Function)
         XDataCenter.EliminateGameManager.SaveEliminateGamePrefs(1, self.GameId)
     end
@@ -470,7 +470,7 @@ function XUiSummerMatch:OnBtnRollBackClick()
 end
 
 function XUiSummerMatch:RegisterHelpBtn()
-    local config = XHelpCourseConfig.GetHelpCourseTemplateById(self.GameData.Config.HelpId)
+    local config = XMVCA.XHelpCourse:GetHelpCourseCfgById(self.GameData.Config.HelpId)
     self:BindHelpBtn(self.BtnHelpCourse, config.Function)
 end
 

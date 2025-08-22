@@ -907,10 +907,12 @@
         "FevStageMulti": 10000,
         "InitialFev": 0,
         "BuffTitle": [
-            "音浪飙升"
+            "音浪飙升",
+            "即兴方块"
         ],
         "BuffDesc": [
-            "有概率一回合上升两行方块"
+            "有概率一回合上升两行方块",
+            "棋盘上方有概率掉落方块"
         ]
     },
     {
@@ -1032,7 +1034,7 @@
         "SizeY": 9,
         "MaxBlockLength": 4,
         "InitLineCount": 5,
-        "MaxRound": 500,
+        "MaxRound": 200,
         "EnvironmentId": 3031,
         "MaxUseCount": 3,
         "FevExctiedValue": 1000000,
@@ -1060,7 +1062,7 @@
         "SizeY": 9,
         "MaxBlockLength": 5,
         "InitLineCount": 5,
-        "MaxRound": 999,
+        "MaxRound": 500,
         "EnvironmentId": 0,
         "MaxUseCount": 3,
         "FevExctiedValue": 1000000,
@@ -1088,7 +1090,7 @@
         "SizeY": 9,
         "MaxBlockLength": 5,
         "InitLineCount": 5,
-        "MaxRound": 1000,
+        "MaxRound": 999,
         "EnvironmentId": 3033,
         "MaxUseCount": 3,
         "FevExctiedValue": 1000000,

@@ -41,7 +41,7 @@ function XUiGridTheatre5PVPRankItem:RefreshShow(rank, playerData, characterLimit
     end
     
     -- 段位
-    self.Rank:RefreshByScore(playerData.Score, true)
+    self.Rank:RefreshByScore(playerData.Score, true, true)
     
     -- 使用的角色 
     local isShowUsedChara = not characterLimit and XTool.IsNumberValid(playerData.Theatre5RankCharacterId)

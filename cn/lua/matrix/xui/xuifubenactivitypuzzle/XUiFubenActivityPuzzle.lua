@@ -99,7 +99,7 @@ end
 
 function XUiFubenActivityPuzzle:RegisterHelpBtn()
     local helpId = XDataCenter.FubenActivityPuzzleManager.GetActivityInfo().HelpId
-    local template = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local template = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
     self:BindHelpBtn(self.BtnHelp, template.Function)
 end
 
@@ -191,7 +191,7 @@ end
 
 function XUiFubenActivityPuzzle:CheckHelpHitFace()
     local helpId = XDataCenter.FubenActivityPuzzleManager.GetActivityInfo().HelpId
-    local helpTemplate = XHelpCourseConfig.GetHelpCourseTemplateById(helpId)
+    local helpTemplate = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId)
     local key = XFubenActivityPuzzleConfigs.HELP_HIT_FACE_KEY..helpId..XPlayer.Id
     local hitFaceData = XSaveTool.GetData(key)
     if not hitFaceData or hitFaceData == XFubenActivityPuzzleConfigs.HelpHitFaceState.UnHit then

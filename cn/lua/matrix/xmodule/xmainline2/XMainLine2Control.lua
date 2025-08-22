@@ -401,8 +401,9 @@ end
 
 -- 获取主章节上次释放时的数据
 ---@param mainId number 主章节Id
-function XMainLine2Control:GetMainReleaseData(mainId)
-    return self._Model:GetMainReleaseData(mainId)
+---@param isRemove boolean 是否移除数据
+function XMainLine2Control:GetMainReleaseData(mainId, isRemove)
+    return self._Model:GetMainReleaseData(mainId, isRemove)
 end
 
 -- 获取章节上一次的解锁入口下标

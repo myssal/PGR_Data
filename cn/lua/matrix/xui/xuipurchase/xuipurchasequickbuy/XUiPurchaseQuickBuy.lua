@@ -17,7 +17,8 @@ function XUiPurchaseQuickBuy:OnAwake()
     self:_RegisterButtonClicks()
 end
 
-function XUiPurchaseQuickBuy:OnStart(payCount)
+function XUiPurchaseQuickBuy:OnStart(payCount, cancelReplaceCb)
+    self.CancelReplaceCb = cancelReplaceCb
     local config, index = XDataCenter.PurchaseManager.GetPayConfigByDifferenceCount(payCount)
 
     if not config then
@@ -39,8 +40,12 @@ function XUiPurchaseQuickBuy:OnBtnConfirmClick()
 end
 
 function XUiPurchaseQuickBuy:OnBtnCancelClick()
-	self:Close()
-    XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self._Index)
+    if self.CancelReplaceCb then
+        self.CancelReplaceCb()
+    else
+        self:Close()
+        XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self._Index)
+    end
 end
 
 function XUiPurchaseQuickBuy:OnBtnTanchuangCloseClick()

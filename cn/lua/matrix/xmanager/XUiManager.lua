@@ -32,7 +32,6 @@ function XUi:SetUiSprite(image, name, callBack)
 end
 
 local TipMsgQueue --重复弹条提示队列
-local ClearMsgEvent
 local CurrentTipState -- 弹条状态
 
 local TipState =    {
@@ -128,7 +127,7 @@ function XUiManager.TipMsgEnqueue(msg, type, cb, hideCloseMark)
     else
         local msgData = { msg, type, cb, hideCloseMark }
         TipMsgQueue:Enqueue(msgData)
-        ClearMsgEvent = ClearMsgEvent or XEventManager.AddEventListener(XEventId.EVENT_MAINUI_ENABLE, XUiManager.ClearTipMsgQueue)
+        XEventManager.AddEventListener(XEventId.EVENT_MAINUI_ENABLE, XUiManager.ClearTipMsgQueue)
     end
 end
 
@@ -139,7 +138,6 @@ function XUiManager.TipMsgDequeue()
         XUiManager.TipMsg(tableUnpack(msgData))
     else
         XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_ENABLE, XUiManager.ClearTipMsgQueue)
-        ClearMsgEvent = nil
     end
 end
 
@@ -290,15 +288,19 @@ end
 -- 显示帮助界面
 -- Param:cb 关闭帮助界面时执行的回调
 function XUiManager.ShowHelpTip(helpDataKey, cb, jumpIndex, closeCb)
-    local config = XHelpCourseConfig.GetHelpCourseTemplateByFunction(helpDataKey)
+    local config = XMVCA.XHelpCourse:GetHelpCourseCfgByFunction(helpDataKey)
     if not config then
         return
     end
 
-    if config.IsShowCourse == 1 then
+    if config.IsShowCourse == XEnumConst.HelpCourse.UiHelpType.Default then
         XLuaUiManager.Open("UiHelp", config, cb, jumpIndex, closeCb)
-    else
+    elseif config.IsShowCourse == XEnumConst.HelpCourse.UiHelpType.SimpleContent then
         XUiManager.UiFubenDialogTip(config.Name, config.Describe)
+    elseif config.IsShowCourse == XEnumConst.HelpCourse.UiHelpType.PopStyle then
+        XLuaUiManager.Open("UiPopupTeach", config, cb, jumpIndex, closeCb)
+    elseif config.IsShowCourse == XEnumConst.HelpCourse.UiHelpType.Collections then
+        XLuaUiManager.Open("UiCollectionTeach", config, cb, jumpIndex, closeCb)
     end
 end
 

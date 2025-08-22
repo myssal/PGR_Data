@@ -11,6 +11,10 @@ function XUiPanelTheatre5ItemDetailBtns:OnStart()
     self.BtnFreeze:AddEventListener(handler(self, self.OnBtnFreezeClickEvent))
     self.BtnDiscard:AddEventListener(handler(self, self.OnBtnSellClickEvent))
     self.BtnChoose:AddEventListener(handler(self, self.OnBtnChooseClickEvent))
+    self.BtnEquip:AddEventListener(handler(self, self.OnBtnEquipClickEvent))
+    if self.UiTheatre5BtnRemove then
+        self.UiTheatre5BtnRemove:AddEventListener(handler(self, self.OnUndressClickEvent))
+    end
 end
 
 function XUiPanelTheatre5ItemDetailBtns:HideAllBtns()
@@ -19,6 +23,10 @@ function XUiPanelTheatre5ItemDetailBtns:HideAllBtns()
     self.BtnSell.gameObject:SetActiveEx(false)
     self.BtnDiscard.gameObject:SetActiveEx(false)
     self.BtnChoose.gameObject:SetActiveEx(false)
+    self.BtnEquip.gameObject:SetActiveEx(false)
+    if self.UiTheatre5BtnRemove then
+        self.UiTheatre5BtnRemove.gameObject:SetActiveEx(false)
+    end
 end
 
 ---@param itemData XTheatre5Item
@@ -63,8 +71,27 @@ function XUiPanelTheatre5ItemDetailBtns:RefreshBtns(itemData, ownerType)
     else
         if itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
             self.BtnDiscard.gameObject:SetActiveEx(true)
+            if not self:IsEquip() then
+                if self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock then
+                    self.BtnEquip.gameObject:SetActiveEx(true)
+                end
+            else
+                if self.UiTheatre5BtnRemove then
+                    self.UiTheatre5BtnRemove.gameObject:SetActiveEx(true)
+                end
+            end
+
         elseif itemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
             self.BtnSell.gameObject:SetActiveEx(true)
+            if not self:IsEquip() then
+                if self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock then
+                    self.BtnEquip.gameObject:SetActiveEx(true)
+                end
+            else
+                if self.UiTheatre5BtnRemove then
+                    self.UiTheatre5BtnRemove.gameObject:SetActiveEx(true)
+                end
+            end
             
             ---@type XTableTheatre5Item
             local itemCfg = self._Control:GetTheatre5ItemCfgById(itemData.ItemId)
@@ -74,10 +101,14 @@ function XUiPanelTheatre5ItemDetailBtns:RefreshBtns(itemData, ownerType)
     end
 end
 
+function XUiPanelTheatre5ItemDetailBtns:IsEquip()
+    return self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock and
+            self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
+end
+
 function XUiPanelTheatre5ItemDetailBtns:OnBtnSellClickEvent()
     -- 卖出
-    local isEquip = self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock and
-        self.Parent.OwnerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
+    local isEquip = self:IsEquip()
     XMVCA.XTheatre5:RequestTheatre5ShopSellItem(self.Parent.ItemData.InstanceId, self.Parent.ItemData.ItemType, isEquip, function(success)
         if success then
             self._Control.ShopControl:RefreshAfterSellRequest()
@@ -87,32 +118,42 @@ function XUiPanelTheatre5ItemDetailBtns:OnBtnSellClickEvent()
 end
 
 function XUiPanelTheatre5ItemDetailBtns:OnBtnBuyClickEvent()
-    if not self._Control.ShopControl:CheckBagListIsFull(false, true) then
-        if not self._Control.ShopControl:CheckHasEngouhGoldBuyGoods(self.Parent.ItemData.InstanceId) then
-            return
-        end
-        
-        local isEquipped = false
-
-        if self.Parent.ItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
-            isEquipped = self._Control.ShopControl:CheckHasEmptySkillSlot()
-        elseif self.Parent.ItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
-            isEquipped = self._Control.ShopControl:CheckHasEmptyRuneSlot()
-        end
-        
-        XMVCA.XTheatre5:RequestTheatre5ShopBuyItem(self.Parent.ItemData.InstanceId, isEquipped, NoTargetIndex, function(success)
-            if success then
-                self._Control.ShopControl:RefreshAfterBuyRequest()
-                self:CloseRootUi()
-            end
-        end)
+    if not self._Control.ShopControl:CheckHasEngouhGoldBuyGoods(self.Parent.ItemData.InstanceId) then
+        return
     end
+
+    local isEquipped = false
+    local itemType = self.Parent.ItemData.ItemType
+    
+    -- 优先检查是否能直接穿上
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+        isEquipped = self._Control.ShopControl:CheckHasEmptySkillSlot()
+    elseif itemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+        isEquipped = self._Control.ShopControl:CheckHasEmptyRuneSlot()
+    end
+
+    -- 如果不能，则入背包，需要检查背包是否满
+    if not isEquipped and self._Control.ShopControl:CheckBagListIsFull(false, true) then
+        return
+    end
+    
+    XMVCA.XTheatre5:RequestTheatre5ShopBuyItem(self.Parent.ItemData.InstanceId, isEquipped, NoTargetIndex, function(success)
+        if success then
+            self._Control.ShopControl:RefreshAfterBuyRequest()
+            self._Control.ShopControl:PlayItemPlacedSFX(itemType)
+            self:CloseRootUi()
+        end
+    end)
+    
 end
 
 function XUiPanelTheatre5ItemDetailBtns:OnBtnFreezeClickEvent()
+    local isFreeze = self.IsFreeze
+    
     XMVCA.XTheatre5:RequestTheatre5ShopFreeze(self.Parent.ItemData.InstanceId, not self.IsFreeze, function(success)
         if success then
             self._Control.ShopControl:RefreshAfterFreezeRequest()
+            self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_PLAY_GOODS_FREEZE_SFX, not isFreeze)
             self:CloseRootUi()
         end
     end)
@@ -120,10 +161,11 @@ end
 
 function XUiPanelTheatre5ItemDetailBtns:OnBtnChooseClickEvent()
     local isEquipped = false
-
-    if self.Parent.ItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
+    local itemType = self.Parent.ItemData.ItemType
+    
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
         isEquipped = self._Control.ShopControl:CheckHasEmptySkillSlot()
-    elseif self.Parent.ItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+    elseif itemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
         isEquipped = self._Control.ShopControl:CheckHasEmptyRuneSlot()
     end
     
@@ -137,14 +179,26 @@ function XUiPanelTheatre5ItemDetailBtns:OnBtnChooseClickEvent()
     XMVCA.XTheatre5:RequestTheatre5SkillChoice(self.Parent.ItemData.InstanceId, isEquipped, -1, function(success)
         if success then
             self._Control.ShopControl:RefreshAfterBuyRequest()
-            self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_STATE_CHANGED, true)
-            self:CloseRootUi()
+            self._Control.ShopControl:PlayItemPlacedSFX(itemType)
         end
+
+        self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_STATE_CHANGED, true)
+        self:CloseRootUi()
     end)
 end
 
 function XUiPanelTheatre5ItemDetailBtns:CloseRootUi()
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL)
+end
+
+function XUiPanelTheatre5ItemDetailBtns:OnBtnEquipClickEvent()
+    self._Control.ShopControl:EquipItem(self.Parent.ItemData)
+    self.Parent:Close()
+end
+
+function XUiPanelTheatre5ItemDetailBtns:OnUndressClickEvent()
+    self._Control.ShopControl:UndressItem(self.Parent.ItemData)
+    self.Parent:Close()
 end
 
 return XUiPanelTheatre5ItemDetailBtns

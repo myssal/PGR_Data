@@ -74,6 +74,12 @@ function XUiPanelBWTaskContent:RefreshView(questId)
     self:RefreshReward(questId)
     self:RefreshDetail(stepData)
     self:RefreshBtn()
+    local isFavorableQuestType = XMVCA.XBigWorldQuest:IsFavorableQuestType(questId)
+    self.ImgRoot.gameObject:SetActiveEx(isFavorableQuestType)
+    self.PanelImg.gameObject:SetActiveEx(isFavorableQuestType)
+    if isFavorableQuestType then
+        self.RImgBanner:SetRawImage(XMVCA.XBigWorldQuest:GetQuestBanner(questId))
+    end
 end
 
 function XUiPanelBWTaskContent:RefreshBtn()

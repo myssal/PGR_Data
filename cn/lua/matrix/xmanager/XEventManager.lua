@@ -22,7 +22,6 @@ function XEventManager.AddEventListener(eventId, func, obj)
     end
 
     ListenersMap[eventId] = listenerList
-    return { eventId, func, obj }
 end
 
 function XEventManager.RemoveEventListener(eventId, func, obj)
@@ -126,7 +125,7 @@ function XEventManager.BindEvent(node, eventId, func, obj)
     end
     local handler
     if checkExist then
-        handler = XEventManager.AddEventListener(eventId, function(...)
+        local newFunc = function(...)
             if not checkExist() then
                 XEventManager.UnBindEvent(node)
             else
@@ -136,10 +135,13 @@ function XEventManager.BindEvent(node, eventId, func, obj)
                     func(...)
                 end
             end
-        end)
+        end
+        XEventManager.AddEventListener(eventId, newFunc)
+        handler = {eventId, newFunc} 
     else
-        handler = XEventManager.AddEventListener(eventId, func, obj)
-    end
+        XEventManager.AddEventListener(eventId, func, obj)
+        handler = {eventId, func, obj} 
+    end    
     table.insert(NodeEventBindRecord[node], handler)
     return handler
 end

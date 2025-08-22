@@ -23,6 +23,10 @@ function XUiPanelTheatre5PVECharacterDetail:RefreshShow(cfg)
     
     --线索
     local curContentId = self._Control.PVEControl:GetStoryLineContentId(entranceCfg.StoryLine)
+    if not XTool.IsNumberValid(curContentId) then --复刷章节
+        self.PanelClue.gameObject:SetActiveEx(false)
+        return
+    end    
     local storyLineContentCfg = self._Control.PVEControl:GetStoryLineContentCfg(curContentId)
     local isDeduce = storyLineContentCfg and storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.DeduceBattle 
         and XTool.IsNumberValid(storyLineContentCfg.NextScript)

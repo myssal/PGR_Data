@@ -17,11 +17,10 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
     self.ChapterIds = self._Control:GetMainChapterIds(mainId)
 
     -- 进战斗/播剧情后恢复界面
-    local resumeData = self._Control:GetMainReleaseData(self.MainId)
+    local resumeData = self._Control:GetMainReleaseData(self.MainId, true)
     if resumeData then 
-        self._Control:CacheMainReleaseData(self.MainId, nil)
         self.CurChapterId = resumeData.ChapterId
-        self.LastClickStageId = resumeData.LastClickStageId
+        self:SetLastClickStageId(resumeData.LastClickStageId)
         self.IsOpenStageDetail = false
     end
     

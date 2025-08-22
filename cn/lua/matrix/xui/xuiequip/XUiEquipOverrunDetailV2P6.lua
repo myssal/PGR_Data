@@ -85,7 +85,7 @@ function XUiEquipOverrunDetailV2P6:RefreshBlindSuit()
         self.BtnChoice.gameObject:SetActiveEx(true)
         self:RefreshLevel(self.BtnChoice, lv)
         local suitName = XMVCA:GetAgency(ModuleId.XEquip):GetSuitName(choseSuit)
-        local bigIconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitBigIconPath(choseSuit)
+        local bigIconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitWaferBagPath(choseSuit)
         self.BtnChoice:GetObject("TxtAwarenessName").text = suitName
         self.BtnChoice:GetObject("RImgAwareness"):SetRawImage(bigIconPath)
 

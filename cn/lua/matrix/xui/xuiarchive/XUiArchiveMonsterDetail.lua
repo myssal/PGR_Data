@@ -308,14 +308,6 @@ end
 function XUiArchiveMonsterDetail:OnBtnBackClick()
     if self.DetailType ~= XEnumConst.Archive.MonsterDetailType.Synopsis then
         self:SelectDetailState(XEnumConst.Archive.MonsterDetailType.Synopsis)
-    else
-        self:Close()
-    end
-end
-
-function XUiArchiveMonsterDetail:OnBtnBackClick()
-    if self.DetailType ~= XEnumConst.Archive.MonsterDetailType.Synopsis then
-        self:SelectDetailState(XEnumConst.Archive.MonsterDetailType.Synopsis)
         self:ResetScreenShot()
     else
         self:Close()

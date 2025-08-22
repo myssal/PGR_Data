@@ -51,4 +51,48 @@ end
 
 --endregion
 
+--region PVE
+
+--PVE入口红点
+function XTheatre5Model:CheckHasNewPVEActivityReddot()
+    return not self._SaveUtil:GetDataByBlockKey(SAVE_KEY_LONGTERM, 'PVEActivityReddot')
+end
+
+function XTheatre5Model:MarkNewPVEActivityReddot()
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, 'PVEActivityReddot', true)
+end
+
+--endregion
+
+--region 商店红点
+--一天提醒一次
+function XTheatre5Model:CheckLimitShopReddot()
+    local recordTimeStamp = self._SaveUtil:GetDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5ShopReddot') or 0
+    local curDay = XTime.GetServerNowTimestamp()
+    return recordTimeStamp < curDay
+end
+
+function XTheatre5Model:MarkLimitShopReddot()
+    local nextDay = XTime.GetSeverNextRefreshTime()
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5ShopReddot', nextDay)
+end
+
+function XTheatre5Model:CheckShopNewReddot(shopDataId)
+    return not self._SaveUtil:GetDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5ShopNewReddot' .. shopDataId)
+end
+
+function XTheatre5Model:MarkShopNewReddot(shopDataId)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5ShopNewReddot' .. shopDataId, true)
+end
+
+function XTheatre5Model:CheckTaskNewReddot(taskId)
+    return not self._SaveUtil:GetDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5TaskNewReddot' .. taskId)
+end
+
+function XTheatre5Model:MarkTaskNewReddot(taskId)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_LONGTERM, 'Theatre5TaskNewReddot' .. taskId, true)
+end
+
+--endregion
+
 return XTheatre5Model

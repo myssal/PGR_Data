@@ -35,6 +35,8 @@ function XUiPanelTheatre5ShopDetail:RefreshShow()
     if roundCfg then
         self.TxtTips.text = roundCfg.ShopDetailTips
     end
+    --pve隐藏
+    self.TxtTips.gameObject:SetActiveEx(self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE)
 end
 
 return XUiPanelTheatre5ShopDetail

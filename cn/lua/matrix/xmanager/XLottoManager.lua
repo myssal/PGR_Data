@@ -258,25 +258,43 @@ XLottoManagerCreator = function()
 
     function XLottoManager.UpdateLottoGroupData(lottoInfoList)
         local tmpInfoList = {}
-        LottoGroupDataDic = {}
+    
+        -- 一、遍历新数据，按组收集，同时按需创建实体
         for _, lottoInfo in pairs(lottoInfoList or {}) do
             local lottoCfg = XTool.IsNumberValid(lottoInfo.Id) and XLottoConfigs.GetLottoCfgById(lottoInfo.Id)
             if lottoCfg then
-                LottoGroupDataDic[lottoCfg.LottoGroupId] = LottoGroupDataDic[lottoCfg.LottoGroupId] or XLottoGroupEntity.New(lottoCfg.LottoGroupId)
+                -- 只在不存在时新建
+                if not LottoGroupDataDic[lottoCfg.LottoGroupId] then
+                    LottoGroupDataDic[lottoCfg.LottoGroupId] = XLottoGroupEntity.New(lottoCfg.LottoGroupId)
+                end
+                -- 收集本次调用里的同组数据
                 tmpInfoList[lottoCfg.LottoGroupId] = tmpInfoList[lottoCfg.LottoGroupId] or {}
                 table.insert(tmpInfoList[lottoCfg.LottoGroupId], lottoInfo)
             end
+    
+            -- 原有字典更新逻辑保持不变
             LottoIdLPrimaryIdDic[lottoInfo.Id] = lottoInfo.LottoPrimaryId
             LPrimaryIdLottoIdDic[lottoInfo.LottoPrimaryId] = lottoInfo.Id
         end
-
-        for groupId, infoList in pairs(tmpInfoList or {}) do
+    
+        -- 二、更新已有实体内容
+        for groupId, infoList in pairs(tmpInfoList) do
             table.sort(infoList, function(a, b)
                 return a.Priority < b.Priority
             end)
-            LottoGroupDataDic[groupId]:UpdateData({ DrawInfoList = infoList })
+            local entity = LottoGroupDataDic[groupId]
+            if entity then
+                entity:UpdateData({ DrawInfoList = infoList })
+            end
         end
-        
+    
+        -- 三、删除那些本次数据里已不再出现的组
+        for groupId, _ in pairs(LottoGroupDataDic) do
+            if not tmpInfoList[groupId] then
+                LottoGroupDataDic[groupId] = nil
+            end
+        end
+    
         XEventManager.DispatchEvent(XEventId.EVENT_LOTTO_UPDATE_GROUP_DATA)
     end
 

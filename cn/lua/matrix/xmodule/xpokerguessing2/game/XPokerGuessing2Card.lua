@@ -21,6 +21,7 @@ end
 
 function XPokerGuessing2Card:Reset()
     self._Id = 0
+    self._IsSelected = false
 end
 
 ---@param model XPokerGuessing2Model
@@ -35,7 +36,8 @@ function XPokerGuessing2Card:GetUiData(model, smallIcon)
     local data = {
         Id = self._Id,
         Icon = icon,
-        Uid = self._Uid
+        Uid = self._Uid,
+        ChangedId = self._ChangedId,
     }
     return data
 end
@@ -58,6 +60,11 @@ end
 
 function XPokerGuessing2Card:IsSelected()
     return self._IsSelected
+end
+
+--- 设置改变后的Id
+function XPokerGuessing2Card:SetChangedId(changedId)
+    self._ChangedId = changedId
 end
 
 return XPokerGuessing2Card

@@ -73,6 +73,17 @@ GetResFileUrl = GetResFileUrl or nil
 
 -- 注意：重载模块需要释放的对象
 ShowStartErrorDialog = function(errorCode, confirmCB, cancelCB, cancelStr)
+    if CS.XInfo.IsCloudGame then
+        if CS.XWLinkAgent.IsPatchOnly then
+            -- 云游戏只触发热更，触发完就结束
+            CS.XWLinkAgent.PatchQuit(false)
+        else 
+            -- 云游戏一旦出现热更错误，直接弹出提示，关闭游戏
+            CS.XWLinkAgent.Exit(CsApplication.GetText(errorCode))
+        end
+        -- 后续加个埋点CS.XRecord.Record("50000", "UiLaunchand")
+        return
+    end
     confirmCB = confirmCB or CsApplication.Exit
     CsTool.WaitCoroutine(CsApplication.CoDialog(CsApplication.GetText("Tip"), CsApplication.GetText(errorCode), cancelCB, confirmCB, cancelStr))
 end
@@ -147,6 +158,12 @@ InitGame = function(urlTable, hashTable)
     --    end
     --    ResFileUrlTable[k] = v
     --end
+    
+    -- 云游戏只触发热更，触发完就结束
+    if CS.XWLinkAgent.IsPatchOnly then
+        CS.XWLinkAgent.PatchQuit(true)
+        return
+    end
 
     CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_LOADING)
 

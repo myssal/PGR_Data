@@ -280,7 +280,7 @@ function XUiSummerEpisodeNew:GetHelpDataFunc()
 
     local helpConfigs = {}
     for i = 1, #helpIds do
-        helpConfigs[i] = XHelpCourseConfig.GetHelpCourseTemplateById(helpIds[i])
+        helpConfigs[i] = XMVCA.XHelpCourse:GetHelpCourseCfgById(helpIds[i])
     end
 
     return helpConfigs

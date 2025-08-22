@@ -76,9 +76,15 @@ function XDlcRelinkModel:GetWorldId()
     return config and config.WorldId or 0
 end
 
+-- 获取等级Id
+function XDlcRelinkModel:GetLevelId()
+    local config = self:GetActivityConfig()
+    return config and config.LevelId or 0
+end
+
 function XDlcRelinkModel:GetCurrentWorldIdAndLevelId()
     local worldId = self:GetWorldId()
-    local levelId = 90002
+    local levelId = self:GetLevelId()
     return worldId, levelId
 end
 

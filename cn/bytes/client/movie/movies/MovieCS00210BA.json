@@ -1,0 +1,836 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory20.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "背景震动",
+            5,
+            "角色震动",
+            17,
+            "对话框震动&左侧分支对话（往下继续点）",
+            4
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动",
+            41,
+            "左侧分支对话",
+            35
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 104,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 600.0,
+        "Params": [
+            "300|-150|-200",
+            0.5
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "背景位移"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "RImgBg1Shake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "背景震动"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不同图层位置的Bg",
+            9,
+            "跳过结束",
+            59
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront5.png",
+            4
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "报纸（4）"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront27.png",
+            5
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "蝴蝶（5）"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront29.png",
+            6
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "舞台（6）"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStoryFront/BgStoryFront28.png",
+            7
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 59,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "十字（7）"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4,
+            501298,
+            -500
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            5,
+            500533,
+            500
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "角色4、5出现"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor4Shake"
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "角色4抖动"
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor5Shake"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "角色5抖动"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4,
+            5,
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501294,
+            -600
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500530
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            3,
+            501292,
+            600
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "对照组（角色1、2、3）（已设置X坐标）"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor1Shake"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "角色1抖动"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor2Shake"
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "角色2抖动"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "PanelActor3Shake"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 59,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "角色3抖动"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试文本测试文本",
+            36,
+            "测试文本测试文本",
+            36,
+            "测试文本测试文本",
+            36
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "污染效果"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试文本测试文本",
+            38,
+            "测试文本测试文本",
+            38,
+            "测试文本测试文本",
+            38,
+            2,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对照组（右侧常规分支对话）"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试文本测试文本",
+            40,
+            "测试文本测试文本",
+            40,
+            "测试文本测试文本",
+            40
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "NextActionId": 59,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "测试文本测试文本",
+            59,
+            "测试文本测试文本",
+            59,
+            "测试文本测试文本",
+            59,
+            2,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogShake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框抖动"
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            501294
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogShake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "对话框抖动+人物",
+            18
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动循环（预备）"
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动循环"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoopDisable"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动循环停止+复位"
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            501294
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "对话框震动循环，带立绘（预备）"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动循环，带立绘",
+            18
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoop"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "DialogShakeLoopDisable"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对话框震动循环停止+复位，带立绘"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "演示结束"
+        ]
+    }
+]

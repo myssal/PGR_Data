@@ -4117,9 +4117,13 @@
         "Desc": "Lv80 引导武器超限功能",
         "GuideType": 1,
         "CompleteId": 61210,
-        "ActiveUi": "UiCharacterSystemV2P6|UiCharacterV2P6|UiEquipDetailChildV2P6",
+        "ActiveUi": "UiCharacterSystemV2P6",
         "RewardId": 0,
-        "GroupId": 61210
+        "GroupId": 61210,
+        "ConditionId": [
+            860722,
+            863039
+        ]
     },
     {
         "Id": 61220,
@@ -5852,7 +5856,7 @@
         "GroupId": 61740,
         "ConditionId": [
             862112,
-            1002411,
+            1002415,
             862783
         ]
     },
@@ -5885,7 +5889,7 @@
         "GroupId": 61742,
         "ConditionId": [
             862112,
-            1002411
+            1002415
         ]
     },
     {
@@ -5901,7 +5905,7 @@
         "GroupId": 61743,
         "ConditionId": [
             862112,
-            1002411,
+            1002415,
             861332
         ]
     },
@@ -5917,7 +5921,7 @@
         "GroupId": 61744,
         "ConditionId": [
             862112,
-            1002411
+            1002415
         ]
     },
     {
@@ -8349,7 +8353,7 @@
     {
         "Id": 63501,
         "Priority": 63501,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 引导情人节打牌-欢迎",
         "GuideType": 1,
         "CompleteId": 63501,
@@ -8365,7 +8369,7 @@
     {
         "Id": 63502,
         "Priority": 63502,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 引导情人节打牌-关卡1回合1",
         "GuideType": 1,
         "CompleteId": 63502,
@@ -8380,7 +8384,7 @@
     {
         "Id": 63503,
         "Priority": 63503,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 引导情人节打牌-关卡1回合2",
         "GuideType": 1,
         "CompleteId": 63503,
@@ -8396,7 +8400,7 @@
     {
         "Id": 63504,
         "Priority": 63504,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 引导情人节打牌-关卡2回合1",
         "GuideType": 1,
         "CompleteId": 63504,
@@ -9416,7 +9420,7 @@
     {
         "Id": 63820,
         "Priority": 63820,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.5 引导鬼泣试玩关",
         "GuideType": 1,
         "CompleteId": 63820,
@@ -9427,6 +9431,412 @@
         "ConditionId": [
             862112,
             770402
+        ]
+    },
+    {
+        "Id": 63900,
+        "Priority": 63900,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 首次进入PVE",
+        "GuideType": 1,
+        "CompleteId": 63900,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63900,
+        "ConditionId": [
+            862112,
+            774800,
+            863034
+        ]
+    },
+    {
+        "Id": 63910,
+        "Priority": 63910,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 PVE事件选择",
+        "GuideType": 1,
+        "CompleteId": 63910,
+        "ActiveUi": "UiTheatre5PVEGame",
+        "RewardId": 0,
+        "GroupId": 63910,
+        "ConditionId": [
+            862112,
+            774800,
+            863034
+        ]
+    },
+    {
+        "Id": 63911,
+        "Priority": 63911,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 PVE进入技能商店",
+        "GuideType": 1,
+        "CompleteId": 63911,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "CheckNodeActive": "PanelSkillShop",
+        "RewardId": 0,
+        "GroupId": 63911,
+        "ConditionId": [
+            862112,
+            774800,
+            863034
+        ]
+    },
+    {
+        "Id": 63912,
+        "Priority": 63912,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 PVE进入符文商店",
+        "GuideType": 1,
+        "CompleteId": 63912,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "CheckNodeActive": "PanelGemShop",
+        "RewardId": 0,
+        "GroupId": 63912,
+        "ConditionId": [
+            862112,
+            774800,
+            863034
+        ]
+    },
+    {
+        "Id": 63913,
+        "Priority": 63913,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 首次结算流程",
+        "GuideType": 1,
+        "CompleteId": 63913,
+        "ActiveUi": "UiTheatre5Settlement",
+        "CheckNodeActive": "PanelReward",
+        "RewardId": 0,
+        "GroupId": 63913,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 63914,
+        "Priority": 63914,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 PVE首次结算完毕",
+        "GuideType": 1,
+        "CompleteId": 63914,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63914,
+        "ConditionId": [
+            862112,
+            774800,
+            863034,
+            1020867
+        ]
+    },
+    {
+        "Id": 63915,
+        "Priority": 63915,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 PVE完成序章剧情102",
+        "GuideType": 1,
+        "CompleteId": 63915,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63915,
+        "ConditionId": [
+            862112,
+            774800,
+            863034,
+            1020868
+        ]
+    },
+    {
+        "Id": 63916,
+        "Priority": 63916,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 主界面再次介绍",
+        "GuideType": 1,
+        "CompleteId": 63916,
+        "ActiveUi": "UiTheatre5Main",
+        "RewardId": 0,
+        "GroupId": 63916,
+        "ConditionId": [
+            862112,
+            774800,
+            863036
+        ]
+    },
+    {
+        "Id": 63917,
+        "Priority": 63917,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 引导点击渡边",
+        "GuideType": 1,
+        "CompleteId": 63917,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63917,
+        "ConditionId": [
+            862112,
+            774800,
+            863034,
+            863037
+        ]
+    },
+    {
+        "Id": 63918,
+        "Priority": 63918,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 渡边介绍",
+        "GuideType": 1,
+        "CompleteId": 63918,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "CheckNodeActive": "BtnStart",
+        "RewardId": 0,
+        "GroupId": 63918,
+        "ConditionId": [
+            862112,
+            774800,
+            863034,
+            863038
+        ]
+    },
+    {
+        "Id": 63919,
+        "Priority": 63919,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 推演流程",
+        "GuideType": 1,
+        "CompleteId": 63919,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63919,
+        "ConditionId": [
+            862112,
+            774800,
+            863034,
+            1020869
+        ]
+    },
+    {
+        "Id": 63920,
+        "Priority": 63920,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 首次PVP选人",
+        "GuideType": 1,
+        "CompleteId": 63920,
+        "ActiveUi": "UiTheatre5ChooseCharacter",
+        "RewardId": 0,
+        "GroupId": 63920,
+        "ConditionId": [
+            862112,
+            774800,
+            863035
+        ]
+    },
+    {
+        "Id": 63921,
+        "Priority": 63921,
+        "Ignore": 0,
+        "Desc": "v3.6 引导肉鸽5 首次进入PVP技能商店",
+        "GuideType": 1,
+        "CompleteId": 63921,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "RewardId": 0,
+        "GroupId": 63921,
+        "ConditionId": [
+            862112,
+            774800,
+            863035
+        ]
+    },
+    {
+        "Id": 63940,
+        "Priority": 63940,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 首次入关",
+        "GuideType": 1,
+        "CompleteId": 63940,
+        "ActiveUi": "UiFangKuaiMain",
+        "RewardId": 0,
+        "GroupId": 63940,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 63941,
+        "Priority": 63941,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3011进入战斗",
+        "GuideType": 1,
+        "CompleteId": 63941,
+        "ActiveUi": "UiFangKuaiFight",
+        "RewardId": 0,
+        "GroupId": 63941,
+        "ConditionId": [
+            862112,
+            774800,
+            863027
+        ]
+    },
+    {
+        "Id": 63942,
+        "Priority": 63942,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3011退出狂热",
+        "GuideType": 1,
+        "CompleteId": 63942,
+        "ActiveUi": "UiFangKuaiFight",
+        "RewardId": 0,
+        "GroupId": 63942,
+        "ConditionId": [
+            862112,
+            774800,
+            863027,
+            863029
+        ]
+    },
+    {
+        "Id": 63943,
+        "Priority": 63943,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3012详情界面",
+        "GuideType": 1,
+        "CompleteId": 63943,
+        "ActiveUi": "UiFangKuaiChapterDetail",
+        "RewardId": 0,
+        "GroupId": 63943,
+        "ConditionId": [
+            862112,
+            774800,
+            863030
+        ]
+    },
+    {
+        "Id": 63944,
+        "Priority": 63944,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3012进入战斗",
+        "GuideType": 1,
+        "CompleteId": 63944,
+        "ActiveUi": "UiFangKuaiFight",
+        "RewardId": 0,
+        "GroupId": 63944,
+        "ConditionId": [
+            862112,
+            774800,
+            863031
+        ]
+    },
+    {
+        "Id": 63945,
+        "Priority": 63945,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3013进入战斗",
+        "GuideType": 1,
+        "CompleteId": 63945,
+        "ActiveUi": "UiFangKuaiFight",
+        "RewardId": 0,
+        "GroupId": 63945,
+        "ConditionId": [
+            862112,
+            774800,
+            863032
+        ]
+    },
+    {
+        "Id": 63946,
+        "Priority": 63946,
+        "Ignore": 0,
+        "Desc": "v3.6 引导鲨鲨破坏王 3021详情界面",
+        "GuideType": 1,
+        "CompleteId": 63946,
+        "ActiveUi": "UiFangKuaiChapterDetail",
+        "RewardId": 0,
+        "GroupId": 63946,
+        "ConditionId": [
+            862112,
+            774800,
+            863033
+        ]
+    },
+    {
+        "Id": 64000,
+        "Priority": 64000,
+        "Ignore": 0,
+        "Desc": "v3.7 引导比安卡晖暮形态切换",
+        "GuideType": 1,
+        "CompleteId": 64000,
+        "ActiveUi": "UiBattleRoleRoom",
+        "CheckNodeActive": "BattleRoleRoomChangeMode",
+        "RewardId": 0,
+        "GroupId": 64000,
+        "ConditionId": [
+            863040
+        ]
+    },
+    {
+        "Id": 64020,
+        "Priority": 64020,
+        "Ignore": 0,
+        "Desc": "v3.7 引导七夕打牌-欢迎",
+        "GuideType": 1,
+        "CompleteId": 64020,
+        "ActiveUi": "UiPokerGuessing2Main",
+        "RewardId": 0,
+        "GroupId": 64020,
+        "ConditionId": [
+            862112,
+            774800,
+            862782
+        ]
+    },
+    {
+        "Id": 64021,
+        "Priority": 64021,
+        "Ignore": 0,
+        "Desc": "v3.7 引导七夕打牌-关卡11回合1",
+        "GuideType": 1,
+        "CompleteId": 64021,
+        "ActiveUi": "UiPokerGuessing2Game",
+        "RewardId": 0,
+        "GroupId": 64021,
+        "ConditionId": [
+            862112,
+            774800,
+            863046
+        ]
+    },
+    {
+        "Id": 64022,
+        "Priority": 64022,
+        "Ignore": 0,
+        "Desc": "v3.7 引导七夕打牌-关卡11回合2",
+        "GuideType": 1,
+        "CompleteId": 64022,
+        "ActiveUi": "UiPokerGuessing2ToastRound",
+        "RewardId": 0,
+        "GroupId": 64022,
+        "ConditionId": [
+            862112,
+            774800,
+            863047
+        ]
+    },
+    {
+        "Id": 64030,
+        "Priority": 64030,
+        "Ignore": 0,
+        "Desc": "v3.7 引导mini改造-首次进入",
+        "GuideType": 1,
+        "CompleteId": 64030,
+        "ActiveUi": "UiSoloReformMain",
+        "RewardId": 0,
+        "GroupId": 64030,
+        "ConditionId": [
+            862112,
+            774800
         ]
     }
 ]

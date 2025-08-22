@@ -218,7 +218,7 @@ M.SetLaunchDownloadRecord = function (id)
 end
 
 M.SetRemoveResIdsRecord = function (resIdList)
-    print("hyx SetRemoveResIdsRecord",resIdList,resIdList and resIdList[1], debug.traceback())
+    -- print("SP/DN SetRemoveResIdsRecord",resIdList,resIdList and resIdList[1], debug.traceback())
     if type(resIdList) == "table" then
         resIdList = table.concat(resIdList, ",")
     else

@@ -76,9 +76,4 @@ function XUiBabelTowerBattleRoomRoleDetail:GetFilterControllerConfig()
     return characterAgency:GetModelCharacterFilterController()["UiBabelTowerBase"]
 end
 
--- 是否屏蔽效应、效应元素和效应筛选
-function XUiBabelTowerBattleRoomRoleDetail:IsHideGeneralSkill()
-    return true
-end
-
 return XUiBabelTowerBattleRoomRoleDetail

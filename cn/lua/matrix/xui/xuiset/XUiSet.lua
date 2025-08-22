@@ -458,7 +458,12 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         self.BtnDlcHunt.gameObject:SetActiveEx(false)
         self.BtnMainUi.gameObject:SetActiveEx(true)
         self.PanelAsset.gameObject:SetActiveEx(true)
-        self.BtnGraphics.gameObject:SetActiveEx(true)
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+            --XLog.Debug("[云游戏] 隐藏了画质选项")
+            self.BtnGraphics.gameObject:SetActiveEx(false)
+        else
+            self.BtnGraphics.gameObject:SetActiveEx(true)
+        end
         self.BtnInstruction.gameObject:SetActiveEx(false)
         self.BtnRetreat.gameObject:SetActiveEx(false)
         self.BtnInfoTip.gameObject:SetActiveEx(true)
@@ -547,13 +552,13 @@ function XUiSet:InitSubPanel(index)
         self.SubPanels[PANEL_INDEX.Push] = XUiPanelPushSet.New(self.PanelPushSetObj, self)
     elseif index == PANEL_INDEX.Other then
         if self.PanelOtherObj == nil then
-            if XDataCenter.UiPcManager.IsPc() then
+            if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
                 self.PanelOtherObj = self.PanelOther:LoadPrefab(XUiConfigs.GetComponentUrl("UiSetPanelOtherPC"))
             else
                 self.PanelOtherObj = self.PanelOther:LoadPrefab(XUiConfigs.GetComponentUrl("UiSetPanelOther"))
             end
         end
-        if XDataCenter.UiPcManager.IsPc() then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
             self.SubPanels[PANEL_INDEX.Other] = XUiPanelOtherSetPc.New(self.PanelOtherObj, self)
         else
             self.SubPanels[PANEL_INDEX.Other] = XUiPanelOtherSet.New(self.PanelOtherObj, self)

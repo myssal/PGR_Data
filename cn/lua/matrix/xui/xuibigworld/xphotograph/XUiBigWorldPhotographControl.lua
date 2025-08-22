@@ -250,7 +250,9 @@ function XUiBigWorldPhotographControl:OnBtnMenuClick()
         self.DynamicTable:SetDataSource(self._SettingConfig)
         self.DynamicTable:ReloadDataSync()
         if self.SidePanelEnable then
-            self.SidePanelEnable.gameObject:PlayTimelineAnimation(nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Hold)
+            self.SidePanelEnable.gameObject:PlayTimelineAnimation(function()
+                self.ImgBg.gameObject:SetActive(self._isShowMenu)
+            end, nil, CS.UnityEngine.Playables.DirectorWrapMode.Hold)
         else
             self.ImgBg.gameObject:SetActive(self._isShowMenu)
         end
@@ -258,7 +260,9 @@ function XUiBigWorldPhotographControl:OnBtnMenuClick()
         self.DynamicTable:SetDataSource({})
         self.DynamicTable:ReloadDataSync()
         if self.SidePanelEnable then
-            self.SidePanelDisable.gameObject:PlayTimelineAnimation(nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Hold)
+            self.SidePanelDisable.gameObject:PlayTimelineAnimation(function()
+                self.ImgBg.gameObject:SetActive(self._isShowMenu)
+            end, nil, CS.UnityEngine.Playables.DirectorWrapMode.Hold)
         else
             self.ImgBg.gameObject:SetActive(self._isShowMenu)
         end

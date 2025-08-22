@@ -38,8 +38,12 @@ XKickOutManagerCreator = function()
         local title = XUiHelper.GetText("TipTitle")
         local content = XUiHelper.GetText("KickOutRestart")
         local confirmCb = function()
-            CS.XDriver.Exit()
             _IsForceKickOut = false
+            if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+                XDataCenter.CloudGameManager.Exit(content)
+                return
+            end
+            CS.XDriver.Exit()
         end
         XUiManager.SystemDialogTip(title, content, XUiManager.DialogType.OnlySure, nil, confirmCb)
     end

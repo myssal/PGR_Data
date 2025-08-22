@@ -196,6 +196,7 @@ function XUiTheatre5PVEEvent:ExcuteNext()
     if not XTool.IsNumberValid(self._NextEventId) then --事件执行完成
         local chapterBattleData = self._Control.PVEControl:GetCurChapterBattleData()
         if self._ChapterBattlePromoteCb then
+            XLuaUiManager.Open("UiBlackScreen", nil, nil, nil, nil, 1)
             self._ChapterBattlePromoteCb(XMVCA.XTheatre5.EnumConst.PVENodeType.Battle, chapterBattleData)
         end    
         return

@@ -18,7 +18,6 @@ end
 
 function XUiPanelAsset:RefreshBindItem(...)
     self.ItemIds = { ... }
-    self._BindNodes = {}
     self:InitAssert(self.ItemIds)
 end
 

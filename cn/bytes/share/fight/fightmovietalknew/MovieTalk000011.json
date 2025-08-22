@@ -2544,11 +2544,11 @@
     },
     {
         "Id": 1035013002,
-        "Type": 2,
+        "Type": 3,
         "UiType": 1,
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
-        "Text": "华胥，启动支援程序",
+        "Text": "华胥，启动支援程序，开始协力战斗",
         "Duration": 5,
         "IsMask": false
     },
@@ -2609,7 +2609,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥——正在链接——进度63.45%",
-        "Duration": 0,
+        "Duration": 5,
         "IsMask": false
     },
     {
@@ -2619,7 +2619,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "华胥——重新链接——链接成功。",
-        "Duration": 0,
+        "Duration": 5,
         "IsMask": false
     },
     {
@@ -2629,7 +2629,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "请注意，华胥子服务器正在被攻击——",
-        "Duration": 0,
+        "Duration": 5,
         "IsMask": false
     },
     {
@@ -2639,7 +2639,7 @@
         "Name": "华胥",
         "Icon": "Assets/Product/Texture/Image/UiArchiveMonsterHead/HeadMb1MelodyhuaxuMd10001.png",
         "Text": "监测到高强度帕弥什信号——",
-        "Duration": 0,
+        "Duration": 5,
         "IsMask": false
     },
     {
@@ -2648,7 +2648,7 @@
         "UiType": 1,
         "Name": "露西亚",
         "Text": "指挥官，我来了。",
-        "Duration": 0,
+        "Duration": 3,
         "IsMask": false
     },
     {
@@ -2657,7 +2657,7 @@
         "UiType": 1,
         "Name": "里",
         "Text": "指挥官，放心，有我在。",
-        "Duration": 0,
+        "Duration": 3,
         "IsMask": false
     },
     {
@@ -2666,16 +2666,42 @@
         "UiType": 1,
         "Name": "丽芙",
         "Text": "指挥官，丽芙会帮上忙的。",
-        "Duration": 0,
+        "Duration": 3,
         "IsMask": false
     },
     {
         "Id": 1035013015,
         "Type": 3,
         "UiType": 1,
-        "Name": "卡列",
+        "Name": "卡列尼娜",
         "Text": "我来帮你！",
-        "Duration": 0,
+        "Duration": 3,
         "IsMask": false
+    },
+    {
+        "Id": 1035013016,
+        "Type": 6,
+        "UiType": 0,
+        "Name": "当前子塔剩余血量",
+        "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
+        "Duration": 0,
+        "IsMask": false,
+        "Params": [
+            500,
+            4500
+        ]
+    },
+    {
+        "Id": 1035013017,
+        "Type": 6,
+        "UiType": 0,
+        "Name": "当前子塔激活进度",
+        "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiFightTips/PanelFightScanbar.prefab",
+        "Duration": 0,
+        "IsMask": false,
+        "Params": [
+            500,
+            5500
+        ]
     }
 ]

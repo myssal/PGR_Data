@@ -326,6 +326,30 @@
     {
         "Role": "R2XiezouMd010031",
         "Layer": 0,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
+        "Target": "HitHL",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
+        "Target": "HitHR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
+        "Target": "HitHF",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -345,13 +369,13 @@
         "Role": "R2XiezouMd010031",
         "Layer": 0,
         "Target": "Attack04",
-        "TransitionDuration": 0.0
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R2XiezouMd010031",
         "Layer": 0,
         "Target": "Attack05",
-        "TransitionDuration": 0.0
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R2XiezouMd010031",
@@ -983,15 +1007,29 @@
     {
         "Role": "R2XiezouMd010031",
         "Layer": 0,
-        "State": "Attack04",
-        "Target": "Attack05",
+        "State": "HitLB",
+        "Target": "Stand2",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2XiezouMd010031",
         "Layer": 0,
-        "State": "Attack05",
-        "Target": "Attack04",
+        "State": "HitHL",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
+        "State": "HitHR",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2XiezouMd010031",
+        "Layer": 0,
+        "State": "HitHF",
+        "Target": "Stand2",
         "TransitionDuration": 0.1
     }
 ]

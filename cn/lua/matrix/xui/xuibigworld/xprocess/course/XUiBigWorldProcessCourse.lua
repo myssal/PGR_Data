@@ -126,9 +126,8 @@ function XUiBigWorldProcessCourse:_RefreshProgress(contentId, currentProgress, m
     end
 
     local icon = self._Control:GetTaskRewardItemIcon(contentId)
-    local progressCount = self._Control:GetTaskProgressCountByContentId(contentId)
 
-    self.ImgRewardBar.fillAmount = currentProgress / (maxProgress + maxProgress / (progressCount + 1))
+    self.ImgRewardBar.fillAmount = currentProgress / maxProgress
     self.TxtNum.text = currentProgress
     if string.IsNilOrEmpty(icon) then
         self.RImgIcon.gameObject:SetActiveEx(false)
@@ -143,18 +142,22 @@ function XUiBigWorldProcessCourse:_RefreshProgressReward(progressEntitys)
     local count = 0
 
     if not XTool.IsTableEmpty(progressEntitys) then
+        local progress = 0
+
         for i, progressEntity in ipairs(progressEntitys) do
             local grid = self._ProgressGrids[i]
-
+            local currentProgress = progressEntity:GetProgress()
+            
             if not grid then
                 local gridUi = XUiHelper.Instantiate(self.GridReward, self.ListReward)
-
+                
                 grid = XUiBigWorldProcessCourseReward.New(gridUi, self)
                 self._ProgressGrids[i] = grid
             end
 
             grid:Open()
-            grid:Refresh(progressEntity)
+            grid:Refresh(progressEntity, currentProgress - progress)
+            progress = currentProgress
             count = count + 1
         end
     end

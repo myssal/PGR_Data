@@ -662,7 +662,9 @@ function XFavorabilityAgency:GetCvSplit(cvId, cvType)
 end
 
 function XFavorabilityAgency:GetCvContentByIdAndType(cvId, cvType)
-    return CS.XAudioManager.GetCvContent(cvId, cvType)
+    local content = CS.XAudioManager.GetCvContent(cvId, cvType)
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+    return content
 end
 
 -- [好感度档案-语音]
@@ -703,7 +705,7 @@ function XFavorabilityAgency:CheckCurSceneAnimIsGachaLamiya()
     if not self._Model._sceneAnim then
         return false
     end
-    return self._Model._sceneAnim.SignBoardId == 1270314
+    return self._Model._sceneAnim:GetSignBoardId() == 1270314
 end
 
 function XFavorabilityAgency:CheckCurSceneAnimIsPlaying()
@@ -713,6 +715,19 @@ function XFavorabilityAgency:CheckCurSceneAnimIsPlaying()
     return self._Model._sceneAnim:IsAnimPlaying()
 end
 
+function XFavorabilityAgency:CheckCurSceneUseStoryCamera()
+    if not self._Model._sceneAnim then
+        return false
+    end
+    return self._Model._sceneAnim:IsUseStoryCamera()
+end
+
+function XFavorabilityAgency:GetCurSceneStoryNearCamera()
+    if not self._Model._sceneAnim then
+        return nil
+    end
+    return self._Model._sceneAnim:GetStoryNearCamera()
+end
 
 --获取角色所有事件
 function XFavorabilityAgency:GetSignBoardConfigByRoldIdAndCondition(roleId, conditionId)
@@ -838,6 +853,31 @@ function XFavorabilityAgency:CheckIsUseCamPosAndRot(signBoardid)
         return false
     end
     return signBoard.IsUseCamPosAndRot == 1
+end
+
+-- 是否在播放完镜头动画后自动设置白天黑夜
+function XFavorabilityAgency:CheckIsControlTime(signBoardId)
+    local signBoard = self:GetSignBoardConfigById(signBoardId)
+    if not signBoard then
+        return false
+    end
+    return signBoard.IsControlTime == 1
+end
+
+function XFavorabilityAgency:GetAnimPrefabRoleModelName(signBoardId)
+    local signBoard = self:GetSignBoardConfigById(signBoardId)
+    if not signBoard then
+        return nil
+    end
+    return signBoard.AnimPrefabRoleModelName
+end
+
+function XFavorabilityAgency:IsCloseRoleShadow(signBoardId)
+    local signBoard = self:GetSignBoardConfigById(signBoardId)
+    if not signBoard then
+        return nil
+    end
+    return signBoard.IsCloseRoleShadow == 1
 end
 
 -- 通过unlockCondition过滤
@@ -1126,7 +1166,7 @@ end
 -- 场景动画
 ----------------------------------------------------------------------------------
 ---@param isUnloadAnim boolean 是否先卸载场景动画
-function XFavorabilityAgency:LoadSceneAnim(rootNode, farCam, nearCam, sceneId, signBoardId, ui, isUnloadAnim)
+function XFavorabilityAgency:LoadSceneAnim(rootNode, farCam, nearCam, uiFarCam, uiNearCam, sceneId, signBoardId, ui, isUnloadAnim)
     if not self:CheckIsHaveSceneAnim(signBoardId) then
         return
     end
@@ -1137,14 +1177,14 @@ function XFavorabilityAgency:LoadSceneAnim(rootNode, farCam, nearCam, sceneId, s
         local animPrefab = rootNode:LoadPrefab(prefabName)
 
         self._Model._sceneAnim:UpdateData(sceneId, signBoardId, ui)
-        self._Model._sceneAnim:UpdateAnim(animPrefab, farCam, nearCam)
+        self._Model._sceneAnim:UpdateAnim(rootNode, animPrefab, farCam, nearCam, uiFarCam, uiNearCam)
     end
 end
 
 function XFavorabilityAgency:UnLoadAnim()
     if not self._Model._sceneAnim then
         ---@type XSignBoardCamAnim 
-        self._Model._sceneAnim = require("XEntity/XSignBoard/XSignBoardCamAnim").New()
+        self._Model._sceneAnim = require("XEntity/XSignBoard/XSignBoardCamAnimEntity").New()
     else
         self._Model._sceneAnim:UnloadAnim()
     end

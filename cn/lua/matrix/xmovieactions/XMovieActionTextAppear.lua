@@ -26,12 +26,13 @@ function XMovieActionTextAppear:Ctor(actionData)
     end
     
     self.IsAnim = paramToNumber(params[11]) == 1
+    self.Scale = params[12] and XMVCA.XMovie:ParamToNumber(params[12]) or 1
 end
 
 function XMovieActionTextAppear:OnInit()
     self.IsTyping = false
     local content = XMVCA.XMovie:ExtractGenderContent(self.TextContent)
-    local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Rotation, self.IsAnim)
+    local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim)
     if self.IsPlayTypeWriter then
         self.IsTyping = true
         self.TypeWriter = text.transform:GetComponent("TextTypewriter")

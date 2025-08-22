@@ -4,6 +4,7 @@ local XUiBigWorldProcessCourseRewardGrid = require("XUi/XUiBigWorld/XProcess/Cou
 ---@field TxtNum UnityEngine.UI.Text
 ---@field ListReward UnityEngine.RectTransform
 ---@field RewardGrid UnityEngine.RectTransform
+---@field SpecialRewardGrid UnityEngine.RectTransform
 ---@field ImgPointOn UnityEngine.UI.Image
 ---@field ImgPointOff UnityEngine.UI.Image
 ---@field Parent XUiBigWorldProcessCourse
@@ -11,6 +12,7 @@ local XUiBigWorldProcessCourseRewardGrid = require("XUi/XUiBigWorld/XProcess/Cou
 ---@field RImgOnIconBig UnityEngine.UI.RawImage
 ---@field RImgOffIcon UnityEngine.UI.RawImage
 ---@field RImgOffIconBig UnityEngine.UI.RawImage
+---@field LayoutElement UnityEngine.UI.LayoutElement
 ---@field _Control XBigWorldCourseControl
 local XUiBigWorldProcessCourseReward = XClass(XUiNode, "XUiBigWorldProcessCourseReward")
 
@@ -19,6 +21,8 @@ function XUiBigWorldProcessCourseReward:OnStart()
     self._Entity = false
     ---@type XUiBigWorldProcessCourseRewardGrid[]
     self._RewardGrids = {}
+
+    self.SpecialRewardGrid = self.SpecialRewardGrid or self.RewardGrid
 
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -39,13 +43,18 @@ function XUiBigWorldProcessCourseReward:OnDestroy()
 end
 
 ---@param progressEntity XBWCourseTaskProgressEntity
-function XUiBigWorldProcessCourseReward:Refresh(progressEntity)
+function XUiBigWorldProcessCourseReward:Refresh(progressEntity, flexibleWidth)
     self._Entity = progressEntity
     self.ImgPointOff.gameObject:SetActiveEx(not progressEntity:IsComplete())
     self.ImgPointOn.gameObject:SetActiveEx(progressEntity:IsComplete())
     self.TxtNum.text = tostring(progressEntity:GetProgress())
-    self:_RefreshRewards(progressEntity:GetRewardList(true))
-    self:_RefreshIcon(progressEntity:GetProgressIcon())
+
+    if self.LayoutElement then
+        self.LayoutElement.flexibleWidth = flexibleWidth or 0
+    end
+
+    self:_RefreshRewards(progressEntity:GetRewardList(true), progressEntity:IsSpecial())
+    self:_RefreshIcon(progressEntity:GetProgressIconNoneColor())
     self:_PlayProcessCue(progressEntity)
 end
 
@@ -82,17 +91,20 @@ end
 
 function XUiBigWorldProcessCourseReward:_InitUi()
     self.RewardGrid.gameObject:SetActiveEx(false)
+    self.SpecialRewardGrid.gameObject:SetActiveEx(false)
 end
 
-function XUiBigWorldProcessCourseReward:_RefreshRewards(rewardList)
+function XUiBigWorldProcessCourseReward:_RefreshRewards(rewardList, isSpecial)
     local count = 0
 
     if not XTool.IsTableEmpty(rewardList) then
+        local gridObject = isSpecial and self.SpecialRewardGrid or self.RewardGrid
+
         for i, reward in pairs(rewardList) do
             local grid = self._RewardGrids[i]
 
             if not grid then
-                local gridUi = XUiHelper.Instantiate(self.RewardGrid, self.ListReward)
+                local gridUi = XUiHelper.Instantiate(gridObject, self.ListReward)
 
                 grid = XUiBigWorldProcessCourseRewardGrid.New(gridUi, self)
                 self._RewardGrids[i] = grid

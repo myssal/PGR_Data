@@ -596,7 +596,7 @@ function XTheatre4Agency:ExOnSkip()
     end
 
     --分包资源检测
-    if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.Theatre4) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Theatre4) then
         return false
     end
 

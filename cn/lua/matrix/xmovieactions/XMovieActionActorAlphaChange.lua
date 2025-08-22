@@ -1,3 +1,5 @@
+---@class XMovieActionActorAlphaChange
+---@field UiRoot XUiMovie
 local XMovieActionActorAlphaChange = XClass(XMovieActionBase, "XMovieActionActorAlphaChange")
 local FRONT_BG_INDEX = 999
 function XMovieActionActorAlphaChange:Ctor(actionData)
@@ -17,15 +19,17 @@ function XMovieActionActorAlphaChange:OnRunning()
         actor:PlayFadeAnimation(self.BeginAlpha, self.EndAlpha, self.Duration)
     else
         local bgIndex = self.Index == FRONT_BG_INDEX and 3 or self.Index % 1000
-        local rImgBg = self.UiRoot["RImgBg" .. bgIndex]
+        local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
         if not string.IsNilOrEmpty(self.BgPath) then
-            rImgBg:SetRawImage(self.BgPath)
+            rImgBg:SetBgPath(self.BgPath)
+            rImgBg:Show()
+        else
+            rImgBg:Hide()
         end
-        rImgBg.gameObject:SetActiveEx(not string.IsNilOrEmpty(self.BgPath))
-        local oldColor = rImgBg.color
+        local oldColor = rImgBg:GetColor()
         local newColor = CS.UnityEngine.Color(oldColor.r, oldColor.g, oldColor.b, self.BeginAlpha)
-        rImgBg.color = newColor
-        rImgBg:DOFade(self.EndAlpha, self.Duration)
+        rImgBg:SetColor(newColor)
+        rImgBg:SetAlpha(self.EndAlpha, self.Duration)
     end
 end
 

@@ -241,6 +241,14 @@ function XTheatre5PVEControl:GetDeduceTipsTime(right)
     return self._Model:GetTheatre5ConfigValByKey('DeduceTipsTime', right and 2 or 1) 
 end
 
+function XTheatre5PVEControl:GetClueBoardMaskScaleMinOrMax(isMin)
+    local value = self._Model:GetTheatre5ConfigValByKey('ClueBoardMaskMinAndMax', isMin and 1 or 2)
+    if not XTool.IsNumberValid(value) then
+        value = isMin and 500 or 1000
+    end
+    return value/1000    
+end
+
 function XTheatre5PVEControl:GetClueBoardScaleLimitPoint()
     local value = self._Model:GetTheatre5ConfigValByKey('ClueBoardScaleLimitPoint')
     return value and value/1000 or 1 
@@ -257,22 +265,18 @@ function XTheatre5PVEControl:GetClueBoardFocusTime()
     return value and value/1000 or 0.2  
 end
 
+function XTheatre5PVEControl:GetClueBoardProcessStep()
+    local value = self._Model:GetTheatre5ConfigValByKey('PveSlideButton')
+    return XTool.IsNumberValid(value) and value or 20  
+end
+
 function XTheatre5PVEControl:GetPveChapterLevelCfgs(levelGroupId)
     return self._Model:GetPveChapterLevelCfgs(levelGroupId)
 end
 
 --当前是否是教学故事线
 function XTheatre5PVEControl:IsInTeachingStoryLine()
-    local teachingStoryLineId = self:GetTeachingStoryLineId()
-    if not XTool.IsNumberValid(teachingStoryLineId) then
-        return false
-    end
-
-    local curContentId = self._Model.PVERougeData:GetStoryLineContentId(teachingStoryLineId)
-    if not curContentId or curContentId > 0 then  --教学线完成，初始时contentId是nil
-        return true
-    end
-    return false        
+    return XMVCA.XTheatre5:IsInTeachingStoryLine() 
 end
 
 --点击物体触发的对话组
@@ -321,8 +325,11 @@ end
 
 --判断章节结束后能否再次战斗
 function XTheatre5PVEControl:CanAgainBattle(resultData)
-    --没有正在跑的故事线，在外部结算的
+    --没有正在跑的故事线，在外部结算的, 外部有故事线推进代表章节结束，推演章节会这么做
     if self._MainControl.FlowControl:GetCurRunningNodeState() ~= XMVCA.XTheatre5.EnumConst.PVENodeState.Running then
+        if resultData and resultData.XAutoChessGameplayResult.PveStoryLineData then
+            return false
+        end    
         return true
     end    
     if resultData and resultData.XAutoChessGameplayResult then
@@ -427,6 +434,15 @@ function XTheatre5PVEControl:GetEnterChapterStoryTips()
     return self._Model:GetTheatre5ClientConfigText('EnterChapterStoryTips')
 end
 
+function XTheatre5PVEControl:GetEventOptionIncomplete()
+    return self._Model:GetTheatre5ClientConfigText('EventOptionIncomplete')
+end
+
+function XTheatre5PVEControl:GetPveVersionError()
+    return self._Model:GetTheatre5ClientConfigText('PveVersionError')
+end
+
+
 function XTheatre5PVEControl:GetDeduceClueBoardCfgs()
     return self._Model:GetDeduceClueBoardCfgs()
 end
@@ -526,6 +542,10 @@ function XTheatre5PVEControl:GetStoryLineIdByScriptId(deduceScriptId)
     end        
 end
 
+function XTheatre5PVEControl:GetHistoryFinishEvents(chapterId)
+    return self._Model.PVERougeData:GetHistoryFinishEvents(chapterId)
+end
+
 function XTheatre5PVEControl:IsEnterAvgPlay(chapterId)
     return self._Model.PVERougeData:IsEnterAvgPlay(chapterId)
 end
@@ -544,6 +564,59 @@ end
 
 function XTheatre5PVEControl:GetTaskOrShopCfgs(taskShopType)
     return self._Model:GetTaskOrShopCfgs(taskShopType)
+end
+
+function XTheatre5PVEControl:SaveDeduceRecodeData(deduceData)
+    if not deduceData or not XTool.IsNumberValid(deduceData.DeduceId) then
+        return
+    end    
+    XSaveTool.SaveData(self:GetDeduceRecodeLocalKey(deduceData.DeduceId), deduceData)  
+end
+
+function XTheatre5PVEControl:GetDeduceRecodeData(deduceScriptId)
+    if not XTool.IsNumberValid(deduceScriptId) then
+        return
+    end    
+    local data = XSaveTool.GetData(self:GetDeduceRecodeLocalKey(deduceScriptId))
+    if data then
+        return data
+    end
+    local deduceData = {}
+    deduceData.DeduceId = deduceScriptId
+    deduceData.StartTimeStamp = XTime.GetServerNowTimestamp()
+    local deduceScriptCfg = self:GetDeduceScriptCfg(deduceScriptId)
+    local questionCfgs = self:GetPveDeduceQuestionCfgs(deduceScriptCfg.QuestionGroupId)
+    deduceData.QuestionCount = XTool.IsTableEmpty(questionCfgs) and 0 or #questionCfgs
+    deduceData.AnswerErrorList = {}  -- DeduceQuestionId -> Times
+    self:SaveDeduceRecodeData(deduceData)
+    return deduceData      
+end
+
+--推演打点
+function XTheatre5PVEControl:DeduceRecode(deduceData)
+    if not deduceData or not XTool.IsNumberValid(deduceData.DeduceId) then
+        return
+    end
+    CS.XRecord.Record(deduceData, "30244", "Theatre5Deduce")    
+    XSaveTool.RemoveData(self:GetDeduceRecodeLocalKey(deduceData.DeduceId))
+end
+
+function XTheatre5PVEControl:AddOnceAnswerError(deduceData, questionId)
+    if not deduceData or not deduceData.AnswerErrorList then
+        return
+    end
+    for i_, questionData in pairs(deduceData.AnswerErrorList) do
+        if questionData.DeduceQuestionId == questionId then
+           questionData.Times = questionData.Times + 1
+           return
+        end    
+    end
+    table.insert(deduceData.AnswerErrorList, {DeduceQuestionId = questionId, Times = 1})
+    self:SaveDeduceRecodeData(deduceData)  
+end
+
+function XTheatre5PVEControl:GetDeduceRecodeLocalKey(deduceScriptId)
+    return string.format("Theatre5_Deduce_Recode_%s_%s", XPlayer.Id, deduceScriptId)
 end
 
 function XTheatre5PVEControl:OnRelease()

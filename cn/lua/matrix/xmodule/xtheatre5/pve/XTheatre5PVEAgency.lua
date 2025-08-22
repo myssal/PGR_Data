@@ -36,6 +36,7 @@ function XTheatre5PVEAgency:RequestPveStoryLinePromote(storyLineId,storyLineCont
             CommonRequestCallbcak(res,cb,function(res)
             --战斗章节完成不走主动推送，服务器自己处理
             self._Model.PVERougeData:UpdateChapterData(storyLineId, res.CurContentId, res.PveAdventureData)
+            self._Model.PVERougeData:UpdateFinishChapterData(storyLineId, storyLineContentId)
             if not XTool.IsNumberValid(storyLineContentId) then --这是教学关的，要设置当前故事线
                 self._Model.PVERougeData:UpdateCurStoryLineId(storyLineId)
             end    
@@ -51,6 +52,11 @@ function XTheatre5PVEAgency:RequestPveEventPromote(eventId,optionId, cb)
             CommonRequestCallbcak(res,cb,function(res)
                 if res.Code == XCode.Success then
                     self._Model.PVERougeData:UpdateGainClue(res.ClueId)
+                    if not XTool.IsNumberValid(res.NextEventId) then
+                        local chapterData = self._Model.PVEAdventureData:GetCurChapterBattleData()
+                        local firstEventId = self._Model.PVEAdventureData:GetFirstEventId()
+                        self._Model.PVERougeData:UpdateHistoryEvent(chapterData.ChapterId, firstEventId)
+                    end    
                     self._Model.PVEAdventureData:UpdatePVENextEvent(res.NextEventId)
                     XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_PVE_UPDATE_EVENT,res)
                 end    
@@ -112,6 +118,10 @@ end
 
 
 --endregion
+
+function XTheatre5PVEAgency:IsCompletedByContentId(contentId)
+    return self._Model.PVERougeData:IsCompletedByContentId(contentId)
+end
 
 
 --有拍脸节点

@@ -494,8 +494,9 @@ XPracticeManagerCreator = function()
 
     -- 是否显示提示
     function XPracticeManager.IsShowTeachDialogHintTip(characterId)
-        --只在选人界面显示提示框（目前包含：通用选人界面，诺曼底登录选人界面）
-        if not XLuaUiManager.IsUiShow("UiStrongholdRoomCharacterV2P6") and not XLuaUiManager.IsUiShow("UiBattleRoomRoleDetail") then
+        --只在选人界面显示提示框（目前包含：通用选人界面，诺曼底登录选人界面, mini章节界面）
+        if not XLuaUiManager.IsUiShow("UiStrongholdRoomCharacterV2P6") and not XLuaUiManager.IsUiShow("UiBattleRoomRoleDetail") 
+            and not XLuaUiManager.IsUiShow("UiSoloReformChapterDetail") then
             return false
         end
         if not characterId then

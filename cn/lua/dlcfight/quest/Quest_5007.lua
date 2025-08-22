@@ -198,7 +198,8 @@ ObjectiveDefines.Obj50070301 = {
         for placeId, _ in pairs(GoldSceneObjScoreDict) do
             proxy:UnloadSceneObject(placeId)
         end
-        XScriptTool.JumperLevelSettle(proxy, TimeNum, 5007, {50070201, 50070202, 50070203}, true)
+        -- 5007的跳跳乐不算入跳跳乐的关卡成就记录里
+        XScriptTool.JumperLevelSettle(proxy, TimeNum, 5007, {50070201, 50070202, 50070203}, true, true)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -227,7 +228,7 @@ ObjectiveDefines.Obj50070302 = {
         for placeId, _ in pairs(GoldSceneObjScoreDict) do
             proxy:UnloadSceneObject(placeId)
         end
-        XScriptTool.JumperLevelSettle(proxy, 0, 5007, {50070201, 50070202, 50070203}, false)
+        XScriptTool.JumperLevelSettle(proxy, 0, 5007, {50070201, 50070202, 50070203}, false, true)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }

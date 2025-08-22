@@ -547,7 +547,7 @@ local Creator = function()
         local removeResIdList = self.UiPanelDownloadTips:GetRemoveResIdList()
         local isFullDownload = self.CurrentDownloadSelect == 2
         for k, v in pairs(removeResIdList or {}) do
-            print("hyx removeResIdList 尝试剔除 ", k, v)
+            -- print("SP/DN removeResIdList 尝试剔除 ", k, v)
         end
         -- 下基础包不要记录全选的剔除数据了
         if not isFullDownload then

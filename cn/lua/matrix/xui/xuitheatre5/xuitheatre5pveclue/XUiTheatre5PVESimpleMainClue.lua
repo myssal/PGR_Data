@@ -22,10 +22,15 @@ function XUiTheatre5PVESimpleMainClue:Update(clueId)
     end
     self.TxtTitle.text = clueCfg.Title
     self.RImgClue:SetRawImage(clueCfg.Img)
-    self.DeduceBtn.gameObject:SetActiveEx(clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce)   
+    self.DeduceBtn.gameObject:SetActiveEx(clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Deduce)
+    local desc = clueCfg.UnlockDesc
+    if clueState == XMVCA.XTheatre5.EnumConst.PVEClueState.Completed then
+        desc = clueCfg.CompleteDesc  
+    end      
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(desc)    
 end
 
-function XUiTheatre5PVESimpleMainClue:UpdateCuleBoard(localPosition, visible)
+function XUiTheatre5PVESimpleMainClue:UpdateCuleBoard(localPosition, visible, playAnim)
     local clueCfg = self._Control.PVEControl:GetDeduceClueCfg(self._ClueId)
     if not clueCfg then
         return
@@ -33,6 +38,9 @@ function XUiTheatre5PVESimpleMainClue:UpdateCuleBoard(localPosition, visible)
     self.GameObject.name = string.format("%s_%s", self.__cname, clueCfg.Index)
     self.Transform.localPosition = localPosition 
     self:SetVisible(visible)
+    if visible and playAnim then
+        self:PlayAnimation("Storage")
+    end     
 end
 
 function XUiTheatre5PVESimpleMainClue:OnClickClue()
@@ -42,7 +50,7 @@ end
 function XUiTheatre5PVESimpleMainClue:OnClickDeduce()
     local storyLineId = self._Control.PVEControl:GetStoryLineIdByScriptId(self._deduceId)
     if not XTool.IsNumberValid(storyLineId) then
-        XLog.Error(string.format("当前没有故事线出于推演状态,deduceId:%s",self._deduceId))
+        XUiManager.TipMsg(self._Control.PVEControl:GetPveVersionError())
         return
     end
     self._Control.FlowControl:EnterStroryLineContent(storyLineId)    

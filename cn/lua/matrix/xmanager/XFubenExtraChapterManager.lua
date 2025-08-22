@@ -436,7 +436,7 @@ XFubenExtraChapterCreator = function()
                 XUiManager.TipMsg(checkDesription)
                 return
             end
-            if not XMVCA.XSubPackage:CheckSubpackage(XEnumConst.FuBen.ChapterType.ExtralChapter, chapterId) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, chapterId) then
                 return
             end
             XLuaUiManager.Open("UiFubenMainLineChapterFw", chapter, stageId, false)

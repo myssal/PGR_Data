@@ -31,6 +31,10 @@ function XUiTheatre5PVEClueBoardTag:Update(clueBoardCfg, index)
     self.DescTag.gameObject:SetActiveEx(not self._unlock)
     self.PanelLock.gameObject:SetActiveEx(not self._unlock)          
     self.Desc.text = title
+    local soundComp = self.GridButton.transform:GetComponent("XUguiPlaySoundWithSource")
+    if soundComp then
+        soundComp.enabled = self._unlock
+    end       
 end
 
 function XUiTheatre5PVEClueBoardTag:SetSelect(clueBoardId)

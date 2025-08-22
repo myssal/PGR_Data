@@ -13,7 +13,7 @@ function XUiFightAchievementGrid:Ctor(parent, achievementId, config)
     if not prefabPath then
         return
     end
-
+    
     local asset = self.Loader:Load(prefabPath)
     local prefab = CS.UnityEngine.Object.Instantiate(asset)
     self.Prefab = prefab
@@ -142,7 +142,11 @@ function XUiFightAchievementGrid:Dispose()
         CS.UnityEngine.Object.Destroy(self.Prefab.gameObject)
         self.Prefab = nil
     end
-    self.Loader:UnloadAll()
+
+    local prefabPath = self.Config.AssetPath
+    if prefabPath then
+        self.Loader:Unload(prefabPath)
+    end
 end
 
 return XUiFightAchievementGrid

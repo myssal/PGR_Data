@@ -21,6 +21,16 @@ function XBountyChallengeAgency:InitEvent()
 end
 
 function XBountyChallengeAgency:ExCheckInTime()
+    local config = self:ExGetConfig()
+    if not config then
+        return false
+    end
+    if config.TimeId then
+        if XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
+            return true
+        end
+    end
+    
     local activityConfig = self._Model:GetActivityConfig()
     if not activityConfig then
         return false
@@ -54,7 +64,20 @@ function XBountyChallengeAgency:NotifyBountyChallengeMonsterDifficultyState(data
     self._Model:SetServerData(data)
 end
 
+function XBountyChallengeAgency:ExCheckIsShowRedPoint()
+    return self:IsRed()
+end
+
 function XBountyChallengeAgency:IsRed()
+    local activityConfig = self._Model:GetActivityConfig()
+    if not activityConfig then
+        return false
+    end
+    local isInTime = XFunctionManager.CheckInTimeByTimeId(activityConfig.TimeId)
+    if not isInTime then
+        return false
+    end
+    
     --1、有可领取奖励时
     --玩法主界面对应怪物入口显示蓝点
     --活动界面玩法入口显示蓝点

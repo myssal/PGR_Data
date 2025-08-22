@@ -241,6 +241,11 @@ function XUiMainLine2PanelEntranceList:GetBgUnlockIndexsKey()
     return "BgUnlockIndexs" .. tostring(self.ChapterId)
 end
 
+-- MainLine2ClientConfig.tab的key
+function XUiMainLine2PanelEntranceList:GetBgUnlockCueIdKey()
+    return "BgUnlockCueId" .. tostring(self.ChapterId)
+end
+
 function XUiMainLine2PanelEntranceList:IsShowPaneBgList()
     local key = self:GetBgPathsKey()
     return self._Control:IsClientConfigExit(key)
@@ -295,7 +300,10 @@ function XUiMainLine2PanelEntranceList:OnDynamicTableEvent(event, index, grid)
         
         -- 播放解锁动画
         if self.PlayUnlockAnimBgs and self.PlayUnlockAnimBgs[index] then
-            grid:PlayUnlockAnim()
+            local key = self:GetBgUnlockCueIdKey()
+            local cueId = self._Control:GetClientConfigParams(key, 1)
+            local cueDelay = self._Control:GetClientConfigParams(key, 2)
+            grid:PlayUnlockAnim(cueId, cueDelay)
             self.PlayUnlockAnimBgs[index] = nil
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then

@@ -73,6 +73,16 @@ function XFunctionConfig.GetSkipFuncCfg(id)
     return SkipFunctionalTemplates[id]
 end
 
+function XFunctionConfig.TryGetSkipFuncCfg(id)
+    local cfg = SkipFunctionalTemplates[id]
+
+    if not cfg then
+        XLog.Error('尝试查找不存在的跳转配置，skipId：'..tostring(id))
+    end
+    
+    return cfg
+end
+
 function XFunctionConfig.GetMainActSkipCfg(id)
     return MainActivitySkipTemplates[id]
 end
@@ -134,108 +144,69 @@ function XFunctionConfig.GetSkipList(id)
     return SkipFunctionalTemplates[id]
 end
 
-
---function XFunctionConfig.GetUiName(id)
---    local uiName = SkipFunctionalTemplates[id].UiName
---    if uiName == nil then
---        XLog.Error("XFunctionConfig.GetUiName error: can not found UiName, id = " .. id)
---    end
---    return uiName
---end
 function XFunctionConfig.GetExplain(id)
-    local explain = SkipFunctionalTemplates[id].Explain
-    if explain == nil then
-        XLog.Error("XFunctionConfig.GetExplain error: can not found Explain, id = " .. id)
+    local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
+
+    if cfg then
+        local explain = cfg.Explain
+        if explain == nil then
+            XLog.Error("XFunctionConfig.GetExplain error: can not found Explain, id = " .. id)
+        end
+        return explain
     end
-    return explain
+    
+    return ''
 end
 
 function XFunctionConfig.GetParamId(id)
-    local paramId = SkipFunctionalTemplates[id].ParamId
-    if paramId == nil then
-        XLog.Error("XFunctionConfig.GetParamId error: can not found ParamId, id = " .. id)
+    local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
+
+    if cfg then
+        local paramId = cfg.ParamId
+        if paramId == nil then
+            XLog.Error("XFunctionConfig.GetParamId error: can not found ParamId, id = " .. id)
+        end
+        return paramId
     end
-    return paramId
 end
 
 function XFunctionConfig.GetIsShowExplain(id)
-    local isShowExplain = SkipFunctionalTemplates[id].IsShowExplain
-    if isShowExplain == nil then
-        XLog.Error("XFunctionConfig.GetIsShowExplain error: can not found isShowExplain, id = " .. id)
+    local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
+
+    if cfg then
+        local isShowExplain = cfg.IsShowExplain
+        if isShowExplain == nil then
+            XLog.Error("XFunctionConfig.GetIsShowExplain error: can not found isShowExplain, id = " .. id)
+        end
+        return isShowExplain
     end
-    return isShowExplain
 end
 
 --获取功能开启提醒方式
 function XFunctionConfig.GetOpenHint(id)
-    return FunctionalOpenTemplates[id].Hint
+    local cfg = FunctionalOpenTemplates[id]
+
+    if cfg then
+        return cfg.Hint
+    end
 end
 
 --获取功能名字
 function XFunctionConfig.GetFunctionalName(id)
-    return FunctionalOpenTemplates[id].Name
+    local cfg = FunctionalOpenTemplates[id]
+
+    if cfg then
+        return cfg.Name
+    end
+    
+    return ''
 end
 
 --获取功能类型
 function XFunctionConfig.GetFunctionalType(id)
-    return FunctionalOpenTemplates[id].Type
-end
+    local cfg = FunctionalOpenTemplates[id]
 
---获取npc名字
---function XFunctionConfig.GetNpcName(id)
---    return FunctionalOpenTemplates[id].NpcName
---end
---获取npc头像
---function XFunctionConfig.GetNpcHandIcon(id)
---    return FunctionalOpenTemplates[id].NpcHandIcon
---end
---获取npc半身像
---function XFunctionConfig.GetNpcHalfIcon(id)
---    return FunctionalOpenTemplates[id].NpcHalfIcon
---end
---function XFunctionConfig.GetSkipToActivityIcon()
---    return MainActivitySkipTemplates[1].Icon
---end
---function XFunctionManager.HandlerUiOpen(show, uiName)
---    if show then
---        if uiName ~= "UiHud" and uiName ~= "UiLogin" then
---            XFunctionManager.CheckOpen()
---        end
---    end
---end
---功能开启
---function XFunctionManager.GetFunctionOpenList(id)
---    --获取表
---    local openList = FunctionalOpenTemplates[id]
---    if openList == nil then
---        return
---    end
---    return openList
---end
--- 获取广告图列表
---function XFunctionManager.GetMainAdList()
---    local channelId = 0
---
---    if XUserManager.Channel == XUserManager.CHANNEL.HERO then
---        channelId = CS.XHeroSdkAgent.GetChannelId()
---    end
---
---    local list = {}
---    local templates = MainAdTemplates[channelId]
---
---    if not templates then
---        templates = MainAdTemplates[0]
---    end
---
---    for _, v in pairs(templates) do
---        tableInsert(list, v)
---    end
---
---    tableSort(list, function(a, b)
---        if a.Priority ~= b.Priority then
---            return a.Priority < b.Priority
---        end
---    end)
---
---    return list
---end
+    if cfg then
+        return cfg.Type
+    end
+end

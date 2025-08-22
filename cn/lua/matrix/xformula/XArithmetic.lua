@@ -101,6 +101,7 @@ function XArithmetic:Ctor()
 	self.OperatorLevel = defaultOperatorLevel
 	self.OperatorPattern = defaultOperatorPattern
 	self.GetVariableDelegate = nil
+	self.StackContainer = Stack.New()
 end
 
 function XArithmetic:SetTextValueHandler(handle)
@@ -134,7 +135,8 @@ end
 
 function XArithmetic:GetResultByExperssion(source)
 	local operatorLevel = self.OperatorLevel
-	local stack = Stack.New()
+	self:ClearArray(self.StackContainer)
+	local stack = self.StackContainer
 	local list = split(source, " ")
 	for i, current in ipairs(list) do
 		if tonumber(current) then
@@ -164,7 +166,8 @@ end
 function XArithmetic:ConvertToRPN(source)
 	local operatorLevel = self.OperatorLevel
 	local result = ""
-    local stack = Stack.New()
+	self:ClearArray(self.StackContainer)
+	local stack = self.StackContainer
     local list = split(source, " ")
     for i, current in ipairs(list) do
     	-- log("current %s", current)
@@ -233,6 +236,15 @@ function XArithmetic:InsertBlank(source)
 		source = string.gsub(source, p, " "..v.." ")
 	end
 	return source
+end
+
+function XArithmetic:ClearArray(array)
+	if XTool.IsTableEmpty(array) then
+		return
+	end
+	for i,_ in ipairs(array) do
+		array[i] = nil
+	end	
 end
 
 return XArithmetic

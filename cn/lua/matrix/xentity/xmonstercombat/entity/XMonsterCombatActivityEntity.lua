@@ -44,7 +44,7 @@ end
 
 function XMonsterCombatActivityEntity:GetHelpKey()
     local helpId = self.Config.HelpId or 0
-    return XHelpCourseConfig.GetHelpCourseTemplateById(helpId).Function
+    return XMVCA.XHelpCourse:GetHelpCourseCfgById(helpId).Function
 end
 
 -- 活动是否开启

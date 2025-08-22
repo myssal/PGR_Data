@@ -80,25 +80,16 @@ ObjectiveDefines.Obj60010102 = {
 ---@class QuestObjective60010103 : Quest6001Objective
 ObjectiveDefines.Obj60010103 = {
     Id = 60010103,
-    Type = EQuestObjectiveType.InteractComplete,
+    Type = EQuestObjectiveType.CollectSceneObject,
     Args = {
         LevelId = 4001,
-        TargetArgs = {
-            --交互对象是一个SceneObject
-            [ETargetActorType.SceneObject] = {
-                [100006] = 0,--宝箱
-            },
+        PlaceIdList = {
+            100006,
         },
     },
     ---@param obj QuestObjective60010103
     ---@param proxy StatusSyncFight.XFightScriptProxy
-    InitFunc = function(obj, proxy)
-        obj.TriggerID1 = 800014
-    end,
-    ---@param obj QuestObjective60010103
-    ---@param proxy StatusSyncFight.XFightScriptProxy
     EnterFunc = function(obj, proxy)
-        proxy:LoadSceneObject(obj.TriggerID1)
         proxy:NpcNavigateTo(proxy:GetNpcUUID(100002), { x =575.01, y = 145.082, z = 1350.83 }, ENpcMoveType.Walk) --NPC寻路到寶箱
         proxy:AddTimerTask(6, function()    --  监听时间
             proxy:DoSceneObjectAction(100006, 6001)
