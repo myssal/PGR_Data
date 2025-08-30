@@ -36,6 +36,17 @@ function XUiFightCommonImage:OnEnable(configId)
     
     --是否显示mask
     self.Mask.gameObject:SetActiveEx(XFightCommonImageConfigs.GetIsShowMask(configId))
+    --海外启用手柄光标
+    if XOverseaManager.IsOverSeaRegion() then
+        CS.XJoystickLSHelper.ForceResponse = true
+    end
+end
+
+function XUiFightCommonImage:OnDisable()
+    --关闭手柄光标
+    if XOverseaManager.IsOverSeaRegion() then
+        CS.XJoystickLSHelper.ForceResponse = false
+    end
 end
 
 function XUiFightCommonImage:Close()

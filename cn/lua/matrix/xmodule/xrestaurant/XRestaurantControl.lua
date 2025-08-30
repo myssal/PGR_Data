@@ -280,11 +280,18 @@ function XRestaurantControl:ExitRoom()
             XLuaUiManager.Remove(uiName)
         end
     end
-    XMVCA.XRestaurant:ResetSceneObj()
+    self:ResetSceneObj()
     self._Room = nil
 
     --卸载行为树
     XLuaBehaviorManager.UnloadBehaviorTree(CS.BehaviorTree.XGamePlayType.Restaurant)
+end
+
+function XRestaurantControl:ResetSceneObj()
+    ---@type XLoaderUtil
+    local loader = self:GetLoader()
+    loader:Unload(XMVCA.XRestaurant:GetSceneAssetUrl())
+    XMVCA.XRestaurant:ResetSceneObj()
 end
 
 --- 停止营业
@@ -1810,23 +1817,6 @@ function XRestaurantControl:UnsubscribeEvent(eventId)
         return
     end
     self._EventFunc[eventId] = nil
-end
-
-function XRestaurantControl:GetLoader()
-    if self._Loader then
-        return self._Loader
-    end
-    self._Loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XRestaurant)
-    
-    return self._Loader
-end
-
-function XRestaurantControl:UnloadAll()
-    if not self._Loader then
-        return
-    end
-    self._Loader:UnloadAll()
-    self._Loader = nil
 end
 
 --endregion------------------工具接口 finish------------------

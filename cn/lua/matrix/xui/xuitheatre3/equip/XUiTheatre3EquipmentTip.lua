@@ -88,7 +88,11 @@ function XUiTheatre3EquipmentTip:ShowDetailOrSimpleTxt(isDetailTxt, isQuantum)
             desc = isDetailTxt and self._EquipConfig.EffectDesc or self._EquipConfig.SimpleEffectDesc
         end
         desc = XUiHelper.FormatText(desc, self._IsAdventureDesc and self._Control:GetEquipEffectGroupDesc(self._EquipConfig.Id) or "")
-        self.TxtDetails.text = XUiHelper.ReplaceUnicodeSpace(XUiHelper.ReplaceTextNewLine(desc))
+        if XOverseaManager.IsENRegion() then
+            self.TxtDetails.text = XUiHelper.ReplaceTextNewLine(desc)
+        else
+            self.TxtDetails.text = XUiHelper.ReplaceUnicodeSpace(XUiHelper.ReplaceTextNewLine(desc))
+        end
     end
     if self._SuitConfig then
         if isQuantum then
@@ -97,7 +101,11 @@ function XUiTheatre3EquipmentTip:ShowDetailOrSimpleTxt(isDetailTxt, isQuantum)
             desc = isDetailTxt and self._SuitConfig.Desc or self._SuitConfig.SimpleEffectDesc
         end
         desc = XUiHelper.FormatText(desc, self._IsAdventureDesc and self._Control:GetSuitEffectGroupDesc(self._SuitConfig.Id) or "")
-        self.TxtSuitDetails.text = XUiHelper.ReplaceUnicodeSpace(XUiHelper.ReplaceTextNewLine(desc))
+        if XOverseaManager.IsENRegion() then
+            self.TxtSuitDetails.text = XUiHelper.ReplaceTextNewLine(desc)
+        else
+            self.TxtSuitDetails.text = XUiHelper.ReplaceUnicodeSpace(XUiHelper.ReplaceTextNewLine(desc))
+        end
     end
 end
 

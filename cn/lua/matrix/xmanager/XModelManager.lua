@@ -1,6 +1,7 @@
 XModelManager = XModelManager or {}
 
 local Ui_MODEL_TRANSFORM_PATH = "Client/Ui/UiModelTransform.tab"
+local Ui_MODEL_TRANSFORM_NAME_AUTO = "Client/Ui/UiModelTransformNameAuto.tab"
 local Ui_SCENE_TRANSFORM_PATH = "Client/Ui/UiSceneTransform.tab"
 local MODEL_TABLE_PATH = "Client/ResourceLut/Model/Model.tab"
 --local HX_RES_REPLACE_PATH = "Client/ResourceLut/Model/HXResReplace.tab"
@@ -76,6 +77,7 @@ XModelManager.MODEL_UINAME = {
 
 --local RoleModelPool = {} --保存模型
 local UiModelTransformTemplates = {} -- Ui模型位置配置表
+local UiModelTransformNameAutoTemplates = {} -- Ui模型位置配置key值对应表
 local UiModelCameraTemplates = {} -- Ui模型相机配置表
 local UiSpecialModelCameraTemplates = {} -- Ui特殊模型相机配置表
 local UiSceneTransformTemplates = {} -- Ui模型位置配置表
@@ -109,16 +111,10 @@ function XModelManager.Init()
         SpecialUiModel[cfg.ModelId][cfg.UiName] = cfg
     end
 
-    UiModelTransformTemplates = {}
+    UiModelTransformTemplates = XTableManager.ReadByIntKey(Ui_MODEL_TRANSFORM_PATH, XTable.XTableUiModelTransform, "Id")
+    UiModelTransformNameAutoTemplates = XTableManager.ReadByStringKey(Ui_MODEL_TRANSFORM_NAME_AUTO, XTable.XTableUiModelTransformNameAuto, "Id")
+    
     UiSceneTransformTemplates = {}
-
-    local tab = XTableManager.ReadAllByIntKey(Ui_MODEL_TRANSFORM_PATH, XTable.XTableUiModelTransform, "Id")
-    for _, config in pairs(tab) do
-        if not UiModelTransformTemplates[config.UiName] then
-            UiModelTransformTemplates[config.UiName] = {}
-        end
-        UiModelTransformTemplates[config.UiName][config.ModelName] = config
-    end
 
     local sceneTab = XTableManager.ReadAllByIntKey(Ui_SCENE_TRANSFORM_PATH, XTable.XTableUiSceneTransform, "Id")
     for _, config in pairs(sceneTab) do
@@ -384,8 +380,12 @@ function XModelManager.GetRoleModelConfig(uiName, modelName)
         return
     end
 
-    if UiModelTransformTemplates[uiName] then
-        return UiModelTransformTemplates[uiName][modelName]
+    local uiNameId = UiModelTransformNameAutoTemplates[uiName]
+    local modelNameId = UiModelTransformNameAutoTemplates[modelName]
+    if uiNameId and modelNameId then
+        -- 源表工具特殊处理
+        local id = uiNameId.Value * 10000 + modelNameId.Value
+        return UiModelTransformTemplates[id]
     end
 end
 

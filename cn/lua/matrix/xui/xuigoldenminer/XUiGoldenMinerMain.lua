@@ -27,6 +27,7 @@ end
 
 function XUiGoldenMinerMain:OnEnable()
     XUiGoldenMinerMain.Super.OnEnable(self)
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.GoldenMiner)
     self.UseCharacterId = self._Control:GetUseCharacterId()
     self._Control:CatchCurCharacterId(self.UseCharacterId)
     self:Refresh()
@@ -281,7 +282,7 @@ end
 
 --region Ui - BtnListener
 function XUiGoldenMinerMain:AddBtnClickListener()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, function()
         XLuaUiManager.RunMain()
     end)
@@ -303,6 +304,11 @@ function XUiGoldenMinerMain:AddBtnClickListener()
     --结算弹窗的按钮
     self:RegisterClickEvent(self.BtnConfirm, self.HideSettleDialog)
     self:RegisterClickEvent(self.BtnBg, self.HideSettleDialog)
+end
+
+function XUiGoldenMinerMain:OnBtnBackClick()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GoldenMiner)
+    self:Close()
 end
 
 function XUiGoldenMinerMain:OnBtnRankingClick()

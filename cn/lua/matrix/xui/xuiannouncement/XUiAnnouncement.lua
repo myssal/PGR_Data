@@ -72,6 +72,14 @@ function XUiAnnouncement:InitUi()
     self.DynamicTable:SetDelegate(self)
     self.DynamicTable:SetProxy(XUiGridAnnouncementBtn)
     self.GridBtn.gameObject:SetActiveEx(false)
+    --海外新增外链页签
+    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+        table.insert(SortNoticeTag, NoticeTag.ActivityNotice + 1)
+        TabTag2NoticeInfo[NoticeTag.ActivityNotice + 1] = {
+            Type = GameNoticeType.Link,
+            Name = XUiHelper.GetText("JPNoticeTypeTitle3")
+        }
+    end
     --页签
     self.BtnTabs = {}
     for key, idx in ipairs(SortNoticeTag) do
@@ -367,11 +375,26 @@ function XUiAnnouncement:OnSelectTag(index)
     end
     self:CheckTabRedPoint()
     local noticeType = TabTag2NoticeInfo[index].Type
+    if noticeType == GameNoticeType.Link then
+        self:PlayAnimation("QieHuanUp")
+        self.TabIndex = index
+        self.LastGrid = nil
+        self.PanelTjTabEx.gameObject:SetActiveEx(false)
+        self.ParagraphContent.gameObject:SetActiveEx(false)
+        self:OpenOneChildUi("UiActivityBaseLink")
+        return
+    end
     if not XDataCenter.NoticeManager.CheckHaveNotice(noticeType) then
         XUiManager.TipText("NoInGameNotice")
         return
     end
-    
+    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+        self.PanelTjTabEx.gameObject:SetActiveEx(true)
+        self.ParagraphContent.gameObject:SetActiveEx(true)
+        if XLuaUiManager.IsUiShow("UiActivityBaseLink") then
+            self:CloseChildUi("UiActivityBaseLink")
+        end
+    end
     self:PlayAnimation("QieHuanUp")
     self.TabIndex = index
     self.LastGrid = nil

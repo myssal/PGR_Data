@@ -21,7 +21,7 @@ end
 
 -- 更新数据
 function XUiPurchasePay:OnRefresh(uiType, selectIndex)
-    if not XHeroSdkManager.IsPayEnable() then
+    if not XHeroSdkManager.IsPayEnable() and not XOverseaManager.IsOverSeaRegion() then
         XUiManager.TipText("PcRechargeCloseTip")
         XLuaUiManager.RunMain();
     end
@@ -69,6 +69,11 @@ function XUiPurchasePay:Init()
 end
 
 function XUiPurchasePay:OnBtnBuyClick()
+
+    if XOverseaManager.IsTWRegion() then
+        self:TwRegionPayCheck()
+        return
+    end
     XDataCenter.PayManager.Pay(self.BuyKey)
 end
 
@@ -122,4 +127,28 @@ function XUiPurchasePay:SetListItemState(index)
     end
 end
 
+function XUiPurchasePay:TwRegionPayCheck() 
+
+if XUserManager.UserType == XHeroSdkManager.UserType.Vistor then
+        if XSaveTool.GetData("AGE_OVER_20") == nil then
+                XLuaUiManager.Open("UiPurchaseTips", function()
+                    XDataCenter.PayManager.Pay(self.BuyKey)
+                end, function()
+                    XUiManager.TipError(CS.XTextManager.GetLuaText("XUiPurchasePay.lua_138"))
+                end)
+            else
+                XDataCenter.PayManager.Pay(self.BuyKey)
+        end
+    else
+        if XSaveTool.GetData("AGE_OVER_20") == nil then
+            XLuaUiManager.Open("UiPurchaseTips", function()
+                XDataCenter.PayManager.Pay(self.BuyKey)
+            end, function()
+                XUiManager.TipError(CS.XTextManager.GetLuaText("XUiPurchasePay.lua_149"))
+            end)
+        else
+            XDataCenter.PayManager.Pay(self.BuyKey)
+        end
+    end
+end
 return XUiPurchasePay

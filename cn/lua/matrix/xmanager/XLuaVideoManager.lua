@@ -31,13 +31,7 @@ function XLuaVideoManager.LoadVideoPlayerUguiWithPrefab(parentTransform)
         return
     end
 
-    local loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XUiMain)
-    local prefabUrl = CS.XGame.ClientConfig:GetString("VideoPlayerUguiPrefabUrl")
-    local resource = loader:Load(prefabUrl)
-    local videoPrefab = XUiHelper.Instantiate(resource, parentTransform.transform)
-    local videoPlayerUGUI = videoPrefab:GetComponent(typeof(CS.XVideoPlayerUGUI))
-    loader:Unload(prefabUrl)
-    return videoPlayerUGUI
+    return CS.XVideoManager.LoadVideoPlayerUguiWithPrefab(parentTransform)
 end
 
 -- 注意pv资源需要放在launch目录下，和下载pv使用同一份

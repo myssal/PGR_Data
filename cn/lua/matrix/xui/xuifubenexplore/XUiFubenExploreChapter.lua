@@ -75,8 +75,7 @@ function XUiFubenExploreChapter:InitTabBtn()
     local allChapterData = XFubenExploreConfigs.GetExploreChapterCfg()
     for i = 1, #allChapterData do
         if self.ChapterTabBtnList[i] == nil then
-            local tempChapterTabBtn = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("BtnExploreChapter"))
-            tempChapterTabBtn.transform:SetParent(self.ChapterTabGroup, false)
+            local tempChapterTabBtn = self.ChapterTabGroup:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, "BtnExploreChapter"))
             table.insert(self.ChapterTabBtnList, tempChapterTabBtn)
         end
     end

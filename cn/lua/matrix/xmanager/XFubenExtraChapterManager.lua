@@ -12,8 +12,8 @@ XFubenExtraChapterCreator = function()
     local ActivityChallengeBeginTime = 0 --活动抢先体验结束时间(隐藏模式)
     local ActivityTimer
     local ExploreEventStateList = {}
-    local ExploreGroupInfos = {}
-    local ExploreItemInfos = {}
+    local ExploreGroupInfos = nil
+    local ExploreItemInfos = nil
     local PlayerTreasureData = {}
     local CurrentClearData = {}
     --排序
@@ -38,8 +38,6 @@ XFubenExtraChapterCreator = function()
         ChapterExtraCfgs = XFubenExtraChapterConfigs.GetExtraChapterCfgs()
         ChapterExtraDetailsCfgs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
         StarTreasureCfgs = XFubenExtraChapterConfigs.GetExtraChapterStarTreasuresCfgs()
-        ExtraChapterManager.InitExploreGroup()
-        ExtraChapterManager.InitExploreItem()
         ExtraChapterManager.UiGridChapterMoveMinX = CS.XGame.ClientConfig:GetInt("UiGridChapterMoveMinX")
         ExtraChapterManager.UiGridChapterMoveMaxX = CS.XGame.ClientConfig:GetInt("UiGridChapterMoveMaxX")
         ExtraChapterManager.UiGridChapterMoveTargetX = CS.XGame.ClientConfig:GetInt("UiGridChapterMoveTargetX")
@@ -668,6 +666,11 @@ XFubenExtraChapterCreator = function()
     ------------------------------------------------------------------ 活动番外副本抢先体验 end -------------------------------------------------------
     ------------------------------------------------------------------ 活动番外副本探索玩法 begin -------------------------------------------------------
     function ExtraChapterManager.InitExploreGroup()
+        if ExploreGroupInfos then
+            return
+        end
+
+        ExploreGroupInfos = {}
         local exploreGroupList = XFubenExtraChapterConfigs.GetExploreGroupCfg()
         for _, exploreGroup in pairs(exploreGroupList) do
             if not ExploreGroupInfos[exploreGroup.GroupId] then
@@ -678,6 +681,11 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.InitExploreItem()
+        if ExploreItemInfos then
+            return
+        end
+
+        ExploreItemInfos = {}
         local exploreItemList = XFubenExtraChapterConfigs.GetExploreItemCfg()
         for _, exploreItem in pairs(exploreItemList) do
             if not ExploreItemInfos[exploreItem.MainChapterId] then
@@ -688,6 +696,7 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.GetExploreGroupInfoByGroupId(id)
+        ExtraChapterManager.InitExploreGroup()
         if not ExploreGroupInfos[id] then
             XLog.ErrorTableDataNotFound("ExtraChapterManager.GetExploreGroupInfoByGroupId",
             "ExploreGroupInfos", " Client/Fuben/ExtraChapter/ExtraExploreGroup.tab", "id", tostring(id))
@@ -707,6 +716,7 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.CheckHaveNewExploreItemByChapterId(chapterId)
+        ExtraChapterManager.InitExploreItem()
         if not ExploreItemInfos[chapterId] then
             return false
         end
@@ -740,6 +750,7 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.GetChapterExploreItemList(chapterId)
+        ExtraChapterManager.InitExploreItem()
         local list = {}
         if ExploreItemInfos[chapterId] then
             for _, info in pairs(ExploreItemInfos[chapterId]) do
@@ -752,6 +763,7 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.GetChapterExploreItemMaxCount(chapterId)
+        ExtraChapterManager.InitExploreItem()
         return ExploreItemInfos[chapterId] and #ExploreItemInfos[chapterId] or 0
     end
 

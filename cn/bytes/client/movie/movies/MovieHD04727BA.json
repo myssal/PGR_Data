@@ -10,7 +10,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory668.jpg"
         ]
     },
     {
@@ -23,20 +23,24 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1,
-            36
+            2,
+            2915,
+            0.5
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 401,
         "IsBlock": 0,
         "IsEnd": 0,
-        "BeginAnim": "DialogEnable",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            234
+        ]
     },
     {
         "Id": 4,
@@ -44,9 +48,955 @@
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "闲逛在康斯塔雷耶的主城，突然远处传来了掌声和欢呼声，不少人类与构造体都在驻足观望。"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "穿梭过拥挤的人流，青绿色的曼妙身姿映入眼帘，光影交错，眼前人的舞蹈技艺之纯熟令人叹服。"
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英？",
+            8,
+            "果然是你！"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "【kuroname】，竟然真的是你。",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "目光被含英未散的舞韵吸引，她流畅的动作在灯笼与月华交织下，仿佛镀上了一层柔光，沉静中蕴含着力量。背景的喧闹成了遥远的低音和弦。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "青绿的构造体面容讶异，带着一丝羞赧望向自己的方向。像是怕惊扰了这份宁静，人潮渐散，自己还是被那份美钉在了原地。"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2915
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 1000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory677.jpg"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "含英",
+            "……你来了。",
+            1
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "今天是七夕，我想着之前在九龙的时，总是听闻一些“相聚”与“守望”的故事，所思所感编成了刚刚的那支舞，不知合不合你的心意……也不知道我的舞艺，是否有所精进呢？",
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "很美。",
+            19,
+            "（鼓掌。）"
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "像是含蓄的告语，又似怯意的试探，含英将双手搭至身前，望向人类。"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "喧嚣有时，静默亦有其韵律。今天康斯塔雷耶中心似乎有来自九龙的音乐演出，不知我能否邀请指挥官和我一同欣赏呢？",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "空气里，一丝若有若无的檀香混合着远处糖画摊飘来的焦糖气息，构成一种奇异的、略带疏离感的七夕前调。"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "随着阵阵丝竹声入耳，九龙的古韵借着音律逐渐攀上二人手腕，气息的吐纳不知不觉间越来越近，直至在灯火朦胧的间隙粘腻起来。"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "蓦然回眸，青绿色的机械体正对着自己微微含笑。"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这就是……九龙过去的音乐吗？",
+            27
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "是的，即便承载于机械之躯，也很难不被这样的韵律和美感动，这首曲子名为《鹊桥仙》……",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "在九龙的传说中，七夕这一天是喜鹊搭起了心意相通的桥梁，让仙子和久别的恋人在月下重逢，互诉衷肠。",
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "仙子等了许久她的恋人，而她的恋人却不得已被划在了银河的另一边……即使是在梦中相遇，梦醒时也有诸多怅然，所以这首曲子似乎处处都有着“不要留遗憾”的意味。",
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "就像……啊，我好像自顾自的说了很多，【kuroname】不会觉得厌烦吧？",
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不会。",
+            33,
+            "我很喜欢。"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英轻轻低头，鬓角的发丝垂落，刚好盖住了微红的脸颊。"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "指挥官，我……能否邀请你与我共舞一曲《鹊桥仙》呢？",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "当然。",
+            40,
+            "我怕顺拐……"
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英被逗得轻轻笑出声，轻轻摆了摆手。"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "我当然不会为难你，只是几个简单的双人舞步，无需繁复技巧，只求心意同步的共鸣。",
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "来，请把手交给我。放松，跟随我的牵引……",
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她优雅地伸出手，掌心向上，带着不容置疑的温柔邀请。"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "伸出手。",
+            42
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 600.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1543,
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "深吸一口气后，自己将手放入含英微凉的手掌中，她的手指稳定而有力，传递着令人安心的力量。"
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "含英",
+            "第一步，左脚向前，轻盈些……对，就是这样。注意我肩膀的倾斜，感受那份牵引。",
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "几次因为不熟悉曲调而险些踩错，但含英总能不着痕迹地调整，像春风托起飘落的花瓣，渐渐地也能感受到一种奇妙的韵律感。"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对上她明亮的清眸，视野中灯笼的光晕划出温暖的弧线，周遭的气温好像升高了，好像也有人渐渐围了上来。"
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "含英",
+            "很好。现在，一个小旋转……相信我，想象无形的丝线……",
+            1
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "看，找到属于自己的节奏了吧。舞蹈便是如此，动作本身就在诉说信任与默契。",
+            1
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "随着几个有些快速的旋转结束，音乐声渐止，含英优雅地收势行礼，又恢复成熟悉的模样。"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4329,
+            0.4
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不知不觉间围上来那么多人，曲终舞毕，周遭都是喝彩的欢呼声，仿佛置身于梦境一般。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英脸上带着红晕，冷不丁地对上了对方的目光。"
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "含英",
+            "……和你一起跳舞的感觉，很奇妙。",
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我的荣幸。",
+            61,
+            "我很尽兴。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory802.jpg"
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2915,
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "远处的欢闹声浪隐约传来，提醒着庆典仍在继续。人类望向那片灯火辉煌，又转头看向身边在柔和光晕中亭亭玉立的含英。"
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "庆典还没结束呢，含英。",
+            65,
+            "（向含英伸出手。）"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英欣然将手放入了人类的手心，走向那片灯火阑珊，轻柔地融入夜色。"
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500916,
+            1
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "含英",
+            "嗯，并肩同行或许就是最恒久的“舞步”，今天是没有遗憾的一天。",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "含英",
+            "谢谢你，指挥官，七夕快乐。",
+            1
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "七夕快乐，含英。",
+            71
+        ]
     }
 ]

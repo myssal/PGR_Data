@@ -3,9 +3,14 @@ local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
 ---@class XGoldenMinerAgency : XFubenActivityAgency
 ---@field private _Model XGoldenMinerModel
 local XGoldenMinerAgency = XClass(XFubenActivityAgency, "XGoldenMinerAgency")
+
 function XGoldenMinerAgency:OnInit()
-    self.IsDebug = false
+    if XMain.IsEditorDebug then
+        self.IsDebug = XSaveTool.GetData('GoldenMinerDebug')
+        self.LogEnableDict = {}
+    end
     self:RegisterActivityAgency()
+    self.EnumConst = require('XModule/XGoldenMiner/XGoldenMinerEnumConst')
 end
 
 function XGoldenMinerAgency:InitRpc()
@@ -21,6 +26,16 @@ function XGoldenMinerAgency:InitEvent()
 end
 
 --region Debug
+function XGoldenMinerAgency:_CheckLogTypeEnable(logType)
+    return self.LogEnableDict and self.LogEnableDict[logType]
+end
+
+function XGoldenMinerAgency:SetLogTypeEnable(logType, enable)
+    if self.LogEnableDict then
+        self.LogEnableDict[logType] = enable
+    end
+end
+
 function XGoldenMinerAgency:_CheckIsDebug()
     return self.IsDebug and XMain.IsWindowsEditor
 end
@@ -40,6 +55,22 @@ function XGoldenMinerAgency:DebugLog(content, ...)
     if not self:_CheckIsDebug() then
         return
     end
+    if string.IsNilOrEmpty(content) then
+        XLog.Debug("黄金矿工Debug:", ...)
+        return
+    end
+    XLog.Debug("黄金矿工Debug:" .. content, ...)
+end
+
+function XGoldenMinerAgency:DebugLogWithType(type, content, ...)
+    if not self:_CheckIsDebug() then
+        return
+    end
+
+    if not self:_CheckLogTypeEnable(type) then
+        return
+    end
+    
     if string.IsNilOrEmpty(content) then
         XLog.Debug("黄金矿工Debug:", ...)
         return
@@ -178,10 +209,25 @@ function XGoldenMinerAgency:CheckIsUseCharacter(characterId)
 end
 --endregion
 
+--region Condition
+
+--- 当前已经通过了几关
+function XGoldenMinerAgency:GetCurrentPassedStageCount()
+    local dataDb = self._Model:GetMineDb()
+    
+    return dataDb and dataDb:GetFinishStageCount() or 0
+end
+
+--- 当前所处商店状态
+function XGoldenMinerAgency:GetCurrentState()
+    local dataDb = self._Model:GetMineDb()
+    
+    return dataDb and dataDb:GetCurrentState() or 0
+end
+
+--endregion
+
 --region Cfg - ClientConfig
---function XGoldenMinerAgency:GetClientMaxItemGridCount() -- 废弃 统一使用Activity表中配置的数量
---    return self._Model:GetClientCfgNumberValue("MaxItemGridCount", 1)
---end
 
 function XGoldenMinerAgency:GetCurActivityMaxItemColumnCount()
     local id = self._Model:GetCurActivityId()
@@ -224,6 +270,11 @@ end
 function XGoldenMinerAgency:GetCfgStageTargetScore(id)
     local cfg = self._Model:GetStageCfg(id)
     return cfg and cfg.TargetScore
+end
+
+function XGoldenMinerAgency:GetCfgStageFixTargetScore(id)
+    local cfg = self._Model:GetStageCfg(id)
+    return cfg and cfg.FixTargetScore
 end
 --endregion
 

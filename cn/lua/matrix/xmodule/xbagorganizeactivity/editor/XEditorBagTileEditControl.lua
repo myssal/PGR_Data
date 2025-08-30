@@ -150,7 +150,7 @@ function XEditorBagTileEditControl:SaveMap()
             -- 保存数据
             if file:SaveData(data, columns) then
                 self:_SaveBag(file.Id, file.MaxWidth, file.MaxHeight)
-                XUiManager.TipMsg('保存成功')
+                XUiManager.TipMsg(CS.XTextManager.GetLuaText("XEditorBagTileEditControl.lua_153"))
             end
         end
     end

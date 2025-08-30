@@ -698,17 +698,21 @@ function XLineArithmetic2Game:GetGameMapData(mapData)
     --遍历line, 添加可以吃的标记
     local lastGrid = line[#line]
     if lastGrid and lastGrid:IsEndGrid() then
-        local index = 0
-        for i = #line, 1, -1 do
-            local grid = line[i]
-            if grid and not grid:IsEndGrid() then
-                index = index + 1
-                if index <= eatCountIncludeBullet then
-                    for i = 1, #mapData do
-                        local gridData = mapData[i]
-                        if gridData then
-                            if gridData.Uid == grid:GetUid() then
-                                gridData.IsPreview = true
+        local canEat = lastGrid:GetCapacity()
+        if eatCountIncludeBullet then
+            eatCountIncludeBullet = math.min(eatCountIncludeBullet, canEat)
+            local index = 0
+            for i = #line, 1, -1 do
+                local grid = line[i]
+                if grid and not grid:IsEndGrid() then
+                    index = index + 1
+                    if index <= eatCountIncludeBullet then
+                        for i = 1, #mapData do
+                            local gridData = mapData[i]
+                            if gridData then
+                                if gridData.Uid == grid:GetUid() then
+                                    gridData.IsPreview = true
+                                end
                             end
                         end
                     end

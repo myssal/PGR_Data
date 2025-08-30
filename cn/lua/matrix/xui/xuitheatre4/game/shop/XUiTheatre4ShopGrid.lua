@@ -103,7 +103,11 @@ function XUiTheatre4ShopGrid:RefreshDiscount()
     local discount = self.Parent.GridData:GetGridShopDiscount()
     self.ImgDiscount.gameObject:SetActiveEx(discount ~= 1)
     if discount ~= 1 then
-        self.TxtDiscount.text = XUiHelper.GetText("Theatre4BuyAssetDiscountText", discount * 10)
+        local discountStr = discount * 10
+        if XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then
+            discountStr = 100 -(discount * 100)
+        end
+        self.TxtDiscount.text = XUiHelper.GetText("Theatre4BuyAssetDiscountText", discountStr)
     end
 end
 

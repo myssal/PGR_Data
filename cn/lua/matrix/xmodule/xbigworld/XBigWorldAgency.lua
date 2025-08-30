@@ -419,6 +419,14 @@ function XBigWorldAgency:GetBigWorldGuideCompleteTemplateById(completeId)
     return self._Model:GetBigWorldGuideCompleteTemplateById(completeId)
 end
 
+---@return XTableGuideText
+function XBigWorldAgency:GetBigWorldGuideTextTemplate(textId)
+end
+
+---@return string
+function XBigWorldAgency:GetBigWorldGuideIcon(iconId)
+end
+
 --endregion
 
 

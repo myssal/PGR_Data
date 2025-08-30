@@ -4,6 +4,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 ---@class XUiGoldenMinerTask : XLuaUi
 ---@field _Control XGoldenMinerControl
 local XUiGoldenMinerTask = XLuaUiManager.Register(XLuaUi, "UiGoldenMinerTask")
+local MaskKey = "XUiGoldenMinerTask"
 
 function XUiGoldenMinerTask:OnAwake()
     self:InitTabGroup()
@@ -20,6 +21,12 @@ function XUiGoldenMinerTask:OnEnable()
     XUiGoldenMinerTask.Super.OnEnable(self)
     self:UpdateDynamicTable()
     self:UpdateRedPoint()
+end
+
+function XUiGoldenMinerTask:OnDisable()
+    if XLuaUiManager.IsMaskShow(MaskKey) then
+        XLuaUiManager.SetMask(false, MaskKey)
+    end
 end
 
 function XUiGoldenMinerTask:OnNotify(evt, ...)
@@ -64,7 +71,6 @@ function XUiGoldenMinerTask:OnSelectedTog(index)
         return
     end
     self.SelectIndex = index
-    self:PlayAnimation("QieHuan")
     self:UpdateDynamicTable()
 end
 --endregion
@@ -86,7 +92,7 @@ function XUiGoldenMinerTask:UpdateDynamicTable()
 
     self.TaskDataList = self._Control:GetTaskDataList(taskGroupId)
     self.DynamicTable:SetDataSource(self.TaskDataList)
-    self.DynamicTable:ReloadDataASync()
+    self.DynamicTable:ReloadDataSync(1)
     self.ImgEmpty.gameObject:SetActiveEx(XTool.IsTableEmpty(self.TaskDataList))
 end
 
@@ -94,6 +100,36 @@ function XUiGoldenMinerTask:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local taskData = self.TaskDataList[index]
         grid:ResetData(taskData)
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        local grids = self.DynamicTable:GetGrids()
+        local gridCount = XTool.GetTableCount(grids)
+        
+        if XTool.IsTableEmpty(grids) or #grids <= 0 then
+            return
+        end
+        
+        for i, gridItem in ipairs(grids) do
+            gridItem.GameObject:SetActiveEx(false)
+        end
+        
+        local index = 0
+        XLuaUiManager.SetMask(true, MaskKey)
+        
+        for i, gridItem in ipairs(grids) do
+            XScheduleManager.ScheduleOnce(function()
+                if not XTool.UObjIsNil(gridItem.GameObject) then
+                    gridItem.GameObject:SetActiveEx(true)
+                    local animTrans = XUiHelper.TryGetComponent(gridItem.Transform, "Animation/GridTaskEnable", nil)
+                    if animTrans then
+                        animTrans:PlayTimelineAnimation()
+                    end
+                    index = index + 1
+                    if index >= gridCount then
+                        XLuaUiManager.SetMask(false, MaskKey)
+                    end
+                end
+            end, 50 * i)
+        end    
     end
 end
 --endregion

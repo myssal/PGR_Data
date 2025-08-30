@@ -44,13 +44,13 @@ function XUiFubenExperiment:InitTab(selectIdx)
     --CreateGameObject
     for i = 1, #self.TrialGroup do
         if not self.BtnTabGoList[i] then
-            local tempBtnTab
+            local tempBtnTabKey
             if self.TrialGroup[i].SubIndex > 0 then
-                tempBtnTab = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("BtnTab2"))
+                tempBtnTabKey = "BtnTab2"
             else
-                tempBtnTab = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("BtnTab1"))
+                tempBtnTabKey = "BtnTab1"
             end
-            tempBtnTab.transform:SetParent(self.TabBtnContent, false)
+            local tempBtnTab = self.TabBtnContent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, tempBtnTabKey))
             local uiButton = tempBtnTab:GetComponent("XUiButton")
             uiButton.SubGroupIndex = self.TrialGroup[i].SubIndex
             table.insert(self.BtnTabGoList, uiButton)

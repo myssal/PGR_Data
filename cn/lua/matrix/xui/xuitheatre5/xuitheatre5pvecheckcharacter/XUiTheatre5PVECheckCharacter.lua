@@ -52,9 +52,9 @@ function XUiTheatre5PVECheckCharacter:InitCharacter3D()
     if characterCfg then
         local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(characterCfg.Id)
         local detailIdleAnima = self._Control.CharacterControl:GetDetailIdleAnimaByCharacterIdCurMode(characterCfg.Id)
-        local fashionId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(characterCfg.Id)
+        local fashionId, weaponId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(characterCfg.Id)
         
-        self.Model3D:UpdateRoleModelByHand(characterCfg.CharacterId, fashionId, animatorController)
+        self.Model3D:UpdateRoleModelByHand(characterCfg.CharacterId, fashionId, weaponId, animatorController)
         -- 播放战备界面的待机动画
         if not string.IsNilOrEmpty(detailIdleAnima) then
             self.Model3D.UiPanelRoleModel:PlayAnimaCross(detailIdleAnima)

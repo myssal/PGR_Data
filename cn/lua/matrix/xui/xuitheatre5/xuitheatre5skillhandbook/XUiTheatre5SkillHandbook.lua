@@ -61,13 +61,15 @@ function XUiTheatre5SkillHandbook:Update()
 end
 
 function XUiTheatre5SkillHandbook:OnSelectTab(index)
-    -- 第一次不播放切换动画，相同的index不播放切换动画
-    if index ~= self._Index then
-        if self._Index > 0 then
-            self:PlayAnimation("QieHuan")
-        end
-        self._Index = index
+    if index == self._Index then
+        return
     end
+    
+    -- 第一次不播放切换动画，相同的index不播放切换动画
+    if self._Index > 0 then
+        self:PlayAnimation("QieHuan")
+    end
+    self._Index = index
 
     -- 切换页签后，滚到0的位置
     self.PanelItemList.verticalNormalizedPosition = 1

@@ -185,7 +185,7 @@ function XUiPanelPersonalDetails:OnBtnViewJbClick()
     end
     local data = XDataCenter.SocialManager.GetFetterTableDataByLevel(tonumber(self.Add))
     if data then
-        local removeTip = "与这位好友组队参战时，最大生命提升" .. data.Add .. "%"--CS.XTextManager.GetText("FriendRemoveTip")
+        local removeTip = CS.XTextManager.GetLuaText("XUiPanelPersonalDetails.lua_188") .. data.Add .. "%"--CS.XTextManager.GetText("FriendRemoveTip")
         XUiManager.DialogTip("", removeTip, XUiManager.DialogType.Normal, nil, sureCallBack)
     end
 end
@@ -206,7 +206,7 @@ function XUiPanelPersonalDetails:Refresh(personalInfo)
     self.TxtIdcode.text = playerData.Id
     self.TxtCount.text = playerData.Likes
     if playerData.Birthday == nil then
-        self.TxtBirthday.text = "未登记"
+        self.TxtBirthday.text = CS.XTextManager.GetLuaText("XUiPanelPersonalDetails.lua_209")
     else
         self.TxtBirthday.text = CS.XTextManager.GetText("Birthday", playerData.Birthday.Mon, playerData.Birthday.Day)
     end
@@ -214,7 +214,7 @@ function XUiPanelPersonalDetails:Refresh(personalInfo)
     if (info ~= nil) then
         self.RootUi:SetUiSprite(self.ImgIcon, info.ImgSrc)
     end
-    self.TxtTeamName.text = "暂无军团"
+    self.TxtTeamName.text = CS.XTextManager.GetLuaText("XUiPanelPersonalDetails.lua_217")
     self.BtnViewTeam.gameObject:SetActive(false)
 
     --羁绊

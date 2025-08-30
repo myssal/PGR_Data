@@ -57,7 +57,7 @@ function XConditionArithmetic:Calculate(expression)
     local result, size = XConditionArithmetic.Super.Calculate(self, expression)
     if size > 0 then
         XLog.Error(string.format("请检查condition配置表id%s公式%s是否配置错误"
-        , self.Config.Id, self.Config.Formula))
+        , self.Config.Id, self.Config.Formula)) 
     end
     -- 特殊处理只有一个条件的情况下
     if type(result) == "number" then
@@ -67,12 +67,13 @@ function XConditionArithmetic:Calculate(expression)
 end
 
 --######################## XConditionFormula ########################
+---@class XConditionFormula : XFormula
 local XConditionFormula = XClass(XFormula, "XConditionFormula")
 
 function XConditionFormula:Ctor()
     -- XTableCondition
     self.Config = nil
-    self:ChangeArithmetic(XConditionArithmetic.New())
+    self:ChangeArithmetic(XConditionArithmetic.New(true))
 end
 
 function XConditionFormula:ChangeArithmetic(arithmetic)

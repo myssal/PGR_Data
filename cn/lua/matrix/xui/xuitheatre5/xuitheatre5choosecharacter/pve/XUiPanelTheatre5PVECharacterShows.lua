@@ -37,14 +37,24 @@ function XUiPanelTheatre5PVECharacterShows:InitBtnList()
             local btnName = btn.gameObject.name
             local startPos, _ = string.find(btnName, "^Character")
             if not startPos then
-                buttons[i]:AddEventListener(function() 
-                    self:CheckPVEChat(btnName, function()
-                        local success = self.Parent:OnSelectCharacter(nil, btnName)
-                        if success then
-                            self:Close()
-                        end    
-                    end)  
-                end, true, true, 0.5)
+                local isOpen, isValid = self._Control.PVEControl:IsPveStoryEntranceOpen(btnName)
+                -- 找得到配置的按钮，才处理，否则默认状态
+                if isValid then
+                    if isOpen then
+                        btn:AddEventListener(function()
+                            self:CheckPVEChat(btnName, function()
+                                local success = self.Parent:OnSelectCharacter(nil, btnName)
+                                if success then
+                                    self:Close()
+                                end
+                            end)
+                        end, true, true, 0.5)
+                        -- 由于GetComponentsInChildren只能获取激活的节点，所以不需要SetActiveEx(true)
+                        -- 按流程，这是不需要实时刷新的功能，所以不需要
+                    else
+                        btn.gameObject:SetActiveEx(false)
+                    end
+                end
             end    
         end
     end   

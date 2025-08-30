@@ -53,6 +53,7 @@ function XUiMovie:OnDisable()
 end
 
 function XUiMovie:OnDestroy()
+    XLuaAudioManager.StopAudioByType(XLuaAudioManager.SoundType.SFX | XLuaAudioManager.SoundType.Voice | XLuaAudioManager.SoundType.Music)
     self.UiMovieBg:OnDestroy()
     XLuaAudioManager.SetMusicSourceFirstBlockIndex(0)
     XDataCenter.MovieManager.RestSpeed()

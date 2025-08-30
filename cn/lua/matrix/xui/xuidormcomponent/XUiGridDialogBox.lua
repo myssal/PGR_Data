@@ -25,8 +25,7 @@ function XUiGridDialogBox:PlayDialog(index)
         return
     end
 
-    local contextId = self.DailogConfig.Content[index] or ""
-    local context = XDormConfig.GetActorDialogContent(contextId)
+    local context = self.DailogConfig.Content[index] or ""
     if XDataCenter.DormManager.CheckInTouch() then
         self.TxtTouchDesc.text = string.gsub(context, "\\n", "\n")
     else

@@ -301,6 +301,10 @@ function XUiCharacterDetail:UpdateRightElementView()
 
     local castName = XMVCA.XFavorability:GetCharacterCvById(self.CharacterId)
     local cast = (castName ~= "") and CS.XTextManager.GetText("FavorabilityCast")..castName or ""
+
+    if XOverseaManager.IsKRRegion() then
+        cast = (castName ~= "") and CS.XTextManager.GetText("FavorabilityCastKR",castName) or ""
+    end
     self.TxtCV.text = cast
 
     -- 势力
@@ -310,7 +314,7 @@ function XUiCharacterDetail:UpdateRightElementView()
 
 
     if XTool.DebugIsShowItemIdOnUi() then
-        self.TxtArchIvesDes.text = self.TxtArchIvesDes.text .. string.format("\n(角色Id:%s)", self.CharacterId)
+        self.TxtArchIvesDes.text = self.TxtArchIvesDes.text .. string.format(CS.XTextManager.GetLuaText("XUiCharacterDetail.lua_317"), self.CharacterId)
     end
 
     self.NameTextScrolling:Stop()

@@ -28,16 +28,20 @@ end
 
 function XUiRpgMakerGameMain:OnEnable()
     XUiRpgMakerGameMain.Super.OnEnable(self)
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.RpgMakerActivity)
     self:UpdateNewStageId()
     self:Refresh()
 end
 
 
+function XUiRpgMakerGameMain:OnDestroy()
+    self:ClearTimer()
+end
+
 --#region 数据初始化
 
 function XUiRpgMakerGameMain:InitObj()
-    self.CurShowBgEffect = nil
-    local chapterGroupIdList = XRpgMakerGameConfigs.GetRpgMakerGameChapterGroupIdList()
+    local chapterGroupIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupIdList()
     local bgEffect
     for i, chapterGroupId in ipairs(chapterGroupIdList) do
         bgEffect = XUiHelper.TryGetComponent(self.Transform, "FullScreenBackground/BgEffect0" .. i)
@@ -52,15 +56,26 @@ function XUiRpgMakerGameMain:InitObj()
 end
 
 function XUiRpgMakerGameMain:InitTimes()
-    -- 设置自动关闭和倒计时
-    self:SetAutoCloseInfo(XDataCenter.RpgMakerGameManager.GetActivityEndTime(), function(isClose)
+    self:ClearTimer()
+    self.EndTime = XDataCenter.RpgMakerGameManager.GetActivityEndTime()
+    self.Timer = XScheduleManager.ScheduleForever(function()
+        local isClose = self.EndTime < XTime.GetServerNowTimestamp()
         if isClose then
-            XDataCenter.RpgMakerGameManager.CheckActivityIsOpen()
-            return
+            XUiManager.TipText("ActivityMainLineEnd")
+            XLuaUiManager.Close("UiGuide")
+            XLuaUiManager.RunMain()
+        else
+            self:RefreshActivityTime()
         end
-        self:RefreshActivityTime()
-        -- self:UpdateActiveRedPoint()
-    end, nil, 0)
+    end, XScheduleManager.SECOND)
+end
+
+-- 清除定时器
+function XUiRpgMakerGameMain:ClearTimer()
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = nil
+    end
 end
 
 --#endregion
@@ -80,8 +95,8 @@ function XUiRpgMakerGameMain:Refresh()
 end
 
 function XUiRpgMakerGameMain:RefreshActivityTime()
-    local id = XRpgMakerGameConfigs.GetDefaultActivityId()
-    local timeId = XRpgMakerGameConfigs.GetRpgMakerGameActivityTimeId(id)
+    local id = XMVCA.XRpgMakerGame:GetConfig():GetDefaultActivityId()
+    local timeId = XMVCA.XRpgMakerGame:GetConfig():GetActivityTimeId(id)
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
     local now = XTime.GetServerNowTimestamp()
     local offset = endTime - now
@@ -95,19 +110,19 @@ function XUiRpgMakerGameMain:RefreshActivityTime()
 end
 
 function XUiRpgMakerGameMain:UpdateTitle()
-    local prefabPath = XRpgMakerGameConfigs.GetChapterGroupTitlePrefab(self.CurChapterGroupId)
+    local prefabPath = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupTitlePrefab(self.CurChapterGroupId)
     local ui = self.PanelMainlineChapter.gameObject:LoadPrefab(prefabPath)
     self.PanelTitle = XUiPanelTitle.New(ui)
     self:RefreshActivityTime()
 end
 
 function XUiRpgMakerGameMain:UpdateBg()
-    local bg = XRpgMakerGameConfigs.GetChapterGroupBg(self.CurChapterGroupId)
+    local bg = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupBg(self.CurChapterGroupId)
     -- self.RawImageBg:SetRawImage(bg)
 end
 
 function XUiRpgMakerGameMain:UpdateBtnTask()
-    local isShowTask = XRpgMakerGameConfigs.GetChapterGroupIsShowTask(self.CurChapterGroupId)
+    local isShowTask = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupIsShowTask(self.CurChapterGroupId)
     self.BtnTask.gameObject:SetActiveEx(isShowTask)
     if isShowTask then self.PanelTask:Refresh() end
 end
@@ -136,7 +151,7 @@ end
 function XUiRpgMakerGameMain:InitTabGroup()
     self.TabBtns = self.TabBtns or {}
     self.TabBtnTemplates = self.TabBtnTemplates or {}
-    self.ChapterIdList = XRpgMakerGameConfigs.GetRpgMakerGameChapterIdList(self.CurChapterGroupId)
+    self.ChapterIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterIdList(self.CurChapterGroupId)
     for i, chapterId in ipairs(self.ChapterIdList) do
         if not self.TabBtns[i] then
             self.TabBtns[i] = i == 1 and self.BtnPlotTab or CSUnityEngineObjectInstantiate(self.BtnPlotTab, self.UiContent)
@@ -168,10 +183,10 @@ function XUiRpgMakerGameMain:GetDefaultButtonGroupIndex()
         return isUnLock and groupIndex or defaultGroupIndex
     end
 
-    local allStageIdList = XRpgMakerGameConfigs.GetRpgMakerGameAllStageIdList()
+    local allStageIdList = XMVCA.XRpgMakerGame:GetConfig():GetAllStageIds()
     for _, stageId in ipairs(allStageIdList) do
         if not XDataCenter.RpgMakerGameManager.IsStageUnLock(stageId) then
-            chapterId = XRpgMakerGameConfigs.GetRpgMakerGameStageChapterId(stageId)
+            chapterId = XMVCA.XRpgMakerGame:GetConfig():GetStageChapterId(stageId)
             isUnLock = XDataCenter.RpgMakerGameManager.IsChapterUnLock(chapterId)
             groupIndex = isUnLock and self:GetTabBtnIndex(chapterId) or defaultGroupIndex
             return groupIndex
@@ -230,6 +245,7 @@ function XUiRpgMakerGameMain:UpdateCurChapterGroupId(chapterGroupId)
         return
     end
 
+    --[[
     local bgEffect = self["BgEffect" .. self.CurChapterGroupId]
     if bgEffect then
         bgEffect.gameObject:SetActiveEx(true)
@@ -240,13 +256,14 @@ function XUiRpgMakerGameMain:UpdateCurChapterGroupId(chapterGroupId)
     else
         XLog.Error("切换背景特效错误，chapterGroupId：", self.CurChapterGroupId)
     end
+    ]]
 end
 
 function XUiRpgMakerGameMain:UpdateTabIndex()
     if not self.TabGroupIndex then
         return
     end
-    local chapterIdList = XRpgMakerGameConfigs.GetRpgMakerGameChapterIdList(self.CurChapterGroupId)
+    local chapterIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterIdList(self.CurChapterGroupId)
     if self.TabGroupIndex >= #chapterIdList then
         local tabIndex = #chapterIdList
         self.TabGroupIndex = tabIndex
@@ -278,9 +295,9 @@ end
 --#region 关卡相关
 
 function XUiRpgMakerGameMain:UpdateNewStageId()
-    local chapterIdList = XRpgMakerGameConfigs.GetRpgMakerGameChapterIdList(XDataCenter.RpgMakerGameManager.GetCurChapterGroupId())
+    local chapterIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterIdList(XDataCenter.RpgMakerGameManager.GetCurChapterGroupId())
     local chapterId = chapterIdList[self.TabGroupIndex]
-    local allStageIdList = XRpgMakerGameConfigs.GetRpgMakerGameStageIdList(chapterId)
+    local allStageIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterStageIds(chapterId)
     
     for _, stageId in ipairs(allStageIdList) do
         if not XDataCenter.RpgMakerGameManager.IsStageClear(stageId) then
@@ -302,7 +319,7 @@ function XUiRpgMakerGameMain:UpdateStagesMap()
         return
     end
     if chapterId ~= self.ChapterId then
-        local prefabName = XRpgMakerGameConfigs.GetRpgMakerGameChapterPrefab(chapterId)
+        local prefabName = XMVCA.XRpgMakerGame:GetConfig():GetChapterPrefab(chapterId)
         local prefab = self.PanelChapter:LoadPrefab(prefabName)
         if prefab == nil or not prefab:Exist() then
             return
@@ -326,15 +343,20 @@ end
 --#region 按钮交互相关
 
 function XUiRpgMakerGameMain:AutoAddListener()
-    self:RegisterClickEvent(self.SceneBtnBack, self.Close)
+    self:RegisterClickEvent(self.SceneBtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.SceneBtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnTask, self.OnBtnTaskClick)
     self:RegisterClickEvent(self.BtnActive, self.OnBtnActiveClick)
     self:UpdateHelpBtn()
 end
 
+function XUiRpgMakerGameMain:OnBtnBackClick()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.RpgMakerActivity)
+    self:Close()
+end
+
 function XUiRpgMakerGameMain:UpdateHelpBtn()
-    self:BindHelpBtn(self.BtnActDesc, XRpgMakerGameConfigs.GetChapterGroupHelpKey(self.CurChapterGroupId))
+    self:BindHelpBtn(self.BtnActDesc, XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupHelpKey(self.CurChapterGroupId))
 end
 
 ---往期玩法按钮

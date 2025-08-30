@@ -72,16 +72,18 @@ end
 function XUiGridNodeShopItem:SetSaleRate(saleRate)
     local isShowSaleRate = saleRate ~= nil and saleRate ~= 0 and saleRate ~= 100
 
-    local discount
-    if saleRate % 10 == 0 then
-        discount = math.floor(saleRate / 10)
-    else
-        discount = saleRate / 10
-    end
+    --local discount
+    --if saleRate % 10 == 0 then
+    --    discount = math.floor(saleRate / 10)
+    --else
+    --    discount = saleRate / 10
+    --end
     self.Tab.gameObject:SetActiveEx(isShowSaleRate)
     if isShowSaleRate then
-        local snap = CS.XTextManager.GetText("Snap")
-        self.TxtSaleRate.text = string.format("%s%s", tostring(discount), snap)
+        -- 折扣显示 区分海外国服
+        self.TxtSaleRate.text = XUiHelper.GetDiscountText(saleRate)
+        --local snap = CS.XTextManager.GetText("Snap")
+        --self.TxtSaleRate.text = string.format("%s%s", tostring(discount), snap)
     end
 end
 

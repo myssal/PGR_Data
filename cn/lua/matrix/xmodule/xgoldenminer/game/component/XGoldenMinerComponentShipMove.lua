@@ -122,6 +122,10 @@ function XGoldenMinerComponentShipMove:AddCurBuffAddSpeedPercent(value)
     self._CurBuffAddSpeedPercent = self._CurBuffAddSpeedPercent + value
 end
 
+function XGoldenMinerComponentShipMove:SetCurBuffAddSpeedPercent(value)
+    self._CurBuffAddSpeedPercent = value
+end
+
 function XGoldenMinerComponentShipMove:UpdateShipMove(deltaTime)
     if self._IsRopeUpdateShipMove and self._IsUpdateByHookRevoke then
         -- 用绳子回收时的数据更新飞船移动
@@ -145,7 +149,7 @@ function XGoldenMinerComponentShipMove:UpdateShipMove(deltaTime)
             return
         end
         local speed = self:_GetMoveSpeed()
-        XMVCA.XGoldenMiner:DebugLog("飞船移动速度:", speed, ",当前速度倍率:", self._MoveSpeedPercent + self._CurBuffAddSpeedPercent)
+        XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.ShipMoveSpeed, "飞船移动速度:", speed, ",当前速度倍率:", self._MoveSpeedPercent + self._CurBuffAddSpeedPercent)
         if self:_CheckStatus(XEnumConst.GOLDEN_MINER.SHIP_MOVE_STATUS.LEFT) then
             local pos = self._CurPosVector.x - deltaTime * speed
             self:_SetCurMovePos(pos)

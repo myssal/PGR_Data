@@ -60,7 +60,7 @@ GuildTaskType = {
 }
 
 function XGuildBossConfig.Init()
-    GuildBossStageInfos = XTableManager.ReadAllByIntKey(TABLE_GUILDBOSS_STAGEINFO, XTable.XTableGuildBossStageInfo, "Id")
+    GuildBossStageInfos = XTableManager.ReadByIntKey(TABLE_GUILDBOSS_STAGEINFO, XTable.XTableGuildBossStageInfo, "Id")
     GuildBossBuffs = XTableManager.ReadByIntKey(TABLE_GUILDBOSS_BUFF, XTable.XTableGuildBossBuff, "Id")
     GuildBossLevels = XTableManager.ReadByIntKey(TABLE_GUILDBOSS_LEVEL, XTable.XTableGuildBossLevel, "Level")
     GuildBossHpRewards = XTableManager.ReadByIntKey(TABLE_GUILDBOSS_HP_REWAED, XTable.XTableGuildBossHpReward, "Id")

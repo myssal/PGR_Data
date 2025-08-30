@@ -79,6 +79,10 @@ function XUiFubenMainLineChapter:OnStart(chapter, stageId, hideDiffTog)
         self.PanelTopDifficult.gameObject:SetActiveEx(false)
     end
 
+    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
+        self.BtnHelp.gameObject:SetActiveEx(hideDiffTog ~= nil)
+    end
+
     -- 赏金任务
     self:InitBountyTask()
     self:SetupBountyTask()
@@ -88,6 +92,8 @@ function XUiFubenMainLineChapter:OnStart(chapter, stageId, hideDiffTog)
 end
 
 function XUiFubenMainLineChapter:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.MainLine)
+    
     -- 是否显示周目挑战按钮
     self.PanelMultipleWeeksInfo.gameObject:SetActiveEx(false)
     if not self:CheckIsBfrtType() then
@@ -360,6 +366,12 @@ function XUiFubenMainLineChapter:AutoAddListener()
     end
     self.BtnSwitch2Normal.CallBack = function()
         self:OnBtnSwitch2NormalClidk()
+    end
+    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
+        self.BtnHelp.gameObject:SetActiveEx(true)
+        self.BtnHelp.CallBack = function()
+            self:OnBtnHelpClick()
+        end
     end
 end
 -- auto
@@ -1298,7 +1310,13 @@ function XUiFubenMainLineChapter:OnBtnExItemClick()
     XLuaUiManager.Open("UiFubenExItemTip", self)
 end
 
+function XUiFubenMainLineChapter:OnBtnHelpClick()
+    local helpContent = CS.XGame.ClientConfig:GetString("BfrtShowHelpTip02")
+    XUiManager.ShowHelpTip(helpContent)
+end
+
 function XUiFubenMainLineChapter:OnBtnBackClick()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.MainLine)
     if self:CloseStageDetail() then
         return
     end

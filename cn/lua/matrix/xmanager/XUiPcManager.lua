@@ -32,328 +32,16 @@ XUiPcManagerCreator = function()
 
     local EditingKey
     local ExitingGame
-    local UiStacks
-    local UiDict
 
     local CsXGameEventManager = CS.XGameEventManager
     local CSEventId = CS.XEventId
-
-    local function IsOnBtnClick()
-        if XLuaUiManager.IsUiShow("UiLoading") or
-                XLuaUiManager.IsUiShow("UiAssignInfo") or -- loading 界面 边界公约
-                XDataCenter.GuideManager.CheckIsInGuide() or
-                XLuaUiManager.IsUiShow("UiBlackScreen") or 
-                XLuaUiManager.IsUiShow("UiRogueSimLoading") then
-            return false
-        end
-        return true
-    end
 
     function XUiPcManager.OnUiEnable()
         -- todo 删除
     end
 
-    -- 这些是返回键
-    local _DictBtnBack = {
-        BtnBack = true,
-        BtnTanchuangCloseBig = true,
-        BtnTanchuangClose = true,
-        BtnClose = true,
-        ButtonClose = true,
-        ButtonBack = true,
-        BtnExit = true,
-        BtnMask = true,
-        BtnBlock = true,
-        BtnTreasureBg = true,
-        BtnCancel = true,
-        BtnCloseDetail = true,
-        SceneBtnBack = true,
-        BtnDetermine = true,
-        BtnClosePopup = true,
-        BtnHideCurResonance = true,
-        BtnChannelMask = true,
-        CloseMask = true,
-        Close = true,
-        BtnBg = true,
-        BtnCloseAllScreen = true,
-        BtnCloseMask1 = true,
-        BtnCloseMask2 = true,
-        BtnCloseMask3 = true,
-        BtnCloseMask4 = true,
-        BtnTanchuangCloseWhite = true,
-        BtnCloseCollection = true,
-    }
-
-    -- 这些界面的这些键 是返回键
-    local _DictBtnBackSpecial = {
-        UiPhotograph = {
-            Btn = true
-        },
-        UiCharacterTowerPlot = {
-            BtnUnHide = true
-        },
-        UiBiancaTheatreRecruit = {
-            UiBiancaTheatreRecruit = true
-        },
-        UiFubenMainLine3D = {
-            Mask = true
-        },
-        UiDormSecond = {
-            BtnHide = true
-        },
-        UiDormTerminalSystem = {
-            BtnDarkBg = true
-        },
-        UiAssignDeploy = {
-            BtnTongBlueLight = true
-        },
-        UiAwarenessDeploy = {
-            BtnTongBlueLight = true
-        },
-        UiArchiveMonsterDetail = {
-            BtnHide = true
-        },
-        UiBfrtDeploy = {
-            BtnSave = true
-        },
-        UiMultiplayerRoom = {
-            BtnCloseDifficulty = true
-        },
-        UiRegressionTips = {
-            BtnPreviewConfirm = true
-        },
-        UiBattleRoleRoom = {
-            BtnCloseDifficulty = true
-        },
-    }
-
-    -- 这些界面的这些键 不是返回键
-    local _DictBtnBackIgnored = {
-        UiStrongholdRewardTip = {
-            BtnMask = true
-        },
-        UiTheatreContinue = {
-            BtnMask = true
-        },
-        UiGoldenMinerSuspend = {
-            BtnExit = true
-        },
-        UiGoldenMinerDialog = {
-            BtnClose = true
-        },
-    }
-
-    -- 这些界面 不响应返回键
-    local _DictBtnBackUiIgnored = {
-        UiBfrtPostWarCount = true,
-        UiAssignPostWarCount = true,
-        UiSettleWinSingleBoss = true,
-        UiFubenFlopReward = true,
-        UiSettleWinMainLine = true,
-        UiSettleWin = true,
-    }
-
-    -- 这些界面 不响应返回键 而且中断下层(Normal Dialog等)继续查找
-    local _DictBtnBackUiDisable = {
-        UiStrongholdAnimation = true,
-        UiStrongholdInfo = true,
-    }
-
-    local function GetUiSiblingIndexArray(rootName, transform)
-        local array = {}
-        local parentTransform = transform
-        for i = 1, 99 do
-            if not parentTransform then
-                break
-            end
-            if parentTransform.name == rootName then
-                break
-            end
-            local siblingIndex = parentTransform:GetSiblingIndex()
-            table.insert(array, 1, siblingIndex)
-            parentTransform = parentTransform.parent
-        end
-        return array
-    end
-
-    local function CompareBySiblingArray(rootName, transform1, transform2)
-        if not transform1 then
-            return false
-        end
-        if not transform2 then
-            return true
-        end
-        local array1 = GetUiSiblingIndexArray(rootName, transform1)
-        local array2 = GetUiSiblingIndexArray(rootName, transform2)
-        for i = 1, #array1 do
-            local siblingIndex1 = array1[i]
-            local siblingIndex2 = array2[i]
-            if siblingIndex1 ~= siblingIndex2 then
-                return siblingIndex1 < siblingIndex2
-            end
-        end
-        XLog.Error("[XUiPcManager] 比较siblingOrder错误")
-        return false
-    end
-
-    local function FindButtonOnTop(root, type)
-        local buttons = root:GetComponentsInChildren(type)
-        local buttonOnTop
-        local sortingOrderOnTop = 0
-        local renderOrderOnTop = 0
-        local relativeDepthOnTop = 0
-        local rootName = root.name
-
-        for i = 0, buttons.Length - 1 do
-            local button = buttons[i]
-            local buttonName = button.name
-            local isSpecial = _DictBtnBackSpecial[rootName] and _DictBtnBackSpecial[rootName][buttonName]
-            local isIgnored = _DictBtnBackIgnored[rootName] and _DictBtnBackIgnored[rootName][buttonName]
-            if (not isIgnored) and (isSpecial or _DictBtnBack[buttonName]) then
-                local canvasRenderer = button.transform:GetComponent(typeof(CS.UnityEngine.CanvasRenderer))
-                if not XTool.UObjIsNil(canvasRenderer) then
-                    -- 自身不透明
-                    local alpha = canvasRenderer:GetAlpha()
-                    if alpha > 0 then
-
-                        -- 所在group不透明
-                        local canvasGroup = button:GetComponentInParent(typeof(CS.UnityEngine.CanvasGroup))
-                        if (not canvasGroup) or (canvasGroup.alpha > 0) then
-                            -- 这个界面的renderOrder是反转的
-                            if rootName == "UiBiancaTheatreRecruit"
-                                    or rootName == "UiBiancaTheatrePlayMain"
-                            then
-                                if CompareBySiblingArray(buttonOnTop, button) then
-                                    buttonOnTop = button
-                                end
-                            else
-                                local isOnTop = false
-                                local canvas = button:GetComponentInParent(typeof(CS.UnityEngine.Canvas))
-                                local sortingOrder = canvas.sortingOrder or 0
-                                local renderOrder = canvas.renderOrder or 0
-                                local relativeDepth = canvasRenderer.relativeDepth or 0
-
-                                if sortingOrder == sortingOrderOnTop then
-                                    if renderOrder == renderOrderOnTop then
-                                        if relativeDepth > relativeDepthOnTop then
-                                            isOnTop = true
-                                        end
-                                    elseif renderOrder > renderOrderOnTop then
-                                        isOnTop = true
-                                    end
-                                elseif sortingOrder > sortingOrderOnTop then
-                                    isOnTop = true
-                                end
-
-                                if isOnTop then
-                                    sortingOrderOnTop = sortingOrder
-                                    renderOrderOnTop = renderOrder
-                                    relativeDepthOnTop = relativeDepth
-                                    buttonOnTop = button.transform
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
-
-        return buttonOnTop
-    end
-
     function XUiPcManager.OnUiDisableAbandoned()
-        -- todo 删除
-    end
-
-    local function PerformClick(transform)
-        -- -- 如果有按键映射不触发通用逻辑
-        -- local xUiPcCustomKey = transform:GetComponent(typeof(CS.XUiPc.XUiPcCustomKey))
-        -- if XTool.UObjIsNil(xUiPcCustomKey) or XTool.UObjIsNil(xUiPcCustomKey.Container) or xUiPcCustomKey:GetOperationKey() ~= 0 then
-        --     return
-        -- end
-
-        --自身不可见则不响应
-        if (not transform.gameObject.activeSelf) or (not transform.gameObject.activeInHierarchy) then
-            return
-        end
-        local xuiButton = transform:GetComponent(typeof(CS.XUiComponent.XUiButton))
-        if xuiButton then
-            local pointerEventData = CS.UnityEngine.EventSystems.PointerEventData(CS.UnityEngine.EventSystems.EventSystem.current)
-            pointerEventData.button = CS.UnityEngine.EventSystems.PointerEventData.InputButton.Left
-            xuiButton:OnPointerClick(pointerEventData)
-        end
-
-        if XTool.UObjIsNil(transform) then
-            return
-        end
-
-        local listener = transform:GetComponent("XUguiEventListener")
-        if listener then
-            local pointerEventData = CS.UnityEngine.EventSystems.PointerEventData(CS.UnityEngine.EventSystems.EventSystem.current)
-            pointerEventData.button = CS.UnityEngine.EventSystems.PointerEventData.InputButton.Left
-            listener:OnPointerClick(pointerEventData)
-        end
-
-        if XTool.UObjIsNil(transform) then
-            return
-        end
-
-        local button = transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
-        if button then
-            button.onClick:Invoke()
-        end
-    end
-
-    local function PerformButtonOnTopByLayer(layer)
-        local ui
-        if CsXUiManager.Instance.GetTopUiEx then
-            ui = CsXUiManager.Instance:GetTopUiEx(layer)
-        else
-            ui = CsXUiManager.Instance:GetTopUi(layer)
-        end
-        if ui then
-            local uiName = ui.UiData.UiName
-            if _DictBtnBackUiIgnored[uiName] then
-                return false
-            end
-            if _DictBtnBackUiDisable[uiName] then
-                -- 中断下层
-                return true
-            end
-
-            -- 特殊处理:公会利用popup来实现两层界面，导致找不到按钮
-            if uiName == "UiGuildDormCommon" then
-                local uiGuildDorm = CsXUiManager.Instance:FindTopUi("UiGuildDormMain")
-                if uiGuildDorm then
-                    ui = uiGuildDorm
-                end
-            elseif uiName == "UiEquipAwarenessPopup" then
-                local uiGuildDorm = CsXUiManager.Instance:FindTopUi("UiEquipAwarenessReplace")
-                if uiGuildDorm then
-                    ui = uiGuildDorm
-                end
-                
-            elseif uiName == "UiRestaurantCommon" then
-                local uiRestaurant = CsXUiManager.Instance:FindTopUi("UiRestaurantMain")
-                if uiRestaurant then
-                    ui = uiRestaurant
-                end
-            end
-
-            ---@type XLuaUi
-            local uiProxy = ui.UiProxy
-            if uiProxy then
-                local root = uiProxy.GameObject
-                if root then
-                    local button = FindButtonOnTop(root, typeof(CS.UnityEngine.UI.Button))
-                    if button then
-                        PerformClick(button)
-                        return true
-                    end
-                end
-            end
-        end
-        return false
+        -- todo 删除 (但是写注释删除的人一直没删除)
     end
 
     --local function IsInputFieldFocused()
@@ -374,125 +62,17 @@ XUiPcManagerCreator = function()
 
     --- 关闭界面
     function XUiPcManager.OnUiDisable()
-        if CS.XUiManagerExtension.Masked then
-            return
-        end
-
-        if XDataCenter.GuideManager.CheckIsInGuide() then
-            if CS.XQuitHandler and CS.XQuitHandler.OnBtnBackGuide then
-                CS.XQuitHandler.OnBtnBackGuide()
-            end
-            return
-        end
-
-        if not IsOnBtnClick() then
-            return
-        end
-
-        --if IsInputFieldFocused() then
-        --    return
-        --end
-
-        if PerformButtonOnTopByLayer(CsXUiType.Tips) then
-            return
-        end
-        if PerformButtonOnTopByLayer(CsXUiType.Dialog) then
-            return
-        end
-        if PerformButtonOnTopByLayer(CsXUiType.Popup) then
-            return
-        end
-        if PerformButtonOnTopByLayer(CsXUiType.Normal) then
-            return
-        end
-        XUiPcManager.OnEscBtnClick()
-
-        if XDataCenter.GuideManager.CheckIsInGuide() then
-            local button = XDataCenter.GuideManager.getButton()
-            if _DictBtnBack[button.name] then
-                XDataCenter.GuideManager.NextStep()
-                --OnPointerClick
-                PerformClick(button.transform)
-            end
-        end
+        XDataCenter.BackManager.OnUiDisable()
     end
 
     XUiPcManager.Init = function()
         EditingKey = false
         ExitingGame = false
-        UiStacks = XStack.New()
-        UiDict = {}
         CS.XUiManagerExtension.SetBlackList("UiNoticeTips") -- 跑马灯
     end
 
     XUiPcManager.OnEscBtnClick = function()
-        if XLuaUiManager.IsUiShow("UiGuide") then
-            -- 新手引导当做系统界面处理
-            -- XUiPcManager.ExitGame()
-            return
-        end
-        -- 剧情
-        if XLuaUiManager.IsUiShow("UiMovie") then
-            return
-        end
-        -- cg
-        if XLuaUiManager.IsUiShow("UiVideoPlayer") then
-            return
-        end
-        if not IsOnBtnClick() then
-            return
-        end
-        if XLuaUiManager.IsUiShow("UiGoldenMinerBattle") then
-            XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_EXIT_CLICK)
-            return
-        end
-        -- 它自己
-        if XLuaUiManager.IsUiShow("UiDialogExitGame") then
-            return
-        end
-
-        if XUiPcManager.IsEditingKey() then
-            return
-        end
-
-        if CS.XUiManagerExtension.Masked then
-            return
-        end
-
-        if not XLuaUiManager.IsUiShow("UiMain") and not XLuaUiManager.IsUiShow("UiLogin") then
-            return
-        end
-        if not CS.XUiManagerExtension.IsUIEnabled("UiMain") and not CS.XUiManagerExtension.IsUIEnabled("UiLogin") then
-            return
-        end
-        --退出游戏
-        XUiPcManager.ExitGame()
-    end
-
-    XUiPcManager.ExitGame = function()
-
-        if ExitingGame then
-            return
-        end
-        ExitingGame = true
-
-        local title = CS.XTextManager.GetText("TipTitle")
-        local content = CS.XTextManager.GetText("GameExitMsg")
-        local confirmCb = function()
-            CS.XDriver.Exit()
-        end
-        -- 会关闭公告, 尝试不发此事件
-        -- CsXGameEventManager.Instance:Notify(XEventId.EVENT_UIDIALOG_VIEW_ENABLE)
-        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_Big)
-        XLuaUiManager.Open("UiDialogExitGame", title, content, XUiManager.DialogType.Normal, nil, confirmCb)
-    end
-
-    XUiPcManager.SetExitingGame = function(value)
-        ExitingGame = value
-    end
-
-    XUiPcManager.GetExitingGame = function()
-        return ExitingGame
+        XQuitHandler.OnEscBtnClick()
     end
 
     XUiPcManager.IsOverSea = function()
@@ -593,7 +173,8 @@ XUiPcManagerCreator = function()
                 width, height, maxResolution.x, maxResolution.y, minResolution.x, minResolution.y, lastResolution, lastScreen, unityScreen.width, unityScreen.height))
         if width > maxResolution.x or height > maxResolution.y then
             CS.XLog.Debug("不能使用全屏")
-            -- compare -- 当获取的屏幕尺寸超过配置表最大值时
+            -- compare 
+            -- 当获取的屏幕尺寸超过配置表最大值时
             -- 这货不能用全屏, 给他禁掉
             CS.XSettingHelper.ForceWindow = true;
             -- 同时立即设置为窗口模式
@@ -607,7 +188,7 @@ XUiPcManagerCreator = function()
                 fitWidth = maxResolution.x;
                 fitHeight = maxResolution.y;
             end
-            CS.XLog.Debug("fitResolution", fitWidth, fitHeight)
+            CS.XLog.Debug(string.format("fitResolution:%s x %s", fitWidth, fitHeight))
             XUiPcManager.SetResolution(fitWidth, fitHeight, windowedMode)
         elseif width < lastResolution.width or height < lastResolution.height then
             if (lastScreen.width > minResolution.x and lastScreen.height > minResolution.y) and (width < lastScreen.width or height < lastScreen.height) then
@@ -620,6 +201,12 @@ XUiPcManagerCreator = function()
                 XUiPcManager.SetResolution(lastScreen.width, lastScreen.height, mode)
             end
             CS.XSettingHelper.ForceWindow = false;
+        elseif height == lastResolution.height and not lastFullScreen then
+            -- 理应不会出现高 如 1450 或 1430 的 分辨率
+            -- 当前设备分辨率 等于 上一次使用的屏幕分辨率, 且非全屏, 则改为小一级的
+            local secondResolution = XUiPcManager.GetLessHeightResolution(resolutions, height)
+            CS.XLog.Debug(string.format("设备分辨率高度与配置分辨率高度一致, 使用小一级窗口化分辨率, width: %s, heigth: %s", secondResolution.x, secondResolution.y))
+            XUiPcManager.SetResolution(secondResolution.x, secondResolution.y, windowedMode)
         else
             if unityScreen.width < minResolution.x or unityScreen.height < minResolution.y then
                 -- unity读取的尺寸很可能导致条幅屏, 判断是否有正确的缓存值
@@ -639,6 +226,17 @@ XUiPcManagerCreator = function()
         end
         -- 记录设备分辨率
         XUiPcManager.SaveResolution(width, height)
+    end
+
+    XUiPcManager.GetLessHeightResolution = function(resolutions, height)
+        -- 反向遍历, 求得一个小于目标值的分辨率
+        for i = #resolutions, 1, -1 do
+            local resolution = resolutions[i]
+            if resolution.y < height then
+                return resolution
+            end
+        end
+        return resolutions[1]
     end
 
     XUiPcManager.LastResolution = nil

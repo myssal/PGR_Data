@@ -180,13 +180,16 @@ function XBirthdayPlotAgency:NotifyBirthdayPlayCg(data)
         return
     end
     IsNotifyPlayBeginMovie = true
-    local chapterId = data.ChapterId
+    -- 合版本
+    local chapterId = data.ChapterId or data.ActivityId
     self._Model:SetActiveChapterId(chapterId)
     XEventManager.DispatchEvent(XEventId.EVENT_PLAYER_UNLOCK_BIRTHDAY_STORY)
 end
 
 function XBirthdayPlotAgency:NotifyBirthdaySingleStoryShow(data)
-    self._Model:SetActiveChapterId(data.ChapterId)
+    -- 合版本
+    local chapterId = data.ChapterId or data.ActivityId
+    self._Model:SetActiveChapterId(chapterId)
     self._Model:UpdateBirthday({
         ShowEndTime = data.ShowEndTime
     })

@@ -60,6 +60,9 @@ XPayManagerCreator = function()
             return
         end
 
+        --CheckPoint: APPEVENT_REDEEMED_AND_MONTHCARD
+        XAppEventManager.PurchasePayAppLogEvent(template.PayId)
+
         XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.RECHARGE)
         XNetwork.Call(METHOD_NAME.Initiated, { Key = productKey }, function(res)
             if res.Code ~= XCode.Success then
@@ -108,14 +111,28 @@ XPayManagerCreator = function()
     end
 
     -- 是否月卡奖励领取
-    function XPayManager.IsGotCard()
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
-        if not isBuy then
-            return true
-        end
+    function XPayManager.IsGotCard(monthlyCardId)
+        if not XOverseaManager.IsENRegion() then
+            local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
+            if not isBuy then
+                return true
+            end
 
-        local data = XDataCenter.PurchaseManager.GetYKInfoData()
-        return data.IsDailyRewardGet
+            local data = XDataCenter.PurchaseManager.GetYKInfoData()
+            if not data then
+                return false
+            end
+            return data.IsDailyRewardGet
+        else
+            if not monthlyCardId then
+                return false
+            end
+            local data = XDataCenter.PurchaseManager.GetYKInfoDataById(monthlyCardId)
+            if not data or data.DailyRewardRemainDay == 0 then
+                return true
+            end
+            return data.IsDailyRewardGet
+        end
     end
 
     -- 显示网页充值成功弹框
@@ -142,6 +159,10 @@ XPayManagerCreator = function()
         -- 测试充值
         if not orderList or #orderList == 0 then
             return
+        end
+        if IsFirstRecharge then
+            --CheckPoint: APPEVENT_FIRST_BUY
+            XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.First_buy)
         end
 
         PayAgent:OnDealSuccess(orderList)

@@ -10,7 +10,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory14.png"
         ]
     },
     {
@@ -24,19 +24,22 @@
         "EndDelay": 0.0,
         "Params": [
             1,
-            36
+            208
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 201,
         "IsBlock": 0,
         "IsEnd": 0,
-        "BeginAnim": "DialogEnable",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500994
+        ]
     },
     {
         "Id": 4,
@@ -44,9 +47,2600 @@
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "……卡塔尼亚的旧宅已经修葺完毕，依据家族的传统，需要在“继承人”的房间悬挂其本人的相片。",
+            1
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "铎母知悉教子阁下公务繁忙、日理万机，已经为二位聘请了全卡塔尼亚最专业的摄影团队，随时待命。",
+            1
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "劳请教子未来闲暇之时，能够提前知会家族，以便尽快完成拍摄，避免占用二位过多时间。",
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "向二位致以最诚挚的敬意——卡塔尼亚自治委员会。",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "距离上次和露西亚解决卡塔尼亚的危机，已经过去了很长一段时间。"
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "方才露西亚念到的短信内容，也正是来自这个新生小岛的郑重委托。"
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500994,
+            1
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "说起来，上次在卡塔尼亚时，虽然和指挥官一起拍摄了不少音像，但确实没有留下什么纪念照片。",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "既然是家族“继承人”身份的照片……",
+            15
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "到时候上镜的打扮，可能得好好讲究一下。",
+            16
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不过既然有专业团队，就等下次假期让他们决定吧。",
+            17,
+            "先不管了，公务优先，到时候再说。",
+            17
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            4
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "嗯，检查一下近期的任务日历，未来最近的一次是假期是……",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            7
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "……七夕，康斯塔雷耶，纪念品展览会？",
+            1
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            36
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory801.jpg"
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6159
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "时间一点一点被糅碎在零碎的出勤里，不知不觉间，二人终于迎来了七夕时节的片刻闲暇。"
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "两位，请看这边！",
+            1
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "柔暖的阳光铺洒在五光十色的长街上，就在刚刚，正午的钟声响起，游客纷纷涌向香气四溢的美食角，恰好留下了这处很适合拍照的背景。"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            1
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "这样可以了吗？",
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "在专业团队的建议下，二人还是换上了曾在卡塔尼亚公开露面时穿着的礼服。"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "脸上请保持微笑——没错，像露西亚小姐这样就很好。",
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "听到了来自摄影师的“表扬”，露西亚依旧微笑着，稍侧过头，看向这边，似乎好奇此时自己的脸上是什么样的表情。"
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "（微笑）",
+            39,
+            "（做个认真严肃的表情）",
+            40
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "NextActionId": 41,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "迎面对上自己的微笑，她脸上的笑意也不自觉地加深了一分。"
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "看到自己故意绷出一副正经严肃的样子，她默默调整着神态，力求将彼此的气质契合到完美。"
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            925
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "3、2、1——好，麻烦二位换一个动作，我们多拍几张。",
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            2
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "好，指挥官，有什么想要做的动作吗？",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "（夸张活泼的动作）",
+            47,
+            "（严肃装酷的动作）",
+            55,
+            "露西亚来决定吧。"
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "从身旁的摄影人员处拿来了一大捧玫瑰，随后将其高高扬起——"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            7
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "指挥官……？",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "微风轻拂，红色的花瓣宛若连绵流星，从二人的视线之间翩翩划过，纷纷扬扬。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "（牵起露西亚的手）",
+            53
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "NextActionId": 66,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "看到自己的神色，露西亚似乎也领会到此间的心绪，她扬起一抹浅笑，握紧双手，与自己十指相扣，看向镜头。"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "自己稍稍整理仪容，摆出一副如临大敌的临战姿势，冰冷地睥睨着镜头。"
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "想起来，那一天，我们也曾这样面对无数敌人，守护属于我们的仪式。",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "火苗在露西亚指间盛放，光纹核心甩出樱白色的刀刃，在阳光下闪烁寒芒。"
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "NextActionId": 66,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "面对镜头，战场上的新娘与教子露出凛然的凌厉，与周围轻松的都市氛围形成了强烈反差。"
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "那么，指挥官，请靠近我一些。",
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚走近一步，轻轻牵起了自己的手。"
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "没有多余的神色，也没有什么繁复的姿势，她只是保持着微笑，以一种最自然的方式看向这边，而后引导着自己的视线，一齐望向镜头。"
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 2000.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            925
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "3、2、1——很好，收工。",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "结束拍摄后，摄影师开始检查起了相机中的相片，脸上流露着一丝意犹未尽的表情。"
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "嗯……数量虽然够了，但感觉这次拍摄的场景有些少啊。",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "似乎是听到了摄影师的自言自语，露西亚悄然牵起自己垂在身侧的手臂。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "——您好，请稍等一下。",
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "……？",
+            "露西亚？"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 300.0,
+        "Params": [
+            1,
+            0.25,
+            500
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            500863,
+            -450
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "嗯？还有什么事吗，露西亚小姐？",
+            2
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "请问几位稍后方便吗？既然今天机会难得……",
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "我想和【kuroname】，留下更多值得纪念的瞬间。",
+            1
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚侧头看向自己，自然地道出她的提议。"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "不单是简单的街景，康斯塔雷耶的大剧院、艺术馆、风车塔，我觉得……都是不错的合影地点。",
+            1
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "摄影师",
+            "当然没问题啊！能够记录教子阁下和露西亚小姐的身影，那可是我们索拉索实业的荣幸！",
+            2
+        ]
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "那，指挥官觉得呢？",
+            1
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "不知不觉间，握在掌心的熟悉力道似乎稍稍加重了一分。"
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我也想和露西亚多留下几张合照。",
+            91,
+            "好，毕竟假期还有很长时间。",
+            91
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "就当做是……弥补没有在卡塔尼亚留下合照的遗憾？",
+            1
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "嗯，而且既然是康斯塔雷耶……",
+            94
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "还可以实现“那天夜里”你许下的某个愿望。",
+            95
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "指挥官说的是……？",
+            1
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4386
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "……不论何时何地，喜悦或是哀伤，我都想要陪在你的身边，与你一起分享。"
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "我想要和你一起收集阿呆蛙，一起去天之岬欣赏日出……"
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "一起去体验，康斯塔雷耶的情侣半价店。"
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory801.jpg"
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "美满的回忆在脑海中荡漾开来，她了然地走近一步，嘴角勾勒起浅淡的笑容。"
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "我明白了。就把今天余下的时间，当作是那场仪式的延续吧。",
+            1
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "看到二人做出默契的决定，摄影师也热情地举起了相机。"
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500863
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "摄影师",
+            "那接下来，二位就请在城里自由活动吧，不必拘束，就当这边的镜头不存在，这样我们抓拍的镜头也会更加自然。",
+            1
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我们出发吧。"
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            2
+        ]
+    },
+    {
+        "Id": 116,
+        "ActionId": 116,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "嗯，我们出发。",
+            1
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 118,
+        "ActionId": 118,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "彼此的心意在温暖的指尖传递，牵萦起脚下的步伐，朝着远方踏出了足迹。"
+        ]
+    },
+    {
+        "Id": 119,
+        "ActionId": 119,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 120,
+        "ActionId": 120,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            36
+        ]
+    },
+    {
+        "Id": 121,
+        "ActionId": 121,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory1016.jpg"
+        ]
+    },
+    {
+        "Id": 122,
+        "ActionId": 122,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            6145
+        ]
+    },
+    {
+        "Id": 123,
+        "ActionId": 123,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            1
+        ]
+    },
+    {
+        "Id": 124,
+        "ActionId": 124,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "牵起露西亚的手，沐浴在鲜花与阳光中，在剧院的红毯上欢声奔跑……"
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 126,
+        "ActionId": 126,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 650.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
+            0,
+            1,
+            0.6
+        ]
+    },
+    {
+        "Id": 127,
+        "ActionId": 127,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory801.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 128,
+        "ActionId": 128,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory801.jpg"
+        ]
+    },
+    {
+        "Id": 129,
+        "ActionId": 129,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            2
+        ]
+    },
+    {
+        "Id": 130,
+        "ActionId": 130,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "和露西亚乘坐花车游览街景，下车时牵起她的手，依照卡塔尼亚的礼节为她献上吻手礼……"
+        ]
+    },
+    {
+        "Id": 131,
+        "ActionId": 131,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 132,
+        "ActionId": 132,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 650.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory677.jpg",
+            0,
+            1,
+            0.6
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory677.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 134,
+        "ActionId": 134,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory677.jpg"
+        ]
+    },
+    {
+        "Id": 135,
+        "ActionId": 135,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            8
+        ]
+    },
+    {
+        "Id": 136,
+        "ActionId": 136,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "在机械体乐团的环簇之下，欢欣热烈地拥抱彼此，在乐声中翩跹起舞……"
+        ]
+    },
+    {
+        "Id": 137,
+        "ActionId": 137,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 138,
+        "ActionId": 138,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 139,
+        "ActionId": 139,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory617.jpg"
+        ]
+    },
+    {
+        "Id": 140,
+        "ActionId": 140,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "最后，当暮色晕染天际之时，展览会已经接近尾声。自己和露西亚手牵着手，循着两侧盛开的桃花，走上了一条芳香馥郁的坂道。"
+        ]
+    },
+    {
+        "Id": 141,
+        "ActionId": 141,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "康斯塔雷耶高耸入云的风车塔，就遥遥伫立在坂道的尽头，在午后的斜阳中熠熠生辉。"
+        ]
+    },
+    {
+        "Id": 142,
+        "ActionId": 142,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚左臂抱着一只从半价店淘来的阿呆蛙玩偶，轻悠地迈出步伐，视线始终停留在自己的身上。"
+        ]
+    },
+    {
+        "Id": 143,
+        "ActionId": 143,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501166,
+            2
+        ]
+    },
+    {
+        "Id": 144,
+        "ActionId": 144,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "露西亚",
+            "听索拉索先生说，今天拍下了不少精彩的照片呢。",
+            1
+        ]
+    },
+    {
+        "Id": 145,
+        "ActionId": 145,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 146,
+        "ActionId": 146,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "展览会就要结束了，指挥官今天玩得开心吗？",
+            1
+        ]
+    },
+    {
+        "Id": 147,
+        "ActionId": 147,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "非常开心。",
+            148
+        ]
+    },
+    {
+        "Id": 148,
+        "ActionId": 148,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "因为你就在我的身边。",
+            149,
+            "你呢，露西亚？",
+            149
+        ]
+    },
+    {
+        "Id": 149,
+        "ActionId": 149,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "羞赧的绯红在她的脸颊上转瞬即逝，掌心的温热无意间变得滚烫。"
+        ]
+    },
+    {
+        "Id": 150,
+        "ActionId": 150,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            2
+        ]
+    },
+    {
+        "Id": 151,
+        "ActionId": 151,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "嗯，我也一样，非常非常开心。",
+            1
+        ]
+    },
+    {
+        "Id": 152,
+        "ActionId": 152,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "和你共度的时光，总是会稍纵即逝……虽然当下很短暂，但是没关系，还有无数的明天在等待着我们。",
+            1
+        ]
+    },
+    {
+        "Id": 153,
+        "ActionId": 153,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "露西亚",
+            "【kuroname】，在日落的瞬间，我还想为今天，拍摄最后一张留念——",
+            1
+        ]
+    },
+    {
+        "Id": 154,
+        "ActionId": 154,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "拍摄……留念？",
+            155
+        ]
+    },
+    {
+        "Id": 155,
+        "ActionId": 155,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 156,
+        "ActionId": 156,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "还在思考着言语间的含义，露西亚就已经轻轻拉动着自己的左手，朝着坡道的终点迈开脚步。"
+        ]
+    },
+    {
+        "Id": 157,
+        "ActionId": 157,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 2000.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg"
+        ]
+    },
+    {
+        "Id": 158,
+        "ActionId": 158,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 159,
+        "ActionId": 159,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "穿过薄暮披拂的层层金纱，仿佛所有的纷杂喧闹都被甩在身后。"
+        ]
+    },
+    {
+        "Id": 160,
+        "ActionId": 160,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "欢笑着，热烈着，过去和未来的烦恼全部抛诸脑后。"
+        ]
+    },
+    {
+        "Id": 161,
+        "ActionId": 161,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "二人只是情同意洽地奔跑着，留给这个世界一个短暂，却宛如童话般灿烂的背影。"
+        ]
+    },
+    {
+        "Id": 162,
+        "ActionId": 162,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "仿佛身后的镜头已经不关紧要，胸腔炽烈的悸动已经足够在岁月刻下痕迹。"
+        ]
+    },
+    {
+        "Id": 163,
+        "ActionId": 163,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "光芒万丈的时刻，与她蓦然回首，这时才恍然发现——"
+        ]
+    },
+    {
+        "Id": 164,
+        "ActionId": 164,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "那照亮世界的奇迹，早就永远定格在了彼此的心间。"
+        ]
+    },
+    {
+        "Id": 165,
+        "ActionId": 165,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4387
+        ]
+    },
+    {
+        "Id": 166,
+        "ActionId": 166,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 167,
+        "ActionId": 167,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 168,
+        "ActionId": 168,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg5301_03.jpg"
+        ]
+    },
+    {
+        "Id": 169,
+        "ActionId": 169,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4387
+        ]
+    },
+    {
+        "Id": 170,
+        "ActionId": 170,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 171,
+        "ActionId": 171,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 172,
+        "ActionId": 172,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg5301_04.jpg"
+        ]
+    },
+    {
+        "Id": 173,
+        "ActionId": 173,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4387
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 175,
+        "ActionId": 175,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 176,
+        "ActionId": 176,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg5301_05.jpg"
+        ]
+    },
+    {
+        "Id": 177,
+        "ActionId": 177,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 178,
+        "ActionId": 178,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 850.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg",
+            0,
+            1,
+            0.8
+        ]
+    },
+    {
+        "Id": 179,
+        "ActionId": 179,
+        "NextActionId": 0,
+        "Type": 205,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            999,
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg",
+            1,
+            0,
+            0
+        ]
+    },
+    {
+        "Id": 180,
+        "ActionId": 180,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory783.jpg"
+        ]
+    },
+    {
+        "Id": 181,
+        "ActionId": 181,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1BlowUp"
+        ]
+    },
+    {
+        "Id": 182,
+        "ActionId": 182,
+        "NextActionId": 0,
+        "Type": 307,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "于是握紧她的手，朝着未来，义无反顾地迈出脚步——",
+            50,
+            0
+        ]
+    },
+    {
+        "Id": 183,
+        "ActionId": 183,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "于是握紧她的手，朝着未来，义无反顾地迈出脚步——"
+        ]
+    },
+    {
+        "Id": 184,
+        "ActionId": 184,
+        "NextActionId": 0,
+        "Type": 307,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "义无反顾地奔向明天。",
+            50,
+            0
+        ]
+    },
+    {
+        "Id": 185,
+        "ActionId": 185,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "义无反顾地奔向明天。"
+        ]
     }
 ]

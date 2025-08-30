@@ -52,6 +52,7 @@ function XChessScene:Release()
     if self._Loader then
         self._Loader:UnloadAll()
     end
+    CS.XLoaderUtil.ClearModuleLoader(ModuleId.XBlackRockChess)
     self._Loader = nil
     self:StopReleaseTimer()
 end

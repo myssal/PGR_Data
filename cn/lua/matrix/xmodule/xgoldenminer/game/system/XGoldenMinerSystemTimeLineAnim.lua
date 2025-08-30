@@ -102,7 +102,7 @@ function XGoldenMinerSystemTimeLineAnim:_UpdateAnim(entity, time)
     if self:_CheckCurPlayIsNone(anim) then
         anim.CurAnim = anim.BePlayAnim
         anim.FinishCallBack = anim.BeFinishCallBack
-        self:_PlayAnim(bePlayableDirector)
+        self:_PlayAnim(bePlayableDirector, anim.WarpMode)
     else    -- 动画打断
         local curPlayableDirector = self:_GetAnimObj(anim, anim.CurAnim)
         curPlayableDirector:Evaluate()
@@ -112,7 +112,7 @@ function XGoldenMinerSystemTimeLineAnim:_UpdateAnim(entity, time)
         end
         anim.CurAnim = anim.BePlayAnim
         anim.FinishCallBack = anim.BeFinishCallBack
-        self:_PlayAnim(bePlayableDirector)
+        self:_PlayAnim(bePlayableDirector, anim.WarpMode)
     end
 
     self:_ResetBePlay(anim)
@@ -121,7 +121,7 @@ end
 
 --region Play
 ---@param entity XEntity
-function XGoldenMinerSystemTimeLineAnim:PlayAnim(entity, animName, finishCallBack, isBreak)
+function XGoldenMinerSystemTimeLineAnim:PlayAnim(entity, animName, finishCallBack, isBreak, warpMode)
     ---@type XGoldenMinerComponentTimeLineAnim
     local anim = entity.GetComponentAnim and entity:GetComponentAnim()
     if not anim then
@@ -136,6 +136,7 @@ function XGoldenMinerSystemTimeLineAnim:PlayAnim(entity, animName, finishCallBac
     anim.BePlayAnim = animName
     anim.BeFinishCallBack = finishCallBack
     anim.IsBreakCurPlay = isBreak
+    anim.WarpMode = warpMode
 end
 
 ---@param anim XGoldenMinerComponentTimeLineAnim

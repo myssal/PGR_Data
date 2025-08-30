@@ -21,6 +21,8 @@ XAutoWindowConfigs.AutoFunctionType = {
     Regression3rd  = 10,     -- 回归活动3期
     SClassConstructNovice  = 11,  -- 新手S礼包
     WeekCard       = 12,     -- 周卡
+    NewYearZhanBu   = 500,     -- 日服元旦占卜
+    NewYearDrawActivity = 501, -- 日服元旦抽奖
 }
 
 XAutoWindowConfigs.AutoWindowSkinType = {

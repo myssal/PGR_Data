@@ -14,7 +14,7 @@ function XUiRiftPluginBag:OnAwake()
     self:SetButtonCallBack()
     self:InitTimes()
 
-    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.RiftGold, XDataCenter.ItemManager.ItemId.RiftCoin)
+    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.RiftGold)
     --self.AssetPanel:HideBtnBuy()
 end
 

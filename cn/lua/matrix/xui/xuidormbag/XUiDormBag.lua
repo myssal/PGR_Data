@@ -23,6 +23,7 @@ function XUiDormBag:OnStart(pageRecord, furnitureState, selectCb, filter, needDa
     self.PriorSortType = XFurnitureConfigs.PriorSortType.All
     self.FromDorm = fromDorm --bool值，是否从宿舍进入，false为从宿舍主界面进入
     self.FromRefit = fromRefit --bool, 默认false，是否从改造跳转过来)
+
     self:InitFurniturePart()
     self:InitRecyclePreview()
     self:InitPrivateVariable(pageRecord, furnitureState, selectCb, filter)
@@ -103,6 +104,21 @@ function XUiDormBag:InitTabGroup(furnitureTypeId)
     --self.PanelCharacterBtn:Init(self.BtnCharList, function(index)
     --        self:RefreshSelectedCharPanel(index)
     --    end)
+
+    if XOverseaManager.IsTWRegion() then
+        self.OpenShouge = CS.XGame.ClientConfig:GetInt("OpenShouge") == 1
+        if self.OpenShouge then
+            self.BtnTogInfestor.gameObject:SetActiveEx(true)
+            self.BtnTogHuman.gameObject:SetActiveEx(true)
+        else
+            self.BtnTogHuman.gameObject:SetActiveEx(false)
+            self.BtnTogInfestor.gameObject:SetActiveEx(false)
+        end
+        self.PanelCharacterBtn:Init(self.BtnCharList, function(index)
+            self:RefreshSelectedCharPanel(index)
+        end)
+    end
+
 
     -- 选择家具状态处理
     if self.FurnitureState == XFurnitureConfigs.FURNITURE_STATE.SELECT or
@@ -435,6 +451,9 @@ end
 
 --家具回收
 function XUiDormBag:DecomposeFurniture(cb)
+    XEventManager.DispatchEvent(XEventId.EVENT_FURNITURE_ON_MODIFY)
+	CsXGameEventManager.Instance:Notify(XEventId.EVENT_FURNITURE_ON_MODIFY)
+
     XDataCenter.FurnitureManager.DecomposeFurniture(self.FurnitureSelectList, function()
             -- 清理数据
             self:OnRecycleCancel()

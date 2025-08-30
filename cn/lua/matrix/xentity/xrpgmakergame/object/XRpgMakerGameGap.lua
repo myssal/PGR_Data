@@ -35,30 +35,20 @@ function XRpgMakerGameGap:ChangeDirectionAction(action, cb)
         return
     end
 
-    -- local gapId = self:GetId()
-    -- local x = XRpgMakerGameConfigs.GetRpgMakerGameGapX(gapId)
-    -- local y = XRpgMakerGameConfigs.GetRpgMakerGameGapY(gapId)
-    local x = self.MapObjData:GetX()
-    local y = self.MapObjData:GetY()
-
-    local cube = self:GetCubeObj(y, x)
-    local cubePosition = cube:GetGameObjUpCenterPosition()
-    local cubeSize = cube:GetGameObjSize()
-
+    local cubeSize = self:GetGameObjSize()
     local objPosition = transform.position
     local direction = action.Direction
     local directionPos
-    if direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridLeft then
+    if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridLeft then
         directionPos = objPosition - Vector3(cubeSize.x / 2, 0, 0)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridRight then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridRight then
         directionPos = objPosition + Vector3(cubeSize.x / 2, 0, 0)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridTop then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridTop then
         directionPos = objPosition + Vector3(0, 0, cubeSize.z / 2)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridBottom then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridBottom then
         directionPos = objPosition - Vector3(0, 0, cubeSize.z / 2)
     end
 
-    local transform = self:GetTransform()
     local lookRotation = LookRotation(directionPos - objPosition)
     self:SetGameObjectRotation(lookRotation)
     self:SetGameObjectPosition(directionPos)
@@ -81,10 +71,10 @@ function XRpgMakerGameGap:IsGapInMiddle(curPosX, curPosY, direction, nextPosX, n
 
     --下一个坐标和缝隙位置相同，且方向相反
     if self:IsSamePoint(nextPosX, nextPosY)
-        and ((curGapDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridLeft and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight)
-        or (curGapDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridRight and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft)
-        or (curGapDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridTop and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown)
-        or (curGapDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridBottom and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp)) then
+        and ((curGapDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridLeft and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight)
+        or (curGapDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridRight and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft)
+        or (curGapDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridTop and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown)
+        or (curGapDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridBottom and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp)) then
         return true
     end
 

@@ -10,13 +10,13 @@ function XUiRpgMakerGameCharacterGrid:Refresh(characterId, onlyUseRoleId)
     local isUnlock = XDataCenter.RpgMakerGameManager.IsUnlockRole(characterId)
     self.ImgLock.gameObject:SetActiveEx(not isUnlock)
 
-    local headPath = isUnlock and XRpgMakerGameConfigs.GetRpgMakerGameRoleHeadPath(characterId) or CS.XGame.ClientConfig:GetString("RpgMakerGameRoleUnLockHeadPath")
+    local headPath = isUnlock and XMVCA.XRpgMakerGame:GetConfig():GetRoleHeadPath(characterId) or CS.XGame.ClientConfig:GetString("RpgMakerGameRoleUnLockHeadPath")
     self.RImgHeadIcon:SetRawImage(headPath)
 
-    local name = XRpgMakerGameConfigs.GetRpgMakerGameRoleName(characterId)
+    local name = XMVCA.XRpgMakerGame:GetConfig():GetRoleName(characterId)
     self.TextName1.text = isUnlock and name or ""
 
-    local style = XRpgMakerGameConfigs.GetRpgMakerGameRoleStyle(characterId)
+    local style = XMVCA.XRpgMakerGame:GetConfig():GetRoleStyle(characterId)
     self.TextName2.text = isUnlock and style or ""
 
     self.ImgRedPoint.gameObject:SetActiveEx(false)

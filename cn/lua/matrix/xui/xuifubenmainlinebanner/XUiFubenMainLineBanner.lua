@@ -5,6 +5,7 @@ local XUiPanelChapterDz = require("XUi/XUiFubenMainLineBanner/XUiPanelChapterDz"
 local XUiPanelMainLineBanner = require("XUi/XUiFubenMainLineBanner/XUiPanelMainLineBanner")
 
 local XUiFubenMainLineBanner = XLuaUiManager.Register(XLuaUi, "UiFubenMainLineBanner")
+local CSGameConfig = CS.XGame.ClientConfig
 
 local TAB_BTN_INDEX = {
     MAINLINE = 1,
@@ -99,6 +100,11 @@ function XUiFubenMainLineBanner:AutoAddListener()
     self:RegisterClickEvent(self.BtnCloseDifficult, self.OnBtnCloseDifficultClick)
     self:RegisterClickEvent(self.BtnNormal, self.OnBtnNormalClick)
     self:RegisterClickEvent(self.BtnHard, self.OnBtnHardClick)
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.CallBack = function()
+            self:OnBtnHelpClick()
+        end
+    end
 end
 -- auto
 function XUiFubenMainLineBanner:InitTabBtnGroup()
@@ -176,6 +182,9 @@ function XUiFubenMainLineBanner:RefreshPrequel(playAnimation)
     self:HidePanelChapter()
     self.PanelChapterDz.gameObject:SetActiveEx(true)
     self.ChapterDz:SetupCoverDatas(self.DefaultCoverId, self.DefaultChapterId)
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActive(false)
+    end
     if playAnimation and (not self.DefaultCoverId) then
         self:PlayAnimation("DzQieHuanEnable")
     end
@@ -187,6 +196,9 @@ function XUiFubenMainLineBanner:RefreshBfrt()
     self:HidePanelChapter()
     self.PanelChapterBfrt.gameObject:SetActiveEx(true)
     self.ChapterBfrt:SetupBfrtChapters()
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActive(true)
+    end
 end
 
 function XUiFubenMainLineBanner:RefreshMainLine(playAnimation)
@@ -196,6 +208,9 @@ function XUiFubenMainLineBanner:RefreshMainLine(playAnimation)
     end
     self.PanelChapterList.gameObject:SetActiveEx(true)
     self.MainLineBanner:SetupDynamicTable(self.CurDiff)
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActive(false)
+    end
     if playAnimation then
         self:PlayAnimation("ListQieHuanEnable")
     end
@@ -208,6 +223,9 @@ function XUiFubenMainLineBanner:RefreshExtra(playAnimation)
     end
     self.PanelChapterEX.gameObject:SetActiveEx(true)
     self.ChapterExtra:UpdateCoverData(self.CurExtraDifficult)
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActive(false)
+    end
     if playAnimation then
         self:PlayAnimation("EXQieHuanEnable")
     end
@@ -221,6 +239,9 @@ function XUiFubenMainLineBanner:RefreshShortStory(playAnimation)
     end
     self.PanelChapterDP.gameObject:SetActiveEx(true)
     self.ChapterDP:UpdateCoverData(self.CurDPDifficult)
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActive(false)
+    end
     if playAnimation then
         self:PlayAnimation("DPQieHuanEnable")
     end
@@ -354,4 +375,10 @@ function XUiFubenMainLineBanner:OnNotify(evt, ...)
         self.PanelTab:SelectIndex(TAB_BTN_INDEX.MAINLINE)
         self:UpdateDifficultToggles()
     end
+end
+
+--据点点击了帮助按钮
+function XUiFubenMainLineBanner:OnBtnHelpClick()
+    local helpContent = CSGameConfig:GetString("BfrtShowHelpTip01")
+    XUiManager.ShowHelpTip(helpContent)
 end

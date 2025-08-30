@@ -1255,8 +1255,15 @@ XChatManagerCreator = function()
                 v.ChannelId = v.ChannelId + 1
                 if index == lastIndex then v.IsRecruitChannel = true end
                 end
-            --收到市网信办举报特殊处理 频道5移除，所有后续频道顺延显示 + 1
-            RecruitChannelId = lastIndex + 1
+            if not XOverseaManager.IsOverSeaRegion() then
+                --收到市网信办举报特殊处理 频道5移除，所有后续频道顺延显示 + 1
+                RecruitChannelId = lastIndex + 1
+            else
+                RecruitChannelId = lastIndex
+            end
+          
+         
+          
             if cb then
                 cb(ChatChannelInfos)
             end

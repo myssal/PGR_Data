@@ -1,6 +1,6 @@
 ---@class XUiGuildWarPanelStage: XUiNode
 ---@field _Control XGuildWarControl
----@field Parent XLuaUi
+---@field Parent XUiGuildWarStageMain
 local XUiPanelStage = XClass(XUiNode, "XUiPanelStage")
 
 local XUiGridStage = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStage")
@@ -162,9 +162,9 @@ end
 --初始化关卡
 function XUiPanelStage:StageInit()
     --预制体列表
-    local perfabList = {}
+    local prefabPathList = {}
     for key, path in pairs(NodeType2StagePerfabPath) do
-        perfabList[key] = self.Obj:GetPrefab(path)
+        prefabPathList[key] = XUiConfigs.GetUiObjectPrefabPath(self.Parent.Name, path)
     end
 
     if self.GridStageDic == nil then
@@ -180,7 +180,7 @@ function XUiPanelStage:StageInit()
     
     for _, node in pairs(self.AllNodesList or {}) do
         local nodeType = node:GetNodeType()
-        if perfabList[nodeType] then
+        if prefabPathList[nodeType] then
             -- 节点隶属的容器的key
             local containerKey = node:GetStageIndexName()
             local nodeId = node:GetId()
@@ -192,7 +192,7 @@ function XUiPanelStage:StageInit()
 
             if not self.GridStageDic[containerKey]:CheckContainsNodeId(nodeId) then
                 -- 实例化节点UI
-                local obj = CS.UnityEngine.Object.Instantiate(perfabList[nodeType], self.StagePosDic[node:GetStageIndexName()])
+                local obj = self.StagePosDic[node:GetStageIndexName()]:LoadPrefabEx(prefabPathList[nodeType])
                 local GridScript = NodeType2StageGrid[nodeType]
                 local grid = (GridScript and GridScript.New(obj, self)) or XUiGridStage.New(obj, self)
 
@@ -365,7 +365,7 @@ function XUiPanelStage:UpdateGridMonster(monsterData, IsActionPlaying)
             table.remove(self.GridMonsterDic["Dead"], 1)
         else
             --如果死区为空 创建
-            local obj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("GuildWarStageMonster"), self.Transform)
+            local obj = self.Transform:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Parent.Name, "GuildWarStageMonster"))
             gridMonster = XUiGridMonster.New(obj, self, self.BattleManager)
         end
         table.insert(self.GridMonsterDic["Alive"], gridMonster)
@@ -617,7 +617,7 @@ function XUiPanelStage:UpdateGridReinforcement(reinforcementData, IsActionPlayin
             table.remove(self.GridReinforcementsDic["Dead"], 1)
         else
             --如果死区为空 创建
-            local obj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("GuildWarStageReinforce"), self.Transform)
+            local obj = self.Transform:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Parent.Name, "GuildWarStageReinforce"))
             gridReinforcements = XUiGridReinforcements.New(obj, self, self.BattleManager)
         end
         table.insert(self.GridReinforcementsDic["Alive"], gridReinforcements)

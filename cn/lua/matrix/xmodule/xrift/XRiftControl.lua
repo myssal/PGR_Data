@@ -8,7 +8,7 @@
 local XRiftControl = XClass(XEntityControl, "XRiftControl")
 
 function XRiftControl:OnInit()
-    self._Model:CheckTabPythonCreate()
+    
 end
 
 function XRiftControl:AddAgencyEvent()
@@ -87,6 +87,21 @@ function XRiftControl:GetFuncUnlockConfigs()
     return self._Model:GetFuncUnlockConfigs()
 end
 
+---打开活动界面且SweepTick==0时通知服务端扫荡开始
+function XRiftControl:TryRequestSweepOpen()
+    if self:GetSweepTick() == 0 then
+        self:RequestSweepOpen()
+    end
+end
+
+function XRiftControl:GetSweepTick()
+    return self._Model.ActivityData and self._Model.ActivityData:GetSweepTick() or 0
+end
+
+function XRiftControl:GetChapterPanelParem()
+    return self._Model:GetChapterPanelParem()
+end
+
 --endregion
 
 --region 关卡
@@ -123,7 +138,7 @@ function XRiftControl:GetChapterPluginShow(chapterId)
 end
 
 function XRiftControl:GetMopupCountDown()
-    local tick = self._Model.ActivityData:GetSweepTick()
+    local tick = self:GetSweepTick()
     local now = XTime.GetServerNowTimestamp()
     local today = XTime.GetSeverTodayFreshTime()
 
@@ -145,6 +160,16 @@ end
 
 function XRiftControl:CheckChapterUnlock(chapterId)
     return self._Model:CheckChapterUnlock(chapterId)
+end
+
+function XRiftControl:CheckEndlessChapterLock()
+    local fightLayers = self:GetEntityFightLayer()
+    for _, layer in pairs(fightLayers) do
+        if layer:IsChallenge() and not layer:CheckFirstPassed() then
+            return true
+        end
+    end
+    return false
 end
 
 function XRiftControl:CheckLayerFirstPassed(layerId)
@@ -186,6 +211,7 @@ function XRiftControl:GetEntityFightLayer()
     return self._FightLayerMap
 end
 
+---@return XRiftFightLayer
 function XRiftControl:GetEntityFightLayerById(layerId)
     local layers = self:GetEntityFightLayer()
     return layers[layerId]
@@ -1107,11 +1133,17 @@ function XRiftControl:GetLuckPassTime()
     return self._Model.ActivityData:GetLuckPassTime()
 end
 
+function XRiftControl:GetLuckValue()
+    local config = self:GetCurrentConfig()
+    local passTime = XTime.GetServerNowTimestamp() - self:GetSweepTick()
+    passTime = math.max(0, passTime)
+    local timeAddLucky = math.floor(config.TimeAddValueToLucky * passTime / config.TimeIntervalToLucky)
+    local stageAddLucky = self._Model.ActivityData:GetLuckyValue()
+    return math.min(self:GetMaxLuckyValue(), timeAddLucky + stageAddLucky)
+end
+
 function XRiftControl:GetLuckValueProgress()
-    local progress = self._Model.ActivityData:GetLuckyValue() / self:GetMaxLuckyValue()
-    progress = progress >= 1 and 1 or progress
-    progress = progress < 0 and 0 or progress
-    return progress
+    return self:GetLuckValue() / self:GetMaxLuckyValue()
 end
 
 -- 最高通关层的
@@ -1195,8 +1227,8 @@ function XRiftControl:RequestRiftActiveAffix(type, pluginId, slot, callBack)
 end
 
 ---请求重置词缀（仅做展示）
-function XRiftControl:RequestRiftResetAffix(pluginId, slot, callBack)
-    local request = { PluginId = pluginId, Slot = slot }
+function XRiftControl:RequestRiftResetAffix(pluginId, slot, isSameType, callBack)
+    local request = { PluginId = pluginId, Slot = slot, IsSameType = isSameType }
     XNetwork.CallWithAutoHandleErrorCode("RiftResetAffixRequest", request, function(res)
         if callBack then
             callBack(res.AffixId)
@@ -1251,6 +1283,7 @@ function XRiftControl:RiftSweepLayerRequest(cb)
         self._Model.ActivityData:AddFightLayerDropPlugin(maxPassFightLayerOrder, res.PluginDropRecords)
         self._Model.ActivityData:AddSweepTimes(res.SweepTick)
         self._Model.ActivityData:UpdateLuckNode(nil, res.LuckyValue)
+        self._Model.ActivityData:AddAffixs(res.PluginInfos)
         -- 弹层结算
         XLuaUiManager.Open("UiRiftSettleWin", maxPassFightLayerOrder, nil, true, true, res)
         if cb then
@@ -1359,6 +1392,7 @@ function XRiftControl:RequestBuyPlugin(id)
             return
         end
         self._Model.ActivityData:SetPluginHave(id)
+        self._Model.ActivityData:AddAffix(res.PluginInfo)
         XEventManager.DispatchEvent(XEventId.EVENT_RIFT_BUY)
         XUiManager.TipText("RiftPluginBuySuccess")
     end)
@@ -1372,6 +1406,12 @@ function XRiftControl:RequestRiftStartChapter(chapterId, cb)
         if cb then
             cb()
         end
+    end)
+end
+
+function XRiftControl:RequestSweepOpen()
+    XNetwork.CallWithAutoHandleErrorCode("RiftSweepOpenRequest", {}, function(res)
+        self._Model.ActivityData:UpdateSweepTick(res.SweepTick)
     end)
 end
 

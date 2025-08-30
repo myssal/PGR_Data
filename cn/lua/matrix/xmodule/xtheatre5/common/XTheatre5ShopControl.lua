@@ -776,4 +776,44 @@ end
 
 --endregion
 
+---@param itemData XTheatre5Item
+function XTheatre5ShopControl:CheckRuneValid(itemData)
+    local runeDict = self._Model.CurAdventureData:GetRuneDict()
+    if not runeDict then
+        XLog.Error("[XTheatre5ShopControl] 符文背包为空？")
+        return true
+    end
+    local isValid = true
+    local config = self._Model:GetTheatre5ItemCfgById(itemData.ItemId)
+    local buffType = config.BuffType
+    if buffType > 0 then
+        -- 筛选同类buff里最高级的第一个符文
+        local bestQuality
+        local bestIndex
+        for i, runeData in pairs(runeDict) do
+            local configRune = self._Model:GetTheatre5ItemCfgById(runeData.ItemId)
+            if configRune.BuffType == buffType then
+                if not bestQuality or bestQuality < configRune.Quality then
+                    bestQuality = configRune.Quality
+                    bestIndex = i
+                elseif bestQuality == configRune.Quality then
+                    if not bestIndex or i < bestIndex then
+                        bestIndex = i
+                    end
+                end
+            end
+        end
+        local thisIndex
+        for i, runeData in pairs(runeDict) do
+            if itemData.InstanceId == runeData.InstanceId then
+                thisIndex = i
+            end
+        end
+        if bestIndex and thisIndex and bestIndex ~= thisIndex then
+            isValid = false
+        end
+    end
+    return isValid
+end
+
 return XTheatre5ShopControl

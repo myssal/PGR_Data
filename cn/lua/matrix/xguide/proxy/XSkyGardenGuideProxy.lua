@@ -66,4 +66,12 @@ function XSkyGardenGuideProxy:OnGuideReset()
     end
 end
 
+function XSkyGardenGuideProxy:GetGuideTextTemplate(textId)
+    return XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetBigWorldGuideTextTemplate(textId)
+end
+
+function XSkyGardenGuideProxy:GetGuideIcon(iconId)
+    return XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetBigWorldGuideIcon(iconId)
+end
+
 return XSkyGardenGuideProxy

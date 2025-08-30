@@ -19,19 +19,65 @@ local IOSPayCallback = nil  -- iOS 充值回调
 local PCPayCallback = nil -- PC 充值回调
 local HasSdkLoginError = false -- sdk登陆存在错误
 --local CallbackUrl = "http://haru.free.idcfengye.com/api/XPay/HeroPayResult"
-local CallbackUrl = CS.XRemoteConfig.PayCallbackUrl
+
+local CallbackUrl = nil
+local CallbackUrls = {} -- EN 充值回调
+
+local function SplitPayCallList(list, str)
+    if str == "" or str == nil then
+        return
+    end
+    local strs = string.Split(str, '#')
+    local i = 1
+    for _, value in ipairs(strs) do
+        list[i] = value
+        i = i + 1
+    end
+end
+
+local function LoadPayCallback()
+    if CS.XLocalizationManager.Instance.Language == CS.XKuro.Localization.Data.Language.EN then
+        SplitPayCallList(CallbackUrls, CS.XRemoteConfig.PayCallbackUrl)
+    else
+        CallbackUrl = CS.XRemoteConfig.PayCallbackUrl
+    end
+end
+
+LoadPayCallback()
+
 local XRecordUserInfo = CS.XRecord.XRecordUserInfo
 
 local IsNeedShowReddot = false
-
+local deepLinkValue = ""
 local CleanPayCallbacks = function()
     PayCallbacks = {}
     IOSPayCallback = nil
     PCPayCallback = nil
 end
+XHeroSdkManager.UserType = {
+    Vistor = 0,
+    FaceBook = 1,
+    Google = 2,
+    GameCenter = 3,
+    WeChat = 4,
+    Twitter = 5,
+    Line = 6,
+    Apple = 7,
+    Line = 8,
+    Suid = 9,
+    Mail = 16,
+    Naver = 17,
+}
 
 function XHeroSdkManager.UpdateCallbackUrl()
-    CallbackUrl = CS.XRemoteConfig.PayCallbackUrl
+    LoadPayCallback()
+end
+
+function XHeroSdkManager.SetCallbackUrl(server)
+    if server.Id > #CallbackUrls then
+        XLog.Error("支付服务器地址数量与服务器数量不匹配")
+    end
+    CallbackUrl = CallbackUrls[server.Id]
 end
 
 function XHeroSdkManager.IsNeedLogin()
@@ -60,7 +106,11 @@ function XHeroSdkManager.Login()
     CS.XHeroSdkAgent.Login()
 end
 
-function XHeroSdkManager.Logout(cb)
+function XHeroSdkManager.Logout(cb, isInitiative)
+    -- 是否是主动登出，默认是主动登出，只有踢人不是主动
+    if isInitiative == nil then
+        isInitiative = true
+    end
     if XHeroSdkManager.IsNeedLogin() then
         if cb then
             cb(LogoutFailed)
@@ -69,10 +119,19 @@ function XHeroSdkManager.Logout(cb)
     end
 
     LogoutCb = cb
+    
+    -- 被动退出，直接走退出
+    if not isInitiative then
+        CS.XRecord.Record("24039", "HeroSdkKickout")
+        XHeroSdkManager.OnLogoutSuccess()
+        return 
+    end
+
     CS.XRecord.Record("24029", "HeroSdkLogout")
     CS.XHeroSdkAgent.Logout()
 
-    if Platform == RuntimePlatform.IPhonePlayer then
+    -- 海外暂时也没有登录回调
+    if Platform == RuntimePlatform.IPhonePlayer or XOverseaManager.IsOverSeaRegion() then
         -- iOS 无回调，直接调用退出
         XHeroSdkManager.OnLogoutSuccess()
     end
@@ -101,6 +160,8 @@ function XHeroSdkManager.OnLoginSuccess(uid, username, token, loginChannel)
     CleanPayCallbacks()
     
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_SDK_LOGIN_SUCCESS)
+    --CheckPoint: APPEVENT_SDK_INITIALIZE
+    XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.SDK_Initialize)
 end
 
 function XHeroSdkManager.OnLoginFailed(msg)
@@ -171,6 +232,10 @@ function XHeroSdkManager.OnLogoutFailed(msg)
     end
 end
 
+-- 是否是主动登出的，跟SDK被动登出的做区分
+function XHeroSdkManager.IsLogout()
+end
+
 function XHeroSdkManager.OnSdkKickOff(msg)
     XLog.Debug("XHeroSdkManager.OnSdkKickOff()  msg = " .. msg)
     XDataCenter.AntiAddictionManager.Kick(msg)
@@ -230,9 +295,11 @@ local GetOrderInfo = function(cpOrderId, goodsId, extraParams,productKey)
     local template = XPayConfigs.GetPayTemplate(productKey)
 
     if XUserManager.IsKuroSdk() and template then
-        orderInfo.Price = template.Amount
+        -- orderInfo.Price = tostring(template.Amount)
+        orderInfo.Price = tostring(template.ShowAmount)
         orderInfo.GoodsName = template.Name
         orderInfo.GoodsDesc = template.Desc
+        orderInfo.Currency = template.Currency
     end
     -- if productInfo.GoodsName and #productInfo.GoodsName > 0 then
     --     orderInfo.GoodsName = productInfo.GoodsName
@@ -255,6 +322,51 @@ local GetOrderInfo = function(cpOrderId, goodsId, extraParams,productKey)
 
     return orderInfo
 end
+
+-- 新的统一支付接口
+function XHeroSdkManager.NewPay(productKey, cpOrderId, goodsId, cb)
+    PayCallbacks[cpOrderId] = {
+            cb = cb,
+            info = {
+                ProductKey = productKey,
+                CpOrderId = cpOrderId,
+                GoodsId = goodsId,
+                PlayerId = XPlayer.Id
+            }
+        }
+    local order = GetOrderInfo(cpOrderId, goodsId,nil,productKey)
+    CS.XHeroSdkAgent.Pay(order, GetRoleInfo())
+    XDataCenter.AntiAddictionManager.BeginPayAction()
+end
+
+-- 新的统一支付回调
+function XHeroSdkManager.OnPaySuccess(sdkOrderId, cpOrderId, extraParams)
+    local cbInfo = PayCallbacks[cpOrderId]
+    if cbInfo and cbInfo.cb then
+        cbInfo.info.sdkOrderId = sdkOrderId
+        cbInfo.cb(nil, cbInfo.info)
+    end
+
+    PayCallbacks[cpOrderId] = nil
+    XDataCenter.AntiAddictionManager.EndPayAction()
+end
+
+function XHeroSdkManager.OnPayFailed(cpOrderId, msg)
+    local cbInfo = PayCallbacks[cpOrderId]
+    if cbInfo and cbInfo.cb then
+        cbInfo.cb(msg, cbInfo.info)
+    end
+
+    PayCallbacks[cpOrderId] = nil
+    XDataCenter.AntiAddictionManager.EndPayAction()
+end
+
+function XHeroSdkManager.OnPayCancel(cpOrderId)
+    PayCallbacks[cpOrderId] = nil
+    XDataCenter.AntiAddictionManager.EndPayAction()
+end
+-- 新的统一支付回调End
+
 
 function XHeroSdkManager.Pay(productKey, cpOrderId, goodsId, cb)
     -- local extraParams = {
@@ -428,3 +540,44 @@ function XHeroSdkManager.GetAccessToken()
     end
     return ""
 end
+function XHeroSdkManager.SetUserType(userType)
+    XUserManager.SetUserType(userType)
+end
+function XHeroSdkManager.OnBindTaskFinished()
+    local taskConfig = XTaskConfig.GetTaskCondition(2120001)
+    if taskConfig == nil then
+        return
+    end
+    local taskParam = taskConfig.Params[2]
+    XNetwork.Call("DoClientTaskEventRequest", {ClientTaskType = taskParam}, function(reply)
+        if reply.Code ~= XCode.Success then
+            return
+        end
+        XLog.Debug("引继码任务完成")
+    end)
+end
+
+function XHeroSdkManager.ClearDeepLinkValue()
+    deepLinkValue = nil
+end
+function XHeroSdkManager.GetDeepLinkValue()
+    if not deepLinkValue or deepLinkValue == "" then
+        deepLinkValue = CS.XHeroSdkAgent.GetDeepLinkValue()
+    end
+    if deepLinkValue and deepLinkValue ~= "" then
+        XLog.Debug("DeepLinkValue:"..tostring(deepLinkValue))
+        return deepLinkValue
+    end
+end
+
+function XHeroSdkManager.GetCurPkgId()
+    if XUserManager.IsUseSdk() then
+        if XUserManager.Platform == XUserManager.PLATFORM.IOS then
+            return 'A1348'
+        else
+            return CS.XHeroSdkAgent.GetPkgId()
+        end
+    end
+    
+    return ''
+end 

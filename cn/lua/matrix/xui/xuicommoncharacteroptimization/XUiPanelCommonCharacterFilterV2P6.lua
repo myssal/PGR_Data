@@ -563,7 +563,9 @@ function XUiPanelCommonCharacterFilterV2P6:ImportList(characterList, afterInitSe
 
     -- 玩家自机/机器人 源数据列表
     self.SourceCharacterList = characterList
-
+    if XOverseaManager.IsTWRegion() then
+        self.BtnUniframe.gameObject:SetActiveEx( self:GetUniframe() and self.BtnUniframe.gameObject.activeInHierarchy)
+    end
     -- 导入后刷新，不改变标签
     afterInitSeleCharId = XTool.IsNumberValid(afterInitSeleCharId) and afterInitSeleCharId or nil
     self._AfterInitSeleCharId = afterInitSeleCharId
@@ -870,6 +872,12 @@ function XUiPanelCommonCharacterFilterV2P6:DoFiltElementTagClick(tagId)
     local tagaData = self.IsHideGeneralSkill and { Element = { tagId } } or { Elements = { tagId } } -- Elements会筛选效应元素
     self:CheckAddGeneralSkillFilter(tagaData)
     return XMVCA.XCommonCharacterFilter:DoFilter(self.SourceCharacterList, tagaData)
+end
+
+function XUiPanelCommonCharacterFilterV2P6:GetUniframe()
+    local tagaData = { Career = {4} } -- 先锋型的职业id是 4
+    local datas = XMVCA.XCommonCharacterFilter:DoFilter(self.SourceCharacterList, tagaData)
+    return #datas>0
 end
 
 function XUiPanelCommonCharacterFilterV2P6:DoFiltUniframe()

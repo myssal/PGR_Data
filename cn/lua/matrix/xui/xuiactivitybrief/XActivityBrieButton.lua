@@ -1,6 +1,6 @@
 local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
 ---@class XActivityBrieButton
-local XActivityBrieButton = XClass(nil, "XActivityBrieButton")
+local XActivityBrieButton = XClass(nil, "XActivityBrieButton", true)
 
 
 local ACTIVITYBRIEBUTTONISFIRSTTIMECLICK = "ActivityBrieButtonIsFirstTimeClick"
@@ -35,13 +35,20 @@ function XActivityBrieButton:Refresh(args)
     end
     local isWaitLockAnim = XTool.IsNumberValid(XActivityBriefConfigs.GetActivityBriefGroupIsRemindWhenOpen(self.activityGroupId))
         and not XDataCenter.ActivityBriefManager.GetIsPlayedUnlockAnim(self.activityGroupId)
-    self.BtnCom:SetDisable(not isOpen or isOpen and isWaitLockAnim)
+
+    -- #203409 抽象调用按键显示
+    self:ShowBtnCom(isOpen, isWaitLockAnim)
+end
+
+-- #203409 覆写类覆写
+function XActivityBrieButton:ShowBtnCom(isOpen, isWaitLockAnim)
+    self.BtnCom:SetDisable(not isOpen or isOpen and isWaitLockAnim)   
 end
 
 --region Ui - Anim
 ---初始化解锁动画状态
 function XActivityBrieButton:InitUnlockAnim()
-    self.PanelEffectLock = XUiHelper.TryGetComponent(self.Transform, "PanelEffectLock")
+    self.PanelEffectLock = self.PanelEffectLock or XUiHelper.TryGetComponent(self.Transform, "PanelEffectLock")
     if self.PanelEffectLock then
         self.PanelEffectLock.gameObject:SetActiveEx(false)
     end

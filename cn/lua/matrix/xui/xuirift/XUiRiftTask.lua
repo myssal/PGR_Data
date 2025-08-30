@@ -10,7 +10,7 @@ function XUiRiftTask:OnAwake()
     self:RegisterEvent()
     self:InitTimes()
 
-    local itemIds = { XDataCenter.ItemManager.ItemId.RiftGold, XDataCenter.ItemManager.ItemId.RiftCoin }
+    local itemIds = { XDataCenter.ItemManager.ItemId.RiftGold, XDataCenter.ItemManager.ItemId.RiftGold3 }
     self.AssetActivityPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self)
 end
 

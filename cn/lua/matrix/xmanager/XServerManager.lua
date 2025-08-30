@@ -189,6 +189,11 @@ function XServerManager.Select(server)
         return
     end
 
+    if XOverseaManager.IsENRegion() and XUserManager.UserId then
+        XSaveTool.SaveData(XPrefs.User_ServerId..XUserManager.UserId, tostring(server.Id))
+        XHeroSdkManager.SetCallbackUrl(server)
+    end
+
     XServerManager.Id = server.Id
     XServerManager.ServerName = server.Name
     CS.UnityEngine.PlayerPrefs.SetInt(XPrefs.ServerId, server.Id)

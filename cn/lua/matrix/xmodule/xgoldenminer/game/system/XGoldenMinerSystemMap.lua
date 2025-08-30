@@ -10,6 +10,7 @@ local RANDOM_ADD_STONE_REDUNDANCY_TOP_W_PERCENT = 0.41
 local RANDOM_ADD_STONE_REDUNDANCY_BOTTOM_W_PERCENT = 0.0555
 local RANDOM_ADD_STONE_SCALE_MIN = 2
 local RANDOM_ADD_STONE_SCALE_MAX = 4
+local CSUnityEngine = CS.UnityEngine
 
 --region Override
 function XGoldenMinerSystemMap:OnInit()
@@ -21,6 +22,11 @@ function XGoldenMinerSystemMap:OnInit()
     self._StoneEntityUidDir = {}
     ---@type table<number, table<number, boolean>>
     self._StoneEntityUidTypeDir = {}
+    self._StoneEntityUidAlive = {}
+    
+    ---@type table<number, number[]>
+    self._StoneEntityUidBornDelayDir = {}
+    
     self._ElectromagneticTime = self._MainControl:GetClientElectromagneticTime()
 
     self._ChangeGoldIgnoreStoneType = {
@@ -44,6 +50,34 @@ function XGoldenMinerSystemMap:OnInit()
 
     -- 边界反射
     self._ReflectEdgeColliderToIdDir = {}
+    
+    -- 连接线实体池
+    ---@type XPool
+    self._LinkRopeObjPool = XPool.New(function()
+        local obj = CS.UnityEngine.GameObject.Instantiate(self._LinkRopeObj, self._LinkRopeObj.transform.parent)
+        obj.gameObject:SetActiveEx(true)
+        
+        return obj
+    end, function(obj)
+        obj.gameObject:SetActiveEx(false)
+    end, false)
+    
+    -- 连接线的字典
+    self._LinkRopeShowDict = {}
+    self._LinkRopeUidPool = 1
+    
+    --- 复制体生成栈，用于隔帧生成
+    self._CopyStoneCreateStack = {}
+
+    --- 复制体信息对象池
+    ---@type XPool
+    self._CopyStoneDataPool = XPool.New(function()
+        return {}
+    end, function(data)
+        data.StoneData = nil
+        data.CurPos = nil
+        data.CurDirection = nil
+    end)
 end
 
 ---@param objDir XGoldenMinerGameInitObjDir
@@ -55,7 +89,8 @@ function XGoldenMinerSystemMap:EnterGame(objDir)
     self._ElectromagneticBox = objDir.ElectromagneticBox
     self._ReflectEdgeRoot = objDir.ReflectEdgeRoot
     self._ReflectEdges = objDir.ReflectEdges
-
+    self._LinkRopeObj = objDir.LinkRopeObj
+    self._LinkRopeObj.gameObject:SetActiveEx(false)
     self:_InitReflectEdge()
 
     local mapStoneList = self._MainControl:GetGameData():GetMapStoneDataList()
@@ -128,13 +163,11 @@ function XGoldenMinerSystemMap:OnRelease()
     self._RandomAddMaxY = 0
     self._RandomAddMaxX = 0
     self._CanNotAddStoneAreas = nil
-
-    for path, _ in pairs(self._ResourcePool) do
-        self:GetLoader():Unload(path)
-    end
     self._ResourcePool = nil
     self._StoneEntityUidDir = nil
     self._StoneEntityUidTypeDir = nil
+    self._StoneEntityUidAlive = nil
+    self._StoneEntityUidBornDelayDir = nil
     self._MapObjRoot = nil
     self._RectSize = nil
 
@@ -150,6 +183,7 @@ end
 function XGoldenMinerSystemMap:OnUpdate(time)
     if self._MainControl:IsRunning() then
         self:_UpdateSunMoonMapCD(time)
+        self:OnCopyStoneCreate()
     end
 end
 --endregion
@@ -172,6 +206,16 @@ function XGoldenMinerSystemMap:GetStoneUidDirByType(type)
         return self._StoneEntityUidTypeDir[type]
     end
     return DEFAULT_TABLE
+end
+
+---@return number[]
+function XGoldenMinerSystemMap:GetStoneUidAliveList()
+    return self._StoneEntityUidAlive
+end
+
+---@return number[]
+function XGoldenMinerSystemMap:GetStoneEntityUidBornDelayDir()
+    return self._StoneEntityUidBornDelayDir
 end
 
 ---@param collider UnityEngine.Collider2D
@@ -248,20 +292,69 @@ function XGoldenMinerSystemMap:GetNearestStoneByTypeDir(ignoreTypeDir, ignoreSto
         local stoneEntity = self._MainControl:GetStoneEntityByUid(uid)
         local isIgnoreType = ignoreTypeDir[stoneEntity.Data:GetType()]
         local isAlive = stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE)
-        local anchoredPosition = stoneEntity:GetTransform().anchoredPosition
-        local isInRangeX = anchoredPosition.x >= rangeX.Min and anchoredPosition.x <= rangeX.Max
-        local isInRangeY = anchoredPosition.y >= rangeY.Min and anchoredPosition.y <= rangeY.Max
 
-        if (not ignoreStoneIdDir[uid]) and (not isIgnoreType) and isAlive and isInRangeX and isInRangeY then
-            local position = stoneEntity:GetTransform().position - startPosition
-            local value = position.magnitude
-            if not distance or distance > value then
-                distance = value
-                resultEntity = stoneEntity
+        if (not ignoreStoneIdDir[uid]) and (not isIgnoreType) and isAlive then
+            local stoneTrans = stoneEntity:GetTransform()
+            
+            local isInRange = self._MainControl.CalculateHelper:CheckIsStoneAnchoredPosInRange(stoneTrans, rangeX.Min, rangeX.Max, rangeY.Min, rangeY.Max)
+
+            if isInRange then
+                local newDistance = self._MainControl.CalculateHelper:GetStoneWorldPosDistance(stoneTrans, startPosition.x, startPosition.y, startPosition.z)
+
+                if not distance or distance > newDistance then
+                    distance = newDistance
+                    resultEntity = stoneEntity
+                end
             end
         end
     end
     return resultEntity
+end
+
+---@return XGoldenMinerEntityStone[]
+function XGoldenMinerSystemMap:GetStoneListSortByDistance(ignoreTypeDir, ignoreStoneIdDir, startPosition, distanceOnlyX, distanceOnlyY)
+    ---@type XGoldenMinerEntityStone[]
+    local resultEntities = {}
+    local stone2Distance = {}
+
+    for uid, _ in pairs(self._StoneEntityUidDir) do
+        local stoneEntity = self._MainControl:GetStoneEntityByUid(uid)
+        local isIgnoreType = ignoreTypeDir and ignoreTypeDir[stoneEntity.Data:GetType()] or false
+        local isAlive = stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE)
+
+        if (not ignoreStoneIdDir or not ignoreStoneIdDir[uid]) and (not isIgnoreType) and isAlive then
+            local stoneTrans = stoneEntity:GetTransform()
+
+            local distance = 0
+
+            if distanceOnlyX then
+                local x = stoneTrans:GetPosition()
+                
+                distance = math.abs(x - startPosition.x)
+            elseif distanceOnlyY then
+                local x, y = stoneTrans:GetPosition()
+
+                distance = math.abs(y - startPosition.y)
+            else
+                distance = self._MainControl.CalculateHelper:GetStoneWorldPosDistance(stoneTrans, startPosition.x, startPosition.y, startPosition.z)
+            end
+            
+
+            stone2Distance[uid] = distance
+            table.insert(resultEntities, stoneEntity)
+        end
+    end
+
+    if not XTool.IsTableEmpty(resultEntities) then
+        table.sort(resultEntities, function(a, b) 
+            local distanceA = stone2Distance[a:GetUid()] or 0
+            local distanceB = stone2Distance[b:GetUid()] or 0
+            
+            return distanceA < distanceB
+        end)
+    end
+    
+    return resultEntities
 end
 
 function XGoldenMinerSystemMap:GetSunMoonRealStoneIdDir()
@@ -276,9 +369,26 @@ end
 --region Stone - Create
 ---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemMap:_RemoveStoneEntity(stoneEntity)
-    self._StoneEntityUidDir[stoneEntity:GetUid()] = nil
-    self._StoneEntityUidTypeDir[stoneEntity.Data:GetType()][stoneEntity:GetUid()] = nil
+    local uid = stoneEntity:GetUid()
+    self._StoneEntityUidDir[uid] = nil
+    self._StoneEntityUidTypeDir[stoneEntity.Data:GetType()][uid] = nil
+    self._StoneEntityUidAlive[uid] = nil
     self._MainControl:RemoveEntity(stoneEntity)
+end
+
+function XGoldenMinerSystemMap:RemoveStoneEntityFromAliveList(uid)
+    self._StoneEntityUidAlive[uid] = nil
+end
+
+function XGoldenMinerSystemMap:RemoveStoneEntityFromDelayTimeDir(delayTime)
+    -- 加入到alive列表
+    local uidList = self._StoneEntityUidBornDelayDir[delayTime]
+
+    for i, v in ipairs(uidList) do
+        self._StoneEntityUidAlive[v] = true
+    end
+    
+    self._StoneEntityUidBornDelayDir[delayTime] = nil
 end
 
 ---@param stoneData XGoldenMinerMapStoneData
@@ -328,11 +438,18 @@ function XGoldenMinerSystemMap:_CreateStone(stoneData)
     self:_ComputeStoneWeight(stoneEntity)
 
     --加入记录
-    if not self._StoneEntityUidTypeDir[stoneData:GetType()] then
-        self._StoneEntityUidTypeDir[stoneData:GetType()] = {}
+    local stoneType = stoneData:GetType()
+    local stoneUid = stoneEntity:GetUid()
+    
+    if not self._StoneEntityUidTypeDir[stoneType] then
+        self._StoneEntityUidTypeDir[stoneType] = {}
     end
-    self._StoneEntityUidTypeDir[stoneData:GetType()][stoneEntity:GetUid()] = true
-    self._StoneEntityUidDir[stoneEntity:GetUid()] = true
+    self._StoneEntityUidTypeDir[stoneType][stoneUid] = true
+    self._StoneEntityUidDir[stoneUid] = true
+
+    if not stoneEntity:GetComponentStone():CheckIsBornDelay() then
+        self._StoneEntityUidAlive[stoneUid] = true
+    end
 
     return stoneEntity
 end
@@ -343,7 +460,7 @@ end
 function XGoldenMinerSystemMap:_CreateComponentStone(stoneEntity, stoneData)
     ---@type XGoldenMinerComponentStone
     local stone = stoneEntity:AddChildEntity(self._MainControl.COMPONENT_TYPE.STONE)
-    stone.Transform = self:_LoadStone(stoneData, self._MapObjRoot)
+    stone:SetTransform(self:_LoadStone(stoneData, self._MapObjRoot))
     -- 如果是不可生成抓取物区域，就不继续初始化组件其他内容了，只要Transform
     if stoneData:CheckType(XEnumConst.GOLDEN_MINER.STONE_TYPE.CAN_NOT_ADD_STONE_AREA) then
         return stoneData
@@ -352,7 +469,17 @@ function XGoldenMinerSystemMap:_CreateComponentStone(stoneEntity, stoneData)
         XLog.Error("抓取物创建失败!请检查Prefab字段!id=" .. stoneData:GetId())
     end
     stone.Collider = XUiHelper.TryGetComponent(stone.Transform, "", "Collider2D")
-    stone.BornDelayTime = stoneData:GetBornDelay()
+    
+    local bornDelayTime = stoneData:GetBornDelay()
+    
+    if XTool.IsNumberValidEx(bornDelayTime) then
+        if not self._StoneEntityUidBornDelayDir[bornDelayTime] then
+            self._StoneEntityUidBornDelayDir[bornDelayTime] = {}
+        end
+        table.insert(self._StoneEntityUidBornDelayDir[bornDelayTime], stoneEntity:GetUid())
+    end
+
+    stone:SetBornDelayTime(stoneData:GetBornDelay())
     stone.AutoDestroyTime = stoneData:GetDestroyTime() > 0 and (stoneData:GetBornDelay() + stoneData:GetDestroyTime()) or 0
     stone.BeDestroyTime = 0
     stone.HideTime = 0
@@ -368,6 +495,11 @@ function XGoldenMinerSystemMap:_CreateComponentStone(stoneEntity, stoneData)
             stone.BoomCollider.enabled = false
         end
     end
+
+    if XMain.IsEditorDebug then
+        stone.Transform.gameObject.name = stone.Transform.gameObject.name .. stoneEntity:GetUid()
+    end
+    
     return stone
 end
 
@@ -649,8 +781,16 @@ function XGoldenMinerSystemMap:_CreateEntityCarryStone(stoneEntity, carryStoneId
         return carryStone
     end
     -- 携带物要处理方向
+    local scaleX = carryStoneComponent.Transform.localScale.x
+
+    if stoneEntity.Data:GetMoveType() == XEnumConst.GOLDEN_MINER.GAME_STONE_MOVE_TYPE.CIRCLE then
+        scaleX = stoneEntity.Data:GetStartMoveDirection() > 0 and 1 or -1
+    else
+        scaleX =  scaleX * stoneEntity.Data:GetStartMoveDirection()
+    end
+    
     carryStoneComponent.Transform.localScale = Vector3(
-            carryStoneComponent.Transform.localScale.x * stoneEntity.Data:GetStartMoveDirection(),
+            scaleX,
             carryStoneComponent.Transform.localScale.y,
             carryStoneComponent.Transform.localScale.z)
 
@@ -886,6 +1026,84 @@ function XGoldenMinerSystemMap:_CheckPosIsInCanNotAddStoneArea(x, y)
     return false
 end
 
+--endregion
+
+--region Stone - 原地复制抓取物
+
+--- 隔帧生成
+function XGoldenMinerSystemMap:OnCopyStoneCreate()
+    if not XTool.IsTableEmpty(self._CopyStoneCreateStack) then
+        local deltaTime = CSUnityEngine.Time.deltaTime
+        local targetFps = 45 -- 非战斗内一般设置最大帧数为45，这里按照45来算帧数比例
+        
+        local fps = math.min(targetFps, 1 / deltaTime)
+        local percent = fps / targetFps
+        -- 当前帧率越高，则每次生成越多，上限为5个
+        local createCount = math.ceil(percent * 5)
+        local count = #self._CopyStoneCreateStack
+        local limit = math.max(count - createCount, 1)
+
+        for i = count, limit, -1 do
+            local data = self._CopyStoneCreateStack[i]
+            
+            self:_CopyStoneByStoneData(data.StoneData, data.CurPos, data.CurDirection)
+
+            self._CopyStoneCreateStack[i] = nil
+            
+            self._CopyStoneDataPool:ReturnItemToPool(data)
+        end
+    end    
+end
+
+---@param fromStoneEntity XGoldenMinerEntityStone
+function XGoldenMinerSystemMap:AddCopyStoneCommand(stoneData, fromStoneEntity)
+    local data = self._CopyStoneDataPool:GetItemFromPool()
+    data.StoneData = stoneData
+
+    local fromMoveCom = fromStoneEntity:GetComponentMove()
+
+    if fromMoveCom then
+        data.CurDirection = fromMoveCom.CurDirection
+        data.CurPos = fromMoveCom:GetCurPos()
+    end
+    
+    table.insert(self._CopyStoneCreateStack, data)
+end
+
+---@param fromStoneEntity XGoldenMinerEntityStone
+function XGoldenMinerSystemMap:_CopyStoneByStoneData(stoneData, curPos, curDirection)
+    local stoneEntity = self:_CreateStone(stoneData)
+    
+    ---@type XGoldenMinerComponentMove
+    local moveCom = stoneEntity:GetComponentMove()
+    local transform = stoneEntity:GetTransform()
+
+    if moveCom then
+        if curPos then
+            moveCom:SetCurPos(curPos)
+        end
+
+        if curDirection then
+            moveCom.CurDirection = curDirection
+        end
+
+        local curPos = moveCom:GetCurPos()
+
+        if moveCom.MoveType == XEnumConst.GOLDEN_MINER.GAME_STONE_MOVE_TYPE.CIRCLE then
+            transform:Rotate(0, 0, moveCom.CurDirection - 90)
+        end
+
+        transform:SetLocalPosition(curPos.x, curPos.y, curPos.z)
+    end
+    
+    stoneEntity:SetIsCopy(true)
+
+    XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_RUNTIME_ADD_STONE)
+    XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_PLAY_EFFECT, XEnumConst.GOLDEN_MINER.GAME_EFFECT_TYPE.RADAR_RANDOM_ITEM,
+            stoneEntity:GetComponentStone().Transform, self._MainControl:GetClientTypeRadarRandomItemEffect())
+
+    return stoneEntity
+end
 --endregion
 
 --region Handle - Electromagnetic
@@ -1127,6 +1345,53 @@ function XGoldenMinerSystemMap:_LoadStone(stoneData, objRoot, isCarryStone)
     obj.transform.localEulerAngles = Vector3(0, 0, rotationZ)
     return obj.transform
 end
+--endregion
+
+--region LinkRope
+
+function XGoldenMinerSystemMap:GetLinkRopeUid()
+    local uid = self._LinkRopeUidPool
+    self._LinkRopeUidPool = self._LinkRopeUidPool + 1
+    
+    return uid
+end
+
+--- 生成并设置链接线，返回这个线的uid
+function XGoldenMinerSystemMap:CreateAndSetLinkRope(transformA, transformB, linkPointA, linkPointB)
+    ---@type UnityEngine.RectTransform
+    local obj = self._LinkRopeObjPool:GetItemFromPool()
+    obj.gameObject:SetActiveEx(true)
+    
+    self._MainControl.CalculateHelper:LinkTwoGameObjectByLineObjWorldPos(obj, transformA, transformB, linkPointA, linkPointB)
+
+    local uid = self:GetLinkRopeUid()
+    
+    if XMain.IsDebug then
+        obj.gameObject.name = self._LinkRopeObj.gameObject.name ..': '..uid
+    end
+    
+    self._LinkRopeShowDict[uid] = obj
+    
+    return uid
+end
+
+--- 刷新现有的连接线
+function XGoldenMinerSystemMap:UpdateLinkRope(uid, transformA, transformB, linkPointA, linkPointB)
+    local obj = self._LinkRopeShowDict[uid]
+
+    if obj then
+        self._MainControl.CalculateHelper:LinkTwoGameObjectByLineObjWorldPos(obj, transformA, transformB, linkPointA, linkPointB)
+    end
+end
+
+function XGoldenMinerSystemMap:RecycleLinkRope(uid)
+    local go = self._LinkRopeShowDict[uid]
+
+    if go then
+        self._LinkRopeObjPool:ReturnItemToPool(go)
+    end
+end
+
 --endregion
 
 return XGoldenMinerSystemMap

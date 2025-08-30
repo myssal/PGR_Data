@@ -136,8 +136,13 @@ function XUiExhibition:UpdateGridComponent(portId, showComponentsType, exhibitio
         gridComponent = gridList[portId]
         gridComponent:Refresh(exhibitionConfig or nil)
     else
-        local gridGo = gridParent.childCount > 0 and gridParent:GetChild(0) or CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab(showComponentsType.PrefabName))
-        gridGo.transform:SetParent(gridParent, false)
+        local gridGo
+        if gridParent.childCount > 0 then
+            gridGo = gridParent:GetChild(0)
+            gridGo.transform:SetParent(gridParent, false)
+        else
+            gridGo = gridParent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, showComponentsType.PrefabName))
+        end
         if gridGo == nil or not gridGo:Exist() then
             return
         end

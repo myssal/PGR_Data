@@ -13,17 +13,16 @@ function XRedPointConditionRpgMakerGame.GetSubEvents()
 end
 
 function XRedPointConditionRpgMakerGame.Check()
-    --if not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.RpgMakerActivity) then
-    --    return false
-    --end
-    --if not XDataCenter.RpgMakerGameManager.CheckActivityIsOpen(true) then
-    --    return false
-    --end
-    --local taskRedot = XDataCenter.RpgMakerGameManager.CheckRedPoint()
-    --local chapterGroupRedot = XDataCenter.RpgMakerGameManager.CheckAllChapterGroupRedPoint()
-    --local chapterRedot = XDataCenter.RpgMakerGameManager.CheckFirstChapterGroupRedPoint()
-    --return taskRedot or chapterGroupRedot or chapterRedot
-    return false
+    if not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.RpgMakerActivity) then
+        return false
+    end
+    if not XDataCenter.RpgMakerGameManager.CheckActivityIsOpen(true) then
+        return false
+    end
+    local taskRedot = XDataCenter.RpgMakerGameManager.CheckRedPoint()
+    local chapterGroupRedot = XDataCenter.RpgMakerGameManager.CheckAllChapterGroupRedPoint()
+    local chapterRedot = XDataCenter.RpgMakerGameManager.CheckFirstChapterGroupRedPoint()
+    return taskRedot or chapterGroupRedot or chapterRedot
 end
 
 return XRedPointConditionRpgMakerGame

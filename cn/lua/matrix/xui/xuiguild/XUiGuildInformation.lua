@@ -70,7 +70,14 @@ function XUiGuildInformation:OnBtnSignSureClick()
             XUiManager.TipMsg(CS.XTextManager.GetText("GuildInformationOverCount", self.wordMaxCount, self.typeText))
             return
         end
-        if string.match(newContent,"%s") then
+        local condition = string.match(newContent,"%s")
+        if XOverseaManager.IsKRRegion() then
+            condition = not string.match(newContent,"%S")
+        elseif XOverseaManager.IsENRegion() then
+            condition = not string.match(newContent, "%g")
+        end
+
+        if condition  then
             XUiManager.TipText("GuildDeclarationSpecialTips",XUiManager.UiTipType.Wrong)
             return
         end

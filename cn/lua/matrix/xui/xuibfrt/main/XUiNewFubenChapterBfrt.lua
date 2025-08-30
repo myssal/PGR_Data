@@ -119,6 +119,17 @@ function XUiNewFubenChapterBfrt:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnBtnBackClick)
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnBtnMainUiClick)
     XUiHelper.RegisterClickEvent(self, self.RewardsBubble, self.OnBtnImportRewardIdClick)
+    -- 海外版本副本界面添加帮助按钮
+    if XOverseaManager.IsJP_KRRegion() then
+        self.BtnHelp.gameObject:SetActiveEx(true)
+        XUiHelper.RegisterClickEvent(self, self.BtnHelp, self.OnBtnHelpClick)
+    end
+end
+
+--据点点击了帮助按钮
+function XUiNewFubenChapterBfrt:OnBtnHelpClick()
+    local helpContent = CS.XGame.ClientConfig:GetString("BfrtShowHelpTip01")
+    XUiManager.ShowHelpTip(helpContent)
 end
 
 function XUiNewFubenChapterBfrt:OnBtnBackClick()

@@ -360,7 +360,9 @@ function XUiGridShop:RefreshPanelSale()
     if self.TxtSaleRate then
         if self.Data.Tags == XShopManager.ShopTags.DisCount then
             if self.Sales < 100 then
-                self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
+                -- 折扣显示 区分海外国服
+                self.TxtSaleRate.text = XUiHelper.GetDiscountText(self.Sales)
+                --self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
             else
                 hideSales = true
             end

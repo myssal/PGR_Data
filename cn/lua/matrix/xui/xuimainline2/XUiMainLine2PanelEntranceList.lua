@@ -84,7 +84,7 @@ function XUiMainLine2PanelEntranceList:InitEntrances()
         local prefab = parentGo:LoadPrefab(prefabName)
 
         parentGo.gameObject:SetActiveEx(true)
-        local stage = XUiMainLine2GridEntrance.New(prefab, self, data, self.ChapterId, self.MainId, parentGo, lineGo)
+        local stage = XUiMainLine2GridEntrance.New(prefab, self, data, self.ChapterId, self.MainId, parentGo, lineGo, uiName)
         stage:Open()
         table.insert(self.GridEntrances, stage)
 

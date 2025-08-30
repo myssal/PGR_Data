@@ -54,9 +54,6 @@ function XGoldenMinerSystemPartner:OnUpdate(time)
 end
 
 function XGoldenMinerSystemPartner:OnRelease()
-    for path, _ in pairs(self._ResourcePool) do
-        self:GetLoader():Unload(path)
-    end
     self._ResourcePool = nil
     self._PartnerUidList = nil
     self._PartnerRoot = nil
@@ -66,6 +63,22 @@ end
 --region Getter
 function XGoldenMinerSystemPartner:GetPartnerUidList()
     return self._PartnerUidList
+end
+
+function XGoldenMinerSystemPartner:GetPartnerComponentsByType(type)
+    if not XTool.IsTableEmpty(self._PartnerUidList) then
+        local result = {}
+
+        for _, uid in ipairs(self._PartnerUidList) do
+            local partnerEntity = self._MainControl:GetPartnerEntityByUid(uid)
+            local partnerComponent = partnerEntity:GetFirstChildEntityWithType(type)
+            if partnerComponent then
+                table.insert(result, partnerComponent)
+            end
+        end
+        
+        return result
+    end
 end
 
 function XGoldenMinerSystemPartner:_TryGetPartnerComponentByType(type)
@@ -92,6 +105,8 @@ function XGoldenMinerSystemPartner:_CreatePartner(type)
         self:_CreateComponentScanLine(partner)
     elseif type == XEnumConst.GOLDEN_MINER.PARTNER_TYPE.PARTNER_RADAR then
         self:_CreateComponentPartnerRadar(partner)
+    elseif type == XEnumConst.GOLDEN_MINER.PARTNER_TYPE.STONE_LINK then
+        self:_CreateComponentStoneLink(partner)
     end
     self._PartnerUidList[#self._PartnerUidList + 1] = partner:GetUid()
     return partner
@@ -143,6 +158,25 @@ function XGoldenMinerSystemPartner:_CreateComponentPartnerRadar(partner)
     return partnerRadar
 end
 
+---@param partner XGoldenMinerEntityPartner
+---@return XGoldenMinerComponentPartnerStoneLink
+function XGoldenMinerSystemPartner:_CreateComponentStoneLink(partner)
+    local partnerStoneLink = partner:AddChildEntity(self._MainControl.COMPONENT_TYPE.PARTNER_STONELINK)
+    local partnerType = XEnumConst.GOLDEN_MINER.PARTNER_TYPE.STONE_LINK
+    local ignoreStageList = self._MainControl:GetCfgPartnerIgnoreStoneList(partnerType)
+    local cfg = self._MainControl:GetCfgPartner(partnerType)
+    partnerStoneLink:InitByCfg(cfg, ignoreStageList)
+    
+    -- 电磁链接目前没有图标显示，先创建空节点
+    local emptyGo = CS.UnityEngine.GameObject()
+    emptyGo.transform:SetParent(self._PartnerRoot)
+    emptyGo.transform:SetLocalPosition(0, 500, 0)
+    emptyGo.name = 'PartnerStoneLinkEmptyGameObject'
+    partnerStoneLink:InitObj(emptyGo)
+
+    return partnerStoneLink
+end
+
 ---@return UnityEngine.Transform
 function XGoldenMinerSystemPartner:_LoadPartnerPrefab(path)
     if string.IsNilOrEmpty(path) or not self._PartnerRoot then
@@ -168,6 +202,7 @@ function XGoldenMinerSystemPartner:_UpdatePartnerNone(partner)
     partner:SetStatus(XEnumConst.GOLDEN_MINER.GAME_PARTNER_STATUS.ALIVE)
     self:_SetPartnerShipAlive(partner:GetComponentPartnerShip())
     self:_SetPartnerRadarAlive(partner:GetComponentPartnerRadar())
+    self:_SetPartnerStoneLinkAlive(partner:GetComponentPartnerStoneLink())
 end
 
 ---@param partner XGoldenMinerEntityPartner
@@ -175,6 +210,7 @@ function XGoldenMinerSystemPartner:_UpdatePartnerAlive(partner, time)
     self:_UpdatePartnerShip(partner:GetComponentPartnerShip(), time)
     self:_UpdateScanLine(partner:GetComponentScanLine(), time)
     self:_UpdatePartnerRadar(partner:GetComponentPartnerRadar(), time)
+    self:_UpdatePartnerStoneLink(partner:GetComponentPartnerStoneLink(), time)
 end
 
 ---@param partner XGoldenMinerEntityPartner
@@ -246,12 +282,18 @@ function XGoldenMinerSystemPartner:_UpdatePartnerShipGrab(partnerShip, time)
     partnerShip:GrabbingTarget()
     partnerShip:DownGrabTime(time)
     if partnerShip:CheckBeChangeBack() then
-        local stoneEntity = partnerShip:GetCurAimTarget()
-        self._MainControl:AddMapScore(self._MainControl:HandleStoneEntityToGrabbed(stoneEntity, true))
-        if self._MainControl:CheckIsOpenSlotsScore() then
-            self._MainControl.SystemSlotScore:HandleGrabbedStoneType(XEnumConst.GOLDEN_MINER.SLOT_SCORE_ANY_TYPE) -- 用飞船抓的算是赖子（任意类型）
+        local stoneEntities = partnerShip:GetRealTargets()
+
+        if not XTool.IsTableEmpty(stoneEntities) then
+            for i, stoneEntity in pairs(stoneEntities) do
+                self._MainControl:AddMapScore(self._MainControl:HandleStoneEntityToGrabbed(stoneEntity, true))
+                if self._MainControl:CheckIsOpenSlotsScore() then
+                    self._MainControl.SystemSlotScore:HandleGrabbedStoneType(XEnumConst.GOLDEN_MINER.SLOT_SCORE_ANY_TYPE) -- 用飞船抓的算是赖子（任意类型）
+                end
+            end
+            
+            partnerShip:GrabTarget()
         end
-        partnerShip:GrabTarget()
         partnerShip:ChangeBack()
     end
 end
@@ -308,6 +350,11 @@ function XGoldenMinerSystemPartner:_OnScanLineHit(scanLine, collider)
     end
     local sunMoonComponent = stoneEntity:GetComponentSunMoon()
     if sunMoonComponent and sunMoonComponent.StoneRealType == XEnumConst.GOLDEN_MINER.STONE_SUN_MOON_REAL_TYPE.VIRTUAL then
+        return false
+    end
+    
+    -- 连线的物品不处理
+    if stoneEntity:GetComponentLink() then
         return false
     end
 
@@ -370,6 +417,70 @@ function XGoldenMinerSystemPartner:GetPartnerRadarScore(remainTime)
     return score
 end
 
+--endregion
+
+--endregion
+
+--region PartnerStoneLink
+
+--region Update
+---@param partnerRadar XGoldenMinerComponentPartnerRadar
+function XGoldenMinerSystemPartner:_SetPartnerStoneLinkAlive(partnerRadar)
+    if not partnerRadar then
+        return
+    end
+    partnerRadar:ChangeIdle()
+end
+
+function XGoldenMinerSystemPartner:_UpdatePartnerStoneLink(partnerRadar, time)
+    if not partnerRadar then
+        return
+    end
+    partnerRadar:Update(time)
+end
+
+function XGoldenMinerSystemPartner:ReallocateLinkByOldLinkList(linkList)
+    if XTool.IsTableEmpty(linkList) then
+        return
+    end
+
+    local newLink = {}
+    
+    for i = 1, #linkList do
+        if linkList[i] ~= false then
+            table.insert(newLink, linkList[i])
+        else
+            if not XTool.IsTableEmpty(newLink) then
+                -- 如果数量不足以成链，则取消表内所有链接
+                if XTool.GetTableCount(newLink) < 2 then
+                    local entity = self._MainControl:GetStoneEntityByUid(newLink[1])
+
+                    if entity then
+                        entity:RemoveComponentLink()
+                    end
+                else
+                    -- 重新分配链接表
+                    for _, v in pairs(newLink) do
+                        local entity = self._MainControl:GetStoneEntityByUid(v)
+
+                        if entity then
+                            local linkCom = entity:GetComponentLink()
+
+                            if not linkCom then
+                                linkCom = v:AddChildEntity(self._OwnControl.COMPONENT_TYPE.LINK)
+                            end
+
+                            linkCom:SetLinkList(newLink)
+                            linkCom:InitLinkRopeShow()
+                        end
+                    end
+                end
+            end
+            
+            newLink = {}
+        end
+    end
+end
 --endregion
 
 --endregion

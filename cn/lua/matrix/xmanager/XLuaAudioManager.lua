@@ -169,6 +169,8 @@ XLuaAudioManager.UiBasicsMusic = {
     ChessPursuit_BossJump = 841,
     ChessPursuit_FightWarning = 842,
 
+    UiLuckDraw_DragCoin = 1700028,  -- 海外元旦抽奖音效
+
     --2021端午活动
     RpgMakerGame_Move = 875,    --移动音效
     RpgMakerGame_Death = 876,   --死亡音效
@@ -190,6 +192,14 @@ XLuaAudioManager.UiBasicsMusic = {
     RpgMakerGame_Transfer = 2541, --传送出现音效
     RpgMakerGame_TransferFail = 2542, --传送失败音效
     RpgMakerGame_BubbleBroken = 2695, --泡泡爆炸音效
+    RpgMakerGame_SepaktakrawKnock = 5920, --藤球被击飞
+    RpgMakerGame_MonsterKnock = 837038 , --怪物被击飞
+    RpgMakerGame_MonsterRun = 5921, --怪物逃跑
+    RpgMakerGame_Rebound = 5922, --撞草反弹
+    RpgMakerGame_SwitchFrame = 5923, --切换火焰形态
+    RpgMakerGame_SwitchPhysics = 5924, --切换物理形态
+    RpgMakerGame_ChangeDirection = 5925, --切换朝向
+    RpgMakerGame_MonsterAttack = 837074, --怪物攻击
     
     -- 公会战二期
     GuildWar_FireToBase = 2630, -- 炮击基地
@@ -330,6 +340,9 @@ end
 ---@param finishCb fun 选传
 ---@param source3D CriAtomSource 选传
 function XLuaAudioManager.PlayCvWithCvType(cvId, cvType, finishCb, source3D)
+    if not XTool.IsNumberValid(cvId) then
+        cvType = CS.XAudioManager.CvType
+    end
     return XAudioManager.PlayCvWithCvType(cvId, cvType, finishCb, source3D)
 end
 

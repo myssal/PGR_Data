@@ -322,6 +322,18 @@ function XUiBfrtDeploy:AutoAddListener()
     self.BtnTongBlue.CallBack = function()
         self:OnBtnQuickClearClick()
     end
+    -- 海外版本据点界面添加帮助按钮
+    if XOverseaManager.IsJPRegion() then
+        self.BtnHelp.gameObject:SetActiveEx(true)
+        self.BtnHelp.CallBack = function()
+            self:OnBtnHelpClick()
+        end
+    end
+end
+
+function XUiBfrtDeploy:OnBtnHelpClick()
+    local helpContent = CS.XGame.ClientConfig:GetString("BfrtShowHelpTip03")
+    XUiManager.ShowHelpTip(helpContent)
 end
 
 function XUiBfrtDeploy:OnBtnFightClick()

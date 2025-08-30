@@ -127,7 +127,11 @@ function XUiFubenMainLineDetailDP:UpdateCommon()
     local stageCfg = XMVCA.XFuben:GetStageCfg(self.Stage.StageId)
     local stageInfo = XMVCA.XFuben:GetStageInfo(self.Stage.StageId)
     local stageTitle = XFubenShortStoryChapterConfigs.GetStageTitleByStageId(self.Stage.StageId)
-    self.TxtTitle.text = stageTitle .. "-" .. stageCfg.OrderId .. self.Stage.Name
+    if XOverseaManager.IsOverSeaRegion() then
+        self.TxtTitle.text = stageTitle .. "-" .. stageCfg.OrderId .. " " .. self.Stage.Name
+    else
+        self.TxtTitle.text = stageTitle .. "-" .. stageCfg.OrderId .. self.Stage.Name
+    end
     self.TxtDesc.text = self.Stage.Description
     self.TxtATNums.text = XMVCA.XFuben:GetRequireActionPoint(self.Stage.StageId)
 

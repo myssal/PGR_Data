@@ -1,21 +1,25 @@
+--[[
 XMouthAnimeConfigs = XMouthAnimeConfigs or {}
 
-local TABLE_MOUTHDATA = "Client/MouthData/MouthData.tab"
 local MouthDataCfg = {}
 local MouthDataDic = {}
 
 XMouthAnimeConfigs.FrameUnit = 100
 
 function XMouthAnimeConfigs.Init()
-    MouthDataCfg = XTableManager.ReadByIntKey(TABLE_MOUTHDATA, XTable.XTableMouthData, "Id")
-    XMouthAnimeConfigs.CreateMouthDataDic()
 end
 
 function XMouthAnimeConfigs.GetMouthDataCfg()
+    if not MouthDataCfg then
+        XMouthAnimeConfigs.InitMouthData()
+    end
     return MouthDataCfg
 end
 
-function XMouthAnimeConfigs.CreateMouthDataDic()
+function XMouthAnimeConfigs.InitMouthData()
+    local TABLE_MOUTHDATA = "Client/MouthData/MouthData.tab"
+    MouthDataCfg = XTableManager.ReadByIntKey(TABLE_MOUTHDATA, XTable.XTableMouthData, "Id")
+    
     local count = {}
     for _,cfg in pairs(MouthDataCfg) do
         if not MouthDataDic[cfg.CvId] then
@@ -34,5 +38,9 @@ function XMouthAnimeConfigs.CreateMouthDataDic()
 end
 
 function XMouthAnimeConfigs.GetMouthDataDic()
+    if not MouthDataDic then
+        XMouthAnimeConfigs.InitMouthData()
+    end
     return MouthDataDic
 end
+]]

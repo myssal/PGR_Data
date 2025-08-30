@@ -202,7 +202,8 @@ function XGoldenMinerComponentScanLine:_CreateScanLine()
     go.name = XEnumConst.GOLDEN_MINER.HOOK_IGNORE_HIT
     scanLine.Transform = go.transform
     XTool.InitUiObject(scanLine)
-    scanLine.Transform.anchoredPosition = Vector2(scanLine.Transform.anchoredPosition.x, self._MoveYRange.Min)
+    
+    scanLine.Transform:SetAnchoredPositionY(self._MoveYRange.Min)
     scanLine.ScanLineCollider.size = Vector2(self._MoveXRange.Max - self._MoveXRange.Min, scanLine.ScanLineCollider.size.y)
     scanLine.TriggerEffectDir = {
         scanLine.TriggerEffect,

@@ -267,7 +267,7 @@ local function GetNodeStyle(node, content, defaultStyle)
 
     style.ColorStr = style.ColorStr or defaultStyle.ColorStr
     style.FontSize = style.FontSize or defaultStyle.FontSize
-    style.IsBlod = defaultStyle.IsBlod or style.IsBlod or node.Head.Tag == "b"
+    style.IsBlod = defaultStyle.IsBlod or style.IsBlod or node.Head.Tag == "b" or node.Head.Tag == "strong"
 
     if node.Head.Tag == "a" then
         style.IsHref = true

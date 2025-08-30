@@ -67,7 +67,11 @@ function XUiGridLikeAudioItem:UpdateLockStatus(isLock)
     self.AudioLock.gameObject:SetActiveEx(isLock)
     if isLock and self.AudioData then
         self.TxtLockTitle.text = self._Control:GetCharacterVoiceMapText(self.AudioData.config.Name)
-        self.TxtLock.text = XUiHelper.ConvertSpaceToLineBreak(self._Control:GetCharacterVoiceMapText(self.AudioData.config.ConditionDescript))
+        if XOverseaManager.IsENRegion() then
+            self.TxtLock.text = self._Control:GetCharacterVoiceMapText(self.AudioData.config.ConditionDescript)
+        else
+            self.TxtLock.text = XUiHelper.ConvertSpaceToLineBreak(self._Control:GetCharacterVoiceMapText(self.AudioData.config.ConditionDescript))
+        end
     end
 end
 

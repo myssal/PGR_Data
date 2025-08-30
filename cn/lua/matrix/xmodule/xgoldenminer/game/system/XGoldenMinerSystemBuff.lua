@@ -1,5 +1,6 @@
 ---@class XGoldenMinerSystemBuff:XEntityControl
 ---@field _MainControl XGoldenMinerGameControl
+---@field private _Model XGoldenMinerModel
 local XGoldenMinerSystemBuff = XClass(XEntityControl, "XGoldenMinerSystemBuff")
 
 --region Override
@@ -13,6 +14,10 @@ function XGoldenMinerSystemBuff:OnInit()
         [XEnumConst.GOLDEN_MINER.BUFF_TYPE.SHOP_DISCOUNT] = true,
         [XEnumConst.GOLDEN_MINER.BUFF_TYPE.CORD_MODE] = true,
         [XEnumConst.GOLDEN_MINER.BUFF_TYPE.RAND_ITEM] = true,
+    }
+    --- 进入游戏立刻触发的buff
+    self._BuffTriggerOnEnterGameTypeDir = {
+        [XEnumConst.GOLDEN_MINER.BUFF_TYPE.MODIFY_HOOK_GRAB_SIZE] = true,
     }
     ---刷新游戏状态的buff
     self._BuffUpdateGameStatusTypeDir = {
@@ -35,11 +40,22 @@ function XGoldenMinerSystemBuff:OnInit()
     self._BuffUpdateStoneWeightTypeDir = {
         [XEnumConst.GOLDEN_MINER.BUFF_TYPE.WEIGHT_FLOAT] = true,
     }
+    ---刷新电磁链接的Buff
+    self._BuffUpdatePartnerStoneLinkTypeDir = {
+        [XEnumConst.GOLDEN_MINER.BUFF_TYPE.PARTNER_STONE_LINK_PARAMS_MODIFY] = true,
+    }
+    
+    ---刷新钩爪状态的buff
+    self.BuffUpdateHookStatusDir = {
+        [XEnumConst.GOLDEN_MINER.BUFF_TYPE.MODIFY_HOOK_GRAB_SIZE] = true,
+    }
 
     ---@type table<number, number>
     self._BuffEntityIdDir = {}
     ---@type table<number, table<number, boolean>>
     self._BuffEntityIdTypeDir = {}
+    
+    self._StoneCopyType = self._MainControl:GetClientStoneCopyType()
 end
 
 function XGoldenMinerSystemBuff:EnterGame()
@@ -48,6 +64,10 @@ function XGoldenMinerSystemBuff:EnterGame()
         self:CreateBuffEntity(buffId)
     end
     self:_AddEventListener()
+end
+
+function XGoldenMinerSystemBuff:InitAfterEnterGame()
+    self:_UpdateBuffTriggerOnEnterGame()
 end
 
 function XGoldenMinerSystemBuff:OnUpdate(time)
@@ -63,6 +83,8 @@ function XGoldenMinerSystemBuff:OnRelease()
     self._BuffUpdateHookRevokePercentTypeDir = nil
     self._BuffUpdateStoneScoreTypeDir = nil
     self._BuffUpdateStoneWeightTypeDir = nil
+    self._BuffUpdatePartnerStoneLinkTypeDir = nil
+    self.BuffUpdateHookStatusDir = nil
     self._BuffEntityIdDir = nil
     self._BuffEntityIdTypeDir = nil
 end
@@ -106,6 +128,20 @@ function XGoldenMinerSystemBuff:CheckBuffStatusByType(buffType, statusType)
     for uid, _ in pairs(self._BuffEntityIdTypeDir[buffType]) do
         if self._MainControl:GetBuffEntityByUid(uid).Status == statusType then
             return self._MainControl:GetBuffEntityByUid(uid)
+        end
+    end
+    return false
+end
+
+--- 检查指定类型的buff是否有效：存在且未结束生命周期
+function XGoldenMinerSystemBuff:CheckBuffValidByType(buffType)
+    if XTool.IsTableEmpty(self._BuffEntityIdTypeDir[buffType]) then
+        return false
+    end
+    for uid, _ in pairs(self._BuffEntityIdTypeDir[buffType]) do
+        local buffEntity = self._MainControl:GetBuffEntityByUid(uid)
+        if buffEntity.Status ~= XEnumConst.GOLDEN_MINER.GAME_BUFF_STATUS.DIE then
+            return buffEntity
         end
     end
     return false
@@ -237,6 +273,76 @@ function XGoldenMinerSystemBuff:TriggerGlobalRoleSkillBuff(buff)
     return true
 end
 
+---@param stoneEntity XGoldenMinerEntityStone
+---@return boolean
+function XGoldenMinerSystemBuff:TriggerStoneBuffByType(stoneEntity, buffType)
+    if buffType == XEnumConst.GOLDEN_MINER.BUFF_TYPE.HOOK_DRAG_EX_STONE_COPY then
+        local buffUidList = self:GetBuffUidListByType(buffType)
+
+        if XTool.IsTableEmpty(buffUidList) then
+            return false
+        end
+
+        -- 不属于可以复制的类型则跳过
+        if not table.contains(self._StoneCopyType, stoneEntity.Data:GetType()) then
+            return
+        end
+
+        -- 已经被拷贝过，或者本身就是拷贝产物，则不会触发拷贝buff
+        if stoneEntity:CheckIsBeCopy() or stoneEntity:GetIsCopy() then
+            return
+        end
+        
+        local createProbability = 0
+        local isLevelUp = false
+
+        for buffUid, v in pairs(buffUidList) do
+            local buff = self._MainControl:GetBuffEntityByUid(buffUid)
+
+            if buff and buff:IsAlive() then
+                local tmpProbability = buff:GetBuffParams(1)
+                local tmpIsLevelUp = XTool.IsNumberValidEx(buff:GetBuffParams(2)) and true or false
+
+                if tmpProbability > createProbability then
+                    createProbability = tmpProbability
+                end
+
+                if tmpIsLevelUp then
+                    isLevelUp = true
+                end
+            end
+        end
+
+        if XTool.IsNumberValidEx(createProbability) then
+            --- 万分比
+            local value = self._MainControl.Random:Next(0, XEnumConst.GOLDEN_MINER.TEN_THOUSAND_PERCENT)
+
+            if value <= createProbability then
+                -- 生成
+                local newStoneId = stoneEntity.Data:GetId()
+                ---@type XGoldenMinerMapStoneData
+                local cloneData = XTool.CloneEx(stoneEntity.Data, false)
+                
+                if isLevelUp then
+                    local stoneCfg = self._Model:GetStoneCfg(newStoneId)
+                    
+                    if stoneCfg and XTool.IsNumberValidEx(stoneCfg.LevelUpId) then
+                        newStoneId = stoneCfg.LevelUpId
+                        cloneData:ChangeStoneId(newStoneId)
+                        cloneData:SetStoneConfig(self._Model:GetStoneCfg(newStoneId))
+                        cloneData:SetIsUseOriginalScale(true)
+                        cloneData:SetMapIndex(nil) -- 升级后的资源跟配置对不上，因此置空防止按照配置执行一些逻辑
+                    end
+                end
+                
+                self._MainControl.SystemMap:AddCopyStoneCommand(cloneData, stoneEntity)
+                
+                stoneEntity:AddBeCopyTimes()
+            end
+        end
+    end
+end
+
 function XGoldenMinerSystemBuff:_UpdateBuffTrigger()
     if XTool.IsTableEmpty(self._BuffEntityIdDir) then
         return
@@ -256,6 +362,25 @@ function XGoldenMinerSystemBuff:_UpdateBuffTrigger()
     end
 end
 
+function XGoldenMinerSystemBuff:_UpdateBuffTriggerOnEnterGame()
+    if XTool.IsTableEmpty(self._BuffEntityIdDir) then
+        return
+    end
+    local isTrigger = false
+    for _, uid in pairs(self._BuffEntityIdDir) do
+        local buff = self._MainControl:GetBuffEntityByUid(uid)
+        if self._BuffTriggerOnEnterGameTypeDir[buff:GetType()] and buff:IsCreate() then
+            XMVCA.XGoldenMiner:DebugWarning("触发Buff,id=" .. buff:GetId())
+            buff:ChangeAlive()
+            self:BuffTriggerFullScreenEffect(buff)
+            isTrigger = true
+        end
+    end
+    if isTrigger then
+        self:_DoTriggerBuffOnEnterGame()
+    end
+end
+
 function XGoldenMinerSystemBuff:_DoTriggerBuff()
     self:_DebugAliveBuff()
     self:_UpdateGameStatus()
@@ -272,9 +397,15 @@ function XGoldenMinerSystemBuff:_DoTriggerBuff()
     self:_UpdateHookRevokePercent()
     self:_UpdateStoneScore()
     self:_UpdateStoneWeight()
+    self:_UpdatePartnerStoneLink()
+    self:_UpdateHookStatus()
     self:_UpdateStoneRealStatus()
     self:_UpdateIgnoreGameClearIgnoreStoneTypeDir()
     self:_UpdateReflectEdge()
+end
+
+function XGoldenMinerSystemBuff:_DoTriggerBuffOnEnterGame()
+    self:_UpdateHookStatus()
 end
 
 function XGoldenMinerSystemBuff:_UpdateGameStatus()
@@ -307,18 +438,24 @@ function XGoldenMinerSystemBuff:_UpdateGameTime()
 end
 
 function XGoldenMinerSystemBuff:_UpdateShipSpeed()
+    local speedAdd = 0
+    
     ---@type XGoldenMinerEntityBuff
     local buff
     buff = self:GetBuffAliveByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.HUMAN_SPEED)
     if buff and buff:IsAlive() then
-        self._MainControl:GetShip():GetComponentMove():AddCurBuffAddSpeedPercent(buff:GetBuffParams(1))
-        XMVCA.XGoldenMiner:DebugWarning("飞船移速加速百分之:" .. buff:GetBuffParams(1))
+        speedAdd = speedAdd + buff:GetBuffParams(1)
     end
 
     buff = self:GetBuffAliveByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.SHIP_SPEED_MOVE)
     if buff and buff:IsAlive() then
-        self._MainControl:GetShip():GetComponentMove():AddCurBuffAddSpeedPercent(buff:GetBuffParams(1))
-        XMVCA.XGoldenMiner:DebugWarning("飞船移速加速百分之:" .. buff:GetBuffParams(1))
+        speedAdd = speedAdd + buff:GetBuffParams(1)
+    end
+
+    self._MainControl:GetShip():GetComponentMove():SetCurBuffAddSpeedPercent(speedAdd)
+
+    if XTool.IsNumberValidEx(speedAdd) then
+        XMVCA.XGoldenMiner:DebugWarning("飞船移速加速百分之:" .. tostring(speedAdd))
     end
 end
 
@@ -571,8 +708,140 @@ function XGoldenMinerSystemBuff:_UpdateStoneWeight()
     for uid, _ in pairs(self._MainControl:GetStoneEntityUidDirByType()) do
         local stoneEntity = self._MainControl:GetStoneEntityByUid(uid)
         if not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBED) then
-            stoneEntity:GetComponentStone().CurWeight = self:_ComputeStoneWeight(stoneEntity)
-            XMVCA.XGoldenMiner:DebugLog("已触发Buff下抓取物重量:" .. stoneEntity:GetComponentStone().CurWeight .. ",StoneId=" .. stoneEntity.Data:GetId())
+            local newWeight = self:_ComputeStoneWeight(stoneEntity)
+            stoneEntity:GetComponentStone():SetCurWeight(newWeight)
+            XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.StoneWeight, "已触发Buff下抓取物重量:" .. stoneEntity:GetComponentStone().CurWeight .. ",StoneId=" .. stoneEntity.Data:GetId())
+        end
+    end
+end
+
+function XGoldenMinerSystemBuff:_UpdatePartnerStoneLink()
+    ---@type XGoldenMinerComponentPartnerStoneLink[]
+    local stonLinkComs = self._MainControl.SystemPartner:GetPartnerComponentsByType(self._MainControl.COMPONENT_TYPE.PARTNER_STONELINK)
+
+    if XTool.IsTableEmpty(stonLinkComs) then
+        return
+    end
+    
+    local buffUidList = self:GetBuffUidListByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.PARTNER_STONE_LINK_PARAMS_MODIFY)
+
+    if not XTool.IsTableEmpty(buffUidList) then
+        local isAnyBuffAlive = false
+        
+        for buffUid, v in pairs(buffUidList) do
+            local buff = self._MainControl:GetBuffEntityByUid(buffUid)
+
+            if buff and buff:IsAlive() then
+                isAnyBuffAlive = true
+
+                for i, stoneLinkCom in pairs(stonLinkComs) do
+                    local nearestCount = buff:GetBuffParams(1)
+                    local farestCount = buff:GetBuffParams(2)
+                    local idleCd = buff:GetBuffParams(3)
+
+                    if XTool.IsNumberValidEx(nearestCount) then
+                        if nearestCount >= stoneLinkCom:GetCurSelectNearestCount() then
+                            stoneLinkCom:UpdateSelectNearestCount(nearestCount)
+                        end
+                    end
+
+                    if XTool.IsNumberValidEx(farestCount) then
+                        if farestCount >= stoneLinkCom:GetCurSelectFarestCount() then
+                            stoneLinkCom:UpdateSelectFarestCount(farestCount)
+                        end
+                    end
+
+                    if XTool.IsNumberValidEx(idleCd) then
+                        if idleCd <= stoneLinkCom:GetCurMaxIdleCd() then
+                            stoneLinkCom:UpdateMaxIdleCd(idleCd)
+                        end
+                    end
+
+                    local effectTime = buff:GetBuffParams(4)
+
+                    if XTool.IsNumberValidEx(effectTime) and effectTime < stoneLinkCom:GetCurMaxScanCd() then
+                        stoneLinkCom:UpdateMaxScanCd(effectTime)
+                    end
+                end
+            end
+        end
+
+        -- 如果有任意buff生效了，那么逻辑到此为止
+        if isAnyBuffAlive then
+            return
+        end
+    end
+    
+    -- 否则无论是没有buff，还是没有生效的buff，都将电磁链接的数据重置
+    for i, stoneLinkCom in pairs(stonLinkComs) do
+        stoneLinkCom:ResetCDMax()
+        stoneLinkCom:ResetLinkCount()
+    end
+end
+
+function XGoldenMinerSystemBuff:_UpdateHookStatus()
+    local hookUidList = self._MainControl.SystemHook:GetHookEntityUidList()
+
+    if XTool.IsTableEmpty(hookUidList) then
+        return
+    end
+    
+    -- 修改钩爪尺寸
+    local buffIds = self:GetBuffUidListByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.MODIFY_HOOK_GRAB_SIZE)
+    
+    local sizePercent = 1
+    local sizePercentAdds = 0
+    
+    if not XTool.IsTableEmpty(buffIds) then
+        for buffId, _ in pairs(buffIds) do
+            local buff = self._MainControl:GetBuffEntityByUid(buffId)
+
+            if buff and buff:IsAlive() then
+                sizePercentAdds = sizePercentAdds + buff:GetBuffParams(1)
+            end
+        end
+
+        if sizePercentAdds ~= 0 then
+            sizePercentAdds = sizePercentAdds / XEnumConst.GOLDEN_MINER.PERCENT
+
+            sizePercent = sizePercent + sizePercentAdds
+        end
+    end
+
+    for i, hookUid in pairs(hookUidList) do
+        local hookEntity = self._MainControl:GetHookEntityByUid(hookUid)
+
+        if hookEntity then
+            -- 弹网钩爪特殊处理
+            local netCom = hookEntity:GetComponentNetAim()
+
+            if netCom then
+                netCom:SetGrabSize(sizePercent)
+            else
+                local hookCom = hookEntity:GetComponentHook()
+
+                if hookCom and hookCom.SetGrabSize then
+                    hookCom:SetGrabSize(sizePercent)
+                end
+            end
+        end
+    end
+    
+    -- 弹网钩爪 - 设置抓取重量计算规则
+    local buff = self:GetBuffAliveByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.SET_NET_HOOK_GRAB_WEIGHT_RULE)
+
+    if buff then
+        for i, hookUid in pairs(hookUidList) do
+            local hookEntity = self._MainControl:GetHookEntityByUid(hookUid)
+
+            if hookEntity then
+                -- 弹网钩爪特殊处理
+                local netCom = hookEntity:GetComponentNetAim()
+
+                if netCom then
+                    netCom:SetGrabWeightRule(buff:GetBuffParams(1))
+                end
+            end
         end
     end
 end
@@ -698,10 +967,10 @@ function XGoldenMinerSystemBuff:_ComputeStoneScore(stoneEntity)
     --end
 
     stoneComponent.CurScore = math.ceil(stoneComponent.Score * (1 + percentChange / XEnumConst.GOLDEN_MINER.PERCENT))
-    XMVCA.XGoldenMiner:DebugLog("已触发Buff下抓取物分数:" .. stoneComponent.CurScore .. ",StoneId=" .. stoneEntity.Data:GetId())
+    XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.GrabScore, "已触发Buff下抓取物分数:" .. stoneComponent.CurScore .. ",StoneId=" .. stoneEntity.Data:GetId())
     if carryStone then
         carryStone:GetComponentStone().CurScore = math.ceil(carryStone:GetComponentStone().Score * (1 + percentChange / XEnumConst.GOLDEN_MINER.PERCENT))
-        XMVCA.XGoldenMiner:DebugLog("已触发Buff下抓取物携带物分数:" .. carryStone:GetComponentStone().CurScore .. ",StoneId=" .. carryStone.Data:GetId())
+        XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.GrabScore, "已触发Buff下抓取物携带物分数:" .. carryStone:GetComponentStone().CurScore .. ",StoneId=" .. carryStone.Data:GetId())
     end
 end
 
@@ -788,6 +1057,12 @@ function XGoldenMinerSystemBuff:_OnBuffDie(buff)
     end
     if self._BuffUpdateStoneWeightTypeDir[type] then
         self:_UpdateStoneWeight()
+    end
+    if self._BuffUpdatePartnerStoneLinkTypeDir[type] then
+        self._UpdatePartnerStoneLink()
+    end
+    if self.BuffUpdateHookStatusDir[type] then
+        self._UpdateHookStatus()
     end
     if type == XEnumConst.GOLDEN_MINER.BUFF_TYPE.ELECTROMAGNETIC then
         self._MainControl.SystemMap:ClearElectromagnetic()

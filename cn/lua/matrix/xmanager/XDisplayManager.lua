@@ -77,6 +77,7 @@ XDisplayManagerCreator = function()
                 cb(res)
             end
             XPlayer.SetDisplayCharIdList(res.DisplayCharIdList)
+            XDisplayManager.SetNextDisplayChar(nil)
         end)
     end
 
@@ -92,6 +93,7 @@ XDisplayManagerCreator = function()
                 cb(res)
             end
             XPlayer.SetDisplayCharIdList(res.DisplayCharIdList)
+            XDisplayManager.SetNextDisplayChar(nil)
         end)
     end
 

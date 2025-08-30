@@ -49,7 +49,12 @@ function XUiMainLine3DStoryDetail:Refresh()
     local stageId = stageCfg.StageId
     local chapterOrderId = XDataCenter.FubenMainLineManager.GetChapterOrderIdByStageId(stageId)
 
-    self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. stageCfg.Name
+    if XOverseaManager.IsOverSeaRegion() then
+        -- 由于关卡名前存在数字，用空格隔开避免歧义
+        self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .." ".. stageCfg.Name
+    else
+        self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. stageCfg.Name
+    end
     self.TxtStoryDes.text = stageCfg.Description
     if stageCfg.Icon then
         self.RImgNandu:SetRawImage(stageCfg.Icon)

@@ -1,10 +1,13 @@
 local next = next
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiActivityBase = XLuaUiManager.Register(XLuaUi, "UiActivityBase")
 
 XUiActivityBase.BtnTabIndex = {
     Activity = 1,
     Notice = 2,
     ActivityNotice = 3,
+    -- 合版本
+    ActivityLink = 4,
 }
 
 XUiActivityBase.GameNoticeType = {
@@ -20,7 +23,13 @@ function XUiActivityBase:OnAwake()
         self.BtnGameNotice,
         self.BtnActivityNotice,
     }
+    if XOverseaManager.IsOverSeaRegion() then
+        table.insert(tabGroup, self.BtnLink)
+    end
     self.PanelType:Init(tabGroup, function(tabIndex) self:OnClickTabCallBack(tabIndex) end)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+    end
 
     XRedPointManager.AddRedPointEvent(self.BtnActivity, self.OnCheckNewActivities, self, { XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_ACTIVITIES })
     XRedPointManager.AddRedPointEvent(self.BtnGameNotice, self.OnCheckNewGameNotices, self, { XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_NOTICES })
@@ -64,7 +73,11 @@ function XUiActivityBase:OnStart(skipIndex, subSkipIndex, subSkipId)
     elseif HaveActivityNotice then
         defaultSelectIndex = defaultSelectIndex or XUiActivityBase.BtnTabIndex.ActivityNotice
     else
-        defaultSelectIndex = defaultSelectIndex or XUiActivityBase.BtnTabIndex.Notice
+        if XOverseaManager.IsOverSeaRegion() then
+            defaultSelectIndex = defaultSelectIndex or XUiActivityBase.BtnTabIndex.Activity
+        else
+            defaultSelectIndex = defaultSelectIndex or XUiActivityBase.BtnTabIndex.Notice
+        end
     end
 
     self.BtnGameNotice:SetDisable(not HaveGameNotice)
@@ -121,6 +134,8 @@ function XUiActivityBase:OnClickTabCallBack(tabIndex)
         else
             CsXGameEventManager.Instance:Notify(XEventId.EVENT_NOTICE_TYPE_CHANGE, XUiActivityBase.GameNoticeType.ActivityNotice)
         end
+    elseif tabIndex == XUiActivityBase.BtnTabIndex.ActivityLink then
+        self:OpenOneChildUi("UiActivityBaseLink")
     end
     self.SubSkipIndex = nil
     self.SubSkipId = nil

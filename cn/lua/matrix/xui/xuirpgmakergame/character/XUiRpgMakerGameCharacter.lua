@@ -17,7 +17,7 @@ end
 function XUiRpgMakerGameCharacter:OnStart(stageId)
     self.StageId = stageId
     --限定使用的角色Id
-    self.OnlyUseRoleId = XRpgMakerGameConfigs.GetStageUseRoleId(stageId)
+    self.OnlyUseRoleId = XMVCA.XRpgMakerGame:GetConfig():GetStageUseRoleId(stageId)
     self:InitDynamicTable()
 end
 
@@ -33,7 +33,7 @@ function XUiRpgMakerGameCharacter:AutoAddListener()
     self.BtnEnterFight.CallBack = handler(self, self.OnBtnEnterFightClick)
 
     local curChapterGroupId = XDataCenter.RpgMakerGameManager.GetCurChapterGroupId()
-    self:BindHelpBtn(self.BtnHelp, XRpgMakerGameConfigs.GetChapterGroupHelpKey(curChapterGroupId))
+    self:BindHelpBtn(self.BtnHelp, XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupHelpKey(curChapterGroupId))
 end
 
 function XUiRpgMakerGameCharacter:InitSceneRoot()
@@ -67,7 +67,7 @@ function XUiRpgMakerGameCharacter:InitDynamicTable()
     self.DynamicTable:SetProxy(XUiRpgMakerGameCharacterGrid)
 
     local useRoleId = self.OnlyUseRoleId
-    self.CharacterList = XRpgMakerGameConfigs.GetRpgMakerGameRoleIdList()
+    self.CharacterList = XMVCA.XRpgMakerGame:GetConfig():GetRoleIds()
     self.CharacterId = XTool.IsNumberValid(useRoleId) and useRoleId or XDataCenter.RpgMakerGameManager.GetOnceUnLockRoleId()
     self.DynamicTable:SetDataSource(self.CharacterList)
 end
@@ -140,17 +140,17 @@ end
 function XUiRpgMakerGameCharacter:UpdateCurCharacterInfo(characterId)
     local isUnlockRole = XDataCenter.RpgMakerGameManager.IsUnlockRole(characterId)
     self.CharacterId = characterId
-    self.TextName.text = isUnlockRole and XRpgMakerGameConfigs.GetRpgMakerGameRoleName(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockName")
-    local roleSkillType = XRpgMakerGameConfigs.GetRpgMakerGameRoleSkillType(characterId)
+    self.TextName.text = isUnlockRole and XMVCA.XRpgMakerGame:GetConfig():GetRoleName(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockName")
+    local roleSkillType = XMVCA.XRpgMakerGame:GetConfig():GetRoleSkillType(characterId)
     if XTool.IsNumberValid(roleSkillType) and self.ImgAttribute then
-        self.ImgAttribute:SetSprite(XRpgMakerGameConfigs.GetRpgMakerGameSkillTypeIcon(roleSkillType))
+        self.ImgAttribute:SetSprite(XMVCA.XRpgMakerGame:GetConfig():GetSkillTypeIcon(roleSkillType))
     end
     if self.ImgAttribute then
         self.ImgAttribute.gameObject:SetActiveEx(XTool.IsNumberValid(roleSkillType))
     end
-    self.TextStyle.text = isUnlockRole and XRpgMakerGameConfigs.GetRpgMakerGameRoleStyle(characterId) or ""
-    self.TextInfoName.text = isUnlockRole and XRpgMakerGameConfigs.GetRpgMakerGameRoleInfoName(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockInfoTitle")
-    self.TxtEnergy.text = isUnlockRole and XRpgMakerGameConfigs.GetRpgMakerGameRoleInfo(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockInfoDesc")
+    self.TextStyle.text = isUnlockRole and XMVCA.XRpgMakerGame:GetConfig():GetRoleStyle(characterId) or ""
+    self.TextInfoName.text = isUnlockRole and XMVCA.XRpgMakerGame:GetConfig():GetRoleInfoName(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockInfoTitle")
+    self.TxtEnergy.text = isUnlockRole and XMVCA.XRpgMakerGame:GetConfig():GetRoleInfo(characterId) or CSXTextManagerGetText("RpgMakerGameCharacterLockInfoDesc")
     self:UpdateModel(characterId)
     self.GraphicPanel:Refresh(characterId)
 end
@@ -167,7 +167,7 @@ function XUiRpgMakerGameCharacter:UpdateModel(characterId)
         return
     end
 
-    local modelName = XRpgMakerGameConfigs.GetRpgMakerGameRoleModelAssetPath(characterId)
+    local modelName = XMVCA.XRpgMakerGame:GetConfig():GetRoleModelAssetPath(characterId)
     self.RoleModelPanel:UpdateRoleModelWithAutoConfig(modelName, XModelManager.MODEL_UINAME.XUiCharacter, function(model)
         self.PanelDrag.Target = model.transform
     end)
@@ -178,10 +178,9 @@ function XUiRpgMakerGameCharacter:OnBtnEnterFightClick()
     local stageId = self:GetStageId()
     local characterId = self:GetCharacterId()
     local cb = function()
-        XLuaUiManager.Remove("UiRpgMakerGameDetail")
-        XLuaUiManager.PopThenOpen("UiRpgMakerGamePlayMain")
+        self._Control:LoadScene()
     end
-    XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnterStage(stageId, characterId, cb)
+    XMVCA.XRpgMakerGame:RequestRpgMakerGameEnterStage(stageId, characterId, cb)
 end
 
 function XUiRpgMakerGameCharacter:GetCharacterId()

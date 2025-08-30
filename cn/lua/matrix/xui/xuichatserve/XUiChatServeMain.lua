@@ -502,7 +502,9 @@ function XUiChatServeMain:ShowChangeChatChannel(channelId)
     self.PanelMsgTips.gameObject:SetActive(true)
 
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
-    currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+    if not XOverseaManager.IsOverSeaRegion() then
+        currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+    end
 
     self.TxtMsgCount.text = CS.XTextManager.GetText("ChannelChanged", currentChannelId ~= XDataCenter.ChatManager.GetRecruitChannelId() and tostring(currentChannelId) or CS.XTextManager.GetText("ChannelRecruitIdStr"))
     -- 开计时器关闭
@@ -625,7 +627,9 @@ end
 
 function XUiChatServeMain:UpdateCurrentChannel()
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
-    currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+    if not XOverseaManager.IsOverSeaRegion() then
+        currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+    end
     self.TxtRoomNumber.text = XDataCenter.ChatManager.GetRecruitChannelId() ~= currentChannelId and currentChannelId or CS.XTextManager.GetText("ChannelRecruitIdStr")
 end
 

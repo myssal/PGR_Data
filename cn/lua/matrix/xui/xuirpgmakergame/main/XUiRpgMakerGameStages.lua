@@ -21,7 +21,7 @@ end
 
 function XUiRpgMakerGameStages:InitStage()
     local chapterId = self:GetChapterId()
-    local stageIdList = XRpgMakerGameConfigs.GetRpgMakerGameStageIdList(chapterId)
+    local stageIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterStageIds(chapterId)
     local stageGrid
     local prefabName
     local prefab
@@ -36,7 +36,7 @@ function XUiRpgMakerGameStages:InitStage()
         end
 
         stageGrid.gameObject:SetActiveEx(true)
-        prefabName = XRpgMakerGameConfigs.GetRpgMakerGameStagePrefab(stageId)
+        prefabName = XMVCA.XRpgMakerGame:GetConfig():GetStagePrefab(stageId)
         prefab = stageGrid:LoadPrefab(prefabName)
         if prefab == nil or not prefab:Exist() then
             goto continue

@@ -30,7 +30,8 @@ function XUiPanelTheatre5Gem:InitGemContainers(customContainerCls)
         local root = self['Gem'..i]
 
         if root then
-            local go = CS.UnityEngine.GameObject.Instantiate(self.GridGem, root.transform)
+            local panelGem = root.transform:Find("PanelGem")
+            local go = CS.UnityEngine.GameObject.Instantiate(self.GridGem, panelGem or root.transform)
             go.name = self.GridGem.name
             go.transform.localPosition = Vector3.zero
             root:AddGameObject(go)
@@ -50,8 +51,10 @@ function XUiPanelTheatre5Gem:RefreshGemShow()
     local unlockCount = self._Control:GetGemUnlockSlotCount()
     
     for i, v in ipairs(self.GridContainers) do
-        v:SetItemData(self._Control:GetItemInRuneListByIndex(i))
+        local itemData = self._Control:GetItemInRuneListByIndex(i)
+        v:SetItemData(itemData)
         v:SetLockShow(i > unlockCount, i == unlockCount + 1)
+        v:UpdateInvalid(itemData)
     end
 end
 

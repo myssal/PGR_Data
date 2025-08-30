@@ -1129,7 +1129,13 @@ function XRogueSimControl:GetTaskDesc(id)
     else
         totalNum = config and config.Schedule or 0
     end
-    local totalNumStr = self:ConvertNumToW(totalNum)
+    local totalNumStr
+    -- 海外服不使用W单位
+    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+        totalNumStr = totalNum
+    else
+        totalNumStr = self:ConvertNumToW(totalNum)
+    end 
     return XUiHelper.FormatText(desc, totalNumStr)
 end
 

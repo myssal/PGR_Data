@@ -990,6 +990,32 @@ PlayerCondition = {
         end
         return false, condition.Desc
     end,
+    [10302] = function(condition)
+        -- 黄金矿工判断当前位于第X关前的改造界面
+        local nextLevelTimes = condition.Params[1]
+        local isInverse = XTool.IsNumberValidEx(condition.Params[2])
+        
+        local currentState = XMVCA.XGoldenMiner:GetCurrentState()
+        
+        if not XTool.IsNumberValidEx(currentState) then
+            -- 不在商店
+            if isInverse then
+                return true, condition.Desc
+            end
+            
+            return false, condition.Desc
+        end
+        
+        local passedStageCount = XMVCA.XGoldenMiner:GetCurrentPassedStageCount()
+        -- 下一关要打的关卡次数是否是目标关卡次数
+        local result = (passedStageCount + 1) == nextLevelTimes
+
+        if isInverse then
+            result = not result
+        end
+        
+        return result, condition.Desc
+    end,
     --endregion
     --region   ------------------肉鸽2.0 start-------------------
     [17100] = function(condition)
@@ -2238,6 +2264,12 @@ PlayerCondition = {
         local storyId = condition.Params[1]
         return XMVCA.XRift:IsAvgPlayed(storyId), condition.Desc
     end,
+    -- 大秘境 是否解锁了指定数量的图鉴
+    [17234] = function()
+        local needCount = condition.Params[1]
+        local isFinished = condition.Params[2] == 1
+        return XMVCA.XRift:IsPluginUnlockEnough(needCount, isFinished), condition.Desc
+    end,
     -- 是否处于某个类型的副本里面
     [17229] = function(condition)
         local stageType = condition.Params[1]
@@ -2447,6 +2479,14 @@ PlayerCondition = {
         local isMeet = condition.Params[1] == 1
         return XMVCA.XFangKuai:IsGuideExitFever(isMeet), condition.Desc
     end,
+    
+    --region 推箱子
+    [64103] = function(condition)  
+        local stageId = condition.Params[1]
+        local curStageId = XMVCA.XRpgMakerGame:GetCurrentStageId()
+        return stageId == curStageId, condition.Desc
+    end,
+    --endregion
 }
 
 local CharacterCondition = {
@@ -3525,7 +3565,11 @@ local function LCheckEquipCondition(template, checkedId)
 end
 
 local function LCheckComplexCondition(template, ...)
-    local args = { ... }
+    local argsCnt = select("#", ...)
+    local args
+    if argsCnt > 0 then
+        args = { ... }
+    end
     local conditionFormula = XConditionManager.ConditionFormula
     if conditionFormula == nil then
         local XConditionFormula = require("XFormula/XConditionFormula")

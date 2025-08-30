@@ -1,5 +1,6 @@
 local XArithmetic = require("XFormula/XArithmetic")
 
+---@class XFormula
 local XFormula = XClass(nil, "XFormula")
 
 function XFormula:Ctor()

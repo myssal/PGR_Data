@@ -4,9 +4,17 @@ local XUiGridActivityButton = XClass(XUiNode, "XUiGridActivityButton")
 function XUiGridActivityButton:Ctor(ui, parent, config)
     self.Config = config
     self.GameObject.name = string.format("GridBtnActivity%d", config.Id)
-    -- 名字/icon
-    self.Btn:SetNameByGroup(0, self.Config.Name)
-    self.Btn:SetNameByGroup(1, self.Config.NameEN)
+   -- 名字/icon 海外主界面活动标题加换行
+    local name = self.Config.Name
+    local nameEN = self.Config.NameEN
+    if not string.IsNilOrEmpty(name) then
+        name = string.gsub(name, "\\n", "\n")
+    end
+    if not string.IsNilOrEmpty(nameEN) then
+        nameEN = string.gsub(nameEN, "\\n", "\n")
+    end
+    self.Btn:SetNameByGroup(0, name)
+    self.Btn:SetNameByGroup(1, nameEN)
     self.Btn:SetRawImage(self.Config.BtnIcon)
     -- 红点注册
     self._IsDailyRedPoint = false

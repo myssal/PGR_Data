@@ -71,6 +71,13 @@ function XUiFubenFashionPaintingNew:RefreshProcess()
     local stagesCount=XMVCA.XFashionStory:GetSingleLineStagesCount(self.GroupId)
     local passedCount=XMVCA.XFashionStory:GetGroupStagesPassCount(XMVCA.XFashionStory:GetSingleLineStages(self.GroupId))
     self.TxtChapterLeftTime.text=tostring(passedCount)..'/'..tostring(stagesCount)
+    if XOverseaManager.IsOverSeaRegion() then
+        if self.GroupId == 12 then
+            self.TxtListen.gameObject:SetActiveEx(false)
+        else
+            self.TxtListen.gameObject:SetActiveEx(true)
+        end
+    end
 end
 
 function XUiFubenFashionPaintingNew:RefreshStoryGrids()

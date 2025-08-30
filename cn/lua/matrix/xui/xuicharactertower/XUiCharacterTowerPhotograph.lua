@@ -20,7 +20,7 @@ function XUiCharacterTowerPhotograph:OnStart(signBoardActionId)
     self.Parent = self
     
     -- 名字
-    self.TxtActionName.text = XMVCA.XFavorability:GetCharacterActionMapText(actionConfig.Name)
+    self.TxtActionName.text = actionConfig.Name
 end
 
 function XUiCharacterTowerPhotograph:OnEnable()

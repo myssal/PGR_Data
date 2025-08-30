@@ -255,6 +255,18 @@ XLivWarmSoundsActivityCreator = function()
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_XLIVWARMSOUND_ACTIVITY_STAGE_AUDIO_CLIENT_CHANGE)
     end
 
+    --海外新增接口:判断是否是正确顺序
+    function XLivWarmSoundsActivityManager.CheckStageAnswer(stageId, answer)
+        local stageInfo = GetStageInfo(stageId)
+        local finishAnswer = stageInfo:GetFinishAnswer(stageId)
+        for i = 1, #finishAnswer do
+            if answer[i] ~= finishAnswer[i] then
+                return false
+            end
+        end
+        return true
+    end
+
     --获取当前活动id下的所有stage
     function XLivWarmSoundsActivityManager.GetStages()
         return XLivWarmSoundsActivityConfig.GetStagesByActivityId(_ActivityId)

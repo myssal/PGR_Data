@@ -3,7 +3,6 @@ XGuildConfig = XGuildConfig or {}
 local CLIENT_GUILD_WELFARE = "Client/Guild/GuildWelfare.tab"
 local CLIENT_GUILD_CHALLENGE = "Client/Guild/GuildChallengeDetails.tab"
 local CLIENT_GUILD_TALENTDETAIL = "Client/Guild/GuildTalentDetails.tab"
-local CLIENT_GUILD_TALENTDETAILTEXT = "Client/Guild/GuildTalentDetailsText.tab"
 local CLIENT_GUILD_WELCOME = "Client/Guild/GuildWelcome.tab"
 
 
@@ -28,8 +27,6 @@ local GuildWelfare = {}
 local GuildChallenge = {}
 ---@type XTableGuildTalentDetails[]
 local GuildTalentDetails = {}
----@type XTableGuildTalentDetailsText[]
-local GuildTalentDetailsText = {}
 
 local GuildCreate = {}
 local GuildLevel = {}
@@ -253,7 +250,6 @@ function XGuildConfig.Init()
     GuildWelfare = XTableManager.ReadByIntKey(CLIENT_GUILD_WELFARE, XTable.XTableGuildWelfare, "Id")
     GuildChallenge = XTableManager.ReadByIntKey(CLIENT_GUILD_CHALLENGE, XTable.XTableGuildChallengeDetails, "Id")
     GuildTalentDetails = XTableManager.ReadByIntKey(CLIENT_GUILD_TALENTDETAIL, XTable.XTableGuildTalentDetails, "Id")
-    GuildTalentDetailsText = XTableManager.ReadByIntKey(CLIENT_GUILD_TALENTDETAILTEXT, XTable.XTableGuildTalentDetailsText, "Id")
 
     GuildLevel = XTableManager.ReadByIntKey(SHARE_GUILD_LEVEL, XTable.XTableGuildLevel, "Level")
     GuildPosition = XTableManager.ReadByIntKey(SHARE_GUILD_POSITION, XTable.XTableGuildPosition, "Id")
@@ -535,17 +531,6 @@ function XGuildConfig.GetGuildTalentConfigById(id)
         return
     end
     return GuildTalentDetails[id]
-end
-
-function XGuildConfig.GetGuildTalentText(id)
-    if not XTool.IsNumberValid(id) then
-        return ""
-    end
-    if not GuildTalentDetailsText[id] then
-        XLog.ErrorTableDataNotFound("XGuildConfig.GetGuildTalentText", "GuildTalentDetailsText", CLIENT_GUILD_TALENTDETAILTEXT, "Id", tostring(id))
-        return ""
-    end
-    return GuildTalentDetailsText[id].Text or ""
 end
 
 function XGuildConfig.InitGuildTalent()

@@ -195,13 +195,13 @@ function XUiDrawActivity:SetPreviewData(gachaRewardInfo, obj, parentSP, parentNA
     for k, v in pairs(gachaRewardInfo) do
         local go = nil
         if previewType == type.IN then
-            if v.Rare and parentSP then
+            if v.Cfg.Rare and parentSP then
                 go = CS.UnityEngine.Object.Instantiate(obj, parentSP)
-            elseif (not v.Rare) and parentNA then
+            elseif (not v.Cfg.Rare) and parentNA then
                 go = CS.UnityEngine.Object.Instantiate(obj, parentNA)
             end
         else
-            if v.Rare and parentSP then
+            if v.Cfg.Rare and parentSP then
                 if not maxCount or count <= maxCount then
                     go = CS.UnityEngine.Object.Instantiate(obj, parentSP)
                     count = count + 1
@@ -215,10 +215,10 @@ function XUiDrawActivity:SetPreviewData(gachaRewardInfo, obj, parentSP, parentNA
             local item = XUiGridCommon.New(self, go)
             local tmpData = {}
             previewList[k] = item
-            tmpData.TemplateId = v.TemplateId
-            tmpData.Count = v.Count
+            tmpData.TemplateId = v.Cfg.TemplateId
+            tmpData.Count = v.Cfg.Count
             local curCount = nil
-            if v.RewardType == XGachaConfigs.RewardType.Count then
+            if v.Cfg.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = v.CurCount
             end
             item:Refresh(tmpData, nil, nil, nil, curCount)
@@ -232,10 +232,10 @@ function XUiDrawActivity:UpDataPreviewData()
     for i = 1, 2 do
         for k, v in pairs(self.PreviewList[i] or {}) do
             local tmpData = {}
-            tmpData.TemplateId = gachaRewardInfo[k].TemplateId
-            tmpData.Count = gachaRewardInfo[k].Count
+            tmpData.TemplateId = gachaRewardInfo[k].Cfg.TemplateId
+            tmpData.Count = gachaRewardInfo[k].Cfg.Count
             local curCount = nil
-            if gachaRewardInfo[k].RewardType == XGachaConfigs.RewardType.Count then
+            if gachaRewardInfo[k].Cfg.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = gachaRewardInfo[k].CurCount
             end
             v:Refresh(tmpData, nil, nil, nil, curCount)

@@ -28,6 +28,11 @@ XPhotographConfigs.PreviewOpenType=
     Others=2 --其他地方
 }
 
+XPhotographConfigs.OverSeaPlatform=
+{
+    [1] = 1 --目前就推特
+}
+
 --- 需要弹窗提示权限获取的一级渠道
 XPhotographConfigs.NeedShowPermissionRequestDialogChannelId = {
     [11] = true, -- 华为渠道

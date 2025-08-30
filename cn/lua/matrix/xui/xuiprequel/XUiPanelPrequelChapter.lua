@@ -84,7 +84,7 @@ function XUiPanelPrequelChapter:UpdatePrequelGrid(data)
                 return
             end
             local prefab = parent:LoadPrefab(CS.XGame.ClientConfig:GetString("GridPrequelStage"))
-            grid = XUiGridStage.New(self.RootUi, prefab , nil, XFubenConfigs.FUBENTYPE_PREQUEL)
+            grid = XUiGridStage.New(self.RootUi, prefab , nil, XFubenConfigs.FUBENTYPE_PREQUEL, nil, nil, "GridPrequelStage")
             self.GridChapterStageList[i] = grid
         end
 

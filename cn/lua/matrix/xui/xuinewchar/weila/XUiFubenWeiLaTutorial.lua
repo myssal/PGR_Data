@@ -83,7 +83,12 @@ function XUiFunbenWeiLaTutorial:StartActivityTimer()
     --需要格式处理，因此把数值和单位抽取出来
     local fullContent = XUiHelper.GetTime(self.ActivityEndTime - now, XUiHelper.TimeFormatType.ACTIVITY)
     local timeNumber = string.match(fullContent, '%d+') or ''
-    local timeUnit = string.Utf8SubCustom(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    local timeUnit
+    if XOverseaManager.IsOverSeaRegion() then
+        timeUnit = string.Utf8SubCustomOverSea(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    else
+        timeUnit = string.Utf8SubCustom(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    end
     local fixedContent = XUiHelper.GetText('TutorialActivityLeftTime', timeNumber, timeUnit)
     fixedContent = XUiHelper.ReplaceTextNewLine(fixedContent)
     self.TxtDay.text = fixedContent
@@ -108,7 +113,12 @@ function XUiFunbenWeiLaTutorial:RefreshActivityTime()
     --需要格式处理，因此把数值和单位抽取出来
     local fullContent = XUiHelper.GetTime(self.ActivityEndTime - now, XUiHelper.TimeFormatType.ACTIVITY)
     local timeNumber = string.match(fullContent, '%d+') or ''
-    local timeUnit = string.Utf8SubCustom(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    local timeUnit
+    if XOverseaManager.IsOverSeaRegion() then
+        timeUnit = string.Utf8SubCustomOverSea(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    else
+        timeUnit = string.Utf8SubCustom(fullContent, #timeNumber + 1, #fullContent - #timeNumber) or ''
+    end
     local fixedContent = XUiHelper.GetText('TutorialActivityLeftTime', timeNumber, timeUnit)
     fixedContent = XUiHelper.ReplaceTextNewLine(fixedContent)
     self.TxtDay.text = fixedContent

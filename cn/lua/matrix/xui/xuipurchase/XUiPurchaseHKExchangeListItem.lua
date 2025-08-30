@@ -16,6 +16,7 @@ function XUiPurchaseHKExchangeListItem:OnRefresh(itemData)
     end
 
     self.ItemData = itemData
+    self.DhAmount.text = CS.XTextManager.GetText("DhItemName", self.ItemData.RewardGoodsList[1].Count)
 
     -- 直接获得的道具
     local rewardGoods = self.ItemData.RewardGoodsList or {}

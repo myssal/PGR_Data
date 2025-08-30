@@ -296,7 +296,7 @@ function XUiPurchaseSignTipRound:SetSignActive(active, round)
 end
 
 function XUiPurchaseSignTipRound:OnBtnHelpClick()
-    XUiManager.UiFubenDialogTip("活动说明", self.SignInInfos[1].Description or "")
+    XUiManager.UiFubenDialogTip(CS.XTextManager.GetLuaText("XUiPurchaseSignTipRound.lua_299"), self.SignInInfos[1].Description or "")
 end
 
 function XUiPurchaseSignTipRound:OnClose()

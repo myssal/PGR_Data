@@ -19,7 +19,7 @@ XFubenMainLineManagerCreator = function()
 
     local StageDifficultMap = {}
     local PlayerTreasureData = {}
-    local ExploreGroupInfos = {}
+    local ExploreGroupInfos = nil
     local ExploreItemInfos = {}
     local ChapterInfos = {} -- info {FirstStage, ActiveStage, Stars, Unlock, Passed}
     local CurDifficult
@@ -45,7 +45,6 @@ XFubenMainLineManagerCreator = function()
         ChapterCfg = XFubenMainLineConfigs.GetChapterCfg()
         TreasureCfg = XFubenMainLineConfigs.GetTreasureCfg()
         XFubenMainLineManager.InitStageDifficultMap()
-        XFubenMainLineManager.InitExploreGroup()
         XFubenMainLineManager.InitExploreItem()
 
         XFubenMainLineManager.DifficultNormal = CS.XGame.Config:GetInt("FubenDifficultNormal")
@@ -1073,6 +1072,11 @@ XFubenMainLineManagerCreator = function()
     ------------------------------------------------------------------ 活动主线副本抢先体验 end -------------------------------------------------------
     ------------------------------------------------------------------ 活动主线副本探索玩法 begin -------------------------------------------------------
     function XFubenMainLineManager.InitExploreGroup()
+        if ExploreGroupInfos then
+            return
+        end
+
+        ExploreGroupInfos = {}
         local exploreGroupList = XFubenMainLineConfigs.GetExploreGroupCfg()
         for _, exploreGroup in pairs(exploreGroupList) do
             if not ExploreGroupInfos[exploreGroup.GroupId] then
@@ -1093,6 +1097,7 @@ XFubenMainLineManagerCreator = function()
     end
 
     function XFubenMainLineManager.GetExploreGroupInfoByGroupId(id)
+        XFubenMainLineManager.InitExploreGroup()
         if not ExploreGroupInfos[id] then
             XLog.ErrorTableDataNotFound("XFubenMainLineManager.GetExploreGroupInfoByGroupId",
                     "ExploreGroupInfos", " Client/Fuben/MainLine/ExploreGroup.tab", "id", tostring(id))

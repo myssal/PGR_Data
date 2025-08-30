@@ -10,7 +10,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Texture/Image/BgStory/BgStory00.png"
+            "Assets/Product/Texture/Image/BgStory/BgStory546.jpg"
         ]
     },
     {
@@ -24,29 +24,1599 @@
         "EndDelay": 0.0,
         "Params": [
             1,
-            36
+            208
         ]
     },
     {
         "Id": 3,
         "ActionId": 3,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 502,
         "IsBlock": 0,
         "IsEnd": 0,
-        "BeginAnim": "DialogEnable",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 250.0,
+        "Params": [
+            "DialogDisable"
+        ]
     },
     {
         "Id": 4,
         "ActionId": 4,
         "NextActionId": 0,
+        "Type": 107,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "空中花园",
+            "会议室外走廊"
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
         "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "空中花园，会议室外走廊。"
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 108,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "（终端联系斜奏）",
+            8
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 509,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory717.jpg",
+            1
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            501328,
+            1,
+            -400
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斜奏",
+            "指挥官，会议结束了，有什么需要帮助吗？",
+            11
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "会议本身只是些例行通知，不过……",
+            12
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "将康斯塔雷耶举办的七夕纪念品展览会，以及赛利卡的委托告诉了斜奏。"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11,
+            3
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "康斯塔雷耶……我用终端查了下，最近一趟前往康斯塔雷耶的运输船是在半个小时后，A3航空港，船上还有空位。",
+            11
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "需要我帮你提交乘船申请吗？",
+            11
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这个先不着急。",
+            18
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "话说，你现在正在我的休息室？",
+            19
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "能够看到，斜奏所在的休息室床上正散落着几本书，封面格外熟悉，正是昨天晚上自己睡前阅读的那几本。"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "是的，我正在打扫你的房间。",
+            11
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "我现在过去找你。",
+            22
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            11
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 510,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 2000.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6160
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4359
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "到达休息室时，斜奏已经完成了对房间的打扫，从天花板到家具缝隙，一切都焕然一新，干净得仿佛会发光。"
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            4359
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "蓝发构造体此刻站在房间中央，低着头思考着什么。"
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501328,
+            1
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斜奏",
+            "……啊，指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "似乎是听到了脚步声，斜奏回过神，冲这边微笑。"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "其实，打扫卫生我自己来就好，总是麻烦你，蛮不好意思的。",
+            35
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "指挥官平时那么忙碌，有时间尽量还是多休息会儿。",
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "其次，是我主动希望帮忙，所以指挥官不用提什么不好意思。能让你在整洁的环境中休息，我自己也会感到很安心。",
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏神情认真，在收拾家务这方面她似乎格外很有信念感，不愿轻易让步……既然这样，稍后给斜奏准备些她喜欢的礼物，作为报答吧。"
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "对了，指挥官，刚刚我在想，要不要在房间里放置一款香氛。",
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "最近有商铺新出了一系列评价很高的舒压香氛，纯天然植物精油，不仅气味清新，还能有效舒缓神经、缓解精神疲劳，对提升睡眠质量也很有帮助。",
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "如果你不介意的话，我可以去挑选几种不同气味的香氛，或许能让你在休息时更放松一些？",
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "可以尝试下，有什么气味推荐吗？",
+            44
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 44,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 45,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "也许……选和指挥官相衬的会更好？",
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 46,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -50
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 47,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "话音刚落，斜奏便自然地探过身子。她微微歪着头，凑近自己的颈侧，认真地嗅了嗅。少女身上淡淡的馨香和温热的气息一同拂过皮肤，仿若电流流过。"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 48,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏？",
+            49,
+            "……"
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 49,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 50,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "指挥官，我有几款气味推荐……",
+            1
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 51,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏眼睛微微发亮，似乎刚刚的注意力全部用于捕捉灵感，直到现在，她才后知后觉发现，这有些过于贴近的距离。"
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 52,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 53,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogShake",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "抱歉！失礼了！",
+            1
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 54,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2689
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 55,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            0
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 56,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她后撤一步，重新站好，姿态仍如日常那般兼具礼貌与克制，不过眼神却有些躲闪，而交叠放于腹部的双手，两根大拇指正停不下来地转圈。"
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 57,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "咳，指挥官！关于香氛的气味，我的想法是……",
+            1
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 58,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "就按你的想法来吧，我相信你的品味。",
+            59
+        ]
+    },
+    {
+        "Id": 59,
+        "ActionId": 59,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 60,
+        "ActionId": 60,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "……我保证不会让你失望。",
+            1
+        ]
+    },
+    {
+        "Id": 61,
+        "ActionId": 61,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 62,
+        "ActionId": 62,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "说起来，指挥官。你稍后前往康斯塔雷耶，是为了七夕纪念品展览会，对吧？",
+            1
+        ]
+    },
+    {
+        "Id": 63,
+        "ActionId": 63,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 64,
+        "ActionId": 64,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "七夕是源自九龙的传统节日，如果能换上一身更应景的服饰，或许能更好地融入庆典的氛围。",
+            1
+        ]
+    },
+    {
+        "Id": 65,
+        "ActionId": 65,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "九龙的服饰？",
+            66
+        ]
+    },
+    {
+        "Id": 66,
+        "ActionId": 66,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "是的。我之前利用空闲时间，参考九龙的古典款式，为你准备了一身。当时想着总会有合适的场合，没想到这么快就派上用场了。",
+            1
+        ]
+    },
+    {
+        "Id": 67,
+        "ActionId": 67,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 68,
+        "ActionId": 68,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "指挥官有兴趣试试看吗？",
+            1
+        ]
+    },
+    {
+        "Id": 69,
+        "ActionId": 69,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "提到这个，斜奏的语调似乎都比平时上扬了些。记得斜奏以前提到过，制作服装是她的兴趣，她衷心希望哪天自己能穿上她制作的服装。"
+        ]
+    },
+    {
+        "Id": 70,
+        "ActionId": 70,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "很有兴趣。",
+            71,
+            "（点点头）"
+        ]
+    },
+    {
+        "Id": 71,
+        "ActionId": 71,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 72,
+        "ActionId": 72,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "请稍等片刻，我马上把衣服取过来！",
+            1
+        ]
+    },
+    {
+        "Id": 73,
+        "ActionId": 73,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 74,
+        "ActionId": 74,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏一改往日的沉静，那几乎藏不住的喜悦从她眼底深处直直地透出来。"
+        ]
+    },
+    {
+        "Id": 75,
+        "ActionId": 75,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1513
+        ]
+    },
+    {
+        "Id": 76,
+        "ActionId": 76,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501328,
+            1
+        ]
+    },
+    {
+        "Id": 77,
+        "ActionId": 77,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "看着斜奏快步离开，片刻后，她捧着一套折叠整齐的衣物走了出来：那是一套古典而雅致，点缀着精致刺绣的服饰。"
+        ]
+    },
+    {
+        "Id": 78,
+        "ActionId": 78,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 79,
+        "ActionId": 79,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "我就在门外，指挥官换好后叫我一声就行。",
+            1
+        ]
+    },
+    {
+        "Id": 80,
+        "ActionId": 80,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 81,
+        "ActionId": 81,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 82,
+        "ActionId": 82,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4434
+        ]
+    },
+    {
+        "Id": 83,
+        "ActionId": 83,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "接过服饰，独自换上。衣料贴合得恰到好处，显然是经过了精心的考量。"
+        ]
+    },
+    {
+        "Id": 84,
+        "ActionId": 84,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "唯一的问题是，古典款式的穿法确实讲究，许多细节只能凭感觉摸索，也不知是否正确。"
+        ]
+    },
+    {
+        "Id": 85,
+        "ActionId": 85,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 86,
+        "ActionId": 86,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "这衣服……穿法还真复杂。",
+            87
+        ]
+    },
+    {
+        "Id": 87,
+        "ActionId": 87,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "话音刚落，门外便传来了斜奏的声音。"
+        ]
+    },
+    {
+        "Id": 88,
+        "ActionId": 88,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18,
+            501328,
+            3
+        ]
+    },
+    {
+        "Id": 89,
+        "ActionId": 89,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "斜奏",
+            "是遇到困难了吗，指挥官？古典服饰的穿戴确实有很多细节需要注意。",
+            18
+        ]
+    },
+    {
+        "Id": 90,
+        "ActionId": 90,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            18
+        ]
+    },
+    {
+        "Id": 91,
+        "ActionId": 91,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            1513
+        ]
+    },
+    {
+        "Id": 92,
+        "ActionId": 92,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            501328
+        ]
+    },
+    {
+        "Id": 93,
+        "ActionId": 93,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "得到应许后，她推门而入，视线很快便落在了领口的位置。"
+        ]
+    },
+    {
+        "Id": 94,
+        "ActionId": 94,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            3
+        ]
+    },
+    {
+        "Id": 95,
+        "ActionId": 95,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "啊，果然。请稍等一下。",
+            1
+        ]
+    },
+    {
+        "Id": 96,
+        "ActionId": 96,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            -50
+        ]
+    },
+    {
+        "Id": 97,
+        "ActionId": 97,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 98,
+        "ActionId": 98,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她再次靠近，近到能看清她微微垂下的睫毛。少女的指尖带着一丝微凉，小心翼翼地拂过颈侧的衣领，为自己整理着交错的纹路。"
+        ]
+    },
+    {
+        "Id": 99,
+        "ActionId": 99,
+        "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 100,
+        "ActionId": 100,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 101,
+        "ActionId": 101,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "领口这里，应该这样交叠才对。还有袖口，也需要调整一下……",
+            1
+        ]
+    },
+    {
+        "Id": 102,
+        "ActionId": 102,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 103,
+        "ActionId": 103,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "好了，这样就完美了。",
+            1
+        ]
+    },
+    {
+        "Id": 104,
+        "ActionId": 104,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            0.25,
+            0
+        ]
+    },
+    {
+        "Id": 105,
+        "ActionId": 105,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她退后半步，满意地端详着自己的成果。"
+        ]
+    },
+    {
+        "Id": 106,
+        "ActionId": 106,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 107,
+        "ActionId": 107,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "果然，很适合指挥官。",
+            1
+        ]
+    },
+    {
+        "Id": 108,
+        "ActionId": 108,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "衣服很合身，也非常漂亮。辛苦你了，斜奏。",
+            109
+        ]
+    },
+    {
+        "Id": 109,
+        "ActionId": 109,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "对了，斜奏，你今天有空吗？",
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "ActionId": 110,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 111,
+        "ActionId": 111,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "嗯，今天没有任务安排。如果指挥官需要我陪同，我随时待命。",
+            1
+        ]
+    },
+    {
+        "Id": 112,
+        "ActionId": 112,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "她的话语一如既往地得体，但随即，她似乎觉得这样还不够。"
+        ]
+    },
+    {
+        "Id": 113,
+        "ActionId": 113,
+        "NextActionId": 0,
+        "Type": 204,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            6
+        ]
+    },
+    {
+        "Id": 114,
+        "ActionId": 114,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "斜奏",
+            "……不，应该说，请让我和你一起去吧。",
+            1
+        ]
+    },
+    {
+        "Id": 115,
+        "ActionId": 115,
+        "NextActionId": 0,
+        "Type": 302,
         "IsBlock": 0,
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "我们出发吧。"
+        ]
     }
 ]

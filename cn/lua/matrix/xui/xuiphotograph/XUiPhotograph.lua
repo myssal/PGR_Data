@@ -386,10 +386,11 @@ function XUiPhotograph:Play(element)
     end
     self.PhotographPanel:RefreshActionPanel(true, self.SignBoardActionId ~= nil)
     if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        if element.CvType then
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+        if targetSkinMeshFace then
+            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
         else
-            self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, element.SignBoardConfig.CvId)
+            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
         end
     end
 
@@ -411,10 +412,11 @@ function XUiPhotograph:PlayCross(element)
         self.PhotographPanel:RefreshActionPanel(true, self.SignBoardActionId ~= nil)
     end
     if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        if element.CvType then
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+        if targetSkinMeshFace then
+            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
         else
-            self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, element.SignBoardConfig.CvId)
+            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
         end
     end
 
@@ -516,7 +518,7 @@ function XUiPhotograph:Replay()
     local trySceneId = self.CurrSeleSceneId
     local isHas = XMVCA.XFavorability:CheckTryCharacterActionUnlock(data, XDataCenter.PhotographManager.GetCharacterDataById(self.SelectCharacterId).TrustLv, tryFashionId, trySceneId)
     if not isHas then
-        XUiManager.TipError(XMVCA.XFavorability:GetCharacterActionMapText(data.config.ConditionDescript))
+        XUiManager.TipError(data.config.ConditionDescript)
         return
     end
     self:ChangeAnimationState(false)

@@ -5,7 +5,6 @@ local pairs = pairs
 local Vector3 = CS.UnityEngine.Vector3
 local CSXScheduleManagerUnSchedule = XScheduleManager.UnSchedule
 local LookRotation = CS.UnityEngine.Quaternion.LookRotation
-local CSXResourceManagerLoad
 
 local Default = {
     _Id = 0,
@@ -13,7 +12,7 @@ local Default = {
 
 local MoveSpeed = CS.XGame.ClientConfig:GetInt("RpgMakeGameMoveSpeed")
 local DieByTrapTime = CS.XGame.ClientConfig:GetInt("RpgMakerGameDieByTrapTime") / 1000  --掉入陷阱动画时长
-local KillByElectricFenceEffectName = XRpgMakerGameConfigs.ModelKeyMaps.KillByElectricFenceEffect
+
 
 ---推箱子物体对象
 ---@class XRpgMakerGameObject : XRpgMakerGamePosition
@@ -35,7 +34,6 @@ function XRpgMakerGameObject:Ctor(id, gameObject)
     self.ModelKey = ""      --RpgMakerGameModel表的Key
     self.RoleModelPanel = nil   --模型控制
     self.ResourcePool = {}  --已加载的资源池
-    self.EffectPool = {}    --已加载的特效池
     self:Init()
 
     if not XTool.UObjIsNil(gameObject) then
@@ -47,16 +45,10 @@ function XRpgMakerGameObject:Init()
     self:ClearDrown()
     self._IsPlayAdsorb = false  --是否播放钢板吸附动作
     self:SetIsTranser(false)
-    self:DisposeEffect()
 end
 
 function XRpgMakerGameObject:Dispose()
-    self:DisposeEffect()
-
-    for _, resource in pairs(self.ResourcePool) do
-        resource:Release()
-    end
-    self.ResourcePool = {}
+    self:RemoveResourcePool()
 
     if not XTool.UObjIsNil(self.GoInputHandler) then
         self.GoInputHandler:RemoveAllListeners()
@@ -70,15 +62,6 @@ function XRpgMakerGameObject:Dispose()
     self.RoleModelPanel = nil
     self:Init()
     self:SetIsTranser(false)
-end
-
-function XRpgMakerGameObject:DisposeEffect()
-    for _, effect in pairs(self.EffectPool) do
-        if not XTool.UObjIsNil(effect) then
-            XUiHelper.Destroy(effect)
-        end
-    end
-    self.EffectPool = {}
 end
 
 function XRpgMakerGameObject:DisposeModel()
@@ -95,6 +78,18 @@ end
 
 function XRpgMakerGameObject:GetId()
     return self._Id
+end
+
+function XRpgMakerGameObject:Release()
+    self:RemoveResourcePool()
+    self:RemoveDieEffectTimer()
+    self:RemoveTweenTimer()
+    self:OnRelease()
+end
+
+-- 提供给继承类重写
+function XRpgMakerGameObject:OnRelease()
+    
 end
 
 --------------场景对象相关 begin----------------
@@ -179,13 +174,51 @@ local GetEntityDistanceList = function(data)
     return entityDistanceList
 end
 
---移动
+-- 播放移动Action
 function XRpgMakerGameObject:PlayMoveAction(action, cb, skillType)
+    -- 反弹前提：自身携带物理2属性 + 朝向的第一格子可以走 + 朝向的第二个格子是草
+    local physics2 = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Physics2
+    local scene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
+    local nextPos1 = scene:GetDirectionPos(action.EndPosition, action.Direction, 1)
+    local nextPos2 = scene:GetDirectionPos(action.EndPosition, action.Direction, 2)
+    local isStartAndEndSamePos = action.StartPosition.PositionX == action.EndPosition.PositionX and action.StartPosition.PositionY == action.EndPosition.PositionY
+    self._IsRebound = self:IsOwnSkillType(physics2) and scene:IsPosGrass(nextPos2) and scene:IsPhysics2CanPass(nextPos1) and (isStartAndEndSamePos or not scene:IsPosStopMove(action.EndPosition))
+    if self._IsRebound then
+        local action1 = { StartPosition = action.StartPosition, EndPosition = nextPos1, Direction = action.Direction }
+        local action2 = { StartPosition = nextPos1, EndPosition = action.EndPosition, Direction = action.Direction }
+        self:PlayMove(action1, function()
+            self:PlayMove(action2, cb, skillType, true, true)
+            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Rebound)
+        end, skillType)
+    else
+        self:PlayMove(action, cb, skillType, true)
+    end
+end
+
+--执行一次移动
+---@param isLastMove boolean 是否是最后一段位移
+---@param isRebound boolean 是否是反弹
+function XRpgMakerGameObject:PlayMove(action, cb, skillType, isLastMove, isRebound)
     local transform = self:GetTransform()
     local startPosX = action.StartPosition.PositionX
     local startPosY = action.StartPosition.PositionY
     local endPosX = action.EndPosition.PositionX
     local endPosY = action.EndPosition.PositionY
+    local direction = action.Direction
+    if startPosX == endPosX and startPosY == endPosY then
+        -- 移动结束
+        if isLastMove then
+            self:MoveComplete(endPosX, endPosY, direction, true)
+        end
+        self:ChangeDirectionAction(action)
+        if cb then cb() end
+        return
+    end
+    
+    -- 怪物的警戒特效
+    if self.RemoveViewAreaAndLine then
+        self:RemoveViewAreaAndLine()
+    end
 
     local startCube = self:GetCubeObj(startPosY, startPosX)
     local endCube = self:GetCubeObj(endPosY, endPosX)
@@ -205,7 +238,7 @@ function XRpgMakerGameObject:PlayMoveAction(action, cb, skillType)
     local gameObjPosition = self:GetGameObjPosition()
     local enterStageDb = XDataCenter.RpgMakerGameManager:GetRpgMakerGameEnterStageDb()
     local mapId = enterStageDb:GetMapId()
-    local trapId = XRpgMakerGameConfigs.GetRpgMakerGameTrapId(mapId, endPosX, endPosY)  --移动到的坐标有陷阱时，不偏移模型的位置
+    local trapId = nil --XRpgMakerGameConfigs.GetRpgMakerGameTrapId(mapId, endPosX, endPosY)  --移动到的坐标有陷阱时，不偏移模型的位置
     local moveX = endCubePosition.x - gameObjPosition.x
     local moveZ = endCubePosition.z - gameObjPosition.z
 
@@ -229,9 +262,13 @@ function XRpgMakerGameObject:PlayMoveAction(action, cb, skillType)
 
     self:ChangeDirectionAction(action)
 
-    local modelName = self:GetModelName()
-    local runAnima = XRpgMakerGameConfigs.GetRpgMakerGameRunAnimaName(modelName)
-    self.RoleModelPanel:PlayAnima(runAnima)
+    if isRebound then
+        self:PlayPushBubbleAnim()
+    else
+        local modelName = self:GetModelName()
+        local runAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationRunAnimaName(modelName, direction)
+        self.RoleModelPanel:PlayAnima(runAnima)
+    end
 
     local getDistanceData = {
         MapId = mapId,
@@ -250,9 +287,12 @@ function XRpgMakerGameObject:PlayMoveAction(action, cb, skillType)
 
     --获得移动路径中的传送点
     local transPointList
-    if skillType and skillType ~= XRpgMakerGameConfigs.XRpgMakerGameRoleSkillType.Dark then
+    if skillType and skillType ~= XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Dark then
         transPointList = GetTransferPointDistanceList(getDistanceData)
     end
+    
+    -- 加载移动特效特效
+    self:CheckLoadMoveEffect()
 
     local movePositionX
     local movePositionZ
@@ -299,10 +339,171 @@ function XRpgMakerGameObject:PlayMoveAction(action, cb, skillType)
             table.remove(transPointList, 1)
         end
     end, function()
+        self:UpdatePosition(action.EndPosition)
         -- 防止残余
         self:CheckEntityDistanceList(entityDistanceList, skillType)
         self:StopMove(cb)
+        -- 移动结束
+        if isLastMove then
+            self:MoveComplete(endPosX, endPosY, direction)
+        end
     end)
+end
+
+---@param isSamePos boolean 开始位置和结束位置是否相同
+function XRpgMakerGameObject:MoveComplete(endPosX, endPosY, direction, isSamePos)
+    local scene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
+    local isCurPosPlayed = false
+    if not isSamePos then
+        -- 当前格子是魔法阵
+        local magicObjDic = XDataCenter.RpgMakerGameManager.GetMagicObjDic()
+        for _, magic in pairs(magicObjDic) do
+            if magic:IsSamePoint(endPosX, endPosY) then
+                self:PlayAdsorbAnima()
+                isCurPosPlayed = true
+            end
+        end
+        -- 当前格子是换属性阵
+        for _, switchPoint in pairs(scene.SwitchSkillPointObjs) do
+            if switchPoint:IsSamePoint(endPosX, endPosY) then
+                self:PlayAdsorbAnima()
+                isCurPosPlayed = true
+            end
+        end
+    end
+
+    if not isCurPosPlayed then
+        local nextPosX = endPosX
+        local nextPosY = endPosY
+        if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
+            nextPosX = nextPosX - 1
+        elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
+            nextPosX = nextPosX + 1
+        elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
+            nextPosY = nextPosY + 1
+        elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
+            nextPosY = nextPosY - 1
+        end
+
+        -- 下一格子是水
+        ---@type XRpgMakerGameWaterData
+        local waterObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(nextPosX, nextPosY, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Water)
+        if waterObj and waterObj:IsStatusWater() then
+            self:PlayAdsorbAnima()
+        end
+        ---@type XRpgMakerGameWaterData
+        local iceObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(nextPosX, nextPosY, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Ice)
+        if iceObj and iceObj:IsStatusWater() then
+            self:PlayAdsorbAnima()
+        end
+
+        local isFlame = self:IsOwnSkillType(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Flame2) -- 是否是火属性
+        local isPhysics = self:IsOwnSkillType(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Physics2) -- 是否是物理属性
+        
+        -- 下一格子是藤球
+        local monsterObjDic = XDataCenter.RpgMakerGameManager.GetGameMonsterObjDic()
+        for _, monster in pairs(monsterObjDic) do
+            if monster:IsSamePoint(nextPosX, nextPosY) and not monster:IsDeath() and monster:IsSepaktakraw() then
+                if isPhysics then
+                    self:PlayAtkAction()
+                elseif isFlame then
+                    self:PlayPushBubbleAnim()
+                end
+            end
+        end
+
+        -- 本身火属性，下一格子是草
+        ---@type XRpgMakerGameGrassData
+        local grassObj = scene:GetGrass(nextPosX, nextPosY)
+        if grassObj and grassObj:IsActive() and isFlame then
+            self:PlayAtkAction()
+        end
+    end
+    
+    if self.OnMoveComplete then
+        self:OnMoveComplete()
+    end
+end
+
+-- 播放击飞Action
+function XRpgMakerGameObject:PlayFlyAwayAction(action, cb)
+    local modelName = self:GetModelName()
+    local flyAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationFlyAnimaName(modelName, action.Direction)
+    if flyAnima and flyAnima ~= "" then
+        self.RoleModelPanel:PlayAnima(flyAnima)
+    end
+    self:LoadFlyEffect(action.Direction)
+    
+    -- 反弹前提：自身携带物理2属性 + 朝向的第一格子无阻挡 + 朝向的第二个格子是草
+    local physics2 = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Physics2
+    local scene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
+    local nextPos1 = scene:GetDirectionPos(action.EndPosition, action.Direction, 1)
+    local nextPos2 = scene:GetDirectionPos(action.EndPosition, action.Direction, 2)
+    local isRebound = self:IsOwnSkillType(physics2) and scene:IsPosGrass(nextPos2) and scene:IsPhysics2CanFly(nextPos1)
+    if isRebound then
+        local action1 = { StartPosition = action.StartPosition, EndPosition = nextPos1, Direction = action.Direction }
+        local action2 = { StartPosition = nextPos1, EndPosition = action.EndPosition, Direction = action.Direction }
+        self:PlayFlyAway(action1, function()
+            self:PlayMove(action2, cb)
+        end)
+    else
+        self:PlayFlyAway(action, cb)
+    end
+end
+
+function XRpgMakerGameObject:PlayFlyAway(action, cb)
+    local transform = self:GetTransform()
+    local startCube = self:GetCubeObj(action.StartPosition.PositionY, action.StartPosition.PositionX)
+    local endCube = self:GetCubeObj(action.EndPosition.PositionY, action.EndPosition.PositionX)
+    local startCubePosition = startCube:GetGameObjUpCenterPosition()
+    local endCubePosition = endCube:GetGameObjUpCenterPosition()
+    local cubeDistance = CS.UnityEngine.Vector3.Distance(startCubePosition, endCubePosition)
+    local playActionTime = cubeDistance / MoveSpeed
+
+    self:SetGameObjectPosition(startCubePosition)
+
+    local moveX = endCubePosition.x - startCubePosition.x
+    local moveZ = endCubePosition.z - startCubePosition.z
+    local moveY = 0.6 -- 移动的高度
+    
+    local easeType = XUiHelper.EaseType.Sin
+    self.PlayMoveActionTimer = XUiHelper.Tween(playActionTime, function(f)
+        if XTool.UObjIsNil(transform) then return end
+
+        local movePositionX = startCubePosition.x + moveX * f
+        local movePositionZ = startCubePosition.z + moveZ * f
+        local movePositionY = startCubePosition.y
+        if f < 0.5 then
+            movePositionY = startCubePosition.y + f * 2 * moveY
+        else
+            movePositionY = startCubePosition.y + moveY - (f - 0.5) * 2 * moveY
+        end
+
+        self:SetGameObjectPosition(Vector3(movePositionX, movePositionY, movePositionZ))
+
+    end, function()
+        self:PlayStandAnima()
+        self:StopPlayMoveActionTimer()
+        self:SetGameObjectPosition(endCubePosition)
+        self:UpdatePosition(action.EndPosition)
+        self:RemoveFlyEffect()
+        if cb then cb() end
+    end, function(t)
+        return XUiHelper.Evaluate(easeType, t)
+    end)
+end
+
+-- 加载飞行特效
+function XRpgMakerGameObject:LoadFlyEffect(direction)
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Physics2Effect)
+    local resource = self:ResourceManagerLoad(effectPath)
+    self:LoadEffect(resource.Asset, nil, nil, direction)
+end
+
+-- 移除飞行特效
+function XRpgMakerGameObject:RemoveFlyEffect()
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Physics2Effect)
+    self:RemoveResource(effectPath)
 end
 
 ---检查移动过程中冰火对象转换
@@ -311,14 +512,14 @@ function XRpgMakerGameObject:CheckEntityDistanceList(entityDistanceList, skillTy
         local entityObj = entityDistanceList[1].EntityObj
         local mapObjData = entityObj:GetMapObjData()
         local type = mapObjData:GetType()
-        if type == XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Water or type == XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Ice then
-            if entityObj:GetStatus() == XRpgMakerGameConfigs.XRpgMakerGameWaterType.Water and skillType == XRpgMakerGameConfigs.XRpgMakerGameRoleSkillType.Crystal then
+        if type == XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Water or type == XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Ice then
+            if entityObj:GetStatus() == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameWaterType.Water and skillType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Crystal then
                 --冰属性角色触发水结冰
-                entityObj:SetStatus(XRpgMakerGameConfigs.XRpgMakerGameWaterType.Ice)
+                entityObj:SetStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameWaterType.Ice)
                 entityObj:CheckPlayFlat()
-            elseif entityObj:GetStatus() == XRpgMakerGameConfigs.XRpgMakerGameWaterType.Ice and skillType == XRpgMakerGameConfigs.XRpgMakerGameRoleSkillType.Flame then
+            elseif entityObj:GetStatus() == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameWaterType.Ice and skillType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Flame then
                 --火属性对象触发冰融化
-                entityObj:SetStatus(XRpgMakerGameConfigs.XRpgMakerGameWaterType.Melt)
+                entityObj:SetStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameWaterType.Water)
                 entityObj:CheckPlayFlat()
             end
         end
@@ -327,6 +528,7 @@ function XRpgMakerGameObject:CheckEntityDistanceList(entityDistanceList, skillTy
 end
 
 function XRpgMakerGameObject:StopMove(cb)
+    self:RemoveMoveEffect()
     self:StopPlayMoveActionTimer()
 
     if self:IsPlayAdsorbAnima() then
@@ -356,6 +558,23 @@ function XRpgMakerGameObject:StopPlayMoveActionTimer(isEnforceSetObjPos)
     end
 end
 
+-- 加载移动特效
+function XRpgMakerGameObject:CheckLoadMoveEffect()
+    if self:IsOwnSkillType(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Physics2) then
+        self.MoveEffectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Physics2Effect)
+        local resource = self:ResourceManagerLoad(self.MoveEffectPath)
+        self:LoadEffect(resource.Asset)
+    end
+end
+
+-- 移除移动特效
+function XRpgMakerGameObject:RemoveMoveEffect()
+    if self.MoveEffectPath then
+        self:RemoveResource(self.MoveEffectPath)
+        self.MoveEffectPath = nil
+    end
+end
+
 --改变方向
 function XRpgMakerGameObject:ChangeDirectionAction(action, cb)
     local transform = self:GetTransform()
@@ -379,13 +598,13 @@ function XRpgMakerGameObject:GetDirectionPos(direction)
 
     local objPosition = transform.position
     local directionPos
-    if direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
+    if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
         directionPos = objPosition + Vector3.left
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
         directionPos = objPosition + Vector3.right
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
         directionPos = objPosition + Vector3.forward
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
         directionPos = objPosition + Vector3.back
     end
     return directionPos
@@ -404,13 +623,12 @@ function XRpgMakerGameObject:LoadModel(modelPath, root, modelName, modelKey)
     self.ModelKey = modelKey or self.ModelKey
 
     if modelName and self.ModelRoot then
+        local modelLink = CS.UnityEngine.GameObject("Model")
+        self:BindToRoot(modelLink, self.ModelRoot)
         local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-        self.RoleModelPanel = XUiPanelRoleModel.New(self.ModelRoot, modelName)
-        self.RoleModelPanel:UpdateRoleModel(modelName, nil, nil, function(model)
-            self:SetModel(model)
-            if oldPos then
-                self:SetGameObjectPosition(oldPos)
-            end
+        self.RoleModelPanel = XUiPanelRoleModel.New(modelLink, modelName, nil, nil, false)
+        self.RoleModelPanel:UpdateRoleModel(modelName, nil, nil, function()
+            self:SetModel(modelLink)
         end, nil, true, true)
     else
         if not modelPath then
@@ -420,8 +638,8 @@ function XRpgMakerGameObject:LoadModel(modelPath, root, modelName, modelKey)
         if not resource then
             return
         end
-        local model = CS.UnityEngine.Object.Instantiate(resource.Asset)
-        local scale = not string.IsNilOrEmpty(modelKey) and XRpgMakerGameConfigs.GetModelScale(modelKey)
+        local model = resource.Asset
+        local scale = not string.IsNilOrEmpty(modelKey) and XMVCA.XRpgMakerGame:GetConfig():GetModelScale(modelKey)
         self:BindToRoot(model, self.ModelRoot, scale)
         self:SetModel(model)
     end
@@ -429,6 +647,8 @@ function XRpgMakerGameObject:LoadModel(modelPath, root, modelName, modelKey)
     if oldPos then
         self:SetGameObjectPosition(oldPos)
     end
+    
+    self:RefreshSkillTypeEffect()
 end
 
 ---加载技能特效
@@ -442,7 +662,7 @@ function XRpgMakerGameObject:LoadSkillEffect(skillType)
         return
     end
 
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(skillModelKey)
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(skillModelKey)
     self.RoleModelPanel:LoadEffect(effectPath, nil, true, true, true)
 end
 
@@ -453,7 +673,7 @@ function XRpgMakerGameObject:GetEffectTransform()
         return transform
     end
     
-    local effectRootName = XRpgMakerGameConfigs.GetRpgMakerGameEffectRoot(modelName)
+    local effectRootName = XMVCA.XRpgMakerGame:GetConfig():GetAnimationEffectRoot(modelName)
     if string.IsNilOrEmpty(effectRootName) then
         return transform
     end
@@ -463,29 +683,21 @@ function XRpgMakerGameObject:GetEffectTransform()
 end
 
 --加载特效（可加载多个不同的预制）
---isNotUsePool：是否不使用对象池，为true时需自行存储和释放
-function XRpgMakerGameObject:LoadEffect(asset, position, rootTransform, isNotUsePool)
+function XRpgMakerGameObject:LoadEffect(model, position, rootTransform, direction)
     local transform = rootTransform or self:GetTransform()
     if XTool.UObjIsNil(transform) then
         return
-    end
-
-    local model
-    if isNotUsePool then
-        model = XUiHelper.Instantiate(asset)
-    else
-        model = self.EffectPool[asset]
-        if XTool.UObjIsNil(model) then
-            model = XUiHelper.Instantiate(asset)
-            -- table.insert(self.EffectPool, model)
-            self.EffectPool[asset] = model
-        end
     end
 
     self:BindToRoot(model, transform)
 
     if position then
         model.transform.position = position
+    end
+
+    if direction then
+        local rotation = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameDirectionRotation[direction]
+        model.transform.eulerAngles = XLuaVector3.New(0, rotation, 0)
     end
 
     model.gameObject:SetActiveEx(false)
@@ -533,6 +745,11 @@ function XRpgMakerGameObject:GetTransform()
     return self.Transform
 end
 
+-- 获取资源Transform
+function XRpgMakerGameObject:GetAssetTransform()
+    return self.Transform:GetChild(0)
+end
+
 function XRpgMakerGameObject:GetModelName()
     return self.ModelName or ""
 end
@@ -542,7 +759,6 @@ function XRpgMakerGameObject:GetModelKey()
 end
 
 --设置场景对象位置
-local _XOffset, _YOffset, _ZOffset
 function XRpgMakerGameObject:SetGameObjectPosition(position, isNotOffset)
     if XTool.UObjIsNil(self.Transform) then
         return
@@ -553,24 +769,28 @@ function XRpgMakerGameObject:SetGameObjectPosition(position, isNotOffset)
         return
     end
 
-    _XOffset, _YOffset, _ZOffset = 0, 0, 0
+    local xOffset, yOffset, zOffset = 0, 0, 0
     local modelName = self:GetModelName()
     if not string.IsNilOrEmpty(modelName) and not isNotOffset then
-        _XOffset = XRpgMakerGameConfigs.GetRpgMakerGameXOffSet(modelName)
-        _YOffset = XRpgMakerGameConfigs.GetRpgMakerGameYOffSet(modelName)
-        _ZOffset = XRpgMakerGameConfigs.GetRpgMakerGameZOffSet(modelName)
+        xOffset = XMVCA.XRpgMakerGame:GetConfig():GetAnimationXOffSet(modelName)
+        yOffset = XMVCA.XRpgMakerGame:GetConfig():GetAnimationYOffSet(modelName)
+        zOffset = XMVCA.XRpgMakerGame:GetConfig():GetAnimationZOffSet(modelName)
     end
 
-    self.Transform.position = position + Vector3(_XOffset, _YOffset, _ZOffset)
+    self.LastPosition = Vector3(position.x + xOffset, position.y + yOffset, position.z + zOffset)
+    self.Transform.position = self.LastPosition
 end
 
 function XRpgMakerGameObject:GetGameObjPosition()
+    return self.LastPosition
+    --[[
     local transform = self:GetTransform()
     if XTool.UObjIsNil(transform) then
-        return
+        return self.TransformPosition
     end
 
     return transform.position
+    ]]
 end
 
 --获得模型所在的根节点
@@ -590,6 +810,11 @@ function XRpgMakerGameObject:SetGameObjectLookRotation(direction)
     if not objPos or not directionPos then
         return
     end
+
+    if self.Direction and self.Direction ~= direction and self.MonsterType ~= XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Sepaktakraw then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_ChangeDirection)
+    end
+    self.Direction = direction
 
     local lookRotation = LookRotation(directionPos - objPos)
     self:SetGameObjectRotation(lookRotation)
@@ -617,11 +842,11 @@ function XRpgMakerGameObject:GetGameObjSize()
     end
 
     local modelKey = self:GetModelKey()
-    return XRpgMakerGameConfigs.GetModelSize(modelKey)
+    return XMVCA.XRpgMakerGame:GetConfig():GetModelSize(modelKey)
 end
 
 function XRpgMakerGameObject:OnLoadComplete()
-    self.GoInputHandler = self.Transform:GetComponent(typeof(CS.XGoInputHandler))
+    self.GoInputHandler = self.Transform:GetComponentInChildren(typeof(CS.XGoInputHandler)) -- 部分模型已经挂了XGoInputHandler组件
     if XTool.UObjIsNil(self.GoInputHandler) then
         self.GoInputHandler = self.GameObject:AddComponent(typeof(CS.XGoInputHandler))
     end
@@ -648,7 +873,7 @@ end
 --播放攻击动画
 function XRpgMakerGameObject:PlayAtkAction(cb)
     local modelName = self:GetModelName()
-    local atkAnima = XRpgMakerGameConfigs.GetRpgMakerGameAtkAnimaName(modelName)
+    local atkAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationAtkAnimaName(modelName)
     local callBack = function()
         self:PlayStandAnima()
         if cb then
@@ -656,38 +881,6 @@ function XRpgMakerGameObject:PlayAtkAction(cb)
         end
     end
     self.RoleModelPanel:PlayAnima(atkAnima, true, callBack, callBack)
-end
-
---播放被攻击特效和音效
-function XRpgMakerGameObject:PlayBeAtkAction(cb)
-    local modelName = self:GetModelName()
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.BeAtkEffect)
-    local effectRootName = XRpgMakerGameConfigs.GetRpgMakerGameEffectRoot(modelName)
-    local effectRoot
-    local beAtkEffect
-
-    --被攻击特效
-    if not string.IsNilOrEmpty(effectPath) and not string.IsNilOrEmpty(effectRootName) then
-        local transform = self:GetTransform()
-        effectRoot = transform:FindTransform(effectRootName)
-
-        local resource = self:ResourceManagerLoad(effectPath)
-        if XTool.UObjIsNil(effectRoot) then
-            XLog.Error(string.format("XRpgMakerGameObject:PlayBeAtkAction error: 被攻击特效父节点找不到, effectRootName: %s", effectRootName))
-        else
-            beAtkEffect = self:LoadEffect(resource.Asset, effectRoot.transform.position, effectRoot)
-        end
-    end
-
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Death)
-
-    local delay = XRpgMakerGameConfigs.BeAtkEffectDelayCallbackTime
-    XScheduleManager.ScheduleOnce(function()
-        if not XTool.UObjIsNil(beAtkEffect) then
-            beAtkEffect.gameObject:SetActiveEx(false)
-        end
-        self:Death(cb)
-    end, delay)
 end
 
 function XRpgMakerGameObject:Death(cb)
@@ -700,12 +893,17 @@ end
 --播放站立动画
 function XRpgMakerGameObject:PlayStandAnima()
     local modelName = self:GetModelName()
-    local standAnima = XRpgMakerGameConfigs.GetRpgMakerGameStandAnimaName(modelName)
+    local standAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationStandAnimaName(modelName)
     self.RoleModelPanel:PlayAnima(standAnima)
 end
 
 --播放进入陷阱死亡动画
 function XRpgMakerGameObject:PlayDieByTrapAnima(cb)
+    -- 怪物的警戒特效
+    if self.RemoveViewAreaAndLine then
+        self:RemoveViewAreaAndLine()
+    end
+    
     local easeMethod = function(f)
         return XUiHelper.Evaluate(XUiHelper.EaseType.Increase, f)
     end
@@ -735,12 +933,13 @@ function XRpgMakerGameObject:PlayKillByElectricFenceAnima(cb)
         self:Death(cb)
     end
     local modelName = self:GetModelName()
-    local electricFenceAnima = XRpgMakerGameConfigs.GetRpgMakerGameElectricFenceAnimaName(modelName)
+    local electricFenceAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationElectricFenceAnimaName(modelName)
     self.RoleModelPanel:PlayAnima(electricFenceAnima, true, callback, callback)
 
     --被电的材质动画和特效
-    local killByElectricFenceEffectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(KillByElectricFenceEffectName)
-    self.RoleModelPanel:LoadEffect(killByElectricFenceEffectPath, KillByElectricFenceEffectName, true, true, true)
+    local effectName = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.KillByElectricFenceEffect
+    local killByElectricFenceEffectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(effectName)
+    self.RoleModelPanel:LoadEffect(killByElectricFenceEffectPath, effectName, true, true, true)
 
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Elecboom)
 end
@@ -748,8 +947,12 @@ end
 --播放惊吓动画
 function XRpgMakerGameObject:PlayAlarmAnima(cb)
     local modelName = self:GetModelName()
-    local alarmAnima = XRpgMakerGameConfigs.GetRpgMakerGameAlarmAnimaName(modelName)
-    self.RoleModelPanel:PlayAnima(alarmAnima, true, cb, cb)
+    local alarmAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationAlarmAnimaName(modelName)
+    if alarmAnima and alarmAnima ~= "" then
+        self.RoleModelPanel:PlayAnima(alarmAnima, true, cb, cb)
+    else
+        if cb then cb() end
+    end
 end
 
 ---------溺死相关 begin----------
@@ -763,12 +966,12 @@ function XRpgMakerGameObject:DieByDrown(mapId, x, y)
     end
 
     for _, entityMapData in pairs(entityMapDataList) do
-        local type = entityMapData:GetType()
-        if type == XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Water or type == XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Ice then
+        local entityType = entityMapData:GetType()
+        if entityType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Water or entityType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Ice then
             local entityId = XRpgMakerGameConfigs.GetEntityIndex(mapId, entityMapData)
             --目的地是冰面，会死说明站在冰面融化了，不播放模型动作
             local entityObj = XDataCenter.RpgMakerGameManager.GetEntityObj(entityId)
-            local isNotPlayDrownAnima = (entityObj) and (entityObj:GetStatus() == XRpgMakerGameConfigs.XRpgMakerGameWaterType.Ice or entityObj:GetStatus() == XRpgMakerGameConfigs.XRpgMakerGameWaterType.Melt)
+            local isNotPlayDrownAnima = (entityObj) and (entityObj:GetStatus() == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameWaterType.Ice)
             self:SetDieByDrownAction(isDieByDrown, isNotPlayDrownAnima, entityObj)
             return
         end
@@ -820,8 +1023,8 @@ function XRpgMakerGameObject:PlayDrownAnima(cb, isNotPlayAnima)
 
         local objPos = self:GetGameObjPosition()
         local scale
-        local isShowDrownEffect = true
-        XUiHelper.Tween(DieByTrapTime, function(f)
+        self:RemoveTweenTimer()
+        self.TweenTimer = XUiHelper.Tween(DieByTrapTime, function(f)
             if XTool.UObjIsNil(self.Transform) then
                 return
             end
@@ -837,9 +1040,25 @@ function XRpgMakerGameObject:PlayDrownAnima(cb, isNotPlayAnima)
         return
     end
 
+    -- 反弹后落水，需要调整朝向
+    if self._IsRebound then
+        local endCube = self:GetCubeObj(self._PositionY, self._PositionX)
+        local endCubePosition = endCube:GetGameObjUpCenterPosition()
+        local curPosition = self.Transform.position
+        local direction = XLuaVector3.New(endCubePosition.x - curPosition.x, 0, endCubePosition.z - curPosition.z)
+        self.Transform.rotation = LookRotation(direction)
+    end
+    
     local modelName = self:GetModelName()
-    local drownAnima = XRpgMakerGameConfigs.GetRpgMakerGameDrownAnimaName(modelName)
+    local drownAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationDrownAnimaName(modelName)
     self.RoleModelPanel:PlayAnima(drownAnima, true, callback, callback)
+end
+
+function XRpgMakerGameObject:RemoveTweenTimer()
+    if self.TweenTimer then
+        XScheduleManager.UnSchedule(self.TweenTimer)
+        self.TweenTimer = nil
+    end
 end
 
 --播放落水特效
@@ -848,7 +1067,7 @@ function XRpgMakerGameObject:PlayDrownEffect()
     if not obj then
         return
     end
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.Drown)
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Drown)
     local resource = obj:ResourceManagerLoad(effectPath)
     local drownEffect = obj:LoadEffect(resource.Asset)
     XScheduleManager.ScheduleOnce(function()
@@ -862,10 +1081,10 @@ end
 ---------钢板相关 begin----------
 --检查是否需要播放钢板吸附动作
 function XRpgMakerGameObject:CheckIsSteelAdsorb(mapId, x, y, skillType)
-    if skillType ~= XRpgMakerGameConfigs.XRpgMakerGameRoleSkillType.Raiden then
+    if skillType ~= XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Thunder then
         return
     end
-    local isPlay = XRpgMakerGameConfigs.IsSameMixBlock(mapId, x, y, XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Steel)
+    local isPlay = XRpgMakerGameConfigs.IsSameMixBlock(mapId, x, y, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Steel)
     self:SetIsPlayAdsorbAnima(isPlay)
 end
 
@@ -880,9 +1099,13 @@ end
 --播放吸附动作
 function XRpgMakerGameObject:PlayAdsorbAnima(cb)
     local modelName = self:GetModelName()
-    local adsorbAnima = XRpgMakerGameConfigs.GetRpgMakerGameAdsorbAnimaName(modelName)
-    self.RoleModelPanel:PlayAnima(adsorbAnima, true, cb, cb)
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Adsorb)
+    local adsorbAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationAdsorbAnimaName(modelName)
+    if string.IsNilOrEmpty(adsorbAnima) then
+        if cb then cb() end
+    else
+        self.RoleModelPanel:PlayAnima(adsorbAnima, true, cb, cb)
+        --XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Adsorb)
+    end
 end
 ---------钢板相关 end----------
 
@@ -934,7 +1157,7 @@ end
 --播放传送消失动作
 function XRpgMakerGameObject:PlayTransferDisAnima(cb)
     local modelName = self:GetModelName()
-    local transferDis = XRpgMakerGameConfigs.GetRpgMakerGameTransferDisAnimaName(modelName)
+    local transferDis = XMVCA.XRpgMakerGame:GetConfig():GetAnimationTransferDisAnimaName(modelName)
     self.RoleModelPanel:PlayAnima(transferDis, true, cb, cb)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_TransferDis)
 end
@@ -942,7 +1165,7 @@ end
 --播放传送出现动作
 function XRpgMakerGameObject:PlayTransferAnima(cb)
     local modelName = self:GetModelName()
-    local transferAnima = XRpgMakerGameConfigs.GetRpgMakerGameTransferAnimaName(modelName)
+    local transferAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationTransferAnimaName(modelName)
     self.RoleModelPanel:PlayAnima(transferAnima, true, cb, cb)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Transfer)
 end
@@ -954,7 +1177,7 @@ end
 ---@param cb function
 function XRpgMakerGameObject:PlayPickUpAnim(cb)
     local modelName = self:GetModelName()
-    local transferAnima = XRpgMakerGameConfigs.GetRpgMakerGameDropPickAnimaName(modelName)
+    local transferAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationDropPickAnimaName(modelName)
     local callBack = function()
         self:PlayStandAnima()
         if cb then
@@ -985,7 +1208,7 @@ end
 --播放传送阵消失特效
 function XRpgMakerGameObject:PlayMagicTransferDisEffect(cb)
     if XTool.UObjIsNil(self._MagicDisEffect) then
-        local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.MagicDisEffect)
+        local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.MagicDisEffect)
         local resource = self:ResourceManagerLoad(effectPath)
         local position = self:GetTransform().position
         if not position then
@@ -1006,7 +1229,7 @@ end
 --播放传送阵出现特效
 function XRpgMakerGameObject:PlayMagicTransferEffect(cb)
     if XTool.UObjIsNil(self._MagicShowEffect) then
-        local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.MagicShowEffect)
+        local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.MagicShowEffect)
         local resource = self:ResourceManagerLoad(effectPath)
         local position = self:GetTransform().position
         if not position then
@@ -1033,7 +1256,7 @@ end
 ---@param cb function
 function XRpgMakerGameObject:PlayPushBubbleAnim(cb)
     local modelName = self:GetModelName()
-    local pushAnima = XRpgMakerGameConfigs.GetRpgMakerGameBubblePushAnimaName(modelName)
+    local pushAnima = XMVCA.XRpgMakerGame:GetConfig():GetAnimationBubblePushAnimaName(modelName)
     local callBack = function()
         self:PlayStandAnima()
         if cb then
@@ -1054,7 +1277,8 @@ function XRpgMakerGameObject:SetActive(isActive)
     gameObject:SetActiveEx(isActive)
 
     if self.RoleModelPanel then
-        self.RoleModelPanel:HideEffectByParentName(KillByElectricFenceEffectName)
+        local effectName = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.KillByElectricFenceEffect
+        self.RoleModelPanel:HideEffectByParentName(effectName)
     end
 end
 
@@ -1093,24 +1317,155 @@ function XRpgMakerGameObject:GetCurPosByCubeUpCenterPosition()
     return self:GetCubeUpCenterPosition(y, x)
 end
 
-function XRpgMakerGameObject:ResourceManagerLoad(path)
-    local resource = self.ResourcePool[path]
-    if resource then
-        return resource
+---@param noReuse boolean 不复用资源
+function XRpgMakerGameObject:ResourceManagerLoad(path, noReuse)
+    local isReuse = not noReuse -- 是否复用资源
+    if isReuse then
+        for _, res in pairs(self.ResourcePool) do
+            if res.Path == path then
+                return res
+            end
+        end
     end
 
-    XLog.Error("[XResourceManager优化] 已经无法运行, 从XResourceManager改为loadPrefab")
-    resource = CSXResourceManagerLoad(path)
-    if resource == nil or not resource.Asset then
-        XLog.Error(string.format("XRpgMakerGameObject:ResourceManagerLoad加载资源失败，路径：%s", path))
-        return
-    end
+    local go = CS.UnityEngine.GameObject(path)
+    local prefab = go:LoadPrefab(path)
+    local res = { Path = path, Asset = go, Prefab = prefab }
+    table.insert(self.ResourcePool, res)
+    return res
+end
 
-    self.ResourcePool[path] = resource
-    return resource
+function XRpgMakerGameObject:RemoveResource(path)
+    for i = #self.ResourcePool, 1, -1 do
+        local res = self.ResourcePool[i]
+        if res.Path == path then
+            table.remove(self.ResourcePool, i)
+            CS.UnityEngine.GameObject.Destroy(res.Asset)
+        end
+    end
+end
+
+function XRpgMakerGameObject:RemoveResourcePool()
+    for _, resource in pairs(self.ResourcePool) do
+        CS.UnityEngine.GameObject.Destroy(resource.Asset)
+    end
+    self.ResourcePool = {}
+    self.EffectPathDic = {}
+    self.MoveEffectPath = {}
 end
 
 function XRpgMakerGameObject:GetStatus()
 end
 --------------场景对象相关 end------------------
+
+-- 当前格子是否为空，默认false，可在继承类重写
+function XRpgMakerGameObject:IsEmpty()
+    return false
+end
+
+-- 加载死亡特效
+function XRpgMakerGameObject:LoadDieEffect(cb)
+    local dieEffectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.DieEffect)
+    local resource = self:ResourceManagerLoad(dieEffectPath)
+    self:LoadEffect(resource.Asset)
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Death)
+
+    local EFFECT_TIME = 500
+    self:RemoveDieEffectTimer()
+    self.DieEffectTimer = XScheduleManager.ScheduleOnce(function()
+        self:RemoveResource(dieEffectPath)
+        self:Die()
+        if cb then cb() end
+    end, EFFECT_TIME)
+end
+
+function XRpgMakerGameObject:RemoveDieEffectTimer()
+    if self.DieEffectTimer then
+        XScheduleManager.UnSchedule(self.DieEffectTimer)
+        self.DieEffectTimer = nil
+    end
+end
+
+function XRpgMakerGameObject:Die()
+    if self.SetCurrentHp then
+        self:SetCurrentHp(0)
+    end
+    self:SetActive(false)
+    self:OnDie()
+end
+
+-- 继承类重写
+function XRpgMakerGameObject:OnDie()
+    
+end
+
+--region 属性
+-- 初始化属性类型
+function XRpgMakerGameObject:InitSkillTypes(skillTypes)
+    self.SkillTypes = skillTypes
+    self:RefreshSkillTypeEffect()
+end
+
+-- 切换属性类型
+function XRpgMakerGameObject:ChangeSkillTypes(skillTypes)
+    local oldSkillTypes = self.SkillTypes
+    self.SkillTypes = skillTypes
+    self:RefreshSkillTypeEffect()
+    self:OnSkillTypesChange(oldSkillTypes, skillTypes)
+end
+
+-- 属性类型变化
+function XRpgMakerGameObject:OnSkillTypesChange(oldSkillTypes, skillTypes)
+    
+end
+
+-- 获取属性类型
+function XRpgMakerGameObject:GetSkillTypes()
+    return self.SkillTypes
+end
+
+-- 是否拥有某个属性
+function XRpgMakerGameObject:IsOwnSkillType(skillType)
+    if not self.SkillTypes then return false end
+    
+    for _, v in pairs(self.SkillTypes) do
+        if v == skillType then
+            return true
+        end
+    end
+    return false
+end
+
+-- 刷新属性类型特效
+function XRpgMakerGameObject:RefreshSkillTypeEffect()
+    local effectPathDic = {}
+    if self.SkillTypes and #self.SkillTypes > 0 then
+        for _, skillType in pairs(self.SkillTypes) do
+            local effectKey = XMVCA.XRpgMakerGame.EnumConst:GetSkillTypePermanentEffectKey(skillType, self.MonsterType)
+            if effectKey then
+                local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(effectKey)
+                effectPathDic[effectPath] = true
+            end
+        end
+    end
+
+    -- 移除不需要的特效
+    if self.EffectPathDic then
+        for path, _  in pairs(self.EffectPathDic) do
+            if not effectPathDic[path] then
+                self:RemoveResource(path)
+            end
+        end
+    end
+    
+    -- 加载新特效
+    for path, _  in pairs(effectPathDic) do
+        if not self.EffectPathDic or not self.EffectPathDic[path] then
+            local resource = self:ResourceManagerLoad(path)
+            self:LoadEffect(resource.Asset)
+        end
+    end
+    self.EffectPathDic = effectPathDic
+end
+--endregion
 return XRpgMakerGameObject

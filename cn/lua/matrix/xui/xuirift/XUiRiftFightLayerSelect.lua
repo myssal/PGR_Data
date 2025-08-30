@@ -4,7 +4,7 @@ local XUiRiftFightLayerSelect = XLuaUiManager.Register(XLuaUi, "UiRiftFightLayer
 
 local ItemIds = {
     XDataCenter.ItemManager.ItemId.RiftGold,
-    XDataCenter.ItemManager.ItemId.RiftCoin
+    XDataCenter.ItemManager.ItemId.RiftGold3
 }
 
 function XUiRiftFightLayerSelect:OnAwake()
@@ -14,12 +14,10 @@ function XUiRiftFightLayerSelect:OnAwake()
     self:BindHelpBtn(self.BtnHelp, "RiftHelp")
     self:RegisterClickEvent(self.BtnBack, self.Close)
     self:RegisterClickEvent(self.BtnShop, self.OnBtnTaskClick) -- 任务按钮
-    self:RegisterClickEvent(self.BtnLuck, self.OnBtnLuckClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnAttribute, self.OnBtnAttributeClick)
     self:RegisterClickEvent(self.BtnPluginBag, self.OnBtnPluginBagClick)
     self:RegisterClickEvent(self.BtnCharacter, self.OnBtnCharacterClick)
-    self:RegisterClickEvent(self.BtnMopup, self.OnBtnMopupClick) -- 派遣(扫荡)
     self.BtnAttributeRedEventId = XRedPointManager.AddRedPointEvent(self.BtnAttribute, self.OnCheckAttribute, self, { XRedPointConditions.Types.CONDITION_RIFT_ATTRIBUTE })
 end
 
@@ -32,22 +30,6 @@ function XUiRiftFightLayerSelect:OnStart(chapterId)
         if isClose then
             self._Control:HandleActivityEnd()
             return
-        end
-        -- 扫荡cd倒计时
-        local mopupTime
-        if self._MopupUnlock then
-            local leftTime = self._Control:GetMopupCountDown()
-            if leftTime and leftTime > 0 then
-                local remainTime = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.MAIN)
-                mopupTime = XUiHelper.GetText("RiftMopupTime", remainTime)
-                if self.BtnMopup.ButtonState ~= CS.UiButtonState.Disable then
-                    self.BtnMopup:SetButtonState(CS.UiButtonState.Disable)
-                end
-            elseif self.BtnMopup.ButtonState ~= CS.UiButtonState.Normal then
-                self.BtnMopup:SetButtonState(CS.UiButtonState.Normal)
-            end
-            self.BtnMopup:ShowReddot(not leftTime or leftTime <= 0)
-            self.BtnMopup:SetNameByGroup(0, mopupTime or XUiHelper.GetText("RiftMopupRefresh"))
         end
     end, nil, 0)
 end
@@ -81,8 +63,7 @@ function XUiRiftFightLayerSelect:UpdateChapter(chapterId)
     self.ChapterId = chapterId
     ---@type XRiftChapter
     self.Chapter = self._Control:GetEntityChapterById(chapterId)
-
-    self:RefreshMopupUnlock()
+    
     self.BtnAttribute:SetNameByGroup(0, self._Control:GetFuncUnlockById(XEnumConst.Rift.FuncUnlockId.Plugin).Desc)
 end
 
@@ -127,25 +108,13 @@ end
 function XUiRiftFightLayerSelect:Refresh()
     self:RefreshUiShow()
     self:RefreshStageList()
-    self:RefreshMopupUnlock()
     local isShowRed = self._Control:CheckTaskCanReward()
     self.BtnShop:ShowReddot(isShowRed)
 end
 
-function XUiRiftFightLayerSelect:RefreshMopupUnlock()
-    self._MopupUnlock = self._Control:IsFuncUnlock(XEnumConst.Rift.FuncUnlockId.Mopup)
-    self.BtnMopup.gameObject:SetActiveEx(self._MopupUnlock)
-end
-
 function XUiRiftFightLayerSelect:RefreshUiShow()
-    -- 幸运值信息
-    local progress = self._Control:GetLuckValueProgress()
-    self.TxtLuckProgress.text = string.format("%s%%", math.floor(progress * 100))
-    self.BtnLuck:ShowReddot(progress >= 1)
-    local isUnlock = self._Control:IsFuncUnlock(XEnumConst.Rift.FuncUnlockId.LuckyStage)
-    self.BtnLuck.gameObject:SetActiveEx(isUnlock)
     -- 属性加点按钮
-    isUnlock = self._Control:IsFuncUnlock(XEnumConst.Rift.FuncUnlockId.Attribute)
+    local isUnlock = self._Control:IsFuncUnlock(XEnumConst.Rift.FuncUnlockId.Attribute)
     self.BtnAttribute:SetDisable(not isUnlock)
     -- 商店按钮
     XRedPointManager.Check(self.BtnAttributeRedEventId)
@@ -159,32 +128,21 @@ end
 function XUiRiftFightLayerSelect:RefreshStageList()
     local resourceList = self.Chapter:GetAllFightLayersOrderList()
     local count = #resourceList
+    local nodeIdx = 1
+    local isEndless = self.Chapter:IsEndless()
 
-    -- 美术的特殊表现 不同节点数量 对应的位置不同
-    local nodeIdx
-    if count == 4 then
-        nodeIdx = 7
-    elseif count == 5 then
-        nodeIdx = 11
-    elseif count == 6 then
-        nodeIdx = 1
-    else
-        nodeIdx = 1
-        XLog.Error("没有该节点数对应的显示方案：" .. count)
-    end
-
-    self.GridStage.gameObject:SetActiveEx(true)
+    self.GridStage.gameObject:SetActiveEx(not isEndless)
     self.GridStageChallenge.gameObject:SetActiveEx(true)
 
     for i, fightLayer in ipairs(resourceList) do
         local grid = self._Grids[i]
         if not grid then
-            local parent = self["Stage" .. nodeIdx]
+            local parent = isEndless and self["StageEndless" .. nodeIdx] or self["Stage" .. nodeIdx]
             if not parent then
                 goto CONTINUE
             end
             local go
-            if i == 1 then
+            if i == 1 and not isEndless then -- 无尽关使用挑战关样式
                 go = self.GridStage
                 go:SetParent(parent, false)
             elseif i == count then
@@ -193,10 +151,11 @@ function XUiRiftFightLayerSelect:RefreshStageList()
             else
                 go = XUiHelper.Instantiate(self.GridStage, parent)
             end
+            go.localPosition = CS.UnityEngine.Vector3.zero
             grid = require("XUi/XUiRift/Grid/XUiGridRiftStage").New(go, self)
             self._Grids[i] = grid
         end
-        grid:Init(fightLayer)
+        grid:Init(fightLayer, i)
         grid:Update()
         :: CONTINUE ::
         nodeIdx = nodeIdx + 1
@@ -222,40 +181,6 @@ function XUiRiftFightLayerSelect:OnGridFightLayerSelected(fightLayer)
         --self.Transform:Find("Animation/QieHuan"):PlayTimelineAnimation()
     end
     self:Refresh()
-end
-
-function XUiRiftFightLayerSelect:OnBtnMopupClick()
-    if self._Control:GetMopupCountDown() > 0 then
-        XUiManager.TipError(XUiHelper.GetText("RiftSweepTimesLimit"))
-        return
-    end
-    
-    local title = CS.XTextManager.GetText("TipTitle")
-    local content = CS.XTextManager.GetText("RiftSweepConfirm")
-    XLuaUiManager.Open("UiDialog", title, content, XUiManager.DialogType.Normal, nil, function()
-        self._Control:RiftSweepLayerRequest(function()
-            self:Refresh()
-        end)
-    end)
-end
-
-function XUiRiftFightLayerSelect:OnBtnLuckClick()
-    if self._Control:GetLuckValueProgress() < 1 then
-        XUiManager.TipError(XUiHelper.GetText("RiftLuckStageLock"))
-        return
-    end
-
-    self:OpenLuckyDetail()
-end
-
-function XUiRiftFightLayerSelect:OpenLuckyDetail()
-    local luckyLayer = self._Control:GetLuckLayer()
-    local group = luckyLayer:GetStageGroup()
-    self._Control:SetCurrSelectRiftStage(group)
-    -- 幸运关没有剧情
-    XLuaUiManager.OpenWithCloseCallback("UiRiftPopupLuckyStageDetail", function()
-        self:Refresh()
-    end, luckyLayer, true)
 end
 
 function XUiRiftFightLayerSelect:OnBtnAttributeClick()

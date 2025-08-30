@@ -32,13 +32,19 @@ end
 function XUiPhotographPanel:Init()
     self:InitMenuBtnGroup()
     self:InitDynamicTable()
-    self.BtnPhotograph.CallBack = function () self:OnBtnPhotographClick() end
     self.BtnSynchronous.CallBack = function () self:OnBtnSynchronousClick() end
     self.BtnPhotographVertical.CallBack = function() self:OnBtnPhotographVerticalClick() end
     self.BtnHide.CallBack = function() self:OnBtnHideClick() end
     self.BtnSet.CallBack = function() self:OnBtnSetClick() end
     self.Btn.CallBack = function() self:OnBtnClick() end
     
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotograph:SetButtonState(3) -- 海外隐藏拍照按钮
+        local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
+        raycastComponent.raycastTarget = false
+    else
+        self.BtnPhotograph.CallBack = function () self:OnBtnPhotographClick() end
+    end
     self.PanelTip.gameObject:SetActiveEx(false)
     self.ActionPanel = XUiPhotographActionPanel.New(self.PanelAction)
     self:UpdateViewState(not self.BtnHide:GetToggleState())
@@ -293,7 +299,7 @@ function XUiPhotographPanel:OnDynamicTableActionEvent(event, index, grid)
         local trySceneId = self.RootUi.CurrSeleSceneId
         local isHas = XMVCA.XFavorability:CheckTryCharacterActionUnlock(self.ActionList[index], XDataCenter.PhotographManager.GetCharacterDataById(self.CurCharId).TrustLv, tryFashionId, trySceneId)
         if not isHas then
-            XUiManager.TipError(XMVCA.XFavorability:GetCharacterActionMapText(self.ActionList[index].config.ConditionDescript))
+            XUiManager.TipError(self.ActionList[index].config.ConditionDescript)
             return
         end
         if self.CurActionGrid ~= nil then
@@ -305,8 +311,8 @@ function XUiPhotographPanel:OnDynamicTableActionEvent(event, index, grid)
         self.RootUi:PlayAnimation("PanelActionEnable")
         self.CurActionIndex = index
         self.CurActionGrid = grid
-        self:SetInfoTextName(XMVCA.XFavorability:GetCharacterActionMapText(self.ActionList[index].config.Name))
-        self.ActionPanel:SetTxtTitle(XMVCA.XFavorability:GetCharacterActionMapText(self.ActionList[index].config.Name))
+        self:SetInfoTextName(self.ActionList[index].config.Name)
+        self.ActionPanel:SetTxtTitle(self.ActionList[index].config.Name)
         grid:OnActionTouched(self.ActionList[index])
         if XMVCA.XFavorability:CheckCGBoardAct(tryFashionId, self.ActionList[index].config.SignBoardActionId) then
             if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
@@ -431,11 +437,15 @@ end
 
 function XUiPhotographPanel:UpdateViewState(show)
     self.PanelMenu.gameObject:SetActiveEx(show)
-    self.BtnSet.gameObject:SetActiveEx(show)
     self.BtnPhotographVertical.gameObject:SetActiveEx(show and not XDataCenter.UiPcManager.IsPc())
     self.PanelContent.gameObject:SetActiveEx(show)
     self:RefreshBtnSynchronous()
     self.Btn.gameObject:SetActiveEx(not show and self.GameObject.activeInHierarchy)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnSet.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+    else
+        self.BtnSet.gameObject:SetActiveEx(show)
+    end
     --self.PanelTip.gameObject:SetActiveEx(show)
 end
 

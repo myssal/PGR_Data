@@ -10,6 +10,12 @@ function UiTheatre5ChooseCharacter:OnAwake()
     self.BtnBack.CallBack = handler(self, self.OnBtnBackClickEvent)
     self.BtnMainUi.CallBack = XLuaUiManager.RunMain
     self:BindHelpBtn(self.BtnHelp, 'Theatre5')
+
+    -- v3.8 新增跳转时装
+    self.BtnCostume = self.BtnCostume or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/DetailRoot/BtnCostume", "XUiButton")
+    if self.BtnCostume then
+        XUiHelper.RegisterClickEvent(self, self.BtnCostume, self.OnClickSkipFashion)
+    end
 end
 
 function UiTheatre5ChooseCharacter:OnStart(gameMode)
@@ -24,19 +30,20 @@ function UiTheatre5ChooseCharacter:OnStart(gameMode)
         self.ComChooseCharacter = XUiComTheatre5PVEChooseCharacter.New(self.GameObject, self)
         self.ComChooseCharacter:Open()
     end
-    
+
     self.ComChooseCharacter:Init()
 
-    if gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then --教学线逻辑放在最后面，要做特殊梳理
+    if gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+        --教学线逻辑放在最后面，要做特殊梳理
         ---@type XUiTheatre5CharacterTeaching
         self.CharacterTeaching = XUiTheatre5CharacterTeaching.New(self.GameObject, self)
         self.CharacterTeaching:Open()
-    end  
+    end
 end
 
 function UiTheatre5ChooseCharacter:OnEnable()
     XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_GUIDE_THEATRE5_RETURN_MAIN, self.PlayReturnMainGuide, self)
-    self:PVEStoryNodeCheck()  
+    self:PVEStoryNodeCheck()
 end
 
 function UiTheatre5ChooseCharacter:OnDisable()
@@ -55,9 +62,10 @@ function UiTheatre5ChooseCharacter:OnPveOpenOrCloseChat(isOpen, characters)
         return
     end
 
-    if not characters then --不配角色，就对话时全部隐藏
+    if not characters then
+        --不配角色，就对话时全部隐藏
         characters = {}
-    end    
+    end
     local operateCharacters = {}
     local characterCfgs = self._Control:GetTheatre5CharacterCfgs()
     for _, cfg in pairs(characterCfgs) do
@@ -66,14 +74,14 @@ function UiTheatre5ChooseCharacter:OnPveOpenOrCloseChat(isOpen, characters)
             if cfg.Id == characterId then
                 operate = false
                 break
-            end    
+            end
         end
         if operate then
             table.insert(operateCharacters, cfg.Id)
-        end    
-    end   
+        end
+    end
     --打开时需要隐藏的角色，或关闭时需要显示的角色
-    self.ComChooseCharacter:SetCharactersVisible(operateCharacters, enable)    
+    self.ComChooseCharacter:SetCharactersVisible(operateCharacters, enable)
 end
 
 function UiTheatre5ChooseCharacter:PVEStoryNodeCheck()
@@ -85,17 +93,17 @@ function UiTheatre5ChooseCharacter:PVEStoryNodeCheck()
     local isTrigger = self._Control.FlowControl:CheckEndingTrigger()
     if isTrigger then
         return
-    end    
+    end
 
     --再触发对话    
     local success = self._Control.FlowControl:CheckChatTrigger(XMVCA.XTheatre5.EnumConst.ChatTriggerType.UIPanel, self.Name, function()
         if self.SafeAreaContentPane then
             self.SafeAreaContentPane.gameObject:SetActiveEx(true)
-        end      
+        end
     end)
     if success and self.SafeAreaContentPane then
         self.SafeAreaContentPane.gameObject:SetActiveEx(false)
-    end  
+    end
 
 end
 
@@ -144,6 +152,28 @@ end
 
 function UiTheatre5ChooseCharacter:OnDestroy()
     XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_PVE_OPEN_OR_CLOSE_CHAT, self.OnPveOpenOrCloseChat, self)
+end
+
+function UiTheatre5ChooseCharacter:OnClickSkipFashion()
+    -- 跳转到时装
+    if self._SkipId and self._SkipId > 0 then
+        XFunctionManager.SkipInterface(self._SkipId)
+    else
+        XLog.Error("[UiTheatre5ChooseCharacter] skipId有问题:" .. tostring(self._SkipId))
+    end
+end
+
+function UiTheatre5ChooseCharacter:SetSkipId(skipId)
+    self._SkipId = skipId
+    if not skipId or skipId <= 0 then
+        self.BtnCostume.gameObject:SetActiveEx(false)
+    else
+        if XFunctionManager.IsCanSkipCheckTime(skipId) then
+            self.BtnCostume.gameObject:SetActiveEx(true)
+        else
+            self.BtnCostume.gameObject:SetActiveEx(false)
+        end
+    end
 end
 
 return UiTheatre5ChooseCharacter

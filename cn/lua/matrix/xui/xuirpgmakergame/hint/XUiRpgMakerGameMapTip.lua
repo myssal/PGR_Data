@@ -1,10 +1,3 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiGridRpgMakerGameMapNode = require("XUi/XUiRpgMakerGame/Hint/XUiGridRpgMakerGameMapNode")
-local XUiGridRpgMakerGameRecord = require("XUi/XUiRpgMakerGame/Hint/XUiGridRpgMakerGameRecord")
-
-local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
-local Vector3 = CS.UnityEngine.Vector3
-
 --关卡谜底界面
 local XUiRpgMakerGameMapTip = XLuaUiManager.Register(XLuaUi, "UiRpgMakerGameMapTip")
 
@@ -37,6 +30,8 @@ function XUiRpgMakerGameMapTip:OnDisable()
 end
 
 function XUiRpgMakerGameMapTip:InitMap()
+    local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+    local XUiGridRpgMakerGameMapNode = require("XUi/XUiRpgMakerGame/Hint/XUiGridRpgMakerGameMapNode")
     self.DynamicTable = XDynamicTableNormal.New(self.SViewStage)
     self.DynamicTable:SetDelegate(self)
     self.DynamicTable:SetProxy(XUiGridRpgMakerGameMapNode)
@@ -50,6 +45,7 @@ function XUiRpgMakerGameMapTip:UpdateMap()
     local itemCount = #self.MapObjList
     local scale = 1 - (itemCount - 8) * 0.1
     local yOffset = (self.SViewStage.rect.height - self.SViewStage.rect.height * scale) / 2
+    local Vector3 = CS.UnityEngine.Vector3
     self.SViewStage.localScale = Vector3(scale, scale, 1)
     self.SViewStage.localPosition = Vector3(self.SViewStage.localPosition.x, self.SViewStage.localPosition.y - yOffset, self.SViewStage.localPosition.z)
 end
@@ -72,7 +68,7 @@ function XUiRpgMakerGameMapTip:UpdateData()
     -- local blockIdListTemp = XRpgMakerGameConfigs.GetRpgMakerGameMapIdToBlockIdList(mapId)
     -- blockIdListTemp = XTool.Clone(blockIdListTemp)
     -- self.MapObjList = XTool.ReverseList(blockIdListTemp)
-    local mapObjDataTemp = XRpgMakerGameConfigs.GetMixBlockDataList(mapId)
+    local mapObjDataTemp = XMVCA.XRpgMakerGame:GetConfig():GetMixBlockDataList(mapId)
     self.MapObjList = XTool.Clone(mapObjDataTemp)
 end
 
@@ -88,7 +84,8 @@ function XUiRpgMakerGameMapTip:StartEffectLineMoveAnima()
     local onceMoveDistance = CS.XGame.ClientConfig:GetInt("RpgMakerGameMapTipMoveSpeed")  --每次移动特效的距离
     local localPosX
 
-    self.EffectLineMoveTimer = XScheduleManager.ScheduleForever(function() 
+    self.EffectLineMoveTimer = XScheduleManager.ScheduleForever(function()
+        local Vector3 = CS.UnityEngine.Vector3
         if isOnceMoveEnd then
             curLineId = curLineId + 1 > totalCount and 1 or curLineId + 1
             for _, grid in pairs(grids) do
@@ -129,6 +126,8 @@ function XUiRpgMakerGameMapTip:UpdateRecords()
     local hintIconKeyList = XRpgMakerGameConfigs.GetRpgMakerGameHintIconKeyListByMapId(mapId, self.IsNotShowLine)
     local grids = self.RecordGrids
 
+    local XUiGridRpgMakerGameRecord = require("XUi/XUiRpgMakerGame/Hint/XUiGridRpgMakerGameRecord")
+    local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
     for i, hintIconKey in ipairs(hintIconKeyList) do
         local grid = grids[i]
         if not grid then
@@ -152,3 +151,5 @@ end
 function XUiRpgMakerGameMapTip:GetHintLineMapParams(row, col)
     return self.HintLineMap and self.HintLineMap[row] and self.HintLineMap[row][col]
 end
+
+return XUiRpgMakerGameMapTip

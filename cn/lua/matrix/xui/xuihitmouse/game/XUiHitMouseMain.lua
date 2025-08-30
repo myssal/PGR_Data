@@ -13,6 +13,10 @@ function XUiHitMouseMain:OnStart()
     self:InitBaseBtns()
     self:InitPanels()
     self:AddListeners()
+    if XOverseaManager.IsTWRegion() then
+        self:FirstShowHelpTip()
+    end
+
 end
 
 function XUiHitMouseMain:InitBaseBtns()
@@ -97,4 +101,15 @@ function XUiHitMouseMain:RemoveListeners()
     XEventManager.RemoveEventListener(XEventId.EVENT_HIT_MOUSE_REWARD_REFRESH, self.OnRewardRefresh, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_HIT_MOUSE_STAGE_REFRESH, self.OnStageRefresh, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_HIT_MOUSE_ACTIVITY_END, self.OnActivityEnd, self)
+end
+--==============
+--海外修改，添加第一次进入打开图文提示功能
+--==============
+function XUiHitMouseMain:FirstShowHelpTip()
+    local key = XDataCenter.HitMouseManager.GetAccountEnterKey()
+    local data = XSaveTool.GetData(key)
+    if not data then
+        XUiManager.ShowHelpTip("HitMouseHelp")
+        XSaveTool.SaveData(key, 1)
+    end
 end

@@ -818,8 +818,8 @@ XTaskManagerCreator = function()
             local cA = XTaskConfig.GetTaskCfgById(a.Id)
             local cB = XTaskConfig.GetTaskCfgById(b.Id)
             local pa, pb = cA.Priority, cB.Priority
-            local stateA = TotalTaskData[a.Id].State
-            local stateB = TotalTaskData[b.Id].State
+            local stateA = TotalTaskData[a.Id] and TotalTaskData[a.Id].State or 0
+            local stateB = TotalTaskData[b.Id] and TotalTaskData[b.Id].State or 0
             local compareResult = CompareState(stateA, stateB)
             if compareResult == 0 then
                 if pa ~= pb then
@@ -2006,6 +2006,7 @@ XTaskManagerCreator = function()
                 TaskResultDataCache[taskType] = nil
             end
             TotalTaskData[value.Id] = value
+            XAppEventManager.TaskAppLogEvent(value.Id,value.State)
             if taskType == XTaskManager.TaskType.Story then
                 StoryTaskData[value.Id] = value
             elseif taskType == XTaskManager.TaskType.Daily then

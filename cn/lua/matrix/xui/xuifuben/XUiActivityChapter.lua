@@ -23,12 +23,32 @@ end
 function XUiGridActivity:SetManager(data)
     self.RImgIcon:SetRawImage(data:ExGetIcon())
     self.TxtName.text = data:ExGetName()
-    self.TxtConsumeCount.text = data:ExGetProgressTip()
+    -- #203409 抽象该方法
+    -- self.TxtConsumeCount.text = data:ExGetProgressTip()
+    self:SetTxtConsumeCount(data)
     self.PanelLock.gameObject:SetActiveEx(data:ExGetIsLocked())
     self.TxtLock.text = data:ExGetLockTip()
     local runningTimeStr = data:ExGetRunningTimeStr()
     self.PanelLeftTime.gameObject:SetActiveEx(not string.IsNilOrEmpty(runningTimeStr))
     self.TxtLeftTime.text = runningTimeStr
+end
+
+function XUiGridActivity:SetTxtConsumeCount(data)
+    -- #203409
+    -- 因为是local变量 因此无法被外界获取也就无法重写
+    if XDataCenter.CrossVersionManager.GetEnable() then
+        if data.ExConfig and data.ExConfig.SkipId then
+            local skipConfig = XFunctionConfig.GetSkipFuncCfg(data.ExConfig.SkipId)
+            if skipConfig then
+                self.teachId = skipConfig.CustomParams[1]
+            end
+        end
+        self.TxtConsumeCount.text = data:ExGetProgressTip(self.teachId)
+    else
+		-- 原文start
+        self.TxtConsumeCount.text = data:ExGetProgressTip()
+        -- 原文end
+    end
 end
 
 function XUiGridActivity:SetChapter(data)
@@ -64,11 +84,20 @@ end
 function XUiGridActivity:RefreshProgressTips()
     local progressTips
     if XDataCenter.FubenManagerEx.IsFubenBase(self.Data) then
-        progressTips = self.Data:ExGetProgressTip()
+        --
+        progressTips = self:ExGetProgressTip()
     elseif CheckClassSuper(self.Data, XChapterViewModel) then
         progressTips = self.Data:GetProgressTips()
     end
     self.TxtConsumeCount.text = progressTips
+end
+
+function XUiGridActivity:ExGetProgressTip()
+    if XDataCenter.CrossVersionManager.GetEnable() then
+        return self.Data:ExGetProgressTip(self.teachId)
+    else
+        return self.Data:ExGetProgressTip()
+    end
 end
 
 function XUiGridActivity:IsActivityEnd()

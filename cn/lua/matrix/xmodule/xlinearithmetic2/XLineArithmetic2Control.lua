@@ -41,7 +41,7 @@ function XLineArithmetic2Control:OnInit()
 
         ---@type XLineArithmetic2ControlChapterData[]
         Chapter = false,
-        ChapterIndex = 0,
+        UnlockChapters = { 1 },
 
         ---@type XLineArithmetic2ControlStageData[]
         Stage = false,
@@ -650,14 +650,15 @@ function XLineArithmetic2Control:UpdateChapter()
         return a.ChapterId < b.ChapterId
     end)
 
-    self._UiData.ChapterIndex = 1
+    self._UiData.UnlockChapters = { 1 }
     for i, chapterConfig in pairs(chapters) do
-        local chapterId = chapterConfig.Id
-        local starAmount = self._Model:GetStarAmount(chapterId)
-        local maxStarAmount = self._Model:GetMaxStarAmount(chapterId)
-        if starAmount == maxStarAmount then
-            if self._UiData.ChapterIndex < i then
-                self._UiData.ChapterIndex = i
+        -- 默认解锁1
+        if i ~= 1 then
+            local chapterId = chapterConfig.Id
+            local starAmount = self._Model:GetStarAmount(chapterId)
+            local maxStarAmount = self._Model:GetMaxStarAmount(chapterId)
+            if starAmount == maxStarAmount then
+                table.insert(self._UiData.UnlockChapters, i)
             end
         end
     end

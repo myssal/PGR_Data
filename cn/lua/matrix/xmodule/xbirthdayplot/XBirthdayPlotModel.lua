@@ -13,7 +13,7 @@
 local XBirthdayPlotModel = XClass(XModel, "XBirthdayPlotModel")
 
 local TableKey = {
-    BirthdayPeriod = { CacheType = XConfigUtil.CacheType.Normal, Identifier = "StoryChapterId" },
+    BirthdayPeriod = { CacheType = XConfigUtil.CacheType.Normal, Identifier = XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() and "Id" or "StoryChapterId" },
     SingleStory = {},
     FavorLevelIcon = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Level" },
 }
@@ -82,7 +82,16 @@ function XBirthdayPlotModel:IsSingleStory()
 end
 
 function XBirthdayPlotModel:SetActiveChapterId(chapterId)
-    self._ActiveChapterId = chapterId
+    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+        local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.BirthdayPeriod, chapterId)
+        if config and config.StoryChapterId then
+            self._ActiveChapterId = config.StoryChapterId
+        else
+            XLog.Error("SetActiveChapterId Error BirthdayPeriod.tab", chapterId)
+        end
+    else
+        self._ActiveChapterId = chapterId
+    end
     self._CachePeriodId = nil
 end
 

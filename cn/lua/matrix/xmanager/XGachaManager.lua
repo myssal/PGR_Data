@@ -32,8 +32,13 @@ XGachaManagerCreator = function()
     }
 
     function XGachaManager.Init()
+        XEventManager.AddEventListener(XEventId.EVENT_LOGIN_SUCCESS, function ()
+            XGachaManager.InitConfig()
+        end)
+    end
+    
+    function XGachaManager.InitConfig()
         XGachaManager.SetGachaProbShowInfo()
-        
         local gachaCfg = XGachaConfigs.GetGachas()
         for k, v in pairs(gachaCfg) do
             XGachaManager.SetGachaRewardInfo(k)
@@ -77,34 +82,41 @@ XGachaManagerCreator = function()
         MaxCountOfAll[gaChaId] = 0
         CurCountOfAll[gaChaId] = 0
         IsInfinite[gaChaId] = false
+    
         local groupIdList = {}
         for _, groupId in pairs(gachaCfg[gaChaId].GroupId) do
             table.insert(groupIdList, groupId)
         end
-
+    
         local list = {}
-        for _, v in pairs(GachaRewardInfos[gaChaId]) do
-            for _, groupId in pairs(groupIdList) do
-                if v.GroupId == groupId then
-                    table.insert(list, v)
-                    break
+        local rewardMap = GachaRewardInfos[gaChaId] or {}
+        for id, entry in pairs(rewardMap) do
+            if entry and entry.Cfg then
+                for _, groupId in pairs(groupIdList) do
+                    if entry.Cfg.GroupId == groupId then
+                        table.insert(list, entry)
+                        break
+                    end
                 end
             end
-
         end
-        for _, v in pairs(list) do
-            if v.RewardType == XGachaConfigs.RewardType.NotCount then
+    
+        for _, entry in pairs(list) do
+            if entry.Cfg.RewardType == XGachaConfigs.RewardType.NotCount then
                 IsInfinite[gaChaId] = true
             end
-            MaxCountOfAll[gaChaId]  = MaxCountOfAll[gaChaId]  + v.UsableTimes
-            CurCountOfAll[gaChaId]  = CurCountOfAll[gaChaId]  + (v.UsableTimes - v.CurCount)
+            local usable = entry.Cfg.UsableTimes or 0
+            MaxCountOfAll[gaChaId] = MaxCountOfAll[gaChaId] + usable
+            CurCountOfAll[gaChaId] = CurCountOfAll[gaChaId] + (usable - (entry.CurCount or 0))
         end
-
+    
         table.sort(list, function(a, b)
-            if a.Priority == b.Priority then
-                return a.Id < b.Id
+            local ap = a.Cfg.Priority or 0
+            local bp = b.Cfg.Priority or 0
+            if ap == bp then
+                return (a.Cfg.Id or 0) < (b.Cfg.Id or 0)
             else
-                return a.Priority > b.Priority
+                return ap > bp
             end
         end)
         return list
@@ -115,7 +127,7 @@ XGachaManagerCreator = function()
         local data = XGachaManager.GetGachaRewardInfoById(gaChaId)
         local isAllClear = true
         for k, v in pairs(data) do
-            if v.CurCount > 0 and v.GroupId == gachaCfg.PropAddGroupId then
+            if v.CurCount > 0 and v.Cfg.GroupId == gachaCfg.PropAddGroupId then
                 isAllClear = false
             end
         end
@@ -126,23 +138,23 @@ XGachaManagerCreator = function()
     function XGachaManager.GetGachaRewardSplitByRareLevel(gaChaId)
         local list = XGachaManager.GetGachaRewardInfoById(gaChaId)
         local res = {}
-        for k, v in pairs(list) do
-            if XTool.IsNumberValid(v.Rarelevel) then
-                if not res[v.Rarelevel] then
-                    res[v.Rarelevel] = {}
+        for _, v in pairs(list) do
+            if XTool.IsNumberValid(v.Cfg.Rarelevel) then
+                if not res[v.Cfg.Rarelevel] then
+                    res[v.Cfg.Rarelevel] = {}
                 end
-                table.insert(res[v.Rarelevel], v)
+                table.insert(res[v.Cfg.Rarelevel], v)
             end
         end
         return res
     end
-
+    
     --- 根据是否是特殊奖励来区分
     function XGachaManager.GetGachaRewardSplitByRareType(gaChaId)
         local list = XGachaManager.GetGachaRewardInfoById(gaChaId)
         local res = {}
-        for k, v in pairs(list) do
-            local layer = v.Rare and 1 or 2
+        for _, v in pairs(list) do
+            local layer = v.Cfg.Rare and 1 or 2
             if not res[layer] then
                 res[layer] = {}
             end
@@ -275,8 +287,14 @@ XGachaManagerCreator = function()
 
     function XGachaManager.UpdateGachaRewardInfo(gridInfoList, gachaId)
         for _, v in pairs(gridInfoList or {}) do
-            if GachaRewardInfos[gachaId][v.Id] then
-                GachaRewardInfos[gachaId][v.Id].CurCount = GachaRewardInfos[gachaId][v.Id].UsableTimes - v.Times
+            local gachaMap = GachaRewardInfos[gachaId]
+            if gachaMap and gachaMap[v.Id] then
+                local entry = gachaMap[v.Id]
+                local usable = (entry.Cfg and entry.Cfg.UsableTimes) or 0
+                entry.CurCount = usable - (v.Times or 0)
+            else
+                -- 如果找不到 entry，写个错误日志便于排查，但不要频繁 allocate
+                XLog.Error(string.format("UpdateGachaRewardInfo 找不到 GachaId=%s RewardId=%s", tostring(gachaId), tostring(v.Id)))
             end
         end
     end
@@ -290,15 +308,21 @@ XGachaManagerCreator = function()
         local gachaRewardCfg = XGachaConfigs.GetGachaReward()
         local tempGachaInfo = GachaRewardInfos[gachaId]
         if not tempGachaInfo then
-            GachaRewardInfos[gachaId] = {}
-            tempGachaInfo = GachaRewardInfos[gachaId]
+            tempGachaInfo = {}
+            GachaRewardInfos[gachaId] = tempGachaInfo
         end
+    
+        -- 更新或创建 entry（不逐字段拷贝，仅引用配置）
         for id, reward in pairs(gachaRewardCfg) do
-            tempGachaInfo[id] = {}
-            for k, v in pairs(reward) do
-                tempGachaInfo[id][k] = v
+            local entry = tempGachaInfo[id]
+            if not entry then
+                entry = { Cfg = reward, CurCount = reward.UsableTimes or 0 }
+                tempGachaInfo[id] = entry
+            else
+                -- 就地更新引用与初始 CurCount（保留表，避免分配新表）
+                entry.Cfg = reward
+                entry.CurCount = reward.UsableTimes or 0
             end
-            tempGachaInfo[id].CurCount = tempGachaInfo[id].UsableTimes
         end
     end
 
@@ -473,12 +497,12 @@ XGachaManagerCreator = function()
                 table.insert(groupIdList, groupId)
             end
 
-            for _, v in pairs(GachaRewardInfos[DrawingGachaId]) do
+            for _, entry in pairs(GachaRewardInfos[DrawingGachaId] or {}) do
                 -- 是否属于DrawingGachaId的奖励组
                 for _, groupId in pairs(groupIdList) do
-                    if v.GroupId == groupId and v.CurCount ~= 0 then
+                    if entry.Cfg and entry.Cfg.GroupId == groupId and entry.CurCount ~= 0 then
                         isSoldOut = false
-                        if v.Rare then
+                        if entry.Cfg.Rare then
                             isSoldOutRare = false
                         end
                         break
@@ -562,25 +586,24 @@ XGachaManagerCreator = function()
     --- 特殊奖励是否售罄
     function XGachaManager.GetGachaIsSoldOutRare(gachaId)
         local isSoldOutRare = true
-
         local groupIdList = {}
-        -- 找出DrawingGachaId的奖励
         local gachaCfg = XGachaConfigs.GetGachas()
         for _, groupId in pairs(gachaCfg[gachaId].GroupId) do
             table.insert(groupIdList, groupId)
         end
-
+    
         local gachaRewardInfos = GachaRewardInfos[gachaId]
-
+    
         if not XTool.IsTableEmpty(gachaRewardInfos) then
-            for _, v in pairs(gachaRewardInfos) do
-                -- 是否属于DrawingGachaId的奖励组
-                for _, groupId in pairs(groupIdList) do
-                    if v.GroupId == groupId and v.CurCount ~= 0 then
-                        if v.Rare then
-                            isSoldOutRare = false
+            for _, entry in pairs(gachaRewardInfos) do
+                if entry and entry.Cfg then
+                    for _, groupId in pairs(groupIdList) do
+                        if entry.Cfg.GroupId == groupId and entry.CurCount ~= 0 then
+                            if entry.Cfg.Rare then
+                                isSoldOutRare = false
+                            end
+                            break
                         end
-                        break
                     end
                 end
             end
@@ -588,7 +611,7 @@ XGachaManagerCreator = function()
             isSoldOutRare = false
             XLog.Error('尝试检查GachaId：'..tostring(gachaId)..' 卡池是否抽完特殊奖励时，奖励数据不存在')
         end
-        
+    
         return isSoldOutRare
     end
 

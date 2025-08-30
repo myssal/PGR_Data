@@ -53,9 +53,9 @@ function XUiGridFightGradeItem:Init(playerData, playerCount)
     local item2 = CS.UnityEngine.GameObject.Instantiate(self.GridFightDataItem, self.PanelFightDataContainer)
     --TODO 配置名字
     self.GridFightDataList = {
-        XUiGridFightDataItem.New(self.GridFightDataItem, "输出"),
-        XUiGridFightDataItem.New(item1, "治疗"),
-        XUiGridFightDataItem.New(item2, "破甲"),
+        XUiGridFightDataItem.New(self.GridFightDataItem, CS.XTextManager.GetLuaText("XUiGridFightGradeItem.lua_56")),
+        XUiGridFightDataItem.New(item1, CS.XTextManager.GetLuaText("XUiGridFightGradeItem.lua_57")),
+        XUiGridFightDataItem.New(item2, CS.XTextManager.GetLuaText("XUiGridFightGradeItem.lua_58")),
     }
 end
 

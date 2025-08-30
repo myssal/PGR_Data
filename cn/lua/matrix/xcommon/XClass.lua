@@ -18,7 +18,7 @@ local function create(class, obj, ...)
     if class.Ctor then
         class.Ctor(obj, ...)
     end
-end    
+end
 
 function XClass(super, className, setPartial)
     local class
@@ -29,10 +29,10 @@ function XClass(super, className, setPartial)
         if class then
             -- 热重载重定义时先把之前的定义清空，防止误报重定义
             local vtbl = _class[class]
-            
+
             if vtbl then
                 local keyList = {}
-                
+
                 for k, v in pairs(vtbl) do
                     if rawget(vtbl, k) ~= nil and k ~= 'Super' then
                         table.insert(keyList, k)
@@ -43,7 +43,7 @@ function XClass(super, className, setPartial)
                     rawset(vtbl, k, nil)
                 end
             end
-            
+
             return class
         end
 
@@ -71,11 +71,11 @@ function XClass(super, className, setPartial)
         setmetatable(class, {
             __newindex = function(_, k, v)
                 local data = rawget(vtbl, k)
-                
-                if data ~= nil then 
-                    XLog.Error('重复定义字段或方法 className: ' .. tostring(className) .. ' key: ' .. tostring(k))    
+
+                if data ~= nil then
+                    XLog.Warning('重复定义字段或方法 className: ' .. tostring(className) .. ' key: ' .. tostring(k))
                 end
-                
+
                 vtbl[k] = v
             end,
             __index = function(_, k)
@@ -113,7 +113,7 @@ function XClass(super, className, setPartial)
             })
         end
     end
-    
+
     -- 是否设置为分部类
     if setPartial then
         if _classNameDicForPartial[className] == nil then
@@ -128,11 +128,11 @@ end
 
 function XClassPartial(className)
     local class = _classNameDicForPartial[className]
-    
+
     if class == nil then
         XLog.Error('定义分部类时，该类未设置为分部类或不存在：' .. className)
     end
-    
+
     return class
 end
 

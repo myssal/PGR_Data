@@ -139,7 +139,11 @@ function XUiNewRoomSingleTip:Refresh()
             local btnSelect = string.format("%s%s", "BtnSel0", i)
 
             if self[name] then
-                self[name].text = string.format("%s-%s", charConfig.Name, charConfig.TradeName)
+                if XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion() then
+                    self[name].text = charConfig.LogName
+                else
+                    self[name].text = string.format("%s-%s", charConfig.Name, charConfig.TradeName)
+                end
             end
             if self[skillName] then
                 self[skillName].text = captianSkillInfo.Name

@@ -58,6 +58,7 @@ function XTheatre5CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(char
 
     if fashionCfg then
         return XTool.IsNumberValid(fashionCfg.MainlineFashionId) and fashionCfg.MainlineFashionId or nil
+        --, fashionCfg.WeaponId 系统界面不需要显示武器，已经在配置表中删除
     end
 end
 

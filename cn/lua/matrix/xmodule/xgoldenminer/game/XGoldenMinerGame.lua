@@ -54,6 +54,14 @@ function XGoldenMinerGame:OnInit()
     self._IsOpenSlotsScore = false
 
     self:_AddEventListener()
+    
+    -- C#端封装各种计算的接口
+    ---@type XGoldenCalculateHelper
+    self.CalculateHelper = CS.XGoldenCalculateHelper()
+    
+    -- 玩法内使用的随机器
+    ---@type System.Random
+    self.Random = CS.System.Random(os.time())
 end
 
 function XGoldenMinerGame:OnRelease()
@@ -70,6 +78,7 @@ function XGoldenMinerGame:OnRelease()
     self._IgnoreGameClearIgnoreStoneTypeDir = nil
     self._UpdateExFunc = nil
     self:_RemoveEventListener()
+    self.CalculateHelper = nil
 end
 
 function XGoldenMinerGame:OnUpdate()
@@ -144,7 +153,10 @@ function XGoldenMinerGame:_InitEnumConst()
         PARTNER_SHIP = require("XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentPartnerShip"),
         PARTNER_SCAN = require("XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentScanLine"),
         PARTNER_RADAR = require("XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentPartnerRadar"),
+        PARTNER_STONELINK = require('XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentPartnerStoneLink'),
         REFLECT_EDGE = require("XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentReflectEdge"),
+        LINK = require('XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentLink'),
+        NET_AIM = require('XModule/XGoldenMiner/Game/Component/XGoldenMinerComponentNetAim'),
     }
 end
 
@@ -211,6 +223,7 @@ end
 function XGoldenMinerGame:EnterGame()
     self._Status = self.GAME_STATUS.INIT
     self:SystemEnterGame(self._ObjDir)
+    self:SystemInitAfterAllSystemEnter()
     self._Status = self.GAME_STATUS.PLAY
     self:StartTick(0)
 end
@@ -299,7 +312,7 @@ function XGoldenMinerGame:_CheckIsStoneClear()
         local stoneEntity = self:GetStoneEntityByUid(uid)
         local stoneType = stoneEntity.Data:GetType()
         if not self._GameClearIgnoreStoneTypeDir[stoneType] or (self._IgnoreGameClearIgnoreStoneTypeDir and self._IgnoreGameClearIgnoreStoneTypeDir[stoneType]) then
-            if not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBED) and not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.DESTROY) then
+            if not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.END_LIEF_TIME) and not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBED) and not stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.DESTROY) then
                 return false
             end
         end
@@ -469,6 +482,11 @@ function XGoldenMinerGame:_ChangeTime(usedTime)
     local curTime = self._Data:GetTime()
     self._Data:SetTime(curTime - usedTime)
     if self._Data:IsTimeOut() then
+        -- 判断是否正在抓取东西
+        if self.SystemHook:CheckAnyHookHasGrabbingStone() then
+            return
+        end
+        
         self:GameOver()
         XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_TIMEOUT)
     end
@@ -537,6 +555,11 @@ function XGoldenMinerGame:GetStoneEntityUidDirByType(stoneType)
     return self.SystemMap:GetStoneUidDirByType(stoneType)
 end
 
+---@return number[]
+function XGoldenMinerGame:GetStoneUidAliveList()
+    return self.SystemMap:GetStoneUidAliveList()
+end
+
 ---@return XGoldenMinerEntityHook
 function XGoldenMinerGame:GetHookEntityByUid(uid)
     return self:GetEntityWithUid(uid)
@@ -580,20 +603,20 @@ end
 
 ---@param objDir XGoldenMinerGameInitObjDir
 function XGoldenMinerGame:SystemEnterGame(objDir)
+    if self.SystemBuff then
+        self.SystemBuff:EnterGame(objDir)
+    end
     if self.SystemShip then
         self.SystemShip:EnterGame(objDir)
     end
     if self.SystemMap then
         self.SystemMap:EnterGame(objDir)
     end
-    if self.SystemHook then
-        self.SystemHook:EnterGame(objDir)
-    end
     if self.SystemStone then
         self.SystemStone:EnterGame(objDir)
     end
-    if self.SystemBuff then
-        self.SystemBuff:EnterGame(objDir)
+    if self.SystemHook then
+        self.SystemHook:EnterGame(objDir)
     end
     if self.SystemTimeLine then
         self.SystemTimeLine:EnterGame(objDir)
@@ -609,6 +632,13 @@ function XGoldenMinerGame:SystemEnterGame(objDir)
     end
     if self.SystemSlotScore then
         self.SystemSlotScore:EnterGame(objDir)
+    end
+end
+
+--- 相当于start，在所有system执行完enterGame后再执行一次，方便先初始化的system可以访问到后初始化system上的数据
+function XGoldenMinerGame:SystemInitAfterAllSystemEnter()
+    if self.SystemBuff then
+        self.SystemBuff:InitAfterEnterGame()
     end
 end
 --endregion
@@ -647,6 +677,11 @@ end
 function XGoldenMinerGame:HookShoot()
     self:_HideTaskClearCatch()
     self.SystemHook:HookShoot()
+end
+
+function XGoldenMinerGame:HookVirtualShoot()
+    self:_HideTaskClearCatch()
+    self.SystemHook:HookVirtualShoot()
 end
 
 ---@param hookEntity XGoldenMinerEntityHook
@@ -698,8 +733,12 @@ function XGoldenMinerGame:OnHookRevokeToIdle(hookEntity)
             self:HandleGrabbedStoneType(stoneEntity.Data:GetType())
         end
     end
-    if self.SystemTimeLine and not XTool.IsTableEmpty(hookEntity:GetGrabbingStoneUidList()) then
-        self.SystemTimeLine:PlayAnim(hookEntity, XEnumConst.GOLDEN_MINER.GAME_ANIM.HOOK_OPEN)
+    if self.SystemTimeLine then
+        if XTool.IsTableEmpty(hookEntity:GetGrabbingStoneUidList()) then
+            self.SystemTimeLine:PlayAnim(hookEntity, XEnumConst.GOLDEN_MINER.GAME_ANIM.HOOK_NO_GRAB_OPEN)
+        else
+            self.SystemTimeLine:PlayAnim(hookEntity, XEnumConst.GOLDEN_MINER.GAME_ANIM.HOOK_OPEN)
+        end
     end
     self:AddMapScore(score)
     -- 隐藏任务
@@ -724,9 +763,55 @@ end
 ---@param hookEntity XGoldenMinerEntityHook
 ---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerGame:HandleHookGrabStone(hookEntity, stoneEntity)
+
+    --- 电磁链接
+    local linkCom = stoneEntity:GetComponentLink()
+
+    if linkCom then
+        -- 被电磁链接的资源，可能已经加入到被抓取列表了，需要先判断
+        if not hookEntity:CheckStoneUidInGrabbingList(stoneEntity:GetUid()) then
+            self:_HandleSingleHookGrabStone(hookEntity, stoneEntity)
+        end
+        
+        local linkUidList = linkCom:GetLinkList()
+        local targetUid = stoneEntity:GetUid()
+        local targetTrans = stoneEntity:GetTransform()
+        local hookCom = hookEntity:GetComponentHook()
+        
+        local duration = self._MainControl:GetClientLinkStoneMoveTime()
+  
+        for i, v in pairs(linkUidList) do
+            if v ~= targetUid then
+                local entity = self:GetStoneEntityByUid(v)
+
+                if entity and not hookEntity:CheckStoneUidInGrabbingList(entity:GetUid()) then
+                    self:_HandleSingleHookGrabStone(hookEntity, entity, true)
+                    
+                    local tmpLinkCom = entity:GetComponentLink()
+
+                    if tmpLinkCom then
+                        entity:GetComponentStone():SetIgnoreWeight(true)
+                        self.SystemHook:SetStoneEntityOnHookOnly(hookCom, entity)
+                        tmpLinkCom:StartMoveToFollowerPos(targetTrans, duration)
+                    end
+                end
+            end
+        end
+        
+        linkCom:StartUpdateLinkRope(duration)
+    else
+        self:_HandleSingleHookGrabStone(hookEntity, stoneEntity)
+    end
+
+end
+
+---@param hookEntity XGoldenMinerEntityHook
+---@param stoneEntity XGoldenMinerEntityStone
+function XGoldenMinerGame:_HandleSingleHookGrabStone(hookEntity, stoneEntity, noSetObjToHook)
     hookEntity:AddGrabbingStone(stoneEntity:GetUid())
-    self.SystemHook:HookGrab(hookEntity:GetComponentHook(), stoneEntity)
+    self.SystemHook:HookGrab(hookEntity:GetComponentHook(), stoneEntity, noSetObjToHook)
     self.SystemStone:SetStoneEntityStatus(stoneEntity, XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBING)
+    self:_BuffTriggerOnStoneGrab(stoneEntity)
 end
 --endregion
 
@@ -861,9 +946,22 @@ function XGoldenMinerGame:_BuffTriggerStoneGrab(stoneEntity)
     end
 end
 
+--- 在刚抓取到资源时触发的buff
+---@param stoneEntity XGoldenMinerEntityStone
+function XGoldenMinerGame:_BuffTriggerOnStoneGrab(stoneEntity)
+    self.SystemBuff:TriggerStoneBuffByType(stoneEntity, XEnumConst.GOLDEN_MINER.BUFF_TYPE.HOOK_DRAG_EX_STONE_COPY)
+end
+
 function XGoldenMinerGame:CheckBuffAliveByType(buffType)
     if self.SystemBuff then
         return self.SystemBuff:GetBuffAliveByType(buffType)
+    end
+    return false
+end
+
+function XGoldenMinerGame:CheckBuffValidByType(buffType)
+    if self.SystemBuff then
+        return self.SystemBuff:CheckBuffValidByType(buffType)
     end
     return false
 end
@@ -1118,6 +1216,10 @@ end
 function XGoldenMinerGame:GetClientRopeShortenNotCatchSpeed()
     return self._Model:GetClientCfgNumberValue("RopeShortenNotCatchSpeed", 1)
 end
+
+function XGoldenMinerGame:GetClientNetHookVirtualMoveSpeedFix()
+    return self._Model:GetClientCfgNumberValue('NetHookVirtualMoveSpeedFix')
+end
 --endregion
 
 --region Cfg - ClientParams Stone
@@ -1208,6 +1310,14 @@ end
 
 function XGoldenMinerGame:GetSunMoonChangedCD()
     return self._Model:GetClientCfgNumberValue("SunMoonChangedCD", 1)
+end
+
+--endregion
+
+--region Cfg - ClientParams Buff
+
+function XGoldenMinerGame:GetClientStoneCopyType()
+    return self._Model:GetClientCfgNumberArrayValue('StoneCopyType')
 end
 
 --endregion

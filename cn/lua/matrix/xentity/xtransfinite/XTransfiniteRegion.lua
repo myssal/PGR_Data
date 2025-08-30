@@ -1,5 +1,5 @@
 ---@class XTransfiniteRegion
-local XTransfiniteRegion = XClass(nil, "XTransfiniteRegion")
+local XTransfiniteRegion = XClass(nil, "XTransfiniteRegion", true) -- #203409 增加该类被分类
 
 function XTransfiniteRegion:Ctor(id)
     self._Id = id

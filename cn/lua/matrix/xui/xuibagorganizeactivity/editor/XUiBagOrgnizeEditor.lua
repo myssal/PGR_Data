@@ -31,7 +31,7 @@ end
 function XUiBagOrgnizeEditor:Close()
     if XTool.IsNumberValid(self._SelectedFileIndex) then
         if self._EditorControl:CheckFileIsChanged(self._SelectedFileIndex) then
-            XUiManager.DialogTip('配置未保存', '当前配置有编辑更改且未保存，是否放弃更改并退出？', nil, nil, function()
+            XUiManager.DialogTip(CS.XTextManager.GetLuaText("XUiBagOrgnizeEditor.lua_34_1"), CS.XTextManager.GetLuaText("XUiBagOrgnizeEditor.lua_34_2"), nil, nil, function()
                 self.Super.Close(self)
             end)
             return
@@ -188,7 +188,7 @@ function XUiBagOrgnizeEditor:OnSelectFileEvent(uiFileSelected)
                 uiFileSelected.Btn:SetButtonState(CS.UiButtonState.Normal)
             end
 
-            XUiManager.DialogTip('配置未保存', '当前配置有编辑更改且未保存，是否放弃更改并切换配置？', nil, closeFunc, sureFunc)
+            XUiManager.DialogTip(CS.XTextManager.GetLuaText("XUiBagOrgnizeEditor.lua_191_1"), CS.XTextManager.GetLuaText("XUiBagOrgnizeEditor.lua_191_2"), nil, closeFunc, sureFunc)
             return
         end
 

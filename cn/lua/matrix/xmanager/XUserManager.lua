@@ -82,9 +82,13 @@ function XUserManager.ShowLogin()
     end
 end
 
-function XUserManager.Logout(cb)
+function XUserManager.Logout(cb, isInitiative)
+    -- 是否是主动登出，默认是主动登出，只有踢人不是主动
+    if isInitiative == nil then
+        isInitiative = true
+    end
     if XUserManager.IsUseSdk() then
-        XHeroSdkManager.Logout(cb)
+        XHeroSdkManager.Logout(cb, isInitiative)
     else
         XHaruUserManager.Logout(cb)
     end
@@ -128,18 +132,23 @@ end
 
 function XUserManager.SetLoginChannel(channel)
     XUserManager.LoginChannel = channel
-    if XUserManager.LoginChannel then 
+    -- 海外合版本改动 所有登录都会传这个，所以要用平台区分
+    if XDataCenter.UiPcManager.IsPc() then 
         CS.XLog.Debug(string.format("XUserManager.SetLoginChannel: type: %s , value: %s", type(XUserManager.LoginChannel), tostring(XUserManager.LoginChannel)))
         --pc版的要在获取到登录渠道后才设置选择服务器
         XServerManager.SelectChannelServer()
     end
 end
 
+function XUserManager.SetUserType(userType)
+    XUserManager.UserType = userType
+end
+
 local DoRunLogin = function()
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
     XFightUtil.ClearFight()
     if XDataCenter.MovieManager then
-        XDataCenter.MovieManager.StopMovie()
+        XDataCenter.MovieManager.StopMovie(true)
     end
     CS.Movie.XMovieManager.Instance:Clear()
     CsXUiManager.Instance:Clear()

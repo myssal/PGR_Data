@@ -236,9 +236,7 @@ function XUiPhotographPortrait:InitCb()
     self.BtnSynchronous.CallBack = function() 
         self:OnBtnSynchronousClick()
     end
-    self.BtnPhotograph.CallBack = function() 
-        self:OnBtnPhotographClick()
-    end
+
     self.BtnMenu.CallBack = function() 
         self:OnBtnMenuClick()
     end
@@ -253,6 +251,15 @@ function XUiPhotographPortrait:InitCb()
     end
     if self.BtnBreakActionAnim then
         self.BtnBreakActionAnim.CallBack = function () self:PlayRoleActionUiBreakAnim() end
+    end
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+        local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
+        raycastComponent.raycastTarget = false
+    else
+        self.BtnPhotograph.CallBack = function() 
+            self:OnBtnPhotographClick()
+        end
     end
 end 
 
@@ -499,7 +506,7 @@ function XUiPhotographPortrait:OnDynamicActionTableEvent(evt, index, grid)
         local trySceneId = self.CurrSeleSceneId
         local isHas = XMVCA.XFavorability:CheckTryCharacterActionUnlock(self.ActionList[index], XDataCenter.PhotographManager.GetCharacterDataById(self.CharacterId).TrustLv, tryFashionId, trySceneId)
         if not isHas then
-            XUiManager.TipPortraitMsg(XMVCA.XFavorability:GetCharacterActionMapText(self.ActionList[index].config.ConditionDescript))
+            XUiManager.TipPortraitMsg(self.ActionList[index].config.ConditionDescript)
             return
         end
         self:PlayAnimation("PanelActionEnable")
@@ -510,7 +517,7 @@ function XUiPhotographPortrait:OnDynamicActionTableEvent(evt, index, grid)
             end
         end
         self.CurActionGrid = grid
-        self.ActionCtrlPanel:SetTxtTitle(XMVCA.XFavorability:GetCharacterActionMapText(self.ActionList[index].config.Name))
+        self.ActionCtrlPanel:SetTxtTitle(self.ActionList[index].config.Name)
         grid:OnActionTouched(self.ActionList[index])
         self:SwitchActionPanel(false)
         XPhotographConfigs.CsRecord(XGlobalVar.BtnPhotograph.BtnUiPhotographPortraitBtnAction, {
@@ -593,10 +600,11 @@ function XUiPhotographPortrait:Play(element)
         self:RefreshActionView()
     end
     if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        if element.CvType then
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+        if targetSkinMeshFace then
+            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
         else
-            self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, element.SignBoardConfig.CvId)
+            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
         end
     end
     local actionId = element.SignBoardConfig.ActionId
@@ -615,10 +623,11 @@ function XUiPhotographPortrait:PlayCross(element)
     end
     self:RefreshActionView()
     if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        if element.CvType then
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+        if targetSkinMeshFace then
+            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
         else
-            self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, element.SignBoardConfig.CvId)
+            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
         end
     end
     local actionId = element.SignBoardConfig.ActionId
@@ -733,7 +742,7 @@ function XUiPhotographPortrait:Replay()
     local trySceneId = self.CurrSeleSceneId
     local isHas = XMVCA.XFavorability:CheckTryCharacterActionUnlock(data, XDataCenter.PhotographManager.GetCharacterDataById(self.CharacterId).TrustLv, tryFashionId, trySceneId)
     if not isHas then
-        XUiManager.TipError(XMVCA.XFavorability:GetCharacterActionMapText(data.config.ConditionDescript))
+        XUiManager.TipError(data.config.ConditionDescript)
         return
     end
     self:UpdateAnimation(false)
@@ -909,9 +918,13 @@ function XUiPhotographPortrait:RefreshViewActive(show)
         self:SwitchActionPanel(show)
     end
     self.BtnBack.gameObject:SetActiveEx(show)
-    self.BtnSet.gameObject:SetActiveEx(show)
     self:RefreshBottom(show)
     self:RefreshBtnSynchronous()
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnSet.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+    else
+        self.BtnSet.gameObject:SetActiveEx(show)
+    end
 end
 
 function XUiPhotographPortrait:RefreshBottom(show, ctrlPhotograph)
@@ -920,7 +933,11 @@ function XUiPhotographPortrait:RefreshBottom(show, ctrlPhotograph)
     self.BtnMenu.gameObject:SetActiveEx(show and not select)
     self.Btn.gameObject:SetActiveEx(not show and select)
     if ctrlPhotograph then
-        self.BtnPhotograph.gameObject:SetActiveEx(show)
+        if XOverseaManager.IsOverSeaRegion() then
+            self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+        else
+            self.BtnPhotograph.gameObject:SetActiveEx(show)
+        end
     end
 end
 

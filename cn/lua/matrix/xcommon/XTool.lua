@@ -443,6 +443,14 @@ XTool.IsNumberValid = function(number)
     return number and number ~= 0 or false
 end
 
+XTool.IsNumberValidEx = function(number)
+    if not number or type(number) ~= 'number' then
+        return false
+    end
+    
+    return number ~= 0
+end
+
 XTool.GetStackTraceName = function(level)
     level = level or 3
     local info

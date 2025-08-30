@@ -18,6 +18,13 @@ function XUiLineArithmetic2GameGrid:OnDisable()
     -- 播放动画后恢复默认状态
     self.ImgSelected.gameObject:SetActiveEx(false)
     self._IsSelected = nil
+    -- 复用时,需要修改默认颜色
+    if not self._IsRedCount then
+        local image = self.PanelCount:GetComponent("Image")
+        if image then
+            image.color = XUiHelper.Hexcolor2Color("5C658BFF")
+        end
+    end
     self._IsRedCount = nil
 end
 
@@ -49,11 +56,21 @@ function XUiLineArithmetic2GameGrid:Update(data)
         self._IsSelected = data.IsSelected
         if data.IsSelected then
             self.ImgSelected.gameObject:SetActiveEx(true)
-            self:PlayAnimation("SelectedEnable")
+            -- playAnimation有bug, 会导致音效播放两次, 所以改用原生的Director.Play直接播放
+            local enableAnimation = XUiHelper.TryGetComponent(self.Transform, "Animation/SelectedEnable", "PlayableDirector")
+            if enableAnimation then
+                enableAnimation:Play()
+            end
+            --self:PlayAnimation("SelectedEnable")
             self:StopAnimation("SelectedDisable")
         else
+            --self:StopAnimation("SelectedEnable")
+            ---@type UnityEngine.Playables.PlayableDirector
+            local enableAnimation = XUiHelper.TryGetComponent(self.Transform, "Animation/SelectedEnable", "PlayableDirector")
+            if enableAnimation then
+                enableAnimation:Stop()
+            end
             self:PlayAnimation("SelectedDisable")
-            self:StopAnimation("SelectedEnable")
         end
     end
 

@@ -1319,6 +1319,8 @@ XRpc.NotifyUpdateMedalData = function(data)
     XPlayer.AsyncMedalIds({ data.UpdateInfo }, true)
     XDataCenter.MedalManager.SetNewMedalId(data.UpdateInfo.Id)
     XDataCenter.MedalManager.UpdateMedalList()
+    --CheckPoint: APPEVENT_BADGE
+    XAppEventManager.MedalAppLogEvent(data.UpdateInfo.Id)
     XEventManager.DispatchEvent(XEventId.EVENT_MEDAL_NOTIFY)
 end
 

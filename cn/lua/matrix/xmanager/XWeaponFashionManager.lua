@@ -11,7 +11,7 @@ XWeaponFashionManagerCreator = function()
 
     local InitWeaponFashionsCount = 0
     local OwnWeaponFashions = {}
-    local AllWeaponFashionIsOwnDic = {}
+    local AllWeaponFashionIsOwnDic = nil
 
     XWeaponFashionManager.FashionStatus = {
         UnOwned = 0, -- 未拥有
@@ -23,17 +23,25 @@ XWeaponFashionManagerCreator = function()
     local LockNotifyWeaponFashionTransformShow = false
 
     function XWeaponFashionManager.Init()
-        local allWeaponFashion = XWeaponFashionConfigs.GetWeaponFashionResTemplates()
-        for id, v in pairs(allWeaponFashion) do
-            AllWeaponFashionIsOwnDic[id] = { IsOwn = false,IsNew = false }
+        
+    end
+    
+    function XWeaponFashionManager.InitAllWeaponFashionIsOwnDic()
+        if not AllWeaponFashionIsOwnDic then
+            AllWeaponFashionIsOwnDic = {}
+            local allWeaponFashion = XWeaponFashionConfigs.GetWeaponFashionResTemplates()
+            for id, v in pairs(allWeaponFashion) do
+                AllWeaponFashionIsOwnDic[id] = { IsOwn = false,IsNew = false }
+            end
+            AllWeaponFashionIsOwnDic[XWeaponFashionConfigs.DefaultWeaponFashionId] = { IsOwn = false, IsNew = false }
+            InitWeaponFashionsCount = 0
         end
-        AllWeaponFashionIsOwnDic[XWeaponFashionConfigs.DefaultWeaponFashionId] = { IsOwn = false, IsNew = false }
-        InitWeaponFashionsCount = 0
     end
 
     function XWeaponFashionManager.InitWeaponFashions(fashions)
         if not fashions then return end
 
+        XWeaponFashionManager.InitAllWeaponFashionIsOwnDic()
         for _, data in pairs(fashions) do
             OwnWeaponFashions[data.Id] = XWeaponFashion.New(data)
 
@@ -81,6 +89,7 @@ XWeaponFashionManagerCreator = function()
     end
 
     function XWeaponFashionManager.GetAllWeaponFashionIsOwnDic(fashionId)
+        XWeaponFashionManager.InitAllWeaponFashionIsOwnDic()
         return AllWeaponFashionIsOwnDic[fashionId]
     end
 

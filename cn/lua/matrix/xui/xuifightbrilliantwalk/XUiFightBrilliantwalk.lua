@@ -95,16 +95,12 @@ end
 --获得锁定的表现样式类型对应的类对象
 function XUiFightBrilliantwalk:GetClassObj(styleType, configId)
     local prefabName = XFightBrilliantwalkConfigs.GetPrefabPath(configId, styleType)
-    local prefab = prefabName and self.LoadPrefab[prefabName] 
-    if not prefab then
-        prefab = self.Transform:GetLoader():Load(prefabName)
-        self.LoadPrefab[prefabName] = prefab
-    end
-    
+    local prefabObj = self.Transform:LoadPrefabEx(prefabName)
+
     if styleType == StyleType.NoLine then
-        return XUiBaseTips.New(XUiHelper.Instantiate(prefab, self.Transform))
+        return XUiBaseTips.New(prefabObj, prefabName)
     elseif styleType == StyleType.BrokenLine then
-        return XUiBrokenLineTips.New(XUiHelper.Instantiate(prefab, self.Transform))
+        return XUiBrokenLineTips.New(prefabObj, prefabName)
     end
     XLog.Error("不存在的锁定样式类型：", styleType)
 end
@@ -128,7 +124,7 @@ function XUiFightBrilliantwalk:DestroyTips(id)
     if not self.TipsEntity[id] then
         return
     end
-    self.TipsEntity[id]:OnDestroy()
+    self.TipsEntity[id]:OnDestroy(self.Transform)
     self.TipsEntity[id] = nil
 end
 ----------跟随tips相关 end-------------

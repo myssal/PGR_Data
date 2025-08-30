@@ -603,7 +603,7 @@ function XTheatre5Control:GetDataHandBook(itemType)
                             Name = config.Name,
                             Quality = 0,
                             Icon = config.IconRes,
-                            Desc = config.Desc,
+                            Desc = self:GetItemDesc(config),
                             Tags = config.Tags,
                         }
                         table.insert(tab[characterId].Items, data)
@@ -663,7 +663,7 @@ function XTheatre5Control:GetDataHandBook(itemType)
                         Name = config.Name,
                         Quality = 0,
                         Icon = config.IconRes,
-                        Desc = config.Desc,
+                        Desc = self:GetItemDesc(config),
                         Tags = config.Tags,
                     }
                     -- 同一个物品会出现在多个tag分类里
@@ -719,6 +719,71 @@ end
 function XTheatre5Control:GetStoryTab()
     local configs = self._Model:GetStoryGroup()
     return configs
+end
+
+function XTheatre5Control:GetTipsNewStoryLine()
+    local configs = self._Model:GetStoryLineCfgs()
+    for i, config in pairs(configs) do
+        if config.StoryLineCondition == 0 or XConditionManager.CheckCondition(config.StoryLineCondition) then
+            local contentId = self._Model.PVERougeData:GetStoryLineContentId(config.Id)
+            if contentId then
+                local index = contentId % 100
+                if index == 1 then
+                    return config.StoryLineOpenTips
+                end
+            end
+        end
+    end
+end
+
+function XTheatre5Control:IsCharacterCanSelect(characterId)
+    local configs = self._Model:GetStoryLineCfgs()
+    for i, config in pairs(configs) do
+        if config.StoryLineCondition == 0 or XConditionManager.CheckCondition(config.StoryLineCondition) then
+            local contentId = self._Model.PVERougeData:GetStoryLineContentId(config.Id)
+            if contentId > 0 then
+                local contentConfig = self._Model:GetStoryLineContentCfg(contentId)
+                if contentConfig then
+                    for i = 1, #contentConfig.DisabledCharacters do
+                        local characterCloseId = contentConfig.DisabledCharacters[i]
+                        if characterCloseId == characterId then
+                            return false, contentConfig.DisabledCharactersTips[i]
+                        end
+                    end
+                end
+            end
+        end
+    end
+    return true
+end
+
+function XTheatre5Control:FormatString(format, args)
+    if not format then
+        return ""
+    end
+
+    -- 替换 {0}, {1}, ... 为对应的参数值
+    local result = string.gsub(format, "{(%d+)}", function(index)
+        local idx = tonumber(index) + 1  -- Lua索引从1开始，C#从0开始
+        if idx > 0 and idx <= #args then
+            return tostring(args[idx])
+        else
+            return "{" .. index .. "}"  -- 如果索引超出范围，保留原始占位符
+        end
+    end)
+
+    return result
+end
+
+function XTheatre5Control:GetItemDesc(itemConfig)
+    if not string.IsNilOrEmpty(itemConfig.Desc) then
+        local desc = XUiHelper.ReplaceTextNewLine(itemConfig.Desc) or ''
+        if #itemConfig.DescDigit > 0 then
+            desc = self:FormatString(desc, itemConfig.DescDigit)
+        end
+        return desc
+    end
+    return ""
 end
 
 return XTheatre5Control

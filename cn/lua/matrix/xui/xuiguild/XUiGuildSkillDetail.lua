@@ -45,17 +45,13 @@ function XUiGuildSkillDetail:RefreshTalent()
     self.TxtSkillNum.text = string.format("<color=#3BAAFF>%d</color>/%d", curTalentLevel, #self.TalentTemplate.CostPoint)
     
     self.TxtCurLevel.text = curTalentLevel
-    local desc = XGuildConfig.GetGuildTalentText(self.TalentConfig.Descriptions[curTalentLevel + 1])
-    local params = self.TalentConfig.DescriptionParams[curTalentLevel + 1]
-    self.TxtCurDescription.text = XUiHelper.FormatTextWithSplit(desc, params)
+    self.TxtCurDescription.text = self.TalentConfig.Descriptions[curTalentLevel + 1]
 
     self.PanelNextLevel.gameObject:SetActiveEx(not isCurMax)
     if not isCurMax then
         local nextLevel = curTalentLevel + 1
         self.TxtNextLevel.text = nextLevel
-        desc = XGuildConfig.GetGuildTalentText(self.TalentConfig.Descriptions[nextLevel + 1])
-        params = self.TalentConfig.DescriptionParams[nextLevel + 1]
-        self.TxtNextDescription.text = XUiHelper.FormatTextWithSplit(desc, params)
+        self.TxtNextDescription.text = self.TalentConfig.Descriptions[nextLevel + 1]
     end
 
     self.PanelLevelBtnMax.gameObject:SetActiveEx(isCurMax)

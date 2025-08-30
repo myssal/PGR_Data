@@ -105,7 +105,11 @@ function XUiDormTemplateScene:OnBtnHideOrShowClick()
     self.IsHide = not self.IsHide
      self.BtnShare.gameObject:SetActiveEx(not self.IsHide)
      self.BtnDown.gameObject:SetActiveEx(not self.IsHide)
-
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnShare.gameObject:SetActiveEx(false)
+        self.BtnDown.gameObject:SetActiveEx(false)
+    end
+    
 
     self.BtnSet.gameObject:SetActiveEx(not self.IsHide)
     --self.BtnSave.gameObject:SetActiveEx(not self.IsHide)
@@ -204,5 +208,9 @@ function XUiDormTemplateScene:SetBtnStatus()
         self.BtnDown.gameObject:SetActiveEx(true)
         self.BtnSet.gameObject:SetActiveEx(true)
         self.BtnSave.gameObject:SetActiveEx(true)
+    end
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnShare.gameObject:SetActiveEx(false)
+        self.BtnDown.gameObject:SetActiveEx(false)
     end
 end

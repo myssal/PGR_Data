@@ -12,10 +12,10 @@ function XUiGrid:Ctor(ui, chapterGroupId, clickCb)
 end
 
 function XUiGrid:Init(chapterGroupId)
-    local icon = XRpgMakerGameConfigs.GetChapterGroupActivityIcon(chapterGroupId)
+    local icon = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupActivityIcon(chapterGroupId)
     self.Btn:SetRawImage(icon)
     --活动名
-    local name = XRpgMakerGameConfigs.GetChapterGroupName(chapterGroupId)
+    local name = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupName(chapterGroupId)
     self.Btn:SetNameByGroup(0, name)
 end
 
@@ -39,7 +39,7 @@ local _EndTime
 local _Format = "yyyy/MM/dd"
 function XUiGrid:GetTimeStr(chapterGroupId)
     _NowServerTime = XTime.GetServerNowTimestamp()
-    _TimeId = XRpgMakerGameConfigs.GetChapterGroupOpenTimeId(chapterGroupId)
+    _TimeId = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupOpenTimeId(chapterGroupId)
     if not XFunctionManager.CheckInTimeByTimeId(_TimeId, true) then
         return XUiHelper.GetText("RpgMakerGameOpenTime", XTime.TimestampToGameDateTimeString(XFunctionManager.GetStartTimeByTimeId(_TimeId), _Format)), false
     end
@@ -50,7 +50,7 @@ end
 
 function XUiGrid:OnBtnClick()
     local chapterGroupId = self.ChapterGroupId
-    local timeId = XRpgMakerGameConfigs.GetChapterGroupOpenTimeId(chapterGroupId)
+    local timeId = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupOpenTimeId(chapterGroupId)
     if not XFunctionManager.CheckInTimeByTimeId(timeId, true) then
         local sTime = XFunctionManager.GetStartTimeByTimeId(timeId)
         XUiManager.TipErrorWithKey("MemorySaveStageNotOpen", XTime.TimestampToLocalDateTimeString(sTime, "yyyy-MM-dd HH:mm"))
@@ -64,7 +64,7 @@ end
 local XUiFubenRpgMakerGameTanChuang = XLuaUiManager.Register(XLuaUi, "UiFubenRpgMakerGameTanChuang")
 
 function XUiFubenRpgMakerGameTanChuang:OnAwake()
-    self.ChapterGroupIdList = XRpgMakerGameConfigs.GetRpgMakerGameChapterGroupIdList()
+    self.ChapterGroupIdList = XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupIdList()
     self:InitBtn()
     self:AddListener()
     self:InitBtnCollection()
@@ -95,8 +95,8 @@ function XUiFubenRpgMakerGameTanChuang:OnBtnCollectionClick()
 end
 
 function XUiFubenRpgMakerGameTanChuang:InitBtnCollection()
-    local activityId = XRpgMakerGameConfigs.GetDefaultActivityId()
-    local icon = XRpgMakerGameConfigs.GetActivityCollectionIcon(activityId)
+    local activityId = XMVCA.XRpgMakerGame:GetConfig():GetDefaultActivityId()
+    local icon = XMVCA.XRpgMakerGame:GetConfig():GetActivityCollectionIcon(activityId)
     self.BtnCollection:SetRawImage(icon)
 end
 

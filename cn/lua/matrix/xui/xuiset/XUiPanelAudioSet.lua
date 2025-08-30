@@ -167,6 +167,11 @@ function XUiPanelAudioSet:InitPanelData()
     -- 先将两个的值设为一样，这样退出不会触发差异检测
     self:SyncMngData2OldData()
     self:SyncOldData2NewData()
+    if XOverseaManager.IsOverSeaRegion() then
+        self.TogXiangGang.gameObject:SetActiveEx(XOverseaManager.IsTWRegion())
+    else
+        self.TogXiangGang.gameObject:SetActiveEx(true)
+    end
 end
 
 function XUiPanelAudioSet:ResetPanelData()

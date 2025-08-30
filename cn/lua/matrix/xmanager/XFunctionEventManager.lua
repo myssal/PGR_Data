@@ -69,7 +69,9 @@ XFunctionEventManagerCreator = function()
         XDataCenter.CommunicationManager.SetFestivalCommunication()
         -- 当前是否在主界面(同时在最上层，避免像三周年签到自动弹窗界面 场景预览 双开UiMain)
         InMainUi = XLuaUiManager.IsUiShow("UiMain") and XLuaUiManager.GetTopUiName() == "UiMain"
-        if XDeeplinkManager.InvokeDeeplink() then
+        if XDeeplinkManager.InvokeDeeplink() and not XOverseaManager.IsOverSeaRegion() then
+            FunctionState = FunctionEvenState.PLAYING
+        elseif InMainUi and CS.XRemoteConfig.AFDeepLinkEnabled and XFunctionEventManager.TryDoDeepLinkInfo() then
             FunctionState = FunctionEvenState.PLAYING
         elseif XLoginManager.CheckLimitLogin() then --登录限制（答题）
             FunctionState = FunctionEvenState.PLAYING
@@ -223,6 +225,24 @@ XFunctionEventManagerCreator = function()
         XSaveTool.SaveData(XPrefs.FunctionEventTrigger, DisableFunction)
     end
     
+    function XFunctionEventManager.TryDoDeepLinkInfo()
+        if not XOverseaManager.IsOverSeaRegion() then
+            return
+        end
+        local deepLinkValue = XHeroSdkManager.GetDeepLinkValue()
+        XHeroSdkManager.ClearDeepLinkValue() -- 不论如何，拿到就清空
+        local NewGuidePass = CS.XGame.ClientConfig:GetInt("DeepLinkCondition")
+        if CS.XRemoteConfig.AFDeepLinkEnabled and not string.IsNilOrEmpty(deepLinkValue) and XConditionManager.CheckCondition(NewGuidePass) then
+            local skipId = tonumber(deepLinkValue)
+            if skipId and XFunctionManager.IsAFDeepLinkCanSkipByShowTips(skipId) then
+                XFunctionManager.SkipInterface(skipId)
+                return true
+            end
+        end
+        return false
+    end
+
+
     XFunctionEventManager.Init()
     return XFunctionEventManager
 end

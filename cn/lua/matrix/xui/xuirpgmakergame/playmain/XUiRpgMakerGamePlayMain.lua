@@ -5,7 +5,7 @@ local XUiRpgMakerGamePanelDetailTip = require("XUi/XUiRpgMakerGame/PlayMain/XUiR
 local XUiRpgMakeGamePanelAddBtnTwo = require("XUi/XUiRpgMakerGame/PlayMain/XUiRpgMakeGamePanelAddBtnTwo")
 local XUiRpgMakerGameRoleMove = require("XUi/XUiRpgMakerGame/PlayMain/XUiRpgMakerGameRoleMove")
 
-local MaxStarCount = XRpgMakerGameConfigs.MaxStarCount
+local MaxStarCount = XMVCA.XRpgMakerGame.EnumConst.MaxStarCount
 local IsNumberValid = XTool.IsNumberValid
 local Vector3 = CS.UnityEngine.Vector3
 local Vector2 = CS.UnityEngine.Vector2
@@ -21,16 +21,17 @@ local CSUnityEngineObjectDestroy = CS.UnityEngine.Object.Destroy
 local RandomDialogBoxIntervalSecond = CS.XGame.ClientConfig:GetFloat("RpgMakerGameRandomDialogBoxIntervalSecond")
 local DownHintStayTime = CS.XGame.ClientConfig:GetInt("RpgMakerGamePlayMainDownHintStayTime")
 local MoveRoleAngleOffset = CS.XGame.ClientConfig:GetInt("RpgMakerGameMoveRoleAngleOffset")     --移动角色的手势角度偏移
-local PLAY_ANIMA_INTERVAL = XRpgMakerGameConfigs.PlayAnimaInterval
+local PLAY_ANIMA_INTERVAL = XMVCA.XRpgMakerGame.EnumConst.PlayAnimaInterval
 
 --关卡玩法主界面
+---@class XUiRpgMakerGamePlayMain
+---@field _Control XRpgMakerGameControl
 local XUiRpgMakerGamePlayMain = XLuaUiManager.Register(XLuaUi, "UiRpgMakerGamePlayMain")
 
 function XUiRpgMakerGamePlayMain:OnAwake()
     XUiHelper.NewPanelActivityAssetSafe({XDataCenter.ItemManager.ItemId.RpgMakerGameHintCoin}, self.PanelSpecialTool, self)
-    self.RpgMakerGamePlayScene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
 
-    self:InitGuide()
+    --self:InitGuide()
     self:InitUiCameraEffect()
     self:AutoAddListener()
     self:InitTip()
@@ -60,11 +61,12 @@ function XUiRpgMakerGamePlayMain:OnStart()
     self:InitStarCondition()
     self:InitMaxChallengeCountDesc()
 
-    self.RpgMakerGamePlayScene:PlayAnimation()
+    self:GetScene():PlayAnimation()
+    self._Control:SetCurrentStageId(self:GetStageId())
 end
 
 function XUiRpgMakerGamePlayMain:OnEnable()
-    if self.RpgMakerGamePlayScene:IsSceneNil() then
+    if self:GetScene():IsSceneNil() then
         return
     end
     self:Refresh()
@@ -85,15 +87,17 @@ function XUiRpgMakerGamePlayMain:OnDestroy()
         CS.UnityEngine.GameObject.Destroy(self.UiCameraEffect)
         self.UiCameraEffect = nil
     end
-    self.RpgMakerGamePlayScene:RemoveScene()
-    XDataCenter.RpgMakerGameManager.ClearStageMap()
     self:StopGrassAnimTimer()
     self:StopGrassGrowAnimTimer()
 
-    if self.Resource then
-        CS.XResourceManager.Unload(self.Resource)
-        self.Resource = nil
-    end
+    --if self.Resource then
+    --    CS.XResourceManager.Unload(self.Resource)
+    --    self.Resource = nil
+    --end
+end
+
+function XUiRpgMakerGamePlayMain:GetScene()
+    return self._Control:GetScene()
 end
 
 
@@ -116,7 +120,8 @@ end
 function XUiRpgMakerGamePlayMain:InitUiCameraEffect()
     local camera = CS.XUiManager.Instance.UiCamera
     local cameraEffectPath = CS.XGame.ClientConfig:GetString("RpgMakerPlayScreenUiCameraEffect")
-    XLog.Error("[XResourceManager优化] 已经无法运行, 从XResourceManager改为loadPrefab")
+    --XLog.Error("[XResourceManager优化] 已经无法运行, 从XResourceManager改为loadPrefab")
+    self.Resource = {Asset = self.Transform:LoadPrefab(cameraEffectPath)}
     if self.Resource == nil or not self.Resource.Asset then
         XLog.Error(string.format("XUiRpgMakerGamePlayMain:InitUiCameraEffect() 加载:%s失败", cameraEffectPath))
         return
@@ -131,8 +136,8 @@ function XUiRpgMakerGamePlayMain:InitTip()
     local tipOutCb = handler(self, self.Close)
     local tipNextCb = function()
         local stageId = self:GetStageId()
-        local nextStageId = XRpgMakerGameConfigs.GetRpgMakerGameNextStageId(stageId)
-        local selectRoleId = self:GetSelectRoleId()
+        local nextStageId = self._Control:GetConfig():GetRpgMakerGameNextStageId(stageId)
+        local selectRoleId = self._Control:GetConfig():GetStageUseRoleId(nextStageId)
         local cb = function()
             self:SetIsWin(false)
             self:SetCurrUseBackCount(0)
@@ -140,12 +145,13 @@ function XUiRpgMakerGamePlayMain:InitTip()
             self:SetCurrLoseCount(0)
             self:OnStart()
             self:Refresh()
+            self._Control:LoadScene()
         end
-        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnterStage(nextStageId, selectRoleId, cb)
+        XMVCA.XRpgMakerGame:RequestRpgMakerGameEnterStage(nextStageId, selectRoleId, cb)
     end
     local tipResetCb = handler(self, self.OnBtnResetClick)
 
-    self.WinTip = XUiRpgMakerGamePanelWinTip.New(self.PanelWinTip, tipOutCb, tipNextCb, tipResetCb)
+    self.WinTip = XUiRpgMakerGamePanelWinTip.New(self, self.PanelWinTip, tipOutCb, tipNextCb, tipResetCb)
     self.LoseTip = XUiRpgMakerGamePanelLoseTip.New(self.PanelLoseTip, tipOutCb, tipResetCb)
     self.UnlockTip = XUiRpgMakerGameUnlockTip.New(self.PanelUnlockTip)
     self.DetailTip = XUiRpgMakerGamePanelDetailTip.New(self.PanelDetailTip, self)
@@ -174,7 +180,7 @@ function XUiRpgMakerGamePlayMain:InitMaxChallengeCountDesc()
     if not IsNumberValid(mapId) then
         return
     end
-    local desc = XRpgMakerGameConfigs.GetRpgMakerGameMaxRound(mapId)
+    local desc = XMVCA.XRpgMakerGame:GetConfig():GetMapMaxRound(mapId)
     self.TextMaxChallenge.text = "/" .. desc
 end
 
@@ -184,10 +190,10 @@ function XUiRpgMakerGamePlayMain:InitStarCondition()
         return
     end
 
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local starConditionDesc
     for i, starConditionId in ipairs(starConditionIdList) do
-        starConditionDesc = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionDesc(starConditionId)
+        starConditionDesc = XMVCA.XRpgMakerGame:GetConfig():GetStarConditionDesc(starConditionId)
         self["Task" .. i]:SetName(starConditionDesc)
         self["Task" .. i].gameObject:SetActiveEx(true)
         self["Task" .. i]:SetButtonState(CSUiButtonStateNormal)
@@ -219,12 +225,13 @@ function XUiRpgMakerGamePlayMain:AutoAddListener()
     end
 
     local curChapterGroupId = XDataCenter.RpgMakerGameManager.GetCurChapterGroupId()
-    self:BindHelpBtn(self.BtnHelp, XRpgMakerGameConfigs.GetChapterGroupHelpKey(curChapterGroupId))
+    self:BindHelpBtn(self.BtnHelp, XMVCA.XRpgMakerGame:GetConfig():GetChapterGroupHelpKey(curChapterGroupId))
 end
 
 ---关闭关卡
 function XUiRpgMakerGamePlayMain:OnBtnCloseClick()
     local sureCallback = function()
+        self._Control:ReleaseScene()
         self:Close()
     end
     XUiManager.DialogTip(CSXTextManagerGetText("TipTitle"), CSXTextManagerGetText("RpgMakerGamePlayMainQuickTipsDesc"), nil, nil, sureCallback)
@@ -244,7 +251,7 @@ function XUiRpgMakerGamePlayMain:OnBtnResetClick()
     local mapId = self:GetMapId()
     local cb = function()
         self.IsPlayingAction = false
-        self.RpgMakerGamePlayScene:Reset()
+        self:GetScene():Reset()
         self:SetIsWin(false)
         self:Refresh()
     end
@@ -263,8 +270,8 @@ function XUiRpgMakerGamePlayMain:OnBtnBackoffClick()
     local mapId = self:GetMapId()
     local cb = function(currentRound)
         self:SetCurrUseBackCount(self.CurrUseBackCount + 1)
-        self.RpgMakerGamePlayScene:BackUp(currentRound)
-        self.RpgMakerGamePlayScene:CheckGrowActive(currentRound)
+        self:GetScene():BackUp(currentRound)
+        self:GetScene():CheckGrowActive(currentRound)
         self:Refresh()
     end
     XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapBackUp(mapId, cb)
@@ -311,7 +318,7 @@ function XUiRpgMakerGamePlayMain:RefreshStarCondition()
         return
     end
 
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local btnState
     local playableDirector
     local isWin = self:GetIsWin()
@@ -351,7 +358,6 @@ function XUiRpgMakerGamePlayMain:CheckActions()
     if XDataCenter.RpgMakerGameManager.IsActionsEmpty() then
         self:UpdateSentrySign()
         self:CheckMonsertViewAreaAndLine()
-        self:CheckWaterState()
 
         -- 结束结算清空草丛计时器
         self:StopGrassAnimTimer()
@@ -381,7 +387,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         cb()
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerMove then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerMove then
         --角色和影子同时移动
         local moveEndCount = 0
         local moveEndCb = function()
@@ -391,34 +397,42 @@ function XUiRpgMakerGamePlayMain:CheckActions()
             end
         end
 
-        local burnActions = XDataCenter.RpgMakerGameManager.GetActions(XRpgMakerGameConfigs.RpgMakerGameActionType.ActionBurnGrass)
-        local growActions = XDataCenter.RpgMakerGameManager.GetActions(XRpgMakerGameConfigs.RpgMakerGameActionType.ActionGrowGrass)
+        --[[
+        local burnActions = XDataCenter.RpgMakerGameManager.GetActions(XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionBurnGrass)
+        local growActions = XDataCenter.RpgMakerGameManager.GetActions(XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionGrowGrass)
+        ]]
 
         self:CheckActionShadowMove(function()
             -- 4.0:把草丛燃烧改成本体或影子各自移动结束各自处理吧
             -- 移动结束后回调两层：一层燃烧一层生长
+            --[[
             self:CheckGrassAnimInEndMove(function()
                 self:CheckGrassAnimInEndMove(moveEndCb, growActions, false, false)
             end, burnActions, false, true)
+            ]]
+            moveEndCb()
         end)
         if playerObj then
             playerObj:PlayMoveAction(action, function()
+                --[[
                 self:CheckGrassAnimInEndMove(function()
                     self:CheckGrassAnimInEndMove(moveEndCb, growActions, true, false)
                 end, burnActions, true, true)
+                ]]
+                moveEndCb()
             end, self:GetMapId())
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionKillMonster then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionKillMonster then
         if playerObj then
             playerObj:PlayKillMonsterAction(action, monsterDeathCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionStageWin then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionStageWin then
         local stageId = self:GetStageId()
         self.WinTip:Show(stageId)
         self:PlayAnimation("PanelWinTipEnable")
@@ -426,14 +440,14 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         XDataCenter.RpgMakerGameManager.SetCurrClearButtonGroupIndex()
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionEndPointOpen then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionEndPointOpen then
         if endPointObj then
             endPointObj:PlayEndPointStatusChangeAction(action, cb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterRunAway or actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterPatrol then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterRunAway or actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterPatrol then
         if monsterObj then
             monsterObj:RemoveViewAreaAndLine()
             local moveEndCb = function()
@@ -447,7 +461,8 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterChangeDirection then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterChangeDirection then
+        --[[
         if monsterObj then
             monsterObj:RemoveViewAreaAndLine()
             local endCb = function()
@@ -459,23 +474,26 @@ function XUiRpgMakerGamePlayMain:CheckActions()
             monsterObj:ChangeDirectionAction(action, endCb)
             return
         end
+        ]]
+        cb()
+        return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterKillPlayer then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterKillPlayer then
         if monsterObj then
             monsterObj:PlayKillPlayerAction(action, gameOverCb)
         end
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionTriggerStatusChange then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionTriggerStatusChange then
         if triggerObj then
             triggerObj:PlayTriggerStatusChangeAction(action, cb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionUnlockRole then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionUnlockRole then
         local roleId = action.RoleId
         if IsNumberValid(roleId) then
             self.UnlockTip:Show(roleId)
@@ -483,62 +501,62 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterPatrolLine then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterPatrolLine then
         if monsterObj then
             monsterObj:SetMoveLine(action)
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowDieByTrap then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowDieByTrap then
         if shadowObj then
             shadowObj:PlayDieByTrapAnima(cb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerDieByTrap then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerDieByTrap then
         if playerObj then
             playerObj:PlayDieByTrapAnima(gameOverCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterDieByTrap then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterDieByTrap then
         if monsterObj then
             monsterObj:PlayDieByTrapAnima(monsterDeathCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionElectricStatusChange then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionElectricStatusChange then
         local electricFenceObjDic = XDataCenter.RpgMakerGameManager.GetElectricFenceObjDic()
         for _, obj in pairs(electricFenceObjDic) do
             obj:PlayElectricFenceStatusChangeAction()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerKillByElectricFence then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerKillByElectricFence then
         if playerObj then
             playerObj:PlayKillByElectricFenceAnima(gameOverCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterKillByElectricFence then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterKillByElectricFence then
         if monsterObj then
             monsterObj:PlayKillByElectricFenceAnima(monsterDeathCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionHumanKill then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionHumanKill then
         if monsterObj then
-            monsterObj:PlayBeAtkAction(gameOverCb)
+            monsterObj:LoadDieEffect(gameOverCb)
             return
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerTransfer then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerTransfer then
         local nextAction = XDataCenter.RpgMakerGameManager.GetNextAction(true)
         local endPosX = nextAction and nextAction.StartPosition.PositionX or action.EndPosition.PositionX
         local endPosY = nextAction and nextAction.StartPosition.PositionY or action.EndPosition.PositionY
@@ -550,23 +568,23 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    -- if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionBurnGrass then
-    --     self:GrassBurn(action, cb)
-    --     return
-    -- end
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionBurnGrass then
+        self:GrassBurn(action, cb)
+        return
+    end
 
-    -- if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionGrowGrass then
-    --     self:GrassGrow(action, cb)
-    --     return
-    -- end
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionGrowGrass then
+        self:GrassGrow(action, cb)
+        return
+    end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerDrown then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerDrown then
         playerObj:DieByDrown(self:GetMapId(), playerObj:GetPositionX(), playerObj:GetPositionY())
         playerObj:PlayDrownAnima(gameOverCb)
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterDrown then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterDrown then
         if monsterObj then
             monsterObj:DieByDrown(self:GetMapId(), monsterObj:GetPositionX(), monsterObj:GetPositionY())
             monsterObj:PlayDrownAnima(monsterDeathCb, true)
@@ -574,15 +592,15 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionSteelBrokenToTrap
-        or actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionSteelBrokenToFlat then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionSteelBrokenToTrap
+        or actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionSteelBrokenToFlat then
         entityObj = XDataCenter.RpgMakerGameManager.GetSteelObj(action.EntityId)
         if entityObj and entityObj.CheckPlayFlat then
             entityObj:CheckPlayFlat()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterTransfer then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterTransfer then
         local nextAction = XDataCenter.RpgMakerGameManager.GetNextAction(true)
         local endPosX = nextAction and nextAction.StartPosition.PositionX or action.EndPosition.PositionX
         local endPosY = nextAction and nextAction.StartPosition.PositionY or action.EndPosition.PositionY
@@ -597,7 +615,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowKillByElectricFence then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowKillByElectricFence then
         if shadowObj then
             shadowObj:PlayKillByElectricFenceAnima(cb)
             return
@@ -605,14 +623,14 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterKillShadow then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterKillShadow then
         if monsterObj then
             monsterObj:PlayKillShadowAction(action, cb)
         end
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowDrown then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowDrown then
         if shadowObj then
             shadowObj:DieByDrown(self:GetMapId(), shadowObj:GetPositionX(), shadowObj:GetPositionY())
             shadowObj:PlayDrownAnima(cb)
@@ -622,7 +640,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionBubbleBroken then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionBubbleBroken then
         local bubbleId = action.EntityId
         local bubbleObj = XDataCenter.RpgMakerGameManager.GetBubbleObj(bubbleId)
         if bubbleObj then
@@ -639,7 +657,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionBubbleMove then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionBubbleMove then
         local bubbleId = action.EntityId
         local bubbleObj = XDataCenter.RpgMakerGameManager.GetBubbleObj(bubbleId)
         if bubbleObj then
@@ -667,7 +685,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         end
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowPickupDrop then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowPickupDrop then
         local callBack  = function()
             local entityId = action.EntityId
             local dropObj = XDataCenter.RpgMakerGameManager.GetDropObj(entityId)
@@ -680,7 +698,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerPickupDrop then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerPickupDrop then
         if playerObj then
             playerObj:PlayPickUpAnim(cb)
         end
@@ -690,7 +708,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMagicTrigger then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMagicTrigger then
         if shadowObj then
             shadowObj:PlayMagicTransferAnim(
                 action.ShadowNewPosition.PositionX,
@@ -705,11 +723,24 @@ function XUiRpgMakerGamePlayMain:CheckActions()
         return
     end
 
-    if actionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowKillMonster then
+    if actionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowKillMonster then
         if shadowObj then
             shadowObj:PlayKillMonsterAction(action, monsterDeathCb)
             return
         end
+    end
+
+    -- 5.0新增Action
+    local ACTION_TYPE_ENUM = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType
+    if actionType == ACTION_TYPE_ENUM.ActionSkillTypeChange
+        or actionType == ACTION_TYPE_ENUM.ActionMonsterKnocked
+        or actionType == ACTION_TYPE_ENUM.ActionWaterStatusChange
+        or actionType == ACTION_TYPE_ENUM.ActionTorchStatusChange
+        or actionType == ACTION_TYPE_ENUM.ActionMonsterDieByFlame
+        or actionType == ACTION_TYPE_ENUM.ActionMonsterDieByKnocked
+    then
+        self._Control:GetScene():PlayAction(action, cb)
+        return
     end
 
     cb()
@@ -756,11 +787,11 @@ function XUiRpgMakerGamePlayMain:GrassGrow(action, cb)
         if not grass then
             return
         end
-        grassObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(grass.PositionX, grass.PositionY, XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Grass)
+        grassObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(grass.PositionX, grass.PositionY, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Grass)
         if grassObj then
             grassObj:SetActive(true)
         else
-            self.RpgMakerGamePlayScene:GrowGrass(grass.PositionX, grass.PositionY)
+            self:GetScene():GrowGrass(grass.PositionX, grass.PositionY)
         end
     end
 
@@ -798,11 +829,11 @@ function XUiRpgMakerGamePlayMain:GrassBurn(action, cb)
         if not grass then
             return
         end
-        grassObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(grass.PositionX, grass.PositionY, XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Grass)
+        grassObj = XDataCenter.RpgMakerGameManager.GetEntityObjByPosition(grass.PositionX, grass.PositionY, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Grass)
         if grassObj and grassObj.Burn then
             grassObj:Burn()
         else
-            self.RpgMakerGamePlayScene:BurnGrass(grass.PositionX, grass.PositionY)
+            self:GetScene():BurnGrass(grass.PositionX, grass.PositionY)
         end
     end
 
@@ -810,7 +841,7 @@ function XUiRpgMakerGamePlayMain:GrassBurn(action, cb)
     BurnFunc(grass)
     local loop = #action.Grass
     if loop <= 0 then
-        self.RpgMakerGamePlayScene:UpdateTriggeObjStatus(mapId)
+        self:GetScene():UpdateTriggeObjStatus(mapId)
         cb()
         return
     end
@@ -825,7 +856,7 @@ function XUiRpgMakerGamePlayMain:GrassBurn(action, cb)
                 if XTool.UObjIsNil(self.GameObject) then
                     return
                 end
-                self.RpgMakerGamePlayScene:UpdateTriggeObjStatus(mapId)
+                self:GetScene():UpdateTriggeObjStatus(mapId)
                 cb()
             end, CS.XGame.ClientConfig:GetInt("RpgMakerGameDieByTrapTime"))
         end
@@ -851,16 +882,6 @@ function XUiRpgMakerGamePlayMain:StopGrassGrowAnimTimer()
         end
     end
     self.GrassGrowAnimTimer = { }
-end
-
----检查水对象的状态，把融化状态设为水
-function XUiRpgMakerGamePlayMain:CheckWaterState()
-    local waterObjDic = XDataCenter.RpgMakerGameManager.GetWaterObjDic()
-    for _, waterObj in pairs(waterObjDic) do
-        if waterObj:GetStatus() == XRpgMakerGameConfigs.XRpgMakerGameWaterType.Melt then
-            waterObj:SetStatus(XRpgMakerGameConfigs.XRpgMakerGameWaterType.Water)
-        end
-    end
 end
 
 ---检查所有怪物的攻击范围和警戒线
@@ -916,7 +937,7 @@ function XUiRpgMakerGamePlayMain:HideSentrySignText(monsterId)
 end
 
 function XUiRpgMakerGamePlayMain:CheckActionShadowMove(moveEndCb)
-    local actions = XDataCenter.RpgMakerGameManager.GetActions(XRpgMakerGameConfigs.RpgMakerGameActionType.ActionShadowMove)
+    local actions = XDataCenter.RpgMakerGameManager.GetActions(XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionShadowMove)
     local moveEndCb = moveEndCb
     if XTool.IsTableEmpty(actions) then
         moveEndCb()
@@ -1019,13 +1040,13 @@ end
 function XUiRpgMakerGamePlayMain:GetDirectionByAngle(angle)
     local direction
     if angle >= 315 or angle < 45 then
-        direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight
+        direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight
     elseif angle >= 45 and angle < 135 then
-        direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp
+        direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp
     elseif angle >= 135 and angle < 225 then
-        direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft
+        direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft
     elseif angle >= 225 and angle < 315 then
-        direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown
+        direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown
     end
     return direction
 end
@@ -1076,7 +1097,7 @@ function XUiRpgMakerGamePlayMain:ShowRandomHintDialog()
         return
     end
     local id = XDataCenter.RpgMakerGameManager.GetRandomDialogBoxId()
-    local text = XRpgMakerGameConfigs.GetRpgMakerGameRandomDialogBoxText(id)
+    local text = XMVCA.XRpgMakerGame:GetConfig():GetRandomDialogBoxText(id)
     self.TextHint.text = text
     self:SetContentActive(true)
     self:StartRandomDialogBoxDurationTimer(id)
@@ -1108,7 +1129,7 @@ end
 function XUiRpgMakerGamePlayMain:StartRandomDialogBoxDurationTimer(randomdialogBoxId)
     self:StopRandomDialogBoxDurationTimer()
 
-    local duration = randomdialogBoxId and XRpgMakerGameConfigs.GetRpgMakerGameRandomDialogBoxDuration(randomdialogBoxId) or RandomDialogBoxIntervalSecond
+    local duration = randomdialogBoxId and XMVCA.XRpgMakerGame:GetConfig():GetRandomDialogBoxDuration(randomdialogBoxId) or RandomDialogBoxIntervalSecond
     self.RandomDialogBoxDurationTimer = XScheduleManager.ScheduleForever(function()
         duration = duration - 1
         if duration <= 0 then
@@ -1188,16 +1209,16 @@ function XUiRpgMakerGamePlayMain:StartDownHintTimer()
     self:StopDownHintTimer()
 
     local duration = DownHintStayTime
-    local maxCount = XRpgMakerGameConfigs.GetRpgMakerGamePlayMainDownHintConfigMaxCount()
+    local maxCount = XMVCA.XRpgMakerGame:GetConfig():GetPlayMainDownHintConfigMaxCount()
     local curId = 1
-    local desc = XRpgMakerGameConfigs.GetRpgMakerGamePlayMainDownHintText(curId)
+    local desc = XMVCA.XRpgMakerGame:GetConfig():GetPlayMainDownHintText(curId)
     self.TipText.text = desc
 
     self.DownHintTimer = XScheduleManager.ScheduleForever(function()
         duration = duration - 1
         if duration <= 0 then
             duration = DownHintStayTime
-            desc = XRpgMakerGameConfigs.GetRpgMakerGamePlayMainDownHintText(curId)
+            desc = XMVCA.XRpgMakerGame:GetConfig():GetPlayMainDownHintText(curId)
             curId = curId + 1 > maxCount and 1 or curId + 1
             self.TipText.text = desc
         end
@@ -1225,11 +1246,6 @@ end
 function XUiRpgMakerGamePlayMain:GetStageId()
     local enterStageDb = XDataCenter.RpgMakerGameManager:GetRpgMakerGameEnterStageDb()
     return enterStageDb:GetStageId()
-end
-
-function XUiRpgMakerGamePlayMain:GetSelectRoleId()
-    local enterStageDb = XDataCenter.RpgMakerGameManager:GetRpgMakerGameEnterStageDb()
-    return enterStageDb:GetSelectRoleId()
 end
 
 function XUiRpgMakerGamePlayMain:GetMapId()
@@ -1301,7 +1317,7 @@ function XUiRpgMakerGamePlayMain:InitGuide()
 
     --设置按钮到怪物所在的位置
     local mapId = self:GetMapId()
-    local monsterIdList = XRpgMakerGameConfigs.GetMixBlockDataListByType(mapId, XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Moster)
+    local monsterIdList = XMVCA.XRpgMakerGame:GetConfig():GetMixBlockDataListByType(mapId, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Monster)
     local monsterId = monsterIdList[1]:GetParams()[1]
     local monsterObj = XDataCenter.RpgMakerGameManager.GetMonsterObj(monsterId)
     modelPosotion = monsterObj and monsterObj:GetGameObjPosition()
@@ -1314,7 +1330,7 @@ function XUiRpgMakerGamePlayMain:InitGuide()
     end
 
     --设置按钮到怪物所在的位置
-    local shadowList = XRpgMakerGameConfigs.GetMixBlockDataListByType(mapId, XRpgMakerGameConfigs.XRpgMakeBlockMetaType.Shadow)
+    local shadowList = XMVCA.XRpgMakerGame:GetConfig():GetMixBlockDataListByType(mapId, XMVCA.XRpgMakerGame.EnumConst.XRpgMakeBlockMetaType.Shadow)
     local shadowId = shadowList[1]:GetParams()[1]
     local shadowObj = XDataCenter.RpgMakerGameManager.GetShadowObj(shadowId)
     modelPosotion = monsterObj and shadowObj:GetGameObjPosition()
@@ -1339,7 +1355,7 @@ function XUiRpgMakerGamePlayMain:OnBtnGuideRoleClick()
         return
     end
 
-    playerObj:ChangeDirectionAction({Direction = XRpgMakerGameConfigs.GetActivityGuideMoveDirection()})
+    playerObj:ChangeDirectionAction({Direction = XMVCA.XRpgMakerGame:GetConfig():GetActivityGuideMoveDirection()})
     playerObj:SetMoveDirectionEffectActive(true)
 end
 
@@ -1351,13 +1367,13 @@ function XUiRpgMakerGamePlayMain:OnBtnGuideRoadClick()
     end
 
     local mapId = self:GetMapId()
-    local direction = XRpgMakerGameConfigs.GetActivityGuideMoveDirection()
+    local direction = XMVCA.XRpgMakerGame:GetConfig():GetActivityGuideMoveDirection()
     XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapMove(mapId, direction, handler(self, self.Refresh))
 end
 
 --世界坐标-> UGUI坐标
 function XUiRpgMakerGamePlayMain:WorldToUILocaPosition(modelPosotion)
-    local sceneCamera = self.RpgMakerGamePlayScene:GetSceneCamera()
+    local sceneCamera = self:GetScene():GetSceneCamera()
     local viewportPos = sceneCamera:WorldToViewportPoint(modelPosotion)
     local realScreenWidth = CsXUiManager.RealScreenWidth
     local realScreenHeight = CsXUiManager.RealScreenHeight

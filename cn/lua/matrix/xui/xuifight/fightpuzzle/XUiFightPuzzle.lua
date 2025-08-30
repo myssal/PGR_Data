@@ -49,10 +49,17 @@ function XUiFightPuzzle:OnEnable(iType)
     self.Map2.gameObject:SetActiveEx(2 == iType);
     self.Map3.gameObject:SetActiveEx(3 == iType);
     self.Map4.gameObject:SetActiveEx(4 == iType);
+    --海外启用手柄光标
+    if XOverseaManager.IsOverSeaRegion() then
+        CS.XJoystickLSHelper.ForceResponse = true
+    end
 end
 
 function XUiFightPuzzle:OnDisable()
     self:ResetSchedule(); 
+    if XOverseaManager.IsOverSeaRegion() then
+        CS.XJoystickLSHelper.ForceResponse = false
+    end
 end
 ---End Override
 

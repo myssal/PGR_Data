@@ -19,10 +19,44 @@ function XGoldenMinerSystemHook:EnterGame(objDir)
     ---@type UnityEngine.Transform
     self._ReflectAimRopeRoot = objDir.ReflectAimRopeRoot
 
-    for _, type in ipairs(self._MainControl:GetGameData():GetHookTypeList()) do
-        local hookEntity = self:_CreateHookEntity(type)
-        self:_HookIdle(hookEntity:GetComponentHook())
+    -- 初始化钩子实体
+    local hookTypeList = self._MainControl:GetGameData():GetHookTypeList()
+    local hookCount = XTool.GetTableCount(hookTypeList)
+    
+    -- 取中间确定主钩子（只有一个主钩子）
+    local mainHookIndex = XMath.ToInt(hookCount / 2)
+    local multySameHookBuffEntity = self._MainControl:CheckBuffValidByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.MULTY_SAME_HOOK)
+    
+    if multySameHookBuffEntity then
+        -- 多重钩爪的钩爪角度间隔
+        self._MultyHookAngle = multySameHookBuffEntity:GetBuffParams(2)
     end
+    
+    local index = 1
+    for obj, type in pairs(self._HookObjDir) do
+        ---@type XGoldenMinerComponentHook
+        local hookEntity = self:_CreateHookEntity(type, obj)
+        self:_HookIdle(hookEntity:GetComponentHook())
+        hookEntity:InitHookData(index, multySameHookBuffEntity and index ~= mainHookIndex or false)
+
+        if multySameHookBuffEntity then
+            if index == mainHookIndex then
+                -- 主钩摆动范围受buff修正
+                local customRopeAngleLimit = multySameHookBuffEntity:GetBuffParams(3)
+
+                if XTool.IsNumberValid(customRopeAngleLimit) then
+                    hookEntity:GetComponentHook():SetRopeAngleLimit(- customRopeAngleLimit, customRopeAngleLimit)
+                end
+            else
+                hookEntity:GetComponentHook():SetOriginalAngle(mainHookIndex)
+            end
+        end
+        
+        index = index + 1
+    end
+
+    self.ViewValidRightUp = objDir.ViewValidRightUp
+    self.ViewValidLeftDown = objDir.ViewValidLeftDown
 end
 
 function XGoldenMinerSystemHook:OnUpdate(time)
@@ -121,6 +155,10 @@ end
 function XGoldenMinerSystemHook:GetReflectAimRoot()
     return self._ReflectAimRopeRoot
 end
+
+function XGoldenMinerSystemHook:GetMultyHookAngle()
+    return self._MultyHookAngle
+end
 --endregion
 
 --region Data - Setter
@@ -136,6 +174,30 @@ end
 
 function XGoldenMinerSystemHook:CheckSystemIsIdle()
     return self._SystemStatus == XEnumConst.GOLDEN_MINER.GAME_SYSTEM_HOOK_STATUS.IDLE
+end
+
+function XGoldenMinerSystemHook:CheckAnyHookHasGrabbingStone()
+    if XTool.IsTableEmpty(self._HookEntityUidList) then
+        return false
+    end
+    
+    for _, uid in ipairs(self._HookEntityUidList) do
+        local hookEntity = self._MainControl:GetHookEntityByUid(uid)
+
+        if hookEntity then
+            local hookCom = hookEntity:GetComponentHook()
+            
+            if hookCom:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.GRABBING) then
+                -- 正在抓取中
+                return true
+            elseif hookCom:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.REVOKING) and hookEntity:CheckIsGrabbingAnyStone() then
+                -- 已经抓取了，正在返回
+                return true
+            end
+        end
+    end
+    
+    return false
 end
 
 function XGoldenMinerSystemHook:CheckIsHitDirection()
@@ -161,7 +223,9 @@ end
 function XGoldenMinerSystemHook:_CheckHookCanGrab(hook)
     return hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.SHOOTING) or
             -- 大钩爪一抓一大把不用过滤
-            (hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.GRABBING) and hook:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.BIG))
+            (hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.GRABBING) and hook:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.BIG)) or
+            -- 弹网抓钩一抓一大把不用过滤
+            (hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.GRABBING) and hook:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.Net))
 end
 
 function XGoldenMinerSystemHook:_CheckCanHitBoom()
@@ -213,10 +277,11 @@ end
 
 --region Hook - Create
 ---@return XGoldenMinerEntityHook
-function XGoldenMinerSystemHook:_CreateHookEntity(type)
+function XGoldenMinerSystemHook:_CreateHookEntity(type, obj)
     ---@type XGoldenMinerEntityHook
     local hookEntity = self._MainControl:AddEntity(self._MainControl.ENTITY_TYPE.HOOK)
-    self:_CreateHookComponent(hookEntity, type, self._HookObjDir[type])
+    self:_CreateHookComponent(hookEntity, type, obj)
+    self:_CreateHookSpecialComponent(hookEntity, type, obj)
     self:_RegisterHookHitCallBack(hookEntity)
     self._HookEntityUidList[#self._HookEntityUidList + 1] = hookEntity:GetUid()
     return hookEntity
@@ -241,6 +306,13 @@ function XGoldenMinerSystemHook:_CreateHookComponent(hookEntity, type, hookObj)
     hook:UpdateRoleLength(hook:GetCurRopeLength())
     hook:SetMaxReflectCount(self._MainControl:GetClientHookMaxReflectCount())
     return hook
+end
+
+function XGoldenMinerSystemHook:_CreateHookSpecialComponent(hookEntity, type, hookObj)
+    if type == XEnumConst.GOLDEN_MINER.HOOK_TYPE.Net then
+        local netAimCom = hookEntity:AddChildEntity(self._MainControl.COMPONENT_TYPE.NET_AIM)
+        netAimCom:SetTransform(hookObj)
+    end
 end
 
 ---@param hookEntity XGoldenMinerEntityHook
@@ -310,12 +382,17 @@ function XGoldenMinerSystemHook:_OnHookHit(hookEntity, stoneEntity)
     end
 
     if not stoneEntity then
-        if XTool.IsTableEmpty(hookEntity:GetGrabbingStoneUidList()) then
-            XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_PLAY_FACE,
-                    XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_TYPE.GRAB_NONE,
-                    XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_ID.GRAB_NONE)
+        -- 弹网钩爪忽略，可能碰到了多余的东西
+        if hookEntity:GetComponentHook():CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.Net) then
+
+        else
+            if XTool.IsTableEmpty(hookEntity:GetGrabbingStoneUidList()) then
+                XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_PLAY_FACE,
+                        XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_TYPE.GRAB_NONE,
+                        XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_ID.GRAB_NONE)
+            end
+            self:HookRevoke(hookComponent)
         end
-        self:HookRevoke(hookComponent)
         return
     end
 
@@ -476,7 +553,7 @@ function XGoldenMinerSystemHook:_OnHookHitDirectionPoint(hookEntity, stoneEntity
         hookComponent:UpdateCurDelayChangeAngleTimeByCrossPoint(crossVector, curAngle)
     else
         hookComponent:SetLastReflectRotateAngle(curAngle.z - curIdleRotateAngle.z)
-        hookComponent:AddCurHitPointInfo(curAngle.z)
+        hookComponent:AddCurHitPointInfo(curAngle)
     end
 
     -- 抓到挡板表情
@@ -645,11 +722,57 @@ function XGoldenMinerSystemHook:HookShoot()
     self:_SetSystemStatus(XEnumConst.GOLDEN_MINER.GAME_SYSTEM_HOOK_STATUS.USING)
 
     for _, uid in ipairs(self._HookEntityUidList) do
-        local hookComponent = self._MainControl:GetHookEntityByUid(uid):GetComponentHook()
+        local hookEntity = self._MainControl:GetHookEntityByUid(uid)
+        local hookComponent = hookEntity:GetComponentHook()
         self:_SetHookStatus(hookComponent, XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.SHOOTING)
+        -- 播放发射动画，如果动画存在的话
+        self._MainControl.SystemTimeLine:PlayAnim(hookEntity, XEnumConst.GOLDEN_MINER.GAME_ANIM.HOOK_ON_SHOOT)
         --每次发射时重置弹射信息
         hookComponent:SetLastReflectRotateAngle(nil)
         hookComponent:SetReflectCount(0)
+    end
+    XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_PLAY_FACE,
+            XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_TYPE.SHOOTING,
+            XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_ID.SHOOTING)
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, HOOK_SHOOT_SOUND_CUR_ID)
+end
+
+function XGoldenMinerSystemHook:HookVirtualShoot()
+    if XTool.IsTableEmpty(self._HookEntityUidList) then
+        return
+    end
+
+    if self._MainControl:IsPause() or self._MainControl:IsEnd() or self._MainControl:IsQTE() then
+        return
+    end
+
+    local isInVirtualShooting = false
+
+    for _, uid in ipairs(self._HookEntityUidList) do
+        local hookComponent = self._MainControl:GetHookEntityByUid(uid):GetComponentHook()
+        if hookComponent:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.VIRTUAL_SHOOTING) then
+            isInVirtualShooting = true
+            break
+        end
+    end
+    
+    if not self:CheckSystemIsIdle() and not isInVirtualShooting then
+        return
+    end
+    
+    self:_SetSystemStatus(XEnumConst.GOLDEN_MINER.GAME_SYSTEM_HOOK_STATUS.USING)
+
+    for _, uid in ipairs(self._HookEntityUidList) do
+        local hookEntity = self._MainControl:GetHookEntityByUid(uid)
+        local hookComponent = hookEntity:GetComponentHook()
+        self:_SetHookStatus(hookComponent, isInVirtualShooting and XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.SHOOTING or XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.VIRTUAL_SHOOTING)
+        -- 播放发射动画，如果动画存在的话
+        self._MainControl.SystemTimeLine:PlayAnim(hookEntity, XEnumConst.GOLDEN_MINER.GAME_ANIM.HOOK_ON_SHOOT)
+        --每次发射时重置弹射信息
+        hookComponent:SetLastReflectRotateAngle(nil)
+        hookComponent:SetReflectCount(0)
+        -- 弹网抓钩发射之初需要关掉物理检测
+        hookComponent:UpdateHitColliderEnable(false)
     end
     XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_PLAY_FACE,
             XEnumConst.GOLDEN_MINER.GAME_FACE_PLAY_TYPE.SHOOTING,
@@ -673,6 +796,13 @@ function XGoldenMinerSystemHook:HookRevoke(hook)
     end
 
     self:_SetHookStatus(hook, XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.REVOKING)
+    
+    local netCom = hook:GetHookEntity():GetComponentNetAim()
+
+    if netCom then
+        netCom:OnHookRevokeStart()
+    end
+    
     if hook:IsNoShowFaceId() then
         return
     end
@@ -697,7 +827,7 @@ end
 
 ---@param hook XGoldenMinerComponentHook
 ---@param stoneEntity XGoldenMinerEntityStone
-function XGoldenMinerSystemHook:HookGrab(hook, stoneEntity)
+function XGoldenMinerSystemHook:HookGrab(hook, stoneEntity, noSetObjToHook)
     if XTool.IsTableEmpty(self._HookEntityUidList) then
         return
     end
@@ -710,8 +840,12 @@ function XGoldenMinerSystemHook:HookGrab(hook, stoneEntity)
     if not self:_CheckHookCanGrab(hook) then
         return
     end
+
     self:_SetHookStatus(hook, XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.GRABBING)
-    self:_SetStoneEntityOnHook(hook, stoneEntity)
+
+    if not noSetObjToHook then
+        self:_SetStoneEntityOnHook(hook, stoneEntity)
+    end
 end
 
 ---设置钩爪为待使用状态
@@ -745,13 +879,19 @@ function XGoldenMinerSystemHook:_OnHookRevokeToIdle(hook)
         end
     end
     self._MainControl:OnHookRevokeToIdle(hookEntity)
+    
+    local netCom = hookEntity:GetComponentNetAim()
+
+    if netCom then
+        netCom:OnHookRevokeEnd()
+    end
 end
 
 ---@param hook XGoldenMinerComponentHook
 ---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemHook:_SetStoneEntityOnHook(hook, stoneEntity)
     ---@type XGoldenMinerEntityStone
-    local tempStoneEntity = stoneEntity
+     local tempStoneEntity = stoneEntity
     -- 河蚌只抓携带物
     if tempStoneEntity:GetComponentMussel() then
         tempStoneEntity = stoneEntity:GetCarryStoneEntity()
@@ -786,6 +926,49 @@ function XGoldenMinerSystemHook:_SetStoneEntityOnHook(hook, stoneEntity)
             tempStoneEntity.Data:GetCatchEffect())
 end
 
+--- 只把符合条件的资源设置到钩爪节点上，不做其他的逻辑
+function XGoldenMinerSystemHook:SetStoneEntityOnHookOnly(hook, stoneEntity, fixPosition)
+    ---@type XGoldenMinerEntityStone
+    local tempStoneEntity = stoneEntity
+    -- 河蚌只抓携带物
+    if tempStoneEntity:GetComponentMussel() then
+        tempStoneEntity = stoneEntity:GetCarryStoneEntity()
+    end
+    
+    ---@type UnityEngine.Transform
+    local tempStoneTrans = tempStoneEntity:GetTransform()
+    
+    if not tempStoneEntity or XTool.UObjIsNil(tempStoneTrans) then
+        return
+    end
+    local rectTransform = tempStoneEntity:GetTransform():GetComponent("RectTransform")
+
+    if tempStoneEntity:GetComponentAimDirection() then
+        tempStoneTrans:SetParent(hook:GetGrabPoint(), true)
+
+        if fixPosition then
+            tempStoneEntity:GetComponentAimDirection().Transform.localPosition = Vector3(0, -60, 0)
+        end
+    else
+        tempStoneTrans:SetParent(hook:GetGrabPoint(), true)
+
+        rectTransform.anchorMin = Vector2(0.5, 1)
+        rectTransform.anchorMax = Vector2(0.5, 1)
+        rectTransform.pivot = Vector2(0.5, 1)
+        
+        if fixPosition then
+            if tempStoneEntity:GetComponentMouse() then
+                tempStoneTrans.localPosition = Vector3(0, self._MainControl:GetClientMouseGrabOffset(), 0)
+            else
+                tempStoneTrans.localPosition = Vector3.zero
+            end
+        end
+
+        tempStoneTrans.localRotation = CS.UnityEngine.Quaternion.identity
+
+    end
+end
+
 ---@param hook XGoldenMinerComponentHook
 function XGoldenMinerSystemHook:_SetHookStatus(hook, status)
     if hook:CheckStatus(status) then
@@ -805,6 +988,12 @@ function XGoldenMinerSystemHook:_SetHookStatus(hook, status)
 
     elseif status == XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.REVOKING then
         hook:OnHookChangeToRevoke()
+    elseif status == XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.VIRTUAL_SHOOTING then
+        local netAimCom = hook:GetHookEntity():GetComponentNetAim()
+
+        if netAimCom then
+            netAimCom:OnVirtualMoveStart()
+        end
     else
         hook:UpdateHitColliderEnable(false)
     end
@@ -833,6 +1022,8 @@ function XGoldenMinerSystemHook:UpdateHook(hook, time)
         self:_UpdateHookRevoking(hook, time)
     elseif hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.QTE) then
         self:_UpdateHookQTE(hook, time)
+    elseif hook:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_HOOK_STATUS.VIRTUAL_SHOOTING) then
+        self:_UpdateHookVirtualShooting(hook, time)    
     end
 end
 
@@ -854,13 +1045,22 @@ end
 ---@param hook XGoldenMinerComponentHook
 function XGoldenMinerSystemHook:_UpdateHookShooting(hook, time)
     hook:DownCurDelayChangeAngleTime(time)
-    hook:UpdateRoleLength(hook:GetCurRopeLength() + time * hook:GetCurShootSpeed())
+    hook:UpdateRoleLength(hook:GetCurRopeLength() + time * hook:GetCurShootSpeed(), nil, time)
 
     if hook:CheckIsRevoke() then
         self:HookRevoke(hook)
     end
 
     hook:UpdateAim(false)
+end
+
+---@param hook XGoldenMinerComponentHook
+function XGoldenMinerSystemHook:_UpdateHookVirtualShooting(hook, time)
+    local netAimCom = hook:GetHookEntity():GetComponentNetAim()
+
+    if netAimCom then
+        netAimCom:UpdateMovePath(time)
+    end
 end
 
 ---@param hook XGoldenMinerComponentHook
@@ -871,11 +1071,11 @@ end
 function XGoldenMinerSystemHook:_UpdateHookRevoking(hook, time)
     local hookEntity = hook:GetHookEntity()
     local revokeSpeed = self:_ComputeRevokeSpeed(hookEntity)
-    hook:UpdateRoleLength(hook:GetCurRopeLength() - time * revokeSpeed, true)
+    hook:UpdateRoleLength(hook:GetCurRopeLength() - time * revokeSpeed, true, time)
     if hook:CheckIsIdle() then
         self:_HookIdle(hook)
     else
-        hook:UpdateAim(false)
+          hook:UpdateAim(false)
     end
 end
 
@@ -911,7 +1111,11 @@ function XGoldenMinerSystemHook:_ComputeRevokeSpeed(hookEntity)
     for _, uid in pairs(hookEntity:GetGrabbingStoneUidList()) do
         local stoneEntity = self._MainControl:GetStoneEntityByUid(uid)
         if stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBING) then
-            weight = weight + stoneEntity:GetComponentStone().CurWeight
+            local stoneCom = stoneEntity:GetComponentStone()
+
+            if not stoneCom:GetIsIgnoreWeight() then
+                weight = weight + stoneEntity:GetComponentStone().CurWeight
+            end
         end
         local qteComponent = stoneEntity:GetComponentQTE()
         if qteComponent and qteComponent.SpeedRate > qteSpeedRate then
@@ -923,7 +1127,7 @@ function XGoldenMinerSystemHook:_ComputeRevokeSpeed(hookEntity)
     local hookComponent = hookEntity:GetComponentHook()
     param = XTool.IsNumberValid(param) and param or 1
     speed = speed * (1 - (weight / param)) * hookComponent:GetCurRevokeSpeedPercent() * qteSpeedRate
-    XMVCA.XGoldenMiner:DebugLog("当前钩爪回收速度=" .. speed, hookComponent:GetCurRevokeSpeedPercent())
+    XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.HookSpeed, "当前钩爪回收速度=" .. speed, hookComponent:GetCurRevokeSpeedPercent())
     return speed
 end
 --endregion

@@ -17,7 +17,7 @@ function XUiPurchaseYKListItem:SetData(data, finishedFunc)
     self.FinishedFunc = finishedFunc
     self.YKUiItemConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(data:GetId())
     self.TxtTimeTip.text = XUiHelper.GetText("PurchaseYKTimeTip", data:GetDailyRewardRemainDay())
-    self.TxtTimeTip.gameObject:SetActiveEx(data:GetId() == XPurchaseConfigs.YKID)
+    self.TxtTimeTip.gameObject:SetActiveEx(XPurchaseConfigs.IsYKID(data:GetId()))
     self.TxtCountLimit.text = XUiHelper.GetText("PurchaseYKLimitCountTip", data:GetCurrentBuyTime(), data:GetBuyLimitTime())
     local tips = self.YKUiItemConfig.Tips
     self.TxtTip1.text = tips[1]
@@ -35,7 +35,7 @@ end
 
 function XUiPurchaseYKListItem:OnBtnBuyClicked()
     local buyFnishedFunc = function()
-        if self.PurchasePackage:GetId() == XPurchaseConfigs.YKID then
+        if XPurchaseConfigs.IsYKID(self.PurchasePackage:GetId()) then
             -- 设置月卡信息本地缓存
             XDataCenter.PurchaseManager.SetYKLocalCache()
         end    

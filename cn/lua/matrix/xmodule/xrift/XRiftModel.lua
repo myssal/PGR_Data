@@ -14,10 +14,10 @@ local TableKey = {
     RiftActivity = { CacheType = XConfigUtil.CacheType.Normal },
     RiftChapter = { CacheType = XConfigUtil.CacheType.Normal },
     RiftLayer = { CacheType = XConfigUtil.CacheType.Normal },
-    RiftNodeRandomItem = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "GroupId" }, -- 关卡库
+    RiftNodeRandomItemAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "GroupId" }, -- 关卡库
     RiftStage = { CacheType = XConfigUtil.CacheType.Normal },
     RiftMonsterBuffRandomItem = {}, -- 词缀库
-    RiftCharacterAndRobot = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "RobotId", CacheType = XConfigUtil.CacheType.Normal },
+    RiftCharacterAndRobotAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "RobotId", CacheType = XConfigUtil.CacheType.Normal },
     RiftTeamAttribute = { CacheType = XConfigUtil.CacheType.Normal }, -- 队伍加点表
     RiftTeamAttributeCost = { CacheType = XConfigUtil.CacheType.Normal }, -- 队伍加点消耗表
     RiftTeamAttributeEffect = {}, -- 队伍加点效果表
@@ -101,6 +101,14 @@ function XRiftModel:GetMainPanelParem()
     end
     self._MainParam.IsPlayScreenTween = true
     return self._MainParam
+end
+
+function XRiftModel:GetChapterPanelParem()
+    if not self._ChapterParam then
+        self._ChapterParam = {}
+    end
+    self._ChapterParam.IsPlayScreenTween = true
+    return self._ChapterParam
 end
 
 --endregion
@@ -324,6 +332,9 @@ end
 
 function XRiftModel:CheckLayerPassed(layerId)
     local data = self.ActivityData:GetFightLayerDataById(layerId)
+    if not data then
+        return false
+    end
     for _, stage in pairs(data.StageGroup.StageDatas) do
         if not stage.IsPassed then
             return false
@@ -619,7 +630,7 @@ end
 
 ---获取可预览加点的总等级:当前已购买等级 + 可购买等级
 function XRiftModel:GetCanPreviewAttrAllLevel()
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     local attrIndex = self.ActivityData:GetTotalAttrLevel()
     local const = 0
     local configs = self:GetRiftTeamAttributeCostConfigs()
@@ -637,7 +648,7 @@ function XRiftModel:GetCanPreviewAttrAllLevel()
 end
 
 function XRiftModel:IsAttributeCanBuy()
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     local nextAttrLevel = self.ActivityData:GetTotalAttrLevel() + 1
     local maxLevel = self.ActivityData:GetAttrLevelMax() * 4
     if nextAttrLevel > maxLevel then
@@ -888,7 +899,7 @@ end
 
 ---是否显示购买属性红点
 function XRiftModel:IsBuyAttrRed()
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     local recordCnt = XSaveTool.GetData(self:GetBuyAttrRedSaveKey())
     if recordCnt == nil or ownCnt > recordCnt then
         return self:IsAttributeCanBuy()
@@ -900,7 +911,7 @@ end
 
 ---关闭购买属性红点
 function XRiftModel:CloseBuyAttrRed()
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     XSaveTool.SaveData(self:GetBuyAttrRedSaveKey(), ownCnt)
 end
 
@@ -936,7 +947,7 @@ function XRiftModel:IsMemberAddPointRed()
         return false
     end
     local const = self:GetAttributeCost(totalLevel)
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     local goldEnough = ownCnt >= const
     local buyAttrLevel = self.ActivityData:GetTotalAttrLevel()
     if totalLevel == buyAttrLevel then
@@ -1128,14 +1139,14 @@ function XRiftModel:GetRiftPluginGroupToFixAttrById(groupId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.RiftPluginGroupToFixAttr, groupId)
 end
 
----@return XTableRiftCharacterAndRobot
+---@return XTableRiftCharacterAndRobotAuto
 function XRiftModel:GetRiftCharacterAndRobotById(robotId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.RiftCharacterAndRobot, robotId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.RiftCharacterAndRobotAuto, robotId)
 end
 
----@return XTableRiftNodeRandomItem
+---@return XTableRiftNodeRandomItemAuto
 function XRiftModel:GetRiftNodeRandomItemById(groupId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.RiftNodeRandomItem, groupId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.RiftNodeRandomItemAuto, groupId)
 end
 
 ---@return XTableRiftTeamAttributeEffect
@@ -1198,9 +1209,9 @@ function XRiftModel:GetRiftOneKeyEquipConfigs()
     return self._ConfigUtil:GetByTableKey(TableKey.RiftOneKeyEquip)
 end
 
----@return XTableRiftCharacterAndRobot[]
+---@return XTableRiftCharacterAndRobotAuto[]
 function XRiftModel:GetRiftCharacterAndRobotConfigs()
-    return self._ConfigUtil:GetByTableKey(TableKey.RiftCharacterAndRobot)
+    return self._ConfigUtil:GetByTableKey(TableKey.RiftCharacterAndRobotAuto)
 end
 
 ---@return XTableRiftTeamAttribute[]
@@ -1229,48 +1240,5 @@ function XRiftModel:GetRiftTeamAttributeCostConfigs()
 end
 
 ----------config end----------
-
---region Debug
-
----通过比较tab文件和xlsm文件的修改时间来确定tab文件是否是由python工具生成的
-function XRiftModel:CheckTabPythonCreate()
-    if not XMain.IsWindowsEditor then
-        return
-    end
-    local files = {
-        {
-            "RiftCharacterAndRobot.xlsm",
-            "Client/Fuben/Rift/RiftCharacterAndRobot.tab",
-            "Share/Fuben/Rift/RiftCharacterAndRobot.tab",
-        }, {
-            "RiftNodeRandomItem.xlsm",
-            "Client/Fuben/Rift/RiftNodeRandomItem.tab",
-            "Share/Fuben/Rift/RiftNodeRandomItem.tab",
-        }, {
-            "RiftPluginAttrFix.xlsm",
-            "Client/Fuben/Rift/RiftPluginGroupToFixAttr.tab",
-            "Share/Fuben/Rift/RiftPluginAttrFix.tab",
-        }, {
-            "RiftTeamAttributeEffect.xlsm",
-            "Client/Fuben/Rift/RiftSystemEffectTypeMap.tab",
-            "Client/Fuben/Rift/RiftAttributeGroupMap.tab",
-            "Share/Fuben/Rift/RiftTeamAttributeEffect.tab",
-        },
-    }
-    local pythonTab = CS.UnityEngine.Application.dataPath .. "/../../../Doc/Table/"
-    local tab = CS.UnityEngine.Application.dataPath .. "/../../../Product/Table/"
-    for _, tb in pairs(files) do
-        local pythonTabTime = CS.XFileTool.GetFileLastWriteTime(pythonTab .. tb[1])
-        for i = 2, #tb do
-            local tbTime = CS.XFileTool.GetFileLastWriteTime(tab .. tb[i])
-            if XTool.IsNumberValid(pythonTabTime) and XTool.IsNumberValid(tbTime) and tbTime > pythonTabTime then
-                XLog.Warning(string.format("%s的修改时间比母表晚 策划确认下是否没使用母表导出而是直接修改了tab表.", tb[i]))
-            end
-        end
-    end
-end
-
---endregion
-
 
 return XRiftModel

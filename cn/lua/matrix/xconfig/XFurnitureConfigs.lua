@@ -383,8 +383,13 @@ function XFurnitureConfigs.Init()
         end
 
         FurnitureSuitDatas[id] = FurnitureSuitDatas[id] + 1
-
-        InitFurnitureMinorTemplates(v)
+        if XOverseaManager.IsJP_KRRegion() then
+            if v.SuitId ~= 0 then
+                InitFurnitureMinorTemplates(v)
+            end
+        else
+            InitFurnitureMinorTemplates(v)
+        end
     end
 end
 

@@ -23,7 +23,7 @@ end
 
 function XRpgMakerGameEndPoint:InitData(mapObjData)
     self.StatusIsChange = false  --新的状态是否和旧的不同
-    -- local endPointId = XRpgMakerGameConfigs.GetRpgMakerGameEndPointId(mapId)
+    -- local endPointId = XMVCA.XRpgMakerGame:GetConfig():GetMapEndPointId(mapId)
     -- local pointX = XRpgMakerGameConfigs.GetRpgMakerGameEndPointX(endPointId)
     -- local pointY = XRpgMakerGameConfigs.GetRpgMakerGameEndPointY(endPointId)
     -- local endPointType = XRpgMakerGameConfigs.GetRpgMakerGameEndPointType(endPointId)
@@ -53,12 +53,12 @@ function XRpgMakerGameEndPoint:SetStatusIsChange(isChange)
 end
 
 function XRpgMakerGameEndPoint:IsOpen()
-    return self._OpenStatus == XRpgMakerGameConfigs.XRpgMakerGameEndPointType.DefaultOpen
+    return self._OpenStatus == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameEndPointType.DefaultOpen
 end
 
 function XRpgMakerGameEndPoint:EndPointOpen()
     self:SetStatusIsChange(true)
-    self._OpenStatus = XRpgMakerGameConfigs.XRpgMakerGameEndPointType.DefaultOpen
+    self._OpenStatus = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameEndPointType.DefaultOpen
 end
 
 function XRpgMakerGameEndPoint:UpdateObjStatus()
@@ -66,8 +66,8 @@ function XRpgMakerGameEndPoint:UpdateObjStatus()
 end
 
 function XRpgMakerGameEndPoint:PlayEndPointStatusChangeAction(action, cb)
-    local modelKey = self:IsOpen() and XRpgMakerGameConfigs.ModelKeyMaps.GoldOpen or XRpgMakerGameConfigs.ModelKeyMaps.GoldClose
-    local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+    local modelKey = self:IsOpen() and XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.GoldOpen or XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.GoldClose
+    local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
     local sceneObjRoot = self:GetGameObjModelRoot()
     self:LoadModel(modelPath, sceneObjRoot, nil, modelKey)
 

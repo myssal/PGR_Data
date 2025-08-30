@@ -12,7 +12,7 @@ end
 
 function XUiGridBagOrganizeFileEditor:Refresh(fileData, index)
     if self.Btn then
-        self.Btn:SetNameByGroup(0, '背包绘制配置 Id:'..tostring(fileData.Id))
+        self.Btn:SetNameByGroup(0, CS.XTextManager.GetLuaText("XUiGridBagOrganizeFileEditor.lua_15")..tostring(fileData.Id))
     end
     self._FileId = fileData.Id
     self.Index = index

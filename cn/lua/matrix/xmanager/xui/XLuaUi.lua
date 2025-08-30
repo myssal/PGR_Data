@@ -389,6 +389,14 @@ function XLuaUi:BindControl()
         local controlId = UIBindControl[self.__cname]
         self._Control = XMVCA:_GetOrRegisterControl(controlId)
         self._Control:AddViewRef(self._Uid)
+        --control的卸载是否受界面栈操作限制
+        if self._Control:UseUiStackOperationRef() then
+            if self.Ui and XTool.IsNumberValid(self.Ui.UUID) then
+                self._Control:AddUiStackOperationRef(self.Ui.UUID)
+            else
+                XLog.Error(string.format("界面%s绑定的UI栈操作不存在", self.__cname))
+            end
+        end      
     end
 end
 

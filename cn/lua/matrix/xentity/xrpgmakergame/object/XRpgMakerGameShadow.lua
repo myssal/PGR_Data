@@ -28,7 +28,11 @@ function XRpgMakerGameShadow:Ctor(id)
 end
 
 function XRpgMakerGameShadow:InitData()
-    local shadowId = self:GetId()
+    --设置初始SkillTypes
+    local scene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
+    local shadowId = XMVCA.XRpgMakerGame:GetConfig():GetStageShadowId(scene.StageId)
+    local skillTypes = XMVCA.XRpgMakerGame:GetConfig():GetRoleInitSkillTypes(shadowId)
+    self:InitSkillTypes(skillTypes)
     -- local pointX = XRpgMakerGameConfigs.GetRpgMakerGameShadowX(shadowId)
     -- local pointY = XRpgMakerGameConfigs.GetRpgMakerGameShadowY(shadowId)
     -- local direction = XRpgMakerGameConfigs.GetRpgMakerGameShadowDirection(shadowId)
@@ -54,6 +58,7 @@ function XRpgMakerGameShadow:UpdateData(data)
     self._FaceDirection = data.FaceDirection
     self._KillByTrapRound = data.KillByTrapRound
     self:UpdatePosition(data)
+    self:ChangeSkillTypes({data.SkillType})
 end
 
 function XRpgMakerGameShadow:SetCurrentHp(hp)
@@ -75,13 +80,13 @@ end
 function XRpgMakerGameShadow:PlayMoveAction(action, cb, mapId, stageId)
     local nextAction = XDataCenter.RpgMakerGameManager.GetNextAction(true)
     if nextAction then
-        if nextAction.ActionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerDrown then
+        if nextAction.ActionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerDrown then
             self:DieByDrown(mapId, action.EndPosition.PositionX, action.EndPosition.PositionY)
-        elseif nextAction.ActionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionPlayerTransfer then
+        elseif nextAction.ActionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionPlayerTransfer then
             self:SetIsTranser(true)
         end
     end
-    local bubbleMoveActions = XDataCenter.RpgMakerGameManager.GetActionsNotRemove(XRpgMakerGameConfigs.RpgMakerGameActionType.ActionBubbleMove)
+    local bubbleMoveActions = XDataCenter.RpgMakerGameManager.GetActionsNotRemove(XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionBubbleMove)
     for _, temp in ipairs(bubbleMoveActions) do
         if temp and temp.ShadowId == self.MapObjData:GetParams()[1] then
             local xDistance = action.EndPosition.PositionX - action.StartPosition.PositionX
@@ -95,13 +100,12 @@ function XRpgMakerGameShadow:PlayMoveAction(action, cb, mapId, stageId)
         end
     end
 
-    local roleId = XRpgMakerGameConfigs.GetStageShadowId(stageId)
-    local skillType = XRpgMakerGameConfigs.GetRoleSkillType(roleId)
+    local skillType = self:GetSkillTypes()[1]
     self:CheckIsSteelAdsorb(mapId, action.EndPosition.PositionX, action.EndPosition.PositionY, skillType)
     XRpgMakerGameShadow.Super.PlayMoveAction(self, action, cb, skillType)
 end
 
-function XRpgMakerGameShadow:Die()
+function XRpgMakerGameShadow:OnDie()
     self:SetCurrentHp(0)
 end
 
@@ -139,17 +143,16 @@ function XRpgMakerGameShadow:OnLoadComplete()
     end
 
     local modelKey = self:GetModelKey()
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
     self.RoleModelPanel:LoadEffect(effectPath, modelKey, true, true, true)
 end
 
 --杀死怪物
 function XRpgMakerGameShadow:PlayKillMonsterAction(action, cb)
     local monsterId = action.MonsterId
-    local cb = cb
     local monsterObj = XDataCenter.RpgMakerGameManager.GetMonsterObj(monsterId)
     self:PlayAtkAction(function()
-        monsterObj:PlayBeAtkAction(cb)
+        monsterObj:LoadDieEffect(cb)
         monsterObj:RemoveViewAreaAndLine()
         monsterObj:InitSentryData()
     end)

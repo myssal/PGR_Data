@@ -220,18 +220,23 @@ XTRPGManagerCreator = function()
     local __CurrentMazeId = 0
 
     local function GetMaze(mazeId)
-        return MazeInfos[mazeId]
+        local maze =  MazeInfos[mazeId]
+        if not maze then
+            maze = XTRPGMaze.New(mazeId)
+            MazeInfos[mazeId] = maze
+        end
+        return maze
     end
 
     local function InitMazes()
-        local mazeIds = XTRPGConfigs.GetMazeIds()
-        for mazeId in pairs(mazeIds) do
-            local maze = GetMaze(mazeId)
-            if not maze then
-                maze = XTRPGMaze.New(mazeId)
-                MazeInfos[mazeId] = maze
-            end
-        end
+        --local mazeIds = XTRPGConfigs.GetMazeIds()
+        --for mazeId in pairs(mazeIds) do
+        --    local maze = GetMaze(mazeId)
+        --    if not maze then
+        --        maze = XTRPGMaze.New(mazeId)
+        --        MazeInfos[mazeId] = maze
+        --    end
+        --end
     end
 
     local function UpdateMazeInfo(data)

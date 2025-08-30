@@ -12,10 +12,10 @@ function XUiGridRpgMakerGameRecord:Ctor(ui, uiRoot)
 end
 
 function XUiGridRpgMakerGameRecord:Refresh(hintIconKey)
-    local icon = XRpgMakerGameConfigs.GetRpgMakerGameHintIcon(hintIconKey)
+    local icon = XMVCA.XRpgMakerGame:GetConfig():GetHintIcon(hintIconKey)
     self.ImgIconContent:SetRawImage(icon)
 
-    local iconName = XRpgMakerGameConfigs.GetRpgMakerGameHintIconName(hintIconKey)
+    local iconName = XMVCA.XRpgMakerGame:GetConfig():GetHintName(hintIconKey)
     self.TxtContent.text = iconName
 end
 

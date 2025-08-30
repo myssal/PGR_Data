@@ -98,4 +98,14 @@ function XSkyGardenAgency:RecordHudClick(btnIndex)
     CS.XRecord.Record(dict, "1100002", "SkyGardenUiOpen")
 end
 
+---@return XTableGuideText
+function XSkyGardenAgency:GetBigWorldGuideTextTemplate(textId)
+    return self._Model:GetGuideTextTemplate(textId)
+end
+
+---@return string
+function XSkyGardenAgency:GetBigWorldGuideIcon(iconId)
+    return self._Model:GetGuideIcon(iconId)
+end
+
 return XSkyGardenAgency

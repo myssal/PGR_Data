@@ -1,7 +1,7 @@
 
 local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 -- 活动玩法管理器
-local XExFubenActivityManager = XClass(XExFubenBaseManager, "XExFubenActivityManager")
+local XExFubenActivityManager = XClass(XExFubenBaseManager, "XExFubenActivityManager", true) -- #203409 增加该类被分类
 
 function XExFubenActivityManager:ExSetConfig(value)
     if type(value) == "string" then

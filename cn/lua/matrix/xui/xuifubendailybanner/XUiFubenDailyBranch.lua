@@ -33,7 +33,14 @@ end
 function XUiFubenDailyBranch:InitShop()
     self.ShopId = XDailyDungeonConfigs.GetFubenDailyShopId(self.Rule.Id)
     self.BtnShop.gameObject:SetActiveEx(self.ShopId > 0)
-    self.BtnShop:SetName(XShopManager.GetShopTypeDataById(XShopManager.ShopType.FubenDaily).Desc)
+    local descText
+    --海外定制换行修改
+    if XOverseaManager.IsOverSeaRegion() then
+        descText = string.gsub(XShopManager.GetShopTypeDataById(XShopManager.ShopType.FubenDaily).Desc, "\\n", "\n")
+    else
+        descText = XShopManager.GetShopTypeDataById(XShopManager.ShopType.FubenDaily).Desc
+    end
+    self.BtnShop:SetName(descText)
     self.BtnShop:ShowReddot(false)
     if XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.FubenDailyShop) then
         if self.ShopId > 0 then

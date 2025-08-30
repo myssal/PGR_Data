@@ -6,9 +6,9 @@ function XUiFubenRpgMakerGameMovie:OnStart(stageId)
         return
     end
 
-    self.TxtTitle.text = XRpgMakerGameConfigs.GetRpgMakerGameStageName(stageId)
+    self.TxtTitle.text = XMVCA.XRpgMakerGame:GetConfig():GetStageName(stageId)
 
-    local desc = XRpgMakerGameConfigs.GetRpgMakerGameStageHint(stageId)
+    local desc = XMVCA.XRpgMakerGame:GetConfig():GetStageStageHint(stageId)
     self.TxtContent.text = string.gsub(desc, "\\n", "\n")
 end
 

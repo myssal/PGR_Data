@@ -51,7 +51,7 @@ function XRestaurantRole:GetControllerPath()
 end
 
 function XRestaurantRole:GetCharTypeDesc()
-    return "员工NPC"
+    return CS.XTextManager.GetLuaText("XRestaurantRole.lua_54")
 end
 
 function XRestaurantRole:PlayBehaviour()

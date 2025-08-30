@@ -93,6 +93,15 @@ function XLuaVector2.Distance(value1, value2)
     return math.sqrt(x * x + y * y)
 end
 
+---@param value1 XLuaVector2
+---@param value2 XLuaVector2
+---@return number
+function XLuaVector2.DistanceNoVec(oriX, oriY, desX, desY)
+    local x = oriX - desX
+    local y = oriY - desY
+    return math.sqrt(x * x + y * y)
+end
+
 ---@param value XLuaVector2
 ---@return number
 function XLuaVector2.Magnitude(value)
@@ -121,6 +130,16 @@ function XLuaVector2.GetLinesCrossPoint(line1P1, line1P2, line2P1, line2P2)
     local y = (b1 * k2 - b2 * k1) / (k2 - k1)
     crossLine:Update(x, y)
     return crossLine
+end
+
+--- 从法线定义的向量反射一个向量
+function XLuaVector2.ReflectNonAlloc(inDireX, inDireY, inNormalX, inNormalY)
+    local dot = inDireX * inNormalX + inDireY * inNormalY
+    local num = -2 * dot
+    local x = num * inNormalX + inDireX
+    local y = num * inNormalY + inDireY
+
+    return x, y
 end
 
 --- 计算两个向量的夹角（欧拉角）

@@ -24,6 +24,7 @@ function XRiftFightLayer:GetFightLayerId()
 end
 
 -- 【获取】Config
+---@return XTableRiftLayer
 function XRiftFightLayer:GetConfig()
     return self._Config
 end

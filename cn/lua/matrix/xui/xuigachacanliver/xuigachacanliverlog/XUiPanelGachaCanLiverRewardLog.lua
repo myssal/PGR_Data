@@ -51,18 +51,18 @@ function XUiPanelGachaCanLiverRewardLog:RefreshUiShow(gachaConfig)
             local item = XUiGridCommon.New(self.RootUi, go)
 
             local tmpData = {}
-            tmpData.TemplateId = v.TemplateId
-            tmpData.Count = v.Count
+            tmpData.TemplateId = v.Cfg.TemplateId
+            tmpData.Count = v.Cfg.Count
             
             local curCount
-            if v.RewardType == XGachaConfigs.RewardType.Count then
+            if v.Cfg.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = v.CurCount
             end
             item:Refresh(tmpData, nil, nil, nil, curCount)
 
             -- 自定义品质
-            if XTool.IsNumberValid(v.Id) then
-                local cfg = XGachaConfigs.GetGachaReward()[v.Id]
+            if XTool.IsNumberValid(v.Cfg.Id) then
+                local cfg = XGachaConfigs.GetGachaReward()[v.Cfg.Id]
 
                 if cfg and not string.IsNilOrEmpty(cfg.Note) then
                     local quality = string.IsNumeric(cfg.Note) and tonumber(cfg.Note) or nil

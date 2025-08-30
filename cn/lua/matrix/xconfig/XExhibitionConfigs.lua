@@ -1,64 +1,45 @@
 XExhibitionConfigs = XExhibitionConfigs or {}
 
 local TABLE_CHARACTER_EXHIBITION = "Client/Exhibition/Exhibition.tab"
+local TABLE_CHARACTER_EXHIBITION_CHARACTER_MAP = "Client/Exhibition/ExhibitionCharacterMap.tab"
+local TABLE_CHARACTER_EXHIBITION_TYPE_MAP = "Client/Exhibition/ExhibitionTypeMap.tab"
+
 local TABLE_CHARACTER_EXHIBITION_LEVEL = "Client/Exhibition/ExhibitionLevel.tab"
 local TABLE_CHARACTER_GROW_TASK_INFO = "Share/Exhibition/ExhibitionReward.tab"
 local TABLE_EXHIBITIONLIMIT = "Share/Exhibition/ExhibitionLimit.tab"
 
 local DefaultPortraitImagePath = CS.XGame.ClientConfig:GetString("DefaultPortraitImagePath")
 local ExhibitionLevelPoint = {}
+---@type XTableCharacterExhibition[]
 local ExhibitionConfig = {}
-local ExhibitionGroupNameConfig = {}
-local ExhibitionGroupLogoConfig = {}
-local ExhibitionGroupDescConfig = {}
+---@type XTableExhibitionCharacterMap[]
+local ExhibitionCharacterMapConfig = {}
+---@type XTableExhibitionTypeMap[]
+local ExhibitionTypeMapConfig = {}
+
 local CharacterExhibitionLevelConfig = {}
 local GrowUpTasksConfig = {}
 local CharacterGrowUpTasksConfig = {}
 local CharacterGrowUpTasksConfigByType = {}
-local CharacterHeadPortrait = {}
-local CharacterGraduationPortrait = {}
-local ExhibitionConfigByTypeAndPort = {}
-local ExhibitionConfigByTypeAndGroup = {}
-local CharacterToExhibitionTypeTable = {}
-local InVisibleGroupTable = {}
+local ExhibitionConfigByTypeAndPort = {} -- 展示厅、收集界面用到
+local ExhibitionConfigByTypeAndGroup = {} -- 展示厅用到
+local InVisibleGroupTable = {} -- 展示厅用到
 local ExhibitionlimitTable = {}
-local ExhibitionCharacterGroupDic = {}
 
 function XExhibitionConfigs.Init()
     CharacterExhibitionLevelConfig = XTableManager.ReadByIntKey(TABLE_CHARACTER_EXHIBITION_LEVEL, XTable.XTableExhibitionLevel, "LevelId")
     ExhibitionlimitTable = XTableManager.ReadByIntKey(TABLE_EXHIBITIONLIMIT, XTable.XTableExhibitionLimit, "CharacterId")
     ExhibitionConfig = XTableManager.ReadByIntKey(TABLE_CHARACTER_EXHIBITION, XTable.XTableCharacterExhibition, "Id")
-    for _, v in pairs(ExhibitionConfig) do
-        if v.Port ~= nil then
-            CharacterHeadPortrait[v.CharacterId] = v.HeadPortrait
-            CharacterGraduationPortrait[v.CharacterId] = v.GraduationPortrait
-            ExhibitionCharacterGroupDic[v.CharacterId] = { GroupId=v.GroupId,GroupName = v.GroupName, GroupNameEn = v.GroupNameEn }
-            ExhibitionGroupNameConfig[v.GroupId] = v.GroupName
-            ExhibitionGroupLogoConfig[v.CharacterId] = v.GroupLogo
-            ExhibitionGroupDescConfig[v.GroupId] = v.GroupDescription
-            if v.Type and not ExhibitionConfigByTypeAndPort[v.Type] then
-                ExhibitionConfigByTypeAndPort[v.Type] = {}
-                ExhibitionConfigByTypeAndGroup[v.Type] = {}
-            end
-            ExhibitionConfigByTypeAndPort[v.Type][v.Port] = v
-            ExhibitionConfigByTypeAndGroup[v.Type][v.GroupId] = v
-            if v.Type then
-                if not InVisibleGroupTable[v.Type] then InVisibleGroupTable[v.Type] = {} end
-                if InVisibleGroupTable[v.Type][v.GroupId] == nil then InVisibleGroupTable[v.Type][v.GroupId] = true end
-                if v.InVisible == 1 then InVisibleGroupTable[v.Type][v.GroupId] = false end
-            end
-        end
-        if v.CharacterId and v.CharacterId ~= 0 and not CharacterToExhibitionTypeTable[v.CharacterId] then
-            CharacterToExhibitionTypeTable[v.CharacterId] = v.Type
-        end
-    end
+    ExhibitionCharacterMapConfig = XTableManager.ReadByIntKey(TABLE_CHARACTER_EXHIBITION_CHARACTER_MAP, XTable.XTableExhibitionCharacterMap, "CharacterId")
+    ExhibitionTypeMapConfig = XTableManager.ReadByIntKey(TABLE_CHARACTER_EXHIBITION_TYPE_MAP, XTable.XTableExhibitionTypeMap, "Type")
+    
     GrowUpTasksConfig = XTableManager.ReadByIntKey(TABLE_CHARACTER_GROW_TASK_INFO, XTable.XTableExhibitionReward, "Id")
     for task, v in pairs(GrowUpTasksConfig) do
         if CharacterGrowUpTasksConfig[v.CharacterId] == nil then
             CharacterGrowUpTasksConfig[v.CharacterId] = {}
         end
         CharacterGrowUpTasksConfig[v.CharacterId][task] = v
-        local type = CharacterToExhibitionTypeTable[v.CharacterId] or 1
+        local type = XExhibitionConfigs.GetExhibitionTypeByCharacterId(v.CharacterId) or 1
         if not CharacterGrowUpTasksConfigByType[type] then CharacterGrowUpTasksConfigByType[type] = {} end
         if not CharacterGrowUpTasksConfigByType[type][v.Id] then
             CharacterGrowUpTasksConfigByType[type][v.Id] = v
@@ -102,39 +83,46 @@ end
 
 function XExhibitionConfigs.GetExhibitionPortConfigByType(showType)
     if not showType then return ExhibitionConfig end
+    XExhibitionConfigs.CheckTypeMapInitByType(showType)
     return ExhibitionConfigByTypeAndPort[showType] or {}
-end
-
-function XExhibitionConfigs.GetExhibitionGroupNameConfig()
-    return ExhibitionGroupNameConfig
 end
 
 function XExhibitionConfigs.GetExhibitionGroupConfigByType(showType)
     if not showType then return ExhibitionConfig end
+    XExhibitionConfigs.CheckTypeMapInitByType(showType)
     return ExhibitionConfigByTypeAndGroup[showType] or {}
 end
 
 function XExhibitionConfigs.GetExhibitionConfigByTypeAndGroup(showType, groupId)
+    XExhibitionConfigs.CheckTypeMapInitByType(showType)
     return ExhibitionConfigByTypeAndGroup[showType][groupId]
 end
 
 function XExhibitionConfigs.GetExhibitionTypeByCharacterId(characterId)
-    return CharacterToExhibitionTypeTable[characterId]
+    local cfg = XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
+
+    if cfg then
+        return cfg.Type
+    end
 end
 
-function XExhibitionConfigs.GetExhibitionGroupLogoConfig()
-    return ExhibitionGroupLogoConfig
-end
+function XExhibitionConfigs.GetExhibitionGroupLogoConfig(characterId)
+    local cfg = XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
 
-function XExhibitionConfigs.GetExhibitionGroupDescConfig()
-    return ExhibitionGroupDescConfig
+    if cfg then
+        return cfg.GroupLogo
+    end
+    
+    return ''
 end
 
 function XExhibitionConfigs.GetExhibitionInVisbleGroupTable(exhibitionType)
+    XExhibitionConfigs.CheckTypeMapInitByType(exhibitionType)
     return InVisibleGroupTable[exhibitionType] or {}
 end
 
 function XExhibitionConfigs.GetIsExhibitionInVisbleGroup(exhibitionType, groupId)
+    XExhibitionConfigs.CheckTypeMapInitByType(exhibitionType)
     return InVisibleGroupTable[exhibitionType] and InVisibleGroupTable[exhibitionType][groupId] or false
 end
 
@@ -189,15 +177,27 @@ function XExhibitionConfigs.GetExhibitionLevelIconByLevel(level)
 end
 
 function XExhibitionConfigs.GetExhibitionGroupByCharId(charId)
-    return ExhibitionCharacterGroupDic[charId]
+    return XExhibitionConfigs.GetExhibitionCfgByCharacterId(charId)
 end
 
 function XExhibitionConfigs.GetCharacterHeadPortrait(characterId)
-    return CharacterHeadPortrait[characterId]
+    local cfg = XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
+
+    if cfg then
+        return cfg.HeadPortrait
+    end
+    
+    return ''
 end
 
 function XExhibitionConfigs.GetCharacterGraduationPortrait(characterId)
-    return CharacterGraduationPortrait[characterId]
+    local cfg = XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
+
+    if cfg then
+        return cfg.GraduationPortrait
+    end
+    
+    return ''
 end
 
 function XExhibitionConfigs.GetGrowUpTasksConfig()
@@ -222,3 +222,54 @@ function XExhibitionConfigs.GetGrowUpTasksConfigByType(exhibitionType)
     if not exhibitionType then return GrowUpTasksConfig end
     return CharacterGrowUpTasksConfigByType[exhibitionType] or {}
 end
+
+function XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
+    local cfg = ExhibitionCharacterMapConfig[characterId]
+
+    if cfg then
+        return ExhibitionConfig[cfg.ExhibitionId]
+    else
+        XLog.Error('找不到角色Id：' .. tostring(characterId) .. ' 对应的Exhibition配置Id')
+    end
+end
+
+function XExhibitionConfigs.GetExhibitionIdsByType(Type)
+    local cfg = ExhibitionTypeMapConfig[Type]
+
+    if cfg then
+        return cfg.ExhibitionIds
+    else
+        XLog.Error('找不到Type：' .. tostring(Type) .. ' 对应的Exhibition配置Id')
+    end
+end
+
+function XExhibitionConfigs.CheckTypeMapInitByType(type)
+    if XTool.IsTableEmpty(ExhibitionConfigByTypeAndPort[type]) then
+        local ids = XExhibitionConfigs.GetExhibitionIdsByType(type)
+
+        if not XTool.IsTableEmpty(ids) then
+            if ExhibitionConfigByTypeAndPort[type] == nil then
+                ExhibitionConfigByTypeAndPort[type] = {}
+                ExhibitionConfigByTypeAndGroup[type] = {}
+                InVisibleGroupTable[type] = {}
+            end
+            
+            for i, exhibitionId in ipairs(ids) do
+                local cfg = ExhibitionConfig[exhibitionId]
+
+                if cfg and cfg.Port ~= nil then
+                    ExhibitionConfigByTypeAndPort[type][cfg.Port] = cfg
+                    ExhibitionConfigByTypeAndGroup[type][cfg.GroupId] = cfg
+                    
+                    if InVisibleGroupTable[type][cfg.GroupId] == nil then
+                        InVisibleGroupTable[type][cfg.GroupId] = true 
+                    end
+                    
+                    if cfg.InVisible == 1 then
+                        InVisibleGroupTable[type][cfg.GroupId] = false 
+                    end
+                end
+            end
+        end
+    end
+end 

@@ -282,7 +282,7 @@ end
 function XUiMemorySave:UpdateChapterBtnPass()
     for idx, chapterId in ipairs(self.ChapterIds) do
         local passed = XDataCenter.MemorySaveManager.IsFinishCurChapter(chapterId)
-        self["BtnChapter"..idx]:SetNameByGroup(2, passed and "已通过" or "")
+        self["BtnChapter"..idx]:SetNameByGroup(2, passed and CS.XTextManager.GetLuaText("XUiMemorySave.lua_285") or "")
     end
 end
 

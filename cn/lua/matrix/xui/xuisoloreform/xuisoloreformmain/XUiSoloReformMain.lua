@@ -18,6 +18,7 @@ function XUiSoloReformMain:OnStart()
 end
 
 function XUiSoloReformMain:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.SoloReform)
     self._Control:AddEventListener(XMVCA.XSoloReform.EventId.EVENT_CLICK_CHAPTER, self.OnClickChapter, self)
     self._Control:AddEventListener(XMVCA.XSoloReform.EventId.EVENT_GAIN_TASK_REWARD, self.OnGainTaskReward, self)
     self:UpdateChapterList()
@@ -153,6 +154,7 @@ end
 
 function XUiSoloReformMain:OnclickClose()
     self:PlayAnimationWithMask("Disable", function()
+        XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.SoloReform)
         self:Close()
     end)
 end

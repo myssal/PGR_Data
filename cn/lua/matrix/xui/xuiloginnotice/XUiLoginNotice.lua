@@ -101,6 +101,9 @@ end
 
 function XUiLoginNotice:OnBtnCloseClick()
     self:Close()
+    if XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion() then
+        XEventManager.DispatchEvent(XEventId.EVENT_WHEN_CLOSE_LOGIN_NOTICE)
+    end
 end
 
 function XUiLoginNotice:OnTogCloseClick()

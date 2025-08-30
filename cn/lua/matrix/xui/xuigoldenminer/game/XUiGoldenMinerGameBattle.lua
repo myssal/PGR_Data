@@ -149,32 +149,6 @@ function XUiGoldenMinerGameBattle:InitObj()
     self._GamePauseAnimTimer = nil
     self._GamePauseTimeAnimTimer = nil
 
-    --Hook
-    ---@type UnityEngine.Transform[]
-    self.HookObjDir = {
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.NORMAL] = self.NormalRope,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.MAGNETIC] = self.MagneticRope,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.BIG] = self.BigRope,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.AIMING_ANGLE] = self.AimHook,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.STORE_PRESS_MAGNETIC] = self.MagneticRope,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE] = self.DoubleHook2,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.HAMMER] = self.Hammer,
-    }
-    ---@type UnityEngine.Collider2D[]
-    self.HookColliderDir = {
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.NORMAL] = self.NormalCordCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.MAGNETIC] = self.MagneticRopeCordCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.BIG] = self.BigRopeCordLeftCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.AIMING_ANGLE] = self.NormalCordCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.STORE_PRESS_MAGNETIC] = self.MagneticRopeCordCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE] = self.BigRopeCordLeftCollider,
-        [XEnumConst.GOLDEN_MINER.HOOK_TYPE.HAMMER] = self.HammerRopeCord,
-    }
-    for type, obj in pairs(self.HookObjDir) do
-        obj.gameObject:SetActiveEx(false)
-        self.HookColliderDir[type].gameObject:SetActiveEx(false)
-    end
-
     --Effect
     self._EffectLayer = XUiHelper.TryGetComponent(self.EffectFull, "", "XUiEffectLayer")
     self._EffectRoot = XUiHelper.Instantiate(self.EffectFull.gameObject, self.EffectFull.transform.parent)
@@ -189,8 +163,6 @@ function XUiGoldenMinerGameBattle:ReleaseObj()
 
     self._EffectObjDir = nil
     self._EffectResourcePool = nil
-    self.HookObjDir = nil
-    self.HookColliderDir = nil
     if self.BtnShootHandler then
         self.BtnShootHandler:RemoveAllListeners()
     end
@@ -222,7 +194,7 @@ function XUiGoldenMinerGameBattle:InitUi()
     self:InitScore()
     self:InitPlayTime()
     self:InitHideTask()
-    self:InitItem()
+    --self:InitItem()
     self:InitBuff()
     self:InitFaceEmoji()
     self:InitPauseGuideUi()
@@ -234,7 +206,7 @@ function XUiGoldenMinerGameBattle:InitUi()
 end
 
 function XUiGoldenMinerGameBattle:RefreshUi()
-    self:RefreshItem()
+    --self:RefreshItem()
     self:RefreshBuff()
     self:RefreshGuidePanel()
     self:RefreshPcText()
@@ -391,7 +363,7 @@ function XUiGoldenMinerGameBattle:AddItem(itemId)
 
     self._DataDb:UpdateItemColumn(itemId, itemColumnIndex)
     self:UpdateItemChangeInfo(itemColumnIndex, XEnumConst.GOLDEN_MINER.ITEM_CHANGE_TYPE.ON_GET)
-    self:RefreshItem()
+    --self:RefreshItem()
     self:_PlayAddItem(itemId)
 end
 
@@ -425,8 +397,12 @@ end
 
 --region Ui - Buff
 function XUiGoldenMinerGameBattle:InitBuff()
+    -- 暂时屏蔽加成显示
+    if self.PanelBuffParent then
+        self.PanelBuffParent.gameObject:SetActiveEx(false)
+    end
     ---@type XUiGoldenMinerBuffPanel
-    self.BuffPanel = XUiGoldenMinerBuffPanel.New(self.PanelBuffParent, self)
+    --self.BuffPanel = XUiGoldenMinerBuffPanel.New(self.PanelBuffParent, self)
 
     ---@type XGoldenMinerBuffTipData[]
     self._NeedTipBuffDir = {}
@@ -443,7 +419,8 @@ function XUiGoldenMinerGameBattle:InitBuff()
 end
 
 function XUiGoldenMinerGameBattle:RefreshBuff()
-    self.BuffPanel:UpdateBuff(self._Control:GetShowOwnBuffIdList())
+    -- 暂时屏蔽加成显示
+    --self.BuffPanel:UpdateBuff(self._Control:GetShowOwnBuffIdList())
 end
 
 function XUiGoldenMinerGameBattle:RefreshGuidePanel()
@@ -1101,7 +1078,10 @@ function XUiGoldenMinerGameBattle:_GameInit()
         [XEnumConst.GOLDEN_MINER.REFLECT_EDGE_FLAG.RIGHT] = self.ReflectRightEdge,
     }
     objDir.ReflectAimRopeRoot = self.ReflectAimRopeRoot
-
+    objDir.LinkRopeObj = self.LinkRope
+    objDir.ViewValidLeftDown = self.ViewValidLeftDown
+    objDir.ViewValidRightUp = self.ViewValidRightUp
+    
     --OnUpdate Battle界面的更新是通过游戏控制器的UpdateEx驱动的，界面本身不更新
     local updateExFunc = function(deltaTime)
         self:RefreshPlayTime()
@@ -1121,9 +1101,32 @@ end
 function XUiGoldenMinerGameBattle:_GetHookTypeList(hookType)
     local result = {}
     if hookType == XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE then
-        result[#result + 1] = XEnumConst.GOLDEN_MINER.HOOK_TYPE.NORMAL
+        table.insert(result, XEnumConst.GOLDEN_MINER.HOOK_TYPE.NORMAL)
     end
-    result[#result + 1] = hookType
+    
+    table.insert(result, hookType)
+
+    if not XTool.IsTableEmpty(self._OwnBuffList) then
+        -- 特殊处理，检查是否有多重钩爪的buff
+        for buffType, params in pairs(self._OwnBuffList) do
+            if buffType == XEnumConst.GOLDEN_MINER.BUFF_TYPE.MULTY_SAME_HOOK then
+                 local copyCount = params[1]
+                -- 额外的钩爪以主钩爪为中心
+                local isLeft = true
+                
+                for i = 1, copyCount do
+                    if isLeft then
+                        table.insert(result, 1, hookType)
+                    else
+                        table.insert(result, hookType)
+                    end
+
+                    isLeft = not isLeft
+                end
+            end
+        end
+    end
+    
     return result
 end
 
@@ -1133,25 +1136,34 @@ function XUiGoldenMinerGameBattle:_GetHookObjDir(hookTypeList)
     for _, type in ipairs(hookTypeList) do
         if self._HookType == XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE
                 and type == XEnumConst.GOLDEN_MINER.HOOK_TYPE.NORMAL then
-            result[type] = self.DoubleHook1
-            self.DoubleHook1.gameObject:SetActiveEx(true)
+            -- 双钩的主钩按照双钩处理
+            local prefab = self._Control:GetLoader():Load(self._Control:GetClientHookAssetsByType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE))
+            local index = self.HookRoot.transform:GetSiblingIndex()
+            
+            ---@type UnityEngine.GameObject
+            local cloneGo = CS.UnityEngine.GameObject.Instantiate(prefab, self.HookRoot.transform.parent)
+            cloneGo.transform:SetSiblingIndex(index)
+            cloneGo.gameObject:SetActiveEx(true)
+            XUiHelper.SetCanvasesSortingOrder(cloneGo.transform)
+            
+            result[cloneGo] = type
         else
-            result[type] = self.HookObjDir[type]
-            self.HookObjDir[type].gameObject:SetActiveEx(true)
-            self.HookColliderDir[type].gameObject:SetActiveEx(true)
+            -- 其他类型都使用克隆的方式做
+            local prefab = self._Control:GetLoader():Load(self._Control:GetClientHookAssetsByType(type))
+            local index = self.HookRoot.transform:GetSiblingIndex()
+
+            ---@type UnityEngine.GameObject
+            local cloneGo = CS.UnityEngine.GameObject.Instantiate(prefab, self.HookRoot.transform.parent)
+            cloneGo.transform:SetSiblingIndex(index)
+            cloneGo.gameObject:SetActiveEx(true)
+            XUiHelper.SetCanvasesSortingOrder(cloneGo.transform)
+
+            result[cloneGo] = type
         end
     end
     return result
 end
 
----@return UnityEngine.Collider2D[]
-function XUiGoldenMinerGameBattle:_GetHookColliderDir(hookTypeList)
-    local result = {}
-    for _, type in ipairs(hookTypeList) do
-        result[type] = self.HookColliderDir[type]
-    end
-    return result
-end
 --endregion
 
 --region Game - Wall
@@ -1226,8 +1238,7 @@ function XUiGoldenMinerGameBattle:UpdateSettlementInfo(isGiveUpTimeScore)
     local time = self._Game:GetGameData():GetTime()
     local addScore = self._Game:GetGameData():GetMapScore()
     if not isGiveUpTimeScore then
-        -- 3.0取消时间分数
-        addScore = addScore
+        addScore = addScore + self._Control:GetTimeScore(time)
     end
 
     self._SettlementInfo:SetMoveCount(self._MoveRecordCount)
@@ -1372,6 +1383,19 @@ function XUiGoldenMinerGameBattle:OnHookShoot()
         self._SettlementInfo:AddLaunchingClawCount()
     end
     self._Game:HookShoot()
+end
+
+function XUiGoldenMinerGameBattle:OnHookVirtualShoot()
+    if self._Game:CheckBuffStatusByType(XEnumConst.GOLDEN_MINER.BUFF_TYPE.ELECTROMAGNETIC, XEnumConst.GOLDEN_MINER.GAME_BUFF_STATUS.BE_DIE) then
+        return
+    end
+
+    -- 记录使用钩爪数
+    if self._Game.SystemHook:CheckSystemIsIdle() then
+        self._SettlementInfo:AddLaunchingClawCount()
+    end
+
+    self._Game:HookVirtualShoot()
 end
 
 function XUiGoldenMinerGameBattle:_SetAim()
@@ -1520,6 +1544,7 @@ function XUiGoldenMinerGameBattle:AddPCListener()
     XDataCenter.InputManagerPc.RegisterActivityGameKeyUpFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Right, handler(self, self.OnGameRightPointerUp))
     XDataCenter.InputManagerPc.RegisterActivityGameKeyDownFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Shoot, handler(self, self.OnPCShootKeyPressDown))
     XDataCenter.InputManagerPc.RegisterActivityGameKeyUpFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Shoot, handler(self, self.OnPCShootKeyPressUp))
+    --[[[
     XDataCenter.InputManagerPc.RegisterActivityGameKeyDownFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Item1, function()
         self:OnKeyClickUseItem(1)
     end)
@@ -1529,6 +1554,7 @@ function XUiGoldenMinerGameBattle:AddPCListener()
     XDataCenter.InputManagerPc.RegisterActivityGameKeyDownFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Item3, function()
         self:OnKeyClickUseItem(3)
     end)
+    --]]
     XDataCenter.InputManagerPc.RegisterActivityGameKeyDownFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.ExitGame, handler(self, self.OnBtnExitGameClick))
     XDataCenter.InputManagerPc.RegisterActivityGameKeyDownFunc(XEnumConst.GOLDEN_MINER.GAME_PC_KEY.ChangeSunAndMoon, handler(self, self.OnBtnSwitchClick))
 end
@@ -1566,6 +1592,8 @@ function XUiGoldenMinerGameBattle:OnBtnShootPressUp()
     end
     if self._Game:IsQTE() then
         XEventManager.DispatchEvent(XEventId.EVENT_GOLDEN_MINER_GAME_QTE_CLICK)
+    elseif self._HookType == XEnumConst.GOLDEN_MINER.HOOK_TYPE.Net then
+        self:OnHookVirtualShoot()
     elseif self._HookType ~= XEnumConst.GOLDEN_MINER.HOOK_TYPE.STORE_PRESS_MAGNETIC then
         self:OnHookShoot()
     else
@@ -1574,10 +1602,15 @@ function XUiGoldenMinerGameBattle:OnBtnShootPressUp()
 end
 
 function XUiGoldenMinerGameBattle:OnPCShootKeyPressDown()
-    if not self._Game then
+     if not self._Game then
         return
     end
-    self:OnHookShoot()
+    
+    if self._HookType == XEnumConst.GOLDEN_MINER.HOOK_TYPE.Net then
+        self:OnHookVirtualShoot()
+    else
+        self:OnHookShoot()
+    end
 end
 
 function XUiGoldenMinerGameBattle:OnPCShootKeyPressUp()

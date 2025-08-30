@@ -59,6 +59,8 @@ function XRiftActivity:UpdateChapterData(chapterData)
     chapter.UnlockedLayerOrderMax = chapterData.UnlockedLayerOrderMax
     chapter.RewardedLayerOrderMax = chapterData.RewardedLayerOrderMax
     chapter.TotalPassTime = chapterData.TotalPassTime
+    chapter.LastScore = chapter.Score
+    chapter.Score = chapterData.Score
     self._ChapterDatas[chapterData.ChapterId] = chapter
     -- 所有作战层信息
     self:UpdateFightLayer(chapterData.ChapterId, chapterData.LayerDataList)
@@ -155,6 +157,10 @@ end
 
 function XRiftActivity:UpdateSweepTimes(sweepTimes, sweepTick)
     self._SweepTimes = sweepTimes
+    self:UpdateSweepTick(sweepTick)
+end
+
+function XRiftActivity:UpdateSweepTick(sweepTick)
     self._SweepTick = sweepTick or 0
 end
 
@@ -343,6 +349,7 @@ function XRiftActivity:GetMaxLoad()
     return self._MaxLoad or 0
 end
 
+-- datas is Dictionary
 function XRiftActivity:UpdateAffixs(datas)
     self._AffixMap = {}
     if datas then
@@ -359,6 +366,23 @@ function XRiftActivity:UpdateAffix(pluginId, index, affixId)
         self._AffixMap[pluginId] = {}
     end
     self._AffixMap[pluginId][index] = affixId
+end
+
+-- datas is List<XRiftPluginInfo>
+function XRiftActivity:AddAffixs(datas)
+    for _, data in pairs(datas) do
+        self:AddAffix(data)
+    end
+end
+
+function XRiftActivity:AddAffix(data)
+    if not data then
+        return
+    end
+    local pluginId = data.Id
+    for i, affixId in ipairs(data.AffixList) do
+        self:UpdateAffix(pluginId, i, affixId)
+    end
 end
 
 function XRiftActivity:GetAffix(pluginId)
@@ -434,6 +458,8 @@ return XRiftActivity
 ---@field PassedLayerOrderMax number 已通关最高层数
 ---@field RewardedLayerOrderMax number 已领取首通奖励最高层数
 ---@field TotalPassTime number 章节通关时间
+---@field Score number （无尽关）历史最高分
+---@field LastScore number 临时数据，用于结算时判断是否历史最高分
 
 ---@class RiftFightLayerData 作战层信息
 ---@field ChapterId number 章节Id

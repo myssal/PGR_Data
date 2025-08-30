@@ -2,7 +2,7 @@
 ---@field private _Control XMainLine2Control
 local XUiMainLine2GridEntrance = XClass(XUiNode, "XUiMainLine2GridEntrance")
 
-function XUiMainLine2GridEntrance:OnStart(entranceData, chapterId, mainId, parentGo, lineGo)
+function XUiMainLine2GridEntrance:OnStart(entranceData, chapterId, mainId, parentGo, lineGo, uiName)
     self.EntranceData = entranceData
     self.GroupId = entranceData.GroupId
     self.StageIds = entranceData.StageIds -- 关卡入口包含1个或多个关卡
@@ -11,6 +11,7 @@ function XUiMainLine2GridEntrance:OnStart(entranceData, chapterId, mainId, paren
     self.MainId = mainId
     self.ParentGo = parentGo
     self.LineGo = lineGo
+    self.UiName = uiName
     self.SubPrefabs = {}
 
     self:RegisterUiEvents()
@@ -241,7 +242,7 @@ function XUiMainLine2GridEntrance:LoadSubPrefab(prefabName)
     end
 
     local parentGo = self[prefabName .. "Parent"]
-    prefab = self.Obj:Instantiate(prefabName, parentGo.gameObject)
+    prefab = parentGo:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.UiName, prefabName))
     self.SubPrefabs[prefabName] = prefab
     return prefab
 end

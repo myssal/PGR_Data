@@ -25,12 +25,16 @@ function XUiGridPhotographOtherBtn:RefrashFashion(data)
 end
 
 function XUiGridPhotographOtherBtn:RefrashAction(data, charData)
-    self.TxtNor.text = XMVCA.XFavorability:GetCharacterActionMapText(data.config.Name)
-    self.TxtSel.text = XMVCA.XFavorability:GetCharacterActionMapText(data.config.Name)
+    self.TxtNor.text = data.config.Name
+    self.TxtSel.text = data.config.Name
     if self.TxtLock then
-        self.TxtLock.text = XMVCA.XFavorability:GetCharacterActionMapText(data.config.Name)
+        self.TxtLock.text = data.config.Name
     end
-    self.Txtcondition.text = XUiHelper.ConvertSpaceToLineBreak(XMVCA.XFavorability:GetCharacterActionMapText(data.config.ConditionDescript))
+    if XOverseaManager.IsENRegion() or XOverseaManager.IsKRRegion()  then
+        self.Txtcondition.text = CS.XTextManager.GetText("PhotoModeCharacterActionLocked")
+    else
+        self.Txtcondition.text = XUiHelper.ConvertSpaceToLineBreak(data.config.ConditionDescript)
+    end
 
     local tryFashionId
     local trySceneId

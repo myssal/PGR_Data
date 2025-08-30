@@ -84,7 +84,7 @@ function XUiSoloReformChapterFightEvent:RefreshFightEventInfo(fightEventId)
     end
     
     self.TxtDetail.text = fightEventCfg.Desc
-    if XTool.IsNumberValid(fightEventCfg.VideoId) then
+    if XTool.IsNumberValid(fightEventCfg.VideoId) and not XTool.UObjIsNil(self.VideoPlayer.VideoPlayerInst) then
         self.VideoPlayer:SetInfoByVideoId(fightEventCfg.VideoId)
         self.VideoPlayer:RePlay()
     end    

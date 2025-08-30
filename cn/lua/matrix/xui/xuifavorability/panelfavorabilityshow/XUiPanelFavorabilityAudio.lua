@@ -158,8 +158,14 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
         self.CurAudio.Index = index
 
         --语音播放完后，isFinish还是处于false(progress未能达到阈值)，就会调用回调
-        
-        self.CurrentPlayAudio = XLuaAudioManager.PlayCvWithCvType(clickAudio.config.CvId, self.Parent.CvType, function()
+        local targetSkinMeshFace = self.Parent.Parent.SignBoard.RoleModel:GetSkinMeshFace()
+        if targetSkinMeshFace then
+            self.CurrentPlayAudio = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(clickAudio.config.CvId, targetSkinMeshFace, self.Parent.CvType or -1)
+        else
+            self.CurrentPlayAudio = XLuaAudioManager.PlayCvWithCvType( clickAudio.config.CvId, self.Parent.CvType)
+        end
+
+        self.CurrentPlayAudio.FinishCb = function() 
             if progress < 1 then
                 return
             end
@@ -172,7 +178,7 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
                 end
                 self:UnScheduleAudio(clickAudio, clickGrid)
             end
-        end)
+        end
         
         self.UiRoot:PlayCvContent(clickAudio.config.CvId, self.Parent.CvType)
         self.NotFreeze=true

@@ -227,6 +227,11 @@ end
 
 -- 获取展示用的性别
 function Player.GetShowGender()
+    local OpenMovieThirdGender = XMVCA.XMovie:GetOpenMovieThirdGender()
+    if OpenMovieThirdGender and XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
+        return XPlayer.Gender
+    end
+
     if XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.MAN or XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.WOMAN then
         return XPlayer.Gender
     end
@@ -359,6 +364,8 @@ XRpc.NotifyPlayerLevel = function(data)
         Player.IsFirstOpenHonor = true
         XSaveTool.SaveData(OPEN_HONOR_LEVEL, true)
     end
+    --CheckPoint: APPEVENT_LEVEL
+    XAppEventManager.LevelAppLogEvent(data.Level)
 end
 
 XRpc.NotifyHonorLevel = function(data)

@@ -31,8 +31,9 @@ end
 
 function XUiGridCalendarDay:IsToday()
 	local dateTime = CS.XDateUtil.GetGameDateTime(self.Time)
-	local nowTime = CS.XDateUtil.GetGameNow()
+	local nowTime = CS.XDateUtil.GetGameDateTime(XTime.GetServerNowTimestamp())--CS.XDateUtil.GetGameNow()--使用服务器时间而不是本地时间
 	local day = dateTime.Day
+
 	local month = dateTime.Month
 	local year = dateTime.Year
 

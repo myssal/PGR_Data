@@ -1,6 +1,7 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local UiLoginSpineAnimPath = CS.XGame.ClientConfig:GetString("UiLoginSpineAnimPath")
+
 -- local UiLoginMovieId = CS.XGame.ClientConfig:GetInt("UiLoginMovieId")
 -- local UiLoginMovieTimeStr = CS.XGame.ClientConfig:GetString("UiLoginMovieTimeStr")
 -- local UiLoginMovieTimeEnd = CS.XGame.ClientConfig:GetString("UiLoginMovieTimeEnd")
@@ -39,7 +40,7 @@ local null = "null"
 function XUiLogin:OnAwake()
     self:InitAutoScript()
     self:InitUiView()
-
+    self:OnAwakeOversea()
     XLoginManager.SetStartGuide(false)
 end
 
@@ -55,7 +56,9 @@ function XUiLogin:CheckFool()
     if not XMVCA.XAprilFoolDay:IsInTitleTime() then
         return
     end
-
+    if XOverseaManager.IsJP_KRRegion() then
+        self.ImgLogo:SetRawImage(CS.XGame.ClientConfig:GetString("JPFoolLogo"))
+    end
     -- 翻转
     -- local scale = self.ImgLogo.transform.localScale
     -- self.ImgLogo.transform.localScale = Vector3(-scale.x, scale.y, scale.z)
@@ -113,6 +116,11 @@ function XUiLogin:OnStart()
         CS.UnityEngine.Resources.UnloadUnusedAssets()
     end, 100)
 
+    if XOverseaManager.IsOverSeaRegion() then
+        XAgreementManager.LoadAgreeInfo()
+        self.TxtUser.text = XUserManager.UserId or XUserManager.UserName or "" -- 海外使用uid显示
+    end
+
     --愚人节处理
     self:CheckFool()
 
@@ -124,6 +132,7 @@ function XUiLogin:OnStart()
 
     -- 云游戏自动登录
     self:CloudGameAutoLogin()
+
 end
 
 function XUiLogin:PrintJoystickDeviceNames()
@@ -180,7 +189,15 @@ function XUiLogin:InitUiView()
     self.PanelUserAgreement.gameObject:SetActiveEx(true)
 
     self.HtmlText.text = self:GetProtocolContent()
-    if self.BtnCode then
+    self.BtnMenu.gameObject:SetActiveEx(false)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.IsUserAgree = true
+        self.BtnMenu.gameObject:SetActiveEx(XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion())
+        self.BtnAge.gameObject:SetActiveEx(false)
+        self.PanelUserAgreement.gameObject:SetActiveEx(false)
+        self.HtmlText.text = ""
+    end
+    if self.BtnCode and not XOverseaManager.IsOverSeaRegion() then
         self.BtnCode.gameObject:SetActiveEx(not XUserManager.IsNeedLogin() and CS.XHeroSdkAgent.IsScanQRCode() and not CS.XRemoteConfig.IsHideFunc)
     end
 
@@ -205,7 +222,7 @@ function XUiLogin:InitUiView()
     self:SetupAgeTip()
 
     if self.BtnLoginUpload then
-        self.BtnLoginUpload.gameObject:SetActiveEx(XMVCA.XLogUpload:ShowLoginBtn())
+        self.BtnLoginUpload.gameObject:SetActiveEx(XMVCA.XLogUpload:ShowLoginBtn() and not XOverseaManager.IsOverSeaRegion())
         XUiHelper.RegisterClickEvent(self, self.BtnLoginUpload, self.OnBtnLoginUploadClick)
     end
 end
@@ -247,14 +264,17 @@ function XUiLogin:GetProtocolContent()
         local contentAnd = CsXTextManagerGetText("LoginUserAgreeItemAnd")
         if XUserManager.IsKuroSdk() then 
             -- KuroSDK 结构不一样
-            if protocolData.gameInit then
-                for i = 0, protocolData.gameInit.Count - 1, 1 do
-                    local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", protocolData.gameInit[i].link, protocolData.gameInit[i].title, protocolData.gameInit[i].title)
-                    if i == 0 then 
-                        content = content .. urlItemStr
-                    else 
-                        content = content .. contentAnd .. urlItemStr
-                    end
+            local dataList = protocolData.gameInit
+            if protocolData.data then
+                dataList = protocolData.data
+            end
+
+            for i = 0, dataList.Count - 1, 1 do
+                local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", dataList[i].link, dataList[i].title, dataList[i].title)
+                if i == 0 then 
+                    content = content .. urlItemStr
+                else 
+                    content = content .. contentAnd .. urlItemStr
                 end
             end
         else 
@@ -322,9 +342,6 @@ function XUiLogin:OnDisable()
     self.LongClicker = nil
 end
 
-function XUiLogin:OnDestroy()
-end
-
 function XUiLogin:OnUsernameChanged(userName)
     self.TxtUser.text = userName
     self:UpdatePcUi()
@@ -333,7 +350,7 @@ end
 
 function XUiLogin:UploadLogUpdate()
     if self.BtnLoginUpload then
-        self.BtnLoginUpload.gameObject:SetActiveEx(XMVCA.XLogUpload:ShowLoginBtn())
+        self.BtnLoginUpload.gameObject:SetActiveEx(XMVCA.XLogUpload:ShowLoginBtn()and not XOverseaManager.IsOverSeaRegion())
     end
 end
 
@@ -349,6 +366,10 @@ function XUiLogin:OnSDKLoginSuccess()
     if XDataCenter.UiPcManager.IsCloudGame() then 
         -- 云游戏SDK登录成功后直接登录游戏，不需要那些乱七八糟的拦截
         self:DoLogin()
+    end
+    
+    if XOverseaManager.IsENRegion() then
+        self:OnENLoginSuccess()
     end
 end
 
@@ -368,6 +389,7 @@ function XUiLogin:InitServerPanel()
     self.DynamicTable:SetDelegate(self)
 
     self.BtnServer.gameObject:SetActiveEx(XServerManager.CheckOpenSelect())
+    self:InitServerPanelOversea()
 end
 
 -- 2.0 迭代动画播放:入场动画、不同分辨率比例支持动画偏移
@@ -467,6 +489,8 @@ function XUiLogin:AutoInitUi()
     self.ImgLogo = self.Transform:Find("SafeAreaContentPane/ImgLogo"):GetComponent("RawImage")
     self.BackGround = self.Transform:Find("FullScreenBackground/BackGround"):GetComponent("RawImage")
     self.TextStart = XUiHelper.TryGetComponent(self.BtnStart.transform, "Text")
+
+    self:LoadNetworkPanel()
 end
 
 function XUiLogin:AutoAddListener()
@@ -491,6 +515,27 @@ function XUiLogin:AutoAddListener()
         self.BtnAddServer.gameObject:SetActiveEx(false)
         self.InFAddr.gameObject:SetActiveEx(false)
     end
+end
+
+function XUiLogin:LoadNetworkPanel()
+    if not XOverseaManager.IsENRegion() then
+        return
+    end
+    local uiLoginNetworkModePanel = require("XUi/XUiLogin/XUiLoginNetworkModePanel")
+    self.SafeAreaContentPane = self.Transform:Find("SafeAreaContentPane")
+    self.SafeAreaContentPane.gameObject:AddComponent(typeof(CS.XUiLoadPrefab))
+    self.PanelNetworkModeTip = self.SafeAreaContentPane:LoadPrefab("Assets/Product/Ui/ComponentPrefab/UiLogin/PanelNetworkModeTip.prefab")
+    self.PanelLoginNetworkMode = uiLoginNetworkModePanel.New(self, self.PanelNetworkModeTip)
+    self.PanelLoginNetworkMode.GameObject:SetActiveEx(false)
+
+    self.PanelUser.gameObject:AddComponent(typeof(CS.XUiLoadPrefab))
+    self.BtnNetworkMode = self.PanelUser:LoadPrefab("Assets/Product/Ui/ComponentPrefab/UiLogin/BtnNetworkMode.prefab"):GetComponent(typeof(CS.XUiComponent.XUiButton))
+
+    self.BtnNetworkMode.CallBack = function() self:OnBtnNetworkModeClick() end
+end
+
+function XUiLogin:OnBtnNetworkModeClick()
+    self.PanelLoginNetworkMode:Show()
 end
 
 -- auto
@@ -591,10 +636,14 @@ function XUiLogin:OnBtnStartClick()
         return
     end
 
-    if self:TryShowUserAgreeTips() then
+    if self:TryShowUserAgreeTips() and not XOverseaManager.IsJP_KRRegion() then
         CS.XLog.Debug("============== Login was stopped on step four ==============")
         return
     end
+
+
+    --CheckPoint: APPEVENT_SDK_LOGIN
+    XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.SDK_Login)
 
     self:DoLogin()
 end
@@ -705,6 +754,11 @@ function XUiLogin:DoLogin()
                 local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
                 if guideFight then
                     self:Close()
+                    -- 海外打点
+                    --CheckPoint: APPEVENT_ANIM_START_1
+                    XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.Anime_Start)
+                    --CheckPoint: APPEVENT_COMPLETED_REGISTRATION_1
+                    XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.Completed_Registration)
                     local movieId = CS.XGame.ClientConfig:GetString("NewUserMovieId")
                     XDataCenter.MovieManager.PlayMovie(movieId, function()
                         XDataCenter.FubenManager.EnterGuideFight(guideFight.Id, guideFight.StageId, guideFight.NpcId, guideFight.Weapon)
@@ -716,6 +770,9 @@ function XUiLogin:DoLogin()
             end)
             -- 设置月卡信息本地缓存
             XDataCenter.PurchaseManager.SetYKLocalCache()
+            if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
+            end
         end)
 
         XDataCenter.SetManager.SetOwnFontSizeByCache()
@@ -841,6 +898,12 @@ function XUiLogin:SelectServer(server)
     end
 
     XLog.Debug("当前选择的服务器为：" .. server.Name .. "\n Url = " .. XLog.Dump(server.LoginUrls))
+
+    self:UpdateSelectServer(server)
+end
+
+function XUiLogin:UpdateSelectServer(currentServer)
+    self.BtnServer:SetName(currentServer.Name)
 end
 
 --region pc
@@ -892,6 +955,13 @@ function XUiLogin:OnBtnLoginNoticeClickPC()
     self:OnBtnLoginNoticeClick()
 end
 
+function XUiLogin:OnCheckBindTask()
+    if not XUserManager.UserType == XHeroSdkManager.UserType.Vistor then
+        XHeroSdkManager.OnBindTaskFinished()
+    elseif XDataCenter.UiPcManager.IsPc() then
+        XHeroSdkManager.OnBindTaskFinished()
+    end
+end
 -- 3.1登录优化 自动登录接口，用SDK的情况下才执行
 function XUiLogin:OnAutoLogin()
     -- 自动登录在整个生命周期只给他触发一次
@@ -912,4 +982,69 @@ end
 function XUiLogin:OnBtnLoginUploadClick()
     XMVCA.XLogUpload:OpenLogUploadUiFromLogin()
 end
+
+function XUiLogin:OnAwakeOversea()
+  
+    if XOverseaManager.IsTWRegion() then
+        self.NeedAutoLoginByAF = CS.XRemoteConfig.AFDeepLinkEnabled and not string.IsNilOrEmpty(XHeroSdkManager.GetDeepLinkValue())
+    end
+    if not XOverseaManager.IsOverSeaRegion() or XOverseaManager.IsTWRegion() then
+        return
+    end
+    local deepValue = CS.XHeroSdkAgent.GetDeepLinkValue()
+    self:AutoAddListenerOversea()
+    self.NeedAutoLoginByAF = CS.XRemoteConfig.AFDeepLinkEnabled and not string.IsNilOrEmpty(deepValue)
+
+end
+
+function XUiLogin:AutoAddListenerOversea()
+    
+    self:RegisterClickEvent(self.BtnMenu, self.OnBtnMenuClick)
+end
+
+
+function XUiLogin.OnBtnMenuClick()
+    XLuaUiManager.Open("UiLoginDialog", "Menu")
+end
+
+function XUiLogin:InitServerPanelOversea()
+    local list = XServerManager.GetServerList(true)
+    for _, server in pairs(list) do
+        if server.Id == XServerManager.Id then
+            self.BtnServer:SetName(server.Name)
+            break
+        end
+    end
+end
+
+-- 英文服有多个区服选择，逻辑需要额外处理
+function XUiLogin:OnENLoginSuccess()
+    self.PanelUser.gameObject:SetActiveEx(true)
+    self.BtnStart.gameObject:SetActiveEx(true)
+    -- self:OnUserIDChange()
+    if XUserManager.UserId then -- 海外修改
+        local user_ServerId = XSaveTool.GetData(XPrefs.User_ServerId..XUserManager.UserId)
+        local user_ServerId_Num = tonumber(user_ServerId)
+        XLog.Debug("User_ServerId:"..XPrefs.User_ServerId..XUserManager.UserId..":"..tostring(user_ServerId))
+        self.TxtUser.text = XUserManager.UserId;
+        local serverDataList = XServerManager.GetServerList()
+        -- user_ServerId_Num 才是真实的serverId
+        if user_ServerId and user_ServerId_Num then
+            local currentServer;
+            for _, server in ipairs(serverDataList) do
+                if server.Id == user_ServerId_Num then
+                    currentServer = server;
+                end
+            end
+            if currentServer then
+                XServerManager.Select(currentServer);
+                self:UpdateSelectServer(currentServer);
+            end
+        else
+            self:UpdateSeverList()
+            self.PanelServerList.gameObject:SetActiveEx(true)
+        end
+    end
+end
+
 --endregion

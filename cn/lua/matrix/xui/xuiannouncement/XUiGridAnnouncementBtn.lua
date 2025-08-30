@@ -13,6 +13,7 @@ local NoticeTag = {
 
 --- 公告没有子页签，下标默认为 1
 local HtmlIndex = 1
+local TITLE_MAX_LENGTH = 22 --标题最大容纳字符窜长度
 
 
 function XUiGridAnnouncementBtn:Ctor(ui)
@@ -34,7 +35,11 @@ function XUiGridAnnouncementBtn:Refresh(info)
     self.ImgActivity.gameObject:SetActiveEx(tag == NoticeTag.Activity)
     self.ImgFedd.gameObject:SetActiveEx(tag == NoticeTag.Supply)
     self.ImgImportant.gameObject:SetActiveEx(tag == NoticeTag.Important)
-    self.BtnTab:SetNameByGroup(0, info.Title)
+    local title = info.Title
+    if XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion() and string.Utf8LenCustom(title) > TITLE_MAX_LENGTH then
+        title = string.Utf8SubCustom(title, 1, TITLE_MAX_LENGTH) .. "..."
+    end
+    self.BtnTab:SetNameByGroup(0, title)
     self.BtnTab:ShowReddot(XDataCenter.NoticeManager.CheckInGameNoticeRedPointIndividual(info, HtmlIndex))
 end
 

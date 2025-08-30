@@ -3839,7 +3839,7 @@ function XFubenAgency:GetActivityChaptersBySort()
     , XDataCenter.PivotCombatManager.GetActivityChapters()--sp枢纽作战
     , XDataCenter.EscapeManager.GetActivityChapters()--大逃杀玩法
     --, XDataCenter.DoubleTowersManager.GetActivityChapters()--动作塔防
-    --, XDataCenter.RpgMakerGameManager.GetActivityChapters()--推箱子小游戏
+    , XDataCenter.RpgMakerGameManager.GetActivityChapters()--推箱子小游戏
     , XMVCA:GetAgency(ModuleId.XTaikoMaster):GetActivityChapters()--音游
     , XDataCenter.DoomsdayManager.GetActivityChapters()--模拟经营
     )

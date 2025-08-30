@@ -1746,10 +1746,10 @@ function XTheatre3Control:RequestAdventureRecvFightReward(rewardUid, cb)
                 isEnd = false
             end
         end
-        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE3_ADVENTURE_RECV_FIGHT_REWARD)
         if cb then
             cb(isEnd)
         end
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE3_ADVENTURE_RECV_FIGHT_REWARD)
     end)
 end
 

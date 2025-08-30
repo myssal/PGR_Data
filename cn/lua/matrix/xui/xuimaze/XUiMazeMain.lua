@@ -37,6 +37,7 @@ function XUiMazeMain:OnAwake()
 end
 
 function XUiMazeMain:OnStart()
+    XLuaUiManager.SetMask(true)
     self:BindExitBtns()
     self:RegisterClickEvent(self.BtnEnter, self.OnClickRoom)
     self:RegisterClickEvent(self.BtnArchiveStory, self.OnClickStory)
@@ -49,6 +50,7 @@ function XUiMazeMain:OnStart()
         self._IsPlayingAnimationOnEnable = false
         self:PlayAnimation("UiLoop", nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
         self:AutoRequestGetTicket()
+        XLuaUiManager.SetMask(false)
     end)
 end
 

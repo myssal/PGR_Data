@@ -16,7 +16,9 @@ end
 function XUiPanelTrialGet:SetAnimationFx()
     self.FxUiPanelTrialGet01.gameObject:SetActive(true)
     self.timer = XScheduleManager.ScheduleOnce(function()
-        self.FxUiPanelTrialGet02.gameObject:SetActive(true)
+        if not XTool.UObjIsNil(self.FxUiPanelTrialGet02) then
+            self.FxUiPanelTrialGet02.gameObject:SetActive(true)
+        end
         XScheduleManager.UnSchedule(self.timer)
     end,200)
 end

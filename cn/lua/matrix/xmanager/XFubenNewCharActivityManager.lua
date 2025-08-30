@@ -649,7 +649,8 @@ XFubenNewCharActivityManagerCreator = function()
     end
     
     --活动入口进度提示
-    function XFubenNewCharActivityManager.GetProgressTips()
+    -- #203409 这个方法无法被覆写, 因此只能直接在原文改动
+    function XFubenNewCharActivityManager.GetProgressTips(teachId)
         local activityIds = XFubenNewCharConfig.GetClientConfigNumListByKey('CurVersionActivityIds')
 
         local passCount = 0
@@ -664,7 +665,7 @@ XFubenNewCharActivityManagerCreator = function()
             end
         else
             --获取最新开放的活动
-            passCount,hasCount = XFubenNewCharActivityManager.GetProcess()
+            passCount,hasCount = XFubenNewCharActivityManager.GetProcess(teachId)
         end
         
         

@@ -195,6 +195,19 @@ function XTime.GetTodayTime(hour, min, sec)
     return dt.Date:AddHours(hour):AddMinutes(min):AddSeconds(sec):ToTimestamp()
 end
 
+function XTime.GeyServerTime(hour, min, sec)
+    hour = hour or 0
+    min = min or 0
+    sec = sec or 0
+    local nowTime = XTime.GetServerNowTimestamp()
+    local dt = CS.XDateUtil.GetGameDateTime(nowTime)
+    dt = dt.Date;
+    dt = dt:AddSeconds(sec)
+    dt = dt:AddMinutes(min)
+    dt = dt:AddHours(hour)
+    return dt:ToTimestamp()
+end
+
 -- 获取距离下一个星期x的时间,默认每周第一天为周一
 function XTime.GetNextWeekOfDayStartWithMon(weekOfDay, offsetTime)
     local needTime

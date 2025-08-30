@@ -1,5 +1,6 @@
 local XUiPlayerLevel = require("XUi/XUiCommon/XUiPlayerLevel")
 local XUiGridMemberItem = XClass(nil, "XUiGridMemberItem")
+local CsVector2 = CS.UnityEngine.Vector2
 
 function XUiGridMemberItem:Ctor(ui)
     self.GameObject = ui.gameObject
@@ -51,6 +52,10 @@ function XUiGridMemberItem:SetMemberInfo(memberInfo, selectIndex)
     local isPlayer = memberInfo.Id == XPlayer.Id
 
     self.LayoutNode:SetDirty()
+    --海外#115837特殊修改，移动端适配显示异常问题
+    if XOverseaManager.IsOverSeaRegion() then
+        self.PanelMemberInfo.sizeDelta = CsVector2(self.Transform.parent.transform.rect.width, self.PanelMemberInfo.rect.height)
+    end
 end
 
 function XUiGridMemberItem:UpdateDissmissState(memberInfo)

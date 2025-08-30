@@ -157,6 +157,20 @@ function XUiExhibitionInfo:UpdateCharacterInfo()
     self.TxtNameHorizontal.gameObject:SetActiveEx(isShowHorText)
     self.TxtName.gameObject:SetActiveEx(not isShowHorText)
 
+    if XOverseaManager.IsKRRegion() then
+        if self.TxtName2 then
+            if characterId == 1281002 then
+                self.TxtNameHorizontal.gameObject:SetActiveEx(false)
+                self.TxtName2.gameObject:SetActiveEx(true)
+                self.TxtName2.text = XMVCA.XCharacter:GetCharacterName(characterId)
+            else
+                self.TxtName2.gameObject:SetActiveEx(false)
+            end
+        else
+            XLog.Error("UiExhibitionInfo预设缺失TxtName2组件!")
+        end
+    end
+
     -- 解放标签改到按钮下方了
     -- local growUpLevel = XDataCenter.ExhibitionManager.GetCharacterGrowUpLevel(characterId, true)
     -- local levelIcon = XExhibitionConfigs.GetExhibitionLevelIconByLevel(growUpLevel)

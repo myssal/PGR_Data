@@ -4,45 +4,44 @@ local pairs = pairs
 local stringGsub = string.gsub
 local CSXTextManagerGetText = CS.XTextManager.GetText
 
-local TABLE_ROLE_PATH = "Share/TRPG/TRPGRole.tab"
-local TABLE_ROLE_TALENT_GROUP_PATH = "Share/TRPG/RoleTalentGroup/"
-local TABLE_ROLE_TALENT_GROUP_CLIENT_PATH = "Client/TRPG/TRPGTalentGroup.tab"
-local TABLE_ROLE_TALENT_PATH = "Share/TRPG/TRPGRoleTalent.tab"
-local TABLE_ROLE_ATTRIBUTE_PATH = "Client/TRPG/TRPGRoleAttribute.tab"
-local TABLE_MAIN_AREA_PATH = "Share/TRPG/TRPGMainArea.tab"     --主区域
-local TABLE_TARGET_LINK_PATH = "Share/TRPG/TRPGTargetLink.tab"      --目标链表
-local TABLE_TARGET_PATH = "Share/TRPG/TRPGTarget.tab"               --目标表
-local TABLE_MAZE_PATH = "Share/TRPG/TRPGMaze.tab"
-local TABLE_MAZE_LAYER_PATH = "Share/TRPG/TRPGMazeLayer.tab"
-local TABLE_MAZE_MAP_PATH = "Share/TRPG/MazeMap/"
-local TABLE_MAZE_CARD_PATH = "Share/TRPG/TRPGMazeCard.tab"
-local TABLE_MAZE_CARD_TYPE_PATH = "Client/TRPG/TRPGMazeCardType.tab"
-local TABLE_MAZE_CARD_RECORD_GROUP_PATH = "Client/TRPG/TRPGMazeCardRecordGroup.tab"
-local TABLE_LEVEL_PATH = "Share/TRPG/TRPGLevel.tab"
-local TABLE_BUFF_PATH = "Share/TRPG/TRPGBuff.tab"
-local TABLE_REWARD_PATH = "Share/TRPG/TRPGReward.tab"
-local TABLE_SECOND_AREA_PATH = "Share/TRPG/TRPGSecondArea.tab"
-local TABLE_THIRD_AREA_PATH = "Share/TRPG/TRPGThirdArea.tab"
-local TABLE_SHOP_PATH = "Share/TRPG/TRPGShop.tab"
-local TABLE_SHOP_ITEM_PATH = "Share/TRPG/TRPGShopItem.tab"
-local TABLE_ITEM_PATH = "Share/TRPG/TRPGItem.tab"
-local TABLE_TRUTH_ROAD_GROUP_PATH = "Share/TRPG/TruthRoad/TRPGTruthRoadGroup.tab"
-local TABLE_TRUTH_ROAD_PATH = "Share/TRPG/TruthRoad/TRPGTruthRoad.tab"
-local TABLE_BOSS_PATH = "Share/TRPG/Boss/TRPGBoss.tab"
-local TABLE_BOSS_PHASES_REWARD = "Share/TRPG/Boss/TRPGBossPhasesReward.tab"
-local TABLE_MEMOIRE_STORY = "Share/TRPG/TRPGMemoirStory.tab"
-local TABLE_PANEL_PLOT_TAB_PATH = "Client/TRPG/TRPGPanelPlotTab.tab"
-local TABLE_FUNCTION_GROUP_PATH = "Share/TRPG/TRPGFunctionGroup.tab"
-local TABLE_FUNCTION_PATH = "Share/TRPG/TRPGFunction.tab"
-local TABLE_EXAMINE_PATH = "Share/TRPG/Examine/TRPGExamine.tab"
-local TABLE_EXAMINE_ACTION_PATH = "Share/TRPG/Examine/TRPGExamineAction.tab"
-local TABLE_EXAMINE_ACTION_TYPE_PATH = "Client/TRPG/TRPGExamineActionType.tab"
-local TABLE_EXAMINE_ACTION_DIFFICULT_PATH = "Client/TRPG/TRPGExamineActionDifficult.tab"
-local TABLE_EXAMINE_PUNISH_PATH = "Share/TRPG/Examine/TRPGExaminePunish.tab"
-local TABLE_EXAMINE_PUNISH_TEXT_PATH = "Share/TRPG/Examine/TRPGExaminePunishText.tab"
-local TABLE_BUTTON_CONDITION_PATH = "Client/TRPG/TRPGButtonCondition.tab"
-local TABLE_SECOND_MAIN_PATH = "Share/TRPG/SecondMain/TRPGSecondMain.tab"
-local TABLE_SECOND_MAIN_STAGE_PATH = "Share/TRPG/SecondMain/TRPGSecondMainStage.tab"
+local TABLE_ROLE_PATH = "Share/Trpg/TRPGRole.tab"
+local TABLE_ROLE_TALENT_GROUP_PATH = "Share/Trpg/RoleTalentGroup/"
+local TABLE_ROLE_TALENT_GROUP_CLIENT_PATH = "Client/Trpg/TRPGTalentGroup.tab"
+local TABLE_ROLE_TALENT_PATH = "Share/Trpg/TRPGRoleTalent.tab"
+local TABLE_ROLE_ATTRIBUTE_PATH = "Client/Trpg/TRPGRoleAttribute.tab"
+local TABLE_MAIN_AREA_PATH = "Share/Trpg/TRPGMainArea.tab"     --主区域
+local TABLE_TARGET_LINK_PATH = "Share/Trpg/TRPGTargetLink.tab"      --目标链表
+local TABLE_TARGET_PATH = "Share/Trpg/TRPGTarget.tab"               --目标表
+local TABLE_MAZE_PATH = "Share/Trpg/TRPGMaze.tab"
+local TABLE_MAZE_LAYER_PATH = "Share/Trpg/TRPGMazeLayer.tab"
+local TABLE_MAZE_MAP_PATH = "Share/Trpg/MazeMap/"
+local TABLE_MAZE_CARD_PATH = "Share/Trpg/TRPGMazeCard.tab"
+local TABLE_MAZE_CARD_TYPE_PATH = "Client/Trpg/TRPGMazeCardType.tab"
+local TABLE_MAZE_CARD_RECORD_GROUP_PATH = "Client/Trpg/TRPGMazeCardRecordGroup.tab"
+local TABLE_LEVEL_PATH = "Share/Trpg/TRPGLevel.tab"
+local TABLE_BUFF_PATH = "Share/Trpg/TRPGBuff.tab"
+local TABLE_REWARD_PATH = "Share/Trpg/TRPGReward.tab"
+local TABLE_SECOND_AREA_PATH = "Share/Trpg/TRPGSecondArea.tab"
+local TABLE_THIRD_AREA_PATH = "Share/Trpg/TRPGThirdArea.tab"
+local TABLE_SHOP_PATH = "Share/Trpg/TRPGShop.tab"
+local TABLE_SHOP_ITEM_PATH = "Share/Trpg/TRPGShopItem.tab"
+local TABLE_ITEM_PATH = "Share/Trpg/TRPGItem.tab"
+local TABLE_TRUTH_ROAD_GROUP_PATH = "Share/Trpg/TruthRoad/TRPGTruthRoadGroup.tab"
+local TABLE_TRUTH_ROAD_PATH = "Share/Trpg/TruthRoad/TRPGTruthRoad.tab"
+local TABLE_BOSS_PATH = "Share/Trpg/Boss/TRPGBoss.tab"
+local TABLE_BOSS_PHASES_REWARD = "Share/Trpg/Boss/TRPGBossPhasesReward.tab"
+local TABLE_MEMOIRE_STORY = "Share/Trpg/TRPGMemoirStory.tab"
+local TABLE_PANEL_PLOT_TAB_PATH = "Client/Trpg/TRPGPanelPlotTab.tab"
+local TABLE_FUNCTION_GROUP_PATH = "Share/Trpg/TRPGFunctionGroup.tab"
+local TABLE_FUNCTION_PATH = "Share/Trpg/TRPGFunction.tab"
+local TABLE_EXAMINE_PATH = "Share/Trpg/Examine/TRPGExamine.tab"
+local TABLE_EXAMINE_ACTION_PATH = "Share/Trpg/Examine/TRPGExamineAction.tab"
+local TABLE_EXAMINE_ACTION_TYPE_PATH = "Client/Trpg/TRPGExamineActionType.tab"
+local TABLE_EXAMINE_ACTION_DIFFICULT_PATH = "Client/Trpg/TRPGExamineActionDifficult.tab"
+local TABLE_EXAMINE_PUNISH_PATH = "Share/Trpg/Examine/TRPGExaminePunish.tab"
+local TABLE_BUTTON_CONDITION_PATH = "Client/Trpg/TRPGButtonCondition.tab"
+local TABLE_SECOND_MAIN_PATH = "Share/Trpg/SecondMain/TRPGSecondMain.tab"
+local TABLE_SECOND_MAIN_STAGE_PATH = "Share/Trpg/SecondMain/TRPGSecondMainStage.tab"
 
 local RoleTemplate = {}
 local RoleTalentGroupTemplate = {}
@@ -81,7 +80,6 @@ local ExamineTemplate = {}
 local ExamineActionTemplate = {}
 local ExamineActionTypeTemplate = {}
 local PunishTemplate = {}
-local PunishTextTemplate = {}
 local ExamineActionDifficultTemplate = {}
 local SecondAreaIdToMazeIdDic = {}
 local ButtonConditionTemplate = {}
@@ -336,7 +334,6 @@ function XTRPGConfigs.Init()
     ExamineActionTemplate = XTableManager.ReadByIntKey(TABLE_EXAMINE_ACTION_PATH, XTable.XTableTRPGExamineAction, "Id")
     ExamineActionTypeTemplate = XTableManager.ReadByIntKey(TABLE_EXAMINE_ACTION_TYPE_PATH, XTable.XTableTRPGExamineActionType, "Type")
     PunishTemplate = XTableManager.ReadByIntKey(TABLE_EXAMINE_PUNISH_PATH, XTable.XTableTRPGExaminePunish, "Id")
-    PunishTextTemplate = XTableManager.ReadByIntKey(TABLE_EXAMINE_PUNISH_TEXT_PATH, XTable.XTableTRPGExaminePunishText, "Id")
     ExamineActionDifficultTemplate = XTableManager.ReadByIntKey(TABLE_EXAMINE_ACTION_DIFFICULT_PATH, XTable.XTableTRPGExamineActionDifficult, "Difficult")
     ButtonConditionTemplate = XTableManager.ReadByIntKey(TABLE_BUTTON_CONDITION_PATH, XTable.XTableTRPGButtonCondition, "Id")
     SecondMainTemplate = XTableManager.ReadByIntKey(TABLE_SECOND_MAIN_PATH, XTable.XTableTRPGSecondMain, "Id")
@@ -1191,8 +1188,7 @@ end
 
 function XTRPGConfigs.GetPunishDesc(punishId)
     local config = GetPunishConfig(punishId)
-    local desc = PunishTextTemplate[config.Desc].Text
-    return stringGsub(desc, "\\n", "\n")
+    return stringGsub(config.Desc, "\\n", "\n")
 end
 
 function XTRPGConfigs.GetPunishParams(punishId)

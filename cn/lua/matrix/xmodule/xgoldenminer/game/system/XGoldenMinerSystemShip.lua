@@ -110,6 +110,8 @@ function XGoldenMinerSystemShip:_CreateShipComponentShell(entity)
 
     ---@type XGoldenMinerComponentShipShell
     local shipShell = entity:AddChildEntity(self._MainControl.COMPONENT_TYPE.SHIP_SHELL)
+    
+    shipShell:Init(self._ShipRoot)
 
     --local upgradeList = self._MainControl._MainControl:GetMainDb():GetAllUpgradeStrengthenList()
     --local totalNum = 0
@@ -140,7 +142,7 @@ function XGoldenMinerSystemShip:_CreateShipComponentShell(entity)
     --
     --shipShell:InitShell(shell, imageUrl, shipSize)
     shipShell:SetShipShell(shell)
-
+    
     return shipShell
 end
 

@@ -33,6 +33,7 @@ function XUiFashionDetail:OnAwake()
     self:AutoAddListener()
     self.BtnLensOut.gameObject:SetActiveEx(true)
     self.BtnLensIn.gameObject:SetActiveEx(false)
+    self.SliderCharacterHight.gameObject:SetActiveEx(false)
     self.PanelBtnSwich.gameObject:SetActiveEx(false)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
@@ -192,12 +193,14 @@ end
 function XUiFashionDetail:OnBtnLensOut()
     self.BtnLensOut.gameObject:SetActiveEx(false)
     self.BtnLensIn.gameObject:SetActiveEx(true)
+    self.SliderCharacterHight.gameObject:SetActiveEx(true)
     self:UpdateCamera(CameraIndex.Near)
 end
 
 function XUiFashionDetail:OnBtnLensIn()
     self.BtnLensOut.gameObject:SetActiveEx(true)
     self.BtnLensIn.gameObject:SetActiveEx(false)
+    self.SliderCharacterHight.gameObject:SetActiveEx(false)
     self:UpdateCamera(CameraIndex.Normal)
 end
 
@@ -399,7 +402,12 @@ function XUiFashionDetail:OnBtnBuyClick()
     local title = XUiHelper.GetText("PurchaseFashionRepeatTipsTitle")
     local content = XUiHelper.GetText("PurchaseFashionRepeatTipsContent")
     local sureCb = function ()
-        self.BuyData.BuyCallBack()
+        if self.BuyData.QuickBuyCallBack~=nil and XOverseaManager.IsTWRegion() then
+            self.BuyData.QuickBuyCallBack()
+        else
+            self.BuyData.BuyCallBack()
+        end
+
         self:OnBtnBackClick()
     end
     -- 已有涂装则二次确认，V1.31折价礼包不弹二次确认提示

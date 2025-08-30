@@ -28,6 +28,11 @@ function XRiftChapter:GetConfig()
     return self._Config
 end
 
+---是否无尽关
+function XRiftChapter:IsEndless()
+    return self._Config.Type == XEnumConst.Rift.ChapterType.Endless
+end
+
 -- 【检查】红点
 function XRiftChapter:CheckRedPoint()
     return not self:CheckHasLock() and not self:CheckHadFirstEntered()
@@ -35,23 +40,19 @@ end
 
 function XRiftChapter:CheckPreLock()
     -- 前置区域没通过 或者 没到达开放时间，都会上锁
-    local preLock = true
-    if self:GetChapterId() <= 1 then
-        preLock = false
-    elseif self._OwnControl:GetEntityChapterById(self:GetChapterId() - 1):CheckHasPassed() then
-        preLock = false
+    if self:IsEndless() then
+        -- 通关全部核心关
+        return self._OwnControl:CheckEndlessChapterLock()
     end
-
-    return preLock
+    local lastChapter = self._OwnControl:GetEntityChapterById(self._Config.Id - 1)
+    return lastChapter and not lastChapter:CheckHasPassed()
 end
 
 function XRiftChapter:CheckTimeLock()
-    local timeLock = true
-    if self:GetOpenLeftTime() <= 0 then
-        timeLock = false
+    if self:IsEndless() then
+        return false
     end
-
-    return timeLock
+    return self:GetOpenLeftTime() > 0
 end
 
 -- 【检查】上锁
@@ -183,6 +184,16 @@ end
 function XRiftChapter:GetPassTime()
     local chapterData = self._OwnControl:GetChapterData(self._Config.Id)
     return chapterData and chapterData.TotalPassTime or 0
+end
+
+function XRiftChapter:GetScore()
+    local chapterData = self._OwnControl:GetChapterData(self._Config.Id)
+    return chapterData and chapterData.Score or 0
+end
+
+function XRiftChapter:GetLastScore()
+    local chapterData = self._OwnControl:GetChapterData(self._Config.Id)
+    return chapterData and chapterData.LastScore or 0
 end
 
 return XRiftChapter

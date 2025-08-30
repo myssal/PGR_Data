@@ -121,7 +121,7 @@ function XUiTheatre5BubbleItemDetail:RefreshBaseShow()
             self.TxtStory.transform.parent.gameObject:SetActiveEx(false)
         end
         
-        self.TxtDes.text = not string.IsNilOrEmpty(self.ItemConfig.Desc) and XUiHelper.ReplaceTextNewLine(self.ItemConfig.Desc) or ''
+        self.TxtDes.text = self._Control:GetItemDesc(self.ItemConfig)
 
         if self.TagGrids == nil then
             self.TagGrids = {}

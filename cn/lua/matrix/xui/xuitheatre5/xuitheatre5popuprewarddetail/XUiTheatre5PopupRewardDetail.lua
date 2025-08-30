@@ -24,7 +24,7 @@ function XUiTheatre5PopupRewardDetail:RefreshItemBox(itemId)
     end
     self.RImgIcon:SetRawImage(itemCfg.IconRes)
     self.TxtName.text = itemCfg.Name
-    self.TxtDescription.text = itemCfg.Desc
+    self.TxtDescription.text = self._Control:GetItemDesc(itemCfg)
     self.TxtWorldDesc.text = itemCfg.Info
     self.TxtCount.text = 0
 end

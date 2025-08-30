@@ -97,11 +97,15 @@ local defaultOperatorPattern = {
 
 local charsReg = "^%a+%d*$"
 
-function XArithmetic:Ctor()
+function XArithmetic:Ctor(enableCache)
 	self.OperatorLevel = defaultOperatorLevel
 	self.OperatorPattern = defaultOperatorPattern
 	self.GetVariableDelegate = nil
 	self.StackContainer = Stack.New()
+	self.EnableCache = enableCache
+	if enableCache then
+		self.CacheDict = {}
+	end
 end
 
 function XArithmetic:SetTextValueHandler(handle)
@@ -109,8 +113,18 @@ function XArithmetic:SetTextValueHandler(handle)
 end
 
 function XArithmetic:Calculate(expression)
-	local rpnExperssion = self:ConvertToRPN(self:InsertBlank(expression))
-	return self:GetResultByExperssion(rpnExperssion)
+	if self.EnableCache then
+		if self.CacheDict[expression] then
+			return self:GetResult(self.CacheDict[expression])
+		end
+		local rpnExperssion = self:ConvertToRPN(self:InsertBlank(expression))
+		local list = split(rpnExperssion, " ")
+		self.CacheDict[expression] = list
+		return self:GetResult(list)
+	else
+		local rpnExperssion = self:ConvertToRPN(self:InsertBlank(expression))
+		return self:GetResultByExperssion(rpnExperssion)
+	end
 end
 
 function XArithmetic:GetValue(left, right, operator)
@@ -133,23 +147,27 @@ function XArithmetic:GetValue(left, right, operator)
 	return 0
 end
 
-function XArithmetic:GetResultByExperssion(source)
+function XArithmetic:GetResult(list)
 	local operatorLevel = self.OperatorLevel
 	self:ClearArray(self.StackContainer)
 	local stack = self.StackContainer
-	local list = split(source, " ")
 	for i, current in ipairs(list) do
 		if tonumber(current) then
-            stack:push(tonumber(current))
+			stack:push(tonumber(current))
 		elseif string.match(current, charsReg) then
 			stack:push(current)
-        elseif operatorLevel[current] then
+		elseif operatorLevel[current] then
 			local right = self:GetValueByText(stack:pop())
-			local left = self:GetValueByText(stack:pop())        	
-            stack:push(self:GetValue(left, right, string.sub(current, 1, 1)))
-        end
-    end
+			local left = self:GetValueByText(stack:pop())
+			stack:push(self:GetValue(left, right, string.sub(current, 1, 1)))
+		end
+	end
 	return stack:pop(), #stack
+end
+
+function XArithmetic:GetResultByExperssion(source)
+	local list = split(source, " ")
+	return self:GetResult(list)
 end
 
 function XArithmetic:GetValueByText(text)

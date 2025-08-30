@@ -13,73 +13,6 @@ local DEFAULT_SPEED = 1
 local DisableFunction = false     --功能屏蔽标记（调试模式时使用）
 local CurrentAction = nil;
 
-local ActionClass = {
-    [101] = require("XMovieActions/XMovieActionBgSwitch"), --背景切换
-    [102] = require("XMovieActions/XMovieActionTheme"), --章节主题
-    [103] = require("XMovieActions/XMovieActionBgScale"), --背景缩放位置调整
-    [104] = require("XMovieActions/XMovieActionBgMoveAnimation"), --背景位移动画
-    [105] = require("XMovieActions/XMovieActionSpineAnim"), --Spine动画加载
-    [106] = require("XMovieActions/XMovieActionPlaySpineAnim"), --Spine动画播放
-    [107] = require("XMovieActions/XMovieActionLeftTitleAppear"), --左边标题出现
-    [108] = require("XMovieActions/XMovieActionLeftTitleDisappear"), --左边标题消失
-    [109] = require("XMovieActions/XMovieActionTextAppear"), -- 文本出现
-    [110] = require("XMovieActions/XMovieActionTextDisAppear"), -- 文本消失
-    [111] = require("XMovieActions/XMovieActionBgEffect"), -- 背景特效
-    [112] = require("XMovieActions/XMovieActionTextAnim"), -- 文本动画
-
-    [201] = require("XMovieActions/XMovieActionActorAppear"), --演员出现
-    [202] = require("XMovieActions/XMovieActionActorDisappear"), --演员消失
-    [203] = require("XMovieActions/XMovieActionActorShift"), --演员位移
-    [204] = require("XMovieActions/XMovieActionActorChangeFace"), --演员表情
-    [205] = require("XMovieActions/XMovieActionActorAlphaChange"), --演员背景
-    [211] = require("XMovieActions/XMovieActionSpineActorAppear"), --spine演员出现
-    [212] = require("XMovieActions/XMovieActionSpineActorDisappear"), --spine演员消失
-    [213] = require("XMovieActions/XMovieActionSpineActorShift"), --spine演员位移
-    [214] = require("XMovieActions/XMovieActionSpineActorChangeAnim"), --spine演员切换动画
-    [215] = require("XMovieActions/XMovieActionSpineActorAnimationPlay"), --spine演员预置的UI动画播放
-
-    [301] = require("XMovieActions/XMovieActionDialog"), --普通对话
-    [302] = require("XMovieActions/XMovieActionSelection"), --选择分支对话
-    [303] = require("XMovieActions/XMovieActionDelaySkip"), --延迟跳转
-    [304] = require("XMovieActions/XMovieActionFullScreenDialog"), --全屏字幕
-    [305] = require("XMovieActions/XMovieActionYieldResume"), --挂起/恢复
-    [306] = require("XMovieActions/XMovieActionRoleMask"), --上下遮罩动画
-    [307] = require("XMovieActions/XMovieActionCenterTips"), --居中提示文本
-    [308] = require("XMovieActions/XMovieActionAutoSkip"), --自动跳转节点
-
-    [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
-    [402] = require("XMovieActions/XMovieActionAudioInterrupt"), --BGM/CV/音效 打断
-
-    [501] = require("XMovieActions/XMovieActionEffectPlay"), --特效播放
-    [502] = require("XMovieActions/XMovieActionAnimationPlay"), --UI动画播放
-    [503] = require("XMovieActions/XMovieActionVideoPlay"), --视频播放
-    [504] = require("XMovieActions/XMovieActionSetGray"), --灰度设置
-    [505] = require("XMovieActions/XMovieActionUnLoad"), --动效卸载
-    [506] = require("XMovieActions/XMovieActionPrefabAnimation"), --预制体动画
-    [507] = require("XMovieActions/XMovieActionInsertTipAppear"), --中间插入横幅
-    [508] = require("XMovieActions/XMovieActionInsertTipDisappear"), --中间横幅消失
-    [509] = require("XMovieActions/XMovieActionShowInsertPanel"), --显示两边插入分屏
-    [510] = require("XMovieActions/XMovieActionHideInsertPanel"), --隐藏插入分屏
-    [511] = require("XMovieActions/XMovieActionEffectMove"), --特效位移
-
-    [601] = require("XMovieActions/XMovieActionStaff"), --staff职员表
-
-    --3D剧情相关
-    [701] = require("XMovieActions/XMovieActionSceneLoad"), --场景加载
-    [702] = require("XMovieActions/XMovieActionCameraLoad"), --摄像头加载
-    [703] = require("XMovieActions/XMovieActionCameraPlay"), --播放相机动画
-    [704] = require("XMovieActions/XMovieActionActorLoad"), --角色模型加载
-    [705] = require("XMovieActions/XMovieActionModelMove"), --角色移动
-    [706] = require("XMovieActions/XMovieActionSetActorTransform"), --设置角色位置
-    [707] = require("XMovieActions/XMovieActionModelAnimationPlay"), --角色动画播放
-    [708] = require("XMovieActions/XMovieActionDialog3D"), --3D剧情对话框
-    [709] = require("XMovieActions/XMovieActionTimelineLoad"), --Timeline动画预制体加载
-    [710] = require("XMovieActions/XMovieActionTimelinePlay"), --Timeline动画播放
-    [711] = require("XMovieActions/XMovieActionPlayCV"), --播放角色语音
-    [712] = require("XMovieActions/XMovieActionSwitchMixMode"), --切换2D与3D混合模式
-    [713] = require("XMovieActions/XMovieActionSetBg"), --设置混合模式背景图片
-}
-
 --可以通过上一页返回到的节点
 local MovieBackFilter = {
     [301] = true, --普通对话
@@ -110,7 +43,7 @@ XMovieManagerCreator = function()
         local findEnd = false
         local movieCfg = XMovieConfigs.GetMovieCfg(movieId)
         for index, actionData in ipairs(movieCfg) do
-            local actionClass = ActionClass[actionData.Type]
+            local actionClass = XMVCA.XMovie.XEnumConst:GetActionClass(actionData.Type)
             if not actionClass then
                 XLog.Error("XMovieManager.InitMovieActions 配置节点类型错误，找不到对应的节点，Type: " .. actionData.Type)
                 return
@@ -186,12 +119,12 @@ XMovieManagerCreator = function()
         XLuaUiManager.Open(UI_MOVIE, hideSkipBtn)
     end
 
-    local function OnPlayEnd()
+    local function OnPlayEnd(isLoginOut)
         if not CurPlayingMovieId then return end
         
         XDataCenter.MovieManager.RecordStorylineEnd(CurPlayingMovieId)
         
-        if not CS.XFight.IsRunning then
+        if not CS.XFight.IsRunning and not isLoginOut then
             CsXUiManager.Instance:RevertAll()
         end
 
@@ -343,6 +276,10 @@ XMovieManagerCreator = function()
     end
     
     function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn,isRelease)
+        if XMain.IsEditorDebug then
+            XLog.Debug("开始播放剧情 MovieId = " .. tostring(movieId))
+        end
+        
         local fun = function ()
             if isRelease == nil then
                 isRelease = true
@@ -372,10 +309,10 @@ XMovieManagerCreator = function()
         end
     end
 
-    function XMovieManager.StopMovie()
+    function XMovieManager.StopMovie(isLoginOut)
         if not XMovieManager.IsPlayingMovie() then return end
         if not XLuaUiManager.IsUiShow(UI_MOVIE) then return end
-        OnPlayEnd()
+        OnPlayEnd(isLoginOut)
     end
 
     function XMovieManager.BackToLastAction()
@@ -578,17 +515,34 @@ XMovieManagerCreator = function()
     
     --- 针对传入的文本，根据玩家当前的性别类型进行处理，返回处理过后的文本
     function XMovieManager.GetSummaryContentByGenderCheck(content)
+        local OpenMovieThirdGender = XMVCA.XMovie:GetOpenMovieSkipThirdGender()
+
         -- 这里写死了标签与性别ID的映射，若后期需要走配置，则需要调整这里的逻辑
-        if XPlayer.Gender == 0 or XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.MAN or XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
+        if XPlayer.Gender == 0 or XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.MAN or (not OpenMovieThirdGender and XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY) then
             -- 未配置、男、保密，均按男的文本
             -- 将由女性标签包围的连续字符串，或男性标签字符串替换为空
             local result = string.gsub(content, '<W>.-</W>', '')
+            result = string.gsub(result, '<T>.-</T>', '')
             result = string.gsub(result, '<M>', '')
             result = string.gsub(result, '</M>', '')
+            return result
+        elseif OpenMovieThirdGender and XPlayer.Gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
+            local isManOrWoman = string.gmatch(content, "<T>.-</T>")
+            if not isManOrWoman() then
+                local result = string.gsub(content, '<W>.-</W>', '')
+                result = string.gsub(result, '<M>', '')
+                result = string.gsub(result, '</M>', '')
+                return result
+            end
+            local result = string.gsub(content, '<M>.-</M>', '')
+            result = string.gsub(result, '<W>.-</W>', '')
+            result = string.gsub(result, '<T>', '')
+            result = string.gsub(result, '</T>', '')
             return result
         else
             -- 将由男性标签包围的连续字符串，或女性标签字符串替换为空
             local result = string.gsub(content, '<M>.-</M>', '')
+            result = string.gsub(result, '<T>.-</T>', '')
             result = string.gsub(result, '<W>', '')
             result = string.gsub(result, '</W>', '')
             return result

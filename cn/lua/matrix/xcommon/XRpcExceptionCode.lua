@@ -11,4 +11,6 @@ XRpcExceptionCode = {
     FeaturesNotOpen = 7,
     RequestBlocked = 8,
     ServiceUnavailable = 9,
+    ShieldFunction = 10,
+    ShieldRequestProtocol = 11,
 }

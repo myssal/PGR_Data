@@ -28,8 +28,8 @@ function XGachaCanLiverControl:GetGachaSpecialRewardInfoList(gachaId)
         result = {}
 
         for i, v in pairs(dataList) do
-            if v.Rare then
-                table.insert(result, v)
+            if v.Cfg.Rare then
+                table.insert(result, v.Cfg)
             end
         end
     end

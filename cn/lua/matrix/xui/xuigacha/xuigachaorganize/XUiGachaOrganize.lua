@@ -351,7 +351,7 @@ function XUiGachaOrganize:GeneratePreview()
             break
         end
 
-        if v.Rare then
+        if v.Cfg.Rare then
             -- 取出格子
             local grid = self.PreviewGridPool[count]
             if not grid then
@@ -363,11 +363,11 @@ function XUiGachaOrganize:GeneratePreview()
             -- 刷新信息
             if grid then
                 local tmpData = {}
-                tmpData.TemplateId = v.TemplateId
-                tmpData.Count = v.Count
+                tmpData.TemplateId = v.Cfg.TemplateId
+                tmpData.Count = v.Cfg.Count
 
                 local curCount
-                if v.RewardType == XGachaConfigs.RewardType.Count then
+                if v.Cfg.RewardType == XGachaConfigs.RewardType.Count then
                     curCount = v.CurCount
                 end
                 grid:Refresh(tmpData, nil, nil, nil, curCount)
@@ -393,11 +393,11 @@ function XUiGachaOrganize:RefreshPreviewData()
     -- 刷新奖励格子
     for k, v in pairs(self.UsePreviewGrid or {}) do
         local tmpData = {}
-        tmpData.TemplateId = gachaRewardInfo[k].TemplateId
-        tmpData.Count = gachaRewardInfo[k].Count
+        tmpData.TemplateId = gachaRewardInfo[k].Cfg.TemplateId
+        tmpData.Count = gachaRewardInfo[k].Cfg.Count
 
         local curCount
-        if gachaRewardInfo[k].RewardType == XGachaConfigs.RewardType.Count then
+        if gachaRewardInfo[k].Cfg.RewardType == XGachaConfigs.RewardType.Count then
             curCount = gachaRewardInfo[k].CurCount
         end
         v:Refresh(tmpData, nil, nil, nil, curCount)

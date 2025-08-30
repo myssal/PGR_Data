@@ -387,6 +387,14 @@ XLottoManagerCreator = function()
         end
     end
 
+    function XLottoManager:CheckLottoMainEnterRedPoint()
+        return XSaveTool.GetData(string.format("LottoMainEnter_%s", XPlayer.Id)) ~= 1
+    end
+
+    function XLottoManager:CloseLottoMainEnterRedPoint()
+        XSaveTool.SaveData(string.format("LottoMainEnter_%s", XPlayer.Id), 1)
+    end
+
     XLottoManager.Init()
     return XLottoManager
 end

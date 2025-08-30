@@ -3,7 +3,7 @@ local XUiDialogExitGame = XLuaUiManager.Register(require("XUi/XUiDialog/XUiDialo
 
 function XUiDialogExitGame:OnEnable()
     self.Super.OnEnable(self)
-    XDataCenter.UiPcManager.SetExitingGame(true)
+    XQuitHandler.SetExitingGame(true)
     local canvas = self.GameObject:GetComponent(typeof(CS.UnityEngine.Canvas))
     if canvas then
         self.Canvas = canvas
@@ -17,7 +17,7 @@ function XUiDialogExitGame:OnDestroy()
         self.Canvas.sortingOrder = self.LastSortingOrder
     end
     self.Super.OnDestroy(self)
-    XDataCenter.UiPcManager.SetExitingGame(false)
+    XQuitHandler.SetExitingGame(false)
 end
 
 return XUiDialogExitGame

@@ -465,6 +465,40 @@ XActivityManagerCreator = function()
                 end
             end)
     end
+
+    -- [ 海外新增(Rooot活动)
+    XActivityManager.RoootData = {
+        Token = nil,
+        StartTime = nil,
+        ExchangeEndTime = nil,
+    }
+    function XActivityManager.OpenRoootUrl(hostUrl)
+        if not hostUrl or hostUrl == "" then
+            XUiManager.TipText("RoootActivityUrlError")
+            return
+        end
+        if XActivityManager.RoootData.Token and XActivityManager.RoootData.StartTime and XActivityManager.RoootData.ExchangeEndTime then
+            local nowTime = XTime.GetServerNowTimestamp()
+            if nowTime < XActivityManager.RoootData.StartTime or nowTime > XActivityManager.RoootData.ExchangeEndTime then
+                XUiManager.TipText("RoootActivityNotInTime")
+            end
+            local fullUrl = hostUrl.."?associate_token="..XActivityManager.RoootData.Token
+            CS.UnityEngine.Application.OpenURL(fullUrl)
+        else
+            XNetwork.Call("RoootAuthRequest", {}, function(res)
+                if res.Code ~= XCode.Success then
+                    XUiManager.TipCode(res.Code)
+                    return
+                end
+                XActivityManager.RoootData.Token = res.Token
+                XActivityManager.RoootData.StartTime = res.StartTime
+                XActivityManager.RoootData.ExchangeEndTime = res.ExchangeEndTime
+                local fullUrl = hostUrl.."?associate_token="..XActivityManager.RoootData.Token
+                CS.UnityEngine.Application.OpenURL(fullUrl)
+            end)
+        end
+    end
+    -- ]
     
     --回流问卷结束时间
     function XActivityManager.SetBackFlowEndTime(data)

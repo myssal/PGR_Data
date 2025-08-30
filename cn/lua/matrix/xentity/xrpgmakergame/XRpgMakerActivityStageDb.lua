@@ -121,7 +121,7 @@ function XRpgMakerActivityStageDb:IsStageClear()
 end
 
 function XRpgMakerActivityStageDb:IsStagePerfectClear()
-    return self:GetStarCount() == XRpgMakerGameConfigs.GetRpgMakerGameStageTotalStar(self:GetStageCfgId())
+    return self:GetStarCount() == XMVCA.XRpgMakerGame:GetConfig():GetStageTotalStar(self:GetStageCfgId())
 end
 
 function XRpgMakerActivityStageDb:IsStarReward(conditionId)

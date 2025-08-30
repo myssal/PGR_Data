@@ -36,8 +36,8 @@ end
 
 function XRpgMakerGameMonsterSentry:Load(position)
     if self:IsShowNextRoundSentry() then
-        local modelKey = XRpgMakerGameConfigs.ModelKeyMaps.Sentry
-        local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+        local modelKey = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Sentry
+        local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
         local x = self:InFirstRoundCreate() and self._SentryEndPositionX or self._SentryStartPositionX
         local y = self:InFirstRoundCreate() and self._SentryEndPositionY or self._SentryStartPositionY
         local cubeObj = self:GetCubeTransform(y, x)
@@ -66,7 +66,7 @@ function XRpgMakerGameMonsterSentry:GetClearRound()
     end
 
     local monsterId = self:GetId()
-    local stopRound = XRpgMakerGameConfigs.GetRpgMakerGameSentryStopRound(monsterId)
+    local stopRound = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSentryStopRound(monsterId)
     return self._SentryStartRound + stopRound
 end
 

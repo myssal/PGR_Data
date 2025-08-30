@@ -481,10 +481,12 @@ end
 --对问卷类型文本进行超链接解析
 function XMailControl:FixSurveyContent(mailInfo)
     local content = mailInfo.Content or ""
+    
+    -- 问卷星的格式
     local pattern = '@&&.+,url=.+,qid=.+,title=.+'
     
     for str in string.gmatch(content, pattern) do
-        local fixContent = '<a href=\"%s\">%s</a>'
+        local fixContent = '<link=\"%s\">%s</link>'
         local btnContent = string.match(str,'@&&(.+),url')
         local link = string.match(str,'url=(.+),qid')
         --对链接增加参数
@@ -493,9 +495,33 @@ function XMailControl:FixSurveyContent(mailInfo)
         linkParm = string.format(linkParm, XMVCA.XUrl:GetSojumpParm(), XMVCA.XUrl:GetParmSign(qid))
         fixContent = string.format(fixContent, link..linkParm,btnContent)
         local fixedContent = XUiHelper.GetText('MailHyperLink', link..linkParm, btnContent)
+        if XOverseaManager.IsKRRegion() then
+            local strCount = (#btnContent)/2+2--韩服字体竟然占4个字节
+            local spaceStr = string.rep(" ",strCount)
+            fixedContent = string.gsub(fixedContent,"]</link>","]"..spaceStr.."</a>")
+        end
+
         fixedContent = string.gsub(fixedContent, "|", "\"")
         content = string.gsub(content, str, fixedContent)
     end
+
+    -- 通用配置格式
+    pattern = '@&&.+,urlId=.+&&@'
+
+    for str in string.gmatch(content, pattern) do
+        local fixContent = '<link=\"%s\">%s</link>'
+        local btnContent = string.match(str,'@&&(.+),urlId')
+        local urlId = string.match(str,'urlId=(.+)&&@')
+
+        if string.IsNumeric(urlId) then
+            local url = XMVCA.XUrl:GetFullUrlById(tonumber(urlId))
+            fixContent = string.format(fixContent, url,btnContent)
+            content = string.gsub(content, str, fixContent)
+        else
+            XLog.Error('urlId不是个数值：'..tostring(urlId))
+        end
+    end
+    
     return content
 end
 

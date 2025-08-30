@@ -4,25 +4,7 @@ local XMovieAgency = XClass(XAgency, "XMovieAgency")
 
 function XMovieAgency:OnInit()
     --初始化一些变量
-    self.XEnumConst = {
-        -- spine的组成部位名称
-        SPINE_PART_NAME = {
-            ROLE = "Role",
-            BODY = "Body",
-            KOU = "Kou",
-        },
-        -- 剧情跳过类型
-        SkipType = {
-            OnlyTips = 1, -- 仅跳过提示
-            Summary = 2, -- 带剧情梗概
-        },
-        -- 自动播放辅助点击，key为ActionType，value为时间间隔毫秒
-        -- 支持不同的ActionType自定义延迟时间。支持配置节点忽略辅助点击(value不为number类型)
-        AUTO_PLAY_CLICK_ACTION = {
-            ["DEFAULT"] = 2000, -- 默认间隔时间
-            [301] = "Ignore", -- 此节点的对话自己实现了自动播放逻辑，忽略辅助点击
-        },
-    }
+    self.XEnumConst = require("XModule/XMovie/XMovieEnumConst")
 end
 
 function XMovieAgency:InitRpc()
@@ -113,20 +95,52 @@ end
 function XMovieAgency:ExtractGenderContent(content)
     local gender = XPlayer.GetShowGender()
     if gender == XEnumConst.PLAYER.GENDER_TYPE.MAN then
-        local result = string.gsub(content, '<W>.-</W>', '')
-        result = string.gsub(result, '<M>', '')
-        result = string.gsub(result, '</M>', '')
-
-        return result
+        local funcItor = string.gmatch(content, "<W>.-</W>")
+        local result = funcItor()
+        if result then
+            content = string.gsub(content, result, "")
+            local funcItorL = string.gmatch(content, "<T>.-</T>")
+            local resultL = funcItorL()
+            if resultL then
+                content = string.gsub(content, resultL, "")
+            end
+            content = string.gsub(content, "<M>", "")
+            content = string.gsub(content, "</M>", "")
+            return content
+        end
     elseif gender == XEnumConst.PLAYER.GENDER_TYPE.WOMAN then
-        local result = string.gsub(content, '<M>.-</M>', '')
-        result = string.gsub(result, '<W>', '')
-        result = string.gsub(result, '</W>', '')
-        
-        return result
+        local funcItor = string.gmatch(content, "<M>.-</M>")
+        local result = funcItor()
+        if result then
+            content = string.gsub(content, result, "")
+            local funcItorL = string.gmatch(content, "<T>.-</T>")
+            local resultL = funcItorL()
+            if resultL then
+                content = string.gsub(content, resultL, "")
+            end
+            content = string.gsub(content, "<W>", "")
+            content = string.gsub(content, "</W>", "")
+            return content
+        end
+    elseif gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
+        local isManOrWoman = string.gmatch(content, "<T>.-</T>")
+        if not isManOrWoman() then
+            local result = string.gsub(content, '<W>.-</W>', '')
+            result = string.gsub(result, '<M>', '')
+            result = string.gsub(result, '</M>', '')
+            content = result
+        else
+            local result = string.gsub(content, '<M>.-</M>', '')
+            result = string.gsub(result, '<W>.-</W>', '')
+            result = string.gsub(result, '<T>', '')
+            result = string.gsub(result, '</T>', '')
+            content = result
+        end
+      
     end
     return content
 end
+
 
 -- 将十进制编码转换成字符串
 -- 配置表string和List<string>里的文本只要有英文逗号，加载出来的文本会自动增加英文的双引号
@@ -164,5 +178,15 @@ function XMovieAgency:CheckTipsSetGender(movieId)
     XLuaUiManager.Open('UiPlayerPopupSetGender')
     return true
 end
+
+-- 获取第三性别开关配置
+function XMovieAgency:GetOpenMovieThirdGender()
+   return self._Model:IsOpenMovieThirdGender()
+end
+
+function XMovieAgency:GetOpenMovieSkipThirdGender()
+    return self._Model:IsOpenMovieSkipThirdGender()
+end
+
 
 return XMovieAgency

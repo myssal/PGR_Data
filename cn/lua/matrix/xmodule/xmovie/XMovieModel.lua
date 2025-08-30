@@ -17,6 +17,9 @@ function XMovieModel:OnInit()
 
     -- 剧情已选项相关记录
     self.MovieOptionsDic = {}
+    self.OpenMovieThirdGender = CS.XGame.ClientConfig:GetInt("OpenMovieThirdGender")
+    self.OpenMovieSkipThirdGender = CS.XGame.ClientConfig:GetInt("OpenMovieSkipThirdGender")
+
 end
 
 function XMovieModel:ClearPrivate()
@@ -85,6 +88,11 @@ function XMovieModel:GetClientConfigParams(key)
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.MovieClientConfig, key)
     return config and config.Params or {}
 end
+
+function XMovieModel:IsOpenMovieThirdGender()
+    return self.OpenMovieThirdGender == 1
+end
+
 --============================================================== #endregion 配置表 ==============================================================
 
 
@@ -134,6 +142,11 @@ function XMovieModel:IsOptionNeedRecord(movieId, actionId, optionIndex)
     local optionId = self:PackOptionId(actionId, optionIndex)
     return optionDic[optionId] == false -- 已记录为true，无效为nil
 end
+
+function XMovieModel:IsOpenMovieSkipThirdGender()
+    return self.OpenMovieSkipThirdGender == 1
+end
+
 
 --============================================================== #endregion 协议数据 ==============================================================
 

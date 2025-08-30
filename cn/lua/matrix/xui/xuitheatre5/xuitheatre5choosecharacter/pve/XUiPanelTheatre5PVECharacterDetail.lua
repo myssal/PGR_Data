@@ -15,10 +15,15 @@ function XUiPanelTheatre5PVECharacterDetail:RefreshShow(cfg)
     if not entranceCfg then
         return
     end
-    local characterStoryDesc = self._Control.PVEControl:GetChacterStoryDesc(entranceName)
-    self.CharacterStoryDescNode.gameObject:SetActiveEx(not string.IsNilOrEmpty(characterStoryDesc))
-    if not string.IsNilOrEmpty(characterStoryDesc) then
-        self.TxtStoryDesc.text = XUiHelper.ReplaceTextNewLine(characterStoryDesc)
+    local isCharacterCanSelect, tips = self._Control:IsCharacterCanSelect(cfg.Id)
+    if not isCharacterCanSelect then
+        self.TxtStoryDesc.text = tips
+    else
+        local characterStoryDesc = self._Control.PVEControl:GetChacterStoryDesc(entranceName)
+        self.CharacterStoryDescNode.gameObject:SetActiveEx(not string.IsNilOrEmpty(characterStoryDesc))
+        if not string.IsNilOrEmpty(characterStoryDesc) then
+            self.TxtStoryDesc.text = XUiHelper.ReplaceTextNewLine(characterStoryDesc)
+        end
     end
     
     --线索

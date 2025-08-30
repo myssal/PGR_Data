@@ -19,7 +19,7 @@ function XRpgMakerGameTrasfer:PlayTransFailEffect()
     -- local color = XRpgMakerGameConfigs.GetTransferPointColor(self:GetId())
     local color = self.MapObjData:GetParams()[1]
     local key = XRpgMakerGameConfigs.GetTransferPointColorKey(color)
-    local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(key)
+    local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(key)
     self:LoadModel(modelPath, nil, nil, key)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_TransferFail)
 end

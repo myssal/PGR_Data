@@ -372,6 +372,11 @@ XFubenSpecialTrainManagerCreator = function()
 
     function XFubenSpecialTrainManager.CheckHasActivityPointAndSatisfiedToGetReward()
         local config = XFubenSpecialTrainConfig.GetActivityConfigById(ActivityId)
+        local nowTime = XTime.GetServerNowTimestamp() -- 在检查红点的时候先判断活动开启时间
+        if nowTime >= XFunctionManager.GetEndTimeByTimeId(config.TimeId) or nowTime <= XFunctionManager.GetStartTimeByTimeId(config.TimeId) then
+            return false
+        end
+
         if config.PointItemId == 0 then
         else
             local pointCount = XDataCenter.ItemManager.GetCount(config.PointItemId)

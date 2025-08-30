@@ -12,15 +12,15 @@ end
 
 function XUiRpgMakerGameTabBtn:Init(chapterId)
     self.ChapterId = chapterId
-    local bg = XRpgMakerGameConfigs.GetRpgMakerGameChapterTagBtnBG(chapterId)
-    local name = XRpgMakerGameConfigs.GetRpgMakerGameChapterName(chapterId)
+    local bg = XMVCA.XRpgMakerGame:GetConfig():GetChapterTagBtnBG(chapterId)
+    local name = XMVCA.XRpgMakerGame:GetConfig():GetChapterName(chapterId)
     self.BtnPlotTab:SetRawImage(bg)
     self.BtnPlotTab:SetNameByGroup(0, name)
 end
 
 function XUiRpgMakerGameTabBtn:Refresh()
     local chapterId = self:GetChapterId()
-    local totalStarCount = XRpgMakerGameConfigs.GetRpgMakerGameTotalStar(chapterId)
+    local totalStarCount = XMVCA.XRpgMakerGame:GetConfig():GetChapterTotalStar(chapterId)
     local currStarCount = XDataCenter.RpgMakerGameManager.GetRpgMakerChapterClearStarCount(chapterId)
     local isClear = currStarCount >= totalStarCount
 
@@ -31,7 +31,6 @@ function XUiRpgMakerGameTabBtn:Refresh()
     self.BtnPlotTab:SetNameByGroup(2, "/" .. totalStarCount)
     self.TagStar.gameObject:SetActiveEx(not isClear)
     self.TagClear.gameObject:SetActiveEx(isClear)
-    
 end
 
 function XUiRpgMakerGameTabBtn:RefreshTimer()
@@ -44,7 +43,7 @@ function XUiRpgMakerGameTabBtn:RefreshTimer()
     end
 
     if not isUnLock then
-        local timeId = XRpgMakerGameConfigs.GetRpgMakerGameChapterOpenTimeId(chapterId)
+        local timeId = XMVCA.XRpgMakerGame:GetConfig():GetChapterOpenTimeId(chapterId)
         local time = XFunctionManager.GetStartTimeByTimeId(timeId)
         local serverTimestamp = XTime.GetServerNowTimestamp()
         if self.TextTagTime then

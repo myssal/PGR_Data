@@ -311,7 +311,7 @@ function XUiTip:Refresh(data)
         end
 
         if worldDesc and #worldDesc then
-            self.TxtWorldDesc.text = worldDesc
+            self.TxtWorldDesc.text = XUiHelper.ReplaceTextNewLine(worldDesc) 
             self:SetUiActive(self.TxtWorldDesc, true)
         end
     end

@@ -42,6 +42,10 @@ end
 function XGoldenMinerMapStoneData:SetStoneConfig(config)
     self._Config = config
 end
+
+function XGoldenMinerMapStoneData:ChangeStoneId(stoneId)
+    self._StoneId = stoneId
+end
 --endregion
 
 --region Getter

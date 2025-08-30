@@ -349,7 +349,7 @@ local ReadWithContext = function(context, tableConfig, keyType, identifier, path
             local elems = {} --CreateColElems(tableConfig) --存储每一列类型的默认值
             local tmpElems = Split(line) --分割每一行内容，\t
             --如果表头长度和内容长度匹配不上
-            if #tmpElems ~= cols then
+            if #tmpElems > cols then
                 XLog.Warning(
                         "XTableManager.ReadTabFile warning: cols not match, path = " ..
                                 path .. ", row = " .. index .. ", cols = " .. cols .. ", cells length = " .. #tmpElems

@@ -173,8 +173,6 @@ function XUiBiancaTheatrePanelFetters:Ctor(ui)
     self.Transform = ui.transform
     XTool.InitUiObject(self)
 
-    ---@type XLoaderUtil
-    self.LoaderUtil = false
     self:Init()
     self:RegisterClickEvent()
 
@@ -194,18 +192,12 @@ end
 
 function XUiBiancaTheatrePanelFetters:InitFetters()
     self.FettersGridList = {}
-    -- 加载资源工具
-    if not self.LoaderUtil then
-        self.LoaderUtil = self.GridFetters:GetLoader()
-    end
-    local gridFettersAsset = self.LoaderUtil:Load(XBiancaTheatreConfigs.GetClientConfig("GridFettersAsset"))
-    local btnFettersAsset = self.LoaderUtil:Load(XBiancaTheatreConfigs.GetClientConfig("BtnFettersAsset"))
     local panelFetters
     for i = 1, FETTERS_COUNT do
         panelFetters = XUiHelper.TryGetComponent(self.GridFetters.transform, "PanelFetters/PanelFetters" .. i)
-        if panelFetters and gridFettersAsset then
-            local gridFetter = XUiHelper.Instantiate(gridFettersAsset, panelFetters)
-            local btnFetter = XUiHelper.Instantiate(btnFettersAsset, panelFetters)
+        if panelFetters then
+            local gridFetter = panelFetters:LoadPrefabEx(XBiancaTheatreConfigs.GetClientConfig("GridFettersAsset"))
+            local btnFetter = panelFetters:LoadPrefabEx(XBiancaTheatreConfigs.GetClientConfig("BtnFettersAsset"))
             table.insert(self.FettersGridList, XUiFettersGrid.New(gridFetter, btnFetter))
         end
     end

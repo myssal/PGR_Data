@@ -11,14 +11,16 @@ function XUiGridRiftStage:OnStart()
     XUiHelper.RegisterClickEvent(self, self.GridStage, self.TryEnterStage)
 end
 
-function XUiGridRiftStage:Init(fightLayer)
+function XUiGridRiftStage:Init(fightLayer,index)
     ---@type XRiftFightLayer
     self._FightLayer = fightLayer
+    self.GridStage:SetNameByGroup(2, string.format("0%s", index))
 end
 
 function XUiGridRiftStage:Update()
     local isPassed = self._Control:CheckLayerFirstPassed(self._FightLayer:GetFightLayerId())
     local isChallenge = self._FightLayer:IsChallenge()
+    local isEndless = self._FightLayer:GetParent():IsEndless()
     local hasStory = self._FightLayer:HasStory()
     self.GridStage:SetSpriteVisible(isPassed)
     self.ImgStory.gameObject:SetActiveEx(hasStory)
@@ -27,31 +29,49 @@ function XUiGridRiftStage:Update()
     end
     if self._FightLayer:CheckHasLock() then
         self.GridStage:SetButtonState(CS.UiButtonState.Disable)
-        self.PanelBar.gameObject:SetActiveEx(false)
+        self.PanelBar.gameObject:SetActiveEx(true)
+        self.GridStage:SetNameByGroup(0, "")
     else
         self.GridStage:SetButtonState(CS.UiButtonState.Normal)
-        self.PanelBar.gameObject:SetActiveEx(not isChallenge)
-        if isPassed or isChallenge then -- 挑战关没有关卡进度
+        self.PanelBar.gameObject:SetActiveEx(not isChallenge and not isEndless)
+        if isChallenge or isEndless then -- 挑战关和无尽关没有关卡进度
             self.ImgBar.fillAmount = 1
-            self.GridStage:SetNameByGroup(0, "")
+            self.GridStage:SetNameByGroup(0, self._FightLayer:GetConfig().Name)
+        elseif isPassed then -- 通关
+            self.ImgBar.fillAmount = 1
+            self.GridStage:SetNameByGroup(0, 100)
         else
             local progress = self._FightLayer:GetFightProgress()
             self.ImgBar.fillAmount = progress
-            self.GridStage:SetNameByGroup(0, string.format("%s%%", math.floor(progress * 100)))
+            self.GridStage:SetNameByGroup(0, math.floor(progress * 100))
         end
     end
-    if isPassed and isChallenge then
-        self.PanelTime.gameObject:SetActiveEx(true)
-        self.TxtTime.text = XUiHelper.GetTime(self._FightLayer:GetParent():GetPassTime(), XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
-    else
-        self.PanelTime.gameObject:SetActiveEx(false)
-        self.TxtTime.text = ""
+    if self.PanelTime then
+        local str = ""
+        if isPassed then
+            if isEndless then
+                str = self._FightLayer:GetParent():GetScore()
+            else
+                str = XUiHelper.GetTime(self._FightLayer:GetParent():GetPassTime(), XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
+            end
+        end
+        self.GridStage:SetNameByGroup(2, str)
     end
     if self.ImgIcon1 then
         self.ImgIcon1.gameObject:SetActiveEx(not isPassed)
     end
     if self.ImgIcon2 then
         self.ImgIcon2.gameObject:SetActiveEx(not isPassed)
+    end
+    if not isChallenge and not isEndless then
+        self.GridStage:SetNameByGroup(1, self._FightLayer:GetConfig().Name)
+    else
+        self.GridStage:SetNameByGroup(1, "")
+    end
+    if isChallenge then
+        self.GridStage:SetNameByGroup(3, XUiHelper.GetText("RiftBestTime"))
+    elseif isEndless then
+        self.GridStage:SetNameByGroup(3, XUiHelper.GetText("RiftBestScore"))
     end
     self:RefreshReddot()
 end
@@ -103,7 +123,7 @@ function XUiGridRiftStage:PlayProgressTween()
     self._Timer = XUiHelper.Tween(progress * self._Speed, function(t)
         local value = MathLerp(0, progress, t)
         self.ImgBar.fillAmount = value
-        self.GridStage:SetNameByGroup(0, string.format("%s%%", math.floor(value * 100)))
+        self.GridStage:SetNameByGroup(0, math.floor(value * 100))
     end)
 end
 

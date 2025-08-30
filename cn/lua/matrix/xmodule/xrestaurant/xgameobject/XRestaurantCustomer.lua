@@ -31,7 +31,7 @@ function XRestaurantCustomer:GetObjName()
 end
 
 function XRestaurantCustomer:GetCharTypeDesc()
-    return "顾客NPC"
+    return CS.XTextManager.GetLuaText("XRestaurantCustomer.lua_34")
 end
 
 function XRestaurantCustomer:GetBehaviourId()

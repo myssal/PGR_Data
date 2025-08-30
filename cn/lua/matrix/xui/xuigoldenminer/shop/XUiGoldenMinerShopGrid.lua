@@ -113,7 +113,7 @@ function XUiGoldenMinerShopGrid:UpdateItem()
     self.TxtSaleRate.gameObject:SetActiveEx(prices ~= originPrices)
     if self.DiscountTag and self.ShopDiscount ~= 1 then
         self.DiscountTag.gameObject:SetActiveEx(not isBuy)
-        self.TxtDiscountTag.text = (self.ShopDiscount * 10) .. XUiHelper.GetText("Snap")
+        self:SetDiscount(self.TxtDiscountTag)
     end
 
     local icon = self._Control:GetCfgItemIcon(itemId)
@@ -174,7 +174,7 @@ function XUiGoldenMinerShopGrid:_UpdateUpgradeLevel(upgradeId)
     -- 折扣
     if self.DiscountTag and self.SkipDiscount ~= 1 then
         self.DiscountTag.gameObject:SetActiveEx(isCanUpgrade)
-        self.TxtDiscountTag.text = (self.SkipDiscount * 10) .. XUiHelper.GetText("Snap")
+        self:SetDiscount(self.TxtDiscountTag)
     end
 
     self:RefreshPriceColor(prices)
@@ -198,7 +198,7 @@ function XUiGoldenMinerShopGrid:_UpdateUpgradeSameBuy(upgradeId, upgradeLocalId)
     self.TxtSaleRate.gameObject:SetActiveEx(prices ~= originPrices)-- 折扣
     if self.DiscountTag and self.SkipDiscount ~= 1 then
         self.DiscountTag.gameObject:SetActiveEx(isCanUpgrade)
-        self.TxtDiscountTag.text = (self.SkipDiscount * 10) .. XUiHelper.GetText("Snap")
+        self:SetDiscount(self.TxtDiscountTag)
     end
 
     self:RefreshPriceColor(prices)
@@ -233,8 +233,18 @@ function XUiGoldenMinerShopGrid:_UpdateUpgradeSameReplace(upgradeId, upgradeLoca
     self.PanelLevel.gameObject:SetActiveEx(false)
     if self.DiscountTag and self.SkipDiscount ~= 1 then
         self.DiscountTag.gameObject:SetActiveEx(isCanUpgrade)
-        self.TxtDiscountTag.text = (self.SkipDiscount * 10) .. XUiHelper.GetText("Snap")
+        self:SetDiscount(self.TxtDiscountTag)
     end
+end
+
+function XUiGoldenMinerShopGrid:SetDiscount(textComponent)
+    local discount = nil
+    if XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion() then
+        discount = math.floor(self.ShopDiscount * 100)
+    else
+        discount = self.ShopDiscount * 10
+    end
+    textComponent.text = XUiHelper.GetText("Snap", discount)
 end
 
 function XUiGoldenMinerShopGrid:CheckUpgradeCanBuy()

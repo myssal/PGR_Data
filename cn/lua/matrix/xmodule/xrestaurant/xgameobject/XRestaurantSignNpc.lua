@@ -40,7 +40,7 @@ function XRestaurantSignNpc:GetControllerPath()
 end
 
 function XRestaurantSignNpc:GetCharTypeDesc()
-    return "签到NPC"
+    return CS.XTextManager.GetLuaText("XRestaurantSignNpc.lua_43")
 end
 
 function XRestaurantSignNpc:InitCharTransform()

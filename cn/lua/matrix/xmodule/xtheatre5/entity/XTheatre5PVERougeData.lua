@@ -260,8 +260,10 @@ function XTheatre5PVERougeData:GetStoryLineEndingNodeData()
     for k, pveStoryLineData in pairs(self.PveStoryLines) do
         if XTool.IsNumberValid(pveStoryLineData.CurContentId) then
             local storyLineContentCfg = self._OwnerModel:GetStoryLineContentCfg(pveStoryLineData.CurContentId)
-            if storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.StoryLineEnd then
-                return pveStoryLineData
+            if storyLineContentCfg then
+                if storyLineContentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.StoryLineEnd then
+                    return pveStoryLineData
+                end
             end
         end        
     end

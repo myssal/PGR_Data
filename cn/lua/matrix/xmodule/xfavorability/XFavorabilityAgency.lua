@@ -375,10 +375,6 @@ function XFavorabilityAgency:HasActionToBeUnlock(characterId)
     return false
 end
 
-function XFavorabilityAgency:GetCharacterActionMapText(mapCode)
-    return self._Model:GetCharacterActionMapText(mapCode)
-end
-
 -- [异闻是否解锁]
 function XFavorabilityAgency:IsRumorUnlock(characterId, rumorId)
     local favorabilityDatas = self:GetCharacterFavorabilityDatasById(characterId,true)
@@ -731,25 +727,7 @@ end
 
 --获取角色所有事件
 function XFavorabilityAgency:GetSignBoardConfigByRoldIdAndCondition(roleId, conditionId)
-    self._Model:CheckSignBoardDataDone()
-    local all = {}
-
-    if self._Model._TableSignBoardRoleIdIndexs and self._Model._TableSignBoardRoleIdIndexs[roleId] then
-        local configs = self._Model._TableSignBoardRoleIdIndexs[roleId][conditionId]
-        if configs then
-            for _, v in ipairs(configs) do
-                table.insert(all, v)
-            end
-        end
-    end
-
-    if self._Model._TableSignBoardIndexs and self._Model._TableSignBoardIndexs[conditionId] then
-        for _, v in ipairs(self._Model._TableSignBoardIndexs[conditionId]) do
-            table.insert(all, v)
-        end
-    end
-
-    return all
+    return self._Model:GetSignBoardConfigByRoldIdAndCondition(roleId, conditionId)
 end
 
 --根据操作获取表数据
@@ -1222,11 +1200,6 @@ end
 
 function XFavorabilityAgency:GetSignBoardConfigByRoldId(roleId)
     return self._Model:GetSignBoardConfigByRoldId(roleId)
-end
-
---获取打断的播放
-function XFavorabilityAgency:GetBreakPlayElements()
-    return self._Model._TableSignBoardBreak
 end
 
 --获取被动事件

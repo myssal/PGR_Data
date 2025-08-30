@@ -220,8 +220,11 @@ function XRestaurantAgency:LoadScene(isLevelUp)
     loader:LoadAsync(sceneUrl, function(asset)
         if not asset then
             XLog.Error("restaurant load resource error: asset path = " .. sceneUrl)
+            --加载失败 - 释放
+            CS.XLoaderUtil.ClearModuleLoader(ModuleId.XRestaurant)
             return
         end
+        --加载成功 - 通过Control Release时自动释放
         self._SceneAsset = sceneUrl
         self._SceneObj = XUiHelper.Instantiate(asset)
 
@@ -249,10 +252,11 @@ function XRestaurantAgency:GetSceneObj()
 end
 
 function XRestaurantAgency:ResetSceneObj()
-    ---@type XLoaderUtil
-    local loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XRestaurant)
-    loader:Unload(self._SceneAsset)
     self._SceneObj = nil
+end
+
+function XRestaurantAgency:GetSceneAssetUrl()
+    return self._SceneAsset
 end
 
 function XRestaurantAgency:ExCheckInTime()

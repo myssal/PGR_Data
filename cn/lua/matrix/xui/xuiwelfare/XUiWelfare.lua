@@ -633,8 +633,14 @@ end
 -- 刷新月卡红点
 function XUiWelfare:RefreshWelfareCardRed()
     local btn = self.TabButtons[self.TabIndex]
-    if btn then
+    local config = self.Configs[self.TabIndex]
+    if not config then
         btn:ShowReddot(not XDataCenter.PayManager.IsGotCard())
+        return
+    end
+    local firstRedPoint = XSignInConfigs.CheckWelfareRedPoint(config.FunctionType, config)
+    if btn then
+        btn:ShowReddot(firstRedPoint)
     end
 end
 

@@ -14,34 +14,12 @@ function XUiModelTheatre5PVPCharacter3D:OnEnable()
     self:PlayAnimation('Enable')
 end
 
-function XUiModelTheatre5PVPCharacter3D:UpdateRoleModelByHand(characterId, fashionId, runtimeControllerName)
+function XUiModelTheatre5PVPCharacter3D:UpdateRoleModelByHand(characterId, fashionId, weaponId, runtimeControllerName)
     if not self.UiPanelRoleModel then
         return
     end
-    
-    --获取时装ModelName
-    local resourcesId
-    if fashionId then
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
-    else
-        resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
-    end
 
-    local fashionModelName
-
-    if resourcesId then
-        fashionModelName = XMVCA.XCharacter:GetCharResModel(resourcesId)
-    else
-        fashionModelName = XDisplayManager.GetModelName(characterId)
-    end
-
-    local isSpecialModel, isMultiModel = XModelManager.CheckModelIsSpecial(fashionModelName, self.UiPanelRoleModel.RefName)
-    -- 特殊模型 && 非多重模型
-    if isSpecialModel and not isMultiModel then
-        fashionModelName = XModelManager.GetSpecialModelId(fashionModelName, self.UiPanelRoleModel.RefName)
-    end
-
-    self.UiPanelRoleModel:UpdateCharacterModel(characterId, nil, self.UiPanelRoleModel.RefName, nil, nil, fashionId, nil, nil, nil, true)
+    self.UiPanelRoleModel:UpdateCharacterModel(characterId, nil, self.UiPanelRoleModel.RefName, nil, nil, fashionId, nil, nil, nil, true, weaponId)
     -- 加载animationController
     local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, self.UiPanelRoleModel.RefName)
 
@@ -64,7 +42,7 @@ function XUiModelTheatre5PVPCharacter3D:UpdateRoleModelByHand(characterId, fashi
         -- 重新加载特效
         local actionId = self.UiPanelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
 
-        local weaponFashionId
+        local weaponFashionId = weaponId
         if XRobotManager.CheckIsRobotId(characterId) then
             local robotId = characterId
             characterId = XRobotManager.GetCharacterId(robotId)

@@ -30,11 +30,22 @@ end
 ---@param skipDatas XTable.XTableSkipFunctional
 function XSoloReformAgency:ExOnSkip(skipDatas)
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.SoloReform, true) 
-       and XTool.IsNumberValid(self._Model:GetActivityId()) then
+       and self:InActivityTime() then
         XLuaUiManager.Open('UiSoloReformMain')
+        return true
     else
-        XUiManager.TipText('CommonActivityNotStart') 
+        XUiManager.TipText('WorldBossIsNotOpen') 
+    end
+    return false    
+end
+
+function XSoloReformAgency:InActivityTime()
+    local activityId = self._Model:GetActivityId()
+    if not XTool.IsNumberValid(activityId) then
+        return false
     end    
+    local activityCfg = self._Model:GetSoloReformCfg(activityId)
+    return XFunctionManager.CheckInTimeByTimeId(activityCfg.OpenTime)
 end
 
 function XSoloReformAgency:OnNotifySoloReformData(data)

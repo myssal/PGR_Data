@@ -21,8 +21,7 @@ function XUiGridTalentItem:Refresh(talentConfig)
     -- 初始化prefab组件, 初始化一次
     if not self.TalentPrefab and not self.IsInit then
         self.IsInit = true
-        local prefabPath = XGuildConfig.GetGuildTalentText(self.TalentConfig.PrefabPath)
-        self.TalentPrefab = self.Transform:LoadPrefab(prefabPath)
+        self.TalentPrefab = self.Transform:LoadPrefab(self.TalentConfig.PrefabPath)
         local uiObj = self.TalentPrefab.transform:GetComponent("UiObject")
         for i = 0, uiObj.NameList.Count - 1 do
             self[uiObj.NameList[i]] = uiObj.ObjList[i]

@@ -374,6 +374,7 @@ function XUiPanelSignBoard:AutoAddListener()
     self:RegisterClickEvent(self.BtnCommunication, self.OnBtnCommunicationClick)
 end
 
+--[[
 function XUiPanelSignBoard:OnBtnFaceClick(CvId)--ZStest
     local behaviour = self.RoleModel.Transform:GetComponent(typeof(CS.XLuaBehaviour))
     if not behaviour then
@@ -424,6 +425,7 @@ function XUiPanelSignBoard:OnBtnFaceClick(CvId)--ZStest
         end
     end
 end
+]]
 
 -- auto 随机替换
 function XUiPanelSignBoard:OnBtnReplaceClick()
@@ -655,7 +657,12 @@ end
 
 --播放CV
 function XUiPanelSignBoard:PlayCv(cvId)
-    self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId)
+    local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+    if targetSkinMeshFace then
+        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace)
+    else
+        self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
+    end
 end
 
 function XUiPanelSignBoard:PlayCvWithCvType(cvId, cvType)
@@ -665,8 +672,13 @@ function XUiPanelSignBoard:PlayCvWithCvType(cvId, cvType)
         self.Parent:PlayChangeActionEffect()
         self.PlayingAudio = false
     end
-
-    self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
+    
+    local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
+    if targetSkinMeshFace then
+        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace, cvType or -1)
+    else
+        self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
+    end
 end
 
 --是否在播放看板系统下语音页签的语音

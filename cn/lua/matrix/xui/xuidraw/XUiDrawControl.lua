@@ -198,7 +198,41 @@ function XUiDrawControl:OnDraw(drawCount)
             end, info, list)
             --self.UiDraw:SetExtraRewardList(extraRewardList)
             --self.UiDraw:HideUiView(onAnimFinish)
+            self:SetDrawEvent(drawInfo,drawCount)
         end)
+    end
+end
+
+function XUiDrawControl:SetDrawEvent(drawInfo, drawCount)
+    if drawCount < 10 then
+        return
+    end
+    local combination = XDataCenter.DrawManager.GetDrawCombination(drawInfo.Id)
+    if combination then
+        if combination.Type == XDrawConfigs.CombinationsTypes.Aim then
+            local aimType = combination.GoodsId[1]
+            if aimType ~= nil then
+                aimType = XArrangeConfigs.GetType(aimType)
+            end
+            if not aimType or aimType == XArrangeConfigs.Types.Character then
+                --CheckPoint: APPEVENT_DRAWS_ROLE_10_1
+                XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.draws_role_10)
+            else
+                --CheckPoint: APPEVENT_DRAWS_WEAPON_10_1
+                XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.draws_weapon_10)
+            end
+        elseif combination.Type == XDrawConfigs.CombinationsTypes.NewUp then
+            --CheckPoint: APPEVENT_DRAWS_LIMIT_10
+            XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.draws_limit_10)
+        end
+    else
+        if drawInfo.Id == 101 then
+            --CheckPoint: APPEVENT_DRAWS_ROLE_10_2
+            XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.draws_role_10)
+        elseif drawInfo.Id == 201 then
+            --CheckPoint: APPEVENT_DRAWS_WEAPON_10_2
+            XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.draws_weapon_10)
+        end
     end
 end
 

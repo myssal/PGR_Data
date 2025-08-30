@@ -4,10 +4,26 @@ function XUiGridServer:Ctor(ui)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     XTool.InitUiObject(self)
+    if XOverseaManager.IsENRegion() then
+        self.TxtLowState = self.Transform:Find("PanelLow/TxtState")
+        self.TxtMaintainState = self.Transform:Find("PanelMaintain/TxtState")
+        self.LightHigh = self.Transform:Find("PanelHigh/Light")
+        self.LightLow = self.Transform:Find("PanelLow/Light")
+        self.LightMaintain = self.Transform:Find("PanelMaintain/Light")
+    end
 end
 
 function XUiGridServer:Init(uiRoot)
     self.UiRoot = uiRoot
+    if XOverseaManager.IsENRegion() then
+        self.TxtHigh.gameObject:SetActiveEx(XMain.IsDebug)
+        self.ImgSelect.gameObject:SetActiveEx(XMain.IsDebug)
+        self.TxtLowState.gameObject:SetActiveEx(XMain.IsDebug)
+        self.LightHigh.gameObject:SetActiveEx(XMain.IsDebug)
+        self.LightLow.gameObject:SetActiveEx(XMain.IsDebug)
+        self.TxtMaintainState.gameObject:SetActiveEx(XMain.IsDebug)
+        self.LightMaintain.gameObject:SetActiveEx(XMain.IsDebug)
+    end
 end
 
 function XUiGridServer:UpdateServerState()
@@ -51,6 +67,9 @@ end
 
 function XUiGridServer:UpdateServerSelect()
     self.ImgSelect.gameObject:SetActiveEx(self.Server.Id == XServerManager.Id)
+    if XMain.IsDebug and XOverseaManager.IsENRegion() then
+        self.ImgSelect.gameObject:SetActiveEx(self.Server.Id == XServerManager.Id)
+    end
 end
 
 function XUiGridServer:OnRecycle()

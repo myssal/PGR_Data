@@ -13,7 +13,7 @@ XHitMouseManagerCreator = function()
             ActivityId
         )
     end
-
+    local KeyAccountEnterHitMouse = "HitMouse"
     local StageScores
     --================
     --已接受奖励的下标，注意后端接受的下标从0开始，要+1处理
@@ -372,6 +372,13 @@ XHitMouseManagerCreator = function()
     function HitMouseManager.OnActivityEndHandler()
         XLuaUiManager.RunMain()
         XUiManager.TipMsg(CS.XTextManager.GetText("CommonActivityEnd"))
+    end
+
+    --================
+    --返回检查是否是第一次打开关卡本地LocalKey
+    --================
+    function HitMouseManager.GetAccountEnterKey()
+        return KeyAccountEnterHitMouse .. XPlayer.Id
     end
     --=====================================
     --跳转和活动时间方法集 End

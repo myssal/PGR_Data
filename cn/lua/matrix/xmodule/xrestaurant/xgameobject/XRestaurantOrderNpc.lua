@@ -58,7 +58,7 @@ function XRestaurantOrderNpc:GetObjName()
 end
 
 function XRestaurantOrderNpc:GetCharTypeDesc()
-    return "订单NPC"
+    return CS.XTextManager.GetLuaText("XRestaurantOrderNpc.lua_61")
 end
 
 function XRestaurantOrderNpc:OnClick()

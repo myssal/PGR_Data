@@ -224,48 +224,46 @@ XActivityBriefManagerCreator = function()
         return nowSpecialActivityTemplates
     end
 
-
     function XActivityBriefManager.CheckIsNewSpecialActivityOpen()
         -- 清空当前活动状态表
         for i = 1, #ActiveSpecialIds do
             ActiveSpecialIds[i] = nil
         end
-
+    
         local timeOfNow = XTime.GetServerNowTimestamp()
-        local isChange = false -- 用于标记是否有变化
+        local isChange = false
+    
         -- 遍历所有活动配置
-        for _, v in ipairs(XActivityBriefConfigs.GetAllActivityEntryConfig()) do
+        local allConfigs = XActivityBriefConfigs.GetAllActivityEntryConfig()
+        for _, v in ipairs(allConfigs) do
             -- v2.7屏蔽仅红点检测的条目
-            if XTool.IsNumberValid(v.OnlyRedPoint) then
-                goto CONTINUE
-            end
-
-            local timeOfBgn = XFunctionManager.GetStartTimeByTimeId(v.TimeId)
-            local timeOfEnd = XFunctionManager.GetEndTimeByTimeId(v.TimeId)
-
-            -- 检测活动是否处于激活状态
-            if timeOfNow >= timeOfBgn and (v.Condition == 0 or XConditionManager.CheckCondition(v.Condition)) then
-                table.insert(ActiveSpecialIds, v.Id)
-            end
-
-            local beforrActiveSpecialIdsLength = #ActiveSpecialIds
-            -- 移除已结束的活动
-            if timeOfNow >= timeOfEnd then
-                if ActiveSpecialIds[#ActiveSpecialIds] == v.Id then
-                    ActiveSpecialIds[#ActiveSpecialIds] = nil
+            if not XTool.IsNumberValid(v.OnlyRedPoint) then
+                local timeOfBgn = XFunctionManager.GetStartTimeByTimeId(v.TimeId)
+                local timeOfEnd = XFunctionManager.GetEndTimeByTimeId(v.TimeId)
+    
+                -- 检测活动是否处于激活状态（开始了、没结束、条件通过）
+                if timeOfNow >= timeOfBgn 
+                    and timeOfNow < timeOfEnd 
+                    and (v.Condition == 0 or XConditionManager.CheckCondition(v.Condition)) then
+                    table.insert(ActiveSpecialIds, v.Id)
                 end
             end
-
-            if ActiveSpecialIdsRecord[beforrActiveSpecialIdsLength] ~= ActiveSpecialIds[beforrActiveSpecialIdsLength] then
-                isChange = true
-            end
-
-            ::CONTINUE::
         end
-
-        -- 根据isChange的值决定是否更新记录并返回结果
+    
+        -- 检测是否有变化
+        if #ActiveSpecialIds ~= #ActiveSpecialIdsRecord then
+            isChange = true
+        else
+            for i = 1, #ActiveSpecialIds do
+                if ActiveSpecialIds[i] ~= ActiveSpecialIdsRecord[i] then
+                    isChange = true
+                    break
+                end
+            end
+        end
+    
+        -- 更新记录并返回结果
         if isChange then
-            -- 如果有变化，更新记录并返回true
             for i = 1, #ActiveSpecialIdsRecord do
                 ActiveSpecialIdsRecord[i] = nil
             end
@@ -274,7 +272,7 @@ XActivityBriefManagerCreator = function()
             end
             return true
         end
-
+    
         return false
     end
 

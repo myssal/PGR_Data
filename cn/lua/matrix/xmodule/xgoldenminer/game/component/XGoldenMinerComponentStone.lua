@@ -16,6 +16,8 @@ function XGoldenMinerComponentStone:OnInit()
 
     ---该抓取物当前实际重量（受Buff影响）
     self.CurWeight = 0
+    
+    self.IgnoreWeight = false
 
     self.BornDelayTime = 0
 
@@ -62,6 +64,66 @@ function XGoldenMinerComponentStone:OnRelease()
     
     self.CanInteraction = false
 end
+--endregion
+
+--region Setter
+
+function XGoldenMinerComponentStone:SetTransform(transform)
+    self.Transform = transform
+
+    if self.Transform then
+        self.LinkMask = XUiHelper.TryGetComponent(self.Transform, "Mask")
+        self.CopyStyle = XUiHelper.TryGetComponent(self.Transform, "Copy")
+
+        if self.LinkMask then
+            self.LinkMask.gameObject:SetActiveEx(false)
+        end
+
+        if self.CopyStyle then
+            self.CopyStyle.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
+function XGoldenMinerComponentStone:SetBornDelayTime(bornDelayTime)
+    self.BornDelayTime = bornDelayTime
+end
+
+function XGoldenMinerComponentStone:SetCurWeight(weight)
+    self.CurWeight = weight
+end
+
+function XGoldenMinerComponentStone:SetIgnoreWeight(isIgnore)
+    self.IgnoreWeight = isIgnore
+end
+
+function XGoldenMinerComponentStone:SetCopyStyleShow(isCopy)
+    if self.CopyStyle then
+        self.CopyStyle.gameObject:SetActiveEx(isCopy)
+    end
+end
+
+function XGoldenMinerComponentStone:SetLinkStyleShow(isLink)
+    if self.LinkMask then
+        self.LinkMask.gameObject:SetActiveEx(isLink)
+    end
+end
+--endregion
+
+--region Getter
+
+function XGoldenMinerComponentStone:GetIsIgnoreWeight()
+    return self.IgnoreWeight
+end
+
+function XGoldenMinerComponentStone:GetCurWeight()
+    return self.CurWeight
+end
+
+function XGoldenMinerComponentStone:CheckIsBornDelay()
+    return XTool.IsNumberValidEx(self.BornDelayTime)
+end
+
 --endregion
 
 return XGoldenMinerComponentStone

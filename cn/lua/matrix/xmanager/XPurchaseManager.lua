@@ -125,6 +125,14 @@ XPurchaseManagerCreator = function()
         end
     end
 
+    function XPurchaseManager.GetBoughtYKId()
+        local data = XPurchaseManager.GetYKInfoData()
+        if not data then
+            return XPurchaseConfigs.YKID
+        end
+        return data.Id
+    end
+
     function XPurchaseManager.GetPurchasePackagesByUiType(uiType)
         local rawDatas = XPurchaseManager.GetDatasByUiType(uiType)
         local results = {}
@@ -432,6 +440,34 @@ XPurchaseManagerCreator = function()
 
     -- Get月卡数据
     function XPurchaseManager.GetYKInfoData()
+        local datas = XPurchaseManager.GetYKInfoDatas()
+        if XOverseaManager.IsENRegion() then
+            for _, data in pairs(datas) do
+                if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
+                    return data
+                end
+            end
+            return nil
+        else
+            if not datas[1] then
+                return nil
+            end
+            
+            return datas[1]
+        end
+    end
+
+    function XPurchaseManager.GetYKInfoDataById(monthlyCardId)
+        local datas = XPurchaseManager.GetYKInfoDatas()
+        for id, data in pairs(datas) do
+            if data.Id == monthlyCardId then
+                return data
+            end
+        end
+        return nil
+    end
+
+    function XPurchaseManager.GetYKInfoDatas()
         local data = {}
         local uiTypeList = XPurchaseConfigs.GetYKUiTypes()
         if uiTypeList and Next(uiTypeList) then
@@ -439,26 +475,21 @@ XPurchaseManagerCreator = function()
                 table.insert(data, XPurchaseManager.GetDatasByUiType(uiType))
             end
         end
-
         if not data[1] then
             return nil
         end
-
-        if not data[1][1] then
-            return nil
-        end
-
-        return data[1][1]
+        return data[1]
     end
 
     -- 是否已经买过了
     function XPurchaseManager.IsYkBuyed()
-        local data = XPurchaseManager.GetYKInfoData()
-        if not data then
-            return false
+        local datas = XPurchaseManager.GetYKInfoDatas()
+        for id, data in pairs(datas) do
+            if data.DailyRewardRemainDay > 0 then
+                return true
+            end
         end
-
-        return data.DailyRewardRemainDay > 0
+        return false
     end
 
     function XPurchaseManager.FreeLBRed()
@@ -760,6 +791,8 @@ XPurchaseManagerCreator = function()
                     cb(rewardGoodsList)
                 end
             end
+             --CheckPoint: APPEVENT_TOTAL_PURCHASE
+            XAppEventManager.AccumulatePayAppLogEvent(rewardId)
             XEventManager.DispatchEvent(XEventId.EVENT_ACCUMULATED_REWARD)
         end
         )
@@ -1099,7 +1132,7 @@ XPurchaseManagerCreator = function()
         end
 
         if not XTool.IsNumberValid(purchaseInfoData.SkipId) then
-            if id == XPurchaseConfigs.YKID and not purchaseInfoData.IsDailyRewardGet then
+            if XPurchaseConfigs.IsYKID(id) and not purchaseInfoData.IsDailyRewardGet then
                 XLuaUiManager.Open("UiSignCardPopup")
             end
             return
@@ -1263,7 +1296,8 @@ XPurchaseManagerCreator = function()
 
     function XPurchaseManager.OpenYKPackageBuyUi(notEnoughCb, beforeBuyCb, buyFinishedCb)
         local callback = function()
-            local data = XPurchaseManager.GetPurchasePackageById(XPurchaseConfigs.YKID)
+            local boughtYKID = XPurchaseManager.GetBoughtYKId()
+            local data = XPurchaseManager.GetPurchasePackageById(boughtYKID)
             if data:GetCurrentBuyTime() > 0 then
                 local clientResetInfo = data:GetClientResetInfo()
                 if not (clientResetInfo and clientResetInfo.DayCount >= data:GetDailyRewardRemainDay()
@@ -1302,7 +1336,7 @@ XPurchaseManagerCreator = function()
                 if buyFinishedCb then
                     buyFinishedCb(rewardList)
                 end
-                if data:GetId() == XPurchaseConfigs.YKID then
+                if XPurchaseConfigs.IsYKID(data:GetId()) then
                     XEventManager.DispatchEvent(XEventId.EVENT_VIP_CARD_BUY_SUCCESS)
                 end
             end
@@ -1359,8 +1393,15 @@ XPurchaseManagerCreator = function()
     end
 
     local PurchasePackageId2Class = {
-        [XPurchaseConfigs.YKID] = require("XEntity/XPurchase/XYKPurchasePackage")
+        [XPurchaseConfigs.YKID] = require("XEntity/XPurchase/XYKPurchasePackage"),
     }
+    
+    if XOverseaManager.IsENRegion() then
+        -- EN有多个月卡
+        PurchasePackageId2Class[83028] = require("XEntity/XPurchase/XYKPurchasePackage")
+        PurchasePackageId2Class[90032] = require("XEntity/XPurchase/XYKPurchasePackage")
+    end
+
     function XPurchaseManager.CreatePurchasePackage(id, data)
         local result = nil
         local class = PurchasePackageId2Class[id]

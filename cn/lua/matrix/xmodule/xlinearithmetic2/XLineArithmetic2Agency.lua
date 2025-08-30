@@ -207,11 +207,14 @@ function XLineArithmetic2Agency:IsShowRedDot()
         end
     end
 
-    local taskDataList = XDataCenter.TaskManager.GetLineArithmeticTaskList()
-    for i = 1, #taskDataList do
-        local taskData = taskDataList[i]
-        if taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
-            return true
+    local taskIdList = self._Model:GetTaskList()
+    for i = 1, #taskIdList do
+        local taskId = taskIdList[i]
+        local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+        if taskData then
+            if taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+                return true
+            end    
         end
     end
 
@@ -231,6 +234,10 @@ end
 
 function XLineArithmetic2Agency:ExOnSkip()
     if not self:ExCheckInTime() then
+        if self._Model:IsExpire() then
+            XUiManager.TipText("ActivityMainLineEnd")
+            return false
+        end
         XUiManager.TipText("ActivityBranchNotOpen")
         return false
     end

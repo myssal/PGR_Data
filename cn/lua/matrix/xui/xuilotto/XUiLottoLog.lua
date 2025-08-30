@@ -58,6 +58,7 @@ function XUiLottoLog:SetTypeText()
     TypeText[XArrangeConfigs.Types.Furniture] = CS.XTextManager.GetText("TypeFurniture")
     TypeText[XArrangeConfigs.Types.HeadPortrait] = CS.XTextManager.GetText("TypeHeadPortrait")
     TypeText[XArrangeConfigs.Types.ChatEmoji] = CS.XTextManager.GetText("TypeChatEmoji")
+    TypeText[XArrangeConfigs.Types.Partner] = CS.XTextManager.GetText("TypePartner")
 end
 
 function XUiLottoLog:InitDrawLogListPanel()

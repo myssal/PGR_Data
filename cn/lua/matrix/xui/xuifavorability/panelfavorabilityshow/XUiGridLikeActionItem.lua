@@ -47,7 +47,7 @@ function XUiGridLikeActionItem:UpdateNormalStatus(isNormal)
     self.ActionNor.gameObject:SetActiveEx(isNormal)
     if isNormal and self.ActionData then
         local currentCharacterId = self.Parent:GetCurrFavorabilityCharacter()
-        self.TxtTitle.text = self._Control:GetCharacterActionMapText(self.ActionData.config.Name)
+        self.TxtTitle.text = self.ActionData.config.Name
         self.RawImage:SetRawImage(XMVCA.XCharacter:GetCharSmallHeadIcon(currentCharacterId))
     end
 end
@@ -63,8 +63,12 @@ end
 function XUiGridLikeActionItem:UpdateLockStatus(isLock)
     self.ActionLock.gameObject:SetActiveEx(isLock)
     if isLock and self.ActionData then
-        self.TxtLockTitle.text = self._Control:GetCharacterActionMapText(self.ActionData.config.Name)
-        self.TxtLock.text = XUiHelper.ConvertSpaceToLineBreak(self._Control:GetCharacterActionMapText(self.ActionData.config.ConditionDescript))
+        self.TxtLockTitle.text = self.ActionData.config.Name
+        if XOverseaManager.IsENRegion() then
+            self.TxtLock.text = self.ActionData.config.ConditionDescript
+        else
+            self.TxtLock.text = XUiHelper.ConvertSpaceToLineBreak(self.ActionData.config.ConditionDescript)
+        end
     end
 end
 

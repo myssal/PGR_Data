@@ -7,6 +7,7 @@ XPrefs.Channel = "CHANNEL"
 XPrefs.Token = "TOKEN"
 
 XPrefs.ServerId = "SERVER_ID"
+XPrefs.User_ServerId = "USER_SERVER_ID"
 
 XPrefs.CharacterStoryRecord = "CHARACTER_STORY_RECORD"
 

@@ -116,7 +116,7 @@ function XUiGuildChangePosition:HandleChangePosition()
         self.TabPositions[i].gameObject:SetActiveEx(true)
         local name = (self.MemberPosition[i].RankName ~= nil) and self.MemberPosition[i].RankName or self.MemberPosition[i].Name
         self.TabPositions[i]:SetNameByGroup(0,name)
-        if self.MemberPosition[i].Id < XGuildConfig.GuildRankLevel.Member then
+        if self.MemberPosition[i].Id <= XGuildConfig.GuildRankLevel.Member then
             local state = string.format("%d/%d", self.MemberPosition[i].CurAmount, self.MemberPosition[i].MaxAmount)
             self.TabPositions[i]:SetNameByGroup(1,state)end
         if targetRankLevel == self.MemberPosition[i].Id then
@@ -187,7 +187,13 @@ function XUiGuildChangePosition:ConfirmSetName()
         XUiManager.TipMsg(CSXTextManagerGetText("GuildChangeInformationIsSame", typeTitle))
         return
     end
-    if string.match(guildName,"%s") then
+    local condition = string.match(guildName, "%s")
+    if XOverseaManager.IsKRRegion() then
+        condition = not string.match(guildName, "%S")
+    elseif XOverseaManager.IsENRegion() then
+        condition = not string.match(guildName, "%g")
+    end 
+    if condition then
         XUiManager.TipText("GuildNameSpecialTips",XUiManager.UiTipType.Wrong)
         return
     end

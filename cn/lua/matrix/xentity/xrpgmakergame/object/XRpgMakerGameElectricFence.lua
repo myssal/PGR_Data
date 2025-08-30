@@ -37,7 +37,7 @@ function XRpgMakerGameElectricFence:InitData()
     -- local pointX = XRpgMakerGameConfigs.GetRpgMakerGameElectricFenceX(id)
     -- local pointY = XRpgMakerGameConfigs.GetRpgMakerGameElectricFenceY(id)
     -- self:UpdatePosition({PositionX = pointX, PositionY = pointY})
-    self:SetElectricStatus(XRpgMakerGameConfigs.XRpgMakerGameElectricFenceStatus.Open)
+    self:SetElectricStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameElectricFenceStatus.Open)
     if not XTool.IsTableEmpty(self.MapObjData) then
         self:InitDataByMapObjData(self.MapObjData)
     end
@@ -47,7 +47,7 @@ end
 function XRpgMakerGameElectricFence:InitDataByMapObjData(mapObjData)
     self.MapObjData = mapObjData
     self:UpdatePosition({PositionX = self.MapObjData:GetX(), PositionY = self.MapObjData:GetY()})
-    self:SetElectricStatus(XRpgMakerGameConfigs.XRpgMakerGameElectricFenceStatus.Open)
+    self:SetElectricStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameElectricFenceStatus.Open)
 end
 
 --改变方向
@@ -57,28 +57,22 @@ function XRpgMakerGameElectricFence:ChangeDirectionAction(action, cb)
         return
     end
 
-    -- local electricFenceId = self:GetId()
-    -- local x = XRpgMakerGameConfigs.GetRpgMakerGameElectricFenceX(electricFenceId)
-    -- local y = XRpgMakerGameConfigs.GetRpgMakerGameElectricFenceY(electricFenceId)
-    local x = self.MapObjData:GetX()
-    local y = self.MapObjData:GetY()
-    local cube = self:GetCubeObj(y, x)
-    local cubeSize = cube:GetGameObjSize()
+    local modelKey = self:GetModelKey()
+    local cubeSize = XMVCA.XRpgMakerGame:GetConfig():GetModelSize(modelKey)
 
     local objPosition = transform.position
     local direction = action.Direction
     local directionPos
-    if direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridLeft then
+    if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridLeft then
         directionPos = objPosition - Vector3(cubeSize.x / 2, 0, 0)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridRight then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridRight then
         directionPos = objPosition + Vector3(cubeSize.x / 2, 0, 0)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridTop then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridTop then
         directionPos = objPosition + Vector3(0, 0, cubeSize.z / 2)
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGapDirection.GridBottom then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridBottom then
         directionPos = objPosition - Vector3(0, 0, cubeSize.z / 2)
     end
 
-    local transform = self:GetTransform()
     local lookRotation = LookRotation(directionPos - objPosition)
     self:SetGameObjectRotation(lookRotation)
     self:SetGameObjectPosition(directionPos)
@@ -95,7 +89,7 @@ end
 --播放状态切换动画
 function XRpgMakerGameElectricFence:PlayElectricFenceStatusChangeAction(cb, isNotPlaySound)
     if self.ElectricFenceEffect then
-        local isShow = self._ElectricStatus == XRpgMakerGameConfigs.XRpgMakerGameElectricFenceStatus.Open and true or false
+        local isShow = self._ElectricStatus == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameElectricFenceStatus.Open and true or false
         self.ElectricFenceEffect.gameObject:SetActiveEx(isShow)
     end
 
@@ -119,10 +113,10 @@ function XRpgMakerGameElectricFence:IsElectricFenceInMiddle(curPosX, curPosY, di
 
     --下一个坐标和电墙位置相同，且方向相反
     if self:IsSamePoint(nextPosX, nextPosY)
-        and ((electricDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridLeft and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight)
-        or (electricDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridRight and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft)
-        or (electricDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridTop and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown)
-        or (electricDirection == XRpgMakerGameConfigs.RpgMakerGapDirection.GridBottom and direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp)) then
+        and ((electricDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridLeft and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight)
+        or (electricDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridRight and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft)
+        or (electricDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridTop and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown)
+        or (electricDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGapDirection.GridBottom and direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp)) then
         return true
     end
 
@@ -130,8 +124,8 @@ function XRpgMakerGameElectricFence:IsElectricFenceInMiddle(curPosX, curPosY, di
 end
 
 function XRpgMakerGameElectricFence:OnLoadComplete()
-    local key = XRpgMakerGameConfigs.ModelKeyMaps.ElectricFenceEffect
-    local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(key)
+    local key = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.ElectricFenceEffect
+    local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(key)
     local resource = self:ResourceManagerLoad(modelPath)
     local asset = resource and resource.Asset
     if asset then

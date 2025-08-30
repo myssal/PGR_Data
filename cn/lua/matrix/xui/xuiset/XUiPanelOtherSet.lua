@@ -92,7 +92,11 @@ function XUiPanelOtherSet:InitUi()
     
     self:AddListener()
     self:ShowFilings()
-    self:ShowAgreement()
+    if XOverseaManager.IsOverSeaRegion() then
+        self:ShowOverSeaAgreement()
+    else
+        self:ShowAgreement()
+    end
     self:InitFightVibration()
 end
 
@@ -223,8 +227,25 @@ function XUiPanelOtherSet:ShowAgreement()
     end
 end
 
+function XUiPanelOtherSet:ShowOverSeaAgreement()
+    if self.BtnProtocolSetting then --海外先屏蔽库洛SDK隐私查看按钮
+        self.BtnProtocolSetting.gameObject:SetActiveEx(false)
+    end
+    if self.BtnUserCenter then --海外先屏蔽库洛SDK用户中心查看按钮
+        self.BtnUserCenter.gameObject:SetActiveEx(false)
+    end
+   
+    self.PanelAgreement.parent.gameObject:SetActive(false)
+end
+
 function XUiPanelOtherSet:ShowFilings()
     if XDataCenter.UiPcManager.IsPc() then
+        return
+    end
+    if XOverseaManager.IsOverSeaRegion() then
+        if self.Filings then
+            self.Filings.gameObject:SetActiveEx(false)
+        end
         return
     end
     if not self.Filings and not self.HtmlText then

@@ -48,7 +48,7 @@ function XMovieActionSoundPlay:OnUiRootDestroy()
     end
     OldVolume = {}
     self:StopLastCv()
-    CSXAudioManager.StopAll()
+
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Music, LastBgmCueId)
 end
 

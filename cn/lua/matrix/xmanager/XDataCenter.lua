@@ -65,6 +65,7 @@
 ---@field InputManagerPc InputManagerPc
 ---@field FubenActivityBossSingleManager XFubenActivityBossSingleManager
 ---@field CloudGameManager XCloudGameManager
+---@field CrossVersionManager XCrossVersionManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -225,7 +226,7 @@ function XDataCenter.InitDependency()
     InitManager("GuildWarManager", XGuildWarManagerCreator)
     --InitManager("DoubleTowersManager", XDoubleTowersManagerCreator)
     InitManager("WeekChallengeManager", XWeekChallengeManagerCreator)
-    --InitManager("RpgMakerGameManager", XRpgMakerGameManagerCreator)
+    InitManager("RpgMakerGameManager", XRpgMakerGameManagerCreator)
     --InitManager("MultiDimManager", XMultiDimManagerCreator)
     --InitManager("MoeWarManager", XMoeWarManagerCreator)
     InitManager("DlcHuntManager", XDlcHuntManagerCreator)
@@ -303,6 +304,7 @@ function XDataCenter.InitDependency()
     
     InitManager("GuildDormManager", XGuildDormManagerCreator)
     InitManager("UiPcManager", XUiPcManagerCreator)
+    InitManager("BackManager", XBackManagerCreator)
     InitManager("NewbieTaskManager", XNewbieTaskManagerCreator)
     InitManager("SummerSignInManager", XSummerSignInManagerCreator)
     InitManager("SkinVoteManager", XSkinVoteManagerCreator)
@@ -321,6 +323,7 @@ function XDataCenter.InitDependency()
     InitManager("XQualityManager", XQualityManagerCreator)
 
     InitManager("CloudGameManager", XCloudGameManagerCreator)
+    InitManager("CrossVersionManager", XCrossVersionManagerCreator)
 
     XDataCenter.FubenManagerEx.Init()
 
@@ -330,5 +333,6 @@ function XDataCenter.InitDependency()
 end
 
 function XDataCenter.InitRepeat()
+    -- 对照2次初始化内存
     XDataCenter.InitDependency()
 end

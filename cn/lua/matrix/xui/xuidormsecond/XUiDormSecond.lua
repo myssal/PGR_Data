@@ -235,7 +235,7 @@ function XUiDormSecond:SetTemplateInfo()
     local connectId = roomData:GetConnectDormId()
     local isConect = connectId > 0
     self.BtnDormTemplate.gameObject:SetActiveEx(self.CurDisplayState == DisplaySetType.MySelf)
-    self.BtnDormShare.gameObject:SetActiveEx(true)
+    self.BtnDormShare.gameObject:SetActiveEx(not XOverseaManager.IsOverSeaRegion()) --海外屏蔽宿舍分享按钮
 
     if not isConect then
         self.SliderTemplate.fillAmount = 0
@@ -621,7 +621,7 @@ function XUiDormSecond:OnCloseedCaress()
     self.BtnHelp.gameObject:SetActiveEx(true)
     self.TopInfos.gameObject:SetActiveEx(true)
     self.BtnCollect.gameObject:SetActiveEx(true)
-    self.BtnDormShare.gameObject:SetActiveEx(true)
+    self.BtnDormShare.gameObject:SetActiveEx(not XOverseaManager.IsOverSeaRegion())
     self.BtnDormTemplate.gameObject:SetActiveEx(true)
     self.BtnEdit.gameObject:SetActiveEx(true)
     self.PanelCaressUI:OnClose(self.CurDormId)
@@ -806,6 +806,14 @@ function XUiDormSecond:ComfortTipsTimerCb()
     CurrentSchedule = nil
 end
 
+function XUiDormSecond:RemoveTimer()--退出时关闭定时器，防止访问不存在的物体
+    if CurrentSchedule then
+        CS.XScheduleManager.UnSchedule(CurrentSchedule)
+        CurrentSchedule = nil
+    end
+end
+
+
 function XUiDormSecond:OnBtnMenuHide()
     if self.HostSecondSkipGo and self.CurMenState == true then
         self.CurMenState = false
@@ -910,7 +918,8 @@ end
 
 function XUiDormSecond:OnBtnMainUIClick()
     XEventManager.DispatchEvent(XEventId.EVENT_DORM_CLOSE_COMPONET)
-
+    self:RemoveTimer()
+    
     XLuaUiManager.RunMain()
     XHomeSceneManager.LeaveScene()
 end

@@ -71,7 +71,16 @@ function XUiGuildGrade:RefreshTalent(level)
     local talents = XGuildConfig.GetGuildTalentsByLevel(level)
     self:RefreshTemplateGrids(self.GridTalent, talents, self.PanelTalent, nil, "GridTalent", function(grid, talent)
         --移除 信标· 文本
-        grid.TxtTalentName.text = string.sub(talent.Name, 9)
+        if XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion() then
+            local temp = string.Split(talent.Name, "·")
+            if temp[2] then
+                grid.TxtTalentName.text = temp[2]
+            else
+                grid.TxtTalentName.text = talent.Name
+            end
+        else
+            grid.TxtTalentName.text = string.sub(talent.Name, 9)
+        end
         local talentConfig = XGuildConfig.GetGuildTalentConfigById(talent.Id)
         grid.RImgSkillIconNormal:SetRawImage(talentConfig.TalentIcon)
     end)

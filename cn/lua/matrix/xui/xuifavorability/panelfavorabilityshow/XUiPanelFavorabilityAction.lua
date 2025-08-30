@@ -239,7 +239,7 @@ function XUiPanelFavorabilityAction:OnActionClick(clickAction, grid, index)
             end
         end
     else
-        XUiManager.TipMsg(self._Control:GetCharacterActionMapText(clickAction.config.ConditionDescript))
+        XUiManager.TipMsg(clickAction.config.ConditionDescript)
     end
 end
 

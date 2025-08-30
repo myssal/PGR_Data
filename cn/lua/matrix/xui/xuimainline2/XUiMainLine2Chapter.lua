@@ -70,6 +70,7 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
 end
 
 function XUiMainLine2Chapter:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.MainLine)
     self:Refresh()
     self:CheckPlayEffect()
 end
@@ -103,6 +104,7 @@ function XUiMainLine2Chapter:RegisterUiEvents()
 end
 
 function XUiMainLine2Chapter:OnBtnBackClick()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.MainLine)
     self:Close()
 end
 

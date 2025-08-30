@@ -144,7 +144,7 @@ function XUiComTheatre5PVEChooseCharacter:OnBtnStartClickEvent()
             self:SetChooseDetailShow(true, self._CharacterId)
         end)
         return       
-    elseif curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.NormalAttack or 
+    elseif curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.NormalBattle or 
         curStoryLineType == XMVCA.XTheatre5.EnumConst.PVEChapterType.DeduceBattle then
         local contentId = self._Control.PVEControl:GetStoryLineContentId(storyEntranceCfg.StoryLine)
         if XTool.IsNumberValid(contentId) then --无效可能是复刷章节
@@ -184,6 +184,14 @@ function XUiComTheatre5PVEChooseCharacter:UpdateActionBtns(entranceName, charact
     if not entranceCfg then
         return false
     end
+    -- 角色由于剧情，暂时无法进入战斗
+    local isCharacterCanSelect = self._Control:IsCharacterCanSelect(characterId)
+    if not isCharacterCanSelect then
+        self.BtnStart:SetButtonState(CS.UiButtonState.Disable)
+        return
+    end
+    self.BtnStart:SetButtonState(CS.UiButtonState.Normal)
+    
     local isUnlock = self._Control.PVEControl:IsCharacterAndStoryLineUnlock(characterId,entranceName)
     self.BtnStart:SetDisable(not isUnlock, isUnlock)
     local curStoryLineType = self._Control.PVEControl:GetStoryLineCurNodeType(entranceCfg.StoryLine, entranceName)
@@ -226,6 +234,10 @@ function XUiComTheatre5PVEChooseCharacter:OnDestroy()
     XUiComTheatre5PVEChooseCharacter.Super.OnDestroy(self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_CHARACTER_HEAD, self.OnClickCharacterHead, self)
     self._UiModelGo = nil
+end
+
+function XUiComTheatre5PVEChooseCharacter:GetCurrentCharacterId()
+    return self._CharacterId
 end
 
 return XUiComTheatre5PVEChooseCharacter

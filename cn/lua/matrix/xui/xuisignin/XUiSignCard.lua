@@ -62,7 +62,7 @@ end
 function XUiSignCard:OnBtnGetClick()
     XDataCenter.PurchaseManager.YKInfoDataReq(function()
         local data = XDataCenter.PurchaseManager.GetYKInfoData()
-        if not data then
+        if not data or data.Id ~= self.Config.Param[2] then
             return
         end
 
@@ -92,7 +92,8 @@ function XUiSignCard:Refresh(configId, isShow, isAuto)
         self.PanelGet.gameObject:SetActive(false)
 
         self.Config = XSignInConfigs.GetSignCardConfig(configId)
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
+        local data = XDataCenter.PurchaseManager.GetYKInfoData()
+        local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
         if isBuy then
             self:RefreshGet()
             self:AutoGetReward(isAuto)
@@ -139,7 +140,7 @@ end
 
 function XUiSignCard:RefreshGet()
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
-    if not data then
+    if not data or data.Id ~= self.Config.Param[2] then
         return
     end
 

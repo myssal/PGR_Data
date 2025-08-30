@@ -1,27 +1,31 @@
 -- 选择关卡界面规则解说面板
 local XUiFingerGuessSSExplainPanel = XClass(nil, "XUiFingerGuessSSExplainPanel")
-local CHINESE_NUMBER = {
-    [1] = "一",
-    [2] = "两",
-    [3] = "三",
-    [4] = "四",
-    [5] = "五",
-    [6] = "六",
-    [7] = "七",
-    [8] = "八",
-    [9] = "九",
-    [10] = "十",
-    [11] = "十一",
-    [12] = "十二"
-    }
+local CHINESE_NUMBER = {}
 local INITIAL_TEXT = "Text initial complete."
 --================
 --构造函数
 --================
 function XUiFingerGuessSSExplainPanel:Ctor(gameObject, rootUi)
     self.RootUi = rootUi
+
+    CHINESE_NUMBER = {
+        [0] = "",
+        [1] = CS.XTextManager.GetText("One"),
+        [2] = CS.XTextManager.GetText("Two"),
+        [3] = CS.XTextManager.GetText("Three"),
+        [4] = CS.XTextManager.GetText("Four"),
+        [5] = CS.XTextManager.GetText("Five"),
+        [6] = CS.XTextManager.GetText("Six"),
+        [7] = CS.XTextManager.GetText("Seven"),
+        [8] = CS.XTextManager.GetText("Eight"),
+        [9] = CS.XTextManager.GetText("Nine"),
+        [10] = CS.XTextManager.GetText("Ten"),
+        [11] = CS.XTextManager.GetText("Eleven"),
+        [12] = CS.XTextManager.GetText("Twelve")
+    }
     XTool.InitUiObjectByUi(self, gameObject)
     self:InitPanel()
+    
 end
 --================
 --初始化面板

@@ -94,7 +94,7 @@ function XDlcRelinkAgency:ExGetChapterType()
 end
 
 function XDlcRelinkAgency:ExGetProgressTip()
-    return "进度提示"
+    return CS.XTextManager.GetLuaText("XDlcRelinkAgency.lua_97")
 end
 
 function XDlcRelinkAgency:ExCheckIsShowRedPoint()

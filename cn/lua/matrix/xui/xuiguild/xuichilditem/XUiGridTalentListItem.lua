@@ -11,10 +11,7 @@ function XUiGridTalentListItem:Refresh(talentConfig)
     self.TalentData = talentConfig
     self.TalentConfig = XGuildConfig.GetGuildTalentConfigById(talentConfig.Id)
     self.TxtTalentName.text = self.TalentConfig.Name
-    local index = #self.TalentConfig.Descriptions
-    local desc = XGuildConfig.GetGuildTalentText(self.TalentConfig.Descriptions[index])
-    local params = self.TalentConfig.DescriptionParams[index]
-    self.TxtTalentDes.text = XUiHelper.FormatTextWithSplit(desc, params)
+    self.TxtTalentDes.text = self.TalentConfig.Descriptions[#self.TalentConfig.Descriptions]
     self.RImgTalent:SetRawImage(self.TalentConfig.TalentIcon)
 end
 

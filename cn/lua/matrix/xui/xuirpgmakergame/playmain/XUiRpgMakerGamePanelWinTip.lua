@@ -1,6 +1,7 @@
 local XUiRpgMakerGamePanelWinTip = XClass(nil, "XUiRpgMakerGamePanelWinTip")
 
-function XUiRpgMakerGamePanelWinTip:Ctor(ui, tipOutCb, tipNextCb, tipResetCb)
+function XUiRpgMakerGamePanelWinTip:Ctor(parent, ui, tipOutCb, tipNextCb, tipResetCb)
+    self.Parent = parent
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     XTool.InitUiObject(self)
@@ -18,7 +19,7 @@ end
 
 function XUiRpgMakerGamePanelWinTip:InitUi()
     local panelText
-    for i = 1, XRpgMakerGameConfigs.MaxStarCount do
+    for i = 1, XMVCA.XRpgMakerGame.EnumConst.MaxStarCount do
         panelText = self["PanelText" .. i]
         if panelText then
             self["PanelLose" .. i] = XUiHelper.TryGetComponent(panelText.transform, "PanelLose")
@@ -37,9 +38,12 @@ end
 function XUiRpgMakerGamePanelWinTip:Show(stageId)
     self.StageId = stageId
 
-    local nextStageId = XRpgMakerGameConfigs.GetRpgMakerGameNextStageId(stageId)
+    local nextStageId, isNextChapter = XMVCA.XRpgMakerGame:GetConfig():GetRpgMakerGameNextStageId(stageId)
     local isHaveNextStage = XTool.IsNumberValid(nextStageId)
     self.BtnTipNext.gameObject:SetActiveEx(isHaveNextStage)
+    if isNextChapter then
+        self.BtnTipNext:SetName(XUiHelper.GetText("RpgMakerGameNextChapter"))
+    end
 
     self:RefreshTxt(stageId)
     self:RefreshStar(stageId)
@@ -48,7 +52,7 @@ function XUiRpgMakerGamePanelWinTip:Show(stageId)
 end
 
 function XUiRpgMakerGamePanelWinTip:RefreshStar(stageId)
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local stageDb = XDataCenter.RpgMakerGameManager.GetRpgMakerActivityStageDb(stageId)
     local isClear, isShowReward
     for i, starConditionId in ipairs(starConditionIdList) do
@@ -63,10 +67,10 @@ function XUiRpgMakerGamePanelWinTip:RefreshStar(stageId)
 end
 
 function XUiRpgMakerGamePanelWinTip:RefreshTxt(stageId)
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local starConditionDesc
     for i, starConditionId in ipairs(starConditionIdList) do
-        starConditionDesc = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionDesc(starConditionId)
+        starConditionDesc = XMVCA.XRpgMakerGame:GetConfig():GetStarConditionDesc(starConditionId)
         if self["TxtUnActive" .. i] then
             self["TxtUnActive" .. i].text = starConditionDesc
         end
@@ -77,12 +81,12 @@ function XUiRpgMakerGamePanelWinTip:RefreshTxt(stageId)
             self["TxtFinish" .. i].text = starConditionDesc
         end
         if self["TextNumActive" .. i] then
-            self["TextNumActive" .. i].text = string.format("x%s", XRpgMakerGameConfigs.GetStarConditionReward(starConditionId))
+            self["TextNumActive" .. i].text = string.format("x%s", XMVCA.XRpgMakerGame:GetConfig():GetStarConditionReward(starConditionId))
         end
         self["PanelText" .. i].gameObject:SetActiveEx(true)
     end
 
-    for i = #starConditionIdList + 1, XRpgMakerGameConfigs.MaxStarCount do
+    for i = #starConditionIdList + 1, XMVCA.XRpgMakerGame.EnumConst.MaxStarCount do
         self["PanelText" .. i].gameObject:SetActiveEx(false)
     end
     if self.TxtMiaoSu then self.TxtMiaoSu.gameObject:SetActiveEx(false) end
@@ -102,6 +106,15 @@ end
 
 --进入下一关
 function XUiRpgMakerGamePanelWinTip:OnBtnTipNextClick()
+    -- 下一章节
+    local nextStageId, isNextChapter = XMVCA.XRpgMakerGame:GetConfig():GetRpgMakerGameNextStageId(self.StageId)
+    if isNextChapter then
+        XLuaUiManager.Open("UiRpgMakerGameChoice", nextStageId)
+        self.Parent._Control:ReleaseScene()
+        XLuaUiManager.Remove("UiRpgMakerGamePlayMain")
+        return
+    end
+    
     if self.TipNextCb then
         self:Hide()
         self.TipNextCb()

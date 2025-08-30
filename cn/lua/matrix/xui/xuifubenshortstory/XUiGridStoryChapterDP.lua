@@ -371,7 +371,7 @@ function XUiGridStoryChapterDP:SetStageList()
                 local prefabName = CS.XGame.ClientConfig:GetString(uiName)
                 local prefab = parent:LoadPrefab(prefabName)
 
-                grid = XUiGridStage.New(self.RootUi, prefab, handler(self, self.ClickStageGrid), XFubenConfigs.FUBENTYPE_NORMAL, false, self.IsOnZhouMu)
+                grid = XUiGridStage.New(self.RootUi, prefab, handler(self, self.ClickStageGrid), XFubenConfigs.FUBENTYPE_NORMAL, false, self.IsOnZhouMu, uiName)
                 grid.Parent = parent
                 self.GridStageList[i] = grid
             end
@@ -397,7 +397,7 @@ function XUiGridStoryChapterDP:SetStageList()
                     local parent = self.PanelStageContent.transform:Find("Stage" .. self.EggStageList[i].Num .. "/EggStage")
                     local prefabName = CS.XGame.ClientConfig:GetString(uiName)
                     local prefab = parent:LoadPrefab(prefabName)
-                    grid = XUiGridStage.New(self.RootUi, prefab, handler(self, self.ClickStageGrid), XFubenConfigs.FUBENTYPE_NORMAL)
+                    grid = XUiGridStage.New(self.RootUi, prefab, handler(self, self.ClickStageGrid), XFubenConfigs.FUBENTYPE_NORMAL, nil, nil, uiName)
                     grid.Parent = parentsParent
                     self.GridEggStageList[i] = grid
                 end

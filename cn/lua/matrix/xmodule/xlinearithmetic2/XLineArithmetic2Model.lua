@@ -132,6 +132,17 @@ function XLineArithmetic2Model:GetTaskList()
     return config.TaskIds
 end
 
+function XLineArithmetic2Model:IsExpire()
+    local activityId = self._ActivityId
+    local timeId = self:GetConfigActivityTimeId(activityId)
+    local currentTime = XTime.GetServerNowTimestamp()
+    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    if currentTime > endTime then
+        return true
+    end
+    return false
+end
+
 function XLineArithmetic2Model:GetActivityRemainTime()
     local activityId = self._ActivityId
     local timeId = self:GetConfigActivityTimeId(activityId)

@@ -12,6 +12,10 @@ function XGoldenMinerEntityHook:OnInit()
     self._HookHitStoneUidList = {}
     ---@type number[]
     self._ShipGrabbedStoneUidList = {} -- 飞船撞到的抓取物
+    -- 钩爪的索引
+    self._Index = 0
+    -- 这个钩爪是否是额外的
+    self._IsAdditional = false
 end
 
 function XGoldenMinerEntityHook:OnRelease()
@@ -19,6 +23,8 @@ function XGoldenMinerEntityHook:OnRelease()
     self._HookGrabbingStoneUidList = nil
     self._HookHitStoneUidList = nil
     self._ShipGrabbedStoneUidList = nil
+    self._Index = 0
+    self._IsAdditional = false
 end
 --endregion
 
@@ -48,6 +54,28 @@ end
 function XGoldenMinerEntityHook:GetShipGrabbedStoneUidList()
     return self._ShipGrabbedStoneUidList
 end
+
+function XGoldenMinerEntityHook:GetIndex()
+    return self._Index
+end
+
+function XGoldenMinerEntityHook:GetIsAdditional()
+    return self._IsAdditional
+end
+
+---@return XGoldenMinerComponentNetAim
+function XGoldenMinerEntityHook:GetComponentNetAim()
+    return self:GetFirstChildEntityWithType(self._OwnControl.COMPONENT_TYPE.NET_AIM)
+end
+--endregion
+
+--region Setter
+
+function XGoldenMinerEntityHook:InitHookData(index, isAdditional)
+    self._Index = index
+    self._IsAdditional = isAdditional
+end
+
 --endregion
 
 --region Control
@@ -81,6 +109,14 @@ end
 
 function XGoldenMinerEntityHook:ClearShipGrabbedStone()
     self._ShipGrabbedStoneUidList = {}
+end
+
+function XGoldenMinerEntityHook:CheckStoneUidInGrabbingList(uid)
+    return table.contains(self._HookGrabbingStoneUidList, uid)
+end
+
+function XGoldenMinerEntityHook:CheckIsGrabbingAnyStone()
+    return not XTool.IsTableEmpty(self._HookGrabbingStoneUidList)
 end
 --endregion
 

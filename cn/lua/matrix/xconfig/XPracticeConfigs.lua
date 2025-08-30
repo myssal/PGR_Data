@@ -4,6 +4,8 @@ local CLIENT_PRACTICE_CHAPTERDETAIL = "Client/Fuben/Practice/PracticeChapterDeta
 local CLIENT_PRACTICE_SKILLDETAIL = "Client/Fuben/Practice/PracticeSkillDetails.tab"
 local SHARE_PRACTICE_CHAPTER_LOCAL = "Client/Fuben/Practice/PracticeChapterLocal.tab"
 local CLIENT_PRACTICE_GROUP_DETAIL = "Client/Fuben/Practice/PracticeGroupDetail.tab"
+local CLIENT_PRACTICE_GROUP_DETAIL_CHARACTER_MAP = "Client/Fuben/Practice/PracticeGroupDetailCharacterMap.tab"
+local CLIENT_PRACTICE_GROUP_DETAIL_GENERALSKILL_MAP = "Client/Fuben/Practice/PracticeGroupDetailGeneralSkillMap.tab"
 
 local SHARE_PRACTICE_CHAPTER = "Share/Fuben/Practice/PracticeChapter.tab"
 local SHARE_PRACTICE_ACTIVITY = "Share/Fuben/Practice/PracticeActivity.tab"
@@ -26,11 +28,12 @@ local SimulateTrainGroup = {}
 local PracticeChapters = {}
 local SimulateTrainStageIdToMonsterIdDic = {}
 
-local PracticeCharacterId2GroupId = {}
 local PracticeChapterId2GroupId = {}
 
 local PracticeGroup = {}
 local PracticeGroupDetail = {}
+local PracticeGroupDetailCharacterMap = {}
+local PracticeGroupDetailGeneralSkillMap = {}
 
 XPracticeConfigs.PracticeType = {
     Basics = 1,
@@ -59,12 +62,6 @@ local InitSimulateTrainStageIdToMonsterIdDic = function()
 end
 
 local InitPracticeTeachDict = function()
-    for groupId, value in pairs(PracticeGroupDetail) do
-        if XTool.IsNumberValid(value.CharacterId) then
-            PracticeCharacterId2GroupId[value.CharacterId] = groupId
-        end
-    end
-
     for id, value in pairs(PracticeChapters) do
         for _, groupId in ipairs(value.Groups or {}) do
             PracticeChapterId2GroupId[groupId] = id
@@ -88,6 +85,8 @@ function XPracticeConfigs.Init()
 
     PracticeGroup = XTableManager.ReadByIntKey(SHARE_PRACTICE_GROUP, XTable.XTablePracticeGroup, "GroupId")
     PracticeGroupDetail = XTableManager.ReadByIntKey(CLIENT_PRACTICE_GROUP_DETAIL, XTable.XTablePracticeGroupDetail, "GroupId")
+    PracticeGroupDetailCharacterMap = XTableManager.ReadByIntKey(CLIENT_PRACTICE_GROUP_DETAIL_CHARACTER_MAP, XTable.XTablePracticeGroupDetailCharacterMap, "Id")
+    PracticeGroupDetailGeneralSkillMap = XTableManager.ReadByIntKey(CLIENT_PRACTICE_GROUP_DETAIL_GENERALSKILL_MAP, XTable.XTablePracticeGroupDetailGeneralSkillMap, "Id")
 
     InitSimulateTrainStageIdToMonsterIdDic()
     InitPracticeTeachDict()
@@ -418,7 +417,13 @@ end
 
 -- characterId -> groupId
 function XPracticeConfigs.GetGroupIdByCharacterId(characterId)
-    return PracticeCharacterId2GroupId[characterId]
+    local cfg = PracticeGroupDetailCharacterMap[characterId]
+    
+    if cfg then
+        return cfg.GroupId
+    end
+    
+    return 0
 end
 
 -- groupId -> chapterId
@@ -428,11 +433,13 @@ end
 
 -- generalSkillId -> groupId
 function XPracticeConfigs.GetGroupIdByGeneralSkillId(generalSkillId)
-    for i, v in pairs(PracticeGroupDetail) do
-        if v.GeneralSkillId == generalSkillId then
-            return v.GroupId
-        end
-    end    
+    local cfg = PracticeGroupDetailGeneralSkillMap[generalSkillId]
+
+    if cfg then
+        return cfg.GroupId
+    end
+    
+    return 0
 end
 
 -- groupId -> generalSkillId

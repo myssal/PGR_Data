@@ -69,7 +69,33 @@ local function PayIOS(self, productKey, cpOrderId, goodsId)
     XHeroSdkManager.Pay(productKey, cpOrderId, goodsId)
 end
 
+local function NewPay(self, productKey, cpOrderId, goodsId)
+    XHeroSdkManager.NewPay(productKey, cpOrderId, goodsId, function(err)
+        if err then
+            TipPayFail()
+            return
+        end
+
+        self:OnPaySuccess({
+            ProductKey = productKey,
+            OrderId = cpOrderId,
+            GoodsId = goodsId,
+            PlayerId = XPlayer.Id
+        })
+
+        if cb then
+            cb()
+        end
+    end)
+end
+
 function XPayHeroAgent:Ctor()
+    -- 新SDK用新的支付接口
+    if CS.XHeroSdkAgent.IsNewSDK then 
+        self.Pay = NewPay
+        return
+    end
+    -- 老的会逐渐废弃
     if Platform == RuntimePlatform.Android then
         self.Pay = PayAndroid
     elseif Platform == RuntimePlatform.WindowsPlayer then 

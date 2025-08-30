@@ -7,11 +7,13 @@ function XUiRiftPopupAffix:OnAwake()
     self:RegisterClickEvent(self.BtnTanchuangClose, self.Close)
     self.BtnSave.CallBack = handler(self, self.OnBtnSaveClick)
     self.BtnResetting.CallBack = handler(self, self.OnBtnResettingClick)
+    self.BtnResetting2.CallBack = handler(self, self.OnBtnSameTypeResettingClick)
     self.BtnUnlockAll.CallBack = handler(self, self.OnBtnUnlockAllClick)
     self.BtnUnlock.CallBack = handler(self, self.OnBtnUnlockClick)
     self.BtnUnlockAllCost.CallBack = handler(self, self.OnClickItem)
     self.BtnUnlockCost.CallBack = handler(self, self.OnClickItem)
     self.BtnResettingCost.CallBack = handler(self, self.OnClickItem)
+    self.BtnResettingCost2.CallBack = handler(self, self.OnClickItem)
 end
 
 function XUiRiftPopupAffix:OnStart(pluginId, index, unlockCallBack)
@@ -68,6 +70,7 @@ end
 
 function XUiRiftPopupAffix:ShowResetAffix()
     self._OneResetCost = self._Plugin.AffixResetCost
+    self._OneSameTypeResetCost = self._Plugin.AffixSameTypeResetCost
 
     self.PanelUnlock.gameObject:SetActiveEx(false)
     self.PanelResetting.gameObject:SetActiveEx(true)
@@ -78,6 +81,9 @@ function XUiRiftPopupAffix:ShowResetAffix()
     self.BtnResettingCost:SetRawImage(self._ItemIcon)
     self.BtnResettingCost:SetNameByGroup(0, self._OneResetCost)
     self.BtnResettingCost:SetButtonState(self._ItemCount >= self._OneResetCost and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self.BtnResettingCost2:SetRawImage(self._ItemIcon)
+    self.BtnResettingCost2:SetNameByGroup(0, self._OneSameTypeResetCost)
+    self.BtnResettingCost2:SetButtonState(self._ItemCount >= self._OneSameTypeResetCost and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
 
     local isMax = self._Control:IsRandomAffixMaxLevel(self._PluginId, self._Index)
     self.TxtMax.gameObject:SetActiveEx(isMax)
@@ -95,6 +101,7 @@ function XUiRiftPopupAffix:ShowResetAffix()
 end
 
 function XUiRiftPopupAffix:ShowSureResetAffix(newAffixId)
+    self:PlayAnimation("GridRefresh")
     self.GridNewAffix.gameObject:SetActiveEx(true)
     self.BtnSave.gameObject:SetActiveEx(true)
 
@@ -118,7 +125,17 @@ function XUiRiftPopupAffix:OnBtnResettingClick()
         XUiManager.TipError(XUiHelper.GetText("RiftPluginAttrReset"))
         return
     end
-    self._Control:RequestRiftResetAffix(self._PluginId, self._Index, function(newAffixId)
+    self._Control:RequestRiftResetAffix(self._PluginId, self._Index, false, function(newAffixId)
+        self:ShowSureResetAffix(newAffixId)
+    end)
+end
+
+function XUiRiftPopupAffix:OnBtnSameTypeResettingClick()
+    if self._ItemCount < self._OneSameTypeResetCost then
+        XUiManager.TipError(XUiHelper.GetText("RiftPluginAttrReset"))
+        return
+    end
+    self._Control:RequestRiftResetAffix(self._PluginId, self._Index, true, function(newAffixId)
         self:ShowSureResetAffix(newAffixId)
     end)
 end

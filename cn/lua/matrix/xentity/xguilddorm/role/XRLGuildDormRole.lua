@@ -140,6 +140,7 @@ function XRLGuildDormRole:LoadModel(root)
     -- 默认隐藏
     self.GameObject:SetActiveEx(false)
     XDataCenter.GuildDormManager.SceneManager.AddSceneObj(self.GameObject, self)
+    CS.XGuildDormHelper.CurCharacterGameObject = self.GameObject
     return self.GameObject
 end
 
@@ -290,6 +291,7 @@ function XRLGuildDormRole:Dispose()
         CS.UnityEngine.GameObject.Destroy(self.GameObject)
         self.GameObject = nil
         self.Transform = nil
+        CS.XGuildDormHelper.CurCharacterGameObject = nil
     end
     if self.TempCopyFollowGo and self.TempCopyFollowGo:Exist() then
         CS.UnityEngine.GameObject.Destroy(self.TempCopyFollowGo)

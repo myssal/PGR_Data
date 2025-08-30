@@ -26,6 +26,7 @@ local Default = {
     _IsWin = false, --解密成功
     _Answer = {}, --解密顺序
     _TipCount = 0, --提示数量
+    _FinshAnswer = {}, --正确顺序
 }
 
 local XLivWarmSoundsStage = XClass(nil, "XLivWarmSoundsStage")
@@ -52,6 +53,10 @@ function XLivWarmSoundsStage:InitAnswer()
         local InitialSoundId = XLivWarmSoundsActivityConfig.GetStageInitialSoundId(self._StageId)
         for i, v in ipairs(InitialSoundId) do
             table.insert(self._Answer,v)
+        end
+        local FinishSoundId = XLivWarmSoundsActivityConfig.GetStageFinishSoundId(self._StageId)
+        for i, v in ipairs(FinishSoundId) do
+            table.insert(self._FinshAnswer,v)
         end
     end
 end
@@ -91,5 +96,8 @@ function XLivWarmSoundsStage:GetTipCount()
     return self._TipCount
 end
 
+function XLivWarmSoundsStage:GetFinishAnswer() --海外新增接口:判断是否是正确顺序
+    return self._FinshAnswer
+end
 
 return XLivWarmSoundsStage

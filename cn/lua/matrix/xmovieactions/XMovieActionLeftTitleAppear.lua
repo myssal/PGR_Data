@@ -12,8 +12,14 @@ end
 
 function XMovieActionLeftTitleAppear:OnRunning()
     self.UiRoot.PanelLeftTitle.gameObject:SetActiveEx(true)
+    local titleLocation
+    if XOverseaManager.IsOverSeaRegion() then
+        titleLocation = string.gsub(self.Title, "\\n", "\n")
+    else
+        titleLocation = self.Title
+    end
     local uiObj = self.UiRoot.PanelLocationTip
-    uiObj:GetObject("TxtLocation").text = self.Title
+    uiObj:GetObject("TxtLocation").text = titleLocation
     uiObj:GetObject("TxtSubtitle").text = self.Subtitle
     uiObj:GetObject("TxtLocationEn").text = self.TitleEn
     uiObj:GetObject("AnimEnable").gameObject:PlayTimelineAnimation()

@@ -110,8 +110,7 @@ function XUiPlayerInfo:UpdateInfo(index)
 
     if index == self.Tab.BaseInfo then
         if not self.PanelBaseInfo then
-            local obj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("PlayerInfoBase"))
-            obj.transform:SetParent(self.PanelContent, false)
+            local obj = self.PanelContent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, "PlayerInfoBase"))
             self.PanelBaseInfo = XUiPlayerInfoBase.New(obj, self)
             self.TabPanels[index] = self.PanelBaseInfo
             self.TabPanels[index].Type = self.Tab.BaseInfo
@@ -121,8 +120,7 @@ function XUiPlayerInfo:UpdateInfo(index)
         self:UpdateGuildInfo()
     elseif index == self.Tab.FightInfo then
         if not self.PanelFightInfo then
-            local obj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("PlayerInfoFight"))
-            obj.transform:SetParent(self.PanelContent, false)
+            local obj = self.PanelContent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, "PlayerInfoFight"))
             self.PanelFightInfo = XUiPlayerInfoFight.New(obj, self)
             self.TabPanels[index] = self.PanelFightInfo
             self.TabPanels[index].Type = self.Tab.FightInfo
@@ -131,8 +129,7 @@ function XUiPlayerInfo:UpdateInfo(index)
         end
     elseif index == self.Tab.AppearanceInfo then
         if not self.PanelAppearanceInfo then
-            local obj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("PlayerInfoAppearance"))
-            obj.transform:SetParent(self.PanelContent, false)
+            local obj = self.PanelContent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, "PlayerInfoAppearance"))
             self.PanelAppearanceInfo = XUiPlayerInfoAppearance.New(obj, self)
             self.TabPanels[index] = self.PanelAppearanceInfo
             self.TabPanels[index].Type = self.Tab.AppearanceInfo

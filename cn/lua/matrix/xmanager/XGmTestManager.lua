@@ -778,6 +778,31 @@ local function AddTestUse()
     local XRobot = require("XEntity/XRobot/XRobot")
     XRobot.New(1001)
     ---------机器人配置调试 end------------
+    
+    local conditionId = 0
+    Panel:AddInput(
+            "条件Id",
+            function(value)
+                conditionId = tonumber(value)
+            end
+    )
+    
+    Panel:AddButton(
+            "检查条件",
+            function()
+                if not XTool.IsNumberValid(conditionId) then
+                    XUiManager.TipMsg("请先输入conditionId!")
+                    return
+                end
+
+                local result, desc = XConditionManager.CheckCondition(conditionId)
+                if result then
+                    XUiManager.TipMsg("条件检查通过")
+                else
+                    XUiManager.TipMsg("条件检查不通过: " .. desc)
+                end
+            end
+    )
 end
 
 local function AddActivityUse() 
@@ -959,7 +984,7 @@ local function AddAudioDebugFunction()
     )
 
     if btnPlay then
-        btnPlay.transform:GetComponent("XUguiPlaySound").enabled = false
+        btnPlay.transform:GetComponent("XAudioCustomComponentBase").enabled = false
     end
 
     Panel:AddButton(
@@ -1062,6 +1087,29 @@ local function AddAudioDebugFunction()
             else
                 CS.XAudioManager.ClearBwAudioData()
             end
+        end
+    )
+
+    local aisacControlName = nil
+    Panel:AddInput(
+        "AisacControlName",
+        function(value)
+            aisacControlName = value
+        end
+    )
+
+    local aisacValue = nil
+    Panel:AddInput(
+        "AisacValue",
+        function(value)
+            aisacValue = tonumber(value)
+        end
+    )
+
+    Panel:AddButton(
+        "设置全局Aisac",
+        function()
+            CS.XAudioManager.ChangeAllSourceAisacController(aisacControlName, aisacValue)
         end
     )
 end
@@ -1265,6 +1313,117 @@ local function AddGame2048DebugFunction()
     isInit = false
 end
 
+local function AddGoldenMinerDebugFunction()
+    local isInit = true
+
+    ---@type UnityEngine.UI.Toggle
+    local debugTog = Panel:AddToggle("启用Debug", function(res)
+        if isInit then
+            return
+        end
+
+        XSaveTool.SaveData('GoldenMinerDebug', res)
+        XMVCA.XGoldenMiner.IsDebug = res
+        if res then
+            XLog.Error('黄金矿工玩法开启Debug')
+        else
+            XLog.Error('黄金矿工玩法关闭Debug')
+        end
+    end)
+
+    if debugTog then
+        local isEnable = XSaveTool.GetData('GoldenMinerDebug')
+        debugTog.isOn = isEnable
+        XMVCA.XGoldenMiner.IsDebug = isEnable
+    end
+
+    local showGrabScoreLogTog = Panel:AddToggle("启用抓取分数日志", function(res)
+        if isInit then
+            return
+        end
+
+        XSaveTool.SaveData('GoldenMinerDebugGrabScoreLog', res)
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.GrabScore, res)
+        
+        if res then
+            XLog.Error('黄金矿工玩法开启抓取分数日志')
+        else
+            XLog.Error('黄金矿工玩法关闭抓取分数日志')
+        end
+    end)
+
+    if showGrabScoreLogTog then
+        local isEnable = XSaveTool.GetData('GoldenMinerDebugGrabScoreLog')
+        showGrabScoreLogTog.isOn = isEnable
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.GrabScore, isEnable)
+    end
+
+    local showHookSpeedLogTog = Panel:AddToggle("启用钩爪速度日志", function(res)
+        if isInit then
+            return
+        end
+
+        XSaveTool.SaveData('GoldenMinerDebugHookSpeedLog', res)
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.HookSpeed, res)
+
+        if res then
+            XLog.Error('黄金矿工玩法开启钩爪速度日志')
+        else
+            XLog.Error('黄金矿工玩法关闭钩爪速度日志')
+        end
+    end)
+
+    if showHookSpeedLogTog then
+        local isEnable = XSaveTool.GetData('GoldenMinerDebugHookSpeedLog')
+        showHookSpeedLogTog.isOn = isEnable
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.HookSpeed, isEnable)
+    end
+
+    local showStoneWeightLogTog = Panel:AddToggle("启用抓取物重量日志", function(res)
+        if isInit then
+            return
+        end
+
+        XSaveTool.SaveData('GoldenMinerDebugStoneWeightLog', res)
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.StoneWeight, res)
+
+        if res then
+            XLog.Error('黄金矿工玩法开启抓取物重量日志')
+        else
+            XLog.Error('黄金矿工玩法关闭抓取物重量日志')
+        end
+    end)
+
+    if showStoneWeightLogTog then
+        local isEnable = XSaveTool.GetData('GoldenMinerDebugStoneWeightLog')
+        showStoneWeightLogTog.isOn = isEnable
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.StoneWeight, isEnable)
+    end
+
+    local showShipMoveSpeedLogTog = Panel:AddToggle("启用飞船速度日志", function(res)
+        if isInit then
+            return
+        end
+
+        XSaveTool.SaveData('GoldenMinerDebugShipMoveSpeedLog', res)
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.ShipMoveSpeed, res)
+
+        if res then
+            XLog.Error('黄金矿工玩法开启飞船速度日志')
+        else
+            XLog.Error('黄金矿工玩法关闭飞船速度日志')
+        end
+    end)
+
+    if showShipMoveSpeedLogTog then
+        local isEnable = XSaveTool.GetData('GoldenMinerDebugShipMoveSpeedLog')
+        showShipMoveSpeedLogTog.isOn = isEnable
+        XMVCA.XGoldenMiner:SetLogTypeEnable(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.ShipMoveSpeed, isEnable)
+    end
+
+    isInit = false
+end
+
 local function AddSubPackageFunction()
     Panel:AddButton("Item信息", function()
         XMVCA.XSubPackage:PrintAllItemInfo()
@@ -1336,6 +1495,7 @@ function XGmTestManager.Init()
     Panel:AddSubMenu("视频调试", AddVideoDebugFunction)
 
     Panel:AddSubMenu("2048玩法", AddGame2048DebugFunction)
+    Panel:AddSubMenu("黄金矿工玩法", AddGoldenMinerDebugFunction)
     Panel:AddSubMenu("分包调试", AddSubPackageFunction)
 
     local isInit = true

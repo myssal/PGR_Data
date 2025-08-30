@@ -148,14 +148,7 @@ function XDrawConfigs.Init()
     DrawPreviewsCfg = XTableManager.ReadByIntKey(TABLE_DRAW_PREVIEW, XTable.XTableDrawPreview, "Id")
     DrawPreviewGoodsCfg = XTableManager.ReadByIntKey(TABLE_DRAW_PREVIEW_GOODS, XTable.XTableRewardGoods, "Id")
     DevilMayCryActivityCfg = XTableManager.ReadByIntKey(TABLE_DEVILMAYCRY_ACTIVITY, XTable.XTableDevilMayCryActivity, "DrawId")
-
-    local drawProbList = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "Id")
-    for _, v in pairs(drawProbList) do
-        if not DrawProbs[v.DrawId] then
-            DrawProbs[v.DrawId] = {}
-        end
-        tableInsert(DrawProbs[v.DrawId], v)
-    end
+    DrawProbs = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "DrawId")
 
     XDrawConfigs.SetDrawSubGroupDic()
     XDrawConfigs.SetGroupRelationDic()
@@ -274,8 +267,8 @@ function XDrawConfigs.GetDrawPreviews(drawId)
     return drawPreview
 end
 
-function XDrawConfigs.GetDrawProbs()
-    return DrawProbs
+function XDrawConfigs.GetDrawProbById(id)
+    return DrawProbs[id]
 end
 
 function XDrawConfigs.GetDrawTypeChangeCfg()

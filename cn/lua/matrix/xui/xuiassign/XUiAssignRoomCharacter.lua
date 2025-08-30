@@ -293,7 +293,7 @@ function XUiAssignRoomCharacter:RefreshTeamData(teamPrefabData)
     for pos, v in pairs(currCharList) do
         local charIdInPrefab = prefabCharList[pos]
         local spPos = XDataCenter.FubenAssignManager.GetMemberOrderByIndex(pos, #currCharList)
-        if self:CheckLimitBeforeChangeTeam(charIdInPrefab, spPos) then
+        if XTool.IsNumberValid(charIdInPrefab) and self:CheckLimitBeforeChangeTeam(charIdInPrefab, spPos) then
             isLimit = true
         end
         afterList[pos] = prefabCharList[pos]

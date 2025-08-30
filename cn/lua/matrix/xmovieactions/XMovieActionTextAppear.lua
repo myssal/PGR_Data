@@ -7,7 +7,7 @@ function XMovieActionTextAppear:Ctor(actionData)
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     
     self.TextId = params[1]
-    self.TextContent = params[2]
+    self.TextContent = XDataCenter.MovieManager.ReplacePlayerName(params[2])
     self.PosX = paramToNumber(params[3])
     self.PosY = paramToNumber(params[4])
     self.Rotation = paramToNumber(params[5])
@@ -53,7 +53,7 @@ function XMovieActionTextAppear:OnClickBtnNext()
         self.TypeWriter:Stop()
         self:OnTypeWriterComplete()
     else
-        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, true)
+        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
     end
 end
 

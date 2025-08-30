@@ -16,7 +16,7 @@ function XUiSoloReformChapterStrengthItem:Update(fightEventId)
     self._IsUnlock = fightEventCfg.UnlockDiff <= passDifficulty
     self.PanelOn.gameObject:SetActiveEx(self._IsUnlock)
     self.PanelOff.gameObject:SetActiveEx(not self._IsUnlock)
-    self.BtnGridReform:SetName(fightEventCfg.Name)
+    self.BtnGridReform:SetName(XUiHelper.ReplaceTextNewLine(fightEventCfg.Name))
     self._StrengthReddotId = self:AddRedPointEvent(self.BtnGridReform, self.OnStrengthReddotEvent, self, 
         { XRedPointConditions.Types.CONDITION_SOLO_REFORM_STRENGTH }, {fightEventId, self._IsUnlock}, true)
     self.BtnGridReform.NormalObj = self._IsUnlock and self.NormalOn.gameObject or self.NormalOff.gameObject
@@ -38,7 +38,9 @@ function XUiSoloReformChapterStrengthItem:SetSelect(fightEventId)
 end
 
 function XUiSoloReformChapterStrengthItem:OnClickStrength()
-    self._Control:MarkLocalStrengthReddot(self._FightEventId)
+    if self._IsUnlock then
+        self._Control:MarkLocalStrengthReddot(self._FightEventId)
+    end    
     self._Control:DispatchEvent(XMVCA.XSoloReform.EventId.EVENT_CLICK_FIGHT_EVENT_TAG, self._FightEventId)
     XRedPointManager.Check(self._StrengthReddotId)
 end

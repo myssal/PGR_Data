@@ -53,6 +53,7 @@ useMultiModel)
     self.PlayUiStandCallBackList = {}
     self.AnimaPlayedCallBackList = {}
     self.IsStandAnimaHideNode = false
+    self._MySkinMeshFace = nil
     if useMultiModel == nil then
         self.UseMultiModel = true
     end
@@ -1018,11 +1019,12 @@ fashionId,
 growUpLevel,
 hideEffect,
 isShowDefaultWeapon,
-isNotSelf)
+isNotSelf,
+weaponId)
     self.StandAnimaShowWeaponList = {}
     self.StandAnimaShowWeaponAnimatorList = {}
     
-    local weaponFashionId
+    local weaponFashionId = weaponId
 
     if XRobotManager.CheckIsRobotId(characterId) then
         local robotId = characterId
@@ -2502,14 +2504,11 @@ function XUiPanelRoleModel:FixAurolePos(auroeTrans, characterId, modelInfo)
     local aureoleConfig = aureoleId and XFashionConfigs.GetAllConfigs(XFashionConfigs.TableKey.FashionAureole)[aureoleId]
 
     local tempEffectGo = nil
-    local resource = nil
     if modelInfo.TempEffectGo then
         tempEffectGo = modelInfo.TempEffectGo
     else
-        local loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XCharacter)
-        resource = loader:Load(aureoleConfig.EffectPath)
         self.aureoleConfigEffectPath = aureoleConfig.EffectPath
-        tempEffectGo = CS.UnityEngine.Object.Instantiate(resource, auroeTrans.transform.parent)
+        tempEffectGo = auroeTrans.transform.parent:LoadPrefabEx(aureoleConfig.EffectPath)
     end
     local tempTrans = tempEffectGo.transform:GetChild(0)
     
@@ -2525,13 +2524,7 @@ function XUiPanelRoleModel:FixAurolePos(auroeTrans, characterId, modelInfo)
     tempEffectGo:SetActiveEx(false)
     tempEffectGo.name = "TempAuroe"
     modelInfo.TempEffectGo = tempEffectGo
-
-    if resource and aureoleConfig.EffectPath then
-        local loader = CS.XLoaderUtil.GetModuleLoader(ModuleId.XCharacter)
-        loader:Unload(aureoleConfig.EffectPath)
-    end
 end
-
 
 --- func 给外部生成基于 CharacterModelNodeEffectMapping.tab 检测的特效prefab
 ---@param config XTableCharacterModelNodeEffectMapping
@@ -3199,6 +3192,23 @@ end
 
 function XUiPanelRoleModel:RemoveRoleShadow()
     CS.XShadowHelper.SetCharRealtimeShadow(self.GameObject, false)
+end
+
+function XUiPanelRoleModel:GetSkinMeshFace()
+    if not XTool.UObjIsNil(self._MySkinMeshFace) then
+        return self._MySkinMeshFace
+    end
+    local skinMeshFaceList = self.GameObject:GetComponentsInChildren(typeof(CS.UnityEngine.SkinnedMeshRenderer), true)
+    local targetSkinMeshFace = nil
+    for i = 0, skinMeshFaceList.Length do
+        local tempMesh = skinMeshFaceList[i]
+        if string.find(tempMesh.name, "Face") then
+            targetSkinMeshFace = tempMesh
+            break
+        end
+    end
+    self._MySkinMeshFace = targetSkinMeshFace
+    return targetSkinMeshFace
 end
 
 return XUiPanelRoleModel

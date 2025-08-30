@@ -38,11 +38,20 @@ function XUiTheatre5PVEClueBoard:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_CLUE_BOARD_SWITCH, self.OnSwitchClueShow, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_SIMPLE_CLUE, self.OnClickSimpleClue, self)
     if XTool.IsNumberValid(self._CurSelectIndex) then
-        self:OnClickClueBoardTag(self._CurSelectIndex, false)
+        -- 延迟，等待动画播放结束，再刷新
+        if not self._TimerDelayRefresh then
+            self._TimerDelayRefresh = XScheduleManager.ScheduleOnce(function()
+                self:OnClickClueBoardTag(self._CurSelectIndex, false)
+            end, 500)
+        end
     end    
 end
 
 function XUiTheatre5PVEClueBoard:OnDisable()
+    if self._TimerDelayRefresh then
+        XScheduleManager.UnSchedule(self._TimerDelayRefresh)
+        self._TimerDelayRefresh = nil
+    end
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_CLUE_BOARD_TAG, self.OnClickClueBoardTag, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLUE_BOARD_SWITCH, self.OnSwitchClueShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_SIMPLE_CLUE, self.OnClickSimpleClue, self)

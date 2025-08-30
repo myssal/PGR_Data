@@ -136,7 +136,7 @@ function XAgency:AddSubAgency(cls)
     end
 end
 
----删除一个子agency, agency是常驻的，移除需要业务自身在ResetAll做移除处理
+---删除一个子agency, 注意业务层要主动释放Rpc,推荐使用AddRpc()接口，该接口的Rpc注册无需业务层主动释放
 ---@param agency XAgency
 function XAgency:RemoveSubAgency(agency)
     if self._SubAgencys[agency.__class] then

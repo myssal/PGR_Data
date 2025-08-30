@@ -3,7 +3,7 @@ local handler = handler
 local CsXTextManagerGetText = CsXTextManagerGetText
 local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
 
-local XUiGridRewardTip = XClass(nil, "XUiGridRewardTip")
+local XUiGridRewardTip = XClass(nil, "XUiGridRewardTip", true) -- #203409 增加该类被分类
 
 function XUiGridRewardTip:Ctor(ui)
     self.GameObject = ui.gameObject
@@ -59,7 +59,8 @@ function XUiGridRewardTip:Refresh(rewardId, levelId)
     self.BtnGo.gameObject:SetActiveEx(not isFinished and not ret and XTool.IsNumberValid(skipId))
     self.BtnReceiveHave.gameObject:SetActiveEx(isFinished)
 
-    local rewardGoodsId = XStrongholdConfigs.GetRewardGoodsId(rewardId)
+    -- #203409 抽象了该方法, 不一定非要删除
+    local rewardGoodsId = self:GetRewardGoodsId(rewardId)
     local rewards = XRewardManager.GetRewardList(rewardGoodsId) or {}
     for index, reward in ipairs(rewards or {}) do
         local grid = self.RewardGrids[index]
@@ -88,6 +89,11 @@ function XUiGridRewardTip:Refresh(rewardId, levelId)
         self.BtnGo.gameObject:SetActiveEx(false)
         self.BtnReceiveHave.gameObject:SetActiveEx(false)
     end
+end
+
+function XUiGridRewardTip:GetRewardGoodsId(rewardId)
+    local rewardGoodsId = XStrongholdConfigs.GetRewardGoodsId(rewardId)
+    return rewardGoodsId
 end
 
 function XUiGridRewardTip:OnClickBtnFinish()

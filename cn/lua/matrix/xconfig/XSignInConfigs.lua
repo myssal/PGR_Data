@@ -28,6 +28,23 @@ local SignRecharge = {}           -- 首充签到表
 local SignWelfareList = {}        -- 福利配置表List
 local SignWelfareDir = {}         -- 福利配置表dir
 
+local EnWelfareMonthlyCardMap = {} -- 福利Id到月卡Id
+
+local function LoadEnWelfareMonthlyCardMap()
+    local raw = CS.XGame.ClientConfig:GetString("EnWelfareMonthlyCardMap")
+    if not raw then
+        return    
+    end
+    for pair in string.gmatch(raw, "[^|]+") do
+        local key, value = string.match(pair, "(%d+):(%d+)")
+        if key and value then
+            local numberKey = tonumber(key)
+            local numberValue = tonumber(value)
+            EnWelfareMonthlyCardMap[numberKey] = numberValue
+        end
+    end
+end
+
 function XSignInConfigs.Init()
     SignInConfig = XTableManager.ReadByIntKey(TABLE_SIGN_IN, XTable.XTableSignIn, "Id")
     SignInSubRound = XTableManager.ReadByIntKey(TABLE_SIGN_IN_SUBROUND, XTable.XTableSignInSubround, "Id")
@@ -67,14 +84,27 @@ function XSignInConfigs.Init()
         end
     end
 
-    -- 福利表
-    for _, v in pairs(SignWelfareDir) do
-        table.insert(SignWelfareList, v)
-    end
+    LoadEnWelfareMonthlyCardMap()
+end
 
-    table.sort(SignWelfareList, function(a, b)
-        return a.Sort < b.Sort
-    end)
+local function GetMonthlyCardIdByWelfareId(welfareId)
+    if EnWelfareMonthlyCardMap[welfareId] then
+        return EnWelfareMonthlyCardMap[welfareId]
+    end
+    return XPurchaseConfigs.YKID
+end 
+
+function XSignInConfigs._InitSignWelfareSortedList()
+    if XTool.IsTableEmpty(SignWelfareList) then
+        -- 福利表
+        for _, v in pairs(SignWelfareDir) do
+            table.insert(SignWelfareList, v)
+        end
+
+        table.sort(SignWelfareList, function(a, b)
+            return a.Sort < b.Sort
+        end)
+    end
 end
 
 -- 获取福利配置表
@@ -88,6 +118,8 @@ function XSignInConfigs.GetWelfareConfigs()
         config.WelfareId = welfareId
         return config
     end
+
+    XSignInConfigs._InitSignWelfareSortedList()
 
     local welfareConfigs = {}
     for _, v in pairs(SignWelfareList) do
@@ -142,6 +174,9 @@ function XSignInConfigs.GetWelfareConfigsWithActivity()
 
         return config
     end
+
+    XSignInConfigs._InitSignWelfareSortedList()
+    
     local openWelfare = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Welfare)
     for _, cfg in pairs(SignWelfareList) do
         if cfg.FunctionType == XAutoWindowConfigs.AutoFunctionType.Sign and openWelfare then
@@ -202,7 +237,8 @@ function XSignInConfigs.CheckWelfareRedPoint(functionType, config)
     if functionType == XAutoWindowConfigs.AutoFunctionType.FirstRecharge then
         return not XDataCenter.PayManager.IsGotFirstReCharge()
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.Card then
-        return not XDataCenter.PayManager.IsGotCard()
+        local monthlyCardId = GetMonthlyCardIdByWelfareId(config.WelfareId)
+        return not XDataCenter.PayManager.IsGotCard(monthlyCardId)
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.WeekChallenge then
         return XDataCenter.WeekChallengeManager.IsAnyRewardCanReceived()
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.SClassConstructNovice then
@@ -220,6 +256,7 @@ function XSignInConfigs.CheckWelfareRedPoint(functionType, config)
         return false
     end
 end
+
 
 -- 获取福利配置表
 function XSignInConfigs.GetWelfareConfig(id)

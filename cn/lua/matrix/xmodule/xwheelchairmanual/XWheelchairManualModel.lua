@@ -1,5 +1,5 @@
 ---@class XWheelchairManualModel : XModel
-local XWheelchairManualModel = XClass(XModel, "XWheelchairManualModel")
+local XWheelchairManualModel = XClass(XModel, "XWheelchairManualModel", true) -- #203409 增加该类被分类
 
 local TableNormal = {
     WheelchairManualActivity = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
@@ -11,6 +11,8 @@ local TableNormal = {
     WheelchairManualGuideActivityPeriod = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     WheelchairManualGuideWeekActivity = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     WheelchairManualGuideWeekReward = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
+    -- #203409 经过多次尝试, 放在这里最稳妥
+    WheelchairManualGuideWeekRewardSpecialDeal = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
 
     WheelchairManualBattlePassPlan = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     WheelchairManualBattlePassReward = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
@@ -34,6 +36,12 @@ local XWheelchairManualGuideViewData = require('XModule/XWheelchairManual/Entity
 function XWheelchairManualModel:OnInit()
     self._ConfigUtil:InitConfigByTableKey("WheelchairManual", TableNormal, XConfigUtil.CacheType.Normal)
     self._ConfigUtil:InitConfigByTableKey("WheelchairManual", TablePrivate, XConfigUtil.CacheType.Private)
+end
+
+---不要调用, 这是给跨版本分类提供的方法
+-- #203409 让分类能获取到这个TableKey
+function XWheelchairManualModel:GetNormalTableKey()
+    return TableNormal
 end
 
 function XWheelchairManualModel:ClearPrivate()

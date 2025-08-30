@@ -113,7 +113,8 @@ end
 
 function XUiFpsGameSettlement:OnBtnAgainClick()
     self._Control:EnterFightAgain()
-    self:Close()
+    XLuaUiManager.Remove("UiFpsGameSettlement")
+
 end
 
 function XUiFpsGameSettlement:SetMouseVisible()

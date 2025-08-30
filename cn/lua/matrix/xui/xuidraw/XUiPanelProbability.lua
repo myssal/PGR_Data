@@ -1,3 +1,4 @@
+---@class XUiPanelProbability
 local XUiPanelProbability = XClass(nil, "XUiPanelProbability")
 
 function XUiPanelProbability:Ctor(ui, parent)
@@ -7,18 +8,19 @@ function XUiPanelProbability:Ctor(ui, parent)
     self.Parent = parent
 end
 
-function XUiPanelProbability:SetData(data)
+---@param data XTableDrawProbShow
+function XUiPanelProbability:SetData(data, i)
     if not data or self.Data == data then
         return
     end
     self.Data = data
-    self:SetIsUp(data.IsUp)
-    self.TxtName.text = data.Name
-    self.TxtType.text = data.Type
-    if data.IsUp then
-        self.TxtUpProb.text = data.ProbShow
+    self:SetIsUp(data.IsUp[i])
+    self.TxtName.text = data.Name[i]
+    self.TxtType.text = data.Type[i]
+    if data.IsUp[i] then
+        self.TxtUpProb.text = data.ProbShow[i]
     else
-        self.TxtNorProb.text = data.ProbShow
+        self.TxtNorProb.text = data.ProbShow[i]
     end
     self:SetActive(true)
 end

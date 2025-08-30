@@ -224,6 +224,14 @@ function XTheatre5PVEControl:GetPveStoryEntranceCfg(entranceName)
     return self._Model:GetPveStoryEntranceCfg(entranceName)
 end
 
+function XTheatre5PVEControl:IsPveStoryEntranceOpen(entranceName)
+    local config, isValid = self:GetPveStoryEntranceCfg(entranceName)
+    if config then
+        return true, isValid
+    end
+    return false, isValid
+end
+
 function XTheatre5PVEControl:GetPVEChatWriteTime()
     return self._Model:GetTheatre5ConfigValByKey('PveChatWriteTime')
 end

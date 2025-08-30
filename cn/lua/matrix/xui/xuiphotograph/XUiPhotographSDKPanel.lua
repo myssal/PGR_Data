@@ -81,6 +81,9 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
             self.BtnExplorerPc.gameObject:SetActiveEx(false)
         end
     end
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnSave.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiPhotographSDKPanel:Show()

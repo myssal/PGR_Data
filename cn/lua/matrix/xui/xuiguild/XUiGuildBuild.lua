@@ -71,14 +71,18 @@ function XUiGuildBuild:OnGuildFilterFinish(guildName, guilaDecl)
     self.GuidNameInputField.text = guildName
     self.GuildDeclarationInputField.text = guilaDecl
 end
+
 function XUiGuildBuild:OnBtnConfirmClick()
     if not self.GuidNameInputField or not self.GuidNameInputField.textComponent then
         return
     end
 
     local guildName = self.GuidNameInputField.text
-
-    if string.match(guildName,"%s") then
+    local condition = string.match(guildName,"%s")
+    if XOverseaManager.IsKRRegion() then
+        condition = not string.match(guildName,"%S")--防止出现纯空白字符串
+    end
+    if condition then
         XUiManager.TipText("GuildNameSpecialTips",XUiManager.UiTipType.Wrong)
         return
     end
@@ -107,8 +111,11 @@ function XUiGuildBuild:OnBtnConfirmClick()
         XUiManager.TipMsg(text, XUiManager.UiTipType.Wrong)
         return
     end
-
-    if string.match(declaration,"%s") then
+    local condition = string.match(declaration,"%s")
+    if XOverseaManager.IsKRRegion() then
+        condition = not string.match(declaration,"%S")
+    end
+    if condition then
         XUiManager.TipText("GuildDeclarationSpecialTips",XUiManager.UiTipType.Wrong)
         return
     end
@@ -124,7 +131,21 @@ function XUiGuildBuild:OnBtnConfirmClick()
         local needNum = tonumber(self.AllCosts[i])
         local ownNum = XDataCenter.ItemManager.GetCount(coin)
         local coinName = XDataCenter.ItemManager.GetItemName(coin)
-        costStr = string.format("%s%d%s,", costStr, needNum, coinName)
+        if XOverseaManager.IsENRegion() then
+            if i == #self.AllCoins then
+                costStr = string.format("%s%d %s", costStr, needNum, coinName)
+            else
+                costStr = string.format("%s%d %s, ", costStr, needNum, coinName)
+            end
+        elseif XOverseaManager.IsKRRegion() then
+            if costStr ~= "" then   --韩服创建公会提示文本样式修改
+                costStr = string.format("%s,%s*%d", costStr, coinName, needNum)
+            else
+                costStr = string.format("%s%s*%d", costStr, coinName, needNum)
+            end
+        else
+            costStr = string.format("%s%d%s,", costStr, needNum, coinName)
+        end
         if needNum > ownNum then
             XUiManager.TipText("GuildBuildNotEnoughCosts",XUiManager.UiTipType.Wrong)
             return

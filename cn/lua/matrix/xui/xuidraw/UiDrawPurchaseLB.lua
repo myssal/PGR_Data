@@ -29,6 +29,7 @@ end
 function XUiDrawPurchaseLB:OnDisable()
     self:DestroyTimer()
     XDataCenter.UiPcManager.OnUiDisableAbandoned(true, self)
+    self.Parent:Refresh()
 end
 
 function XUiDrawPurchaseLB:OnRefresh()

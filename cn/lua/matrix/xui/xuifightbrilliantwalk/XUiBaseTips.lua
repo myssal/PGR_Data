@@ -4,7 +4,8 @@ local CSXFightIntStringMapManagerTryGetString = CS.XFightIntStringMapManager.Try
 local CSXTextManagerFormatString = CS.XTextManager.FormatString
 local V3 = CS.UnityEngine.Vector3.zero -- 临时变量
 
-function XUiBaseTips:Ctor(ui)
+function XUiBaseTips:Ctor(ui, prefabName)
+    self.PrefabName = prefabName
     self.GameObject = ui.gameObject
     self.RectTransform = self.GameObject:GetComponent("RectTransform")
     XTool.InitUiObjectByUi(self, ui)
@@ -94,8 +95,11 @@ function XUiBaseTips:GetObjPosToUguiPos(canvasRect, fromObjPos)
     return V3
 end
 
-function XUiBaseTips:OnDestroy()
+function XUiBaseTips:OnDestroy(parentTrans)
     XUiHelper.Destroy(self.GameObject)
+    if parentTrans then
+        parentTrans:UnloadPrefabEx(self.PrefabName)
+    end
 end
 
 function XUiBaseTips:GetStyleType()

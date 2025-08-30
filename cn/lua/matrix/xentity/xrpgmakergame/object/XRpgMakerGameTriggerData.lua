@@ -37,9 +37,9 @@ function XRpgMakerGameTriggerData:InitData()
     self.IsPlayElectricStatusSwitchSound = false    --是否播放电墙机关切换音效
 
     local triggerId = self:GetId()
-    local defaultBlock = XRpgMakerGameConfigs.GetRpgMakerGameTriggerDefaultBlock(triggerId)
+    local defaultBlock = XMVCA.XRpgMakerGame:GetConfig():GetTriggerDefaultBlock(triggerId)
     self:SetTriggerStatus(defaultBlock)
-    self:SetElectricStatus(XRpgMakerGameConfigs.XRpgMakerGameElectricStatus.OpenElectricFence)
+    self:SetElectricStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameElectricStatus.OpenElectricFence)
 end
 
 ---@param mapObjData XMapObjectData
@@ -85,11 +85,11 @@ end
 
 function XRpgMakerGameTriggerData:IsBlock(status)
     local triggerStatus = status or self._TriggerStatus
-    return triggerStatus == XRpgMakerGameConfigs.XRpgMakerGameBlockStatus.Block
+    return triggerStatus == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameBlockStatus.Block
 end
 
 function XRpgMakerGameTriggerData:IsElectricOpen()
-    return self._ElectricStatus == XRpgMakerGameConfigs.XRpgMakerGameElectricStatus.OpenElectricFence
+    return self._ElectricStatus == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameElectricStatus.OpenElectricFence
 end
 
 function XRpgMakerGameTriggerData:UpdateObjTriggerStatus(isNotPlaySound)
@@ -109,7 +109,7 @@ function XRpgMakerGameTriggerData:PlayTriggerStatusChangeAction(action, cb, isNo
     end
 
     local triggerId = self:GetId()
-    local triggerType = XRpgMakerGameConfigs.GetRpgMakerGameTriggerType(triggerId)
+    local triggerType = XMVCA.XRpgMakerGame:GetConfig():GetTriggerType(triggerId)
     local triggerStatus = action.TriggerStatus or action.BlockStatus
     local electricStatus = action.ElectricStatus
     local isBlock = self:IsBlock(triggerStatus)
@@ -124,7 +124,7 @@ function XRpgMakerGameTriggerData:PlayTriggerStatusChangeAction(action, cb, isNo
     local isGrassShelter = XDataCenter.RpgMakerGameManager.IsGrassShelter(pointX, pointY)
 
     --升降台阻挡物
-    if triggerType == XRpgMakerGameConfigs.XRpgMakerGameTriggerType.Trigger2 then
+    if triggerType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameTriggerType.Trigger2 then
         self:CheckTriggerType1Touch(isBlock)
         self:StopTriggerType2PlayTimer()
         local objSize = self:GetGameObjSize()
@@ -155,7 +155,7 @@ function XRpgMakerGameTriggerData:PlayTriggerStatusChangeAction(action, cb, isNo
         end
 
     --地刺
-    elseif triggerType == XRpgMakerGameConfigs.XRpgMakerGameTriggerType.Trigger3 then
+    elseif triggerType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameTriggerType.Trigger3 then
         local trigger = XUiHelper.TryGetComponent(transform, "ScenePuzzle01_02Dici")
         if trigger then
             trigger.gameObject:SetActiveEx(isBlock)
@@ -168,11 +168,11 @@ function XRpgMakerGameTriggerData:PlayTriggerStatusChangeAction(action, cb, isNo
             XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_TriggerType3)
         end
 
-    elseif triggerType == XRpgMakerGameConfigs.XRpgMakerGameTriggerType.TriggerElectricFence then
+    elseif triggerType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameTriggerType.TriggerElectricFence then
         local sceneObjRoot = self:GetGameObjModelRoot()
         local isElectricOpen = self:IsElectricOpen()
         local modelKey = XRpgMakerGameConfigs.GetRpgMakerGameTriggerKey(triggerType, isElectricOpen)
-        local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+        local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
         self:LoadModel(modelPath, sceneObjRoot, nil, modelKey)
 
         if self.IsPlayElectricStatusSwitchSound and self.ElectricStatusIsChange then
@@ -197,7 +197,7 @@ end
 function XRpgMakerGameTriggerData:CheckTriggerType1Touch(isBlock)
     local currentScene = XDataCenter.RpgMakerGameManager.GetCurrentScene()
     local mapId = currentScene:GetMapId()
-    local triggerIdList = XRpgMakerGameConfigs.GetRpgMakerGameMapIdToTriggerIdList(mapId)
+    local triggerIdList = {} --XRpgMakerGameConfigs.GetRpgMakerGameMapIdToTriggerIdList(mapId)
     local playerObj = XDataCenter.RpgMakerGameManager.GetPlayerObj()
     local positionX
     local positionY
@@ -208,10 +208,10 @@ function XRpgMakerGameTriggerData:CheckTriggerType1Touch(isBlock)
     local monsterObj
 
     for _, triggerId in ipairs(triggerIdList) do
-        triggerType = XRpgMakerGameConfigs.GetRpgMakerGameTriggerType(triggerId)
-        if triggerType == XRpgMakerGameConfigs.XRpgMakerGameTriggerType.Trigger1 then
-            pointX = XRpgMakerGameConfigs.GetRpgMakerGameTriggerX(triggerId)
-            pointY = XRpgMakerGameConfigs.GetRpgMakerGameTriggerY(triggerId)
+        triggerType = XMVCA.XRpgMakerGame:GetConfig():GetTriggerType(triggerId)
+        if triggerType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameTriggerType.Trigger1 then
+            pointX = XMVCA.XRpgMakerGame:GetConfig():GetTriggerX(triggerId)
+            pointY = XMVCA.XRpgMakerGame:GetConfig():GetTriggerY(triggerId)
             positionX = playerObj:GetPositionX()
             positionY = playerObj:GetPositionY()
             if pointX == positionX and pointY == positionY then
@@ -219,7 +219,7 @@ function XRpgMakerGameTriggerData:CheckTriggerType1Touch(isBlock)
                 goto continue
             end
 
-            monsterIdList = XRpgMakerGameConfigs.GetRpgMakerGameMapIdToMonsterIdList(mapId)
+            monsterIdList = {} --XRpgMakerGameConfigs.GetRpgMakerGameMapIdToMonsterIdList(mapId)
             for _, monsterId in ipairs(monsterIdList) do
                 monsterObj = XDataCenter.RpgMakerGameManager.GetMonsterObj(monsterId)
                 positionX = monsterObj:GetPositionX()
@@ -249,8 +249,8 @@ function XRpgMakerGameTriggerData:PlayTriggerType1Action(triggerId, isBlock)
         return
     end
 
-    local pointX = XRpgMakerGameConfigs.GetRpgMakerGameTriggerX(triggerId)
-    local pointY = XRpgMakerGameConfigs.GetRpgMakerGameTriggerY(triggerId)
+    local pointX = XMVCA.XRpgMakerGame:GetConfig():GetTriggerX(triggerId)
+    local pointY = XMVCA.XRpgMakerGame:GetConfig():GetTriggerY(triggerId)
     local cubeUpCenterPosition = self:GetCubeUpCenterPosition(pointY, pointX)
     local cubeUpCenterPositionY = cubeUpCenterPosition.y
     local positionX = gameObjPosition.x

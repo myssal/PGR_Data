@@ -186,8 +186,15 @@ function XPurchaseConfigs.Init()
     XConfigCenter.CreateGetPropertyByFunc(XPurchaseConfigs, "PurchasePayUiConfig", function()
         return XTableManager.ReadByStringKey(TABLE_PAY_UI_CONFIG, XTable.XTablePurchasePayUiConfig, "Key")
     end)
+end
     
-    
+function XPurchaseConfigs.IsYKID(id)
+    -- 海外月卡Id
+    if not XOverseaManager.IsENRegion() then
+        return id == XPurchaseConfigs.YKID
+    else
+        return id == 83028 or id == 90032 -- todo 需要配表
+    end
 end
 
 function XPurchaseConfigs.GetIconPathByIconName(iconName)

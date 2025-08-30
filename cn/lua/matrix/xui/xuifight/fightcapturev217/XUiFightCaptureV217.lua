@@ -156,6 +156,9 @@ function XUiFightCaptureV217:Refresh()
     self.BtnAgain.gameObject:SetActiveEx(not self.IsPhotographed)
     self.BtnStop.gameObject:SetActiveEx(not self.IsPhotographed)
     self.BtnPhotograph.gameObject:SetActiveEx(not self.IsPhotographed)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotoSave.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiFightCaptureV217:RefreshMenu()

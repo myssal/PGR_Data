@@ -33,12 +33,19 @@ function XUiActivityBaseChild:OnStart(activityGroupInfos, selectIndex, selectId)
     self.AcitivityTypeGroups = {}
     self.ActivityGroupInfos = activityGroupInfos
     self:UpdateActivityInfos(selectIndex, selectId)
-    XRedPointManager.AddRedPointEvent(self.PanelNoticeTitleBtnGroup, self.OnCheckRedPoint, self, { XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_ACTIVITIES_TOGS }, nil, false)
+    if XOverseaManager.IsOverSeaRegion() then
+        XRedPointManager.AddRedPointEvent(self.PanelNoticeTitleBtnGroup, self.OnCheckRedPointRegression, self, { XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_ACTIVITIES_TOGS }, nil, false)
+    else
+        XRedPointManager.AddRedPointEvent(self.PanelNoticeTitleBtnGroup, self.OnCheckRedPoint, self, { XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_ACTIVITIES_TOGS }, nil, false)
+    end
 end
 
 function XUiActivityBaseChild:OnEnable()
     if self.SelectIndex then
         self.PanelNoticeTitleBtnGroup:SelectIndex(self.SelectIndex)
+    end
+    if XOverseaManager.IsJP_KRRegion() then
+        XEventManager.AddEventListener(XEventId.EVENT_NEWYEARYUNSHI_CLOSE_REFRESH, self.Update, self)
     end
 end
 
@@ -47,6 +54,13 @@ function XUiActivityBaseChild:OnDisable()
         self.SelectedPanel:OnDisable()
     end
     self:StopDelayUpdateTaskPanelTimer()
+    if XOverseaManager.IsJP_KRRegion() then
+        XEventManager.RemoveEventListener(XEventId.EVENT_NEWYEARYUNSHI_CLOSE_REFRESH, self.Update, self)
+    end
+end
+
+function XUiActivityBaseChild:Update()
+    self:OnSelectedTog(self.SelectIndex)
 end
 
 function XUiActivityBaseChild:OnDestroy()
@@ -104,6 +118,10 @@ function XUiActivityBaseChild:StopDelayUpdateTaskPanelTimer()
         XScheduleManager.UnSchedule(self.DelayUpdateTaskPanelTimer)
         self.DelayUpdateTaskPanelTimer = nil
     end
+end
+
+function XUiActivityBaseChild:OnCheckRedPointRegression()
+    self:OnCheckRedPoint()
 end
 
 -- 只刷新tog红点不刷新界面
@@ -292,6 +310,10 @@ function XUiActivityBaseChild:OnSelectedTog(index)
         self.SelectedPanel = self.LinkPanel
     else
         self:UpdatePanel(activityCfg)
+    end
+
+    if activityCfg.ActivityType ~= XActivityConfigs.ActivityType.Task then
+        self.PanelTask.gameObject:SetActiveEx(false)
     end
 
     if activityCfg.ActivityBgType == XActivityConfigs.ActivityBgType.Image then

@@ -22,23 +22,26 @@ function XUiRpgMakerGameStage:Refresh(newStageId)
 
     --背景图
     if self.RImgFightActiveNor then
-        local bg = XRpgMakerGameConfigs.GetRpgMakerGameStageBG(rpgMakerGameStageId)
+        local bg = XMVCA.XRpgMakerGame:GetConfig():GetStageBG(rpgMakerGameStageId)
         self.RImgFightActiveNor:SetRawImage(bg)
     end
 
     --关卡名
     if self.TxtStageOrder then
-        self.TxtStageOrder.text = stageStatus ~= XRpgMakerGameConfigs.RpgMakerGameStageStatus.Lock and XRpgMakerGameConfigs.GetStageNumberName(rpgMakerGameStageId) or ""
+        self.TxtStageOrder.text = stageStatus ~= XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Lock and XMVCA.XRpgMakerGame:GetConfig():GetStageNumberName(rpgMakerGameStageId) or ""
+    end
+    if self.TxtStageOrderLock then
+        self.TxtStageOrderLock.text = XMVCA.XRpgMakerGame:GetConfig():GetStageNumberName(rpgMakerGameStageId)
     end
 
     self.PanelEffect.gameObject:SetActiveEx(newStageId == rpgMakerGameStageId)
 end
 
 function XUiRpgMakerGameStage:UpdateStar(rpgMakerGameStageId)
-    local totalStar = XRpgMakerGameConfigs.GetRpgMakerGameStageTotalStar(rpgMakerGameStageId)
+    local totalStar = XMVCA.XRpgMakerGame:GetConfig():GetStageTotalStar(rpgMakerGameStageId)
     local clearStarCount = 0
     local starCfg
-    local maxStarCount = XRpgMakerGameConfigs.MaxStarCount
+    local maxStarCount = XMVCA.XRpgMakerGame.EnumConst.MaxStarCount
     local stageDb = XDataCenter.RpgMakerGameManager.GetRpgMakerActivityStageDb(rpgMakerGameStageId)
     local stageClearStarCount = stageDb and stageDb:GetStarCount() or 0   --通关获得的星星数
 
@@ -59,20 +62,20 @@ function XUiRpgMakerGameStage:UpdatePanelStageStatus(stageStatus)
     if self.PanelStageNormal then
         -- ui说四期显示该节点
         self.PanelStageNormal.gameObject:SetActiveEx(true)
-        -- self.PanelStageNormal.gameObject:SetActiveEx(stageStatus ~= XRpgMakerGameConfigs.RpgMakerGameStageStatus.Lock)
+        -- self.PanelStageNormal.gameObject:SetActiveEx(stageStatus ~= XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Lock)
     end
     if self.PanelStageLock then
-        self.PanelStageLock.gameObject:SetActiveEx(stageStatus == XRpgMakerGameConfigs.RpgMakerGameStageStatus.Lock)
+        self.PanelStageLock.gameObject:SetActiveEx(stageStatus == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Lock)
     end
     if self.PanelStagePass then
-        self.PanelStagePass.gameObject:SetActiveEx(stageStatus == XRpgMakerGameConfigs.RpgMakerGameStageStatus.Clear or
-        stageStatus == XRpgMakerGameConfigs.RpgMakerGameStageStatus.Perfect)
+        self.PanelStagePass.gameObject:SetActiveEx(stageStatus == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Clear or
+        stageStatus == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Perfect)
     end
     if self.PanelKill then
-        self.PanelKill.gameObject:SetActiveEx(stageStatus == XRpgMakerGameConfigs.RpgMakerGameStageStatus.Clear)
+        self.PanelKill.gameObject:SetActiveEx(stageStatus == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Clear)
     end
     if self.PanelKill2 then
-        self.PanelKill2.gameObject:SetActiveEx(stageStatus == XRpgMakerGameConfigs.RpgMakerGameStageStatus.Perfect)
+        self.PanelKill2.gameObject:SetActiveEx(stageStatus == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameStageStatus.Perfect)
     end
 end
 

@@ -135,6 +135,8 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XFashionStory XFashionStoryAgency
 ---@field XHelpCourse XHelpCourseAgency
 ---@field XSoloReform XSoloReformAgency
+---@field XRpgMakerGame XRpgMakerGameAgency
+---@field XFunction XFunctionAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -260,7 +262,7 @@ end
 ---@param id number 模块id ModuleId
 function XMVCACls:CheckReleaseControl(id)
     local control = self._ControlDict[id]
-    if control and not control:HasViewRef() then
+    if control and not control:HasViewRef() and not control:HasStackOperationRef() then
         control:OnRefClear()
         if control:_GetDelayReleaseTime() ~= 0 then
             self:_AddDelayReleaseControl(control)
@@ -633,6 +635,12 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XFashionStory)
     self:RegisterAgency(ModuleId.XSoloReform)
     self:RegisterAgency(ModuleId.XHelpCourse)
+    self:RegisterAgency(ModuleId.XRpgMakerGame)
+    self:RegisterAgency(ModuleId.XFunction)
+
+    -- #203409 多次尝试后, 还是写在这里最稳妥
+    self:RegisterAgency(ModuleId.XAccumulateExpendL)
+    self:RegisterAgency(ModuleId.XPassportComb)
 end
 
 function XMVCACls:AddPreloadConfig(path)

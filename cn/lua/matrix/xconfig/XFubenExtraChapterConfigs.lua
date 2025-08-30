@@ -12,8 +12,8 @@ local ExtraChapterActivityCfg = {}
 local ExtraChapterCfgs = {} --TABLE_CHAPTER_EXTRA ChapterExtra.tab 番外章节数据，与Details表关联，难度指向不同的章节详细项
 local ExtraChapterDetailsCfgs = {} --TABLE_CHAPTER_EXTRA_DETAILS ChapterExtraDetails.tab 番外章节详细数据
 local ExtraChapterStarTreasureCfgs = {} --TABLE_CHAPTER_EXTRA_STARTREASURE ChapterExtraStarTreasure.tab
-local ExtraExploreGroupCfgs = {} --TABLE_EXPLOREGROUP ExtraExploreGroup.tab 番外探索组
-local ExtraExploreItemCfgs = {} --TABLE_EXPLOREITEM ExtraExploreItem.tab 番外探索道具数据
+local ExtraExploreGroupCfgs = nil --TABLE_EXPLOREGROUP ExtraExploreGroup.tab 番外探索组
+local ExtraExploreItemCfgs = nil --TABLE_EXPLOREITEM ExtraExploreItem.tab 番外探索道具数据
 local ExtraNextChapterCfgs = {}
 
 function XFubenExtraChapterConfigs.Init()
@@ -21,8 +21,6 @@ function XFubenExtraChapterConfigs.Init()
     ExtraChapterCfgs = XTableManager.ReadAllByIntKey(TABLE_CHAPTER_EXTRA, XTable.XTableChapterExtra, "Id")
     ExtraChapterDetailsCfgs = XTableManager.ReadByIntKey(TABLE_CHAPTER_EXTRA_DETAILS, XTable.XTableChapterExtraDetails, "ChapterId")
     ExtraChapterStarTreasureCfgs = XTableManager.ReadByIntKey(TABLE_CHAPTER_EXTRA_STARTREASURE, XTable.XTableChapterExtraStarTreasure, "TreasureId")
-    ExtraExploreGroupCfgs = XTableManager.ReadByIntKey(TABLE_EXPLOREGROUP, XTable.XTableExtraExploreGroup, "Id")
-    ExtraExploreItemCfgs = XTableManager.ReadByIntKey(TABLE_EXPLOREITEM, XTable.XTableExtraExploreItem, "Id")
     ExtraNextChapterCfgs = XTableManager.ReadByIntKey(TABLE_EXTRA_NEXT_CHAPTER, XTable.XTableExtraNextChapter, "ChapterId")
 end
 
@@ -49,19 +47,26 @@ function XFubenExtraChapterConfigs.GetExtraChapterStarTreasuresCfgs()
 end
 
 function XFubenExtraChapterConfigs.GetExploreGroupCfg()
+    if not ExtraExploreGroupCfgs then
+        ExtraExploreGroupCfgs = XTableManager.ReadByIntKey(TABLE_EXPLOREGROUP, XTable.XTableExtraExploreGroup, "Id")
+    end
     return ExtraExploreGroupCfgs
 end
 
 function XFubenExtraChapterConfigs.GetExploreItemCfg()
+    if not ExtraExploreItemCfgs then
+        ExtraExploreItemCfgs = XTableManager.ReadByIntKey(TABLE_EXPLOREITEM, XTable.XTableExtraExploreItem, "Id")
+    end
     return ExtraExploreItemCfgs
 end
 
 function XFubenExtraChapterConfigs.GetExploreItemCfgById(id)
-    if not ExtraExploreItemCfgs[id] then
+    local configs = XFubenExtraChapterConfigs.GetExploreItemCfg()
+    if not configs[id] then
         XLog.ErrorTableDataNotFound("XFubenExtraChapterConfigs.GetExploreItemCfgById", "ExtraExploreItem", TABLE_EXPLOREITEM, "Id", tostring(id))
         return nil
     end
-    return ExtraExploreItemCfgs[id]
+    return configs[id]
 end
 
 ---

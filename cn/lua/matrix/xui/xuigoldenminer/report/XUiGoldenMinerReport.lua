@@ -65,7 +65,9 @@ end
 ---展示剩余时间结算
 function XUiGoldenMinerReport:UpdateTimeScore()
     local timeTxt = string.format("%02d:%02d", math.floor(self._ReportData:GetLastTime() / 60), self._ReportData:GetLastTime() % 60)
-    self.TxtTimeScore.text = XUiHelper.GetText("GoldenMinerReqportObjScore", timeTxt, self._ReportData:GetLastTimeScore())
+    --6.0隐藏显示时间得分，这一期时间不得分
+    --self.TxtTimeScore.text = XUiHelper.GetText("GoldenMinerReqportObjScore", timeTxt, self._ReportData:GetLastTimeScore())
+    self.TxtTimeScore.text = timeTxt
 end
 
 --刷新掘金者雷达剩余时间加分

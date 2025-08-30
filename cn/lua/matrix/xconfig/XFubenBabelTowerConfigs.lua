@@ -16,7 +16,6 @@ local SHARE_BABEL_STAGELEVELGLOBALUNLOCK = "Share/Fuben/BabelTower/BabelTowerSta
 local CLIENT_BABEL_STAGEGUIDEDETAIL = "Client/Fuben/BabelTower/BabelTowerStageGuideDetails.tab"
 local CLIENT_BABEL_BUFFDETAIL = "Client/Fuben/BabelTower/BabelTowerBuffDetails.tab"
 local CLIENT_BABEL_BUFFGROUPDETAIL = "Client/Fuben/BabelTower/BabelTowerBuffGroupDetails.tab"
-local CLIENT_BABEL_BUFFGROUPDETAILTEXT = "Client/Fuben/BabelTower/BabelTowerBuffGroupDetailsText.tab"
 local CLIENT_BABEL_STAGEDETAIL = "Client/Fuben/BabelTower/BabelTowerStageDetails.tab"
 local CLIENT_BABEL_ACTIVITYDETAIL = "Client/Fuben/BabelTower/BabelTowerActivityDetails.tab"
 local CLIENT_BABEL_CONDITIONDETAIL = "Client/Fuben/BabelTower/BabelTowerConditionDetails.tab"
@@ -38,8 +37,6 @@ local BabelStageGuideDetailsConfigs = {}
 local BabelBuffDetailsConfigs = {}
 ---@type XTableBabelTowerBuffGroupDetails[]
 local BabelBuffGroupDetailsConfigs = {}
----@type XTableBabelTowerBuffGroupDetailsText[]
-local BabelBuffGroupDetailsTextConfigs = {}
 local BabelStageConfigs = {}
 local BabelActivityDetailsConfigs = {}
 local BabelConditionDetailsConfigs = {}
@@ -177,7 +174,6 @@ function XFubenBabelTowerConfigs.Init()
     BabelStageGuideDetailsConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_STAGEGUIDEDETAIL, XTable.XTableBabelTowerStageGuideDetails, "Id")
     BabelBuffDetailsConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_BUFFDETAIL, XTable.XTableBabelTowerBuffDetails, "Id")
     BabelBuffGroupDetailsConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_BUFFGROUPDETAIL, XTable.XTableBabelTowerBuffGroupDetails, "Id")
-    BabelBuffGroupDetailsTextConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_BUFFGROUPDETAILTEXT, XTable.XTableBabelTowerBuffGroupDetailsText, "Id")
     BabelStageConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_STAGEDETAIL, XTable.XTableBabelTowerStageDetails, "Id")
     BabelActivityDetailsConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_ACTIVITYDETAIL, XTable.XTableBabelTowerActivityDetails, "Id")
     BabelConditionDetailsConfigs = XTableManager.ReadByIntKey(CLIENT_BABEL_CONDITIONDETAIL, XTable.XTableBabelTowerConditionDetails, "Id")
@@ -282,17 +278,6 @@ function XFubenBabelTowerConfigs.GetBabelBuffGroupConfigs(buffGroupId)
         return nil
     end
     return BabelBuffGroupDetailsConfigs[buffGroupId]
-end
-
-function XFubenBabelTowerConfigs.GetBabelBuffGroupText(id)
-    if not XTool.IsNumberValid(id) then
-        return ""
-    end
-    if not BabelBuffGroupDetailsTextConfigs[id] then
-        XLog.ErrorTableDataNotFound("XFubenBabelTowerConfigs.GetBabelBuffGroupText", "BabelTowerBuffGroupDetailsText", CLIENT_BABEL_BUFFGROUPDETAILTEXT, "Id", tostring(id))
-        return ""
-    end
-    return BabelBuffGroupDetailsTextConfigs[id].Text or ""
 end
 
 function XFubenBabelTowerConfigs.IsBuffGroupHard(buffGroupId)

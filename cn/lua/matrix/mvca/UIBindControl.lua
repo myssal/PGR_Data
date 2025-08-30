@@ -387,6 +387,7 @@ local UIBindControl = {
     UiRiftFuncUnlockTips = ModuleId.XRift,
     UiRiftHandbookBuff = ModuleId.XRift,
     UiRiftMain = ModuleId.XRift,
+    UiRiftChooseChapter = ModuleId.XRift,
     UiRiftPopupAffix = ModuleId.XRift,
     UiRiftPopupChapterDetail = ModuleId.XRift,
     UiRiftPluginBag = ModuleId.XRift,
@@ -969,8 +970,32 @@ local UIBindControl = {
     UiPopupTeach = ModuleId.XHelpCourse,
     UiCollectionTeach = ModuleId.XHelpCourse,
     --endregion
+    
+    --region 推箱子
+    UiRpgMakerGameMain = ModuleId.XRpgMakerGame,
+    UiRpgMakerGamePlayTask = ModuleId.XRpgMakerGame,
+    UiRpgMakerGameDetail = ModuleId.XRpgMakerGame,
+    UiRpgMakerGameMapTip = ModuleId.XRpgMakerGame,
+    UiRpgMakerGameChoice = ModuleId.XRpgMakerGame,
+    UiFubenRpgMakerGameMovie = ModuleId.XRpgMakerGame,
+    UiRpgMakerGamePlayMain = ModuleId.XRpgMakerGame,
+    --endregion
 
     UiCloudGamingPopupMain = ModuleId.XCloudGame,
+
+    -- #203409 多次尝试后, 还是写在这里最稳妥
+    --region combBP/passportComb
+    UiPassportComb = ModuleId.XPassportComb,
+    UiPassportTipsComb = ModuleId.XPassportComb,
+    UiPassportCardComb = ModuleId.XPassportComb,
+    UiPassportRewardComb = ModuleId.XPassportComb,
+    UiPassportUpLevelComb = ModuleId.XPassportComb,
+    --endregion
+
+    --region 合版本累消
+    UiCombAccumulateDraw = ModuleId.XAccumulateExpendL,
+    UiCombAccumulateDrawLog = ModuleId.XAccumulateExpendL,
+    --endregion
 }
 
 return UIBindControl

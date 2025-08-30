@@ -120,7 +120,7 @@ end
 ---泡泡破裂特效
 function XRpgMakerGameBubble:PlayBubbleBrokenEffect(cb)
     if XTool.UObjIsNil(self.BubbleBrokenEffect) then
-        local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.BubbleBrokenEffect)
+        local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.BubbleBrokenEffect)
         local resource = self:ResourceManagerLoad(effectPath)
         local position = self:GetTransform().position
         if not position then

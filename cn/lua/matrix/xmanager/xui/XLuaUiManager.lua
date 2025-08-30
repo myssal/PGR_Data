@@ -369,6 +369,8 @@ function XLuaUiManager.RunMain(notDialogTip)
         CsXUiManager.Instance:RunMain()
         --end
     end
+    
+    XMVCA.XFunction:ExitCurrentFunction()
 end
 
 function XLuaUiManager.ShowTopUi()

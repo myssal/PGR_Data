@@ -91,8 +91,10 @@ end
 function XPokerGuessing2Agency:OpenMain()
     if self._Model:IsActivityOpen() then
         XLuaUiManager.Open("UiPokerGuessing2Main")
+        return true
     else
         XUiManager.TipText("ActivityBranchNotOpen")
+        return false
     end
 end
 
@@ -206,7 +208,7 @@ function XPokerGuessing2Agency:IsAvgPlayed()
     end--]]
 
     if self._Model:CheckIsFirstTimeStory() then
-        return
+        return true
     end
     
     return false

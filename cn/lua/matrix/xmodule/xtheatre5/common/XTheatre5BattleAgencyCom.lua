@@ -60,7 +60,7 @@ function XTheatre5BattleAgencyCom:_GetSimpleSettleContentForAdvance()
             PlayerId = XPlayer.Id
         }
     }
-    
+
     XMessagePack.MarkAsTable(dlcFightSettleData.PlayerData)
 
     return self._SimpleSttleContent
@@ -102,7 +102,7 @@ function XTheatre5BattleAgencyCom:_GetSimpleSettleContentForBattleInterrupt()
             PlayerId = XPlayer.Id
         }
     }
-    
+
     XMessagePack.MarkAsTable(dlcFightSettleData.PlayerData)
 
     return self._SimpleSttleContent
@@ -132,13 +132,13 @@ function XTheatre5BattleAgencyCom:RequestTheatre5AdvanceSettle(cb)
             if not XTool.IsTableEmpty(autoChessResult.CommonFightCnt) then
                 self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
             end
-            
+
             self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
             if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
                 self._Model.PVEAdventureData:UpdateTempChapterData()
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
-            end    
+            end
         end
 
         if cb then
@@ -183,7 +183,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5GiveUpSettle(cb)
                 self._Model.PVEAdventureData:UpdateTempChapterData()
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
-            end    
+            end
         end
 
         if cb then
@@ -210,7 +210,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5InterruptBattle(cb)
         local status = XMVCA.XTheatre5.EnumConst.PlayStatus.Matching
         if curPlayMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
             status = XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
-        end            
+        end
 
         self._Model.CurAdventureData:UpdateCurPlayStatus(status)
 
@@ -226,7 +226,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5InterruptBattle(cb)
                     self._Model.PVEAdventureData:UpdateTempChapterData()
                     self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                     self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
-                end        
+                end
                 isFinish = true
             end
         end
@@ -246,7 +246,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
     if self:_CheckPVPTimeEndInSettle() then
         return
     end
-    
+
     local contentBytes = result:GetFightsResultsBytes()
 
     XNetwork.Call("DlcSingleFightSettleRequest", contentBytes, function(res)
@@ -269,24 +269,25 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
             if not XTool.IsTableEmpty(autoChessResult.CommonFightCnt) then
                 self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
             end
-            
+
             if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
                 self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
             else
-                if not autoChessResult.PveChapterData then --章节结算
+                if not autoChessResult.PveChapterData then
+                    --章节结算
                     local isWin = res.DlcFightSettleData and res.DlcFightSettleData.ResultData and res.DlcFightSettleData.ResultData.IsPlayerWin
                     self._Model.PVEAdventureData:UpdateTempChapterData(isWin)
-                end    
+                end
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData) --关卡更新(胜利或失败)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)     --章节结束
             end
 
-            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT,res.DlcFightSettleData)
+            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT, res.DlcFightSettleData)
 
             -- 战斗校验结果
             if XTool.IsNumberValid(autoChessResult.CheckFailTimes) and autoChessResult.CheckFailTimes > self._Model.CurAdventureData:GetCheckFailTimes() then
                 local limit = self._Model:GetTheatre5ConfigValByKey('BattleCheckFailTimesLimit')
-                
+
                 if autoChessResult.CheckFailTimes >= limit then
                     local finalSettleFunc = function()
                         -- 达到校验上限后服务端已做提前结算处理，直接显示结果
@@ -302,7 +303,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                         if self:_CheckPVPTimeEndInSettle() then
                             return
                         end
-                        
+
                         self:RequestDlcSingleEnterFight(0)
                     end
 
@@ -310,7 +311,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                         if self:_CheckPVPTimeEndInSettle() then
                             return
                         end
-                        
+
                         -- 未达校验上限时需要手动请求提前结算
                         self:RequestTheatre5AdvanceSettle(function(success, advanceSettleRes)
                             if success then
@@ -340,8 +341,8 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
         if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
             if res.DlcFightSettleData and res.DlcFightSettleData.ResultData and res.DlcFightSettleData.ResultData.IsPlayerWin then
                 battleStatus = XMVCA.XTheatre5.EnumConst.PlayStatus.PveEveHandle
-            end    
-        end    
+            end
+        end
         self._Model.CurAdventureData:UpdateCurPlayStatus(battleStatus)
 
         if cb then
@@ -403,8 +404,8 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
 
                 if successCb then
                     successCb(worldData)
-                end    
-                
+                end
+
                 local enterFunc = function()
                     CsXBehaviorManager.Instance:Clear()
                     XTableManager.ReleaseAll(true)
@@ -433,7 +434,7 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
                     CS.StatusSyncFight.XFightClient.RequestExitFight()
                     --todo: 目前战斗结束是异步逻辑，且暂未支持回调，先手动延迟
                     delayEnterTime = delayEnterTime + XScheduleManager.SECOND * 2
-                end    
+                end
 
                 XScheduleManager.ScheduleOnce(function()
                     enterFunc()
@@ -500,7 +501,15 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer)
 
     autoChessData.CharacterId = autoChessDataServer.CharacterId
     autoChessData.FashionId = autoChessDataServer.FashionId
-    
+    -- 3.8新增武器id
+    if autoChessData.FashionId ~= 0 then
+        local fashionCfg = self._Model:GetTheatre5CharacterFashionCfgById(autoChessData.FashionId)
+        if fashionCfg then
+            -- 部分角色具有多个武器
+            autoChessData.WeaponIds = fashionCfg.DlcWeaponId
+        end
+    end
+
     for k, v in pairs(autoChessDataServer.Attribs) do
         autoChessData.Attribs:Add(k, v)
     end
@@ -607,13 +616,13 @@ function XTheatre5BattleAgencyCom:_CheckPVPTimeEndInSettle(inBattle)
     if not (XMVCA.XTheatre5:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP) then
         return false
     end
-    
+
     if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
         CS.StatusSyncFight.XFightClient.RequestExitFight()
         XUiManager.TipText('ActivityMainLineEnd')
         return true
     end
-    
+
     return false
 end
 

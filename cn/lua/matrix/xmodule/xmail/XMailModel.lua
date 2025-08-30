@@ -1,4 +1,4 @@
-local TABLE_MAIL_PATH = "Client/Mail/Mail.tab"
+local TABLE_MAIL_PATH = "Client/Mail/MailReward.tab"
 local TABLE_MAIL_REWARD_GOODS_PATH = "Share/Mail/MailRewardGoods.tab"
 local TABLE_FAVORITEMAIL_ACTIVITY_PATH = "Share/MailCollectionBox/MailCollectionBoxActivity.tab"
 local TABLE_FAVORITEMAIL_MIAL_PATH = "Share/MailCollectionBox/MailCollectionBoxFavoriteMail.tab"

@@ -7,58 +7,47 @@ function XUiFightAchievementGrid:Ctor(parent, achievementId, config)
     self.StageId = CS.XFight.Instance.FightData.StageId
     self.Agency = XMVCA:GetAgency(ModuleId.XMainLine2)
     self.Config = config
-    self.Loader = parent.Transform:GetLoader()
     
     local prefabPath = config.AssetPath
     if not prefabPath then
         return
     end
     
-    local asset = self.Loader:Load(prefabPath)
-    local prefab = CS.UnityEngine.Object.Instantiate(asset)
-    self.Prefab = prefab
-    self.Transform = prefab.transform
-    XTool.InitUiObject(self)
-    
-    local rectTransform = prefab:GetComponent("RectTransform")
-
+    self.ParentRoot = nil
+    local pivot
     if config.LayoutType == 1 then
-        local pivot = CS.UnityEngine.Vector2(0.5, 1)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.UpperMiddle, false)
+        pivot = CS.UnityEngine.Vector2(0.5, 1)
+        self.ParentRoot = parent.UpperMiddle
     elseif config.LayoutType == 2 then
-        local pivot = CS.UnityEngine.Vector2(0.5, 0)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.LowerMiddle, false)
+        pivot = CS.UnityEngine.Vector2(0.5, 0)
+        self.ParentRoot = parent.LowerMiddle
     elseif config.LayoutType == 3 then
-        local pivot = CS.UnityEngine.Vector2(0, 1)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.UpperLeft, false)
+        pivot = CS.UnityEngine.Vector2(0, 1)
+        self.ParentRoot = parent.UpperLeft
     elseif config.LayoutType == 4 then
-        local pivot = CS.UnityEngine.Vector2(0, 0)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.LowerLeft, false)
+        pivot = CS.UnityEngine.Vector2(0, 0)
+        self.ParentRoot = parent.LowerLeft
     elseif config.LayoutType == 5 then
-        local pivot = CS.UnityEngine.Vector2(1, 1)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.UpperRight, false)
+        pivot = CS.UnityEngine.Vector2(1, 1)
+        self.ParentRoot = parent.UpperRight
     else
-        local pivot = CS.UnityEngine.Vector2(1, 0)
-        rectTransform.anchorMax = pivot
-        rectTransform.anchorMin = pivot
-        rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
-        prefab.transform:SetParent(parent.LowerRight, false)
+        pivot = CS.UnityEngine.Vector2(1, 0)
+        self.ParentRoot = parent.LowerRight
     end
+
+    local prefabGameObj = self.ParentRoot.transform:LoadPrefabEx(prefabPath)
+    if not prefabGameObj then
+        return
+    end
+
+    self.Prefab = prefabGameObj
+    local rectTransform = prefabGameObj:GetComponent("RectTransform")
+    rectTransform.anchorMax = pivot
+    rectTransform.anchorMin = pivot
+    rectTransform.anchoredPosition = CS.UnityEngine.Vector2.zero
+
+    self.Transform = prefabGameObj.transform
+    XTool.InitUiObject(self)
     
     -- 设置数据
     self.RImgIcon:SetRawImage(self.Agency:GetStageChapterAchievementIcon(self.StageId))
@@ -139,13 +128,14 @@ function XUiFightAchievementGrid:Dispose()
     self:StopTimer()
 
     if self.Prefab then
-        CS.UnityEngine.Object.Destroy(self.Prefab.gameObject)
+        XUiHelper.Destroy(self.Prefab.gameObject)
         self.Prefab = nil
     end
 
     local prefabPath = self.Config.AssetPath
-    if prefabPath then
-        self.Loader:Unload(prefabPath)
+    if self.ParentRoot and prefabPath then
+        self.ParentRoot:UnloadPrefabEx(prefabPath)
+        self.ParentRoot = nil
     end
 end
 

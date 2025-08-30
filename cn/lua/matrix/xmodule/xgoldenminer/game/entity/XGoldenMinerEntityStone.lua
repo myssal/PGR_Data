@@ -11,6 +11,9 @@ function XGoldenMinerEntityStone:OnInit()
     ---额外参数
     ---@type number[]
     self.AdditionValue = {}
+    
+    self._BeCopyCount = 0 -- 被拷贝次数
+    self._IsCopy = false -- 自己是不是拷贝出来的
 end
 
 function XGoldenMinerEntityStone:OnRelease()
@@ -96,17 +99,66 @@ end
 function XGoldenMinerEntityStone:GetComponentSunMoon()
     return self:GetFirstChildEntityWithType(self._OwnControl.COMPONENT_TYPE.STONE_SUN_MOON)
 end
+
+---@return XGoldenMinerComponentLink
+function XGoldenMinerEntityStone:GetComponentLink()
+    return self:GetFirstChildEntityWithType(self._OwnControl.COMPONENT_TYPE.LINK)
+end
+
+function XGoldenMinerEntityStone:CheckIsBeCopy()
+    return XTool.IsNumberValidEx(self._BeCopyCount)
+end
+
+function XGoldenMinerEntityStone:GetIsCopy()
+    return self._IsCopy
+end
+
+function XGoldenMinerEntityStone:GetIsNewStatusEnter()
+    return self.NewStatusEnter
+end
 --endregion
 
 --region Setter
 function XGoldenMinerEntityStone:SetStatus(status)
     if self:CheckStatus(status) then
-        return
+        return false
     end
+    
     self.Status = status
+    self.NewStatusEnter = true
+    
     if status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE then
         self:_ChangeAlive()
     end
+
+    self:_OnStatusChanged(self.Status)
+    
+    return true
+end
+
+function XGoldenMinerEntityStone:RemoveComponentLink(linkCom)
+    if not linkCom then
+        linkCom = self:GetComponentLink()
+    end
+
+    if linkCom then
+        self:RemoveChildEntity(linkCom)
+    end
+
+    self:GetComponentStone():SetLinkStyleShow(false)
+end
+
+function XGoldenMinerEntityStone:SetIsCopy(isCopy)
+    self._IsCopy = isCopy
+    self:GetComponentStone():SetCopyStyleShow(self._IsCopy)
+end
+
+function XGoldenMinerEntityStone:AddBeCopyTimes()
+    self._BeCopyCount = self._BeCopyCount + 1
+end
+
+function XGoldenMinerEntityStone:ClearNewStatusEnterMark()
+    self.NewStatusEnter = false
 end
 --endregion
 
@@ -134,6 +186,20 @@ function XGoldenMinerEntityStone:_ChangeAlive()
     local directionAim = self:GetComponentAimDirection()
     if directionAim then
         directionAim:InitAlive()
+    end
+    
+    local linkCom = self:GetComponentLink()
+
+    if linkCom then
+        
+    end
+end
+
+function XGoldenMinerEntityStone:_OnStatusChanged(newStatus)
+    local linkCom = self:GetComponentLink()
+
+    if linkCom then
+        linkCom:OnStatusChanged(newStatus)
     end
 end
 --endregion

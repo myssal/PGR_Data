@@ -261,6 +261,9 @@ function XUiGuildDormMain:OnOpenHelpTips(isJump)
     self.UiPanelOperation:SetIsCanMove(false)
     local helpKey = "GuildDorm"
     local index = isJump and XMVCA.XHelpCourse:GetHelpCourseImageAssetCountByFunction(helpKey) or 0
+    if XOverseaManager.IsTWRegion() then
+        index =0
+    end
     XUiManager.ShowHelpTip(helpKey, function()
         self.UiPanelOperation:SetIsCanMove(true)
     end, index - 1)

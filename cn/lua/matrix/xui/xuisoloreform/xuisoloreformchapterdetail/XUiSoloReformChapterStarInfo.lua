@@ -6,6 +6,7 @@ local XUiSoloReformChapterStarInfo = XClass(XUiNode, 'XUiSoloReformChapterStarIn
 function XUiSoloReformChapterStarInfo:OnStart()
     self._StrengthCellList = {}
     self._StarAnimTimerId = nil
+    self._IsInit = true
 end
 
 function XUiSoloReformChapterStarInfo:OnEnable()
@@ -29,7 +30,8 @@ function XUiSoloReformChapterStarInfo:Update(stageId)
     if not string.IsNilOrEmpty(minPassTime) then
         self.TxtNum.text = minPassTime
     end
-    self:RefreshStarDesc(stageId)    
+    self:RefreshStarDesc(stageId)
+    self._IsInit = false    
 end
 
 function XUiSoloReformChapterStarInfo:RefreshStarDesc(stageId)
@@ -46,6 +48,7 @@ function XUiSoloReformChapterStarInfo:RefreshStarDesc(stageId)
         grid.GameObject:SetActiveEx(false)
     end)
     self:StopStarAnimTimer()
+    local delay = self._IsInit and 1000 or 100
     local interval = 100
     local times = 0
     self._StarAnimTimerId = XScheduleManager.Schedule(function()
@@ -55,7 +58,7 @@ function XUiSoloReformChapterStarInfo:RefreshStarDesc(stageId)
             return
         end
         showGrids[times]:SetActiveEx(true)    
-     end, interval, #showGrids, interval)
+     end, interval, #showGrids, delay)
 end
 
 function XUiSoloReformChapterStarInfo:StopStarAnimTimer()
@@ -68,6 +71,7 @@ end
 function XUiSoloReformChapterStarInfo:OnDestroy()
     self:StopStarAnimTimer()
     self._StrengthCellList = nil
+    self._IsInit = nil
 end
 
 return XUiSoloReformChapterStarInfo

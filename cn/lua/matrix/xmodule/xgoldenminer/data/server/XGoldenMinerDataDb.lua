@@ -1,8 +1,8 @@
-local XGoldenMinerItemData = require("XModule/XGoldenMiner/Data/Game/XGoldenMinerItemData")
-local XGoldenMinerStrengthenData = require("XModule/XGoldenMiner/Data/Server/XGoldenMinerStrengthenData")
-local XGoldenMinerShopItemData = require("XModule/XGoldenMiner/Data/Server/XGoldenMinerShopItemData")
-local XGoldenMinerStageMapInfo = require("XModule/XGoldenMiner/Data/Game/XGoldenMinerStageMapInfo")
-local XGoldenMinerHideTaskInfo = require("XModule/XGoldenMiner/Data/Settle/XGoldenMinerHideTaskInfo")
+local XGoldenMinerItemDataPath = "XModule/XGoldenMiner/Data/Game/XGoldenMinerItemData"
+local XGoldenMinerStrengthenDataPath = "XModule/XGoldenMiner/Data/Server/XGoldenMinerStrengthenData"
+local XGoldenMinerShopItemDataPath = "XModule/XGoldenMiner/Data/Server/XGoldenMinerShopItemData"
+local XGoldenMinerStageMapInfoPath = "XModule/XGoldenMiner/Data/Game/XGoldenMinerStageMapInfo"
+local XGoldenMinerHideTaskInfoPath = "XModule/XGoldenMiner/Data/Settle/XGoldenMinerHideTaskInfo"
 
 --黄金矿工数据
 ---@class XGoldenMinerDataDb
@@ -47,8 +47,15 @@ function XGoldenMinerDataDb:Ctor()
     self._HideTaskInfo = {}             --隐藏任务信息
     self._HideStageCount = 0            --隐藏关卡数量
     
-    self._HexSelects = {}               --可选海克斯列表
     self._HexRecords = {}               --已选海克斯列表
+    
+    self._CoreGenerateResults = nil      --核心海克斯选择列表
+    self._CommonGenerateResults = nil    --通用海克斯选择列表
+    self._HexUpgradeRecord = nil         --海克斯升级记录
+    
+    self._CurrentState = 0              --当前进行中的阶段
+    self._CommonHexRefreshCount = 0     -- 通用海克斯选择商店刷新次数
+    self._CommonHexSelectCount = 0      -- 当前通用海克斯抽取次数
     
     self:ResetCurClearData()
 end
@@ -66,6 +73,7 @@ function XGoldenMinerDataDb:ResetData()
     self._BuffColumns = {}
     self._ItemColumnsBackups = {}
     self._HideTaskInfo = {}
+    self._CurrentState = 0
 
     for _, strengthenDb in pairs(self._UpgradeStrengthens) do
         strengthenDb:UpdateLevelIndex(-1)
@@ -92,8 +100,14 @@ function XGoldenMinerDataDb:UpdateData(data)
     self:UpdateRedEnvelopeProgress(data.RedEnvelopeProgress)
     self:UpdateHideTaskInfo(data.HideTaskInfo)
     self:UpdateHideStageCount(data.HideStageCount)
-    self:UpdateHexSelects(data.HexSelects)
     self:UpdateHexRecords(data.HexRecords)
+    self:UpdateHexUpgradeRecord(data.HexUpgradeRecord)
+    self:UpdateCurrentState(data.CurrentState)
+    self:UpdateCoreGenerateResults(data.CoreGenerateResults)
+    self:UpdateCommonGenerateResults(data.CommonGenerateResults)
+    self:UpdateCommonHexSelectCount(data.CommonHexSelectCount)
+    self:UpdateCommonHexRefreshCount(data.CommonHexRefreshCount)
+
 end
 
 --region Activity
@@ -121,10 +135,15 @@ end
 --region Shop
 function XGoldenMinerDataDb:UpdateMinerShopDbs(minerShopDbs)
     self:ClearShopDb()
-    for i, v in ipairs(minerShopDbs) do
-        local minerShopDb = XGoldenMinerShopItemData.New(v.ItemId)
-        minerShopDb:UpdateData(v)
-        self._MinerShopDbs[i] = minerShopDb
+
+    if not XTool.IsTableEmpty(minerShopDbs) then
+        local XGoldenMinerShopItemData = require(XGoldenMinerShopItemDataPath)
+        
+        for i, v in ipairs(minerShopDbs) do
+            local minerShopDb = XGoldenMinerShopItemData.New(v.ItemId)
+            minerShopDb:UpdateData(v)
+            self._MinerShopDbs[i] = minerShopDb
+        end
     end
 end
 
@@ -169,16 +188,37 @@ function XGoldenMinerDataDb:IsItemAlreadyBuy(index)
     end
     return XTool.IsNumberValid(shopDb:GetBuyStatus())
 end
+
+function XGoldenMinerDataDb:UpdateCommonHexSelectCount(count)
+    self._CommonHexSelectCount = count
+end
+
+function XGoldenMinerDataDb:UpdateCommonHexRefreshCount(count)
+    self._CommonHexRefreshCount = count
+end
+
+function XGoldenMinerDataDb:GetCommonHexSelectCount()
+    return self._CommonHexSelectCount
+end
+
+function XGoldenMinerDataDb:GetCommonHexRefreshCount()
+    return self._CommonHexRefreshCount
+end
 --endregion
 
 --region Item
 function XGoldenMinerDataDb:UpdateItemColumns(itemColumns)
     self._ItemColumns = {}
-    for i, v in pairs(itemColumns) do
-        local itemData = XGoldenMinerItemData.New(v.ItemId)
-        itemData:SetGridIndex(i)
-        itemData:UpdateData(v)
-        self._ItemColumns[i] = itemData
+
+    if not XTool.IsTableEmpty(itemColumns) then
+        local XGoldenMinerItemData = require(XGoldenMinerItemDataPath)
+        
+        for i, v in pairs(itemColumns) do
+            local itemData = XGoldenMinerItemData.New(v.ItemId)
+            itemData:SetGridIndex(i)
+            itemData:UpdateData(v)
+            self._ItemColumns[i] = itemData
+        end
     end
 end
 
@@ -196,7 +236,7 @@ end
 function XGoldenMinerDataDb:UpdateItemColumn(itemId, gridIndex)
     local itemColumn = self:GetItemColumnByIndex(gridIndex)
     if not itemColumn then
-        itemColumn = XGoldenMinerItemData.New(itemId)
+        itemColumn = require(XGoldenMinerItemDataPath).New(itemId)
         itemColumn:SetGridIndex(gridIndex)
         self._ItemColumns[gridIndex] = itemColumn
     end
@@ -258,15 +298,19 @@ end
 --region Buff
 function XGoldenMinerDataDb:UpdateBuffColumns(buffColumns)
     self._BuffColumns = {}
-    for i, v in pairs(buffColumns or {}) do
-        local itemData = XGoldenMinerItemData.New(v.ItemId)
-        itemData:UpdateData(v)
-        table.insert(self._BuffColumns, itemData)
+
+    if not XTool.IsTableEmpty(buffColumns) then
+        local XGoldenMinerItemData = require(XGoldenMinerItemDataPath)
+        for i, v in pairs(buffColumns) do
+            local itemData = XGoldenMinerItemData.New(v.ItemId)
+            itemData:UpdateData(v)
+            table.insert(self._BuffColumns, itemData)
+        end
     end
 end
 
 function XGoldenMinerDataDb:UpdateBuffColumn(itemId)
-    local itemData = XGoldenMinerItemData.New(itemId)
+    local itemData = require(XGoldenMinerItemDataPath).New(itemId)
     table.insert(self._BuffColumns, itemData)
 end
 
@@ -295,13 +339,22 @@ end
 function XGoldenMinerDataDb:UpdateStageMapInfos(stageMapInfos)
     self._StageMapInfos = {}
     self._StageMapInfoDic = {}
-    for i, v in ipairs(stageMapInfos) do
-        local stageMapInfo = XGoldenMinerStageMapInfo.New()
-        stageMapInfo:UpdateData(v)
-        self._StageMapInfos[i] = stageMapInfo
-        self._StageMapInfoDic[v.StageId] = stageMapInfo
+
+    if not XTool.IsTableEmpty(stageMapInfos) then
+        local XGoldenMinerStageMapInfo = require(XGoldenMinerStageMapInfoPath)
+        
+        for i, v in ipairs(stageMapInfos) do
+            local stageMapInfo = XGoldenMinerStageMapInfo.New()
+            stageMapInfo:UpdateData(v)
+            self._StageMapInfos[i] = stageMapInfo
+            self._StageMapInfoDic[v.StageId] = stageMapInfo
+        end
     end
     --self:_UpdateHexMap() -- 2.17海克斯对应地图不止一个，依赖服务器随机出的地图
+end
+
+function XGoldenMinerDataDb:UpdateCurrentState(currentState)
+    self._CurrentState = currentState
 end
 
 function XGoldenMinerDataDb:GetCurStageId()
@@ -392,26 +445,43 @@ end
 
 --获得当前关卡的目标得分
 function XGoldenMinerDataDb:GetCurStageTargetScore()
+    local curStageId = self:GetCurStageId()
+
+    -- 先判断有没有配固定目标分
+    local fixTargetScore = XMVCA.XGoldenMiner:GetCfgStageFixTargetScore(curStageId)
+
+    if XTool.IsNumberValidEx(fixTargetScore) then
+        return fixTargetScore
+    end
+    
     local targetScore = 0
     for stageId in pairs(self._FinishStageIdDir) do
         targetScore = targetScore + XMVCA.XGoldenMiner:GetCfgStageTargetScore(stageId)
     end
 
-    local curStageId = self:GetCurStageId()
     if XTool.IsNumberValid(curStageId) then
         targetScore = targetScore + XMVCA.XGoldenMiner:GetCfgStageTargetScore(curStageId)
     end
     return targetScore
+end
+
+function XGoldenMinerDataDb:GetCurrentState()
+    return self._CurrentState
 end
 --endregion
 
 --region Strengthen
 function XGoldenMinerDataDb:UpdateUpgradeStrengthens(upgradeStrengthens)
     self._UpgradeStrengthens = {}
-    for i, v in ipairs(upgradeStrengthens) do
-        local strengthenDb = XGoldenMinerStrengthenData.New()
-        strengthenDb:UpdateData(v)
-        self._UpgradeStrengthens[v.StrengthenId] = strengthenDb
+
+    if not XTool.IsTableEmpty(upgradeStrengthens) then
+        local XGoldenMinerStrengthenData = require(XGoldenMinerStrengthenDataPath)
+        
+        for i, v in ipairs(upgradeStrengthens) do
+            local strengthenDb = XGoldenMinerStrengthenData.New()
+            strengthenDb:UpdateData(v)
+            self._UpgradeStrengthens[v.StrengthenId] = strengthenDb
+        end
     end
 end
 
@@ -448,7 +518,7 @@ end
 
 function XGoldenMinerDataDb:GetUpgradeStrengthen(upgradeId)
     if not self._UpgradeStrengthens[upgradeId] then
-        self._UpgradeStrengthens[upgradeId] = XGoldenMinerStrengthenData.New(upgradeId)
+        self._UpgradeStrengthens[upgradeId] = require(XGoldenMinerStrengthenDataPath).New(upgradeId)
     end
     return self._UpgradeStrengthens[upgradeId]
 end
@@ -509,6 +579,9 @@ function XGoldenMinerDataDb:UpdateHideTaskInfo(hideTaskInfoList)
     if XTool.IsTableEmpty(hideTaskInfoList) then
         return
     end
+    
+    local XGoldenMinerHideTaskInfo = require(XGoldenMinerHideTaskInfoPath)
+    
     for _, data in ipairs(hideTaskInfoList) do
         ---@type XGoldenMinerHideTaskInfo
         local hideTaskInfo = XGoldenMinerHideTaskInfo.New(data.Id)
@@ -545,12 +618,17 @@ end
 --endregion
 
 --region Hex
-function XGoldenMinerDataDb:UpdateHexSelects(data)
-    if XTool.IsTableEmpty(data) then
-        self:ClearHexSelects()
-    else
-        self._HexSelects = data
-    end
+
+function XGoldenMinerDataDb:UpdateCoreGenerateResults(data)
+    self._CoreGenerateResults = data
+end
+
+function XGoldenMinerDataDb:UpdateCommonGenerateResults(data)
+    self._CommonGenerateResults = data
+end
+
+function XGoldenMinerDataDb:UpdateHexUpgradeRecord(data)
+    self._HexUpgradeRecord = data
 end
 
 function XGoldenMinerDataDb:UpdateHexRecords(data)
@@ -562,26 +640,89 @@ function XGoldenMinerDataDb:UpdateHexRecords(data)
 end
 
 function XGoldenMinerDataDb:ClearHexSelects()
-    self._HexSelects = {}
+    -- 根据刷新前的状态决定清理谁
+    if self._CurrentState == XMVCA.XGoldenMiner.EnumConst.GameState.CoreHexSelect then
+        self:ClearCoreHexSelects()
+    elseif self._CurrentState == XMVCA.XGoldenMiner.EnumConst.GameState.CommonHexSelect then
+        self:ClearCommonHexSelects()    
+    end
 end
 
-function XGoldenMinerDataDb:GetBeSelectHexList()
-    return self._HexSelects
+function XGoldenMinerDataDb:ClearCoreHexSelects()
+    self:UpdateCoreGenerateResults(nil)
+end
+
+function XGoldenMinerDataDb:ClearCommonHexSelects()
+    self:UpdateCommonGenerateResults(nil)
+end
+
+function XGoldenMinerDataDb:GetCoreGenerateResults()
+    return self._CoreGenerateResults
+end
+
+function XGoldenMinerDataDb:GetCommonGenerateResults()
+    return self._CommonGenerateResults
+end
+
+function XGoldenMinerDataDb:GetHexUpgradeRecord()
+    return self._HexUpgradeRecord
+end
+
+function XGoldenMinerDataDb:CheckIsHexUpgrade(hexId, upgradeId)
+    if XTool.IsTableEmpty(self._HexUpgradeRecord) then
+        return false
+    end
+    
+    local list = self._HexUpgradeRecord[hexId]
+
+    if XTool.IsTableEmpty(list) then
+        return false
+    end
+
+    for i, v in pairs(list) do
+        if v == upgradeId then
+            return true
+        end
+    end
+    
+    return false
+end
+
+function XGoldenMinerDataDb:CheckHasUpgrade(upgradeId)
+    if XTool.IsTableEmpty(self._HexUpgradeRecord) then
+        return false
+    end
+
+    for hexId, upgradeIds in pairs(self._HexUpgradeRecord) do
+        for i, v in pairs(upgradeIds) do
+            if v == upgradeId then
+                return true
+            end
+        end
+    end
+    
+    return false
 end
 
 function XGoldenMinerDataDb:GetSelectedHexList()
     return self._HexRecords
 end
 
-function XGoldenMinerDataDb:CheckIsBeSelectHex()
-    return not XTool.IsTableEmpty(self._HexSelects)
-end
-
-function XGoldenMinerDataDb:AddHexRecords(hexId)
+function XGoldenMinerDataDb:AddHexRecords(hexId, upgradeId)
     if not self:CheckHaveHex(hexId) then
         table.insert(self._HexRecords, hexId)
     end
     --self:_UpdateHexMap() -- 2.17海克斯对应地图不止一个，依赖服务器随机出的地图
+    -- 还需缓存海克斯对应的upgradeId
+    if self._HexUpgradeRecord == nil then
+        self._HexUpgradeRecord = {}
+    end
+    
+    local data = self._HexUpgradeRecord[hexId] or {}
+    
+    table.insert(data, upgradeId)
+    
+    self._HexUpgradeRecord[hexId] = data
 end
 
 function XGoldenMinerDataDb:CheckIsNotHex()
@@ -603,6 +744,7 @@ end
 function XGoldenMinerDataDb:CheckHaveHex(hexId)
     return table.indexof(self._HexRecords, hexId)
 end
+
 --endregion
 
 ------------通关结算数据 begin--------------

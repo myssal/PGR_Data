@@ -49,6 +49,17 @@ function XDunhuangControl:OnInit()
         [4] = 0.694,
         [5] = 0.866,
     }
+    if XOverseaManager.IsTWRegion() or XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then
+        self._UiFillBarProgress = {
+        [0] = 0,
+        [1] = 0.116,
+        [2] = 0.267,
+        [3] = 0.418,
+        [4] = 0.569,
+        [5] = 0.716,
+        [6] = 0.867,
+    }
+    end
 end
 
 function XDunhuangControl:OnRelease()

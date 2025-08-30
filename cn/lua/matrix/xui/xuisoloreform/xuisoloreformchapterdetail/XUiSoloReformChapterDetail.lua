@@ -106,13 +106,14 @@ function XUiSoloReformChapterDetail:RefreshSwitchDiff(stageId)
 end
 
 function XUiSoloReformChapterDetail:RefreshCharacter()
+    local chapterCfg = self._Control:GetSoloReformChapterCfg(self._ChapterId)
     local characterId = self._Control:GetChapterCharacterId(self._ChapterId)
     if not XTool.IsNumberValid(characterId) then
         return
     end    
     self.TxtName.text = XMVCA.XCharacter:GetCharacterLogName(characterId)
     local headIcon = XMVCA.XCharacter:GetCharSmallHeadIcon(characterId)
-    self.RImgCharacterHead:SetRawImage(headIcon)
+    self.RImgCharacterHead:SetRawImage(chapterCfg.HeadLogo)
 end
 
 function XUiSoloReformChapterDetail:OnReturnMain()
@@ -143,7 +144,9 @@ function XUiSoloReformChapterDetail:OnTeaching()
                     XUiManager.TipMsg(desc)
                 end
             end
-        end
+        else
+            XLuaUiManager.Open("UiFubenPracticeCharacterDetail", groupId) 
+        end    
     end
 end
 

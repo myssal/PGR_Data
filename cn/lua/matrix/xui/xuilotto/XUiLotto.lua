@@ -24,6 +24,7 @@ function XUiLotto:OnStart(groupData, closeCb, backGround)
         --self.RImgBg:SetRawImage(bannerBg)
         self.PanelDrawBackGround:LoadPrefab(bannerBg)
     end
+    XDataCenter.LottoManager:CloseLottoMainEnterRedPoint()
 end
 
 function XUiLotto:OnDestroy()

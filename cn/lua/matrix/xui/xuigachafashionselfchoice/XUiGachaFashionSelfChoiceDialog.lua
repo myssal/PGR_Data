@@ -7,7 +7,20 @@ function XUiGachaFashionSelfChoiceDialog:OnAwake()
     -- 二次弹窗cd，不能让玩家点太快
     self.EnableClickBtnYes = false
     local cdTime = CS.XGame.ClientConfig:GetInt("XUiGachaFashionSelfChoiceDialogConfirmCD")
-    XScheduleManager.ScheduleOnce(function() self.EnableClickBtnYes = true end, cdTime)
+    self.CDTime = cdTime
+    self.BtnYes:SetNameByGroup(1, string.format("%dS", self.CDTime / XScheduleManager.SECOND))
+    self.BtnYes:SetDisable(true)
+    self.Timer = XScheduleManager.ScheduleForever(function() 
+        self.CDTime = self.CDTime - XScheduleManager.SECOND
+
+        if self.CDTime < 0 then
+            self.EnableClickBtnYes = true
+            self.BtnYes:SetDisable(false)
+            self:StopTimer()
+        else
+            self.BtnYes:SetNameByGroup(1, string.format("%dS", self.CDTime / XScheduleManager.SECOND))
+        end
+    end, XScheduleManager.SECOND, 0)
 end
 
 function XUiGachaFashionSelfChoiceDialog:InitButton()
@@ -60,5 +73,16 @@ function XUiGachaFashionSelfChoiceDialog:OnStart(gachaId, isAllGet, confirmCb)
         end
 
         grid:Refresh({TemplateId = templateId}, nil, nil, nil, isAllGet and -1 or 1)
+    end
+end
+
+function XUiGachaFashionSelfChoiceDialog:OnDestroy()
+    self:StopTimer()
+end
+
+function XUiGachaFashionSelfChoiceDialog:StopTimer()
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = nil
     end
 end

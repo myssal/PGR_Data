@@ -4,7 +4,7 @@ local stringFormat = string.format
 
 local XUiGridStage = XClass(nil, "XUiGridStage")
 
-function XUiGridStage:Ctor(rootUi, ui, cb, fubenType, IsMainLineExplore, isOnZhouMu)
+function XUiGridStage:Ctor(rootUi, ui, cb, fubenType, IsMainLineExplore, isOnZhouMu, uiName)
     self.RootUi = rootUi
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
@@ -13,6 +13,7 @@ function XUiGridStage:Ctor(rootUi, ui, cb, fubenType, IsMainLineExplore, isOnZho
     self.FubenType = fubenType
     self.IsMainLineExplore = IsMainLineExplore
     self.IsOnZhouMu = isOnZhouMu
+    self.UiName = uiName
     self:InitAutoScript()
     self:OnEnable()
 end
@@ -62,7 +63,7 @@ function XUiGridStage:SetComponentActive(componentName, isActive, notScript, ...
     elseif isActive then
         local parent = self[componentName .. "Parent"]
         if XTool.UObjIsNil(parent) then return end
-        local prefab = self.Obj:Instantiate(componentName, parent.gameObject)
+        local prefab = parent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.UiName, componentName))
         if XTool.UObjIsNil(prefab) then return end
 
         local scriptPath = stringFormat(ComponentScriptPath, "XUi" .. componentName)
@@ -288,9 +289,9 @@ function XUiGridStage:SetPrequelStageComponent(componentName, isActive, notScrip
         local prefabName = componentName
         if uiStyle and uiStyle > 1 then
             prefabName = prefabName .. tostring(uiStyle)
-            prefab = self.Obj:Instantiate(prefabName, parent.gameObject)
+            prefab = parent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.UiName, prefabName))
         else
-            prefab = self.Obj:Instantiate(componentName, parent.gameObject)
+            prefab = parent:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.UiName, componentName))
         end
         if XTool.UObjIsNil(prefab) then return end
 

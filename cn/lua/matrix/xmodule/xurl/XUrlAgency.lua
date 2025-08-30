@@ -7,9 +7,8 @@ local PcEmbedTypeMap = {
     [2] = false, -- 外部浏览器
 }
 
-local AudioEnum = {
-    Open = 1,
-    Close = 2,
+local ParamEncryptionType = {
+    Base64 = 1, -- base64加密
 }
 
 local ParamsInsert = '{%%%%params%%%%}' -- %正则匹配有含义，表转义，实际对应字符串：{%%params%%}
@@ -29,11 +28,26 @@ function XUrlAgency:OnInit()
         ["server_id"] = function(urlCfg)
             return XUserManager.ServerId
         end,
+        ["server_name"] = function(urlCfg)
+            return string.encodeURIComponent(XServerManager.ServerName)
+        end,
         ["cuid"] = function(urlCfg)
             return XUserManager.UserId
         end,
         ["cname"] = function(urlCfg)
             return string.encodeURIComponent(XUserManager.UserName)
+        end,
+        ["pkg_id"] = function(urlCfg)
+            return XHeroSdkManager.GetCurPkgId()
+        end,
+        ["channel_id"] = function(urlCfg)
+            return CS.XHeroSdkAgent.GetAppChannelId()
+        end,
+        ["role_id"] = function(urlCfg)
+            return XPlayer.Id
+        end,
+        ["role_name"] = function(urlCfg)
+            return string.encodeURIComponent(XPlayer.Name)
         end,
     }
 end
@@ -106,56 +120,21 @@ function XUrlAgency:GetFullUrlById(id)
     end
     
     local url = self:GetUrlBaseWithCurrentPlatform(cfg)
-
-    local stringBuilder = {}
     
     local beginIndex = string.find(url, ParamsInsert)
     
     local hasParamsInsert = XTool.IsNumberValid(beginIndex)
-
-    if hasParamsInsert then
-        table.insert(stringBuilder, '?')
-    else
-        table.insert(stringBuilder, url)
-        table.insert(stringBuilder, '?')
-    end
     
     -- 判断是否有额外参数
     if not XTool.IsTableEmpty(cfg.UrlParams) then
-        for i, v in ipairs(cfg.UrlParams) do
-            -- 如果参数已经包含了key和value，则无需再获取
-            if string.match(v, '[%w_]+=[%w_]+') then
-                table.insert(stringBuilder, v)
-            else
-                local getter_func = self._ParamGetter[v]
-
-                if getter_func then
-                    table.insert(stringBuilder, v..'='..getter_func(cfg))
-                else
-                    XLog.Error('无效的参数，没有对应的参数获取接口，检查参数是否填写错误:',v)
-                    goto CONTINUE
-                end
-            end
-
-            -- 插入分隔符
-            table.insert(stringBuilder, '&')
-
-            :: CONTINUE ::
-        end
-
-        -- 移除最后一个分隔符
-        if stringBuilder[#stringBuilder] == '&' then
-            stringBuilder[#stringBuilder] = nil
-        end
+        local paramsStr = '?' .. self:_GetParamsStr(cfg)
         
-        local concatStr = table.concat(stringBuilder)
-
         if hasParamsInsert then
             -- 插值需要针对目标字符串的%进行修饰处理
-            concatStr = string.gsub(concatStr, '%%', '%%%%')
-            return string.gsub(url, ParamsInsert, concatStr)
+            paramsStr = string.gsub(paramsStr, '%%', '%%%%')
+            return string.gsub(url, ParamsInsert, paramsStr)
         else
-            return concatStr
+            return url .. paramsStr
         end
     else
         if hasParamsInsert then
@@ -164,6 +143,54 @@ function XUrlAgency:GetFullUrlById(id)
         
         return cfg.Url
     end
+end
+
+--- 将配置中的所有参数解析出来并拼接到一起
+---@param cfg XTableUrlConfig
+function XUrlAgency:_GetParamsStr(cfg)
+    if XTool.IsTableEmpty(cfg.UrlParams) then
+        return ''
+    end
+    
+    local stringBuilder = {}
+
+    for i, v in ipairs(cfg.UrlParams) do
+        -- 如果参数已经包含了key和value，则无需再获取
+        if string.match(v, '[%w_]+=[%w_]+') then
+            table.insert(stringBuilder, v)
+        else
+            local getter_func = self._ParamGetter[v]
+
+            if getter_func then
+                table.insert(stringBuilder, v..'='..getter_func(cfg))
+            else
+                XLog.Error('无效的参数，没有对应的参数获取接口，检查参数是否填写错误:',v)
+                goto CONTINUE
+            end
+        end
+
+        -- 插入分隔符
+        table.insert(stringBuilder, '&')
+
+        :: CONTINUE ::
+    end
+
+    -- 移除最后一个分隔符
+    if stringBuilder[#stringBuilder] == '&' then
+        stringBuilder[#stringBuilder] = nil
+    end
+
+    -- 得到所有参数合在一起的字符串
+    local concatStr = table.concat(stringBuilder)
+
+    if XTool.IsNumberValidEx(cfg.ParamEncryptionType) then
+        -- 需要对所有参数进行加密
+        if cfg.ParamEncryptionType == ParamEncryptionType.Base64 then
+            concatStr = CS.XTool.ToBase64String(concatStr)
+        end
+    end
+    
+    return concatStr
 end
 
 --- 根据当前平台获取对应的外链路径

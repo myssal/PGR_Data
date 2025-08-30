@@ -80,8 +80,14 @@ function XUiGridTitle:UpdateMailFavor(mailInfo)
     self.TabCollection.gameObject:SetActiveEx(true)
     local mailData = mailInfo.MailData
     local title = mailData.Title
-    if string.Utf8LenCustom(title) > TITLE_MAX_LENGTH then
-        title = string.Utf8SubCustom(title, 1, TITLE_MAX_LENGTH) .. "..."
+    if XOverseaManager.IsOverSeaRegion() then
+        if string.Utf8LenCustomOverSea(title) > TITLE_MAX_LENGTH then
+            title = string.Utf8SubCustomOverSea(title, 1, TITLE_MAX_LENGTH) .. "..."
+        end
+    else
+        if string.Utf8LenCustom(title) > TITLE_MAX_LENGTH then
+            title = string.Utf8SubCustom(title, 1, TITLE_MAX_LENGTH) .. "..."
+        end
     end
     self.TxtTitleRead.text = title
     self.TxtTitleUnread.text = title

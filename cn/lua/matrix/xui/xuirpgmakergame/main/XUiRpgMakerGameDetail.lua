@@ -1,7 +1,7 @@
 --副本详情
 local XUiRpgMakerGameDetail = XLuaUiManager.Register(XLuaUi, "UiRpgMakerGameDetail")
 
-local MaxStarCount = XRpgMakerGameConfigs.MaxStarCount
+local MaxStarCount = XMVCA.XRpgMakerGame.EnumConst.MaxStarCount
 
 function XUiRpgMakerGameDetail:OnAwake()
     self:InitUi()
@@ -13,12 +13,12 @@ function XUiRpgMakerGameDetail:OnStart(stageId, closeCb, tabGroupIndex)
     self.CloseCb = closeCb
     self.TabGroupIndex = tabGroupIndex
 
-    local numberName = XRpgMakerGameConfigs.GetStageNumberName(stageId)
-    local name = XRpgMakerGameConfigs.GetRpgMakerGameStageName(stageId)
+    local numberName = XMVCA.XRpgMakerGame:GetConfig():GetStageNumberName(stageId)
+    local name = XMVCA.XRpgMakerGame:GetConfig():GetStageName(stageId)
     self.TxtFightName.text = string.format("%s %s", numberName, name)
-    self.TxtInfo.text = XRpgMakerGameConfigs.GetRpgMakerGameStageHint(stageId)
+    self.TxtInfo.text = XMVCA.XRpgMakerGame:GetConfig():GetStageStageHint(stageId)
 
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local starConditionDesc
     local coinReward
     local coinItemId = XDataCenter.ItemManager.ItemId.RpgMakerGameHintCoin
@@ -26,10 +26,10 @@ function XUiRpgMakerGameDetail:OnStart(stageId, closeCb, tabGroupIndex)
         local gridStageStar = self["GridStageStar" .. i]
         if gridStageStar then
             --达成条件
-            starConditionDesc = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionDesc(starConditionId)
+            starConditionDesc = XMVCA.XRpgMakerGame:GetConfig():GetStarConditionDesc(starConditionId)
             gridStageStar:SetNameByGroup(1, starConditionDesc)
             --奖励代币
-            coinReward = XRpgMakerGameConfigs.GetStarConditionReward(starConditionId)
+            coinReward = XMVCA.XRpgMakerGame:GetConfig():GetStarConditionReward(starConditionId)
             gridStageStar:SetNameByGroup(0, "x" .. coinReward)
             --代币图标
             gridStageStar:SetRawImage(XItemConfigs.GetItemIconById(coinItemId))
@@ -81,7 +81,7 @@ end
 
 function XUiRpgMakerGameDetail:Refresh()
     local stageId = self:GetStageId()
-    local starConditionIdList = XRpgMakerGameConfigs.GetRpgMakerGameStarConditionIdList(stageId)
+    local starConditionIdList = XMVCA.XRpgMakerGame:GetConfig():GetStageStarConditionIds(stageId)
     local stageDb = XDataCenter.RpgMakerGameManager.GetRpgMakerActivityStageDb(stageId)
     local isClear
     local isReward
@@ -90,7 +90,7 @@ function XUiRpgMakerGameDetail:Refresh()
         self["PanelActive" .. i].gameObject:SetActiveEx(isClear)
         self["PanelUnActive" .. i].gameObject:SetActiveEx(not isClear)
 
-        isReward = XTool.IsNumberValid(XRpgMakerGameConfigs.GetStarConditionReward(starConditionId))
+        isReward = XTool.IsNumberValid(XMVCA.XRpgMakerGame:GetConfig():GetStarConditionReward(starConditionId))
         self["PanelActiveSet" .. i].gameObject:SetActiveEx(isClear and isReward)
         self["PanelActiveUnSet" .. i].gameObject:SetActiveEx(isClear and not isReward)
         self["PanelUnActiveSet" .. i].gameObject:SetActiveEx(not isClear and isReward)
@@ -100,7 +100,7 @@ end
 
 function XUiRpgMakerGameDetail:OnBtnMapClick()
     local stageId = self:GetStageId()
-    local mapId = XRpgMakerGameConfigs.GetStageMapId(stageId)
+    local mapId = XMVCA.XRpgMakerGame:GetConfig():GetStageMapId(stageId)
     XLuaUiManager.Open("UiRpgMakerGameMapTip", mapId, true)
 end
 

@@ -107,7 +107,7 @@ function XUiGuildDormMusicPlayer:InitPlayedBgmInfo()
     local bgmCfg = XGuildDormConfig.GetBgmCfgById(bgmId)
     self.CueId = bgmCfg.CueId
     self.TxtMusicName.text = bgmCfg.Name
-    self.TxtMusicDesc.text = bgmCfg.Desc
+    self.TxtMusicDesc.text = XUiHelper.ReplaceDecodeDecimalToString(bgmCfg.Desc)
     self.RImgCdFace:SetRawImage(bgmCfg.Image)
     if not string.IsNilOrEmpty(bgmCfg.BgImage) then
         self.RImgCdFaceBg:SetRawImage(bgmCfg.BgImage)

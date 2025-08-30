@@ -36,7 +36,7 @@ function XUiExploreBattleRoleRoom:GetTipDescs()
         return {}
     end
     -- todo text
-    return { string.format( "关卡扣除耐力: %s", self.FubenExploreManager.GetCurNodeEndurance()) }
+    return { string.format( CS.XTextManager.GetLuaText("XUiExploreBattleRoleRoom.lua_39"), self.FubenExploreManager.GetCurNodeEndurance()) }
 end
 
 -- team : XTeam

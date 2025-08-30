@@ -33,7 +33,7 @@ end
 
 function XUiTheatre5PVEChooseRewardItem:UpdateCommon(itemCfg)
     self.TxtTitle.text = itemCfg.Name
-    self.TxtDes.text = itemCfg.Desc
+    self.TxtDes.text = self._Control:GetItemDesc(itemCfg)
     self:UpdateTag(itemCfg)
     self:UpdateAffix(itemCfg)
 end

@@ -9,6 +9,7 @@ XNoticeManagerCreator = function()
 
     local NowTextNotice = nil
     local NowPicNotice = nil
+    local NowPcNotice = {}
 
     local InGameNoticeReadList = {}
     local InGameNoticeMap = {}
@@ -61,7 +62,9 @@ XNoticeManagerCreator = function()
         --活动
         Activity = 0,
         --游戏
-        Game = 1
+        Game = 1,
+         --外部链接
+        Link = 2
     }
 
     XNoticeManager.GameNoticeType = InGameNoticeType
@@ -143,8 +146,21 @@ XNoticeManagerCreator = function()
         "http://ifconfig.co/ip",
         "http://inet-ip.info/ip"
     }
-
+    
     function XNoticeManager.RequestIp()
+        if XOverseaManager.IsOverSeaRegion() then
+            if XOverseaManager.IsTWRegion() then
+                IpUrls = {
+                "https://api.ipify.org/",
+                "http://ipv4.icanhazip.com/"
+                }
+            else
+                IpUrls = {
+                "https://ipv4.icanhazip.com/",
+                "https://api.ipify.org/"
+                }
+            end
+        end
         IpUrlIndex = IpUrlIndex + 1
         if IpUrlIndex > #IpUrls then
             return
@@ -685,6 +701,9 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.CheckHaveNotice(type)
+        if type == InGameNoticeType.Link then
+            return true
+        end
         XNoticeManager.RequestNoticeByType(XNoticeType.InGame, true)
         if not InGameNoticeMap then
             return false
@@ -992,10 +1011,20 @@ XNoticeManagerCreator = function()
             end
 
             LoginNotice = notice
-
+            
             CS.XRecord.Record("24005", "RequestLoginNoticeEnd")
             if cb then
-                cb(valid)
+                if XOverseaManager.IsTWRegion() or XOverseaManager.IsKRRegion() then
+                    local openNotice = false
+                    if XNoticeManager.CheckLoginNoticeDailyAutoShow(notice) then
+                        openNotice = true
+                        XNoticeManager.OpenLoginNotice()
+                        XNoticeManager.RefreshLoginNoticeTime()
+                    end
+                    cb(valid, openNotice)
+                else
+                    cb(valid)
+                end
             end
         end
         CS.XRecord.Record("24004", "RequestLoginNoticeStart")
@@ -1618,6 +1647,20 @@ XNoticeManagerCreator = function()
         XSaveTool.SaveData(XPrefs.NoticeTrigger, DisableFunction)
     end
 
+    function XNoticeManager.GetKRPCNotice()
+        return NowPcNotice
+    end
+
+    function XNoticeManager.HandleKRPCNotice(data)
+        if  XDataCenter.UiPcManager.IsPc() then
+            return
+        end
+        -- 延迟时间
+        local DelayTime = XUiHelper.GetClientConfig("PCplaytimeShow", XUiHelper.ClientConfigType.Int)
+        NowPcNotice.OnlineHour = data.OnlineHour
+        NowPcNotice.EndTime = XTime.GetServerNowTimestamp() + DelayTime
+        XLuaUiManager.Open("UiNoticeTipsPC")
+    end
 
     function XNoticeManager.Init()
         DisableFunction = XMain.IsDebug and XNoticeManager.CheckFuncDisable()
@@ -1637,6 +1680,8 @@ XNoticeManagerCreator = function()
             ScreenShotFlag = false
         end)
     end
+
+ 
 
     XNoticeManager.Init()
     return XNoticeManager

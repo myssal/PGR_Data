@@ -1,43 +1,43 @@
 local tableInsert = table.insert
 local TableNormal = {
-    Theatre5Activity = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5Rank = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5Config = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.String, Identifier='Key' },
-    Theatre5ClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier='Key' },
-    Theatre5TaskShop = {DirPath = XConfigUtil.DirectoryType.Client},
+    Theatre5Activity = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5Rank = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5Config = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.String, Identifier = 'Key' },
+    Theatre5ClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = 'Key' },
+    Theatre5TaskShop = { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
 local TablePrivate = {
-    Theatre5Character = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5CharacterFashion = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
+    Theatre5Character = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5CharacterFashion = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
 
-    Theatre5ItemSkill = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5RankMajor = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5Shop = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
+    Theatre5ItemSkill = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5RankMajor = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5Shop = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
 
-    
-    Theatre5Item = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5ItemTag = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5ItemRuneAttr = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5AttrShow = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5ItemKeyWord = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    
-    Theatre5ItemRune = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5PvpRoundRefresh = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='RoundNum' },
-    Theatre5ShopRefreshCost = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    Theatre5GridUnlockCost = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='UnlockNum' },
-    Theatre5ShopNpc = {DirPath = XConfigUtil.DirectoryType.Client},
-    Theatre5ShopNpcChat = {DirPath = XConfigUtil.DirectoryType.Client},
+
+    Theatre5Item = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5ItemTag = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5ItemRuneAttr = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5AttrShow = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5ItemKeyWord = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+
+    Theatre5ItemRune = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5PvpRoundRefresh = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'RoundNum' },
+    Theatre5ShopRefreshCost = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5GridUnlockCost = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'UnlockNum' },
+    Theatre5ShopNpc = { DirPath = XConfigUtil.DirectoryType.Client },
+    Theatre5ShopNpcChat = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre5Currency = {},
     Theatre5ItemBox = {},
-    Theatre5Story = {DirPath = XConfigUtil.DirectoryType.Client},
-    Theatre5StoryGroup = {DirPath = XConfigUtil.DirectoryType.Client},
+    Theatre5Story = { DirPath = XConfigUtil.DirectoryType.Client },
+    Theatre5StoryGroup = { DirPath = XConfigUtil.DirectoryType.Client },
 }
 
 local PVETableKey = {
     Theatre5PveEventLevel = {},
-    Theatre5PveChapter = {CacheType = XConfigUtil.CacheType.Normal},
-    Theatre5PveChapterLevel = {CacheType = XConfigUtil.CacheType.Normal},
+    Theatre5PveChapter = { CacheType = XConfigUtil.CacheType.Normal },
+    Theatre5PveChapterLevel = { CacheType = XConfigUtil.CacheType.Normal },
     Theatre5PveEvent = {},
     Theatre5PveEventGroup = {},
     Theatre5PveEventOption = {},
@@ -375,7 +375,7 @@ function XTheatre5Model:GetContentCfgs(storyLineId)
 end
 
 function XTheatre5Model:GetStoryLineContentCfg(storyLineContentId, notips)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveStoryLineContent,storyLineContentId, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveStoryLineContent, storyLineContentId, notips)
 end
 
 --获取一条故事线开始的contentId
@@ -389,6 +389,10 @@ end
 
 function XTheatre5Model:GetStoryLineCfg(storyLineId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveStoryLine, storyLineId, notips)
+end
+
+function XTheatre5Model:GetStoryLineCfgs()
+    return self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryLine)
 end
 
 function XTheatre5Model:GetPveChapterCfg(chapterId)
@@ -533,7 +537,7 @@ function XTheatre5Model:GetMaxChapterLevelCfg(chapterId)
 end
 
 function XTheatre5Model:GetPveEventOptionCfg(eventOptionId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveEventOption,eventOptionId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveEventOption, eventOptionId)
 end
 
 function XTheatre5Model:GetPVEEndingCfg(pveEndingId)
@@ -557,16 +561,40 @@ function XTheatre5Model:GetStoryGroup()
 end
 
 function XTheatre5Model:GetPveStoryEntranceCfg(entranceName)
-    if not self._StoryEntranceCfgsDic then
-        self._StoryEntranceCfgsDic = {}
-        local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
-        for _, cfg in pairs(allCfgs) do
-            if cfg.SceneObject then
-                self._StoryEntranceCfgsDic[cfg.SceneObject] = cfg
+    -- 从3.8开始，同一个入口根据角色进度不同，实现不同的功能
+    local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
+    local isValid = false
+    for _, cfg in pairs(allCfgs) do
+        if cfg.SceneObject == entranceName then
+            isValid = true
+            local isOpen = true
+            if cfg.BtnOpenCondition ~= 0 then
+                isOpen = XConditionManager.CheckCondition(cfg.BtnOpenCondition)
+            end
+            if isOpen then
+                if cfg.BtnCloseCondition ~= 0 then
+                    if XConditionManager.CheckCondition(cfg.BtnCloseCondition) then
+                        isOpen = false
+                    end
+                end
+            end
+            if isOpen then
+                return cfg, isValid
             end
         end
     end
-    return self._StoryEntranceCfgsDic[entranceName]
+    -- 如果找不到可以开启的
+    return false, isValid
+    --if not self._StoryEntranceCfgsDic then
+    --    self._StoryEntranceCfgsDic = {}
+    --    local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
+    --    for _, cfg in pairs(allCfgs) do
+    --        if cfg.SceneObject then
+    --            self._StoryEntranceCfgsDic[cfg.SceneObject] = cfg
+    --        end
+    --    end
+    --end
+    --return self._StoryEntranceCfgsDic[entranceName]
 end
 
 --获取角色自己的故事线
@@ -633,7 +661,7 @@ end
 function XTheatre5Model:GetDeduceClueBoardCfgs()
     local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveDeduceClueBoard)
     local allCfgList = XTool.ToArray(allCfgs)
-    table.sort(allCfgList, function (a, b)
+    table.sort(allCfgList, function(a, b)
         if a.Sort ~= b.Sort then
             return a.Sort < b.Sort
         end
@@ -682,7 +710,7 @@ function XTheatre5Model:GetPveDeduceQuestionCfgs(questionGroupId)
             end
         end
         for _, cfgs in pairs(self._DeduceQuestionCfgsDic) do
-            table.sort(cfgs, function (a, b)
+            table.sort(cfgs, function(a, b)
                 if a.Step ~= b.Step then
                     return a.Step < b.Step
                 else
@@ -706,7 +734,7 @@ function XTheatre5Model:GetTaskOrShopCfgs(taskShopType)
             tableInsert(self._TaskShopCfgsDic[cfg.Type], cfg)
         end
         for _, cfgs in pairs(self._TaskShopCfgsDic) do
-            table.sort(cfgs, function (a, b)
+            table.sort(cfgs, function(a, b)
                 if a.Sort ~= b.Sort then
                     return a.Sort < b.Sort
                 else

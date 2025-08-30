@@ -21,9 +21,9 @@ function XUiGachaPanelPreview:OnStart(gachaId)
         local parent
 
         -- 实例化控件
-        if v.Rare and self.PanelDrawItemSP then
+        if v.Cfg.Rare and self.PanelDrawItemSP then
             parent = self.PanelDrawItemSP
-        elseif (not v.Rare) and self.PanelDrawItemNA then
+        elseif (not v.Cfg.Rare) and self.PanelDrawItemNA then
             parent = self.PanelDrawItemNA
         end
         if parent then
@@ -36,11 +36,11 @@ function XUiGachaPanelPreview:OnStart(gachaId)
             self.PreviewList[k] = item
 
             local tmpData = {}
-            tmpData.TemplateId = v.TemplateId
-            tmpData.Count = v.Count
+            tmpData.TemplateId = v.Cfg.TemplateId
+            tmpData.Count = v.Cfg.Count
 
             local curCount
-            if v.RewardType == XGachaConfigs.RewardType.Count then
+            if v.Cfg.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = v.CurCount
             end
             item:Refresh(tmpData, nil, nil, nil, curCount)

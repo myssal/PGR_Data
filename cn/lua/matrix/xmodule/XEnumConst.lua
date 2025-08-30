@@ -992,6 +992,10 @@ XEnumConst = {
         },
     },
     Rift = {
+        ChapterType = {
+            Normal = 1,
+            Endless = 2,
+        },
         SystemBuffType = {
             Luck = 1, -- 幸运关累计进度提示、攻击力提示
             Currency = 2, -- 养成货币掉落量增加、属性伤害和爆伤提升
@@ -1910,6 +1914,7 @@ XEnumConst = {
     },
     GOLDEN_MINER = {
         PERCENT = 100,
+        TEN_THOUSAND_PERCENT = 10000, -- 万分比
         HOOK_IGNORE_HIT = "HookIgnoreHit",
         -- Camera
         CAMERA_TYPE = {         -- 摄像机类型
@@ -1961,6 +1966,9 @@ XEnumConst = {
             STORE_PRESS_MAGNETIC = 5, -- 长按电磁
             DOUBLE = 6, -- 双头替身
             HAMMER = 7, -- 锤头爪
+            Net = 8, -- 弹网钩爪
+            Copy = 9, -- 复制钩爪样式：复制逻辑不靠钩爪类型
+            MultyStyle = 10, -- 多重钩爪样式：多重效果不靠钩爪类型
         },
         GAME_SYSTEM_HOOK_STATUS = {     -- 飞船钩爪使用状态
             NONE = 0,
@@ -1975,6 +1983,7 @@ XEnumConst = {
             GRABBING = 4, -- 抓取中
             REVOKING = 5, -- 收回中
             QTE = 6, -- QTE
+            VIRTUAL_SHOOTING = 7, -- 虚发射中：钩爪移动但不具备抓取能力
         },
         -- Stone
         STONE_TYPE = {                  -- 抓取物类型
@@ -2018,6 +2027,7 @@ XEnumConst = {
             HIDE = 7, -- 隐藏状态(河蚌关闭、某种隐藏)
             SHIP_AIM = 8, -- (Partner)被小飞碟瞄准
             SHIP_CATCHING = 9, -- (Partner)被小飞碟收取中
+            END_LIEF_TIME = 10, -- 因被抓取、销毁而走完生命周期，后续不再执行它的更新
         },
         GAME_STONE_MOVE_TYPE = {-- 抓取物移动状态
             NONE = 0, -- 静止
@@ -2082,6 +2092,12 @@ XEnumConst = {
             HUMAN_REVERSE_MOVE_GRAB_STONES = 42, -- Skill-飞船可以碰撞拾取的抓取物类型（参数1是虚实类型）
             HUMAN_CHANGE_SHELL = 43, -- Skill- 飞船改变外形图
             HOOK_CHANGE_IDLE_SPEED = 44, -- Skill- 钩爪改变摇晃速度
+            --todo: 日后有机会再对技能、buff进行通用性优化
+            MULTY_SAME_HOOK = 45, -- Buff 使飞船拥有与主钩爪同类型的额外钩爪 参数1：额外钩爪数量, 参数2：角度, 参数3：主钩摆动角度范围
+            PARTNER_STONE_LINK_PARAMS_MODIFY = 46, -- 覆盖方式修改电磁链接的参数 参数1：最上方资源选择数 参数2：最下方资源选择数，参数3：CD时长 参数4：触发延迟执行时长
+            MODIFY_HOOK_GRAB_SIZE = 47, -- 增量方式增加抓钩抓取尺寸的比例，参数1：增加的比例值
+            SET_NET_HOOK_GRAB_WEIGHT_RULE = 48, -- 覆盖方式设置弹网抓钩抓取多个资源时的重量计算规则，参数1：规则，见规则枚举NETHOOK_WEIGHTRULE
+            HOOK_DRAG_EX_STONE_COPY = 49, -- 抓钩抓取时触发的额外效果，原地复制被抓取的原生资源, 多个buff时按更有效的方向覆盖 参数1：概率，参数2：是否升级
         },
         BUFF_TIME_TYPE = {      -- Buff生命周期
             NONE = 0,
@@ -2099,6 +2115,7 @@ XEnumConst = {
             SHIP = 1, -- 飞船(角色+升级)
             ITEM = 2, -- 货舱(道具)
             BUFF = 3, -- 临时插件(buff)
+            HEX = 4, -- 海克斯
         },
         GAME_BUFF_STATUS = {    -- 关卡内Buff生效状态
             CREATE = 0,
@@ -2134,6 +2151,7 @@ XEnumConst = {
             PARTNER_SHIP = 1, -- 帮忙抓的飞船
             SCAN_LINE = 2, -- 扫描线
             PARTNER_RADAR = 3, -- 发现抓取物的雷达
+            STONE_LINK = 4, -- 资源连接
         },
         GAME_PARTNER_STATUS = {
             NONE = 0,
@@ -2158,6 +2176,11 @@ XEnumConst = {
             NONE = 0,
             IDLE = 1,
             SCAN = 3,
+        },
+        GAME_PARTNER_STONE_LINK_STATUS = {
+            NONE = 0,
+            IDLE = 1,
+            LINK = 3,
         },
         -- Game Face
         GAME_FACE_PLAY_TYPE = {
@@ -2191,8 +2214,12 @@ XEnumConst = {
         -- Game Anim
         GAME_ANIM = {
             NONE = "None",
-            HOOK_OPEN = "HookOpen",
-            HOOK_CLOSE = "HookClose",
+            HOOK_OPEN = "HookOpen", -- 抓取物品返回后播放
+            HOOK_NO_GRAB_OPEN = "HookNoGrabOpen", -- 没抓到物品返回后播放
+            HOOK_ON_SHOOT = "HookOnShoot", -- 发射的瞬间播放
+            HOOK_CLOSE = "HookClose", -- 抓到物品时播放
+            NET_HOOK_OPEN = "NetHookOpen", -- 弹网特殊，拉回来后播放
+            NET_HOOK_CLOSE = "NetHookClose", -- 弹网特殊，发射到指定位置抓取时播放
         },
         -- Game Control
         GAME_PAUSE_TYPE = {

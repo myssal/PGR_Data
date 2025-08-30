@@ -23,8 +23,8 @@ function XUiGridGuildDormMusic:Refresh(bgmId, index)
     self.CueId = bgmCfg.CueId
     self.TxtListMusicNameNormal.text = bgmCfg.Name
     self.TxtListMusicNamePlaying.text = bgmCfg.Name
-    self.TxtListMusicDescNormal.text = bgmCfg.Desc
-    self.TxtListMusicDescPlaying.text = bgmCfg.Desc
+    self.TxtListMusicDescNormal.text = XUiHelper.ReplaceDecodeDecimalToString(bgmCfg.Desc)
+    self.TxtListMusicDescPlaying.text = XUiHelper.ReplaceDecodeDecimalToString(bgmCfg.Desc)
     self.TxtSerialNormal.text = string.format("%02d", index)
     self.TxtSerialPlaying.text = string.format("%02d", index)
     local playedBgm = XDataCenter.GuildDormManager.GetPlayedBgmId()

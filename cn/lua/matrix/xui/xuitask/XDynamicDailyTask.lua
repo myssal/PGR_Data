@@ -165,6 +165,8 @@ function XDynamicDailyTask:OnBtnFinishClick()
     end
     XDataCenter.TaskManager.FinishTask(self.Data.Id, function(rewardGoodsList)
         XUiManager.OpenUiObtain(rewardGoodsList)
+        --CheckPoint: APPEVENT_WAR_AND_PAINGAGE
+        XAppEventManager.WeeklyRewardAppLogEvent(self.Data.Id)
     end)
 end
 

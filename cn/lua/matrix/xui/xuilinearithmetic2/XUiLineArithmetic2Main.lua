@@ -33,8 +33,9 @@ function XUiLineArithmetic2Main:OnEnable()
     end
     self:ShowReward()
     self:UpdateChapter()
+    self:UpdateRoleAnimation()
     self:UpdateTask()
-    
+
     if not self._TimerLock then
         if not self:CheckUnlockAll() then
             -- 固定时间刷新一次, 以解锁
@@ -92,7 +93,6 @@ function XUiLineArithmetic2Main:UpdateChapter()
         local grid = self._GridChapters[i]
         grid:Close()
     end
-    self:ShowRoleByChapter()
 end
 
 function XUiLineArithmetic2Main:UpdateReward()
@@ -148,8 +148,15 @@ function XUiLineArithmetic2Main:CheckUnlockAll()
     return isUnlockAll
 end
 
-function XUiLineArithmetic2Main:ShowRoleByChapter()
-    local chapterIndex = self._Control:GetUiData().ChapterIndex
+function XUiLineArithmetic2Main:UpdateRoleAnimation()
+    local index = XSaveTool.GetData("LineArithmetic2RoleAnimation" .. XPlayer.Id) or 0
+    
+    local unlockChapters = self._Control:GetUiData().UnlockChapters
+    index = index % #unlockChapters + 1
+    --print("index:", index)
+    
+    XSaveTool.SaveData("LineArithmetic2RoleAnimation" .. XPlayer.Id, index)
+    local chapterIndex = unlockChapters[index]
     for i = 1, 4 do
         local role = self["Role0" .. i]
         if role then

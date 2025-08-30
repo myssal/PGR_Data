@@ -281,7 +281,7 @@ function XUiMainLeftTop:OnBtnPassportClick()
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnPassport)
-    XLuaUiManager.Open("UiPassport")
+    XUiHelper.OpenPassport()
 end
 
 --@region 更新等级经验等

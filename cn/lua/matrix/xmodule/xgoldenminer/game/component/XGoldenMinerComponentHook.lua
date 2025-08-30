@@ -1,6 +1,5 @@
 local Vector3Zero = Vector3.zero
 local CSQuaternion = CS.UnityEngine.Quaternion
-local Physics2D = CS.UnityEngine.Physics2D
 
 local REFLECT_EDGE_CONTACT_FILTER2D_MIN_DEPTH = 6 -- Normal画布距离是5 加一为了跳过基础元素 只检测反射Collider
 local LAYER_MASK_UI = CS.UnityEngine.LayerMask.GetMask("UI")
@@ -90,6 +89,11 @@ function XGoldenMinerComponentHook:OnInit()
     ---@type number
     self._AimReflectCount = 0
     self._ReflectAimList = {}
+    -- 反射计算用的空表池
+    self._AimReflectCalTablePool = nil
+    
+    self.Vec2DownX = 0
+    self.Vec2DownY = -1
 end
 
 function XGoldenMinerComponentHook:OnRelease()
@@ -127,6 +131,7 @@ function XGoldenMinerComponentHook:OnRelease()
     self._CurRevokeRopeLength = 0
     self._AimReflectCount = 0
     self._ReflectAimList = nil
+    self._AimReflectCalTablePool = nil
 end
 --endregion
 
@@ -191,11 +196,15 @@ function XGoldenMinerComponentHook:GetCurRopeAngleZ()
     end
     return self._CurRopeAngleZ
 end
+
+function XGoldenMinerComponentHook:GetRopeMinLength()
+    return self._RopeMinLength
+end
 --endregion
 
 --region Setter
-function XGoldenMinerComponentHook:SetTransform(transform, length)
-    self.Transform = transform
+function XGoldenMinerComponentHook:SetTransform(obj, length)
+    self.Transform = obj.transform
     self._HookObj = XUiHelper.TryGetComponent(self.Transform, "Hook")
     self._HookObjStartLocalPosition = self._HookObj.localPosition
     self._GrabPoint = XUiHelper.TryGetComponent(self.Transform, "Hook/RopeCord/TriggerObjs")
@@ -271,6 +280,20 @@ end
 function XGoldenMinerComponentHook:SetAim(isAim, reflectCount)
     self._IsAim = isAim
     self._AimReflectCount = reflectCount
+
+    if self._IsAim and not self._AimReflectCalTablePool then
+        ---@type XPool
+        self._AimReflectCalTablePool = XPool.New(function()
+            return {}
+        end, function(tab)
+            tab.posX = nil
+            tab.posY = nil
+            tab.dirX = nil
+            tab.dirY = nil
+            tab.originCollider = nil
+        end, false) --  测性能不开检查
+    end
+    
     self:UpdateAim()
 end
 
@@ -335,6 +358,24 @@ end
 
 function XGoldenMinerComponentHook:SetIsHumanReversMoveBuffAlive(alive)
     self._IsHumanReversMoveBuffAlive = alive
+end
+
+function XGoldenMinerComponentHook:SetOriginalAngle(mainHookIndex)
+    if self._ParentEntity:GetIsAdditional() then
+        -- 与主钩保持一定角度
+        local diff = self._ParentEntity:GetIndex() - mainHookIndex
+        
+        local rotateAngleZ = diff * self._OwnControl.SystemHook:GetMultyHookAngle()
+        self:_UpdateCurIdleRotateAngle(0, 0, rotateAngleZ, true)
+    end
+end
+
+function XGoldenMinerComponentHook:SetGrabSize(percent)
+    -- 直接修改整体的拉伸尺寸
+    self.Transform:SetLocalScale(percent, percent, percent)
+    -- 抓取挂点的拉伸尺寸需要设置为倒数，以免抓取物资后物资也跟着变大
+    local grabScale = 1 / percent
+    self._GrabPoint:SetLocalScale(grabScale, grabScale, grabScale)
 end
 --endregion
 
@@ -445,7 +486,7 @@ end
 --region Control - Update
 function XGoldenMinerComponentHook:UpdateHitColliderEnable(value)
     for _, collider in ipairs(self._ColliderList) do
-        collider.enabled = value
+        collider.enabled = value 
     end
 end
 
@@ -463,25 +504,46 @@ function XGoldenMinerComponentHook:UpdateAim(isClose)
 
     if XTool.IsNumberValid(self._AimReflectCount) then
         if isShow then
+            local aimLineDataList = self._AimReflectCalTablePool:GetItemFromPool()
+            local firstData = self._AimReflectCalTablePool:GetItemFromPool()
+            
+            firstData.posX, firstData.posY = self.Transform:GetPosition()
+            
             ---- 关于墙壁反射的瞄准线
-            local rotation = CSQuaternion.Euler(self._CurIdleRotateAngle)
-            local hookDirection = rotation * Vector3.down
-            local aimLineDataList = { { position = Vector2(self.Transform.position.x, self.Transform.position.y),
-                                        direction = Vector2(hookDirection.x, hookDirection.y),
-                                        originCollider = nil } }
+            firstData.dirX, firstData.dirY = self._OwnControl.CalculateHelper:GetHookReflectDirectionFirst(self._CurIdleRotateAngle.x, self._CurIdleRotateAngle.y, self._CurIdleRotateAngle.z)
+
+            firstData.originCollider = nil
+
+            table.insert(aimLineDataList, firstData)
 
             self:_FillAimLineDataList(aimLineDataList, self._AimReflectCount)
+            for index = 1, math.maxinteger do
+                local data = aimLineDataList[index]
+                
+                if not data then
+                    break
+                end
+                
+                aimLineDataList[index] = nil
 
-            for index, data in ipairs(aimLineDataList) do
                 --if index ~= 1 then
                 -- 等于1时为默认基础瞄准线
                 local reflectAim = self:_GetReflectAim(index)
                 if reflectAim then
-                    reflectAim.position = Vector3(data.position.x, data.position.y, reflectAim.position.z)
-                    reflectAim.rotation = CSQuaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, data.direction))
+                    local tmpX, tmpY, tmpZ = reflectAim:GetPosition()
+                    reflectAim:SetPosition(data.posX, data.posY, tmpZ)
+                    
+                    local rotateZ = self._OwnControl.CalculateHelper:Vec2SinedAngle(self.Vec2DownX, self.Vec2DownY, data.dirX, data.dirY)
+                    reflectAim:SetEulerRotation(0, 0, rotateZ)
                 end
                 --end
+                
+                -- 用完一个回收一个
+                self._AimReflectCalTablePool:ReturnItemToPool(data)
             end
+            -- 最后回收列表
+            self._AimReflectCalTablePool:ReturnItemToPool(aimLineDataList)
+            aimLineDataList = nil
         else
             for _, reflectAimTrans in ipairs(self._ReflectAimList) do
                 reflectAimTrans.gameObject:SetActiveEx(false)
@@ -492,32 +554,6 @@ function XGoldenMinerComponentHook:UpdateAim(isClose)
             aim.gameObject:SetActiveEx(isShow)
         end
     end
-
-    --if isShow and XTool.IsNumberValid(self._AimReflectCount) then
-    --    ---- 关于墙壁反射的瞄准线
-    --    local rotation = CSQuaternion.Euler(self._CurIdleRotateAngle)
-    --    local hookDirection = rotation * Vector3.down
-    --    local aimLineDataList = { { position = Vector2(self.Transform.position.x, self.Transform.position.y),
-    --                                direction = Vector2(hookDirection.x, hookDirection.y),
-    --                                originCollider = nil } }
-    --
-    --    self:_FillAimLineDataList(aimLineDataList, self._AimReflectCount)
-    --
-    --    for index, data in ipairs(aimLineDataList) do
-    --        --if index ~= 1 then
-    --        -- 等于1时为默认基础瞄准线
-    --        local reflectAim = self:_GetReflectAim(index)
-    --        if reflectAim then
-    --            reflectAim.position = Vector3(data.position.x, data.position.y, reflectAim.position.z)
-    --            reflectAim.rotation = CSQuaternion.Euler(0, 0, Vector2.SignedAngle(Vector2.down, data.direction))
-    --        end
-    --        --end
-    --    end
-    --else
-    --    for _, reflectAimTrans in ipairs(self._ReflectAimList) do
-    --        reflectAimTrans.gameObject:SetActiveEx(false)
-    --    end
-    --end
 end
 
 function XGoldenMinerComponentHook:_FillAimLineDataList(aimLineDataList, reflectCount)
@@ -529,13 +565,19 @@ function XGoldenMinerComponentHook:_FillAimLineDataList(aimLineDataList, reflect
     if tableCount >= reflectCount + 1 then
         return aimLineDataList
     end
+    
+    local data = self._AimReflectCalTablePool:GetItemFromPool()
+   
+    self:_GetReflectedStartPosAndAngle(aimLineDataList[tableCount].posX, aimLineDataList[tableCount].posY, aimLineDataList[tableCount].dirX, aimLineDataList[tableCount].dirY, aimLineDataList[tableCount].originCollider, data)
 
-    local pos, dir, collider = self:_GetReflectedStartPosAndAngle(aimLineDataList[tableCount].position, aimLineDataList[tableCount].direction, aimLineDataList[tableCount].originCollider)
-    if not pos or not dir or not collider then
+    if not data.posX or not data.posY or not data.originCollider or not data.dirX or not data.dirY then
+        self._AimReflectCalTablePool:ReturnItemToPool(data)
+        data = nil
+        
         return aimLineDataList
     end
-
-    table.insert(aimLineDataList, { position = pos, direction = dir, originCollider = collider })
+    
+    table.insert(aimLineDataList, data)
 
     self:_FillAimLineDataList(aimLineDataList, reflectCount)
 end
@@ -545,20 +587,21 @@ end
 ---@param originCollider UnityEngine.Collider2D
 ---@return UnityEngine.Vector2, UnityEngine.Vector2, UnityEngine.Collider2D
 ---通过传入的起始点和方向，获取反射点和反射方向（参数originCollider标记是从哪个反射墙返弹的，下次计算需要过滤掉）
-function XGoldenMinerComponentHook:_GetReflectedStartPosAndAngle(startPos, direction, originCollider)
+function XGoldenMinerComponentHook:_GetReflectedStartPosAndAngle(startX, startY, direX, direY, originCollider, outData)
     -- 根据深度筛选到只有反射平面的碰撞体
-    local hitResults = Physics2D.RaycastAll(startPos, direction, 10000, LAYER_MASK_UI, REFLECT_EDGE_CONTACT_FILTER2D_MIN_DEPTH)
-
-    for i = 0, hitResults.Length - 1 do
-        local hitInfo = hitResults[i]
-        local hitCollider = hitInfo.collider
+    local hitCount = self._OwnControl.CalculateHelper:TryRaycastNonAlloc(startX, startY, direX, direY, 10000, LAYER_MASK_UI, REFLECT_EDGE_CONTACT_FILTER2D_MIN_DEPTH)
+    
+    for i = 0, hitCount - 1 do
+        local hitCollider = self._OwnControl.CalculateHelper:TryGetColliderAfterRaycast(i)
         if not originCollider or hitCollider ~= originCollider then
             local reflectEdgeEntityUid = self._OwnControl.SystemMap:GetReflectEdgeUidByCollider(hitCollider)
             if XTool.IsNumberValid(reflectEdgeEntityUid) then
-                local hitPoint = hitInfo.point
-                local hitNormal = hitInfo.normal
+                outData.posX, outData.posY = self._OwnControl.CalculateHelper:TryGetRaycastHit2DPointNonAlloc(i)
+                local normalX, normalY = self._OwnControl.CalculateHelper:TryGetRaycastHit2DNormalNonAlloc(i)
+                
+                outData.dirX, outData.dirY = XLuaVector2.ReflectNonAlloc(direX, direY, normalX, normalY)
 
-                return hitPoint, Vector2.Reflect(direction, hitNormal), hitCollider
+                outData.originCollider = self._OwnControl.CalculateHelper:TryGetColliderAfterRaycast(i)
             end
         end
     end
@@ -575,26 +618,48 @@ function XGoldenMinerComponentHook:_GetReflectAim(index)
     return self._ReflectAimList[index]
 end
 
----@param hookEntityList XGoldenMinerComponentHook[]
+---@param hookEntityList number[]
 function XGoldenMinerComponentHook:UpdateIdleRope(time, hookEntityList)
+    -- 弹网抓钩需要刷新瞄准位置
+    local netCom = self._ParentEntity:GetComponentNetAim()
+
+    if netCom then
+        netCom:RefreshMovePathPointWithoutReflect()
+    end
+    
+    local totalHookCount = XTool.GetTableCount(hookEntityList)
+    
+    -- 双钩是特殊的多钩子类型，单独处理
     if self:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.DOUBLE) then
-        -- 钩子2与钩子1对称摇晃
-        ---@type XGoldenMinerComponentHook
-        local tempHook = false
-        -- 找到钩子1
-        for _, hookEntity in ipairs(hookEntityList) do
-            if self ~= hookEntity.Hook then
-                tempHook = hookEntity.Hook
+        self:_RotateDoubleStyle(hookEntityList)
+        return
+    end
+    
+    -- 其他类型的钩子都可能存在复数个，主钩变化按照自己的类型来，附加钩子与主钩保持一定夹角
+    if totalHookCount then
+        if self._ParentEntity:GetIsAdditional() then
+            -- 找到主钩
+            for _, hookEntityUid in ipairs(hookEntityList) do
+                local hookEntity = self._OwnControl:GetHookEntityByUid(hookEntityUid)
+                local hookCom = hookEntity:GetComponentHook()
+                if not hookEntity:GetIsAdditional() then
+                    -- 与主钩保持一定角度
+                    local diff = self._ParentEntity:GetIndex() - hookEntity:GetIndex()
+
+                    local tempIdleRotateAngle = hookCom:GetCurIdleRotateAngle()
+
+                    local rotateAngleZ = tempIdleRotateAngle.z + diff * self._OwnControl.SystemHook:GetMultyHookAngle()
+                    self:_UpdateCurIdleRotateAngle(tempIdleRotateAngle.x, tempIdleRotateAngle.y, rotateAngleZ, true)
+                    break
+                end
             end
-        end
-        if not tempHook then
+            
             return
         end
-        -- 对称摇晃
-        local tempIdleRotateAngle = tempHook:GetCurIdleRotateAngle()
-        local rotateAngleZ = (self._RopeRightAngleLimit - tempIdleRotateAngle.z) + self._RopeLeftAngleLimit
-        self:_UpdateCurIdleRotateAngle(tempIdleRotateAngle.x, tempIdleRotateAngle.y, rotateAngleZ)
-    elseif self:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.AIMING_ANGLE) then
+    end
+    
+    -- 主钩待机状态按照所属类型来
+    if self:CheckType(XEnumConst.GOLDEN_MINER.HOOK_TYPE.AIMING_ANGLE) then
         -- 没有控制方向退出
         if not self._CurIdleRotateDirection then
             return
@@ -606,22 +671,55 @@ function XGoldenMinerComponentHook:UpdateIdleRope(time, hookEntityList)
         --end
         self:_UpdateCurIdleRotateAngleByTime(time, false)
     else
-        -- 自由摇晃
-        if not self._CurIdleRotateDirection then
-            self:UpdateCurIdleRotateDirection(1)
-        end
-        if self:_CheckIsRopeLeftLimit() then
-            self:UpdateCurIdleRotateDirection(1)
-        elseif self:_CheckIsRopeRightLimit() then
-            self:UpdateCurIdleRotateDirection(-1)
-        end
-        self:_UpdateCurIdleRotateAngleByTime(time)
+        self:_RotateFree(time)
     end
 end
 
-function XGoldenMinerComponentHook:_UpdateCurIdleRotateAngle(x, y, z)
+--region 待机行为
+
+--- 自由摇晃
+function XGoldenMinerComponentHook:_RotateFree(time)
+    -- 自由摇晃
+    if not self._CurIdleRotateDirection then
+        self:UpdateCurIdleRotateDirection(1)
+    end
+    if self:_CheckIsRopeLeftLimit() then
+        self:UpdateCurIdleRotateDirection(1)
+    elseif self:_CheckIsRopeRightLimit() then
+        self:UpdateCurIdleRotateDirection(-1)
+    end
+    self:_UpdateCurIdleRotateAngleByTime(time)
+end
+
+--- 双钩buff特殊逻辑
+function XGoldenMinerComponentHook:_RotateDoubleStyle(hookEntityList)
+    -- 钩子2与钩子1对称摇晃
+    ---@type XGoldenMinerComponentHook
+    local tempHook = false
+    -- 找到钩子1
+    for _, hookEntityUid in ipairs(hookEntityList) do
+        local hookEntity = self._OwnControl:GetHookEntityByUid(hookEntityUid)
+        local hookCom = hookEntity:GetComponentHook()
+        if self ~= hookCom then
+            tempHook = hookCom
+        end
+    end
+    if not tempHook then
+        return
+    end
+    -- 对称摇晃
+    local tempIdleRotateAngle = tempHook:GetCurIdleRotateAngle()
+    local rotateAngleZ = (self._RopeRightAngleLimit - tempIdleRotateAngle.z) + self._RopeLeftAngleLimit
+    self:_UpdateCurIdleRotateAngle(tempIdleRotateAngle.x, tempIdleRotateAngle.y, rotateAngleZ)
+end
+
+--endregion
+
+function XGoldenMinerComponentHook:_UpdateCurIdleRotateAngle(x, y, z, noCheckLimit)
     self._CurIdleRotateAngle:Update(x, y, z)
-    self:_CheckAndSetIdleRotateAngleLimit()
+    if not noCheckLimit then
+        self:_CheckAndSetIdleRotateAngleLimit()
+    end
     self.Transform.localEulerAngles = self._CurIdleRotateAngle
 end
 
@@ -640,10 +738,22 @@ function XGoldenMinerComponentHook:UpdateCurIdleRotateDirection(direction)
     self._CurIdleRotateDirection = direction
 end
 
-function XGoldenMinerComponentHook:UpdateRoleLength(length, isRevoking)
+function XGoldenMinerComponentHook:UpdateRoleLength(length, isRevoking, time)
     if XTool.IsTableEmpty(self._CurRopeObjList) then
         return
     end
+    
+    local netAimCom = self._ParentEntity:GetComponentNetAim()
+
+    if netAimCom and not isRevoking then
+        netAimCom: UpdateRoleLength(length, isRevoking, time)        
+        return
+    end
+    
+    self:_UpdateRopeLengthNormal(length, isRevoking)
+end
+
+function XGoldenMinerComponentHook:_UpdateRopeLengthNormal(length, isRevoking)
     self._CurRopeLength = length
     self._CurRopeLength = math.max(self._CurRopeLength, self._RopeMinLength)
     self._CurRopeLength = math.min(self._CurRopeLength, self._RopeMaxLength)
@@ -662,7 +772,12 @@ function XGoldenMinerComponentHook:UpdateRoleLength(length, isRevoking)
     end
 
     if self._RopeCollider then
-        self._RopeCollider.transform.position = self._HookObj.position
+        local hookX, hookY, hookZ = self._HookObj:GetPosition()
+        self._RopeCollider.transform:SetPosition(hookX, hookY, hookZ)
+    end
+
+    if not isRevoking then
+        XMVCA.XGoldenMiner:DebugLogWithType(XMVCA.XGoldenMiner.EnumConst.DebuggerLogType.HookSpeed, '黄金矿工Debug:当前钩爪发射速度='..tostring(self._ParentEntity:GetComponentHook():GetCurShootSpeed()))
     end
 end
 
@@ -689,15 +804,41 @@ function XGoldenMinerComponentHook:_UpdateRopeLength(resetEulerAngle)
     self._CacheRopeDeltaPos:Update(self._HookObjStartLocalPosition.x,
             self._HookObjStartLocalPosition.y + self._RopeMinLength - self._CurRopeLength,
             self._HookObjStartLocalPosition.z)
-    self._HookObj.localPosition = self._CacheRopeDeltaPos
+    self._HookObj:SetLocalPosition(self._CacheRopeDeltaPos.x, self._CacheRopeDeltaPos.y, self._CacheRopeDeltaPos.z)
+    
     if resetEulerAngle then
-        self._HookObj.localEulerAngles = Vector3Zero
+        self._HookObj:SetLocalRotation(0, 0, 0)
     end
+    
     for i, rope in ipairs(self._CurRopeObjList) do
         if i == 1 then
-            self._CacheRopeSize:Update(rope.sizeDelta.x, self._CurRopeLength)
-            self._CurRopeDetailVector = rope.sizeDelta.y - self._CacheRopeSize.y
-            rope.sizeDelta = self._CacheRopeSize
+            local sizeDeltaX, sizeDeltaY = rope:GetUISizeDelta()
+            self._CacheRopeSize:Update(sizeDeltaX, self._CurRopeLength)
+            self._CurRopeDetailVector = sizeDeltaY - self._CacheRopeSize.y
+            rope:SetUISizeDelta(self._CacheRopeSize.x, self._CacheRopeSize.y)
+            rope.gameObject:SetActiveEx(true)
+        else
+            rope.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
+--- 给弹网钩爪使用，无视碰撞和弹射，直接设置绳子长度
+function XGoldenMinerComponentHook:UpdateRopeLengthOnly(length)
+    self._CurRopeLength = length
+    self._CurRopeLength = math.max(self._CurRopeLength, self._RopeMinLength)
+    self._CurRopeLength = math.min(self._CurRopeLength, self._RopeMaxLength)
+    
+    self._CacheRopeDeltaPos:Update(self._HookObjStartLocalPosition.x,
+            self._HookObjStartLocalPosition.y + self._RopeMinLength - self._CurRopeLength,
+            self._HookObjStartLocalPosition.z)
+
+    for i, rope in ipairs(self._CurRopeObjList) do
+        if i == 1 then
+            local sizeDeltaX, sizeDeltaY = rope:GetUISizeDelta()
+            self._CacheRopeSize:Update(sizeDeltaX, self._CurRopeLength)
+            self._CurRopeDetailVector = sizeDeltaY - self._CacheRopeSize.y
+            rope:SetUISizeDelta(self._CacheRopeSize.x, self._CacheRopeSize.y)
             rope.gameObject:SetActiveEx(true)
         else
             rope.gameObject:SetActiveEx(false)

@@ -115,15 +115,15 @@ function XUiFubenExploreLevel:Init()
 
     for i = 1, #useNodeList do
         if self.BannerList[useNodeList[i].tableData.Id] == nil then
-            local tempLevelNodeObj
+            local tempLevelNodeObjKey
             if useNodeList[i].tableData.IsBossNode then
-                tempLevelNodeObj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("FubenExploreBossLevel"))
+                tempLevelNodeObjKey = "FubenExploreBossLevel"
             else
-                tempLevelNodeObj = CS.UnityEngine.Object.Instantiate(self.Obj:GetPrefab("FubenExploreLevel"))
+                tempLevelNodeObjKey = "FubenExploreLevel"
             end
             local parentObj = self.LayerLevel.transform:Find(useNodeList[i].tableData.Id)
             parentObj.gameObject:SetActive(true)
-            tempLevelNodeObj.transform:SetParent(parentObj, false)
+            local tempLevelNodeObj = parentObj:LoadPrefabEx(XUiConfigs.GetUiObjectPrefabPath(self.Name, tempLevelNodeObjKey))
             tempLevelNodeObj.transform:SetAsLastSibling()
             local tempLevelNode = XUiFubenExploreLevelNode.New(tempLevelNodeObj, useNodeList[i], self, function(nodeInfo) self:OnLevelNodeClick(nodeInfo) end)
             self.BannerList[useNodeList[i].tableData.Id] = tempLevelNode

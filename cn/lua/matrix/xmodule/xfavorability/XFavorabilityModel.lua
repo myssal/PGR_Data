@@ -13,13 +13,13 @@ local TABLE_CHARACTER_GROUP = "Share/FestivalMail/FestivalCharacterGroup.tab"
 local TABLE_FESTIVAL = "Share/FestivalMail/Festival.tab"
 local TABLE_CHARACTER_COLLABORATION = "Client/Trust/CharacterCollaboration.tab"
 local TABLE_SIGNBOARD_FEEDBACK = "Client/Signboard/SignBoardFeedback.tab";
+local TABLE_SIGNBOARD_FEEDBACK_ROLEMAP = "Client/Signboard/SignBoardFeedbackRoleMap.tab";
 
 local TableNormal = {
     CharacterVoiceContentMap = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     CharacterVoiceRange = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     CharacterVoice = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
 
-    CharacterActionContentMap = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     CharacterActionRange = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     CharacterAction = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     CharacterActionSignBoard = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
@@ -36,6 +36,11 @@ local TableTemp = {
     CharacterStory = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
 }
 
+-- 一次性全加载的Id范围，这部分的配置表示多角色共用，规则以导表为准
+local SignBoardFeebackAllLoadIndexBegin = 1
+local signBoardFeedbackAllLoadIndexEnd = 999999
+local SignBoardFeedbackRoleIdMulty = 100
+
 function XFavorabilityModel:OnInit()
     --初始化内部变量
     self._GiftQualityIcon = {
@@ -48,21 +53,22 @@ function XFavorabilityModel:OnInit()
     }
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
     self._ConfigUtil:InitConfig({
-        [TABLE_CV_SPLIT]={XConfigUtil.ReadType.Int,XTable.XTableCvSplit,"Id",XConfigUtil.CacheType.Normal},
-        [TABLE_CV_SPLIT_RANGE]={XConfigUtil.ReadType.Int,XTable.XTableCvSplitRange,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_CV_SPLIT] = {XConfigUtil.ReadType.Int,XTable.XTableCvSplit,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_CV_SPLIT_RANGE] = {XConfigUtil.ReadType.Int,XTable.XTableCvSplitRange,"Id",XConfigUtil.CacheType.Normal},
 
-        [TABLE_LIKE_BASEDATA]={XConfigUtil.ReadType.Int,XTable.XTableCharacterBaseData,"CharacterId",XConfigUtil.CacheType.Normal},
-        [TABLE_SIGNBOARD_FEEDBACK]={XConfigUtil.ReadType.Int,XTable.XTableSignBoardFeedback,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_LIKE_BASEDATA] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterBaseData,"CharacterId",XConfigUtil.CacheType.Normal},
+        [TABLE_SIGNBOARD_FEEDBACK] = {XConfigUtil.ReadType.Int,XTable.XTableSignBoardFeedback,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_SIGNBOARD_FEEDBACK_ROLEMAP] = {XConfigUtil.ReadType.Int,XTable.XTableSignBoardFeedbackRoleMap,"Id",XConfigUtil.CacheType.Normal},
         
-        [TABLE_CHARACTER_COLLABORATION]={XConfigUtil.ReadType.Int,XTable.XTableCharacterCollaboration,"CharacterId",XConfigUtil.CacheType.Normal},
-        [TABLE_LIKE_TRUSTITEM]={XConfigUtil.ReadType.Int,XTable.XTableCharacterTrustItem,"Id",XConfigUtil.CacheType.Private},
-        [TABLE_FESTIVAL]={XConfigUtil.ReadType.Int,XTable.XTableFestival,"Id",XConfigUtil.CacheType.Private},
-        [TABLE_CHARACTER_GROUP]={XConfigUtil.ReadType.Int,XTable.XTableFestivalCharacterGroup,"CharacterId",XConfigUtil.CacheType.Private},
-        [TABLE_LIKE_LEVELCONFIG]={XConfigUtil.ReadType.Int,XTable.XTableFavorabilityLevelConfig,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_CHARACTER_COLLABORATION] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterCollaboration,"CharacterId",XConfigUtil.CacheType.Normal},
+        [TABLE_LIKE_TRUSTITEM] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterTrustItem,"Id",XConfigUtil.CacheType.Private},
+        [TABLE_FESTIVAL] = {XConfigUtil.ReadType.Int,XTable.XTableFestival,"Id",XConfigUtil.CacheType.Private},
+        [TABLE_CHARACTER_GROUP] = {XConfigUtil.ReadType.Int,XTable.XTableFestivalCharacterGroup,"CharacterId",XConfigUtil.CacheType.Private},
+        [TABLE_LIKE_LEVELCONFIG] = {XConfigUtil.ReadType.Int,XTable.XTableFavorabilityLevelConfig,"Id",XConfigUtil.CacheType.Normal},
 
-        [TABLE_LIKE_INFORMATION]={XConfigUtil.ReadType.Int,XTable.XTableCharacterInformation, "Id",XConfigUtil.CacheType.Temp},
-        [TABLE_LIKE_STRANGENEWS]={XConfigUtil.ReadType.Int,XTable.XTableCharacterStrangeNews,"Id",XConfigUtil.CacheType.Temp},
-        [TABLE_LIKE_TRUSTEXP]={XConfigUtil.ReadType.Int,XTable.XTableCharacterTrustExp,"Id",XConfigUtil.CacheType.Temp},
+        [TABLE_LIKE_INFORMATION] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterInformation, "Id",XConfigUtil.CacheType.Temp},
+        [TABLE_LIKE_STRANGENEWS] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterStrangeNews,"Id",XConfigUtil.CacheType.Temp},
+        [TABLE_LIKE_TRUSTEXP] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterTrustExp,"Id",XConfigUtil.CacheType.Temp},
     })
 
     self._ConfigUtil:InitConfigByTableKey('Trust', TableNormal, XConfigUtil.CacheType.Normal)
@@ -84,15 +90,16 @@ function XFavorabilityModel:OnInit()
     self._CharacterVoiceInitAll = false
     self._CharacterVoiceInitAny = false
     self._CharacterAction=nil
-    self._CharacterActionUnlockLv=nil
-    self._CharacterActionKeySignBoardActionId=nil
+    self._CharacterActionUnlockLv = nil
+    self._CharacterActionKeySignBoardActionId = nil
     self._CharacterActionInitAll = false
     self._CharacterActionInitAny = false
     
     --signBoard相关数据
-    self._TableSignBoardRoleIdIndexs=nil
-    self._TableSignBoardIndexs=nil
-    self._TableSignBoardBreak=nil
+    self._TableSignBoardRoleIdIndexs = nil
+    self._TableSignBoardIndexs = nil
+    self._SignBoardInitMap = {}
+    
     self._ChangeDisplayId = -1
     self._LoginTime=-1
     self._LastLoginTime = -1
@@ -158,6 +165,11 @@ function XFavorabilityModel:ResetAll()
     self._CharacterActionInitAll = false
     self._CharacterActionInitAny = false
     self._CvSplit=nil
+
+    self._TableSignBoardRoleIdIndexs = nil
+    self._TableSignBoardIndexs = nil
+    self._SignBoardInitMap = {}
+
 
     --clear gaming data
     self._CharacterFavorabilityDatas= {}
@@ -335,28 +347,56 @@ function XFavorabilityModel:CheckCharacterTrustItemDataDone()
     end 
 end
 
-function XFavorabilityModel:CheckSignBoardDataDone()
-    if XTool.IsTableEmpty(self._TableSignBoardRoleIdIndexs) or XTool.IsTableEmpty(self._TableSignBoardIndexs) then
-        self._TableSignBoardRoleIdIndexs={}
-        for _, var in pairs(self._ConfigUtil:Get(TABLE_SIGNBOARD_FEEDBACK)) do
-            if not var.RoleId then
-                self._TableSignBoardIndexs = self._TableSignBoardIndexs or {}
-                self._TableSignBoardIndexs[var.ConditionId] = self._TableSignBoardIndexs[var.ConditionId] or {}
-                table.insert(self._TableSignBoardIndexs[var.ConditionId], var)
-            elseif var.RoleId == "None" then
-                self._TableSignBoardBreak = var
-            else
-                local roleIds = string.Split(var.RoleId, "|")
-                if roleIds then
-                    for _, roleId in ipairs(roleIds) do
-                        roleId = tonumber(roleId)
-                        self._TableSignBoardRoleIdIndexs[roleId] = self._TableSignBoardRoleIdIndexs[roleId] or {}
-                        self._TableSignBoardRoleIdIndexs[roleId][var.ConditionId] = self._TableSignBoardRoleIdIndexs[roleId][var.ConditionId] or {}
-                        table.insert(self._TableSignBoardRoleIdIndexs[roleId][var.ConditionId], var)
+---@param roleId @指定角色Id检查加载，0表示多角色
+function XFavorabilityModel:_CheckSignBoardCfgLoaded(roleId)
+    if not XTool.IsNumberValidEx(roleId) then
+        roleId = 1
+    end
+
+    if not self._SignBoardInitMap[roleId] then
+        self._TableSignBoardRoleIdIndexs = self._TableSignBoardRoleIdIndexs or {}
+        self._TableSignBoardIndexs = self._TableSignBoardIndexs or {}
+        
+        ---@type XTableSignBoardFeedbackRoleMap
+        local idsCfg = self:GetSignBoardRoleMapCfgs()[roleId]
+
+        if idsCfg then
+            local signBoardCfgs = self:GetSignBoardConfig()
+            
+            -- 遍历初始化
+            for i, signBoardId in ipairs(idsCfg.SignBoardIds) do
+                local cfg = signBoardCfgs[signBoardId]
+
+                if cfg then
+                    if not cfg.RoleId then
+                        self._TableSignBoardIndexs = self._TableSignBoardIndexs or {}
+                        table.insert(self._TableSignBoardIndexs, cfg)
+                    else
+                        if string.find(cfg.RoleId, '|') then
+                            local roleIds = string.Split(cfg.RoleId, "|")
+                            if roleIds then
+                                for _, tmpRoleId in ipairs(roleIds) do
+                                    tmpRoleId = tonumber(tmpRoleId)
+                                    self._TableSignBoardRoleIdIndexs[tmpRoleId] = self._TableSignBoardRoleIdIndexs[tmpRoleId] or {}
+                                    self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId] = self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId] or {}
+                                    table.insert(self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId], cfg)
+                                end
+                            end
+                        else
+                            local tmpRoleId = tonumber(cfg.RoleId)
+                            self._TableSignBoardRoleIdIndexs[tmpRoleId] = self._TableSignBoardRoleIdIndexs[tmpRoleId] or {}
+                            self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId] = self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId] or {}
+                            table.insert(self._TableSignBoardRoleIdIndexs[tmpRoleId][cfg.ConditionId], cfg)
+                        end
                     end
+                else
+                    -- 根据导表规则id连续，断开表示结束
+                    break
                 end
             end
         end
+
+        self._SignBoardInitMap[roleId] = true
     end
 end
 
@@ -766,33 +806,6 @@ function XFavorabilityModel:GetCharacterActionUnlockLvsById(characterId)
     end
     return actionUnlockDatas
 end
-
-function XFavorabilityModel:GetCharacterActionMapText(mapCode)
-    local id = XMath.ToMinInt(mapCode / 10000)
-    local value = XMath.ToMinInt(mapCode % 10000)
-
-    local cfg = self:GetCharacterActionContentMapCfg(id)
-
-    if cfg then
-        if XTool.IsNumberValid(value) then
-            return XUiHelper.FormatText(cfg.Text, value)
-        else
-            return cfg.Text
-        end
-    end
-
-    return ''
-end
-
-function XFavorabilityModel:GetCharacterActionContentMapCfg(id)
-    local cfg = self:GetCharacterActionContentMap()[id]
-
-    if cfg then
-        return cfg
-    else
-        XLog.Error('CharacterACtionContentMap表找不到Id为 '..tostring(id)..' 的数据')
-    end
-end
 --endregion <<<-------------------------
 
 --region --------- CV文本相关 ---------->>>
@@ -912,10 +925,6 @@ function XFavorabilityModel:GetCharacterActionCfgs()
     return self._ConfigUtil:GetByTableKey(TableNormal.CharacterAction)
 end
 
-function XFavorabilityModel:GetCharacterActionContentMap()
-    return self._ConfigUtil:GetByTableKey(TableNormal.CharacterActionContentMap)
-end
-
 function XFavorabilityModel:GetCharacterActionRangeCfgs()
     return self._ConfigUtil:GetByTableKey(TableNormal.CharacterActionRange)
 end
@@ -1012,7 +1021,7 @@ function XFavorabilityModel:GetCharacterTeamIconById(characterId)
         --XLog.ErrorTableDataNotFound("XFavorabilityModel.GetCharacterBaseDataById",
         --        "CharacterBaseData", TABLE_LIKE_BASEDATA, "characterId", characterId)
 
-        local logo=XExhibitionConfigs.GetExhibitionGroupLogoConfig()[characterId]
+        local logo = XExhibitionConfigs.GetExhibitionGroupLogoConfig(characterId)
         return logo
     end
     return baseData.TeamIcon
@@ -1119,9 +1128,15 @@ function XFavorabilityModel:GetSignBoardConfig()
     return self._ConfigUtil:Get(TABLE_SIGNBOARD_FEEDBACK)
 end
 
+function XFavorabilityModel:GetSignBoardRoleMapCfgs()
+    return self._ConfigUtil:Get(TABLE_SIGNBOARD_FEEDBACK_ROLEMAP)
+end
+
 --获取角色所有事件
 function XFavorabilityModel:GetSignBoardConfigByRoldId(roleId)
-    self:CheckSignBoardDataDone()
+    self:_CheckSignBoardCfgLoaded(0)
+    self:_CheckSignBoardCfgLoaded(roleId)
+    
     local all = {}
 
     if self._TableSignBoardRoleIdIndexs and self._TableSignBoardRoleIdIndexs[roleId] then
@@ -1132,10 +1147,36 @@ function XFavorabilityModel:GetSignBoardConfigByRoldId(roleId)
         end
     end
 
-    if self._TableSignBoardIndexs then
-        for _, v in pairs(self._TableSignBoardIndexs) do
-            for _, var in ipairs(v) do
-                table.insert(all, var)
+    if not XTool.IsTableEmpty(self._TableSignBoardIndexs) then
+        for _, var in pairs(self._TableSignBoardIndexs) do
+            table.insert(all, var)
+        end
+    end
+
+    return all
+end
+
+--获取角色指定条件的所有事件
+function XFavorabilityModel:GetSignBoardConfigByRoldIdAndCondition(roleId, conditionId)
+    self:_CheckSignBoardCfgLoaded(0)
+    self:_CheckSignBoardCfgLoaded(roleId)
+    
+    local all = {}
+
+    if self._TableSignBoardRoleIdIndexs and self._TableSignBoardRoleIdIndexs[roleId] then
+        local configs = self._TableSignBoardRoleIdIndexs[roleId][conditionId]
+        
+        if configs then
+            for _, v in ipairs(configs) do
+                table.insert(all, v)
+            end
+        end
+    end
+
+    if not XTool.IsTableEmpty(self._TableSignBoardIndexs) then
+        for _, v in ipairs(self._TableSignBoardIndexs) do
+            if v.ConditionId == conditionId then
+                table.insert(all, v)
             end
         end
     end

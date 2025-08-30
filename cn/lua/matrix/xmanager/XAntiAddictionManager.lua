@@ -20,7 +20,7 @@ XAntiAddictionManagerCreator = function()
                 if result then
                     CS.XHeroSdkAgent.NotifyKickResult(result)
                 end
-            end)
+            end, false)
             return
         end
 
@@ -30,7 +30,7 @@ XAntiAddictionManagerCreator = function()
                 if result then
                     CS.XHeroSdkAgent.NotifyKickResult(result)
                 end
-            end)
+            end, false)
         end)
     end
 

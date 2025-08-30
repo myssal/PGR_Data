@@ -10,6 +10,8 @@ function XGoldenMinerSystemStone:OnInit()
         [XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBING] = true,
         [XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.SHIP_AIM] = true,
     }
+    
+    self._NoAliveStoneUidRemoveWaitList = {}
 end
 
 function XGoldenMinerSystemStone:EnterGame()
@@ -17,8 +19,52 @@ function XGoldenMinerSystemStone:EnterGame()
 end
 
 function XGoldenMinerSystemStone:OnUpdate(time, isInit)
-    local stoneUidDir = self._MainControl:GetStoneEntityUidDirByType()
+    -- 移除上一次更新已经终结的id
+    if not XTool.IsTableEmpty(self._NoAliveStoneUidRemoveWaitList) then
+        for i = #self._NoAliveStoneUidRemoveWaitList, 1, -1 do
+            self._MainControl.SystemMap:RemoveStoneEntityFromAliveList(self._NoAliveStoneUidRemoveWaitList[i])
+            self._NoAliveStoneUidRemoveWaitList[i] = nil
+        end
+    end
+
     local usedTime = self._MainControl:GetGameData() and self._MainControl:GetGameData():GetUsedTime() or 0
+
+    --- 延后显示的单独遍历
+    local bornDelayStoneUidDir = self._MainControl.SystemMap:GetStoneEntityUidBornDelayDir()
+
+    if not XTool.IsTableEmpty(bornDelayStoneUidDir) then
+        local showedDelayTimeList = nil
+
+        for bornDelayTime, uidList in pairs(bornDelayStoneUidDir) do
+            if bornDelayTime <= usedTime then
+                for i, v in ipairs(uidList) do
+                    self:SetStoneEntityStatus(self._MainControl:GetStoneEntityByUid(v), XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE)
+                end
+
+                if showedDelayTimeList == nil then
+                    showedDelayTimeList = {}
+                end
+
+                showedDelayTimeList[bornDelayTime] = true
+            else
+                if isInit then
+                    for i, v in ipairs(uidList) do
+                        self:SetStoneEntityStatus(self._MainControl:GetStoneEntityByUid(v), XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.BE_ALIVE)
+                        self:_UpdateStone(self._MainControl:GetStoneEntityByUid(v), time)
+                    end
+                end
+            end
+        end
+
+        if not XTool.IsTableEmpty(showedDelayTimeList) then
+            for delayTime, v in pairs(showedDelayTimeList) do
+                self._MainControl.SystemMap:RemoveStoneEntityFromDelayTimeDir(delayTime)
+            end
+        end
+    end
+    
+    local stoneUidDir = self._MainControl:GetStoneUidAliveList()
+
     if XTool.IsTableEmpty(stoneUidDir) then
         return
     end
@@ -26,11 +72,15 @@ function XGoldenMinerSystemStone:OnUpdate(time, isInit)
     if self._MainControl:IsTimeStop() then
         time = 0
     end
+
     for uid, _ in pairs(stoneUidDir) do
         if not isInit then
             self:_UpdateStone(self._MainControl:GetStoneEntityByUid(uid), time)
+            self:_CheckStoneStatusTime(self._MainControl:GetStoneEntityByUid(uid), usedTime, time)
+        else
+            self:_CheckStoneStatusTime(self._MainControl:GetStoneEntityByUid(uid), usedTime, time)
+            self:_UpdateStoneOnInit(self._MainControl:GetStoneEntityByUid(uid))
         end
-        self:_CheckStoneStatusTime(self._MainControl:GetStoneEntityByUid(uid), usedTime, time)
     end
 end
 
@@ -45,7 +95,7 @@ end
 ---@param status number XEnumConst.GOLDEN_MINER.GAME_GRAB_OBJ_STATUS
 function XGoldenMinerSystemStone:SetStoneEntityStatus(stoneEntity, status)
     if not stoneEntity or stoneEntity:CheckStatus(status) then
-        return
+        return false
     end
     if status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE then
     elseif status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.BE_ALIVE then
@@ -61,11 +111,12 @@ function XGoldenMinerSystemStone:SetStoneEntityStatus(stoneEntity, status)
 
         if stoneEntity:GetComponentStone().BeDestroyTime <= 0 and not stoneEntity:GetComponentMussel() then
             self:SetStoneEntityStatus(stoneEntity, XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.DESTROY)
-            return
+            return false
         end
     elseif status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.DESTROY then
     end
-    stoneEntity:SetStatus(status)
+    
+    return stoneEntity:SetStatus(status)
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
@@ -104,9 +155,12 @@ end
 ---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemStone:_SetComponentStoneCanInteraction(stoneEntity, isCanInteraction)
     local stoneComponent = stoneEntity:GetComponentStone()
-    stoneComponent.CanInteraction = isCanInteraction
-
-    self:_OnStoneInteractionStateChanged(stoneEntity)
+    local oldInteraction = stoneComponent.CanInteraction
+    
+    if oldInteraction ~= isCanInteraction then
+        stoneComponent.CanInteraction = isCanInteraction
+        self:_OnStoneInteractionStateChanged(stoneEntity)
+    end
 end
 --endregion
 
@@ -195,13 +249,18 @@ function XGoldenMinerSystemStone:_CheckStoneStatusTime(stoneEntity, usedTime, ti
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
+function XGoldenMinerSystemStone:_UpdateStoneOnInit(stoneEntity)
+    if stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.HIDE) then
+        self:_UpdateStoneHide(stoneEntity)
+    end
+end
+
+---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemStone:_UpdateStone(stoneEntity, time)
-    if stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.NONE) then
-        return
-    elseif stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.BE_ALIVE) then
-        self:_UpdateStoneBeAlive(stoneEntity, time)
-    elseif stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE) then
+    if stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE) then
         self:_UpdateStoneAlive(stoneEntity, time)
+    elseif stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.BE_ALIVE) then
+        self:_UpdateStoneBeAlive(stoneEntity, time)    
     elseif stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBING) then
         self:_UpdateStoneGrabbing(stoneEntity, time)
     elseif stoneEntity:CheckStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.GRABBED) then
@@ -218,26 +277,38 @@ function XGoldenMinerSystemStone:_UpdateStone(stoneEntity, time)
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
-function XGoldenMinerSystemStone:_UpdateStoneBeAlive(stoneEntity, time)
-    self:_SetStoneEntityTransform(stoneEntity, false)
-    self:_SetComponentStoneCanInteraction(stoneEntity, false)
-end
-
----@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemStone:_UpdateStoneAlive(stoneEntity, time)
-    self:_SetStoneEntityTransform(stoneEntity, true)
-    self:_SetComponentStoneCanInteraction(stoneEntity, true)
+    if stoneEntity:GetIsNewStatusEnter() then
+        self:_SetStoneEntityTransform(stoneEntity, true)
+        self:_SetComponentStoneCanInteraction(stoneEntity, true)
 
-    self:_SetMouseAlive(stoneEntity)
+        self:_SetMouseAlive(stoneEntity)
+        
+        stoneEntity:ClearNewStatusEnterMark()
+    end
 
     self:_UpdateMusselTime(stoneEntity, time)
     self:_UpdateHookDirectionPointTime(stoneEntity, time)
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
+function XGoldenMinerSystemStone:_UpdateStoneBeAlive(stoneEntity, time)
+    if stoneEntity:GetIsNewStatusEnter() then
+        self:_SetStoneEntityTransform(stoneEntity, false)
+        self:_SetComponentStoneCanInteraction(stoneEntity, false)
+        
+        stoneEntity:ClearNewStatusEnterMark()
+    end
+end
+
+---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemStone:_UpdateStoneGrabbing(stoneEntity, time)
-    self:_SetStoneEntityTransform(stoneEntity, true)
-    self:_SetComponentStoneCanInteraction(stoneEntity, true)
+    if stoneEntity:GetIsNewStatusEnter() then
+        self:_SetStoneEntityTransform(stoneEntity, true)
+        self:_SetComponentStoneCanInteraction(stoneEntity, true)
+        
+        stoneEntity:ClearNewStatusEnterMark()
+    end
 
     self:_OnStoneGrabbing(stoneEntity, time)
 end
@@ -259,12 +330,19 @@ function XGoldenMinerSystemStone:_UpdateStoneGrabbed(stoneEntity, time)
     end
     self:_SetStoneEntityTransform(stoneEntity, false)
     self:_SetComponentStoneCanInteraction(stoneEntity, false)
+    
+    stoneEntity:SetStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.END_LIEF_TIME)
+    table.insert(self._NoAliveStoneUidRemoveWaitList, stoneEntity:GetUid())
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
 function XGoldenMinerSystemStone:_UpdateStoneHide(stoneEntity, time)
-    self:_SetStoneEntityTransform(stoneEntity, false)
-    self:_SetComponentStoneCanInteraction(stoneEntity, false)
+    if stoneEntity:GetIsNewStatusEnter() then
+        self:_SetStoneEntityTransform(stoneEntity, false)
+        self:_SetComponentStoneCanInteraction(stoneEntity, false)
+        
+        stoneEntity:ClearNewStatusEnterMark()
+    end
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone
@@ -283,6 +361,9 @@ function XGoldenMinerSystemStone:_UpdateStoneDestroy(stoneEntity, time)
     end
     self:_SetStoneEntityTransform(stoneEntity, false)
     self:_SetComponentStoneCanInteraction(stoneEntity, false)
+
+    stoneEntity:SetStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.END_LIEF_TIME)
+    table.insert(self._NoAliveStoneUidRemoveWaitList, stoneEntity:GetUid())
 end
 
 ---@param stoneEntity XGoldenMinerEntityStone

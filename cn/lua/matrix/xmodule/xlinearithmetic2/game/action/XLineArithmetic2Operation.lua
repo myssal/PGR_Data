@@ -177,43 +177,60 @@ function XLineArithmetic2Operation:Execute(game, model)
             end
 
             -- 如果点击了已经选中的格子，取消选中
-            if grid:IsSelected()
+            if grid:IsSelected() then
+                local isCancel = true
+                local lastGrid = line[#line]
+                if lastGrid and lastGrid:IsEndGrid() then
                     -- 点击最后一格
-                    and ((grid:Equals(line[#line]) and self._Type == XLineArithmetic2Enum.OPERATION.CLICK)
-                    -- 或者滑动到倒数第二格
-                    or grid:Equals(line[#line - 1]))
-            then
-                -- 拖动的时候，保留多一格，必须和点击用不同的逻辑
-                local isKeepDragGrid = false
-                local gridLastButNotLeast = line[#line - 1]
-                if self._Type == XLineArithmetic2Enum.OPERATION.DRAG then
-                    if gridLastButNotLeast then
-                        if gridLastButNotLeast:Equals(grid) then
-                            -- 如果只有2格,不保留选中
-                            if #line ~= 2 then
-                                isKeepDragGrid = true
+                    if ((grid:Equals(lastGrid) and self._Type == XLineArithmetic2Enum.OPERATION.CLICK)
+                            -- 或者滑动到倒数第二格
+                            or (#line >= 2 and grid:Equals(line[#line - 1])))
+                    then
+                        isCancel = true
+                    else
+                        -- 划到了其他已选中的格子
+                        self._State = XLineArithmetic2Enum.OPERATION_STATE.FAIL
+                        return
+                    end
+                else
+                    isCancel = true
+                end
+                if isCancel then
+                    -- 拖动的时候，保留多一格，必须和点击用不同的逻辑
+                    local isKeepDragGrid = false
+                    local gridLastButNotLeast = line[#line - 1]
+                    if self._Type == XLineArithmetic2Enum.OPERATION.DRAG then
+                        if gridLastButNotLeast then
+                            if gridLastButNotLeast:Equals(grid) then
+                                -- 如果只有2格,不保留选中
+                                if #line ~= 2 then
+                                    isKeepDragGrid = true
+                                end
                             end
                         end
                     end
-                end
-                if isKeepDragGrid then
-                    local lastGrid = line[#line]
+                    if isKeepDragGrid then
+                        local lastGrid = line[#line]
+                        ---@type XLineArithmetic2ActionLinkGrid
+                        local action = XLineArithmetic2ActionLinkGrid.New()
+                        action:SetPos(lastGrid:GetPos())
+                        action:SetIsRemove(true)
+                        self:EnqueueAction(game, action)
+                        self._State = XLineArithmetic2Enum.OPERATION_STATE.SUCCESS
+                        return
+                    end
+
                     ---@type XLineArithmetic2ActionLinkGrid
                     local action = XLineArithmetic2ActionLinkGrid.New()
-                    action:SetPos(lastGrid:GetPos())
+                    action:SetPos(pos)
                     action:SetIsRemove(true)
                     self:EnqueueAction(game, action)
                     self._State = XLineArithmetic2Enum.OPERATION_STATE.SUCCESS
                     return
+                else
+                    self._State = XLineArithmetic2Enum.OPERATION_STATE.FAIL
+                    return
                 end
-
-                ---@type XLineArithmetic2ActionLinkGrid
-                local action = XLineArithmetic2ActionLinkGrid.New()
-                action:SetPos(pos)
-                action:SetIsRemove(true)
-                self:EnqueueAction(game, action)
-                self._State = XLineArithmetic2Enum.OPERATION_STATE.SUCCESS
-                return
             end
 
             -- 越过终点格，连线中断

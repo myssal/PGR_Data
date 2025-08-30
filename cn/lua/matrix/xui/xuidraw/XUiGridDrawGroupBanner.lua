@@ -168,8 +168,12 @@ function XUiGridDrawGroupBanner:SetBannerTime()
         local beginTime = self.Info.BannerBeginTime or 0
         local endTime = self.Info.BannerEndTime or 0
         self.TimeTxt.gameObject:SetActiveEx(beginTime ~= 0 and endTime ~= 0)
-        local beginTimeStr = XTime.TimestampToGameDateTimeString(beginTime, "MM/dd HH:mm")
-        local endTimeStr = XTime.TimestampToGameDateTimeString(endTime, "MM/dd HH:mm")
+        local formatStr = "MM/dd HH:mm"
+        if XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then 
+            formatStr = "yyyy/MM/dd HH:mm"
+        end
+        local beginTimeStr = XTime.TimestampToGameDateTimeString(beginTime, formatStr)
+        local endTimeStr = XTime.TimestampToGameDateTimeString(endTime, formatStr)
         self.TimeTxt.text = string.format("%s-%s", beginTimeStr, endTimeStr)
     end
 end

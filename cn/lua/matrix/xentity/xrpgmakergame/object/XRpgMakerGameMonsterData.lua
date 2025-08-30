@@ -6,14 +6,7 @@ local type = type
 local pairs = pairs
 local tableInsert = table.insert
 local IsNumberValid = XTool.IsNumberValid
-local CSXResourceManagerLoad
-local CSXResourceManagerUnLoad = CS.XResourceManager.Unload
 local Vector3 = CS.UnityEngine.Vector3
-local LookRotation = CS.UnityEngine.Quaternion.LookRotation
-local _ViewFront = XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewFront  --怪物的前方
-local _ViewBack = XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewBack   --怪物的后面
-local _ViewLeft = XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewLeft   --怪物的左边
-local _ViewRight = XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewRight  --怪物的右边
 
 local DefaultHp = 100
 
@@ -29,6 +22,7 @@ local MoveLineEffectType = {
 }
 
 --怪物对象
+---@class XRpgMakerGameMonsterData
 local XRpgMakerGameMonsterData = XClass(XRpgMakerGameObject, "XRpgMakerGameMonsterData")
 
 function XRpgMakerGameMonsterData:Ctor(id)
@@ -44,6 +38,7 @@ function XRpgMakerGameMonsterData:Ctor(id)
     self.SentryLineModels = {}  --场景中生成的探测视野
     self.Sentry = XRpgMakerGameMonsterSentry.New(id)           --场景中生成的哨戒指示物
     self.HeadRoot = nil         --模型的头部挂点
+    self.MonsterType = XMVCA.XRpgMakerGame:GetConfig():GetMonsterType(self._Id)
     self:InitData()
 end
 
@@ -57,15 +52,15 @@ end
 
 function XRpgMakerGameMonsterData:RemoveTriggerEffectResource()
     if self.TriggerEffectResource then
-        CSXResourceManagerUnLoad(self.TriggerEffectResource)
+        CS.UnityEngine.GameObject.Destroy(self.TriggerEffectResource.Asset)
         self.TriggerEffectResource = nil
     end
 end
 
 function XRpgMakerGameMonsterData:RemoveViewAreaResource()
-    if self.ViewAreaResource then
-        CSXResourceManagerUnLoad(self.ViewAreaResource)
-        self.ViewAreaResource = nil
+    if self.ViewAreaResourcePath then
+        self:RemoveResource(self.ViewAreaResourcePath)
+        self.ViewAreaResourcePath = nil
     end
 end
 
@@ -100,14 +95,18 @@ end
 
 function XRpgMakerGameMonsterData:InitData()
     local monsterId = self:GetId()
-    -- local pointX = XRpgMakerGameConfigs.GetRpgMakerGameMonsterX(monsterId)
-    -- local pointY = XRpgMakerGameConfigs.GetRpgMakerGameMonsterY(monsterId)
+    --设置初始SkillTypes
+    local skillTypes = XMVCA.XRpgMakerGame:GetConfig():GetMonsterInitSkillTypes(monsterId)
+    self:InitSkillTypes(skillTypes)
+    -- local pointX = XMVCA.XRpgMakerGame:GetConfig():GetMonsterX(monsterId)
+    -- local pointY = XMVCA.XRpgMakerGame:GetConfig():GetMonsterY(monsterId)
     -- self:UpdatePosition({PositionX = pointX, PositionY = pointY})
-    local direction = XRpgMakerGameConfigs.GetRpgMakerGameMonsterDirection(monsterId)
+    local direction = XMVCA.XRpgMakerGame:GetConfig():GetMonsterDirection(monsterId)
     self:SetFaceDirection(direction)
     self:SetCurrentHp(DefaultHp)
 
     self:RemoveViewAreaAndLine()
+    self:RemoveBurnedEffect()
     self:InitSentryData()
     if not XTool.IsTableEmpty(self.MapObjData) then
         self:InitDataByMapObjData(self.MapObjData)
@@ -125,6 +124,7 @@ function XRpgMakerGameMonsterData:UpdateData(data)
     self._FaceDirection = data.FaceDirection
     self.Sentry:UpdateData(data)
     self:UpdatePosition(data)
+    self:ChangeSkillTypes(data.SkillTypes)
 end
 
 function XRpgMakerGameMonsterData:SetCurrentHp(hp)
@@ -144,7 +144,7 @@ function XRpgMakerGameMonsterData:GetCurrentHp()
 end
 
 function XRpgMakerGameMonsterData:Death(cb)
-    self:RemoveViewAreaModels()
+    self:Die()
     XRpgMakerGameMonsterData.Super.Death(self, cb)
 end
 
@@ -153,45 +153,47 @@ function XRpgMakerGameMonsterData:IsDeath()
     return currentHp <= 0
 end
 
-function XRpgMakerGameMonsterData:Die()
+function XRpgMakerGameMonsterData:OnDie()
     self:SetCurrentHp(0)
+    self:RemoveViewAreaModels()
+    self:RemoveResourcePool()
 end
 
 --朝向转方向
 function XRpgMakerGameMonsterData:FaceToDirection(faceDirection)
     local curDirection = self:GetFaceDirection()
     local direction
-    if faceDirection == XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewBack then
-        if curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft
+    if faceDirection == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewBack then
+        if curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft
         end
 
-    elseif faceDirection == XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewLeft then
-        if curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp
+    elseif faceDirection == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewLeft then
+        if curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp
         end
 
-    elseif faceDirection == XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewRight then
-        if curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp
-        elseif curDirection == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
-            direction = XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown
+    elseif faceDirection == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewRight then
+        if curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp
+        elseif curDirection == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
+            direction = XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown
         end
     end
     return direction or curDirection
@@ -200,6 +202,7 @@ end
 --设置视野范围
 function XRpgMakerGameMonsterData:SetGameObjectViewArea()
     self:RemoveViewAreaModels()
+    self:RemoveViewAreaResource()
 
     if self:IsDeath() then
         return
@@ -210,27 +213,21 @@ function XRpgMakerGameMonsterData:SetGameObjectViewArea()
         return
     end
     
-    local modelKey = XRpgMakerGameConfigs.ModelKeyMaps.ViewArea
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
-    local resource = self.ViewAreaResource
-    if not resource then
-        XLog.Error("[XResourceManager优化] 已经无法运行, 从XResourceManager改为loadPrefab")
-        resource = CSXResourceManagerLoad(effectPath)
-        self.ViewAreaResource = resource
-    end
-
-    if resource == nil or not resource.Asset then
-        XLog.Error(string.format("XRpgMakerGameMonsterData加载视野范围特效:%s失败", effectPath))
+    local monsterId = self:GetId()
+    local viewFront = XMVCA.XRpgMakerGame:GetConfig():GetMonsterViewFront(monsterId)
+    local viewBack = XMVCA.XRpgMakerGame:GetConfig():GetMonsterViewBack(monsterId)
+    local viewLeft = XMVCA.XRpgMakerGame:GetConfig():GetMonsterViewLeft(monsterId)
+    local viewRight = XMVCA.XRpgMakerGame:GetConfig():GetMonsterViewRight(monsterId)
+    if not IsNumberValid(viewFront) and not IsNumberValid(viewBack) and not IsNumberValid(viewLeft) and not IsNumberValid(viewRight) then
         return
     end
-
-    local monsterId = self:GetId()
-    local viewFront = XRpgMakerGameConfigs.GetRpgMakerGameMonsterViewFront(monsterId)
-    local viewBack = XRpgMakerGameConfigs.GetRpgMakerGameMonsterViewBack(monsterId)
-    local viewLeft = XRpgMakerGameConfigs.GetRpgMakerGameMonsterViewLeft(monsterId)
-    local viewRight = XRpgMakerGameConfigs.GetRpgMakerGameMonsterViewRight(monsterId)
+    
+    local modelKey = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.ViewArea
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
+    self.ViewAreaResourcePath = effectPath
+    
+    
     local viewAreaEffectPos = self:GetViewAreaEffectPos()
-    local asset = resource.Asset
     local row, col
     local monsterPosX = self:GetPositionX()
     local monsterPosY = self:GetPositionY()
@@ -248,29 +245,32 @@ function XRpgMakerGameMonsterData:SetGameObjectViewArea()
             return
         end
 
+        local resource = self:ResourceManagerLoad(effectPath)
+        local asset = resource.Asset
         local cubeUpCenterPosition = self:GetCubeUpCenterPosition(row, col)
         local model = self:LoadEffect(asset, cubeUpCenterPosition, cubeTransform, isNotUsePool)
         tableInsert(models, model)
     end
 
+    local viewType = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType
     if IsNumberValid(viewFront) then
-        row, col = viewAreaEffectPos[_ViewFront].row, viewAreaEffectPos[_ViewFront].col
-        InsertModel(row, col, self.ViewAreaModels, XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewFront)
+        row, col = viewAreaEffectPos[viewType.ViewFront].row, viewAreaEffectPos[viewType.ViewFront].col
+        InsertModel(row, col, self.ViewAreaModels, viewType.ViewFront)
     end
 
     if IsNumberValid(viewBack) then
-        row, col = viewAreaEffectPos[_ViewBack].row, viewAreaEffectPos[_ViewBack].col
-        InsertModel(row, col, self.ViewAreaModels, XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewBack)
+        row, col = viewAreaEffectPos[viewType.ViewBack].row, viewAreaEffectPos[viewType.ViewBack].col
+        InsertModel(row, col, self.ViewAreaModels, viewType.ViewBack)
     end
 
     if IsNumberValid(viewLeft) then
-        row, col = viewAreaEffectPos[_ViewLeft].row, viewAreaEffectPos[_ViewLeft].col
-        InsertModel(row, col, self.ViewAreaModels, XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewLeft)
+        row, col = viewAreaEffectPos[viewType.ViewLeft].row, viewAreaEffectPos[viewType.ViewLeft].col
+        InsertModel(row, col, self.ViewAreaModels, viewType.ViewLeft)
     end
 
     if IsNumberValid(viewRight) then
-        row, col = viewAreaEffectPos[_ViewRight].row, viewAreaEffectPos[_ViewRight].col
-        InsertModel(row, col, self.ViewAreaModels, XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewRight)
+        row, col = viewAreaEffectPos[viewType.ViewRight].row, viewAreaEffectPos[viewType.ViewRight].col
+        InsertModel(row, col, self.ViewAreaModels, viewType.ViewRight)
     end
 end
 
@@ -280,30 +280,31 @@ function XRpgMakerGameMonsterData:GetViewAreaEffectPos()
     local positionY = self:GetPositionY()
     local intervalPos = 1   --间隔多少位置设置
 
+    local viewType = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType
     local viewAreaPos = {}
-    if direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
-        viewAreaPos[_ViewFront] = {row = positionY, col = positionX - intervalPos}
-        viewAreaPos[_ViewBack] = {row = positionY, col = positionX + intervalPos}
-        viewAreaPos[_ViewLeft] = {row = positionY - intervalPos, col = positionX}
-        viewAreaPos[_ViewRight] = {row = positionY + intervalPos, col = positionX}
+    if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
+        viewAreaPos[viewType.ViewFront] = {row = positionY, col = positionX - intervalPos}
+        viewAreaPos[viewType.ViewBack] = {row = positionY, col = positionX + intervalPos}
+        viewAreaPos[viewType.ViewLeft] = {row = positionY - intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewRight] = {row = positionY + intervalPos, col = positionX}
 
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
-        viewAreaPos[_ViewFront] = {row = positionY, col = positionX + intervalPos}
-        viewAreaPos[_ViewBack] = {row = positionY, col = positionX - intervalPos}
-        viewAreaPos[_ViewLeft] = {row = positionY + intervalPos, col = positionX}
-        viewAreaPos[_ViewRight] = {row = positionY - intervalPos, col = positionX}
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
+        viewAreaPos[viewType.ViewFront] = {row = positionY, col = positionX + intervalPos}
+        viewAreaPos[viewType.ViewBack] = {row = positionY, col = positionX - intervalPos}
+        viewAreaPos[viewType.ViewLeft] = {row = positionY + intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewRight] = {row = positionY - intervalPos, col = positionX}
 
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
-        viewAreaPos[_ViewFront] = {row = positionY + intervalPos, col = positionX}
-        viewAreaPos[_ViewBack] = {row = positionY - intervalPos, col = positionX}
-        viewAreaPos[_ViewLeft] = {row = positionY, col = positionX - intervalPos}
-        viewAreaPos[_ViewRight] = {row = positionY, col = positionX + intervalPos}
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
+        viewAreaPos[viewType.ViewFront] = {row = positionY + intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewBack] = {row = positionY - intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewLeft] = {row = positionY, col = positionX - intervalPos}
+        viewAreaPos[viewType.ViewRight] = {row = positionY, col = positionX + intervalPos}
 
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
-        viewAreaPos[_ViewFront] = {row = positionY - intervalPos, col = positionX}
-        viewAreaPos[_ViewBack] = {row = positionY + intervalPos, col = positionX}
-        viewAreaPos[_ViewLeft] = {row = positionY, col = positionX - intervalPos}
-        viewAreaPos[_ViewRight] = {row = positionY, col = positionX + intervalPos}
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
+        viewAreaPos[viewType.ViewFront] = {row = positionY - intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewBack] = {row = positionY + intervalPos, col = positionX}
+        viewAreaPos[viewType.ViewLeft] = {row = positionY, col = positionX - intervalPos}
+        viewAreaPos[viewType.ViewRight] = {row = positionY, col = positionX + intervalPos}
     end
     return viewAreaPos
 end
@@ -335,13 +336,13 @@ function XRpgMakerGameMonsterData:SetMoveLine(action)
     local vertical = 0      --往垂直方向设置特效
     local intervalPos = 1   --间隔多少位置设置
 
-    if direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft then
+    if direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft then
         horizontal = -intervalPos
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight then
         horizontal = intervalPos
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp then
         vertical = intervalPos
-    elseif direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown then
+    elseif direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown then
         vertical = -intervalPos
     end
 
@@ -353,7 +354,7 @@ function XRpgMakerGameMonsterData:SetMoveLine(action)
 end
 
 function XRpgMakerGameMonsterData:LoadMoveLineEffect(num, moveLineEffectType, startPosition, endPosition, direction)
-    local moveLinePath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.MoveLine)
+    local moveLinePath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.MoveLine)
     local startPosX = startPosition.PositionX
     local startPosY = startPosition.PositionY
     local endPosX = endPosition.PositionX
@@ -387,16 +388,19 @@ end
 
 function XRpgMakerGameMonsterData:CheckLoadTriggerEndEffect()
     local monsterId = self:GetId()
-    if not XRpgMakerGameConfigs.IsRpgMakerGameMonsterTriggerEnd(monsterId) then
+    if not XMVCA.XRpgMakerGame:GetConfig():IsMonsterTriggerEnd(monsterId) then
         return
     end
 
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.MonsterTriggerEffect)
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.MonsterTriggerEffect)
     local resource = self.TriggerEffectResource
     if not resource then
-        XLog.Error("[XResourceManager优化] 已经无法运行, 从XResourceManager改为loadPrefab")
-        resource = CSXResourceManagerLoad(effectPath)
-        self.TriggerEffectResource = resource
+        local link = self.Transform:FindTransform("Dummy001") -- 目前只有库洛洛模型会挂特效，挂在Dummy001节点随模型上下抖动
+        local root = CS.UnityEngine.GameObject(effectPath)
+        root.transform:SetParent(link)
+        self.TriggerEffectResource = {Asset = root:LoadPrefab(effectPath)}
+        root.transform.localPosition = XLuaVector3.New(0, 0, 0)
+        return
     end
     if resource == nil or not resource.Asset then
         XLog.Error(string.format("XRpgMakerGameMonsterData加载开启终点的指示特效:%s失败", effectPath))
@@ -404,7 +408,7 @@ function XRpgMakerGameMonsterData:CheckLoadTriggerEndEffect()
     end
 
     local modelName = self:GetModelName()
-    local effectRootName = XRpgMakerGameConfigs.GetRpgMakerGameEffectRoot(modelName)
+    local effectRootName = XMVCA.XRpgMakerGame:GetConfig():GetAnimationEffectRoot(modelName)
     local transform = self:GetTransform()
     local effectRoot = transform:FindTransform(effectRootName)
     if XTool.UObjIsNil(effectRoot) then
@@ -413,26 +417,25 @@ function XRpgMakerGameMonsterData:CheckLoadTriggerEndEffect()
     end
 
     local asset = resource.Asset
-    local position = Vector3.zero
     self:LoadEffect(asset, effectRoot.transform.position, effectRoot)
 end
 
 --杀死玩家
 function XRpgMakerGameMonsterData:PlayKillPlayerAction(action, cb)
-    local cb = cb
     self:PlayAtkAction(function()
         local playerObj = XDataCenter.RpgMakerGameManager.GetPlayerObj()
-        playerObj:PlayBeAtkAction(cb)
+        playerObj:LoadDieEffect(cb)
     end)
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_MonsterAttack)
 end
 
 --杀死影子
 function XRpgMakerGameMonsterData:PlayKillShadowAction(action, cb)
-    local cb = cb
     self:PlayAtkAction(function()
         local shadowObj = XDataCenter.RpgMakerGameManager.GetShadowObj(action.ShadowId)
-        shadowObj:PlayBeAtkAction(cb)
+        shadowObj:LoadDieEffect(cb)
     end)
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_MonsterAttack)
 end
 
 --检查是否死亡并设置模型显示状态
@@ -444,25 +447,29 @@ end
 --小怪或人类移动前先播放惊动的动作再移动
 function XRpgMakerGameMonsterData:PlayMoveAction(action, cb, mapId)
     local id = self:GetId()
-    local skillType = XRpgMakerGameConfigs.GetMonsterSkillType(self:GetId())
+    local skillType = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSkillType(self:GetId())
     self:CheckIsSteelAdsorb(mapId, action.EndPosition.PositionX, action.EndPosition.PositionY, skillType)
 
     --检查下一个动作
     local nextAction = XDataCenter.RpgMakerGameManager.GetNextAction(true)
     if nextAction then
-        if nextAction.ActionType == XRpgMakerGameConfigs.RpgMakerGameActionType.ActionMonsterTransfer then
+        if nextAction.ActionType == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameActionType.ActionMonsterTransfer then
             self:SetIsTranser(true)
         end
     end
 
-    local monsterType = XRpgMakerGameConfigs.GetRpgMakerGameMonsterType(id)
-    if monsterType == XRpgMakerGameConfigs.XRpgMakerGameMonsterType.Normal or monsterType == XRpgMakerGameConfigs.XRpgMakerGameMonsterType.Human then
+    local monsterType = XMVCA.XRpgMakerGame:GetConfig():GetMonsterType(id)
+    if monsterType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Normal or monsterType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Human then
         self:PlayAlarmAnima(function()
             XRpgMakerGameMonsterData.Super.PlayMoveAction(self, action, cb, skillType)
         end)
         return
     end
     XRpgMakerGameMonsterData.Super.PlayMoveAction(self, action, cb, skillType)
+
+    if self.MonsterType ~= XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Sepaktakraw then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_MonsterRun)
+    end
 end
 
 ------------哨戒 begin--------------
@@ -502,7 +509,7 @@ function XRpgMakerGameMonsterData:LoadSentrySign()
 
     local position = self:GetGameObjPosition()
     local modelName = self:GetModelName()
-    local yOffset = XRpgMakerGameConfigs.GetRpgMakerGameSentrySignYOffset(modelName)
+    local yOffset = XMVCA.XRpgMakerGame:GetConfig():GetAnimationSentrySignYOffset(modelName)
     self.Sentry:Load(position + Vector3(0, yOffset, 0))
 
     if self.Sentry:IsShowNextRoundSentry() then
@@ -529,22 +536,22 @@ function XRpgMakerGameMonsterData:SetSentryLine()
     end
 
     --哨戒路线
-    local modelKey = XRpgMakerGameConfigs.ModelKeyMaps.SentryLine
-    local effectPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+    local modelKey = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.SentryLine
+    local effectPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
     local monsterId = self:GetId()
-    local sentryFront = XRpgMakerGameConfigs.GetRpgMakerGameSentryFront(monsterId)
-    local sentryBack = XRpgMakerGameConfigs.GetRpgMakerGameSentryBack(monsterId)
-    local sentryLeft = XRpgMakerGameConfigs.GetRpgMakerGameSentryLeft(monsterId)
-    local sentryRight = XRpgMakerGameConfigs.GetRpgMakerGameSentryRight(monsterId)
+    local sentryFront = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSentryFront(monsterId)
+    local sentryBack = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSentryBack(monsterId)
+    local sentryLeft = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSentryLeft(monsterId)
+    local sentryRight = XMVCA.XRpgMakerGame:GetConfig():GetMonsterSentryRight(monsterId)
     local faceDirection = self:GetFaceDirection()
     local direction
 
     local InsertModel = function(direction)
         local intervalPos = 1   --间隔多少位置设置
         --往水平方向设置特效
-        local horizontal = (direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveLeft and -intervalPos) or (direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveRight and intervalPos) or 0
+        local horizontal = (direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveLeft and -intervalPos) or (direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveRight and intervalPos) or 0
         --往垂直方向设置特效
-        local vertical = (direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveDown and -intervalPos) or (direction == XRpgMakerGameConfigs.RpgMakerGameMoveDirection.MoveUp and intervalPos) or 0
+        local vertical = (direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveDown and -intervalPos) or (direction == XMVCA.XRpgMakerGame.EnumConst.RpgMakerGameMoveDirection.MoveUp and intervalPos) or 0
 
         local posX, posY = self:GetPositionX(), self:GetPositionY()
         local cubeUpCenterPos
@@ -575,17 +582,17 @@ function XRpgMakerGameMonsterData:SetSentryLine()
     end
 
     if IsNumberValid(sentryBack) then
-        direction = self:FaceToDirection(XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewBack)
+        direction = self:FaceToDirection(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewBack)
         InsertModel(direction)
     end
 
     if IsNumberValid(sentryLeft) then
-        direction = self:FaceToDirection(XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewLeft)
+        direction = self:FaceToDirection(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewLeft)
         InsertModel(direction)
     end
 
     if IsNumberValid(sentryRight) then
-        direction = self:FaceToDirection(XRpgMakerGameConfigs.XRpgMakerGameMonsterViewAreaType.ViewRight)
+        direction = self:FaceToDirection(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterViewAreaType.ViewRight)
         InsertModel(direction)
     end
 end
@@ -604,6 +611,9 @@ end
 ------------哨戒 end----------------
 
 function XRpgMakerGameMonsterData:SetViewAreaAndLine()
+    if self:IsDeath() then
+        return
+    end
     self:SetGameObjectViewArea()
     self:SetSentryLine()
 end
@@ -612,6 +622,42 @@ function XRpgMakerGameMonsterData:RemoveViewAreaAndLine()
     self:RemovePatrolLineObjs()
     self:RemoveViewAreaModels()
     self:RemoveSentryLineModels()
+end
+
+function XRpgMakerGameMonsterData:LoadBurnedEffect()
+    self.BurnedEffect = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.BurnedEffect)
+    local resource = self:ResourceManagerLoad(self.BurnedEffect)
+    self:LoadEffect(resource.Asset)
+end
+
+function XRpgMakerGameMonsterData:RemoveBurnedEffect()
+    if self.BurnedEffect then
+        self:RemoveResource(self.BurnedEffect)
+        self.BurnedEffect = nil
+    end
+end
+
+-- 是否是藤球
+function XRpgMakerGameMonsterData:IsSepaktakraw()
+    return self.MonsterType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Sepaktakraw
+end
+
+-- 属性类型变化
+function XRpgMakerGameMonsterData:OnSkillTypesChange(oldSkillTypes, skillTypes)
+    local skillTypeDic = {}
+    for _, skillType in pairs(oldSkillTypes) do
+        skillTypeDic[skillType] = true
+    end
+    
+    -- 新增属性
+    for _, skillType in pairs(skillTypes) do
+        if not skillTypeDic[skillType] then
+            -- 被点燃
+            if skillType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Flame2 then
+                self:PlayAlarmAnima()
+            end
+        end
+    end
 end
 
 return XRpgMakerGameMonsterData

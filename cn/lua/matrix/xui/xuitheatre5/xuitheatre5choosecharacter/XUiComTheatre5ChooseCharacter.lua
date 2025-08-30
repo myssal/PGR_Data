@@ -72,6 +72,7 @@ function XUiComTheatre5ChooseCharacter:RefreshDetailShow(index, cfg)
         self.PanelCharacterDetail:RefreshShow(cfg)
         self:PlayAnimation('Enable')
     end
+    self.Parent:SetSkipId(cfg.SkipId)
 end
 
 --- 从全角色预览子界面切换到详情

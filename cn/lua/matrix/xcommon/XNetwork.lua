@@ -18,6 +18,13 @@ local IsDebug = XMain.IsEditorDebug
 local ShieldedProtocol = {}
 local NeedShieldProtocol = false
 
+XNetwork.NetworkMode = {
+    Auto = 1,
+    Ipv4 = 2,
+    Ipv6 = 3,
+}
+XNetwork.NetworkModeKey = "NETWORK_MODE_KEY"
+
 local function GetIpAndPort()
     return Ip, Port
 end
@@ -206,7 +213,21 @@ function XNetwork.ConnectServer(ip, port, bReconnect)
     end
 
     LastIp, LastPort = ip, port
-    CS.XNetwork.Connect(ip, tonumber(port), bReconnect)
+    if XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then
+        -- 海外修改
+        local networkMode = XSaveTool.GetData(XNetwork.NetworkModeKey) or XNetwork.NetworkMode.Auto
+        if networkMode == XNetwork.NetworkMode.Auto then
+            CS.XNetwork.Connect(ip, tonumber(port), bReconnect, CS.XNetwork.NetworkMode.Auto)
+        elseif networkMode == XNetwork.NetworkMode.Ipv4 then
+            CS.XNetwork.Connect(ip, tonumber(port), bReconnect, CS.XNetwork.NetworkMode.Ipv4)
+        elseif networkMode == XNetwork.NetworkMode.Ipv6 then
+            CS.XNetwork.Connect(ip, tonumber(port), bReconnect, CS.XNetwork.NetworkMode.Ipv6)
+        else -- Auto保底
+            CS.XNetwork.Connect(ip, tonumber(port), bReconnect, CS.XNetwork.NetworkMode.Auto)
+        end
+    else 
+        CS.XNetwork.Connect(ip, tonumber(port), bReconnect)
+    end
 end
 
 function XNetwork.Send(handler, request)

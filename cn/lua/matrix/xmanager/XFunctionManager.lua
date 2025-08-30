@@ -510,6 +510,23 @@ function XFunctionManager.IsCanSkip(skipId)
     return XFunctionManager.JudgeCanOpen(list.FunctionalId)
 end
 
+function XFunctionManager.IsCanSkipCheckTime(skipId)
+    ---@type XTableSkipFunctional
+    local config = XFunctionConfig.GetSkipList(skipId)
+    if not config then
+        return false
+    end
+    if config.TimeId > 0 then
+        if not XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
+            return false
+        end
+    end
+    if not XFunctionManager.IsCanSkip(skipId) then
+        return false
+    end
+    return true
+end
+
 function XFunctionManager.IsPlayerMark(id)
     return XPlayer.IsMark(id)
 end
@@ -901,6 +918,22 @@ function XFunctionManager._DealWithSkipResult(result, skipId, fromMsg)
 end
 
 --endregion
+
+--AFDeepLink特定需求
+function XFunctionManager.IsAFDeepLinkCanSkipByShowTips(skipId)
+    if not XOverseaManager.IsOverSeaRegion() then
+        return false
+    end
+    local list = XFunctionConfig.GetSkipList(skipId)
+    if not list then return false end
+    local isCanSkip = XFunctionManager.DetectionFunction(list.FunctionalId)
+    if isCanSkip and not XFunctionManager.CheckSkipInDuration(skipId) then
+        XUiManager.TipError(CS.XTextManager.GetText("AFDeepLinkNotTime"))
+        return false
+    end
+    return isCanSkip
+end
+
 
 XRpc.NotifyTimeLimitCtrlConfigList = function(data)
     UpdateFunctionTimeData(data.TimeLimitCtrlConfigList)

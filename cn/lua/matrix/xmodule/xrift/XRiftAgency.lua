@@ -323,6 +323,17 @@ function XRiftAgency:IsAvgPlayed(storyId)
     return false
 end
 
+function XRiftAgency:IsPluginUnlockEnough(needCount, isFinished)
+    local ownCount = XTool.GetTableCount(self._Model:GetOwnPluginIds())
+    if isFinished and ownCount >= needCount then
+        return true
+    elseif not isFinished and ownCount < needCount then
+        return true
+    else
+        return false
+    end
+end
+
 ----------public end----------
 
 ----------private start----------

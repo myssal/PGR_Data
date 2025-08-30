@@ -480,10 +480,4 @@ function XFavorabilityControl:GetCharacterVoiceContentMapCfg(id)
 end
 --endregion
 
---region 好感度动作
-function XFavorabilityControl:GetCharacterActionMapText(mapCode)
-    return self._Model:GetCharacterActionMapText(mapCode)
-end
---endregion
-
 return XFavorabilityControl

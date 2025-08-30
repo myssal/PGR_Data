@@ -26,7 +26,8 @@ function XUiPurchasePayListItem:OnRefresh(itemData)
 end
 
 function XUiPurchasePayListItem:SetData()
-    self.TxtCzsl.text = self.ItemData.Name
+    self.TxtCzsl.text = CS.XTextManager.GetText("CzItemName", self.ItemData.MoneyCard)
+    self.TxtCzsl.gameObject:SetActiveEx(true)
     self.TxtContent.text = self.ItemData.Desc
     if self.TxtContentNormal then
         self.TxtContentNormal.text = self.ItemData.Desc
@@ -38,7 +39,8 @@ function XUiPurchasePayListItem:SetData()
         end
     end
 
-    self.TxtYuan.text = self.ItemData.Amount
+    self.TxtYuan.text = CS.XTextManager.GetText(self.ItemData.Currency, self.ItemData.Amount)
+    self.TxtYuan.gameObject:SetActiveEx(true)
 
     -- -- 直接获得的道具
     -- local rewardGoods = self.ItemData.RewardGoodsList or {}
@@ -63,7 +65,13 @@ function XUiPurchasePayListItem:SetData()
     --     end
     -- end
     
-    local normalIcon, selectIcon = XPurchaseConfigs.GetPayNormalAndSelectIcon(self.ItemData.Key)
+    local key 
+    if XOverseaManager.IsENRegion() then
+        key = self.ItemData.Icon
+    else
+        key = self.ItemData.Key
+    end
+    local normalIcon, selectIcon = XPurchaseConfigs.GetPayNormalAndSelectIcon(key)
     self.ImgIcon:SetRawImage(normalIcon)
     self.ImgSelectCz:SetRawImage(selectIcon)
 end

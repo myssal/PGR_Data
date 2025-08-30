@@ -661,6 +661,9 @@ local type = {
     CONDITION_SOLO_REFORM_CHAPTER = "XSoloReform/XRedPointSoloReformChapter", --章节蓝点
     CONDITION_SOLO_REFORM_TASK = "XSoloReform/XRedPointSoloReformTask", --任务蓝点
     CONDITION_SOLO_REFORM_STRENGTH = "XSoloReform/XRedPointSoloReformStrength", --强化蓝点
+    
+    --启明卡池
+    CONDITION_LOTTO_MAIN_ENTER = "XRedPointLottoMainEnter", --主界面入口红点
 }
 XRedPointConditions.Conditions = type
 

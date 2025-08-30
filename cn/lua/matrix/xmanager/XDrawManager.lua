@@ -11,7 +11,6 @@ XDrawManagerCreator = function()
 
     --region Data Config
     local DrawCombinations = {}
-    local DrawProbs = {}
     local DrawGroupRule = {}
     local DrawShow = {}
     local DrawShowCharacter = {}
@@ -52,7 +51,6 @@ XDrawManagerCreator = function()
         DrawShowCharacter = XDrawConfigs.GetDrawShowCharacter()
         DrawCamera = XDrawConfigs.GetDrawCamera()
         DrawTabs = XDrawConfigs.GetDrawTabs()
-        DrawProbs = XDrawConfigs.GetDrawProbs()
     end
 
     --region Ui
@@ -252,8 +250,9 @@ XDrawManagerCreator = function()
         return DrawCombinations[drawId]
     end
 
+    ---@return XTableDrawProbShow
     function XDrawManager.GetDrawProb(drawId)
-        return DrawProbs[drawId]
+        return XDrawConfigs.GetDrawProbById(drawId)
     end
 
     function XDrawManager.GetDrawGroupRule(groupId)

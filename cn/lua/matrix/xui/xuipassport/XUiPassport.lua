@@ -202,6 +202,12 @@ function XUiPassport:UpdateActivityTime()
     local totleWeekly, currWeekly = self._Control:GetPassportWeeklyTaskGroupCountAndCurrWeekly()
     self.TxtTime01.text = CS.XTextManager.GetText("PassportActivityTime", startTimeStr, endTimeStr, totleWeekly)
     self.TxtTime02.text = CS.XTextManager.GetText("PassportActivityCurrWeekly", currWeekly)
+    local alarmClockId = CS.XGame.ClientConfig:GetInt("BPDailyUpdateTime")
+    if alarmClockId and not XTool.UObjIsNil(self.TxtDaily) then
+        local alarmClockConfig = self._Control:GetAlarmClockList(alarmClockId)
+        local hours = math.floor(alarmClockConfig.EpochTime / 3600)
+        self.TxtDaily.text = CS.XTextManager.GetText("BPDailyUpdateText", string.format("%d:00", hours))
+    end
 end
 
 function XUiPassport:RegisterButtonEvent()

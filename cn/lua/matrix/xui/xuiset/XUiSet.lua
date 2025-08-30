@@ -9,6 +9,7 @@ local XUiPanelAudioSet = require("XUi/XUiSet/XUiPanelAudioSet")
 local XUiPanelPushSet = require("XUi/XUiSet/XUiPanelPushSet")
 local XUiPanelOtherSet = require("XUi/XUiSet/XUiPanelOtherSet")
 local XUiPanelGraphicsSet = require("XUi/XUiSet/XUiPanelGraphicsSet")
+local XUiPanelAccountSetOverSea = require("XUi/XUiSet/XUiPanelAccountSetOverSea")
 
 ---@class XUiSet:XLuaUi
 local XUiSet = XLuaUiManager.Register(XLuaUi, "UiSet")
@@ -25,6 +26,7 @@ local PANEL_INDEX = {
     DlcHunt = 9,
     GeneralSkill = 10,
     FpsGame = 11,
+    Account = 12,
 }
 local CLICK_INTERVAL = 0.3          -- 点击间隔
 local MULTI_CLICK_COUNT_LIMIT = 5    -- 最大点击数
@@ -106,7 +108,7 @@ function XUiSet:OnStart(isFight, panelIndex, secondIndex)
         if CS.XFight.IsRunning then
             CS.XFight.Instance:Pause()
             XDataCenter.FightWordsManager.Pause()
-            self:AddRecordStr("点击暂停")
+            self:AddRecordStr(CS.XTextManager.GetLuaText("XUiSet.lua_111"))
         end
         -- int index = CS.XFight.GetClientRole().Npc.Index;
         -- Portraits[index].Select();
@@ -201,6 +203,13 @@ function XUiSet:OnDestroy()
     if self.MultiClickHelper then
         self.MultiClickHelper:OnDestroy()
     end
+
+    --子panel中如果有event事件，不清除会有问题
+    --每次打开Account，都会重新生成子panel
+    if self.SubPanels[PANEL_INDEX.Account] then
+        self.SubPanels[PANEL_INDEX.Account]:OnDestroy()
+    end
+
     CS.XInputManager.SetCurInputMap(CS.XInputManager.BeforeInputMapID)
 end
 
@@ -429,6 +438,7 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         [PANEL_INDEX.DlcHunt] = self.BtnDlcHunt,
         [PANEL_INDEX.GeneralSkill] = self.BtnGeneralSkill,
         [PANEL_INDEX.FpsGame] = self.BtnFpsGame,
+        [PANEL_INDEX.Account] = self.BtnAccount,
     }
     self.PanelTabToggles:Init(tabGroup, function(index)
         self:SwitchSubPanel(index)
@@ -441,6 +451,7 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         self.BtnDownload.gameObject:SetActiveEx(false)
         self.BtnInstruction.gameObject:SetActiveEx(CheckInstructionEnable(stageType))
         self.BtnGeneralSkill.gameObject:SetActiveEx(CheckGeneralSkillEnable())
+        self.BtnAccount.gameObject:SetActiveEx(false)
         if XFubenConfigs.HasStageGamePlayDesc(stageType) then
             self.BtnSpecialTrain.gameObject:SetActiveEx(true)
             self.BtnSpecialTrain:SetNameByGroup(0, XFubenConfigs.GetStageGamePlayTitle(stageType))
@@ -471,6 +482,11 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         self.BtnSpecialTrain.gameObject:SetActiveEx(false)
         self.BtnGeneralSkill.gameObject:SetActiveEx(false)
         self.BtnFpsGame.gameObject:SetActiveEx(false)
+        if XOverseaManager.IsOverSeaRegion() then
+            self.BtnAccount.gameObject:SetActiveEx(true)
+        else
+            self.BtnAccount.gameObject:SetActiveEx(false)
+        end
         self:FpsGameSpecialShow()
     end
 end
@@ -593,6 +609,11 @@ function XUiSet:InitSubPanel(index)
             self.PanelFpsGameObj = self.PanelFpsGame:LoadPrefab(XUiConfigs.GetComponentUrl('PanelFpsGame'))
         end
         self.SubPanels[PANEL_INDEX.FpsGame] = require("XUi/XUiSet/XUiPanelFpsGameSet").New(self.PanelFpsGameObj, self, self._IsHideFpsGameSetting)
+    elseif index == PANEL_INDEX.Account then
+        if self.PanelAccountObj == nil then
+            self.PanelAccountObj = self.PanelAccountSet:LoadPrefab(XUiConfigs.GetComponentUrl("UiSetPanelAccount"))
+        end
+        self.SubPanels[PANEL_INDEX.Account] = XUiPanelAccountSetOverSea.New(self.PanelAccountObj, self)
     end
 end
 
@@ -615,6 +636,7 @@ function XUiSet:ShowSubPanel(index)
             or index == PANEL_INDEX.DlcHunt
             or index == PANEL_INDEX.GeneralSkill
             or index == PANEL_INDEX.FpsGame
+            or index == PANEL_INDEX.Account
     then
         self.BtnSave.gameObject:SetActiveEx(false)
         self.BtnDefault.gameObject:SetActiveEx(false)
@@ -691,7 +713,7 @@ function XUiSet:OnBtnRestart()
     end
     local confirmCb = function()
         if CS.XFight.IsRunning then
-            self:AddRecordStr("重开")
+            self:AddRecordStr(CS.XTextManager.GetLuaText("XUiSet.lua_716"))
             self:CsRecord(XSetConfigs.RecordOperationType.ReStart)
             CS.XFight.Instance:Restart(cb)
             XDataCenter.FightWordsManager.Stop(true)
@@ -755,7 +777,7 @@ end
 function XUiSet:OnMultClick(clickTimes)
     if clickTimes >= MULTI_CLICK_COUNT_LIMIT then
         local content = CS.XInfo.Identifier
-        XUiManager.UiFubenDialogTip("信息提示", content);
+        XUiManager.UiFubenDialogTip(CS.XTextManager.GetLuaText("XUiSet.lua_780"), content);
     end
 end
 --endregion

@@ -10,7 +10,7 @@ function XUiRiftSettleWin:OnAwake()
 end
 
 function XUiRiftSettleWin:InitButton()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self:RegisterClickEvent(self.BtnClose, self.Close)
     self:RegisterClickEvent(self.BtnAgain, self.OnBtnAgainClick)
     self:RegisterClickEvent(self.PanelPluginTip, self.OnHidePluginTip)
     self:RegisterClickEvent(self.BtnContinue, self.OnBtnContinueClick)
@@ -64,6 +64,18 @@ function XUiRiftSettleWin:Refresh()
     end
     self.TxtStageTime.text = XUiHelper.GetTime(math.floor(passTime))
 
+    -- 无尽关需要显示积分
+    local chapter = currXFightLayer:GetParent()
+    if chapter:IsEndless() then
+        local curScore = riftSettleResult.EndLessScore
+        local historyScore = chapter:GetLastScore()
+        self.TxtStagePointNow.text = curScore
+        self.New.gameObject:SetActiveEx(curScore > historyScore)
+        self.PanelStagePoints.gameObject:SetActiveEx(true)
+    else
+        self.PanelStagePoints.gameObject:SetActiveEx(false)
+    end
+
     local datas = {}
     local isFirst = nil
     if riftSettleResult then
@@ -115,6 +127,7 @@ function XUiRiftSettleWin:Refresh()
     datas = {}
     if not self.IsLuckyStage then
         table.insert(datas, self:CreateReward(currXFightLayer:GetConfig().CoinCount))
+        table.insert(datas, self:CreateAttributeReward(currXFightLayer:GetConfig().AttributeCoinCount))
     end
     local coinRaise = 0
     if riftSettleResult then
@@ -188,6 +201,16 @@ function XUiRiftSettleWin:CreateReward(coinCount, isAddition)
     {
         Count = coinCount,
         TemplateId = XDataCenter.ItemManager.ItemId.RiftGold,
+        RewardType = 1,
+        isAddition = isAddition
+    }
+end
+
+function XUiRiftSettleWin:CreateAttributeReward(coinCount, isAddition)
+    return
+    {
+        Count = coinCount,
+        TemplateId = XDataCenter.ItemManager.ItemId.RiftGold2,
         RewardType = 1,
         isAddition = isAddition
     }
@@ -281,14 +304,11 @@ function XUiRiftSettleWin:OnBtnAgainClick()
 
         local xTeam = self._Control:GetSingleTeamData(self.IsLuckyStage)
         self._Control:EnterFight(xTeam)
+        self:Close()
     end
 
     local xChapter = self.CurrXFightLayer:GetParent()
     self._Control:CheckDayTipAndDoFun(xChapter, doFun)
-end
-
-function XUiRiftSettleWin:OnBtnCloseClick()
-    self:Close()
 end
 
 function XUiRiftSettleWin:OnBtnContinueClick()
@@ -303,9 +323,18 @@ function XUiRiftSettleWin:OnBtnContinueClick()
 end
 
 function XUiRiftSettleWin:OnBtnSkipClick()
+    if self.IsMopUp then
+        self:Close()
+        return
+    end
     -- 待接：等动画播放完才可以点击
     self.PanelShow.gameObject:SetActiveEx(false)
     self.PanelWin.gameObject:SetActiveEx(true)
+
+    local animWinEnable = self.PanelWin:Find("Animation/PanelWinEnable")
+    if not XTool.UObjIsNil(animWinEnable) then
+        animWinEnable:PlayTimelineAnimation()
+    end
 end
 
 function XUiRiftSettleWin:OnDestroy()

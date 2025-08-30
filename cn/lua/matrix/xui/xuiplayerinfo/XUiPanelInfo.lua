@@ -117,8 +117,8 @@ function XUiPanelInfo:OnBtnFriendLevel()
         self.PanelPlayerInfoFetters = XUiPlayerInfoFetters.New(obj, XDataCenter.SocialManager.CheckIsFriend(data.Id), XDataCenter.SocialManager.GetFriendExp(data.Id))
     else
         self.PanelPlayerInfoFetters:UpdateInfo(XDataCenter.SocialManager.CheckIsFriend(data.Id), XDataCenter.SocialManager.GetFriendExp(data.Id))
-        self.PanelPlayerInfoFetters.GameObject:SetActiveEx(true)
     end
+    self.PanelPlayerInfoFetters.GameObject:SetActiveEx(true)
 end
 
 function XUiPanelInfo:OnBtnDorm()

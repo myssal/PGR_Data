@@ -18,10 +18,13 @@ function XRpgMakerGameGrassData:InitData()
     -- local x = XRpgMakerGameConfigs.GetEntityX(id)
     -- local y = XRpgMakerGameConfigs.GetEntityY(id)
     -- self:UpdatePosition({PositionX = x, PositionY = y})
+    local burnPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Burn)
+    self:RemoveResource(burnPath)
     if not XTool.IsTableEmpty(self.MapObjData) then
         self:InitDataByMapObjData(self.MapObjData)
     end
     self:SetActive(true)
+    self.IsBurned = false -- 是否已经烧毁
 end
 
 ---@param mapObjData XMapObjectData
@@ -38,15 +41,15 @@ end
 --燃烧
 function XRpgMakerGameGrassData:Burn()
     self:RemoveBurnTimer()
-    local path = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(XRpgMakerGameConfigs.ModelKeyMaps.Burn)
+    local path = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Burn)
     local resource = self:ResourceManagerLoad(path)
-    local effect = self:LoadEffect(resource.Asset)
+    resource.Prefab.transform.position = XLuaVector3.New(0, 0, 0) -- 火焰特效有偏移，修正位置
+    self:LoadEffect(resource.Asset)
 
     local easeMethod = function(f)
         return XUiHelper.Evaluate(XUiHelper.EaseType.Increase, f)
     end
 
-    local objPos = self:GetGameObjPosition()
     local scale
     self.BurnTimer = XUiHelper.Tween(DieByTrapTime, function(f)
         if XTool.UObjIsNil(self.Transform) then
@@ -70,9 +73,15 @@ function XRpgMakerGameGrassData:RemoveBurnTimer()
     end
 end
 
+function XRpgMakerGameGrassData:RemoveBurnEffect()
+    local path = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Burn)
+    self:RemoveResource(path)
+end
+
 --是否需要生长（模型是否需要显示）
 function XRpgMakerGameGrassData:SetIsGrow(isGrow)
     self.IsGrow = isGrow
+    self:RemoveBurnEffect()
 end
 
 --检查生长
@@ -86,6 +95,7 @@ function XRpgMakerGameGrassData:CheckPlayFlat()
     self:SetActive(false)
     self:SetActive(true)
     self.IsGrow = false
+    self.IsBurned = false
 end
 
 function XRpgMakerGameGrassData:SetRoundState(round, state)
@@ -122,6 +132,10 @@ end
 
 function XRpgMakerGameGrassData:PlayGrowSound()
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Grow)
+end
+
+function XRpgMakerGameGrassData:IsEmpty()
+    return self.IsBurned == true
 end
 
 return XRpgMakerGameGrassData

@@ -18,11 +18,11 @@ function XUiRpgMakerGameUnlockTip:Hide()
 end
 
 function XUiRpgMakerGameUnlockTip:Refresh(unlockRoleId)
-    local name = XRpgMakerGameConfigs.GetRpgMakerGameRoleName(unlockRoleId)
-    local style = XRpgMakerGameConfigs.GetRpgMakerGameRoleStyle(unlockRoleId)
+    local name = XMVCA.XRpgMakerGame:GetConfig():GetRoleName(unlockRoleId)
+    local style = XMVCA.XRpgMakerGame:GetConfig():GetRoleStyle(unlockRoleId)
     self.TextName.text = name .. "·" .. style
 
-    local headPath = XRpgMakerGameConfigs.GetRpgMakerGameRoleHeadPath(unlockRoleId)
+    local headPath = XMVCA.XRpgMakerGame:GetConfig():GetRoleHeadPath(unlockRoleId)
     self.StandIcon:SetRawImage(headPath)
 end
 

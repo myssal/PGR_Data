@@ -4055,6 +4055,11 @@ public class StrongholdAssistCharacterDetail
 
     --endregion
 
+    -- #203409 供覆写类获取ActivityId
+    function XStrongholdManager:GetActivityId()
+        return _ActivityId
+    end
+
     return XStrongholdManager
 end
 ---------------------(服务器推送)begin------------------

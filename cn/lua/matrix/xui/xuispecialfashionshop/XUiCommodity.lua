@@ -142,7 +142,9 @@ function XUiCommodity:RefreshPanelSale()
     if self.TxtSaleRate then
         if self.Data.Tags == XShopManager.ShopTags.DisCount then
             if self.Sales < 100 then
-                self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
+                --self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
+                -- 折扣显示 区分海外国服
+                self.TxtSaleRate.text = XUiHelper.GetDiscountText(self.Sales)
             else
                 hideSales = true
             end
@@ -335,7 +337,11 @@ function XUiCommodity:OnBtnBuyClick()
                 local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, self.NeedCount)
                 if not result then
                     XUiManager.TipText("ShopItemHongKaNotEnough")
-                    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay)
+                    if XOverseaManager.IsENRegion() then
+                        XLuaUiManager.Open("UiPurchaseQuickBuy", self.NeedCount)
+                    else
+                        XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay)
+                    end
                     return
                 end
             elseif consume.Id == XDataCenter.ItemManager.ItemId.PaidGem then

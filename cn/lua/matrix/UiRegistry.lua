@@ -1222,6 +1222,7 @@ local UiRegistry = {
     UiGuildDormSceneChoice = "XUi/XUiGuildDorm/ScenePreview/XUiGuildDormSceneChoice",
     UiGuildRoomSceneTips = "XUi/XUiGuildDorm/ScenePreview/XUiGuildRoomSceneTips",
     UiRiftMain = "XUi/XUiRift/XUiRiftMain",
+    UiRiftChooseChapter = "XUi/XUiRift/XUiRiftChooseChapter",
     UiRiftPopupAffix = "XUi/XUiRift/XUiRiftPopupAffix",
     UiRiftPopupChapterDetail = "XUi/XUiRift/XUiRiftPopupChapterDetail",
     UiRiftFightLayerSelect = "XUi/XUiRift/XUiRiftFightLayerSelect",
@@ -2141,6 +2142,16 @@ local UiRegistry = {
     --endregion
 
     UiCloudGamingPopupMain = "XUi/XUiCloudGame/XUiCloudGamingPopupMain",
+
+    --region 海外新增
+    UiActivityBaseLink = "XUi/XUiActivityBase/XUiActivityLink",
+    UiLoginAgreement = "XUi/XUiLogin/XUiLoginAgreement",
+    UiLoginDialog = "XUi/XUiLogin/XUiLoginDialog",
+    UiNoticeTipsPC = "XUi/XUiNoticeTips/XUiNoticeTipsPC",
+
+    UiPurchaseTips = "XUi/Oversea/XUiPurchaseTips",
+    UiMonthlyCardEn = "XUi/Oversea/XUiMonthlyCardEn",
+    --endregion
 }
 
 return UiRegistry

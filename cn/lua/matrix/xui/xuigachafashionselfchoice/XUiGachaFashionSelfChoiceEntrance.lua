@@ -4,6 +4,8 @@ function XUiGachaFashionSelfChoiceEntrance:OnAwake()
     self.ActivityId = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId()
     self.ActivityConfig = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
     self.CurSelectGridIndex = 1
+    self.LastClickTime = 0 -- 添加：上次点击时间戳
+    self.SelectCDMs = CS.XGame.ClientConfig:GetInt("XUiGachaFashionSelectGridCD")
     self.CurSelectGrid = nil
     self.GridRewardDic = {}
     self:InitButton()
@@ -71,7 +73,11 @@ function XUiGachaFashionSelfChoiceEntrance:OnDynamicTableEvent(event, index, gri
         local gachaId = self.DynamicTable.DataSource[index]
         grid:Refresh(gachaId, index)
         if self.CurSelectGridIndex == index then
-            -- self:OnGridGachaSelect(index, gachaId, grid)
+            if self.CurSelectGrid then
+                self.CurSelectGrid:SetUnSelect()
+            end
+            self.CurSelectGrid = grid
+            self.CurSelectGridIndex = index
             grid:OnSelect()
             grid:SetSelect()
         else
@@ -83,6 +89,13 @@ function XUiGachaFashionSelfChoiceEntrance:OnDynamicTableEvent(event, index, gri
 end
 
 function XUiGachaFashionSelfChoiceEntrance:OnGridGachaSelect(index, gachaId, grid)
+    local now = XTime.GetServerNowTimestamp()
+    if now - self.LastClickTime < (self.SelectCDMs / 1000) then
+        -- 冷却中，忽略点击
+        return
+    end
+    self.LastClickTime = now -- 更新点击时间
+
     if self.CurSelectGachaId == gachaId then
         self.CurSelectGrid:SetSelect()
         return

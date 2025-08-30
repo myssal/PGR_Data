@@ -669,7 +669,7 @@ function XTemple2EditorControl:SaveBlocks()
         config.NoRotate = block:GetNoRotate()
 
         if config.TypeName == "" then
-            XUiManager.TipMsg("[XTemple2EditorControl] 忘记填地块类型名了，填一下")
+            XUiManager.TipMsg(CS.XTextManager.GetLuaText("XTemple2EditorControl.lua_672"))
         end
 
         for y = block:GetRowAmount(), 1, -1 do

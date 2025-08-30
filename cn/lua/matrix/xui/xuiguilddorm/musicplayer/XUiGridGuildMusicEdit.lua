@@ -23,7 +23,7 @@ function XUiGridGuildMusicEdit:Refresh(index, bgmId, isExperience)
     self.BgmId = bgmId
     local bgmCfg = XGuildDormConfig.GetBgmCfgById(bgmId)
     self.TxtListMusicName.text = bgmCfg.Name
-    self.TxtListMusicDesc.text = bgmCfg.Desc
+    self.TxtListMusicDesc.text = XUiHelper.ReplaceDecodeDecimalToString(bgmCfg.Desc)
     self.TxtSerial.text = index
     self.ImgBlack.gameObject:SetActiveEx(index % 2 ~= 0)
 

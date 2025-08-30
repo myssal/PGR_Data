@@ -66,7 +66,12 @@ function XUiRiftRanking:OnTabSelected(index)
     self._IsPlayTween = true
 end
 
+function XUiRiftRanking:IsCurTabEndless()
+    return self._Control:GetEntityChapterById(self.CurSelectIdx):IsEndless()
+end
+
 function XUiRiftRanking:InitMyRankPanel()
+    ---@type XUiRiftRankingGrid
     self.MyRank = XUiRiftRankingGrid.New(self.PanelMyRank, self)
     self.MyRank:Init()
 end
@@ -104,6 +109,7 @@ function XUiRiftRanking:RefreshDynamicTable()
     self.DynamicTable:ReloadDataASync(1)
 end
 
+---@param grid XUiRiftRankingGrid
 function XUiRiftRanking:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
         grid:Init()

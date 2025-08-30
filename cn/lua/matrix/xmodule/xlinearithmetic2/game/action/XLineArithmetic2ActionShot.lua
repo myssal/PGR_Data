@@ -295,7 +295,7 @@ function XLineArithmetic2ActionShot:ColorAdjacentSameColorGrid(game, grids, endG
                 animation:SetData(uid, colorAnimationType, 0.1)
             end
         end
-        for layer, animationGroup in pairs(layer2Animation) do
+        for layer, animationGroup in ipairs(layer2Animation) do
             game:AddAnimation(animationGroup)
         end
     end
@@ -305,19 +305,21 @@ end
 ---@param grid XLineArithmetic2Grid
 function XLineArithmetic2ActionShot:PlayAnimationBulletClear(game, grid)
     if game:IsAnimation() then
-        -----@type XLineArithmetic2AnimationGroup
-        --local animationGroup = XLineArithmetic2AnimationGroup.New()
-        --game:AddAnimation(animationGroup)
+        ---@type XLineArithmetic2AnimationGroup
+        local animationGroup = XLineArithmetic2AnimationGroup.New()
+        game:AddAnimation(animationGroup)
 
+        -- 先把格子刷成终点格,才能播放动画
         ---@type XLineArithmetic2AnimationUpdateMap
-        --local animationUpdateMap = XLineArithmetic2AnimationUpdateMap.New()
-        --animationGroup:Add(animationUpdateMap)
+        local animationUpdateMap = XLineArithmetic2AnimationUpdateMap.New()
+        local gridData = game:GetGridData(grid)
+        animationUpdateMap:SetGridData(gridData)
+        animationGroup:Add(animationUpdateMap)
 
         ---@type XLineArithmetic2AnimationGrid
         local animationGrid = XLineArithmetic2AnimationGrid.New()
         animationGrid:SetData(grid:GetUid(), "Grid04Enable", 0.5)
-        --animationGroup:Add(animationGrid)
-        game:AddAnimation(animationGrid)
+        animationGroup:Add(animationGrid)
     end
 end
 

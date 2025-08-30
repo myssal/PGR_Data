@@ -2,7 +2,7 @@
 local Reader = XClass(nil, "Reader")
 local ReadByType = {}
 local MaxInt32 = 2147483647
-local FloatToInt = 10000
+-- local FloatToInt = 10000
 
 function Reader:Ctor()
 end
@@ -17,17 +17,17 @@ function Reader:LoadBytes(bytes, len, index)
     self:Reset(len, index)
 end
 
-function Reader:SetUseStringPool(isWithPool)
-    self.m_isUsingStringPool = isWithPool
+function Reader:SetReadColumn(column)
+    self.m_isUsingStringPool = self.m_binaryFileFolder:IsStringPoolColumn(column)
 end
 
-function Reader:SetStringPoolCallback(callback)
-    self.m_poolCallback = callback
+function Reader:SetBinaryFileFolder(folder)
+    self.m_binaryFileFolder = folder
 end
 
 function Reader:Close()
     self.m_isUsingStringPool = false
-    self.m_poolCallback = nil
+    self.m_binaryFileFolder = nil
     self.bytes = nil
 end
 
@@ -102,7 +102,7 @@ end
 function Reader:ReadString()
     if self.m_isUsingStringPool then
         local index = self:ReadInt() or 0
-        return self.m_poolCallback(index)
+        return self.m_binaryFileFolder:ReadPoolStringByIndex(index)
     end
 
     local postion = self.index

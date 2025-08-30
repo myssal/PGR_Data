@@ -86,6 +86,9 @@ function XUiBountyChallengeMainGrid:Update(data)
         if self.PanelLock then
             self.PanelLock.gameObject:SetActive(true)
         end
+        if self.ImgMask then
+            self.ImgMask:SetRawImage(data.Icon)
+        end
         self:CountDown()
         self.RImgBgNormal.gameObject:SetActive(true)
         self.RImgBgComplete.gameObject:SetActive(false)

@@ -40,8 +40,12 @@ end
 
 function XUiSignGridDay:OnBtnCardClick()
     XDataCenter.AutoWindowManager.StopAutoWindow()
-    XDataCenter.PurchaseManager.OpenYKPackageBuyUi()
     -- XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.YK, false)
+    if XOverseaManager.IsENRegion() then
+        XUiHelper.OpenMonthlyCardEn()
+    else
+        XDataCenter.PurchaseManager.OpenYKPackageBuyUi()
+    end
 end
 
 ---

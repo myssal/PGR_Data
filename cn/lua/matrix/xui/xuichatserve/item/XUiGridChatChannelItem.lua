@@ -15,9 +15,14 @@ end
 
 function XUiGridChatChannelItem:SetItemData(itemData)
     self.GridChannelItem:SetNameByGroup(0, CS.XTextManager.GetText(itemData.IsRecruitChannel and "ChannelRecruit" or "ChannelLabel"))
-    --特殊需求市网信办举报导致的频道5需要屏蔽显示
-    local channelId = itemData.ChannelId >= 5 and (itemData.ChannelId + 1) or itemData.ChannelId
-    self.GridChannelItem:SetNameByGroup(1, itemData.IsRecruitChannel and "" or tostring(channelId))
+    if XOverseaManager.IsOverSeaRegion() then 
+        self.GridChannelItem:SetNameByGroup(1, itemData.IsRecruitChannel and "" or tostring(itemData.ChannelId))
+    else
+          --特殊需求市网信办举报导致的频道5需要屏蔽显示
+        local channelId = itemData.ChannelId >= 5 and (itemData.ChannelId + 1) or itemData.ChannelId
+        self.GridChannelItem:SetNameByGroup(1, itemData.IsRecruitChannel and "" or tostring(channelId))
+    end
+  
 
     if isShowChannelNumber == 1 then
         self.GridChannelItem:SetNameByGroup(2, CS.XTextManager.GetText("ChannelNumberLabel", itemData.PlayerNum))

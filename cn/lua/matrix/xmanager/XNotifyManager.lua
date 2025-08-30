@@ -206,5 +206,7 @@ XNotifyManager.GNotifyName = {
     UrgentEvent = "UrgentEvent",
     CharacterStory = "CharacterStory",
 }
-
+XRpc.NotifyOnlineDuration = function(data)
+    XDataCenter.NoticeManager.HandleKRPCNotice(data)
+end
 return Notify

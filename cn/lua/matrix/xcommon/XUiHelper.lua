@@ -71,7 +71,7 @@ XUiHelper.TimeFormatType = {
     ESCAPE_ACTIVITY = 30, --大逃杀玩法活动倒计时（大于一天显示天数，小于一天大于一小时显示小时，小于一小时大于一分钟显示分钟，小于一分钟大于一秒钟显示一分钟，返回时间和时间单位两个参数）
     ESCAPE_REMAIN_TIME = 31, --大逃杀玩法剩余通关时间（显示xx分:xx秒）
     ACTIVITY_NEW_YEAR_FUBEN = 32, -- 琥虎符福(只显示"x天"，最少1天，"天"字是黑色)
-    DOUBLE_TOWER = 33,-- 动作塔防（只显示到分，最少一分钟，忽略秒）
+    DOUBLE_TOWER = 33, -- 动作塔防（只显示到分，最少一分钟，忽略秒）
     HOUR_MINUTE_SECOND = 34, -- 格式化时间（1:20:20/10:20）
     DAY_HOUR = 35, --大于一天显示【X天X小时】,小于一小时显示【X小时X分X秒】
     PIVOT_COMBAT = 36, --独域特攻 大于一小时则按 xx天xx小时 小于一小时  则 xx分xx秒
@@ -102,12 +102,12 @@ XUiHelper.DelayType = {
 ---@field Week number 周
 ---@field Mouth number 月
 XUiHelper.TimeUnit = {
-    Second  = 1,
-    Minute  = 2,
-    Hour    = 3,
-    Day     = 4,
-    Week    = 5,
-    Mouth   = 6
+    Second = 1,
+    Minute = 2,
+    Hour = 3,
+    Day = 4,
+    Week = 5,
+    Mouth = 6
 }
 
 XUiHelper.ClientConfigType = {
@@ -139,7 +139,7 @@ function XUiHelper.CreateTemplates(rootUi, pool, datas, ctor, template, parent, 
             else
                 item = ctor(go)
             end
-            
+
             pool[i] = item
         end
 
@@ -232,9 +232,9 @@ function XUiHelper.ScrollTo(scrollRect, targetTransform, isTween, tweenTime, fin
     local content = scrollRect.content
     local scrollRectTransform = scrollRect:GetComponent(typeof(CS.UnityEngine.RectTransform))
     local currentLocalPos = scrollRectTransform:InverseTransformVector(
-        XUiHelper.ConvertLocalToWorldPosWithPiovt(targetTransform, content))
+            XUiHelper.ConvertLocalToWorldPosWithPiovt(targetTransform, content))
     local targetLocalPos = scrollRectTransform:InverseTransformVector(
-        XUiHelper.ConvertLocalToWorldPosWithPiovt(viewport, scrollRectTransform))
+            XUiHelper.ConvertLocalToWorldPosWithPiovt(viewport, scrollRectTransform))
     local diff = targetLocalPos - currentLocalPos
     local normalizedPos = Vector2()
     local widthOffset = content.rect.width - viewport.rect.width
@@ -683,7 +683,7 @@ function XUiHelper.GetTime(second, timeFormatType)
         local second = math.floor(second % S)
         local secondStr
         if second < 10 then
-            secondStr = "0".. second
+            secondStr = "0" .. second
         else
             secondStr = second
         end
@@ -704,7 +704,7 @@ function XUiHelper.GetTime(second, timeFormatType)
         end
         return ret
     end
-    
+
     if timeFormatType == XUiHelper.TimeFormatType.DAY_HOUR then
         local sumDas = mathFloor(second / D)
         if sumDas >= 1 then
@@ -716,13 +716,13 @@ function XUiHelper.GetTime(second, timeFormatType)
     if timeFormatType == XUiHelper.TimeFormatType.DAY_HOUR_SIMPLY then
         local sumDas = mathFloor(second / D)
         if sumDas >= 1 then
-            if hours >0 then
+            if hours > 0 then
                 return stringFormat("%d%s%d%s", sumDas, STR_DAY, hours, STR_HOUR)
             else
                 return stringFormat("%d%s", sumDas, STR_DAY)
             end
         end
-        
+
         local strTable = {}
         if hours > 0 then
             table.insert(strTable, stringFormat("%d%s", hours, STR_HOUR))
@@ -731,10 +731,10 @@ function XUiHelper.GetTime(second, timeFormatType)
             table.insert(strTable, stringFormat("%d%s", minutes, STR_MINUTES))
         end
         table.insert(strTable, stringFormat("%d%s", seconds, STR_SECOND))
-        
+
         return table.concat(strTable)
     end
-    
+
     if timeFormatType == XUiHelper.TimeFormatType.PIVOT_COMBAT then
         local totalDays = mathFloor(second / D)
         if totalDays >= 1 then
@@ -775,7 +775,7 @@ function XUiHelper.GetTime(second, timeFormatType)
         local second = math.floor(second % S)
         local secondStr
         if second < 10 then
-            secondStr = "0".. second
+            secondStr = "0" .. second
         else
             secondStr = second
         end
@@ -803,7 +803,7 @@ function XUiHelper.GetTime(second, timeFormatType)
             return stringFormat("%d%s", seconds, STR_SECOND)
         end
     end
-    
+
     if timeFormatType == XUiHelper.TimeFormatType.NEW_CALENDAR then
         local totalDays = mathFloor(second / D)
         if totalDays >= 1 then
@@ -816,7 +816,6 @@ function XUiHelper.GetTime(second, timeFormatType)
             return stringFormat("%s1%s", LESS_THAN, STR_MINUTES)
         end
     end
-
 
     if timeFormatType == XUiHelper.TimeFormatType.TEMPLE then
         local totalDays = mathFloor(second / D)
@@ -831,7 +830,7 @@ function XUiHelper.GetTime(second, timeFormatType)
         end
         return stringFormat("%d<size=22>%s</size>", seconds, STR_SECOND)
     end
-    
+
     if timeFormatType == XUiHelper.TimeFormatType.DAY_HOUR_2 then
         local sumDas = mathFloor(second / D)
         if sumDas >= 1 then
@@ -885,7 +884,8 @@ function XUiHelper.GetTimeNumber(second)
     return month, weeks, days, hours, minutes, seconds
 end
 
-function XUiHelper.GetTimeOfDelay(time, delayTime, delayType) --获取延时后的时间戳
+function XUiHelper.GetTimeOfDelay(time, delayTime, delayType)
+    --获取延时后的时间戳
     if delayType == XUiHelper.DelayType.Second then
         return time + delayTime
     elseif delayType == XUiHelper.DelayType.Minute then
@@ -1079,7 +1079,6 @@ function XUiHelper.GetRemindTime(time, now)
     end
 end
 
-
 --- 获取时间以及单位
 ---@param second number 秒数
 ---@param minUnit number 最小单位
@@ -1096,9 +1095,9 @@ function XUiHelper.GetTimeAndUnit(second, minUnit, maxUnit)
     local hours = mathFloor(second / H)
     local minutes = mathFloor(second / S)
     local seconds = second
-    
+
     local minUnitStr
-    
+
     local function func(unit, number, str)
         if unit == minUnit then
             minUnitStr = str
@@ -1177,7 +1176,7 @@ function XUiHelper.ConvertColorRGB(originColor, color)
     originColor.r = color.r
     originColor.g = color.g
     originColor.b = color.b
-    
+
     return originColor
 end
 
@@ -1195,25 +1194,24 @@ function XUiHelper.ShowCharByTypeAnimation(txtobj, str, interval, callback, fini
     local index = 1
     local timer
     txtobj.text = ""
-    timer =
-        XScheduleManager.ScheduleForever(
-        function()
-            if index > #chartab then
-                XScheduleManager.UnSchedule(timer)
-                if finishcallback then
-                    finishcallback()
-                end
-            else
-                local char = chartab[index]
-                if callback then
-                    callback(char)
+    timer = XScheduleManager.ScheduleForever(
+            function()
+                if index > #chartab then
+                    XScheduleManager.UnSchedule(timer)
+                    if finishcallback then
+                        finishcallback()
+                    end
                 else
-                    txtobj.text = txtobj.text .. char
+                    local char = chartab[index]
+                    if callback then
+                        callback(char)
+                    else
+                        txtobj.text = txtobj.text .. char
+                    end
+                    index = index + 1
                 end
-                index = index + 1
-            end
-        end,
-        interval
+            end,
+            interval
     )
     return timer
 end
@@ -1306,19 +1304,18 @@ end
 function XUiHelper.DoUiMove(rectTf, tarPos, duration, easeType, cb)
     local startPos = rectTf.anchoredPosition3D
     easeType = easeType or XUiHelper.EaseType.Linear
-    local timer =
-        XUiHelper.Tween(
-        duration,
-        function(t)
-            if not rectTf:Exist() then
-                return true
+    local timer = XUiHelper.Tween(
+            duration,
+            function(t)
+                if not rectTf:Exist() then
+                    return true
+                end
+                rectTf.anchoredPosition3D = Vec3Lerp(startPos, tarPos, t)
+            end,
+            cb,
+            function(t)
+                return XUiHelper.Evaluate(easeType, t)
             end
-            rectTf.anchoredPosition3D = Vec3Lerp(startPos, tarPos, t)
-        end,
-        cb,
-        function(t)
-            return XUiHelper.Evaluate(easeType, t)
-        end
     )
     return timer
 end
@@ -1326,19 +1323,18 @@ end
 function XUiHelper.DoMove(rectTf, tarPos, duration, easeType, cb)
     local startPos = rectTf.localPosition
     easeType = easeType or XUiHelper.EaseType.Linear
-    local timer =
-        XUiHelper.Tween(
-        duration,
-        function(t)
-            if not rectTf:Exist() then
-                return true
+    local timer = XUiHelper.Tween(
+            duration,
+            function(t)
+                if not rectTf:Exist() then
+                    return true
+                end
+                rectTf.localPosition = Vec3Lerp(startPos, tarPos, t)
+            end,
+            cb,
+            function(t)
+                return XUiHelper.Evaluate(easeType, t)
             end
-            rectTf.localPosition = Vec3Lerp(startPos, tarPos, t)
-        end,
-        cb,
-        function(t)
-            return XUiHelper.Evaluate(easeType, t)
-        end
     )
     return timer
 end
@@ -1346,57 +1342,54 @@ end
 function XUiHelper.DoWorldMove(rectTf, tarPos, duration, easeType, cb)
     local startPos = rectTf.position
     easeType = easeType or XUiHelper.EaseType.Linear
-    local timer =
-        XUiHelper.Tween(
-        duration,
-        function(t)
-            if not rectTf:Exist() then
-                return true
+    local timer = XUiHelper.Tween(
+            duration,
+            function(t)
+                if not rectTf:Exist() then
+                    return true
+                end
+                rectTf.position = Vec3Lerp(startPos, tarPos, t)
+            end,
+            cb,
+            function(t)
+                return XUiHelper.Evaluate(easeType, t)
             end
-            rectTf.position = Vec3Lerp(startPos, tarPos, t)
-        end,
-        cb,
-        function(t)
-            return XUiHelper.Evaluate(easeType, t)
-        end
     )
     return timer
 end
 
 function XUiHelper.DoScale(rectTf, startScale, tarScale, duration, easeType, cb)
     easeType = easeType or XUiHelper.EaseType.Linear
-    local timer =
-        XUiHelper.Tween(
-        duration,
-        function(t)
-            if not rectTf:Exist() then
-                return true
+    local timer = XUiHelper.Tween(
+            duration,
+            function(t)
+                if not rectTf:Exist() then
+                    return true
+                end
+                rectTf.localScale = Vec3Lerp(startScale, tarScale, t)
+            end,
+            cb,
+            function(t)
+                return XUiHelper.Evaluate(easeType, t)
             end
-            rectTf.localScale = Vec3Lerp(startScale, tarScale, t)
-        end,
-        cb,
-        function(t)
-            return XUiHelper.Evaluate(easeType, t)
-        end
     )
     return timer
 end
 
 function XUiHelper.DoAlpha(canvasGroup, startAlpha, tarAlpha, duration, easeType, cb)
     easeType = easeType or XUiHelper.EaseType.Linear
-    local timer =
-        XUiHelper.Tween(
-        duration,
-        function(t)
-            if not canvasGroup:Exist() then
-                return true
+    local timer = XUiHelper.Tween(
+            duration,
+            function(t)
+                if not canvasGroup:Exist() then
+                    return true
+                end
+                canvasGroup.alpha = MathLerp(startAlpha, tarAlpha, t)
+            end,
+            cb,
+            function(t)
+                return XUiHelper.Evaluate(easeType, t)
             end
-            canvasGroup.alpha = MathLerp(startAlpha, tarAlpha, t)
-        end,
-        cb,
-        function(t)
-            return XUiHelper.Evaluate(easeType, t)
-        end
     )
     return timer
 end
@@ -1462,7 +1455,7 @@ end
 function XUiHelper.PushInFirstGetIdList(id, type)
     local beginPopUi = not next(FirstGetIdWaitToShowList)
 
-    local data = {Id = id, Type = type}
+    local data = { Id = id, Type = type }
     tableInsert(FirstGetIdWaitToShowList, data)
     tableSort(FirstGetIdWaitToShowList, PopSortFunc)
 
@@ -1483,7 +1476,9 @@ end
 
 ------------首次获得弹窗End------------
 function XUiHelper.RegisterClickEvent(table, component, handle, clear, isOpenCd, cdTime)
-    if clear == nil then clear = true end
+    if clear == nil then
+        clear = true
+    end
     isOpenCd = isOpenCd and true or false
     cdTime = cdTime or 0.2
 
@@ -1526,19 +1521,20 @@ function XUiHelper.RegisterPassClickEvent(table, passClicker, targetClicker)
     listener.TargetPassClickObject = targetClicker.gameObject
 end
 
-
 function XUiHelper.RegisterHelpButton(btn, helpKey, cb)
     XUiHelper.RegisterClickEvent(
-        nil,
-        btn,
-        function()
-            XUiManager.ShowHelpTip(helpKey, cb)
-        end
+            nil,
+            btn,
+            function()
+                XUiManager.ShowHelpTip(helpKey, cb)
+            end
     )
 end
 
 function XUiHelper.RegisterSliderChangeEvent(table, component, handle, clear)
-    if clear == nil then clear = true end
+    if clear == nil then
+        clear = true
+    end
 
     local func = function(...)
         if handle then
@@ -1639,16 +1635,15 @@ function XUiHelper.GetScreenClickPosition(transform, camera)
     local screenPoint
     local platform = CS.UnityEngine.Application.platform
     local Input = CS.UnityEngine.Input
-    if platform == CS.UnityEngine.RuntimePlatform.WindowsEditor 
-            or platform == CS.UnityEngine.RuntimePlatform.WindowsPlayer 
+    if platform == CS.UnityEngine.RuntimePlatform.WindowsEditor
+            or platform == CS.UnityEngine.RuntimePlatform.WindowsPlayer
     then
         screenPoint = CS.UnityEngine.Vector2(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y)
     else
         -- 避免某些模拟器无法点击问题
         screenPoint = Input.touchCount >= 1 and Input.GetTouch(0).position or CS.UnityEngine.Vector2(Input.mousePosition.x, Input.mousePosition.y)
     end
-    local hasValue, v2 =
-        CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(transform, screenPoint, camera)
+    local hasValue, v2 = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(transform, screenPoint, camera)
     if hasValue then
         return CS.UnityEngine.Vector3(v2.x, v2.y, 0)
     else
@@ -1814,7 +1809,7 @@ end
 ---【警告】该方法不能兼容XUiNode类型子节点, 如果子节点为XUiNode类型尽量使用 XTool.UpdateDynamicItem 替代
 function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleFunc, isAddRange)
     uiList = uiList or {}
-    
+
     -- 先隐藏不需要的
     if not XTool.IsTableEmpty(uiList) then
         if not isAddRange then
@@ -1846,21 +1841,21 @@ function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleF
         end
 
         child.GameObject:SetActiveEx(true)
-        
+
         if handleFunc then
             handleFunc(i, child)
         end
     end
-    
+
     return uiList
-end 
+end
 
 function XUiHelper.MarkLayoutForRebuild(transform)
     XScheduleManager.ScheduleOnce(
-        function()
-            CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(transform)
-        end,
-        0.1
+            function()
+                CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(transform)
+            end,
+            0.1
     )
 end
 
@@ -1876,18 +1871,22 @@ function XUiHelper.CalculateLineWithTwoPosition(positionA, positionB, rotationAx
 end
 
 --==============================
- ---@desc 全角空格转为半角空格
- ---@content 转换内容 
- ---@return string
+---@desc 全角空格转为半角空格
+---@content 转换内容 
+---@return string
 --==============================
 function XUiHelper.ReplaceUnicodeSpace(content)
-    return string.gsub(content, " ", "\u{00A0}")
-end 
+    if not XOverseaManager.IsENRegion() then
+        return string.gsub(content, " ", "\u{00A0}")
+    else
+        return content
+    end
+end
 
 --==============================
- ---@desc text表中读到的\n会被Unity识别为\\n
- ---@content 转换内容 
- ---@return string
+---@desc text表中读到的\n会被Unity识别为\\n
+---@content 转换内容 
+---@return string
 --==============================
 function XUiHelper.ReplaceTextNewLine(content)
     return string.gsub(content, "\\n", "\n")
@@ -1909,18 +1908,18 @@ function XUiHelper.GetStringUTF8Length(str)
     local len = #str
     local left = len
     local cnt = 0
-    local arr={0,0xc0,0xe0,0xf0,0xf8,0xfc}
+    local arr = { 0, 0xc0, 0xe0, 0xf0, 0xf8, 0xfc }
     while left ~= 0 do
-        local tmp=string.byte(str,-left)
-        local i=#arr
+        local tmp = string.byte(str, -left)
+        local i = #arr
         while arr[i] do
-            if tmp>=arr[i] then
-                left=left-i
+            if tmp >= arr[i] then
+                left = left - i
                 break
             end
-            i=i-1
+            i = i - 1
         end
-        cnt=cnt+1
+        cnt = cnt + 1
     end
     return cnt
 end
@@ -1980,7 +1979,7 @@ function XUiHelper.DeleteOverlengthStringSupportRichFormat(str, length, addSymbo
             for i = 1, needByteCnt do
                 local curByte = string.byte(string.sub(strData.Text, i, i)) -- 将字符转换成ASCII值
                 -- 大于127是中文
-                if curByte > 127 then
+                if curByte and curByte > 127 then
                     zhByte = zhByte + 1
                 else
                     normalByte = normalByte + 1
@@ -2014,20 +2013,20 @@ function XUiHelper.RemoveLastSymbol(content, symbol)
 end
 
 --==============================
- ---@desc 记录一级界面按钮埋点
- ---@btnIndex 按钮下标 
+---@desc 记录一级界面按钮埋点
+---@btnIndex 按钮下标 
 --==============================
 function XUiHelper.RecordBuriedSpotTypeLevelOne(btnIndex)
     local dict = {}
     dict["ui_first_button"] = btnIndex
     dict["role_level"] = XPlayer.GetLevel()
     CS.XRecord.Record(dict, "200004", "UiOpen")
-end 
+end
 
 -- fixme临时的时钟设置现在2.1版本处理，后续在下版本优化再删除该方法
 -- 记录目前开启了时钟的Ui UiMain/UiSceneTip/UiPhotograph/UiFavorabilityNew
 local TimeStopTrans = nil --播放特殊动作时出现的带动画的transform
-local TempClockFun = function (trans)
+local TempClockFun = function(trans)
     if trans then
         TimeStopTrans = trans
     end
@@ -2035,7 +2034,8 @@ end
 function XUiHelper.SetClockTimeTempFun(Ui)
     local panel3D = {}
     XTool.InitUiObjectByUi(panel3D, Ui.UiSceneInfo.Transform) -- 将场景的内容和镜头的内容加到1个table里
-    if not panel3D.Uimc_05ClockAni3 then -- 检测是不是时钟场景
+    if not panel3D.Uimc_05ClockAni3 then
+        -- 检测是不是时钟场景
         return
     end
 
@@ -2051,26 +2051,26 @@ function XUiHelper.SetClockTimeTempFun(Ui)
     XEventManager.AddEventListener(XEventId.EVENT_ACTION_HIDE_UI, TempClockFun)
     local TempV3 = Vector3(0, 0, 0) --提出临时变量，减少内存消耗
 
-    local doSync = function ()
+    local doSync = function()
         local timeStamp = XTime.GetLocalNowTimestamp()
         local h = tonumber(XTime.TimestampToGameDateTimeString(timeStamp, "HH"))
         local m = tonumber(XTime.TimestampToGameDateTimeString(timeStamp, "mm"))
         local s = tonumber(XTime.TimestampToGameDateTimeString(timeStamp, "ss"))
         -- 换算为12小时制
         h = h > 12 and h - 12 or h
-    
+
         -- 各指针角度
         local angleS = (s / 60) * 360
         local angleM = (m / 60) * 360 + angleS / 60
         local angleH = (h / 12) * 360 + angleM / 12
-    
+
         if not XTool.UObjIsNil(TimeStopTrans) then
             local t = TimeStopTrans:GetComponent(typeof(CS.XCustomVFXTimeController))
             if t and t.TimeScale <= 0 then
                 return
             end
         end
-      
+
         -- H
         TempV3.x = transH.localEulerAngles.x
         TempV3.y = transH.localEulerAngles.y
@@ -2127,7 +2127,7 @@ end
 function XUiHelper.GetTimeMonthDayHourMinutes(time)
     time = time or XTime.GetServerNowTimestamp()
     local dt = CS.XDateUtil.GetLocalDateTime(time)
-    local timeStr=string.format("%d%s%d%s %02d:%02d",dt.Month, XUiHelper.GetText("Monthly"),dt.Day,XUiHelper.GetText("Diary"),dt.Hour,dt.Minute)
+    local timeStr = string.format("%d%s%d%s %02d:%02d", dt.Month, XUiHelper.GetText("Monthly"), dt.Day, XUiHelper.GetText("Diary"), dt.Hour, dt.Minute)
     return timeStr
 end
 
@@ -2135,7 +2135,7 @@ end
 function XUiHelper.GetTimeMonthDay(time)
     time = time or XTime.GetServerNowTimestamp()
     local dt = CS.XDateUtil.GetLocalDateTime(time)
-    local timeStr=string.format("%d%s%d%s",dt.Month, XUiHelper.GetText("Monthly"),dt.Day,XUiHelper.GetText("Diary"))
+    local timeStr = string.format("%d%s%d%s", dt.Month, XUiHelper.GetText("Monthly"), dt.Day, XUiHelper.GetText("Diary"))
     return timeStr
 end
 
@@ -2172,7 +2172,8 @@ end
 
 function XUiHelper.GetUiAngleByVector3Return360(normalizeV3A, normalizeV3B)
     local cross = Vector3.Cross(normalizeV3A, normalizeV3B)
-    if cross.z > 0 then -- RectTransform坐标的cross是z轴
+    if cross.z > 0 then
+        -- RectTransform坐标的cross是z轴
         return XUiHelper.GetAngleByVector3(normalizeV3A, normalizeV3B)
     else
         return 360 - XUiHelper.GetAngleByVector3(normalizeV3A, normalizeV3B)
@@ -2181,10 +2182,11 @@ end
 
 function XUiHelper.GetUiAngleByVector3ReturnDirection(normalizeV3A, normalizeV3B)
     local cross = Vector3.Cross(normalizeV3A, normalizeV3B)
-    if cross.z > 0 then -- RectTransform坐标的cross是z轴
+    if cross.z > 0 then
+        -- RectTransform坐标的cross是z轴
         return XUiHelper.GetAngleByVector3(normalizeV3A, normalizeV3B)
     else
-        return - XUiHelper.GetAngleByVector3(normalizeV3A, normalizeV3B)
+        return -XUiHelper.GetAngleByVector3(normalizeV3A, normalizeV3B)
     end
 end
 
@@ -2218,6 +2220,35 @@ function XUiHelper.ResetBtnAlpha(button, path)
         color.a = 1
         image.color = color
     end
+end
+
+function XUiHelper.OpenMonthlyCardEn()
+    local items = XDataCenter.PurchaseManager.GetYKTabPurchasePackages()
+    local cardAData = nil
+    local cardCData = nil
+    local cardABoughtFull = false
+    local cardCBoughtFull = false
+    for _, item in pairs(items) do
+        if item.Data.Id == 83028 then
+            cardAData = item
+            cardABoughtFull = cardAData:GetCurrentBuyTime() == cardAData:GetBuyLimitTime()
+        elseif item.Data.Id == 90032 then
+            cardCData = item
+            cardCBoughtFull = cardCData:GetCurrentBuyTime() == cardCData:GetBuyLimitTime()
+        end
+    end
+
+    if not cardAData or not cardCData then
+        XLog.Error("获取月卡数据失败")
+        return
+    end
+
+    if cardABoughtFull or cardCBoughtFull then
+        XUiManager.TipMsg(CS.XTextManager.GetText("PurchaseYKIsOnBuyLimt"))
+        return
+    end
+
+    XLuaUiManager.Open("UiMonthlyCardEn", cardAData, cardCData)
 end
 
 ---@desc 打开聊天界面
@@ -2274,7 +2305,7 @@ function XUiHelper.CreateGoodsLabel(templateId, parent, obj)
 end
 
 function XUiHelper.SetSizeWithCurrentAnchors(rectTransform, width, height)
-    local Axis =  CS.UnityEngine.RectTransform.Axis
+    local Axis = CS.UnityEngine.RectTransform.Axis
     rectTransform:SetSizeWithCurrentAnchors(Axis.Horizontal, width)
     rectTransform:SetSizeWithCurrentAnchors(Axis.Vertical, height)
 end
@@ -2335,17 +2366,17 @@ function XUiHelper.SetCanvasesSortingOrder(transform, order)
     end
 
     order = XTool.IsNumberValid(order) and order or 1
-    
+
     local baseOrder = rootCanvas.sortingOrder
-    
+
     local canvases = transform:GetComponentsInChildren(typeof(CS.UnityEngine.Canvas), true)
 
     if canvases and canvases.Length > 0 then
         for i = 0, canvases.Length - 1 do
             local subCanvas = canvases[i]
-            
+
             local subOrder = XTool.IsNumberValid(subCanvas.sortingOrder) and subCanvas.sortingOrder or order
-            
+
             subCanvas.sortingOrder = baseOrder + subOrder
         end
     end
@@ -2356,7 +2387,7 @@ end
 function XUiHelper.TweenLabelNumber(ui, label, target, duration)
     local labelName = label.name
     local timerName = "TweenLabelNumber_" .. labelName
-    
+
     if ui[timerName] then
         ui:_RemoveTimerIdAndDoCallback(ui[timerName])
         XScheduleManager.UnSchedule(ui[timerName])
@@ -2414,4 +2445,39 @@ end
 function XUiHelper.XUiPanelAsset(ui, parent, itemId1, itemId2, ...)
     local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
     return XUiPanelAsset.New(ui, parent, itemId1, itemId2, ...)
+end
+
+--折扣显示 区分海外国服
+function XUiHelper.GetDiscountText(discount)
+    if XOverseaManager.IsENRegion() or XOverseaManager.IsJP_KRRegion() then
+        -- 其他服显示 (100-xx)% off
+        local text = XUiHelper.GetText("Snap", tostring(100 - discount))
+        return text
+    else
+        --国服显示 x折(为什么除以10? 因为中文显示的是6折,而不是60折)
+        -- 策划要求保留小数，这个似乎是在海外刻意修复的~~ 所以屏蔽这两行
+        --if discount % 10 == 0 then
+        --    discount = math.floor(discount / 10)
+        --else
+        --end
+        discount = discount / 10
+        local text = tostring(discount) .. XUiHelper.GetText("Snap")
+        return text
+    end
+end
+
+-- 将十进制编码转换成字符串
+-- 配置示例：{226|130|172}
+function XUiHelper.ReplaceDecodeDecimalToString(content)
+    if not content then
+        return content
+    end
+
+    return string.gsub(content, "{(%d+|%d+[^}]*)}", function(s)
+        local bytes = {}
+        for num in string.gmatch(s, "%d+") do
+            table.insert(bytes, tonumber(num))
+        end
+        return string.char(table.unpack(bytes))
+    end)
 end

@@ -6,7 +6,7 @@ function XUiLottoFashionSelfChoiceDialog:OnAwake()
     
     -- 二次弹窗cd，不能让玩家点太快
     self.EnableClickBtnYes = false
-    local cdTime = CS.XGame.ClientConfig:GetInt("XUiGachaFashionSelfChoiceDialogConfirmCD")
+    local cdTime = CS.XGame.ClientConfig:GetInt("XUiLottoFashionSelfChoiceDialogConfirmCD")
     self.CDTime = cdTime
     self.BtnYes:SetNameByGroup(1, string.format("%dS", self.CDTime / XScheduleManager.SECOND))
     self.BtnYes:SetDisable(true)

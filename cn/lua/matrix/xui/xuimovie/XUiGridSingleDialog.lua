@@ -12,6 +12,15 @@ function XUiGridSingleDialog:Ctor(ui)
 end
 
 function XUiGridSingleDialog:Refresh(dialogContent, isCenter, color, duration, typeWriterCb)
+
+    -- #207657 后续从源头解决问题
+    if XOverseaManager.IsENRegion() then
+        local transform = self.TxtWords.transform
+        local size = transform.sizeDelta
+        size.x = 1700
+        transform.sizeDelta = size
+    end
+
     local txtWords = self.TxtWords
     local typeWriter = self.TypeWriter
     txtWords.text = dialogContent

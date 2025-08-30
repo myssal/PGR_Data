@@ -25,8 +25,8 @@ XDormConfig.DORM_BAG_PANEL_INDEX = {
 
 -- 装修Toggle
 XDormConfig.ReformPanelIndex = {
-    Template    = 1, --模板
-    Furniture   = 2, --家具
+    Template = 1, --模板
+    Furniture = 2, --家具
 }
 
 -- 仓库住户Toggle
@@ -111,16 +111,16 @@ XDormConfig.RecoveryType = {
 }
 
 XDormConfig.DormSecondEnter = {
-    Task            = 1, --任务
-    Des             = 2, --描述
-    WareHouse       = 3, --仓库
-    ReName          = 4, --改名
-    FieldGuilde     = 5, --图鉴
-    Build           = 6, --建造
-    Shop            = 7, --商店
-    Person          = 8, --人员
-    Template        = 9, --模板
-    Reset           = 10, --重置
+    Task = 1, --任务
+    Des = 2, --描述
+    WareHouse = 3, --仓库
+    ReName = 4, --改名
+    FieldGuilde = 5, --图鉴
+    Build = 6, --建造
+    Shop = 7, --商店
+    Person = 8, --人员
+    Template = 9, --模板
+    Reset = 10, --重置
 }
 
 XDormConfig.DormAttDesIndex = {
@@ -152,20 +152,19 @@ XDormConfig.DormCharGender = {
 
 -- 宿舍空间站枚举
 XDormConfig.SceneType = {
-    One     = 1,
-    Two     = 2,
-    Three   = 3,
-    Four    = 4,
+    One = 1,
+    Two = 2,
+    Three = 3,
+    Four = 4,
 }
 
 XDormConfig.PersonType = {
-    Staff  = 1, --入住情况
+    Staff = 1, --入住情况
     Detail = 2, --员工详情
 }
 
 --- 宿舍图文教程引导Id
 XDormConfig.DormCourseGuideId = 52701
-
 
 XDormConfig.DORM_VITALITY_MAX_VALUE = math.floor(CS.XGame.Config:GetInt("DormVitalityMaxValue") / 100)
 XDormConfig.DORM_MOOD_MAX_VALUE = math.floor(CS.XGame.Config:GetInt("DormMoodMaxValue") / 100)
@@ -193,7 +192,9 @@ XDormConfig.DormLoadCacheCount = CS.XGame.ClientConfig:GetInt("DormLoadCacheCoun
 XDormConfig.DormCourseJumpIndex = CS.XGame.ClientConfig:GetInt("DormCourseJumpIndex")
 
 local TABLE_DORM_CHARACTER_EVENT_PATH = "Share/Dormitory/Character/DormCharacterEvent.tab"
-local TABLE_DORM_CHARACTER_BEHAVIOR_PATH = "Share/Dormitory/Character/DormCharacterBehavior.tab"
+local TABLE_DORM_CHARACTER_BEHAVIOR_PATH = "Client/Dormitory/Character/DormCharacterBehavior.tab"
+local TABLE_DORM_CHARACTER_WITH_STATE_PATH = "Client/Dormitory/Character/DormCharacterWithState.tab"
+local TABLE_DORM_CHARACTER_STATE_PATH = "Client/Dormitory/Character/DormCharacterState.tab"
 local TABLE_DORMITORY_PATH = "Share/Dormitory/Dormitory.tab"
 local TABLE_DORMCHARACTERWORK_PATH = "Share/Dormitory/Character/DormCharacterWork.tab"
 local TABLE_DORM_CHARACTER_RECOVERY_PATH = "Share/Dormitory/Character/DormCharacterRecovery.tab"
@@ -208,9 +209,10 @@ local TABLE_DORM_TEMPLATE_PATH = "Share/Dormitory/DormTemplate.tab"
 local TABLE_CHARACTER_MOOD_PATH = "Client/Dormitory/DormCharacterMood.tab"
 local TABLE_MOOD_EFFECT_PATH = "Client/Dormitory/DormCharacterEffect.tab"
 local TABLE_CHARACTER_DIALOG_PATH = "Client/Dormitory/DormActorDialog.tab"
-local TABLE_CHARACTER_DIALOG_CONTENT_PATH = "Client/Dormitory/DormActorDialogContent.tab"
---local TABLE_CHARACTER_ACTION_PATH = "Client/Dormitory/DormCharacterAction.tab"
+local TABLE_DORM_STATE_TO_DIALOG_PATH = "Client/Dormitory/DormActorStateToDialog.tab"
+local TABLE_DORM_ACTOR_TO_STATE_PATH = "Client/Dormitory/DormActorToState.tab"
 local TABLE_CHARACTER_INTERACTIVE_PATH = "Client/Dormitory/DormInteractiveEvent.tab"
+local TABLE_INTERACTIVE_RELATION_PATH = "Client/Dormitory/DormInteractiveRelation.tab"
 local TABLE_SHOW_EVENT_PATH = "Client/Dormitory/DormShowEvent.tab"
 local TABLE_DORM_GUIDE_TASK_PATH = "Client/Dormitory/DormGuideTask.tab"
 local TABLE_DORM_TEMPLATE_COLLECT_PATH = "Client/Dormitory/DormTemplateCollect.tab"
@@ -223,7 +225,6 @@ local TABLE_DORM_CLIENT_CONFIG_PATH = "Client/Dormitory/DormClientConfig.tab"
 local CharacterEventTemplate = {}
 --local CharacterBehaviorTemplate = {}
 local DormitoryTemplate = {}        --宿舍配置表
-local CharacterBehaviorStateIndex = {}
 local DormCharacterWork = {}        --宿舍打工工位配置表
 local DormCharacterRecovery = {}    --构造体回复配置表 table = {characterId = {config1, config2, ...}}
 local CharacterStyleTemplate = {}       --客户端构造体风格配置表
@@ -236,19 +237,28 @@ local DormCharacterRewardCfg = {}
 local DormTemplateCfg = {}        -- 宿舍模板配置表
 local DormTemplateCollectCfg = {} -- 宿舍收藏模板配置表
 local DormTemplateGroupCfg = {}  -- 宿舍模板组配置表
-local DormCharTypeCountDic = {}   -- 可获得各类角色总数字典
+local DormCharTypeCountDic   -- 可获得各类角色总数字典
 ---@type table<number, XTableDormClientConfig>
 local DormClientConfig = {} --客户端配置
 
---local CharacterActionTemplate = {} --动作
-local CharacterInteractiveTemplate = {} --动作
+---@type table<number, XTableDormCharacterBehavior>
+local DormCharacterBehavior = {}
+---@type table<number, XTableDormCharacterWithState>
+local DormCharacterWithState = {}
+---@type table<number, XTableDormCharacterState>
+local DormCharacterState = {}
 
+---@type table<number, XTableDormInteractiveEvent>
+local CharacterInteractiveTemplate = {} --交互
+---@type table<number, XTableDormInteractiveRelation>
+local InteractiveRelationTemplate = {} --交互关系
+
+---@type table<number, XTableDormActorDialog>
 local CharacterDialogTemplate = {}       -- 构造体对话表
-local CharacterDialogTemplateA = {}       -- 构造体对话内容表
-local CharacterDialogContentTemplate = {}
-local CharacterDialogStateIndex = {}
---local CharacterActionIndex = {}
-local CharacterInteractiveIndex = {}
+---@type table<number, XTableDormActorStateToDialog>
+local DormStateToDialogTemplate = {}
+---@type table<number, XTableDormActorToState>
+local DormActorToStateTemplate = {}
 ---@type table<number, XTableDormPet>
 local DormPetTemplate = {}
 ---@type table<number, table<string, XTableDormPetBehaviour>>
@@ -260,9 +270,9 @@ local DormTemplateData = nil  -- 宿舍模板数据
 
 local DormF2CRelationConfig = {}
 local DormF2CRelationDic = {}
----@type table<number, XTable.XTableDormSecondMenu>
+---@type table<number, XTableDormSecondMenu>
 local DormSecondMenuTemplate = {}
----@type table<string, XTable.XTableDormFurnitureRimMat>
+---@type table<string, XTableDormFurnitureRimMat>
 local DormFurnitureRimMatTemplate = {}
 -- 初始化构造体恢复表，并排序
 local function InitDormCharacterRecovery()
@@ -300,21 +310,42 @@ local function CreateDormF2CRelationDic()
     end
 end
 
+local function CombineBehaviorId(characterId, stateId)
+    if not (0 <= characterId and characterId <= 9999999 and 0 <= stateId and stateId <= 99) then
+        XLog.Error("CombineBehaviorId error, characterId = %d, stateId = %d", characterId, stateId)
+        return -1
+    end
+    return (characterId << 7) | stateId
+end
+
+local function InitDormCharTypeCountDic()
+    if DormCharTypeCountDic then
+        return
+    end
+    DormCharTypeCountDic = {}
+    for _, v in pairs(CharacterStyleTemplate) do
+        local count = DormCharTypeCountDic[v.Type] or 0
+        count = count + 1
+        DormCharTypeCountDic[v.Type] = count
+    end
+end
+
 function XDormConfig.Init()
     CharacterEventTemplate = XTableManager.ReadByIntKey(TABLE_DORM_CHARACTER_EVENT_PATH, XTable.XTableDormCharacterEvent, "EventId")
-    local characterBehaviorTemplate = XTableManager.ReadByIntKey(TABLE_DORM_CHARACTER_BEHAVIOR_PATH, XTable
-            .XTableDormCharacterBehavior, "Id")
+    DormCharacterBehavior = XTableManager.ReadByIntKey(TABLE_DORM_CHARACTER_BEHAVIOR_PATH, XTable.XTableDormCharacterBehavior, "Id")
+    DormCharacterWithState = XTableManager.ReadByIntKey(TABLE_DORM_CHARACTER_WITH_STATE_PATH, XTable.XTableDormCharacterWithState, "Id")
+    DormCharacterState = XTableManager.ReadByStringKey(TABLE_DORM_CHARACTER_STATE_PATH, XTable.XTableDormCharacterState, "StateName")
     DormitoryTemplate = XTableManager.ReadByIntKey(TABLE_DORMITORY_PATH, XTable.XTableDormitory, "Id")
     DormCharacterWork = XTableManager.ReadByIntKey(TABLE_DORMCHARACTERWORK_PATH, XTable.XTableDormCharacterWork, "DormitoryNum")
     CharacterStyleTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_STYLE_PATH, XTable.XTableDormCharacterStyle, "Id")
     CharacterMoodTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_MOOD_PATH, XTable.XTableDormCharacterMood, "Id")
     MoodEffectTemplate = XTableManager.ReadByIntKey(TABLE_MOOD_EFFECT_PATH, XTable.XTableDormCharacterEffect, "Id")
-    CharacterDialogTemplate = XTableManager.ReadAllByIntKey(TABLE_CHARACTER_DIALOG_PATH, XTable.XTableDormActorDialog, "Id")
-    CharacterDialogContentTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_DIALOG_CONTENT_PATH, XTable.XTableDormActorDialogContent, "Id")
-    --CharacterActionTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_ACTION_PATH, XTable.XTableDormCharacterAction, "Id")
+    CharacterDialogTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_DIALOG_PATH, XTable.XTableDormActorDialog, "Id")
+    DormStateToDialogTemplate = XTableManager.ReadByIntKey(TABLE_DORM_STATE_TO_DIALOG_PATH, XTable.XTableDormActorStateToDialog, "StateId")
+    DormActorToStateTemplate = XTableManager.ReadByIntKey(TABLE_DORM_ACTOR_TO_STATE_PATH, XTable.XTableDormActorToState, "ActorId")
     CharacterFondleTemplate = XTableManager.ReadByIntKey(TABLE_DORM_CHARACTER_FONDLE_PATH, XTable.XTableDormCharacterFondle, "CharacterId")
-    --CharacterActionTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_ACTION_PATH, XTable.XTableDormCharacterAction, "Id")
     CharacterInteractiveTemplate = XTableManager.ReadByIntKey(TABLE_CHARACTER_INTERACTIVE_PATH, XTable.XTableDormInteractiveEvent, "Id")
+    InteractiveRelationTemplate = XTableManager.ReadByIntKey(TABLE_INTERACTIVE_RELATION_PATH, XTable.XTableDormInteractiveRelation, "ActiveRoleId")
     ChaarcterShowEventTemplate = XTableManager.ReadByIntKey(TABLE_SHOW_EVENT_PATH, XTable.XTableDormShowEvent, "Id")
     DormBgmTemplate = XTableManager.ReadByIntKey(TABLE_DORM_BGM_PATH, XTable.XTableDormBgm, "Id")
     DormTemplateCollectCfg = XTableManager.ReadByIntKey(TABLE_DORM_TEMPLATE_COLLECT_PATH, XTable.XTableDormTemplateCollect, "Id")
@@ -329,48 +360,30 @@ function XDormConfig.Init()
     local dormPetBehaviour = XTableManager.ReadByIntKey(TABLE_DORM_PET_BEHAVIOUR_PATH, XTable.XTableDormPetBehaviour,
             "Id")
     DormClientConfig = XTableManager.ReadByIntKey(TABLE_DORM_CLIENT_CONFIG_PATH, XTable.XTableDormClientConfig, "Id")
-    
+
     InitDormCharacterRecovery()
-
-    CharacterBehaviorStateIndex = {}
-
-    for _, v in pairs(characterBehaviorTemplate) do
-        CharacterBehaviorStateIndex[v.CharacterId] = CharacterBehaviorStateIndex[v.CharacterId] or {}
-        CharacterBehaviorStateIndex[v.CharacterId][v.State] = v
-    end
 
     for _, v in pairs(dormPetBehaviour) do
         DormPetTemplateIndex[v.PetId] = DormPetTemplateIndex[v.PetId] or {}
         DormPetTemplateIndex[v.PetId][v.State] = v
     end
 
-    for _, v in pairs(CharacterDialogTemplate) do
-        CharacterDialogStateIndex[v.ActorId] = CharacterDialogStateIndex[v.ActorId] or {}
-        CharacterDialogStateIndex[v.ActorId][v.State] = CharacterDialogStateIndex[v.ActorId][v.State] or {}
-        table.insert(CharacterDialogStateIndex[v.ActorId][v.State], v)
-    end
-
-    --for _, v in pairs(CharacterActionTemplate) do
-    --    CharacterActionIndex[v.CharacterId] = CharacterActionIndex[v.CharacterId] or {}
-    --    CharacterActionIndex[v.CharacterId][v.Name] = v.State
-    --end
-
-    for _, v in pairs(CharacterInteractiveTemplate) do
-        local cha1 = v.CharacterIds[1]
-        local cha2 = v.CharacterIds[2]
-        CharacterInteractiveIndex[cha1] = CharacterInteractiveIndex[cha1] or {}
-        CharacterInteractiveIndex[cha1][cha2] = v
-    end
-
-    for _, v in pairs(CharacterStyleTemplate) do
-        local count = DormCharTypeCountDic[v.Type] or 0
-        count = count + 1
-        DormCharTypeCountDic[v.Type] = count
-    end
+   
 
     XDormConfig.DormAnimationMoveTime = CS.XGame.ClientConfig:GetInt("DormMainAnimationMoveTime") or 0
     XDormConfig.DormAnimationStaicTime = CS.XGame.ClientConfig:GetInt("DormMainAnimationStaicTime") or 0
     XDormConfig.DormSecondAnimationDelayTime = CS.XGame.ClientConfig:GetInt("DormSecondAnimationDelayTime") or 0
+
+    XDormConfig.CheckDormTemplateCollectCfg()
+    --构建家具-人物行为关系字典
+    CreateDormF2CRelationDic()
+end
+
+function XDormConfig.CheckDormTemplateCollectCfg()
+    --开发模式下才检查
+    if not XMain.IsEditorDebug then
+        return
+    end
 
     local collectMaxCount = CS.XGame.Config:GetInt("DormLayoutMaxCount") or 0
     local cfgCount = 0
@@ -381,8 +394,6 @@ function XDormConfig.Init()
     if collectMaxCount ~= cfgCount then
         XLog.Error("XDormConfig.Init错误，错误原因: DormTemplateCollectCfg表(路径：" .. TABLE_DORM_TEMPLATE_COLLECT_PATH .. ")的表项个数与Share/Config/Config.tab表中DormLayoutMaxCount这一项的最大数量不同")
     end
-    --构建家具-人物行为关系字典
-    CreateDormF2CRelationDic()
 end
 
 -- 获取构造体奖励名字
@@ -456,7 +467,7 @@ function XDormConfig.GetDormWorldDescriptionRewardCharIdById(id)
     local data = XDormConfig.GetDormCharacterRewardData(id)
     if not data or not data.WorldDescription then
         XLog.ErrorTableDataNotFound("XDormConfig.GetDormWorldDescriptionRewardCharIdById",
-        "WorldDescription", TABLE_CHARACTER_REWARD_PATH, "id", tostring(id))
+                "WorldDescription", TABLE_CHARACTER_REWARD_PATH, "id", tostring(id))
         return nil
     end
 
@@ -515,7 +526,7 @@ end
 function XDormConfig.GetDormTemplateGroupCfg(groupId)
     local template = DormTemplateGroupCfg[groupId]
     if not template then
-        XLog.ErrorTableDataNotFound("XDormConfig.GetDormTemplateGroupCfg", "data", TABLE_DORM_TEMPLATE_GROUP_PATH, "id" ,tostring(groupId))
+        XLog.ErrorTableDataNotFound("XDormConfig.GetDormTemplateGroupCfg", "data", TABLE_DORM_TEMPLATE_GROUP_PATH, "id", tostring(groupId))
         return {}
     end
     return template
@@ -587,6 +598,9 @@ end
 
 -- 通过类型，获取宿舍角色总数量
 function XDormConfig.GetDormCharacterTemplatesCountByType(...)
+    if not DormCharTypeCountDic then
+        InitDormCharTypeCountDic()
+    end
     local count = 0
     local types = { ... }
     for _, k in ipairs(types) do
@@ -671,63 +685,62 @@ end
 
 --获取行为节点Id
 function XDormConfig.GetCharacterBehavior(charId, state)
-    if not CharacterBehaviorStateIndex or not CharacterBehaviorStateIndex[charId] then
-        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterBehavior", "CharacterBehaviorStateIndex",
-        TABLE_DORM_CHARACTER_BEHAVIOR_PATH, "charId", tostring(charId))
+    local stateTemplate = DormCharacterState[state]
+    if not stateTemplate then
+        return
+    end
+    local stateId = stateTemplate.StateId
+    local id = CombineBehaviorId(charId, stateId)
+    if id <= 0 then
+        XLog.Error("XDormConfig.GetCharacterBehavior error, charId = %d, stateId = %d", charId, stateId)
+        return
+    end
+    local template = DormCharacterWithState[id]
+    if not template then
+        return
+    end
+    local behaviorId = template.BehaviorId
+    local behavior = DormCharacterBehavior[behaviorId]
+    if not behavior then
+        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterBehavior", "DormCharacterBehavior",
+                TABLE_DORM_CHARACTER_BEHAVIOR_PATH, "Id", tostring(behaviorId))
         return
     end
 
-    if not CharacterBehaviorStateIndex[charId][state] then
-        --也用于检测有无角色行为，这里的报错日志注释掉
-        --XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterBehavior", "state", TABLE_DORM_CHARACTER_BEHAVIOR_PATH, "charId", tostring(charId))
-        return
-    end
-
-    return CharacterBehaviorStateIndex[charId][state]
+    return behavior
 end
-
-----获取行为表
---function XDormConfig.GetCharacterBehaviorById(id)
---    if not CharacterBehaviorTemplate then
---        XLog.Error("配置表：" .. TABLE_DORM_CHARACTER_BEHAVIOR_PATH .. "读取失败")
---        return
---    end
---
---    if not CharacterBehaviorTemplate[id] then
---        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterBehaviorById", "配置表项", TABLE_DORM_CHARACTER_BEHAVIOR_PATH, "id", tostring(id))
---        return
---    end
---
---
---    return CharacterBehaviorTemplate[id]
---end
 
 --获取角色交互
 function XDormConfig.GetCharacterInteractiveIndex(id1, id2)
-    if not CharacterInteractiveIndex then
-        return false
+    local interactiveId = XDormConfig.GetInteractiveIdByRelation(id1, id2)
+    if interactiveId then
+        local template = CharacterInteractiveTemplate[interactiveId]
+        return true, template, template.State[1], template.State[2]
     end
-
-    if CharacterInteractiveIndex[id1] and CharacterInteractiveIndex[id1][id2] then
-        local temp = CharacterInteractiveIndex[id1][id2]
-        return true, temp, temp.State[1], temp.State[2]
-    elseif CharacterInteractiveIndex[id2] and CharacterInteractiveIndex[id2][id1] then
-        local temp = CharacterInteractiveIndex[id2][id1]
-        return true, temp, temp.State[2], temp.State[1]
+    interactiveId = XDormConfig.GetInteractiveIdByRelation(id2, id1)
+    if interactiveId then
+        local template = CharacterInteractiveTemplate[interactiveId]
+        return true, template, template.State[2], template.State[1]
     end
 
     return false
 end
 
-----获取动作状态机
---function XDormConfig.GetCharacterActionState(charId, name)
---    if not CharacterActionIndex or not CharacterActionIndex[charId] or not CharacterActionIndex[charId][name] then
---        XLog.Error(string.format("CharacterActionIndex不存在 charId:%s name:%s 路径：%s", charId, name, TABLE_CHARACTER_ACTION_PATH))
---        name = "QR2YongyechaoExcessiveBase01"
---    end
---
---    return CharacterActionIndex[charId][name]
---end
+function XDormConfig.GetInteractiveIdByRelation(activeRoleId, passiveRoleId)
+    local template = InteractiveRelationTemplate[activeRoleId]
+    if not template then
+        return
+    end
+    local passiveRoleIds = template.PassiveRoleId
+    if not passiveRoleIds then
+        return
+    end
+    for index, v in ipairs(passiveRoleIds) do
+        if v == passiveRoleId then
+            return template.InteractiveId[index]
+        end
+    end
+end
 
 --- 获取事件
 ---@param id number 事件Id
@@ -795,19 +808,6 @@ function XDormConfig.GetCharacterDialogConfig(id)
     return t
 end
 
---- 获取对话文本
----@param contentId number
----@return string
---------------------------
-function XDormConfig.GetActorDialogContent(contentId)
-    local t = CharacterDialogContentTemplate[contentId]
-    if not t then
-        XLog.ErrorTableDataNotFound("XDormConfig.GetActorDialogContent", "配置表项", TABLE_CHARACTER_DIALOG_CONTENT_PATH, "id", tostring(contentId))
-        return ""
-    end
-    return t.Content
-end
-
 --- 获取构造体信息配置
 ---@param id number 角色id
 ---@return XTableDormCharacterStyle
@@ -827,7 +827,7 @@ function XDormConfig.GetCharacterStyleConfigQIconById(id)
     local t = CharacterStyleTemplate[id]
     if not t or not t.HeadRoundIcon then
         XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterStyleConfigQIconById",
-        "配置表项或者HeadRoundIcon", TABLE_CHARACTER_STYLE_PATH, "id", tostring(id))
+                "配置表项或者HeadRoundIcon", TABLE_CHARACTER_STYLE_PATH, "id", tostring(id))
         return nil
     end
 
@@ -871,7 +871,7 @@ function XDormConfig.GetCharacterFondleByCharId(characterId)
     local t = CharacterFondleTemplate[characterId]
     if not t then
         XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterFondleByCharId",
-        "配置表项", TABLE_DORM_CHARACTER_FONDLE_PATH, "characterId", tostring(characterId))
+                "配置表项", TABLE_DORM_CHARACTER_FONDLE_PATH, "characterId", tostring(characterId))
         return nil
     end
 
@@ -962,21 +962,12 @@ end
 
 --获取对话表
 function XDormConfig.GetCharacterDialog(charData, state)
-
     local charId = charData.CharacterId
-
-    if not CharacterDialogStateIndex or not CharacterDialogStateIndex[charId] then
-        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterDialog", "配置表项", TABLE_CHARACTER_DIALOG_PATH, "charId", tostring(charId))
+    local stateId = XDormConfig.GetActorStateIdByName(charId, state)
+    if not stateId then
         return
     end
-
-    if not CharacterDialogStateIndex[charId][state] then
-        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterDialog", "配置表项或者state", TABLE_CHARACTER_DIALOG_PATH, "charId", tostring(charId))
-        return
-    end
-
-    local dialogList = CharacterDialogStateIndex[charId][state]
-
+    local dialogList = DormStateToDialogTemplate[stateId].DialogId
     if not dialogList then
         return
     end
@@ -984,8 +975,9 @@ function XDormConfig.GetCharacterDialog(charData, state)
     local fitterList = {}
 
     for _, v in ipairs(dialogList) do
-        if charData.Mood >= v.MoodMinValue and charData.Mood <= v.MoodMaxValue then
-            table.insert(fitterList, v)
+        local dialog = CharacterDialogTemplate[v]
+        if charData.Mood >= dialog.MoodMinValue and charData.Mood <= dialog.MoodMaxValue then
+            table.insert(fitterList, dialog)
         end
     end
 
@@ -997,7 +989,24 @@ function XDormConfig.GetCharacterDialog(charData, state)
     local index = math.random(0, #fitterList)
 
     return fitterList[index]
+end
 
+function XDormConfig.GetActorStateIdByName(actorId, stateName)
+    local template = DormActorToStateTemplate[actorId]
+    if not template then
+        XLog.ErrorTableDataNotFound("XDormConfig.GetCharacterDialog", "配置表项", TABLE_DORM_ACTOR_TO_STATE_PATH, "ActorId", tostring(actorId))
+        return
+    end
+    local nameList = template.StateName
+    if not nameList then
+        XLog.ErrorTableDataNotFound("XDormConfig.GetActorStateIdByName", "配置表项", TABLE_DORM_ACTOR_TO_STATE_PATH, "StateName", tostring(actorId))
+        return
+    end
+    for index, name in pairs(nameList) do
+        if name == stateName then
+            return template.StateId[index]
+        end
+    end
 end
 
 --获取套装的音乐信息
@@ -1021,11 +1030,9 @@ function XDormConfig.GetDormBgm(furnitureList)
         end
     end
 
-
     if not furnitureList then
         return false, musicList
     end
-
 
     local suitDic = {}
     for _, v in pairs(furnitureList) do
@@ -1043,23 +1050,19 @@ function XDormConfig.GetDormBgm(furnitureList)
         end
     end
 
-
     for _, v in pairs(DormBgmTemplate) do
         if suitDic[v.SuitId] and #suitDic[v.SuitId] >= v.SuitNum then
             table.insert(musicList, v)
         end
     end
 
-
     if #musicList <= 1 then
         return false, musicList
     end
 
-
     table.sort(musicList, function(a, b)
         return a.Order > b.Order
     end)
-
 
     return true, musicList
 end
@@ -1067,9 +1070,9 @@ end
 -- 是否是模板宿舍
 function XDormConfig.IsTemplateRoom(dormDataType)
     if dormDataType == XDormConfig.DormDataType.Template or
-    dormDataType == XDormConfig.DormDataType.Collect or
-    dormDataType == XDormConfig.DormDataType.CollectNone or
-    dormDataType == XDormConfig.DormDataType.Provisional then
+            dormDataType == XDormConfig.DormDataType.Collect or
+            dormDataType == XDormConfig.DormDataType.CollectNone or
+            dormDataType == XDormConfig.DormDataType.Provisional then
         return true
     end
 
@@ -1125,8 +1128,12 @@ end
 --===================
 function XDormConfig.GetDormF2CBehaviorRelative(furnitureId, characterId, positionId)
     local config = DormF2CRelationDic[furnitureId]
-    if not config then return nil end
-    if not config[characterId] then return nil end
+    if not config then
+        return nil
+    end
+    if not config[characterId] then
+        return nil
+    end
     return config[characterId][positionId or 1]
 end
 
@@ -1146,9 +1153,9 @@ function XDormConfig.GetDormFurnitureTotal(roomDataMap)
             count = count + roomData.FurnitureCount
         end
     end
-    
+
     return count
-end 
+end
 
 ---@return XTable.XTableDormSecondMenu[]
 function XDormConfig.GetSecondMenuList()
@@ -1159,17 +1166,17 @@ function XDormConfig.GetSecondMenuList()
             table.insert(list, template)
         end
     end
-    table.sort(list, function(a, b) 
+    table.sort(list, function(a, b)
         local orderA = a.Order
         local orderB = b.Order
 
         if orderA ~= orderB then
             return orderA < orderB
         end
-        
+
         return a.Id < b.Id
     end)
-    
+
     return list
 end
 
@@ -1197,7 +1204,7 @@ end
 function XDormConfig.GetDormPetTemplate(petId)
     local template = DormPetTemplate[petId]
     if not template then
-        XLog.ErrorTableDataNotFound("XDormConfig.DormPetTemplate", "Data", 
+        XLog.ErrorTableDataNotFound("XDormConfig.DormPetTemplate", "Data",
                 TABLE_DORM_PET_PATH, "Id", tostring(petId))
         return
     end
@@ -1208,7 +1215,7 @@ function XDormConfig.GetDormPetBehaviour(petId, state)
     if not DormPetTemplateIndex[petId] then
         XLog.ErrorTableDataNotFound("XDormConfig.GetDormPetBehaviour", "DormPetTemplateIndex",
                 TABLE_DORM_PET_BEHAVIOUR_PATH, "PetId", tostring(petId))
-        return 
+        return
     end
 
     local template = DormPetTemplateIndex[petId][state]
@@ -1248,9 +1255,9 @@ function XDormConfig.GetClientConfig(id)
     if not DormClientConfig[id] then
         XLog.ErrorTableDataNotFound("XDormConfig.GetClientConfig", "ClientConfig",
                 TABLE_DORM_CLIENT_CONFIG_PATH, "Id", tostring(id))
-        return 
+        return
     end
-    
+
     return DormClientConfig[id]
 end
 

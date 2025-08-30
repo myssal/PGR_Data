@@ -8,8 +8,8 @@ local Vector3 = CS.UnityEngine.Vector3
 local XRpgMakerGameMonsertSentryRoand = XClass(XRpgMakerGameObject, "XRpgMakerGameMonsertSentryRoand")
 
 function XRpgMakerGameMonsertSentryRoand:Load(position, x, y)
-    local modelKey = XRpgMakerGameConfigs.ModelKeyMaps.SentryRoand
-    local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+    local modelKey = XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.SentryRoand
+    local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
 
     local cubeObj = self:GetCubeTransform(y, x)
     self:LoadModel(modelPath, cubeObj, nil, modelKey)      --特效绑定在cube上，绑定在怪物上会被改变旋转角度

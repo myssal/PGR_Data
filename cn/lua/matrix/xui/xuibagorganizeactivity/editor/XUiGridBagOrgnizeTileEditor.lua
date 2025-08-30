@@ -13,7 +13,7 @@ end
 function XUiGridBagOrgnizeTileEditor:Refresh(tileData)
     -- 背包编辑器的瓦片没有走配置，因此这里就写死了
     if self.Btn then
-        self.Btn:SetNameByGroup(0, '背包格子')
+        self.Btn:SetNameByGroup(0, CS.XTextManager.GetLuaText("XUiGridBagOrgnizeTileEditor.lua_16"))
     end
     self._TileId = tileData.Id
 end

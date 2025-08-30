@@ -1,7 +1,7 @@
 local RewardState = XTransfiniteConfigs.RewardState
 
 ---@class XViewModelTransfiniteGift
-local XViewModelTransfiniteGift = XClass(nil, "XViewModelTransfiniteGift")
+local XViewModelTransfiniteGift = XClass(nil, "XViewModelTransfiniteGift", true) -- #203409 增加该类被分类
 
 local TableSort = table.sort
 local TableInsert = table.insert
@@ -73,7 +73,8 @@ function XViewModelTransfiniteGift:UpdateScore()
     local data = self._DataScore
 
     local region = XDataCenter.TransfiniteManager.GetRegion()
-    local scoreArray, reward = region:GetScoreAndRewardArray()
+    -- #203409
+    local scoreArray, reward = self:GetScoreAndRewardArray(region)
     local scoreCurrent = XDataCenter.TransfiniteManager.GetScore()
     local length = #reward
 
@@ -108,6 +109,11 @@ function XViewModelTransfiniteGift:UpdateScore()
     else
         data.StartIndex = nil
     end
+end
+
+function XViewModelTransfiniteGift:GetScoreAndRewardArray(region)
+    local scoreArray, reward = region:GetScoreAndRewardArray()
+    return scoreArray, reward
 end
 
 ---@param region XTransfiniteRegion
@@ -157,7 +163,7 @@ function XViewModelTransfiniteGift:GetChallengeDataList()
         data.ChallengeTaskGroupId = region:GetChallengeTaskGroupId()
     end
 
-    local challengeTaskIdList = XTransfiniteConfigs.GetTaskTaskIds(data.ChallengeTaskGroupId)
+    local challengeTaskIdList = self:GetChallengeTaskIdList(data)
     local taskDataList = XDataCenter.TaskManager.GetTaskIdListData(challengeTaskIdList, false)
     local challengeDataList = {}
 
@@ -189,6 +195,11 @@ function XViewModelTransfiniteGift:GetChallengeDataList()
     end
 
     return challengeDataList
+end
+
+function XViewModelTransfiniteGift:GetChallengeTaskIdList(data)
+    local challengeTaskIdList = XTransfiniteConfigs.GetTaskTaskIds(data.ChallengeTaskGroupId)
+    return challengeTaskIdList
 end
 --endregion challenge
 

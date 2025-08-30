@@ -39,6 +39,10 @@ function XGoldenMinerComponentMove:GetCurDirection()
     end
     return self.CurDirection >= 0 and 1 or -1
 end
+
+function XGoldenMinerComponentMove:GetCurPos()
+    return self._CurPos
+end
 --endregion
 
 --region Setter
@@ -77,7 +81,7 @@ function XGoldenMinerComponentMove:UpdateMove(deltaTime)
             self:ChangeMoveDirection()
         end
         self._CurPos:Update(x, self._CurPos.y, self._CurPos.z)
-        self._ParentEntity:GetTransform().localPosition = self._CurPos
+        self._ParentEntity:GetTransform():SetLocalPosition(self._CurPos.x, self._CurPos.y, self._CurPos.z)
     elseif self:IsVertical() then
         local y = self._CurPos.y + deltaTime * self.CurDirection * self.Speed
         if y < self.MoveMinLimit then
@@ -88,7 +92,7 @@ function XGoldenMinerComponentMove:UpdateMove(deltaTime)
             self:ChangeMoveDirection()
         end
         self._CurPos:Update(self._CurPos.x, y, self._CurPos.z)
-        self._ParentEntity:GetTransform().localPosition = self._CurPos
+        self._ParentEntity:GetTransform():SetLocalPosition(self._CurPos.x, self._CurPos.y, self._CurPos.z)
     elseif self:IsCircle() then
         self._ParentEntity:GetTransform():RotateAround(self.CircleMovePoint, self._CircleAxis, self.Speed * deltaTime)
     end

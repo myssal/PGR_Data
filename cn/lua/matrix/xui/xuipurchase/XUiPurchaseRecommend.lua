@@ -172,7 +172,7 @@ function XUiPurchaseRecommend:Ctor(ui, rootUi, skipFunc)
     self.GridPanel.gameObject:SetActiveEx(false)
 end
 
-function XUiPurchaseRecommend:OnRefresh(uiType)
+function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
     if self.RootUi.TabGroup.CurSelectId == self.RootUi:GetTabIndexByTabType(XPurchaseConfigs.TabsConfig.Recommend) then
         self:ShowPanel()
     end
@@ -186,6 +186,17 @@ function XUiPurchaseRecommend:OnRefresh(uiType)
         self.SkipFunc(XPurchaseConfigs.TabsConfig.LB)
         return
     end
+
+    -- 选中子页签
+    if childTabIndex then
+        for i = 1, #self.Recommends do
+            if self.Recommends[i]:GetPurchasePackageId() == childTabIndex then
+                self.CurrentIndex = i
+                break
+            end
+        end
+    end
+    
     local btns = {}
     XUiHelper.RefreshCustomizedList(self.PanelTabGroup.transform, self.BtnTab, #self.Recommends, function(index, child)
         local button = child:GetComponent("XUiButton")

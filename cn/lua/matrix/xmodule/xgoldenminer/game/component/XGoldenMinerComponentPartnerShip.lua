@@ -53,7 +53,8 @@ function XGoldenMinerComponentPartnerShip:OnInit()
     self._CurMoveTargetPos = nil
     ---@type XGoldenMinerEntityStone
     self._CurTarget = nil
-    self._CurGrabDeltaScale = 0
+    self._RealTargetList = {}
+    self._RealTargetScaleGrabDeltaScales = {}
     ---@type XLuaVector3
     self._CacheVector3 = XLuaVector3.New()
 end
@@ -86,7 +87,8 @@ function XGoldenMinerComponentPartnerShip:OnRelease()
     self._CurMoveDirection = nil
     self._CurMoveTargetPos = nil
     self._CurTarget = nil
-    self._CurGrabDeltaScale = nil
+    self._RealTargetList = nil
+    self._RealTargetScaleGrabDeltaScales = nil
     self._CacheVector3 = nil
 end
 --endregion
@@ -98,6 +100,10 @@ end
 
 function XGoldenMinerComponentPartnerShip:GetCurAimTarget()
     return self._CurTarget
+end
+
+function XGoldenMinerComponentPartnerShip:GetRealTargets()
+    return self._RealTargetList
 end
 
 function XGoldenMinerComponentPartnerShip:GetRangeX()
@@ -244,9 +250,8 @@ function XGoldenMinerComponentPartnerShip:ChangeGrab()
     if not self._CurTarget then
         return
     end
-    local targetScale = self._CurTarget:GetTransform().localScale.x
-    self._CurGrabDeltaScale = targetScale - self._GrabFinalScalePercent * targetScale
     self._CurTarget:SetStatus(XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.SHIP_CATCHING)
+    self:RefreshRealTargetList()
 end
 
 function XGoldenMinerComponentPartnerShip:ChangeBack(isClearIdleCd)
@@ -296,8 +301,8 @@ function XGoldenMinerComponentPartnerShip:UpdateAim()
     if not self._CurTarget then
         return
     end
-    self.Aim.position = self._CurTarget:GetTransform().position
-    self.Aim.sizeDelta = self._CurTarget:GetTransform().sizeDelta * math.abs(self._CurTarget:GetTransform().localScale.x)
+    
+    self._OwnControl.CalculateHelper:SetCurTargetTransformToAim(self.Aim, self._CurTarget:GetTransform())
 
     if self.AimOff then
         local a = math.floor(self._CurAimPassTime / self._AimShinyCD)
@@ -330,7 +335,7 @@ function XGoldenMinerComponentPartnerShip:UpdateMovePos(deltaTime)
         return
     end
     self._CurMoveShipPos:AddVector(self._CurMoveDirection * deltaTime * self._MoveSpeed)
-    self.Transform.anchoredPosition = self._CurMoveShipPos
+    self.Transform:SetAnchoedPosition(self._CurMoveShipPos.x, self._CurMoveShipPos.y)
     self._CurMoveTime = self._CurMoveTime - deltaTime
     self._CurAimPassTime = self._CurAimPassTime + deltaTime
 end
@@ -341,15 +346,35 @@ function XGoldenMinerComponentPartnerShip:DownGrabTime(deltaTime)
     if self._CurGrabTime <= 0 then
         return
     end
-    local deltaScale = (self._CurGrabDeltaScale / self._GrabTime) * deltaTime
-    self._CacheVector3:Update(deltaScale, math.abs(deltaScale), math.abs(deltaScale))
     
-    local targetCurScale = self._CurTarget:GetTransform().localScale - self._CacheVector3
+    if not XTool.IsTableEmpty(self._RealTargetList) then
+        for i, v in pairs(self._RealTargetList) do
+            local grabDeltaScale = self._RealTargetScaleGrabDeltaScales[i] or 0
+            local deltaScale = (grabDeltaScale / self._GrabTime) * deltaTime
+            self._CacheVector3:Update(deltaScale, math.abs(deltaScale), math.abs(deltaScale))
+            
+            self:_UpdateGrabTargetSize(v)
+        end
+    end
+
     local deltaPos = (self._TargetPosYOffset / self._GrabTime / 2) * deltaTime
-    local targetCurPos = self._CurTarget:GetTransform().anchoredPosition + Vector2(0, deltaPos)
     self._CurGrabTime = self._CurGrabTime - deltaTime
-    self._CurTarget:GetTransform().localScale = targetCurScale
-    self._CurTarget:GetTransform().anchoredPosition = targetCurPos
+    
+    self:_UpdateGrabTargetAnchoredPosition(self._CurTarget, deltaPos)
+end
+
+function XGoldenMinerComponentPartnerShip:_UpdateGrabTargetSize(entity)
+    local targetTrans = entity:GetTransform()
+
+    local oldScaleX, oldScaleY, oldScaleZ = targetTrans:GetLocalScale()
+    targetTrans:SetLocalScale(oldScaleX - self._CacheVector3.x, oldScaleY - self._CacheVector3.y, oldScaleZ - self._CacheVector3.z)
+end
+
+function XGoldenMinerComponentPartnerShip:_UpdateGrabTargetAnchoredPosition(entity, deltaPos)
+    local targetTrans = entity:GetTransform()
+    
+    local oldAnchoredPosX, oldAnchoredPosY = targetTrans:GetAnchoredPosition()
+    targetTrans:SetAnchoedPosition(oldAnchoredPosX, oldAnchoredPosY + deltaPos)
 end
 
 function XGoldenMinerComponentPartnerShip:GrabbingTarget()
@@ -361,6 +386,51 @@ function XGoldenMinerComponentPartnerShip:GrabbingTarget()
         return
     end
     self._CurTarget:SetStatus(status)
+    self:RefreshRealTargetList()
+end
+
+-- 获取实际抓取的资源（链接）
+function XGoldenMinerComponentPartnerShip:RefreshRealTargetList()
+    for i = #self._RealTargetList, 1, -1 do
+        self._RealTargetList[i] = nil
+    end
+
+    local linkCom = self._CurTarget:GetComponentLink()
+
+    if linkCom then
+        local linkList = linkCom:GetLinkList()
+
+        for i, v in pairs(linkList) do
+            local entity = self._OwnControl:GetStoneEntityByUid(v)
+
+            if entity then
+                table.insert(self._RealTargetList, entity)
+
+                local targetScaleX = entity:GetTransform():GetLocalScale()
+                self._RealTargetScaleGrabDeltaScales[i] = targetScaleX - self._GrabFinalScalePercent * targetScaleX
+            end
+        end
+        
+        local duration = math.max(self._GrabTime, self._OwnControl._MainControl:GetClientLinkStoneMoveTime())
+        
+        -- 所有链接的资源向目标资源移动
+        for i, v in pairs(self._RealTargetList) do
+            if v ~= self._CurTarget then
+                local tmpLinkCom = v:GetComponentLink()
+
+                if tmpLinkCom then
+                    tmpLinkCom:StartMoveToFollowerPos(self._CurTarget:GetTransform(), duration)
+                end
+            end
+        end
+
+        linkCom:StartUpdateLinkRope(duration)
+    else
+        local targetScaleX = self._CurTarget:GetTransform():GetLocalScale()
+        self._RealTargetScaleGrabDeltaScales[1] = targetScaleX - self._GrabFinalScalePercent * targetScaleX
+        self._RealTargetList[1] = self._CurTarget
+    end
+    
 end
 
 function XGoldenMinerComponentPartnerShip:GrabTarget()

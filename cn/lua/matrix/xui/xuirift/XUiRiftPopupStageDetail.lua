@@ -5,9 +5,7 @@ local XUiRiftPopupStageDetail = XLuaUiManager.Register(XLuaUi, "UiRiftPopupStage
 
 function XUiRiftPopupStageDetail:OnAwake()
     self:RegisterClickEvent(self.BtnClose, self.Close)
-    self:RegisterClickEvent(self.BtnBuff, self.OnBtnBuffClick)
     self:RegisterClickEvent(self.BtnBattle, self.OnBtnBattleClick)
-    self:RegisterClickEvent(self.BtnBubbleClose, self.OnHideBubble)
     self:RegisterClickEvent(self.BtnStory, self.OnBtnStoryClick)
     self:RegisterClickEvent(self.BtnBubbleClose, self.OnClosePluginTip)
 end
@@ -31,8 +29,6 @@ function XUiRiftPopupStageDetail:OnStart(fightLayer, isLuck)
 end
 
 function XUiRiftPopupStageDetail:OnEnable()
-    self:OnHideBubble()
-
     local config = self._FightLayer:GetConfig()
     self.TxtTitle.text = self._IsLuck and self._Control:GetLuckName() or config.Name
     self.TxtDetail.text = self._IsLuck and self._Control:GetLuckDesc() or config.Desc
@@ -90,8 +86,8 @@ function XUiRiftPopupStageDetail:OnEnable()
     end
     -- buff
     local chapter = self._FightLayer:GetParent():GetConfig()
-    self.BtnBuff:SetNameByGroup(0, chapter.BuffName)
-    self.BtnBuff:SetSprite(chapter.BuffIcon)
+    self.TxtBuff.text = chapter.BuffName
+    self:SetUiSprite(self.ImgBuff, chapter.BuffIcon)
     self.TxtBuffDetail.text = chapter.BuffDesc
     -- 进度/通关时间
     local isShowBar = false
@@ -109,7 +105,6 @@ function XUiRiftPopupStageDetail:OnEnable()
             numStr = string.format("%s%%", math.floor(progress * 100))
         end
     end
-    self.ImgBg01.gameObject:SetActiveEx(isShowBar and not self._IsLuck)
     self.PanelBar.gameObject:SetActiveEx(isShowBar and numStr and not self._IsLuck)
     if timeStr and not self._IsLuck then
         self.TxtTime.gameObject:SetActiveEx(true)
@@ -159,18 +154,6 @@ function XUiRiftPopupStageDetail:OnBtnBattleClick()
             XLuaUiManager.Open("UiBattleRoleRoom", stageId, teamData, require("XUi/XUiRift/Grid/XUiRiftBattleRoomProxy"))
         end)
     end
-end
-
-function XUiRiftPopupStageDetail:OnBtnBuffClick()
-    if self.BubbleBuffDetail.gameObject.activeSelf then
-        self:OnHideBubble()
-    else
-        self.BubbleBuffDetail.gameObject:SetActiveEx(true)
-    end
-end
-
-function XUiRiftPopupStageDetail:OnHideBubble()
-    self.BubbleBuffDetail.gameObject:SetActiveEx(false)
 end
 
 function XUiRiftPopupStageDetail:OnBtnStoryClick()

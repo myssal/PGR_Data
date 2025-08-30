@@ -351,6 +351,33 @@ function XUiFashion:OnSelectCharacter(characterId)
     self:RefreshRandomFashionBtns()
 end
 
+--是否显示黑岩名字组件
+function XUiFashion:UpdateBlackName(curFashionId)
+    if not XOverseaManager.IsKRRegion() then 
+        return
+    end
+    local _curFashionId 
+    if curFashionId then
+        _curFashionId = curFashionId
+    else
+        _curFashionId = self.CurFashionId
+    end
+    if self.TxtFashionName2 then
+        --黑岩特殊处理
+        if _curFashionId == 6003501 then
+            self.TxtFashionName.gameObject:SetActiveEx(false)
+            self.TxtFashionName2.gameObject:SetActiveEx(true)
+            --self.TxtFashionName2.text = template.Name
+        else
+            self.TxtFashionName2.gameObject:SetActiveEx(false)
+            self.TxtFashionName.gameObject:SetActiveEx(true)
+        end
+    else
+        XLog.Error("UiFashionV2P6预设缺失TxtFashionName2组件!")
+    end
+end
+
+
 function XUiFashion:UpdateFashionList(selectDressing, doNotReset)
     if LastSelectedTabIndex ~= BtnTabIndex.Character then
         return
@@ -483,7 +510,7 @@ function XUiFashion:UpdateCharacterModel()
         self.PanelDrag:GetComponent("XDrag").Target = model.transform
         self:ShowImgEffectHuanren(characterId)
     end
-
+    self:UpdateBlackName()
     if self.CurFashionId then
         local template = XDataCenter.FashionManager.GetFashionTemplate(self.CurFashionId)
         characterId = template.CharacterId
@@ -570,6 +597,7 @@ function XUiFashion:UpdateButtonState()
 
     local template = XDataCenter.FashionManager.GetFashionTemplate(self.CurFashionId)
     self.TxtFashionName.text = template.Name
+    self:UpdateBlackName()
 end
 
 function XUiFashion:OnSelectWeaponFashion(weaponFashionId, grid)
@@ -610,6 +638,8 @@ function XUiFashion:OnSwitchWeaponViewType(doNotReset)
 
     self:UpdateCamera(CameraIndex.Normal)
     self:ResetCameraForOnlyWeapon()
+
+    self:UpdateBlackName(self.CurWeaponFashionId)
 end
 
 function XUiFashion:UpdateFashionIntro(fashionId)
@@ -791,6 +821,7 @@ function XUiFashion:UpdateHeadPortraitButtonState()
         str = CS.XTextManager.GetText("FashionHeadLiberation")
     end
     self.TxtFashionName.text = str
+    self:UpdateBlackName()
 end
 
 function XUiFashion:AutoAddListener()

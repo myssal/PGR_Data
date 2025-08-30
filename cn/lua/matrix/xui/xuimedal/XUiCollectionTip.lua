@@ -89,7 +89,7 @@ function XUiCollectionTip:SetDetailData()
                         local dataTxt
                         if serverKey == XMedalConfigs.ExpandInfoType.CreateTime then
                             -- 首次进入游戏的时间
-                            dataTxt = XTime.TimestampToLocalDateTimeString(data, "yyyy年MM月dd日")
+                            dataTxt = XTime.TimestampToLocalDateTimeString(data, CS.XTextManager.GetLuaText("XUiCollectionTip.lua_92"))
                         elseif serverKey == XMedalConfigs.ExpandInfoType.MaxAssignChapter then
                             -- 边界公约最高通关章节
                             local chapterData = XDataCenter.FubenAssignManager.GetChapterDataById(data)

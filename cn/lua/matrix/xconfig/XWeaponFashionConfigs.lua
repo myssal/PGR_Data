@@ -5,12 +5,13 @@ local ParseToTimestamp = XTime.ParseToTimestamp
 local TABLE_WEAPON_FASHION_PATH = "Share/WeaponFashion/WeaponFashion.tab"
 local TABLE_WEAPON_FASHION_RES_PATH = "Client/WeaponFashion/WeaponFashionRes.tab"
 
-local WeaponFashionTemplates = {}
-local WeaponFashionResTemplates = {}
+local WeaponFashionTemplates = nil
+local WeaponFashionResTemplates = nil
 
 local EquipTypeToWeaponFashionIdDic = {}
 
 local function GetConfig(fashionId)
+    XWeaponFashionConfigs.InitWeaponFashionTemplate()
     local tab = WeaponFashionTemplates[fashionId]
     if tab == nil then
         XLog.ErrorTableDataNotFound("XWeaponFashionConfigs.GetConfig", "WeaponFashion", TABLE_WEAPON_FASHION_PATH, "Id", tostring(fashionId))
@@ -23,6 +24,7 @@ local function GetResConfig(fashionId)
         return {}
     end
 
+    XWeaponFashionConfigs.InitWeaponFashionResTemplate()
     local tab = WeaponFashionResTemplates[fashionId]
     if tab == nil then
         XLog.ErrorTableDataNotFound("XWeaponFashionConfigs.GetResConfig", "WeaponFashionRes", TABLE_WEAPON_FASHION_RES_PATH, "Id", tostring(fashionId))
@@ -35,14 +37,24 @@ XWeaponFashionConfigs = XWeaponFashionConfigs or {}
 XWeaponFashionConfigs.DefaultWeaponFashionId = 0
 
 function XWeaponFashionConfigs.Init()
-    WeaponFashionTemplates = XTableManager.ReadByIntKey(TABLE_WEAPON_FASHION_PATH, XTable.XTableWeaponFashion, "Id")
-    WeaponFashionResTemplates = XTableManager.ReadByIntKey(TABLE_WEAPON_FASHION_RES_PATH, XTable.XTableWeaponFashionRes, "Id")
+    
+end
 
-    for _, config in pairs(WeaponFashionTemplates) do
-        local equipType = config.EquipType
-        local fashionIds = EquipTypeToWeaponFashionIdDic[equipType] or {}
-        tableInsert(fashionIds, config.Id)
-        EquipTypeToWeaponFashionIdDic[equipType] = fashionIds
+function XWeaponFashionConfigs.InitWeaponFashionTemplate()
+    if not WeaponFashionTemplates then
+        WeaponFashionTemplates = XTableManager.ReadByIntKey(TABLE_WEAPON_FASHION_PATH, XTable.XTableWeaponFashion, "Id")
+        for _, config in pairs(WeaponFashionTemplates) do
+            local equipType = config.EquipType
+            local fashionIds = EquipTypeToWeaponFashionIdDic[equipType] or {}
+            tableInsert(fashionIds, config.Id)
+            EquipTypeToWeaponFashionIdDic[equipType] = fashionIds
+        end
+    end
+end
+
+function XWeaponFashionConfigs.InitWeaponFashionResTemplate()
+    if not WeaponFashionResTemplates then
+        WeaponFashionResTemplates = XTableManager.ReadByIntKey(TABLE_WEAPON_FASHION_RES_PATH, XTable.XTableWeaponFashionRes, "Id")
     end
 end
 
@@ -55,6 +67,7 @@ function XWeaponFashionConfigs.GetFashionEquipType(fashionId)
 end
 
 function XWeaponFashionConfigs.GetWeaponFashionIdsByEquipType(equipType)
+    XWeaponFashionConfigs.InitWeaponFashionTemplate()
     return EquipTypeToWeaponFashionIdDic[equipType] or {}
 end
 
@@ -120,11 +133,14 @@ function XWeaponFashionConfigs.GetWeaponResonanceModelIds(fashionId, resonanceCo
 end
 
 function XWeaponFashionConfigs.GetWeaponFashionResTemplates()
+    XWeaponFashionConfigs.InitWeaponFashionResTemplate()
     return XTool.Clone(WeaponFashionResTemplates)
 end
 
 -- 获取有效时间内的全部武器涂装
 function XWeaponFashionConfigs.GetWeaponFashionResTemplatesInTime()
+    XWeaponFashionConfigs.InitWeaponFashionResTemplate()
+    XWeaponFashionConfigs.InitWeaponFashionTemplate()
     local weaponFashionResTemplates = XTool.Clone(WeaponFashionResTemplates)
     local weaponFashionResTemplateDic = {}
     local timeStamp = XTime.GetServerNowTimestamp()
@@ -155,6 +171,7 @@ function XWeaponFashionConfigs.GetWeaponFashionResTemplatesInTime()
 end
 
 function XWeaponFashionConfigs.IsWeaponFashion(fashionId)
+    XWeaponFashionConfigs.InitWeaponFashionTemplate()
     local tab = WeaponFashionTemplates[fashionId]
     return tab ~= nil
 end

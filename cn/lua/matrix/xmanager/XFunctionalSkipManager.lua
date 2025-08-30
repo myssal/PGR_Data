@@ -335,9 +335,11 @@ XFunctionalSkipManagerCreator = function()
         end
 
         XDataCenter.FubenNewCharActivityManager.SetCurOpenActivityId(actId)
+        -- #203409 此处兼容跨版本代码, 原本逻辑是 return uiName
+        uiName = XFunctionalSkipManager.GetUiName(actId, uiName)
         XLuaUiManager.Open(uiName, actId, isOpenSkin)
     end
-    
+
     -- 3.0前往新角色试玩玩法（与旧版走不同的功能逻辑）
     function XFunctionalSkipManager.OnOpenCharacterFileFubenActivity(list)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.NewCharAct) then
@@ -472,17 +474,26 @@ XFunctionalSkipManagerCreator = function()
         -- 活动时间限制
         if not XDataCenter.FubenActivityBossSingleManager.IsOpen() then
             XUiManager.TipText("RougeLikeNotInActivityTime")
+
+            -- #203409 原本无执行逻辑, 跨版本结束后可以删除
+            XFunctionalSkipManager.OnActivityBossSingleNotOpen()
+
             return false
         end
 
+        -- #203409 原本无执行逻辑, 跨版本结束后可以删除
+        XFunctionalSkipManager.OnActivityBossSingleOpen()
+
+        return XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
+    end
+
+    function XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
         if (not param1) or (not XDataCenter.FubenActivityBossSingleManager.IsChallengeUnlock(param1)) then
             return XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
         else
             XLuaUiManager.Open("UiActivityBossSingleDetail", param1)
             return true
         end
-        
-        return false
     end
 
     -- 前往纷争战区
@@ -1153,8 +1164,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        --XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
-        XUiManager.TipText("ActivityMainLineEnd")
+        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================
@@ -1700,7 +1710,7 @@ XFunctionalSkipManagerCreator = function()
     end
 
     function XFunctionalSkipManager.SkipToPokerGuessing2()
-        XMVCA.XPokerGuessing2:OpenMain()
+        return XMVCA.XPokerGuessing2:OpenMain()
     end
 
     -- 本我回廊（角色塔）
@@ -2240,6 +2250,15 @@ XFunctionalSkipManagerCreator = function()
         XDataCenter.PurchaseManager.SetWeekCardContinueBuyCache()
     end
     
+    function XFunctionalSkipManager.SkipToUiPurchase(skipData)
+        local tab = skipData.CustomParams[1]
+        local childTab = skipData.CustomParams[2]
+        -- 在推荐页签里，这不等于index，是id
+        XLuaUiManager.Open("UiPurchase", tab, nil, childTab, {
+            Operation = XPurchaseConfigs.UiPurchaseCustomOperation.OpenPurchaseTab,
+        })
+    end
+    
     -- 肉鸽4
     function XFunctionalSkipManager:SkipToTheatre4()
         ---@type XTheatre4Agency
@@ -2398,5 +2417,90 @@ XFunctionalSkipManagerCreator = function()
 
     --endregion
     
+    -- region CrossVersion 因为不是"实例"方法, 因此没有被覆写成功 #203409
+
+    function XFunctionalSkipManager.GetUiName(actId, uiName)
+        if not XDataCenter.CrossVersionManager.GetEnable() then
+            return uiName
+        end
+        local teachActIds
+        local ids = CS.XGame.ClientConfig:GetString("TeachActIds")
+        if ids then
+            teachActIds = string.Split(ids, "-")
+        end
+    
+        for k, v in pairs(teachActIds) do
+            if actId == tonumber(v) then
+                local teachConfig = XFubenNewCharConfig.GetDataById(actId)
+                if teachConfig then
+                    uiName = teachConfig.UiName
+                end
+                break
+            end
+        end
+        return uiName
+    end
+    
+    function XFunctionalSkipManager.OnActivityBossSingleNotOpen()
+        if not XDataCenter.CrossVersionManager.GetEnable() then
+            return
+        end
+        --设置回去防止打开活动面板报错
+        if curSectionId ~= 0 then
+            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(curSectionId)
+            if sectionCfg and sectionCfg.ActivityId then
+                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(curSectionId)
+                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
+            end
+        end
+    end
+    
+    function XFunctionalSkipManager.OnActivityBossSingleOpen()
+        if not XDataCenter.CrossVersionManager.GetEnable() then
+            return
+        end
+        local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
+        if param1 and curSectionId ~= 0 then
+            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))
+            if sectionCfg and sectionCfg.ActivityId then
+                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(tonumber(param1))
+                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
+            end
+        end
+    end
+    
+    function XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
+        XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
+    end
+    
+    -- 跳转战斗通行证Comb
+    function XFunctionalSkipManager.OnOpenPassportComb()
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.PassportComb) then
+            return
+        end
+        XMVCA.XPassportComb:OpenMainUi()
+    end
+    
+    function XFunctionalSkipManager.OpenLotto(list)
+        local groupId = tonumber(list.CustomParams[1])
+        XDataCenter.LottoManager.OpenLottoUi(groupId)
+    end
+    
+    function XFunctionalSkipManager.OnOpenSlotmachine(list)
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
+        XDataCenter.SlotMachineManager.OpenSlotMachine(param1)
+    end
+    
+    --合版本累消
+    function XFunctionalSkipManager.SkipToUiAccumulateExpendMainComb()
+        XMVCA.XAccumulateExpendL:OnEnterActivity()
+    end
+    
+    function XFunctionalSkipManager.SkipToVersionGiftMainUi(list)
+        XMVCA.XVersionGift:OpenUiMain()
+    end
+
+    -- endregion
+
     return XFunctionalSkipManager
 end

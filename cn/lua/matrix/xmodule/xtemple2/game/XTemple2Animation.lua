@@ -132,7 +132,7 @@ function XTemple2Animation:Update(ui, game)
                 end
                 if self._State == STATE.WALK then
                     XLog.Error("跳过剧情:", animationData.StoryId)
-                    XUiManager.TipText("跳过剧情")
+                    XUiManager.TipText(CS.XTextManager.GetLuaText("XTemple2Animation.lua_135"))
                 end
 
             elseif animationData.Type == BUBBLE_TYPE.EMOJI then

@@ -23,7 +23,7 @@ function XRestaurantPerformer:GetObjName()
 end
 
 function XRestaurantPerformer:GetCharTypeDesc()
-    return "演员NPC"
+    return CS.XTextManager.GetLuaText("XRestaurantPerformer.lua_26")
 end
 
 function XRestaurantPerformer:GetBehaviourId(state)

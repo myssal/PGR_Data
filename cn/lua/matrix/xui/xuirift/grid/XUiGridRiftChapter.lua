@@ -1,63 +1,65 @@
 ---@class XUiGridRiftChapter : XUiNode 章节节点
----@field Parent XUiRiftMain
+---@field Parent XUiRiftChooseChapter
 ---@field _Control XRiftControl
 local XUiGridRiftChapter = XClass(XUiNode, "XUiGridRiftChapter")
 
 ---@param chapter XRiftChapter
 ---@param lastChapter XRiftChapter
-function XUiGridRiftChapter:OnStart(chapter, lastChapter)
+function XUiGridRiftChapter:OnStart(chapter, lastChapter, index)
+    self._Index = index
     self._Chapter = chapter
     self._LastChapter = lastChapter
-    self.BtnRiftGrid.CallBack = handler(self, self.TryEnterChapter)
+    self.GridChapter.CallBack = handler(self, self.TryEnterChapter)
+    self.Transform.localPosition = CS.UnityEngine.Vector3.zero
 end
 
 function XUiGridRiftChapter:OnEnable()
-    self.Effect.gameObject:SetActiveEx(false)
+    
 end
 
 function XUiGridRiftChapter:OnDestroy()
     self:RemoveTimer()
-    self:RemoveEffectTimer()
 end
 
 function XUiGridRiftChapter:Update()
     self:RemoveTimer()
     self._IsLock = self._Chapter:CheckHasLock()
     if self._IsLock then
-        self.BtnRiftGrid:SetButtonState(CS.UiButtonState.Disable)
+        self.GridChapter:SetButtonState(CS.UiButtonState.Disable)
+        if self._Chapter:IsEndless() then
+            return
+        end
         if self._Chapter:CheckTimeLock() then
             self:CountDown()
             self._Timer = XScheduleManager.ScheduleForever(function()
                 self:CountDown()
             end, XScheduleManager.SECOND, 0)
         elseif self._Chapter:CheckPreLock() then
-            self.BtnRiftGrid:SetNameByGroup(2, XUiHelper.GetText("RiftChapterPreLimit"))
+            self.GridChapter:SetNameByGroup(2, XUiHelper.GetText("RiftChapterPreLimit"))
         end
-        if self._LastChapter and self._LastChapter:CheckHasLock() then
-            self.NextChapter.gameObject:SetActiveEx(false)
-            self.Empty.gameObject:SetActiveEx(true)
-        else
-            self.NextChapter.gameObject:SetActiveEx(true)
-            self.Empty.gameObject:SetActiveEx(false)
-        end
+        self.GridChapter:SetNameByGroup(3, string.format("0%s", self._Index))
     else
         local isPassed = self._Chapter:CheckHasPassed()
         local passTime = self._Chapter:GetPassTime()
-        self.BtnRiftGrid:SetButtonState(CS.UiButtonState.Normal)
-        self.BtnRiftGrid:SetNameByGroup(0, self:GetChapterIndexStr())
-        self.BtnRiftGrid:SetSpriteVisible(isPassed)
-        if XTool.IsNumberValid(passTime) or isPassed then
-            self.PanelTime1.gameObject:SetActiveEx(true)
-            self.PanelTime2.gameObject:SetActiveEx(true)
-            self.BtnRiftGrid:SetNameByGroup(1, XUiHelper.GetTime(passTime, XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND))
+        self.GridChapter:SetButtonState(CS.UiButtonState.Normal)
+        self.GridChapter:SetNameByGroup(0, self._Chapter:GetConfig().Name)
+        if isPassed then
+            if self._Chapter:IsEndless() then
+                self.GridChapter:SetNameByGroup(1, self._Chapter:GetScore())
+            else
+                self.GridChapter:SetNameByGroup(1, XUiHelper.GetTime(passTime, XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND))
+            end
         else
-            self.PanelTime1.gameObject:SetActiveEx(false)
-            self.PanelTime2.gameObject:SetActiveEx(false)
+            self.GridChapter:SetNameByGroup(1, XUiHelper.GetText("RiftChapterUnpass"))
         end
+        if self.Imgcomplete then
+            self.Imgcomplete.gameObject:SetActiveEx(isPassed)
+        end
+        self.GridChapter:SetNameByGroup(3, XUiHelper.GetText("RiftChapterTimeDesc", self._Index))
     end
-    self.Parent:SetModelActive(self._UnlockLine, not self._IsLock)
-    self.Parent:SetModelActive(self._LockLine, self._IsLock)
-    self.ImgSelect.gameObject:SetActiveEx(self._Control:GetNewUnlockChapterId() == self._Chapter:GetChapterId())
+    self.GridChapter:SetSprite(self._Chapter:GetConfig().Icon)
+    self.ImgNow.gameObject:SetActiveEx(self._Control:GetNewUnlockChapterId() == self._Chapter:GetChapterId())
+    self:RefreshRedPoint()
 end
 
 function XUiGridRiftChapter:CountDown()
@@ -65,7 +67,7 @@ function XUiGridRiftChapter:CountDown()
     if leftTime > 0 then
         local leftTimeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.PIVOT_COMBAT)
         local leftText = XUiHelper.GetText("RiftCountDownDesc4", leftTimeStr)
-        self.BtnRiftGrid:SetNameByGroup(2, leftText)
+        self.GridChapter:SetNameByGroup(2, leftText)
     else
         self:Update()
     end
@@ -78,16 +80,9 @@ function XUiGridRiftChapter:RemoveTimer()
     end
 end
 
-function XUiGridRiftChapter:RemoveEffectTimer()
-    if self._EffectTimer then
-        XScheduleManager.UnSchedule(self._EffectTimer)
-        self._EffectTimer = nil
-    end
-end
-
 function XUiGridRiftChapter:RefreshRedPoint()
     local isRed = self._Chapter:CheckRedPoint()
-    self.BtnRiftGrid:ShowReddot(isRed)
+    self.GridChapter:ShowReddot(isRed)
 end
 
 function XUiGridRiftChapter:TryEnterChapter()
@@ -102,30 +97,9 @@ function XUiGridRiftChapter:TryEnterChapter()
         end
     end
 
-    self.Parent:PlayOpenTipTween(self._Chapter:GetChapterId())
-
-    --self._EffectTimer = XScheduleManager.ScheduleOnce(function()
-    self.Effect.gameObject:SetActiveEx(true)
-    XLuaUiManager.OpenWithCloseCallback("UiRiftPopupChapterDetail", function()
-        self.Parent:PlayCloseTipTween()
-        self.Effect.gameObject:SetActiveEx(false)
-        self:RemoveEffectTimer()
-    end, self._Chapter)
-    --end, 250)
+    XLuaUiManager.Open("UiRiftPopupChapterDetail", self._Chapter)
     self._Chapter:SaveFirstEnter()
-end
-
-function XUiGridRiftChapter:GetChapterIndexStr()
-    local id = self._Chapter:GetChapterId()
-    if id < 10 then
-        return string.format("0%s", id)
-    end
-    return id
-end
-
-function XUiGridRiftChapter:SetModelLine(unlockLine, lockLine)
-    self._UnlockLine = unlockLine
-    self._LockLine = lockLine
+    self:RefreshRedPoint()
 end
 
 return XUiGridRiftChapter

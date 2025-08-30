@@ -20,6 +20,8 @@ local TableKey = {
     GoldenMinerUpgrade = { },
     --- Game 海克斯
     GoldenMinerHex = { },
+    --- Game 海克斯等级方案
+    GoldenMinerHexUpgrade = { },
 
     --- 客户端参数配置
     GoldenMinerClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", ReadFunc = XConfigUtil.ReadType.String },
@@ -50,14 +52,6 @@ local TableKey = {
 }
 
 function XGoldenMinerModel:OnInit()
-    local XGoldenMinerDataDb = require("XModule/XGoldenMiner/Data/Server/XGoldenMinerDataDb")
-    ---@type XGoldenMinerDataDb
-    self._MineDb = XGoldenMinerDataDb.New(self)
-    
-    local XGoldenMinerRankData = require("XModule/XGoldenMiner/Data/Rank/XGoldenMinerRankDb")
-    ---@type XGoldenMinerRankDb
-    self._RankDb = XGoldenMinerRankData.New()
-    
     self._ConfigUtil:InitConfigByTableKey("GoldenMiner", TableKey)
     self._IsCheckAutoInGameTips = true
     self._ShopGridLockCount = nil
@@ -108,12 +102,22 @@ end
 
 --region Data - MineDb
 function XGoldenMinerModel:GetMineDb()
+    if not self._MineDb then
+        ---@type XGoldenMinerDataDb
+        self._MineDb = require("XModule/XGoldenMiner/Data/Server/XGoldenMinerDataDb").New(self)
+    end
+    
     return self._MineDb
 end
 --endregion
 
 --region Data - RankData
 function XGoldenMinerModel:GetRankDb()
+    if not self._RankDb then
+        ---@type XGoldenMinerRankDb
+        self._RankDb = require("XModule/XGoldenMiner/Data/Rank/XGoldenMinerRankDb").New()
+    end
+    
     return self._RankDb
 end
 --endregion
@@ -121,7 +125,7 @@ end
 --region Data - Activity
 function XGoldenMinerModel:GetCurActivityId()
     local result = 0
-    result = self._MineDb:GetActivityId()
+    result = self._MineDb and self._MineDb:GetActivityId() or 0
     return result
 end
 
@@ -359,12 +363,40 @@ function XGoldenMinerModel:GetClientCfgValue(key, index)
     return cfg and cfg.Values[index]
 end
 
+function XGoldenMinerModel:GetClientCfgText(key, index)
+    local cfg = self:GetClientConfigCfg(key)
+    index = index or 1
+    if cfg  then
+        return cfg.Values[index] or ''
+    end
+    
+    return ''
+end
+
 function XGoldenMinerModel:GetClientCfgNumberValue(key, index)
     local value = self:GetClientCfgValue(key, index)
     if value then 
         return tonumber(value)
     end
     return 0
+end
+
+function XGoldenMinerModel:GetClientCfgNumberArrayValue(key)
+    local cfg = self:GetClientConfigCfg(key)
+
+    if cfg and not XTool.IsTableEmpty(cfg.Values) then
+        local numberArray = {}
+
+        for i, v in ipairs(cfg.Values) do
+            if string.IsFloatNumber(v) then
+                table.insert(numberArray, tonumber(v))
+            else
+                table.insert(numberArray, 0)
+            end
+        end
+        
+        return numberArray
+    end
 end
 --endregion
 
@@ -509,6 +541,11 @@ end
 ---@return XTableGoldenMinerHex
 function XGoldenMinerModel:GetGoldenMinerHexCfg(hexId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.GoldenMinerHex, hexId)
+end
+
+---@return XTableGoldenMinerHexUpgrade
+function XGoldenMinerModel:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.GoldenMinerHexUpgrade, upgradeId)
 end
 --endregion
 

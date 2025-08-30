@@ -16,6 +16,7 @@ function XControl:Ctor(id, mainControl)
     self._Agency = false
     self._Loader = false
     self._RefUi = {} --记录引用的ui列表
+    self._RefUiStackOperation = {} --记录引用的ui界面操作， 有些control只跟UiNode有关系，所以保留_RefUi,两个引用共同管理control的卸载
     self._MainControl = mainControl
     ---@type table<string, XControl>
     self._SubControls = {} --子control, 支持多个control
@@ -27,6 +28,27 @@ end
 function XControl:CallInit()
     self:OnInit()
     self:AddAgencyEvent()
+    if self:UseUiStackOperationRef() then
+        self._OnRemoveStackOperationHandler = handler(self, self.OnRemoveStackOperation)
+        CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_REMOVE_STACK_OPERATION, self._OnRemoveStackOperationHandler)
+    end    
+end
+
+function XControl:OnRemoveStackOperation(event, args)
+    ---@type XGameUi
+    local ui = args and args[0]
+    if ui and XTool.IsNumberValid(ui.UUID) then
+        self:SubUiStackOperationRef(ui.UUID)
+        XMVCA:CheckReleaseControl(self:GetId()) 
+    else
+        XLog.Error(string.format("Control%s监听到错误的UI栈操作", self._Id))
+    end         
+   
+end
+
+--用来开启是否使用UI栈同步control的卸载， 子类进行重写
+function XControl:UseUiStackOperationRef()
+    return false
 end
 
 function XControl:GetId()
@@ -149,6 +171,26 @@ function XControl:HasViewRef()
     return self._RefUi and #self._RefUi > 0
 end
 
+--region ui界面栈操作引用
+function XControl:AddUiStackOperationRef(uuid)
+     if not table.indexof(self._RefUiStackOperation, uuid) then
+        table.insert(self._RefUiStackOperation, uuid)
+    end
+end
+
+function XControl:SubUiStackOperationRef(uuid)
+    local index = table.indexof(self._RefUiStackOperation, uuid)
+    if index then
+        table.remove(self._RefUiStackOperation, index)
+    end
+end
+
+function XControl:HasStackOperationRef()
+    return self._RefUiStackOperation and #self._RefUiStackOperation > 0
+end
+
+--endregion
+
 ---手动锁定引用, 因为有些系统依赖场景
 function XControl:LockRef()
     self:AddViewRef(LockRefKey)
@@ -161,8 +203,13 @@ end
 
 function XControl:Release()
     self._IsRelease = true
+    if self:UseUiStackOperationRef() then
+        CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_REMOVE_STACK_OPERATION, self._OnRemoveStackOperationHandler)
+        self._OnRemoveStackOperationHandler = nil
+    end    
     self:RemoveAgencyEvent()
     self._RefUi = nil
+    self._RefUiStackOperation = nil
 
     if self._MainControl == nil then
         self._Model:ClearAllPrivate()
@@ -191,6 +238,7 @@ function XControl:_HotReloadRelease()
     self._IsRelease = true
     self:RemoveAgencyEvent()
     self._RefUi = nil
+    self._RefUiStackOperation = nil
     self:Clear() --这里清理界面注册的事件
     for _, subControl in pairs(self._SubControls) do
         subControl:_HotReloadRelease()

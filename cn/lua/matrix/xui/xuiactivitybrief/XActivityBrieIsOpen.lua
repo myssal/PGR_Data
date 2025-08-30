@@ -586,18 +586,17 @@ end
 --end
 
 function XActivityBrieIsOpen.RpgMaker()
-    --local beginTime, endTime = XDataCenter.RpgMakerGameManager.GetActivityTime()
-    --local fightEndTime = endTime
-    --local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, fightEndTime, endTime)
-    --
-    --if inTime then
-    --    local functionId = XFunctionManager.FunctionName.RpgMakerActivity
-    --    local isOpen = XFunctionManager.JudgeCanOpen(functionId)
-    --    return isOpen, XFunctionManager.GetFunctionOpenCondition(functionId), timeStr
-    --else
-    --    return false, openTimeTipsStr, timeStr
-    --end
-    return false
+    local beginTime, endTime = XDataCenter.RpgMakerGameManager.GetActivityTime()
+    local fightEndTime = endTime
+    local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, fightEndTime, endTime)
+
+    if inTime then
+        local functionId = XFunctionManager.FunctionName.RpgMakerActivity
+        local isOpen = XFunctionManager.JudgeCanOpen(functionId)
+        return isOpen, XFunctionManager.GetFunctionOpenCondition(functionId), timeStr
+    else
+        return false, openTimeTipsStr, timeStr
+    end
 end
 
 function XActivityBrieIsOpen.Reform()
@@ -809,6 +808,22 @@ function XActivityBrieIsOpen.FubenShortStory()
     local skipList = XFunctionConfig.GetSkipList(skipId)
     local chapterId = skipList.CustomParams[1]
     local isOpen = XFunctionManager.JudgeCanOpen(functionId) and XDataCenter.ShortStoryChapterManager.IsOpen(chapterId)
+    if XOverseaManager.IsOverSeaRegion() then
+        local decs = nil --海外修改，提示弹窗文本不准问题
+            for _, v in pairs(XFunctionConfig.GetFuncOpenCfg(functionId).Condition) do
+                if v and v ~= 0 then
+                    local Open, decsText = XConditionManager.CheckCondition(v)
+                    if not Open then
+                        decs = decsText
+                        break
+                    end
+                end
+            end
+            if not decs then
+                decs = CSXTextManagerGetText("ActivityBriefMainlineNotInTime")
+            end
+        return isOpen,decs
+    end
     return isOpen, XDataCenter.ShortStoryChapterManager.IsOpen(chapterId) and XFunctionManager.GetFunctionOpenCondition(functionId) or CSXTextManagerGetText("ActivityBriefMainlineNotInTime")
 end
 

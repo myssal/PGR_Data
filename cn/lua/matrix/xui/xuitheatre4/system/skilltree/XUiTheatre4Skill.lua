@@ -143,7 +143,7 @@ end
 
 function XUiTheatre4Skill:_RefreshHandOffTag()
     self.BtnLeft.gameObject:SetActiveEx(self._CurrentIndex - 1 >= 1)
-    self.BtnRight.gameObject:SetActiveEx(self._CurrentIndex + 1 <= 3)
+    self.BtnRight.gameObject:SetActiveEx(self._CurrentIndex + 1 <= #self._BtnListTabList)
 end
 
 function XUiTheatre4Skill:_RefreshPanel()

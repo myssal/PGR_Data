@@ -24,7 +24,7 @@ function XUiRpgMakeGamePanelAddBtnTwo:OnBtnHintClick()
         self:ShowHint()
         return
     end
-    XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapUnlockHint(self.StageId, XRpgMakerGameConfigs.XRpgMakerGameRoleAnswerType.Hint, 
+    XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapUnlockHint(self.StageId, XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleAnswerType.Hint, 
         handler(self, self.ShowHint))
 end
 
@@ -41,7 +41,7 @@ function XUiRpgMakeGamePanelAddBtnTwo:OnBtnAnswerClick()
         return
     end
 
-    XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapUnlockHint(self.StageId, XRpgMakerGameConfigs.XRpgMakerGameRoleAnswerType.Answer, 
+    XDataCenter.RpgMakerGameManager.RequestRpgMakerGameMapUnlockHint(self.StageId, XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleAnswerType.Answer, 
         handler(self, self.ShowAnswer))
 end
 
@@ -66,20 +66,21 @@ function XUiRpgMakeGamePanelAddBtnTwo:UpdateCoin()
     local itemIcon = XDataCenter.ItemManager.GetItemIcon(itemId)
 
     local isUnlockHint = self.StageDb and self.StageDb:IsUnlockHint()
-    local hintCost = XRpgMakerGameConfigs.GetStageHintCost(stageId)
+    local hintCost = XMVCA.XRpgMakerGame:GetConfig():GetStageHintCost(stageId)
+    local isShowHint = not isUnlockHint and hintCost > 0
     self.HintNorTextNum.text = hintCost
     self.HintPreTextNum.text = hintCost
     self.HintNorIcon:SetRawImage(itemIcon)
     self.HintPreIcon:SetRawImage(itemIcon)
     if self.HintNorPanel then
-        self.HintNorPanel.gameObject:SetActiveEx(not isUnlockHint)
+        self.HintNorPanel.gameObject:SetActiveEx(isShowHint)
     end
     if self.HintPrePanel then
-        self.HintPrePanel.gameObject:SetActiveEx(not isUnlockHint)
+        self.HintPrePanel.gameObject:SetActiveEx(isShowHint)
     end
 
     local isUnlcokAnswer = self.StageDb and self.StageDb:IsUnlockAnswer()
-    local answerCost = XRpgMakerGameConfigs.GetStageAnswerCost(stageId)
+    local answerCost = XMVCA.XRpgMakerGame:GetConfig():GetStageAnswerCost(stageId)
     self.AnswerNorTextNum.text = answerCost
     self.AnswerPreTextNum.text = answerCost
     self.AnswerNorIcon:SetRawImage(itemIcon)

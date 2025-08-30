@@ -109,12 +109,40 @@ function XUiPurchase:AddListener()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnReturnClick)
     self:RegisterClickEvent(self.BtnLjcz, self.OnBtnPayAddClick)
     self:RegisterClickEvent(self.BtnKefu, self.OnBtnKefuClick)
+    if self.BtnLaw1 then
+        local btnLaw1Text = CS.XTextManager.GetText("PurchaseBtnLaw1Text")
+        self.BtnLaw1:SetName(btnLaw1Text)        
+        self.BtnLaw1.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("PurchaseBtnLaw1Show") == 1)
+        self:RegisterClickEvent(self.BtnLaw1, self.OnBtnLaw1)
+    end
+    if self.BtnLaw2 then
+        local btnLaw2Text = CS.XTextManager.GetText("PurchaseBtnLaw2Text")
+        self.BtnLaw2:SetName(btnLaw2Text)        
+        self.BtnLaw2.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("PurchaseBtnLaw2Show") == 1)
+        self:RegisterClickEvent(self.BtnLaw2, self.OnBtnLaw2)
+    end
 end
 
 function XUiPurchase:OnGetEvents()
 end
 
 function XUiPurchase:OnNotify()
+end
+
+function XUiPurchase:OnBtnLaw1()
+    local lawTxt
+    local lawTitle
+    lawTxt = CS.XTextManager.GetText("kuroCapitaldecisionmethod")
+    lawTitle = CS.XTextManager.GetText("kuroCapitaldecisionmethodTitle")
+    XLuaUiManager.Open("UiFubenDialog", lawTitle, lawTxt)
+end
+
+function XUiPurchase:OnBtnLaw2()
+    local lawTxt
+    local lawTitle
+    lawTxt = CS.XTextManager.GetText("kuroSpecificbusinesstransactionlaw")
+    lawTitle = CS.XTextManager.GetText("kuroSpecificbusinesstransactionTitle")
+    XLuaUiManager.Open("UiFubenDialog", lawTitle, lawTxt)
 end
 
 function XUiPurchase:OnBtnReturnClick()
@@ -320,7 +348,7 @@ function XUiPurchase:CheckChildCount(childs, names)
                         self.CurUiView:OnRefresh(self.CurUiTypes[1], self.PaySelectIndex)
                         self.PaySelectIndex = nil
                     else
-                        self.CurUiView:OnRefresh(self.CurUiTypes[1])
+                        self.CurUiView:OnRefresh(self.CurUiTypes[1], self.ChildTabIndex)
                     end
                 end
             end

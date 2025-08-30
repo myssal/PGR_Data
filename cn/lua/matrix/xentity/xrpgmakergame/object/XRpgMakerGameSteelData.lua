@@ -9,7 +9,7 @@ local Vector3 = CS.UnityEngine.Vector3
 local XRpgMakerGameSteelData = XClass(XRpgMakerGameObject, "XRpgMakerGameSteelData")
 
 function XRpgMakerGameSteelData:Ctor(id, gameObject)
-    self.SteelStatus = XRpgMakerGameConfigs.XRpgMakerGameSteelBrokenType.Init
+    self.SteelStatus = XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameSteelBrokenType.Init
     self.IsCheckPlayFlat = false    --是否需要根据当前的状态加载对应的特效
 end
 
@@ -21,7 +21,7 @@ function XRpgMakerGameSteelData:InitData()
     if not XTool.IsTableEmpty(self.MapObjData) then
         self:InitDataByMapObjData(self.MapObjData)
     end
-    self:SetStatus(XRpgMakerGameConfigs.XRpgMakerGameSteelBrokenType.Init)
+    self:SetStatus(XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameSteelBrokenType.Init)
 end
 
 ---@param mapObjData XMapObjectData
@@ -54,14 +54,14 @@ function XRpgMakerGameSteelData:CheckPlayFlat()
     end
 
     local status = self:GetStatus()
-    local modelKey = status == XRpgMakerGameConfigs.XRpgMakerGameSteelBrokenType.Init and 
-        XRpgMakerGameConfigs.ModelKeyMaps.Steel or
-        XRpgMakerGameConfigs.ModelKeyMaps.SteelBroken
-    local modelPath = XRpgMakerGameConfigs.GetRpgMakerGameModelPath(modelKey)
+    local modelKey = status == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameSteelBrokenType.Init and 
+        XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.Steel or
+        XMVCA.XRpgMakerGame.EnumConst.ModelKeyMaps.SteelBroken
+    local modelPath = XMVCA.XRpgMakerGame:GetConfig():GetModelPath(modelKey)
     self:LoadModel(modelPath)
     self.IsCheckPlayFlat = false
 
-    if status == XRpgMakerGameConfigs.XRpgMakerGameSteelBrokenType.Flat or status == XRpgMakerGameConfigs.XRpgMakerGameSteelBrokenType.Trap then
+    if status == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameSteelBrokenType.Flat or status == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameSteelBrokenType.Trap then
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_Broken)
     end
 end

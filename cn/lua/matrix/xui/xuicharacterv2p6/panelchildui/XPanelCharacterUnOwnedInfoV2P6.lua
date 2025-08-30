@@ -16,6 +16,13 @@ function XPanelCharacterUnOwnedInfoV2P6:RefreshUiShow()
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(characterId)
     self.TxtName.text = charConfig.Name
     self.TxtNameOther.text = charConfig.TradeName
+    if XOverseaManager.IsJP_KRRegion() then
+        --是否显示为黑岩适配的换行文本，海外原先的Text放不下
+        local detailConfig = XMVCA.XCharacter:GetCharDetailTemplate(characterId)
+        local isShowSpcialText = detailConfig.LiberationShowType
+        self.PanelName.gameObject:SetActiveEx(not isShowSpcialText)
+        self.BlackRockShooter.gameObject:SetActiveEx(isShowSpcialText)
+    end
 
     -- 职业
     local career = XMVCA.XCharacter:GetCharacterCareer(characterId)

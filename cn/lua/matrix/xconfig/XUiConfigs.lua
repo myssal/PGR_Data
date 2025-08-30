@@ -5,6 +5,7 @@ local TABLE_SCENE_THEME_MATCHING_PATH = "Client/Ui/UiMainThemeMatching.tab"
 local TABLE_UI_MAIN_SUB_MENU_PATH = "Client/Ui/UiMainSubMenu.tab"
 local TABLE_UI_MAIN_SUB_MENU_DYNAMIC_PATH = "Client/Ui/UiMainSubMenuDynamic.tab"
 local TABLE_UI_GOODS_LABEL_PATH = "Client/Ui/UiGoodsLabel.tab"
+local TABLE_UI_OBJECT_PREFAB_PATH = "Client/Ui/UiObjectPrefab.tab"
 --local TABLE_UI_PATH = "Client/Ui/Ui.tab"
 local UiComponentTemplates = {}
 --local UiTemplates = {}
@@ -16,6 +17,8 @@ local UiMainSubMenuDynamic = {}
 
 ---@type table<number, XTableUiGoodsLabel>
 local GoodsLabelTemplate = {}
+
+local UiObjectPrefabTemplates = nil
 
 --UI界面枚举 处理打开这个界面的界面类型
 XUiConfigs.OpenUiType = {
@@ -142,3 +145,40 @@ function XUiConfigs.GetLabelDescription(templateId)
     local template = XUiConfigs.GetGoodsLabelTemplate(templateId)
     return template and template.Description or ""
 end
+
+--region UiObject引用的预制体
+
+function XUiConfigs.GetUiObjectPrefabTemplate(name)
+    if not UiObjectPrefabTemplates then
+        UiObjectPrefabTemplates = XTableManager.ReadByStringKey(TABLE_UI_OBJECT_PREFAB_PATH, XTable.XTableUiObjectPrefab, "UiName")
+    end
+
+    local template = UiObjectPrefabTemplates[name]
+    if not template then
+        XLog.ErrorTableDataNotFound("XUiConfigs.GetUiObjectPrefabTemplate", "UiObjectPrefab", TABLE_UI_OBJECT_PREFAB_PATH, "UiName", name)
+        return nil
+    end
+
+    return template
+end
+
+function XUiConfigs.GetUiObjectPrefabPath(name, key)
+    if string.IsNilOrEmpty(name) or string.IsNilOrEmpty(key) then
+        return ""
+    end
+
+    local template = XUiConfigs.GetUiObjectPrefabTemplate(name)
+    if not template or not template.ParamKeys or not template.ParamValues then
+        return ""
+    end
+
+    for i = 1, #template.ParamKeys do
+        if template.ParamKeys[i] == key then
+            return template.ParamValues[i] or ""
+        end
+    end
+
+    return ""
+end
+
+--endregion

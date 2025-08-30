@@ -25,7 +25,9 @@ function XUiHitMouseMainPanelInfo.Init(ui)
 end
 
 function XUiHitMouseMainPanelInfo.OnEnable(ui)
-    if not TempPanel then TempPanel = ui.InfoPanel end
+    if ui ~= nil and TempPanel ~= ui.InfoPanel then 
+        TempPanel = ui.InfoPanel 
+    end
     XUiHitMouseMainPanelInfo.StartLeftTimer()
 end
 
@@ -42,7 +44,7 @@ function XUiHitMouseMainPanelInfo.StartLeftTimer()
     SetLeftTime()
     TimerId = XScheduleManager.ScheduleForever(function()
             SetLeftTime()
-        end, 0)
+        end, 1000)
 end
 --=================
 --移除计时器

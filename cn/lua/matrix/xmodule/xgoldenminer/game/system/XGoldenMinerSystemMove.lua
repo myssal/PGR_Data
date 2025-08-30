@@ -14,6 +14,11 @@ function XGoldenMinerSystemMove:OnUpdate(time)
         if stoneEntity:IsMove() and stoneEntity:GetComponentMove()
                 and (not stoneEntity:GetComponentMouse() or self:_CheckMouseCanMove()) then
             stoneEntity:GetComponentMove():UpdateMove(time)
+            local linkCom = stoneEntity:GetComponentLink()
+
+            if linkCom then
+                linkCom:RefreshLinkRopeShow(nil, true)
+            end
         end
     end
 end

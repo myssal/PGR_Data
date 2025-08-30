@@ -77,6 +77,8 @@ end
 function XUiPanelFavorabilityMain:InitUiAfterAuto()
     ---@type XUiTaikoMasterFlowText
     self.CvNameTextScrolling = XUiTextScrolling.New(self.CVNameLabel, self.CVNameMask)
+    ---@type XUiTaikoMasterFlowText
+    self.CvRoleNameTextScrolling = XUiTextScrolling.New(self.TxtRoleName ,self.TxtRoleNameMask)
 
     self.FavorabilityFile = XUiPanelFavorabilityFile.New(self.PanelFavorabilityFile, self, self.Parent)
     self.FavorabilityArchives=XUiPanelFavorabilityArchives.New(self.PanelFavorabilityArchives,self,self.Parent)
@@ -98,6 +100,7 @@ function XUiPanelFavorabilityMain:InitUiAfterAuto()
     self.MenuBtnGroup:Init(self.BtnTabList, function(index) self:OnBtnTabListClick(index) end)
 
     self.CvNameTextScrolling:Stop()
+    self.CvRoleNameTextScrolling:Stop()
     self.DrdSort.onValueChanged:AddListener(function(index) self:OnBtnCvListClick(index) end)
     self.DrdSort:SetPointerClickCallback(function() self:UpdateCvName() end)
     self.DrdSort:SetDestroyDropListCallback(function() self:OnDestroyDropList() end)
@@ -238,6 +241,7 @@ end
 
 function XUiPanelFavorabilityMain:UpdateCvLabel()
     self.CvNameTextScrolling:Stop()
+    self.CvRoleNameTextScrolling:Stop()
     
     local currentCharacterId = self.Parent:GetCurrFavorabilityCharacter()
     local castName = self._Control:GetCharacterCvByIdAndType(currentCharacterId, self.CvType)
@@ -246,6 +250,7 @@ function XUiPanelFavorabilityMain:UpdateCvLabel()
     self.TxtCVDescript.text = cast
     self.TxtCV.text = castName
     self.CvNameTextScrolling:Play()
+    self.CvRoleNameTextScrolling:Play()
 end
 
 function XUiPanelFavorabilityMain:UpdateDatas()
@@ -315,6 +320,7 @@ function XUiPanelFavorabilityMain:UpdateMainInfo(doAnim)
         end
         
         local optionsTextList = {}
+        local hkIndex = 0
 
         self.DrdSort:ClearOptions()
         for _,v in pairs(cvType) do
@@ -340,7 +346,7 @@ function XUiPanelFavorabilityMain:UpdateMainInfo(doAnim)
         end
     else
         local optionsTextList = {}
-        
+        local hkIndex = 0
         self.DrdSort:ClearOptions()
         for _,v in pairs(XEnumConst.CV_TYPE) do
             if v == XEnumConst.CV_TYPE.JPN then
@@ -348,10 +354,14 @@ function XUiPanelFavorabilityMain:UpdateMainInfo(doAnim)
             elseif v == XEnumConst.CV_TYPE.CN then
                 optionsTextList[#optionsTextList + 1] = CNText
             elseif v == XEnumConst.CV_TYPE.HK then
+                hkIndex = #optionsTextList + 1
                 optionsTextList[#optionsTextList + 1] = HKText
             elseif v == XEnumConst.CV_TYPE.EN then
                 optionsTextList[#optionsTextList + 1] = ENText
             end
+        end
+        if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+            table.remove(optionsTextList,hkIndex)
         end
         self.DrdSort:AddOptionsText(optionsTextList)
         self:UpdateDropListSelect(self.CvType)

@@ -415,9 +415,10 @@ function XSignBoardCamAnimNew:_PlayUiAnim(animName, cbFunc)
     anim:Play()
     -- 部分动画时间很短 可能还没1帧 所以这里需要延迟到下一帧播放
     XScheduleManager.ScheduleNextFrame(function()
+        if XTool.UObjIsNil(anim) then
+            return
+        end
         local playTimer = XScheduleManager.ScheduleOnce(function()
-            self.CurPlayingUiAnim[animName] = nil
-            anim.gameObject:SetActiveEx(false)
             if cbFunc then
                 cbFunc()
             end

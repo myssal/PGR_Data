@@ -6,9 +6,9 @@ local AllTables = {}
 
 local EmptyTable = {}
 
-local function ReadTableAll(path, identifier)
-    local tab = BinaryTable.ReadAll(path, identifier)
-    return tab
+local function stateless_iter(tbl, key)
+    local nk, nv = next(tbl, key)
+    return nk, nv
 end
 
 --============= 内部读表函数 ============
@@ -23,17 +23,15 @@ local function ReadTable(path, identifier)
         return EmptyTable
     end
 
-    if bin.primarykey ~= identifier then
-        XLog.Error("表格 " .. path .. " 读取Id与主键不一致，已改为强制读取模式，请按主键索引, 强制读取会带来较大性能损失")
-        return ReadTableAll(path, identifier)
-    end
+    -- if bin.primarykey ~= identifier then
+    --     XLog.Error("表格 " .. path .. " 读取Id与主键不一致，已改为强制读取模式，请按主键索引, 强制读取会带来较大性能损失")
+    --     return ReadTableAll(path, identifier)
+    -- end
 
     local tab = {}
-
     AllTables[path] = bin
-    local len = bin:GetRowCount()
     local meta = {}
-    meta.__index = function(tab, key)
+    meta.__index = function(_, key)
         if not key then
             return nil
         end
@@ -52,33 +50,45 @@ local function ReadTable(path, identifier)
 
     meta.__metatable = "readonly table"
 
-    meta.__len = function(t)
-        return len
+    meta.__len = function(_)
+        return bin:GetRowCount()
     end
 
-    meta.__pairs = function(t)
-        if bin and bin.cachesCount ~= len then
-            local tt = bin:ReadAllContent(identifier, true)
+    meta.__pairs = function(_)
+        -- if XMain.IsDebug then
+        --     XLog.Error("path: ".. path.. " 建议使用ReadAllByIntKey或ReadAllByStringKey接口，避免缓存数据，性能会降低")
+        -- end
+
+        local len = bin:GetRowCount()
+        if len <= 0 then
+            return stateless_iter, EmptyTable, nil
         end
 
-        local function stateless_iter(tbl, key)
-            local nk, nv = next(tbl, key)
-            return nk, nv
+        if bin and bin.cachesCount ~= len then
+            bin:ReadAllContent(identifier, true)
         end
 
         return stateless_iter, bin.caches, nil
     end
 
-    local rowCnt = bin:GetRowCount()
-    if rowCnt ~= 0 then
-        tab.__tableCount = rowCnt
-    end
+    -- 解决next获取是nil的问题
+    -- local len = bin:GetRowCount()
+    -- if len ~= 0 then
+    --     tab.__tableCount = len
+    -- end
+    tab.__tableNextFix = true
 
     setmetatable(tab, meta)
 
     return tab
 end
 
+local function ReadTableAll(path, identifier)
+    local tab = BinaryTable.ReadAll(path, identifier)
+    return tab
+    -- ReadTable有缓存，ReadAll不保留缓存所以不用下面接口
+    -- return ReadTable(path, identifier)
+end
 
 function loader.ReadAllByIntKey(path, xTable, identifier)
     return ReadTableAll(path, identifier)

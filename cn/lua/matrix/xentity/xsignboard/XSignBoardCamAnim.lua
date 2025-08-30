@@ -13,6 +13,7 @@ end
 function XSignBoardCamAnim:UpdateData(sceneId, signBoardId, ui)
     self.SceneId = sceneId
     self.SignBoardId = signBoardId
+    self.IsCloseRoleShadow = XMVCA.XFavorability:IsCloseRoleShadow(signBoardId)
     self.UiRoot = ui
     self:_InitModelRoot(self.UiRoot)
 end
@@ -36,6 +37,7 @@ function XSignBoardCamAnim:Play()
     self:_ResetSceneAnim()
     self:_ResetPlayingUiAnim()
     if self:Exist() then
+        self:_CheckCloseRoleShadow()
         self:_ReBindAnimRoleTrack()
         self.FarCamRoot.gameObject:SetActiveEx(true)
         self.NearCamRoot.gameObject:SetActiveEx(true)
@@ -72,6 +74,7 @@ end
 function XSignBoardCamAnim:Close()
     self:_ResetPlayingUiAnim()
     if self:Exist() then
+        self:_CheckResumeRoleShadow()
         self.FarCamRoot.gameObject:SetActiveEx(false)
         self.NearCamRoot.gameObject:SetActiveEx(false)
         if self.IsPlaying then
@@ -456,6 +459,20 @@ function XSignBoardCamAnim:_ResetPlayingUiAnim()
     self.CurPlayingUiAnim = nil
 end
 --endregion
+
+function XSignBoardCamAnim:_CheckCloseRoleShadow()
+    if not self.IsCloseRoleShadow then
+        return
+    end
+    self._ModelPanel:RemoveRoleShadow()
+end
+
+function XSignBoardCamAnim:_CheckResumeRoleShadow()
+    if not self.IsCloseRoleShadow then
+        return
+    end
+    self._ModelPanel:AddRoleShadow()
+end
 
 --===============================================================================
 

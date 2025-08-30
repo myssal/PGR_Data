@@ -17,6 +17,10 @@ function XUiSummerEpisodeNew:OnStart()
     XEventManager.AddEventListener(XEventId.EVENT_ROOM_MATCH_PLAYERS, self.OnMatchPlayers, self)
     self.TaskRedEventId = XRedPointManager.AddRedPointEvent(self.BtnTask, self.OnCheckRedPoint, self, { XRedPointConditions.Types.CONDITION_SPECIALTRAINPOINT_RED },nil,true)
     self.MapRedPointId=XRedPointManager.AddRedPointEvent(self.BtnMap,self.OnCheckMapRedPoint,self,{XRedPointConditions.Types.CONDITION_SPECIALTRAINMAP_RED})
+    -- 海外屏蔽自动存图
+    if XOverseaManager.IsOverSeaRegion() then
+        self.GameObject.transform:FindGameObject("BtnPhotograph"):SetActiveEx(false)
+    end
 end
 
 function XUiSummerEpisodeNew:OnEnable()

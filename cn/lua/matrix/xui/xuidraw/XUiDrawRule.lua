@@ -20,23 +20,24 @@ function XUiDrawRule:SetData(drawId)
     end
     self.TxtRule.text = rule
     if not self.Probs then
+        ---@type XUiPanelProbability[]
         self.Probs = {}
     end
-    local list = XDataCenter.DrawManager.GetDrawProb(drawId)
-    if not list then
+    local data = XDataCenter.DrawManager.GetDrawProb(drawId)
+    if not data then
         return
     end
-    for i = 1, #list do
+    for i = 1, #data.Name do
         if not self.Probs[i] then
             local go = CS.UnityEngine.Object.Instantiate(self.PanelProbability, self.PanelDetailContent)
             local item = prob.New(go, self)
             table.insert(self.Probs, item)
         end
-        self.Probs[i]:SetData(list[i])
+        self.Probs[i]:SetData(data, i)
         self.Probs[i]:SetActive(true)
     end
-    if #list < #self.Probs then
-        for i = #list + 1, #self.Probs do
+    if #data.Name < #self.Probs then
+        for i = #data.Name + 1, #self.Probs do
             self.Probs[i]:SetActive(false)
         end
     end

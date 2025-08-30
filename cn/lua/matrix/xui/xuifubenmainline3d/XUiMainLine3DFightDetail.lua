@@ -152,7 +152,12 @@ function XUiMainLine3DFightDetail:UpdateCommon()
     local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.Stage.StageId)
     local chapterOrderId = XDataCenter.FubenMainLineManager.GetChapterOrderIdByStageId(self.Stage.StageId)
 
-    self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. self.Stage.Name
+    if XOverseaManager.IsOverSeaRegion() then
+        -- 由于关卡名前存在数字，用空格隔开避免歧义
+        self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .." ".. self.Stage.Name
+    else
+        self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. self.Stage.Name
+    end
     self.TxtDesc.text = self.Stage.Description
     self.TxtATNums.text = XDataCenter.FubenManager.GetRequireActionPoint(self.Stage.StageId)
 

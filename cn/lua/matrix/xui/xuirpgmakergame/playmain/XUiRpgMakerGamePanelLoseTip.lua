@@ -21,12 +21,12 @@ function XUiRpgMakerGamePanelLoseTip:Show(stageId, actionType)
 end
 
 function XUiRpgMakerGamePanelLoseTip:RefreshTitle(actionType)
-    local title = XRpgMakerGameConfigs.GetRpgMakerGameDeathTitle(actionType)
+    local title = XMVCA.XRpgMakerGame:GetConfig():GetDeathTitleName(actionType)
     self.TextTitle.text = title
 end
 
 function XUiRpgMakerGamePanelLoseTip:RefreshTxt(stageId)
-    local loseHintList = XRpgMakerGameConfigs.GetRpgMakerGameStageLoseHintList(stageId)
+    local loseHintList = XMVCA.XRpgMakerGame:GetConfig():GetStageLoseHint(stageId)
     for i, desc in ipairs(loseHintList or {}) do
         if self["TextHint" .. i] then
             self["TextHint" .. i].text = desc

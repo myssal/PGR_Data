@@ -2,7 +2,6 @@
 local TableKey = 
 {
     Equip = { CacheType = XConfigUtil.CacheType.Normal },
-    EquipText = { CacheType = XConfigUtil.CacheType.Normal },
     EquipBreakThrough = { TableDefindName = "XTableEquipBreakthrough", CacheType = XConfigUtil.CacheType.Normal }, -- XTable定义的大小写不一致
     EquipSuit = { CacheType = XConfigUtil.CacheType.Normal },
     EquipSuitEffect = { CacheType = XConfigUtil.CacheType.Normal },
@@ -172,7 +171,11 @@ end
 -- 获取装备的配置表Id
 function XEquipModel:GetEquipTemplateId(equipId)
     local equip = self:GetEquip(equipId)
-    return equip.TemplateId
+    if equip then
+        return equip.TemplateId
+    else
+        XLog.Error("获取装备配置表Id失败，传入的equipId为"..tostring(equipId))
+    end
 end
 
 function XEquipModel:GetEquipWearingCharacterId(equipId)
@@ -1236,9 +1239,6 @@ function XEquipModel:InitConfig()
     self._ConfigUtil:InitConfigByTableKey("Equip/EquipGuide", EquipGuideTableKey)
 
     self:InitEquipLevelUpConfig()
-    self:InitWeaponSkillPoolConfig()
-    self:InitEquipModelTransformConfig()
-    self:InitEquipAnimResetConfig()
 end
 
 ---------------------------------------- #region Equip ----------------------------------------
@@ -1255,11 +1255,6 @@ function XEquipModel:GetConfigEquip(templateId)
     end
 end
 
-function XEquipModel:GetConfigEquipText(id)
-    local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.EquipText, id)
-    return cfg and cfg.Text or ""
-end
-
 function XEquipModel:CheckTemplateIdIsEquip(templateId)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.Equip)
     return cfgs[templateId] ~= nil
@@ -1267,11 +1262,7 @@ end
 
 function XEquipModel:GetEquipName(templateId)
     local config = self:GetConfigEquip(templateId)
-    if config then
-        return self:GetConfigEquipText(config.Name)
-    else
-        return ""    
-    end
+    return config and config.Name or ""
 end
 
 function XEquipModel:GetEquipSite(templateId)
@@ -1354,11 +1345,7 @@ end
 
 function XEquipModel:GetEquipDescription(templateId)
     local config = self:GetConfigEquip(templateId)
-    if config then
-        return self:GetConfigEquipText(config.Description)
-    else
-        return ""
-    end
+    return config and config.Description or ""
 end
 
 function XEquipModel:GetEquipNeedFirstShow(templateId)
@@ -2092,8 +2079,12 @@ end
 
 
 ---------------------------------------- #region WeaponSkillPool ----------------------------------------
--- 缓存武器共鸣技能池子
+-- 初始化武器共鸣技能池子
 function XEquipModel:InitWeaponSkillPoolConfig()
+    if self.WeaponSkillPoolTemplate then 
+        return
+    end
+    
     self.WeaponSkillPoolTemplate = {}
     local skillPoolCfgs = self:GetConfigWeaponSkillPool()
     for _, config in pairs(skillPoolCfgs) do
@@ -2121,6 +2112,7 @@ function XEquipModel:GetConfigWeaponSkillPool(id)
 end
 
 function XEquipModel:GetWeaponSkillPoolSkillIds(poolId, characterId)
+    self:InitWeaponSkillPoolConfig()
     local template = self.WeaponSkillPoolTemplate[poolId]
     if not template then
         XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "template", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
@@ -2622,6 +2614,10 @@ end
 ---------------------------------------- #region EquipModelTransform ----------------------------------------
 -- 缓存装备模型Transform配置
 function XEquipModel:InitEquipModelTransformConfig()
+    if self.EquipModelTransformTemplates then
+        return
+    end
+    
     self.EquipModelTransformTemplates = {}
     local modelTranCfgs = self:GetConfigEquipModelTransform()
     for _, config in pairs(modelTranCfgs) do
@@ -2657,6 +2653,7 @@ function XEquipModel:GetEquipModelTransformCfg(templateId, uiName, resonanceCoun
         end
     end
 
+    self:InitEquipModelTransformConfig()
     template = self.EquipModelTransformTemplates[modelTransId]
     if template then
         modelCfg = template[uiName]
@@ -3100,6 +3097,10 @@ end
 ---------------------------------------- #region EquipAnimReset -----------------------------------------
 -- 缓存装备动画是否重置
 function XEquipModel:InitEquipAnimResetConfig()
+    if self.EquipAnimResetDic then
+        return
+    end
+    
     self.EquipAnimResetDic = {}
     local animResetCfgs = self:GetConfigEquipAnimReset()
     for _, v in pairs(animResetCfgs) do
@@ -3121,6 +3122,7 @@ function XEquipModel:GetConfigEquipAnimReset(id)
 end
 
 function XEquipModel:GetEquipAnimIsReset(modelId)
+    self:InitEquipAnimResetConfig()
     return self.EquipAnimResetDic[modelId] or false
 end
 ---------------------------------------- #endregion EquipAnimReset ----------------------------------------

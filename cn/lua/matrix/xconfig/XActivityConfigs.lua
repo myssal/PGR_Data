@@ -3,9 +3,11 @@ local TimestampToGameDateTimeString = XTime.TimestampToGameDateTimeString
 
 local TABLE_ACTIVITY_PATH = "Client/Activity/Activity.tab"
 local TABLE_ACTIVITY_GROUP_PATH = "Client/Activity/ActivityGroup.tab"
+local TABLE_ACTIVITY_LINK_PATH = "Client/Activity/ActivityLink.tab"
 
 local ActivityTemplates = {}
 local ActivityGroupTemplates = {}
+local ActivityLinkTemplates = {}
 
 XActivityConfigs = XActivityConfigs or {}
 
@@ -50,6 +52,7 @@ XActivityConfigs.TaskPanelSkipType = {
 function XActivityConfigs.Init()
     ActivityTemplates = XTableManager.ReadByIntKey(TABLE_ACTIVITY_PATH, XTable.XTableActivity, "Id")
     ActivityGroupTemplates = XTableManager.ReadByIntKey(TABLE_ACTIVITY_GROUP_PATH, XTable.XTableActivityGroup, "Id")
+    ActivityLinkTemplates = XTableManager.ReadByIntKey(TABLE_ACTIVITY_LINK_PATH, XTable.XTableActivityLink, "Id")
 end
 
 function XActivityConfigs.GetActivityTemplates()
@@ -113,4 +116,8 @@ function XAchievementConfigs.GetActivityGroupIsOnlyGroup(groupId)
         return ActivityGroupTemplates[groupId].IsOnlyGroup
     end
     return -1
-end 
+end
+
+function XActivityConfigs.GetActivityLinkTemplate()
+    return ActivityLinkTemplates
+end

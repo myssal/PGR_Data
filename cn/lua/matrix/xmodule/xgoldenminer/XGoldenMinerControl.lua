@@ -11,6 +11,8 @@ local METHOD_NAME = {
     GoldenMinerEnterStageRequest = "GoldenMinerEnterStageRequest",
     GoldenMinerSellPriceRequest = "GoldenMinerSellPriceRequest",
     GoldenMinerHexSelectRequest = "GoldenMinerHexSelectRequest",
+    GoldenMinerHexUpgradeRequest = "GoldenMinerHexUpgradeRequest",
+    GoldenMinerRefreshCommonRandomRequest = "GoldenMinerRefreshCommonRandomRequest",
 }
 
 function XGoldenMinerControl:OnInit()
@@ -338,7 +340,7 @@ function XGoldenMinerControl:RequestGoldenMinerSell(index, cb)
     end)
 end
 
----选择海克斯
+---选择海克斯(包括核心海克斯和通用海克斯
 function XGoldenMinerControl:RequestGoldenMinerSelectHex(hexId, cb)
     if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerRankingRequest) then
         return
@@ -347,12 +349,64 @@ function XGoldenMinerControl:RequestGoldenMinerSelectHex(hexId, cb)
         Hex = hexId   --出售的道具格子Id
     }
     XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GoldenMinerHexSelectRequest, req, function(res)
+        local hexUpgradeId = self:GetCfgHexUpgradeId(hexId)
+        ---@type XGoldenMinerDataDb
         local dataDb = self._Model:GetMineDb()
         dataDb:ClearHexSelects()        --清空可选择海克斯
-        dataDb:AddHexRecords(hexId)     --记录已选海克斯
+        dataDb:AddHexRecords(hexId, hexUpgradeId)     --记录已选海克斯
+        dataDb:UpdateCurrentState(res.CurrentState or 0)
+        dataDb:UpdateCommonGenerateResults(res.CommonGenerateResults)
+        dataDb:UpdateCoreGenerateResults(res.CoreGenerateResults)
+        dataDb:UpdateCommonHexSelectCount(res.SelectCount)
         if not XTool.IsTableEmpty(res.StageMapInfos) then
             dataDb:UpdateStageMapInfos(res.StageMapInfos) --更新关卡地图信息
         end
+        if cb then
+            cb()
+        end
+    end)
+end
+
+--- 选择海克斯升级方案
+function XGoldenMinerControl:RequestGoldenMinerHexUpgrade(upgradeId, cb)
+    if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerHexUpgradeRequest) then
+        return
+    end
+    local req = {
+        UpgradeId = upgradeId   --出售的道具格子Id
+    }
+    XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GoldenMinerHexUpgradeRequest, req, function(res)
+        local hexId = self:GetCfgHexUpgradeOwnHexId(upgradeId)
+        ---@type XGoldenMinerDataDb
+        local dataDb = self._Model:GetMineDb()
+        dataDb:ClearHexSelects()        --清空可选择海克斯
+        dataDb:AddHexRecords(hexId, upgradeId)     --记录已选海克斯
+        dataDb:UpdateCurrentState(res.CurrentState or 0)
+        dataDb:UpdateCommonGenerateResults(res.CommonGenerateResults)
+        dataDb:UpdateCoreGenerateResults(res.CoreGenerateResults)
+        dataDb:UpdateCommonHexSelectCount(res.SelectCount)
+        if not XTool.IsTableEmpty(res.StageMapInfos) then
+            dataDb:UpdateStageMapInfos(res.StageMapInfos) --更新关卡地图信息
+        end
+        if cb then
+            cb()
+        end
+    end)
+end
+
+--- 刷新通用海克斯选择商店
+function XGoldenMinerControl:RequestGoldenMinerRefreshCommonRandom(cb)
+    if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerRefreshCommonRandomRequest) then
+        return
+    end
+
+    XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GoldenMinerRefreshCommonRandomRequest, nil, function(res)
+        ---@type XGoldenMinerDataDb
+        local dataDb = self._Model:GetMineDb()
+
+        dataDb:UpdateCommonGenerateResults(res.CommonGenerateResults)
+        dataDb:UpdateCommonHexRefreshCount(res.RefreshCount)
+        
         if cb then
             cb()
         end
@@ -386,15 +440,19 @@ function XGoldenMinerControl:OpenGameUi()
     local dataDb = self:GetMainDb()
     local curStageId = dataDb:GetCurStageId()
 
-    if dataDb:CheckIsBeSelectHex() then
+    local curState = dataDb:GetCurrentState()
+    
+    if curState == XMVCA.XGoldenMiner.EnumConst.GameState.CommonHexSelect or curState == XMVCA.XGoldenMiner.EnumConst.GameState.CoreHexSelect then
         XLuaUiManager.PopThenOpen("UiGoldenMinerHexSelect")
         return
     end
 
+    --[[ 玩法6.0不用道具
     if not XTool.IsTableEmpty(dataDb:GetMinerShopDbs()) then
         XLuaUiManager.PopThenOpen("UiGoldenMinerShop")
         return
     end
+    --]]
 
     self:RequestGoldenMinerEnterStage(curStageId, function()
         XLuaUiManager.PopThenOpen("UiGoldenMinerBattle")
@@ -512,6 +570,8 @@ end
 --endregion
 
 --region Data - Activity
+
+---@return XGoldenMinerDataDb
 function XGoldenMinerControl:GetMainDb()
     return self._Model:GetMineDb()
 end
@@ -522,6 +582,40 @@ end
 
 function XGoldenMinerControl:GetCurActivityMaxItemColumnCount()
     return XMVCA.XGoldenMiner:GetCurActivityMaxItemColumnCount()
+end
+
+--- 获取剩余刷新次数
+function XGoldenMinerControl:GetCommonHexRefreshLeftCount()
+    local refreshCount = self:GetMainDb():GetCommonHexRefreshCount()
+
+    local stageId = self:GetMainDb():GetCurStageId()
+    local stageCfg = self._Model:GetStageCfg(stageId)
+
+    if stageCfg then
+        return stageCfg.CommonRefreshCount - refreshCount
+    end
+
+    return 0
+end
+
+--- 获取剩余选择次数
+function XGoldenMinerControl:GetCommonHexSelectLeftCount()
+    local selectedCount = self:GetMainDb():GetCommonHexSelectCount()
+    
+    local stageId = self:GetMainDb():GetCurStageId()
+    local stageCfg = self._Model:GetStageCfg(stageId)
+
+    if stageCfg then
+        return stageCfg.CommonHexSelect - selectedCount
+    end
+    
+    return 0
+end
+
+function XGoldenMinerControl:CheckCanRefreshCommonHexSelect()
+    local leftCount = self:GetCommonHexRefreshLeftCount()
+    
+    return XTool.IsNumberValid(leftCount)
 end
 --endregion
 
@@ -674,38 +768,12 @@ end
 ---获得当前拥有的所有buffId
 function XGoldenMinerControl:GetShowOwnBuffIdList()
     local ownBuffIdList = {}
-    local dataDb = self._Model:GetMineDb()
-    local upgradeList = dataDb:GetAllUpgradeStrengthenList()
-    local hexList = dataDb:GetSelectedHexList()
-    local buffIdList
-    local buffId
+    local curBuffIdList = self:GetCurInitBuffIdList()
 
-    --角色自带buff
-    local curSelectCharacterId = dataDb:GetCurPlayCharacterId()
-    if XTool.IsNumberValid(curSelectCharacterId) then
-        buffIdList = self:GetCfgCharacterBuffIds(curSelectCharacterId)
-        for _, Id in ipairs(buffIdList) do
+    if not XTool.IsTableEmpty(curBuffIdList) then
+        for i, Id in ipairs(curBuffIdList) do
             self:_InsertBuffListByCheck(ownBuffIdList, Id)
         end
-    end
-
-    --海克斯
-    for _, hexId in ipairs(hexList) do
-        for _, hexBuffId in ipairs(self:GetCfgHexBuffId(hexId)) do
-            self:_InsertBuffListByCheck(ownBuffIdList, hexBuffId)
-        end
-    end
-
-    --强化升级项
-    for _, strengthenDb in ipairs(upgradeList) do
-        buffId = strengthenDb:GetBuffId()
-        self:_InsertBuffListByCheck(ownBuffIdList, buffId)
-    end
-
-    --购买的道具类型为2的buff
-    local buffColumns = dataDb:GetBuffColumns()
-    for _, buffColumn in pairs(buffColumns) do
-        self:_InsertBuffListByCheck(ownBuffIdList, buffColumn:GetBuffId())
     end
 
     return ownBuffIdList
@@ -716,10 +784,12 @@ function XGoldenMinerControl:GetCurInitBuffIdList()
     local dataDb = self._Model:GetMineDb()
     local upgradeList = dataDb:GetAllUpgradeStrengthenList()
     local buffIdList = {}
-
+    local index = 1
     --强化升级项
     for _, strengthenDb in ipairs(upgradeList) do
-        buffIdList[#buffIdList + 1] = strengthenDb:GetBuffId()
+        local buffId = strengthenDb:GetBuffId()
+        buffIdList[index] = buffId
+        index = index + 1
     end
 
     --角色自带buff
@@ -727,21 +797,33 @@ function XGoldenMinerControl:GetCurInitBuffIdList()
     if XTool.IsNumberValid(curSelectCharacterId) then
         local characterBuffIdList = self:GetCfgCharacterBuffIds(curSelectCharacterId)
         for _, buffId in ipairs(characterBuffIdList) do
-            buffIdList[#buffIdList + 1] = buffId
+            buffIdList[index] = buffId
+            index = index + 1
         end
     end
 
     --购买的道具类型为2的buff
     local buffColumns = dataDb:GetBuffColumns()
     for _, buffColumn in pairs(buffColumns) do
-        buffIdList[#buffIdList + 1] = buffColumn:GetBuffId()
+        buffIdList[index] = buffColumn:GetBuffId()
+        index = index + 1
     end
 
     --海克斯
-    local hexList = dataDb:GetSelectedHexList()
-    for _, hexId in pairs(hexList) do
-        for _, hexBuffId in ipairs(self:GetCfgHexBuffId(hexId)) do
-            buffIdList[#buffIdList + 1] = hexBuffId
+    local upgradeDict = dataDb:GetHexUpgradeRecord()
+
+    if not XTool.IsTableEmpty(upgradeDict) then
+        for hexId, upgradeIdList in pairs(upgradeDict) do
+            for _, upgradeId in ipairs(upgradeIdList) do
+                local buffList = self:GetCfgHexUpgradeBuffId(upgradeId)
+
+                if not XTool.IsTableEmpty(buffList) then
+                    for i, buffId in pairs(buffList) do
+                        buffIdList[index] = buffId
+                        index = index + 1
+                    end
+                end
+            end
         end
     end
 
@@ -751,50 +833,44 @@ function XGoldenMinerControl:GetCurInitBuffIdList()
             return
         end
         for _, buffId in pairs(self._Model.DebugInitBuffList) do
-            buffIdList[#buffIdList + 1] = buffId
+            buffIdList[index] = buffId
+            index = index + 1
         end
         XLog.Warning("黄金矿工Debug:Debug下添加初始化Buff:", self._Model.DebugInitBuffList)
         XLog.Warning("若不需要请矿工Debug状态doLua XMVCA.XGoldenMiner:DebugInitBuff({})")
     end
+    
+    -- 剔除被覆盖的buff
+    local preRemvoeBuffId = {} -- 已经被移除的buffId的缓存
+    local finalBuffList = {}
 
-    return buffIdList
+    for i, buffId in ipairs(buffIdList) do
+        local buffCover = self:GetCfgBuffBuffCover(buffId)
+
+        if not XTool.IsTableEmpty(buffCover) then
+            for i, coverBuffId in ipairs(buffCover) do
+                preRemvoeBuffId[coverBuffId] = true
+            end
+        end
+    end
+    
+    -- 重新扫描一遍buff列表，不在待移除字典中的buff保留
+    for i, buffId in ipairs(buffIdList) do
+        if not preRemvoeBuffId[buffId] then
+            table.insert(finalBuffList, buffId)
+        end
+    end
+    
+    return finalBuffList
 end
 
 --获得当前拥有的所有buff，叠加相同类型的buff
 function XGoldenMinerControl:GetOwnBuffDic()
     local ownBuffDic = {}
-    local dataDb = self._Model:GetMineDb()
-    local upgradeList = dataDb:GetAllUpgradeStrengthenList()
-    local hexList = dataDb:GetSelectedHexList()
-    local buffIdList
-    local buffId
+    local buffIdList = self:GetCurInitBuffIdList()
 
-    --强化升级项
-    for _, strengthenDb in ipairs(upgradeList) do
-        buffId = strengthenDb:GetBuffId()
+    for i, buffId in ipairs(buffIdList) do
         self:_AddBuff(ownBuffDic, buffId)
-    end
-
-    --角色自带buff
-    local curSelectCharacterId = dataDb:GetCurPlayCharacterId()
-    if XTool.IsNumberValid(curSelectCharacterId) then
-        buffIdList = self:GetCfgCharacterBuffIds(curSelectCharacterId)
-        for _, Id in ipairs(buffIdList) do
-            self:_AddBuff(ownBuffDic, Id)
-        end
-    end
-
-    --海克斯
-    for _, hexId in ipairs(hexList) do
-        for _, hexBuffId in ipairs(self:GetCfgHexBuffId(hexId)) do
-            self:_AddBuff(ownBuffDic, hexBuffId)
-        end
-    end
-
-    --购买的道具类型为2的buff
-    local buffColumns = dataDb:GetBuffColumns()
-    for _, buffColumn in pairs(buffColumns) do
-        self:_AddBuff(ownBuffDic, buffColumn:GetBuffId())
     end
 
     return ownBuffDic
@@ -941,6 +1017,87 @@ function XGoldenMinerControl:_CheckIsDisplayBuff(buffId, displayType)
     return XTool.IsNumberValid(buffId)
             and not string.IsNilOrEmpty(self:GetCfgBuffIcon(buffId))
             and self:GetCfgBuffDisplayType(buffId) == displayType
+end
+--endregion
+
+--region Data - Hex
+
+function XGoldenMinerControl:GetSelectedHexList()
+    return self:GetMainDb():GetSelectedHexList()
+end
+
+function XGoldenMinerControl:GetSelectedCoreHexList()
+    local allHexList = self:GetSelectedHexList()
+
+    if not XTool.IsTableEmpty(allHexList) then
+        local list = {}
+
+        for i, v in ipairs(allHexList) do
+            local hexType = self:GetCfgHexType(v)
+
+            if hexType == XMVCA.XGoldenMiner.EnumConst.HexType.Core then
+                table.insert(list, v)
+            end
+        end
+        
+        return list
+    end
+end
+
+function XGoldenMinerControl:GetSelectedCoreHexCount()
+    local allHexList = self:GetSelectedHexList()
+    
+    local count = 0
+    
+    if not XTool.IsTableEmpty(allHexList) then
+        for i, v in ipairs(allHexList) do
+            local hexType = self:GetCfgHexType(v)
+
+            if hexType == XMVCA.XGoldenMiner.EnumConst.HexType.Core then
+                count = count + 1
+            end
+        end
+    end
+    
+    return count
+end
+
+function XGoldenMinerControl:GetSelectedCommonHexList()
+    local allHexList = self:GetSelectedHexList()
+
+    if not XTool.IsTableEmpty(allHexList) then
+        local list = {}
+
+        for i, v in ipairs(allHexList) do
+            local hexType = self:GetCfgHexType(v)
+
+            if hexType == XMVCA.XGoldenMiner.EnumConst.HexType.Common then
+                table.insert(list, v)
+            end
+        end
+
+        return list
+    end
+end
+
+function XGoldenMinerControl:GetSelectedCommonHexCount()
+    local allHexList = self:GetSelectedHexList()
+
+    if not XTool.IsTableEmpty(allHexList) then
+        local count = 0
+
+        for i, v in ipairs(allHexList) do
+            local hexType = self:GetCfgHexType(v)
+
+            if hexType == XMVCA.XGoldenMiner.EnumConst.HexType.Common then
+                count = count + 1
+            end
+        end
+
+        return count
+    end
+    
+    return 0
 end
 --endregion
 
@@ -1216,6 +1373,42 @@ function XGoldenMinerControl:GetClientTextPCControl(isAimHookTips)
         return self._Model:GetClientCfgValue("TextPCControl", 1)
     end
 end
+
+function XGoldenMinerControl:GetClientHexOwnCount()
+    return self._Model:GetClientCfgNumberValue('HexOwnCount')
+end
+
+function XGoldenMinerControl:GetClientHookAssetsByType(type)
+    return self._Model:GetClientCfgValue('HookAssets', type)
+end
+
+function XGoldenMinerControl:GetClientHexSelectTipsInNoEmptySlot()
+    return self._Model:GetClientCfgText('HexSelectTipsInNoEmptySlot')
+end
+
+function XGoldenMinerControl:GetClientHexSelectItemShowName(showType)
+    return self._Model:GetClientCfgText('HexSelectItemShowName', showType)
+end
+
+function XGoldenMinerControl:GetClientCommonHexRefreshLabel()
+    return self._Model:GetClientCfgText('CommonHexRefreshLabel')
+end
+
+function XGoldenMinerControl:GetClientCommonHexRefreshTimesOverTips()
+    return self._Model:GetClientCfgText('CommonHexRefreshTimesOverTips')
+end
+
+function XGoldenMinerControl:GetClientHexSelectedTips(type)
+    return self._Model:GetClientCfgText('HexSelectedTips', type)
+end
+
+function XGoldenMinerControl:GetClientHexSelectAgainTips(type)
+    return self._Model:GetClientCfgText('HexSelectAgainTips', type)
+end
+
+function XGoldenMinerControl:GetClientLinkStoneMoveTime()
+    return self._Model:GetClientCfgNumberValue('LinkStoneMoveTime')
+end
 --endregion
 
 --region Cfg - Activity
@@ -1396,6 +1589,11 @@ end
 function XGoldenMinerControl:GetCfgBuffDisplayPriority(id)
     local cfg = self._Model:GetBuffCfg(id)
     return cfg and cfg.DisplayPriority
+end
+
+function XGoldenMinerControl:GetCfgBuffBuffCover(id)
+    local cfg = self._Model:GetBuffCfg(id)
+    return cfg and cfg.BuffCover
 end
 --endregion
 
@@ -1643,6 +1841,65 @@ function XGoldenMinerControl:GetCfgHexBuffId(hexId)
     local cfg = self._Model:GetGoldenMinerHexCfg(hexId)
     return cfg and cfg.BuffId
 end
+
+function XGoldenMinerControl:GetCfgHexType(hexId)
+    local cfg = self._Model:GetGoldenMinerHexCfg(hexId)
+    return cfg and cfg.HexType
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeId(hexId)
+    local cfg = self._Model:GetGoldenMinerHexCfg(hexId)
+    return cfg and cfg.HexUpgradeId
+end
+--endregion
+
+--region Cfg - HexUpgrade
+
+function XGoldenMinerControl:GetCfgHexUpgradeName(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.Name
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeIcon(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.Icon
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeDesc(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.Desc
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeBuffId(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.BuffList
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeInit(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.UpgradeInit
+end
+
+function XGoldenMinerControl:GetCfgHexUpgradeOwnHexId(upgradeId)
+    local cfg = self._Model:GetGoldenMinerHexUpgradeCfg(upgradeId)
+    return cfg and cfg.HexId
+end
+--endregion
+
+--region Cfg - Stage
+
+--- 获取剩余刷新次数
+function XGoldenMinerControl:GetCommonHexRefreshMaxCount()
+    local stageId = self:GetMainDb():GetCurStageId()
+    local stageCfg = self._Model:GetStageCfg(stageId)
+
+    if stageCfg then
+        return stageCfg.CommonRefreshCount
+    end
+
+    return 0
+end
+
 --endregion
 
 return XGoldenMinerControl

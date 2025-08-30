@@ -25,9 +25,9 @@ function XLuckyTenantOperationAddNewPiece:SetData(pieceId, x, y, proxy)
         local piece = skill:GetPiece()
         if piece then
             local px, py = piece:GetPosition()
-            self._Desc = piece:GetName() .. "(" .. px .. "," .. py .. ")" .. ":技能id:" .. skill:GetId() .. "," .. skill:GetDesc()
+            self._Desc = piece:GetName() .. "(" .. px .. "," .. py .. ")" .. CS.XTextManager.GetLuaText("XLuckyTenantOperationAddNewPiece.lua_28") .. skill:GetId() .. "," .. skill:GetDesc()
         else
-            self._Desc = "释放者已死: 技能id:" .. skill:GetId() .. "," .. skill:GetDesc()
+            self._Desc = CS.XTextManager.GetLuaText("XLuckyTenantOperationAddNewPiece.lua_30") .. skill:GetId() .. "," .. skill:GetDesc()
         end
     end
 end

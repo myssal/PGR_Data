@@ -33,7 +33,7 @@ local ChapterMainTemplates = {}
 ---@type XTableChapter[]
 local ChapterCfg = {}
 local TreasureCfg = {}
-local ExploreGroupCfg = {}
+local ExploreGroupCfg = nil
 local ExploreItemCfg = {}
 local MainLineExCfg = {}
 local SubChapterCfg = {}
@@ -51,7 +51,6 @@ function XFubenMainLineConfigs.Init()
     ChapterCfg = XTableManager.ReadAllByIntKey(TABLE_CHAPTER, XTable.XTableChapter, "ChapterId")
     SubChapterCfg = XTableManager.ReadAllByIntKey(TABLE_SUBCHAPTER, XTable.XTableSubChapter, "ChapterId")
     TreasureCfg = XTableManager.ReadAllByIntKey(TABLE_TREASURE, XTable.XTableTreasure, "TreasureId")
-    ExploreGroupCfg = XTableManager.ReadByIntKey(TABLE_EXPLOREGROUP, XTable.XTableMainLineExploreGroup, "Id")
     MainLineExCfg = XTableManager.ReadByIntKey(TABLE_STAGEEX, XTable.XTableMainLineStageEx, "Id")
     ParallelAnimeGroupCfg = XTableManager.ReadByIntKey(TABLE_PARALLELANIMEGROUP, XTable.XTableParallelAnimeGroup, "Id")
     MainLineStageTransformCfg = XTableManager.ReadByIntKey(TABLE_MAINLINE_STAGE_TRANSFORM, XTable.XTableMainLineStageTransform, "Id")
@@ -84,6 +83,9 @@ function XFubenMainLineConfigs.GetTreasureCfg()
 end
 
 function XFubenMainLineConfigs.GetExploreGroupCfg()
+    if not ExploreGroupCfg then
+        ExploreGroupCfg = XTableManager.ReadByIntKey(TABLE_EXPLOREGROUP, XTable.XTableMainLineExploreGroup, "Id")
+    end
     return ExploreGroupCfg
 end
 

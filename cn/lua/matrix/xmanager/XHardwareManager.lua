@@ -16,135 +16,137 @@ local Inited_IOS = false
 --ios默认高档配置，其他需要指定的在这里写
 local IOS_TABLE = {
 
-    ["iPad11,1"] = XRenderQuality.Highest,
-    ["iPad11,2"] = XRenderQuality.Highest,
-    ["iPad11,3"] = XRenderQuality.Highest,
-    ["iPad11,4"] = XRenderQuality.Highest,
-    ["iPad8,1"] = XRenderQuality.Highest,
-    ["iPad8,2"] = XRenderQuality.Highest,
-    ["iPad8,3"] = XRenderQuality.Highest,
-    ["iPad8,4"] = XRenderQuality.Highest,
-    ["iPad8,5"] = XRenderQuality.Highest,
-    ["iPad8,6"] = XRenderQuality.Highest,
-    ["iPad8,7"] = XRenderQuality.Highest,
-    ["iPad8,8"] = XRenderQuality.Highest,
+    -- 已全部由IosHardware.tab 设置
 
-    ["iPad7,1"] = XRenderQuality.Highest,
-    ["iPad7,2"] = XRenderQuality.Highest,
-    ["iPad7,3"] = XRenderQuality.Highest,
-    ["iPad7,4"] = XRenderQuality.Highest,
-    ["iPad7,5"] = XRenderQuality.Middle,
-    ["iPad7,6"] = XRenderQuality.Middle,
-    ["iPad7,7"] = XRenderQuality.Highest,
+    -- ["iPad11,1"] = XRenderQuality.Highest,
+    -- ["iPad11,2"] = XRenderQuality.Highest,
+    -- ["iPad11,3"] = XRenderQuality.Highest,
+    -- ["iPad11,4"] = XRenderQuality.Highest,
+    -- ["iPad8,1"] = XRenderQuality.Highest,
+    -- ["iPad8,2"] = XRenderQuality.Highest,
+    -- ["iPad8,3"] = XRenderQuality.Highest,
+    -- ["iPad8,4"] = XRenderQuality.Highest,
+    -- ["iPad8,5"] = XRenderQuality.Highest,
+    -- ["iPad8,6"] = XRenderQuality.Highest,
+    -- ["iPad8,7"] = XRenderQuality.Highest,
+    -- ["iPad8,8"] = XRenderQuality.Highest,
 
-    ["iPad6,11"] = XRenderQuality.Middle,
-    ["iPad6,12"] = XRenderQuality.Middle,
+    -- ["iPad7,1"] = XRenderQuality.Highest,
+    -- ["iPad7,2"] = XRenderQuality.Highest,
+    -- ["iPad7,3"] = XRenderQuality.Highest,
+    -- ["iPad7,4"] = XRenderQuality.Highest,
+    -- ["iPad7,5"] = XRenderQuality.Middle,
+    -- ["iPad7,6"] = XRenderQuality.Middle,
+    -- ["iPad7,7"] = XRenderQuality.Highest,
 
-    ["iPad6,1"] = XRenderQuality.Highest,
-    ["iPad6,2"] = XRenderQuality.Highest,
-    ["iPad6,3"] = XRenderQuality.Middle,
-    ["iPad6,4"] = XRenderQuality.Middle,
-    ["iPad6,5"] = XRenderQuality.Highest,
-    ["iPad6,6"] = XRenderQuality.Highest,
-    ["iPad6,7"] = XRenderQuality.Highest,
+    -- ["iPad6,11"] = XRenderQuality.Middle,
+    -- ["iPad6,12"] = XRenderQuality.Middle,
 
-    ["iPad5,1"] = XRenderQuality.Middle,
-    ["iPad5,2"] = XRenderQuality.Middle,
-    ["iPad5,3"] = XRenderQuality.Middle,
-    ["iPad5,4"] = XRenderQuality.Middle,
-    ["iPad5,5"] = XRenderQuality.Middle,
+    -- ["iPad6,1"] = XRenderQuality.Highest,
+    -- ["iPad6,2"] = XRenderQuality.Highest,
+    -- ["iPad6,3"] = XRenderQuality.Middle,
+    -- ["iPad6,4"] = XRenderQuality.Middle,
+    -- ["iPad6,5"] = XRenderQuality.Highest,
+    -- ["iPad6,6"] = XRenderQuality.Highest,
+    -- ["iPad6,7"] = XRenderQuality.Highest,
 
-    ["iPad4,1"] = XRenderQuality.Highest,
-    ["iPad4,2"] = XRenderQuality.Highest,
-    ["iPad4,3"] = XRenderQuality.Highest,
-    ["iPad4,7"] = XRenderQuality.Highest,
-    ["iPad4,8"] = XRenderQuality.Highest,
-    ["iPad4,9"] = XRenderQuality.Highest,
+    -- ["iPad5,1"] = XRenderQuality.Middle,
+    -- ["iPad5,2"] = XRenderQuality.Middle,
+    -- ["iPad5,3"] = XRenderQuality.Middle,
+    -- ["iPad5,4"] = XRenderQuality.Middle,
+    -- ["iPad5,5"] = XRenderQuality.Middle,
 
-    ["iPad3,1"] = XRenderQuality.Highest,
-    ["iPad3,2"] = XRenderQuality.Highest,
-    ["iPad3,3"] = XRenderQuality.Highest,
-    ["iPad3,4"] = XRenderQuality.Highest,
-    ["iPad3,5"] = XRenderQuality.Highest,
-    ["iPad3,6"] = XRenderQuality.Highest,
+    -- ["iPad4,1"] = XRenderQuality.Highest,
+    -- ["iPad4,2"] = XRenderQuality.Highest,
+    -- ["iPad4,3"] = XRenderQuality.Highest,
+    -- ["iPad4,7"] = XRenderQuality.Highest,
+    -- ["iPad4,8"] = XRenderQuality.Highest,
+    -- ["iPad4,9"] = XRenderQuality.Highest,
+
+    -- ["iPad3,1"] = XRenderQuality.Highest,
+    -- ["iPad3,2"] = XRenderQuality.Highest,
+    -- ["iPad3,3"] = XRenderQuality.Highest,
+    -- ["iPad3,4"] = XRenderQuality.Highest,
+    -- ["iPad3,5"] = XRenderQuality.Highest,
+    -- ["iPad3,6"] = XRenderQuality.Highest,
 
 
 
 
-    ["iPhone1,1"] = XRenderQuality.Low,
-    ["iPhone1,2"] = XRenderQuality.Low,
-    ["iPhone2,1"] = XRenderQuality.Low,
-    ["iPhone3,1"] = XRenderQuality.Low,
-    ["iPhone3,2"] = XRenderQuality.Low,
-    ["iPhone3,3"] = XRenderQuality.Low,
-    ["iPhone4,1"] = XRenderQuality.Low,
+    -- ["iPhone1,1"] = XRenderQuality.Low,
+    -- ["iPhone1,2"] = XRenderQuality.Low,
+    -- ["iPhone2,1"] = XRenderQuality.Low,
+    -- ["iPhone3,1"] = XRenderQuality.Low,
+    -- ["iPhone3,2"] = XRenderQuality.Low,
+    -- ["iPhone3,3"] = XRenderQuality.Low,
+    -- ["iPhone4,1"] = XRenderQuality.Low,
 
-    ["iPhone5,1"] = XRenderQuality.Low,
-    ["iPhone5,2"] = XRenderQuality.Low,
-    ["iPhone5,3"] = XRenderQuality.Low,
-    ["iPhone5,4"] = XRenderQuality.Low,
+    -- ["iPhone5,1"] = XRenderQuality.Low,
+    -- ["iPhone5,2"] = XRenderQuality.Low,
+    -- ["iPhone5,3"] = XRenderQuality.Low,
+    -- ["iPhone5,4"] = XRenderQuality.Low,
 
-    ["iPhone6,1"] = XRenderQuality.Low,
-    ["iPhone6,2"] = XRenderQuality.Low,
+    -- ["iPhone6,1"] = XRenderQuality.Low,
+    -- ["iPhone6,2"] = XRenderQuality.Low,
 
-    ["iPhone7,2"] = XRenderQuality.Middle,
-    ["iPhone7,1"] = XRenderQuality.Middle,
+    -- ["iPhone7,2"] = XRenderQuality.Middle,
+    -- ["iPhone7,1"] = XRenderQuality.Middle,
 
-    --iphone 6s
-    ["iPhone8,1"] = XRenderQuality.Middle,
-    ["iPhone8,2"] = XRenderQuality.Middle,
-    ["iPhone8,4"] = XRenderQuality.High,
+    -- --iphone 6s
+    -- ["iPhone8,1"] = XRenderQuality.Middle,
+    -- ["iPhone8,2"] = XRenderQuality.Middle,
+    -- ["iPhone8,4"] = XRenderQuality.High,
 
-    --iphone 7
-    ["iPhone9,1"] = XRenderQuality.High,
-    ["iPhone9,2"] = XRenderQuality.High,
-    ["iPhone9,3"] = XRenderQuality.High,
-    ["iPhone9,4"] = XRenderQuality.High,
+    -- --iphone 7
+    -- ["iPhone9,1"] = XRenderQuality.High,
+    -- ["iPhone9,2"] = XRenderQuality.High,
+    -- ["iPhone9,3"] = XRenderQuality.High,
+    -- ["iPhone9,4"] = XRenderQuality.High,
 
-    --iphone 8
-    ["iPhone10,1"] = XRenderQuality.High,
-    ["iPhone10,4"] = XRenderQuality.High,
+    -- --iphone 8
+    -- ["iPhone10,1"] = XRenderQuality.High,
+    -- ["iPhone10,4"] = XRenderQuality.High,
 
-    --iphone 8 plus
-    ["iPhone10,2"] = XRenderQuality.High,
-    ["iPhone10,5"] = XRenderQuality.High,
+    -- --iphone 8 plus
+    -- ["iPhone10,2"] = XRenderQuality.High,
+    -- ["iPhone10,5"] = XRenderQuality.High,
 
-    --iphone x
-    ["iPhone10,3"] = XRenderQuality.High,
-    ["iPhone10,6"] = XRenderQuality.High,
+    -- --iphone x
+    -- ["iPhone10,3"] = XRenderQuality.High,
+    -- ["iPhone10,6"] = XRenderQuality.High,
 
-    --iphone xr
-    ["iPhone11,8"] = XRenderQuality.Highest,
+    -- --iphone xr
+    -- ["iPhone11,8"] = XRenderQuality.Highest,
 
-    --iphone xs
-    ["iPhone11,2"] = XRenderQuality.High,
+    -- --iphone xs
+    -- ["iPhone11,2"] = XRenderQuality.High,
 
-    --iphone xs max
-    ["iPhone11,6"] = XRenderQuality.High,
+    -- --iphone xs max
+    -- ["iPhone11,6"] = XRenderQuality.High,
 
-    --???
-    ["iPhone11,4"] = XRenderQuality.Highest,
-    ["iPhone11,1"] = XRenderQuality.Highest,
-    ["iPhone11,3"] = XRenderQuality.Highest,
-    ["iPhone11,5"] = XRenderQuality.Highest,
-    ["iPhone11,7"] = XRenderQuality.Highest,
-    ["iPhone11,9"] = XRenderQuality.Highest,
+    -- --???
+    -- ["iPhone11,4"] = XRenderQuality.Highest,
+    -- ["iPhone11,1"] = XRenderQuality.Highest,
+    -- ["iPhone11,3"] = XRenderQuality.Highest,
+    -- ["iPhone11,5"] = XRenderQuality.Highest,
+    -- ["iPhone11,7"] = XRenderQuality.Highest,
+    -- ["iPhone11,9"] = XRenderQuality.Highest,
 
-    ["iPhone12,1"] = XRenderQuality.Highest,
-    ["iPhone12,2"] = XRenderQuality.Highest,
-    ["iPhone12,3"] = XRenderQuality.Highest,
-    ["iPhone12,4"] = XRenderQuality.Highest,
-    ["iPhone12,5"] = XRenderQuality.Highest,
-    ["iPhone12,6"] = XRenderQuality.Highest,
-    ["iPhone12,7"] = XRenderQuality.Highest,
-    ["iPhone12,8"] = XRenderQuality.Highest,
-    ["iPhone12,9"] = XRenderQuality.Highest,
+    -- ["iPhone12,1"] = XRenderQuality.Highest,
+    -- ["iPhone12,2"] = XRenderQuality.Highest,
+    -- ["iPhone12,3"] = XRenderQuality.Highest,
+    -- ["iPhone12,4"] = XRenderQuality.Highest,
+    -- ["iPhone12,5"] = XRenderQuality.Highest,
+    -- ["iPhone12,6"] = XRenderQuality.Highest,
+    -- ["iPhone12,7"] = XRenderQuality.Highest,
+    -- ["iPhone12,8"] = XRenderQuality.Highest,
+    -- ["iPhone12,9"] = XRenderQuality.Highest,
 
-    --iphone 13
+    -- --iphone 13
 
-    --iphone 14
+    -- --iphone 14
 
-    --iphone 15
+    -- --iphone 15
 }
 
 function XHardwareManager.CheckIOS()

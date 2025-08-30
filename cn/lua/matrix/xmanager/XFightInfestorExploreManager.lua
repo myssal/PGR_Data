@@ -107,6 +107,9 @@ XFightInfestorExploreManagerCreator = function()
 
     function XFightInfestorExploreManager.NomalizeScoreStr(score)
         if score >= 10000 then
+            if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                return CS.XTextManager.GetText("ShowLargeIntNumText", math.floor(score / 1000) / 10) --外国人看不懂W
+            end 
             return math.floor(score / 1000) / 10 .. "W"
         end
         return score

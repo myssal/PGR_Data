@@ -40,14 +40,14 @@ function XUiRiftAttribute:OnDisable()
 end
 
 function XUiRiftAttribute:InitCompnent()
-    local itemId = XDataCenter.ItemManager.ItemId.RiftGold
+    local itemId = XDataCenter.ItemManager.ItemId.RiftGold2
     if not self.AssetPanel then
         self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe({ itemId }, self.PanelSpecialTool, self)
     else
         self.AssetPanel:Refresh({ itemId })
     end
 
-    local icon = XItemConfigs.GetItemIconById(XDataCenter.ItemManager.ItemId.RiftGold)
+    local icon = XItemConfigs.GetItemIconById(XDataCenter.ItemManager.ItemId.RiftGold2)
     self.RImgExpend:SetRawImage(icon)
 end
 
@@ -146,7 +146,7 @@ function XUiRiftAttribute:RefreshAttrLevelAndConst()
     self.PanelExpend.gameObject:SetActiveEx(false)
     self.GoldNoEnough = false
     local const = self._Control:GetAttributeCost(totalLevel)
-    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold)
+    local ownCnt = XDataCenter.ItemManager.GetCount(XDataCenter.ItemManager.ItemId.RiftGold2)
     local showConst = const > 0
     if showConst then
         self.TxtExpendTitle.text = XUiHelper.GetText("RiftBuyAttrConst")

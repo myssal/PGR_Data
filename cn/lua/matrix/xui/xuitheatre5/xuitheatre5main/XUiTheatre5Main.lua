@@ -21,11 +21,13 @@ function XUiTheatre5Main:OnAwake()
     end
     -- 消除初见蓝点
     self._Control:MarkHasNoEnterReddot()
+    self.PanelPopup = self.PanelPopup or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelPopup", "RectTransform")
+    self.PopupText = self.PopupText or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelPopup/Text", "Text")
 end
 
 function XUiTheatre5Main:OnStart()
-    self:RefreshResourceBar()      
-    
+    self:RefreshResourceBar()
+
     -- 注册蓝点
     self:InitReddots()
 end
@@ -36,23 +38,29 @@ function XUiTheatre5Main:OnEnable()
     self:UpdateShopShowReward()
     self:UpdateAssetPanel()
     self:RefreshReddots()
+    self:RemindNewStoryLine()
 end
 
 function XUiTheatre5Main:OnDisable()
     self:StopPVPTimer()
+    if self._TimerNewStoryLine then
+        XScheduleManager.UnSchedule(self._TimerNewStoryLine)
+        self._TimerNewStoryLine = nil
+    end
 end
 
 function XUiTheatre5Main:Refresh()
-    if self.BtnRetreat then --异步判空
+    if self.BtnRetreat then
+        --异步判空
         self.BtnRetreat.gameObject:SetActiveEx(self._Control:CheckIsInPVPAdventure())
     end
-    if self.BtnRetreatPVE then   
+    if self.BtnRetreatPVE then
         self.BtnRetreatPVE.gameObject:SetActiveEx(self._Control.PVEControl:GetCurChapterBattleData() ~= nil)
-    end  
+    end
 end
 
 function XUiTheatre5Main:RefreshResourceBar()
-    self._ResourceBarCoins = self._Control:GetTheatre5CoinIds()      
+    self._ResourceBarCoins = self._Control:GetTheatre5CoinIds()
     self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelSpecialTool, self)
     XDataCenter.ItemManager.AddCountUpdateListener(self._ResourceBarCoins, handler(self, self.UpdateAssetPanel), self.AssetActivityPanel)
     for i = 1, #self._ResourceBarCoins do
@@ -66,7 +74,7 @@ function XUiTheatre5Main:CustomCurrencyClick(index)
     local itemId = self._ResourceBarCoins[index]
     if XTool.IsNumberValid(itemId) then
         XLuaUiManager.Open("UiTheatre5PopupRewardDetail", itemId, XMVCA.XTheatre5.EnumConst.ItemType.Common)
-    end    
+    end
 end
 
 --- 进入游戏点击事件
@@ -75,16 +83,16 @@ function XUiTheatre5Main:OnBtnBattleClickEvent()
         XUiManager.TipMsg(self._Control:GetClientConfigPVPNotOpenTips())
         return
     end
-    
+
     if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVP then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
-               self:EnterPVPMode()
-            end    
+                self:EnterPVPMode()
+            end
         end)
     else
         self:EnterPVPMode()
-    end    
+    end
 end
 
 function XUiTheatre5Main:EnterPVPMode()
@@ -95,7 +103,7 @@ function XUiTheatre5Main:EnterPVPMode()
         else
             self:_OnNewBattleBegin()
         end
-        
+
         self._Control:MarkNewPVPActivityReddot()
     end)
 end
@@ -105,11 +113,11 @@ function XUiTheatre5Main:OnBtnPVEBattleClickEvent()
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:EnterPVEMode()
-            end    
+            end
         end)
     else
         self:EnterPVEMode()
-    end    
+    end
 end
 
 function XUiTheatre5Main:EnterPVEMode()
@@ -125,12 +133,12 @@ function XUiTheatre5Main:OnBtnRetreatClickEvent()
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:SingleFightSettle()
-            end    
+            end
         end)
     else
         self:SingleFightSettle()
-    end    
-   
+    end
+
 end
 
 function XUiTheatre5Main:OnBtnPVERetreatClickEvent()
@@ -138,13 +146,13 @@ function XUiTheatre5Main:OnBtnPVERetreatClickEvent()
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:SingleFightSettle()
-            end    
+            end
         end)
     else
         self:SingleFightSettle()
-    end    
+    end
 
-   
+
 end
 
 function XUiTheatre5Main:OnOpenShop()
@@ -153,8 +161,8 @@ function XUiTheatre5Main:OnOpenShop()
         if self._ShowShopReddot then
             --消除商店红点
             self._Control:MarkLimitShopReddot()
-        end    
-    end) 
+        end
+    end)
 end
 
 function XUiTheatre5Main:SingleFightSettle()
@@ -166,14 +174,14 @@ function XUiTheatre5Main:SingleFightSettle()
                 return
             end
         end
-        
+
         -- 特殊逻辑，结算后触发铭牌弹窗和结算弹窗重合，导致不能正常看到铭牌弹窗，需要在这锁定
         XDataCenter.MedalManager.SetNewNameplateAutoWinLock(true)
-        
+
         XMVCA.XTheatre5.BattleCom:RequestTheatre5AdvanceSettle(function()
             self:Refresh()
         end)
-    end)    
+    end)
 end
 
 function XUiTheatre5Main:_OnNewBattleBegin()
@@ -189,7 +197,7 @@ function XUiTheatre5Main:_OnBattleContinue()
         self:Refresh()
         return
     end
-    
+
     local curStatus = self._Control:GetCurPlayStatus()
 
     if curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.Matching then
@@ -215,13 +223,15 @@ function XUiTheatre5Main:_OnBattleContinue()
         end)
     else
         XLuaUiManager.Open('UiTheatre5BattleShop')
-    end 
+    end
 end
 
 function XUiTheatre5Main:OnClickClose()
     self:PlayAnimationWithMask("Disable", function()
+        --win包很低概率偶现角色界面和主界面套娃，无法复现，故先容错处理
+        XLuaUiManager.SafeClose("UiTheatre5ChooseCharacter")
         self:Close()
-    end) 
+    end)
 end
 
 function XUiTheatre5Main:OnReturnMain()
@@ -239,12 +249,12 @@ end
 
 function XUiTheatre5Main:StartPVPTimer()
     self:StopPVPTimer()
-    
+
     self.PVPTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
 
     if XTool.IsNumberValid(self.PVPTimeId) and XFunctionManager.CheckInTimeByTimeId(self.PVPTimeId) then
         self:_ShowWhenInTime()
-        
+
         self:UpdatePVPTimer()
         self._PVPTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdatePVPTimer), XScheduleManager.SECOND)
     else
@@ -256,15 +266,15 @@ function XUiTheatre5Main:UpdatePVPTimer()
     local endTime = XFunctionManager.GetEndTimeByTimeId(self.PVPTimeId)
 
     if endTime <= 0 then
-        XLog.Error('PVP结束时间异常，结束时间：'..tostring(endTime)..' TimeId:'..tostring(self.PVPTimeId))
-        
+        XLog.Error('PVP结束时间异常，结束时间：' .. tostring(endTime) .. ' TimeId:' .. tostring(self.PVPTimeId))
+
         self:_ShowWhenNotInTime()
         self:StopPVPTimer()
     end
-    
+
     local now = XTime.GetServerNowTimestamp()
     local leftTime = math.max(endTime - now, 0)
-    
+
     local leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPTimeLabel(), XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY))
 
     if self.BtnBattle then
@@ -296,7 +306,7 @@ function XUiTheatre5Main:_ShowWhenNotInTime()
     if self.BtnRetreat then
         self.BtnRetreat.gameObject:SetActiveEx(false)
     end
-    
+
     self.PVPEnable = false
 end
 
@@ -317,12 +327,12 @@ function XUiTheatre5Main:OnPlayVideo()
     local videoId = self._Control:GetMainVideoId()
     if not XTool.IsNumberValid(videoId) then
         return
-    end    
+    end
     XLuaVideoManager.PlayUiVideo(videoId)
 end
 
 function XUiTheatre5Main:UpdateShopShowReward()
-    local shopRewards = self._Control:GetShopShowRewards() 
+    local shopRewards = self._Control:GetShopShowRewards()
     self._RewardCellList = XUiHelper.RefreshUiObjectList(self._RewardCellList, self.Grid256New.transform.parent, self.Grid256New, #shopRewards, function(index, grid)
         ---@type XUiGridCommon
         local cell = XUiGridCommon.New(self, grid.GameObject)
@@ -354,16 +364,16 @@ function XUiTheatre5Main:RefreshReddots()
     XRedPointManager.Check(self._PVEReddotId)
     local shopIdList = self._Control:GetValidShopIdlist()
     --基础商店是否解锁
-    local baseShopUnlock = XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) 
+    local baseShopUnlock = XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true)
     if XTool.IsTableEmpty(shopIdList) or not baseShopUnlock then
         XRedPointManager.Check(self._ShopReddotId)
     else
         -- 任务也要刷新红点
         XRedPointManager.Check(self._ShopReddotId)
         XShopManager.GetShopInfoList(shopIdList, function()
-           XRedPointManager.Check(self._ShopReddotId)
-        end, XShopManager.ActivityShopType.Theatre5Shop, true) 
-    end    
+            XRedPointManager.Check(self._ShopReddotId)
+        end, XShopManager.ActivityShopType.Theatre5Shop, true)
+    end
 end
 
 function XUiTheatre5Main:OnBtnPVPReddotEvent(count)
@@ -383,6 +393,22 @@ end
 
 function XUiTheatre5Main:OpenHangBook()
     XLuaUiManager.Open("UiTheatre5SkillHandbook")
+end
+
+-- v3.8新增，提示新剧情
+function XUiTheatre5Main:RemindNewStoryLine()
+    local tipsNewStoryLine = self._Control:GetTipsNewStoryLine()
+    if tipsNewStoryLine and tipsNewStoryLine ~= "" and self.PanelPopup then
+        self.PanelPopup.gameObject:SetActiveEx(true)
+        self.PopupText.text = tipsNewStoryLine
+        --XLog.Debug("新增共通线提示:" .. tipsNewStoryLine)
+        if not self._TimerNewStoryLine then
+            self._TimerNewStoryLine = XScheduleManager.ScheduleOnce(function()
+                self.PanelPopup.gameObject:SetActiveEx(false)
+                self._TimerNewStoryLine = nil
+            end, 5 * XScheduleManager.SECOND)
+        end
+    end
 end
 
 return XUiTheatre5Main

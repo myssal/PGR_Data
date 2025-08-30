@@ -28,13 +28,13 @@ function XUiRpgMakerGamePanelDetailTip:RefreshTxt(modelKey, modelName)
     local desc
     local icon
     if not string.IsNilOrEmpty(modelKey) then
-        name = XRpgMakerGameConfigs.GetRpgMakerGameModelName(modelKey)
-        desc = XRpgMakerGameConfigs.GetRpgMakerGameModelDesc(modelKey)
-        icon = XRpgMakerGameConfigs.GetRpgMakerGameModelIcon(modelKey)
+        name = XMVCA.XRpgMakerGame:GetConfig():GetModelName(modelKey)
+        desc = XMVCA.XRpgMakerGame:GetConfig():GetModelDesc(modelKey)
+        icon = XMVCA.XRpgMakerGame:GetConfig():GetModelIcon(modelKey)
     elseif not string.IsNilOrEmpty(modelName) then
-        name = XRpgMakerGameConfigs.GetRpgMakerGameName(modelName)
-        desc = XRpgMakerGameConfigs.GetRpgMakerGameDesc(modelName)
-        icon = XRpgMakerGameConfigs.GetRpgMakerGameIcon(modelName)
+        name = XMVCA.XRpgMakerGame:GetConfig():GetAnimationName(modelName)
+        desc = XMVCA.XRpgMakerGame:GetConfig():GetAnimationDesc(modelName)
+        icon = XMVCA.XRpgMakerGame:GetConfig():GetAnimationIcon(modelName)
     end
 
     if string.IsNilOrEmpty(name) or string.IsNilOrEmpty(desc) then

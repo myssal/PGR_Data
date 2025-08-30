@@ -29,6 +29,11 @@ function XGoldenMinerEntityPartner:GetComponentPartnerRadar()
     return self:GetFirstChildEntityWithType(self._OwnControl.COMPONENT_TYPE.PARTNER_RADAR)
 end
 
+---@return XGoldenMinerComponentPartnerStoneLink
+function XGoldenMinerEntityPartner:GetComponentPartnerStoneLink()
+    return self:GetFirstChildEntityWithType(self._OwnControl.COMPONENT_TYPE.PARTNER_STONELINK)
+end
+
 function XGoldenMinerEntityPartner:GetGrabStoneUidList()
     return self._GrabStoneList
 end

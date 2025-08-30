@@ -288,7 +288,7 @@ function XUiAwarenessRoomCharacter:RefreshTeamData(teamPrefabData)
     for pos, v in pairs(currCharList) do
         local charIdInPrefab = prefabCharList[pos]
         local spPos = XDataCenter.FubenAwarenessManager.GetMemberOrderByIndex(pos, #currCharList)
-        if self:CheckLimitBeforeChangeTeam(charIdInPrefab, spPos) then
+        if XTool.IsNumberValid(charIdInPrefab) and self:CheckLimitBeforeChangeTeam(charIdInPrefab, spPos) then
             isLimit = true
         end
         afterList[pos] = prefabCharList[pos]

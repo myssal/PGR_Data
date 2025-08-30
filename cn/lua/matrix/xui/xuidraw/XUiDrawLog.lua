@@ -61,6 +61,9 @@ function XUiDrawLog:SetRuleData(rules, ruleTitles, panel)
         tmpObj.TxtRuleTittle.text = ruleTitles[k]
         tmpObj.TxtRule.text = rules[k]
         tmpObj.GameObject:SetActiveEx(true)
+        if XOverseaManager.IsOverSeaRegion() then
+            tmpObj.TxtRule.supportRichText = true
+        end
     end
 end
 --endregion
@@ -112,13 +115,13 @@ function XUiDrawLog:InitDrawPreview()
         local item = XUiGridCommon.New(self, go)
         item:Refresh(goods[i])
     end
-    local list = XDataCenter.DrawManager.GetDrawProb(self.DrawId)
-    if not list then
+    local data = XDataCenter.DrawManager.GetDrawProb(self.DrawId)
+    if not data then
         return
     end
-    for i = 1, #list do
+    for i = 1, #data.Name do
         local go
-        if list[i].IsUp then
+        if data.IsUp[i] then
             go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtUp, PanelObj.PanelTxtParent)
         else
             go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtNor, PanelObj.PanelTxtParent)
@@ -127,9 +130,15 @@ function XUiDrawLog:InitDrawPreview()
         tmpObj.Transform = go.transform
         tmpObj.GameObject = go.gameObject
         XTool.InitUiObject(tmpObj)
+        if XOverseaManager.IsOverSeaRegion() then
+            tmpObj.TxtName.HrefListener = function(link, content)
+                self:ClickLink(link)
+            end
+        end
+       
         tmpObj.GameObject:SetActiveEx(true)
-        tmpObj.TxtName.text = list[i].Name
-        tmpObj.TxtProbability.text = list[i].ProbShow
+        tmpObj.TxtName.text = data.Name[i]
+        tmpObj.TxtProbability.text = data.ProbShow[i]
     end
     XScheduleManager.ScheduleOnce(function()
         CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(PanelObj.PanelCardParent);
@@ -259,6 +268,10 @@ function XUiDrawLog:OnBtnSwitchOn()
     self.PanelDetailView.gameObject:SetActiveEx(true)
 
     self:PlayAnimation("DetailViewQieHuan")
+end
+
+function XUiDrawLog:ClickLink(url)
+    XHeroSdkManager.OpenURL(url)
 end
 --endregion
 

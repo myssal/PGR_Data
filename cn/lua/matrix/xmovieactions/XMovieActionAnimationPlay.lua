@@ -15,11 +15,23 @@ function XMovieActionAnimationPlay:OnRunning()
         return
     end
 
+    -- 是否是循环动画
+    local isLoop = false
+    local director = anim.transform:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    local directorWrapModeLoop = CS.UnityEngine.Playables.DirectorWrapMode.Loop
+    if director and director.extrapolationMode == directorWrapModeLoop then
+        isLoop = true
+    end
+
     self:StopAnimtion(anim)
     anim.gameObject:SetActiveEx(true)
-    anim:PlayTimelineAnimation(function()
-        anim.gameObject:SetActiveEx(false)
-    end)
+    if isLoop then
+        anim:PlayTimelineAnimation(nil, nil, directorWrapModeLoop)
+    else
+        anim:PlayTimelineAnimation(function()
+            anim.gameObject:SetActiveEx(false)
+        end)
+    end
 end
 
 function XMovieActionAnimationPlay:StopAnimtion(anim)

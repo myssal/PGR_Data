@@ -1,5 +1,5 @@
 local XUiGridTreasureGrade = require("XUi/XUiFubenMainLineChapter/XUiGridTreasureGrade")
-local XUiPanelFubenWeiLaStage = XClass(XUiNode, "XUiPanelFubenWeiLaStage")
+local XUiPanelFubenWeiLaStage = XClass(XUiNode, "XUiPanelFubenWeiLaStage", true)
 local XUiFubenWeiLaStageItem = require("XUi/XUiNewChar/WeiLa/XUiFubenWeiLaStageItem")
 local UIFUBENKOROTUTORIA_TEACHING_DETAIL = "UiFunbenKoroTutoriaTeachingDetail"
 local UIFUBENKOROTUTORIA_CHALLENGE_DETAIL = "UiFunbenKoroTutoriaChallengeDetail"
@@ -9,6 +9,13 @@ function XUiPanelFubenWeiLaStage:OnStart(cfg,panelType)
     self.Cfg = cfg
     self:InitPanel(panelType)
     self.GridTreasureList = {}
+    -- #203409
+    UIFUBENKOROTUTORIA_TEACHING_DETAIL, UIFUBENKOROTUTORIA_CHALLENGE_DETAIL = self:GetTeachingAndChallenge()
+end
+
+-- #203409 覆写类需要重定向这2个UiName
+function XUiPanelFubenWeiLaStage:GetTeachingAndChallenge()
+    return "UiFunbenKoroTutoriaTeachingDetail", "UiFunbenKoroTutoriaChallengeDetail"
 end
 
 function XUiPanelFubenWeiLaStage:InitPanel(panelType)

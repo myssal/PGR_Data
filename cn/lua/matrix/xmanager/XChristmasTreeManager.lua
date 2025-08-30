@@ -223,7 +223,7 @@ XChristmasTreeManagerCreator = function ()
             if res.Changes and next(res.Changes) then
                 XChristmasTreeManager.ApplyChange(res.Changes)
                 XChristmasTreeManager.ResetChange()
-                XEventManager.DispatchEvent(EVENT_CHRISTMAS_TREE_GOT_REWARD)
+                XEventManager.DispatchEvent(XEventId.EVENT_CHRISTMAS_TREE_GOT_REWARD)
             end
             if cb then 
                 cb() 
