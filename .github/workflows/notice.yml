@@ -28,8 +28,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Fetching current version.json..."
-          CUR=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/repos/${{ github.repository }}/contents/version.json")
+          CUR=$(curl -s -H "Authorization: token $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/contents/version.json")
 
           STATUS=$(echo "$CUR" | jq -r '.message // empty')
           if [ "$STATUS" == "Not Found" ] || [ -z "$CUR" ]; then
