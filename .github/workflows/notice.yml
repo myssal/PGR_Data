@@ -47,25 +47,25 @@ jobs:
           jq empty prev.json || { echo "prev.json invalid"; exit 1; }
           jq empty curr.json || { echo "curr.json invalid"; exit 1; }
 
-          # Read JSONs into bash variables
           PREV=$(cat prev.json)
           CUR=$(cat curr.json)
 
-          MSG=$(jq -n --argjson prev "$PREV" --argjson curr "$CUR" '
+          DIFF=$(jq -n --argjson prev "$PREV" --argjson curr "$CUR" '
             ($curr | to_entries)
             | map(select(.value != "" and .value != ($prev[.key] // "")))
             | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
             | join("\n")
           ')
 
-          if [ -z "$MSG" ]; then
+          if [ -z "$DIFF" ]; then
             echo "No meaningful changes detected"
             echo "CHANGED=false" >> $GITHUB_OUTPUT
           else
+            # Wrap the diff in code block for Discord
             if [ -n "$ROLE_ID" ]; then
-              MSG="<@&${ROLE_ID}> **Shikikan, new cdn version(s) just dropped:**\n$MSG"
+              MSG="<@&${ROLE_ID}> Shikikan, new cdn version(s) just dropped:\n\`\`\`\n$DIFF\n\`\`\`"
             else
-              MSG="**Shikikan, new cdn version(s) just dropped:**\n$MSG"
+              MSG="**Shikikan, new cdn version(s) just dropped:**\n\`\`\`\n$DIFF\n\`\`\`"
             fi
             echo -e "$MSG" > diff.txt
             echo "CHANGED=true" >> $GITHUB_OUTPUT
