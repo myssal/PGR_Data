@@ -1,9 +1,7 @@
 name: Notify Version Changes
 
 on:
-  push:
-    paths:
-      - "version.json"
+  workflow_dispatch: 
 
 jobs:
   notify:
@@ -14,10 +12,9 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          PREV_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
+          curl -s -H "Authorization: token $GH_TOKEN" \
             https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^ \
-            | jq -r '.content' | base64 -d)
-          echo "$PREV_JSON" > prev.json
+            | jq -r '.content' | base64 -d > prev.json
 
       - name: Fetch current version.json
         run: |
@@ -25,31 +22,34 @@ jobs:
             https://api.github.com/repos/${{ github.repository }}/contents/version.json \
             | jq -r '.content' | base64 -d > curr.json
 
-       - name: Generate diff
+      - name: Generate diff
         id: diff
+        env:
+          ROLE_ID: ${{ secrets.DISCORD_ROLE_ID }} # ping a role
         run: |
-          # Check JSON validity
-          jq empty curr.json || { echo "curr.json invalid"; exit 1; }
+          # Validate JSON
           jq empty prev.json || { echo "prev.json invalid"; exit 1; }
+          jq empty curr.json || { echo "curr.json invalid"; exit 1; }
 
-          MSG="" 
-          
-          jq -c 'to_entries[]' curr.json | while read -r entry; do
-            key=$(echo "$entry" | jq -r '.key')
-            new=$(echo "$entry" | jq -r '.value')
-            old=$(jq -r --arg k "$key" '.[$k]' prev.json)
-            
-            if [ "$new" != "" ] && [ "$new" != "$old" ]; then
-              MSG="${MSG}${key} [${old}] -> [${new}]\n"
-            fi
-          done
+          # Generate diff using jq
+          MSG=$(jq -r --argfile prev prev.json '
+            to_entries
+            | map(select(.value != "" and .value != ($prev[.key] // "")))
+            | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
+            | join("\n")
+          ' curr.json)
 
           if [ -z "$MSG" ]; then
             echo "No meaningful changes detected"
             echo "CHANGED=false" >> $GITHUB_OUTPUT
           else
-            MSG="**Shikikan, new cdn version(s) just dropped:**\n$MSG"
-            printf "$MSG" > diff.txt
+            # Optionally ping a role
+            if [ -n "$ROLE_ID" ]; then
+              MSG="<@&${ROLE_ID}> **Shikikan, new cdn version(s) just dropped:**\n$MSG"
+            else
+              MSG="**Shikikan, new cdn version(s) just dropped:**\n$MSG"
+            fi
+            echo -e "$MSG" > diff.txt
             echo "CHANGED=true" >> $GITHUB_OUTPUT
 
       - name: Send Discord notification
@@ -58,17 +58,6 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           CONTENT=$(cat diff.txt)
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d "{\"content\": \"$CONTENT\"}" \
-               $DISCORD_WEBHOOK
-
-      - name: Send Discord notification
-        if: steps.diff.outputs.CHANGED == 'true'
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        run: |
-          CONTENT="**Shikikan, new cdn version(s) just dropped:**\n$(cat diff.txt)"
           curl -H "Content-Type: application/json" \
                -X POST \
                -d "{\"content\": \"$CONTENT\"}" \
