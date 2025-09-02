@@ -2,6 +2,9 @@ name: Notify Version Changes
 
 on:
   workflow_dispatch: 
+  push:
+    paths:
+      - "version.json"
 
 jobs:
   notify:
