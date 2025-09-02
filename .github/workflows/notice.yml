@@ -47,12 +47,16 @@ jobs:
           jq empty prev.json || { echo "prev.json invalid"; exit 1; }
           jq empty curr.json || { echo "curr.json invalid"; exit 1; }
 
-          MSG=$(jq -r --argfile prev prev.json '
-            to_entries
+          # Read JSONs into bash variables
+          PREV=$(cat prev.json)
+          CUR=$(cat curr.json)
+
+          MSG=$(jq -n --argjson prev "$PREV" --argjson curr "$CUR" '
+            ($curr | to_entries)
             | map(select(.value != "" and .value != ($prev[.key] // "")))
             | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
             | join("\n")
-          ' curr.json)
+          ')
 
           if [ -z "$MSG" ]; then
             echo "No meaningful changes detected"
