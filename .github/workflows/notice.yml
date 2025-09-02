@@ -13,15 +13,15 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Fetching previous version.json..."
-          PREV=$(curl -s -H "Authorization: token $GH_TOKEN" \
-            "https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^")
-
+          PREV=$(curl -s -H "Authorization: token $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^")
+          
           STATUS=$(echo "$PREV" | jq -r '.message // empty')
-          if [ "$STATUS" == "Not Found" ] || [ -z "$PREV" ]; then
+          if [ "$STATUS" = "Not Found" ] || [ -z "$PREV" ]; then
             echo "{}" > prev.json
             echo "No previous version found, using empty JSON."
           else
             echo "$PREV" | jq -r '.content' | base64 -d > prev.json
+          fi
 
       - name: Fetch current version.json
         env:
@@ -29,14 +29,14 @@ jobs:
         run: |
           echo "Fetching current version.json..."
           CUR=$(curl -s -H "Authorization: token $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/contents/version.json")
-
+          
           STATUS=$(echo "$CUR" | jq -r '.message // empty')
-          if [ "$STATUS" == "Not Found" ] || [ -z "$CUR" ]; then
+          if [ "$STATUS" = "Not Found" ] || [ -z "$CUR" ]; then
             echo "Current version.json not found!"
             exit 1
+          else
+            echo "$CUR" | jq -r '.content' | base64 -d > curr.json
           fi
-
-          echo "$CUR" | jq -r '.content' | base64 -d > curr.json
 
       - name: Generate diff
         id: diff
@@ -46,7 +46,7 @@ jobs:
           echo "Generating diff..."
           jq empty prev.json || { echo "prev.json invalid"; exit 1; }
           jq empty curr.json || { echo "curr.json invalid"; exit 1; }
-          
+
           MSG=$(jq -r --argfile prev prev.json '
             to_entries
             | map(select(.value != "" and .value != ($prev[.key] // "")))
@@ -65,6 +65,7 @@ jobs:
             fi
             echo -e "$MSG" > diff.txt
             echo "CHANGED=true" >> $GITHUB_OUTPUT
+          fi
 
       - name: Send Discord notification
         if: steps.diff.outputs.CHANGED == 'true'
