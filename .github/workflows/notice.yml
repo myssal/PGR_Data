@@ -58,6 +58,7 @@ jobs:
             | map(select(.value != "" and .value != ($prev[.key] // "")))
             | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
             | join("\n")
+            | @text
           ')
 
           if [ -z "$DIFF" ]; then
