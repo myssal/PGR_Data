@@ -78,6 +78,10 @@ function XGoldenMinerSystemMap:OnInit()
         data.CurPos = nil
         data.CurDirection = nil
     end)
+    
+    --3.8特殊功能，指定关卡每隔一段时间播放扫屏特效
+    self._SpeicalMapNeedRayScanEffect = self._MainControl:GetClientSpecialMapNeedRayScanEffect()
+    self._SpecialMapScanEffectTimePeriod = self._MainControl:GetClientSpecialMapScanEffectTimePeriod()
 end
 
 ---@param objDir XGoldenMinerGameInitObjDir
@@ -157,6 +161,16 @@ function XGoldenMinerSystemMap:EnterGame(objDir)
 
     self:_InitRandomAddStone()
     self:_InitSunMoonMap()
+
+    local mapId = self._MainControl:GetGameData():GetMapId()
+
+    if not XTool.IsTableEmpty(self._SpeicalMapNeedRayScanEffect) and table.contains(self._SpeicalMapNeedRayScanEffect, mapId) then
+        self._NeedRayScanEffect = true
+        self._TimePeriodIndex = 1
+        self._TimerPeriodCount = XTool.GetTableCount(self._SpecialMapScanEffectTimePeriod)
+    else
+        self._NeedRayScanEffect = false
+    end
 end
 
 function XGoldenMinerSystemMap:OnRelease()
@@ -184,6 +198,7 @@ function XGoldenMinerSystemMap:OnUpdate(time)
     if self._MainControl:IsRunning() then
         self:_UpdateSunMoonMapCD(time)
         self:OnCopyStoneCreate()
+        self:OnSpecialRayScanEffect(time)
     end
 end
 --endregion
@@ -1389,6 +1404,27 @@ function XGoldenMinerSystemMap:RecycleLinkRope(uid)
 
     if go then
         self._LinkRopeObjPool:ReturnItemToPool(go)
+    end
+end
+
+--endregion
+
+--region 3.8特定关卡特效定时播放
+
+function XGoldenMinerSystemMap:OnSpecialRayScanEffect(time)
+    if not self._NeedRayScanEffect then
+        return
+    end
+
+    if self._TimePeriodIndex > self._TimerPeriodCount then
+        return
+    end
+
+    local usedTime = self._MainControl:GetGameData() and self._MainControl:GetGameData():GetUsedTime() or 0
+
+    if usedTime >= self._SpecialMapScanEffectTimePeriod[self._TimePeriodIndex] then
+        self._MainControl:DispatchEvent(XMVCA.XGoldenMiner.EventId.EVENT_GOLDEN_MINER_FULL_SCREEN_EFFECT)
+        self._TimePeriodIndex = self._TimePeriodIndex + 1
     end
 end
 

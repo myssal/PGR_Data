@@ -31,6 +31,9 @@ local SignWelfareDir = {}         -- 福利配置表dir
 local EnWelfareMonthlyCardMap = {} -- 福利Id到月卡Id
 
 local function LoadEnWelfareMonthlyCardMap()
+    if not XOverseaManager.IsENRegion() then
+        return
+    end
     local raw = CS.XGame.ClientConfig:GetString("EnWelfareMonthlyCardMap")
     if not raw then
         return    
@@ -88,10 +91,13 @@ function XSignInConfigs.Init()
 end
 
 local function GetMonthlyCardIdByWelfareId(welfareId)
+    if not XOverseaManager.IsENRegion() then
+        return XPurchaseConfigs.YKID
+    end
     if EnWelfareMonthlyCardMap[welfareId] then
         return EnWelfareMonthlyCardMap[welfareId]
     end
-    return XPurchaseConfigs.YKID
+    return nil
 end 
 
 function XSignInConfigs._InitSignWelfareSortedList()

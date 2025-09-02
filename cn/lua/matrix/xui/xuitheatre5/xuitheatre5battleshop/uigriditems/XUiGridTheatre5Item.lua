@@ -16,6 +16,9 @@ function XUiGridTheatre5Item:OnStart()
     if self.PanelSellPrice then
         self.PanelSellPrice.gameObject:SetActiveEx(false)
     end
+    if self.Noneffective then
+        self.Noneffective.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiGridTheatre5Item:SetOwnerContainerType(containerType)
@@ -142,5 +145,11 @@ function XUiGridTheatre5Item:RefreshSelectState()
     end
 end
 --endregion
+
+function XUiGridTheatre5Item:UpdateInvalid(value)
+    if self.Noneffective then
+        self.Noneffective.gameObject:SetActiveEx(value)
+    end
+end
 
 return XUiGridTheatre5Item

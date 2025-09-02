@@ -397,22 +397,37 @@ function XUiGoldenMinerMain:UpdateUseCharacter(characterId)
 end
 
 function XUiGoldenMinerMain:UpdateModel()
+    self._ModelAnimatorRandomInited = false
+    
     for i, roleModelPanel in ipairs(self._RoleModelPanelList) do
-        local modelName = self._Control:GetCfgCharacterModelId(self._Control:GetClientMainShowCharByIndex(i))
-        roleModelPanel:UpdateCuteModelByModelName(nil, nil, nil, nil, nil,
-                modelName, nil, true)
-        roleModelPanel:ShowRoleModel()
+        local modelId = self._Control:GetClientMainShowCharByIndex(i)
+
+        if XTool.IsNumberValidEx(modelId) then
+            local modelName = self._Control:GetCfgCharacterModelId(self._Control:GetClientMainShowCharByIndex(i))
+            roleModelPanel:UpdateCuteModelByModelName(nil, nil, nil, nil, nil,
+                    modelName, nil, true)
+            roleModelPanel:ShowRoleModel()
+        end
     end
-    self._ModelAnimatorRandom:SetAnimatorByPanelRoleModelList(self._RoleModelPanelList[1]:GetAnimator(), { }, self._RoleModelPanelList)
-    self._ModelAnimatorRandom:Play()
+    local animator = self._RoleModelPanelList[1]:GetAnimator()
+    
+    if animator then
+        self._ModelAnimatorRandomInited = true
+        self._ModelAnimatorRandom:SetAnimatorByPanelRoleModelList(animator, { }, self._RoleModelPanelList)
+        self._ModelAnimatorRandom:Play()
+    end
 end
 
 function XUiGoldenMinerMain:_PlayRoleAnim()
-    self._ModelAnimatorRandom:Play()
+    if self._ModelAnimatorRandomInited then
+        self._ModelAnimatorRandom:Play()
+    end
 end
 
 function XUiGoldenMinerMain:_StopRoleAnim()
-    self._ModelAnimatorRandom:Stop()
+    if self._ModelAnimatorRandomInited then
+        self._ModelAnimatorRandom:Stop()
+    end
 end
 
 function XUiGoldenMinerMain:GetUseCharacterId()

@@ -257,10 +257,10 @@ function XUiPanelGachaLiverDrawBase:RefreshDrawSpecialRewardsShow(gachaId)
             local tmpData = {}
             local rewardInfo = dataList[index]
             
-            tmpData.TemplateId = rewardInfo.TemplateId
-            tmpData.Count = rewardInfo.Count
+            tmpData.TemplateId = rewardInfo.Cfg.TemplateId
+            tmpData.Count = rewardInfo.Cfg.Count
             local curCount = nil
-            if rewardInfo.RewardType == XGachaConfigs.RewardType.Count then
+            if rewardInfo.Cfg.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = rewardInfo.CurCount
             end
             item:Refresh(tmpData, nil, nil, nil, curCount)

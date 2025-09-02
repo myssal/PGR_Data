@@ -151,5 +151,24 @@ function XUiGridTheatre5Container:_ClearItemShow()
     end
 end
 
+-- 高级buff与低级buff不同时生效，需要显示不生效图标
+---@param itemData XTheatre5Item
+function XUiGridTheatre5Container:UpdateInvalid(itemData)
+    local isShowInvalidIcon
+    if itemData then
+        local isValid = self._Control.ShopControl:CheckRuneValid(itemData)
+        if isValid then
+            isShowInvalidIcon = false
+        else
+            isShowInvalidIcon = true
+            -- 显示不生效
+            --XLog.Debug("物品不生效:" .. itemData.ItemId)
+        end
+    end
+    -- 不一定是符文
+    if self.UiGridGem and self.UiGridGem.UpdateInvalid then
+        self.UiGridGem:UpdateInvalid(isShowInvalidIcon)
+    end
+end
 
 return XUiGridTheatre5Container

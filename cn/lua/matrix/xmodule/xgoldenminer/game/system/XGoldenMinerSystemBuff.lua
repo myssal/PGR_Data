@@ -807,6 +807,8 @@ function XGoldenMinerSystemBuff:_UpdateHookStatus()
             sizePercent = sizePercent + sizePercentAdds
         end
     end
+    
+    self._MainControl:FixWallOutByPercent(sizePercent)
 
     for i, hookUid in pairs(hookUidList) do
         local hookEntity = self._MainControl:GetHookEntityByUid(hookUid)

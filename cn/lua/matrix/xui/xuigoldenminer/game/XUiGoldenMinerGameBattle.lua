@@ -40,6 +40,10 @@ local GAME_COUNT_DOWN_TIME_CUR_ID = 4971
 ---@field AimLeftInputHandler XGoInputHandler
 ---@field AimRightInputHandler XGoInputHandler
 ---@field ElectromagneticBox XGoInputHandler
+---@field EdgeLeftBox UnityEngine.BoxCollider2D
+---@field EdgeRightBox UnityEngine.BoxCollider2D
+---@field EdgeTopBox UnityEngine.BoxCollider2D
+---@field EdgeBottomBox UnityEngine.BoxCollider2D
 local XUiGoldenMinerGameBattle = XLuaUiManager.Register(XLuaUi, "UiGoldenMinerBattle")
 
 function XUiGoldenMinerGameBattle:OnAwake()
@@ -62,6 +66,8 @@ function XUiGoldenMinerGameBattle:OnEnable()
     self:RefreshUi()
     self:StartGamePauseAnim()
     self._TickTimer = XScheduleManager.ScheduleForever(handler(self, self._UpdateHandler), 0)
+    
+    self._Control._GameControl:AddEventListener(XMVCA.XGoldenMiner.EventId.EVENT_GOLDEN_MINER_FULL_SCREEN_EFFECT, self.OnFullScreenEffectEvent, self)
 end
 
 function XUiGoldenMinerGameBattle:OnDisable()
@@ -70,6 +76,9 @@ function XUiGoldenMinerGameBattle:OnDisable()
         self._TickTimer = nil
     end
     self:RemovePCListener()
+
+    self._Control._GameControl:RemoveEventListener(XMVCA.XGoldenMiner.EventId.EVENT_GOLDEN_MINER_FULL_SCREEN_EFFECT, self.OnFullScreenEffectEvent, self)
+
 end
 
 function XUiGoldenMinerGameBattle:OnDestroy()
@@ -1030,6 +1039,10 @@ function XUiGoldenMinerGameBattle:CheckIsEffectInCDWithType(type, isOnlyCheck)
 
     return false
 end
+
+function XUiGoldenMinerGameBattle:OnFullScreenEffectEvent()
+    self:PlayAnimation('EffectFullScreenSweep', nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
+end
 --endregion
 
 --region Audio - Sound
@@ -1081,6 +1094,14 @@ function XUiGoldenMinerGameBattle:_GameInit()
     objDir.LinkRopeObj = self.LinkRope
     objDir.ViewValidLeftDown = self.ViewValidLeftDown
     objDir.ViewValidRightUp = self.ViewValidRightUp
+    objDir.EdgeLeftBox = self.EdgeLeftBox
+    objDir.EdgeRightBox = self.EdgeRightBox
+    objDir.EdgeTopBox = self.EdgeTopBox
+    objDir.EdgeBottomBox = self.EdgeBottomBox
+    objDir.EdgeLeftBoxDefaultSize = self.EdgeLeftBox.offset
+    objDir.EdgeRightBoxDefaultSize = self.EdgeRightBox.offset
+    objDir.EdgeTopBoxDefaultSize = self.EdgeTopBox.offset
+    objDir.EdgeBottomBoxDefaultSize = self.EdgeBottomBox.offset
     
     --OnUpdate Battle界面的更新是通过游戏控制器的UpdateEx驱动的，界面本身不更新
     local updateExFunc = function(deltaTime)

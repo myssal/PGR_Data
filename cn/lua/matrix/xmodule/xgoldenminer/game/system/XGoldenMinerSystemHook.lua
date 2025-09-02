@@ -673,6 +673,7 @@ function XGoldenMinerSystemHook:_HandleReflectEdge(hookEntity, collider)
     local reflectEdgeComponent = reflectEdgeEntity:GetComponentReflectEdge()
     local edgeFlag = reflectEdgeComponent:GetFlag()
     if edgeFlag == XEnumConst.GOLDEN_MINER.REFLECT_EDGE_FLAG.NONE then
+        XLog.Error('边界类型错误，无法进行弹射')
         return false
     end
 

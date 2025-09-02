@@ -11,6 +11,7 @@ function XGoldenMinerAgency:OnInit()
     end
     self:RegisterActivityAgency()
     self.EnumConst = require('XModule/XGoldenMiner/XGoldenMinerEnumConst')
+    self.EventId = require('XModule/XGoldenMiner/XGoldenMinerEventId')
 end
 
 function XGoldenMinerAgency:InitRpc()

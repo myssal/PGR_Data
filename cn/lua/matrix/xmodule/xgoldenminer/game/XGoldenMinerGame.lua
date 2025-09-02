@@ -444,6 +444,14 @@ function XGoldenMinerGame:SetIgnoreGameClearIgnoreStoneTypeDir(value)
     self._IgnoreGameClearIgnoreStoneTypeDir = value
 end
 
+--- 修正回收边界向外扩张的偏移
+function XGoldenMinerGame:FixWallOutByPercent(percent)
+    percent = 1 + (percent - 1) * 0.5
+    self._ObjDir.EdgeLeftBox.offset = Vector2(self._ObjDir.EdgeLeftBoxDefaultSize.x * percent, self._ObjDir.EdgeLeftBoxDefaultSize.y * percent)
+    self._ObjDir.EdgeRightBox.offset = Vector2(self._ObjDir.EdgeRightBoxDefaultSize.x * percent, self._ObjDir.EdgeRightBoxDefaultSize.y * percent)
+    self._ObjDir.EdgeTopBox.offset = Vector2(self._ObjDir.EdgeTopBoxDefaultSize.x * percent, self._ObjDir.EdgeTopBoxDefaultSize.y * percent)
+    self._ObjDir.EdgeBottomBox.offset = Vector2(self._ObjDir.EdgeBottomBoxDefaultSize.x * percent, self._ObjDir.EdgeBottomBoxDefaultSize.y * percent)
+end
 --endregion
 
 --region Data - Update & Record
@@ -1312,6 +1320,13 @@ function XGoldenMinerGame:GetSunMoonChangedCD()
     return self._Model:GetClientCfgNumberValue("SunMoonChangedCD", 1)
 end
 
+function XGoldenMinerGame:GetClientSpecialMapNeedRayScanEffect()
+    return self._Model:GetClientCfgNumberArrayValue('SpecialMapNeedRayScanEffect')
+end
+
+function XGoldenMinerGame:GetClientSpecialMapScanEffectTimePeriod()
+    return self._Model:GetClientCfgNumberArrayValue('SpecialMapScanEffectTimePeriod')
+end
 --endregion
 
 --region Cfg - ClientParams Buff
