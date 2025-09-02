@@ -77,8 +77,10 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           echo "Sending Discord notification..."
-          CONTENT=$(cat diff.txt)
+          CONTENT=$(cat diff.txt)          
+          PAYLOAD=$(jq -n --arg msg "$CONTENT" '{content: $msg}')
+
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"$CONTENT\"}" \
+               -d "$PAYLOAD" \
                $DISCORD_WEBHOOK
