@@ -1,0 +1,57 @@
+name: Notify Version Changes
+
+on:
+  push:
+    paths:
+      - "version.json"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch previous version.json
+        id: prev
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PREV_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^ \
+            | jq -r '.content' | base64 -d)
+          echo "$PREV_JSON" > prev.json
+
+      - name: Fetch current version.json
+        run: |
+          curl -s -H "Authorization: token $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/contents/version.json \
+            | jq -r '.content' | base64 -d > curr.json
+
+      - name: Generate diff
+        id: diff
+        run: |
+          MSG=""
+          for key in $(jq -r 'keys[]' curr.json); do
+            OLD=$(jq -r --arg k "$key" '.[$k]' prev.json)
+            NEW=$(jq -r --arg k "$key" '.[$k]' curr.json)
+            # skip if new value is empty
+            if [ "$NEW" != "" ] && [ "$OLD" != "$NEW" ]; then
+              MSG="$MSG$key [$OLD] -> [$NEW]\n"
+            fi
+          done
+
+          if [ -z "$MSG" ]; then
+            echo "No meaningful changes detected"
+            echo "CHANGED=false" >> $GITHUB_OUTPUT
+          else
+            echo "$MSG" > diff.txt
+            echo "CHANGED=true" >> $GITHUB_OUTPUT
+
+      - name: Send Discord notification
+        if: steps.diff.outputs.CHANGED == 'true'
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          CONTENT="**Shikikan, new cdn version(s) just dropped:**\n$(cat diff.txt)"
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d "{\"content\": \"$CONTENT\"}" \
+               $DISCORD_WEBHOOK
