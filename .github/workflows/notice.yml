@@ -2,7 +2,7 @@ name: Notify Version Changes
 
 on:
   workflow_dispatch: 
-
+  
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -12,26 +12,39 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          curl -s -H "Authorization: token $GH_TOKEN" \
-            https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^ \
-            | jq -r '.content' | base64 -d > prev.json
+          PREV_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/contents/version.json?ref=HEAD^)
+
+          STATUS=$(echo "$PREV_JSON" | jq -r '.message // empty')
+          if [ "$STATUS" == "Not Found" ] || [ -z "$PREV_JSON" ]; then
+            echo "{}" > prev.json
+            echo "No previous commit found, using empty JSON"
+          else
+            echo "$PREV_JSON" | jq -r '.content' | base64 -d > prev.json
 
       - name: Fetch current version.json
         run: |
-          curl -s -H "Authorization: token $GH_TOKEN" \
-            https://api.github.com/repos/${{ github.repository }}/contents/version.json \
-            | jq -r '.content' | base64 -d > curr.json
+          CUR_JSON=$(curl -s -H "Authorization: token $GH_TOKEN" \
+            https://api.github.com/repos/${{ github.repository }}/contents/version.json)
+
+          STATUS=$(echo "$CUR_JSON" | jq -r '.message // empty')
+          if [ "$STATUS" == "Not Found" ] || [ -z "$CUR_JSON" ]; then
+            echo "Current version.json not found or empty!"
+            exit 1
+          fi
+
+          echo "$CUR_JSON" | jq -r '.content' | base64 -d > curr.json
 
       - name: Generate diff
         id: diff
         env:
-          ROLE_ID: ${{ secrets.DISCORD_ROLE_ID }} # ping a role
+          ROLE_ID: ${{ secrets.DISCORD_ROLE_ID }}  # ping role
         run: |
           # Validate JSON
           jq empty prev.json || { echo "prev.json invalid"; exit 1; }
           jq empty curr.json || { echo "curr.json invalid"; exit 1; }
 
-          # Generate diff using jq
+          # Generate changes message
           MSG=$(jq -r --argfile prev prev.json '
             to_entries
             | map(select(.value != "" and .value != ($prev[.key] // "")))
@@ -43,7 +56,6 @@ jobs:
             echo "No meaningful changes detected"
             echo "CHANGED=false" >> $GITHUB_OUTPUT
           else
-            # Optionally ping a role
             if [ -n "$ROLE_ID" ]; then
               MSG="<@&${ROLE_ID}> **Shikikan, new cdn version(s) just dropped:**\n$MSG"
             else
