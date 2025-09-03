@@ -1305,7 +1305,7 @@
     },
     {
         "Key": "OnlineInviteFriend",
-        "Text": "\"{0}正在挑战{1},请求您的支援,<color=#0F70BC>{2}</color>\""
+        "Text": "{0}正在挑战{1},请求您的支援,<color=#0F70BC>{2}</color>"
     },
     {
         "Key": "OnlineInviteLink",
@@ -3344,7 +3344,7 @@
     },
     {
         "Key": "ActivityBossOnlineOver",
-        "Text": "\"活动期间：每天中午11:00-14:00,晚上20:00-23:00开启\""
+        "Text": "活动期间：每天中午11:00-14:00,晚上20:00-23:00开启"
     },
     {
         "Key": "BossOnlineOver",
@@ -5716,7 +5716,7 @@
     },
     {
         "Key": "UnionTipsFightBorrow",
-        "Text": "\"我借用了你的<color=#25c4ec>{0}</color>,万分感谢~\""
+        "Text": "我借用了你的<color=#25c4ec>{0}</color>,万分感谢~"
     },
     {
         "Key": "UnionTipsBorrowOthers",
@@ -11787,11 +11787,11 @@
     },
     {
         "Key": "LivWarmActivityUseItemCountText",
-        "Text": "消耗       <color={0}>{1}</color> 可以移动一次头像位置"
+        "Text": "消耗        <color=#ec4858>{1}</color> 可以移动一次头像位置"
     },
     {
         "Key": "LivWarmActivityReminderLoseText",
-        "Text": "累计移动位置{0}次后，本关不再消耗代币 <color=#f7e5aa>（{1}/{2}）</color>"
+        "Text": "累计移动位置{0}次后，本关不再消耗代币 <color=#ec4858>（{1}/{2}）</color>"
     },
     {
         "Key": "LivWarmActivityStageLockTips",
@@ -13751,19 +13751,19 @@
     },
     {
         "Key": "GoldenMinerReqportScore",
-        "Text": "{0}/{1}<color=#0F70BC><size=28>(+{2})</size></color>"
+        "Text": "{0}/{1}<color=#34AFF8><size=28>(+{2})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportObjScore",
-        "Text": "{0}<color=#0F70BC><size=32>(+{1})</size></color>"
+        "Text": "{0}<color=#34AFF8><size=32>(+{1})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportTotalScore",
-        "Text": "<color=#0F70BC><size=32>(+{0})</size></color>"
+        "Text": "<color=#34AFF8><size=32>(+{0})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportRadarScore",
-        "Text": "掘金者<color=#0F70BC><size=32>(+{0})</size></color>"
+        "Text": "掘金者<color=#34AFF8><size=32>(+{0})</size></color>"
     },
     {
         "Key": "GoldenMinerKeepBattleTipsDesc",
@@ -13875,7 +13875,7 @@
     },
     {
         "Key": "GoldenMinerMainTimeTitle",
-        "Text": "剩余时间：<size=30>{0}</size>"
+        "Text": "<size=30>{0}</size>"
     },
     {
         "Key": "EscapeFightingNotUpdateTeam",
@@ -14448,6 +14448,10 @@
     {
         "Key": "RpgMakerGameClearHintTitle",
         "Text": "玩法提示"
+    },
+    {
+        "Key": "RpgMakerGameNextChapter",
+        "Text": "下一章"
     },
     {
         "Key": "ConsumeActivityMainCoatDesc",
@@ -15228,6 +15232,22 @@
     {
         "Key": "RiftPluginCannotBuy",
         "Text": "推演晶流不足，无法解锁"
+    },
+    {
+        "Key": "RiftLuckyTip1",
+        "Text": "完成关卡或{0}分钟后充能{1}点"
+    },
+    {
+        "Key": "RiftLuckyTip2",
+        "Text": "可领取"
+    },
+    {
+        "Key": "RiftChapterTimeDesc",
+        "Text": "0{0}通关时间"
+    },
+    {
+        "Key": "RiftChapterUnpass",
+        "Text": "暂未通关"
     },
     {
         "Key": "UnKnown",
@@ -17991,7 +18011,7 @@
     },
     {
         "Key": "MailHyperLink",
-        "Text": "<color=#34AFF8><a href=|{0}|>【{1}】</a></color>"
+        "Text": "<color=#34AFF8><u>{0}</u></color>"
     },
     {
         "Key": "GachaLamiyaFashionBtn",
@@ -18615,7 +18635,7 @@
     },
     {
         "Key": "Theatre4ItemExpire",
-        "Text": "\"{0}图纸,已过期销毁\""
+        "Text": "{0}图纸,已过期销毁"
     },
     {
         "Key": "Theatre4ItemTimeLeft",
@@ -19643,15 +19663,19 @@
     },
     {
         "Key": "SoloReformHardUnlock",
-        "Text": "{0}难度后解锁"
+        "Text": "通关{0}后解锁"
     },
     {
         "Key": "SoloReformLastHardCompleted",
-        "Text": "通关上一难度后解锁"
+        "Text": "通关上一关后解锁"
     },
     {
         "Key": "SoloReformChallengeTarget",
         "Text": "挑战目标"
+    },
+    {
+        "Key": "HelpCourseTipsLabel",
+        "Text": "TIPS{0}: {1}"
     },
     {
         "Key": "SoloReformNoCharacterInTeam",
@@ -19660,5 +19684,53 @@
     {
         "Key": "CloudGameExitMsg",
         "Text": "退出游戏"
+    },
+    {
+        "Key": "StorySkipDesc",
+        "Text": "是否跳过该剧情？”"
+    },
+    {
+        "Key": "BPDailyUpdateText",
+        "Text": "每日评定任务在每日凌晨{0}更新"
+    },
+    {
+        "Key": "PurchaseBtnLaw1Text",
+        "Text": "資金決済法"
+    },
+    {
+        "Key": "PurchaseBtnLaw2Text",
+        "Text": "特定商取引法"
+    },
+    {
+        "Key": "DhItemName",
+        "Text": "{0}黑卡"
+    },
+    {
+        "Key": "CzItemName",
+        "Text": "{0}虹卡"
+    },
+    {
+        "Key": "USD",
+        "Text": "{0}$"
+    },
+    {
+        "Key": "CNY",
+        "Text": "{0}￥"
+    },
+    {
+        "Key": "JPY",
+        "Text": "{0}￥"
+    },
+    {
+        "Key": "KRW",
+        "Text": "韩文CLIENT_TEXT_KRW_TEXT"
+    },
+    {
+        "Key": "Eleven",
+        "Text": "十一"
+    },
+    {
+        "Key": "Twelve",
+        "Text": "十二"
     }
 ]

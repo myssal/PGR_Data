@@ -1,13 +1,13 @@
-local Base = require("Common/XFightBase")
+local Base = require("Buff/BuffBase/XBuffBase")
 ---自走棋ItemSkillMagic基础脚本
----@class XAfkItemSkillMagicBase : XFightBase
+---@class XAfkItemSkillMagicBase : XBuffBase
 local XAfkItemSkillMagicBase = XClass(Base,"XAfkItemSkillMagicBase")
 
 --region 脚本生命周期
 function XAfkItemSkillMagicBase:Init() --初始化
     Base.Init(self)
     -------------------------------读表------------------------
-    self.config = self._proxy:GetAutoChessSkillConfigByMagicId(self.magicId) --通过MagicId获得配置
+    self.config = self._proxy:GetAutoChessSkillConfigByMagicId(self._buffId) --通过MagicId获得配置
     -------------------------------配置------------------------
     self.itemSkillId = self.config.Id
     self.cd =self.config.CoolDownSec

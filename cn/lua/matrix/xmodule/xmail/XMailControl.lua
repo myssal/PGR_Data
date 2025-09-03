@@ -494,7 +494,7 @@ function XMailControl:FixSurveyContent(mailInfo)
         local qid = string.match(str,'qid=(.+),title')
         linkParm = string.format(linkParm, XMVCA.XUrl:GetSojumpParm(), XMVCA.XUrl:GetParmSign(qid))
         fixContent = string.format(fixContent, link..linkParm,btnContent)
-        local fixedContent = XUiHelper.GetText('MailHyperLink', link..linkParm, btnContent)
+        local fixedContent = XUiHelper.GetText('MailHyperLink', fixContent)
         if XOverseaManager.IsKRRegion() then
             local strCount = (#btnContent)/2+2--韩服字体竟然占4个字节
             local spaceStr = string.rep(" ",strCount)

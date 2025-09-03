@@ -442,7 +442,7 @@ function XAFKCharBase:ComboEndCheck() --检查Combo是否结束
     end
     
     if self._proxy:CheckNpcCurrentSkill(self._uuid,self.currentComboLastSkillId) then --如果正在最后一个技能过程中
-        if self._proxy:CheckCanCastSkill(self._uuid) then  --技能过程中后摇属于End
+        if self._proxy:CheckNpcCurSkillIsDone(self._uuid) then  --技能过程中后摇属于End
             self:ComboEnd()
         end
     else
