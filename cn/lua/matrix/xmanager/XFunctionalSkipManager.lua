@@ -1451,7 +1451,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转到黄金矿工
     function XFunctionalSkipManager.SkipToGoldenMiner()
-        XMVCA.XGoldenMiner:ExOpenMainUi()
+        return XMVCA.XGoldenMiner:ExOpenMainUi()
     end
 
     --跳转到动作塔防

@@ -13,12 +13,15 @@
         "PeriodTimeIds": [],
         "RankLayerLimits": [],
         "MaxLuckyValue": 50,
-        "RankLayerLimit": 0,
+        "RankLayerLimit": 1,
         "SeasonTaskGroupId": 172,
         "AttrSetNameLength": 7,
         "MopupCd": 0,
         "MaxWeight": 1000000,
         "AffixWeightVersion": 0,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100,
         "ShopId": [
             1236,
             1235
@@ -48,6 +51,9 @@
         "MopupCd": 86400,
         "MaxWeight": 1000000,
         "AffixWeightVersion": 0,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100,
         "ShopId": [
             1296,
             1295,
@@ -96,6 +102,9 @@
         "MopupCd": 86400,
         "MaxWeight": 1000000,
         "AffixWeightVersion": 0,
+        "TimeIntervalToLucky": 360,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 100,
         "ShopId": [
             1432,
             1433
@@ -103,6 +112,38 @@
         "TaskGroupId": [
             391,
             392
+        ]
+    },
+    {
+        "Id": 4,
+        "TimeId": 41028,
+        "Name": "葬愿穷途",
+        "ResetNoCdTimes": 0,
+        "ResetCdIncrease": 1,
+        "ResetCdMax": 1,
+        "DailySweepTimes": 3,
+        "PluginPeakloadInit": 18,
+        "PluginPeakloadMax": 30,
+        "AttrLevelSetCount": 5,
+        "PeriodTimeIds": [],
+        "RankLayerLimits": [],
+        "MaxLuckyValue": 360,
+        "RankLayerLimit": 1,
+        "SeasonTaskGroupId": 0,
+        "AttrSetNameLength": 7,
+        "MopupCd": 86400,
+        "MaxWeight": 1000000,
+        "AffixWeightVersion": 1,
+        "TimeIntervalToLucky": 240,
+        "TimeAddValueToLucky": 1,
+        "GainRewardLuckyValue": 180,
+        "ShopId": [
+            1447,
+            1448
+        ],
+        "TaskGroupId": [
+            552,
+            553
         ]
     }
 ]

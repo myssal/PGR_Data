@@ -6,12 +6,6 @@
         ]
     },
     {
-        "Key": "MaxItemGridCount",
-        "Values": [
-            4
-        ]
-    },
-    {
         "Key": "ScoreIcon",
         "Values": [
             "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMineIcon01.png"
@@ -44,7 +38,7 @@
     {
         "Key": "HumenMoveSpeed",
         "Values": [
-            250
+            200
         ]
     },
     {
@@ -290,7 +284,7 @@
     {
         "Key": "NewMaxScoreColor",
         "Values": [
-            "4d89ed"
+            "34AFF8"
         ]
     },
     {
@@ -304,8 +298,9 @@
         "Key": "TxtDisplayMainTitle",
         "Values": [
             "飞船",
-            "货舱",
-            "辅助"
+            "飞船",
+            "通用改造",
+            "结构改造"
         ]
     },
     {
@@ -424,9 +419,9 @@
     {
         "Key": "MainShowCharList",
         "Values": [
-            15,
-            13,
-            14
+            16,
+            16,
+            16
         ]
     },
     {
@@ -455,16 +450,15 @@
     {
         "Key": "NewMaxScoreSettleBg",
         "Values": [
-            "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerReportBg05.png",
-            "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerReportBg002.png"
+            "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerReportBg001.png"
         ]
     },
     {
         "Key": "SlotsScores",
         "Values": [
-            250,
-            500,
-            700
+            50,
+            100,
+            150
         ]
     },
     {
@@ -503,7 +497,7 @@
     {
         "Key": "TextPCControl",
         "Values": [
-            "使用                       控制飞船方向",
+            "使用                           控制飞船方向",
             "使用                       控制钩爪旋转"
         ]
     },
@@ -524,6 +518,121 @@
         "Key": "RadarRandomItemEffect",
         "Values": [
             "Assets/Product/Ui/Prefab/UiEffect/UiGoldenMiner/Target.prefab"
+        ]
+    },
+    {
+        "Key": "HexOwnCount",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "HookAssets",
+        "Values": [
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerNormalHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerMagneticHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerBigHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerAimHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerMagneticHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerDoubleHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerHammerHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerNetHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerCopyHook.prefab",
+            "Assets/Product/Ui/ComponentPrefab/UiGoldenMiner/UiGoldenMinerMultyStyleHook.prefab"
+        ]
+    },
+    {
+        "Key": "HexSelectTipsInNoEmptySlot",
+        "Values": [
+            "结构改造已达上限"
+        ]
+    },
+    {
+        "Key": "HexSelectItemShowName",
+        "Values": [
+            "结构",
+            "升级",
+            "通用"
+        ]
+    },
+    {
+        "Key": "CommonHexRefreshLabel",
+        "Values": [
+            "刷新: {0}/{1}"
+        ]
+    },
+    {
+        "Key": "CommonHexRefreshTimesOverTips",
+        "Values": [
+            "刷新次数已耗尽"
+        ]
+    },
+    {
+        "Key": "HexSelectedTips",
+        "Values": [
+            "已改造",
+            "已升级"
+        ]
+    },
+    {
+        "Key": "HexSelectAgainTips",
+        "Values": [
+            "已经完成此项改造",
+            "已经完成此项升级"
+        ]
+    },
+    {
+        "Key": "PartnerLinkIgonre",
+        "Values": [
+            4,
+            9,
+            10,
+            11,
+            12,
+            14,
+            16,
+            17
+        ]
+    },
+    {
+        "Key": "LinkStoneMoveTime",
+        "Values": [
+            0.5
+        ]
+    },
+    {
+        "Key": "NetHookVirtualMoveSpeedFix",
+        "Values": [
+            0.003
+        ]
+    },
+    {
+        "Key": "StoneCopyType",
+        "Values": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "Key": "SpecialMapNeedRayScanEffect",
+        "Values": [
+            72860
+        ]
+    },
+    {
+        "Key": "SpecialMapScanEffectTimePeriod",
+        "Values": [
+            19.7,
+            29.7,
+            39.7,
+            49.7
+        ]
+    },
+    {
+        "Key": "NetHookGrabDiretionFixY",
+        "Values": [
+            102
         ]
     }
 ]

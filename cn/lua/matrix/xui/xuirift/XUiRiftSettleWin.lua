@@ -66,7 +66,7 @@ function XUiRiftSettleWin:Refresh()
 
     -- 无尽关需要显示积分
     local chapter = currXFightLayer:GetParent()
-    if chapter:IsEndless() then
+    if chapter:IsEndless() and riftSettleResult then
         local curScore = riftSettleResult.EndLessScore
         local historyScore = chapter:GetLastScore()
         self.TxtStagePointNow.text = curScore

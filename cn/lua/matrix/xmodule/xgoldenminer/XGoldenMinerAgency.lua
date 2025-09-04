@@ -151,13 +151,15 @@ end
 --region FubenEx
 function XGoldenMinerAgency:ExOpenMainUi()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.GoldenMiner) then
-        return
+        return false
     end
     if not self:CheckIsOpen() then
         XUiManager.TipText("RougeLikeNotInActivityTime")
-        return
+        return false
     end
     XLuaUiManager.Open("UiGoldenMinerMain")
+    
+    return true
 end
 
 function XGoldenMinerAgency:ExCheckInTime()

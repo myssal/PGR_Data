@@ -27,6 +27,7 @@ function XUiGridRiftChapter:Update()
     if self._IsLock then
         self.GridChapter:SetButtonState(CS.UiButtonState.Disable)
         if self._Chapter:IsEndless() then
+            self.GridChapter:ShowReddot(false)
             return
         end
         if self._Chapter:CheckTimeLock() then

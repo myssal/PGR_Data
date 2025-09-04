@@ -349,6 +349,7 @@ function XUiPurchase:CheckChildCount(childs, names)
                         self.PaySelectIndex = nil
                     else
                         self.CurUiView:OnRefresh(self.CurUiTypes[1], self.ChildTabIndex)
+                        self.ChildTabIndex = 1
                     end
                 end
             end

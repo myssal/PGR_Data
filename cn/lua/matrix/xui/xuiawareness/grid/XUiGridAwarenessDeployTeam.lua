@@ -23,13 +23,13 @@ function XUiGridAwarenessDeployTeam:InitComponent()
 end
 
 function XUiGridAwarenessDeployTeam:OnBtnFightClick()
-    local allTeamHasMember, teamCharList, captainPosList, firstFightPosList, generalSkillIds = XDataCenter.FubenAwarenessManager.TryGetFightTeamCharList(self.ChapterId)
+    local allTeamHasMember, teamCharList, captainPosList, firstFightPosList, generalSkillIdList = XDataCenter.FubenAwarenessManager.TryGetFightTeamCharList(self.ChapterId)
     if not allTeamHasMember then
         XUiManager.TipMsg(CS.XTextManager.GetText("AssignFightNoMember"))
         return
     end
     -- 设置队伍
-    XDataCenter.FubenAwarenessManager.AwarenessSetTeamRequest(self.ChapterId, teamCharList, captainPosList, firstFightPosList, generalSkillIds, function()
+    XDataCenter.FubenAwarenessManager.AwarenessSetTeamRequest(self.ChapterId, teamCharList, captainPosList, firstFightPosList, generalSkillIdList, function()
         local targetIndex = self.TeamOrder
         local chapterData = XDataCenter.FubenAwarenessManager.GetChapterDataById(self.ChapterId)
         local stageIdList = chapterData:GetStageId()
@@ -37,7 +37,7 @@ function XUiGridAwarenessDeployTeam:OnBtnFightClick()
 
         -- 进入战斗
         XDataCenter.FubenAwarenessManager.SetEnterLoadingData(targetIndex, teamCharList[targetIndex], chapterData)
-        XDataCenter.FubenManager.EnterAwarenessFight(targetStageId, teamCharList[targetIndex], captainPosList[targetStageId], nil, nil, firstFightPosList[targetIndex])
+        XDataCenter.FubenManager.EnterAwarenessFight(targetStageId, teamCharList[targetIndex], captainPosList[targetStageId], nil, nil, firstFightPosList[targetIndex], generalSkillIdList[targetIndex])
     end)
 end
 

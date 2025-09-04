@@ -467,7 +467,7 @@ function XGoldenMinerSystemPartner:ReallocateLinkByOldLinkList(linkList)
                             local linkCom = entity:GetComponentLink()
 
                             if not linkCom then
-                                linkCom = v:AddChildEntity(self._OwnControl.COMPONENT_TYPE.LINK)
+                                linkCom = entity:AddChildEntity(self._MainControl.COMPONENT_TYPE.LINK)
                             end
 
                             linkCom:SetLinkList(newLink)

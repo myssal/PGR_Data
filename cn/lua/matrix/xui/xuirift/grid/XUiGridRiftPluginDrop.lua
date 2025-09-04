@@ -33,7 +33,8 @@ end
 function XUiGridRiftPluginDrop:RefreshByPlugin(plugin)
     self._Plugin = plugin
     local isUnlock, lockTxt = self._Control:IsPluginUnlock(plugin.Id)
-    if isUnlock and not self._Control:IsHavePlugin(plugin.Id) then
+    local isHavePlugin = self._Control:IsHavePlugin(plugin.Id)
+    if isUnlock and not isHavePlugin then
         lockTxt = XUiHelper.GetText("RiftPluginNoGain")
     end
     local fixTypeList = self._Control:GetPluginPropTag(plugin.Id)
@@ -67,7 +68,7 @@ function XUiGridRiftPluginDrop:RefreshByPlugin(plugin)
     self.TxtLoad.text = plugin.Load
     if self.TxtDropTips then
         self.TxtDropTips.text = lockTxt
-        self.TxtDropTips.gameObject:SetActiveEx(lockTxt ~= "")
+        self.TxtDropTips.gameObject:SetActiveEx(not string.IsNilOrEmpty(lockTxt) and not isHavePlugin)
     end
 
     local quality = self._Plugin.Quality

@@ -1228,6 +1228,10 @@ end
 function XGoldenMinerGame:GetClientNetHookVirtualMoveSpeedFix()
     return self._Model:GetClientCfgNumberValue('NetHookVirtualMoveSpeedFix')
 end
+
+function XGoldenMinerGame:GetClientNetHookGrabDiretionFixY()
+    return self._Model:GetClientCfgNumberValue('NetHookGrabDiretionFixY', 1)
+end
 --endregion
 
 --region Cfg - ClientParams Stone

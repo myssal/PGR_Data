@@ -89,5 +89,44 @@
         "ShipTip": "等待钩爪晃动到合适的角度",
         "ButtonTip": "点击按钮使用钩爪",
         "IgnoreStoneTypeList": []
+    },
+    {
+        "Type": 8,
+        "Name": "弹网钩爪",
+        "ColliderName": "BoxCollider2D",
+        "OffsetXPercent": 0,
+        "OffsetYPercent": 0,
+        "RadiusPercent": 0,
+        "SizeXPercent": 0,
+        "SizeYPercent": 0,
+        "ShipTip": "等待钩爪晃动到合适的角度",
+        "ButtonTip": "点击按钮使用钩爪，再次点击收回",
+        "IgnoreStoneTypeList": []
+    },
+    {
+        "Type": 9,
+        "Name": "复制钩爪",
+        "ColliderName": "CircleCollider2D",
+        "OffsetXPercent": 0,
+        "OffsetYPercent": 0,
+        "RadiusPercent": 0,
+        "SizeXPercent": 0,
+        "SizeYPercent": 0,
+        "ShipTip": "等待钩爪晃动到合适的角度",
+        "ButtonTip": "点击按钮使用钩爪",
+        "IgnoreStoneTypeList": []
+    },
+    {
+        "Type": 10,
+        "Name": "多重钩爪",
+        "ColliderName": "CircleCollider2D",
+        "OffsetXPercent": 0,
+        "OffsetYPercent": -833,
+        "RadiusPercent": 800,
+        "SizeXPercent": 0,
+        "SizeYPercent": 0,
+        "ShipTip": "等待钩爪晃动到合适的角度",
+        "ButtonTip": "点击按钮使用钩爪",
+        "IgnoreStoneTypeList": []
     }
 ]

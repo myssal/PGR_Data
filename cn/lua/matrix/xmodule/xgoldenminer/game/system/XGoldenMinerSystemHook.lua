@@ -904,12 +904,28 @@ function XGoldenMinerSystemHook:_SetStoneEntityOnHook(hook, stoneEntity)
 
     if tempStoneEntity:GetComponentAimDirection() then
         tempStoneEntity:GetTransform():SetParent(hook:GetGrabPoint(), true)
-        tempStoneEntity:GetComponentAimDirection().Transform.localPosition = Vector3(0, -60, 0)
+        if hook:GetHookEntity():GetComponentNetAim() then
+            rectTransform.anchorMin = Vector2(0.5, 1)
+            rectTransform.anchorMax = Vector2(0.5, 1)
+            rectTransform.pivot = Vector2(0.5, 1)
+            tempStoneEntity:GetTransform():SetLocalPosition(0, self._MainControl:GetClientNetHookGrabDiretionFixY(), 0)
+            tempStoneEntity:GetTransform().localRotation = CS.UnityEngine.Quaternion.identity
+        else
+            tempStoneEntity:GetComponentAimDirection().Transform:SetLocalPosition(0, -60, 0)
+        end
     else
         tempStoneEntity:GetTransform():SetParent(hook:GetGrabPoint(), false)
-        rectTransform.anchorMin = Vector2(0.5, 1)
-        rectTransform.anchorMax = Vector2(0.5, 1)
-        rectTransform.pivot = Vector2(0.5, 1)
+
+        if hook:GetHookEntity():GetComponentNetAim() then
+            rectTransform.anchorMin = Vector2(0.5, 0)
+            rectTransform.anchorMax = Vector2(0.5, 0)
+            rectTransform.pivot = Vector2(0.5, 0)
+        else
+            rectTransform.anchorMin = Vector2(0.5, 1)
+            rectTransform.anchorMax = Vector2(0.5, 1)
+            rectTransform.pivot = Vector2(0.5, 1)
+        end
+        
         if tempStoneEntity:GetComponentMouse() then
             tempStoneEntity:GetTransform().localPosition = Vector3(0, self._MainControl:GetClientMouseGrabOffset(), 0)
         else
