@@ -486,7 +486,7 @@ function XMailControl:FixSurveyContent(mailInfo)
     local pattern = '@&&.+,url=.+,qid=.+,title=.+'
     
     for str in string.gmatch(content, pattern) do
-        local fixContent = '<link=\"%s\">%s</link>'
+        local fixContent = '<link=%s>%s</link>'
         local btnContent = string.match(str,'@&&(.+),url')
         local link = string.match(str,'url=(.+),qid')
         --对链接增加参数
@@ -509,7 +509,7 @@ function XMailControl:FixSurveyContent(mailInfo)
     pattern = '@&&.+,urlId=.+&&@'
 
     for str in string.gmatch(content, pattern) do
-        local fixContent = '<link=\"%s\">%s</link>'
+        local fixContent = '<link=%s>%s</link>'
         local btnContent = string.match(str,'@&&(.+),urlId')
         local urlId = string.match(str,'urlId=(.+)&&@')
 
