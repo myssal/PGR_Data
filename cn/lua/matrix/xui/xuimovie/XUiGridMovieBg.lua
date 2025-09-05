@@ -76,6 +76,12 @@ function XUiGridMovieBg:SetColor(color)
     self.RImgBg.color = color
 end
 
+-- 重置BgRoot的透明度，这个透明度是由动画控制的，代码控制的是RImgBg的透明度
+function XUiGridMovieBg:ResetBgRootAlpha()
+    self:StopAnimtion("RImgBgDisableSlow")
+    self.BgRoot:GetComponent("CanvasGroup").alpha = 1
+end
+
 function XUiGridMovieBg:SetAlpha(alpha, duration)
     self.RImgBg:DOFade(alpha, duration)
 end
@@ -99,6 +105,21 @@ end
 
 function XUiGridMovieBg:GetAnim(animName)
     return self[animName]
+end
+
+function XUiGridMovieBg:PlayAnimtion(animName, cb)
+    local anim = self:GetAnim(animName)
+    anim:PlayTimelineAnimation(function()
+        if cb then cb() end
+    end)
+end
+
+function XUiGridMovieBg:StopAnimtion(animName)
+    local anim = self:GetAnim(animName)
+    local timelineAnimation = anim.transform:GetComponent(typeof(CS.XUiPlayTimelineAnimation))
+    if timelineAnimation then
+        timelineAnimation:Stop(false)
+    end
 end
 
 return XUiGridMovieBg

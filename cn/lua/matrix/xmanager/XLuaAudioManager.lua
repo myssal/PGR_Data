@@ -200,6 +200,8 @@ XLuaAudioManager.UiBasicsMusic = {
     RpgMakerGame_SwitchPhysics = 5924, --切换物理形态
     RpgMakerGame_ChangeDirection = 5925, --切换朝向
     RpgMakerGame_MonsterAttack = 837074, --怪物攻击
+    RpgMakerGame_FireUp = 5939, -- 怪物和藤球点燃
+    RpgMakerGame_SepaktakrawRun = 5940, --藤球逃跑
     
     -- 公会战二期
     GuildWar_FireToBase = 2630, -- 炮击基地

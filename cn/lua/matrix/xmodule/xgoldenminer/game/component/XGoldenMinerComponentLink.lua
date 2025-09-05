@@ -95,8 +95,16 @@ function XGoldenMinerComponentLink:InitLinkRopeShow(force)
 
     if rightEntity and (rightEntity:IsAlive() or force) then
         local rightLinkCom = rightEntity:GetComponentLink()
-        
-        self._LinkRopeUid = self._OwnControl.SystemMap:CreateAndSetLinkRope(self._ParentEntity:GetTransform(), rightEntity:GetTransform(), self:GetLinkPoint(), rightLinkCom:GetLinkPoint())
+
+        if not rightLinkCom then
+            if not rightEntity:IsInvalid() then
+                rightLinkCom = rightEntity:AddChildEntity(self._OwnControl.COMPONENT_TYPE.LINK)
+            end 
+        end
+
+        if rightLinkCom then
+            self._LinkRopeUid = self._OwnControl.SystemMap:CreateAndSetLinkRope(self._ParentEntity:GetTransform(), rightEntity:GetTransform(), self:GetLinkPoint(), rightLinkCom:GetLinkPoint())
+        end
     end
 end
 

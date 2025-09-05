@@ -455,6 +455,7 @@ function XUiRpgMakerGamePlayMain:CheckActions()
                 monsterObj:CheckRemoveSentry()
                 self:UpdateSentrySign(action.MonsterId)
                 cb()
+                XLuaAudioManager.StopAudioByCueId(XLuaAudioManager.UiBasicsMusic.RpgMakerGame_SepaktakrawRun)
             end
             monsterObj:PlayMoveAction(action, moveEndCb, self:GetMapId())
         end
@@ -987,6 +988,9 @@ end
 
 ---拖拽
 function XUiRpgMakerGamePlayMain:OnDrag(position)
+    if not self.StartDownPosition or not position then
+        return
+    end
     if not self:IsCanRequest() then
         return
     end

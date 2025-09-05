@@ -467,8 +467,13 @@ function XRpgMakerGameMonsterData:PlayMoveAction(action, cb, mapId)
     end
     XRpgMakerGameMonsterData.Super.PlayMoveAction(self, action, cb, skillType)
 
-    if self.MonsterType ~= XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Sepaktakraw then
-        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_MonsterRun)
+    local isSamePos = action.StartPosition.PositionX == action.EndPosition.PositionX and action.StartPosition.PositionY == action.EndPosition.PositionY
+    if not isSamePos then
+        if self.MonsterType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameMonsterType.Sepaktakraw then
+            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_SepaktakrawRun)
+        else
+            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_MonsterRun)
+        end
     end
 end
 
@@ -654,6 +659,7 @@ function XRpgMakerGameMonsterData:OnSkillTypesChange(oldSkillTypes, skillTypes)
         if not skillTypeDic[skillType] then
             -- 被点燃
             if skillType == XMVCA.XRpgMakerGame.EnumConst.XRpgMakerGameRoleSkillType.Flame2 then
+                XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.RpgMakerGame_FireUp)
                 self:PlayAlarmAnima()
             end
         end

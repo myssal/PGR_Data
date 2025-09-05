@@ -2,6 +2,8 @@
     {
         "Id": 1,
         "SceneObject": "Character1",
+        "BtnOpenCondition": 0,
+        "BtnCloseCondition": 0,
         "StoryIsOpen": true,
         "StoryLine": 2,
         "RepeatChapterCondition": [
@@ -14,6 +16,8 @@
     {
         "Id": 2,
         "SceneObject": "Character2",
+        "BtnOpenCondition": 0,
+        "BtnCloseCondition": 0,
         "StoryIsOpen": true,
         "StoryLine": 3,
         "RepeatChapterCondition": [
@@ -26,6 +30,8 @@
     {
         "Id": 3,
         "SceneObject": "Character3",
+        "BtnOpenCondition": 0,
+        "BtnCloseCondition": 0,
         "StoryIsOpen": true,
         "StoryLine": 4,
         "RepeatChapterCondition": [
@@ -36,8 +42,24 @@
         ]
     },
     {
+        "Id": 4,
+        "SceneObject": "Character4",
+        "BtnOpenCondition": 0,
+        "BtnCloseCondition": 0,
+        "StoryIsOpen": true,
+        "StoryLine": 5,
+        "RepeatChapterCondition": [
+            0
+        ],
+        "RepeatChapter": [
+            508
+        ]
+    },
+    {
         "Id": 6,
         "SceneObject": "BtnTeaching",
+        "BtnOpenCondition": 0,
+        "BtnCloseCondition": 0,
         "StoryIsOpen": true,
         "StoryLine": 1
     }

@@ -89,6 +89,7 @@ function XMovieActionBgSwitch:OnExit()
         self.CanvasGroup.alpha = 1
         if not self.IsHide then
             self.RImgBg:SetBgPath(self.BgPath)
+            self.RImgBg:ResetBgRootAlpha()
         end
         if self.RImgAnimBg then
             self.RImgAnimBg:Hide()

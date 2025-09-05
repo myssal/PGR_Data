@@ -82,6 +82,7 @@ function XMovieActionDialog:OnInit()
         end
         self.IsAudioing = true
         self.AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, self.CvId, function()
+            if self.IsDestroy then return end
             self:OnAudioComplete()
             self:StopSpineActorTalk()
         end)
@@ -93,6 +94,7 @@ function XMovieActionDialog:OnInit()
 end
 
 function XMovieActionDialog:OnDestroy()
+    self.IsDestroy = true
     self.IsTyping = nil
     self.IsAutoPlay = nil
     self.IsAudioing = nil

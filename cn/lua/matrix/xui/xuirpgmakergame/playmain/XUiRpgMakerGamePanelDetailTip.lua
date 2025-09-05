@@ -15,6 +15,7 @@ function XUiRpgMakerGamePanelDetailTip:Ctor(ui, rootUi)
 end
 
 function XUiRpgMakerGamePanelDetailTip:Show(modelKey, modelName)
+    self.RootUi:StopAnimation("PanelDetailTipDisable")
     self:RefreshTxt(modelKey, modelName)
     if self.Timer and not self.IsPlayingAnima then
         self.IsPlayingAnima = true

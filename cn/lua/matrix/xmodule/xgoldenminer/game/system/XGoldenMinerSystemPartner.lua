@@ -446,8 +446,8 @@ function XGoldenMinerSystemPartner:ReallocateLinkByOldLinkList(linkList)
 
     local newLink = {}
     
-    for i = 1, #linkList do
-        if linkList[i] ~= false then
+    for i = 1, #linkList + 1 do
+        if linkList[i] ~= false and linkList[i] ~= nil then
             table.insert(newLink, linkList[i])
         else
             if not XTool.IsTableEmpty(newLink) then

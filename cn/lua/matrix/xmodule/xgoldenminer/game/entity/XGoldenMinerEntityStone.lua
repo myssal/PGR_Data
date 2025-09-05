@@ -168,6 +168,11 @@ function XGoldenMinerEntityStone:IsAlive()
             self.Status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.SHIP_AIM
 end
 
+function XGoldenMinerEntityStone:IsInvalid()
+    return self.Status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.END_LIEF_TIME or
+            self.Status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.DESTROY
+end
+
 function XGoldenMinerEntityStone:IsMove()
     return self.Status == XEnumConst.GOLDEN_MINER.GAME_STONE_STATUS.ALIVE
 end
