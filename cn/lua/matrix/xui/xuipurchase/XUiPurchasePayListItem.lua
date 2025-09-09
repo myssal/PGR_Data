@@ -39,8 +39,7 @@ function XUiPurchasePayListItem:SetData()
         end
     end
 
-    local amount = not XOverseaManager.IsENRegion() and self.ItemData.Amount or self.ItemData.ShowAmount
-    self.TxtYuan.text = CS.XTextManager.GetText(self.ItemData.Currency, amount)
+    self.TxtYuan.text = CS.XTextManager.GetText(self.ItemData.Currency, self.ItemData.Amount)
     self.TxtYuan.gameObject:SetActiveEx(true)
 
     -- -- 直接获得的道具

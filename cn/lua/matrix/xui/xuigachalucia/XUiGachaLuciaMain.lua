@@ -114,10 +114,6 @@ function XUiGachaLuciaMain:OnDisable()
 end
 
 function XUiGachaLuciaMain:OnDestroy()
-    if self._WeaponFashionTimer then
-        XScheduleManager.UnSchedule(self._WeaponFashionTimer)
-        self._WeaponFashionTimer = nil
-    end
     self._ShowCourseRewardTrigger = nil
     self._DoGachaTrigger = nil
     --self.LightControlTimeline:Stop()
@@ -627,30 +623,22 @@ function XUiGachaLuciaMain:DoGacha(gachaCount, isSkipToShow)
                 self:StopAnime()
                 XLuaUiManager.Open("UiGachaLuciaShow", self._GachaId, self.RewardList, nil, isSkipToShow and gachaCount > 1) -- 单抽不能跳过奖励展示
                 self._TipCbTrigger = function()
-                    local isOpenQuickWear = XTool.IsNumberValid(templateId) and not isConvertFrom
-                    local isOpenUiObtain = isConvertFrom and rewardListCourseFromServer
-
-                    if isOpenUiObtain and not isOpenQuickWear and not fashionItem and not backgroundItem then
-                        -- 防止UiObtain截背景图截到黑幕
-                        self._UiObtainTimer = XScheduleManager.ScheduleOnce(function()
-                            XLuaUiManager.Open("UiObtain", rewardListCourseFromServer)
-                        end, 500)
-                    else
-                        if isOpenQuickWear then
-                            XDataCenter.UiQueueManager.Open("UiGachaLuciaQuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
+                    local asynOpen = asynTask(XLuaUiManager.Open)
+                    RunAsyn(function()
+                        if XTool.IsNumberValid(templateId) then
+                            asynOpen("UiGachaLuciaQuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
                         end
                         if fashionItem then
-                            XDataCenter.UiQueueManager.Open("UiGachaLuciaPassport", fashionItem)
+                            asynOpen("UiGachaLuciaPassport", fashionItem)
                         end
                         if backgroundItem then
-                            XDataCenter.UiQueueManager.Open("UiGachaLuciaPassport", backgroundItem)
+                            asynOpen("UiGachaLuciaPassport", backgroundItem)
                         end
-                        if isOpenUiObtain then
-                            XDataCenter.UiQueueManager.Open("UiObtain", rewardListCourseFromServer)
+                        if isConvertFrom and rewardListCourseFromServer then
+                            asynOpen("UiObtain", rewardListCourseFromServer)
                         end
-                    end
+                    end)
                 end
-
             end
 
             if isSkipToShow then
@@ -790,9 +778,7 @@ function XUiGachaLuciaMain:OnAfterStageLineEnable()
 end
 
 function XUiGachaLuciaMain:ShowRewardAfterGacha()
-    self._WeaponFashionTimer = XScheduleManager.ScheduleOnce(function()
-        self:ShowWeaponFashion()
-    end, 500)
+    self:ShowWeaponFashion()
 end
 
 function XUiGachaLuciaMain:ShowWeaponFashion()

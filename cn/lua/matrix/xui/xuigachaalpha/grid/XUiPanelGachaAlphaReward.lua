@@ -25,11 +25,11 @@ function XUiPanelGachaAlphaReward:RefreshUiShow(gachaConfig)
             end)
 
             local tmpData = {}
-            tmpData.TemplateId = v.Cfg.TemplateId
-            tmpData.Count = v.Cfg.Count
+            tmpData.TemplateId = v.TemplateId
+            tmpData.Count = v.Count
 
             local curCount
-            if v.Cfg.RewardType == XGachaConfigs.RewardType.Count then
+            if v.RewardType == XGachaConfigs.RewardType.Count then
                 curCount = v.CurCount
             end
             item:Refresh(tmpData, nil, nil, nil, curCount)

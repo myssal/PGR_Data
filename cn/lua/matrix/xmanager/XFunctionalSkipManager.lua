@@ -482,7 +482,7 @@ XFunctionalSkipManagerCreator = function()
         end
 
         -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-        XFunctionalSkipManager.OnActivityBossSingleOpen(list)
+        XFunctionalSkipManager.OnActivityBossSingleOpen()
 
         return XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
     end
@@ -2456,11 +2456,10 @@ XFunctionalSkipManagerCreator = function()
         end
     end
     
-    function XFunctionalSkipManager.OnActivityBossSingleOpen(list)
+    function XFunctionalSkipManager.OnActivityBossSingleOpen()
         if not XDataCenter.CrossVersionManager.GetEnable() then
             return
         end
-        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
         local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
         if param1 and curSectionId ~= 0 then
             local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))

@@ -106,6 +106,9 @@ function XUiRegressionActivity:InitView()
             XDataCenter.Regression3rdManager.OnActivityEnd()
         end
     end)
+    
+    ---@type XLoaderUtil
+    self._ContainerLoader = self.PanelContainer:GetLoader()
 end
 
 function XUiRegressionActivity:OnSelectTab(index)
@@ -167,7 +170,8 @@ function XUiRegressionActivity:GetSubPanel()
     local prefabPath = viewData.PrefabPath
     local panel = self.PanelDict[prefabPath]
     if not panel then
-        local go = self.PanelContainer:LoadPrefabEx(prefabPath)
+        local prefab = self._ContainerLoader:Load(prefabPath)
+        local go = CS.UnityEngine.GameObject.Instantiate(prefab, self.PanelContainer)
         
         local modulePath = Type2ModulePath[viewData.ActivityType]
         if string.IsNilOrEmpty(modulePath) then

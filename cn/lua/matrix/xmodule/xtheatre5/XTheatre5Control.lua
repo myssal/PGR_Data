@@ -273,12 +273,11 @@ function XTheatre5Control:ReturnTheatre5Main()
     self.FlowControl:ExitModel()
 end
 
---region Configs
+--region Configs 
 
 --region 角色相关
 
 function XTheatre5Control:GetTheatre5CharacterCfgs()
-    ---@type XTableTheatre5Character[]
     local allCfgs = self._Model:GetTheatre5CharacterCfgs()
     if XTool.IsTableEmpty(allCfgs) then
         return
@@ -286,16 +285,7 @@ function XTheatre5Control:GetTheatre5CharacterCfgs()
     local characterCfgs = {}
     for _, cfg in pairs(allCfgs) do
         if XTool.IsNumberValid(cfg.Priority) then
-            if XOverseaManager.IsENRegion() then
-                --todo:3.8En特殊处理，屏蔽PVP莉莉丝
-                local lilithId = 4
-
-                if not (self:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP) or cfg.Id ~= lilithId then
-                    table.insert(characterCfgs, cfg)
-                end
-            else
-                table.insert(characterCfgs, cfg)
-            end
+            table.insert(characterCfgs, cfg)
         end
     end
     table.sort(characterCfgs, function(a, b)

@@ -147,9 +147,6 @@ function XHeroSdkManager.OnLoginSuccess(uid, username, token, loginChannel)
 
     XLog.Debug("uid:" .. tostring(uid) .. ", username:" .. tostring(username) .. ", token:" .. tostring(token))
     XUserManager.SetUserId(uid)
-    if XOverseaManager.IsENRegion() then
-        XServerManager.SelectServerAndSort()
-    end
     XUserManager.SetUserName(username)
     XUserManager.SetToken(token)
     XUserManager.SetLoginChannel(loginChannel)

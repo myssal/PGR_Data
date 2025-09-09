@@ -1223,8 +1223,8 @@ XPurchaseManagerCreator = function()
 
         for i = 1, #configs do
             local config = configs[i]
-            if payCount <= config.MoneyCard and maxValue > config.MoneyCard then
-                maxValue = config.MoneyCard
+            if payCount <= config.Amount and maxValue > config.Amount then
+                maxValue = config.Amount
                 result = config
                 index = i
             end
@@ -1233,7 +1233,7 @@ XPurchaseManagerCreator = function()
         if not result then
             result = configs[#configs]
             for i = 1, #configs - 1 do
-                if result.MoneyCard < configs[i].MoneyCard then
+                if result.Amount < configs[i].Amount then
                     result = configs[i]
                     index = i
                 end
