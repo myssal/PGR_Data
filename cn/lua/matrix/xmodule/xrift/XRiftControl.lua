@@ -1057,41 +1057,6 @@ end
 
 --endregion
 
---region 排行榜
-
-function XRiftControl:GetRankingList()
-    local rankData = self._Model.ActivityData:GetRankData()
-    return rankData and rankData.RankPlayerInfos or nil
-end
-
-function XRiftControl:IsHasRank()
-    local rankData = self._Model.ActivityData:GetRankData()
-    return rankData and XTool.IsNumberValid(rankData.Rank) or false
-end
-
-function XRiftControl:GetMyRankInfo()
-    local rankData = self._Model.ActivityData:GetRankData()
-    if not rankData then
-        return nil
-    end
-    local myRank = {}
-    local percentRank = 100 -- 101名及以上显示百分比
-    local rank = rankData.Rank
-    if rankData.Rank > percentRank then
-        rank = math.max(1, math.floor(rankData.Rank * 100 / rankData.TotalCount)) .. "%" -- 最小显示1%
-    elseif rankData.Rank == 0 then
-        rank = XUiHelper.GetText("ExpeditionNoRanking")
-    end
-    myRank["Rank"] = rank
-    myRank["Id"] = XPlayer.Id
-    myRank["Name"] = XPlayer.Name
-    myRank["HeadPortraitId"] = XPlayer.CurrHeadPortraitId
-    myRank["HeadFrameId"] = XPlayer.CurrHeadFrameId
-    myRank["Score"] = rankData.Score
-    myRank["CharacterIds"] = rankData.CharacterIds
-    return myRank
-end
-
 function XRiftControl:GetRankingSpecialIcon(rank)
     if type(rank) ~= "number" or rank < 1 or rank > 3 then
         return
@@ -1248,9 +1213,8 @@ function XRiftControl:RequireRanking(cb, chapterId)
             XUiManager.TipCode(res.Code)
             return
         end
-        self._Model.ActivityData:UpdateRankData(res)
         if cb then
-            cb()
+            cb(res)
         end
     end)
 end

@@ -36,6 +36,7 @@ function XUiFashionDetailComb:OnAwake()
     self.BtnLensOut.gameObject:SetActiveEx(true)
     self.BtnLensIn.gameObject:SetActiveEx(false)
     self.PanelBtnSwich.gameObject:SetActiveEx(false)
+    local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
 end

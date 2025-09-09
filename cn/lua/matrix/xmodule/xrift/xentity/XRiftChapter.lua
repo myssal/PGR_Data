@@ -49,9 +49,6 @@ function XRiftChapter:CheckPreLock()
 end
 
 function XRiftChapter:CheckTimeLock()
-    if self:IsEndless() then
-        return false
-    end
     return self:GetOpenLeftTime() > 0
 end
 

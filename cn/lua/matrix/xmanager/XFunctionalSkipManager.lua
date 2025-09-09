@@ -482,7 +482,7 @@ XFunctionalSkipManagerCreator = function()
         end
 
         -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-        XFunctionalSkipManager.OnActivityBossSingleOpen()
+        XFunctionalSkipManager.OnActivityBossSingleOpen(list)
 
         return XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
     end
@@ -1268,21 +1268,22 @@ XFunctionalSkipManagerCreator = function()
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Rift) then
             -- 条件
             XUiManager.TipText("FubenRepeatNotInActivityTime")
-            return
+            return false
         end
 
         -- 活动数据
         if not XMVCA.XRift:GetCurrentConfig() then
             XUiManager.TipText("FubenRepeatNotInActivityTime")
-            return
+            return false
         end
 
         if not XMVCA.XRift:IsInActivity() then
             XUiManager.TipText("FubenRepeatNotInActivityTime")
-            return
+            return false
         end
 
         XMVCA.XRift:OpenMain()
+        return true
     end
 
     function XFunctionalSkipManager.SkipToFubenCoupleCombat(list)
@@ -2455,10 +2456,11 @@ XFunctionalSkipManagerCreator = function()
         end
     end
     
-    function XFunctionalSkipManager.OnActivityBossSingleOpen()
+    function XFunctionalSkipManager.OnActivityBossSingleOpen(list)
         if not XDataCenter.CrossVersionManager.GetEnable() then
             return
         end
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
         local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
         if param1 and curSectionId ~= 0 then
             local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))

@@ -626,10 +626,10 @@ XGuildDormManagerCreator = function()
             asyncEnter()
             -- 这里重新设置为了获取服务器真正的进入的频道
             CurrentChannelIndex = DormData.ChannelId or 0
-            XLog.Debug("========== 连接KCP")
+            --XLog.Debug("========== 连接KCP")
             -- 连接KCP
-            asyncConnectKcp()
-            XLog.Debug("========== 连接KCP流程已完成")
+            --asyncConnectKcp() 因为KCP不稳定，3.8暂时不启用
+            --XLog.Debug("========== 连接KCP流程已完成")
             -- 放到下一帧跑，主要是为了显示报错信息
             XScheduleManager.ScheduleOnce(function()
                 if callback then callback(XGuildDormConfig.ErrorCode.Success) end

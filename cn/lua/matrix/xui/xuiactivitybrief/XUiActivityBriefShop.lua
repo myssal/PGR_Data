@@ -15,7 +15,6 @@ local ShopItemTextColor = {
     CanBuyColor = CanBuyColor,
     CanNotBuyColor = CanNotBuyColor,
 }
-local HIDE_GOOD_ID = 127671 -- 前期隐藏不下发，后期才下发的商品id  -- todo 下个版本提优化单支持配置
 
 function XUiActivityBriefShop:OnAwake()
     self.SortGroup.gameObject:SetActiveEx(false)
@@ -314,10 +313,6 @@ function XUiActivityBriefShop:GetSortGroupInfoList(shopGoods, shopId)
             else
                 if targetIdDic[targetId] then
                     XLog.Error(string.format("请策划老师检查配置：ActivityBriefShopGoodsSort.tab表，Id = %s，TargetIds[%s] = %s，商店里配置了相同的商品id", sortId, index, targetId))
-                else
-                    if targetId ~= HIDE_GOOD_ID and XMain.IsEditorDebug then
-                        XLog.Error(string.format("请策划老师检查配置：ActivityBriefShopGoodsSort.tab表，Id = %s，TargetIds[%s] = %s，商店里无此商品id", sortId, index, targetId))
-                    end
                 end
             end
         end

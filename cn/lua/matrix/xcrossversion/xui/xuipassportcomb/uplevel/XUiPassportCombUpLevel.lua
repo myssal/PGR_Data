@@ -1,5 +1,4 @@
 local XUiPassportCombUpLevelGrid = require("XCrossVersion/XUi/XUiPassportComb/UpLevel/XUiPassportCombUpLevelGrid")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@field _Control XPassportCombControl
@@ -22,6 +21,7 @@ function XUiPassportCombUpLevel:OnAwake()
 end
 
 function XUiPassportCombUpLevel:OnStart()
+    local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem)
     self:RegisterButtonEvent()
     self:SetSelectCount(1)

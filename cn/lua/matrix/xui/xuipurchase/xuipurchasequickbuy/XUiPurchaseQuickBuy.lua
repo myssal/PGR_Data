@@ -64,10 +64,11 @@ end
 
 function XUiPurchaseQuickBuy:_Refresh(payCount, config)
     self.TxtNumber1.text = XUiHelper.GetText("PayQuickBuyNumber", payCount)
-    self.TxtNumber2.text = XUiHelper.GetText("PayQuickBuyNumber", config.Amount)
+    local showAmount = not XOverseaManager.IsENRegion() and config.Amount or config.ShowAmount
+    self.TxtNumber2.text = XUiHelper.GetText("PayQuickBuyNumber", config.MoneyCard)
     self.IconConsume1:SetRawImage(XPurchaseConfigs.GetIconPathByIconName(config.Icon).AssetPath)
-    self.TxtConsumeTips.text = XUiHelper.GetText("PayQuickBuyDesc", config.MoneyCard, config.Amount)
-    self.BtnConfirm:SetNameByGroup(0, XUiHelper.GetText("PayQuickBuyAmount", config.Amount))
+    self.TxtConsumeTips.text = XUiHelper.GetText("PayQuickBuyDesc", showAmount, config.MoneyCard)
+    self.BtnConfirm:SetNameByGroup(0, XUiHelper.GetText("PayQuickBuyAmount", showAmount))
 end
 --endregion
 

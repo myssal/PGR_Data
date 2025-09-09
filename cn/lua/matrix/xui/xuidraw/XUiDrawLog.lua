@@ -271,7 +271,9 @@ function XUiDrawLog:OnBtnSwitchOn()
 end
 
 function XUiDrawLog:ClickLink(url)
-    XHeroSdkManager.OpenURL(url)
+    if url and url ~= "" then 
+        CS.UnityEngine.Application.OpenURL(url)
+    end
 end
 --endregion
 

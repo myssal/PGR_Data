@@ -17,8 +17,8 @@ function XUiBWOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId
         self.GroupRecommend.gameObject:SetActiveEx(not isKeyboard)
 
         local keyCodeType = XCSInputManager.GetKeyCodeTypeByInt(operationKey, self.CurInputMapId, self.CurOperationType)
-        local isCustom = CS.XUiPcManager.PCForceSetKeyCode or XCSInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
-        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XUiPcManager.PCForceSetKeyCode
+        local isCustom = CS.XUiPc.XUiPcManager.PCForceSetKeyCode or XCSInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
+        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XUiPc.XUiPcManager.PCForceSetKeyCode
         self.BtnKeyItem.enabled = isCustom or oneKeyIsCustom
         local name = XCSInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.One)
         self.BtnKeyItem:SetName(name)

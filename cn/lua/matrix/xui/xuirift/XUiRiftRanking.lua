@@ -6,6 +6,7 @@ local XUiRiftRankingGrid = require("XUi/XUiRift/Grid/XUiRiftRankingGrid")
 local XUiRiftRanking = XLuaUiManager.Register(XLuaUi, "UiRiftRanking")
 
 function XUiRiftRanking:OnAwake()
+    self._RankDatas = {}
     self:RegisterEvent()
     self:InitDynamicTable()
     self:InitMyRankPanel()
@@ -52,18 +53,30 @@ function XUiRiftRanking:OnTabSelected(index)
         XUiManager.TipError(self.BtnLockTips[index])
         return
     end
+
     if self.CurSelectIdx == index then
         return
     end
+
     self.CurSelectIdx = index
-    self._Control:RequireRanking(function()
-        self:RefreshDynamicTable()
-        self:RefreshMyRank()
-        if self._IsPlayTween then
-            self:PlayAnimation("QieHuan")
-        end
-    end, index)
     self._IsPlayTween = true
+
+    if self._RankDatas[index] then
+        self:UpdateRank()
+    else
+        self._Control:RequireRanking(function(res)
+            self._RankDatas[index] = res
+            self:UpdateRank()
+        end, index)
+    end
+end
+
+function XUiRiftRanking:UpdateRank()
+    self:RefreshDynamicTable()
+    self:RefreshMyRank()
+    if self._IsPlayTween then
+        self:PlayAnimation("QieHuan")
+    end
 end
 
 function XUiRiftRanking:IsCurTabEndless()
@@ -86,11 +99,11 @@ function XUiRiftRanking:InitTimes()
 end
 
 function XUiRiftRanking:RefreshMyRank()
-    local hasRank = self._Control:IsHasRank()
+    local hasRank = self:IsHasRank()
     self.PanelInfo.gameObject:SetActiveEx(hasRank)
     self.Bg.gameObject:SetActiveEx(hasRank)
     if hasRank then
-        local rankInfo = self._Control:GetMyRankInfo()
+        local rankInfo = self:GetMyRankInfo()
         self.MyRank:Refresh(rankInfo)
     end
 end
@@ -103,7 +116,7 @@ function XUiRiftRanking:InitDynamicTable()
 end
 
 function XUiRiftRanking:RefreshDynamicTable()
-    self.DataList = self._Control:GetRankingList()
+    self.DataList = self:GetRankingList()
     self.PanelNoRank.gameObject:SetActiveEx((not next(self.DataList)))
     self.DynamicTable:SetDataSource(self.DataList)
     self.DynamicTable:ReloadDataASync(1)
@@ -120,3 +133,38 @@ function XUiRiftRanking:OnDynamicTableEvent(event, index, grid)
     end
 end
 ---------------------------------------- 动态列表 end ----------------------------------------
+
+function XUiRiftRanking:GetRankingList()
+    local rankData = self._RankDatas[self.CurSelectIdx]
+    return rankData and rankData.RankPlayerInfos or nil
+end
+
+function XUiRiftRanking:IsHasRank()
+    local rankData = self._RankDatas[self.CurSelectIdx]
+    return rankData and XTool.IsNumberValid(rankData.Rank) or false
+end
+
+function XUiRiftRanking:GetMyRankInfo()
+    local rankData = self._RankDatas[self.CurSelectIdx]
+    if not rankData then
+        return nil
+    end
+    local myRank = {}
+    local percentRank = 100 -- 101名及以上显示百分比
+    local rank = rankData.Rank
+    if rankData.Rank > percentRank then
+        rank = math.max(1, math.floor(rankData.Rank * 100 / rankData.TotalCount)) .. "%" -- 最小显示1%
+    elseif rankData.Rank == 0 then
+        rank = XUiHelper.GetText("ExpeditionNoRanking")
+    end
+    myRank["Rank"] = rank
+    myRank["Id"] = XPlayer.Id
+    myRank["Name"] = XPlayer.Name
+    myRank["HeadPortraitId"] = XPlayer.CurrHeadPortraitId
+    myRank["HeadFrameId"] = XPlayer.CurrHeadFrameId
+    myRank["Score"] = rankData.Score
+    myRank["CharacterIds"] = rankData.CharacterIds
+    return myRank
+end
+
+return XUiRiftRanking

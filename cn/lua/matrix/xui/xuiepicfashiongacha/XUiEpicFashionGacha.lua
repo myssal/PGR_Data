@@ -116,6 +116,18 @@ function XUiEpicFashionGacha:OnStart(gachaId, autoOpenStory)
     self.AssetPanel:SetButtonCb(3, function()
         self:OpenGachaItemShop()
     end)
+
+    local timeId = self.GachaCfg.TimeId
+    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    self:SetAutoCloseInfo(endTime, function(isClose)
+        if isClose then
+            XLuaUiManager.RunMain()
+            XUiManager.TipMsg(XUiHelper.GetText("ActivityAlreadyOver"))
+        else
+            local time = XFunctionManager.GetEndTimeByTimeId(timeId) - XTime.GetServerNowTimestamp()
+            self.TxtTime.text = XUiHelper.GetText("GachaLamiyaTime", XUiHelper.GetTime(time, XUiHelper.TimeFormatType.CHATEMOJITIMER))
+        end
+    end, nil, 0)
 end
 
 function XUiEpicFashionGacha:OnChildClose()

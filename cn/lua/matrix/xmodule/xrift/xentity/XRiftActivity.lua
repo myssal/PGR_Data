@@ -437,18 +437,6 @@ end
 
 --endregion
 
---region 排行榜
-
-function XRiftActivity:UpdateRankData(data)
-    self._RankData = data
-end
-
-function XRiftActivity:GetRankData()
-    return self._RankData
-end
-
---endregion
-
 return XRiftActivity
 
 --region 服务端类
