@@ -17,6 +17,8 @@ function XUiGridGeneralSkillSelect:Refresh(data)
     for id, v in pairs(data.Characters) do
         table.insert(characters, id)
     end
+    local isCharEmpty = XTool.IsTableEmpty(data.Characters)
+    self.TextStaticActiveChar.gameObject:SetActiveEx(not isCharEmpty)
     
     for i = 1, 10 do
         if self['Char'..i] then
@@ -48,6 +50,7 @@ function XUiGridGeneralSkillSelect:OnSelectEvent()
     else
         self.Parent._Team:UpdateSelectGeneralSkill(self._Id)
         self.Parent:RefreshList()
+        XMVCA.XFuben:SetCacheStageTeamHasSetGeneralSkillId(self.Parent._StageId, self.Parent._Team:GetId())
     end
 end
 

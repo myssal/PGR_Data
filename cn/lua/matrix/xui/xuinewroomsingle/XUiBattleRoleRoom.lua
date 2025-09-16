@@ -187,7 +187,7 @@ function XUiBattleRoleRoom:OnEnable()
     if not canEditor then 
         showRoleDetail =  false 
     end
-    if self.Proxy.CheckIsEnableGeneralSkillSelection and self.Proxy:CheckIsEnableGeneralSkillSelection() then
+    if self.Proxy.CheckIsEnableGeneralSkillSelection and self.Proxy:CheckIsEnableGeneralSkillSelection() and self.PanelGeneralSkill then
         self.PanelGeneralSkill:Refresh()
     end
     self:RefreshRoleDetalInfo(true)

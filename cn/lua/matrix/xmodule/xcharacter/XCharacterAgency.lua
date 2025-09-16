@@ -2234,6 +2234,10 @@ function XCharacterAgency:GetCharacterCareer(characterId)
         characterId = XRobotManager.GetCharacterId(characterId)
     end
 
+    if not XTool.IsNumberValid(characterId) then
+        return nil
+    end
+
     local charConfig = self:GetCharacterTemplate(characterId)
     if not charConfig then
         return
@@ -2256,6 +2260,11 @@ function XCharacterAgency:GetCharacterElement(characterId)
     if XRobotManager.CheckIsRobotId(characterId) then
         characterId = XRobotManager.GetCharacterId(characterId)
     end
+
+    if not XTool.IsNumberValid(characterId) then
+        return nil
+    end
+
     return self._Model:GetCharacter()[characterId].Element
 end
 
@@ -3173,6 +3182,14 @@ end
 function XCharacterAgency:GetCharDetailObtainElementList(templateId)
     local config = self:GetCharDetailTemplate(templateId)
     return config and config.ObtainElementList
+end
+
+function XCharacterAgency:GetCharDetailEnableCheckAmplifierAndSameElement(templateId)
+    local robotId = XRobotManager.GetCharacterId(templateId)
+    templateId = XTool.IsNumberValid(robotId) and robotId or templateId
+
+    local config = self:GetCharDetailTemplate(templateId)
+    return config and config.EnableCheckAmplifierAndSameElement
 end
 
 ---@return XTableCharacterElement

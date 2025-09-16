@@ -7,6 +7,17 @@ function XUiGridGeneralSkill:OnStart(stageId)
     self.BtnGeneralSkill.CallBack = handler(self,self.OnBtnClickEvent)
     self.BtnGeneralSkillNotactive.CallBack = handler(self, self.OnNoGeneralSkillBtnClickEvent)
     self:Refresh(true)
+
+    XEventManager.AddEventListener(XEventId.EVENT_TEAM_MEMBER_REMOVE_AND_GENERALSELECT_SKILLID, self.OnGeneralSkillRemoveFun, self)
+end
+
+function XUiGridGeneralSkill:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_TEAM_MEMBER_REMOVE_AND_GENERALSELECT_SKILLID, self.OnGeneralSkillRemoveFun, self)
+end
+
+function XUiGridGeneralSkill:OnGeneralSkillRemoveFun()
+    local teamData = self:GetTeamData()
+    XMVCA.XFuben:ClearCacheStageTeamHasSetGeneralSkillId(self.Parent.StageId, teamData:GetId())
 end
 
 function XUiGridGeneralSkill:Refresh(noForceRefreshGeneralSkills)
@@ -37,7 +48,8 @@ function XUiGridGeneralSkill:Refresh(noForceRefreshGeneralSkills)
     
     if hasGeneralSkill then
         local generalSkillId = teamData:GetCurGeneralSkill()
-        if XTool.IsNumberValid(generalSkillId) then
+        -- if XTool.IsNumberValid(generalSkillId) then
+        if XMVCA.XFuben:GetCacheStageTeamHasSetGeneralSkillId(self.Parent.StageId, teamData:GetId()) and not teamData:CheckAndUseRemoveSelectGeneralSkillTrigger() then
             local genralSkillConfig = XMVCA.XCharacter:GetModelCharacterGeneralSkill()[generalSkillId]
 
             -- 显示有效应图标
@@ -61,6 +73,10 @@ function XUiGridGeneralSkill:Refresh(noForceRefreshGeneralSkills)
 end
 
 function XUiGridGeneralSkill:OnBtnClickEvent()
+    if self.Parent and self.Parent.Proxy and self.Parent.StageId and  not self.Parent.Proxy:CheckIsCanEditorTeam(self.Parent.StageId) then
+        return
+    end
+
     local teamData = self:GetTeamData()
     
     if teamData:CheckHasGeneralSkills() then

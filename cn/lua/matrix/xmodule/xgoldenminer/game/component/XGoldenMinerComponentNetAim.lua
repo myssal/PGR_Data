@@ -121,7 +121,15 @@ function XGoldenMinerComponentNetAim:OnVirtualMoveEnd()
     self.RopeCordIndicator.gameObject:SetActiveEx(false)
     self.RopeCordIndicator:SetLocalPosition(0, 0, 0)
     self._ParentEntity:GetComponentHook():UpdateHitColliderEnable(true)
+    CS.UnityEngine.Physics2D.SyncTransforms()
     self._IsVirtualMoving = false
+    
+    self.IsDuraingGrab = true
+    
+    XScheduleManager.ScheduleOnce(function()
+        self.IsDuraingGrab = false
+    end, 0.1 * XScheduleManager.SECOND)
+    
     self._CurMovingTargetIndex = 1
 end
 
@@ -230,6 +238,10 @@ function XGoldenMinerComponentNetAim:UpdateMovePath(time)
 end
 
 function XGoldenMinerComponentNetAim:UpdateRoleLength(length, isRevoke, time)
+    if self.IsDuraingGrab then
+        return
+    end
+    
     if not self:GetIsVirtualMoving() then
         -- 无论有没有抓到东西，都切换为返回
         self._OwnControl.SystemHook:HookRevoke(self._ParentEntity:GetComponentHook())

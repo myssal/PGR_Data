@@ -20,6 +20,7 @@ function XTeam:Ctor(id, isStandAlone)
     -- -- 默认不限制
     -- self.CharacterLimitType = XFubenConfigs.CharacterLimitType.All
     self.CustomCharacterType = nil
+    self._RemoveSelectGeneralSkillTrigger = nil
     self:LoadTeamData()
 end
 
@@ -543,6 +544,8 @@ function XTeam:SetGeneralSkills(entityId, skillIds, isRemove, noAutoSave)
                 self._GenernalSkills[value] = nil
                 if self.SelectedGeneralSkill == value then
                     self:UpdateSelectGeneralSkill(0, noAutoSave)
+                    self._RemoveSelectGeneralSkillTrigger = true
+                    XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_REMOVE_AND_GENERALSELECT_SKILLID)
                 end
             end
         else
@@ -554,6 +557,12 @@ function XTeam:SetGeneralSkills(entityId, skillIds, isRemove, noAutoSave)
 
         :: continue ::
     end
+end
+
+function XTeam:CheckAndUseRemoveSelectGeneralSkillTrigger()
+    local res = self._RemoveSelectGeneralSkillTrigger
+    self._RemoveSelectGeneralSkillTrigger = false
+    return res
 end
 
 --- 刷新队伍的效应技能
@@ -605,49 +614,103 @@ function XTeam:CheckHasGeneralSkills()
     return not XTool.IsTableEmpty(self._GenernalSkills)
 end
 
+-- 检查队伍中是否存在增幅角色且所有角色为同一属性
+function XTeam:CheckAmplifierAndSameElement()
+    local entityIds = self:GetEntityIds()
+    local hasAmplifier = false
+    local firstElementId = nil
+    local allSameElement = true
+
+    for _, entityId in ipairs(entityIds) do
+        if XTool.IsNumberValid(entityId) then
+            -- 处理特殊实体（Rouge1 / Rouge2）
+            local fixedId = self:GetSpecialEntityId(entityId)
+            fixedId = XTool.IsNumberValid(fixedId) and fixedId or entityId
+
+            -- 检查职业（是否为增幅）
+            local career = XMVCA.XCharacter:GetCharacterCareer(fixedId)
+            if career == XEnumConst.CHARACTER.Career.Amplifier then
+                hasAmplifier = true
+            end
+
+            -- 检查属性是否一致
+            local elementId = XMVCA.XCharacter:GetCharacterElement(fixedId)
+            if firstElementId == nil and XTool.IsNumberValid(elementId) then
+                firstElementId = elementId
+            elseif firstElementId ~= elementId then
+                allSameElement = false
+                break
+            end
+        end
+    end
+
+    return hasAmplifier and allSameElement
+end
+
 function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
+    local aimSkillId = 0
+
+    -- 先处理传入的默认技能列表
     if not XTool.IsTableEmpty(defaultSkillIds) then
-        local aimSkillId = 0
-        for index, value in ipairs(defaultSkillIds) do
-            if not XTool.IsTableEmpty(self._GenernalSkills[value]) then
+        for _, skillId in ipairs(defaultSkillIds) do
+            if not XTool.IsTableEmpty(self._GenernalSkills[skillId]) then
                 if aimSkillId == 0 then
-                    aimSkillId = value
+                    aimSkillId = skillId
                 else
-                    local newCount = XTool.GetTableCount(value)
+                    local newCount = XTool.GetTableCount(self._GenernalSkills[skillId])
                     local oldCount = XTool.GetTableCount(self._GenernalSkills[aimSkillId])
-                    if newCount > oldCount then -- 如果新的技能角色数最多，则选新技能
-                        aimSkillId = value
+                    if newCount > oldCount then
+                        aimSkillId = skillId
                     end
                 end
             end
         end
+
         if XTool.IsNumberValid(aimSkillId) then
             self:UpdateSelectGeneralSkill(aimSkillId)
             return
         end
     end
 
-    if XTool.IsTableEmpty(self._GenernalSkills) then
+    local isEnableCheckAmplifierAndSameElement = false
+    for i, entityId in ipairs(self.EntitiyIds) do        
+        if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) then
+            isEnableCheckAmplifierAndSameElement = true
+            break
+        end
+    end
+
+    -- 增幅职业 + 全属性一致判断
+    if isEnableCheckAmplifierAndSameElement and self:CheckAmplifierAndSameElement() then
+        self:UpdateSelectGeneralSkill(0)
         return
     end
-    --找出关联角色最多且Id最小的技能
+
+    -- 若没有默认技能可用，且编队不满足增幅统一属性条件，则选择最佳技能
+    if not XTool.IsTableEmpty(self._GenernalSkills) then
+        aimSkillId = self:GetBestGeneralSkillId()
+        self:UpdateSelectGeneralSkill(aimSkillId)
+    end
+end
+
+-- 找出关联角色最多，若数量相等则取 Id 最小的技能
+function XTeam:GetBestGeneralSkillId()
     local aimSkillId = 0
-    for key, value in pairs(self._GenernalSkills) do
+    for skillId, relatedChars in pairs(self._GenernalSkills) do
         if aimSkillId == 0 then
-            aimSkillId = key
+            aimSkillId = skillId
         else
-            local newCount = XTool.GetTableCount(value)
+            local newCount = XTool.GetTableCount(relatedChars)
             local oldCount = XTool.GetTableCount(self._GenernalSkills[aimSkillId])
-            if newCount > oldCount then -- 如果新的技能角色数最多，则选新技能
-                aimSkillId = key
-            elseif newCount == oldCount then -- 如果两个技能角色数量相等，则选Id小的那一个
-                if key < aimSkillId then
-                    aimSkillId = key
-                end
+
+            if newCount > oldCount then
+                aimSkillId = skillId
+            elseif newCount == oldCount and skillId < aimSkillId then
+                aimSkillId = skillId
             end
         end
     end
-    self:UpdateSelectGeneralSkill(aimSkillId)
+    return aimSkillId
 end
 
 function XTeam:GetObservationActiveCareer()

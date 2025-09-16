@@ -34,7 +34,9 @@ function XUiPanelGeneralSkillTotal:GetSortedCfgList()
     local cfgs = XMVCA.XCharacter:GetModelCharacterGeneralSkill()
     local sortTable = {}
     for i, v in pairs(cfgs) do
-        table.insert(sortTable, v)
+        if XTool.IsNumberValid(v.Id) then
+            table.insert(sortTable, v)
+        end
     end
     
     table.sort(sortTable, function(a, b) 

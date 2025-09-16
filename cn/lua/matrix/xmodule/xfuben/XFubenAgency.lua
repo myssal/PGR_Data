@@ -123,6 +123,23 @@ function XFubenAgency:InitCustomFuncIdsTab()
     --end
 end
 
+function XFubenAgency:SetCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
+    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
+    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] = self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] or {}
+    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] = true
+end
+
+function XFubenAgency:GetCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
+    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
+    return self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] and self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] or false
+end
+
+function XFubenAgency:ClearCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
+    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
+    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] = self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] or {}
+    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] = nil
+end
+
 function XFubenAgency:ResetAll()
     -- for reLogin
     XEventManager.RemoveEventListener(XEventId.EVENT_PLAYER_LEVEL_CHANGE, self.InitData, self)
