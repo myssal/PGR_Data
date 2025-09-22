@@ -4,17 +4,19 @@
         "Name": "里",
         "UnlockChapterId": 0,
         "Style": "乱数",
-        "SkillType": 0,
         "RoleType": 1,
         "ModelAssetPath": "QR3LiangMd010011DW",
         "RoleOrder": 1,
         "Info": "孤身一人来到这里。尽管没有其他特殊能力傍身，但库洛洛和秘宝，仍然躲不过他的子弹。",
         "InfoName": "无言的杀手",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadLiSSQ.png",
-        "GraphicBefore": [
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon24.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon25.png"
         ]
     },
@@ -23,7 +25,6 @@
         "Name": "库洛姆",
         "UnlockChapterId": 0,
         "Style": "荣光",
-        "SkillType": 1,
         "RoleType": 1,
         "ModelAssetPath": "QR3KuluomuMd010011DW",
         "RoleOrder": 2,
@@ -31,10 +32,16 @@
         "InfoName": "冷静的战士",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3KuluomuQ.png",
         "LockTipsDesc": "通关【刀光剑影】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            1
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon26.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon27.png"
         ]
     },
@@ -43,7 +50,6 @@
         "Name": "丽芙",
         "UnlockChapterId": 0,
         "Style": "极昼",
-        "SkillType": 2,
         "RoleType": 1,
         "ModelAssetPath": "QR4LifuMd010011DW",
         "RoleOrder": 3,
@@ -51,11 +57,18 @@
         "InfoName": "温柔的医者",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR4LifuQ.png",
         "LockTipsDesc": "通关【傲雪凌霜】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            2
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon28.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon30.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon29.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon31.png"
         ]
@@ -65,7 +78,6 @@
         "Name": "薇拉",
         "UnlockChapterId": 0,
         "Style": "绯耀",
-        "SkillType": 3,
         "RoleType": 1,
         "ModelAssetPath": "QR3WeilaMd010011DW",
         "RoleOrder": 4,
@@ -73,11 +85,18 @@
         "InfoName": "凌厉的刺客",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3WeilaQ.png",
         "LockTipsDesc": "通关【火树银花】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            3
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon32.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon34.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon33.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon35.png"
         ]
@@ -87,7 +106,6 @@
         "Name": "赛琳娜",
         "UnlockChapterId": 0,
         "Style": "幻奏",
-        "SkillType": 4,
         "RoleType": 1,
         "ModelAssetPath": "QR4SailinnaMd010011DW",
         "RoleOrder": 5,
@@ -95,11 +113,18 @@
         "InfoName": "优雅的演奏者",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3SailinnaQ.png",
         "LockTipsDesc": "通关【雷霆万钧】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            4
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon36.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon38.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon37.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon39.png"
         ]
@@ -109,17 +134,19 @@
         "Name": "里影子",
         "UnlockChapterId": 0,
         "Style": "乱数",
-        "SkillType": 0,
         "RoleType": 2,
         "ModelAssetPath": "QR3LiangMd010011DW",
         "RoleOrder": 1,
         "Info": "孤身一人来到这里。尽管没有其他特殊能力傍身，但库洛洛和秘宝，仍然躲不过他的子弹。",
         "InfoName": "无言的杀手",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadLiSSQ.png",
-        "GraphicBefore": [
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon24.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon25.png"
         ]
     },
@@ -128,7 +155,6 @@
         "Name": "库洛姆影子",
         "UnlockChapterId": 0,
         "Style": "荣光",
-        "SkillType": 1,
         "RoleType": 2,
         "ModelAssetPath": "QR3KuluomuMd010011DW",
         "RoleOrder": 2,
@@ -136,10 +162,16 @@
         "InfoName": "冷静的战士",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3KuluomuQ.png",
         "LockTipsDesc": "通关【刀光剑影】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            1
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon26.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon27.png"
         ]
     },
@@ -148,7 +180,6 @@
         "Name": "丽芙影子",
         "UnlockChapterId": 0,
         "Style": "极昼",
-        "SkillType": 2,
         "RoleType": 2,
         "ModelAssetPath": "QR4LifuMd010011DW",
         "RoleOrder": 3,
@@ -156,11 +187,18 @@
         "InfoName": "温柔的医者",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR4LifuQ.png",
         "LockTipsDesc": "通关【傲雪凌霜】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            2
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon28.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon30.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon29.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon31.png"
         ]
@@ -170,7 +208,6 @@
         "Name": "薇拉影子",
         "UnlockChapterId": 0,
         "Style": "绯耀",
-        "SkillType": 3,
         "RoleType": 2,
         "ModelAssetPath": "QR3WeilaMd010011DW",
         "RoleOrder": 4,
@@ -178,11 +215,18 @@
         "InfoName": "凌厉的刺客",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3WeilaQ.png",
         "LockTipsDesc": "通关【火树银花】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            3
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon32.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon34.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon33.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon35.png"
         ]
@@ -192,7 +236,6 @@
         "Name": "赛琳娜影子",
         "UnlockChapterId": 0,
         "Style": "幻奏",
-        "SkillType": 4,
         "RoleType": 2,
         "ModelAssetPath": "QR4SailinnaMd010011DW",
         "RoleOrder": 5,
@@ -200,11 +243,18 @@
         "InfoName": "优雅的演奏者",
         "HeadPath": "Assets/Product/Texture/Image/Role/RoleHeadR3SailinnaQ.png",
         "LockTipsDesc": "通关【雷霆万钧】解锁",
-        "GraphicBefore": [
+        "SkillTypes": [
+            4
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性",
+            "描述第二个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon36.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon38.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon37.png",
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon39.png"
         ]
@@ -214,16 +264,18 @@
         "Name": "丽芙",
         "UnlockChapterId": 0,
         "Style": "蚀暗",
-        "SkillType": 0,
         "RoleType": 1,
         "ModelAssetPath": "QR1LifuMd010011DW",
         "RoleOrder": 1,
         "Info": "孤身一人来到这里，温柔但不脆弱的医者。任何谜题都无法难住她。",
         "InfoName": "温柔的医者",
-        "GraphicBefore": [
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon63.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon64.png"
         ]
     },
@@ -232,16 +284,21 @@
         "Name": "里",
         "UnlockChapterId": 0,
         "Style": "超刻",
-        "SkillType": 2,
         "RoleType": 1,
         "ModelAssetPath": "QR4LiangMd010011DW",
         "RoleOrder": 2,
         "Info": "当杀手来到这里，火焰随之听召而来，烧毁拦路的杂草。没有什么能成为他的阻碍。",
         "InfoName": "无言的杀手",
-        "GraphicBefore": [
+        "SkillTypes": [
+            2
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon47.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon48.png"
         ]
     },
@@ -250,16 +307,21 @@
         "Name": "含英",
         "UnlockChapterId": 0,
         "Style": "清商",
-        "SkillType": 5,
         "RoleType": 1,
         "ModelAssetPath": "QR2HanyingMd010011DW",
         "RoleOrder": 3,
         "Info": "被神秘地召唤到此处。轻柔的动作甚至可以推动飘摇的气泡，为她构筑通向终点的坦途。",
         "InfoName": "优雅的舞伶",
-        "GraphicBefore": [
+        "SkillTypes": [
+            5
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon41.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon40.png"
         ]
     },
@@ -268,16 +330,21 @@
         "Name": "艾拉",
         "UnlockChapterId": 0,
         "Style": "万华",
-        "SkillType": 1,
         "RoleType": 1,
         "ModelAssetPath": "QR3AilaMd010011DW",
         "RoleOrder": 4,
         "Info": "和热情的个性不同，画家的笔谨慎、冷静、凝练，足以冻结流水，使原本的陷阱成为坦途。",
         "InfoName": "快乐的画家",
-        "GraphicBefore": [
+        "SkillTypes": [
+            1
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon51.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon52.png"
         ]
     },
@@ -286,16 +353,21 @@
         "Name": "露西亚",
         "UnlockChapterId": 0,
         "Style": "深红囚影",
-        "SkillType": 3,
         "RoleType": 1,
         "ModelAssetPath": "QR5LuxiyaMd010011DW",
         "RoleOrder": 5,
         "Info": "拥有雷电属性的剑客，可以与金属机关共鸣，让自己停留在特殊的位置。",
         "InfoName": "冷静的剑客",
-        "GraphicBefore": [
+        "SkillTypes": [
+            3
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon55.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon56.png"
         ]
     },
@@ -304,16 +376,18 @@
         "Name": "丽芙的影子",
         "UnlockChapterId": 0,
         "Style": "蚀暗",
-        "SkillType": 0,
         "RoleType": 2,
         "ModelAssetPath": "QR1LifuMd010011DW",
         "RoleOrder": 1,
         "Info": "温柔的医者的影子。虽然没有什么特殊的能力，但既然对影同行，就不算孤身一人了吧。",
         "InfoName": "医者的影子",
-        "GraphicBefore": [
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon65.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon66.png"
         ]
     },
@@ -322,16 +396,21 @@
         "Name": "里的影子",
         "UnlockChapterId": 0,
         "Style": "超刻",
-        "SkillType": 3,
         "RoleType": 2,
         "ModelAssetPath": "QR4LiangMd010011DW",
         "RoleOrder": 2,
         "Info": "携带雷电之力的幻影，可以催生草木，让杀手适时停驻，不错过关键的线索。",
         "InfoName": "杀手的影子",
-        "GraphicBefore": [
+        "SkillTypes": [
+            3
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon49.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon50.png"
         ]
     },
@@ -340,16 +419,21 @@
         "Name": "含英的影子",
         "UnlockChapterId": 0,
         "Style": "清商",
-        "SkillType": 1,
         "RoleType": 2,
         "ModelAssetPath": "QR2HanyingMd010011DW",
         "RoleOrder": 3,
         "Info": "和舞者气质完全相反的影子，凌厉的舞姿可以轻易戳破虚幻的泡影。任何阻碍在她面前似乎都是徒劳。",
         "InfoName": "舞者的影子",
-        "GraphicBefore": [
+        "SkillTypes": [
+            1
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon42.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon43.png"
         ]
     },
@@ -358,16 +442,21 @@
         "Name": "艾拉的影子",
         "UnlockChapterId": 0,
         "Style": "万华",
-        "SkillType": 2,
         "RoleType": 2,
         "ModelAssetPath": "QR3AilaMd010011DW",
         "RoleOrder": 4,
         "Info": "似乎真正折射了画家热烈的内心，拥有将冰雪融化的力量——但请小心，流水也是危险之物。",
         "InfoName": "画家的影子",
-        "GraphicBefore": [
+        "SkillTypes": [
+            2
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon53.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon54.png"
         ]
     },
@@ -376,17 +465,122 @@
         "Name": "露西亚的影子",
         "UnlockChapterId": 0,
         "Style": "深红囚影",
-        "SkillType": 4,
         "RoleType": 2,
         "ModelAssetPath": "QR5LuxiyaMd010011DW",
         "RoleOrder": 5,
         "Info": "黑洞一般的暗影，当她经过时，所有金属都会被撕裂、吸收，归于虚无。",
         "InfoName": "剑客的影子",
-        "GraphicBefore": [
+        "SkillTypes": [
+            4
+        ],
+        "SkillTypeDescs": [
+            "描述第一个属性"
+        ],
+        "SkillTypeIconBefores": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon57.png"
         ],
-        "GraphicAfter": [
+        "SkillTypeIconAfters": [
             "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon58.png"
+        ]
+    },
+    {
+        "Id": 501,
+        "Name": "维罗妮卡",
+        "UnlockChapterId": 0,
+        "Style": "铮骨",
+        "RoleType": 1,
+        "ModelAssetPath": "QR3WeiluonikaMd010011DW",
+        "RoleOrder": 1,
+        "Info": "物理形态的维罗妮卡，力大无比，可以撞飞部分路径上的单位。",
+        "InfoName": "铁骨铮铮的龙女",
+        "SkillTypes": [
+            6
+        ],
+        "SkillTypeDescs": [
+            "物理形态的维罗妮卡，力大无比，可以撞飞部分路径上的单位。"
+        ],
+        "SkillTypeIconBefores": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon78.png"
+        ],
+        "SkillTypeIconAfters": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon79.png"
+        ]
+    },
+    {
+        "Id": 502,
+        "Name": "维罗妮卡",
+        "UnlockChapterId": 0,
+        "Style": "铮骨",
+        "RoleType": 1,
+        "ModelAssetPath": "QR3WeiluonikaMd010011DW",
+        "RoleOrder": 2,
+        "Info": "火形态的维罗妮卡，火焰护身，接触部分单位后可以将其点燃。",
+        "InfoName": "铁骨铮铮的龙女",
+        "SkillTypes": [
+            7
+        ],
+        "SkillTypeDescs": [
+            "火形态的维罗妮卡，火焰护身，接触部分单位后可以将其点燃。"
+        ],
+        "SkillTypeIconBefores": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon76.png"
+        ],
+        "SkillTypeIconAfters": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon77.png"
+        ]
+    },
+    {
+        "Id": 503,
+        "Name": "维罗妮卡",
+        "UnlockChapterId": 0,
+        "Style": "铮骨",
+        "RoleType": 1,
+        "ModelAssetPath": "QR3WeiluonikaMd010011DW",
+        "RoleOrder": 3,
+        "Info": "物理形态的维罗妮卡，力大无比，可以撞飞部分路径上的单位。",
+        "InfoName": "铁骨铮铮的龙女",
+        "SkillTypes": [
+            6,
+            7
+        ],
+        "SkillTypeDescs": [
+            "物理形态的维罗妮卡，力大无比，可以撞飞部分路径上的单位。",
+            "火形态的维罗妮卡，火焰护身，接触部分单位后可以将其点燃。"
+        ],
+        "SkillTypeIconBefores": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon78.png",
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon76.png"
+        ],
+        "SkillTypeIconAfters": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon79.png",
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon77.png"
+        ]
+    },
+    {
+        "Id": 504,
+        "Name": "维罗妮卡的影子",
+        "UnlockChapterId": 0,
+        "Style": "铮骨",
+        "RoleType": 2,
+        "ModelAssetPath": "QR3WeiluonikaMd010011DW",
+        "RoleOrder": 4,
+        "Info": "火形态的维罗妮卡的影子，火焰护身，接触部分单位后可以将其点燃。",
+        "InfoName": "龙女的影子",
+        "SkillTypes": [
+            7,
+            6
+        ],
+        "SkillTypeDescs": [
+            "维罗妮卡的影子，火焰护身，接触部分单位后可以将其点燃。",
+            "维罗妮卡的影子，力大无比，可以撞飞部分路径上的单位。"
+        ],
+        "SkillTypeIconBefores": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon76.png",
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon78.png"
+        ],
+        "SkillTypeIconAfters": [
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon77.png",
+            "Assets/Product/Texture/Atlas/UiFubenRpgMakerGame/UiFubenRpgMakerGameModelIcon79.png"
         ]
     }
 ]

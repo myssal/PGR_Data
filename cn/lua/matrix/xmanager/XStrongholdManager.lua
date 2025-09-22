@@ -1183,7 +1183,17 @@ XStrongholdManagerCreator = function()
     --获取据点首通奖励Id
     function XStrongholdManager.GetGroupRewardId(groupId)
         local levelId = XStrongholdManager.GetLevelId()
-        return XStrongholdConfigs.GetGroupRewardId(groupId, levelId)
+        -- #203409
+        if not XDataCenter.CrossVersionManager.GetEnable() then
+            return XStrongholdConfigs.GetGroupRewardId(groupId, levelId)
+        end
+
+        local maxId = XStrongholdConfigs.GetSpecialGroupMaxId()
+        local _ActivityId = XStrongholdManager.GetActivityId()
+        if _ActivityId > maxId then
+            return XStrongholdConfigs.GetGroupRewardId(groupId, levelId)
+        end
+        return XStrongholdConfigs.GetSpecialGroupRewardId(groupId, levelId)
     end
 
     function XStrongholdManager.CheckAnyGroupHasFinishedStage()
@@ -4056,7 +4066,7 @@ public class StrongholdAssistCharacterDetail
     --endregion
 
     -- #203409 供覆写类获取ActivityId
-    function XStrongholdManager:GetActivityId()
+    function XStrongholdManager.GetActivityId()
         return _ActivityId
     end
 

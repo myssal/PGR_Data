@@ -83,11 +83,12 @@ end
 
 function XUiRiftChooseChapter:UpdateLucky()
     local value = self._Control:GetLuckValue()
-    local progress = math.min(1, math.max(0, value / self._Control:GetMaxLuckyValue()))
+    local maxValue = self._Control:GetMaxLuckyValue()
+    local progress = math.min(1, math.max(0, value / maxValue))
     self._RewardCount = math.floor(value / self._GainRewardLuckyValue)
     self.ImgRewardBar.fillAmount = progress
-    self.RewardRed.gameObject:SetActiveEx(self._RewardCount > 0)
-    self.TxtRewardCount.text = string.format("%s/%s", value, self._GainRewardLuckyValue * 2)
+    self.RewardRed.gameObject:SetActiveEx(true)
+    self.TxtRewardCount.text = string.format("%s/%s", value, maxValue)
     if progress >= 1 then
         self.TxtRewardTips.text = XUiHelper.GetText("RiftLuckyTip2")
     else

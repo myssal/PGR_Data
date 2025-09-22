@@ -51010,7 +51010,7 @@
         "IconType": 1,
         "Icon": 1,
         "Icon2": 0,
-        "TimeOut": -1,
+        "TimeOut": 10000,
         "OnlyTrue": false,
         "IsMySelf": false,
         "AndOr": false,
@@ -51129,6 +51129,710 @@
         ]
     },
     {
+        "Id": 4043,
+        "Group": 112128,
+        "Name": "长按黄球蓄满",
+        "Describe": "洁塔薇-长按黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            133132,
+            133133
+        ]
+    },
+    {
+        "Id": 4044,
+        "Group": 112128,
+        "Name": "松开黄球",
+        "Describe": "洁塔薇-松开黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            133137
+        ]
+    },
+    {
+        "Id": 4045,
+        "Group": 112129,
+        "Name": "点击必杀",
+        "Describe": "洁塔薇-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            133141
+        ]
+    },
+    {
+        "Id": 4046,
+        "Group": 112130,
+        "Name": "长按红球未蓄满",
+        "Describe": "洁塔薇-长按红球",
+        "IconType": 4,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            133112,
+            133162,
+            133163
+        ]
+    },
+    {
+        "Id": 4047,
+        "Group": 112130,
+        "Name": "松开红球",
+        "Describe": "洁塔薇-松开红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            133155
+        ]
+    },
+    {
+        "Id": 4048,
+        "Group": 112131,
+        "Name": "长按红球未蓄满",
+        "Describe": "洁塔薇-长按红球",
+        "IconType": 4,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            133112,
+            133162,
+            133163
+        ]
+    },
+    {
+        "Id": 4049,
+        "Group": 112131,
+        "Name": "松开红球",
+        "Describe": "洁塔薇-松开红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 3000,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            3
+        ],
+        "SkillId": [
+            133155
+        ]
+    },
+    {
+        "Id": 4050,
+        "Group": 112131,
+        "Name": "点按/长按普攻",
+        "Describe": "洁塔薇-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            133156
+        ]
+    },
+    {
+        "Id": 4051,
+        "Group": 112132,
+        "Name": "点击必杀",
+        "Describe": "洁塔薇-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            133142
+        ]
+    },
+    {
+        "Id": 4052,
+        "Group": 112133,
+        "Name": "点击红球",
+        "Describe": "七实-点击红球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            130811
+        ]
+    },
+    {
+        "Id": 4053,
+        "Group": 112133,
+        "Name": "红球连段",
+        "Describe": "七实-红球连段",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            130807,
+            130808,
+            130809
+        ]
+    },
+    {
+        "Id": 4054,
+        "Group": 112133,
+        "Name": "红球连段",
+        "Describe": "七实-红球连段",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao12.png",
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            130807,
+            130808,
+            130809
+        ]
+    },
+    {
+        "Id": 4055,
+        "Group": 112134,
+        "Name": "长按黄球",
+        "Describe": "七实-黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "SkillId": [
+            130831
+        ]
+    },
+    {
+        "Id": 4056,
+        "Group": 112134,
+        "Name": "提前松开",
+        "Describe": "七实-黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR5Yongyechao32.png",
+        "TimeOut": 1200,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "SkillId": [
+            130835,
+            130828
+        ]
+    },
+    {
+        "Id": 4057,
+        "Group": 112135,
+        "Name": "点击必杀",
+        "Describe": "七实-点击必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            130837,
+            130839
+        ]
+    },
+    {
+        "Id": 4058,
+        "Group": 112136,
+        "Name": "长按普攻",
+        "Describe": "含英-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            112406,
+            112405
+        ],
+        "MissileId": [
+            90784851,
+            90784852,
+            90784853
+        ]
+    },
+    {
+        "Id": 4059,
+        "Group": 112136,
+        "Name": "长按普攻",
+        "Describe": "含英-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            112406
+        ],
+        "MissileId": [
+            90784851,
+            90784852,
+            90784853
+        ]
+    },
+    {
+        "Id": 4060,
+        "Group": 112136,
+        "Name": "长按普攻",
+        "Describe": "含英-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            112406
+        ],
+        "MissileId": [
+            90784851,
+            90784852,
+            90784853
+        ]
+    },
+    {
+        "Id": 4061,
+        "Group": 112136,
+        "Name": "长按普攻",
+        "Describe": "含英-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            112406
+        ],
+        "MissileId": [
+            90784851,
+            90784852,
+            90784853
+        ]
+    },
+    {
+        "Id": 4062,
+        "Group": 112136,
+        "Name": "长按普攻",
+        "Describe": "含英-长按普攻",
+        "IconType": 4,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            112406
+        ],
+        "MissileId": [
+            90784851,
+            90784852,
+            90784853
+        ]
+    },
+    {
+        "Id": 4063,
+        "Group": 112137,
+        "Name": "泛音球",
+        "Describe": "含英-领域球",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Hanying42.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            112436
+        ]
+    },
+    {
+        "Id": 4064,
+        "Group": 112138,
+        "Name": "必杀技",
+        "Describe": "含英-一段大",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112426
+        ]
+    },
+    {
+        "Id": 4065,
+        "Group": 112139,
+        "Name": "三消蓝球",
+        "Describe": "含英-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "SkillId": [
+            112420,
+            112421,
+            112422
+        ]
+    },
+    {
+        "Id": 4066,
+        "Group": 112140,
+        "Name": "点击必杀",
+        "Describe": "含英-次元斩",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112440,
+            112441,
+            112442,
+            112443,
+            112461,
+            112462,
+            112447
+        ]
+    },
+    {
+        "Id": 4067,
+        "Group": 112140,
+        "Name": "点击必杀",
+        "Describe": "含英-次元斩",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112440,
+            112441,
+            112442,
+            112443,
+            112461,
+            112462,
+            112447
+        ]
+    },
+    {
+        "Id": 4068,
+        "Group": 112140,
+        "Name": "点击必杀",
+        "Describe": "含英-次元斩",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112440,
+            112441,
+            112442,
+            112443,
+            112461,
+            112462,
+            112447
+        ]
+    },
+    {
+        "Id": 4069,
+        "Group": 112140,
+        "Name": "点击必杀",
+        "Describe": "含英-次元斩",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": 1000,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112440,
+            112441,
+            112442,
+            112443,
+            112461,
+            112462,
+            112447
+        ]
+    },
+    {
+        "Id": 4070,
+        "Group": 112141,
+        "Name": "长按必杀",
+        "Describe": "含英-二段大",
+        "IconType": 4,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            112427
+        ]
+    },
+    {
         "Id": 4071,
         "Group": 112142,
         "Name": "三消黄球",
@@ -51138,7 +51842,7 @@
         "Icon2": 0,
         "TimeOut": -1,
         "OnlyTrue": true,
-        "IsMySelf": false,
+        "IsMySelf": true,
         "AndOr": false,
         "ForbidMoveType": 0,
         "MoveType": 0,
@@ -51162,7 +51866,7 @@
         "Icon2": 0,
         "TimeOut": -1,
         "OnlyTrue": true,
-        "IsMySelf": false,
+        "IsMySelf": true,
         "AndOr": false,
         "ForbidMoveType": 0,
         "MoveType": 0,
@@ -51197,7 +51901,9 @@
             16
         ],
         "SkillId": [
-            103616
+            103616,
+            103615,
+            103635
         ]
     },
     {
@@ -51221,7 +51927,9 @@
             15
         ],
         "SkillId": [
-            103615
+            103615,
+            103635,
+            103640
         ]
     },
     {
@@ -51466,16 +52174,16 @@
         ]
     },
     {
-        "Id": 4085,
-        "Group": 112149,
-        "Name": "持续长按",
-        "Describe": "斜奏-长按必杀",
+        "Id": 4087,
+        "Group": 112150,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
         "IconType": 1,
-        "Icon": 3,
+        "Icon": 102,
         "Icon2": 0,
-        "TimeOut": 2000,
-        "OnlyTrue": false,
-        "IsMySelf": false,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
         "AndOr": false,
         "ForbidMoveType": 0,
         "MoveType": 0,
@@ -51483,22 +52191,157 @@
             1
         ],
         "EffectButton": [
-            17
+            2
         ],
         "SkillId": [
-            103620
+            103908,
+            103911
         ]
     },
     {
-        "Id": 4086,
-        "Group": 112149,
-        "Name": "持续长按",
-        "Describe": "斜奏-长按必杀",
+        "Id": 4088,
+        "Group": 112150,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103908,
+            103911
+        ]
+    },
+    {
+        "Id": 4089,
+        "Group": 112150,
+        "Name": "垒骸频响",
+        "Describe": "维罗妮卡-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            423302,
+            423303,
+            423304,
+            423305,
+            423306,
+            423307
+        ]
+    },
+    {
+        "Id": 4090,
+        "Group": 112151,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103908,
+            103911
+        ]
+    },
+    {
+        "Id": 4091,
+        "Group": 112151,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103908,
+            103911
+        ]
+    },
+    {
+        "Id": 4092,
+        "Group": 112151,
+        "Name": "聚鳞震反",
+        "Describe": "维罗妮卡-辅助机技能",
+        "IconType": 1,
+        "Icon": 8,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            23
+        ],
+        "SkillId": [
+            423308,
+            423309,
+            423310,
+            423311,
+            423312,
+            423313
+        ]
+    },
+    {
+        "Id": 4093,
+        "Group": 112152,
+        "Name": "点击必杀",
+        "Describe": "维罗妮卡-必杀",
         "IconType": 1,
         "Icon": 3,
         "Icon2": 0,
-        "TimeOut": 2000,
-        "OnlyTrue": false,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika51.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
         "IsMySelf": false,
         "AndOr": false,
         "ForbidMoveType": 0,
@@ -51510,7 +52353,608 @@
             17
         ],
         "SkillId": [
-            103621
+            103915
+        ]
+    },
+    {
+        "Id": 4094,
+        "Group": 112153,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953,
+            103932
+        ]
+    },
+    {
+        "Id": 4095,
+        "Group": 112153,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953,
+            103932
+        ]
+    },
+    {
+        "Id": 4096,
+        "Group": 112153,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953,
+            103932
+        ]
+    },
+    {
+        "Id": 4097,
+        "Group": 112154,
+        "Name": "长按黄球",
+        "Describe": "维罗妮卡-黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika33.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103936
+        ]
+    },
+    {
+        "Id": 4098,
+        "Group": 112155,
+        "Name": "点击必杀",
+        "Describe": "维罗妮卡-必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika51.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103915
+        ]
+    },
+    {
+        "Id": 4099,
+        "Group": 112156,
+        "Name": "点击黄球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103955
+        ]
+    },
+    {
+        "Id": 4100,
+        "Group": 112157,
+        "Name": "点击黄球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika33.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103941
+        ]
+    },
+    {
+        "Id": 4101,
+        "Group": 112158,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103908,
+            103911
+        ]
+    },
+    {
+        "Id": 4102,
+        "Group": 112158,
+        "Name": "三消蓝球",
+        "Describe": "维罗妮卡-蓝三消",
+        "IconType": 1,
+        "Icon": 102,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103908,
+            103911
+        ]
+    },
+    {
+        "Id": 4103,
+        "Group": 112159,
+        "Name": "点按黄球",
+        "Describe": "维罗妮卡-点黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103912
+        ]
+    },
+    {
+        "Id": 4104,
+        "Group": 112160,
+        "Name": "点击/长按必杀",
+        "Describe": "维罗妮卡-必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103915
+        ]
+    },
+    {
+        "Id": 4105,
+        "Group": 112161,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953
+        ]
+    },
+    {
+        "Id": 4106,
+        "Group": 112161,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953
+        ]
+    },
+    {
+        "Id": 4107,
+        "Group": 112161,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103951,
+            103952,
+            103953
+        ]
+    },
+    {
+        "Id": 4108,
+        "Group": 112162,
+        "Name": "点击普攻",
+        "Describe": "维罗妮卡-空中普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            103923
+        ]
+    },
+    {
+        "Id": 4109,
+        "Group": 112162,
+        "Name": "点击普攻",
+        "Describe": "维罗妮卡-空中普攻",
+        "IconType": 1,
+        "Icon": 1,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            15
+        ],
+        "SkillId": [
+            103924
+        ]
+    },
+    {
+        "Id": 4110,
+        "Group": 112163,
+        "Name": "点击黄球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika32.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103955
+        ]
+    },
+    {
+        "Id": 4111,
+        "Group": 112163,
+        "Name": "点击黄球",
+        "Describe": "维罗妮卡-红三消",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika33.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103941
+        ]
+    },
+    {
+        "Id": 4112,
+        "Group": 112164,
+        "Name": "点击必杀",
+        "Describe": "维罗妮卡-必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103916
+        ]
+    },
+    {
+        "Id": 4113,
+        "Group": 112165,
+        "Name": "长按必杀",
+        "Describe": "维罗妮卡-长按必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103915
+        ]
+    },
+    {
+        "Id": 4114,
+        "Group": 112166,
+        "Name": "长按黄球",
+        "Describe": "维罗妮卡-点黄球",
+        "IconType": 4,
+        "Icon": 103,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika33.png",
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            2
+        ],
+        "EffectButton": [
+            1
+        ],
+        "SkillId": [
+            103936
+        ]
+    },
+    {
+        "Id": 4115,
+        "Group": 112167,
+        "Name": "长按闪避",
+        "Describe": "维罗妮卡-长闪",
+        "IconType": 4,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            103946
+        ]
+    },
+    {
+        "Id": 4116,
+        "Group": 112168,
+        "Name": "三消红球",
+        "Describe": "维罗妮卡-红三消地面",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "IconCustom": "Assets/Product/Texture/Image/UiFight/FightSkillIconR3Weiluonika12.png",
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103932
+        ]
+    },
+    {
+        "Id": 4117,
+        "Group": 112169,
+        "Name": "点击必杀",
+        "Describe": "维罗妮卡-必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103915
         ]
     }
 ]

@@ -82,6 +82,25 @@ function XUiSignGridDay:Refresh(config, isShow, forceSetTomorrow)
     self.Grid:Refresh(rewardList[1], nil, true)
     self.GameObject:SetActiveEx(true)
     self:AnimaStart()
+
+    if not XOverseaManager.IsENRegion() then
+        return    
+    end
+
+    if not self.PanelEnable then
+        return
+    end
+
+    if not self.TxtCardNum then
+        local node = self.PanelEnable:Find("TxtCardNum")
+        if node then
+            self.TxtCardNum = node:GetComponent("Text")
+        end
+    end
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    if self.TxtCardNum and data then
+        self.TxtCardNum.text = XUiHelper.GetText("DailyMonthlyCardAmount", data.DailyRewardGoodsList[1].Count)
+    end
 end
 
 ---

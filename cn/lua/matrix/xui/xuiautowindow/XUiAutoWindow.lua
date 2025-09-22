@@ -59,7 +59,7 @@ function XUiAutoWindow:SetInfo(configId)
         self.RImgBgPress:SetRawImage(self.Config.BgIcon)
     elseif self.SkinType == XAutoWindowConfigs.AutoWindowSkinType.SpineSkin then
         self.PanelSpineSkin.gameObject:SetActiveEx(true)
-        self.SpineSkinRoot:LoadPrefab(self.Config.SpineBg)
+        self.SpineSkinRoot.gameObject:LoadPrefabEx(self.Config.SpineBg)
         if self.Config.BgIcon and self.Config.BgIcon ~= "" then
             self.RImgUiSpineSkin.gameObject:SetActiveEx(true)
             self.RImgUiSpineSkin:SetRawImage(self.Config.BgIcon)

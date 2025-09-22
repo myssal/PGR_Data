@@ -28,3 +28,7 @@ end
 function XOverseaManager.IsJP_KRRegion()
     return localregion == Language.JP or localregion == Language.KR
 end
+
+function XOverseaManager.IsTW_ENRegion()
+    return localregion == Language.EN or localregion == Language.TW
+end

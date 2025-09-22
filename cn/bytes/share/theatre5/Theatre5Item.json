@@ -6,12 +6,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "圣轮蓄击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon001.png",
-        "Desc": "蓄力后拔枪射击，对目标造成130%<color=#f2c870>圣源属性</color>伤害，同时召唤无人机，每秒对目标造成100%<color=#f2c870>圣源属性</color>伤害，持续3秒",
+        "Desc": "蓄力后拔枪射击，对目标造成{0}%<color=#f2c870>圣源属性</color>伤害，同时召唤无人机，每秒对目标造成{1}%<color=#f2c870>圣源属性</color>伤害，持续{2}秒",
         "IsShow": true,
         "Order": 1,
+        "DescDigit": [
+            130,
+            100,
+            3
+        ],
         "Tags": [
             3
         ]
@@ -23,12 +29,19 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "延时破袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon002.png",
-        "Desc": "向目标突进并射击，造成100%<color=#f2c870>圣源属性</color>伤害，2秒后召唤无人机对目标造成2次135%<color=#f2c870>圣源属性</color>伤害",
+        "Desc": "向目标突进并射击，造成{0}%<color=#f2c870>圣源属性</color>伤害，{1}秒后召唤无人机对目标造成{2}次{3}%<color=#f2c870>圣源属性</color>伤害",
         "IsShow": true,
         "Order": 2,
+        "DescDigit": [
+            100,
+            2,
+            2,
+            135
+        ],
         "Tags": [
             3
         ]
@@ -40,12 +53,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "圣辉裂空",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon003.png",
-        "Desc": "向目标投掷炸药并进行射击，造成120%<color=#f2c870>圣源属性</color>伤害，召唤无人机，每秒对目标造成80%<color=#f2c870>圣源属性</color>伤害，持续3秒",
+        "Desc": "向目标投掷炸药并进行射击，造成{0}%<color=#f2c870>圣源属性</color>伤害，召唤无人机，每秒对目标造成{1}%<color=#f2c870>圣源属性</color>伤害，持续{2}秒",
         "IsShow": true,
         "Order": 3,
+        "DescDigit": [
+            120,
+            80,
+            3
+        ],
         "Tags": [
             3
         ]
@@ -57,12 +76,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "寂灭灵辉",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon004.png",
-        "Desc": "向目标发射一枚强力子弹，造成275%<color=#77baf0>灵源属性</color>伤害",
+        "Desc": "向目标发射一枚强力子弹，造成{0}%<color=#77baf0>灵源属性</color>伤害",
         "IsShow": true,
         "Order": 4,
+        "DescDigit": [
+            275
+        ],
         "Tags": [
             2
         ]
@@ -74,12 +97,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "驰风速射",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon005.png",
-        "Desc": "快速向目标射击，造成480%<color=#77baf0>灵源属性</color>伤害",
+        "Desc": "快速向目标射击，造成{0}%<color=#77baf0>灵源属性</color>伤害",
         "IsShow": true,
         "Order": 5,
+        "DescDigit": [
+            480
+        ],
         "Tags": [
             2
         ]
@@ -91,12 +118,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "灵眷爆破",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon006.png",
-        "Desc": "向目标投掷炸药并引爆，造成300%<color=#77baf0>灵源属性</color>伤害",
+        "Desc": "向目标投掷炸药并引爆，造成{0}%<color=#77baf0>灵源属性</color>伤害",
         "IsShow": true,
         "Order": 6,
+        "DescDigit": [
+            300
+        ],
         "Tags": [
             2
         ]
@@ -108,12 +139,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "碎光盾佑",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon007.png",
-        "Desc": "扔出手枪，为自己添加9.6%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "扔出手枪，为自己添加{0}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 7,
+        "DescDigit": [
+            9.6
+        ],
         "Tags": [
             4
         ],
@@ -128,12 +163,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "推锋环御",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon008.png",
-        "Desc": "向前冲刺并对目标造成120%<color=#ecd7bd>物理属性</color>伤害，随后5秒内，每秒为自己添加2.2%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "向前冲刺并对目标造成{0}%<color=#ecd7bd>物理属性</color>伤害，随后{1}秒内，每秒为自己添加{2}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 8,
+        "DescDigit": [
+            120,
+            5,
+            2.2
+        ],
         "Tags": [
             4
         ],
@@ -148,12 +189,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "推锋铸构",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon009.png",
-        "Desc": "向前冲刺并为自身添加8.5%<color=#ecd7bd>最大生命值</color>的护盾值，同时召唤无人机造成1次75%<color=#ecd7bd>物理属性</color>伤害",
+        "Desc": "向前冲刺并为自身添加{0}%<color=#ecd7bd>最大生命值</color>的护盾值，同时召唤无人机造成{1}次{2}%<color=#ecd7bd>物理属性</color>伤害",
         "IsShow": true,
         "Order": 9,
+        "DescDigit": [
+            8.5,
+            1,
+            75
+        ],
         "Tags": [
             4
         ],
@@ -168,12 +215,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "避闪阻击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon010.png",
-        "Desc": "后撤并召唤分身向目标进行射击，造成70%<color=#ecd7bd>物理属性</color>伤害，随后3秒内，每秒回复2.8%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "后撤并召唤分身向目标进行射击，造成{0}%<color=#ecd7bd>物理属性</color>伤害，随后{1}秒内，每秒回复{2}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 10,
+        "DescDigit": [
+            70,
+            3,
+            2.8
+        ],
         "Tags": [
             5
         ],
@@ -188,12 +241,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "突进阻击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon011.png",
-        "Desc": "向前冲刺并召唤分身向目标进行射击，造成72%<color=#ecd7bd>物理属性</color>伤害，同时治疗8.5%<color=#ecd7bd>最大生命值</color>的生命值，",
+        "Desc": "向前冲刺并召唤分身向目标进行射击，造成{0}%<color=#ecd7bd>物理属性</color>伤害，同时治疗{1}%<color=#ecd7bd>最大生命值</color>的生命值，",
         "IsShow": true,
         "Order": 11,
+        "DescDigit": [
+            72,
+            8.5
+        ],
         "Tags": [
             5
         ],
@@ -208,12 +266,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "明心涤魂",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon012.png",
-        "Desc": "蓄力后进行一次射击，造成145%的<color=#ecd7bd>物理属性</color>伤害，同时治疗12%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "蓄力后进行一次射击，造成{0}%的<color=#ecd7bd>物理属性</color>伤害，同时治疗{1}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 12,
+        "DescDigit": [
+            145,
+            12
+        ],
         "Tags": [
             5
         ],
@@ -228,6 +291,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 3,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -241,12 +305,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "焚涡追袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon101.png",
-        "Desc": "向目标突进，并造成35%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次100%<color=#f15265>血源属性</color>伤害，持续3秒",
+        "Desc": "向目标突进，并造成{0}%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次{1}%<color=#f15265>血源属性</color>伤害，持续{2}秒",
         "IsShow": true,
         "Order": 14,
+        "DescDigit": [
+            35,
+            100,
+            3
+        ],
         "Tags": [
             1
         ]
@@ -258,12 +328,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "焚涡避匿",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon102.png",
-        "Desc": "侧向闪避后向目标突进，造成35%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次100%<color=#f15265>血源属性</color>伤害，持续3秒",
+        "Desc": "侧向闪避后向目标突进，造成{0}%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次{1}%<color=#f15265>血源属性</color>伤害，持续{2}秒",
         "IsShow": true,
         "Order": 15,
+        "DescDigit": [
+            35,
+            100,
+            3
+        ],
         "Tags": [
             1
         ]
@@ -275,12 +351,19 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "焚涡崩坠",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon103.png",
-        "Desc": "跃向目标并造成14%<color=#f15265>血源属性</color>伤害，随后下砸落地，造成14%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次100%<color=#f15265>血源属性</color>伤害，持续3秒",
+        "Desc": "跃向目标并造成{0}%<color=#f15265>血源属性</color>伤害，随后下砸落地，造成{1}%<color=#f15265>血源属性</color>伤害，并在自身位置召唤血雨，每秒造成一次{2}%<color=#f15265>血源属性</color>伤害，持续{3}秒",
         "IsShow": true,
         "Order": 16,
+        "DescDigit": [
+            14,
+            14,
+            100,
+            3
+        ],
         "Tags": [
             1
         ]
@@ -292,12 +375,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "倾翼射击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon104.png",
-        "Desc": "侧向闪避后向目标射击，造成380%<color=#f2c870>圣源属性</color>伤害",
+        "Desc": "侧向闪避后向目标射击，造成{0}%<color=#f2c870>圣源属性</color>伤害",
         "IsShow": true,
         "Order": 17,
+        "DescDigit": [
+            380
+        ],
         "Tags": [
             3
         ]
@@ -309,12 +396,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "缭旋射击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon105.png",
-        "Desc": "跃起后向目标释放钩锁，快速拉近距离并造成435%<color=#f2c870>圣源属性</color>伤害",
+        "Desc": "跃起后向目标释放钩锁，快速拉近距离并造成{0}%<color=#f2c870>圣源属性</color>伤害",
         "IsShow": true,
         "Order": 18,
+        "DescDigit": [
+            435
+        ],
         "Tags": [
             3
         ]
@@ -326,12 +417,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "圣臻轰击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon106.png",
-        "Desc": "向目标进行一次强力射击，造成155%<color=#f2c870>圣源属性</color>伤害，随后每秒对目标射击一次，造成40%<color=#f2c870>圣源属性</color>伤害，持续3秒",
+        "Desc": "向目标进行一次强力射击，造成{0}%<color=#f2c870>圣源属性</color>伤害，随后每秒对目标射击一次，造成{1}%<color=#f2c870>圣源属性</color>伤害，持续{2}秒",
         "IsShow": true,
         "Order": 19,
+        "DescDigit": [
+            155,
+            40,
+            3
+        ],
         "Tags": [
             3
         ]
@@ -343,12 +440,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "奔突追袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon107.png",
-        "Desc": "受击后触发，向敌人突进并造成35%<color=#ecd7bd>物理属性</color>伤害，并获得10%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "受击后触发，向敌人突进并造成{0}%<color=#ecd7bd>物理属性</color>伤害，并获得{1}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 20,
+        "DescDigit": [
+            35,
+            10
+        ],
         "Tags": [
             4
         ],
@@ -363,12 +465,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "旋弹追袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon108.png",
-        "Desc": "受击后触发，对敌人造成3次反击，每次造成20%<color=#ecd7bd>物理属性</color>伤害，并获得9%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "受击后触发，对敌人造成{0}次反击，每次造成{1}%<color=#ecd7bd>物理属性</color>伤害，并获得{2}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 21,
+        "DescDigit": [
+            3,
+            20,
+            9
+        ],
         "Tags": [
             4
         ],
@@ -383,12 +491,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "炙刃暴风",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon109.png",
-        "Desc": "对自身周围造成55%<color=#ecd7bd>物理属性</color>伤害，并获得9.5%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "对自身周围造成{0}%<color=#ecd7bd>物理属性</color>伤害，并获得{1}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 22,
+        "DescDigit": [
+            55,
+            9.5
+        ],
         "Tags": [
             4
         ],
@@ -403,12 +516,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "强焰虹吸",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon110.png",
-        "Desc": "向敌人突进并快速进行2次攻击，每次造成45%<color=#ecd7bd>物理属性</color>伤害，命中目标时可回复自身4.5%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "向敌人突进并快速进行{0}次攻击，每次造成{1}%<color=#ecd7bd>物理属性</color>伤害，命中目标时可回复自身{2}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 23,
+        "DescDigit": [
+            2,
+            45,
+            4.5
+        ],
         "Tags": [
             5
         ],
@@ -423,12 +542,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "爆裂强袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon111.png",
-        "Desc": "向敌人突进并进行多次斩击，造成150%<color=#ecd7bd>物理属性</color>伤害，每次命中目标时可回复生命，最多回复自身11%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "向敌人突进并进行多次斩击，造成{0}%<color=#ecd7bd>物理属性</color>伤害，每次命中目标时可回复生命，最多回复自身{1}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 24,
+        "DescDigit": [
+            150,
+            11
+        ],
         "Tags": [
             5
         ],
@@ -443,12 +567,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "超态荡涤",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon112.png",
-        "Desc": "跃向目标后下砸落地，造成165%<color=#ecd7bd>物理属性</color>伤害，随后5秒内，每秒恢复自身2.5%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "跃向目标后下砸落地，造成{0}%<color=#ecd7bd>物理属性</color>伤害，随后{1}秒内，每秒恢复自身{2}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 25,
+        "DescDigit": [
+            165,
+            5,
+            2.5
+        ],
         "Tags": [
             5
         ],
@@ -463,6 +593,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 1,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -476,12 +607,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "霆枪劫劈",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon201.png",
-        "Desc": "跃向目标并造成320%<color=#77baf0>灵源属性</color>伤害，并为目标附加2层【灵疮】",
+        "Desc": "跃向目标并造成{0}%<color=#77baf0>灵源属性</color>伤害，并为目标附加{1}层【灵疮】",
         "IsShow": true,
         "Order": 27,
+        "DescDigit": [
+            320,
+            2
+        ],
         "Tags": [
             2
         ],
@@ -496,12 +632,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "雷动迅突",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon202.png",
-        "Desc": "向目标迅速地进行攻击，造成270%<color=#77baf0>灵源属性</color>伤害，并为目标添加3层【灵疮】",
+        "Desc": "向目标迅速地进行攻击，造成{0}%<color=#77baf0>灵源属性</color>伤害，并为目标添加{1}层【灵疮】",
         "IsShow": true,
         "Order": 28,
+        "DescDigit": [
+            270,
+            3
+        ],
         "Tags": [
             2
         ],
@@ -516,12 +657,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "灼电凌空",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon203.png",
-        "Desc": "对自身周围造成120%<color=#77baf0>灵源属性</color>伤害，并为目标附加5层【灵疮】",
+        "Desc": "对自身周围造成{0}%<color=#77baf0>灵源属性</color>伤害，并为目标附加{1}层【灵疮】",
         "IsShow": true,
         "Order": 29,
+        "DescDigit": [
+            120,
+            5
+        ],
         "Tags": [
             2
         ],
@@ -536,12 +682,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "锋刃斩焰",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon204.png",
-        "Desc": "跃向目标并造成56%<color=#f15265>血源属性</color>伤害，随后下砸落地，再次对目标造成56%<color=#f15265>血源属性</color>伤害，并为目标添加3层【流血】",
+        "Desc": "跃向目标并造成{0}%<color=#f15265>血源属性</color>伤害，随后下砸落地，再次对目标造成{1}%<color=#f15265>血源属性</color>伤害，并为目标添加{2}层【流血】",
         "IsShow": true,
         "Order": 30,
+        "DescDigit": [
+            56,
+            56,
+            3
+        ],
         "Tags": [
             1
         ],
@@ -556,12 +708,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "炽旺燎发",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon205.png",
-        "Desc": "攻击目标，造成256%<color=#f15265>血源属性</color>伤害，使接下来4次普攻变为<color=#f15265>血源属性</color>攻击，每次普攻都为目标添加1层【流血】",
+        "Desc": "攻击目标，造成{0}%<color=#f15265>血源属性</color>伤害，使接下来{1}次普攻变为<color=#f15265>血源属性</color>攻击，每次普攻都为目标添加{2}层【流血】",
         "IsShow": true,
         "Order": 31,
+        "DescDigit": [
+            256,
+            4,
+            1
+        ],
         "Tags": [
             1
         ],
@@ -576,12 +734,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "熛流焚天",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon206.png",
-        "Desc": "发动攻击造成238%<color=#f15265>血源属性</color>伤害，若目标身上存在【流血】效果，则额外造成220%<color=#f15265>血源属性</color>伤害，若目标不存在【流血】效果，添加1层【流血】",
+        "Desc": "发动攻击造成{0}%<color=#f15265>血源属性</color>伤害，若目标身上存在【流血】效果，则额外造成{1}%<color=#f15265>血源属性</color>伤害，若目标不存在【流血】效果，添加{2}层【流血】",
         "IsShow": true,
         "Order": 32,
+        "DescDigit": [
+            238,
+            220,
+            1
+        ],
         "Tags": [
             1
         ],
@@ -596,12 +760,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "耀枪戍护",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon207.png",
-        "Desc": "以双刀做出护卫姿态，为自己添加9%<color=#ecd7bd>最大生命值</color>的护盾值，造成96%<color=#ecd7bd>物理属性</color>伤害",
+        "Desc": "以双刀做出护卫姿态，为自己添加{0}%<color=#ecd7bd>最大生命值</color>的护盾值，造成{1}%<color=#ecd7bd>物理属性</color>伤害",
         "IsShow": true,
         "Order": 33,
+        "DescDigit": [
+            9,
+            96
+        ],
         "Tags": [
             4
         ],
@@ -616,12 +785,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "火树悬槌",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon208.png",
-        "Desc": "造成68%<color=#ecd7bd>物理属性</color>伤害，并获得9.5%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "造成{0}%<color=#ecd7bd>物理属性</color>伤害，并获得{1}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 34,
+        "DescDigit": [
+            68,
+            9.5
+        ],
         "Tags": [
             4
         ],
@@ -636,12 +810,16 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "炎渊诛罚",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon209.png",
-        "Desc": "挑衅目标，并生成11%<color=#ecd7bd>最大生命值</color>的护盾值",
+        "Desc": "挑衅目标，并生成{0}%<color=#ecd7bd>最大生命值</color>的护盾值",
         "IsShow": true,
         "Order": 35,
+        "DescDigit": [
+            11
+        ],
         "Tags": [
             4
         ],
@@ -656,12 +834,18 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "绯赫破鞘",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon210.png",
-        "Desc": "对目标进行多次连续的攻击，造成80%<color=#ecd7bd>物理属性</color>伤害，每秒为自己恢复6%<color=#ecd7bd>最大生命值</color>的生命值，持续3秒",
+        "Desc": "对目标进行多次连续的攻击，造成{0}%<color=#ecd7bd>物理属性</color>伤害，每秒为自己恢复{1}%<color=#ecd7bd>最大生命值</color>的生命值，持续{2}秒",
         "IsShow": true,
         "Order": 36,
+        "DescDigit": [
+            80,
+            6,
+            3
+        ],
         "Tags": [
             5
         ],
@@ -676,12 +860,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "终裁进击",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon211.png",
-        "Desc": "旋身转动并攻击目标，造成90%<color=#ecd7bd>物理属性</color>伤害，若落地时攻击命中目标，则为自己恢复18%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "旋身转动并攻击目标，造成{0}%<color=#ecd7bd>物理属性</color>伤害，若落地时攻击命中目标，则为自己恢复{1}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 37,
+        "DescDigit": [
+            90,
+            18
+        ],
         "Tags": [
             5
         ],
@@ -696,12 +885,17 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "烁石戗影",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon212.png",
-        "Desc": "发动80%物理伤害攻击，为自己一次性恢复20%<color=#ecd7bd>最大生命值</color>的生命值",
+        "Desc": "发动{0}%物理伤害攻击，为自己一次性恢复{1}%<color=#ecd7bd>最大生命值</color>的生命值",
         "IsShow": true,
         "Order": 38,
+        "DescDigit": [
+            80,
+            20
+        ],
         "Tags": [
             5
         ],
@@ -716,11 +910,317 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 2,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
         "IsShow": false,
         "Order": 0
+    },
+    {
+        "Id": 10301,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "圣华瞬影",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon213.png",
+        "Desc": "进行连段攻击，共造成{0}%<color=#f2c870>圣源属性</color>伤害；首次释放技能后，生成一张影牌；影牌会在莉莉丝再次释放此技能时攻击敌人造成{1}%<color=#f2c870>圣源属性</color>伤害。",
+        "IsShow": true,
+        "Order": 1,
+        "DescDigit": [
+            491,
+            300
+        ],
+        "Tags": [
+            3
+        ]
+    },
+    {
+        "Id": 10302,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "幻影牌阵",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon214.png",
+        "Desc": "掷出牌造成{0}%<color=#f2c870>圣源属性</color>伤害，之后突进至目标身前造成{1}%<color=#f2c870>圣源属性</color>伤害；首次释放技能后，生成一张影牌；影牌会在莉莉丝再次释放此技能时攻击敌人造成{2}%<color=#f2c870>圣源属性</color>伤害。",
+        "IsShow": true,
+        "Order": 2,
+        "DescDigit": [
+            20,
+            100,
+            300
+        ],
+        "Tags": [
+            3
+        ]
+    },
+    {
+        "Id": 10303,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "晶境圣绽",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon215.png",
+        "Desc": "瞬移到目标身后进行连续{0}次斩击，每次斩击造成{1}%<color=#f2c870>圣源属性</color>伤害；首次释放技能后，生成一张影牌；影牌会在莉莉丝再次释放此技能时攻击敌人造成{2}%<color=#f2c870>圣源属性</color>伤害。",
+        "IsShow": true,
+        "Order": 3,
+        "DescDigit": [
+            4,
+            30,
+            300
+        ],
+        "Tags": [
+            3
+        ]
+    },
+    {
+        "Id": 10304,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "灵光飞冕",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon218.png",
+        "Desc": "掷出持续{0}秒的旋转帽子，造成每秒{1}%的<color=#77baf0>灵源属性</color>伤害，并在对应位置生成灵属领域（灵属领域：每秒对其中的敌人造成{2}%的<color=#77baf0>灵源属性</color>伤害，持续时间{3}秒）。",
+        "IsShow": true,
+        "Order": 4,
+        "DescDigit": [
+            3,
+            60,
+            30,
+            3
+        ],
+        "Tags": [
+            2
+        ]
+    },
+    {
+        "Id": 10305,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "疾灵闪击",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon217.png",
+        "Desc": "发起连续攻击，造成{0}%<color=#77baf0>灵源属性</color>伤害，最后一击时在脚下生成灵属领域（灵属领域：每秒对其中的敌人造成{1}%的<color=#77baf0>灵源属性</color>伤害，持续时间{2}秒）。",
+        "IsShow": true,
+        "Order": 5,
+        "DescDigit": [
+            640,
+            30,
+            3
+        ],
+        "Tags": [
+            2
+        ]
+    },
+    {
+        "Id": 10306,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "灵阵缚形",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon216.png",
+        "Desc": "造成{0}%<color=#77baf0>灵源属性</color>伤害，之后在目标脚下生成灵属领域（灵属领域：每秒对其中的敌人造成{1}%的<color=#77baf0>灵源属性</color>伤害，持续时间{2}秒）。",
+        "IsShow": true,
+        "Order": 6,
+        "DescDigit": [
+            400,
+            30,
+            3
+        ],
+        "Tags": [
+            2
+        ]
+    },
+    {
+        "Id": 10307,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "伞构护域",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon219.png",
+        "Desc": "举起伞【防御】{0}秒，为自己添加{1}%<color=#ecd7bd>最大生命值</color>的护盾值；【防御】期间受击时，进行反击造成{2}%<color=#ecd7bd>物理属性</color>伤害，并额外为自己添加{3}%<color=#ecd7bd>最大生命值</color>的护盾值。",
+        "IsShow": true,
+        "Order": 7,
+        "DescDigit": [
+            1,
+            9,
+            30,
+            1
+        ],
+        "Tags": [
+            4
+        ],
+        "Keywords": [
+            4
+        ]
+    },
+    {
+        "Id": 10308,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "爆裂符卡",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon221.png",
+        "Desc": "向敌人掷出牌，造成{0}%<color=#ecd7bd>物理属性</color>伤害，并为自己添加{1}%<color=#ecd7bd>最大生命值</color>的护盾值。",
+        "IsShow": true,
+        "Order": 8,
+        "DescDigit": [
+            50,
+            10
+        ],
+        "Tags": [
+            4
+        ],
+        "Keywords": [
+            4
+        ]
+    },
+    {
+        "Id": 10309,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "魅影谜术",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon220.png",
+        "Desc": "对敌人发动攻击造成{0}%<color=#ecd7bd>物理属性</color>伤害，并为自己添加{1}%<color=#ecd7bd>最大生命值</color>的护盾值。",
+        "IsShow": true,
+        "Order": 9,
+        "DescDigit": [
+            45,
+            9.5
+        ],
+        "Tags": [
+            4
+        ],
+        "Keywords": [
+            4
+        ]
+    },
+    {
+        "Id": 10310,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "绝狱返生",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon222.png",
+        "Desc": "对敌人发动多段攻击造成{0}%<color=#ecd7bd>物理属性</color>伤害，之后每秒为自己治疗{1}%<color=#ecd7bd>最大生命值</color>的生命值，持续{2}秒。",
+        "IsShow": true,
+        "Order": 10,
+        "DescDigit": [
+            90,
+            3.5,
+            3
+        ],
+        "Tags": [
+            5
+        ],
+        "Keywords": [
+            5
+        ]
+    },
+    {
+        "Id": 10311,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "赤涌铸躯",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon224.png",
+        "Desc": "对敌人投掷帽子造成{0}%<color=#ecd7bd>物理属性</color>伤害，并立即为自己治疗{1}%<color=#ecd7bd>最大生命值</color>的生命值。",
+        "IsShow": true,
+        "Order": 11,
+        "DescDigit": [
+            60,
+            9.5
+        ],
+        "Tags": [
+            5
+        ],
+        "Keywords": [
+            5
+        ]
+    },
+    {
+        "Id": 10312,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "劫烬涅槃",
+        "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5SkillIcon223.png",
+        "Desc": "在3秒内无法移动，并每秒恢复{0}%<color=#ecd7bd>最大生命值</color>的生命值；时间结束后，引发一次爆炸，对周围敌人造成{1}%<color=#ecd7bd>物理属性</color>伤害。",
+        "IsShow": true,
+        "Order": 12,
+        "DescDigit": [
+            6,
+            90
+        ],
+        "Tags": [
+            5
+        ],
+        "Keywords": [
+            5
+        ]
+    },
+    {
+        "Id": 10313,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 1,
+        "BuffType": 0,
+        "CharacterId": 4,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "IsShow": false,
+        "Order": 26
     },
     {
         "Id": 10901,
@@ -729,6 +1229,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 0,
+        "BuffType": 0,
         "CharacterId": 7,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -743,6 +1244,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 0,
+        "BuffType": 0,
         "CharacterId": 9,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -757,6 +1259,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 0,
+        "BuffType": 0,
         "CharacterId": 10,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -771,6 +1274,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 0,
+        "BuffType": 0,
         "CharacterId": 11,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -785,6 +1289,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 0,
+        "BuffType": 0,
         "CharacterId": 12,
         "Name": "普通攻击",
         "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
@@ -799,13 +1304,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20010,
         "CharacterId": 0,
         "Name": "三相领域【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续5秒，自身在区域内可提升5.00%<color=#f15265>血源伤害</color>",
-        "IsShow": true,
+        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续{0}秒，自身在区域内可提升{1}%<color=#f15265>血源伤害</color>",
+        "IsShow": false,
         "Order": 45,
+        "DescDigit": [
+            5,
+            5
+        ],
         "Tags": [
             1
         ]
@@ -817,13 +1327,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20016,
         "CharacterId": 0,
         "Name": "零距离【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升5.50%，最小提升0.55%",
+        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升{0}%，最小提升{1}%",
         "IsShow": true,
         "Order": 46,
+        "DescDigit": [
+            5.5,
+            0.55
+        ],
         "Tags": [
             1
         ]
@@ -835,13 +1350,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20018,
         "CharacterId": 0,
         "Name": "优势距离【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "目标在自身周围1米内时，每秒<color=#f15265>血源伤害</color>增加2.75%，最多提升2次，自身周围没有敌人时清空加成",
+        "Desc": "目标在自身周围{0}米内时，每秒<color=#f15265>血源伤害</color>增加{1}%，最多提升{2}次，自身周围没有敌人时清空加成",
         "IsShow": true,
         "Order": 47,
+        "DescDigit": [
+            1,
+            2.75,
+            2
+        ],
         "Tags": [
             1
         ]
@@ -853,13 +1374,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20024,
         "CharacterId": 0,
         "Name": "源素汇流【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次对敌人造成血源伤害，提升自身<color=#f15265>血源伤害</color>2.50%，最多提升4次，持续10秒",
+        "Desc": "每次对敌人造成血源伤害，提升自身<color=#f15265>血源伤害</color>{0}%，最多提升{1}次，持续{2}秒",
         "IsShow": true,
         "Order": 48,
+        "DescDigit": [
+            2.5,
+            4,
+            10
+        ],
         "Tags": [
             1
         ]
@@ -871,13 +1398,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20028,
         "CharacterId": 0,
         "Name": "源素转化【血伤】·【护盾】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#f15265>血源伤害</color>可提升自身1%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#f15265>血源伤害</color>可提升自身{1}%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 500,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             1,
             4
@@ -890,13 +1423,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20030,
         "CharacterId": 0,
         "Name": "源素转化【血伤】·【回复】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#f15265>血源伤害</color>可提升自身1%<color=#6ad29b>回复效率</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#f15265>血源伤害</color>可提升自身{1}%<color=#6ad29b>回复效率</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 501,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             1,
             5
@@ -909,13 +1448,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20010,
         "CharacterId": 0,
         "Name": "三相领域【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续5秒，自身在区域内可提升10.00%<color=#f15265>血源伤害</color>",
-        "IsShow": true,
+        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续{0}秒，自身在区域内可提升{1}%<color=#f15265>血源伤害</color>",
+        "IsShow": false,
         "Order": 51,
+        "DescDigit": [
+            5,
+            10
+        ],
         "Tags": [
             1
         ]
@@ -927,13 +1471,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20010,
         "CharacterId": 0,
         "Name": "三相领域【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续5秒，自身在区域内可提升15.00%<color=#f15265>血源伤害</color>",
-        "IsShow": true,
+        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续{0}秒，自身在区域内可提升{1}%<color=#f15265>血源伤害</color>",
+        "IsShow": false,
         "Order": 52,
+        "DescDigit": [
+            5,
+            15
+        ],
         "Tags": [
             1
         ]
@@ -945,13 +1494,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20010,
         "CharacterId": 0,
         "Name": "三相领域【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续5秒，自身在区域内可提升20.00%<color=#f15265>血源伤害</color>",
-        "IsShow": true,
+        "Desc": "<color=#f15265>血源属性</color>攻击命中敌人后，在敌人脚下生成一个区域，持续{0}秒，自身在区域内可提升{1}%<color=#f15265>血源伤害</color>",
+        "IsShow": false,
         "Order": 53,
+        "DescDigit": [
+            5,
+            20
+        ],
         "Tags": [
             1
         ]
@@ -963,13 +1517,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20018,
         "CharacterId": 0,
         "Name": "优势距离【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "目标在自身周围1米内时，每秒<color=#f15265>血源伤害</color>增加5.50%，最多提升2次，自身周围没有敌人时清空加成",
+        "Desc": "目标在自身周围{0}米内时，每秒<color=#f15265>血源伤害</color>增加{1}%，最多提升{2}次，自身周围没有敌人时清空加成",
         "IsShow": true,
         "Order": 54,
+        "DescDigit": [
+            1,
+            5.5,
+            2
+        ],
         "Tags": [
             1
         ]
@@ -981,13 +1541,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20018,
         "CharacterId": 0,
         "Name": "优势距离【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "目标在自身周围1米内时，每秒<color=#f15265>血源伤害</color>增加8.25%，最多提升2次，自身周围没有敌人时清空加成",
+        "Desc": "目标在自身周围{0}米内时，每秒<color=#f15265>血源伤害</color>增加{1}%，最多提升{2}次，自身周围没有敌人时清空加成",
         "IsShow": true,
         "Order": 55,
+        "DescDigit": [
+            1,
+            8.25,
+            2
+        ],
         "Tags": [
             1
         ]
@@ -999,13 +1565,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20018,
         "CharacterId": 0,
         "Name": "优势距离【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "目标在自身周围1米内时，每秒<color=#f15265>血源伤害</color>增加11.00%，最多提升2次，自身周围没有敌人时清空加成",
+        "Desc": "目标在自身周围{0}米内时，每秒<color=#f15265>血源伤害</color>增加{1}%，最多提升{2}次，自身周围没有敌人时清空加成",
         "IsShow": true,
         "Order": 56,
+        "DescDigit": [
+            1,
+            11,
+            2
+        ],
         "Tags": [
             1
         ]
@@ -1017,13 +1589,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20016,
         "CharacterId": 0,
         "Name": "零距离【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升11.00%，最小提升1.10%",
+        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升{0}%，最小提升{1}%",
         "IsShow": true,
         "Order": 57,
+        "DescDigit": [
+            11,
+            1.1
+        ],
         "Tags": [
             1
         ]
@@ -1035,13 +1612,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20016,
         "CharacterId": 0,
         "Name": "零距离【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升16.50%，最小提升1.65%",
+        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升{0}%，最小提升{1}%",
         "IsShow": true,
         "Order": 58,
+        "DescDigit": [
+            16.5,
+            1.65
+        ],
         "Tags": [
             1
         ]
@@ -1053,13 +1635,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20016,
         "CharacterId": 0,
         "Name": "零距离【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升22.00%，最小提升2.20%",
+        "Desc": "越靠近目标，<color=#f15265>血源伤害</color>越高。最大提升{0}%，最小提升{1}%",
         "IsShow": true,
         "Order": 59,
+        "DescDigit": [
+            22,
+            2.2
+        ],
         "Tags": [
             1
         ]
@@ -1071,13 +1658,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20024,
         "CharacterId": 0,
         "Name": "源素汇流【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>5.00%，最多提升4次，持续10秒",
+        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>{0}%，最多提升{1}次，持续{2}秒",
         "IsShow": true,
         "Order": 60,
+        "DescDigit": [
+            5,
+            4,
+            10
+        ],
         "Tags": [
             1
         ]
@@ -1089,13 +1682,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20024,
         "CharacterId": 0,
         "Name": "源素汇流【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>7.50%，最多提升4次，持续10秒",
+        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>{0}%，最多提升{1}次，持续{2}秒",
         "IsShow": true,
         "Order": 61,
+        "DescDigit": [
+            7.5,
+            4,
+            10
+        ],
         "Tags": [
             1
         ]
@@ -1107,13 +1706,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20024,
         "CharacterId": 0,
         "Name": "源素汇流【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>10.00%，最多提升4次，持续10秒",
+        "Desc": "每次对敌人造成<color=#f15265>血源属性</color>攻击，提升自身<color=#f15265>血源伤害</color>{0}%，最多提升{1}次，持续{2}秒",
         "IsShow": true,
         "Order": 62,
+        "DescDigit": [
+            10,
+            4,
+            10
+        ],
         "Tags": [
             1
         ]
@@ -1125,13 +1730,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20106,
         "CharacterId": 0,
         "Name": "咒刃【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升2.50%，最多提升4次",
+        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升{0}%，最多提升{1}次",
         "IsShow": true,
         "Order": 63,
+        "DescDigit": [
+            2.5,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1143,13 +1753,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20110,
         "CharacterId": 0,
         "Name": "完璧【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "0.5秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>7.50%",
+        "Desc": "{0}秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 64,
+        "DescDigit": [
+            0.5,
+            7.5
+        ],
         "Tags": [
             2
         ]
@@ -1161,13 +1776,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20112,
         "CharacterId": 0,
         "Name": "三相领域【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "开始战斗时，在角色所在位置生成一个半径3米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>5.50%（仅对自身生效）",
+        "Desc": "开始战斗时，在角色所在位置生成一个半径{0}米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>{1}%（仅对自身生效）",
         "IsShow": true,
         "Order": 65,
+        "DescDigit": [
+            3,
+            5.5
+        ],
         "Tags": [
             2
         ]
@@ -1179,13 +1799,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20128,
         "CharacterId": 0,
         "Name": "打击练习【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次普攻命中敌人时，提升1.25%<color=#77baf0>灵源伤害</color>，最多提升4次",
+        "Desc": "每次普攻命中敌人时，提升{0}%<color=#77baf0>灵源伤害</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 66,
+        "DescDigit": [
+            1.25,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1197,13 +1822,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20130,
         "CharacterId": 0,
         "Name": "源素转化【灵伤】·【护盾】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#77baf0>灵源伤害</color>可提升自身1%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#77baf0>灵源伤害</color>可提升自身{1}%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 502,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             2,
             4
@@ -1216,13 +1847,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20132,
         "CharacterId": 0,
         "Name": "源素转化【灵伤】·【回复】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#77baf0>灵源伤害</color>可提升自身1%<color=#6ad29b>回复效率</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#77baf0>灵源伤害</color>可提升自身{1}%<color=#6ad29b>回复效率</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 503,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             2,
             5
@@ -1235,13 +1872,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20110,
         "CharacterId": 0,
         "Name": "完璧【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "0.5秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>15.00%",
+        "Desc": "{0}秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 69,
+        "DescDigit": [
+            0.5,
+            15
+        ],
         "Tags": [
             2
         ]
@@ -1253,13 +1895,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20110,
         "CharacterId": 0,
         "Name": "完璧【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "0.5秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>22.50%",
+        "Desc": "{0}秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 70,
+        "DescDigit": [
+            0.5,
+            22.5
+        ],
         "Tags": [
             2
         ]
@@ -1271,13 +1918,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20110,
         "CharacterId": 0,
         "Name": "完璧【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "0.5秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>30.00%",
+        "Desc": "{0}秒内没受到攻击时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 71,
+        "DescDigit": [
+            0.5,
+            30
+        ],
         "Tags": [
             2
         ]
@@ -1289,13 +1941,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20112,
         "CharacterId": 0,
         "Name": "三相领域【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "开始战斗时，在角色所在位置生成一个半径3米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>11.00%（仅对自身生效）",
-        "IsShow": true,
+        "Desc": "开始战斗时，在角色所在位置生成一个半径{0}米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>{1}%（仅对自身生效）",
+        "IsShow": false,
         "Order": 72,
+        "DescDigit": [
+            3,
+            11
+        ],
         "Tags": [
             2
         ]
@@ -1307,13 +1964,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20112,
         "CharacterId": 0,
         "Name": "三相领域【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "开始战斗时，在角色所在位置生成一个半径3米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>16.50%（仅对自身生效）",
-        "IsShow": true,
+        "Desc": "开始战斗时，在角色所在位置生成一个半径{0}米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>{1}%（仅对自身生效）",
+        "IsShow": false,
         "Order": 73,
+        "DescDigit": [
+            3,
+            16.5
+        ],
         "Tags": [
             2
         ]
@@ -1325,13 +1987,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20112,
         "CharacterId": 0,
         "Name": "三相领域【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "开始战斗时，在角色所在位置生成一个半径3米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>22.00%（仅对自身生效）",
-        "IsShow": true,
+        "Desc": "开始战斗时，在角色所在位置生成一个半径{0}米的区域，角色处于区域内时可提升<color=#77baf0>灵源伤害</color>{1}%（仅对自身生效）",
+        "IsShow": false,
         "Order": 74,
+        "DescDigit": [
+            3,
+            22
+        ],
         "Tags": [
             2
         ]
@@ -1343,13 +2010,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20128,
         "CharacterId": 0,
         "Name": "打击练习【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次普攻命中敌人时，提升2.50%<color=#77baf0>灵源伤害</color>，最多提升4次",
+        "Desc": "每次普攻命中敌人时，提升{0}%<color=#77baf0>灵源伤害</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 75,
+        "DescDigit": [
+            2.5,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1361,13 +2033,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20128,
         "CharacterId": 0,
         "Name": "打击练习【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次普攻命中敌人时，提升3.75%<color=#77baf0>灵源伤害</color>，最多提升4次",
+        "Desc": "每次普攻命中敌人时，提升{0}%<color=#77baf0>灵源伤害</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 76,
+        "DescDigit": [
+            3.75,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1379,13 +2056,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20128,
         "CharacterId": 0,
         "Name": "打击练习【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次普攻命中敌人时，提升5.00%<color=#77baf0>灵源伤害</color>，最多提升4次",
+        "Desc": "每次普攻命中敌人时，提升{0}%<color=#77baf0>灵源伤害</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 77,
+        "DescDigit": [
+            5,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1397,13 +2079,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20106,
         "CharacterId": 0,
         "Name": "咒刃【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升5.00%，最多提升4次",
+        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升{0}%，最多提升{1}次",
         "IsShow": true,
         "Order": 78,
+        "DescDigit": [
+            5,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1415,13 +2102,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20106,
         "CharacterId": 0,
         "Name": "咒刃【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升7.50%，最多提升4次",
+        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升{0}%，最多提升{1}次",
         "IsShow": true,
         "Order": 79,
+        "DescDigit": [
+            7.5,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1433,13 +2125,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20106,
         "CharacterId": 0,
         "Name": "咒刃【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升10.00%，最多提升4次",
+        "Desc": "每释放一次技能，<color=#77baf0>灵源伤害</color>提升{0}%，最多提升{1}次",
         "IsShow": true,
         "Order": 80,
+        "DescDigit": [
+            10,
+            4
+        ],
         "Tags": [
             2
         ]
@@ -1451,13 +2148,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20200,
         "CharacterId": 0,
         "Name": "荆棘【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升1.25%，最多提升4次，触发间隔3秒",
+        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升{0}%，最多提升{1}次，触发间隔{2}秒",
         "IsShow": true,
         "Order": 81,
+        "DescDigit": [
+            1.25,
+            4,
+            3
+        ],
         "Tags": [
             4
         ],
@@ -1472,13 +2175,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20214,
         "CharacterId": 0,
         "Name": "盈满【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "获得护盾时，提升5.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续8秒",
+        "Desc": "获得护盾时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续{1}秒",
         "IsShow": true,
         "Order": 82,
+        "DescDigit": [
+            5,
+            8
+        ],
         "Tags": [
             4
         ],
@@ -1493,13 +2201,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20218,
         "CharacterId": 0,
         "Name": "咒刃【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放技能时，提升自身5.00%<color=#fe8f7fc>护盾强度</color>，最多提升2次",
+        "Desc": "释放技能时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 83,
+        "DescDigit": [
+            5,
+            2
+        ],
         "Tags": [
             4
         ],
@@ -1514,13 +2227,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20224,
         "CharacterId": 0,
         "Name": "打击练习【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放普攻时，提升自身1.25%<color=#fe8f7fc>护盾强度</color>，最多提升4次",
+        "Desc": "释放普攻时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 84,
+        "DescDigit": [
+            1.25,
+            4
+        ],
         "Tags": [
             4
         ],
@@ -1535,13 +2253,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20226,
         "CharacterId": 0,
         "Name": "源素转化【护盾】·【血伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#fe8f7fc>护盾强度</color>，提升1%<color=#f15265>血源伤害</color>，至多提升200%<color=#f15265>血源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#fe8f7fc>护盾强度</color>，提升{1}%<color=#f15265>血源伤害</color>，至多提升{2}%<color=#f15265>血源伤害</color>",
         "IsShow": true,
         "Order": 504,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             4,
             1
@@ -1557,13 +2281,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20228,
         "CharacterId": 0,
         "Name": "源素转化【护盾】·【灵伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#fe8f7fc>护盾强度</color>，提升1%<color=#77baf0>灵源伤害</color>，至多提升200%<color=#77baf0>灵源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#fe8f7fc>护盾强度</color>，提升{1}%<color=#77baf0>灵源伤害</color>，至多提升{2}%<color=#77baf0>灵源伤害</color>",
         "IsShow": true,
         "Order": 505,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             4,
             2
@@ -1579,13 +2309,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20230,
         "CharacterId": 0,
         "Name": "源素转化【护盾】·【圣伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#fe8f7fc>护盾强度</color>，提升1%<color=#f2c870>圣源伤害</color>，至多提升200%<color=#f2c870>圣源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#fe8f7fc>护盾强度</color>，提升{1}%<color=#f2c870>圣源伤害</color>，至多提升{2}%<color=#f2c870>圣源伤害</color>",
         "IsShow": true,
         "Order": 506,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             4,
             3
@@ -1601,13 +2337,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20224,
         "CharacterId": 0,
         "Name": "打击练习【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放普攻时，提升自身2.50%<color=#fe8f7fc>护盾强度</color>，最多提升4次",
+        "Desc": "释放普攻时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 88,
+        "DescDigit": [
+            2.5,
+            4
+        ],
         "Tags": [
             4
         ],
@@ -1622,13 +2363,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20224,
         "CharacterId": 0,
         "Name": "打击练习【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放普攻时，提升自身3.75%<color=#fe8f7fc>护盾强度</color>，最多提升4次",
+        "Desc": "释放普攻时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 89,
+        "DescDigit": [
+            3.75,
+            4
+        ],
         "Tags": [
             4
         ],
@@ -1643,13 +2389,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20224,
         "CharacterId": 0,
         "Name": "打击练习【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放普攻时，提升自身5.00%<color=#fe8f7fc>护盾强度</color>，最多提升4次",
+        "Desc": "释放普攻时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 90,
+        "DescDigit": [
+            5,
+            4
+        ],
         "Tags": [
             4
         ],
@@ -1664,13 +2415,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20218,
         "CharacterId": 0,
         "Name": "咒刃【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放技能时，提升自身10.00%<color=#fe8f7fc>护盾强度</color>，最多提升2次",
+        "Desc": "释放技能时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 91,
+        "DescDigit": [
+            10,
+            2
+        ],
         "Tags": [
             4
         ],
@@ -1685,13 +2441,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20218,
         "CharacterId": 0,
         "Name": "咒刃【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放技能时，提升自身15.00%<color=#fe8f7fc>护盾强度</color>，最多提升2次",
+        "Desc": "释放技能时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 92,
+        "DescDigit": [
+            15,
+            2
+        ],
         "Tags": [
             4
         ],
@@ -1706,13 +2467,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20218,
         "CharacterId": 0,
         "Name": "咒刃【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放技能时，提升自身20.00%<color=#fe8f7fc>护盾强度</color>，最多提升2次",
+        "Desc": "释放技能时，提升自身{0}%<color=#fe8f7fc>护盾强度</color>，最多提升{1}次",
         "IsShow": true,
         "Order": 93,
+        "DescDigit": [
+            20,
+            2
+        ],
         "Tags": [
             4
         ],
@@ -1727,13 +2493,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20200,
         "CharacterId": 0,
         "Name": "荆棘【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升2.50%，最多提升4次，触发间隔3秒",
+        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升{0}%，最多提升{1}次，触发间隔{2}秒",
         "IsShow": true,
         "Order": 94,
+        "DescDigit": [
+            2.5,
+            4,
+            3
+        ],
         "Tags": [
             4
         ],
@@ -1748,13 +2520,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20200,
         "CharacterId": 0,
         "Name": "荆棘【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升3.75%，最多提升4次，触发间隔3秒",
+        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升{0}%，最多提升{1}次，触发间隔{2}秒",
         "IsShow": true,
         "Order": 95,
+        "DescDigit": [
+            3.75,
+            4,
+            3
+        ],
         "Tags": [
             4
         ],
@@ -1769,13 +2547,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20200,
         "CharacterId": 0,
         "Name": "荆棘【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升5.00%，最多提升4次，触发间隔3秒",
+        "Desc": "受到攻击时，<color=#fe8f7fc>护盾强度</color>提升{0}%，最多提升{1}次，触发间隔{2}秒",
         "IsShow": true,
         "Order": 96,
+        "DescDigit": [
+            5,
+            4,
+            3
+        ],
         "Tags": [
             4
         ],
@@ -1790,13 +2574,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20214,
         "CharacterId": 0,
         "Name": "盈满【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "获得护盾时，提升10.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续8秒",
+        "Desc": "获得护盾时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续{1}秒",
         "IsShow": true,
         "Order": 97,
+        "DescDigit": [
+            10,
+            8
+        ],
         "Tags": [
             4
         ],
@@ -1811,13 +2600,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20214,
         "CharacterId": 0,
         "Name": "盈满【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "获得护盾时，提升15.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续8秒",
+        "Desc": "获得护盾时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续{1}秒",
         "IsShow": true,
         "Order": 98,
+        "DescDigit": [
+            15,
+            8
+        ],
         "Tags": [
             4
         ],
@@ -1832,13 +2626,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20214,
         "CharacterId": 0,
         "Name": "盈满【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "获得护盾时，提升20.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续8秒",
+        "Desc": "获得护盾时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，持续{1}秒",
         "IsShow": true,
         "Order": 99,
+        "DescDigit": [
+            20,
+            8
+        ],
         "Tags": [
             4
         ],
@@ -1853,13 +2652,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20304,
         "CharacterId": 0,
         "Name": "荆棘【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每受到5次攻击，可提升5.00%<color=#6ad29b>回复效率</color>，最多提升2次",
+        "Desc": "每受到{0}次攻击，可提升{1}%<color=#6ad29b>回复效率</color>，最多提升{2}次",
         "IsShow": true,
         "Order": 100,
+        "DescDigit": [
+            5,
+            5,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -1874,13 +2679,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20308,
         "CharacterId": 0,
         "Name": "丰饶【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每存活10秒，<color=#6ad29b>回复效率</color>提升6.00%，最多提升2次",
+        "Desc": "每存活{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，最多提升{2}次",
         "IsShow": true,
         "Order": 101,
+        "DescDigit": [
+            10,
+            6,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -1895,13 +2706,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20316,
         "CharacterId": 0,
         "Name": "不朽",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "生命值首次低于20%时，接下来的5秒内，免疫所有伤害，每次战斗可生效1次",
+        "Desc": "生命值首次低于{0}%时，接下来的{1}秒内，免疫所有伤害，每次战斗可生效{2}次",
         "IsShow": true,
         "Order": 102,
+        "DescDigit": [
+            20,
+            5,
+            1
+        ],
         "Tags": [
             6
         ],
@@ -1916,13 +2733,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20318,
         "CharacterId": 0,
         "Name": "摧残【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加10.00%",
+        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加{0}%",
         "IsShow": true,
         "Order": 103,
+        "DescDigit": [
+            10
+        ],
         "Tags": [
             5
         ],
@@ -1937,13 +2758,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20326,
         "CharacterId": 0,
         "Name": "盈满【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次回复生命值时，提升5.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升2次",
+        "Desc": "每次回复生命值时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升{1}次",
         "IsShow": true,
         "Order": 104,
+        "DescDigit": [
+            5,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -1958,13 +2784,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20334,
         "CharacterId": 0,
         "Name": "源素转化【回复】·【血伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#6ad29b>回复效率</color>，提升1%<color=#f15265>血源伤害</color>，至多提升200%<color=#f15265>血源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#6ad29b>回复效率</color>，提升{1}%<color=#f15265>血源伤害</color>，至多提升{2}%<color=#f15265>血源伤害</color>",
         "IsShow": true,
         "Order": 507,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             5,
             1
@@ -1980,13 +2812,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20336,
         "CharacterId": 0,
         "Name": "源素转化【回复】·【灵伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#6ad29b>回复效率</color>，提升1%<color=#77baf0>灵源伤害</color>，至多提升200%<color=#77baf0>灵源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#6ad29b>回复效率</color>，提升{1}%<color=#77baf0>灵源伤害</color>，至多提升{2}%<color=#77baf0>灵源伤害</color>",
         "IsShow": true,
         "Order": 508,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             5,
             2
@@ -2002,13 +2840,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20338,
         "CharacterId": 0,
         "Name": "源素转化【回复】·【圣伤】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每获得2.5%额外<color=#6ad29b>回复效率</color>，提升1%<color=#f2c870>圣源伤害</color>，至多提升200%<color=#f2c870>圣源伤害</color>",
+        "Desc": "每获得{0}%额外<color=#6ad29b>回复效率</color>，提升{1}%<color=#f2c870>圣源伤害</color>，至多提升{2}%<color=#f2c870>圣源伤害</color>",
         "IsShow": true,
         "Order": 509,
+        "DescDigit": [
+            2.5,
+            1,
+            200
+        ],
         "Tags": [
             5,
             3
@@ -2024,13 +2868,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20304,
         "CharacterId": 0,
         "Name": "荆棘【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每受到5次攻击，可提升10.00%<color=#6ad29b>回复效率</color>，最多提升2次",
+        "Desc": "每受到{0}次攻击，可提升{1}%<color=#6ad29b>回复效率</color>，最多提升{2}次",
         "IsShow": true,
         "Order": 108,
+        "DescDigit": [
+            5,
+            10,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2045,13 +2895,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20304,
         "CharacterId": 0,
         "Name": "荆棘【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每受到5次攻击，可提升15.00%<color=#6ad29b>回复效率</color>，最多提升2次",
+        "Desc": "每受到{0}次攻击，可提升{1}%<color=#6ad29b>回复效率</color>，最多提升{2}次",
         "IsShow": true,
         "Order": 109,
+        "DescDigit": [
+            5,
+            15,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2066,13 +2922,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20304,
         "CharacterId": 0,
         "Name": "荆棘【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每受到5次攻击，可提升20.00%<color=#6ad29b>回复效率</color>，最多提升2次",
+        "Desc": "每受到{0}次攻击，可提升{1}%<color=#6ad29b>回复效率</color>，最多提升{2}次",
         "IsShow": true,
         "Order": 110,
+        "DescDigit": [
+            5,
+            20,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2087,13 +2949,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20308,
         "CharacterId": 0,
         "Name": "丰饶【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每存活10秒，<color=#6ad29b>回复效率</color>提升12.00%，最多提升2次",
+        "Desc": "每存活{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，最多提升{2}次",
         "IsShow": true,
         "Order": 111,
+        "DescDigit": [
+            10,
+            12,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2108,13 +2976,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20308,
         "CharacterId": 0,
         "Name": "丰饶【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每存活10秒，<color=#6ad29b>回复效率</color>提升18.00%，最多提升2次",
+        "Desc": "每存活{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，最多提升{2}次",
         "IsShow": true,
         "Order": 112,
+        "DescDigit": [
+            10,
+            18,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2129,13 +3003,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20308,
         "CharacterId": 0,
         "Name": "丰饶【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每存活10秒，<color=#6ad29b>回复效率</color>提升24.00%，最多提升2次",
+        "Desc": "每存活{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，最多提升{2}次",
         "IsShow": true,
         "Order": 113,
+        "DescDigit": [
+            10,
+            24,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2150,13 +3030,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20318,
         "CharacterId": 0,
         "Name": "摧残【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加20.00%",
+        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加{0}%",
         "IsShow": true,
         "Order": 114,
+        "DescDigit": [
+            20
+        ],
         "Tags": [
             5
         ],
@@ -2171,13 +3055,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20318,
         "CharacterId": 0,
         "Name": "摧残【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加30.00%",
+        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加{0}%",
         "IsShow": true,
         "Order": 115,
+        "DescDigit": [
+            30
+        ],
         "Tags": [
             5
         ],
@@ -2192,13 +3080,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20318,
         "CharacterId": 0,
         "Name": "摧残【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加40.00%",
+        "Desc": "当生命值百分比低于对方时，自身<color=#6ad29b>回复效率</color>额外增加{0}%",
         "IsShow": true,
         "Order": 116,
+        "DescDigit": [
+            40
+        ],
         "Tags": [
             5
         ],
@@ -2213,13 +3105,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20326,
         "CharacterId": 0,
         "Name": "盈满【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次回复生命值时，提升10.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升2次",
+        "Desc": "每次回复生命值时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升{1}次",
         "IsShow": true,
         "Order": 117,
+        "DescDigit": [
+            10,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2234,13 +3131,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20326,
         "CharacterId": 0,
         "Name": "盈满【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次回复生命值时，提升15.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升2次",
+        "Desc": "每次回复生命值时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升{1}次",
         "IsShow": true,
         "Order": 118,
+        "DescDigit": [
+            15,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2255,13 +3157,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20326,
         "CharacterId": 0,
         "Name": "盈满【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每次回复生命值时，提升20.00%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升2次",
+        "Desc": "每次回复生命值时，提升{0}%<color=#f15265>血源</color>、<color=#77baf0>灵源</color>、<color=#f2c870>圣源</color>伤害，最多提升{1}次",
         "IsShow": true,
         "Order": 119,
+        "DescDigit": [
+            20,
+            2
+        ],
         "Tags": [
             5
         ],
@@ -2276,13 +3183,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20400,
         "CharacterId": 0,
         "Name": "源素汇流【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成圣源伤害提升5.00%，生效间隔为1秒",
+        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成圣源伤害提升{0}%，生效间隔为{1}秒",
         "IsShow": true,
         "Order": 120,
+        "DescDigit": [
+            5,
+            1
+        ],
         "Tags": [
             3
         ]
@@ -2294,13 +3206,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20412,
         "CharacterId": 0,
         "Name": "三相领域【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "使受到<color=#f2c870>圣源属性</color>攻击的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升5.00%，路径持续5秒",
-        "IsShow": true,
+        "Desc": "使受到<color=#f2c870>圣源属性</color>攻击的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升{0}%，路径持续{1}秒",
+        "IsShow": false,
         "Order": 121,
+        "DescDigit": [
+            5,
+            5
+        ],
         "Tags": [
             3
         ]
@@ -2312,13 +3229,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20416,
         "CharacterId": 0,
         "Name": "摧残【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失20%生命可提升2.00%",
+        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失{0}%生命可提升{1}%",
         "IsShow": true,
         "Order": 122,
+        "DescDigit": [
+            20,
+            2
+        ],
         "Tags": [
             3
         ]
@@ -2330,13 +3252,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20422,
         "CharacterId": 0,
         "Name": "疾风步【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每移动10米，下一次<color=#f2c870>圣源伤害</color>提升5.00%",
+        "Desc": "每移动{0}米，下一次<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 123,
+        "DescDigit": [
+            10,
+            5
+        ],
         "Tags": [
             3
         ]
@@ -2348,13 +3275,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20432,
         "CharacterId": 0,
         "Name": "源素转化【圣伤】·【护盾】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#f2c870>圣源伤害</color>可提升自身1%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#f2c870>圣源伤害</color>可提升自身{1}%<color=#fe8f7fc>护盾强度</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 510,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             3,
             4
@@ -2367,13 +3300,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20434,
         "CharacterId": 0,
         "Name": "源素转化【圣伤】·【回复】",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每2%<color=#f2c870>圣源伤害</color>可提升自身1%<color=#6ad29b>回复效率</color>（此效果提升的上限为200%）",
+        "Desc": "每{0}%<color=#f2c870>圣源伤害</color>可提升自身{1}%<color=#6ad29b>回复效率</color>（此效果提升的上限为{2}%）",
         "IsShow": true,
         "Order": 511,
+        "DescDigit": [
+            2,
+            1,
+            200
+        ],
         "Tags": [
             3,
             5
@@ -2386,13 +3325,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20412,
         "CharacterId": 0,
         "Name": "三相领域【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升10.00%，路径持续5秒",
-        "IsShow": true,
+        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升{0}%，路径持续{1}秒",
+        "IsShow": false,
         "Order": 126,
+        "DescDigit": [
+            10,
+            5
+        ],
         "Tags": [
             3
         ]
@@ -2404,13 +3348,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20412,
         "CharacterId": 0,
         "Name": "三相领域【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升15.00%，路径持续5秒",
-        "IsShow": true,
+        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升{0}%，路径持续{1}秒",
+        "IsShow": false,
         "Order": 127,
+        "DescDigit": [
+            15,
+            5
+        ],
         "Tags": [
             3
         ]
@@ -2422,13 +3371,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20412,
         "CharacterId": 0,
         "Name": "三相领域【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升20.00%，路径持续5秒",
-        "IsShow": true,
+        "Desc": "使受到<color=#f2c870>圣源伤害</color>的敌人脚下产生神圣路径，自身在路径上时，造成的<color=#f2c870>圣源伤害</color>提升{0}%，路径持续{1}秒",
+        "IsShow": false,
         "Order": 128,
+        "DescDigit": [
+            20,
+            5
+        ],
         "Tags": [
             3
         ]
@@ -2440,13 +3394,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20422,
         "CharacterId": 0,
         "Name": "疾风步【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每移动10米，下一次<color=#f2c870>圣源伤害</color>提升10.00%",
+        "Desc": "每移动{0}米，下一次<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 129,
+        "DescDigit": [
+            10,
+            10
+        ],
         "Tags": [
             3
         ]
@@ -2458,13 +3417,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20422,
         "CharacterId": 0,
         "Name": "疾风步【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每移动10米，下一次<color=#f2c870>圣源伤害</color>提升15.00%",
+        "Desc": "每移动{0}米，下一次<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 130,
+        "DescDigit": [
+            10,
+            15
+        ],
         "Tags": [
             3
         ]
@@ -2476,13 +3440,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20422,
         "CharacterId": 0,
         "Name": "疾风步【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每移动10米，下一次<color=#f2c870>圣源伤害</color>提升20.00%",
+        "Desc": "每移动{0}米，下一次<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 131,
+        "DescDigit": [
+            10,
+            20
+        ],
         "Tags": [
             3
         ]
@@ -2494,13 +3463,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20400,
         "CharacterId": 0,
         "Name": "源素汇流【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升10.00%，生效间隔为1秒",
+        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升{0}%，生效间隔为{1}秒",
         "IsShow": true,
         "Order": 132,
+        "DescDigit": [
+            10,
+            1
+        ],
         "Tags": [
             3
         ]
@@ -2512,13 +3486,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20400,
         "CharacterId": 0,
         "Name": "源素汇流【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升15.00%，生效间隔为1秒",
+        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升{0}%，生效间隔为{1}秒",
         "IsShow": true,
         "Order": 133,
+        "DescDigit": [
+            15,
+            1
+        ],
         "Tags": [
             3
         ]
@@ -2530,13 +3509,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20400,
         "CharacterId": 0,
         "Name": "源素汇流【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升20.00%，生效间隔为1秒",
+        "Desc": "造成<color=#f2c870>圣源属性</color>攻击后，使下一次造成<color=#f2c870>圣源伤害</color>提升{0}%，生效间隔为{1}秒",
         "IsShow": true,
         "Order": 134,
+        "DescDigit": [
+            20,
+            1
+        ],
         "Tags": [
             3
         ]
@@ -2548,13 +3532,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20416,
         "CharacterId": 0,
         "Name": "摧残【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失20%生命可提升4.00%",
+        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失{0}%生命可提升{1}%",
         "IsShow": true,
         "Order": 135,
+        "DescDigit": [
+            20,
+            4
+        ],
         "Tags": [
             3
         ]
@@ -2566,13 +3555,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20416,
         "CharacterId": 0,
         "Name": "摧残【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失20%生命可提升6.00%",
+        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失{0}%生命可提升{1}%",
         "IsShow": true,
         "Order": 136,
+        "DescDigit": [
+            20,
+            6
+        ],
         "Tags": [
             3
         ]
@@ -2584,13 +3578,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20416,
         "CharacterId": 0,
         "Name": "摧残【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失20%生命可提升8.00%",
+        "Desc": "对生命值越低的目标造成<color=#f2c870>圣源属性</color>攻击时，可额外提升<color=#f2c870>圣源伤害</color>，目标每损失{0}%生命可提升{1}%",
         "IsShow": true,
         "Order": 137,
+        "DescDigit": [
+            20,
+            8
+        ],
         "Tags": [
             3
         ]
@@ -2602,13 +3601,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20500,
         "CharacterId": 0,
         "Name": "底力【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f15265>血源伤害</color>14.40%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 512,
+        "DescDigit": [
+            20,
+            14.4
+        ],
         "Tags": [
             1,
             6
@@ -2621,13 +3625,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20500,
         "CharacterId": 0,
         "Name": "底力【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f15265>血源伤害</color>28.80%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 513,
+        "DescDigit": [
+            20,
+            28.8
+        ],
         "Tags": [
             1,
             6
@@ -2640,13 +3649,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20500,
         "CharacterId": 0,
         "Name": "底力【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f15265>血源伤害</color>43.20%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 514,
+        "DescDigit": [
+            20,
+            43.2
+        ],
         "Tags": [
             1,
             6
@@ -2659,13 +3673,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20500,
         "CharacterId": 0,
         "Name": "底力【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f15265>血源伤害</color>57.60%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 515,
+        "DescDigit": [
+            20,
+            57.6
+        ],
         "Tags": [
             1,
             6
@@ -2678,13 +3697,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20508,
         "CharacterId": 0,
         "Name": "底力【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#77baf0>灵源伤害</color>14.40%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 516,
+        "DescDigit": [
+            20,
+            14.4
+        ],
         "Tags": [
             2,
             6
@@ -2697,13 +3721,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20508,
         "CharacterId": 0,
         "Name": "底力【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#77baf0>灵源伤害</color>28.80%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 517,
+        "DescDigit": [
+            20,
+            28.8
+        ],
         "Tags": [
             2,
             6
@@ -2716,13 +3745,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20508,
         "CharacterId": 0,
         "Name": "底力【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#77baf0>灵源伤害</color>43.20%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 518,
+        "DescDigit": [
+            20,
+            43.2
+        ],
         "Tags": [
             2,
             6
@@ -2735,13 +3769,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20508,
         "CharacterId": 0,
         "Name": "底力【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#77baf0>灵源伤害</color>57.60%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 519,
+        "DescDigit": [
+            20,
+            57.6
+        ],
         "Tags": [
             2,
             6
@@ -2754,13 +3793,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20516,
         "CharacterId": 0,
         "Name": "底力【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f2c870>圣源伤害</color>14.40%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 520,
+        "DescDigit": [
+            20,
+            14.4
+        ],
         "Tags": [
             3,
             6
@@ -2773,13 +3817,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20516,
         "CharacterId": 0,
         "Name": "底力【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f2c870>圣源伤害</color>28.80%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 521,
+        "DescDigit": [
+            20,
+            28.8
+        ],
         "Tags": [
             3,
             6
@@ -2792,13 +3841,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20516,
         "CharacterId": 0,
         "Name": "底力【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f2c870>圣源伤害</color>43.20%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 522,
+        "DescDigit": [
+            20,
+            43.2
+        ],
         "Tags": [
             3,
             6
@@ -2811,13 +3865,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20516,
         "CharacterId": 0,
         "Name": "底力【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#f2c870>圣源伤害</color>57.60%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 523,
+        "DescDigit": [
+            20,
+            57.6
+        ],
         "Tags": [
             3,
             6
@@ -2830,13 +3889,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20524,
         "CharacterId": 0,
         "Name": "底力【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#fe8f7fc>护盾强度</color>10.80%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 524,
+        "DescDigit": [
+            20,
+            10.8
+        ],
         "Tags": [
             4,
             6
@@ -2852,13 +3916,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20524,
         "CharacterId": 0,
         "Name": "底力【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#fe8f7fc>护盾强度</color>21.60%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 525,
+        "DescDigit": [
+            20,
+            21.6
+        ],
         "Tags": [
             4,
             6
@@ -2874,13 +3943,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20524,
         "CharacterId": 0,
         "Name": "底力【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#fe8f7fc>护盾强度</color>32.40%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 526,
+        "DescDigit": [
+            20,
+            32.4
+        ],
         "Tags": [
             4,
             6
@@ -2896,13 +3970,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20524,
         "CharacterId": 0,
         "Name": "底力【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#fe8f7fc>护盾强度</color>43.20%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 527,
+        "DescDigit": [
+            20,
+            43.2
+        ],
         "Tags": [
             4,
             6
@@ -2918,13 +3997,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20532,
         "CharacterId": 0,
         "Name": "底力【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#6ad29b>回复效率</color>10.80%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 528,
+        "DescDigit": [
+            20,
+            10.8
+        ],
         "Tags": [
             5,
             6
@@ -2940,13 +4024,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20532,
         "CharacterId": 0,
         "Name": "底力【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#6ad29b>回复效率</color>21.60%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 529,
+        "DescDigit": [
+            20,
+            21.6
+        ],
         "Tags": [
             5,
             6
@@ -2962,13 +4051,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20532,
         "CharacterId": 0,
         "Name": "底力【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#6ad29b>回复效率</color>32.40%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 530,
+        "DescDigit": [
+            20,
+            32.4
+        ],
         "Tags": [
             5,
             6
@@ -2984,13 +4078,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20532,
         "CharacterId": 0,
         "Name": "底力【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，增加<color=#6ad29b>回复效率</color>43.20%",
+        "Desc": "自身生命值低于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 531,
+        "DescDigit": [
+            20,
+            43.2
+        ],
         "Tags": [
             5,
             6
@@ -3006,13 +4105,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20540,
         "CharacterId": 0,
         "Name": "不屈",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "角色濒临死亡时，立即回复自身20%<color=#ecd7bd>最大生命值</color>的生命，该效果战斗中只能生效1次",
+        "Desc": "角色濒临死亡时，立即回复自身{0}%<color=#ecd7bd>最大生命值</color>的生命，该效果战斗中只能生效{1}次",
         "IsShow": true,
         "Order": 158,
+        "DescDigit": [
+            20,
+            1
+        ],
         "Tags": [
             6
         ]
@@ -3024,13 +4128,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20542,
         "CharacterId": 0,
         "Name": "竭抗",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值低于20%时，受到伤害降低30.17%",
+        "Desc": "自身生命值低于{0}%时，受到伤害降低{1}%",
         "IsShow": true,
         "Order": 159,
+        "DescDigit": [
+            20,
+            30.17
+        ],
         "Tags": [
             6
         ]
@@ -3042,13 +4151,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20544,
         "CharacterId": 0,
         "Name": "祭献",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗开始时，扣除自身80%<color=#ecd7bd>最大生命值</color>的生命，转化为等值护盾，受护盾强度加成",
+        "Desc": "战斗开始时，扣除自身{0}%<color=#ecd7bd>最大生命值</color>的生命，转化为等值护盾，受护盾强度加成",
         "IsShow": true,
         "Order": 160,
+        "DescDigit": [
+            80
+        ],
         "Tags": [
             6
         ]
@@ -3060,13 +4173,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20550,
         "CharacterId": 0,
         "Name": "增幅节奏【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f15265>血源伤害</color>提升14.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f15265>血源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 532,
+        "DescDigit": [
+            5,
+            14,
+            2
+        ],
         "Tags": [
             1,
             7
@@ -3079,13 +4198,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20550,
         "CharacterId": 0,
         "Name": "增幅节奏【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f15265>血源伤害</color>提升28.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f15265>血源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 533,
+        "DescDigit": [
+            5,
+            28,
+            2
+        ],
         "Tags": [
             1,
             7
@@ -3098,13 +4223,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20550,
         "CharacterId": 0,
         "Name": "增幅节奏【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f15265>血源伤害</color>提升42.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f15265>血源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 534,
+        "DescDigit": [
+            5,
+            42,
+            2
+        ],
         "Tags": [
             1,
             7
@@ -3117,13 +4248,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20550,
         "CharacterId": 0,
         "Name": "增幅节奏【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f15265>血源伤害</color>提升56.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f15265>血源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 535,
+        "DescDigit": [
+            5,
+            56,
+            2
+        ],
         "Tags": [
             1,
             7
@@ -3136,13 +4273,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20558,
         "CharacterId": 0,
         "Name": "增幅节奏【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#77baf0>灵源伤害</color>提升14.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#77baf0>灵源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 536,
+        "DescDigit": [
+            5,
+            14,
+            2
+        ],
         "Tags": [
             2,
             7
@@ -3155,13 +4298,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20558,
         "CharacterId": 0,
         "Name": "增幅节奏【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#77baf0>灵源伤害</color>提升28.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#77baf0>灵源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 537,
+        "DescDigit": [
+            5,
+            28,
+            2
+        ],
         "Tags": [
             2,
             7
@@ -3174,13 +4323,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20558,
         "CharacterId": 0,
         "Name": "增幅节奏【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#77baf0>灵源伤害</color>提升42.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#77baf0>灵源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 538,
+        "DescDigit": [
+            5,
+            42,
+            2
+        ],
         "Tags": [
             2,
             7
@@ -3193,13 +4348,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20558,
         "CharacterId": 0,
         "Name": "增幅节奏【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#77baf0>灵源伤害</color>提升56.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#77baf0>灵源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 539,
+        "DescDigit": [
+            5,
+            56,
+            2
+        ],
         "Tags": [
             2,
             7
@@ -3212,13 +4373,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20566,
         "CharacterId": 0,
         "Name": "增幅节奏【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f2c870>圣源伤害</color>提升14.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f2c870>圣源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 540,
+        "DescDigit": [
+            5,
+            14,
+            2
+        ],
         "Tags": [
             3,
             7
@@ -3231,13 +4398,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20566,
         "CharacterId": 0,
         "Name": "增幅节奏【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f2c870>圣源伤害</color>提升28.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f2c870>圣源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 541,
+        "DescDigit": [
+            5,
+            28,
+            2
+        ],
         "Tags": [
             3,
             7
@@ -3250,13 +4423,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20566,
         "CharacterId": 0,
         "Name": "增幅节奏【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f2c870>圣源伤害</color>提升42.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f2c870>圣源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 542,
+        "DescDigit": [
+            5,
+            42,
+            2
+        ],
         "Tags": [
             3,
             7
@@ -3269,13 +4448,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20566,
         "CharacterId": 0,
         "Name": "增幅节奏【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#f2c870>圣源伤害</color>提升56.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#f2c870>圣源伤害</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 543,
+        "DescDigit": [
+            5,
+            56,
+            2
+        ],
         "Tags": [
             3,
             7
@@ -3288,13 +4473,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20574,
         "CharacterId": 0,
         "Name": "增幅节奏【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#fe8f7fc>护盾强度</color>提升24.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#fe8f7fc>护盾强度</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 544,
+        "DescDigit": [
+            5,
+            24,
+            2
+        ],
         "Tags": [
             4,
             7
@@ -3310,13 +4501,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20574,
         "CharacterId": 0,
         "Name": "增幅节奏【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#fe8f7fc>护盾强度</color>提升48.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#fe8f7fc>护盾强度</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 545,
+        "DescDigit": [
+            5,
+            48,
+            2
+        ],
         "Tags": [
             4,
             7
@@ -3332,13 +4529,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20574,
         "CharacterId": 0,
         "Name": "增幅节奏【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#fe8f7fc>护盾强度</color>提升72.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#fe8f7fc>护盾强度</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 546,
+        "DescDigit": [
+            5,
+            72,
+            2
+        ],
         "Tags": [
             4,
             7
@@ -3354,13 +4557,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20574,
         "CharacterId": 0,
         "Name": "增幅节奏【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#fe8f7fc>护盾强度</color>提升96.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#fe8f7fc>护盾强度</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 547,
+        "DescDigit": [
+            5,
+            96,
+            2
+        ],
         "Tags": [
             4,
             7
@@ -3376,13 +4585,19 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20582,
         "CharacterId": 0,
         "Name": "增幅节奏【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#6ad29b>回复效率</color>提升24.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 548,
+        "DescDigit": [
+            5,
+            24,
+            2
+        ],
         "Tags": [
             5,
             7
@@ -3398,13 +4613,19 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20582,
         "CharacterId": 0,
         "Name": "增幅节奏【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#6ad29b>回复效率</color>提升48.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 549,
+        "DescDigit": [
+            5,
+            48,
+            2
+        ],
         "Tags": [
             5,
             7
@@ -3420,13 +4641,19 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20582,
         "CharacterId": 0,
         "Name": "增幅节奏【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#6ad29b>回复效率</color>提升72.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 550,
+        "DescDigit": [
+            5,
+            72,
+            2
+        ],
         "Tags": [
             5,
             7
@@ -3442,13 +4669,19 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20582,
         "CharacterId": 0,
         "Name": "增幅节奏【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每间隔5秒，<color=#6ad29b>回复效率</color>提升96.00%，持续2秒",
+        "Desc": "每间隔{0}秒，<color=#6ad29b>回复效率</color>提升{1}%，持续{2}秒",
         "IsShow": true,
         "Order": 551,
+        "DescDigit": [
+            5,
+            96,
+            2
+        ],
         "Tags": [
             5,
             7
@@ -3464,13 +4697,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20590,
         "CharacterId": 0,
         "Name": "渐强",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "厄难节拍与赌命戏法符纹触发2次后，后续触发间隔缩短至2秒",
+        "Desc": "厄难节拍与赌命戏法符纹触发{0}次后，后续触发间隔缩短至{1}秒",
         "IsShow": true,
         "Order": 552,
+        "DescDigit": [
+            2,
+            2
+        ],
         "Tags": [
             7,
             10
@@ -3483,13 +4721,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20592,
         "CharacterId": 0,
         "Name": "抢拍",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "释放技能时，厄难节拍与赌命戏法符纹的触发间隔缩短1秒，符纹触发后间隔重置",
+        "Desc": "释放技能时，厄难节拍与赌命戏法符纹的触发间隔缩短{0}秒，符纹触发后间隔重置",
         "IsShow": true,
         "Order": 553,
+        "DescDigit": [
+            1
+        ],
         "Tags": [
             7,
             10
@@ -3502,13 +4744,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20594,
         "CharacterId": 0,
         "Name": "坚毅",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "厄难节拍与赌命戏法符纹触发时，2秒内受到伤害减少7.41%",
+        "Desc": "厄难节拍与赌命戏法符纹触发时，{0}秒内受到伤害减少{1}%",
         "IsShow": true,
         "Order": 554,
+        "DescDigit": [
+            2,
+            7.41
+        ],
         "Tags": [
             7,
             10
@@ -3521,13 +4768,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20600,
         "CharacterId": 0,
         "Name": "完美主义【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f15265>血源伤害</color>9.38%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 555,
+        "DescDigit": [
+            80,
+            9.38
+        ],
         "Tags": [
             1,
             8
@@ -3540,13 +4792,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20600,
         "CharacterId": 0,
         "Name": "完美主义【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f15265>血源伤害</color>18.75%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 556,
+        "DescDigit": [
+            80,
+            18.75
+        ],
         "Tags": [
             1,
             8
@@ -3559,13 +4816,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20600,
         "CharacterId": 0,
         "Name": "完美主义【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f15265>血源伤害</color>28.13%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 557,
+        "DescDigit": [
+            80,
+            28.13
+        ],
         "Tags": [
             1,
             8
@@ -3578,13 +4840,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20600,
         "CharacterId": 0,
         "Name": "完美主义【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f15265>血源伤害</color>37.50%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f15265>血源伤害</color>{1}%",
         "IsShow": true,
         "Order": 558,
+        "DescDigit": [
+            80,
+            37.5
+        ],
         "Tags": [
             1,
             8
@@ -3597,13 +4864,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20608,
         "CharacterId": 0,
         "Name": "完美主义【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#77baf0>灵源伤害</color>9.38%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 559,
+        "DescDigit": [
+            80,
+            9.38
+        ],
         "Tags": [
             2,
             8
@@ -3616,13 +4888,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20608,
         "CharacterId": 0,
         "Name": "完美主义【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#77baf0>灵源伤害</color>18.75%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 560,
+        "DescDigit": [
+            80,
+            18.75
+        ],
         "Tags": [
             2,
             8
@@ -3635,13 +4912,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20608,
         "CharacterId": 0,
         "Name": "完美主义【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#77baf0>灵源伤害</color>28.13%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 561,
+        "DescDigit": [
+            80,
+            28.13
+        ],
         "Tags": [
             2,
             8
@@ -3654,13 +4936,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20608,
         "CharacterId": 0,
         "Name": "完美主义【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#77baf0>灵源伤害</color>37.50%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#77baf0>灵源伤害</color>{1}%",
         "IsShow": true,
         "Order": 562,
+        "DescDigit": [
+            80,
+            37.5
+        ],
         "Tags": [
             2,
             8
@@ -3673,13 +4960,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20616,
         "CharacterId": 0,
         "Name": "完美主义【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f2c870>圣源伤害</color>9.38%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 563,
+        "DescDigit": [
+            80,
+            9.38
+        ],
         "Tags": [
             3,
             8
@@ -3692,13 +4984,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20616,
         "CharacterId": 0,
         "Name": "完美主义【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f2c870>圣源伤害</color>18.75%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 564,
+        "DescDigit": [
+            80,
+            18.75
+        ],
         "Tags": [
             3,
             8
@@ -3711,13 +5008,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20616,
         "CharacterId": 0,
         "Name": "完美主义【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f2c870>圣源伤害</color>28.13%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 565,
+        "DescDigit": [
+            80,
+            28.13
+        ],
         "Tags": [
             3,
             8
@@ -3730,13 +5032,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20616,
         "CharacterId": 0,
         "Name": "完美主义【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#f2c870>圣源伤害</color>37.50%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#f2c870>圣源伤害</color>{1}%",
         "IsShow": true,
         "Order": 566,
+        "DescDigit": [
+            80,
+            37.5
+        ],
         "Tags": [
             3,
             8
@@ -3749,13 +5056,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20624,
         "CharacterId": 0,
         "Name": "完美主义【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#fe8f7fc>护盾强度</color>14.06%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 567,
+        "DescDigit": [
+            80,
+            14.06
+        ],
         "Tags": [
             4,
             8
@@ -3771,13 +5083,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20624,
         "CharacterId": 0,
         "Name": "完美主义【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#fe8f7fc>护盾强度</color>28.13%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 568,
+        "DescDigit": [
+            80,
+            28.13
+        ],
         "Tags": [
             4,
             8
@@ -3793,13 +5110,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20624,
         "CharacterId": 0,
         "Name": "完美主义【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#fe8f7fc>护盾强度</color>42.19%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 569,
+        "DescDigit": [
+            80,
+            42.19
+        ],
         "Tags": [
             4,
             8
@@ -3815,13 +5137,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20624,
         "CharacterId": 0,
         "Name": "完美主义【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#fe8f7fc>护盾强度</color>56.25%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#fe8f7fc>护盾强度</color>{1}%",
         "IsShow": true,
         "Order": 570,
+        "DescDigit": [
+            80,
+            56.25
+        ],
         "Tags": [
             4,
             8
@@ -3837,13 +5164,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20632,
         "CharacterId": 0,
         "Name": "完美主义【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#6ad29b>回复效率</color>14.06%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 571,
+        "DescDigit": [
+            80,
+            14.06
+        ],
         "Tags": [
             5,
             8
@@ -3859,13 +5191,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20632,
         "CharacterId": 0,
         "Name": "完美主义【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#6ad29b>回复效率</color>28.13%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 572,
+        "DescDigit": [
+            80,
+            28.13
+        ],
         "Tags": [
             5,
             8
@@ -3881,13 +5218,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20632,
         "CharacterId": 0,
         "Name": "完美主义【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#6ad29b>回复效率</color>42.19%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 573,
+        "DescDigit": [
+            80,
+            42.19
+        ],
         "Tags": [
             5,
             8
@@ -3903,13 +5245,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20632,
         "CharacterId": 0,
         "Name": "完美主义【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，增加<color=#6ad29b>回复效率</color>56.25%",
+        "Desc": "自身生命值高于{0}%时，增加<color=#6ad29b>回复效率</color>{1}%",
         "IsShow": true,
         "Order": 574,
+        "DescDigit": [
+            80,
+            56.25
+        ],
         "Tags": [
             5,
             8
@@ -3925,13 +5272,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20640,
         "CharacterId": 0,
         "Name": "铁壁",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，受到伤害降低27.27%",
+        "Desc": "自身生命值高于{0}%时，受到伤害降低{1}%",
         "IsShow": true,
         "Order": 204,
+        "DescDigit": [
+            80,
+            27.27
+        ],
         "Tags": [
             8
         ]
@@ -3943,13 +5295,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20642,
         "CharacterId": 0,
         "Name": "沸血",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于80%时，造成伤害提升56.25%",
+        "Desc": "自身生命值高于{0}%时，造成伤害提升{1}%",
         "IsShow": true,
         "Order": 205,
+        "DescDigit": [
+            80,
+            56.25
+        ],
         "Tags": [
             8
         ]
@@ -3961,13 +5318,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20648,
         "CharacterId": 0,
         "Name": "潜能迸发",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "自身生命值高于40%时即可触发无瑕沐血类型符纹效果",
+        "Desc": "自身生命值高于{0}%时即可触发无瑕沐血类型符纹效果",
         "IsShow": true,
         "Order": 206,
+        "DescDigit": [
+            40
+        ],
         "Tags": [
             8
         ]
@@ -3979,13 +5340,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20650,
         "CharacterId": 0,
         "Name": "鏖战【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加33.33%",
+        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 575,
+        "DescDigit": [
+            33.33
+        ],
         "Tags": [
             1,
             9
@@ -3998,13 +5363,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20650,
         "CharacterId": 0,
         "Name": "鏖战【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加66.67%",
+        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 576,
+        "DescDigit": [
+            66.67
+        ],
         "Tags": [
             1,
             9
@@ -4017,13 +5386,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20650,
         "CharacterId": 0,
         "Name": "鏖战【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加100.00%",
+        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 577,
+        "DescDigit": [
+            100
+        ],
         "Tags": [
             1,
             9
@@ -4036,13 +5409,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20650,
         "CharacterId": 0,
         "Name": "鏖战【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加133.33%",
+        "Desc": "绝命时速阶段，<color=#f15265>血源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 578,
+        "DescDigit": [
+            133.33
+        ],
         "Tags": [
             1,
             9
@@ -4055,13 +5432,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20658,
         "CharacterId": 0,
         "Name": "鏖战【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加33.33%",
+        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 579,
+        "DescDigit": [
+            33.33
+        ],
         "Tags": [
             2,
             9
@@ -4074,13 +5455,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20658,
         "CharacterId": 0,
         "Name": "鏖战【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加66.67%",
+        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 580,
+        "DescDigit": [
+            66.67
+        ],
         "Tags": [
             2,
             9
@@ -4093,13 +5478,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20658,
         "CharacterId": 0,
         "Name": "鏖战【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加100.00%",
+        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 581,
+        "DescDigit": [
+            100
+        ],
         "Tags": [
             2,
             9
@@ -4112,13 +5501,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20658,
         "CharacterId": 0,
         "Name": "鏖战【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加133.33%",
+        "Desc": "绝命时速阶段，<color=#77baf0>灵源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 582,
+        "DescDigit": [
+            133.33
+        ],
         "Tags": [
             2,
             9
@@ -4131,13 +5524,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20666,
         "CharacterId": 0,
         "Name": "鏖战【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加33.33%",
+        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 583,
+        "DescDigit": [
+            33.33
+        ],
         "Tags": [
             3,
             9
@@ -4150,13 +5547,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20666,
         "CharacterId": 0,
         "Name": "鏖战【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加66.67%",
+        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 584,
+        "DescDigit": [
+            66.67
+        ],
         "Tags": [
             3,
             9
@@ -4169,13 +5570,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20666,
         "CharacterId": 0,
         "Name": "鏖战【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加100.00%",
+        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 585,
+        "DescDigit": [
+            100
+        ],
         "Tags": [
             3,
             9
@@ -4188,13 +5593,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20666,
         "CharacterId": 0,
         "Name": "鏖战【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加133.33%",
+        "Desc": "绝命时速阶段，<color=#f2c870>圣源伤害</color>增加{0}%",
         "IsShow": true,
         "Order": 586,
+        "DescDigit": [
+            133.33
+        ],
         "Tags": [
             3,
             9
@@ -4207,13 +5616,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20674,
         "CharacterId": 0,
         "Name": "鏖战【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加33.33%",
+        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加{0}%",
         "IsShow": true,
         "Order": 587,
+        "DescDigit": [
+            33.33
+        ],
         "Tags": [
             4,
             9
@@ -4229,13 +5642,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20674,
         "CharacterId": 0,
         "Name": "鏖战【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加66.67%",
+        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加{0}%",
         "IsShow": true,
         "Order": 588,
+        "DescDigit": [
+            66.67
+        ],
         "Tags": [
             4,
             9
@@ -4251,13 +5668,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20674,
         "CharacterId": 0,
         "Name": "鏖战【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加100.00%",
+        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加{0}%",
         "IsShow": true,
         "Order": 589,
+        "DescDigit": [
+            100
+        ],
         "Tags": [
             4,
             9
@@ -4273,13 +5694,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20674,
         "CharacterId": 0,
         "Name": "鏖战【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加133.33%",
+        "Desc": "绝命时速阶段，<color=#fe8f7fc>护盾强度</color>增加{0}%",
         "IsShow": true,
         "Order": 590,
+        "DescDigit": [
+            133.33
+        ],
         "Tags": [
             4,
             9
@@ -4295,13 +5720,17 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20682,
         "CharacterId": 0,
         "Name": "鏖战【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加33.33%",
+        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加{0}%",
         "IsShow": true,
         "Order": 591,
+        "DescDigit": [
+            33.33
+        ],
         "Tags": [
             5,
             9
@@ -4317,13 +5746,17 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20682,
         "CharacterId": 0,
         "Name": "鏖战【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加66.67%",
+        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加{0}%",
         "IsShow": true,
         "Order": 592,
+        "DescDigit": [
+            66.67
+        ],
         "Tags": [
             5,
             9
@@ -4339,13 +5772,17 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20682,
         "CharacterId": 0,
         "Name": "鏖战【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加100.00%",
+        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加{0}%",
         "IsShow": true,
         "Order": 593,
+        "DescDigit": [
+            100
+        ],
         "Tags": [
             5,
             9
@@ -4361,13 +5798,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20682,
         "CharacterId": 0,
         "Name": "鏖战【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加133.33%",
+        "Desc": "绝命时速阶段，<color=#6ad29b>回复效率</color>增加{0}%",
         "IsShow": true,
         "Order": 594,
+        "DescDigit": [
+            133.33
+        ],
         "Tags": [
             5,
             9
@@ -4383,13 +5824,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20690,
         "CharacterId": 0,
         "Name": "拉力赛",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "最大生命值提升60%，未进入绝命时速阶段时，攻击力降低40%",
+        "Desc": "最大生命值提升{0}%，未进入绝命时速阶段时，攻击力降低{1}%",
         "IsShow": true,
         "Order": 227,
+        "DescDigit": [
+            60,
+            40
+        ],
         "Tags": [
             9
         ]
@@ -4401,13 +5847,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20694,
         "CharacterId": 0,
         "Name": "忍耐寻机",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "未进入绝命时速阶段时，受到伤害降低22.22%",
+        "Desc": "未进入绝命时速阶段时，受到伤害降低{0}%",
         "IsShow": true,
         "Order": 228,
+        "DescDigit": [
+            22.22
+        ],
         "Tags": [
             9
         ]
@@ -4419,13 +5869,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20696,
         "CharacterId": 0,
         "Name": "险境作战",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时20秒时进入绝命时速阶段",
+        "Desc": "战斗计时{0}秒时进入绝命时速阶段",
         "IsShow": true,
         "Order": 229,
+        "DescDigit": [
+            20
+        ],
         "Tags": [
             9
         ]
@@ -4437,13 +5891,20 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20700,
         "CharacterId": 0,
         "Name": "幸运轮【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f15265>血源伤害</color>18.75%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f15265>血源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 595,
+        "DescDigit": [
+            5,
+            40,
+            18.75,
+            5
+        ],
         "Tags": [
             1,
             10
@@ -4456,13 +5917,20 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20700,
         "CharacterId": 0,
         "Name": "幸运轮【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f15265>血源伤害</color>37.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f15265>血源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 596,
+        "DescDigit": [
+            5,
+            40,
+            37.5,
+            5
+        ],
         "Tags": [
             1,
             10
@@ -4475,13 +5943,20 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20700,
         "CharacterId": 0,
         "Name": "幸运轮【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f15265>血源伤害</color>56.25%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f15265>血源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 597,
+        "DescDigit": [
+            5,
+            40,
+            56.25,
+            5
+        ],
         "Tags": [
             1,
             10
@@ -4494,13 +5969,20 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20700,
         "CharacterId": 0,
         "Name": "幸运轮【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f15265>血源伤害</color>75.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f15265>血源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 598,
+        "DescDigit": [
+            5,
+            40,
+            75,
+            5
+        ],
         "Tags": [
             1,
             10
@@ -4513,13 +5995,20 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20708,
         "CharacterId": 0,
         "Name": "幸运轮【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#77baf0>灵源伤害</color>18.75%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#77baf0>灵源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 599,
+        "DescDigit": [
+            5,
+            40,
+            18.75,
+            5
+        ],
         "Tags": [
             2,
             10
@@ -4532,13 +6021,20 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20708,
         "CharacterId": 0,
         "Name": "幸运轮【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#77baf0>灵源伤害</color>37.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#77baf0>灵源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 600,
+        "DescDigit": [
+            5,
+            40,
+            37.5,
+            5
+        ],
         "Tags": [
             2,
             10
@@ -4551,13 +6047,20 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20708,
         "CharacterId": 0,
         "Name": "幸运轮【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#77baf0>灵源伤害</color>56.25%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#77baf0>灵源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 601,
+        "DescDigit": [
+            5,
+            40,
+            56.25,
+            5
+        ],
         "Tags": [
             2,
             10
@@ -4570,13 +6073,20 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20708,
         "CharacterId": 0,
         "Name": "幸运轮【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#77baf0>灵源伤害</color>75.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#77baf0>灵源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 602,
+        "DescDigit": [
+            5,
+            40,
+            75,
+            5
+        ],
         "Tags": [
             2,
             10
@@ -4589,13 +6099,20 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20716,
         "CharacterId": 0,
         "Name": "幸运轮【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f2c870>圣源伤害</color>18.75%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f2c870>圣源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 603,
+        "DescDigit": [
+            5,
+            40,
+            18.75,
+            5
+        ],
         "Tags": [
             3,
             10
@@ -4608,13 +6125,20 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20716,
         "CharacterId": 0,
         "Name": "幸运轮【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f2c870>圣源伤害</color>37.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f2c870>圣源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 604,
+        "DescDigit": [
+            5,
+            40,
+            37.5,
+            5
+        ],
         "Tags": [
             3,
             10
@@ -4627,13 +6151,20 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20716,
         "CharacterId": 0,
         "Name": "幸运轮【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f2c870>圣源伤害</color>56.25%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f2c870>圣源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 605,
+        "DescDigit": [
+            5,
+            40,
+            56.25,
+            5
+        ],
         "Tags": [
             3,
             10
@@ -4646,13 +6177,20 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20716,
         "CharacterId": 0,
         "Name": "幸运轮【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#f2c870>圣源伤害</color>75.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#f2c870>圣源伤害</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 606,
+        "DescDigit": [
+            5,
+            40,
+            75,
+            5
+        ],
         "Tags": [
             3,
             10
@@ -4665,13 +6203,20 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20724,
         "CharacterId": 0,
         "Name": "幸运轮【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#fe8f7fc>护盾强度</color>12.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#fe8f7fc>护盾强度</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 607,
+        "DescDigit": [
+            5,
+            40,
+            12.5,
+            5
+        ],
         "Tags": [
             4,
             10
@@ -4687,13 +6232,20 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20724,
         "CharacterId": 0,
         "Name": "幸运轮【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#fe8f7fc>护盾强度</color>25.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#fe8f7fc>护盾强度</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 608,
+        "DescDigit": [
+            5,
+            40,
+            25,
+            5
+        ],
         "Tags": [
             4,
             10
@@ -4709,13 +6261,20 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20724,
         "CharacterId": 0,
         "Name": "幸运轮【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#fe8f7fc>护盾强度</color>37.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#fe8f7fc>护盾强度</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 609,
+        "DescDigit": [
+            5,
+            40,
+            37.5,
+            5
+        ],
         "Tags": [
             4,
             10
@@ -4731,13 +6290,20 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20724,
         "CharacterId": 0,
         "Name": "幸运轮【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#fe8f7fc>护盾强度</color>50.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#fe8f7fc>护盾强度</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 610,
+        "DescDigit": [
+            5,
+            40,
+            50,
+            5
+        ],
         "Tags": [
             4,
             10
@@ -4753,13 +6319,20 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20732,
         "CharacterId": 0,
         "Name": "幸运轮【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#6ad29b>回复效率</color>12.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#6ad29b>回复效率</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 611,
+        "DescDigit": [
+            5,
+            40,
+            12.5,
+            5
+        ],
         "Tags": [
             5,
             10
@@ -4775,13 +6348,20 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20732,
         "CharacterId": 0,
         "Name": "幸运轮【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#6ad29b>回复效率</color>25.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#6ad29b>回复效率</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 612,
+        "DescDigit": [
+            5,
+            40,
+            25,
+            5
+        ],
         "Tags": [
             5,
             10
@@ -4797,13 +6377,20 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20732,
         "CharacterId": 0,
         "Name": "幸运轮【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#6ad29b>回复效率</color>37.50%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#6ad29b>回复效率</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 613,
+        "DescDigit": [
+            5,
+            40,
+            37.5,
+            5
+        ],
         "Tags": [
             5,
             10
@@ -4819,13 +6406,20 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20732,
         "CharacterId": 0,
         "Name": "幸运轮【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "每隔5秒，有40%的概率提升<color=#6ad29b>回复效率</color>50.00%，持续5秒",
+        "Desc": "每隔{0}秒，有{1}%的概率提升<color=#6ad29b>回复效率</color>{2}%，持续{3}秒",
         "IsShow": true,
         "Order": 614,
+        "DescDigit": [
+            5,
+            40,
+            50,
+            5
+        ],
         "Tags": [
             5,
             10
@@ -4841,6 +6435,7 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20740,
         "CharacterId": 0,
         "Name": "头奖",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -4859,6 +6454,7 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20741,
         "CharacterId": 0,
         "Name": "两次机会",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -4877,6 +6473,7 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20742,
         "CharacterId": 0,
         "Name": "幸运眷顾",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -4895,13 +6492,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20750,
         "CharacterId": 0,
         "Name": "先手优势【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f15265>血源伤害</color>提升14.25%",
+        "Desc": "战斗计时前{0}秒内<color=#f15265>血源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 615,
+        "DescDigit": [
+            12,
+            14.25
+        ],
         "Tags": [
             1,
             11
@@ -4914,13 +6516,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20750,
         "CharacterId": 0,
         "Name": "先手优势【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f15265>血源伤害</color>提升28.50%",
+        "Desc": "战斗计时前{0}秒内<color=#f15265>血源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 616,
+        "DescDigit": [
+            12,
+            28.5
+        ],
         "Tags": [
             1,
             11
@@ -4933,13 +6540,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20750,
         "CharacterId": 0,
         "Name": "先手优势【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f15265>血源伤害</color>提升42.75%",
+        "Desc": "战斗计时前{0}秒内<color=#f15265>血源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 617,
+        "DescDigit": [
+            12,
+            42.75
+        ],
         "Tags": [
             1,
             11
@@ -4952,13 +6564,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20750,
         "CharacterId": 0,
         "Name": "先手优势【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f15265>血源伤害</color>提升57.00%",
+        "Desc": "战斗计时前{0}秒内<color=#f15265>血源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 618,
+        "DescDigit": [
+            12,
+            57
+        ],
         "Tags": [
             1,
             11
@@ -4971,13 +6588,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20758,
         "CharacterId": 0,
         "Name": "先手优势【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#77baf0>灵源伤害</color>提升14.25%",
+        "Desc": "战斗计时前{0}秒内<color=#77baf0>灵源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 619,
+        "DescDigit": [
+            12,
+            14.25
+        ],
         "Tags": [
             2,
             11
@@ -4990,13 +6612,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20758,
         "CharacterId": 0,
         "Name": "先手优势【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#77baf0>灵源伤害</color>提升28.50%",
+        "Desc": "战斗计时前{0}秒内<color=#77baf0>灵源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 620,
+        "DescDigit": [
+            12,
+            28.5
+        ],
         "Tags": [
             2,
             11
@@ -5009,13 +6636,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20758,
         "CharacterId": 0,
         "Name": "先手优势【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#77baf0>灵源伤害</color>提升42.75%",
+        "Desc": "战斗计时前{0}秒内<color=#77baf0>灵源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 621,
+        "DescDigit": [
+            12,
+            42.75
+        ],
         "Tags": [
             2,
             11
@@ -5028,13 +6660,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20758,
         "CharacterId": 0,
         "Name": "先手优势【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#77baf0>灵源伤害</color>提升57.00%",
+        "Desc": "战斗计时前{0}秒内<color=#77baf0>灵源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 622,
+        "DescDigit": [
+            12,
+            57
+        ],
         "Tags": [
             2,
             11
@@ -5047,13 +6684,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20766,
         "CharacterId": 0,
         "Name": "先手优势【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f2c870>圣源伤害</color>提升14.25%",
+        "Desc": "战斗计时前{0}秒内<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 623,
+        "DescDigit": [
+            12,
+            14.25
+        ],
         "Tags": [
             3,
             11
@@ -5066,13 +6708,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20766,
         "CharacterId": 0,
         "Name": "先手优势【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f2c870>圣源伤害</color>提升28.50%",
+        "Desc": "战斗计时前{0}秒内<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 624,
+        "DescDigit": [
+            12,
+            28.5
+        ],
         "Tags": [
             3,
             11
@@ -5085,13 +6732,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20766,
         "CharacterId": 0,
         "Name": "先手优势【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f2c870>圣源伤害</color>提升42.75%",
+        "Desc": "战斗计时前{0}秒内<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 625,
+        "DescDigit": [
+            12,
+            42.75
+        ],
         "Tags": [
             3,
             11
@@ -5104,13 +6756,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20766,
         "CharacterId": 0,
         "Name": "先手优势【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#f2c870>圣源伤害</color>提升57.00%",
+        "Desc": "战斗计时前{0}秒内<color=#f2c870>圣源伤害</color>提升{1}%",
         "IsShow": true,
         "Order": 626,
+        "DescDigit": [
+            12,
+            57
+        ],
         "Tags": [
             3,
             11
@@ -5123,13 +6780,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20774,
         "CharacterId": 0,
         "Name": "先手优势【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#fe8f7fc>护盾强度</color>提升14.25%",
+        "Desc": "战斗计时前{0}秒内<color=#fe8f7fc>护盾强度</color>提升{1}%",
         "IsShow": true,
         "Order": 627,
+        "DescDigit": [
+            12,
+            14.25
+        ],
         "Tags": [
             4,
             11
@@ -5145,13 +6807,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20774,
         "CharacterId": 0,
         "Name": "先手优势【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#fe8f7fc>护盾强度</color>提升28.50%",
+        "Desc": "战斗计时前{0}秒内<color=#fe8f7fc>护盾强度</color>提升{1}%",
         "IsShow": true,
         "Order": 628,
+        "DescDigit": [
+            12,
+            28.5
+        ],
         "Tags": [
             4,
             11
@@ -5167,13 +6834,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20774,
         "CharacterId": 0,
         "Name": "先手优势【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#fe8f7fc>护盾强度</color>提升42.75%",
+        "Desc": "战斗计时前{0}秒内<color=#fe8f7fc>护盾强度</color>提升{1}%",
         "IsShow": true,
         "Order": 629,
+        "DescDigit": [
+            12,
+            42.75
+        ],
         "Tags": [
             4,
             11
@@ -5189,13 +6861,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20774,
         "CharacterId": 0,
         "Name": "先手优势【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#fe8f7fc>护盾强度</color>提升57.00%",
+        "Desc": "战斗计时前{0}秒内<color=#fe8f7fc>护盾强度</color>提升{1}%",
         "IsShow": true,
         "Order": 630,
+        "DescDigit": [
+            12,
+            57
+        ],
         "Tags": [
             4,
             11
@@ -5211,13 +6888,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20782,
         "CharacterId": 0,
         "Name": "先手优势【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#6ad29b>回复效率</color>提升14.25%",
+        "Desc": "战斗计时前{0}秒内<color=#6ad29b>回复效率</color>提升{1}%",
         "IsShow": true,
         "Order": 631,
+        "DescDigit": [
+            12,
+            14.25
+        ],
         "Tags": [
             5,
             11
@@ -5233,13 +6915,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20782,
         "CharacterId": 0,
         "Name": "先手优势【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#6ad29b>回复效率</color>提升28.50%",
+        "Desc": "战斗计时前{0}秒内<color=#6ad29b>回复效率</color>提升{1}%",
         "IsShow": true,
         "Order": 632,
+        "DescDigit": [
+            12,
+            28.5
+        ],
         "Tags": [
             5,
             11
@@ -5255,13 +6942,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20782,
         "CharacterId": 0,
         "Name": "先手优势【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#6ad29b>回复效率</color>提升42.75%",
+        "Desc": "战斗计时前{0}秒内<color=#6ad29b>回复效率</color>提升{1}%",
         "IsShow": true,
         "Order": 633,
+        "DescDigit": [
+            12,
+            42.75
+        ],
         "Tags": [
             5,
             11
@@ -5277,13 +6969,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20782,
         "CharacterId": 0,
         "Name": "先手优势【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "战斗计时前12秒内<color=#6ad29b>回复效率</color>提升57.00%",
+        "Desc": "战斗计时前{0}秒内<color=#6ad29b>回复效率</color>提升{1}%",
         "IsShow": true,
         "Order": 634,
+        "DescDigit": [
+            12,
+            57
+        ],
         "Tags": [
             5,
             11
@@ -5299,6 +6996,7 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20790,
         "CharacterId": 0,
         "Name": "急袭",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5317,13 +7015,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20792,
         "CharacterId": 0,
         "Name": "先见",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "狂飙开幕类型符纹持续时间增加5秒",
+        "Desc": "狂飙开幕类型符纹持续时间增加{0}秒",
         "IsShow": true,
         "Order": 274,
+        "DescDigit": [
+            5
+        ],
         "Tags": [
             11
         ]
@@ -5335,13 +7037,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20794,
         "CharacterId": 0,
         "Name": "克敌机先",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "狂飙开幕类型符纹效果生效期间，每命中5次，狂飙开幕类型效果持续时间延长1秒",
+        "Desc": "狂飙开幕类型符纹效果生效期间，每命中{0}次，狂飙开幕类型效果持续时间延长{1}秒",
         "IsShow": true,
         "Order": 275,
+        "DescDigit": [
+            5,
+            1
+        ],
         "Tags": [
             11
         ]
@@ -5353,13 +7060,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20800,
         "CharacterId": 0,
         "Name": "裁汰【血伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f15265>血源伤害</color>增加28.88%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f15265>血源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 635,
+        "DescDigit": [
+            40,
+            28.88
+        ],
         "Tags": [
             1,
             12
@@ -5372,13 +7084,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20800,
         "CharacterId": 0,
         "Name": "裁汰【血伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f15265>血源伤害</color>增加57.75%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f15265>血源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 636,
+        "DescDigit": [
+            40,
+            57.75
+        ],
         "Tags": [
             1,
             12
@@ -5391,13 +7108,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20800,
         "CharacterId": 0,
         "Name": "裁汰【血伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f15265>血源伤害</color>增加86.63%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f15265>血源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 637,
+        "DescDigit": [
+            40,
+            86.63
+        ],
         "Tags": [
             1,
             12
@@ -5410,13 +7132,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20800,
         "CharacterId": 0,
         "Name": "裁汰【血伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackRed.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f15265>血源伤害</color>增加115.50%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f15265>血源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 638,
+        "DescDigit": [
+            40,
+            115.5
+        ],
         "Tags": [
             1,
             12
@@ -5429,13 +7156,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20808,
         "CharacterId": 0,
         "Name": "裁汰【灵伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#77baf0>灵源伤害</color>增加28.88%",
+        "Desc": "敌人生命值低于{0}%时，<color=#77baf0>灵源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 639,
+        "DescDigit": [
+            40,
+            28.88
+        ],
         "Tags": [
             2,
             12
@@ -5448,13 +7180,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20808,
         "CharacterId": 0,
         "Name": "裁汰【灵伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#77baf0>灵源伤害</color>增加57.75%",
+        "Desc": "敌人生命值低于{0}%时，<color=#77baf0>灵源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 640,
+        "DescDigit": [
+            40,
+            57.75
+        ],
         "Tags": [
             2,
             12
@@ -5467,13 +7204,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20808,
         "CharacterId": 0,
         "Name": "裁汰【灵伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#77baf0>灵源伤害</color>增加86.63%",
+        "Desc": "敌人生命值低于{0}%时，<color=#77baf0>灵源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 641,
+        "DescDigit": [
+            40,
+            86.63
+        ],
         "Tags": [
             2,
             12
@@ -5486,13 +7228,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20808,
         "CharacterId": 0,
         "Name": "裁汰【灵伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackBlue.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#77baf0>灵源伤害</color>增加115.50%",
+        "Desc": "敌人生命值低于{0}%时，<color=#77baf0>灵源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 642,
+        "DescDigit": [
+            40,
+            115.5
+        ],
         "Tags": [
             2,
             12
@@ -5505,13 +7252,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20816,
         "CharacterId": 0,
         "Name": "裁汰【圣伤】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f2c870>圣源伤害</color>增加28.88%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f2c870>圣源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 643,
+        "DescDigit": [
+            40,
+            28.88
+        ],
         "Tags": [
             3,
             12
@@ -5524,13 +7276,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20816,
         "CharacterId": 0,
         "Name": "裁汰【圣伤】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f2c870>圣源伤害</color>增加57.75%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f2c870>圣源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 644,
+        "DescDigit": [
+            40,
+            57.75
+        ],
         "Tags": [
             3,
             12
@@ -5543,13 +7300,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20816,
         "CharacterId": 0,
         "Name": "裁汰【圣伤】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f2c870>圣源伤害</color>增加86.63%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f2c870>圣源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 645,
+        "DescDigit": [
+            40,
+            86.63
+        ],
         "Tags": [
             3,
             12
@@ -5562,13 +7324,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20816,
         "CharacterId": 0,
         "Name": "裁汰【圣伤】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneAttackYellow.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#f2c870>圣源伤害</color>增加115.50%",
+        "Desc": "敌人生命值低于{0}%时，<color=#f2c870>圣源伤害</color>增加{1}%",
         "IsShow": true,
         "Order": 646,
+        "DescDigit": [
+            40,
+            115.5
+        ],
         "Tags": [
             3,
             12
@@ -5581,13 +7348,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20824,
         "CharacterId": 0,
         "Name": "裁汰【护盾】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#fe8f7fc>护盾强度</color>增加12.38%",
+        "Desc": "敌人生命值低于{0}%时，<color=#fe8f7fc>护盾强度</color>增加{1}%",
         "IsShow": true,
         "Order": 647,
+        "DescDigit": [
+            40,
+            12.38
+        ],
         "Tags": [
             4,
             12
@@ -5603,13 +7375,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20824,
         "CharacterId": 0,
         "Name": "裁汰【护盾】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#fe8f7fc>护盾强度</color>增加24.75%",
+        "Desc": "敌人生命值低于{0}%时，<color=#fe8f7fc>护盾强度</color>增加{1}%",
         "IsShow": true,
         "Order": 648,
+        "DescDigit": [
+            40,
+            24.75
+        ],
         "Tags": [
             4,
             12
@@ -5625,13 +7402,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20824,
         "CharacterId": 0,
         "Name": "裁汰【护盾】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#fe8f7fc>护盾强度</color>增加37.13%",
+        "Desc": "敌人生命值低于{0}%时，<color=#fe8f7fc>护盾强度</color>增加{1}%",
         "IsShow": true,
         "Order": 649,
+        "DescDigit": [
+            40,
+            37.13
+        ],
         "Tags": [
             4,
             12
@@ -5647,13 +7429,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20824,
         "CharacterId": 0,
         "Name": "裁汰【护盾】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneWhite.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#fe8f7fc>护盾强度</color>增加49.50%",
+        "Desc": "敌人生命值低于{0}%时，<color=#fe8f7fc>护盾强度</color>增加{1}%",
         "IsShow": true,
         "Order": 650,
+        "DescDigit": [
+            40,
+            49.5
+        ],
         "Tags": [
             4,
             12
@@ -5669,13 +7456,18 @@
         "DiscountPrice": 1,
         "SellPrice": 1,
         "Quality": 1,
+        "BuffType": 20832,
         "CharacterId": 0,
         "Name": "裁汰【回复】·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#6ad29b>回复效率</color>增加12.38%",
+        "Desc": "敌人生命值低于{0}%时，<color=#6ad29b>回复效率</color>增加{1}%",
         "IsShow": true,
         "Order": 651,
+        "DescDigit": [
+            40,
+            12.38
+        ],
         "Tags": [
             5,
             12
@@ -5691,13 +7483,18 @@
         "DiscountPrice": 3,
         "SellPrice": 3,
         "Quality": 2,
+        "BuffType": 20832,
         "CharacterId": 0,
         "Name": "裁汰【回复】·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#6ad29b>回复效率</color>增加24.75%",
+        "Desc": "敌人生命值低于{0}%时，<color=#6ad29b>回复效率</color>增加{1}%",
         "IsShow": true,
         "Order": 652,
+        "DescDigit": [
+            40,
+            24.75
+        ],
         "Tags": [
             5,
             12
@@ -5713,13 +7510,18 @@
         "DiscountPrice": 6,
         "SellPrice": 6,
         "Quality": 3,
+        "BuffType": 20832,
         "CharacterId": 0,
         "Name": "裁汰【回复】·高",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#6ad29b>回复效率</color>增加37.13%",
+        "Desc": "敌人生命值低于{0}%时，<color=#6ad29b>回复效率</color>增加{1}%",
         "IsShow": true,
         "Order": 653,
+        "DescDigit": [
+            40,
+            37.13
+        ],
         "Tags": [
             5,
             12
@@ -5735,13 +7537,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20832,
         "CharacterId": 0,
         "Name": "裁汰【回复】·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneGreen.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于40%时，<color=#6ad29b>回复效率</color>增加49.50%",
+        "Desc": "敌人生命值低于{0}%时，<color=#6ad29b>回复效率</color>增加{1}%",
         "IsShow": true,
         "Order": 654,
+        "DescDigit": [
+            40,
+            49.5
+        ],
         "Tags": [
             5,
             12
@@ -5757,13 +7564,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20840,
         "CharacterId": 0,
         "Name": "处决",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于80%时即可触发狩亡猎手类型符纹效果",
+        "Desc": "敌人生命值低于{0}%时即可触发狩亡猎手类型符纹效果",
         "IsShow": true,
         "Order": 296,
+        "DescDigit": [
+            80
+        ],
         "Tags": [
             12
         ]
@@ -5775,13 +7586,17 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20841,
         "CharacterId": 0,
         "Name": "杀戮印记",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "当敌人生命值回复至触发条件以上时，狩亡猎手类型的符纹效果将延后5秒消失",
+        "Desc": "当敌人生命值回复至触发条件以上时，狩亡猎手类型的符纹效果将延后{0}秒消失",
         "IsShow": true,
         "Order": 297,
+        "DescDigit": [
+            5
+        ],
         "Tags": [
             12
         ]
@@ -5793,13 +7608,18 @@
         "DiscountPrice": 12,
         "SellPrice": 12,
         "Quality": 4,
+        "BuffType": 20842,
         "CharacterId": 0,
         "Name": "致命要害",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
-        "Desc": "敌人生命值低于10%时，狩亡猎手类型的符纹效果提升20%",
+        "Desc": "敌人生命值低于{0}%时，狩亡猎手类型的符纹效果提升{1}%",
         "IsShow": true,
         "Order": 298,
+        "DescDigit": [
+            10,
+            20
+        ],
         "Tags": [
             12
         ]
@@ -5811,6 +7631,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5825,6 +7646,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5839,6 +7661,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5853,6 +7676,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5867,6 +7691,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5881,6 +7706,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5895,6 +7721,7 @@
         "DiscountPrice": 8,
         "SellPrice": 8,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "属性提升",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
@@ -5909,6 +7736,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 1,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·初",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxGreen.png",
@@ -5924,6 +7752,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 2,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·中",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxBlue.png",
@@ -5939,6 +7768,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 3,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·高",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem05.png",
@@ -5954,6 +7784,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·极",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxOrange.png",
@@ -5969,6 +7800,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·随机",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
@@ -5984,6 +7816,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "符纹宝箱·随机",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
@@ -5999,6 +7832,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "技能宝箱·伤害",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5IconRougeItem01.png",
@@ -6014,6 +7848,7 @@
         "DiscountPrice": 0,
         "SellPrice": 0,
         "Quality": 4,
+        "BuffType": 0,
         "CharacterId": 0,
         "Name": "技能宝箱",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5IconRougeItem01.png",

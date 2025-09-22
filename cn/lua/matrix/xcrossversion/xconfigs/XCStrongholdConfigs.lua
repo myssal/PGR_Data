@@ -25,9 +25,9 @@ function XStrongholdConfigs.GetSpecialGroupRewardId(groupId, activityId)
     return nil
 end
 
-function XStrongholdConfigs.GetSpecialRewardId(StrongholdId)
+function XStrongholdConfigs.GetSpecialRewardId(StrongholdId, maxId)
     for id, config in pairs(SpecialRewardConfig) do
-        if config.StrongholdRewardId == StrongholdId then
+        if config.StrongholdRewardId == StrongholdId and config.ActivityId == maxId then
             return config.RewardId
         end
     end

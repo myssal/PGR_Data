@@ -83,9 +83,6 @@ local function NewPay(self, productKey, cpOrderId, goodsId)
             PlayerId = XPlayer.Id
         })
 
-        if cb then
-            cb()
-        end
     end)
 end
 

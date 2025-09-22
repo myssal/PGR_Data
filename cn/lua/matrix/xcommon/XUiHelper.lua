@@ -432,7 +432,11 @@ function XUiHelper.GetTime(second, timeFormatType)
             return stringFormat("%d%s", sumDas, STR_DAY)
         end
         if days >= 1 then
-            return stringFormat("%d%s%d%s", days, STR_DAY, hours, STR_HOUR)
+            if not XOverseaManager.IsENRegion() then
+                return stringFormat("%d%s%d%s", days, STR_DAY, hours, STR_HOUR)
+            else
+                return stringFormat("%d%s", days, STR_DAY)
+            end
         end
         return stringFormat("%02d:%02d:%02d", hours, minutes, seconds)
     end

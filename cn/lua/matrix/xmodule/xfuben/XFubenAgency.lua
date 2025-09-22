@@ -123,23 +123,6 @@ function XFubenAgency:InitCustomFuncIdsTab()
     --end
 end
 
-function XFubenAgency:SetCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
-    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
-    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] = self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] or {}
-    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] = true
-end
-
-function XFubenAgency:GetCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
-    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
-    return self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] and self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] or false
-end
-
-function XFubenAgency:ClearCacheStageTeamHasSetGeneralSkillId(stageId, teamId)
-    self._Model.CacheStageTeamHasSetGeneralSkillId = self._Model.CacheStageTeamHasSetGeneralSkillId or {}
-    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] = self._Model.CacheStageTeamHasSetGeneralSkillId[stageId] or {}
-    self._Model.CacheStageTeamHasSetGeneralSkillId[stageId][teamId] = nil
-end
-
 function XFubenAgency:ResetAll()
     -- for reLogin
     XEventManager.RemoveEventListener(XEventId.EVENT_PLAYER_LEVEL_CHANGE, self.InitData, self)
@@ -449,6 +432,21 @@ function XFubenAgency:GetGeneralSkillIds(stageId)
     return self:GetStageCfg(stageId).GeneralSkillIds
 end
 
+
+function XFubenAgency:CheckHasValidGeneralSkillId(stageId)
+    local skillIds = self:GetStageCfg(stageId).GeneralSkillIds
+    if XTool.IsTableEmpty(skillIds) then
+        return false
+    end
+
+    for k, id in pairs(skillIds) do
+        if XTool.IsNumberValid(id) then
+            return true
+        end
+    end
+
+    return false
+end
 
 ----------基础信息接口
 
@@ -3684,13 +3682,15 @@ function XFubenAgency:EnterRiftFight(xTeam, stageGroupData, index)
     local characterIds = {}
     local robotIds = {}
     for k, roleId in pairs(xTeam:GetEntityIds()) do
-        if XTool.IsNumberValid(roleId) then
-            local xRole = XMVCA.XRift:GetEntityRoleById(roleId)
-            robotIds[k] = not xRole:GetIsRobot() and 0 or roleId
-            characterIds[k] = xRole:GetIsRobot() and 0 or roleId
-        else
-            robotIds[k] = 0
-            characterIds[k] = 0
+        if k > 0 then
+            if XTool.IsNumberValid(roleId) then
+                local xRole = XMVCA.XRift:GetEntityRoleById(roleId)
+                robotIds[k] = not xRole:GetIsRobot() and 0 or roleId
+                characterIds[k] = xRole:GetIsRobot() and 0 or roleId
+            else
+                robotIds[k] = 0
+                characterIds[k] = 0
+            end
         end
     end
     local isLucky = xTeam:IsLuckyStage()
@@ -3948,6 +3948,10 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
         request.PreFightData.RobotReplaceSkillIdDict = robotReplaceSkillIdDict
     end
 
+    if request.PreFightData and request.PreFightData.GeneralSkill and request.PreFightData.GeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
+        request.PreFightData.GeneralSkill = 0
+    end
+    
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({stageId}, function ()
         XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
     end)

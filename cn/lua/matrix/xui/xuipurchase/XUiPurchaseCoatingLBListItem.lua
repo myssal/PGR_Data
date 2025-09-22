@@ -66,11 +66,16 @@ function XUiPurchaseCoatingLBListItem:SetData()
         if XPurchaseConfigs.GetTagType(tag) == XPurchaseConfigs.PurchaseTagType.Discount then
             local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.ItemData)
             if disCountValue < 1 then
-                local disCountStr = string.format("%.1f", disCountValue * 10)
-                if self.ItemData.DiscountShowStr and self.ItemData.DiscountShowStr ~= "" then
-                    disCountStr = self.ItemData.DiscountShowStr
+                if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                    local disCountStr = tostring(math.floor((1-disCountValue) * 100))
+                    tagText ="<size=21>".. disCountStr..tagText.."</size>"
+                else
+                    local disCountStr = string.format("%.1f", disCountValue * 10)
+                    if self.ItemData.DiscountShowStr and self.ItemData.DiscountShowStr ~= "" then
+                        disCountStr = self.ItemData.DiscountShowStr
+                    end
+                    tagText = disCountStr..tagText
                 end
-                tagText = disCountStr..tagText
                 self.IsDisCount = true
             else
                 isShowTag = false

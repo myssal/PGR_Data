@@ -64,7 +64,7 @@ function XUiGridLikeActionItem:UpdateLockStatus(isLock)
     self.ActionLock.gameObject:SetActiveEx(isLock)
     if isLock and self.ActionData then
         self.TxtLockTitle.text = self.ActionData.config.Name
-        if XOverseaManager.IsENRegion() then
+        if XOverseaManager.IsENRegion() or XOverseaManager.IsKRRegion()then
             self.TxtLock.text = self.ActionData.config.ConditionDescript
         else
             self.TxtLock.text = XUiHelper.ConvertSpaceToLineBreak(self.ActionData.config.ConditionDescript)

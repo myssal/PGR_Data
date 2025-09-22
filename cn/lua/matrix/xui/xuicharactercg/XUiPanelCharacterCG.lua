@@ -15,6 +15,7 @@ function XUiPanelCharacterCG:InitLoadVideoPlayerPrefab()
     -- 目前CG的制作规格
     if not XTool.UObjIsNil(self.VideoPlayer) then
         self.VideoPlayer.AspectRatioFitterInst.aspectRatio = 2796 / 1290
+        self.VideoPlayer.DestroyOnPlayEnd = true
         self.VideoPlayerRawImg = self.VideoPlayer:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         self.VideoPlayerRawImg.enabled = false
     end

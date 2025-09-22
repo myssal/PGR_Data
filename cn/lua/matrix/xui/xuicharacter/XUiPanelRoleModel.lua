@@ -47,7 +47,9 @@ useMultiModel)
     self.IsStandAnimaShowWeapon = false
     self.StandAnimaShowWeaponList = {}
     self.StandAnimaShowWeaponAnimatorList = {}
-    self.CueId = nil
+    self.FashionCueId = nil
+    self.SFXCueId = nil
+    self.SFXCueIdCacheDic = {}
     self.UiStandCallBack = {}
     self.NowFashionId = nil
     self.PlayUiStandCallBackList = {}
@@ -235,18 +237,35 @@ needFightController)
     end
 
     local modelInfo = modelPool[roleName]
-    local cueId = self.CueId
+    local fashionCueId = self.FashionCueId
+    local sfxCueId = self.SFXCueId
+    local sfxCueIdCacheDic = self.SFXCueIdCacheDic
     --UiStand播放背景音乐
     local uiStandVoiceCb = function(model)
-        if cueId then
+        if fashionCueId then
             if CS.XAudioManager.IsOpenFashionVoice == 1 then
-                local cueInfo = { CueId = cueId, Info = nil }
                 self:SetUiStandAnimaFinishCallback(model, function()
-                    XLuaAudioManager.StopAudioByCueId(cueInfo.CueId)
-                    cueInfo.Info = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueInfo.CueId)
+                    XLuaAudioManager.StopAudioByCueId(fashionCueId)
+                    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, fashionCueId)
                 end, function()
-                    XLuaAudioManager.DoStopAudioInfo(cueInfo.Info)
+                    XLuaAudioManager.StopAudioByCueId(fashionCueId)
                 end,false, true)
+            end
+        end
+
+        if sfxCueId and not sfxCueIdCacheDic[sfxCueId] then
+            sfxCueIdCacheDic[sfxCueId] = true
+            XLuaAudioManager.StopAudioByCueId(sfxCueId)
+            local cueInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, sfxCueId)
+            cueInfo.FinishCb = function ()
+                sfxCueIdCacheDic[sfxCueId] = nil
+            end
+            cueInfo.UpdateCb = function()
+                local curModel = self:GetCurRoleModel()
+                if not curModel or XTool.UObjIsNil(curModel.gameObject) or not curModel.gameObject.activeSelf then
+                    XLuaAudioManager.StopAudioByCueId(sfxCueId)
+                    cueInfo.UpdateCb = nil
+                end
             end
         end
         
@@ -254,6 +273,7 @@ needFightController)
             cb(model)
         end
     end
+
     if IsReLoadAnime then
         self:LoadModelAndReLoadAnime(
         modelInfo,
@@ -274,6 +294,16 @@ needFightController)
         runtimeControllerName,
         IsReLoadController
         )
+    end
+end
+
+function XUiPanelRoleModel:StopAllAudio()
+    if self.FashionCueId then
+        XLuaAudioManager.StopAudioByCueId(self.FashionCueId)
+    end
+
+    if self.SFXCueId then
+        XLuaAudioManager.StopAudioByCueId(self.SFXCueId)
     end
 end
 
@@ -1052,7 +1082,7 @@ weaponId)
     end
     
     self.IsStandAnimaShowWeapon = XMVCA.XEquip:CheckHasLoadEquipBySignboard(characterId, self.NowFashionId)
-    self:SetCueId(self.NowFashionId)
+    self:SetCueIdByFashionId(self.NowFashionId)
     -- 设置当前加载的角色Id（设置相机参数时使用）
     self.CurCharacterId = characterId
     
@@ -1135,12 +1165,20 @@ function XUiPanelRoleModel:SetUiStandAnimaFinishCallback(model, callback, disabl
     end
 end
 
-function XUiPanelRoleModel:SetCueId(fashionId)
+function XUiPanelRoleModel:SetCueIdByFashionId(fashionId)
     if not fashionId then
         return
     end
     self.UiStandCallBack = {}    
-    self.CueId = XDataCenter.FashionManager.GetCueIdByFashionId(fashionId)
+    self.FashionCueId = XDataCenter.FashionManager.GetCueIdByFashionId(fashionId)
+end
+
+function XUiPanelRoleModel:SetSFXCueIdByCueId(cueId)
+    if not XTool.IsNumberValid(cueId) then
+        return
+    end
+    self.UiStandCallBack = {}    
+    self.SFXCueId = cueId
 end
 
 -- 设置当前角色Id（设置相机参数时使用）
@@ -1269,7 +1307,7 @@ function XUiPanelRoleModel:UpdateRobotModel(robotId, characterId, weaponCb, fash
     targetUiName = targetUiName or self.RefName
     local weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
     
-    self:SetCueId(nowFashionId)
+    self:SetCueIdByFashionId(nowFashionId)
     self:UpdateRoleModel(modelName, targetPanelRole, targetUiName, function(model)
         if not self.HideWeapon then
             self:UpdateCharacterWeaponModels(characterId, modelName, weaponCb, true, equipTemplateId, weaponFashionId)
@@ -1365,7 +1403,7 @@ function XUiPanelRoleModel:UpdateCharacterResModel(resId, characterId, targetUiN
     local fashionId = XDataCenter.FashionManager.GetFashionIdByResId(resId)
     
     if modelName then
-        self:SetCueId(fashionId)
+        self:SetCueIdByFashionId(fashionId)
         self:UpdateRoleModel(modelName, nil, targetUiName, function(model)
             if not self.HideWeapon then
                 self:UpdateCharacterWeaponModels(characterId, modelName, nil, nil, nil, weaponFashionId)
@@ -1556,7 +1594,7 @@ function XUiPanelRoleModel:UpdateCharacterModelByFightNpcData(fightNpcData, cb, 
         end
 
         if modelName then
-            self:SetCueId(fashionId)
+            self:SetCueIdByFashionId(fashionId)
             self:UpdateRoleModel(modelName, nil, nil, function(model)
                 self:UpdateEquipsModelsByFightNpcData(model, fightNpcData, modelName)
                 self:UpdateCharacterLiberationLevelEffect(modelName, char.Id, char.LiberateLv, fashionId)
@@ -1852,24 +1890,6 @@ function XUiPanelRoleModel:PlayAnima(AnimaName, fromBegin, callBack, errorCb, la
     local animatorlaye = layer or 0
     local IsCanPlay, animator = self:CheckAnimaCanPlay(AnimaName)
     local delay = 1
-    
-    -- 3.1特调, 这个模型切换变身之后，重置特效
-    --if self.CurRoleName == "Pet3ChiprobotonMd010011" and AnimaName == "EfChange01" then
-    --    local originalCallback = callBack
-    --    callBack = function()
-    --        local effectList = self.EffectDic["Customize_ModelLoopEffect"]
-    --        if effectList then
-    --            for _, effect in pairs(effectList) do
-    --                -- 强制刷新
-    --                effect.gameObject:SetActiveEx(false)
-    --                effect.gameObject:SetActiveEx(true)
-    --            end
-    --        end
-    --        if originalCallback then
-    --            originalCallback()
-    --        end
-    --    end
-    --end
 
     if IsCanPlay and animator then
         if fromBegin then
@@ -3209,6 +3229,56 @@ function XUiPanelRoleModel:GetSkinMeshFace()
     end
     self._MySkinMeshFace = targetSkinMeshFace
     return targetSkinMeshFace
+end
+
+-- 手动重置特效，修复播放其他动作后，loop特效周期与特效不一致的问题
+function XUiPanelRoleModel:ReplayUiLoopEffect()
+    if self.RoleModelPool then
+        local model = self.RoleModelPool[self.CurRoleName]
+        if model then
+            if model.UiEffect then
+                local isActive = false
+                for i = 1, #model.UiEffect do
+                    local effect = model.UiEffect[i]
+                    if effect.gameObject.activeSelf then
+                        isActive = true
+                        break
+                    end
+                end
+                if isActive then
+                    self:SetCurrentUiEffectActive(model.UiEffect, false)
+                    self:SetCurrentUiEffectActive(model.UiEffect, true)
+                end
+            end
+            if model.UiEquipEffect then
+                local isActive = false
+                for i = 1, #model.UiEquipEffect do
+                    local effect = model.UiEquipEffect[i]
+                    if effect.gameObject.activeSelf then
+                        isActive = true
+                        break
+                    end
+                end
+                if isActive then
+                    self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+                    self:SetCurrentUiEffectActive(model.UiEquipEffect, true)
+                end
+            end
+        end
+    end
+
+    if self.EffectDic then
+        local effectList = self.EffectDic["Customize_ModelLoopEffect"]
+        if effectList then
+            for _, effect in pairs(effectList) do
+                if effect.gameObject.activeSelf then
+                    -- 强制刷新
+                    effect.gameObject:SetActiveEx(false)
+                    effect.gameObject:SetActiveEx(true)
+                end
+            end
+        end
+    end
 end
 
 return XUiPanelRoleModel

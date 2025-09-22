@@ -738,6 +738,8 @@ function XUiLogin:DoLogin()
         local runMainProfiler = loginProfiler:CreateChild("RunMain")
         runMainProfiler:Start()
 
+        XDataCenter.CloudGameManager.OpenControlCameraByDragLocalCache()
+
         --打开水印窗口
         XLoginManager.CheckWaterMask()
 

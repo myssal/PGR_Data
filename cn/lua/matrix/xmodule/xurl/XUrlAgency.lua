@@ -41,7 +41,7 @@ function XUrlAgency:OnInit()
             return XHeroSdkManager.GetCurPkgId()
         end,
         ["channel_id"] = function(urlCfg)
-            return CS.XHeroSdkAgent.GetAppChannelId()
+            return CS.XHeroSdkAgent.GetChannelId()
         end,
         ["role_id"] = function(urlCfg)
             return XPlayer.Id
@@ -186,7 +186,7 @@ function XUrlAgency:_GetParamsStr(cfg)
     if XTool.IsNumberValidEx(cfg.ParamEncryptionType) then
         -- 需要对所有参数进行加密
         if cfg.ParamEncryptionType == ParamEncryptionType.Base64 then
-            concatStr = CS.XTool.ToBase64String(concatStr)
+            concatStr = 'params=' .. CS.XTool.ToBase64String(concatStr)
         end
     end
     

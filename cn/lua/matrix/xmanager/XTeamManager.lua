@@ -19,6 +19,7 @@ XTeamManagerCreator = function()
 
     local PlayerTeamGroupData = {}
     local PlayerTeamPrefabData = {}
+    local GeneralSkillRefreshTrigger = false
 
     local METHOD_NAME = {
         SetTeam = "TeamSetTeamRequest",
@@ -53,6 +54,16 @@ XTeamManagerCreator = function()
         end
         --EmptyTeam = XReadOnlyTable.Create(EmptyTeam)
         XTeamManager.EmptyTeam = EmptyTeam
+    end
+
+    function XTeamManager.SetGeneralSkillRefreshTrigger()
+        GeneralSkillRefreshTrigger = true
+    end
+
+    function XTeamManager.GetGeneralSkillRefreshTrigger()
+        local value = GeneralSkillRefreshTrigger
+        GeneralSkillRefreshTrigger = false
+        return value
     end
 
     function XTeamManager.GetTeamId(typeId, stageId)
@@ -825,7 +836,7 @@ XTeamManagerCreator = function()
                 CaptainPos = team:GetCaptainPos(),
                 FirstFightPos = team:GetFirstFightPos(),
                 TeamName = team:GetName(),
-                SelectedGeneralSkill = team:GetCurGeneralSkill(),
+                SelectedGeneralSkill = team:GetIsEmpty() and 0 or team:GetCurGeneralSkill(),
                 EnterCgIndex = team:GetEnterCgIndex(),
                 SettleCgIndex = team:GetSettleCgIndex(),
             }

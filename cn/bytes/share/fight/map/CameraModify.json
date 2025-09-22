@@ -3054,8 +3054,8 @@
         "Values": [
             0.6999,
             6.0,
-            8.0,
-            1.7999,
+            10.0,
+            0.8,
             70.0
         ]
     },
@@ -3181,28 +3181,256 @@
     {
         "Id": 912210,
         "Names": [
-            "DefaultFOV"
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
         ],
         "Values": [
-            60.0
+            60.0,
+            6.0,
+            10.0,
+            1.5,
+            0.6
         ]
     },
     {
         "Id": 912211,
         "Names": [
-            "DefaultFOV"
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
         ],
         "Values": [
-            60.0
+            60.0,
+            6.0,
+            10.0,
+            1.7,
+            0.6
         ]
     },
     {
         "Id": 912212,
         "Names": [
-            "DefaultFOV"
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
         ],
         "Values": [
-            60.0
+            60.0,
+            6.0,
+            10.0,
+            1.8999,
+            0.6
+        ]
+    },
+    {
+        "Id": 912213,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            2.5,
+            2.5
+        ]
+    },
+    {
+        "Id": 912214,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            2.0,
+            2.0
+        ]
+    },
+    {
+        "Id": 912215,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            1.5,
+            1.5
+        ]
+    },
+    {
+        "Id": 912216,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            3.0,
+            3.0
+        ]
+    },
+    {
+        "Id": 912217,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            2.5,
+            2.5
+        ]
+    },
+    {
+        "Id": 912218,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            2.0,
+            2.0
+        ]
+    },
+    {
+        "Id": 912219,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            0.0,
+            0.4
+        ]
+    },
+    {
+        "Id": 912220,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            0.0,
+            0.6
+        ]
+    },
+    {
+        "Id": 912221,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            0.0,
+            0.8
+        ]
+    },
+    {
+        "Id": 912222,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            8.0,
+            12.0,
+            0.0,
+            0.2
+        ]
+    },
+    {
+        "Id": 912223,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            0.0,
+            0.4
+        ]
+    },
+    {
+        "Id": 912224,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MinHeight",
+            "MaxHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            0.0,
+            0.6
         ]
     },
     {
@@ -3423,6 +3651,298 @@
             10.0,
             6.0,
             25.0
+        ]
+    },
+    {
+        "Id": 115374,
+        "Names": [
+            "FocusMovementCoefficient",
+            "FocusMaxAngle",
+            "FocusMinAngle"
+        ],
+        "Values": [
+            15.0,
+            30.0,
+            5.0
+        ]
+    },
+    {
+        "Id": 115376,
+        "Names": [
+            "FocusMovementCoefficient",
+            "FocusMaxAngle",
+            "FocusMinAngle"
+        ],
+        "Values": [
+            15.0,
+            10.0,
+            0.0
+        ]
+    },
+    {
+        "Id": 103903,
+        "Names": [
+            "FocusMinAngle",
+            "FocusMovementCoefficient"
+        ],
+        "Values": [
+            32.0,
+            20.0
+        ]
+    },
+    {
+        "Id": 806301,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            4.0,
+            10.0,
+            6.0,
+            0.6
+        ]
+    },
+    {
+        "Id": 806302,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            5.0,
+            10.0,
+            7.0,
+            0.6
+        ]
+    },
+    {
+        "Id": 806303,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            8.0,
+            0.6
+        ]
+    },
+    {
+        "Id": 806304,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            4.0,
+            10.0,
+            8.0,
+            2.5
+        ]
+    },
+    {
+        "Id": 806305,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            5.0,
+            10.0,
+            9.0,
+            2.0
+        ]
+    },
+    {
+        "Id": 806306,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            10.0,
+            1.5
+        ]
+    },
+    {
+        "Id": 806307,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            10.0,
+            10.0,
+            3.0
+        ]
+    },
+    {
+        "Id": 806308,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            10.0,
+            11.0,
+            2.5
+        ]
+    },
+    {
+        "Id": 806309,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            10.0,
+            12.0,
+            2.0
+        ]
+    },
+    {
+        "Id": 806310,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            4.0,
+            10.0,
+            4.0,
+            0.4
+        ]
+    },
+    {
+        "Id": 806311,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            5.0,
+            10.0,
+            5.0,
+            0.6
+        ]
+    },
+    {
+        "Id": 806312,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            6.0,
+            10.0,
+            6.0,
+            0.8
+        ]
+    },
+    {
+        "Id": 806313,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            12.0,
+            1.0,
+            0.2
+        ]
+    },
+    {
+        "Id": 806314,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            10.0,
+            2.0,
+            0.4
+        ]
+    },
+    {
+        "Id": 806315,
+        "Names": [
+            "DefaultFOV",
+            "FocusMinDistance",
+            "FocusMaxDistance",
+            "MaxHeight",
+            "MinHeight"
+        ],
+        "Values": [
+            60.0,
+            3.0,
+            10.0,
+            3.0,
+            0.6
         ]
     }
 ]

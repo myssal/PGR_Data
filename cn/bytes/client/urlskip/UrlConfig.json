@@ -9,6 +9,7 @@
         "PcEmbedType": 0,
         "IsLandscape": false,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "ExtendParams": [
             "qid=266220856"
         ],
@@ -26,7 +27,8 @@
         "IOSEmbedType": 0,
         "PcEmbedType": 0,
         "IsLandscape": false,
-        "IsPcLandscape": false
+        "IsPcLandscape": false,
+        "ParamEncryptionType": 0
     },
     {
         "Id": 3,
@@ -37,7 +39,8 @@
         "IOSEmbedType": 0,
         "PcEmbedType": 0,
         "IsLandscape": true,
-        "IsPcLandscape": true
+        "IsPcLandscape": true,
+        "ParamEncryptionType": 0
     },
     {
         "Id": 4,
@@ -49,6 +52,7 @@
         "PcEmbedType": 0,
         "IsLandscape": false,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
@@ -66,6 +70,7 @@
         "PcEmbedType": 0,
         "IsLandscape": false,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "ExtendParams": [
             "qid=268078209"
         ],
@@ -84,6 +89,7 @@
         "PcEmbedType": 0,
         "IsLandscape": false,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "ExtendParams": [
             "qid=268098555"
         ],
@@ -102,6 +108,7 @@
         "PcEmbedType": 1,
         "IsLandscape": true,
         "IsPcLandscape": true,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
@@ -118,6 +125,7 @@
         "PcEmbedType": 1,
         "IsLandscape": true,
         "IsPcLandscape": true,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
@@ -135,6 +143,7 @@
         "PcEmbedType": 1,
         "IsLandscape": true,
         "IsPcLandscape": true,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
@@ -152,6 +161,7 @@
         "PcEmbedType": 0,
         "IsLandscape": true,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
@@ -169,10 +179,35 @@
         "PcEmbedType": 0,
         "IsLandscape": false,
         "IsPcLandscape": false,
+        "ParamEncryptionType": 0,
         "UrlParams": [
             "token",
             "server_id",
             "cuid",
+            "cname"
+        ]
+    },
+    {
+        "Id": 12,
+        "Url": "http://10.0.146.42:4500/home",
+        "IsDisableAudio": false,
+        "IsTransparent": false,
+        "IsEmbed": false,
+        "IOSEmbedType": 0,
+        "PcEmbedType": 0,
+        "IsLandscape": false,
+        "IsPcLandscape": false,
+        "ParamEncryptionType": 1,
+        "UrlParams": [
+            "game_id=G148",
+            "channel_id",
+            "pkg_id",
+            "role_id",
+            "role_name",
+            "server_id",
+            "cuid",
+            "token",
+            "server_name",
             "cname"
         ]
     }

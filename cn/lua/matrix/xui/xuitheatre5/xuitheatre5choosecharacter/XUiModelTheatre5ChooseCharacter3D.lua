@@ -9,10 +9,15 @@ local DefaultRoleAnimaName = "StandAct0101"
 
 function XUiModelTheatre5ChooseCharacter3D:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
+    self:ResetAllActionAndUiEffect()
 end
 
 function XUiModelTheatre5ChooseCharacter3D:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
+    if self._TimerResetAllActionAndUiEffect then
+        XScheduleManager.UnSchedule(self._TimerResetAllActionAndUiEffect)
+        self._TimerResetAllActionAndUiEffect = false
+    end
 end
 
 function XUiModelTheatre5ChooseCharacter3D:OnDestroy()
@@ -26,22 +31,22 @@ function XUiModelTheatre5ChooseCharacter3D:LoadCharacters(characterCfgs)
     self.CharacterCfgs = characterCfgs
     ---@type XTheatre5CharacterAnimatorFSM[]
     self.CharacterAnimFSM = {}
-    
+
     self.CharaId2UiModelMap = {}
     self.CharaId2AnimFSMMap = {}
-    
+
     for i = 1, #characterCfgs do
-        local root = self['PanelRoleModel'..i]
+        local root = self['PanelRoleModel' .. i]
 
         if root then
             local cfg = self.CharacterCfgs[i]
             local mainlineFashionId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(cfg.Id)
             local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(cfg.Id)
-            
+
             self.UiPanelRoleModels[i] = XUiPanelRoleModel.New(root, 'UiTheatre5ChooseCharacter', true, true)
             self:UpdateRoleModelByHand(self.UiPanelRoleModels[i], cfg.CharacterId, mainlineFashionId, animatorController)
             self.UiPanelRoleModels[i]:ShowRoleModel()
-            
+
             self.CharacterAnimFSM[i] = XTheatre5CharacterAnimatorFSM.New(i, self, XMVCA.XTheatre5.EnumConst.CharacterAnimaState.FullView)
 
             self.CharaId2UiModelMap[cfg.Id] = self.UiPanelRoleModels[i]
@@ -49,15 +54,20 @@ function XUiModelTheatre5ChooseCharacter3D:LoadCharacters(characterCfgs)
         else
             break
         end
-        
     end
+    
+    -- 从新手战斗退出之后，从ui栈恢复ui时，出现动作和模型不一致问题，需要重置
+    self._TimerResetAllActionAndUiEffect = XScheduleManager.ScheduleNextFrame(function() 
+        self:ResetAllActionAndUiEffect()
+        self._TimerResetAllActionAndUiEffect = false
+    end)
 end
 
 function XUiModelTheatre5ChooseCharacter3D:RefreshCharacterShow(charaCfg)
     if not charaCfg then
         return
     end
-    
+
     local uiModel = self.CharaId2UiModelMap[charaCfg.Id]
 
     if uiModel then
@@ -65,9 +75,9 @@ function XUiModelTheatre5ChooseCharacter3D:RefreshCharacterShow(charaCfg)
         local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(charaCfg.Id)
 
         self:UpdateRoleModelByHand(uiModel, charaCfg.CharacterId, mainlineFashionId, animatorController)
-        
+
         -- 显示刷新特效
-        local posPoint = self['ModelChangedEffectRoot'..self._CurFocusIndex]
+        local posPoint = self['ModelChangedEffectRoot' .. self._CurFocusIndex]
 
         if posPoint then
             if self.FxUiHuanRen then
@@ -76,7 +86,7 @@ function XUiModelTheatre5ChooseCharacter3D:RefreshCharacterShow(charaCfg)
             end
         end
     end
-    
+
     local fsm = self.CharaId2AnimFSMMap[charaCfg.Id]
 
     if fsm then
@@ -97,11 +107,11 @@ function XUiModelTheatre5ChooseCharacter3D:SetCharactersVisible(characters, enab
         return
     end
     for _, characterId in pairs(characters) do
-        local root = self['PanelRoleModel'..characterId]
+        local root = self['PanelRoleModel' .. characterId]
         if root then
             root.gameObject:SetActiveEx(enable)
-        end    
-    end    
+        end
+    end
 end
 
 ---@param panelRoleModel XUiPanelRoleModel
@@ -127,7 +137,7 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
     if isSpecialModel and not isMultiModel then
         fashionModelName = XModelManager.GetSpecialModelId(fashionModelName, panelRoleModel.RefName)
     end
-    
+
     panelRoleModel:UpdateCharacterModel(characterId, nil, panelRoleModel.RefName, nil, nil, fashionId, nil, nil, nil, true)
     -- 加载animationController
     local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, panelRoleModel.RefName)
@@ -136,9 +146,9 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
         XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. runtimeControllerName .. " Ui名称：" .. panelRoleModel.RefName)
         return
     end
-    
+
     local animator = panelRoleModel:GetAnimator()
-    
+
     if animator then
         XModelManager.HandleUiModelNodeActive(DefaultRoleAnimaName, panelRoleModel.CurRoleName, panelRoleModel:GetCurRoleModel(), false)
         animator.runtimeAnimatorController = runtimeController
@@ -148,7 +158,7 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
         if loadAnimatioClip then
             CS.UnityEngine.Component.Destroy(loadAnimatioClip)
         end
-        
+
         -- 重新加载特效
         local actionId = panelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
 
@@ -159,7 +169,6 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
             weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
         end
         panelRoleModel:LoadCharacterUiEffect(characterId, actionId, nil, weaponFashionId, nil)
-
     end
 end
 
@@ -171,18 +180,18 @@ function XUiModelTheatre5ChooseCharacter3D:SetCharacterFocus(index)
     if XTool.IsNumberValid(self._CurFocusIndex) then
         -- 取消动画
         local animaFsm = self.CharacterAnimFSM[self._CurFocusIndex]
-        
+
         if animaFsm then
             animaFsm:SetState(XMVCA.XTheatre5.EnumConst.CharacterAnimaState.FullView)
         end
     end
 
     self._CurFocusIndex = index
-    
+
     -- 切换相机
     for i = 1, 100 do
-        local farCam = self['UiCamFarCharacter'..i]
-        local nearCam = self['UiCamNearCharacter'..i]
+        local farCam = self['UiCamFarCharacter' .. i]
+        local nearCam = self['UiCamNearCharacter' .. i]
 
         if not farCam and not nearCam then
             break
@@ -204,13 +213,13 @@ end
 function XUiModelTheatre5ChooseCharacter3D:PlayAnimaCross(index, type, noCross)
     local roleModel = self.UiPanelRoleModels[index]
     local charaCfg = self.CharacterCfgs[index]
-    
+
     if roleModel and charaCfg then
         local anima = nil
-        
+
         ---@type XTableTheatre5CharacterFashion
         local curFashionCfg = self._Control.CharacterControl:GetFashionCfgByCharacterIdInCurMode(charaCfg.Id)
-        
+
         if type == XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullView then
             anima = curFashionCfg.NoChooseAnima
         elseif type == XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch then
@@ -225,10 +234,21 @@ function XUiModelTheatre5ChooseCharacter3D:PlayAnimaCross(index, type, noCross)
 
         if not string.IsNilOrEmpty(anima) then
             if noCross then
-                roleModel:PlayAnima(anima)
+                roleModel:PlayAnima(anima, 0)
+                roleModel:ReplayUiLoopEffect()
             else
                 roleModel:PlayAnimaCross(anima)
+                roleModel:PlayCharacterUiEffect()
+                roleModel:ReplayUiLoopEffect()
             end
+        end
+    end
+end
+
+function XUiModelTheatre5ChooseCharacter3D:ResetAllActionAndUiEffect()
+    if self.CharacterCfgs then
+        for i = 1, #self.CharacterCfgs do
+            self:PlayAnimaCross(i, XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch, true)
         end
     end
 end

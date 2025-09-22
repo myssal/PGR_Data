@@ -342,6 +342,12 @@ local type = {
     CONDITION_PASSPORT_TASK_DAILY_RED = "XRedPointConditionPassportTaskDaily", --每日任务奖励可领取
     CONDITION_PASSPORT_TASK_WEEKLY_RED = "XRedPointConditionPassportTaskWeekly", --每周任务奖励可领取
     CONDITION_PASSPORT_TASK_ACTIVITY_RED = "XRedPointConditionPassportTaskActivity", --活动任务奖励可领取
+    --复合版本BP #203409
+    CONDITION_PASSPORT_COMB_RED = "XRedPointConditionPassportComb", --入口红点
+    CONDITION_PASSPORT_COMB_PANEL_REWARD_RED = "XRedPointConditionPassportCombPanelReward", --主界面奖励可领取
+    CONDITION_PASSPORT_COMB_TASK_DAILY_RED = "XRedPointConditionPassportCombTaskDaily", --每日任务奖励可领取
+    CONDITION_PASSPORT_COMB_TASK_WEEKLY_RED = "XRedPointConditionPassportCombTaskWeekly", --每周任务奖励可领取
+    CONDITION_PASSPORT_COMB_TASK_ACTIVITY_RED = "XRedPointConditionPassportCombTaskActivity", --活动任务奖励可领取
     --三消
     CONDITION_SAMECOLOR_TASK = "XRedPointConditionSCTask",
     CONDITION_SAMECOLOR_IS_CHALLENGE = "XRedPointConditionSCIsChallenge",
@@ -542,6 +548,8 @@ local type = {
     CONDITION_TEMPLE_CHALLENGE = "XRedPointConditionTempleChallenge",
     -- 春节累消
     CONDITION_ACCUMULATE_EXPEND_MAIN = "XRedPointConditionAccumulateExpend",
+    -- 合版本累消 #203409
+    CONDITION_ACCUMULATE_EXPEND_MAIN_COMB = "XRedPointConditionAccumulateExpendComb",
     -- 打地鼠红点
     CONDITION_HIT_MOUSE = "XRedpointConditionHitMouse",
     -- Boss跃升

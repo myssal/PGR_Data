@@ -3,115 +3,150 @@
         "Id": 1,
         "Name": "矿脉探测器",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex3V2P17.png",
-        "Desc": "召唤探测雷达，每隔一段时间发现一个高价值物品",
-        "DropMapGroupId": 53,
-        "BuffId": [
-            802
-        ]
+        "Desc": "召唤探测雷达，每隔一段时间发现1个高价值物品",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 110
     },
     {
         "Id": 2,
         "Name": "FULL COMBO",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex2.png",
-        "Desc": "成功抓取三次后扫描抓取两个物品，抓取的物品同色统计为万能牌",
-        "DropMapGroupId": 527,
-        "BuffId": [
-            702
-        ]
+        "Desc": "成功抓取3次后扫描抓取1个未被电磁链接的物品，抓取的物品视为相同种类",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 120
     },
     {
         "Id": 3,
         "Name": "三类接触",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4.png",
-        "Desc": "召唤宇宙飞碟抓取距离最近的物品，抓取的物品同色统计为万能牌",
-        "DropMapGroupId": 526,
-        "BuffId": [
-            701
-        ]
+        "Desc": "召唤宇宙飞碟抓取距离最近的物品，抓取的物品视为相同种类",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 130
     },
     {
         "Id": 4,
-        "Name": "强力抓手",
-        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex2V2P17.png",
-        "Desc": "可以抓取所有物品！",
-        "DropMapGroupId": 522,
-        "BuffId": [
-            803
-        ]
-    },
-    {
-        "Id": 5,
-        "Name": "磁力钩爪",
-        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex7V2P17.png",
-        "Desc": "长按就可以伸长的钩爪！会吸附沿途的全部物品",
-        "DropMapGroupId": 525,
-        "Anti": [
-            8
-        ],
-        "BuffId": [
-            504
-        ]
+        "Name": "辅助模式",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff29.png",
+        "Desc": "抓钩现在会显示瞄准线，并可以抓取所有物品",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 140
     },
     {
         "Id": 6,
-        "Name": "无取连锁",
-        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex6.png",
-        "Desc": "关卡内所有得分获得额外增益！",
-        "DropMapGroupId": 53,
-        "BuffId": [
-            214
-        ]
+        "Name": "无取连锁-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff03.png",
+        "Desc": "关卡内所有得分提升8%",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 160
     },
     {
         "Id": 7,
         "Name": "万能转换机",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4V2P17.png",
-        "Desc": "抓取的所有物品在同色奖励机制中都统计为万能牌",
-        "DropMapGroupId": 53,
-        "BuffId": [
-            806
-        ]
-    },
-    {
-        "Id": 8,
-        "Name": "超可动齿轮",
-        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex1V2P17.png",
-        "Desc": "抓取物品时，改为飞船向物品移动，并可以通过触碰抓取部分物品",
-        "DropMapGroupId": 521,
-        "Anti": [
-            5
-        ],
-        "BuffId": [
-            503,
-            807,
-            808,
-            809,
-            812,
-            813
-        ]
+        "Desc": "抓取的所有物品在同类点数奖励中都视为相同种类",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 170
     },
     {
         "Id": 9,
-        "Name": "加速涡轮",
+        "Name": "加速涡轮-1",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex6V2P17.png",
-        "Desc": "当前地图内，每成功抓取一次则提升钩爪速度，最多提高12次",
-        "DropMapGroupId": 523,
-        "BuffId": [
-            705
+        "Desc": "当前地图内，每成功抓取一次中幅提升钩爪速度，最多提高3次",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 190
+    },
+    {
+        "Id": 11,
+        "Name": "联动抓钩",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex12.png",
+        "Desc": "拓展为3个联动抓钩，可分别抓取物品",
+        "HexType": 1,
+        "DropMapGroupId": 701,
+        "HexUpgradeId": 210,
+        "Anti": [
+            27
         ]
     },
     {
-        "Id": 10,
-        "Name": "弹射钩爪",
-        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex5V2P17.png",
-        "Desc": "可以弹射一次的钩爪，并大大提升了钩爪速度",
-        "DropMapGroupId": 524,
-        "BuffId": [
-            805,
-            341,
-            810,
-            811,
-            814
+        "Id": 12,
+        "Name": "抓取速度提升-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff30.png",
+        "Desc": "抓取速度小幅提升",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 220
+    },
+    {
+        "Id": 13,
+        "Name": "抓取尺寸提升-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff27.png",
+        "Desc": "抓钩尺寸小幅提升",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 230
+    },
+    {
+        "Id": 14,
+        "Name": "来聊聊价格吧-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff06.png",
+        "Desc": "获得资源点数会在-6%~+12%之间波动",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 260
+    },
+    {
+        "Id": 15,
+        "Name": "时间增加-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex3.png",
+        "Desc": "开局增加10秒额外关卡时间",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 270
+    },
+    {
+        "Id": 26,
+        "Name": "电磁连锁模块",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex11.png",
+        "Desc": "每隔7秒，将最上方的1个物品和最下方的2个物品链接，抓取任一则可全部抓取",
+        "HexType": 1,
+        "DropMapGroupId": 704,
+        "HexUpgradeId": 360
+    },
+    {
+        "Id": 27,
+        "Name": "网射抓钩",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex13.png",
+        "Desc": "抓钩变成网！首次发射进入预瞄状态，再次发射则向区域撒网，抓取区域内的物品",
+        "HexType": 1,
+        "DropMapGroupId": 702,
+        "HexUpgradeId": 370,
+        "Anti": [
+            11
         ]
+    },
+    {
+        "Id": 28,
+        "Name": "无中生有模块",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex14.png",
+        "Desc": "所有物品的价值提升25%；抓取特定物品后，有60%的概率在物品原地生成一个复制品",
+        "HexType": 1,
+        "DropMapGroupId": 703,
+        "HexUpgradeId": 380
+    },
+    {
+        "Id": 29,
+        "Name": "飞船加速-1",
+        "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff26.png",
+        "Desc": "飞船的移动速度小幅提升",
+        "HexType": 2,
+        "DropMapGroupId": 0,
+        "HexUpgradeId": 383
     }
 ]

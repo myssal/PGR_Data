@@ -20,7 +20,6 @@ function XTeam:Ctor(id, isStandAlone)
     -- -- 默认不限制
     -- self.CharacterLimitType = XFubenConfigs.CharacterLimitType.All
     self.CustomCharacterType = nil
-    self._RemoveSelectGeneralSkillTrigger = nil
     self:LoadTeamData()
 end
 
@@ -41,6 +40,7 @@ function XTeam:UpdateSaveCallback(callback)
 end
 
 function XTeam:UpdateEntityTeamPos(entityId, teamPos, isJoin)
+    local beforeJoinPosEntityId = self.EntitiyIds[teamPos]
     if isJoin then
         if self:CheckHasSameCharacterId(entityId, teamPos) and XTool.IsNumberValid(entityId) then
             XLog.CustomReport(XEnumConst.CustomReportModuleId.XTeam, "UpdateEntityTeamPos JoinId:", entityId, "AllEntityIdInTeam", self.EntitiyIds)
@@ -64,6 +64,17 @@ function XTeam:UpdateEntityTeamPos(entityId, teamPos, isJoin)
         end
         self:UpdateGenernalSkillsByEntityId(entityId, true, true)
     end
+
+    -- EnableCheckAmplifierAndSameElement的角色才启用
+    local needDispatchEvent = 
+        XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) 
+        or (XTool.IsNumberValid(beforeJoinPosEntityId) 
+            and XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(beforeJoinPosEntityId))
+
+    if needDispatchEvent then
+        XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER, self)
+    end
+
     self:Save()
 end
 
@@ -544,8 +555,6 @@ function XTeam:SetGeneralSkills(entityId, skillIds, isRemove, noAutoSave)
                 self._GenernalSkills[value] = nil
                 if self.SelectedGeneralSkill == value then
                     self:UpdateSelectGeneralSkill(0, noAutoSave)
-                    self._RemoveSelectGeneralSkillTrigger = true
-                    XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_REMOVE_AND_GENERALSELECT_SKILLID)
                 end
             end
         else
@@ -557,12 +566,6 @@ function XTeam:SetGeneralSkills(entityId, skillIds, isRemove, noAutoSave)
 
         :: continue ::
     end
-end
-
-function XTeam:CheckAndUseRemoveSelectGeneralSkillTrigger()
-    local res = self._RemoveSelectGeneralSkillTrigger
-    self._RemoveSelectGeneralSkillTrigger = false
-    return res
 end
 
 --- 刷新队伍的效应技能
@@ -585,6 +588,10 @@ function XTeam:ClearGeneralSkill()
     self._GenernalSkills = nil
 end
 
+function XTeam:IsNoGeneralSkillSelected()
+    return self.SelectedGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT
+end
+
 ---@param keepOldData @是否需要保持旧数据，如果没有发生成员变动，这时可能是需要检查成员新解锁的效应，数据只增不减，可以选择不清空数据
 function XTeam:RefreshGeneralSkills(autoSelect, keepOldData)
     -- 刷新需要保证已经选择的效应不被重置（还存在的情况下）
@@ -594,7 +601,7 @@ function XTeam:RefreshGeneralSkills(autoSelect, keepOldData)
     local hasLastSelecedGeneralSkill = false
     if not XTool.IsTableEmpty(self._GenernalSkills) then
         for generalSkillId, linkCharaList in pairs(self._GenernalSkills) do
-            if generalSkillId == lastSelectGeneralSkill then
+            if generalSkillId == lastSelectGeneralSkill or lastSelectGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
                 hasLastSelecedGeneralSkill = true
                 break
             end
@@ -648,24 +655,21 @@ function XTeam:CheckAmplifierAndSameElement()
 end
 
 function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
-    local aimSkillId = 0
-
-    -- 先处理传入的默认技能列表
     if not XTool.IsTableEmpty(defaultSkillIds) then
-        for _, skillId in ipairs(defaultSkillIds) do
-            if not XTool.IsTableEmpty(self._GenernalSkills[skillId]) then
+        local aimSkillId = 0
+        for index, value in ipairs(defaultSkillIds) do
+            if not XTool.IsTableEmpty(self._GenernalSkills[value]) then
                 if aimSkillId == 0 then
-                    aimSkillId = skillId
+                    aimSkillId = value
                 else
-                    local newCount = XTool.GetTableCount(self._GenernalSkills[skillId])
+                    local newCount = XTool.GetTableCount(value)
                     local oldCount = XTool.GetTableCount(self._GenernalSkills[aimSkillId])
-                    if newCount > oldCount then
-                        aimSkillId = skillId
+                    if newCount > oldCount then -- 如果新的技能角色数最多，则选新技能
+                        aimSkillId = value
                     end
                 end
             end
         end
-
         if XTool.IsNumberValid(aimSkillId) then
             self:UpdateSelectGeneralSkill(aimSkillId)
             return
@@ -673,7 +677,7 @@ function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
     end
 
     local isEnableCheckAmplifierAndSameElement = false
-    for i, entityId in ipairs(self.EntitiyIds) do        
+    for i, entityId in ipairs(self:GetEntityIds()) do        
         if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) then
             isEnableCheckAmplifierAndSameElement = true
             break
@@ -682,35 +686,31 @@ function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
 
     -- 增幅职业 + 全属性一致判断
     if isEnableCheckAmplifierAndSameElement and self:CheckAmplifierAndSameElement() then
-        self:UpdateSelectGeneralSkill(0)
+        self:UpdateSelectGeneralSkill(XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT)
         return
     end
 
-    -- 若没有默认技能可用，且编队不满足增幅统一属性条件，则选择最佳技能
-    if not XTool.IsTableEmpty(self._GenernalSkills) then
-        aimSkillId = self:GetBestGeneralSkillId()
-        self:UpdateSelectGeneralSkill(aimSkillId)
+    if XTool.IsTableEmpty(self._GenernalSkills) then
+        return
     end
-end
-
--- 找出关联角色最多，若数量相等则取 Id 最小的技能
-function XTeam:GetBestGeneralSkillId()
+    --找出关联角色最多且Id最小的技能
     local aimSkillId = 0
-    for skillId, relatedChars in pairs(self._GenernalSkills) do
+    for key, value in pairs(self._GenernalSkills) do
         if aimSkillId == 0 then
-            aimSkillId = skillId
+            aimSkillId = key
         else
-            local newCount = XTool.GetTableCount(relatedChars)
+            local newCount = XTool.GetTableCount(value)
             local oldCount = XTool.GetTableCount(self._GenernalSkills[aimSkillId])
-
-            if newCount > oldCount then
-                aimSkillId = skillId
-            elseif newCount == oldCount and skillId < aimSkillId then
-                aimSkillId = skillId
+            if newCount > oldCount then -- 如果新的技能角色数最多，则选新技能
+                aimSkillId = key
+            elseif newCount == oldCount then -- 如果两个技能角色数量相等，则选Id小的那一个
+                if key < aimSkillId then
+                    aimSkillId = key
+                end
             end
         end
     end
-    return aimSkillId
+    self:UpdateSelectGeneralSkill(aimSkillId)
 end
 
 function XTeam:GetObservationActiveCareer()

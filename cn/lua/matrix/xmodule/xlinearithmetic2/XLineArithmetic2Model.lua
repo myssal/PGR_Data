@@ -116,6 +116,9 @@ function XLineArithmetic2Model:SetEditorGameData(gameData)
 end
 
 function XLineArithmetic2Model:GetConfigActivityTimeId(activityId)
+    if not activityId then
+        return false
+    end
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticActivity, activityId)
     if not config then
         return false
@@ -124,6 +127,10 @@ function XLineArithmetic2Model:GetConfigActivityTimeId(activityId)
 end
 
 function XLineArithmetic2Model:GetTaskList()
+    if not self._ActivityId then
+        return {}
+    end
+    
     ---@type XTableLineArithmeticActivity
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticActivity, self._ActivityId)
     if not config then

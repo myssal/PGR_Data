@@ -349,6 +349,9 @@ end
 
 function XUiRiftCharacter:OnBtnQuitTeamClick()
     local curRolePos = self.XTeam:GetEntityIdPos(self.CurrSelectRole:GetId())
+    if curRolePos == -1 then
+        return
+    end
     self.XTeam:UpdateEntityTeamPos(nil, curRolePos, true)
     self:Close()
 end

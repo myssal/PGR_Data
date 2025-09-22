@@ -119,10 +119,18 @@ function XStrongholdTeamMember:SetInTeam(characterId, playerId)
     else
         self:SetCharacterId(characterId, playerId)
     end
+
+    if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(characterId) then
+        XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER, self)
+    end
 end
 
 --下阵
 function XStrongholdTeamMember:KickOutTeam()
+    local entityId = self:GetInTeamCharacterId()
+    if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) then
+        XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER, self)
+    end
     self:ResetCharacters()
 end
 

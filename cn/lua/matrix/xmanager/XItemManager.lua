@@ -106,6 +106,8 @@ XItemManagerCreator = function()
         RogueSimCoin = 96193, -- 渡边模拟器货币
         QuickReasonanceCoin = 3005, -- 快速共鸣代币
         MuralShareCoin = 63601, -- 壁画分享活动货币
+        -- #203409 跨版本代码
+        PassportCombExp = 400077,   -- 合并BP经验Id
         EquipAwakeCoin1 = 70001, -- 意识超频代币1
         EquipAwakeCoin2 = 70002, -- 意识超频代币2
         Theatre4TechTreeCoin = 96200, -- 肉鸽4外循环货币

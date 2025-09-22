@@ -5,7 +5,7 @@ local XInputManager = CS.XInputManager
 
 function XUiOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId, curOperationType)
     self:SetData(data, cb, curInputMapId, curOperationType)
-    
+
     local isKeyboard = self:IsKeyboard()
     local operationKey = self.DefaultKeyMapTable and self.DefaultKeyMapTable.OperationKey
 
@@ -16,14 +16,14 @@ function XUiOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId, 
         self.GroupRecommend.gameObject:SetActiveEx(not isKeyboard)
 
         local keyCodeType = CS.XInputManager.GetKeyCodeTypeByInt(operationKey, self.CurInputMapId, self.CurOperationType)
-        local isCustom = CS.XUiPcManager.PCForceSetKeyCode or XInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
-        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XUiPcManager.PCForceSetKeyCode
+        local isCustom = CS.XUiPc.XUiPcManager.PCForceSetKeyCode or XInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurOperationType)
+        local oneKeyIsCustom = (keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom or keyCodeType == XSetConfigs.KeyCodeType.OneKeyCustom) and not CS.XUiPc.XUiPcManager.PCForceSetKeyCode
         self.BtnKeyItem.enabled = isCustom or oneKeyIsCustom
         local name = XInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.One)
         self.BtnKeyItem:SetName(name)
         if isCustom or oneKeyIsCustom then
             self.BtnKeyItem.CallBack = function()
-                if keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom and not CS.XUiPcManager.PCForceSetKeyCode then
+                if keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom and not CS.XUiPc.XUiPcManager.PCForceSetKeyCode then
                     XLuaUiManager.Open("UiMouseButtonConfig")
                 elseif oneKeyIsCustom then
                     XUiManager.TipMsg(CS.XTextManager.GetText("PcKeyBoardButtonNoCusTip"))
@@ -32,7 +32,7 @@ function XUiOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId, 
                 end
             end
         end
-        
+
         isCustom = XInputManager.IsCustomKey(operationKey, 1, self._KeySetType, self.CurOperationType)
         self.BtnKeyItem2.enabled = isCustom
         name = XInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.Two)

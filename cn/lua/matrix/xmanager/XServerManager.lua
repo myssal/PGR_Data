@@ -49,6 +49,10 @@ function XServerManager.NextLoginUrlIndex()
 end
 
 function XServerManager.SelectChannelServer(notTip)
+    -- en始终以ServerList为准, 不可以清空
+    if XOverseaManager.IsENRegion() then
+        return
+    end
     ServerList = {}
     local channel = XUserManager.LoginChannel and tostring(XUserManager.LoginChannel) or nil--这里调用获取渠道接口
     local channelServer = nil
@@ -81,7 +85,7 @@ function XServerManager.Init(cb)
 
     ServerList = {}
     ChannelServerList = {}
-    if XDataCenter.UiPcManager.IsPcServer() then
+    if XDataCenter.UiPcManager.IsPcServer() and not XOverseaManager.IsENRegion() then
         if not string.IsNilOrEmpty(CS.XRemoteConfig.ChannelServerListStr) then
             --CS.XLog.Debug("ChannelServerListStr:" .. CS.XRemoteConfig.ChannelServerListStr)
             local strs = string.Split(CS.XRemoteConfig.ChannelServerListStr, "|")

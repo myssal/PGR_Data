@@ -144,7 +144,7 @@ function XUiSignCard:RefreshGet()
         return
     end
 
-    self.TxtLeftDay.text = data.DailyRewardRemainDay
+    self.TxtLeftDay.text = data.DailyRewardRemainDay -1
     self.BtnContinue.gameObject:SetActive(data.DailyRewardRemainDay < self.Config.CanBuyDay)
     if data.IsDailyRewardGet then
         self.BtnGet:SetButtonState(CS.UiButtonState.Disable)

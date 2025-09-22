@@ -172,7 +172,6 @@ function XFubenModel:OnInit()
     self.CheckStageIsUnlockHandler = {}
     self.CheckStageIsPassHandler = {}
     self.CustomRecordFightBeginDataHandler = {}
-    self.CacheStageTeamHasSetGeneralSkillId = {}
     
     self._StageInfo = {}
 end

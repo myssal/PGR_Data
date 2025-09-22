@@ -470,19 +470,18 @@ XFunctionalSkipManagerCreator = function()
             return false
         end
         local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
+        -- #203409 原本无执行逻辑, 跨版本结束后可以删除
+        local curSectionId = XFunctionalSkipManager.PrepareActivity(param1)
         local sectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId() or 1
         -- 活动时间限制
         if not XDataCenter.FubenActivityBossSingleManager.IsOpen() then
             XUiManager.TipText("RougeLikeNotInActivityTime")
 
             -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-            XFunctionalSkipManager.OnActivityBossSingleNotOpen()
+            XFunctionalSkipManager.OnActivityBossSingleNotOpen(curSectionId)
 
             return false
         end
-
-        -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-        XFunctionalSkipManager.OnActivityBossSingleOpen()
 
         return XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
     end
@@ -491,7 +490,7 @@ XFunctionalSkipManagerCreator = function()
         if (not param1) or (not XDataCenter.FubenActivityBossSingleManager.IsChallengeUnlock(param1)) then
             return XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
         else
-            XLuaUiManager.Open("UiActivityBossSingleDetail", param1)
+            XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
             return true
         end
     end
@@ -2441,8 +2440,20 @@ XFunctionalSkipManagerCreator = function()
         end
         return uiName
     end
+
+    function XFunctionalSkipManager.PrepareActivity(param1)
+        local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
+        if param1 and curSectionId ~= 0 then
+            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))
+            if sectionCfg and sectionCfg.ActivityId then
+                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(tonumber(param1))
+                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
+            end
+        end
+        return curSectionId
+    end
     
-    function XFunctionalSkipManager.OnActivityBossSingleNotOpen()
+    function XFunctionalSkipManager.OnActivityBossSingleNotOpen(curSectionId)
         if not XDataCenter.CrossVersionManager.GetEnable() then
             return
         end
@@ -2454,24 +2465,6 @@ XFunctionalSkipManagerCreator = function()
                 XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
             end
         end
-    end
-    
-    function XFunctionalSkipManager.OnActivityBossSingleOpen()
-        if not XDataCenter.CrossVersionManager.GetEnable() then
-            return
-        end
-        local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
-        if param1 and curSectionId ~= 0 then
-            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))
-            if sectionCfg and sectionCfg.ActivityId then
-                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(tonumber(param1))
-                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
-            end
-        end
-    end
-    
-    function XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
-        XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
     end
     
     -- 跳转战斗通行证Comb
