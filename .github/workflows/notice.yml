@@ -53,12 +53,12 @@ jobs:
           PREV=$(cat prev.json)
           CUR=$(cat curr.json)
 
-          DIFF=$(jq -n --argjson prev "$PREV" --argjson curr "$CUR" '
-            ($curr | to_entries)
-            | map(select(.value != "" and .value != ($prev[.key] // "")))
-            | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
-            | join("\n")
-          ')
+          DIFF=$(jq -n -r --argjson prev "$PREV" --argjson curr "$CUR" '
+              ($curr | to_entries)
+              | map(select(.value != "" and .value != ($prev[.key] // "")))
+              | map("\(.key) [\($prev[.key] // "empty")] -> [\(.value)]")
+              | join("\n")
+            ')
 
           if [ -z "$DIFF" ]; then
             echo "No meaningful changes detected"
