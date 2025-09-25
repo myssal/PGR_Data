@@ -168,6 +168,9 @@ function XHeroSdkManager.OnLoginSuccess(uid, username, token, loginChannel)
 end
 
 function XHeroSdkManager.OnLoginFailed(msg)
+    if XOverseaManager.IsOverSeaRegion() then
+        return
+    end
     XLog.Error("Hero sdk login failed. " .. msg)
     IsSdkLogined = false
     CS.XRecord.Record("24032", "HeroSdkLoginFailed")

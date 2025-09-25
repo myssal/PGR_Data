@@ -193,10 +193,11 @@ end
 
 function XRiftAgency:ExOpenMainUi()
     if not self:GetIsOpen() then
-        return
+        return false
     end
     -- 打开主界面
     self:OpenMain()
+    return true
 end
 
 function XRiftAgency:ExCheckInTime()

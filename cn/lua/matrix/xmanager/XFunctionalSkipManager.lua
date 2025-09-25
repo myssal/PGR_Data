@@ -1163,7 +1163,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
+        return XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================

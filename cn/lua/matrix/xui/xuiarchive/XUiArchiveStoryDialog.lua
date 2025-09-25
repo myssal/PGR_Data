@@ -17,7 +17,11 @@ function XUiArchiveStoryDialog:Init()
     local title = self.Data:GetName()
     if self.Data:GetSubName() then
         local tmpText = string.gsub(self.Data:GetSubName(), "_", "-")
-        title = string.format("%s%s",tmpText,self.Data:GetName())
+        if XOverseaManager.IsKRRegion() then
+            title = string.format("%s %s",tmpText,self.Data:GetName())
+        else
+            title = string.format("%s%s",tmpText,self.Data:GetName())
+        end
     end
     self.TxtStoryDec.text = title
     self.TxtStoryName.text = self.Data:GetDesc()

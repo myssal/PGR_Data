@@ -518,7 +518,7 @@ function XUiLogin:AutoAddListener()
 end
 
 function XUiLogin:LoadNetworkPanel()
-    if not XOverseaManager.IsENRegion() then
+    if not XOverseaManager.IsENRegion() and not XOverseaManager.IsKRRegion() then
         return
     end
     local uiLoginNetworkModePanel = require("XUi/XUiLogin/XUiLoginNetworkModePanel")

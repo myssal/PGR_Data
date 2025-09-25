@@ -16,7 +16,7 @@ function XUiPurchaseYKListItem:SetData(data, finishedFunc)
     self.PurchasePackage = data
     self.FinishedFunc = finishedFunc
     self.YKUiItemConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(data:GetId())
-    local remainDay = not XOverseaManager.IsENRegion() and data:GetDailyRewardRemainDay() or data:GetDailyRewardRemainDay() - 1
+    local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data:GetDailyRewardRemainDay() or data:GetDailyRewardRemainDay() - 1
     if remainDay < 0 then
         remainDay = 0
     end

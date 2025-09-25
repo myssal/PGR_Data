@@ -19,6 +19,14 @@ end
 
 function XUiSignCard:OnShow()
     XEventManager.AddEventListener(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN, self.Refresh, self)
+    if XOverseaManager.IsJPRegion() then
+        if self.TxtCount1 then
+            self.TxtCount1.text = CS.XTextManager.GetText("JPYKfirst")
+        end
+        if self.TxtCount2 then
+            self.TxtCount2.text = CS.XTextManager.GetText("JPYKfirst")
+        end
+    end
 end
 
 function XUiSignCard:RegisterClickEvent(uiNode, func)
@@ -144,7 +152,11 @@ function XUiSignCard:RefreshGet()
         return
     end
 
-    self.TxtLeftDay.text = data.DailyRewardRemainDay -1
+    local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
+    if remainDay < 0 then
+        remainDay = 0
+    end
+    self.TxtLeftDay.text = remainDay
     self.BtnContinue.gameObject:SetActive(data.DailyRewardRemainDay < self.Config.CanBuyDay)
     if data.IsDailyRewardGet then
         self.BtnGet:SetButtonState(CS.UiButtonState.Disable)

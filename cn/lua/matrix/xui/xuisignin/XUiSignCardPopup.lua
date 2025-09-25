@@ -30,7 +30,11 @@ function XUiSignCardPopup:RefreshGet()
         return
     end
     
-    self.TxtLeftDay.text = data.DailyRewardRemainDay -1
+    local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
+    if remainDay < 0 then
+        remainDay = 0
+    end
+    self.TxtLeftDay.text = remainDay
     if data.IsDailyRewardGet then
         self.BtnGet:SetButtonState(CS.UiButtonState.Disable)
     else
