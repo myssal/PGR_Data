@@ -40,7 +40,6 @@ function XTeam:UpdateSaveCallback(callback)
 end
 
 function XTeam:UpdateEntityTeamPos(entityId, teamPos, isJoin)
-    local beforeJoinPosEntityId = self.EntitiyIds[teamPos]
     if isJoin then
         if self:CheckHasSameCharacterId(entityId, teamPos) and XTool.IsNumberValid(entityId) then
             XLog.CustomReport(XEnumConst.CustomReportModuleId.XTeam, "UpdateEntityTeamPos JoinId:", entityId, "AllEntityIdInTeam", self.EntitiyIds)
@@ -64,17 +63,6 @@ function XTeam:UpdateEntityTeamPos(entityId, teamPos, isJoin)
         end
         self:UpdateGenernalSkillsByEntityId(entityId, true, true)
     end
-
-    -- EnableCheckAmplifierAndSameElement的角色才启用
-    local needDispatchEvent = 
-        XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) 
-        or (XTool.IsNumberValid(beforeJoinPosEntityId) 
-            and XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(beforeJoinPosEntityId))
-
-    if needDispatchEvent then
-        XEventManager.DispatchEvent(XEventId.EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER, self)
-    end
-
     self:Save()
 end
 
@@ -588,10 +576,6 @@ function XTeam:ClearGeneralSkill()
     self._GenernalSkills = nil
 end
 
-function XTeam:IsNoGeneralSkillSelected()
-    return self.SelectedGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT
-end
-
 ---@param keepOldData @是否需要保持旧数据，如果没有发生成员变动，这时可能是需要检查成员新解锁的效应，数据只增不减，可以选择不清空数据
 function XTeam:RefreshGeneralSkills(autoSelect, keepOldData)
     -- 刷新需要保证已经选择的效应不被重置（还存在的情况下）
@@ -601,7 +585,7 @@ function XTeam:RefreshGeneralSkills(autoSelect, keepOldData)
     local hasLastSelecedGeneralSkill = false
     if not XTool.IsTableEmpty(self._GenernalSkills) then
         for generalSkillId, linkCharaList in pairs(self._GenernalSkills) do
-            if generalSkillId == lastSelectGeneralSkill or lastSelectGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
+            if generalSkillId == lastSelectGeneralSkill then
                 hasLastSelecedGeneralSkill = true
                 break
             end
@@ -619,39 +603,6 @@ end
 
 function XTeam:CheckHasGeneralSkills()
     return not XTool.IsTableEmpty(self._GenernalSkills)
-end
-
--- 检查队伍中是否存在增幅角色且所有角色为同一属性
-function XTeam:CheckAmplifierAndSameElement()
-    local entityIds = self:GetEntityIds()
-    local hasAmplifier = false
-    local firstElementId = nil
-    local allSameElement = true
-
-    for _, entityId in ipairs(entityIds) do
-        if XTool.IsNumberValid(entityId) then
-            -- 处理特殊实体（Rouge1 / Rouge2）
-            local fixedId = self:GetSpecialEntityId(entityId)
-            fixedId = XTool.IsNumberValid(fixedId) and fixedId or entityId
-
-            -- 检查职业（是否为增幅）
-            local career = XMVCA.XCharacter:GetCharacterCareer(fixedId)
-            if career == XEnumConst.CHARACTER.Career.Amplifier then
-                hasAmplifier = true
-            end
-
-            -- 检查属性是否一致
-            local elementId = XMVCA.XCharacter:GetCharacterElement(fixedId)
-            if firstElementId == nil and XTool.IsNumberValid(elementId) then
-                firstElementId = elementId
-            elseif firstElementId ~= elementId then
-                allSameElement = false
-                break
-            end
-        end
-    end
-
-    return hasAmplifier and allSameElement
 end
 
 function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
@@ -674,20 +625,6 @@ function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
             self:UpdateSelectGeneralSkill(aimSkillId)
             return
         end
-    end
-
-    local isEnableCheckAmplifierAndSameElement = false
-    for i, entityId in ipairs(self:GetEntityIds()) do        
-        if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) then
-            isEnableCheckAmplifierAndSameElement = true
-            break
-        end
-    end
-
-    -- 增幅职业 + 全属性一致判断
-    if isEnableCheckAmplifierAndSameElement and self:CheckAmplifierAndSameElement() then
-        self:UpdateSelectGeneralSkill(XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT)
-        return
     end
 
     if XTool.IsTableEmpty(self._GenernalSkills) then

@@ -13,7 +13,7 @@ function XUiGridRewardTip:GetRewardGoodsId(rewardId)
     if _ActivityId > maxId then
         rewardGoodsId = XStrongholdConfigs.GetRewardGoodsId(rewardId)  
     else
-        rewardGoodsId = XStrongholdConfigs.GetSpecialRewardId(rewardId, maxId)   
+        rewardGoodsId = XStrongholdConfigs.GetSpecialRewardId(rewardId)   
     end
     return rewardGoodsId
 end

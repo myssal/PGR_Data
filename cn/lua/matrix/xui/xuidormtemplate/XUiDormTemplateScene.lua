@@ -69,7 +69,6 @@ function XUiDormTemplateScene:OnBtnBackClick()
             end, function()
                 self:OnBtnSaveClick()
             end)
-            return
         else
             self:BackToDormMain()
         end

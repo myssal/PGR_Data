@@ -192,10 +192,6 @@ function XLineArithmetic2Agency:ExGetFunctionNameType()
 end
 
 function XLineArithmetic2Agency:IsShowRedDot()
-    if not self._Model:GetActivityId() then
-        return false
-    end
-    
     if self:ExGetIsLocked() then
         return false
     end

@@ -39,7 +39,7 @@ function XUiPurchasePayListItem:SetData()
         end
     end
 
-    local amount = not XOverseaManager.IsOverSeaRegion() and self.ItemData.Amount or self.ItemData.ShowAmount
+    local amount = not XOverseaManager.IsENRegion() and self.ItemData.Amount or self.ItemData.ShowAmount
     self.TxtYuan.text = CS.XTextManager.GetText(self.ItemData.Currency, amount)
     self.TxtYuan.gameObject:SetActiveEx(true)
 

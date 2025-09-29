@@ -248,8 +248,24 @@ local Creator = function()
     function XUiLaunchUi:OnStartUi()
         self:OnStart()
     end
+
     function XUiLaunchUi:OnStart()
         self._IsUseChannelCdn = CS.XUriPrefix.GetIsUseChannelCdn() --是否使用了分渠道cdn
+        
+        if CS.XKuro.Localization.Data.Language.CN ~= CS.XLocalizationManager.Instance.Language then
+            self:HideHealthTip()
+        end
+    end
+
+    function XUiLaunchUi:HideHealthTip()
+        if self.UiLoading then -- 海外屏蔽健康提示十六字真言(不想改UI免得还得修改)
+            for i = 1, self.UiLoading.transform.childCount do
+                local child = self.UiLoading.transform:GetChild(i-1)
+                if child.name == "Text" then
+                    child.gameObject:SetActiveEx(false)
+                end
+            end
+        end
     end
 
     function XUiLaunchUi:OnEnableUi()

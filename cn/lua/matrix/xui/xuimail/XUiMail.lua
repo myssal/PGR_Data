@@ -212,8 +212,6 @@ function XUiMail:ShowMailInfoNormal(mailInfo)
         content = self._Control:FixSurveyContent(mailInfo)
     end
     
-    content = self._Control:FixCommonUrlContent(content)
-    
     if self._Control:HasMailReward(mailInfo.Id) then
         self.PanelContent.gameObject:SetActiveEx(true)
         self.PanelExpire.gameObject:SetActiveEx(false)
@@ -581,18 +579,6 @@ function XUiMail:SetRewardStatus(mailId)
 end
 
 function XUiMail:ClickLink(url)
-    if string.find(url, '^urlId=.+') then
-        local urlId = string.match(url,'urlId=(.+)')
-
-        if string.IsNumeric(urlId) then
-            if XMVCA.XUrl:SkipByUrlId(tonumber(urlId)) then
-                return
-            end
-        else
-            XLog.Error('检查到特殊的传参：' .. tostring(url) .. '，但urlId不是个数值：'..tostring(urlId))    
-        end
-    end
-
     CS.UnityEngine.Application.OpenURL(url)
 end
 

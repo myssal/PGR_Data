@@ -415,7 +415,6 @@ XEnumConst = {
         IS_NEW_CHARACTER = true,
         MAX_QUALITY_STAR = 10,
         MAX_QUALITY = 6,
-        GENERALSKILLID_NONESELECT = 9999,
         QualityState = {
             Activing = 1,
             EvoEnable = 2,

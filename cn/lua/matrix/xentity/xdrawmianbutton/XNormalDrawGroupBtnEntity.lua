@@ -61,11 +61,10 @@ end
 
 function XNormalDrawGroupBtnEntity:GetBottomText()
     local bottomText = CSTextManagerGetText("NewDrawMainBottomText")
-    local space = not XOverseaManager.IsENRegion() and "" or " "
     if self:GetCfg().SpecialBottomMin > 0 and self:GetCfg().SpecialBottomMax > 0 then
-        return string.format("%s%s%d/%d~%d", bottomText, space, self.BottomTimes, self:GetCfg().SpecialBottomMin, self:GetCfg().SpecialBottomMax)
+        return string.format("%s%d/%d~%d", bottomText, self.BottomTimes, self:GetCfg().SpecialBottomMin, self:GetCfg().SpecialBottomMax)
     else
-        return string.format("%s%s%d/%d", bottomText, space, self.BottomTimes, self.MaxBottomTimes)
+        return string.format("%s%d/%d", bottomText, self.BottomTimes, self.MaxBottomTimes)
     end
 end
 

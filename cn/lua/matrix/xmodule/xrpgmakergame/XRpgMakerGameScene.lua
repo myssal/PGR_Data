@@ -80,37 +80,6 @@ function XRpgMakerGameScene:OnSceneLoadComplete()
         self:SetSceneActive(true)
         self.DelayTimer = nil
     end, delay)
-
-    -- 注册事件
-    self:RegisterEvents()
-end
-
-function XRpgMakerGameScene:RegisterEvents()
-    local beijing = XUiHelper.TryGetComponent(self.GameObject.transform, "GroupBase/Beijing")
-    local childCnt = beijing.transform.childCount
-    for i = 1, childCnt do
-        local childGo = beijing:GetChild(i - 1)
-        if childGo.gameObject.name == "Plane" and childGo.gameObject.activeSelf then -- 场景还有一个隐藏的Plane，代码处理获取显示的Plane
-            self.Plane = childGo
-            break
-        end
-    end
-    
-    self.GoInputHandler = self.Plane:GetComponent(typeof(CS.XGoInputHandler))
-    if XTool.UObjIsNil(self.GoInputHandler) then
-        self.GoInputHandler = self.Plane.gameObject:AddComponent(typeof(CS.XGoInputHandler))
-    end
-
-    self.GoInputHandler:AddPointerDownListener(function(eventData) self:OnPointerDown(eventData) end)
-    self.GoInputHandler:AddPointerUpListener(function(eventData) self:OnPointerUp(eventData) end)
-end
-
-function XRpgMakerGameScene:OnPointerDown()
-    XDataCenter.RpgMakerGameManager.FirePointerDownObjectCallback()
-end
-
-function XRpgMakerGameScene:OnPointerUp()
-    XDataCenter.RpgMakerGameManager.FirePointerUpObjectCallback()
 end
 
 function XRpgMakerGameScene:GetConfig()

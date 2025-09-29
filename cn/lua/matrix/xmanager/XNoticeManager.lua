@@ -701,11 +701,8 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.CheckHaveNotice(type)
-        --海外才有Link，国内不判断
-        if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-            if type == InGameNoticeType.Link then
-                return true
-            end
+        if type == InGameNoticeType.Link then
+            return true
         end
         XNoticeManager.RequestNoticeByType(XNoticeType.InGame, true)
         if not InGameNoticeMap then

@@ -77,33 +77,48 @@ function XUiPanelDownloadTips:RegisterGridClickCb(cb)
 end
 
 function XUiPanelDownloadTips:RefreshDynamicTable()
-    local dataString = CS.XLaunchManager.LaunchConfig:GetString("LaunchDownloadResIdList")
-    
     local t = {}
-    -- 提取每个双引号包裹的内容
-    for content in string.gmatch(dataString, '"(.-)"') do
-        -- 提取名称、描述和资源ID部分
-        local name, desc, rest = string.match(content, "([^|]+)|([^|]+)|(.*)")
-        if not name or not desc then
-            error("无效格式: " .. content)
+
+    -- 遍历 LaunchRemoveSelectResIds 的所有键值对
+    local storage = CS.XLaunchManager.LaunchRemoveSelectResIds
+    if storage == nil then
+        error("LaunchRemoveSelectResIds is nil")
+        return
+    end
+
+    -- keyValuePairs 是 List<KeyValueData>
+    local pairs = storage.keyValuePairs
+    for i = 0, pairs.Length - 1 do
+        local kv = pairs[i]
+        local k = kv.Key
+        local v = kv.Value
+
+        -- 通过 XBuiltinText 解析真实key
+        local realKey = CS.XApplication.GetText(k)
+        if not realKey or realKey == "" then
+            error("无效 realKey, key = " .. tostring(k))
         end
 
+        local name, desc = string.match(realKey, "([^|]+)|([^|]+)")
+        if not name or not desc then
+            error("realKey 格式错误: " .. tostring(realKey))
+        end
+
+        -- 解析 value，转成数字数组
         local resIds = {}
-        -- 在 rest 后添加一个竖线，确保最后的数字也能被正确提取
-        local restWithDelimiter = rest .. "|"
-        -- 使用 gmatch 正确分割每个数字部分
-        for numStr in string.gmatch(restWithDelimiter, "([^|]*)|") do
+        local vWithDelimiter = v .. "|"
+        for numStr in string.gmatch(vWithDelimiter, "([^|]*)|") do
             if numStr ~= "" then
                 local num = tonumber(numStr)
                 if num then
                     table.insert(resIds, num)
                 else
-                    error("无效数字格式: " .. numStr)
+                    error("无效数字格式: " .. numStr .. ", key=" .. tostring(k))
                 end
             end
         end
 
-        -- 构建最终表结构
+        -- 构建表结构
         table.insert(t, {
             Name = name,
             Desc = desc,

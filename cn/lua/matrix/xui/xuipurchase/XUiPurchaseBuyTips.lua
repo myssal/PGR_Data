@@ -139,6 +139,8 @@ function XUiPurchaseBuyTips:Init()
     self:SetUiActive(self.TxtSection, false)
 
     self.TxtRed.gameObject:SetActiveEx(false)
+    
+    self._SignGiftPackLoader = self.SignGiftPackNode:GetLoader()
 end
 
 function XUiPurchaseBuyTips:AutoRegisterListener()
@@ -856,7 +858,8 @@ function XUiPurchaseBuyTips:CheckSignLBAndOpen(signInId, signInPrefabClass, isWe
         local purchaseSignTip = self.PurchaseSignTipDic[self.CurPrefabPath]
         if not purchaseSignTip then
             -- 生成对应prefab的实例
-            local go = self.SignGiftPackNode:LoadPrefabEx(self.CurPrefabPath)
+            local prefab = self._SignGiftPackLoader:Load(self.CurPrefabPath)
+            local go = CS.UnityEngine.GameObject.Instantiate(prefab, self.SignGiftPackNode)
             go.gameObject:SetLayerRecursively(self.SignGiftPackNode.gameObject.layer)
             purchaseSignTip = signInPrefabClass.New(go, self)
             

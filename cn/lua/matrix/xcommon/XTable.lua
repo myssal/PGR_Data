@@ -245,7 +245,6 @@ XTable = {
         CareerIcon = ValueTypestring,
         FullBodyImg = ValueTypestring,
         LiberationShowType = ValueTypebool,
-        EnableCheckAmplifierAndSameElement = ValueTypebool,
     },
     XTableCharacterRecommend = {
         Id = ValueTypeint,

@@ -17,14 +17,14 @@ function XUiGridStrongholdGeneralSkill:Refresh()
     
     -- 强制开启一次刷新
     _team:RefreshGeneralSkillOption()
-    local hasGeneralSkill = _team:CheckHasGeneralSkills()
+    local hasGeneralSkill = XTool.IsNumberValid(_team:GetCurGeneralSkill()) and true or false
     
     self.BtnGeneralSkill.gameObject:SetActiveEx(hasGeneralSkill)
     self.BtnGeneralSkillNotactive.gameObject:SetActiveEx(not hasGeneralSkill)
+
     
-    
-    local generalSkillId = _team:GetCurGeneralSkill()
     if hasGeneralSkill then
+        local generalSkillId = _team:GetCurGeneralSkill()
         if XTool.IsNumberValid(generalSkillId) then
             local genralSkillConfig = XMVCA.XCharacter:GetModelCharacterGeneralSkill()[generalSkillId]
 
@@ -33,7 +33,7 @@ function XUiGridStrongholdGeneralSkill:Refresh()
             self.TxtGenera.text = genralSkillConfig.Name
         else
             -- 默认选择
-            _team:AutoSelectGeneralSkill()
+            self.Parent.Team:AutoSelectGeneralSkill()
 
             generalSkillId = _team:GetCurGeneralSkill()
             local genralSkillConfig = XMVCA.XCharacter:GetModelCharacterGeneralSkill()[generalSkillId]

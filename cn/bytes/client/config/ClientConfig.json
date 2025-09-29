@@ -2907,7 +2907,7 @@
     {
         "Key": "SkyGardenGuideData",
         "Type": "string",
-        "Value": "Assets/Product/Behavior/BigWorld/SkyGarden/Guide/SkyGardenGuideData.bytes"
+        "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
     },
     {
         "Key": "RogueLikeBossNode",
@@ -4665,6 +4665,16 @@
         "Value": 5000
     },
     {
+        "Key": "XUiLottoFashionSelfChoiceDialogConfirmCD",
+        "Type": "int",
+        "Value": 5000
+    },
+    {
+        "Key": "XUiGachaFashionSelectGridCD",
+        "Type": "int",
+        "Value": 600
+    },
+    {
         "Key": "BossInshotSettlementShowStage",
         "Type": "string",
         "Value": "15010303|15010306|15010308|15010310|15010312|15010313|15010314"
@@ -4713,5 +4723,40 @@
         "Key": "CharacterGuideId",
         "Type": "string",
         "Value": 61210
+    },
+    {
+        "Key": "IsCombBP",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "BPDailyUpdateTime",
+        "Type": "int",
+        "Value": 10000
+    },
+    {
+        "Key": "PurchaseBtnLaw1Show",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "PurchaseBtnLaw2Show",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "OpenMovieThirdGender",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "OpenMovieSkipThirdGender",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CrossVersionEnable",
+        "Type": "int",
+        "Value": 0
     }
 ]

@@ -310,6 +310,7 @@ local module_creator = function()
 
     -- 检测资源列表文件
     CheckIndexFile = function()
+        CS.XHeroSdkAgent.ApplogEvent("Version_Checking_Start","")
         local documentFilePath = DocumentFilePath .. "/" .. ResFileType .. "/" .. INDEX
         local keepLocalIndex = CS.System.IO.File.Exists(DocumentFilePath .. "/DevelopmentIndex") -- 用于Release环境不清理本地index文件（兼顾覆盖安装和手动放资源的情况）
 
@@ -627,6 +628,7 @@ local module_creator = function()
     end
 
     ResolveResIndex = function()
+        CS.XHeroSdkAgent.ApplogEvent("Version_Checking_End","")
         local applicationIndexPath = ApplicationFilePath .. "/" .. ResFileType .. "/" .. INDEX
         if NeedLaunchTest and IsDlcBuild then
             applicationIndexPath = LaunchTestDirApp .. "/" .. ResFileType .. "/" .. INDEX
@@ -1417,7 +1419,7 @@ local module_creator = function()
     DownloadFiles = function()
         CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD, UpdateSize)
         CheckPlayCG()
-        
+        CS.XHeroSdkAgent.ApplogEvent("Resource_Download_Start","")
         local DownloadFilesAction = function()
             CsApplication.SetMessage("") -- CsApplication.GetText("GameUpdate")
             CsApplication.SetProgress(0)
@@ -1573,7 +1575,7 @@ local module_creator = function()
         dict["app_channel_id"] = CS.XHeroSdkAgent.GetAppChannelId()
         dict["cdn"] = CSUriPrefix:GetFirstCdn() --因为cdn会轮询有多个，所以只能取第一个
         DoRecord(dict, "80012", "DownloadNewFilesEnd")
-
+        CS.XHeroSdkAgent.ApplogEvent("Resource_Download_End","")
         OnCompleteResFilesInit()
     end
 

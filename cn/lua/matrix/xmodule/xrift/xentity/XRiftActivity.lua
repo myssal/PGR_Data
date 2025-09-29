@@ -83,9 +83,7 @@ end
 
 function XRiftActivity:AddFightLayerDropPlugin(layerId, value)
     local layer = self:GetFightLayerDataById(layerId)
-    if layer then
-        layer.PluginDropRecords = value
-    end
+    layer.PluginDropRecords = value
 end
 
 ---@param layer RiftFightLayerData

@@ -16,11 +16,7 @@ function XUiPurchaseYKListItem:SetData(data, finishedFunc)
     self.PurchasePackage = data
     self.FinishedFunc = finishedFunc
     self.YKUiItemConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(data:GetId())
-    local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data:GetDailyRewardRemainDay() or data:GetDailyRewardRemainDay() - 1
-    if remainDay < 0 then
-        remainDay = 0
-    end
-    self.TxtTimeTip.text = XUiHelper.GetText("PurchaseYKTimeTip", remainDay)
+    self.TxtTimeTip.text = XUiHelper.GetText("PurchaseYKTimeTip", data:GetDailyRewardRemainDay())
     self.TxtTimeTip.gameObject:SetActiveEx(XPurchaseConfigs.IsYKID(data:GetId()))
     self.TxtCountLimit.text = XUiHelper.GetText("PurchaseYKLimitCountTip", data:GetCurrentBuyTime(), data:GetBuyLimitTime())
     local tips = self.YKUiItemConfig.Tips

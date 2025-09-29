@@ -52,9 +52,6 @@ function XUiRiftSettleWin:InitPluginShow()
 end
 
 function XUiRiftSettleWin:Refresh()
-    if self.IsMopUp then
-        return
-    end
     local riftSettleResult = self.Data
     local currXFightLayer = self._Control:GetEntityFightLayerById(self.LayerId)
     self.CurrXFightLayer = currXFightLayer

@@ -64,7 +64,6 @@ end
 function XUiPhotographPanel:Hide()
     self.GameObject:SetActiveEx(false)
     self:UpdateViewState(not self.BtnHide:GetToggleState())
-    self._ForbidBtnClick = false
 end
 
 function XUiPhotographPanel:InitMenuBtnGroup()
@@ -375,9 +374,6 @@ function XUiPhotographPanel:OnBtnPhotographVerticalClick()
     if XDataCenter.UiPcManager.IsPc() then
         return
     end
-    if self._ForbidBtnClick then --切换页签播放切换动画时 不可点击
-        return
-    end
     XPhotographConfigs.CsRecord(XGlobalVar.BtnPhotograph.BtnUiPhotographBtnPhotographVertical)
     RunAsyn(function()
         local fashionId = self.RootUi.SelectFashionId
@@ -488,11 +484,7 @@ function XUiPhotographPanel:SetInfoTextName(textName)
 end
 
 function XUiPhotographPanel:PlayPanelListAnim(menuBtnType)
-    self.RootUi:PlayAnimation("Qiehuan", function()
-        self._ForbidBtnClick = false
-    end, function()
-        self._ForbidBtnClick = true --直接使用PlayAnimationWithMask的话 切换页签会变得不流畅
-    end)
+    self.RootUi:PlayAnimation("Qiehuan")
     --if menuBtnType == MenuBtnType.Scene then
         --self.RootUi:PlayAnimation("PanelSceneListEnable")
     --elseif menuBtnType == MenuBtnType.Character then

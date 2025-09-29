@@ -495,5 +495,30 @@
             "每次研发获取各种奖励的概率不同，【第5次】开始即有概率获得【绮愿稚梦】涂装； 可前往【掉落详情】查看每次研发获得各种奖励的概率",
             "研发次数达到【8次】，可获得额外奖励【绮愿稚梦头像】"
         ]
+    },
+    {
+        "Id": 21,
+        "Name": "征程补给",
+        "Tag": 2,
+        "Priority": 18,
+        "UiType": 1,
+        "UiPrefab": "UiLotto",
+        "Banner": "Assets/Product/Ui/ComponentPrefab/DrawCoating/DrawCoating04.prefab",
+        "UiBackGround": "Assets/Product/Ui/ComponentPrefab/DrawBackGround/DrawBackGround01.prefab",
+        "RuleHint": "<color=#fa8f26><size=28>10回</size></color>必出<color=#fa8f26><size=28>核心层</size></color>奖励",
+        "BaseRuleTitles": [
+            "奖励说明",
+            "研发消耗",
+            "货币获取",
+            "浮动概率",
+            "额外奖励"
+        ],
+        "BaseRules": [
+            "所有奖励均为限量物品，抽取后无法再次获得；完成【10次】研发必定获取【S级泛用机体任选】包",
+            "每次研发均需要消耗【决锋研发券】，且研发消耗递增；  每次研发消耗：50/200/400/600/800/1200/1600/2000/2500/3150",
+            "研发所需的【决锋研发券】数目不足时，可消耗活动角色研发券或狙击武器研发券兑换；两种货币均可兑换等额的【决锋研发券】",
+            "每次研发获取各种奖励的概率不同，【第5次】开始即有概率获得【S级泛用机体任选】包； 可前往【掉落详情】查看每次研发获得各种奖励的概率",
+            "研发次数达到【8次】，可获得额外奖励【A级辅助机自选】包"
+        ]
     }
 ]

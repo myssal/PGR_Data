@@ -470,18 +470,19 @@ XFunctionalSkipManagerCreator = function()
             return false
         end
         local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
-        -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-        local curSectionId = XFunctionalSkipManager.PrepareActivity(param1)
         local sectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId() or 1
         -- 活动时间限制
         if not XDataCenter.FubenActivityBossSingleManager.IsOpen() then
             XUiManager.TipText("RougeLikeNotInActivityTime")
 
             -- #203409 原本无执行逻辑, 跨版本结束后可以删除
-            XFunctionalSkipManager.OnActivityBossSingleNotOpen(curSectionId)
+            XFunctionalSkipManager.OnActivityBossSingleNotOpen()
 
             return false
         end
+
+        -- #203409 原本无执行逻辑, 跨版本结束后可以删除
+        XFunctionalSkipManager.OnActivityBossSingleOpen(list)
 
         return XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
     end
@@ -490,7 +491,7 @@ XFunctionalSkipManagerCreator = function()
         if (not param1) or (not XDataCenter.FubenActivityBossSingleManager.IsChallengeUnlock(param1)) then
             return XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
         else
-            XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
+            XLuaUiManager.Open("UiActivityBossSingleDetail", param1)
             return true
         end
     end
@@ -1163,7 +1164,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        return XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
+        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================
@@ -2440,20 +2441,8 @@ XFunctionalSkipManagerCreator = function()
         end
         return uiName
     end
-
-    function XFunctionalSkipManager.PrepareActivity(param1)
-        local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
-        if param1 and curSectionId ~= 0 then
-            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))
-            if sectionCfg and sectionCfg.ActivityId then
-                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(tonumber(param1))
-                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
-            end
-        end
-        return curSectionId
-    end
     
-    function XFunctionalSkipManager.OnActivityBossSingleNotOpen(curSectionId)
+    function XFunctionalSkipManager.OnActivityBossSingleNotOpen()
         if not XDataCenter.CrossVersionManager.GetEnable() then
             return
         end
@@ -2465,6 +2454,25 @@ XFunctionalSkipManagerCreator = function()
                 XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
             end
         end
+    end
+    
+    function XFunctionalSkipManager.OnActivityBossSingleOpen(list)
+        if not XDataCenter.CrossVersionManager.GetEnable() then
+            return
+        end
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
+        local curSectionId = XDataCenter.FubenActivityBossSingleManager.GetCurSectionId()
+        if param1 and curSectionId ~= 0 then
+            local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(tonumber(param1))
+            if sectionCfg and sectionCfg.ActivityId then
+                XDataCenter.FubenActivityBossSingleManager.SetCurSectionId(tonumber(param1))
+                XDataCenter.FubenActivityBossSingleManager.SetCurActivityId(sectionCfg.ActivityId)
+            end
+        end
+    end
+    
+    function XFunctionalSkipManager.OpenActivityBossSingleMainUi(param1, sectionId)
+        XDataCenter.FubenActivityBossSingleManager.ExOpenMainUi(nil,sectionId)
     end
     
     -- 跳转战斗通行证Comb

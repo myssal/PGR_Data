@@ -137,16 +137,7 @@ function XUiRiftFightLayerSelect:RefreshStageList()
     for i, fightLayer in ipairs(resourceList) do
         local grid = self._Grids[i]
         if not grid then
-            local parent
-            if isEndless then
-                parent = self["StageEndless" .. nodeIdx]
-            else
-                if i == #resourceList then
-                    parent = self.Stage5 --最后一关放在Stage5的位置上（居中）
-                else
-                    parent = self["Stage" .. nodeIdx]
-                end
-            end
+            local parent = isEndless and self["StageEndless" .. nodeIdx] or self["Stage" .. nodeIdx]
             if not parent then
                 goto CONTINUE
             end

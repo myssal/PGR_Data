@@ -2,17 +2,6 @@
     {
         "Id": 1,
         "OnlyRedPoint": 0,
-        "TimeId": 41701,
-        "Condition": 770402,
-        "SkipId": 20297,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnQicheng4.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_LOTTO_MAIN_ENTER",
-        "Param": 0
-    },
-    {
-        "Id": 2,
-        "OnlyRedPoint": 0,
         "TimeId": 41101,
         "Condition": 1050219,
         "SkipId": 90021,
@@ -22,7 +11,7 @@
         "Param": 0
     },
     {
-        "Id": 3,
+        "Id": 2,
         "OnlyRedPoint": 0,
         "TimeId": 41101,
         "Condition": 1050215,
@@ -32,7 +21,7 @@
         "Param": 0
     },
     {
-        "Id": 4,
+        "Id": 3,
         "OnlyRedPoint": 0,
         "TimeId": 41101,
         "Condition": 1050216,
@@ -42,7 +31,7 @@
         "Param": 0
     },
     {
-        "Id": 5,
+        "Id": 4,
         "OnlyRedPoint": 0,
         "TimeId": 41101,
         "Condition": 1050217,
@@ -52,7 +41,7 @@
         "Param": 0
     },
     {
-        "Id": 6,
+        "Id": 5,
         "OnlyRedPoint": 0,
         "TimeId": 41101,
         "Condition": 1050218,
@@ -62,7 +51,68 @@
         "Param": 0
     },
     {
+        "Id": 6,
+        "OnlyRedPoint": 0,
+        "TimeId": 38658,
+        "Condition": 1050140,
+        "SkipId": 90033,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLottoFashion.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_LOTTO_FASHION_SELF_CHOICE",
+        "Param": 0
+    },
+    {
         "Id": 7,
+        "OnlyRedPoint": 0,
+        "TimeId": 38658,
+        "Condition": 1050134,
+        "SkipId": 90026,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLunaLotto.png",
+        "ActivityType": 0,
+        "Param": 0
+    },
+    {
+        "Id": 8,
+        "OnlyRedPoint": 0,
+        "TimeId": 38658,
+        "Condition": 1050135,
+        "SkipId": 90027,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnVeraLotto.png",
+        "ActivityType": 0,
+        "Param": 0
+    },
+    {
+        "Id": 9,
+        "OnlyRedPoint": 0,
+        "TimeId": 38658,
+        "Condition": 1050136,
+        "SkipId": 90028,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnKareninaEpicLotto.png",
+        "ActivityType": 0,
+        "Param": 0
+    },
+    {
+        "Id": 10,
+        "OnlyRedPoint": 0,
+        "TimeId": 38658,
+        "Condition": 1050137,
+        "SkipId": 90029,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLifuChouka.png",
+        "ActivityType": 0,
+        "Param": 0
+    },
+    {
+        "Id": 11,
+        "OnlyRedPoint": 0,
+        "TimeId": 39200,
+        "Condition": 774800,
+        "SkipId": 90035,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnSelenaGacha.png",
+        "ActivityType": 0,
+        "Param": 0
+    },
+    {
+        "Id": 12,
         "OnlyRedPoint": 1,
         "TimeId": 41802,
         "Condition": 70111,
@@ -73,9 +123,20 @@
         "Param": 555
     },
     {
-        "Id": 8,
+        "Id": 13,
         "OnlyRedPoint": 0,
-        "TimeId": 41810,
+        "TimeId": 40202,
+        "Condition": 774800,
+        "SkipId": 11724,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBossActivity08.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_ACTIVITYBRIE_BOSSSINGLE",
+        "Param": 0
+    },
+    {
+        "Id": 14,
+        "OnlyRedPoint": 0,
+        "TimeId": 40408,
         "Condition": 774800,
         "SkipId": 89094,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnSoloReform.png",
@@ -84,80 +145,157 @@
         "Param": 0
     },
     {
-        "Id": 9,
+        "Id": 15,
         "OnlyRedPoint": 0,
-        "TimeId": 41811,
+        "TimeId": 39104,
+        "Condition": 774800,
+        "SkipId": 89049,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnFangKuai3.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_FANGKUAI_MAIN",
+        "Param": 0
+    },
+    {
+        "Id": 16,
+        "OnlyRedPoint": 0,
+        "TimeId": 39704,
+        "Condition": 30406,
+        "SkipId": 82060,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnHitMouse3.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_HIT_MOUSE",
+        "Param": 0
+    },
+    {
+        "Id": 17,
+        "OnlyRedPoint": 0,
+        "TimeId": 39111,
+        "Condition": 774800,
+        "SkipId": 89095,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnSummerFashionV306.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_FASHION_STORY_ENTRANCE",
+        "Param": 0
+    },
+    {
+        "Id": 18,
+        "OnlyRedPoint": 0,
+        "TimeId": 39305,
+        "Condition": 774800,
+        "SkipId": 85016,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnGuildWarThree.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_GUILDWAR_Main",
+        "Param": 0
+    },
+    {
+        "Id": 19,
+        "OnlyRedPoint": 0,
+        "TimeId": 39807,
+        "Condition": 772280,
+        "SkipId": 20015,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBabelTower01.png",
+        "ActivityType": 2,
+        "RedPointConditions": "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD",
+        "Param": 1
+    },
+    {
+        "Id": 20,
+        "OnlyRedPoint": 0,
+        "TimeId": 39808,
+        "Condition": 772280,
+        "SkipId": 20015,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBabelTower01.png",
+        "ActivityType": 2,
+        "RedPointConditions": "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD",
+        "Param": 1
+    },
+    {
+        "Id": 21,
+        "OnlyRedPoint": 0,
+        "TimeId": 39911,
+        "Condition": 774800,
+        "SkipId": 89092,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_THEATRE5_MAIN",
+        "Param": 0
+    },
+    {
+        "Id": 22,
+        "OnlyRedPoint": 0,
+        "TimeId": 40102,
+        "Condition": 30406,
+        "SkipId": 20091,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLivWarm08.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_LIV_WARM_ACTIVITY_SUMMARY",
+        "Param": 0
+    },
+    {
+        "Id": 23,
+        "OnlyRedPoint": 0,
+        "TimeId": 39505,
+        "Condition": 0,
+        "SkipId": 20284,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBiankaV306.png",
+        "ActivityType": 2,
+        "RedPointConditions": "CONDITION_FAVORABILITY_PLOT",
+        "Param": 1041005
+    },
+    {
+        "Id": 24,
+        "OnlyRedPoint": 0,
+        "TimeId": 40701,
+        "Condition": 774800,
+        "SkipId": 89062,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnDye.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_LINE_ARITHMETIC",
+        "Param": 0
+    },
+    {
+        "Id": 25,
+        "OnlyRedPoint": 0,
+        "TimeId": 40801,
+        "Condition": 774800,
+        "SkipId": 90018,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnPokerGuess202.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_POKER_GUESSING2",
+        "Param": 0
+    },
+    {
+        "Id": 26,
+        "OnlyRedPoint": 0,
+        "TimeId": 40503,
+        "Condition": 774800,
+        "SkipId": 89092,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_THEATRE5_MAIN",
+        "Param": 0
+    },
+    {
+        "Id": 27,
+        "OnlyRedPoint": 0,
+        "TimeId": 41701,
+        "Condition": 770402,
+        "SkipId": 20297,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnQicheng4.png",
+        "ActivityType": 1,
+        "RedPointConditions": "CONDITION_LOTTO_MAIN_ENTER",
+        "Param": 0
+    },
+    {
+        "Id": 31,
+        "OnlyRedPoint": 0,
+        "TimeId": 41809,
         "Condition": 774800,
         "SkipId": 20177,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnGoldenMiner.png",
         "ActivityType": 1,
         "RedPointConditions": "CONDITION_GOLDEN_MINER_REWARD",
-        "Param": 0
-    },
-    {
-        "Id": 10,
-        "OnlyRedPoint": 0,
-        "TimeId": 41812,
-        "Condition": 774800,
-        "SkipId": 89092,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_THEATRE5_MAIN",
-        "Param": 0
-    },
-    {
-        "Id": 11,
-        "OnlyRedPoint": 0,
-        "TimeId": 41813,
-        "Condition": 774800,
-        "SkipId": 89092,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_THEATRE5_MAIN",
-        "Param": 0
-    },
-    {
-        "Id": 12,
-        "OnlyRedPoint": 0,
-        "TimeId": 41814,
-        "Condition": 30406,
-        "SkipId": 20128,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnRpgMakerGame.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_RPG_MAKER_GAME_RED",
-        "Param": 0
-    },
-    {
-        "Id": 13,
-        "OnlyRedPoint": 0,
-        "TimeId": 41803,
-        "Condition": 30406,
-        "SkipId": 20140,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnMineSweeping7.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_MINSWEEPING_RED",
-        "Param": 0
-    },
-    {
-        "Id": 14,
-        "OnlyRedPoint": 0,
-        "TimeId": 41804,
-        "Condition": 84601800,
-        "SkipId": 80201,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnRiftV3P8.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_RIFT_ENTRANCE",
-        "Param": 0
-    },
-    {
-        "Id": 15,
-        "OnlyRedPoint": 0,
-        "TimeId": 41602,
-        "Condition": 774800,
-        "SkipId": 11724,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBossActivity09.png",
-        "ActivityType": 1,
-        "RedPointConditions": "CONDITION_ACTIVITYBRIE_BOSSSINGLE",
         "Param": 0
     }
 ]

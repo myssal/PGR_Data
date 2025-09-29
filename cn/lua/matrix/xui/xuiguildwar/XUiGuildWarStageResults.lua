@@ -82,9 +82,6 @@ function XUiGuildWarStageResults:OnStart(nodeIds, callBack)
     self.RewardDatas = rewardDatas
     self.DynamicTable:SetDataSource(rewardDatas)
     self.DynamicTable:ReloadDataSync(1)
-    if self.TxtTitle then
-        self.TxtTitle.text = CS.XTextManager.GetText("GuildWarStageResultsBreak")
-    end
 end
 
 function XUiGuildWarStageResults:OnDestroy()

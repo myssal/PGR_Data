@@ -338,11 +338,6 @@ end
 function XPassportCombControl:GetBuyRewardShowIdList(passportId)
     return self._Model:GetBuyRewardShowIdList(passportId)
 end
-
-function XPassportCombControl:GetAlarmClockList(id)
-    return XTaskConfig.GetAlarmClockById(id)
-end
-
 -----------------PassportBuyRewardShowConfig 购买通行证界面展示的道具相关 end------------------------------
 
 ----------------- 无限区奖励 start----------------------------

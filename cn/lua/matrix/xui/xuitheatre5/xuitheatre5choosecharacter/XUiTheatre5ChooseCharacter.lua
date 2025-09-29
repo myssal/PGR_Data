@@ -160,7 +160,7 @@ function UiTheatre5ChooseCharacter:OnClickSkipFashion()
         if XFunctionManager.IsCanSkipCheckTime(self._SkipId) then
             XFunctionManager.SkipInterface(self._SkipId)
         else
-            XUiManager.TipText("Theatre5FashionOutOfDate")
+            XUiManager.TipText("TaskStateOverdue")
         end
     else
         XLog.Error("[UiTheatre5ChooseCharacter] skipId有问题:" .. tostring(self._SkipId))

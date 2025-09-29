@@ -39,24 +39,7 @@ local TabTag2NoticeInfo = {
         Name = XUiHelper.GetText("NoticeTypeTitle2")
     }
 }
- --海外新增外链页签
-    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-        SortNoticeTag = { NoticeTag.GameNotice, NoticeTag.ActivityNotice,NoticeTag.ActivityNotice + 1 }
-        TabTag2NoticeInfo = {
-            [NoticeTag.ActivityNotice] = {
-                Type = GameNoticeType.Activity,
-                Name = XUiHelper.GetText("NoticeTypeTitle1")
-            },
-            [NoticeTag.GameNotice] = {
-                Type = GameNoticeType.Game,
-                Name = XUiHelper.GetText("NoticeTypeTitle2")
-            },
-            [NoticeTag.ActivityNotice + 1] = {
-            Type = GameNoticeType.Link,
-            Name = XUiHelper.GetText("JPNoticeTypeTitle3")
-            }
-        }
-    end
+
 local HtmlContent = {}
 
 
@@ -71,7 +54,7 @@ function XUiAnnouncement:OnStart(noticeType, defaultSelectId)
     selectIndex = self:GetValidIndex(selectIndex)
     if not selectIndex then
         self:Close()
-        return XUiManager.TipText("NoInGameNotice")
+        XUiManager.TipText("NoInGameNotice")
     end
     self.DefaultSelectId = defaultSelectId
     self.PanelTopTabGroup:SelectIndex(selectIndex)
@@ -89,7 +72,14 @@ function XUiAnnouncement:InitUi()
     self.DynamicTable:SetDelegate(self)
     self.DynamicTable:SetProxy(XUiGridAnnouncementBtn)
     self.GridBtn.gameObject:SetActiveEx(false)
-   
+    --海外新增外链页签
+    if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+        table.insert(SortNoticeTag, NoticeTag.ActivityNotice + 1)
+        TabTag2NoticeInfo[NoticeTag.ActivityNotice + 1] = {
+            Type = GameNoticeType.Link,
+            Name = XUiHelper.GetText("JPNoticeTypeTitle3")
+        }
+    end
     --页签
     self.BtnTabs = {}
     for key, idx in ipairs(SortNoticeTag) do
@@ -380,8 +370,7 @@ end
 --region   ------------------UI事件 start-------------------
 
 function XUiAnnouncement:OnSelectTag(index)
-
-    if index == self.TabIndex  then
+    if index == self.TabIndex then
         return
     end
     self:CheckTabRedPoint()

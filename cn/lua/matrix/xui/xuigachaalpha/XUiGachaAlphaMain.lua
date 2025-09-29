@@ -103,10 +103,6 @@ function XUiGachaAlphaMain:OnDisable()
 end
 
 function XUiGachaAlphaMain:OnDestroy()
-    if self._WeaponFashionTimer then
-        XScheduleManager.UnSchedule(self._WeaponFashionTimer)
-        self._WeaponFashionTimer = nil
-    end
     self._ShowCourseRewardTrigger = nil
     self._DoGachaTrigger = nil
     --self.LightControlTimeline:Stop()
@@ -625,18 +621,21 @@ function XUiGachaAlphaMain:DoGacha(gachaCount, isSkipToShow)
                             XLuaUiManager.Open("UiObtain", rewardListCourseFromServer)
                         end, 500)
                     else
-                        if isOpenQuickWear then
-                            XDataCenter.UiQueueManager.Open("UiGachaAlphaQuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
-                        end
-                        if fashionItem then
-                            XDataCenter.UiQueueManager.Open("UiGachaAlphaPassport", fashionItem)
-                        end
-                        if backgroundItem then
-                            XDataCenter.UiQueueManager.Open("UiGachaAlphaPassport", backgroundItem)
-                        end
-                        if isOpenUiObtain then
-                            XDataCenter.UiQueueManager.Open("UiObtain", rewardListCourseFromServer)
-                        end
+                        local asynOpen = asynTask(XLuaUiManager.Open)
+                        RunAsyn(function()
+                            if isOpenQuickWear then
+                                asynOpen("UiGachaAlphaQuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
+                            end
+                            if fashionItem then
+                                asynOpen("UiGachaAlphaPassport", fashionItem)
+                            end
+                            if backgroundItem then
+                                asynOpen("UiGachaAlphaPassport", backgroundItem)
+                            end
+                            if isOpenUiObtain then
+                                asynOpen("UiObtain", rewardListCourseFromServer)
+                            end
+                        end)
                     end
                 end
             end
@@ -770,9 +769,7 @@ function XUiGachaAlphaMain:OnBtnStoryLineClick(isAutoOpen)
 end
 
 function XUiGachaAlphaMain:ShowRewardAfterGacha()
-    self._WeaponFashionTimer = XScheduleManager.ScheduleOnce(function()
-        self:ShowWeaponFashion()
-    end, 500)
+    self:ShowWeaponFashion()
 end
 
 function XUiGachaAlphaMain:ShowWeaponFashion()

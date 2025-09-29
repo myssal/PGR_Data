@@ -33,8 +33,7 @@ function XUiRegressionInvitation:InitView()
     local line1 = XRegression3rdConfigs.GetClientConfigValue("InvitationContent", 2)
     line1 = XUiHelper.ReplaceTextNewLine(line1)
     local timeStamp = self.ViewModel:GetProperty("_LastOnlineTime")
-    local timeFormat = not XOverseaManager.IsENRegion() and "yyyy%sM%sd%s" or "yyyy/M/d"
-    local format = string.format(timeFormat, XUiHelper.GetText("Year"), XUiHelper.GetText("Monthly"), XUiHelper.GetText("Diary"))
+    local format = string.format("yyyy%sM%sd%s", XUiHelper.GetText("Year"), XUiHelper.GetText("Monthly"), XUiHelper.GetText("Diary"))
     line1 = string.format(line1, XTime.TimestampToLocalDateTimeString(timeStamp, format))
     
     local line2 = XRegression3rdConfigs.GetClientConfigValue("InvitationContent", 3)

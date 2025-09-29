@@ -1,7 +1,6 @@
 ---@class XUiSignCardPopup : XLuaUi
 local XUiSignCardPopup = XLuaUiManager.Register(XLuaUi, "UiSignCardPopup")
 
-
 function XUiSignCardPopup:OnAwake()
     self:RegisterUiEvents()
 end
@@ -29,47 +28,15 @@ function XUiSignCardPopup:RefreshGet()
     if not data then
         return
     end
-    
-    local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
-    if remainDay < 0 then
-        remainDay = 0
-    end
-    self.TxtLeftDay.text = remainDay
+
+    self.TxtLeftDay.text = data.DailyRewardRemainDay
     if data.IsDailyRewardGet then
         self.BtnGet:SetButtonState(CS.UiButtonState.Disable)
     else
         self.BtnGet:SetButtonState(CS.UiButtonState.Normal)
     end
-    
+
     self.PanelGet.gameObject:SetActive(true)
-    self:RefreshInfo(data)
-end
-
-function XUiSignCardPopup:RefreshInfo(data)
-    if not XOverseaManager.IsENRegion() then
-        return
-    end
-    if not self.CardBg then
-        self.CardBg = self.Transform:Find("SafeAreaContentPane/SignCard/Bg/Bg"):GetComponent("RawImage")
-    end
-    if not self.CardABgPath then
-        self.CardABgPath = CS.XGame.ClientConfig:GetString("MonthlyCardABg")
-    end
-    if not self.CardCBgPath then
-        self.CardCBgPath = CS.XGame.ClientConfig:GetString("MonthlyCardCBg")
-    end
-    local isA = data.Id == 83028
-    self.CardBg:SetImage(isA and self.CardABgPath or self.CardCBgPath)
-
-    if not self.BlackCardAmount then
-        self.BlackCardAmount = self.Transform:Find("SafeAreaContentPane/SignCard/PanelGet/Tex/Text003"):GetComponent("Text")
-    end
-    self.BlackCardAmount.text = data.RewardGoodsList[1].Count
-
-    if not self.Desc then
-        self.Desc = self.Transform:Find("SafeAreaContentPane/SignCard/PanelGet/Tex/Text004"):GetComponent("Text")
-    end
-    self.Desc.text = data.Desc
 end
 
 function XUiSignCardPopup:AutoGetReward()

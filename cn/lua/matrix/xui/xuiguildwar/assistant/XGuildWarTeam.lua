@@ -348,7 +348,7 @@ function XGuildWarTeam:RefreshGeneralSkills(autoSelect, keepOldData)
     local hasLastSelecedGeneralSkill = false
     if not XTool.IsTableEmpty(self._GenernalSkills) then
         for generalSkillId, linkCharaList in pairs(self._GenernalSkills) do
-            if generalSkillId == lastSelectGeneralSkill or lastSelectGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
+            if generalSkillId == lastSelectGeneralSkill then
                 hasLastSelecedGeneralSkill = true
                 break
             end

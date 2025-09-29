@@ -43,14 +43,6 @@ XCloudGameManagerCreator = function()
         end
     end
 
-    -- 云游戏默认拖拽移动相机
-    function XCloudGameManager.OpenControlCameraByDragLocalCache()
-        if XDataCenter.UiPcManager.GetUiPcMode() ~= XDataCenter.UiPcManager.XUiPcMode.CloudGame then
-            return
-        end
-        CS.XInputKeyboard.ControlCameraByDragLocalCache = true
-    end
-
     XCloudGameManager.StartListTextInput()
     return XCloudGameManager
 end

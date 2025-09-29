@@ -121,18 +121,10 @@ function XUiDrawLog:InitDrawPreview()
     end
     for i = 1, #data.Name do
         local go
-        if XOverseaManager.IsJP_KRRegion() then --海外特别需求#211664
-            if data.Type[i] == "up" then
-                go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtUp, PanelObj.PanelTxtParent)
-            else
-                go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtNor, PanelObj.PanelTxtParent)
-            end
+        if data.IsUp[i] then
+            go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtUp, PanelObj.PanelTxtParent)
         else
-            if data.IsUp[i] then
-                go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtUp, PanelObj.PanelTxtParent)
-            else
-                go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtNor, PanelObj.PanelTxtParent)
-            end
+            go = CS.UnityEngine.Object.Instantiate(PanelObj.TxtNor, PanelObj.PanelTxtParent)
         end
         local tmpObj = {}
         tmpObj.Transform = go.transform
@@ -146,11 +138,7 @@ function XUiDrawLog:InitDrawPreview()
        
         tmpObj.GameObject:SetActiveEx(true)
         tmpObj.TxtName.text = data.Name[i]
-        if XOverseaManager.IsJP_KRRegion() and data.ProbShow[i] == "999" then --海外特别需求#211664
-            tmpObj.TxtProbability.text = ""
-        else
-            tmpObj.TxtProbability.text = data.ProbShow[i]
-        end
+        tmpObj.TxtProbability.text = data.ProbShow[i]
     end
     XScheduleManager.ScheduleOnce(function()
         CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(PanelObj.PanelCardParent);

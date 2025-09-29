@@ -401,5 +401,134 @@
         "SpWrongTips": [
             "烬土边疆上没有人真的目睹过巨人现身，还是不要将传说故事考虑在内吧。"
         ]
+    },
+    {
+        "Id": 51000001,
+        "GroupId": 51000,
+        "Step": 1,
+        "Desc": "我在哪里与莉莉丝结识的？",
+        "ShowClueGroupId": 51001,
+        "AnswerClue": 5101,
+        "AnswerTip": "莉莉丝赢过无数次人间的赌局，却因为意外栽在了圣堂的牌局上。",
+        "NormalWrongTip": "这不是相遇时的情况。",
+        "Info": "仔细思考问题对应的线索吧。"
+    },
+    {
+        "Id": 51000002,
+        "GroupId": 51000,
+        "Step": 2,
+        "Desc": "莉莉丝参与的博弈是？",
+        "ShowClueGroupId": 51002,
+        "AnswerClue": 5102,
+        "AnswerTip": "莉莉丝自称自己和拉斐尔夫人有血海深仇，但这背后似乎另有隐情。",
+        "NormalWrongTip": "莉莉丝当时没有参与这样的博弈。",
+        "Info": "我曾在一场圣堂牌局结束后找到了濒死的莉莉丝。",
+        "SpWrongClues": [
+            5104
+        ],
+        "SpWrongTips": [
+            "她不会参与如此浅显的赌局。"
+        ]
+    },
+    {
+        "Id": 51000003,
+        "GroupId": 51000,
+        "Step": 3,
+        "Desc": "拉斐尔夫人和莉莉丝争夺的目标是？",
+        "ShowClueGroupId": 51003,
+        "AnswerClue": 5103,
+        "AnswerTip": "莉莉丝似乎因为追查玛门财宝的下落被拉斐尔夫人灭口。",
+        "NormalWrongTip": "不，她们争夺的是别的事物。",
+        "Info": "我曾在一场圣堂牌局结束后找到了濒死的莉莉丝。她告诉我，她识破了天使长的出千而被灭口，但这背后似乎另有隐情。"
+    },
+    {
+        "Id": 52000001,
+        "GroupId": 52000,
+        "Step": 1,
+        "Desc": "拉斐尔夫人近期的动向是？",
+        "ShowClueGroupId": 52001,
+        "AnswerClue": 5201,
+        "AnswerTip": "拉斐尔夫人派手下在城镇中四处“回收”金币，挖掘线索，似乎另有所图。",
+        "NormalWrongTip": "这件事是他们所为的一部分，但不足以概况全部。",
+        "Info": "仔细思考问题对应的线索吧。",
+        "SpWrongClues": [
+            5203
+        ],
+        "SpWrongTips": [
+            "只有一部分天使在为此行动。"
+        ]
+    },
+    {
+        "Id": 52000002,
+        "GroupId": 52000,
+        "Step": 2,
+        "Desc": "拉斐尔夫人的下一处目标是？",
+        "ShowClueGroupId": 52002,
+        "AnswerClue": 5202,
+        "AnswerTip": "只要占有宝窟，似乎就能完成圣堂下达于拉斐尔夫人的使命。",
+        "NormalWrongTip": "这恐怕不能协助拉斐尔夫人完成目的。",
+        "Info": "拉斐尔夫人因为某个原因，必须占有玛门的宝藏。"
+    },
+    {
+        "Id": 52000003,
+        "GroupId": 52000,
+        "Step": 3,
+        "Desc": "拉斐尔夫人为何还要安排手下反复来袭？",
+        "ShowClueGroupId": 52003,
+        "AnswerClue": 5203,
+        "AnswerTip": "尽管已扫荡了不少钱财，但天使们仍对我们穷追不放，或许是别有所图。",
+        "NormalWrongTip": "这个理由还不够充分。",
+        "Info": "拉斐尔夫人因为某个原因，必须占有玛门的宝藏。无归城主座空缺，而她具有占据其中财富所需的钥匙。"
+    },
+    {
+        "Id": 53000001,
+        "GroupId": 53000,
+        "Step": 1,
+        "Desc": "眼前的幻境由什么组成？",
+        "ShowClueGroupId": 53001,
+        "AnswerClue": 5301,
+        "AnswerTip": "这些受困者乐此不疲地满足自己的愿望，甚至不愿离开幻境。",
+        "NormalWrongTip": "幻境中还有其它存在。",
+        "Info": "仔细思考问题对应的线索吧。",
+        "SpWrongClues": [
+            5304
+        ],
+        "SpWrongTips": [
+            "幻境中不止存在死物。"
+        ]
+    },
+    {
+        "Id": 53000002,
+        "GroupId": 53000,
+        "Step": 2,
+        "Desc": "有没有离开幻境的线索？",
+        "ShowClueGroupId": 53002,
+        "AnswerClue": 5302,
+        "AnswerTip": "顺着纸鹤前进，也许就能找到答案。",
+        "NormalWrongTip": "不，还有指向性更明确的事物。",
+        "Info": "受欲望所诱惑的人们在幻境之中徘徊。",
+        "SpWrongClues": [
+            5305
+        ],
+        "SpWrongTips": [
+            "滞留在此的人不仅不愿意走，甚至还在给我们当导游。"
+        ]
+    },
+    {
+        "Id": 53000003,
+        "GroupId": 53000,
+        "Step": 3,
+        "Desc": "纸鹤是谁留下的？",
+        "ShowClueGroupId": 53003,
+        "AnswerClue": 5303,
+        "AnswerTip": "放置这些纸鹤的，似乎是前任黄金之王。",
+        "NormalWrongTip": "应该能将答案缩小至特定的人。",
+        "Info": "受欲望所诱惑的人们在幻境之中徘徊。路上留着很多白色的纸鹤，据无名幽灵所说，顺着纸鹤往前走就能找到离开幻境的方法。",
+        "SpWrongClues": [
+            5306
+        ],
+        "SpWrongTips": [
+            "这位创造者仍然留在幻境中。"
+        ]
     }
 ]

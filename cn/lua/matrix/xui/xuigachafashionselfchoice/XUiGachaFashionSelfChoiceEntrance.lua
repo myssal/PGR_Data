@@ -11,19 +11,6 @@ function XUiGachaFashionSelfChoiceEntrance:OnAwake()
     self:InitButton()
     self:InitDynamicTable()
     self:InitTimes()
-    XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEGIN_PLAYMOVIE, self.OnBeginBattleAutoRemove, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FIGHT_LOADINGFINISHED, self.OnBeginBattleAutoRemove, self)
-    XEventManager.AddEventListener(XEventId.EVENT_MOVIE_BEGIN, self.OnBeginBattleAutoRemove, self)
-end
-
-function XUiGachaFashionSelfChoiceEntrance:OnDestroy()
-    XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEGIN_PLAYMOVIE, self.OnBeginBattleAutoRemove, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_LOADINGFINISHED, self.OnBeginBattleAutoRemove, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_MOVIE_BEGIN, self.OnBeginBattleAutoRemove, self)
-end
-
-function XUiGachaFashionSelfChoiceEntrance:OnBeginBattleAutoRemove()
-    self:Remove()
 end
 
 function XUiGachaFashionSelfChoiceEntrance:InitButton()

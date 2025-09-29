@@ -624,43 +624,6 @@ function XStrongholdTeam:UpdateGenernalSkillsByEntityId(entityId, isRemove)
     end
 end
 
-function XStrongholdTeam:GetEntityIds()
-    local res = {}
-    for _, v in pairs(self._TeamMemberDic) do
-        table.insert(res, v:GetRoleId())
-    end
-    return res
-end
-
--- 检查队伍中是否存在增幅角色且所有角色为同一属性
-function XStrongholdTeam:CheckAmplifierAndSameElement()
-    local entityIds = self:GetEntityIds()
-    local hasAmplifier = false
-    local firstElementId = nil
-    local allSameElement = true
-
-    for _, entityId in ipairs(entityIds) do
-        if XTool.IsNumberValid(entityId) then
-            -- 检查职业（是否为增幅）
-            local career = XMVCA.XCharacter:GetCharacterCareer(entityId)
-            if career == XEnumConst.CHARACTER.Career.Amplifier then
-                hasAmplifier = true
-            end
-
-            -- 检查属性是否一致
-            local elementId = XMVCA.XCharacter:GetCharacterElement(entityId)
-            if firstElementId == nil and XTool.IsNumberValid(elementId) then
-                firstElementId = elementId
-            elseif firstElementId ~= elementId then
-                allSameElement = false
-                break
-            end
-        end
-    end
-
-    return hasAmplifier and allSameElement
-end
-
 function XStrongholdTeam:AutoSelectGeneralSkill(defaultSkillIds)
     if not XTool.IsTableEmpty(defaultSkillIds) then
         local aimSkillId = 0
@@ -681,20 +644,6 @@ function XStrongholdTeam:AutoSelectGeneralSkill(defaultSkillIds)
             self:UpdateSelectGeneralSkill(aimSkillId)
             return
         end
-    end
-
-    local isEnableCheckAmplifierAndSameElement = false
-    for i, entityId in ipairs(self:GetEntityIds()) do        
-        if XMVCA.XCharacter:GetCharDetailEnableCheckAmplifierAndSameElement(entityId) then
-            isEnableCheckAmplifierAndSameElement = true
-            break
-        end
-    end
-
-    -- 增幅职业 + 全属性一致判断
-    if isEnableCheckAmplifierAndSameElement and self:CheckAmplifierAndSameElement() then
-        self:UpdateSelectGeneralSkill(XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT)
-        return
     end
 
     if XTool.IsTableEmpty(self._GenernalSkills) then
@@ -735,7 +684,7 @@ function XStrongholdTeam:RefreshGeneralSkillOption()
     local hasLastSelecedGeneralSkill = false
     if not XTool.IsTableEmpty(self._GenernalSkills) then
         for generalSkillId, linkCharaList in pairs(self._GenernalSkills) do
-            if generalSkillId == lastSelectGeneralSkill or lastSelectGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
+            if generalSkillId == lastSelectGeneralSkill then
                 hasLastSelecedGeneralSkill = true
                 break
             end
