@@ -1,0 +1,343 @@
+[
+    {
+        "Id": 1,
+        "Priority": 100,
+        "Name": "Happy Birthday",
+        "NameEN": "HAPPY BIRTHDAY",
+        "SkipId": 89053,
+        "TimeId": 513,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBrithday01.png",
+        "LeftTimeFun": "GetBirthday",
+        "EventId": "EVENT_PLAYER_SET_BIRTHDAY",
+        "Conditions": [
+            32003
+        ]
+    },
+    {
+        "Id": 2,
+        "Priority": 0,
+        "Name": "Target",
+        "NameEN": "NOVICE GOAL",
+        "SkipId": 89054,
+        "TimeId": 24,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgA01.png",
+        "Conditions": [
+            32001
+        ],
+        "RedPointConditions": [
+            "CONDITION_MAIN_NEWPLAYER_TASK"
+        ]
+    },
+    {
+        "Id": 3,
+        "Priority": 0,
+        "Name": "Novice",
+        "NameEN": "NOVICE GUIDANCE",
+        "SkipId": 89055,
+        "TimeId": 24,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgGuide01.png",
+        "Conditions": [
+            32000
+        ],
+        "RedPointConditions": [
+            "CONDITION_MAIN_NEWBIE_TASK"
+        ]
+    },
+    {
+        "Id": 4,
+        "Priority": 97,
+        "Name": "Welcome Back",
+        "NameEN": "RETURN",
+        "SkipId": 89002,
+        "TimeId": 14101,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpRegression0301.png",
+        "LeftTimeFun": "GetRegression3rd",
+        "EventId": "EVENT_REGRESSION3_ACTIVITY_STATUS_CHANGE",
+        "Conditions": [
+            32002
+        ],
+        "RedPointConditions": [
+            "CONDITION_REGRESSION3_ALL"
+        ]
+    },
+    {
+        "Id": 5,
+        "Priority": 86,
+        "Name": "Preload",
+        "NameEN": "PRE DOWNLOAD",
+        "SkipId": 89042,
+        "TimeId": 903,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainDownload.png",
+        "Conditions": [
+            860748
+        ],
+        "RedPointConditions": [
+            "CONDITION_PRELOAD_NEW_VERSION"
+        ]
+    },
+    {
+        "Id": 6,
+        "Priority": 0,
+        "Name": "Whispers of Admiration",
+        "NameEN": "Dearest Whispers",
+        "SkipId": 189064,
+        "TimeId": 0,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Mainlovergift2024520.png",
+        "Conditions": [
+            30404
+        ]
+    },
+    {
+        "Id": 7,
+        "Priority": 0,
+        "Name": "Pulao's Desserts",
+        "NameEN": "PULAO'S DESSERTS",
+        "SkipId": 189065,
+        "TimeId": 0,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainPulaoDesserts.png",
+        "RedPointConditions": [
+            "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 8,
+        "Priority": 0,
+        "Name": "Ebbtide Treasures",
+        "NameEN": "Wandering Waves",
+        "SkipId": 89026,
+        "TimeId": 39450,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainTurntable03.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            30406
+        ],
+        "RedPointConditions": [
+            "CONDITION_TURNTABLE_SUMMARY"
+        ]
+    },
+    {
+        "Id": 9,
+        "Priority": 88,
+        "Name": "Rippling Dreams",
+        "NameEN": "Rippling Dreams",
+        "SkipId": 89056,
+        "TimeId": 39503,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateDraw",
+        "EventId": "EVENT_ACCUMULATE_DRWA_UPDATE",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_MAIN"
+        ]
+    },
+    {
+        "Id": 10,
+        "Priority": 87,
+        "Name": "Cerulean Embrace",
+        "NameEN": "Cerulean Embrace",
+        "SkipId": 20226,
+        "TimeId": 39120,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBtnSummerSign306.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            771000
+        ]
+    },
+    {
+        "Id": 11,
+        "Priority": 0,
+        "Name": "Sweet Express",
+        "NameEN": "Sweet Express",
+        "SkipId": 90037,
+        "TimeId": 39201,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSlotmachine.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            30406
+        ],
+        "RedPointConditions": [
+            "CONDITION_SLOT_MACHINE_RED"
+        ]
+    },
+    {
+        "Id": 12,
+        "Priority": 0,
+        "Name": "Stellar Glow Supply",
+        "NameEN": "SUPPLY",
+        "SkipId": 20230,
+        "TimeId": 32909,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSupply01.png",
+        "Conditions": [
+            770402
+        ]
+    },
+    {
+        "Id": 13,
+        "Priority": 98,
+        "Name": "Thunderbolt Manual",
+        "NameEN": "MANUAL",
+        "SkipId": 89078,
+        "TimeId": 906,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWheelChair.png",
+        "RedPointRefreshEventId": "EVENT_WHEELCHAIRMANUAL_REFRESH_MAINLEFTENTRANCE_REDDOT",
+        "Conditions": [
+            770305
+        ],
+        "RedPointConditions": [
+            "CONDITION_WHEELCHAIRMANUAL_MAIN"
+        ]
+    },
+    {
+        "Id": 14,
+        "Priority": 99,
+        "Name": "Goal & Tutorial",
+        "NameEN": "GOAL & GUIDANCE",
+        "SkipId": 89080,
+        "TimeId": 24,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgGuide01.png",
+        "Conditions": [
+            862857
+        ],
+        "RedPointConditions": [
+            "CONDITION_MAIN_NEWBIE_TASK",
+            "CONDITION_MAIN_NEWPLAYER_TASK"
+        ]
+    },
+    {
+        "Id": 15,
+        "Priority": 0,
+        "Name": "Homeward-Bound Voyage",
+        "NameEN": "WELCOME BACK",
+        "SkipId": 89081,
+        "TimeId": 33809,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainHoldRegression.png",
+        "LeftTimeFun": "GetReCall",
+        "EventId": "EVENT_RECALL_OPEN_STATUS_UPDATE",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_RECALL_ENTRANCE"
+        ]
+    },
+    {
+        "Id": 16,
+        "Priority": 0,
+        "Name": "Returning Sparkles",
+        "NameEN": "Returning Sparkles",
+        "SkipId": 89047,
+        "TimeId": 33202,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/Main5thImg.png",
+        "Conditions": [
+            860740
+        ],
+        "RedPointConditions": [
+            "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
+            "CONDITION_ANNIVERSARY_DRAW",
+            "CONDITION_SUMMER_SIGNIN_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 17,
+        "Priority": 0,
+        "Name": "Insatiable Research",
+        "NameEN": "RESEARCH",
+        "SkipId": 20239,
+        "TimeId": 34210,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainGachaCanLiver01.png",
+        "Conditions": [
+            1050100
+        ],
+        "RedPointConditions": [
+            "CONDITION_GACHACANLIVER_MAIN"
+        ]
+    },
+    {
+        "Id": 18,
+        "Priority": 85,
+        "Name": "Passage of the Past",
+        "NameEN": "Passage of the Past",
+        "SkipId": 90017,
+        "TimeId": 2160604,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainVersionGift01.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            870003
+        ],
+        "RedPointConditions": [
+            "CONDITION_VERSIONGIFT_TASK",
+            "CONDITION_VERSIONGIFT_REWARD"
+        ]
+    },
+    {
+        "Id": 19,
+        "Priority": 89,
+        "Name": "Blissful Gift",
+        "NameEN": "Blissful Gift",
+        "SkipId": 90022,
+        "TimeId": 35322,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWeeklyChallenge.png",
+        "LeftTimeFun": "GetByTimeIdCommon",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_WEEK_CHALLENGE"
+        ]
+    },
+    {
+        "Id": 20,
+        "Priority": 88,
+        "Name": "Fresh Dawning",
+        "NameEN": "FRESH DAWNING",
+        "SkipId": 1300569,
+        "TimeId": 35320,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainCombAccumulateDraw.png",
+        "Conditions": [
+            870003
+        ],
+        "RedPointConditions": [
+            "CONDITION_VERSIONGIFT_TASK",
+            "CONDITION_VERSIONGIFT_REWARD"
+        ]
+    },
+    {
+        "Id": 21,
+        "Priority": 88,
+        "Name": "Fresh Dawning",
+        "NameEN": "FRESH DAWNING",
+        "SkipId": 1300569,
+        "TimeId": 2160593,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainCombAccumulateDraw.png",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "EVENT_ACCUMULATE_DRWA_UPDATE_COMB",
+            "CONDITION_ACCUMULATE_EXPEND_MAIN_COMB"
+        ]
+    }
+]

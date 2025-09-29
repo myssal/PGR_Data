@@ -1,0 +1,362 @@
+[
+    {
+        "Key": "BattlePoolMaxLen",
+        "Desc": "阵容池最大长度",
+        "Values": [
+            1000
+        ]
+    },
+    {
+        "Key": "PvpHealth",
+        "Desc": "PvP模式生命数量",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PvpTarget",
+        "Desc": "PvP模式目标奖杯数",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ReduceRankFailCount",
+        "Desc": "连续失败3次后匹配时调低对段位",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "BagItemGridMaxNum",
+        "Desc": "背包格子最大允许数量",
+        "Values": [
+            6
+        ]
+    },
+    {
+        "Key": "SkillGridMaxNum",
+        "Desc": "技能格子最大允许数量",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "RuneGridMinNum",
+        "Desc": "宝珠格子初始化数量（PVP用，PVE初始化数量在Theatre5PveChapter表控制）",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "RuneGridMaxNum",
+        "Desc": "宝珠格子最大允许数量上限",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ShopItemDiscountWeight",
+        "Desc": "商店折扣权重(随机出X个物品折扣的权重)",
+        "Values": [
+            90,
+            10,
+            1
+        ]
+    },
+    {
+        "Key": "PvpShopGridsTotalCount",
+        "Desc": "商店格子总数",
+        "Values": [
+            6
+        ]
+    },
+    {
+        "Key": "WDraw",
+        "Desc": "战斗平局W系数（万分比）",
+        "Values": [
+            5000
+        ]
+    },
+    {
+        "Key": "WLose",
+        "Desc": "战斗失败W系数（万分比）",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "WWin",
+        "Desc": "战斗胜利W系数（万分比）",
+        "Values": [
+            10000
+        ]
+    },
+    {
+        "Key": "InitRating",
+        "Desc": "初始化天梯分",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "RobotHeadPortraits",
+        "Desc": "List of Portraits available for Robots",
+        "Values": [
+            9000001
+        ]
+    },
+    {
+        "Key": "RobotHeadHeadFrames",
+        "Desc": "List of Portrait Frames available for Robots",
+        "Values": [
+            9090008
+        ]
+    },
+    {
+        "Key": "TeachingPveStoryLineId",
+        "Desc": "教学故事线id",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "TeachingPveCharacterId",
+        "Desc": "教学故事线角色id",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "ChapterCoin",
+        "Desc": "章节章节币",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "TempItemBagGridMaxNum",
+        "Desc": "临时背包格子最大允许数量",
+        "Values": [
+            4
+        ]
+    },
+    {
+        "Key": "PvpGridUnlockDiscount",
+        "Desc": "pvp背包回合数折扣（pve用的配置在PveChapter表中）",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "PveHealth",
+        "Desc": "Pve模式生命数量",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PveBattleCheckOpen",
+        "Desc": "是否开放战斗校验(0关闭)",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "PveBattleTimeLimit",
+        "Desc": "pve战斗时长限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveMyTotalDamageLimit",
+        "Desc": "pve我方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveMyTotalCureLimit",
+        "Desc": "pve我方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveEnemyTotalDamageLimit",
+        "Desc": "pve敌方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveEnemyTotalCureLimit",
+        "Desc": "pve战斗敌方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpBattleTimeLimit",
+        "Desc": "pvp战斗时长限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpMyTotalDamageLimit",
+        "Desc": "pvp我方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpMyTotalCureLimit",
+        "Desc": "pvp我方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpEnemyTotalDamageLimit",
+        "Desc": "pvp敌方伤害总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PvpEnemyTotalCureLimit",
+        "Desc": "pvp战斗敌方治疗总量限制",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveChatWriteTime",
+        "Desc": "pve对话聊天速度(毫秒)",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "BattleCheckFailTimesLimit",
+        "Desc": "战斗校验失败次数限制，达到限制次数将直接结算处理",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "DeduceTipsTime",
+        "Desc": "推演tips时间，1是普通时间，2时回答正确时间",
+        "Values": [
+            1000,
+            2000
+        ]
+    },
+    {
+        "Key": "ClueBoardScaleLimitPoint",
+        "Desc": "线索板缩放变化的临界点(缩放值*1000)",
+        "Values": [
+            650
+        ]
+    },
+    {
+        "Key": "MainClueBoardRect",
+        "Desc": "核心线索板的外扩宽高",
+        "Values": [
+            7500,
+            3500
+        ]
+    },
+    {
+        "Key": "ClueBoardFocusTime",
+        "Desc": "点击线索聚焦时间",
+        "Values": [
+            200
+        ]
+    },
+    {
+        "Key": "Theatre5ShopCurrencyId",
+        "Desc": "兑换商店id",
+        "Values": [
+            97054
+        ]
+    },
+    {
+        "Key": "KLoseMin",
+        "Desc": "Minimum Restart K Value Penalty",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "PveTimeId",
+        "Desc": "PVE Mode Starting Time",
+        "Values": [
+            34
+        ]
+    },
+    {
+        "Key": "PveVersion",
+        "Desc": "PVE Mode Version Number",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "SkipSotryPage",
+        "Desc": "Codex Redirect Tag",
+        "Values": [
+            16
+        ]
+    },
+    {
+        "Key": "MainVideoId",
+        "Desc": "Main Screen Video ID",
+        "Values": [
+            20004
+        ]
+    },
+    {
+        "Key": "ShopShowRewards",
+        "Desc": "Groups of 2: The 1st part is the ID, the 2nd is the quantity.",
+        "Values": [
+            50005,
+            1750,
+            102,
+            3500,
+            11000268,
+            1
+        ]
+    },
+    {
+        "Key": "PveSlideButton",
+        "Desc": "PVE Clue Board +/- buttons; click {参数1} times to reach max/min value.",
+        "Values": [
+            20
+        ]
+    },
+    {
+        "Key": "Theatre5LimitShop",
+        "Desc": "PVE limited-time shop ID corresponding to taskshop table ID",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "PveWorldId",
+        "Desc": "PVE world ID to be loaded",
+        "Values": [
+            200
+        ]
+    },
+    {
+        "Key": "ClueBoardMaskMinAndMax",
+        "Desc": "PvE clue board zoom aperture configuration",
+        "Values": [
+            1000,
+            2000
+        ]
+    }
+]

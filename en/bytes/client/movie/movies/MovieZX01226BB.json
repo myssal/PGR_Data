@@ -1,0 +1,801 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 1,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory183.png"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 2,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            24
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "—It's over."
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You don't know which one of you said that first, but it's over."
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The whole city lies in shambles, with buildings wrecked and roads clustered with debris. To make matters worse, the spread of the Punishing Virus has sealed off even more of Kowloong."
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The Ascendants are gone. The rebuilt defense lines are keeping the Corrupted at bay. Soon the city will return to peace—or at least, that is what everyone believes."
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Relieved, some teams let themselves collapse to the ground, enjoying this moment of respite."
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 100,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500170
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "Guard",
+            "...",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 101,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The Kowloongers no longer bother with removing the outsiders, nor do they give thanks. They merely give them cursory glances before returning to their designated positions, unspoken words in their voice modules."
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Some distance away, the reinforcing factions, who played key roles in turning the tide of this battle, are resting. Despite the victory, not a trace of joy decorates their faces."
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "A liaison officer scurries over with panic on his face. He seems to have something important to say."
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 200,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "RImgBg1DisableSlow"
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 201,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "RImgBg2Enable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg1201_5.jpg"
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "It's about Gestalt, right?"
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 102,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Yes.",
+            13,
+            "Are you alright, Lucia?"
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 13,
+        "NextActionId": 15,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "That must be something very important..."
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 14,
+        "NextActionId": 15,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "I'm fine..."
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Huaxu was taken by the Ascendants in the end. That is why they all have that grim look on their faces."
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "What will happen to Babylonia? What will the Ascendants do with Huaxu? These are the questions that all hang on everyone's mind."
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 17,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Commandant... Perhaps... we could have done it better, right?"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 103,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Perhaps.",
+            18,
+            "We all gave it our best."
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 18,
+        "NextActionId": 20,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "But... I have no regrets."
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 19,
+        "NextActionId": 20,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Mh-hm, I guess... That just wasn't enough."
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Commandant..."
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "When the team retreated here with Lucia, she regained some of her consciousness. Lee and Liv made her sit and lean on your back."
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Unable to move, she gazes ahead with wistful eyes."
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "At least... I'm okay with the result. What more? The battle's over. And I get to lean on your back like this."
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "...But still, I'm afraid."
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "I'm afraid... I don't know how long it'll be, before I'm \"myself\" again."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "...Commandant, can I call you by your name?"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 104,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Sure.",
+            28,
+            "Why?"
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 28,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "【kuroname】..."
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 300,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "【kuroname】, 【kuroname】..."
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 301,
+        "NextActionId": 30,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "【kuroname】."
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 29,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "It eases me..."
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 302,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "【kuroname】..."
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 303,
+        "NextActionId": 30,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "【kuroname】."
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia chants your name, toying with the pitch, the tone, the speed, as if finding a new piece of treasure."
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "You must find this weird. But it's a spell that makes me not afraid."
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 32,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "After that, Lucia leans closer as if she is about to hand herself over to you. She pours her heart out."
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 33,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Commandant, what do you think the next Lucia is going to be like? Will she be as stubborn as she's now, or be as shy as Liv?"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "If I get to choose, it might be nice being like Ayla or Karenina, someone frank, straightforward, and outspoken."
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Or someone like Bianca, who has the poise to perfectly lead a squad."
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Or even Nanami, or Sophia...? But they are kinda two ends of the extremes, so... I guess, maybe not."
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "She thinks out loud in a brisk voice, acting like some vivacious girl untouched by any disaster."
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Innocent, cheerful, and full of hope for tomorrow."
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 39,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "If the Punishing Virus never existed, is this what Lucia would have been like? No one knows. No one can answer."
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 40,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Because there are no \"what-ifs\" in life. Reality is set in stone."
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 500,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "But... I know everything's going to be fine. Because you are here."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 501,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "And this time... I finally have memories, truly mine, within my M.I.N.D."
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 502,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "By the time I get to know the next me and prove her worth, you will see a better Lucia."
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 203,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgCg/Cg1201_6.jpg"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 41,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "...Well then, see you soon, Commandant."
+        ]
+    },
+    {
+        "Id": 56,
+        "ActionId": 42,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "She whispers, ready to part with those words."
+        ]
+    },
+    {
+        "Id": 57,
+        "ActionId": 105,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "See you soon, Lucia.",
+            43
+        ]
+    },
+    {
+        "Id": 58,
+        "ActionId": 43,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Lucia",
+            "Sure."
+        ]
+    }
+]

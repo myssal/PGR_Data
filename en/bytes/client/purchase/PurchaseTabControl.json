@@ -1,0 +1,109 @@
+[
+    {
+        "Id": 1,
+        "Name": "Use",
+        "GroupId": 4,
+        "GroupName": "Black Card Exchange",
+        "GroupIcon": "UiChange",
+        "GroupOrder": 5,
+        "UiType": 3,
+        "IsOpen": 1
+    },
+    {
+        "Id": 2,
+        "Name": "Limited Supply Pack",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 1,
+        "UiType": 5,
+        "IsOpen": 1
+    },
+    {
+        "Id": 3,
+        "Name": "Daily Supply Pack",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 2,
+        "UiType": 6,
+        "IsOpen": 1
+    },
+    {
+        "Id": 4,
+        "Name": "Others",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 7,
+        "UiType": 7,
+        "IsOpen": 1
+    },
+    {
+        "Id": 5,
+        "Name": "Monthly Pass",
+        "GroupId": 3,
+        "GroupName": "Monthly Pass",
+        "GroupIcon": "UICard",
+        "GroupOrder": 4,
+        "UiType": 2,
+        "IsOpen": 1,
+        "ReqUiTypes": [
+            6
+        ]
+    },
+    {
+        "Id": 6,
+        "Name": "Recharge",
+        "GroupId": 1,
+        "GroupName": "Recharge",
+        "GroupIcon": "UiPay",
+        "GroupOrder": 6,
+        "UiType": 1,
+        "IsOpen": 1
+    },
+    {
+        "Id": 7,
+        "Name": "Coating Supply Pack",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 3,
+        "UiType": 8,
+        "IsOpen": 1
+    },
+    {
+        "Id": 8,
+        "Name": "Popular",
+        "GroupId": 5,
+        "GroupName": "Popular",
+        "GroupIcon": "UiRecommend",
+        "GroupOrder": 0,
+        "UiType": 0,
+        "IsOpen": 1,
+        "ReqUiTypes": [
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 9,
+        "Name": "Meritorious Supply Pack",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 8,
+        "UiType": 11,
+        "IsOpen": 1
+    },
+    {
+        "Id": 10,
+        "Name": "Scene Supply Pack",
+        "GroupId": 2,
+        "GroupName": "Supply Pack",
+        "GroupIcon": "UiPurchase",
+        "GroupOrder": 9,
+        "UiType": 10,
+        "IsOpen": 1
+    }
+]

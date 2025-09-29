@@ -1,0 +1,766 @@
+[
+    {
+        "Id": 1,
+        "ActionId": 3,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory168.jpg"
+        ]
+    },
+    {
+        "Id": 2,
+        "ActionId": 4,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            201
+        ]
+    },
+    {
+        "Id": 3,
+        "ActionId": 5,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab",
+            3
+        ]
+    },
+    {
+        "Id": 4,
+        "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "It's a familiar feeling."
+        ]
+    },
+    {
+        "Id": 5,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You open your eyes, and what greets your eyes is neither a familiar ceiling nor a narrow one-man capsule."
+        ]
+    },
+    {
+        "Id": 6,
+        "ActionId": 200,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0.7
+        ]
+    },
+    {
+        "Id": 7,
+        "ActionId": 112,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory121.png"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 113,
+        "NextActionId": 0,
+        "Type": 201,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            500011
+        ]
+    },
+    {
+        "Id": 9,
+        "ActionId": 114,
+        "NextActionId": 0,
+        "Type": 501,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 115,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1,
+            "Hassen",
+            "...And that's everything about this mission. Given your excellent solo combat ability, I believe you're the best person for the job.",
+            1
+        ]
+    },
+    {
+        "Id": 11,
+        "ActionId": 116,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Hassen",
+            "This is a covert mission, and the enemy might make a move any time. Please keep this confidential, even from your Constructs.",
+            1
+        ]
+    },
+    {
+        "Id": 12,
+        "ActionId": 117,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Understood.",
+            118,
+            "Why?"
+        ]
+    },
+    {
+        "Id": 13,
+        "ActionId": 118,
+        "NextActionId": 120,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Hassen",
+            "...Thought you'd be questioning why you're going solo.",
+            1
+        ]
+    },
+    {
+        "Id": 14,
+        "ActionId": 119,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Hassen",
+            "It's not that I don't trust your team members. It's just that for this specific mission, \"going with the flow\" will save you a lot of trouble.",
+            1
+        ]
+    },
+    {
+        "Id": 15,
+        "ActionId": 120,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Hassen",
+            "But worry not, you and your teammates won't be separated for long.",
+            1
+        ]
+    },
+    {
+        "Id": 16,
+        "ActionId": 121,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "I know.",
+            122,
+            "We'll regroup soon."
+        ]
+    },
+    {
+        "Id": 17,
+        "ActionId": 122,
+        "NextActionId": 0,
+        "Type": 202,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "ActionId": 123,
+        "NextActionId": 0,
+        "Type": 505,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab",
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "ActionId": 124,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory168.jpg"
+        ]
+    },
+    {
+        "Id": 20,
+        "ActionId": 125,
+        "NextActionId": 0,
+        "Type": 504,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            0
+        ]
+    },
+    {
+        "Id": 21,
+        "ActionId": 126,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You snap out of your daze."
+        ]
+    },
+    {
+        "Id": 22,
+        "ActionId": 127,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "(Check your connection)",
+            128,
+            "(Check your condition)"
+        ]
+    },
+    {
+        "Id": 23,
+        "ActionId": 128,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Your connection to Lucia and the others is very weak."
+        ]
+    },
+    {
+        "Id": 24,
+        "ActionId": 129,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You're not physically restrained."
+        ]
+    },
+    {
+        "Id": 25,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The connection is very weak. You feel something on your neck and reach out to touch it. It feels cold, like some kind of collar made of some special material."
+        ]
+    },
+    {
+        "Id": 26,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "What's this thing?",
+            11,
+            "(Try to remove it)"
+        ]
+    },
+    {
+        "Id": 27,
+        "ActionId": 11,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The moment you touch the collar, your Mind Beacon registers a reaction. This might be because of your previous experience with connection chambers."
+        ]
+    },
+    {
+        "Id": 28,
+        "ActionId": 12,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory164.png"
+        ]
+    },
+    {
+        "Id": 29,
+        "ActionId": 13,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "【kuroname】",
+            "Is this...?"
+        ]
+    },
+    {
+        "Id": 30,
+        "ActionId": 14,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "【kuroname】",
+            "Kinda looks like..."
+        ]
+    },
+    {
+        "Id": 31,
+        "ActionId": 15,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "A M.I.N.D.",
+            16,
+            "A virtual M.I.N.D."
+        ]
+    },
+    {
+        "Id": 32,
+        "ActionId": 16,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory168.jpg"
+        ]
+    },
+    {
+        "Id": 33,
+        "ActionId": 17,
+        "NextActionId": 20,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "It feels like an elementary M.I.N.D."
+        ]
+    },
+    {
+        "Id": 34,
+        "ActionId": 18,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory168.jpg"
+        ]
+    },
+    {
+        "Id": 35,
+        "ActionId": 19,
+        "NextActionId": 20,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "AniZhuanchangEnd",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "It feels like a virtual M.I.N.D. simulated based on reality."
+        ]
+    },
+    {
+        "Id": 36,
+        "ActionId": 20,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "【kuroname】",
+            "..."
+        ]
+    },
+    {
+        "Id": 37,
+        "ActionId": 21,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "To confirm this."
+        ]
+    },
+    {
+        "Id": 38,
+        "ActionId": 22,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "(Stand up to check your surroundings)",
+            23
+        ]
+    },
+    {
+        "Id": 39,
+        "ActionId": 23,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "It's a sealed compartment. You feel slight tremors beneath your feet."
+        ]
+    },
+    {
+        "Id": 40,
+        "ActionId": 24,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Still aboard Asslam?",
+            25,
+            "I don't think I'm on the train any more."
+        ]
+    },
+    {
+        "Id": 41,
+        "ActionId": 25,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You look out through the narrow cabin window."
+        ]
+    },
+    {
+        "Id": 42,
+        "ActionId": 26,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "A vast, cerulean expanse usurps your sight. You seem to be at sea."
+        ]
+    },
+    {
+        "Id": 43,
+        "ActionId": 27,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "(Try to knock on the window)",
+            28,
+            "(Look around)"
+        ]
+    },
+    {
+        "Id": 44,
+        "ActionId": 28,
+        "NextActionId": 30,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "It does not budge."
+        ]
+    },
+    {
+        "Id": 45,
+        "ActionId": 29,
+        "NextActionId": 30,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The layout of the compartment suggests that the place might be a storage room. The door is locked from outside and cannot be opened."
+        ]
+    },
+    {
+        "Id": 46,
+        "ActionId": 30,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You listen closely, and hear the familiar sound of mechanoids shuffling their feet."
+        ]
+    },
+    {
+        "Id": 47,
+        "ActionId": 31,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "The Corrupted?",
+            32,
+            "Guards?"
+        ]
+    },
+    {
+        "Id": 48,
+        "ActionId": 32,
+        "NextActionId": 34,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Listening more closely, the footsteps seem to be steady and rhythmic, unlike the kind made by the Corrupted."
+        ]
+    },
+    {
+        "Id": 49,
+        "ActionId": 33,
+        "NextActionId": 34,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "..."
+        ]
+    },
+    {
+        "Id": 50,
+        "ActionId": 34,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "If your intuition is to be trusted, this collar-like thing on you serves a related purpose to a connection chamber, and likely has something to do with the virtual M.I.N.D. you felt earlier."
+        ]
+    },
+    {
+        "Id": 51,
+        "ActionId": 35,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Perhaps you can use that to your advantage."
+        ]
+    },
+    {
+        "Id": 52,
+        "ActionId": 36,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "(Try to connect to Lucia)",
+            37,
+            "(Try to connect to a mechanoid)"
+        ]
+    },
+    {
+        "Id": 53,
+        "ActionId": 37,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/Bgstory164.png"
+        ]
+    },
+    {
+        "Id": 54,
+        "ActionId": 400,
+        "NextActionId": 0,
+        "Type": 502,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "AniZhuanchangEnd"
+        ]
+    },
+    {
+        "Id": 55,
+        "ActionId": 38,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 1,
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "You feel a novel sensation and connect to something."
+        ]
+    }
+]

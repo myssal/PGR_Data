@@ -1,0 +1,2342 @@
+[
+    {
+        "Id": 0,
+        "IconPath": "Assets/Product/Texture/Image/IconTools/E1GunMd030011.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/E1GunMd030011.png",
+        "Name": "N/A",
+        "Description": "N/A",
+        "SuitType": 0
+    },
+    {
+        "Id": 1101,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EYuesefuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconToolsSp/EYuesefuI01001Sp.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYiefuliemofuI01002.png",
+        "Name": "Joseph",
+        "Description": "White Board",
+        "SuitType": 0,
+        "SkillDescription": [
+            "ATK +5"
+        ]
+    },
+    {
+        "Id": 1201,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ESipeierI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ESipeierI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESipeierI01002.png",
+        "Name": "Merli",
+        "Description": "ATK Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            120102
+        ],
+        "SkillDescription": [
+            "ATK +10"
+        ],
+        "EquipIds": [
+            3012001,
+            3022001,
+            3032001,
+            3042001,
+            3052001,
+            3062001
+        ]
+    },
+    {
+        "Id": 1301,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EModeerI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EModeerI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EModeerI01002.png",
+        "Name": "Pinoff",
+        "Description": "Close Range Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            130102
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus increases by 3% when attacking enemies within 2m."
+        ],
+        "EquipIds": [
+            3013001,
+            3023001,
+            3033001,
+            3043001,
+            3053001,
+            3063001
+        ]
+    },
+    {
+        "Id": 1304,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHeermanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHeermanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHeermanI01002.png",
+        "Name": "Pavrey",
+        "Description": "Long Range Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            130402
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus increases by 3% when attacking enemies farther than 3m."
+        ],
+        "EquipIds": [
+            3013002,
+            3023002,
+            3033002,
+            3043002,
+            3053002,
+            3063002
+        ]
+    },
+    {
+        "Id": 1401,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAjimideI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAjimideI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAjimideI01002.png",
+        "Name": "Archimedes",
+        "Description": "Basic Attack Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            140102
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 5%."
+        ],
+        "EquipIds": [
+            3014001,
+            3024001,
+            3034001,
+            3044001,
+            3054001,
+            3064001
+        ]
+    },
+    {
+        "Id": 1404,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAidishengI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAidishengI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAidishengI01002.png",
+        "Name": "Edison",
+        "Description": "Skill Attack Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            140402
+        ],
+        "SkillDescription": [
+            "Signal Orb skill DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3014002,
+            3024002,
+            3034002,
+            3044002,
+            3054002,
+            3064002
+        ]
+    },
+    {
+        "Id": 1407,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAliceI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAliceI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAliceI01002.png",
+        "Name": "Alice",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            140702
+        ],
+        "SkillDescription": [
+            "Healing effect increases by 5%."
+        ],
+        "EquipIds": [
+            3014003,
+            3024003,
+            3034003,
+            3044003,
+            3054003,
+            3064003
+        ]
+    },
+    {
+        "Id": 1410,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKanninganI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKanninganI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKanninganI01002.png",
+        "Name": "Cunningham",
+        "Description": "Defense Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            141002
+        ],
+        "SkillDescription": [
+            "Physical and Elemental DMG increase by 5% when attacking enemies with Super Armor."
+        ],
+        "EquipIds": [
+            3014004,
+            3024004,
+            3034004,
+            3044004,
+            3054004,
+            3064004
+        ]
+    },
+    {
+        "Id": 1413,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAdaifuYYI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAdaifuYYI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAdaifuYYI01002.png",
+        "Name": "Kuriko - Eternal",
+        "Description": "Summon Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            141302
+        ],
+        "SkillDescription": [
+            "When attacking, has a 20% chance to call an artillery strike, each shell dealing 40% Physical DMG to the target. 15s cooldown."
+        ],
+        "EquipIds": [
+            3014005,
+            3044005
+        ]
+    },
+    {
+        "Id": 1416,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENimiziI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENimiziI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENimizi01002.png",
+        "Name": "Nimitz",
+        "Description": "ATK Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            141602
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 5%."
+        ],
+        "EquipIds": [
+            3014006,
+            3024006,
+            3034006,
+            3044006,
+            3054006,
+            3064006
+        ]
+    },
+    {
+        "Id": 1501,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELongmeierI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELongmeierI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELongmeierI01002.png",
+        "Name": "Carrielynn",
+        "Description": "Basic Attack Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            150102
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 10%."
+        ],
+        "EquipIds": [
+            3015001,
+            3025001,
+            3035001,
+            3045001,
+            3055001,
+            3065001
+        ]
+    },
+    {
+        "Id": 1502,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAifuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAifuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAifuI01002.png",
+        "Name": "Aife",
+        "Description": "Skill Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            150202
+        ],
+        "SkillDescription": [
+            "For each orb pinged, Extra DMG Bonus increases by 2% for 3s. Can be stacked up to 5 times. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3015002,
+            3025002,
+            3035002,
+            3045002,
+            3055002,
+            3065002
+        ]
+    },
+    {
+        "Id": 1503,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAikeI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAikeI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAikeI01002.png",
+        "Name": "Ike",
+        "Description": "Energy Attack Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            150302
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus increases by 2% and all Elemental DMG increases by 4%."
+        ],
+        "EquipIds": [
+            3015003,
+            3025003,
+            3035003,
+            3045003,
+            3055003,
+            3065003
+        ]
+    },
+    {
+        "Id": 1504,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EFuertaiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EFuertaiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFuertaiI01002.png",
+        "Name": "Voltaire",
+        "Description": "Weaken Enemy I",
+        "SuitType": 10,
+        "SkillEffect": [
+            150402
+        ],
+        "SkillDescription": [
+            "Attacks reduce the target's DEF by 10% for 5s. 12s cooldown."
+        ],
+        "EquipIds": [
+            3015004,
+            3025004,
+            3035004,
+            3045004,
+            3055004,
+            3065004
+        ]
+    },
+    {
+        "Id": 1505,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGeluodaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGeluodaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGeluodaI01002.png",
+        "Name": "Gloria",
+        "Description": "Weaken Enemy II",
+        "SuitType": 11,
+        "SkillEffect": [
+            150502
+        ],
+        "SkillDescription": [
+            "Attacks reduce the target's all Elemental Resistance by 6% for 5s. 12s cooldown."
+        ],
+        "EquipIds": [
+            3015005,
+            3025005,
+            3035005,
+            3045005,
+            3055005,
+            3065005
+        ]
+    },
+    {
+        "Id": 1506,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELisailiuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELisailiuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELisailiuI01002.png",
+        "Name": "Richelieu",
+        "Description": "Attack Support Boost",
+        "SuitType": 7,
+        "SkillEffect": [
+            150602
+        ],
+        "SkillDescription": [
+            "Healing effect increases by 5%. Next healing effect increases the target's Physical DMG by 8% for 4s. 5s cooldown."
+        ],
+        "EquipIds": [
+            3015006,
+            3025006,
+            3035006,
+            3045006,
+            3055006,
+            3065006
+        ]
+    },
+    {
+        "Id": 1507,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ESamandaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ESamandaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESamandaI01002.png",
+        "Name": "Samantha",
+        "Description": "Energy Support Boost",
+        "SuitType": 8,
+        "SkillEffect": [
+            150702
+        ],
+        "SkillDescription": [
+            "Healing effect increases by 5%. Next healing effect increases the target's all Elemental DMG by 8% for 4s. 5s cooldown."
+        ],
+        "EquipIds": [
+            3015007,
+            3025007,
+            3035007,
+            3045007,
+            3055007,
+            3065007
+        ]
+    },
+    {
+        "Id": 1508,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EMozateI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EMozateI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EMozateI01002.png",
+        "Name": "Mozart",
+        "Description": "EX Dodge Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            150802
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus increases by 15% when in Matrix."
+        ],
+        "EquipIds": [
+            3015008,
+            3025008,
+            3035008,
+            3045008,
+            3055008,
+            3065008
+        ]
+    },
+    {
+        "Id": 1509,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBudikaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBudikaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBudika01002.png",
+        "Name": "Boudica",
+        "Description": "ATK Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            150902
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 7%."
+        ],
+        "EquipIds": [
+            3015009,
+            3025009,
+            3035009,
+            3045009,
+            3055009,
+            3065009
+        ]
+    },
+    {
+        "Id": 1550,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EShengdanlifuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EShengdanlifuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EShengdanlifuI01001.png",
+        "Name": "Liv: Reindeer",
+        "Description": "Energy Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            155002
+        ],
+        "SkillDescription": [
+            "Signal Orb skill's Extra DMG Bonus and healing effect increase by 5%."
+        ],
+        "EquipIds": [
+            3015050,
+            3025050,
+            3035050,
+            3045050,
+            3055050,
+            3065050
+        ]
+    },
+    {
+        "Id": 1551,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EXinniankalieI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EXinniankalieI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXinniankalieI01001.png",
+        "Name": "New Year Fireworks",
+        "Description": "Damage Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            155012
+        ],
+        "SkillDescription": [
+            "ATK increases by 5%. For every 3 Red Orbs pinged, summons 4 red packets that deal 10% Fire DMG when they touch the enemy. Lasts 10s. 30s cooldown."
+        ],
+        "EquipIds": [
+            3015051,
+            3025051,
+            3035051,
+            3045051,
+            3055051,
+            3065051
+        ]
+    },
+    {
+        "Id": 1552,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EYuanxiaoluxiyaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EYuanxiaoluxiyaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYuanxiaoluxiyaI01001.png",
+        "Name": "Lantern Festival: Reunion",
+        "Description": "ATK Boost",
+        "SuitType": 9,
+        "SkillEffect": [
+            155022
+        ],
+        "SkillDescription": [
+            "After performing a 3-Ping or QTE skill, releases a lantern to follow the character on field, increasing the ATK and Movement Speed of nearby allies by 7% for 15s. 30s cooldown."
+        ],
+        "EquipIds": [
+            3015052,
+            3025052,
+            3035052,
+            3045052,
+            3055052,
+            3065052
+        ]
+    },
+    {
+        "Id": 1553,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELizhounianI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELizhounianI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELizhounianI01002.png",
+        "Name": "Lee—Celebration under the Moon",
+        "Description": "Anniversary",
+        "SuitType": 12,
+        "SkillEffect": [
+            155052
+        ],
+        "SkillDescription": [
+            "Gain 10% Extra DMG Reduction for 3s upon dodge."
+        ],
+        "EquipIds": [
+            3015053,
+            3025053,
+            3035053,
+            3045053,
+            3055053,
+            3065053
+        ]
+    },
+    {
+        "Id": 1555,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKFC02Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKFC02.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKFC02002.png",
+        "Name": "KFC·Alpha",
+        "Description": "Speed Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            155032
+        ],
+        "SkillDescription": [
+            "A QTE or 3-Ping has a 50% chance to drop a bucket of chicken. 30s cooldown. The bucket disappears in 10s. Picking it up will increase Movement Speed by 12% for 15s. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3015055,
+            3025055,
+            3035055,
+            3045055,
+            3055055,
+            3065055
+        ]
+    },
+    {
+        "Id": 1556,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKFC01Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKFC01.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKFC01002.png",
+        "Name": "KFC·Lucia",
+        "Description": "Energy Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            155042
+        ],
+        "SkillDescription": [
+            "A QTE or 3-Ping has a 50% chance to drop a chicken burger. 30s cooldown. The chicken burger disappears in 10s. Picking it up grants 8 energy."
+        ],
+        "EquipIds": [
+            3015056,
+            3025056,
+            3035056,
+            3045056,
+            3055056,
+            3065056
+        ]
+    },
+    {
+        "Id": 1557,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELifuZhongqiuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELifuZhongqiuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELifuZhongqiuI01002.png",
+        "Name": "Liv: United",
+        "Description": "Survival Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            155062
+        ],
+        "SkillDescription": [
+            "Movement speed increases by 10%"
+        ],
+        "EquipIds": [
+            3015057,
+            3025057,
+            3035057,
+            3045057,
+            3055057,
+            3065057
+        ]
+    },
+    {
+        "Id": 1558,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKuluomuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKuluomuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKuluomuI01002.png",
+        "Name": "Chrome: Banquet",
+        "Description": "2nd Anniversary Memory",
+        "SuitType": 12,
+        "SkillEffect": [
+            155072
+        ],
+        "SkillDescription": [
+            "DEF increases by 10%."
+        ],
+        "EquipIds": [
+            3015058,
+            3025058,
+            3035058,
+            3045058,
+            3055058,
+            3065058
+        ]
+    },
+    {
+        "Id": 1559,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBiankaZhounianI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBiankaZhounianI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBiankaZhounianI01002.png",
+        "Name": "Bianca: Tipsy Night",
+        "Description": "3rd Year Anniversary Memory",
+        "SuitType": 12,
+        "SkillEffect": [
+            155902
+        ],
+        "SkillDescription": [
+            "Movement speed increases by 10%"
+        ],
+        "EquipIds": [
+            3015059,
+            3025059,
+            3035059,
+            3045059,
+            3055059,
+            3065059
+        ]
+    },
+    {
+        "Id": 1560,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELunaMengzhanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELunaMengzhanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELunaMengzhanI01002.png",
+        "Name": "Luna: Fullmoon Laurel",
+        "Description": "Eden Festival",
+        "SuitType": 12,
+        "SkillEffect": [
+            156002
+        ],
+        "SkillDescription": [
+            "Every 20s, receives a healing effect equal to 10% of max HP."
+        ],
+        "EquipIds": [
+            3015060,
+            3025060,
+            3035060,
+            3045060,
+            3055060,
+            3065060
+        ]
+    },
+    {
+        "Id": 1561,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ECerberusI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ECerberusI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ECerberusI01002.png",
+        "Name": "Cerberus - Rave Party",
+        "Description": "4th Anniversary",
+        "SuitType": 12,
+        "SkillEffect": [
+            156102
+        ],
+        "SkillDescription": [
+            "DEF increases by 10%"
+        ],
+        "EquipIds": [
+            3015061,
+            3025061,
+            3035061,
+            3045061,
+            3055061,
+            3065061
+        ]
+    },
+    {
+        "Id": 1562,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EQiaqiaQul01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EQiaqiaQul01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EQiaqiaQul01002.png",
+        "Name": "ChaCha: Qu",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156202
+        ],
+        "SkillDescription": [
+            "Ping Skills have a 50% chance to drop a bag of sunflower seeds on hit. Cooldown: 30s. The bag of sunflower seeds dropped will exist for 5s and throws out sunflower seeds every second, restoring 4% HP to nearby characters."
+        ],
+        "EquipIds": [
+            3015062,
+            3025062,
+            3035062,
+            3045062,
+            3055062,
+            3065062
+        ]
+    },
+    {
+        "Id": 1563,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EQiaqiaHanyingl01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EQiaqiaHanyingl01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EQiaqiaHanyingl01002.png",
+        "Name": "ChaCha: Hanying",
+        "Description": "Speed Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156302
+        ],
+        "SkillDescription": [
+            "Ping Skills have a 50% chance to drop a bag of sunflower seeds on hit. Cooldown: 30s. The bag of sunflower seeds dropped will exist for 5s and throws out sunflower seeds every second, granting 12% Movement Speed to nearby characters for 4s."
+        ],
+        "EquipIds": [
+            3015063,
+            3025063,
+            3035063,
+            3045063,
+            3055063,
+            3065063
+        ]
+    },
+    {
+        "Id": 1564,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENabatiLuciaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENabatiLuciaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLuciaI01002.png",
+        "Name": "Nabati: Lucia",
+        "Description": "DEF Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156402
+        ],
+        "SkillDescription": [
+            "Ping Skills have a 50% chance to drop a wrapping bag near you on hit. Cooldown: 30s. The wrapping bag dropped will exist for 5s, increasing DEF by 8% for 4s upon collection."
+        ],
+        "EquipIds": [
+            3015064,
+            3025064,
+            3035064,
+            3045064,
+            3055064,
+            3065064
+        ]
+    },
+    {
+        "Id": 1565,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENabatiLeeI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENabatiLeeI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLeeI01002.png",
+        "Name": "Nabati: Lee",
+        "Description": "Speed Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156502
+        ],
+        "SkillDescription": [
+            "Ping Skills have a 50% chance to drop a wrapping bag near you on hit. Cooldown: 30s. The wrapping bag dropped will exist for 5s, increasing Movement Speed by 12% for 4s upon collection."
+        ],
+        "EquipIds": [
+            3015065,
+            3025065,
+            3035065,
+            3045065,
+            3055065,
+            3065065
+        ]
+    },
+    {
+        "Id": 1566,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENabatiLivI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENabatiLivI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENabatiLivI01002.png",
+        "Name": "Nabati: Liv",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156602
+        ],
+        "SkillDescription": [
+            "Ping Skills have a 50% chance to drop a wrapping bag near you on hit. Cooldown: 30s. The wrapping bag dropped will exist for 5s, recovering HP by 4% upon collection."
+        ],
+        "EquipIds": [
+            3015066,
+            3025066,
+            3035066,
+            3045066,
+            3055066,
+            3065066
+        ]
+    },
+    {
+        "Id": 1567,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EChupaBiancaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EChupaBiancaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChupaBiancaI01002.png",
+        "Name": "Treasure Gem: Bianca",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156702
+        ],
+        "SkillDescription": [
+            "When a ping skill hits an enemy, there's a 50% chance to drop a package bag nearby with a 30-second cooldown. The bag lasts for 5s and grants an 8% DEF effect for 4s when picked up."
+        ],
+        "EquipIds": [
+            3015067,
+            3025067,
+            3035067,
+            3045067,
+            3055067,
+            3065067
+        ]
+    },
+    {
+        "Id": 1568,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EChupaNanamiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EChupaNanamiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChupaNanamiI01002.png",
+        "Name": "Treasure Gem: Nanami",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            156802
+        ],
+        "SkillDescription": [
+            "When a ping skill hits an enemy, there's a 50% chance to drop a package bag nearby with a 30-second cooldown. The bag lasts for 5s and recovers 4% HP for 4s when picked up."
+        ],
+        "EquipIds": [
+            3015068,
+            3025068,
+            3035068,
+            3045068,
+            3055068,
+            3065068
+        ]
+    },
+    {
+        "Id": 1569,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/E5AnniverI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/E5AnniverI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/E5AnniverI01002.png",
+        "Name": "Nanami: Holoverse",
+        "Description": "5th Anniversary Memory",
+        "SuitType": 12,
+        "SkillEffect": [
+            156902
+        ],
+        "SkillDescription": [
+            "DEF increases by 10%"
+        ],
+        "EquipIds": [
+            3015069,
+            3025069,
+            3035069,
+            3045069,
+            3055069,
+            3065069
+        ]
+    },
+    {
+        "Id": 1570,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELawsonI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELawsonI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELawsonI01002.png",
+        "Name": "Lawson: Mind Station",
+        "Description": "Support Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            157002
+        ],
+        "SkillDescription": [
+            "When a ping skill hits an enemy, there's a 50% chance to drop a package bag nearby with a 30-second cooldown. The bag lasts for 5s and recovers 4% HP for 5s when picked up."
+        ],
+        "EquipIds": [
+            3015070,
+            3025070,
+            3035070,
+            3045070,
+            3055070,
+            3065070
+        ]
+    },
+    {
+        "Id": 1571,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/E5HalfAnniverI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/E5HalfAnniverI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/E5HalfAnniverI01002.png",
+        "Name": "Gala Glimpse",
+        "Description": "5.5th Anniversary Memory",
+        "SuitType": 12,
+        "SkillEffect": [
+            157102
+        ],
+        "SkillDescription": [
+            "DEF increases by 10%."
+        ],
+        "EquipIds": [
+            3015071,
+            3025071,
+            3035071,
+            3045071,
+            3055071,
+            3065071
+        ]
+    },
+    {
+        "Id": 1601,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKangdelinaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKangdelinaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKangdelinaI01002.png",
+        "Name": "Condelina",
+        "Description": "Basic Attack Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            160102
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 15%."
+        ],
+        "EquipIds": [
+            3016001,
+            3026001,
+            3036001,
+            3046001,
+            3056001,
+            3066001
+        ]
+    },
+    {
+        "Id": 1602,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EShashibiyaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EShashibiyaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EShashibiyaI01002.png",
+        "Name": "Shakespeare",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            160202
+        ],
+        "SkillDescription": [
+            "All ATK increases by 3% and Fire DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016002,
+            3026002,
+            3036002,
+            3046002,
+            3056002,
+            3066002
+        ]
+    },
+    {
+        "Id": 1603,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHaisenbaoI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHaisenbaoI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHaisenbaoI01002.png",
+        "Name": "Heisen",
+        "Description": "Lightning Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            160302
+        ],
+        "SkillDescription": [
+            "All ATK increases by 3% and Lightning DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016003,
+            3026003,
+            3036003,
+            3046003,
+            3056003,
+            3066003
+        ]
+    },
+    {
+        "Id": 1604,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EDaerwenI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EDaerwenI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDaerwenI01002.png",
+        "Name": "Darwin",
+        "Description": "Orb Skill Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            160402
+        ],
+        "SkillDescription": [
+            "For each orb pinged, Extra DMG Bonus increases by 3% for 4s. Can be stacked up to 5 times. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3016004,
+            3026004,
+            3036004,
+            3046004,
+            3056004,
+            3066004
+        ]
+    },
+    {
+        "Id": 1605,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHannaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHannaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHannaI01002.png",
+        "Name": "Hanna",
+        "Description": "3-Ping Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            160502
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus of 3-Ping skills increases by 25%."
+        ],
+        "EquipIds": [
+            3016005,
+            3026005,
+            3036005,
+            3046005,
+            3056005,
+            3066005
+        ]
+    },
+    {
+        "Id": 1606,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAdaifuI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAdaifuI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAdaifuI01002.png",
+        "Name": "Cottie",
+        "Description": "Signature Move Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            160602
+        ],
+        "SkillDescription": [
+            "Gains 20% more Energy when pinging an orb. Signature Move requires 20% less Energy."
+        ],
+        "EquipIds": [
+            3016006,
+            3026006,
+            3036006,
+            3046006,
+            3056006,
+            3066006
+        ]
+    },
+    {
+        "Id": 1607,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EDafenqiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EDafenqiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDafenqiI01002.png",
+        "Name": "Da Vinci",
+        "Description": "QTE Boost",
+        "SuitType": 9,
+        "SkillEffect": [
+            160702
+        ],
+        "SkillDescription": [
+            "When QTE is triggered, the controlling character gains 10% ATK and 20% DEF for 8s. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3016007,
+            3026007,
+            3036007,
+            3046007,
+            3056007,
+            3066007
+        ]
+    },
+    {
+        "Id": 1608,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKaiselinI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKaiselinI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKaiselinI01002.png",
+        "Name": "Catherine",
+        "Description": "Survival Boost I",
+        "SuitType": 10,
+        "SkillEffect": [
+            160802
+        ],
+        "SkillDescription": [
+            "QTE and 3-Ping skills reduce the target's Physical DEF by 20% for 8s. 10s cooldown."
+        ],
+        "EquipIds": [
+            3016008,
+            3026008,
+            3036008,
+            3046008,
+            3056008,
+            3066008
+        ]
+    },
+    {
+        "Id": 1609,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAiyinsitanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAiyinsitanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAiyinsitanI01002.png",
+        "Name": "Einsteina",
+        "Description": "Survival Boost II",
+        "SuitType": 11,
+        "SkillEffect": [
+            160902
+        ],
+        "SkillDescription": [
+            "QTE and 3-Ping skills reduce the target's all Elemental Resistance by 15% for 8s. 10s cooldown."
+        ],
+        "EquipIds": [
+            3016009,
+            3026009,
+            3036009,
+            3046009,
+            3056009,
+            3066009
+        ]
+    },
+    {
+        "Id": 1610,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EFeilieteI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EFeilieteI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFeilieteI01002.png",
+        "Name": "Philip II",
+        "Description": "Support Boost I",
+        "SuitType": 7,
+        "SkillEffect": [
+            161002
+        ],
+        "SkillDescription": [
+            "Increase Heal by 10%. Healing allies increases their Physical DMG and DEF by 10% for 5s (CD: 8s)."
+        ],
+        "EquipIds": [
+            3016010,
+            3026010,
+            3036010,
+            3046010,
+            3056010,
+            3066010
+        ]
+    },
+    {
+        "Id": 1611,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGuiniweiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGuiniweiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGuiniweiI01002.png",
+        "Name": "Guinevere",
+        "Description": "Support Boost II",
+        "SuitType": 8,
+        "SkillEffect": [
+            161102
+        ],
+        "SkillDescription": [
+            "Healing effect increases by 10%. Next healing effect increases the target's all Elemental DMG and Resistance by 10% for 5s. 8s cooldown."
+        ],
+        "EquipIds": [
+            3016011,
+            3026011,
+            3036011,
+            3046011,
+            3056011,
+            3066011
+        ]
+    },
+    {
+        "Id": 1612,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EFeitelieI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EFeitelieI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFeitelieI01002.png",
+        "Name": "Frederick",
+        "Description": "Dodge Boost",
+        "SuitType": 6,
+        "SkillEffect": [
+            161202
+        ],
+        "SkillDescription": [
+            "Each dodge increases Movement Speed by 15% and Extra DMG Bonus by 5% for 5s. Can be stacked up to 3 times. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3016012,
+            3026012,
+            3036012,
+            3046012,
+            3056012,
+            3066012
+        ]
+    },
+    {
+        "Id": 1613,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EManyinsitanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EManyinsitanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EManyinsitanI01002.png",
+        "Name": "Bathlon",
+        "Description": "Dark Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            161302
+        ],
+        "SkillDescription": [
+            "ATK increases by 3% and Dark DMG increases by 7%"
+        ],
+        "EquipIds": [
+            3016013,
+            3026013,
+            3036013,
+            3046013,
+            3056013,
+            3066013
+        ]
+    },
+    {
+        "Id": 1614,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBadunI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBadunI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBadunI01002.png",
+        "Name": "Patton",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            161402
+        ],
+        "SkillDescription": [
+            "ATK increases by 3% and Physical DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016014,
+            3026014,
+            3036014,
+            3046014,
+            3056014,
+            3066014
+        ]
+    },
+    {
+        "Id": 1615,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EZuwenyuanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EZuwenyuanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EZuwenyuanI01001.png",
+        "Name": "Chen Jiyuan",
+        "Description": "Ice Boost",
+        "SuitType": 3,
+        "SkillEffect": [
+            161502
+        ],
+        "SkillDescription": [
+            "ATK increases by 3% and Ice DMG increases by 7%"
+        ],
+        "EquipIds": [
+            3016015,
+            3026015,
+            3036015,
+            3046015,
+            3056015,
+            3066015
+        ]
+    },
+    {
+        "Id": 1616,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKeyaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKeyaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKeya01002.png",
+        "Name": "Koya",
+        "Description": "ATK Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            161602
+        ],
+        "SkillDescription": [
+            "Extra DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016016,
+            3026016,
+            3036016,
+            3046016,
+            3056016,
+            3066016
+        ]
+    },
+    {
+        "Id": 1617,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELiewenhukeI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELiewenhukeI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELiewenhukeI01001.png",
+        "Name": "Leeuwenhoek",
+        "Description": "Physical Support Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            161702
+        ],
+        "SkillDescription": [
+            "ATK increases by 3% and Physical DMG increases by 7%"
+        ],
+        "EquipIds": [
+            3016017,
+            3026017,
+            3036017,
+            3046017,
+            3056017,
+            3066017
+        ]
+    },
+    {
+        "Id": 1618,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EWuanjunI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EWuanjunI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EWuanjunI01002.png",
+        "Name": "Wu'an",
+        "Description": "ATK Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            161802
+        ],
+        "SkillDescription": [
+            "Basic Attack's Extra DMG Bonus increases by 5%, Physical DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016018,
+            3026018,
+            3036018,
+            3046018,
+            3056018,
+            3066018
+        ]
+    },
+    {
+        "Id": 1619,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELemeiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELemeiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELemeiI01002.png",
+        "Name": "Flamel",
+        "Description": "ATK Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            161902
+        ],
+        "SkillDescription": [
+            "Dark DMG increases by 5% and ATK increases by 5%"
+        ],
+        "EquipIds": [
+            3016019,
+            3026019,
+            3036019,
+            3046019,
+            3056019,
+            3066019
+        ]
+    },
+    {
+        "Id": 1620,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELukeleiqiyaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELukeleiqiyaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELukeleiqiyaI01002.png",
+        "Name": "Lucrezia",
+        "Description": "Lightning Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            162002
+        ],
+        "SkillDescription": [
+            "Lightning DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016020,
+            3026020,
+            3036020,
+            3046020,
+            3056020,
+            3066020
+        ]
+    },
+    {
+        "Id": 1621,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAikesupeiliI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAikesupeiliI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAikesupeiliI01002.png",
+        "Name": "Exupery",
+        "Description": "Ice Boost",
+        "SuitType": 0,
+        "EquipIds": [
+            3016021,
+            3026021,
+            3036021,
+            3046021,
+            3056021,
+            3066021
+        ]
+    },
+    {
+        "Id": 1622,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ETifaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ETifaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ETifaI01002.png",
+        "Name": "Tifa",
+        "Description": "Lightning Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            162202
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Lightning DMG increases by 5%"
+        ],
+        "EquipIds": [
+            3016022,
+            3026022,
+            3036022,
+            3046022,
+            3056022,
+            3066022
+        ]
+    },
+    {
+        "Id": 1623,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENikeersenI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENikeersenI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENikeersenI01002.png",
+        "Name": "Jack",
+        "Description": "Fire Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            162302
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Fire DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016023,
+            3026023,
+            3036023,
+            3046023,
+            3056023,
+            3066023
+        ]
+    },
+    {
+        "Id": 1624,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EYilishabaiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EYilishabaiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYilishabaiI01002.png",
+        "Name": "Elizabeth",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            162402
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Fire DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3016024,
+            3026024,
+            3036024,
+            3046024,
+            3056024,
+            3066024
+        ]
+    },
+    {
+        "Id": 1625,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EFanniI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EFanniI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFanniI01002.png",
+        "Name": "Seraphine",
+        "Description": "Dark Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            162502
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Dark DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3016025,
+            3026025,
+            3036025,
+            3046025,
+            3056025,
+            3066025
+        ]
+    },
+    {
+        "Id": 1626,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EMaerkeI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EMaerkeI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EMaerkeI01002.png",
+        "Name": "Marco",
+        "Description": "Physical Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            162602
+        ],
+        "SkillDescription": [
+            "Deals 7% more Physical DMG and 5% more Basic Attack DMG."
+        ],
+        "EquipIds": [
+            3016026,
+            3026026,
+            3036026,
+            3046026,
+            3056026,
+            3066026
+        ]
+    },
+    {
+        "Id": 1627,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EYounimeiteI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EYounimeiteI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYounimeiteI01002.png",
+        "Name": "Unimate",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            162702
+        ],
+        "SkillDescription": [
+            "Increases Fire DMG by 10%."
+        ],
+        "EquipIds": [
+            3016027,
+            3026027,
+            3036027,
+            3046027,
+            3056027,
+            3066027
+        ]
+    },
+    {
+        "Id": 1628,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAixiaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAixiaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAixiaI01002.png",
+        "Name": "Isabel",
+        "Description": "Ice Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            162802
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Ice DMG increases by 7%."
+        ],
+        "EquipIds": [
+            3016028,
+            3026028,
+            3036028,
+            3046028,
+            3056028,
+            3066028
+        ]
+    },
+    {
+        "Id": 1629,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBuenI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBuenI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBuenI01002.png",
+        "Name": "Boone",
+        "Description": "Dark Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            162902
+        ],
+        "SkillDescription": [
+            "Dark DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016029,
+            3026029,
+            3036029,
+            3046029,
+            3056029,
+            3066029
+        ]
+    },
+    {
+        "Id": 1630,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EXueLaiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EXueLaiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXueLaiI01002.png",
+        "Name": "Shelley",
+        "Description": "Lightning Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            163002
+        ],
+        "SkillDescription": [
+            "Lightning DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016030,
+            3026030,
+            3036030,
+            3046030,
+            3056030,
+            3066030
+        ]
+    },
+    {
+        "Id": 1631,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EXialuodiI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EXialuodiI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXialuodiI01002.png",
+        "Name": "Charlotte",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            163102
+        ],
+        "SkillDescription": [
+            "Basic Attacks deal 5% more DMG. ATK increases by 7%."
+        ],
+        "EquipIds": [
+            3016031,
+            3026031,
+            3036031,
+            3046031,
+            3056031,
+            3066031
+        ]
+    },
+    {
+        "Id": 1632,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ETulingI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ETulingI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ETulingI01002.png",
+        "Name": "Turing",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            163202
+        ],
+        "SkillDescription": [
+            "Fire DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016032,
+            3026032,
+            3036032,
+            3046032,
+            3056032,
+            3066032
+        ]
+    },
+    {
+        "Id": 1633,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EYileinuoyaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EYileinuoyaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EYileinuoyaI01002.png",
+        "Name": "Aline",
+        "Description": "Ice Boost",
+        "SuitType": 3,
+        "SkillEffect": [
+            163302
+        ],
+        "SkillDescription": [
+            "Extra DMG Bonus increases by 5% and Ice DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3016033,
+            3026033,
+            3036033,
+            3046033,
+            3056033,
+            3066033
+        ]
+    },
+    {
+        "Id": 1634,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EDiseerI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EDiseerI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDiseerI01002.png",
+        "Name": "Diesel",
+        "Description": "Lightning Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            163402
+        ],
+        "SkillDescription": [
+            "Lightning DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016034,
+            3026034,
+            3036034,
+            3046034,
+            3056034,
+            3066034
+        ]
+    },
+    {
+        "Id": 1635,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EFulanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EFulanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EFulanI01002.png",
+        "Name": "Fran",
+        "Description": "Lightning Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            163502
+        ],
+        "SkillDescription": [
+            "Lightning DMG increases by 5% and Extra DMG Bonus increases by 5%."
+        ],
+        "EquipIds": [
+            3016035,
+            3026035,
+            3036035,
+            3046035,
+            3056035,
+            3066035
+        ]
+    },
+    {
+        "Id": 1636,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EXigenaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EXigenaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EXigenaI01002.png",
+        "Name": "Signa",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            163602
+        ],
+        "SkillDescription": [
+            "Physical DMG increases by 5% and Extra DMG Bonus increases by 5%."
+        ],
+        "EquipIds": [
+            3016036,
+            3026036,
+            3036036,
+            3046036,
+            3056036,
+            3066036
+        ]
+    },
+    {
+        "Id": 1637,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EDekeduoI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EDekeduoI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EDekeduoI01002.png",
+        "Name": "Derketo",
+        "Description": "Dark Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            163702
+        ],
+        "SkillDescription": [
+            "Dark DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016037,
+            3026037,
+            3036037,
+            3046037,
+            3056037,
+            3066037
+        ]
+    },
+    {
+        "Id": 1638,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EAlphonseI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EAlphonseI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EAlphonseI01002.png",
+        "Name": "Alphonse",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            163802
+        ],
+        "SkillDescription": [
+            "Fire DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016038,
+            3026038,
+            3036038,
+            3046038,
+            3056038,
+            3066038
+        ]
+    },
+    {
+        "Id": 1639,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ELilianaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ELilianaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ELilianaI01002.png",
+        "Name": "Liliana",
+        "Description": "ATK Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            163902
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Extra DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3016039,
+            3026039,
+            3036039,
+            3046039,
+            3056039,
+            3066039
+        ]
+    },
+    {
+        "Id": 1640,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EJiboanI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EJiboanI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJiboanI01002.png",
+        "Name": "Ji Bo'an",
+        "Description": "Ice Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            164002
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Ice DMG increases by 5%."
+        ],
+        "EquipIds": [
+            3016040,
+            3026040,
+            3036040,
+            3046040,
+            3056040,
+            3066040
+        ]
+    },
+    {
+        "Id": 1641,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ECleopatraI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ECleopatraI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ECleopatraI01002.png",
+        "Name": "Cleopatra",
+        "Description": "Nihil Boost",
+        "SuitType": 14,
+        "SkillEffect": [
+            164102
+        ],
+        "SkillDescription": [
+            "Nihil DMG increases by 10%"
+        ],
+        "EquipIds": [
+            3016041,
+            3026041,
+            3036041,
+            3046041,
+            3056041,
+            3066041
+        ]
+    },
+    {
+        "Id": 1642,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EChangwuziI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EChangwuziI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EChangwuziI01002.png",
+        "Name": "Chang Wuzi",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            164202
+        ],
+        "SkillDescription": [
+            "Physical DMG increases by 10%"
+        ],
+        "EquipIds": [
+            3016042,
+            3026042,
+            3036042,
+            3046042,
+            3056042,
+            3066042
+        ]
+    },
+    {
+        "Id": 1643,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EListonI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EListonI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EListonI01002.png",
+        "Name": "Liston",
+        "Description": "Ice Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            164302
+        ],
+        "SkillDescription": [
+            "Ice DMG increases by 10%"
+        ],
+        "EquipIds": [
+            3016043,
+            3026043,
+            3036043,
+            3046043,
+            3056043,
+            3066043
+        ]
+    },
+    {
+        "Id": 1644,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHeraclitusI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHeraclitusI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHeraclitusI01002.png",
+        "Name": "Heraclitus",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            164402
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Fire DMG and Plasma Beam DMG increase by 5%."
+        ],
+        "EquipIds": [
+            3016044,
+            3026044,
+            3036044,
+            3046044,
+            3056044,
+            3066044
+        ]
+    },
+    {
+        "Id": 1645,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EWildeI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EWildeI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EWildeI01002.png",
+        "Name": "Wilde",
+        "Description": "Plasma Beam Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            164502
+        ],
+        "SkillDescription": [
+            "Lightning DMG increases by 5% and Plasma Beam DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016045,
+            3026045,
+            3036045,
+            3046045,
+            3056045,
+            3066045
+        ]
+    },
+    {
+        "Id": 1646,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHerschellI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHerschellI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHerschellI01002.png",
+        "Name": "Herschell",
+        "Description": "Lightning Boost",
+        "SuitType": 4,
+        "SkillEffect": [
+            164602
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Lightning DMG and Ignition DMG increase by 5%."
+        ],
+        "EquipIds": [
+            3016046,
+            3026046,
+            3036046,
+            3046046,
+            3056046,
+            3066046
+        ]
+    },
+    {
+        "Id": 1647,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ESothothI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ESothothI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ESothothI01002.png",
+        "Name": "Sothoth",
+        "Description": "Nihil Boost",
+        "SuitType": 14,
+        "SkillEffect": [
+            164702
+        ],
+        "SkillDescription": [
+            "Nihil DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016047,
+            3026047,
+            3036047,
+            3046047,
+            3056047,
+            3066047
+        ]
+    },
+    {
+        "Id": 1648,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EbarceloI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EbarceloI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EbarceloI01002.png",
+        "Name": "Barcelo",
+        "Description": "Dark Boost",
+        "SuitType": 5,
+        "SkillEffect": [
+            164802
+        ],
+        "SkillDescription": [
+            "ATK increases by 7% and Dark DMG and Plasma Beam DMG increase by 3%."
+        ],
+        "EquipIds": [
+            3016048,
+            3026048,
+            3036048,
+            3046048,
+            3056048,
+            3066048
+        ]
+    },
+    {
+        "Id": 1649,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBuranaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBuranaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBuranaI01002.png",
+        "Name": "Burana",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            164902
+        ],
+        "SkillDescription": [
+            "ATK increases by 5% and Physical DMG and Glaciation DMG increase by 5%."
+        ],
+        "EquipIds": [
+            3016049,
+            3026049,
+            3036049,
+            3046049,
+            3056049,
+            3066049
+        ]
+    },
+    {
+        "Id": 1650,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKlenovaI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKlenovaI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKlenovaI01002.png",
+        "Name": "Klenova",
+        "Description": "Glaciation Enhancement",
+        "SuitType": 4,
+        "SkillEffect": [
+            165002
+        ],
+        "SkillDescription": [
+            "Ice DMG increases by 5% and Glaciation DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3016050,
+            3026050,
+            3036050,
+            3046050,
+            3056050,
+            3066050
+        ]
+    },
+    {
+        "Id": 1651,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EHervorI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EHervorI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EHervorI01002.png",
+        "Name": "Hervor",
+        "Description": "Fire Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            165102
+        ],
+        "SkillDescription": [
+            "ATK increases by 5%. Fire DMG and Darkflow DMG increase by 5%."
+        ],
+        "EquipIds": [
+            3016051,
+            3026051,
+            3036051,
+            3046051,
+            3056051,
+            3066051
+        ]
+    },
+    {
+        "Id": 1652,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EJeanneI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EJeanneI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJeanneI01002.png",
+        "Name": "Jeanne",
+        "Description": "Dark Boost",
+        "SuitType": 2,
+        "SkillEffect": [
+            165202
+        ],
+        "SkillDescription": [
+            "ATK increases by 5%. Dark DMG and Raydiance DMG increase by 5%."
+        ],
+        "EquipIds": [
+            3016052,
+            3026052,
+            3036052,
+            3046052,
+            3056052,
+            3066052
+        ]
+    },
+    {
+        "Id": 1653,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EKeatsI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EKeatsI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EKeatsI01002.png",
+        "Name": "Keats",
+        "Description": "Physical Boost",
+        "SuitType": 1,
+        "SkillEffect": [
+            165302
+        ],
+        "SkillDescription": [
+            "Physical DMG and Ignition DMG increase by 5% and Extra DMG Bonus increases by 5%.when Veronica heals her allies, allies healed gain the Deep Piercing effect that increases CRIT DMG by 40% and 75% CRIT Rate by for 8s. Duration resets every time it is triggered."
+        ],
+        "EquipIds": [
+            3016053,
+            3026053,
+            3036053,
+            3046053,
+            3056053,
+            3066053
+        ]
+    },
+    {
+        "Id": 20001,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EJpLivlizhuangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EJpLivlizhuangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJpLivlizhuangB01001.png",
+        "Name": "Ceremony - Liv",
+        "Description": "Survival Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            3000002
+        ],
+        "SkillDescription": [
+            "Gain a shield equal to 20% Max HP for 5s every 30s after taking DMG."
+        ],
+        "EquipIds": [
+            3018053,
+            3028053,
+            3038053,
+            3048053,
+            3058053,
+            3068053
+        ]
+    },
+    {
+        "Id": 1901,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material I",
+        "SuitType": 0,
+        "SkillDescription": [
+            "N/A"
+        ],
+        "EquipIds": [
+            3911001,
+            3921001,
+            3931001,
+            3941001,
+            3951001,
+            3961001
+        ]
+    },
+    {
+        "Id": 1902,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material II",
+        "SuitType": 0,
+        "SkillDescription": [
+            "N/A"
+        ],
+        "EquipIds": [
+            3912001,
+            3922001,
+            3932001,
+            3942001,
+            3952001,
+            3962001
+        ]
+    },
+    {
+        "Id": 1903,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material III",
+        "SuitType": 0,
+        "SkillDescription": [
+            "N/A"
+        ],
+        "EquipIds": [
+            3913001,
+            3923001,
+            3933001,
+            3943001,
+            3953001,
+            3963001
+        ]
+    },
+    {
+        "Id": 1904,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material III",
+        "SuitType": 0,
+        "SkillDescription": [
+            "N/A"
+        ],
+        "EquipIds": [
+            3914001,
+            3924001,
+            3934001,
+            3944001,
+            3954001,
+            3964001
+        ]
+    },
+    {
+        "Id": 1905,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material III",
+        "SuitType": 0,
+        "SkillEffect": [
+            190202
+        ],
+        "SkillDescription": [
+            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%."
+        ],
+        "EquipIds": [
+            3915001,
+            3925001,
+            3935001,
+            3945001,
+            3955001,
+            3965001
+        ]
+    },
+    {
+        "Id": 1906,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EGouliangI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EGouliangI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EGouliangI01002.png",
+        "Name": "Memory Enhancer",
+        "Description": "Enhance Material III",
+        "SuitType": 0,
+        "SkillEffect": [
+            190202
+        ],
+        "SkillDescription": [
+            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%."
+        ],
+        "EquipIds": [
+            3916001,
+            3926001,
+            3936001,
+            3946001,
+            3956001,
+            3966001
+        ]
+    },
+    {
+        "Id": 20002,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EJpWeilaSummerI01001Sp.png",
+        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EJpWeilaSummerI01001.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJpWeilaSummerB01001.png",
+        "Name": "Vera - Scarlet Summers",
+        "Description": "Attack HP Recovery",
+        "SuitType": 12,
+        "SkillEffect": [
+            3000006
+        ],
+        "SkillDescription": [
+            "Upon a 3-Ping, gains 5% ATK for 5s. Cooldown: 10s."
+        ],
+        "EquipIds": [
+            3019050,
+            3029050,
+            3039050,
+            3049050,
+            3059050,
+            3069050
+        ]
+    },
+    {
+        "Id": 20000,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EJpI01001Sp.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EJpB01001.png",
+        "Name": "Cerberus - Rave Party",
+        "Description": "Physical Boost",
+        "SuitType": 12,
+        "SkillEffect": [
+            2000002
+        ],
+        "SkillDescription": [
+            "Movement Speed +10%"
+        ],
+        "EquipIds": [
+            3015501,
+            3025501,
+            3035501,
+            3045501
+        ]
+    },
+    {
+        "Id": 50000,
+        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EEnI01001Sp.png",
+        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EEnB01001.png",
+        "Name": "Lucia - Summer Daze",
+        "Description": "Exclusive Memory",
+        "SuitType": 12,
+        "SkillEffect": [
+            5000002
+        ],
+        "SkillDescription": [
+            "Basic Attack DMG increases by 10%."
+        ],
+        "EquipIds": [
+            3015650,
+            3025650,
+            3035650,
+            3045650,
+            3055650,
+            3065650
+        ]
+    }
+]

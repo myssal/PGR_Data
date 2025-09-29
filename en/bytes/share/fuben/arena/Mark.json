@@ -1,0 +1,62 @@
+[
+    {
+        "MarkId": 1,
+        "MinPoint": 0,
+        "MaxPoint": 10000,
+        "EnemyHpPoint": "KillNum/TotalNum * 1500",
+        "MyHpPoint": "Hp*30",
+        "TimePoint": "LeftTime*90",
+        "MaxEnemyHpPoint": 1500,
+        "MaxMyHpPoint": 3000,
+        "MaxTimePoint": 9000,
+        "MaxNpcGroupPoint": 0
+    },
+    {
+        "MarkId": 2,
+        "MinPoint": 0,
+        "MaxPoint": 20000,
+        "EnemyHpPoint": "KillNum/TotalNum * 3000",
+        "MyHpPoint": "Hp*60",
+        "TimePoint": "LeftTime*125",
+        "MaxEnemyHpPoint": 3000,
+        "MaxMyHpPoint": 6000,
+        "MaxTimePoint": 15000,
+        "MaxNpcGroupPoint": 0
+    },
+    {
+        "MarkId": 3,
+        "MinPoint": 0,
+        "MaxPoint": 99999999,
+        "EnemyHpPoint": "EnemyHp/100",
+        "MyHpPoint": "Hp*200",
+        "MaxEnemyHpPoint": 0,
+        "MaxMyHpPoint": 20000,
+        "MaxTimePoint": 0,
+        "NpcGroupPoint": "NpcGroup*50000",
+        "MaxNpcGroupPoint": 0
+    },
+    {
+        "MarkId": 4,
+        "MinPoint": 0,
+        "MaxPoint": 99999999,
+        "EnemyHpPoint": "EnemyHp/50",
+        "MyHpPoint": "Hp*200",
+        "MaxEnemyHpPoint": 0,
+        "MaxMyHpPoint": 20000,
+        "MaxTimePoint": 0,
+        "NpcGroupPoint": "NpcGroup*50000",
+        "MaxNpcGroupPoint": 0
+    },
+    {
+        "MarkId": 5,
+        "MinPoint": 0,
+        "MaxPoint": 99999999,
+        "EnemyHpPoint": "EnemyHp/25",
+        "MyHpPoint": "Hp*200",
+        "MaxEnemyHpPoint": 0,
+        "MaxMyHpPoint": 20000,
+        "MaxTimePoint": 0,
+        "NpcGroupPoint": "NpcGroup*50000",
+        "MaxNpcGroupPoint": 0
+    }
+]

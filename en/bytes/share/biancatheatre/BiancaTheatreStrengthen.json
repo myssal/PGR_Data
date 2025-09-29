@@ -1,0 +1,338 @@
+[
+    {
+        "Id": 1,
+        "UnlockPrice": 200,
+        "EffectGroupId": 51001,
+        "Name": "ATK Boost",
+        "Desc": "ATK increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "GroupId": 1,
+        "ActiveLinesIndex": [
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "UnlockPrice": 200,
+        "EffectGroupId": 51002,
+        "Name": "HP Up",
+        "Desc": "Max HP increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21001.png",
+        "GroupId": 1,
+        "PreStrengthenIds": [
+            1
+        ],
+        "ActiveLinesIndex": [
+            4,
+            6
+        ]
+    },
+    {
+        "Id": 3,
+        "UnlockPrice": 200,
+        "EffectGroupId": 51003,
+        "Name": "DMG Boost",
+        "Desc": "Extra DMG Bonus increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png",
+        "GroupId": 1,
+        "PreStrengthenIds": [
+            2
+        ]
+    },
+    {
+        "Id": 4,
+        "UnlockPrice": 250,
+        "EffectGroupId": 51004,
+        "Name": "Shark-speare Sale Enhancement",
+        "Desc": "Sale Slots in Shark-speare Sale +1",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "GroupId": 1,
+        "PreStrengthenIds": [
+            2,
+            5,
+            6
+        ]
+    },
+    {
+        "Id": 5,
+        "UnlockPrice": 200,
+        "EffectGroupId": 51005,
+        "Name": "Overall Enhancement",
+        "Desc": "All basic stats (ATK, HP, CRIT, DEF) increase by 2%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21121.png",
+        "GroupId": 1,
+        "ActiveLinesIndex": [
+            2
+        ]
+    },
+    {
+        "Id": 6,
+        "UnlockPrice": 200,
+        "EffectGroupId": 50006,
+        "Name": "Default Biomimetic Blood Boost",
+        "Desc": "Has 1 additional bottle of Biomimetic Blood at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill06.png",
+        "GroupId": 1,
+        "PreStrengthenIds": [
+            7
+        ],
+        "ActiveLinesIndex": [
+            7,
+            5
+        ]
+    },
+    {
+        "Id": 7,
+        "UnlockPrice": 200,
+        "EffectGroupId": 50007,
+        "Name": "Default Tinbread Cookie Boost",
+        "Desc": "Has 3 more Tinbread Cookies at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill07.png",
+        "GroupId": 1,
+        "ActiveLinesIndex": [
+            3
+        ]
+    },
+    {
+        "Id": 8,
+        "UnlockPrice": 200,
+        "EffectGroupId": 50005,
+        "Name": "Shark-speare Sale Enhancement",
+        "Desc": "Item Discount Slots in Shark-speare Sale +1",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "GroupId": 1,
+        "PreStrengthenIds": [
+            6
+        ]
+    },
+    {
+        "Id": 9,
+        "UnlockPrice": 250,
+        "EffectGroupId": 51011,
+        "Name": "ATK Boost",
+        "Desc": "ATK increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            4
+        ],
+        "ActiveLinesIndex": [
+            1
+        ]
+    },
+    {
+        "Id": 10,
+        "UnlockPrice": 250,
+        "EffectGroupId": 51012,
+        "Name": "HP Up",
+        "Desc": "Max HP increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21001.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            9
+        ],
+        "ActiveLinesIndex": [
+            4,
+            6
+        ]
+    },
+    {
+        "Id": 11,
+        "UnlockPrice": 250,
+        "EffectGroupId": 51013,
+        "Name": "DMG Boost",
+        "Desc": "Extra DMG Bonus increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            10
+        ]
+    },
+    {
+        "Id": 12,
+        "UnlockPrice": 300,
+        "EffectGroupId": 50012,
+        "Name": "Completion Rewards Up",
+        "Desc": "Grants 10% more [Downfall Crystal] and [Curse-Dispelling Chapters] following the adventure result calculation",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33111.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            10,
+            13,
+            14
+        ]
+    },
+    {
+        "Id": 13,
+        "UnlockPrice": 250,
+        "EffectGroupId": 51014,
+        "Name": "Overall Enhancement",
+        "Desc": "All basic stats (ATK, HP, CRIT, DEF) increase by 2%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21121.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            4
+        ],
+        "ActiveLinesIndex": [
+            2
+        ]
+    },
+    {
+        "Id": 14,
+        "UnlockPrice": 250,
+        "EffectGroupId": 50014,
+        "Name": "Default Biomimetic Blood Boost",
+        "Desc": "Has 1 additional bottle of Biomimetic Blood at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill06.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            15
+        ],
+        "ActiveLinesIndex": [
+            7,
+            5
+        ]
+    },
+    {
+        "Id": 15,
+        "UnlockPrice": 250,
+        "EffectGroupId": 50015,
+        "Name": "Default Tinbread Cookie Boost",
+        "Desc": "Has 3 more Tinbread Cookies at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill07.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            4
+        ],
+        "ActiveLinesIndex": [
+            3
+        ]
+    },
+    {
+        "Id": 16,
+        "UnlockPrice": 250,
+        "EffectGroupId": 50021,
+        "Name": "Shark-speare Sale Enhancement",
+        "Desc": "Increases the discount percentage in Shark-speare Sale.",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill05.png",
+        "GroupId": 2,
+        "PreStrengthenIds": [
+            14
+        ]
+    },
+    {
+        "Id": 17,
+        "UnlockPrice": 300,
+        "EffectGroupId": 51021,
+        "Name": "ATK Boost",
+        "Desc": "ATK increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            12
+        ],
+        "ActiveLinesIndex": [
+            1
+        ]
+    },
+    {
+        "Id": 18,
+        "UnlockPrice": 300,
+        "EffectGroupId": 51022,
+        "Name": "HP Up",
+        "Desc": "Max HP increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21001.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            17
+        ],
+        "ActiveLinesIndex": [
+            4,
+            6
+        ]
+    },
+    {
+        "Id": 19,
+        "UnlockPrice": 300,
+        "EffectGroupId": 51023,
+        "Name": "DMG Boost",
+        "Desc": "Extra DMG Bonus increases by 5%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            18
+        ]
+    },
+    {
+        "Id": 20,
+        "UnlockPrice": 300,
+        "EffectGroupId": 51024,
+        "Name": "Advanced DMG Boost",
+        "Desc": "Further increases Physical/Fire/Lightning/Ice DMG by 10%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon1.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            18,
+            21,
+            22
+        ]
+    },
+    {
+        "Id": 21,
+        "UnlockPrice": 300,
+        "EffectGroupId": 51025,
+        "Name": "Overall Enhancement",
+        "Desc": "All basic stats (ATK, HP, CRIT, DEF) increase by 2%",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21121.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            12
+        ],
+        "ActiveLinesIndex": [
+            2
+        ]
+    },
+    {
+        "Id": 22,
+        "UnlockPrice": 300,
+        "EffectGroupId": 50022,
+        "Name": "Default Biomimetic Blood Boost",
+        "Desc": "Has 1 additional bottle of Biomimetic Blood at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill06.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            23
+        ],
+        "ActiveLinesIndex": [
+            7,
+            5
+        ]
+    },
+    {
+        "Id": 23,
+        "UnlockPrice": 300,
+        "EffectGroupId": 50023,
+        "Name": "Default Tinbread Cookie Boost",
+        "Desc": "Has 3 more Tinbread Cookies at the beginning of the game",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill07.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            12
+        ],
+        "ActiveLinesIndex": [
+            3
+        ]
+    },
+    {
+        "Id": 24,
+        "UnlockPrice": 300,
+        "EffectGroupId": 50020,
+        "Name": "Recruitment Refresh Boost",
+        "Desc": "Character Recruitment Refresh Attempts +1",
+        "Icon": "Assets/Product/Texture/Image/UiBiancaTheatre/BiancaTheatreIconSkill04.png",
+        "GroupId": 3,
+        "PreStrengthenIds": [
+            22
+        ]
+    }
+]

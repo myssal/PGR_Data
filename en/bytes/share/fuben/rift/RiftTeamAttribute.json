@@ -1,0 +1,44 @@
+[
+    {
+        "Id": 1,
+        "Name": "Might",
+        "LimitInit": 20,
+        "LimitMax": 99,
+        "Desc": "Increases the number of ATK Add-on drops.",
+        "EffectGroupIds": [
+            1
+        ]
+    },
+    {
+        "Id": 2,
+        "Name": "Constitution",
+        "LimitInit": 20,
+        "LimitMax": 99,
+        "Desc": "Increases the conversion rate of HP, DEF, and duplicate Add-ons.",
+        "EffectGroupIds": [
+            2,
+            3
+        ]
+    },
+    {
+        "Id": 3,
+        "Name": "Perception",
+        "LimitInit": 20,
+        "LimitMax": 99,
+        "Desc": "降低敌人的抗性并提升黑金票券的掉落数量",
+        "EffectGroupIds": [
+            4
+        ]
+    },
+    {
+        "Id": 4,
+        "Name": "Knowledge",
+        "LimitInit": 20,
+        "LimitMax": 99,
+        "Desc": "提升属性伤害、暴击伤害并提升充能值获取率",
+        "EffectGroupIds": [
+            11,
+            12
+        ]
+    }
+]
