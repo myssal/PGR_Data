@@ -1242,14 +1242,11 @@ function XRiftControl:RiftSweepLayerRequest(cb)
         end
         -- 解锁插件
         self:UnlockedPluginByDrop(res.PluginDropRecords)
-        -- 记录当前层累计的插件掉落 如果没有任何层通关 按第一层的数据扫荡
-        local maxPassFightLayerOrder = math.max(1, self:GetMaxPassFightLayerId())
-        self._Model.ActivityData:AddFightLayerDropPlugin(maxPassFightLayerOrder, res.PluginDropRecords)
         self._Model.ActivityData:AddSweepTimes(res.SweepTick)
         self._Model.ActivityData:UpdateLuckNode(nil, res.LuckyValue)
         self._Model.ActivityData:AddAffixs(res.PluginInfos)
         -- 弹层结算
-        XLuaUiManager.Open("UiRiftSettleWin", maxPassFightLayerOrder, nil, true, true, res)
+        XLuaUiManager.Open("UiRiftSettleWin", nil, res, true, true)
         if cb then
             cb()
         end

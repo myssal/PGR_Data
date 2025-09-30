@@ -21,7 +21,9 @@ function XUiChapterPanelGrid:Refresh(chapterId)
     self.ChapterId = chapterId
     --是否通关
     local isClear = XDataCenter.CourseManager.CheckChapterIsComplete(chapterId)
-    self.CommonFuBenClear.gameObject:SetActiveEx(isClear)
+    if self.CommonFuBenClear then
+        self.CommonFuBenClear.gameObject:SetActiveEx(isClear)
+    end
     --背景
     local normalBg = XCourseConfig.GetExamChapterGridNormalBg(chapterId)
     local disableBg = XCourseConfig.GetExamChapterGridDisableBg(chapterId)

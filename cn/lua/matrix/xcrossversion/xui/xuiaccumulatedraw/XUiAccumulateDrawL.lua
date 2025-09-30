@@ -178,8 +178,8 @@ function XUiAccumulateDraw:_RegisterButtonClicks()
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick, true)
     self:RegisterClickEvent(self.PanelBottom, self.OnSpecialPanelClick, true)
-    self.BtnLaw1.CallBack = function() self:OnBtnLaw1() end
-    self.BtnLaw2.CallBack = function() self:OnBtnLaw2() end
+    --self.BtnLaw1.CallBack = function() self:OnBtnLaw1() end
+    --self.BtnLaw2.CallBack = function() self:OnBtnLaw2() end
 end
 
 function XUiAccumulateDraw:_RegisterSchedules()
@@ -314,6 +314,12 @@ end
 
 function XUiAccumulateDraw:_InitUi()
     self.GridCourse.gameObject:SetActiveEx(false)
+    if self.BtnLaw1 then
+        self.BtnLaw1.gameObject:SetActiveEx(false)
+    end
+    if self.BtnLaw2 then
+        self.BtnLaw2.gameObject:SetActiveEx(false)
+    end
 end
 
 -- endregion

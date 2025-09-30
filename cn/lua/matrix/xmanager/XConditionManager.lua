@@ -3231,8 +3231,10 @@ local TeamCondition = {
     [18113] = function(condition)
         -- 当前战斗房间队伍里是否包含指定角色
         local targetCharId = condition.Params[1]
-        local xTeam = XDataCenter.TeamManager.GetBattleRoomCacheTeam()
-        if not xTeam then
+        local xTeam, tempStageId = XDataCenter.TeamManager.GetBattleRoomCacheTeam()
+        local xBaseTeam = require("XEntity/XTeam/XTeam")
+        -- 不是xTeam或不是继承自xTeam的都不能操作这些队伍
+        if not xTeam or (xTeam.__cname ~= "XTeam" and xTeam.Super == nil) or (xTeam.__cname ~= "XTeam" and not CheckClassSuper(xTeam, xBaseTeam)) then
             return false, condition.Desc
         end
         return xTeam:GetCharIdIsInTeamWithRobotCheck(targetCharId), condition.Desc

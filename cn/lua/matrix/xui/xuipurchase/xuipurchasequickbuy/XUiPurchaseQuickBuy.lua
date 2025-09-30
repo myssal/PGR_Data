@@ -64,7 +64,7 @@ end
 
 function XUiPurchaseQuickBuy:_Refresh(payCount, config)
     self.TxtNumber1.text = XUiHelper.GetText("PayQuickBuyNumber", payCount)
-    local showAmount = not XOverseaManager.IsENRegion() and config.Amount or config.ShowAmount
+    local showAmount = not XOverseaManager.IsOverSeaRegion() and config.Amount or config.ShowAmount
     self.TxtNumber2.text = XUiHelper.GetText("PayQuickBuyNumber", config.MoneyCard)
     self.IconConsume1:SetRawImage(XPurchaseConfigs.GetIconPathByIconName(config.Icon).AssetPath)
     self.TxtConsumeTips.text = XUiHelper.GetText("PayQuickBuyDesc", showAmount, config.MoneyCard)

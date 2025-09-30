@@ -368,9 +368,10 @@ function XRiftModel:EnterFight(xTeam)
         self._LastStageId = XMVCA.XRift:GetLuckStageId()
         self._IsLoseGenericSettle = true
     else
+        local isEndless = self:GetChapterConfigById(layerConfig.ChapterId).Type == XEnumConst.Rift.ChapterType.Endless
         self._LastStageIndex = index
         self._LastStageId = self:GetStageIdByStageGroup(CurrSelectStageGroup, index)
-        self._IsLoseGenericSettle = layerConfig.Type == XEnumConst.Rift.LayerType.Challenge
+        self._IsLoseGenericSettle = layerConfig.Type == XEnumConst.Rift.LayerType.Challenge or isEndless
     end
 
     self.CurFightCharCount = xTeam:GetEntityCount()

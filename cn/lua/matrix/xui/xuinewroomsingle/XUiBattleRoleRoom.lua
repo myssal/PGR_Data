@@ -62,8 +62,14 @@ end
 -- challengeCount : number, 挑战次数
 function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadArgsByCacheWithAgain)
     if isReadArgsByCacheWithAgain == nil then isReadArgsByCacheWithAgain = false end
-    self.Camera = self.Transform:GetComponent("Canvas").worldCamera
+    self.StageId = stageId
     local stageConfig = XMVCA.XFuben:GetStageCfg(stageId)
+
+    local isStageHasValidGeneralSkill = XMVCA.XFuben:CheckHasValidGeneralSkillId(stageId) -- 如果关卡有效应推荐 每次强制刷新一遍
+    if isStageHasValidGeneralSkill then
+        self.TeamManager.SetGeneralSkillRefreshTrigger()
+    end
+    self.Camera = self.Transform:GetComponent("Canvas").worldCamera
     -- 判断是否有重复挑战
     if XRoomSingleManager.AgainBtnType[stageConfig.FunctionLeftBtn] 
         or XRoomSingleManager.AgainBtnType[stageConfig.FunctionRightBtn] then
@@ -141,7 +147,6 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
     self:RefreshGeneralSkill()
 
     local isShowRoleDetailInfo = self.Team:GetIsShowRoleDetailInfo()
-    local stageConfig = XMVCA.XFuben:GetStageCfg(self.StageId)
     local isHasGeneralSkillIds = not string.IsNilOrEmpty(stageConfig.GeneralSkillIds)
     -- 如果有新机制  要强行打开信息按钮
     if isHasGeneralSkillIds then

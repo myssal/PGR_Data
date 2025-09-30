@@ -22,11 +22,11 @@ function XUiModelUtility.LoadPartnerModelSToC(templateId, panelRoleModelUi, uiNa
         return
     end
 
-    panelRoleModelUi:UpdatePartnerModel(modelConfig.StandbyModel, uiName, nil, loadCallback, false, true)
     -- 音效
     if modelConfig.SToCVoice and modelConfig.SToCVoice > 0 then
-        cvInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, modelConfig.SToCVoice)
+        panelRoleModelUi:SetSFXCueIdByCueId(modelConfig.SToCVoice)
     end
+    panelRoleModelUi:UpdatePartnerModel(modelConfig.StandbyModel, uiName, nil, loadCallback, false, true)
 
     -- 变形特效
     panelRoleModelUi:LoadPartnerUiEffect(modelConfig.StandbyModel, XPartnerConfigs.EffectParentName.ModelOffEffect,

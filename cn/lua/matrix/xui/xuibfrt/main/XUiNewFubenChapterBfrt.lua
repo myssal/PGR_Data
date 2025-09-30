@@ -120,7 +120,7 @@ function XUiNewFubenChapterBfrt:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnBtnMainUiClick)
     XUiHelper.RegisterClickEvent(self, self.RewardsBubble, self.OnBtnImportRewardIdClick)
     -- 海外版本副本界面添加帮助按钮
-    if XOverseaManager.IsJP_KRRegion() then
+    if XOverseaManager.IsKRRegion() then
         self.BtnHelp.gameObject:SetActiveEx(true)
         XUiHelper.RegisterClickEvent(self, self.BtnHelp, self.OnBtnHelpClick)
     end

@@ -111,7 +111,7 @@ function XUiPurchasePay:SetListItemActive(index, grid)
     end
 
     local data = self.ListData[index] or {}
-    local price = not XOverseaManager.IsENRegion() and data.Amount or data.ShowAmount
+    local price = not XOverseaManager.IsTW_ENRegion() and data.Amount or data.ShowAmount
     local name = data.Name or ""
     self.BuyKey = data.Key
     self.TxtTips.text = TextManager.GetText("PusrchaseBuyTips",price,name)

@@ -50,7 +50,7 @@ end
 function XUiLoginNetworkModePanel:OnBtnSaveClick()
     if self.CurNetworkMode then
         XSaveTool.SaveData(XNetwork.NetworkModeKey, self.CurNetworkMode)
-        XUiManager.TipMsg("Changing Network Mode Succeed.")
+        XUiManager.TipMsg(CS.XTextManager.GetLuaText("XUiLoginNetworkModePanel.lua_53"))
         self:Hide()
     end
 end

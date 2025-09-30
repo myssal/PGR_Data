@@ -33,20 +33,22 @@ function XPayConfigs.GetPayTemplate(key)
 end
 
 function XPayConfigs.GetPayConfig()
-    if not PayListDataConfig then
+    if not PayListDataConfig or #PayListDataConfig <=0 then
         PayListDataConfig = {}
-        if XOverseaManager.IsENRegion() then
+        if XOverseaManager.IsENRegion() or XOverseaManager.IsTWRegion() then
             for _,v in pairs(PayTemplates)do
-                if v.ShowUIType == 1 then
-                    if v.Platform == XPayConfigs.PayTemplateType.Android and Platform == RuntimePlatform.Android then
+                if XOverseaManager.IsENRegion() and v.ShowUIType ~= 1 then
+                    goto continue
+                end
+                if v.Platform == XPayConfigs.PayTemplateType.Android and Platform == RuntimePlatform.Android then
                         table.insert(PayListDataConfig,v)
-                    elseif v.Platform == XPayConfigs.PayTemplateType.IOS and Platform == RuntimePlatform.IPhonePlayer then
+                elseif v.Platform == XPayConfigs.PayTemplateType.IOS and Platform == RuntimePlatform.IPhonePlayer then
                         table.insert(PayListDataConfig,v)
-                    elseif v.Platform == XPayConfigs.PayTemplateType.PC and (Platform == RuntimePlatform.WindowsPlayer 
+                elseif v.Platform == XPayConfigs.PayTemplateType.PC and (Platform == RuntimePlatform.WindowsPlayer 
                     or Platform == RuntimePlatform.WindowsEditor) then
                         table.insert(PayListDataConfig,v)
-                    end
                 end
+                ::continue::
             end
         else
             for _,v in pairs(PayTemplates)do
@@ -55,6 +57,7 @@ function XPayConfigs.GetPayConfig()
                 end
             end
         end
+    
     end
     return PayListDataConfig
 end

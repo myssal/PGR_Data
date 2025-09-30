@@ -46,7 +46,8 @@ end
 
 function XLottoDrawGroupBtnEntity:GetBottomText()
     local bottomText = CS.XTextManager.GetText("NewDrawMainBottomText")
-    return string.format("%s%d/%d", bottomText, self.BottomTimes, self.MaxBottomTimes)
+    local space = not XOverseaManager.IsENRegion() and "" or " "
+    return string.format("%s%s%d/%d", bottomText, space, self.BottomTimes, self.MaxBottomTimes)
 end
 
 function XLottoDrawGroupBtnEntity:GetSwitchText()

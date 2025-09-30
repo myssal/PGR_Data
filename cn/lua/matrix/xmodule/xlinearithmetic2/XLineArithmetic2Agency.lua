@@ -192,6 +192,10 @@ function XLineArithmetic2Agency:ExGetFunctionNameType()
 end
 
 function XLineArithmetic2Agency:IsShowRedDot()
+    if not self._Model:GetActivityId() then
+        return false
+    end
+    
     if self:ExGetIsLocked() then
         return false
     end
@@ -235,7 +239,13 @@ end
 function XLineArithmetic2Agency:ExOnSkip()
     if not self:ExCheckInTime() then
         if self._Model:IsExpire() then
-            XUiManager.TipText("ActivityMainLineEnd")
+            if XOverseaManager.IsTWRegion() then
+                XUiManager.TipText("ActivityTimeNullTW")
+            
+            else
+
+                XUiManager.TipText("ActivityMainLineEnd")
+            end
             return false
         end
         XUiManager.TipText("ActivityBranchNotOpen")

@@ -182,11 +182,9 @@ function XUiPlayerUp:GetFreeActionPoint(level)
 end
 
 function XUiPlayerUp:GetTxtLevelName()
-    if self:IsHonorLevelOpen() then
-        return CS.XTextManager.GetText("HonorLevel") .. CS.XTextManager.GetText("Promote")
-    else
-        return CS.XTextManager.GetText("PlayerLevel") .. CS.XTextManager.GetText("Promote")
-    end
+    local prefix = self:IsHonorLevelOpen() and "HonorLevel" or "PlayerLevel"
+    local space = XOverseaManager.IsENRegion() and " " or ""
+    return CS.XTextManager.GetText(prefix) .. space .. CS.XTextManager.GetText("Promote")
 end
 --@endregion
 

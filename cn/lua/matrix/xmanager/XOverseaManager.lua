@@ -25,6 +25,14 @@ function XOverseaManager.IsOverSeaRegion()
     return localregion ~= Language.CN
 end
 
+function XOverseaManager.IsJP_KR_ENRegion()
+    return localregion == Language.EN or localregion == Language.KR or localregion == Language.JP
+end
+
 function XOverseaManager.IsJP_KRRegion()
     return localregion == Language.JP or localregion == Language.KR
+end
+
+function XOverseaManager.IsTW_ENRegion()
+    return localregion == Language.EN or localregion == Language.TW
 end

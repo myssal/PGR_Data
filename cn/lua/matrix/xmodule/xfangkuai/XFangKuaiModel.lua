@@ -166,6 +166,9 @@ end
 
 function XFangKuaiModel:GetTimeStr(timestamp)
     local dt = CS.XDateUtil.GetLocalDateTime(timestamp)
+    if XOverseaManager.IsENRegion() then
+        return string.format("%02d/%02d", dt.Month, dt.Day)
+    end
     return string.format("%d%s%d%s", dt.Month, XUiHelper.GetText("Monthly"), dt.Day, XUiHelper.GetText("Diary"))
 end
 

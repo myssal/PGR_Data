@@ -194,7 +194,11 @@ function XUiBuyAsset:OnBtnConfirmClick()
 
     local callback = function(targetId, targetCount)
         local name = XDataCenter.ItemManager.GetItemName(targetId)
-        XUiManager.TipMsg(CS.XTextManager.GetText("BuySuccess") .. "," .. CS.XTextManager.GetText("Acquire") .. " " .. targetCount .. CS.XTextManager.GetText("QuantifiersA") .. " " .. name, XUiManager.UiTipType.Tip)
+        if XOverseaManager.IsJPRegion() then
+            XUiManager.TipMsg(XUiHelper.GetText("JPBuyTicketSuccessTips", name, targetCount))
+        else
+            XUiManager.TipMsg(CS.XTextManager.GetText("BuySuccess") .. "," .. CS.XTextManager.GetText("Acquire") .. " " .. targetCount .. CS.XTextManager.GetText("QuantifiersA") .. " " .. name, XUiManager.UiTipType.Tip)
+        end
 
         local lackNum = self.LackNum
         if self.LackNum then
@@ -431,7 +435,11 @@ function XUiBuyAsset:OnBtnChallengeCountClick()
 
     local callback = function()
         local name = CS.XTextManager.GetText("BuyChallegeDesc")
-        XUiManager.TipMsg(CS.XTextManager.GetText("Buy") .. CS.XTextManager.GetText("Success") .. "," .. CS.XTextManager.GetText("Acquire") .. 1 .. name, XUiManager.UiTipType.Tip)
+        if XOverseaManager.IsJPRegion() then
+            XUiManager.TipMsg(XUiHelper.GetText("JPBuyTicketSuccessTips", name, 1))
+        else
+            XUiManager.TipMsg(CS.XTextManager.GetText("Buy") .. CS.XTextManager.GetText("Success") .. "," .. CS.XTextManager.GetText("Acquire") .. 1 .. name, XUiManager.UiTipType.Tip)
+        end
         if self.SuccessCallback then
             self.SuccessCallback()
         end

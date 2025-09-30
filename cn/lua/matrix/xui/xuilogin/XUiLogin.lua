@@ -518,7 +518,7 @@ function XUiLogin:AutoAddListener()
 end
 
 function XUiLogin:LoadNetworkPanel()
-    if not XOverseaManager.IsENRegion() then
+    if not XOverseaManager.IsENRegion() and not XOverseaManager.IsKRRegion() then
         return
     end
     local uiLoginNetworkModePanel = require("XUi/XUiLogin/XUiLoginNetworkModePanel")
@@ -737,6 +737,8 @@ function XUiLogin:DoLogin()
         --XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Music, CS.XAudioManager.MAIN_BGM)
         local runMainProfiler = loginProfiler:CreateChild("RunMain")
         runMainProfiler:Start()
+
+        XDataCenter.CloudGameManager.OpenControlCameraByDragLocalCache()
 
         --打开水印窗口
         XLoginManager.CheckWaterMask()

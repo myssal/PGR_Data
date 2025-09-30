@@ -41,7 +41,7 @@ function XUrlAgency:OnInit()
             return XHeroSdkManager.GetCurPkgId()
         end,
         ["channel_id"] = function(urlCfg)
-            return CS.XHeroSdkAgent.GetAppChannelId()
+            return CS.XHeroSdkAgent.GetChannelId()
         end,
         ["role_id"] = function(urlCfg)
             return XPlayer.Id

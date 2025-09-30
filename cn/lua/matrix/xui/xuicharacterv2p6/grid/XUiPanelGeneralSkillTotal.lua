@@ -11,7 +11,6 @@ function XUiPanelGeneralSkillTotal:OnStart()
     self.GridElementDetail.gameObject:SetActiveEx(false)
 end
 
-
 function XUiPanelGeneralSkillTotal:OnEnable()
     self._CurgeneralSkills = XMVCA.XCharacter:GetCharacterGeneralSkillIds(self.Parent.CharacterId)
 
@@ -33,7 +32,7 @@ end
 function XUiPanelGeneralSkillTotal:GetSortedCfgList()
     local cfgs = XMVCA.XCharacter:GetModelCharacterGeneralSkill()
     local sortTable = {}
-    for i, v in pairs(cfgs) do
+    for i, v in ipairs(cfgs) do
         table.insert(sortTable, v)
     end
     

@@ -23,7 +23,7 @@ function XUiGridSingleDialog:Refresh(dialogContent, isCenter, color, duration, t
 
     local txtWords = self.TxtWords
     local typeWriter = self.TypeWriter
-    txtWords.text = dialogContent
+    txtWords.text = string.gsub(dialogContent, "\\n", "\n")
 
     self.DialogContent = dialogContent
 

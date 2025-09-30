@@ -54,26 +54,6 @@ function XUiPassportCombReward:OnStart(levelAfter, spendBuyCount, spendBuyExp, b
 
     self.DynamicTable:SetDataSource(self.DynamicData)
     self.DynamicTable:ReloadDataSync(1)
-    self:ShowSpecialRegulationForJP()
-end
-
-function XUiPassportCombReward:ShowSpecialRegulationForJP() --海外修改
-    local isShow = CS.XGame.ClientConfig:GetInt("ShowRegulationEnable")
-    if isShow and isShow == 1 then
-        local url = CS.XGame.ClientConfig:GetString("RegulationPrefabUrl")
-        if url then
-            local obj = self.PanelInfo:LoadPrefab(url)
-            local data = {type = 1,consumeId = 2}
-            self.ShowSpecialRegBtn = obj.transform:GetComponent("XHtmlText")
-            self.ShowSpecialRegBtn.text = CS.XTextManager.GetText("JPBusinessLawsDetailsEnter")
-            self.ShowSpecialRegBtn.HrefUnderLineColor = CS.UnityEngine.Color(1, 45 / 255, 45 / 255, 1)
-            self.ShowSpecialRegBtn.transform.localPosition = CS.UnityEngine.Vector3(-383.3, -344, 0)
-            self.ShowSpecialRegBtn.fontSize = 32
-            self.ShowSpecialRegBtn.HrefListener = function(link)
-                XLuaUiManager.Open("UiSpecialRegulationShow",data)
-            end
-        end
-    end
 end
 
 function XUiPassportCombReward:OnDynamicTableEvent(event, index, grid)

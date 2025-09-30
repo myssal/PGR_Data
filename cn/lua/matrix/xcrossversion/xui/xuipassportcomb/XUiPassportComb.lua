@@ -3,7 +3,7 @@ local XUiPassportPanelTaskActivity = require("XCrossVersion/XUi/XUiPassportComb/
 local XUiPassportPanelTaskDaily = require("XCrossVersion/XUi/XUiPassportComb/XUiPassportCombPanelTaskDaily")
 local XUiPassportPanelTaskWeekly = require("XCrossVersion/XUi/XUiPassportComb/XUiPassportCombPanelTaskWeekly")
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
----@field _Control XPassportControl
+---@field _Control XPassportCombControl
 ---@class XUiPassportComb:XLuaUi
 local XUiPassportComb = XLuaUiManager.Register(XLuaUi, "UiPassportComb")
 
@@ -193,6 +193,13 @@ function XUiPassportComb:UpdateActivityTime()
     local totleWeekly, currWeekly = self._Control:GetPassportWeeklyTaskGroupCountAndCurrWeekly()
     self.TxtTime01.text = CS.XTextManager.GetText("PassportActivityTime", startTimeStr, endTimeStr, totleWeekly)
     self.TxtTime02.text = CS.XTextManager.GetText("PassportActivityCurrWeekly", currWeekly)
+
+    local alarmClockId = CS.XGame.ClientConfig:GetInt("BPDailyUpdateTime")
+    if alarmClockId and not XTool.UObjIsNil(self.TxtDaily) then
+        local alarmClockConfig = self._Control:GetAlarmClockList(alarmClockId)
+        local hours = math.floor(alarmClockConfig.EpochTime / 3600)
+        self.TxtDaily.text = CS.XTextManager.GetText("BPDailyUpdateText", string.format("%d:00", hours))
+    end
 end
 
 function XUiPassportComb:RegisterButtonEvent()

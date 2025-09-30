@@ -161,9 +161,10 @@ XUiPcManagerCreator = function()
         local lastResolution = XUiPcManager.GetLastResolution();        -- 获取上一次设备分辨率
         local lastScreen = XUiPcManager.GetLastScreen();                -- 获取上一次使用的屏幕分辨率 
         local unityScreen = XUiPcManager.GetUnityScreen();              -- 获取Unity写入的设备分辨率
-        local length = #resolutions;
 		local minResolution = resolutions[1]
-        local maxResolution = resolutions[length];
+        local length = #resolutions
+        local maxResolution = resolutions[length]
+        local lessHeightResolution = XUiPcManager.GetLessHeightResolution(resolutions, height)
         local noFrame = XUiPcManager.GetLastNoFrame();
         local lastFullScreen = XUiPcManager.GetLastFullScreen();
         local windowedMode = FullScreenMode.Windowed;
@@ -181,12 +182,12 @@ XUiPcManagerCreator = function()
             CS.UnityEngine.Screen.fullScreen = false;
             local fitWidth;
             local fitHeight;
-            if (lastScreen.width ~= 0 and lastScreen.height ~= 0) and lastScreen.width <= maxResolution.x and lastScreen.height <= maxResolution.y then
+            if (lastScreen.width ~= 0 and lastScreen.height ~= 0) and lastScreen.width <= lessHeightResolution.x and lastScreen.height <= lessHeightResolution.y then
                 fitWidth = lastScreen.width;
                 fitHeight = lastScreen.height;
             else
-                fitWidth = maxResolution.x;
-                fitHeight = maxResolution.y;
+                fitWidth = lessHeightResolution.x;
+                fitHeight = lessHeightResolution.y;
             end
             CS.XLog.Debug(string.format("fitResolution:%s x %s", fitWidth, fitHeight))
             XUiPcManager.SetResolution(fitWidth, fitHeight, windowedMode)
@@ -201,12 +202,11 @@ XUiPcManagerCreator = function()
                 XUiPcManager.SetResolution(lastScreen.width, lastScreen.height, mode)
             end
             CS.XSettingHelper.ForceWindow = false;
-        elseif height == lastResolution.height and not lastFullScreen then
+        elseif height == unityScreen.height and not lastFullScreen then
             -- 理应不会出现高 如 1450 或 1430 的 分辨率
             -- 当前设备分辨率 等于 上一次使用的屏幕分辨率, 且非全屏, 则改为小一级的
-            local secondResolution = XUiPcManager.GetLessHeightResolution(resolutions, height)
-            CS.XLog.Debug(string.format("设备分辨率高度与配置分辨率高度一致, 使用小一级窗口化分辨率, width: %s, heigth: %s", secondResolution.x, secondResolution.y))
-            XUiPcManager.SetResolution(secondResolution.x, secondResolution.y, windowedMode)
+            CS.XLog.Debug(string.format("设备分辨率高度与配置分辨率高度一致, 使用小一级窗口化分辨率, width: %s, heigth: %s", lessHeightResolution.x, lessHeightResolution.y))
+            XUiPcManager.SetResolution(lessHeightResolution.x, lessHeightResolution.y, windowedMode)
         else
             if unityScreen.width < minResolution.x or unityScreen.height < minResolution.y then
                 -- unity读取的尺寸很可能导致条幅屏, 判断是否有正确的缓存值

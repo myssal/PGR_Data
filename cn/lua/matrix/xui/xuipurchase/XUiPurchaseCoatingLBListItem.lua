@@ -76,6 +76,9 @@ function XUiPurchaseCoatingLBListItem:SetData()
                     end
                     tagText = disCountStr..tagText
                 end
+                if XOverseaManager.IsJPRegion() then
+                    tagText = "お得"
+                end
                 self.IsDisCount = true
             else
                 isShowTag = false

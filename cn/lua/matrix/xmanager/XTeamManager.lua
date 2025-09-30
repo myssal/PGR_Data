@@ -19,6 +19,7 @@ XTeamManagerCreator = function()
 
     local PlayerTeamGroupData = {}
     local PlayerTeamPrefabData = {}
+    local GeneralSkillRefreshTrigger = false
 
     local METHOD_NAME = {
         SetTeam = "TeamSetTeamRequest",
@@ -53,6 +54,16 @@ XTeamManagerCreator = function()
         end
         --EmptyTeam = XReadOnlyTable.Create(EmptyTeam)
         XTeamManager.EmptyTeam = EmptyTeam
+    end
+
+    function XTeamManager.SetGeneralSkillRefreshTrigger()
+        GeneralSkillRefreshTrigger = true
+    end
+
+    function XTeamManager.GetGeneralSkillRefreshTrigger()
+        local value = GeneralSkillRefreshTrigger
+        GeneralSkillRefreshTrigger = false
+        return value
     end
 
     function XTeamManager.GetTeamId(typeId, stageId)
@@ -825,7 +836,7 @@ XTeamManagerCreator = function()
                 CaptainPos = team:GetCaptainPos(),
                 FirstFightPos = team:GetFirstFightPos(),
                 TeamName = team:GetName(),
-                SelectedGeneralSkill = team:GetCurGeneralSkill(),
+                SelectedGeneralSkill = team:GetIsEmpty() and 0 or team:GetCurGeneralSkill(),
                 EnterCgIndex = team:GetEnterCgIndex(),
                 SettleCgIndex = team:GetSettleCgIndex(),
             }
@@ -863,11 +874,13 @@ XTeamManagerCreator = function()
         return false, false, nil
     end
 
-    function XTeamManager.SetBattleRoomCacheTeam(xTeam)
+    local CacheStageIdForTeam = nil
+    function XTeamManager.SetBattleRoomCacheTeam(xTeam, stageId)
         if not xTeam then
             return
         end
         BattleRoomCacheTeam = xTeam
+        CacheStageIdForTeam = stageId
     end
 
     function XTeamManager.ClearBattleRoomCacheTeam()
@@ -875,7 +888,7 @@ XTeamManagerCreator = function()
     end
 
     function XTeamManager.GetBattleRoomCacheTeam()
-        return BattleRoomCacheTeam
+        return BattleRoomCacheTeam, CacheStageIdForTeam
     end
 
     --- 根据传入的实体Id列表, 按照既定规则返回一个默认效应技能id(提供通用接口用于支持那些不会转换到XTeam处理的情况）

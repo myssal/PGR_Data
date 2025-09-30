@@ -10,6 +10,7 @@ function XUiBattleRoomGeneralSkillSelect:OnAwake()
     self.PanelRole.gameObject:SetActiveEx(false)
 end
 
+---@param team XTeam
 function XUiBattleRoomGeneralSkillSelect:OnStart(stageId, team)
     self._StageId = stageId
     self._Team = team
@@ -17,7 +18,9 @@ function XUiBattleRoomGeneralSkillSelect:OnStart(stageId, team)
 end
 
 function XUiBattleRoomGeneralSkillSelect:RefreshList()
-    self._DynamicTable:SetDataSource(self._Team:GetGeneralSkillList())
+    local data = self._Team:GetGeneralSkillList()
+    table.insert(data, {Id = XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT, Characters = {}})
+    self._DynamicTable:SetDataSource(data)
     self._DynamicTable:ReloadDataASync()
 end
 

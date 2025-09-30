@@ -125,7 +125,9 @@ function XUiFubenMainLineDetail:UpdateCommon()
     local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.Stage.StageId)
     local chapterOrderId = XDataCenter.FubenMainLineManager.GetChapterOrderIdByStageId(self.Stage.StageId)
 
-    self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. self.Stage.Name
+    local space = XOverseaManager.IsENRegion() and " " or ""
+    -- todo 这种方式显然不合理, 应当配在Text.tab里进行占位符处理
+    self.TxtTitle.text = chapterOrderId .. "-" .. stageCfg.OrderId .. space .. self.Stage.Name
     self.TxtDesc.text = self.Stage.Description
     self.TxtATNums.text = XDataCenter.FubenManager.GetRequireActionPoint(self.Stage.StageId)
 

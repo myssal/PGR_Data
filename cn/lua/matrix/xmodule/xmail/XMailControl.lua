@@ -504,24 +504,23 @@ function XMailControl:FixSurveyContent(mailInfo)
         fixedContent = string.gsub(fixedContent, "|", "\"")
         content = string.gsub(content, str, fixedContent)
     end
+    
+    return content
+end
 
+function XMailControl:FixCommonUrlContent(content)
     -- 通用配置格式
-    pattern = '@&&.+,urlId=.+&&@'
+    local pattern = '@&&.+,urlId=.+&&@'
 
     for str in string.gmatch(content, pattern) do
         local fixContent = '<link=%s>%s</link>'
         local btnContent = string.match(str,'@&&(.+),urlId')
-        local urlId = string.match(str,'urlId=(.+)&&@')
+        local urlId = string.match(str,'(urlId=.+)&&@')
 
-        if string.IsNumeric(urlId) then
-            local url = XMVCA.XUrl:GetFullUrlById(tonumber(urlId))
-            fixContent = string.format(fixContent, url,btnContent)
-            content = string.gsub(content, str, fixContent)
-        else
-            XLog.Error('urlId不是个数值：'..tostring(urlId))
-        end
+        fixContent = string.format(fixContent, urlId, btnContent)
+        content = string.gsub(content, str, fixContent)
     end
-    
+
     return content
 end
 

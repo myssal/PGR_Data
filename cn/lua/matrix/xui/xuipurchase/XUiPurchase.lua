@@ -73,6 +73,9 @@ function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
     local flag = XDataCenter.PurchaseManager.IsAccumulateEnterOpen() and not XUiManager.IsHideFunc
     self.BtnLjcz.gameObject:SetActive(flag)
     self.BtnKefu.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Feedback))
+    if XOverseaManager.IsKRRegion() then
+        self.BtnKefu.gameObject:SetActiveEx(false)
+    end
     if flag then
         local f = XDataCenter.PurchaseManager.AccumulatePayRedPoint()
         self.BtnLjcz:ShowReddot(f)

@@ -548,6 +548,8 @@ local type = {
     CONDITION_TEMPLE_CHALLENGE = "XRedPointConditionTempleChallenge",
     -- 春节累消
     CONDITION_ACCUMULATE_EXPEND_MAIN = "XRedPointConditionAccumulateExpend",
+    -- 合版本累消 #203409
+    CONDITION_ACCUMULATE_EXPEND_MAIN_COMB = "XRedPointConditionAccumulateExpendComb",
     -- 打地鼠红点
     CONDITION_HIT_MOUSE = "XRedpointConditionHitMouse",
     -- Boss跃升
