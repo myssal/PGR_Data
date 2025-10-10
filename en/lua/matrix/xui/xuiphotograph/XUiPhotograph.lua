@@ -57,6 +57,9 @@ function XUiPhotograph:OnStart()
     self.TxtRank.text = XPhotographConfigs.GetRankLevelText()
     self.ImgGlory.gameObject:SetActiveEx(XPlayer.IsHonorLevelOpen())
     self.TxtID.text = string.format("ID: %s", XPlayer.Id)
+
+    self.OnAnimationEnterCb = handler(self, self.OnAnimationEnter)
+    CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_HOMECHAR_ACTION_ENTER, self.OnAnimationEnterCb)
 end
 
 function XUiPhotograph:OnEnable()
@@ -171,6 +174,7 @@ function XUiPhotograph:OnDestroy()
     end
 
     XDataCenter.PhotographManager.ClearTextureCache()
+    CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_HOMECHAR_ACTION_ENTER, self.OnAnimationEnterCb)
 end
 
 function XUiPhotograph:OnGetEvents()
@@ -776,6 +780,24 @@ end
 ---@return XUiPanelRoleModel
 function XUiPhotograph:GetRoleModel()
     return self.RoleModel
+end
+
+function XUiPhotograph:OnAnimationEnter(evt, args)
+    if not args or args.Length < 2 then
+        return
+    end
+    local stateInfo = args[1]
+    if not self.RoleModel or not self.SelectCharacterId or self.SelectCharacterId <= 0
+            or not stateInfo then
+        return
+    end
+    --获取身体层正在播放的动画名
+    local actionId = self.RoleModel:GetPlayingStateName(0)
+    if not stateInfo:IsName(actionId) then
+        return
+    end
+    self.RoleModel:DoAnimaCrossFinishCallBack()
+    self.RoleModel:LoadCharacterUiEffect(self.SelectCharacterId, actionId)
 end
 
 -- ===================================================

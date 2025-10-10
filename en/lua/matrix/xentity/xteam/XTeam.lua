@@ -220,7 +220,7 @@ end
 -- 按顺序返回对应位置的charId，若是robotId则会转换为对应的charId，下标即是pos
 function XTeam:GetRealCharacterIdsOrder()
     local res = {}
-    for k, id in pairs(self.EntitiyIds) do
+    for k, id in pairs(self:GetEntityIds()) do
         res[k] = XRobotManager.GetCharacterId(id)
     end
     return res

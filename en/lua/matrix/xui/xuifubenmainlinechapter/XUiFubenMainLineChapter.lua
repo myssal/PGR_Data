@@ -79,8 +79,8 @@ function XUiFubenMainLineChapter:OnStart(chapter, stageId, hideDiffTog)
         self.PanelTopDifficult.gameObject:SetActiveEx(false)
     end
 
-    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
-        self.BtnHelp.gameObject:SetActiveEx(hideDiffTog ~= nil)
+    if self.BtnHelp then
+        self.BtnHelp.gameObject:SetActiveEx(false)
     end
 
     -- 赏金任务
@@ -367,12 +367,7 @@ function XUiFubenMainLineChapter:AutoAddListener()
     self.BtnSwitch2Normal.CallBack = function()
         self:OnBtnSwitch2NormalClidk()
     end
-    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
-        self.BtnHelp.gameObject:SetActiveEx(true)
-        self.BtnHelp.CallBack = function()
-            self:OnBtnHelpClick()
-        end
-    end
+   
 end
 -- auto
 

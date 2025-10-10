@@ -309,11 +309,6 @@ function XUiGachaLuciaMain:PlayInteraction()
             -- 必须要在enable动画完成后打开视线跟随
             self:SetXPostFaicalControllerActive(true)
             self:RefreshReddot()
-            if XOverseaManager.IsJPRegion() then
-                self:_PlayAnimNextFrame(function()
-                    self:PlayAnimation("AnimDisableLong2")
-                end)
-            end
             self._Volume:PlayEnd()
         end)
     end)

@@ -40,16 +40,21 @@ function XUiRpgMakerGameRoleMove:Update()
     if XTool.UObjIsNil(self.Transform) or not self.GameObject.activeSelf then
         return
     end
-
-    if (Input.GetMouseButtonDown(0) or (Input.touchCount > 0 and Input.GetTouch(0).phase == TouchPhase.Began)) then
-        if Platform == RuntimePlatform.WindowsEditor or Platform == RuntimePlatform.WindowsPlayer then
+    
+    local touch
+    if Input.touchCount > 0 then
+        touch = Input.GetTouch(0)
+    end
+    
+    if (Input.GetMouseButtonDown(0) or (touch and touch.phase == TouchPhase.Began)) then
+        if Platform == RuntimePlatform.WindowsEditor or Platform == RuntimePlatform.WindowsPlayer or not touch then
             self.IsLockByUi = EventSystemCurrent and EventSystemCurrent:IsPointerOverGameObject()
         else
-            self.IsLockByUi = EventSystemCurrent and EventSystemCurrent:IsPointerOverGameObject(Input.GetTouch(0).fingerId)
+            self.IsLockByUi = EventSystemCurrent and EventSystemCurrent:IsPointerOverGameObject(touch.fingerId)
         end
     end
 
-    if (Input.GetMouseButtonUp(0) or (Input.touchCount > 0 and Input.GetTouch(0).phase == TouchPhase.Ended)) then
+    if (Input.GetMouseButtonUp(0) or (touch and touch.phase == TouchPhase.Ended)) then
         self.IsLockByUi = false
     end
 
@@ -61,7 +66,11 @@ function XUiRpgMakerGameRoleMove:Update()
 end
 
 function XUiRpgMakerGameRoleMove:UpdateOp()
-    if Platform == RuntimePlatform.WindowsEditor or Platform == RuntimePlatform.WindowsPlayer then
+    local touch
+    if Input.touchCount > 0 then
+        touch = Input.GetTouch(0)
+    end
+    if Platform == RuntimePlatform.WindowsEditor or Platform == RuntimePlatform.WindowsPlayer or not touch then
         self:PCUpdate()
     else
         self:PhoneUpdate()

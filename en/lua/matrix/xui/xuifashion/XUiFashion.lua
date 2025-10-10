@@ -367,7 +367,8 @@ function XUiFashion:UpdateBlackName(curFashionId)
         if _curFashionId == 6003501 then
             self.TxtFashionName.gameObject:SetActiveEx(false)
             self.TxtFashionName2.gameObject:SetActiveEx(true)
-            --self.TxtFashionName2.text = template.Name
+            local template = XDataCenter.FashionManager.GetFashionTemplate(self.CurFashionId)
+            self.TxtFashionName2.text = template.Name
         else
             self.TxtFashionName2.gameObject:SetActiveEx(false)
             self.TxtFashionName.gameObject:SetActiveEx(true)

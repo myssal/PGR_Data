@@ -3219,8 +3219,11 @@ function XUiPanelRoleModel:GetSkinMeshFace()
         return self._MySkinMeshFace
     end
     local skinMeshFaceList = self.GameObject:GetComponentsInChildren(typeof(CS.UnityEngine.SkinnedMeshRenderer), true)
+    if not skinMeshFaceList then
+        return
+    end
     local targetSkinMeshFace = nil
-    for i = 0, skinMeshFaceList.Length do
+    for i = 0, skinMeshFaceList.Length - 1 do
         local tempMesh = skinMeshFaceList[i]
         if string.find(tempMesh.name, "Face") then
             targetSkinMeshFace = tempMesh

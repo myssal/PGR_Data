@@ -27875,18 +27875,18 @@
     },
     {
         "Id": 40001024,
-        "Key": "PayPlatformShield",
-        "Text": "Payment processing method unsupported"
+        "Key": "PayUnsupportedTargetType",
+        "Text": 40001024
     },
     {
         "Id": 40001025,
-        "Key": "AccumulatedExtraPayRewardIdIsNotExist",
-        "Text": "Payment platform settings invalid"
+        "Key": "PayInvalidPlatformForPay",
+        "Text": 40001025
     },
     {
         "Id": 40001026,
-        "Key": "PayCheckReceiptCurrencyUnMatch",
-        "Text": "40001026 Currency on the recharge permit mismatched"
+        "Key": "PayPlatformPayKeyNotMatch",
+        "Text": 40001026
     },
     {
         "Id": 202700023,
@@ -27897,5 +27897,25 @@
         "Id": 20053101,
         "Key": "PurchaseExistMutexItem",
         "Text": "Already own a conflicting product. Cannot purchase and replace it now."
+    },
+    {
+        "Id": 40001027,
+        "Key": "PayModuleNotHandled",
+        "Text": 40001027
+    },
+    {
+        "Id": 40001028,
+        "Key": "PayPlatformShield",
+        "Text": "Payment processing method unsupported"
+    },
+    {
+        "Id": 40001029,
+        "Key": "AccumulatedExtraPayRewardIdIsNotExist",
+        "Text": "Payment platform settings invalid"
+    },
+    {
+        "Id": 40001030,
+        "Key": "PayCheckReceiptCurrencyUnMatch",
+        "Text": "40001026 Currency on the recharge permit mismatched"
     }
 ]

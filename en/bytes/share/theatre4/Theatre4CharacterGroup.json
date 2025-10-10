@@ -126,6 +126,13 @@
         "Star": 0
     },
     {
+        "Id": 19,
+        "GroupId": 2,
+        "CharacterId": 69,
+        "Weight": 100,
+        "Star": 0
+    },
+    {
         "Id": 20,
         "GroupId": 101,
         "CharacterId": 1,
@@ -1143,6 +1150,21 @@
         "AddWeight": [
             60,
             -60
+        ]
+    },
+    {
+        "Id": 88,
+        "GroupId": 101,
+        "CharacterId": 69,
+        "Weight": 10,
+        "Star": 1,
+        "AddWeightCondition": [
+            1020610,
+            1020638
+        ],
+        "AddWeight": [
+            30,
+            -30
         ]
     },
     {
@@ -2166,6 +2188,21 @@
         ]
     },
     {
+        "Id": 157,
+        "GroupId": 102,
+        "CharacterId": 69,
+        "Weight": 10,
+        "Star": 2,
+        "AddWeightCondition": [
+            1020610,
+            1020638
+        ],
+        "AddWeight": [
+            30,
+            -30
+        ]
+    },
+    {
         "Id": 158,
         "GroupId": 201,
         "CharacterId": 35,
@@ -2341,6 +2378,13 @@
         "Star": 1
     },
     {
+        "Id": 183,
+        "GroupId": 201,
+        "CharacterId": 69,
+        "Weight": 100,
+        "Star": 1
+    },
+    {
         "Id": 184,
         "GroupId": 202,
         "CharacterId": 35,
@@ -2512,6 +2556,13 @@
         "Id": 208,
         "GroupId": 202,
         "CharacterId": 67,
+        "Weight": 100,
+        "Star": 2
+    },
+    {
+        "Id": 209,
+        "GroupId": 202,
+        "CharacterId": 69,
         "Weight": 100,
         "Star": 2
     },
@@ -2992,6 +3043,13 @@
         "Star": 3
     },
     {
+        "Id": 278,
+        "GroupId": 301,
+        "CharacterId": 69,
+        "Weight": 10,
+        "Star": 3
+    },
+    {
         "Id": 279,
         "GroupId": 401,
         "CharacterId": 5,
@@ -3328,6 +3386,13 @@
         "Star": 1
     },
     {
+        "Id": 327,
+        "GroupId": 501,
+        "CharacterId": 69,
+        "Weight": 100,
+        "Star": 1
+    },
+    {
         "Id": 328,
         "GroupId": 601,
         "CharacterId": 5,
@@ -3573,75 +3638,10 @@
         "Star": 1
     },
     {
-        "Id": 19,
-        "GroupId": 2,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 0
-    },
-    {
-        "Id": 88,
-        "GroupId": 101,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 1,
-        "AddWeightCondition": [
-            1020610,
-            1020638
-        ],
-        "AddWeight": [
-            0,
-            0
-        ]
-    },
-    {
-        "Id": 157,
-        "GroupId": 102,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 2,
-        "AddWeightCondition": [
-            1020610,
-            1020638
-        ],
-        "AddWeight": [
-            0,
-            0
-        ]
-    },
-    {
-        "Id": 183,
-        "GroupId": 201,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 1
-    },
-    {
-        "Id": 209,
-        "GroupId": 202,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 2
-    },
-    {
-        "Id": 278,
-        "GroupId": 301,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 3
-    },
-    {
-        "Id": 327,
-        "GroupId": 501,
-        "CharacterId": 69,
-        "Weight": 0,
-        "Star": 1
-    },
-    {
         "Id": 363,
         "GroupId": 601,
         "CharacterId": 69,
-        "Weight": 0,
+        "Weight": 100,
         "Star": 1
     }
 ]

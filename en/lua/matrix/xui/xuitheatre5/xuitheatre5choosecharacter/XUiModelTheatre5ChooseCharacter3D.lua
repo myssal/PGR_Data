@@ -247,9 +247,13 @@ end
 
 function XUiModelTheatre5ChooseCharacter3D:ResetAllActionAndUiEffect()
     if self.CharacterCfgs then
-        for i = 1, #self.CharacterCfgs do
-            self:PlayAnimaCross(i, XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch, true)
+        --for i = 1, #self.CharacterCfgs do
+        -- v3.8 莉莉丝特调
+        -- 只处理莉莉丝，因为其他角色的模型是一次性的，不loop的，不会出现这个问题
+        if self.CharacterCfgs[4] then
+            self:PlayAnimaCross(4, XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch, true)
         end
+        --end
     end
 end
 
