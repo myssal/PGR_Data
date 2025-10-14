@@ -87,6 +87,16 @@ function XGridCharacterV2P6:CheckShowBaseInfo()
     self.ImgLock.gameObject:SetActiveEx(isFragment)
     self.PanelFragment.gameObject:SetActiveEx(isFragment)
     self.RImgHeadIcon:SetRawImage(self.CharacterAgency:GetCharSmallHeadIcon(self.Character.Id))
+
+    -- 生命树
+    if self.ImgTreeIcon then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSmallVisible"))
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.Character.Id)
+        self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSmall)
+        end
+    end
     
     -- 初始品质
     self.PanelInitQuality.gameObject:SetActiveEx(true)

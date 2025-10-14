@@ -384,52 +384,84 @@ function XUiPhotograph:ForcePlay(signBoardActionId, actionId)
     self.SignBoardPlayer:SetInterruptDetection(true)
 end
 
-function XUiPhotograph:Play(element)
-    if not element then
-        return
+--============================
+-- 通用CV播放
+--============================
+function XUiPhotograph:_DoPlayCv(cvId, cvType)
+    if not (cvId and cvId > 0) then return end
+
+    local targetFace = self.RoleModel and self.RoleModel:GetSkinMeshFace()
+    if targetFace then
+        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetFace, cvType or -1)
+    elseif cvType then
+        self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
+    else
+        self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
     end
+end
+
+
+--============================
+-- 动作/特效
+--============================
+function XUiPhotograph:_PlayAction(element, isCross)
+    local actionId = element.SignBoardConfig.ActionId
+    if not actionId then return end
+
+    if isCross then
+        self.RoleModel:PlayAnimaCross(actionId, true)
+        self:CheckToLoadPanelCharacterMappingPrefab(actionId)
+    else
+        self.RoleModel:PlayAnima(actionId, true)
+    end
+
+    self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
+end
+
+
+--============================
+-- 播放入口: 普通
+--============================
+function XUiPhotograph:Play(element)
+    if not element then return end
+
     self.PhotographPanel:RefreshActionPanel(true, self.SignBoardActionId ~= nil)
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-        if targetSkinMeshFace then
-            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
-        else
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+
+    -- 播放CV
+    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType)
+    -- 播放某些看板Cv时检测静音Bgm
+    if element.SignBoardConfig.TurnOffBgm then
+        if self.PlayingCv then
+            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
+            self.PlayingCv.FinishCb = function ()
+                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+            end
         end
     end
 
-    local actionId = element.SignBoardConfig.ActionId
-    if actionId then
-        self.RoleModel:PlayAnima(actionId, true)
-        self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
-    end
+    -- 播放动作
+    self:_PlayAction(element, false)
 
     -- 关闭角色头部跟随
     self.RoleModel:SetXPostFaicalControllerActive(false)
 end
 
+
+--============================
+-- 播放入口: Cross
+--============================
 function XUiPhotograph:PlayCross(element)
-    if not element then
-        return
-    end
+    if not element then return end
+
     if self.ShotMode == SceneMode then
         self.PhotographPanel:RefreshActionPanel(true, self.SignBoardActionId ~= nil)
     end
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-        if targetSkinMeshFace then
-            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
-        else
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
-        end
-    end
 
-    local actionId = element.SignBoardConfig.ActionId
-    if actionId then
-        self.RoleModel:PlayAnimaCross(actionId, true)
-        self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
-        self:CheckToLoadPanelCharacterMappingPrefab(actionId)
-    end
+    -- 播放CV
+    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType)
+
+    -- 播放动作（Cross版）
+    self:_PlayAction(element, true)
 
     -- 关闭角色头部跟随
     self.RoleModel:SetXPostFaicalControllerActive(false)

@@ -2,7 +2,7 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 local XChapterViewModel = require("XEntity/XFuben/XChapterViewModel")
 
 XFubenDailyManagerCreator = function()
-    local XFubenDailyManager = XExFubenBaseManager.New(XFubenConfigs.ChapterType.Daily)
+    local XFubenDailyManager = XExFubenBaseManager.New(XEnumConst.FuBen.ChapterType.Daily)
 
     local METHOD_NAME = {
         ReceiveDailyReward = "ReceiveDailyRewardRequest",

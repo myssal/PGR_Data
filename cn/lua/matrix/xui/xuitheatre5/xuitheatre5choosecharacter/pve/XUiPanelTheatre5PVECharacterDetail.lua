@@ -4,11 +4,14 @@
 local XUiPanelTheatre5PVECharacterDetail = XClass(XUiNode, 'XUiPanelTheatre5PVECharacterDetail')
 
 function XUiPanelTheatre5PVECharacterDetail:OnStart()
-
+    self.TxtName2 = self.TxtName2 or XUiHelper.TryGetComponent(self.Transform, "PanelName/TxtName (1)", "Text")
 end
 
 function XUiPanelTheatre5PVECharacterDetail:RefreshShow(cfg)
     self.TxtName.text = cfg.Name
+    if self.TxtName2 then
+        self.TxtName2.text = cfg.Name
+    end
     self.TxtStory.text = XUiHelper.ReplaceTextNewLine(cfg.Info)
     local entranceName = self.Parent:GetEntranceName()
     local entranceCfg = self._Control.PVEControl:GetPveStoryEntranceCfg(entranceName)

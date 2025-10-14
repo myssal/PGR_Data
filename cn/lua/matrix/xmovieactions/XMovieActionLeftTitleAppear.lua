@@ -1,6 +1,6 @@
 local XMovieActionLeftTitleAppear = XClass(XMovieActionBase, "XMovieActionLeftTitleAppear")
 
-function XMovieActionLeftTitleAppear:Ctor(actionData)
+function XMovieActionLeftTitleAppear:OnInit(actionData)
     local params = actionData.Params
 
     self.Title = params[1] or ""
@@ -25,6 +25,22 @@ function XMovieActionLeftTitleAppear:OnRunning()
     uiObj:GetObject("AnimEnable").gameObject:PlayTimelineAnimation()
     uiObj:GetObject("TxtSubtitle2").text = self.Subtitle2
     uiObj:GetObject("TxtSubtitle3").text = self.Subtitle3
+end
+
+function XMovieActionLeftTitleAppear:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+---@param action XMovieActionBase
+function XMovieActionLeftTitleAppear:IsActionCover(action)
+    return action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.LEFT_TITLE_DISAPPEAR
+end
+
+function XMovieActionLeftTitleAppear:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionLeftTitleAppear

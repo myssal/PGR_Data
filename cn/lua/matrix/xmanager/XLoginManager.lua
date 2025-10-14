@@ -17,8 +17,10 @@ local SinceStartupMilliSeconds = function() return math.floor(CS.UnityEngine.Tim
 
 local TableLoginErrCode = "Share/Login/LoginCode.tab"
 local TableLoginProtect = "Client/Login/LoginProtect.tab"
+local TableLoginPromoFeature = "Client/Login/LoginPromoFeature.tab"
 local LoginErrCodeTemplate
 local LoginProtectTemplate
+local LoginPromoFeatureTemplate
 
 -- 登陆token缓存
 local LoginTokenCache
@@ -1003,7 +1005,7 @@ XRpc.NotifyLogin = function(data)
 
     local mailLine2Profiler = loginProfiler:CreateChild("MainLine2Agency")
     mailLine2Profiler:Start()
-    XMVCA:GetAgency(ModuleId.XMainLine2):OnLoginNotify(data.FubenMainLine2Data)
+    XMVCA.XMainLine2:OnLoginNotify(data.FubenMainLine2Data)
     mailLine2Profiler:Stop()
 
     local fubenExtraChapterProfiler = loginProfiler:CreateChild("FubenExtraChapterManager")
@@ -1105,6 +1107,24 @@ end
 function XLoginManager.Init()
     LoginErrCodeTemplate = XTableManager.ReadByIntKey(TableLoginErrCode, XTable.XTableLoginCode, "ErrCode")
     LoginProtectTemplate = XTableManager.ReadByIntKey(TableLoginProtect, XTable.XTableLoginProtect, "Id")
+    LoginPromoFeatureTemplate = XTableManager.ReadByIntKey(TableLoginPromoFeature, XTable.XTableLoginPromoFeature, "Id")
+end
+
+---@return XTableLoginPromoFeature[]
+function XLoginManager.GetLoginPromoFeatureTemplate()
+    return LoginPromoFeatureTemplate
+end
+
+-- 获取当前可用的登录推广功能配置
+function XLoginManager.GetCurrentLoginPromoFeature()
+    local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
+    for _, config in pairs(allConfigs) do
+        if XConditionManager.CheckCondition(config.ConditionId)
+        and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
+            return config
+        end
+    end
+    return nil
 end
 
 function XLoginManager.CheckLimitLogin()

@@ -62,7 +62,7 @@ XGachaConfigs.OrganizeGachaStatus = {
 function XGachaConfigs.Init()
     Gachas = XTableManager.ReadByIntKey(TABLE_GACHA, XTable.XTableGacha, "Id")
     GachaRewards = XTableManager.ReadByIntKey(TABLE_GACHA_REWARD, XTable.XTableGachaReward, "Id")
-    GachaProbShow = XTableManager.ReadByIntKey(TABLE_GACHA_PROBSHOW, XTable.XTableGachaProbShow, "Id")
+    GachaProbShow = XTableManager.ReadByIntKey(TABLE_GACHA_PROBSHOW, XTable.XTableGachaProbShow, "GachaId")
     GachaRule = XTableManager.ReadByIntKey(TABLE_GACHA_RULE, XTable.XTableGachaRule, "Id")
     GachaItemExchange = XTableManager.ReadByIntKey(TABLE_GACHA_ITEM_EXCHANGE, XTable.XTableGachaItemExchange, "Id")
     GachaCourseReward = XTableManager.ReadByIntKey(TABLE_GACHA_COURSE_REWARD, XTable.XTableGachaCourseReward, "Id")

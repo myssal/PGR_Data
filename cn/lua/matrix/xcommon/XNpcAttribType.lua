@@ -144,6 +144,16 @@ XNpcAttribType = {
     AntiLightNoiseP= 141,--光噪伤害抗性
     LightNoiseWeaknessP = 142,--光噪伤害弱点
     DamageChangePEx = 143,--伤害倍率强化
+    LifeEnergy1 = 144,--生命树能量1
+    LifeEnergy2 = 145,--生命树能量2
+    LifeEnergy3 = 146,--生命树能量3
+    LifeEnergy4 = 147,--生命树能量4
+    LifeEnergy5 = 148,--生命树能量5
+    LifeEnergy6 = 149,--生命树能量6
+    LifeEnergy7 = 150,--生命树能量7
+    LifeEnergy8 = 151,--生命树能量8
+    LifeEnergy9 = 152,--生命树能量9
+    LifeEnergy10 = 153,--生命树能量10
     
-    End = 144, --结束标志
+    End = 154, --结束标志
 }

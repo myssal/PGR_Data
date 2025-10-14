@@ -789,6 +789,12 @@ function XWheelchairManualControl:GetWheelchairManualConfigNumArray(key)
     return self._Model:GetWheelchairManualConfigNumArray(key)
 end
 
+--- WheelchairManualCoreRewardPreview
+
+function XWheelchairManualControl:GetWheelchairManualCoreRewardPreviewCfgs()
+    return self._Model:GetWheelchairManualCoreRewardPreviewCfgs()
+end
+
 --endregion
 
 --region 活动关闭踢出

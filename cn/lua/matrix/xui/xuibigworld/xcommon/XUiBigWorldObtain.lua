@@ -41,6 +41,7 @@ function XUiBigWorldObtain:OnDestroy()
         self.CloseCb()
     end
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, OpType.PopupEnd)
+    self:RemoveCb()
 end
 
 function XUiBigWorldObtain:InitUi()
@@ -55,6 +56,9 @@ function XUiBigWorldObtain:InitCb()
     end
 end
 
+function XUiBigWorldObtain:RemoveCb()
+end
+
 function XUiBigWorldObtain:InitView()
     self:RefreshReward()
 end
@@ -66,11 +70,13 @@ function XUiBigWorldObtain:RefreshReward()
         end
     end
 
+    local isSetClickProxy = self:IsSetGridClickProxy()
     for i, reward in ipairs(self.RewardList) do
         local grid = self.GridRewards[i]
         if not grid then
             local ui = i == 1 and self.GridCommon or XUiHelper.Instantiate(self.GridCommon, self.PanelContent)
-            grid = XUiSGGridItem.New(ui, self)
+            local proxy = isSetClickProxy and handler(self, self.OnClickProxy) or false
+            grid = XUiSGGridItem.New(ui, self, proxy)
             self.GridRewards[i] = grid
         end
         grid:Open()
@@ -79,13 +85,24 @@ function XUiBigWorldObtain:RefreshReward()
 end
 
 function XUiBigWorldObtain:RegisterAutoClose()
-    local time = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetFloat("BigWorldObtainShowTime")
+    local time = self:GetShowTime()
 
     self:UnRegisterAutoClose()
     self._AutoCloseTimer = XScheduleManager.ScheduleOnce(function()
         self._AutoCloseTimer = nil
         self:Close()
     end, XScheduleManager.SECOND * time)
+end
+
+function XUiBigWorldObtain:IsSetGridClickProxy()
+    return false
+end
+
+function XUiBigWorldObtain:OnClickProxy()
+end
+
+function XUiBigWorldObtain:GetShowTime()
+    return XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetFloat("BigWorldObtainShowTime")
 end
 
 function XUiBigWorldObtain:UnRegisterAutoClose()

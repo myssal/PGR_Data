@@ -64,12 +64,24 @@ function XGame2048Grid:GetScore()
     return self._Cfg.AddScore
 end
 
+function XGame2048Grid:GetShowLevel()
+    return self._Cfg.ShowLevel
+end
+
 function XGame2048Grid:GetLevelUpId()
     return self._Cfg.LevelUpId
 end
 
+function XGame2048Grid:GetLastLevelId()
+    return self._Cfg.LastLevelId
+end
+
 function XGame2048Grid:GetDoublingLevelUpId()
     return self._Cfg.DoublingLevelUpId
+end
+
+function XGame2048Grid:GetAdjustLevelUpId()
+    return self._Cfg.AdjustLevelUpId
 end
 
 -- 合成移动期间使用，判断是否禁止移动，目前主要用于冰块合成
@@ -100,6 +112,7 @@ end
 
 function XGame2048Grid:SetServerData(data)
     self._ServerData = data
+    self._ExtValue = data.ExtValue
 end
 
 function XGame2048Grid:SetValue(newValue)

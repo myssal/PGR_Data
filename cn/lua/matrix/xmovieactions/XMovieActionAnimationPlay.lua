@@ -2,7 +2,7 @@
 ---@field UiRoot XUiMovie
 local XMovieActionAnimationPlay = XClass(XMovieActionBase, "XMovieActionAnimationPlay")
 
-function XMovieActionAnimationPlay:Ctor(actionData)
+function XMovieActionAnimationPlay:OnInit(actionData)
     local params = actionData.Params
     self.AnimName = params[1]
 end

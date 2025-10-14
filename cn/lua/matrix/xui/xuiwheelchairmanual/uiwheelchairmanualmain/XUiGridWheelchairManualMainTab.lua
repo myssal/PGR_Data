@@ -15,6 +15,8 @@ function XUiGridWheelchairManualMainTab:OnStart(tabId)
     self.TabType = XMVCA.XWheelchairManual:GetManualTabTypeAndPanelUrl(self.TabId)
     
     self.ReddotEvent = self:AddRedPointEvent(self, self.OnReddotEvent, self, { XMVCA.XWheelchairManual:GetRedPointConditionTypeByTabType(self.TabType) })
+    
+    self.GameObject.name = 'BtnTab' .. tostring(self.TabId)
 end
 
 function XUiGridWheelchairManualMainTab:OnClickEvent()

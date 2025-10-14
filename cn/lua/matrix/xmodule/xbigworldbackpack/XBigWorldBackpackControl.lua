@@ -28,19 +28,54 @@ function XBigWorldBackpackControl:CheckItemCanUse(itemId)
     return XMVCA.XBigWorldService:GetItemType(itemId) == XItemConfigs.ItemType.Gift
 end
 
+function XBigWorldBackpackControl:CheckItemIsRecord(item)
+    local data = XMVCA.XBigWorldService:GetItemsShowParams(item)
+
+    return self._Model:CheckItemIsRecord(data.TemplateId)
+end
+
+function XBigWorldBackpackControl:CheckTypeHasNotRecord(backpackType)
+    local items = self:GetItemListByType(backpackType)
+
+    if XTool.IsTableEmpty(items) then
+        return false
+    end
+
+    for _, item in pairs(items) do
+        if not self:CheckItemIsRecord(item) then
+            return true
+        end
+    end
+
+    return false
+end
+
+function XBigWorldBackpackControl:AddRecordItemId(item)
+    local data = XMVCA.XBigWorldService:GetItemsShowParams(item)
+
+    self._Model:AddRecordItemId(data.TemplateId)
+end
+
 function XBigWorldBackpackControl:GetItemListByType(backpackType)
     return self:_TryGetItemListByType(backpackType)
 end
 
 ---@return XTableBigWorldBackpackType[]
-function XBigWorldBackpackControl:GetAllBackpackType(isSort)
+function XBigWorldBackpackControl:GetAllBackpackType(isSort, isDisplay)
     local configs = self._Model:GetBackpackTypeConfigs()
 
     if isSort then
         local result = {}
 
         for _, config in pairs(configs) do
-            table.insert(result, config)
+            if isDisplay then
+                if not config.IsTabHide then
+                    table.insert(result, config)
+                end
+            else
+                table.insert(result, config)
+            end
+
         end
         table.sort(result, function(typeA, typeB)
             return typeA.Priority > typeB.Priority
@@ -87,6 +122,9 @@ function XBigWorldBackpackControl:_TryGetItemListByType(backpackType)
         result = XTool.MergeArray(items, questItems)
     elseif tagType == XEnumConst.BWBackpack.ItemType.Quest then
         result = self:_GetQuestItems()
+    elseif tagType == XEnumConst.BWBackpack.ItemType.SGDorm then
+        local itemTypes = self._Model:GetBackpackTypeItemTypesByType(backpackType)
+        result = self:_GetSgDormItems(itemTypes)
     else
         local itemTypes = self._Model:GetBackpackTypeItemTypesByType(backpackType)
 
@@ -101,13 +139,20 @@ function XBigWorldBackpackControl:_GetQuestItems()
     local questItemIds = XMVCA.XBigWorldService:GetAllQuestItemIdList()
 
     for _, itemId in pairs(questItemIds) do
-        table.insert(result, {
-            TemplateId = itemId,
-            Count = XMVCA.XBigWorldService:GetQuestItemCount(itemId),
-        })
+        local count = XMVCA.XBigWorldService:GetQuestItemCount(itemId)
+        if count > 0 then
+            table.insert(result, {
+                TemplateId = itemId,
+                Count = count,
+            })
+        end
     end
 
     return result
+end
+
+function XBigWorldBackpackControl:_GetSgDormItems(itemTypes)
+    return XMVCA.XSkyGardenDorm:GetOwnFurnitureList(itemTypes)
 end
 
 return XBigWorldBackpackControl

@@ -21,6 +21,7 @@ function XUiGridEchelonMember:Ctor(rootUi, ui, data)
     self.Transform = ui.transform
     ---@type XUiGridEchelon
     self.RootUi = rootUi
+    self.TeamTeamDataDic = {}
     XTool.InitUiObject(self)
     self:InitAutoScript()
     self:ResetMemberInfo()
@@ -182,7 +183,11 @@ end
 function XUiGridEchelonMember:GetProxyInstance(viewData)
     return {
         AOPCloseBefore = function(proxy, rootUi)
-            self.RootUi:UpdateTeamInfo(rootUi.Team:GetEntityIds())
+            local entityIds = XTool.Clone(rootUi.Team:GetEntityIds())
+            for pos, entityId in ipairs(entityIds) do
+                XDataCenter.BfrtManager.SetViewGroupFightTeamData(self.EchelonIndex, pos, entityId)
+            end
+            self.RootUi:UpdateTeamInfo(entityIds)
         end,
         --v2.6 新编队角色筛选器不用AOP
         --AOPOnDynamicTableEventAfter = function(proxy, rootUi, event, index, grid)
@@ -333,9 +338,12 @@ function XUiGridEchelonMember:OnBtnClickClick()
         EchelonId = self.EchelonId,
         TeamCharacterIdList = self.TeamList[self.EchelonIndex],
     }
+    local tempTeamdata = self.TeamTeamDataDic[self.EchelonIndex] or XDataCenter.BfrtManager.GetTeam(createTeamData)
+    self.TeamTeamDataDic[self.EchelonIndex] = tempTeamdata
+
     XDataCenter.BfrtManager.SetCurSelectTeamIdx(self.EchelonIndex)
     XDataCenter.BfrtManager.SetCurSelectFightType(self.EchelonType)
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, XDataCenter.BfrtManager.GetTeam(createTeamData), XUiBattleRoleRoomDefaultProxy)
+    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, tempTeamdata, XUiBattleRoleRoomDefaultProxy)
 end
 --endregion
 

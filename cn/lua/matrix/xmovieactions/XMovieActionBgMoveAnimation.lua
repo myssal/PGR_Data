@@ -3,7 +3,7 @@
 local XMovieActionBgMoveAnimation = XClass(XMovieActionBase,"XMovieActionBgMoveAnimation")
 local DefaultBgIndex = 1
 
-function XMovieActionBgMoveAnimation:Ctor(actionData)
+function XMovieActionBgMoveAnimation:OnInit(actionData)
     local params = actionData.Params
     local strPos = params[1]
     if strPos then
@@ -37,6 +37,40 @@ function XMovieActionBgMoveAnimation:OnRunning()
     if self.RImgAnimBg then
         self.RImgAnimBg:DOComplete()
         self.RImgAnimBg:DOLocalMove(self.Pos, self.Duration)
+    end
+end
+
+function XMovieActionBgMoveAnimation:GetBgIndex()
+    return self.BgIndex
+end
+
+function XMovieActionBgMoveAnimation:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionBgMoveAnimation:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return self.BgIndex == action:GetBgIndex()
+    end
+    return false
+end
+
+function XMovieActionBgMoveAnimation:OnPassedActionRun()
+    if self.IsPanelSpine then
+        self.UiRoot.PanelSpine.transform.localPosition = self.Pos
+        return
+    end
+
+    if self.RImgBg then
+        self.RImgBg:SetLocalPosition(self.Pos)
+    end
+    if self.RImgAnimBg then
+        self.RImgAnimBg:SetLocalScale(self.Pos)
     end
 end
 

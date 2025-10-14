@@ -15,7 +15,7 @@ local XUiBigWorldMessage = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMessage")
 
 function XUiBigWorldMessage:OnAwake()
     ---@type XUiBigWorldMessageChat
-    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self)
+    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self, self.XAudioObjectPlayer)
 
     self._MessageGroupList = {}
     ---@type table<number, XBWMessageEntity>

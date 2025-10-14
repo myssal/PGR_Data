@@ -8,7 +8,25 @@
 --=============
 local DlcRelinkTableKey = {
     DlcRelinkActivity = { CacheType = XConfigUtil.CacheType.Normal },
+    DlcRelinkChapter = { Identifier = "ChapterId", },
     DlcRelinkCharacter = {},
+    DlcRelinkLevel = { Identifier = "LevelId", },
+    DlcRelinkDropGroup = {},
+    DlcRelinkRewardGroup = {},
+    DlcRelinkPlayerLevel = { Identifier = "Level", },
+    DlcRelinkEquip = {},
+    DlcRelinkEquipQuality = { Identifier = "Quality", },
+    DlcRelinkFactor = {},
+    DlcRelinkFactorDesc = {},
+    DlcRelinkCompose = {},
+    DlcRelinkComposePool = {},
+    DlcRelinkBreak = { Identifier = "BreakEquipId", },
+    DlcRelinkConfig = {
+        ReadFunc = XConfigUtil.ReadType.String,
+        Identifier = "Key",
+    },
+    DlcRelinkBossSkillDesc = { DirPath = XConfigUtil.DirectoryType.Client, },
+    DlcRelinkEquipSkillFactor = { DirPath = XConfigUtil.DirectoryType.Client, },
     DlcRelinkWorld = {
         ReadFunc = XConfigUtil.ReadType.String,
         DirPath = XConfigUtil.DirectoryType.Client,
@@ -70,22 +88,17 @@ function XDlcRelinkModel:GetActivityTimeId()
     return config and config.TimeId or 0
 end
 
--- 获取世界Id
-function XDlcRelinkModel:GetWorldId()
-    local config = self:GetActivityConfig()
-    return config and config.WorldId or 0
+--endregion
+
+--region 章节表相关
+---@return XTableDlcRelinkChapter[]
+function XDlcRelinkModel:GetChapterConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkChapter)
 end
 
--- 获取等级Id
-function XDlcRelinkModel:GetLevelId()
-    local config = self:GetActivityConfig()
-    return config and config.LevelId or 0
-end
-
-function XDlcRelinkModel:GetCurrentWorldIdAndLevelId()
-    local worldId = self:GetWorldId()
-    local levelId = self:GetLevelId()
-    return worldId, levelId
+---@return XTableDlcRelinkChapter
+function XDlcRelinkModel:GetChapterConfig(chapterId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkChapter, chapterId)
 end
 
 --endregion
@@ -93,43 +106,209 @@ end
 --region 角色表相关
 
 ---@return XTableDlcRelinkCharacter[]
-function XDlcRelinkModel:GetDlcRelinkCharacterConfigs()
+function XDlcRelinkModel:GetCharacterConfigs()
     return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkCharacter)
 end
 
 ---@return XTableDlcRelinkCharacter
-function XDlcRelinkModel:GetDlcRelinkCharacterConfig(id)
+function XDlcRelinkModel:GetCharacterConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkCharacter, id)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterNpcId(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.NpcId or 0
+--endregion
+
+--region 等级表相关
+
+---@return XTableDlcRelinkLevel[]
+function XDlcRelinkModel:GetLevelConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkLevel)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterName(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.Name or ""
+---@return XTableDlcRelinkLevel
+function XDlcRelinkModel:GetLevelConfig(levelId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkLevel, levelId)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterTradeName(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.TradeName or ""
+--endregion
+
+--region 掉落组表相关
+
+---@return XTableDlcRelinkDropGroup[]
+function XDlcRelinkModel:GetDropGroupConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkDropGroup)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterEquipId(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.EquipId or 0
+---@return XTableDlcRelinkDropGroup
+function XDlcRelinkModel:GetDropGroupConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkDropGroup, id)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterDefaultNpcFashionId(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.DefaultNpcFashionId or 0
+--endregion
+
+--region 奖励组表相关
+
+---@return XTableDlcRelinkRewardGroup[]
+function XDlcRelinkModel:GetRewardGroupConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkRewardGroup)
 end
 
-function XDlcRelinkModel:GetDlcRelinkCharacterSquareHeadImage(id)
-    local config = self:GetDlcRelinkCharacterConfig(id)
-    return config and config.SquareHeadImage or ""
+---@return XTableDlcRelinkRewardGroup
+function XDlcRelinkModel:GetRewardGroupConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkRewardGroup, id)
+end
+
+--endregion
+
+--region 玩家等级表相关
+
+---@return XTableDlcRelinkPlayerLevel[]
+function XDlcRelinkModel:GetPlayerLevelConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkPlayerLevel)
+end
+
+---@return XTableDlcRelinkPlayerLevel
+function XDlcRelinkModel:GetPlayerLevelConfig(level)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkPlayerLevel, level)
+end
+
+--endregion
+
+--region 装备表相关
+
+---@return XTableDlcRelinkEquip[]
+function XDlcRelinkModel:GetEquipConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkEquip)
+end
+
+---@return XTableDlcRelinkEquip
+function XDlcRelinkModel:GetEquipConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkEquip, id)
+end
+
+--endregion
+
+--region 装备品质表相关
+
+---@return XTableDlcRelinkEquipQuality[]
+function XDlcRelinkModel:GetEquipQualityConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkEquipQuality)
+end
+
+---@return XTableDlcRelinkEquipQuality
+function XDlcRelinkModel:GetEquipQualityConfig(quality)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkEquipQuality, quality)
+end
+
+--endregion
+
+--region 词条表相关
+
+---@return XTableDlcRelinkFactor[]
+function XDlcRelinkModel:GetFactorConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkFactor)
+end
+
+---@return XTableDlcRelinkFactor
+function XDlcRelinkModel:GetFactorConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkFactor, id)
+end
+
+--endregion
+
+--region 词条描述表相关
+
+---@return XTableDlcRelinkFactorDesc[]
+function XDlcRelinkModel:GetFactorDescConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkFactorDesc)
+end
+
+---@return XTableDlcRelinkFactorDesc
+function XDlcRelinkModel:GetFactorDescConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkFactorDesc, id)
+end
+
+--endregion
+
+--region 合成表相关
+
+---@return XTableDlcRelinkCompose[]
+function XDlcRelinkModel:GetComposeConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkCompose)
+end
+
+---@return XTableDlcRelinkCompose
+function XDlcRelinkModel:GetComposeConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkCompose, id)
+end
+
+--endregion
+
+--region 合成池表相关
+
+---@return XTableDlcRelinkComposePool[]
+function XDlcRelinkModel:GetComposePoolConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkComposePool)
+end
+
+---@return XTableDlcRelinkComposePool
+function XDlcRelinkModel:GetComposePoolConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkComposePool, id)
+end
+
+--endregion
+
+--region 分解表相关
+
+---@return XTableDlcRelinkBreak[]
+function XDlcRelinkModel:GetBreakConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkBreak)
+end
+
+---@return XTableDlcRelinkBreak
+function XDlcRelinkModel:GetBreakConfig(breakEquipId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkBreak, breakEquipId)
+end
+
+--endregion
+
+--region 配置表相关
+
+---@return XTableDlcRelinkConfig[]
+function XDlcRelinkModel:GetConfigConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkConfig)
+end
+
+---@return XTableDlcRelinkConfig
+function XDlcRelinkModel:GetConfigConfig(key)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkConfig, key)
+end
+
+--endregion
+
+--region Boss技能描述表相关
+
+---@return XTableDlcRelinkBossSkillDesc[]
+function XDlcRelinkModel:GetBossSkillDescConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkBossSkillDesc)
+end
+
+---@return XTableDlcRelinkBossSkillDesc
+function XDlcRelinkModel:GetBossSkillDescConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkBossSkillDesc, id)
+end
+
+--endregion
+
+--region 装备技能词条表相关
+
+---@return XTableDlcRelinkEquipSkillFactor[]
+function XDlcRelinkModel:GetEquipSkillFactorConfigs()
+    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkEquipSkillFactor)
+end
+
+---@return XTableDlcRelinkEquipSkillFactor
+function XDlcRelinkModel:GetEquipSkillFactorConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkEquipSkillFactor, id)
 end
 
 --endregion
@@ -137,47 +316,47 @@ end
 --region World表相关
 
 ---@return XTableDlcRelinkWorld[]
-function XDlcRelinkModel:GetDlcRelinkWorldConfigs()
+function XDlcRelinkModel:GetWorldConfigs()
     return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkWorld)
 end
 
 ---@return XTableDlcRelinkWorld
-function XDlcRelinkModel:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkWorld, id)
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldIcon(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldIcon(id)
+    local config = self:GetWorldConfig(id)
     return config and config.Icon or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldSceneUrl(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldSceneUrl(id)
+    local config = self:GetWorldConfig(id)
     return config and config.SceneUrl or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldSceneModelUrl(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldSceneModelUrl(id)
+    local config = self:GetWorldConfig(id)
     return config and config.SceneModelUrl or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldLoadingBackground(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldLoadingBackground(id)
+    local config = self:GetWorldConfig(id)
     return config and config.LoadingBackground or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldArtName(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldArtName(id)
+    local config = self:GetWorldConfig(id)
     return config and config.ArtName or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldMaskLoadingType(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldMaskLoadingType(id)
+    local config = self:GetWorldConfig(id)
     return config and config.MaskLoadingType or ""
 end
 
-function XDlcRelinkModel:GetDlcRelinkWorldSettlementUiName(id)
-    local config = self:GetDlcRelinkWorldConfig(id)
+function XDlcRelinkModel:GetWorldSettlementUiName(id)
+    local config = self:GetWorldConfig(id)
     return config and config.SettlementUiName or ""
 end
 

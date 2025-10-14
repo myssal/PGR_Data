@@ -1,7 +1,7 @@
 local XExFubenSimulationChallengeManager = require("XEntity/XFuben/XExFubenSimulationChallengeManager")
 
 XTrialManagerCreator = function()
-    local XTrialManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Trial)
+    local XTrialManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Trial)
     local TrialInfos = nil
     local PreFinishTrial = {}
     local IsTrialChanllenge = false

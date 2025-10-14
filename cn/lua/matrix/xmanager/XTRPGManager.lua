@@ -189,6 +189,18 @@ XTRPGManagerCreator = function()
         return mathFloor(totalPercent * 100)
     end
 
+    function XTRPGManager.GetCurrentAndMaxProgress()
+        local areaMaxNum = XTRPGConfigs.GetMainAreaMaxNum()
+        local currentCnt = 0
+        local maxCnt = 0
+        for id = 1, areaMaxNum do
+            local c, m = XTRPGManager.GetAreaRewardCurrentAndMaxProgress(id)
+            currentCnt = currentCnt + c
+            maxCnt = maxCnt + m
+        end
+        return currentCnt, maxCnt
+    end
+
     function XTRPGManager.InitCurrAreaOpenNum()
         local currAreaOpenNum = XSaveTool.GetData("TRPGCurrAreaOpenNum_" .. XPlayer.Id)
         if currAreaOpenNum then
@@ -1055,6 +1067,19 @@ XTRPGManagerCreator = function()
             end
         end
         return maxNum > 0 and num / maxNum or 0
+    end
+
+    function XTRPGManager.GetAreaRewardCurrentAndMaxProgress(areaId)
+        local areaRewardIdList = XTRPGConfigs.GetAreaRewardIdList(areaId)
+        local maxNum = #areaRewardIdList
+        local num = 0
+        for _, trpgRewardId in pairs(areaRewardIdList) do
+            local ret = XTRPGManager.CheckRewardCondition(trpgRewardId)
+            if ret then
+                num = num + 1
+            end
+        end
+        return num, maxNum
     end
 
     function XTRPGManager.GetSecondMainStagePercent(secondMainId)
@@ -2237,6 +2262,21 @@ XTRPGManagerCreator = function()
         end
 
         OpenMainUi()
+    end
+    
+    -- 检查当前玩法章节是否结束
+    function XTRPGManager.CheckChapterIsPass()
+        local cfgs = XTRPGConfigs.GetSecondMainStageTemplate()
+
+        for i, v in pairs(cfgs) do
+            if XTool.IsNumberValidEx(v.StageType) then
+                if XTRPGManager.IsStagePass(v.StageId) then
+                    return true
+                end
+            end
+        end
+        
+        return false
     end
     --------------------常规主线 start---------------------
     XTRPGManager.Init()

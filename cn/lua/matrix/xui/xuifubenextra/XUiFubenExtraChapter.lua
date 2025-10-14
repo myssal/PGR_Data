@@ -42,7 +42,7 @@ function XUiFubenExtraChapter:OnStart(chapter, stageId, hideDiffTog)
     self.PanelStageDetailInst = nil
     self.CurDiff = self.Chapter.Difficult
     self.PanelTreasure.gameObject:SetActiveEx(false)
-    self.ImgRedProgress.gameObject:SetActiveEx(false)
+    self.BtnMissionRed.gameObject:SetActiveEx(false)
     self.ExtraChapterId = self.Chapter.ChapterId
     self.IsExploreMod = XDataCenter.ExtraChapterManager.CheckChapterTypeIsExplore(self.Chapter)
 
@@ -66,8 +66,8 @@ function XUiFubenExtraChapter:OnStart(chapter, stageId, hideDiffTog)
     }
 
     -- 注册红点事件
-    self.RedPointId = self:AddRedPointEvent(self.ImgRedProgress, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_EXTRA_TREASURE }, self.Chapter.ChapterId, false)
-    self.RedPointZhouMuId = self:AddRedPointEvent(self.ImgRedProgress, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_ZHOUMU_TASK }, self.ZhouMuId, false)
+    self.RedPointId = self:AddRedPointEvent(self.BtnMissionRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_EXTRA_TREASURE }, self.Chapter.ChapterId, false)
+    self.RedPointZhouMuId = self:AddRedPointEvent(self.BtnMissionRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_ZHOUMU_TASK }, self.ZhouMuId, false)
 
     self:AddRedPointEvent(self.BtnExItem, self.OnCheckExploreItemNews, self, { XRedPointConditions.Types.CONDITION_EXTRA_EXPLORE_ITEM_GET }, self.ExtraChapterId)
 
@@ -205,12 +205,12 @@ end
 -- 是否显示红点
 function XUiFubenExtraChapter:OnCheckRewards(count, chapterId)
     if self.IsOnZhouMu then
-        if self.ImgRedProgress and chapterId == self.ZhouMuId then
-            self.ImgRedProgress.gameObject:SetActiveEx(count >= 0)
+        if self.BtnMissionRed and chapterId == self.ZhouMuId then
+            self.BtnMissionRed.gameObject:SetActiveEx(count >= 0)
         end
     else
-        if self.ImgRedProgress and chapterId == self.Chapter.ChapterId then
-            self.ImgRedProgress.gameObject:SetActiveEx(count >= 0)
+        if self.BtnMissionRed and chapterId == self.Chapter.ChapterId then
+            self.BtnMissionRed.gameObject:SetActiveEx(count >= 0)
         end
     end
 end
@@ -220,7 +220,7 @@ function XUiFubenExtraChapter:AddListener()
     self:RegisterClickEvent(self.Scrollbar, self.OnScrollbarClick)
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
-    self:RegisterClickEvent(self.BtnTreasure, self.OnBtnTreasureClick)
+    self:RegisterClickEvent(self.BtnMission, self.OnBtnTreasureClick)
     self:RegisterClickEvent(self.BtnCloseDifficult, self.OnBtnCloseDifficultClick)
     self:RegisterClickEvent(self.BtnCloseDetail, self.OnBtnCloseDetailClick)
 
@@ -570,7 +570,7 @@ function XUiFubenExtraChapter:UpdateCurChapter(chapter)
     self:UpdateExploreBottom()
     self:SetPanelBottomActive(true)
     self:UpdateFubenExploreItem()
-    self.PanelStoryJump:Refresh(self.Chapter.ChapterId, XFubenConfigs.ChapterType.ExtralChapter)
+    self.PanelStoryJump:Refresh(self.Chapter.ChapterId, XEnumConst.FuBen.ChapterType.ExtralChapter)
 end
 
 function XUiFubenExtraChapter:UpdateColor()
@@ -751,30 +751,24 @@ end
 
 -- 更新左下角的奖励按钮的状态
 function XUiFubenExtraChapter:UpdateChapterStars()
-    local curStars
-    local totalStars
-    local received = true
-    self.PanelDesc.gameObject:SetActiveEx(true)
+    local curCnt = 0
+    local totalCnt = 0
 
     if self.IsOnZhouMu then
         -- 周目奖励
         self.MultipleWeeksTxet.gameObject:SetActiveEx(true)
         self.TxtDesc.gameObject:SetActiveEx(false)
         self.ImgStarIcon.gameObject:SetActiveEx(false)
-
-        curStars, totalStars = XDataCenter.FubenZhouMuManager.GetZhouMuTaskProgress(self.ZhouMuId)
-        received = XDataCenter.FubenZhouMuManager.ZhouMuTaskIsAllFinish(self.ZhouMuId)
-
+        curCnt, totalCnt = XDataCenter.FubenZhouMuManager.GetZhouMuTaskProgress(self.ZhouMuId)
         XRedPointManager.Check(self.RedPointZhouMuId, self.ZhouMuId)
     else
         -- 收集奖励
-        curStars, totalStars = XDataCenter.ExtraChapterManager.GetChapterStars(self.Chapter.ChapterId)
         local chapterTemplate = XDataCenter.ExtraChapterManager.GetChapterDetailsCfg(self.Chapter.ChapterId)
         for _, v in pairs(chapterTemplate.TreasureId) do
-            if not XDataCenter.ExtraChapterManager.IsTreasureGet(v) then
-                received = false
-                break
+            if XDataCenter.ExtraChapterManager.IsTreasureGet(v) then
+                curCnt = curCnt + 1
             end
+            totalCnt = totalCnt + 1
         end
         self.MultipleWeeksTxet.gameObject:SetActiveEx(false)
         self.TxtDesc.gameObject:SetActiveEx(true)
@@ -783,10 +777,9 @@ function XUiFubenExtraChapter:UpdateChapterStars()
         XRedPointManager.Check(self.RedPointId, self.Chapter.ChapterId)
     end
 
-    self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
-    self.ImgJindu.gameObject:SetActiveEx(true)
-    self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
-    self.ImgLingqu.gameObject:SetActiveEx(received)
+    local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
+    self.BtnMission:SetName(progress)
+    self.BtnMission.gameObject:SetActiveEx(true)
 end
 
 function XUiFubenExtraChapter:OnBtnTreasureClick()

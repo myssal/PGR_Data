@@ -122,7 +122,7 @@ XGame.Start6 = function()
     XGame.Profiler:Stop()
 
     XTableManager.ReleaseAll(true)
-    CS.BinaryManager.OnPreloadFight(true)
+    CS.BinaryManager.ReleaseAllCache()
     collectgarbage("collect")
     --打点
     CS.XRecord.Record("23014", "LuaXGameStartFinish")

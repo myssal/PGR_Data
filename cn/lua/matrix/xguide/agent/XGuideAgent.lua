@@ -148,7 +148,7 @@ function XGuideAgent:FocusOn3D(sceneRoot, camera, panel, eulerAngles, passEvent,
     uiGuide:FocusOn3DPanel(cam, tar, offset, eulerAngles, passEvent, sizeDelta)
 end
 
-function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEvent, sizeDelta, offset, childName)
+function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEvent, sizeDelta, offset, childName, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
     local parent = self:FindActiveTransformInUi(uiName, parentPath)
     if not parent then
         return
@@ -172,7 +172,7 @@ function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEv
         end
     end
     local uiGuide = self:GetUiGuide()
-    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset)
+    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset, nil, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
 end
 
 --索引动态列表

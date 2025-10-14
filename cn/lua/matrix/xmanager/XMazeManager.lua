@@ -8,7 +8,7 @@ XMazeManagerCreator = function()
     }
 
     ---@class XMazeManager
-    local XMazeManager = XExFubenActivityManager.New(XFubenConfigs.ChapterType.Maze, "MazeManager")
+    local XMazeManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.Maze, "MazeManager")
 
     local _IsGetTicket = false
     local _PartnerRobotId = false

@@ -653,6 +653,21 @@ XTaskManagerCreator = function()
             return true
         end
     end
+    
+    -- 检查章节内是否有Course可以领取奖励
+    function XTaskManager.CheckChapterCourseCanGet(chapterId)
+        local courseInfo = XDataCenter.TaskManager.GetCourseInfo(chapterId)
+        if courseInfo then
+            for _, course in pairs(courseInfo.Courses) do
+                local stageId = course.StageId
+                local stageInfo = XDataCenter.FubenManager.GetStageInfo(stageId)
+                if course.CouresType == XTaskManager.CourseType.Reward and stageInfo.Passed and XTaskManager.CheckCourseCanGet(stageId) then
+                    return true
+                end
+            end
+        end
+        return false
+    end
 
     function XTaskManager.GetCourseInfo(chapterId)
         return CourseInfos[chapterId]
@@ -1069,6 +1084,43 @@ XTaskManagerCreator = function()
     -------------------------------------------------------
     function XTaskManager.GetStoryTaskList()
         return GetTaskList(XTaskManager.GetTaskDataByTaskType(XTaskManager.TaskType.Story))
+    end
+    
+    function XTaskManager.GetStoryTaskListByGroupId(groupId)
+        local tasks = {}
+        local taskIds = XTaskConfig.GetTaskIdsByGroupId(groupId)
+        for _, taskId in pairs(taskIds) do
+            local taskData = StoryTaskData[taskId]
+            table.insert(tasks, taskData)
+        end
+
+        tableSort(tasks, function(a, b)
+            local pa, pb = XTaskConfig.GetTaskPriority(a.Id), XTaskConfig.GetTaskPriority(b.Id)
+            local stateA = TotalTaskData[a.Id].State
+            local stateB = TotalTaskData[b.Id].State
+            local compareResult = CompareState(stateA, stateB)
+            if compareResult == 0 then
+                if pa ~= pb then
+                    return pa > pb
+                else
+                    return a.Id > b.Id
+                end
+            else
+                return compareResult > 0
+            end
+        end)
+        return tasks
+    end
+    
+    -- 检查主线任务是否可以领取
+    function XTaskManager.CheckStoryTaskCanGet(groupId)
+        local tasks = XDataCenter.TaskManager.GetStoryTaskListByGroupId(groupId)
+        for _, v in pairs(tasks) do
+            if v.State == XDataCenter.TaskManager.TaskState.Achieved then
+                return true
+            end
+        end
+        return false
     end
 
     function XTaskManager.GetDailyTaskList()
@@ -2318,7 +2370,7 @@ XTaskManagerCreator = function()
     end
     
     --客户端判断完成条件，向服务端请求完成
-    function XTaskManager.RequestClientTaskFinish(taskId, func)
+    function XTaskManager.RequestClientTaskFinish(taskId, func, faultCb)
         local taskCfg = XTaskConfig.GetTaskCfgById(taskId)
         local conditionTemplates = XTaskConfig.GetTaskCondition(taskCfg.Condition[1])
         local taskType = conditionTemplates.Params[2]
@@ -2328,6 +2380,11 @@ XTaskManagerCreator = function()
         XNetwork.Call("DoClientTaskEventRequest", req, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+
+                if faultCb then
+                    faultCb()
+                end
+                
                 return
             end
             
@@ -2614,12 +2671,24 @@ XTaskManagerCreator = function()
     end
 
     function XTaskManager.GetNewPlayerRewardReq(activeness, rewardList, cb, closeObtainCb)
-        XNetwork.Call("GetNewPlayerRewardRequest", { Activeness = activeness }, function(response)
+        XNetwork.Call("GetNewPlayerRewardRequest", nil, function(response)
             if response.Code ~= XCode.Success then
                 XUiManager.TipCode(response.Code)
             else
-                XTaskManager.UpdateNewbieActivenessRecord(activeness)
-                XUiManager.OpenUiObtain(rewardList, CS.XTextManager.GetText("DailyActiveRewardTitle"), closeObtainCb)
+                if not XTool.IsTableEmpty(response.NewPlayerRewardRecord) then
+                    for i, v in pairs(response.NewPlayerRewardRecord) do
+                        XTaskManager.UpdateNewbieActivenessRecord(v)
+                    end
+                else
+                    XTaskManager.UpdateNewbieActivenessRecord(activeness)
+                end
+
+                if not XTool.IsTableEmpty(response.RewardGoodsList) then
+                    XUiManager.OpenUiObtain(response.RewardGoodsList, CS.XTextManager.GetText("DailyActiveRewardTitle"), closeObtainCb)
+                else
+                    XUiManager.OpenUiObtain(rewardList, CS.XTextManager.GetText("DailyActiveRewardTitle"), closeObtainCb)
+                end
+                
                 if cb then
                     cb()
                 end

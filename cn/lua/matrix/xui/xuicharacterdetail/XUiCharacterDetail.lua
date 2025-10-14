@@ -40,6 +40,8 @@ function XUiCharacterDetail:AutoAddListener()
         self:OnBtnGeneralSkillClick(2)
     end)
     self:RegisterClickEvent(self.BtnTeaching, self.OnBtnTeachingClick)
+    self.BtnPlot = self.BtnPlot or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelDetailInfo/PanelContent/PanelRight/BtnPlot", "XUiButton")
+    self:RegisterClickEvent(self.BtnPlot, self.OnBtnPlotClick)
 end
 -- auto
 function XUiCharacterDetail:OnBtnTeamRecomendClick()
@@ -84,6 +86,10 @@ end
 
 function XUiCharacterDetail:OnBtnTeachingClick()
     XDataCenter.PracticeManager.OpenUiFubenPractice(self.CharacterId)
+end
+
+function XUiCharacterDetail:OnBtnPlotClick()
+    XMVCA.XPlotExhibition:OpenRoleDetail(self.CharacterId)
 end
 
 function XUiCharacterDetail:OnAwake()
@@ -194,6 +200,14 @@ function XUiCharacterDetail:UpdateRightElementView()
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(self.CharacterId)
     if not detailConfig or not charConfig then
         return
+    end
+
+    --生命树
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconDetailVisible"))
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
+    self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+    if powerConfig then
+        self.ImgTreeIcon:SetRawImage(powerConfig.IconDetail)
     end
 
     --描述

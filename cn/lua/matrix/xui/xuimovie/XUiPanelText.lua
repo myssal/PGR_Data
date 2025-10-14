@@ -74,4 +74,8 @@ function XUiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
     end
 end
 
+function XUiPanelText:GetText(id)
+    return self.TextDic[id]
+end
+
 return XUiPanelText

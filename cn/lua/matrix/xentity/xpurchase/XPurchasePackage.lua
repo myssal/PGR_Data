@@ -49,6 +49,14 @@ function XPurchasePackage:GetCurrentBuyTime()
     return self.Data.BuyTimes
 end
 
+function XPurchasePackage:GetLastBuyTime()
+    return self.Data.LastBuyTime
+end
+
+function XPurchasePackage:GetRewardGoodsList()
+    return self.Data.RewardGoodsList
+end
+
 -- 获取每日奖励领取剩余天数
 function XPurchasePackage:GetDailyRewardRemainDay()
     if self.Data.BuyTimes > 0 then

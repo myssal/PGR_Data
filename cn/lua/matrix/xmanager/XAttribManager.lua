@@ -36,6 +36,12 @@ local AttribAbilityTemplate = {}
 --属性名字配置表
 local AttribDescTemplates = {}
 -- local NpcTemplates = {}
+--属性值table对象池
+local AttriValueArrayPool = {}
+
+local AddFixEx = CS.XTool.AddFixEx
+local MultFixEx = CS.XTool.MultFixEx
+
 ---属性id接口注册
 ---@param inter function
 function XAttribManager.RegisterGrowRateIdInterface(inter)
@@ -53,44 +59,50 @@ function XAttribManager.RegisterPromotedIdInterface(inter)
 end
 
 ---属性计算
-local function CreateAttribArray(isInit)
-    local array = {}
-    -- 初始化时默认不申请全部内存，改用字典
-    if isInit then
-        for _ = 1, AttribCount - 1 do
-            tableInsert(array, fix.zero)
-        end
+local function CreateAttribValueArray()
+    if not XTool.IsTableEmpty(AttriValueArrayPool) then
+       return table.remove(AttriValueArrayPool)
     end
-    return array
+    return {}  
 end
 
----将配置转换成fix数组
----@param template table 属性配置
----@return fix[] fix数组
-local function GetAttribArray(template)
-    local attribs = CreateAttribArray()
+--回收属性table
+local function RecycleAttribArray(attriArray)
+   for k, _ in pairs(attriArray) do 
+        attriArray[k] = 0  --这里占个坑，防止自动缩容
+   end
+    tableInsert(AttriValueArrayPool, attriArray)
+end
 
+local function ClearAttribArrayPool()
+    AttriValueArrayPool = {}
+end 
+
+---将配置转换成fix.RawValue
+---@param template table 属性配置
+---@return long[] fix.RawValue
+local function GetAttribValueArray(template)
+    local attribValues = CreateAttribValueArray()
     for k, v in pairs(XNpcAttribType) do
         if template[k] and template[k] ~= DEFAULT_VALUE then
-            attribs[v] = template[k]
+            attribValues[v] = template[k].RawValue
         end
     end
-
-    return attribs
+    return attribValues
 end
 
-
----初始化属性配置
----@param template table 原有配置
----@return fix[] 属性配置fix只读数组
-local function InitAttribTemplates(template)
-    local attribTemplates = {}
-    for k, v in pairs(template) do
-        attribTemplates[k] = GetAttribArray(v)
+--全部计算完后再转成fix
+local function RawValueToFixList(rawValueList)
+    if not rawValueList then
+        return
     end
-
-    return XReadOnlyTable.Create(attribTemplates)
-end
+    local fixAttribs = {}
+    for k, v in pairs(rawValueList) do
+        fixAttribs[k] = fix.FromRaw(v)
+    end
+    RecycleAttribArray(rawValueList)
+    return fixAttribs
+end 
 
 ---加载属性配置
 local function LoadAttribConfig()
@@ -105,40 +117,40 @@ local function LoadAttribConfig()
     AttribGrowRateTemplates = XAttribConfigs.GetAttribGrowRateTemplates()
 end
 
-local function GetAttribTemplate(attribId)
+local function GetAttribValueTemplate(attribId)
     local attribs = AttribTemplates[attribId]
     if not attribs then
         XLog.Error("XAttribManager GetAttribTemplate Error: can not found attrib template, Id is " .. attribId, AttribTemplates)
         return XCode.AttribManagerGetAttribTemplateNotFound, nil
     end
 
-    attribs = GetAttribArray(attribs)
+    local attribValues = GetAttribValueArray(attribs)
 
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
-local function GetAttribPromotedTemplate(attribId)
+local function GetAttribValuePromotedTemplate(attribId)
     local attribs = AttribPromotedTemplates[attribId]
     if not attribs then
         XLog.Error("XAttribManager GetAttribPromotedTemplate Error: can not found attrib template, Id is " .. attribId)
         return XCode.AttribManagerGetPromotedAttribTemplateNotFound, nil
     end
 
-    attribs = GetAttribArray(attribs)
+    local attribValues = GetAttribValueArray(attribs)
 
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
-local function GetAttribGrowRateTemplate(attribId)
+local function GetAttribValueGrowRateTemplate(attribId)
     local attribs = AttribGrowRateTemplates[attribId]
     if not attribs then
         XLog.Error("XAttribManager GetAttribGrowRateTemplate Error: can not found attrib template, Id is " .. attribId)
         return XCode.AttribManagerGetGrowRateAttribTemplateNotFound, nil
     end
 
-    attribs = GetAttribArray(attribs)
+    local attribValues = GetAttribValueArray(attribs)
 
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
 local function GetAttribGroupTemplate(id)
@@ -165,92 +177,106 @@ local function DoAddAttribs(attribs1, attribs2)
     end
 end
 
----属性成长(原属性 + 成长属性 * 培养等级)
----@param attribs1 fix[] 原属性数组
----@param attribs2 fix[] 成长属性数组
----@param trainedLevel number 培养等级
-local function DoPromotedAttribs(attribs1, attribs2, trainedLevel)
-    if trainedLevel <= 0 then
-        return
-    end
 
-    trainedLevel = fix(trainedLevel)
-
-    for k, v in pairs(attribs2) do
-        if attribs1[k] then
-            attribs1[k] = attribs1[k] + attribs2[k] * trainedLevel
+---属性计算
+---属性加法
+---@param attribsValue1 long[] 原属性数组
+---@param attribsValue2 long[] 增加属性数组
+local function DoAddAttribValues(attribsValue1, attribsValue2)
+     for k, v in pairs(attribsValue2) do
+        if attribsValue1[k] then
+            attribsValue1[k] = AddFixEx(attribsValue1[k] , attribsValue2[k]) 
         else
-            attribs1[k] = attribs2[k] * trainedLevel
+            attribsValue1[k] = attribsValue2[k]
         end
     end
+    RecycleAttribArray(attribsValue2)
+end
+
+---属性成长(原属性 + 成长属性 * 培养等级)
+---@param attribsValue1 long[] 原属性数组
+---@param attribsValue2 long[] 成长属性数组
+---@param trainedLevel number 培养等级
+local function DoPromotedAttribValues(attribsValue1, attribsValue2, trainedLevel)
+   if trainedLevel <= 0 then
+        return
+    end
+    trainedLevel = fix(trainedLevel)
+    for k, v in pairs(attribsValue2) do
+        if attribsValue1[k] then
+            attribsValue1[k] = AddFixEx(attribsValue1[k], MultFixEx(attribsValue2[k] , trainedLevel.RawValue))
+        else
+            attribsValue1[k] = MultFixEx(attribsValue2[k] , trainedLevel.RawValue)
+        end
+    end
+    RecycleAttribArray(attribsValue2)
 end
 
 ---属性加成(原属性 + 原属性 * 加成属性)
----@param attribs1 fix[] 原属性数组
----@param attribs2 fix[] 加成属性数组
-local function DoGrowRateAttribs(attribs1, attribs2)
-    for k, v in pairs(attribs2) do
-        if attribs1[k] then
-            attribs1[k] = attribs1[k] + attribs1[k] * attribs2[k]
+---@param attribsValue1 long[] 原属性数组
+---@param attribsValue2 long[] 加成属性数组
+local function DoGrowRateAttribValues(attribsValue1, attribsValue2)
+    for k, v in pairs(attribsValue2) do
+        if attribsValue1[k] then
+            attribsValue1[k] = AddFixEx(attribsValue1[k], MultFixEx(attribsValue1[k] , attribsValue2[k]))
         else
-            attribs1[k] = attribs1[k] * attribs2[k]
+            attribsValue1[k] = MultFixEx(attribsValue1[k] , attribsValue2[k])
         end
     end
+    RecycleAttribArray(attribsValue2)
 end
 
 ---属性修正(原属性 * (1 + 修正系数))
----@param attrib fix 原属性
----@param factor fix 修正系数
----@return fix 修正后属性
-local function DoReviseAttrib(attrib, factor)
-    if not attrib then
-        attrib = DEFAULT_VALUE
+---@param attribValue long 原属性
+---@param factorValue long 修正系数
+---@return long 修正后属性
+local function DoReviseAttrib(attribValue, factorValue)
+    if not attribValue then
+        attribValue = DEFAULT_VALUE
     end
-    return attrib * (fix.one + factor);
+    return MultFixEx(attribValue, AddFixEx(fix.one.RawValue, factorValue))
 end
 
 ---获取总加成属性
 ---@param attribIds table 属性加成id列表
----@return XCode,fix[] 状态码和属性数组
-local function GetTotalGrowRateAttribs(attribIds)
-    local attribs = CreateAttribArray()
+---@return XCode,long[] 状态码和属性数组
+local function GetTotalGrowRateAttribValues(attribIds)
+    local attribValues = CreateAttribValueArray()
 
     for _, id in pairs(attribIds) do
-        local code, readAttribs = GetAttribGrowRateTemplate(id)
+        local code, readAttribValues = GetAttribValueGrowRateTemplate(id)
         if code ~= XCode.Success then
             return code, nil
         end
 
-        DoAddAttribs(attribs, readAttribs)
+        DoAddAttribValues(attribValues, readAttribValues)
     end
-
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
 ---获取总属性数值叠加
 ---@param attribIds table 叠加属性id列表
----@return XCode,fix[] 状态码和属性数组
-local function GetTotalNumericAttribs(attribIds)
-    local attribs = CreateAttribArray()
+---@return XCode,long[] 状态码和属性数组
+local function GetTotalNumericAttribValues(attribIds)
+    local attribValues = CreateAttribValueArray()
 
     for _, id in pairs(attribIds) do
-        local code, readAttribs = GetAttribTemplate(id)
+        local code, readAttribValues = GetAttribValueTemplate(id)
         if code ~= XCode.Success then
             return code, nil
         end
 
-        DoAddAttribs(attribs, readAttribs)
+        DoAddAttribValues(attribValues, readAttribValues)
     end
-
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
 ---获取总成长属性
 ---@param attribIds table 成长属性id列表
 ---@param trainedLevels table 培养等级列表
----@return XCode, fix[] 状态码和属性数组
-local function GetTotalPromotedAttribs(attribIds, trainedLevels)
-    local attribs = CreateAttribArray()
+---@return XCode, long[] 状态码和属性数组
+local function GetTotalPromotedAttribValues(attribIds, trainedLevels)
+    local attribValues = CreateAttribValueArray()
     if #trainedLevels ~= #attribIds then
         XLog.Error("XAttribManager GetTotalPromotedAttribs Error: trainedLevels array length is not equal to template id array length")
         return XCode.AttribManagerGetTotalPromotedAttribsParamArrayError, nil
@@ -264,22 +290,22 @@ local function GetTotalPromotedAttribs(attribIds, trainedLevels)
             return XCode.AttribManagerGetTotalPromotedAttribsLevelError, nil
         end
 
-        local code, readAttribs = GetAttribPromotedTemplate(attribIds[i])
+        local code, readAttribValues = GetAttribValuePromotedTemplate(attribIds[i])
         if code ~= XCode.Success then
             return code, nil
         end
 
-        DoPromotedAttribs(attribs, readAttribs, level)
+        DoPromotedAttribValues(attribValues, readAttribValues, level)
     end
 
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
 ---属性数组修正
----@param attribs fix[] 属性数组
+---@param attribValues long[] 属性数组
 ---@param reviseId number 修正id
 ---@return XCode 状态码
-local function ReviseAttribs(attribs, reviseId)
+local function ReviseAttribs(attribValues, reviseId)
     local template = AttribReviseTemplates[reviseId]
     if not template then
         XLog.Error("XAttribManager.ReviseAttribs error: can not found template, reviseId is " .. reviseId);
@@ -288,7 +314,7 @@ local function ReviseAttribs(attribs, reviseId)
 
     for i = 1, #template.AttribTypes do
         local attribIndex = template.AttribTypes[i]
-        attribs[attribIndex] = DoReviseAttrib(attribs[attribIndex], template.Values[i]);
+        attribValues[attribIndex] = DoReviseAttrib(attribValues[attribIndex], template.Values[i].RawValue);
     end
 
     return XCode.Success
@@ -327,30 +353,30 @@ end
 ---获取npc基础属性
 ---@param npcTemplate table npc配置
 ---@param level number 等级
----@return XCode,fix[] 状态码和属性数组
-local function GetNpcBaseAttribs(npcTemplate, level)
-    local code, baseAttribs = GetAttribTemplate(npcTemplate.AttribId)
+---@return XCode,long[] 状态码和属性数组
+local function GetNpcBaseAttribValues(npcTemplate, level)
+    local code, baseAttribValues = GetAttribValueTemplate(npcTemplate.AttribId)
     if code ~= XCode.Success then
         return code, nil
     end
 
-    local attribs = CreateAttribArray()
-    DoAddAttribs(attribs, baseAttribs)
+    local attribValues = CreateAttribValueArray()
+    DoAddAttribValues(attribValues, baseAttribValues)
 
     --- 出生等级为1，培养等级=等级 - 1
     local trainedLevel = level - 1
 
     if npcTemplate.PromotedId and npcTemplate.PromotedId > 0 and trainedLevel > 0 then
-        local promotedAttribs
-        code, promotedAttribs = GetAttribPromotedTemplate(npcTemplate.PromotedId)
+        local promotedAttribValues
+        code, promotedAttribValues = GetAttribValuePromotedTemplate(npcTemplate.PromotedId)
         if code ~= XCode.Success then
             return code, nil
         end
 
-        DoPromotedAttribs(attribs, promotedAttribs, trainedLevel)
+        DoPromotedAttribValues(attribValues, promotedAttribValues, trainedLevel)
     end
 
-    return XCode.Success, attribs
+    return XCode.Success, attribValues
 end
 
 ---获取npc基础属性
@@ -359,33 +385,33 @@ end
 ---@param reviseId number 修正系数id
 ---@return XCode,fix[] 状态码和属性数组
 local function GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId)
-    local code, attribs = GetNpcBaseAttribs(npcTemplate, level)
+    local code, attribValues = GetNpcBaseAttribValues(npcTemplate, level)
     if code ~= XCode.Success then
         return code, nil
     end
 
     if reviseId and reviseId > 0 then
-        code = ReviseAttribs(attribs, reviseId)
+        code = ReviseAttribs(attribValues, reviseId)
         if code ~= XCode.Success then
             return code, nil
         end
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return XCode.Success, attribs
 end
 
 ---获取npc基础属性
 ---@param npcTemplateId number npc配置id
 ---@param level number 等级
----@return XCode,fix[] 状态码和属性数组
-local function GetNpcBaseAttribsByNpcId(npcTemplateId, level)
+---@return XCode,long[] 状态码和属性数组
+local function GetNpcBaseAttribValuesByNpcId(npcTemplateId, level)
     local npcTemplate = CS.XNpcManager.GetNpcTemplate(npcTemplateId)
     if not npcTemplate then
         XLog.Error("XAttribManager GetNpcBaseAttribsByNpcId Error: can not found npc template, npc Id is " .. npcTemplateId)
         return XCode.AttribManagerGetNpcAttribNpcNotFound, nil
     end
 
-    return GetNpcBaseAttribs(npcTemplate, level)
+    return GetNpcBaseAttribValues(npcTemplate, level)
 end
 
 ---获取npc基础属性
@@ -492,63 +518,63 @@ end
 
 ---属性加成计算
 ---@param npcData userdata npc数据
----@param attribs fix[] 属性数组
+---@param attribValues long[] 属性数组
 ---@return XCode 状态码
-local function DoAddGrowRateAttribs(npcData, attribs)
+local function DoAddGrowRateAttribValues(npcData, attribValues)
     local code, attribIds = GetGrowRateAttribIds(npcData)
     if code ~= XCode.Success then
         return code
     end
 
-    local growRateAttribs
-    code, growRateAttribs = GetTotalGrowRateAttribs(attribIds)
+    local growRateAttribValues
+    code, growRateAttribValues = GetTotalGrowRateAttribValues(attribIds)
     if code ~= XCode.Success then
         return code
     end
 
-    DoGrowRateAttribs(attribs, growRateAttribs)
+    DoGrowRateAttribValues(attribValues, growRateAttribValues)
 
     return XCode.Success
 end
 
 ---属性叠加计算
 ---@param npcData userdata npc数据
----@param attribs fix[] 属性数组
+---@param attribValues long[] 属性数组
 ---@return XCode 状态码
-local function DoAddNumericAttribs(npcData, attribs)
+local function DoAddNumericAttribValues(npcData, attribValues)
     local code, attribIds = GetNumericAttribIds(npcData)
     if code ~= XCode.Success then
         return code
     end
 
-    local numericAttribs
-    code, numericAttribs = GetTotalNumericAttribs(attribIds)
+    local numericAttribValues
+    code, numericAttribValues = GetTotalNumericAttribValues(attribIds)
     if code ~= XCode.Success then
         return code
     end
 
-    DoAddAttribs(attribs, numericAttribs)
+    DoAddAttribValues(attribValues, numericAttribValues)
 
     return XCode.Success
 end
 
 ---属性成长计算
 ---@param npcData userdata npc数据
----@param attribs fix[] 属性数组
+---@param attribValues long[] 属性数组
 ---@return XCode 状态码
-local function DoAddPromotedAttribs(npcData, attribs)
+local function DoAddPromotedAttribValues(npcData, attribValues)
     local code, attribIds, levels = GetPromotedAttribIds(npcData)
     if code ~= XCode.Success then
         return code
     end
 
-    local promotedAttribs
-    code, promotedAttribs = GetTotalPromotedAttribs(attribIds, levels)
+    local promotedAttribValues
+    code, promotedAttribValues = GetTotalPromotedAttribValues(attribIds, levels)
     if code ~= XCode.Success then
         return code
     end
 
-    DoAddAttribs(attribs, promotedAttribs)
+    DoAddAttribValues(attribValues, promotedAttribValues)
 
     return XCode.Success
 end
@@ -557,7 +583,7 @@ end
 ---@param npcData userdata npc数据
 ---@return XCode,fix[] 状态码和属性数组
 local function GetNpcAttribs(npcData)
-    local attribs
+    local attribValues
     local characterData = npcData.Character
 
     local code, npcId = XFightCharacterManager.GetNpcId(characterData)
@@ -565,34 +591,34 @@ local function GetNpcAttribs(npcData)
         return code, nil
     end
 
-    code, attribs = GetNpcBaseAttribsByNpcId(npcId, characterData.Level)
+    code, attribValues = GetNpcBaseAttribValuesByNpcId(npcId, characterData.Level)
     if code ~= XCode.Success then
         return code, nil
     end
 
     --- 属性加成只针对基础属性，需要第一个计算
-    code = DoAddGrowRateAttribs(npcData, attribs)
+    code = DoAddGrowRateAttribValues(npcData, attribValues)
     if code ~= XCode.Success then
         return code, nil
     end
 
-    code = DoAddNumericAttribs(npcData, attribs)
+    code = DoAddNumericAttribValues(npcData, attribValues)
     if code ~= XCode.Success then
         return code, nil
     end
 
-    code = DoAddPromotedAttribs(npcData, attribs)
+    code = DoAddPromotedAttribValues(npcData, attribValues)
     if code ~= XCode.Success then
         return code, nil
     end
 
     if npcData.AttribReviseId and npcData.AttribReviseId > 0 then
-        code = ReviseAttribs(attribs, npcData.AttribReviseId)
+        code = ReviseAttribs(attribValues, npcData.AttribReviseId)
         if code ~= XCode.Success then
             return code, nil
         end
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return XCode.Success, attribs
 end
 
@@ -660,25 +686,25 @@ XAttribManager.GetAttribGroupTemplate = GetAttribGroupTemplate
 ---@param trainedLevels table 等级列表
 ---@return fix[] fix数组
 function XAttribManager.GetMergeAttribs(numericIds, promotedIds, trainedLevels)
-    local attribs = CreateAttribArray()
+    local attribValues = CreateAttribValueArray()
     if #numericIds > 0 then
-        local code, numericAttribs = GetTotalNumericAttribs(numericIds)
+        local code, numericAttribValues = GetTotalNumericAttribValues(numericIds)
         if code ~= XCode.Success then
             return
         end
 
-        DoAddAttribs(attribs, numericAttribs)
+        DoAddAttribValues(attribValues, numericAttribValues)
     end
 
     if (trainedLevels and promotedIds) and (#promotedIds > 0 and #trainedLevels > 0) then
-        local code, promotedAttribs = GetTotalPromotedAttribs(promotedIds, trainedLevels)
+        local code, promotedAttribValues = GetTotalPromotedAttribValues(promotedIds, trainedLevels)
         if code ~= XCode.Success then
             return
         end
 
-        DoAddAttribs(attribs, promotedAttribs)
+        DoAddAttribValues(attribValues, promotedAttribValues)
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return attribs
 end
 
@@ -694,11 +720,11 @@ function XAttribManager.GetBaseAttribs(attribId)
         attribIdList = attribId
     end
 
-    local code, attribs = GetTotalNumericAttribs(attribIdList)
+    local code, attribValues = GetTotalNumericAttribValues(attribIdList)
     if code ~= XCode.Success then
         return nil
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return attribs
 end
 
@@ -726,11 +752,11 @@ function XAttribManager.GetPromotedAttribs(attribId, level)
         levels = level
     end
 
-    local code, attribs = GetTotalPromotedAttribs(attribIds, levels)
+    local code, attribValues = GetTotalPromotedAttribValues(attribIds, levels)
     if code ~= XCode.Success then
         return nil
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return attribs
 end
 
@@ -746,11 +772,11 @@ function XAttribManager.GetGrowRateAttribs(attribId)
         attribIdList = attribId
     end
 
-    local code, attribs = GetTotalGrowRateAttribs(attribIdList)
+    local code, attribValues = GetTotalGrowRateAttribValues(attribIdList)
     if code ~= XCode.Success then
         return nil
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return attribs
 end
 
@@ -791,8 +817,11 @@ XAttribManager.DoAddAttribsByAttrAndAddId = function(attr, attrId)
 end
 
 XAttribManager.GetAttribByAttribId = function(attribId)
-    local code, baseAttribs = GetAttribTemplate(attribId)
-    if code then return baseAttribs end
+    local code, baseAttribValues = GetAttribValueTemplate(attribId)
+    if code then 
+        local baseAttribs = RawValueToFixList(baseAttribValues)
+        return baseAttribs 
+    end
     return nil
 end
 
@@ -830,19 +859,19 @@ function XAttribManager.RegisterPartnerPromotedIdInterface(inter)
 end
 
 ---获取Partner基础属性
-local function GetPartnerBaseAttribs(partnerData, attribs)
-    local partnerEntity = XDataCenter.PartnerManager.CreatePartnerEntityByPartnerData(partnerData)
+-- local function GetPartnerBaseAttribs(partnerData, attribs)
+--     local partnerEntity = XDataCenter.PartnerManager.CreatePartnerEntityByPartnerData(partnerData)
 
-    if partnerEntity then
-        return XCode.PartnerTemplateNotFound
-    end
-    local code, baseAttribs = GetAttribTemplate(partnerEntity:GetBaseAttribId())
-    if code ~= XCode.Success then
-        return code, nil
-    end
-    DoAddAttribs(attribs, baseAttribs)
-    return XCode.Success
-end
+--     if partnerEntity then
+--         return XCode.PartnerTemplateNotFound
+--     end
+--     local code, baseAttribs = GetAttribTemplate(partnerEntity:GetBaseAttribId())
+--     if code ~= XCode.Success then
+--         return code, nil
+--     end
+--     DoAddAttribs(attribs, baseAttribs)
+--     return XCode.Success
+-- end
 
 ---获取属性叠加id列表
 local function GetPartnerNumericAttribIds(partnerData)
@@ -873,54 +902,54 @@ local function GetPartnerPromotedAttribIds(partnerData)
 end
 
 ---属性叠加计算
-local function DoAddPartnerNumericAttribs(partnerData, attribs)
+local function DoAddPartnerNumericAttribValues(partnerData, attribValues)
     local code, attribIds = GetPartnerNumericAttribIds(partnerData)
     if code ~= XCode.Success then
         return code
     end
 
-    local numericAttribs
-    code, numericAttribs = GetTotalNumericAttribs(attribIds)
+    local numericAttribValues
+    code, numericAttribValues = GetTotalNumericAttribValues(attribIds)
     if code ~= XCode.Success then
         return code
     end
 
-    DoAddAttribs(attribs, numericAttribs)
+    DoAddAttribValues(attribValues, numericAttribValues)
 
     return XCode.Success
 end
 
 ---属性成长计算
-local function DoAddPartnerPromotedAttribs(partnerData, attribs)
+local function DoAddPartnerPromotedAttribValues(partnerData, attribValues)
     local code, attribIds, levels = GetPartnerPromotedAttribIds(partnerData)
     if code ~= XCode.Success then
         return code
     end
 
     local promotedAttribs
-    code, promotedAttribs = GetTotalPromotedAttribs(attribIds, levels)
+    code, promotedAttribs = GetTotalPromotedAttribValues(attribIds, levels)
     if code ~= XCode.Success then
         return code
     end
 
-    DoAddAttribs(attribs, promotedAttribs)
+    DoAddAttribValues(attribValues, promotedAttribs)
     return XCode.Success
 end
 
 ---获取Partner属性
 local function GetPartnerAttribs(partnerData)
-    local attribs = CreateAttribArray()
+    local attribValues = CreateAttribValueArray()
 
-    local code = DoAddPartnerNumericAttribs(partnerData, attribs)
+    local code = DoAddPartnerNumericAttribValues(partnerData, attribValues)
     if code ~= XCode.Success then
         return code, nil
     end
 
-    code = DoAddPartnerPromotedAttribs(partnerData, attribs)
+    code = DoAddPartnerPromotedAttribValues(partnerData, attribValues)
     if code ~= XCode.Success then
         return code, nil
     end
-
+    local attribs = RawValueToFixList(attribValues)
     return XCode.Success, attribs
 end
 

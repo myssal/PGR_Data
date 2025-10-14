@@ -592,53 +592,63 @@ function XUiPhotographPortrait:ForcePlay(signBoardActionId, actionId)
     self.SignBoardPlayer:SetInterruptDetection(true)
 end
 
-function XUiPhotographPortrait:Play(element)
+-- 私有统一处理
+function XUiPhotographPortrait:PlaySignBoardElement(element, isCross)
     if not element then
         return
     end
+
+    -- 需要刷新Action面板/界面
     if self.ShotMode == SceneMode then
         self:RefreshActionView()
     end
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
+
+    -- 播放语音
+    local cvId = element.SignBoardConfig.CvId
+    if cvId and cvId > 0 then
         local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
         if targetSkinMeshFace then
-            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
+            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace, element.CvType or -1)
         else
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
+            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, element.CvType)
         end
     end
+    -- 播放某些看板Cv时检测静音Bgm
+    if element.SignBoardConfig.TurnOffBgm then
+        if self.PlayingCv then
+            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
+            self.PlayingCv.FinishCb = function ()
+                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+            end
+        end
+    end
+
+    -- 播放动作/特效
     local actionId = element.SignBoardConfig.ActionId
     if actionId then
-        self.RoleModel:PlayAnima(actionId, true)
+        if isCross then
+            self.RoleModel:PlayAnimaCross(actionId, true)
+        else
+            self.RoleModel:PlayAnima(actionId, true)
+        end
         self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
+
+        -- 只有 Cross 才需要加载额外Prefab
+        if isCross then
+            self:CheckToLoadPanelCharacterMappingPrefab(actionId)
+        end
     end
 
     -- 关闭角色头部跟随
     self.RoleModel:SetXPostFaicalControllerActive(false)
 end
 
-function XUiPhotographPortrait:PlayCross(element)
-    if not element then
-        return
-    end
-    self:RefreshActionView()
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 then
-        local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-        if targetSkinMeshFace then
-            self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(element.SignBoardConfig.CvId, targetSkinMeshFace, element.CvType or -1)
-        else
-            self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
-        end
-    end
-    local actionId = element.SignBoardConfig.ActionId
-    if actionId then
-        self.RoleModel:PlayAnimaCross(actionId, true)
-        self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
-        self:CheckToLoadPanelCharacterMappingPrefab(actionId)
-    end
+function XUiPhotographPortrait:Play(element)
+    self:PlaySignBoardElement(element, false)
+end
 
-    -- 关闭角色头部跟随
-    self.RoleModel:SetXPostFaicalControllerActive(false)
+function XUiPhotographPortrait:PlayCross(element)
+    self:PlaySignBoardElement(element, true)
 end
 
 function XUiPhotographPortrait:CheckToLoadPanelCharacterMappingPrefab(actionId)

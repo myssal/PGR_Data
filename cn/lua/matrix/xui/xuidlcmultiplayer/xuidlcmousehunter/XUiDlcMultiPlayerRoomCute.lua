@@ -184,9 +184,9 @@ end
 
 function XUiDlcMultiPlayerRoomCute:OnBtnFightClick()
     if self._Team:IsAllReady() then
-        local currentWorldId = self._Control:GetCurrentWorldIdAndLevelId()
+        local currentWorldId, currentLevelId = self._Control:GetCurrentWorldIdAndLevelId()
 
-        XMVCA.XDlcRoom:Match(currentWorldId, true)
+        XMVCA.XDlcRoom:Match(currentWorldId, currentLevelId, true)
     end
 end
 

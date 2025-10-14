@@ -8,6 +8,7 @@ local XUiBigWorldMapPinTag = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapPinTag"
 ---@field UpDown UnityEngine.RectTransform
 ---@field BtnSelect XUiComponent.XUiButton
 ---@field CanvasGroup UnityEngine.CanvasGroup
+---@field _Target UnityEngine.RectTransform
 local XUiBigWorldMapPin = XClass(XUiNode, "XUiBigWorldMapPin")
 
 function XUiBigWorldMapPin:OnStart(target, targetParent, isAssistedPosition)
@@ -45,7 +46,8 @@ function XUiBigWorldMapPin:OnBtnPinClick()
         if XTool.IsTableEmpty(pinDatas) or table.nums(pinDatas) <= 1 then
             self:AnchorToAndSelect()
         else
-            self._Interface:OpenPinSelectList(pinDatas, self.Transform.position)
+            self:AnchorTo(true)
+            self._Interface:OpenPinSelectList(pinDatas, self.Transform)
         end
     end
 end
@@ -55,7 +57,7 @@ function XUiBigWorldMapPin:OnBtnSelectClick()
         local mousePosition = CS.UnityEngine.Input.mousePosition
         local pinDatas = self:_GetNearPinDatas(mousePosition)
 
-        self._Interface:OpenPinSelectList(pinDatas, self.Transform.position)
+        self._Interface:OpenPinSelectList(pinDatas, self.Transform)
     end
 end
 
@@ -109,24 +111,24 @@ function XUiBigWorldMapPin:CancelSelectTag()
     end
 end
 
-function XUiBigWorldMapPin:AnchorTo(isIgnoreTween)
+function XUiBigWorldMapPin:AnchorTo(isCenter, isIgnoreTween)
     if not XTool.UObjIsNil(self._Target) then
         local posX = self._Target.transform.position.x
         local posY = self._Target.transform.position.y
 
-        self._Interface:AnchorToPosition(posX, posY, isIgnoreTween)
+        self._Interface:AnchorToPosition(posX, posY, isCenter, isIgnoreTween)
     end
 end
 
 function XUiBigWorldMapPin:AnchorToAndSelect(isIgnoreTween)
-    self:AnchorTo(isIgnoreTween)
     self:SetSelect(true)
     self._Interface:OpenPinDetail(self, self._LevelId, self._PinData)
+    self:AnchorTo(false, isIgnoreTween)
 end
 
 ---@param pinData XBWMapPinData
 function XUiBigWorldMapPin:AnchorToAndSelectTag(pinData, isIgnoreTween)
-    self:AnchorTo(isIgnoreTween)
+    self:AnchorTo(false, isIgnoreTween)
     self:SelectTag(pinData.PinId)
     self._Interface:OpenTagPinDetail(self, pinData.LevelId, pinData)
 end
@@ -146,8 +148,8 @@ function XUiBigWorldMapPin:RefreshOriginalPosition()
     end
 end
 
-function XUiBigWorldMapPin:RefreshPosition(position)
-    self._Target.anchoredPosition = position
+function XUiBigWorldMapPin:RefreshPosition(x, y)
+    self._Target:SetAnchoredPosition(x, y)
 end
 
 function XUiBigWorldMapPin:RefreshOriginalStyle()
@@ -205,8 +207,8 @@ function XUiBigWorldMapPin:_RefreshPosition(pinData)
     if not XTool.UObjIsNil(self._Target) then
         local worldPosition = pinData:GetWorldPosition(self._IsAssistedPosition)
         local axisConversion = self._Interface:GetAxisConversion()
-
-        self:RefreshPosition(axisConversion:WorldToMapPosition2D(worldPosition.x, worldPosition.z))
+        local x, y = axisConversion:WorldToMapPosition2D(worldPosition.x, worldPosition.z)
+        self:RefreshPosition(x, y)
     end
 end
 

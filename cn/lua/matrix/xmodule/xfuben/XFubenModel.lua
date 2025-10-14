@@ -188,9 +188,21 @@ function XFubenModel:ResetAll()
     self._UnlockHideStages = {}
     self._StageEventInfos = {}
     self.TempCustomFunc = {}
+    
+    self._CurStageIdInBattleRoom = nil
 end
 
 ----------public start----------
+
+--- 记录当前编队房间所在的关卡
+function XFubenModel:SetCurStageIdInBattleRoom(stageId)
+    self._CurStageIdInBattleRoom = stageId
+end
+
+function XFubenModel:GetCurStageIdInBattleRoom()
+    return self._CurStageIdInBattleRoom or 0
+end
+
 function XFubenModel:SetPlayerStageData(key, value)
     self._PlayerStageData[key] = value
 end

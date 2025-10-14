@@ -15,6 +15,9 @@ function XUiPartnerPresetMainSkill:OnAwake()
     self:InitCb()
 end
 
+--- 
+---@param partner XPartner
+---@param partnerPrefab XPartnerPrefab
 function XUiPartnerPresetMainSkill:OnStart(partner, partnerPrefab)
     self.Partner = partner
     self.PartnerPrefab = partnerPrefab
@@ -58,11 +61,11 @@ function XUiPartnerPresetMainSkill:Init()
         GoSkillInfoPanel = handler(self, self.GoSkillInfoPanel),
     }
     
-    self.PanelSkillSelect = XUiPanelSkillSelect.New(self.PanelMainSkillOption, self.Partner, self.PartnerPrefab, funcDict)
-    self.PanelSkillInfo   = XUiPanelSkillInfo.New(self.PanelElement, self)
+    self.PanelSkillSelect = XUiPanelSkillSelect.New(self.PanelMainSkillOption, self, self.Partner, self.PartnerPrefab, funcDict)
+    self.PanelSkillInfo = XUiPanelSkillInfo.New(self.PanelElement, self)
 end
 
-
+-- 现在点击选择后会自动关闭
 function XUiPartnerPresetMainSkill:OnBtnCloseClick()
     if self.PanelType == PanelType.SkillSelectType then
         self:DoSkillSelect()
@@ -70,7 +73,6 @@ function XUiPartnerPresetMainSkill:OnBtnCloseClick()
         self:GoSkillSelectPanel()
     end
 end 
-
 
 function XUiPartnerPresetMainSkill:DoSkillSelect()
     local groupList = self.Partner:GetMainSkillGroupList()
@@ -83,11 +85,37 @@ function XUiPartnerPresetMainSkill:DoSkillSelect()
     
     if self:IsSkillChange() then
         XDataCenter.PartnerManager.RefreshPresetSkillCache(self.Partner:GetId(), skillDict, XPartnerConfigs.SkillType.MainSkill)
+        self:CheckIsUpdateSkillData(self.Partner)
         XEventManager.DispatchEvent(XEventId.EVENT_PARTNER_PRESET_SKILL_CHANGE, self.Partner)
+    else
+        self:Close()
+    end
+end
+
+function XUiPartnerPresetMainSkill:CheckIsUpdateSkillData(partner)
+    if not partner then
+        return
     end
     
-    self:Close()
-end 
+    local id = partner:GetId()
+    local isCarried = XTool.IsNumberValid(self.PartnerPrefab:GetCarriedDict()[id])
+    -- local isCorresponding = self:GetEquipPartnerIndexBySelectRole() == self.SelectPartnerIndex
+    local changeSkill = self.PartnerPrefab:IsSkillChangeWithPrefab2Cache(id)
+    local pos = self.PartnerPrefab:GetCarriedDict()[id]
+
+    if changeSkill and isCarried then
+        self.PartnerPrefab:UpdateSkillData(pos, id)
+        local skillData = self.PartnerPrefab:GetSkillData(id)
+        local teamId = self.PartnerPrefab.TeamId
+        -- 提交更新到服务器（关联XTeamPrefab的TeamId）
+        XDataCenter.PartnerManager.TeamPreSetPartnerRequest(teamId, pos, id, skillData, function()
+            XLuaUiManager.Open("UiPartnerPopupTip", XUiHelper.GetText("PartnerTeamPrefabSkillSaveTips"))
+            self:Close()
+        end)
+    else
+        self:Close()
+    end
+end
 
 function XUiPartnerPresetMainSkill:IsSkillChange()
     return self.InitGroup:GetId() ~= self.CurrentGroup:GetId()

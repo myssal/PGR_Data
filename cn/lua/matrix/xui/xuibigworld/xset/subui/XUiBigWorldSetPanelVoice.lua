@@ -86,10 +86,6 @@ function XUiBigWorldSetPanelVoice:OnTogControlClick(value)
 end
 
 function XUiBigWorldSetPanelVoice:OnTLanguageGroupClick(index)
-    --- 英语和粤语语音资源暂未实装
-    if index == XEnumConst.CV_TYPE.EN or index == XEnumConst.CV_TYPE.HK then
-        XMVCA.XBigWorldUI:TipText("LanguageSetTips")
-    end
     self._Setting:SetCvTypeValue(index)
 end
 

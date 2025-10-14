@@ -649,6 +649,9 @@ function XUiFurnitureOrderBuild:OnBtnDrawingLessClick()
     end
 
     local index = self.MissingDrawingList[self.LastJumpDrawing]
+    if not index or index <= 0 then
+        return
+    end
     if count == 1 and XTool.GetTableCount(self.EditGridPool) == 1 then
         local grid = self.EditGridPool[index]
         if grid then

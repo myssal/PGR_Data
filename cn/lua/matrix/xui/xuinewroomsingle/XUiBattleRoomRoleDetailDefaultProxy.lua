@@ -8,6 +8,11 @@ function XUiBattleRoomRoleDetailDefaultProxy:GetEntities(characterType)
     return XMVCA.XCharacter:GetOwnCharacterList(characterType)
 end
 
+-- v4.0新增功能 速通模式下，给entity列表提供额外的机器人可供选择
+function XUiBattleRoomRoleDetailDefaultProxy:AddSpeedrunRobots(stageId, entities)
+    XMVCA.XPlotExhibition:AddSpeedrunRobots(stageId, entities)
+end
+
 function XUiBattleRoomRoleDetailDefaultProxy:GetFilterJudge()
     return function(groupId, tagValue, entity)
         if not entity.GetCharacterViewModel then return false end
@@ -211,6 +216,10 @@ function XUiBattleRoomRoleDetailDefaultProxy:AOPOnBtnJoinTeamClickedBefore(rootU
 end
 
 function XUiBattleRoomRoleDetailDefaultProxy:AOPOnBtnJoinTeamClickedAfter(rootUi)
+    
+end
+
+function XUiBattleRoomRoleDetailDefaultProxy:AOPOnBtnQuitTeamClickedAfter(rootUi)
     
 end
 

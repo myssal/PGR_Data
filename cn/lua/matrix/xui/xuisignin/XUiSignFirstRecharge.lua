@@ -9,8 +9,10 @@ function XUiSignFirstRecharge:Ctor(ui, rootUi)
     XTool.InitUiObject(self)
     self:InitAddListen()
 
-    self.SmallGrids = {}
-    self.BigGrids = {}
+    --self.SmallGrids = {}
+    --self.BigGrids = {}
+    -- 大奖和小奖混合排序
+    self._Grids = {}
 end
 
 function XUiSignFirstRecharge:OnDestroy()
@@ -55,7 +57,7 @@ function XUiSignFirstRecharge:OnBtnSkipClick()
 end
 
 function XUiSignFirstRecharge:OnBtnHelpClick()
-    XUiManager.UiFubenDialogTip("", self.Config.Description or "")
+    XUiManager.UiFubenDialogTip(XUiHelper.GetText("PurchaseFirstRechargeTipTitle"), self.Config.Description or "")
 end
 
 function XUiSignFirstRecharge:OnBtnAlreadyGetClick()
@@ -90,52 +92,89 @@ function XUiSignFirstRecharge:Refresh(configId)
     end
 
     self.GridCommon.gameObject:SetActive(false)
-    local smallRewardItems = XRewardManager.GetRewardList(XPayConfigs.GetSmallRewards())
-    local bigRewardItems = XRewardManager.GetRewardList(XPayConfigs.GetBigRewards())
+    local smallRewardItems = XDataCenter.PayManager.GetSmallRewards()
+    local bigRewardItems = XDataCenter.PayManager.GetBigRewards()
 
-    for _, v in ipairs(self.SmallGrids) do
-        v.GameObject:SetActive(false)
+    --for _, v in ipairs(self.SmallGrids) do
+    --    v.GameObject:SetActive(false)
+    --end
+    --for _, v in ipairs(self.BigGrids) do
+    --    v.GameObject:SetActive(false)
+    --end
+    for i = 1, #self._Grids do
+        self._Grids[i].GameObject:SetActiveEx(false)
     end
-
-    for _, v in ipairs(self.BigGrids) do
-        v.GameObject:SetActive(false)
-    end
-
+    
+    local rewardItems = {}
     -- 大奖要放到前面
     for i = 1, #bigRewardItems do
-        self:SetRewardInfo(bigRewardItems, i, true)
+        local reward = bigRewardItems[i]
+        reward.IsBigReward = true
+        rewardItems[#rewardItems + 1] = reward
     end
-
+    
     for i = 1, #smallRewardItems do
-        self:SetRewardInfo(smallRewardItems, i)
+        local reward = smallRewardItems[i]
+        reward.IsBigReward = false
+        rewardItems[#rewardItems + 1] = reward
+    end
+    
+    table.sort(rewardItems, function(a, b)
+        -- 已领取的放在前面
+        if a.IsReceived ~= b.IsReceived then
+            return b.IsReceived
+        end
+        -- 大的放在前面
+        if a.IsBigReward ~= b.IsBigReward then
+            return a.IsBigReward
+        end
+        -- 升序
+        return a.RewardId < b.RewardId
+    end)
+    --for i = 1, #bigRewardItems do
+    --    self:SetRewardInfo(bigRewardItems, i, true)
+    --end
+    --for i = 1, #smallRewardItems do
+    --    self:SetRewardInfo(smallRewardItems, i)
+    --end
+    for i = 1, #rewardItems do
+        self:SetRewardInfo(rewardItems, i)
     end
 
     XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true)
 end
 
-function XUiSignFirstRecharge:SetRewardInfo(rewardItems, i, isBig)
-    local ui
-    if isBig then
-        ui = self.BigGrids[i]
-    else
-        ui = self.SmallGrids[i]
-    end
+function XUiSignFirstRecharge:SetRewardInfo(rewardItems, i)
+    ---@type XUiGridCommon
+    local ui = self._Grids[i]
+    --if isBig then
+    --    ui = self.BigGrids[i]
+    --else
+    --    ui = self.SmallGrids[i]
+    --end
+    local item = rewardItems[i]
 
     if not ui then
         local grid = CS.UnityEngine.Object.Instantiate(self.GridCommon)
-        grid.transform:SetParent(self.PnanelGrid, false)
-        local bigReward = XUiHelper.TryGetComponent(grid, "ImgBigReward", "Image")
-        bigReward.gameObject:SetActive(isBig)
+        grid.transform:SetParent(self.GridCommon.parent, false)
         ui = XUiGridCommon.New(self.RootUi, grid)
 
-        if isBig then
-            table.insert(self.BigGrids, ui)
-        else
-            table.insert(self.SmallGrids, ui)
-        end
+        --if isBig then
+        --    table.insert(self.BigGrids, ui)
+        --else
+        --    table.insert(self.SmallGrids, ui)
+        --end
+        table.insert(self._Grids, ui)
     end
+    ui.GameObject:SetActiveEx(true)
+    
+    local bigReward = XUiHelper.TryGetComponent(ui.Transform, "ImgBigReward", "Image")
+    bigReward.gameObject:SetActive(item.IsBigReward)
 
-    ui:Refresh(rewardItems[i])
+    if rewardItems[i] then
+        ui:Refresh(rewardItems[i].Item)
+        ui:SetReceived(rewardItems[i].IsReceived)
+    end
 end
 
 return XUiSignFirstRecharge

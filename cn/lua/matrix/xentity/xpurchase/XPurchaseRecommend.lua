@@ -116,6 +116,7 @@ function XPurchaseRecommend:GetIsShow()
     return self:GetIsInTime()
 end
 
+---@return XPurchasePackage[]
 function XPurchaseRecommend:GetPurchasePackage()
     -- 默认为{}
     return self.PurchasePackage

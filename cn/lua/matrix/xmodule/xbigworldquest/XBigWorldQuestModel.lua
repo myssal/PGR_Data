@@ -121,6 +121,26 @@ function XBigWorldQuestModel:CheckQuestFinish(questId)
     return quest:IsFinish()
 end
 
+function XBigWorldQuestModel:CheckQuestInProgress(questId)
+    if self._FinishQuest and self._FinishQuest[questId] then
+        return false
+    end
+
+    local quest = self:GetQuestData(questId)
+
+    return quest:GetState() == XMVCA.XBigWorldQuest.QuestState.InProgress
+end
+
+function XBigWorldQuestModel:CheckQuestReady(questId)
+    if self._FinishQuest and self._FinishQuest[questId] then
+        return false
+    end
+
+    local quest = self:GetQuestData(questId)
+
+    return quest:GetState() == XMVCA.XBigWorldQuest.QuestState.Ready
+end
+
 --- 获取所有接取的任务Id
 ---@return number[]
 --------------------------
@@ -217,7 +237,7 @@ end
 
 function XBigWorldQuestModel:GetQuestCategory(questId)
     local t = self:GetQuestTemplate(questId)
-    return t and t.Category or 0
+    return t and t.Category:GetHashCode() or 0
 end
 
 function XBigWorldQuestModel:GetQuestType(questId)
@@ -253,14 +273,22 @@ function XBigWorldQuestModel:GetQuestStepText(stepId)
     return template and template.StepText
 end
 
-function XBigWorldQuestModel:GetQuestStepQuestId(stepId)
-    local template = self:GetQuestStepTemplate(stepId)
-    return template and template.QuestId or 0
-end
-
 function XBigWorldQuestModel:GetQuestStepExecMode(stepId)
+    if not stepId or stepId <= 0 then
+        return -1
+    end
     local mode = CsQuestConfig.GetQuestStepExecMode(stepId)
     return mode:GetHashCode()
+end
+
+function XBigWorldQuestModel:GetQuestIdByStepId(stepId)
+    local questId = CsQuestConfig.GetQuestIdByStepId(stepId)
+    return questId
+end
+
+function XBigWorldQuestModel:GetQuestIdByObjectiveId(stepId)
+    local questId = CsQuestConfig.GetQuestIdByObjectiveId(stepId)
+    return questId
 end
 
 --- 获取步骤流程配置
@@ -281,10 +309,10 @@ function XBigWorldQuestModel:GetObjectiveType(objectiveId)
     return template and template.Type or 0
 end
 
-function XBigWorldQuestModel:GetObjectiveStepId(objectiveId)
-    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
-    return template and template.StepId or 0
-end
+-- function XBigWorldQuestModel:GetObjectiveStepId(objectiveId)
+--     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+--     return template and template.StepId or 0
+-- end
 
 function XBigWorldQuestModel:GetObjectiveMaxProgress(objectiveId)
     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
@@ -589,15 +617,15 @@ end
 ---@field LevelId number
 ---@field QuestIcon string
 ---@field QuestBanner string
----@field QuestText string
----@field QuestDesc string
+---@field Name string
+---@field Desc string
 ---@field Condition number
 ---@field IsDefaultActivate boolean
 ---@field AutoUndertake boolean
 ---@field IsDefaultTrack boolean
 ---@field ScriptId number
 ---@field RewardId number
----@field Desc string
+---@field InternalDesc string
 ---@field FirstStepId number
 ---@field ShieldPopViewType number
 ---@field PopViewType number
@@ -606,19 +634,17 @@ end
 
 ---@class XTableDlcQuestStep
 ---@field Id number
----@field QuestId number
 ---@field PreStep number[]
 ---@field IsEndStep boolean
 ---@field StepText string
 ---@field LocationText string
 ---@field RewardId number
----@field Desc string
+---@field InternalDesc string
 ---@field FirstObjectiveId number
 
 
 ---@class XTableDlcQuestStepObjective
 ---@field Id number
----@field StepId number
 ---@field Type number
 ---@field MaxProgress number
 ---@field Title string
@@ -627,7 +653,7 @@ end
 ---@field ItemGetType number[]
 ---@field ItemGetUnit number[]
 ---@field ItemGetCount number[]
----@field Desc string
+---@field InternalDesc string
 
 --endregion 数据表定义
 

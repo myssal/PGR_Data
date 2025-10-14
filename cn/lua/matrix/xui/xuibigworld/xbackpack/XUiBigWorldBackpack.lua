@@ -99,11 +99,12 @@ function XUiBigWorldBackpack:OnItemGridClick(index, itemParams, goodParams)
     end
 
     self._CurrentSelectItemIndex = index
+    self:_RefreshTagReddot()
     self._DetailUi:Open()
     self._DetailUi:Refresh(itemParams, goodParams, XMVCA.XBigWorldQuest:IsQuestItem(itemParams.TemplateId))
 end
 
----@param grid XUiGridBWItem
+---@param grid XUiBigWorldBackpackItem
 function XUiBigWorldBackpack:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self._DynamicTable:GetData(index)
@@ -181,12 +182,13 @@ end
 
 function XUiBigWorldBackpack:_RefreshTitle()
     if self.TxtTagTitle then
-        self.TxtTagTitle.text = self._Control:GetTagTypeDescription(self._CurrentSelectIndex)
+        local type = self._IndexTypeMap[self._CurrentSelectIndex]
+        self.TxtTagTitle.text = self._Control:GetTagTypeDescription(type)
     end
 end
 
 function XUiBigWorldBackpack:_RefreshDynamicTable()
-    local items = self._Control:GetItemListByType(self._CurrentSelectIndex)
+    local items = self._Control:GetItemListByType(self._IndexTypeMap[self._CurrentSelectIndex])
 
     if not XTool.IsTableEmpty(items) then
         local gridSize = self._DynamicTable:GetGridSize()
@@ -218,26 +220,35 @@ function XUiBigWorldBackpack:_RefreshDynamicTable()
     end
 end
 
+function XUiBigWorldBackpack:_RefreshTagReddot()
+    for index, button in pairs(self._TagList) do
+        local type = self._IndexTypeMap[index]
+
+        if type then
+            button:ShowReddot(self._Control:CheckTypeHasNotRecord(type))
+        end
+    end
+end
+
 function XUiBigWorldBackpack:_InitUi()
     self.PanelBagItem.gameObject:SetActiveEx(false)
 end
 
 function XUiBigWorldBackpack:_InitTabs()
-    local types = self._Control:GetAllBackpackType(true)
+    local types = self._Control:GetAllBackpackType(true, true)
     local index = 1
 
-    for type, config in pairs(types) do
+    for _, config in pairs(types) do
         local button = XUiHelper.Instantiate(self.BtnTog, self.BagTags.transform)
 
         if button then
             button:SetSprite(config.IconUrl)
-            button:ShowReddot(false)
+            button:ShowReddot(self._Control:CheckTypeHasNotRecord(config.Type))
             self._TagList[index] = button
-            self._IndexTypeMap[index] = type
+            self._IndexTypeMap[index] = config.Type
             index = index + 1
         end
     end
-
     self.BtnTog.gameObject:SetActiveEx(false)
 end
 

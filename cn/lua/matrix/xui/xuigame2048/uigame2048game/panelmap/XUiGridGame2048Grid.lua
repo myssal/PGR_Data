@@ -1,6 +1,5 @@
 ---@class XUiGridGame2048Grid: XUiNode
 ---@field _Control XGame2048Control
----@field _GameControl XGame2048GameControl
 ---@field ShakeTweener DG.Tweening.Tweener
 local XUiGridGame2048Grid = XClass(XUiNode, 'XUiGridGame2048Grid')
 local XUiComGame2048GridAction = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiComGame2048GridAction')
@@ -17,6 +16,16 @@ function XUiGridGame2048Grid:OnStart()
     elseif not FeverAddMax then
         FeverAddMax = self._Control:GetClientConfigNum('GridFeverAddMax')
     end
+
+    if self.BtnSelectDispel then
+        self.BtnSelectDispel:AddEventListener(handler(self, self.OnBtnSelectDispelClickEvent))
+        self.BtnSelectDispel.gameObject:SetActiveEx(false)
+    end
+end
+
+--- 克隆的预制体的名称
+function XUiGridGame2048Grid:SetCopyNameForDebug(copyName)
+    self._CopyName = copyName
 end
 
 ---@param data XGame2048Grid
@@ -24,17 +33,35 @@ function XUiGridGame2048Grid:RefreshData(data)
     self.Id = data.Id
     self.Uid = data.Uid
 
-    if data:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds then    
+    if data:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.HeartShape then    
         -- 显示加时方块的加时数
-        if self.GridPoint and self.GridPoint.text then
-            self.GridPoint.gameObject:SetActiveEx(true)
-            self.GridPoint.text = data:GetExValue()
+        if self.GridPoint then
+            local curExValue = data:GetExValue()
+            local maxExValue = self._Control.GameControl:GetHeartAddMax()
+            
+            self._GridPointList = XUiHelper.RefreshUiObjectList(self._GridPointList, self.GridPoint.transform.parent, self.GridPoint, maxExValue, function(index, grid)
+                if grid.ImgOn then
+                    grid.ImgOn.gameObject:SetActiveEx(index <= curExValue)
+                end
+            end)
+        else
+            XLog.Error('爱心方块缺少名为：GridPoint的UI引用')
         end
     end
 
     if self.TxtNum then
         self.TxtNum.gameObject:SetActiveEx(true)
-        self.TxtNum.text = data:GetValue()
+
+        if data:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.Rock then
+            self.TxtNum.text = data:GetValue()
+        else
+            self.TxtNum.text = data:GetShowLevel()
+        end
+    end
+
+    if self.TxtNumEx then
+        self.TxtNumEx.gameObject:SetActiveEx(true)
+        self.TxtNumEx.text = data:GetExValue()
     end
 
     ---@type XTableGame2048Block
@@ -56,6 +83,19 @@ function XUiGridGame2048Grid:RefreshData(data)
 
         if hasIcon then
             self.ImgIcon:SetRawImage(blockCfg.IconRes)
+        end
+    end
+
+    if self.TxtDesc then
+        -- todo: 临时赋值
+        if data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up then
+            self.TxtDesc.text = 'Up'
+        elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Left then
+            self.TxtDesc.text = 'Left'
+        elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Down then
+            self.TxtDesc.text = 'Down'
+        elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Right then
+            self.TxtDesc.text = 'Right'
         end
     end
 end
@@ -86,8 +126,16 @@ function XUiGridGame2048Grid:SetNormalizePos(x, y)
     self.Y = y
 
     if XMain.IsEditorDebug then
-        self.GameObject.name = 'Grid'..tostring(self.Id).."_"..tostring(self.X)..","..tostring(self.Y)
+        self.GameObject.name = 'Grid'..tostring(self.Id).."_"..tostring(self.X)..","..tostring(self.Y)..' [From: '..tostring(self._CopyName)..'][Type: '..tostring(self._GridType)..']'
     end
+end
+
+function XUiGridGame2048Grid:GetNormalizePosX()
+    return self.X
+end
+
+function XUiGridGame2048Grid:GetNormalizePosY()
+    return self.Y
 end
 
 function XUiGridGame2048Grid:SetGridType(type)
@@ -98,6 +146,58 @@ end
 
 function XUiGridGame2048Grid:GetGridType()
     return self._GridType
+end
+
+function XUiGridGame2048Grid:OnBtnSelectDispelClickEvent()
+    -- 判断能否触发（防止多指或连点)
+    if self._Control.GameControl:GetIsWaterFireSelected() then
+        return
+    end
+    
+    self._Control.GameControl:SetIsSelectWaterOrFire()
+    
+    local gridType = self:GetGridType()
+
+    if self._Control.GameControl:CheckDebugEnable() then
+        if self._Control.GameControl.DebugRecordControl:CheckIsPlayBack() then
+            -- 如果是在回放，则按照回放的来
+            gridType = self._Control.GameControl.DebugRecordControl:GetCurStepDispelSelectionType()
+        elseif self._Control.GameControl.DebugRecordControl:CheckIsRecording() then
+            -- 如果是在录制，则记录选择消除的类型
+            self._Control.GameControl.DebugRecordControl:RecordCurWaterFireSelection(gridType)
+        end
+    end
+    
+    --todo: 临时复制，后面再优化
+    self._Control.GameControl:DoFeverLevelUp(gridType)
+    
+    
+    self._Control.GameControl.ActionsControl:StartActionList(function()
+        self._Control.GameControl:RequestGame2048NextStep(function()
+            self._Control.GameControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_MAPDATA_VERIFICATION)
+            -- 检查游戏是否结束
+            if self._Control.GameControl:CheckIsGameOver() then
+                self._Control:RequestGame2048Settle(XMVCA.XGame2048.EnumConst.SettleType.CannotMove, function(res)
+                    self._Control.GameControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_GAMEOVER, res, nil, self._Control:GetClientConfigNum('GameSettlePopDelay'))
+                    self._Control.GameControl.BoardShowControl:OnStageEnd()
+                end)
+            end
+        end)
+    end)
+    
+    self._Control.GameControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_WATER_FIRE_DISPEL_SELECTION_EXIT)
+end
+
+function XUiGridGame2048Grid:OnWaterFireDispelSelectionEnter()
+    if self.BtnSelectDispel then
+        self.BtnSelectDispel.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiGridGame2048Grid:OnWaterFireDispelSelectionExit()
+    if self.BtnSelectDispel then
+        self.BtnSelectDispel.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiGridGame2048Grid

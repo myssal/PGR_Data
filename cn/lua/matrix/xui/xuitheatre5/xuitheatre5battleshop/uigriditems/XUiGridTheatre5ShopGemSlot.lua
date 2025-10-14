@@ -55,14 +55,8 @@ function XUiGridTheatre5ShopGemSlot:OnBtnLockClickEvent()
     -- 判断金币是否足够
     if cost <= goldNum then
         XMVCA.XTheatre5:TryPopupDialog(XUiHelper.GetText("TipTitle"), content, nil, function()
-            XMVCA.XTheatre5:RequestTheatre5ShopUnlockGridRequest(XMVCA.XTheatre5.EnumConst.ItemType.Equip, function(success)
-                if success then
-                    self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
-                    self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
-
-                end
-            end)
-        end)
+            XMVCA.XTheatre5:RequestTheatre5ShopUnlockGridRequest(XMVCA.XTheatre5.EnumConst.ItemType.Equip)
+        end, nil, nil, nil, nil, nil, true)
     else
         XUiManager.TipMsg(self._Control.ShopControl:GetTheatre5GemSlotUnlockLackGoldErrorFromClientConfig())
     end

@@ -230,9 +230,11 @@ XUiPcManagerCreator = function()
 
     XUiPcManager.GetLessHeightResolution = function(resolutions, height)
         -- 反向遍历, 求得一个小于目标值的分辨率
+        local taskbarHeight = CS.XWin32Api.GetTaskbarSize().x
+        CS.XLog.Debug(string.format("任务栏高度%d", taskbarHeight))
         for i = #resolutions, 1, -1 do
             local resolution = resolutions[i]
-            if resolution.y < height then
+            if resolution.y < height - taskbarHeight then
                 return resolution
             end
         end

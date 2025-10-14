@@ -96,6 +96,10 @@ function XFubenShortStoryChapterConfigs.GetShortStoryActivity(id)
 end
 ------------------------------------------ShortStoryActivity.tab End----------------------------------------------------
 ------------------------------------------ShortStoryChapter.tab Start---------------------------------------------------
+function XFubenShortStoryChapterConfigs.GetShortStoryChapterCfg()
+    return ShortStoryChapterCfg
+end
+
 function XFubenShortStoryChapterConfigs.GetShortStoryChapterIds(id)
     local chapterIds = {}
     local config = GetShortStoryChapter(id)
@@ -167,6 +171,27 @@ end
 function XFubenShortStoryChapterConfigs.GetChapterTextColorList(id)
     local config = GetShortStoryChapter(id)
     return config.ChapterTextColor
+end
+
+function XFubenShortStoryChapterConfigs.GetChapterShowCondition(id)
+    local config = GetShortStoryChapter(id)
+    return config.ShowCondition
+end
+
+-- 根据关卡获取ShortStoryChapter.tab的Id
+function XFubenShortStoryChapterConfigs.GetStageMainId(stageId)
+    for _, chapterMainConfig in pairs(ShortStoryChapterCfg) do
+        for _, chapterId in pairs(chapterMainConfig.ChapterId) do
+            if XTool.IsNumberValidEx(chapterId) then
+                local chapter = GetChapterDetails(chapterId)
+                for _, sId in pairs(chapter.StageId) do
+                    if sId == stageId then
+                        return chapterMainConfig.Id, chapterId
+                    end
+                end
+            end
+        end
+    end
 end
 ------------------------------------------ShortStoryChapter.tab End-----------------------------------------------------
 ------------------------------------------ShortStoryDetails.tab Start---------------------------------------------------

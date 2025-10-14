@@ -5,7 +5,7 @@
 --
 --XPlanetManagerCreator = function()
 --    ---@class XPlanetManager
---    local XPlanetManager = XExFubenActivityManager.New(XFubenConfigs.ChapterType.PlanetRunning, "PlanetManager")
+--    local XPlanetManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.PlanetRunning, "PlanetManager")
 --
 --    ---@type XPlanetViewModel
 --    local PlanetViewModel

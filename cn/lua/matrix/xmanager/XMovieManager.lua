@@ -9,9 +9,8 @@ local CSMovieXMovieManagerInstance = CS.Movie.XMovieManager.Instance
 local UI_MOVIE = "UiMovie"
 local RESOLUTION_RATIO = CS.XResolutionManager.OriginWidth / CS.XResolutionManager.OriginHeight / CS.XUiManager.DefaultScreenRatio
 local TIMELINE_SECONDS_TRANS = 1 / 60
-local DEFAULT_SPEED = 1
 local DisableFunction = false     --功能屏蔽标记（调试模式时使用）
-local CurrentAction = nil;
+local CurrentAction = nil
 
 --可以通过上一页返回到的节点
 local MovieBackFilter = {
@@ -24,8 +23,11 @@ XMovieManagerCreator = function()
 
     local CurPlayingMovieId
     local CurPlayingActionIndex
-    local AutoPlay
+    local IsAutoPlay
+    local IsLongPressAutoPlay
     local WaitToPlayList = {}
+    local PassedActions = {}        -- 从剧情中间开始播时，前面播过的Action
+    local PassedOptionDic = {}      -- 从剧情中间开始播时，前面选项的选择
     local DelaySelectionDic = {}
     local ReviewDialogList = {}
     local EndCallBack
@@ -34,7 +36,9 @@ XMovieManagerCreator = function()
     local IsPause = false
     local YieldCallBack
     local MovieBackStack = XStack.New()
-    local Speed = 1 -- 自动播放的倍速
+    local Speed                     -- 自动播放的倍速
+    local StageId                   -- 剧情对应的关卡Id
+    local SelectionDataDic = {}     -- 当前剧情选项记录
 
     local function InitMovieActions(movieId)
         local movieActions = {}
@@ -43,7 +47,7 @@ XMovieManagerCreator = function()
         local findEnd = false
         local movieCfg = XMovieConfigs.GetMovieCfg(movieId)
         for index, actionData in ipairs(movieCfg) do
-            local actionClass = XMVCA.XMovie.XEnumConst:GetActionClass(actionData.Type)
+            local actionClass = XMVCA.XMovie.EnumConst:GetActionClass(actionData.Type)
             if not actionClass then
                 XLog.Error("XMovieManager.InitMovieActions 配置节点类型错误，找不到对应的节点，Type: " .. actionData.Type)
                 return
@@ -95,20 +99,202 @@ XMovieManagerCreator = function()
         return index
     end
 
+    -- 当前ActionId是否可以到达目标ActionId
+    ---@param curActionId number 当前ActionId
+    ---@param targetActionId number 目标ActionId
+    ---@param searchActionIdDic table 记录查找中的ActionId，避免跳转ActionId导致死循环
+    local function IsCanReachAction(curActionId, targetActionId, searchActionIdDic)
+        if curActionId == targetActionId then
+            return true
+        end
+        
+        searchActionIdDic = searchActionIdDic or {}
+        if searchActionIdDic[curActionId] then
+            -- 当前选项已查找过，跳过
+            return false
+        end
+        searchActionIdDic[curActionId] = true
+
+        local curIndex = GetActionIndexById(CurPlayingMovieId, curActionId)
+        ---@type XMovieActionBase
+        local curAction = WaitToPlayList[curIndex]
+        if curAction:IsEnding() then return false end
+        
+        -- 选项能否到达
+        if curAction:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SELECTION then
+            local delaySelectKey = curAction:GetDelaySelectKey()
+            if XTool.IsNumberValidEx(delaySelectKey) then
+                local nextIndex = GetActionIndexById(CurPlayingMovieId, curActionId) + 1
+                local nextActionId = WaitToPlayList[nextIndex]:GetActionId()
+                if IsCanReachAction(nextActionId, targetActionId, searchActionIdDic) then
+                    return true
+                end
+            else
+                local selectCnt = curAction:GetSelectionCnt()
+                for i = 1, selectCnt do
+                    local selectionActionId = curAction:GetSelectionActionId(i)
+                    if IsCanReachAction(selectionActionId, targetActionId, searchActionIdDic) then
+                        return true
+                    end
+                end
+            end
+            return false
+        end
+        
+        local nextActionId = curAction:GetNextActionId()
+        if XTool.IsNumberValidEx(nextActionId) then
+            -- 有配置NextActionId
+            return IsCanReachAction(nextActionId, targetActionId, searchActionIdDic)
+        else
+            -- 默认index+1
+            ---@type XMovieActionBase
+            local nextAction = WaitToPlayList[curIndex + 1]
+            if nextAction then
+                return IsCanReachAction(nextAction:GetActionId(), targetActionId, searchActionIdDic)
+            else
+                return false
+            end
+        end
+    end
+
+    -- 获取选择分支对话的下一个NextId
+    ---@param action XMovieActionSelection 当前action
+    ---@param animActionId number 需要往下跑能到目标ActionId
+    ---@param optionDic table 分支对话 选择了哪个选项的数据 actionId:index
+    local function GetSelectionNextActionId(action, animActionId, optionDic)
+        local actionId = action:GetActionId()
+        local selIndex = optionDic[actionId]
+        local nextActionId = 0
+        -- 有选项数据，使用选项数据
+        if XTool.IsNumberValidEx(selIndex) then
+            nextActionId = action:GetSelectionActionId(selIndex)
+        end
+
+        -- 没有选项数据/选项数据有问题
+        if not XTool.IsNumberValidEx(nextActionId) then
+            local selectCnt = action:GetSelectionCnt()
+            for i = 1, selectCnt do
+                nextActionId = action:GetSelectionActionId(i)
+                if IsCanReachAction(nextActionId, animActionId) then
+                    optionDic[action:GetActionId()] = i
+                    break
+                end
+            end
+        end
+        return nextActionId
+    end
+
+    -- 从startActionId开始播剧情，获取前面播放过的Action列表
+    local function GetPassedActions(startActionId, optionDic)
+        optionDic = optionDic or {}
+        local delaySelectionDic = {} -- 延迟做出选择的选项
+        local result = {}
+        local isSuccess = false
+        local index = 1
+        local allActionCnt = #WaitToPlayList
+        while index < allActionCnt do
+            ---@type XMovieActionBase
+            local action = WaitToPlayList[index]
+            local actionId = action:GetActionId()
+            if actionId == startActionId then
+                isSuccess = true
+                break
+            else
+                table.insert(result, action)
+            end
+            
+            -- 跳转ActionId处理
+            local nextActionId = 0
+            if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SELECTION then
+                local delaySelectKey = action:GetDelaySelectKey()
+                if XTool.IsNumberValidEx(delaySelectKey) then
+                    delaySelectionDic[delaySelectKey] = action:GetActionId()
+                else
+                    nextActionId = GetSelectionNextActionId(action, startActionId, optionDic)
+                end
+            elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SELECTION_DELAY_SKIP then
+                local delaySelectKey = action:GetDelaySelectKey()
+                local selectionActionId = delaySelectionDic[delaySelectKey]
+                local selectionActionIndex = GetActionIndexById(CurPlayingMovieId, selectionActionId)
+                local selectionAction = WaitToPlayList[selectionActionIndex]
+                nextActionId = GetSelectionNextActionId(selectionAction, startActionId, optionDic)
+            elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUTO_SKIP then
+                nextActionId = action:GetSelectedActionId()
+            end
+            
+            if not XTool.IsNumberValidEx(nextActionId) then
+                nextActionId = action:GetNextActionId()
+            end
+            if XTool.IsNumberValidEx(nextActionId) then
+                index = GetActionIndexById(CurPlayingMovieId, nextActionId)
+            else
+                index = index + 1
+            end
+        end
+
+        -- 当配置了DelaySelectKey，又未跑到Action303时，即选择哪个选项都能到达，返回默认值1
+        for _, actionId in pairs(delaySelectionDic) do
+            if not optionDic[actionId] then
+                optionDic[actionId] = 1
+            end
+        end
+        
+        if isSuccess then
+            return result, isSuccess
+        else
+            return {}, isSuccess
+        end
+    end
+
     local function ReleaseAll(isRelease)
         if (not CS.XFight.IsRunning) and isRelease then
             CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal)
         end
     end
 
-    local function OnPlayBegin(movieId, hideSkipBtn,isRelease)
+    local function OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
         CurPlayingMovieId = movieId
         CurPlayingActionIndex = 1
         WaitToPlayList = GetMovieActions(movieId)
+        PassedActions = {}
+        PassedOptionDic = {}
         ReviewDialogList = {}
         MovieBackStack:Clear()
         IsPlaying = true
         IsPause = false
+        XDataCenter.MovieManager.SetStageId(stageId)
+        SelectionDataDic = {} -- 选项的
+
+        -- 从startActionId开始播
+        if XTool.IsNumberValid(startActionId) then
+            local isSuccess = false
+            PassedActions, isSuccess = GetPassedActions(startActionId, optionDic)
+            if isSuccess then
+                PassedOptionDic = optionDic or {}
+                CurPlayingActionIndex = GetActionIndexById(CurPlayingMovieId, startActionId)
+            else
+                XLog.Error(string.format("剧情%s无法定位到ActionId:%s，从头开始播放", movieId, startActionId))
+            end
+            
+            -- 检查是否提前
+            local isAdvance = false
+            local advanceIndex, advanceActionId
+            for i, action in ipairs(PassedActions) do
+                if action:IsPassedActionRun(i) and action:IsAdvanceStartAction() then
+                    isAdvance = true
+                    advanceIndex = i
+                    advanceActionId = action:GetActionId()
+                    break
+                end
+            end
+            if isAdvance then
+                for i = #PassedActions, advanceIndex, -1 do
+                    table.remove(PassedActions, i)
+                end
+                CurPlayingActionIndex = GetActionIndexById(CurPlayingMovieId, advanceActionId)
+            end
+        end
+        
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_MOVIE_BEGIN, movieId)
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BEGIN, movieId)
 
@@ -130,7 +316,7 @@ XMovieManagerCreator = function()
 
         CurPlayingMovieId = nil
         CurPlayingActionIndex = nil
-        AutoPlay = nil
+        IsAutoPlay = nil
         ReviewDialogList = {}
         DelaySelectionDic = {}
         WaitToPlayList = {}
@@ -143,9 +329,11 @@ XMovieManagerCreator = function()
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_MOVIE_END)
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_END)
 
+        --[[
         if CurrentAction then
             CurrentAction:OnDestroy()
         end
+        ]]
 
         if XLuaUiManager.IsUiShow(UI_MOVIE) then
             XLuaUiManager.Close(UI_MOVIE)
@@ -180,6 +368,7 @@ XMovieManagerCreator = function()
         if IsPause then
             return
         end
+        ---@type XMovieActionBase
         local action = WaitToPlayList[CurPlayingActionIndex]
 
         if not ignoreLock and action:IsWaiting() then
@@ -253,10 +442,10 @@ XMovieManagerCreator = function()
         end)
     end
 
-    local function PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease)
+    local function PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
         EndCallBack = cb
         YieldCallBack = yieldCb
-        OnPlayBegin(movieId, hideSkipBtn,isRelease)
+        OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
     end
     
     --检查剧情存在
@@ -275,7 +464,8 @@ XMovieManagerCreator = function()
         return DisableFunction or XUiManager.IsHideFunc
     end
     
-    function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn,isRelease)
+    ---@param startActionId number 开始播放的ActionId
+    function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
         if XMain.IsEditorDebug then
             XLog.Debug("开始播放剧情 MovieId = " .. tostring(movieId))
         end
@@ -293,14 +483,16 @@ XMovieManagerCreator = function()
             movieId = tostring(movieId)
             XMVCA.XMovie:RequestMovieOptions(movieId)
             if XMovieConfigs.CheckMovieConfigExist(movieId) then
-                PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease)
+                PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
             else
                 PlayOldMovie(movieId, cb)
             end
         end
 
         -- 由于设计 目前这里只有纯剧情关才会走了，若战斗自带剧情关也只会在FubenAgency做检测
-        local stageId = XMVCA.XFuben:GetStageIdByBeginStoryId(movieId)
+        if not stageId then
+            stageId = XMVCA.XFuben:GetStageIdByBeginStoryId(movieId)
+        end
         local isHasCheckStory = XMVCA.XSubPackage:GetHasResIdCheckStoryId(movieId)
         if XTool.IsNumberValid(stageId) and not isHasCheckStory then
             XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({stageId}, fun)
@@ -313,6 +505,56 @@ XMovieManagerCreator = function()
         if not XMovieManager.IsPlayingMovie() then return end
         if not XLuaUiManager.IsUiShow(UI_MOVIE) then return end
         OnPlayEnd(isLoginOut)
+    end
+    
+    function XMovieManager.IsExitPassedActions()
+        return #PassedActions > 0
+    end
+
+    -- 开始执行PassedActions列表
+    function XMovieManager.StartPassedActions()
+        if #PassedActions > 0 then
+            for index, passedAction in ipairs(PassedActions) do
+                if passedAction:IsPassedActionRun(index) then
+                    passedAction:RunPassedAction()
+                else
+                    passedAction:SkipPassedAction()
+                end
+            end
+        end
+    end
+    
+    -- 是否在Loading结束后开始
+    function XMovieManager.IsStartActionAfterLoading()
+        local action = WaitToPlayList[CurPlayingActionIndex]
+        if action then
+            return action:IsStartAfterLoading()
+        end
+        return false
+    end
+    
+    -- 开始执行Actions列表
+    function XMovieManager.StartActions()
+        DoAction()
+    end
+    
+    -- 后面是否存在PassedAction会覆盖当前Action的UI显示
+    ---@param curIndex number 当前Action位于PassedActions下标
+    ---@param filterCoverFunc function 筛选符合条件的Action
+    function XMovieManager.IsBehindPassedActionCover(curIndex, filterCoverFunc)
+        local allActionCnt = #PassedActions
+        for actionIndex = curIndex + 1, allActionCnt do
+            local action = PassedActions[actionIndex]
+            if filterCoverFunc(action) then
+                return true
+            end
+        end
+        return false
+    end
+    
+    -- 获取Selection类型Action，选择的下标
+    function XMovieManager.GetPassedSelectionIndex(actionId)
+        return PassedOptionDic[actionId]
     end
 
     function XMovieManager.BackToLastAction()
@@ -353,6 +595,12 @@ XMovieManagerCreator = function()
         if curAction then
             return curAction:GetType()
         end
+    end
+    
+    function XMovieManager.GetNextActionId(actionId)
+        local nextIndex = GetActionIndexById(CurPlayingMovieId, actionId) + 1
+        local nextActionId = WaitToPlayList[nextIndex]:GetActionId()
+        return nextActionId
     end
 
     local function IsPlayingNewMovie()
@@ -453,29 +701,34 @@ XMovieManagerCreator = function()
         end
         return actionId
     end
-
-    function XMovieManager.SwitchAutoPlay()
-        AutoPlay = not AutoPlay
-        local action = WaitToPlayList[CurPlayingActionIndex]
-        if action then
-            XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_AUTO_PLAY, AutoPlay)
-        end
-
-        -- 打点
-        local dict = {}
-        dict["story_id"] = CurPlayingMovieId
-        dict["role_level"] = XPlayer.GetLevel()
-        dict["speed"] = Speed
-        dict["sex"] = XPlayer.Gender or 0
-        if AutoPlay then
-            CS.XRecord.Record(dict, "200011", "StoryAutoplayStart")
-        else
-            CS.XRecord.Record(dict, "200012", "StoryAutoplayEnd")
-        end
+    
+    -- 设置剧情对应的关卡Id
+    function XMovieManager.SetStageId(stageId)
+        StageId = stageId
     end
-
-    function XMovieManager.IsAutoPlay()
-        return AutoPlay
+    
+    -- 获取剧情对应的关卡Id
+    function XMovieManager.GetStageId()
+        return StageId
+    end
+    
+    -- 是否显示书签
+    function XMovieManager.IsShowBookmark()
+        if not StageId then return false end
+        
+        local stageType = XMVCA.XFuben:GetStageType(StageId)
+        return stageType == XEnumConst.FuBen.StageType.Mainline or stageType == XEnumConst.FuBen.StageType.Mainline2 
+                or stageType == XEnumConst.FuBen.StageType.ShortStory or stageType == XEnumConst.FuBen.StageType.ExtraChapter
+    end
+    
+    -- 缓存选项数据
+    function XMovieManager.CacheSelectionData(actionId, index)
+        SelectionDataDic[actionId] = index
+    end
+    
+    -- 获取当前剧情的选项选择数据
+    function XMovieManager.GetSelectionDataDic()
+        return XTool.Clone(SelectionDataDic)
     end
 
     function XMovieManager.GetReviewDialogList()
@@ -570,9 +823,54 @@ XMovieManagerCreator = function()
         XSaveTool.SaveData(XPrefs.StoryTrigger, DisableFunction)
     end
 
+    --region 自动播放
+    
+    -- 切换自动播放
+    function XMovieManager.SwitchAutoPlay()
+        if not IsAutoPlay then
+            -- TODO 改成事件触发XUiMovie:OnClickBtnAuto()
+            XMovieManager.SetAutoPlay(true)
+        end
+    end
+    
+    -- 设置自动播放
+    function XMovieManager.SetAutoPlay(isAutoPlay)
+        IsAutoPlay = isAutoPlay
+        local action = WaitToPlayList[CurPlayingActionIndex]
+        if action then
+            XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_AUTO_PLAY, IsAutoPlay)
+        end
+
+        -- 打点
+        local dict = {}
+        dict["story_id"] = CurPlayingMovieId
+        dict["role_level"] = XPlayer.GetLevel()
+        dict["speed"] = XMovieManager.GetSpeed()
+        dict["sex"] = XPlayer.Gender or 0
+        if IsAutoPlay then
+            CS.XRecord.Record(dict, "200011", "StoryAutoplayStart")
+        else
+            CS.XRecord.Record(dict, "200012", "StoryAutoplayEnd")
+        end
+    end
+
+    -- 
+    function XMovieManager.GetIsAutoPlay()
+        return IsAutoPlay
+    end
+    
+    -- 设置长按自动播放
+    function XMovieManager.SetLongPressAutoPlay(isLongPressAutoPlay)
+        IsLongPressAutoPlay = isLongPressAutoPlay
+    end
+    
     -- 设置倍速
     function XMovieManager.SetSpeed(speed)
+        -- 长按加速设置的倍速不进行缓存，GetSpeed()直接返回LONG_PRESS_SPEED
+        if IsLongPressAutoPlay then return end
+
         Speed = speed
+        XSaveTool.SaveData("MovieAutoPlaySpeed", speed)
 
         -- 打点
         local dict = {}
@@ -585,22 +883,23 @@ XMovieManagerCreator = function()
 
     -- 获取倍速
     function XMovieManager.GetSpeed()
-        if AutoPlay then
+        if IsAutoPlay then
+            if not Speed then
+                Speed = XSaveTool.GetData("MovieAutoPlaySpeed") or XMVCA.XMovie.EnumConst.DEFAULT_SPEED
+            end
             return Speed
+        elseif IsLongPressAutoPlay then
+            return XMVCA.XMovie.EnumConst.LONG_PRESS_SPEED
         else
-            return DEFAULT_SPEED
+            return XMVCA.XMovie.EnumConst.DEFAULT_SPEED
         end
-    end
-
-    -- 重置速度
-    function XMovieManager.RestSpeed()
-        Speed = DEFAULT_SPEED
     end
 
     -- 当前是否加速
     function XMovieManager.IsSpeedUp()
-        return Speed ~= DEFAULT_SPEED and AutoPlay
+        return XMovieManager.GetSpeed() ~= XMVCA.XMovie.EnumConst.DEFAULT_SPEED and IsAutoPlay
     end
+    --endregion
     
     --region 埋点相关
     

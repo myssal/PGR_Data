@@ -197,6 +197,11 @@ function XEquip:IsWearing()
     return self.CharacterId and self.CharacterId > 0
 end
 
+function XEquip:CheckCanCharWear(characterId)
+    local requireEquipType = XMVCA.XCharacter:GetCharacterEquipType(characterId)
+    return XMVCA.XEquip:IsTypeEqual(self.Id, requireEquipType)
+end
+
 -- 是否是装备
 function XEquip:IsWeapon()
     return XMVCA:GetAgency(ModuleId.XEquip):IsEquipWeapon(self.TemplateId)

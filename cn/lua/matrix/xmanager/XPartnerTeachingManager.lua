@@ -1,7 +1,7 @@
 local XExFubenCollegeStudyManager = require("XEntity/XFuben/XExFubenCollegeStudyManager")
 
 XPartnerTeachingManagerCreator = function()
-    local XPartnerTeachingManager = XExFubenCollegeStudyManager.New(XFubenConfigs.ChapterType.PartnerTeaching)
+    local XPartnerTeachingManager = XExFubenCollegeStudyManager.New(XEnumConst.FuBen.ChapterType.PartnerTeaching)
 
     -------------------------------------------------------副本相关------------------------------------------------------
     --function XPartnerTeachingManager.InitStageInfo()

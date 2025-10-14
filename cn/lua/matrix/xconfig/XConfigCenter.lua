@@ -283,10 +283,14 @@ end
 --=============
 function XConfigCenter.CreateTableConfig(value, name, directoryName)
     if value then return value end
+
     local config = {}
+    config.__isCreatedByConfigCenter = true
+
     if directoryName then
         config.DirectoryName = directoryName
     end
+    
     setmetatable(config, {
         __index = {
             --=============

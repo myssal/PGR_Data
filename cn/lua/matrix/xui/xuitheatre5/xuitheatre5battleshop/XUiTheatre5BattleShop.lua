@@ -12,6 +12,8 @@ local XUiPanelTheatre5ShopDetail = require('XUi/XUiTheatre5/XUiTheatre5BattleSho
 local XUiPanelTheatre5SkillChoice = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiPanelTheatre5SkillChoice')
 local XUiPanelTheatre5ShopNpc = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiPanelTheatre5ShopNpc')
 local XUiPanelTheatre5TempBag = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiPanelTheatre5TempBag')
+local XUiTheatre5Level = require("XUi/XUiTheatre5/XUiTheatre5Level/XUiTheatre5Level")
+local XUiTheatre5RelicPanel = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/XUiTheatre5RelicPanel')
 local UNITY = CS.UnityEngine
 
 function XUiTheatre5BattleShop:OnAwake()
@@ -25,7 +27,10 @@ function XUiTheatre5BattleShop:OnAwake()
     self.BtnShopMaskDetailShow.gameObject:SetActiveEx(false)
     self.BtnBagMaskDetailShow.gameObject:SetActiveEx(false)
     self.BtnSkillChoiceMaskDetailShow.gameObject:SetActiveEx(false)
-    
+    if self.PanelCharacterLv then
+        self.LevelPanel = XUiTheatre5Level.New(self.PanelCharacterLv, self)
+    end
+
     -- 卖出道具的特效池
     if self.FxCoin then
         self.FxCoin.gameObject:SetActiveEx(false)
@@ -41,7 +46,7 @@ function XUiTheatre5BattleShop:OnAwake()
             return particlePlayer
         end, nil, false)
     end
-    
+
     -- 放置音效
     if self.SFX_EquipBall then
         self.SFX_EquipBall.gameObject:SetActiveEx(false)
@@ -65,15 +70,16 @@ function XUiTheatre5BattleShop:OnStart()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_SKILL_PLACED, self.OnItemSkillPlacedSFX, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_GEM_PLACED, self.OnItemGemPlacedSFX, self)
 
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._Control.PVPControl:StartPVPTimer()
     end
-    
+
     self.DraggingItemCheckTimeId = XScheduleManager.ScheduleForever(handler(self, self.EndDragErrorCheckTimer), XScheduleManager.SECOND)
 end
 
 function XUiTheatre5BattleShop:OnEnable()
     self:RefreshAll()
+    XMVCA.XTheatre5:TriggerInterruptEvent()
 end
 
 function XUiTheatre5BattleShop:OnDestroy()
@@ -86,10 +92,10 @@ function XUiTheatre5BattleShop:OnDestroy()
 
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_SKILL_PLACED, self.OnItemSkillPlacedSFX, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_ITEM_GEM_PLACED, self.OnItemGemPlacedSFX, self)
-    
+
     self._Control.ShopControl:ResetOnShopClose()
 
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._Control.PVPControl:StopPVPTimer()
     end
 
@@ -103,14 +109,14 @@ function XUiTheatre5BattleShop:Close()
     if XLuaUiManager.IsUiShow('UiTheatre5BubbleItemDetail') then
         XLuaUiManager.Remove('UiTheatre5BubbleItemDetail')
     end
-    
+
     self.Super.Close(self)
 end
 
 function XUiTheatre5BattleShop:InitPanels()
     self.PanelGemShop.gameObject:SetActiveEx(false)
     self.PanelSkillShop.gameObject:SetActiveEx(false)
-    
+
     ---@type XUiPanelTheatre5TopInfo
     self.PanelTopInfo = XUiPanelTheatre5TopInfo.New(self.PanelTop, self)
     ---@type XUiPanelTheatre5Bag
@@ -128,17 +134,20 @@ function XUiTheatre5BattleShop:InitPanels()
     ---@type XUiPanelTheatre5ShopNpc
     self.ShopNpc = XUiPanelTheatre5ShopNpc.New(self.PanelNpc, self)
     self.ShopNpc:Open()
+    ---@type XUiTheatre5RelicPanel
+    self.PanelRelic = XUiTheatre5RelicPanel.New(self.ListRelicBag, self)
 
-    if self.PanelTemporaryBag then --todo 资源未打包无引用会报错，确认svn打包后可去除
+    if self.PanelTemporaryBag then
+        --todo 资源未打包无引用会报错，确认svn打包后可去除
         ---@type XUiPanelTheatre5TempBag
         self.TempBag = XUiPanelTheatre5TempBag.New(self.PanelTemporaryBag, self)
         self.TempBag:Open()
     end
-    
+
     ---@type XUiPanelTheatre5ShopDetail
     self.PanelShopDetail = XUiPanelTheatre5ShopDetail.New(self.BubbleShopDetail, self)
     self.PanelShopDetail:Close()
-    
+
     --- 判断是商店还是技能三选一
     if self._Control.ShopControl:GetShopState() == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping then
         self.PanelStore:Open()
@@ -150,12 +159,12 @@ end
 function XUiTheatre5BattleShop:InitCharacter3D()
     ---@type XTableTheatre5Character
     local characterCfg = self._Control:GetCurCharacterCfg()
-    
+
     if characterCfg then
         local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(characterCfg.Id)
         local detailIdleAnima = self._Control.CharacterControl:GetDetailIdleAnimaByCharacterIdCurMode(characterCfg.Id)
         local fashionId, weaponId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(characterCfg.Id)
-        
+
         self.Model3D:UpdateRoleModelByHand(characterCfg.CharacterId, fashionId, weaponId, animatorController)
         -- 播放战备界面的待机动画
         if not string.IsNilOrEmpty(detailIdleAnima) then
@@ -168,9 +177,9 @@ end
 function XUiTheatre5BattleShop:RefreshAll()
     self.PanelTopInfo:RefreshAll()
     self.PanelBag:RefreshBagShow()
-    
+
     local isNormalShop = self._Control.ShopControl:GetShopState() == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
-    
+
     if isNormalShop then
         self.PanelStore:RefreshStoreShow()
         -- 检查引导
@@ -204,12 +213,12 @@ function XUiTheatre5BattleShop:OnClickClose()
 end
 
 function XUiTheatre5BattleShop:OnBtnFightClickEvent()
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
             -- 不提示，提示由踢出定时器弹出
             return
         end
-        
+
         XMVCA.XTheatre5.BattleCom:RequestTheatre5Match(function(success, enemeyData)
             if success then
                 XMVCA.XTheatre5.BattleCom:OpenMatchLoadingUi(enemeyData)
@@ -217,8 +226,8 @@ function XUiTheatre5BattleShop:OnBtnFightClickEvent()
         end)
     else
         XMVCA.XTheatre5.BattleCom:OpenMatchLoadingUi()
-    end 
-    
+    end
+
     self:Close()
 end
 
@@ -232,7 +241,7 @@ function XUiTheatre5BattleShop:OnItemDetailOpenEvent(itemData, containerType, ui
     else
         self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_ITEM_DETAIL, itemData, containerType, uiPos)
     end
-    
+
     self.BtnShopMaskDetailShow.gameObject:SetActiveEx(true)
     self.BtnBagMaskDetailShow.gameObject:SetActiveEx(true)
     self.BtnSkillChoiceMaskDetailShow.gameObject:SetActiveEx(true)
@@ -253,7 +262,7 @@ function XUiTheatre5BattleShop:OnShopStateChangedEvent(afterSkillSelection)
         self.PanelStore:Close()
         self.PanelSkillChoice:Close()
     end
-    
+
     if self._Control.ShopControl:GetShopState() == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping then
         self.PanelStore:Open()
         if afterSkillSelection then
@@ -264,13 +273,13 @@ function XUiTheatre5BattleShop:OnShopStateChangedEvent(afterSkillSelection)
     else
         self.PanelSkillChoice:Open()
     end
-    
+
     self:RefreshAll()
 end
 
 function XUiTheatre5BattleShop:OnSellOutGemEffectShow(position)
     local fxCoin = self._FxCoinPool:GetItemFromPool()
-    
+
     if fxCoin then
         fxCoin.transform.position = position
         fxCoin:PlayWithEnable(function()

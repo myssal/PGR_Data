@@ -91,9 +91,24 @@ function XUiNewDrawMain:Refresh()
     self:RefreshPanelTwoForOne()
     self:_RefreshCharacterDrawTarget()
     self:UpdateBtnDiscount()
+    self:RefreshNormalUiShow()
     self.CurPanelLbItem:Refresh(self.DrawInfo)
 end
 
+function XUiNewDrawMain:RefreshNormalUiShow()
+    -- 生命树图标
+    local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.DrawInfo.Id)
+    if drawSceneCfg then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerDrawIconVisible"))
+        local characterId = tonumber(drawSceneCfg.ModelId)
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+        self.BtnTree.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.TxtTreeDesc.text = powerConfig.Description
+            self.BtnTree:SetSprite(powerConfig.Icon)
+        end
+    end
+end
 -- region 鬼泣五相关
 function XUiNewDrawMain:RefreshPanelTwoForOne()
     local isDevilMayGroupId = XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
@@ -635,7 +650,13 @@ function XUiNewDrawMain:_RefreshBtnTag()
         else                        -- 二级页签
             groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
             if btnObjDir.PanelActivity and data:GetId() == self.GroupId then
-                btnObjDir.PanelActivity.gameObject:SetActiveEx(not isShowTag and groupTargetData)
+                local isNewbieShow = data.MaxBottomTimes == data:GetNewHandBottomCount()
+                local isShow = not isShowTag and groupTargetData and not isNewbieShow
+                btnObjDir.PanelActivity.gameObject:SetActiveEx(isShow)
+
+                if btnObjDir.PanelNewTag then
+                    btnObjDir.PanelNewTag.gameObject:SetActiveEx(isNewbieShow)
+                end
             end
         end
     end
@@ -976,9 +997,23 @@ function XUiNewDrawMain:AddBtnListener()
     self.PanelTwoForOne:GetObject("BtnReceive").CallBack = function()
         self:OnDevilMayCryBtnReceiveClick()
     end
+
+    self.BtnTree.CallBack = function ()
+        self:OnBtnTreeClick()
+    end
+
+    self.BtnClose.CallBack = function ()
+        self:CloseTreeBubble()
+    end
 end
 
 function XUiNewDrawMain:OnBtnBackClick()
+    -- 兼容特殊视频跳转
+    if XMVCA.XUiMain:GetUiLoginVideoV4P0OpenTrigger() then
+        XLuaUiManager.RunMain()
+        return
+    end
+
     self:Close()
 end
 
@@ -1028,6 +1063,17 @@ function XUiNewDrawMain:OnBtnActivityTargetClick()
                 self:Close()
             end,
             nil, true)
+end
+
+function XUiNewDrawMain:OnBtnTreeClick()
+    local isBubbleTreeActive = self.BubbleTreeDetail.gameObject.activeSelf
+    self.BtnClose.gameObject:SetActiveEx(not isBubbleTreeActive)
+    self.BubbleTreeDetail.gameObject:SetActiveEx(not isBubbleTreeActive)
+end
+
+function XUiNewDrawMain:CloseTreeBubble()
+    self.BubbleTreeDetail.gameObject:SetActiveEx(false)
+    self.BtnClose.gameObject:SetActiveEx(false)
 end
 
 function XUiNewDrawMain:StopAnimationToEnd(anim)

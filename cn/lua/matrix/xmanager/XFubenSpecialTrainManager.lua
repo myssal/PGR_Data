@@ -2,7 +2,7 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 
 XFubenSpecialTrainManagerCreator = function()
     ---@class XFubenSpecialTrainManager:XExFubenBaseManager
-    local XFubenSpecialTrainManager = XExFubenBaseManager.New(XFubenConfigs.ChapterType.SpecialTrain)
+    local XFubenSpecialTrainManager = XExFubenBaseManager.New(XEnumConst.FuBen.ChapterType.SpecialTrain)
     local ActivityId --开启的活动
     local RewardIds --已经领取的奖励
     local PointRewardDic = {} --积分奖励

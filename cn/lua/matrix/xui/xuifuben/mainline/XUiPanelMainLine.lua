@@ -7,17 +7,9 @@ local XUiFubenSideDynamicTable = require("XUi/XUiFuben/UiDynamicList/XUiFubenSid
 
 local XUiPanelMainLine = XClass(XSignalData, "XUiPanelMainLine")
 
---######################## 静态方法 BEGIN ########################
-
-function XUiPanelMainLine.CheckHasRedPoint()
-    return XDataCenter.FubenManagerEx.GetMainLineManager():ExCheckIsShowRedPoint()
-end
-
---######################## 静态方法 END ########################
-
-function XUiPanelMainLine:Ctor(ui, parent)
+function XUiPanelMainLine:Ctor(ui, root)
     XUiHelper.InitUiClass(self, ui)
-    self.RootUi = parent
+    self.RootUi = root
     self.MainLineManager = XDataCenter.FubenManagerEx.GetMainLineManager()
     -- 动态列表
     self.GridChapterContent.gameObject:SetActiveEx(false)
@@ -35,6 +27,8 @@ function XUiPanelMainLine:Ctor(ui, parent)
     -- 当前章节限时难度
     self.CurrentFubenDifficulty = XDataCenter.FubenManager.DifficultNormal
     self.FirstTagIndex = nil
+    
+    self:RegisterUiEvents()
 end
 
 function XUiPanelMainLine:SetData(firstTagId, groupIndex, chapterIndex)
@@ -51,10 +45,11 @@ function XUiPanelMainLine:SetData(firstTagId, groupIndex, chapterIndex)
     self:RefreshTabList(self.CurrentGroupId)
     -- -- 章节列表刷新
     -- self:RefreshChapterList(self.CurrentChapterIndex)
+    self._SetDataRun = true
 end
 
 function XUiPanelMainLine:OnEnable()
-    
+    self.IsEnable = true
     local gridDic = self.CurrentChapterListControl:GetGridDic()
     for _, grid in pairs(gridDic) do
         grid:RefreshRedPoint()
@@ -65,6 +60,21 @@ function XUiPanelMainLine:OnEnable()
     end
     -- 章节列表刷新
     self:RefreshChapterList(self.CurrentChapterIndex, true)
+
+    if self._SetDataRun then
+        self._SetDataRun = false
+    else
+        -- 侧边栏卷刷新
+        self:RefreshTabList(self.CurrentGroupId)
+    end
+    
+    self:RefreshNewbieLockConditionShow()
+    self:RefreshBtnBookmark()
+end
+
+function XUiPanelMainLine:OnDisable()
+    self.IsEnable = false
+    self.CurrentChapterListControl:SetCurrGridOpen() -- 退出时要强设一遍展开样式，防止在滑动侧边栏过程中，快速切换底部标签再切回来导致open动画播放错误
 end
 
 function XUiPanelMainLine:RefreshChapterList(index, isFirstChange)
@@ -79,6 +89,28 @@ end
 function XUiPanelMainLine:RefreshTabList(index)
     local groupConfigs = self.MainLineManager:ExGetChapterGroupConfigs()
     self.UiFubenSideDynamicTable:RefreshList(groupConfigs, index - 1)
+end
+
+--- 刷新新手锁定提示文本的显示
+function XUiPanelMainLine:RefreshNewbieLockConditionShow()
+    local conditionId = XMVCA.XMainLine2:GetClientNewbieMainLineLockCondition()
+
+    if XTool.IsNumberValidEx(conditionId) then
+        if self.LockTips then
+            local isShow = XConditionManager.CheckCondition(conditionId)
+            self.LockTips.gameObject:SetActiveEx(isShow)
+
+            if isShow then
+                if self.LockText then
+                    self.LockText.text = XConditionManager.GetConditionDescById(conditionId)
+                end
+            end
+        end
+    else
+        if self.LockTips then
+            self.LockTips.gameObject:SetActiveEx(false)
+        end
+    end
 end
 
 function XUiPanelMainLine:OnBtnTabClicked(index, groupConfig)
@@ -98,6 +130,7 @@ function XUiPanelMainLine:OnBtnChapterClicked(index, viewModel)
     self:SetHistoryChapterIndex(self.CurrentGroupId, self.CurrentChapterIndex)
     -- 只有是选中的，才直接打开界面
     if self.CurrentChapterListControl:GetCurrentSelectedIndex() == index then
+        XMVCA.XMainLine2:RecordEnterChapterWay(XEnumConst.MAINLINE2.ENTER_CHAPTER_WAY_TYPE.MAINLINE)
         self.MainLineManager:ExOpenChapterUi(viewModel, self.CurrentFubenDifficulty)
         return
     end
@@ -141,8 +174,49 @@ function XUiPanelMainLine:OnDestroy()
     end
 end
 
-function XUiPanelMainLine:OnDisable()
-    self.CurrentChapterListControl:SetCurrGridOpen() -- 退出时要强设一遍展开样式，防止在滑动侧边栏过程中，快速切换底部标签再切回来导致open动画播放错误
+function XUiPanelMainLine:RegisterUiEvents()
+    XUiHelper.RegisterClickEvent(self, self.BtnBookmark, self.OnBtnBookmarkClick, nil, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnCharacterStory, self.OnBtnCharacterStoryClick, nil, true)
 end
+
+function XUiPanelMainLine:OnBtnBookmarkClick()
+    -- 没有书签时，弹提示
+    local bookmarkData = XMVCA.XMovie:GetBookmarkData()
+    if not bookmarkData then
+        local tips = XMVCA.XMainLine2:GetClientConfigParams("NoBookmarkTips", 1)
+        XUiManager.TipError(tips)
+        return
+    end
+
+    -- 二次确认是否播放书签剧情
+    local bookmarkName = XMVCA.XMovie:GetBookmarkName()
+    local params = XMVCA.XMovie:GetClientConfigParams("BookmarkEnterTips")
+    local tipTitle = params[1]
+    local contentFormat = params[2]
+    local content = string.format(contentFormat, bookmarkName)
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+    local confirmCb = function()
+        XMVCA.XMovie:PlayBookmarkMovie()
+    end
+    XLuaUiManager.Open("UiDialog", tipTitle, content, XUiManager.DialogType.Normal, nil, confirmCb)
+end
+
+function XUiPanelMainLine:OnBtnCharacterStoryClick()
+    XMVCA.XPlotExhibition:OpenMain()
+end
+
+--region 剧情书签
+-- 刷新剧情书签按钮
+function XUiPanelMainLine:RefreshBtnBookmark()
+    XMVCA.XMovie:RequestGetStageBookmark(function(bookmarkData)
+        local isExit = bookmarkData ~= nil
+        self.BookmarkBubble.gameObject:SetActiveEx(isExit)
+        if isExit then
+            local name = XMVCA.XMovie:GetBookmarkName()
+            self.BtnBookmark:SetName(name)
+        end
+    end)
+end
+--endregion
 
 return XUiPanelMainLine

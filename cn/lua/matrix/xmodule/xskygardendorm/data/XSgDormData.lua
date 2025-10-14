@@ -300,19 +300,6 @@ function XSgDormData:SetLayoutIdWithAreaType(areaType, id)
     self._AreaType2LayoutId[areaType] = id
 end
 
----@param containerData XSgContainerFurnitureData
-function XSgDormData:SetContainerFurnitureData(areaType, id, containerData)
-    local areaDict = self._AreaType2LayoutData[areaType]
-    if not areaDict then
-        return
-    end
-    local layout = areaDict[id]
-    if not layout then
-        return
-    end
-    layout:SetContainerFurnitureData(containerData)
-end
-
 ---@return XSgDormLayout
 function XSgDormData:GetLayoutData(areaType, layoutId)
     local dict = self._AreaType2LayoutData[areaType]
@@ -332,6 +319,7 @@ function XSgDormData:GetContainerFurnitureData(areaType, layoutId)
     return layout:GetContainerFurnitureData()
 end
 
+---@param containerFurnitureData XSgContainerFurnitureData
 function XSgDormData:SetContainerFurnitureData(areaType, layoutId, containerFurnitureData)
     local layout = self:GetLayoutData(areaType, layoutId)
     if not layout then

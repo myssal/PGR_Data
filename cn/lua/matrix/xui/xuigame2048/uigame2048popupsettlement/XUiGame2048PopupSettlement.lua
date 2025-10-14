@@ -16,7 +16,7 @@ end
 
 function XUiGame2048PopupSettlement:OnStart(res, closeCallback)
     self._LastScore = self._Control:GetStageLastMaxScore()
-    self._LastMaxBlockNum = self._Control:GetStageLastMaxBlockNum()
+    self._LastMaxBlockLevel = self._Control:GetStageLastMaxBlockLevel()
     self._GameControl = self._Control:GetGameControl()
     self._CloseCallback = closeCallback
     self._StageId = self._Control:GetCurStageId()
@@ -34,15 +34,20 @@ end
 
 function XUiGame2048PopupSettlement:InitButtons()
     if self._ButtonGroupType == SettleButtonGroupType.WithNext then
-        self.BtnLeave.CallBack = handler(self, self.PlayAgain)
-        self.BtnAgain.CallBack = handler(self, self.PlayNext)
-        self.BtnLeave:SetNameByGroup(0, self._Control:GetClientConfigText('AgainLabelInSettle'))
-        self.BtnAgain:SetNameByGroup(0, self._Control:GetClientConfigText('NextStageLabelInSettle'))
+        self.BtnAgain:AddEventListener(handler(self, self.PlayAgain))
+        self.BtnNext:AddEventListener(handler(self, self.PlayNext))
+
+        self.BtnAgain.gameObject:SetActiveEx(true)
+        self.BtnNext.gameObject:SetActiveEx(true)
+        self.BtnLeave.gameObject:SetActiveEx(false)
+
     else
-        self.BtnLeave.CallBack = handler(self, self.ExitGame)
-        self.BtnAgain.CallBack = handler(self, self.PlayAgain)
-        self.BtnLeave:SetNameByGroup(0, self._Control:GetClientConfigText('ExitLabel'))
-        self.BtnAgain:SetNameByGroup(0, self._Control:GetClientConfigText('AgainLabelInSettle'))
+        self.BtnLeave:AddEventListener(handler(self, self.ExitGame))
+        self.BtnAgain:AddEventListener(handler(self, self.PlayAgain))
+
+        self.BtnLeave.gameObject:SetActiveEx(true)
+        self.BtnAgain.gameObject:SetActiveEx(true)
+        self.BtnNext.gameObject:SetActiveEx(false)
     end
 end
 
@@ -134,8 +139,11 @@ function XUiGame2048PopupSettlement:RefreshScore(res)
 
 
     if self._StageType == XMVCA.XGame2048.EnumConst.StageType.Endless then
-        self.TxtMaxMergeNum.text = res.CurrentMaxBlockNum
-        self.TagNewMaxNum.gameObject:SetActiveEx(res.CurrentMaxBlockNum > self._LastMaxBlockNum)
+        -- 因为实际显示的积分文本和进行比较的值不一样, 服务端改下发Id
+        -- 且基于旧数据考虑服务端不方便改字段名称，所以维持原字段定义
+        local cfg = self._Control:GetBlockCfgById(res.CurrentMaxBlockNum)
+        self.TxtMaxMergeNum.text = cfg.ShowLevel
+        self.TagNewMaxNum.gameObject:SetActiveEx(cfg.Level > self._LastMaxBlockLevel)
     else
         self.TxtMaxMergeNum.transform.parent.gameObject:SetActiveEx(false)
     end

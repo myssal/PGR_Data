@@ -106,6 +106,33 @@ XSignInManagerCreator = function()
         return true
     end
 
+    ---
+    --- 判断指定签到是否所有奖励已领取
+    function XSignInManager.IsSignInAllRecieve(signInId)
+        -- 判断签到本身是否可显示（不考虑领取情况）
+        if not XSignInConfigs.IsShowSignIn(signInId) then
+            return true
+        end
+
+        local signData = XSignInManager.GetSignInData(signInId)
+        if not signData then
+            return true
+        end
+
+        local config = XSignInConfigs.GetSignInConfig(signInId)
+
+        -- 如果是最后一轮，且是最后一天，则表明已领取完     
+        local maxRound = #config.RoundDays
+        
+        if maxRound <= signData.Round then
+            if config.RoundDays[maxRound] <= signData.Day then
+                return signData.Got
+            end
+        end
+
+        return false
+    end
+
     -- 判断是否已经领取过
     function XSignInManager.JudgeAlreadyGet(signInId, round, day)
         local signData = XSignInManager.GetSignInData(signInId)

@@ -15,6 +15,7 @@ end
 function XTheatre5FlowController:Ctor()
     self._IsEntering = false
     ---------------------pve-------------------------
+    ---@type XTheatre5PVELink
     self._PVEStroryLineLink = nil
     self._WaitOpenUI = nil --等待打开的界面
     self._PVEFlowNodeBlackBoard = nil
@@ -49,9 +50,9 @@ function XTheatre5FlowController:EnterModel()
     end
     self._IsEntering = true
     local curTheatre5Model = self._Model:GetCurPlayingMode()
-    if curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         self:_EnterPVE()
-    elseif curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    elseif curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self:_EnterPVP()
     end
 
@@ -81,14 +82,14 @@ function XTheatre5FlowController:_EnterPVE()
         local content = self._Model:GetTheatre5ClientConfigText('EnterDeduceTips')
         XUiManager.DialogTip(nil, content, XUiManager.DialogType.Normal,
                 function()
-                    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameModel.PVE)
+                    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameMode.PVE)
                 end,
                 function()
                     self:EnterStroryLineContent(deduceStoryLineId)
                 end)
         return
     end
-    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameModel.PVE)
+    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameMode.PVE)
 end
 
 function XTheatre5FlowController:_ExitPVE()

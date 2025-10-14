@@ -148,6 +148,7 @@ function XUiSkyGardenShoppingStreetMain:RefreshMainPage()
     
     self.PanelComplete.gameObject:SetActive(not isShowTarget)
     self.PanelNone.gameObject:SetActive(false)
+    self.ListTarget.gameObject:SetActive(true)
     if isShowTarget then
         local stageId = self._Control:GetCurrentStageId(true)
         local config = self._Control:GetStageConfigsByStageId(stageId)
@@ -171,7 +172,7 @@ function XUiSkyGardenShoppingStreetMain:RefreshMainPage()
             })
         end
         
-        XTool.UpdateDynamicItemByUiCache(self._TargetTaskUI, taskIds, self.GridTarget.transform.parent, XUiSkyGardenShoppingStreetMainGridTarget, self, 1)
+        XTool.UpdateDynamicItemByUiCache(self._TargetTaskUI, taskIds, self.GridTarget.transform.parent, XUiSkyGardenShoppingStreetMainGridTarget, self)
     else
         self.TxtStageName.text = ""
         self.TxtTargetStarCountNum.text = string.format("%d/%d", self._Control:GetCurrentStarNum(), self._Control:GetTotalStarNum())

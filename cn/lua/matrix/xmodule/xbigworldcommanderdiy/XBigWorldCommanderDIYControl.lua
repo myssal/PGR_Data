@@ -16,6 +16,8 @@ function XBigWorldCommanderDIYControl:OnInit()
     self._Gender = 0
     ---@type table<number, XBWCommanderDIYWearData>
     self._WearDataMap = {}
+
+    self:_InitRecordPartMap()
 end
 
 function XBigWorldCommanderDIYControl:AddAgencyEvent()
@@ -29,6 +31,8 @@ end
 function XBigWorldCommanderDIYControl:OnRelease()
     self._Gender = 0
     self._WearDataMap = {}
+
+    self:_RecordPartMapToLocal()
 end
 
 -- region Entity
@@ -370,12 +374,59 @@ function XBigWorldCommanderDIYControl:SaveFashionInfo(callback)
     self:RequestUpdate(self:GetCurrentGender(), self:GetDIYInfo(), callback)
 end
 
+function XBigWorldCommanderDIYControl:TrySaveFashionInfo(callback)
+    self:TryOpenPreviewSavePopup(function()
+        self:SaveFashionInfo(callback)
+    end)
+end
+
+function XBigWorldCommanderDIYControl:TryOpenPreviewSavePopup(callback)
+    if not self:CheckWearPreview() then
+        if callback then
+            callback()
+        end
+
+        return
+    end
+
+    local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+
+    confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYPreviewConfirmTips"))
+    confirmData:InitToggleActive(false)
+    confirmData:InitSureClick(nil, function()
+        self:RestorePreviewPart()
+        if callback then
+            callback()
+        end
+    end)
+
+    XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
+end
+
 function XBigWorldCommanderDIYControl:CheckIsInitDIY()
     return self._Model:IsInitDiy()
 end
 
 function XBigWorldCommanderDIYControl:SetInitDiy(value)
     self._Model:SetInitDiy(value)
+end
+
+function XBigWorldCommanderDIYControl:RestorePreviewPart()
+    local wearDataMap = self._Model:GetWearDataMap()
+
+    if not XTool.IsTableEmpty(wearDataMap) then
+        for typeId, wearData in pairs(wearDataMap) do
+            if wearData:IsWaeredPart() and not self._Model:CheckPartUnlcok(wearData:GetPartId()) then
+                local temporaryWearData = self._WearDataMap[typeId]
+
+                wearData:ClearPart()
+                if temporaryWearData then
+                    wearData:SetPartId(temporaryWearData:GetPartId())
+                    wearData:SetColorId(temporaryWearData:GetColorId())
+                end
+            end
+        end
+    end
 end
 
 function XBigWorldCommanderDIYControl:CheckCurrentMaleGender()
@@ -399,6 +450,20 @@ function XBigWorldCommanderDIYControl:CheckNeedSyncInfo()
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, wearData in pairs(wearDataMap) do
             if not wearData:IsEqual(self._WearDataMap[typeId]) then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
+function XBigWorldCommanderDIYControl:CheckWearPreview()
+    local wearDataMap = self._Model:GetWearDataMap()
+
+    if not XTool.IsTableEmpty(wearDataMap) then
+        for typeId, wearData in pairs(wearDataMap) do
+            if wearData:IsWaeredPart() and not wearData:IsSuitPart() and not self._Model:CheckPartUnlcok(wearData:GetPartId()) then
                 return true
             end
         end
@@ -467,6 +532,20 @@ function XBigWorldCommanderDIYControl:GetDIYInfo()
     return info
 end
 
+function XBigWorldCommanderDIYControl:RecordPart(partId)
+    if self._RecordPartMap then
+        self._RecordPartMap[partId] = true
+    end
+end
+
+function XBigWorldCommanderDIYControl:CheckPartRecord(partId)
+    if self._RecordPartMap then
+        return self._RecordPartMap[partId] or false
+    end
+
+    return false
+end
+
 -- endregion
 
 -- region Protocol
@@ -489,6 +568,41 @@ function XBigWorldCommanderDIYControl:RequestUpdate(gender, fashionList, callbac
             callback()
         end
     end)
+end
+
+-- endregion
+
+-- region Private
+
+function XBigWorldCommanderDIYControl:_InitRecordPartMap()
+    local record = XSaveTool.GetData(self:_GetRecordPartKey())
+
+    self._RecordPartMap = {}
+    if not string.IsNilOrEmpty(record) then
+        local records = string.Split(record, "|")
+
+        if not XTool.IsTableEmpty(records) then
+            for _, partId in pairs(records) do
+                self._RecordPartMap[tonumber(partId)] = true
+            end
+        end
+    end
+end
+
+function XBigWorldCommanderDIYControl:_RecordPartMapToLocal()
+    if self._RecordPartMap then
+        local result = {}
+        
+        for partId, _ in pairs(self._RecordPartMap) do
+            table.insert(result, partId)
+        end
+
+        XSaveTool.SaveData(self:_GetRecordPartKey(), table.concat(result, "|"))
+    end
+end
+
+function XBigWorldCommanderDIYControl:_GetRecordPartKey()
+    return "BW_DIY_PART_UNLOCK_" .. tostring(XPlayer.Id)
 end
 
 -- endregion

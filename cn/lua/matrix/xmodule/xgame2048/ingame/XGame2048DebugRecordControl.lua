@@ -103,6 +103,17 @@ function XGame2048DebugRecordControl:RecordCurStepNewGrid(GeneratedResults)
     end
 end
 
+--- 记录该回合水火消除二选一的选择
+function XGame2048DebugRecordControl:RecordCurWaterFireSelection(type)
+    if self._StepsQueue[self._StepsCounter] == nil then
+        self._StepsQueue[self._StepsCounter] = {}
+    end
+
+    local stepData = self._StepsQueue[self._StepsCounter]
+
+    stepData.DispelSelectType = type
+end
+
 --- 录制下一回合
 function XGame2048DebugRecordControl:RecordNextSteps()
     self._StepsCounter = self._StepsCounter + 1
@@ -251,16 +262,16 @@ function XGame2048DebugRecordControl:DoNextStep(cb)
         self._MainControl.TurnControl:ClearLastTurnData()
 
         -- 将上一回合产生的消除回收
-        if not XTool.IsTableEmpty(self._MainControl._WasteGridEntities) then
-            for k, v in pairs(self._MainControl._WasteGridEntities) do
-                self._MainControl._GridBlockEntityPool:ReturnItemToPool(k)
+        if not XTool.IsTableEmpty(self._MainControl.GridsControl._WasteGridEntities) then
+            for k, v in pairs(self._MainControl.GridsControl._WasteGridEntities) do
+                self._MainControl.GridsControl._GridBlockEntityPool:ReturnItemToPool(k)
             end
-            self._MainControl._WasteGridEntities = {}
+            self._MainControl.GridsControl._WasteGridEntities = {}
         end
 
         -- 更新数据
-        if not XTool.IsTableEmpty(self._MainControl._GridEntities) then
-            for i, v in pairs(self._MainControl._GridEntities) do
+        if not XTool.IsTableEmpty(self._MainControl.GridsControl._GridEntities) then
+            for i, v in pairs(self._MainControl.GridsControl._GridEntities) do
                 v:SyncToServerData()
             end
         end
@@ -283,7 +294,7 @@ function XGame2048DebugRecordControl:DoNextStep(cb)
                     self._MainControl.TurnControl._StageDataFromServer:UpdateNewGrids(v)
 
                     ---@type XGame2048Grid
-                    local gridEntity = self._MainControl:GetGridEntityByServerBlockData(v)
+                    local gridEntity = self._MainControl.GridsControl:GetGridEntityByServerBlockData(v)
                     self._MainControl.ActionsControl:AddNewBornAction(gridEntity.Uid)
                     self._MainControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_NEW_GRID, gridEntity)
                 end
@@ -296,7 +307,7 @@ function XGame2048DebugRecordControl:DoNextStep(cb)
         self._MainControl.ActionsControl:StartActionList(cb)
 
         self._MainControl._IsWaitForNextStep = false
-
+        self._MainControl._IsWaterFireSelected = false
         if self._MainControl:CheckDebugEnable() then
             self._MainControl:PrintGridsInBoardLogForDebug()
         end
@@ -334,6 +345,20 @@ function XGame2048DebugRecordControl:GetCurStepMove()
     return 0, 0
 end
 
+function XGame2048DebugRecordControl:GetCurStepDispelSelectionType()
+    local stepData = self._StepsQueue[self._CurIndex]
+
+    if stepData then
+        if XTool.IsNumberValidEx(stepData.DispelSelectType) then
+            return stepData.DispelSelectType
+        else
+            XLog.Error('回合水火消除选择信息错误：', stepData)
+        end
+        
+    else
+        XLog.Error('回合信息错误:', stepData)
+    end
+end
 --endregion
 
 return XGame2048DebugRecordControl

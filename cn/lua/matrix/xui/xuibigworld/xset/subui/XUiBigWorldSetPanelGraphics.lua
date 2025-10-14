@@ -66,6 +66,7 @@ local XUiBigWorldSetPanelGraphics = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldS
 function XUiBigWorldSetPanelGraphics:OnAwake()
     ---@type XBWGraphicsSetting
     self._Setting = false
+    self.RenderScaleSetting.gameObject:SetActive(false)
 
     self:_InitTogGroup()
     self:_RegisterButtonClicks()
@@ -184,6 +185,23 @@ function XUiBigWorldSetPanelGraphics:OnTogFrameRateClick(value)
     self:_RefreshAutoGroup()
 end
 
+function XUiBigWorldSetPanelGraphics:ShowHighFrameTips()
+    local dialogData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+    dialogData:InitInfo(nil, XUiHelper.ReplaceTextNewLine(XUiHelper.GetText("SettingHighFrameRateTips")))
+    dialogData:InitSureClick(nil, nil, true):InitToggleActive(false):InitCancelActive(false)
+    XMVCA.XBigWorldUI:OpenConfirmPopup(dialogData)
+end
+
+function XUiBigWorldSetPanelGraphics:OnTogBigWorldHighFrameRateModeClick(value)
+    if value == 1 then
+        self._Setting:SetBigWorldFrameRateLevelValue(XEnumConst.BWSetting.GraphicsFrameRate.Middle)
+        self:ShowHighFrameTips()
+    else
+        self._Setting:SetBigWorldFrameRateLevelValue(XEnumConst.BWSetting.GraphicsFrameRate.Lowest)
+    end
+    self:_RefreshAutoGroup()
+end
+
 -- endregion
 
 function XUiBigWorldSetPanelGraphics:_RegisterButtonClicks()
@@ -205,6 +223,7 @@ function XUiBigWorldSetPanelGraphics:_RegisterButtonClicks()
     self:_RegisterTGroupCharacterQuality()
     self:_RegisterTGroupSceneQuality()
     -- self:_RegisterTGroupRenderScale()
+    self:_RegisterTogBigWorldHighFrameRateMode()
 end
 
 function XUiBigWorldSetPanelGraphics:_RegisterTGroupAuto()
@@ -275,6 +294,13 @@ function XUiBigWorldSetPanelGraphics:_RegisterToggleFrameRate()
     self.TogFrameRate.CallBack = Handler(self, self.OnTogFrameRateClick)
 end
 
+function XUiBigWorldSetPanelGraphics:_RegisterTogBigWorldHighFrameRateMode()
+    if not self.TogBigWorldHighFrameRateMode then
+        return
+    end
+    self.TogBigWorldHighFrameRateMode.CallBack = Handler(self, self.OnTogBigWorldHighFrameRateModeClick)
+end
+
 function XUiBigWorldSetPanelGraphics:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SETTING_RESET, self._Refresh, self)
@@ -321,6 +347,8 @@ function XUiBigWorldSetPanelGraphics:_RefreshOther()
     self:_RefreshTGroupLightingQuality()
     self:_RefreshTGroupCharacterQuality()
     self:_RefreshTGroupSceneQuality()
+    
+    self:_RefreshTogBigWorldHighFrameRateMode()
     -- self:_RefreshTGroupRenderScale()
 end
 
@@ -410,9 +438,19 @@ function XUiBigWorldSetPanelGraphics:_RefreshToggleFrameRate()
     end
 end
 
+function XUiBigWorldSetPanelGraphics:_RefreshTogBigWorldHighFrameRateMode()
+    if not self.TogBigWorldHighFrameRateMode then
+        return
+    end
+    if self._Setting:GetBigWorldFrameRateLevelValue() >= XEnumConst.BWSetting.GraphicsFrameRate.Middle then
+        self.TogBigWorldHighFrameRateMode:SetButtonState(CS.UiButtonState.Select)
+    else
+        self.TogBigWorldHighFrameRateMode:SetButtonState(CS.UiButtonState.Normal)
+    end
+end
+
 function XUiBigWorldSetPanelGraphics:_RefreshQualityTag()
     local quality = self._Setting:GetDefaultGraphicsQualityValue() + 1
-
     for index, tog in pairs(self._TogQualityGroup) do
         tog:ShowTag(quality == index)
     end

@@ -81,7 +81,7 @@ function XBigWorldAlbumAgency:SetNotifyActorChangeCallback(cb)
 end
 
 function XBigWorldAlbumAgency:OpenPhotoGraphUi(data)
-    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto(data.ParamId, data.DetectionNpcPlaceIdList, data.DetectionSceneObjectPlaceIdList, data.ObjectiveId)
+    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto(true, data.ParamId, data.DetectionNpcPlaceIdList, data.DetectionSceneObjectPlaceIdList, data.ObjectiveId)
 end
 
 --endregion

@@ -18,6 +18,7 @@ local TablePrivate = {
     Game2048ChapterShow = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "ChapterId", ReadFunc = XConfigUtil.ReadType.Int },
     
     Game2048Board = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
+    Game2048GeneratedGroup = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     
     Game2048BoardShow = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
     Game2048ShowCondition = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
@@ -168,10 +169,16 @@ function XGame2048Model:GetGame2048ShowConditionCfgById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Game2048ShowCondition, id)
 end
 
+---@return XTableGame2048Board
 function XGame2048Model:GetGame2048BoardCfgById(id, noTips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Game2048Board, id, noTips)
 end
 
+function XGame2048Model:GetGame2048GeneratedGroupById(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Game2048GeneratedGroup, id, noTips)
+end
+
+---@return XTableGame2048Block[]
 function XGame2048Model:GetGame2048BlockCfgs()
     return self._ConfigUtil:GetByTableKey(TablePrivate.Game2048Block)
 end

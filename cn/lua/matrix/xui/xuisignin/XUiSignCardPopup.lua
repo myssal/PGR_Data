@@ -10,11 +10,6 @@ function XUiSignCardPopup:OnStart()
     self.PanelBuy.gameObject:SetActive(false)
     self.PanelGet.gameObject:SetActive(false)
     self.BtnContinue.gameObject:SetActive(false)
-    if XOverseaManager.IsKRRegion() then
-        if self.TxtCount then
-            self.TxtCount.text = CS.XTextManager.GetText("KRYKfirst")
-        end
-    end
 end
 
 function XUiSignCardPopup:OnEnable()
@@ -34,7 +29,6 @@ function XUiSignCardPopup:RefreshGet()
     if not data then
         return
     end
-    
     local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
     if remainDay < 0 then
         remainDay = 0

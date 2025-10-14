@@ -475,7 +475,12 @@ function XTheatre5ShopControl:_EndDragForEquipArrange(cb)
     local isTempBag = self._DraggingItemOwnerContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
 
     -- 获取存在的被交换的道具的类型，用于音效播放
-    local item = self._Model.CurAdventureData:GetItemInBagByIndex(self._FocusContainerIndex)
+    local item
+    if self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock then
+        item = self._Model.CurAdventureData:GetItemInBagByIndex(self._FocusContainerIndex)
+    elseif self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.EquipBlock then
+        item = self._Model.CurAdventureData:GetItemInRuneListByIndex(self._FocusContainerIndex)
+    end
     local targetItemType = nil
 
     if item then
@@ -489,6 +494,22 @@ function XTheatre5ShopControl:_EndDragForEquipArrange(cb)
             if not self:CheckItemTypeFitInContainerType(item.ItemType, self._DraggingItemOwnerContainerType) then
                 return false
             end
+        end
+    end
+
+    -- 如果是强化锤，则不能拖到其他背包
+    if self._DraggingItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Hammer then
+        if self._FocusContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock and
+                self._FocusContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.TempBagBlock
+        then
+            XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText("HammerDragFail"))
+            return false
+        end
+    end
+    if targetItemType == XMVCA.XTheatre5.EnumConst.ItemType.Hammer then
+        if isEquipped then
+            XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText("HammerDragFail"))
+            return false
         end
     end
 
@@ -575,9 +596,9 @@ function XTheatre5ShopControl:SendItemSwitch(instanceId, itemType, srcEquipped, 
     XMVCA.XTheatre5:RequestTheatre5BagItemMove(instanceId, itemType, srcEquipped, srcIndex, srcIsTempItem, targetEquipped, targetIndex, function(success)
         if success then
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW)
-            self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
+            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
             self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_SKILL_SHOW)
-            self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
+            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
 
             self:PlayItemPlacedSFX(itemType)
 
@@ -644,20 +665,20 @@ end
 --endregion
 
 function XTheatre5ShopControl:RefreshAfterBuyRequest()
-    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_SKILL_SHOW)
-    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_BUY)
 end
 
 function XTheatre5ShopControl:RefreshAfterSellRequest()
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW)
-    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_SKILL_SHOW)
-    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_SHOP_SELL)
 end
 
@@ -668,7 +689,7 @@ end
 function XTheatre5ShopControl:RefreshAfterRefreshRequest()
     --- 参数1表示是否是刷新商店商品
     self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, true)
-    self._MainControl:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
+    XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
 end
 
 ---@return XTableTheatre5ShopNpcChat
@@ -814,6 +835,26 @@ function XTheatre5ShopControl:CheckRuneValid(itemData)
         end
     end
     return isValid
+end
+
+function XTheatre5ShopControl:GetShopRefreshCost()
+    local adventureData = self._Model.CurAdventureData
+    if adventureData then
+        local freeRefreshCnt = adventureData:GetEffectFreeRefreshCnt()
+        if freeRefreshCnt then
+            if freeRefreshCnt > 0 then
+                return 0
+            end
+        end
+    end
+
+    local curRefreshCfg = self:GetCurShopRefreshCntCostCfg()
+    return curRefreshCfg.GoldCost
+end
+
+--- 获取背包容量
+function XTheatre5ShopControl:GetStrengthenRate()
+    return self._Model:GetTheatre5ConfigValByKey("StrengthenRate")
 end
 
 return XTheatre5ShopControl

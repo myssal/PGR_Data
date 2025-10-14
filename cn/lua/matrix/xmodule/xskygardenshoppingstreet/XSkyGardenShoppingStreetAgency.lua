@@ -433,7 +433,7 @@ function XSkyGardenShoppingStreetAgency:OpenMainUi(id, args)
     end
 
     if XMVCA.XBigWorldGamePlay:IsInGame() then
-        XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(false, false)
+        XMVCA.XBigWorldGamePlay:SetCurNpcActive(false)
     end
     self._Args = args
     XMVCA.XBigWorldUI:Open("UiSkyGardenShoppingStreetMain")
@@ -503,7 +503,7 @@ function XSkyGardenShoppingStreetAgency:DoLeaveLevel()
 
     local config = self:GetConfig()
     XMVCA.XBigWorldGamePlay:DeactivateVCamera(config.VirtureCamera)
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(true, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(true)
 end
 
 function XSkyGardenShoppingStreetAgency:ExitGameLevel()

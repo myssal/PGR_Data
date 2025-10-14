@@ -14,6 +14,7 @@ local FunctionType = {
     Teach = 11, -- 教学
     Photo = 12, -- 拍照
     Exit = 13, -- 退出
+    Perspective = 14, -- 人称
 }
 
 return FunctionType

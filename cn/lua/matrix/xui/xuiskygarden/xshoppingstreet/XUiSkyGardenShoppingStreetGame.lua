@@ -570,7 +570,7 @@ function XUiSkyGardenShoppingStreetGame:_ShowShopCoinEffect(areaId)
 end
 
 function XUiSkyGardenShoppingStreetGame:_AddShopConflictEvent(areaId, taskData)
-    CS.XAudioManager.PlayAudio(5600058)
+    self.XAudioObjectPlayer:PlayByKeyName("AddEvent")
     self.BuildingAreaUi:AddShopConflictEvent(areaId, taskData)
 end
 
@@ -994,7 +994,7 @@ end
 
 -- 昨日统计
 function XUiSkyGardenShoppingStreetGame:_OpenLastEndCount()
-    CS.XAudioManager.PlayAudio(5600015)
+    self.XAudioObjectPlayer:PlayByKeyName("OpenLastEnd")
     self._CurrentGameState = self._GameStateType._CheckLimitTask
     XMVCA.XBigWorldUI:Open("UiSkyGardenShoppingStreetPopupRoundEnd")
 end

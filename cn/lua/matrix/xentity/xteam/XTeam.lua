@@ -108,7 +108,10 @@ function XTeam:UpdateEntityIds(value)
         end
     end
 
-    self.EntitiyIds = value
+    for pos, entityId in ipairs(value) do
+        self.EntitiyIds[pos] = entityId
+    end
+
     self:RefreshGeneralSkills(true)
     self:Save()
 end
@@ -204,19 +207,6 @@ function XTeam:GetEntityIds()
     return self.EntitiyIds
 end
 
--- 按顺序返回对应位置的charId，下标即是pos，如果对应pos上的角色是机器人或者位空则为0
-function XTeam:GetCharacterIdsOrder()
-    local res = {}
-    for k, id in pairs(self.EntitiyIds) do
-        if XRobotManager.CheckIsRobotId(id) then
-            res[k] = 0
-        else
-            res[k] = id
-        end
-    end
-    return res
-end
-
 -- 按顺序返回对应位置的charId，若是robotId则会转换为对应的charId，下标即是pos
 function XTeam:GetRealCharacterIdsOrder()
     local res = {}
@@ -238,6 +228,19 @@ function XTeam:GetCharIdIsInTeamWithRobotCheck(entityId)
         end
     end
     return false
+end
+
+-- 按顺序返回对应位置的charId，下标即是pos，如果对应pos上的角色是机器人或者位空则为0
+function XTeam:GetCharacterIdsOrder()
+    local res = {}
+    for k, id in pairs(self.EntitiyIds) do
+        if XRobotManager.CheckIsRobotId(id) then
+            res[k] = 0
+        else
+            res[k] = id
+        end
+    end
+    return res
 end
 
 function XTeam:GetEntityIdByTeamPos(pos)
@@ -500,6 +503,10 @@ end
 --region 角色效应技能相关
 function XTeam:GetCurGeneralSkill()
     return self.SelectedGeneralSkill or 0
+end
+
+function XTeam:GetCurGeneralSkillISelectNone()
+    return self.SelectedGeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT
 end
 
 function XTeam:UpdateSelectGeneralSkill(skillId, noAutoSave)

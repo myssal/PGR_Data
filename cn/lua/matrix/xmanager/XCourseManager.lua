@@ -11,7 +11,7 @@ XCourseManagerCreator = function()
         CourseSaveResult = "CourseSaveResultRequest",
     }
 
-    local XCourseManager = XExFubenCollegeStudyManager.New(XFubenConfigs.ChapterType.Course)
+    local XCourseManager = XExFubenCollegeStudyManager.New(XEnumConst.FuBen.ChapterType.Course)
 
     -- 获取红点缓存键值
     local GetReddotKey = function(chapterId)

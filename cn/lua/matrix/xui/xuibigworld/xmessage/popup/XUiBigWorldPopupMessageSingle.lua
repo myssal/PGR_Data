@@ -11,7 +11,8 @@ local XUiBigWorldPopupMessageSingle = XMVCA.XBigWorldUI:Register(nil, "UiBigWorl
 
 function XUiBigWorldPopupMessageSingle:OnAwake()
     ---@type XUiBigWorldMessageChat
-    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self)
+    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self, self.XAudioObjectPlayer)
+    self._SequentialId = 0
     ---@type XBWMessageEntity
     self._Message = false
     self._IsForce = false
@@ -20,8 +21,9 @@ function XUiBigWorldPopupMessageSingle:OnAwake()
     self:_RegisterButtonClicks()
 end
 
-function XUiBigWorldPopupMessageSingle:OnStart(messageId)
+function XUiBigWorldPopupMessageSingle:OnStart(messageId, sequentialId)
     self._Message = self._Control:GetForceMessageByMessageId(messageId)
+    self._SequentialId = sequentialId or 0
 
     self._IsForce = self._Control:CheckMessageIsForcePlay(messageId)
     XMVCA.XBigWorldMessage:RecordStatistical(messageId, XMVCA.XBigWorldMessage.OperatorType.Enter, 0, self.Name)
@@ -42,6 +44,9 @@ end
 function XUiBigWorldPopupMessageSingle:OnDestroy()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE)
     XMVCA.XBigWorldMessage:RecordStatistical(self._Message:GetMessageId(), XMVCA.XBigWorldMessage.OperatorType.Leave, 0, self.Name)
+    if XTool.IsNumberValid(self._SequentialId) then
+        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
+    end
 end
 
 -- endregion

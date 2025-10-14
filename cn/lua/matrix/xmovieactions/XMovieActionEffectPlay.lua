@@ -3,7 +3,7 @@ local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
 
 local XMovieActionEffectPlay = XClass(XMovieActionBase, "XMovieActionEffectPlay")
 
-function XMovieActionEffectPlay:Ctor(actionData)
+function XMovieActionEffectPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -14,7 +14,7 @@ function XMovieActionEffectPlay:Ctor(actionData)
     self.EffectKey = params[5]
 end
 
-function XMovieActionEffectPlay:OnInit()
+function XMovieActionEffectPlay:OnEnter()
     XLuaUiManager.SetMask(true)
 end
 
@@ -22,9 +22,7 @@ function XMovieActionEffectPlay:OnRunning()
     local effectPath = self.EffectPath
     local effectActorIndex = self.EffectActorIndex
     local isActorEffect = effectActorIndex > 0 and effectActorIndex <= XMovieConfigs.MAX_ACTOR_NUM
-    if string.IsNilOrEmpty(self.EffectKey) then
-        self.EffectKey = isActorEffect and stringFormat("%s%s", effectPath, effectActorIndex) or effectPath
-    end
+    self.EffectKey = self:GetEffectKey()
 
     local effectGo = self.UiRoot.EffectGoDic[self.EffectKey]
     if not effectGo then
@@ -81,6 +79,38 @@ end
 
 function XMovieActionEffectPlay:OnExit()
     XLuaUiManager.SetMask(false)
+end
+
+function XMovieActionEffectPlay:GetEffectKey()
+    if not string.IsNilOrEmpty(self.EffectKey) then
+        return self.EffectKey
+    end
+
+    if self.EffectActorIndex > 0 and self.EffectActorIndex <= XMovieConfigs.MAX_ACTOR_NUM then
+        return string.format("%s%s", self.EffectPath, self.EffectActorIndex)
+    else
+        return self.EffectPath
+    end
+end
+
+function XMovieActionEffectPlay:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionEffectPlay:IsActionCover(action)
+    if action:GetType() == self:GetType() or action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.EFFECT_UNLOAD then
+        return action:GetEffectKey() == self:GetEffectKey()
+    end
+    return false
+end
+
+function XMovieActionEffectPlay:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionEffectPlay

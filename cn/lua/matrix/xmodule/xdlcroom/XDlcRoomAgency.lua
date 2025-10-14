@@ -304,13 +304,13 @@ end
 
 --- 开始匹配接口
 ---@param needMatchCountCheck boolean
-function XDlcRoomAgency:Match(worldId, needMatchCountCheck)
+function XDlcRoomAgency:Match(worldId, levelId, needMatchCountCheck)
     if self:IsMatching() or self:IsCancelingMatch() then
         XLog.Error("Now Matching! Don't Repeat Match!")
         return
     end
 
-    self:ReqMatch(worldId, needMatchCountCheck ~= false)
+    self:ReqMatch(worldId, levelId, needMatchCountCheck ~= false)
 end
 
 --- 取消匹配
@@ -577,13 +577,14 @@ end
 
 -- region 网络请求
 
-function XDlcRoomAgency:ReqMatch(worldId, needMatchCountCheck)
-    if self:__CheckHasChangeProtocol("ReqMatch", worldId, needMatchCountCheck) then
+function XDlcRoomAgency:ReqMatch(worldId, levelId, needMatchCountCheck)
+    if self:__CheckHasChangeProtocol("ReqMatch", worldId, levelId, needMatchCountCheck) then
         return
     end
 
     local req = {
         WorldInfoId = worldId,
+        LevelId = levelId,
         NeedMatchCountCheck = needMatchCountCheck ~= false,
     }
     local replyFunc = function(res)
@@ -1491,12 +1492,13 @@ function XDlcRoomAgency:OnDlcMatchNotify(response)
 
     if response.Code == XCode.Success then
         local worldId = roomData.WorldId
-
+        XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_MATCH_SUCCESS, worldId, roomData.LevelId)
         if XMVCA.XDlcWorld:GetMatchStrategyById(worldId) ~= XEnumConst.DlcWorld.MatchStrategy.Multiplayer then
             self:_OnCreateRoom(roomData, false)
         end
     else
         XUiManager.TipCode(response.Code)
+        self:SetMatching(false)
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_ENTER_WORLD_FAIL)
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_CANCEL_MATCH)
     end

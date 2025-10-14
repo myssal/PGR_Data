@@ -703,6 +703,7 @@ XChatManagerCreator = function()
                             chatData.CollectWordId = tonumber(tab[14])
                             chatData.NameplateId = tonumber(tab[15]) or 0
                             chatData.ChatBoardId = tonumber(tab[16]) or 0
+                            chatData.CurrMedalId = tonumber(tab[17]) or 0
                             tableInsert(GuildChatList, chatData)
                         end
                     end
@@ -801,6 +802,7 @@ XChatManagerCreator = function()
                 tableInsert(list, (chat.CollectWordId or "0"))
                 tableInsert(list, (chat.NameplateId or "0"))
                 tableInsert(list, (chat.ChatBoardId or "0"))
+                tableInsert(list, (chat.CurrMedalId or "0"))
             end
             GuildSaveCount = GuildSaveCount + 1
             local chatStr = table.concat(list, "\t")

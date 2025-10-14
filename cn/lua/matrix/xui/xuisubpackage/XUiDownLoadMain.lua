@@ -19,6 +19,14 @@ function XUiDownLoadMain:OnStart(groupId)
     self:InitView(groupId)
 end
 
+function XUiDownLoadMain:OnEnable()
+    CS.UnityEngine.Screen.sleepTimeout = CS.UnityEngine.SleepTimeout.NeverSleep
+end
+
+function XUiDownLoadMain:OnDisable()
+    CS.UnityEngine.Screen.sleepTimeout = CS.UnityEngine.SleepTimeout.SystemSetting
+end
+
 function XUiDownLoadMain:Close()
     self.Super.Close(self)
     XMVCA.XSubPackage:ChangeThread(true)

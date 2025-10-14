@@ -83,6 +83,8 @@ function XDlcSimulationChallengeAgency:DlcGetNonnegativeAttribs()
         [XDlcNpcAttribType.WalkSpeedCOE] = true,
         [XDlcNpcAttribType.SprintSpeed] = true,
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
+        [XDlcNpcAttribType.BreakGauge] = true,
+        [XDlcNpcAttribType.OverDrive] = true,
     }
 end
 
@@ -163,7 +165,7 @@ function XDlcSimulationChallengeAgency:DlcParseToXAttribs(attribConfig)
         end
     end
     for attribId, attrValue in pairs(result) do
-        local allowNegative = not (nonnegativeAttribs[attribId] or false)
+        local allowNegative = not (nonnegativeAttribs[attribId - 1] or false)
 
         -- 必须取整，因为XAttrib.Value为int
         attrValue = math.floor(attrValue + 0.5)

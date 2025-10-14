@@ -15,7 +15,9 @@ local functionId = {
 
     BigWorldMessage = 200005, --大世界短信
 
-    BigWorldAlbum = 200006, --大世界相册 
+    BigWorldAlbum = 200006, --大世界相册
+    
+    BigWorldPerspective = 200007, --大世界视角切换
     
     --endregion
 }

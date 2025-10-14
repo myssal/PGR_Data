@@ -70,6 +70,22 @@ function XFubenBossSingleControl:CheckBossOpen(bossStage)
     return isOpen, desc
 end
 
+function XFubenBossSingleControl:HasStageRecord(stageId)
+    local data = self:GetBossSingleData()
+
+    if not data:IsBossSingleEmpty() then
+        local historyList = data:GetBossSingleHistoryList()
+        if not XTool.IsTableEmpty(historyList) then
+            for _, history in pairs(historyList) do
+                if history:GetStageId() == stageId then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
 --- 检查自动战斗保存
 ---@return XBossSingleStageHistory
 function XFubenBossSingleControl:CheckAutoFight(stageId)
@@ -201,8 +217,8 @@ function XFubenBossSingleControl:CheckChallengeOpen()
     local needScore = self:GetChallengeNeedScore()
     local gradeType = self._Model:GetBossSingleGradeTypeByLevelType(levelType)
 
-    return gradeType == XEnumConst.BossSingle.LevelType.Extreme and singleData:GetBossSingleTotalScore() >= needScore
-               and singleData:IsNewVersion()
+    return gradeType == XEnumConst.BossSingle.LevelType.Extreme and singleData:GetTotalScoreBestRecord() >= needScore
+            and singleData:IsNewVersion()
 end
 
 function XFubenBossSingleControl:CheckChallengeRedPoint()
@@ -534,6 +550,21 @@ function XFubenBossSingleControl:GetBossCurScore(bossId)
     return score
 end
 
+--- 获取某个Boss当前讨伐值
+function XFubenBossSingleControl:GetBossScoreBestRecord(bossId)
+    local score = 0
+    local stageList = self:GetBossStageList(bossId)
+
+    if not XTool.IsTableEmpty(stageList) then
+        for _, stageId in ipairs(stageList) do
+            local stageData = XMVCA.XFuben:GetStageData(stageId)
+            score = score + (stageData and stageData.Score or 0)
+        end
+    end
+
+    return score
+end
+
 --- 获取某个Boss的所有stageId配置
 function XFubenBossSingleControl:GetBossStageList(bossId)
     local config = self:GetBossSectionConfigByBossId(bossId)
@@ -543,9 +574,15 @@ end
 
 --- 获取某关当次讨伐值
 function XFubenBossSingleControl:GetBossStageScore(stageId)
+    if self._Model:IsResetOpen() then
+        local newRecord = self._Model:GetRecordCurrentByStageId(stageId)
+        if newRecord then
+            return newRecord.Score
+        end
+    end
     local stageData = XMVCA.XFuben:GetStageData(stageId)
-
     return stageData and stageData.Score or 0
+    --return self:GetStageCurrentScore(stageId)
 end
 
 --- 获取当次结算当前Boss的讨伐值
@@ -713,7 +750,7 @@ end
 function XFubenBossSingleControl:GetAutoFightCount()
     if self:GetBossSingleData():IsNewVersion() then
         return self._Model:GetAutoFightNewCount()
-    else 
+    else
         return self._Model:GetAutoFightCount()
     end
 end
@@ -957,5 +994,91 @@ function XFubenBossSingleControl:OpenChallengeRankRewardUi()
 end
 
 -- endregion
+
+function XFubenBossSingleControl:IsResetBtnVisible(stageId)
+    if self._Model:IsResetOpen() then
+        if XMVCA.XFuben:CheckStageIsPass(stageId) then
+            return true
+        end
+    end
+    return false
+end
+
+function XFubenBossSingleControl:IsResetOpen()
+    return self._Model:IsResetOpen()
+end
+
+-- 重置功能开启，但是呈灰色
+function XFubenBossSingleControl:IsResetBtnEnable(stageId)
+    --if XMain.IsZLBDebug then
+    --    return true
+    --end
+    
+    --local stageData = XMVCA.XFuben:GetStageData(stageId)
+    --local curScore = stageData and stageData.Score or 0
+    local curScore = self:GetStageCurrentScore(stageId)
+    if curScore > 0 then
+        local autoFightData = self:CheckAutoFight(stageId)
+        if autoFightData then
+            local characterList = autoFightData:GetCharacterList()
+            if characterList then
+                return #characterList > 0
+            end
+        end
+    end
+    return false
+end
+
+function XFubenBossSingleControl:GetStageCurrentScore(stageId)
+    if self._Model:IsResetOpen() then
+        return self:GetBossStageScore(stageId)
+    else
+        local stageData = XMVCA.XFuben:GetStageData(stageId)
+        return stageData and stageData.Score
+    end
+    return 0
+end
+
+function XFubenBossSingleControl:GetCharacterListInRecord(stageId)
+    local autoFightData = self:CheckAutoFight(stageId)
+    return autoFightData and autoFightData:GetCharacterList() or {}
+end
+
+function XFubenBossSingleControl:GetStageScoreBestRecord(stageId)
+    local datas = self._Model:GetHistoryBestRecord()
+    if not datas then
+        return 0
+    end
+    for i, data in pairs(datas) do
+        if data.StageId == stageId then
+            return data.Score
+        end
+    end
+    return 0
+end
+
+function XFubenBossSingleControl:GetTotalScoreBestRecord()
+    return self._Model:GetTotalScoreBestRecord()
+end
+
+function XFubenBossSingleControl:IsResetCoolDown()
+    local timestamp = self._Model:GetTimeStampResetCooldown()
+    if not timestamp then
+        return false
+    end
+    return XTime.GetServerNowTimestamp() < timestamp
+end
+
+function XFubenBossSingleControl:StartResetCoolDown()
+    self._Model:SetTimeStampResetCooldown(XTime.GetServerNowTimestamp() + 60)
+end
+
+function XFubenBossSingleControl:GetResetCoolDownRemainTime()
+    local timestamp = self._Model:GetTimeStampResetCooldown()
+    if not timestamp then
+        return 0
+    end
+    return timestamp > 0 and timestamp - XTime.GetServerNowTimestamp() or 0
+end
 
 return XFubenBossSingleControl

@@ -960,7 +960,6 @@ end
 -- 音频调试
 local function AddAudioDebugFunction()
     local cueId
-
     Panel:AddInput(
         "CueId",
         function(value)
@@ -968,7 +967,7 @@ local function AddAudioDebugFunction()
         end
     , true)
 
-    local btnPlay =
+    local btnPlay1 =
         Panel:AddButton(
         "播放音频",
         function()
@@ -982,9 +981,33 @@ local function AddAudioDebugFunction()
             XLuaAudioManager.PlayAudioByType(typeId, cueId)
         end
     )
+    if btnPlay1 then
+        btnPlay1.transform:GetComponent("XAudioCustomComponentBase").enabled = false
+    end
 
-    if btnPlay then
-        btnPlay.transform:GetComponent("XAudioCustomComponentBase").enabled = false
+    local force3dSource = nil
+    local btnPlay2 =
+        Panel:AddButton(
+        "播放3D音频",
+        function()
+            if not cueId then
+                XUiManager.TipMsg("请填写CueId")
+                return
+            end
+
+            if not force3dSource then
+                local listener = CS.XAudioManager.CriAtomListener
+                local source = XUiHelper.TryAddComponent(listener.gameObject, typeof(CS.CriWare.CriAtomSource))
+                force3dSource = source
+            end
+
+            local cueTemplate = CS.XAudioManager.GetCueTemplate(cueId)
+            local typeId = cueTemplate.PlayType
+            XLuaAudioManager.PlayAudioByType(typeId, cueId, force3dSource.gameObject)
+        end
+    )
+    if btnPlay2 then
+        btnPlay2.transform:GetComponent("XAudioCustomComponentBase").enabled = false
     end
 
     Panel:AddButton(
@@ -1141,6 +1164,25 @@ local function AddVideoDebugFunction()
                     XLuaVideoManager.PlayUiVideo(videoId, nil, true, true)
                 end
             end
+        end
+    )
+
+    local nextTimeSec
+    Panel:AddInput(
+        "下一开始时间:",
+        function(value)
+            nextTimeSec = tonumber(value)
+        end
+    )
+
+    Panel:AddButton(
+        "跳转播放",
+        function()
+            if nextTimeSec <= 0 then
+                return
+            end
+            local videoUgui = CS.XVideoManager.GetLastAddVideoUgui()
+            videoUgui:SetNextPlayStartTime(nextTimeSec, true)
         end
     )
 
@@ -1425,6 +1467,13 @@ local function AddGoldenMinerDebugFunction()
 end
 
 local function AddSubPackageFunction()
+    local forceOpenSubpack = Panel:AddToggle("强制开启分包", function()
+        local flag = XMVCA.XSubPackage.DebugForceOpenSubpackage
+        XMVCA.XSubPackage:SetDebugForceOpenSubpackage(not flag)
+    end)
+
+    forceOpenSubpack.isOn = XMVCA.XSubPackage:IsOpen()
+    
     Panel:AddButton("Item信息", function()
         XMVCA.XSubPackage:PrintAllItemInfo()
     end)

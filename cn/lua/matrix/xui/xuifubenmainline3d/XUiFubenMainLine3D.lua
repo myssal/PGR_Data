@@ -1,6 +1,7 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridTreasureGrade = require("XUi/XUiFubenMainLineChapter/XUiGridTreasureGrade")
 local XUiPanelStory = require("XUi/XUiActivityBrief/XUiPanelStory")
+---@class UiFubenMainLine3D:XLuaUi
 local XUiFubenMainLine3D = XLuaUiManager.Register(XLuaUi,"UiFubenMainLine3D")
 local XUiGridFubenMainLineStage = require("XUi/XUiFubenMainLine3D/XUiGridFubenMainLineStage")
 local XUiGridFubenMainLineTheme = require("XUi/XUiFubenMainLine3D/XUiGridFubenMainLineTheme")
@@ -565,7 +566,7 @@ end
 
 function XUiFubenMainLine3D:PanelStoryJumpRefresh()
     if not self.IsInChapter then
-        self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.MainLine3DId, XFubenConfigs.ChapterType.MainLine)
+        self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.MainLine3DId, XEnumConst.FuBen.ChapterType.MainLine)
     else
         self.PanelStoryJump.GameObject:SetActiveEx(false)
     end

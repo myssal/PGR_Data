@@ -12,9 +12,11 @@ function XUiGridChange:Ctor(ui)
     XTool.InitUiObjectByUi(self.PresetHead, self.GridPreset)
 end
 
+---@param pos number
+---@param prefabTeam XTeamPrefab
 function XUiGridChange:Refresh(pos, prefabTeam)
-    local chrId = prefabTeam.TeamData[pos]
-    local partnerPrefab = XDataCenter.TeamManager.GetPartnerPrefab(prefabTeam.TeamId)
+    local chrId = prefabTeam:GetEntityIdByTeamPos(pos)
+    local partnerPrefab = prefabTeam:GetPartnerData()
     local partnerId = partnerPrefab and partnerPrefab:GetPartnerIdByPos(pos) or 0
 
     if XTool.IsNumberValid(partnerId) then

@@ -12,7 +12,12 @@ function XUiGridWeeklyManager:SetData(manager)
     self.Manager = manager
     self.ImgRedDot.gameObject:SetActiveEx(manager:ExCheckIsShowRedPoint())
     self.PanelChapterComplete.gameObject:SetActiveEx(manager:ExCheckIsClear() and not manager:ExGetIsLocked()) -- 条件达成且不为上锁状态才显示Clear
-    self.RImgChapter:SetRawImage(manager:ExGetIcon())
+    local icon = manager:ExGetIconMain()
+    -- 策划要求不兼容空图标的情况，所以必须配置
+    --if icon == "" then
+    --    icon = manager:ExGetIcon()
+    --end
+    self.RImgChapter:SetRawImage(icon)
     self.TxtTitle.text = manager:ExGetName()
     self.TxtTips.text = manager:ExGetProgressTip()
     self.TxtTimeTips.text = manager:ExGetRunningTimeStr()

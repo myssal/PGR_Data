@@ -52,18 +52,10 @@ end
 
 function XUiBigWorldProcessCoreActivity:OnBtnGoClick()
     if self._Entity then
-        if self._Entity:IsUnlockSkip() then
-            local skipId = self._Entity:GetSkipId()
+        local skipId = self._Entity:GetCurrentSkipId()
 
-            if XTool.IsNumberValid(skipId) then
-                XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
-            end
-        elseif self._Entity:IsLockSkip() then
-            local skipId = self._Entity:GetLockSkipId()
-
-            if XTool.IsNumberValid(skipId) then
-                XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
-            end
+        if XTool.IsNumberValid(skipId) then
+            XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
         end
     end
 end

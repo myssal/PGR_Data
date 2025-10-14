@@ -38,6 +38,12 @@ local SystemModuleId = {
     XSkyGarden = 1,
 }
 
+local LocalUtilBlockKey = { 
+    [SystemModuleId.XSkyGarden] = "SkyGarden",
+}
+
+local __SKY_GARDEN_VERSION__ = 1
+
 function XBigWorldGamePlayModel:OnInit()
     -- 初始化内部变量ModuleKey
     -- 这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
@@ -48,6 +54,8 @@ function XBigWorldGamePlayModel:OnInit()
     self._OpenGuideIdDict = {}
     self._ConfigUtil:InitConfigByTableKey("BigWorld/Common/Activity", TableKey)
     self._ConfigUtil:InitConfigByTableKey("BigWorld/Common", ModuleKey)
+    
+    self:InitLocalSave()
 end
 
 function XBigWorldGamePlayModel:OnClear()
@@ -57,6 +65,18 @@ function XBigWorldGamePlayModel:ClearPrivate()
 end
 
 function XBigWorldGamePlayModel:ResetAll()
+end
+
+function XBigWorldGamePlayModel:InitLocalSave()
+    for _, key in pairs(LocalUtilBlockKey) do
+        local funcName = string.format("Get%sVersion", key)
+        local func = self[funcName]
+        if func then
+            self._SaveUtil:SetCustomVersionGetFunc(handler(self, func), key)
+        else
+            XLog.Error("不存在获取版本号函数！" .. key)
+        end
+    end
 end
 
 -- region Config
@@ -193,7 +213,26 @@ end
 --- 检查空花入口红点
 ---@return boolean
 function XBigWorldGamePlayModel:CheckSkyGardenEntranceRedPoint()
+    if self:IsSkyGardenEntryRedPoint() then
+        return true
+    end
     return self._EntranceRedDict[SystemModuleId.XSkyGarden]
+end
+
+function XBigWorldGamePlayModel:IsSkyGardenEntryRedPoint()
+    local data = self._SaveUtil:GetDataByBlockKey(LocalUtilBlockKey[SystemModuleId.XSkyGarden], "SkyGardenEntryRedPoint")
+    if not data then
+        return true
+    end
+    return false
+end
+
+function XBigWorldGamePlayModel:MarkSkyGardenEntryRedPoint()
+    self._SaveUtil:SaveDataByBlockKey(LocalUtilBlockKey[SystemModuleId.XSkyGarden], "SkyGardenEntryRedPoint", true)
+end
+
+function XBigWorldGamePlayModel:GetSkyGardenVersion()
+    return __SKY_GARDEN_VERSION__
 end
 
 function XBigWorldGamePlayModel:GetSkyGardenOpenGuideIdList()

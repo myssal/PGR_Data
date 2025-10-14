@@ -67,7 +67,8 @@ function XUiMain:InitPanel()
 end
 
 function XUiMain:OnAwake()
-    
+    XDataCenter.FunctionEventManager.SetMainEventIsEnd(false)
+
     self._IsClose = false
     self._IsPlayingEnterAnima = false
    
@@ -105,6 +106,8 @@ function XUiMain:OnStart()
 end
 
 function XUiMain:OnEnable()
+    XDataCenter.FunctionEventManager.SetMainEventIsEnd(false)
+
     if XDataCenter.GuideManager.CheckIsInGuide() then
         RightMidType = MenuType.Main
     end
@@ -157,6 +160,8 @@ function XUiMain:OnEnable()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
     CS.XUwaGpmLuaAgent.ChangeScene("UiMain")
+
+    XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_ENABLE)
 end
 
 function XUiMain:ForceChangeUiMainRightMidType(arg)
@@ -206,6 +211,8 @@ function XUiMain:OnDisable()
     end
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_DISABLE)
+
+    XDataCenter.FunctionEventManager.SetMainEventIsEnd(false)
 end
 
 function XUiMain:OnDestroy()

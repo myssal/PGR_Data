@@ -161,3 +161,23 @@ function XPlayerManager.RequestChangePlayerGender(gender, cb)
         end
     end)
 end
+
+function XPlayerManager.RequestRecordPlayerPoint(pointId, pointType, cb)
+    if not XPlayer.CheckIsReddotShow(pointId, pointType) then
+        -- 如果红点已经消掉了，就不用再请求了
+        return
+    end
+    
+    XNetwork.Call('RecordPlayerPointRequest', { PointId = pointId, PointType = pointType }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        XPlayer.UpadtePlayerRedPointRecord(pointId, pointType)
+        
+        if cb then
+            cb()
+        end
+    end)
+end 

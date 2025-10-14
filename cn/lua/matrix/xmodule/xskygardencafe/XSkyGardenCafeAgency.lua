@@ -14,7 +14,7 @@ function XSkyGardenCafeAgency:OnInit()
         HandleBook = 1, --图鉴
         DeckEditor = 2, --卡组编辑
     }
-    
+
     self.HudType = {
         CoffeeHud = 1,
         ReviewHud = 2,
@@ -24,7 +24,7 @@ function XSkyGardenCafeAgency:OnInit()
 
     --卡组Id
     self.DeckIds = { 1, 2, 3 }
-    
+
     self.CardUpdateEvent = {
         Create = 1,
         LongPress = 2,
@@ -37,13 +37,13 @@ function XSkyGardenCafeAgency:OnInit()
         RefreshContainer = 9,
         Drag = 10,
     }
-    
+
     self.CardContainer = {
         Deck = 2,
         Deal = 3,
         ReDraw = 4,
     }
-    
+
     -- 抽卡类型
     self.DrawCardType = {
         --回合抽卡
@@ -51,7 +51,7 @@ function XSkyGardenCafeAgency:OnInit()
         --出牌抽卡
         PlayCard = 2
     }
-    
+
     self.EffectTriggerId = {
         --出牌时
         Deck2Deal = 1,
@@ -74,7 +74,7 @@ function XSkyGardenCafeAgency:OnInit()
         --洗牌
         Shuffle = 10,
     }
-    
+
     self.EffectType = {
         --优先抽牌
         PriorityLottery = 1,
@@ -119,14 +119,14 @@ function XSkyGardenCafeAgency:OnInit()
         --创建新的卡牌
         CreateNew = 21,
     }
-    
+
     self.ResourceType = {
         --咖啡销量
         Coffee = 1,
         --好评
         Review = 2,
     }
-    
+
     --临时效果，在Buff销毁时复原
     self.NotPermanentEffectType = {
         [self.EffectType.DealCountChange] = true,
@@ -134,27 +134,36 @@ function XSkyGardenCafeAgency:OnInit()
         [self.EffectType.Remove] = true,
         [self.EffectType.CreateNew] = true,
     }
-    
-    
-    self.CafeCueId = {
+
+    self.CafeCueKey = {
         --销量增加
-        AddCoffeeCueId = 5700011,
+        AddCoffeeCueKey = "CoffeeAscend",
         --销量减少
-        SubCoffeeCueId = 5700012,
+        SubCoffeeCueKey = "CoffeeDescend",
         --好评增加
-        AddReviewCueId = 5700004,
+        AddReviewCueKey = "ReviewAscend",
         --好评减少
-        SubReviewCueId = 5700005,
+        SubReviewCueKey = "ReviewDecend",
     }
-    
+
+    self.GamePetState = {
+        Idle = 1, --闲置
+        LongTimeWait = 2, --长时间等待
+        AddReview = 3, --增加好评
+        AddCoffee = 4, --增加销量
+        Settle = 5, --结算
+    }
+
     self.Pattern = "{(%d+)}"
-    
+
     self.RichTextImageCallBackCb = handler(self, self.RichTextImageCallBack)
-    
+
     self._IsNotify = false
-    
+
     self._LastEnterGameTime = os.clock()
     
+    self._LastWaitTime = 0
+
     self:InitConditionCheck()
 end
 
@@ -191,8 +200,8 @@ function XSkyGardenCafeAgency:OpenMainUi(id, args)
     end
     --打开活动主界面
     XMVCA.XBigWorldUI:Open("UiSkyGardenCafeMain")
-    
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(false, false)
+
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(false)
 end
 
 function XSkyGardenCafeAgency:EnterGameLevel()
@@ -204,7 +213,7 @@ function XSkyGardenCafeAgency:EnterGameLevel()
         return
     end
     self._LastEnterGameTime = now
-    
+
     local curLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
     if curLevelId == self:GetLevelId() then
         local data = self._Model:GetFightData()
@@ -223,7 +232,7 @@ function XSkyGardenCafeAgency:ExitGameLevel()
 end
 
 function XSkyGardenCafeAgency:GetName()
-    return self._Model:GetActivityName() 
+    return self._Model:GetActivityName()
 end
 
 function XSkyGardenCafeAgency:GetProgressTipData()
@@ -231,10 +240,10 @@ function XSkyGardenCafeAgency:GetProgressTipData()
     if not activityId or activityId <= 0 then
         return
     end
-    local storyIdChapterId = self._Model:GetStoryChapterId(activityId) 
+    local storyIdChapterId = self._Model:GetStoryChapterId(activityId)
     local challengeChapterId = self._Model:GetChallengeChapterId(activityId)
-    local cur1, total1 =  self._Model:GetStageListProgress(self._Model:GetStoryStageIds())
-    local cur2, total2 =  self._Model:GetStageListProgress(self._Model:GetChallengeStageIds())
+    local cur1, total1 = self._Model:GetStageListProgress(self._Model:GetStoryStageIds())
+    local cur2, total2 = self._Model:GetStageListProgress(self._Model:GetChallengeStageIds())
     return {
         [1] = {
             Title = self._Model:GetChapterName(storyIdChapterId),
@@ -277,7 +286,7 @@ function XSkyGardenCafeAgency:DoLevelLevel()
     --切换相机
     XMVCA.XBigWorldGamePlay:DeactivateVCamera("UiSkyGardenCoffeeCameraMain")
     --显示指挥官
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(true, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(true)
     XMVCA.XBigWorldUI:SafeClose("UiSkyGardenCafeMain")
 end
 
@@ -318,7 +327,7 @@ function XSkyGardenCafeAgency:NotifyBigWorldCafeSettle(data)
     if not data then
         return
     end
-    
+
     local stageId = data.StageId
     local info = self._Model:GetStageInfo(stageId)
     info:DoSettle(data.Star, data.SumSales)
@@ -326,7 +335,7 @@ function XSkyGardenCafeAgency:NotifyBigWorldCafeSettle(data)
     battle:DoSettle(data.SumSales, data.AwardList)
 
     XMVCA.XSkyGardenCafe:DispatchInnerEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CAFE_SETTLEMENT, stageId)
-    
+
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_SETTLEMENT)
 end
 
@@ -349,7 +358,7 @@ function XSkyGardenCafeAgency:FightRequestData()
     if stageId > 0 then
         state = 2
     end
-    
+
     return {
         GameplayState = state
     }
@@ -436,12 +445,12 @@ function XSkyGardenCafeAgency:InitInnerEvent()
     self._InnerEventDict = {}
 end
 
-function XSkyGardenCafeAgency:PlaySound(cueId)
-    return XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+function XSkyGardenCafeAgency:GetLastWaitTime()
+    return self._LastWaitTime
 end
 
-function XSkyGardenCafeAgency:StopSound(cueId)
-    XLuaAudioManager.StopAudioByCueId(cueId)
+function XSkyGardenCafeAgency:SetLastWaitTime(value)
+    self._LastWaitTime = value
 end
 
 --region Condition

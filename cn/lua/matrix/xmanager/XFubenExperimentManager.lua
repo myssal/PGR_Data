@@ -6,7 +6,7 @@ local tableSort = table.sort
 local CSGameEventManager = CS.XGameEventManager.Instance
 
 XFubenExperimentManagerCreator = function()
-    local XFubenExperimentManager = XExFubenCollegeStudyManager.New(XFubenConfigs.ChapterType.Experiment)
+    local XFubenExperimentManager = XExFubenCollegeStudyManager.New(XEnumConst.FuBen.ChapterType.Experiment)
 
     local TrialGroup = {}
     local TrialLevel = {}

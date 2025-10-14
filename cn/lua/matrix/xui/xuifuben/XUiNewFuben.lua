@@ -3,6 +3,7 @@ local XUiNewFuben = XLuaUiManager.Register(XLuaUi, "UiNewFuben")
 function XUiNewFuben:OnAwake()
     self.IsRebackFight = true 
     self.FubenManagerEx = XDataCenter.FubenManagerEx
+    ---@type XTableFubenTabConfig[]
     self.MainUiTabConfigs = self.FubenManagerEx.GetMainUiTabConfigs()
     -- 提审服屏蔽主线外的关卡
     if XUiManager.IsHideFunc then
@@ -23,13 +24,15 @@ function XUiNewFuben:OnAwake()
     self:RegisterUiEvents()
 end
 
-function XUiNewFuben:OnStart(chapterType)
+function XUiNewFuben:OnStart(chapterType, secondIndex, ...)
     if chapterType then -- 根据chapterType检测要打开的子界面，不传默认打开第一个
         local firstTag, secondTagIndex = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(chapterType)
         if firstTag and not self:GetMainUiFirstIndexArgs(firstTag) then
             self.SelectedIndex = firstTag
             if secondTagIndex then
-                self:SetMainUiFirstIndexArgs(firstTag, secondTagIndex) 
+                self:SetMainUiFirstIndexArgs(firstTag, secondIndex or secondTagIndex, ...)
+            else
+                self:SetMainUiFirstIndexArgs(firstTag, secondIndex, ...)
             end
         end
     end
@@ -49,11 +52,13 @@ end
 function XUiNewFuben:OnEnable()
     -- 刷新按钮红点
     local childPanelInfo = nil
+    ---@type XUiComponent.XUiButton
     local btnTab = nil
     for i = 1, self.PanelTabGroup.TabBtnList.Count do
         childPanelInfo = self:GetChildPanelInfo(i)
         btnTab = self.PanelTabGroup:GetButtonByIndex(i)
-        if childPanelInfo and childPanelInfo.Proxy.CheckHasRedPoint then
+        
+        if childPanelInfo and childPanelInfo.Proxy.CheckHasRedPoint and not (btnTab.ButtonState == CS.UiButtonState.Disable) then
             btnTab:ShowReddot(childPanelInfo.Proxy.CheckHasRedPoint(childPanelInfo))
         else
             btnTab:ShowReddot(false)
@@ -77,10 +82,18 @@ function XUiNewFuben:OnChildPanelEnable()
     end
 end
 
+function XUiNewFuben:OnChildPanelDisable()
+    local currentPanel = self.ChildPanelInfoDic[self.PanelTabGroup.CurSelectId]
+    if currentPanel and currentPanel.InstanceProxy and currentPanel.InstanceProxy.OnDisable then
+        currentPanel.InstanceProxy:OnDisable()
+    end
+end
+
 function XUiNewFuben:OnDisable()
     if self.TimerId then
         XScheduleManager.UnSchedule(self.TimerId)
     end
+    self:OnChildPanelDisable()
 end
 
 function XUiNewFuben:OnDestroy()
@@ -100,20 +113,53 @@ end
 
 function XUiNewFuben:InitBottomTabs()
     local buttons = {}
+    local firstUnlockIndex = nil
+    local isCurSelectIndexUnlock = true
+    local unlockCount = 0
+    
     XUiHelper.RefreshCustomizedList(self.PanelTabGroup.transform, self.BtnTab, #self.MainUiTabConfigs, function(index, go)
         local button = go:GetComponent("XUiButton")
         local config = self.MainUiTabConfigs[index]
         go.name = "BtnTab"..config.UiParentName
         button:SetNameByGroup(0, config.Name)
         button:SetRawImage(config.IconPath)
-        button:SetDisable(not self.FubenManagerEx.CheckHasOpenByFirstTagId(index))
+        
+        local isSecondUnLock = self.FubenManagerEx.CheckHasOpenByFirstTagId(index)
+        local isSelfUnlock = not XTool.IsNumberValidEx(config.UnlockCondition) or XConditionManager.CheckCondition(config.UnlockCondition)
+        
+        local isRealUnlock = isSecondUnLock and isSelfUnlock
+        
+        button:SetDisable(not isRealUnlock)
         table.insert(buttons, button)
+
+        if isRealUnlock then
+            if not firstUnlockIndex then
+                firstUnlockIndex = index
+            end
+
+            unlockCount = unlockCount + 1
+        end
+
+        if isCurSelectIndexUnlock == index then
+            isCurSelectIndexUnlock = isRealUnlock
+        end
     end)
     self.PanelTabGroup:Init(buttons, function(index) self:OnBtnBottomTabClicked(index) end)
     if XUiManager.IsHideFunc then
         self.SelectedIndex = nil
+    else
+        -- 如果选择的页签没有解锁，或者未选择特定页签，则使用从左到右顺位第一个已解锁的页签
+        if not isCurSelectIndexUnlock or not self.SelectedIndex then
+            self.SelectedIndex = firstUnlockIndex
+        end 
     end
+    
     self.PanelTabGroup:SelectIndex(self.SelectedIndex or 1)
+    
+    -- 如果只有一个页签解锁了，那么隐藏底部栏
+    if unlockCount <= 1 then
+        self.PanelBottom.gameObject:SetActiveEx(false)
+    end
 end
 
 -- 刷新战斗面板每期活动图
@@ -172,10 +218,21 @@ function XUiNewFuben:OnBtnBottomTabClicked(index)
         return 
     end
     self.IsRebackFight = false
+    
+    local config = self.MainUiTabConfigs[index]
 
     if not self.FubenManagerEx.CheckHasOpenByFirstTagId(index) then -- 如果没开放
-        XUiManager.TipError(self.MainUiTabConfigs[index].ConditionDesc)
+        XUiManager.TipError(config.ConditionDesc)
         return
+    end
+
+    if XTool.IsNumberValidEx(config.UnlockCondition) then
+        local isPass, desc = XConditionManager.CheckCondition(config.UnlockCondition)
+
+        if not isPass then
+            XUiManager.TipError(desc)
+            return
+        end
     end
 
     local childPanelData = self:GetChildPanelInfo(index)
@@ -190,7 +247,7 @@ function XUiNewFuben:OnBtnBottomTabClicked(index)
     end
     -- 加载子面板实体
     local instanceGo = childPanelData.InstanceGo
-    if instanceGo == nil then
+    if instanceGo == nil and not string.IsNilOrEmpty(childPanelData.AssetPath) then
         instanceGo = childPanelData.UiParent:LoadPrefab(childPanelData.AssetPath)
         childPanelData.InstanceGo = instanceGo
     end
@@ -209,6 +266,7 @@ function XUiNewFuben:OnBtnBottomTabClicked(index)
     end
     self.IsInited = true
     self.SelectedIndex = index
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiNewFuben:GetChildPanelInfo(index)

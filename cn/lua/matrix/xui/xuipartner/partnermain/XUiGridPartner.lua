@@ -67,6 +67,9 @@ function XUiGridPartner:ShowInfo(uiType)
     self.TxtCount.gameObject:SetActiveEx(uiType == XPartnerConfigs.MainUiState.Overview and self.Data:GetStackCount() > 1)
     self.PanelFragment.gameObject:SetActiveEx(uiType == XPartnerConfigs.MainUiState.Compose)
     self.ImgBreakthrough.gameObject:SetActiveEx(uiType == XPartnerConfigs.MainUiState.Overview)
+    if self.PanelPreset then
+        self.PanelPreset.gameObject:SetActiveEx(not self.ImgIsCarry.gameObject.activeSelf and XDataCenter.TeamManager.CheckPartnerIdIsInTeamPrefab(self.Data:GetId()))
+    end
 end
 
 function XUiGridPartner:ShowRed(IsShow)

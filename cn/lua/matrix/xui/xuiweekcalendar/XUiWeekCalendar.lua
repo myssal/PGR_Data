@@ -50,7 +50,7 @@ end
 function XUiWeekCalendar:RegisterButtonEvent()
     self.BtnRight.CallBack = function() self:OnClickBtnRight() end
     self.BtnLeft.CallBack = function() self:OnClickBtnLeft() end
-    self.BtnBack.CallBack = function() self:Close() end
+    -- self.BtnBack.CallBack = function() self:Close() end
 end
 
 function XUiWeekCalendar:Refresh()

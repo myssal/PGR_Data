@@ -3,12 +3,14 @@ local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenMainLineDetail = XLuaUiManager.Register(XLuaUi, "UiFubenMainLineDetail")
+local XUiPlotExhibitionUtil = require("XUi/XUiPlotExhibition/XUiPlotExhibitionUtil")
 
 function XUiFubenMainLineDetail:OnAwake()
     self:InitAutoScript()
     self.GridStageStar.gameObject:SetActive(false)
     self.GridCommon.gameObject:SetActive(false)
     self:InitStarPanels()
+    XUiPlotExhibitionUtil.Init(self)
 end
 
 function XUiFubenMainLineDetail:OnStart(rootUi)
@@ -118,6 +120,7 @@ function XUiFubenMainLineDetail:Refresh(stage)
     self:NewUpdateRewards()
     self:UpdateDifficulty()
     self:UpdateStageFightControl()--更新战力限制提示
+    XUiPlotExhibitionUtil.UpdateSpeedrunBtnToggle(self, self.Stage.StageId)
 end
 
 function XUiFubenMainLineDetail:UpdateCommon()
@@ -303,3 +306,5 @@ function XUiFubenMainLineDetail:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_AUTO_FIGHT_REMOVE, self.OnAutoFightRemove, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_AUTO_FIGHT_COMPLETE, self.OnAutoFightComplete, self)
 end
+
+return XUiFubenMainLineDetail

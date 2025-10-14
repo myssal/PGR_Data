@@ -136,7 +136,7 @@ end
 
 function XUiSkyGardenShoppingStreetInsideBuildDessert:MoveOffset(index, offset)
     -- XLog.Debug("MoveOffset", index, offset)
-    CS.XAudioManager.PlayAudio(5700029)
+    self.XAudioObjectPlayer:PlayByKeyName("MoveOffset")
     self:MoveGrid(index, index + offset)
 end
 

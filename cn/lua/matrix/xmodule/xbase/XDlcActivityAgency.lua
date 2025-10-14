@@ -83,6 +83,8 @@ function XDlcActivityAgency:DlcGetNonnegativeAttribs()
         [XDlcNpcAttribType.WalkSpeedCOE] = true,
         [XDlcNpcAttribType.SprintSpeed] = true,
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
+        [XDlcNpcAttribType.BreakGauge] = true,
+        [XDlcNpcAttribType.OverDrive] = true,
     }
 end
 
@@ -118,7 +120,8 @@ function XDlcActivityAgency:DlcGetNpcAttrib(worldNpcData)
     return self:DlcParseToXAttribs(attribConfig)
 end
 
-function XDlcActivityAgency:DlcGetBaseAttrib(npcId)
+---@param level Npc等级
+function XDlcActivityAgency:DlcGetBaseAttrib(npcId, level)
     local template = CS.StatusSyncFight.XNpcConfig.GetTemplate(npcId)
 
     if not template then

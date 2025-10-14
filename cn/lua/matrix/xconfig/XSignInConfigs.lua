@@ -230,6 +230,11 @@ function XSignInConfigs.GetWelfareConfigsWithActivity()
             if XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(cfg.SubConfigId) then
                 table.insert(list, setConfig(subCfg.Id, subCfg.Name, cfg.Id, {}, subCfg.PrefabPath, XAutoWindowConfigs.AutoFunctionType.WeekCard, subCfg.BtnBg, subCfg.FullScreenBg))
             end
+        elseif cfg.FunctionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard and openWelfare then
+            local subCfg = XSignInConfigs.GetSignInConfig(cfg.SubConfigId)
+            if XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(cfg.SubConfigId) then
+                table.insert(list, setConfig(subCfg.Id, subCfg.Name, cfg.Id, {}, subCfg.PrefabPath, XAutoWindowConfigs.AutoFunctionType.ThreeDayCard, subCfg.BtnBg, subCfg.FullScreenBg))
+            end
         end
     end
     list = XTool.MergeArray(activity, list)
@@ -249,7 +254,7 @@ function XSignInConfigs.CheckWelfareRedPoint(functionType, config)
         return XDataCenter.WeekChallengeManager.IsAnyRewardCanReceived()
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.SClassConstructNovice then
         return true
-    elseif functionType == XAutoWindowConfigs.AutoFunctionType.WeekCard then
+    elseif functionType == XAutoWindowConfigs.AutoFunctionType.WeekCard or functionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard then
         local weekCardId = config.Id
         if XTool.IsNumberValid(weekCardId) then
             ---@field weekCardData XPurchaseWeekCardData
@@ -281,7 +286,8 @@ function XSignInConfigs.GetPrefabPath(id)
 
     if config.FunctionType == XAutoWindowConfigs.AutoFunctionType.Sign or
             config.FunctionType == XAutoWindowConfigs.AutoFunctionType.SClassConstructNovice or
-            config.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard
+            config.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard or
+            config.FunctionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard
     then
         local cfg = XSignInConfigs.GetSignInConfig(config.SubConfigId)
         return cfg.PrefabPath

@@ -1,9 +1,10 @@
 local XExFubenExtralChapterManager = require("XEntity/XFuben/XExFubenExtralChapterManager")
 
 XFubenExtraChapterCreator = function()
-    local ExtraChapterManager = XExFubenExtralChapterManager.New(XFubenConfigs.ChapterType.ExtralChapter)
+    local ExtraChapterManager = XExFubenExtralChapterManager.New(XEnumConst.FuBen.ChapterType.ExtralChapter)
     local ChapterInfos = {} -- info {FirstStage, ActiveStage, Stars, Unlock, Passed}
     local LastPassStage = {} -- index:章节数chapterId 内容:通关关卡passStageId
+    ---@type XTableChapterExtra[]
     local ChapterExtraCfgs = {}
     local ChapterExtraDetailsCfgs = {}
     local StarTreasureCfgs = {}
@@ -120,6 +121,23 @@ XFubenExtraChapterCreator = function()
             info.PassStageNum = passStageNum
         end
         return info
+    end
+    
+    function ExtraChapterManager.GetChapterUnlock(chapterId)
+        local chapterConfigs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
+        local chapter = chapterConfigs[chapterId]
+        local firstStageInfo = XDataCenter.FubenManager.GetStageInfo(chapter.StageId[1])
+        if not firstStageInfo.Passed and firstStageInfo.Unlock and ExtraChapterManager.CheckDiffHasAcitivity(chapter) then
+            if not ExtraChapterManager.CheckActivityCondition(chapter.ChapterId) then
+                return false
+            end
+        elseif (not ExtraChapterManager.IsExtraActivityOpen() and ExtraChapterManager.CheckDiffHasAcitivity(chapter)) or not ExtraChapterManager.CheckDiffHasAcitivity(chapter) then
+            local isOpen, desc = ExtraChapterManager.CheckOpenCondition(chapter.ChapterId)
+            if not isOpen then
+                return false
+            end
+        end
+        return true
     end
 
     function ExtraChapterManager.GetDifficult(stageId)
@@ -250,6 +268,16 @@ XFubenExtraChapterCreator = function()
 
     function ExtraChapterManager.GetChapterInfo(chapterId)
         return ChapterInfos[chapterId]
+    end
+    
+    function ExtraChapterManager.GetChapterInfoPassed(chapterId)
+        local chapterInfo = ChapterInfos[chapterId]
+
+        if chapterInfo then
+            return chapterInfo.Passed
+        end
+        
+        return true
     end
 
     function ExtraChapterManager.GetChapterByChapterDetailsId(chapterId)
@@ -395,6 +423,47 @@ XFubenExtraChapterCreator = function()
         local tempStr = "ExtraChapterManager.GetChapterIdByChapterExtraId函数参数difficult应该是，"
         XLog.Error(tempStr .. "config表：Share/Config/Config.tab, 中字段FubenDifficultNormal、FubenDifficultHard对应的值中的一个")
     end
+    
+    --- 获取外篇旧闻主章节通关数目
+    function ExtraChapterManager.GetMainChapterPassedCount()
+        local count = 0
+
+        for i, v in pairs(ChapterExtraCfgs) do
+            if ExtraChapterManager.CheckMainChapterDifficutIsAllPass(v.Id, DifficultType.Normal) then
+                count = count + 1
+            end
+        end
+        
+        return count
+    end
+    
+    --- 判断主章节指定难度关卡是否通关
+    function ExtraChapterManager.CheckMainChapterDifficutIsAllPass(mainId, difficult)
+        local mainChapterCfg = ChapterExtraCfgs[mainId]
+
+        if mainChapterCfg then
+            if difficult then
+                local chapterId = mainChapterCfg.ChapterId[difficult]
+
+                if XTool.IsNumberValidEx(chapterId) then
+                    return ExtraChapterManager.GetChapterInfoPassed(chapterId)
+                else
+                    XLog.Error('ExtraChapterManager.CheckMainChapterDifficutIsPass 指定难度关卡不存在, mainId:' .. tostring(mainId) .. 'difficult: ' .. tostring(difficult))
+                end
+            else
+                for i, v in ipairs(mainChapterCfg.ChapterId) do
+                    if not ExtraChapterManager.GetChapterInfoPassed(v) then
+                        return false
+                    end
+                end
+                
+                return true
+            end
+        end
+        
+        XLog.Error('外篇旧闻指定主章节不存在, mainId: ' .. tostring(mainId))
+        return false
+    end
 
     function ExtraChapterManager.GetCurDiffcult()
         return ExtraChapterManager.CurDifficult or DifficultType.Normal
@@ -423,7 +492,7 @@ XFubenExtraChapterCreator = function()
     --跳转到外章Banner页面
     function ExtraChapterManager.JumpToExtraBanner()
         -- XLuaUiManager.Open("UiFuben", XDataCenter.FubenManager.StageType.Mainline, nil, 4)
-        XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.ExtralChapter)
+        XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.ExtralChapter)
     end
     --跳转到外章章节关卡
     function ExtraChapterManager.JumpToExtraStage(chapterId, stageId)

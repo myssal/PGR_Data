@@ -24,12 +24,19 @@ function XUiPanelResourceCollection:Ctor(ui, parent, config)
 end
 
 function XUiPanelResourceCollection:SetData(firstTagId, secondTagIndex)
+    if not XTool.IsTableEmpty(self.AllSecondTag) then
+        self.RootUi:ChangeBgBySecondTag(self.AllSecondTag[1].Bg)
+    end
+    
     -- 背景底图刷新
-    self.RootUi:ChangeBgBySecondTag(self.AllSecondTag[1].Bg)
     self:AddTimer()
 end
 
 function XUiPanelResourceCollection:OnEnable()
+    if XTool.IsTableEmpty(self.AllSecondTag) then
+        return
+    end
+    
     self.PanelResource:UpdateGrid(self.StrengthUpUseModelView[1], 1)
     self:RefreshDynamicTable()
     -- 播放grid的Enable动画，onenable强制播放
@@ -41,6 +48,11 @@ end
 function XUiPanelResourceCollection:InitData()
     self.FirstTagId = self.Config.Id
     self.AllSecondTag = XFubenConfigs.GetSecondTagConfigsByFirstTagId(self.FirstTagId) -- 拿到该模式下所有的二级标签 k = 1(二级tag表的id), v = 常规挑战 (tagName)
+
+    if XTool.IsTableEmpty(self.AllSecondTag) then
+        return
+    end
+    
     -- 根据二级tag分类索引到对应的manager，
     self.TagManagerDic = {} -- k = secondTagId, v = {XManager1, XManager2 ... } ...
     local fisrtUnlockTagIndex = nil
@@ -75,7 +87,9 @@ function XUiPanelResourceCollection:InitResourcePanel()
     --self.PanelResource:UpdateGrid(self.StrengthUpUseModelView[1], 1)
     if self.PanelResource.BtnEnter then
         XUiHelper.RegisterClickEvent(self, self.PanelResource.BtnEnter, function()
-            self:OnClickChapterGrid(self.StrengthUpUseModelView[1])
+            if not XTool.IsTableEmpty(self.StrengthUpUseModelView) then
+                self:OnClickChapterGrid(self.StrengthUpUseModelView[1])
+            end
         end)
     end
 end

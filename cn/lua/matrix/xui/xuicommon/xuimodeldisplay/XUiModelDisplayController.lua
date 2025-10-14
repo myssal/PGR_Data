@@ -1,6 +1,7 @@
 local XUiModelDisplayHelper = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayHelper")
 
 ---@class XUiModelDisplayController
+---@field Controller XUiComponent.XModelDisplay.XUiModelDisplayController
 local XUiModelDisplayController = XClass(nil, "XUiModelDisplayController")
 
 function XUiModelDisplayController:Ctor(modelRoot, showShadow, fixLight)
@@ -40,6 +41,7 @@ function XUiModelDisplayController:AddModel(modelInfo)
     local helper = self:GetDisplayHelper()
     local componentType = helper.ConvertComponentType(modelInfo.ComponentType)
     local parent = modelInfo.Parent or self.Transform
+    self:SetModelActive(modelInfo.Key, true)
     local isSuccess = self.Controller:AddModelDisplay(componentType, modelInfo.Key, modelInfo.ComponentId,
         modelInfo.ModelUrl, modelInfo.ControllerUrl, parent)
 
@@ -48,6 +50,15 @@ function XUiModelDisplayController:AddModel(modelInfo)
     end
 
     return isSuccess
+end
+
+---@param modelInfo XUiModelDisplayInfo
+function XUiModelDisplayController:AddOrSetParentModel(modelInfo)
+    local res = self:AddModel(modelInfo)
+    if res then
+        return
+    end
+    self:SetParent(modelInfo.Key, modelInfo.Parent, false)
 end
 
 ---@param modelInfo XUiModelDisplayInfo
@@ -232,7 +243,48 @@ end
 function XUiModelDisplayController:_AfterModelLoaded(modelInfo)
     self:_InjectComponentData(modelInfo)
     self:_AddModelInfo(modelInfo)
+    modelInfo:InjectController(self)
     self:SetModelComponentActive(modelInfo.Key, modelInfo.ComponentId, modelInfo.IsActive)
+end
+
+function XUiModelDisplayController:SetLookAtIKWithInfo(id, componentId, target, lerpTime)
+    local modelInfo = self:GetModelInfo(id, componentId)
+    if not modelInfo then
+        return
+    end
+    ---@type XUiModelLookAtIKInfo
+    local ikInfo = modelInfo:GetInfoByType(XMVCA.XBigWorldCommon.ModelInfoType.LookAtIK)
+    if not ikInfo then
+        ikInfo = self:GetDisplayHelper().CreateLookAtIKInfo(target)
+        modelInfo:AddInfo(ikInfo)
+    else
+        ikInfo.Target = target
+    end
+    ikInfo:SetLerpTime(lerpTime)
+    ikInfo:InitModelController(self, modelInfo)
+end
+
+function XUiModelDisplayController:SetLookAtIKTarget(id, componentId, target)
+    self.Controller:SetLookAtIKTarget(id, componentId, target)
+end
+
+function XUiModelDisplayController:SetLookAtIKWeight(id, componentId, weight,  bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes)
+    self.Controller:SetLookAtIKWeight(id, componentId, weight,  bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes)
+end
+
+function XUiModelDisplayController:DisableLookAtIK(id, componentId)
+    self.Controller:DisableLookAtIK(id, componentId)
+end
+
+function XUiModelDisplayController:SetParent(id, parent, worldPositionStays)
+    if worldPositionStays ~= false then
+        worldPositionStays = true
+    end
+    self.Controller:SetParent(id, parent, worldPositionStays)
+end
+
+function XUiModelDisplayController:CombineParts(id, componentId, urls)
+    self.Controller:CombineParts(id, componentId, urls)
 end
 
 return XUiModelDisplayController

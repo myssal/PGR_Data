@@ -1,11 +1,20 @@
 ---@class XBigWorldCharacterUiEffectInfo
 local XBigWorldCharacterUiEffectInfo = XClass(nil, "XBigWorldCharacterUiEffectInfo")
 
-function XBigWorldCharacterUiEffectInfo:Ctor(fashionId, actionId, rootName)
+function XBigWorldCharacterUiEffectInfo:Ctor(config)
+    local effectIds = config.EffectIds
+
     self._Effects = {}
-    self:SetFashionId(fashionId)
-    self:SetActionId(actionId)
-    self:SetRootName(rootName)
+    self:SetFashionId(config.FashionId)
+    self:SetActionId(config.ActionId)
+    self:SetRootName(config.EffectRootName)
+    self:SetIsIgnoreRotate(config.IsIgnoreRotate)
+
+    if not XTool.IsTableEmpty(effectIds) then
+        for _, effectId in ipairs(effectIds) do
+            self:AddEffectId(effectId)
+        end
+    end
 end
 
 function XBigWorldCharacterUiEffectInfo:SetRootName(rootName)
@@ -26,6 +35,10 @@ function XBigWorldCharacterUiEffectInfo:SetActionId(actionId)
     end
 end
 
+function XBigWorldCharacterUiEffectInfo:SetIsIgnoreRotate(isIgnoreRotate)
+    self._IsIgnoreRotate = isIgnoreRotate or false
+end
+
 function XBigWorldCharacterUiEffectInfo:GetRootName()
     return self._RootName or ""
 end
@@ -36,6 +49,10 @@ end
 
 function XBigWorldCharacterUiEffectInfo:GetActionId()
     return self._ActionId or ""
+end
+
+function XBigWorldCharacterUiEffectInfo:GetIsIgnoreRotate()
+    return self._IsIgnoreRotate
 end
 
 function XBigWorldCharacterUiEffectInfo:AddEffectId(effectId)
@@ -53,11 +70,21 @@ end
 function XBigWorldCharacterUiEffectInfo:GetEffectPathByIndex(index)
     local effectId = self:GetEffectIdByIndex(index)
 
-    if string.IsNilOrEmpty(effectId) then
+    if not XTool.IsNumberValid(effectId) then
         return ""
     end
 
     return XMVCA.XBigWorldResource:GetEffectUrl(effectId)
+end
+
+function XBigWorldCharacterUiEffectInfo:GetEffectDelayTimeByIndex(index)
+    local effectId = self:GetEffectIdByIndex(index)
+
+    if not XTool.IsNumberValid(effectId) then
+        return 0
+    end
+
+    return XMVCA.XBigWorldResource:GetEffectDelayTime(effectId)
 end
 
 return XBigWorldCharacterUiEffectInfo

@@ -1044,7 +1044,8 @@ local function GetTableNonsense()
     local tableUsed = {
         Init = function()
         end,
-        __Configs = false
+        __Configs = false,
+        __isNonSense = true
     }
     local metatable = {
         __newindex = function(table, key, value)
@@ -1283,16 +1284,18 @@ function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent)
 end
 
 function XTool.UpdateDynamicItemByUiCache(gridArray, dataArray, uiParentTr, class, parent, defaultIndex)
+    if not class then class = XUiNode end
     local dataCount = dataArray and #dataArray or 0
     if #gridArray <= 0 and (not dataArray or #dataArray <= 0) then
         uiParentTr.gameObject:SetActive(false)
     else
-        for csIndex = 0, uiParentTr.childCount - 1 do
-            local luaIndex = csIndex + 1
+        local luaIndex = 1
+        for csIndex = defaultIndex or 0, uiParentTr.childCount - 1 do
             local grid = gridArray[luaIndex]
             if not grid then
                 local go = uiParentTr:GetChild(csIndex).gameObject
                 gridArray[luaIndex] = class.New(go, parent)
+                luaIndex = luaIndex + 1
             end
         end
     end

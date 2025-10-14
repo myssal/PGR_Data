@@ -8,7 +8,7 @@ local XUiGridGame2048Chapter = require('XUi/XUiGame2048/UiGame2048Main/XUiGridGa
 local XUiGameMainSpine = require('XUi/XUiGame2048/UiGame2048Main/XUiGameMainSpine')
 
 function XUiGame2048Main:OnAwake()
-    self.BtnBack.CallBack = handler(self, self.Close)
+    self.BtnBack.CallBack = handler(self, self.OnBtnBackClick)
     self.BtnMainUi.CallBack = XLuaUiManager.RunMain
     self:BindHelpBtn(self.BtnHelp, "Game2048")
     self.BtnShop.CallBack = handler(self, self.OnStoreClickEvent)
@@ -34,6 +34,8 @@ function XUiGame2048Main:OnStart()
 end
 
 function XUiGame2048Main:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Game2048)
+    
     self:StartLeftTimer()
     self:RefreshChapterUI()
     XRedPointManager.Check(self._StoreReddotId)
@@ -50,6 +52,11 @@ end
 
 function XUiGame2048Main:OnDisable()
     self:StopLeftTimer()
+end
+
+function XUiGame2048Main:OnBtnBackClick()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.Game2048)
+    self:Close()
 end
 
 --region 活动剩余时间显示

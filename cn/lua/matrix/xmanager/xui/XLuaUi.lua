@@ -113,7 +113,7 @@ function XLuaUi:OnReleaseNotLoadUi()
     self:UnBindControl()
     self.UiProxy = nil
     self.Ui = nil
-    self.ParentUi = nil
+    self:UnBindParentUi()
 
     self.Transform = nil
     self.GameObject = nil
@@ -130,7 +130,7 @@ function XLuaUi:OnReleaseUi()
     --self.Name = nil
     self.UiProxy = nil
     self.Ui = nil
-    self.ParentUi = nil
+    self:UnBindParentUi()
 
     self.Transform = nil
     self.GameObject = nil
@@ -306,36 +306,58 @@ end
 --@childUiName 子窗口名字
 function XLuaUi:FindChildUiObj(childUiName)
     local childUi = self.UiProxy:FindChildUi(childUiName)
-    if childUi then
+    -- 子界面创建逻辑被修改，不会实际创建
+    if childUi and childUi.UiProxy then
         return childUi.UiProxy.UiLuaTable
     end
 end
 
 function XLuaUi:InitChildUis()
-    if self.Ui == nil then
-        return
-    end
+    -- if self.Ui == nil then
+    --     return
+    -- end
 
-    if not self.Ui.UiData.HasChildUi then
-        return
-    end
+    -- if not self.Ui.UiData.HasChildUi then
+    --     return
+    -- end
 
-    local childUis = self.Ui:GetAllChildUis()
+    -- local childUis = self.Ui:GetAllChildUis()
 
-    if childUis == nil then
-        return
-    end
+    -- if childUis == nil then
+    --     return
+    -- end
 
-    --子UI初始化完成后可在父UI通过self.Child+子UI名称的方式直接获取句柄
-    local childUiName
-    for k, v in pairs(childUis) do
-        childUiName = "Child" .. k
-        if self[childUiName] then
+    -- --子UI初始化完成后可在父UI通过self.Child+子UI名称的方式直接获取句柄
+    -- local childUiName
+    -- for k, v in pairs(childUis) do
+    --     childUiName = "Child" .. k
+    --     if self[childUiName] then
+    --         XLog.Error(string.format("%s该名字已被占用", childUiName))
+    --     else
+    --         self[childUiName] = v.UiProxy.UiLuaTable
+    --     end
+    -- end
+end
+
+--按需绑定子界面和父界面的关系
+function XLuaUi:BindParentUi(parentUi)
+    if parentUi then
+        self.ParentUi = parentUi
+        local childUiName = string.format("Child%s", self.Name)
+        if parentUi[childUiName] then
             XLog.Error(string.format("%s该名字已被占用", childUiName))
         else
-            self[childUiName] = v.UiProxy.UiLuaTable
+            parentUi[childUiName] = self
         end
-    end
+    end    
+end
+
+function XLuaUi:UnBindParentUi()
+    if self.ParentUi then
+        local childUiName = string.format("Child%s", self.Name)
+        self.ParentUi[childUiName] = nil
+        self.ParentUi = nil
+    end    
 end
 --endregion
 

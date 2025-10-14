@@ -3,6 +3,7 @@ local XUiFubenSideDynamicTable = XClass(XSignalData, "XUiFubenSideDynamicTable")
 
 function XUiFubenSideDynamicTable:Ctor(ui, proxy, ...)
     XUiHelper.InitUiClass(self, ui)
+    ---@type XDynamicTableCurve
     self.DynamicTable = XDynamicTableCurve.New(self.GameObject)
     self.DynamicTable:SetProxy(proxy, ...)
     self.DynamicTable:SetDelegate(self)
@@ -16,6 +17,10 @@ end
 function XUiFubenSideDynamicTable:RefreshList(datas, index)
     if index == nil then index = self.CurrentSelectedIndex end
     self.CurrentSelectedIndex = index
+
+    -- 只有一个选项时不拖动
+    self.DynamicTable:GetImpl().DragEnable = XTool.GetTableCount(datas) > 1
+    
     self.DynamicTable:SetDataSource(datas)
     self.DynamicTable:ReloadData(index)
 end
@@ -97,6 +102,7 @@ function XUiFubenSideDynamicTable:OnDynamicTableEvent(event, index, grid)
         self:EmitSignal("DYNAMIC_TWEEN_OVER", index)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
         if self.IsDraging then return end
+        
         for _, v in pairs(self.GridDic) do
             if v.GridIndex ~= self.CurrentSelectedIndex then
                 v:PlayCenterAnim(true, v.GridIndex < self.CurrentSelectedIndex)

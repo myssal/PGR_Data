@@ -63,7 +63,7 @@ XBfrtManagerCreator = function()
 
     -- 据点战管理器
     ---@class XBfrtManager:XExFubenSimulationChallengeManager
-    local XBfrtManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Bfrt)
+    local XBfrtManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Bfrt)
 
     --据点战梯队类型
     XBfrtManager.EchelonType = {
@@ -491,7 +491,7 @@ XBfrtManagerCreator = function()
         if isLogistics then
             return _ViewGroupLogisticsTeams
         else
-            return _ViewGroupFightTeams
+            return _ViewGroupFightTeams -- 在XTeam的EntityIds里刷新 同步这里刷新
         end
     end
 
@@ -1913,6 +1913,7 @@ XBfrtManagerCreator = function()
     end
 
     ---==========================================
+    --- 传入的echelonId就是stageId
     --- 得到队伍首发位
     --- 当首发位不为空时，直接返回首发位，否则返回默认首发位
     ---（因为服务器在之前只有队长位，后面区分了队长位与首发位，存在有队长位数据，没有首发位数据的情况）

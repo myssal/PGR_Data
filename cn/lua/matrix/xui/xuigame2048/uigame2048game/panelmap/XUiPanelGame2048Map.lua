@@ -8,15 +8,24 @@ local XUiPanelGame2048Option = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/
 local XUiComGame2048MapAction = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiComGame2048MapAction')
 
 function XUiPanelGame2048Map:OnStart()
-    self.GridBlock.gameObject:SetActiveEx(false)
-    self.GridTransfer.gameObject:SetActiveEx(false)
-    self.GridStone.gameObject:SetActiveEx(false)
-    self.GridStar.gameObject:SetActiveEx(false)
-    self.GridDoubling.gameObject:SetActiveEx(false)
-    self.GridICE.gameObject:SetActiveEx(false)
-    self.GridFeverAdd.gameObject:SetActiveEx(false)
+    self._Grid2Type = {
+        [XMVCA.XGame2048.EnumConst.GridType.Normal] = self.GridBlock,
+        [XMVCA.XGame2048.EnumConst.GridType.Rock] = self.GridStone,
+        [XMVCA.XGame2048.EnumConst.GridType.Star] = self.GridStar,
+        [XMVCA.XGame2048.EnumConst.GridType.Doubling] = self.GridDoubling,
+        [XMVCA.XGame2048.EnumConst.GridType.ICE] = self.GridICE,
+        [XMVCA.XGame2048.EnumConst.GridType.Transfer] = self.GridTransfer,
+        [XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds] = self.GridFeverAdd,
+        [XMVCA.XGame2048.EnumConst.GridType.Dispel] = self.GridCleanUp,
+        [XMVCA.XGame2048.EnumConst.GridType.Transmit] = self.GridTransmit,
+        [XMVCA.XGame2048.EnumConst.GridType.HeartShape] = self.GridHeartShape,
+        [XMVCA.XGame2048.EnumConst.GridType.Water] = self.GridWater,
+        [XMVCA.XGame2048.EnumConst.GridType.Fire] = self.GridFire,
+
+    }
 
     self._GameControl = self._Control:GetGameControl()
+    ---@type XUiGridGame2048Grid[]
     self._ShowedGrids = {}
     
     self._PanelOption = XUiPanelGame2048Option.New(self.PanelBoard, self)
@@ -28,7 +37,17 @@ function XUiPanelGame2048Map:OnStart()
     self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_NEW_GRID, self.RefreshNewGrid, self)
     self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_MAPDATA_VERIFICATION, self.VerificationMap, self)
     self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_GRID_SHOW, self.RefreshGridShow, self)
+    self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_WATER_FIRE_DISPEL_SELECTION, self.OnWaterFireDispelSelectionEnter, self)
+    self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_WATER_FIRE_DISPEL_SELECTION_EXIT, self.OnWaterFireDispelSelectionExit, self)
 
+    if self.PanelGridBg then
+        ---@type UnityEngine.UI.GridLayoutGroup
+        self.BgLayout = self.PanelGridBg.transform:GetComponent(typeof(CS.UnityEngine.UI.GridLayoutGroup))
+    end
+
+    if self.ImgMask then
+        self.ImgMask.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiPanelGame2048Map:InitGridPools()
@@ -36,35 +55,16 @@ function XUiPanelGame2048Map:InitGridPools()
         grid:Close()
     end
     
+    ---@type XPool[]
     self._GridPools = {}
-    
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.Normal] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridBlock, XMVCA.XGame2048.EnumConst.GridType.Normal)
-    end, self._GridRecycleHandle, false)
 
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.Rock] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridStone, XMVCA.XGame2048.EnumConst.GridType.Rock)
-    end, self._GridRecycleHandle, false)
-
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.Star] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridStar, XMVCA.XGame2048.EnumConst.GridType.Star)
-    end, self._GridRecycleHandle, false)
-
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.Doubling] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridDoubling, XMVCA.XGame2048.EnumConst.GridType.Doubling)
-    end, self._GridRecycleHandle, false)
-
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.ICE] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridICE, XMVCA.XGame2048.EnumConst.GridType.ICE)
-    end, self._GridRecycleHandle, false)
-
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.Transfer] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridTransfer, XMVCA.XGame2048.EnumConst.GridType.Transfer)
-    end, self._GridRecycleHandle, false)
-
-    self._GridPools[XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds] = XPool.New(function()
-        return self:_CreateNewGrid(self.GridFeverAdd, XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds)
-    end, self._GridRecycleHandle, false)
+    for type, grid in pairs(self._Grid2Type) do
+        grid.gameObject:SetActiveEx(false)
+        
+        self._GridPools[type] = XPool.New(function()
+            return self:_CreateNewGrid(grid, type)
+        end, self._GridRecycleHandle, false)
+    end
 end
 
 function XUiPanelGame2048Map:_CreateNewGrid(prefab, gridType)
@@ -72,6 +72,7 @@ function XUiPanelGame2048Map:_CreateNewGrid(prefab, gridType)
     local grid = XUiGridGame2048Grid.New(go, self)
     grid:Open()
     grid:SetGridType(gridType)
+    grid:SetCopyNameForDebug(prefab.gameObject.name)
     grid:Close()
     return grid
 end
@@ -146,11 +147,11 @@ end
 
 -- 展示新生成的格子
 ---@param grid XGame2048Grid
-function XUiPanelGame2048Map:RefreshNewGrid(grid)
+function XUiPanelGame2048Map:RefreshNewGrid(grid, targetX, targetY)
     if not XTool.IsTableEmpty(grid) then
         -- 忽略非法坐标的方块
-        local x = grid:GetX()
-        local y = grid:GetY()
+        local x = targetX or grid:GetX()
+        local y = targetY or grid:GetY()
 
         if x < 1 or x > self._GameControl:GetWidth() or y < 1 or y > self._GameControl:GetHeight() then
             goto CONTINUE
@@ -163,11 +164,11 @@ function XUiPanelGame2048Map:RefreshNewGrid(grid)
             gridUi:Open()
             gridUi:SetGridType(type)
             gridUi:RefreshData(grid)
-            local posIndex = grid:GetX() + (grid:GetY() - 1) * self._GameControl:GetWidth()
+            local posIndex = x + (y - 1) * self._GameControl:GetWidth()
             local block = self._BgGrids[posIndex]
             if block then
                 gridUi.Transform.position = block.Transform.position
-                gridUi:SetNormalizePos(grid:GetX(), grid:GetY())
+                gridUi:SetNormalizePos(x, y)
             end
 
             self._ShowedGrids[grid.Uid] = gridUi
@@ -257,6 +258,64 @@ function XUiPanelGame2048Map:RefreshGridShow(gridData)
     end
 end
 
+function XUiPanelGame2048Map:OnWaterFireDispelSelectionEnter()
+    local beginX, endX, beginY, endY = self._GameControl.GridsControl:GetDispelGridCleanUpRange()
+    
+    if not XTool.IsTableEmpty(self._ShowedGrids) then
+        for i, v in pairs(self._ShowedGrids) do
+            local posX = v:GetNormalizePosX()
+            local posY = v:GetNormalizePosY()
+
+            if posX >= beginX and posX <= endX and posY >= beginY and posY <= endY then
+                v:OnWaterFireDispelSelectionEnter()
+            end
+        end
+    end
+
+    if self.ImgTips then
+        self.ImgTips.gameObject:SetActiveEx(true)
+    end
+
+    if self.ImgMask then
+        -- 获取无效区域的左下角和右上角
+        local hasInValidArea, leftDownX, leftDownY, rightUpX, rightUpY = self._GameControl.GridsControl:GetDispelGridCleanUpInvalidRange()
+        
+        if hasInValidArea then
+            self.ImgMask.gameObject:SetActiveEx(true)
+
+            local leftDownGrid = self:GetBgUiGridByNormalizePos(leftDownX, leftDownY)
+            local rightUpGrid = self:GetBgUiGridByNormalizePos(rightUpX, rightUpY)
+
+            self.ImgMask.transform.position = (leftDownGrid.Transform.position + rightUpGrid.Transform.position) / 2
+
+            local width = self.BgLayout.cellSize.x * (rightUpX - leftDownX + 1) + self.BgLayout.spacing.x * (rightUpX - leftDownX)
+            local height = self.BgLayout.cellSize.y * (rightUpY - leftDownY + 1) + self.BgLayout.spacing.y * (rightUpY - leftDownY)
+
+            self.ImgMask.transform:SetUISizeDelta(width, height)
+        else
+            self.ImgMask.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
+function XUiPanelGame2048Map:OnWaterFireDispelSelectionExit()
+    self._GameControl:ExitWaterFireDispelSelectionState()
+    
+    if not XTool.IsTableEmpty(self._ShowedGrids) then
+        for i, v in pairs(self._ShowedGrids) do
+            v:OnWaterFireDispelSelectionExit()
+        end
+    end
+
+    if self.ImgTips then
+        self.ImgTips.gameObject:SetActiveEx(false)
+    end
+
+    if self.ImgMask then
+        self.ImgMask.gameObject:SetActiveEx(false)
+    end
+end
+
 --region get/set
 
 --- 回收方块
@@ -286,6 +345,12 @@ function XUiPanelGame2048Map:GetShowedUiGridByIndex(index)
     return self._BgGrids[index]
 end
 
+--- 根据标准坐标获取指定地块的UI节点
+function XUiPanelGame2048Map:GetBgUiGridByNormalizePos(posx, posy)
+    local index = posx + (posy - 1) * self._GameControl:GetWidth()
+
+    return self._BgGrids[index]
+end
 --endregion
 
 

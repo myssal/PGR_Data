@@ -48,7 +48,7 @@ function XBigWorldCharacterModel:ResetData()
 
     self._CharDict = {}
 
-    ---@type table<number, table<string, table<string, XBigWorldCharacterUiEffectInfo>>>
+    ---@type table<number, XBigWorldCharacterUiEffectInfo[]>
     self._CharacterUiEffectMap = false
 end
 
@@ -128,17 +128,17 @@ function XBigWorldCharacterModel:GetFashionId(characterId)
     if self:IsCommandant(characterId) then
         return XMVCA.XBigWorldCommanderDIY:GetCurrentFashionId()
     end
-    --空花单独设置的涂装
+    -- 空花单独设置的涂装
     local char = self:GetDlcCharacter(characterId)
     local fashionId = char:GetFashionId()
     if fashionId and fashionId > 0 then
         return fashionId
     end
     ----角色未拥有
-    --local isOwn = XMVCA.XCharacter:IsOwnCharacter(characterId)
-    --if not isOwn then
+    -- local isOwn = XMVCA.XCharacter:IsOwnCharacter(characterId)
+    -- if not isOwn then
     --    fashionId = t.DefaultFashionId
-    --else
+    -- else
     --    local character = XMVCA.XCharacter:GetCharacter(characterId)
     --    --随机涂装，则采用配置
     --    if character.RandomFashion then
@@ -146,10 +146,18 @@ function XBigWorldCharacterModel:GetFashionId(characterId)
     --    else
     --        fashionId = character.FashionId
     --    end
-    --end
+    -- end
     fashionId = t.DefaultFashionId
     char:SetFashionId(fashionId)
     return fashionId
+end
+
+function XBigWorldCharacterModel:GetDefaultFashionId(characterId)
+    if self:IsCommandant(characterId) then
+        return XMVCA.XBigWorldCommanderDIY:GetCurrentFashionId()
+    end
+    local t = self:GetDlcCharacterTemplate(characterId)
+    return t.DefaultFashionId
 end
 
 function XBigWorldCharacterModel:GetHeadInfo(characterId)
@@ -158,13 +166,12 @@ function XBigWorldCharacterModel:GetHeadInfo(characterId)
     if info then
         return info
     end
-    --local t = XDataCenter.FashionManager.GetHeadPortraitList(characterId)
     info = {
-        HeadFashionId = self:GetFashionId(characterId),
-        HeadFashionType = XFashionConfigs.HeadPortraitType.Default
+        HeadFashionId = self:GetDefaultFashionId(characterId),
+        HeadFashionType = XFashionConfigs.HeadPortraitType.Default,
     }
     char:SetHeadInfo(info.HeadFashionId, info.HeadFashionType)
-    
+
     return info
 end
 
@@ -177,7 +184,7 @@ function XBigWorldCharacterModel:GetDlcCharacter(id)
     end
     local char = XBigWorldCharacter.New(id)
     self._CharDict[id] = char
-    
+
     return char
 end
 
@@ -188,52 +195,32 @@ function XBigWorldCharacterModel:GetDlcCharacterUiEffectTemplates()
     return self._ConfigUtil:GetByTableKey(TableCharacter.BigWorldCharacterUiEffect) or {}
 end
 
----@return table<number, table<string, table<string, XBigWorldCharacterUiEffectInfo>>>
+---@return table<number, XBigWorldCharacterUiEffectInfo[]>
 function XBigWorldCharacterModel:GetCharacterUiEffectMap()
     if not self._CharacterUiEffectMap then
         local configs = self:GetDlcCharacterUiEffectTemplates()
-        local defaultAction = "DefaultAction"
-        local defaultRoot = "Root"
 
         self._CharacterUiEffectMap = {}
         for id, config in pairs(configs) do
             local fashionId = config.FashionId
-            local actionId = config.ActionId or defaultAction
-            local rootName = config.EffectRootName or defaultRoot
-            
+            local effectInfo = XBigWorldCharacterUiEffectInfo.New(config)
+
             if not self._CharacterUiEffectMap[fashionId] then
                 self._CharacterUiEffectMap[fashionId] = {}
             end
-            if not self._CharacterUiEffectMap[fashionId][actionId] then
-                self._CharacterUiEffectMap[fashionId][actionId] = {}
-            end
-            
-            local effectIds = config.EffectIds
-            
-            if not XTool.IsTableEmpty(effectIds) then
-                local effectInfo = self._CharacterUiEffectMap[fashionId][actionId][rootName]
-                
-                if not effectInfo then
-                    effectInfo = XBigWorldCharacterUiEffectInfo.New(fashionId, actionId, rootName)
-                end
 
-                for _, effectId in pairs(effectIds) do
-                    effectInfo:AddEffectId(effectId)
-                end
-            end
+            table.insert(self._CharacterUiEffectMap[fashionId], effectInfo)
         end
     end
 
     return self._CharacterUiEffectMap
 end
 
----@return table<string, XBigWorldCharacterUiEffectInfo>
-function XBigWorldCharacterModel:GetCharacterUiEffectInfos(fashionId, actionId)
+---@return XBigWorldCharacterUiEffectInfo[]
+function XBigWorldCharacterModel:GetCharacterUiEffectInfos(fashionId)
     local effectMap = self:GetCharacterUiEffectMap()
-    
-    actionId = actionId or "DefaultAction"
 
-    return effectMap[fashionId][actionId]
+    return effectMap[fashionId]
 end
 
 -- endregion

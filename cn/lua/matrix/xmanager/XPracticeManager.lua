@@ -1,7 +1,7 @@
 local XExFubenCollegeStudyManager = require("XEntity/XFuben/XExFubenCollegeStudyManager")
 
 XPracticeManagerCreator = function()
-    local XPracticeManager = XExFubenCollegeStudyManager.New(XFubenConfigs.ChapterType.Practice)
+    local XPracticeManager = XExFubenCollegeStudyManager.New(XEnumConst.FuBen.ChapterType.Practice)
     local PracticeChapterInfos = {}
     local PracticeStageInfo = {}
     local IsChallengeWin = false    --战斗结束后是否胜利

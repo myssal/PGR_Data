@@ -56,6 +56,12 @@ function XBigWorldTeachConfigModel:GetBigWorldHelpCourseIsForceById(id)
     return config.IsForce
 end
 
+function XBigWorldTeachConfigModel:GetBigWorldHelpCourseIsHideById(id)
+    local config = self:GetBigWorldHelpCourseConfigById(id)
+
+    return config.IsHide
+end
+
 ---@return XTableBigWorldHelpCourseDetail[]
 function XBigWorldTeachConfigModel:GetBigWorldHelpCourseDetailConfigs()
     return self._ConfigUtil:GetByTableKey(HelpCourseTableKey.BigWorldHelpCourseDetail) or {}

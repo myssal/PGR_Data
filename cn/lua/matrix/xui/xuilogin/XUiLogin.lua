@@ -761,13 +761,17 @@ function XUiLogin:DoLogin()
                     XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.Anime_Start)
                     --CheckPoint: APPEVENT_COMPLETED_REGISTRATION_1
                     XAppEventManager.AppLogEvent(XAppEventManager.CommonEventNameConfig.Completed_Registration)
-                    local movieId = CS.XGame.ClientConfig:GetString("NewUserMovieId")
-                    XDataCenter.MovieManager.PlayMovie(movieId, function()
-                        XDataCenter.FubenManager.EnterGuideFight(guideFight.Id, guideFight.StageId, guideFight.NpcId, guideFight.Weapon)
-                    end)
+                    XDataCenter.FubenManager.EnterGuideFight(guideFight.Id, guideFight.StageId, guideFight.NpcId, guideFight.Weapon)
                 else
-                    XLoginManager.SetFirstOpenMainUi(true)
-                    XLuaUiManager.RunMain()
+                    local targetGotoConfig = XLoginManager.GetCurrentLoginPromoFeature()
+                    local isOnceOpened = targetGotoConfig and (XSaveTool.GetData(targetGotoConfig.Id.."LoginPromoFeatureConfig"..XPlayer.Id) == 1)
+
+                    if targetGotoConfig and not isOnceOpened and (not XLuaVideoManager.GetIsSkipAllCG()) then
+                        XFunctionManager.SkipInterface(targetGotoConfig.EnterSkipId)
+                    else
+                        XLoginManager.SetFirstOpenMainUi(true)
+                        XLuaUiManager.RunMain()
+                    end
                 end
             end)
             -- 设置月卡信息本地缓存
@@ -851,16 +855,7 @@ function XUiLogin:OnUiDestroy(uiData)
     end
     
     local NoticeUiCount = #NoticeOpenFuncList
-    if NoticeOpenIndex > NoticeUiCount then
-        -- 不处理，自动弹窗逻辑结束出口
-        return
-    end
-    
     NoticeOpenIndex = NoticeOpenIndex + 1
-    if NoticeOpenIndex > NoticeUiCount then
-        -- 不处理，自动弹窗逻辑结束出口
-        return
-    end
     for i = NoticeOpenIndex, NoticeUiCount do
         local func = NoticeOpenFuncList[i]
         local isOpen = func and func() or false
@@ -871,6 +866,7 @@ function XUiLogin:OnUiDestroy(uiData)
             return
         end
     end
+   
     self.HasNoticeOpen = false
     -- 登录
     self:OnAutoLogin()
@@ -958,7 +954,7 @@ function XUiLogin:OnBtnLoginNoticeClickPC()
 end
 
 function XUiLogin:OnCheckBindTask()
-    if not XUserManager.UserType == XHeroSdkManager.UserType.Vistor then
+    if XUserManager.UserType ~= XHeroSdkManager.UserType.Vistor then
         XHeroSdkManager.OnBindTaskFinished()
     elseif XDataCenter.UiPcManager.IsPc() then
         XHeroSdkManager.OnBindTaskFinished()

@@ -6,6 +6,7 @@
 local XUiPanelBWRoleInfo = XClass(XUiNode, "XUiPanelBWRoleInfo")
 
 function XUiPanelBWRoleInfo:OnStart()
+    self.IsFirstPlay = true
     self:InitCb()
     self:InitView()
 end
@@ -15,6 +16,7 @@ function XUiPanelBWRoleInfo:OnEnable()
 end
 
 function XUiPanelBWRoleInfo:Close()
+    self.IsFirstPlay = true
     self.Parent:PlayEnableAnimation()
     XUiNode.Close(self)
 end
@@ -47,7 +49,13 @@ end
 
 function XUiPanelBWRoleInfo:RefreshView(teamId, entityId, pos)
     self:Open()
-    self:PlayAnimation("PanelOwnedRefresh")
+    if self.IsFirstPlay then
+        self:PlayAnimation("PanelOwnedAnimEnable")
+        self.IsFirstPlay = false
+    else
+        self:PlayAnimation("PanelOwnedRefresh")
+    end
+    
     self._TeamId = teamId
     self._EntityId = entityId
     self._Pos = pos

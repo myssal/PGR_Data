@@ -2,7 +2,7 @@
 ---@field UiRoot XUiMovie
 local XMovieActionTextAppear = XClass(XMovieActionBase, "XMovieActionTextAppear")
 
-function XMovieActionTextAppear:Ctor(actionData)
+function XMovieActionTextAppear:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     
@@ -29,7 +29,7 @@ function XMovieActionTextAppear:Ctor(actionData)
     self.Scale = params[12] and XMVCA.XMovie:ParamToNumber(params[12]) or 1
 end
 
-function XMovieActionTextAppear:OnInit()
+function XMovieActionTextAppear:OnEnter()
     self.IsTyping = false
     local content = XMVCA.XMovie:ExtractGenderContent(self.TextContent)
     local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim)
@@ -59,6 +59,30 @@ end
 
 function XMovieActionTextAppear:OnTypeWriterComplete()
     self.IsTyping = false
+end
+
+function XMovieActionTextAppear:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+---@param action XMovieActionBase
+function XMovieActionTextAppear:IsActionCover(action)
+    if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.TEXT_APPEAR then
+        local params = action:GetParams()
+        local textId = params[1]
+        return textId == self.TextId
+
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.TEXT_DISAPPEAR then
+        return action:IsDisAppear(self.TextId)
+    end
+    return false
+end
+
+function XMovieActionTextAppear:OnPassedActionRun()
+    self:OnEnter()
 end
 
 return XMovieActionTextAppear

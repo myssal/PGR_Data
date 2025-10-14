@@ -60,12 +60,22 @@ function XUiBattleRoleRoomCaptain:RegisterUiEvents()
 end
 
 function XUiBattleRoleRoomCaptain:OnCaptainBtnGroupClicked(index)
-    -- 禁用中，不处理
+    -- 禁用状态不处理
     if self["BtnSelect" .. index].ButtonState == CS.UiButtonState.Disable then
         return
     end
+    
+    -- 位置未变化不处理
+    if index == self.CurrentCaptainPos then
+        return
+    end
+    
+    -- 更新计数并记录新位置
     self.ChangeTimes = math.min(MaxChangeTimes, self.ChangeTimes + 1)
     self.CurrentCaptainPos = index
+    
+    -- 自动关闭界面（核心修改点）
+    self:OnCloseClicked()
 end
 
 function XUiBattleRoleRoomCaptain:OnCloseClicked()

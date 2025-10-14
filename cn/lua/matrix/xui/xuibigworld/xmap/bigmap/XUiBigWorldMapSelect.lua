@@ -12,8 +12,19 @@ function XUiBigWorldMapSelect:OnStart()
     self._PinDatas = {}
 
     self._OptionCache = {}
+    
+    self._TransformBind = self.PanelImgSelect.gameObject:GetComponent(typeof(CS.XTransformBind))
+    if not self._TransformBind then
+        self._TransformBind = self.PanelImgSelect.gameObject:AddComponent(typeof(CS.XTransformBind))
+    end
 
     self:_InitUi()
+end
+
+function XUiBigWorldMapSelect:OnDisable()
+    if self._TransformBind then
+        self._TransformBind:SetTarget(nil)
+    end
 end
 
 function XUiBigWorldMapSelect:OnOptionClick(index)
@@ -25,11 +36,11 @@ function XUiBigWorldMapSelect:OnOptionClick(index)
 end
 
 ---@param pinDatas XBWMapPinData[]
-function XUiBigWorldMapSelect:Refresh(levelId, pinDatas, position)
+function XUiBigWorldMapSelect:Refresh(levelId, pinDatas, target)
     self._PinDatas = pinDatas
     self._LevelId = levelId
     self:_RefreshOptions(pinDatas)
-    self:_RefreshPosition(position)
+    self:_RefreshPosition(target)
 end
 
 ---@param pinDatas XBWMapPinData[]
@@ -39,10 +50,15 @@ function XUiBigWorldMapSelect:_RefreshOptions(pinDatas)
     if not XTool.IsTableEmpty(pinDatas) then
         for i, pinData in pairs(pinDatas) do
             local option = self._OptionCache[i]
+            local briefIcon = self._Control:GetPinBriefIconByStyleId(pinData.StyleId)
 
             if not option then
                 option = XUiHelper.Instantiate(self.BtnOption, self.Options.transform)
                 self._OptionCache[i] = option
+            end
+
+            if not string.IsNilOrEmpty(briefIcon) then
+                option:SetSprite(briefIcon)
             end
 
             option.gameObject:SetActiveEx(true)
@@ -62,9 +78,13 @@ function XUiBigWorldMapSelect:_RefreshOptions(pinDatas)
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.Options.transform)
 end
 
-function XUiBigWorldMapSelect:_RefreshPosition(position)
-    self.PanelImgSelect.position = position
-    self:_RefreshRing(position)
+function XUiBigWorldMapSelect:_RefreshPosition(target)
+    if self._TransformBind then
+        self._TransformBind:SetTarget(target)
+    end
+    local x, y, z = target.transform:GetPosition()
+    self.Transform:SetPosition(x, y, z)
+    self:_RefreshRing()
 end
 
 function XUiBigWorldMapSelect:_RefreshRing(position)
@@ -73,13 +93,14 @@ function XUiBigWorldMapSelect:_RefreshRing(position)
     local width = axisConversion:ScreenToUIDistance(self.Transform, distance, 1920)
 
     if self.Ring then
-        self.Ring.sizeDelta = Vector2(width, width)
+        self.Ring:SetUISizeDelta(width, width)
     end
 end
 
 function XUiBigWorldMapSelect:_InitUi()
     self.Ring = self.Transform:FindTransform("Ring")
     self.BtnOption.gameObject:SetActiveEx(false)
+    self.Options.transform:SetParent(self.PanelImgSelect)
 end
 
 return XUiBigWorldMapSelect

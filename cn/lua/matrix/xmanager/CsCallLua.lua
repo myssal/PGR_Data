@@ -131,6 +131,40 @@ function DlcFuben.GetModelIdByWorldNpcData(worldType, npcData)
     return modelId
 end
 
+function DlcFuben.CheckLevelPlayFullCleared(worldType, levelPlayId)
+    if not XTool.IsNumberValid(levelPlayId) then
+        XLog.Error("CsCallLua.DlcFuben.CheckLevelPlayFullCleared 参数错误: levelPlayId is invalid")
+        return false
+    end
+
+    return XMVCA.XDlcHelper:CheckLevelPlayFullCleared(worldType, levelPlayId)
+end
+
+function DlcFuben.CheckLevelPlayCleared(worldType, levelPlayId)
+    if not XTool.IsNumberValid(levelPlayId) then
+        XLog.Error("CsCallLua.DlcFuben.CheckLevelPlayFullCleared 参数错误: levelPlayId is invalid")
+        return false
+    end
+
+    return XMVCA.XDlcHelper:CheckLevelPlayCleared(worldType, levelPlayId)
+end
+
+function DlcFuben.GetColorNameByColorId(colorId)
+    if XTool.IsNumberValid(colorId) then
+        return XMVCA.XBigWorldCommanderDIY:GetMaterialNameByColorId(colorId)
+    end
+
+    return nil
+end
+
+function DlcFuben.GetColorNameByColorId(colorId)
+    if XTool.IsNumberValid(colorId) then
+        return XMVCA.XBigWorldCommanderDIY:GetMaterialNameByColorId(colorId)
+    end
+
+    return nil
+end
+
 function DlcFuben.GetNpcPartModelDataByPartData(npcPartData)
     if not npcPartData or not npcPartData.PartList then
         return nil
@@ -149,13 +183,12 @@ function DlcFuben.GetBigWorldText(key)
     return XMVCA.XBigWorldService:GetText(key)
 end
 
---- 兼容黑幕进战斗设置战斗代理
-function DlcFuben.InitFightDelegate(worldId)
-    XMVCA.XDlcWorld:InitFightDelegate(worldId)
-end
-
 function DlcCondition.CheckCondition(conditionId)
     return XMVCA.XBigWorldService:CheckCondition(conditionId)
+end
+
+function DlcCondition.GetDlcConditionDesc(conditionId)
+    return XMVCA.XBigWorldService:GetDlcConditionDesc(conditionId)
 end
 
 function Player.GetLevel()
@@ -170,7 +203,6 @@ function Player.GetHeadPortraitImgSrcById(id)
     if cfg then
         return cfg.ImgSrc
     end
-    
     return ''
 end
 
@@ -455,12 +487,16 @@ function Theatre5.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
     local autoChessData = {}
     
     autoChessData.CharacterId = xautoChessData.CharacterId
-    autoChessData.Attribs = {} 
-    autoChessData.Runes = {}
+    autoChessData.Attribs = {}
+    autoChessData.RuneEvolves = {}
     autoChessData.Skills = {}
 
-    for i = 0, xautoChessData.Runes.Count - 1 do
-        autoChessData.Runes[i + 1] = xautoChessData.Runes[i]
+    for i = 0, xautoChessData.RuneEvolves.Count - 1 do
+        local runeEvolve = xautoChessData.RuneEvolves[i]
+        autoChessData.RuneEvolves[i + 1] = {
+            RuneId = runeEvolve.RuneId,
+            IsStrengthen = runeEvolve.IsStrengthen,
+        }
     end
 
     for i = 0, xautoChessData.Skills.Count - 1 do
@@ -508,6 +544,10 @@ function BigWorld.OpenBigWorldUi(uiName, args)
         return XMVCA.XBigWorldUI:Open(uiName, table.unpack(args))
     end
     return XMVCA.XBigWorldUI:Open(uiName)
+end
+
+function BigWorld.DebugCheckNarrativeExist(narrativeId)
+    return XMVCA.XBigWorldService:DebugCheckNarrativeExist(narrativeId)
 end
 
 function UiDialog.CheckOpenExitFightTips(stageId)

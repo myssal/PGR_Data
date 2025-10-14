@@ -1,3 +1,4 @@
+local XTheatre5EnumConst = require("XModule/XTheatre5/XTheatre5EnumConst")
 local XTheatre5AdventureDataBase = require('XModule/XTheatre5/Entity/XTheatre5AdventureDataBase')
 
 ---@class XTheatre5PVPAdventureData: XTheatre5AdventureDataBase
@@ -7,7 +8,7 @@ local XTheatre5PVPAdventureData = XClass(XTheatre5AdventureDataBase, 'XTheatre5P
 
 
 function XTheatre5PVPAdventureData:Ctor()
-
+    self._GameMode = XTheatre5EnumConst.GameMode.PVP
     self.HasData = false
 end
 
@@ -67,10 +68,15 @@ function XTheatre5PVPAdventureData:GetEnemyRuneIds()
         -- 转换成有序列表
         local runeIds = {}
 
-        for i, v in pairs(self.EnemyData.RuneIds) do
-            if not runeIds[v] then
-                runeIds[v] = i
+        if self.EnemyData.RuneEvolves then
+            for i, runeData in pairs(self.EnemyData.RuneEvolves) do
+                local itemId = runeData.ItemId or runeData.RuneId
+                if not runeIds[itemId] then
+                    runeIds[itemId] = { ItemId = itemId, ItemType = XMVCA.XTheatre5:GetTheatre5ItemTypeById(itemId), Index = i, IsStrengthen = runeData.IsStrengthen }
+                end
             end
+        else
+            XLog.Error("[XTheatre5PVPAdventureData] 结算时RuneEvolves字段为空")
         end
         
         return runeIds

@@ -96,7 +96,12 @@ end
 --endregion
 
 function XUiPanelGame2048Option:CheckCannotDrag()
-    return self._Control:GetIsGameOver() or self._GameControl:GetIsActionPlaying() or self._GameControl:GetIsUsingProp() or self._Control:GetIsWaitForSettle() or self._GameControl:GetIsWaitForNextStep()
+    return self._Control:GetIsGameOver() or 
+            self._GameControl:GetIsActionPlaying() or 
+            self._GameControl:GetIsUsingProp() or 
+            self._Control:GetIsWaitForSettle() or 
+            self._GameControl:GetIsWaitForNextStep() or 
+            not self._GameControl:CheckCanDragState()
 end
 
 function XUiPanelGame2048Option:TryDrag(x_delta, y_delta)

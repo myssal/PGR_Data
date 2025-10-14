@@ -80,6 +80,10 @@ function XUiGame2048Game:OnDestroy()
     end
     
     XMVCA.XGame2048:RemoveEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_ON_RECORD_LOADED, self.InitGame, self)
+
+    if not self._IsDoGameExitRelease then
+        self._Control:ExitGameRelease(false)
+    end
 end
 
 function XUiGame2048Game:OnEventExitGame()
@@ -88,6 +92,11 @@ end
 
 function XUiGame2048Game:TryExitGame(isRunMain, isOverGame)
     if not self._FirstInit then
+        return
+    end
+
+    if not self._GameControl:CheckCanDragState() then
+        XUiManager.TipMsg(self._Control:GetClientConfigText('BackInWaterFireSelectionTips'))
         return
     end
 
@@ -100,7 +109,7 @@ end
 
 function XUiGame2048Game:OnExitGame(isRunMain, isOverGame)
     self._Control:ExitGameRelease(isOverGame)
-
+    self._IsDoGameExitRelease = true
     if isRunMain then
         XLuaUiManager.RunMain()
     else

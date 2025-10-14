@@ -56,9 +56,15 @@ function XUiPanelCollegeStudy:InitData()
             self.TagManagerDic[secondTagconfig.Id] = {}
         end
         for k, chapterType in pairs(secondTagconfig.ChapterType) do
-            for k, manager in pairs(XDataCenter.FubenManagerEx.GetManagers(chapterType)) do
-                table.insert(self.TagManagerDic[secondTagconfig.Id], manager) -- 根据2级标签拿到所有manager
+            -- 需要判断章节是否开启
+            local chapterTypeShowCondition = secondTagconfig.ChapterTypeShowCondition[k]
+            
+            if not XTool.IsNumberValidEx(chapterTypeShowCondition) or XConditionManager.CheckCondition(chapterTypeShowCondition) then
+                for k, manager in pairs(XDataCenter.FubenManagerEx.GetManagers(chapterType)) do
+                    table.insert(self.TagManagerDic[secondTagconfig.Id], manager) -- 根据2级标签拿到所有manager
+                end
             end
+            
         end
         table.sort(self.TagManagerDic[secondTagconfig.Id], function (managerA, managerB)
             return managerA:ExGetConfig().Priority < managerB:ExGetConfig().Priority

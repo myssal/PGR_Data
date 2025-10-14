@@ -768,11 +768,13 @@ function XPartner:GetItemSkipCfg()
 end
 
 function XPartner:GetLevelUpSkipIdList()
-    return self:GetItemSkipCfg().LevelUpSkipIdParams or {}
+    local cfg = self:GetItemSkipCfg()
+    return cfg and cfg.LevelUpSkipIdParams or {}
 end
 
 function XPartner:GetStageSkipId()
-    return self:GetItemSkipCfg().StageSkipIdParam
+    local cfg = self:GetItemSkipCfg()
+    return cfg and cfg.StageSkipIdParam
 end
 
 -------------------------------宠物来源----------------------------------

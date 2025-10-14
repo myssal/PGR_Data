@@ -38,8 +38,9 @@ function XUiBigWorldMapTrackPin:SetPosition(position, direction, angle, rect)
     local x = position.x - width / 2 * direction.x
     local y = position.y - height / 2 * direction.y
 
-    self.Transform.anchoredPosition = axisConversion:ConstrainingPointWithinEllipse(x, y, xAxis, yAxis)
-    self.Pointer.rotation = CS.UnityEngine.Quaternion.Euler(0, 0, angle)
+    local posX, posY = axisConversion:ConstrainingPointWithinEllipse(x, y, xAxis, yAxis)
+    self.Transform:SetAnchoredPosition(posX, posY)
+    self.Pointer:SetEulerRotation(0, 0, angle)
 end
 
 function XUiBigWorldMapTrackPin:SetSiblingIndex(index)

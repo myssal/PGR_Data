@@ -98,6 +98,7 @@ end
 
 function XUiChatServeMain:OnEnable()
     self:Refresh()
+    XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UICHAT_ENABLE)
 end
 
 function XUiChatServeMain:OnDisable()
@@ -106,6 +107,7 @@ function XUiChatServeMain:OnDisable()
     self:RemoveTimer()
     self.UiPanelEmoji:OnDisable()
     self.UiPanelEmojiSetting:OnDisable()
+    XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UICHAT_DISABLE)
 end
 
 function XUiChatServeMain:OnDestroy()

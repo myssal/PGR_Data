@@ -11,13 +11,62 @@ end
 
 function XBossSingleData:SetData(data)
     if data then
-        local historyList = data.HistoryList
+        local historyList
+        --region 本期关卡记录
+        -- v3.8 从这个版本开始，使用新的字段
+        if data.IsResetOpen then
+            if not data.StageRecordList then
+                XLog.Error("[XBossSingleData] 已经收到了v3.8新版本代码的标记，但是StageRecordList却为空")
+            end
+            historyList = {}
+            
+            -- 先遍历一遍旧的记录，填上去
+            for _, historyData in pairs(data.HistoryList) do
+                historyList[historyData.StageId] = historyData
+            end
+            
+            -- 再遍历一遍新的记录，覆盖上去
+            --for _, historyData in pairs(data.StageRecordList) do
+            --    local oldHistoryData = historyList[historyData.StageId]
+            --    -- 新纪录有队伍, 则使用新记录的, 否则使用旧记录的队伍
+            --    if oldHistoryData then
+            --        if not historyData.Characters or #historyData.Characters == 0 then
+            --            historyData.Characters = oldHistoryData.Characters
+            --        end
+            --    end
+            --    historyList[historyData.StageId] = historyData
+            --end
+            
+            -- 上一期的分数记录，自动作战有用
+            self._HistoryListBestRecord = data.HistoryList
+            -- 当前记录
+            self._RecordCurrent = data.StageRecordList
+        else
+            historyList = data.HistoryList
+        end
+        --endregion
+        
         local trialStageInfoList = data.TrialStageInfoList
         local challengeHistoryList = data.ChallengeStageHistoryList
 
         self._IsEmpty = false
         self._ActivityNo = data.ActivityNo
-        self._TotalScore = data.TotalScore
+
+        --region 本期当前总讨伐值
+        -- v3.8 从这个版本开始，使用新的字段
+        if data.IsResetOpen then
+            if not data.CurTotalScore then
+                XLog.Error("[XBossSingleData] 已经收到了v3.8新版本代码的标记，但是CurTotalScore却为空")
+            end
+            self._TotalScore = data.CurTotalScore or 0
+            -- 本期的最佳分数记录
+            self._TotalScoreBestRecord = data.TotalScore
+        else
+            self._TotalScore = data.TotalScore
+            self._TotalScoreBestRecord = data.TotalScore
+        end
+        --endregion
+        
         self._MaxScore = data.MaxScore
         self._OldLevelType = data.OldLevelType
         self._LevelType = data.LevelType
@@ -59,6 +108,9 @@ function XBossSingleData:SetData(data)
                 table.insert(self._ChallengeStageHistoryList, XBossSingleStageHistory.New(historyData))
             end
         end
+
+        -- v3.8 新增重置按钮
+        self._IsResetOpen = data.IsResetOpen
     end
 end
 
@@ -168,7 +220,27 @@ function XBossSingleData:GetChallengeTotalScore()
 end
 
 function XBossSingleData:GetChallengeDeleteRecordTime()
-   return self._ChallengeDeleteRecordTime 
+    return self._ChallengeDeleteRecordTime
+end
+
+function XBossSingleData:IsResetOpen()
+    return self._IsResetOpen
+end
+
+function XBossSingleData:GetMaxTotalScore()
+    return self._MaxTotalScore
+end
+
+function XBossSingleData:GetHistoryBestRecord()
+    return self._HistoryListBestRecord
+end
+
+function XBossSingleData:GetRecordCurrent()
+    return self._RecordCurrent
+end
+
+function XBossSingleData:GetTotalScoreBestRecord()
+    return self._TotalScoreBestRecord or 0
 end
 
 return XBossSingleData

@@ -3,7 +3,7 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenTip = XLuaUiManager.Register(XLuaUi, "UiFubenTip")
 
 local TitleContent = {
-    [XFubenConfigs.ChapterType.MainLine] = "UiFubenTipMainLineContent"
+    [XEnumConst.FuBen.ChapterType.MainLine] = "UiFubenTipMainLineContent"
 }
 
 function XUiFubenTip:OnAwake()
@@ -14,7 +14,7 @@ function XUiFubenTip:OnStart(teleportRewardCache, chapterType)
     self.TeleportRewardCache = teleportRewardCache
     -- 标题描述
     if not XTool.IsNumberValid(chapterType) then
-        chapterType = XFubenConfigs.ChapterType.MainLine
+        chapterType = XEnumConst.FuBen.ChapterType.MainLine
     end
     local content = XUiHelper.GetText(TitleContent[chapterType])
     self.TxtTitle.text = XUiHelper.GetText("UiFubenTipTitleContent", content)

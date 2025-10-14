@@ -56,6 +56,7 @@ function XSkyGardenCafeRound:DoExit(stageId)
     self:ResetData()
     self:SubEvent()
     self:DebugExitGame()
+    self:StopTimer()
 end
 
 function XSkyGardenCafeRound:OnExit()
@@ -312,6 +313,7 @@ function XSkyGardenCafeRound:DoRoundReStart()
     self._OwnControl:RefreshContainer(XMVCA.XSkyGardenCafe.CardContainer.Deck)
     --增加重置次数
     self._OwnControl:AddResetTimes()
+    XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
 end
 
 function XSkyGardenCafeRound:DoRequestRoundChange(dealCardIds, deckCardIds, reviewChangedNums, requestCb)
@@ -757,6 +759,8 @@ function XSkyGardenCafeRound:DeckToDeal(deckIndex, dealIndex)
     self._OwnControl:GetNpcFactory():LoadNpc(card)
     
     self._ReviewChangeNums[#self._ReviewChangeNums + 1] = card:GetTotalReview(true)
+    
+    XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
 end
 
 --- 游戏开始，重抽逻辑
@@ -975,10 +979,14 @@ function XSkyGardenCafeRound:UpdateDealCardInfo()
     local info = self._Model:GetBattleInfo()
     info:ResetAddCardScore()
     info:ResetAddCardReview()
+    local addScore = 0
+    local addReview = 0
     for _, card in pairs(self._DealEntities) do
-        info:AddCardScore(card:GetTotalCoffee(false))
-        info:AddCardReview(card:GetTotalReview(false))
+        addScore = addScore + card:GetTotalCoffee(false)
+        addReview = addReview + card:GetTotalReview(false)
     end
+    info:AddCardScore(addScore)
+    info:AddCardReview(addReview)
 end
 
 function XSkyGardenCafeRound:SetReDrawSelectIndex(index, value)
@@ -1577,6 +1585,28 @@ function XSkyGardenCafeRound:OpenBroadcastFirst()
         XMVCA.XBigWorldUI:Open("UiSkyGardenCafePopupBroadcastFirst", self._StageId)
         XLuaUiManager.SetMask(false)
     end, 900)
+end
+
+function XSkyGardenCafeRound:StartTimer()
+    self:StopTimer()
+    if not self._TipTime then
+        self._TipTime = tonumber(self._Model:GetConfig("LongTermInactivity"))
+    end
+    XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
+    self._ForeverTimer = XScheduleManager.ScheduleForever(function()
+        local time = XTime.GetServerNowTimestamp()
+        if time - XMVCA.XSkyGardenCafe:GetLastWaitTime() >= self._TipTime then
+            self._OwnControl:GetMainControl():ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.LongTimeWait)
+        end
+    end, 500)
+end
+
+function XSkyGardenCafeRound:StopTimer()
+    if not self._ForeverTimer then
+        return
+    end
+    XScheduleManager.UnSchedule(self._ForeverTimer)
+    self._ForeverTimer = nil
 end
 
 function XSkyGardenCafeRound:DebugDeckToDeal(cardId)

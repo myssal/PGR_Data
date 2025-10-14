@@ -33,6 +33,12 @@ function XExFubenShortStoryManager:ExOpenChapterUi(viewModel)
     end
 end
 
+function XExFubenShortStoryManager:ExOpenChapterUiByStageId(stageId)
+    local chapterMainId, chapterId = XFubenShortStoryChapterConfigs.GetStageMainId(stageId)
+    local hideDiffTog = XDataCenter.ShortStoryChapterManager.IsHaveHardDifficult(chapterMainId)
+    XLuaUiManager.Open("UiFubenMainLineChapterDP", chapterId, nil, not hideDiffTog)
+end
+
 function XExFubenShortStoryManager:ExGetFunctionNameType()
     return XFunctionManager.FunctionName.ShortStory
 end
@@ -69,8 +75,15 @@ end
 
 function XExFubenShortStoryManager:ExGetChapterViewModels(difficulty)
     if difficulty == nil then difficulty = XMVCA.XFuben.DifficultNormal end
-    if self.__ChapterViewModelDic == nil then self.__ChapterViewModelDic = {} end
-    if self.__ChapterViewModelDic[difficulty] then return self.__ChapterViewModelDic[difficulty] end
+    
+    if self.__ChapterViewModelDic == nil then
+        self.__ChapterViewModelDic = {} 
+    end
+    
+    if self.__ChapterViewModelDic[difficulty] then
+        return self:_UnShowViewModelFilter(self.__ChapterViewModelDic[difficulty])
+    end
+    
     self.__ChapterViewModelDic[difficulty] = {}
     local chapterIds = self:ExGetChapterIds(difficulty)
     for _, id in ipairs(chapterIds) do
@@ -91,7 +104,25 @@ function XExFubenShortStoryManager:ExGetChapterViewModels(difficulty)
         end
     end
 
-    return self.__ChapterViewModelDic[difficulty]
+    return self:_UnShowViewModelFilter(self.__ChapterViewModelDic[difficulty])
+end
+
+function XExFubenShortStoryManager:_UnShowViewModelFilter(viewModelDict)
+    local result = {}
+
+    if not XTool.IsTableEmpty(viewModelDict) then
+        for i, viewModel in pairs(viewModelDict) do
+            if viewModel.Config then
+                if not XTool.IsNumberValidEx(viewModel.Config.ShowCondition) or XConditionManager.CheckCondition(viewModel.Config.ShowCondition) then
+                    table.insert(result, viewModel)
+                end
+            else
+                table.insert(result, viewModel)
+            end
+        end
+    end
+    
+    return result
 end
 
 function XExFubenShortStoryManager:ExCheckHasOtherDifficulty()
@@ -179,11 +210,29 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
             Name = XFubenShortStoryChapterConfigs.GetChapterEnById(chapterMainId),
             Icon = XFubenShortStoryChapterConfigs.GetIconById(chapterMainId),
             FirstStage = XDataCenter.ShortStoryChapterManager.GetFirstStageByChapterId(subChapterId),
-            ActivityCondition = XFubenShortStoryChapterConfigs.GetActivityConditionByChapterId(subChapterId)
+            ActivityCondition = XFubenShortStoryChapterConfigs.GetActivityConditionByChapterId(subChapterId),
+            ShowCondition = XFubenShortStoryChapterConfigs.GetChapterShowCondition(chapterMainId),
         })
         self.__ChapterViewModelIdDic[subChapterId] = result
     end
     return result
+end
+
+function XExFubenShortStoryManager:GetChapterPassedCount(difficult)
+    -- 旧支线
+    local oldChapterIds = self:ExGetChapterIds(difficult)
+    
+    local count = 0
+
+    if not XTool.IsTableEmpty(oldChapterIds) then
+        for i, v in pairs(oldChapterIds) do
+            if XDataCenter.ShortStoryChapterManager.CheckChapterIsPassed(v) then
+                count = count + 1
+            end
+        end
+    end
+    
+    return count
 end
 
 -- ##################################### 私有方法 ########################################

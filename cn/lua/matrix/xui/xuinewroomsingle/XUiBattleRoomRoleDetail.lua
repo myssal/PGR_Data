@@ -49,7 +49,6 @@ function XUiBattleRoomRoleDetail:OnAwake()
     -- self.DynamicTable:SetProxy(XUiBattleRoomRoleGrid)
     -- self.DynamicTable:SetDelegate(self)
     self:RegisterUiEvents()
-    self.BtnTabShougezhe:SetDisable(not XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.Isomer))
     -- 模型初始化
     self.PanelRoleModelGo = self.UiModelGo.transform:FindTransform("PanelRoleModel")
     self.ImgEffectHuanren = self.UiModelGo.transform:FindTransform("ImgEffectHuanren")
@@ -67,7 +66,6 @@ function XUiBattleRoomRoleDetail:OnAwake()
     self.BtnPartner.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
     self.BtnConsciousness.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
     self.BtnWeapon.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
-    self.BtnFilter.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
 end
 
 -- team : XTeam 如果是旧系统改过来，可以参考下XTeamManager后面新加的接口去处理旧队伍数据
@@ -112,13 +110,6 @@ function XUiBattleRoomRoleDetail:OnStart(stageId, team, pos, proxy)
     self.CurrentCharacterType = self.CurrentEntityId > 0
     and self.Proxy:GetCharacterType(self.CurrentEntityId)
     or self.Proxy:GetDefaultCharacterType() --self.Team:GetCharacterType()
-    -- 刷新限制切换按钮状态
-    local limitType = self:GetCharacterLimitType()
-    if limitType == XFubenConfigs.CharacterLimitType.Normal then
-        self.BtnTabShougezhe:SetButtonState(CS.UiButtonState.Disable)
-    elseif limitType == XFubenConfigs.CharacterLimitType.Isomer then
-        self.BtnTabGouzaoti:SetButtonState(CS.UiButtonState.Disable)
-    end
     -- 注册自动关闭
     local openAutoClose, autoCloseEndTime, callback = self.Proxy:GetAutoCloseInfo()
     if openAutoClose then
@@ -152,10 +143,8 @@ function XUiBattleRoomRoleDetail:OnDestroy()
 end
 
 function XUiBattleRoomRoleDetail:InitFilter()
-    ---@type XCommonCharacterFilterAgency
-    local ag = XMVCA:GetAgency(ModuleId.XCommonCharacterFilter)
     local forceConfig = self.Proxy:GetFilterControllerConfig()
-    self.PanelFilter = ag:InitFilter(self.PanelCharacterFilter, self, forceConfig)
+    self.PanelFilter = XMVCA.XCommonCharacterFilter:InitFilter(self.PanelCharacterFilter, self, forceConfig)
     -- 是否屏蔽效应筛选
     self.PanelFilter:SetHideGeneralSkill(self:IsHideGeneralSkill())
     -- 选中角色回调
@@ -209,9 +198,7 @@ function XUiBattleRoomRoleDetail:InitFilter()
     end)
     self.DynamicTable = self.PanelFilter.DynamicTable
     self.PanelCharacterFilter.gameObject:SetActiveEx(true)
-    self.Transform:FindTransform("CharInfo").gameObject:SetActiveEx(false)
-    self.Transform:FindTransform("BtnFilter").gameObject:SetActiveEx(false)
-    local list = self.Proxy:GetEntities()
+    local list = self:GetEntities()
     list = self:FilterEntitiesWithRobotBlendRule(list)
     local currentEntityId = self.Proxy.GetCurrentEntityId and self.Proxy:GetCurrentEntityId(self.CurrentEntityId) or self.CurrentEntityId
     self.PanelFilter:ImportList(list, currentEntityId) -- 自动选择点进来的角色
@@ -268,9 +255,6 @@ function XUiBattleRoomRoleDetail:RegisterUiEvents()
     end
     self.BtnWeapon.CallBack = function()
         self:OnBtnWeaponClicked()
-    end
-    self.BtnFilter.CallBack = function()
-        self:OnBtnFilterClicked()
     end
     self.BtnTeaching.CallBack = function()
         self:OnBtnTeachingClicked()
@@ -381,7 +365,9 @@ function XUiBattleRoomRoleDetail:CheckCanJoin(entityId, finishedCallback)
 end
 
 function XUiBattleRoomRoleDetail:OnBtnQuitTeamClicked()
+    local operatedPos = self.Team:GetEntityIdPos(self.CurrentEntityId)
     self.Team:UpdateEntityTeamPos(self.CurrentEntityId, self.Pos, false)
+    self.Proxy:AOPOnBtnQuitTeamClickedAfter(self, operatedPos)
     self:Close(true)
 end
 
@@ -643,7 +629,7 @@ function XUiBattleRoomRoleDetail:RefreshTipGrids()
     local currentCharacterId = self.Proxy:GetCharacterViewModelByEntityId(self.CurrentEntityId):GetId()
     local currentAbility = self.Proxy:GetRoleAbility(self.CurrentEntityId)
     local viewModel
-    local list = self.Proxy:GetEntities()
+    local list = self:GetEntities()
     list = self:FilterEntitiesWithRobotBlendRule(list)
     for _, entity in ipairs(list) do
         viewModel = self.Proxy:GetCharacterViewModelByEntityId(entity:GetId())
@@ -838,6 +824,12 @@ function XUiBattleRoomRoleDetail:FilterEntitiesWithRobotBlendRule(list)
         end
     end
     
+    return list
+end
+
+function XUiBattleRoomRoleDetail:GetEntities()
+    local list = self.Proxy:GetEntities()
+    self.Proxy:AddSpeedrunRobots(self.StageId, list)
     return list
 end
 

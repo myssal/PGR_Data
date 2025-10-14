@@ -118,6 +118,7 @@ XItemManagerCreator = function()
         DlcMultiplayerCoin = 97020,  --DLC多人联机玩法货币
         DlcMultiplayerBpExp = 97045, --DLC多人联机玩法Bp经验
         ScoreTowerCoin = 96203, -- 新矿区代币
+        DlcRelinkCoin = 96203, -- DLC联机共斗玩法货币
         Theatre5Coin = 97054, -- 肉鸽5货币
     }
 
@@ -1904,15 +1905,15 @@ XItemManagerCreator = function()
                                 -- 可能之前锁定了，但解锁时没有立刻检查，这里触发后要尝试把队列里存在的奖励也弹出来
                                 XItemManager.CheckAutoGiftRewardShow()
                                 
-                                XUiManager.OpenUiObtain(allReward)
-                            end
+                            XUiManager.OpenUiObtain(allReward)
+                        end
                         end
                     end)
                 end
             end
         end 
     end
-    
+
     --- 设置自开型礼包弹窗锁定
     function XItemManager.SetAutoGiftRewardShowLock(isLock, noPop)
         LockAutoGiftRewardShow = isLock

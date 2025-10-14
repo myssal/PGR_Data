@@ -1,6 +1,7 @@
+---@class XMovieActionActorDisappear
 local XMovieActionActorDisappear = XClass(XMovieActionBase, "XMovieActionActorDisappear")
 
-function XMovieActionActorDisappear:Ctor(actionData)
+function XMovieActionActorDisappear:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -15,7 +16,7 @@ function XMovieActionActorDisappear:Ctor(actionData)
     self.SkipAnim = paramToNumber(params[6]) ~= 0
 end
 
-function XMovieActionActorDisappear:OnInit()
+function XMovieActionActorDisappear:OnEnter()
     for actorIndex,_ in pairs(self.ActorIndexs) do
         local actor = self.IsInTip and self.UiRoot:GetTipActor(actorIndex) or self.UiRoot:GetActor(actorIndex)
         self.Record[actorIndex] = {}
@@ -27,6 +28,7 @@ end
 
 function XMovieActionActorDisappear:OnRunning()
     for _, actorIndex in pairs(self.ActorIndexs) do
+        ---@type XUiGridMovieActor
         local actor = self.UiRoot:GetActor(actorIndex)
         actor:PlayAnimDisable(self.SkipAnim)
     end
@@ -44,6 +46,11 @@ function XMovieActionActorDisappear:OnUndo()
         actor:SetFace(self.Record[actorIndex].FaceId)
         actor:PlayAnimEnable(self.SkipAnim)
     end
+end
+
+---@param index number Actor下标
+function XMovieActionActorDisappear:IsDisappear(index)
+    return self.ActorIndexs[index] ~= nil
 end
 
 return XMovieActionActorDisappear

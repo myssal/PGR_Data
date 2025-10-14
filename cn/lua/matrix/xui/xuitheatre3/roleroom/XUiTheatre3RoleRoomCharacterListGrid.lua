@@ -78,6 +78,15 @@ function XUiTheatre3RoleRoomCharacterListGrid:SetData(character)
         self.PanelTxTag.gameObject:SetActiveEx(isLucy)
         self.PanelEnergy.gameObject:SetActiveEx(not isLucy)
     end
+    -- 生命树
+    if self.ImgTreeIcon then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSmallVisible"))
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+        self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSmall)
+        end
+    end
 end
 
 function XUiTheatre3RoleRoomCharacterListGrid:SetSelect(isSelected)

@@ -5,6 +5,7 @@ local XUiBiancaTheatrePanelReward = require("XUi/XUiBiancaTheatre/Common/XUiBian
 local XUiBiancaTheatreMain = XLuaUiManager.Register(XLuaUi, "UiBiancaTheatreMain")
 
 function XUiBiancaTheatreMain:OnAwake()
+    XMVCA.XMainLine2:SetLastExhibitionChapterByChapterType(XEnumConst.FuBen.ChapterType.BiancaTheatre)
     XDataCenter.BiancaTheatreManager.SetIsAutoOpen(true)
     XDataCenter.BiancaTheatreManager.SetIsAutoOpenSettleWin(true)
     self.IsShowPanel = true

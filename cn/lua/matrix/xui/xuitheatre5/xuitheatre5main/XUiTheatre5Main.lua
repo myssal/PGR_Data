@@ -33,6 +33,7 @@ function XUiTheatre5Main:OnStart()
 end
 
 function XUiTheatre5Main:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre5)
     self:Refresh()
     self:StartPVPTimer()
     self:UpdateShopShowReward()
@@ -84,7 +85,7 @@ function XUiTheatre5Main:OnBtnBattleClickEvent()
         return
     end
 
-    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:EnterPVPMode()
@@ -109,7 +110,7 @@ function XUiTheatre5Main:EnterPVPMode()
 end
 
 function XUiTheatre5Main:OnBtnPVEBattleClickEvent()
-    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:EnterPVEMode()
@@ -129,7 +130,7 @@ end
 
 --- 放弃游戏点击事件
 function XUiTheatre5Main:OnBtnRetreatClickEvent()
-    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:SingleFightSettle()
@@ -142,7 +143,7 @@ function XUiTheatre5Main:OnBtnRetreatClickEvent()
 end
 
 function XUiTheatre5Main:OnBtnPVERetreatClickEvent()
-    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:SingleFightSettle()
@@ -167,7 +168,7 @@ end
 
 function XUiTheatre5Main:SingleFightSettle()
     XMVCA.XTheatre5:TryPopupDialog(XUiHelper.GetText("TipTitle"), self._Control:GetClientConfigGameGiveUpContent(), nil, function()
-        if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+        if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
             if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
                 XUiManager.TipText('ActivityMainLineEnd')
                 self:Refresh()
@@ -185,12 +186,12 @@ function XUiTheatre5Main:SingleFightSettle()
 end
 
 function XUiTheatre5Main:_OnNewBattleBegin()
-    self._Control:SetCurPlayingMode(XMVCA.XTheatre5.EnumConst.GameModel.PVP)
-    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameModel.PVP)
+    self._Control:SetCurPlayingMode(XMVCA.XTheatre5.EnumConst.GameMode.PVP)
+    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameMode.PVP)
 end
 
 function XUiTheatre5Main:_OnBattleContinue()
-    self._Control:SetCurPlayingMode(XMVCA.XTheatre5.EnumConst.GameModel.PVP)
+    self._Control:SetCurPlayingMode(XMVCA.XTheatre5.EnumConst.GameMode.PVP)
 
     if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
         XUiManager.TipText('ActivityMainLineEnd')
@@ -199,7 +200,7 @@ function XUiTheatre5Main:_OnBattleContinue()
     end
 
     local curStatus = self._Control:GetCurPlayStatus()
-
+    
     if curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.Matching then
         -- 重新进入匹配界面展示后请求进入战斗
         XMVCA.XTheatre5.BattleCom:OpenMatchLoadingUi(self._Control.PVPControl:GetCurMatchedEnemy())
@@ -227,6 +228,7 @@ function XUiTheatre5Main:_OnBattleContinue()
 end
 
 function XUiTheatre5Main:OnClickClose()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.Theatre5)
     self:PlayAnimationWithMask("Disable", function()
         --win包很低概率偶现角色界面和主界面套娃，无法复现，故先容错处理
         XLuaUiManager.SafeClose("UiTheatre5ChooseCharacter")

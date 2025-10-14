@@ -2,7 +2,7 @@
 ---@field UiRoot XUiMovie
 local XMovieActionSelection = XClass(XMovieActionBase, "XMovieActionSelection")
 
-function XMovieActionSelection:Ctor(actionData)
+function XMovieActionSelection:OnInit(actionData)
     self.MAX_SELECTION_NUM = 3
     self.DEFAULT_SELECTION_TYPE = 1
 
@@ -63,7 +63,7 @@ function XMovieActionSelection:OnUiRootDestroy()
     self.RepeatClick = nil
 end
 
-function XMovieActionSelection:OnInit()
+function XMovieActionSelection:OnEnter()
     --成环时隐藏掉导致成环的分支
     self.SelectList = {}
     for _, data in pairs(self.OriginalSelectList) do
@@ -200,12 +200,26 @@ function XMovieActionSelection:OnClickTabCallBack(tabIndex)
     local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
     XMVCA.XMovie:RequestRecordOption(movieId, self.ActionId, tabIndex)
 
+    -- 缓存选项选择
+    local originIndex
+    for i, originSelectedData in ipairs(self.OriginalSelectList) do
+        if actionId == originSelectedData.ActionId then
+            originIndex = i
+            break
+        end
+    end
+    XDataCenter.MovieManager.CacheSelectionData(self.ActionId, originIndex)
+    
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
 end
 
 function XMovieActionSelection:OnUndo()
     XDataCenter.MovieManager.RemoveFromReviewDialogList()
     self.UiRoot.LastSelectedId = nil
+end
+
+function XMovieActionSelection:GetDelaySelectKey()
+    return self.DelaySelectKey
 end
 
 -- 选项是否阅读过
@@ -230,6 +244,33 @@ function XMovieActionSelection:IsSelectionLock(selData)
     local optionIndex = results[2]
     local isPrePassed = XMVCA.XMovie:IsOptionPassed(movieId, actionId, optionIndex)
     return not isPrePassed
+end
+
+-- 获取选项数量
+function XMovieActionSelection:GetSelectionCnt()
+    return #self.OriginalSelectList
+end
+
+-- 获取选项的ActionId
+function XMovieActionSelection:GetSelectionActionId(index)
+    local selection = self.OriginalSelectList[index]
+    if selection then
+        if XTool.IsNumberValidEx(selection.ActionId) then
+            return selection.ActionId
+        else
+            return XDataCenter.MovieManager.GetNextActionId(self.ActionId)
+        end
+    else
+        XLog.Error(string.format("ActionId %s, 选择分支对话(ActionType 302)，未配置第%s个选项，请检查！", self:GetActionId(), index))
+    end
+end
+
+function XMovieActionSelection:OnPassedActionSkip()
+    local index = XDataCenter.MovieManager.GetPassedSelectionIndex(self.ActionId)
+    local selectedData = self.OriginalSelectList[index]
+    local ROLE_NAME = "[ " .. CS.XTextManager.GetText("StoryReviewTip") .. " ]"
+    local content = XMVCA.XMovie:ExtractGenderContent(selectedData.DialogContent)
+    XDataCenter.MovieManager.PushInReviewDialogList(ROLE_NAME, content)
 end
 
 return XMovieActionSelection

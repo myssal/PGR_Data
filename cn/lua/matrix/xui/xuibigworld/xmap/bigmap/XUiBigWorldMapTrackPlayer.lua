@@ -14,7 +14,7 @@ end
 
 function XUiBigWorldMapTrackPlayer:OnBtnAnchorClick()
     if self._PosX and self._PosY then
-        self.Parent:AnchorToPosition(self._PosX, self._PosY)
+        self.Parent:AnchorToPosition(self._PosX, self._PosY, true)
     end
 end
 

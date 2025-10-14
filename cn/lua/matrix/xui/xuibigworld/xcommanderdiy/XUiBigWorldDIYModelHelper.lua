@@ -25,6 +25,11 @@ function XUiBigWorldDIYModelHelper:Ctor(modelGameObject, drag)
 
     self._OriginalMaleCameraPosY = self._NearMaleCamera.transform.localPosition.y
     self._OriginalFemaleCameraPosY = self._NearFemaleCamera.transform.localPosition.y
+
+    self._EulerAnglesYRecord = {
+        [XEnumConst.PlayerFashion.Gender.Male] = 180,
+        [XEnumConst.PlayerFashion.Gender.Female] = 180
+    }
 end
 
 ---@param entitys XBWCommanderDIYPartEntity[]
@@ -45,9 +50,10 @@ function XUiBigWorldDIYModelHelper:LoadModel(gender, entitys)
         if string.IsNilOrEmpty(modelId) then
             return
         end
-
+        
         local partEntitys = self:_ExtractingPartEntitys(entitys)
-
+        
+        self:_LoadMaterials(modelId, fashionEntity, gender)
         self:_LoadPartModels(modelId, entitys, gender, fashionEntity:GetTypeId())
         self:_BindModelDragTarget(gender)
     end
@@ -197,12 +203,10 @@ function XUiBigWorldDIYModelHelper:PlayResettingAnimation(gender)
         return
     end
 
-    local modelId = self:GetModelId(gender)
-
     if self._CurrentEntryAnimation then
-        self:PlayAnimation(modelId, self._CurrentEntryAnimation .. "_Start", 1)
+        self:PlayAnimation(gender, self._CurrentEntryAnimation .. "_Start", 1)
     else
-        self:PlayAnimation(modelId, "UIStand01")
+        self:PlayAnimation(gender, "UIStand01")
     end
 end
 
@@ -264,7 +268,11 @@ end
 function XUiBigWorldDIYModelHelper:UnloadModel(gender)
     if self:IsGenderModelLoaded(gender) then
         local modelId = self:GetModelId(gender)
+        local target = self:_ExtractingModelRoot(gender)
 
+        if not XTool.UObjIsNil(target) then
+            self._EulerAnglesYRecord[gender] = target.transform.eulerAngles.y
+        end
         self._ModelContorller:DestroyModel(modelId)
         self._CurrentModelId[gender] = nil
     end
@@ -279,6 +287,16 @@ function XUiBigWorldDIYModelHelper:UnloadPartModel(gender, typeId)
 end
 
 function XUiBigWorldDIYModelHelper:Release()
+    local maleTarget = self:_ExtractingModelRoot(XEnumConst.PlayerFashion.Gender.Male)
+    local femaleTarget = self:_ExtractingModelRoot(XEnumConst.PlayerFashion.Gender.Female)
+
+    if not XTool.UObjIsNil(maleTarget) then
+        self._EulerAnglesYRecord[XEnumConst.PlayerFashion.Gender.Male] = maleTarget.transform.eulerAngles.y
+    end
+    if not XTool.UObjIsNil(femaleTarget) then
+        self._EulerAnglesYRecord[XEnumConst.PlayerFashion.Gender.Female] = femaleTarget.transform.eulerAngles.y
+    end
+
     self._ModelContorller:DestroyAllModel()
     self._CurrentModelId = {}
 end
@@ -347,7 +365,7 @@ end
 function XUiBigWorldDIYModelHelper:_BindModelDragTarget(gender)
     local target = self:_ExtractingModelRoot(gender)
 
-    target.transform.rotation = CS.UnityEngine.Quaternion.Euler(0, 180, 0)
+    target.transform.rotation = CS.UnityEngine.Quaternion.Euler(0, self._EulerAnglesYRecord[gender] or 180, 0)
     if not XTool.UObjIsNil(target) then
         self._Drag.Target = target.transform
     end

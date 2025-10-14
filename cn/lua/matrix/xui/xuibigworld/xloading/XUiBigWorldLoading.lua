@@ -22,6 +22,11 @@ function XUiBigWorldLoading:OnEnable()
     self:_RefreshBackground()
     -- 进入空花前关闭音乐
     XLuaAudioManager.StopCurrentBGM()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, XMVCA.XBigWorldQuest.QuestOpType.PopupBegin)
+end
+
+function XUiBigWorldLoading:OnDisable()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, XMVCA.XBigWorldQuest.QuestOpType.PopupEnd)
 end
 
 function XUiBigWorldLoading:OnDestroy()

@@ -8,7 +8,8 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
     local chapterId = viewModel:GetId()
     local chapterInfo = XDataCenter.ExtraChapterManager.GetChapterInfo(chapterId)
     local chapterCfg = XDataCenter.ExtraChapterManager.GetChapterDetailsCfgByChapterIdAndDifficult(chapterInfo.ChapterMainId, difficulty)
-    if chapterInfo.Unlock then
+    local isUnlock = XDataCenter.ExtraChapterManager.GetChapterUnlock(chapterId)
+    if isUnlock then
         local id = chapterCfg and chapterCfg.ChapterId or nil
         if id and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, id)then
             return
@@ -28,6 +29,16 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
         local tipMsg = XDataCenter.FubenManager.GetFubenOpenTips(chapterInfo.FirstStage)
         XUiManager.TipMsg(tipMsg)
     end
+end
+
+function XExFubenExtralChapterManager:ExOpenChapterUiByStageId(stageId)
+    local mainId, chapterId = XFubenExtraChapterConfigs.GetStageMainId(stageId)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, mainId)then
+        return
+    end
+
+    local chapterCfg = XDataCenter.ExtraChapterManager.GetChapterDetailsCfgByChapterIdAndDifficult(mainId, XDataCenter.FubenManager.DifficultNormal)
+    XLuaUiManager.Open("UiFubenMainLineChapterFw", chapterCfg, nil, false)
 end
 
 function XExFubenExtralChapterManager:ExGetFunctionNameType()
@@ -123,8 +134,10 @@ function XExFubenExtralChapterManager:ExGetChapterViewModelById(id, difficulty)
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(config.ZhouMuId)
             end,
             GetIsLocked = function(proxy)
-                local chapterInfo = XDataCenter.ExtraChapterManager.GetChapterInfo(proxy:GetId())
-                if chapterInfo.Unlock then return false end
+                local chapterId = proxy:GetId()
+                local chapterInfo = XDataCenter.ExtraChapterManager.GetChapterInfo(chapterId)
+                local isUnlock = XDataCenter.ExtraChapterManager.GetChapterUnlock(chapterId)
+                if isUnlock then return false end
                 if chapterInfo.IsActivity then
                     local isUnLock, _ = XDataCenter.ExtraChapterManager.CheckActivityCondition(proxy:GetId())
                     if isUnLock then

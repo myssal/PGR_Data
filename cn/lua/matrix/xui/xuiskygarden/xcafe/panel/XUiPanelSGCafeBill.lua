@@ -1,6 +1,6 @@
 ---@class XUiGridSGCafeTarget : XUiNode
 ---@field _Control XSkyGardenCafeControl
----@field Parent XUiPanelSGCafeBill
+---@field Parent XUiSkyGardenCafeGame
 ---@field StateControl XUiComponent.XUiStateControl
 local XUiGridSGCafeTarget = XClass(XUiNode, "XUiGridSGCafeTarget")
 
@@ -215,11 +215,16 @@ function XUiPanelSGCafeBill:OnSettlement()
 end
 
 function XUiPanelSGCafeBill:Dequeue(isForce)
+    ---@type XSkyGardenCafeBillData
     local data = tableRemove(self._DataQueue, 1)
     if not data then
         return
     end
-  
+    if data.TotalCoffee - self._CurTotalCafe > 0 then
+        self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.AddCoffee)
+    elseif data.TotalReview - self._CurTotalReview > 0 then
+        self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.AddReview)
+    end
     self:RefreshCoffee(data, isForce)
     self:RefreshReview(data, isForce)
     
@@ -274,24 +279,24 @@ function XUiPanelSGCafeBill:PlayResourceChangeSound(cur, next, isCoffee)
     local isSub = next < cur
     self:StopResourceChangeSound(isCoffee)
     if isCoffee then
-        local cueId
+        local cueKey
         if isAdd then
-            cueId = XMVCA.XSkyGardenCafe.CafeCueId.AddCoffeeCueId
+            cueKey = XMVCA.XSkyGardenCafe.CafeCueKey.AddCoffeeCueKey
         elseif isSub then
-            cueId = XMVCA.XSkyGardenCafe.CafeCueId.SubCoffeeCueId
+            cueKey = XMVCA.XSkyGardenCafe.CafeCueKey.SubCoffeeCueKey
         end
-        if cueId then
-            self._CoffeeAudioInfo =  XMVCA.XSkyGardenCafe:PlaySound(cueId)
+        if cueKey then
+            self._CoffeeAudioInfo = self.AudioPlayer:PlayByKeyName(cueKey)
         end
     else
-        local cueId
+        local cueKey
         if isAdd then
-            cueId = XMVCA.XSkyGardenCafe.CafeCueId.AddReviewCueId
+            cueKey = XMVCA.XSkyGardenCafe.CafeCueKey.AddReviewCueKey
         elseif isSub then
-            cueId = XMVCA.XSkyGardenCafe.CafeCueId.SubReviewCueId
+            cueKey = XMVCA.XSkyGardenCafe.CafeCueKey.SubReviewCueKey
         end
-        if cueId then
-            self._ReviewAudioInfo =  XMVCA.XSkyGardenCafe:PlaySound(cueId)
+        if cueKey then
+            self._ReviewAudioInfo = self.AudioPlayer:PlayByKeyName(cueKey)
         end
     end
 end

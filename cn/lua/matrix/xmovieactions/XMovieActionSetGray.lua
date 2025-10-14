@@ -7,7 +7,7 @@ local ALL_BG_INDEX = 999
 ---@field UiRoot XUiMovie
 local XMovieActionSetGray = XClass(XMovieActionBase, "XMovieActionSetGray")
 
-function XMovieActionSetGray:Ctor(actionData)
+function XMovieActionSetGray:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -89,6 +89,27 @@ function XMovieActionSetGray:SetAllBgGray(value)
         bg:SetGrayScale(value)
         index = index + 1
     end
+end
+
+function XMovieActionSetGray:IsPassedActionRun(index)
+    if self.Value == 0 then
+        return false
+    end
+
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionSetGray:IsActionCover(action)
+    return action:GetType() == self:GetType()
+end
+
+function XMovieActionSetGray:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionSetGray

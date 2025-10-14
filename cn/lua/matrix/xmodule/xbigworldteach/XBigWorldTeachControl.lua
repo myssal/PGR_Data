@@ -67,7 +67,7 @@ function XBigWorldTeachControl:GetUnlockTeachsByGroupId(groupId)
     if groupId ~= self._LastGroupId then
         if not XTool.IsTableEmpty(teachs) then
             for _, teach in pairs(teachs) do
-                if self:CheckTeachIsUnlock(teach.Id) then
+                if self:CheckTeachIsUnlock(teach.Id) and not self:CheckTeachIsHide(teach.Id) then
                     table.insert(result, teach)
                 end
             end
@@ -76,7 +76,7 @@ function XBigWorldTeachControl:GetUnlockTeachsByGroupId(groupId)
         teachs = self._Model:GetTeachLatestList()
 
         for _, teach in pairs(teachs) do
-            if self:CheckTeachIsUnlock(teach.Id) then
+            if self:CheckTeachIsUnlock(teach.Id) and not self:CheckTeachIsHide(teach.Id) then
                 local config = self._Model:GetBigWorldHelpCourseConfigById(teach.Id)
 
                 table.insert(result, config)
@@ -168,11 +168,15 @@ function XBigWorldTeachControl:CheckTeachReadPriority(teachAConfig, teachBConfig
 end
 
 function XBigWorldTeachControl:CheckTeachIsRead(teachId)
-    return self._Model:CheckTeachIsRead(teachId)
+    return self._Model:CheckTeachIsRead(teachId) or self:CheckTeachIsHide(teachId)
 end
 
 function XBigWorldTeachControl:CheckTeachIsUnlock(teachId)
     return self._Model:CheckTeachIsUnlock(teachId)
+end
+
+function XBigWorldTeachControl:CheckTeachIsHide(teachId)
+    return self._Model:GetBigWorldHelpCourseIsHideById(teachId)
 end
 
 function XBigWorldTeachControl:SearchTeach(searchKey)
@@ -180,7 +184,7 @@ function XBigWorldTeachControl:SearchTeach(searchKey)
     local teachs = self._Model:GetBigWorldHelpCourseConfigs()
 
     for _, teach in pairs(teachs) do
-        if string.find(teach.Name, searchKey, 1, false) and self:CheckTeachIsUnlock(teach.Id) then
+        if not self:CheckTeachIsHide(teach.Id) and self:CheckTeachIsUnlock(teach.Id) and string.find(teach.Name, searchKey, 1, false) then
             table.insert(result, teach)
         end
     end
@@ -195,6 +199,7 @@ end
 function XBigWorldTeachControl:ReadTeach(teachId, callback)
     if self:CheckTeachIsUnlock(teachId) then
         if not self:CheckTeachIsRead(teachId) then
+            self._Model:UpdateTeachDataRead(teachId)
             self:RequestBigWorldHelpCourseRead(teachId, callback)
         end
     end

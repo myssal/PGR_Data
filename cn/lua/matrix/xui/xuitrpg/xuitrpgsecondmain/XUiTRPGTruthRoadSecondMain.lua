@@ -2,6 +2,7 @@ local XUiPanelStory = require("XUi/XUiActivityBrief/XUiPanelStory")
 local Object
 local XUiPanelStoryJump = require("XUi/XUiFubenMainLineChapter/XUiPanelStoryJump")
 local XUiTRPGTruthRoadSecondMainStages = require("XUi/XUiTRPG/XUiTRPGSecondMain/XUiTRPGTruthRoadSecondMainStages")
+local XUiPlotExhibitionUtil = require("XUi/XUiPlotExhibition/XUiPlotExhibitionUtil")
 
 --常规主线的关卡界面
 local XUiTRPGTruthRoadSecondMain = XLuaUiManager.Register(XLuaUi, "UiTRPGTruthRoadSecondMain")
@@ -31,11 +32,12 @@ function XUiTRPGTruthRoadSecondMain:OnStart(secondMainId)
     self:OnCheckRedPoint()
     self:InitStagesMap()
     self:InitPanelStoryJump()
+    XUiPlotExhibitionUtil.Init(self, "SafeAreaContentPane/PanelEnterDialog/UiPlotExhibitionPanelMode/BtnToggle")
 end
 
 function XUiTRPGTruthRoadSecondMain:OnEnable()
     self:Refresh()
-    self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.TRPGChapterId, XFubenConfigs.ChapterType.MainLine, self.SecondMainId)
+    self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.TRPGChapterId, XEnumConst.FuBen.ChapterType.MainLine, self.SecondMainId)
 end
 
 function XUiTRPGTruthRoadSecondMain:OnDestroy()
@@ -156,6 +158,10 @@ function XUiTRPGTruthRoadSecondMain:OpenEnterDialog(secondMainStageId)
 
     self.StageId = stageId
     self.PanelEnterDialog.gameObject:SetActiveEx(true)
+
+    if self.StageId then
+        XUiPlotExhibitionUtil.UpdateSpeedrunBtnToggle(self, self.StageId)
+    end
 end
 
 function XUiTRPGTruthRoadSecondMain:CloseEnterDialog()

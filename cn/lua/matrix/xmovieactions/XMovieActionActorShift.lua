@@ -4,7 +4,7 @@ local LineAnimCurve = CS.UnityEngine.AnimationCurve.Linear(0, 0, 1, 1)
 
 local XMovieActionActorShift = XClass(XMovieActionBase, "XMovieActionActorShift")
 
-function XMovieActionActorShift:Ctor(actionData)
+function XMovieActionActorShift:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -40,6 +40,29 @@ end
 function XMovieActionActorShift:OnUndo()
     local actor = self.UiRoot:GetActor(self.ActorIndex)
     actor:SetImagePos(self.Record.OriginPos)
+end
+
+function XMovieActionActorShift:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionActorShift:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return self.ActorIndex == action.ActorIndex
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.ACTOR_DISAPPEAR then
+        return action:IsDisappear(self.ActorIndex)
+    end
+    return false
+end
+
+function XMovieActionActorShift:OnPassedActionRun()
+    local actor = self.UiRoot:GetActor(self.ActorIndex)
+    actor:SetImagePos(self.TargetPos)
 end
 
 return XMovieActionActorShift

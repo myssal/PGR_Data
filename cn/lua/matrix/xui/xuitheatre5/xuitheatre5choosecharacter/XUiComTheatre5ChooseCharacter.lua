@@ -17,7 +17,8 @@ end
 
 --- 初始化各个子面板，子类可重写
 function XUiComTheatre5ChooseCharacter:_InitPanels()
-
+    self.TxtName = self.TxtName or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/DetailRoot/PanelName/TxtName (1)", "Text")
+    
     if self.PanelDetail then
         self.PanelDetail.gameObject:SetActiveEx(false)
     end
@@ -30,13 +31,13 @@ function XUiComTheatre5ChooseCharacter:_InitPanels()
     self.PanelCharacterList = XUiPanelTheatre5CharacterList.New(self.ListCharacter, self)
 
     local gameMode = self._Control:GetCurPlayingMode()
-    if gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         ---@type XUiPanelTheatre5CharacterShows
         self.PanelCharacterShows = XUiPanelTheatre5CharacterShows.New(self.PanelFirst, self)
         self.PanelCharacterShows:Open()
         ---@type XUiPanelTheatre5CharacterDetail
         self.PanelCharacterDetail = XUiPanelTheatre5CharacterDetail.New(self.PanelDetail, self)
-    elseif gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    elseif gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         ---@type XUiPanelTheatre5PVECharacterShows
         self.PanelCharacterShows = XUiPanelTheatre5PVECharacterShows.New(self.PanelFirst, self)
         self.PanelCharacterShows:Open()
@@ -63,6 +64,7 @@ function XUiComTheatre5ChooseCharacter:RefreshDetailShow(index, cfg)
     -- 检查引导
     XDataCenter.GuideManager.CheckGuideOpen()
     
+    self.TxtName.text = cfg.Name
     if self:CheckIsShowDetail() then
         self:PlayAnimation('FadeOut', function()
             self.PanelCharacterDetail:RefreshShow(cfg)
@@ -72,6 +74,7 @@ function XUiComTheatre5ChooseCharacter:RefreshDetailShow(index, cfg)
         self.PanelCharacterDetail:RefreshShow(cfg)
         self:PlayAnimation('Enable')
     end
+    
     self.Parent:SetSkipId(cfg.SkipId)
 end
 

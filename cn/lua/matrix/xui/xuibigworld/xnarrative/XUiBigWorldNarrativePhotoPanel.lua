@@ -1,42 +1,47 @@
----@class XUiBigWorldNarrativePhotoPanel : XUiNode
+local XUiPanelBigWorldNarrative = require("XUi/XUiBigWorld/XNarrative/XUiPanelBigWorldNarrative")
+
+---@class XUiBigWorldNarrativePhotoPanel : XUiPanelBigWorldNarrative
 ---@field TxtTitle UnityEngine.UI.Text
 ---@field TxtContent UnityEngine.UI.Text
 ---@field RImgPhoto UnityEngine.UI.RawImage
 ---@field BtnPhoto XUiComponent.XUiButton
 ---@field TranPhoto UnityEngine.RectTransform
-local XUiBigWorldNarrativePhotoPanel = XClass(XUiNode, "XUiBigWorldNarrativePhotoPanel")
+local XUiBigWorldNarrativePhotoPanel = XClass(XUiPanelBigWorldNarrative, "XUiBigWorldNarrativePhotoPanel")
 
-function XUiBigWorldNarrativePhotoPanel:OnStart()
+function XUiBigWorldNarrativePhotoPanel:OnInitCb()
     self._IsFullScreenPhoto = false
-    if not self.BtnPhoto then
-        return
-    end
-    self._RImgPhotoBigScale = Vector3(1,1,1)
-    self._RImgPhotoBigOffsetMax = Vector2(0, 0)
-    self._RImgPhotoBigOffsetMin = Vector2(0, 0)
-    self._RImgPhotoOffsetMax = self.TranPhoto.offsetMax
-    self._RImgPhotoOffsetMin = self.TranPhoto.offsetMin
-    self._RImgPhotoNormalScale = self.TranPhoto.localScale
-    self.BtnPhoto.CallBack = Handler(self, self.OpenPhoto)
+    self.BtnPhoto:AddEventListener(handler(self, self.OpenPhoto))
+    self.BtnClose:AddEventListener(handler(self, self.ClosePhoto))
 end
 
 function XUiBigWorldNarrativePhotoPanel:Refresh(narrativeId)
+    self._narrativeId = narrativeId
+    self._IsFullScreenPhoto = false
     self.TxtTitle.text = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
     self.TxtContent.text = XMVCA.XBigWorldService:GetNarrativeContent(narrativeId)
-    self.RImgPhoto:SetRawImage(XMVCA.XBigWorldService:GetNarrativeRawImage(narrativeId))
+    self.RImgPhoto:SetRawImage(XMVCA.XBigWorldService:GetNarrativeAssetUrl(narrativeId))
+    self.RImgPhoto.gameObject:SetActiveEx(true)
+    self.PanelBig.gameObject:SetActiveEx(false)
+    self:Open()
 end
 
 function XUiBigWorldNarrativePhotoPanel:OpenPhoto()
     if self._IsFullScreenPhoto then
-        self.RImgPhoto.transform.localScale = self._RImgPhotoNormalScale
-        self.TranPhoto.offsetMax = self._RImgPhotoOffsetMax
-        self.TranPhoto.offsetMin = self._RImgPhotoOffsetMin
-    else
-        self.RImgPhoto.transform.localScale = self._RImgPhotoBigScale
-        self.TranPhoto.offsetMax = self._RImgPhotoBigOffsetMax
-        self.TranPhoto.offsetMin = self._RImgPhotoBigOffsetMin
+        return
     end
-    self._IsFullScreenPhoto = not self._IsFullScreenPhoto
+    self._IsFullScreenPhoto = true
+    self.RImgPhotoBig:SetRawImage(XMVCA.XBigWorldService:GetNarrativeAssetUrl(self._narrativeId))
+    self.RImgPhoto.gameObject:SetActiveEx(false)
+    self.PanelBig.gameObject:SetActiveEx(true)
+end
+
+function XUiBigWorldNarrativePhotoPanel:ClosePhoto()
+    if not self._IsFullScreenPhoto then
+        return
+    end
+    self._IsFullScreenPhoto = false
+    self.RImgPhoto.gameObject:SetActiveEx(true)
+    self.PanelBig.gameObject:SetActiveEx(false)
 end
 
 return XUiBigWorldNarrativePhotoPanel

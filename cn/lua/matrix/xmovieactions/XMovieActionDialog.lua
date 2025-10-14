@@ -4,7 +4,7 @@ local SPINE_INDEX_OFFSET = 100 -- spine位置的偏移值
 
 local XMovieActionDialog = XClass(XMovieActionBase, "XMovieActionDialog")
 
-function XMovieActionDialog:Ctor(actionData)
+function XMovieActionDialog:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.CvId = paramToNumber(params[18])
@@ -53,9 +53,9 @@ function XMovieActionDialog:IsBlock()
     return true
 end
 
-function XMovieActionDialog:OnInit()
+function XMovieActionDialog:OnEnter()
     self.DialogContent = self:GetDialogContent()
-    self.IsAutoPlay = XDataCenter.MovieManager.IsAutoPlay()
+    self.IsAutoPlay = XDataCenter.MovieManager.GetIsAutoPlay()
     self.UiRoot:SetBtnNextCallback(function() self:OnClickBtnSkipDialog() end)
     self.UiRoot.DialogTypeWriter.CompletedHandle = function() self:OnTypeWriterComplete() end
     self.UiRoot.PanelDialog.gameObject:SetActiveEx(true)
@@ -238,6 +238,34 @@ function XMovieActionDialog:GetDialogContent()
     content = XUiHelper.ConvertLineBreakSymbol(content)
 
     return content
+end
+
+function XMovieActionDialog:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionDialog:IsActionCover(action)
+    return action:GetType() == self:GetType()
+end
+
+function XMovieActionDialog:OnPassedActionRun()
+    self.DialogContent = self:GetDialogContent()
+    self.UiRoot.PanelDialog.gameObject:SetActiveEx(true)
+    self.UiRoot.TxtName.text = self.RoleName
+    self.UiRoot.TxtWords.text = self.DialogContent
+    self.UiRoot.TxtName.gameObject:SetActiveEx(self.RoleName ~= "")
+    self:PlaySpeakerAnim()
+    XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
+end
+
+function XMovieActionDialog:OnPassedActionSkip()
+    self.DialogContent = self:GetDialogContent()
+    XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
 end
 
 return XMovieActionDialog

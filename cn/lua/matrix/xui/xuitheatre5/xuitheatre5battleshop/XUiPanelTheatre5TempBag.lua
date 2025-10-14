@@ -11,16 +11,13 @@ function XUiPanelTheatre5TempBag:OnStart()
         TempBagLimit = self._Control.ShopControl:GetTempBagSizeLimit()
     end
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
     self:UpdateTempBagContainers()
 
 end
 
 function XUiPanelTheatre5TempBag:OnEnable()
     self:RefreshBagShow()
-end
-
-function XUiPanelTheatre5TempBag:OnDisable()
-   
 end
 
 function XUiPanelTheatre5TempBag:UpdateTempBagContainers()  
@@ -83,11 +80,19 @@ end
 
 --临时物品自动换上
 function XUiPanelTheatre5TempBag:SendAutoSwitch(itemData, srcIndex, targetEquipped, targetIndex)
-    self._Control.ShopControl:SendItemSwitch(itemData.InstanceId, itemData.ItemType, false, srcIndex, true, targetEquipped, targetIndex)
+    -- 重复自动装备，会带来报错
+    if self._IsLockRequest then
+        return
+    end
+    self._IsLockRequest = true
+    self._Control.ShopControl:SendItemSwitch(itemData.InstanceId, itemData.ItemType, false, srcIndex, true, targetEquipped, targetIndex,  function()
+        self._IsLockRequest = false
+    end)
 end
 
 function XUiPanelTheatre5TempBag:OnDestroy()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
 end
 
 return XUiPanelTheatre5TempBag

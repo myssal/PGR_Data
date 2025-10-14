@@ -517,8 +517,13 @@ end
 
 --兼容旧编队系统
 ---@return XTeam
-function XStrongholdTeam:CreateTempTeam()
-    local teamData = {}
+function XStrongholdTeam:GetOrCreateTempTeam()
+    local teamData = self.TempTeam or {}
+    -- 先清空
+    for k, v in pairs(teamData) do
+        teamData[k] = nil
+    end
+
     teamData.FirstFightPos = self._FirstPos
     teamData.CaptainPos = self._CaptainPos
     teamData.TeamData = {}
@@ -558,7 +563,9 @@ function XStrongholdTeam:CreateTempTeam()
     end)
     xTeam:Save()
 
-    return xTeam
+    self.TempTeam = xTeam
+
+    return self.TempTeam
 end
 
 --region 角色效应技能相关

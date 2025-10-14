@@ -20,10 +20,10 @@ function XBWMapInterfaceBase:OpenTagPinDetail(bindPin, levelId, pinData)
 end
 
 ---@param pinDatas XBWMapPinData[]
-function XBWMapInterfaceBase:OpenPinSelectList(pinDatas, position)
+function XBWMapInterfaceBase:OpenPinSelectList(pinDatas, transform)
 end
 
-function XBWMapInterfaceBase:AnchorToPosition(x, y, isIgnoreTween)
+function XBWMapInterfaceBase:AnchorToPosition(x, y, isCenter, isIgnoreTween)
 end
 
 function XBWMapInterfaceBase:GetCurrentSelectGroupId()

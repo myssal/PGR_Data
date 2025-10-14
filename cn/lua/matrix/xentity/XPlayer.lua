@@ -155,6 +155,44 @@ function Player.SetCurrMedalId(medalId)
 end
 
 -----------------服务端数据同步-----------------
+-- 红点记录
+function Player.UpadtePlayerRedPointRecord(pointId, pointType)
+    local pointData = Player.GetPlayerRedPointRecordDataByPointId(pointId)
+
+    if not table.contains(pointData.PointTypes, pointType) then
+        table.insert(pointData.PointTypes, pointType)
+    end
+end
+
+function Player.GetPlayerRedPointRecordDataByPointId(pointId)
+    if PlayerData.PointRecordInfo == nil then
+        PlayerData.PointRecordInfo = {}
+    end
+
+    if not XTool.IsTableEmpty(PlayerData.PointRecordInfo) then
+        for i, v in pairs(PlayerData.PointRecordInfo) do
+            if v.Id == pointId then
+                return v
+            end
+        end
+    end
+    
+    local newData = {
+        Id = pointId,
+        PointTypes = {},
+    }
+    
+    table.insert(PlayerData.PointRecordInfo, newData)
+    
+    return newData
+end
+
+function Player.CheckIsReddotShow(pointId, pointType)
+    local pointData = Player.GetPlayerRedPointRecordDataByPointId(pointId)
+    
+    return not table.contains(pointData.PointTypes, pointType)
+end
+
 -- 看板娘Id
 function Player.SetDisplayCharId(charId)
     PlayerData.DisplayCharId = charId

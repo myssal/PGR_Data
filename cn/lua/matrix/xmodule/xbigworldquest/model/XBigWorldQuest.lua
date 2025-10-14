@@ -10,6 +10,7 @@ function XBigWorldQuestObjective:Ctor(processId)
     self._State = 0
     self._MaxProgress = 0
     self._ProgressType = 0
+    self._IsSkipAnimation = false
 end
 
 function XBigWorldQuestObjective:UpdateData(objective)
@@ -43,8 +44,24 @@ function XBigWorldQuestObjective:IsFinish()
     return self._State == ObjectiveState.Finished
 end
 
+function XBigWorldQuestObjective:IsInProgress()
+    return self._State == ObjectiveState.InProgress
+end
+
+function XBigWorldQuestObjective:IsRunning()
+    return self._State ~= ObjectiveState.Finished and self._State ~= ObjectiveState.InActive
+end
+
 function XBigWorldQuestObjective:GetObjectiveState()
     return self._State
+end
+
+function XBigWorldQuestObjective:SetIsAnimation(value)
+    self._IsSkipAnimation = value
+end
+
+function XBigWorldQuestObjective:IsSkipAnimation()
+    return self._IsSkipAnimation
 end
 
 
@@ -132,6 +149,30 @@ function XBigWorldQuestStep:GetObjectiveData(objectiveId)
     return self._ObjectiveDict[objectiveId]
 end
 
+function XBigWorldQuestStep:GetInRunningObjective()
+    if not self._ObjectiveDict then
+        return
+    end
+    local isParallel = XMVCA.XBigWorldQuest:IsParallelStep(self._StepId)
+    if isParallel then
+        local target = nil
+        for _, objective in pairs(self._ObjectiveDict) do
+            if objective:IsRunning() then
+                if not target or objective:GetId() < target:GetId() then
+                    target = objective
+                end
+            end
+        end
+        return target
+    else
+        for _, objective in pairs(self._ObjectiveDict) do
+            if objective:IsRunning() then
+                return objective
+            end
+        end
+    end
+end
+
 
 ---@class XBigWorldQuest
 ---@field _QuestId number 任务Id
@@ -202,6 +243,22 @@ function XBigWorldQuest:GetActiveStepData()
     return nil
 end
 
+---@return XBigWorldQuestObjective
+function XBigWorldQuest:GetObjective(objectiveId)
+    if not self._StepDict then
+        return nil
+    end
+    
+    for _, data in pairs(self._StepDict) do
+        local objective = data:GetObjectiveData(objectiveId)
+        if objective then
+            return objective
+        end
+    end
+
+    return nil
+end
+
 function XBigWorldQuest:GetState()
     return self._State
 end
@@ -220,6 +277,10 @@ end
 
 function XBigWorldQuest:IsInProgress()
     return self._State == QuestState.InProgress
+end
+
+function XBigWorldQuest:IsReady()
+    return self._State == QuestState.Ready
 end
 
 function XBigWorldQuest:IsShowInList()

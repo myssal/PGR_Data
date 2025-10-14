@@ -157,7 +157,7 @@ function XSkyGardenCafeNpcFactory:OnInit()
     
     self._NpcDict = {}
     self._KeepStayNpcId = {
-        [101063] = true
+        [101200] = true
     }
     self._BarNpcUUId = -1
 end

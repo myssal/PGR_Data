@@ -1,6 +1,6 @@
 local XMovieActionInsertTipDisappear = XClass(XMovieActionBase,"XMovieActionInsertTipDisappear")
 
-function XMovieActionInsertTipDisappear:Ctor(actionData)
+function XMovieActionInsertTipDisappear:OnInit(actionData)
     
 end
 

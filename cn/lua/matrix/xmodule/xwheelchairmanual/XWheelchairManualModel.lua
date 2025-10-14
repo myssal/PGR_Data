@@ -18,6 +18,7 @@ local TableNormal = {
     WheelchairManualBattlePassReward = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
     WheelchairManualBattlePassManual = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
 
+    WheelchairManualCoreRewardPreview = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = "Id" },
 }
 
 local TablePrivate = {
@@ -628,6 +629,11 @@ end
 ---@return XTableWheelchairManualGuideKind
 function XWheelchairManualModel:GetWheelchairManualGuideKindCfg(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.WheelchairManualGuideKind, id)
+end
+
+---@return XTableWheelchairManualCoreRewardPreview[]
+function XWheelchairManualModel:GetWheelchairManualCoreRewardPreviewCfgs()
+    return self._ConfigUtil:GetByTableKey(TableNormal.WheelchairManualCoreRewardPreview)
 end
 
 --- ClientConfig

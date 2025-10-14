@@ -468,11 +468,11 @@ end
 
 function XUiPanelFightSet:SetCameraMoveSensitivity(value)
     value = value + 1
-    XInputManager.SetCameraMoveSensitivity(self:GetCurKeySetType(), value)
+    XInputManager.SetCameraMoveSensitivity(self:GetCurKeySetType(), value, CS.CameraViewType.ThirdPerson)
 end
 
 function XUiPanelFightSet:GetCameraMoveSensitivity()
-    local value = XInputManager.GetCameraMoveSensitivity(self:GetCurKeySetType())
+    local value = XInputManager.GetCameraMoveSensitivity(self:GetCurKeySetType(), CS.CameraViewType.ThirdPerson)
     return math.max(0, value - 1)
 end
 

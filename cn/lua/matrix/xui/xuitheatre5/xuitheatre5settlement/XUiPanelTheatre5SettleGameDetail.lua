@@ -53,7 +53,7 @@ end
 
 
 function XUiPanelTheatre5SettleGameDetail:RefreshGameProgressShow()
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         -- PVP奖杯进度
         local cupsNum = self.ResultData.XAutoChessGameplayResult.TrophyNum
         local targetCount = self._Control.PVPControl:GetPVPTargetCountFromConfig()

@@ -1,5 +1,6 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+---@field private _Control XEquipControl
 local XUiEquipAwarenessReplaceV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipAwarenessReplaceV2P6")
 
 function XUiEquipAwarenessReplaceV2P6:OnAwake()

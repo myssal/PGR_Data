@@ -1,6 +1,6 @@
 local XMovieActionActorLoad = XClass(XMovieActionBase,"XMovieActionActorLoad")
 local Vector3 = CS.UnityEngine.Vector3
-function XMovieActionActorLoad:Ctor(actionData)
+function XMovieActionActorLoad:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.RoleId = params[1]

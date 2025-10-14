@@ -53,6 +53,16 @@ function XUiGridStrongholdCharacter:UpdateBaseInfo()
         local isShowSame = inTeamId ~= self.TeamIndex and XTool.IsNumberValid(pos)
         self.PanelSameRole.gameObject:SetActiveEx(isShowSame)
     end
+
+    -- 生命树
+    if self.ImgTreeIcon then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSmallVisible"))
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
+        self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSmall)
+        end
+    end
 end
 
 function XUiGridStrongholdCharacter:UpdateRobot()

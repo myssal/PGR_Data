@@ -19,7 +19,7 @@ XFubenManagerExCreator = function()
         AgencyAutoCreator = {}
         -- 注册FubenActivity配置的活动
         local activityConfigs = XMVCA.XFuben:GetFubenActivityConfigs()
-        
+
         local manager = nil
         for _, config in pairs(activityConfigs) do
             if config.IsAgency == 0 then
@@ -124,7 +124,7 @@ XFubenManagerExCreator = function()
 
     -- 获取主线管理器
     function FubenManagerEx.GetMainLineManager()
-        return ManagerDic[XFubenConfigs.ChapterType.MainLine][1]
+        return ManagerDic[XEnumConst.FuBen.ChapterType.MainLine][1]
     end
 
     -- 获取展示在主界面的周常副本管理器
@@ -342,10 +342,10 @@ XFubenManagerExCreator = function()
         if not chapterType then
             return
         end
-        if chapterType == XFubenConfigs.ChapterType.MainLine then
+        if chapterType == XEnumConst.FuBen.ChapterType.MainLine then
             -- 主线特殊 无2级标签
             for k, v in pairs(FubenManagerEx.GetMainUiTabConfigs()) do
-                if v.UiParentName == "PanelMainLine" then
+                if v.UiParentName == "PanelMainLineRoot" then
                     return v.Id
                 end
             end
@@ -420,7 +420,7 @@ XFubenManagerExCreator = function()
 
         -- 如果上锁的标签有多个入口，返回列表第一个manager的拦截提示
         if not allManagers[1] then
-            return false, "" 
+            return false, ""
         end
         return false, allManagers[1]:ExGetLockTip()
     end

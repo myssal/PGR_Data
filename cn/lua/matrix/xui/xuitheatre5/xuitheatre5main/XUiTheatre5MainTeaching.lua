@@ -14,7 +14,7 @@ function XUiTheatre5MainTeaching:OnEnable()
 end
 
 function XUiTheatre5MainTeaching:OnClickStartEvent()
-    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if self._Control:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         XMVCA.XTheatre5:RequestPveOrPvpChange(function(success)
             if success then
                 self:EnterPVEMode()

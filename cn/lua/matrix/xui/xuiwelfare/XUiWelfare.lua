@@ -18,11 +18,13 @@ function XUiWelfare:OnAwake()
     self:InitUi()
 end
 
-function XUiWelfare:OnStart(tabIndex)
+--nonsense这个字段，曾经在跳转配置中有用到，但是代码里没有对应的逻辑，所以跳过，不予使用
+function XUiWelfare:OnStart(tabIndex, nonsense, params)
     self.Configs = XSignInConfigs.GetWelfareConfigsWithActivity()
     self.UiNodeDict = {}
     self.AfterStart = true
     self.DefaultTabIndex = tabIndex
+    self._Params2SelectTab = params
 
     if self.__IsResume then
         self.DefaultTabIndex = SelectIndexCacheForResume
@@ -116,7 +118,8 @@ function XUiWelfare:InitTabButton()
         local prefab = self:GetButtonPrefab(BtnType.Primary, subCount > 1)
         local ui = XUiHelper.Instantiate(prefab, self.PanelTitleBtnGroup.transform)
         ui.gameObject:SetActiveEx(true)
-
+        ui.gameObject.name = ui.gameObject.name .. tostring(config.FunctionType) .. '_' .. tostring(config.Id)
+        
         local btn = ui:GetComponent("XUiButton")
 
         btn:SetRawImage(config.BtnBg)
@@ -139,7 +142,8 @@ function XUiWelfare:InitTabButton()
                     prefab = self:GetButtonPrefab(BtnType.Secondary, false, index, subCount)
                     ui = XUiHelper.Instantiate(prefab, self.PanelTitleBtnGroup.transform)
                     ui.gameObject:SetActiveEx(true)
-
+                    ui.gameObject.name = ui.gameObject.name .. tostring(subCfg.FunctionType) .. '_' .. tostring(subCfg.Id)
+                    
                     local btnSecondary = ui:GetComponent("XUiButton")
                     btnSecondary:SetNameByGroup(0, subCfg.Name)
                     btnSecondary.SubGroupIndex = firstIndex
@@ -165,7 +169,23 @@ function XUiWelfare:InitTabButton()
         self:OnSelectTab(index)
     end)
     --如果有外界传值，否则打开第一个红点处，没有红点则打开默认选中
-    self.PanelTitleBtnGroup:SelectIndex(self.DefaultTabIndex or firstRedPointIndex or DefaultSelectIndex)
+    if self._Params2SelectTab then
+        for i = 1, #self.TabIndex2Config do
+            local config = self.TabIndex2Config[i]
+            if config.FunctionType == self._Params2SelectTab.FunctionType then
+                if not self._Params2SelectTab.WelfareId then
+                    self.PanelTitleBtnGroup:SelectIndex(i)
+                    break
+                end
+                if config.WelfareId == self._Params2SelectTab.WelfareId then
+                    self.PanelTitleBtnGroup:SelectIndex(i)
+                    break
+                end
+            end
+        end
+    else
+        self.PanelTitleBtnGroup:SelectIndex(self.DefaultTabIndex or firstRedPointIndex or DefaultSelectIndex)
+    end
     self:MoveTo()
 end
 
@@ -208,6 +228,7 @@ function XUiWelfare:InitRefreshFunc()
         [XAutoWindowConfigs.AutoFunctionType.WeekChallenge] = handler(self, self.OnRefreshWelfareWeekChallenge),
         [XAutoWindowConfigs.AutoFunctionType.SClassConstructNovice] = handler(self, self.OnRefreshSClassConstructNovice),
         [XAutoWindowConfigs.AutoFunctionType.WeekCard] = handler(self, self.OnRefreshWelfareWeekCard),
+        [XAutoWindowConfigs.AutoFunctionType.ThreeDayCard] = handler(self, self.OnRefreshWelfareThreeDayCard),
     }
 end
 
@@ -654,6 +675,26 @@ function XUiWelfare:OnRefreshWelfareWeekCard(template)
         return
     end
 
+    prefab:Open()
+    prefab:Refresh(template.Id, true)
+    local btn = self.TabButtons[self.TabIndex]
+    local weekCardData = XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(template.Id)
+    if btn and weekCardData then
+        btn:ShowReddot(not weekCardData:GetIsGotToday())
+    end
+end
+
+---@desc 刷新【福利-三天馈赠】类型界面
+---@param template
+---@return nil
+function XUiWelfare:OnRefreshWelfareThreeDayCard(template)
+    ---@type XUiSignThreeDay
+    local prefab = self:LoadFromPrefab(template.PrefabPath, self.PanelLoadPrefab1, "XUi/XUiSignIn/XUiSignThreeDay")
+    if not prefab then
+        XLog.Error("refresh ThreeDayCard view error! load prefab empty")
+        return
+    end
+    
     prefab:Open()
     prefab:Refresh(template.Id, true)
     local btn = self.TabButtons[self.TabIndex]

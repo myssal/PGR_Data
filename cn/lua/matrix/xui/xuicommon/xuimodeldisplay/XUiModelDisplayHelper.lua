@@ -2,6 +2,9 @@ local XUiModelAnimationNodeVisibility = require("XUi/XUiCommon/XUiModelDisplay/X
 local XUiModelCamera = require("XUi/XUiCommon/XUiModelDisplay/XData/XUiModelCamera")
 local XUiModelBone = require("XUi/XUiCommon/XUiModelDisplay/XData/XUiModelBone")
 local XUiModelDisplayInfo = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayInfo")
+local XUiModelAnimationIKInfo = require("XUi/XUiCommon/XUiModelDisplay/XInfo/XUiModelAnimationIKInfo")
+local XUiModelLookAtIKInfo = require("XUi/XUiCommon/XUiModelDisplay/XInfo/XUiModelLookAtIKInfo")
+local XUiModelEffectInfo = require("XUi/XUiCommon/XUiModelDisplay/XInfo/XUiModelEffectInfo")
 
 ---@class XUiModelDisplayHelper
 local XUiModelDisplayHelper = XClass(nil, "XUiModelDisplayHelper")
@@ -12,31 +15,35 @@ function XUiModelDisplayHelper.CreateModelDisplayInfo()
 end
 
 ---@return XUiModelDisplayInfo
-function XUiModelDisplayHelper.CreateBWModelDisplayInfo(modelId, modelUrl, controller, camera, parent, componentId)
+function XUiModelDisplayHelper.CreateBWModelDisplayInfo(modelId, modelUrl, controller, camera, parent, componentId, ikTarget)
     local modelInfo = XUiModelDisplayHelper.CreateModelDisplayInfo()
     local nodeVisibilityData = XUiModelDisplayHelper.CreateAnimationNodeVisibilityByBWModelId(modelId)
     local cameraData = XUiModelDisplayHelper.CreateCameraData(camera)
+    local ikInfo = XUiModelDisplayHelper.CreateLookAtIKInfo(ikTarget)
 
     modelInfo:InitModelKey(modelId):InitModel(modelUrl, controller):InitParent(parent)
     modelInfo:InitComponent(componentId or 0, XEnumConst.UiModel.ComponentType.AnimationNodeVisibility)
     modelInfo:AddModelData(nodeVisibilityData)
     modelInfo:AddModelData(cameraData)
+    modelInfo:AddInfo(ikInfo)
 
     return modelInfo
 end
 
 ---@return XUiModelDisplayInfo
-function XUiModelDisplayHelper.CreateBWCommonModelDisplayInfo(modelId, camera, parent, componentId)
+function XUiModelDisplayHelper.CreateBWCommonModelDisplayInfo(modelId, camera, parent, componentId, ikTarget)
     local modelInfo = XUiModelDisplayHelper.CreateModelDisplayInfo()
     local nodeVisibilityData = XUiModelDisplayHelper.CreateAnimationNodeVisibilityByBWModelId(modelId)
     local cameraData = XUiModelDisplayHelper.CreateCameraData(camera)
     local modelUrl = XMVCA.XBigWorldResource:GetModelUrl(modelId)
     local controller = XMVCA.XBigWorldResource:GetModelControllerUrl(modelId)
+    local ikInfo = XUiModelDisplayHelper.CreateLookAtIKInfo(ikTarget)
 
     modelInfo:InitModelKey(modelId):InitModel(modelUrl, controller):InitParent(parent)
     modelInfo:InitComponent(componentId or 0, XEnumConst.UiModel.ComponentType.AnimationNodeVisibility)
     modelInfo:AddModelData(nodeVisibilityData)
     modelInfo:AddModelData(cameraData)
+    modelInfo:AddInfo(ikInfo)
 
     return modelInfo
 end
@@ -101,6 +108,77 @@ function XUiModelDisplayHelper.CreateAnimationNodeVisibilityByBWModelId(modelId)
     return nodeVisibilityData
 end
 
+---@return XUiModelAnimationIKInfo
+function XUiModelDisplayHelper.CreateLookAtIKInfo(target)
+    if XTool.UObjIsNil(target) then
+        return
+    end
+
+    ---@type XUiModelLookAtIKInfo
+    local info = XUiModelLookAtIKInfo.New()
+
+    info.Target = target
+
+    return info
+end
+
+---@return XUiModelAnimationIKInfo
+function XUiModelDisplayHelper.CreateAnimationIKInfo(target)
+    if XTool.UObjIsNil(target) then
+        return
+    end
+
+    ---@type XUiModelAnimationIKInfo
+    local info = XUiModelAnimationIKInfo.New()
+
+    info.Target = target
+
+    return info
+end
+
+---@return XUiModelEffectInfo[]
+function XUiModelDisplayHelper.CreateEffectInfos(fashionId)
+    local result = {}
+    local effectInfos = XMVCA.XBigWorldCharacter:GetCharacterUiEffectInfos(fashionId)
+
+    if not XTool.IsTableEmpty(effectInfos) then
+        for _, effectInfo in pairs(effectInfos) do
+            local effectCount = effectInfo:GetEffectCount()
+
+            for i = 1, effectCount do
+                ---@type XUiModelEffectInfo
+                local info = XUiModelEffectInfo.New()
+
+                info.EffectId = effectInfo:GetEffectIdByIndex(i)
+                info.EffectUrl = effectInfo:GetEffectPathByIndex(i)
+                info.TargetRootName = effectInfo:GetRootName()
+                info.TargetAnimation = effectInfo:GetActionId()
+                info.IsIgnoreRotate = effectInfo:GetIsIgnoreRotate()
+                info.DelayFrame = effectInfo:GetEffectDelayTimeByIndex(i)
+
+                table.insert(result, info)
+            end
+        end
+    end
+
+    return result
+end
+
+---@param modelInfo XUiModelDisplayInfo
+function XUiModelDisplayHelper.AddEffectInfos(modelInfo, fashionId)
+    if not XTool.IsNumberValid(fashionId) then
+        return
+    end
+
+    local effectInfos = XUiModelDisplayHelper.CreateEffectInfos(fashionId)
+
+    if not XTool.IsTableEmpty(effectInfos) then
+        for _, effectInfo in pairs(effectInfos) do
+            modelInfo:AddInfo(effectInfo)
+        end
+    end
+end
+
 function XUiModelDisplayHelper.ConvertComponentType(componentType)
     if componentType == XEnumConst.UiModel.ComponentType.Base then
         return typeof(CS.XUiComponent.XModelDisplay.XModelComponent.XUiModelComponentBase)
@@ -112,6 +190,10 @@ function XUiModelDisplayHelper.ConvertComponentType(componentType)
         return typeof(CS.XUiComponent.XModelDisplay.XModelComponent.XUiModelComponentCamera)
     elseif componentType == XEnumConst.UiModel.ComponentType.Bone then
         return typeof(CS.XUiComponent.XModelDisplay.XModelComponent.XUiModelComponentBone)
+    elseif componentType == XEnumConst.UiModel.ComponentType.PartCombine then
+        return typeof(CS.XUiComponent.XModelDisplay.XModelComponent.XUiModelComponentPartCombine)
+    elseif componentType == XEnumConst.UiModel.ComponentType.Effect then
+        return typeof(CS.XUiComponent.XModelDisplay.XModelComponent.XUiModelComponentEffect)
     end
 
     XLog.Error("XUiModelDisplayHelper.ConvertComponentType error, componentType = " .. componentType)
@@ -129,11 +211,15 @@ function XUiModelDisplayHelper.ConvertComponentFlag(componentType)
     elseif componentType == componentEnum.Materials then
         return 1 << componentEnum.Materials | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Camera)
     elseif componentType == componentEnum.AnimationNodeVisibility then
-        return 1 << componentEnum.AnimationNodeVisibility | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Camera)
+        return 1 << componentEnum.AnimationNodeVisibility | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Materials)
     elseif componentType == componentEnum.Camera then
         return 1 << componentEnum.Camera | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Bone)
     elseif componentType == componentEnum.Bone then
         return 1 << componentEnum.Bone | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Base)
+    elseif componentType == componentEnum.PartCombine then
+        return 1 << componentEnum.PartCombine | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.AnimationNodeVisibility)
+    elseif componentType == componentEnum.Effect then
+        return 1 << componentEnum.Effect | XUiModelDisplayHelper.ConvertComponentFlag(componentEnum.Base)
     end
 
     XLog.Error("XUiModelDisplayHelper.ConvertComponentFlag error, componentType = ".. componentType)

@@ -68,6 +68,10 @@ function XExFubenBaseManager:ExGetIcon()
     return self.ExConfig.Icon
 end
 
+function XExFubenBaseManager:ExGetIconMain()
+    return self.ExConfig.IconMain
+end
+
 -- 获取活动对外显示名称
 function XExFubenBaseManager:ExGetName()
     return self.ExCustomName or self.ExConfig.Name
@@ -183,6 +187,18 @@ function XExFubenBaseManager:ExGetChapterViewModelBySubChapterId(chapterId)
     if self.__ChapterViewModelIdDic then
         return self.__ChapterViewModelIdDic[chapterId]
     end
+end
+
+function XExFubenBaseManager:ExGetChapterViewModelByCharacterId(characterId)
+    local viewModels = self:ExGetChapterViewModels()
+    local viewModel
+    for index, v in pairs(viewModels) do
+        if characterId == v:GetConfig().CharacterId then
+            viewModel = v
+            break
+        end
+    end
+    return viewModel
 end
 
 return XExFubenBaseManager

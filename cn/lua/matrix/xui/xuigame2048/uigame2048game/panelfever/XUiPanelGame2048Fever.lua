@@ -51,10 +51,9 @@ function XUiPanelGame2048Fever:OnHideHelpDetail()
 end
 
 function XUiPanelGame2048Fever:RefreshFeverLevel(isBegin)
-    local curTargetValue = self._GameControl.TurnControl:GetCurTargetMergeValue()
     local feverLeftTurn = self._GameControl.TurnControl:GetFeverLeftRound()
     self.TxtLVNum.text = XUiHelper.FormatText(self._Control:GetClientConfigText('BoardLevelLabel'), self._GameControl.TurnControl:GetBoardLv())
-    self.TxtTarget.text = curTargetValue
+    self.TxtTarget.text = self._GameControl.TurnControl:GetCurTargetMergeShowValue()
 
     local isShowMaxLabel = not self._GameControl.TurnControl:CheckHasNextTarget()
     
@@ -129,6 +128,21 @@ function XUiPanelGame2048Fever:RefreshFeverLevel(isBegin)
     end
     
     self._LastFeverLeftTurn = feverLeftTurn
+    
+    -- 显示当前提示
+    if self.TxtTips then
+        local nextMinShowLevel = self._GameControl.TurnControl:GetBoardLvGenerateGridShowLevel(self._GameControl.TurnControl:GetNextBoardCfgId())
+
+        if string.IsNilOrEmpty(nextMinShowLevel) then
+            nextMinShowLevel = self._GameControl.TurnControl:GetBoardLvGenerateGridShowLevel(self._GameControl.TurnControl:GetCurBoardCfgId())
+        end
+
+        if string.IsNilOrEmpty(nextMinShowLevel) then
+            self.TxtTips.text = ''
+        else
+            self.TxtTips.text = XUiHelper.FormatText(self._Control:GetClientGameTransBlockTips(), nextMinShowLevel)
+        end
+    end
 end
 
 --- 停止强化步数提升动画

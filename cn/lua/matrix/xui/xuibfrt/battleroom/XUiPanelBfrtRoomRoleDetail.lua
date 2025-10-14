@@ -37,28 +37,7 @@ function XUiPanelBfrtRoomRoleDetail:OnBtnTeamPrefabClicked()
         local characterLimitType = XFubenConfigs.GetStageCharacterLimitType(stageId)
         local stageInfos = XDataCenter.FubenManager.GetStageInfo(stageId)
         local stageType = stageInfos and stageInfos.Type
-        XLuaUiManager.Open("UiRoomTeamPrefab", nil, nil, characterLimitType, limitBuffId, stageType, nil, nil, stageId)
-        local signalCode, teamData = XLuaUiManager.AwaitSignal("UiRoomTeamPrefab", "RefreshTeamData", self)
-        if signalCode ~= XSignalCode.SUCCESS then return end
-        local teamEntityList = {0, 0, 0}
-        for i, entityId in ipairs(teamData.TeamData) do
-            if i > self.ViewData.EchelonRequireCharacterNum then
-                break
-            end
-            if not self._CheckIsPassTeamEntityFunc(entityId) then
-                self.ViewData.CharacterSwapEchelonCb(entityId, self.Team:GetEntityIdByTeamPos(i))
-                teamEntityList[i] = entityId
-            else
-                teamEntityList[i] = self.Team:GetEntityIdByTeamPos(i)
-            end
-        end
-        self.Team:UpdateEntityIds(teamEntityList)
-        XDataCenter.BfrtManager.SetTeamCaptainPos(self.ViewData.EchelonId, teamData.CaptainPos)
-        XDataCenter.BfrtManager.SetTeamFirstFightPos(self.ViewData.EchelonId, teamData.FirstFightPos)
-        -- 提示与关闭
-        XUiManager.TipText("SCRoleSkillUploadSuccess")
-        self.ViewData.TeamResultCb(self.Team:GetEntityIds())
-        XLuaUiManager.Remove("UiBattleRoomRoleDetail")
+        XLuaUiManager.Open("UiTeamPrefabMain")
     end)
     
 end

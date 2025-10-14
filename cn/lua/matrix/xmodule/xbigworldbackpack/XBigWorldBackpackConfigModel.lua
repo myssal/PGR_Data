@@ -4,7 +4,9 @@ local XBigWorldBackpackConfigModel = XClass(XModel, "XBigWorldBackpackConfigMode
 local BackpackTableKey = {
     BigWorldBackpackType = {
         DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
         Identifier = "Type",
+        ReadFunc = XConfigUtil.ReadType.IntAll
     },
 }
 

@@ -65,7 +65,7 @@ end
 
 function XUiMainLine2DetailStory:PlayStory(detailType, beginStoryId, videoId)
     if detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.MOVIE then
-        XDataCenter.MovieManager.PlayMovie(beginStoryId)
+        XDataCenter.MovieManager.PlayMovie(beginStoryId, nil, nil, nil, nil, nil, nil, self.StageId)
     elseif detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.CG then
         XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({self.StageId}, function ()
             CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal)

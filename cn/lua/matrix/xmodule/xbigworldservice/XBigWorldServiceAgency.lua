@@ -12,11 +12,13 @@ function XBigWorldServiceAgency:OnInit()
     self.RewardDisplayType = {
         Normal = 0,
         Expensive = 1,
+        Special = 2,
     }
 end
 
 function XBigWorldServiceAgency:InitRpc()
     self:AddRpc("NotifyDlcQuestItemUpdate", handler(self, self.NotifyDlcQuestItemUpdate))
+    self:AddRpc("NotifyDlcQuestItemObtainDisplay", handler(self, self.NotifyDlcQuestItemObtainDisplay))
 end
 
 function XBigWorldServiceAgency:InitEvent()
@@ -31,6 +33,11 @@ end
 
 function XBigWorldServiceAgency:GetDlcConditionTemplate(conditionId, noTips)
     return self._Model:GetDlcConditionTemplate(conditionId, noTips)
+end
+
+function XBigWorldServiceAgency:GetDlcConditionDesc(conditionId, noTips)
+    local t = self._Model:GetDlcConditionTemplate(conditionId, noTips)
+    return t and t.Desc or ""
 end
 
 function XBigWorldServiceAgency:_InitXBigWorldCondition()
@@ -114,9 +121,9 @@ function XBigWorldServiceAgency:GetNarrativeSignature(id)
     return template and template.Signature or ""
 end
 
-function XBigWorldServiceAgency:GetNarrativeRawImage(id)
+function XBigWorldServiceAgency:GetNarrativeAssetUrl(id)
     local template = self._Model:GetNarrativeTextTemplate(id)
-    return template and template.RawImage or ""
+    return template and template.AssetUrl or ""
 end
 
 function XBigWorldServiceAgency:GetNarrativeAlignment(id)
@@ -126,13 +133,22 @@ end
 
 function XBigWorldServiceAgency:GetNarrativeContent(id)
     local template = self._Model:GetNarrativeTextTemplate(id)
-    local content = template and XUiHelper.ReplaceTextNewLine(template.Content) or ""
-    -- 当策划使用 Alt+Enter 换行的时候，文本的首尾会有一个“，所以这里要去除
-    if string.StartsWith(content, "\"") and string.EndsWith(content, "\"") then
-        content = string.Utf8Sub(content, 2, string.Utf8Len(content) - 2)
+    local content
+    if not string.IsNilOrEmpty(template.Content) then
+        content = template and XUiHelper.ReplaceTextNewLine(template.Content) or ""
+        -- 当策划使用 Alt+Enter 换行的时候，文本的首尾会有一个“，所以这里要去除
+        if string.StartsWith(content, "\"") and string.EndsWith(content, "\"") then
+            content = string.Utf8Sub(content, 2, string.Utf8Len(content) - 2)
+        end
+    else
+        content = ""
     end
 
     return content
+end
+
+function XBigWorldServiceAgency:DebugCheckNarrativeExist(id)
+    return self._Model:DebugCheckNarrativeExist(id)
 end
 
 function XBigWorldServiceAgency:TipText(key, ...)
@@ -478,23 +494,26 @@ end
 
 function XBigWorldServiceAgency:NotifyDlcQuestItemUpdate(data)
     self._Model:UpdateQuestItemMap(data.DlcQuestItemChangeDict)
-    local newItems = data.DlcQuestItemChangeDict
-    if XTool.IsTableEmpty(newItems) then
+end
+
+function XBigWorldServiceAgency:NotifyDlcQuestItemObtainDisplay(data)
+    if not data then
+        XLog.Error("协议:NotifyDlcQuestItemObtainDisplay 推送内容为空！")
+        return
+    end
+    local dict = data.DlcQuestItemChangeDict
+    if XTool.IsTableEmpty(dict) then
         return
     end
     local rewardData = {}
-    -- newItems 是一个字典
-    for id, item in pairs(newItems) do
-        if item.Count > 0 then
-            rewardData[#rewardData + 1] = {
-                Id = id,
-                Count = item.Count,
-            }
-        end
+    for id, item in pairs(dict) do
+        rewardData[#rewardData + 1] = {
+            Id = id,
+            TemplateId = id,
+            Count = item.Count,
+        }
     end
-    if not XTool.IsTableEmpty(rewardData) then
-        XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardData)
-    end
+    XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardData, nil, nil, nil, true)
 end
 
 -- endregion
@@ -537,6 +556,12 @@ function XBigWorldServiceAgency:CheckExpensiveReward(rewardGoodsId)
     local displayType = self:GetRewardGoodsDisplayType(rewardGoodsId, true)
 
     return displayType == self.RewardDisplayType.Expensive
+end
+
+function XBigWorldServiceAgency:CheckSpecialReward(rewardGoodsId)
+    local displayType = self:GetRewardGoodsDisplayType(rewardGoodsId, true)
+
+    return displayType == self.RewardDisplayType.Special
 end
 
 -- endregion

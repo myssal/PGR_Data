@@ -1,5 +1,5 @@
 ---@class XEquipControl : XControl
----@field _Model XEquipControl
+---@field _Model XEquipModel
 local XEquipControl = XClass(XControl, "XEquipControl")
 function XEquipControl:OnInit()
     --初始化内部变量
@@ -391,11 +391,25 @@ function XEquipControl:GetAwarenessList(characterId, site, suitId)
             return isCurCharA
         end
 
+        -- 当前角色预设的优先
+        local isCurCharPrefabA = XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(a.Id, characterId)
+        local isCurCharPrefabB = XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(b.Id, characterId)
+        if isCurCharPrefabA ~= isCurCharPrefabB then
+            return isCurCharPrefabA
+        end
+        
         -- 无角色穿戴优先
         local isNotWearingA = not a:IsWearing()
         local isNotWearingB = not b:IsWearing()
         if isNotWearingA ~= isNotWearingB then
             return isNotWearingA
+        end
+
+        local isOtherPrefabA = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(a.Id)
+        local isOtherPrefabB = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(b.Id)
+        -- 非其他预设优先
+        if isOtherPrefabA ~= isOtherPrefabB then
+            return (not isOtherPrefabA)
         end
 
         -- 有任一共鸣技能与当前角色绑定优先

@@ -176,7 +176,7 @@ function XUiSkyGardenShoppingStreetGameCustomer:OnUiSkyGardenShoppingStreetGameG
     self.Parent:RefreshFeedbackList()
     self.Parent:PlayPetAutoAnim(2)
     self:PlayAnimation("GridFeedbackEnable")
-    CS.XAudioManager.PlayAudio(5700035)
+    self.XAudioObjectPlayer:PlayByKeyName("FeedbackClick")
 
     -- if not feedback then return end
     -- self._FeedbackUi:Open()

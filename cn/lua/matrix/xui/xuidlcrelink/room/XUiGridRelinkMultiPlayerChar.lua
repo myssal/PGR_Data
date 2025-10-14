@@ -64,7 +64,7 @@ end
 
 function XUiGridRelinkMultiPlayerChar:RefreshModel(characterId)
     self.RoleModel:ShowRoleModel()
-    self._Control:UpdateCharacterModel(self.RoleModel, characterId, nil, self.Parent.Name, nil)
+    self.RoleModel:UpdateCharacterModel(characterId, nil, self.Parent.Name, nil, nil)
 end
 
 function XUiGridRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)

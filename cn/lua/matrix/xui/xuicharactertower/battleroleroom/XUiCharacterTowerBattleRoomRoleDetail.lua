@@ -20,12 +20,21 @@ function XUiCharacterTowerBattleRoomRoleGrid:SetData(entity, team, stageId, pos)
             self.ImgInFight.gameObject:SetActiveEx(false)
         end
     end
+
     -- 初始品质
     if self.ImgQuality then
-        ---@type XCharacterAgency
-        local ag = XMVCA:GetAgency(ModuleId.XCharacter)
-        local initQuality = ag:GetCharacterInitialQuality(entity:GetId())
-        self.ImgQuality:SetSprite(ag:GetModelCharacterQualityIconInit(initQuality))
+        local initQuality = XMVCA.XCharacter:GetCharacterInitialQuality(entity:GetId())
+        self.ImgQuality:SetSprite(XMVCA.XCharacter:GetModelCharacterQualityIconInit(initQuality))
+    end
+
+    -- 生命树
+    if self.ImgTreeIcon then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSmallVisible"))
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+        self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSmall)
+        end
     end
 end
 

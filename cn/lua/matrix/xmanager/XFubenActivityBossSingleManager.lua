@@ -19,7 +19,7 @@ XFubenActivityBossSingleManagerCreator = function()
     local PassStoryIds={}
     
     ---@class XFubenActivityBossSingleManager
-    local XFubenActivityBossSingleManager = XExFubenActivityManager.New(XFubenConfigs.ChapterType.ActivityBossSingle, "FubenActivityBossSingleManager")
+    local XFubenActivityBossSingleManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.ActivityBossSingle, "FubenActivityBossSingleManager")
 
     local METHOD_NAME = {
         ReceiveTreasureReward = "BossActivityStarRewardRequest",

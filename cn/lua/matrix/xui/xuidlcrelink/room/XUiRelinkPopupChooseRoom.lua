@@ -1,13 +1,19 @@
 ---@class XUiRelinkPopupChooseRoom : XLuaUi
 ---@field private _Control XDlcRelinkControl
+---@field LevelIdDropdown UnityEngine.UI.Dropdown
 local XUiRelinkPopupChooseRoom = XLuaUiManager.Register(XLuaUi, "UiRelinkPopupChooseRoom")
 
 function XUiRelinkPopupChooseRoom:OnAwake()
     self:RegisterUiEvents()
+    self.LevelIdDropdown.onValueChanged:AddListener(function(value)
+        local levelId = self.LevelIdDropdown.options[value].text
+        self._Control:SetCurrentLevelId(tonumber(levelId))
+    end)
 end
 
 function XUiRelinkPopupChooseRoom:OnEnable()
     self:RefreshButtonState()
+    self.LevelIdDropdown.value = 0
 end
 
 function XUiRelinkPopupChooseRoom:OnGetLuaEvents()
@@ -87,9 +93,9 @@ function XUiRelinkPopupChooseRoom:OnBtnCloseClick()
 end
 
 function XUiRelinkPopupChooseRoom:OnBtnAddRoomClick()
-    local currentWorldId = self._Control:GetCurrentWorldIdAndLevelId()
-    if XTool.IsNumberValid(currentWorldId) then
-        XMVCA.XDlcRoom:ReqMatch(currentWorldId, true)
+    local currentWorldId, currentLevelId = self._Control:GetCurrentWorldIdAndLevelId()
+    if XTool.IsNumberValid(currentWorldId) and XTool.IsNumberValid(currentLevelId) then
+        XMVCA.XDlcRoom:ReqMatch(currentWorldId, currentLevelId, true)
     end
 end
 

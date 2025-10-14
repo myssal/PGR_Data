@@ -92,4 +92,8 @@ function XBWPopupQuitConfirmData:Clear()
     self.CloseClickData:Clear()
 end
 
+function XBWPopupQuitConfirmData:Dispose()
+    XMVCA.XBigWorldCommon:RepaidPopupQuitConfirmData(self)
+end
+
 return XBWPopupQuitConfirmData

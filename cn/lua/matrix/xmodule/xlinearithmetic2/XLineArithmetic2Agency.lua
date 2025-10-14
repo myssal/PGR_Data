@@ -239,13 +239,7 @@ end
 function XLineArithmetic2Agency:ExOnSkip()
     if not self:ExCheckInTime() then
         if self._Model:IsExpire() then
-            if XOverseaManager.IsTWRegion() then
-                XUiManager.TipText("ActivityTimeNullTW")
-            
-            else
-
-                XUiManager.TipText("ActivityMainLineEnd")
-            end
+            XUiManager.TipText("ActivityMainLineEnd")
             return false
         end
         XUiManager.TipText("ActivityBranchNotOpen")

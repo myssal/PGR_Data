@@ -18,22 +18,21 @@ end
 ---@param baseBattleRoleRoom XUiBattleRoleRoom
 function XUiBfrtBattleRoleRoomProxy:AOPOnStartAfter(baseBattleRoleRoom)
     self._TempGroupTeam = XDataCenter.BfrtManager.GetViewGroupFightTeams()
-    --self._ReplaceTeamData = {}
+end
+
+function XUiBfrtBattleRoleRoomProxy:AOPOnDestroyAfter(baseBattleRoleRoom)
+    self._UpdateData(baseBattleRoleRoom)
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnClickBtnBack(baseBattleRoleRoom)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     baseBattleRoleRoom:Close()
 
     return true
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnClickFight(baseBattleRoleRoom)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     baseBattleRoleRoom:Close()
 
     return true
@@ -44,24 +43,33 @@ function XUiBfrtBattleRoleRoomProxy:GetBtnEnterName()
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnCharacterClickBefore(baseBattleRoleRoom, index)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
     XEventManager.DispatchEvent(XEventId.EVENT_BFRT_OPEN_BATTLE_ROOM_DETAIL, baseBattleRoleRoom.StageId, index)
 
     return true
 end
 
-function XUiBfrtBattleRoleRoomProxy._UpdateData(stageId, firstFightPos, captainPos, generalSkillId, enterCgIndex, settleCgIndex)
-    XDataCenter.BfrtManager.SetTeamFirstFightPos(stageId, firstFightPos)
-    XDataCenter.BfrtManager.SetTeamCaptainPos(stageId, captainPos)
+function XUiBfrtBattleRoleRoomProxy._UpdateData(baseBattleRoleRoom)
+    local stageId = baseBattleRoleRoom.StageId
+    ---@type XTeam
+    local team = baseBattleRoleRoom.Team
 
-    XDataCenter.BfrtManager.SetTeamGeneralSkillId(XDataCenter.BfrtManager.GetViewGroupId(), XDataCenter.BfrtManager.GetCurSelectTeamIdx(), generalSkillId)
+    XDataCenter.BfrtManager.SetTeamFirstFightPos(stageId, team:GetFirstFightPos())
+    XDataCenter.BfrtManager.SetTeamCaptainPos(stageId, team:GetCaptainPos())
+
+    local groupId = XDataCenter.BfrtManager.GetViewGroupId()
+    local curTeamIdx = XDataCenter.BfrtManager.GetCurSelectTeamIdx()
+    XDataCenter.BfrtManager.SetTeamGeneralSkillId(groupId, curTeamIdx, team:GetCurGeneralSkill())
     XDataCenter.BfrtManager.UpdateViewGroupGeneralSkills()
 
-    XDataCenter.BfrtManager.SetTeamCgIndex(XDataCenter.BfrtManager.GetViewGroupId(), XDataCenter.BfrtManager.GetCurSelectTeamIdx(), enterCgIndex, settleCgIndex)
+    XDataCenter.BfrtManager.SetTeamCgIndex(groupId, curTeamIdx, team:GetEnterCgIndex(), team:GetSettleCgIndex())
     XDataCenter.BfrtManager.UpdateViewCgIndexGroup()
+
+    local entityIds = team:GetEntityIds()
+    for pos, entityId in ipairs(entityIds) do
+        XDataCenter.BfrtManager.SetViewGroupFightTeamData(curTeamIdx, pos, entityId)
+    end
 end
 
 --function XUiBfrtBattleRoleRoomProxy:_UpdateReplaceTeamData()

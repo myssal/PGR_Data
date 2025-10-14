@@ -59,7 +59,7 @@ function XUiBigWorldPopupQuitShow:_NotifyClose(operator)
         else
             data:InvokeCloseClick()
         end
-        data:Clear()
+        data:Dispose()
     end)
 end
 

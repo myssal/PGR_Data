@@ -53,6 +53,7 @@ function XBWGraphicsSetting:Reset()
     self._ResolutionLevelValue:Reset()
     self._DistortionLevelValue:Reset()
     self._FrameRateLevelValue:Reset()
+    self._BigWorldFrameRateLevelValue:Reset()
     self._BloomLevelValue:Reset()
     self._HDRValue:Reset()
     self._FAXXValue:Reset()
@@ -82,6 +83,7 @@ function XBWGraphicsSetting:RestoreDefault()
     self._ResolutionLevelValue:RestoreDefault()
     self._DistortionLevelValue:RestoreDefault()
     self._FrameRateLevelValue:RestoreDefault()
+    self._BigWorldFrameRateLevelValue:RestoreDefault()
     self._BloomLevelValue:RestoreDefault()
     self._HDRValue:RestoreDefault()
     self._FAXXValue:RestoreDefault()
@@ -115,6 +117,7 @@ function XBWGraphicsSetting:SaveChange()
     self._ResolutionLevelValue:SaveChange()
     self._DistortionLevelValue:SaveChange()
     self._FrameRateLevelValue:SaveChange()
+    self._BigWorldFrameRateLevelValue:SaveChange()
     self._BloomLevelValue:SaveChange()
     self._HDRValue:SaveChange()
     self._FAXXValue:SaveChange()
@@ -169,6 +172,9 @@ function XBWGraphicsSetting:IsChanged()
         return true
     end
     if self._FrameRateLevelValue:IsChanged() then
+        return true
+    end
+    if self._BigWorldFrameRateLevelValue:IsChanged() then
         return true
     end
     if self._VSyncValue and self._VSyncValue:IsChanged() then
@@ -288,6 +294,14 @@ end
 
 function XBWGraphicsSetting:SetFrameRateLevelValue(value)
     self._FrameRateLevelValue:SetValue(value)
+end
+
+function XBWGraphicsSetting:GetBigWorldFrameRateLevelValue()
+    return self._BigWorldFrameRateLevelValue:GetValue()
+end
+
+function XBWGraphicsSetting:SetBigWorldFrameRateLevelValue(value)
+    self._BigWorldFrameRateLevelValue:SetValue(value)
 end
 
 function XBWGraphicsSetting:GetBloomLevelValue()
@@ -477,6 +491,16 @@ function XBWGraphicsSetting:_InitFrameRateLevelValue(defaultValue, value)
     end
 end
 
+function XBWGraphicsSetting:_InitBigWorldFrameRateLevelValue(defaultValue, value)
+    if not self._BigWorldFrameRateLevelValue then
+        ---@type XBWSettingValue
+        self._BigWorldFrameRateLevelValue = XBWSettingValue.New(defaultValue, value)
+        self._BigWorldFrameRateLevelValue:RegisterValueChangedEvent(Handler(self, self.__OnQualitySettingChanged))
+    else
+        self._BigWorldFrameRateLevelValue:Init(defaultValue, value)
+    end
+end
+
 function XBWGraphicsSetting:_InitBloomLevelValue(defaultValue, value)
     if not self._BloomLevelValue then
         ---@type XBWSettingValue
@@ -506,6 +530,7 @@ function XBWGraphicsSetting:_InitOther(defaultQuality, quality)
     self:_InitResolutionLevelValue(defaultValue:GetResolutionLevel(), value:GetResolutionLevel())
     self:_InitDistortionLevelValue(defaultValue:GetDistortionLevel(), value:GetDistortionLevel())
     self:_InitFrameRateLevelValue(defaultValue:GetFrameRateLevel(), value:GetFrameRateLevel())
+    self:_InitBigWorldFrameRateLevelValue(defaultValue:GetBigWorldFrameRateLevel(), value:GetBigWorldFrameRateLevel())
     self:_InitBloomLevelValue(defaultValue:GetBloomLevel(), value:GetBloomLevel())
 end
 
@@ -527,6 +552,7 @@ function XBWGraphicsSetting:_InitQualityValue(quality)
     self._ResolutionLevelValue:SetValueWithoutEvent(value:GetResolutionLevel())
     self._DistortionLevelValue:SetValueWithoutEvent(value:GetDistortionLevel())
     self._FrameRateLevelValue:SetValueWithoutEvent(value:GetFrameRateLevel())
+    self._BigWorldFrameRateLevelValue:SetValueWithoutEvent(value:GetBigWorldFrameRateLevel())
     self._BloomLevelValue:SetValueWithoutEvent(value:GetBloomLevel())
 end
 
@@ -596,6 +622,7 @@ function XBWGraphicsSetting:__ToCsQualitySetting()
     quality:SetResolutionLevel(self:GetResolutionLevelValue())
     quality:SetDistortionLevel(self:GetDistortionLevelValue())
     quality:SetFrameRateLevel(self:GetFrameRateLevelValue())
+    quality:SetBigWorldFrameRateLevel(self:GetBigWorldFrameRateLevelValue())
     quality:SetBloomLevel(self:GetBloomLevelValue())
 
     for _, config in pairs(Value2FuncName) do

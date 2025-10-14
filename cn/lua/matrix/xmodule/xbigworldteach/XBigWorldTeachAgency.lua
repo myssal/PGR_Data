@@ -59,6 +59,8 @@ function XBigWorldTeachAgency:UpdateTeachUnlockServerData(teachDatas)
 end
 
 function XBigWorldTeachAgency:RequestBigWorldHelpCourseUnlock(teachId, isRead, isIgnoreNotify)
+    local isMask = self:CheckTeachIsForce(teachId)
+
     self._IsIgnoreNotify = isIgnoreNotify or false
     XNetwork.Call("BigWorldHelpCourseUnlockRequest", {
         CourseId = teachId,
@@ -69,7 +71,7 @@ function XBigWorldTeachAgency:RequestBigWorldHelpCourseUnlock(teachId, isRead, i
             XUiManager.TipCode(res.Code)
             return
         end
-    end)
+    end, nil, nil, nil, not isMask)
 end
 
 function XBigWorldTeachAgency:OnUnlockTrigger(type, targetId)
@@ -113,7 +115,7 @@ function XBigWorldTeachAgency:CheckHasUnReadTeach()
 
     if not XTool.IsTableEmpty(unlockTeach) then
         for _, data in ipairs(unlockTeach) do
-            if not data.IsRead then
+            if not data.IsRead and not self._Model:GetBigWorldHelpCourseIsHideById(data.Id) then
                 return true
             end
         end

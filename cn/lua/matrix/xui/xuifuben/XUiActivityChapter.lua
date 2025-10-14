@@ -266,7 +266,7 @@ function XUiActivityChapter:GetActivityData()
     -- 活动管理器
     dataList = appendArray(dataList, self.FubenManagerEx.GetActivityManagers())
     -- 节日活动章节
-    --local festivalManager = self.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.Festival)
+    --local festivalManager = self.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.Festival)
     --dataList = appendArray(dataList, festivalManager:ExGetChapterViewModels(XFestivalActivityConfig.UiType.Activity))
     -- 这两个表配置了共同的order进行排序
     table.sort(dataList, function(dataA, dataB)

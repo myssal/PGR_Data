@@ -1,3 +1,4 @@
+---@class XUiSignWeekCard:XUiNode
 local XUiSignWeekCard = XClass(XUiNode, "XUiSignWeekCard")
 local XUiSignWeekRound = require("XUi/XUiSignIn/XUiSignWeekRound")
 
@@ -5,6 +6,7 @@ function XUiSignWeekCard:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
+    ---@type XUiSignWeekRound[]
     self.PanelSignPrefabs = {}
     self.SetTomorrowRound = -1
     self.PanelRounds = {}

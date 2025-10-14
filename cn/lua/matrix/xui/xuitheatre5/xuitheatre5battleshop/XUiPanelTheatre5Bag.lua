@@ -18,10 +18,12 @@ end
 
 function XUiPanelTheatre5Bag:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
 end
 
 function XUiPanelTheatre5Bag:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
 end
 
 function XUiPanelTheatre5Bag:InitBagContainers()

@@ -11,11 +11,12 @@ function XUiPanelTheatre5Gem:OnStart(customContainerCls)
 end
 
 function XUiPanelTheatre5Gem:OnEnable()
-    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
+    self:RefreshGemShow()
+    XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
 end
 
 function XUiPanelTheatre5Gem:OnDisable()
-    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
+    XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
 end
 
 function XUiPanelTheatre5Gem:InitGemContainers(customContainerCls)

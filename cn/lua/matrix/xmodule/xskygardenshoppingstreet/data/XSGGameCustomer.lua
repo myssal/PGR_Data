@@ -1,12 +1,12 @@
 ---@class XSGGameCustomer 客户数据
 local XSGGameCustomer = XClass(nil, "XSGGameCustomer")
-XSGGameCustomer.InitCount = 0
+local CustomerInitCount = 0
 
 function XSGGameCustomer:Ctor()
     -- 构造函数，初始化计数器
-    XSGGameCustomer.InitCount = XSGGameCustomer.InitCount + 1
+    CustomerInitCount = CustomerInitCount + 1
     -- 设置当前实例的ID
-    self._Id = XSGGameCustomer.InitCount
+    self._Id = CustomerInitCount
     self._TimerCount = 0
 end
 

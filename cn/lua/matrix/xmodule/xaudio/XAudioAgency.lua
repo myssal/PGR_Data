@@ -3,7 +3,6 @@
 local XAudioAgency = XClass(XAgency, "XAudioAgency")
 function XAudioAgency:OnInit()
     --初始化一些变量
-    self:InitAlbum()
 end
 
 function XAudioAgency:InitRpc()
@@ -87,13 +86,13 @@ function XAudioAgency:CloseStageAudioLogByReplay()
 end
 
 function XAudioAgency:OnLogin()
+    self:InitAlbum()
     self:InitMainNeedCueId()
 end
 
 -- CD机 config start
 -- 该方法仅检查表格格式 无功能
 function XAudioAgency:InitAlbum()
-    -- AlbumTemplates = XTableManager.ReadByIntKey(TABLE_ALBUM, XTable.XTableMusicPlayerAlbum,"Id")
     local AlbumTemplates = self:GetModelMusicPlayerAlbum()
 
     local cueIdDic = {}

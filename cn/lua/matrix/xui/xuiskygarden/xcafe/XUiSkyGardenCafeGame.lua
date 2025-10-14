@@ -64,6 +64,8 @@ function XUiSkyGardenCafeGame:OnDestroy()
         XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenCoffeeCameraMain", 0, true)
     end
     self._Control:SetChangeCamera(true)
+    self._Control:ClearStateMachineParam()
+    
 end
 
 function XUiSkyGardenCafeGame:InitUi()
@@ -100,6 +102,9 @@ function XUiSkyGardenCafeGame:InitUi()
 
     local isSelect = self._Control:IsSkipAnimation()
     self.BtnSwitch:SetButtonState(isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    
+    self._Control:CreateStateMachine(self.WWX1, self.WWX2)
+    self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.Idle)
 end
 
 function XUiSkyGardenCafeGame:InitCb()
@@ -237,6 +242,7 @@ end
 
 function XUiSkyGardenCafeGame:RefreshReDraw(isOpen)
     self.PanelReDraw.gameObject:SetActiveEx(isOpen)
+    self.PanelSettle.gameObject:SetActiveEx(not isOpen)
     if not isOpen then
         return
     end
@@ -371,6 +377,8 @@ end
 
 function XUiSkyGardenCafeGame:OnBtnStartClick()
     self._Control:GetBattle():Play()
+    XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
+    self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.Settle)
 end
 
 function XUiSkyGardenCafeGame:OnBtnRoleClick()

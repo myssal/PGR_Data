@@ -1,8 +1,10 @@
 local vector = CS.UnityEngine.Vector3
 
+---@class XMovieActionActorAppear
+---@field UiRoot XUiMovie
 local XMovieActionActorAppear = XClass(XMovieActionBase, "XMovieActionActorAppear")
 
-function XMovieActionActorAppear:Ctor(actionData)
+function XMovieActionActorAppear:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -25,7 +27,12 @@ function XMovieActionActorAppear:Ctor(actionData)
     self.IsReverse = paramToNumber(params[8]) ~= 0
 end
 
-function XMovieActionActorAppear:OnInit()
+function XMovieActionActorAppear:GetActorIndex()
+    return self.ActorIndex
+end
+
+function XMovieActionActorAppear:OnEnter()
+    ---@type XUiGridMovieActor
     local actor = self.UiRoot:GetActor(self.ActorIndex)
     self.Record = {
         ActorId = actor:GetActorId(),
@@ -57,7 +64,29 @@ function XMovieActionActorAppear:OnUndo()
             actor:SetImagePos(self.Record.ImagePos)
         end
     end
+end
 
+function XMovieActionActorAppear:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionActorAppear:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return self.ActorIndex == action:GetActorIndex()
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.ACTOR_DISAPPEAR then
+        return action:IsDisappear(self.ActorIndex)
+    end
+    return false
+end
+
+function XMovieActionActorAppear:OnPassedActionRun()
+    self:OnEnter()
+    self:OnRunning()
 end
 
 return XMovieActionActorAppear

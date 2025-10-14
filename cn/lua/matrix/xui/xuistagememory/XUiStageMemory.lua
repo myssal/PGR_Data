@@ -38,6 +38,8 @@ function XUiStageMemory:OnStart()
 end
 
 function XUiStageMemory:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.StageMemory)
+    
     XEventManager.AddEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_TIME, self.UpdateTime, self)
     XEventManager.AddEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_REWARD, self.Update, self)
     self:Update()
@@ -52,6 +54,11 @@ end
 function XUiStageMemory:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_TIME, self.UpdateTime, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_REWARD, self.Update, self)
+end
+
+function XUiStageMemory:Close()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.StageMemory)
+    self.Super.Close(self)
 end
 
 function XUiStageMemory:UpdateTime()

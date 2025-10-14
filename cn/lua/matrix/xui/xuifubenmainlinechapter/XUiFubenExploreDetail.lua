@@ -1,6 +1,8 @@
 local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPlotExhibitionUtil = require("XUi/XUiPlotExhibition/XUiPlotExhibitionUtil")
+
 local XUiFubenExploreDetail = XLuaUiManager.Register(XLuaUi, "UiFubenExploreDetail")
 local StarMaxCount = 3
 
@@ -24,11 +26,15 @@ function XUiFubenExploreDetail:OnStart(base, stageCfg, cb, stageType)
     self:InitStarPanels()
     self.Grid128.gameObject:SetActiveEx(false)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+    XUiPlotExhibitionUtil.Init(self)
 end
 
 function XUiFubenExploreDetail:OnEnable()
     self:NewUpdateRewards()
     self:AddEventListener()
+    if self.StageCfg then
+        XUiPlotExhibitionUtil.UpdateSpeedrunBtnToggle(self, self.StageCfg.StageId)
+    end
 end
 
 function XUiFubenExploreDetail:OnDisable()

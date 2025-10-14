@@ -246,12 +246,24 @@ end
 
 -- 把当前使用的装备移动到第一个位置
 function XUiEquipReplaceV2P6:MoveUsingWeaponInFirst()
-    local usingEquipId
+    local usingEquipId = nil
+    local curInPrefabEquipId = nil
     for index, equipId in pairs(self.WeaponIdList) do
         if equipId == self.UsingEquipId then
             usingEquipId = table.remove(self.WeaponIdList, index)
         end
+        if XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(equipId, self.CharacterId) then
+            curInPrefabEquipId = table.remove(self.WeaponIdList, index)
+        end
+
+        if usingEquipId and curInPrefabEquipId then
+            break
+        end
     end
+    if curInPrefabEquipId then
+        table.insert(self.WeaponIdList, 1, curInPrefabEquipId)
+    end
+
     if usingEquipId then
         table.insert(self.WeaponIdList, 1, usingEquipId)
     end

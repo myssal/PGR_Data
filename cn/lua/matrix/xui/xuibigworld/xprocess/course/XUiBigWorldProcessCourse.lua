@@ -59,10 +59,13 @@ end
 
 ---@param contentEntity XBWCourseContentEntity
 function XUiBigWorldProcessCourse:Refresh(contentEntity)
+    local progressEntitys = contentEntity:GetTaskProgressEntitys()
+
     self._Entity = contentEntity
-    self:_RefreshProgress(contentEntity:GetContentId(), contentEntity:GetCurrentTaskProgress(),
-        contentEntity:GetMaxTaskProgress())
-    self:_RefreshProgressReward(contentEntity:GetTaskProgressEntitys())
+    self:_RefreshProgress(contentEntity:GetContentId())
+    self:_RefreshProgressFillAmount(contentEntity:GetCurrentTaskProgress(), contentEntity:GetMaxTaskProgress(),
+        progressEntitys)
+    self:_RefreshProgressReward(progressEntitys)
     self:_RefreshDynamicTable(contentEntity:GetUnlockTaskEntitys())
 end
 
@@ -76,6 +79,12 @@ function XUiBigWorldProcessCourse:PlayRewardDisableAnimation()
         for _, grid in ipairs(self._ProgressGrids) do
             grid:PlayDisableAnimation()
         end
+    end
+end
+
+function XUiBigWorldProcessCourse:PlayTaskProcessAudio()
+    if self.TaskProcessAudio then
+        self.TaskProcessAudio:PlayByKeyName("TaskProcessCue")
     end
 end
 
@@ -120,21 +129,59 @@ function XUiBigWorldProcessCourse:_RefreshDynamicTable(entitys)
     self._DynamicTable:ReloadDataSync(1)
 end
 
-function XUiBigWorldProcessCourse:_RefreshProgress(contentId, currentProgress, maxProgress)
-    if not XTool.IsNumberValid(maxProgress) then
-        maxProgress = 1
-    end
-
+---@param progressEntitys XBWCourseTaskProgressEntity[]
+function XUiBigWorldProcessCourse:_RefreshProgress(contentId)
     local icon = self._Control:GetTaskRewardItemIcon(contentId)
 
-    self.ImgRewardBar.fillAmount = currentProgress / maxProgress
-    self.TxtNum.text = currentProgress
     if string.IsNilOrEmpty(icon) then
         self.RImgIcon.gameObject:SetActiveEx(false)
     else
         self.RImgIcon.gameObject:SetActiveEx(true)
         self.RImgIcon:SetImage(icon)
     end
+end
+
+---@param progressEntitys XBWCourseTaskProgressEntity[]
+function XUiBigWorldProcessCourse:_RefreshProgressFillAmount(currentProgress, maxProgress, progressEntitys)
+    local progress = 0
+
+    if currentProgress >= (maxProgress or 0) then
+        progress = 1
+    else
+        if not XTool.IsTableEmpty(progressEntitys) then
+            local count = 0
+            local progressCount = 0
+            local preProgress = 0
+
+            for i, progressEntity in ipairs(progressEntitys) do
+                local nowProgress = progressEntity:GetProgress()
+
+                count = count + 1
+                if currentProgress >= nowProgress then
+                    progressCount = (2 * i - 1)
+                elseif currentProgress > preProgress and currentProgress < nowProgress then
+                    local tick = i == 1 and 1 or 2
+                    local progressDifference = nowProgress - preProgress
+                    local currentDifference = currentProgress - preProgress
+
+                    if progressDifference == 0 then
+                        progressDifference = currentDifference
+                    end
+
+                    progressCount = progressCount + (currentDifference / progressDifference) * tick
+                end
+
+                preProgress = nowProgress
+            end
+
+            progress = progressCount / (2 * count - 1)
+        else
+            progress = 1
+        end
+    end
+
+    self.ImgRewardBar.fillAmount = progress
+    self.TxtNum.text = currentProgress
 end
 
 ---@param progressEntitys XBWCourseTaskProgressEntity[]
@@ -146,18 +193,16 @@ function XUiBigWorldProcessCourse:_RefreshProgressReward(progressEntitys)
 
         for i, progressEntity in ipairs(progressEntitys) do
             local grid = self._ProgressGrids[i]
-            local currentProgress = progressEntity:GetProgress()
-            
+
             if not grid then
                 local gridUi = XUiHelper.Instantiate(self.GridReward, self.ListReward)
-                
+
                 grid = XUiBigWorldProcessCourseReward.New(gridUi, self)
                 self._ProgressGrids[i] = grid
             end
 
             grid:Open()
-            grid:Refresh(progressEntity, currentProgress - progress)
-            progress = currentProgress
+            grid:Refresh(progressEntity)
             count = count + 1
         end
     end

@@ -4,7 +4,7 @@ local XMovieAgency = XClass(XAgency, "XMovieAgency")
 
 function XMovieAgency:OnInit()
     --初始化一些变量
-    self.XEnumConst = require("XModule/XMovie/XMovieEnumConst")
+    self.EnumConst = require("XModule/XMovie/XMovieEnumConst")
 end
 
 function XMovieAgency:InitRpc()
@@ -14,9 +14,15 @@ end
 function XMovieAgency:InitEvent()
     --实现跨Agency事件注册
     --self:AddAgencyEvent()
+
+    self.RequestName = {
+        AddStageBookmarkRequest = "AddStageBookmarkRequest",                    -- 添加关卡书签
+        GetStageBookmarkRequest = "GetStageBookmarkRequest",                    -- 获取关卡书签
+        DeleteStageBookmarkRequest = "DeleteStageBookmarkRequest",              -- 删除关卡书签
+    }
 end
 
---============================================================== #region 配置表 ==============================================================
+--region 配置表
 -- 获取ClientConfig表配置
 function XMovieAgency:GetClientConfig(key, index)
     return self._Model:GetClientConfig(key, index)
@@ -26,9 +32,9 @@ end
 function XMovieAgency:GetClientConfigParams(key)
     return self._Model:GetClientConfigParams(key)
 end
---============================================================== #endregion 配置表 ==============================================================
+--endregion
 
---============================================================== #region rpc ==============================================================
+--region rpc
 -- 请求剧情选项记录
 function XMovieAgency:RequestMovieOptions(movieId)
     if not XLoginManager.IsLogin() then
@@ -65,7 +71,56 @@ function XMovieAgency:IsOptionPassed(movieId, actionId, optionIndex)
     return self._Model:IsOptionPassed(movieId, actionId, optionIndex)
 end
 
---============================================================== #endregion rpc ==============================================================
+-- 请求添加关卡书签
+function XMovieAgency:RequestAddStageBookmark(cb)
+    local stageId = XDataCenter.MovieManager.GetStageId()
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    local actionId = XDataCenter.MovieManager.GetCurPlayingActionId()
+    local bookmarkData = self._Model:GetBookmarkData()
+    if bookmarkData and bookmarkData.StageId == stageId and bookmarkData.MovieId == movieId and bookmarkData.ActionId == actionId then
+        if cb then cb() end
+        return
+    end
+
+    local isCover = bookmarkData ~= nil
+    local optionDic = XDataCenter.MovieManager.GetSelectionDataDic()
+    local req = { StageId = stageId, MovieId = movieId, ActionId = actionId, OptionDic = optionDic }
+    XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AddStageBookmarkRequest, req, function(res)
+        self._Model:SetBookmarkData(req)
+        if cb then cb() end
+
+        -- 埋点
+        local dict = {}
+        dict["stage_id"] = stageId
+        dict["movie_id"] = movieId
+        dict["is_cover"] = isCover and 1 or 0
+        CS.XRecord.Record(dict, "200020", "StoryBookmarkSave")
+    end)
+end
+
+-- 请求获取关卡书签
+function XMovieAgency:RequestGetStageBookmark(cb)
+    local bookmarkData, isRequest = self._Model:GetBookmarkData()
+    if bookmarkData or isRequest then
+        if cb then cb(bookmarkData) end
+        return
+    end
+    
+    local req = {}
+    XNetwork.CallWithAutoHandleErrorCode(self.RequestName.GetStageBookmarkRequest, req, function(res)
+        self._Model:SetBookmarkData(res.StageBookmarkData, true)
+        if cb then cb(res.StageBookmarkData) end
+    end)
+end
+
+-- 请求删除关卡书签
+function XMovieAgency:RequestDeleteStageBookmark()
+    XNetwork.CallWithAutoHandleErrorCode(self.RequestName.DeleteStageBookmarkRequest, nil, nil)
+    self._Model:SetBookmarkData()
+end
+--endregion
+
+--region 参数转换
 -- 参数转数字
 function XMovieAgency:ParamToNumber(param)
     if param and param ~= "" then
@@ -167,6 +222,151 @@ function XMovieAgency:BytesToStr(bytes)
     end
     return str
 end
+--endregion
+
+--region 播放剧情、跳转Bookmark
+
+-- 通过GM指令播放剧情
+-- c#调用 XDebuggerStoryList.cs
+function XMovieAgency.PlayMovieByDebugger(movieId, actionIdStr, optionStr)
+    if string.IsNilOrEmpty(movieId) then
+        XUiManager.TipError("请先输入MovieId!")
+        return
+    end
+    
+    local actionId
+    if not string.IsNilOrEmpty(actionIdStr) then
+        actionId = tonumber(actionIdStr)
+        if not actionId then
+            XUiManager.TipError("请检查开始的ActionId，请输入一个整数！")
+            return
+        end
+    end
+
+    local optionDic = {}
+    if not string.IsNilOrEmpty(actionIdStr) then
+        local result = {}
+        -- 使用 gmatch 匹配非逗号、非分号的连续字符
+        for word in string.gmatch(optionStr, "[^,;]+") do
+            table.insert(result, word)
+        end
+
+        for i = 1, #result, 2 do
+            local aId = tonumber(result[i])
+            local selIndex = tonumber(result[i + 1])
+            optionDic[aId] = selIndex
+        end
+    end
+    XDataCenter.MovieManager.PlayMovie(movieId, nil, nil, nil, nil, actionId, optionDic)
+end
+
+-- 获取书签数据
+function XMovieAgency:GetBookmarkData()
+    return self._Model:GetBookmarkData()
+end
+
+-- 获取书签名称
+function XMovieAgency:GetBookmarkName()
+    local bookmarkData = self:GetBookmarkData()
+    if not bookmarkData then return "" end
+    
+    local stageId = bookmarkData.StageId
+    local stageCfg = XMVCA.XFuben:GetStageCfg(stageId)
+    if stageCfg.Type == XEnumConst.FuBen.StageType.Mainline then
+        local chapterOrderId = XDataCenter.FubenMainLineManager.GetChapterOrderIdByStageId(stageId)
+        return string.format("%s %s-%s", stageCfg.Name, chapterOrderId, stageCfg.OrderId)
+
+    elseif stageCfg.Type == XEnumConst.FuBen.StageType.Mainline2 then
+        local mainId = XMVCA.XMainLine2:GetStageMainId(stageId)
+        local title = XMVCA.XMainLine2:GetMainTitle(mainId)
+        local specialOrder = XMVCA.XMainLine2:GetStageSpecialorder(stageId)
+        return string.format("%s%s %s-%s", specialOrder or "", stageCfg.Name, title, stageCfg.OrderId)
+
+    -- 浮点纪实
+    elseif stageCfg.Type == XEnumConst.FuBen.StageType.ShortStory then
+        local mainId, chapterId = XFubenShortStoryChapterConfigs.GetStageMainId(stageId)
+        local extralName = XFubenShortStoryChapterConfigs.GetStageTitleByChapterId(chapterId)
+        return string.format("%s %s-%s", stageCfg.Name, extralName, stageCfg.OrderId)
+        
+    -- 外篇
+    elseif stageCfg.Type == XEnumConst.FuBen.StageType.ExtraChapter then
+        local mainId, chapterId = XFubenExtraChapterConfigs.GetStageMainId(stageId)
+        local name  =XDataCenter.ExtraChapterManager.GetChapterDetailsStageTitle(chapterId)
+        return string.format("%s %s-%s", stageCfg.Name, name, stageCfg.OrderId)
+        
+    end
+    return ""
+end
+
+-- 播放书签剧情
+function XMovieAgency:PlayBookmarkMovie()
+    local bookmarkData = self:GetBookmarkData()
+    if not bookmarkData then return end
+
+    -- 请求删除书签
+    self:RequestDeleteStageBookmark()
+
+    local stageId = bookmarkData.StageId
+    local stageType = XMVCA.XFuben:GetStageType(stageId)
+    -- 旧主线章节界面
+    if stageType == XEnumConst.FuBen.StageType.Mainline then
+        XDataCenter.FubenMainLineManager.OpenMainLineChapterOrStage(stageId)
+
+    -- 新主线章节界面
+    elseif stageType == XEnumConst.FuBen.StageType.Mainline2 then
+        XMVCA.XMainLine2:OpenChapterUiByStageId(stageId)
+        
+    -- 旧浮点纪实
+    elseif stageType == XEnumConst.FuBen.StageType.ShortStory then
+        XDataCenter.ShortStoryChapterManager:ExOpenChapterUiByStageId(stageId)
+        
+    -- 外篇
+    elseif stageType == XEnumConst.FuBen.StageType.ExtraChapter then
+        XDataCenter.ExtraChapterManager:ExOpenChapterUiByStageId(stageId)
+    end
+    
+    XDataCenter.MovieManager.PlayMovie(bookmarkData.MovieId, function()
+        self:OnBookmarkMovieEnd(bookmarkData)
+    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionDic)
+end
+
+-- 书签剧情播放结束回调
+function XMovieAgency:OnBookmarkMovieEnd(bookmarkData)
+    local stageId = bookmarkData.StageId
+    if not XTool.IsNumberValidEx(stageId) then return end
+
+    local movieId = bookmarkData.MovieId
+    local isBeginStory = XMVCA.XFuben:IsStageBeginStory(stageId, movieId)
+    if not isBeginStory then return end
+
+    -- 新主线纯剧情关卡，不需要进战斗
+    if XMVCA.XMainLine2:IsStageExit(stageId) then
+        local detailType = XMVCA.XMainLine2:GetStageDetailType(stageId)
+        if detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.MOVIE then
+            return
+        end
+    end
+    -- 旧主线纯剧情关卡，不需要进战斗
+    local stageCfg = XMVCA.XFuben:GetStageCfg(stageId)
+    if stageCfg.StageType == XFubenConfigs.STAGETYPE_STORY or stageCfg.StageType == XFubenConfigs.STAGETYPE_STORYEGG then
+        return
+    end
+    
+    -- 进战斗
+    local team
+    local stageConfig = XMVCA.XFuben:GetStageCfg(stageId)
+    local robots = stageConfig.RobotId
+    if #robots > 0 then
+        team = XDataCenter.TeamManager.GetXTeamByStageId(stageId)
+        team:UpdateEntityIds(XTool.Clone(robots))
+    else
+        team = XDataCenter.TeamManager.GetMainLineTeam()
+    end
+    XMVCA.XFuben:EnterFightByStageId(stageId, team:GetId(), nil, nil, nil, nil, true)
+end
+
+--endregion
+
 
 -- 检查需要设置性别
 function XMovieAgency:CheckTipsSetGender(movieId)
@@ -187,6 +387,5 @@ end
 function XMovieAgency:GetOpenMovieSkipThirdGender()
     return self._Model:IsOpenMovieSkipThirdGender()
 end
-
 
 return XMovieAgency

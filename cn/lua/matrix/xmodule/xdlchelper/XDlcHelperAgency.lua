@@ -65,6 +65,34 @@ function XDlcHelperAgency:GetDlcFightCharHeadIcon(worldType, worldNpcData)
     end
 end
 
+function XDlcHelperAgency:CheckLevelPlayFullCleared(worldType, levelPlayId)
+    local agency = self._DlcModelIdGetter[worldType]
+
+    if agency then
+        if agency.CheckLevelPlayFullCleared then
+            return agency:CheckLevelPlayFullCleared(levelPlayId)
+        else
+            XLog.Error('Agency: '..tostring(agency:GetId())..' 未实现方法：CheckLevelPlayFullCleared')
+        end
+    else
+        XLog.Error('WorldType: '..tostring(worldType)..' 未注册提供检查副本玩法是否全通接口的Agency')
+    end
+end
+
+function XDlcHelperAgency:CheckLevelPlayCleared(worldType, levelPlayId)
+    local agency = self._DlcModelIdGetter[worldType]
+
+    if agency then
+        if agency.CheckLevelPlayCleared then
+            return agency:CheckLevelPlayCleared(levelPlayId)
+        else
+            XLog.Error('Agency: '..tostring(agency:GetId())..' 未实现方法：CheckLevelPlayCleared')
+        end
+    else
+        XLog.Error('WorldType: '..tostring(worldType)..' 未注册提供检查副本玩法是否全通接口的Agency')
+    end
+end
+
 --endregion
 
 

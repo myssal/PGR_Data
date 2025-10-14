@@ -1164,7 +1164,8 @@ XGuildDormManagerCreator = function()
     end
     
     function GuildDormManager.StopBgm()
-        CS.XAudioManager.StopMusicWithAnalyzer()
+        -- CS.XAudioManager.StopMusicWithAnalyzer()
+        XLuaAudioManager.StopCurrentBGM()
     end
     
     function GuildDormManager.GetPlayedBgmId()

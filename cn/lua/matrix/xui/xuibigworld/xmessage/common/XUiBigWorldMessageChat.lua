@@ -22,7 +22,7 @@ local XUiBigWorldMessageChat = XClass(XUiNode, "XUiBigWorldMessageChat")
 
 -- region 生命周期
 
-function XUiBigWorldMessageChat:OnStart()
+function XUiBigWorldMessageChat:OnStart(audioPlayer)
     ---@type XUiBigWorldMessageGrid[]
     self._ReceiveGridList = {}
     ---@type XUiBigWorldMessageGrid[]
@@ -46,6 +46,8 @@ function XUiBigWorldMessageChat:OnStart()
     self._OnScrollEndCb = function()
         self._Scrolling = false
     end
+
+    self._AudioPlayer = audioPlayer
 
     self._TaskUi:Close()
     self:_InitUi()
@@ -89,12 +91,12 @@ function XUiBigWorldMessageChat:OnPlayMessage(content)
         local grid = self:_GetReceiveGrid()
 
         grid:Refresh(content)
-        grid:PlayEnableAnimation(content)
+        grid:PlayEnableAnimation(content, self._AudioPlayer)
     elseif content:IsSend() then
         local grid = self:_GetSendGrid()
 
         grid:Refresh(content)
-        grid:PlayEnableAnimation(content)
+        grid:PlayEnableAnimation(content, self._AudioPlayer)
     elseif content:IsSystem() then
         local tip = self:_GetSystemTip()
 
@@ -119,6 +121,7 @@ function XUiBigWorldMessageChat:OnPlayMessageBeginLoading(content)
 
         grid:Refresh(content)
         grid:SetLoadingEffectActive(true)
+        self:_RefreshScrolling()
     end
 end
 
@@ -243,8 +246,8 @@ function XUiBigWorldMessageChat:_GetReceiveGrid()
     end
 
     grid:Open()
+    grid.Transform:SetAsLastSibling()
     if not self._IsLockGridIndex then
-        grid.Transform:SetAsLastSibling()
         self._ReceiveGridIndex = self._ReceiveGridIndex + 1
     end
 
@@ -263,8 +266,8 @@ function XUiBigWorldMessageChat:_GetSendGrid()
     end
 
     grid:Open()
+    grid.Transform:SetAsLastSibling()
     if not self._IsLockGridIndex then
-        grid.Transform:SetAsLastSibling()
         self._SendGridIndex = self._SendGridIndex + 1
     end
 

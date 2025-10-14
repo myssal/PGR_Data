@@ -16,6 +16,7 @@ local XUiSGGridItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 ---@field BtnTracking XUiComponent.XUiButton
 ---@field BtnCancelTracking XUiComponent.XUiButton
 ---@field BtnTransmit XUiComponent.XUiButton
+---@field BtnGo XUiComponent.XUiButton
 ---@field _Control XBigWorldMapControl
 ---@field Parent XUiBigWorldMap
 local XUiBigWorldMapDetail = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMapDetail")
@@ -31,9 +32,10 @@ local OperatorType = {
 function XUiBigWorldMapDetail:OnAwake()
     ---@type XBWMapPinData
     self._PinData = nil
+    ---@type XBWMapPinData
+    self._QuickGoingData = nil
     ---@type XUiGridBWItem[]
     self._RewardGrids = {}
-    self._ProgerssGrids = {}
 
     self:_RegisterButtonClicks()
 end
@@ -60,6 +62,7 @@ end
 function XUiBigWorldMapDetail:Refresh(levelId, pinData)
     self._LevelId = levelId
     self._PinData = pinData
+    self._QuickGoingData = self._Control:GetQuickGoingPinData(pinData)
 
     self:_Refresh()
 end
@@ -113,6 +116,47 @@ function XUiBigWorldMapDetail:OnBtnTransmitClick()
     end
 end
 
+function XUiBigWorldMapDetail:OnBtnGoClick()
+    local pinData = self._PinData
+    local quickPinData = self._QuickGoingData
+
+    if quickPinData and pinData then
+        local playerGroupId = self._Control:GetCurrentAreaGroupId()
+
+        if playerGroupId ~= pinData.MapAreaGroupId then
+            local tips = XMVCA.XBigWorldService:GetText("MapQuickGoingTeleportDesc")
+
+            self:_QuickTeleport(quickPinData, true, self.Name .. "QuickTeleport", tips, true)
+        else
+            local playerTransform = CS.StatusSyncFight.XFightClient.GetCurrentNpcTransform(false)
+            local playerPosition = playerTransform.position
+            local targetPosition = pinData.WorldPosition
+            local quickPosition = quickPinData.WorldPosition
+            local playerDistance = math.pow((targetPosition.x - playerPosition.x), 2) +
+                                       math.pow((targetPosition.y - playerPosition.y), 2)
+            local quickDistance = math.pow((quickPosition.x - targetPosition.x), 2) +
+                                      math.pow((quickPosition.y - targetPosition.y), 2)
+            local baseline = math.pow(150, 2)
+
+            if playerDistance > quickDistance and quickDistance > baseline then
+                local tips = XMVCA.XBigWorldService:GetText("MapQuickGoingFarTeleportDesc")
+
+                self:_QuickTeleport(quickPinData, true, self.Name .. "QuickFarTeleport", tips)
+            elseif playerDistance >= quickDistance and quickDistance <= baseline then
+                local tips = XMVCA.XBigWorldService:GetText("MapQuickGoingTeleportDesc")
+
+                self:_QuickTeleport(quickPinData, true, self.Name .. "QuickTeleport", tips, true)
+            elseif playerDistance < quickDistance then
+                local tips = XMVCA.XBigWorldService:GetText("MapQuickGoingNearTeleportDesc")
+
+                self:_QuickTeleport(quickPinData, true, self.Name .. "QuickNearTeleport", tips, true)
+            else
+                self:_QuickTeleport(quickPinData)
+            end
+        end
+    end
+end
+
 function XUiBigWorldMapDetail:OnPinTrackClick(pinId, levelId)
     if self._Control:CheckCurrentTrackPin(levelId, pinId) then
         self._Control:CancelTrackPin(levelId, pinId)
@@ -122,6 +166,8 @@ function XUiBigWorldMapDetail:OnPinTrackClick(pinId, levelId)
 end
 
 function XUiBigWorldMapDetail:OnRefresh()
+    self._QuickGoingData = self._Control:GetQuickGoingPinData(self._PinData)
+
     self:_Refresh()
 end
 
@@ -135,6 +181,7 @@ function XUiBigWorldMapDetail:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnTracking, self.OnBtnTrackingClick, true)
     self:RegisterClickEvent(self.BtnCancelTracking, self.OnBtnCancelTrackingClick, true)
     self:RegisterClickEvent(self.BtnTransmit, self.OnBtnTransmitClick, true)
+    self:RegisterClickEvent(self.BtnGo, self.OnBtnGoClick, true)
 end
 
 function XUiBigWorldMapDetail:_RegisterSchedules()
@@ -178,18 +225,18 @@ function XUiBigWorldMapDetail:_RefreshPin()
     self.TxtTitle.text = self._PinData.Name or ""
     self.TxtStoryDes.text = XUiHelper.ReplaceTextNewLine(self._PinData.Desc or "")
     self.TxtName.text = XMVCA.XBigWorldService:GetText("MapPinDesc")
-    self:_RefreshPinStyle(self._PinData.StyleId, isActive)
+    self:_RefreshPinIcon(self._PinData)
     self:_RefreshTrackOperator(not (isActive and self._PinData.TeleportEnable))
     self:_RefreshTeleportOperator(isActive and self._PinData.TeleportEnable)
+    self:_RefreshQuickGoingOperator()
     self:_RefreshProgress()
     self:_RefreshReward()
 end
 
 function XUiBigWorldMapDetail:_RefreshQuest(questId, objectiveId)
     local rewardId = XMVCA.XBigWorldQuest:GetQuestRewardId(questId)
-    local progressText = XMVCA.XBigWorldQuest:GetQuestDisplayProgress(questId)
+    local progressText = XMVCA.XBigWorldQuest:GetObjectiveProgressDescByObjectiveId(questId, objectiveId)
 
-    self.PanelIcon:SetSprite(XMVCA.XBigWorldQuest:GetQuestIcon(questId))
     self.TxtTitle.text = XMVCA.XBigWorldQuest:GetQuestText(questId)
     if XTool.IsNumberValid(objectiveId) then
         self.TxtStoryDes.text = XUiHelper.ReplaceTextNewLine(XMVCA.XBigWorldQuest:GetObjectiveDesc(objectiveId) or "")
@@ -197,8 +244,10 @@ function XUiBigWorldMapDetail:_RefreshQuest(questId, objectiveId)
         self.TxtStoryDes.text = ""
     end
     self.TxtName.text = XMVCA.XBigWorldService:GetText("MapPinQuestDesc")
+    self:_RefreshPinIcon(self._PinData)
     self:_RefreshTrackOperator(true)
     self:_RefreshTeleportOperator(false)
+    self:_RefreshQuickGoingOperator()
     self:_RefreshProgress(progressText)
     self:_RefreshReward(rewardId)
 end
@@ -226,13 +275,9 @@ function XUiBigWorldMapDetail:_RefreshTeleportOperator(isActive)
         local nearbyPinData = self._Control:GetPinDataByLevelIdAndPinId(self._PinData:GetValidLevelId(), nearbyPinId)
 
         if nearbyPinData then
-            if nearbyPinData.TeleportEnable then
+            if nearbyPinData:IsTeleportLevel() then
                 self.BtnTransmit.gameObject:SetActiveEx(true)
-                if nearbyPinData:IsTeleportLevel() then
-                    self:_RefreshTeleportLevelText(nearbyPinData:GetTeleportLevelId())
-                else
-                    self:_RefreshTeleportText(self._Control:GetTeleportText(nearbyPinData.Name))
-                end
+                self:_RefreshTeleportLevelText(nearbyPinData:GetTeleportLevelId())
             else
                 self.BtnTransmit.gameObject:SetActiveEx(false)
             end
@@ -245,6 +290,46 @@ function XUiBigWorldMapDetail:_RefreshTrackOperator(isActive)
 
     self.BtnTracking.gameObject:SetActiveEx(isActive and not isTrack)
     self.BtnCancelTracking.gameObject:SetActiveEx(isActive and isTrack)
+end
+
+function XUiBigWorldMapDetail:_RefreshQuickGoingOperator()
+    if self._PinData then
+        --- 任务在宿舍内绑定宿舍节点特殊处理
+        local isNearBy = self._PinData:IsNearbyPin()
+        local isNearByTeleportLevel = false
+
+        if isNearBy then
+            local nearbyPinId = self._PinData.NearbyPinId
+            local nearbyPinData = self._Control:GetPinDataByLevelIdAndPinId(self._PinData:GetValidLevelId(), nearbyPinId)
+
+            if nearbyPinData then
+                isNearByTeleportLevel = nearbyPinData:IsTeleportLevel()
+            end
+        end
+
+        if isNearByTeleportLevel or self._PinData:IsCouldTeleport() or not self._PinData:IsTracking() then
+            self.BtnGo.gameObject:SetActiveEx(false)
+        else
+            self.BtnGo.gameObject:SetActiveEx(true)
+
+            if self._QuickGoingData then
+                self.BtnGo:SetButtonState(CS.UiButtonState.Normal)
+            else
+                self.BtnGo:SetDisable(true, false)
+            end
+        end
+    else
+        self.BtnGo.gameObject:SetActiveEx(false)
+    end
+end
+
+---@param pinData XBWMapPinData
+function XUiBigWorldMapDetail:_RefreshPinIcon(pinData)
+    if pinData then
+        local isActive = pinData:IsActive()
+
+        self:_RefreshPinStyle(pinData.StyleId, isActive)
+    end
 end
 
 function XUiBigWorldMapDetail:_RefreshPinStyle(styleId, isActive)
@@ -303,23 +388,10 @@ function XUiBigWorldMapDetail:_RefreshRewardList(rewardList)
     end
 end
 
-function XUiBigWorldMapDetail:_RefreshProgress(progressList)
-    if not XTool.IsTableEmpty(progressList) then
+function XUiBigWorldMapDetail:_RefreshProgress(progressText)
+    if not string.IsNilOrEmpty(progressText) then
         self.ProgressList.gameObject:SetActiveEx(true)
-        for i, progress in pairs(progressList) do
-            local grid = self._ProgerssGrids[i]
-
-            if not grid then
-                grid = i == 1 and self.PanelProgress or XUiHelper.Instantiate(self.PanelProgress, self.ProgressList)
-
-                self._ProgerssGrids[i] = grid
-            end
-
-            grid:SetName(progress)
-        end
-        for i = #progressList + 1, #self._ProgerssGrids do
-            self._ProgerssGrids[i].gameObject:SetActiveEx(false)
-        end
+        self.PanelProgress:SetName(progressText)
     else
         self.ProgressList.gameObject:SetActiveEx(false)
     end
@@ -346,13 +418,47 @@ function XUiBigWorldMapDetail:_Teleport(pinData)
 
             if not XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData) then
                 XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT,
-                currentLevelId, pinData.LevelId, pinData.PinId)
+                    teleportLevelId, pinData.LevelId, pinData.PinId)
             else
                 XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_TELEPORT_POPUP_OPEN)
             end
         else
-            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT, currentLevelId,
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT, teleportLevelId,
                 pinData.LevelId, pinData.PinId)
+        end
+    end
+end
+
+---@param pinData XBWMapPinData
+function XUiBigWorldMapDetail:_QuickTeleport(pinData, isPopConfirm, key, tips, isToggleActive)
+    if pinData and pinData:IsCouldTeleport() then
+        local teleportLevelId = pinData:GetTeleportLevelId()
+        local currentLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
+        local pinId = pinData.PinId
+        local mapPinLevelId = pinData.LevelId
+
+        if isPopConfirm then
+            local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+
+            confirmData:InitInfo(nil, tips)
+            confirmData:InitToggleActive(isToggleActive or false):InitKey(key)
+            confirmData:InitSureClick(nil, function()
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT,
+                    teleportLevelId, mapPinLevelId, pinId)
+            end)
+            confirmData:InitCancelAndCloseClick(nil, function()
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_TELEPORT_POPUP_CLOSE)
+            end)
+
+            if not XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData) then
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT,
+                    teleportLevelId, mapPinLevelId, pinId)
+            else
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_TELEPORT_POPUP_OPEN)
+            end
+        else
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_BEGIN_TELEPORT, teleportLevelId,
+                mapPinLevelId, pinId)
         end
     end
 end

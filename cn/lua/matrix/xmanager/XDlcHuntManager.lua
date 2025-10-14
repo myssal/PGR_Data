@@ -19,9 +19,9 @@ XDlcHuntManagerCreator = function()
         ReceiveAssistPoint = "DlcReceiveAssistPointRequest",
     }
 
-    local config = XFubenConfigs.GetChapterBannerByType(XFubenConfigs.ChapterType.DlcHunt)
+    local config = XFubenConfigs.GetChapterBannerByType(XEnumConst.FuBen.ChapterType.DlcHunt)
     ---@class XDlcHuntManager
-    local XDlcHuntManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.DlcHunt, config)
+    local XDlcHuntManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.DlcHunt, config)
 
     function XDlcHuntManager.InitDataFromServer(data)
         if XDlcHuntManager.IsOpen() then

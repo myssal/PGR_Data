@@ -8,6 +8,8 @@ local TableKey =
     MainLine2Treasure = { CacheType = XConfigUtil.CacheType.Normal },
     MainLine2Achievement = { CacheType = XConfigUtil.CacheType.Normal },
     MainLine2ClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key" },
+    MainLine2ExhibitionModule = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client },
+    MainLine2ExhibitionChapter = { CacheType = XConfigUtil.CacheType.Normal },
 }
 
 ---@class XMainLine2Model : XModel
@@ -15,8 +17,6 @@ local XMainLine2Model = XClass(XModel, "XMainLine2Model")
 function XMainLine2Model:OnInit()
     -- 初始化内部变量
     -- 这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
-
-    -- 服务器数据
 
     -- config相关
     self._ConfigUtil:InitConfigByTableKey("Fuben/MainLine2", TableKey)
@@ -56,6 +56,7 @@ function XMainLine2Model:OnLoginNotify(fubenMainLine2Data)
     self.ChapterDataDic = {}
     self.LastPassStage = fubenMainLine2Data.LastPassStage or {}
     self.FirstPassTime = fubenMainLine2Data.FirstPassTime or {}
+    self:SetLastExhibitionChapterId(fubenMainLine2Data.LastExhibitionChapterId)
     if fubenMainLine2Data.MainDatas then
         for _, mainData in ipairs(fubenMainLine2Data.MainDatas) do
             self.MainDataDic[mainData.Id] = mainData
@@ -475,6 +476,74 @@ function XMainLine2Model:GetClientConfigParams(key, index)
     end
 end
 
+function XMainLine2Model:GetClientConfigNumber(key, index)
+    index = index or 1
+    
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.MainLine2ClientConfig, key)
+    if not config then
+        XLog.Error("请检查配置表Client/Fuben/MainLine2/MainLine2ClientConfig.tab，未配置行Key = " .. tostring(key))
+        return nil
+    end
+
+    local param = config.Params[index]
+
+    if not string.IsNilOrEmpty(param) and string.IsFloatNumber(param) then
+        return tonumber(param)
+    end
+    
+    return 0
+end
+
+function XMainLine2Model:GetClientConfigNumberArray(key)
+
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.MainLine2ClientConfig, key)
+    if not config then
+        XLog.Error("请检查配置表Client/Fuben/MainLine2/MainLine2ClientConfig.tab，未配置行Key = " .. tostring(key))
+        return nil
+    end
+    
+    local result = {}
+
+    for i, v in pairs(config.Params) do
+        local num = 0
+
+        if not string.IsNilOrEmpty(v) and string.IsFloatNumber(v) then
+            num = tonumber(v)
+        end
+        
+        table.insert(result, num)
+    end
+    
+
+    return result
+end
+
+function XMainLine2Model:GetConfigExhibitionModule(id)
+    local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2ExhibitionModule)
+    if id then
+        if cfgs[id] then
+            return cfgs[id]
+        else
+            XLog.Error("请检查配置表Share/Fuben/MainLine2/MainLine2ExhibitionModule.tab，未配置行Id = " .. tostring(id))
+        end
+    else
+        return cfgs
+    end
+end
+
+function XMainLine2Model:GetConfigExhibitionChapter(id)
+    local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2ExhibitionChapter)
+    if id then
+        if cfgs[id] then
+            return cfgs[id]
+        else
+            XLog.Error("请检查配置表Share/Fuben/MainLine2/MainLine2ExhibitionChapter.tab，未配置行Id = " .. tostring(id))
+        end
+    else
+        return cfgs
+    end
+end
+
 --#endregion 配置表 -----------------------------------------------------------------------------------------------
 
 --- 获取主章节实例
@@ -507,12 +576,24 @@ end
 
 --- 主章节是否全通关
 ---@param mainId number 主章节Id
-function XMainLine2Model:IsMainPassed(mainId)
+---@param difficult number 指定难度，不传为全难度
+function XMainLine2Model:IsMainPassed(mainId, difficult)
     local chapterIds = self:GetMainChapterIds(mainId)
     for _, chapterId in ipairs(chapterIds) do
+        if difficult then
+            ---@type XTableMainLine2Chapter
+            local chapterCfg = self:GetConfigChapter(chapterId)
+
+            if not chapterCfg or chapterCfg.Difficult ~= difficult then
+                goto CONTINUE
+            end
+        end
+        
         if not self:IsChapterPassed(chapterId) then
             return false
         end
+        
+        :: CONTINUE ::
     end
     return true
 end
@@ -725,8 +806,6 @@ end
 
 --- 获取章节打的下一关入口
 ---@param chapterId number 章节Id
----@return uiIndex int 对应UI预制体下标
----@return orderId int 关卡Stage表的OrderId
 function XMainLine2Model:GetChapterNextEntrance(chapterId)
     local groupIds = self:GetChapterStageGroupIds(chapterId)
     local uiIndex = 0
@@ -768,7 +847,7 @@ end
 
 --- 获取关卡的章节Id，战斗时需要通过stageId获取章节成就信息
 ---@param stageId number 关卡Id
-function XMainLine2Model:GetStageChapterId(stageId)
+function XMainLine2Model:GetStageChapterId(stageId, ignoreError)
     -- 读取缓存
     local chapterId = self.StageChapterIdDic and self.StageChapterIdDic[stageId]
     if chapterId then
@@ -784,7 +863,9 @@ function XMainLine2Model:GetStageChapterId(stageId)
             for _, sId in ipairs(groupCfg.StageIds) do
                 if sId == stageId then
                     self:CacheStageChapterId(stageId, chapterCfg.ChapterId)
-                    XLog.Warning("XMainLine2Model:GetStageChapterId 请提前缓存好stageId对应的ChapterId。若为战斗回放可不用管。")
+                    if not ignoreError then
+                        XLog.Warning("XMainLine2Model:GetStageChapterId 请提前缓存好stageId对应的ChapterId。若为战斗回放可不用管。")
+                    end
                     return chapterCfg.ChapterId
                 end
             end
@@ -1054,7 +1135,7 @@ function XMainLine2Model:SetChapterLastUnlockEntranceIndex(chapterId, entranceIn
     self._SaveUtil:SaveData(key, entranceIndex)
 end
 
---#region 指挥官 -------------------------------------------------------------------------------------------------
+--region 指挥官 
 -- 是否已经设置指挥官性别
 function XMainLine2Model:IsSetPlayerGender()
     local genderType = self._SaveUtil:GetData("GenderType")
@@ -1072,6 +1153,43 @@ end
 function XMainLine2Model:SetPlayerGender(genderType)
     self._SaveUtil:SaveData("GenderType", genderType)
 end
---#endregion 指挥官 ----------------------------------------------------------------------------------------------
+--endregion
+
+--region 时间轴
+-- 是否打开主线时间轴
+function XMainLine2Model:GetIsOpenExhibition()
+    if not self.IsOpenExhibition then
+        local isOpen = self._SaveUtil:GetData("IsOpenMainLineExhibition")
+        self.IsOpenExhibition = isOpen == nil or isOpen == true
+    end
+    return self.IsOpenExhibition
+end
+
+-- 设置是否打开主线时间轴
+function XMainLine2Model:SetOpenExhibition(isOpen)
+    self.IsOpenExhibition = isOpen
+    self._SaveUtil:SaveData("IsOpenMainLineExhibition", isOpen)
+end
+
+-- 设置UiMainLineExhibitionPopupChapter本次登陆不再弹出
+function XMainLine2Model:SetIgnoreUiExhibitionPopupChapter(isIgnore)
+    self.IgnoreUiExhibitionPopupChapter = isIgnore
+end
+
+-- 获取UiMainLineExhibitionPopupChapter本次登陆能否再弹出
+function XMainLine2Model:GetIsIgnoreUiExhibitionPopupChapter()
+    return self.IgnoreUiExhibitionPopupChapter == true
+end
+
+-- 获取最后进入的时间轴章节Id
+function XMainLine2Model:GetLastExhibitionChapterId()
+    return self.LastExhibitionChapterId
+end
+
+-- 设置最后进入的时间轴章节Id
+function XMainLine2Model:SetLastExhibitionChapterId(id)
+    self.LastExhibitionChapterId = id
+end
+--endregion
 
 return XMainLine2Model

@@ -22,12 +22,14 @@ function XUiSkyGardenShoppingStreetTarget:OnStart(stageId, isConfigOnly)
     self.IsConfigOnly = isConfigOnly
     if isConfigOnly then
         self.BtnStart.gameObject:SetActive(true)
-        self.BtnBack.gameObject:SetActive(true)
+        self.BtnBack.gameObject:SetActive(false)
         self.BtnYes.gameObject:SetActive(false)
+        self.BtnHelp.gameObject:SetActive(false)
     else
         self.BtnStart.gameObject:SetActive(false)
-        self.BtnBack.gameObject:SetActive(false)
+        self.BtnBack.gameObject:SetActive(true)
         self.BtnYes.gameObject:SetActive(true)
+        self.BtnHelp.gameObject:SetActive(true)
     end
     
     local stageId = self._stageId
@@ -79,6 +81,10 @@ function XUiSkyGardenShoppingStreetTarget:OnBtnYesClick()
     self:Close()
 end
 
+function XUiSkyGardenShoppingStreetTarget:OnBtnHelpClick()
+    self._Control:ShowTeachInfo()
+end
+
 --endregion
 
 --region 私有方法
@@ -87,6 +93,7 @@ function XUiSkyGardenShoppingStreetTarget:_RegisterButtonClicks()
     self.BtnStart.CallBack = function() self:OnBtnStartClick() end
     self.BtnBack.CallBack = function() self:OnBtnBackClick() end
     self.BtnYes.CallBack = function() self:OnBtnYesClick() end
+    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
 end
 --endregion
 

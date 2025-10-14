@@ -1,6 +1,6 @@
 local XMovieActionLeftTitleAppear = XClass(XMovieActionBase, "XMovieActionLeftTitleAppear")
 
-function XMovieActionLeftTitleAppear:Ctor(actionData)
+function XMovieActionLeftTitleAppear:OnInit(actionData)
     local params = actionData.Params
 end
 

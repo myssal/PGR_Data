@@ -384,16 +384,7 @@ function XUiRiftCharacter:OnBtnTeamPrefabClick()
     local stageInfo = XTool.IsNumberValid(stageId) and XDataCenter.FubenManager.GetStageInfo(stageId) or {}
     local stageType = stageInfo.Type
 
-    XLuaUiManager.Open("UiRoomTeamPrefab", 
-    self.XTeam:GetCaptainPos(),
-    self.XTeam:GetFirstFightPos(), 
-    characterLimitType,
-    nil, 
-    stageType, 
-    nil, 
-    nil,
-    stageId, 
-    self.XTeam)
+    XLuaUiManager.Open("UiTeamPrefabMain")
 end
 
 function XUiRiftCharacter:OnBtnAddClick()

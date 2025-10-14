@@ -2,7 +2,7 @@ local next = next
 
 local XMovieActionPrefabAnimation = XClass(XMovieActionBase, "XMovieActionPrefabAnimation")
 
-function XMovieActionPrefabAnimation:Ctor(actionData)
+function XMovieActionPrefabAnimation:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     local transTimeLineSeconds = XDataCenter.MovieManager.TransTimeLineSeconds
@@ -14,11 +14,11 @@ function XMovieActionPrefabAnimation:Ctor(actionData)
     self.Resume = paramToNumber(params[5]) ~= 0
 end
 
-function XMovieActionPrefabAnimation:OnInit()
+function XMovieActionPrefabAnimation:OnEnter()
     local parentName = self.ParentName
     local parent = self.UiRoot[parentName]
     if XTool.UObjIsNil(parent) then
-        XLog.Error("XMovieActionPrefabAnimation:OnInit error: parentName is: " .. parentName)
+        XLog.Error("XMovieActionPrefabAnimation:OnEnter error: parentName is: " .. parentName)
         return
     end
 

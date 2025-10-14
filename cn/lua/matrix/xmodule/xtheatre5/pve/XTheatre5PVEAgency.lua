@@ -58,6 +58,9 @@ function XTheatre5PVEAgency:RequestPveEventPromote(eventId,optionId, cb)
                         self._Model.PVERougeData:UpdateHistoryEvent(chapterData.ChapterId, firstEventId)
                     end    
                     self._Model.PVEAdventureData:UpdatePVENextEvent(res.NextEventId)
+                    -- v4.0 新增经验值
+                    local exp = self._Model.CurAdventureData:GetCharacterExp()
+                    self._Model.CurAdventureData:UpdateCharacterExp(exp + res.Exp)
                     XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_PVE_UPDATE_EVENT,res)
                 end    
             end)

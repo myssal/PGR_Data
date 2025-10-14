@@ -93,7 +93,7 @@ end
 --endregion
 
 function XTheatre5PVPAgencyCom:OnCommonBattleSettleEvent(autoChessResult)
-    if self._Model:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Model:GetCurPlayingMode() ~= XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         return
     end
 

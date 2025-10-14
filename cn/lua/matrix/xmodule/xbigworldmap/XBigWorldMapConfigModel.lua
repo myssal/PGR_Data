@@ -219,6 +219,12 @@ function XBigWorldMapConfigModel:GetBigWorldMapPinStyleUnActiveIconByStyleId(sty
     return config.UnActiveIcon
 end
 
+function XBigWorldMapConfigModel:GetBigWorldMapPinStyleBriefIconByStyleId(styleId)
+    local config = self:GetBigWorldMapPinStyleConfigByStyleId(styleId)
+
+    return config.BriefIcon
+end
+
 ---@return XTableBigWorldMapQuestPin[]
 function XBigWorldMapConfigModel:GetBigWorldMapQuestPinConfigs()
     return self._ConfigUtil:GetByTableKey(MapTableKey.BigWorldMapQuestPin)

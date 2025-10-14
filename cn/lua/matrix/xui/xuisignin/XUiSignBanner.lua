@@ -86,6 +86,8 @@ function XUiSignBanner:SetInfo(configId)
         self.SignPrefabContent = XUiWeekChallenge.New(prefab, self)
     elseif self.Config.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard then
         self.SignPrefabContent = XUiSignWeekCard.New(prefab, self)
+    elseif self.Config.FunctionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard then
+        self.SignPrefabContent = require("XUi/XUiSignIn/XUiSignThreeDay").New(prefab, self)
     end
 
     self.SignPrefabContent:Refresh(self.Config.SubConfigId, true)
@@ -98,6 +100,7 @@ function XUiSignBanner:SetBtnActive(active, dayRewardConfig)
 
     if self.Config.FunctionType == XAutoWindowConfigs.AutoFunctionType.Sign
         or self.Config.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard
+        or self.Config.FunctionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard
     then
         self.PanelMask.gameObject:SetActive(not active)
     else

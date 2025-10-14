@@ -1,3 +1,4 @@
+local XTheatre5EnumConst = require("XModule/XTheatre5/XTheatre5EnumConst")
 local tableInsert = table.insert
 local TableNormal = {
     Theatre5Activity = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
@@ -10,6 +11,7 @@ local TableNormal = {
 local TablePrivate = {
     Theatre5Character = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
     Theatre5CharacterFashion = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
+    Theatre5CharacterLevel = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
 
     Theatre5ItemSkill = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
     Theatre5RankMajor = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
@@ -32,6 +34,9 @@ local TablePrivate = {
     Theatre5ItemBox = {},
     Theatre5Story = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre5StoryGroup = { DirPath = XConfigUtil.DirectoryType.Client },
+
+    Theatre5RelicEffect = { DirPath = XConfigUtil.DirectoryType.Share, },
+    Theatre5ItemRelic = { DirPath = XConfigUtil.DirectoryType.Share, },
 }
 
 local PVETableKey = {
@@ -76,6 +81,7 @@ function XTheatre5Model:InitConfigs()
     self._DeduceQuestionCfgsDic = nil
     self._TaskShopCfgsDic = nil
     self._DeduceClueByScriptIdDic = nil
+    self._CharacterLevelGroups = nil
     self._ConfigUtil:InitConfigByTableKey('Theatre5', TableNormal, XConfigUtil.CacheType.Normal)
     self._ConfigUtil:InitConfigByTableKey('Theatre5', TablePrivate, XConfigUtil.CacheType.Private)
     self._ConfigUtil:InitConfigByTableKey('Theatre5/Theatre5Pve', PVETableKey)
@@ -97,6 +103,7 @@ function XTheatre5Model:ReleasePriConfigCache()
     self._DeduceQuestionCfgsDic = nil
     self._TaskShopCfgsDic = nil
     self._DeduceClueByScriptIdDic = nil
+    self._CharacterLevelGroups = nil
 end
 
 function XTheatre5Model:ReleaseNopriConfigCache()
@@ -165,6 +172,7 @@ end
 
 --region 道具相关
 
+---@return XTableTheatre5Item
 function XTheatre5Model:GetTheatre5ItemCfgById(itemId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5Item, itemId, notips)
 end
@@ -338,8 +346,8 @@ function XTheatre5Model:GetTheatre5ShopChatCfgs(shopChatGroupId)
     end
     if not self._ShopNpcChatCfgsDic[shopChatGroupId] then
         self._ShopNpcChatCfgsDic[shopChatGroupId] = {}
-        local idPreix = shopChatGroupId * XMVCA.XTheatre5.EnumConst.ShopNpcChatPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.ShopNpcChatPreix - 1 do
+        local idPreix = shopChatGroupId * XTheatre5EnumConst.ShopNpcChatPreix
+        for i = 1, XTheatre5EnumConst.ShopNpcChatPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ShopNpcChat, id, true)
             if cfg then
@@ -433,8 +441,8 @@ function XTheatre5Model:GetPveSceneChatCfgs(chatGroupId)
     end
     if not self._SceneChatCfgsDic[chatGroupId] then
         self._SceneChatCfgsDic[chatGroupId] = {}
-        local idPreix = chatGroupId * XMVCA.XTheatre5.EnumConst.PveSceneChatPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.PveSceneChatPreix - 1 do
+        local idPreix = chatGroupId * XTheatre5EnumConst.PveSceneChatPreix
+        for i = 1, XTheatre5EnumConst.PveSceneChatPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveSceneChat, id, true)
             if cfg then
@@ -459,8 +467,8 @@ function XTheatre5Model:GetPveEventLevelCfgs(eventLevelGroupId)
     end
     if not self._EventLevelCfgsDic[eventLevelGroupId] then
         self._EventLevelCfgsDic[eventLevelGroupId] = {}
-        local idPreix = eventLevelGroupId * XMVCA.XTheatre5.EnumConst.PveEventLevelPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.PveEventLevelPreix - 1 do
+        local idPreix = eventLevelGroupId * XTheatre5EnumConst.PveEventLevelPreix
+        for i = 1, XTheatre5EnumConst.PveEventLevelPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveEventLevel, id, true)
             if cfg then
@@ -481,8 +489,8 @@ function XTheatre5Model:GetPveEventOptionCfgs(eventOptionGroupId)
     end
     if not self._EventOptionCfgsDic[eventOptionGroupId] then
         self._EventOptionCfgsDic[eventOptionGroupId] = {}
-        local idPreix = eventOptionGroupId * XMVCA.XTheatre5.EnumConst.PveEventOptionPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.PveEventOptionPreix - 1 do
+        local idPreix = eventOptionGroupId * XTheatre5EnumConst.PveEventOptionPreix
+        for i = 1, XTheatre5EnumConst.PveEventOptionPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveEventOption, id, true)
             if cfg then
@@ -503,8 +511,8 @@ function XTheatre5Model:GetPveChapterLevelCfgs(levelGroupId)
     end
     if not self._ChapterLevelCfgsDic[levelGroupId] then
         self._ChapterLevelCfgsDic[levelGroupId] = {}
-        local idPreix = levelGroupId * XMVCA.XTheatre5.EnumConst.PveChapterLevelPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.PveChapterLevelPreix - 1 do
+        local idPreix = levelGroupId * XTheatre5EnumConst.PveChapterLevelPreix
+        for i = 1, XTheatre5EnumConst.PveChapterLevelPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveChapterLevel, id, true)
             if cfg then
@@ -604,7 +612,7 @@ function XTheatre5Model:GetCharacterPveStoryEntranceCfg(characterId)
         local allCfgs = self._ConfigUtil:GetByTableKey(PVETableKey.Theatre5PveStoryEntrance)
         for _, cfg in pairs(allCfgs) do
             local storyLineCfg = self:GetStoryLineCfg(cfg.StoryLine, true)
-            if storyLineCfg and storyLineCfg.StoryLineType == XMVCA.XTheatre5.EnumConst.PVEStoryLineType.Normal
+            if storyLineCfg and storyLineCfg.StoryLineType == XTheatre5EnumConst.PVEStoryLineType.Normal
                     and not XTool.IsTableEmpty(storyLineCfg.StoryLineCharacter) then
                 self._CharacterStoryEntranceCfgsDic[storyLineCfg.StoryLineCharacter[1]] = cfg
             end
@@ -701,8 +709,8 @@ function XTheatre5Model:GetPveDeduceQuestionCfgs(questionGroupId)
     end
     if not self._DeduceQuestionCfgsDic[questionGroupId] then
         self._DeduceQuestionCfgsDic[questionGroupId] = {}
-        local idPreix = questionGroupId * XMVCA.XTheatre5.EnumConst.DeduceQuestionPreix
-        for i = 1, XMVCA.XTheatre5.EnumConst.DeduceQuestionPreix - 1 do
+        local idPreix = questionGroupId * XTheatre5EnumConst.DeduceQuestionPreix
+        for i = 1, XTheatre5EnumConst.DeduceQuestionPreix - 1 do
             local id = idPreix + i
             local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(PVETableKey.Theatre5PveDeduceQuestion, id, true)
             if cfg then
@@ -744,7 +752,6 @@ function XTheatre5Model:GetTaskOrShopCfgs(taskShopType)
         end
     end
     return self._TaskShopCfgsDic[taskShopType]
-
 end
 
 function XTheatre5Model:GetTaskOrShopCfg(taskShopId, notips)
@@ -761,6 +768,170 @@ end
 
 --endregion
 
+---@param adventureData XTheatre5PVEAdventureData|XTheatre5PVPAdventureData
+function XTheatre5Model:GetCharacterLevelConfig(adventureData, level)
+    local group = self:GetCharacterLevelGroupConfig(adventureData)
+    if group then
+        level = level or adventureData:GetCharacterLevel()
+        return group[level]
+    end
+end
 
+function XTheatre5Model:GetMaxLevel()
+    local group = self:GetCharacterLevelGroupConfig(self.CurAdventureData)
+    local level = 0
+    for i, v in pairs(group) do
+        if level <= v.Level then
+            level = v.Level
+        end
+    end
+    return level
+end
+
+-- region character level and exp
+---@param adventureData XTheatre5PVEAdventureData|XTheatre5PVPAdventureData
+---@return XTableTheatre5CharacterLevel[]
+function XTheatre5Model:GetCharacterLevelGroupConfig(adventureData)
+    if not adventureData then
+        XLog.Error("[XTheatre5Model] GetCharacterLevelConfig adventureData为空喔有问题")
+        return {}
+    end
+    local gameMode = adventureData:GetGameMode()
+    local groupId
+    if gameMode == XTheatre5EnumConst.GameMode.PVP then
+        groupId = self:GetTheatre5ConfigValByKey("PvpLevelGroup")
+    elseif gameMode == XTheatre5EnumConst.GameMode.PVE then
+        local chapterId = adventureData:GetChapterId()
+        local chapter = self:GetPveChapterCfg(chapterId)
+        groupId = chapter.LevelGroup
+    else
+        XLog.Error("[XTheatre5Model] 找不到对应的等级配置:" .. tostring(gameMode))
+    end
+
+    if groupId then
+        if not self._CharacterLevelGroups then
+            self._CharacterLevelGroups = {}
+        end
+        if not self._CharacterLevelGroups[groupId] then
+            ---@type XTableTheatre5CharacterLevel[]
+            local configs = self._ConfigUtil:GetByTableKey(TablePrivate.Theatre5CharacterLevel)
+            local group = {}
+            for i, config in pairs(configs) do
+                if config.GroupId == groupId then
+                    group[config.Level] = config
+                end
+            end
+            self._CharacterLevelGroups[groupId] = group
+        end
+        return self._CharacterLevelGroups[groupId]
+    else
+        XLog.Error("[XTheatre5Model] 找不到对应的等级配置, Theatre5CharacterLevel")
+    end
+end
+
+function XTheatre5Model:GetCharacterLevelAttr(characterId, level, attribs)
+    attribs = attribs or {}
+    local characterConfig = self:GetTheatre5CharacterCfgById(characterId)
+    if not characterConfig then
+        XLog.Error("[XTheatre5CharacterControl] 获取角色配置失败")
+        return attribs
+    end
+
+    if characterConfig.PromotedAttrId and characterConfig.PromotedAttrId ~= 0 then
+        ---@type XTableAttribBase
+        local attrCfg = XMVCA.XDlcWorld:GetAttributeConfigById(characterConfig.PromotedAttrId)
+        if attrCfg and next(attrCfg) then
+            local DlcWorldAttribMultyBase = 1000 -- 基础属性配置值乘法基数
+            for k, v in pairs(attrCfg) do
+                local attribType = XDlcNpcAttribType[k]
+                if type(attribType) == 'number' and type(v) == 'number' then
+                    local add
+                    if XTheatre5EnumConst.EnlargedAttribs[attribType] then
+                        add = XMath.ToMinInt(v * (level - 1) * DlcWorldAttribMultyBase)
+                    else
+                        add = v * (level - 1)
+                    end
+                    local key = XDlcNpcAttribType[k]
+                    attribs[key] = attribs[key] or 0
+                    attribs[key] = attribs[key] + add
+                end
+            end
+            return attribs
+        end
+    end
+    XLog.Error("[XTheatre5CharacterControl] 获取角色等级属性失败" .. tostring(characterId))
+    return attribs
+end
+--
+
+-- 获取强化锤的实例id
+function XTheatre5Model:GetHammerInstanceId()
+    if not self.CurAdventureData then
+        XLog.Error("[XTheatre5Model] 获取锤子道具实例id失败, CurAdventureData为空")
+        return
+    end
+    if not self.CurAdventureData.BagData then
+        XLog.Error("[XTheatre5Model] 获取锤子道具实例id失败, CurAdventureData.BagData为空")
+        return
+    end
+    local bagData = self.CurAdventureData.BagData
+    if bagData.BagItemDict then
+        local bagItemDict = bagData.BagItemDict
+        for _, item in pairs(bagItemDict) do
+            local itemId = item.ItemId
+            local itemConfig = self:GetTheatre5ItemCfgById(itemId)
+            if itemConfig then
+                if itemConfig.Type == XTheatre5EnumConst.ItemType.Hammer then
+                    return item.InstanceId
+                end
+            end
+        end
+    else
+        XLog.Error("[XTheatre5Model] 获取锤子道具实例id失败, bagData.BagItemDict or bagData.TempItemDict为空")
+    end
+    local tempItemDict = bagData.TempItemDict
+    if tempItemDict then
+        for _, item in pairs(tempItemDict) do
+            local itemId = item.ItemId
+            local itemConfig = self:GetTheatre5ItemCfgById(itemId)
+            if itemConfig then
+                if itemConfig.Type == XTheatre5EnumConst.ItemType.Hammer then
+                    return item.InstanceId
+                end
+            end
+        end
+    else
+        XLog.Error("[XTheatre5Model] 获取锤子道具实例id失败, bagData.TempItemDict为空")
+    end
+    XLog.Warning("[XTheatre5Model] 找不到锤子道具")
+end
+
+function XTheatre5Model:GetTheatre5RelicCfgById(relicId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5Relic, relicId)
+end
+
+function XTheatre5Model:GetTheatre5RelicEffectCfgById(effectId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5RelicEffect, effectId)
+end
+
+function XTheatre5Model:GetRelicEffectConfigs(relicId)
+    local relicConfig = self:GetTheatre5RelicCfgById(relicId)
+    if relicConfig then
+        local effectConfigs = {}
+        local effects = relicConfig.Effect
+        for i = 1, #effects do
+            local effectId = effects[i]
+            local effectConfig = self:GetTheatre5RelicEffectCfgById(effectId)
+            if effectConfig then
+                table.insert(effectConfigs, effectConfig)
+            else
+                XLog.Error("[XTheatre5Model] 找不到对应的饰品效果配置:" .. tostring(effectId))
+            end
+        end
+        return effectConfigs
+    else
+        XLog.Error("[XTheatre5Model] 找不到对应的饰品配置:" .. tostring(relicId))
+    end
+end
 
 return XTheatre5Model

@@ -112,7 +112,9 @@ function XUiBigWorldCoating:UpdateCharacterModel()
     local fashionId = self._FashionId
     local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
     local helper = self._DisplayController:GetDisplayHelper()
-    local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera)
+    local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera, nil, 0)
+
+    helper.AddEffectInfos(modelInfo, fashionId)
 
     if self._CurrentModelId and self._CurrentModelId ~= uiModelId then
         self._DisplayController:SetModelActive(self._CurrentModelId, false)
@@ -126,6 +128,7 @@ function XUiBigWorldCoating:UpdateCharacterModel()
     if model then
         self._Drag.Target = model.transform
     end
+    self._DisplayController:DisableLookAtIK(uiModelId, 0)
     model.transform:Reset()
 end
 

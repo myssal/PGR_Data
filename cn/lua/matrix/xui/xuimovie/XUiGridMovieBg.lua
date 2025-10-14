@@ -1,14 +1,14 @@
 ---@class XUiGridMovieBg
+---@field UiMovie XUiMovie
 local XUiGridMovieBg = XClass(nil, "XUiGridMovieBg")
 
-function XUiGridMovieBg:Ctor(parent, link)
-    self.Parent = parent
+function XUiGridMovieBg:Ctor(uiMovie, link)
+    self.UiMovie = uiMovie
     self.Link = link -- 挂点
-    self.UiMovieRImgBg = CS.UnityEngine.Object.Instantiate(self.Parent.Parent.UiMovieRImgBg, self.Link.transform)
-    self.UiMovieRImgBg.gameObject:SetActiveEx(true)
-    self.BgRoot = self.UiMovieRImgBg:Find("BgRoot") -- 背景动画是控制BgRoot
-    local uiObj = self.UiMovieRImgBg:GetComponent(typeof(CS.UiObject))
-    XTool.InitUiObjectByInstance(uiObj, self)
+    self.GameObject = XUiHelper.Instantiate(self.UiMovie.UiMovieRImgBg, self.Link.transform)
+    self.Transform = self.GameObject.transform
+    self.GameObject.gameObject:SetActiveEx(true)
+    XTool.InitUiObject(self)
 end
 
 function XUiGridMovieBg:OnDestroy()

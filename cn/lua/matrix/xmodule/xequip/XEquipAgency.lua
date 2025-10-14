@@ -79,54 +79,62 @@ function XEquipAgency:PutOn(characterId, equipId, cb)
 
     local equip = self:GetEquip(equipId)
     local site = self:GetEquipSite(equip.TemplateId)
+    local req = { CharacterId = characterId, Site = site, EquipId = equipId }
+    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnRequest", req, function(res)
+        -- 更新装备数据
+        self:OnEquipPutOnSuccess(characterId, equipId, cb)
+    end)
+end
+
+function XEquipAgency:OnEquipPutOnSuccess(characterId, equipId, cb)
+    local equip = self:GetEquip(equipId)
+    local site = self:GetEquipSite(equip.TemplateId)
     local switchCharacterId = equip.CharacterId
     local oldEquipId = self:GetCharacterEquipId(characterId, site)
     local isWeapon = site == XEnumConst.EQUIP.EQUIP_SITE.WEAPON
 
-    local req = { CharacterId = characterId, Site = site, EquipId = equipId }
-    XNetwork.CallWithAutoHandleErrorCode("EquipPutOnRequest", req, function(res)
-        -- 更新装备数据
-        if oldEquipId then
-            local oldEquip = self:GetEquip(oldEquipId)
-            if isWeapon then
-                oldEquip:PutOn(switchCharacterId) -- 武器是替换
-            else
-                oldEquip:TakeOff() -- 意识是卸下
-            end
-            XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, switchCharacterId, false)
-        elseif oldEquipId then --目标角色更换了非目标装备
-            XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ oldEquipId }, characterId, false)
-        end
-        local charIdDic = {}
-        if switchCharacterId ~= 0 then
-            charIdDic[switchCharacterId] = true
-        end
-        charIdDic[characterId] = true
-        equip:PutOn(characterId)
-        XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, characterId, true)
-
-        -- 更新成员的装备数据
-        if switchCharacterId ~= 0 then
-            if oldEquipId and isWeapon then
-                self._Model:SetCharacterEquipId(switchCharacterId, oldEquipId)
-            else
-                self._Model:RemoveCharacterEquipId(switchCharacterId, equipId)
-            end
-        end
-        self._Model:SetCharacterEquipId(characterId, equipId)
-
-        -- 更新角色数据
-        XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
-        CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
-        XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
-
+    -- 卸下旧装备
+    if oldEquipId then
+        local oldEquip = self:GetEquip(oldEquipId)
         if isWeapon then
-            XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_WEAPON_NOTYFY, characterId, equipId)
+            oldEquip:PutOn(switchCharacterId)
+        else
+            oldEquip:TakeOff()
         end
-        
-        if cb then cb() end
-        self:TipEquipOperation(nil, XUiHelper.GetText("EquipPutOnSuc"))
-    end)
+        XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, switchCharacterId, false)
+    end
+
+    local charIdDic = {}
+    if switchCharacterId ~= 0 then
+        charIdDic[switchCharacterId] = true
+    end
+    charIdDic[characterId] = true
+
+    -- 穿戴新装备
+    equip:PutOn(characterId)
+    XDataCenter.EquipGuideManager.HandleEquipGuidePutOnOrTakeOff({ equipId }, characterId, true)
+
+    -- 更新数据模型
+    if switchCharacterId ~= 0 then
+        if oldEquipId and isWeapon then
+            self._Model:SetCharacterEquipId(switchCharacterId, oldEquipId)
+        else
+            self._Model:RemoveCharacterEquipId(switchCharacterId, equipId)
+        end
+    end
+    self._Model:SetCharacterEquipId(characterId, equipId)
+
+    -- 通知系统
+    XMVCA:GetAgency(ModuleId.XCharacter):OnSyncCharacterEquipChange(charIdDic)
+    CsXGameEventManager.Instance:Notify(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
+    XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_NOTYFY, equipId)
+
+    if isWeapon then
+        XEventManager.DispatchEvent(XEventId.EVENT_EQUIP_PUTON_WEAPON_NOTYFY, characterId, equipId)
+    end
+
+    if cb then cb() end
+    self:TipEquipOperation(nil, XUiHelper.GetText("EquipPutOnSuc"))
 end
 
 -- 卸下装备
@@ -1272,6 +1280,298 @@ function XEquipAgency:GetResonanceSkillInfo(equipId, pos)
     return self._Model:GetResonanceSkillInfo(equipId, pos)
 end
 
+function XEquipAgency:GetResonanceSkillList(equipId)
+    local list = {}
+    for i = 1, self:GetResonanceSkillNum(equipId) do
+        local skillInfo = self:GetResonanceSkillInfo(equipId, i)
+        if skillInfo then
+            table.insert(list, skillInfo.Id)
+        else
+            table.insert(list, 0)
+        end
+    end
+    return list
+end
+
+-- 获取装备共鸣预览技能
+function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slot)
+    local skillInfoList = {}
+    local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+    local equip = self._Model:GetEquip(equipId)
+    local resonanceCfg = self._Model:GetConfigEquipResonance(equip.TemplateId)
+
+    if characterId then
+        if equip:IsWeapon() then
+            local poolId = resonanceCfg.WeaponSkillPoolId[slot]
+            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId)
+            for _, skillId in ipairs(skillIds) do
+                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
+                table.insert(skillInfoList, skillInfo)
+            end
+        else
+            local skillPoolId = resonanceCfg.CharacterSkillPoolId[slot]
+            local skillInfos = XMVCA.XCharacter:GetCharacterSkillPoolSkillInfos(skillPoolId, characterId)
+            for _, v in ipairs(skillInfos) do
+                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL, v.SkillId)
+                table.insert(skillInfoList, skillInfo)
+            end
+        end
+    end
+
+    -- 属性技能
+    local attrPoolId = resonanceCfg.AttribPoolId[slot]
+    if attrPoolId then
+        local attrInfos = XAttribConfigs.GetAttribGroupTemplateByPoolId(attrPoolId)
+        local attribIdDic = {} -- 过滤重复AttribId，五星武器的共鸣技能
+        for _, v in ipairs(attrInfos) do
+            if not attribIdDic[v.AttribId] then
+                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB, v.Id)
+                table.insert(skillInfoList, skillInfo)
+                attribIdDic[v.AttribId] = true
+            end
+        end
+    end
+
+    return skillInfoList
+end
+
+function XEquipAgency:GetSuitQuality(suitId)
+    return self._Model:GetSuitQuality(suitId)
+end
+
+-- 获取套装最大数量
+function XEquipAgency:GetSuitMaxCnt(suitId)
+    local suitCfg = self._Model:GetConfigEquipSuit(suitId)
+    local maxCnt = 0
+    for i, des in pairs(suitCfg.SkillDescription) do
+        if des and i > maxCnt then
+            maxCnt = i
+        end
+    end
+    return maxCnt
+end
+
+-- 装备是否适配角色类型
+function XEquipAgency:IsFitCharacterType(equipTemplateId, charType)
+    local fitCharType = self:GetEquipCharacterType(equipTemplateId)
+    return fitCharType == XEnumConst.EQUIP.USER_TYPE.ALL or fitCharType == charType
+end
+
+
+--- 获取意识列表
+---@param suitId number 指定套装Id
+function XEquipAgency:GetAwarenessList(characterId, site, suitId)
+    local awarenessList = {}
+    local charType = XMVCA.XCharacter:GetCharacterType(characterId)
+    local equipDic = self._Model:GetEquipDic()
+    for _, equip in pairs(equipDic) do
+        -- 筛选非狗粮、意识类型、适配角色类型、适配套装id
+        if self:GetEquipType(equip.TemplateId) ~= XEnumConst.EQUIP.EQUIP_TYPE.FOOD 
+        and equip:IsAwareness(site) 
+        and self:IsFitCharacterType(equip.TemplateId, charType) 
+        and (suitId == 0 or suitId == self._Model:GetEquipSuitId(equip.TemplateId)) then
+            table.insert(awarenessList, equip)
+        end
+    end
+
+    -- 套装排序优先级
+    local priorityDic = {}
+    local suitPriorityCfg = self:GetConfigCharacterSuitPriority(characterId)
+    if suitPriorityCfg then
+        for index, suitType in ipairs(suitPriorityCfg.PriorityType) do
+            priorityDic[suitType] = math.maxinteger - index
+        end
+    end
+
+    -- 排序
+    table.sort(awarenessList, function(a, b)
+        -- 穿戴在当前角色身上的意识优先
+        local isCurCharA = a.CharacterId == characterId
+        local isCurCharB = b.CharacterId == characterId
+        if isCurCharA ~= isCurCharB then
+            return isCurCharA
+        end
+
+        -- 无角色穿戴优先
+        local isNotWearingA = not a:IsWearing()
+        local isNotWearingB = not b:IsWearing()
+        if isNotWearingA ~= isNotWearingB then
+            return isNotWearingA
+        end
+
+        -- 有任一共鸣技能与当前角色绑定优先
+        local isBindCurCharA = a:IsResonanceBindCharacter(characterId)
+        local isBindCurCharB = b:IsResonanceBindCharacter(characterId)
+        if isBindCurCharA ~= isBindCurCharB then
+            return isBindCurCharA
+        end
+
+        -- 未共鸣过优先
+        local isNotResonanceA = not a:IsResonance()
+        local isNotResonanceB = not b:IsResonance()
+        if isNotResonanceA ~= isNotResonanceB then
+            return isNotResonanceA
+        end
+
+        -- 意识等级高的优先
+        if a.Level ~= b.Level then
+            return a.Level > b.Level
+        end
+
+        local suitIdA = self._Model:GetEquipSuitId(a.TemplateId)
+        local suitIdB = self._Model:GetEquipSuitId(b.TemplateId)
+        -- 专属套装优先
+        if suitPriorityCfg and suitPriorityCfg.ExclusiveSuitId ~= 0 then
+            local isExclusiveA = suitPriorityCfg.ExclusiveSuitId == suitIdA
+            local isExclusiveB = suitPriorityCfg.ExclusiveSuitId == suitIdB
+            if isExclusiveA ~= isExclusiveB then
+                return isExclusiveA
+            end
+        end
+
+        -- 根据意识套装优先级排序
+        local suitTypeA = self:GetEquipSuitSuitType(suitIdA)
+        local suitTypeB = self:GetEquipSuitSuitType(suitIdB)
+        local priorityA = priorityDic[suitTypeA] or 100000
+        local priorityB = priorityDic[suitTypeB] or 100000
+        if priorityA ~= priorityB then
+            return priorityA > priorityB
+        end
+
+        -- 按照意识套装ID从大到小排序
+        return suitIdA > suitIdB
+    end)
+    return awarenessList
+end
+
+--- 获取意识列表
+---@param suitId number 指定套装Id
+---@param xTeamPrefab XTeamPrefab
+function XEquipAgency:GetAwarenessListForTeamPrefab(characterId, site, suitId, xTeamPrefab, posInTeam)
+    local awarenessList = {}
+    local charType = XMVCA.XCharacter:GetCharacterType(characterId)
+    local equipDic = self._Model:GetEquipDic()
+    for _, equip in pairs(equipDic) do
+        -- 筛选非狗粮、意识类型、适配角色类型、适配套装id
+        if self:GetEquipType(equip.TemplateId) ~= XEnumConst.EQUIP.EQUIP_TYPE.FOOD 
+        and equip:IsAwareness(site) 
+        and self:IsFitCharacterType(equip.TemplateId, charType) 
+        and (suitId == 0 or suitId == self._Model:GetEquipSuitId(equip.TemplateId)) then
+            table.insert(awarenessList, equip)
+        end
+    end
+
+    -- 套装排序优先级
+    local priorityDic = {}
+    local suitPriorityCfg = self:GetConfigCharacterSuitPriority(characterId)
+    if suitPriorityCfg then
+        for index, suitType in ipairs(suitPriorityCfg.PriorityType) do
+            priorityDic[suitType] = math.maxinteger - index
+        end
+    end
+
+    -- 排序
+    table.sort(awarenessList, function(a, b)
+        -- 当前在队伍预设的优先
+        if xTeamPrefab and posInTeam then
+            local isCurInTeamPosA = xTeamPrefab:GetPosByEquipId(a.Id) == posInTeam
+            local isCurInTeamPosB = xTeamPrefab:GetPosByEquipId(b.Id) == posInTeam
+            if isCurInTeamPosA ~= isCurInTeamPosB then
+                return isCurInTeamPosA
+            end
+        end
+
+        -- 无角色穿戴优先
+        local isNotWearingA = not a:IsWearing()
+        local isNotWearingB = not b:IsWearing()
+        if isNotWearingA ~= isNotWearingB then
+            return isNotWearingA
+        end
+
+        -- 有任一共鸣技能与当前角色绑定优先
+        local isBindCurCharA = a:IsResonanceBindCharacter(characterId)
+        local isBindCurCharB = b:IsResonanceBindCharacter(characterId)
+        if isBindCurCharA ~= isBindCurCharB then
+            return isBindCurCharA
+        end
+
+        -- 未共鸣过优先
+        local isNotResonanceA = not a:IsResonance()
+        local isNotResonanceB = not b:IsResonance()
+        if isNotResonanceA ~= isNotResonanceB then
+            return isNotResonanceA
+        end
+
+        -- 意识等级高的优先
+        if a.Level ~= b.Level then
+            return a.Level > b.Level
+        end
+
+        local suitIdA = self._Model:GetEquipSuitId(a.TemplateId)
+        local suitIdB = self._Model:GetEquipSuitId(b.TemplateId)
+        -- 专属套装优先
+        if suitPriorityCfg and suitPriorityCfg.ExclusiveSuitId ~= 0 then
+            local isExclusiveA = suitPriorityCfg.ExclusiveSuitId == suitIdA
+            local isExclusiveB = suitPriorityCfg.ExclusiveSuitId == suitIdB
+            if isExclusiveA ~= isExclusiveB then
+                return isExclusiveA
+            end
+        end
+
+        -- 根据意识套装优先级排序
+        local suitTypeA = self:GetEquipSuitSuitType(suitIdA)
+        local suitTypeB = self:GetEquipSuitSuitType(suitIdB)
+        local priorityA = priorityDic[suitTypeA] or 100000
+        local priorityB = priorityDic[suitTypeB] or 100000
+        if priorityA ~= priorityB then
+            return priorityA > priorityB
+        end
+
+        -- 按照意识套装ID从大到小排序
+        return suitIdA > suitIdB
+    end)
+    return awarenessList
+end
+
+-- 获取意识套装列表，筛选适配角色 and 统计已有套装数量
+function XEquipAgency:GetSuitInfoList(characterId, site)
+    local suitInfoDic = {}
+    local suitInfoList = {}
+    local charType = XMVCA.XCharacter:GetCharacterType(characterId)
+    local equipDic = self._Model:GetEquipDic()
+    for _, equip in pairs(equipDic) do
+        -- 筛选意识类型、适配角色类型
+        if equip:IsAwareness(site) and self:IsFitCharacterType(equip.TemplateId, charType) then
+            -- 筛选suitType不为0
+            local suitId = self._Model:GetEquipSuitId(equip.TemplateId)
+            local suitType = self:GetEquipSuitSuitType(suitId)
+            if suitType ~= 0 then
+                local suitInfo = suitInfoDic[suitId]
+                if not suitInfo then
+                    suitInfo = { SuitId = suitId, Count = 0}
+                    suitInfoDic[suitId] = suitInfo
+                    table.insert(suitInfoList, suitInfo)
+                end
+                suitInfo.Count = suitInfo.Count + 1
+            end
+        end
+    end
+
+    return suitInfoList
+end
+
+function XEquipAgency:GetConfigCharacterSuitPriority(id)
+    return self._Model:GetConfigCharacterSuitPriority(id)
+end
+
+function XEquipAgency:GetSuitIdsByCharacterType(charType, minQuality, isFilterType0, isOverrun)
+    return self._Model:GetSuitIdsByCharacterType(charType, minQuality, isFilterType0, isOverrun)
+end
+
+function XEquipAgency:GetWeaponResonanceSkillInfoBySkillId(equipId, pos)
+    return self._Model:GetWeaponResonanceSkillInfoBySkillId(equipId, pos)
+end
+
 function XEquipAgency:GetResonanceSkillInfoByEquipData(equip, pos)
     return self._Model:GetResonanceSkillInfoByEquipData(equip, pos)
 end
@@ -2026,6 +2326,16 @@ function XEquipAgency:InitPanelEquipV2P6(parentTransform, parentUiProxy, ...)
     local XUiPanelEquipV2P6 = require("XUi/XUiCharacterV2P6/Grid/XUiPanelEquipV2P6")
     local panelEquipV2P6 = XUiPanelEquipV2P6.New(equipUi, parentUiProxy, ...)
     return panelEquipV2P6
+end
+
+-- 初始化成员界面的预设装备面板
+---@return XUiPanelEquipV2P6
+function XEquipAgency:InitPanelEquipTeamPrefab(parentTransform, parentUiProxy, ...)
+    local path = CS.XGame.ClientConfig:GetString("PanelEquipV2P6")
+    local equipUi = parentTransform:LoadPrefab(path)
+    local XUiPanelTeamPrefabEquip = require("XUi/XUiTeamPrefab/Grid/XUiPanelTeamPrefabEquip")
+    local panelEquip = XUiPanelTeamPrefabEquip.New(equipUi, parentUiProxy, ...)
+    return panelEquip
 end
 
 ---@return XUiPanelCharInfoWithEquip

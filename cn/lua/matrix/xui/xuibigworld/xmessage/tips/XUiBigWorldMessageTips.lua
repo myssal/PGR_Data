@@ -11,6 +11,7 @@ local XUiBigWorldMessageTips = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMessag
 function XUiBigWorldMessageTips:OnAwake()
     ---@type XBWMessageData
     self._MessageData = false
+    self._SequentialId = 0
     self._IsForce = false
     self._Timer = false
 
@@ -18,8 +19,9 @@ function XUiBigWorldMessageTips:OnAwake()
 end
 
 ---@param messageData XBWMessageData
-function XUiBigWorldMessageTips:OnStart(messageData)
+function XUiBigWorldMessageTips:OnStart(messageData, sequentialId)
     self._MessageData = messageData
+    self._SequentialId = sequentialId or 0
     
     self:_Init()
     XMVCA.XBigWorldMessage:RecordStatistical(messageData.MessageId, XMVCA.XBigWorldMessage.OperatorType.Enter, 0, self.Name)
@@ -52,6 +54,13 @@ function XUiBigWorldMessageTips:OnBtnClickClick()
 end
 
 -- endregion
+
+function XUiBigWorldMessageTips:Close()
+    if XTool.IsNumberValid(self._SequentialId) then
+        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
+    end
+    self.Super.Close(self)
+end
 
 -- region 私有方法
 
@@ -123,10 +132,12 @@ function XUiBigWorldMessageTips:_AutoOpenMessage()
     local messageData = self._MessageData
 
     if messageData then
-        --self:BeginOpenOperatorAfterClose("UiBigWorldPopupMessageSingle", messageData.MessageId)
-        XMVCA.XBigWorldUI:Close(self.Name, function() 
-            XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupMessageSingle", messageData.MessageId)
-        end)
+        --self:InsertQueueBeforeClose("UiBigWorldPopupMessageSingle", messageData.MessageId)
+        self:InsertQueueBeforeClose("UiBigWorldPopupMessageSingle", messageData.MessageId, self._SequentialId)
+        -- XMVCA.XBigWorldUI:Close(self.Name, function() 
+        --     -- XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupMessageSingle", messageData.MessageId)
+        --     --- Todo zjx 后续优化弹窗队列后一并优化
+        -- end)
     else
         self:Close()
     end

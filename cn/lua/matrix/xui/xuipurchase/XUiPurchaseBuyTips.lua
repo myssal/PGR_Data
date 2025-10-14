@@ -10,6 +10,8 @@ local XUiPanelNormalPurchaseItemList = require('XUi/XUiPurchase/XUiPurchaseBuyTi
 local XUiPanelDailyPurchaseItemList = require('XUi/XUiPurchase/XUiPurchaseBuyTips/UiPanelPurchaseItemList/XUiPanelDailyPurchaseItemList')
 local XUiPanelRandomSelectPurchaseItemList = require('XUi/XUiPurchase/XUiPurchaseBuyTips/UiPanelPurchaseItemList/XUiPanelRandomSelectPurchaseItemList')
 local XUiPanelChoicePurchaseItemList = require('XUi/XUiPurchase/XUiPurchaseBuyTips/UiPanelPurchaseItemList/XUiPanelChoicePurchaseItemList')
+local XUiPurchaseBundle = require("XUi/XUiPurchase/XUiPurchaseBuyTips/UiPurchaseBundle/XUiPurchaseBundle")
+local XUiButton = require("XUi/XUiCommon/XUiButton")
 
 local RestTypeConfig
 local LBGetTypeConfig
@@ -21,6 +23,7 @@ local CurrentSchedule = nil
 -- v1.28 采购优化-购买CD
 local PurchaseBuyPayCD = CS.XGame.ClientConfig:GetInt("PurchaseBuyPayCD") / 1000
 
+---@class XUiPurchaseBuyTips:XLuaUi
 local XUiPurchaseBuyTips = XLuaUiManager.Register(XLuaUi, "UiPurchaseBuyTips")
 
 --region 生命周期
@@ -53,9 +56,27 @@ function XUiPurchaseBuyTips:OnStart(data, checkBuyFun, updateCb, beforeBuyReqFun
     -- 检查是否是签到礼包
     if self:CheckSignLBAndOpen(self.Data.SignInId, XUiPurchaseSignTip, false) then
         return
-    elseif self.Data.PurchaseSignInInfo then -- 检查周卡签到礼包
-        if self:CheckSignLBAndOpen(self.Data.PurchaseSignInInfo.PurchaseSignInShowId, XUiSignWeekCard, true) then
-            self:StartTimer()
+    elseif self.Data.PurchaseSignInInfo then
+        local rewardCount = #self.Data.PurchaseSignInInfo.PurchaseSignInRewardInfos
+        if rewardCount == 3 then
+            -- 3天登录礼包
+            local XUiSignThreeDay = require("XUi/XUiSignIn/XUiSignThreeDay")
+            if self:CheckSignLBAndOpen(self.Data.PurchaseSignInInfo.PurchaseSignInShowId, XUiSignThreeDay, true) then
+                return
+            end
+        else
+            -- 周卡签到礼包（7天）
+            if self:CheckSignLBAndOpen(self.Data.PurchaseSignInInfo.PurchaseSignInShowId, XUiSignWeekCard, true) then
+                self:StartTimer()
+                return
+            end
+        end
+    elseif XTool.IsNumberValid(self.Data.CompanyPackage) and XTool.IsNumberValid(self.Data.CompanyPackageCount) then
+        -- 月卡Plus
+        local XUiSignMonthPlus = require("XUi/XUiSignIn/XUiSignMonthPlus")
+        local customPrefab = CS.XGame.ClientConfig:GetString("MonthCardPlusPrefab")
+        local data = XDataCenter.PurchaseManager.GetPurchasePackageById(self.Data.CompanyPackage)
+        if self:CheckSignLBAndOpen(nil, XUiSignMonthPlus, false, customPrefab) then
             return
         end
     else
@@ -70,10 +91,10 @@ function XUiPurchaseBuyTips:OnStart(data, checkBuyFun, updateCb, beforeBuyReqFun
     if path and path.AssetPath then
         self.RawImageIcon:SetRawImage(path.AssetPath)
     end
-    
+
     self:InitSelectionData()
     self:RefreshBuyTimesProgress()
-    
+
     -- 下列方法存在公用变量，注意调用顺序
     self:CheckLBIsUseMail()
     -- self:SetList()
@@ -124,21 +145,26 @@ function XUiPurchaseBuyTips:Init()
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAssetPay, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa)
     self._PanelNormalItemList = XUiPanelNormalPurchaseItemList.New(self.PanelNormalReward, self)
     self._PanelNormalItemList:Close()
-    
+
     self._PanelDailyItemList = XUiPanelDailyPurchaseItemList.New(self.PanelPeriodReward, self)
     self._PanelDailyItemList:Close()
-    
+
     self._PanelChoiceItemList = XUiPanelChoicePurchaseItemList.New(self.PanelChoiceReward, self)
     self._PanelChoiceItemList:Close()
-    
+
     self._PanelRandomItemList = XUiPanelRandomSelectPurchaseItemList.New(self.PanelRandomReward, self)
     self._PanelRandomItemList:Close()
-    
+
+    self._PanelBundle = XUiPurchaseBundle.New(self.PanelBundle, self)
+    self._PanelBundle:Close()
+
     self:SetUiActive(self.BtnLeft, false)
     self:SetUiActive(self.BtnRight, false)
     self:SetUiActive(self.TxtSection, false)
 
     self.TxtRed.gameObject:SetActiveEx(false)
+    ---@type XUiButtonLua
+    self._BtnBuy = XUiButton.New(self.BtnBuy)
 end
 
 function XUiPurchaseBuyTips:AutoRegisterListener()
@@ -158,7 +184,7 @@ end
 function XUiPurchaseBuyTips:InitSelectionData()
     -- 初始化前先尝试清空之前的缓存（如果有的话）
     XDataCenter.PurchaseManager.ClearPurchaseSelectionData()
-    
+
     if not XTool.IsTableEmpty(self.Data.SelectDataForClient) then
         XDataCenter.PurchaseManager.InitPurchaseSelectionData()
         self._HasSelfChoice = not XTool.IsTableEmpty(self.Data.SelectDataForClient.SelectGroups)
@@ -229,12 +255,12 @@ function XUiPurchaseBuyTips:InitAndRegisterTimer(textComponent)
         if self.RemainTime > 0 then
             --大于0，注册。
             textComponent.gameObject:SetActiveEx(true)
-            
+
             -- TXTtime组件显示关联它的父节点背景图片
             if textComponent == self.TXtTime then
                 textComponent.transform.parent.gameObject:SetActiveEx(true)
             end
-            
+
             self:RegisterTimerFun(self.Data.Id, function()
                 self:UpdateTimerFun(textComponent)
             end)
@@ -246,7 +272,7 @@ function XUiPurchaseBuyTips:InitAndRegisterTimer(textComponent)
             if textComponent == self.TXtTime then
                 textComponent.transform.parent.gameObject:SetActiveEx(false)
             end
-            
+
             self:RemoveTimerFun(self.Data.Id)
         end
     else
@@ -286,20 +312,35 @@ end
 function XUiPurchaseBuyTips:InitAndCheckNormalDiscount()
     self.NormalDisCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.Data)
     self.IsDisCount = XPurchaseConfigs.GetTagType(self.Data.Tag) == XPurchaseConfigs.PurchaseTagType.Discount and self.NormalDisCountValue < 1
+    if self.Data.Discount and self.Data.Discount > 0 then
+        self.IsDisCount = true
+    end
+
     if self.Data.ConsumeCount == 0 then
-        self.TxtPrice.gameObject:SetActiveEx(false)
+        self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
         self.RawImageConsume.gameObject:SetActiveEx(false)
-        self.BtnBuy:SetName(TextManager.GetText("PurchaseFreeText"))
+        self._BtnBuy:SetText("PanelTxt/TxtPrice", TextManager.GetText("PurchaseFreeText"))
     else
         self.RawImageConsume.gameObject:SetActiveEx(true)
         if self.IsDisCount then
             -- 打折的
-            self.BtnBuy:SetName(math.modf(self.Data.ConsumeCount * self.NormalDisCountValue))
-            self.TxtPrice.gameObject:SetActiveEx(true)
-            self.TxtPrice.text = self.Data.ConsumeCount
+            if self.Data.ConsumeCount then
+                self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount * self.NormalDisCountValue)
+                self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.ConsumeCount)
+                self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
+
+            elseif self.Data.Price then
+                self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
+                if self.Data.OriginalPrice then
+                    self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.OriginalPrice)
+                    self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
+                else
+                    self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
+                end
+            end
         else
-            self.TxtPrice.gameObject:SetActiveEx(false)
-            self.BtnBuy:SetName(self.Data.ConsumeCount)
+            self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
+            self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount or self.Data.Price)
         end
 
         local icon = XDataCenter.ItemManager.GetItemIcon(self.Data.ConsumeId)
@@ -382,7 +423,7 @@ function XUiPurchaseBuyTips:OnBtnBuyClick()
             XUiManager.TipMsg(self._LockDesc)
             return
         end
-        
+
         if not self._CanBuy or not self._CompleteSelection then
             return
         end
@@ -406,7 +447,7 @@ function XUiPurchaseBuyTips:OnBtnBuyClick()
                 end
             else
                 self:BuyPurchaseRequest()
-            end 
+            end
         end)
     end
 end
@@ -535,7 +576,7 @@ function XUiPurchaseBuyTips:RefreshBuyButtonStatus(ignoreUiRefresh)
             self._CompleteSelection = false
         end
     end
-    
+
     --- 单向控制，仅锁定后上锁，防止其他逻辑上锁后，这里IsLock=false又把它解锁了
     if self._IsLock then
         self._PanelChoiceItemList:SetIsNormalAllOwn(true)
@@ -559,18 +600,18 @@ function XUiPurchaseBuyTips:RefreshDiscount(discountItemIndex)
             if icon then
                 self.RawImageConsume:SetRawImage(icon)
             end
-            self.TxtPrice.gameObject:SetActiveEx(true)
-            self.TxtPrice.text = self.Data.ConsumeCount
+            self._BtnBuy:SetActive("PanelTxt", true)
+            self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount)
         else
             self.BtnBuy:SetName(self.Data.ConsumeCount)
-            self.TxtPrice.gameObject:SetActiveEx(false)
+            self._BtnBuy:SetActive("PanelTxt", false)
         end
     else
         local couponDisCountValue = XDataCenter.PurchaseManager.GetLBCouponDiscountValue(self.Data, discountItemIndex)
         self.RawImageConsume.gameObject:SetActiveEx(true)
         self.BtnBuy:SetName(math.modf(self.Data.ConsumeCount * couponDisCountValue))
-        self.TxtPrice.gameObject:SetActiveEx(true)
-        self.TxtPrice.text = self.Data.ConsumeCount
+        self._BtnBuy:SetActive("PanelTxt", true)
+        self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount)
     end
 end
 
@@ -649,6 +690,14 @@ function XUiPurchaseBuyTips:SetList()
 
     -- 如果PanelCommon隐藏了，这些界面也不能显示
     if self.PanelCommon.gameObject.activeSelf == true then
+        if self.Data.IsComboData then
+            self._PanelBundle:Open()
+            self._PanelBundle:InitGoodsShow(self.Data)
+            self:RefreshBtnBuyPrice()
+            -- 隐藏默认物品
+            self.PanelLeft.gameObject:SetActiveEx(false)
+        end
+
         if not XTool.IsTableEmpty(self.ListDirData) then
             self._PanelNormalItemList:Open()
             self._PanelNormalItemList:InitGoodsShow(self.ListDirData, self.Data.ConsumeCount ~= 0, self.Data.ConvertSwitch == 0)
@@ -714,13 +763,19 @@ function XUiPurchaseBuyTips:SetBuyDes()
 end
 
 function XUiPurchaseBuyTips:RefreshBtnBuyPrice()
+    if not self.Data.ConsumeCount then
+        if self.Data.Price then
+            self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
+        end
+        return
+    end
+
     local consumeCount = self.Data.ConsumeCount
     if self.Data.ConvertSwitch and self.Data.ConvertSwitch < consumeCount and self.Data.ConvertSwitch > 0 then
         consumeCount = self.Data.ConvertSwitch
     end
     local disCountConsume = math.floor(self.NormalDisCountValue * consumeCount)
-    self.TxtPrice.text = consumeCount * self.CurrentBuyCount
-    self.BtnBuy:SetName(disCountConsume * self.CurrentBuyCount)
+    self._BtnBuy:SetText("PanelTxt/TxtPrice", consumeCount * self.CurrentBuyCount)
 end
 
 function XUiPurchaseBuyTips:RefreshBuyTimeShowBtnState()
@@ -835,11 +890,12 @@ function XUiPurchaseBuyTips:RemoveTimerFun(id)
     end
 end
 
-function XUiPurchaseBuyTips:CheckSignLBAndOpen(signInId, signInPrefabClass, isWeekCard)
-    if XTool.IsNumberValid(signInId) then
+function XUiPurchaseBuyTips:CheckSignLBAndOpen(signInId, signInPrefabClass, isWeekCard, customPrefab)
+    local isCustom = not string.IsNilOrEmpty(customPrefab) --V4.0:有些特殊礼包没有SignId
+    if XTool.IsNumberValid(signInId) or isCustom then
         -- 签到礼包展示预览
         self.PanelCommon.gameObject:SetActiveEx(false)
-        
+
         self.PanelSignGiftPack.gameObject:SetActiveEx(true)
 
         self.BtnSignGiftPackBgClose.CallBack = function()
@@ -852,14 +908,14 @@ function XUiPurchaseBuyTips:CheckSignLBAndOpen(signInId, signInPrefabClass, isWe
             v.GameObject:SetActiveEx(false)
         end
 
-        self.CurPrefabPath = XSignInConfigs.GetSignPrefabPath(signInId)
+        self.CurPrefabPath = isCustom and customPrefab or XSignInConfigs.GetSignPrefabPath(signInId)
         local purchaseSignTip = self.PurchaseSignTipDic[self.CurPrefabPath]
         if not purchaseSignTip then
             -- 生成对应prefab的实例
             local go = self.SignGiftPackNode:LoadPrefabEx(self.CurPrefabPath)
             go.gameObject:SetLayerRecursively(self.SignGiftPackNode.gameObject.layer)
             purchaseSignTip = signInPrefabClass.New(go, self)
-            
+
             self.PurchaseSignTipDic[self.CurPrefabPath] = purchaseSignTip
         end
 
@@ -895,9 +951,9 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
             -- 全部都拥有
             self.TxtHave.gameObject:SetActiveEx(true)
             self.TxtHave.text = TextManager.GetText("PurchaseLBOwnAll")
-            self.BtnBuy:SetName(TextManager.GetText("PurchaseLBDontNeed"))
+            self._BtnBuy:SetText("PanelTxt/TxtPrice", TextManager.GetText("PurchaseLBDontNeed"))
             self.BtnBuy:SetDisable(true, false)
-            self.TxtPrice.gameObject:SetActiveEx(false)
+            self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
         else
             -- 未拥有和拥有同时存在
             self.TxtHave.gameObject:SetActiveEx(true)
@@ -906,14 +962,21 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
             if self.IsDisCount then
                 remainPrice = math.modf(remainPrice * self.NormalDisCountValue)
             end
-            self.BtnBuy:SetName(remainPrice)
-            self.TxtPrice.gameObject:SetActiveEx(true)
-            self.TxtPrice.text = self.Data.ConsumeCount
+            --self.BtnBuy:SetName(remainPrice)
+            self._BtnBuy:SetText("PanelTxt/TxtPrice", remainPrice)
+            self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
+            self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.ConsumeCount)
         end
     else
         -- 默认检测是否已拥有逻辑
         local isHave, isLimitTime = XRewardManager.CheckRewardGoodsListIsOwnForPackage(self.Data.RewardGoodsList)
         local isShowHave = isHave and not isLimitTime
+
+        -- 捆绑包逻辑
+        --if self.Data.IsSoldOut then
+        --    isShowHave = true
+        --end
+
         self._CommonRewardIsHave = isHave
         self.TxtRed.gameObject:SetActiveEx(isShowHave)
 
@@ -936,7 +999,7 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
                 if self.UpdateTimerType then
                     self:RemoveTimerFun(self.Data.Id)
                 end
-                self.TxtPrice.gameObject:SetActiveEx(false)
+                self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
                 self.BtnBuy:SetButtonState(XUiButtonState.Disable)
                 self.TxtRed.gameObject:SetActiveEx(false)
             else
@@ -982,7 +1045,7 @@ function XUiPurchaseBuyTips:BuyPurchaseRequest()
             XUiManager.TipMsg(self._LockDesc)
             return
         end
-        
+
         if not self._CanBuy or not self._CompleteSelection then
             return
         end
@@ -1013,7 +1076,7 @@ function XUiPurchaseBuyTips:BuyPurchaseRequest()
                 end
             end
         end
-        
+
         local requestCb = function()
             XDataCenter.WeaponFashionManager.SetNotifyWeaponFashionTransformObtainShowLock(false)
 
@@ -1021,7 +1084,7 @@ function XUiPurchaseBuyTips:BuyPurchaseRequest()
                 self.UpdateCb()
             end
         end
-        
+
         XDataCenter.WeaponFashionManager.SetNotifyWeaponFashionTransformObtainShowLock(true)
         XDataCenter.PurchaseManager.PurchaseRequest(self.Data.Id, requestCb, self.CurrentBuyCount, discountCouponId, self.UiTypeList, randomSelection, selectGroups, selectGroupGoodsIds)
         self:CloseTips()
@@ -1097,7 +1160,7 @@ function XUiPurchaseBuyTips:CheckSelectionContainsOwn()
             end
         end
     end
-    
+
     return false
 end
 
@@ -1110,7 +1173,7 @@ function XUiPurchaseBuyTips:CheckNormalAndDailyContainsOwn()
     if XRewardManager.CheckRewardGoodsListIsOwn(self.Data.DailyRewardGoodsList) then
         return true
     end
-    
+
     return false
 end
 --endregion

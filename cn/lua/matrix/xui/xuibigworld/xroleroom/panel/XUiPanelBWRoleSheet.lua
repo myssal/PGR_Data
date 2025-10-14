@@ -83,8 +83,10 @@ local XUiPanelBWRoleSheet = XClass(XUiNode, "XUiPanelBWRoleSheet")
 function XUiPanelBWRoleSheet:OnStart()
     local itemSize = self.PlayerInfoCharacterGrid.rect
     local parentSize = self.PlayerInfoCharacterGrid.parent.parent.rect
-    self.ColCount = math.floor(parentSize.width / itemSize.width)
-    self.RowCount = math.ceil(parentSize.height / itemSize.height)
+    local spaceX = 20
+    local spaceY = 20
+    self.ColCount = math.floor(parentSize.width / (itemSize.width + spaceX))
+    self.RowCount = math.ceil(parentSize.height / (itemSize.height + spaceY))
     self.MaxCount = self.ColCount * self.RowCount
         
     self:InitCb()
@@ -158,7 +160,6 @@ end
 function XUiPanelBWRoleSheet:OnBtnConfirmClick()
     XMVCA.XBigWorldCharacter:RequestUpdateTeam(self._TeamId, function()
         self:SetupDynamicTable()
-        self.Parent:UpdateView()
         self.Parent:OnBtnDetailClicked()
     end)
 end

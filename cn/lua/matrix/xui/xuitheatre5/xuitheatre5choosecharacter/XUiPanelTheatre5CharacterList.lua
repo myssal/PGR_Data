@@ -9,7 +9,7 @@ local XUiGridTheatre5PVECharacter = require('XUi/XUiTheatre5/XUiTheatre5ChooseCh
 function XUiPanelTheatre5CharacterList:OnStart()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_CLICK_SCENE_OBJECT, self.UpdateCharacterList, self)
     local curTheatre5Model = XMVCA.XTheatre5:GetCurPlayingMode()
-    self._GridClass = curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameModel.PVP and XUiGridTheatre5Character or XUiGridTheatre5PVECharacter
+    self._GridClass = curTheatre5Model == XMVCA.XTheatre5.EnumConst.GameMode.PVP and XUiGridTheatre5Character or XUiGridTheatre5PVECharacter
     self:InitCharacterList()
 end
 

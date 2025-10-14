@@ -27,6 +27,9 @@ end
 
 function XBigWorldUIAgency:OnExitBigWorld()
     self._QueueHelper:Release()
+    for key, _ in pairs(self._FightUiCb) do
+        self._FightUiCb[key] = nil
+    end
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
 end
 
@@ -158,7 +161,7 @@ end
 
 --- 注册UI
 ---@param super XLuaUi 为空时，默认参数为XBigWorldUI
----@return 
+---@return
 function XBigWorldUIAgency:Register(super, uiName)
     if XMain.IsEditorDebug then
         if super and not CheckClassSuper(super, XBigWorldUi) then
@@ -185,11 +188,6 @@ end
 -- endregion
 
 -- region 弹窗管理
-
---- 锁住弹窗队列，直至打开的后续界面全部关闭
-function XBigWorldUIAgency:BeginPopupQueueOperator(uiName)
-    self._QueueHelper:BeginOperation(uiName)
-end
 
 function XBigWorldUIAgency:ChangeUiDataArgByIndex(uiName, index, value)
     self._QueueHelper:ChangeUiDataArgByIndex(uiName, index, value)
@@ -233,6 +231,8 @@ function XBigWorldUIAgency:OpenConfirmPopup(data)
             self:SendConfirmPopupCloseCommand(data.Key, false, true, true)
         end
 
+        data:Dispose()
+
         return false
     else
         self:Open("UiBigWorldPopupConfirm", data)
@@ -266,8 +266,19 @@ function XBigWorldUIAgency:OpenQuitConfirmPopupWithCmd(data)
     self:OpenQuitConfirmPopup(confrimData)
 end
 
-function XBigWorldUIAgency:OpenBigWorldObtain(rewardData, title, closeCb, disableAutoClose)
-    self:Open("UiBigWorldObtain", rewardData, title, closeCb, disableAutoClose)
+function XBigWorldUIAgency:OpenBigWorldObtain(rewardData, title, closeCb, disableAutoClose, isSequence)
+    return self:_OpenBigWorldObtain("UiBigWorldObtain", rewardData, title, closeCb, disableAutoClose, isSequence)
+end
+
+function XBigWorldUIAgency:OpenBigWorldObtainSpecial(rewardData, title, closeCb, disableAutoClose, isSequence)
+    return self:_OpenBigWorldObtain("UiBigWorldObtainSpecial", rewardData, title, closeCb, disableAutoClose, isSequence)
+end
+
+function XBigWorldUIAgency:_OpenBigWorldObtain(uiName, rewardData, title, closeCb, disableAutoClose, isSequence)
+    if isSequence then
+        return self:OpenWithFightSequence(uiName, rewardData, title, closeCb, disableAutoClose)
+    end
+    return self:Open(uiName, rewardData, title, closeCb, disableAutoClose)
 end
 
 function XBigWorldUIAgency:OpenBigWorldObtainWithCmd(data)
@@ -279,20 +290,30 @@ end
 
 function XBigWorldUIAgency:OpenBigWorldRewardGoods(rewardData, title, closeCb)
     local expensiveRewards = {}
-
+    local specialRewards = {}
     for _, reward in ipairs(rewardData) do
         if XMVCA.XBigWorldService:CheckExpensiveReward(reward.Id) then
             table.insert(expensiveRewards, reward)
+        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.Id) then
+            table.insert(specialRewards, reward)
         end
     end
 
-    if XTool.IsTableEmpty(expensiveRewards) then
-        self:OpenBigWorldRewardSidebar(rewardData, closeCb)
-    else
-        self:OpenBigWorldObtain(expensiveRewards, title, function()
-            self:OpenBigWorldRewardSidebar(rewardData, closeCb)
-        end)
+    local emptyExp = XTool.IsTableEmpty(expensiveRewards)
+    local emptySpecial = XTool.IsTableEmpty(specialRewards)
+    if emptyExp and emptySpecial then
+        self:OpenBigWorldRewardSidebar(rewardData, closeCb, true)
+        return
     end
+    --优先弹特殊奖励
+    if not emptySpecial then
+        self:OpenBigWorldObtainSpecial(specialRewards, title, nil, nil, true)
+    end
+    --再弹珍稀奖励
+    if not emptyExp then
+        self:OpenBigWorldObtain(expensiveRewards, title, nil, nil, true)
+    end
+    self:OpenBigWorldRewardSidebar(rewardData, closeCb, true)
 end
 
 function XBigWorldUIAgency:OpenBigWorldRewardGoodsWithCmd(data)
@@ -302,8 +323,15 @@ function XBigWorldUIAgency:OpenBigWorldRewardGoodsWithCmd(data)
     self:OpenBigWorldRewardGoods(data.RewardData, data.Title, data.CloseCb)
 end
 
-function XBigWorldUIAgency:OpenBigWorldRewardSidebar(rewardData, closeCb)
-    self:Open("UiBigWorldRewardSidebar", rewardData, closeCb)
+function XBigWorldUIAgency:OpenBigWorldRewardSidebar(rewardData, closeCb, isSequence)
+    if XTool.IsTableEmpty(rewardData) then
+        return
+    end
+    
+    if isSequence then
+        return self:OpenWithFightSequence("UiBigWorldRewardSidebar", rewardData, closeCb)
+    end
+    return self:Open("UiBigWorldRewardSidebar", rewardData, closeCb)
 end
 
 function XBigWorldUIAgency:OpenBigWorldRewardSidebarWithCmd(data)
@@ -339,6 +367,19 @@ end
 
 function XBigWorldUIAgency:OpenGoodsInfo(data, title)
     self:Open("UiBigWorldTip", data, title)
+end
+
+function XBigWorldUIAgency:OpenNarrative(id, callback)
+    self:OpenWithFightSequence("UiBigWorldNarrative", id, callback)
+end
+
+function XBigWorldUIAgency:OpenPerspectiveUi(levelId, isShowClose, txtExplain, confirmCb)
+    if not levelId or not XTool.IsNumberValid(levelId) then
+        XLog.Error("XBigWorldUIAgency:OpenPerspectiveUi error: levelId is invalid")
+        return
+    end
+
+    self:Open("UiBigWorldFirstPerson", levelId, isShowClose, txtExplain, confirmCb)
 end
 
 -- endregion

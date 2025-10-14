@@ -6,6 +6,7 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridChapter = require("XUi/XUiFubenMainLineChapter/XUiGridChapter")
 local XUiGridExploreChapter = require("XUi/XUiFubenMainLineChapter/XUiGridExploreChapter")
 local XUiPanelStoryJump = require("XUi/XUiFubenMainLineChapter/XUiPanelStoryJump")
+local XUiGridMainlineDownloadGuide = require('XUi/XUiFubenMainLineChapter/XUiGridMainlineDownloadGuide')
 
 ---@class XUiFubenMainLineChapter:XLuaUi
 local XUiFubenMainLineChapter = XLuaUiManager.Register(XLuaUi, "UiFubenMainLineChapter")
@@ -79,10 +80,6 @@ function XUiFubenMainLineChapter:OnStart(chapter, stageId, hideDiffTog)
         self.PanelTopDifficult.gameObject:SetActiveEx(false)
     end
 
-    if self.BtnHelp then
-        self.BtnHelp.gameObject:SetActiveEx(false)
-    end
-
     -- 赏金任务
     self:InitBountyTask()
     self:SetupBountyTask()
@@ -122,11 +119,16 @@ function XUiFubenMainLineChapter:OnEnable()
     -- 检测是否有缓存的奖励信息
     local teleportRewardCache = XDataCenter.FubenMainLineManager.GetTeleportRewardCache(self.Chapter.ChapterId)
     if not XTool.IsTableEmpty(teleportRewardCache) then
-        XLuaUiManager.Open("UiFubenTip", teleportRewardCache, XFubenConfigs.ChapterType.MainLine)
+        XLuaUiManager.Open("UiFubenTip", teleportRewardCache, XEnumConst.FuBen.ChapterType.MainLine)
         -- 清理缓存
         XDataCenter.FubenMainLineManager.RemoveTeleportRewardCache(self.Chapter.ChapterId)
     end
     self:AddEventListener()
+
+    -- 检查是否显示分包下载入口
+    if self.GridDownloadGuide then
+        self.GridDownloadGuide:CheckShow()
+    end
 end
 
 function XUiFubenMainLineChapter:OnDisable()
@@ -199,6 +201,17 @@ function XUiFubenMainLineChapter:InitPanelBottom()
 
     self.PanelExploreBottom.BtnNormalJump.gameObject:SetActiveEx(false)
     self.PanelExploreBottom.BtnHardlJump.gameObject:SetActiveEx(false)
+
+    if self.PanelFristDownload then
+        -- 仅移动端
+        if XDataCenter.UiPcManager.IsPc() then
+            self.PanelFristDownload.gameObject:SetActiveEx(false)
+        else
+            ---@type XUiGridMainlineDownloadGuide
+            self.GridDownloadGuide = XUiGridMainlineDownloadGuide.New(self.PanelFristDownload, self)
+            self.GridDownloadGuide:CheckShow()
+        end 
+    end
 end
 
 function XUiFubenMainLineChapter:InitPanelStoryJump()
@@ -344,6 +357,7 @@ function XUiFubenMainLineChapter:AutoAddListener()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnTreasure, self.OnBtnTreasureClick)
+    self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
     self:RegisterClickEvent(self.BtnSkip, self.OnBtnSkipClick)
     self:RegisterClickEvent(self.BtnBountyTask, self.OnBtnBountyTaskClick)
     self:RegisterClickEvent(self.BtnCloseDifficult, self.OnBtnCloseDifficultClick)
@@ -367,7 +381,12 @@ function XUiFubenMainLineChapter:AutoAddListener()
     self.BtnSwitch2Normal.CallBack = function()
         self:OnBtnSwitch2NormalClidk()
     end
-   
+    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
+        self.BtnHelp.gameObject:SetActiveEx(true)
+        self.BtnHelp.CallBack = function()
+            self:OnBtnHelpClick()
+        end
+    end
 end
 -- auto
 
@@ -702,7 +721,7 @@ function XUiFubenMainLineChapter:UpdateCurChapter(chapter)
     self:SetPanelBottomActive(true)
     self:UpdateFubenExploreItem()
     if not self:CheckIsBfrtType() then
-        self.PanelStoryJump:Refresh(self.Chapter.ChapterId, XFubenConfigs.ChapterType.MainLine)
+        self.PanelStoryJump:Refresh(self.Chapter.ChapterId, XEnumConst.FuBen.ChapterType.MainLine)
     end
 end
 
@@ -816,12 +835,18 @@ function XUiFubenMainLineChapter:UpdateChapterStars()
         self.MultipleWeeksTxet.gameObject:SetActiveEx(true)
         self.TxtDesc.gameObject:SetActiveEx(false)
         self.ImgStarIcon.gameObject:SetActiveEx(false)
+        self.BtnMission.gameObject:SetActiveEx(false)
 
         curStars, totalStars = XDataCenter.FubenZhouMuManager.GetZhouMuTaskProgress(self.ZhouMuId)
         received = XDataCenter.FubenZhouMuManager.ZhouMuTaskIsAllFinish(self.ZhouMuId)
 
         XRedPointManager.Check(self.RedPointZhouMuId, self.ZhouMuId)
+        self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
+        self.ImgJindu.gameObject:SetActiveEx(true)
+        self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
+        self.ImgLingqu.gameObject:SetActiveEx(received)
     else
+        --[[
         -- 主线收集奖励
         curStars, totalStars = XDataCenter.FubenMainLineManager.GetChapterStars(self.Chapter.ChapterId)
         local chapterTemplate = XDataCenter.FubenMainLineManager.GetChapterCfg(self.Chapter.ChapterId)
@@ -838,12 +863,49 @@ function XUiFubenMainLineChapter:UpdateChapterStars()
         self.ImgStarIcon.gameObject:SetActiveEx(true)
 
         XRedPointManager.Check(self.RedPointId, self.Chapter.ChapterId)
-    end
 
-    self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
-    self.ImgJindu.gameObject:SetActiveEx(true)
-    self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
-    self.ImgLingqu.gameObject:SetActiveEx(received)
+        self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
+        self.ImgJindu.gameObject:SetActiveEx(true)
+        self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
+        self.ImgLingqu.gameObject:SetActiveEx(received)
+        ]]
+        
+        self.PanelJundu.gameObject:SetActiveEx(false)
+        self.PanelDesc.gameObject:SetActiveEx(false)
+        local curCnt = 0
+        local totalCnt = 0
+        
+        -- 收集挑战目标数量和蓝点
+        local chapterId = self.Chapter.ChapterId
+        for _, tId in pairs(self.Chapter.TreasureId or {}) do
+            if XDataCenter.FubenMainLineManager.IsTreasureGet(tId) then
+                curCnt = curCnt + 1
+            end
+            totalCnt = totalCnt + 1
+        end
+        
+        -- 收集任务数量和蓝点
+        local taskGroupId = XFubenMainLineConfigs.GetConfigChapterTaskGroupId(chapterId)
+        local tasks = XDataCenter.TaskManager.GetStoryTaskListByGroupId(taskGroupId)
+        for _, v in pairs(tasks) do
+            if v.State == XDataCenter.TaskManager.TaskState.Finish then
+                curCnt = curCnt + 1
+            end
+            totalCnt = totalCnt + 1
+        end
+
+        -- 进度奖励未领取蓝点
+        if totalCnt == 0 then
+            self.BtnMission.gameObject:SetActiveEx(false)
+        else
+            self.BtnMission.gameObject:SetActiveEx(true)
+            local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
+            self.BtnMission:SetName(progress)
+
+            local isRed = XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, chapterId)
+            self.BtnMission:ShowReddot(isRed)
+        end
+    end
 end
 
 function XUiFubenMainLineChapter:OnBtnTreasureClick()
@@ -859,6 +921,10 @@ function XUiFubenMainLineChapter:OnBtnTreasureClick()
         self:SetPanelBottomActive(true)
     end
     self:PlayAnimation("TreasureEnable")
+end
+
+function XUiFubenMainLineChapter:OnBtnMissionClick()
+    XLuaUiManager.Open("UiMainLineExhibitionMission", self.Chapter.ChapterId)
 end
 
 function XUiFubenMainLineChapter:OnBtnTreasureBgClick()

@@ -5,6 +5,8 @@ local XUiFubenBossSingleDetailAutoFight = require("XUi/XUiFubenBossSingle/XUiFub
 local XUiFubenBossSingleDetailTip = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleDetailTip")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
+local XUiFubenBossSingleDetailPanelReset = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleDetailPanelReset")
+
 ---@class XUiFubenBossSingleDetail : XLuaUi
 ---@field GridBossLevel1 UnityEngine.UI.Button
 ---@field GridBossLevel2 UnityEngine.UI.Button
@@ -38,7 +40,6 @@ local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 ---@field TxtHideSelectedBoss UnityEngine.UI.Text
 ---@field TxtHideLockBoss UnityEngine.UI.Text
 ---@field TxtNormalEn UnityEngine.UI.Text
----@field TxtFightCharCount UnityEngine.UI.Text
 ---@field ImgBg UnityEngine.RectTransform
 ---@field ImgBgHb UnityEngine.RectTransform
 ---@field PanelTip UnityEngine.RectTransform
@@ -67,6 +68,8 @@ function XUiFubenBossSingleDetail:Ctor()
     self.PanelAutoFightUi = nil
     ---@type XUiFubenBossSingleDetailTip
     self.PanelTipUi = nil
+    ---@type XUiFubenBossSingleDetailPanelReset
+    self.PanelResetUi = nil
     self._BossSingleData = nil
     self._BossId = nil
     self._Index = nil
@@ -79,14 +82,16 @@ function XUiFubenBossSingleDetail:Ctor()
     self._GridBossSkillUiList = {}
     ---@type UnityEngine.UI.Button[]
     self._ToggleTabList = nil
+    self._TimerResetCooldown = false
 end
 
 -- region 生命周期
 function XUiFubenBossSingleDetail:OnAwake()
     XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem,
-        XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+            XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self:_RegisterButtonClicks()
     self.GridBossSkill.gameObject:SetActiveEx(false)
+    self.TxtResetCooldown = self.TxtResetCooldown or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelBossDetail/PnaelDesc/Botton/PnaelConsume/ListBtn/BtnReset/Disable/TxtCoolDown", "Text")
 end
 
 function XUiFubenBossSingleDetail:OnStart(bossId)
@@ -100,6 +105,11 @@ function XUiFubenBossSingleDetail:OnStart(bossId)
     self.RoleModelPanelUi = XUiPanelRoleModel.New(root:FindTransform("PanelRoleModel"), self.Name, nil, true)
     self.PanelAutoFightUi = XUiFubenBossSingleDetailAutoFight.New(self.PanelAutoFight, self)
     self.PanelTipUi = XUiFubenBossSingleDetailTip.New(self.PanelTip, self, self._CurBossStageConfig)
+    if self.PanelReset then
+        ---@type XUiFubenBossSingleDetailPanelReset
+        self.PanelResetUi = XUiFubenBossSingleDetailPanelReset.New(self.PanelReset, self)
+        self.PanelResetUi:Close()
+    end
     self:_InitGridLevel()
     self:_Init()
     self._Control:SetIsUseSelectIndex(false)
@@ -108,11 +118,14 @@ end
 function XUiFubenBossSingleDetail:OnEnable()
     self:_SelectTabGroup()
     self:_RegisterEventListeners()
+    self:ScheduleResetCooldown()
 end
 
 function XUiFubenBossSingleDetail:OnDisable()
     self:_RemoveEventListeners()
     self:_RemoveSchedules()
+    XScheduleManager.UnSchedule(self._TimerResetCooldown)
+    self._TimerResetCooldown = false
 end
 
 -- endregion
@@ -129,7 +142,7 @@ function XUiFubenBossSingleDetail:OnBtnStartClick()
     self._Control:SetEnterBossInfo(self._BossId, self._CurBossStageConfig.DifficultyType)
     self._Control:OnEnterNormalFight()
     XLuaUiManager.Open("UiBattleRoleRoom", stageId, self._Control:GetTeamByBossId(self._BossId),
-        require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"))
+            require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"))
 end
 
 function XUiFubenBossSingleDetail:OnBtnAutoClick()
@@ -147,8 +160,10 @@ function XUiFubenBossSingleDetail:OnBtnAutoClick()
         return
     end
 
-    local stageData = XMVCA.XFuben:GetStageData(self._CurBossStageConfig.StageId)
-    local curScore = stageData and stageData.Score or 0
+    --local stageData = XMVCA.XFuben:GetStageData(self._CurBossStageConfig.StageId)
+    --local curScore = stageData and stageData.Score or 0
+    local curScore = self._Control:GetStageCurrentScore(self._CurBossStageConfig.StageId)
+    
     local autoScore = math.floor(self._Control:GetAutoFightRebate() * autoFightData:GetScore() / 100)
 
     if curScore >= autoScore then
@@ -167,7 +182,7 @@ function XUiFubenBossSingleDetail:OnBtnAutoClick()
 
     self.PanelAutoFightUi:Open()
     self.PanelAutoFightUi:Refresh(autoFightData, self._BossSingleData:GetBossSingleChallengeCount(),
-        self._CurBossStageConfig)
+            self._CurBossStageConfig)
     self:PlayAnimation("PanelAutoFightEnable")
 end
 
@@ -195,8 +210,9 @@ function XUiFubenBossSingleDetail:OnTweenRefresh()
 
     local stageId = self._CurBossStageConfig.StageId
     local score = self._CurBossStageConfig.Score + self._Control:GetBaseScoreByStageId(stageId)
-    local stageData = XMVCA.XFuben:GetStageData(stageId)
-    local curScore = stageData and stageData.Score or 0
+    --local stageData = XMVCA.XFuben:GetStageData(stageId)
+    --local curScore = stageData and stageData.Score or 0
+    local curScore = self._Control:GetStageCurrentScore(self._CurBossStageConfig.StageId)
 
     self:_SetSelfScore(score, curScore)
 end
@@ -253,7 +269,7 @@ function XUiFubenBossSingleDetail:_Init()
     self.TxtSelectedEn.gameObject:SetActiveEx(hasHideBoss)
     self.TxtHideSelectedBoss.gameObject:SetActiveEx(hasHideBoss)
     self._TabBtnGroup = XUiTabBtnGroup.New(toggleList, Handler(self, self.OnGridBossLevelClick),
-        Handler(self, self.OnCheckToggleClick), true)
+            Handler(self, self.OnCheckToggleClick), true)
     self.PanelTipUi:Close()
 
     -- 设置Toggle名字
@@ -352,6 +368,7 @@ function XUiFubenBossSingleDetail:_RefreshBossInfo(index)
     self:_RefreshInfo()
     self:_RefreshHideBoss()
     self:_RefreshModel(self._CurBossStageConfig.ModelId, isHideBoss)
+    self:ScheduleResetCooldown()
     self.PanelTipUi:SetBossStageConfig(self._CurBossStageConfig)
     self.PanelTipUi:Open()
 end
@@ -362,7 +379,7 @@ function XUiFubenBossSingleDetail:_RefreshDesc()
     local isHideBoss = self._CurBossStageConfig.DifficultyType == XEnumConst.BossSingle.DifficultyType.Hide
     local time = math.floor(stageCfg.PassTimeLimit / ONE_MINUTE_SECOND)
     local text = isHideBoss and XUiHelper.GetText("BossSingleMinuteHideBoss", time)
-                     or XUiHelper.GetText("BossSingleMinute", time)
+            or XUiHelper.GetText("BossSingleMinute", time)
     local sectionCfg = self._Control:GetBossSectionConfigByBossId(self._BossId)
     local level = self._Control:GetProposedLevel(stageId)
     local allNums = self._Control:GetChallengeCount()
@@ -373,20 +390,25 @@ function XUiFubenBossSingleDetail:_RefreshDesc()
 
     self.TxtTimeLimit.text = text
     self.TxtBossName.text = self._CurBossStageConfig.BossName
-    self.TxtFightCharCount.text = isHideBoss
-                                      and XUiHelper.GetText("BossSingleFightCharCountHB",
-            self._CurBossStageConfig.FightCharCount)
-                                      or XUiHelper.GetText("BossSingleFightCharCount",
-            self._CurBossStageConfig.FightCharCount)
+    --self.TxtFightCharCount.text = isHideBoss
+    --                                  and XUiHelper.GetText("BossSingleFightCharCountHB",
+    --        self._CurBossStageConfig.FightCharCount)
+    --                                  or XUiHelper.GetText("BossSingleFightCharCount",
+    --        self._CurBossStageConfig.FightCharCount)
     self.TxtBossDes.text = sectionCfg.Desc
     self.TxtLevel.text = XUiHelper.GetText("BossSingleDetailAllScore", level)
     self.TxtATNums.text = XMVCA.XFuben:GetRequireActionPoint(stageId)
-    self.TxtChangeNums.text = isHideBoss and XUiHelper.GetText("BossSingleChallgeCountHB", leftNums, allNums)
-                                  or XUiHelper.GetText("BossSingleChallgeCount", leftNums, allNums)
+
+    if self._Control:IsResetBtnVisible(stageId) then
+        self.TxtChangeNums.text = XUiHelper.GetText("BossSingleChallgeUnlimitedTimes", leftNums, allNums)
+    else
+        self.TxtChangeNums.text = isHideBoss and XUiHelper.GetText("BossSingleChallgeCountHB", leftNums, allNums)
+                or XUiHelper.GetText("BossSingleChallgeCount", leftNums, allNums)
+    end
 
     if preFullScore > 0 then
         self.TxtRepeatDesc.text = XUiHelper.ReplaceTextNewLine(
-            XUiHelper.GetText("BossSingleScoreDesc", difficultyDesc, preFullScore))
+                XUiHelper.GetText("BossSingleScoreDesc", difficultyDesc, preFullScore))
     else
         self.TxtRepeatDesc.text = XUiHelper.ReplaceTextNewLine(XUiHelper.GetText("BossSingleRepeartDesc"))
     end
@@ -440,8 +462,9 @@ end
 function XUiFubenBossSingleDetail:_RefreshInfo()
     local stageId = self._CurBossStageConfig.StageId
     local score = self._CurBossStageConfig.Score + self._Control:GetBaseScoreByStageId(stageId)
-    local stageData = XMVCA.XFuben:GetStageData(stageId)
-    local curScore = stageData and stageData.Score or 0
+    --local stageData = XMVCA.XFuben:GetStageData(stageId)
+    --local curScore = stageData and stageData.Score or 0
+    local curScore = self._Control:GetStageCurrentScore(stageId)
     local autoFightCount = self._Control:GetAutoFightCount()
     -- 设置自动按钮状态
     local maxCount = autoFightCount
@@ -547,7 +570,7 @@ function XUiFubenBossSingleDetail:_SetSelfScore(score, curScore)
     end
 
     local text = isHideBoss and XUiHelper.GetText("BossSingleBossScoreHb", curScore, score)
-                     or XUiHelper.GetText("BossSingleBossScore", curScore, score)
+            or XUiHelper.GetText("BossSingleBossScore", curScore, score)
 
     self.TxtMyScore.text = text
     self.ImgBg.gameObject:SetActiveEx(not isHideBoss)
@@ -574,6 +597,8 @@ function XUiFubenBossSingleDetail:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnAuto, self.OnBtnAutoClick, true)
     self:RegisterClickEvent(self.BtnClick, self.OnBtnClickClick, true)
     self:RegisterClickEvent(self.BtnRank, self.OnBtnRankClick, true)
+    -- v3.8 新增重置按钮
+    self:RegisterClickEvent(self.BtnReset, self.OnBtnResetClick, true)
 end
 
 function XUiFubenBossSingleDetail:_RemoveSchedules()
@@ -596,5 +621,66 @@ function XUiFubenBossSingleDetail:_RemoveEventListeners()
 end
 
 -- endregion
+
+--region reset btn
+function XUiFubenBossSingleDetail:OnBtnResetClick(eventData)
+    local stageId = self._CurBossStageConfig.StageId
+    if self._Control:IsResetCoolDown() then
+        XUiManager.TipText("BossSingleResetCooldown")
+        return
+    end
+    if self._Control:IsResetBtnEnable(stageId) then
+        if self.PanelResetUi then
+            self.PanelResetUi:Open()
+            self.PanelResetUi:Update(self._CurBossStageConfig)
+        end
+    end
+end
+
+function XUiFubenBossSingleDetail:_RefreshBtnReset()
+    local stageId = self._CurBossStageConfig.StageId
+    local isVisible = self._Control:IsResetBtnVisible(stageId)
+
+    --if XMain.IsZLBDebug then
+    --    isVisible = true
+    --end
+    
+    self.BtnReset.gameObject:SetActiveEx(isVisible)
+    
+    if isVisible then
+        if self._Control:IsResetCoolDown() then
+            self.BtnReset:SetButtonState(CS.UiButtonState.Disable)
+            local time = self._Control:GetResetCoolDownRemainTime()
+            if time < 0 then
+                time = 0
+            end
+            self.TxtResetCooldown.text = XUiHelper.GetTime(time, XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
+            self.TxtResetCooldown.gameObject:SetActiveEx(true)
+        else
+            if self._Control:IsResetBtnEnable(stageId) then
+                self.BtnReset:SetButtonState(CS.UiButtonState.Normal)
+            else
+                self.BtnReset:SetButtonState(CS.UiButtonState.Disable)
+                self.TxtResetCooldown.gameObject:SetActiveEx(false)
+            end
+        end
+    end
+end
+
+function XUiFubenBossSingleDetail:ScheduleResetCooldown()
+    self:_RefreshBtnReset()
+    if not self._Control:IsResetCoolDown() then
+        return
+    end
+    if not self._TimerResetCooldown then
+        self._TimerResetCooldown = XScheduleManager.ScheduleForever(function()
+            self:_RefreshBtnReset()
+            if not self._Control:IsResetCoolDown() then
+                XScheduleManager.UnSchedule(self._TimerResetCooldown)
+            end
+        end, XScheduleManager.SECOND)
+    end
+end
+--endregion reset btn
 
 return XUiFubenBossSingleDetail

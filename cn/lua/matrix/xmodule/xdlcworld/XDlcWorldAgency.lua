@@ -20,6 +20,15 @@ end
 function XDlcWorldAgency:InitEvent()
     -- 实现跨Agency事件注册
     -- self:AddAgencyEvent()
+    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = Handler(self, self.OnGetDlcBaseAttrib)
+    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = Handler(self, self.OnGetDlcNpcAttrib)
+    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = Handler(self, self.OnGetWorldNpcBornMagicLevelMap)
+end
+
+function XDlcWorldAgency:RemoveEvent()
+    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = nil
+    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = nil
+    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = nil
 end
 
 -- region World相关
@@ -175,16 +184,6 @@ function XDlcWorldAgency:HasResult()
     return self._Model:GetResult() ~= nil
 end
 
-function XDlcWorldAgency:InitFightDelegate(worldId)
-    local worldType = XMVCA.XDlcWorld:GetWorldTypeById(worldId)
-
-    if worldType == XEnumConst.DlcWorld.WorldType.Hunt then
-        XDataCenter.XDlcHuntAttrManager.InitFightDelegate()
-    else
-        XMVCA.XDlcWorld:_SetFightDelegate(worldId)
-    end
-end
-
 function XDlcWorldAgency:OnNotifyFightFinishSettle(res)
     -- local worldId = res.SettleData.ResultData.WorldData.WorldId
     -- -- if worldId and self:GetWorldTypeById(worldId) == XEnumConst.DlcWorld.WorldType.Hunt then
@@ -229,7 +228,6 @@ end
 
 function XDlcWorldAgency:OnEnterFight(worldId)
     self:_PreEnterFight()
-    self:_SetFightDelegate(worldId)
     self._Model:SetResult(nil)
 end
 
@@ -258,7 +256,6 @@ function XDlcWorldAgency:OnFightSettle()
 
     XMVCA.XDlcRoom:Settlement()
     self:_FinishFight()
-    self:_ClearFightDelegate()
     if self:_IsForceExit() then
         fightEvent:OnFightForceExit(worldType)
         XMVCA.XDlcRoom:Close()
@@ -268,6 +265,50 @@ function XDlcWorldAgency:OnFightSettle()
 
         fightEvent:OnFightFinishSettle(worldType, result.SettleData, resultData.IsPlayerWin, false)
     end
+end
+
+function XDlcWorldAgency:OnGetDlcBaseAttrib(worldType, npcId, level)
+    if worldType == XEnumConst.DlcWorld.WorldType.Hunt then
+        return XDataCenter.XDlcHuntAttrManager.GetNpcBaseAttrib(npcId)
+    end
+
+
+    local agency = self:GetAgencyByWorldType(worldType, true)
+
+    if not agency then
+        return self:_OnGetDlcBaseAttribDefault(npcId, level)
+    end
+
+    return agency:DlcGetBaseAttrib(npcId, level)
+end
+
+function XDlcWorldAgency:OnGetDlcNpcAttrib(worldType, worldNpcData)
+    if worldType == XEnumConst.DlcWorld.WorldType.Hunt then
+        return XDataCenter.XDlcHuntAttrManager.GetNpcAttrib(worldNpcData)
+    end
+
+
+    local agency = self:GetAgencyByWorldType(worldType, true)
+
+    if not agency then
+        return self:_OnGetDlcNpcAttribDefault(worldNpcData)
+    end
+
+    return agency:DlcGetNpcAttrib(worldNpcData)
+end
+
+function XDlcWorldAgency:OnGetWorldNpcBornMagicLevelMap(worldType, worldNpcData)
+    if worldType == XEnumConst.DlcWorld.WorldType.Hunt then
+        return XDataCenter.XDlcHuntAttrManager.GetWorldNpcBornMagicLevelMap(worldNpcData)
+    end
+
+    local agency = self:GetAgencyByWorldType(worldType, true)
+
+    if not agency then
+        return self:_OnGetWorldNpcBornMagicLevelMapDefault(worldNpcData)
+    end
+
+    return agency:DlcGetWorldNpcBornMagicLevelMap(worldNpcData)
 end
 
 -- endregion
@@ -307,7 +348,7 @@ end
 function XDlcWorldAgency:_PreEnterFight()
     CsXBehaviorManager.Instance:Clear()
     XTableManager.ReleaseAll(true)
-    CS.BinaryManager.OnPreloadFight(true)
+    CS.BinaryManager.ReleaseAllCache()
     ---垃圾收集
     collectgarbage("collect")
     CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal, function()
@@ -321,34 +362,22 @@ function XDlcWorldAgency:_FinishFight()
     XLuaUiManager.SafeClose("UiSet")
 end
 
-function XDlcWorldAgency:_SetFightDelegate(worldId)
-    if worldId then
-        local agency = self:GetAgencyByWorldId(worldId, true)
-
-        if agency then
-            CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = Handler(agency, agency.DlcGetBaseAttrib)
-            CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = Handler(agency, agency.DlcGetNpcAttrib)
-            CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = Handler(agency,
-                agency.DlcGetWorldNpcBornMagicLevelMap)
-        else
-            self:_SetDefaultFightDelegate()
-        end
-    end
-end
-
-function XDlcWorldAgency:_SetDefaultFightDelegate()
+function XDlcWorldAgency:_OnGetDlcBaseAttribDefault(npcId, level)
     local agency = require("XModule/XBase/XDlcActivityAgency")
-    
-    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = Handler(agency, agency.DlcGetBaseAttrib)
-    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = Handler(agency, agency.DlcGetNpcAttrib)
-    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = Handler(agency,
-        agency.DlcGetWorldNpcBornMagicLevelMap)
+
+    return agency:DlcGetBaseAttrib(npcId, level)
 end
 
-function XDlcWorldAgency:_ClearFightDelegate()
-    CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = nil
-    CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = nil
-    CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = nil
+function XDlcWorldAgency:_OnGetDlcNpcAttribDefault(worldNpcData)
+    local agency = require("XModule/XBase/XDlcActivityAgency")
+
+    return agency:DlcGetNpcAttrib(worldNpcData)
+end
+
+function XDlcWorldAgency:_OnGetWorldNpcBornMagicLevelMapDefault(worldNpcData)
+    local agency = require("XModule/XBase/XDlcActivityAgency")
+
+    return agency:DlcGetWorldNpcBornMagicLevelMap(worldNpcData)
 end
 
 ---@return XDlcWorld

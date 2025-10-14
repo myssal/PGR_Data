@@ -27,6 +27,7 @@ local TimeLimitWeeklyTasksCheckTable = {}
 local TaskConditionTemplate = {}
 local AlarmClockTemplate = {}
 local TaskBackFlowTemplate = {}
+local MainTaskTabControlTemplate = {}
 
 local DailyActivenessTotal = 0
 
@@ -39,6 +40,7 @@ local TABLE_TASK_TIME_LIMIT_PATH = "Share/Task/TaskTimeLimit.tab"
 local TABLE_TASK_CONDITION_PATH = "Share/Task/Condition.tab"
 local TABLE_ALARMCLOCK_PATH = "Share/AlarmClock/AlarmClock.tab"
 local TABLE_TASK_BACK_FLOW_PATH = "Share/Task/BackFlow.tab"
+local TABLE_MAIN_TASK_TAB_CONTROL = "Client/Task/MainTaskTabControl.tab"
 local NextTaskIds = {}
 
 local function SetNextTaskId()
@@ -78,6 +80,8 @@ function XTaskConfig.Init()
     TimeLimitTaskTemplate = XTableManager.ReadByIntKey(TABLE_TASK_TIME_LIMIT_PATH, XTable.XTableTaskTimeLimit, "Id")
     AlarmClockTemplate = XTableManager.ReadByIntKey(TABLE_ALARMCLOCK_PATH, XTable.XTableAlarmClock, "ClockId")
     TaskBackFlowTemplate = XTableManager.ReadByIntKey(TABLE_TASK_BACK_FLOW_PATH, XTable.XTableBackFlow, "Id")
+    MainTaskTabControlTemplate = XTableManager.ReadByIntKey(TABLE_MAIN_TASK_TAB_CONTROL, XTable.XTableMainTaskTabControl, "Id")
+    
     InitTimeLimitWithRefreshableTasks()
 
     DailyActivenessTemplate = TaskActivenessTemplate[XTaskConfig.ActivenessRewardType.Daily]
@@ -158,6 +162,39 @@ end
 -- 新手任务二期
 function XTaskConfig.GetNewbieTaskTwoActivenessTemplate()
     return NewbieTaskTwoActivenessTemplate
+end
+
+--- 主界面任务界面页签控制配置表
+---@return XTableMainTaskTabControl[]
+function XTaskConfig.GetMainTaskTabControlTemplate()
+    return MainTaskTabControlTemplate
+end
+
+--- 主界面任务界面页签控制配置表（带排序）
+---@return XTableMainTaskTabControl[]
+function XTaskConfig.GetMainTaskTabControlTemplateSortList()
+    local sortList = {}
+
+    for i, v in pairs(MainTaskTabControlTemplate) do
+        table.insert(sortList, v)
+    end
+    
+    table.sort(sortList, function(a, b) 
+        return a.Id < b.Id
+    end)
+    
+    return sortList
+end
+
+-- 通过groupId获取所有的任务Id
+function XTaskConfig.GetTaskIdsByGroupId(groupId)
+    local result = {}
+    for _, taskConfig in pairs(TaskTemplate) do
+        if taskConfig.GroupId == groupId then
+            table.insert(result, taskConfig.Id)
+        end
+    end
+    return result
 end
 
 ----------------------------------------- 配置表对外暴露的get方法结束 -----------------------------------------

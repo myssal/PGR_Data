@@ -67,7 +67,7 @@ end
 
 function XBigWorldQuestControl:GetQuestName(questId)
     local template = self._Model:GetQuestTemplate(questId)
-    return template and template.QuestText or ""
+    return template and template.Name or ""
 end
 
 function XBigWorldQuestControl:GetQuestRewardId(questId)
@@ -81,7 +81,7 @@ end
 
 function XBigWorldQuestControl:GetQuestDesc(questId)
     local template = self._Model:GetQuestTemplate(questId)
-    return template and template.QuestDesc or 0
+    return template and template.Desc or 0
 end
 
 function XBigWorldQuestControl:GetQuestFirstStepId(questId)

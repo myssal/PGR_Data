@@ -8,6 +8,7 @@ local ButtonStateDisable = CS.UiButtonState.Disable
 local XUiTRPGMain = XLuaUiManager.Register(XLuaUi, "UiTRPGMain")
 
 function XUiTRPGMain:OnAwake()
+    XMVCA.XMainLine2:SetEnterExhibitionChapterTRPG()
     self.IsSwitchStatusOpenView = false     --是否从切换模式按钮打开本界面
 
     self.PanelPlotTab = XUiTRPGPanelPlotTab.New(self.PanelPlotTab, true)

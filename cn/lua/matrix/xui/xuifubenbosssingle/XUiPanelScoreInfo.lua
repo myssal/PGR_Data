@@ -40,12 +40,12 @@ function XUiPanelScoreInfo:_Refresh()
     for i = 1, #configs do
         local canGet = bossSingleData:GetBossSingleTotalScore() >= configs[i].Score
         local isGet = self._Control:CheckRewardGet(configs[i].Id)
-        if canGet and not isGet then
-            table.insert(canGetList, configs[i])
-        elseif not canGet then
-            table.insert(unGetList, configs[i])
-        else
+        if isGet then
             table.insert(gotList, configs[i])
+        elseif canGet then
+            table.insert(canGetList, configs[i])
+        else
+            table.insert(unGetList, configs[i])
         end
     end
 
@@ -58,8 +58,8 @@ function XUiPanelScoreInfo:_Refresh()
     end
 
     local isCanReceiveCount = 0
-    local totalScore = bossSingleData:GetBossSingleTotalScore()
-    local curScore = XUiHelper.GetText("BossSingleScore2", bossSingleData:GetBossSingleTotalScore())
+    local totalScore = bossSingleData:GetBossSingleTotalScoreBestRecord()
+    local curScore = XUiHelper.GetText("BossSingleScore2", bossSingleData:GetBossSingleTotalScoreBestRecord())
     self.TxtCurScore.text = curScore
 
     for i = 1, #canGetList do

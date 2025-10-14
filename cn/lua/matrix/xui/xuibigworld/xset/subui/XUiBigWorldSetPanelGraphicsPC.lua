@@ -90,7 +90,7 @@ function XUiBigWorldSetPanelGraphicsPC:OnAwake()
 end
 
 function XUiBigWorldSetPanelGraphicsPC:OnTGroupFrameRateClick(index)
-    self._Setting:SetFrameRateLevelValue(index - 1)
+    self._Setting:SetBigWorldFrameRateLevelValue(index - 1)
     self:_RefreshAutoGroup()
 end
 
@@ -222,7 +222,7 @@ function XUiBigWorldSetPanelGraphicsPC:_RefreshToggleFrameRate()
 end
 
 function XUiBigWorldSetPanelGraphicsPC:_RefreshFrameRateGroup()
-    self.TGroupFrameRate:SelectIndex(self._Setting:GetFrameRateLevelValue() + 1, false)
+    self.TGroupFrameRate:SelectIndex(self._Setting:GetBigWorldFrameRateLevelValue() + 1, false)
 end
 
 function XUiBigWorldSetPanelGraphicsPC:_RefreshToggleFullScreen()

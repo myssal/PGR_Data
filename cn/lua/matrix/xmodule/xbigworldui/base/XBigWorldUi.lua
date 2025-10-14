@@ -90,21 +90,11 @@ function XBigWorldUi:ChangeHideFightUi(value)
     end
 end
 
---- 锁住弹窗队列，直至打开的后续界面全部关闭
-function XBigWorldUi:BeginOpenOperator(uiName, ...)
-    if not string.IsNilOrEmpty(uiName) then
-        XMVCA.XBigWorldUI:BeginPopupQueueOperator(self.Name)
-        XMVCA.XBigWorldUI:Open(uiName, ...)
-    end
-end
-
---- 锁住弹窗队列，直至打开的后续界面全部关闭
-function XBigWorldUi:BeginOpenOperatorAfterClose(uiName, ...)
+--- 向队列头插入一个UI，保证队列下个打开的一定是这个UI
+function XBigWorldUi:InsertQueueBeforeClose(uiName, ...)
     if not string.IsNilOrEmpty(uiName) then
         XMVCA.XBigWorldUI:InsertHeaderAwaitUi(uiName, ...)
-        XMVCA.XBigWorldUI:Close(self.Name, function() 
-            XMVCA.XBigWorldUI:BeginPopupQueueOperator(uiName)
-        end)
+        self:Close()
     end
 end
 

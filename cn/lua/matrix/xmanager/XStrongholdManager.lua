@@ -23,7 +23,7 @@ XStrongholdManagerCreator = function()
     local Clone = XTool.Clone
 
     ---@class XStrongholdManager
-    local XStrongholdManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Stronghold)
+    local XStrongholdManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Stronghold)
     XStrongholdManager.IsomerTeamElementId = -1 --异构体/感染体的队伍属性Id
     XStrongholdManager.SpTeamElementId = -2 --SP区的队伍属性Id
 

@@ -23,48 +23,62 @@ local ShowStatus = {
     Hide = 3,
 }
 
+---@class XUiGridMovieActor
+---@field UiMovie XUiMovie
 local XUiGridMovieActor = XClass(nil, "XUiGridMovieActor")
 
-function XUiGridMovieActor:Ctor(uiRoot, obj, actorIndex)
-    self.UiRoot = uiRoot
+function XUiGridMovieActor:Ctor(uiMovie, link, actorIndex)
+    self.UiMovie = uiMovie
+    self.Link = link -- 挂点
     self.ActorIndex = actorIndex
-
-    local panelActor = {}
-    panelActor.Transform = obj.transform
-    panelActor.gameObject = obj.gameObject
-    XTool.InitUiObject(panelActor)
-
-    self.PanelActor = panelActor
-    self.RImgActor = panelActor.RImgActor
-    self.RImgFace = panelActor.RImgFace
-    self.EffctActor = panelActor.EffctActor
-    self.MetearialActor = panelActor.MetearialActor
-    self.MeterialFace = panelActor.MeterialFace
-    ---@type UnityEngine.CanvasGroup
-    self.CanvasGroup = panelActor.Transform:GetComponent("CanvasGroup")
     self.Status = ShowStatus.Hide
-    panelActor.gameObject:SetActiveEx(false)
-    self.RImgFace.gameObject:SetActiveEx(false)
     self.IsReverse = false
 end
 
 function XUiGridMovieActor:OnDestroy()
-    self.UiRoot = nil
-    self.RImgActor = nil
-    self.PanelActor = nil
-    self.EffctActor = nil
-    self.RImgFace = nil
-    self.MetearialActor = nil
-    self.MeterialFace = nil
-    self.CanvasGroup = nil
+    self.UiMovie = nil
+end
+
+function XUiGridMovieActor:LoadPrefab()
+    if not self.GameObject then
+        local actorGo = self.UiMovie:GetUiMoviePanelActor()
+        self.GameObject = XUiHelper.Instantiate(actorGo, self.Link)
+        self.Transform = self.GameObject.transform
+        self.GameObject.gameObject:SetActiveEx(true)
+        XTool.InitUiObject(self)
+        
+        -- 设置XUiEffectLayer的TargetCanvas
+        local canvas = self:GetComponentCanvas()
+        local components = self.Transform:GetComponentsInChildren(typeof(CS.XUiEffectLayer), false)
+        for i = 0, components.Length - 1, 1 do
+            components[i]:SetTargetCanvas(canvas)
+        end
+    end
+end
+
+function XUiGridMovieActor:IsLoaded()
+    return self.GameObject ~= nil
+end
+
+function XUiGridMovieActor:GetComponentCanvas()
+    local current = self.Transform
+    local canvas
+    while not canvas or canvas:Equals(nil) do
+        canvas = current:GetComponent(typeof(CS.UnityEngine.Canvas))
+        if not canvas or canvas:Equals(nil) then
+            current = current.parent
+        end
+    end
+    return canvas
 end
 
 function XUiGridMovieActor:UpdateActor(actorId)
     if self.ActorId == actorId then return end
     self.ActorId = actorId
 
+    self:LoadPrefab()
     self:SetImage()
-    self.PanelActor.gameObject:SetActiveEx(true)
+    self.Link.gameObject:SetActiveEx(true)
 end
 
 function XUiGridMovieActor:SetImage()
@@ -80,11 +94,9 @@ end
 
 function XUiGridMovieActor:SetImagePos(pos)
     if self.Pos == pos then return end
-    local rImgActor = self.RImgActor
-    if XTool.UObjIsNil(rImgActor) then return end
-
+    local actorRoot = self.PanelActorRoot
     self.Pos = pos
-    rImgActor.rectTransform.anchoredPosition3D = pos
+    actorRoot.anchoredPosition3D = pos
 end
 
 function XUiGridMovieActor:Reverse(isReverse)
@@ -124,6 +136,8 @@ function XUiGridMovieActor:IsFront()
 end
 
 function XUiGridMovieActor:SetFace(faceId)
+    if not self.ActorId then return end
+
     local rImgFace = self.RImgFace
 
     local actorId = self.ActorId
@@ -141,6 +155,8 @@ function XUiGridMovieActor:SetFace(faceId)
 end
 
 function XUiGridMovieActor:SetGrayScale(value)
+    if not self:IsLoaded() then return end
+
     if self.GrayValue == value then return end
     self.GrayValue = value
     self.MetearialActor:SetGrayScale(value)
@@ -160,11 +176,11 @@ function XUiGridMovieActor:RevertActorPanel()
     if status == ShowStatus.Back then
         color = BackColor
     elseif status == ShowStatus.Front then
-        self.PanelActor.Transform:SetAsLastSibling()
+        self.Link.transform:SetAsLastSibling()
         scale = FrontScale
     elseif status == ShowStatus.Hide then
         alpha = 0
-        self.PanelActor.gameObject:SetActiveEx(false)
+        self.Link.gameObject:SetActiveEx(false)
     elseif status == ShowStatus.Normal then
         alpha = 1    
     end
@@ -182,7 +198,7 @@ function XUiGridMovieActor:PlayAnimEnable(skipAnim)
 
     if self.Status == ShowStatus.Normal then return end
     self.Status = ShowStatus.Normal
-    self.PanelActor.gameObject:SetActiveEx(true)
+    self.Link.gameObject:SetActiveEx(true)
 
     if skipAnim then
         self.CanvasGroup.alpha = 1
@@ -352,18 +368,11 @@ end
 
 -- 根据动画名称获取动画
 function XUiGridMovieActor:GetAnim(animShortName)
-    local animName = AnimNameHead .. tostring(self.ActorIndex) .. animShortName
-    local anim = self.UiRoot[animName]
+    local animName = AnimNameHead .. animShortName
+    local anim = self[animName]
     if anim then
         return anim
     end
-
-    animName = AnimNameHead .. animShortName
-    anim = self.PanelActor[animName]
-    if anim then
-        return anim
-    end
-
     return
 end
 

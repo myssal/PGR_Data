@@ -135,19 +135,17 @@ function XStrongholdConfigs.Init()
 end
 
 -----------------活动时间相关 begin--------------------
---活动期数自循环，example:{1, 10} 当活动期数大于等于10的时候读取id为10的一行，否则读取id为1的一行
+--1、遍历StrongholdActivity表，当表里配置有对应的期数时，读取配置的OneCycleSeconds作为倒计时
+--2、当表里没有对应的期数时，使用Id=1的配置进行倒计时
 local function GetActivityConfig(activityId)
-    activityId = IsNumberValid(activityId) and activityId or DefaultActivityId
-
-    local circleId = 0
-    for _, configId in ipairs(ActivityIdList) do
-        if configId <= activityId then
-            circleId = configId
-            break
-        end
+    local id
+    if XTool.IsNumberValid(activityId) and table.contains(ActivityIdList, activityId) then
+        id = activityId
+    else
+        id = 1
     end
 
-    local config = ActivityTemplate[circleId]
+    local config = ActivityTemplate[id]
     if not config then
         XLog.Error("XStrongholdConfigs GetActivityConfig error:配置不存在, activityId: " .. activityId .. ", 配置路径: " .. TABLE_ACTIVITY_PATH)
         return

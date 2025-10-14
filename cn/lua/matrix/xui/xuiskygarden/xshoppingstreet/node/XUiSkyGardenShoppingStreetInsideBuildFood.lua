@@ -13,11 +13,11 @@ local XUiSkyGardenShoppingStreetInsideBuildSet = require("XUi/XUiSkyGarden/XShop
 local XUiSkyGardenShoppingStreetInsideBuildFood = XClass(XUiNode, "XUiSkyGardenShoppingStreetInsideBuildFood")
 
 local FoodGoodId2AddSound = {
-    [1] = 5700025,
-    [2] = 5700026,
-    [3] = 5700027,
+    [1] = "1",
+    [2] = "2",
+    [3] = "3",
 }
-local FoodGoodId2ReduceSound = 5700028
+local FoodGoodId2ReduceSound = "ReduceSound"
 
 local FoodUiKey2Obj = {
     [1] = {
@@ -143,9 +143,9 @@ function XUiSkyGardenShoppingStreetInsideBuildFood:_UpdateByData(foodData)
             luaUiNode:SetUpdateCallback(function(index)
                 if self._TempGoods[i] ~= index then
                     if index > self._TempGoods[i] then
-                        CS.XAudioManager.PlayAudio(FoodGoodId2AddSound[goodId])
+                        self.XAudioObjectPlayer:PlayByKeyName(FoodGoodId2AddSound[goodId])
                     else
-                        CS.XAudioManager.PlayAudio(FoodGoodId2ReduceSound)
+                        self.XAudioObjectPlayer:PlayByKeyName(FoodGoodId2ReduceSound)
                     end
                     -- XLog.Debug(goodId, "数量变化", self._TempGoods[i], "->", index)
                 end

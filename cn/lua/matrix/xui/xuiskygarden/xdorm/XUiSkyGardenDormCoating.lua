@@ -18,7 +18,7 @@ function XUiSkyGardenDormCoating:OnDestroy()
         self:SendChange3C(skinId)
     end
     
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(true, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(true)
     XMVCA.XBigWorldGamePlay:DeactivateVCamera("UiSkyGardenDormCameraChangeSkin", false)
 end
 

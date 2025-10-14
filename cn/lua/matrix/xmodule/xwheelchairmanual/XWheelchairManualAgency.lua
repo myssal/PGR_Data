@@ -15,7 +15,7 @@ local TabTypeToRedPointMap = {
 }
 
 function XWheelchairManualAgency:OnInit()
-
+    
 end
 
 function XWheelchairManualAgency:InitRpc()
@@ -71,6 +71,11 @@ function XWheelchairManualAgency:OpenMainUi(activityId, tabIndex)
         XUiManager.TipMsg(lockdesc)
         return false
     end
+end
+
+--- 主界面左上角入口UI控制类
+function XWheelchairManualAgency:ExGetUIActivityBtnCls()
+    return require('XUi/XUiWheelchairManual/UiExWheelchairManualMainEntrance/XUiGridMainWheelchairEntranceEx')
 end
 
 --region ActivityData

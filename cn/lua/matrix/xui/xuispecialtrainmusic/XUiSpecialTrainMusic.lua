@@ -41,7 +41,8 @@ function XUiSpecialTrainMusic:OnDisable()
         XScheduleManager.UnSchedule(self.ScheduleId)
         self.ScheduleId = nil
     end
-    CSXAudioManager.StopMusicWithAnalyzer()
+    -- CSXAudioManager.StopMusicWithAnalyzer()
+    XLuaAudioManager.StopCurrentBGM()
 end
 
 function XUiSpecialTrainMusic:OnDestroy()

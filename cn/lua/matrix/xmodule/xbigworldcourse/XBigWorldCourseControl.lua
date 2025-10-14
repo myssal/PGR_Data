@@ -10,7 +10,6 @@ function XBigWorldCourseControl:OnInit()
     self._VersionEntitys = false
 
     self._CurrentTaskProgress = {}
-    self._ProgressCueId = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("CourseTaskProcessCueId")
 
     self:_InitCurrentTaskProgress()
 end
@@ -25,7 +24,6 @@ end
 function XBigWorldCourseControl:OnRelease()
     -- XLog.Error("这里执行Control的释放")
     self._CurrentTaskProgress = {}
-    self._ProgressCueId = 0
 end
 
 ---@return XBWCourseVersionEntity[]
@@ -147,10 +145,6 @@ end
 
 function XBigWorldCourseControl:GetTaskProgressCountByContentId(contentId)
     return table.nums(self:GetTaskProgressIdsByContentId(contentId))
-end
-
-function XBigWorldCourseControl:GetProgressCueId()
-    return self._ProgressCueId
 end
 
 function XBigWorldCourseControl:GetCurrentRecordTaskProgress(versionId)

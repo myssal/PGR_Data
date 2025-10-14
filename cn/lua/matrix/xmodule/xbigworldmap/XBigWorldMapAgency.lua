@@ -13,6 +13,7 @@ function XBigWorldMapAgency:InitRpc()
     self:AddRpc("NotifyBigWorldBoxData", handler(self, self.OnNotifyBigWorldBoxData))
     self:AddRpc("NotifyBigWorldMapData", handler(self, self.OnNotifyBigWorldMapData))
     self:AddRpc("NotifyBigWorldActivateTeleporter", handler(self, self.OnNotifyBigWorldActivateTeleporter))
+    self:AddRpc("NotifyBigWorldTrackMapPinIdUpdate", handler(self, self.OnNotifyBigWorldTrackMapPinIdUpdate))
 end
 
 function XBigWorldMapAgency:InitEvent()
@@ -27,6 +28,7 @@ end
 -- 条件判断初始化
 function XBigWorldMapAgency:InitConditionCheck()
     XMVCA.XBigWorldService:RegisterConditionFunc(10101004, Handler(self, self.CheckTeleporterActiveCondition))
+    XMVCA.XBigWorldService:RegisterConditionFunc(10101006, Handler(self, self.CheckHasQuestMapPinCondition))
 end
 
 function XBigWorldMapAgency:ReleaseConditionCheck()
@@ -35,6 +37,7 @@ function XBigWorldMapAgency:ReleaseConditionCheck()
     end
 
     XMVCA.XBigWorldService:UnRegisterConditionFunc(10101004)
+    XMVCA.XBigWorldService:UnRegisterConditionFunc(10101006)
 end
 
 function XBigWorldMapAgency:InitShieldController()
@@ -133,7 +136,7 @@ function XBigWorldMapAgency:OnPlayerExitArea(data)
     local currentAreaId = self._Model:GetCurrentAreaId()
 
     if currentAreaId == areaId then
-        self._Model:ClearCurrentAreaGroupData()
+        self:ClearCurrentAreaGroupData()
     end
 
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_EXIT_AREA, groupId, areaId)
@@ -160,9 +163,13 @@ function XBigWorldMapAgency:OnShieldControl(controlData)
     end
 end
 
+function XBigWorldMapAgency:ClearCurrentAreaGroupData()
+    self._Model:ClearCurrentAreaGroupData()
+end
+
 ---@param questId number
 ---@param isIgnoreSameAreaGroup boolean 是否忽略同区域组(为True时在同AreaGroup内的不会打开地图)
-function XBigWorldMapAgency:OpenBigWorldMapUiAnchorQuest(questId, isIgnoreSameAreaGroup)
+function XBigWorldMapAgency:OpenBigWorldMapUiAnchorQuest(questId, isIgnoreSameAreaGroup, isIgnoreTips)
     if not XTool.IsNumberValid(questId) then
         return false
     end
@@ -213,7 +220,9 @@ function XBigWorldMapAgency:OpenBigWorldMapUiAnchorQuest(questId, isIgnoreSameAr
             return self:TryOpenBigWorldMapUi(worldId, currentLevelId, pinId)
         end
     else
-        XMVCA.XBigWorldUI:TipMsg(XMVCA.XBigWorldService:GetText("MapAnchorQuestTip"))
+        if not isIgnoreTips then
+            XMVCA.XBigWorldUI:TipMsg(XMVCA.XBigWorldService:GetText("MapAnchorQuestTip"))
+        end
     end
 
     return false
@@ -256,6 +265,35 @@ function XBigWorldMapAgency:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, 
     elseif self:CheckLevelHasMap(levelId) then
         XMVCA.XBigWorldUI:Open("UiBigWorldMap", worldId, levelId, 0, targetPinId, focusPos, scaleRatio)
         return true
+    end
+
+    return false
+end
+
+function XBigWorldMapAgency:TryOpenBigWorldMapUiAnchorPin(worldId, levelId, targetPinId, scaleRatio)
+    if self:CheckLevelLinkOther(levelId) then
+        local linkLevelId = self:GetMapLinkLevelIdByLevelId(levelId)
+        local linkWorldId = self._Model:GetBigWorldMapLinkLinkWorldIdByLevelId(levelId)
+        local virtualPinDatas = self._Model:GetVirtualPinDatasByReferId(targetPinId, true)
+
+        targetPinId = 0
+        if not XTool.IsTableEmpty(virtualPinDatas) then
+            for _, virtualPinData in pairs(virtualPinDatas) do
+                if virtualPinData.BindLevelId == linkLevelId then
+                    targetPinId = virtualPinData.PinId
+                end
+            end
+        end
+
+        if XTool.IsNumberValid(targetPinId) and self:CheckHasPin(linkLevelId, targetPinId) then
+            return self:TryOpenBigWorldMapUi(linkWorldId, linkLevelId, targetPinId, nil, scaleRatio)
+        end
+
+        return false
+    end
+
+    if self:CheckHasPin(levelId, targetPinId) then
+        return self:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, nil, scaleRatio)
     end
 
     return false
@@ -331,12 +369,45 @@ function XBigWorldMapAgency:CheckLevelLinkOther(levelId)
     return configs[levelId] ~= nil
 end
 
+function XBigWorldMapAgency:CheckHasPin(levelId, pinId)
+    local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId, true)
+
+    return pinData ~= nil
+end
+
+function XBigWorldMapAgency:CheckCurrentSameAreaGroup(targetAreaGroupId)
+    local currentGroupId = self:GetCurrentAreaGroupId()
+
+    return currentGroupId == targetAreaGroupId
+end
+
+function XBigWorldMapAgency:CheckPinCurrentSameAreaGroup(levelId, pinId)
+    local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId, true)
+
+    if pinData then
+        return self:CheckCurrentSameAreaGroup(pinData.MapAreaGroupId)
+    end
+
+    return false
+end
+
 function XBigWorldMapAgency:CheckTeleporterActiveCondition(template)
     if template then
         local levelId = template.Params[1]
         local placeId = template.Params[2]
 
         return self:CheckTeleporterActive(levelId, placeId)
+    end
+
+    return false
+end
+
+function XBigWorldMapAgency:CheckHasQuestMapPinCondition(template)
+    if template then
+        local questId = template.Params[1]
+        local questDatas = self._Model:GetQuestPinDatasByQuestId(questId, true)
+
+        return not XTool.IsTableEmpty(questDatas)
     end
 
     return false
@@ -390,6 +461,20 @@ end
 function XBigWorldMapAgency:OnNotifyBigWorldActivateTeleporter(data)
     self._Model:UpdateActivateTeleporter(data.LevelId, data.PlaceId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SCENE_OBJECT_ACTIVATE)
+end
+
+function XBigWorldMapAgency:OnNotifyBigWorldTrackMapPinIdUpdate(data)
+    if data and data.MapTrackPinData then
+        local levelId = data.MapTrackPinData.LevelId
+        local pinId = data.MapTrackPinData.TrackPinId
+
+        self._Model:CancelTrackPinByPinId(levelId, pinId)
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, false)
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_STOP_TRACK_MAP_PIN, {
+            MapPinLevelId = levelId,
+            MapPinId = pinId,
+        })
+    end
 end
 
 function XBigWorldMapAgency:RequestCancelTrackMapPin(levelId, callback)
@@ -593,9 +678,12 @@ function XBigWorldMapAgency:GetPinDataByLevelIdAndPinId(levelId, pinId)
     return self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId)
 end
 
-function XBigWorldMapAgency:GetCurrentTrackPinsIncludeVirtual(targetLevelId)
-    local result = {}
-
+function XBigWorldMapAgency:GetCurrentTrackPinsIncludeVirtual(targetLevelId, result)
+    result = result or {}
+    for k, _ in pairs(result) do
+        result[k] = nil
+    end
+    
     if not self:CheckLevelHasMap(targetLevelId) then
         return result
     end
@@ -620,7 +708,29 @@ function XBigWorldMapAgency:GetCurrentTrackPinsIncludeVirtual(targetLevelId)
 end
 
 function XBigWorldMapAgency:CheckHasTrackPinIncludeVirtual(levelId)
-    return not XTool.IsTableEmpty(self:GetCurrentTrackPinsIncludeVirtual(levelId))
+    local result = false
+    
+    if not self:CheckLevelHasMap(levelId) then
+        return result
+    end
+    local pinDatas = self:GetMapPinDatasByLevelId(levelId)
+
+    if not XTool.IsTableEmpty(pinDatas) then
+        for _, pinData in pairs(pinDatas) do
+            if pinData:IsVirtual() then
+                if self:CheckPinTracking(pinData.LevelId, pinData.ReferPinId) then
+                    result = true
+                    break
+                end
+            else
+                if self:CheckPinTracking(pinData.LevelId, pinData.PinId) then
+                    result = true
+                    break
+                end
+            end
+        end
+    end
+    return result
 end
 
 function XBigWorldMapAgency:GetPinActiveIconByStyleId(styleId)

@@ -41,7 +41,7 @@ XPartnerManagerCreator = function()
         PartnerSkillUpRequest = "PartnerSkillUpRequest", --伙伴技能升级请求
         PartnerSkillWearRequest = "PartnerSkillWearRequest", --伙伴技能穿戴请求
         PartnerDecomposeRequest = "PartnerDecomposeRequest", --伙伴分解请求
-        TeamPreSetPartnerRequest = "TeamPreSetPartnerRequest", --更新辅助机预设数据
+        TeamPreSetPartnerRequest = "TeamPrefabSetPartnerRequest", --更新辅助机预设数据
         PartnerMultiCarryAndSkillRequest = "PartnerMultiCarryAndSkillRequest", --辅助机预设批量携带
     }
     
@@ -167,8 +167,7 @@ XPartnerManagerCreator = function()
         local partnerInPrefab = XPartnerManager.GetPartnerDictInPrefab()
         for _, entity in pairs(PartnerEntityDic or {}) do
             local id = entity:GetId()
-            local IsCanDecomposion = not entity:GetIsCarry() and not entity:GetIsLock() 
-                    and not partnerInPrefab[id]
+            local IsCanDecomposion = not entity:GetIsCarry() and not entity:GetIsLock() and not partnerInPrefab[id] and not XDataCenter.TeamManager.CheckPartnerIdIsInTeamPrefab(id)
             if IsCanDecomposion then
                 table.insert(decomposionDataList, entity)
             end
@@ -890,6 +889,8 @@ XPartnerManagerCreator = function()
                 XUiManager.TipCode(res.Code)
                 return
             end
+
+            XDataCenter.TeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
 
             if cb then cb() end
         end)

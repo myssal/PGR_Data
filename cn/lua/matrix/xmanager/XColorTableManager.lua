@@ -2,7 +2,7 @@ local XExFubenActivityManager = require("XEntity/XFuben/XExFubenActivityManager"
 local RankUpdateInterval = 300 -- 排行榜数据更新间隔
 
 XColorTableManagerCreator = function()
-	local XColorTableManager = XExFubenActivityManager.New(XFubenConfigs.ChapterType.ColorTable, "ColorTableManager")
+	local XColorTableManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.ColorTable, "ColorTableManager")
 
     -- 自定义数据
     local TeamData = nil -- 队伍数据

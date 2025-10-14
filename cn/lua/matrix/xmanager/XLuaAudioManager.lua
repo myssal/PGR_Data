@@ -400,9 +400,9 @@ function XLuaAudioManager.SetWholeSelector(selectorName, labelName)
     XAudioManager.SetWholeSelector(selectorName, labelName)
 end
 
-function XLuaAudioManager.MuteAisacByPlayType(type, isMute)
+function XLuaAudioManager.MuteAisacByPlayType(type, isMute, cruveTime)
     local curType = XLuaAudioManager.Sound2PlayType[type]
-    XAudioManager.MuteAisacByPlayType(curType, isMute)
+    XAudioManager.MuteAisacByPlayType(curType, isMute, cruveTime)
 end
 
 function XLuaAudioManager.SetMusicSourceFirstBlockIndex(index)

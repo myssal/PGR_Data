@@ -28,6 +28,7 @@ local DownloadType = DOWNLOAD_SOURCE.SUBPACKAGE
 local CsXApplication = CS.XApplication
 
 function XSubPackageAgency:OnInit()
+    self.DebugForceOpenSubpackage = false
     self.DefaultSkipVideoPreloadDownloadTip = false
     self._SubpackageWaitDnLdQueue = {}
     self._ResWaitDnLdQueue = {}
@@ -113,7 +114,18 @@ function XSubPackageAgency:RemoveEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_LOGIN_UI_OPEN, self._OnLoginOutCb)
 end
 
+function XSubPackageAgency:SetDebugForceOpenSubpackage(value)
+    if not IsDebugBuild then
+        return
+    end
+
+    self.DebugForceOpenSubpackage = value
+end
+
 function XSubPackageAgency:IsOpen()
+    if self.DebugForceOpenSubpackage then
+        return true
+    end
     return self._LaunchDlcManager.CheckSubpackageOpen()
 end
 
@@ -260,8 +272,11 @@ function XSubPackageAgency:OnResDownloadRelease()
     end
     -- 记录下载完成 不然登录会变成热更新
     if self._DownloadingResId then
-        self._LaunchDlcManager.SetLaunchDownloadRecord(self._DownloadingResId)
-        CS.UnityEngine.PlayerPrefs.Save()
+        local resItem = self._Model:GetResourceItem(self._DownloadingResId)
+        if resItem:IsComplete() then
+            self._LaunchDlcManager.SetLaunchDownloadRecord(self._DownloadingResId)
+            CS.UnityEngine.PlayerPrefs.Save()
+        end
         self._DownloadingResId = nil
     end
 
@@ -316,6 +331,15 @@ function XSubPackageAgency:AddToDownload(subpackageId)
         self:StartDownload()
     end
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
+end
+
+--- 将必要资源添加到下载队列
+function XSubPackageAgency:AddNecessaryToDownload()
+    --开始下载必要资源
+    local subIds = self._Model:GetNecessarySubIds()
+    for _, subId in ipairs(subIds) do
+        self:AddToDownload(subId)
+    end
 end
 
 --- Subpackage粒度开始下载
@@ -419,6 +443,21 @@ function XSubPackageAgency:PauseDownload(subpackageId)
     self._PreparePauseSubpackageId = subpackageId
     --事件通知
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
+end
+
+-- 暂停必要资源下载
+function XSubPackageAgency:PauseNecessaryDownload()
+    local subIds = self._Model:GetNecessarySubIds()
+
+    if not XTool.IsTableEmpty(subIds) then
+        for _, subId in ipairs(subIds) do
+            if subId == self._DownloadPackageId then
+                self:PauseDownload(subId)
+            else
+                self:ProcessPrepare(subId)
+            end
+        end
+    end
 end
 
 --暂停队列中的所有下载
@@ -624,6 +663,34 @@ function XSubPackageAgency:GetUrlPrefix()
     return self._UrlPrefix
 end
 
+function XSubPackageAgency:GetNecessarySubIds()
+    return self._Model:GetNecessarySubIds()
+end
+
+--- 获取指定分包资源总大小
+function XSubPackageAgency:GetSubPackageTotalSizeBySubId(subId)
+    local subPackage = self:GetSubpackageItem(subId)
+
+    if subPackage then
+        return subPackage:GetTotalSize()
+    else
+        XLog.Error('找不到对应的分包资源数据，subId：' .. tostring(subId))
+        return 0
+    end
+end
+
+--- 获取指定分包资源已经下载部分的大小
+function XSubPackageAgency:GetSubPackageDownloadSizeBySubId(subId)
+    local subPackage = self:GetSubpackageItem(subId)
+
+    if subPackage then
+        return subPackage:GetDownloadSize()
+    else
+        XLog.Error('找不到对应的分包资源数据，subId：' .. tostring(subId))
+        return 0
+    end
+end
+
 function XSubPackageAgency:ChangeThread(isSingle)
 
     local count = isSingle and SingleThreadCount or MultiThreadCount
@@ -784,6 +851,64 @@ function XSubPackageAgency:CheckNecessaryComplete()
         end
     end
     return complete
+end
+
+--- 检查必要资源是否正在下载中
+function XSubPackageAgency:CheckNecessaryDownloading()
+    if not self:IsOpen() then
+        return true
+    end
+    local downloading = false
+    local necessaryIds = self._Model:GetNecessarySubIds()
+    for _, subpackageId in ipairs(necessaryIds) do
+        local item = self._Model:GetSubpackageItem(subpackageId)
+        if item and item:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING then
+            downloading = true
+            break
+        end
+    end
+    return downloading
+end
+
+--- 检查必要资源是否处于下载队列且未暂停
+function XSubPackageAgency:CheckNecessaryIsReadyDownload()
+    if not self:IsOpen() then
+        return true
+    end
+    local isReady = false
+    local necessaryIds = self._Model:GetNecessarySubIds()
+    for _, subpackageId in ipairs(necessaryIds) do
+        local item = self._Model:GetSubpackageItem(subpackageId)
+        if item then
+            if item:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING or item:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+                isReady = true
+                break
+            end
+        end
+    end
+    return isReady
+end
+
+--- 检查必要资源是否处于暂停中
+function XSubPackageAgency:CheckNecessaryIsPaused()
+    if not self:IsOpen() then
+        return true
+    end
+    local isPause = true
+    local necessaryIds = self._Model:GetNecessarySubIds()
+    for _, subpackageId in ipairs(necessaryIds) do
+        local item = self._Model:GetSubpackageItem(subpackageId)
+        if item then
+            local state = item:GetState()
+            
+            if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE and
+                    state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+                isPause = false
+                break
+            end
+        end
+    end
+    return isPause
 end
 
 function XSubPackageAgency:CheckAllComplete()
@@ -1113,16 +1238,37 @@ function XSubPackageAgency:RequestSelectSubTask()
 end
 
 --必要资源下载完成任务完成
-function XSubPackageAgency:RequestNecessaryTask(responseCb)
+function XSubPackageAgency:RequestNecessaryTask(responseCb, faultCb)
     local taskId = CS.XGame.ClientConfig:GetInt("SubpackageNecessaryTaskId")
     if not XTool.IsNumberValid(taskId) then
+        if faultCb then
+            faultCb()
+        end
         return
     end
 
-    self:RequestTask(taskId, responseCb)
+    self:RequestTask(taskId, responseCb, faultCb)
 end
 
-function XSubPackageAgency:RequestTask(taskId, responseCb)
+--- 判断必要资源下载任务是否领取奖励
+function XSubPackageAgency:CheckNecessaryTaskState(state)
+    local taskId = CS.XGame.ClientConfig:GetInt("SubpackageNecessaryTaskId")
+    
+    if not XTool.IsNumberValid(taskId) then
+        XLog.Error('判断必要资源下载任务是否领取奖励, 没有找到任务配置：SubpackageNecessaryTaskId')
+        return false
+    end
+    
+    local data = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    if not data then
+        XLog.Error('必要资源下载任务数据不存在，taskId：'..tostring(taskId))
+        return false
+    end
+
+    return data.State == state
+end
+
+function XSubPackageAgency:RequestTask(taskId, responseCb, faultCb)
     --分包未开放
     if not self:IsOpen() then
         return
@@ -1130,15 +1276,21 @@ function XSubPackageAgency:RequestTask(taskId, responseCb)
 
     local data = XDataCenter.TaskManager.GetTaskDataById(taskId)
     if not data then
+        if faultCb then
+            faultCb()
+        end
         return
     end
 
     if data.State == XDataCenter.TaskManager.TaskState.Achieved
             or data.State == XDataCenter.TaskManager.TaskState.Finish then
+        if faultCb then
+            faultCb()
+        end
         return
     end
 
-    XDataCenter.TaskManager.RequestClientTaskFinish(taskId, responseCb)
+    XDataCenter.TaskManager.RequestClientTaskFinish(taskId, responseCb, faultCb)
 end
 
 function XSubPackageAgency:GetSubpackageIdByResId(resId)

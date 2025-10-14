@@ -19,7 +19,7 @@ local Stage2ChapterMap = {}--记录stage对应的chapter
 function XPrequelConfigs.Init()
     PrequelChapter = XTableManager.ReadAllByIntKey(TABLE_PREQUEL_CHAPTER, XTable.XTablePrequelChapter, "ChapterId")
     PrequelCover = XTableManager.ReadAllByIntKey(TABLE_PREQUEL_COVER, XTable.XTablePrequelCover, "CoverId")
-    PrequelCoverInfo = XTableManager.ReadAllByIntKey(TABLE_PREQUEL_COVERINFO, XTable.XTablePrequelCoverInfo, "CoverId")
+    PrequelCoverInfo = XTableManager.ReadByIntKey(TABLE_PREQUEL_COVERINFO, XTable.XTablePrequelCoverInfo, "CoverId")
     PrequelChapterInfo = XTableManager.ReadByIntKey(TABLE_PREQUEL_CHAPTERINFO, XTable.XTablePrequelChapterInfo, "ChapterId")
     Fragment = XTableManager.ReadByIntKey(TABLE_FRAGMENT, XTable.XTableFragment, "Id")
 

@@ -92,6 +92,20 @@ function XBigWorldMessageAgency:CheckMessageUnRecord()
     return false
 end
 
+function XBigWorldMessageAgency:CheckHasMessage(messageId)
+    local messageDatas = self._Model:GetMessageMap()
+
+    if not XTool.IsTableEmpty(messageDatas) then
+        for _, messageData in pairs(messageDatas) do
+            if messageData.MessageId == messageId then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
 function XBigWorldMessageAgency:CheckUnReadMessageShield()
     return self._Model:GetIsShieldUnReadMessage()
 end
@@ -101,11 +115,39 @@ function XBigWorldMessageAgency:TryOpenMessageTipUi()
         local messageData = self._Model:PeekForceMessageData()
 
         if messageData then
-            local state = XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldMessageTips", messageData)
-            if state then
-                self._Model:DequeueForceMessageData()
+            if not XMVCA.XBigWorldUI:CheckAllowOpenWithImpact("UiBigWorldMessageTips") then
+                return false
             end
-            return state
+
+            local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
+
+            if XTool.IsNumberValid(id) then
+                self._Model:DequeueForceMessageData()
+                XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
+                    --- Todo zjx 后续优化弹窗队列后一并优化
+                    XMVCA.XBigWorldUI:Open("UiBigWorldMessageTips", messageData, id)
+                end)
+
+                return true
+            else
+                return false
+            end
+        end
+    end
+
+    return false
+end
+
+function XBigWorldMessageAgency:TryOpenMessageSingle(messageId)
+    if self:CheckHasMessage(messageId) then
+        local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
+        
+        if XTool.IsNumberValid(id) then
+            XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
+                XMVCA.XBigWorldUI:Open("UiBigWorldPopupMessageSingle", messageId, id)
+            end)
+
+            return true
         end
     end
 

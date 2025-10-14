@@ -85,6 +85,7 @@ local SecondAreaIdToMazeIdDic = {}
 local ButtonConditionTemplate = {}
 local SecondMainTemplate = {}
 local SecondMainIdList = {}
+---@type XTableTRPGSecondMainStage[]
 local SecondMainStageTemplate = {}
 
 local TruthRoadGroupMaxNum = 0
@@ -1981,6 +1982,10 @@ local GetSecondMainStageConfig = function(id)
         return
     end
     return config
+end
+
+function XTRPGConfigs.GetSecondMainStageTemplate()
+    return SecondMainStageTemplate
 end
 
 function XTRPGConfigs.GetSecondMainStageName(id)

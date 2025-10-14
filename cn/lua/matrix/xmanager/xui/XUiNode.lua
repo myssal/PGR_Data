@@ -361,6 +361,9 @@ function XUiNode:BindTweenAnimationAgency()
     end
 end
 
+function XUiNode:Update()
+end
+
 function XUiNode:Release()
     self._IsNodeShow = false
     self._StateFlag = XUiNodeState.Release

@@ -19,7 +19,7 @@ XPayConfigs.PayTemplateType = {
 
 function XPayConfigs.Init()
     PayTemplates = XTableManager.ReadByStringKey(TABLE_PAY_PATH, XTable.XTablePay, "Key")
-    FirstPayTemplates = XTableManager.ReadByIntKey(TABLE_FIRST_PAY_PATH, XTable.XTableFirstPayReward, "NeedPayMoney")
+    FirstPayTemplates = XTableManager.ReadByIntKey(TABLE_FIRST_PAY_PATH, XTable.XTableFirstPayReward, "Id")
 end
 
 function XPayConfigs.GetPayTemplate(key)
@@ -35,7 +35,7 @@ end
 function XPayConfigs.GetPayConfig()
     if not PayListDataConfig or #PayListDataConfig <=0 then
         PayListDataConfig = {}
-        if XOverseaManager.IsENRegion() or XOverseaManager.IsTWRegion() then
+        if XOverseaManager.IsENRegion() then
             for _,v in pairs(PayTemplates)do
                 if XOverseaManager.IsENRegion() and v.ShowUIType ~= 1 then
                     goto continue
@@ -60,6 +60,10 @@ function XPayConfigs.GetPayConfig()
     
     end
     return PayListDataConfig
+end
+
+function XPayConfigs.GetFirstPayConfigs()
+    return FirstPayTemplates
 end
 
 function XPayConfigs.CheckFirstPay(totalPayMoney)

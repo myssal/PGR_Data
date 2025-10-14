@@ -12,6 +12,10 @@ function XBigWorldBattleRoomProxy:GetUiModelId(entityId)
     return XMVCA.XBigWorldCharacter:GetUiModelId(entityId)
 end
 
+function XBigWorldBattleRoomProxy:GetFashionId(entityId)
+    return XMVCA.XBigWorldCharacter:GetFashionId(entityId)
+end
+
 function XBigWorldBattleRoomProxy:GetModelUrl(entityId)
     local modelId = self:GetUiModelId(entityId)
     if not string.IsNilOrEmpty(modelId) then

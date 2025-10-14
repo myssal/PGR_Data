@@ -162,6 +162,16 @@ function XUiActivityBriefRefreshButton:RefreshNormal()
         local config = XActivityBriefConfigs.GetActivityGroupConfig(activityGroupId)
         local skipId = config.SkipId
         XFunctionManager.SkipInterface(skipId)
+
+        -- 主线跳转埋点
+        local uiName = XFunctionConfig.GetUiName(skipId)
+        if XDataCenter.FunctionalSkipManager.SkipToMainLine2 then
+            if uiName == "SkipToMainLine2" then
+                XMVCA.XMainLine2:RecordEnterChapterWay(XEnumConst.MAINLINE2.ENTER_CHAPTER_WAY_TYPE.ACTIVITY)
+            end
+        else
+            XLog.Error("XFunctionalSkipManager缺少SkipToMainLine2函数，活动主线跳转主线埋点失效！请检查！")
+        end
     end)
 end
 

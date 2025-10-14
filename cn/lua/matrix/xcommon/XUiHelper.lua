@@ -2436,6 +2436,7 @@ end
 ---@param parentLuaUi XLuaUi
 ---@param dtGameObject UnityEngine.Component
 ---@param gridProxy XUiNode
+---@return XDynamicTableNormal
 function XUiHelper.DynamicTableNormal(parentLuaUi, dtGameObject, gridProxy, ...)
     local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
     local dynamicTable = XDynamicTableNormal.New(dtGameObject)
@@ -2444,11 +2445,41 @@ function XUiHelper.DynamicTableNormal(parentLuaUi, dtGameObject, gridProxy, ...)
     return dynamicTable
 end
 
+---@param parentLuaUi XLuaUi
+---@param dtGameObject UnityEngine.Component
+---@param gridProxy XUiNode
+---@return XDynamicTableNormal
+function XUiHelper.DynamicTableNormalWithDelegate(parentLuaUi, dtGameObject, gridProxy, delegate)
+    local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+    local dynamicTable = XDynamicTableNormal.New(dtGameObject)
+    dynamicTable:SetProxy(gridProxy, parentLuaUi)
+    dynamicTable:SetDelegate(delegate)
+    return dynamicTable
+end
+
 ---@param ui XLuaUi
 ---@param parent any
 function XUiHelper.XUiPanelAsset(ui, parent, itemId1, itemId2, ...)
     local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
     return XUiPanelAsset.New(ui, parent, itemId1, itemId2, ...)
+end
+
+---@return XUiGridCommon
+function XUiHelper.XUiGridCommon(rootUi, ui, ...)
+    local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+    return XUiGridCommon.New(rootUi, ui, ...)
+end
+
+---@return XUiFunctionShowControl
+function XUiHelper.XUiFunctionShowControl(ui, parent, ...)
+    local XUiFunctionShowControl = require('XUi/XUiCommon/XUiFunctionShow/XUiFunctionShowControl')
+    return XUiFunctionShowControl.New(ui, parent, ...)
+end
+
+---@return XUiFunctionShowBtn
+function XUiHelper.XUiFunctionShowBtn(ui, parent, ...)
+    local XUiFunctionShowBtn = require('XUi/XUiCommon/XUiFunctionShow/XUiFunctionShowBtn')
+    return XUiFunctionShowBtn.New(parent, ui, ...)
 end
 
 --折扣显示 区分海外国服

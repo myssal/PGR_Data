@@ -75,6 +75,10 @@ function XFubenBaseAgency:ExGetIcon()
     return self:ExGetConfig().Icon or ""
 end
 
+function XFubenBaseAgency:ExGetIconMain()
+    return self:ExGetConfig().IconMain or ""
+end
+
 -- 获取活动对外显示名称
 function XFubenBaseAgency:ExGetName()
     return self.ExCustomName or self:ExGetConfig().Name
@@ -191,5 +195,9 @@ function XFubenBaseAgency:ExGetChapterViewModelBySubChapterId(chapterId)
     end
 end
 
+-- 自定义显示主界面右上角活动入口处的文本
+function XFubenBaseAgency:ExGetRightMidCustomText()
+    return nil
+end
 
 return XFubenBaseAgency

@@ -106,6 +106,21 @@ end
 function XBigWorldCommanderDIYModel:SetUsePartColor(partId, colorId)
     local typeId = self:GetDlcPlayerFashionPartTypeIdById(partId)
 
+    if self:GetDlcPlayerFashionTypeIsSuitByTypeId(typeId) then
+        local partIds = self:GetDlcPlayerFashionPartPartsById(partId)
+
+        if not XTool.IsTableEmpty(partIds) then
+            for _, suitPartId in pairs(partIds) do
+                local suitTypeId = self:GetDlcPlayerFashionPartTypeIdById(suitPartId)
+                local usePartId = self:GetUsePart(suitTypeId)
+
+                if usePartId == suitPartId then
+                    self:_WearColor(suitTypeId, colorId)
+                end
+            end
+        end
+    end
+
     self:_WearColor(typeId, colorId)
 end
 
@@ -140,6 +155,10 @@ end
 ---@return table<number, XBWCommanderDIYWearData>
 function XBigWorldCommanderDIYModel:GetWearDataMap()
     return self._WearDataMap
+end
+
+function XBigWorldCommanderDIYModel:GetWearData(typeId)
+    return self._WearDataMap[typeId]
 end
 
 function XBigWorldCommanderDIYModel:GetIncompatibleTypeMap(partId)

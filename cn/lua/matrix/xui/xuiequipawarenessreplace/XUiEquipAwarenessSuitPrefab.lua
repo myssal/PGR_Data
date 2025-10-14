@@ -1,7 +1,6 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridSuitPrefab = require("XUi/XUiEquipAwarenessReplace/XUiGridSuitPrefab")
 local XUiGridEquip = require("XUi/XUiEquip/XUiGridEquip")
-local XUiGridResonanceSkill = require("XUi/XUiEquipResonanceSkill/XUiGridResonanceSkill")
 local XUiGridDoubleResonanceSkill = require("XUi/XUiEquipResonanceSkill/XUiGridDoubleResonanceSkill")
 
 local tableInsert = table.insert
@@ -30,8 +29,9 @@ function XUiEquipAwarenessSuitPrefab:OnAwake()
     self.GridSuitPrefab.gameObject:SetActiveEx(false)
 end
 
-function XUiEquipAwarenessSuitPrefab:OnStart(characterId)
+function XUiEquipAwarenessSuitPrefab:OnStart(characterId, teamPrefabCb)
     self.CharacterId = characterId
+    self.TeamPrefabCb = teamPrefabCb
     self.CurPrefabIndex = CUR_SUIT_PREFAB_INDEX
     self.SelectShowProperty = ShowPropertyIndex.Attr
     self.GridDoubleResonanceSkills = {}
@@ -150,11 +150,16 @@ end
 
 function XUiEquipAwarenessSuitPrefab:OnBtnEquip()
     self:ClosePopup()
+    local suitPrefabInfo = self:GetShowingPrefabInfo()
+    local equipIds = suitPrefabInfo:GetEquipIds()
+
+    if self.TeamPrefabCb then
+        self.TeamPrefabCb(equipIds)
+        return
+    end
 
     local characterType = XMVCA.XCharacter:GetCharacterType(self.CharacterId)
     local conflictInfoList = {}
-    local suitPrefabInfo = self:GetShowingPrefabInfo()
-    local equipIds = suitPrefabInfo:GetEquipIds()
     for _, equipId in pairs(equipIds) do
         if not XMVCA.XEquip:IsCharacterTypeFit(equipId, characterType) then
             XUiManager.TipText("EquipAwarenessSuitPrefabCharacterTypeWrong")

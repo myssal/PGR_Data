@@ -7554,28 +7554,29 @@
         "Id": 525,
         "ActionId": 525,
         "NextActionId": 0,
-        "Type": 307,
+        "Type": 401,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "我是因你而诞生的露西亚。",
-            60,
-            "ffffffff"
+            2,
+            100008486
         ]
     },
     {
         "Id": 526,
         "ActionId": 526,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 307,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0,
+        "EndDelay": 3000.0,
         "Params": [
-            "我是因你而诞生的露西亚。"
+            "我是因你而诞生的露西亚。",
+            60,
+            "ffffffff"
         ]
     },
     {
@@ -7613,7 +7614,7 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0,
+        "EndDelay": 4000.0,
         "Params": [
             "只要是你陪在我的身边。",
             60,
@@ -7623,19 +7624,6 @@
     {
         "Id": 530,
         "ActionId": 530,
-        "NextActionId": 0,
-        "Type": 301,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "只要是你陪在我的身边。"
-        ]
-    },
-    {
-        "Id": 531,
-        "ActionId": 531,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -7648,8 +7636,8 @@
         ]
     },
     {
-        "Id": 532,
-        "ActionId": 532,
+        "Id": 531,
+        "ActionId": 531,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -7661,14 +7649,14 @@
         ]
     },
     {
-        "Id": 533,
-        "ActionId": 533,
+        "Id": 532,
+        "ActionId": 532,
         "NextActionId": 0,
         "Type": 307,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0,
+        "EndDelay": 3000.0,
         "Params": [
             "不论是怎样的未来，我都无所畏惧。",
             60,
@@ -7676,8 +7664,8 @@
         ]
     },
     {
-        "Id": 534,
-        "ActionId": 534,
+        "Id": 533,
+        "ActionId": 533,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7686,7 +7674,20 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "不论是怎样的未来，我都无所畏惧。"
+            "我是因你而诞生的露西亚。\\n只要是你陪在我的身边。\\n不论是怎样的未来，我都无所畏惧。"
+        ]
+    },
+    {
+        "Id": 534,
+        "ActionId": 534,
+        "NextActionId": 0,
+        "Type": 402,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            100008486
         ]
     },
     {

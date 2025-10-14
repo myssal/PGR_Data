@@ -72,6 +72,10 @@ function XBigWorldResourceAgency:GetEffectUrl(id)
     return self._Model:GetDlcUiEffectEffectUrlById(id) or ""
 end
 
+function XBigWorldResourceAgency:GetEffectDelayTime(id)
+    return self._Model:GetDlcUiEffectDelayTimeById(id) or 0
+end
+
 -- endregion
 
 --region Model

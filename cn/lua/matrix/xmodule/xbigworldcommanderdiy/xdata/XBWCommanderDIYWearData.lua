@@ -12,7 +12,7 @@ function XBWCommanderDIYWearData:IsEmpty()
 end
 
 function XBWCommanderDIYWearData:IsWaeredColor()
-    return not self:IsFashion() and not self:IsSuit() and XTool.IsNumberValid(self:GetColorId())
+    return XTool.IsNumberValid(self:GetColorId())
 end
 
 function XBWCommanderDIYWearData:IsWaeredPart()
@@ -30,6 +30,14 @@ end
 function XBWCommanderDIYWearData:IsSuit()
     if not self:IsEmpty() then
         return XMVCA.XBigWorldCommanderDIY:CheckTypeSuit(self:GetTypeId())
+    end
+
+    return false
+end
+
+function XBWCommanderDIYWearData:IsSuitPart()
+    if not self:IsEmpty() and self:IsWaeredPart() then
+        return XMVCA.XBigWorldCommanderDIY:CheckPartSuit(self:GetPartId())
     end
 
     return false

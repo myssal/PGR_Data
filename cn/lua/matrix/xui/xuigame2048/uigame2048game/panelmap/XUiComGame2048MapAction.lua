@@ -10,9 +10,6 @@ function XUiComGame2048MapAction:OnStart()
     self.EffectThunder.gameObject:SetActiveEx(false)
 
     self:InitActionEvents()
-    -- 常量读取
-    self._ConstThunderTime = self._Control:GetClientConfigNum('ThunderTime')
-    self._ConstThunderBeforeWaitTime = self._Control:GetClientConfigNum('ThunderBeforeWaitTime')
 end
 
 function XUiComGame2048MapAction:OnDisable()
@@ -34,6 +31,10 @@ function XUiComGame2048MapAction:InitActionEvents()
         [XMVCA.XGame2048.EnumConst.ActionType.ICELevelUp] = handler(self, self.ICELevelUpAction),
         [XMVCA.XGame2048.EnumConst.ActionType.FeverUpLevelUp] = handler(self, self.FeverUpLevelUpAction),
         [XMVCA.XGame2048.EnumConst.ActionType.FeverLevelUpCheck] = handler(self, self.FeverLevelUpCheckAction),
+        [XMVCA.XGame2048.EnumConst.ActionType.DispelGridDirectionChanged] = handler(self ,self.GridDispelDirectionChangedAction),
+        [XMVCA.XGame2048.EnumConst.ActionType.GridChanged] = handler(self, self.GridChangedAction),
+        [XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterMerge] = handler(self, self.GridChangedAction),
+        [XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterDoubleLevelUp] = handler(self, self.GridChangedAction),
     }
     
     self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_NOTIFY_ACTION_EVENT, self.OnActionEventNotify, self)
@@ -48,7 +49,7 @@ end
 
 --region -------------------- 行为动画 -------------------->>>
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridMoveAction(action)
     ---@type XUiGridGame2048Grid
     local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
@@ -70,7 +71,7 @@ function XUiComGame2048MapAction:GridMoveAction(action)
     self:EnableGridMoveSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridMergeAction(action)
     ---@type XUiGridGame2048Grid
     local upgradeGrid = self.Parent:GetShowedUiGridByUid(action.GridUidB)
@@ -104,7 +105,7 @@ function XUiComGame2048MapAction:GridMergeAction(action)
 
         if upgradeGrid:GetGridType() ~= gridData:GetGridType() then
             self.Parent:ReturnUiGridToPool(upgradeGrid)
-            self.Parent:RefreshNewGrid(gridData)
+            self.Parent:RefreshNewGrid(gridData, upgradeGrid:GetNormalizePosX(), upgradeGrid:GetNormalizePosY())
             upgradeGrid = self.Parent:GetShowedUiGridByUid(action.GridUidB)
         end
     end
@@ -153,7 +154,7 @@ function XUiComGame2048MapAction:GridMergeAction(action)
     self:EnableGridUpSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridDispelAction(action)
     local dispelGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
 
@@ -172,7 +173,7 @@ function XUiComGame2048MapAction:GridDispelAction(action)
     end
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridRockShakeAction(action)
     local rock = self.Parent:GetShowedUiGridByUid(action.GridUidA)
 
@@ -187,7 +188,7 @@ function XUiComGame2048MapAction:GridRockShakeAction(action)
     end
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridRockReduceAction(action)
     local rock = self.Parent:GetShowedUiGridByUid(action.GridUidA)
     local rockGrid = self._GameControl:GetGridEntityByUid(action.GridUidA)
@@ -200,7 +201,7 @@ function XUiComGame2048MapAction:GridRockReduceAction(action)
     self._GameControl.ActionsControl:EndAction(action)
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridNormalReduceAction(action)
     local block = self.Parent:GetShowedUiGridByUid(action.GridUidA)
     local blockGrid = self._GameControl:GetGridEntityByUid(action.GridUidA)
@@ -210,7 +211,7 @@ function XUiComGame2048MapAction:GridNormalReduceAction(action)
     self._GameControl.ActionsControl:EndAction(action)
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:GridNewBornAction(action)
     ---@type XUiGridGame2048Grid
     local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
@@ -225,7 +226,7 @@ function XUiComGame2048MapAction:GridNewBornAction(action)
     self:EnableGridBornSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:NormalLevelUpAction(action)
     ---@type XUiGridGame2048Grid
     local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
@@ -253,7 +254,7 @@ function XUiComGame2048MapAction:NormalLevelUpAction(action)
     self:EnableGridUpSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:TransferLevelUpAction(action)
     -- 传导方块被传导升级后，类型会发生变化，需要替换UI
     ---@type XUiGridGame2048Grid
@@ -292,7 +293,7 @@ function XUiComGame2048MapAction:TransferLevelUpAction(action)
     self:EnableGridUpSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:ICELevelUpAction(action)
     ---@type XUiGridGame2048Grid
     local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
@@ -326,7 +327,105 @@ function XUiComGame2048MapAction:ICELevelUpAction(action)
     self:EnableGridUpSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
+function XUiComGame2048MapAction:GridDispelDirectionChangedAction(action)
+    ---@type XUiGridGame2048Grid
+    local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
+
+    if uiGrid then
+        local gridData = self._GameControl:GetGridEntityByUid(action.GridUidA)
+
+        if action.TempGridData then
+            action.TempGridData:SetNewPosition(gridData:GetX(), gridData:GetY())
+            gridData = action.TempGridData
+        end
+
+        if gridData then
+            if uiGrid:GetGridType() ~= gridData:GetGridType() then
+                self.Parent:ReturnUiGridToPool(uiGrid)
+                self.Parent:RefreshNewGrid(gridData)
+                uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
+            end
+
+            uiGrid:RefreshData(gridData)
+            uiGrid.ActionCom:DoMerge(function()
+                self._GameControl.ActionsControl:EndAction(action)
+            end, true, action.MergeEffectType)
+        else
+            self._GameControl.ActionsControl:EndAction(action)
+        end
+    else
+        self._GameControl.ActionsControl:EndAction(action)
+    end
+end
+
+---@param action XGame2048ActionParams
+function XUiComGame2048MapAction:GridChangedAction(action)
+    ---@type XUiGridGame2048Grid
+    local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
+    
+    if uiGrid then
+        local gridData = self._GameControl:GetGridEntityByUid(action.GridUidA)
+
+        if action.TempGridData then
+            action.TempGridData:SetNewPosition(gridData:GetX(), gridData:GetY())
+            gridData = action.TempGridData
+        end
+
+        if gridData then
+            -- 如果方块变更后类型发生了变化，需要替换UI
+            if uiGrid:GetGridType() ~= gridData:GetGridType() then
+                self.Parent:ReturnUiGridToPool(uiGrid)
+                self.Parent:RefreshNewGrid(gridData)
+                uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
+            end
+
+            if uiGrid then
+
+                -- 如果方块的坐标发生了变化，则直接对齐
+                local realX = gridData:GetX()
+                local realY = gridData:GetY()
+                
+                local uiX = uiGrid:GetNormalizePosX()
+                local uiY = uiGrid:GetNormalizePosY()
+
+                if uiX ~= realX or uiY ~= realY then
+                    -- 获取实际坐标的UI
+                    local toIndex = realX + (realY - 1) * self._GameControl:GetWidth()
+                    local fromIndex = uiX + (uiY - 1) * self._GameControl:GetWidth()
+
+                    local fromBg = self.Parent:GetShowedUiGridByIndex(fromIndex)
+                    local toBg = self.Parent:GetShowedUiGridByIndex(toIndex)
+
+                    uiGrid.ActionCom:DoMove(fromBg.Transform, toBg.Transform, function()
+                        uiGrid:SetNormalizePos(realX, realY)
+                        uiGrid:RefreshData(gridData)
+                        --tmp：先使用合成的动画表现，看后续是否有特殊表现指定
+                        uiGrid.ActionCom:DoMerge(function()
+                            self._GameControl.ActionsControl:EndAction(action)
+                        end, true, action.MergeEffectType)
+                    end)
+                else
+                    uiGrid:RefreshData(gridData)
+                    --tmp：先使用合成的动画表现，看后续是否有特殊表现指定
+                    uiGrid.ActionCom:DoMerge(function()
+                        self._GameControl.ActionsControl:EndAction(action)
+                    end, true, action.MergeEffectType)
+                end
+            else
+                self._GameControl.ActionsControl:EndAction(action)
+            end
+        else
+            self._GameControl.ActionsControl:EndAction(action)
+        end
+    else
+        self._GameControl.ActionsControl:EndAction(action)
+    end
+
+    self:EnableGridUpSFX()
+end
+
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:FeverUpLevelUpAction(action)
     ---@type XUiGridGame2048Grid
     local uiGrid = self.Parent:GetShowedUiGridByUid(action.GridUidA)
@@ -354,15 +453,41 @@ function XUiComGame2048MapAction:FeverUpLevelUpAction(action)
     self:EnableGridUpSFX()
 end
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:FeverLevelUpCheckAction(action)
-    self._GameControl:DoFeverLevelUp()
-    self._GameControl.ActionsControl:EndAction(action)
+    local dispelRule = self._Control:GetCurStageDispelRule()
+
+    if dispelRule == XMVCA.XGame2048.EnumConst.GridDispelCleanUpRule.DiretionOnly then
+        self._GameControl:DoFeverLevelUp()
+        self._GameControl.ActionsControl:EndAction(action)
+    elseif dispelRule == XMVCA.XGame2048.EnumConst.GridDispelCleanUpRule.WaterFireSelect then
+        -- 判断是否有可以消除的方块
+        if self._GameControl.GridsControl:CheckDispelRangeHasWaterOrFireGrid() then
+            self.TxtSelectionTips.text = self._Control:GetClientConfigText('WaterFireSelectionTips')
+            self._GameControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_WATER_FIRE_DISPEL_SELECTION)
+            self._GameControl.ActionsControl:EndAction(action, true)
+        else
+            if self.ImgTips then
+                self.ImgTips.gameObject:SetActiveEx(true)
+            end
+            self.TxtSelectionTips.text = self._Control:GetClientConfigText('NoWaterFireCanDispelTips')
+            self:DelayCall(function()
+                if self.ImgTips then
+                    self.ImgTips.gameObject:SetActiveEx(false)
+                end
+                self._GameControl:DoFeverLevelUp()
+                self._GameControl.ActionsControl:EndAction(action)
+            end, self._Control:GetClientConfigNum('NoWaterFireCanDispelTipsTime'))
+        end
+    else
+        XLog.Error('未知的消除规则: '..tostring(dispelRule))
+        self._GameControl.ActionsControl:EndAction(action)
+    end
 end
 
 --endregion <<<---------------------------------------------
 
----@param action XGame2048Action
+---@param action XGame2048ActionParams
 function XUiComGame2048MapAction:FeverLevelUpAction(action)
     self._GameControl:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_FEVER_LEVELUP)
     XLuaUiManager.OpenWithCloseCallback('UiGame2048ToastLvUp', function()

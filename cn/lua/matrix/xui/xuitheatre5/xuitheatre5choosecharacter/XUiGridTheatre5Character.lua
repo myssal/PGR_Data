@@ -13,7 +13,7 @@ function XUiGridTheatre5Character:Update(cfg, index)
     self.Config = cfg
     self.Index = index
 
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._IsUnlock = self._Control.PVPControl:CheckHasPVPCharacterDataById(cfg.Id)
     end
 

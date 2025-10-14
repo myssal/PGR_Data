@@ -602,19 +602,19 @@ end
 function XNewActivityCalendarModel:GetManagerByMainId(mainId)
     if mainId == XEnumConst.NewActivityCalendar.WeekMainId.BossSingle then
         -- 幻痛囚笼 FubenBossSingleData.LevelType == 0 时通知周历刷新
-        return XDataCenter.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.BossSingle)
+        return XDataCenter.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.BossSingle)
     end
     if mainId == XEnumConst.NewActivityCalendar.WeekMainId.ArenaChallenge then
         -- 纷争战区 有监听系统消息
-        return XDataCenter.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.ARENA)
+        return XDataCenter.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.ARENA)
     end
     if mainId == XEnumConst.NewActivityCalendar.WeekMainId.StrongHold then
         -- 诺曼复兴战 有监听系统消息
-        return XDataCenter.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.Stronghold)
+        return XDataCenter.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.Stronghold)
     end
     if mainId == XEnumConst.NewActivityCalendar.WeekMainId.Transfinite then
         -- 历战映射
-        return XDataCenter.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.Transfinite)
+        return XDataCenter.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.Transfinite)
     end
     if mainId == XEnumConst.NewActivityCalendar.WeekMainId.GuildBoss then
         -- 拟真围剿 特殊处理

@@ -26,7 +26,8 @@ function XGuideFocusOnChildNode:InitNodeData()
     for _, v in pairs(fields) do
         if v.FieldName == "EulerAngles" 
                 or v.FieldName == "SizeDelta" 
-                or v.FieldName == "Offset" then
+                or v.FieldName == "Offset"
+                or v.FieldName == 'BubblePosOffset' then
             self.Fields[v.FieldName] = v
         else
             self.Fields[v.FieldName] = v.Value
@@ -65,11 +66,16 @@ function XGuideFocusOnChildNode:OnAwake()
     else
         self.Offset = CS.UnityEngine.Vector2(offset.X, offset.Y)
     end
+    
+    self.FocusStyle = self.Fields["FocusStyle"]
+    self.BubbleIndex = self.Fields["BubbleIndex"]
+    self.BubbleTextId = self.Fields["BubbleTextId"]
+    self.BubblePosOffset = self.Fields["BubblePosOffset"]
 end
 
 function XGuideFocusOnChildNode:OnEnter()
     self.AgentProxy:FocusOnChild(self.UiName, self.Parent, self.Index, self.EulerAngles, self.PassEvent, 
-            self.SizeDelta, self.Offset, self.ChildName)
+            self.SizeDelta, self.Offset, self.ChildName, self.FocusStyle, self.BubbleIndex, self.BubbleTextId, self.BubblePosOffset)
     self.AgentProxy:NodeBuryingPoint(self.Node.ID)
 end
 

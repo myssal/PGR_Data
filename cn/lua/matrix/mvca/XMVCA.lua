@@ -136,6 +136,8 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XHelpCourse XHelpCourseAgency
 ---@field XSoloReform XSoloReformAgency
 ---@field XRpgMakerGame XRpgMakerGameAgency
+---@field XRace XRaceAgency
+---@field XPlotExhibition XPlotExhibitionAgency
 ---@field XFunction XFunctionAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
@@ -297,6 +299,14 @@ function XMVCACls:_RemoveDelayReleaseControl(id)
     if not next(self._ControlReleaseDict) then
         self:_RemoveDelayTimer()
     end
+end
+
+function XMVCACls:ReleaseDelayControl()
+    for id, control in pairs(self._ControlReleaseDict) do
+        control:SetDelayReleaseTime(0)
+        -- 不能直接release，因为可能真的有ui正在引用
+    end
+    self:_CheckReleaseControl()
 end
 
 function XMVCACls:_CheckReleaseControl()
@@ -638,9 +648,12 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XRpgMakerGame)
     self:RegisterAgency(ModuleId.XFunction)
 
+    self:RegisterAgency(ModuleId.XRace)
+
     -- #203409 多次尝试后, 还是写在这里最稳妥
     self:RegisterAgency(ModuleId.XAccumulateExpendL)
     self:RegisterAgency(ModuleId.XPassportComb)
+    self:RegisterAgency(ModuleId.XPlotExhibition)
 end
 
 function XMVCACls:AddPreloadConfig(path)

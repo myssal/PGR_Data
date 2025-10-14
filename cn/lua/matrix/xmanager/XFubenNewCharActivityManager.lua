@@ -4,7 +4,7 @@ local XNewCharStoryViewModel = require('XEntity/XFubenNewCharActivity/XNewCharSt
 
 XFubenNewCharActivityManagerCreator = function()
     ---@class XFubenNewCharActivityManager
-    local XFubenNewCharActivityManager = XExFubenBaseManager.New(XFubenConfigs.ChapterType.NewCharAct)
+    local XFubenNewCharActivityManager = XExFubenBaseManager.New(XEnumConst.FuBen.ChapterType.NewCharAct)
     local TreasureRecord = {}
     local StarRecords = {}
     local KoroLastOpenPanel

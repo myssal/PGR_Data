@@ -60,6 +60,7 @@ XLottoConfigs.LottoFashionDesc =
     [2] = "LottoLunaFashionDesc",
     [3] = "LottoKareninaFashionDesc",
     [4] = "LottoVeraFashionDesc",
+    [5] = "LottoCibeizheFashionDesc",
 }
 
 XLottoConfigs.WeaponFashionId = 
@@ -68,6 +69,8 @@ XLottoConfigs.WeaponFashionId =
     [2] = "LunaWeaponFashionId",
     [3] = "WeaponFashionId",
     [4] = "VeraWeaponFashionId",
+    [5] = "CibeizheWeaponFashionId",
+
 }
 
 function XLottoConfigs.Init()

@@ -134,11 +134,13 @@ function XTheatre5BattleAgencyCom:RequestTheatre5AdvanceSettle(cb)
             end
 
             self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
-            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
                 self._Model.PVEAdventureData:UpdateTempChapterData()
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
             end
+
+            self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
         end
 
         if cb then
@@ -179,11 +181,12 @@ function XTheatre5BattleAgencyCom:RequestTheatre5GiveUpSettle(cb)
                 end
                 isFinish = true
             end
-            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
                 self._Model.PVEAdventureData:UpdateTempChapterData()
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
             end
+            self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
         end
 
         if cb then
@@ -208,7 +211,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5InterruptBattle(cb)
         end
         local curPlayMode = self._Model:GetCurPlayingMode()
         local status = XMVCA.XTheatre5.EnumConst.PlayStatus.Matching
-        if curPlayMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+        if curPlayMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
             status = XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
         end
 
@@ -222,13 +225,14 @@ function XTheatre5BattleAgencyCom:RequestTheatre5InterruptBattle(cb)
             self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
 
             if autoChessResult.IsFinish then
-                if curPlayMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+                if curPlayMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
                     self._Model.PVEAdventureData:UpdateTempChapterData()
                     self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData)
                     self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)
                 end
                 isFinish = true
             end
+            self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
         end
 
         if cb then
@@ -270,7 +274,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                 self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
             end
 
-            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
                 self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
             else
                 if not autoChessResult.PveChapterData then
@@ -281,6 +285,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                 self._Model.PVEAdventureData:UpdatePVEChapterData(autoChessResult.PveChapterData) --关卡更新(胜利或失败)
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)     --章节结束
             end
+            self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
 
             XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT, res.DlcFightSettleData)
 
@@ -338,7 +343,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
             end
         end
         local battleStatus = XMVCA.XTheatre5.EnumConst.PlayStatus.BattleFinish
-        if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+        if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
             if res.DlcFightSettleData and res.DlcFightSettleData.ResultData and res.DlcFightSettleData.ResultData.IsPlayerWin then
                 battleStatus = XMVCA.XTheatre5.EnumConst.PlayStatus.PveEveHandle
             end
@@ -365,6 +370,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5Match(cb)
         end
 
         self._Model.CurAdventureData:UpdateMatchEnemyData(res.EnemyData)
+        self._Model.CurAdventureData:UpdateLeaveShopCnt(res.LeaveShopCnt)
 
         if cb then
             cb(true, res.EnemyData)
@@ -390,7 +396,7 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
             if worldData and worldData.AutoChessGameplayData then
                 self._Model.CurAdventureData:UpdateCurPlayStatus(XMVCA.XTheatre5.EnumConst.PlayStatus.Battling)
 
-                if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+                if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
                     self._Model.PVEAdventureData:UpdateEnemyData(worldData.AutoChessGameplayData.EnemyData.AutoChessData)
                 end
 
@@ -398,8 +404,9 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
                     self:_CalNpcAttribsAfterEnterFightRequest(worldData.AutoChessGameplayData.EnemyData.AutoChessData)
                 end
 
-                if worldData.AutoChessGameplayData.EnemyData then
-                    self:_CalNpcAttribsAfterEnterFightRequest(worldData.AutoChessGameplayData.SelfData.AutoChessData)
+                if worldData.AutoChessGameplayData.SelfData then
+                    local isSelfData = true
+                    self:_CalNpcAttribsAfterEnterFightRequest(worldData.AutoChessGameplayData.SelfData.AutoChessData, isSelfData)
                 end
 
                 if successCb then
@@ -409,7 +416,7 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
                 local enterFunc = function()
                     CsXBehaviorManager.Instance:Clear()
                     XTableManager.ReleaseAll(true)
-                    CS.BinaryManager.OnPreloadFight(true)
+                    CS.BinaryManager.ReleaseAllCache()
                     collectgarbage("collect")
 
                     CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal, CS.XUiSceneManager.Clear)
@@ -496,7 +503,7 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessNpcData(autoChessNpcDataServer)
     return autoChessNpcData
 end
 
-function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer)
+function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebug)
     local autoChessData = CS.XAutoChessData()
 
     autoChessData.CharacterId = autoChessDataServer.CharacterId
@@ -514,12 +521,68 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer)
         autoChessData.Attribs:Add(k, v)
     end
 
-    for i, v in ipairs(autoChessDataServer.Runes) do
-        autoChessData.Runes:Add(v)
-    end
-
     for i, v in ipairs(autoChessDataServer.Skills) do
         autoChessData.Skills:Add(v)
+    end
+
+    -- v4.0新增可强化的符文
+    if autoChessDataServer.RuneEvolves then
+        for i, v in ipairs(autoChessDataServer.RuneEvolves) do
+            autoChessData.RuneEvolves:Add(v)
+        end
+    end
+
+    -- v4.0新增遗物
+    if autoChessDataServer.Relics then
+        for i, v in ipairs(autoChessDataServer.Relics) do
+            autoChessData.Relics:Add(v)
+        end
+        
+        -- 正常流程下，Relic（饰品/遗物）的magicId,是服务端下发的,但是在测试流程下，需要客户端自己来
+        if isDebug then
+            local baseAttr = {}
+            for k, v in pairs(autoChessDataServer.Attribs) do
+                baseAttr[k] = v
+            end
+
+            for i, v in ipairs(autoChessDataServer.Relics) do
+                local relicId = v.RelicId
+                ---@type XTableTheatre5RelicEffect
+                local effectConfigs = self._Model:GetRelicEffectConfigs(relicId)
+                if effectConfigs then
+                    for i = 1, #effectConfigs do
+                        local effectConfig = effectConfigs[i]
+                        if effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddBuff then
+                            autoChessData.MagicIds:Add(effectConfig.MagicId)
+
+                        elseif effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddAttr then
+                            local attrType = effectConfig.Param[1]
+                            local baseAttrValue = baseAttr[attrType] or 0
+
+                            --属性类型	固定值数值	万分比数值	特定变量	比例（万分比）
+                            local fixVal = effectConfig.Param[2]
+                            local rateVal = effectConfig.Param[3]
+                            local specificVal = effectConfig.Param[4]
+                            local specificRateVal = effectConfig.Param[5]
+
+                            --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
+                            local changeValue = fixVal + baseAttrValue * rateVal / 10000 + specificVal * specificRateVal / 10000
+                            if autoChessData.Attribs:Contains(attrType) then
+                                autoChessData.Attribs[attrType] = autoChessData.Attribs[attrType] + changeValue
+                            else
+                                autoChessData.Attribs:Add(attrType, changeValue)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    
+    if autoChessDataServer.MagicIds then
+        for i, v in pairs(autoChessDataServer.MagicIds) do
+            autoChessData.MagicIds[i] = v
+        end
     end
 
     return autoChessData
@@ -534,12 +597,12 @@ function XTheatre5BattleAgencyCom:_GetXWorldPlayerData(playerDataServer)
     return worldPlayerData
 end
 
-function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChessData)
+function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChessData, isSelfData)
     if XTool.IsTableEmpty(autoChessData) then
         return
     end
 
-    -- 获取基础属性
+    -- 角色基础属性
     if XTool.IsNumberValid(autoChessData.CharacterId) then
         ---@type XTableTheatre5Character
         local charaCfg = self._Model:GetTheatre5CharacterCfgById(autoChessData.CharacterId)
@@ -563,15 +626,22 @@ function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChess
         end
     end
 
-    -- 计算宝珠加成
-    if not XTool.IsTableEmpty(autoChessData.Runes) then
-        for i, runeId in pairs(autoChessData.Runes) do
+    -- 计算符文加成
+    if not XTool.IsTableEmpty(autoChessData.RuneEvolves) then
+        for i, runeEvolve in pairs(autoChessData.RuneEvolves) do
+            local runeId = runeEvolve.RuneId
+
             ---@type XTableTheatre5ItemRune
             local runeCfg = self._Model:GetTheatre5RuneCfgById(runeId)
 
             if runeCfg and XTool.IsNumberValid(runeCfg.RuneAttrId) then
                 ---@type XTableTheatre5ItemRuneAttr
-                local runeAttrCfg = self._Model:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)
+                local runeAttrCfg
+                if runeEvolve.IsStrengthen and XTool.IsNumberValid(runeCfg.EvolveAttrId) then
+                    runeAttrCfg = self._Model:GetTheatre5ItemRuneAttrCfgById(runeCfg.EvolveAttrId)
+                else
+                    runeAttrCfg = self._Model:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)
+                end
 
                 if runeAttrCfg then
                     for index, attr in ipairs(runeAttrCfg.AttrTypes) do
@@ -581,6 +651,59 @@ function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChess
                     end
                 end
             end
+        end
+    end
+
+    -- 玩家专属属性
+    if isSelfData then
+        -- 等级属性
+        local level = self._Model.CurAdventureData:GetCharacterLevel()
+        if level then
+            self._Model:GetCharacterLevelAttr(autoChessData.CharacterId, level, autoChessData.Attribs)
+        end
+
+        -- v4.0新增Event带来的临时属性加成
+        -- 基础属性，计算用
+        local baseAttrs = {}
+        -- 属性结算结果
+        local resultAttrs = {}
+        for k, v in pairs(autoChessData.Attribs) do
+            baseAttrs[k] = v
+            resultAttrs[k] = v
+        end
+
+        local adventureData = self._Model.CurAdventureData
+        if adventureData then
+            ---@type XTheatre5AddAttrResult[]
+            local tempAttrList = adventureData:GetTempAttrList()
+            if tempAttrList then
+                for i = 1, #tempAttrList do
+                    local tempAttr = tempAttrList[i]
+                    local attrType = tempAttr.AttrType
+                    local baseAttrValue = baseAttrs[attrType]
+                    --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
+                    local changeValue = tempAttr.FixVal + baseAttrValue * tempAttr.RateVal / 10000 + tempAttr.SpecificVal * tempAttr.SpecificRateVal / 10000
+                    resultAttrs[attrType] = resultAttrs[attrType] + changeValue
+                end
+            else
+                XLog.Warning('XTheatre5BattleAgencyCom:GetXFightClientArgs() 临时属性列表为空')
+            end
+
+            -- 添加临时magicId
+            local buffList = adventureData:GetTempBuffList()
+            if buffList then
+                local buffLevel = 1
+                for i = 1, #buffList do
+                    local buffId = buffList[i]
+                    autoChessData.MagicIds[buffId] = buffLevel
+                end
+            else
+                XLog.Warning('XTheatre5BattleAgencyCom:GetXFightClientArgs() 临时buff列表为空')
+            end
+        end
+
+        for k, v in pairs(resultAttrs) do
+            autoChessData.Attribs[k] = v
         end
     end
 end
@@ -608,12 +731,13 @@ end
 function XTheatre5BattleAgencyCom:TestCalNpcAttribsAndBackXAutoChessData(autoChessData)
     self:_CalNpcAttribsAfterEnterFightRequest(autoChessData)
 
-    return self:_GetXAutoChessData(autoChessData)
+    local isDebug = true
+    return self:_GetXAutoChessData(autoChessData, isDebug)
 end
 
 --- 用于结算检查是否活动结束
 function XTheatre5BattleAgencyCom:_CheckPVPTimeEndInSettle(inBattle)
-    if not (XMVCA.XTheatre5:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP) then
+    if not (XMVCA.XTheatre5:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP) then
         return false
     end
 

@@ -1415,7 +1415,7 @@ function XCharacterAgency:CheckCanUpdateSkill(charId, subSkillId, subSkillLevel,
     end
 
     local min_max = self:GetSubSkillMinMaxLevel(subSkillId)
-    if (subSkillLevel >= min_max.Max) then
+    if min_max and (subSkillLevel >= min_max.Max) then
         return false
     end
 
@@ -2481,6 +2481,32 @@ function XCharacterAgency:GetSkillExchangeDesConfigBySkillId(skillId)
     end
     return nil
 end
+
+-- 判断是否有任意已拥有角色的等级到达/低于给定等级
+function XCharacterAgency:CheckOwnCharacterLevelSatisfyAim(aimLevel, isMoreThan)
+    if not XTool.IsTableEmpty(self._Model.OwnCharacters) then
+        for id, data in pairs(self._Model.OwnCharacters) do
+            if isMoreThan then
+                if data.Level >= aimLevel then
+                    return true
+                end
+            else
+                if data.Level < aimLevel then
+                    return true
+                end
+            end    
+        end
+        
+        return false
+    else
+        if isMoreThan then
+            return 1 >= aimLevel
+        else
+            return 1 < aimLevel    
+        end
+    end    
+end
+
 ----------public end----------
 
 ----------private start----------
@@ -3238,82 +3264,106 @@ function XCharacterAgency:GetCharacterRecommendListByIds(ids)
     return list
 end
 
-function XCharacterAgency:GetRecommendTabList(characterId, recommendType)
-    local tabIdList = {}
-    local typeMap = self._Model.CharacterTabToVoteGroupMap[characterId]
-    if typeMap then
-        local tabMap = typeMap[recommendType]
-        if tabMap then
-            for tmpRecommendType, _ in pairs(tabMap) do
-                tableInsert(tabIdList, tmpRecommendType)
-            end
-        end
+-- 内部方法：懒加载构建缓存
+function XCharacterAgency:_BuildCharacterTabCache(characterId, recommendType)
+    local tempDic = self._Model.TempWholeDic
+    tempDic._CharacterTabCache = tempDic._CharacterTabCache or {}
+    local cache = tempDic._CharacterTabCache
+
+    cache.Dic = cache.Dic or {}       -- CharacterRecommendTypeId -> TabId -> config
+    cache.List = cache.List or {}     -- CharacterRecommendTypeId -> {TabId1, TabId2, ...}
+    cache.Template = cache.Template or {} -- CharacterRecommendTypeTabId -> config
+
+    local charRecommendTypeId = characterId * 10 + recommendType
+    if cache.Dic[charRecommendTypeId] then
+        return  -- 已经缓存过，直接返回
     end
 
-    if XTool.IsTableEmpty(tabIdList) then
+    local tabIdTable = self._Model:GetCharacterTabId()
+    local tabByRecommendType = self._Model:GetCharacterTabByRecommendTypeTab()
+
+    local row = tabIdTable[charRecommendTypeId]
+    if not row or XTool.IsTableEmpty(row.CharacterRecommendTypeTabIds) then
+        cache.Dic[charRecommendTypeId] = {}
+        cache.List[charRecommendTypeId] = {}
         return
     end
 
+    local tabMap = {}
+    local tabIdList = {}
+
+    for _, recommendTypeTabId in ipairs(row.CharacterRecommendTypeTabIds) do
+        local tabId = recommendTypeTabId % 10
+        local config = tabByRecommendType[recommendTypeTabId]
+        if config then
+            tabMap[tabId] = config
+            tableInsert(tabIdList, tabId)
+            cache.Template[recommendTypeTabId] = config
+        end
+    end
+
     tableSort(tabIdList)
-    return tabIdList
+
+    cache.Dic[charRecommendTypeId] = tabMap
+    cache.List[charRecommendTypeId] = tabIdList
 end
 
+-- 获取某角色某推荐类型下的 TabId 列表
+function XCharacterAgency:GetRecommendTabList(characterId, recommendType)
+    self:_BuildCharacterTabCache(characterId, recommendType)
+    local cache = self._Model.TempWholeDic._CharacterTabCache
+    local charRecommendTypeId = characterId * 10 + recommendType
+    local tabIdList = cache.List[charRecommendTypeId]
+
+    if not tabIdList or XTool.IsTableEmpty(tabIdList) then
+        return nil
+    end
+
+    -- 返回拷贝，避免外部修改原表
+    local result = {}
+    for _, tabId in ipairs(tabIdList) do
+        tableInsert(result, tabId)
+    end
+    return result
+end
+
+-- 获取某 CharacterRecommendTypeTabId 的具体配置
 function XCharacterAgency:GetRecommendTabTemplate(characterId, tabId, recommendType)
-    local typeMap = self._Model.CharacterTabToVoteGroupMap[characterId]
-    if not typeMap then
-        XLog.Error("characterId not found in CharacterTabId.tab", characterId)
-        return nil
-    end
+    self:_BuildCharacterTabCache(characterId, recommendType)
+    local cache = self._Model.TempWholeDic._CharacterTabCache
+    local recommendTypeTabId = characterId * 100 + recommendType * 10 + tabId
+    local config = cache.Template[recommendTypeTabId]
 
-    local tabMap = typeMap[recommendType]
-    if not tabMap then
-        XLog.Error("recommendType not found in CharacterTabId.tab",characterId, recommendType)
-        return nil
-    end
-
-    local config = tabMap[tabId]
     if not config then
+        XLog.Error("CharacterRecommendTypeTab 配置未找到", characterId, tabId, recommendType)
         return nil
     end
 
     return config
 end
 
-function XCharacterAgency:GetRecommendGroupId(characterId, tabId, recommendType)
-    local typeMap = self._Model.CharacterTabToVoteGroupMap[characterId]
-    if not typeMap then
-        XLog.Error("characterId not found in CharacterTabId.tab", characterId)
-        return
+-- 获取某角色某推荐类型下的 TabId -> 配置 的映射
+function XCharacterAgency:GetRecommendTabMap(characterId, recommendType)
+    self:_BuildCharacterTabCache(characterId, recommendType)
+    local cache = self._Model.TempWholeDic._CharacterTabCache
+    local charRecommendTypeId = characterId * 10 + recommendType
+    local tabMap = cache.Dic[charRecommendTypeId]
+
+    if not tabMap or XTool.IsTableEmpty(tabMap) then
+        return nil
     end
 
-    local tabMap = typeMap[recommendType]
-    if not tabMap then
-        XLog.Error("recommendType not found in CharacterTabId.tab",characterId, recommendType)
-        return
+    -- 返回拷贝，避免外部修改原表
+    local result = {}
+    for tabId, config in pairs(tabMap) do
+        result[tabId] = config
     end
-
-    local config = tabMap[tabId]
-    if not config then
-        return
-    end
-
-    return config.GroupId
+    return result
 end
 
-function XCharacterAgency:GetRecommendTabMap(characterId, recommendType)
-    local typeMap = self._Model.CharacterTabToVoteGroupMap[characterId]
-    if not typeMap then
-        XLog.Error("characterId not found in CharacterTabId.tab", characterId)
-        return
-    end
-
-    local tabMap = typeMap[recommendType]
-    if not tabMap then
-        XLog.Error("recommendType not found in CharacterTabId.tab",characterId, recommendType)
-        return
-    end
-
-    return tabMap
+function XCharacterAgency:GetRecommendGroupId(characterId, tabId, recommendType)
+    local config = self:GetRecommendTabTemplate(characterId, tabId, recommendType)
+    return config.GroupId
 end
 
 function XCharacterAgency:GetEnhanceSkillEntryConfig(Id)
@@ -3777,35 +3827,78 @@ function XCharacterAgency:GetCharSkillQualityApartSkillId(Id)
     return config.SkillId
 end
 
---返回 某一角色所有技能升阶数据
+--==
+-- 返回 某一角色所有技能升阶数据（按 quality -> star -> Id数组）
+-- 内部方法：生成缓存
+function XCharacterAgency:_BuildCharacterSkillQualityApartCache(characterId)
+    self._Model.TempWholeDic._CharacterSkillQualityApartCache = self._Model.TempWholeDic._CharacterSkillQualityApartCache or {}
+    local cache = self._Model.TempWholeDic._CharacterSkillQualityApartCache
+    cache.Dic = cache.Dic or {}
+    if cache.Dic[characterId] then
+        return
+    end
+
+    local result = {}
+    local charTable = self._Model:GetCharacterSkillQualityApartByCharacterId()
+    local cqTable = self._Model:GetCharacterSkillQualityApartByCharacterQualityId()
+    local cqpTable = self._Model:GetCharacterSkillQualityApartByCharacterQualityPhaseId()
+
+    local cqIds = charTable[characterId] and charTable[characterId].CharacterQualityIds or {}
+    for _, cqId in ipairs(cqIds) do
+        local quality = cqId % 10
+        result[quality] = result[quality] or {}
+
+        local cqRow = cqTable[cqId]
+        if cqRow and cqRow.CharacterQualityPhaseIds then
+            for _, cqpId in ipairs(cqRow.CharacterQualityPhaseIds) do
+                local star = cqpId % 100
+                local cqpRow = cqpTable[cqpId]
+                if cqpRow and cqpRow.Id then
+                    result[quality][star] = cqpRow.Id
+                end
+            end
+        end
+    end
+
+    cache.Dic[characterId] = result
+end
+
+-- 对外接口：读取 CharacterId 层级数据
 function XCharacterAgency:GetCharSkillQualityApartDicByCharacterId(characterId)
     if not characterId then
-        XLog.Error("XCharacterAgency:GetCharSkillQualityApartTemplateByCharacterId函数参数characterId不能为空")
-        return
+        XLog.Error("参数 characterId 不能为空")
+        return {}
     end
-    local config = self._Model.CharSkillQualityApartDic[characterId]
-    return config or {}
+
+    self:_BuildCharacterSkillQualityApartCache(characterId)
+    local cache = self._Model.TempWholeDic._CharacterSkillQualityApartCache
+    return cache.Dic[characterId] or {}
 end
 
---返回 某一角色某一品质下所有技能升阶数据
+-- 对外接口：读取 Quality 层级数据
 function XCharacterAgency:GetCharSkillQualityApartDicByQuality(characterId, quality)
     if not quality then
-        XLog.Error("GetCharSkillQualityApartDicByQuality 函数参数quality不能为空")
-        return
+        XLog.Error("参数 quality 不能为空")
+        return {}
     end
-    local config = self:GetCharSkillQualityApartDicByCharacterId(characterId)
-    return config[quality] or {}
+
+    self:_BuildCharacterSkillQualityApartCache(characterId)
+    local cache = self._Model.TempWholeDic._CharacterSkillQualityApartCache
+    return cache.Dic[characterId][quality] or {}
 end
 
---返回 某一角色某一品质某一星级的技能升阶数据
+-- 对外接口：读取 Star 层级数据
 function XCharacterAgency:GetCharSkillQualityApartDicByStar(characterId, quality, star)
     if not star then
-        XLog.Error("GetCharSkillQualityApartDicByStar 函数参数star不能为空")
-        return
+        XLog.Error("参数 star 不能为空")
+        return {}
     end
-    local config = self:GetCharSkillQualityApartDicByQuality(characterId, quality)
-    return config[star] or {}
+
+    self:_BuildCharacterSkillQualityApartCache(characterId)
+    local cache = self._Model.TempWholeDic._CharacterSkillQualityApartCache
+    return (cache.Dic[characterId][quality] and cache.Dic[characterId][quality][star]) or {}
 end
+--==
 
 function XCharacterAgency:GetChracterSkillPosToGroupIdDic(characterId)
     local config = self._Model.CharacterSkillDictTemplates[characterId]
@@ -4491,6 +4584,10 @@ function XCharacterAgency:GetModelEnhanceSkillIdGeneralSkillIdsDic()
     return self._Model:GetEnhanceSkillIdGeneralSkillIdsDic()
 end
 
+function XCharacterAgency:GetModelGetCharacterPower()
+    return self._Model:GetCharacterPower()
+end
+
 -- 获取核心切换技能的描述
 function XCharacterAgency:GetCharacterSkillExchangeDesBySkillIdAndLevel(skillId, skillLevel)
     local targetId = skillId * 100 + skillLevel 
@@ -4499,6 +4596,67 @@ end
 
 function XCharacterAgency:GetModelCharacterSkillExchangeDes()
     return self._Model:GetCharacterSkillExchangeDes()
+end
+
+function XCharacterAgency:GetCharacterPowerConfig(characterId)
+    local detailConfigs = self:GetModelCharacterDetail()
+    local charDetailConfig = detailConfigs[characterId]
+    if not charDetailConfig then
+        return
+    end
+
+    local charPowerId = charDetailConfig.CharacterPowerId
+    if not XTool.IsNumberValid(charPowerId) then
+        return
+    end
+
+    return self:GetModelGetCharacterPower()[charPowerId]
+end
+
+function XCharacterAgency:GetCharacterPowerSkillIds(characterId)
+    self._Model.TempWholeDic.CharacterPowerSkillIds = self._Model.TempWholeDic.CharacterPowerSkillIds or {}
+    if self._Model.TempWholeDic.CharacterPowerSkillIds[characterId] then
+        return self._Model.TempWholeDic.CharacterPowerSkillIds[characterId]
+    end
+
+    local detailConfigs = self:GetModelCharacterDetail()
+    local charDetailConfig = detailConfigs[characterId]
+    if not charDetailConfig then
+        return
+    end
+
+    local powerSkillIdsString = charDetailConfig.PowerSkillIds
+    if string.IsNilOrEmpty(powerSkillIdsString) then
+        return
+    end
+
+    local powerSkillIds = string.ToIntArray(powerSkillIdsString, "|")
+    self._Model.TempWholeDic.CharacterPowerSkillIds[characterId] = powerSkillIds
+
+    return powerSkillIds
+end
+
+function XCharacterAgency:GetCharacterPowerEnhanceSkillIds(characterId)
+    self._Model.TempWholeDic.PowerEnhanceSkillIds = self._Model.TempWholeDic.PowerEnhanceSkillIds or {}
+    if self._Model.TempWholeDic.PowerEnhanceSkillIds[characterId] then
+        return self._Model.TempWholeDic.PowerEnhanceSkillIds[characterId]
+    end
+
+    local detailConfigs = self:GetModelCharacterDetail()
+    local charDetailConfig = detailConfigs[characterId]
+    if not charDetailConfig then
+        return
+    end
+
+    local powerSkillIdsString = charDetailConfig.PowerEnhanceSkillIds
+    if string.IsNilOrEmpty(powerSkillIdsString) then
+        return
+    end
+    
+    local powerEnhanceSkillIds = string.ToIntArray(powerSkillIdsString, "|")
+    self._Model.TempWholeDic.PowerEnhanceSkillIds[characterId] = powerEnhanceSkillIds
+
+    return powerEnhanceSkillIds
 end
 --endregion getModeComplex结束
 

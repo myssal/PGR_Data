@@ -51,7 +51,7 @@ end
 ---@param teamList XStrongholdTeam[]
 function XUiStrongholdBattleRoleRoom:OnStart(teamList, teamId, groupId, pos, teamPropId)
     self.Camera = self.Transform:GetComponent("Canvas").worldCamera
-    self.Team = teamList[teamPropId]:CreateTempTeam()
+    self.Team = teamList[teamPropId]:GetOrCreateTempTeam()
     self.TeamList = teamList
     self.TeamPropId = teamPropId
     self.GroupId = groupId
@@ -86,7 +86,7 @@ end
 
 function XUiStrongholdBattleRoleRoom:OnEnable()
     -- 重新生成XTeam
-    self.Team = self.TeamList[self.TeamPropId]:CreateTempTeam()
+    self.Team = self.TeamList[self.TeamPropId]:GetOrCreateTempTeam()
 
     self:RefreshRoleInfos()
     -- 设置首出信息
@@ -207,7 +207,7 @@ function XUiStrongholdBattleRoleRoom:OnBtnTeamPrefabClicked()
         self.IsUpdateTeamPrefab = false
         self.DialogTipCount = 0
     end
-    XLuaUiManager.Open("UiRoomTeamPrefab", nil, nil, characterLimitType, limitBuffId, stageType, nil, closeCb, stageId)
+    XLuaUiManager.Open("UiTeamPrefabMain")
 end
 
 -- 通过实体Id获取角色Id，基本上只要实现好GetCharacterViewModelByEntityId接口可不必处理该接口
@@ -826,6 +826,7 @@ function XUiStrongholdBattleRoleRoom:UpdateTeamPrefab(team)
     local captainPos = team and team.CaptainPos
     local enterCgIndex = team and team.EnterCgIndex or 0
     local settleCgIndex = team and team.SettleCgIndex or 0
+    local selectedGeneralSkill = team.SelectedGeneralSkill and team.SelectedGeneralSkill or 0
 
     for index, characterId in ipairs(teamData or {}) do
         self:OnJoinTeam(characterId, index)
@@ -836,6 +837,7 @@ function XUiStrongholdBattleRoleRoom:UpdateTeamPrefab(team)
     team:SetFirstPos(firstFightPos)
     team:SetEnterCgIndex(enterCgIndex)
     team:SetSettleCgIndex(settleCgIndex)
+    team:UpdateSelectGeneralSkill(selectedGeneralSkill)
 end
 
 function XUiStrongholdBattleRoleRoom:OnJoinTeam(characterId, prefabMemberIndex)

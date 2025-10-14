@@ -85,6 +85,8 @@ function XBigWorldServiceModel:OnInit()
         [6] = "BigWorldSkyGardenQuality6",
         [7] = "BigWorldSkyGardenQuality7",
     }
+    
+    self.IsHaruDebug = CS.XApplication.Debug
 end
 
 ---@return XTableCondition
@@ -122,6 +124,15 @@ function XBigWorldServiceModel:GetNarrativeTextTemplate(id)
     return self._ConfigUtil:GetCfgByPathAndIdKey(TablePath.BigWorldNarrativeText, id)
 end
 
+--- 提供给战斗判断配置是否存在，只在Debug模式下提供，避免表格全部序列化
+---@return boolean 
+function XBigWorldServiceModel:DebugCheckNarrativeExist(id)
+    if self.IsHaruDebug then
+        return self:GetNarrativeTextTemplate(id) ~= nil
+    end
+    return true
+end
+
 ---@return XTableItem
 function XBigWorldServiceModel:GetItemTemplate(itemId, isNoTip)
     return self._ConfigUtil:GetCfgByPathAndIdKey(TablePath.BigWorldItem, itemId, isNoTip)
@@ -140,22 +151,21 @@ function XBigWorldServiceModel:ResetAll()
 end
 -- region Quest
 
+--- 增量更新，服务器每次推的Id都是当前Id最新的值，不需要再次运算
 function XBigWorldServiceModel:UpdateQuestItemMap(map)
     if not map then
         return
     end
     for id, item in pairs(map) do
-        self._QuestItemMap[id] = item.Count
+        if item and item.Count then
+            self._QuestItemMap[id] = item.Count
+        end
     end
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE)
 end
 
 function XBigWorldServiceModel:InitQuestItemMap(map)
-    if not map then
-        return
-    end
-    for id, item in pairs(map) do
-        self._QuestItemMap[id] = item.Count
-    end
+    self:UpdateQuestItemMap(map)
 end
 
 function XBigWorldServiceModel:IsQuestItemExist(itemId)

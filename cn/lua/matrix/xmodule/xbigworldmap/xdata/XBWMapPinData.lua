@@ -106,7 +106,15 @@ function XBWMapPinData:IsBindOther()
 end
 
 function XBWMapPinData:IsTeleportLevel()
-    return XTool.IsNumberValid(self.TeleportLevelId) and self.TeleportEnable
+    return XTool.IsNumberValid(self.TeleportLevelId) and self:IsCouldTeleport()
+end
+
+function XBWMapPinData:IsTeleportInLevel()
+    return not XTool.IsNumberValid(self.TeleportLevelId) and self:IsCouldTeleport()
+end
+
+function XBWMapPinData:IsCouldTeleport()
+    return self.TeleportEnable and self:IsActive() and self:IsDisplaying()
 end
 
 function XBWMapPinData:IsBindPlace()

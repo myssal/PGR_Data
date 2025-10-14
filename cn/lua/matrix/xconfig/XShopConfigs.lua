@@ -6,6 +6,8 @@ local ScreenGroupTemplate = {}
 local ShowTypeTemplate = {}
 local ShopBuyLimitLabel = {}
 local CostHintTemplate = {}
+---@type XTableGoodsBuyPriorityDesc[]
+local GoodsBuyPriorityDescTemplate = {}
 -- 体验包屏蔽的商店id数据
 local ShopHideFuncIdDic = {
     [1] = true,
@@ -31,6 +33,7 @@ local TABLE_SHOP_SCREENGROUP = "Client/Shop/ScreenGroup.tab"
 local TABLE_SHOP_SHOWTYPE = "Client/Shop/ShopShowType.tab"
 local TABLE_SHOP_BUY_LIMIT_LABEL = "Client/Shop/ShopBuyLimitLabel.tab"
 local TABLE_SHOP_COST_HINT = "Client/Shop/CostHint.tab"
+local TABLE_GOODS_BUY_PRIORITY_DESC = "Client/Shop/GoodsBuyPriorityDesc.tab"
 
 XShopConfigs.ShowType = {
     Normal = 0,     --通常
@@ -50,6 +53,7 @@ function XShopConfigs.Init()
     ShowTypeTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_SHOWTYPE, XTable.XTableShopShowType, "Id")
     ShopBuyLimitLabel = XTableManager.ReadByIntKey(TABLE_SHOP_BUY_LIMIT_LABEL, XTable.XTableShopBuyLimitLabel, "ClockId")
     CostHintTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_COST_HINT, XTable.XTableCostHint, "Id")
+    GoodsBuyPriorityDescTemplate = XTableManager.ReadByIntKey(TABLE_GOODS_BUY_PRIORITY_DESC, XTable.XTableCostHint, "Id")
 end
 
 function XShopConfigs.GetShopGroupTemplate()
@@ -128,3 +132,11 @@ function XShopConfigs.GetCostNumByItemId(itemId)
     end
 end
 --==========================================================================
+
+function XShopConfigs.GetGoodsBuyPriorityDesc(goodsId)
+    local config = GoodsBuyPriorityDescTemplate[goodsId]
+    if config then
+        return config.Desc
+    end
+    return ""
+end

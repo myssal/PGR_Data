@@ -1,3 +1,5 @@
+local XUiPlotExhibitionUtil = require("XUi/XUiPlotExhibition/XUiPlotExhibitionUtil")
+
 ---@class XUiMainLine2DetailBattle:XLuaUi
 ---@field private _Control XMainLine2Control
 local XUiMainLine2DetailBattle = XLuaUiManager.Register(XLuaUi, "UiMainLine2DetailBattle")
@@ -10,6 +12,7 @@ function XUiMainLine2DetailBattle:OnAwake()
     self.CharacterUiObjs = { self.GridCharacter }
     self.GridPoints = { self.GridPoint }
     self:RegisterUiEvents()
+    XUiPlotExhibitionUtil.Init(self, "SafeAreaContentPane/UiPlotExhibitionPanelMode/BtnToggle")
 end
 
 function XUiMainLine2DetailBattle:OnStart(stageIds, chapterId, mainId, closeCb)
@@ -64,10 +67,18 @@ function XUiMainLine2DetailBattle:OnBtnEnterClick()
     end
 
     local stageCfg = XMVCA.XFuben:GetStageCfg(stageId)
-    local team = XDataCenter.TeamManager.GetXTeamByStageIdEx(stageId)
+    
+    local speedStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+    local team
+    if speedStageId then
+        team = XDataCenter.TeamManager.GetXTeamByStageIdEx(speedStageId)
+    else
+        team = XDataCenter.TeamManager.GetXTeamByStageIdEx(stageId)
+    end
+    
     local isCfgExit, lineupCfg = XMVCA.XFuben:GetConfigStageLineupType(stageId)
     local isExitType = (isCfgExit and #lineupCfg.Type > 0)
-    if #stageCfg.RobotId > 0 and not isExitType then
+    if #stageCfg.RobotId > 0 and not isExitType and not speedStageId then
         -- 关卡配置机器人
         local entityIds = {0, 0, 0}
         for i, robotId in pairs(stageCfg.RobotId) do
@@ -136,6 +147,7 @@ function XUiMainLine2DetailBattle:Refresh()
     self:RefreshCharacters()
     self:RefreshPoints()
     self:RefreshBtnEnter()
+    XUiPlotExhibitionUtil.UpdateSpeedrunBtnToggle(self, self.StageId)
 end
 
 function XUiMainLine2DetailBattle:RefreshInfo()

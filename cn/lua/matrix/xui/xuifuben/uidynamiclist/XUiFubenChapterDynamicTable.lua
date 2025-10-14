@@ -45,7 +45,9 @@ end
 -- 将当前选中的格子设为展开样式
 function XUiFubenChapterDynamicTable:SetCurrGridOpen()
     self.CurrGrid = self.GridDic[self.CurrentSelectedIndex]
-    self.CurrGrid:PlayOpenAnim(false, self.RootUi)
+    if self.CurrGrid then
+        self.CurrGrid:PlayOpenAnim(false, self.RootUi)
+    end
 end
 
 function XUiFubenChapterDynamicTable:OnDynamicTableEvent(event, index, grid)

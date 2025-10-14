@@ -32,8 +32,9 @@ function XBigWorldAgency:OnInit()
     }
     
     self._CompletelyExitCb = handler(self, self.CompletelyExit)
-    
     self._InputMapIdStack = XStack.New()
+    
+    self._IsDisablePerspective = false
 end
 
 function XBigWorldAgency:InitRpc()
@@ -41,6 +42,13 @@ function XBigWorldAgency:InitRpc()
 end
 
 function XBigWorldAgency:InitEvent()
+    XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
+    
+    XMVCA.XBigWorldUI:AddFightUiCb("UiBigWorldFirstPerson", handler(self, self.OnFightOpenFirstPerson))
+end
+
+function XBigWorldAgency:RemoveEvent()
+    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
 end
 
 --- 初始化X3C注册,
@@ -69,6 +77,7 @@ function XBigWorldAgency:InitX3C()
 
     -- 指挥官DIY
     register(X3C_CMD.CMD_SHOW_PLAYER_DIY_UI, XMVCA.XBigWorldCommanderDIY.OpenMainUi, XMVCA.XBigWorldCommanderDIY)
+
     -- 短信系统
     register(X3C_CMD.CMD_BIG_WORLD_MESSAGE_RECEIVE, XMVCA.XBigWorldMessage.OnReceiveMessage, XMVCA.XBigWorldMessage)
     -- 地图系统
@@ -99,10 +108,10 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_CAMERA_PHOTOGRAPH_DETECTED_ACTORS_CHANGED, XMVCA.XBigWorldAlbum.NotifyActorChange, XMVCA.XBigWorldAlbum)
     register(X3C_CMD.CMD_CAMERA_OPEN_PHOTOGRAPH_UI, XMVCA.XBigWorldAlbum.OpenPhotoGraphUi, XMVCA.XBigWorldAlbum)
     register(X3C_CMD.CMD_REQUEST_SKIP_INTERFACE, XMVCA.XBigWorldFunction.OnSkipInterface, XMVCA.XBigWorldFunction)
-    register(X3C_CMD.CMD_TRY_ACTIVE_GUIDE, XMVCA.XBigWorldGamePlay.TryActive, XMVCA.XBigWorldGamePlay)
+    register(X3C_CMD.CMD_TRY_ACTIVE_GUIDE, XMVCA.XBigWorldGamePlay.TryActiveGuide, XMVCA.XBigWorldGamePlay)
 
     -- 实例关卡相关功能(InstanceLevel)
-    register(X3C_CMD.CMD_OPEN_LEAVE_INST_LEVEL_POPUP, XMVCA.XBigWorldCommon.OnOpenLeaveInstLevelPopup, XMVCA.XBigWorldCommon)
+    register(X3C_CMD.CMD_OPEN_LEAVE_INST_LEVEL_POPUP, XMVCA.XBigWorldInstance.ShowExitLevelPopup, XMVCA.XBigWorldCommon)
     
     -- 加载Level
     register(X3C_CMD.CMD_DLC_FIGHT_ENTER_LEVEL, XMVCA.XBigWorldGamePlay.OnEnterLevel, XMVCA.XBigWorldGamePlay)
@@ -135,6 +144,10 @@ function XBigWorldAgency:InitX3C()
     --战斗界面显隐
     register(X3C_CMD.CMD_FIGHT_UI_ON_ENABLED_NOTIFY, XMVCA.XBigWorldGamePlay.OnFightUiEnable, XMVCA.XBigWorldGamePlay)
     register(X3C_CMD.CMD_FIGHT_UI_ON_DISABLED_NOTIFY, XMVCA.XBigWorldGamePlay.OnFightUiDisable, XMVCA.XBigWorldGamePlay)
+    
+    -- 第一人称
+    register(X3C_CMD.CMD_SEND_SET_PLAYER_FIRST_PERSON_MODE_EVENT, XMVCA.XBigWorldGamePlay.OnPerspectiveModeChanged, XMVCA.XBigWorldGamePlay)
+    register(X3C_CMD.CMD_GET_SYSTEM_SAVED_FIRST_PERSON_MODE, XMVCA.XBigWorldGamePlay.OnFightGetPerspectiveState, XMVCA.XBigWorldGamePlay)
 
     self:OnInitX3C()
 end
@@ -170,6 +183,8 @@ function XBigWorldAgency:EnterFight()
     self:InitInputMapStack()
     self:OpenHud()
     XMVCA.XBigWorldMap:InitMapPinData(XMVCA.XBigWorldGamePlay:GetCurrentWorldId())
+    XMVCA.XBigWorldFunction:RegisterFunctionControllerByMethod(XMVCA.XBigWorldFunction.FunctionType.Perspective, self,
+            self.OnPerspectiveChangeControlState)
     self:OnEnterFight()
 end
 
@@ -177,6 +192,8 @@ function XBigWorldAgency:OnEnterFight()
 end
 
 function XBigWorldAgency:ExitFight()
+    XMVCA.XBigWorldFunction:RemoveFunctionControllerByMethod(XMVCA.XBigWorldFunction.FunctionType.Perspective, self,
+            self.OnPerspectiveChangeControlState)
     self:CloseHud()
     self:OnExitFight()
     self:CompletelyExit()
@@ -199,13 +216,14 @@ function XBigWorldAgency:OnEnterLevel(levelId)
 end
 
 function XBigWorldAgency:LeaveLevel(levelId)
+    XMVCA.XBigWorldMap:ClearCurrentAreaGroupData()
     self:OnLeaveLevel(levelId)
 end
 
 function XBigWorldAgency:OnLeaveLevel(levelId)
 end
 
-function XBigWorldAgency:LevelBeginUpdate()
+function XBigWorldAgency:LevelBeginUpdate(levelId)
     XMVCA.XBigWorldMap:SendCurrentTrackCommand()
     XMVCA.XBigWorldMessage:TryOpenMessageTipUi()
     XMVCA.XBigWorldTeach:TryShowTeach()
@@ -220,6 +238,8 @@ function XBigWorldAgency:UpdatePlayerData(res)
         return
     end
     self._Model:UpdateFinishGuideDict(res.BigWorldGuideData)
+    self:InitPerspective(res.FovData)
+    XMVCA.XBigWorldInstance:InitLevelPlayData(res.LevelPlayDatas)
     XMVCA.XBigWorldCommanderDIY:UpdateData(res.Gender, res.CommanderWearFashionDict, res.CommanderFashionBags, res.CharacterInitialized)
     XMVCA.XBigWorldCharacter:UpdateTeam(res.CurrentTeamId, res.TeamDict)
     XMVCA.XBigWorldCharacter:UpdateCharacter(res.CharacterWearFashionDict)
@@ -286,6 +306,39 @@ end
 function XBigWorldAgency:OnUnRegisterMVCA()
 end
 
+function XBigWorldAgency:InitPerspective(perspectiveData)
+    self._Model:InitPerspective(perspectiveData)
+end
+
+function XBigWorldAgency:UpdatePerspective(groupId, perspectiveId)
+    self._Model:UpdatePerspective(groupId, perspectiveId)
+end
+
+function XBigWorldAgency:IsSavePerspective(levelId)
+    return self._Model:IsSavePerspective(levelId)
+end
+
+function XBigWorldAgency:GetPerspective(levelId)
+    return self._Model:GetPerspective(levelId)
+end
+
+function XBigWorldAgency:GetPerspectiveGroupId(levelId)
+    return self._Model:GetPerspectiveGroupId(levelId)
+end
+
+---@param controlData XBWFunctionControlData
+function XBigWorldAgency:OnPerspectiveChangeControlState(controlData)
+    local disable = controlData:GetArgByIndex(1)
+    
+    self._IsDisablePerspective = disable
+    
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE)
+end
+
+function XBigWorldAgency:IsDisablePerspective()
+    return self._IsDisablePerspective
+end
+
 --region BigWorldConfig
 
 function XBigWorldAgency:GetInt(key)
@@ -334,21 +387,26 @@ function XBigWorldAgency:OpenMessage()
 end
 
 function XBigWorldAgency:OpenTeam()
+    if XMVCA.XBigWorldGamePlay:IsCurrentNpcSit() then
+        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("CurStatusCannotOpen"))
+        return
+    end
     XMVCA.XBigWorldUI:Open("UiBigWorldRoleRoom")
 end
 
 function XBigWorldAgency:OpenExplore()
-    if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldCourse) then
-        return
-    end
-    XMVCA.XBigWorldUI:Open("UiBigWorldProcess")
+    XMVCA.XBigWorldCourse:OpenMainUi(nil, true)
 end
 
-function XBigWorldAgency:OpenPhoto(...)
+function XBigWorldAgency:OpenPhoto(isSequence, ...)
     if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldAlbum) then
         return
     end
-    XMVCA.XBigWorldUI:Open("UiBigWorldPhotographControl", ...)
+    if isSequence then
+        XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPhotographControl", ...)
+    else
+        XMVCA.XBigWorldUI:Open("UiBigWorldPhotographControl", ...)
+    end
 end
 
 function XBigWorldAgency:OpenTeaching()
@@ -383,6 +441,14 @@ function XBigWorldAgency:SetHudActive(value)
         return
     end
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_UI_HUD_ACTIVE, value)
+end
+
+function XBigWorldAgency:OnFightOpenFirstPerson(data)
+    if not data then
+        XLog.Error("OnFightOpenFirstPerson data is nil")
+        return
+    end
+    XMVCA.XBigWorldUI:OpenPerspectiveUi(data.LevelId, data.IsShowClose, data.TxtExplain, data.ConfirmCb)
 end
 
 function XBigWorldAgency:RecordHudClick(btnIndex)
@@ -469,6 +535,10 @@ function XBigWorldAgency:TryExitOpenGuide()
     self._OpenGuide = nil
 end
 
+function XBigWorldAgency:IsInOpenGuide()
+    return self._OpenGuide ~= nil
+end
+
 ---@return XTableBigWorldOpenGuide[]
 function XBigWorldAgency:GetOpenGuideActionList()
 end
@@ -523,6 +593,25 @@ function XBigWorldAgency:OnInputMapResume()
     CS.XInputManager.SetCurInputMap(peek)
 end
 
+--region DLC区分 - 大世界
+
+function XBigWorldAgency:ExGetDlcModelIdByCharacterData(characterData)
+    return XMVCA.XBigWorldCharacter:ExGetDlcModelIdByCharacterData(characterData)
+end
+
+function XBigWorldAgency:GetFightCharHeadIcon(worldNpcData)
+    return XMVCA.XBigWorldCharacter:GetFightCharHeadIcon(worldNpcData)
+end
+
+function XBigWorldAgency:CheckLevelPlayFullCleared(levelPlayId)
+    return XMVCA.XBigWorldInstance:CheckLevelPlayFullCleared(levelPlayId)
+end
+
+function XBigWorldAgency:CheckLevelPlayCleared(levelPlayId)
+    return XMVCA.XBigWorldInstance:CheckLevelPlayCleared(levelPlayId)
+end
+
+--endregion
 
 
 return XBigWorldAgency

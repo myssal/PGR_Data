@@ -449,7 +449,7 @@ function XUiPanelStrongholdRoomCharacterSelf:OnBtnTeamPrefabClick()
         self.IsUpdateTeamPrefab = false
         self.DialogTipCount = 0
     end
-    XLuaUiManager.Open("UiRoomTeamPrefab", nil, nil, characterLimitType, limitBuffId, stageType, nil, closeCb, stageId)
+    XLuaUiManager.Open("UiTeamPrefabMain")
 end
 
 function XUiPanelStrongholdRoomCharacterSelf:GetTeam()

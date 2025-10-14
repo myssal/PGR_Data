@@ -112,11 +112,15 @@ end
 
 -- 开启关卡详情
 function XUiCourseTutorial:ShowStageDetail(stageId)
-    self.ChildUiCourseStageDetailDP:UpdateData(stageId)
     if XLuaUiManager.IsUiShow("UiCourseStageDetailDP") then
         self:CloseChildUi("UiCourseStageDetailDP")
     end
     self:OpenOneChildUi("UiCourseStageDetailDP", stageId)
+    if self.ChildUiCourseStageDetailDP then
+        self.ChildUiCourseStageDetailDP:UpdateData(stageId)
+    else
+        XLog.Error("[XUiCourseTutorial] ChildUiCourseStageDetailDP 不存在");
+    end
 end
 
 -- 打开奖励

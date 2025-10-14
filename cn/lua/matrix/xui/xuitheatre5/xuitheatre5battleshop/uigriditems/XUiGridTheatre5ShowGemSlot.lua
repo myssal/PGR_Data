@@ -21,4 +21,6 @@ function XUiGridTheatre5ShowGemSlot:SetLockShow(isLock)
     end
 end
 
+
+
 return XUiGridTheatre5ShowGemSlot

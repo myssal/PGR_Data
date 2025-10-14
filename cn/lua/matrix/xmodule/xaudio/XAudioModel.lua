@@ -1,16 +1,9 @@
 ---@class XAudioModel : XModel
 local XAudioModel = XClass(XModel, "XAudioModel")
-local TableKey = 
-{
-    MusicPlayerAlbum = { DirPath = XConfigUtil.DirectoryType.Client },
-}
 
 function XAudioModel:OnInit()
     --初始化内部变量
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
-
-    self._ConfigUtil:InitConfigByTableKey("Audio", TableKey, XConfigUtil.CacheType.Normal)
-
     self.DefaultAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerMainViewNeedPlayedAlbumId")
     self.UiMainSavedAlbumIdKey = "UiMainSavedAlbumId"
     self.AlbumIdList = {}
@@ -28,7 +21,7 @@ end
 
 ----------public start----------
 function XAudioModel:GetMusicPlayerAlbum()
-    return self._ConfigUtil:GetByTableKey(TableKey.MusicPlayerAlbum)
+    return CS.XAudioManager.MusicPlayerAlbumTemplates
 end
 
 -- 初始化/获取相关数据 开始

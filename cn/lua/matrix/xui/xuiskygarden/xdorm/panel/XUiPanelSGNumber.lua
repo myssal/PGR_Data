@@ -29,9 +29,6 @@ function XUiPanelSGNumber:OnStart(areaType)
     self:InitCb()
 end
 
-function XUiPanelSGNumber:Refresh()
-end
-
 function XUiPanelSGNumber:InitUi()
     self.GridNumber1.gameObject:SetActiveEx(false)
     self.GridNumber2.gameObject:SetActiveEx(false)

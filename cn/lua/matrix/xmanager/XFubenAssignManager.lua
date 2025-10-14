@@ -2,7 +2,7 @@ local XExFubenSimulationChallengeManager = require("XEntity/XFuben/XExFubenSimul
 --- 占领副本管理器
 XFubenAssignManagerCreator = function()
     ---@class XFubenAssignManager:XExFubenSimulationChallengeManager
-    local XFubenAssignManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Assign)
+    local XFubenAssignManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Assign)
 
     -- 协议
     local METHOD_NAME = {

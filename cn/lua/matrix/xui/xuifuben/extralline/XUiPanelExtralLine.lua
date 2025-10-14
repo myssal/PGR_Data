@@ -7,8 +7,8 @@ local XUiPanelExtralLine = XClass(XSignalData, "XUiPanelExtralLine")
 
 -- 需要展示筛选器的章节
 local ShowFilterChapterTypeCollection = {
-    XFubenConfigs.ChapterType.Prequel,
-    XFubenConfigs.ChapterType.NewCharAct,
+    XEnumConst.FuBen.ChapterType.Prequel,
+    XEnumConst.FuBen.ChapterType.NewCharAct,
 }
 
 --######################## 静态方法 BEGIN ########################
@@ -21,9 +21,9 @@ function XUiPanelExtralLine.CheckHasRedPoint(config)
             table.insert(managers, XDataCenter.FubenManagerEx.GetManager(chapterType))
         end
     end
-    managers = appendArray(managers, XDataCenter.FubenManagerEx.GetManagers(XFubenConfigs.ChapterType.Festival))
+    managers = appendArray(managers, XDataCenter.FubenManagerEx.GetManagers(XEnumConst.FuBen.ChapterType.Festival))
     for _, manager in ipairs(managers) do
-        if manager:ExGetChapterType() == XFubenConfigs.ChapterType.Festival 
+        if manager:ExGetChapterType() == XEnumConst.FuBen.ChapterType.Festival 
             and manager:ExCheckIsShowRedPoint(XFestivalActivityConfig.UiType.ExtralLine) then
             return true
         elseif manager:ExCheckIsShowRedPoint() then
@@ -56,6 +56,8 @@ function XUiPanelExtralLine:Ctor(ui, parent)
     self.SecondTagConfigs = nil
     self.FirstTagIndex = nil
     self.CurrentChapterIndex = 1
+    
+    self:RegisterUiEvents()
 end
 
 -- firstTagId : 一级标签下标
@@ -66,9 +68,9 @@ function XUiPanelExtralLine:SetData(firstTagId, managerIndex, chapterIndex, char
     local managers = {}
     local tempManager = nil
     local fisrtUnlockTagIndex = nil
-    for _, config in ipairs(self.SecondTagConfigs) do
+    for index, config in ipairs(self.SecondTagConfigs) do
         if not fisrtUnlockTagIndex and XDataCenter.FubenManagerEx.CheckHasOpenBySecondTagId(config.Id) then
-            fisrtUnlockTagIndex = config.Order -- 第一个已解锁的标签
+            fisrtUnlockTagIndex = index -- 第一个已解锁的标签
         end
         for _, managerType in ipairs(config.ChapterType) do
             tempManager = self.FubenManagerEx.GetManager(managerType)
@@ -100,13 +102,15 @@ function XUiPanelExtralLine:OnEnable()
     end
     -- 章节列表刷新
     self:RefreshChapterList(self.CurrentChapterIndex, true)
+    
+    self:RefreshBtnBookmark()
 end
 
 function XUiPanelExtralLine:RefreshChapterList(index, isFirstChange)
     local manager = self.Managers[self.CurrentManagerIndex]
     if index == nil then index = manager:ExGetCurrentChapterIndex() end
     local viewModels = nil
-    if manager:ExGetChapterType() == XFubenConfigs.ChapterType.Festival then
+    if manager:ExGetChapterType() == XEnumConst.FuBen.ChapterType.Festival then
         viewModels = manager:ExGetChapterViewModels(XFestivalActivityConfig.UiType.ExtralLine)
     else
         viewModels = manager:ExGetChapterViewModels()
@@ -261,5 +265,51 @@ function XUiPanelExtralLine:ClearFilterData(oldIndex)
     
     return hasFilterData
 end
+
+
+function XUiPanelExtralLine:RegisterUiEvents()
+    XUiHelper.RegisterClickEvent(self, self.BtnBookmark, self.OnBtnBookmarkClick, nil, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnCharacterStory, self.OnBtnCharacterStoryClick, nil, true)
+end
+
+function XUiPanelExtralLine:OnBtnBookmarkClick()
+    -- 没有书签时，弹提示
+    local bookmarkData = XMVCA.XMovie:GetBookmarkData()
+    if not bookmarkData then
+        local tips = XMVCA.XMainLine2:GetClientConfigParams("NoBookmarkTips", 1)
+        XUiManager.TipError(tips)
+        return
+    end
+
+    -- 二次确认是否播放书签剧情
+    local bookmarkName = XMVCA.XMovie:GetBookmarkName()
+    local params = XMVCA.XMovie:GetClientConfigParams("BookmarkEnterTips")
+    local tipTitle = params[1]
+    local contentFormat = params[2]
+    local content = string.format(contentFormat, bookmarkName)
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+    local confirmCb = function()
+        XMVCA.XMovie:PlayBookmarkMovie()
+    end
+    XLuaUiManager.Open("UiDialog", tipTitle, content, XUiManager.DialogType.Normal, nil, confirmCb)
+end
+
+function XUiPanelExtralLine:OnBtnCharacterStoryClick()
+    XMVCA.XPlotExhibition:OpenMain()
+end
+
+--region 剧情书签
+-- 刷新剧情书签按钮
+function XUiPanelExtralLine:RefreshBtnBookmark()
+    XMVCA.XMovie:RequestGetStageBookmark(function(bookmarkData)
+        local isExit = bookmarkData ~= nil
+        self.BookmarkBubble.gameObject:SetActiveEx(isExit)
+        if isExit then
+            local name = XMVCA.XMovie:GetBookmarkName()
+            self.BtnBookmark:SetName(name)
+        end
+    end)
+end
+--endregion
 
 return XUiPanelExtralLine

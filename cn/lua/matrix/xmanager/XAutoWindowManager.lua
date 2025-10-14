@@ -66,6 +66,10 @@ XAutoWindowManagerCreator = function()
         CurWindow = nil
 
         XAutoWindowManager.CheckAddWindow()
+        return XAutoWindowManager.TryNextAutoWindow()
+    end
+    
+    function XAutoWindowManager.TryNextAutoWindow()
         local isShow = #AutoWindowList > 0
         if isShow then
             XAutoWindowManager.NextAutoWindow()
@@ -74,9 +78,14 @@ XAutoWindowManagerCreator = function()
     end
     
     -- 检测添加弹窗数据
-    function XAutoWindowManager.CheckAddWindow()
+    function XAutoWindowManager.CheckAddWindow(autoType)
         local autoWindowControllerConfig = XAutoWindowConfigs.GetAutoWindowControllerConfig()
         for _, v in pairs(autoWindowControllerConfig) do
+            -- 过滤不符合的类型
+            if autoType ~= nil and v.AutoType ~= autoType then
+                goto continue
+            end
+            
             -- 已有相同弹窗
             if PassedWindowDic[v.Id] then
                 goto continue
@@ -126,8 +135,12 @@ XAutoWindowManagerCreator = function()
                 goto continue
             end
 
-            if v.ConditionId > 0 and not XConditionManager.CheckCondition(v.ConditionId) then
-                goto continue
+            if not XTool.IsTableEmpty(v.ConditionIds) then
+                for i, conditionId in pairs(v.ConditionIds) do
+                    if XTool.IsNumberValidEx(conditionId) and not XConditionManager.CheckCondition(conditionId) then
+                        goto continue
+                    end
+                end
             end
 
             if v.FunctionType == XAutoWindowConfigs.AutoFunctionType.Sign then
@@ -163,7 +176,7 @@ XAutoWindowManagerCreator = function()
                 goto continue
             end
 
-            if v.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard then
+            if v.FunctionType == XAutoWindowConfigs.AutoFunctionType.WeekCard or v.FunctionType == XAutoWindowConfigs.AutoFunctionType.ThreeDayCard then
                 local paramId = XFunctionConfig.GetParamId(v.SkipId)
                 local subConfigId = XSignInConfigs.GetWelfareConfig(paramId).SubConfigId
                 local weekCardData = XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(subConfigId)
@@ -248,24 +261,33 @@ XAutoWindowManagerCreator = function()
         -- 检查是否有推送签到
         local isNotifySignIn = XDataCenter.SignInManager.CheckNotifySign()
         local isContinueAuto = #AutoWindowList > 0
-
+        
         -- 检查是否有周卡未领取
         local isWeekCardCanGet = XDataCenter.PurchaseManager.CheckAnyWeekCardCanGet()
         if isWeekCardCanGet then
             return XAutoWindowManager.StartAutoWindow()
         end
+        
+        local result = false
 
         if not isNotifySignIn and not isContinueAuto then     -- 没有推送签到，没有继续弹窗
-            return false
+            
         elseif not isNotifySignIn and isContinueAuto then     -- 没有推送签到，有继续弹窗
-            return XAutoWindowManager.StartAutoWindow()
+            result = XAutoWindowManager.StartAutoWindow()
         elseif isNotifySignIn and not isContinueAuto then     -- 有推送签到，没有继续弹窗
-            return XAutoWindowManager.StartAutoWindow(true)
+            result = XAutoWindowManager.StartAutoWindow(true)
         elseif isNotifySignIn and isContinueAuto then         -- 有推送签到，有继续弹窗
-            return XAutoWindowManager.StartAutoWindow(true)
+            result = XAutoWindowManager.StartAutoWindow(true)
         end
 
-        return false
+        if not result then
+            -- 额外指定类型的弹窗
+            XAutoWindowManager.CheckAddWindow(XAutoWindowConfigs.AutoType.Period)
+
+            result = XAutoWindowManager.TryNextAutoWindow()
+        end
+
+        return result
     end
 
     return XAutoWindowManager

@@ -332,6 +332,7 @@ function XSkyGardenCafeBattle:OpenBattleView(deckId)
         
         XLuaUiManager.SetMask(true)
         XScheduleManager.ScheduleOnce(function()
+            self._RoundEntity:StartTimer()
             --回合开始
             self._RoundEntity:DoRoundBegin(isContinue)
 

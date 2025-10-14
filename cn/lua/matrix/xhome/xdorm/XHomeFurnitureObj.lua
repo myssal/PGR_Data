@@ -58,13 +58,8 @@ function XHomeFurnitureObj:Dispose()
     XHomeFurnitureObj.Super.Dispose(self)
 
     self:HideAttrTag()
-
-
-    if not XTool.UObjIsNil(self.GridComponent) then
-        CS.XGridManager.Instance:FreeGrid(self.GridComponent)
-    end
-    self.GridComponent = nil
-
+    self:ReleaseAllGrid()
+    
     if not XTool.UObjIsNil(self.GoInputHandler) then
         self.GoInputHandler:RemoveAllListeners()
     end
@@ -760,10 +755,7 @@ function XHomeFurnitureObj:Storage(isMulti)
     if not XTool.UObjIsNil(self.GameObject) then
         self.GameObject:SetActiveEx(false)
     end
-    if not XTool.UObjIsNil(self.GridComponent) then
-        CS.XGridManager.Instance:FreeGrid(self.GridComponent)
-    end
-    self.GridComponent = nil
+    self:ReleaseAllGrid()
 
     if not isMulti then
         XHomeDormManager.RemoveFurniture(self.Room.Data.Id, self)
@@ -772,6 +764,22 @@ function XHomeFurnitureObj:Storage(isMulti)
 
     self:Dispose()
     self:HideInteractInfoGo()
+end
+
+function XHomeFurnitureObj:ReleaseAllGrid()
+    if not XTool.UObjIsNil(self.GridComponent) then
+        CS.XGridManager.Instance:FreeGrid(self.GridComponent)
+    end
+    if not XTool.UObjIsNil(self.GroundFixGridComponent) then
+        CS.XGridManager.Instance:FreeGrid(self.GroundFixGridComponent)
+    end
+    if not XTool.UObjIsNil(self.WallFixGridComponents) then
+        CS.XGridManager.Instance:FreeGrid(self.WallFixGridComponents)
+    end
+    self.GridComponent = nil
+    self.GroundFixGridComponent = nil
+    self.WallFixGridComponents = nil
+    
 end
 
 -- 检测类型数量限制

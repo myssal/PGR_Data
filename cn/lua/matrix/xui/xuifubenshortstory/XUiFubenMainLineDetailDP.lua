@@ -2,6 +2,7 @@ local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPlotExhibitionUtil = require("XUi/XUiPlotExhibition/XUiPlotExhibitionUtil")
 local XUiFubenMainLineDetailDP = XLuaUiManager.Register(XLuaUi,"UiFubenMainLineDetailDP")
 
 function XUiFubenMainLineDetailDP:OnAwake()
@@ -9,6 +10,7 @@ function XUiFubenMainLineDetailDP:OnAwake()
     self.GridStageStar.gameObject:SetActiveEx(false)
     self.GridCommon.gameObject:SetActiveEx(false)
     self:InitStarPanels()
+    XUiPlotExhibitionUtil.Init(self)
 end
 
 function XUiFubenMainLineDetailDP:OnStart(rootUi, enterStoryCb)
@@ -121,6 +123,7 @@ function XUiFubenMainLineDetailDP:Refresh(stage)
     self:NewUpdateRewards()
     self:UpdateDifficulty()
     self:UpdateStageFightControl()--更新战力限制提示
+    XUiPlotExhibitionUtil.UpdateSpeedrunBtnToggle(self, self.Stage.StageId)
 end
 
 function XUiFubenMainLineDetailDP:UpdateCommon()

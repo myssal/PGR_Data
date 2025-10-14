@@ -87,6 +87,10 @@ function XTransfiniteData:InitFromServerData(data)
     if not XTransfiniteConfigs.IsActivityValid(self._ActivityId) then
         return
     end
+    if not regionId or regionId == 0 then
+        XLog.Warning("[XTransfiniteData] region = 0, 服务端正在解决")
+        return
+    end
     self._Region:SetId(regionId)
     self._Region:SetRunning(true)
     self._Region:SetRewardReceivedFromServer(transfiniteData.GotScoreRewardIndex)

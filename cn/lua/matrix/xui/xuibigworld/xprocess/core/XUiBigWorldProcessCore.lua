@@ -20,6 +20,9 @@ function XUiBigWorldProcessCore:OnStart()
 
     self._CurrentIndex = 0
 
+    ---@type XBWCourseContentEntity
+    self._ContentEntity = nil
+
     ---@type XDynamicTableNormal
     self._ActivityDynamicTable = XUiHelper.DynamicTableNormal(self, self.ListActivity, XUiBigWorldProcessCoreActivity)
     ---@type XUiBigWorldProcessCoreStory
@@ -30,6 +33,7 @@ function XUiBigWorldProcessCore:OnStart()
 end
 
 function XUiBigWorldProcessCore:OnEnable()
+    self:_RefreshCurrent()
     self:_RegisterListeners()
     self:_RegisterSchedules()
     self:_RegisterRedPointEvents()
@@ -82,7 +86,17 @@ end
 
 ---@param contentEntity XBWCourseContentEntity
 function XUiBigWorldProcessCore:Refresh(contentEntity)
+    self._ContentEntity = contentEntity
     self:_RefreshTab(contentEntity)
+end
+
+function XUiBigWorldProcessCore:_RefreshCurrent()
+    if self._ContentEntity then
+        local selectIndex = self._CurrentIndex
+
+        self._CurrentIndex = 0
+        self:_RefreshTab(self._ContentEntity, selectIndex)
+    end
 end
 
 function XUiBigWorldProcessCore:_RegisterButtonClicks()
@@ -121,7 +135,7 @@ function XUiBigWorldProcessCore:_InitUi()
 end
 
 ---@param contentEntity XBWCourseContentEntity
-function XUiBigWorldProcessCore:_RefreshTab(contentEntity)
+function XUiBigWorldProcessCore:_RefreshTab(contentEntity, selectIndex)
     local index = 1
     local tabGroup = {}
     local groupCoreList = contentEntity:GetCoreEntitysGroupList()
@@ -188,8 +202,15 @@ function XUiBigWorldProcessCore:_RefreshTab(contentEntity)
         self._TabList[i].gameObject:SetActiveEx(false)
     end
 
+    local currentSelect = selectIndex or 1
+
+    if currentSelect > #tabGroup then
+        currentSelect = 1
+    end
+
     self.TabGroup:Init(tabGroup, Handler(self, self.OnTabGroupClick))
-    self.TabGroup:SelectIndex(1)
+    self.TabGroup:SelectIndex(currentSelect)
+
 end
 
 ---@param coreEntity XBWCourseCoreEntity

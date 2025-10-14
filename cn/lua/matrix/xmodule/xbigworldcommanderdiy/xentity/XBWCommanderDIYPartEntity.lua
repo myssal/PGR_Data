@@ -75,6 +75,18 @@ function XBWCommanderDIYPartEntity:IsSuit()
     return false
 end
 
+function XBWCommanderDIYPartEntity:IsPreview()
+    if not self:IsNil() then
+        return self._Model:GetDlcPlayerFashionPartIsPreviewById(self:GetPartId())
+    end
+
+    return false
+end
+
+function XBWCommanderDIYPartEntity:IsDisplay()
+    return self:IsUnlock() or self:IsPreview()
+end
+
 function XBWCommanderDIYPartEntity:IsAttired()
     if self:IsTemporary() then
         return self._OwnControl:CheckEmptyPartEntityIsUse(self)
@@ -94,6 +106,18 @@ function XBWCommanderDIYPartEntity:IsNow()
         if not self:IsNil() then
             return self._OwnControl:CheckPartEntityIsNow(self)
         end
+    end
+
+    return false
+end
+
+function XBWCommanderDIYPartEntity:IsNew()
+    if self:IsTemporary() then
+        return false
+    end
+
+    if self:IsPreview() and self:IsUnlock() then
+        return not self._OwnControl:CheckPartRecord(self:GetPartId())
     end
 
     return false
@@ -211,6 +235,22 @@ function XBWCommanderDIYPartEntity:GetPartModelIdByGender(gender)
     return ""
 end
 
+function XBWCommanderDIYPartEntity:GetModelId()
+    local gender = self._Model:GetValidGender(self:GetCurrentGender())
+
+    return self:GetModelIdByGender(gender)
+end
+
+function XBWCommanderDIYPartEntity:GetModelIdByGender(gender)
+    if self:IsFashion() then
+        return self:GetFashionModelIdByGender(gender)
+    elseif not self:IsSuit() then
+        return self:GetPartModelIdByGender(gender)
+    end
+
+    return nil
+end
+
 function XBWCommanderDIYPartEntity:GetUseColorId()
     return self._OwnControl:GetPartCurrentUseColor(self:GetPartId())
 end
@@ -226,10 +266,15 @@ function XBWCommanderDIYPartEntity:GetUseMaterialConfigs()
 end
 
 function XBWCommanderDIYPartEntity:GetUseMaterialConfigsByGender(gender)
-    local partModelId = self:GetPartModelIdByGender(gender)
-    local colorId = self:GetUseColorIdByGender(gender)
+    local modelId = self:GetModelIdByGender(gender)
 
-    return self._OwnControl:GetMaterialConfigs(partModelId, colorId)
+    if modelId then
+        local colorId = self:GetUseColorIdByGender(gender)
+        
+        return self._OwnControl:GetMaterialConfigs(modelId, colorId)
+    end
+
+    return {}
 end
 
 function XBWCommanderDIYPartEntity:GetPriority()
@@ -245,6 +290,12 @@ function XBWCommanderDIYPartEntity:Dress()
         self._OwnControl:ClearUsePartEntity(self)
     else
         self._OwnControl:SetUsePartEntity(self)
+    end
+end
+
+function XBWCommanderDIYPartEntity:Record()
+    if not self:IsTemporary() and self:IsPreview() and self:IsUnlock() then
+        self._OwnControl:RecordPart(self:GetPartId())
     end
 end
 

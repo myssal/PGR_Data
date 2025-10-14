@@ -13,7 +13,7 @@ local TableKey =
     WeaponSkillPool = { CacheType = XConfigUtil.CacheType.Normal },
     EquipAwake = { CacheType = XConfigUtil.CacheType.Normal },
     WeaponOverrun = { CacheType = XConfigUtil.CacheType.Normal },
-    CharacterSuitPriority = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId"},
+    CharacterSuitPriority = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId", CacheType = XConfigUtil.CacheType.Normal},
     EquipRes = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     EquipModel = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     EquipModelTransform = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
@@ -112,6 +112,7 @@ function XEquipModel:ReleaseEquipDic()
 end
 
 -- 获取装备的XEquip对象实例
+---@return XEquip
 function XEquipModel:GetEquip(equipId)
     local equip = self.EquipDic[equipId]
     if equip then 
@@ -171,11 +172,7 @@ end
 -- 获取装备的配置表Id
 function XEquipModel:GetEquipTemplateId(equipId)
     local equip = self:GetEquip(equipId)
-    if equip then
-        return equip.TemplateId
-    else
-        XLog.Error("获取装备配置表Id失败，传入的equipId为"..tostring(equipId))
-    end
+    return equip.TemplateId
 end
 
 function XEquipModel:GetEquipWearingCharacterId(equipId)
@@ -306,6 +303,7 @@ end
 --- 获取成员身上的所有装备实例
 ---@param characterId number 成员Id
 ---@param isUseTempList table 是否使用复用的临时列表
+---@return XEquip[]
 function XEquipModel:GetCharacterEquips(characterId, isUseTempList)
     if isUseTempList then
         self.TempList = {}
@@ -537,7 +535,7 @@ end
 function XEquipModel:GetCanDecomposeWeaponIds()
     local weaponIds = {}
     for k, v in pairs(self.EquipDic) do
-        if v:IsWeapon() and not self:IsWearing(v.Id) and not self:IsLock(v.Id) then
+        if v:IsWeapon() and not self:IsWearing(v.Id) and not self:IsLock(v.Id) and not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(v.Id) then
             table.insert(weaponIds, k)
         end
     end
@@ -549,7 +547,7 @@ function XEquipModel:GetCanDecomposeAwarenessIdsBySuitId(suitId)
     local equipIds = self:GetEquipIdsBySuitId(suitId)
     for _, equipId in pairs(equipIds) do
         local templeteId = self:GetEquipTemplateId(equipId)
-        if self:IsEquipAwareness(templeteId) and not self:IsWearing(equipId) and not self:IsInSuitPrefab(equipId) and not self:IsLock(equipId) then
+        if self:IsEquipAwareness(templeteId) and not self:IsWearing(equipId) and not self:IsInSuitPrefab(equipId) and not self:IsLock(equipId) and not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(equipId) then
             table.insert(awarenessIds, equipId)
         end
     end
@@ -821,6 +819,11 @@ function XEquipModel:GetResonanceSkillInfo(equipId, pos)
     end
 
     return skillInfo
+end
+
+function XEquipModel:GetWeaponResonanceSkillInfoBySkillId(skillId)
+    local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+    return XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
 end
 
 function XEquipModel:GetResonanceSkillInfoByEquipData(equip, pos)
@@ -1239,6 +1242,9 @@ function XEquipModel:InitConfig()
     self._ConfigUtil:InitConfigByTableKey("Equip/EquipGuide", EquipGuideTableKey)
 
     self:InitEquipLevelUpConfig()
+    self:InitWeaponSkillPoolConfig()
+    self:InitEquipModelTransformConfig()
+    self:InitEquipAnimResetConfig()
 end
 
 ---------------------------------------- #region Equip ----------------------------------------
@@ -2079,12 +2085,8 @@ end
 
 
 ---------------------------------------- #region WeaponSkillPool ----------------------------------------
--- 初始化武器共鸣技能池子
+-- 缓存武器共鸣技能池子
 function XEquipModel:InitWeaponSkillPoolConfig()
-    if self.WeaponSkillPoolTemplate then 
-        return
-    end
-    
     self.WeaponSkillPoolTemplate = {}
     local skillPoolCfgs = self:GetConfigWeaponSkillPool()
     for _, config in pairs(skillPoolCfgs) do
@@ -2112,7 +2114,6 @@ function XEquipModel:GetConfigWeaponSkillPool(id)
 end
 
 function XEquipModel:GetWeaponSkillPoolSkillIds(poolId, characterId)
-    self:InitWeaponSkillPoolConfig()
     local template = self.WeaponSkillPoolTemplate[poolId]
     if not template then
         XLog.ErrorTableDataNotFound("XEquipModel:GetWeaponSkillPoolSkillIds", "template", "Share/Equip/WeaponSkillPool.tab", "poolId", tostring(poolId))
@@ -2614,10 +2615,6 @@ end
 ---------------------------------------- #region EquipModelTransform ----------------------------------------
 -- 缓存装备模型Transform配置
 function XEquipModel:InitEquipModelTransformConfig()
-    if self.EquipModelTransformTemplates then
-        return
-    end
-    
     self.EquipModelTransformTemplates = {}
     local modelTranCfgs = self:GetConfigEquipModelTransform()
     for _, config in pairs(modelTranCfgs) do
@@ -2653,7 +2650,6 @@ function XEquipModel:GetEquipModelTransformCfg(templateId, uiName, resonanceCoun
         end
     end
 
-    self:InitEquipModelTransformConfig()
     template = self.EquipModelTransformTemplates[modelTransId]
     if template then
         modelCfg = template[uiName]
@@ -3097,10 +3093,6 @@ end
 ---------------------------------------- #region EquipAnimReset -----------------------------------------
 -- 缓存装备动画是否重置
 function XEquipModel:InitEquipAnimResetConfig()
-    if self.EquipAnimResetDic then
-        return
-    end
-    
     self.EquipAnimResetDic = {}
     local animResetCfgs = self:GetConfigEquipAnimReset()
     for _, v in pairs(animResetCfgs) do
@@ -3122,7 +3114,6 @@ function XEquipModel:GetConfigEquipAnimReset(id)
 end
 
 function XEquipModel:GetEquipAnimIsReset(modelId)
-    self:InitEquipAnimResetConfig()
     return self.EquipAnimResetDic[modelId] or false
 end
 ---------------------------------------- #endregion EquipAnimReset ----------------------------------------
@@ -3394,6 +3385,12 @@ function XEquipModel:SortEquipIdListByPriorType(equipIdList, priorSortType)
         local bWearing = self:IsWearing(bId) and 1 or 0
         if aWearing ~= bWearing then
             return aWearing < bWearing
+        end
+
+        local isInPrefabA = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(aId) or self:IsInSuitPrefab(aId)
+        local isInPrefabB = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(bId) or self:IsInSuitPrefab(bId)
+        if isInPrefabA ~= isInPrefabB then
+            return not isInPrefabA
         end
 
         return sortFunc(aId, bId)

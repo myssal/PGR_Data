@@ -21,9 +21,15 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
     self._EnvId = paramId
     self._IsForceOpen = self._EnvId ~= nil
     self._RecordId = recordId
+    self._TaskUIs = {}
+    self._X3CExit = false
+
+    self._LastNpcActiveStatus = XMVCA.XBigWorldGamePlay:GetCurNpcActive()
     self.PanelPhotographTask.gameObject:SetActive(self._IsForceOpen)
+
     if self._IsForceOpen then
         self._ParamConfig = self._Control:GetParamConfigById(self._EnvId)
+        XTool.UpdateDynamicItem(self._TaskUIs, nil, self.GridObjective, XUiBigWorldPhotographControlQuestGrid, self)
     end
     if not self._ParamConfig then
         self._ParamConfig = self._Control:GetParamConfigById(defaultConfigId)
@@ -38,47 +44,73 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
     self.BtnQuit.gameObject:SetActive(not self._ParamConfig.HideClose)
     self.BtnMenu.gameObject:SetActive(not self._ParamConfig.HideMenu)
     self.BtnAlbum.gameObject:SetActive(not self._ParamConfig.HideAlbum)
-    self.SliderRotate.gameObject:SetActive(not self._ParamConfig.HideCharRotate)
     self.SliderScale.gameObject:SetActive(not self._DisableCameraOperation)
 
     self.ImgBg.gameObject:SetActive(false)
     self._isShowMenu = self.ImgBg.gameObject.activeSelf
 
-    self._SettingConfig = {
-        {
+    self._SettingConfig = {}
+    local hideNpcIndex = false
+    if not self._ParamConfig.HideNpc then
+        hideNpcIndex = #self._SettingConfig + 1
+        local configA = {
             Name = XMVCA.XBigWorldService:GetText("SG_P_HideNpc"),
             IsOn = false,
             Callback = function(isOn)
-                self._SettingConfig[1].IsOn = isOn
+                self._SettingConfig[hideNpcIndex].IsOn = isOn
                 XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not isOn)
             end,
-        },
-        {
+        }
+        table.insert(self._SettingConfig, configA)
+    end
+
+    self._HideCharTag = false
+    local hideSelfIndex = false
+    if not self._ParamConfig.HideChar then
+        hideSelfIndex = #self._SettingConfig + 1
+        local configB = {
             Name = XMVCA.XBigWorldService:GetText("SG_P_HideSelf"),
             IsOn = false,
             Callback = function(isOn)
-                self._SettingConfig[2].IsOn = isOn
-                XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(not isOn, false)
-                self.SliderRotate.gameObject:SetActive(not isOn)
+                self._SettingConfig[hideSelfIndex].IsOn = isOn
+                XMVCA.XBigWorldGamePlay:SetCurNpcActive(not isOn)
+                self._HideCharTag = isOn
+                self:ShowPersonButton()
             end,
-        },
-        {
-            Name = XMVCA.XBigWorldService:GetText("SG_P_LookAt"),
-            IsOn = false,
-            Callback = function(isOn)
-                self._SettingConfig[3].IsOn = isOn
-                XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(isOn)
-            end,
-        },
-        {
-            Name = XMVCA.XBigWorldService:GetText("SG_P_AutoSave"),
-            IsOn = self._Control:GetAutoSave(),
-            Callback = function(isOn)
-                self._SettingConfig[4].IsOn = isOn
-                self._Control:SetAutoSave(isOn)
-            end,
-        },
+        }
+        table.insert(self._SettingConfig, configB)
+    end
+
+    local lookatIndex = #self._SettingConfig + 1
+    local configC = {
+        Name = XMVCA.XBigWorldService:GetText("SG_P_LookAt"),
+        IsOn = false,
+        Callback = function(isOn)
+            self._SettingConfig[lookatIndex].IsOn = isOn
+            XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(isOn)
+        end,
     }
+    table.insert(self._SettingConfig, configC)
+    
+    local saveIndex = #self._SettingConfig + 1
+    local configD = {
+        Name = XMVCA.XBigWorldService:GetText("SG_P_AutoSave"),
+        IsOn = self._Control:GetAutoSave(),
+        Callback = function(isOn)
+            self._SettingConfig[saveIndex].IsOn = isOn
+            self._Control:SetAutoSave(isOn)
+        end,
+    }
+    table.insert(self._SettingConfig, configD)
+
+    -- 初始化设置
+    if hideSelfIndex then
+        self._SettingConfig[hideSelfIndex].Callback(self._ParamConfig.HideChar)
+    end
+    local isLookAt = self._ParamConfig.InitLookAtCamera
+    if isLookAt then
+        self._SettingConfig[lookatIndex].Callback(isLookAt)
+    end
 
     if self._ParamConfig.HideCameraMove then
         self.OnPcPressCb = function () end
@@ -113,12 +145,13 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
     self._moveVec2 = CS.UnityEngine.Vector2.zero
 
     local PhotographArgs = {
-        ResetRotation = self._ParamConfig.ResetRotation,
         WidthDetectionRatio = widthDetectionRatio,
         HeightDetectionRatio = heightDetectionRatio,
         InitCharRotate = self._ParamConfig.InitCharRotate,
         UseInitCameraZoom = self._ParamConfig.UseInitCameraZoom,
         InitCameraZoom = self._ParamConfig.InitCameraZoom,
+        MinDistance = self._ParamConfig.MinDistance,
+        MaxDistance = self._ParamConfig.MaxDistance,
         UseInitCameraMove = self._ParamConfig.UseInitCameraMove,
         InitCameraMoveX = self._ParamConfig.InitCameraMoveX,
         InitCameraMoveY = self._ParamConfig.InitCameraMoveY,
@@ -149,12 +182,7 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
     self:SetScaleValue(self._scaleValue, true)
     self.SliderRotate:SetValueWithoutNotify(self._defaultRotateValue)
 
-    -- 初始化设置
-    self._SettingConfig[2].Callback(self._ParamConfig.HideCharRotate)
-    local isLookAt = self._ParamConfig.InitLookAtCamera
-    if isLookAt then
-        self._SettingConfig[3].Callback(isLookAt)
-    end
+    self:ShowPersonButton()
 end
 
 function XUiBigWorldPhotographControl:_AddUpdateTimerLoop()
@@ -182,6 +210,7 @@ end
 
 function XUiBigWorldPhotographControl:UpdateMoveDirectionFunc(vec2)
     self._moveVec2 = vec2 * self.MoveSpeedScale
+    self._IsUpdateMoveDirectionFunc = true
 end
 
 function XUiBigWorldPhotographControl:OnDynamicTableEvent(event, index, grid)
@@ -217,8 +246,10 @@ function XUiBigWorldPhotographControl:OnEnable()
 end
 
 function XUiBigWorldPhotographControl:_UpdateHandler()
-    if self._moveVec2 == CS.UnityEngine.Vector2.zero then return end
+    if not self._moveVec2 then return end
+    if not self._IsUpdateMoveDirectionFunc and self._moveVec2 == CS.UnityEngine.Vector2.zero then return end
     XMVCA.XBigWorldAlbum:X3CCameraPhotographSetOffset(self._moveVec2.x, self._moveVec2.y)
+    self._IsUpdateMoveDirectionFunc = false
 end
 
 function XUiBigWorldPhotographControl:OnDisable()
@@ -235,9 +266,13 @@ end
 
 function XUiBigWorldPhotographControl:OnDestroy()
     XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(false)
-    XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+    if not self._X3CExit then
+        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+        self._X3CExit = true
+    end
     XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(true)
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(true, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(self._LastNpcActiveStatus)
+    XMVCA.XBigWorldLoading:CloseBlackMaskLoading()
 end
 
 function XUiBigWorldPhotographControl:OnBtnMenuClick()
@@ -340,7 +375,21 @@ function XUiBigWorldPhotographControl:OnBtnRestoreClick()
 end
 
 function XUiBigWorldPhotographControl:OnBtnQuitClick()
-    self:Close()
+    -- 黑屏
+    XMVCA.XBigWorldLoading:OpenBlackMaskLoading(function()
+        if not self._X3CExit then
+            XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+            self._X3CExit = true
+        end
+    end)
+        self:Close()
+end
+
+function XUiBigWorldPhotographControl:ShowPersonButton()
+    local isShowCharCtrl = not self._ParamConfig.HideCharRotate and not self._HideCharTag
+    self.SliderRotate.gameObject:SetActive(isShowCharCtrl)
+    self.BtnL.gameObject:SetActive(isShowCharCtrl)
+    self.BtnR.gameObject:SetActive(isShowCharCtrl)
 end
 
 function XUiBigWorldPhotographControl:_RegisterButtonClicks()
@@ -406,7 +455,6 @@ function XUiBigWorldPhotographControl:UpdateTargetDetection(detectedActorIdsDic,
     end
 
     if self._EnvId then
-        if not self._TaskUIs then self._TaskUIs = {} end
         XTool.UpdateDynamicItem(self._TaskUIs, self._TargetShowDatas, self.GridObjective, XUiBigWorldPhotographControlQuestGrid, self)
     end
     self.BtnPhotograph:ShowTag(hasDetectedAllQuestObjTarget)

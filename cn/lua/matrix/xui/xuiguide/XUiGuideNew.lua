@@ -1,11 +1,23 @@
 ---@class XUiGuideNew : XLuaUi
 ---@field Guide XGuide
+---@field BtnPassStyleCtrl XUiComponent.XUiStateControl
 local XUiGuideNew = XLuaUiManager.Register(XLuaUi, "UiGuide")
+local XUiPanelGuideBubble = require('XUi/XUiGuide/XUiPanelGuideBubble')
 
 --V3.6 点击继续指引的 遮罩区域形式
 XUiGuideNew.XUIGuideMaskClickAreaType = {
     ClickMaskArea = 0, --仅能点击遮罩内的区域
     ClickAnyWhere = 1, --能点击任意地方
+}
+
+local FocusStyle = {
+    Base = 0, -- 默认样式框
+    Bubble = 1, -- 气泡框
+}
+
+local FocusStyleEnum2StateName = {
+    [FocusStyle.Base] = 'BaseStyle',
+    [FocusStyle.Bubble] = 'BubbleStyle',
 }
 
 function XUiGuideNew:OnAwake()
@@ -56,11 +68,30 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         self:ShowDialog(icon, name, guideDesc, anchor, anchor, CS.UnityEngine.Vector2(500 + offsetX, -380 + offsetY))
         self:FocusOnFightPanel(targetImg)
         
-        self.UiWidget = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass").gameObject:AddComponent(typeof(CS.XUiWidget))
+        self.UiWidget = self.BtnPass.gameObject:AddComponent(typeof(CS.XUiWidget))
         self.UiWidget:AddPointerDownListener(function(eventData)
-            self.Transform:Find("SafeAreaContentPane").gameObject:SetActive(false)
-            self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide"):GetComponent("Image").enabled = false
-            self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass/Bg").gameObject:SetActive(false)
+            --todo 针对UI资源未打包的兼容
+            if self.SafeAreaContentPane then
+                self.SafeAreaContentPane.gameObject:SetActive(false)
+            else
+                self.Transform:Find("SafeAreaContentPane").gameObject:SetActive(false)
+            end
+
+            if self.BtnPanelMaskGuide then
+                self.BtnPanelMaskGuide:GetComponent("Image").enabled = false
+            else
+                self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide"):GetComponent("Image").enabled = false
+            end
+            
+            local bgUi = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass/BaseStyle/Bg")
+
+            if not bgUi then
+                bgUi = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide/BtnPass/Bg")
+            end
+
+            if bgUi then
+                bgUi.gameObject:SetActive(false)
+            end
         end)
         --V3.6 增加点击区域设置 
         self.UiWidget:AddPointerUpListener(function(eventData)
@@ -91,6 +122,14 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
     --         self.Callback = nil
     --     end
     -- end)
+
+    --- 初始化气泡框
+    if self.PanelBubbleRoot then
+
+        ---@type XUiPanelGuideBubble
+        self.PanelBubbleRoot.gameObject:SetActiveEx(false)
+        self.PanelBubble = XUiPanelGuideBubble.New(self.PanelBubbleRoot, self)
+    end
 end
 
 function XUiGuideNew:OnDestroy()
@@ -196,7 +235,7 @@ function XUiGuideNew:HideDialog()
 end
 
 --聚焦panel
-function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offset, passAll)
+function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offset, passAll, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
     eulerAngles = eulerAngles or CS.UnityEngine.Vector3.zero
     sizeDelta = sizeDelta or CS.UnityEngine.Vector2.zero
     offset = offset or CS.UnityEngine.Vector2.zero
@@ -213,6 +252,34 @@ function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offs
     if self.AniGuideJiaoLoop then
         self.AniGuideJiaoLoop.gameObject:SetActive(false)
         self.AniGuideJiaoLoop.gameObject:SetActive(true)
+    end
+
+    focusStyle = focusStyle or FocusStyle.Base
+
+    if self.BtnPassStyleCtrl then
+        self.BtnPassStyleCtrl:ChangeState(FocusStyleEnum2StateName[focusStyle])
+    end
+
+    if focusStyle == FocusStyle.Bubble then
+        local textCfg = XDataCenter.GuideManager.GetGuideTextTemplate(bubbleTextId)
+
+        if not textCfg or string.IsNilOrEmpty(textCfg.Content) then
+            XLog.Error('无效文本，切换回默认样式')
+
+            if self.BtnPassStyleCtrl then
+                self.BtnPassStyleCtrl:ChangeState(FocusStyleEnum2StateName[FocusStyle.Base])
+                return
+            end
+        end
+
+        if self.PanelBubble then
+            self.PanelBubble:Open()
+            self.PanelBubble:ShowBubble(bubbleIndex, textCfg, bubblePosOffset)
+        end
+    else
+        if self.PanelBubble then
+            self.PanelBubble:Close()
+        end
     end
 end
 
@@ -259,3 +326,4 @@ end
 function XUiGuideNew:ShowBtnMask(Enable)
     self.BtnMaskAll.gameObject:SetActive(Enable)
 end 
+

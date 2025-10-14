@@ -12,6 +12,7 @@ local NodeTypeToClass = {
     [XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterMain] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5PVEBattleChapterMainNode"),
     [XMVCA.XTheatre5.EnumConst.PVENodeType.ItemBoxSelect] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5ItemBoxSelectNode"),
     [XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterInit] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5BattleChapterInitNode"),
+    [XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5SelectRelicNode"),
 }
 
 function XTheatre5PVELink:Ctor()
@@ -41,20 +42,36 @@ function XTheatre5PVELink:_AddStartNode(storyLineId, storyEntranceId, characterI
     --章节战斗中：多类型的故事线还有复刷章节
     local chapterBattleData = self._Model.PVEAdventureData:GetCurChapterBattleData()
     if chapterBattleData then
+        -- 选择饰品
+        if XMVCA.XTheatre5:HasRelicToSelect() then
+            self:AddSelectRelicNode()
+            return
+        end
         local itemBoxSelectData = self._Model.PVEAdventureData:GetItemBoxSelectData()
         local hasItemBoxSelect = not XTool.IsTableEmpty(itemBoxSelectData)
-        local canPveBattle = self._Model.PVEAdventureData:CanPveBattle()
-        local isEventNoStart = self._Model.PVEAdventureData:IsEventNoStart()
-        if hasItemBoxSelect then          --先三选一,取第一个
+        if hasItemBoxSelect then
+            --先三选一,取第一个
             self:AddItemBoxSelectNode()
-        elseif canPveBattle then          --可以战斗了
+            return
+        end
+        local canPveBattle = self._Model.PVEAdventureData:CanPveBattle()
+        if canPveBattle then
+            --可以战斗了
             self:AddBattleNode(chapterBattleData)
-        elseif isEventNoStart then        --章节最开始的状态
+            if self._Model.PVEAdventureData:IsEventNoStart() then
+                XLog.Warning("[XTheatre5PVELink] 修复因为策划去掉事件, 导致的战斗出来后黑屏的问题")
+            end
+            return
+        end
+        local isEventNoStart = self._Model.PVEAdventureData:IsEventNoStart()
+        if isEventNoStart then
+            --章节最开始的状态
             self:AddChapterMainNode(chapterBattleData)
-        else                              --执行事件
-            local curEventId = self._Model.PVEAdventureData:GetCurEventId()
-            self:AddEventNode(curEventId)
-        end    
+            return
+        end
+        --执行事件
+        local curEventId = self._Model.PVEAdventureData:GetCurEventId()
+        self:AddEventNode(curEventId)
         return
     end
     --开始复刷章节   
@@ -62,11 +79,11 @@ function XTheatre5PVELink:_AddStartNode(storyLineId, storyEntranceId, characterI
     if isStoryLineCompleted and XTool.IsNumberValid(storyEntranceId) then
         self:AddChapterBattleInitNode(characterId, storyEntranceId)  --只有副刷章节传入口id
         return
-    end    
+    end
     if not XTool.IsNumberValid(curContentId) then
         XLog.Error(string.format("故事线未解锁,storyLineId:%s", storyLineId))
         return
-    end    
+    end
     local contentCfg = self._Model:GetStoryLineContentCfg(curContentId)
     if contentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.Deduce then
         self:AddDeduceNode()
@@ -80,7 +97,7 @@ function XTheatre5PVELink:_AddStartNode(storyLineId, storyEntranceId, characterI
         self:AddChapterBattleInitNode(characterId)
     elseif contentCfg.ContentType == XMVCA.XTheatre5.EnumConst.PVEChapterType.NormalBattle then
         self:AddChapterBattleInitNode(characterId)
-    end               
+    end
 end
 
 --推演
@@ -101,7 +118,7 @@ end
 
 --故事线结束
 function XTheatre5PVELink:AddStoryLineEndNode(stroryLineContentId)
-    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.StoryLineEnd,stroryLineContentId)
+    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.StoryLineEnd, stroryLineContentId)
 end
 
 --主章节
@@ -116,7 +133,7 @@ end
 
 --事件
 function XTheatre5PVELink:AddEventNode(eventId)
-    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.Event,eventId)
+    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.Event, eventId)
 end
 
 --宝箱三选一
@@ -124,19 +141,24 @@ function XTheatre5PVELink:AddItemBoxSelectNode()
     self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.ItemBoxSelect)
 end
 
+--选择饰品
+function XTheatre5PVELink:AddSelectRelicNode()
+    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic)
+end
+
 --章节战斗初始化
 function XTheatre5PVELink:AddChapterBattleInitNode(storyEntranceId, characterId)
     self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterInit, storyEntranceId, characterId)
 end
 
-function XTheatre5PVELink:AddCurNodeCompletedCallback(nodeType ,cb)
+function XTheatre5PVELink:AddCurNodeCompletedCallback(nodeType, cb)
     if not self._HeadNode then
         return
-    end    
+    end
     if self._HeadNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Running and
-        self._HeadNode.NodeType == nodeType then
+            self._HeadNode.NodeType == nodeType then
         self._HeadNode:AddCurNodeCompletedCallback(cb)
-    end    
+    end
 end
 
 function XTheatre5PVELink:GetCurRunningNodeStoryLineId(nodeType)
@@ -148,11 +170,10 @@ function XTheatre5PVELink:GetCurRunningNodeStoryLineContentId()
 end
 
 function XTheatre5PVELink:GetCurRunningNodeState()
-     return self._HeadNode and self._HeadNode:GetPveNodeState()
+    return self._HeadNode and self._HeadNode:GetPveNodeState()
 end
 
-
-function XTheatre5PVELink:_AddNode(nodeType,...)
+function XTheatre5PVELink:_AddNode(nodeType, ...)
     if nodeType and NodeTypeToClass[nodeType] then
         local node = NodeTypeToClass[nodeType].New(self._MainControl, self.NodeCompleted, self, self._CurStoryLineId, self._CurStoryLineContentId, nodeType)
         node:SetData(...)
@@ -161,12 +182,12 @@ function XTheatre5PVELink:_AddNode(nodeType,...)
             self._HeadNode = node
         else
             tail.NextNode = node
-        end    
+        end
         -- if self:_HasCycle(self._HeadNode) then
         --     self._HeadNode = nil
         --     XLog.Error("rouge5故事线单链表有环")
         -- end    
-    end                      
+    end
 end
 
 --执行节点
@@ -177,26 +198,35 @@ function XTheatre5PVELink:Excute()
     if self._HeadNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Idle then
         self._HeadNode:Enter()
     elseif self._HeadNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Completed then
-        self:NodeCompleted(self._HeadNode)      
-    end               
+        self:NodeCompleted(self._HeadNode)
+    end
 end
 
-function XTheatre5PVELink:NodeCompleted(node)  
+function XTheatre5PVELink:NodeCompleted(node)
     local nextNode = node.NextNode
-    if not nextNode then --链表结束了
+    if not nextNode then
+        --链表结束了
         return
-    end    
+    end
     if nextNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Idle then
         self._HeadNode = nextNode
         nextNode:Enter()
     elseif nextNode:GetPveNodeState() == XMVCA.XTheatre5.EnumConst.PVENodeState.Completed then
-        self:NodeCompleted(nextNode)      
-    end    
+        self:NodeCompleted(nextNode)
+    end
 end
 
 -- 用uid解决两个相同类型的节点不能连续添加的问题
-function XTheatre5PVELink:OnChapterBattlePromote(curNodeUid,NextNodeType, ...)
+function XTheatre5PVELink:OnChapterBattlePromote(curNodeUid, NextNodeType, ...)
     if not self._HeadNode or self._HeadNode:GetPveNodeState() ~= XMVCA.XTheatre5.EnumConst.PVENodeState.Running or self._HeadNode.NextNode then
+        -- 这个东西不能打印, 会死循环
+        --XLog.Error(self._HeadNode)
+        if self._HeadNode then
+            XLog.Error(self._HeadNode:GetPveNodeState())
+            if self._HeadNode.NextNode then
+                XLog.Error(self._HeadNode.NextNode.NodeType)
+            end
+        end
         return
     end
     if not XTool.IsNumberValid(curNodeUid) or self._HeadNode:GetUid() ~= curNodeUid then
@@ -210,8 +240,8 @@ function XTheatre5PVELink:OnChapterBattlePromote(curNodeUid,NextNodeType, ...)
         self:AddItemBoxSelectNode()
     elseif NextNodeType == XMVCA.XTheatre5.EnumConst.PVENodeType.Battle then
         self:AddBattleNode(...)
-    end    
-    self._HeadNode:Exit()        
+    end
+    self._HeadNode:Exit()
 end
 
 --快慢指针检测单链表是否有环
@@ -238,7 +268,7 @@ function XTheatre5PVELink:_GetLinkTail()
     while tail and tail.NextNode do
         tail = tail.NextNode
     end
-    return tail   
+    return tail
 end
 
 function XTheatre5PVELink:Exit()

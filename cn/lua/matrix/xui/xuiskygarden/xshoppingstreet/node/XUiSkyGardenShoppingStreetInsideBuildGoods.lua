@@ -175,9 +175,9 @@ function XUiSkyGardenShoppingStreetInsideBuildGoods:OnGridSmallGoodsClick(index,
     self._SelectGoodsId[goodId] = not self._SelectGoodsId[goodId]
     self._GoodsList[index]:SetSelect(self._SelectGoodsId[goodId])
     if self._SelectGoodsId[goodId] then
-        CS.XAudioManager.PlayAudio(5700030)
+        self.XAudioObjectPlayer:PlayByKeyName("Select")
     else
-        CS.XAudioManager.PlayAudio(5700031)
+        self.XAudioObjectPlayer:PlayByKeyName("Unselect")
     end
 
     if self._SelectGoodsId[goodId] then

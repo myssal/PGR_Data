@@ -29,91 +29,132 @@ function XBigWorldCommanderDIYAgency:UpdateData(gender, fashionList, commanderFa
 end
 
 ---@param displayController XUiModelDisplayController
-function XBigWorldCommanderDIYAgency:LoadCurrentModel(displayController, camera, parent)
+function XBigWorldCommanderDIYAgency:SetLookAtIK(displayController, target, lerpTime)
     if not displayController then
         return
     end
-
-    local modelId, isExist = self:LoadFashionModel(displayController, camera, parent)
-
-    if not isExist then
-        self:LoadAllPartModel(displayController, camera, parent, modelId)
-        self:LoadMaterials(displayController, modelId)
-    end
-
-    return modelId
-end
-
----@param displayController XUiModelDisplayController
-function XBigWorldCommanderDIYAgency:LoadFashionModel(displayController, camera, parent)
-    if not displayController then
-        return
-    end
-
-    local modelId = ""
-    local isExist = false
-    local wearDataMap = self._Model:GetWearDataMap()
-
-    for typeId, wearData in pairs(wearDataMap) do
+    local modelId, componentId
+    
+    local wearDataDict = self._Model:GetWearDataMap()
+    
+    for typeId, wearData in pairs(wearDataDict) do
         if wearData:IsFashion() and wearData:IsWaeredPart() then
             local fashionId = wearData:GetCurrentFashionId()
 
             if XTool.IsNumberValid(fashionId) then
                 modelId = wearData:GetModelId()
-
-                if not displayController:IsModelExist(modelId) then
-                    local helper = displayController:GetDisplayHelper()
-                    local modelInfo = helper.CreateBWCommonModelDisplayInfo(modelId, camera, parent, typeId)
-
-                    displayController:AddModel(modelInfo)
-                else
-                    displayController:SetModelActive(modelId, true)
-                    isExist = true
-                end
+                componentId = typeId
+                break
             end
-
-            break
         end
     end
+    if modelId and componentId then
+        displayController:SetLookAtIKWithInfo(modelId, componentId, target, lerpTime)
+    end
+end
 
+---@param displayController XUiModelDisplayController
+function XBigWorldCommanderDIYAgency:DisableLookAtIK(displayController)
+    if not displayController then
+        return
+    end
+    local modelId, componentId
+
+    local wearDataDict = self._Model:GetWearDataMap()
+
+    for typeId, wearData in pairs(wearDataDict) do
+        if wearData:IsFashion() and wearData:IsWaeredPart() then
+            local fashionId = wearData:GetCurrentFashionId()
+
+            if XTool.IsNumberValid(fashionId) then
+                modelId = wearData:GetModelId()
+                componentId = typeId
+                break
+            end
+        end
+    end
+    if modelId and componentId then
+        displayController:DisableLookAtIK(modelId, componentId)
+    end
+end
+
+---@param displayController XUiModelDisplayController
+function XBigWorldCommanderDIYAgency:LoadCurrentModel(displayController, camera, parent, ikTarget)
+    if not displayController then
+        return
+    end
+
+    local modelId, isExist, fashionId
+    local wearData = self._Model:GetWearData(XEnumConst.PlayerFashion.PartType.Fashion)
+    if wearData and wearData:IsFashion() and wearData:IsWaeredPart() then
+        fashionId = wearData:GetCurrentFashionId()
+        if XTool.IsNumberValid(fashionId) then
+            modelId = wearData:GetModelId()
+            if not displayController:IsModelExist(modelId) then
+                isExist = false
+            else
+                isExist = true
+            end
+        end
+    else
+        XLog.Error("不存在穿戴数据！！！")
+        return modelId, isExist
+    end
+    if isExist then
+        displayController:SetParent(modelId, parent, false)
+        displayController:SetModelActive(modelId, true)
+    else
+        --加载模型 主体
+        local helper = displayController:GetDisplayHelper()
+        local modelInfo = helper.CreateBWCommonModelDisplayInfo(modelId, camera, parent, XEnumConst.PlayerFashion.PartType.Fashion, ikTarget)
+        modelInfo:InitComponentType(XEnumConst.UiModel.ComponentType.PartCombine)
+        displayController:AddModel(modelInfo)
+
+        if XTool.IsNumberValid(fashionId) then
+            helper.AddEffectInfos(modelInfo, fashionId)
+        end
+
+        --加载部位
+        self:LoadAllPartModel(displayController, camera, modelId)
+        --加载材质
+        self:LoadMaterials(displayController, modelId)
+    end
     return modelId, isExist
 end
 
 ---@param displayController XUiModelDisplayController
-function XBigWorldCommanderDIYAgency:LoadAllPartModel(displayController, camera, parent, modelId)
-    if not displayController then
+function XBigWorldCommanderDIYAgency:LoadAllPartModel(displayController, camera, modelId)
+    if not displayController or not displayController:IsModelExist(modelId) then
         return
     end
-    if not displayController:IsModelExist(modelId) then
-        return
-    end
-
     local model = displayController:GetModelObject(modelId, XEnumConst.PlayerFashion.PartType.Fashion)
 
     if XTool.UObjIsNil(model) then
         return
     end
-
     local wearDataMap = self._Model:GetWearDataMap()
-
+    local urls = {}
     for typeId, wearData in pairs(wearDataMap) do
-        if not displayController:IsModelComponentExist(modelId, typeId) then
-            if not wearData:IsFashion() and not wearData:IsSuit() and wearData:IsWaeredPart() then
-                local partModelId = wearData:GetModelId()
-
-                if not string.IsNilOrEmpty(partModelId) then
-                    local modelUrl = XMVCA.XBigWorldResource:GetPartModelUrlByPartId(partModelId)
-                    local helper = displayController:GetDisplayHelper()
-                    local modelInfo = helper.CreateBWModelDisplayInfo(modelId, modelUrl, nil, camera, parent, typeId)
-                    local boneData = helper.CreateBoneData(model.transform)
-
-                    modelInfo:InitComponentType(XEnumConst.UiModel.ComponentType.Materials)
-                    modelInfo:AddModelData(boneData)
-                    displayController:AddModelComponent(modelInfo)
-                end
-            end
+        --已经加载过了
+        if displayController:IsModelComponentExist(modelId, typeId) then
+            goto continue
         end
+        --只加载部位
+        if wearData:IsFashion() or wearData:IsSuit() then
+            goto continue
+        end
+        if not wearData:IsWaeredPart() then
+            goto continue
+        end
+        local partModelId = wearData:GetModelId()
+        if not string.IsNilOrEmpty(partModelId) then
+            local modelUrl = XMVCA.XBigWorldResource:GetPartModelUrlByPartId(partModelId)
+            urls[#urls + 1] = modelUrl
+        end
+        
+        ::continue::
     end
+    displayController:CombineParts(modelId, XEnumConst.PlayerFashion.PartType.Fashion, urls)
 end
 
 ---@param displayController XUiModelDisplayController
@@ -133,7 +174,8 @@ function XBigWorldCommanderDIYAgency:LoadMaterials(displayController, modelId)
 
             if materials then
                 for i = 0, materials.Count - 1 do
-                    displayController:SetModelComponentMaterials(modelId, typeId, materials[i].PartNodeName,
+                    --- 使用了战斗的组合逻辑，所有模型全在主骨架下
+                    displayController:SetModelComponentMaterials(modelId, XEnumConst.PlayerFashion.PartType.Fashion, materials[i].PartNodeName,
                         materials[i].MaterialPathList)
                 end
             end
@@ -277,6 +319,10 @@ end
 
 function XBigWorldCommanderDIYAgency:CheckTypeSuit(typeId)
     return self._Model:GetDlcPlayerFashionTypeIsSuitByTypeId(typeId)
+end
+
+function XBigWorldCommanderDIYAgency:CheckPartSuit(partId)
+    return self._Model:GetDlcPlayerFashionPartIsSuitPartById(partId)
 end
 
 function XBigWorldCommanderDIYAgency:CheckCurrentAllowSelectColor(partId)

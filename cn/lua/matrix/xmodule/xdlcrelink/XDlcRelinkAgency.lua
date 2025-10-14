@@ -13,6 +13,8 @@ function XDlcRelinkAgency:InitRpc()
     --实现服务器事件注册
     --XRpc.XXX
     XRpc.NotifyDlcRelinkData = handler(self, self.NotifyDlcRelinkData)
+    XRpc.NotifyDlcRelinkNewEquip = handler(self, self.NotifyDlcRelinkNewEquip)
+    XRpc.NotifyRelinkEquipAbsorb = handler(self, self.NotifyRelinkEquipAbsorb)
 end
 
 function XDlcRelinkAgency:InitEvent()
@@ -27,6 +29,22 @@ function XDlcRelinkAgency:NotifyDlcRelinkData(data)
         return
     end
     self._Model:NotifyActivityData(data)
+end
+
+function XDlcRelinkAgency:NotifyDlcRelinkNewEquip(data)
+    if not data then
+        return
+    end
+    if not self._Model.ActivityData then
+        return
+    end
+    for _, v in pairs(data.EquipDatas) do
+        self._Model.ActivityData:AddEquipsData(v)
+    end
+end
+
+function XDlcRelinkAgency:NotifyRelinkEquipAbsorb(data)
+    -- TODO
 end
 
 --endregion
@@ -50,7 +68,7 @@ function XDlcRelinkAgency:OpenMainUi()
     if not self:GetIsOpen() then
         return
     end
-    XLuaUiManager.Open("UiRelinkPopupChooseRoom")
+    XLuaUiManager.Open("UiDlcRelinkMain")
 end
 
 --endregion
@@ -83,6 +101,16 @@ function XDlcRelinkAgency:DlcReconnect()
         self:DlcInitFight()
         XMVCA.XDlcRoom:ReconnectToWorld()
     end)
+end
+
+function XDlcRelinkAgency:DlcOpenInviteUi(inviteData)
+    -- TODO 需要修改
+    XLuaUiManager.Open("UiDlcMultiPlayerInvitationPopup", inviteData)
+end
+
+function XDlcRelinkAgency:DlcCheckInviteUiShow()
+    -- TODO 需要修改
+    return XLuaUiManager.IsUiShow("UiDlcMultiPlayerInvitationPopup")
 end
 
 --endregion

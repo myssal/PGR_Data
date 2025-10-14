@@ -11,6 +11,7 @@ function XGame2048StageData:SetContext(stageContext)
         self._StageContext = stageContext
         self.BoardLv = stageContext.BoardLv
         self.FeverLeftRound = stageContext.FeverLeftRound
+        self.StartTime = stageContext.StartTime
     else
         self.Score = 0
         self.CurrentSteps = 0
@@ -92,6 +93,12 @@ function XGame2048StageData:RemoveGridData(data, inturn)
                     self._RemoveInTurnGrids = {}
                 end
                 table.insert(self._RemoveInTurnGrids, self.Grids[index])
+            else
+                if self._RemoveGridsMark == nil then
+                    self._RemoveGridsMark = {}
+                end
+
+                table.insert(self._RemoveGridsMark, self.Grids[index])
             end
             
             table.remove(self.Grids, index)
@@ -131,6 +138,10 @@ function XGame2048StageData:GetFeverLeftRound()
     return self.FeverLeftRound
 end
 
+function XGame2048StageData:GetStartTime()
+    return self.StartTime
+end
+
 function XGame2048StageData:AddFeverLeftRound(times)
     if not XTool.IsNumberValid(times) then
         return
@@ -152,6 +163,15 @@ end
 function XGame2048StageData:ClearLastInTurnData()
     self._InTurnGrids = nil
     self._RemoveInTurnGrids = nil
+end
+
+--- 缓存的是正常流程下的消除，如果已经请求服务端将结果缓存了，那么则清除客户端的缓存记录
+function XGame2048StageData:ClearRemoveMarkAfterServerRequest()
+    if not XTool.IsTableEmpty(self._RemoveGridsMark) then
+        for i = 1, #self._RemoveGridsMark do
+            self._RemoveGridsMark[i] = nil
+        end
+    end
 end
 
 function XGame2048StageData:GetGridInfos()
@@ -178,6 +198,13 @@ function XGame2048StageData:GetStageContextFromClient()
     if not XTool.IsTableEmpty(self._RemoveInTurnGrids) then
         for i, v in pairs(self._RemoveInTurnGrids) do
             table.insert(self.Grids, v)
+        end
+    end
+
+    if not XTool.IsTableEmpty(self._RemoveGridsMark) then
+        for i = 1, #self._RemoveGridsMark do
+            table.insert(self.Grids, self._RemoveGridsMark[i])
+            self._RemoveGridsMark[i] = nil
         end
     end
     

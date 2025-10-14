@@ -1,3 +1,4 @@
+---@class XUiGridEquip : XUiNode
 local XUiGridEquip = XClass(XUiNode, "XUiGridEquip")
 
 function XUiGridEquip:OnStart(clickCb)
@@ -129,6 +130,7 @@ function XUiGridEquip:UpdateUsing(equipId,idList)
     if XTool.UObjIsNil(self.PanelUsing) then return end
 
     --v1.28 装备头像
+    local wearingCharacterId = XMVCA.XEquip:GetEquipWearingCharacterId(equipId)
     if XMVCA.XEquip:IsWearing(equipId) then
         if not XTool.UObjIsNil(self.TxtUsingOrInSuitPrefab) then
             self.TxtUsingOrInSuitPrefab.text = CS.XTextManager.GetText("EquipGridUsingWords")
@@ -136,8 +138,7 @@ function XUiGridEquip:UpdateUsing(equipId,idList)
         self.PanelUsing.gameObject:SetActiveEx(true)
         if not XTool.UObjIsNil(self.PanelDefault) then self.PanelDefault.gameObject:SetActiveEx(false) end
         if not XTool.UObjIsNil(self.RImgRole) then
-            local characterId = XMVCA.XEquip:GetEquipWearingCharacterId(equipId)
-            local icon = XMVCA.XCharacter:GetCharBigRoundnessNotItemHeadIcon(characterId)
+            local icon = XMVCA.XCharacter:GetCharBigRoundnessNotItemHeadIcon(wearingCharacterId)
             self.RImgRole:SetRawImage(icon)
         end
     elseif XMVCA.XEquip:IsInSuitPrefab(equipId)
@@ -164,6 +165,25 @@ function XUiGridEquip:UpdateUsing(equipId,idList)
                 self.PanelUsing.gameObject:SetActiveEx(true) 
             end
         end
+    end
+
+    -- 如果没有实际穿戴则检测其是否在队伍预设里
+    if self.PanelNowPreset then
+        local characterId = self.Parent.CharacterId
+        local isCharIn = characterId and XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(self.EquipId, characterId)
+        local isShow = not XTool.IsNumberValid(wearingCharacterId) and isCharIn -- 预设标签必须要没有角色在装备它
+        self.PanelNowPreset.gameObject:SetActiveEx(isShow)
+        if isShow then
+            self.PanelNowPreset:GetObject("RImgRole"):SetRawImage(XMVCA.XCharacter:GetCharBigRoundnessNotItemHeadIcon(characterId))
+        end 
+    end
+
+    if self.PanelOtherPreset then
+        local characterId = self.Parent.CharacterId
+        local isCharIn = characterId and XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(self.EquipId, characterId)
+        local isEquipIn = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(self.EquipId)
+        local isShow = not XTool.IsNumberValid(wearingCharacterId) and not isCharIn and isEquipIn -- 其他预设标签必须要没有角色在装备或预设里
+        self.PanelOtherPreset.gameObject:SetActiveEx(isShow)
     end
 end
 

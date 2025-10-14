@@ -106,6 +106,7 @@ function XUiPanelMain:OnBtnChapterClicked()
     if not XMVCA.XSubPackage:CheckSubpackage(self.EntryType, self.CurrentChapter:GetId()) then
         return
     end
+    XMVCA.XMainLine2:RecordEnterChapterWay(XEnumConst.MAINLINE2.ENTER_CHAPTER_WAY_TYPE.FIGHT)
     if self.CurrentChapter.OnOpenChapterUi then
         self.CurrentChapter:OnOpenChapterUi()
         return

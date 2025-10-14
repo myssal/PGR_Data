@@ -6,7 +6,7 @@ local stringUtf8Len = string.Utf8Len
 
 local XMovieActionFullScreenDialog = XClass(XMovieActionBase, "XMovieActionFullScreenDialog")
 
-function XMovieActionFullScreenDialog:Ctor(actionData)
+function XMovieActionFullScreenDialog:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -42,6 +42,10 @@ function XMovieActionFullScreenDialog:IsBlock()
     return true
 end
 
+function XMovieActionFullScreenDialog:GetIsClose()
+    return self.IsClose
+end
+
 function XMovieActionFullScreenDialog:CanContinue()
     return not self.IsTyping
 end
@@ -50,8 +54,8 @@ function XMovieActionFullScreenDialog:OnUiRootDestroy()
     self:StopLastCv()
 end
 
-function XMovieActionFullScreenDialog:OnInit()
-    self.IsAutoPlay = XDataCenter.MovieManager.IsAutoPlay()
+function XMovieActionFullScreenDialog:OnEnter(isPassAction)
+    self.IsAutoPlay = XDataCenter.MovieManager.GetIsAutoPlay()
     self.UiRoot:SetBtnNextCallback(function() self:OnClickBtnSkipDialog() end)
     self.UiRoot.PanelFullScreenDialog.gameObject:SetActiveEx(true)
     self.UiRoot.GridSingleDialog.gameObject:SetActiveEx(false)
@@ -88,7 +92,7 @@ function XMovieActionFullScreenDialog:OnInit()
     end
 
     local cvId = self.CvId
-    if cvId ~= 0 then
+    if cvId ~= 0 and not isPassAction then
         self:StopLastCv()
         PlayingCvInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId)
     end
@@ -274,6 +278,28 @@ function XMovieActionFullScreenDialog:CheckHasNextPara()
     end
     
     return false
+end
+
+function XMovieActionFullScreenDialog:IsPassedActionRun(index)
+    if self.IsClose then return false end
+    
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionFullScreenDialog:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return action:GetIsClose()
+    end
+    return false
+end
+
+function XMovieActionFullScreenDialog:OnPassedActionRun()
+    self:OnEnter()
 end
 
 return XMovieActionFullScreenDialog

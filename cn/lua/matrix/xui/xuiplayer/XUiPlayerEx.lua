@@ -81,6 +81,12 @@ function XUiPlayerEx:OnClickBtnArchive()
 end
 
 function XUiPlayerEx:OnClickBtnExhibition()
+    -- 如果军团开启时，替代掉原本的剧情展示
+    if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.PlotExhibition) then
+        XMVCA.XPlotExhibition:OpenMain()
+        return
+    end
+    
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.CharacterExhibition) then
         self.PanelPlayerInfoEx:RecordAnimation()
         XLuaUiManager.Open("UiExhibition", true)

@@ -44,6 +44,17 @@ function XUiFubenBossSingleDetailAutoFight:OnBtnAutoFightClick()
         XUiManager.TipText("BossSingleAutoFightDesc7")
         return
     end
+    
+    -- （兼容重置后的自动作战）把今天的三次首通次数消耗 ，再去重置骑士关，再去点自动挑战
+    local stageId = self._StageId
+    local hasStageRecord, stage = self._Control:HasStageRecord(stageId)
+    if hasStageRecord then
+        local score = self._Control:GetBossStageScore(stageId)
+        if score == 0 then
+            self:OnAutoFightSureClick()
+        end
+        return
+    end
 
     if not self._IsChallengeCountEnough then
         XUiManager.TipText("BossSingleAutoFightDesc8")
@@ -81,8 +92,11 @@ function XUiFubenBossSingleDetailAutoFight:Refresh(autoFightData, challengeCount
     local curScore = autoFightData:GetScore() or 0
     local autoFightRebate = self._Control:GetAutoFightRebate()
     local scoreDesc = autoFightRebate .. "%"
-    local allCount = self._Control:GetChallengeCount()
-    local leftCount = allCount - challengeCount
+    
+    local autoFightCount = self._Control:GetAutoFightCount()
+    -- 设置自动按钮状态
+    local allCount = autoFightCount
+    local leftCount = autoFightCount - challengeCount
 
     curScore = math.floor(autoFightRebate * curScore / 100)
 

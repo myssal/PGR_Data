@@ -60,6 +60,7 @@ function XUiBigWorldProcessCourseTask:OnBtnFinishClick()
 end
 
 function XUiBigWorldProcessCourseTask:OnBtnOngoingClick()
+    XMVCA.XBigWorldUI:TipText("BigWorldCourseTaskSkipUnableTip")
 end
 
 function XUiBigWorldProcessCourseTask:OnBtnAllReceiveClick()
@@ -112,7 +113,6 @@ function XUiBigWorldProcessCourseTask:_RegisterRedPointEvents()
 end
 
 function XUiBigWorldProcessCourseTask:_InitUi()
-    self.BtnOngoing.enabled = false
 end
 
 function XUiBigWorldProcessCourseTask:_RefreshReward(rewardData)

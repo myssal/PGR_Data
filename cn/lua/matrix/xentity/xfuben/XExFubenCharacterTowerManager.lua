@@ -46,6 +46,17 @@ function XExFubenCharacterTowerManager:ExGetFunctionNameType()
     return XFunctionManager.FunctionName.CharacterTower
 end
 
+function XExFubenCharacterTowerManager:ExGetChapterViewModelBuyChapterId(chapterId)
+    local viewModels = self:ExGetChapterViewModels()
+    for _, viewModel in pairs(viewModels) do
+        for _, viewModelChapterId in pairs(viewModel:GetChapterIds()) do
+            if viewModelChapterId == chapterId then
+                return viewModel
+            end
+        end
+    end
+end
+
 function XExFubenCharacterTowerManager:ExGetChapterViewModels()
     local characterList = self:GetCharacterList()
     if XTool.IsTableEmpty(characterList) then

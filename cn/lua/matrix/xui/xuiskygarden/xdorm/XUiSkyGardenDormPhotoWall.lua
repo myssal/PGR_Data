@@ -40,7 +40,7 @@ function XUiSkyGardenDormPhotoWall:OnDestroy()
     end
 
     XMVCA.XBigWorldGamePlay:SetCameraProjection(false)
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(true, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(true)
 end
 
 function XUiSkyGardenDormPhotoWall:OnEnable()

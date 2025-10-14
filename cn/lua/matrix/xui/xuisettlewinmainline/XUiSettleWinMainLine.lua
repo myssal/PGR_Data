@@ -261,13 +261,18 @@ end
 -- 角色奖励列表
 function XUiSettleWinMainLine:InitRewardCharacterList(data)
     self.GridWinRole.gameObject:SetActive(false)
-    if self.StageCfg.RobotId and #self.StageCfg.RobotId > 0 then
-        for i = 1, #self.StageCfg.RobotId do
-            if self.StageCfg.RobotId[i] > 0 then
+    local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(self.StageCfg.StageId)
+    local stageConfig = self.StageCfg
+    if speedrunStageId then
+        stageConfig = XMVCA.XFuben:GetStageCfg(speedrunStageId) or stageConfig
+    end
+    if stageConfig.RobotId and #stageConfig.RobotId > 0 then
+        for i = 1, #stageConfig.RobotId do
+            if stageConfig.RobotId[i] > 0 then
                 local ui = CS.UnityEngine.Object.Instantiate(self.GridWinRole)
                 local grid = XUiGridWinRole.New(self, ui)
                 grid.Transform:SetParent(self.PanelRoleContent, false)
-                grid:UpdateRobotInfo(self.StageCfg.RobotId[i])
+                grid:UpdateRobotInfo(stageConfig.RobotId[i])
                 grid.GameObject:SetActive(true)
             end
         end

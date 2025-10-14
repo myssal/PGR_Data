@@ -1,31 +1,21 @@
 ---@class XGame2048GameControl: XControl
----@field private _GridBlockEntityPool XPool
 ---@field private _MergeEffectPool XPool
 ---@field _MainControl XGame2048Control
 ---@field _Model XGame2048Model
-local XGame2048GameControl = XClass(XControl, 'XGame2048GameControl')
-local XGame2048Grid = require('XModule/XGame2048/InGame/Entity/XGame2048Grid')
+local XGame2048GameControl = XClass(XControl, 'XGame2048GameControl', true)
 
 local BoardConstWidth = 4
 local BoardConstHeight = 4
 local FeverAddMax = nil
+local HeartAddMax = nil
 local GameScoreMaxLimit = 0
 
 local __IsDebug = false
 
 local CSRandom = CS.System.Random
 
---- 独立的随机数器，具有固定的随机数种子
-local CustomRandom = nil
-
 function XGame2048GameControl:OnInit()
     self._DebugOpenCache = XSaveTool.GetData('Game2048Debug')
-    
-    self._GridBlockEntityPool = XPool.New(function() 
-        return XGame2048Grid.New()
-    end, function(grid)
-        grid:OnRecycle()
-    end)
     
     self._MergeEffectPool = XPool.New(function() 
         return {}
@@ -42,6 +32,10 @@ function XGame2048GameControl:OnInit()
     self.TurnControl = self:AddSubControl(require('XModule/XGame2048/InGame/XGame2048TurnControl'))
     ---@type XGame2048BoardShowControl
     self.BoardShowControl = self:AddSubControl(require('XModule/XGame2048/InGame/XGame2048BoardShowControl'))
+    ---@type XGame2048GridsControl
+    self.GridsControl = self:AddSubControl(require('XModule/XGame2048/InGame/XGame2048GridsControl'))
+    ---@type XGame2048RecordReportControl
+    self.RecordReportControl = self:AddSubControl(require('XModule/XGame2048/InGame/XGame2048RecordReportControl'))
 
     if self:CheckDebugEnable() then
         ---@type XGame2048DebugRecordControl
@@ -51,7 +45,14 @@ function XGame2048GameControl:OnInit()
     self._LockMoveGridList = {}
 
     FeverAddMax = self._MainControl:GetClientConfigNum('GridFeverAddMax')
+    HeartAddMax = self._MainControl:GetClientConfigNum('GridHeartAddMax')
     GameScoreMaxLimit = self._MainControl:GetClientConfigNum('GameScoreMaxLimit')
+    
+    self._NeedTransmit = false
+    self._NeedDispelToTarget = false
+    self._IsWaterFireSelected = false
+    
+    self:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_WATER_FIRE_DISPEL_SELECTION, self.EnterWaterFireDispelSelectionState, self)
 end
 
 function XGame2048GameControl:OnRelease()
@@ -85,55 +86,49 @@ function XGame2048GameControl:InitGame(stageContext)
     self:InitRandom(randomSeed)
     
     if self:CheckDebugEnable() then
-        if self.DebugRecordControl:CheckIsRecordEnable() then
+        if self.DebugRecordControl:CheckIsRecordEnable() and not self.DebugRecordControl:CheckIsPlayBack() then
             self.DebugRecordControl:StartRecord()
             self.DebugRecordControl:RecordRandomSeed(randomSeed)
         end
     end
+    
+    self._GameState = XMVCA.XGame2048.EnumConst.GameState.None
+    
+    self.RecordReportControl:OnInitGame()
 end
 
 function XGame2048GameControl:InitGrids()
-    -- 重置
-    self._GridEntities = {}
-    self._WasteGridEntities = {}
     self._UidPool = 1
-    -- 坐标映射列表, <key: 整数值，0100 - 9900 范围表示x，0-99范围表示y>
-    self._PosToGrid = {}
-    -- 刷新
-    local gridInfos = self.TurnControl:GetGridInfos()
-    if not XTool.IsTableEmpty(gridInfos) then
-        for i, info in pairs(gridInfos) do
-            self:GetGridEntityByServerBlockData(info)
-        end
-    end
+    -- 重置
+    self.GridsControl:InitGrids()
 end
 
 function XGame2048GameControl:InitRandom(seed)
-    CustomRandom = CSRandom(seed)
+    self.CustomRandom = CSRandom(seed)
 end
 --endregion
 
-function XGame2048GameControl:GetGridEntityByServerBlockData(info)
-    ---@type XGame2048Grid
-    local gridEntity = self._GridBlockEntityPool:GetItemFromPool()
-    gridEntity.Uid = self:GetNewUid()
-    
-    local blockCfg = self._Model:GetGame2048BlockCfgById(info.BlockId)
-    local blockTypeCfg = self._Model:GetGame2048BlockTypeCfgByType(blockCfg.Type)
-    
-    gridEntity:InitData(info, blockCfg, blockTypeCfg)
-    table.insert(self._GridEntities, gridEntity)
-    self._PosToGrid[gridEntity:GetX() * 100 + gridEntity:GetY()] = gridEntity
-    
-    return gridEntity
-end
-
-function XGame2048GameControl:SetIsUsingProp(isUsingProp)
-    self._IsUsingProp = isUsingProp
-end
-
-
 --region Getter
+function XGame2048GameControl:CheckCanDragState()
+    return self._GameState == XMVCA.XGame2048.EnumConst.GameState.None or not self._GameState
+end
+
+function XGame2048GameControl:GetIsWaterFireSelected()
+    return self._IsWaterFireSelected
+end
+
+function XGame2048GameControl:GetFeverAddMax()
+    return FeverAddMax
+end
+
+function XGame2048GameControl:GetHeartAddMax()
+    return HeartAddMax
+end
+
+function XGame2048GameControl:GetGameScoreMaxLimit()
+    return GameScoreMaxLimit
+end
+
 function XGame2048GameControl:GetWidth()
     return self._Width or 0
 end
@@ -149,41 +144,20 @@ function XGame2048GameControl:GetNewUid()
 end
 
 function XGame2048GameControl:GetGridEntities()
-    return self._GridEntities
+    return self.GridsControl:GetGridEntities()
 end
 
 function XGame2048GameControl:GetGridEntitiesCount()
-    return XTool.GetTableCount(self._GridEntities)
+    return self.GridsControl:GetGridEntitiesCount()
 end
 
 function XGame2048GameControl:GetGridEntityByUid(uid)
-    if not XTool.IsTableEmpty(self._GridEntities) then
-        ---@param v XGame2048Grid
-        for i, v in pairs(self._GridEntities) do
-            if v.Uid == uid then
-                return v
-            end           
-        end
-    end
+    return self.GridsControl:GetGridEntityByUid(uid)
 end
 
 --- 获取棋盘上最高分数方块的数值，用于fever进度展示
 function XGame2048GameControl:GetMaxValueFromGridEntities()
-    if not XTool.IsTableEmpty(self._GridEntities) then
-        local maxValue = 0
-        
-        ---@param v XGame2048Grid
-        for i, v in pairs(self._GridEntities) do
-            local value = v:GetValue()
-            if value > maxValue then
-                maxValue = value
-            end
-        end
-        
-        return maxValue
-    end
-    
-    return 0
+    return self.GridsControl:GetMaxValueFromGridEntities()
 end
 
 function XGame2048GameControl:GetIsActionPlaying()
@@ -207,16 +181,24 @@ function XGame2048GameControl:GetCurBoardId()
     end
 end
 
---- 获取一个格子对象
-function XGame2048GameControl:GetGridDataInPool()
-    return self._GridBlockEntityPool:GetItemFromPool()
+function XGame2048GameControl:GetStageId()
+    return self._StageId
+end
+--endregion
+
+--region Setter
+
+function XGame2048GameControl:EnterWaterFireDispelSelectionState()
+    self._GameState = XMVCA.XGame2048.EnumConst.GameState.WaterFireSelection
 end
 
---- 回收一个格子对象
-function XGame2048GameControl:ReturnGridDataToPool(gridData)
-    self._GridBlockEntityPool:ReturnItemToPool(gridData)
+function XGame2048GameControl:ExitWaterFireDispelSelectionState()
+    self._GameState = XMVCA.XGame2048.EnumConst.GameState.None
 end
 
+function XGame2048GameControl:SetIsSelectWaterOrFire()
+    self._IsWaterFireSelected = true
+end
 --endregion
 
 --region 2048 rules
@@ -232,14 +214,14 @@ function XGame2048GameControl:CheckIsGameOver()
     -- 棋盘满了是前提
     if self:GetGridEntitiesCount() == self._BlockCount then
         -- 简单检查每个可合成的格子，是否能和它四周的格子进行合成
-        for i, v in pairs(self._GridEntities) do
+        for i, v in pairs(self.GridsControl:GetGridEntities()) do
             local gridX = v:GetX()
             local gridY = v:GetY()
-
-            local left = self._PosToGrid[(gridX - 1) * 100 + gridY]
-            local right = self._PosToGrid[(gridX + 1) * 100 + gridY]
-            local up = self._PosToGrid[gridX * 100 + (gridY + 1)]
-            local down = self._PosToGrid[gridX * 100 + (gridY - 1)]
+            
+            local left = self.GridsControl:GetGridEntityByNormalizePos(gridX - 1, gridY)
+            local right = self.GridsControl:GetGridEntityByNormalizePos(gridX + 1, gridY)
+            local up = self.GridsControl:GetGridEntityByNormalizePos(gridX, gridY + 1)
+            local down = self.GridsControl:GetGridEntityByNormalizePos(gridX, gridY - 1)
 
             if left and self:_CheckCanMerge(v, left, true) then
                 return false
@@ -312,10 +294,8 @@ function XGame2048GameControl:_CheckCanMoveOrMerge(x, y)
                     goto CONTINUE_MOVE_H
                 end
 
-                local curIndex = tx * 100 + ty
-                local nextIndex = nextX * 100 + nextY
-                local curGrid = self._PosToGrid[curIndex]
-                local nextGrid = self._PosToGrid[nextIndex]
+                local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(nextX, nextY)
 
                 if curGrid == nil and nextGrid and nextGrid:IsMoveableGrid() then
                     -- 存在可移动
@@ -336,10 +316,8 @@ function XGame2048GameControl:_CheckCanMoveOrMerge(x, y)
                     goto CONTINUE_MOVE_V
                 end
 
-                local curIndex = tx * 100 + ty
-                local nextIndex = nextX * 100 + nextY
-                local curGrid = self._PosToGrid[curIndex]
-                local nextGrid = self._PosToGrid[nextIndex]
+                local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(nextX, nextY)
 
                 if curGrid == nil and nextGrid and nextGrid:IsMoveableGrid() then
                     -- 存在可移动
@@ -356,10 +334,8 @@ function XGame2048GameControl:_CheckCanMoveOrMerge(x, y)
         -- 逐行检查
         for ty = 1, height do
             for tx = beginX, endX, -x do
-                local curIndex = tx * 100 + ty
-                local nextIndex = (tx - x) * 100 + ty
-                local curGrid = self._PosToGrid[curIndex]
-                local nextGrid = self._PosToGrid[nextIndex]
+                local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(tx - x, ty)
 
                 if curGrid and nextGrid then
                     if self:_CheckCanMerge(curGrid, nextGrid, true) then
@@ -372,10 +348,8 @@ function XGame2048GameControl:_CheckCanMoveOrMerge(x, y)
         -- 逐列检查
         for tx = 1, width do
             for ty = beginY, endY, -y do
-                local curIndex = tx * 100 + ty
-                local nextIndex = tx * 100 + ty - y
-                local curGrid = self._PosToGrid[curIndex]
-                local nextGrid = self._PosToGrid[nextIndex]
+                local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty - y)
 
                 if curGrid and nextGrid then
                     if self:_CheckCanMerge(curGrid, nextGrid, true) then
@@ -425,6 +399,8 @@ function XGame2048GameControl:DoMove(x, y)
         self:_DoRockReduce(x, y)
         self:_DoDoublingEffect()
         self:_DoTransferEffect()
+        self:_DoGridDispelTransmit()
+        self:_DoGridDispelLevelUpToTarget()
         
         -- 记录当前回合的移动方向
         if self:CheckDebugEnable() and self.DebugRecordControl:CheckIsRecording() then
@@ -470,22 +446,18 @@ function XGame2048GameControl:_DoMove(x, y)
                         if nextX < 1 or nextX > self._Width or nextY < 1 or nextY > self._Height then
                             goto CONTINUE_MOVE_H
                         end
-
-                        local curIndex = tx * 100 + ty
-                        local nextIndex = nextX * 100 + nextY
-                        local curGrid = self._PosToGrid[curIndex]
-                        local nextGrid = self._PosToGrid[nextIndex]
+                        
+                        local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                        local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(nextX, nextY)
 
                         if curGrid == nil and nextGrid and nextGrid:IsMoveableGrid() and not nextGrid:GetIsMoveLock() then
                             -- 移动
-                            self._PosToGrid[nextIndex] = nil
-                            self._PosToGrid[curIndex] = nextGrid
-
+                            self.GridsControl:SetGridEntityToAimPos(nextGrid, tx, ty)
+                            
                             hasAction = true
                             hasAnyAction = true
                             hasAnyMove = true
-                            -- 更新坐标数据
-                            nextGrid:SetNewPosition(tx, ty)
+
                             -- 添加移动行为
                             self.ActionsControl:AddMoveAction(nextGrid.Uid, nextX, nextY, tx, ty)
                         end
@@ -503,22 +475,18 @@ function XGame2048GameControl:_DoMove(x, y)
                         if nextX < 1 or nextX > self._Width or nextY < 1 or nextY > self._Height then
                             goto CONTINUE_MOVE_V
                         end
-
-                        local curIndex = tx * 100 + ty
-                        local nextIndex = nextX * 100 + nextY
-                        local curGrid = self._PosToGrid[curIndex]
-                        local nextGrid = self._PosToGrid[nextIndex]
+                        
+                        local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                        local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(nextX, nextY)
 
                         if curGrid == nil and nextGrid and nextGrid:IsMoveableGrid() and not nextGrid:GetIsMoveLock() then
                             -- 移动
-                            self._PosToGrid[nextIndex] = nil
-                            self._PosToGrid[curIndex] = nextGrid
-
+                            self.GridsControl:SetGridEntityToAimPos(nextGrid, tx, ty)
+                            
                             hasAction = true
                             hasAnyAction = true
                             hasAnyMove = true
-                            -- 更新坐标数据
-                            nextGrid:SetNewPosition(tx, ty)
+
                             -- 添加移动行为
                             self.ActionsControl:AddMoveAction(nextGrid.Uid, nextX, nextY, tx, ty)
                         end
@@ -539,10 +507,8 @@ function XGame2048GameControl:_DoMove(x, y)
             -- 逐行检查
             for ty = 1, height do
                 for tx = beginX, endX, -x do
-                    local curIndex = tx * 100 + ty
-                    local nextIndex = (tx - x) * 100 + ty
-                    local curGrid = self._PosToGrid[curIndex]
-                    local nextGrid = self._PosToGrid[nextIndex]
+                    local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                    local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(tx - x, ty)
 
                     if curGrid and nextGrid then
                         if self:_CheckCanMerge(curGrid, nextGrid) then
@@ -558,10 +524,8 @@ function XGame2048GameControl:_DoMove(x, y)
             -- 逐列检查
             for tx = 1, width do
                 for ty = beginY, endY, -y do
-                    local curIndex = tx * 100 + ty
-                    local nextIndex = tx * 100 + ty - y
-                    local curGrid = self._PosToGrid[curIndex]
-                    local nextGrid = self._PosToGrid[nextIndex]
+                    local curGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty)
+                    local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(tx, ty - y)
                     
                     if curGrid and nextGrid then
                         if self:_CheckCanMerge(curGrid, nextGrid) then
@@ -598,19 +562,22 @@ end
 
 function XGame2048GameControl:_DoRockReduce(x, y)
     -- 检查场上所有石头，如果它们在滑动方向的反方向挨着其他格子的话，则降级
-    if not XTool.IsTableEmpty(self._GridEntities) then
+    local gridEntities = self.GridsControl:GetGridEntities()
+    
+    if not XTool.IsTableEmpty(gridEntities) then
         ---@param v XGame2048Grid
-        for i, v in pairs(self._GridEntities) do
+        for i, v in pairs(gridEntities) do
             if v:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.Rock then
                 local curX = v:GetX()
                 local curY = v:GetY()
                 local nextX = curX - x
                 local nextY = curY - y
-                local nextIndex = nextX * 100 + nextY
                 
-                if self._PosToGrid[nextIndex] ~= nil then
+                local nextGrid = self.GridsControl:GetGridEntityByNormalizePos(nextX, nextY)
+                
+                if nextGrid ~= nil then
                     -- 除了石头、冰块不能动外，其他方块都可以作为撞击源
-                    local nextGridType = self._PosToGrid[nextIndex]:GetGridType()
+                    local nextGridType = nextGrid:GetGridType()
 
                     if nextGridType ~= XMVCA.XGame2048.EnumConst.GridType.Rock and nextGridType ~= XMVCA.XGame2048.EnumConst.GridType.ICE then
                         -- 记录石头撞击降级动画
@@ -632,32 +599,34 @@ function XGame2048GameControl:_DoRockReduce(x, y)
 end
 
 function XGame2048GameControl:_DoDoublingEffect()
+    local gridEntities = self.GridsControl:GetGridEntities()
+    
     for i = #self._MergeEffectList, 1, -1 do
         local effect = self._MergeEffectList[i]
 
         -- 需要检查效果锁关联的方块是否还存在
-        if effect.LinkGrid and table.contains(self._GridEntities, effect.LinkGrid) and effect.Type == XMVCA.XGame2048.EnumConst.MergeEffectType.Doubling then
+        if effect.LinkGrid and table.contains(gridEntities, effect.LinkGrid) and effect.Type == XMVCA.XGame2048.EnumConst.MergeEffectType.Doubling then
             local effectGrid = effect.LinkGrid
             -- 依次访问四个方向的方块，针对数字方块及传导方块，如果可以升级则让它们直接升级
-            local left = self._PosToGrid[(effectGrid:GetX() - 1) * 100 + effectGrid:GetY()]
+            local left = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX() - 1, effectGrid:GetY())
 
             if left and not self:CheckGridLevelIsMaxInCurBoradLevel(left.Id) then
                 self:_DoDoublingLevelUp(left)
             end
 
-            local right = self._PosToGrid[(effectGrid:GetX() + 1) * 100 + effectGrid:GetY()]
+            local right = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX() + 1, effectGrid:GetY())
 
             if right and not self:CheckGridLevelIsMaxInCurBoradLevel(right.Id) then
                 self:_DoDoublingLevelUp(right)
             end
 
-            local up = self._PosToGrid[effectGrid:GetX() * 100 + (effectGrid:GetY() + 1)]
+            local up = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX(), effectGrid:GetY() + 1)
 
             if up and not self:CheckGridLevelIsMaxInCurBoradLevel(up.Id) then
                 self:_DoDoublingLevelUp(up)
             end
 
-            local down = self._PosToGrid[effectGrid:GetX() * 100 + (effectGrid:GetY() - 1)]
+            local down = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX(), effectGrid:GetY() - 1)
 
             if down and not self:CheckGridLevelIsMaxInCurBoradLevel(down.Id) then
                 self:_DoDoublingLevelUp(down)
@@ -671,16 +640,17 @@ end
 
 function XGame2048GameControl:_DoTransferEffect()
     local hasAnyEffectValid = false
+    local gridEntities = self.GridsControl:GetGridEntities()
     
     for i = #self._MergeEffectList, 1, -1 do
         local effect = self._MergeEffectList[i]
 
         -- 需要检查效果锁关联的方块是否还存在
-        if effect.LinkGrid and table.contains(self._GridEntities, effect.LinkGrid) and effect.Type == XMVCA.XGame2048.EnumConst.MergeEffectType.Transfer then
+        if effect.LinkGrid and table.contains(gridEntities, effect.LinkGrid) and effect.Type == XMVCA.XGame2048.EnumConst.MergeEffectType.Transfer then
             local effectGrid = effect.LinkGrid
             -- 依次访问四个方向的方块，针对传导方块，如果可以升级则让它们直接升级
 
-            local left = self._PosToGrid[(effectGrid:GetX() - 1) * 100 + effectGrid:GetY()]
+            local left = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX() - 1, effectGrid:GetY())
 
             if left then
                 if self:_DoTransferLevelUp(left) then
@@ -688,7 +658,7 @@ function XGame2048GameControl:_DoTransferEffect()
                 end
             end
 
-            local right = self._PosToGrid[(effectGrid:GetX() + 1) * 100 + effectGrid:GetY()]
+            local right = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX() + 1, effectGrid:GetY())
 
             if right then
                 if self:_DoTransferLevelUp(right) then
@@ -696,7 +666,7 @@ function XGame2048GameControl:_DoTransferEffect()
                 end
             end
 
-            local up = self._PosToGrid[effectGrid:GetX() * 100 + (effectGrid:GetY() + 1)]
+            local up = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX(), effectGrid:GetY() + 1)
 
             if up then
                 if self:_DoTransferLevelUp(up) then
@@ -704,7 +674,7 @@ function XGame2048GameControl:_DoTransferEffect()
                 end
             end
 
-            local down = self._PosToGrid[effectGrid:GetX() * 100 + (effectGrid:GetY() - 1)]
+            local down = self.GridsControl:GetGridEntityByNormalizePos(effectGrid:GetX(), effectGrid:GetY() - 1)
 
             if down then
                 if self:_DoTransferLevelUp(down) then
@@ -848,6 +818,15 @@ function XGame2048GameControl:_CheckCanMerge(curGrid, nextGrid, onlyCheck)
 
     if typeACfg then
         local resultType = typeACfg.MergeResults[gridTypeB]
+        
+        -- 水火方块间的合成特殊处理：目前只有这一种特殊情况，先不扩展配置表
+        -- 因为按照类型的值排序，所以水火方块合成一定是a水b火
+        if gridTypeA == XMVCA.XGame2048.EnumConst.GridType.Water and gridTypeB == XMVCA.XGame2048.EnumConst.GridType.Fire then
+            local randValue = self.CustomRandom:Next(0, 100)
+            -- 等权随机
+            resultType = randValue >= 50 and XMVCA.XGame2048.EnumConst.GridType.Water or XMVCA.XGame2048.EnumConst.GridType.Fire
+        end
+        
         if XTool.IsNumberValid(resultType) then
             -- 类型间可合成
             -- 判断具体格子是否可合成：数值相同，或星星存在星星方块
@@ -898,9 +877,41 @@ function XGame2048GameControl:_CheckCanMerge(curGrid, nextGrid, onlyCheck)
                                 curGrid:SetExValue(FeverAddMax)
                             end
                         end
+                        
+                        -- 消除方块与其他方块合成时，保留消除方块的额外数据
+                        if nextGrid:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.Dispel then
+                            curGrid:SetExValue(nextGrid:GetExValue())
+                        end
+                        
+                        -- 合成原方块里包含传送方块，则触发一次传送
+                        if gridTypeA == XMVCA.XGame2048.EnumConst.GridType.Transmit or gridTypeB == XMVCA.XGame2048.EnumConst.GridType.Transmit then
+                            self._NeedTransmit = true
+                        end
+
+                        -- 合成方块存在爱心方块，且合成后的方块也是爱心方块，则该方块fever累积值+1（最大值为FeverAddMax 
+                        if (gridTypeA == XMVCA.XGame2048.EnumConst.GridType.HeartShape or gridTypeB == XMVCA.XGame2048.EnumConst.GridType.HeartShape) and curGrid:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.HeartShape then
+                            local summary = curExValue + nextExValue
+
+                            if summary < HeartAddMax then
+                                curGrid:SetExValue(summary + 1)
+                            else
+                                curGrid:SetExValue(HeartAddMax)
+                            end
+
+                            if curGrid:GetExValue() >= HeartAddMax then
+                                -- 触发消除方块升级效果
+                                self._NeedDispelToTarget = true
+                            end
+                        end
 
                         -- 添加合并行为
                         self.ActionsControl:AddMergeAction(nextGrid.Uid, curGrid.Uid, curGrid.Id)
+
+                        if self._NeedDispelToTarget then
+                            -- 清除累计，并播放动画更新状态，时机和消除方块升级一致
+                            curGrid:SetExValue(0)
+                            self.ActionsControl:AddGridChangedAction(curGrid.Uid, XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterDoubleLevelUp)
+                        end
                     else
                         local upgradeFrom = curGrid:GetGridType() == resultType and curGrid or nextGrid
                         local levelUpId = self._MainControl:GetBlockLevelUpId(upgradeFrom.Id)
@@ -922,10 +933,11 @@ function XGame2048GameControl:_DoMerge(upgradeGrid, dispelGrid, upgradeFrom)
     local levelUpId = self._MainControl:GetBlockLevelUpId(upgradeFrom.Id)
 
     if XTool.IsNumberValid(levelUpId) then
-        self:RemoveGridAndMarkAsWaste(dispelGrid)
-        
         local newcfg = self._MainControl:GetBlockCfgById(levelUpId)
+        
         local blockTypeCfg = self._Model:GetGame2048BlockTypeCfgByType(newcfg.Type)
+
+        self:RemoveGridAndMarkAsWaste(dispelGrid)
         
         upgradeGrid:SetNewConfig(newcfg, blockTypeCfg)
         
@@ -972,6 +984,11 @@ function XGame2048GameControl:CheckFerverLevelUp(newGridId)
     ---@type XTableGame2048Block
     local newBlockCfg = self._Model:GetGame2048BlockCfgById(newGridId)
     
+    -- 要先判断方块是否是消除方块
+    if not (newBlockCfg.Type == XMVCA.XGame2048.EnumConst.GridType.Dispel) then
+        return false
+    end
+    
     if targetBlockCfg and newBlockCfg and targetBlockCfg.Level == newBlockCfg.Level then
         return true
     end
@@ -979,52 +996,76 @@ function XGame2048GameControl:CheckFerverLevelUp(newGridId)
     return false
 end
 
-function XGame2048GameControl:DoFeverLevelUp()
+---@param targetType @消除指定类型的方块
+function XGame2048GameControl:DoFeverLevelUp(targetType)
     local targetId = self.TurnControl:GetCurTargetBlockId()
 
     ---@type XTableGame2048Block
     local targetBlockCfg = self._Model:GetGame2048BlockCfgById(targetId)
-    
+
     if self:CheckDebugEnable() then
         self:PrintGridsInBoardLogForDebug()
     end
+
+    local isWaterFireSelect = self._MainControl:GetCurStageDispelRule() == XMVCA.XGame2048.EnumConst.GridDispelCleanUpRule.WaterFireSelect
+
     -- 消除棋盘方块
-    -- 仅留下一个最大方块
-    local isIgnore = false
+    -- 1. 消除方块不消除
+    -- 2. 与消除方块方向上的行或列方块消除
+    -- 3. 水火方块指定消除
 
     local feverTurnsAddsFromGrid = 0
 
-    if not XTool.IsTableEmpty(self._GridEntities) then
+    local gridEntities = self.GridsControl:GetGridEntities()
+
+    ---@type XGame2048Grid
+    local dispelGrid = nil
+    local beginX, endX, beginY, endY = 0, 0, 0, 0
+    
+    if not XTool.IsTableEmpty(gridEntities) then
         -- 克隆一份列表用于迭代
         local gridPairs = {}
-        
+
         -- 加时方块满足分数的个数
         local feverUpBlockNum = 0
         -- 所有满足分数的方块个数
         local totalSatisfyNum = 0
 
-        for i, v in pairs(self._GridEntities) do
-            gridPairs[i] = v
+        -- 找到符合规则1的所有方块进行消除
+        ---@type XGame2048Grid
+        dispelGrid = self.GridsControl:GetFirstGridEntityFromArrayByType(XMVCA.XGame2048.EnumConst.GridType.Dispel)
+        
+        beginX, endX, beginY, endY = self.GridsControl:GetDispelGridCleanUpRange(dispelGrid)
+        
+        for x = beginX, endX do
+            for y = beginY, endY do
+                local grid = self.GridsControl:GetGridEntityByNormalizePos(x, y)
 
-            if v:GetValue() == targetBlockCfg.Level then
-                totalSatisfyNum = totalSatisfyNum + 1
+                if grid and grid ~= dispelGrid then
+                    -- 判断是否指定方块
+                    if targetType and grid:GetGridType() ~= targetType then
+                        goto CONTINUE_1
+                    end
+                    
+                    table.insert(gridPairs, grid)
 
-                if v:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds then
-                    feverUpBlockNum = feverUpBlockNum + 1
+                    if grid:GetValue() == targetBlockCfg.Level then
+                        totalSatisfyNum = totalSatisfyNum + 1
+
+                        if grid:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds then
+                            feverUpBlockNum = feverUpBlockNum + 1
+                        end
+                    end
                 end
+                
+                :: CONTINUE_1 ::
             end
         end
-        
-        -- 随机数，表示保留第几个方块
-        local saveIndex = 0
 
-        -- 获取随机数，右值为开区间，需要+1
-        if feverUpBlockNum > 0 then
-            saveIndex = XMath.ToInt(CustomRandom:Next(1, feverUpBlockNum + 1))
-        elseif totalSatisfyNum > 0 then
-            saveIndex = XMath.ToInt(CustomRandom:Next(1, totalSatisfyNum + 1))
-        end
+        -- 埋点记录
+        self.RecordReportControl:CollectDispelInfo(beginX, endX, beginY, endY, gridPairs, isWaterFireSelect, targetType)
 
+        -- 执行消除操作
         ---@param v XGame2048Grid
         for i, v in pairs(gridPairs) do
             -- 加时方块需要消耗积攒的加时值进行fever加时
@@ -1037,36 +1078,13 @@ function XGame2048GameControl:DoFeverLevelUp()
                 end
             end
 
-            if not isIgnore and v:GetValue() == targetBlockCfg.Level then
-                if feverUpBlockNum > 0 then
-                    if v:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.FeverTurnAdds then
-                        if feverUpBlockNum <= saveIndex then
-                            isIgnore = true
-                            self:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_GRID_SHOW, v)
-                            
-                            goto CONTINUE
-                        end
-
-                        feverUpBlockNum = feverUpBlockNum - 1
-                    end
-                else
-                    if totalSatisfyNum <= saveIndex then
-                        isIgnore = true
-                        self:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_GRID_SHOW, v)
-
-                        goto CONTINUE
-                    end
-
-                    totalSatisfyNum = totalSatisfyNum - 1
-                end
-            end
-
             -- 消除
             self.ActionsControl:AddDispelAction(v.Uid)
             self:DoDispel(v)
-            
+
             :: CONTINUE ::
         end
+        
     end
 
     -- 有下一级配置才能升级
@@ -1076,14 +1094,76 @@ function XGame2048GameControl:DoFeverLevelUp()
         self.TurnControl:BoardLevelUp()
 
         self.BoardShowControl:OnFerverLevelUpEvent()
+
+        -- 检查剩下存活的方块等级，是否比新盘面等级的最低生成方块等级还低
+        local minGeneratedLevel = self.TurnControl:GetCurBoardLvGenerateGridLevel()
+        
+        for i, v in pairs(gridEntities) do
+            local gridType = v:GetGridType()
+            local needadjust = v:GetValue() < minGeneratedLevel
+            local adjustLevelUpId = nil
+            
+            if gridType ~= XMVCA.XGame2048.EnumConst.GridType.Dispel then
+                if isWaterFireSelect then
+                    -- 水火方块特殊规则，消除范围内留下来的方块需转换成星星方块
+                    if gridType == XMVCA.XGame2048.EnumConst.GridType.Water or gridType == XMVCA.XGame2048.EnumConst.GridType.Fire then
+                        local posX = v:GetX()
+                        local posY = v:GetY()
+
+                        if (posX >= beginX and posX <= endX) and (posY >= beginY and posY <= endY) then
+                            local specialAdjustLevelUpId = self._MainControl:GetClientConfigNum('SpecialAdjustLevelUpId')
+
+                            if XTool.IsNumberValidEx(specialAdjustLevelUpId) then
+                                adjustLevelUpId = specialAdjustLevelUpId
+                                needadjust = true
+                            end
+                        end
+                    end
+                end
+                
+                if needadjust then
+                    adjustLevelUpId = adjustLevelUpId or v:GetAdjustLevelUpId()
+
+                    if XTool.IsNumberValidEx(adjustLevelUpId) then
+                        local newcfg = self._MainControl:GetBlockCfgById(adjustLevelUpId)
+                        local blockTypeCfg = self._Model:GetGame2048BlockTypeCfgByType(newcfg.Type)
+
+                        v:SetNewConfig(newcfg, blockTypeCfg)
+
+                        self.ActionsControl:AddGridChangedAction(v.Uid)
+                    end
+                end
+            end
+        end
     else
         -- 不升级则只充能
         self.TurnControl:AddCurFeverLeftRound()
+        
+        -- 如果是无尽关，需要对消除方块做特殊处理
+        if self._MainControl:GetStageTypeById(self._MainControl:GetCurStageId()) == XMVCA.XGame2048.EnumConst.StageType.Endless then
+            if dispelGrid ~= nil then
+                local lastLevelId = dispelGrid:GetLastLevelId()
+
+                if XTool.IsNumberValid(lastLevelId) then
+                    -- 消除方块等级回退
+                    local lastLevelCfg = self._MainControl:GetBlockCfgById(lastLevelId)
+                    local blockTypeCfg = self._Model:GetGame2048BlockTypeCfgByType(lastLevelCfg.Type)
+                    
+                    dispelGrid:SetNewConfig(lastLevelCfg, blockTypeCfg)
+                    self.GridsControl:UpdateDispelGridDirectionByPos(dispelGrid)
+                    
+                    self.ActionsControl:AddGridChangedAction(dispelGrid.Uid)
+                end
+            end
+        end
     end
 
     if XTool.IsNumberValid(feverTurnsAddsFromGrid) then
         self.TurnControl:AddFeverLeftRound(feverTurnsAddsFromGrid)
     end
+    
+    -- 上报埋点
+    self.RecordReportControl:DoReport()
 end
 
 --- 检查指定的方块等级是否到达棋盘上限，用于控制防止方块升级超出的判断
@@ -1105,15 +1185,7 @@ end
 --- 移除一个方块数据并标记到废弃字典中
 ---@param isTurnBegin @是否是回合内移除的
 function XGame2048GameControl:RemoveGridAndMarkAsWaste(grid, isTurnBegin)
-    local isIn, index = table.contains(self._GridEntities, grid)
-    if isIn then
-        table.remove(self._GridEntities, index)
-    end
-    self._WasteGridEntities[grid] = true
-    self._PosToGrid[grid:GetX() * 100 + grid:GetY()] = nil
-
-    -- 服务端数据也要移除掉
-    self.TurnControl:RemoveGridDataInServerData(grid, isTurnBegin)
+    self.GridsControl:RemoveGridAndMarkAsWaste(grid, isTurnBegin)
 end
 
 function XGame2048GameControl:AddDoublingEffect(grid)
@@ -1131,13 +1203,122 @@ function XGame2048GameControl:AddTransferEffect(grid)
 
     table.insert(self._MergeEffectList, effect)
 end
+
+function XGame2048GameControl:_DoGridDispelTransmit()
+    if self._NeedTransmit then
+        self._NeedTransmit = false
+    else
+        return
+    end
+    
+    -- 1. 找到消除方块
+    ---@type XGame2048Grid
+    local dispelGrid = self.GridsControl:GetFirstGridEntityFromArrayByType(XMVCA.XGame2048.EnumConst.GridType.Dispel)
+
+    if not dispelGrid then
+        return
+    end
+    
+    local direction = dispelGrid:GetExValue()
+    local x = dispelGrid:GetX()
+    local y = dispelGrid:GetY()
+    
+    -- 2. 判断是否已经在方向归属区域内
+    if (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up and y == 1) or
+            (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Down and y == 4) or
+            (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Left and x ==4) or
+            (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Right and x == 1)
+    then
+        return
+    end
+    
+    -- 3. 找到合适的位置
+    local isVertical = direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up or direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Down
+    
+    local beginX = isVertical and 1 or (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Left and 4 or 1)
+    local endX = isVertical and 4 or (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Left and 4 or 1)
+    
+    local beginY = not isVertical and 1 or (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up and 1 or 4)
+    local endY = not isVertical and 4 or (direction == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up and 1 or 4)
+
+    local hasEmpty = false
+    local aimX, aimY = 0, 0
+    local minLevelGrid = nil
+    
+    for x = beginX, endX do
+        for y = beginY, endY do
+            -- 同时找空位和最小级别的方块
+            local grid = self.GridsControl:GetGridEntityByNormalizePos(x, y)
+
+            if grid then
+                if not minLevelGrid or minLevelGrid:GetValue() > grid:GetValue() then
+                    minLevelGrid = grid
+                    aimX = x
+                    aimY = y
+                end
+            else
+                hasEmpty = true
+                aimX = x
+                aimY = y
+                break 
+            end
+        end
+
+        if hasEmpty then
+            break
+        end
+    end
+    
+    self.GridsControl:SetGridEntityToAimPos(dispelGrid, aimX, aimY)
+    
+    -- 更新的动画
+    self.ActionsControl:AddGridChangedAction(dispelGrid.Uid, XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterMerge)
+
+    if minLevelGrid then
+        self.ActionsControl:AddGridChangedAction(minLevelGrid.Uid, XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterMerge)
+    end
+end
+
+function XGame2048GameControl:_DoGridDispelLevelUpToTarget()
+    if self._NeedDispelToTarget then
+        self._NeedDispelToTarget = false
+    else
+        return
+    end
+    
+    -- 1. 找到消除方块
+    ---@type XGame2048Grid
+    local dispelGrid = self.GridsControl:GetFirstGridEntityFromArrayByType(XMVCA.XGame2048.EnumConst.GridType.Dispel)
+
+    if not dispelGrid then
+        return
+    end
+    
+    -- 2. 从当前消除方块的id出发，找到与盘面目标等级相同的消除方块Id
+    local targetId = self.TurnControl:GetTargetIdByCurId(dispelGrid.Id)
+
+    if not XTool.IsNumberValidEx(targetId) then
+        return
+    end
+    
+    -- 3. 更新配置
+    local newBlockCfg = self._Model:GetGame2048BlockCfgById(targetId)
+    local blockTypeCfg = self._Model:GetGame2048BlockTypeCfgByType(newBlockCfg.Type)
+
+    dispelGrid:SetNewConfig(newBlockCfg, blockTypeCfg)
+    
+    -- 4. 更新的动画
+    self.ActionsControl:AddGridChangedAction(dispelGrid.Uid, XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterDoubleLevelUp)
+    -- 升级检查
+    self.ActionsControl:AddFeverLevelUpCheckAction(dispelGrid.Id)
+end
 --endregion
 
 --region 协议请求
 
 function XGame2048GameControl:RequestGame2048NextStep(cb)
     -- 记录当前棋盘状态
-    self.TurnControl:SyncCurGridsToTransformData(self._GridEntities)
+    self.TurnControl:SyncCurGridsToTransformData(self.GridsControl:GetGridEntities())
 
     self._IsWaitForNextStep = true
 
@@ -1161,16 +1342,13 @@ function XGame2048GameControl:RequestGame2048NextStep(cb)
         self.TurnControl:ClearLastTurnData()
         
         -- 将上一回合产生的消除回收
-        if not XTool.IsTableEmpty(self._WasteGridEntities) then
-            for k, v in pairs(self._WasteGridEntities) do
-                self._GridBlockEntityPool:ReturnItemToPool(k)
-            end
-            self._WasteGridEntities = {}
-        end
+        self.GridsControl:RecycleAllWasteGridEntityLastTurn()
         
         -- 更新数据
-        if not XTool.IsTableEmpty(self._GridEntities) then
-            for i, v in pairs(self._GridEntities) do
+        local gridEntities = self.GridsControl:GetGridEntities()
+        
+        if not XTool.IsTableEmpty(gridEntities) then
+            for i, v in pairs(gridEntities) do
                 v:SyncToServerData()
             end
         end
@@ -1185,9 +1363,22 @@ function XGame2048GameControl:RequestGame2048NextStep(cb)
             for i, v in pairs(resultData.GeneratedResults) do
                 if not XTool.IsTableEmpty(v.TargetBlock) then
                     ---@type XGame2048Grid
-                    local gridEntity = self:GetGridEntityByServerBlockData(v.TargetBlock)
+                    local gridEntity = self.GridsControl:GetGridEntityByServerBlockData(v.TargetBlock)
                     self.ActionsControl:AddNewBornAction(gridEntity.Uid)
                     self:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_NEW_GRID, gridEntity)
+                end
+            end
+        end
+        
+        -- 消除方块方向改变
+        local changeBlocks = resultData.ChangeBlocks
+
+        if not XTool.IsTableEmpty(changeBlocks) then
+            for i, v in pairs(changeBlocks) do
+                local uid = self.GridsControl:UpdateServerDataByPos(v, v.X, v.Y)
+
+                if XTool.IsNumberValidEx(uid) then
+                    self.ActionsControl:AddDispelGridDirectionChangedAction(uid)
                 end
             end
         end
@@ -1198,6 +1389,11 @@ function XGame2048GameControl:RequestGame2048NextStep(cb)
         self.ActionsControl:StartActionList(cb)
 
         self._IsWaitForNextStep = false
+        self._IsWaterFireSelected = false
+
+        if self._GameState ~= XMVCA.XGame2048.EnumConst.GameState.None then
+            self._GameState = XMVCA.XGame2048.EnumConst.GameState.None
+        end
 
         if self:CheckDebugEnable() then
             self:PrintGridsInBoardLogForDebug()
@@ -1215,12 +1411,14 @@ end
 
 -- debug打印棋盘数据
 function XGame2048GameControl:PrintGridsInBoardLogForDebug()
-    if not XTool.IsTableEmpty(self._GridEntities) then
+    local gridEntities = self.GridsControl:GetGridEntities()
+    
+    if not XTool.IsTableEmpty(gridEntities) then
         -- 二维展开
         local array2 = {}
 
         ---@param grid XGame2048Grid
-        for i, grid in pairs(self._GridEntities) do
+        for i, grid in pairs(gridEntities) do
             local x = grid:GetX()
             local y = grid:GetY()
             

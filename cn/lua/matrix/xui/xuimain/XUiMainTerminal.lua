@@ -307,7 +307,7 @@ end
 
 --音乐播放器
 function XUiMainTerminal:OnBtnMusicPlayerClick()
-    if not XMVCA.XSubPackage:CheckSubpackage() then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.UiMainMusicAlbum) then
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnMusicPlayer)
@@ -345,6 +345,9 @@ function XUiMainTerminal:OnBtnSocialClick()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnSocial)
     XLuaUiManager.Open("UiSocial")
+    
+    -- 消除红点
+    XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiMainTerminalSocial, XFunctionConfig.RedPointType.NewbieFirstShow)
 end
 
 --系统设置

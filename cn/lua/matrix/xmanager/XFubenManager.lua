@@ -4,7 +4,7 @@ XFubenManagerCreator = function()
     local XMVCA = XMVCA
     
     XFubenManager.StageType = XEnumConst.FuBen.StageType
-    XFubenManager.ChapterType = XFubenConfigs.ChapterType
+    XFubenManager.ChapterType = XEnumConst.FuBen.ChapterType
     XFubenManager.ModeType = XMVCA.XFuben.ModeType
     XFubenManager.ChapterFunctionName = XMVCA.XFuben.ChapterFunctionName
 
