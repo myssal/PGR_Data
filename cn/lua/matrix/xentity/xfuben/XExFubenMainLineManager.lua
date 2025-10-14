@@ -120,6 +120,7 @@ function XExFubenMainLineManager:ExGetChapterGroupConfigs()
         local tempConfigs = {}
         table.insert(tempConfigs, resultConfigs[1])
         resultConfigs = tempConfigs
+        return resultConfigs
     else
         local showConfigs = {}
 

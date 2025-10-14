@@ -150,7 +150,7 @@ function XUiPanelTeamPrefabEquip:OnBtnAwarenessSuitClick()
         else
             self:UpdateAwarenessView()
         end
-    end)
+    end, true)
 end
 
 return XUiPanelTeamPrefabEquip

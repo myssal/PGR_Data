@@ -565,6 +565,7 @@ function XGame2048GameControl:_DoRockReduce(x, y)
     local gridEntities = self.GridsControl:GetGridEntities()
     
     if not XTool.IsTableEmpty(gridEntities) then
+        local needDispelRockList = nil
         ---@param v XGame2048Grid
         for i, v in pairs(gridEntities) do
             if v:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.Rock then
@@ -585,17 +586,23 @@ function XGame2048GameControl:_DoRockReduce(x, y)
                         self.ActionsControl:AddRockShakeAction(v.Uid)
                         v:SetValue(v:GetValue() - 1)
                         if v:GetValue() <= 0 then
-                            -- 记录石头的消除动画
-                            self.ActionsControl:AddDispelAction(v.Uid)
-                            self:DoDispel(v)
-                            self:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_DATA)
+                            needDispelRockList = needDispelRockList or {}
+                            table.insert(needDispelRockList, v)
                         end
                     end
                 end
             end
         end
-    end
 
+        if not XTool.IsTableEmpty(needDispelRockList) then
+            for i, v in pairs(needDispelRockList) do
+                -- 记录石头的消除动画
+                self.ActionsControl:AddDispelAction(v.Uid)
+                self:DoDispel(v)
+                self:DispatchEvent(XMVCA.XGame2048.EventIds.EVENT_GAME2048_REFRESH_DATA)
+            end
+        end
+    end
 end
 
 function XGame2048GameControl:_DoDoublingEffect()

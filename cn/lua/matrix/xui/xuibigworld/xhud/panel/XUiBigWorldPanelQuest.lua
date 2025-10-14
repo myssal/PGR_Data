@@ -469,5 +469,9 @@ function XUiBigWorldPanelQuest:InsertTempShow(delay)
     self:InsertFuncAction(self.AfterTempShowRefresh, self)
 end
 
+function XUiBigWorldPanelQuest:IsDisplay()
+    return self.CanvasGroup.alpha > 0
+end
+
 
 return XUiBigWorldPanelQuest

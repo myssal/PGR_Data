@@ -1158,6 +1158,9 @@ end
 --region 时间轴
 -- 是否打开主线时间轴
 function XMainLine2Model:GetIsOpenExhibition()
+    if XUiManager.IsHideFunc then
+        return false
+    end
     if not self.IsOpenExhibition then
         local isOpen = self._SaveUtil:GetData("IsOpenMainLineExhibition")
         self.IsOpenExhibition = isOpen == nil or isOpen == true

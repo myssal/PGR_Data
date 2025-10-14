@@ -1,10 +1,17 @@
 ---@class XUiGridGame2048Grid: XUiNode
 ---@field _Control XGame2048Control
 ---@field ShakeTweener DG.Tweening.Tweener
+---@field BlueArrow UnityEngine.Transform
 local XUiGridGame2048Grid = XClass(XUiNode, 'XUiGridGame2048Grid')
 local XUiComGame2048GridAction = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiComGame2048GridAction')
 
 local FeverAddMax = nil
+local BlueArrowAngle = {
+    Up = 0,
+    Left = 90,
+    Down = 180,
+    Right = 270,
+}
 
 function XUiGridGame2048Grid:OnStart()
     ---@type XUiComGame2048GridAction
@@ -21,6 +28,9 @@ function XUiGridGame2048Grid:OnStart()
         self.BtnSelectDispel:AddEventListener(handler(self, self.OnBtnSelectDispelClickEvent))
         self.BtnSelectDispel.gameObject:SetActiveEx(false)
     end
+    
+    ---@type XGame2048GameControl
+    self._GameControl = self._Control:GetGameControl()
 end
 
 --- 克隆的预制体的名称
@@ -85,19 +95,35 @@ function XUiGridGame2048Grid:RefreshData(data)
             self.ImgIcon:SetRawImage(blockCfg.IconRes)
         end
     end
-
-    if self.TxtDesc then
-        -- todo: 临时赋值
+    
+    if self.BlueArrow then
+        self.BlueArrow.gameObject:SetActiveEx(true)
+        local eulerX, eulerY = self.BlueArrow.transform:GetLocalRotation()
+        -- 旋转
         if data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Up then
-            self.TxtDesc.text = 'Up'
+            self.BlueArrow.transform:SetLocalRotation(eulerX, eulerY, BlueArrowAngle.Up)
         elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Left then
-            self.TxtDesc.text = 'Left'
+            self.BlueArrow.transform:SetLocalRotation(eulerX, eulerY, BlueArrowAngle.Left)
         elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Down then
-            self.TxtDesc.text = 'Down'
+            self.BlueArrow.transform:SetLocalRotation(eulerX, eulerY, BlueArrowAngle.Down)
         elseif data:GetExValue() == XMVCA.XGame2048.EnumConst.GridDispelDirection.Right then
-            self.TxtDesc.text = 'Right'
+            self.BlueArrow.transform:SetLocalRotation(eulerX, eulerY, BlueArrowAngle.Right)
         end
     end
+
+    self:RefreshEffect(data:GetX(), data:GetY(), data:GetGridType())
+end
+
+function XUiGridGame2048Grid:RefreshEffect(x, y, gridType)
+    if self.EffectDispelAimShow then
+        if gridType ~= XMVCA.XGame2048.EnumConst.GridType.Dispel then
+            self.EffectDispelAimShow.gameObject:SetActiveEx(self._GameControl.GridsControl:CheckGridIsInCleanUpRange(x, y))
+        end
+    end
+end
+
+function XUiGridGame2048Grid:RefreshAfterTurnEnd()
+    self:RefreshEffect(self:GetNormalizePosX(), self:GetNormalizePosY(), self:GetGridType())
 end
 
 function XUiGridGame2048Grid:SetShow(blockId)

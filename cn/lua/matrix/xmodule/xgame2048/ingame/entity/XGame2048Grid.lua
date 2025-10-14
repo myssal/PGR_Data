@@ -111,7 +111,11 @@ function XGame2048Grid:SetNewConfig(blockCfg, typeCfg)
 end
 
 function XGame2048Grid:SetServerData(data)
-    self._ServerData = data
+    -- 因为查找和比较利用了表的hash值，所以只更新值，不替换表
+    for i, v in pairs(data) do
+        self._ServerData[i] = v
+    end
+    
     self._ExtValue = data.ExtValue
 end
 

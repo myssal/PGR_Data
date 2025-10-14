@@ -116,6 +116,7 @@ end
 ---@param notShowStrengthenBtn bool
 function XUiTeamPrefabWeapon:OnStart(teamPrefab, defaultPos, closecallback, notShowStrengthenBtn)
     self.TeamPrefab = teamPrefab
+    self.DefaultPos = defaultPos
     self.CurrentPos = defaultPos or 1
     self.CloseCallback = closecallback
     self.NotShowStrengthenBtn = notShowStrengthenBtn == true
@@ -240,37 +241,15 @@ function XUiTeamPrefabWeapon:OnBtnOrderClick()
 end
 
 function XUiTeamPrefabWeapon:OnBtnResonanceSkill(pos)
-    local equip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
-
-    -- 共鸣技能替换界面，武器且选中位置与当前角色是共鸣
-    local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
-    if equip:IsWeapon() and pos and equip:GetResonanceBindCharacterId(pos) == characterId then
-        XLuaUiManager.Open("UiTeamPrefabEquipResonanceSkillChange", self.TeamPrefab, characterId, self.SelectEquipId, self.CurrentPos, function ()
-            self:UpdateEquipResonance()
-        end)
-    end
+    -- 预设武器界面禁止进入相关编辑界面
 end
 
 function XUiTeamPrefabWeapon:OnBtnOverrun()
-    if not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun) then 
-        local tips = XFunctionManager.GetFunctionOpenCondition(XFunctionManager.FunctionName.EquipOverrun)
-        XUiManager.TipError(tips)
-        return
-    end
-        
-    XLuaUiManager.Open("UiEquipDetailV2P6", self.SelectEquipId, nil, self.CharacterId, nil, XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERRUN)
+    -- 预设武器界面禁止进入相关编辑界面
 end
 
 function XUiTeamPrefabWeapon:OnBtnOverrunClick()
-    if self.OverrunIconTips then
-        XUiManager.TipError(self.OverrunIconTips)
-        return
-    end
-
-    XLuaUiManager.Open("UiTeamPrefabEquipOverrunSelect", self.TeamPrefab, self.SelectEquipId, self.CurrentPos, function()
-        self:UpdateOverrun()
-        self.OverrunBlindEffect.gameObject:SetActiveEx(true)
-    end)
+    -- 预设武器界面禁止进入相关编辑界面
 end
 
 function XUiTeamPrefabWeapon:OnSortTypeChange()
@@ -516,6 +495,8 @@ function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
     local resonanceDict = self.TeamPrefab:GetWeaponResonance(self.CurrentPos) or {}
     local presetSkillId = resonanceDict[pos] or 0
     local hasPresetResonance = presetSkillId ~= 0
+    --是预设中的当前武器才会使用预设里的共鸣数据
+    local isCurSeleEquipForCurPos = self.SelectEquipId == self.TeamPrefab:GetWeaponData(self.CurrentPos).EquipId 
     
     -- 判断是否有共鸣数据（预设技能ID或实际装备有共鸣）
     local isEquip = hasPresetResonance or XMVCA.XEquip:CheckEquipPosResonanced(self.SelectEquipId, pos) ~= nil
@@ -558,7 +539,7 @@ function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
             local grid = self.ResonanceSkillDic[pos][stateName]
             grid:SetEquipIdAndPos(self.SelectEquipId, pos)
             grid:SetCharacterId(self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)) -- 更新角色ID
-            grid:Refresh(skillInfo, realBindCharacterId) -- 传入预设技能信息和实际绑定角色
+            grid:Refresh(isCurSeleEquipForCurPos and skillInfo or nil, realBindCharacterId) -- 传入预设技能信息和实际绑定角色
         end
     end
 end

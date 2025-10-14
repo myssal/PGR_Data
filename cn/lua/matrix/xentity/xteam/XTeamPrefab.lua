@@ -165,17 +165,24 @@ function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
         return XMVCA.XEquip:GetEquipSiteByEquipId(a.EquipId) < XMVCA.XEquip:GetEquipSiteByEquipId(b.EquipId)
     end)
 
+    local isConflict = not XTool.IsTableEmpty(conflictInfoList)
+
     local function doUpdate()
         -- 直接穿 冲突的意识已经在UpdateEquipAt里处理了，会先将被冲突的角色的装备脱掉
         local count2 = 0
         for slot, equipId in pairs(equipList) do
             count2 = count2 + 1
             local notSync = (count2 ~= count)
-            self:UpdateEquipAt(targetPos, slot, {EquipId = equipId}, notSync)
+            -- 有冲突就不要单独发装备信息 而是发全部的信息
+            self:UpdateEquipAt(targetPos, slot, {EquipId = equipId}, notSync or isConflict)
+        end
+
+        if isConflict then
+            self:SyncFullDataToServer()
         end
     end
 
-    if XTool.IsTableEmpty(conflictInfoList) then
+    if not isConflict then
         doUpdate()
     else
         return conflictInfoList, doUpdate

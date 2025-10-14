@@ -247,23 +247,29 @@ end
 -- 把当前使用的装备移动到第一个位置
 function XUiEquipReplaceV2P6:MoveUsingWeaponInFirst()
     local usingEquipId = nil
-    local curInPrefabEquipId = nil
-    for index, equipId in pairs(self.WeaponIdList) do
-        if equipId == self.UsingEquipId then
+    local prefabEquipIds = {} -- 存储所有在预设中的装备ID
+
+    -- 逆序遍历避免删除元素后索引错乱
+    for index = #self.WeaponIdList, 1, -1 do
+        local equipId = self.WeaponIdList[index]
+        
+        -- 查找当前穿戴的装备（只处理一次）
+        if not usingEquipId and equipId == self.UsingEquipId then
             usingEquipId = table.remove(self.WeaponIdList, index)
         end
+        
+        -- 查找预设中的装备（收集所有符合条件的装备）
         if XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(equipId, self.CharacterId) then
-            curInPrefabEquipId = table.remove(self.WeaponIdList, index)
-        end
-
-        if usingEquipId and curInPrefabEquipId then
-            break
+            table.insert(prefabEquipIds, table.remove(self.WeaponIdList, index))
         end
     end
-    if curInPrefabEquipId then
-        table.insert(self.WeaponIdList, 1, curInPrefabEquipId)
+    
+    -- 预设装备按原顺序插入到列表首位（原顺序通过逆序遍历+头部插入保证）
+    for i = #prefabEquipIds, 1, -1 do
+        table.insert(self.WeaponIdList, 1, prefabEquipIds[i])
     end
-
+    
+    -- 当前穿戴装备插入到列表首位（优先级高于预设装备）
     if usingEquipId then
         table.insert(self.WeaponIdList, 1, usingEquipId)
     end

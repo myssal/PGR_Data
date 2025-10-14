@@ -533,6 +533,10 @@ function XQuestOperation:DoObjectiveActive(data)
     --else
     --    self._View:RefreshBtnGo(data:GetQuestId())
     end
+    --由于数据更新时机，可能会出现先刷新目标激活再追踪任务
+    if not self._View:IsDisplay() then
+        self._View:InsertAnimationAction("TaskEnable")
+    end
     --并行的情况下，在步骤激活时就播放动画，这里则不处理
     if XMVCA.XBigWorldQuest:IsSerialStep(data:GetStepId()) then
         if data:CheckIsSingle() then

@@ -7,13 +7,13 @@ function XUiNewFuben:OnAwake()
     self.MainUiTabConfigs = self.FubenManagerEx.GetMainUiTabConfigs()
     -- 提审服屏蔽主线外的关卡
     if XUiManager.IsHideFunc then
+        local result = {}
         for k, v in pairs(self.MainUiTabConfigs) do
-            local result = {}
-            if v.UiParentName == "PanelMainLine" then
+            if v.UiParentName == "PanelMainLineRoot" then
                 table.insert(result, v)
-                self.MainUiTabConfigs = result
             end
         end
+        self.MainUiTabConfigs = result
     end
     self.ChildPanelInfoDic = {}
     self.TimerId = nil
@@ -155,7 +155,7 @@ function XUiNewFuben:InitBottomTabs()
     end
     
     self.PanelTabGroup:SelectIndex(self.SelectedIndex or 1)
-    
+
     -- 如果只有一个页签解锁了，那么隐藏底部栏
     if unlockCount <= 1 then
         self.PanelBottom.gameObject:SetActiveEx(false)

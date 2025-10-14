@@ -228,6 +228,10 @@ function XUiComGame2048GridAction:DoDispel(cb)
     else
         self._CurAnimTimeId = XScheduleManager.ScheduleOnce(self._EndCurAnimationHandler, self._DispelPlayTime * XScheduleManager.SECOND)
     end
+
+    if self.EffectDispelAimShow then
+        self.EffectDispelAimShow.gameObject:SetActiveEx(false)
+    end
 end
 
 --- 碰撞动画

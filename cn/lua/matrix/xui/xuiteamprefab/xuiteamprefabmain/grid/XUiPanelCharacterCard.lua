@@ -43,6 +43,10 @@ function XUiPanelCharacterCard:OnStart(pos)
     }
 end
 
+function XUiPanelCharacterCard:OnEnable()
+    self:ForceSkipToEndAnimation("BtnFirstDisable")
+end
+
 function XUiPanelCharacterCard:OnBtnHeadClick()
     self.BattleRoomDetailProxy = self.BattleRoomDetailProxy or XTool.CreateBattleRoomDetailProxy(self.ProxyTable)
     XLuaUiManager.Open("UiTeamPrefabCharacterSelect", nil, self.TeamPrefab, self.Pos, self.BattleRoomDetailProxy)

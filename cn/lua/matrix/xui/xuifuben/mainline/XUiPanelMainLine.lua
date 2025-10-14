@@ -28,6 +28,8 @@ function XUiPanelMainLine:Ctor(ui, root)
     self.CurrentFubenDifficulty = XDataCenter.FubenManager.DifficultNormal
     self.FirstTagIndex = nil
     
+    self.BtnBookmark.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
+    self.BtnCharacterStory.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
     self:RegisterUiEvents()
 end
 

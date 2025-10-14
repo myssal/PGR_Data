@@ -25,7 +25,7 @@ end
 
 -------------------------------------活动入口----------------------------------
 function XGame2048Agency:ExOpenMainUi()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Game2048) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Game2048, true) then
         return false
     end
     if XTool.IsNumberValid(self._Model:GetCurActivityId()) and self:ExCheckInTime() then

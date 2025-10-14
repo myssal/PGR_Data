@@ -2457,6 +2457,10 @@ XFunctionalSkipManagerCreator = function()
         XMVCA.XDlcRelink:OpenMainUi()
     end
 
+    function XFunctionalSkipManager.SkipToTeamPrefab(list)
+        XLuaUiManager.Open("UiTeamPrefabMain", nil, list.CustomParams[1])
+    end
+
     --endregion
     
     -- region CrossVersion 因为不是"实例"方法, 因此没有被覆写成功 #203409

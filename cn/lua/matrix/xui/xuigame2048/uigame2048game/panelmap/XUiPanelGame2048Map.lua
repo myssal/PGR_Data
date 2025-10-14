@@ -184,6 +184,13 @@ end
 
 -- 校验棋盘数据层和显示层是否一致
 function XUiPanelGame2048Map:VerificationMap()
+    -- 更新显示层UI的内容
+    if not XTool.IsTableEmpty(self._ShowedGrids) then
+        for i, v in pairs(self._ShowedGrids) do
+            v:RefreshAfterTurnEnd()
+        end
+    end
+    
     self._ActionCom:ResetSFXLock()
     
     local gridEntities = self._GameControl:GetGridEntities()
@@ -242,6 +249,7 @@ function XUiPanelGame2048Map:VerificationMap()
     else
         XLog.Error("存在空数据","数据层方块数:"..tostring(XTool.GetTableCount(gridEntities)), "显示层方块数"..tostring(XTool.GetTableCount(self._ShowedGrids)))
     end
+    
 end
 
 --- 刷新已有方块的显示

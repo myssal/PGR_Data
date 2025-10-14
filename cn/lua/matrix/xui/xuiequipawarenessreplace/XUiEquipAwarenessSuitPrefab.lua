@@ -29,9 +29,10 @@ function XUiEquipAwarenessSuitPrefab:OnAwake()
     self.GridSuitPrefab.gameObject:SetActiveEx(false)
 end
 
-function XUiEquipAwarenessSuitPrefab:OnStart(characterId, teamPrefabCb)
+function XUiEquipAwarenessSuitPrefab:OnStart(characterId, teamPrefabCb, isFromTeamPrefabUi)
     self.CharacterId = characterId
     self.TeamPrefabCb = teamPrefabCb
+    self.IsFromTeamPrefabUi = isFromTeamPrefabUi
     self.CurPrefabIndex = CUR_SUIT_PREFAB_INDEX
     self.SelectShowProperty = ShowPropertyIndex.Attr
     self.GridDoubleResonanceSkills = {}
@@ -364,6 +365,10 @@ function XUiEquipAwarenessSuitPrefab:UpdateSavePanel()
         local suitPrefabInfo = self:GetShowingPrefabInfo()
         self.BtnSetName:SetName(suitPrefabInfo:GetName())
     end
+
+    local isShowBtnSave = not (self.IsFromTeamPrefabUi and self.CurPrefabIndex == CUR_SUIT_PREFAB_INDEX)
+    self.BtnSave.gameObject:SetActiveEx(isShowBtnSave)
+    self.BtnEquip.gameObject:SetActiveEx(isShowBtnSave)
 end
 
 function XUiEquipAwarenessSuitPrefab:UpdateDynamicTable(resetScroll)

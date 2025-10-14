@@ -242,6 +242,16 @@ function XGame2048GridsControl:CheckDispelRangeHasWaterOrFireGrid()
     return false
 end
 
+--- 判断一个方块是否处于消除范围
+function XGame2048GridsControl:CheckGridIsInCleanUpRange(x, y)
+    local beginX, endX, beginY, endY = self:GetDispelGridCleanUpRange()
+
+    if x >= beginX and x <= endX and y >= beginY and y <= endY then
+        return true
+    end
+    
+    return false
+end
 --endregion
 
 --region Set

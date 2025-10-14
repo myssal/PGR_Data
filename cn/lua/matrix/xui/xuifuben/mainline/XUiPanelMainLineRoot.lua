@@ -13,7 +13,8 @@ function XUiPanelMainLineRoot:Ctor(ui, root, panelData)
     self.RootUi = root
     self.Params = panelData.Params
     XUiHelper.InitUiClass(self, panelData.UiParent)
-    
+
+    self:Refresh()
     self:RegisterUiEvents()
 end
 
@@ -74,6 +75,7 @@ end
 
 -- 刷新切换按钮
 function XUiPanelMainLineRoot:RefreshBtnSwitch()
+    self.BtnSwitch.gameObject:SetActiveEx(self.IsOpenExhibition)
     self.BtnSwitch:ActiveTextByGroup(0, self.IsOpenExhibition)
     self.BtnSwitch:ActiveTextByGroup(1, not self.IsOpenExhibition)
 end

@@ -25,7 +25,7 @@ function XUiGridCoverMember:RefreshByRealTeam(xTeam, pos)
         self.SuitOverrunItem.gameObject:SetActiveEx(false)
 
         -- 套装列表
-        local suitInfoList = XMVCA.XEquip:GetWearingSuitInfoList(self.CharacterId)
+        local suitInfoList = XMVCA.XEquip:GetWearingSuitInfoList(characterId)
         local itemIndex = 1
         local haveSuit = false
         for i, suitInfo in ipairs(suitInfoList) do
