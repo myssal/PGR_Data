@@ -15,6 +15,11 @@ function XUiRpgMakerGamePanelDetailTip:Ctor(ui, rootUi)
 end
 
 function XUiRpgMakerGamePanelDetailTip:Show(modelKey, modelName)
+    -- 未复现UiProxy为空的报错，先兼容报错
+    if not self.RootUi or not self.RootUi.UiProxy then
+        return
+    end
+    
     self.RootUi:StopAnimation("PanelDetailTipDisable")
     self:RefreshTxt(modelKey, modelName)
     if self.Timer and not self.IsPlayingAnima then

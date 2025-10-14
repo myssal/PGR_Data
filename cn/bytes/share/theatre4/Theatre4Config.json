@@ -1,101 +1,101 @@
 [
     {
         "Key": "ChapterNumberParameter",
-        "Desc": "章节数参数",
+        "Desc": "Chapter Count Coefficient",
         "Values": [
             100000
         ]
     },
     {
         "Key": "ProsperityIndexParameter",
-        "Desc": "繁荣度参数",
+        "Desc": "Prosperity Coefficient",
         "Values": [
             1
         ]
     },
     {
         "Key": "CellsOpenedParameter",
-        "Desc": "翻开格子数目参数",
+        "Desc": "Overturned Tile Count Coefficient",
         "Values": [
             150000
         ]
     },
     {
         "Key": "InterestNeedCount",
-        "Desc": "单次利息需要金币数【危险】",
+        "Desc": "Gold Coins required for one-time Interest [Danger]",
         "Values": [
             10
         ]
     },
     {
         "Key": "InterestAwardCount",
-        "Desc": "单次利息奖励金币数",
+        "Desc": "One-time Interest Gold Coin reward",
         "Values": [
             1
         ]
     },
     {
         "Key": "InterestAwardLimit",
-        "Desc": "回合利息奖励金币上限【危险】",
+        "Desc": "Gold Coin reward interest limit per round [Danger]",
         "Values": [
             30
         ]
     },
     {
         "Key": "OpenCloseCheck",
-        "Desc": "开启强退检测",
+        "Desc": "Enable Force Exit Detection",
         "Values": [
             1
         ]
     },
     {
         "Key": "CloseCheckCount",
-        "Desc": "容错保底次数",
+        "Desc": "Fault-Tolerant Guaranteed Attempts",
         "Values": [
             1
         ]
     },
     {
         "Key": "ItemCountLimit",
-        "Desc": "藏品上限",
+        "Desc": "Artifact Limit",
         "Values": [
             5
         ]
     },
     {
         "Key": "InheritItemNum",
-        "Desc": "藏品继承数量",
+        "Desc": "Number of Artifacts inherited",
         "Values": [
             2
         ]
     },
     {
         "Key": "InheritItemThreshold",
-        "Desc": "藏品继承阈值（翻格数要求）",
+        "Desc": "Artifact inherit Threshold (overturned tile count requirement)",
         "Values": [
             9999
         ]
     },
     {
         "Key": "PassChapterOperable",
-        "Desc": "历史关卡操作许可",
+        "Desc": "Archived Stages operation permission",
         "Values": [
             0
         ]
     },
     {
         "Key": "MaxTotalTechPoint",
-        "Desc": "可获得科技点总上限",
+        "Desc": "Max total obtainable Tech Points",
         "Values": [
             1200
         ]
     },
     {
         "Key": "MaxColorPoint",
-        "Desc": "可获得天赋点上限"
+        "Desc": "Max total obtainable Talent Points"
     },
     {
         "Key": "MaxProsperity",
-        "Desc": "可获得繁荣度上限"
+        "Desc": "Max total obtainable Prosperity"
     }
 ]

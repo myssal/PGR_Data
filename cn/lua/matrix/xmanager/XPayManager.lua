@@ -125,7 +125,7 @@ XPayManagerCreator = function()
             return data.IsDailyRewardGet
         else
             if not monthlyCardId then
-                return false
+                return true
             end
             local data = XDataCenter.PurchaseManager.GetYKInfoDataById(monthlyCardId)
             if not data or data.DailyRewardRemainDay == 0 then

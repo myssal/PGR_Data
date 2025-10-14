@@ -2,10 +2,10 @@
     {
         "Id": 1001051,
         "Endurance": 1,
-        "Title": "未知记录",
-        "Description": "代号为X-779的记录载体被加密封装保护着，虽然依旧疑惑于为何要用加密封装来保护一份存放在冗余模块里的记录。但既然赛利卡向你们要求这个，那她一定有她的理由。",
-        "SucDesc": "档案提取成功……\\n档案识别代码：X-779\\n“国界终将湮入虚无，精神的巴别塔将再次闪耀于人类文明的山峰，成为人类崛起的象征。”",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件。",
+        "Title": "Unknown Record",
+        "Description": "The record (code name X-779) is protected by an encrypted seal. You wonder why there is so much protection on a record that is stored in a redundant module, but Celica must have her reasons.",
+        "SucDesc": "File extracted successfully...\\nFile ID: X-779\\n\"Borders will disappear, and the Babel Tower of spirit will shine on the peak of human civilization once again. It is the symbol of the rise of mankind.\"",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You were lucky to avoid the potential negative event.",
         "ActionId": [
             11001051,
             21001051
@@ -14,10 +14,10 @@
     {
         "Id": 1021051,
         "Endurance": 1,
-        "Title": "区域过载",
-        "Description": "凭借里的算力特性，你们准备在密集的数据防御阵列中寻找一条可以安全通过的道路。(通过推演才可前进）",
-        "SucDesc": "面对面前密密麻麻的数据防御带，里精确地规划出了一条堪堪可以通过的缝隙。",
-        "FailDesc": "扫描数据显示面前是密密麻麻的数据防御带，但是并没能运算没有安全通过的路径。数据防御如洪流一般把所有人挤出了链路，浸入过程只能从头开始。",
+        "Title": "Area Overload",
+        "Description": "With Lee's computing power, you attempt to find a safe way through the highly dense data defense formation. (Calculation required)",
+        "SucDesc": "Lee has come up with a precise plan, pointing out a narrow opening amongst the highly dense data defense.",
+        "FailDesc": "The scanned data shows a highly dense data defense formation, but it fails to calculate a safe route through it. The data torrent has pushed everyone out of the connection, and you have to start over again.",
         "StartMovieId": "JD01601BA",
         "ActionId": [
             31021051
@@ -32,10 +32,10 @@
     {
         "Id": 1021052,
         "Endurance": 0,
-        "Title": "数据断片",
-        "Description": "只有找到【数据断片】才有办法继续前进，此道具可在战术舰桥第2区域探索获得。",
-        "SucDesc": "数据断片已经被寻回，区域数据趋于完整，封锁因而打开。",
-        "FailDesc": "无失败描述",
+        "Title": "Data Fragment",
+        "Description": "You must find [Data Fragment] to continue going forward. It can be obtained by exploring Area 2 of the Tactical Bridge.",
+        "SucDesc": "The data fragment has been retrieved. Now the data in the area is complete, the blockade has been lifted.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11021052
         ]
@@ -43,10 +43,10 @@
     {
         "Id": 1022051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11022051
         ],
@@ -68,10 +68,10 @@
     {
         "Id": 1022052,
         "Endurance": 1,
-        "Title": "干扰区块",
-        "Description": "眼前的整个区域都弥漫着紊乱跟破碎的视觉信号，感觉终端跟构造体的感受器都受到了严重的干扰，如果不能解除干扰的话……",
-        "SucDesc": "干扰终究抵不过更强的压制，干扰区域的紊乱逐渐恢复到了正常的视觉信号。",
-        "FailDesc": "个体的压制手段也许终究无法跟程序的机械算力相提并论，单纯的压制并未改善现况，只能另寻办法了。",
+        "Title": "Disruptive Block",
+        "Description": "The entire area is filled with disordered, broken visual signals. The sensors on terminals and Constructs are significantly impacted. If the interference can not be removed...",
+        "SucDesc": "The interference is eventually suppressed. The visual signals in the area are restored.",
+        "FailDesc": "Suppression alone cannot overwhelm the machine algorithm. The situation is not getting any better, and you have to seek alternative solutions.",
         "ActionId": [
             11022052
         ],
@@ -93,10 +93,10 @@
     {
         "Id": 1022053,
         "Endurance": 0,
-        "Title": "封锁道具6",
-        "Description": "只有找到【道具6】才有办法继续前进",
-        "SucDesc": "使用【道具6】成功通过了，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Blockade Item 6",
+        "Description": "You must find [Item 6] to continue going forward.",
+        "SucDesc": "You have successfully used [Item 6] to go through. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11022053
         ]
@@ -104,10 +104,10 @@
     {
         "Id": 1022054,
         "Endurance": 0,
-        "Title": "固化软件",
-        "Description": "只有找到【二进制笑话软件】才有办法继续前进，此道具可在多米克纪念公园第3区域探索获得。",
-        "SucDesc": "使用【二进制笑话软件】成功通过了，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Consolidated Software",
+        "Description": "You must find [Binary Jokes Software] to continue going forward. It can be obtained by exploring Area 3 of Dominik Memorial Park.",
+        "SucDesc": "You have successfully used [Binary Jokes Software] to go through. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11022054
         ]
@@ -115,10 +115,10 @@
     {
         "Id": 1022055,
         "Endurance": 0,
-        "Title": "数据读取",
-        "Description": "只有找到【未知的记录备份】才有办法继续前进，此道具可在战术舰桥层第3区域获得。",
-        "SucDesc": "使用【未知的记录备份】成功通过了，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Read Data",
+        "Description": "You must find [Unknown Data Backup] to continue going forward. It can be obtained by exploring Area 3 of the Tactical Bridge.",
+        "SucDesc": "You have successfully used [Unknown Data Backup] to go through. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11022055
         ]
@@ -126,10 +126,10 @@
     {
         "Id": 1023051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11023051
         ],
@@ -151,10 +151,10 @@
     {
         "Id": 1023052,
         "Endurance": 1,
-        "Title": "干扰区块",
-        "Description": "眼前的整个区域都弥漫着紊乱跟破碎的视觉信号，感觉终端跟构造体的感受器都受到了严重的干扰，如果不能解除干扰的话……",
-        "SucDesc": "干扰终究抵不过更强的压制，干扰区域的紊乱逐渐恢复到了正常的视觉信号。",
-        "FailDesc": "个体的压制手段也许终究无法跟程序的机械算力相提并论，单纯的压制并未改善现况，只能另寻办法了。",
+        "Title": "Disruptive Block",
+        "Description": "The entire area is filled with disordered, broken visual signals. The sensors on terminals and Constructs are significantly impacted. If the interference can not be removed...",
+        "SucDesc": "The interference is eventually suppressed. The visual signals in the area are restored.",
+        "FailDesc": "Suppression alone cannot overwhelm the machine algorithm. The situation is not getting any better, and you have to seek alternative solutions.",
         "ActionId": [
             11023052
         ],
@@ -176,10 +176,10 @@
     {
         "Id": 1031050,
         "Endurance": 1,
-        "Title": "扫描计划",
-        "Description": "里建议使用其算力优势的特性进行暴力破解式的筛选，以从海量的杂讯中找到‘比安卡’的踪迹。(通过推演才可前进）",
-        "SucDesc": "里建议使用其算力优势的特性进行暴力破解式的筛选，以从海量的杂讯中找到‘比安卡’的踪迹。",
-        "FailDesc": "纷乱的讯号和踪迹杂乱无章，虽然数量有所减少，但却没有显示出什么有意义的信息。",
+        "Title": "Scanning",
+        "Description": "Lee suggests a brute-force filtering using his advantage of processing power to find \"Bianca\" from the enormous amount of data and noise. (Calculation required)",
+        "SucDesc": "The sea of noise slowly dissipates from the terminal, revealing an obscure path forward.",
+        "FailDesc": "The amount of signals and traces is reduced, but they are still in disorder. You did not find any useful information.",
         "StartMovieId": "JD01602BA",
         "ActionId": [
             11031050
@@ -194,10 +194,10 @@
     {
         "Id": 1031051,
         "Endurance": 1,
-        "Title": "垃圾数据",
-        "Description": "繁杂而纷乱的痕迹组成路网，要从中发现唯一有意义的那一道可没有预期那么容易。(通过推演才可前进）",
-        "SucDesc": "你们精确地定位到了最近留下的痕迹指向着远方的某处。",
-        "FailDesc": "迷宫对你们来说依然像个迷宫，也许是在判断上出现了些许偏差，但也足以将你们导向完全错误的选择。",
+        "Title": "Junk Data",
+        "Description": "The chaotic traces form a net on the road. It will be difficult to find the right one. (Calculation required)",
+        "SucDesc": "You locate the most recent trace precisely. It points to somewhere far away.",
+        "FailDesc": "The maze is still very confusing. A slight deviation can lead you to a completely incorrect decision.",
         "StartMovieId": "JD01603BA",
         "ActionId": [
             11031051
@@ -212,10 +212,10 @@
     {
         "Id": 1032051,
         "Endurance": 0,
-        "Title": "安全编码",
-        "Description": "只有找到【安全编码】才有办法继续前进，此道具可在本区域探索获得。",
-        "SucDesc": "在记录中，你们看着一个数据体通过被破坏的保密链路入侵到了虚拟空间内。而对其的特征信息对比，显示为——‘华胥’。是揭露真相的时候了。",
-        "FailDesc": "无失败描述",
+        "Title": "Security Code",
+        "Description": "You must find [Security Code] to continue going forward. It can be obtained by exploring this area.",
+        "SucDesc": "In the record, you find a data entity hacking into the virtual space through a damaged encrypted link. Its identity characteristics pointed to \"Huaxu.\" Time to unveil the truth.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11032051
         ]
@@ -223,10 +223,10 @@
     {
         "Id": 1032052,
         "Endurance": 0,
-        "Title": "原始信号源",
-        "Description": "只有获得【原始信号源】才能让面前错乱而堵塞的区域回到正常状态，只有等【空中花园】安定下来后再寻找了。",
-        "SucDesc": "使用【原始信号源】成功通过了封锁，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Origin of Signals",
+        "Description": "Only the [Origin of Signals] can restore the disrupted, blocked area to its normal state. You have to wait for [Babylonia] to settle down before searching again.",
+        "SucDesc": "You have successfully used [Origin of Signals] to go through the blockade. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11032052
         ]
@@ -234,10 +234,10 @@
     {
         "Id": 1032053,
         "Endurance": 1,
-        "Title": "加密漏洞",
-        "Description": "紊乱的数据体失却了自己原来的目的，徘徊在虚拟空间里。如果你们帮了它，它也许也能帮到你们。（通过推演才可前进）",
-        "SucDesc": "程序体的功能被修复，而从中恢复到的跳板痕迹指向了前方的某个路点。",
-        "FailDesc": "对程序体的修复持续了很久，但是并没有什么进展。",
+        "Title": "Compromised Code",
+        "Description": "The disordered data entity loses its original purpose and wanders in the virtual space. If you can help it, it may be able to provide some assistance. (Calculation required)",
+        "SucDesc": "The program's function is repaired, and a restored jumping route points to a waypoint ahead.",
+        "FailDesc": "You spend a long time trying to repair the program, but little progress was made.",
         "StartMovieId": "JD01604BA",
         "ActionId": [
             11032053
@@ -252,10 +252,10 @@
     {
         "Id": 1032054,
         "Endurance": 1,
-        "Title": "加密漏洞",
-        "Description": "紊乱的残骸堆中可能藏着必然的急躁留下的线索，但是知道答案的唯一办法是动手开始反推。（通过推演才可前进）",
-        "SucDesc": "急躁的痕迹连在一起，路径一直指向远方的某处。看来伪装者的时间很紧，以至于在完成了整个残骸堆之后，已经没有余力伪装痕迹了。",
-        "FailDesc": "残骸堆里的信息堆你们来说就跟它看起来一样一片混乱，看来一次反推并无法得到太有意义的结果。",
+        "Title": "Compromised Code",
+        "Description": "The filthy pile of remains can contain some clue, but calculation is the only way that can lead you to the possible answer. (Calculation required)",
+        "SucDesc": "The impatient traces join together and point to somewhere far away. Seems that the deceptor did not have time to properly hide the traces after building this pile of remains.",
+        "FailDesc": "The data inside looks as messy as the pile of remains. A single calculation does not seem to get you meaningful results.",
         "StartMovieId": "JD01605BA",
         "ActionId": [
             11032054
@@ -270,10 +270,10 @@
     {
         "Id": 1032055,
         "Endurance": 1,
-        "Title": "加密漏洞",
-        "Description": "紊乱和桥接的痕迹直接而明显，趁现在移除的话，可以得到最为清晰，指向性最强的反推情报。（通过推演才可前进）",
-        "SucDesc": "紊乱模块被成功移除，你们得到了全部信息。",
-        "FailDesc": "紊乱模块在犹豫和失误中逐渐跟程序体耦合，只能通过更多的破解来寻求信息了。",
+        "Title": "Compromised Code",
+        "Description": "The traces of disorder and bridging connection are straight forward and obvious. Remove it now for the clearest information that provides the best direction. (Calculation required)",
+        "SucDesc": "The disordered module is successfully removed. You retrieve all the information.",
+        "FailDesc": "Due to hesitation and mistakes, the disordered module gradually merges with the program. You have to hack into it further to find more information.",
         "StartMovieId": "JD01606BA",
         "ActionId": [
             11032055
@@ -288,10 +288,10 @@
     {
         "Id": 1032056,
         "Endurance": 0,
-        "Title": "突发故障",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Sudden Fault",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             11032056
         ],
@@ -305,10 +305,10 @@
     {
         "Id": 1032057,
         "Endurance": 0,
-        "Title": "突发故障",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Sudden Fault",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             11032057
         ],
@@ -322,10 +322,10 @@
     {
         "Id": 1033051,
         "Endurance": 1,
-        "Title": "数据迷宫",
-        "Description": "可探测范围极低的多条岔路排列在面前，只靠目视观察无法判断到底哪条才是真正的前路。",
-        "SucDesc": "良好的感知带着小队走到了正确的道路上，也看到了其他岔路上的障碍和危险。",
-        "FailDesc": "很可惜，感知力这次没有站在你们这一边。你们只能接受现实——得重新找路了。",
+        "Title": "Data Maze",
+        "Description": "You face multiple split roads and can not tell which is the right one with naked eyes.",
+        "SucDesc": "Your outstanding Perception leads the team onto the right road. As you advance, you also see the obstacles and danger on other routes.",
+        "FailDesc": "Unfortunately, Perception isn't on your side. You have to face the reality and look for a way out again.",
         "ActionId": [
             11033051
         ],
@@ -347,10 +347,10 @@
     {
         "Id": 1033052,
         "Endurance": 1,
-        "Title": "干扰区块",
-        "Description": "眼前的整个区域都弥漫着紊乱跟破碎的视觉信号，感觉终端跟构造体的感受器都受到了严重的干扰，如果不能解除干扰的话……",
-        "SucDesc": "干扰终究抵不过更强的压制，干扰区域的紊乱逐渐恢复到了正常的视觉信号。",
-        "FailDesc": "个体的压制手段也许终究无法跟程序的机械算力相提并论，单纯的压制并未改善现况，只能另寻办法了。",
+        "Title": "Disruptive Block",
+        "Description": "The entire area is filled with disordered, broken visual signals. The sensors on terminals and Constructs are significantly impacted. If the interference can not be removed...",
+        "SucDesc": "The interference is eventually suppressed. The visual signals in the area are restored.",
+        "FailDesc": "Suppression alone cannot overwhelm the machine algorithm. The situation is not getting any better, and you have to seek alternative solutions.",
         "ActionId": [
             11033052
         ],
@@ -372,10 +372,10 @@
     {
         "Id": 1041051,
         "Endurance": 1,
-        "Title": "劫持路径点",
-        "Description": "紊乱的程序体们漫无章法的堵塞着道路，如果不清理掉它们中的相当部分，你们无论如何无法通过。（通过推演才可前进）",
-        "SucDesc": "程序体们数量不断减少，直至一条道路从中被开出。",
-        "FailDesc": "程序体们的数量不断较少，但是道路依然被牢牢地阻塞着。",
+        "Title": "Hijacking Waypoint",
+        "Description": "The disordered programs block the road. You must clear away a lot of them to cross. (Calculation required)",
+        "SucDesc": "As the programs are reduced, you create an opening amongst them.",
+        "FailDesc": "The number of programs keep dropping, but the road is still blocked.",
         "StartMovieId": "JD01607BA",
         "ActionId": [
             11041051,
@@ -393,10 +393,10 @@
     {
         "Id": 1041052,
         "Endurance": 1,
-        "Title": "桥接痕迹",
-        "Description": "不突破眼前的混乱战场，就没有前进的办法。（通过推演才可前进）",
-        "SucDesc": "你们用铁锤般的攻势打开了正面的包围。",
-        "FailDesc": "你们被程序体的攻势顶了回去。",
+        "Title": "Bridging Marks",
+        "Description": "You must break through the chaotic battlefield in order to advance. (Calculation required)",
+        "SucDesc": "You crush the frontal siege like a hammer.",
+        "FailDesc": "You are pushed back by the programs' attack.",
         "StartMovieId": "JD01610BA",
         "ActionId": [
             11041052
@@ -413,10 +413,10 @@
     {
         "Id": 1041053,
         "Endurance": 1,
-        "Title": "劫持路径点",
-        "Description": "无论如何，不想办法打开数据封锁，就没办法突破这里。（通过推演才可前进）",
-        "SucDesc": "数据封锁被突破，面前的道路向你们敞开。",
-        "FailDesc": "数据封锁依然保持着完好的封装状态。",
+        "Title": "Hijacking Waypoint",
+        "Description": "You must remove the blockade to continue moving forward. (Calculation required)",
+        "SucDesc": "You manage to break through the data barrier and see a new road.",
+        "FailDesc": "The data barrier remains intact.",
         "StartMovieId": "JD01608BA",
         "ActionId": [
             11041053,
@@ -434,10 +434,10 @@
     {
         "Id": 1041055,
         "Endurance": 1,
-        "Title": "劫持路径点",
-        "Description": "无论如何，不想办法打开数据封锁，就没办法突破这里。（通过推演才可前进）",
-        "SucDesc": "数据封锁被突破，面前的道路向你们敞开。",
-        "FailDesc": "数据封锁依然保持着完好的封装状态。",
+        "Title": "Hijacking Waypoint",
+        "Description": "You must remove the blockade to continue moving forward. (Calculation required)",
+        "SucDesc": "You manage to break through the data barrier and see a new road.",
+        "FailDesc": "The data barrier remains intact.",
         "StartMovieId": "JD01609BA",
         "ActionId": [
             11041055,
@@ -455,10 +455,10 @@
     {
         "Id": 1042051,
         "Endurance": 0,
-        "Title": "遗落记录",
-        "Description": "只有找到【遗落的任务记录】才有办法继续前进，此道具可在伊甸16-B 第2区域探索获得。",
-        "SucDesc": "使用【遗落的任务记录】成功通过了封锁，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Lost Record",
+        "Description": "You must find [Lost Mission Record] to continue going forward. It can be obtained by exploring Area 2 of Eden 16-B.",
+        "SucDesc": "You have successfully used [Lost Mission Record] to go through the blockade. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11042051
         ]
@@ -466,10 +466,10 @@
     {
         "Id": 1042052,
         "Endurance": 1,
-        "Title": "线路异常",
-        "Description": "数据封锁生硬地横贯在面前的空间里，让你们别无选择。无论如何，不想办法打开数据封锁，就没办法突破这里。（通过推演才可前进）",
-        "SucDesc": "数据封锁被突破，面前的道路向你们敞开。",
-        "FailDesc": "数据封锁依然保持着完好的封装状态。",
+        "Title": "Line Error",
+        "Description": "The data barrier stands right ahead, leaving you no choice. You must remove the blockade to continue moving forward. (Calculation required)",
+        "SucDesc": "You manage to break through the data barrier and see a new road.",
+        "FailDesc": "The data barrier remains intact.",
         "StartMovieId": "JD01611BA",
         "ActionId": [
             11042052,
@@ -487,10 +487,10 @@
     {
         "Id": 1042053,
         "Endurance": 1,
-        "Title": "未知端口",
-        "Description": "空中花园制式模样的安全锁关闭了信道入口。（通过推演才可前进）",
-        "SucDesc": "安全锁：授权确认，开启中。",
-        "FailDesc": "安全锁：授权中……授权失败，请重试。",
+        "Title": "Unknown Port",
+        "Description": "There is a Babylonia-style security lock on the entrance of the channel. (Calculation required)",
+        "SucDesc": "Security Lock: Access confirmed. Unlocking...",
+        "FailDesc": "Security Lock: Authorizing... Authorization failed. Please try again.",
         "StartMovieId": "JD01612BA",
         "ActionId": [
             11042053
@@ -507,10 +507,10 @@
     {
         "Id": 1042055,
         "Endurance": 1,
-        "Title": "未知端口",
-        "Description": "空中花园制式模样的安全锁关闭了信道入口，紊乱的信号不断闪烁。（通过推演才可前进）",
-        "SucDesc": "安全锁的功能被完全破坏，无言地为你们敞开了。",
-        "FailDesc": "安全锁：*YUB&TG（——HIBP（*&TYBUPIGP",
+        "Title": "Unknown Port",
+        "Description": "There is a Babylonia-style security lock on the entrance of the channel. You see signals blinking in disorder. (Calculation required)",
+        "SucDesc": "The security lock's functions are completely destroyed. It quietly opens.",
+        "FailDesc": "Security Lock: *YUB&TG (—HIBP(*&TYBUPIGP",
         "StartMovieId": "JD01613BA",
         "ActionId": [
             11042055
@@ -527,10 +527,10 @@
     {
         "Id": 1042057,
         "Endurance": 1,
-        "Title": "未知端口",
-        "Description": "空中花园制式模样的安全锁关闭了信道入口，紊乱的信号和错位的模块在结构间不断闪烁。（通过推演才可前进）",
-        "SucDesc": "安全锁：授权确认，开启中。",
-        "FailDesc": "安全锁：*YUB&TG（——HIBP（*&TYBUPIGP",
+        "Title": "Unknown Port",
+        "Description": "There is a Babylonia-style security lock on the entrance of the channel. You see signals and modules blinking in disorder. (Calculation required)",
+        "SucDesc": "Security Lock: Access confirmed. Unlocking...",
+        "FailDesc": "Security Lock: *YUB&TG (—HIBP(*&TYBUPIGP",
         "StartMovieId": "JD01614BA",
         "ActionId": [
             11042057,
@@ -548,10 +548,10 @@
     {
         "Id": 1043051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11043051
         ],
@@ -573,10 +573,10 @@
     {
         "Id": 1043052,
         "Endurance": 1,
-        "Title": "数据迷宫",
-        "Description": "可探测范围极低的多条岔路排列在面前，只靠目视观察无法判断到底哪条才是真正的前路。",
-        "SucDesc": "良好的感知带着小队走到了正确的道路上，也看到了其他岔路上的障碍和危险。",
-        "FailDesc": "很可惜，感知力这次没有站在你们这一边。你们只能接受现实——得重新找路了。",
+        "Title": "Data Maze",
+        "Description": "You face multiple split roads and can not tell which is the right one with naked eyes.",
+        "SucDesc": "Your outstanding Perception leads the team onto the right road. As you advance, you also see the obstacles and danger on other routes.",
+        "FailDesc": "Unfortunately, Perception isn't on your side. You have to face the reality and look for a way out again.",
         "ActionId": [
             11043052
         ],
@@ -598,9 +598,9 @@
     {
         "Id": 1043053,
         "Endurance": 0,
-        "Title": "隐蔽节点",
-        "Description": "只有找到【作废的路点】才有办法继续前进，此道具可在议会外广场第2区域探索获得。",
-        "SucDesc": "使用【作废的路点】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Hidden Node",
+        "Description": "You must find [Deserted Waypoint] to continue going forward. It can be obtained by exploring Area 2 of Parliament Square.",
+        "SucDesc": "You have successfully used [Deserted Waypoint] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11043053
         ]
@@ -608,9 +608,9 @@
     {
         "Id": 1043054,
         "Endurance": 0,
-        "Title": "遗忘记录",
-        "Description": "只有找到【遗落的任务记录】才有办法继续前进，此道具可在伊甸16-B 第2区域探索获得。",
-        "SucDesc": "使用【遗落的任务记录】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Forgotten Record",
+        "Description": "You must find [Lost Mission Record] to continue going forward. It can be obtained by exploring Area 2 of Eden 16-B.",
+        "SucDesc": "You have successfully used [Lost Mission Record] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11043054
         ]
@@ -618,9 +618,9 @@
     {
         "Id": 1043055,
         "Endurance": 0,
-        "Title": "通讯装置",
-        "Description": "只有找到【圣甲虫小队通讯记录】才有办法继续前进，此道具可在战术舰桥第2区域探索获得。",
-        "SucDesc": "使用【圣甲虫小队通讯记录】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Comms Device",
+        "Description": "You must find [Comms Record of Scarab Squad] to continue going forward. It can be obtained by exploring Area 2 of the Tactical Bridge.",
+        "SucDesc": "You have successfully used [Comms Record of Scarab Squad] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11043055
         ]
@@ -628,10 +628,10 @@
     {
         "Id": 1044051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11044051
         ],
@@ -653,10 +653,10 @@
     {
         "Id": 1044052,
         "Endurance": 1,
-        "Title": "数据迷宫",
-        "Description": "可探测范围极低的多条岔路排列在面前，只靠目视观察无法判断到底哪条才是真正的前路。",
-        "SucDesc": "良好的感知带着小队走到了正确的道路上，也看到了其他岔路上的障碍和危险。",
-        "FailDesc": "很可惜，感知力这次没有站在你们这一边。你们只能接受现实——得重新找路了。",
+        "Title": "Data Maze",
+        "Description": "You face multiple split roads and can not tell which is the right one with naked eyes.",
+        "SucDesc": "Your outstanding Perception leads the team onto the right road. As you advance, you also see the obstacles and danger on other routes.",
+        "FailDesc": "Unfortunately, Perception isn't on your side. You have to face the reality and look for a way out again.",
         "ActionId": [
             11044052
         ],
@@ -678,10 +678,10 @@
     {
         "Id": 1044053,
         "Endurance": 1,
-        "Title": "干扰区块",
-        "Description": "眼前的整个区域都弥漫着紊乱跟破碎的视觉信号，感觉终端跟构造体的感受器都受到了严重的干扰，如果不能解除干扰的话……",
-        "SucDesc": "干扰终究抵不过更强的压制，干扰区域的紊乱逐渐恢复到了正常的视觉信号。",
-        "FailDesc": "个体的压制手段也许终究无法跟程序的机械算力相提并论，单纯的压制并未改善现况，只能另寻办法了。",
+        "Title": "Disruptive Block",
+        "Description": "The entire area is filled with disordered, broken visual signals. The sensors on terminals and Constructs are significantly impacted. If the interference can not be removed...",
+        "SucDesc": "The interference is eventually suppressed. The visual signals in the area are restored.",
+        "FailDesc": "Suppression alone cannot overwhelm the machine algorithm. The situation is not getting any better, and you have to seek alternative solutions.",
         "ActionId": [
             11044053
         ],
@@ -703,10 +703,10 @@
     {
         "Id": 1044054,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11044054
         ],
@@ -728,9 +728,9 @@
     {
         "Id": 1044055,
         "Endurance": 0,
-        "Title": "虚化数据",
-        "Description": "只有找到【诱饵处理器】才有办法继续前进，此道具可在多米尼克公园第2区域探索获得",
-        "SucDesc": "使用【诱饵处理器】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Blurred Data",
+        "Description": "You must find [Bait Processor] to continue going forward. It can be obtained by exploring Area 2 of Dominik Memorial Park.",
+        "SucDesc": "You have successfully used [Bait Processor] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11044055
         ]
@@ -738,10 +738,10 @@
     {
         "Id": 1051051,
         "Endurance": 0,
-        "Title": "损坏电梯",
-        "Description": "只有使用【电子回路】才能修复电梯单元。此道具可在本次修复。此道具可在本区域修复【故障回路】获得。",
-        "SucDesc": "使用【电子回路】将电梯损坏的动作部分勉强修复，虽然速度不均匀，但是好歹可以正常运作了。",
-        "FailDesc": "无失败描述",
+        "Title": "Break the Lift",
+        "Description": "You must use [Electronic Circuit] to repair the lift unit. It can be obtained by repairing the [Faulty Circuit] in this area.",
+        "SucDesc": "You repair the lift's faulty circuit with [Electronic Circuit]. The lift is still very jerky, but at least it can function.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11051051
         ]
@@ -749,10 +749,10 @@
     {
         "Id": 1051052,
         "Endurance": 0,
-        "Title": "突发故障",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Sudden Fault",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             11051052
         ],
@@ -774,10 +774,10 @@
     {
         "Id": 1051053,
         "Endurance": 0,
-        "Title": "瘫痪机雷",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Paralyzing Mine",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             11051053
         ],
@@ -799,10 +799,10 @@
     {
         "Id": 1051054,
         "Endurance": 0,
-        "Title": "机械封锁",
-        "Description": "只有找到【通行密钥】才有办法继续前进，此道具可探索多米尼克纪念公园第2区域获得。",
-        "SucDesc": "使用【通行密钥】通过封锁，但前方有更多的迷雾需要解开。",
-        "FailDesc": "无失败描述",
+        "Title": "Machine Blockade",
+        "Description": "You must find [Passcode] to continue going forward. It can be obtained by exploring Area 2 of Dominik Memorial Park.",
+        "SucDesc": "You use [Passcode] to get through the blockade, but more mysteries awaites you ahead.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             11051054
         ]
@@ -810,10 +810,10 @@
     {
         "Id": 1051055,
         "Endurance": 1,
-        "Title": "伪装节点",
-        "Description": "在舰桥对甲板常规通讯接口之下，隐藏着干扰节点的附加功能，它极大地影响着你们的空间感知能力。你们没有分析它的余裕，它的功能必须马上停止。（通过推演才可前进）",
-        "SucDesc": "节点被破坏，不管是原来的功能还是干扰的功能都已经失去。",
-        "FailDesc": "节点受到损伤，但却维持着干扰的功能。",
+        "Title": "Camouflage Node",
+        "Description": "An interference node is hiding within the normal communication port between the bridge and the deck. It has significantly impacted your spatial perception. You have no time for in-depth analysis, the node must be stopped immediately. (Calculation required)",
+        "SucDesc": "The node is destroyed. It can no longer maintain its function, or the interference.",
+        "FailDesc": "The node is damaged, but still keeps its interfering function.",
         "StartMovieId": "JD01615BA",
         "ActionId": [
             11051055,
@@ -831,10 +831,10 @@
     {
         "Id": 1051056,
         "Endurance": 1,
-        "Title": "异附节点",
-        "Description": "在密密麻麻的CIC终端跳线内部，附着着某种干扰节点，它正在影响你们的视觉判断力，只有后找到并摧毁，它的功能才会停止。（通过推演才可前进）",
-        "SucDesc": "节点被破坏，不管是原来的功能还是干扰的功能都已经失去。",
-        "FailDesc": "节点受到损伤，但却维持着干扰的功能。",
+        "Title": "Hetero Node",
+        "Description": "An interference node was hiding witin the CIC terminal jumpers and impacting your visual cognitive ability. You must find it and destroy it. (Calculation required)",
+        "SucDesc": "The node is destroyed. It can no longer maintain its function, or the interference.",
+        "FailDesc": "The node is damaged, but still keeps its interfering function.",
         "StartMovieId": "JD01616BA",
         "ActionId": [
             11051056,
@@ -852,10 +852,10 @@
     {
         "Id": 1051057,
         "Endurance": 1,
-        "Title": "拒止节点",
-        "Description": "在全息沙盘的放大器上，干扰节点正在借此发挥着功能，影响着你们的电子战能力，其功率大于你们，所以只能选择物理破坏。（通过推演才可前进）",
-        "SucDesc": "节点被破坏，不管是原来的功能还是干扰的功能都已经失去。",
-        "FailDesc": "节点受到损伤，但却维持着干扰的功能。",
+        "Title": "Denial Node",
+        "Description": "An interference node is impacting your electronic combat ability on the amplifier of the holographic sand table. It carries greater power than your device, so your only option is to physically destroy it. (Calculation required)",
+        "SucDesc": "The node is destroyed. It can no longer maintain its function, or the interference.",
+        "FailDesc": "The node is damaged, but still keeps its interfering function.",
         "ActionId": [
             11051057
         ],
@@ -871,10 +871,10 @@
     {
         "Id": 1051058,
         "Endurance": 1,
-        "Title": "复杂节点",
-        "Description": "在防火墙的内部端口处，干扰节点劫持了原有的安全权限，危及你们的战术指挥稳定性。解除它最彻底的方式，是破解它的底层代码。（通过推演才可前进）",
-        "SucDesc": "节点被破坏，不管是原来的功能还是干扰的功能都已经失去。",
-        "FailDesc": "节点受到损伤，但却维持着干扰的功能。",
+        "Title": "Complicated Node",
+        "Description": "An interference node has hijacked the original security permission inside the firewall's internal ports. The stability of your tactical commands is under threat. The best way to neutralize the node is to decipher its bottom layer code. (Calculation required)",
+        "SucDesc": "The node is destroyed. It can no longer maintain its function, or the interference.",
+        "FailDesc": "The node is damaged, but still keeps its interfering function.",
         "ActionId": [
             11051058
         ],
@@ -890,10 +890,10 @@
     {
         "Id": 1051059,
         "Endurance": 1,
-        "Title": "闭锁节点",
-        "Description": "在通道末端，节点正在干扰所有的安全锁，如果不及时探明干扰规则，停止节点的功能，你们就无法通过。（通过推演才可前进）",
-        "SucDesc": "节点被破坏，不管是原来的功能还是干扰的功能都已经失去。",
-        "FailDesc": "节点受到损伤，但却维持着干扰的功能。",
+        "Title": "Closed Node",
+        "Description": "A node is interfering with all the security locks at the end of the channel. To pass, you must find out the interference pattern to stop the node. (Calculation required)",
+        "SucDesc": "The node is destroyed. It can no longer maintain its function, or the interference.",
+        "FailDesc": "The node is damaged, but still keeps its interfering function.",
         "ActionId": [
             11051059
         ],
@@ -909,10 +909,10 @@
     {
         "Id": 1052051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11052051
         ],
@@ -934,10 +934,10 @@
     {
         "Id": 1052052,
         "Endurance": 1,
-        "Title": "数据迷宫",
-        "Description": "可探测范围极低的多条岔路排列在面前，只靠目视观察无法判断到底哪条才是真正的前路。",
-        "SucDesc": "良好的感知带着小队走到了正确的道路上，也看到了其他岔路上的障碍和危险。",
-        "FailDesc": "很可惜，感知力这次没有站在你们这一边。你们只能接受现实——得重新找路了。",
+        "Title": "Data Maze",
+        "Description": "You face multiple split roads and can not tell which is the right one with naked eyes.",
+        "SucDesc": "Your outstanding Perception leads the team onto the right road. As you advance, you also see the obstacles and danger on other routes.",
+        "FailDesc": "Unfortunately, Perception isn't on your side. You have to face the reality and look for a way out again.",
         "ActionId": [
             11052052
         ],
@@ -959,10 +959,10 @@
     {
         "Id": 1052053,
         "Endurance": 1,
-        "Title": "干扰区块",
-        "Description": "眼前的整个区域都弥漫着紊乱跟破碎的视觉信号，感觉终端跟构造体的感受器都受到了严重的干扰，如果不能解除干扰的话……",
-        "SucDesc": "干扰终究抵不过更强的压制，干扰区域的紊乱逐渐恢复到了正常的视觉信号。",
-        "FailDesc": "个体的压制手段也许终究无法跟程序的机械算力相提并论，单纯的压制并未改善现况，只能另寻办法了。",
+        "Title": "Disruptive Block",
+        "Description": "The entire area is filled with disordered, broken visual signals. The sensors on terminals and Constructs are significantly impacted. If the interference can not be removed...",
+        "SucDesc": "The interference is eventually suppressed. The visual signals in the area are restored.",
+        "FailDesc": "Suppression alone cannot overwhelm the machine algorithm. The situation is not getting any better, and you have to seek alternative solutions.",
         "ActionId": [
             11052053
         ],
@@ -984,9 +984,9 @@
     {
         "Id": 1052054,
         "Endurance": 0,
-        "Title": "防御装置",
-        "Description": "只有找到【遗落的防御数据体】才有办法继续前进，此道具可在多米尼克公园第3区域探索获得。",
-        "SucDesc": "使用【遗落的防御数据体】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Defense Facility",
+        "Description": "You must find [Lost Defense Data] to continue going forward. It can be obtained by exploring Area 3 of Dominik Memorial Park.",
+        "SucDesc": "You have successfully used [Lost Defense Data] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11052054
         ]
@@ -994,9 +994,9 @@
     {
         "Id": 1052055,
         "Endurance": 0,
-        "Title": "监控装置",
-        "Description": "只有找到【格式塔的监控记录】才有办法继续前进，此道具可在议会外广场第2区域探索获得。",
-        "SucDesc": "使用【格式塔的监控记录】成功通过了，后面等待你的是更加混沌的探索。",
+        "Title": "Surveillance",
+        "Description": "You must find [Gestalt Surveillance Record] to continue going forward. It can be obtained by exploring Area 2 of Parliament Square.",
+        "SucDesc": "You have successfully used [Gestalt Surveillance Record] to go through. More unknown awaits you in the future exploration.",
         "ActionId": [
             11052055
         ]
@@ -1004,10 +1004,10 @@
     {
         "Id": 1053051,
         "Endurance": 1,
-        "Title": "异常敌对",
-        "Description": "程序体被某些东西改换了命令序列，将你们视作了敌对方。如果不与它们进行作战，就没法继续前进。",
-        "SucDesc": "通过制定有效的战术，突破了程序体的包围圈，打开了一条行进的通路。",
-        "FailDesc": "草率的战术带来了不完美的结果：你们虽然暂时依靠强悍的战斗力有所进展，但是程序体的重重包围最终让你们决定放弃来之不易的进展。",
+        "Title": "Abnormal Hostility",
+        "Description": "Something has modified the command sequence of the programs and they now see you as enemy. You must fight to keep moving forward.",
+        "SucDesc": "Your tactics are very effective. You break out of the siege and create a way forward.",
+        "FailDesc": "The rushed tactic leads to an imperfect result. You make some progress with your overwhelming combat abilities, but eventually decide to give up due to the sheer number of hostile programs.",
         "ActionId": [
             11053051
         ],
@@ -1029,10 +1029,10 @@
     {
         "Id": 2021051,
         "Endurance": 1,
-        "Title": "狂潮之源",
-        "Description": "丽芙在这一路观察到了许多线索，或许能找出什么联系。",
-        "SucDesc": "丽芙察觉到这里的残骸都很新，有可能是这些感染体才聚集到这里，也有可能是它们的残骸被谁回收了。",
-        "FailDesc": "众人跟随丽芙的目光看去，只见到一个感染体的残骸体内流出的循环液顺着食指延伸向前方，宛如它不愿停下的脚步。除此以外，众人一无所获。",
+        "Title": "Origin of Tide",
+        "Description": "Liv has observed many clues along the way. Perhaps she can find some link among them.",
+        "SucDesc": "Liv realizes the remains here were quite fresh. Maybe the Corrupted just got here not long ago, or maybe their remains were recycled by someone.",
+        "FailDesc": "Following Liv's sight, you see vital fluid leaking from a Corrupted body in the direction of its finger that is pointing forward, just like how its owner was unwilling to stop. There is no other finding.",
         "StartMovieId": "JD01621BA",
         "ActionId": [
             22021051,
@@ -1042,9 +1042,9 @@
     {
         "Id": 2021052,
         "Endurance": 0,
-        "Title": "战无不胜",
-        "Description": "如果能找到曾经通过此地的记忆，就能够找到一条更便捷的道路。（需要在本层获得【残缺的电子脑】）",
-        "SucDesc": "通过残留在电子脑中的记忆，你们看到了记忆主人过去战斗的身影，并通过这些记录找到了一条安全便捷的路。",
+        "Title": "Undefeated",
+        "Description": "You may be able to find an easier way through if you can have access to the memories of someone who once passed this place. (You need to find [Damaged Memory Shell] on this level)",
+        "SucDesc": "From the memory shell, you see the memories of someone who was fighting here. Thanks to the record, you find a safe and easy way.",
         "ActionId": [
             12021052
         ]
@@ -1052,9 +1052,9 @@
     {
         "Id": 2021053,
         "Endurance": 0,
-        "Title": "另辟蹊径",
-        "Description": "或许有什么东西记录了更安全的小径。（需要在本层获得【小型储存终端】）",
-        "SucDesc": "储存终端里留着一份地图，有一条隐秘的小路或许可以通过。",
+        "Title": "Alternate Route",
+        "Description": "Perhaps a safer route is recorded somewhere else. (You need to find [Mini Storage Terminal] on this level)",
+        "SucDesc": "There is a map in the storage suggesting a hidden route. Maybe it can help you pass.",
         "ActionId": [
             12021053
         ]
@@ -1062,9 +1062,9 @@
     {
         "Id": 2021054,
         "Endurance": 0,
-        "Title": "拾取数据",
-        "Description": "想要快速搜查这片区域的情报，就必须将收集到的数据交给法奥斯之矛系统，帮助它更快查找线索。（需要在本层获得【数据收集终端】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
+        "Title": "Picking up Data",
+        "Description": "In order to search for clues within this area faster, you must submit the data collected to Spear of F.O.S., so it can help speed up your search. (You need to find [Data Collection Terminal] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
         "ActionId": [
             12021054
         ]
@@ -1072,9 +1072,9 @@
     {
         "Id": 2021055,
         "Endurance": 0,
-        "Title": "坍塌废墟",
-        "Description": "居民区早已人去楼空，大门也紧紧地封锁着。（需要在本层获得【钥匙数据】）",
-        "SucDesc": "里根据钥匙数据，用手头的材料做出了一把钥匙，大门打开了。",
+        "Title": "Collapsed Ruins",
+        "Description": "The residential area was deserted long ago. The door is closely sealed. (You need to find [Key Data] on this level)",
+        "SucDesc": "Based on the key data, Lee makes a key from the available materials. The door is opened.",
         "ActionId": [
             12021055
         ]
@@ -1082,10 +1082,10 @@
     {
         "Id": 2021056,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都出现了感染症状。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Many team members are infected.",
         "ActionId": [
             12021056
         ],
@@ -1105,10 +1105,10 @@
     {
         "Id": 2021057,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都出现了感染症状。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Many team members are infected.",
         "ActionId": [
             12021057
         ],
@@ -1128,10 +1128,10 @@
     {
         "Id": 2021058,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都出现了感染症状。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Many team members are infected.",
         "ActionId": [
             12021058
         ],
@@ -1151,10 +1151,10 @@
     {
         "Id": 2022051,
         "Endurance": 1,
-        "Title": "杂乱脚印",
-        "Description": "这里混杂着大量的脚印，想要查出异常的行动路线，似乎有些困难。",
-        "SucDesc": "仔细观察，你发现有一串脚印奔向了不远处的坍塌物，跟随脚印在其后找到了一间隐蔽的休息室。",
-        "FailDesc": "杂乱的脚印让人毫无头绪，最终众人决定旋转空瓶来决定前进的方向，然而瓶口对准了一间废弃厕所，你们什么都没找到。",
+        "Title": "Footprints",
+        "Description": "There are many footprints. It is quite difficult to find out the odd movement pattern.",
+        "SucDesc": "After some careful observation, you notice a footprint trail toward the collapsed building not far away. You follow the trail to find a hidden room.",
+        "FailDesc": "You struggle to find any useful clues from the messy footprints, and decide to turn a bottle instead. The bottle points to an abandoned toilet. You cannot find anything inside.",
         "StartMovieId": "JD01622BA",
         "ActionId": [
             22022051,
@@ -1164,10 +1164,10 @@
     {
         "Id": 2022052,
         "Endurance": 1,
-        "Title": "坍塌暗门",
-        "Description": "大量坍塌物掩埋了房间的门，而时间最多只够你们再清理其中两处，哪里才是正确答案？",
-        "SucDesc": "根据钥匙上的花纹，你们以模糊褪色的墙面为线索选出了正确答案，在房间内有一台悬浮辅助机，并从中取出了一块数据芯片。",
-        "FailDesc": "你一脚踩中了松动的地板，要不是露西亚及时拉住了你，后果不堪设想。",
+        "Title": "Collapsed Hidden Door",
+        "Description": "The door is covered under lots of collapsed debris. You only have time to clear two spots. Where will the correct answer be?",
+        "SucDesc": "Using the faded wall as a clue, you pick the right answer based on the pattern on the key. There is a floating auxiliary machine in the room, and you take a data chip from it.",
+        "FailDesc": "You step onto a loose piece of floor. It could be disastrous if Lucia has not grabbed you in time.",
         "StartMovieId": "JD01623BA",
         "ActionId": [
             22022052,
@@ -1177,10 +1177,10 @@
     {
         "Id": 2022053,
         "Endurance": 0,
-        "Title": "通过暗门",
-        "Description": "这扇门被封住了，需要【钥匙卡】才能继续前进。",
-        "SucDesc": "你们成功地打开了暗门，看来有谁慌乱之中来过这里，并且藏起了什么东西。",
-        "FailDesc": "无失败描述",
+        "Title": "Pass the Hidden Door",
+        "Description": "This door is sealed. You need a [Key Card] to keep going forward.",
+        "SucDesc": "You successfully open the hidden door. It seems that someone has visited here in a rush and hidden something here.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022053
         ]
@@ -1188,10 +1188,10 @@
     {
         "Id": 2022054,
         "Endurance": 0,
-        "Title": "通过暗门",
-        "Description": "这扇门被封住了，需要【钥匙卡】才能继续前进。",
-        "SucDesc": "你们成功地打开了暗门，看来有谁慌乱之中来过这里，并且藏起了什么东西。",
-        "FailDesc": "无失败描述",
+        "Title": "Pass the Hidden Door",
+        "Description": "This door is sealed. You need a [Key Card] to keep going forward.",
+        "SucDesc": "You successfully open the hidden door. It seems that someone has visited here in a rush and hidden something here.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022054
         ]
@@ -1199,10 +1199,10 @@
     {
         "Id": 2022055,
         "Endurance": 0,
-        "Title": "通过暗门",
-        "Description": "这扇门被封住了，需要【钥匙卡】才能继续前进。",
-        "SucDesc": "你们成功地打开了暗门，看来有谁慌乱之中来过这里，并且藏起了什么东西。",
-        "FailDesc": "无失败描述",
+        "Title": "Pass the Hidden Door",
+        "Description": "This door is sealed. You need a [Key Card] to keep going forward.",
+        "SucDesc": "You successfully open the hidden door. It seems that someone has visited here in a rush and hidden something here.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022055
         ]
@@ -1210,10 +1210,10 @@
     {
         "Id": 2022056,
         "Endurance": 0,
-        "Title": "通过暗门",
-        "Description": "这扇门被封住了，需要【钥匙卡】才能继续前进。",
-        "SucDesc": "你们成功地打开了暗门，看来有谁慌乱之中来过这里，并且藏起了什么东西。",
-        "FailDesc": "无失败描述",
+        "Title": "Pass the Hidden Door",
+        "Description": "This door is sealed. You need a [Key Card] to keep going forward.",
+        "SucDesc": "You successfully open the hidden door. It seems that someone has visited here in a rush and hidden something here.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022056
         ]
@@ -1221,10 +1221,10 @@
     {
         "Id": 2022057,
         "Endurance": 0,
-        "Title": "数据芯片",
-        "Description": "只有安全解除加密的数据芯片才能交给法奥斯之矛系统。（需要在本层获得【数据芯片】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
-        "FailDesc": "无失败描述",
+        "Title": "Data Chip",
+        "Description": "The Spear of F.O.S. only accepts data chips that are safely decrypted. (You need to find [Data Chip] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022057
         ]
@@ -1232,10 +1232,10 @@
     {
         "Id": 2022058,
         "Endurance": 0,
-        "Title": "数据芯片",
-        "Description": "只有安全解除加密的数据芯片才能交给法奥斯之矛系统。（需要在本层获得【数据芯片】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
-        "FailDesc": "无失败描述",
+        "Title": "Data Chip",
+        "Description": "The Spear of F.O.S. only accepts data chips that are safely decrypted. (You need to find [Data Chip] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022058
         ]
@@ -1243,10 +1243,10 @@
     {
         "Id": 2022059,
         "Endurance": 0,
-        "Title": "数据芯片",
-        "Description": "只有安全解除加密的数据芯片才能交给法奥斯之矛系统。（需要在本层获得【数据芯片】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
-        "FailDesc": "无失败描述",
+        "Title": "Data Chip",
+        "Description": "The Spear of F.O.S. only accepts data chips that are safely decrypted. (You need to find [Data Chip] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022059
         ]
@@ -1254,10 +1254,10 @@
     {
         "Id": 2022851,
         "Endurance": 0,
-        "Title": "数据芯片",
-        "Description": "只有安全解除加密的数据芯片才能交给法奥斯之矛系统。（需要在本层获得【数据芯片】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
-        "FailDesc": "无失败描述",
+        "Title": "Data Chip",
+        "Description": "The Spear of F.O.S. only accepts data chips that are safely decrypted. (You need to find [Data Chip] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022851
         ]
@@ -1265,10 +1265,10 @@
     {
         "Id": 2022852,
         "Endurance": 0,
-        "Title": "数据芯片",
-        "Description": "只有安全解除加密的数据芯片才能交给法奥斯之矛系统。（需要在本层获得【数据芯片】）",
-        "SucDesc": "法奥斯之矛成功地读取了这段数据……虚影生成中……",
-        "FailDesc": "无失败描述",
+        "Title": "Data Chip",
+        "Description": "The Spear of F.O.S. only accepts data chips that are safely decrypted. (You need to find [Data Chip] on this level)",
+        "SucDesc": "The Spear of F.O.S. has successfully read the data... Generating projections...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12022852
         ]
@@ -1276,10 +1276,10 @@
     {
         "Id": 2022853,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "不幸踩中坍缩的地面",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Stepped onto the collapsed ground",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12022853
         ],
@@ -1299,10 +1299,10 @@
     {
         "Id": 2022854,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "不幸踩中坍缩的地面",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Stepped onto the collapsed ground",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12022854
         ],
@@ -1322,10 +1322,10 @@
     {
         "Id": 2022855,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "不幸踩中坍缩的地面",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Stepped onto the collapsed ground",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12022855
         ],
@@ -1345,10 +1345,10 @@
     {
         "Id": 2031051,
         "Endurance": 1,
-        "Title": "长路漫漫",
-        "Description": "这两条路究竟通往何处呢？",
-        "SucDesc": "看上去，左边的路感染体数量明显较少，它们大多拥挤在右边那条路上。",
-        "FailDesc": "你无意中发现了一篇被丢弃的论文，上面写着《论帕弥什能怎好》，打开文档，里面陈述了数十种烹饪方式，结论是帕弥什不会影响食材本身的味道，但感染引发的症状会。除此之外，一无所获。",
+        "Title": "A Long Journey",
+        "Description": "Where do these two roads lead?",
+        "SucDesc": "It is quite obvious that the road on the left has fewer Corrupted. Most of them are crowding up on the right.",
+        "FailDesc": "You find an abandoned paper called \"Impact of Punishing on Food\". The document discusses dozens of methods to cook Punishing-contaminated food, and the conclusion is that Punishing Virus itself would not impact the taste of ingredients, but the symptoms related to Punishing infection would. There is no other finding.",
         "StartMovieId": "JD01624BA",
         "ActionId": [
             22031051,
@@ -1358,10 +1358,10 @@
     {
         "Id": 2031052,
         "Endurance": 1,
-        "Title": "一封遗书",
-        "Description": "从庞杂的数据中，按照关键信息筛查线索也是件繁琐的工作，必须全神贯注才能成功。",
-        "SucDesc": "全神贯注地排查了所有线索，一点也没有疏漏。",
-        "FailDesc": "你的注意力被一篇新闻吸引了，上面写着《震惊！男子被感染一年后仍与家人过生日！》点开标题，只看到一张在桌前和画像过百岁诞辰纪念日的照片。除此以外，什么线索都没找到。",
+        "Title": "Farewell Letter",
+        "Description": "Filtering the keywords from the vast amount of data can be a tedious work. You must pay full attention.",
+        "SucDesc": "You carefully examine all clues. Nothing is omitted.",
+        "FailDesc": "A news article catches your eye. The title is \"Unbelievable! Man Celebrating Birthday with His Family One Year after Infection.\" You tap it open, only to find a photo celebrating the 100th birthday of someone in a portrait. There is no other finding.",
         "StartMovieId": "JD01625BA",
         "ActionId": [
             22031052,
@@ -1371,10 +1371,10 @@
     {
         "Id": 2031053,
         "Endurance": 1,
-        "Title": "狂信徒之音",
-        "Description": "从庞杂的数据中，按照关键信息筛查线索也是件繁琐的工作，必须全神贯注才能成功。",
-        "SucDesc": "全神贯注地排查了所有线索，一点也没有疏漏。",
-        "FailDesc": "你的注意力被一张华胥关联搜索出来的游戏广告吸引了，上面写着《游戏，末日下最后的华胥仙国》但宣传图却变成了一张灰色打满问号的替换品。除此以外，什么线索都没找到。",
+        "Title": "Voice of the Fanatic",
+        "Description": "Filtering the keywords from the vast amount of data can be a tedious work. You must pay full attention.",
+        "SucDesc": "You carefully examine all clues. Nothing is omitted.",
+        "FailDesc": "You searched for Huaxu, but are distracted by a game ad amongst the search results. The title of the ad is \"Games — The Last Huaxu Paradise in Apocalypse\", but the actual game picture is replaced by a gray image filled with question marks. There is no other finding.",
         "StartMovieId": "JD01626BA",
         "ActionId": [
             22031053,
@@ -1384,10 +1384,10 @@
     {
         "Id": 2031054,
         "Endurance": 0,
-        "Title": "留言记录",
-        "Description": "需要【C区废弃化工厂】入口获得【留言记录】",
-        "SucDesc": "成功使用【留言记录】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Message Record",
+        "Description": "Get [Message Record] from [Zone C Abandoned Factory] Entrance",
+        "SucDesc": "[Message Record] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031054
         ]
@@ -1395,10 +1395,10 @@
     {
         "Id": 2031055,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "推演成功一大串描述推演成功一大串描述推演成功一大串描述推演成功一大串描述32",
-        "FailDesc": "推演失败一大串描述推演失败一大串描述推演失败一大串描述推演失败一大串描述32",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Calculation successful — lots of description 32",
+        "FailDesc": "Calculation failed — lots of description 32",
         "ActionId": [
             12031055
         ]
@@ -1406,10 +1406,10 @@
     {
         "Id": 2031056,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "推演成功一大串描述推演成功一大串描述推演成功一大串描述推演成功一大串描述33",
-        "FailDesc": "推演失败一大串描述推演失败一大串描述推演失败一大串描述推演失败一大串描述33",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Calculation successful — lots of description 33",
+        "FailDesc": "Calculation failed — lots of description 33",
         "ActionId": [
             12031056
         ]
@@ -1417,10 +1417,10 @@
     {
         "Id": 2031057,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "推演成功一大串描述推演成功一大串描述推演成功一大串描述推演成功一大串描述34",
-        "FailDesc": "推演失败一大串描述推演失败一大串描述推演失败一大串描述推演失败一大串描述34",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Calculation successful — lots of description 34",
+        "FailDesc": "Calculation failed — lots of description 34",
         "ActionId": [
             12031057
         ]
@@ -1428,10 +1428,10 @@
     {
         "Id": 2031058,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "推演成功一大串描述推演成功一大串描述推演成功一大串描述推演成功一大串描述35",
-        "FailDesc": "推演失败一大串描述推演失败一大串描述推演失败一大串描述推演失败一大串描述35",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Calculation successful — lots of description 35",
+        "FailDesc": "Calculation failed — lots of description 35",
         "ActionId": [
             12031058
         ]
@@ -1439,10 +1439,10 @@
     {
         "Id": 2031059,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "推演成功一大串描述推演成功一大串描述推演成功一大串描述推演成功一大串描述36",
-        "FailDesc": "推演失败一大串描述推演失败一大串描述推演失败一大串描述推演失败一大串描述36",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Calculation successful — lots of description 36",
+        "FailDesc": "Calculation failed — lots of description 36",
         "ActionId": [
             12031059
         ]
@@ -1450,10 +1450,10 @@
     {
         "Id": 2031851,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【商业街地图】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Shopping Street Map] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031851
         ]
@@ -1461,10 +1461,10 @@
     {
         "Id": 2031852,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【残留线索1】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Remaining Clue 1] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031852
         ]
@@ -1472,10 +1472,10 @@
     {
         "Id": 2031853,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【残留线索2】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Remaining Clue 2] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031853
         ]
@@ -1483,10 +1483,10 @@
     {
         "Id": 2031854,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【商业街地图】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Shopping Street Map] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031854
         ]
@@ -1494,10 +1494,10 @@
     {
         "Id": 2031855,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【残留线索1】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Remaining Clue 1] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031855
         ]
@@ -1505,10 +1505,10 @@
     {
         "Id": 2031856,
         "Endurance": 0,
-        "Title": "最后的线索",
-        "Description": "第1街区所有角落都被排查过了，只剩下这片区域了吗？（需要在本层获得【残留线索2】）",
-        "SucDesc": "在排查线索中，你们看到了那封遗书的后续，两位高兴的年轻人终于来到藏宝地点，却发现对付帕弥什的武器是一仓库早已结块的食盐，旁边还留着一本“鉴定书”却全都是各种食盐能杀死帕弥什的谣言剪报。",
-        "FailDesc": "无失败描述",
+        "Title": "Final Clue",
+        "Description": "You have searched almost every corner of the 1st street. Is this the last area? (You need to find [Remaining Clue 2] on this level)",
+        "SucDesc": "After going through many clues, you finally find out what happened after the farewell letter. Two delighted young men came to where the treasure was, only to find out that the \"anti-Punishing weapon\" was nothing but a warehouse full of already crystalized salt, with a \"research report\" full of newspaper cutouts that consisted of rumors about how salt could kill the Punishing Virus.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12031856
         ]
@@ -1516,10 +1516,10 @@
     {
         "Id": 2032051,
         "Endurance": 1,
-        "Title": "少年踪迹",
-        "Description": "少年究竟向哪边走了呢？",
-        "SucDesc": "在众多感染体中，少年和罗兰的身影一闪而过，向左边去了！",
-        "FailDesc": "在众多感染体中，你们看到那两个找到遗书的年轻人，黑着脸拖着两个沉重的行李箱从经过了这里，或许他们已经找到了遗书中提到的东西？但除此以外，你们一无所获。",
+        "Title": "Young Men's Location",
+        "Description": "Where has the young boy gone?",
+        "SucDesc": "Amongst the many Corrupted, you see the young boy and Roland moving to the left!",
+        "FailDesc": "Amongst many Corrupted, you see the two young men who found the farewell letter. They are dragging two heavy luggage cases with a heavy heart. Can it be that they had already found the things mentioned in the farewell letter? You have no other findings.",
         "StartMovieId": "JD01627BA",
         "ActionId": [
             22032051,
@@ -1529,10 +1529,10 @@
     {
         "Id": 2032052,
         "Endurance": 1,
-        "Title": "拾光落影",
-        "Description": "照片早已泛黄，模糊不清，上面印着一个瘦小的身影，那究竟是谁呢？",
-        "SucDesc": "她抚摸着照片上模糊不清的轮廓，眼泪扑簌簌落在上面，灵光一闪而过，你们察觉到照片上正是那位构造体少年。",
-        "FailDesc": "虽然你们对照片上的人毫无头绪，但却看到取得遗书的那两位年轻人，从巨大的行李箱中掏出了结块的盐投掷感染体，试图驱赶它们……你探头望去，两人的行李箱中全是盐块。",
+        "Title": "Old Photo",
+        "Description": "The photo is blurry and dated. There is a small, skinny figure on it. Who can that be?",
+        "SucDesc": "Tears fall on the photo as her fingers gently stroke the vague silhouette. You suddenly realize it is that young boy Construct on the photo.",
+        "FailDesc": "You have no idea about the identity of the boy on the photo, but you see the two young men who took the farewell letter taking out crystalized salt from their luggage, throwing at the Corrupted... When you look again, you realize their luggage was full of salt crystals.",
         "StartMovieId": "JD01628BA",
         "ActionId": [
             22032052,
@@ -1542,10 +1542,10 @@
     {
         "Id": 2032053,
         "Endurance": 0,
-        "Title": "残余数据",
-        "Description": "如果你仍在关心那位少年，便可以在附近寻找他。（需要在本层获得【残余数据】）",
-        "SucDesc": "在感染体的虚影中，你看到了一个熟悉的身影……",
-        "FailDesc": "无失败描述",
+        "Title": "Remaining Data",
+        "Description": "If you still care about that boy, you may look around for him. (You need to find [Remaining Data] on this level)",
+        "SucDesc": "You see a familiar silhouette from the projections of Corrupted...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12032053
         ]
@@ -1553,10 +1553,10 @@
     {
         "Id": 2032054,
         "Endurance": 0,
-        "Title": "墙角掠影",
-        "Description": "在那时看到的人，似乎和少年在寻找的人有关。（需要在本层获得【拾荒者妇女的数据】）",
-        "SucDesc": "在拾荒者的虚影中，你看到了一个熟悉的身影……",
-        "FailDesc": "无失败描述",
+        "Title": "Around the Corner",
+        "Description": "The person you saw back then can be linked to who the young boy was looking for. (You need to find [Scavenger Woman's Data] on this level)",
+        "SucDesc": "You see a familiar silhouette from the projections of the scavengers...",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12032054
         ]
@@ -1564,10 +1564,10 @@
     {
         "Id": 2032055,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032055
         ],
@@ -1587,10 +1587,10 @@
     {
         "Id": 2032056,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032056
         ],
@@ -1610,10 +1610,10 @@
     {
         "Id": 2032057,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032057
         ],
@@ -1633,10 +1633,10 @@
     {
         "Id": 2032058,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032058
         ],
@@ -1656,10 +1656,10 @@
     {
         "Id": 2032059,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032059
         ],
@@ -1679,10 +1679,10 @@
     {
         "Id": 2032851,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032851
         ],
@@ -1702,10 +1702,10 @@
     {
         "Id": 2032852,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032852
         ],
@@ -1725,10 +1725,10 @@
     {
         "Id": 2032853,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12032853
         ],
@@ -1748,10 +1748,10 @@
     {
         "Id": 2033051,
         "Endurance": 1,
-        "Title": "拾荒者",
-        "Description": "在废墟中发现了一些散乱的物资箱，或许能在里面找到一些有用的东西。",
-        "SucDesc": "你们找到了一张园区的钥匙卡！或许可以用它来打开不远处的大门？",
-        "FailDesc": "你们找到了一本名为《奇妙冒险》的漫画书封面残页，内页已经被烧毁了。除此以外，什么线索都没找到。",
+        "Title": "Scavenger",
+        "Description": "You find some supply crates in the ruins. Perhaps you can find something useful in them.",
+        "SucDesc": "You find a key card of the business district! Can it open the nearby gate?",
+        "FailDesc": "You find a torn cover page of a comic book named \"Bizarre Adventure.\" The other pages were burnt. There are no other clues.",
         "StartMovieId": "JD01629BA",
         "ActionId": [
             22033051,
@@ -1761,10 +1761,10 @@
     {
         "Id": 2033052,
         "Endurance": 1,
-        "Title": "片羽余音",
-        "Description": "你们成功找到了新的出口，在离开前，丽芙看到了刚才那位研究员的身影，如果你也在意她究竟怎么样了，可以尝试辨认出她前进的方向。",
-        "SucDesc": "你看到安洁尔和三个构造体向左后方前进了。",
-        "FailDesc": "丽芙四处张望，不小心被滚落的石板绊了一跤，那块石板下压着一片用红色液体绘制的布料，上面画着一位表情慈爱的神站在红潮上，画像旁写满了癫狂的祷告词，阅读后令人感到一阵目眩。除此以外，什么线索都没找到。",
+        "Title": "Lingering Echoes",
+        "Description": "You manage to find a new exit. Before leaving, Liv notices the researcher that you saw earlier. Try to identify her direction if you also wonder what happened to her.",
+        "SucDesc": "You see Angel and three other Constructs moving to the rear left.",
+        "FailDesc": "As Liv looks around, she trips over a fallen stone plate and finds a fabric soaked in red underneath. On it painted a kind-looking deity standing on the Red Tide, with many fanatic prayers written next to it. You feel drowsy reading them, but there is no other clue found.",
         "StartMovieId": "JD01630BA",
         "ActionId": [
             22033052,
@@ -1774,10 +1774,10 @@
     {
         "Id": 2033053,
         "Endurance": 0,
-        "Title": "一线希望",
-        "Description": "这扇门紧紧地封闭着，好像和墙面融为一体。（需要在本层获得【园区的钥匙卡】）",
-        "SucDesc": "大门发出了可怕的声音，缓缓打开了。",
-        "FailDesc": "无失败描述",
+        "Title": "A Tiny Hope",
+        "Description": "The door is shut so close that it almost blends into the wall. (You need to find [District Key Card] on this level)",
+        "SucDesc": "The gate makes a horrifying sound and slowly opens.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12033053
         ]
@@ -1785,10 +1785,10 @@
     {
         "Id": 2033054,
         "Endurance": 0,
-        "Title": "残余数据",
-        "Description": "如果能找到那对姐妹的数据，就能知道她们后续发生的事了。（需要在本层获得【安洁尔的数据】）",
-        "SucDesc": "这段记录看起来并不是发生在这里的，但在法奥斯之矛的帮助下，可以在相似的地点构成虚影。",
-        "FailDesc": "无失败描述",
+        "Title": "Remaining Data",
+        "Description": "If only you could find the data of the sisters, you can know what happened to them later. (You need to find [Angel's Data] on this level)",
+        "SucDesc": "This record does not seem to take place here, but the Spear of F.O.S. can help you simulate the projections in a similar location.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             12033054
         ]
@@ -1796,10 +1796,10 @@
     {
         "Id": 2033055,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12033055
         ],
@@ -1821,10 +1821,10 @@
     {
         "Id": 2041051,
         "Endurance": 1,
-        "Title": "封锁地区",
-        "Description": "在化工厂入口，你们找到了一间空置的保安室，或许这里能找到什么？",
-        "SucDesc": "在朽坏的木板碎屑中，你们找到了一张陈旧的钥匙卡，曾经有人认为这种材质制作的钥匙卡难以自然降解，如今，时间证明了这一点。",
-        "FailDesc": "这间保安室看起来前不久才有人造访过，地面上还残留着篝火的痕迹，你清理掉篝火的残渣，将垫在下面生锈铁板翻了过来，发现了底部刻着大量潦草的字迹：“你在哪你在哪你在哪你在哪你在哪你在哪你在哪你在哪你在哪？！！”",
+        "Title": "Blocked Area",
+        "Description": "You find an empty guard room at the factory's entrance. Can you find anything here?",
+        "SucDesc": "You see a dated key card inside the rotten wood chips. Some people believed cards made in this material would be non-biodegradable. Now it has been proven.",
+        "FailDesc": "It seems that someone has visited the guard room not long ago. There is bonfire leftovers on the ground. You clear the bonfire and turn over the rusty steel plate, only to find lots of messy scribbles on it. \"Where are you where are you where are you where are you where are you where are you where where where?!\"",
         "StartMovieId": "JD01631BA",
         "ActionId": [
             22041051,
@@ -1848,9 +1848,9 @@
     {
         "Id": 2041052,
         "Endurance": 0,
-        "Title": "防护措施",
-        "Description": "帕弥什浓度越来越高，必须穿戴防护服才能继续前进……（需要在本层获得【防护服】）",
-        "SucDesc": "即使防护服已经严丝合缝地穿在了身上，丽芙还是仔仔细细地确认了三遍。",
+        "Title": "Protective Equipment",
+        "Description": "The Punishing concentration keeps skyrocketing. You must wear protective equipment to keep moving forward... (You need to find [Protective Suit] on this level)",
+        "SucDesc": "Even after you have put on the suit properly, Liv still triple-checks every inch of it.",
         "ActionId": [
             12041052
         ]
@@ -1858,9 +1858,9 @@
     {
         "Id": 2041053,
         "Endurance": 0,
-        "Title": "防护措施",
-        "Description": "帕弥什浓度越来越高，必须穿戴防护服才能继续前进……（需要在本层获得【防护服】）",
-        "SucDesc": "即使防护服已经严丝合缝地穿在了身上，丽芙还是仔仔细细地确认了三遍。",
+        "Title": "Protective Equipment",
+        "Description": "The Punishing concentration keeps skyrocketing. You must wear protective equipment to keep moving forward... (You need to find [Protective Suit] on this level)",
+        "SucDesc": "Even after you have put on the suit properly, Liv still triple-checks every inch of it.",
         "ActionId": [
             12041053
         ]
@@ -1868,9 +1868,9 @@
     {
         "Id": 2041054,
         "Endurance": 0,
-        "Title": "往昔记录",
-        "Description": "这里曾是拾荒者的聚集地，如果能找到什么线索的话……（需要在本层获得【残页日记】）",
-        "SucDesc": "打开这本布满泪水痕迹的日记，里面零星写着几句祷告，字迹很浅，看起来写下它的人已经没什么力气了，在最后一页，你们发现了一张画着标记的地图，借它找到了新的出口。",
+        "Title": "Past Record",
+        "Description": "Scavengers used to gather here. Can there be some clues around... (You need to find [Torn Diary] on this level)",
+        "SucDesc": "You open the diary full of tear marks. There are a few vaguely written prayers on it. The person who wrote them seems to be exhausted. You find a map with marks on the last page, and use it to find a new exit.",
         "ActionId": [
             12041054
         ]
@@ -1878,10 +1878,10 @@
     {
         "Id": 2041055,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12041055
         ],
@@ -1903,10 +1903,10 @@
     {
         "Id": 2042051,
         "Endurance": 1,
-        "Title": "拦路箱",
-        "Description": "堆叠的物资箱挡住了去路，必须清理掉它们才能前进。",
-        "SucDesc": "四个人一起迅速从面前的物资箱中清理出了一条路，贴着墙可以勉强通过。在清理出来的物资中，你们还发现前方放着一套强化防护的部件套装。",
-        "FailDesc": "松散的物资箱从上面滚落了下来，险些砸到一旁忙碌的里，但好消息是箱子里还有一袋没过期的密封火腿，露西亚打算让大家先休息一下，并用它烹制一顿午饭。",
+        "Title": "Obstacle Crate",
+        "Description": "Supply crates are blocking your way. You must get rid of them to advance.",
+        "SucDesc": "Four of you quickly clear a way out of the supply crates, allowing you to barely pass. You also find a suit with enhanced protection in the supplies.",
+        "FailDesc": "Loose supply crates fall from the top, almost hitting Lee. Good news is there is a pack of unexpired sealed ham. Lucia plans to let everyone take a break and cook a meal with it.",
         "StartMovieId": "JD01632BA",
         "ActionId": [
             22042051,
@@ -1916,10 +1916,10 @@
     {
         "Id": 2042052,
         "Endurance": 1,
-        "Title": "红色裂痕",
-        "Description": "红潮涌动在地面裂口中，必须想办法跨过它。",
-        "SucDesc": "在众人的协助下安全地跨过了红潮，但你却总觉得身后有谁在注视着你，回过头去，有一个红色的身影从红潮中浮现，指了指左侧。",
-        "FailDesc": "跨越红潮比预想的更困难，你们在原地停留了很久，直到红潮中浮现出一个红色的身影，向你重复着古怪的低语。",
+        "Title": "Red Crack",
+        "Description": "The Red Tide is flowing up the cracks on the ground. You must find a way to go over it.",
+        "SucDesc": "With the team's help, you safely cross the Red Tide. Still, you feel like someone is watching you from behind. You turn around to find a red silhouette rising from the tide, pointing to the left.",
+        "FailDesc": "Crossing the Red Tide is more difficult than you have thought. You remain there for a long time until a red silhouette appears from the tide, mumbling some strange words.",
         "StartMovieId": "JD01633BA",
         "ActionId": [
             22042052,
@@ -1929,9 +1929,9 @@
     {
         "Id": 2042053,
         "Endurance": 0,
-        "Title": "防护措施",
-        "Description": "帕弥什浓度越来越高，必须进一步强化防护服才能继续前进。（需要在本层获得【防护服强化套装】）",
-        "SucDesc": "虽然沉重的防护服会让你呼吸困难，但却会让你更安全。",
+        "Title": "Protective Equipment",
+        "Description": "The Punishing concentration keeps skyrocketing. You must further enhance the protective equipment to keep moving forward... (You need to find [Suit Enhancement Set] on this level)",
+        "SucDesc": "You can hardly breathe inside the heavy protection suit, but at least it makes you safer.",
         "ActionId": [
             12042053
         ]
@@ -1939,9 +1939,9 @@
     {
         "Id": 2042054,
         "Endurance": 0,
-        "Title": "记忆碎片",
-        "Description": "生锈的安全门挡住了去路……（需要在本层获得【认证芯片】）",
-        "SucDesc": "这扇门没有多少锈迹，很轻易就打开了，看来近期有不少人通过这里，会是谁呢？",
+        "Title": "Memory Fragment",
+        "Description": "A rusty security door is in your way... (You need to find [Authorization Chip] on this level)",
+        "SucDesc": "The rust isn't too bad and you easily open the door. Seems that it has been used by many people recently. Who can they be?",
         "ActionId": [
             12042054
         ]
@@ -1949,10 +1949,10 @@
     {
         "Id": 2042055,
         "Endurance": 1,
-        "Title": "既视感",
-        "Description": "通过数据规划出的路径，你们继续向目标地点前进。在前进途中，露西亚觉得自己对这里有些熟悉，但却无从回忆，如果能找到什么线索的话……",
-        "SucDesc": "沿着虚影留下的线索，你们在这里发现了阿尔法和露娜的身影！",
-        "FailDesc": "杂乱的线索混成一团，你们什么也没找到。",
+        "Title": "Deja Vu",
+        "Description": "Following a route calculated from the data, you continue moving toward the target location. As you advance, Lucia feels somewhat familiar to this place, but she struggles to remember. If only you can find some clues...",
+        "SucDesc": "Following the clues left by the projections, you find Alpha and Luna's trails!",
+        "FailDesc": "The clues are a mess. You do not find anything useful.",
         "StartMovieId": "JD01634BA",
         "ActionId": [
             22042055,
@@ -1962,10 +1962,10 @@
     {
         "Id": 2042056,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042056
         ]
@@ -1973,10 +1973,10 @@
     {
         "Id": 2042057,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042057
         ]
@@ -1984,10 +1984,10 @@
     {
         "Id": 2042058,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042058
         ]
@@ -1995,10 +1995,10 @@
     {
         "Id": 2042059,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042059
         ],
@@ -2020,10 +2020,10 @@
     {
         "Id": 2042851,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042851
         ],
@@ -2045,10 +2045,10 @@
     {
         "Id": 2042852,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042852
         ],
@@ -2070,10 +2070,10 @@
     {
         "Id": 2042853,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042853
         ],
@@ -2095,10 +2095,10 @@
     {
         "Id": 2042854,
         "Endurance": 0,
-        "Title": "局部重灾区",
-        "Description": "局部的帕弥什泄漏使地面呈现重灾区化，即使已经第一时间逃离了，但是队伍深陷其中仍然受到了不少的影响。",
-        "SucDesc": "迅速的应对让所有队员完全撤离出局部重灾区的位置，你们安全了——暂时。",
-        "FailDesc": "帕弥什病毒的蔓延比你们想象的要快速得多，你的小队或多或少都被病毒所侵害。",
+        "Title": "Local Dead Zone",
+        "Description": "The leaking Punishing contamination has turned the ground into a Dead Zone. You manage to escape as soon as possible, but the team is still affected.",
+        "SucDesc": "Thanks to your swift reaction, all the team members managed to get out of the local Dead Zone completely. You are all safe—for now.",
+        "FailDesc": "The Punishing Virus is spreading way faster than you expected. Your team is substantially affected by the virus.",
         "ActionId": [
             12042854
         ],
@@ -2120,10 +2120,10 @@
     {
         "Id": 2042855,
         "Endurance": 0,
-        "Title": "勿回首",
-        "Description": "根据墙壁上的字迹来寻找与其关联的数据吧。",
-        "SucDesc": "你看到一个被感染的人类青年站在这段标语面前，刮掉了“当然”后面的文字，现在可以拾取青年的数据来筛查线索了。",
-        "FailDesc": "你看到众多拾荒者来来往往的身影，他们在这段话前略微驻足，有的点头认同，有的指点讥讽，却没有找到写下它的人，和刮掉“当然”二字后面的人。",
+        "Title": "Don't turn back",
+        "Description": "Look for data related to the writing on the wall.",
+        "SucDesc": "You see an infected young man standing in front of the slogan, who erases the text after \"of course.\" Now you can pick up the young man's data to look for more clues.",
+        "FailDesc": "You see many scavengers come and go. Some nod to the slogan, some point fingers and laugh at it. But you do not see who wrote them, or who erased the text after \"of course.\"",
         "StartMovieId": "JD01635BA",
         "ActionId": [
             22042855
@@ -2146,10 +2146,10 @@
     {
         "Id": 2042856,
         "Endurance": 0,
-        "Title": "封底的赠言",
-        "Description": "需要【C区废弃化工厂】作业区获得【封底的赠言】",
-        "SucDesc": "成功使用【封底的赠言】，现在可以继续前进了",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Back Cover Message",
+        "Description": "Get [Back Cover Message] from [Zone C Abandoned Factory] Operation Zone",
+        "SucDesc": "[Back Cover Message] successfully used. You may continue moving forward now.",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12042856
         ],
@@ -2171,10 +2171,10 @@
     {
         "Id": 2042857,
         "Endurance": 0,
-        "Title": "天台钥匙",
-        "Description": "需要【C区废弃化工厂】作业区获得【天台钥匙】",
-        "SucDesc": "成功使用【天台钥匙】，现在可以继续前进了",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Rooftop Key",
+        "Description": "Get [Rooftop Key] from [Zone C Abandoned Factory] Operation Zone",
+        "SucDesc": "[Rooftop Key] successfully used. You may continue moving forward now.",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12042857
         ],
@@ -2196,10 +2196,10 @@
     {
         "Id": 2042858,
         "Endurance": 0,
-        "Title": "漫画残页",
-        "Description": "需要【C区废弃化工厂】作业区获得【漫画残页】",
-        "SucDesc": "成功使用【漫画残页】，现在可以继续前进了",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Torn Comic Page",
+        "Description": "Get [Torn Comic Page] from [Zone C Abandoned Factory] Operation Zone",
+        "SucDesc": "[Torn Comic Page] successfully used. You may continue moving forward now.",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             12042858
         ],
@@ -2221,10 +2221,10 @@
     {
         "Id": 2043051,
         "Endurance": 0,
-        "Title": "异合狂潮",
-        "Description": "在调查事件的路上突然遇到异合生物来袭，无法回避战斗，必须迎击！",
-        "SucDesc": "击败了如同潮水般涌来的异合生物，一切回归于平静。",
-        "FailDesc": "目前的作战能力根本不足以应对这种规模的战斗，你们伤痕累累，拼尽全力才逃了出来……",
+        "Title": "Hetero Tide",
+        "Description": "You encounter a sudden attack from the Hetero-Creatures on the way to investigation. A battle is inevitable. You must fight back!",
+        "SucDesc": "You defeat the incoming wave of Hetero-Creatures. It is peaceful once again.",
+        "FailDesc": "A battle of such scale is beyond your combat ability. You are badly wounded and barely manage to escape...",
         "ActionId": [
             12043051
         ],
@@ -2246,10 +2246,10 @@
     {
         "Id": 2043052,
         "Endurance": 0,
-        "Title": "隐藏数据",
-        "Description": "法奥斯之矛系统在拾取数据的过程中，检测到一段被加密的线索，这种加密数字古老又少见，必须先破译才能得知后续线索。",
-        "SucDesc": "你们成功找到了破译这段密码的方式，并从资料中得知了一条隐蔽的小径，看样子这条路似乎在街道还未化作废墟之前，曾被当做秘密逃生通道使用过。",
-        "FailDesc": "你们反复思考也毫无头绪，决定将一切都交给法奥斯之矛，让它将这段古老的秘密暴力破解出来，但被其加密的资料却只剩下一段灾难记录视频，其他都化为了不可读取的数据碎片。",
+        "Title": "Hidden Data",
+        "Description": "Spear of F.O.S. picks up a clue encrypted with a set of rare, dated number codes. To find out more, you must decipher it first.",
+        "SucDesc": "You have successfully found a method to decipher the password and learned about a hidden route. Looks like it was used as an emergency exit before the street was reduced to ruins.",
+        "FailDesc": "You thought hard but had no clues, so you decide to use the Spear of F.O.S. for brute-force decryption. All you find is a video recording of disasters, while everything else has become unreadable data fragments.",
         "ActionId": [
             32043052
         ],
@@ -2271,10 +2271,10 @@
     {
         "Id": 3021051,
         "Endurance": 0,
-        "Title": "检定标题126",
-        "Description": "无配置",
-        "SucDesc": "无配置",
-        "FailDesc": "无配置",
+        "Title": "Check Title 126",
+        "Description": "Not Configured",
+        "SucDesc": "Not Configured",
+        "FailDesc": "Not Configured",
         "ActionId": [
             13021051
         ]
@@ -2282,10 +2282,10 @@
     {
         "Id": 3022051,
         "Endurance": 1,
-        "Title": "暗渊的残骸",
-        "Description": "面前濒临损毁的感染体还在不断挣扎靠近，他早已失去了战斗能力与自我意识。",
-        "SucDesc": "虽然无法逆转感染的程度，但是丽芙还是在被病毒完全破坏之前取得了构造体的意识模型，你们至少可以铭记他的故事。",
-        "FailDesc": "还未等你们采取行动，构造体便保持着匍匐挣扎的姿势永远停止了机能，他的电子脑已经损坏了。",
+        "Title": "Abyssal Remains",
+        "Description": "The broken Corrupted is still struggling to come over. He has lost all combat capabilities and consciousness long ago.",
+        "SucDesc": "Although the contamination is irreversible, Liv manages to retrieve the Construct's Memory model before it is completely destroyed by the virus, so you can at least remember his story.",
+        "FailDesc": "Before you can take action, the Construct ceases to function permanently in a crawling position. His memory shell is completely damaged.",
         "StartMovieId": "JD01641BA",
         "ActionId": [
             13022051,
@@ -2309,10 +2309,10 @@
     {
         "Id": 3023041,
         "Endurance": 1,
-        "Title": "意外的援助",
-        "Description": "通讯断绝时无法与空中花园同步信息，突发情况下将无法呼叫支援，无论是尝试使用备用链路还是寻找并破坏可能存在的屏蔽装置，现在都需要采取行动尽快恢复通讯。",
-        "SucDesc": "消灭了拦路的感染体后，你们在内侧的房间里找到并关闭了地下工事的部分反侦察设备，信号阻隔有一定程度的减缓。",
-        "FailDesc": "排查问题后再次尝试联系空中花园，依旧无人应答。",
+        "Title": "Unexpected Support",
+        "Description": "With communications down, you can not sync information with Babylonia or call for emergency support. Whether looking for backup links or searching and destroying potential interference device, you must immediately try to restore communication.",
+        "SucDesc": "After defeating the Corrupted, you find and disable some anti-recon device in the underground facility. The signal block is slightly reduced.",
+        "FailDesc": "You have eliminate the issue and try to contact Babylonia again, but no one answers.",
         "StartMovieId": "ZX01629BA",
         "ActionId": [
             13023041,
@@ -2336,10 +2336,10 @@
     {
         "Id": 3023052,
         "Endurance": 0,
-        "Title": "记忆箱庭",
-        "Description": "只有获得【若琳的资料】才可继续前进，此道具可在【外侧废墟都市】的支援部队处获得。",
-        "SucDesc": "使用【若琳的资料】成功通过了封锁，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Memory Box",
+        "Description": "You must get [Ruolin's Data] to continue moving forward. It can be obtained from the Support Force in [Outer City Ruins].",
+        "SucDesc": "You have successfully used [Ruolin's Data] to go through the blockade. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             13023052
         ]
@@ -2347,10 +2347,10 @@
     {
         "Id": 3024051,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13024051
         ],
@@ -2372,10 +2372,10 @@
     {
         "Id": 3024052,
         "Endurance": 1,
-        "Title": "干扰信号",
-        "Description": "地下工事的深处穿来了断续且无意义的信号，在通讯信道产生了不少杂音干扰，为了不影响对周边威胁的判断，还是尽早解决为好。",
-        "SucDesc": "成功利用法奥斯之矛追踪到信号源并排除了信号带来的干扰，可以继续前进了。",
-        "FailDesc": "干扰过于强烈，已经达到了无法正常感知的地步，只能暂时离开这片区域了。",
+        "Title": "Disruptive Signal",
+        "Description": "You receive meaningless broken signals from somewhere deep inside the underground facility that causes substantial interference in the comms channel. Better get rid of them to avoid any adverse impact on the estimate of nearby threats.",
+        "SucDesc": "You have successfully used the Spear of F.O.S. to trace the signal source and eliminated the interference. Now you may keep moving forward.",
+        "FailDesc": "The interference is too strong for your senses to function properly. You have to leave the area.",
         "ActionId": [
             13024052
         ],
@@ -2397,10 +2397,10 @@
     {
         "Id": 3024053,
         "Endurance": 1,
-        "Title": "异常隔断",
-        "Description": "检测到了法奥斯之矛内部的算术异常，在造成更加严重的后果之前尽快解决吧。",
-        "SucDesc": "成功解决了异常情况，法奥斯之矛能够正常执行命令了。",
-        "FailDesc": "解决问题所花费的时间比想象中要长，还是先寻找安全的地方暂且休整吧。",
+        "Title": "Abnormal Obstacle",
+        "Description": "You detect some error in the algorithm of the Spear of F.O.S. Fix it before it produces more serious consequences.",
+        "SucDesc": "You have successfully fixed the error. The Spear of F.O.S. is now able to execute your command normally.",
+        "FailDesc": "Fixing the error takes longer than you expected. Better look for a safe place to rest up first.",
         "ActionId": [
             13024053
         ],
@@ -2422,10 +2422,10 @@
     {
         "Id": 3031051,
         "Endurance": 1,
-        "Title": "连接长廊",
-        "Description": "目的地——核心区就在眼前，但连接桥的前半段处于封锁状态，你们必须找到通过的方法。",
-        "SucDesc": "虽然废了一番功夫，但是连接桥的通路被成功打开，可以继续前进了。",
-        "FailDesc": "连接桥的封锁比想象中要牢固，也许需要尝试别的方法了。",
+        "Title": "Junction Corridor",
+        "Description": "Core Area is right in front of you, but the first half of the bridge is blocked. You must find a way to get through it.",
+        "SucDesc": "It took you some time, but the obstacles blocking the bridge have been successfully removed. You can now move forward.",
+        "FailDesc": "The obstacles are more difficult to remove than you expected. You might need to try other solutions.",
         "StartMovieId": "JD01642BA",
         "ActionId": [
             13031051,
@@ -2449,10 +2449,10 @@
     {
         "Id": 3031052,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Final Struggle",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             13031052
         ],
@@ -2474,10 +2474,10 @@
     {
         "Id": 3032051,
         "Endurance": 0,
-        "Title": "封锁",
-        "Description": "只有获得【短途喷射器】才可继续前进，此道具可在【外侧废墟都市】的补给车厢处获得。",
-        "SucDesc": "使用【短途喷射器】越过了升起的连接桥，后面等待你的事更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Blockade",
+        "Description": "You must get [Short-range Jet] to continue moving forward. It can be obtained from the Supply Carriage in [Outer City Ruins].",
+        "SucDesc": "You have used [Short-range Jet] to get over the bridge. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             13032051
         ]
@@ -2485,10 +2485,10 @@
     {
         "Id": 3032052,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Final Struggle",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             13032052
         ],
@@ -2510,10 +2510,10 @@
     {
         "Id": 3032053,
         "Endurance": 0,
-        "Title": "突发重灾",
-        "Description": "慌张大意的行为导致你不小心踩到了陷阱，但或许你可以用自己的能力来规避掉",
-        "SucDesc": "显然这对你来说并不是挑战，但下次还是要小心注意",
-        "FailDesc": "即使是优秀的链接者也会有失误的时候，不过幸运的是这次你躲掉了可能出现的倒霉事件",
+        "Title": "Sudden Disaster",
+        "Description": "Your recklessness has led you into a trap. Maybe you can utilize your capabilities to avoid it.",
+        "SucDesc": "Apparently it isn't even a challenge for you, but you better be careful next time.",
+        "FailDesc": "Even the most outstanding individual may make mistakes. You are lucky to avoid the potential negative event.",
         "ActionId": [
             13032053
         ],
@@ -2535,10 +2535,10 @@
     {
         "Id": 3033051,
         "Endurance": 0,
-        "Title": "记忆箱庭",
-        "Description": "只有获得【若琳的录像】才可继续前进，此道具可在【核心区】控制中枢探索获得。",
-        "SucDesc": "使用【若琳的录像】成功通过了封锁，后面等待你的是更加混沌的探索。",
-        "FailDesc": "无失败描述",
+        "Title": "Memory Box",
+        "Description": "You must get [Ruolin's Video] to continue moving forward. It can be obtained by exploring [Core Area] Control Center.",
+        "SucDesc": "You have successfully used [Ruolin's Video] to go through the blockade. More unknown awaits you in the future exploration.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             13033051
         ]
@@ -2546,10 +2546,10 @@
     {
         "Id": 3034051,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13034051
         ],
@@ -2571,10 +2571,10 @@
     {
         "Id": 3034052,
         "Endurance": 1,
-        "Title": "干扰信号",
-        "Description": "地下工事的深处穿来了断续且无意义的信号，在通讯信道产生了不少杂音干扰，为了不影响对周边威胁的判断，还是尽早解决为好。",
-        "SucDesc": "成功利用法奥斯之矛追踪到信号源并排除了信号带来的干扰，可以继续前进了。",
-        "FailDesc": "干扰过于强烈，已经达到了无法正常感知的地步，只能暂时离开这片区域了。",
+        "Title": "Disruptive Signal",
+        "Description": "You receive meaningless broken signals from somewhere deep inside the underground facility that causes substantial interference in the comms channel. Better get rid of them to avoid any adverse impact on the estimate of nearby threats.",
+        "SucDesc": "You have successfully used the Spear of F.O.S. to trace the signal source and eliminated the interference. Now you may keep moving forward.",
+        "FailDesc": "The interference is too strong for your senses to function properly. You have to leave the area.",
         "ActionId": [
             13034052
         ],
@@ -2596,10 +2596,10 @@
     {
         "Id": 3034053,
         "Endurance": 1,
-        "Title": "异常隔断",
-        "Description": "检测到了法奥斯之矛内部的算术异常，在造成更加严重的后果之前尽快解决吧。",
-        "SucDesc": "成功解决了异常情况，法奥斯之矛能够正常执行命令了。",
-        "FailDesc": "解决问题所花费的时间比想象中要长，还是先寻找安全的地方暂且休整吧。",
+        "Title": "Abnormal Obstacle",
+        "Description": "You detect some error in the algorithm of the Spear of F.O.S. Fix it before it produces more serious consequences.",
+        "SucDesc": "You have successfully fixed the error. The Spear of F.O.S. is now able to execute your command normally.",
+        "FailDesc": "Fixing the error takes longer than you expected. Better look for a safe place to rest up first.",
         "ActionId": [
             13034053
         ],
@@ -2621,10 +2621,10 @@
     {
         "Id": 3034054,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13034054
         ],
@@ -2646,10 +2646,10 @@
     {
         "Id": 3041041,
         "Endurance": 1,
-        "Title": "升降平台",
-        "Description": "就在众人犹豫的时候，平台发出轻微震动的声音，开始向下降。",
-        "SucDesc": "你们快速冲进了正在下降的平台中，一切都还来得及。",
-        "FailDesc": "升降平台的下降速度比你们预想中的要快，一切都来不及了。",
+        "Title": "Platform Lift",
+        "Description": "While everyone is still hesitant, the platform rattles and begins to descend.",
+        "SucDesc": "There is still time. You rush onto the descending platform.",
+        "FailDesc": "The platform is descending faster than you expected. It is too late.",
         "StartMovieId": "ZX01637BA",
         "ActionId": [
             13041041,
@@ -2665,10 +2665,10 @@
     {
         "Id": 3041051,
         "Endurance": 0,
-        "Title": "战斗意志",
-        "Description": "只有获得【露西亚的意志】才可继续前进，此道具可在【意识海深层】第2区域探索获得。",
-        "SucDesc": "持有【露西亚的意志】成功从深层意识海中返回，与升格者的决战就在眼前。",
-        "FailDesc": "无失败描述",
+        "Title": "Battle Will",
+        "Description": "You must get [Lucia's Will] to continue moving forward. It can be obtained from [Deep M.I.N.D.] Lv.2 Area.",
+        "SucDesc": "You successfully return from the Deep M.I.N.D. with [Lucia's Will]. A final battle with the Ascendant awaits you.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             13041051
         ]
@@ -2676,10 +2676,10 @@
     {
         "Id": 3041052,
         "Endurance": 0,
-        "Title": "突发故障",
-        "Description": "既没有整备的条件，更没有整备的时间，战场上构造体的故障率相当高，你只能祈祷这只是个小问题。",
-        "SucDesc": "经过了简单的修理，总算是在最短的时间内修复了突然发生的机体故障。",
-        "FailDesc": "很显然你对这个“小”故障并没有引起足够的重视，这个后果可能是非常严重的。",
+        "Title": "Sudden Fault",
+        "Description": "You have no equipment or time for maintenance. Constructs often have a high fault rate in battles, and you can only pray that it is only a minor fault.",
+        "SucDesc": "After some simple repairs, you manage to fix the sudden fault in as little time as possible.",
+        "FailDesc": "You think it is only a \"minor\" fault and do not give it enough attention, but the consequence can be severe.",
         "ActionId": [
             13041052
         ],
@@ -2701,10 +2701,10 @@
     {
         "Id": 3041053,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             13041053
         ],
@@ -2726,10 +2726,10 @@
     {
         "Id": 3042051,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             13042051
         ],
@@ -2751,10 +2751,10 @@
     {
         "Id": 3042052,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13042052
         ],
@@ -2776,10 +2776,10 @@
     {
         "Id": 3043051,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13043051
         ],
@@ -2801,10 +2801,10 @@
     {
         "Id": 3043052,
         "Endurance": 1,
-        "Title": "干扰信号",
-        "Description": "地下工事的深处穿来了断续且无意义的信号，在通讯信道产生了不少杂音干扰，为了不影响对周边威胁的判断，还是尽早解决为好。",
-        "SucDesc": "成功利用法奥斯之矛追踪到信号源并排除了信号带来的干扰，可以继续前进了。",
-        "FailDesc": "干扰过于强烈，已经达到了无法正常感知的地步，只能暂时离开这片区域了。",
+        "Title": "Disruptive Signal",
+        "Description": "You receive meaningless broken signals from somewhere deep inside the underground facility that causes substantial interference in the comms channel. Better get rid of them to avoid any adverse impact on the estimate of nearby threats.",
+        "SucDesc": "You have successfully used the Spear of F.O.S. to trace the signal source and eliminated the interference. Now you may keep moving forward.",
+        "FailDesc": "The interference is too strong for your senses to function properly. You have to leave the area.",
         "ActionId": [
             13043052
         ],
@@ -2826,10 +2826,10 @@
     {
         "Id": 3043053,
         "Endurance": 1,
-        "Title": "异常隔断",
-        "Description": "检测到了法奥斯之矛内部的算术异常，在造成更加严重的后果之前尽快解决吧。",
-        "SucDesc": "成功解决了异常情况，法奥斯之矛能够正常执行命令了。",
-        "FailDesc": "解决问题所花费的时间比想象中要长，还是先寻找安全的地方暂且休整吧。",
+        "Title": "Abnormal Obstacle",
+        "Description": "You detect some error in the algorithm of the Spear of F.O.S. Fix it before it produces more serious consequences.",
+        "SucDesc": "You have successfully fixed the error. The Spear of F.O.S. is now able to execute your command normally.",
+        "FailDesc": "Fixing the error takes longer than you expected. Better look for a safe place to rest up first.",
         "ActionId": [
             13043053
         ],
@@ -2851,10 +2851,10 @@
     {
         "Id": 3043054,
         "Endurance": 1,
-        "Title": "异合群聚",
-        "Description": "在地下工事中游荡的异合生物发现了闯入者的踪迹，向着你们发起攻击，需要立刻做好战斗准备。",
-        "SucDesc": "对于身经百战的灰鸦小队来说，这些异合生物根本无法造成威胁，战斗很快就结束了。",
-        "FailDesc": "异合生物的数量比想象中要庞大，强行突破的成功率很低，在造成不必要的损失之前脱离战斗吧。",
+        "Title": "Hetero Horde",
+        "Description": "You are found by the wandering Hetero-creatures in the underground facility. You must prepare for battle immediately.",
+        "SucDesc": "The Hetero-creatures are no match for the Gray Raven veterans. The battle ends quickly.",
+        "FailDesc": "The number of Hetero-creatures has exceeded your expectation. Forcing your way through may not be the best option. Get out of battle before you suffer unnecessary losses.",
         "ActionId": [
             13043054
         ],
@@ -2876,10 +2876,10 @@
     {
         "Id": 3051051,
         "Endurance": 1,
-        "Title": "解开过去的记忆",
-        "Description": "露西亚带着觉悟前行，就算是多么痛苦的回忆，都必须要突破它。",
-        "SucDesc": "露西亚突破了意识海中的阻力，等待她的将是自己被尘封的过去。",
-        "FailDesc": "无论失败多少次，都必须要揭开这记忆背后的秘密。",
+        "Title": "Unlocking Memories",
+        "Description": "Lucia continues forward with determination. No matter how painful the memories are, she must break through it.",
+        "SucDesc": "Lucia manages to overcome the obstacles in her M.I.N.D. Her sealed past awaits her.",
+        "FailDesc": "No matter how many times she fails, she must unveil the secret behind the lost memories.",
         "StartMovieId": "JD01661BA",
         "ActionId": [
             13051051
@@ -2894,10 +2894,10 @@
     {
         "Id": 3052051,
         "Endurance": 1,
-        "Title": "深红战意",
-        "Description": "阿尔法将刀尖指向露西亚……",
-        "SucDesc": "在简单的交锋之后，露西亚与阿尔法依然是势均力敌的结束了战斗。",
-        "FailDesc": "无论失败多少次，都必须要揭开这记忆背后的秘密。",
+        "Title": "Crimson Will",
+        "Description": "Alpha points her blade at Lucia...",
+        "SucDesc": "After engaging each other for a brief moment, Lucia and Alpha end their evenly matched battle.",
+        "FailDesc": "No matter how many times she fails, she must unveil the secret behind the lost memories.",
         "StartMovieId": "JD01662BA",
         "ActionId": [
             13052051
@@ -2912,10 +2912,10 @@
     {
         "Id": 3052053,
         "Endurance": 1,
-        "Title": "遥远之声",
-        "Description": "在感染与吞没带来的污染和混乱之中，一个模糊不清的声音出现在耳边，那究竟是谁的声音呢？",
-        "SucDesc": "露西亚在模糊的意识中渐渐回想起了这个声音源自于谁……",
-        "FailDesc": "无论失败多少次，都必须回到他们的身边。",
+        "Title": "A Voice from Afar",
+        "Description": "A vague voice appears amongst the chaos brought by the contamination. Who can that be?",
+        "SucDesc": "With a foggy mind, Lucia slowly remembers the owner of that voice...",
+        "FailDesc": "No matter how many times she fails, she must return to them.",
         "StartMovieId": "JD01663BA",
         "ActionId": [
             13052053
@@ -2930,10 +2930,10 @@
     {
         "Id": 3052054,
         "Endurance": 1,
-        "Title": "黑羊",
-        "Description": "必须尽快离开这里，要阻止意识海被吞噬还来得及。",
-        "SucDesc": "黑暗渐渐退去了一些，零散的回忆碎片飞散在空中，似乎在引诱她触碰。",
-        "FailDesc": "无论失败多少次，都必须回到他们的身边。",
+        "Title": "Black Sheep",
+        "Description": "There is still time. You must leave before the M.I.N.D. is devoured.",
+        "SucDesc": "Darkness seems to have faded a little. Memory fragments fly in the air, luring her to touch them.",
+        "FailDesc": "No matter how many times she fails, she must return to them.",
         "StartMovieId": "JD01663BB",
         "ActionId": [
             13052054
@@ -2948,10 +2948,10 @@
     {
         "Id": 3052055,
         "Endurance": 1,
-        "Title": "孤独的魔王",
-        "Description": "必须尽快离开这里，要阻止意识海被吞噬还来得及。",
-        "SucDesc": "黑暗渐渐退去了一些，零散的回忆碎片飞散在空中，似乎在引诱她触碰。",
-        "FailDesc": "无论失败多少次，都必须回到他们的身边。",
+        "Title": "Lone Demon King",
+        "Description": "There is still time. You must leave before the M.I.N.D. is devoured.",
+        "SucDesc": "Darkness seems to have faded a little. Memory fragments fly in the air, luring her to touch them.",
+        "FailDesc": "No matter how many times she fails, she must return to them.",
         "StartMovieId": "JD01663BC",
         "ActionId": [
             13052055
@@ -2966,10 +2966,10 @@
     {
         "Id": 4021051,
         "Endurance": 1,
-        "Title": "搜寻拉弥亚",
-        "Description": "灰鸦小队登上高处的平台，来到疑似拉弥亚的躲藏地，希望能在这里找到拉弥亚的所在。",
-        "SucDesc": "很快，你找到了拉弥亚留下的痕迹，这里确实是她来过的地方，或许需要再去前面看看。",
-        "FailDesc": "这似乎不是个好办法，你们并没有发现什么有用的信息。",
+        "Title": "Search for Lamia",
+        "Description": "Gray Raven climb up a platform to a possible hideout of Lamia, hoping to find her whereabouts.",
+        "SucDesc": "Soon, you find the traces left by Lamia. She was definitely here. Maybe you need to explore a bit further.",
+        "FailDesc": "It does not seem to work. You do not find any useful information.",
         "StartMovieId": "ZX01648BA",
         "ActionId": [
             14021051,
@@ -2980,10 +2980,10 @@
     {
         "Id": 4021052,
         "Endurance": 1,
-        "Title": "搜寻拉弥亚",
-        "Description": "灰鸦小队登上高处的平台，来到疑似拉弥亚的躲藏地，希望能在这里找到拉弥亚的所在。",
-        "SucDesc": "很快，你找到了拉弥亚留下的痕迹，这里确实是她来过的地方，或许需要再去前面看看。",
-        "FailDesc": "这似乎不是个好办法，你们并没有发现什么有用的信息。",
+        "Title": "Search for Lamia",
+        "Description": "Gray Raven climb up a platform to a possible hideout of Lamia, hoping to find her whereabouts.",
+        "SucDesc": "Soon, you find the traces left by Lamia. She was definitely here. Maybe you need to explore a bit further.",
+        "FailDesc": "It does not seem to work. You do not find any useful information.",
         "StartMovieId": "ZX01648BA",
         "ActionId": [
             14021052,
@@ -2994,10 +2994,10 @@
     {
         "Id": 4021053,
         "Endurance": 1,
-        "Title": "搜寻拉弥亚",
-        "Description": "灰鸦小队登上高处的平台，来到疑似拉弥亚的躲藏地，希望能在这里找到拉弥亚的所在。",
-        "SucDesc": "很快，你找到了拉弥亚留下的痕迹，这里确实是她来过的地方，或许需要再去前面看看。",
-        "FailDesc": "这似乎不是个好办法，你们并没有发现什么有用的信息。",
+        "Title": "Search for Lamia",
+        "Description": "Gray Raven climb up a platform to a possible hideout of Lamia, hoping to find her whereabouts.",
+        "SucDesc": "Soon, you find the traces left by Lamia. She was definitely here. Maybe you need to explore a bit further.",
+        "FailDesc": "It does not seem to work. You do not find any useful information.",
         "StartMovieId": "ZX01649BA",
         "ActionId": [
             14021053,
@@ -3008,10 +3008,10 @@
     {
         "Id": 4021054,
         "Endurance": 0,
-        "Title": "拉弥亚",
-        "Description": "拉弥亚到底在什么地方……(需要在本层获得【弥亚的所在地】才能解锁)",
-        "SucDesc": "终于找到了拉弥亚的所在地，接下来就是从她口中问出关于巨大怪物的情报了。",
-        "FailDesc": "无失败描述",
+        "Title": "Lamia",
+        "Description": "Where is Lamia... (Find [Lamia's Location] on this level to unlock)",
+        "SucDesc": "You finally find Lamia. Next, you need to gauge the information about the giant monster from her.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14021054
         ]
@@ -3019,10 +3019,10 @@
     {
         "Id": 4021055,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14021055
         ],
@@ -3040,10 +3040,10 @@
     {
         "Id": 4021056,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14021056
         ],
@@ -3061,10 +3061,10 @@
     {
         "Id": 4021057,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14021057
         ],
@@ -3082,10 +3082,10 @@
     {
         "Id": 4021058,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14021058
         ],
@@ -3103,10 +3103,10 @@
     {
         "Id": 4021059,
         "Endurance": 0,
-        "Title": "陷阱牌A",
-        "Description": "拉弥亚已经不在这里了，但是她却为失望的你们留下了一份精致的礼物——一个处于触发状态的陷阱！",
-        "SucDesc": "成功规避了陷阱",
-        "FailDesc": "拉弥亚的陷阱触发，回到起点",
+        "Title": "Trap Card A",
+        "Description": "Lamia is no longer here, but she has left a nice gift for you—a triggered trap!",
+        "SucDesc": "You successfully avoid the trap.",
+        "FailDesc": "You trigger Lamia's trap and are returned to the starting point.",
         "ActionId": [
             14021059
         ],
@@ -3120,10 +3120,10 @@
     {
         "Id": 4021851,
         "Endurance": 0,
-        "Title": "陷阱牌B",
-        "Description": "拉弥亚已经不在这里了，但是她却为失望的你们留下了一份精致的礼物——一个处于触发状态的陷阱！",
-        "SucDesc": "成功规避了陷阱",
-        "FailDesc": "拉弥亚的陷阱触发，回到起点",
+        "Title": "Trap Card B",
+        "Description": "Lamia is no longer here, but she has left a nice gift for you—a triggered trap!",
+        "SucDesc": "You successfully avoid the trap.",
+        "FailDesc": "You trigger Lamia's trap and are returned to the starting point.",
         "ActionId": [
             14021851
         ],
@@ -3137,10 +3137,10 @@
     {
         "Id": 4022051,
         "Endurance": 1,
-        "Title": "异合生物",
-        "Description": "千万别跟丢了！找机会把它抓住吧。",
-        "SucDesc": "很幸运，它还是没有发现你们正在跟踪着它。",
-        "FailDesc": "这似乎不是个好办法，你们跟丢了。",
+        "Title": "Hetero-Creature",
+        "Description": "Don't lose it! Find an opportunity to catch it.",
+        "SucDesc": "Fortunately, it does not realized that it is being followed.",
+        "FailDesc": "It is not a good idea. You lose the creature.",
         "StartMovieId": "ZX01650BA",
         "ActionId": [
             14022051,
@@ -3150,10 +3150,10 @@
     {
         "Id": 4022052,
         "Endurance": 0,
-        "Title": "捕抓异合生物",
-        "Description": "怎么才能抓到那一只异合生物……（需要在本层获得【异合生物的脚印】才能解锁）",
-        "SucDesc": "成功捉到它了，接下来就要看拉弥亚的了。",
-        "FailDesc": "无法突破数据屏障",
+        "Title": "Capture Hetero-Creature",
+        "Description": "How to capture that Hetero-Creature... (Find [Hetero-Creature Footprints] on this level to unlock)",
+        "SucDesc": "You have successfully caught the creature. Now it is Lamia's job.",
+        "FailDesc": "Unable to break the data barrier",
         "ActionId": [
             14022052
         ]
@@ -3161,10 +3161,10 @@
     {
         "Id": 4022053,
         "Endurance": 0,
-        "Title": "捕抓异合生物",
-        "Description": "怎么才能抓到那一只异合生物……（需要在本层获得【异合生物的体液痕迹】才能解锁）",
-        "SucDesc": "成功捉到它了，接下来就要看拉弥亚的了。",
-        "FailDesc": "无法突破数据屏障",
+        "Title": "Capture Hetero-Creature",
+        "Description": "How to capture that Hetero-creature... (Find [Body Fluid of Hetero-Creature] on this level to unlock)",
+        "SucDesc": "You have successfully caught the creature. Now it is Lamia's job.",
+        "FailDesc": "Unable to break the data barrier",
         "ActionId": [
             14022053
         ]
@@ -3172,10 +3172,10 @@
     {
         "Id": 4022054,
         "Endurance": 0,
-        "Title": "封锁3废弃",
-        "Description": "废弃",
-        "SucDesc": "废弃",
-        "FailDesc": "废弃",
+        "Title": "Blockade 3 (Scrapped)",
+        "Description": "Scrapped",
+        "SucDesc": "Scrapped",
+        "FailDesc": "Scrapped",
         "ActionId": [
             14022054
         ]
@@ -3183,10 +3183,10 @@
     {
         "Id": 4022055,
         "Endurance": 0,
-        "Title": "封锁4废弃",
-        "Description": "废弃",
-        "SucDesc": "废弃",
-        "FailDesc": "废弃",
+        "Title": "Blockade 4 (Scrapped)",
+        "Description": "Scrapped",
+        "SucDesc": "Scrapped",
+        "FailDesc": "Scrapped",
         "ActionId": [
             14022055
         ]
@@ -3194,10 +3194,10 @@
     {
         "Id": 4022056,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "不幸踩中坍缩的地面",
-        "FailDesc": "不幸踩中坍缩的地面",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "Stepped onto the collapsed ground",
+        "FailDesc": "Stepped onto the collapsed ground",
         "ActionId": [
             14022056
         ],
@@ -3219,10 +3219,10 @@
     {
         "Id": 4023051,
         "Endurance": 1,
-        "Title": "突然袭击",
-        "Description": "就在快要被追到的时候，拉弥亚突然向里发动袭击，想要抢走华胥的终端。",
-        "SucDesc": "虽然是突然的袭击，但是想要从里手中将终端抢走，还是太勉强了一点。",
-        "FailDesc": "即使早有预备，但你们一瞬间的疏忽，还是让终端被拉弥亚抢走。",
+        "Title": "Ambush",
+        "Description": "Just when you almost catcht Lamia, she suddenly attacks Lee, trying to seize Huaxu's terminal from him.",
+        "SucDesc": "Lamia comes prepared, but she isn't able to take the terminal off Lee's hands.",
+        "FailDesc": "You are anticipating an ambush but still get distracted for a split second. The terminal falls into Lamia's hands.",
         "StartMovieId": "ZX01653BA",
         "ActionId": [
             34023051,
@@ -3232,10 +3232,10 @@
     {
         "Id": 4023052,
         "Endurance": 1,
-        "Title": "崩断的钢索",
-        "Description": "绑住拉弥亚的钢索突然崩断，她逃跑了！",
-        "SucDesc": "在拉弥亚隐身之前追踪到了她的位置，追上去吧。",
-        "FailDesc": "事发突然，拉弥亚顺利逃跑了。",
+        "Title": "Broken Rope",
+        "Description": "The steel rope on Lamia suddenly breaks apart. She is running away!",
+        "SucDesc": "You have tracked Lamia's location before she goes stealth. Go get her.",
+        "FailDesc": "You are caught off guard. Lamia manages to get away.",
         "StartMovieId": "ZX01652BA",
         "ActionId": [
             14023052,
@@ -3246,10 +3246,10 @@
     {
         "Id": 4023053,
         "Endurance": 1,
-        "Title": "检定2废弃",
-        "Description": "废弃",
-        "SucDesc": "穿过阴暗角落，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Check 2 (Scrapped)",
+        "Description": "Scrapped",
+        "SucDesc": "After going around a dark corner, you may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14023053,
             24023053,
@@ -3259,10 +3259,10 @@
     {
         "Id": 4023054,
         "Endurance": 0,
-        "Title": "追赶拉弥亚",
-        "Description": "意外逃跑的拉弥亚出乎意料的速度很快，不能让她跑了！（需要在本层获得【逃跑的人鱼】）",
-        "SucDesc": "逃跑的拉弥亚就在前面……紧紧追上去吧！",
-        "FailDesc": "无失败描述",
+        "Title": "Chasing Lamia",
+        "Description": "Lamia is running a lot faster than you expected. Don't let her get away! (You need to find [Run-away Mermaid] on this level)",
+        "SucDesc": "Lamia is right ahead... Go get her!",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14023054
         ]
@@ -3270,10 +3270,10 @@
     {
         "Id": 4023055,
         "Endurance": 0,
-        "Title": "封锁废弃",
-        "Description": "废弃",
-        "SucDesc": "成功使用【激光防护服】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Blockade (Scrapped)",
+        "Description": "Scrapped",
+        "SucDesc": "[Laser Protection Suit] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14023055
         ]
@@ -3281,10 +3281,10 @@
     {
         "Id": 4023056,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14023056
         ],
@@ -3306,10 +3306,10 @@
     {
         "Id": 4023057,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14023057
         ],
@@ -3331,10 +3331,10 @@
     {
         "Id": 4023058,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14023058
         ],
@@ -3356,10 +3356,10 @@
     {
         "Id": 4024051,
         "Endurance": 1,
-        "Title": "聚噬体的咆哮",
-        "Description": "咆哮声震耳欲聋",
-        "SucDesc": "成功抓住了石壁的边缘，免于被咆哮吹飞。",
-        "FailDesc": "失去了平衡被咆哮吹飞，根本没有办法靠近聚噬体。",
+        "Title": "Roaring Polyphage",
+        "Description": "The Polyphage makes a deafening roar.",
+        "SucDesc": "You manage to grab the stone wall's edge and not be knocked away.",
+        "FailDesc": "You lose balance and is knocked away. It is impossible to get closer to the Polyphage.",
         "StartMovieId": "JD01664BA",
         "ActionId": [
             24024051,
@@ -3370,10 +3370,10 @@
     {
         "Id": 4024052,
         "Endurance": 1,
-        "Title": "攀登平台",
-        "Description": "要怎样才能到左边的平台呢",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "并未能攀登到平台上",
+        "Title": "Climbing the Platform",
+        "Description": "How to get to the platform on the left?",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "You fail to climb up the platform.",
         "ActionId": [
             14024052,
             24024052,
@@ -3383,10 +3383,10 @@
     {
         "Id": 4024053,
         "Endurance": 0,
-        "Title": "聚噬体",
-        "Description": "要怎么才能来到聚噬体的身边……（需要在本层获得【直面聚噬体】才能通过）",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage",
+        "Description": "How to get close to the Polyphage... (Find [Facing the Polyphage] on this level to pass)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024053
         ]
@@ -3394,10 +3394,10 @@
     {
         "Id": 4024054,
         "Endurance": 0,
-        "Title": "聚噬体",
-        "Description": "要怎么才能来到聚噬体的身边……（需要在本层获得【直面聚噬体】才能通过）",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage",
+        "Description": "How to get close to the Polyphage... (Find [Facing the Polyphage] on this level to pass)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024054
         ]
@@ -3405,10 +3405,10 @@
     {
         "Id": 4024055,
         "Endurance": 0,
-        "Title": "聚噬体",
-        "Description": "要怎么才能来到聚噬体的身边……（需要在本层获得【直面聚噬体】才能通过）",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage",
+        "Description": "How to get close to the Polyphage... (Find [Facing the Polyphage] on this level to pass)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024055
         ]
@@ -3416,10 +3416,10 @@
     {
         "Id": 4024056,
         "Endurance": 0,
-        "Title": "聚噬体",
-        "Description": "要怎么才能来到聚噬体的身边……（需要在本层获得【直面聚噬体】才能通过）",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage",
+        "Description": "How to get close to the Polyphage... (Find [Facing the Polyphage] on this level to pass)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024056
         ]
@@ -3427,10 +3427,10 @@
     {
         "Id": 4024057,
         "Endurance": 0,
-        "Title": "右手秘钥",
-        "Description": "只有使用【右手线索】才能穿过这里",
-        "SucDesc": "使用【右手线索】穿过这里",
-        "FailDesc": "无失败描述",
+        "Title": "Right Hand Key",
+        "Description": "You must use [Right Hand Clue] to get through",
+        "SucDesc": "Use [Right Hand Clue] to get through",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024057
         ]
@@ -3438,10 +3438,10 @@
     {
         "Id": 4024058,
         "Endurance": 0,
-        "Title": "数据碎片-渎神",
-        "Description": "需要在本层获得【数据碎片-渎神】",
-        "SucDesc": "成功使用【数据碎片-渎神】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Data Fragment - Blasphemy",
+        "Description": "You need to find [Data Fragment - Blasphemy] on this level.",
+        "SucDesc": "[Data Fragment - Blasphemy] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024058
         ]
@@ -3449,10 +3449,10 @@
     {
         "Id": 4024059,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14024059
         ],
@@ -3472,10 +3472,10 @@
     {
         "Id": 4024851,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14024851
         ],
@@ -3495,10 +3495,10 @@
     {
         "Id": 4024852,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14024852
         ],
@@ -3518,10 +3518,10 @@
     {
         "Id": 4024853,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14024853
         ],
@@ -3541,10 +3541,10 @@
     {
         "Id": 4024854,
         "Endurance": 0,
-        "Title": "数据碎片-渎神",
-        "Description": "需要在本层获得【数据碎片-渎神】",
-        "SucDesc": "成功使用【数据碎片-渎神】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Data Fragment - Blasphemy",
+        "Description": "You need to find [Data Fragment - Blasphemy] on this level.",
+        "SucDesc": "[Data Fragment - Blasphemy] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024854
         ]
@@ -3552,10 +3552,10 @@
     {
         "Id": 4024855,
         "Endurance": 0,
-        "Title": "数据碎片-渎神",
-        "Description": "需要在本层获得【数据碎片-渎神】",
-        "SucDesc": "成功使用【数据碎片-渎神】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Data Fragment - Blasphemy",
+        "Description": "You need to find [Data Fragment - Blasphemy] on this level.",
+        "SucDesc": "[Data Fragment - Blasphemy] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14024855
         ]
@@ -3563,10 +3563,10 @@
     {
         "Id": 4031051,
         "Endurance": 1,
-        "Title": "突破围攻",
-        "Description": "敌人越来越多，现在需要的不是考虑打倒所有的敌人，而是找到突破重围",
-        "SucDesc": "找到敌人行动的规律，成功突围！",
-        "FailDesc": "没有找到合适的突围路线，这下子完全陷入包围圈之中了。",
+        "Title": "Break the Siege",
+        "Description": "The enemies keep coming. Instead of defeating all of them, you need to find a way out.",
+        "SucDesc": "You find the enemy's movement pattern and get away!",
+        "FailDesc": "You fail to find an escape route and are completely surrounded.",
         "StartMovieId": "JD01665BA",
         "ActionId": [
             34031051,
@@ -3577,10 +3577,10 @@
     {
         "Id": 4031052,
         "Endurance": 1,
-        "Title": "入侵系统",
-        "Description": "隐藏在手臂处的控制机构，如果能能够成功入侵的话就可以不费吹灰之力打开新的通路。",
-        "SucDesc": "成功通过入侵连结装置破坏聚噬体的中央控制系统。",
-        "FailDesc": "入侵被封锁，只能再次尝试了。",
+        "Title": "System Invasion",
+        "Description": "The control is hidden inside the arm. If you can hack into it, you can open a new way with ease.",
+        "SucDesc": "You successfully hack into the joint and destroy the Polyphage's central control system.",
+        "FailDesc": "Your invasion is blocked and you have to try again.",
         "ActionId": [
             34031052,
             14031052,
@@ -3590,10 +3590,10 @@
     {
         "Id": 4031053,
         "Endurance": 0,
-        "Title": "包围圈",
-        "Description": "敌人的数量源源不绝，突破包围只靠武力似乎是不可行的。（需要在本层获得解锁道具【一瞬间的破绽】才能解锁｝",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Siege",
+        "Description": "The enemies just keep coming. Sheer force may not be enough to help you break away. (You need to find [Split Second Opportunity] on this level to unlock it)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14031053
         ]
@@ -3601,10 +3601,10 @@
     {
         "Id": 4031054,
         "Endurance": 0,
-        "Title": "防护破坏",
-        "Description": "聚噬体左手薄弱处有着强大的防护装置，必须要将它破坏。（需要在本层获得解锁道具【防护破坏完毕】才能解锁｝",
-        "SucDesc": "现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Defense Break",
+        "Description": "A powerful device is protecting the weak part of the Polyphage's left hand. You must destroy it. (You need to find [Defense Compromised] on this level to unlock it)",
+        "SucDesc": "You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14031054
         ]
@@ -3612,10 +3612,10 @@
     {
         "Id": 4031055,
         "Endurance": 0,
-        "Title": "数据碎片-池鱼",
-        "Description": "需要在本层获得【数据碎片-池鱼】",
-        "SucDesc": "成功使用【数据碎片-池鱼】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Data Fragment - Adverse Impact",
+        "Description": "You need to find [Data Fragment - Adverse Impact] on this level.",
+        "SucDesc": "[Data Fragment - Adverse Impact] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14031055
         ]
@@ -3623,10 +3623,10 @@
     {
         "Id": 4031056,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031056
         ],
@@ -3648,10 +3648,10 @@
     {
         "Id": 4031057,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031057
         ],
@@ -3673,10 +3673,10 @@
     {
         "Id": 4031058,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031058
         ],
@@ -3698,10 +3698,10 @@
     {
         "Id": 4031059,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031059
         ],
@@ -3723,10 +3723,10 @@
     {
         "Id": 4031851,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031851
         ],
@@ -3748,10 +3748,10 @@
     {
         "Id": 4031852,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14031852
         ],
@@ -3773,10 +3773,10 @@
     {
         "Id": 4041051,
         "Endurance": 1,
-        "Title": "剧烈震动",
-        "Description": "聚噬体产生了剧烈的震动，似乎想要把两人甩下它的身体。",
-        "SucDesc": "感知到震动来临之前的时机，早做准备躲过去吧。",
-        "FailDesc": "震动越来越大，脚下不稳的前提下根本寸步难行。",
+        "Title": "Violent Shock",
+        "Description": "The Polyphage is shaking violently, trying to get the two off its body.",
+        "SucDesc": "You can anticipate the shock coming. Get prepared and avoid it in advance.",
+        "FailDesc": "The shocking is getting more volatile. You can hardly move.",
         "StartMovieId": "JD01666BA",
         "ActionId": [
             14041051,
@@ -3801,10 +3801,10 @@
     {
         "Id": 4041052,
         "Endurance": 1,
-        "Title": "天降阴影",
-        "Description": "聚噬体巨大的右手砸在核心平台上，试图将登上它身体的虫子砸成碎片。",
-        "SucDesc": "早已得知攻击的时机就不难躲过。",
-        "FailDesc": "这突如其来的攻击无从躲藏……",
+        "Title": "Shadow From Above",
+        "Description": "The Polyphage's giant right hand slams on the core platform, trying to crush the insects that dare to climb on its body.",
+        "SucDesc": "You see the attack coming, and it is easy to avoid.",
+        "FailDesc": "The attack is too sudden. You have nowhere to hide...",
         "StartMovieId": "JD01667BA",
         "ActionId": [
             24041052,
@@ -3828,10 +3828,10 @@
     {
         "Id": 4041053,
         "Endurance": 1,
-        "Title": "残军",
-        "Description": "突然出现残留的感染体",
-        "SucDesc": "成功击退残留的感染体",
-        "FailDesc": "并未能击退残留的感染体",
+        "Title": "Remnants",
+        "Description": "Some Corrupted remnants suddenly appear.",
+        "SucDesc": "You successfully defeat the Corrupted remnants.",
+        "FailDesc": "You fail to defeat the Corrupted remnants.",
         "ActionId": [
             14041053,
             24041053,
@@ -3855,10 +3855,10 @@
     {
         "Id": 4041054,
         "Endurance": 1,
-        "Title": "应急保护",
-        "Description": "聚噬体内部应急的保护措施被激发了",
-        "SucDesc": "成功关闭聚噬体的应急保护措施",
-        "FailDesc": "受到聚噬体应急保护的反噬，受到重创",
+        "Title": "Emergency Protection",
+        "Description": "The emergency protection within Polyphage has been triggered.",
+        "SucDesc": "You successfully disable the Polyphage's emergency protection.",
+        "FailDesc": "You are heavily wounded by the Polyphage's emergency protection.",
         "ActionId": [
             14041054,
             24041054,
@@ -3882,10 +3882,10 @@
     {
         "Id": 4041055,
         "Endurance": 1,
-        "Title": "检定5废弃",
-        "Description": "废弃",
-        "SucDesc": "废弃",
-        "FailDesc": "废弃",
+        "Title": "Check 5 (Scrapped)",
+        "Description": "Scrapped",
+        "SucDesc": "Scrapped",
+        "FailDesc": "Scrapped",
         "ActionId": [
             14041055,
             24041055,
@@ -3909,10 +3909,10 @@
     {
         "Id": 4041056,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041056
         ]
@@ -3920,10 +3920,10 @@
     {
         "Id": 4041057,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041057
         ]
@@ -3931,10 +3931,10 @@
     {
         "Id": 4041058,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041058
         ]
@@ -3942,10 +3942,10 @@
     {
         "Id": 4041059,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041059
         ]
@@ -3953,10 +3953,10 @@
     {
         "Id": 4041851,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041851
         ]
@@ -3964,10 +3964,10 @@
     {
         "Id": 4041852,
         "Endurance": 0,
-        "Title": "继续前进",
-        "Description": "除了继续前进之外别无他法。（需要在本层获得【继续前进的决心】才能解锁）",
-        "SucDesc": "在这里退缩就等于是自取灭亡，下定决心继续前进吧。",
-        "FailDesc": "无失败描述",
+        "Title": "Keep moving on",
+        "Description": "Moving forward is the only option. (Find [Determination] on this level to unlock)",
+        "SucDesc": "Retreating is no different from suicide at this stage. Keep moving forward.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041852
         ]
@@ -3975,10 +3975,10 @@
     {
         "Id": 4041853,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "这是通往聚噬体核心位置的最后一段路。（需要在本层获得【最后的一段路】才能解锁）",
-        "SucDesc": "通过了最后的一段路，接下来就是最后的决战了！",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "This is the last stretch of road before reaching the Polyphage's Core. (Find [Final Stretch] on this level to unlock)",
+        "SucDesc": "You have passed the last stretch of the road. Now is the final battle!",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041853
         ]
@@ -3986,10 +3986,10 @@
     {
         "Id": 4041854,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "这是通往聚噬体核心位置的最后一段路。（需要在本层获得【最后的一段路】才能解锁）",
-        "SucDesc": "通过了最后的一段路，接下来就是最后的决战了！",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "This is the last stretch of road before reaching the Polyphage's Core. (Find [Final Stretch] on this level to unlock)",
+        "SucDesc": "You have passed the last stretch of the road. Now is the final battle!",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041854
         ]
@@ -3997,10 +3997,10 @@
     {
         "Id": 4041855,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "这是通往聚噬体核心位置的最后一段路。（需要在本层获得【最后的一段路】才能解锁）",
-        "SucDesc": "通过了最后的一段路，接下来就是最后的决战了！",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "This is the last stretch of road before reaching the Polyphage's Core. (Find [Final Stretch] on this level to unlock)",
+        "SucDesc": "You have passed the last stretch of the road. Now is the final battle!",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041855
         ]
@@ -4008,10 +4008,10 @@
     {
         "Id": 4041856,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "只有拥有【核心左侧权限】才能前进",
-        "SucDesc": "使用【核心左侧权限】通过屏障",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "You need [Permission - Core Left] to advance",
+        "SucDesc": "You used [Permission - Core Left] to go through the barrier",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041856
         ]
@@ -4019,10 +4019,10 @@
     {
         "Id": 4041857,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "只有拥有【核心左侧权限】才能前进",
-        "SucDesc": "使用【核心左侧权限】通过屏障",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "You need [Permission - Core Left] to advance",
+        "SucDesc": "You used [Permission - Core Left] to go through the barrier",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041857
         ]
@@ -4030,10 +4030,10 @@
     {
         "Id": 4041858,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "只有拥有【核心中心权限】才能前进",
-        "SucDesc": "使用【核心中心权限】通过屏障",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "You need [Permission - Core Center] to advance",
+        "SucDesc": "You used [Permission - Core Center] to go through the barrier",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041858
         ]
@@ -4041,10 +4041,10 @@
     {
         "Id": 4041859,
         "Endurance": 0,
-        "Title": "聚噬体核心",
-        "Description": "只有拥有【核心中心权限】才能前进",
-        "SucDesc": "使用【核心中心权限】通过屏障",
-        "FailDesc": "无失败描述",
+        "Title": "Polyphage Core",
+        "Description": "You need [Permission - Core Center] to advance",
+        "SucDesc": "You used [Permission - Core Center] to go through the barrier",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041859
         ]
@@ -4052,10 +4052,10 @@
     {
         "Id": 4041751,
         "Endurance": 0,
-        "Title": "断片录音N1",
-        "Description": "需要在本层获得【断片录音N1】",
-        "SucDesc": "成功使用【断片录音N1】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N1",
+        "Description": "You need to find [Recording Fragment N1] on this level",
+        "SucDesc": "[Recording Fragment N1] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14041751
         ]
@@ -4063,10 +4063,10 @@
     {
         "Id": 4041752,
         "Endurance": 0,
-        "Title": "封锁6",
-        "Description": "废弃",
-        "SucDesc": "废弃",
-        "FailDesc": "废弃",
+        "Title": "Blockade 6",
+        "Description": "Scrapped",
+        "SucDesc": "Scrapped",
+        "FailDesc": "Scrapped",
         "ActionId": [
             14041752
         ]
@@ -4074,10 +4074,10 @@
     {
         "Id": 4041753,
         "Endurance": 0,
-        "Title": "废弃",
-        "Description": "废弃",
-        "SucDesc": "废弃",
-        "FailDesc": "废弃",
+        "Title": "Scrapped",
+        "Description": "Scrapped",
+        "SucDesc": "Scrapped",
+        "FailDesc": "Scrapped",
         "ActionId": [
             14041753
         ]
@@ -4085,10 +4085,10 @@
     {
         "Id": 4041754,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041754
         ],
@@ -4110,10 +4110,10 @@
     {
         "Id": 4041755,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041755
         ],
@@ -4135,10 +4135,10 @@
     {
         "Id": 4041756,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041756
         ],
@@ -4160,10 +4160,10 @@
     {
         "Id": 4041757,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041757
         ],
@@ -4185,10 +4185,10 @@
     {
         "Id": 4041758,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041758
         ],
@@ -4210,10 +4210,10 @@
     {
         "Id": 4041759,
         "Endurance": 0,
-        "Title": "垂死挣扎",
-        "Description": "即使是已经被打倒的敌人也不可掉以轻心，如果被垂死挣扎的敌人抓住的话，在挣脱的时候说不定要付出沉重的代价。",
-        "SucDesc": "终究不过是濒死者的挣扎，除了吓了一跳并没有给你们带来多少的麻烦。",
-        "FailDesc": "疏忽大意的你失去了平衡，被濒死的敌人紧紧抓住，虽然侥幸逃脱，但是也损失严重。",
+        "Title": "Final Struggle",
+        "Description": "Never let your guard down even when the enemy is already defeated. You may pay a heavy price if they get to you during their final struggle.",
+        "SucDesc": "The enemy is already dying. You are shaken, but they have not caused any real trouble.",
+        "FailDesc": "The dying enemy catches you off guard and you lose balance. You barely manage to escape but suffer a huge loss.",
         "ActionId": [
             14041759
         ],
@@ -4235,10 +4235,10 @@
     {
         "Id": 4042051,
         "Endurance": 1,
-        "Title": "深渊破片",
-        "Description": "不断增殖的异合生物汇聚成一面诡异的生物墙壁，运算与感知在这种生物形成的阻碍面前显得苍白无力，进行作战来打破它们继续前进吧。",
-        "SucDesc": "异合生物组成的诡异障碍在我方进攻下逐渐瓦解，它们的碎片在地上蠕动片刻后便停止了活动，忍住这令人作呕的气味快速穿过这片区域，然后继续探索吧。",
-        "FailDesc": "我方瓦解异合生物的速度无法超过它们疯狂的增殖速度，这些生物出现龟裂的下一秒就完成了自我修复，先行撤退，调整下攻击手段再来进行尝试吧。",
+        "Title": "Shard of Abyss",
+        "Description": "The ever-proliferating Hetero-Creatures form a creepy wall. Arithmetic and Perception seem useless. Combat is the only option.",
+        "SucDesc": "The creepy Hetero-Creature obstacle slowly decompose under your attack, squirming a little, and soon it stops moving, leaving a foul, pungent smell in the air. Quickly cross the area and continue exploring.",
+        "FailDesc": "You can not destroy the Hetero-Creatures faster than they are proliferating. Whenever there is a crack in the \"wall,\" it will self-repair in the next second. Better retreat and try again after adjusting your attack plan.",
         "ActionId": [
             14042051
         ],
@@ -4258,10 +4258,10 @@
     {
         "Id": 4042052,
         "Endurance": 1,
-        "Title": "模糊信号",
-        "Description": "遭受了来源不明的阻击，周遭的异合生物信号掩盖了袭击者的位置，在小队受损情况继续增加前查明对方的真身和位置吧。",
-        "SucDesc": "尽管袭击者隐藏自身的手段十分精妙，但还是被我方敏锐地查明了坐标，短暂交战后这种新型的异合生物被我方击毙，可以向前方继续推进了。",
-        "FailDesc": "仍旧无法感知到敌方的存在，并且探查的这一行为似乎更加激怒了它，攻击渐渐变得愈发猛烈，现在还是暂时撤退比较好。",
+        "Title": "Fuzzy Signal",
+        "Description": "Someone snipe you, but the Hetero-Creature signals nearby has covered their exact location. Try to find out who and where they are before your squad suffers greater loss.",
+        "SucDesc": "The attacker carefully hides itself, but you manage to find out its coordinates. After a skirmish, you kill the new type of Hetero-creature and continued pushing forward.",
+        "FailDesc": "You are still unable to detect the enemy, but it seems to be enraged by your attempt and attacks more vigorously. Retreating would be a better option.",
         "ActionId": [
             24042052
         ],
@@ -4281,10 +4281,10 @@
     {
         "Id": 4042053,
         "Endurance": 1,
-        "Title": "聚噬平台",
-        "Description": "战斗余波对前方区域的地基造成了不小损伤，但地面结构却没有因此崩毁，计算出不让区域崩溃的安全道路后再通过这里。",
-        "SucDesc": "计算成功，区域的平衡点找到了，沿着安全路线小心谨慎地通过了该区域。",
-        "FailDesc": "运算消耗了太多时间，长时间待在原地意味着风险的提高，为了不继续增加前方区域的损坏情况，导致坍塌的发生，现在还是将可能发生的战斗引向其他区域吧。",
+        "Title": "Hetero Platform",
+        "Description": "The battle causes substantial damage to the foundation of the area ahead. The surface structure does not collapse, but you must calculate a safe route before passing.",
+        "SucDesc": "You have successfully calculated the balance point. Following the safe route, you carefully pass this area.",
+        "FailDesc": "The calculation has taken too long, and staying here will only increase the risk. Better redirect the potential combat to another area before more damage causes the ground to collapse.",
         "ActionId": [
             34042053
         ],
@@ -4304,10 +4304,10 @@
     {
         "Id": 4042054,
         "Endurance": 0,
-        "Title": "断片录音N2",
-        "Description": "需要【聚噬体核心】3级区域获得【断片录音N2】",
-        "SucDesc": "成功使用【断片录音N2】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N2",
+        "Description": "You need to get [Recording Fragment N2] from [Polyphage Core] Lv.3 Area",
+        "SucDesc": "[Recording Fragment N2] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042054
         ]
@@ -4315,10 +4315,10 @@
     {
         "Id": 4042055,
         "Endurance": 0,
-        "Title": "断片录音N2",
-        "Description": "需要【聚噬体核心】3级区域获得【断片录音N2】",
-        "SucDesc": "成功使用【断片录音N2】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N2",
+        "Description": "You need to get [Recording Fragment N2] from [Polyphage Core] Lv.3 Area",
+        "SucDesc": "[Recording Fragment N2] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042055
         ]
@@ -4326,10 +4326,10 @@
     {
         "Id": 4042056,
         "Endurance": 0,
-        "Title": "断片录音N2",
-        "Description": "需要【聚噬体核心】3级区域获得【断片录音N2】",
-        "SucDesc": "成功使用【断片录音N2】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N2",
+        "Description": "You need to get [Recording Fragment N2] from [Polyphage Core] Lv.3 Area",
+        "SucDesc": "[Recording Fragment N2] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042056
         ]
@@ -4337,10 +4337,10 @@
     {
         "Id": 4042057,
         "Endurance": 0,
-        "Title": "断片录音N2",
-        "Description": "需要【聚噬体核心】3级区域获得【断片录音N2】",
-        "SucDesc": "成功使用【断片录音N2】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N2",
+        "Description": "You need to get [Recording Fragment N2] from [Polyphage Core] Lv.3 Area",
+        "SucDesc": "[Recording Fragment N2] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042057
         ]
@@ -4348,10 +4348,10 @@
     {
         "Id": 4042058,
         "Endurance": 0,
-        "Title": "断片录音N2",
-        "Description": "需要【聚噬体核心】3级区域获得【断片录音N2】",
-        "SucDesc": "成功使用【断片录音N2】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Recording Fragment N2",
+        "Description": "You need to get [Recording Fragment N2] from [Polyphage Core] Lv.3 Area",
+        "SucDesc": "[Recording Fragment N2] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042058
         ]
@@ -4359,10 +4359,10 @@
     {
         "Id": 4042059,
         "Endurance": 0,
-        "Title": "隐藏录像-锲",
-        "Description": "需要【聚噬体左手】2级区域获得【隐藏录像-锲】",
-        "SucDesc": "成功使用【隐藏录像-锲】，现在可以继续前进了",
-        "FailDesc": "无失败描述",
+        "Title": "Hidden Video - Engraver",
+        "Description": "You need to get [Hidden Video - Engraver] from [Polyphage Left Hand] Lv.2 Area",
+        "SucDesc": "[Hidden Video - Engraver] successfully used. You may continue moving forward now.",
+        "FailDesc": "No Failure Description",
         "ActionId": [
             14042059
         ]
@@ -4370,10 +4370,10 @@
     {
         "Id": 4043051,
         "Endurance": 1,
-        "Title": "深渊破片",
-        "Description": "不断增殖的异合生物汇聚成一面诡异的生物墙壁，运算与感知在这种生物形成的阻碍面前显得苍白无力，进行作战来打破它们继续前进吧。",
-        "SucDesc": "异合生物组成的诡异障碍在我方进攻下逐渐瓦解，它们的碎片在地上蠕动片刻后便停止了活动，忍住这令人作呕的气味快速穿过这片区域，然后继续探索吧。",
-        "FailDesc": "我方瓦解异合生物的速度无法超过它们疯狂的增殖速度，这些生物出现龟裂的下一秒就完成了自我修复，先行撤退，调整下攻击手段再来进行尝试吧。",
+        "Title": "Shard of Abyss",
+        "Description": "The ever-proliferating Hetero-Creatures form a creepy wall. Arithmetic and Perception seem useless. Combat is the only option.",
+        "SucDesc": "The creepy Hetero-Creature obstacle slowly decompose under your attack, squirming a little, and soon it stops moving, leaving a foul, pungent smell in the air. Quickly cross the area and continue exploring.",
+        "FailDesc": "You can not destroy the Hetero-Creatures faster than they are proliferating. Whenever there is a crack in the \"wall,\" it will self-repair in the next second. Better retreat and try again after adjusting your attack plan.",
         "ActionId": [
             14043051
         ],

@@ -1,60 +1,60 @@
 [
     {
         "Key": "StageMainCostItems",
-        "Comment": "关卡主界面用消耗道具栏",
+        "Comment": "Consumable slot for stage main interface.",
         "Values": [
             96114
         ]
     },
     {
         "Key": "DayRefreshTime",
-        "Comment": "每日刷新时间(怪物移动等)单位：24小时制小时(例：早上8点 = 8 晚上8点 = 20)",
+        "Comment": "Daily refresh (enemy movement, etc.) time unit: hours in the 24-hour clock format (e.g., 8 AM is 08:00 and 8 PM is 20:00).",
         "Values": [
             20
         ]
     },
     {
         "Key": "HourRefreshTime",
-        "Comment": "定时刷新时间（单位：分钟）",
+        "Comment": "Regular Refresh Time (in minutes)",
         "Values": [
             5
         ]
     },
     {
         "Key": "PathMarkMaxCount",
-        "Comment": "最大标记点数",
+        "Comment": "Max Mark Points",
         "Values": [
             2
         ]
     },
     {
         "Key": "StageTypeName",
-        "Comment": "关卡类型名",
+        "Comment": "Stage type name",
         "Values": [
-            "资源保障区",
-            "关口",
-            "资源富地",
-            "伏击前哨",
-            "险峻隘口",
-            "高危绝壁",
-            "高危绝壁",
-            "高危绝壁",
-            "高危绝壁",
-            "高危绝壁",
-            "隐藏区域",
-            "协援哨所",
-            "隐藏区域",
-            "高危绝壁",
-            "高危绝壁",
-            "孤崖关塞",
-            "资源保障区",
-            "资源保障区",
-            "高危绝壁"
+            "Resource Security Area",
+            "Juncture",
+            "Land of Resources",
+            "Ambush Outpost",
+            "Dangerous Pass",
+            "Dangerous Cliff",
+            "Dangerous Cliff",
+            "Dangerous Cliff",
+            "Dangerous Cliff",
+            "Dangerous Cliff",
+            "Hidden Area",
+            "Assistance Outpost",
+            "Hidden Area",
+            "Dangerous Cliff",
+            "Dangerous Cliff",
+            "Cliff Fortress",
+            "Resource Security Area",
+            "Resource Security Area",
+            "Dangerous Cliff"
         ]
     },
     {
         "Key": "StageTypeIcon",
-        "Comment": "关卡类型图标",
+        "Comment": "Stage type icon",
         "Values": [
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon1.png",
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon2.png",
@@ -79,42 +79,42 @@
     },
     {
         "Key": "LogCount",
-        "Comment": "显示最近几条战报",
+        "Comment": "Show the recent battle reports",
         "Values": [
             30
         ]
     },
     {
         "Key": "AutoSelectDifficultyTime",
-        "Comment": "自动选择难度的时间(24小时制)",
+        "Comment": "Auto-select Difficulty Time (24-hour)",
         "Values": [
             23
         ]
     },
     {
         "Key": "EntryRewardId",
-        "Comment": "入口的奖励展示",
+        "Comment": "Entrance reward display",
         "Values": [
             550600
         ]
     },
     {
         "Key": "SpecialRoleIcon1",
-        "Comment": "特攻图标1",
+        "Comment": "Operation Icon 1",
         "Values": [
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon1.png"
         ]
     },
     {
         "Key": "SpecialRoleIcon2",
-        "Comment": "特攻图标2",
+        "Comment": "Operation Icon 2",
         "Values": [
             "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon2.png"
         ]
     },
     {
         "Key": "PassRewardShow",
-        "Comment": "难度选择界面奖励预览",
+        "Comment": "Difficulty selection screen reward preview",
         "Values": [
             66998,
             66999,
@@ -123,7 +123,7 @@
     },
     {
         "Key": "PlanPath1",
-        "Comment": "\"推荐线路, 难度1\"",
+        "Comment": "\"Recommended Route, Difficulty 1\"",
         "Values": [
             102,
             103,
@@ -135,7 +135,7 @@
     },
     {
         "Key": "PlanPath2",
-        "Comment": "\"推荐线路, 难度2\"",
+        "Comment": "\"Recommended Route, Difficulty 2\"",
         "Values": [
             202,
             203,
@@ -147,7 +147,7 @@
     },
     {
         "Key": "PlanPath3",
-        "Comment": "\"推荐线路, 难度3\"",
+        "Comment": "\"Recommended Route, Difficulty 3\"",
         "Values": [
             302,
             303,
@@ -159,76 +159,76 @@
     },
     {
         "Key": "ShopSkipId",
-        "Comment": "商店界面跳转的Id，对应SkipFunctional",
+        "Comment": "Shop interface jump ID, corresponding to SkipFunctional",
         "Values": [
             88002
         ]
     },
     {
         "Key": "CancelDefend",
-        "Comment": "取消驻守弹窗提示",
+        "Comment": "Cancel Stationing Pop-up Window Prompt",
         "Values": [
-            "是否取消驻守？"
+            "Cancel stationing?"
         ]
     },
     {
         "Key": "ChangeDefend",
-        "Comment": "驻守（但已驻守）时弹窗提示",
+        "Comment": "Stationing (But Already Stationing) Pop-up Window Prompt",
         "Values": [
-            "您已驻守其他资源点，是否更换驻守位置?"
+            "Your units are stationed at another Resource Point. Switch to another location?"
         ]
     },
     {
         "Key": "DefendSuccess",
-        "Comment": "驻守成功提示",
+        "Comment": "Successful Stationing Prompt",
         "Values": [
-            "驻守成功"
+            "Stationed successfully."
         ]
     },
     {
         "Key": "DefendBtnDisplay",
-        "Comment": "驻守按钮的文本显示",
+        "Comment": "Stationing Button Text Display",
         "Values": [
-            "进入驻守",
-            "取消驻守"
+            "Station",
+            "Cancel"
         ]
     },
     {
         "Key": "DefendTime",
-        "Comment": "炮击倒计时文本",
+        "Comment": "Bombing Countdown Text",
         "Values": [
-            "炮击倒计时:{0}"
+            "Bombing Countdown: {0}"
         ]
     },
     {
         "Key": "DefendPercentDetail",
-        "Comment": "详细页的驻守占比文本",
+        "Comment": "Stationed in Percentage Text on Details Page",
         "Values": [
-            "驻守占比:{0}%"
+            "Stationed: {0}%"
         ]
     },
     {
         "Key": "MemberLevel",
         "Values": [
-            "等级: {0}"
+            "Lv：{0}"
         ]
     },
     {
         "Key": "AttackLeftTimes",
         "Values": [
-            "剩余{0}次"
+            "Remaining: {0}"
         ]
     },
     {
         "Key": "BuffShowTimeEvents",
-        "Comment": "需要显示炮击倒计时等信息的EventId填这里",
+        "Comment": "Fill in the EventId of bombing countdown and other info that needs to be displayed",
         "Values": [
             2240408
         ]
     },
     {
         "Key": "BuffUnshowRebuilTagEvents",
-        "Comment": "资源点重建的时候不需要显示重建tag的EventId填这里",
+        "Comment": "Fill in the EventId when there's no need to display reconstruction tag during Resource Point reconstruction.",
         "Values": [
             2240409
         ]
@@ -244,7 +244,7 @@
     {
         "Key": "GuildQuitLastMemberInWar",
         "Values": [
-            "退出后指挥局将会解散，8小时内将无法加入指挥局，如果已参与众志行征，本轮再次加入其他公会无法继续参与众志行征，是否继续？"
+            "After you exit, the Command Bureau will disband and you must wait 8 hours before joining a new Command Bureau. If you have already participated in Guild Expedition, you will not be able to participate in it again after joining another guild. Proceed?"
         ]
     },
     {
@@ -258,14 +258,14 @@
         "Key": "ReinforcementsRushNextTime",
         "Comment": "援军行动倒计时",
         "Values": [
-            "(剩余时间: {0} )"
+            "(Remaining Time: {0})"
         ]
     },
     {
         "Key": "ReinforcementsRushStateDesc",
-        "Comment": "援军行动状态描述",
+        "Comment": "Reinforcement Status Description",
         "Values": [
-            "攻坚战车准备中",
+            "Preparing Siege Engine",
             "攻坚战车进攻中"
         ]
     },
@@ -280,7 +280,7 @@
         "Key": "ReinforcementsSupportDetail",
         "Comment": "援助物资情况",
         "Values": [
-            "<color=#FF1111FF>已累计援助: {0} 物资 血量提升{1}</color>"
+            "<color=#FF1111FF>Total supplies sent: {0} HP increases by {1}</color>"
         ]
     },
     {
@@ -294,7 +294,7 @@
         "Key": "ReinforcementSupportTxt",
         "Comment": "援军详情页援助按钮文本显示",
         "Values": [
-            "援助物资",
+            "Aid Supplies",
             "已援助"
         ]
     },
@@ -302,7 +302,7 @@
         "Key": "ReinforcementSupportResultTxt",
         "Comment": "点击援助按钮成功后的文本提示",
         "Values": [
-            "援助物资成功",
+            "Aid Supplies Sent",
             "取消援助成功"
         ]
     },
@@ -310,13 +310,13 @@
         "Key": "ReinforceSupportListEntranceTxt",
         "Comment": "援助列表入口按钮的文本",
         "Values": [
-            "援助成员"
+            "Aid Members"
         ]
     },
     {
         "Key": "ReinforcementsReadyDoneTxt",
         "Values": [
-            "{0}后完成准备"
+            "will be ready in {0}"
         ]
     },
     {
@@ -332,61 +332,61 @@
         "Key": "NodeAttackedByReinforementBuffTime",
         "Comment": "被援军攻击的节点上的buff剩余时间文本格式",
         "Values": [
-            "(剩余时间: {0} )"
+            "(Remaining Time: {0})"
         ]
     },
     {
         "Key": "BossRewardEntranceIntercept",
         "Comment": "boss奖励入口（主界面左边【领主】）的拦截提示文本",
         "Values": [
-            "曾在其他指挥局参与行征，本轮无法领取领主奖励"
+            "Participated in expedition(s) in other Command Bureau(s). Cannot claim the Boss rewards of this round"
         ]
     },
     {
         "Key": "ReinforcementSupportInCDTips",
         "Values": [
-            "操作过于频繁，请稍后再试"
+            "Action too frequent. Please try again later."
         ]
     },
     {
         "Key": "DragonRageLevelTips",
-        "Comment": "红潮等级描述",
+        "Comment": "Red Tide Level Description",
         "Values": [
-            "红潮等级随周目提升，所有关卡难度将会随红潮等级同步提升。"
+            "Red Tide Level increases along with the cycle. Same with the difficulty of all stages."
         ]
     },
     {
         "Key": "DragonRageLevel",
-        "Comment": "红潮等级格式",
+        "Comment": "Red Tide Level Format",
         "Values": [
             "LV.{0}"
         ]
     },
     {
         "Key": "DragonRageToRelicTitle",
-        "Comment": "红潮玩法节点切废墟弹窗标题",
+        "Comment": "Red Tide Node to Ruins Pop-Up Window Title",
         "Values": [
-            "领主变得更加狂暴，以下节点成为废墟"
+            "The Sovereign has become more violent. The following node(s) has/have become ruins."
         ]
     },
     {
         "Key": "DragonRageEffectShowLowerLimit",
-        "Comment": "红潮玩法进度条显示特效下限百分比",
+        "Comment": "Red Tide Progress Bar Displays Effect Lower Limit Percentage",
         "Values": [
             0
         ]
     },
     {
         "Key": "DragonRageSweepTips",
-        "Comment": "红潮玩法下的周目扫荡",
+        "Comment": "Red Tide Mode Available for Auto Clear",
         "Values": [
-            "当前周目尚未手动通关，扫荡积分将使用上次手动通关积分计算"
+            "Current cycle not manually cleared yet. Auto Clear will grant the points from the previous manual clear."
         ]
     },
     {
         "Key": "DragonRageRoundNoTips",
         "Values": [
-            "本周目不再提示"
+            "Do not show again this cycle."
         ]
     }
 ]

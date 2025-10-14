@@ -1,7 +1,7 @@
 [
     {
         "Id": 1,
-        "Name": "常温",
+        "Name": "Room Temperature",
         "Temperature": "0°C",
         "ConditionId": 0,
         "DifficultRate": 1.0,
@@ -46,7 +46,7 @@
     },
     {
         "Id": 2,
-        "Name": "初冷",
+        "Name": "First Chill",
         "Temperature": "-3°C",
         "ConditionId": 1020677,
         "DifficultRate": 1.0,
@@ -65,9 +65,9 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性小幅提升</color></size>",
-            "<size=32><color=#C02331>异常点提前进攻</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat slightly</color></size>",
+            "<size=32><color=#C02331>Attack Anomaly in advance</color></size>"
         ],
         "AtkFactor": [
             10000,
@@ -96,7 +96,7 @@
     },
     {
         "Id": 3,
-        "Name": "微寒",
+        "Name": "Nippy Shivers",
         "Temperature": "-5°C",
         "ConditionId": 1020677,
         "DifficultRate": 1.0,
@@ -115,9 +115,9 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性提升</color></size>",
-            "<size=32><color=#C02331>代理作战消耗提升</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat</color></size>",
+            "<size=32><color=#C02331>Increase Proxy Battle expenditure</color></size>"
         ],
         "AtkFactor": [
             10000,
@@ -146,7 +146,7 @@
     },
     {
         "Id": 4,
-        "Name": "冰冽",
+        "Name": "Icy Cold",
         "Temperature": "-10°C",
         "ConditionId": 1020678,
         "DifficultRate": 1.0,
@@ -165,9 +165,9 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgSnow.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性提升</color></size>",
-            "<size=32><color=#C02331>初始物资减半</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat</color></size>",
+            "<size=32><color=#C02331>Initial Resources reduced to half</color></size>"
         ],
         "AtkFactor": [
             10000,
@@ -196,8 +196,8 @@
     },
     {
         "Id": 5,
-        "Name": "严霜",
-        "StoryDesc": "气温较低，决策难度上升",
+        "Name": "Bitter Freeze",
+        "StoryDesc": "Low temperature—decision-making difficulty increased.",
         "Temperature": "-18°C",
         "ConditionId": 1020678,
         "DifficultRate": 1.0,
@@ -216,9 +216,9 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性提升</color></size>",
-            "<size=32><color=#C02331>代理作战消耗提升</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat</color></size>",
+            "<size=32><color=#C02331>Increase Proxy Battle expenditure</color></size>"
         ],
         "AtkFactor": [
             10000,
@@ -247,8 +247,8 @@
     },
     {
         "Id": 6,
-        "Name": "极寒",
-        "StoryDesc": "气温过低，需要谨慎决策",
+        "Name": "Arctic",
+        "StoryDesc": "Severe cold—exercise caution in your decisions.",
         "Temperature": "-25°C",
         "ConditionId": 1020679,
         "DifficultRate": 1.0,
@@ -267,10 +267,10 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性大幅提升</color></size>",
-            "<size=32><color=#C02331>异常点提前进攻</color></size>",
-            "<size=32><color=#C02331>初始不携带物资</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat significantly</color></size>",
+            "<size=32><color=#C02331>Attack Anomaly in advance</color></size>",
+            "<size=32><color=#C02331>Begin with no Initial Resources</color></size>"
         ],
         "AtkFactor": [
             10000,
@@ -299,8 +299,8 @@
     },
     {
         "Id": 7,
-        "Name": "绝地",
-        "StoryDesc": "气温极低，难度大幅上升",
+        "Name": "Harsh Place",
+        "StoryDesc": "Low temperature — difficulty increased significantly.",
         "Temperature": "-55°C",
         "ConditionId": 1020782,
         "DifficultRate": 1.0,
@@ -319,10 +319,10 @@
         "StarGroupIds": [],
         "SnowEffect": "Assets/Product/Ui/Prefab/UiEffect/UiTheatre4/FxTheatreBgBlizzard.prefab",
         "Desc": [
-            "<size=32><color=#C02331>地区指标提升</color></size>",
-            "<size=32><color=#C02331>敌方属性大幅提升</color></size>",
-            "<size=32><color=#C02331>异常点提前进攻</color></size>",
-            "<size=32><color=#C02331>初始不携带物资</color></size>"
+            "<size=32><color=#C02331>Improve Map Indicator</color></size>",
+            "<size=32><color=#C02331>Increase Enemy Stat significantly</color></size>",
+            "<size=32><color=#C02331>Attack Anomaly in advance</color></size>",
+            "<size=32><color=#C02331>Begin with no Initial Resources</color></size>"
         ],
         "AtkFactor": [
             10000,

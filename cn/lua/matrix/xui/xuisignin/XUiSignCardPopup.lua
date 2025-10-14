@@ -10,6 +10,11 @@ function XUiSignCardPopup:OnStart()
     self.PanelBuy.gameObject:SetActive(false)
     self.PanelGet.gameObject:SetActive(false)
     self.BtnContinue.gameObject:SetActive(false)
+    if XOverseaManager.IsKRRegion() then
+        if self.TxtCount then
+            self.TxtCount.text = CS.XTextManager.GetText("KRYKfirst")
+        end
+    end
 end
 
 function XUiSignCardPopup:OnEnable()
