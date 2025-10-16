@@ -169,19 +169,15 @@ function XUiGridMainLineExhibitionChapter:RefreshUi()
         self:RefreshPanelTag(viewModel)
         -- 进度
         self:RefreshPanelProgress(viewModel)
-        -- 红点
-        local isRed = viewModel:CheckHasRedPoint()
-        self:RefreshRedPoint(isRed)
     elseif chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.CHALLENGE then
         -- 上锁
         self:RefreshLock()
-        -- 红点
-        local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
-        local managers = XDataCenter.FubenManagerEx.GetManagers(challengeBannerConfig.Type)
-        local isRed = managers[1]:ExCheckIsShowRedPoint()
-        self:RefreshRedPoint(isRed)
     end
     
+    -- 蓝点
+    local isRed = self:IsShowRed()
+    self:RefreshRedPoint(isRed)
+    -- 最后通关章节
     local chapterId = XMVCA.XMainLine2:GetLastExhibitionChapterId()
     local isLastEnter = chapterId == self.ChapterId
     self.UiBrief:GetObject("PanelLastPassed").gameObject:SetActiveEx(isLastEnter)
@@ -399,6 +395,21 @@ end
 function XUiGridMainLineExhibitionChapter:HasNewTag()
     local viewModel = self:GetViewModel()
     return viewModel and viewModel:CheckHasNewTag()
+end
+
+-- 是否显示蓝点
+function XUiGridMainLineExhibitionChapter:IsShowRed()
+    local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
+    ---@type XChapterViewModel
+    local viewModel = self:GetViewModel()
+    if viewModel then
+        return viewModel:CheckHasRedPoint()
+    elseif chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.CHALLENGE then
+        local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
+        local managers = XDataCenter.FubenManagerEx.GetManagers(challengeBannerConfig.Type)
+        return managers[1]:ExCheckIsShowRedPoint()
+    end
+    return false
 end
 
 return XUiGridMainLineExhibitionChapter

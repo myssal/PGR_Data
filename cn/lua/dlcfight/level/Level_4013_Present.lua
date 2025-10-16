@@ -9,6 +9,8 @@ end
 function XLevelScript4013:Init() --初始化逻辑
     self._proxy:ControlSystemFunction(ESystemFunctionType.Map, { true })         --地图不能点击
     self._proxy:ControlSystemFunction(ESystemFunctionType.Task, {1}) --任务不能点击
+    self._proxy:ControlSystemFunction(ESystemFunctionType.FirstPersonMode, {true}) --第一人称不能点击
+    self._proxy:SetPlayerFirstPersonMode(false)
 end
 
 ---@param dt number @ delta time
@@ -25,6 +27,7 @@ end
 function XLevelScript4013:Terminate() --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
     self._proxy:ControlSystemFunction(ESystemFunctionType.Map, {false})         --地图不能点击
     self._proxy:ControlSystemFunction(ESystemFunctionType.Task, {0}) --任务不能点击
+    self._proxy:ControlSystemFunction(ESystemFunctionType.FirstPersonMode, {false}) --第一人称不能点击
 end
 
 return XLevelScript4013 

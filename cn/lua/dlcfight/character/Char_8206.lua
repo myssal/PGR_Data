@@ -35,12 +35,12 @@ function XCharTes8206:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
 
         local targetPos = self._proxy:GetNpcPosition(target) --获取目标位置
 
-        self._proxy:LaunchMissileFromPosToPos(self._uuid,82060401,targetPos,targetPos,1)--从目标位置向目标位置发特效
-        self._proxy:LaunchMissileFromPosToPos(self._uuid,82060405,targetPos,targetPos,1)--从目标位置向目标位置发子弹
+        self._proxy:LaunchMissileFromPosToPos(self._uuid,82060401,82060401,targetPos,targetPos,1)--从目标位置向目标位置发特效
+        self._proxy:LaunchMissileFromPosToPos(self._uuid,82060405,82060405,targetPos,targetPos,1)--从目标位置向目标位置发子弹
     end
 end
 
-function XCharTes8206:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes8206:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 return XCharTes8206

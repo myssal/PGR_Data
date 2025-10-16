@@ -65,7 +65,7 @@ function XUiPlotExhibitionDetailStoryGrid:Update(data)
         end
     end
     for i = #data.Force + 1, #self._BtnForces do
-        self._BtnForces[i]:SetActive(false)
+        self._BtnForces[i].gameObject:SetActiveEx(false)
     end
 
     --if data.Progress == 100 then

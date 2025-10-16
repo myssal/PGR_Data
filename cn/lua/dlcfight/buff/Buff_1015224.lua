@@ -10,13 +10,15 @@ local ConfigMagicIdDict = {
     [1015224] = 1015225,
     [1015243] = 1015244,
     [1015245] = 1015246,
-    [1015247] = 1015248
+    [1015247] = 1015248,
+    [1016116] = 1016117
 }
 local ConfigRuneIdDict = {
     [1015224] = 20224,
     [1015243] = 20243,
     [1015245] = 20245,
-    [1015247] = 20247
+    [1015247] = 20247,
+    [1016116] = 20247
 }
 
 function XBuffScript1015224:Init()
@@ -38,11 +40,11 @@ end
 --region EventCallBack
 function XBuffScript1015224:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
 end
 
-function XBuffScript1015224:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    local kind = self._proxy:GetSkillType(skillId)
+function XBuffScript1015224:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    local kind = self._proxy:GetActionType(skillId)
     if launcherId == self._uuid and kind == 1 and self.count <= 20 then
         self.count = self.count + 1
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)

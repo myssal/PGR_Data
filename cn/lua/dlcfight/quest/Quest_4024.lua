@@ -25,28 +25,28 @@ local emptyVector3 = { x = 0, y = 0, z = 0 }
 
 local ObjectiveDefines = {}
 
---01.到达指定地点查看阿呆蛙
+--01.播放A1级动画：回到筑梦之境
 ---@class QuestObjective40240101 : Quest4024Objective
 ObjectiveDefines.Obj40240101 = {
     Id = 40240101,
-    Type = EQuestObjectiveType.ReachTargetPosition,
+    Type = EQuestObjectiveType.DramaPlayFinish,
     Args = {
         LevelId = 4024,
-        TracePosArgs = {
-            {
-                Position = { x = 117.2, y = 143.74, z = 106.48 },                 -- 目标位置（初始为空，后续需要赋值）
-                DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
-                ShowEffect = false,                      -- 是否显示特效
-                ForceMapPinActive = false,               -- 是否强制激活地图标记
-            },                                           -- 这里加上逗号，方便后续扩展
-        },
-        TargetPosition = { x = 117.2, y = 143.74, z = 106.48 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        DramaName = "Drama_1001_046",
     },
+    ---@param obj QuestObjective40240101
+    InitFunc = function(obj)
+        obj.soRabbitCakeP1ID = 100001
+    end,
     ---@param obj QuestObjective40240101
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
+        proxy:LoadSceneObject(obj.soRabbitCakeP1ID)
         proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective40240101
+    ---@param proxy XDlcCSharpFuncs
+    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
     end,
     ---@param obj QuestObjective40240101
     ---@param proxy XDlcCSharpFuncs
@@ -54,24 +54,35 @@ ObjectiveDefines.Obj40240101 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
-
---02.播放B1级动画：阿呆蛙出场
----@class QuestObjective40240102 : Quest4024Objective
+--02.和传送门交互离开副本
+---@class QuestObjective40240102 : Quest4012Objective
 ObjectiveDefines.Obj40240102 = {
     Id = 40240102,
-    Type = EQuestObjectiveType.DramaPlayFinish,
+    Type = EQuestObjectiveType.InteractComplete,
     Args = {
         LevelId = 4024,
-        DramaName = "Drama_1001_024",
+        TraceActorArgs = {
+            {
+                TargetType = ETargetActorType.SceneObject,
+                PlaceId = 100001,
+                DisplayOffset = { x = 0, y = 1, z = 0 },
+                ShowEffect = false,
+                ForceMapPinActive = false,
+            },
+        },
+        TargetArgs = {
+            [ETargetActorType.SceneObject] = {
+                [100001] = 0,-- 传送门
+            },
+        },
     },
+    ---@param obj QuestObjective40240102
+    InitFunc = function(obj)
+    end,
     ---@param obj QuestObjective40240102
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
-    end,
-    ---@param obj QuestObjective40240102
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
     end,
     ---@param obj QuestObjective40240102
     ---@param proxy XDlcCSharpFuncs

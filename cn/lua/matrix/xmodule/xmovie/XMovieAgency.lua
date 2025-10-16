@@ -327,7 +327,7 @@ function XMovieAgency:PlayBookmarkMovie()
     
     XDataCenter.MovieManager.PlayMovie(bookmarkData.MovieId, function()
         self:OnBookmarkMovieEnd(bookmarkData)
-    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionDic)
+    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionDic, stageId)
 end
 
 -- 书签剧情播放结束回调

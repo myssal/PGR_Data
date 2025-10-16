@@ -171,8 +171,8 @@ end
 function XLevelBossFightHunt01:InitListen()
     self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)
     self._proxy:RegisterEvent(EWorldEvent.FightHuntQteStatusMsg)
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:RegisterEvent(EWorldEvent.Behavior2ScriptMsg) --行为树传递到脚本的消息
     --self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     --self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
@@ -333,8 +333,8 @@ end
 function XLevelBossFightHunt01:Terminate()
     self._proxy:UnregisterEvent(EWorldEvent.ActorTrigger)
     self._proxy:UnregisterEvent(EWorldEvent.FightHuntQteStatusMsg)
-    self._proxy:UnregisterEvent(EWorldEvent.NpcCastSkillAfter)
-    self._proxy:UnregisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:UnregisterEvent(EWorldEvent.Behavior2ScriptMsg) --行为树传递到脚本的消息
     self._proxy = nil
 

@@ -1,6 +1,7 @@
 XDlcScriptManager = {}
 local XDlcScript = require("XDlcScript")
 require("XDlcFightEnum")
+require("XDlcBlackboardEnum")
 
 local SCRIPT_PATHS = {
     CHAR = "Character/Char_%04d",
@@ -9,7 +10,8 @@ local SCRIPT_PATHS = {
     SCENE_OBJ = "SceneObject/%04d",
     QUEST = "Quest/Quest_%04d",
     BUFF = "Buff/Buff_%04d",
-    QUEST_OBJECTIVE_HOTFIX = "QuestHotfix/Hotfix_%04d"
+    QUEST_OBJECTIVE_HOTFIX = "QuestHotfix/Hotfix_%04d",
+    SKILL = "Skill/Skill_%04d",
 
     --[EScriptType.Npc] = "Character/Char_%04d",
     --[EScriptType.LevelLogic] = "Level/Level_%04d_Logic",
@@ -28,6 +30,19 @@ local ScriptClassDict = { --<string, <int, table(class)>>
     QuestObjective = {},
     Buff = {},
     Quest_Objective_Hotfix = {},
+    Skill = {},
+}
+
+local SkillCommonScriptDict = {
+    "Skill/Common/XSkillBase",
+    "Skill/Common/XSkillSingleAction",
+    "Skill/Common/XSkillComboAction",
+    "Skill/Common/XSkillCDComboAction",
+    "Skill/Common/XSkillUtimateAction",
+    "Skill/Common/XSkillDodge",
+    "Skill/Common/XSkillLimit",
+    "Skill/Common/XSkillLoopAction",
+    "Skill/Common/XSkillAutoCombo",
 }
 
 ---根据id找到脚本文件，通过require脚本执行其内部的RegXXXScript来注册脚本类table。
@@ -35,6 +50,24 @@ local ScriptClassDict = { --<string, <int, table(class)>>
 ---@param id number @脚本文件名上的id，通常与文件内脚本类Id相同，除非文件内有不止一个脚本类。
 function XDlcScriptManager.LoadScript(category, id)
     local path = string.format(SCRIPT_PATHS[string.upper(category)], id)
+    if not XLuaEngine:FileExists(path) then
+        return false
+    end
+
+    local class = require(path)
+    return class ~= nil
+end
+
+---根据id找到脚本文件，通过require脚本执行其内部的RegXXXScript来注册脚本类table。
+---@param category string
+---@param id number @脚本文件名上的id，通常与文件内脚本类Id相同，除非文件内有不止一个脚本类。
+function XDlcScriptManager.LoadSkillScriptInternal(id)
+    local path = SkillCommonScriptDict[id]
+    
+    if path == nil then
+        path = string.format(SCRIPT_PATHS[string.upper("Skill")], id)
+    end
+    
     if not XLuaEngine:FileExists(path) then
         return false
     end
@@ -239,8 +272,6 @@ function XDlcScriptManager.NewQuestObjectiveScript(id, proxy)
     return XDlcScriptManager.NewScript("QuestObjective", id, proxy)
 end
 
-CSSetQuestStepExecMode = CS.StatusSyncFight.XQuestConfig.SetQuestStepExecMode
-
 --endregion
 
 --region Buff Script
@@ -279,5 +310,25 @@ end
 ---@param proxy StatusSyncFight.XFightScriptProxy @C#代理对象
 function XDlcScriptManager.NewQuestObjectiveHotfixScript(id, proxy)
     return XDlcScriptManager.NewScript("Quest_Objective_Hotfix", id, proxy)
+end
+--endregion
+
+--region Skill Script
+---@param id number @脚本文件名上的id
+function XDlcScriptManager.LoadSkillScript(id)
+    return XDlcScriptManager.LoadSkillScriptInternal(id)
+end
+
+---@param id number
+---@param name string
+---@param super table
+function XDlcScriptManager.RegSkillScript(id, name, super)
+    return XDlcScriptManager._RegisterScript("Skill", id, name, super)
+end
+
+---@param id string
+---@param proxy StatusSyncFight.XFightScriptProxy @C#代理对象
+function XDlcScriptManager.NewSkillScript(id, proxy)
+    return XDlcScriptManager.NewScript("Skill", id, proxy)
 end
 --endregion

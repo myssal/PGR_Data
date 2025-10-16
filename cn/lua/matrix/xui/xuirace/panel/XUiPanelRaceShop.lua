@@ -48,7 +48,7 @@ function XUiPanelRaceShop:OnDynamicTableEvent(event, index, grid)
         local data = self.ShopItemList[index]
         if data then
             grid:UpdateData(data, self.UiParams)
-            self:ShowGoodsCondition(grid)
+            grid:RefreshShowLock()
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         if not self._IsAnim then
@@ -78,23 +78,7 @@ function XUiPanelRaceShop:OnDynamicTableEvent(event, index, grid)
                         XLuaUiManager.SetMask(false, MaskKey)
                     end
                 end
-            end, 100 * i)
-        end
-    end
-end
-
----@param grid XUiGridShop
-function XUiPanelRaceShop:ShowGoodsCondition(grid)
-    local isLock = grid.ConditionDesc ~= nil
-    if grid.ImgLock then
-        grid.ImgLock.gameObject:SetActiveEx(isLock)
-    end
-    if grid.TxtLock then
-        if isLock then
-            grid.TxtLock.text = XUiHelper.ReplaceTextNewLine(XShopConfigs.GetGoodsBuyPriorityDesc(grid.Data.Id))
-            grid.TxtLock.gameObject:SetActiveEx(true)
-        else
-            grid.TxtLock.gameObject:SetActiveEx(false)
+            end, 50 * i)
         end
     end
 end

@@ -26,6 +26,8 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._RaceIds = ids
     self._SelectIndex = math.ceil(#self._RaceIds / 2)
     self._RoundId = roundId
+    self._EnterCount = self._Control:GetEnterRaceCount()
+    self._Control:SetEnterRaceCount(self._EnterCount + 1)
     local roundCfg = self._Control:GetEtcdRoundConfig(roundId)
     if roundCfg then
         local guessList = roundCfg.Guess
@@ -34,7 +36,7 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
             local guessCfg = self._Control:GetRaceGuessById(guessId)
             if guessCfg and guessCfg.SpecialType == 1 then
                 local needCharacter = self._Control:IsGuessNeedCharacter(guessId)
-                if needCharacter == 1 then
+                if needCharacter then
                     self._GuessId = guessCfg.Id
                     break
                 end
@@ -56,12 +58,12 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._SceneType = sceneType
     self._WaitingTime = 0
     self._StartCountTime = 3
+    self._CurrentTime = XTime.GetServerNowTimestamp()
     if sceneType == XEnumConst.Race.GameMode.LiveStream then
         -- 开始时间
         local delayTime = tonumber(self._Control:GetClientConfig("RaceStartTime")) or 0
         local activeTime = XMVCA.XRace:GetRaceStartTime()
         self._StartTime = activeTime + delayTime / 1000
-        self._CurrentTime = XTime.GetServerNowTimestamp()
         self._GapTime = self._CurrentTime - self._StartTime
         if self._GapTime < 0 then
             local leftTime = -self._GapTime
@@ -99,7 +101,8 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._UiCallback = handler(self, self.UiCallback)
     self._Control:InitRacePowerData(#self._RaceIds)
     self:InitRace()
-    -- self.XAudioObjectPlayer:PlayByKeyName("AddEvent")
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMStart")))
+    self:Record(1)
 end
 
 -- live初始化结束
@@ -140,17 +143,19 @@ end
 -- 更新排行榜
 function XUiRaceFightMain:OnC2LUpdateRank()
     if not self._SprintIndexList[self._SelectIndex] then
-        self._PanelRaceDataUi:UpdateRank()
+        self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
     end
 end
 
 -- 进入中断路程
 function XUiRaceFightMain:OnC2LFinishHalf()
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMMiddle")))
 end
 
 function XUiRaceFightMain:OnC2LError()
     self:Close()
     XMVCA.XRace:CloseLoading()
+    self:Record(7)
 end
 
 function XUiRaceFightMain:ShowFinish(isFinish)
@@ -175,7 +180,7 @@ function XUiRaceFightMain:OnEnterSprintMode(isSprintMode)
     self.BtnHide.gameObject:SetActive(not isSprintMode)
     self:ShowFinish(false)
     if not isSprintMode then
-        self._PanelRaceDataUi:UpdateRank()
+        self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
     end
 end
 
@@ -195,12 +200,16 @@ function XUiRaceFightMain:OnC2LSprintFinish(csActorIndex)
         self:OnEnterSprintMode(false)
         self:ShowFinish(self._FinishIndexList[self._SelectIndex])
     end
+    if not self._FirstFinish then
+        self._FirstFinish = true
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMEnd")))
+    end
 end
 
 function XUiRaceFightMain:OnC2LFinish()
     -- 结束比赛
     -- self.PanelRaceData.gameObject:SetActive(true)
-    self._PanelRaceDataUi:UpdateRank()
+    self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
     self:SetPanelUiShow(false)
     self.BtnRaceExit.gameObject:SetActive(true)
     self.HeadBg.gameObject:SetActive(false)
@@ -209,6 +218,7 @@ function XUiRaceFightMain:OnC2LFinish()
     self.PanelMap.gameObject:SetActive(false)
     self.BtnDirector.gameObject:SetActive(false)
     self._IsFinish = true
+    self:Record(6)
 end
 
 function XUiRaceFightMain:UiCallback(name, ...)
@@ -273,7 +283,11 @@ function XUiRaceFightMain:UpdatePowerCallback(actorIndex, powerIndex, powerCnt)
         self._Control:UpdateRacePowerData(luaActorIndex, luaPowerIndex, powerCnt, self._IsPlaying)
         XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_POWER_UPDATE, luaActorIndex, luaPowerIndex, powerCnt, lastPowerCnt < powerCnt)
     else
-        XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_POWER_UPDATE_START, luaActorIndex, powerCnt)
+        if powerIndex == -1 then
+            XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_POWER_UPDATE_START, luaActorIndex, powerCnt)
+        else
+            XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_STATE_UPDATE, luaActorIndex, powerCnt)
+        end
     end
 end
 
@@ -286,7 +300,7 @@ function XUiRaceFightMain:InitRace()
     self._Scene:InitMatch(self._UiCallback)
 
     -- 切换默认目标
-    self:OnBtnHeadClick(self._SelectIndex)
+    self:OnBtnHeadClick(self._SelectIndex, true)
 
     -- 显示等待界面
     if self._WaitingTime > 0 then
@@ -321,18 +335,25 @@ function XUiRaceFightMain:ShowWaiting()
     end, self._WaitingTime * 1000)
 end
 
-function XUiRaceFightMain:UpdateSkillInfo()
-    if not self._ShowSkill then return end
-
-    if not self._SkillDetailPanel then
-        local XUiPanelRaceFightSkillDetail = require("XUi/XUiRace/Panel/XUiPanelRaceFightSkillDetail")
-        self._SkillDetailPanel = XUiPanelRaceFightSkillDetail.New(self.SkillLayout, self)
-        self._SkillDetailPanel:Open()
+function XUiRaceFightMain:UpdateSkillInfo(isInit)
+    if not self._ShowSkill then
+        if not isInit then
+            self:Record(4, self._SelectIndex)
+        end
+    else
+        if not self._SkillDetailPanel then
+            local XUiPanelRaceFightSkillDetail = require("XUi/XUiRace/Panel/XUiPanelRaceFightSkillDetail")
+            self._SkillDetailPanel = XUiPanelRaceFightSkillDetail.New(self.SkillLayout, self)
+            self._SkillDetailPanel:Open()
+        end
+        self._SkillDetailPanel:SetRaceId(self._RaceIds[self._SelectIndex], self._SelectIndex)
+        if not isInit then
+            self:Record(5, self._SelectIndex)
+        end
     end
-    self._SkillDetailPanel:SetRaceId(self._RaceIds[self._SelectIndex], self._SelectIndex)
 end
 
-function XUiRaceFightMain:OnBtnHeadClick(index)
+function XUiRaceFightMain:OnBtnHeadClick(index, isInit)
     if self._SelectIndex and self._SelectIndex > 0 then
         self._Heads[self._SelectIndex]:SetSelected(false)
     end
@@ -342,7 +363,7 @@ function XUiRaceFightMain:OnBtnHeadClick(index)
     head:SetSelected(true)
     self._Scene:MoveCamera2Index(index)
 
-    self:UpdateSkillInfo()
+    self:UpdateSkillInfo(isInit)
     self._PanelRaceDataUi:SelectIndex(index, self._RaceIds[self._SelectIndex])
 
     if self._SprintIndexList[self._SelectIndex] then
@@ -411,22 +432,31 @@ function XUiRaceFightMain:SetMatchStatus(status)
 end
 
 function XUiRaceFightMain:OnBtnDirectorClick()
+    if self._SelectIndex == -1 then
+        return
+    end
     if self._SelectIndex and self._SelectIndex > 0 then
         self._Heads[self._SelectIndex]:SetSelected(false)
     end
     self._SelectIndex = -1
     self._Scene:SetAutoCamera()
+    self:Record(3)
+end
+
+function XUiRaceFightMain:NormalClose()
+    self:Close()
+    self:Record(2)
 end
 
 function XUiRaceFightMain:OnBtnExitClick()
     if self._SceneType == XEnumConst.Race.GameMode.LiveStream and self._IsFinish then
         self._Control:OpenSettlePanel(function()
-            self:Close()
+            self:NormalClose()
         end)
         return
     end
     XUiManager.DialogTip(nil, XUiHelper.GetText("RaceFightQuitContent"), XUiManager.DialogType.Normal, nil, function()
-        self:Close()
+        self:NormalClose()
     end)
 end
 
@@ -447,7 +477,7 @@ function XUiRaceFightMain:OnBtnMaskClick()
     self.BtnExit.gameObject:SetActive(true)
 
     self._PanelRaceDataUi:Open()
-    self._PanelRaceDataUi:UpdateRank()
+    self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
     self:SetMatchStatus(self._CurrentStatus)
     self._IsHide = false
     self:PlayAnimation("Enable")
@@ -467,11 +497,26 @@ end
 function XUiRaceFightMain:OnBtnRaceExitClick()
     if self._IsFinish and self._SceneType == XEnumConst.Race.GameMode.LiveStream then
         self._Control:OpenSettlePanel(function()
-            self:Close()
+            self:NormalClose()
         end)
         return
     end
-    self:Close()
+    self:NormalClose()
+end
+
+function XUiRaceFightMain:Record(optId, selectId)
+    if self._SceneType ~= XEnumConst.Race.GameMode.LiveStream and self._SceneType ~= XEnumConst.Race.GameMode.Playback then
+        return
+    end
+    local dict = {}
+    dict.opt_int = optId
+    dict.play_type_int = self._SceneType == XEnumConst.Race.GameMode.LiveStream and 0 or 1
+    dict.id_str = tostring(selectId and self._RaceIds[selectId] or 0)
+    dict.round_id_str = tostring(self._RoundId)
+    dict.guess_int = self._GuessId or 0
+    dict.enter_count_int = self._EnterCount
+    dict.enter_time_int = self._CurrentTime
+    CS.XRecord.Record(dict, "900013", "RaceClientRecord")
 end
 
 function XUiRaceFightMain:_RegisterButtonClicks()

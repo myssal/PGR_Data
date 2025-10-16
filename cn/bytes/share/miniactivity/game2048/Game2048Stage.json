@@ -5,8 +5,9 @@
         "PreStageId": 0,
         "TimeId": 0,
         "Name": "第1关",
-        "Desc": "教学基本规则和操作方法",
+        "Desc": "认识消除方块和基本规则",
         "ShowCharacterId": 1131004,
+        "DispelRule": 0,
         "BoardShowGroupId": 1,
         "InitializeId": 1,
         "BoardId": 1,
@@ -36,8 +37,9 @@
         "Name": "第2关",
         "Desc": "难度提升",
         "ShowCharacterId": 1131004,
+        "DispelRule": 0,
         "BoardShowGroupId": 2,
-        "InitializeId": 2,
+        "InitializeId": 1,
         "BoardId": 2,
         "Steps": 50,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
@@ -63,16 +65,14 @@
         "PreStageId": 2,
         "TimeId": 0,
         "Name": "第3关",
-        "Desc": "认识星星方块，它可以和一切带数字的方块合成",
+        "Desc": "认识传送方块",
         "ShowCharacterId": 1131004,
+        "DispelRule": 0,
         "BoardShowGroupId": 3,
-        "InitializeId": 3,
+        "InitializeId": 1,
         "BoardId": 3,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            2
-        ],
         "Scores": [
             100,
             180,
@@ -87,9 +87,6 @@
             "获得100分",
             "获得180分",
             "获得250分"
-        ],
-        "InitBuffCharge": [
-            1
         ]
     },
     {
@@ -98,16 +95,14 @@
         "PreStageId": 3,
         "TimeId": 0,
         "Name": "第4关",
-        "Desc": "难度提升",
+        "Desc": "认识星星方块",
         "ShowCharacterId": 1131004,
+        "DispelRule": 0,
         "BoardShowGroupId": 4,
-        "InitializeId": 4,
+        "InitializeId": 1,
         "BoardId": 4,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            1
-        ],
         "Scores": [
             100,
             250,
@@ -122,9 +117,6 @@
             "获得100分",
             "获得250分",
             "获得400分"
-        ],
-        "InitBuffCharge": [
-            4
         ]
     },
     {
@@ -135,14 +127,12 @@
         "Name": "第5关",
         "Desc": "无尽关",
         "ShowCharacterId": 1131004,
+        "DispelRule": 0,
         "BoardShowGroupId": 5,
-        "InitializeId": 5,
+        "InitializeId": 1,
         "BoardId": 5,
         "Steps": 999,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            2
-        ],
         "Scores": [
             100,
             400,
@@ -157,9 +147,6 @@
             "获得100分",
             "获得400分",
             "获得700分"
-        ],
-        "InitBuffCharge": [
-            6
         ]
     },
     {
@@ -170,14 +157,12 @@
         "Name": "第6关",
         "Desc": "认识翻倍方块，参与合成后可以让上下左右的方块翻倍",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 6,
-        "InitializeId": 6,
-        "BoardId": 6,
+        "DispelRule": 0,
+        "BoardShowGroupId": 1,
+        "InitializeId": 1,
+        "BoardId": 1,
         "Steps": 30,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            7
-        ],
         "Scores": [
             30,
             80,
@@ -192,9 +177,6 @@
             "获得30分",
             "获得80分",
             "获得100分"
-        ],
-        "InitBuffCharge": [
-            3
         ]
     },
     {
@@ -205,14 +187,12 @@
         "Name": "第7关",
         "Desc": "难度提升",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 7,
-        "InitializeId": 7,
-        "BoardId": 7,
+        "DispelRule": 0,
+        "BoardShowGroupId": 2,
+        "InitializeId": 1,
+        "BoardId": 2,
         "Steps": 50,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            7
-        ],
         "Scores": [
             50,
             120,
@@ -227,9 +207,6 @@
             "获得50分",
             "获得120分",
             "获得200分"
-        ],
-        "InitBuffCharge": [
-            9
         ]
     },
     {
@@ -240,15 +217,12 @@
         "Name": "第8关",
         "Desc": "认识传导方块，当上下左右被翻倍时，传导方块自身也翻倍。",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 8,
-        "InitializeId": 8,
-        "BoardId": 8,
+        "DispelRule": 0,
+        "BoardShowGroupId": 3,
+        "InitializeId": 1,
+        "BoardId": 3,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            9,
-            5
-        ],
         "Scores": [
             100,
             180,
@@ -263,10 +237,6 @@
             "获得100分",
             "获得180分",
             "获得250分"
-        ],
-        "InitBuffCharge": [
-            1,
-            1
         ]
     },
     {
@@ -277,16 +247,12 @@
         "Name": "第9关",
         "Desc": "难度提升",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 9,
-        "InitializeId": 9,
-        "BoardId": 9,
+        "DispelRule": 0,
+        "BoardShowGroupId": 4,
+        "InitializeId": 1,
+        "BoardId": 4,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            9,
-            5,
-            2
-        ],
         "Scores": [
             100,
             250,
@@ -301,11 +267,6 @@
             "获得100分",
             "获得250分",
             "获得400分"
-        ],
-        "InitBuffCharge": [
-            3,
-            8,
-            6
         ]
     },
     {
@@ -316,15 +277,12 @@
         "Name": "第10关",
         "Desc": "无尽关",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 10,
-        "InitializeId": 10,
-        "BoardId": 10,
+        "DispelRule": 0,
+        "BoardShowGroupId": 5,
+        "InitializeId": 1,
+        "BoardId": 5,
         "Steps": 999,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            10,
-            11
-        ],
         "Scores": [
             100,
             400,
@@ -339,10 +297,6 @@
             "获得100分",
             "获得400分",
             "获得700分"
-        ],
-        "InitBuffCharge": [
-            6,
-            1
         ]
     },
     {
@@ -353,14 +307,12 @@
         "Name": "第11关",
         "Desc": "认识加时方块，合成n次可以在下次升级时加n步强化步数",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 11,
-        "InitializeId": 11,
-        "BoardId": 11,
+        "DispelRule": 0,
+        "BoardShowGroupId": 1,
+        "InitializeId": 1,
+        "BoardId": 1,
         "Steps": 30,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            6
-        ],
         "Scores": [
             30,
             80,
@@ -375,9 +327,6 @@
             "获得30分",
             "获得80分",
             "获得100分"
-        ],
-        "InitBuffCharge": [
-            1
         ]
     },
     {
@@ -388,14 +337,12 @@
         "Name": "第12关",
         "Desc": "认识冰块方块，不可移动可以参与合成，合成后为加时方块",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 12,
-        "InitializeId": 12,
-        "BoardId": 12,
+        "DispelRule": 0,
+        "BoardShowGroupId": 2,
+        "InitializeId": 1,
+        "BoardId": 2,
         "Steps": 50,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            4
-        ],
         "Scores": [
             50,
             120,
@@ -410,9 +357,6 @@
             "获得50分",
             "获得120分",
             "获得200分"
-        ],
-        "InitBuffCharge": [
-            1
         ]
     },
     {
@@ -423,15 +367,12 @@
         "Name": "第13关",
         "Desc": "冰块加翻倍",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 13,
-        "InitializeId": 13,
-        "BoardId": 13,
+        "DispelRule": 0,
+        "BoardShowGroupId": 3,
+        "InitializeId": 1,
+        "BoardId": 3,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            4,
-            7
-        ],
         "Scores": [
             100,
             180,
@@ -446,10 +387,6 @@
             "获得100分",
             "获得180分",
             "获得250分"
-        ],
-        "InitBuffCharge": [
-            9,
-            5
         ]
     },
     {
@@ -460,15 +397,12 @@
         "Name": "第14关",
         "Desc": "冰块加翻倍难一点",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 14,
-        "InitializeId": 14,
-        "BoardId": 14,
+        "DispelRule": 0,
+        "BoardShowGroupId": 4,
+        "InitializeId": 1,
+        "BoardId": 4,
         "Steps": 100,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            4,
-            9
-        ],
         "Scores": [
             150,
             250,
@@ -483,10 +417,6 @@
             "获得150分",
             "获得250分",
             "获得400分"
-        ],
-        "InitBuffCharge": [
-            5,
-            5
         ]
     },
     {
@@ -497,16 +427,12 @@
         "Name": "第15关",
         "Desc": "无尽关",
         "ShowCharacterId": 1131004,
-        "BoardShowGroupId": 15,
-        "InitializeId": 15,
-        "BoardId": 15,
+        "DispelRule": 0,
+        "BoardShowGroupId": 5,
+        "InitializeId": 1,
+        "BoardId": 5,
         "Steps": 999,
         "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048ChapterStage01.png",
-        "BuffIds": [
-            2,
-            4,
-            9
-        ],
         "Scores": [
             100,
             400,
@@ -521,11 +447,536 @@
             "获得100分",
             "获得400分",
             "获得700分"
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 1,
+        "PreStageId": 0,
+        "TimeId": 0,
+        "Name": "第1关",
+        "Desc": "认识消除方块和基本规则",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 1,
+        "InitializeId": 1,
+        "BoardId": 1,
+        "Steps": 30,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "Scores": [
+            50,
+            100,
+            150
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得50分",
+            "获得100分",
+            "获得150分"
+        ]
+    },
+    {
+        "Id": 17,
+        "Type": 1,
+        "PreStageId": 16,
+        "TimeId": 0,
+        "Name": "第2关",
+        "Desc": "难度提升",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 2,
+        "InitializeId": 2,
+        "BoardId": 2,
+        "Steps": 50,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "Scores": [
+            100,
+            180,
+            240
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得100分",
+            "获得180分",
+            "获得240分"
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 1,
+        "PreStageId": 17,
+        "TimeId": 0,
+        "Name": "第3关",
+        "Desc": "认识传送方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 3,
+        "InitializeId": 3,
+        "BoardId": 3,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            20
+        ],
+        "Scores": [
+            200,
+            350,
+            480
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得350分",
+            "获得480分"
         ],
         "InitBuffCharge": [
-            5,
+            1
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 1,
+        "PreStageId": 18,
+        "TimeId": 0,
+        "Name": "第4关",
+        "Desc": "认识星星方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 4,
+        "InitializeId": 4,
+        "BoardId": 4,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            11,
+            20
+        ],
+        "Scores": [
+            200,
+            400,
+            700
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得700分"
+        ],
+        "InitBuffCharge": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 2,
+        "PreStageId": 19,
+        "TimeId": 0,
+        "Name": "第5关",
+        "Desc": "无尽关",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 5,
+        "InitializeId": 5,
+        "BoardId": 5,
+        "Steps": 999,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            12,
+            21
+        ],
+        "Scores": [
+            200,
+            400,
+            700
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得700分"
+        ],
+        "InitBuffCharge": [
+            1,
+            8
+        ]
+    },
+    {
+        "Id": 21,
+        "Type": 1,
+        "PreStageId": 20,
+        "TimeId": 0,
+        "Name": "第6关",
+        "Desc": "认识爱心方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 1,
+        "InitializeId": 6,
+        "BoardId": 6,
+        "Steps": 30,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            15
+        ],
+        "Scores": [
+            50,
+            100,
+            150
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得50分",
+            "获得100分",
+            "获得150分"
+        ],
+        "InitBuffCharge": [
+            1
+        ]
+    },
+    {
+        "Id": 22,
+        "Type": 1,
+        "PreStageId": 21,
+        "TimeId": 0,
+        "Name": "第7关",
+        "Desc": "难度提升",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 2,
+        "InitializeId": 7,
+        "BoardId": 7,
+        "Steps": 50,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            15
+        ],
+        "Scores": [
+            100,
+            200,
+            300
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得100分",
+            "获得200分",
+            "获得300分"
+        ],
+        "InitBuffCharge": [
+            9
+        ]
+    },
+    {
+        "Id": 23,
+        "Type": 1,
+        "PreStageId": 22,
+        "TimeId": 0,
+        "Name": "第8关",
+        "Desc": "加入星星方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 3,
+        "InitializeId": 7,
+        "BoardId": 8,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            15,
+            11
+        ],
+        "Scores": [
+            200,
+            350,
+            480
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得350分",
+            "获得480分"
+        ],
+        "InitBuffCharge": [
+            9,
+            6
+        ]
+    },
+    {
+        "Id": 24,
+        "Type": 1,
+        "PreStageId": 23,
+        "TimeId": 0,
+        "Name": "第9关",
+        "Desc": "加入星星方块和传送方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 4,
+        "InitializeId": 7,
+        "BoardId": 9,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            16,
+            20,
+            12
+        ],
+        "Scores": [
+            200,
+            400,
+            600
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得600分"
+        ],
+        "InitBuffCharge": [
+            14,
             8,
-            2
+            5
+        ]
+    },
+    {
+        "Id": 25,
+        "Type": 2,
+        "PreStageId": 24,
+        "TimeId": 0,
+        "Name": "第10关",
+        "Desc": "无尽关",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 0,
+        "BoardShowGroupId": 5,
+        "InitializeId": 7,
+        "BoardId": 10,
+        "Steps": 999,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            16,
+            17,
+            12
+        ],
+        "Scores": [
+            200,
+            400,
+            700
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得700分"
+        ],
+        "InitBuffCharge": [
+            14,
+            5,
+            5
+        ]
+    },
+    {
+        "Id": 26,
+        "Type": 1,
+        "PreStageId": 25,
+        "TimeId": 0,
+        "Name": "第11关",
+        "Desc": "认识消除方块和基本规则",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 1,
+        "BoardShowGroupId": 1,
+        "InitializeId": 8,
+        "BoardId": 11,
+        "Steps": 30,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "Scores": [
+            50,
+            100,
+            150
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得50分",
+            "获得100分",
+            "获得150分"
+        ]
+    },
+    {
+        "Id": 27,
+        "Type": 1,
+        "PreStageId": 26,
+        "TimeId": 0,
+        "Name": "第12关",
+        "Desc": "难度提升",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 1,
+        "BoardShowGroupId": 2,
+        "InitializeId": 8,
+        "BoardId": 12,
+        "Steps": 50,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "Scores": [
+            100,
+            180,
+            280
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得100分",
+            "获得180分",
+            "获得280分"
+        ]
+    },
+    {
+        "Id": 28,
+        "Type": 1,
+        "PreStageId": 27,
+        "TimeId": 0,
+        "Name": "第13关",
+        "Desc": "加传送方块",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 1,
+        "BoardShowGroupId": 3,
+        "InitializeId": 8,
+        "BoardId": 13,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            13
+        ],
+        "Scores": [
+            200,
+            400,
+            580
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得580分"
+        ],
+        "InitBuffCharge": [
+            1
+        ]
+    },
+    {
+        "Id": 29,
+        "Type": 1,
+        "PreStageId": 28,
+        "TimeId": 0,
+        "Name": "第14关",
+        "Desc": "难度提升",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 1,
+        "BoardShowGroupId": 4,
+        "InitializeId": 8,
+        "BoardId": 14,
+        "Steps": 100,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            13
+        ],
+        "Scores": [
+            200,
+            400,
+            700
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得700分"
+        ],
+        "InitBuffCharge": [
+            1
+        ]
+    },
+    {
+        "Id": 30,
+        "Type": 2,
+        "PreStageId": 29,
+        "TimeId": 0,
+        "Name": "第15关",
+        "Desc": "无尽关",
+        "ShowCharacterId": 1131004,
+        "DispelRule": 1,
+        "BoardShowGroupId": 5,
+        "InitializeId": 8,
+        "BoardId": 15,
+        "Steps": 999,
+        "EntranceEmojiIcon": "Assets/Product/Texture/Image/UiGame2048/UiGame2048GkChear01.png",
+        "BuffIds": [
+            14
+        ],
+        "Scores": [
+            200,
+            400,
+            700
+        ],
+        "RewardIds": [
+            66240,
+            66240,
+            66240
+        ],
+        "StarDescs": [
+            "获得200分",
+            "获得400分",
+            "获得700分"
+        ],
+        "InitBuffCharge": [
+            1
         ]
     }
 ]

@@ -38,8 +38,8 @@ end
 ---@param dt number @ delta time 
 function XBuffScript1010009:Update(dt)
     Base.Update(self, dt)
-    local isForwardDash = self._proxy:CheckNpcCurrentSkill(self._uuid,self.forwardDashID)
-    local isBackDash = self._proxy:CheckNpcCurrentSkill(self._uuid,self.backDashID)
+    local isForwardDash = self._proxy:CheckNpcCurrentAction(self._uuid,self.forwardDashID)
+    local isBackDash = self._proxy:CheckNpcCurrentAction(self._uuid,self.backDashID)
     
     if not (isBackDash or isForwardDash) then
         self.lastSkillIsBackDash = nil
@@ -57,7 +57,7 @@ function XBuffScript1010009:Update(dt)
     --------------------在dash这个技能过程的逻辑------------------------------
     local callIndex = self.currentCallIndex
     local overTime = self.overTimeMappingList[callIndex] --当前Index需要判断的时间
-    local isGotSkillTime,skillTime = self._proxy:TryGetNpcCurrentSkillElapsedTime(self._uuid)
+    local isGotSkillTime,skillTime = self._proxy:TryGetNpcCurrentActionElapsedTime(self._uuid)
 
     if callIndex >#self.overTimeMappingList then --超过map的值时就跳过等技能结束吧
         return
@@ -95,11 +95,10 @@ function XBuffScript1010009:CallPartner(callIndex,isForwardDash)
     self._proxy:ApplyMagic(self._uuid,partnerUUID,mgId1,1) --添加特效
 
     if target == 0 then
-        self._proxy:CastSkill(partnerUUID,skillId)
+        self._proxy:CastAction(partnerUUID,skillId)
     else
-        --self._proxy:SetNpcLookAtNpc(partnerUUID,target)
-        self._proxy:SetNpcLookAtPosition(partnerUUID,self._proxy:GetNpcPosition(target))
-        self._proxy:CastSkillToTarget(partnerUUID,skillId,target)
+        self._proxy:SetNpcFaceToPosition(partnerUUID,self._proxy:GetNpcPosition(target))
+        self._proxy:CastActionToTarget(partnerUUID,skillId,target)
         --XLog.Warning("看向目标攻击")
     end
     self.partnerDict[partnerUUID] = true

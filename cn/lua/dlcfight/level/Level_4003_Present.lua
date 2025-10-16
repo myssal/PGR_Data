@@ -27,21 +27,21 @@ function XLevelScript4003:HandleEvent(eventType, eventArgs) --事件响应逻辑
 
     if eventType == EWorldEvent.NpcInteractStart then
         if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then --是玩家发起的交互
-            if eventArgs.TargetId == self._tempLevelSwitcherUUID then
-                local pos = {x =574.1, y = 145.279, z = 1395.94}
-                self._proxy:SwitchLevel(4001, pos)
-			elseif eventArgs.TargetId == self._tempOperatePhotoWallUUID then
+            --if eventArgs.TargetId == self._tempLevelSwitcherUUID then
+            --    local pos = {x =574.1, y = 145.279, z = 1395.94}
+            --    self._proxy:SwitchLevelWitchRot(4001, pos, { x = 0, y = -95, z = 0 })
+			if eventArgs.TargetId == self._tempOperatePhotoWallUUID then
                 self._proxy:OperateDormitoryPhotoWall()
 			elseif eventArgs.TargetId == self._tempOperateFrameGoodsUUID then
                 self._proxy:OperateDormitoryFrameWall()
             elseif eventArgs.TargetId == self._playerCustomAppearanceEntryUUID then
                 self._proxy:ShowPlayerDIYUI()
-            elseif eventArgs.TargetPlaceId == self._lxyObjSwitchUUID then
-                local pos = { x = 103.658, y = 143.8307, z = 121.5215 }
-                self._proxy:RequestEnterInstLevel(4012, pos)
-            elseif eventArgs.TargetPlaceId == self._lxyObjSwitch1UUID then
-                local pos = { x = 103.658, y = 143.8307, z = 121.5215 }
-                self._proxy:RequestEnterInstLevel(4024, pos)
+            --elseif eventArgs.TargetPlaceId == self._lxyObjSwitchUUID then
+            --    local pos = { x = 103.658, y = 143.8307, z = 121.5215 }
+            --    self._proxy:RequestEnterInstLevel(4012, pos)
+            --elseif eventArgs.TargetPlaceId == self._lxyObjSwitch1UUID then
+            --    local pos = { x = 103.658, y = 143.8307, z = 121.5215 }
+            --    self._proxy:RequestEnterInstLevel(4024, pos)
             end
         end
     end

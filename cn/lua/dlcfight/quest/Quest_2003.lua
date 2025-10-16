@@ -61,8 +61,8 @@ ObjectiveDefines.Obj20030101 = {
         proxy:LoadLevelNpc(obj.NPC200301PID)
         proxy:LoadLevelNpc(obj.NPC200302PID)
         proxy:LoadLevelNpc(obj.NPC200303PID)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500002),false)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500001),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500002),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500001),false)
         proxy:PlayDramaCaption("Caption200301")
         proxy:FinishQuestObjectiveScriptEnter()
     end,
@@ -93,21 +93,10 @@ ObjectiveDefines.Obj20030102 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030102
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200302" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030102，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030102
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500003),false)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500001),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500003),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500001),true)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -168,21 +157,10 @@ ObjectiveDefines.Obj20030104 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030104
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200303" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030104，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030104
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500001),false)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500002),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500001),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500002),true)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -237,21 +215,10 @@ ObjectiveDefines.Obj20030106 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter(20030106)
     end,
-    ---@param obj QuestObjective20030106
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200304" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030106，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030106
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500002),false)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500003),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500002),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500003),true)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -314,20 +281,9 @@ ObjectiveDefines.Obj20030108 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030108
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200305" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030108，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030108
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500003),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500003),false)
         proxy:UnloadLevelNpc(500002)--销毁店员A
         proxy:UnloadLevelNpc(500001)--销毁店员B
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
@@ -371,8 +327,10 @@ ObjectiveDefines.Obj20030111 = {
     Args = {
         LevelId = 4001,
         DramaName = "Drama_200306",
+        Combinkey = 1,
     },
     ---@param obj QuestObjective20030111
+    ---@param proxy XDlcCSharpFuncs
     ---@param proxy XDlcCSharpFuncs
     InitFunc = function(obj, proxy)
         obj.NPC200301PID = 500003----加载罗斯
@@ -384,18 +342,9 @@ ObjectiveDefines.Obj20030111 = {
     end,
     ---@param obj QuestObjective20030111
     ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200306" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030111，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030111
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500004),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500004),false)
         proxy:UnloadLevelNpc(500003)--销毁罗斯
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
@@ -420,18 +369,7 @@ ObjectiveDefines.Obj20030112 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030112
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200307" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030112，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030112
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
@@ -499,18 +437,7 @@ ObjectiveDefines.Obj200301123 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective200301123
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_2003081" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标200301123，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective200301123
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
@@ -570,13 +497,7 @@ ObjectiveDefines.Obj20030114 = {
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030114
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
 
-    end,
-    ---@param obj QuestObjective20030114
-    ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -597,18 +518,7 @@ ObjectiveDefines.Obj20030115 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030115
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200308" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030115，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030115
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
@@ -700,20 +610,9 @@ ObjectiveDefines.Obj200301181 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective200301181
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200309" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标200301181，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective200301181
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500005),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500005),false)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -742,7 +641,6 @@ ObjectiveDefines.Obj20030120 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
-
 
 --步骤24
 --区域触发
@@ -812,18 +710,7 @@ ObjectiveDefines.Obj20030125 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030125
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200310" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030125，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030125
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnloadLevelNpc(500005)
         proxy:UnloadLevelNpc(500006)
@@ -903,7 +790,7 @@ ObjectiveDefines.Obj20030128 = {
     ---@param obj QuestObjective20030128
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500022),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500022),false)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -1025,21 +912,10 @@ ObjectiveDefines.Obj200301302 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective200301302
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200313" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标200301302，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective200301302
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500015),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500015),false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1102,20 +978,9 @@ ObjectiveDefines.Obj200301312 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective200301312
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_2003131" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标200301312，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective200301312
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500015),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500015),true)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -1171,18 +1036,7 @@ ObjectiveDefines.Obj20030133 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030133
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200316" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030133，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030133
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:LoadSceneObject(500020)
         proxy:UnloadLevelNpc(500015)
@@ -1274,18 +1128,7 @@ ObjectiveDefines.Obj20030137 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030137
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200315" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030137，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030137
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
@@ -1410,20 +1253,9 @@ ObjectiveDefines.Obj200301392 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective200301392
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_2003151" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标200301392，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective200301392
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500018),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500018),false)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -1480,21 +1312,10 @@ ObjectiveDefines.Obj20030141 = {
         proxy:RegisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective20030141
-    ---@param proxy XDlcCSharpFuncs
-    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
-        if eventType == EWorldEvent.DramaFinish then
-            if eventArgs.DramaName == "Drama_200316" then--播放完CG
-                proxy:FinishQuestObjectiveScriptEnter()
-                XLog.Debug("任务目标20030141，结束enter")
-            end
-        end
-    end,
-    ---@param obj QuestObjective20030141
-    ---@param proxy XDlcCSharpFuncs
+
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500017),false)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500018),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500017),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500018),true)
         proxy:UnregisterEvent(EWorldEvent.DramaFinish)
         proxy:FinishQuestObjectiveScriptExit()
     end,

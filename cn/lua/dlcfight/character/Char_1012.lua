@@ -50,20 +50,20 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 self:GenerateShadowcardA()
             else
                 local targetPosition = self._proxy:GetNpcPosition(target)
-                self._proxy:SetNpcLookAtPosition(self.ShadowcardA,targetPosition)
+                self._proxy:SetNpcFaceToPosition(self.ShadowcardA,targetPosition)
                 local YingpaiAPosition = self._proxy:GetNpcPosition(self.ShadowcardA) --获取影牌A位置
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
+                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
                 self._proxy:ApplyMagic(self._uuid, self.ShadowcardA, 1012003, 1)
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardA,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
-                    self._proxy:CastSkillToTarget(self.ShadowcardA,101702,target)
+                    self._proxy:CastActionToTarget(self.ShadowcardA,101702,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardA)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardA)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170204,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170204,10170204,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardA, 1012009, 1)
@@ -81,20 +81,20 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 self:GenerateShadowcardB()
             else
                 local targetPosition = self._proxy:GetNpcPosition(target)
-                self._proxy:SetNpcLookAtPosition(self.ShadowcardB,targetPosition)
+                self._proxy:SetNpcFaceToPosition(self.ShadowcardB,targetPosition)
                 local YingpaiAPosition = self._proxy:GetNpcPosition(self.ShadowcardB)--获取影牌B位置
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
+                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
                 self._proxy:ApplyMagic(self._uuid, self.ShadowcardB, 1012003, 1)
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardB,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
-                    self._proxy:CastSkillToTarget(self.ShadowcardB,101704,target)
+                    self._proxy:CastActionToTarget(self.ShadowcardB,101704,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardB)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardB)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170404,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170404,10170404,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardB, 1012009, 1)
@@ -113,20 +113,20 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 self:GenerateShadowcardC()
             else
                 local targetPosition = self._proxy:GetNpcPosition(target)
-                self._proxy:SetNpcLookAtPosition(self.ShadowcardC,targetPosition)
+                self._proxy:SetNpcFaceToPosition(self.ShadowcardC,targetPosition)
                 local YingpaiAPosition = self._proxy:GetNpcPosition(self.ShadowcardC)--获取影牌C位置
-                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
+                self._proxy:LaunchMissileFromPosToPos(self._uuid,10170209,10170209,YingpaiAPosition,YingpaiAPosition,1)--影牌发射特效
                 self._proxy:ApplyMagic(self._uuid, self.ShadowcardC, 1012003, 1)
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardC,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
-                    self._proxy:CastSkillToTarget(self.ShadowcardC,101706,target)
+                    self._proxy:CastActionToTarget(self.ShadowcardC,101706,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardC)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardC)
-                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170604,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid,10170604,10170604,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardC, 1012009, 1)
@@ -166,7 +166,7 @@ function XCharTes1012:GenerateShadowcardA() --生成影牌A召唤物
     local targetRota = {x = 0, y = 180, z = 0}  --获取目标旋转
 
     self.ShadowcardA = self._proxy:GenerateNpc(1017, camp, targetPos, targetRota)--在自身位置生成影牌
-    self._proxy:CastSkillToTarget(self.ShadowcardA,101703,self.ShadowcardA)
+    self._proxy:CastActionToTarget(self.ShadowcardA,101703,self.ShadowcardA)
 end
 
 function XCharTes1012:GenerateShadowcardB()    --生成影牌B召唤物
@@ -174,7 +174,7 @@ function XCharTes1012:GenerateShadowcardB()    --生成影牌B召唤物
     local targetPos = self._proxy:GetNpcPosition(self._uuid) --获取目标位置
     local targetRota = {x = 0, y = 180, z = 0}  --获取目标旋转
     self.ShadowcardB = self._proxy:GenerateNpc(1017, camp, targetPos, targetRota)--在自身位置生成影牌
-    self._proxy:CastSkillToTarget(self.ShadowcardB,101705,self.ShadowcardB)
+    self._proxy:CastActionToTarget(self.ShadowcardB,101705,self.ShadowcardB)
 end
 
 function XCharTes1012:GenerateShadowcardC()    --生成影牌C召唤物
@@ -182,7 +182,7 @@ function XCharTes1012:GenerateShadowcardC()    --生成影牌C召唤物
     local targetPos = self._proxy:GetNpcPosition(self._uuid) --获取目标位置
     local targetRota = {x = 0, y = 180, z = 0}  --获取目标旋转
     self.ShadowcardC = self._proxy:GenerateNpc(1017, camp, targetPos, targetRota)--在自身位置生成影牌
-    self._proxy:CastSkillToTarget(self.ShadowcardC,101707,self.ShadowcardC)
+    self._proxy:CastActionToTarget(self.ShadowcardC,101707,self.ShadowcardC)
 end
 
 function XCharTes1012:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)  --当有Npc受到伤害时
@@ -208,7 +208,7 @@ function XCharTes1012:FaceTargetSide()--看向侧面
 
     local pos = self._proxy:GetNpcOffsetPosition(self._uuid,targetPosition,euler,distance) --获取和目标一个偏移的位置，用来看向这个位置
 
-    self._proxy:SetNpcLookAtPosition(self._uuid,pos) --看向侧面
+    self._proxy:SetNpcFaceToPosition(self._uuid,pos) --看向侧面
 end--向侧面望去
 
 function XCharTes1012:GetRandomSuccess(maybe)--概率成功

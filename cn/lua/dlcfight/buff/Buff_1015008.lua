@@ -30,7 +30,7 @@ end
 function XBuffScript1015008:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastSkillEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcCalcDamageBefore)  -- BeforeDamageCalc
 end
 
@@ -59,14 +59,14 @@ function XBuffScript1015008:OnNpcDamageEvent(launcherId, targetId, magicId, kind
     self.trigger = 2
 end
 
-function XBuffScript1015008:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015008:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --释放技能时，首先根据标记数量判断增加还是删除Buff，然后打开开关走伤害事件走标记逻辑
     --不是自己释放时返回
     if launcherId ~= self._uuid then
         return
     end
     --不是起手技能时返回
-    if self._proxy:GetSkillType(skillId) ~= self.skillStartType then
+    if self._proxy:GetActionType(skillId) ~= self.skillStartType then
         return
     end
     --检测技能阶段逻辑

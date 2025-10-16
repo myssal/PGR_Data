@@ -109,6 +109,24 @@ function XUiRaceMissionShop:UpdateBuy(data, cb)
     end, "000000ff")
 end
 
+function XUiRaceMissionShop:CheckGoodsBuyPriority(data)
+    local priority = data.BuyPriority
+    local allGoods = self._Shop.ShopItemList
+    for _, goods in pairs(allGoods) do
+        local goodsPriority = goods.BuyPriority
+        if goodsPriority and goodsPriority < priority then
+            local buyTimesLimit, totalBuyTimes = goods.BuyTimesLimit, goods.TotalBuyTimes
+            if buyTimesLimit <= 0 and totalBuyTimes <= 0 then
+                return false
+            end
+            if buyTimesLimit > 0 and buyTimesLimit > totalBuyTimes then
+                return false
+            end
+        end
+    end
+    return true
+end
+
 function XUiRaceMissionShop:GetCurShopId()
     return self._CurShopId
 end

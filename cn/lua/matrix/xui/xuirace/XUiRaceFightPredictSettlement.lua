@@ -174,7 +174,7 @@ function XUiRaceFightPredictSettlement:ShowRewardAndClose(itemCount)
     reward.RewardType = XRewardManager.XRewardType.Item
     reward.TemplateId = self._ItemId
     reward.Count = itemCount
-    XUiManager.OpenUiObtain({ reward }, nil, function()
+    self._Control:OpenUiObtain({ reward }, nil, function()
         self:Close()
     end)
 end

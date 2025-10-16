@@ -42,7 +42,7 @@ ObjectiveDefines.Obj60010101 = {
     ---@param obj QuestObjective60010101
     ---@param proxy StatusSyncFight.XFightScriptProxy
     EnterFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(100002), false)    --关闭NPC的交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(100002), false)    --关闭NPC的交互
         proxy:FinishQuestObjectiveScriptEnter()
     end,
     ---@param obj QuestObjective60010101
@@ -64,14 +64,11 @@ ObjectiveDefines.Obj60010102 = {
     ---@param obj QuestObjective60010102
     ---@param proxy StatusSyncFight.XFightScriptProxy
     EnterFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(100002), false)
         proxy:FinishQuestObjectiveScriptEnter()
-        proxy:LoadSceneObject(100006)
     end,
     ---@param obj QuestObjective60010102
     ---@param proxy StatusSyncFight.XFightScriptProxy
     ExitFunc = function(obj, proxy)
-        proxy:SetSceneObjectActive(100006, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -92,17 +89,15 @@ ObjectiveDefines.Obj60010103 = {
     EnterFunc = function(obj, proxy)
         proxy:NpcNavigateTo(proxy:GetNpcUUID(100002), { x =575.01, y = 145.082, z = 1350.83 }, ENpcMoveType.Walk) --NPC寻路到寶箱
         proxy:AddTimerTask(6, function()    --  监听时间
+            proxy:LoadSceneObject(100006)
             proxy:DoSceneObjectAction(100006, 6001)
-            proxy:AddTimerTask(1,function()
-                proxy:SetSceneObjectActive(100006, true)
-            end)
             proxy:FinishQuestObjectiveScriptEnter()
         end)
     end,
     ---@param obj QuestObjective60010103
     ---@param proxy StatusSyncFight.XFightScriptProxy
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(100002), true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(100002), true)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }

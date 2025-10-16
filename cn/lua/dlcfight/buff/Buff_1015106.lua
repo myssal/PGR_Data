@@ -10,13 +10,15 @@ local ConfigMagicIdDict = {
     [1015106] = 1015107,
     [1015160] = 1015161,
     [1015162] = 1015163,
-    [1015164] = 1015165
+    [1015164] = 1015165,
+    [1016114] = 1016115
 }
 local ConfigRuneIdDict = {
     [1015106] = 20106,
     [1015160] = 20160,
     [1015162] = 20162,
-    [1015164] = 20164
+    [1015164] = 20164,
+    [1016114] = 20164
 }
 
 function XBuffScript1015106:Init() --初始化
@@ -42,17 +44,17 @@ end
 --region EventCallBack
 function XBuffScript1015106:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastSkillEvent
 end
 
-function XBuffScript1015106:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015106:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if self.buffCount >= self.maxCount then return end
     if self._proxy:GetNpcTime(self._uuid) < self.cdTimer then return end
     --判断一下是不是自己释放的
     if launcherId ~= self._uuid then
         return
     end
-    local skillType = self._proxy:GetSkillType(skillId)
+    local skillType = self._proxy:GetActionType(skillId)
     --判断一下是不是技能起手，待定
     if skillType ~= self.skillStartType then
         return

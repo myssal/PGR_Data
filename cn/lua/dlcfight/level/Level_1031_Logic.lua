@@ -431,7 +431,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"如若掉落平台，将扣除一定分数，随后重新在随机点位复活。"
             self._timer:Schedule(7, self._proxy, self._proxy.ShowGuide, 103108)
             --boss放挡板
-            self._proxy:CastSkill(self._monNpcId, 8101001)
+            self._proxy:CastAction(self._monNpcId, 8101001)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -439,7 +439,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 7 then
         if self._phaseTimeCount > 7 then
             --boss再放一次挡板
-            self._proxy:CastSkill(self._monNpcId, 8101001)
+            self._proxy:CastAction(self._monNpcId, 8101001)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -456,7 +456,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 81 then
         if self:OnInteractButton() then
             --boss放光束
-            self._proxy:CastSkill(self._monNpcId, 8101002)
+            self._proxy:CastAction(self._monNpcId, 8101002)
             self._proxy:SetLevelMemoryInt(4004, 0) --关闭下一句按钮
             self._currentPhase = 9
             --重新计时
@@ -467,7 +467,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"使用闪避，可以闪避穿过光束进行躲避。"
             self._proxy:ShowGuide(103110)
             --boss放光束
-            self._proxy:CastSkill(self._monNpcId, 8101002)
+            self._proxy:CastAction(self._monNpcId, 8101002)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -477,7 +477,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"如若晕眩，也将扣除一定分数哦。"
             self._proxy:ShowGuide(103111)
             --boss放光束
-            self._proxy:CastSkill(self._monNpcId, 8101002)
+            self._proxy:CastAction(self._monNpcId, 8101002)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -494,7 +494,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 111 then
         if self:OnInteractButton() then
             --boss放扩散光圈
-            self._proxy:CastSkill(self._monNpcId, 8101004)
+            self._proxy:CastAction(self._monNpcId, 8101004)
             self._proxy:SetLevelMemoryInt(4004, 0) --关闭下一句按钮
             self._currentPhase = 12
             --重新计时
@@ -505,7 +505,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"使用闪避或跳跃，可以躲避光圈。"
             self._proxy:ShowGuide(103113)
             --boss放扩散光圈
-            self._proxy:CastSkill(self._monNpcId, 8101004)
+            self._proxy:CastAction(self._monNpcId, 8101004)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -515,7 +515,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"如若触碰光圈，也将被眩晕。"
             self._proxy:ShowGuide(103114)
             --boss放扩散光圈
-            self._proxy:CastSkill(self._monNpcId, 8101009)
+            self._proxy:CastAction(self._monNpcId, 8101009)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -532,7 +532,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 141 then
         if self:OnInteractButton() then
             --boss放蓄力一击
-            self._proxy:CastSkill(self._monNpcId, 8101007)
+            self._proxy:CastAction(self._monNpcId, 8101007)
             self._proxy:SetLevelMemoryInt(4004, 0) --关闭下一句按钮
             self._currentPhase = 15
             --重新计时
@@ -543,7 +543,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             --"若被蓄力击中，将大概率被推落平台。"
             self._proxy:ShowGuide(103116)
             --boss放蓄力一击
-            self._proxy:CastSkill(self._monNpcId, 8101007)
+            self._proxy:CastAction(self._monNpcId, 8101007)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -588,7 +588,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
             self._proxy:ShowGuide(103123)
             self._proxy:SetLevelMemoryInt(4004, 0) --关闭下一句按钮
             --boss放炸弹
-            self._proxy:CastSkill(self._monNpcId, 8101003)
+            self._proxy:CastAction(self._monNpcId, 8101003)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -608,7 +608,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 25 then
         if self._phaseTimeCount > 5 then
             --boss放炸弹
-            self._proxy:CastSkill(self._monNpcId, 8101003)
+            self._proxy:CastAction(self._monNpcId, 8101003)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0
@@ -624,7 +624,7 @@ function XLevelScript1031:OnUpdatePhase(dt)
     elseif self._currentPhase == 27 then
         if self._phaseTimeCount > 10 then
             --boss放炸弹
-            self._proxy:CastSkill(self._monNpcId, 8101003)
+            self._proxy:CastAction(self._monNpcId, 8101003)
             self._currentPhase = self._currentPhase + 1
             --重新计时
             self._phaseTimeCount = 0

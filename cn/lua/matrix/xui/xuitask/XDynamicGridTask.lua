@@ -252,7 +252,15 @@ function XDynamicGridTask:OnBtnAllReceiveClick()
     end
 end
 
+function XDynamicGridTask:SetObtainUiCb(cb)
+    self._obtainCb = cb
+end
+
 function XDynamicGridTask:OpenUiObtain(...)
+    if self._obtainCb then
+        self._obtainCb(...)
+        return
+    end
     XUiManager.OpenUiObtain(...)
 end
 

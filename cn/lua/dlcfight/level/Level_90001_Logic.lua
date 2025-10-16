@@ -10,10 +10,6 @@ function XLevelScript90001:Init() --初始化逻辑
     -- 玩家的初始化, 正式应该由Gameplay的程序初始化处理, 此处为临时方案
     self.isFightAiOpen = false
     ----------------------------调试用的逻辑--------------------------------------
-    self._proxy:RegisterKeyboardOperator(32, ENpcOperationKey.Dodge, EOperationType.Down, false) --空格按键注册监听开启AI战斗开始
-    self._proxy:RegisterKeyboardOperator(49, ENpcOperationKey.Ball1, EOperationType.Down, false) --键盘1 技能1
-    self._proxy:RegisterKeyboardOperator(50, ENpcOperationKey.Ball2, EOperationType.Down, false) --键盘2 技能2
-    self._proxy:RegisterKeyboardOperator(51, ENpcOperationKey.Ball3, EOperationType.Down, false) --键盘3 技能3
 
     self.isFighter1AiOpen = false
     self.isFighter2AiOpen = false
@@ -56,7 +52,7 @@ function XLevelScript90001:Init() --初始化逻辑
         self._proxy:SetNpcPosition(self.fighter1UUID, fighter1BornPos)
     end
 
-    self._proxy:SetNpcLookAtPosition(self.fighter1UUID,fighter2BornPos)  --设置看向2的位置
+    self._proxy:SetNpcFaceToPosition(self.fighter1UUID,fighter2BornPos)  --设置看向2的位置
 
     self._proxy:ActivateVCam(self.fighter1UUID, "DlcAutoChess", 0, 0, 0, 41.725, 9.11, 60.74, 44.3, 180, 0, 0, 0, 101, false)
 
@@ -71,7 +67,7 @@ function XLevelScript90001:Init() --初始化逻辑
         self._proxy:SetNpcPosition(self.fighter2UUID, fighter2BornPos)
     end
 
-    self._proxy:SetNpcLookAtPosition(self.fighter2UUID,fighter1BornPos)  --设置看向1的位置
+    self._proxy:SetNpcFaceToPosition(self.fighter2UUID,fighter1BornPos)  --设置看向1的位置
     -----------------创建空NPC-------------------------------------------------------------------------------------------
     self._robotUUID = self._proxy:GenerateNpc(1016, fighter2Camp, fighter2BornPos, fighter2BornRota)           --空NPCUUID赋值，生成机器人                                                                                                                        
     XLog.Debug("Robot的UUID是"..self._robotUUID)

@@ -104,10 +104,13 @@ end
 ---@param key string
 ---@param addValue int
 ---@return int 当前数值
-function XScriptTool.AddQuestIntValue(proxy, key, addValue)
+function XScriptTool.AddQuestIntValue(proxy, key, addValue, notCheckLessZero)
     local success, value = proxy:TryGetVarInt(key)
     if success then
         value = value + addValue
+        if not notCheckLessZero then
+            value = math.max(value, 0)
+        end
         proxy:SetVarInt(key, value)
     else
         XLog.Error("[ScriptId:"..proxy.Id.."]任务脚本 添加Int参数失败! Key"..key)

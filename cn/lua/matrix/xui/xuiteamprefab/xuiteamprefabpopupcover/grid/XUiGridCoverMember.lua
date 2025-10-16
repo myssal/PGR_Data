@@ -37,7 +37,7 @@ function XUiGridCoverMember:RefreshByRealTeam(xTeam, pos)
                 else
                     itemGo = self.SuitItemList[itemIndex]
                     if not itemGo then
-                        itemGo = CSInstantiate(self.SuitItem, self.SuitItem.transform.parent)
+                        itemGo = XUiHelper.Instantiate(self.SuitItem, self.SuitItem.transform.parent)
                         table.insert(self.SuitItemList, itemGo)
                     end
                     itemIndex = itemIndex + 1

@@ -1,10 +1,11 @@
 local XLevelScript1071 = XDlcScriptManager.RegLevelLogicScript(1071, "XLevel1071") --注册脚本类到管理器（逻辑脚本注册
---local XPlayerNpcContainer = require("Level/Common/XPlayerNpcContainer")
+local XPlayerNpcContainer = require("Level/Common/XPlayerNpcContainer")
 
 ---@param proxy XDlcCSharpFuncs
 function XLevelScript1071:Ctor(proxy)
     --构造函数，用于执行与外部无关的内部构造逻辑（例如：创建内部变量等）
     self._proxy = proxy --脚本代理对象，通过它来调用战斗程序开放的函数接口。
+    self._playerNpcContainer = XPlayerNpcContainer.New(self._proxy)
     self.isEndBattle = false
     self._spawnPoint = {}                                            --获取点位序号，初始化中获取
     self._spawnRotation = { 0, 0, 0 }                                --获取点位面向
@@ -44,16 +45,13 @@ function XLevelScript1071:Ctor(proxy)
     self.isFightAiOpen = false
     self.isFighter1AiOpen = false
     self.isFighter2AiOpen = false
-    -- self._proxy:RegisterKeyboardOperator(32, ENpcOperationKey.Dodge, EOperationType.Down, false) --空格按键注册监听开启AI战斗开始
-    -- self._proxy:RegisterKeyboardOperator(49, ENpcOperationKey.Ball1, EOperationType.Down, false) --键盘1 技能1
-    -- self._proxy:RegisterKeyboardOperator(50, ENpcOperationKey.Ball2, EOperationType.Down, false) --键盘2 技能2
 end
 
 function XLevelScript1071:Init()
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)   --事件注册：npc加buff
     --初始化逻辑
     -- 玩家的初始化, 正式应该由Gameplay的程序初始化处理, 此处为临时方案
-    self._playerNpcUUID = self._proxy:GetLocalPlayerNpcId() --玩家ID
-
+    self._playerNpcUUID = self._proxy:GetLocalPlayerNpcId() --玩家ID    
     ----------------地图初始化----------------------------------------------------------------------
     self._levelId = self._proxy:GetCurrentLevelId() -- 关卡ID,获取本关ID
     for i = 1, 3 do
@@ -104,7 +102,7 @@ function XLevelScript1071:Init()
     else
         self._proxy:SetNpcPosition(self.fighter1UUID, self._spawnPoint[2])                        --传送玩家1位置
     end
-    self._proxy:SetNpcLookAtPosition(self.fighter1UUID, self._spawnPoint[3])                --设置看向2的位置
+    self._proxy:SetNpcFaceToPosition(self.fighter1UUID, self._spawnPoint[3])                --设置看向2的位置
     -----------------创建Npc2--------------------------------------------------------------------------------------------
 
     self.fighter2UUID = self._proxy:GetAutoChessNpc(false)
@@ -114,7 +112,7 @@ function XLevelScript1071:Init()
     else
         self._proxy:SetNpcPosition(self.fighter2UUID, self._spawnPoint[3])                         --传送玩家2位置
     end
-    self._proxy:SetNpcLookAtPosition(self.fighter2UUID, self._spawnPoint[2])                      --设置看向1的位置
+    self._proxy:SetNpcFaceToPosition(self.fighter2UUID, self._spawnPoint[2])                      --设置看向1的位置
 
     if  not self:IsMonsterNpc(self.fighter2UUID) then                                                   --判断是否非怪物类型,人形怪需要上一个红皮特效buff，怪物类型则不需要
         self._proxy:ApplyMagic(self.fighter2UUID,self.fighter2UUID,1015990,1)                           --敌人红皮特效buff，用于区分敌我角色
@@ -195,19 +193,6 @@ function XLevelScript1071:Update(dt)
     self:CheckFightEnd()
     self:OnUpdatePhase(dt)
 end
-
----@param eventType number
----@param eventArgs userdata
-function XLevelScript1071:HandleEvent(eventType, eventArgs)
-    if eventType == EWorldEvent.NpcDie then
-        self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
-    end
-end
-
-function XLevelScript1071:Terminate()
-    --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
-end
-
 --region 关卡阶段管理
 local Phase = {
     --暂时分为【0，开始瞬间】【1，展示阶段】【2，倒计时阶段】【3，战斗阶段】【4，疲劳阶段】【5，结算阶段（存疑是否写在关卡之中）】
@@ -218,6 +203,27 @@ local Phase = {
     Tired = 4,
     End = 5
 }
+---@param eventType number
+---@param eventArgs userdata
+function XLevelScript1071:HandleEvent(eventType, eventArgs)
+    self._playerNpcContainer:HandleEvent(eventType, eventArgs)
+    if eventType == EWorldEvent.NpcDie then
+        self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
+    elseif (eventType == EWorldEvent.NpcAddBuff) then
+        local npc = eventArgs.NpcUUID
+        if (eventArgs.BuffTableId == 1015949 and npc == self.fighter1UUID) and (self._currentPhase == Phase.Battle) then
+            self._tiredTime = self._tiredTime  -  2
+            XLog.Debug("加速疲劳")
+        end
+    end
+        
+end
+
+function XLevelScript1071:Terminate()
+    --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
+end
+
+
 
 function XLevelScript1071:InitPhase()
     --初始化关卡各个阶段的相关变量
@@ -243,13 +249,13 @@ function XLevelScript1071:OnEnterPhase(phase)
         
     elseif phase == Phase.Show then
         --展示阶段
-        self._proxy:AbortSkill(self.fighter1UUID, true)                                               --打断出场动作
+        self._proxy:AbortAction(self.fighter1UUID, true)                                               --打断出场动作
         self._proxy:SetNpcPosition(self.fighter1UUID, self._spawnPoint[2])                            --传送玩家1位置
-        self._proxy:SetNpcLookAtPosition(self.fighter1UUID, self._spawnPoint[3])                      --设置看向2的位置
+        self._proxy:SetNpcFaceToPosition(self.fighter1UUID, self._spawnPoint[3])                      --设置看向2的位置
 
-        self._proxy:AbortSkill(self.fighter2UUID, true)                                                    --打断出场动作
+        self._proxy:AbortAction(self.fighter2UUID, true)                                                    --打断出场动作
         self._proxy:SetNpcPosition(self.fighter2UUID, self._spawnPoint[3])                                --传送玩家2位置
-        self._proxy:SetNpcLookAtPosition(self.fighter2UUID, self._spawnPoint[2])                          --设置看向1的位置
+        self._proxy:SetNpcFaceToPosition(self.fighter2UUID, self._spawnPoint[2])                          --设置看向1的位置
 
         --疲劳伤害npc攻击力重置
         self._robotAttackTmeple = self._proxy:GetNpcAttribMaxValue(self._robotUUID,ENpcAttrib.Attack)                                                     

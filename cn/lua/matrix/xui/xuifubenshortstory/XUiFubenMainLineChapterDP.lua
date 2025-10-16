@@ -781,7 +781,7 @@ function XUiFubenMainLineChapterDP:UpdateChapterStars()
         -- 收集奖励
         local treasureId = XFubenShortStoryChapterConfigs.GetTreasureIdByChapterId(self.ChapterId)
         for _, v in pairs(treasureId) do
-            if XDataCenter.ExtraChapterManager.IsTreasureGet(v) then
+            if XDataCenter.ShortStoryChapterManager.IsTreasureGet(v) then
                 curCnt = curCnt + 1
             end
             totalCnt = totalCnt + 1

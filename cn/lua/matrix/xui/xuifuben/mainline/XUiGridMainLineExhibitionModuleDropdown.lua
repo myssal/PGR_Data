@@ -20,6 +20,11 @@ function XUiGridMainLineExhibitionModuleDropdown:Refresh(moduleConfig, isSelect)
     
     -- 页签
     self:RefreshPanelTag(moduleConfig)
+    
+    -- 蓝点
+    local module = self.Parent.UiPanelExhibition:GetModuleByModuleId(moduleConfig.Id)
+    local isRed = module:IsShowRed()
+    self.UiButton:ShowReddot(isRed)
 end
 
 -- 刷新页签

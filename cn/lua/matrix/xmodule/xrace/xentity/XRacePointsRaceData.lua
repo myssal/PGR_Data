@@ -66,25 +66,30 @@ function XRacePointsRaceData:UpdateRole()
             self._DownRoleIds = serverData.LoseCharacterIds
 
             for _, result in pairs(data) do
-                local rankIndex = result[1]
+                local inRankIndex = result[1] --单场比赛局内排名（只看比赛时间）
                 local roleId = result[2]
                 local time = result[3]
                 local point = result[4]
-                self._RankRoleIds[rankIndex] = roleId
+                local outRankIndex = result[5] --单场比赛局外排名（根据所有轮次比赛的积分进行排名）
+                self._RankRoleIds[outRankIndex] = roleId --本组积分赛排名
 
                 local tb = self._RoleRankDataDict[roleId]
                 if not tb then
                     tb = {}
-                    tb.RankList = {}
+                    tb.InRankList = {}
+                    tb.OutRankList = {}
                     tb.TimeList = {}
                     tb.Point = 0
-                    tb.TotalPassTime = 0
+                    tb.PointList = {}
                     self._RoleRankDataDict[roleId] = tb
                 end
-                table.insert(tb.RankList, rankIndex)
-                table.insert(tb.TimeList, time)
-                tb.Point = tb.Point + point
-                tb.TotalPassTime = tb.TotalPassTime + time
+                local lastPoint = tb.PointList[#tb.PointList] or 0
+                local lastTime = tb.TimeList[#tb.TimeList] or 0
+                table.insert(tb.InRankList, inRankIndex)
+                table.insert(tb.OutRankList, outRankIndex)
+                table.insert(tb.TimeList, time - lastTime)
+                table.insert(tb.PointList, point - lastPoint)
+                tb.Point = point
             end
         end
     end
@@ -133,9 +138,14 @@ function XRacePointsRaceData:GetRoleRankData(roleId)
     return self._RoleRankDataDict[roleId]
 end
 
-function XRacePointsRaceData:GetRoleRank(roleId, index)
+function XRacePointsRaceData:GetInRoleRank(roleId, index)
     local data = self:GetRoleRankData(roleId)
-    return data and data.RankList[index]
+    return data and data.InRankList[index]
+end
+
+function XRacePointsRaceData:GetOutRoleRank(roleId, index)
+    local data = self:GetRoleRankData(roleId)
+    return data and data.OutRankList[index]
 end
 
 function XRacePointsRaceData:GetRoleTime(roleId, index)
@@ -143,14 +153,14 @@ function XRacePointsRaceData:GetRoleTime(roleId, index)
     return data and data.TimeList[index]
 end
 
+function XRacePointsRaceData:GetSinglePoint(roleId, index)
+    local data = self:GetRoleRankData(roleId)
+    return data and data.PointList[index]
+end
+
 function XRacePointsRaceData:GetRoleTotalPoint(roleId)
     local data = self:GetRoleRankData(roleId)
     return data and data.Point
-end
-
-function XRacePointsRaceData:GetRoleTotalTime(roleId)
-    local data = self:GetRoleRankData(roleId)
-    return data and data.TotalPassTime
 end
 
 ---@return table<number,PointsRaceRankData>
@@ -177,7 +187,8 @@ end
 return XRacePointsRaceData
 
 ---@class PointsRaceRankData
----@field RankList number[]
----@field TimeList number[]
----@field Point number
----@field TotalPassTime number
+---@field InRankList number[]
+---@field OutRankList number[]
+---@field TimeList number[] 单场比赛用时
+---@field Point number 总积分
+---@field PointList number[] 单场比赛积分

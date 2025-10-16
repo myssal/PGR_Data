@@ -70,6 +70,11 @@
         "Value": "Assets/Product/Ui/Prefab/UiDebuggerDamageContextDLC.prefab"
     },
     {
+        "Key": "UiDebuggerProtectorContextDLC",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiDebuggerProtectorContextDLC.prefab"
+    },
+    {
         "Key": "UiDebuggerNpcFightDLC",
         "Type": "string",
         "Value": "Assets/Product/Ui/Prefab/UiDebuggerNpcFightDLC.prefab"
@@ -315,12 +320,7 @@
         "Value": 0.05
     },
     {
-        "Key": "InteractDetectRadius",
-        "Type": "float",
-        "Value": 2
-    },
-    {
-        "Key": "DramaMinAngleOfPlayTurnAnimation",
+        "Key": "PlayTurnAnimationMinAngle",
         "Type": "float",
         "Value": 22
     },
@@ -373,5 +373,40 @@
         "Key": "DefaultSoftLockTargetConfigId",
         "Type": "int",
         "Value": 1
+    },
+    {
+        "Key": "ThreatAttenuationCoefficient",
+        "Type": "float",
+        "Value": 0.995
+    },
+    {
+        "Key": "ThreatFirstOrderChangedAddProportion",
+        "Type": "float",
+        "Value": 0.15
+    },
+    {
+        "Key": "FPAnimatorStateBlendRange",
+        "Type": "float",
+        "Value": 1
+    },
+    {
+        "Key": "FPAnimatorStateBlendLerpSpeed",
+        "Type": "float",
+        "Value": 0.1
+    },
+    {
+        "Key": "FPPlayerSelfNpcCharacterControllerRadius",
+        "Type": "float",
+        "Value": 0.65
+    },
+    {
+        "Key": "DefaultHitSourceBoneName",
+        "Type": "string",
+        "Value": "HitCase"
+    },
+    {
+        "Key": "NoThreatSwitchIdleTime",
+        "Type": "float",
+        "Value": 2.5
     }
 ]

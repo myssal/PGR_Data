@@ -18,7 +18,8 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 300033
         self.TreasureChests3 = 300034
         self.WinTrigger = 300035
-        self._MoveLimit = {300027}
+        self._MoveLimit = {300027,300028}
+        self._rot = { x = 0, y = 73, z = 0 }
     elseif self._levelId == 4009 then
         self._settleNpcPlaceId = 400002
         self.TransformBoxPlaceId = 400004
@@ -28,7 +29,9 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 400074
         self.TreasureChests3 = 400075
         self.WinTrigger = 400071
-        self._MoveLimit = {400098,400097}
+        self._MoveLimit = {400098,400097,400098}
+        self._rot = { x = 0, y = 17, z = 0 }
+        self._rot1 = { x = 0, y = -1, z = 0 }
     elseif self._levelId == 4010 then
         self._settleNpcPlaceId = 500001
         self.TransformBoxPlaceId = 500090
@@ -38,7 +41,10 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 500095
         self.TreasureChests3 = 500096
         self.WinTrigger = 500093
-        self._MoveLimit = {500165,500166}
+        self._MoveLimit = {500165,500166,500091}
+        self._RewardTrigger = 500036
+        self._rot = { x = 0, y = 84, z = 0 }
+        self._rot1 = { x = 0, y = 92, z = 0 }
     elseif self._levelId == 4018 then
         self._settleNpcPlaceId = 600002
         self.TransformBoxPlaceId = 600112
@@ -59,6 +65,9 @@ function XLevelScript6001:Init()
         self.TreasureChests3 = 600110
         self.WinTrigger = 600111
         self._MoveLimit = {600143,600144,600086}
+        self._rot = { x = 0, y = -175, z = 0 }
+        self._rot1 = { x = 0, y = 0, z = 0 }
+        self._rot2 = { x = 0, y = 85, z = 0 }
     elseif self._levelId == 4019 then
         self._settleNpcPlaceId = 700002
         self.TransformBoxPlaceId = 700110
@@ -69,7 +78,10 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 700095
         self.TreasureChests3 = 700096
         self.WinTrigger = 700111
-        self._MoveLimit = {700112,700113,700143}
+        self._MoveLimit = {700112,700113,700143,700144}
+        self._rot = { x = 0, y = -95, z = 0 }
+        self._rot1 = { x = 0, y = -95, z = 0 }
+        self._rot2 = { x = 0, y = -80, z = 0 }
     elseif self._levelId == 4020 then
         self._settleNpcPlaceId = 800002
         self.TransformBoxPlaceId = 800107
@@ -77,7 +89,7 @@ function XLevelScript6001:Init()
         self._StartPos = { x = 270.39, y = 50.61, z = 238.81 }
         self.TransformDoor1 = 800046
         self.TransformDoor3 = 800045
-        self.TransformDoor5 = 800044
+        self.TransformDoor5 = 800044 
         self.Transform1Into = 800129
         self.Transform1Out = 800132
         self.Transform2Into = 800130
@@ -88,8 +100,11 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 800112
         self.TreasureChests3 = 800113
         self.WinTrigger = 800157
-        self._MoveLimit = {800009,800010,800124}
+        self._MoveLimit = {800009,800010,800124,800066}
         self.SaveBoxPlaceId1 = 800042
+        self._rot = { x = 0, y = -1, z = 0 }
+        self._rot1 = { x = 0, y = 0, z = 0 }
+        self._rot2 = { x = 0, y = 0, z = 0 }
     elseif self._levelId == 4025 then
         self._settleNpcPlaceId = 900002
         self.TransformBoxPlaceId = 900030
@@ -97,12 +112,11 @@ function XLevelScript6001:Init()
         self._StartPos = { x = 243.7, y = 37, z = 322.7 }
         self.WinTrigger = 900027
         self._MoveLimit = {900025}
+        self._rot = { x = 0, y = -175, z = 0 }
     end
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractStart)
     self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)
-    self._proxy:ControlSystemFunction(ESystemFunctionType.Map, { true })         --地图不能点击
-    self._proxy:ControlSystemFunction(ESystemFunctionType.Task, { 1 }) --任务不能点击
-    self._proxy:SetSystemFuncEntryEnableBatch({}, { ESystemFunctionType.MainMenu, ESystemFunctionType.TaskEntry, ESystemFunctionType.Bag, ESystemFunctionType.Team, ESystemFunctionType.Process })
+
     -- 1.5秒后提示引导
     self._proxy:AddTimerTask(1.5, function()
         if self._levelId == 4008 then
@@ -117,6 +131,11 @@ function XLevelScript6001:Init()
     end)
     self._proxy:SetNpcActive(self._proxy:GetNpcUUID(self._settleNpcPlaceId), false)
     self:SetMoveLimitActive(false)
+    self._proxy:SetPlayerFirstPersonMode(false)
+    self._proxy:SetSceneObjectActive(self.WinTrigger, true)
+    self.WinTriggerNum = true
+    self._proxy:ControlSystemFunction(ESystemFunctionType.Map, { true })         --地图不能点击
+    self._proxy:ControlSystemFunction(ESystemFunctionType.Task, { 1 }) --任务不能点击
 end
 
 function XLevelScript6001:Update(dt)
@@ -130,15 +149,19 @@ function XLevelScript6001:HandleEvent(eventType, eventArgs)
         if eventArgs.HostSceneObjectPlaceId == self.SaveBoxPlaceId then
             --保存点
             self._StartPos = self._proxy:GetSceneObjectPositionByPlaceId(self.SaveBoxPlaceId)
+            self._rot=self._rot1
         elseif eventArgs.HostSceneObjectPlaceId == self.SaveBoxPlaceId1 then
             self._StartPos = self._proxy:GetSceneObjectPositionByPlaceId(self.SaveBoxPlaceId1)
+            self._rot = self._rot2
         elseif eventArgs.HostSceneObjectPlaceId == self.TransformBoxPlaceId then
             --死区传送回出发点
-            self._proxy:TeleportWithBlackUi(self._proxy:GetLocalPlayerNpcId(), self._StartPos)
+            self._proxy:TeleportWithBlackUi(self._proxy:GetLocalPlayerNpcId(), self._StartPos, self._rot)
             self:SetMoveLimitActive(true)
-            self._proxy:AddTimerTask(2.5, function()
-                self:SetMoveLimitActive(false)
-            end)
+            if self.WinTriggerNum == true then
+                self._proxy:AddTimerTask(2.5, function()
+                    self:SetMoveLimitActive(false)
+                end)
+            end
         elseif eventArgs.HostSceneObjectPlaceId == self.TransformDoor1 then
             self._Transform = self._proxy:GetSceneObjectPositionByPlaceId(self.Transform1Into)
             self:DoTeleportWithCouple(self.TransformDoor1, self._Transform)
@@ -165,21 +188,22 @@ function XLevelScript6001:HandleEvent(eventType, eventArgs)
         elseif eventArgs.HostSceneObjectPlaceId == self.WinTrigger then
             self._proxy:SetNpcActive(self._proxy:GetNpcUUID(self._settleNpcPlaceId), true)
             self._StartPos = self._proxy:GetSceneObjectPositionByPlaceId(self.WinTrigger)          --到终点了摔落返回终点
+            self:SetMoveLimitActive(true)
+            self.WinTriggerNum = false
         end
-    elseif eventType == EWorldEvent.NpcInteractStart then
-        if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then
-            --是玩家发起的交互
-            if eventArgs.TargetPlaceId == self._settleNpcPlaceId then
-                self._proxy:RequestLeaveInstanceLevel(false)
-            end
-        end
+    --elseif eventType == EWorldEvent.NpcInteractStart then
+    --    if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then
+    --        --是玩家发起的交互
+    --        if eventArgs.TargetPlaceId == self._settleNpcPlaceId then
+    --            self._proxy:RequestLeaveInstanceLevel(false)
+    --        end
+    --    end
     end
 end
 
 function XLevelScript6001:Terminate()
-    self._proxy:ControlSystemFunction(ESystemFunctionType.Map, { false })         --地图不能点击
+        self._proxy:ControlSystemFunction(ESystemFunctionType.Map, { false })         --地图不能点击
     self._proxy:ControlSystemFunction(ESystemFunctionType.Task, { 0 })            --任务不能点击
-    self._proxy:SetSystemFuncEntryEnableBatch({ ESystemFunctionType.MainMenu, ESystemFunctionType.TaskEntry, ESystemFunctionType.Bag, ESystemFunctionType.Team, ESystemFunctionType.Process }, {})
 end
 
 function XLevelScript6001:DoTeleportWithCouple(teleportPlaceId1, pos, rot, cb)

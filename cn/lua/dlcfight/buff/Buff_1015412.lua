@@ -60,7 +60,7 @@ function XBuffScript1015412:Update(dt)
     --处于生效时间内，则每间隔1秒，向敌人脚下发射一个路径的子弹
     if self._proxy:GetNpcTime(self._uuid) > self.cdTimer then
         local targetPos = self._proxy:GetNpcPosition(self.targetId)
-        self._proxy:LaunchMissileFromPosToPos(self._uuid, self.missileId, targetPos, targetPos, self.missileLevel)
+        self._proxy:LaunchMissileFromPosToPos(self._uuid, self.missileId, self.missileId, targetPos, targetPos, self.missileLevel)
         self.cdTimer = self._proxy:GetNpcTime(self._uuid) + self.cd
     end
 end

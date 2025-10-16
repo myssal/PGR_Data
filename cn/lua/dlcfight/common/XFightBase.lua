@@ -26,14 +26,14 @@ function XFightBase:HandleEvent(eventType, eventArgs)
         self:OnNpcDamageEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind,
                 eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical)
     end
-    if eventType == EWorldEvent.NpcCastSkillBefore then
-        self:OnNpcCastSkillBeforeEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+    if eventType == EWorldEvent.NpcCastActionBefore then
+        self:OnNpcCastActionBeforeEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
-    if eventType == EWorldEvent.NpcCastSkillAfter then
-        self:OnNpcCastSkillAfterEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+    if eventType == EWorldEvent.NpcCastActionAfter then
+        self:OnNpcCastActionAfterEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
-    if eventType == EWorldEvent.NpcExitSkill then
-        self:OnNpcExitSkillEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+    if eventType == EWorldEvent.NpcExitAction then
+        self:OnNpcExitActionEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
     if eventType == EWorldEvent.NpcDie then
         self:OnNpcDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer)
@@ -83,6 +83,75 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcDodge then
         self:OnNpcDodge(eventArgs.AttackerUUID, eventArgs.Type)
     end
+    if eventType == EWorldEvent.NpcBrokenBefore then
+        self:OnNpcBrokenBefore(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.MagicId)
+    end
+    if eventType == EWorldEvent.NpcBrokenAfter then
+        self:OnNpcBrokenAfter(eventArgs.LauncherUUID, eventArgs.TargetUUID, eventArgs.MagicId)
+    end
+    if eventType == EWorldEvent.NpcRecoverBrokenBefore then
+        self:OnNpcRecoverBrokenBefore(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcRecoverBrokenAfter then
+        self:OnNpcRecoverBrokenAfter(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcOverDriveFull then
+        self:OnNpcOverDriveFull(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcEnterOverDrive then
+        self:OnNpcEnterOverDrive(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcODBreakBefore then
+        self:OnNpcODBreakBefore(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcODBreakAfter then
+        self:OnNpcODBreakAfter(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcODExitBreakAfter then
+        self:OnNpcODExitBreakAfter(eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcSkillActionEnd then
+        self:OnNpcSkillActionEnd(eventArgs.SourceUUID, eventArgs.SkillId, eventArgs.SkillActionId, eventArgs.IsAbort)
+    end
+    if eventType == EWorldEvent.NpcTeamWorkSkillCast then
+        self:OnNpcTeamWorkSkillCast(eventArgs.SourceUUID, eventArgs.Camp, eventArgs.SkillId, eventArgs.ChainCount)
+    end
+    if eventType == EWorldEvent.NpcTeamWorkSkillChainCountChange then
+         self:OnNpcTeamWorkSkillChainCountChange(eventArgs.SourceUUID, eventArgs.Camp, eventArgs.ChainCount)
+    end
+    if eventType == EWorldEvent.NpcCounterSuccess then
+        self:OnNpcCounterSuccess(eventArgs.TriggerNpcUUID, eventArgs.CounterNpcUUID, eventArgs.TriggerTag, eventArgs.CounterTag)
+    end
+    if eventType == EWorldEvent.NpcAfterSyncCounterSuccess then
+        self:OnNpcAfterSyncCounterSuccess(eventArgs.TriggerNpcUUID, eventArgs.CounterNpcUUID, eventArgs.TriggerTag, eventArgs.CounterTag)
+    end
+    if eventType == EWorldEvent.NpcBeforeTriggerCounter then
+        self:OnNpcBeforeTriggerCounter(eventArgs.TriggerNpcUUID, eventArgs.CounterNpcUUID, eventArgs.TriggerTag, eventArgs.CounterTag, eventArgs.TriggerMissileTemplateId, eventArgs.TriggerMissileUUID, eventArgs.ContextId)
+    end
+    if eventType == EWorldEvent.NpcAfterTriggerCounter then
+        self:OnNpcAfterTriggerCounter(eventArgs.TriggerNpcUUID, eventArgs.CounterNpcUUID, eventArgs.TriggerTag, eventArgs.CounterTag)
+    end
+    if eventType == EWorldEvent.NpcWrestleStart then
+        self:OnNpcWrestleStart(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcWrestleLocked then
+        self:OnNpcWrestleLocked(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcWrestleReversal then
+        self:OnNpcWrestleReversal(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcWrestlePursuit then
+        self:OnNpcWrestlePursuit(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcMultiParryStart then
+        self:OnNpcMultiParryStart(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcMultiParrySucceed then
+        self:OnNpcMultiParrySucceed(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
+    if eventType == EWorldEvent.NpcMultiParryFail then
+        self:OnNpcMultiParryFail(eventArgs.LauncherUUID, eventArgs.TargetUUID)
+    end
 end
 
 ---@param eventType number 来自EFightLuaEvent
@@ -90,6 +159,8 @@ end
 function XFightBase:HandleLuaEvent(eventType, eventArgs)
 end
 
+---@desc 生命周期里CleanUp的上一步，可以理解为脚本专用的CleanUp
+---@desc 回收前调用
 function XFightBase:Terminate()
     self:ClearLuaEvent()
 end
@@ -118,7 +189,7 @@ end
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc释放技能后
@@ -127,7 +198,7 @@ end
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc退出技能
@@ -136,7 +207,7 @@ end
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcExitSkillEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc死亡
@@ -300,6 +371,169 @@ function XFightBase:OnNpcDodge(AttackerUUID, Type)
 
 end
 
+--region 韧性事件
+
+---Npc破韧前
+---@param launcherUUID number 发起者的UUID
+---@param targetUUID number 目标的UUID
+---@param magicId number Magic的配表Id
+function XFightBase:OnNpcBrokenBefore(launcherUUID, targetUUID, magicId)
+end
+
+---Npc破韧后
+---@param launcherUUID number 发起者的UUID
+---@param targetUUID number 目标的UUID
+---@param magicId number Magic的配表Id
+function XFightBase:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
+end
+
+---Npc恢复破韧前
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcRecoverBrokenBefore(targetUUID)
+end
+
+---Npc恢复破韧后
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcRecoverBrokenAfter(targetUUID)
+end
+
+---Npc OD满
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcOverDriveFull(targetUUID)
+end
+
+---Npc 进入OD
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcEnterOverDrive(targetUUID)
+end
+
+---Npc OD Break前
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcODBreakBefore(targetUUID)
+end
+
+---Npc OD Break后
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcODBreakAfter(targetUUID)
+end
+
+---Npc OD 退出Break后
+---@param targetUUID number 目标的UUID
+function XFightBase:OnNpcODExitBreakAfter(targetUUID)
+end
+
+--endregion
+
+---Npc一个SkillAction完成
+---@param sourceUUID number 来源UUID
+---@param skillId number 技能ID
+---@param skillActionId number ActionID
+---@param isAbort number 是否打断
+function XFightBase:OnNpcSkillActionEnd(sourceUUID, skillId, skillActionId, isAbort)
+end
+
+---Npc团队极限技释放成功
+---@param sourceUUID number 来源UUID
+---@param camp number 阵营
+---@param skillId number 技能ID
+---@param chainCount number 当前连锁数
+function XFightBase:OnNpcTeamWorkSkillCast(sourceUUID, camp, skillId, chainCount)
+end
+
+---Npc团队极限技连锁
+---@param sourceUUID number 来源UUID
+---@param camp number 阵营
+---@param chainCount number 当前连锁数
+function XFightBase:OnNpcTeamWorkSkillChainCountChange(sourceUUID, camp, chainCount)
+end
+
+--region 弹刀
+
+---Npc本端弹刀反制成功后
+---@param triggerNpcUUID number 被弹刀NpcUUID
+---@param counterNpcUUID number 弹刀NpcUUID
+---@param triggerTag table 被弹刀子弹Tag intList
+---@param triggerTag table 弹刀子弹Tag intList
+function XFightBase:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+end
+
+---Npc经对手校验后弹刀反制成功后
+---@param triggerNpcUUID number 被弹刀NpcUUID
+---@param counterNpcUUID number 弹刀NpcUUID
+---@param triggerTag table 被弹刀子弹Tag intList
+---@param triggerTag table 弹刀子弹Tag intList
+function XFightBase:OnNpcAfterSyncCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+end
+
+---Npc被弹刀反制前
+---@param triggerNpcUUID number 被弹刀NpcUUID
+---@param counterNpcUUID number 弹刀NpcUUID
+---@param triggerTag table 被弹刀子弹Tag intList
+---@param triggerTag table 弹刀子弹Tag intList
+---@param triggerMissileTemplateId number 弹刀触发盒子弹配置Id (被弹刀的子弹)
+---@param triggerMissileUUID number 弹刀触发盒子弹UUID (被弹刀的子弹)
+---@param contextId number 上下文ID
+function XFightBase:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
+end
+
+---Npc被弹刀反制后
+---@param triggerNpcUUID number 被弹刀NpcUUID
+---@param counterNpcUUID number 弹刀NpcUUID
+---@param triggerTag table 被弹刀子弹Tag intList
+---@param triggerTag table 弹刀子弹Tag intList
+function XFightBase:OnNpcAfterTriggerCounter(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+end
+
+--endregion
+
+--region 角力事件
+
+---Npc角力开始
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc角力僵持
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcWrestleLocked(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc角力顶开
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc角力追击
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
+end
+
+--region 多人弹刀
+
+---Npc多人弹刀开始
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc多人弹刀成功
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcMultiParrySucceed(launcherNpcUUID, targetNpcUUID)
+end
+
+---Npc多人弹刀失败
+---@param launcherNpcUUID number 被弹刀NpcUUID
+---@param targetNpcUUID number 弹刀NpcUUID
+function XFightBase:OnNpcMultiParryFail(launcherNpcUUID, targetNpcUUID)
+end
+
+--endregion
+
 --endregion
 
 --region LuaEvent
@@ -407,6 +641,21 @@ function XFightBase:DoFuncByWeightRandom(dict)
     else
         XLog.Error("[XFightBase] DoFuncByWeightRandom func is fail, please check the param!")
     end
+end
+--endregion
+
+--region GameplayTags
+--- 检测一个tags列表内是否含有目标tag
+--- @param tags @ tags列表(C# List)
+--- @param EGameplayTag @ 需要检测存在的目标tag
+--- @return bool @ 是否包含
+function XFightBase:ContainsGameplayTag(tags, targetTag)
+    for i = 0, tags.Count - 1, 1 do
+        if tags[i] == targetTag then
+            return true
+        end
+    end
+    return false
 end
 --endregion
 

@@ -140,7 +140,7 @@ end
 --region EventCallBack
 function XAFKCharBase:InitEventCallBackRegister()
     ------全局事件-----------------------------------
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillBefore)         -- OnNpcCastSkillBeforeEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionBefore)         -- OnNpcCastActionBeforeEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)           -- OnNpcAddBuffEvent
     
     ------自定义Lua事件-----------------------------------
@@ -161,12 +161,12 @@ function XAFKCharBase:OnLuaAutoChessTriggerItemSkill(triggerNpc,itemSkillId)  --
     self:AddItemSkill(itemSkillId) --调用触发技能事件
 end
 
-function XAFKCharBase:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XAFKCharBase:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then --不是自己放的技能不用管
         return
     end
 
-    self._proxy:SetNpcLookAtPosition(self._uuid, self._proxy:GetNpcPosition(self.targetUUID)) --如果是自己释放的就设置自己看向目标
+    self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(self.targetUUID)) --如果是自己释放的就设置自己看向目标
 end
 
 function XAFKCharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -376,7 +376,7 @@ function XAFKCharBase:DoAction(ACTION_Type, Skill_ID, ItemSkillId) --执行Actio
     local isActionSuccess  --Action是否成功
 
     if self:IsInSkillReleaseRange(selfUUID, targetUUID, Skill_ID, ACTION_Type) then --技能释放距离检查,没有在列表里的说明没有要求，无距离要求释放
-        isActionSuccess = self._proxy:CastSkillToTarget(self._uuid, Skill_ID, targetUUID) --释放技能是否成功
+        isActionSuccess = self._proxy:CastActionToTarget(self._uuid, Skill_ID, targetUUID) --释放技能是否成功
     else
         if ACTION_Type == XAFKCharBase.FireActionType.Combo then
             self.comboList = {} --combo只有一次失败的机会，不满足需要的释放距离就清空了。
@@ -441,7 +441,7 @@ function XAFKCharBase:ComboEndCheck() --检查Combo是否结束
         return
     end
     
-    if self._proxy:CheckNpcCurrentSkill(self._uuid,self.currentComboLastSkillId) then --如果正在最后一个技能过程中
+    if self._proxy:CheckNpcCurrentAction(self._uuid,self.currentComboLastSkillId) then --如果正在最后一个技能过程中
         if self._proxy:CheckNpcCurSkillIsDone(self._uuid) then  --技能过程中后摇属于End
             self:ComboEnd()
         end
@@ -520,7 +520,7 @@ function XAFKCharBase:AfkAiMove(dt)
         return
     end
     if self.moveSkillId then  --配置了移动技能向目标释放移动技能
-        self._proxy:CastSkillToTarget(self._uuid,self.moveSkillId,self.targetUUID)
+        self._proxy:CastActionToTarget(self._uuid,self.moveSkillId,self.targetUUID)
     else--没有配置移动技能的时候
         --调用跟随组件
         self._followController:SetFollowTargetNpcNoNavMesh(self.targetUUID, self.followTargetMinDis, self.followTargetMaxDis, self.followTargetHeartBeat)

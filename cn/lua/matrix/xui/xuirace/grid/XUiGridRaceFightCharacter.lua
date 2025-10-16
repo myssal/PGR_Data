@@ -18,6 +18,7 @@ function XUiGridRaceFightCharacter:OnGetLuaEvents()
         XEventId.EVENT_RACE_GAME_POWER_UPDATE, 
         XEventId.EVENT_RACE_GAME_POWER_UPDATE_START,
         XEventId.EVENT_RACE_GAME_SKILL_UPDATE,
+        XEventId.EVENT_RACE_GAME_STATE_UPDATE,
     }
 end
 
@@ -29,6 +30,27 @@ function XUiGridRaceFightCharacter:OnNotify(event, actorIndex, powerIndex, power
         self:ShowGetSignalBall(powerIndex)
     elseif event == XEventId.EVENT_RACE_GAME_SKILL_UPDATE then
         self:ShowSkill(powerIndex)
+    elseif event == XEventId.EVENT_RACE_GAME_STATE_UPDATE then
+        self:SetState(powerIndex)
+    end
+end
+
+-- 显示表情
+function XUiGridRaceFightCharacter:ShowEmoji(path, time)
+    if string.IsNilOrEmpty(path) then
+        return
+    end
+
+    self:RemoveEmojiTimer()
+    self._EmojiTimerId = XScheduleManager.ScheduleOnce(function()
+        -- self.
+    end, time or 1000)
+end
+
+function XUiGridRaceFightCharacter:SetState(state)
+    -- 3 受击
+    if state == 3 then
+        self:ShowEmoji(self._Control:GetClientConfig("HitEmoji"), tonumber(self._Control:GetClientConfig("HitEmojiTime")))
     end
 end
 
@@ -39,6 +61,10 @@ function XUiGridRaceFightCharacter:ShowSkill(skillId)
         self._TalkTimerId = XScheduleManager.ScheduleOnce(function()
             self.PanelSkillTalkSmall.gameObject:SetActive(false)
         end, tonumber(self._Control:GetClientConfig("NormalSkillShowTime")) or 2000)
+
+        self:ShowEmoji(self._normalSkConfig.Emoji, self._normalSkConfig.EmojiTime)
+    else
+        self:ShowEmoji(self._ultraSkConfig.Emoji, self._ultraSkConfig.EmojiTime)
     end
 end
 
@@ -84,16 +110,16 @@ function XUiGridRaceFightCharacter:Update(id, index)
     self.TxtNum.text = self._Control:GetRoadNameByIndex(index)
 
     self:SetSelected(self.Parent._SelectIndex == index)
-    self._skConfig = self._Control:GetRaceCharacterSkillById(self._config.UltraSkill)
-    local normalSkillConfig = self._Control:GetRaceCharacterSkillById(self._config.NormalSkill)
-    self.TxtTalk.text = normalSkillConfig.Name
+    self._ultraSkConfig = self._Control:GetRaceCharacterSkillById(self._config.UltraSkill)
+    self._normalSkConfig = self._Control:GetRaceCharacterSkillById(self._config.NormalSkill)
+    self.TxtTalk.text = self._normalSkConfig.Name
 
     self:UpdatePower()
 end
 
 function XUiGridRaceFightCharacter:UpdatePower()
-    local hasShow = self._Control:GetSkillShowList(self._index, self._skConfig)
-    local singalBallCosts = self._skConfig.SignalBallCosts
+    local hasShow = self._Control:GetSkillShowList(self._index, self._ultraSkConfig)
+    local singalBallCosts = self._ultraSkConfig.SignalBallCosts
     local cellIndex = 1
     for i = 1, 5 do
         local signalBallIndex = i == 5 and 0 or i
@@ -136,6 +162,7 @@ end
 function XUiGridRaceFightCharacter:OnDestroy()
     self:RemoveTimer()
     self:RemoveTalkTimer()
+    self:RemoveEmojiTimer()
 end
 
 function XUiGridRaceFightCharacter:RemoveTalkTimer()
@@ -148,6 +175,12 @@ function XUiGridRaceFightCharacter:RemoveTimer()
     if not self._CountDownTimerId then return end
     XScheduleManager.UnSchedule(self._CountDownTimerId)
     self._CountDownTimerId = nil
+end
+
+function XUiGridRaceFightCharacter:RemoveEmojiTimer()
+    if not self._EmojiTimerId then return end
+    XScheduleManager.UnSchedule(self._EmojiTimerId)
+    self._EmojiTimerId = nil
 end
 
 return XUiGridRaceFightCharacter

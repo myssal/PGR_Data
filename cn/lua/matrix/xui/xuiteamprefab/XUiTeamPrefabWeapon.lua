@@ -499,7 +499,7 @@ function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
     local isCurSeleEquipForCurPos = self.SelectEquipId == self.TeamPrefab:GetWeaponData(self.CurrentPos).EquipId 
     
     -- 判断是否有共鸣数据（预设技能ID或实际装备有共鸣）
-    local isEquip = hasPresetResonance or XMVCA.XEquip:CheckEquipPosResonanced(self.SelectEquipId, pos) ~= nil
+    local isEquip = isCurSeleEquipForCurPos and hasPresetResonance or XMVCA.XEquip:CheckEquipPosResonanced(self.SelectEquipId, pos) ~= nil
     local uiObj = self["GridEquipResonance" .. pos]
     uiObj:GetComponent("XUiButton"):SetDisable(not isEquip)
     self["GridEquipResonanceEffect"..pos].gameObject:SetActiveEx(false)

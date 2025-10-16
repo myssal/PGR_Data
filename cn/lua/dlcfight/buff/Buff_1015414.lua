@@ -27,17 +27,17 @@ end
 --region EventCallBack
 function XBuffScript1015414:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)        -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)        -- OnNpcCastSkillEvent
 end
 
-function XBuffScript1015414:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015414:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --不是自己释放的就返回
     if not launcherId ~= self._uuid then
         return
     end
 
     --如果不是技能起手就返回
-    local skillTypeTemp = self._proxy:GetSkillType(skillId)
+    local skillTypeTemp = self._proxy:GetActionType(skillId)
     if skillTypeTemp ~= self.skillType then
         return
     end

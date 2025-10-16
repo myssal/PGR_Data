@@ -9,9 +9,11 @@ local XUiPanelRaceTask = XClass(XUiNode, "XUiPanelRaceTask")
 local MaskKey = "XUiRaceTaskPanel"
 
 function XUiPanelRaceTask:OnStart()
+    self._IsInit = true
     self._TaskGroupId = nil
     self:InitDynamicTable()
     self.GridTask.gameObject:SetActiveEx(false)
+    self._OpenUiObtainCb = handler(self, self._OpenUiObtain)
 end
 
 function XUiPanelRaceTask:OnEnable()
@@ -38,6 +40,20 @@ function XUiPanelRaceTask:InitDynamicTable()
 end
 
 function XUiPanelRaceTask:UpdateTaskShow(taskGroupId)
+    if self._IsInit then
+        XLuaUiManager.SetMask(true, "XUiPanelRaceTask")
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            XLuaUiManager.SetMask(false, "XUiPanelRaceTask")
+            self:SetTableData(taskGroupId)
+        end, 500) --动效
+        self.Parent:_AddTimerId(timerId)
+    else
+        self:SetTableData(taskGroupId)
+    end
+    self._IsInit = false
+end
+
+function XUiPanelRaceTask:SetTableData(taskGroupId)
     self._TaskGroupId = taskGroupId
     local taskDatas = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskGroupId)
     self.PanelNoneStoryTask.gameObject:SetActiveEx(XTool.IsTableEmpty(taskDatas))
@@ -57,11 +73,16 @@ end
 --    XDataCenter.TaskManager.FinishMultiTaskRequest(taskIds)
 --end
 
+function XUiPanelRaceTask:_OpenUiObtain(...)
+    self._Control:OpenUiObtain(...)
+end
+
 ---@param grid XDynamicGridTask
 function XUiPanelRaceTask:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self._DynamicTable:GetData(index)
         grid:ResetData(data)
+        grid:SetObtainUiCb(self._OpenUiObtainCb)
         --grid.BtnFinish.CallBack = function()
         --    self:FinishTask(data.Id)
         --end
@@ -89,7 +110,7 @@ function XUiPanelRaceTask:OnDynamicTableEvent(event, index, grid)
                         XLuaUiManager.SetMask(false, MaskKey)
                     end
                 end
-            end, 100 * i)
+            end, 50 * i)
         end
     end
 end

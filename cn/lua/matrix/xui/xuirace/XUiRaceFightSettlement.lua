@@ -47,50 +47,24 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
     local historyRoleIds = XTool.Clone(self._RoleIds)
     local roundIds = data:GetRounds()
     local curIndex = table.indexof(roundIds, self._ResultRoundId) --当前轮次
-    local isMulti = curIndex > 1
-    local history = {}
 
-    if isMulti then
+    if curIndex > 1 then
         --计算上一轮的排名
-        for i = 1, curIndex - 1 do
-            for _, roleId in pairs(historyRoleIds) do
-                local tb = history[roleId]
-                if not tb then
-                    tb = {}
-                    tb.Point = 0
-                    tb.Time = 0
-                    history[roleId] = tb
-                end
-                tb.Point = tb.Point + self._Control:GetRacePointById(data:GetRoleRank(roleId, i))
-                tb.Time = tb.Time + data:GetRoleTime(roleId, i)
-            end
-        end
-
-        table.sort(historyRoleIds, function(aId, bId)
-            local aPoint = history[aId].Point
-            local bPoint = history[bId].Point
-            if aPoint ~= bPoint then
-                return aPoint > bPoint
-            end
-
-            local aTime = history[aId].Time
-            local bTime = history[bId].Time
-            if aTime ~= bTime then
-                return aTime < bTime
-            end
-
-            return aId < bId
+        table.sort(historyRoleIds, function(a, b)
+            local aRank = data:GetOutRoleRank(a, curIndex - 1)
+            local bRank = data:GetOutRoleRank(b, curIndex - 1)
+            return aRank < bRank
         end)
     end
 
     --1、显示原先积分和增加的积分
     self:RefreshCustomizedList(historyRoleIds, function(i, roleId, grid)
-        local addPoint = self._Control:GetRacePointById(data:GetRoleRank(roleId, curIndex)) --当前场次增加的积分
+        local addPoint = data:GetSinglePoint(roleId, curIndex) --当前场次增加的积分
         local point --上一场积分
-        if history[roleId] then
-            point = history[roleId].Point
+        if curIndex == 1 then
+            point = 0
         else
-            point = self._Control:GetRacePointById(data:GetRoleRank(roleId, curIndex))
+            point = data:GetSinglePoint(roleId, curIndex - 1)
         end
         grid.TxtAdd1.gameObject:SetActiveEx(true)
         grid.TxtAdd2.gameObject:SetActiveEx(true)
@@ -111,32 +85,33 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
         grid.ImgWinBg01.gameObject:SetActiveEx(true)
     end)
 
-    if isMulti then
-        --2、播放动效后 显示最新积分并且重新排序
-        local timerId = XScheduleManager.ScheduleOnce(function()
-            self:RefreshCustomizedList(self._RoleIds, function(i, roleId, grid)
-                local point = data:GetRoleTotalPoint(roleId) --最新积分
-                grid.TxtTotal1.text = point
-                grid.TxtTotal2.text = point
-                -- 只有最后一轮才显示晋升和淘汰
-                local isUp = data:IsRoleUp(roleId)
-                local isDown = data:IsRoleDown(roleId)
-                grid.Result.gameObject:SetActiveEx(true)
-                grid.WinTxtName.gameObject:SetActiveEx(isUp)
-                grid.FailTxtName.gameObject:SetActiveEx(isDown)
-                grid.Win.gameObject:SetActiveEx(isUp)
-                grid.Fail.gameObject:SetActiveEx(isDown)
-                grid.Champion.gameObject:SetActiveEx(false)
-                grid.TxtAdd1.gameObject:SetActiveEx(false)
-                grid.TxtAdd2.gameObject:SetActiveEx(false)
-                grid.ImgWinBgResult01.gameObject:SetActiveEx(false)
-                grid.ImgFailBgResult01.gameObject:SetActiveEx(false)
-                grid.ImgFailBg01.gameObject:SetActiveEx(isDown)
-                grid.ImgWinBg01.gameObject:SetActiveEx(isUp)
+    --2、播放动效后 显示最新积分并且重新排序
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        self:RefreshCustomizedList(self._RoleIds, function(i, roleId, grid)
+            local point = 0
+            for i = 1, curIndex do
+                point = point + data:GetSinglePoint(roleId, i)
+            end
+            grid.TxtTotal1.text = point
+            grid.TxtTotal2.text = point
+            -- 只有最后一轮才显示晋升和淘汰
+            local isUp = data:IsRoleUp(roleId)
+            local isDown = data:IsRoleDown(roleId)
+            grid.Result.gameObject:SetActiveEx(true)
+            grid.WinTxtName.gameObject:SetActiveEx(isUp)
+            grid.FailTxtName.gameObject:SetActiveEx(isDown)
+            grid.Win.gameObject:SetActiveEx(isUp)
+            grid.Fail.gameObject:SetActiveEx(isDown)
+            grid.Champion.gameObject:SetActiveEx(false)
+            grid.TxtAdd1.gameObject:SetActiveEx(false)
+            grid.TxtAdd2.gameObject:SetActiveEx(false)
+            grid.ImgWinBgResult01.gameObject:SetActiveEx(false)
+            grid.ImgFailBgResult01.gameObject:SetActiveEx(false)
+            grid.ImgFailBg01.gameObject:SetActiveEx(isDown)
+            grid.ImgWinBg01.gameObject:SetActiveEx(isUp)
             end)
-        end, 1000)
-        self:_AddTimerId(timerId)
-    end
+    end, 1000)
+    self:_AddTimerId(timerId)
 end
 
 function XUiRaceFightSettlement:ShowEliminatorResult()

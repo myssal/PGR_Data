@@ -26,10 +26,10 @@ end
 --region EventCallBack
 function XBuffScript1015404:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastSkillEvent
 end
 
-function XBuffScript1015404:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015404:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     XLog.Warning("开始释放技能")
 
     --不是自己释放的就返回
@@ -38,7 +38,7 @@ function XBuffScript1015404:OnNpcCastSkillAfterEvent(skillId, launcherId, target
     end
 
     --如果不是技能起手就返回
-    local skillType = self._proxy:GetSkillType(skillId)
+    local skillType = self._proxy:GetActionType(skillId)
     --判断一下是不是技能起手
     if skillType ~= self.skillStartType then
         XLog.Warning("不是起手技能")

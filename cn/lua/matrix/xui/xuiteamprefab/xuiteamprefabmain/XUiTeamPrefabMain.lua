@@ -55,7 +55,6 @@ function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index)
     self.CurDragCopyGo.transform:SetAsLastSibling()
     -- 被拖但在原地不动的Panel
     xCard.SA_ImgStaticBack.gameObject:SetActiveEx(true)
-    xCard.SA_ImgSelect.gameObject:SetActiveEx(true)
     xCard.SA_ImgShadow.gameObject:SetActiveEx(false)
     xCard.SA_ImgColourSelect.gameObject:SetActiveEx(false)
     xCard.SA_PanelWithOutDragControl.gameObject:SetActiveEx(false)
@@ -98,7 +97,10 @@ function XUiTeamPrefabMain:OnCharacterCardEndDrag(index)
         local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
         curTeamPrefabEntity:SwapPosData(index, hoverIndex)
         local targetCard = self.CharacterCardList[hoverIndex]
-        targetCard:PlayAnimation("SelectFormationEnable")
+        targetCard.FxSelectFormation.gameObject:SetActiveEx(true)
+        targetCard:PlayAnimation("SelectFormationEnable", function ()
+            targetCard.FxSelectFormation.gameObject:SetActiveEx(false)
+        end)
     end
 
     -- 所有的Panel取消选中状态
@@ -208,6 +210,24 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         return
     end
 
+    -- 武器存在性冲突检测（最优先）
+    local function CheckWeaponExistConflictAndConfirm()
+        local isWeaponExistConflict = false
+        for pos, v in ipairs(self.CharacterCardList) do
+            if v:GetIsWeaponExsitConflict() then
+                isWeaponExistConflict = true
+                break
+            end
+        end
+        
+        if isWeaponExistConflict then
+            XUiManager.TipMsg(CS.XTextManager.GetText("TeamPrefabWeaponNotExistConflict"))
+            return false
+        end
+
+        return true
+    end
+
     -- 最终执行应用
     local function ApplyTeamPrefab()
         XDataCenter.TeamManager.TeamPrefabApplyRequest(curTeamPrefabEntity:GetId(), function ()
@@ -254,7 +274,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 武器意识冲突检测
+    -- 欲穿戴武器意识当前有真正的角色正在穿戴的冲突检测
     local function CheckEquipConflictAndConfirm()
         local maxPos = XDataCenter.TeamManager.GetMaxPos()
         local isEquipConflict = false
@@ -294,7 +314,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 黄标冲突检测
+    -- 武器黄标冲突检测
     local function CheckYellowConflictAndConfirm()
         local isYellowConflict = false
         for pos, v in ipairs(self.CharacterCardList) do
@@ -334,7 +354,12 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 从黄标冲突检测开始
+    -- 优先执行武器存在性冲突检测
+    if not CheckWeaponExistConflictAndConfirm() then
+        return
+    end
+    
+    -- 继续原有的检测流程
     CheckYellowConflictAndConfirm()
 end
 
@@ -424,6 +449,10 @@ function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseAndCoverBtn)
     local XTeam = require("XEntity/XTeam/XTeam")
     -- 不是xTeam或不是继承自xTeam的都不能操作这些队伍
     if not xRealTeam or (xRealTeam.__cname ~= "XTeam" and xRealTeam.Super == nil) or (xRealTeam.__cname ~= "XTeam" and not CheckClassSuper(xRealTeam, XTeam)) then
+        self.ForbiddenRealTeamOperate = true
+    end
+
+    if xRealTeam and xRealTeam:CheckHasRobotId() then
         self.ForbiddenRealTeamOperate = true
     end
 

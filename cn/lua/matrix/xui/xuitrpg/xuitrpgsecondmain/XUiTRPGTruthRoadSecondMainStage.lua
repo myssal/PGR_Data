@@ -4,6 +4,9 @@ function XUiTRPGTruthRoadSecondMainStage:Ctor(ui, rootUi, secondMainStageId, cli
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     XTool.InitUiObject(self)
+    if not self.PanelStagePass then
+        self.PanelStagePass = self.Transform:Find("TRPGStageParent/PanelStagePass")
+    end
 
     self.RootUi = rootUi
     self.SecondMainStageId = secondMainStageId
@@ -25,6 +28,10 @@ function XUiTRPGTruthRoadSecondMainStage:Refresh()
         local name = XTRPGConfigs.GetSecondMainStageName(secondMainStageId)
         self.TxtStageOrder.text = name
     end
+
+    local stageId = XTRPGConfigs.GetSecondMainStageStageId(secondMainStageId)
+    local isStagePass = XDataCenter.TRPGManager.IsStagePass(stageId)
+    self.PanelStagePass.gameObject:SetActiveEx(isStagePass)
 end
 
 function XUiTRPGTruthRoadSecondMainStage:OnClickBtnClick()

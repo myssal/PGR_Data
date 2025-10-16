@@ -5,6 +5,11 @@ local Base = require("Character/FightCharBase/XAFKCharBase")
 ---@class XCharTes1010 : XAFKCharBase
 local XCharTes1010 = XDlcScriptManager.RegCharScript(1010, "XCharTes1010", Base)
 
+function XCharTes1010:Init() --初始化
+    Base.Init(self)
+    self.Jishu = 0
+end
+
 ---@param dt number @ delta time 
 function XCharTes1010:Update(dt)
     Base.Update(self, dt)
@@ -21,11 +26,11 @@ end
 function XCharTes1010:InitEventCallBackRegister()
     Base.InitEventCallBackRegister(self)
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastSkillEvent
 end
 
-function XCharTes1010:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    Base.OnNpcCastSkillAfterEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes1010:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    Base.OnNpcCastActionAfterEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
     
     if launcherId ~= self._uuid then
         return
@@ -48,11 +53,18 @@ function XCharTes1010:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, ta
     if skillId == 101020 then --灼烧无人机
         self._proxy:ApplyMagic(self._uuid, targetId, 1010017, 1) --dot伤害
     end
-    
+
+    if skillId == 101013 then --寂灭灵灰强化效果
+        if self._proxy:CheckBuffByKind(self._uuid, 1010518) and self.Jishu < 4 then
+            self.Jishu = self.Jishu + 1
+        else
+            self._proxy:ApplyMagic(self._uuid, targetId, 1010520, 1) --删除强化效果
+        end
+    end
 end
 
-function XCharTes1010:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    Base.OnNpcCastSkillBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes1010:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    Base.OnNpcCastActionBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then
         return
     end
@@ -75,7 +87,7 @@ function XCharTes1010:FaceTargetSide()--看向侧面
 
     local pos = self._proxy:GetNpcOffsetPosition(self._uuid,targetPosition,euler,distance) --获取和目标一个偏移的位置，用来看向这个位置
 
-    self._proxy:SetNpcLookAtPosition(self._uuid,pos) --看向侧面
+    self._proxy:SetNpcFaceToPosition(self._uuid,pos) --看向侧面
 end--向侧面望去
 
 function XCharTes1010:GetRandomSuccess(maybe)--概率成功

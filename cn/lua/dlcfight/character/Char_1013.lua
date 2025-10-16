@@ -7,14 +7,36 @@ local XCharTes1013 = XDlcScriptManager.RegCharScript(1013, "XCharTes1013", Base)
 
 function XCharTes1013:Init() --初始化
     Base.Init(self)
-
     self._proxy:SetNpcAnimationLayer(self._uuid, 0)
-
+    self.Damage = 0
+    self.Cishu = 0
+    self.kaiguan = true
 end
 
 ---@param dt number @ delta time 
 function XCharTes1013:Update(dt)
     Base.Update(self, dt)
+
+    if not self._proxy:CheckBuffByKind(self._uuid, 1013216) then
+        return
+    end
+
+    local Target = self._proxy:GetFightTargetId(self._uuid) -- 获取战斗目标
+
+    if not self._proxy:CheckActorExist(Target) then --检测目标是否存活
+        return
+    end
+
+    local TargetHp = self._proxy:GetNpcAttribValue(Target,0) -- 检测当前敌方血量
+    local TargetHpMax = self._proxy:GetNpcAttribMaxValue(Target,0) --检测当前敌方最大血量
+    local TargetHpPercent = TargetHp / TargetHpMax -- 获取敌方血量百分比
+
+    if TargetHpPercent < 0.4 and self.kaiguan == true then
+        local Position = self._proxy:GetNpcPosition(Target)--获取目标位置
+        self.Damage = self.Damage * 100
+        self._proxy:DamageRelinkStandalone(self._uuid,Target,0,1013120,1,self.Damage,2,0,0,0)
+        self.kaiguan = false
+    end
 end
 
 ---@param eventType number
@@ -26,10 +48,11 @@ end
 function XCharTes1013:InitEventCallBackRegister()
     Base.InitEventCallBackRegister(self)
     --按需求解除注释进行注册
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
 end
 
-function XCharTes1013:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)--动画层根据对应技能切换
-    Base.OnNpcCastSkillBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes1013:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)--动画层根据对应技能切换
+    Base.OnNpcCastActionBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
 
     if launcherId ~= self._uuid then
         return
@@ -44,6 +67,11 @@ function XCharTes1013:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, t
     if skillId == 101327 then
         self:FaceTargetSide()
     end
+
+    if skillId == 101322 then
+        self.Cishu = self.Cishu + 1
+    end
+
 end
 
 
@@ -57,7 +85,31 @@ function XCharTes1013:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     if buffId == 1013209  then--火dot结算触发
         self:FireCheck()
     end
+
 end
+
+function XCharTes1013:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)  --当有Npc受到伤害时
+
+    if launcherId ~= self._uuid then
+        return
+    end
+
+    if not self._proxy:CheckBuffByKind(self._uuid, 1013216) then
+        return
+    end
+
+    if magicId ~= 1013115 then
+        return
+    end
+
+    if self.Cishu > 4 then
+        return
+    end
+
+    self.Damage = self.Damage + elementDamage
+
+end
+
 
 function XCharTes1013:FaceTargetSide()--看向侧面
     local own = self._uuid
@@ -71,7 +123,7 @@ function XCharTes1013:FaceTargetSide()--看向侧面
 
     local pos = self._proxy:GetNpcOffsetPosition(self._uuid,targetPosition,euler,distance) --获取和目标一个偏移的位置，用来看向这个位置
 
-    self._proxy:SetNpcLookAtPosition(self._uuid,pos) --看向侧面
+    self._proxy:SetNpcFaceToPosition(self._uuid,pos) --看向侧面
 end--向侧面望去
 
 

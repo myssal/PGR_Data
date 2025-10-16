@@ -133,7 +133,7 @@ function XTeamPrefab:CheckEquipIdConflict(equipId, targetPos)
     return curPos ~= targetPos, curPos, slot
 end
 
---- 更新指定位置的意识装备列表，并处理位置冲突与穿脱(这个接口目前专为意识预设穿戴使用)
+--- 更新指定位置的意识装备列表，并处理位置冲突与穿脱(这个接口目前专为意识预设套装穿戴使用)
 ---@param targetPos number 目标位置（self.CurrentPos 原本位置）
 ---@param equipList table slot->EquipId
 function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
@@ -178,7 +178,9 @@ function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
         end
 
         if isConflict then
-            self:SyncFullDataToServer()
+            self:SyncFullDataToServer(function ()
+                XUiManager.TipText("TeamPrefabEquipModifySuccess")
+            end)
         end
     end
 

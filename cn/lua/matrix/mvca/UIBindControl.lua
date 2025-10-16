@@ -1016,6 +1016,7 @@ local UIBindControl = {
     UiRaceMissionShop = ModuleId.XRace,
     UiRaceRank = ModuleId.XRace,
     UiRaceToastHall = ModuleId.XRace,
+    UiRaceObtain = ModuleId.XRace,
     --endregion
 
     -- #203409 多次尝试后, 还是写在这里最稳妥

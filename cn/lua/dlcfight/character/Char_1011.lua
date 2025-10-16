@@ -9,6 +9,8 @@ local XCharTes1011 = XDlcScriptManager.RegCharScript(1011, "XCharTes1011", Base)
 function XCharTes1011:InitEventCallBackRegister()
     Base.InitEventCallBackRegister(self)
     --按需求解除注释进行注册
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
+    self.kaiguan = true
 end
 
 function XCharTes1011:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -19,17 +21,25 @@ function XCharTes1011:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     end
 
     if buffId == 1011001  then--创建钩锁
-        self:CreatLink()  
-    end
-    
-    if buffId == 1011002 then--删除钩锁
-        self:RemoveLink()  
+        self:CreatLink()
     end
 
+    if buffId == 1011002 then--删除钩锁
+        self:RemoveLink()
+    end
+
+    if buffId == 1010584 then
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastAction(self._uuid, 101131)
+        self._proxy:AddTimerTask(0.5, function()--延迟0.5秒后，释放子弹
+            self._proxy:AbortAction(self._uuid, true)
+            self._proxy:CastAction(self._uuid, 101132)
+        end)
+    end
 end
 
-function XCharTes1011:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    Base.OnNpcCastSkillBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes1011:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    Base.OnNpcCastActionBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then
         return
     end
@@ -38,6 +48,29 @@ function XCharTes1011:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, t
         self:FaceTargetSide()
     end
     
+end
+
+function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)  --当有Npc受到伤害时
+    if targetId ~= self._uuid then
+        return
+    end
+
+    if self._proxy:CheckBuffByKind(self._uuid, 1010579) and self.kaiguan == true and self._proxy:CheckBuffByKind(self._uuid, 1010577) then
+        self.kaiguan = false
+        self._proxy:ApplyMagic(self._uuid, self._uuid,  10510701, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid,  1010583, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid,  1010586, 1)
+        self._proxy:AddTimerTask(10, function()--延迟10秒后，恢复CD
+            self.kaiguan = true
+        end)
+        if self._proxy:GetBuffStacks(self._uuid, 1010586) == 1 then
+            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010587, 1)
+        elseif self._proxy:GetBuffStacks(self._uuid, 1010586) == 2 then
+            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010588, 1)
+        elseif self._proxy:GetBuffStacks(self._uuid, 1010586) == 3 then
+            self._proxy:ApplyMagic(self._uuid, self._uuid,  1010589, 1)
+        end
+    end
 end
 
 function XCharTes1011:FaceTargetSide()--看向侧面
@@ -52,7 +85,7 @@ function XCharTes1011:FaceTargetSide()--看向侧面
     
     local pos = self._proxy:GetNpcOffsetPosition(self._uuid,targetPosition,euler,distance) --获取和目标一个偏移的位置，用来看向这个位置
     
-    self._proxy:SetNpcLookAtPosition(self._uuid,pos) --看向侧面
+    self._proxy:SetNpcFaceToPosition(self._uuid,pos) --看向侧面
 end--向侧面望去
 
 function XCharTes1011:CreatLink()  --创建链接

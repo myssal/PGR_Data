@@ -24,7 +24,7 @@ function XUiGridTheatre5Relic:Update(data)
         if self.PanelLock then
             self.PanelLock.gameObject:SetActiveEx(true)
         end
-        if self.TxtNum then
+        if self.TxtNum and data.Level then
             self.TxtNum.text = data.Level
         end
     end

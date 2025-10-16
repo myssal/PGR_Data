@@ -19,7 +19,7 @@ end
 function XUiTeamPrefabPopupRename:OnBtnNameSureClick()
     local str = self.InputField.text
     if string.IsNilOrEmpty(str) then
-        XUiManager.TipMsg("TeamPrefabWithoutName")
+        XUiManager.TipText("TeamPrefabWithoutName")
         return
     end
 

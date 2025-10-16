@@ -26,7 +26,7 @@ end
 --region EventCallBack
 function XBuffScript1015345:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCalcDamageAfter)
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
     self._proxy:RegisterEvent(EWorldEvent.NpcCalcCureAfter)
 end
 

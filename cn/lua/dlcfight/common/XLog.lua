@@ -1,7 +1,5 @@
 XLog = XLog or {}
 
-local IsDebugBuild = CS.XApplication.Debug
-
 local MAX_DEPTH = 15
 
 local Type = type
@@ -152,7 +150,7 @@ local Print = function(...)
 end
 
 XLog.Debug = function(...)
-    if not IsDebugBuild then
+    if not XMain.IsDebug then
         return
     end
     local content = Print(...)
@@ -164,7 +162,7 @@ XLog.Debug = function(...)
 end
 
 XLog.Warning = function(...)
-    if not IsDebugBuild then
+    if not XMain.IsDebug then
         return
     end
     local content = Print(...)

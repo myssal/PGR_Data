@@ -185,7 +185,7 @@ function XAiBengyue:Update(dt)
     --if self._skillCDTimer >= self._skillCDTime and self._proxy:CheckCanCastSkill(self._npcId) then
     --    local index = math.random(1, #self._skillList)
     --    local skillId = self._skillList[index]
-    --    self._proxy:CastSkill(self._npcId, skillId)
+    --    self._proxy:CastAction(self._npcId, skillId)
     --    --print("Bengyue Cast skill " .. tostring(skillId))
     --end
 
@@ -280,25 +280,25 @@ function XAiBengyue:Steering()
         --execute turn action
         for actionId, skillId in pairs(self._turnActionMap) do
             if self._turnActionId == actionId then
-                self._proxy:CastSkill(self._npcId, skillId)
+                self._proxy:CastAction(self._npcId, skillId)
                 break
             end
         end
 
         --if self._turnActionId == 310 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[3])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[3])
         --elseif self._turnActionId == 320 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[4])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[4])
         --elseif self._turnActionId == 311 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[5])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[5])
         --elseif self._turnActionId == 321 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[6])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[6])
         --elseif self._turnActionId == 312 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[7])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[7])
         --elseif self._turnActionId == 322 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[8])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[8])
         --elseif self._turnActionId == 330 then
-        --    self._proxy:CastSkill(self._npcId, self._turnSkillList[9])
+        --    self._proxy:CastAction(self._npcId, self._turnSkillList[9])
         --end
 
         self._turnActionId = 0

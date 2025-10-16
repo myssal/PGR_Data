@@ -29,7 +29,7 @@ function XBuffScript1010572:Update(dt)
         return
     end
     
-    self._proxy:LaunchMissile(self._uuid,target,self.bulletId,0)
+    self._proxy:LaunchMissile(self._uuid,target,self.bulletId,self.bulletId,0)
 
     -------------------------触发后要做的事--------------------------------------------------------------
     self.count = self.count - 1

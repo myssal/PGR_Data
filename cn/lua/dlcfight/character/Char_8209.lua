@@ -1,7 +1,7 @@
 ---@type XAFKCharBase
 local Base = require("Character/FightCharBase/XAFKCharBase")
 
----自走棋-解构囚徒
+---自走棋-0号代行者
 ---@class XCharTes8209 : XAFKCharBase
 local XCharTes8209 = XDlcScriptManager.RegCharScript(8209, "XCharTes8209", Base)
 
@@ -41,7 +41,7 @@ function XCharTes8209:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     end
     local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
     local SelfPos = self._proxy:GetNpcPosition(self._uuid) --获取自身位置
-    self._proxy:LaunchMissileFromPosToPos(target,82091121,SelfPos,SelfPos,1)--从目标位置向目标位置发特效
+    self._proxy:LaunchMissileFromPosToPos(target,82091121,82091121,SelfPos,SelfPos,1)--从目标位置向目标位置发特效
 end
 
 return XCharTes8209

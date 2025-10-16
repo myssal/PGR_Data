@@ -32,6 +32,7 @@ function XUiPanelMainLineExhibition:OnEnable()
     self:RefreshBriefAndDetailUiShow()
     self:RefreshBtnBookmark()
     self:RefreshBtnGoLastPassedChapter()
+    self:CheckLoadChapterPrefab()
     
     -- 新手提示，新手期间禁用拖拽和缩放
     local isNewable, tips = self:IsNewbie()
@@ -241,6 +242,18 @@ function XUiPanelMainLineExhibition:InitModuleList()
     end
 end
 
+function XUiPanelMainLineExhibition:GetModuleByModuleIndex(index)
+    return self.ModuleList[index]
+end
+
+function XUiPanelMainLineExhibition:GetModuleByModuleId(moduleId)
+    for _, module in pairs(self.ModuleList) do
+        if module.ModuleId == moduleId then
+            return module
+        end
+    end
+end
+
 -- 通过下标定位
 function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex)
     -- 设置锚点和缩放
@@ -288,11 +301,6 @@ end
 
 function XUiPanelMainLineExhibition:GetObject(name)
     return self[name]
-end
-
--- 刷新界面
-function XUiPanelMainLineExhibition:Refresh()
-
 end
 
 function XUiPanelMainLineExhibition:RefreshBriefAndDetailUiShow()

@@ -1,39 +1,94 @@
-local Base = require("Common/XFightBase")
+local Base = require("Buff/BuffBase/XBuffBase")
 
----@class XBuffScript1015800 : XFightBase
+---@class XBuffScript1015800 : XBuffBase
 local XBuffScript1015800 = XDlcScriptManager.RegBuffScript(1015800, "XBuffScript1015800", Base)
 
+local ConfigMagicIdDict = {
+    [1015800] = 1015801,
+    [1015802] = 1015803,
+    [1015804] = 1015805,
+    [1015806] = 1015807,
+    [1015808] = 1015809,
+    [1015810] = 1015811,
+    [1015812] = 1015813,
+    [1015814] = 1015815,
+    [1015816] = 1015817,
+    [1015818] = 1015819,
+    [1015820] = 1015821,
+    [1015822] = 1015823,
+    [1015824] = 1015825,
+    [1015826] = 1015827,
+    [1015828] = 1015829,
+    [1015830] = 1015831,
+    [1015832] = 1015833,
+    [1015834] = 1015835,
+    [1015836] = 1015837,
+    [1015838] = 1015839,
+    [1015962] = 1015963, --敌人血量低于20%时，自身造成伤害提升50%
+    [1015973] = 1015974, --自身生命百分比高于对方时，自身攻击力提升100%，并视为满足【敌人血量低于X%】的条件，触发相关效果。
+    --强化效果部分
+    [1016204] = 1016205,
+    [1016206] = 1016207,
+    [1016208] = 1016209,
+    [1016210] = 1016211,
+    [1016212] = 1016213,
+}
+local ConfigRuneIdDict = {
+    [1015800] = 20800,
+    [1015802] = 20802,
+    [1015804] = 20804,
+    [1015806] = 20806,
+    [1015808] = 20808,
+    [1015810] = 20810,
+    [1015812] = 20812,
+    [1015814] = 20814,
+    [1015816] = 20816,
+    [1015818] = 20818,
+    [1015820] = 20820,
+    [1015822] = 20822,
+    [1015824] = 20824,
+    [1015826] = 20826,
+    [1015828] = 20828,
+    [1015830] = 20830,
+    [1015832] = 20832,
+    [1015834] = 20834,
+    [1015836] = 20836,
+    [1015838] = 20838,
+    [1015962] = 20962, --敌人血量低于20%时，自身造成伤害提升50%
+    [1015973] = 20973, --自身生命百分比高于对方时，自身攻击力提升x%，并视为满足【敌人血量低于X%】的条件，触发相关效果。
+    --强化效果部分
+    [1016204] = 20806,
+    [1016206] = 20814,
+    [1016208] = 20822,
+    [1016210] = 20830,
+    [1016212] = 20838,
+}
 
---效果说明：敌人血量低于20%时，火伤增加30%
+--效果说明：处于【斩杀】状态时，获得增幅
 
 function XBuffScript1015800:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    self.magicId = 1015801
+    self.magicId = ConfigMagicIdDict[self._buffId]          --属性提升Buff
+    self.runeId = ConfigRuneIdDict[self._buffId]            --符纹ID赋值
     self.magicLevel = 1
-    self.hpRate = 40    --触发效果所需敌人生命百分比（斩杀线）
-
-    --Buff强化配置，效果说明：斩杀线提升
-    self.rateUpBuffId = 1015840         --标记Id
-    self.hpRateUp = 80                  --提升后的斩杀线
-    self.isRateUP = false
-
-    --Buff强化配置，效果说明：敌人生命提升至斩杀线以上时，增伤Buff不会立即删除，会在指定时间后后删除
-    self.durBuffId = 1015841            --标记Id
-    self.durTime = 5                    --持续时间
-    self.durTimer = 0                   --持续时间计时器
-
-    --Buff强化配置，效果说明：有此Buff时，当敌人生命低于指定值时，读取2级数值
-    self.enhanceBuffId = 1015842        --标记Id
-    self.hpRateEnhance = 10             --读取2级数值所需的敌人生命值百分比
+    self.signalId = 1015905     --【斩杀】状态标记，标记管理脚本见1015904
+    self.signalCtrlId = 1015904 --【斩杀】状态管理Buff
+    self.enhBuffIdDict = {
+        [1] = 1015842, --增强Buff[1]：带有【敌人血量低于X%】条件的所有触发效果提升100%
+        [2] = 1015962, --增强Buff[2]：敌人血量低于20%时，自身造成伤害提升50%
+    }
+    self.enhRuneIdDict = {
+        [1] = 20842, --增强Buff[1]：带有【敌人血量低于X%】条件的所有触发效果提升100%
+        [2] = 20962, --增强Buff[2]：敌人血量低于20%时，自身造成伤害提升50%
+    }
+    --Buff[1]强化配置，效果说明：有此Buff时，读取2级数值
     self.magicLevelEnhance = 2          --强化后的Buff等级
-    self.enhanceIsAdd = false
+    --Buff[2]强化配置
+    self.enhBuff2MagicId = { 1015970, 1015971, 1015972 }        --全属性伤害提升Buff
     ------------执行------------
-    self.runeId = self.magicId - 1015000 + 20000 - 1
-    self.runeIdRateUpBuff = self.rateUpBuffId - 1015000 + 20000
-    self.runeIdDurBuff = self.durBuffId - 1015000 + 20000
-    self.runeIdEnhanceBuff = self.enhanceBuffId - 1015000 + 20000
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self.signalCtrlId, 1)   --为自己添加【斩杀】管理Buff
 
 end
 
@@ -42,72 +97,49 @@ function XBuffScript1015800:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行------------
-    --如果有斩杀线提升的标记，则提高斩杀线
-    if self._proxy:CheckBuffByKind(self._uuid, self.rateUpBuffId) and not self.isRateUP then
-        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeIdRateUpBuff)
-        self.hpRate = self.hpRateUp
-        self.isRateUP = true
-    end
-
-    local targetId = self._proxy:GetFightTargetId(self._uuid)
-    if targetId == 0 then
-        return
-    end
-
-    local enemyHpRate = self._proxy:GetNpcAttribRate(targetId, ENpcAttrib.Life) * 100
-    local isEnhanceBuffActive = self._proxy:CheckBuffByKind(self._uuid, self.enhanceBuffId)
-    local isDurBuffActive = self._proxy:CheckBuffByKind(self._uuid, self.durBuffId)
-    local isBuffActive = self._proxy:CheckBuffByKind(self._uuid, self.magicId)
-
-    --有强化Buff，且敌人生命低于强化Buff规定的血量时
-    if enemyHpRate <= self.hpRateEnhance and isEnhanceBuffActive and isBuffActive and not self.enhanceIsAdd then
-        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeIdEnhanceBuff)
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevelEnhance)
-        self.enhanceIsAdd = true
-        self.durTimer = 0
-        return
-    end
-    --有强化Buff，敌人生命高于强化Buff规定的血量，但低于常规斩杀线时，将强化Buff删除
-    if enemyHpRate > self.hpRateEnhance and isEnhanceBuffActive and isBuffActive and self.enhanceIsAdd then
-        self._proxy:RemoveBuff(self._uuid, self.magicId)
-        self.enhanceIsAdd = false
-    end
-    --没有强化Buff，敌人生命低于常规斩杀线时
-    if enemyHpRate <= self.hpRate and (not isBuffActive) then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
-        self.durTimer = 0
-        return
-    end
-    --敌人生命高于斩杀线时，删除Buff
-    if enemyHpRate > self.hpRate and isBuffActive then
-        --如果有延迟删除的Buff，判断下是否满足计时器条件，没有就直接删除
-        if isDurBuffActive then
-            self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeIdDurBuff)
-            if self.durTimer == 0 then
-                self.durTimer = self._proxy:GetNpcTime(self._uuid) + self.durTime
-            elseif self._proxy:GetNpcTime(self._uuid) >= self.durTimer then
-                self._proxy:RemoveBuff(self._uuid, self.magicId)
-            end
-        else
-            self._proxy:RemoveBuff(self._uuid, self.magicId)
-        end
-    end
-
 end
 
 --region EventCallBack
 function XBuffScript1015800:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
+    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
 end
 
 function XBuffScript1015800:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    if npcUUID == self._uuid and buffId == self.battleStartBuffId then
-        --战斗开始时且给runeId重新赋值
-        self.runeId = self.magicId - 1015000 + 20000 - 1
+    --如果自身添加了【斩杀】标记，则触发效果，并打开宝珠特效
+    if self._uuid == npcUUID and self.signalId == buffId then
+        --如果有增强Buff[1]存在，则将Buff等级替换为2级
+        local isEnhBuff1Active = self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[1])
+        local isEnhBuff2Active = self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2])
+        if isEnhBuff1Active then
+            self.magicLevel = self.magicLevelEnhance
+        end
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
+        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        --如果有增强Buff[2]存在，则额外添加效果
+        if isEnhBuff2Active then
+            for _, magicId in ipairs(self.enhBuff2MagicId) do
+                self._proxy:ApplyMagic(self._uuid, self._uuid, magicId, self.magicLevel)
+            end
+        end
     end
 end
 
+function XBuffScript1015800:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    --如果自身移除了【斩杀】标记，则删除效果，并关闭宝珠特效
+    if self._uuid == npcUUID and self.signalId == buffId then
+        self._proxy:RemoveBuff(self._uuid, self.magicId)
+        self._proxy:SetAutoChessGemData(self._uuid, self.runeId, 0, 0)
+        --如果有增强Buff[2]存在，则额外删除效果
+        local isEnhBuff2Active = self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2])
+        if isEnhBuff2Active then
+            for _, magicId in ipairs(self.enhBuff2MagicId) do
+                self._proxy:RemoveBuff(self._uuid, magicId)
+            end
+        end
+    end
+end
 --endregion
 
 ---@param eventType number

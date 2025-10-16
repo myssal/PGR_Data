@@ -153,4 +153,9 @@ function XUiPanelTeamPrefabEquip:OnBtnAwarenessSuitClick()
     end, true)
 end
 
+-- 替换原OnPanelAdditionClick方法中的打开逻辑
+function XUiPanelTeamPrefabEquip:OnPanelAdditionClick()
+    XLuaUiManager.Open("UiTeamPrefabEquipSuitSkill", self.TeamPrefab, self.CurrentPos)
+end
+
 return XUiPanelTeamPrefabEquip

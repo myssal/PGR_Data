@@ -30,10 +30,10 @@ end
 --region EventCallBack
 function XBuffScript1015122:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastSkillEvent
 end
 
-function XBuffScript1015122:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015122:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --进入疲劳后，如果自己释放技能时获得增伤，如果是普攻则删除增伤
     --判断是否已经完成全部增伤逻辑（增伤3次，并且已清除最后一次增伤）
     if self.triggerFinish then
@@ -48,7 +48,7 @@ function XBuffScript1015122:OnNpcCastSkillAfterEvent(skillId, launcherId, target
         return
     end
     --获取当前技能类型、释放次数、是否为最后一次、是否有增伤Buff
-    local skillType = self._proxy:GetSkillType(skillId)
+    local skillType = self._proxy:GetActionType(skillId)
     local isSkillCountOk = self.skillCount < self.skillTargetCount
     local isLastRemove = self.skillCount == self.skillTargetCount
     local isBuffActive = self._proxy:CheckBuffByKind(self._uuid,self.magicId)

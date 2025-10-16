@@ -1,11 +1,7 @@
 XMain = XMain or {}
 XMain.IsClient = CS.StatusSyncFight.XFightConfig.IsClient
--- 战斗lua在客户端和服务端都有运行，故需判断IsClient
-if XMain.IsClient then
-    XMain.IsDebug = CS.XRemoteConfig.Debug --XRemoteConfig是客户端的类
-else
-    XMain.IsDebug = true --服务端默认开启
-end
+-- 战斗lua在客户端和服务端都有运行,由XFightConfig.IsDebug自行处理好客户端和服务端的不同情况
+XMain.IsDebug = CS.StatusSyncFight.XFightConfig.IsDebug
 
 local lockGMeta = {
     __newindex = function(t, k)

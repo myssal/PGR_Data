@@ -24,7 +24,7 @@ function XNpcInteraction:Ctor(proxy, npc, interactionSkillId)
     end
 
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractStart)
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
 
     self._initialized = true
 end
@@ -54,7 +54,7 @@ function XNpcInteraction:HandleEvent(eventType, eventArgs)
         XLog.Debug(string.format("XNpcInteraction.HandleEvent, launcher:%d try start interact", self._npc))
         local interactArgs = eventArgs
         self:StartInteraction(interactArgs.TargetId, interactArgs.Time, interactArgs.Type)
-    elseif eventType == EWorldEvent.NpcExitSkill and eventArgs.LauncherId == self._npc then
+    elseif eventType == EWorldEvent.NpcExitAction and eventArgs.LauncherId == self._npc then
         self:OnSkillExit(eventArgs)
     end
 end
@@ -95,7 +95,7 @@ function XNpcInteraction:StartInteraction(targetId, time, type, callback)
     self._type = type
     self._callback = callback
 
-    if self._proxy:CastSkill(self._npc, self._interactionSkillId) then
+    if self._proxy:CastAction(self._npc, self._interactionSkillId) then
         self._interacting = true
     else
         XLog.Debug(string.format("XNpcInteraction.StartInteraction, launcher:%d cast interact skill failed!", self._npc))
@@ -122,7 +122,7 @@ end
 
 function XNpcInteraction:CompleteInteraction()
     self._interacting = false --提前修改交互中状态，避免下面的结束打断技能被OnSkillExit误认为交互技能中断
-    self._proxy:AbortSkill(self._npc, true) --打断交互技能（交互技能统一配置了非常长的CastTime，以保证交互过程中不会被移动打断，故此处需要强制打断。
+    self._proxy:AbortAction(self._npc, true) --打断交互技能（交互技能统一配置了非常长的CastTime，以保证交互过程中不会被移动打断，故此处需要强制打断。
     --self._proxy:SetInteractionProgress(0) --交互进度清零
     --self._proxy:NpcInteractComplete(self._npc) --发送消息给关卡逻辑
 

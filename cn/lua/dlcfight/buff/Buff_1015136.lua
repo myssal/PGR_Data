@@ -32,11 +32,11 @@ end
 --region EventCallBack
 function XBuffScript1015136:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastSkillEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
 end
 
-function XBuffScript1015136:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015136:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --技能释放时进行计数，当满足计数时，判断释放的技能是否为射击技能，是则触发效果，不是则返回
     --判断是否是自己放技能
     if launcherId ~= self._uuid then
@@ -44,8 +44,8 @@ function XBuffScript1015136:OnNpcCastSkillAfterEvent(skillId, launcherId, target
     end
 
     --判断技能类型
-    local isStartSkill = self._proxy:GetSkillType(skillId) == self.startSkillType
-    local isNormalAtk = self._proxy:GetSkillType(skillId) == self.normalAtkType
+    local isStartSkill = self._proxy:GetActionType(skillId) == self.startSkillType
+    local isNormalAtk = self._proxy:GetActionType(skillId) == self.normalAtkType
     --如果是普攻、起手技能，且身上已有Buff了，说明前一个技能已经吃到加成收益了，删除Buff
     if (isStartSkill or isNormalAtk) and self._proxy:CheckBuffByKind(self._uuid, self.magicId) then
         self._proxy:RemoveBuff(self._uuid, self.magicId)
@@ -77,7 +77,7 @@ function XBuffScript1015136:OnNpcDamageEvent(launcherId, targetId, magicId, kind
         return
     end
     --发射击退子弹
-    self._proxy:LaunchMissile(launcherId, targetId, self.missileId, self.missileLevel)
+    self._proxy:LaunchMissile(launcherId, targetId, self.missileId, self.missileId,self.missileLevel)
     XLog.Warning("1015136：发射子弹")
     self.trigger = false
 end

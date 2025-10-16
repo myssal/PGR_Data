@@ -349,7 +349,7 @@ ObjectiveDefines.Obj30050111 = {
     end,
 
     EnterFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500026),false)----关闭工作人员的交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500026),false)----关闭工作人员的交互
         proxy:FinishQuestObjectiveScriptEnter()
     end,
 
@@ -375,8 +375,8 @@ ObjectiveDefines.Obj30050112  = {
     ExitFunc = function(obj, proxy)
         local pos = { x = 243.7, y = 36.6, z = 322.7 }
         proxy:RequestEnterInstLevel(4025, pos)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500028),false)----关闭库洛洛的交互
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500026),true)----开启工作人员的交互，作为关卡入口
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500028),false)----关闭库洛洛的交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500026),true)----开启工作人员的交互，作为关卡入口
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -406,8 +406,8 @@ ObjectiveDefines.Obj300501121= {
     end,
 
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500026),false)----关闭工作人员的交互
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500028),true)----关闭库洛洛的交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500026),false)----关闭工作人员的交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500028),true)----关闭库洛洛的交互
         proxy:FinishQuestObjectiveScriptExit(300501121)
     end,
 }

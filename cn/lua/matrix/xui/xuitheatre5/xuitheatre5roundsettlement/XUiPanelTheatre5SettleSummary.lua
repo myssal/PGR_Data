@@ -1,4 +1,5 @@
 --- 回合结算统计数据显示
+---@field Parent XUiTheatre5RoundSettlement
 ---@class XUiPanelTheatre5SettleSummary: XUiNode
 ---@field protected _Control XTheatre5Control
 local XUiPanelTheatre5SettleSummary = XClass(XUiNode, 'XUiPanelTheatre5SettleSummary')
@@ -12,7 +13,8 @@ local ViewSideEnum = {
     Enemy = 2, -- 查看敌人的统计数据
 }
 
-function XUiPanelTheatre5SettleSummary:OnStart(summaryData)
+function XUiPanelTheatre5SettleSummary:OnStart(resultData, summaryData)
+    self.ResultData = resultData
     self.SummaryData = summaryData
 
     ---@type XPool
@@ -53,6 +55,12 @@ function XUiPanelTheatre5SettleSummary:RefreshAllShow()
     self.BtnChange:SetNameByGroup(0, self._Control:GetClientConfigRoundSettleSummaryChangeLabel(self.ViewSide == ViewSideEnum.Self))
     self:RefreshRunesShow()
     self:RefreshSkillShow()
+
+    if self.ViewSide == ViewSideEnum.Self then
+        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.SelfData)
+    else
+        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData)
+    end
 end
 
 ---- 刷新宝珠列表

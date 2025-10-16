@@ -154,7 +154,7 @@ XPartnerManagerCreator = function()
             curPartnerEntity:GetTemplateId() == entity:GetTemplateId() and
             not partnerInPrefab[entity:GetId()]
 
-            if IsCanEat then
+            if IsCanEat and not XDataCenter.TeamManager.CheckPartnerIdIsInTeamPrefab(entity:GetId()) then
                 table.insert(qualityUpDataList, entity)
             end
         end

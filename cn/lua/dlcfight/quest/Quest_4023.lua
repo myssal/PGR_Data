@@ -62,7 +62,7 @@ ObjectiveDefines.Obj40230102 = {
     Type = EQuestObjectiveType.DramaPlayFinish,
     Args = {
         LevelId = 4023,
-        DramaName = "Drama_1001_005",
+        DramaName = "Drama_1001_041",
     },
     ---@param obj QuestObjective40230102
     ---@param proxy XDlcCSharpFuncs
@@ -74,6 +74,29 @@ ObjectiveDefines.Obj40230102 = {
     HandleEventFunc = function(obj, proxy, eventType, eventArgs)
     end,
     ---@param obj QuestObjective40230102
+    ---@param proxy XDlcCSharpFuncs
+    ExitFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptExit()
+    end,
+}
+---@class QuestObjective40230103 : Quest4023Objective
+ObjectiveDefines.Obj40230103 = {
+    Id = 40230103,
+    Type = EQuestObjectiveType.DramaPlayFinish,
+    Args = {
+        LevelId = 4023,
+        DramaName = "Drama_1001_042",
+    },
+    ---@param obj QuestObjective40230103
+    ---@param proxy XDlcCSharpFuncs
+    EnterFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective40230103
+    ---@param proxy XDlcCSharpFuncs
+    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
+    end,
+    ---@param obj QuestObjective40230103
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         proxy:FinishInstLevel() --标记当前副本关卡完成

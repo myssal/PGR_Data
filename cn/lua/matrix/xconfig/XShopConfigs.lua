@@ -53,7 +53,7 @@ function XShopConfigs.Init()
     ShowTypeTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_SHOWTYPE, XTable.XTableShopShowType, "Id")
     ShopBuyLimitLabel = XTableManager.ReadByIntKey(TABLE_SHOP_BUY_LIMIT_LABEL, XTable.XTableShopBuyLimitLabel, "ClockId")
     CostHintTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_COST_HINT, XTable.XTableCostHint, "Id")
-    GoodsBuyPriorityDescTemplate = XTableManager.ReadByIntKey(TABLE_GOODS_BUY_PRIORITY_DESC, XTable.XTableCostHint, "Id")
+    GoodsBuyPriorityDescTemplate = XTableManager.ReadByIntKey(TABLE_GOODS_BUY_PRIORITY_DESC, XTable.XTableGoodsBuyPriorityDesc, "Id")
 end
 
 function XShopConfigs.GetShopGroupTemplate()

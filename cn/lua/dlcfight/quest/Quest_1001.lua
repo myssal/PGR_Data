@@ -70,7 +70,7 @@ ObjectiveDefines.Obj10010102 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 18.43, y = 1.63, z = 17.55 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010102
     ---@param proxy XDlcCSharpFuncs
@@ -299,31 +299,31 @@ ObjectiveDefines.Obj10010108 = {
     end,
 }
 --69.关闭叙事UI的判断
----@class QuestObjective10010169 : Quest1001Objective
-ObjectiveDefines.obj10010169 = {
-    Id = 10010169,
+---@class QuestObjective10010171 : Quest1001Objective
+ObjectiveDefines.obj10010171 = {
+    Id = 10010171,
     Type = EQuestObjectiveType.UiClosed,
     Args = {
         LevelId = 4003,
         IntParams = { 1 },
         UiName = "UiBigWorldNarrative"
     },
-    ---@param obj QuestObjective10010169
+    ---@param obj QuestObjective10010171
     ---@param proxy StatusSyncFight.XFightScriptProxy
     InitFunc = function(obj, proxy)
 
     end,
-    ---@param obj QuestObjective10010169
+    ---@param obj QuestObjective10010171
     ---@param proxy StatusSyncFight.XFightScriptProxy
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective10010169
+    ---@param obj QuestObjective10010171
     ---@param proxy StatusSyncFight.XFightScriptProxy
     HandleEventFunc = function(obj, proxy, eventType, eventArgs)
 
     end,
-    ---@param obj QuestObjective10010169
+    ---@param obj QuestObjective10010171
     ---@param proxy StatusSyncFight.XFightScriptProxy
     ExitFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptExit()
@@ -345,7 +345,7 @@ ObjectiveDefines.Obj10010109 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 10, y = 1.44, z = 15.84 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 3,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010109
     ---@param proxy XDlcCSharpFuncs
@@ -377,7 +377,7 @@ ObjectiveDefines.Obj10010110 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 532.99, y = 145.97, z = 1323.71 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010110
     ---@param proxy XDlcCSharpFuncs
@@ -397,7 +397,7 @@ ObjectiveDefines.Obj10010111 = {
     Type = EQuestObjectiveType.DramaPlayFinish,
     Args = {
         LevelId = 4001,
-        DramaName = "Drama_1001_010",
+        DramaName = "Drama_1001_002",
     },
     ---@param obj QuestObjective10010111
     ---@param proxy XDlcCSharpFuncs
@@ -413,7 +413,7 @@ ObjectiveDefines.Obj10010111 = {
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
         --XScriptTool.DoTeleportNpcPosAndRotWithBlackScreen(proxy, uuid4, { x = 672.39, y = 167.99, z = 1158.134 }, { x = 0, y = 90, z = 0 }, 0.1)
-        proxy:SetNpcPosition(uuid4, { x = 672.39, y = 167.99, z = 1158.134 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 672.39, y = 167.99, z = 1158.134 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -433,7 +433,7 @@ ObjectiveDefines.Obj10010112 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 673.11, y = 167.99, z = 1144.161 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010112
     ---@param proxy XDlcCSharpFuncs
@@ -542,7 +542,7 @@ ObjectiveDefines.Obj10010116 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 677.2227, y = 167.9902, z = 1124.703 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010116
     ---@param proxy XDlcCSharpFuncs
@@ -571,7 +571,7 @@ ObjectiveDefines.Obj10010117 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 675.2095, y = 160.7298, z = 1133.489 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010117
     ---@param proxy XDlcCSharpFuncs
@@ -606,7 +606,7 @@ ObjectiveDefines.Obj10010118 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 541.0229, y = 168.5649, z = 1183.6 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 541.0229, y = 168.5649, z = 1183.6 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -626,7 +626,7 @@ ObjectiveDefines.Obj10010119 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 559.38, y = 169.44, z = 1175.57 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010119
     ---@param proxy XDlcCSharpFuncs
@@ -679,7 +679,7 @@ ObjectiveDefines.Obj10010121 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 567.44, y = 168.56, z = 1204.32 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010121
     ---@param proxy XDlcCSharpFuncs
@@ -715,7 +715,7 @@ ObjectiveDefines.Obj10010122 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -735,7 +735,7 @@ ObjectiveDefines.Obj10010123 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 18.43, y = 1.63, z = 17.55 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010123
     ---@param proxy XDlcCSharpFuncs
@@ -871,6 +871,26 @@ ObjectiveDefines.Obj10010127 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
+--69.播放B1级动画：分析情况
+---@class QuestObjective10010169: Quest1001Objective
+ObjectiveDefines.obj10010169 = {
+    Id = 10010169,
+    Type = EQuestObjectiveType.DramaPlayFinish,
+    Args = {
+        LevelId = 4003,
+        DramaName = "Drama_1001_038",
+    },
+    ---@param obj QuestObjective10010169
+    ---@param proxy XDlcCSharpFuncs
+    EnterFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective10010169
+    ---@param proxy XDlcCSharpFuncs
+    ExitFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptExit()
+    end,
+}
 --28通过交互台发送短信
 ---@class QuestObjective10010128 : Quest1001Objective
 ObjectiveDefines.Obj10010128 = {
@@ -939,45 +959,6 @@ ObjectiveDefines.Obj10010129 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
---30.阅读循环的新闻周刊
----@class QuestObjective10010130 : Quest1001Objective
-ObjectiveDefines.Obj10010130 = {
-    Id = 10010130,
-    Type = EQuestObjectiveType.InteractComplete,
-    Args = {
-        LevelId = 4003,
-        TraceActorArgs = {
-            {
-                TargetType = ETargetActorType.SceneObject,
-                PlaceId = 400004,
-                DisplayOffset = { x = 0, y = 0.5, z = 0 },
-                ShowEffect = false,
-                ForceMapPinActive = false,
-            },
-        },
-        TargetArgs = {
-            [ETargetActorType.SceneObject] = {
-                [400004] = 0,--阅读循环的新闻周刊
-            },
-        },
-    },
-    ---@param obj QuestObjective10010130
-    InitFunc = function(obj)
-        obj.soRabbitCakeP1ID = 400004
-    end,
-    ---@param obj QuestObjective10010130
-    ---@param proxy XDlcCSharpFuncs
-    EnterFunc = function(obj, proxy)
-        proxy:LoadSceneObject(obj.soRabbitCakeP1ID)
-        proxy:FinishQuestObjectiveScriptEnter()
-    end,
-    ---@param obj QuestObjective10010130
-    ---@param proxy XDlcCSharpFuncs
-    ExitFunc = function(obj, proxy)
-        proxy:UnloadSceneObject(obj.soRabbitCakeP1ID)
-        proxy:FinishQuestObjectiveScriptExit()
-    end,
-}
 --31.前往时序广场和露西亚见面
 ---@class QuestObjective10010131 : Quest1001Objective
 ObjectiveDefines.Obj10010131 = {
@@ -994,7 +975,7 @@ ObjectiveDefines.Obj10010131 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 532.99, y = 145.97, z = 1323.71 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010131
     ---@param proxy XDlcCSharpFuncs
@@ -1029,7 +1010,7 @@ ObjectiveDefines.Obj10010132 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 667.81, y = 156.22, z = 1210.64 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 667.81, y = 156.22, z = 1210.64 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1042,14 +1023,14 @@ ObjectiveDefines.Obj10010133 = {
         LevelId = 4001,
         TracePosArgs = {
             {
-                Position = { x = 690.98, y = 157.46, z = 1215.45 },                 -- 目标位置（初始为空，后续需要赋值）
+                Position = { x = 681.76, y = 156.22, z = 1221.01 },                 -- 目标位置（初始为空，后续需要赋值）
                 DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
                 ShowEffect = false,                      -- 是否显示特效
                 ForceMapPinActive = false,               -- 是否强制激活地图标记
             },                                           -- 这里加上逗号，方便后续扩展
         },
-        TargetPosition = { x = 690.98, y = 157.46, z = 1215.45 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        TargetPosition = { x = 681.76, y = 156.22, z = 1221.01 },                   -- 后续替换为摆放点坐标
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010133
     ---@param proxy XDlcCSharpFuncs
@@ -1128,7 +1109,7 @@ ObjectiveDefines.Obj10010136 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 536.53, y = 168.56, z = 1174.5 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 536.53, y = 168.56, z = 1174.5 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1148,7 +1129,7 @@ ObjectiveDefines.Obj10010137 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 559.38, y = 169.44, z = 1175.57 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010137
     ---@param proxy XDlcCSharpFuncs
@@ -1183,7 +1164,7 @@ ObjectiveDefines.Obj10010138 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 677.32, y = 167.99, z = 1139.9 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 677.32, y = 167.99, z = 1139.9 }, false)
         --XScriptTool.DoTeleportNpcPosAndRotWithBlackScreen(proxy, uuid4, { x = 677.32, y = 167.99, z = 1139.9 }, { x = 0, y = 90, z = 0 })
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -1197,14 +1178,14 @@ ObjectiveDefines.Obj10010139 = {
         LevelId = 4001,
         TracePosArgs = {
             {
-                Position = { x = 678.46, y = 167.99, z = 1129.56 },                 -- 目标位置（初始为空，后续需要赋值）
+                Position = { x = 657.03, y = 160.35, z = 1136.99 },                 -- 目标位置（初始为空，后续需要赋值）
                 DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
                 ShowEffect = false,                      -- 是否显示特效
                 ForceMapPinActive = false,               -- 是否强制激活地图标记
             },                                           -- 这里加上逗号，方便后续扩展
         },
-        TargetPosition = { x = 678.46, y = 167.99, z = 1129.56 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        TargetPosition = { x = 657.03, y = 160.35, z = 1136.99 },                   -- 后续替换为摆放点坐标
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010139
     ---@param proxy XDlcCSharpFuncs
@@ -1239,7 +1220,7 @@ ObjectiveDefines.Obj10010140 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 664.22, y = 192.28, z = 1207.28 }, false)
+        proxy:SetNpcPosition(uuid4, { x = 669.81, y = 167.99, z = 1158.3 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1259,14 +1240,38 @@ ObjectiveDefines.Obj10010141 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 683.76, y = 192.60, z = 1207.20 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010141
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective10010139
+    ---@param obj QuestObjective10010141
+    ---@param proxy XDlcCSharpFuncs
+    ExitFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptExit()
+    end,
+}
+--70.B1级指挥官和露西亚调酒
+---@class QuestObjective10010170: Quest1001Objective
+ObjectiveDefines.Obj10010170 = {
+    Id = 10010170,
+    Type = EQuestObjectiveType.DramaPlayFinish,
+    Args = {
+        LevelId = 4001,
+        DramaName = "Drama_1001_045",
+    },
+    ---@param obj QuestObjective10010170
+    ---@param proxy XDlcCSharpFuncs
+    EnterFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective10010170
+    ---@param proxy XDlcCSharpFuncs
+    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
+    end,
+    ---@param obj QuestObjective10010170
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptExit()
@@ -1293,9 +1298,9 @@ ObjectiveDefines.Obj10010142 = {
     ---@param obj QuestObjective10010142
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
-        local pos = { x = 11.925, y = 1.646, z = 13.30518 }
+        --local uuid4 = proxy:GetLocalPlayerNpcId()
+        --proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
+        local pos = { x = 12.58, y = 1.144, z = 13.27 }
         proxy:SwitchLevel(4003, pos)
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -1309,14 +1314,14 @@ ObjectiveDefines.Obj10010143 = {
         LevelId = 4003,
         TracePosArgs = {
             {
-                Position = { x = 18.43, y = 1.63, z = 17.55 },                 -- 目标位置（初始为空，后续需要赋值）
+                Position = { x = 12.58, y = 1.144, z = 13.27 },                 -- 目标位置（初始为空，后续需要赋值）
                 DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
                 ShowEffect = false,                      -- 是否显示特效
                 ForceMapPinActive = false,               -- 是否强制激活地图标记
             },                                           -- 这里加上逗号，方便后续扩展
         },
-        TargetPosition = { x = 18.43, y = 1.63, z = 17.55 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        TargetPosition = { x = 12.58, y = 1.144, z = 13.27 },                   -- 后续替换为摆放点坐标
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010143
     ---@param proxy XDlcCSharpFuncs
@@ -1408,7 +1413,7 @@ ObjectiveDefines.Obj10010146 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 14.43, y = 0.76, z = 21.13 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010146
     ---@param proxy XDlcCSharpFuncs
@@ -1529,7 +1534,7 @@ ObjectiveDefines.Obj10010150 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 532.99, y = 145.97, z = 1323.71 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010149
     ---@param proxy XDlcCSharpFuncs
@@ -1568,7 +1573,7 @@ ObjectiveDefines.Obj10010151 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 672.39, y = 167.99, z = 1158.134 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 672.39, y = 167.99, z = 1158.134 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1588,7 +1593,7 @@ ObjectiveDefines.Obj10010152 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 673.11, y = 167.99, z = 1144.161 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010152
     ---@param proxy XDlcCSharpFuncs
@@ -1676,8 +1681,7 @@ ObjectiveDefines.Obj10010155 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        --XScriptTool.DoTeleportNpcPosAndRotWithBlackScreen(proxy, uuid4, {  x = 623.18, y = 157.40, z = 1285.23 }, { x = 0, y = 39.83, z = 0 })
-        proxy:SetNpcPosition(uuid4, {  x = 623.18, y = 157.40, z = 1285.23 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 637.52, y = 192.28, z = 1267.38 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1697,7 +1701,7 @@ ObjectiveDefines.Obj10010156 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 635.13, y = 156.99, z = 1298.24 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010156
     ---@param proxy XDlcCSharpFuncs
@@ -1732,7 +1736,7 @@ ObjectiveDefines.Obj10010157 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         local uuid4 = proxy:GetLocalPlayerNpcId()
-        proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
+        --proxy:SetNpcPosition(uuid4, { x = 551.37, y = 144.56, z = 1385.23 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1752,7 +1756,7 @@ ObjectiveDefines.Obj10010158 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 18.43, y = 1.63, z = 17.55 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 5,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010158
     ---@param proxy XDlcCSharpFuncs
@@ -1781,7 +1785,7 @@ ObjectiveDefines.Obj10010159 = {
             },                                           -- 这里加上逗号，方便后续扩展
         },
         TargetPosition = { x = 12.87, y = 0.76, z = 21.13 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 3,                             -- 到达锚点1.5米范围内
+        ReachDistance = 15,                             -- 到达锚点1.5米范围内
     },
     ---@param obj QuestObjective10010159
     ---@param proxy XDlcCSharpFuncs
@@ -1879,14 +1883,12 @@ ObjectiveDefines.Obj10010163 = {
     },
     ---@param obj QuestObjective10010163
     InitFunc = function(obj)
-        obj.soRabbitCakeP13ID = 400009
         obj.soRabbitCakeP12ID = 400008
     end,
     ---@param obj QuestObjective10010163
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
-        proxy:LoadSceneObject(obj.soRabbitCakeP13ID)
     end,
     ---@param obj QuestObjective10010163
     ---@param proxy XDlcCSharpFuncs
@@ -1899,36 +1901,7 @@ ObjectiveDefines.Obj10010163 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
---64.前往照片墙找到露西亚
----@class QuestObjective10010164 : Quest1001Objective
-ObjectiveDefines.Obj10010164 = {
-    Id = 10010164,
-    Type = EQuestObjectiveType.ReachTargetPosition,
-    Args = {
-        LevelId = 4003,
-        TracePosArgs = {
-            {
-                Position = { x = 9.50, y = 0.76, z = 20.50 },                 -- 目标位置（初始为空，后续需要赋值）
-                DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
-                ShowEffect = false,                      -- 是否显示特效
-                ForceMapPinActive = false,               -- 是否强制激活地图标记
-            },                                           -- 这里加上逗号，方便后续扩展
-        },
-        TargetPosition = { x = 9.50, y = 0.76, z = 20.50 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 3,                             -- 到达锚点1.5米范围内
-    },
-    ---@param obj QuestObjective10010164
-    ---@param proxy XDlcCSharpFuncs
-    EnterFunc = function(obj, proxy)
-        proxy:FinishQuestObjectiveScriptEnter()
-    end,
-    ---@param obj QuestObjective10010164
-    ---@param proxy XDlcCSharpFuncs
-    ExitFunc = function(obj, proxy)
-        proxy:FinishQuestObjectiveScriptExit()
-    end,
-}
---65.播放A1级动画：后日谈，重新回到约会场景
+--65.播放B1级动画：后日谈，指挥官和露西亚选照片
 ---@class QuestObjective10010165 : Quest1001Objective
 ObjectiveDefines.Obj10010165 = {
     Id = 10010165,
@@ -1949,61 +1922,66 @@ ObjectiveDefines.Obj10010165 = {
     ---@param obj QuestObjective10010165
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:RequestEnterInstLevel(4024, { x = 103.658, y = 143.8307, z = 121.5215 } )
+        local uuid4 = proxy:GetLocalPlayerNpcId()
+        proxy:SetNpcPosition(uuid4, { x =11.16, y = 1.44, z = 13.32 }, false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
---66.通过装置进入心跳回忆副本
----@class QuestObjective10010166 : Quest1001Objective
-ObjectiveDefines.Obj10010166 = {
-    Id = 10010166,
-    Type = EQuestObjectiveType.InstanceComplete,
-    Args = {
-        LevelId = 4003,
-        TraceActorArgs = {
-            {
-                TargetType = ETargetActorType.SceneObject,
-                PlaceId = 400009, ----入口
-                DisplayOffset = { x = 0, y = 0.5, z = 0 },
-                ShowEffect = false,
-                ForceMapPinActive = false,
-            },
-        },
-        InstLevelId = 4024,
-        Count = 1,
-    },
-}
---67.任务结束
----@class QuestObjective10010167 : Quest1001Objective
-ObjectiveDefines.Obj10010167 = {
-    Id = 10010167,
+--64.前往照片墙找到露西亚
+---@class QuestObjective10010164 : Quest1001Objective
+ObjectiveDefines.Obj10010164 = {
+    Id = 10010164,
     Type = EQuestObjectiveType.ReachTargetPosition,
     Args = {
         LevelId = 4003,
         TracePosArgs = {
             {
-                Position = { x = 12.87, y = 0.76, z = 21.13 },                 -- 目标位置（初始为空，后续需要赋值）
+                Position = { x = 9.50, y = 0.76, z = 20.50 },                 -- 目标位置（初始为空，后续需要赋值）
                 DisplayOffset = { x = 0, y = 0.5, z = 0 }, -- 显示偏移量
                 ShowEffect = false,                      -- 是否显示特效
                 ForceMapPinActive = false,               -- 是否强制激活地图标记
             },                                           -- 这里加上逗号，方便后续扩展
         },
-        TargetPosition = { x = 12.87, y = 0.76, z = 21.13 },                   -- 后续替换为摆放点坐标
-        ReachDistance = 20,                             -- 到达锚点1.5米范围内
+        TargetPosition = { x = 9.50, y = 0.76, z = 20.50 },                   -- 后续替换为摆放点坐标
+        ReachDistance = 10,                             -- 到达锚点1.5米范围内
     },
-    ---@param obj QuestObjective10010167
-    InitFunc = function(obj)
-        obj.soRabbitCakeP5ID = 400009
-    end,
-    ---@param obj QuestObjective10010167
+    ---@param obj QuestObjective10010164
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective10010167
+    ---@param obj QuestObjective10010164
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:UnloadSceneObject(obj.soRabbitCakeP5ID)
+        proxy:FinishQuestObjectiveScriptExit()
+    end,
+}
+--68.播放A1级动画：后日谈，重新回到约会场景
+---@class QuestObjective10010168 : Quest1001Objective
+ObjectiveDefines.Obj10010168 = {
+    Id = 10010168,
+    Type = EQuestObjectiveType.DramaPlayFinish,
+    Args = {
+        LevelId = 4003,
+        DramaName = "Drama_1001_044",
+    },
+    ---@param obj QuestObjective10010168
+    InitFunc = function(obj)
+        obj.soRabbitCakeP13ID = 400009
+    end,
+    ---@param obj QuestObjective10010168
+    ---@param proxy XDlcCSharpFuncs
+    EnterFunc = function(obj, proxy)
+        proxy:LoadSceneObject(obj.soRabbitCakeP13ID)
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective10010168
+    ---@param proxy XDlcCSharpFuncs
+    HandleEventFunc = function(obj, proxy, eventType, eventArgs)
+    end,
+    ---@param obj QuestObjective10010168
+    ---@param proxy XDlcCSharpFuncs
+    ExitFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }

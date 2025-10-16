@@ -12,8 +12,8 @@ function XLevelPrototype:Ctor(proxy)
 end
 
 function XLevelPrototype:Init()
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
 
     XLog.Debug("------------Level 11 start set npc ids for SceneObj 25")
     self._localPlayerNpcId = self._proxy:GetLocalPlayerNpcId()

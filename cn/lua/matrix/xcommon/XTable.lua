@@ -22481,10 +22481,11 @@ XTable = {
         UltraShout = ValueTypestring,
         Desc = ValueTypestring,
         Condition = ValueTypeint,
+        SignalBallCosts = Type2KeyTypeintValueTypeint,
         Times = ValueTypeint,
         Probability = ValueTypeint,
-        SignalBallCosts = Type2KeyTypeintValueTypeint,
-        MagicIds = Type1ValueTypeint,
+        Emoji = ValueTypestring,
+        EmojiTime = ValueTypeint,
     },
     XTableRaceDriftGas = {
         Id = ValueTypeint,
@@ -22569,6 +22570,8 @@ XTable = {
         Formula = ValueTypestring,
         Desc = ValueTypestring,
         Params = Type1ValueTypeint,
+        IsFormulaCondition = ValueTypebool,
+        SubConditionIds = Type1ValueTypeint,
     },
     XTableRaceSkillEffect = {
         Id = ValueTypeint,
@@ -24281,6 +24284,8 @@ XTable = {
     },
     XTableTheatre5ItemRelic = {
         Id = ValueTypeint,
+        Condition = Type1ValueTypeint,
+        Effect = Type1ValueTypeint,
     },
     XTableTheatre5RelicEffect = {
         Id = ValueTypeint,

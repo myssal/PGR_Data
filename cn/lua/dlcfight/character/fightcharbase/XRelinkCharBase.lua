@@ -10,6 +10,10 @@ function XRelinkCharBase:Init() --初始化
     self:InitHandleJumpTurnSpeedParams()  --初始化跳跃相关逻辑
     -- 这其实是每个Npc都在调用Camera的全局开关, 行为树版本也一样，待v0.3或v0.4版本优化
     self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
+    self._DodgeIsNotCd = true
+    self:JumpWeaponHidShowCheckInit()
+    --- 弹刀无敌通用buff id
+    self._counterImmortalMagicId = 1000479
 end
 
 ---@param dt number @ delta time 
@@ -17,7 +21,8 @@ function XRelinkCharBase:Update(dt)
     if self._proxy:IsNpcBackState(self._uuid) then -- 在后台不触发逻辑
         return
     end
-    
+    self:JumpWeaponHidShowCheck()
+    self:HardLockInput() --手动锁定
     self:ProcessChangeMoveState()
     self:ProcessResetSprintMoveTypeOnJump()
     self:ProcessHandleJumpTurnSpeed()
@@ -28,11 +33,91 @@ end
 ---@param eventArgs userdata
 function XRelinkCharBase:HandleEvent(eventType, eventArgs) --事件中转站
     base.HandleEvent(self, eventType, eventArgs)
-    if eventType == EWorldEvent.NpcCastSkillByInputActionBefore then
+    if eventType == EWorldEvent.NpcCastActionByInputActionBefore then
         -- XLog.Warning("InputNPC:" ..eventArgs.LauncherId)
-        self:OnNpcCastSkillByInputActionBeforeEvent(eventArgs)
+        self:OnNpcCastActionByInputActionBeforeEvent(eventArgs)
+    end
+    if eventType == EWorldEvent.LockTargetChanged then --锁定变更事件
+        self:OnLockTargetChanged(eventArgs.CurTargetUID,eventArgs.LastTargetUID,eventArgs.LockTargetType)
+    end
+    if eventType == EWorldEvent.FullChainSkillStart then
+        self:OnFullChainSkillStart(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.FullChainSkillEnd then
+        self:OnFullChainSkillEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.CastFullChainFinalSkill then
+        self:OnCastFullChainFinalSkill(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.FullChainStageEnd then
+        self:OnFullChainStageEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
     end
 end
+
+---跳跃武器显隐藏初始化
+function XRelinkCharBase:JumpWeaponHidShowCheckInit()
+    self.lastActionIsJump = false --上一个状态是否是跳跃
+end
+
+---跳跃控制武器显隐
+function XRelinkCharBase:JumpWeaponHidShowCheck()
+    local isJumping = self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) or self._proxy:CheckNpcAction(self._uuid, ENpcAction.Move)--当前是否在跳跃中
+    if self.lastActionIsJump and (not isJumping)then
+        self:OnExitJumpWeaponShow()
+    end
+
+    if (not self.lastActionIsJump) and isJumping then
+        self:OnEnterJumpWeaponHide()
+    end
+    self.lastActionIsJump = isJumping
+end
+
+---进入跳跃隐藏武器
+function XRelinkCharBase:OnEnterJumpWeaponHide()
+
+end
+
+---退出跳跃隐藏武器
+function XRelinkCharBase:OnExitJumpWeaponShow()
+
+end
+
+---FullChain开启连锁
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpc number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+end
+
+---FullChain连锁结束
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpc number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+end
+
+---FullChainSkill释放！
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpc number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XRelinkCharBase:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+end
+
+---FullChainSkill释放！
+---@param gameplayActive number 是否开启玩法
+---@param isInChain number 是否在连锁状态
+---@param chainRemainTime number 连锁剩余时间
+---@param chainNpc number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XRelinkCharBase:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+end
+
 
 function XRelinkCharBase:Terminate()
 end
@@ -40,20 +125,6 @@ end
 --region Keyboard 按键映射
 function XRelinkCharBase:RegisterKeyboard()  --按键注册
     -- XLog.Warning("----------准备注册按键映射----------")
-    self._proxy:RegisterKeyboardOperator(1000, ENpcOperationKey.Attack, EOperationType.Down, false) --鼠标左键 攻击
-    -- self._proxy:RegisterKeyboardOperator(1000, ENpcOperationKey.Attack, EOperationType.Hold, false) --鼠标左键 攻击
-    self._proxy:RegisterKeyboardOperator(1001, ENpcOperationKey.Dodge, EOperationType.Down, false) --鼠标右键 闪避
-    self._proxy:RegisterKeyboardOperator(49, ENpcOperationKey.Ball1, EOperationType.Down, false) --键盘1 技能1
-    self._proxy:RegisterKeyboardOperator(50, ENpcOperationKey.Ball2, EOperationType.Down, false) --键盘2 技能2
-    self._proxy:RegisterKeyboardOperator(51, ENpcOperationKey.Ball3, EOperationType.Down, false) --键盘3 技能3
-    self._proxy:RegisterKeyboardOperator(114, ENpcOperationKey.ExSkill, EOperationType.Down, false) --键盘3 技能3
-    self._proxy:RegisterKeyboardOperator(119, ENpcOperationKey.MoveForward, EOperationType.Hold, false) --键盘W 向前
-    self._proxy:RegisterKeyboardOperator(115, ENpcOperationKey.MoveBack, EOperationType.Hold, false) --键盘S 向后
-    self._proxy:RegisterKeyboardOperator(97, ENpcOperationKey.MoveLeft, EOperationType.Hold, false) --键盘A 向左
-    self._proxy:RegisterKeyboardOperator(100, ENpcOperationKey.MoveRight, EOperationType.Hold, false) --键盘D 向右
-    self._proxy:RegisterKeyboardOperator(122, ENpcOperationKey.SwitchCameraControlMethod, EOperationType.Down, false) --键盘Z 鼠标转换
-    self._proxy:RegisterKeyboardOperator(113, ENpcOperationKey.RelinkQte, EOperationType.Down, false) --键盘Q 破韧QTE
-    self._proxy:RegisterKeyboardOperator(99, ENpcOperationKey.RelinkLimitSkill, EOperationType.Down, false) --键盘C 极限技
     -- XLog.Warning("----------注册按键映射完成----------")
 end
 --endregion
@@ -159,11 +230,13 @@ function XRelinkCharBase:ProcessResetSprintMoveTypeOnJump()
     if not self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) then -- 角色不在跳跃不重置
         return false
     end
+
     if not (self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.None) or
             self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.IdleJumpToStand) or
             self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.MoveJumpToStand)) then    -- 除跳跃落地阶段外外，其它状态无法跳跃
         return false
     end
+
     -- Select Do What
     local curMoveType = self._proxy:GetNpcMoveType(self._uuid)          -- Npc当前移动状态
     local moveNormalizedDist = self._proxy:GetMoveNormalizedDist()      -- 摇杆用力量化长度
@@ -189,6 +262,10 @@ function XRelinkCharBase:ProcessChangeJumpState()
             self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.MoveJumpToStand)) then    -- 除跳跃落地阶段外外，其它状态无法跳跃
         return false
     end
+    
+    if not (self._proxy:CheckCanCastSkill(self._uuid) and self._proxy:CheckNpcCurSkillIsDone(self._uuid)) then --技能状态时需要在技能完成时跳
+        return false
+    end
     -- Select Do What
     local isHasMoveInput = self._proxy:HasMoveInput()
     -- Do Jump
@@ -205,51 +282,184 @@ function XRelinkCharBase:InitEventCallBackRegister()
     --按需求解除注释进行注册
     XLog.Warning("开始注册")
 
-    --self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillBefore)         -- OnNpcCastSkillBeforeEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillAfterEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillByInputActionBefore)         -- OnNpcCastSkillByInputActionBeforeEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)         -- OnNpcExitSkillEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcDie)               -- OnNpcDieEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- OnNpcReviveEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionBefore)         -- OnNpcCastActionBeforeEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastActionAfterEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionByInputActionBefore)         -- OnNpcCastActionByInputActionBeforeEvent
+    --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)         -- OnNpcExitActionEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcDie)               -- OnNpcDieEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- OnNpcReviveEvent
     --self._proxy:RegisterEvent(EWorldEvent.NpcLoadComplete)      -- OnNpcLoadCompleteEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcDodge)               --OnNpcDodge
     --self._proxy:RegisterEvent(EWorldEvent.Behavior2ScriptMsg)   -- OnBehavior2ScriptMsgEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)           -- OnNpcAddBuffEvent
     self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)        -- OnNpcRemoveBuffEvent
     --self._proxy:RegisterEvent(EWorldEvent.MissileHit)           -- OnMissileHitEvent
     --self._proxy:RegisterEvent(EWorldEvent.MissileDead)          -- OnMissileDeadEvent
     --self._proxy:RegisterEvent(EWorldEvent.MissileCreate)        -- OnMissileCreateEvent
+    self._proxy:RegisterEvent(EWorldEvent.LockTargetChanged)      -- OnLockTargetChanged
+    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillStart)      --OnFullChainSkillStart
+    self._proxy:RegisterEvent(EWorldEvent.FullChainSkillEnd)        --OnFullChainSkillEnd
+    self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)        --OnCastFullChainFinalSkill
+    self._proxy:RegisterEvent(EWorldEvent.FullChainStageEnd)        --OnFullChainStageEnd
+
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCounterSuccess, self._uuid)  -- OnNpcCounterSuccess
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcAfterSyncCounterSuccess, self._uuid) -- OnNpcAfterSyncCounterSuccess
+
     XLog.Warning("Relink基类注册事件")
 end
 
-function XRelinkCharBase:OnNpcCastSkillByInputActionBeforeEvent(args)
+--设置技能释放前上下文
+function XRelinkCharBase:OnNpcCastActionByInputActionBeforeEvent(args)
     local skillId = args.SkillId
     local launcher = args.LauncherUUID
+    local contextId = args.ContextId
 
     if not launcher == self._uuid then
         return
     end
+   --检查当前是否拥有锁定目标
+    local locktaregetid,npcid = self._proxy:GetLockTarget()--转换新索敌目标为npcuuid
+    if npcid == 0 and locktaregetid == 0 then
+        return
+    end
+    local targetPos = self._proxy:GetSearchTargetPosition(locktaregetid) -- 获取技能目标位置
+    --XLog.Warning("新索敌目标"..locktaregetid)
+    self._proxy:SetCastSkillByInputActionBeforeValue(contextId, ESkillTargetType.Npc, npcid, targetPos,locktaregetid) --设置技能上下文
+end
 
-    local tempNpcId = self._proxy:SearchNpc(launcher,ENpcCampType.Camp2,4,15,-1)
 
-    if (tempNpcId == 0)or (not tempNpcId) then
+--demo基础索敌逻辑
+function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, TargetSceneObjId, IsAbort)
+    --技能目标为自己，返回
+    if TargetId == self._uuid then
         return
     end
 
-    local targetPos = self._proxy:GetNpcPosition(tempNpcId)
-    
-    args.TargetUUID = tempNpcId
-    args.TargetPosition = targetPos --设置技能
-    args.TargetType = ESkillTargetType.Npc --设置技能索敌类型
-    
-    self._proxy:SetNpcLookAtPosition(launcher,targetPos)  --转向
-    self._proxy:SetFightTarget(launcher,tempNpcId)  --设置战斗目标
-    self._proxy:SetNpcFocusTarget(launcher,tempNpcId)  --镜头锁定
-    -- XLog.Warning("找到目标将其设为锁定目标"..launcher..tempNpcId)
-
-
+    --技能目标为空，执行搜索
+    if TargetId == 0 then
+        --新索敌节点逻辑处理（新锁定包装了npc与部位，在锁定前无法分拆）
+        local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy) --新索敌获取权重最高目标，搜寻规则见表
+        --搜索目标为空，返回
+        if searchtarget == 0 then
+            return
+        end
+        self._proxy:SetSoftLock(searchtarget) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
+        local locktargetid, npcid = self._proxy:GetLockTarget()--转换新索敌目标为搜索目标id，npcuuid
+        self._proxy:SetNpcFocusTarget(LauncherId, npcid)  --镜头锁定
+    end
+    if TargetId ~= 0 then
+        local locktargetid,npcid = self._proxy:GetLockTarget()--转换新索敌目标为npcuuid
+        self:CheckFocusTarget()
+        if locktargetid == 0 then
+            return
+        end
+    end
 end
 
+function XRelinkCharBase:OnNpcDodge(AttackerUUID, Type)
+    if (Type == 1) then 
+        if not self._DodgeIsNotCd then
+            return
+        end
+
+        XLog.Warning("极限闪避成功:")
+
+        self._proxy:AddBuff(self._uuid, 10510701)
+        self._proxy:AddBuff(self._uuid, 10510702)
+        self._proxy:AddBuff(self._uuid, 10510703)
+        self._proxy:AddBuff(self._uuid, 10510705)
+        self._DodgeIsNotCd = false
+
+        self._proxy:AddTimerTask(  1,  function()
+            self._DodgeIsNotCd = true
+        end)
+    end
+end
+
+function XRelinkCharBase:HardLockInput() -- tab键手动锁定
+    --XLog.Warning("update手动锁定")
+    if self._proxy:IsKeyDown(ENpcOperationKey.Focus) then  --按下tab键
+        local locktarget, _ = self._proxy:GetLockTarget()
+        if locktarget ~= 0 then               --锁定目标不为空
+            local locktargettype = self._proxy:GetCurLockTargetType()
+            self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
+            self:CheckFocusTarget()
+            if locktargettype == ELockTargetType.ForceLock then   --强制锁定，直接返回
+                return
+            elseif locktargettype == ELockTargetType.HardLock then    --硬锁定，执行切换锁定目标逻辑
+                local searchtargetlist = self._proxy:GetSearchTargetList(self._uuid, ENpcTargetType.Enemy)
+                for index, target in pairs(searchtargetlist) do
+                    if target ~= locktarget then
+                        self._proxy:SetHardLock(target)
+                        break
+                    end
+                end
+            else
+                self._proxy:SetHardLock(locktarget)
+            end
+        else
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetHardLock(searchtarget)
+            local _, npc = self._proxy:GetLockTarget()
+            self._proxy:SetNpcFocusTarget(self._uuid, npc)
+            self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
+        end
+    end
+    local iskeyhold,holdtime = self._proxy:IsKeyHold(8)
+    if iskeyhold and holdtime >= 0.5 then --长按tab键手动取消
+        self._proxy:ApplyMagic(self._uuid,self._uuid,105297,1)  --移除限制镜头拖动输入
+        self._proxy:CancelHardLockTarget()
+        self._proxy:CancelSoftLockTarget()
+        self._proxy:RemoveNpcFocusTarget(self._uuid)
+    end
+end
+
+function XRelinkCharBase:OnLockTargetChanged(CurTargetUID,LastTargetUID,LockTargetType) --监听锁定变更事件
+    local locktarget,_ = self._proxy:GetLockTarget()
+    if locktarget == 0 then --无锁定时移除镜头维持逻辑
+        self._proxy:RemoveNpcFocusTarget(self._uuid)
+    end
+end
+
+function XRelinkCharBase:CheckFocusTarget() --若当前有锁定，但是通过拖动镜头移除了镜头维持目标，重新设置
+    local focustargetid = self._proxy:GetNpcFocusTarget(self._uuid)
+    local _,locknpc = self._proxy:GetLockTarget()
+    XLog.Warning("确认镜头维持目标"..focustargetid)
+    XLog.Warning("确认"..locknpc)
+    if focustargetid == 0 and locknpc ~= 0 then
+        XLog.Warning("重锁")
+        self._proxy:SetNpcFocusTarget(self._uuid, locknpc)
+    end
+end
+
+function XRelinkCharBase:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+    -- 弹刀成功后无敌
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self._counterImmortalMagicId, 1)
+end
+
+function XRelinkCharBase:OnNpcAfterSyncCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+end
 --endregion
+
+---npc死亡事件
+function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
+    if npcUUID ~= self._uuid then
+        return  
+    end
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000480,1)--死亡次数标记buff，每次一次都加一层
+end
+
+---npc复活事件
+function XRelinkCharBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
+    if npcUUID ~= self._uuid then
+        return
+    end
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000478,1)--复活无敌
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000477,1)--复活特效
+end
 
 return XRelinkCharBase

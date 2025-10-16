@@ -966,6 +966,22 @@ function XTheatre5Control:GetRemainRelicRefreshCount()
     return math.max(relicRefreshCount - useRelicRefreshCount, 0)
 end
 
+function XTheatre5Control:GetUiDataRelicsByData(relics)
+    local uiData = {}
+    for i = 1, #relics do
+        local itemConfig = self._Model:GetTheatre5ItemCfgById(relics[i])
+        ---@type XUiGridTheatre5RelicData
+        local data = {
+            IsUnlock = true,
+            --Item = item,
+            Icon = itemConfig and itemConfig.IconRes,
+            --Level = i,
+        }
+        uiData[#uiData + 1] = data
+    end
+    return uiData
+end
+
 function XTheatre5Control:GetUiDataRelics()
     local uiData = {}
     local levelGroups = self._Model:GetCharacterLevelGroupConfig(self._Model.CurAdventureData)

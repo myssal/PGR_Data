@@ -2194,6 +2194,7 @@ local UiRegistry = {
     UiRaceMissionShop = "XUi/XUiRace/XUiRaceMissionShop",
     UiRaceRank = "XUi/XUiRace/XUiRaceRank",
     UiRaceToastHall = "XUi/XUiRace/XUiRaceToastHall",
+    UiRaceObtain = "XUi/XUiRace/XUiRaceObtain",
     --endregion
 
     --region 编队预设 v4.0
@@ -2207,6 +2208,7 @@ local UiRegistry = {
     UiTeamPrefabEquipAwarenessReplace = "XUi/XUiTeamPrefab/XUiTeamPrefabEquipAwarenessReplace",
     UiTeamPrefabPopupCover = "XUi/XUiTeamPrefab/XUiTeamPrefabPopupCover/XUiTeamPrefabPopupCover",
     UiTeamPrefabPartner = "XUi/XUiTeamPrefab/XUiTeamPrefabPartner/XUiTeamPrefabPartner",
+    UiTeamPrefabEquipSuitSkill = "XUi/XUiTeamPrefab/XUiTeamPrefabEquipSuitSkill",
     --endregion
     
     --region 军团系统/PlotExhibition

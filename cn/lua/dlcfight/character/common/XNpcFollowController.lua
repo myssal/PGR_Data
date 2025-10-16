@@ -239,7 +239,7 @@ function XNpcFollowController:UpdateState(dt)
 
     if self._curState == FollowState.Idle then  -- 待机时保持注视目标
         if self._idleLookAtTargetSwitch then
-            self._proxy:SetNpcLookAtPosition(self._uuid, self:GetTargetPos())
+            self._proxy:SetNpcFaceToPosition(self._uuid, self:GetTargetPos())
         end
     elseif self._curState == FollowState.Follow then    -- 保持和目标相同移动方式
         local selfMoveType = self._proxy:GetNpcMoveType(self._uuid)

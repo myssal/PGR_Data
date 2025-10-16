@@ -229,7 +229,7 @@ ObjectiveDefines.Obj2002029 = {
     end,
 }
 
---到达与比安卡交互的地点
+--到达与薇拉交互的地点
 ---@class QuestObjective2002032 : Quest2002Objective
 ObjectiveDefines.Obj2002032 = {
     Id = 2002032,
@@ -254,6 +254,7 @@ ObjectiveDefines.Obj2002032 = {
     ---@param obj QuestObjective2002032
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
+        proxy:PlayDramaCaption("Caption200205",true)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
     ---@param obj QuestObjective2002032
@@ -262,7 +263,7 @@ ObjectiveDefines.Obj2002032 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
---播放比安卡与指挥官得聊天剧情
+--播放薇拉与指挥官得聊天剧情
 ---@class QuestObjective2002033 : Quest2002Objective
 ObjectiveDefines.Obj2002033 = {
     Id = 2002033,
@@ -285,10 +286,10 @@ ObjectiveDefines.Obj2002033 = {
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
         proxy:UnloadLevelNpc( 700005 )
-        proxy:FinishQuestObjectiveScriptExit()
         proxy:AddTimerTask(0.5, function()
             proxy:PlayDramaCaption("Caption200204") --播放简易字幕
         end)
+        proxy:FinishQuestObjectiveScriptExit()
     end,
 }
 --前往露天广场传送点
@@ -351,6 +352,7 @@ ObjectiveDefines.Obj2002046 = {
     ---@param obj QuestObjective2002046
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
+        proxy:PlayDramaCaption("Caption200206") --播放简易字幕
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -409,6 +411,7 @@ ObjectiveDefines.Obj2002048 = {
     ---@param obj QuestObjective2002048
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
+        proxy:PlayDramaCaption("Caption200207") --播放简易字幕
         proxy:LoadLevelNpc( 700003 )                 --***********生成卡列
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -750,6 +753,34 @@ ObjectiveDefines.Obj2002051 = {
         proxy:UnloadLevelNpc( 700007 )
     end,
 }
+--阅读商业街NPC发来得短信。
+---@class QuestObjective2002061 : Quest2002Objective
+ObjectiveDefines.Obj2002061 = {
+    Id = 2002061,
+    Type = EQuestObjectiveType.ReadShortMessageComplete,
+    Args = {
+        LevelId = 4003,
+        ShortMessageId = 200203,
+        AutoSend = true, --enter时，自动发送短信
+    },
+    ---@param obj QuestObjective2002061
+    ---@param proxy XDlcCSharpFuncs
+    InitFunc = function(obj, proxy)
+    end,
+    ---@param obj QuestObjective2002061
+    ---@param proxy XDlcCSharpFuncs
+    EnterFunc = function(obj, proxy)
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+    ---@param obj QuestObjective2002061
+    ---@param proxy XDlcCSharpFuncs
+    ExitFunc = function(obj, proxy)
+        proxy:PlayDramaCaption("Caption200101") --播放简易字幕
+        proxy:AddTimerTask(3, function()
+            proxy:FinishQuestObjectiveScriptExit() --延迟结束
+        end)
+    end,
+}
 --到达宿舍
 ---@class QuestObjective2002052 : Quest2002Objective
 ObjectiveDefines.Obj2002052 = {
@@ -878,36 +909,62 @@ ObjectiveDefines.Obj2002056 = {
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
-
---阅读商业街NPC发来得短信。
----@class QuestObjective2002061 : Quest2002Objective
-ObjectiveDefines.Obj2002061 = {
-    Id = 2002061,
-    Type = EQuestObjectiveType.ReadShortMessageComplete,
+--与床交互
+--@class QuestObjective2002062 : Quest2003Objective
+ObjectiveDefines.Obj2002062 = {
+    Id = 2002062,
+    Type = EQuestObjectiveType.InteractComplete,
     Args = {
         LevelId = 4003,
-        ShortMessageId = 200203,
-        AutoSend = true, --enter时，自动发送短信
+        TraceActorArgs = {
+            {
+                TargetType = ETargetActorType.SceneObject,
+                PlaceId = 400010, --垃圾桶
+                DisplayOffset = { x = 0, y = 2.2, z = 0 },
+                ShowEffect = false,
+                ForceMapPinActive = false,
+            },
+        },
+        TargetArgs = {
+            [ETargetActorType.SceneObject] = {
+                [400010] = 0,--垃圾桶
+            },
+        },
     },
-    ---@param obj QuestObjective2002061
+
+    EnterFunc = function(obj, proxy)
+        proxy:LoadSceneObject(400010)
+        proxy:PlayDramaCaption("Caption200208",true) --播放简易字幕
+        proxy:FinishQuestObjectiveScriptEnter()
+    end,
+
     ---@param proxy XDlcCSharpFuncs
-    InitFunc = function(obj, proxy)
-    end, 
-    ---@param obj QuestObjective2002061
+    ExitFunc = function(obj, proxy)
+        proxy:UnloadSceneObject(400010)
+        proxy:FinishQuestObjectiveScriptExit()
+    end,
+}
+--播放上床休息剧情
+---@class QuestObjective2002063 : Quest2002Objective
+ObjectiveDefines.Obj2002063 = {
+    Id = 2002063,
+    Type = EQuestObjectiveType.DramaPlayFinish,
+    Args = {
+        LevelId = 4003,
+        DramaName = "Drama_200211",
+    },
+    ---@param obj QuestObjective2002063
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
-    ---@param obj QuestObjective2002061
+
+    ---@param obj QuestObjective2002063
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:PlayDramaCaption("Caption200101") --播放简易字幕
-        proxy:AddTimerTask(3, function()
-            proxy:FinishQuestObjectiveScriptExit() --延迟结束
-        end)
+        proxy:FinishQuestObjectiveScriptExit()
     end,
 }
-
 local StepDefines = {} --本任务包含的所有任务步骤的参数配置（不要删除！）
 
 --Step的参数配置，至少要有一个，可按需增加

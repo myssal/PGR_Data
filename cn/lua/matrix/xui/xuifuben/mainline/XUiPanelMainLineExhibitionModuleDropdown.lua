@@ -99,6 +99,11 @@ function XUiPanelMainLineExhibitionModuleDropdown:SetCurrentModuleId(moduleId)
     self.TxtName.text = moduleConfig.Name
     local currentProgress, maxProgress = XMVCA.XMainLine2:GetExhibitionModuleProgress(moduleId)
     self.TxtProgress.text = math.floor(currentProgress / maxProgress * 100) .. "%"
+    
+    -- 蓝点
+    local module = self.UiPanelExhibition:GetModuleByModuleId(moduleId)
+    local isRed = module:IsShowRed()
+    self.BtnCurModule:ShowReddot(isRed)
 end
 
 function XUiPanelMainLineExhibitionModuleDropdown:Open()

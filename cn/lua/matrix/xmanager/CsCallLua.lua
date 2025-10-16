@@ -490,6 +490,7 @@ function Theatre5.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
     autoChessData.Attribs = {}
     autoChessData.RuneEvolves = {}
     autoChessData.Skills = {}
+    autoChessData.Relics = {}
 
     for i = 0, xautoChessData.RuneEvolves.Count - 1 do
         local runeEvolve = xautoChessData.RuneEvolves[i]
@@ -497,6 +498,10 @@ function Theatre5.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
             RuneId = runeEvolve.RuneId,
             IsStrengthen = runeEvolve.IsStrengthen,
         }
+    end
+
+    for i = 0, xautoChessData.Relics.Count - 1 do
+        autoChessData.Relics[i + 1] = xautoChessData.Relics[i]
     end
 
     for i = 0, xautoChessData.Skills.Count - 1 do

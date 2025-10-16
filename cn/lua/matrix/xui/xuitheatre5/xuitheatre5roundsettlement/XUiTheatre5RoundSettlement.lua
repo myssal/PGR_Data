@@ -15,12 +15,12 @@ end
 
 ---@param resultData XDlcFightSettleData
 function XUiTheatre5RoundSettlement:OnStart(resultData, summaryData)
-    
+
     XMVCA.XTheatre5:SaveData({
         ResultData = resultData,
         SummaryData = summaryData
     })
-    
+
     self.SummaryData = summaryData
     self.ResultData = resultData
     ---@type XUiPanelTheatre5SettleTopInfo
@@ -30,12 +30,11 @@ function XUiTheatre5RoundSettlement:OnStart(resultData, summaryData)
 
     self.BtnShop.gameObject:SetActiveEx(not resultData.XAutoChessGameplayResult.IsFinish)
     self.BtnEnd.gameObject:SetActiveEx(resultData.XAutoChessGameplayResult.IsFinish)
-    
+
     ---@type XUiPanelTheatre5SettleSummary
-    self.PanelSummary = XUiPanelTheatre5SettleSummary.New(self.PanelLeft, self, self.SummaryData)
+    self.PanelSummary = XUiPanelTheatre5SettleSummary.New(self.PanelLeft, self, resultData, self.SummaryData)
     self.PanelSummary:RefreshAllShow()
-    
-    self:UpdateRelics()
+
     self:UpdateCharacterLevel()
 end
 
@@ -60,8 +59,8 @@ function XUiTheatre5RoundSettlement:OnBtnShopClickEvent()
             CS.StatusSyncFight.XFightClient.RequestExitFight()
             XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT_EXIT, self.ResultData)
         end)
-    end    
-   
+    end
+
 end
 
 function XUiTheatre5RoundSettlement:OnBtnEndClickEvent()
@@ -76,10 +75,10 @@ end
 
 --endregion
 
-function XUiTheatre5RoundSettlement:UpdateRelics()
+function XUiTheatre5RoundSettlement:UpdateRelics(data)
     if self.RelicContainer then
         -- 显示自己拥有的饰品
-        local relics = self._Control:GetUiDataRelicsUnlocked()
+        local relics = self._Control:GetUiDataRelicsByData(data.AutoChessData.Relics)
         XTool.UpdateDynamicItem(self._RelicGrids, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
     end
 end

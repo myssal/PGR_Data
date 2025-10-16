@@ -29,7 +29,7 @@ end
 function XBuffScript1015124:InitEventCallBackRegister()
     --按需求解除注释进行注册
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastSkillEvent
 end
 
 function XBuffScript1015124:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
@@ -56,7 +56,7 @@ function XBuffScript1015124:OnNpcDamageEvent(launcherId, targetId, magicId, kind
     end
 end
 
-function XBuffScript1015124:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015124:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --当附加伤害开启时，技能为普攻，则施加一次雷伤，计数3次后关闭
 
     --当附加伤害开关关闭时，无需走下列逻辑
@@ -70,7 +70,7 @@ function XBuffScript1015124:OnNpcCastSkillAfterEvent(skillId, launcherId, target
     end
 
     --如果是普攻，就附加伤害
-    if self._proxy:GetSkillType(skillId) == self.normalAtkType then
+    if self._proxy:GetActionType(skillId) == self.normalAtkType then
         self._proxy:ApplyMagic(self._uuid, targetId, self.magicId, self.magicLevel)
         self.atkCount = self.atkCount + 1
     end

@@ -19,14 +19,14 @@ end
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevelScript4016:HandleEvent(eventType, eventArgs) --事件响应逻辑
-    if eventType == EWorldEvent.NpcInteractStart then
-        if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then --是玩家发起的交互
-            if eventArgs.TargetId == self._tempLevelSwitcherUUID then
-                local pos = { x = 595.6681, y = 150.854, z = 1295.307 }
-                self._proxy:SwitchLevel(4001, pos)
-            end
-        end
-    end
+    --if eventType == EWorldEvent.NpcInteractStart then
+    --    if self._proxy:IsPlayerNpc(eventArgs.LauncherId) then --是玩家发起的交互
+    --        if eventArgs.TargetId == self._tempLevelSwitcherUUID then
+    --            local pos = { x = 595.6681, y = 150.854, z = 1295.307 }
+    --            self._proxy:SwitchLevel(4001, pos)
+    --        end
+    --    end
+    --end
 end
 
 function XLevelScript4016:Terminate() --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）

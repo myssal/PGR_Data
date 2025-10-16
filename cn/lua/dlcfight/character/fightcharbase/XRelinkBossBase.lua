@@ -207,8 +207,8 @@ function XRelinkBossBase:Init()
     self._followController = XNpcFollowController.New(self._proxy, self._uuid)
 
     --- 事件绑定
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
 end
 
@@ -257,8 +257,8 @@ function XRelinkBossBase:Terminate()
     self._followController = nil
 
     -- 事件解绑
-    self._proxy:UnregisterEvent(EWorldEvent.NpcCastSkillBefore)
-    self._proxy:UnregisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcCastActionBefore)
+    self._proxy:UnregisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:UnregisterEvent(EWorldEvent.NpcDamage)
 
     Base.Terminate(self)
@@ -391,7 +391,7 @@ function XRelinkBossBase:BattleUpdateLogic(dt)
                 self._isODBreak = false
             else
                 -- 否则，释放下一技能，更新索引
-                self._proxy:CastSkill(self._uuid, self._odBreakSkillSeq[self._odBreakSkillIdx])
+                self._proxy:CastAction(self._uuid, self._odBreakSkillSeq[self._odBreakSkillIdx])
                 self._odBreakSkillIdx = self._odBreakSkillIdx + 1
             end
         end
@@ -607,7 +607,7 @@ end
 
 --- 释放常规技能（常规流程释放的技能，破防，破OD，修正，连招等等均不算常规技能）
 function XRelinkBossBase:CastRegularSkill(skillId)
-    self._proxy:CastSkillToTarget(self._uuid, skillId, self._curAggroTarUUID)
+    self._proxy:CastActionToTarget(self._uuid, skillId, self._curAggroTarUUID)
     --XLog.Debug("放个技能")
     self._skillCdTimers[skillId] = self._skillInfos[skillId][1]
     -- 刷新连招序号和当前释放的技能索引
@@ -696,8 +696,8 @@ function XRelinkBossBase:SelectAndApplyCombo()
 
                 -- 同时满足，释放连招
                 if isAngleSatisfy and isDisSatisfy and randomFloat <= comboPossibility then
-                    self._proxy:AbortSkill(self._uuid, true)
-                    self._proxy:CastSkillToTargetEx(self._uuid, comboSkillId, self._curAggroTarUUID, comboBeginTime, comboEndTime)
+                    self._proxy:AbortAction(self._uuid, true)
+                    self._proxy:CastActionToTargetEx(self._uuid, comboSkillId, self._curAggroTarUUID, comboBeginTime, comboEndTime)
                     self._curComboId = i
                     break
                 end
@@ -747,7 +747,7 @@ function XRelinkBossBase:TryRectifyRot()
     for i = 1, #self._angleRectifySkills do
         local isSatisfy = self:IsTarSatisfyAngleCond(self._curAggroTarUUID, arRanges[i], false)
         if isSatisfy then
-            self._proxy:CastSkillToTarget(self._uuid, arSkills[i], self._curAggroTarUUID)
+            self._proxy:CastActionToTarget(self._uuid, arSkills[i], self._curAggroTarUUID)
 
             -- 烦躁值增长
             local cost = self._angleRectifyCostTable[i]
@@ -807,7 +807,7 @@ function XRelinkBossBase:TryRectifyPos(isTooClose, curDis, disMin, disMax)
 
     -- 如果有合适的直接释放
     if drSkillIdx > 0 then
-        self._proxy:CastSkillToTarget(self._uuid, drSkills[drSkillIdx], self._curAggroTarUUID)
+        self._proxy:CastActionToTarget(self._uuid, drSkills[drSkillIdx], self._curAggroTarUUID)
 
         -- 烦躁值增长
         local cost = self._disRectifyCostTable[drSkillIdx]
@@ -882,8 +882,8 @@ function XRelinkBossBase:PlayTenaBreakSkillBySrcPos(srcId)
         end
     end
 
-    self._proxy:AbortSkill(self._uuid, true)
-    self._proxy:CastSkill(self._uuid, resultSkillIdx)
+    self._proxy:AbortAction(self._uuid, true)
+    self._proxy:CastAction(self._uuid, resultSkillIdx)
 end
 --endregion
 
@@ -917,7 +917,7 @@ function XRelinkBossBase:ModifyODValue(amount, isModifiedByDmg)
     -- Break触发（只有来自于伤害的变动才可以触发，自然削减不算）
     if isModifiedByDmg then
         if self._curBattleState == XRelinkBossBase.EBattleState.ODState and (not self._isODLocked) and self._curODValue <= 0 then
-            self._proxy:AbortSkill(self._uuid, true)
+            self._proxy:AbortAction(self._uuid, true)
 
             self._isODBreak = true
             self._odBreakSkillIdx = 1
@@ -979,15 +979,15 @@ end
 --endregion
 
 --region 事件回调
-function XRelinkBossBase:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    Base.OnNpcCastSkillAfterEvent(self, skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XRelinkBossBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    Base.OnNpcCastActionAfterEvent(self, skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then return end
 
     self._skillTimer = 0
 end
 
-function XRelinkBossBase:OnNpcExitSkillEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    Base.OnNpcExitSkillEvent(self, skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XRelinkBossBase:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    Base.OnNpcExitActionEvent(self, skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then return end
 
     self._skillTimer = 0

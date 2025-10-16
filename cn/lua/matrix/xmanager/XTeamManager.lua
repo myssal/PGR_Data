@@ -402,7 +402,7 @@ XTeamManagerCreator = function()
             end
 
             if awareness then
-                for i, v in ipairs(awareness) do
+                for i, v in pairs(awareness) do
                     request.EquipData[pos]["EquipDataDict"][i] = v
                     XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][i])
                     if request.EquipData[pos]["EquipDataDict"][i].ResonanceDict then
@@ -453,7 +453,7 @@ XTeamManagerCreator = function()
 
         local awareness = xTeamPrefab:GetAllAwarenessData(pos)
         if awareness then
-            for i, v in ipairs(awareness) do
+            for i, v in pairs(awareness) do
                 request.TeamPrefabEquipData["EquipDataDict"][i] = v
                 XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"][i])
                 if request.TeamPrefabEquipData["EquipDataDict"][i].ResonanceDict then

@@ -26,10 +26,10 @@ end
 --region EventCallBack
 function XBuffScript1015120:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastSkillEvent
 end
 
-function XBuffScript1015120:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015120:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --释放技能时，判断距离，如果距离内就加buff，距离外就消耗buff提升属性，再放技能时删除提升属性
     --不是自己释放的就返回
     if launcherId ~= self._uuid then

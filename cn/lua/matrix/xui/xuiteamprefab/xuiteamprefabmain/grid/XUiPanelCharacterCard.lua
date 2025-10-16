@@ -143,6 +143,7 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
     self.IsWeaponOverrunConflict = false
     self.IsEquipAwarenessConflict = false
     self.IsPartnerSkillReddot = false
+    self.IsWeaponExsitConflict = false
 
     self.TeamPrefab = xTeamPrefab
     self.Pos = pos
@@ -237,7 +238,7 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         local allAwarenessData = xTeamPrefab:GetAllAwarenessData(pos)
         local isYellowConflict = false
         if not XTool.IsTableEmpty(allAwarenessData) then
-            for k, v in ipairs(allAwarenessData) do
+            for k, v in pairs(allAwarenessData) do
                 local equipId = v.EquipId
                 local xEquip = XMVCA.XEquip:GetEquip(equipId)
                 for resonanceSlot = 1, XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT, 1 do
@@ -258,73 +259,107 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         -- 武器
         local XUiGridEquip = require("XUi/XUiEquip/XUiGridEquip")
         local weaponData = xTeamPrefab:GetWeaponData(pos)
+        ---@type XUiGridEquip
         self.WeaponGrid = self.WeaponGrid or XUiGridEquip.New(self.GridWeapon, self.Parent, function ()
             XLuaUiManager.Open("UiTeamPrefabWeapon", self.TeamPrefab, self.Pos)
         end)
         local usingWeaponId = (weaponData and weaponData.EquipId) or XMVCA.XEquip:GetCharacterWeaponId(characterId)
-        self.WeaponGrid:Refresh(usingWeaponId)
-        -- 武器共鸣
-        -- 先全部隐藏
-        self.BtnEquipResonance1:SetButtonState(CS.UiButtonState.Disable)
-        self.BtnEquipResonance2:SetButtonState(CS.UiButtonState.Disable)
-        self.BtnEquipResonance3:SetButtonState(CS.UiButtonState.Disable)
-        local resonanceDict = weaponData and weaponData.ResonanceDict
-        local isHasResonance = not XTool.IsTableEmpty(resonanceDict)
-        if isHasResonance then
-            for i, id in ipairs(resonanceDict) do
-                local icon = XMVCA.XEquip:GetConfigWeaponSkill(id).Icon
-                self["BtnEquipResonance"..i]:SetRawImage(icon)
-                self["BtnEquipResonance"..i]:SetButtonState(CS.UiButtonState.Normal)
-            end
-        end
-        -- 武器谐振
         local xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
-        self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
-        local hasOverrunSuitId = weaponData and XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
-        if xWeaponEquip:CanOverrun() and hasOverrunSuitId then
-            local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
-            self.BtnOverrunBlind:SetRawImage(icon)
-            self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
-        end
-        -- 武器共鸣黄标:
-        -- 1.equip实际共鸣的角色与当前预设里的角色不一致则显示
-        local isWeaponResonanceCharBindConflict = false
-        for slot = 1, XEnumConst.EQUIP.WEAPON_RESONANCE_COUNT, 1 do
-            local charId = xWeaponEquip:GetResonanceBindCharacterId(slot)
-            local isCurSlotCharIdConflict = XTool.IsNumberValid(charId) and charId ~= characterId
-            if isCurSlotCharIdConflict then
-                isWeaponResonanceCharBindConflict = true
-                self.IsWeaponResonanceBindConflict = true
+        if xWeaponEquip then
+            self.WeaponGrid:Refresh(usingWeaponId)
+            -- 武器共鸣
+            -- 先全部隐藏
+            self.BtnEquipResonance1:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnEquipResonance2:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnEquipResonance3:SetButtonState(CS.UiButtonState.Disable)
+            local resonanceDict = weaponData and weaponData.ResonanceDict
+            local isHasResonance = not XTool.IsTableEmpty(resonanceDict)
+            if isHasResonance then
+                local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+                -- 获取当前预设角色ID（用于区分角色专属共鸣技能）
+                local characterId = self.TeamPrefab:GetEntityIdByTeamPos(pos)
+                for i, skillId in ipairs(resonanceDict) do
+                    -- 尝试自动识别共鸣类型（武器/属性/角色技能）
+                    -- 若预设数据中包含类型信息，可直接传入，否则需通过配置反向判断
+                    local skillType = nil
+                    local weaponQuality = XMVCA.XEquip:GetEquipQuality(xWeaponEquip.TemplateId)
+                    if weaponQuality and weaponQuality <= XEnumConst.EQUIP.MIN_RESONANCE_EQUIP_STAR_COUNT then
+                        skillType = XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB -- 非6星装备的共鸣强行给定属性共鸣
+                    else
+                        skillType = XMVCA.XEquip:GuessResonanceType(skillId) -- 需实现类型推断方法
+                    end
+                    local skillInfo = XSkillInfoObj.New(skillType, skillId, characterId)
+                    self["BtnEquipResonance"..i]:SetRawImage(skillInfo.Icon)
+                    self["BtnEquipResonance"..i]:SetButtonState(CS.UiButtonState.Normal)
+                end
             end
-            self["BtnEquipResonance"..slot]:ShowReddot(isCurSlotCharIdConflict)
-        end
-        
-        -- 2.预设里的共鸣数量与实际装备共鸣数量不一致则显示
-        local resounanceCountInPrefab = 0
-        if resonanceDict then
-            for slot, v in ipairs(resonanceDict) do
-                resounanceCountInPrefab = resounanceCountInPrefab + 1
+            -- 武器谐振
+            self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
+            local hasOverrunSuitId = weaponData and XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
+            if xWeaponEquip:CanOverrun() and hasOverrunSuitId then
+                local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
+                self.BtnOverrunBlind:SetRawImage(icon)
+                self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
             end
-        end
-        local resounanceCountInEquip = xWeaponEquip:GetResonanceCount()
-        local isWeaponResonanceCountConflict = (resounanceCountInPrefab ~= resounanceCountInEquip)
-        if isWeaponResonanceCountConflict then
-            self.IsWeaponResonanceCountConflict = true
-        end
+            -- 武器共鸣黄标:
+            -- 1.equip实际共鸣的角色与当前预设里的角色不一致则显示
+            local isWeaponResonanceCharBindConflict = false
+            for slot = 1, XEnumConst.EQUIP.WEAPON_RESONANCE_COUNT, 1 do
+                local charId = xWeaponEquip:GetResonanceBindCharacterId(slot)
+                local isCurSlotCharIdConflict = XTool.IsNumberValid(charId) and charId ~= characterId
+                if isCurSlotCharIdConflict then
+                    isWeaponResonanceCharBindConflict = true
+                    self.IsWeaponResonanceBindConflict = true
+                end
+                self["BtnEquipResonance"..slot]:ShowReddot(isCurSlotCharIdConflict)
+            end
+            
+            -- 2.预设里的共鸣数量与实际装备共鸣数量不一致则显示
+            local resounanceCountInPrefab = 0
+            if resonanceDict then
+                for slot, v in ipairs(resonanceDict) do
+                    resounanceCountInPrefab = resounanceCountInPrefab + 1
+                end
+            end
+            local resounanceCountInEquip = xWeaponEquip:GetResonanceCount()
+            local isWeaponResonanceCountConflict = (resounanceCountInPrefab ~= resounanceCountInEquip)
+            if isWeaponResonanceCountConflict then
+                self.IsWeaponResonanceCountConflict = true
+            end
+    
+            local isWeaponResonanceConflict = isWeaponResonanceCountConflict or isWeaponResonanceCharBindConflict
+            self.BtnEquipResonance1:ShowTag(isWeaponResonanceConflict)
+            if isWeaponResonanceConflict then
+                self.IsYellowConflict = true
+            end
+    
+            -- 武器谐振黄标:预设里没解锁，但是实际装备有
+            local isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
+            self.BtnOverrunBlind:ShowTag(isWeaponOverrunConfilict)
+            if isWeaponOverrunConfilict then
+                self.IsYellowConflict = true
+                self.IsWeaponOverrunConflict = true
+            end
+        else
+            -- 没有武器装备时，重置所有显示状态
+            self.WeaponGrid:ShowCharacterDefaultWeapon(characterId)
 
-        local isWeaponResonanceConflict = isWeaponResonanceCountConflict or isWeaponResonanceCharBindConflict
-        self.BtnEquipResonance1:ShowTag(isWeaponResonanceConflict)
-        if isWeaponResonanceConflict then
-            self.IsYellowConflict = true
-        end
+            self.BtnEquipResonance1:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnEquipResonance2:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnEquipResonance3:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
 
-        -- 武器谐振黄标:预设里没解锁，但是实际装备有
-        local isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
-        self.BtnOverrunBlind:ShowTag(isWeaponOverrunConfilict)
-        if isWeaponOverrunConfilict then
-            self.IsYellowConflict = true
-            self.IsWeaponOverrunConflict = true
+            self.BtnEquipResonance1:ShowReddot(false)
+            self.BtnEquipResonance2:ShowReddot(false)
+            self.BtnEquipResonance3:ShowReddot(false)
+            self.BtnEquipResonance1:ShowTag(false)
+            self.BtnEquipResonance2:ShowTag(false)
+            self.BtnEquipResonance3:ShowTag(false)
+            self.BtnOverrunBlind:ShowTag(false)
+
+            self.IsWeaponExsitConflict = true
         end
+        self.TagConflictRedWeapon.gameObject:SetActiveEx(not xWeaponEquip)
 
         -- 辅助机
         local partnerPrefabData = xTeamPrefab:GetPartnerData()
@@ -406,6 +441,10 @@ end
 
 function XUiPanelCharacterCard:GetIsWeaponOverrunConflict()
     return self.IsWeaponOverrunConflict
+end
+
+function XUiPanelCharacterCard:GetIsWeaponExsitConflict()
+    return self.IsWeaponExsitConflict
 end
 
 return XUiPanelCharacterCard

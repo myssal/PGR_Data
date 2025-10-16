@@ -85,4 +85,17 @@ XDlcNpcAttribType = {
     BonusDmgP = 81, -- 追击伤害率
     WeakAmpP = 82, -- 克制伤害率
     HealAmpP = 83, -- 恢复强度
+    BreakDmg = 84, -- 击破力
+    BreakDmgP = 85, -- 击破力加成
+    BreakGauge = 86, -- 韧性值
+    BreakGaugeRecoveryRateP = 87, -- 韧性恢复速率
+    BreakGaugeReductionCOE = 88, -- 削韧倍率加成
+    OverDrive = 89, -- OverDrive值
+    OverDriveBreakTime = 90, -- ODBreak持续时间
+    OverDriveStackP = 91, -- OD累计倍率
+    OverDriveDecreaseP = 92, -- OD衰减倍率
+    OverDriveDecreaseSpeed = 93, -- OD时间衰减速度
+    OverDriveRaiseLimit = 94, -- OD累计上限
+    OverDriveDecreaseLimit = 95, -- OD衰减上限
+    CauseDamageThreatCoe = 96, -- 造成仇恨系数
 }

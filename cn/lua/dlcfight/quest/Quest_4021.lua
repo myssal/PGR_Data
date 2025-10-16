@@ -7,7 +7,7 @@ function XQuestScript4021:Ctor(proxy)
 end
 
 function XQuestScript4021:Init()
-    self._proxy:AddUnloadNpcWhiteList(4021,{100003})
+
 end
 
 function XQuestScript4021:Terminate()
@@ -94,7 +94,7 @@ ObjectiveDefines.Obj40210102 = {
     Type = EQuestObjectiveType.TakePhotoComplete, --该任务目标的类型，只能使用枚举EQuestObjectiveType来填（必填！）
     Args = {
         LevelId = 4021, --该任务目标所属关卡（必填！）
-        CamParamId = 6,
+        CamParamId = 8,
         DetectionNpcPlaceIdList ={100003},
         DetectionSceneObjectPlaceIdList = {},
     },

@@ -70,7 +70,7 @@ end
 
 function XLevelScriptXXX:HandlePhaseEvent(eventType, eventArgs) --处理阶段相关的事件响应，一般在这里跳转关卡阶段
     if self._currentPhase == 1 then
-        if eventType == EWorldEvent.NpcCastSkillAfter
+        if eventType == EWorldEvent.NpcCastActionAfter
             and eventArgs.LauncherId == self._localPlayerNpcId
             and not self._phase1HasStartDelayTranslate then
 

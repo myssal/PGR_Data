@@ -18,6 +18,8 @@ function XUiGridMainLineTab:SetData(index, groupConfig)
                 , XDataCenter.FubenManager.DifficultNormal))
         end
     end
+    
+    self:RefreshRedPoint()
 end
 
 function XUiGridMainLineTab:OnBtnTabClicked()

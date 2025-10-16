@@ -119,8 +119,8 @@ function XLevel0015:InitListen()
 end
 
 function XLevel0015:OnPlayerNpcCreate(npc)
-    self._proxy:RegisterNpcEvent(EWorldEvent.NpcCastSkillAfter, npc)
-    self._proxy:RegisterNpcEvent(EWorldEvent.NpcExitSkill, npc)
+    self._proxy:RegisterNpcEvent(EWorldEvent.NpcCastActionAfter, npc)
+    self._proxy:RegisterNpcEvent(EWorldEvent.NpcExitAction, npc)
     self._playerNpcList = self._playerNpcContainer:GetPlayerNpcList()
     self._playerCount = #self._playerNpcList
     self._proxy:SetSceneColliderIgnoreCollision(npc, "MonsterAirWall", -1, true) --用于限制boss在场边活动的空气墙
@@ -128,8 +128,8 @@ function XLevel0015:OnPlayerNpcCreate(npc)
 end
 
 function XLevel0015:OnPlayerNpcDestroy(npc)
-    self._proxy:UnregisterNpcEvent(EWorldEvent.NpcCastSkillAfter, npc)
-    self._proxy:UnregisterNpcEvent(EWorldEvent.NpcExitSkill, npc)
+    self._proxy:UnregisterNpcEvent(EWorldEvent.NpcCastActionAfter, npc)
+    self._proxy:UnregisterNpcEvent(EWorldEvent.NpcExitAction, npc)
     self._playerNpcList = self._playerNpcContainer:GetPlayerNpcList()
     self._playerCount = #self._playerNpcList
     XLog.Debug("<color=#F0D800>[SceneHunt01]</color>注销角色技能监听：" .. npc)

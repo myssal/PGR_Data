@@ -68,7 +68,7 @@
         "Key": "PvpShopGridsTotalCount",
         "Desc": "商店格子总数",
         "Values": [
-            6
+            8
         ]
     },
     {
@@ -301,7 +301,7 @@
         "Key": "PveVersion",
         "Desc": "PVE模式版本号",
         "Values": [
-            2
+            3
         ]
     },
     {
@@ -357,6 +357,38 @@
         "Values": [
             1000,
             2000
+        ]
+    },
+    {
+        "Key": "PvpLevelGroup",
+        "Desc": "pvp使用等级配置组",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "RelicRefresh",
+        "Desc": "饰品可刷新次数",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "StrengthenRate",
+        "Desc": "符纹强化后价格倍率",
+        "Values": [
+            20000
+        ]
+    },
+    {
+        "Key": "MinPvpFinishScores",
+        "Desc": "10胜通关进行保底(不同血量保底分数不同)",
+        "Values": [
+            10,
+            10,
+            15,
+            15,
+            15
         ]
     }
 ]

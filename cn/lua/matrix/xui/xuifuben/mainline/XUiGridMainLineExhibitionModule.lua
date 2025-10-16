@@ -103,4 +103,14 @@ function XUiGridMainLineExhibitionModule:GetLine(index)
     return self.Transform:Find("Line/Line" .. index)
 end
 
+-- 是否显示蓝点
+function XUiGridMainLineExhibitionModule:IsShowRed()
+    for _, chapter in pairs(self.ChapterList) do
+        if chapter:IsShowRed() then
+            return true
+        end
+    end
+    return false
+end
+
 return XUiGridMainLineExhibitionModule

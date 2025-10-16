@@ -801,7 +801,7 @@ function XFubenBossSingleAgency:CheckPreFight(stage)
             return true
         end
     end
-    
+
     local curCount = self:GetBossSingleData():GetBossSingleChallengeCount()
     local allCount = self:GetChallengeCount()
 
@@ -1156,7 +1156,7 @@ end
 function XFubenBossSingleAgency:IsInRecordTeam(stageId, characterId)
     local characterList = self:GetCharacterListInRecord(stageId)
     if not characterList then
-         return false
+        return false
     end
     for _, characterIdToFind in pairs(characterList) do
         if characterIdToFind == characterId then
@@ -1203,6 +1203,18 @@ function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
         end
     end
     return isChange
+end
+
+function XFubenBossSingleAgency:IsCharacterHasRecord(stageId, characterId)
+    local stageRecord = self._Model:GetRecordCurrentByStageId(stageId)
+    if stageRecord then
+        for _, recordCharacterId in pairs(stageRecord.Characters) do
+            if recordCharacterId == characterId then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 return XFubenBossSingleAgency

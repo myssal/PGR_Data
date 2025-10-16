@@ -25,8 +25,8 @@ function XUiGridRaceScheduleRankCell:SetPointsRaceData(index, roleId, data, isSh
     local point = Empty
 
     if rankData then
-        rank1 = data:GetRoleRank(roleId, 1) or Empty
-        rank2 = data:GetRoleRank(roleId, 2) or Empty
+        rank1 = data:GetInRoleRank(roleId, 1) or Empty
+        rank2 = data:GetInRoleRank(roleId, 2) or Empty
         time1 = self._Control:GetPassTimeStr(data:GetRoleTime(roleId, 1)) or Empty
         time2 = self._Control:GetPassTimeStr(data:GetRoleTime(roleId, 2)) or Empty
         point = data:GetRoleTotalPoint(roleId) or Empty

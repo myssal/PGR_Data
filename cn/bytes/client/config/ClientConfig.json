@@ -392,7 +392,7 @@
     {
         "Key": "BrilliantWalkEnergyName",
         "Type": "string",
-        "Value": "Port"
+        "Value": "接口"
     },
     {
         "Key": "BrilliantWalkResultIcon",
@@ -672,7 +672,7 @@
     {
         "Key": "ChildArgUrl",
         "Type": "string",
-        "Value": "https://pns.kurogame.com/p/child_privacy|Children's Privacy Policy"
+        "Value": "https://pns.kurogame.com/p/child_privacy|儿童隐私协议"
     },
     {
         "Key": "CollectionHintColor",
@@ -1062,12 +1062,12 @@
     {
         "Key": "DormSuitBgmDesc",
         "Type": "string",
-        "Value": "Place <color=#0E70BDFF>%s</color> different set decors in room to %s unlock BGM <color=#0E70BDFF>[%s]</color>"
+        "Value": "房间内摆放套装不同家具达<color=#0E70BDFF>%s</color>件%s解锁bgm<color=#0E70BDFF>【%s】</color>"
     },
     {
         "Key": "DormSuitBgmTitleDesc",
         "Type": "string",
-        "Value": "<size=30><color=#0E70BDFF>Set bonus</color></size>"
+        "Value": "<size=30><color=#0E70BDFF>套装效果</color></size>"
     },
     {
         "Key": "DormTemplateCaptureAngleX",
@@ -1577,12 +1577,12 @@
     {
         "Key": "FurnitureDefaultName",
         "Type": "string",
-        "Value": "Craft Decor"
+        "Value": "家具制作"
     },
     {
         "Key": "FurnitureDefaultResetName",
         "Type": "string",
-        "Value": "Recraft Decor"
+        "Value": "家具重制"
     },
     {
         "Key": "FurnitureImgS10",
@@ -2012,7 +2012,7 @@
     {
         "Key": "GuildInterComMaxLen",
         "Type": "int",
-        "Value": 50
+        "Value": 20
     },
     {
         "Key": "GuildMainInfoRefreshTime",
@@ -2022,7 +2022,7 @@
     {
         "Key": "GuildNameMaxLen",
         "Type": "int",
-        "Value": 16
+        "Value": 8
     },
     {
         "Key": "GuildNameMinLen",
@@ -2037,52 +2037,52 @@
     {
         "Key": "GuildRankIcon1",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Common/CommonSekuai1.png"
+        "Value": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerIconLv1.png"
     },
     {
         "Key": "GuildRankIcon2",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Common/CommonSekuai1.png"
+        "Value": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerIconLv1.png"
     },
     {
         "Key": "GuildRankIcon3",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Common/CommonSekuai1.png"
+        "Value": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerIconLv1.png"
     },
     {
         "Key": "GuildRankIcon4",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Common/CommonSekuai1.png"
+        "Value": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerIconLv1.png"
     },
     {
         "Key": "GuildRankIcon5",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Common/CommonSekuai1.png"
+        "Value": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerIconLv1.png"
     },
     {
         "Key": "GuildRankName1",
         "Type": "string",
-        "Value": "Leader"
+        "Value": "会长"
     },
     {
         "Key": "GuildRankName2",
         "Type": "string",
-        "Value": "Officer"
+        "Value": "副会长"
     },
     {
         "Key": "GuildRankName3",
         "Type": "string",
-        "Value": "Core Member"
+        "Value": "核心成员"
     },
     {
         "Key": "GuildRankName4",
         "Type": "string",
-        "Value": "Normal Member"
+        "Value": "普通成员"
     },
     {
         "Key": "GuildRankName5",
         "Type": "string",
-        "Value": "Guest"
+        "Value": "游客"
     },
     {
         "Key": "GuildRefreshRecruitTime",
@@ -2252,12 +2252,12 @@
     {
         "Key": "MaxNameLength",
         "Type": "int",
-        "Value": 12
+        "Value": 8
     },
     {
         "Key": "MaxSignLength",
         "Type": "int",
-        "Value": 30
+        "Value": 15
     },
     {
         "Key": "MedalStoryId",
@@ -2535,11 +2535,6 @@
         "Value": 90
     },
     {
-        "Key": "NewUserMovieId",
-        "Type": "string",
-        "Value": "ZX00000BA"
-    },
-    {
         "Key": "NieREasterEggBulletChatDelayTime",
         "Type": "float",
         "Value": 2
@@ -2645,6 +2640,11 @@
         "Value": "Assets/Product/Ui/ComponentPrefab/Character/PanelEquipV2P6.prefab"
     },
     {
+        "Key": "PanelEquipTeamPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiTeamPrefab/PanelEquipTeamPrefab.prefab"
+    },
+    {
         "Key": "PanelQualitySingleV2P6",
         "Type": "string",
         "Value": "Assets/Product/Ui/ComponentPrefab/Character/PanelQualitySingleV2P6.prefab"
@@ -2742,12 +2742,12 @@
     {
         "Key": "PrivacyPolicyUrl",
         "Type": "string",
-        "Value": "https://pns.kurogame.com/p/personal_privacy|Privacy Policy"
+        "Value": "https://pns.kurogame.com/p/personal_privacy|隐私协议"
     },
     {
         "Key": "PrivateChatTextLimit",
         "Type": "int",
-        "Value": 150
+        "Value": 50
     },
     {
         "Key": "PurchaseBuyPayCD",
@@ -2857,7 +2857,7 @@
     {
         "Key": "RebootFree",
         "Type": "string",
-        "Value": "<size=60>Free</size>"
+        "Value": "<size=60>免费</size>"
     },
     {
         "Key": "ReconnectInterval",
@@ -2907,7 +2907,7 @@
     {
         "Key": "SkyGardenGuideData",
         "Type": "string",
-        "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
+        "Value": "Assets/Product/Behavior/BigWorld/SkyGarden/Guide/SkyGardenGuideData.bytes"
     },
     {
         "Key": "RogueLikeBossNode",
@@ -3197,7 +3197,7 @@
     {
         "Key": "ShieldedProtocol",
         "Type": "string",
-        "Value": "The function has been masked. Check News for more details."
+        "Value": "该功能已屏蔽，详情查阅公告"
     },
     {
         "Key": "ShopCanBuyColor",
@@ -4147,7 +4147,7 @@
     {
         "Key": "UserAgreementUrl",
         "Type": "string",
-        "Value": "https://pns.kurogame.com/p/agreement_public.html|User Agreement"
+        "Value": "https://pns.kurogame.com/p/agreement_public.html|用户协议"
     },
     {
         "Key": "VerificationWaitInterval",
@@ -4282,7 +4282,7 @@
     {
         "Key": "AprilFoolsDayLoginPicPath",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiloginBg/LoginBg.png"
+        "Value": "Assets/Product/Texture/Image/BgUi/BgLoginSp01.png"
     },
     {
         "Key": "AprilFoolsDayMainCharacter",
@@ -4297,7 +4297,7 @@
     {
         "Key": "AprilFoolsDaySubCharacter",
         "Type": "string",
-        "Value": "1011002|1021001|1031001|1061002|1031002|1021002|1031003|1061003|1011003|1121002|1021004|1131002|1161002|1521003|1211002|1121003|1221002|1131003|1031004|1011004|1241002|1221003|1251002|1521004|1291002|1171004|1301002"
+        "Value": "1011002|1021001|1031001|1061002|1031002|1021002|1031003|1061003|1011003|1121002|1021004|1131002|1161002|1521003|1211002|1121003|1221002|1131003|1031004|1011004|1241002|1221003|1251002|1521004"
     },
     {
         "Key": "AprilFoolsDayMainShowChangeCharacter",
@@ -4392,12 +4392,12 @@
     {
         "Key": "DefaultSubtitles",
         "Type": "int",
-        "Value": 2
+        "Value": 1
     },
     {
         "Key": "DefaultAutoSwitchVideoAudioLanguage",
         "Type": "int",
-        "Value": -1
+        "Value": 1
     },
     {
         "Key": "WeekCardTipRepurchaseRemainDays",
@@ -4482,7 +4482,7 @@
     {
         "Key": "UiNewbiePopupTipText",
         "Type": "string",
-        "Value": "[Beginner Tutorial] will still grant [<color=#0F70BC>Basic Construct R&D Tickets</color>]. Exchange with [<color=#ff4040>Black Cards</color>] anyway?"
+        "Value": "【新手入门】仍可获得[<color=#0F70BC>基准角色研发券</color>]，是否确认继续使用[<color=#ff4040>黑卡</color>]兑换？"
     },
     {
         "Key": "PhotographNodePrefabPath",
@@ -4627,7 +4627,7 @@
     {
         "Key": "IsBtnSceneSettingShow",
         "Type": "int",
-        "Value": 1
+        "Value": 0
     },
     {
         "Key": "AprilFoolsDayCuteHeadEndTime2025",
@@ -4725,274 +4725,9 @@
         "Value": 61210
     },
     {
-        "Key": "PhotoSave",
-        "Type": "string",
-        "Value": "Saved to album"
-    },
-    {
-        "Key": "FunctionNotDuringOpening",
-        "Type": "string",
-        "Value": "Currently not available"
-    },
-    {
-        "Key": "FocusType1",
-        "Type": "string",
-        "Value": "Auto Lock: Automatically locks on the enemy in your way when you move the joystick."
-    },
-    {
-        "Key": "FocusType2",
-        "Type": "string",
-        "Value": "Manual Lock: Tap empty space (excluding the joystick area) to switch lock-on target. Press and hold to unlock the target. <color=#0e70bd>If you have checked \"Display Lock Button\", press \"Lock\" to switch lock-on target in battle.</color>"
-    },
-    {
-        "Key": "WeaponTransType1",
-        "Type": "string",
-        "Value": "Off: On the weapon screen, <color=#0e70bd>skip animations and display the transformed weapon directly</color>"
-    },
-    {
-        "Key": "WeaponTransType2",
-        "Type": "string",
-        "Value": "On: On the weapon screen, <color=#0e70bd>display the weapon transform animation</color>"
-    },
-    {
-        "Key": "TRPGChapterName",
-        "Type": "string",
-        "Value": "Chapter 13"
-    },
-    {
-        "Key": "TRPGChapterEn",
-        "Type": "string",
-        "Value": "Destined Calamity"
-    },
-    {
-        "Key": "FeedBackUrl",
-        "Type": "string",
-        "Value": "https://www.facebook.com/PGR.Global"
-    },
-    {
-        "Key": "ActivityLinkButtonBg",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiActivityBase/UiActivityBaseShopBg.png"
-    },
-    {
-        "Key": "ActivityLinkButtonName",
-        "Type": "string",
-        "Value": "External Link"
-    },
-    {
-        "Key": "BfrtShowHelpTip01",
-        "Type": "string",
-        "Value": "Strongholdone"
-    },
-    {
-        "Key": "BfrtShowHelpTip02",
-        "Type": "string",
-        "Value": "Strongholdtwo"
-    },
-    {
-        "Key": "BfrtShowHelpTip03",
-        "Type": "string",
-        "Value": "Strongholdthree"
-    },
-    {
-        "Key": "LBBuyRiYuanIconPath",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiPurchase/UiPurchaseYuan.png"
-    },
-    {
-        "Key": "PurchaseBuyRiYuanIconPath",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiPurchase/UiPurchaseYuan1.png"
-    },
-    {
-        "Key": "PurchaseBuyRiYuanIconPath1",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiPurchase/UiPurchaseYuan2.png"
-    },
-    {
-        "Key": "LBBuyRiYuanIconPath1",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiPurchase/UiPurchaseYuan3.png"
-    },
-    {
-        "Key": "OpenChangePassword",
-        "Type": "int",
-        "Value": 0
-    },
-    {
-        "Key": "PurchaseYKTotalCountWeek",
-        "Type": "int",
-        "Value": 1
-    },
-    {
-        "Key": "PurchaseYKTotalCountDay",
-        "Type": "int",
-        "Value": 1
-    },
-    {
-        "Key": "PurchaseYKLimtCountWeek",
-        "Type": "int",
-        "Value": 7
-    },
-    {
-        "Key": "LuckDrawCoinsRotateSpeed",
-        "Type": "float",
-        "Value": 50
-    },
-    {
-        "Key": "OpenSetPassword",
-        "Type": "int",
-        "Value": 0
-    },
-    {
-        "Key": "NewYearShowDrawTipsTime",
-        "Type": "float",
-        "Value": 10.5
-    },
-    {
-        "Key": "NewYearCoinsNormalRotateSpeed",
-        "Type": "float",
-        "Value": 50
-    },
-    {
-        "Key": "NewYearCoinsPerDragAddSpeed",
-        "Type": "float",
-        "Value": 360
-    },
-    {
-        "Key": "NewYearCoinsMaxAddSpeed",
-        "Type": "float",
-        "Value": 480
-    },
-    {
-        "Key": "NewYearCoinsDampAddSpeed",
-        "Type": "float",
-        "Value": 360
-    },
-    {
-        "Key": "NewYearCoinsMaxSpeed",
-        "Type": "float",
-        "Value": 960
-    },
-    {
-        "Key": "NewYearCoinsDampSpeed",
-        "Type": "float",
-        "Value": 80
-    },
-    {
-        "Key": "DrawNewYearPlaySoundTime",
-        "Type": "float",
-        "Value": 800
-    },
-    {
-        "Key": "PurchasePayLockGoodsTime",
-        "Type": "float",
-        "Value": 60
-    },
-    {
-        "Key": "DeepLinkCondition",
-        "Type": "int",
-        "Value": 1400000
-    },
-    {
-        "Key": "AccountUnCancellationTitle",
-        "Type": "string",
-        "Value": "Account Deletion Notice"
-    },
-    {
-        "Key": "AccountUnCancellationContent",
-        "Type": "string",
-        "Value": "You've requested to delete the game account you're currently logging in and it's waiting to be processed. If you continue to log in, the request will be cancelled automatically. Continue?"
-    },
-    {
-        "Key": "OnAccountUnCancellationSuccessTip",
-        "Type": "string",
-        "Value": "Deletion request has been cancelled. You can continue to log in the game with the current account."
-    },
-    {
-        "Key": "HeroOffcialGachaWebsite",
-        "Type": "string",
-        "Value": "Rewards in each tier change according to the chosen reward"
-    },
-    {
-        "Key": "ShowRegulationEnable",
-        "Type": "int",
-        "Value": 0
-    },
-    {
-        "Key": "RegulationPrefabUrl",
-        "Type": "string",
-        "Value": "Assets/Product/Ui/ComponentPrefab/Shop/BtnShowSpecialReg.prefab"
-    },
-    {
-        "Key": "GooglePlayHintText",
-        "Type": "string",
-        "Value": "Google Playポイントでアイテムを獲得しました、メールボックスにてお受け取りください。"
-    },
-    {
-        "Key": "ColorTableShopItemTextCanBuyColorJP",
-        "Type": "string",
-        "Value": "FFFFFF"
-    },
-    {
-        "Key": "ColorTableShopItemTextCanNotBuyColorJP",
-        "Type": "string",
-        "Value": "FF8F75"
-    },
-    {
-        "Key": "JPFoolLogo",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/Logo/JPFoolGameLogo.png"
-    },
-    {
-        "Key": "UiGoldenMinerB",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerB.png"
-    },
-    {
-        "Key": "UiGoldenMinerA",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerA.png"
-    },
-    {
-        "Key": "UiGoldenMinerPsA",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerPsA.png"
-    },
-    {
-        "Key": "UiGoldenMinerPsB",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerPsB.png"
-    },
-    {
-        "Key": "UiGoldenMinerXboxA",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerXboxA.png"
-    },
-    {
-        "Key": "UiGoldenMinerXboxB",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiGoldenMiner/UiGoldenMinerXboxB.png"
-    },
-    {
-        "Key": "TeachActIds",
-        "Type": "string",
-        "Value": "40-41-42"
-    },
-    {
-        "Key": "GroupActIds",
-        "Type": "string",
-        "Value": "129-130-3"
-    },
-    {
         "Key": "IsCombBP",
         "Type": "int",
-        "Value": 1
-    },
-    {
-        "Key": "ArenaOnlineCloseTime",
-        "Type": "int",
-        "Value": 1656986340
+        "Value": 0
     },
     {
         "Key": "BPDailyUpdateTime",
@@ -5022,56 +4757,61 @@
     {
         "Key": "CrossVersionEnable",
         "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "UiMainTerminalMobileListUnlockCondition",
+        "Type": "int",
+        "Value": 1050284
+    },
+    {
+        "Key": "CharacterPowerIconVisible",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CharacterPowerDrawIconVisible",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CharacterPowerIconSmallVisible",
+        "Type": "int",
         "Value": 1
     },
     {
-        "Key": "ActivityBriefEntryIcon",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Atlas/UiFubenActivity/UiFANYA.png"
-    },
-    {
-        "Key": "PurchaseCardUiType",
-        "Type": "int",
-        "Value": 2
-    },
-    {
-        "Key": "PurchaseCardId1",
-        "Type": "int",
-        "Value": 90032
-    },
-    {
-        "Key": "PcNormalControllerTypePollingInterval",
+        "Key": "CharacterPowerIconSkillVisible",
         "Type": "int",
         "Value": 1
     },
     {
-        "Key": "PcMovieDoNext",
-        "Type": "float",
-        "Value": 0.35
+        "Key": "CharacterPowerSkillUnderVisible",
+        "Type": "int",
+        "Value": 1
     },
     {
-        "Key": "USER_AGREEMENT_URL",
-        "Type": "string",
-        "Value": "https://kurogame.net/download/termsofservice.txt"
+        "Key": "CharacterPowerIconEvolveVisible",
+        "Type": "int",
+        "Value": 1
     },
     {
-        "Key": "USER_PRIVACY_URL",
-        "Type": "string",
-        "Value": "https://kurogame.net/download/privacypolicy.txt"
+        "Key": "CharacterPowerIconDetailVisible",
+        "Type": "int",
+        "Value": 1
     },
     {
-        "Key": "EnWelfareMonthlyCardMap",
+        "Key": "BtnEvolutionDefaultTexture",
         "Type": "string",
-        "Value": "4:83028|1300002:90032"
+        "Value": "Assets/Product/Texture/Image/UiCharacter/PanelCharBtnBg7.png"
     },
     {
-        "Key": "MonthlyCardABg",
-        "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiSignRechargeBanner/UiSignRechargeBannerBgYueka.jpg"
+        "Key": "CheckSubPackageCDDownloadConditionId",
+        "Type": "int",
+        "Value": 1050285
     },
     {
-        "Key": "MonthlyCardCBg",
+        "Key": "MonthCardPlusPrefab",
         "Type": "string",
-        "Value": "Assets/Product/Texture/Image/UiSignRechargeBanner/UiSignRechargeBannerBgEnYuekaC.jpg"
+        "Value": "Assets/Product/Ui/ComponentPrefab/UiPurchase/UiPurchaseV400/PanelYKPlusBuy.prefab"
     }
 ]

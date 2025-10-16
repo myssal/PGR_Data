@@ -241,7 +241,7 @@ end
 function XCharKuroro:FollowType2(destination)
     local selfPosition = self._proxy:GetNpcPosition(self._uuid)
     local deltaMove = self._proxy:TransformPointByActor(self._playerNpcUUID, destination) - selfPosition
-    self._proxy:SetNpcLookAtPosition(self._uuid, selfPosition + deltaMove) --调整面朝像
+    self._proxy:SetNpcFaceToPosition(self._uuid, selfPosition + deltaMove) --调整面朝像
     self._proxy:MoveNpc(self._uuid, deltaMove)
 end
 
@@ -279,7 +279,7 @@ function XCharKuroro:StartFollow(dt)
     end
     if Vector3.Distance(self._proxy:GetNpcPosition(self._uuid), destination) > 0.3 then --距离0.3以上才移动
         local deltaMove = (destination - selfPosition).normalized * 5.9 * dt      --这里定义库洛洛的速度
-        self._proxy:SetNpcLookAtPosition(self._uuid, selfPosition + deltaMove) --调整面朝像
+        self._proxy:SetNpcFaceToPosition(self._uuid, selfPosition + deltaMove) --调整面朝像
         self._proxy:MoveNpc(self._uuid, deltaMove)
     end
 end

@@ -200,6 +200,20 @@ function XUiGridShop:RefreshCondition()
     end
     self.BtnCondition.gameObject:SetActiveEx(false)
     self.ConditionDesc = nil
+
+    --v4.0 判断购买优先级（商店里所有优先级低的商品买完后才能买优先级高的）
+    if XTool.IsNumberValid(self.Data.BuyPriority) then
+        if self.Parent.CheckGoodsBuyPriority then
+            local isUnlock = self.Parent:CheckGoodsBuyPriority(self.Data)
+            if not isUnlock then
+                self.BtnCondition.gameObject:SetActiveEx(true)
+                self.ImgSellOut.gameObject:SetActiveEx(false)
+                self.ConditionDesc = XUiHelper.ReplaceTextNewLine(XShopConfigs.GetGoodsBuyPriorityDesc(self.Data.Id))
+                return
+            end
+        end
+    end
+    
     local conditionIds = self.Data.ConditionIds
     if not conditionIds or #conditionIds <= 0 then
         return

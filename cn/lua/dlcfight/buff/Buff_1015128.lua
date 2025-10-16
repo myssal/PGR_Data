@@ -10,13 +10,15 @@ local ConfigMagicIdDict = {
     [1015128] = 1015129,
     [1015154] = 1015155,
     [1015156] = 1015157,
-    [1015158] = 1015159
+    [1015158] = 1015159,
+    [1016112] = 1016113
 }
 local ConfigRuneIdDict = {
     [1015128] = 20128,
     [1015154] = 20154,
     [1015156] = 20156,
-    [1015158] = 20158
+    [1015158] = 20158,
+    [1016112] = 20158
 }
 
 function XBuffScript1015128:Init() --初始化
@@ -40,14 +42,14 @@ end
 --region EventCallBack
 function XBuffScript1015128:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)         -- OnNpcCastSkillEvent
 
 end
 
-function XBuffScript1015128:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015128:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if self.buffCount >= self.maxCount then return end
     if launcherId ~= self._uuid then return end
-    if self._proxy:CheckNpcCurrentSkill(self._uuid,self.skillKind) then return end
+    if self._proxy:CheckNpcCurrentAction(self._uuid,self.skillKind) then return end
     self._proxy:ApplyMagic(self._uuid,self._uuid,self.BuffId,self.initialBuffLevel)
     self._proxy:SetAutoChessGemTriggerState(self._uuid, self.runeId)       --触发一次宝珠ui
     self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发

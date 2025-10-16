@@ -1200,7 +1200,7 @@ function XEquipModel:GetCanRecycleAwarenessIds(suitId)
     local awarenessIds = {}
     local equipIds = self:GetEquipIdsBySuitId(suitId)
     for _, equipId in pairs(equipIds) do
-        if self:IsClassifyEqualByEquipId(equipId, XEnumConst.EQUIP.CLASSIFY.AWARENESS) and self:IsEquipCanRecycle(equipId) then
+        if self:IsClassifyEqualByEquipId(equipId, XEnumConst.EQUIP.CLASSIFY.AWARENESS) and self:IsEquipCanRecycle(equipId) and not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(equipId) then
             table.insert(awarenessIds, equipId)
         end
     end
@@ -2064,17 +2064,19 @@ end
 
 
 ---------------------------------------- #region WeaponSkill ----------------------------------------
-function XEquipModel:GetConfigWeaponSkill(id)
+-- XEquipModel.lua 中修改
+function XEquipModel:GetConfigWeaponSkill(id, notTipError)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.WeaponSkill)
-    if id then
-        if cfgs[id] then
-            return cfgs[id]
-        else
-            XLog.Error("请检查配置表Share/Equip/WeaponSkill.tab，未配置行Id = " .. tostring(id))
-        end
-    else
-        return cfgs
+    if not id then
+        return cfgs or {}
     end
+    
+    local config = cfgs and cfgs[id]
+    if not config and not notTipError then  -- 仅在notTipError为false时打印日志
+        XLog.Warning(string.format("武器技能配置不存在，id=%d，配置表路径：Share/Equip/WeaponSkill.tab", id))
+    end
+    
+    return config or {}  -- 始终返回有效表，避免空引用
 end
 
 function XEquipModel:GetWeaponSkillAbility(id)

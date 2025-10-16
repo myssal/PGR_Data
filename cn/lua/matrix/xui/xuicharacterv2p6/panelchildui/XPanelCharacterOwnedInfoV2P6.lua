@@ -118,17 +118,8 @@ function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
     local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconVisible"))
     local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
     self.BtnTree.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
-    if powerConfig then
-        self.TxtTreeDesc.text = powerConfig.Description
-        self.BtnTree:SetSprite(powerConfig.Icon)
-
-        isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconEvolveVisible"))
-        if isShowTreeControl then
-            self.BtnEvolution:SetRawImage(powerConfig.IconEvolve)
-        end
-    else
-        self.BtnEvolution:SetRawImage(CS.XGame.ClientConfig:GetString("BtnEvolutionDefaultTexture"))
-    end
+    isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconEvolveVisible"))
+    self.ImgTreeBg.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
 
     -- 机体名
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(characterId)

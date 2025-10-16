@@ -12,6 +12,72 @@ function XUiGridEquip:InitRootUi(rootUi)
     self.Parent = rootUi
 end
 
+-- 清除显示，会依据所传入的角色ID，还原装备图标、品质图标、共鸣信息等状态
+function XUiGridEquip:ShowCharacterDefaultWeapon(characterId)
+    if not characterId then
+        return
+    end
+    
+    -- 获取角色配置中的Equip字段
+    local characterConfig = XMVCA.XCharacter:GetModelCharacterConfigById(characterId)
+    if not characterConfig or not characterConfig.EquipId then
+        return
+    end
+    
+    -- 更新图标为配置中的Equip图标
+    local equipIconPath = XMVCA.XEquip:GetEquipIconPath(characterConfig.EquipId)
+    if self.RImgIcon and self.RImgIcon:Exist() then
+        self.RImgIcon:SetRawImage(equipIconPath, nil, true)
+    end
+
+    -- 还原品质图标（ImgQuality）为默认状态
+    if self.ImgQuality then
+        -- 获取装备模板配置
+        local equipTemplate = XMVCA.XEquip:GetConfigEquip(characterConfig.EquipId)
+        if equipTemplate then
+            -- 重置为装备对应品质的默认图标
+            local qualityPath = XMVCA.XEquip:GetEquipQualityPath(characterConfig.EquipId)
+            self.Parent:SetUiSprite(self.ImgQuality, qualityPath)
+            -- 隐藏品质特效
+            if self.ImgQualityEffect then
+                self.ImgQualityEffect.gameObject:SetActiveEx(false)
+            end
+        end
+    end
+    
+    -- 还原共鸣信息为无共鸣状态
+    for i = 1, XEnumConst.EQUIP.MAX_RESONANCE_SKILL_COUNT do
+        local obj = self["ImgResonance" .. i]
+        if obj then
+            obj.gameObject:SetActiveEx(false)
+        end
+    end
+    
+    -- 还原其他状态（如选中、锁定、回收、突破等状态）
+    self:SetSelected(false)
+    if self.ImgLock then
+        self.ImgLock.gameObject:SetActiveEx(false)
+    end
+    if self.ImgLaJi then
+        self.ImgLaJi.gameObject:SetActiveEx(false)
+    end
+    if self.ImgBreakthrough then
+        self.ImgBreakthrough.gameObject:SetActiveEx(false)
+    end
+    if self.PanelUsing then
+        self.PanelUsing.gameObject:SetActiveEx(false)
+    end
+    if self.PanelDefault then
+        self.PanelDefault.gameObject:SetActiveEx(false)
+    end
+    if self.PanelNowPreset then
+        self.PanelNowPreset.gameObject:SetActiveEx(false)
+    end
+    if self.PanelOtherPreset then
+        self.PanelOtherPreset.gameObject:SetActiveEx(false)
+    end
+end
+
 function XUiGridEquip:Refresh(equipId, idList)
     self.EquipId = equipId
     local equip = XMVCA.XEquip:GetEquip(equipId)

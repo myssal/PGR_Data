@@ -28,8 +28,10 @@ function XUiBossSingleBattleRoleRoom:GetRoleDetailProxy()
         AOPOnBtnJoinTeamClickedBefore = function(proxy, rootUi)
             local challengeCount = XMVCA.XFubenBossSingle:GetCharacterChallengeCount(rootUi.CurrentEntityId)
             if challengeCount >= XMVCA.XFubenBossSingle:GetMaxStamina() then
-                XUiManager.TipCode(XCode.FubenBossSingleCharacterPointsNotEnough)
-                return true
+                if not XMVCA.XFubenBossSingle:IsCharacterHasRecord(rootUi.StageId, rootUi.CurrentEntityId) then
+                    XUiManager.TipCode(XCode.FubenBossSingleCharacterPointsNotEnough)
+                    return true
+                end
             end
         end,
         GetGridProxy = function()

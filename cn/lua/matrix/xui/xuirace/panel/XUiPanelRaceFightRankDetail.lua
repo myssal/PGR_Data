@@ -23,7 +23,7 @@ function XUiPanelRaceFightRankDetail:InitRace(count)
     end
 end
 
-function XUiPanelRaceFightRankDetail:UpdateRank()
+function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex)
     local isShow = false
     local rankCount = self._Scene:GetRankFinishCount()
     if rankCount ~= self._rankFinishCount then
@@ -50,7 +50,7 @@ function XUiPanelRaceFightRankDetail:UpdateRank()
     end
     
     if isShow then
-        self:ShowInfo(isShow)
+        self:ShowInfo(isShow, selectIndex)
         XTool.UpdateDynamicItemByUiCache(self._RankUI, self._rankData, self.GridRankData.transform.parent, nil, self)
         for i = 1, #self._RankUI do
             local rankInfo = self._rankData[i]
@@ -81,16 +81,21 @@ function XUiPanelRaceFightRankDetail:UpdateRank()
         if #self._RankUI > 0 then
             XTool.UpdateDynamicItemByUiCache(self._RankUI, {}, self.GridRankData.transform.parent, nil, self)
         end
-        self:ShowInfo(isShow)
+        self:ShowInfo(isShow, selectIndex)
     end
 end
 
-function XUiPanelRaceFightRankDetail:ShowInfo(isShow)
+function XUiPanelRaceFightRankDetail:ShowInfo(isShow, selectIndex)
     if self.GameObject.activeSelf == self.GameObject then
         return
     end
     if isShow then
-        self.Parent:PlayRaceDataEnable()
+        if self._selectIndex ~= selectIndex then
+            self.Parent:PlayRaceDataEnable()
+            self._selectIndex = selectIndex
+        end
+    else
+        self._selectIndex = nil
     end
     self.GameObject:SetActive(isShow)
 end
@@ -101,7 +106,7 @@ function XUiPanelRaceFightRankDetail:SelectIndex(index, characterId)
     end
     self._index = index
     self._characterId = characterId
-    self:UpdateRank()
+    self:UpdateRank(index)
 end
 
 return XUiPanelRaceFightRankDetail

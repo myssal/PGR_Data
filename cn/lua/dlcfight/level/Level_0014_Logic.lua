@@ -171,8 +171,8 @@ function XLevelBossFight0014:InitListen()
     self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)
     self._proxy:RegisterEvent(EWorldEvent.FightHuntQteStatusMsg)
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractComplete)
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)
-    self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:RegisterEvent(EWorldEvent.Behavior2ScriptMsg) --行为树传递到脚本的消息
     XLog.Debug("<color=#F0D800>[SceneHunt01]</color>初始化其他监听内容完成")
 end

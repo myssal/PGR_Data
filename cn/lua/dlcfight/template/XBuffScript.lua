@@ -30,8 +30,8 @@ end
 function XBuffScriptXXXX:InitEventCallBackRegister()
     --按需求解除注释进行注册
     --self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillAfterEvent
-    --self._proxy:RegisterEvent(EWorldEvent.NpcExitSkill)         -- OnNpcExitSkillEvent
+    --self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastActionAfterEvent
+    --self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)         -- OnNpcExitActionEvent
     --self._proxy:RegisterEvent(EWorldEvent.NpcDie)               -- OnNpcDieEvent
     --self._proxy:RegisterEvent(EWorldEvent.NpcRevive)            -- OnNpcReviveEvent
     --self._proxy:RegisterEvent(EWorldEvent.NpcLoadComplete)      -- OnNpcLoadCompleteEvent
@@ -47,11 +47,11 @@ function XBuffScriptXXXX:OnNpcDamageEvent(launcherId, targetId, magicId, kind, p
     
 end
 
-function XBuffScriptXXXX:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort) 
+function XBuffScriptXXXX:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort) 
     
 end
 
-function XBuffScriptXXXX:OnNpcExitSkillEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort) 
+function XBuffScriptXXXX:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort) 
     
 end
 

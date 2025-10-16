@@ -514,7 +514,7 @@ ObjectiveDefines.Obj20010118 = {
     ---@param obj QuestObjective20010118
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600017),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600017),false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -591,7 +591,7 @@ ObjectiveDefines.Obj20010122 = {
         proxy:LoadLevelNpc(obj.NPC200106PID)
         proxy:LoadLevelNpc(obj.NPC200107PID)
         proxy:LoadLevelNpc(obj.NPC200108PID)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600010),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600010),false)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
     ---@param obj QuestObjective20010122
@@ -702,13 +702,13 @@ ObjectiveDefines.Obj20010126= {
     ---@param obj QuestObjective20010126
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600010),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600010),true)
         proxy:FinishQuestObjectiveScriptEnter()
     end,
     ---@param obj QuestObjective20010126
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600010),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600010),false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1283,7 +1283,7 @@ ObjectiveDefines.Obj20010145= {
     ---@param obj QuestObjective20010145
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600014),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600014),false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1309,7 +1309,7 @@ ObjectiveDefines.Obj20010146= {
     ExitFunc = function(obj, proxy)
         proxy:RemoveTrialNpcFromTeam()---切换回指挥官
         proxy:LoadLevelNpc(600003)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600003),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600003),false)
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -1362,7 +1362,7 @@ ObjectiveDefines.Obj20010154= {
     ---@param obj QuestObjective20010154
     ---@param proxy XDlcCSharpFuncs
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600003),true)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600003),true)
         local pos = { x = 76.383, y = 7.865, z = 55.2803 }
         proxy:RequestEnterInstLevel(4013, pos)
         proxy:FinishQuestObjectiveScriptExit()
@@ -1405,7 +1405,7 @@ ObjectiveDefines.Obj20010156= {
     ---@param obj QuestObjective20010156
     ---@param proxy XDlcCSharpFuncs
     EnterFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(600003),false)
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(600003),false)
         proxy:UnloadLevelNpc(600014)
         proxy:FinishQuestObjectiveScriptEnter()
     end,

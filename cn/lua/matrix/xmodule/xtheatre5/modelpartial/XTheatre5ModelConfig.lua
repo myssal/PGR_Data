@@ -907,7 +907,7 @@ function XTheatre5Model:GetHammerInstanceId()
 end
 
 function XTheatre5Model:GetTheatre5RelicCfgById(relicId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5Relic, relicId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemRelic, relicId)
 end
 
 function XTheatre5Model:GetTheatre5RelicEffectCfgById(effectId)

@@ -16,6 +16,7 @@ function XRaceControl:OnInit()
     self._RaceRoadName = {
         "A", "B", "C", "D", "E", "F", "G", "H", "I", "J",
     }
+    self._RaceEnterCountKey = XPlayer.Id.. "_RaceEnterCountKey"
 end
 
 function XRaceControl:AddAgencyEvent()
@@ -656,6 +657,14 @@ function XRaceControl:GetRoadNameByIndex(index)
     return self._RaceRoadName[index]
 end
 
+function XRaceControl:GetEnterRaceCount()
+    return XSaveTool.GetData(self._RaceEnterCountKey) or 1
+end
+
+function XRaceControl:SetEnterRaceCount(cnt)
+    XSaveTool.SaveData(self._RaceEnterCountKey, cnt)
+end
+
 function XRaceControl:InitRacePowerData(raceCnt)
     self._RacePowerData = {}
     for i = 1, raceCnt do
@@ -727,6 +736,11 @@ end
 function XRaceControl:HandleActivityEnd()
     XLuaUiManager.RunMain()
     XUiManager.TipMsg(XUiHelper.GetText("ActivityAlreadyOver"))
+end
+
+---领奖
+function XRaceControl:OpenUiObtain(...)
+    XLuaUiManager.Open("UiRaceObtain", ...)
 end
 
 ---飘字
@@ -936,7 +950,7 @@ end
 function XRaceControl:RequestGainSkinReward(cb)
     XNetwork.CallWithAutoHandleErrorCode("RaceGainSkinRewardRequest", EmptyReq, function(res)
         self._Model:SetGainSkinReward()
-        XUiManager.OpenUiObtain(res.Results)
+        self:OpenUiObtain(res.Results)
         if cb then
             cb()
         end

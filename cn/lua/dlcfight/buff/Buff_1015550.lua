@@ -2,9 +2,7 @@ local Base = require("Buff/BuffBase/XBuffBase")
 
 ---@class XBuffScript1015550 : XBuffBase
 local XBuffScript1015550 = XDlcScriptManager.RegBuffScript(1015550, "XBuffScript1015550", Base)
---效果说明：每间隔10秒，触发一次火伤+30%的效果，持续5秒;
---1015592,释放技能后，1015550的触发时间提前1秒
---1015590，触发两次1015550后，基础触发时间缩短至5秒
+--效果说明：当添加【定时】标记时，获得增益
 
 local ConfigMagicIdDict = {
     [1015550] = 1015551,
@@ -26,7 +24,16 @@ local ConfigMagicIdDict = {
     [1015582] = 1015583,
     [1015584] = 1015585,
     [1015586] = 1015587,
-    [1015588] = 1015589
+    [1015588] = 1015589,
+    [1015932] = 1015933, --每间隔5秒，提升5%最大生命值，最多提升20%
+    [1015938] = 1015939, --每间隔5秒，永久提升概率类符纹的触发概率5%（最大20%）
+    [1015942] = 1015943, --每间隔5秒，使双方获得2秒疲劳状态
+    --强化效果部分
+    [1016154] = 1016155,
+    [1016156] = 1016157,
+    [1016158] = 1016159,
+    [1016160] = 1016161,
+    [1016162] = 1016163,
 }
 local ConfigRuneIdDict = {
     [1015550] = 20550,
@@ -48,33 +55,53 @@ local ConfigRuneIdDict = {
     [1015582] = 20582,
     [1015584] = 20584,
     [1015586] = 20586,
-    [1015588] = 20588
+    [1015588] = 20588,
+    [1015932] = 20932,
+    [1015938] = 20938,
+    [1015942] = 20942,
+    --强化效果部分
+    [1016154] = 20556,
+    [1016156] = 20564,
+    [1016158] = 20572,
+    [1016160] = 20580,
+    [1016162] = 20588,
 }
 
 function XBuffScript1015550:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    self.BuffTimer = 0 --初始计时器
-    self.BuffId = ConfigMagicIdDict[self._buffId]   --持续5秒的火伤+30%的buffid
-    self.magicLevel = 1 --buff等级1级
-    self.phase = 1  --阶段标记，1为初始，2为触发了两次定时效果
-    self.baseInterval = 5  --基础触发间隔
-    self.skillBoost = 0 --技能触发次数
-    self.ItemRune = 1015590 --基础触发时间减少的宝珠
-    self.SkillReduceTimeBuffId = 1015592 --释放技能触发时间提前1s的buff
-    self.ReduceTimeBuffid = 1015591 --基础触发时间减少
-    self.ReduceInjuries = 1015594   --受伤-20%的宝珠id
-    self.ReduceInjuriesId = 1015595   --受伤-20%的buffid
+    self.magicId = ConfigMagicIdDict[self._buffId]          --属性提升Buff
+    self.runeId = ConfigRuneIdDict[self._buffId]            --符纹ID赋值
+    self.magicLevel = 1 --初始buff等级1级
+    self.signalId = 1015911         --【定时】状态标记，标记管理脚本见1015910
+    self.signalCtrlId = 1015910     --【定时】状态管理Buff
     self.battleStartBuffId = 1015992    --战斗开始标记buff
-    self.skillType = 2    --跟战斗约定的起手技能类型，待定
-    self.skillcost = 0  --技能释放次数
-    self.FireTime = 0   --动态触发时间
+
+    --增强Buff列表，enh = enhance
+    self.enhBuffIdDict = {
+        [1] = 1015590, --增强Buff[1]：带有【每隔X秒】条件的效果，成功触发后的效果提升100%
+        [2] = 1015930, --增强Buff[2]，自身生命低于20%时，定时类符纹属性提升效果提升100%
+        [3] = 1015944, --增强Buff[3]，疲劳阶段，定时类符纹的属性提升效果效果提升100%
+    }
+    self.enhRuneIdDict = {
+        [1] = 20590, --增强Buff[1]对应的符纹Id
+        [2] = 20930, --增强Buff[2]对应的符纹Id
+        [3] = 20944, --增强Buff[3]对应的符纹Id
+    }
+    --增强Buff[1]配置
+    self.enhBuff1MagicLevel = 1     --增强Buff[1]提升的效果等级
+    --增强Buff[2]配置
+    self.enhBuff2MagicLevel = 1     --增强Buff[2]提升的效果等级
+    self.enhBuff2SignalId = 1015901 --【背水】标记Id
+    self.enhBuff2SignalCtrlId = 1015900 --【背水】标记控制Buff
+    --增强Buff[3]配置
+    self.enhBuff3MagicLevel = 1     --增强Buff[3]提升的效果等级
+    self.enhBuff3SignalId = 1015909 --【疲劳】标记Id
+    self.enhBuff3SignalCtrlId = 1015908 --【疲劳】标记控制Buff
     ------------执行------------
-    self.runeId = ConfigRuneIdDict[self._buffId]     --增伤宝珠Id
-    self.runeReduceInjuriesId = 20590                   --减伤宝珠Id
-    self.runeSkillReduceTimeId = 20592                  --释放技能加速触发宝珠Id
-    self.runeReduceTimeId = 20594                       --释放两次后加速触发宝珠Id
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self.signalCtrlId, 1)   --为自己添加【定时】管理Buff
+
 end
 
 ---@param dt number @ delta time
@@ -82,73 +109,47 @@ function XBuffScript1015550:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行------------
-    if not self._proxy:CheckBuffByKind(self._uuid, self.battleStartBuffId) then
-        return
-    end
 
-    self.BuffTimer = self.BuffTimer + dt    --更新计时器
-    self.FireTime = self.baseInterval
-    if self.phase == 1 and self._proxy:CheckBuffByKind(self._uuid, self.ItemRune) and self._proxy:GetBuffStacks(self._uuid, self.ReduceTimeBuffid) >= 2 then
-        self.baseInterval = 2
-        self.phase = 2
-        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeReduceTimeId)
-        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeReduceTimeId, 1)
-    end
-
-    if self._proxy:CheckBuffByKind(self._uuid, self.ItemRune) then
-        self.FireTime = math.max(1, self.baseInterval - self.skillBoost)
-        self.skillBoost = 0
-    end
-    if self.BuffTimer >= self.FireTime then
-        --达到触发时间触发
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.BuffId, self.magicLevel)    --加火伤buff
-        self._proxy:SetAutoChessGemTriggerState(self._uuid, self.runeId)
-        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.ReduceTimeBuffid, self.magicLevel)  --叠层buff计数+1
-        self.BuffTimer = self.BuffTimer - self.FireTime  --重置计时器
-        self.skillBoost = 0 --重置技能计数器
-        if self._proxy:CheckBuffByKind(self._uuid, self.ReduceInjuries) then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self.ReduceInjuriesId, self.magicLevel)
-            self._proxy:SetAutoChessGemTriggerState(self._uuid, self.runeReduceInjuriesId)
-            self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeReduceInjuriesId, 1)
-        end
-    end
 end
 
 
 --region EventCallBack
 function XBuffScript1015550:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)         -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
 end
 
-function XBuffScript1015550:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    --未持有技能减cd的buff直接返回
-    if not self._proxy:CheckBuffByKind(self._uuid, self.SkillReduceTimeBuffId) then
-        return
+function XBuffScript1015550:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    --如果自身添加了【定时】标记，则触发效果，并打开宝珠特效
+    if self._uuid == npcUUID and self.signalId == buffId then
+        local calMagicLevel = self.magicLevel
+        --若有强化Buff[1]则提升效果
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[1]) then
+            calMagicLevel = calMagicLevel + self.enhBuff1MagicLevel
+        end
+        --若有强化Buff[2]且处于【背水】状态下则提升效果
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2]) and self._proxy:CheckBuffByKind(self._uuid, self.enhBuff2SignalId) then
+            calMagicLevel = calMagicLevel + self.enhBuff2MagicLevel
+        end
+        --若有强化Buff[3]且处于【疲劳】状态下则提升效果
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[3]) and self._proxy:CheckBuffByKind(self._uuid, self.enhBuff3SignalId) then
+            calMagicLevel = calMagicLevel + self.enhBuff3MagicLevel
+        end
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, calMagicLevel)
+        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
     end
-
-    --不是自己释放的就返回
-    if launcherId ~= self._uuid then
-        return
+    --开始战斗处理
+    if self._uuid == npcUUID and self.battleStartBuffId == buffId then
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2]) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self.enhBuff2SignalCtrlId, 1)   --为自己添加【背水】管理Buff
+        end
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[3]) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self.enhBuff3SignalCtrlId, 1)   --为自己添加【疲劳】管理Buff
+        end
     end
-
-    --如果不是技能起手就返回
-    local skillTypeTemp = self._proxy:GetSkillType(skillId)
-    if skillTypeTemp ~= self.skillType then
-        return
-    end
-
-    --管理Buff释放&计数器，如果已经大于目标次数了，直接返回
-    if self.skillBoost >= 4 then
-        return
-    end
-
-    self.skillBoost = self.skillBoost + 1       --释放次数+1
-    self._proxy:SetAutoChessGemTriggerState(self._uuid, self.runeSkillReduceTimeId)
-    self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeSkillReduceTimeId, 1)
-
 end
+
 --endregion
 
 ---@param eventType number

@@ -3,21 +3,22 @@ local Base = require("Common/XFightBase")
 ---@class XBuffScript1015544 : XFightBase
 local XBuffScript1015544 = XDlcScriptManager.RegBuffScript(1015544, "XBuffScript1015544", Base)
 
-
---效果说明：战斗开始时，扣除自身70%HP，且受伤降低20%
+--效果说明：开局时，扣除自身40%HP，转化为等值护盾（与开局效果翻倍配合才能开局背水）彩蛋：如果再拿了开局buff触发两次，就似了
 
 function XBuffScript1015544:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
     self.magicId1 = 1015545
-    self.magicKind = 1015545
     self.magicId2 = 1015546
     self.magicLevel = 1
-    self.percent = 0.8
+    self.percent = 0.4
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.isSelfHurt = false
     self.activeTime = 0.1   --确保能吃到开局效果的加成，延迟0.1秒释放
+    self.enhBuff1Id = 1015790 --狂飙开幕类型符纹效果翻倍
+    self.enhBuff1Percent = 0.8
+    self.enhBuff1MagicLevel = 2
     ------------执行------------
     self.runeId = self.magicId1 - 1015000 + 20000 - 1
     self.activeTimer = 0  --确保能吃到开局效果的加成，延迟0.1秒释放
@@ -28,11 +29,17 @@ function XBuffScript1015544:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行------------
-    if not self._proxy:CheckBuffByKind(self._uuid,self.battleStartBuffId) then
+    if not self._proxy:CheckBuffByKind(self._uuid, self.battleStartBuffId) then
         return
     end
 
-    if self.activeTimer ==0 then
+    --有强化Buff1时，比例和效果等级调整
+    if self._proxy:CheckBuffByKind(self._uuid, self.enhBuff1Id) then
+        self.percent = self.enhBuff1Percent
+        self.magicLevel = self.enhBuff1MagicLevel
+    end
+
+    if self.activeTimer == 0 then
         self.activeTimer = self.activeTime + self._proxy:GetNpcTime(self._uuid)
     end
 
@@ -49,7 +56,7 @@ end
 --region EventCallBack
 function XBuffScript1015544:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCalcDamageAfter)
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageAfter,self._uuid)
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage) -- OnNpcDamageEvent
 end
 

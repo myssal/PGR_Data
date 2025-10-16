@@ -1280,6 +1280,38 @@ function XEquipAgency:GetResonanceSkillInfo(equipId, pos)
     return self._Model:GetResonanceSkillInfo(equipId, pos)
 end
 
+-- 仿写GuessResonanceType，参考GetResonanceSkillInfoByType的结构
+function XEquipAgency:GuessResonanceType(skillId)
+    -- 按类型依次匹配，返回第一个命中的类型
+    local resonanceTypeList = {
+        XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL,
+        XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB,
+        XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL
+    }
+    
+    for _, resonanceType in ipairs(resonanceTypeList) do
+        local config = self:GetResonanceSkillInfoByType(resonanceType, skillId)
+        if config then
+            return resonanceType
+        end
+    end
+    
+    XLog.Error(string.format("未知共鸣技能类型，skillId: %d", skillId))
+    return XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL -- 默认返回武器技能类型
+end
+
+-- 新增辅助函数，复用类型匹配逻辑（与GetResonanceSkillInfoByType对应）
+function XEquipAgency:GetResonanceSkillInfoByType(resonanceType, skillId)
+    if resonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB then
+        return XAttribConfigs.GetAttribGroupCfgById(skillId, true)
+    elseif resonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL then
+        return XMVCA.XCharacter:GetCharacterSkillPoolSkillInfo(skillId, true)
+    elseif resonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL then
+        return XMVCA.XEquip:GetConfigWeaponSkill(skillId, true)
+    end
+    return nil
+end
+
 function XEquipAgency:GetResonanceSkillList(equipId)
     local list = {}
     for i = 1, self:GetResonanceSkillNum(equipId) do
@@ -2017,8 +2049,8 @@ end
 
 
 ---------------------------------------- #region WeaponSkill ----------------------------------------
-function XEquipAgency:GetConfigWeaponSkill(id)
-    return self._Model:GetConfigWeaponSkill(id)
+function XEquipAgency:GetConfigWeaponSkill(id, notTipError)
+    return self._Model:GetConfigWeaponSkill(id, notTipError)
 end
 
 function XEquipAgency:GetWeaponSkillAbility(id)
@@ -2331,7 +2363,7 @@ end
 -- 初始化成员界面的预设装备面板
 ---@return XUiPanelEquipV2P6
 function XEquipAgency:InitPanelEquipTeamPrefab(parentTransform, parentUiProxy, ...)
-    local path = CS.XGame.ClientConfig:GetString("PanelEquipV2P6")
+    local path = CS.XGame.ClientConfig:GetString("PanelEquipTeamPrefab")
     local equipUi = parentTransform:LoadPrefab(path)
     local XUiPanelTeamPrefabEquip = require("XUi/XUiTeamPrefab/Grid/XUiPanelTeamPrefabEquip")
     local panelEquip = XUiPanelTeamPrefabEquip.New(equipUi, parentUiProxy, ...)

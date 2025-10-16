@@ -23,7 +23,7 @@ function XBuffScript1010015:Update(dt)
         return
     end
     --------------------------触发效果--------------------------------------------------------------------
-    self._proxy:LaunchMissile(self._casterUUID,self._uuid,self.bulletId,0)
+    self._proxy:LaunchMissile(self._casterUUID,self._uuid,self.bulletId,self.bulletId,0)
     
     ----------------------结算-----------------------------------------------------------------------
     self.timer = self.cd + self._proxy:GetFightTime(self._uuid)

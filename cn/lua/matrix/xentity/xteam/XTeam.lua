@@ -265,6 +265,16 @@ function XTeam:GetEntityIdPos(entityId)
     return -1
 end
 
+function XTeam:CheckHasRobotId()
+    local entityIds = self:GetEntityIds()
+    for _, entityId in ipairs(entityIds) do
+        if XRobotManager.CheckIsRobotId(entityId) then
+            return true
+        end
+    end
+    return false
+end
+
 function XTeam:CheckHasSameCharacterId(entityId, position)
     if self.IsStandAlone then
         return false

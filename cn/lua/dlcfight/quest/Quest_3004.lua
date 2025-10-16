@@ -102,7 +102,7 @@ ObjectiveDefines.Obj30040103 = {
     ExitFunc = function(obj, proxy)
         proxy:LoadLevelNpc(500020)----生成瑞娅
         proxy:PlayDramaCaption("Caption300402") --播放简易字幕
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -178,8 +178,8 @@ ObjectiveDefines.Obj30040106 = {
     end,
 
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500020),false)----关闭瑞娅交互
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500021),true)----开启医生交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500020),false)----关闭瑞娅交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500021),true)----开启医生交互
         proxy:PlayDramaCaption("Caption300404") --播放简易字幕
         proxy:FinishQuestObjectiveScriptExit()
     end,
@@ -235,7 +235,7 @@ ObjectiveDefines.Obj30040108 = {
 
     ExitFunc = function(obj, proxy)
         proxy:PlayDramaCaption("Caption300405") --播放简易字幕
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -341,7 +341,7 @@ ObjectiveDefines.Obj30040112 = {
         proxy:UnloadSceneObject(500019)
         proxy:LoadSceneObject(500002)
         proxy:LoadSceneObject(500008)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500023),false)----关闭罗斯交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500023),false)----关闭罗斯交互
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }
@@ -375,7 +375,7 @@ ObjectiveDefines.Obj300401121 = {
     end,
 
     ExitFunc = function(obj, proxy)
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500021),true)----开启医生交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500021),true)----开启医生交互
         proxy:UnloadSceneObject(500002)
         proxy:UnloadSceneObject(500008)
         proxy:PlayDramaCaption("Caption300407") --播放简易字幕
@@ -433,8 +433,8 @@ ObjectiveDefines.Obj30040114 = {
 
     ExitFunc = function(obj, proxy)
         proxy:PlayDramaCaption("Caption300408") --播放简易字幕
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
-        proxy:SetNpcInteractComponentEnable(proxy:GetNpcUUID(500020),true)----开启瑞娅交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500021),false)----关闭医生交互
+        proxy:SetActorInteractableComponentEnable(proxy:GetNpcUUID(500020),true)----开启瑞娅交互
         proxy:FinishQuestObjectiveScriptExit()
     end,
 }

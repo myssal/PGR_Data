@@ -1,4 +1,3 @@
----@class XDlcCSharpFuncs
 ---@alias float number
 ---@alias int number
 ---@alias Action function
@@ -6,6 +5,7 @@
 ---@alias Vector4 UnityEngine.Vector4
 ---@alias Vector3 UnityEngine.Vector3
 ---@alias Vector2 UnityEngine.Vector2
+---@class XDlcCSharpFuncs
 local XDlcCSharpFuncs = {}
 
 ---@desc 结束战斗并通知所有客户端退出战斗
@@ -68,6 +68,11 @@ end
 function XDlcCSharpFuncs:RemoveTimerTask(taskId)
 end
 
+---@desc 获取NpcPlaceId, 不为零为LevelNpc
+---@return int LevelNpc PlaceId
+function XDlcCSharpFuncs:GetNpcPlaceId()
+end
+
 ---@desc 将某个Actor的局部坐标转换为世界坐标
 ---@param uuid int 
 ---@param point Vector3 
@@ -82,11 +87,18 @@ end
 function XDlcCSharpFuncs:InverseTransformPointByActor(uuid, point)
 end
 
----@desc 获取一定范围内的随机数
+---@desc 获取一定范围内的随机数(int)
 ---@param min int 随机范围下限
 ---@param max int 随机范围上限
 ---@return int 
 function XDlcCSharpFuncs:Random(min, max)
+end
+
+---@desc 获取一定范围内的随机数(float)
+---@param minInclude float 随机范围下限
+---@param maxExclude float 随机范围上限
+---@return float 
+function XDlcCSharpFuncs:RandomFloat(minInclude, maxExclude)
 end
 
 ---@desc 记录自定义结算数据
@@ -194,87 +206,6 @@ end
 function XDlcCSharpFuncs:UnloadLevelNpc(placeId)
 end
 
----@desc 检查技能时间
----@param npcId int Npc对象的UUID
----@param type int 技能时间类型：Jump = 1, Move = 2, Skill = 3, UseAnimationY = 4
----@return bool 
-function XDlcCSharpFuncs:CheckSkillTiming(npcId, type)
-end
-
----@desc 使Npc释放指定技能
----@param npcId int 
----@param skillId int 
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkill(npcId, skillId)
-end
-
----@desc 使Npc释放指定技能(部分技能)
----@param npcId int 
----@param skillId int 
----@param startTime float 开始时间
----@param endTime float 结束时间
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkillEx(npcId, skillId, startTime, endTime)
-end
-
----@desc 向指定坐标放技能
----@param npcId int 
----@param skillId int 
----@param position Vector3 位置
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkillToPosition(npcId, skillId, position)
-end
-
----@desc 向指定坐标放技能(部分技能)
----@param npcId int 
----@param skillId int 
----@param position Vector3 位置
----@param startTime float 开始时间
----@param endTime float 结束时间
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkillToPositionEx(npcId, skillId, position, startTime, endTime)
-end
-
----@desc 向指定Npc放技能
----@param npcId int 要释放技能的Npc对象的UUID
----@param skillId int 技能Id
----@param targetNpcId int 目标Npc对象的UUID
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkillToTarget(npcId, skillId, targetNpcId)
-end
-
----@desc 向指定Npc放技能(部分技能)
----@param npcId int 要释放技能的Npc对象的UUID
----@param skillId int 技能Id
----@param targetNpcId int 目标Npc对象的UUID
----@param startTime float 开始时间
----@param endTime float 结束时间
----@return bool 返回是否释放成功
-function XDlcCSharpFuncs:CastSkillToTargetEx(npcId, skillId, targetNpcId, startTime, endTime)
-end
-
----@desc 打断Npc当前技能
----@param npcId int 
----@param force bool 默认值:false 
----@return void 
-function XDlcCSharpFuncs:AbortSkill(npcId, force)
-end
-
----@desc 检查Npc当前技能是否为指定技能
----@param npcId int 
----@param skillId int 
----@return bool 
-function XDlcCSharpFuncs:CheckNpcCurrentSkill(npcId, skillId)
-end
-
----@desc 获取当前技能的配置ID以及类型
----@param npcId int 
----@param skillId out int 
----@param skillType out int 
----@return bool 
-function XDlcCSharpFuncs:TryGetCurrentSkill(npcId, skillId, skillType)
-end
-
 ---@desc 使Npc死亡
 ---@param npcId int 
 ---@return void 
@@ -369,31 +300,50 @@ end
 function XDlcCSharpFuncs:GetNpcMoveType(npcId)
 end
 
+---@desc Npc是否正在移动
+---@param npcUUID int 
+---@return bool 
+function XDlcCSharpFuncs:IsNpcMoving(npcUUID)
+end
+
 ---@desc 设置Npc看向坐标
 ---@param npcId int 
 ---@param position Vector3 
 ---@return void 
-function XDlcCSharpFuncs:SetNpcLookAtPosition(npcId, position)
+function XDlcCSharpFuncs:SetNpcFaceToPosition(npcId, position)
+end
+
+---@desc 设置Npc看向索敌/锁定目标
+---@param npcId int 要设置的npcUUID
+---@param searchTargetUID long 索敌/锁定目标UID
+---@return void 
+function XDlcCSharpFuncs:SetNpcFaceToSearchTarget(npcId, searchTargetUID)
 end
 
 ---@desc 设置Npc看向目标
 ---@param npcId int 
 ---@param targetNpcId int 
 ---@return void 
-function XDlcCSharpFuncs:SetNpcLookAtNpc(npcId, targetNpcId)
+function XDlcCSharpFuncs:SetNpcFaceToNpc(npcId, targetNpcId)
 end
 
 ---@desc 设置玩家Npc相机锁定目标
----@param npcId int 
----@param targetId int 
+---@param npcId int 玩家NpcUUID
+---@param targetId int 目标UUID
 ---@return bool 
 function XDlcCSharpFuncs:SetNpcFocusTarget(npcId, targetId)
 end
 
 ---@desc 移除玩家Npc相机锁定目标
----@param npcId int 
+---@param npcId int 玩家NpcUUID
 ---@return void 
 function XDlcCSharpFuncs:RemoveNpcFocusTarget(npcId)
+end
+
+---@desc 获取玩家Npc相机锁定目标UUID
+---@param npcId int 玩家NpcUUID
+---@return int 玩家相机锁定的目标的UUID
+function XDlcCSharpFuncs:GetNpcFocusTarget(npcId)
 end
 
 ---@desc 获取本端玩家角色的Npc的UUID
@@ -419,10 +369,34 @@ end
 function XDlcCSharpFuncs:CheckNpcAction(npcId, action)
 end
 
----@desc 检查Npc能否释放技能
+---@desc 检查Npc能否释放动作
+---@desc --C#该接口判断了
+---@desc --1 Npc是否死亡
+---@desc --2 Npc是否拥有 Npc状态:无法释放动作
+---@desc --3 Npc是否在受击
+---@desc --4 空中组件判断是否能在空中放动作
 ---@param npcId int 
----@return bool 
+---@return bool Bool:能否释放动作
 function XDlcCSharpFuncs:CheckCanCastSkill(npcId)
+end
+
+---@desc 检查Npc动作Condition是否满足 (Condition表格)
+---@desc 表格位置："Share\StatusSyncFight\Skill\Condition"
+---@param npcId int 
+---@param actionId int 要判断的动作Id
+---@return bool Bool:是否满足
+function XDlcCSharpFuncs:CheckNpcActionCondition(npcId, actionId)
+end
+
+---@desc 检查下一个动作是否能打断当前动作
+---@desc 1 若当前没有在播放的动作，则返回True。
+---@desc 2 先判断打断优先级，若优先级高于当前动作，返回True。
+---@desc 3 再判断时间轴，若处于打断时间内，返回True。(填写了TimingID则以时间轴做判断，否则用当前动作的CastTime做通用后摇区间判断)
+---@param npcId int 
+---@param nextActionId int 
+---@param timingId int 默认值:0 
+---@return bool Bool:能否打断
+function XDlcCSharpFuncs:CheckNpcCanAbortCurrentAction(npcId, nextActionId, timingId)
 end
 
 ---@desc 检查Npc当前技能已经释放完或到后摇阶段（当前没有正在释放技能也算完成)
@@ -630,14 +604,6 @@ end
 function XDlcCSharpFuncs:GetSkillBallCount(npcId, countBackend)
 end
 
----@desc 设置NPC任务提示图标显隐
----@param placeId int Npc对象的placeId
----@param questId int 任务ID（用于设置对应任务类型的图标样式）
----@param active bool true显示，false隐藏
----@return void 
-function XDlcCSharpFuncs:SetNpcQuestTipIconActive(placeId, questId, active)
-end
-
 ---@desc 设置Npc作为交互发起者进行交互时是否转身面向交互目标
 ---@param uuid int Npc对象的UUID
 ---@param enable bool 是否允许
@@ -665,6 +631,33 @@ end
 ---@param npcUUID2 int 要朝向的Npc对象的UUID
 ---@return void 
 function XDlcCSharpFuncs:TurnNpc(npcUUID1, npcUUID2)
+end
+
+---@desc Npc 的水平方向上的角度差是否抵达视线角度最大值
+---@param fstNpcUUID int
+---@param sndNpcUUID int
+---@return bool 
+function XDlcCSharpFuncs:IsNpcAngleReachMaxLookAtAngleOnHorizontal(fstNpcUUID, sndNpcUUID)
+end
+
+---@desc 向目标 Npc 位置旋转一次
+---@param fstNpcUUID int 要转向的Npc对象的UUID
+---@param sndNpcUUID int 要朝向的Npc对象的UUID
+---@return void 
+function XDlcCSharpFuncs:TurnNpcOnce(fstNpcUUID, sndNpcUUID)
+end
+
+---@desc 开启注视（仅客户端使用）
+---@param fstNpcUUID int 要注视其它人的Npc对象的UUID
+---@param sndNpcUUID int 被注视的Npc对象的UUID
+---@return void 
+function XDlcCSharpFuncs:EnableNpcLookAt(fstNpcUUID, sndNpcUUID)
+end
+
+---@desc 关闭注视（仅客户端使用）
+---@param fstNpcUUID int 要注视其它人的Npc对象的UUID
+---@return void 
+function XDlcCSharpFuncs:DisableNpcLookAt(fstNpcUUID)
 end
 
 ---@desc 检查目标Actor是否应该响应玩家的交互
@@ -776,11 +769,19 @@ end
 function XDlcCSharpFuncs:SetNpcAnimationLayer(uuid, layerIndex)
 end
 
----@desc 设置Npc是否可交互
----@param uuid int Npc对象的UUID
+---@desc 设置Actor是否可交互，目前支持NPC和SceneObject
+---@param uuid int Actor对象的UUID
 ---@param enable bool 是否可交互
 ---@return void 
-function XDlcCSharpFuncs:SetNpcInteractComponentEnable(uuid, enable)
+function XDlcCSharpFuncs:SetActorInteractableComponentEnable(uuid, enable)
+end
+
+---@desc 通过PlaceId设置Actor是否可交互，目前支持NPC和SceneObject
+---@param actorType int Actor对象类型枚举，参考ETargetActorType
+---@param placeId int Actor对象的PlaceId
+---@param enable bool 是否可交互
+---@return void 
+function XDlcCSharpFuncs:SetActorInteractableComponentEnableByPlaceId(actorType, placeId, enable)
 end
 
 ---@desc 设置Npc FightTarget
@@ -843,6 +844,13 @@ end
 function XDlcCSharpFuncs:GetNpcOffsetPositionByFacing(uuid, euler, distance)
 end
 
+---@desc 获得世界坐标系中的点在目标角色本地坐标系中的本地坐标
+---@param pointInWorldSpace Vector3 世界坐标系中的点
+---@param targetNpcUUID int 目标Npc的UUID
+---@return Vector3 
+function XDlcCSharpFuncs:GetLocalPosInNpcLocalSpace(pointInWorldSpace, targetNpcUUID)
+end
+
 ---@desc 移动Npc到指定位置
 ---@param uuid int Npc对象的UUID
 ---@param position Vector3 移动到的位置
@@ -898,6 +906,16 @@ end
 function XDlcCSharpFuncs:AddLink(launcherNpcUUID, uuidA, uuidB, jointA, jointB, effectName, updateAlways)
 end
 
+---@desc 根据位置添加连线特效
+---@param pos1 Vector3 链接的位置1
+---@param pos2 Vector3 链接的位置2
+---@param effectName string 特效名
+---@param launcherNpcUUID int 释放者UUID
+---@param updateAlways bool 是否一直更新(否则隐藏不更新)
+---@return int 返回链接的Id
+function XDlcCSharpFuncs:AddPosLink(pos1, pos2, effectName, launcherNpcUUID, updateAlways)
+end
+
 ---@desc 检查连线特效是否存在
 ---@param linkId int 连接的Id
 ---@return bool 是否存在该链接
@@ -923,6 +941,12 @@ end
 ---@param actorUUID int Actor的UUID
 ---@return void 
 function XDlcCSharpFuncs:RemoveAllActorLink(launcherNpcUUID, actorUUID)
+end
+
+---@desc 移除指定Npc创造的所有PosLink
+---@param launcherNpcUUID int 施放者的UUID
+---@return void 
+function XDlcCSharpFuncs:RemoveAllNpcPosLink(launcherNpcUUID)
 end
 
 ---@desc 获取Npc的属性值
@@ -1007,6 +1031,29 @@ end
 function XDlcCSharpFuncs:GetNpcProtectorByType(uuid, type)
 end
 
+---@desc 添加护盾 (Buff脚本限定)
+---@param value int 值
+---@param type EDamageType 护盾类型
+---@param priority int 优先级
+---@return void 
+function XDlcCSharpFuncs:AddProtector(value, type, priority)
+end
+
+---@desc 移除护盾 (Buff脚本限定)
+---@return void 
+function XDlcCSharpFuncs:RemoveProtector()
+end
+
+---@desc 检测基于Npc计算出的射线是否命中静态碰撞体（地形 & 场景物体 & 关卡障碍）
+---@param npcUUID int NPC的UUID
+---@param posOffset Vector3 射线原点基于NPC位置的偏移
+---@param rotOffset Vector3 射线方向基于NPC朝向的旋转偏移
+---@param distance float 射线长度
+---@param hitPos out Vector3 (第二个返回值)命中的障碍位置
+---@return bool 是否命中碰撞体
+function XDlcCSharpFuncs:CheckNpcRayCastStaticCollider(npcUUID, posOffset, rotOffset, distance, hitPos)
+end
+
 ---@desc 检测基于Npc计算出的射线是否命中关卡障碍
 ---@param npcUUID int NPC的UUID
 ---@param posOffset Vector3 射线原点基于NPC位置的偏移
@@ -1063,6 +1110,18 @@ end
 function XDlcCSharpFuncs:CheckThreatList(uuid)
 end
 
+---@desc 检查Npc仇恨值列表是否为空（不为空返回true）
+---@param uuid int 当前Npc的UUID
+---@return bool 
+function XDlcCSharpFuncs:CheckThreatValueList(uuid)
+end
+
+---@desc 检查Npc强仇恨列表是否为空（不为空返回true）
+---@param uuid int 当前Npc的UUID
+---@return bool 
+function XDlcCSharpFuncs:CheckForceThreatList(uuid)
+end
+
 ---@desc 检查目标Npc是否在当前Npc的仇恨列表中
 ---@param uuid int 当前Npc的UUID
 ---@param targetUUID int 目标Npc的UUID
@@ -1078,6 +1137,102 @@ end
 function XDlcCSharpFuncs:GetThreatValue(uuid, targetUUID)
 end
 
+---@desc 检查目标Npc是不是最高仇恨目标
+---@param uuid int 要检查的NpcUUID
+---@param targetUUID int 目标NpcUUID
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcIsIsFirstThreat(uuid, targetUUID)
+end
+
+---@desc 获取最高仇恨值的Npc
+---@param uuid int 要查询的NpcUUID
+---@return int 最高仇恨值的Npc的UUID
+function XDlcCSharpFuncs:GetMaxThreatValueNpc(uuid)
+end
+
+---@desc 获取最低仇恨值的Npc
+---@param uuid int 要查询的NpcUUID
+---@return int 最低仇恨值的Npc的UUID
+function XDlcCSharpFuncs:GetMinThreatValueNpc(uuid)
+end
+
+---@desc 添加伤害仇恨
+---@param uuid int 要添加仇恨的NpcUUID
+---@param targetUUID int 目标NpcUUID
+---@param value int 仇恨值参数
+---@return void 
+function XDlcCSharpFuncs:AddDamageThreat(uuid, targetUUID, value)
+end
+
+---@desc 添加仇恨值
+---@param uuid int 要添加仇恨的NpcUUID
+---@param targetUUID int 目标的Npc的UUID
+---@param ratioValue int 仇恨值比例
+---@param value int 仇恨值
+---@return void 
+function XDlcCSharpFuncs:AddThreatValue(uuid, targetUUID, ratioValue, value)
+end
+
+---@desc 设置目标Npc为最高仇恨值Npc
+---@param uuid int Npc的UUID
+---@param targetNpcUUID int 目标NpcUUID
+---@return void 
+function XDlcCSharpFuncs:SetMaxThreatValueNpc(uuid, targetNpcUUID)
+end
+
+---@desc 检查目标Npc是否在仇恨值列表中
+---@param uuid int NpcUUID
+---@param targetUUID int 目标NpcUUID
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcInThreatValueList(uuid, targetUUID)
+end
+
+---@desc 检查目标Npc是否在强仇列表中
+---@param uuid int NpcUUID
+---@param targetUUID int 目标NpcUUID
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcInThreatForceList(uuid, targetUUID)
+end
+
+---@desc 带有过渡的进入自定义表演流程
+---@param uuid int npcUUid
+---@param animName string 自定义表演动画
+---@param inTransitionDuration float 进入表演前的过渡时间
+---@param outTransitionDuration float 离开表演后的过渡时间
+---@param needTurn bool 默认值:false 是否需要旋转
+---@param interactFacePos Vector3 默认值:default 旋转后面向的目标位置
+---@return void 
+function XDlcCSharpFuncs:PlayNpcCustomPerformAnim(uuid, animName, inTransitionDuration, outTransitionDuration, needTurn, interactFacePos)
+end
+
+---@desc 中止当前表演状态
+---@param uuid int 
+---@return void 
+function XDlcCSharpFuncs:StopNpcPerformAnim(uuid)
+end
+
+---@desc 设置Npc部位忽略所有Npc碰撞
+---@param uuid int 要设置的NpcUUID
+---@param partId int 部位Id
+---@param ignore bool 是否忽略
+---@return void 
+function XDlcCSharpFuncs:SetNpcPartCollidersIgnoreAllOtherNpc(uuid, partId, ignore)
+end
+
+---@desc 设置Npc骨骼抖动时间缩放
+---@param uuid int 要设置的NpcUUID
+---@param isGetFromNpc bool 时间缩放是否依赖Npc的时间缩放
+---@return void 
+function XDlcCSharpFuncs:SetNpcBoneShakeTimeScale(uuid, isGetFromNpc)
+end
+
+---@desc 设置Npc透视
+---@param npcUUID int 要设置的NpcUUID
+---@param enable bool 是否开启透视效果
+---@return void 
+function XDlcCSharpFuncs:SetNpcDither(npcUUID, enable)
+end
+
 ---@desc 设置计算伤害前上下文
 ---@param contextId int 上下文Id
 ---@param physicalPermyraid int 物理倍率
@@ -1089,6 +1244,13 @@ end
 function XDlcCSharpFuncs:SetBeforeDamageMagicContext(contextId, physicalPermyraid, elementPermyraid, hackDamage, hackPermyraid, isCrit)
 end
 
+---@desc 设置计算伤害前上下文 韧性倍率
+---@param contextId int 上下文Id
+---@param breakPermyraid int 韧性倍率
+---@return void 
+function XDlcCSharpFuncs:SetBeforeDamageMagicContextBreak(contextId, breakPermyraid)
+end
+
 ---@desc 设置计算伤害后上下文
 ---@param contextId int 上下文Id
 ---@param physicalDamage int 最终物理伤害
@@ -1096,6 +1258,13 @@ end
 ---@param finalHackDamage int 最终Hack伤害
 ---@return void 
 function XDlcCSharpFuncs:SetAfterDamageMagicContext(contextId, physicalDamage, elementDamage, finalHackDamage)
+end
+
+---@desc 设置计算伤害后上下文 韧性倍率
+---@param contextId int 上下文Id
+---@param finalBreakDamage int 最终韧性倍率
+---@return void 
+function XDlcCSharpFuncs:SetAfterDamageMagicContextBreak(contextId, finalBreakDamage)
 end
 
 ---@desc 设置计算治疗前上下文
@@ -1154,8 +1323,16 @@ end
 ---@param targetType int 目标类型
 ---@param targetUUID int 目标UUID
 ---@param targetPos Vector3 目标位置
+---@param searchTargetUID long 索敌目标UID
 ---@return void 
-function XDlcCSharpFuncs:SetCastSkillByInputActionBeforeValue(contextId, targetType, targetUUID, targetPos)
+function XDlcCSharpFuncs:SetCastSkillByInputActionBeforeValue(contextId, targetType, targetUUID, targetPos, searchTargetUID)
+end
+
+---@desc 修改弹刀上下文
+---@param contextId int 上下文Id
+---@param success bool 弹刀是否成功
+---@return void 
+function XDlcCSharpFuncs:SetTriggerCounterContextValue(contextId, success)
 end
 
 ---@desc 以Npc为半径搜索符合条件的Npc
@@ -1204,10 +1381,21 @@ end
 function XDlcCSharpFuncs:GetSearchTargetList(uuid, npcTargetType)
 end
 
+---@desc 获取索敌/锁定目标的位置
+---@param searchTargetUID long 索敌/锁定目标的UID
+---@return Vector3 
+function XDlcCSharpFuncs:GetSearchTargetPosition(searchTargetUID)
+end
+
 ---@desc 获取当前锁定的目标（优先级 强制>硬锁>软锁）
 ---@param actorUUID out int 返回锁定目标所属的ActorUUID
 ---@return long 返回锁定目标的UID
 function XDlcCSharpFuncs:GetLockTarget(actorUUID)
+end
+
+---@desc 获取当前锁定的目标类型
+---@return int 锁定目标类型 ELockTargetType
+function XDlcCSharpFuncs:GetCurLockTargetType()
 end
 
 ---@desc 设置软锁基础配置
@@ -1350,23 +1538,131 @@ end
 function XDlcCSharpFuncs:SetNpcNoteFloat3(npcId, key, v1, v2, v3)
 end
 
+---@desc 注册黑板同步值
+---@param domain int 
+---@param id int 
+---@param key int 
+---@return void 
+function XDlcCSharpFuncs:RegisterBBSync(domain, id, key)
+end
+
+---@desc 取消黑板同步值
+---@param domain int 
+---@param id int 
+---@param key int 
+---@return void 
+function XDlcCSharpFuncs:UnregisterBBSync(domain, id, key)
+end
+
+---@desc 设置黑板值Bool
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param value bool 
+---@return void 
+function XDlcCSharpFuncs:SetBBBoolean(domain, id, key, value)
+end
+
+---@desc 获取黑板值Bool
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param result out bool 
+---@return bool 
+function XDlcCSharpFuncs:TryGetBBBoolean(domain, id, key, result)
+end
+
+---@desc 设置黑板值Int
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param value int 
+---@return void 
+function XDlcCSharpFuncs:SetBBInt(domain, id, key, value)
+end
+
+---@desc 获取黑板值Int
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param result out int 
+---@return bool 
+function XDlcCSharpFuncs:TryGetBBInt(domain, id, key, result)
+end
+
+---@desc 设置黑板值Float
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param value float 
+---@return void 
+function XDlcCSharpFuncs:SetBBFloat(domain, id, key, value)
+end
+
+---@desc 获取黑板值Float
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param result out float 
+---@return bool 
+function XDlcCSharpFuncs:TryGetBBFloat(domain, id, key, result)
+end
+
+---@desc 设置黑板值Vector2
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param value Vector2 
+---@return void 
+function XDlcCSharpFuncs:SetBBVector2(domain, id, key, value)
+end
+
+---@desc 获取黑板值Vector2
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param result out Vector2 
+---@return bool 
+function XDlcCSharpFuncs:TryGetBBVector2(domain, id, key, result)
+end
+
+---@desc 设置黑板值Vector3
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param value Vector3 
+---@return void 
+function XDlcCSharpFuncs:SetBBVector3(domain, id, key, value)
+end
+
+---@desc 获取黑板值Vector3
+---@param domain int 
+---@param id int 
+---@param key int 
+---@param result out Vector3 
+---@return bool 
+function XDlcCSharpFuncs:TryGetBBVector3(domain, id, key, result)
+end
+
 ---@desc 使一Npc向另一Npc发射子弹
 ---@param launcherId int 发射Npc的uuid
 ---@param targetId int 目标Npc的uuid
 ---@param launchId int 子弹发射参数id，与子弹帧事件id相同
+---@param missileId int 子弹配置id
 ---@param level int 子弹等级，作为子弹击中目标时执行的magic的等级，一般默认为1
 ---@return bool 发射是否成功
-function XDlcCSharpFuncs:LaunchMissile(launcherId, targetId, launchId, level)
+function XDlcCSharpFuncs:LaunchMissile(launcherId, targetId, launchId, missileId, level)
 end
 
 ---@desc 从指定坐标向另一指定坐标发射线性子弹
 ---@param launcherId int 发射Npc的uuid
 ---@param launchId int 子弹发射参数id，与子弹帧事件id相同
+---@param missileId int 子弹配置id
 ---@param launchPos Vector3 发射坐标
 ---@param targetPos Vector3 目标坐标
 ---@param level int 子弹等级，作为子弹击中目标时执行的magic的等级，一般默认为1
 ---@return bool 发射是否成功
-function XDlcCSharpFuncs:LaunchMissileFromPosToPos(launcherId, launchId, launchPos, targetPos, level)
+function XDlcCSharpFuncs:LaunchMissileFromPosToPos(launcherId, launchId, missileId, launchPos, targetPos, level)
 end
 
 ---@desc 移除所有指定发射者的子弹
@@ -1454,6 +1750,20 @@ end
 function XDlcCSharpFuncs:ResetCamera(resetAngleX, rotYEulerOffset, isEndRotationOverride)
 end
 
+---@desc 获取相机位置信息（相对于npc1和npc2构成的坐标系）
+---@param npc1UUID int Npc1的UUID
+---@param npc2UUID int Npc2的UUID
+---@param angleOffset out float 第二返回值（角度偏移）
+---@return Vector2 相对于新坐标系的位置
+function XDlcCSharpFuncs:GetCameraPosInfo(npc1UUID, npc2UUID, angleOffset)
+end
+
+---@desc 设置相机操作是否可用（仅客户端）
+---@param enable bool 是否可用
+---@return void 
+function XDlcCSharpFuncs:SetCameraOpEnable(enable)
+end
+
 ---@desc 获取当前世界ID
 ---@return int 
 function XDlcCSharpFuncs:GetWorldId()
@@ -1471,11 +1781,20 @@ end
 function XDlcCSharpFuncs:SwitchLevel(nextLevelId, position)
 end
 
+---@desc 切换Level
+---@param nextLevelId int  下一个进入的LevelId
+---@param position Vector3  目标坐标
+---@param rotation Vector3  目标旋转度
+---@return void 
+function XDlcCSharpFuncs:SwitchLevelWitchRot(nextLevelId, position, rotation)
+end
+
 ---@desc 进入副本Level，要和RequestLeaveInstanceLevel()成对使用
 ---@param nextLevelId int 要进入的副本LevelId
 ---@param position Vector3 目标坐标
+---@param rotation Vector3  目标旋转度
 ---@return void 
-function XDlcCSharpFuncs:RequestEnterInstLevel(nextLevelId, position)
+function XDlcCSharpFuncs:RequestEnterInstLevel(nextLevelId, position, rotation)
 end
 
 ---@desc 退出副本Level，要和RequestEnterInstLevel()成对使用
@@ -1563,8 +1882,9 @@ end
 ---@desc 启动关卡玩法计时器
 ---@param time float 需计时间（单位：秒）
 ---@param isCountDown bool 默认值:false 是否为倒计时
+---@param imminentEndTimeS float 默认值:10f 倒计时完毕前提醒的时间
 ---@return bool 
-function XDlcCSharpFuncs:StartLevelPlayTimer(time, isCountDown)
+function XDlcCSharpFuncs:StartLevelPlayTimer(time, isCountDown, imminentEndTimeS)
 end
 
 ---@desc 获取关卡玩法计时器当前时间（单位：秒）
@@ -1669,7 +1989,7 @@ end
 function XDlcCSharpFuncs:SetNpcIgnoreObstacle(npcId, obstacleId, ignore)
 end
 
----@desc 联系程序补充注释
+---@desc 该功能已弃用，不要再调用
 ---@param npcId int 
 ---@param groupName string 
 ---@param colliderIndex int 
@@ -1686,47 +2006,175 @@ end
 function XDlcCSharpFuncs:SetActorIgnoreCollision(actorUUIDA, actorUUIDB, ignore)
 end
 
+---@desc 检查技能时间
+---@param npcId int Npc对象的UUID
+---@param type int 技能时间类型：Jump = 1, Move = 2, Skill = 3, UseAnimationY = 4
+---@return bool 
+function XDlcCSharpFuncs:CheckActionTiming(npcId, type)
+end
+
+---@desc 使Npc释放指定技能
+---@param npcId int 
+---@param skillActionId int 
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastAction(npcId, skillActionId)
+end
+
+---@desc 使Npc释放指定技能(部分技能)
+---@param npcId int 
+---@param skillActionId int 
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionEx(npcId, skillActionId, startTime, endTime)
+end
+
+---@desc 使Npc释放指定技能Action(不检查)
+---@param npcId int 
+---@param skillActionId int 
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastSkillActionNotCheck(npcId, skillActionId, startTime, endTime)
+end
+
+---@desc 向指定坐标放技能
+---@param npcId int 
+---@param skillActionId int 
+---@param position Vector3 位置
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionToPosition(npcId, skillActionId, position)
+end
+
+---@desc 向指定坐标放技能(部分技能)
+---@param npcId int 
+---@param skillActionId int 
+---@param position Vector3 位置
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionToPositionEx(npcId, skillActionId, position, startTime, endTime)
+end
+
+---@desc 向指定坐标放技能(不检查)
+---@param npcId int 
+---@param skillActionId int 
+---@param position Vector3 位置
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastSkillActionToPositionNotCheck(npcId, skillActionId, position, startTime, endTime)
+end
+
+---@desc 向指定Npc放技能
+---@param npcId int 要释放技能的Npc对象的UUID
+---@param skillActionId int 技能Id
+---@param targetNpcId int 目标Npc对象的UUID
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionToTarget(npcId, skillActionId, targetNpcId)
+end
+
+---@desc 向指定Npc放技能(部分技能)
+---@param npcId int 要释放技能的Npc对象的UUID
+---@param skillActionId int 技能Id
+---@param targetNpcId int 目标Npc对象的UUID
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionToTargetEx(npcId, skillActionId, targetNpcId, startTime, endTime)
+end
+
+---@desc 向指定Npc放技能(不检查)
+---@param npcId int 要释放技能的Npc对象的UUID
+---@param skillActionId int 技能Id
+---@param targetNpcId int 目标Npc对象的UUID
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastSkillActionToNpcNotCheck(npcId, skillActionId, targetNpcId, startTime, endTime)
+end
+
+---@desc 向指定搜索or锁定目标放技能
+---@param npcId int 要释放技能的Npc对象的UUID
+---@param skillActionId int 技能Id
+---@param targetUID long 搜索or锁定目标的UID
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastActionToSearchTarget(npcId, skillActionId, targetUID)
+end
+
+---@desc 向指定搜索or锁定目标放技能(不检查条件)
+---@param npcId int 要释放技能的Npc对象的UUID
+---@param skillActionId int 技能Id
+---@param searchTargetId long 搜索or锁定目标的UID
+---@param startTime float 开始时间
+---@param endTime float 结束时间
+---@return bool 返回是否释放成功
+function XDlcCSharpFuncs:CastSkillActionToSearchTargetNotCheck(npcId, skillActionId, searchTargetId, startTime, endTime)
+end
+
+---@desc 打断Npc当前技能
+---@param npcId int 
+---@param force bool 默认值:false 
+---@return void 
+function XDlcCSharpFuncs:AbortAction(npcId, force)
+end
+
+---@desc 检查Npc当前技能是否为指定技能
+---@param npcId int 
+---@param skillActionId int 
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcCurrentAction(npcId, skillActionId)
+end
+
+---@desc 获取当前技能的配置ID以及类型
+---@param npcId int 
+---@param skillActionId out int 
+---@param skillType out int 
+---@return bool 
+function XDlcCSharpFuncs:TryGetCurrentAction(npcId, skillActionId, skillType)
+end
+
 ---@desc 获取当前技能的运行时间
 ---@param npcId int 
 ---@param elapsedTime out float 
 ---@return bool 
-function XDlcCSharpFuncs:TryGetNpcCurrentSkillElapsedTime(npcId, elapsedTime)
+function XDlcCSharpFuncs:TryGetNpcCurrentActionElapsedTime(npcId, elapsedTime)
 end
 
 ---@desc 获取技能类型
 ---@param skillId int 
 ---@return int 
-function XDlcCSharpFuncs:GetSkillType(skillId)
+function XDlcCSharpFuncs:GetActionType(skillId)
 end
 
----@desc 获取Npc技能的技能类型(技能Id传0时，使用上一个技能Id作为技能Id)
+---@desc 获取Npc动作的动作类型(技能Id传0时，使用上一个动作Id作为动作Id)
 ---@param uuid int Npc的UUID
----@param skillId int 技能Id
+---@param actionId int 动作Id
 ---@return int 
-function XDlcCSharpFuncs:GetNpcSkillType(uuid, skillId)
+function XDlcCSharpFuncs:GetNpcActionType(uuid, actionId)
 end
 
----@desc 设置技能优先级(技能Id传0时，使用上一个技能Id作为技能Id)
+---@desc 设置动作优先级(动作Id传0时，使用上一个动作Id作为动作Id)
 ---@param npcUUID int Npc的UUID
----@param skillId int 技能Id
+---@param actionId int 动作Id
 ---@param priority int 优先级
 ---@return void 
-function XDlcCSharpFuncs:SetSkillPriority(npcUUID, skillId, priority)
+function XDlcCSharpFuncs:SetActionPriority(npcUUID, actionId, priority)
 end
 
----@desc 获取技能优先级(技能Id传0时，使用上一个技能Id作为技能Id)
+---@desc 获取动作优先级(动作Id传0时，使用上一个动作Id作为动作Id)
 ---@param npcUUID int Npc的UUID
----@param skillId int 技能Id
+---@param actionId int 动作Id
 ---@param priority out int 优先级(第二个返回值)
 ---@return bool 
-function XDlcCSharpFuncs:TryGetSkillPriority(npcUUID, skillId, priority)
+function XDlcCSharpFuncs:TryGetActionPriority(npcUUID, actionId, priority)
 end
 
 ---@desc 获取技能特征标签(技能Id传0时，使用上一个技能Id作为技能Id)
 ---@param npcUUID int Npc的UUID
 ---@param skillId int 技能Id
 ---@return LuaTable 
-function XDlcCSharpFuncs:GetSkillFeatureTag(npcUUID, skillId)
+function XDlcCSharpFuncs:GetActionFeatureTag(npcUUID, skillId)
 end
 
 ---@desc 检查技能特征标签(技能Id传0时，使用上一个技能Id作为技能Id)
@@ -1734,7 +2182,94 @@ end
 ---@param skillId int 技能Id
 ---@param featureTag int 要检查的标签值
 ---@return bool 
-function XDlcCSharpFuncs:CheckSkillFeatureTag(npcUUID, skillId, featureTag)
+function XDlcCSharpFuncs:CheckActionFeatureTag(npcUUID, skillId, featureTag)
+end
+
+---@desc 获取Npc的技能Id列表
+---@param npcUUID int NpcUUID
+---@return LuaTable 技能ID列表
+function XDlcCSharpFuncs:GetActionIdList(npcUUID)
+end
+
+---@desc 尝试使用技能
+---@param npcUUID int NPCUUID
+---@param key int ENpcOperationKey
+---@param type int EOperationType
+---@param operateTime float 长按时间
+---@return void 
+function XDlcCSharpFuncs:TryCastAction(npcUUID, key, type, operateTime)
+end
+
+---@desc 获取技能脚本 SkillID
+---@return int 
+function XDlcCSharpFuncs:GetSelfSkillUUID()
+end
+
+---@desc 获取技能的NpcUUID
+---@return int 
+function XDlcCSharpFuncs:GetSelfSkillNpcUUID()
+end
+
+---@desc 获取技能配置
+---@return XTableSkill 
+function XDlcCSharpFuncs:GetSkillTemplate()
+end
+
+---@desc 让技能的Lua脚本每次接受事件时能拿到Input配置
+---@param active bool 
+---@return void 
+function XDlcCSharpFuncs:SetUseInputTemplate(active)
+end
+
+---@desc 尝试获取当前SkillAction所依赖的SkillId
+---@param npcId int 
+---@param subscribeSkill out int 
+---@return bool 
+function XDlcCSharpFuncs:TryGetCurrentActionSubscribeSkill(npcId, subscribeSkill)
+end
+
+---@desc 获取技能默认CD
+---@return float 
+function XDlcCSharpFuncs:GetSkillCoolDown()
+end
+
+---@desc 让技能进入默认CD
+---@return void 
+function XDlcCSharpFuncs:EnterSkillDefaultCD()
+end
+
+---@desc 让技能进入固定CD
+---@param value float 
+---@return void 
+function XDlcCSharpFuncs:EnterSkillCD(value)
+end
+
+---@desc 减少技能CD固定值
+---@param value float 
+---@return void 
+function XDlcCSharpFuncs:DecreaseSkillCD(value)
+end
+
+---@desc 减少技能CD万分比
+---@param value int 
+---@return void 
+function XDlcCSharpFuncs:DecreaseSkillCDPercent(value)
+end
+
+---@desc 设置技能当前CD
+---@param value int 
+---@return void 
+function XDlcCSharpFuncs:SetSkillCD(value)
+end
+
+---@desc 获取技能当前CD
+---@return float 
+function XDlcCSharpFuncs:GetSkillDefaultCD()
+end
+
+---@desc 判断技能是否在CD中
+---@return bool 
+function XDlcCSharpFuncs:IsSkillInCD()
 end
 
 ---@desc 获取Buff脚本的配置Id
@@ -1791,7 +2326,7 @@ end
 function XDlcCSharpFuncs:LoadSceneObject(placeId)
 end
 
----@desc 联系程序补充注释
+---@desc 卸载SceneObj
 ---@param placeId int 
 ---@return void 
 function XDlcCSharpFuncs:UnloadSceneObject(placeId)
@@ -1847,25 +2382,36 @@ end
 function XDlcCSharpFuncs:SetSceneObjectShadowEnable(sceneObjectPlaceId, enable)
 end
 
----@desc 请联系程序补充注释
+---@desc 移动场景物体到MoveComponent的第几个点
 ---@param sceneObjectPlaceId int 
 ---@param nodeId int 
 ---@return void 
 function XDlcCSharpFuncs:MoveSceneObjectToNode(sceneObjectPlaceId, nodeId)
 end
 
----@desc 请联系程序补充注释
+---@desc 开启SceneObj的自动旋转
 ---@param sceneObjectPlaceId int 
 ---@param isRotate bool 
 ---@return void 
 function XDlcCSharpFuncs:SetSceneObjectAutoRotate(sceneObjectPlaceId, isRotate)
 end
 
----@desc 请联系程序补充注释
----@param sceneObjectPlaceId int 
----@param isQueue bool 默认值:false 
+---@desc 旋转SceneObject，仅在SceneObject不会自动旋转时生效
+---@param sceneObjectPlaceId int SceneObject的PlaceId
+---@param rotateTime float 旋转时间
+---@param rotateAngle float 旋转角度
+---@param rotateAxis byte 旋转轴，参考ESceneObjectRotateAxis
+---@param isQueue bool 默认值:false 是否加入旋转指令队列（可选，默认值为 false）
 ---@return void 
-function XDlcCSharpFuncs:TriggerSceneObjectRotate(sceneObjectPlaceId, isQueue)
+function XDlcCSharpFuncs:RotateSceneObject(sceneObjectPlaceId, rotateTime, rotateAngle, rotateAxis, isQueue)
+end
+
+---@desc 设置SceneObject的特效字文本（仅客户端使用）
+---@param sceneObjectPlaceId int SceneObject的PlaceId
+---@param isEnabled bool 是否开启特效字组件，若组件已经开启则状态不变
+---@param textKey string 要使用的文本配置Key，配置位于Client\BigWorld\Common\Text\BigWorldText
+---@return void 
+function XDlcCSharpFuncs:SetSceneObjectTextMeshText(sceneObjectPlaceId, isEnabled, textKey)
 end
 
 ---@desc 开关场景物件钩点组件
@@ -1924,15 +2470,23 @@ end
 function XDlcCSharpFuncs:SetSceneObjectLocked(soPlaceId, locked)
 end
 
----@desc 播放剧情
----@param questId int 
----@param actorList List<int> 
----@param dramaName string 
----@param referencePos Vector3 
----@param referenceRot Vector3 
----@param combineKey int
+---@desc 播放任务剧情
+---@param questId int 任务Id
+---@param dramaName string 剧情名
+---@param referencePos Vector3 默认值:default 相对位置（可选，默认为原点）
+---@param referenceRot Vector3 默认值:default 相对旋转（可选，默认为原点）
+---@param combineKey int 默认值:0 连贯播放组合ID（可选，默认为0）
 ---@return void 
-function XDlcCSharpFuncs:PlayDrama(questId, actorList, dramaName, referencePos, referenceRot, combineKey)
+function XDlcCSharpFuncs:PlayQuestDrama(questId, dramaName, referencePos, referenceRot, combineKey)
+end
+
+---@desc 直接播放剧情
+---@param dramaName string 剧情名
+---@param referencePos Vector3 默认值:default 相对位置（可选，默认为原点）
+---@param referenceRot Vector3 默认值:default 相对旋转（可选，默认为原点）
+---@param combineKey int 默认值:0 连贯播放组合ID（可选，默认为0）
+---@return void 
+function XDlcCSharpFuncs:PlayDrama(dramaName, referencePos, referenceRot, combineKey)
 end
 
 ---@desc 播放简易台词
@@ -1941,6 +2495,21 @@ end
 ---@param isSequential bool 默认值:false 是否采用流水线播放模式
 ---@return void 
 function XDlcCSharpFuncs:PlayDramaCaption(captionName, isSequential)
+end
+
+---@desc 播放气泡
+---@param actorType int ETargetActorType
+---@param uuid int 
+---@param bubbleName string 
+---@return void 
+function XDlcCSharpFuncs:PlayDramaBubble(actorType, uuid, bubbleName)
+end
+
+---@desc 停止气泡
+---@param actorType int ETargetActorType
+---@param uuid int 
+---@return void 
+function XDlcCSharpFuncs:StopDramaBubble(actorType, uuid)
 end
 
 ---@desc 设置任务剧情选项显示列表
@@ -2094,6 +2663,23 @@ end
 function XDlcCSharpFuncs:BindSceneObjectEffect(sceneObjectPlaceId, effectName, posOffset, rotOffset, scale)
 end
 
+---@desc 设置关卡实体所有空间音效开关
+---@param actorType int 枚举, 参考ETargetActorType, 默认为空不起效
+---@param placeId int 关卡实体PlaceId
+---@param active bool 
+---@return void 
+function XDlcCSharpFuncs:SetActorAllSpaceAudioActive(actorType, placeId, active)
+end
+
+---@desc 设置关卡实体一个空间音效开关
+---@param actorType int 枚举, 参考ETargetActorType, 默认为空不起效
+---@param placeId int 关卡实体PlaceId
+---@param index int 
+---@param active bool 
+---@return void 
+function XDlcCSharpFuncs:SetActorOneSpaceAudioActive(actorType, placeId, index, active)
+end
+
 ---@desc 播放背景音乐
 ---@desc 参考文档：【需求】V2.13 音频需求对接-音频战斗控制逻辑相关(2024.02.29) -【2.3 BGM相关】
 ---@param cueId int 音频文件id
@@ -2114,6 +2700,146 @@ end
 ---@param curveTime float 默认值:-1 过渡时间
 ---@return void 
 function XDlcCSharpFuncs:ChangeMusicAisacTween(controlName, targetValue, startValue, curveTime)
+end
+
+---@desc 设置音频音量控制模式（默认乘法合并）
+---@param mode int 0:不控制 1:乘法合并 2:取最高值 3:取最低值 4:取优先级
+---@return void 
+function XDlcCSharpFuncs:SetAudioVolumeControlMode(mode)
+end
+
+---@desc 音频音量调整
+---@param volumeController int 发起来源, 参考FightAudio.FightAudioControllerType
+---@param audioType int 音频类型 引自XAudioManager.PlayType, 1:音乐 2:音效 4:CV
+---@param volume float 音量
+---@param curveTime float 过渡时长
+---@return void 
+function XDlcCSharpFuncs:ChangeAudioVolume(volumeController, audioType, volume, curveTime)
+end
+
+---@desc 设置音频开关控制模式（默认与逻辑,指多方权限分配: 关卡控制、角色控制、怪物控制, 详细参考主线音频控制行为树节点）
+---@param mode int 0:不控制 1:与逻辑 2:或逻辑 3:优先级
+---@return void 
+function XDlcCSharpFuncs:SetAudioSwitchControlMode(mode)
+end
+
+---@desc 设置音频是否开启
+---@param volumeController int 发起来源, 参考FightAudio.FightAudioControllerType
+---@param audioType int 音频类型 引自XAudioManager.PlayType, 1:音乐 2:音效 4:CV
+---@param isOpen bool 是否开启
+---@return void 
+function XDlcCSharpFuncs:ChangeAudioEnable(volumeController, audioType, isOpen)
+end
+
+---@desc 播放Bgm
+---@param controllerType int 发起来源, 参考FightAudio.FightAudioOperationControllerType
+---@param cueId int Bgm cueId
+---@param startTime float 将播放Bgm的起始时间
+---@param endTime float 音频截止功能：将播放Bgm的截止时间
+---@param stopDuration float 音频截止功能：将播放Bgm停止时声音淡出时间
+---@param lastFor float 音频截止功能：将播放Bgm的的累计播放时间, 设置此BGM循环播放时长, 若填写startTime和endTime, 循环以填入时间戳为准, 若均为0则默认整首循环
+---@param fadeInDuration float 将播放Bgm淡入时长
+---@param fadeOutDuration float 被切换Bgm淡出时长
+---@param isCrossFade bool 是否是交叉淡入淡出, 交叉淡入淡出是CriWare的功能和fade不同, 开启后表示使用CriWare的交叉淡出功能，否则是普通的淡入淡出
+---@return void 
+function XDlcCSharpFuncs:PlayFightAudioBgm(controllerType, cueId, startTime, endTime, stopDuration, lastFor, fadeInDuration, fadeOutDuration, isCrossFade)
+end
+
+---@desc 播放音效
+---@param cueId int 
+---@param actorType int 默认值:0 枚举, 参考ETargetActorType, 默认为空不起效, 3D音效效果需要选定一个物体
+---@param actorId int 默认值:0 npc或SceneObj的uuid, 默认为0不起效
+---@param duration float 默认值:-1 基于tween渐入, 默认为-1不起效
+---@param stopDuration float 默认值:-1 基于自动stop(一定要配合endtime和lastFor)的渐出, 默认为-1不起效
+---@param startTime float 默认值:-1 【Cri参数】从cue的指定ms开始播放, 默认为-1不起效
+---@param endTime float 默认值:-1 【Cri参数】在cue的指定ms结束播放, 默认为-1不起效
+---@param lastFor float 默认值:-1 在累计播放该ms时间后自动stop, 默认为-1不起效
+---@param attack float 默认值:-1 【Cri参数】, 默认为-1不起效
+---@param release float 默认值:-1 【Cri参数】, 默认为-1不起效
+---@return int AudioId, 用以进行暂停、恢复、停止、调节音量
+function XDlcCSharpFuncs:PlaySound(cueId, actorType, actorId, duration, stopDuration, startTime, endTime, lastFor, attack, release)
+end
+
+---@desc 通过AudioUid设置音频音量
+---@param audioId int 
+---@param volume float 
+---@return void 
+function XDlcCSharpFuncs:ChangeAudioVolumeByUid(audioId, volume)
+end
+
+---@desc 通过AudioUid暂停音频
+---@param audioUid int 
+---@return void 
+function XDlcCSharpFuncs:PauseAudioByUid(audioUid)
+end
+
+---@desc 通过AudioUid恢复音频
+---@param audioId int 
+---@return void 
+function XDlcCSharpFuncs:ResumeAudioByUid(audioId)
+end
+
+---@desc 通过AudioUid停止音频
+---@param audioUid int 
+---@return void 
+function XDlcCSharpFuncs:StopAudioByUid(audioUid)
+end
+
+---@desc 停止Bgm
+---@param controllerType int 发起来源, 参考FightAudio.FightAudioOperationControllerType
+---@param cueId int Bgm cueId
+---@return void 
+function XDlcCSharpFuncs:StopFightAudioBgm(controllerType, cueId)
+end
+
+---@desc 暂停当前播放的BGM
+---@param controllerType int 发起来源, 参考FightAudio.FightAudioOperationControllerType
+---@return void 
+function XDlcCSharpFuncs:PauseFightAudioBgm(controllerType)
+end
+
+---@desc 恢复当前暂停的BGM
+---@param controllerType int 发起来源, 参考FightAudio.FightAudioOperationControllerType
+---@return void 
+function XDlcCSharpFuncs:ResumeFightAudioBgm(controllerType)
+end
+
+---@desc BGM Block功能开关
+---@param isOpen bool 
+---@return void 
+function XDlcCSharpFuncs:SetFightAudioBlockOperationEnable(isOpen)
+end
+
+---@desc 初始化BGM Block
+---@param blockIndex int 
+---@return void 
+function XDlcCSharpFuncs:InitAudioBlock(blockIndex)
+end
+
+---@desc 战斗用切换BGM Block 使用前先调用InitAudioBlock接口
+---@param blockIndex int 
+---@return void 
+function XDlcCSharpFuncs:SwitchFightAudioBlockByFight(blockIndex)
+end
+
+---@desc 关卡用切换BGM Block 使用前先调用InitAudioBlock接口
+---@param blockIndex int 
+---@return void 
+function XDlcCSharpFuncs:SwitchFightAudioBlockByLevel(blockIndex)
+end
+
+---@desc 切换BGM Selector
+---@param selectorName string 选择器名称
+---@param labelName string 标签名称
+---@return void 
+function XDlcCSharpFuncs:ChangeMusicSelector(selectorName, labelName)
+end
+
+---@desc 切换所有音频选择器
+---@param selectorName string 选择器名称
+---@param labelName string 标签名称
+---@return void 
+function XDlcCSharpFuncs:SetAllAudioSelector(selectorName, labelName)
 end
 
 ---@desc 增加QTE时间
@@ -2170,16 +2896,6 @@ end
 ---@desc 请提示程序补充注释
 ---@return Vector3 
 function XDlcCSharpFuncs:GetMoveInputOperation()
-end
-
----@desc 注册一个Debug用的按钮功能
----@desc 客户端调用 文档:https://kurogame.feishu.cn/wiki/WZkHwYJGNinbyykpvNgcsglWnfg
----@param keyCode int keycode映射看链接
----@param key ENpcOperationKey 
----@param op EOperationType 
----@param remove bool true为移除，false为添加
----@return void 
-function XDlcCSharpFuncs:RegisterKeyboardOperator(keyCode, key, op, remove)
 end
 
 ---@desc 修改团队分数
@@ -2311,10 +3027,22 @@ end
 function XDlcCSharpFuncs:GetQuestObjectiveFinishType(objectiveId)
 end
 
----@desc 获取任务步骤进度是否完成
+---@desc 检查任务目标进度是否完成
 ---@param objectiveId int 
 ---@return bool 
 function XDlcCSharpFuncs:IsQuestObjectiveFinished(objectiveId)
+end
+
+---@desc 检查任务目标是否未激活
+---@param objectiveId int 
+---@return bool 
+function XDlcCSharpFuncs:IsQuestObjectiveInActive(objectiveId)
+end
+
+---@desc 检查是否在任务内
+---@param questId int 
+---@return bool 
+function XDlcCSharpFuncs:IsInQuest(questId)
 end
 
 ---@desc 设置Actor任务占用
@@ -2330,49 +3058,6 @@ end
 ---@param uuid int 
 ---@return bool 
 function XDlcCSharpFuncs:IsActorInQuest(uuid)
-end
-
----@desc 添加任务导航点（为关卡NPC）
----@param levelId int 关卡ID
----@param questId int 任务ID
----@param uiStyleId int 导航点UI样式配置ID
----@param placeId int 关卡NPC的placeId
----@param displayOffset Vector3 导航点在世界坐标系下的显示偏移（为了与特效显示不重叠）
----@param showEffect bool 是否显示标识特效
----@param forceMapPinActive bool 是否强制显示该点对应的地图标记
----@return int 导航点ID
-function XDlcCSharpFuncs:AddQuestNavPointForLevelNpc(levelId, questId, uiStyleId, placeId, displayOffset, showEffect, forceMapPinActive)
-end
-
----@desc 添加任务导航点（为关卡场景物件）
----@param levelId int 关卡ID
----@param questId int 任务ID
----@param uiStyleId int 导航点UI样式配置ID
----@param placeId int 关卡场景物件的placeId
----@param displayOffset Vector3 导航点在世界坐标系下的显示偏移（为了与特效显示不重叠）
----@param showEffect bool 是否显示标识特效
----@param forceMapPinActive bool 是否强制显示该点对应的地图标记
----@return int 导航点ID
-function XDlcCSharpFuncs:AddQuestNavPointForLevelSceneObject(levelId, questId, uiStyleId, placeId, displayOffset, showEffect, forceMapPinActive)
-end
-
----@desc 添加任务导航点（固定坐标）
----@param levelId int 关卡ID
----@param questId int 任务ID
----@param uiStyleId int 导航点UI样式配置ID
----@param point Vector3 导航点坐标
----@param displayOffset Vector3 导航点在世界坐标系下的显示偏移（为了与特效显示分开）
----@param showEffect bool 是否显示标识特效
----@param forceMapPinActive bool 是否强制显示该点对应的地图标记
----@return int 导航点ID
-function XDlcCSharpFuncs:AddQuestNavPoint(levelId, questId, uiStyleId, point, displayOffset, showEffect, forceMapPinActive)
-end
-
----@desc 移除任务导航点
----@param questId int 任务ID
----@param navPointId int 导航点ID
----@return void 
-function XDlcCSharpFuncs:RemoveQuestNavPoint(questId, navPointId)
 end
 
 ---@desc 打开任务道具交付UI
@@ -2443,6 +3128,32 @@ end
 ---@param args List<object> 控制参数（参数由关卡和系统共同协商，系统定制化解析）例如：关卡要控制小地图是否可以点击打开大地图，控制是否可以进行地图传送等。
 ---@return void 
 function XDlcCSharpFuncs:ControlSystemFunction(systemFunctionType, args)
+end
+
+---@desc 设置玩家第一人称模式
+---@param isFirstPersonMode bool 第一人称模式
+---@return void 
+function XDlcCSharpFuncs:SetPlayerFirstPersonMode(isFirstPersonMode)
+end
+
+---@desc 弹出第一人称设置UI
+---@param isShowClose bool 是否显示关闭按钮
+---@param titleTextKey string 标题文本TextKey
+---@return void 
+function XDlcCSharpFuncs:OpenSetPersonModeUI(isShowClose, titleTextKey)
+end
+
+---@desc 获取当前第一人称模式和状态
+---@param state out bool (第二返回值)第一人称状态
+---@return bool 第一人称模式
+function XDlcCSharpFuncs:GetPlayerFirstPersonModeAndState(state)
+end
+
+---@desc 获取玩家在指定关卡中保存的人称模式数据
+---@param levelId int 关卡Id
+---@param mode out bool 是否是第一人称模式
+---@return bool 
+function XDlcCSharpFuncs:GetSavedPlayerFirstPersonState(levelId, mode)
 end
 
 ---@desc 打开【玩家自定义外观】的UI
@@ -2617,6 +3328,242 @@ end
 ---@param id int 
 ---@return XTable.XTableTheatre5ItemRune 
 function XDlcCSharpFuncs:GetAutoChessRuneConfig(id)
+end
+
+---@desc 赛后结算MagicId映射到SkillId
+---@param magicId int 默认值: 
+---@param skillId int 默认值: 
+---@return void 
+function XDlcCSharpFuncs:MagicIdToSkillIdMapping(magicId, skillId)
+end
+
+---@desc 设置连携玩法激活
+---@param active bool 是否激活
+---@return void 
+function XDlcCSharpFuncs:SetGameplayFullChainActive(active)
+end
+
+---@desc 获取连携技能上下文数据
+---@return LuaTable 
+function XDlcCSharpFuncs:GetFullChainContext()
+end
+
+---@desc 获取锁定破韧状态
+---@param uuid int 
+---@return bool 
+function XDlcCSharpFuncs:GetNpcInBrokenState(uuid)
+end
+
+---@desc 获取锁定削韧状态
+---@param uuid int 
+---@return bool 
+function XDlcCSharpFuncs:GetNpcInBreakState(uuid)
+end
+
+---@desc 获取韧性状态
+---@param uuid int 
+---@return int 
+function XDlcCSharpFuncs:GetNpcBreakState(uuid)
+end
+
+---@desc 获取韧性值
+---@param uuid int 
+---@param max out int 最大值
+---@return int 
+function XDlcCSharpFuncs:GetNpcBreakGauge(uuid, max)
+end
+
+---@desc 设置韧性值
+---@param uuid int 
+---@param value int 
+---@param condition ENpcBreakStateCondition 
+---@return bool 
+function XDlcCSharpFuncs:SetNpcBreakGauge(uuid, value, condition)
+end
+
+---@desc 设置击破/韧性条激活状态
+---@param uuid int 
+---@param active bool 
+---@return void 
+function XDlcCSharpFuncs:SetNpcBreakGaugeActive(uuid, active)
+end
+
+---@desc 设置OverDrive激活状态
+---@param uuid int 
+---@param active bool 
+---@return void 
+function XDlcCSharpFuncs:SetNpcOverDriveActive(uuid, active)
+end
+
+---@desc 开关团队极限技玩法
+---@param enable bool 
+---@param maxEnergy int 能量上限
+---@param chainLimitTime float 连续释放判定最大时间间隔
+---@return void 
+function XDlcCSharpFuncs:SetTeamWorkSkillActive(enable, maxEnergy, chainLimitTime)
+end
+
+---@desc 消耗团队极限技能量
+---@param npcUUID int 
+---@param energy int 
+---@param skillId int 
+---@return void 
+function XDlcCSharpFuncs:CastTeamWorkEnergy(npcUUID, energy, skillId)
+end
+
+---@desc 添加团队极限技能量
+---@param npcUUID int 
+---@param energy int 
+---@return void 
+function XDlcCSharpFuncs:AddTeamWorkEnergy(npcUUID, energy)
+end
+
+---@desc 设置团队极限技能量
+---@param npcUUID int 
+---@param energy int 
+---@return void 
+function XDlcCSharpFuncs:SetTeamWorkEnergy(npcUUID, energy)
+end
+
+---@desc 清除团队极限技能量
+---@param npcUUID int 
+---@return void 
+function XDlcCSharpFuncs:CleanTeamWorkEnergy(npcUUID)
+end
+
+---@desc 获取团队极限机能量
+---@param npcUUID int 
+---@return int 
+function XDlcCSharpFuncs:GetTeamWorkEnergy(npcUUID)
+end
+
+---@desc 获取团队极限机最大能量
+---@return int 
+function XDlcCSharpFuncs:GetTeamWorkMaxEnergy()
+end
+
+---@desc 开启角力
+---@param launcherUUID int 发起者UUID
+---@param targetUUID int 目标UUID
+---@param wrestleId int 角力配置ID
+---@return void 
+function XDlcCSharpFuncs:CastWrestle(launcherUUID, targetUUID, wrestleId)
+end
+
+---@desc 开启多人弹刀
+---@param launcherUUID int 发起者UUID
+---@param targetUUID int 目标UUID
+---@param id int 多人弹刀配置ID
+---@return void 
+function XDlcCSharpFuncs:CastMultiParry(launcherUUID, targetUUID, id)
+end
+
+---@desc 关卡专用操作按键开关
+---@param operationKey int 操作Id
+---@param npcId int npc Id
+---@param state bool 开关状态
+---@return void 
+function XDlcCSharpFuncs:SetLevelButtonOpEnabled(operationKey, npcId, state)
+end
+
+---@desc 怪物专用操作按键开关
+---@param operationKey int 操作Id
+---@param npcId int npc Id
+---@param state bool 开关状态
+---@return void 
+function XDlcCSharpFuncs:SetMonsterButtonOpEnabled(operationKey, npcId, state)
+end
+
+---@desc 玩家专用操作按键开关
+---@param operationKey int 操作Id
+---@param npcId int npc Id
+---@param state bool 开关状态
+---@return void 
+function XDlcCSharpFuncs:SetPlayerButtonOpEnabled(operationKey, npcId, state)
+end
+
+---@desc Npc专用操作按键开关
+---@param operationKey int 操作Id
+---@param npcId int npc Id
+---@param state bool 开关状态
+---@return void 
+function XDlcCSharpFuncs:SetNpcButtonOpEnabled(operationKey, npcId, state)
+end
+
+---@desc 关卡专用操作按键显隐
+---@param uiType int ui类型
+---@param operationKey int 操作按键
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetLevelOperationUiState(uiType, operationKey, npcId, uiState)
+end
+
+---@desc 怪物专用操作按键显隐
+---@param uiType int ui类型
+---@param operationKey int 操作按键
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetMonsterOperationUiState(uiType, operationKey, npcId, uiState)
+end
+
+---@desc 玩家专用操作按键显隐
+---@param uiType int ui类型
+---@param operationKey int 操作按键
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetPlayerOperationUiState(uiType, operationKey, npcId, uiState)
+end
+
+---@desc Npc专用操作按键显隐
+---@param uiType int ui类型
+---@param operationKey int 操作按键
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetNpcOperationUiState(uiType, operationKey, npcId, uiState)
+end
+
+---@desc 关卡专用Ui显隐
+---@param uiType int ui类型
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetLevelUiState(uiType, npcId, uiState)
+end
+
+---@desc 怪物专用Ui显隐
+---@param uiType int ui类型
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetBossUiState(uiType, npcId, uiState)
+end
+
+---@desc 玩家专用Ui显隐
+---@param uiType int ui类型
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetPlayerUiState(uiType, npcId, uiState)
+end
+
+---@desc Npc专用操作按键显隐
+---@param uiType int ui类型
+---@param npcId int npc Id
+---@param uiState int ui状态
+---@return void 
+function XDlcCSharpFuncs:SetNpcUiState(uiType, npcId, uiState)
+end
+
+---@desc 在矩形区域内生成泊松盘采样点
+---@param width float 区域宽度（X 方向）
+---@param height float 区域高度（Y 方向）
+---@param radius float 最小间距 r
+---@return LuaTable 长度为2的倍数的LuaTable [x1, y1, x2, y2....]
+function XDlcCSharpFuncs:PoissonDiscPoints(width, height, radius)
 end
 
 return XDlcCSharpFuncs;

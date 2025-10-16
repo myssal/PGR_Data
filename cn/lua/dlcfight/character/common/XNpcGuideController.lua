@@ -169,7 +169,7 @@ end
 function XNpcGuideController:OnEnterState(nextState)
     if nextState == GuideState.Idle then
         self:StopGuide()
-        self._proxy:SetNpcLookAtPosition(self._uuid, self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId()))
+        self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId()))
     elseif nextState == GuideState.Guide then
         self:GuideToTargetPosition()
     elseif nextState == GuideState.Wait then
@@ -177,7 +177,7 @@ function XNpcGuideController:OnEnterState(nextState)
             self._isFirstOutOfRoute = true
         end
         self:StopGuide()
-        self._proxy:SetNpcLookAtPosition(self._uuid, self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId()))
+        self._proxy:SetNpcFaceToPosition(self._uuid, self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId()))
     elseif nextState == GuideState.None then
         self:InitParam()
     end

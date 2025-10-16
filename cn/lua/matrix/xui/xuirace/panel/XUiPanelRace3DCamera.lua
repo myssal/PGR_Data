@@ -97,8 +97,19 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId)
     CS.XShadowHelper.AddShadow(model.gameObject, true)
     ---@type UnityEngine.Animator
     local anim = model:GetComponent("Animator")
-    if not XTool.UObjIsNil(anim) and not string.IsNilOrEmpty(self._StateName) then
-        anim:CrossFade(self._StateName, 0.2, 0)
+    if self._SceneType == SceneType.MatchPredict then
+        anim:Play("Greet01", 0, 0)
+        self:RemoveAnimTimer()
+        self._AnimTimer = XScheduleManager.ScheduleForever(function()
+            if self:UpdatePredictRoleActor(anim) then
+                self:RemoveAnimTimer()
+            end
+        end, 10, 0)
+        self.Parent:_AddTimerId(self._AnimTimer)
+    else
+        if not XTool.UObjIsNil(anim) and not string.IsNilOrEmpty(self._StateName) then
+            anim:CrossFade(self._StateName, 0.2, 0)
+        end
     end
 end
 
@@ -106,6 +117,9 @@ function XUiPanelRace3DCamera:LoadOption()
     local path = self._Control:GetClientConfig("GuessOptionModel")
     local model = self.Option:LoadPrefab(path)
     model:SetLayerRecursively(NameToLayer("UiNear"))
+    ---@type UnityEngine.Animator
+    local anim = model:GetComponent("Animator")
+    anim:Play("RaceCarIdle", 0, 0)
 end
 
 function XUiPanelRace3DCamera:LookAt(roleId)
@@ -202,6 +216,29 @@ function XUiPanelRace3DCamera:SetViewPosToTransformLocalPosition(uiTransform, ro
         return
     end
     CS.XUiHelper.SetViewPosToTransformLocalPosition(self.UiNearCamera, uiTransform, node, self._Offset, self._Pivot)
+end
+
+function XUiPanelRace3DCamera:UpdatePredictRoleActor(anim)
+    if XTool.UObjIsNil(anim) then
+        return true
+    end
+
+    local info = anim:GetCurrentAnimatorStateInfo(0)
+    if (info:IsName("Greet01") and info.normalizedTime >= 1) or not info:IsName("Greet01") then
+        --播放下一个动作
+        anim:CrossFade("Stand02", 0.2, 0)
+        return true
+    end
+    
+    return false
+end
+
+function XUiPanelRace3DCamera:RemoveAnimTimer()
+    if self._AnimTimer then
+        XScheduleManager.UnSchedule(self._AnimTimer)
+        self.Parent:_RemoveTimerIdAndDoCallback(self._AnimTimer)
+        self._AnimTimer = nil
+    end
 end
 
 return XUiPanelRace3DCamera

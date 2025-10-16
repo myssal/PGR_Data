@@ -10,13 +10,15 @@ local ConfigMagicIdDict = {
     [1015218] = 1015219,
     [1015249] = 1015250,
     [1015251] = 1015252,
-    [1015253] = 1015254
+    [1015253] = 1015254,
+    [1016118] = 1016119
 }
 local ConfigRuneIdDict = {
     [1015218] = 20218,
     [1015249] = 20249,
     [1015251] = 20251,
-    [1015253] = 20253
+    [1015253] = 20253,
+    [1016118] = 20253
 }
 
 function XBuffScript1015218:Init()
@@ -50,6 +52,9 @@ function XBuffScript1015218:Update(dt)
 end
 
 --region EventCallBack
+
+---@param eventType number
+---@param eventArgs userdata
 function XBuffScript1015218:HandleLuaEvent(eventType, eventArgs)
     --自定义事件
     Base.HandleLuaEvent(self, eventType, eventArgs)

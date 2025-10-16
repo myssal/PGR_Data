@@ -40,10 +40,10 @@ end
 --region EventCallBack
 function XBuffScript1015118:InitEventCallBackRegister()
     --按需求解除注释进行注册
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastSkillAfter)    -- OnNpcCastSkillEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)    -- OnNpcCastActionEvent
 end
 
-function XBuffScript1015118:OnNpcCastSkillAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XBuffScript1015118:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     --检查是否在持续时间内，不在时间内就返回
     if self._proxy:GetNpcTime(self._uuid) > self.durTimer then
         return
@@ -51,7 +51,7 @@ function XBuffScript1015118:OnNpcCastSkillAfterEvent(skillId, launcherId, target
     --检查自己与雷圈中心点的距离是否满足半径需求，满足则更新buff
     if self._proxy:CheckNpcPositionDistance(self._uuid, self.magicPos, self.range, true) then
         --判断技能类型，是技能起手，就加上增伤，是普攻，就删除增伤
-        local skillType =self._proxy:GetSkillType(skillId)
+        local skillType =self._proxy:GetActionType(skillId)
         if skillType == self.skillStartType then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel) --更新Buff
         elseif skillType == self.normalAtkType then

@@ -20,7 +20,9 @@ function XUiRacePredict:OnStart(roleId, isMatch, guessId)
     self._SelectGuessId = guessId
     self._IsMatch = isMatch
     local sceneType = isMatch and XEnumConst.Race.SceneType.MatchPredict or XEnumConst.Race.SceneType.Normal
-    if not isMatch then
+    if isMatch then
+        self:PlayPlatformUp()
+    else
         self._RoundId = self._Control:GetCurRound()
     end
     self._ActivityConfig = self._Control:GetCurrentConfig()
@@ -320,6 +322,19 @@ end
 
 function XUiRacePredict:IsPredict(guessId)
     return self._Control:IsPredict(self._RoundId, guessId)
+end
+
+function XUiRacePredict:PlayPlatformUp()
+    local platform = self.UiSceneInfo.Transform:FindTransform("Racing_BanjiangtaiAni")
+    if XTool.UObjIsNil(platform) then
+        return
+    end
+    ---@type UnityEngine.Animator
+    local animator = platform:GetComponent("Animator")
+    if XTool.UObjIsNil(animator) then
+        return
+    end
+    animator:Play("FloorUpLoop")
 end
 
 return XUiRacePredict

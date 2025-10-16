@@ -546,14 +546,14 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
             end
 
             for i, v in ipairs(autoChessDataServer.Relics) do
-                local relicId = v.RelicId
+                local relicId = v
                 ---@type XTableTheatre5RelicEffect
                 local effectConfigs = self._Model:GetRelicEffectConfigs(relicId)
                 if effectConfigs then
                     for i = 1, #effectConfigs do
                         local effectConfig = effectConfigs[i]
                         if effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddBuff then
-                            autoChessData.MagicIds:Add(effectConfig.MagicId)
+                            autoChessData.MagicIds:Add(effectConfig.Param[1])
 
                         elseif effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddAttr then
                             local attrType = effectConfig.Param[1]
@@ -567,7 +567,7 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
 
                             --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
                             local changeValue = fixVal + baseAttrValue * rateVal / 10000 + specificVal * specificRateVal / 10000
-                            if autoChessData.Attribs:Contains(attrType) then
+                            if autoChessData.Attribs:ContainsKey(attrType) then
                                 autoChessData.Attribs[attrType] = autoChessData.Attribs[attrType] + changeValue
                             else
                                 autoChessData.Attribs:Add(attrType, changeValue)
@@ -583,6 +583,10 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
         for i, v in pairs(autoChessDataServer.MagicIds) do
             autoChessData.MagicIds[i] = v
         end
+    end
+
+    if autoChessDataServer.CharacterLevel then
+        autoChessData.CharacterLevel = autoChessDataServer.CharacterLevel
     end
 
     return autoChessData
@@ -683,7 +687,8 @@ function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChess
                     local baseAttrValue = baseAttrs[attrType]
                     --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
                     local changeValue = tempAttr.FixVal + baseAttrValue * tempAttr.RateVal / 10000 + tempAttr.SpecificVal * tempAttr.SpecificRateVal / 10000
-                    resultAttrs[attrType] = resultAttrs[attrType] + changeValue
+                    --XLog.Error("通过饰品获得了属性:".. tostring(attrType) .. ":", changeValue)
+                    resultAttrs[attrType] = math.floor(resultAttrs[attrType] + changeValue)
                 end
             else
                 XLog.Warning('XTheatre5BattleAgencyCom:GetXFightClientArgs() 临时属性列表为空')
