@@ -140,9 +140,9 @@ function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
     local conflictInfoList = {}
     local characterType = XMVCA.XCharacter:GetCharacterType(self:GetEntityIdByTeamPos(targetPos))
     local count = 0
-    for slot, equipId in pairs(equipList) do count = count + 1 end
+    for k, equipId in pairs(equipList) do count = count + 1 end
 
-    for slot, equipId in pairs(equipList) do
+    for k, equipId in pairs(equipList) do
         -- 类型不匹配检查
         if not XMVCA.XEquip:IsCharacterTypeFit(equipId, characterType) then
             XUiManager.TipText("EquipAwarenessSuitPrefabCharacterTypeWrong")
@@ -150,6 +150,7 @@ function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
         end
 
         -- 冲突检测
+        local slot = XMVCA.XEquip:GetEquip(equipId):GetSite()
         local curPos = self:GetPosByEquipId(equipId)
         if XTool.IsNumberValid(curPos) and curPos ~= targetPos then
             table.insert(conflictInfoList, {
@@ -170,9 +171,10 @@ function XTeamPrefab:UpdateAwarenessEquipList(targetPos, equipList)
     local function doUpdate()
         -- 直接穿 冲突的意识已经在UpdateEquipAt里处理了，会先将被冲突的角色的装备脱掉
         local count2 = 0
-        for slot, equipId in pairs(equipList) do
+        for k, equipId in pairs(equipList) do
             count2 = count2 + 1
             local notSync = (count2 ~= count)
+            local slot = XMVCA.XEquip:GetEquip(equipId):GetSite()
             -- 有冲突就不要单独发装备信息 而是发全部的信息
             self:UpdateEquipAt(targetPos, slot, {EquipId = equipId}, notSync or isConflict)
         end

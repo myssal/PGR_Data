@@ -884,12 +884,14 @@ XMovieManagerCreator = function()
     -- 获取倍速
     function XMovieManager.GetSpeed()
         if IsAutoPlay then
-            if not Speed then
-                Speed = XSaveTool.GetData("MovieAutoPlaySpeed") or XMVCA.XMovie.EnumConst.DEFAULT_SPEED
+            if IsLongPressAutoPlay then
+                return XMVCA.XMovie.EnumConst.LONG_PRESS_SPEED
+            else
+                if not Speed then
+                    Speed = XSaveTool.GetData("MovieAutoPlaySpeed") or XMVCA.XMovie.EnumConst.DEFAULT_SPEED
+                end
+                return Speed
             end
-            return Speed
-        elseif IsLongPressAutoPlay then
-            return XMVCA.XMovie.EnumConst.LONG_PRESS_SPEED
         else
             return XMVCA.XMovie.EnumConst.DEFAULT_SPEED
         end

@@ -1056,6 +1056,18 @@ end
 
 --endregion
 
+--region 旧主线
+-- UiFubenMainLineChapter界面，进战斗前缓存数据
+function XMainLine2Agency:OnReleaseInstUiFubenMainLineChapter(data)
+    self._Model:OnReleaseInstUiFubenMainLineChapter(data)
+end
+
+-- UiFubenMainLineChapter界面，战斗结束后获取缓存数据
+function XMainLine2Agency:OnResumeUiFubenMainLineChapter()
+    return self._Model:OnResumeUiFubenMainLineChapter()
+end
+--endregion
+
 -- 埋点进入章节的方式
 function XMainLine2Agency:RecordEnterChapterWay(way)
     local dict = {}

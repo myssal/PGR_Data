@@ -75,7 +75,10 @@ end
 
 -- 刷新切换按钮
 function XUiPanelMainLineRoot:RefreshBtnSwitch()
-    self.BtnSwitch.gameObject:SetActiveEx(self.IsOpenExhibition)
+    -- 提审包只显示旧主线
+    if XUiManager.IsHideFunc then
+        self.BtnSwitch.gameObject:SetActiveEx(false)
+    end
     self.BtnSwitch:ActiveTextByGroup(0, self.IsOpenExhibition)
     self.BtnSwitch:ActiveTextByGroup(1, not self.IsOpenExhibition)
 end

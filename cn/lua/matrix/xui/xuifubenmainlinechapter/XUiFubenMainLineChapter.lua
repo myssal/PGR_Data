@@ -159,11 +159,13 @@ function XUiFubenMainLineChapter:OnDestroy()
 end
 
 function XUiFubenMainLineChapter:OnReleaseInst()
-    return {Chapter = self.Chapter, StageId = self.StageId, HideDiffTog = self.HideDiffTog}
+    local data = {Chapter = self.Chapter, StageId = self.StageId, HideDiffTog = self.HideDiffTog}
+    XMVCA.XMainLine2:OnReleaseInstUiFubenMainLineChapter(data)
+    return 
 end
 
 function XUiFubenMainLineChapter:OnResume(data)
-    self.LastData = data
+    self.LastData = XMVCA.XMainLine2:OnResumeUiFubenMainLineChapter()
 end
 
 function XUiFubenMainLineChapter:OnGetEvents()

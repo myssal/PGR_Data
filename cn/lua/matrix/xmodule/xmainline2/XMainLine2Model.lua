@@ -47,6 +47,7 @@ function XMainLine2Model:ResetAll()
     self.StageChapterIdDic = nil
     self.StageGroupIdDic = nil
     self.CacheMainReleaseDataDic = nil
+    self.CacheDatasUiFubenMainLineChapter = nil
 end
 
 --#region 服务端数据 -------------------------------------------------------------------------------------------------
@@ -1192,6 +1193,22 @@ end
 -- 设置最后进入的时间轴章节Id
 function XMainLine2Model:SetLastExhibitionChapterId(id)
     self.LastExhibitionChapterId = id
+end
+--endregion
+
+--region 旧主线
+-- UiFubenMainLineChapter界面，进战斗前缓存数据
+function XMainLine2Model:OnReleaseInstUiFubenMainLineChapter(data)
+    self.CacheDatasUiFubenMainLineChapter = self.CacheDatasUiFubenMainLineChapter or {}
+    table.insert(self.CacheDatasUiFubenMainLineChapter, data)
+end
+
+-- UiFubenMainLineChapter界面，战斗结束后获取缓存数据
+function XMainLine2Model:OnResumeUiFubenMainLineChapter()
+    if self.CacheDatasUiFubenMainLineChapter and #self.CacheDatasUiFubenMainLineChapter > 0 then
+        local data = table.remove(self.CacheDatasUiFubenMainLineChapter, 1)
+        return data
+    end
 end
 --endregion
 

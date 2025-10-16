@@ -325,6 +325,8 @@ XTeamManagerCreator = function()
                 end
             end
 
+            XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
+
             if cb then cb() end
         end)
     end

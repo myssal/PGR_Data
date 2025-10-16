@@ -202,7 +202,7 @@ function XEquipControl:GetWeaponResonanceCanEatEquipIds(equipId)
     local equipIds = {}
     local equipDic = self:GetEquipDic()
     for _, tEquip in pairs(equipDic) do
-        if tEquip.Id ~= equipId and star == tEquip:GetStar() and tEquip:IsWeapon() and not tEquip:IsWearing() and not tEquip.IsLock then
+        if tEquip.Id ~= equipId and star == tEquip:GetStar() and tEquip:IsWeapon() and not tEquip:IsWearing() and not tEquip.IsLock and not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(tEquip.Id) then
             table.insert(equipIds, tEquip.Id)
         end
     end
@@ -223,7 +223,7 @@ function XEquipControl:GetAwarenessResonanceCanEatEquipIds(equipId)
     local equipDic = self:GetEquipDic()
     for _, tEquip in pairs(equipDic) do
         if tEquip.Id ~= equipId and suitId == tEquip:GetSuitId() and tEquip:IsAwareness() and not tEquip:IsWearing() and not tEquip.IsLock
-        and not self._Model:IsInSuitPrefab(tEquip.Id) then
+        and not self._Model:IsInSuitPrefab(tEquip.Id) and not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(tEquip.Id) then
             table.insert(equipIds, tEquip.Id)
         end
     end
