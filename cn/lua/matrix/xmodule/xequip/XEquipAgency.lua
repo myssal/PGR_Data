@@ -1280,14 +1280,21 @@ function XEquipAgency:GetResonanceSkillInfo(equipId, pos)
     return self._Model:GetResonanceSkillInfo(equipId, pos)
 end
 
--- 仿写GuessResonanceType，参考GetResonanceSkillInfoByType的结构
-function XEquipAgency:GuessResonanceType(skillId)
-    -- 按类型依次匹配，返回第一个命中的类型
-    local resonanceTypeList = {
-        XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL,
-        XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB,
-        XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL
-    }
+-- 修改后的GuessResonanceType方法，支持通过skillId和equipId推断共鸣类型
+function XEquipAgency:GuessResonanceType(skillId, equipTemplateId)
+    -- 1. 先通过装备ID获取装备实例及品质信息
+    if equipTemplateId then
+        local weaponQuality = self:GetEquipQuality(equipTemplateId)
+        -- 非6星武器直接返回属性共鸣类型
+        if weaponQuality and weaponQuality <= XEnumConst.EQUIP.MIN_RESONANCE_EQUIP_STAR_COUNT then
+            return XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB
+        end
+    else
+        XLog.Warning(string.format("GuessResonanceType: 无效的equipId %d", equipTemplateId or 0))
+    end
+    
+    -- 2. 按类型依次匹配技能配置（优先级：武器技能 > 属性 > 角色技能）
+    local resonanceTypeList = XEnumConst.EQUIP.RESONANCE_TYPE
     
     for _, resonanceType in ipairs(resonanceTypeList) do
         local config = self:GetResonanceSkillInfoByType(resonanceType, skillId)
@@ -1296,7 +1303,6 @@ function XEquipAgency:GuessResonanceType(skillId)
         end
     end
     
-    XLog.Error(string.format("未知共鸣技能类型，skillId: %d", skillId))
     return XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL -- 默认返回武器技能类型
 end
 
@@ -1323,6 +1329,16 @@ function XEquipAgency:GetResonanceSkillList(equipId)
         end
     end
     return list
+end
+
+-- 下标对应slot，空的不存
+function XEquipAgency:GetResonanceSkillDic(equipId)
+    local dic = {}
+    for i = 1, XEnumConst.EQUIP.WEAPON_RESONANCE_COUNT do
+        local skillInfo = self:GetResonanceSkillInfo(equipId, i)
+        dic[i] = skillInfo and skillInfo.Id
+    end
+    return dic
 end
 
 -- 获取装备共鸣预览技能

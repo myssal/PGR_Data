@@ -135,7 +135,7 @@
     },
     {
         "Id": 9,
-        "Url": "https://web-static.kurobbs.com/pns-tool-team-reco/pc.html{%%params%%}#/home",
+        "Url": "https://web-static.kurobbs.com/pns-tool-team-reco/pc.html{%%params%%}&e=g#/home",
         "IsDisableAudio": false,
         "IsTransparent": true,
         "IsEmbed": true,
@@ -189,13 +189,13 @@
     },
     {
         "Id": 12,
-        "Url": "http://10.0.146.42:4500/home",
+        "Url": "https://sdkapitest.kurogame.com/migrate/home",
         "IsDisableAudio": false,
         "IsTransparent": false,
-        "IsEmbed": false,
+        "IsEmbed": true,
         "IOSEmbedType": 0,
         "PcEmbedType": 0,
-        "IsLandscape": false,
+        "IsLandscape": true,
         "IsPcLandscape": false,
         "ParamEncryptionType": 1,
         "UrlParams": [

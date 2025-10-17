@@ -278,16 +278,10 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
                 -- 获取当前预设角色ID（用于区分角色专属共鸣技能）
                 local characterId = self.TeamPrefab:GetEntityIdByTeamPos(pos)
-                for i, skillId in ipairs(resonanceDict) do
+                for i, skillId in pairs(resonanceDict) do
                     -- 尝试自动识别共鸣类型（武器/属性/角色技能）
                     -- 若预设数据中包含类型信息，可直接传入，否则需通过配置反向判断
-                    local skillType = nil
-                    local weaponQuality = XMVCA.XEquip:GetEquipQuality(xWeaponEquip.TemplateId)
-                    if weaponQuality and weaponQuality <= XEnumConst.EQUIP.MIN_RESONANCE_EQUIP_STAR_COUNT then
-                        skillType = XEnumConst.EQUIP.RESONANCE_TYPE.ATTRIB -- 非6星装备的共鸣强行给定属性共鸣
-                    else
-                        skillType = XMVCA.XEquip:GuessResonanceType(skillId) -- 需实现类型推断方法
-                    end
+                    local skillType = XMVCA.XEquip:GuessResonanceType(skillId, xWeaponEquip.TemplateId)
                     local skillInfo = XSkillInfoObj.New(skillType, skillId, characterId)
                     self["BtnEquipResonance"..i]:SetRawImage(skillInfo.Icon)
                     self["BtnEquipResonance"..i]:SetButtonState(CS.UiButtonState.Normal)
@@ -317,7 +311,7 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
             -- 2.预设里的共鸣数量与实际装备共鸣数量不一致则显示
             local resounanceCountInPrefab = 0
             if resonanceDict then
-                for slot, v in ipairs(resonanceDict) do
+                for slot, v in pairs(resonanceDict) do
                     resounanceCountInPrefab = resounanceCountInPrefab + 1
                 end
             end

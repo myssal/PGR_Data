@@ -15,6 +15,9 @@ function XBuffScript1021001:Init() --初始化
     self.Jingmo = self._proxy:GenerateNpc(1021, camp, targetBehindPos, targetRota2)--生成镜魔
     self._proxy:CastActionToTarget(self.Jingmo,102101,target)
     self._proxy:AddTimerTask(1.75, function()--延迟1.75秒后，释放子弹
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         local Position = self._proxy:GetNpcPosition(target)--获取目标位置
         self._proxy:LaunchMissileFromPosToPos(self._uuid,10210103,10210103,Position,Position,1)--伤害子弹
         if self._proxy:GetBuffStacks(self._uuid, 1016243) == 2 then

@@ -13,6 +13,9 @@ function XBuffScript1019001:Init() --初始化
     self.Aibi = self._proxy:GenerateNpc(1019, camp, targetBehindPos, targetRota2)--生成埃比
     self._proxy:CastActionToTarget(self.Aibi,101901,target)
     self._proxy:AddTimerTask(2.25, function()--延迟2.25秒后，释放子弹
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         local Position = self._proxy:GetNpcPosition(target)--获取目标位置
         self._proxy:LaunchMissileFromPosToPos(self._uuid,10190116,10190116,Position,Position,1)--伤害子弹
         if self._proxy:GetBuffStacks(self._uuid, 1016241) == 2 then

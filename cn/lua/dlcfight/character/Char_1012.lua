@@ -57,15 +57,24 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardA,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:CastActionToTarget(self.ShadowcardA,101702,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardA)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardA)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170204,10170204,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardA, 1012009, 1)
                 end)
             end
@@ -88,15 +97,24 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardB,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:CastActionToTarget(self.ShadowcardB,101704,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardB)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardB)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170404,10170404,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardB, 1012009, 1)
                 end)
             end
@@ -120,15 +138,24 @@ function XCharTes1012:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
                 local targetPosition2 = self._proxy:GetNpcPosition(target)
                 self._proxy:SetNpcPosition(self.ShadowcardC,targetPosition2,true)
                 self._proxy:AddTimerTask(0.2, function()--延迟0.2秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:CastActionToTarget(self.ShadowcardC,101706,target)
                     local YingpaiAPosition2 = self._proxy:GetNpcPosition(self.ShadowcardC)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170210,10170210,YingpaiAPosition2,YingpaiAPosition2,1)--影牌落地特效
                 end)
                 self._proxy:AddTimerTask(0.6, function()--延迟0.6秒后，释放影牌技能
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     local YingpaiAPosition3 = self._proxy:GetNpcPosition(self.ShadowcardC)
                     self._proxy:LaunchMissileFromPosToPos(self._uuid,10170604,10170604,YingpaiAPosition3,YingpaiAPosition3,1)--影牌落地伤害
                 end)
                 self._proxy:AddTimerTask(0.65, function()--延迟0.65秒后，解除隐藏影牌
+                    if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+                        return
+                    end
                     self._proxy:ApplyMagic(self._uuid, self.ShadowcardC, 1012009, 1)
                 end)
             end

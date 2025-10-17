@@ -529,7 +529,10 @@ function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
         end
 
         -- 从预设获取技能信息（无预设时使用实际装备数据）
-        local skillInfo = hasPresetResonance and XMVCA.XEquip:GetWeaponResonanceSkillInfoBySkillId(presetSkillId) or {}
+        local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
+        local xWeaponEquip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
+        local skillType = XMVCA.XEquip:GuessResonanceType(presetSkillId, xWeaponEquip.TemplateId)
+        local skillInfo = XSkillInfoObj.New(skillType, presetSkillId, self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos))
         
         -- 获取实际装备的绑定角色ID（预设不存储绑定角色）
         local realBindCharacterId = XMVCA.XEquip:GetResonanceBindCharacterId(self.SelectEquipId, pos)

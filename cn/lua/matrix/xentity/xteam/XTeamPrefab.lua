@@ -409,7 +409,7 @@ function XTeamPrefab:CopyRealWeaponData(equipId, pos, notSyncToServer, cb)
     local data = 
     {
         EquipId = equipId,
-        ResonanceDict = XMVCA.XEquip:GetResonanceSkillList(equipId),
+        ResonanceDict = XMVCA.XEquip:GetResonanceSkillDic(equipId),
         WeaponOverrunSuitId = xEquip:GetOverrunChoseSuit(),
     }
 

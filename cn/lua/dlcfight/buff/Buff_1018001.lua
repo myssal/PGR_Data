@@ -14,6 +14,9 @@ function XBuffScript1018001:Init() --初始化
     self.shashen = self._proxy:GenerateNpc(1018, camp, targetBehindPos, targetRota2)--生成杀神
     self._proxy:CastActionToTarget(self.shashen,101801,target)
     self._proxy:AddTimerTask(1, function()--延迟3秒后，释放技能
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         local Position = self._proxy:GetNpcPosition(target)--获取目标位置
         self._proxy:LaunchMissileFromPosToPos(self._uuid,10180105,10180105,Position,Position,1)--伤害子弹
         if self._proxy:GetBuffStacks(self._uuid, 1016238) == 2 then
@@ -46,20 +49,32 @@ function XBuffScript1018001:Init() --初始化
         end
     end)
     self._proxy:AddTimerTask(3.5, function()--延迟3.5秒后，释放技能
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         self._proxy:CastActionToTarget(self.shashen,101802,target)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1018201, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1018202, 1)
         self.kaiguan = true
     end)
     self._proxy:AddTimerTask(5.2, function()--延迟3.5秒后，释放技能
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         self._proxy:AbortAction(self.shashen, true)
         self._proxy:CastActionToTarget(self.shashen,101803,target)
     end)
     self._proxy:AddTimerTask(7.2, function()--延迟3.5秒后，释放技能
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         self._proxy:AbortAction(self.shashen, true)
         self._proxy:CastActionToTarget(self.shashen,101803,target)
     end)
     self._proxy:AddTimerTask(9.2, function()--延迟3.5秒后，释放技能
+        if not self._proxy:CheckActorExist(target) then  --检测目标是否存活
+            return
+        end
         self._proxy:AbortAction(self.shashen, true)
         self._proxy:CastActionToTarget(self.shashen,101803,target)
     end)

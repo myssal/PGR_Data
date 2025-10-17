@@ -25,7 +25,7 @@ end
 
 function XUiTheatre5PVECheckCharacter:OnStart()
     ---@type XUiPanelTheatre5Skill
-    self.PanelSkill = XUiPanelTheatre5Skill.New(self.ListSkillBag, self, XUiGridTheatre5Container)
+    self.PanelSkill = XUiPanelTheatre5Skill.New(self.ListSkillBag, self, XUiGridTheatre5Container, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
     ---@type XUiPanelTheatre5Gem
     self.PanelGem = XUiPanelTheatre5Gem.New(self.PanelGem, self, XUiGridTheatre5ShowGemSlot)
     ---@type XUiModelTheatre5PVPCharacter3D
