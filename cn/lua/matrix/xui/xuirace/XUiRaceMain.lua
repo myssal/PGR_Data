@@ -9,12 +9,13 @@ local XUiRaceMain = XLuaUiManager.Register(XLuaUi, "UiRaceMain")
 
 function XUiRaceMain:OnAwake()
     self:BindHelpBtn(self.BtnHelp, "RaceMainHelp")
-    self.BtnPredictAll.CallBack = handler(self, self.OnBtnPredictAllClick)
+    --self.BtnPredictAll.CallBack = handler(self, self.OnBtnPredictAllClick)
     self.BtnPredictOne.CallBack = handler(self, self.OnBtnPredictOneClick)
     self.BtnRank.CallBack = handler(self, self.OnBtnRankClick)
     self.BtnShop.CallBack = handler(self, self.OnBtnShopClick)
     --self.BtnSkin.CallBack = handler(self, self.OnBtnSkinClick)
     self.BtnSkin.gameObject:SetActiveEx(false)
+    self.BtnPredictAll.gameObject:SetActiveEx(false)
 end
 
 function XUiRaceMain:OnStart()
@@ -77,7 +78,9 @@ function XUiRaceMain:CheckLastRound()
     if self._Control:IsExistGuessResultData(lastId) then
         return
     end
-    self._Control:RequestGuessSingleRoundResult(lastId)
+    self._Control:RequestGuessSingleRoundResult(lastId, function()
+        self:ShowRedPoint()
+    end)
 end
 
 function XUiRaceMain:UpdateGuessBtn()
@@ -85,22 +88,22 @@ function XUiRaceMain:UpdateGuessBtn()
         local nowTime = XTime.GetServerNowTimestamp()
         local leftTime = self._MatchGuessEndTime - nowTime
         if leftTime >= self._TimeToMatchCountDown then
-            self.BtnPredictAll:SetSpriteVisible(false)
+            --self.BtnPredictAll:SetSpriteVisible(false)
         elseif leftTime > 0 and leftTime < self._TimeToMatchCountDown then
             -- 赛事预测剩余时间不足三天，显示倒计时
-            local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.CHATEMOJITIMER)
-            self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessTime", timeStr))
-            self.BtnPredictAll:SetSpriteVisible(true)
+            --local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.CHATEMOJITIMER)
+            --self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessTime", timeStr))
+            --self.BtnPredictAll:SetSpriteVisible(true)
         else
             self._IsMatchGuessClose = true
             self._CanMatchGuessGain = self._Control:HasJoinGuess() and not self._Control:IsAllGuessRewardGain()
-            if self._CanMatchGuessGain then
-                -- 存在赛事预测奖励没领取
-                self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessReward"))
-                self.BtnPredictAll:SetSpriteVisible(true)
-            else
-                self.BtnPredictAll:SetSpriteVisible(false)
-            end
+            --if self._CanMatchGuessGain then
+            --    -- 存在赛事预测奖励没领取
+            --    self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessReward"))
+            --    self.BtnPredictAll:SetSpriteVisible(true)
+            --else
+            --    self.BtnPredictAll:SetSpriteVisible(false)
+            --end
         end
     end
 
@@ -108,7 +111,7 @@ function XUiRaceMain:UpdateGuessBtn()
     if state == XEnumConst.Race.RoundState.InProgress then
         self.BtnPredictOne:SetNameByGroup(0, XUiHelper.GetText("RaceOneGuessState2"))
     else
-        local unclaimedsRoundId = self._Control:GetRewardDontGainRoundId()
+        local unclaimedsRoundId = self._Control:GetDontViewedRoundId()
         if unclaimedsRoundId then
             -- 有预测奖励没领取
             self.BtnPredictOne:SetNameByGroup(0, XUiHelper.GetText("RaceOneGuessState3"))
@@ -247,7 +250,7 @@ function XUiRaceMain:OnBtnPredictAllClick()
 end
 
 function XUiRaceMain:OnBtnPredictOneClick()
-    local dontGainRoundId = self._Control:GetRewardDontGainRoundId()
+    local dontGainRoundId = self._Control:GetDontViewedRoundId()
     if dontGainRoundId then
         -- 领取预测奖励
         self._Control:SetSettleParam(false)
@@ -284,8 +287,8 @@ end
 --end
 
 function XUiRaceMain:ShowRedPoint()
-    local isMatchRed = XMVCA.XRace:CheckMatchGuessRedpoint()
-    self.BtnPredictAll:ShowReddot(isMatchRed)
+    --local isMatchRed = XMVCA.XRace:CheckMatchGuessRedpoint()
+    --self.BtnPredictAll:ShowReddot(isMatchRed)
 
     local isTaskRed = XMVCA.XRace:CheckTaskRedPoint()
     self.BtnShop:ShowReddot(isTaskRed)

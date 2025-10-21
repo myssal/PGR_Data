@@ -236,6 +236,24 @@ function XUiTheatre5BattleShop:OnBtnMaskDetailShowClickEvent()
 end
 
 function XUiTheatre5BattleShop:OnItemDetailOpenEvent(itemData, containerType, uiPos)
+    --region 检查itemData合法性
+    if not itemData then
+        XLog.Error("[XUiTheatre5BattleShop] 想要打开物品详情界面,但是itemData不存在:" .. tostring(itemData))
+        return
+    end
+    local itemId
+    if type(itemData) == "table" then
+        itemId = itemData.ItemId
+    else
+        itemId = itemData
+    end
+    local config = XTool.IsNumberValid(itemId) and self._Control:GetTheatre5ItemCfgById(itemId) or nil
+    if not config then
+        XLog.Error("[XUiTheatre5BattleShop] 想要打开物品详情界面,但是itemData不存在对应的物品配置:", itemData)
+        return
+    end
+    --endregion
+    
     if not XLuaUiManager.IsUiShow('UiTheatre5BubbleItemDetail') then
         XLuaUiManager.Open('UiTheatre5BubbleItemDetail', itemData, containerType, uiPos)
     else

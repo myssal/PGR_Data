@@ -68,6 +68,7 @@ function XUiBigWorldMessage:OnMessageGroupClick(index)
 end
 
 function XUiBigWorldMessage:OnMessageFinish()
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Finish Event.\n" .. debug.traceback())
     self:_RefreshMessageGroupList()
 end
 

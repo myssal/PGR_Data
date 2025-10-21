@@ -368,18 +368,17 @@ end
 
 function XRaceAgency:CheckRoundGuessRedPoint()
     if self:GetIsOpen(true) then
-        local playerData = self._Model:GetBasePlayerData()
+        local resultDatas = self._Model:GetBaseRoundGuessResult()
         local roundId = self._Model:GetCurRound()
-        if playerData and playerData.RoundGuessDict then
-            for id, dict in pairs(playerData.RoundGuessDict) do
-                if dict.RaceRoundGuessInfoDict then
-                    for _, info in pairs(dict.RaceRoundGuessInfoDict) do
-                        if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
-                            return true --有奖励未领取
-                        end
-                        if id == roundId and not XTool.IsNumberValid(info.CharacterId) and not XTool.IsNumberValid(info.OptionId) then
-                            return true --有选项没预测
-                        end
+        for _, resultData in pairs(resultDatas) do
+            for _, data in pairs(resultData) do
+                local info = data.PlayerGuessInfo
+                if info then
+                    if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
+                        return true --有奖励未领取
+                    end
+                    if id == roundId and not XTool.IsNumberValid(info.CharacterId) and not XTool.IsNumberValid(info.OptionId) then
+                        return true --有选项没预测
                     end
                 end
             end

@@ -151,6 +151,7 @@ function XUiBigWorldMessageGrid:_PlayFinish(content)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
 
     if content:IsEnd() then
+        CS.XLog.Debug("[BigWorldMessage]: Play Message Content Play Finish. StepId: " .. tostring(content:GetStepId()) .. "\n" .. debug.traceback())
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, content)
     end
 end

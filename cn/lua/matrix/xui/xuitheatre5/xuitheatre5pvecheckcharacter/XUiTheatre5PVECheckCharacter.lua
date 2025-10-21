@@ -27,11 +27,11 @@ function XUiTheatre5PVECheckCharacter:OnStart()
     ---@type XUiPanelTheatre5Skill
     self.PanelSkill = XUiPanelTheatre5Skill.New(self.ListSkillBag, self, XUiGridTheatre5Container, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
     ---@type XUiPanelTheatre5Gem
-    self.PanelGem = XUiPanelTheatre5Gem.New(self.PanelGem, self, XUiGridTheatre5ShowGemSlot)
+    self.PanelGem = XUiPanelTheatre5Gem.New(self.PanelGem, self, XUiGridTheatre5ShowGemSlot, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
     ---@type XUiModelTheatre5PVPCharacter3D
     self.Model3D = XUiModelTheatre5PVPCharacter3D.New(self.UiModelGo, self)
     ---@type XUiPanelTheatre5Bag
-    self.PanelBag = XUiPanelTheatre5Bag.New(self.ListBag, self)
+    self.PanelBag = XUiPanelTheatre5Bag.New(self.ListBag, self, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
     self.PanelSkill:Open()
     self.PanelGem:Open()
     self:InitCharacter3D()

@@ -12,6 +12,7 @@ local XUiGridMainlineDownloadGuide = require('XUi/XUiFubenMainLineChapter/XUiGri
 local XUiFubenMainLineChapter = XLuaUiManager.Register(XLuaUi, "UiFubenMainLineChapter")
 
 function XUiFubenMainLineChapter:OnAwake()
+    self.BtnMission.gameObject:SetActiveEx(false)
     self:InitAutoScript()
 end
 

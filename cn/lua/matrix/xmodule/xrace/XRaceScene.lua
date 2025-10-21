@@ -10,7 +10,7 @@ function XRaceScene:Ctor(sceneId, roundId, mapId, ids, sceneType, reportName)
     self._MapId = mapId or 2
     self._SceneType = sceneType or XEnumConst.Race.GameMode.Local -- Playback -- LiveStream -- XEnumConst.Race.GameMode.Local
     self._ReportName = reportName or ""
-    XLog.Warning("XRaceScene:ids", self._Ids)
+    -- XLog.Warning("XRaceScene:ids", self._Ids)
 end
 
 ----------public start----------
@@ -67,6 +67,11 @@ function XRaceScene:InitMatch(uiCallback)
     self._XRaceViewManager:Enter(self._SceneType, self._RoundId, self._ReportName)
 end
 
+function XRaceScene:PlayTrackAnim(isPlay)
+    if not self._CamTrack then return end
+    self._CamTrack.gameObject:SetActive(isPlay)
+end
+
 ----------public end----------
 
 ----------private start----------
@@ -78,6 +83,10 @@ function XRaceScene:OnEnter()
         self:LoadChildAsync(obj, self._MapCfg.SceneRoadPath, function(loadId, obj2)
             self._Road = obj2
             self._SceneRaceGameRoot = self._Road.transform:Find("RaceGame")
+            self._CamTrack = self._Road.transform:Find("CamTrack")
+            if self._CamTrack then
+                self._CamTrack.gameObject:SetActive(false)
+            end
             self._XRaceViewManager = self._SceneRaceGameRoot:GetComponent(typeof(CS.XRace.XRaceViewManager))
             XLuaUiManager.Open("UiRaceFightMain", self._RoundId, self._Ids, self._SceneType)
         end)

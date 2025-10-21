@@ -218,8 +218,8 @@ function XCharTes1012:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
     end
 
     if self._proxy:CheckBuffByKind(self._uuid, 1012008) then
-        self._proxy:AbortSkill(self._uuid, true)
-        self._proxy:CastSkill(self._uuid, 101219)
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastAction(self._uuid, 101219)
     end
 end
 

@@ -61,14 +61,19 @@ end
 
 function XUiPlotExhibitionMain:OnClickFilter()
     if self.PanelFilter.gameObject.activeSelf then
-        self.PanelFilter.gameObject:SetActiveEx(false)
         -- 手动close，否则在OnEnable时触发XUiNode.gameObject未激活的error
         local grids = self.DynamicTableFilter:GetGrids()
         for i, grid in pairs(grids) do
             grid:Close()
         end
+        self.PanelFilter.gameObject:SetActiveEx(false)
     else
         self.PanelFilter.gameObject:SetActiveEx(true)
+        -- 手动open...
+        local grids = self.DynamicTableFilter:GetGrids()
+        for i, grid in pairs(grids) do
+            grid:Open()
+        end
         self:UpdateFilter()
     end
 end

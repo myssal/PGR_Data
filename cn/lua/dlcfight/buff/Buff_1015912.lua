@@ -15,14 +15,15 @@ function XBuffScript1015912:Init()
     self.timer = 0          --计时器
     --增强Buff列表，enh = enhance
     self.enhBuffIdDict = {
-        [1] = 1015946 --疲劳阶段，概率类符纹的触发间隔降低2秒
+        [1] = 1015946 --疲劳阶段，概率类符纹的触发间隔降低3秒
     }
     self.enhRuneIdDict = {
         [1] = 20946
     }
     --增强Buff[1]配置
     self.enhBuff1SignalId = 1015909     --【疲劳】标记
-    self.enhBuff1Time = 2               --触发CD减少值
+    self.enhBuff1SignalCtrlId = 1015908 --【疲劳】管理脚本
+    self.enhBuff1Time = 3               --触发CD减少值
     ------------执行------------
 end
 
@@ -56,6 +57,10 @@ function XBuffScript1015912:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     --开局时，设定一次计时器
     if npcUUID == self._uuid and buffId == self.battleStartBuffId then
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.signalTime
+        --有Buff[1]存在时，添加疲劳状态管理
+        if self._proxy:CheckBuffByKind(self._uuid,self.enhBuffIdDict[1]) then
+            self._proxy:ApplyMagic(self._uuid,self._uuid,self.enhBuff1SignalCtrlId,1)
+        end
     end
 end
 

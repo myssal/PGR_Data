@@ -58,8 +58,170 @@ XTeamManagerCreator = function()
         end
         --EmptyTeam = XReadOnlyTable.Create(EmptyTeam)
         XTeamManager.EmptyTeam = EmptyTeam
+
+        if CS.XApplication.Debug then
+            CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DEBUGGERCHEAT_SERVER_RESPON_TEXT, XTeamManager.OnDebuggerCheatServerResponText)
+        end
     end
 
+    function XTeamManager.OnDebuggerCheatServerResponText(eventName, arg)
+        -- 先判断是否包含TeamName字符串
+        if not arg[0] or not string.find(arg[0], "TeamName") then
+            return
+        end
+        
+        local serverTeams = XTool.Json2LuaTable(arg[0])
+        local localTeams = XDataCenter.TeamManager.GetTeamPrefabList()
+    
+        -- 转换服务器数据为便于对比的格式（将数组转为按TeamId映射的表）
+        local serverTeamMap = {}
+        for _, serverTeam in ipairs(serverTeams) do
+            serverTeamMap[serverTeam.TeamId] = serverTeam
+        end
+        XLog.Debug("[TeamPrefab]ServerTeam ", serverTeamMap)
+    
+        -- 转换本地数据为便于对比的格式（将数组转为按TeamId映射的表）
+        local localTeamMap = {}
+        for _, localTeam in ipairs(localTeams) do
+            localTeamMap[localTeam.Id] = localTeam
+        end
+        XLog.Debug("[TeamPrefab]LocalTeam ", localTeamMap)
+    
+        local allMatch = true
+        local mismatchInfoList = {}
+    
+        -- 遍历所有服务器队伍进行对比
+        for teamId, serverTeam in pairs(serverTeamMap) do
+            local localTeam = localTeamMap[teamId]
+            if not localTeam then
+                allMatch = false
+                table.insert(mismatchInfoList, string.format(
+                    "队伍不存在 - 服务器存在该队伍但本地不存在，TeamId: %d, 队伍名: %s",
+                    teamId, serverTeam.TeamName or "未知"
+                ))
+                goto continue  -- 跳过不存在的本地队伍的后续对比
+            end
+    
+            -- 对比基础字段（非Pos相关）
+            local baseFields = {
+                {name = "TeamId", serverVal = serverTeam.TeamId, localVal = localTeam.Id},
+                {name = "TeamName", serverVal = serverTeam.TeamName, localVal = localTeam.TeamName},
+                {name = "CaptainPos", serverVal = serverTeam.CaptainPos, localVal = localTeam.CaptainPos},
+                {name = "FirstFightPos", serverVal = serverTeam.FirstFightPos, localVal = localTeam.FirstFightPos},
+                {name = "EnterCgIndex", serverVal = serverTeam.EnterCgIndex, localVal = localTeam.EnterCgIndex},
+                {name = "SettleCgIndex", serverVal = serverTeam.SettleCgIndex, localVal = localTeam.SettleCgIndex},
+                {name = "SelectedGeneralSkill", serverVal = serverTeam.SelectedGeneralSkill, localVal = localTeam.SelectedGeneralSkill or 0}
+            }
+    
+            for _, field in ipairs(baseFields) do
+                if field.serverVal ~= field.localVal then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "字段不一致 - TeamId: %d, 队伍名: %s, 字段: %s, 服务器值: %s, 本地值: %s",
+                        teamId, serverTeam.TeamName or "未知", field.name,
+                        tostring(field.serverVal), tostring(field.localVal)
+                    ))
+                end
+            end
+    
+            -- 对比角色数据（按位置）
+            local maxPos = XDataCenter.TeamManager.GetMaxPos() or 3  -- 使用配置的最大位置数，默认3
+            for pos = 1, maxPos do
+                -- 角色ID对比
+                local serverCharId = serverTeam.TeamData and serverTeam.TeamData[tostring(pos)] or 0
+                local localCharId = localTeam.EntitiyIds and localTeam.EntitiyIds[pos] or 0
+                if serverCharId ~= localCharId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "角色不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器角色Id: %d, 本地角色Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverCharId, localCharId
+                    ))
+                end
+    
+                -- 武器数据对比（slot=0）
+                local serverEquipData = serverTeam.EquipData and serverTeam.EquipData[tostring(pos)] or {}
+                local serverWeapon = serverEquipData.EquipDataDict and serverEquipData.EquipDataDict["0"] or {}
+                local serverWeaponId = serverWeapon.EquipId or 0
+                local serverOverrunSuitId = serverWeapon.WeaponOverrunSuitId or 0
+    
+                local localWeapon = localTeam.WeaponData and localTeam.WeaponData[pos] or {}
+                local localWeaponId = localWeapon.EquipId or 0
+                local localOverrunSuitId = localWeapon.WeaponOverrunSuitId or 0
+    
+                if serverWeaponId ~= localWeaponId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "武器不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器武器Id: %d, 本地武器Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverWeaponId, localWeaponId
+                    ))
+                end
+    
+                if serverOverrunSuitId ~= localOverrunSuitId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "武器超频套装不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器套装Id: %d, 本地套装Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverOverrunSuitId, localOverrunSuitId
+                    ))
+                end
+    
+                -- 意识数据对比（slot=1-6）
+                local serverAwarenessDict = serverEquipData.EquipDataDict or {}
+                local localAwarenessData = localTeam.AwarenessData and localTeam.AwarenessData[pos] or {}
+    
+                -- 收集所有需要对比的意识槽位（服务器和本地的并集）
+                local slotsToCheck = {}
+                for slotStr in pairs(serverAwarenessDict) do
+                    local slot = tonumber(slotStr)
+                    if slot and slot >= 1 and slot <= 6 then  -- 意识槽位范围1-6
+                        slotsToCheck[slot] = true
+                    end
+                end
+                for slot in pairs(localAwarenessData) do
+                    if slot >= 1 and slot <= 6 then
+                        slotsToCheck[slot] = true
+                    end
+                end
+    
+                -- 对比每个意识槽位
+                for slot in pairs(slotsToCheck) do
+                    local serverAwareness = serverAwarenessDict[tostring(slot)] or {}
+                    local localAwareness = localAwarenessData[slot] or {}
+    
+                    local serverEquipId = serverAwareness.EquipId or 0
+                    local localEquipId = localAwareness.EquipId or 0
+    
+                    if serverEquipId ~= localEquipId then
+                        allMatch = false
+                        table.insert(mismatchInfoList, string.format(
+                            "意识不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 槽位: %d, 服务器意识Id: %d, 本地意识Id: %d",
+                            teamId, serverTeam.TeamName or "未知", pos, slot, serverEquipId, localEquipId
+                        ))
+                    end
+                end
+            end
+    
+            ::continue::
+        end
+    
+        -- 检查本地存在但服务器不存在的队伍
+        for teamId, localTeam in pairs(localTeamMap) do
+            if not serverTeamMap[teamId] then
+                allMatch = false
+                table.insert(mismatchInfoList, string.format(
+                    "队伍不存在 - 本地存在该队伍但服务器不存在，TeamId: %d, 队伍名: %s",
+                    teamId, localTeam.TeamName or "未知"
+                ))
+            end
+        end
+    
+        -- 输出结果
+        if allMatch then
+            print("[TeamPrefab]数据对比成功：服务器与本地队伍数据完全一致")
+        else
+            XLog.Error("[TeamPrefab]数据对比失败，不一致项如下：\n", mismatchInfoList)
+        end
+    end
+    
     function XTeamManager.SetGeneralSkillRefreshTrigger()
         GeneralSkillRefreshTrigger = true
     end
@@ -420,6 +582,7 @@ XTeamManagerCreator = function()
         XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
             if response.Code ~= XCode.Success then
                 XUiManager.TipCode(response.Code)
+                xTeamPrefab:RestoreFromSnapshot()
                 return
             end
 
@@ -467,6 +630,7 @@ XTeamManagerCreator = function()
         XNetwork.Call("TeamPrefabUpdateEquipRequest", request, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                xTeamPrefab:RestoreFromSnapshot()
                 return
             end
             
@@ -542,6 +706,7 @@ XTeamManagerCreator = function()
         XNetwork.Call("TeamPrefabUpdateMetadataRequest", request, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                xTeamPrefab:RestoreFromSnapshot()
                 return
             end
             

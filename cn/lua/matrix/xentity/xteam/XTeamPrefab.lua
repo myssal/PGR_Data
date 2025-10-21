@@ -88,6 +88,8 @@ function XTeamPrefab:ClearPosData(pos)
 end
 
 function XTeamPrefab:ClearAwarenessData(pos, notSyncToServer)
+    self:GetFullSnapshot()
+
     for i = 1, 6, 1 do
         self:UpdateEquipAt(pos, i, nil, true)
     end
@@ -122,6 +124,40 @@ function XTeamPrefab:UpdateEquipAt(pos, slot, item, notSyncToServer, cb)
     if not notSyncToServer then
         self:SyncEquipDataToServer(pos, cb)
     end
+end
+
+--- 检查装备ID是否已在队伍预设中使用
+---@param equipId number 装备ID
+---@return boolean 是否存在
+function XTeamPrefab:CheckEquipIdInTeam(equipId)
+    if not equipId then return false end
+
+    -- 获取队伍位置数量（通过接口获取实体ID列表）
+    local entityIds = self:GetEntityIds()
+    if not entityIds then return false end
+
+    -- 检查所有位置的武器数据
+    for pos = 1, #entityIds do
+        local weapon = self:GetWeaponData(pos)
+        if weapon and weapon.EquipId == equipId then
+            return true
+        end
+    end
+
+    -- 检查所有位置的意识数据
+    for pos = 1, #entityIds do
+        local awarenessData = self:GetAllAwarenessData(pos)
+        if awarenessData then
+            for slot = 1, 6 do  -- 假设意识槽位固定为1-6
+                local awareness = self:GetAwarenessData(pos, slot)
+                if awareness and awareness.EquipId == equipId then
+                    return true
+                end
+            end
+        end
+    end
+
+    return false
 end
 
 function XTeamPrefab:CheckEquipIdConflict(equipId, targetPos)
@@ -220,46 +256,87 @@ function XTeamPrefab:GetAwarenessData(pos, slot)
     return nil
 end
 
--- 获取预设穿戴的套装列表信息
 function XTeamPrefab:GetWearingSuitInfoListByPos(pos)
     local equipList = {}
     
     local awarenessData = self:GetAllAwarenessData(pos)
-    if not awarenessData then
-        return equipList
-    end
-
-    for i, v in pairs(awarenessData) do
-        table.insert(equipList, XMVCA.XEquip:GetEquip(v.EquipId))
-    end
-
-    -- 武器
-    local equipWeapon = nil
-    local usingWeaponId = self:GetWeaponData(pos).EquipId
-    local overrunSuitId = self:GetWeaponOverrunSuitId(pos)
-    local weaponEquipSuitInfo = nil
-    if XTool.IsNumberValid(usingWeaponId) and XTool.IsNumberValid(overrunSuitId) then
-        equipWeapon = XMVCA.XEquip:GetEquip(usingWeaponId)
-        
-        local suitName = XMVCA.XEquip:GetSuitName(overrunSuitId)
-        weaponEquipSuitInfo = {
-            SuitId = overrunSuitId,
-            Name = suitName,
-            Count = 0,
-            IsOverrun = true -- 因为传入的是 overrunSuitId，所以默认标记为超限
-        }
-
-        local skillDescs = XMVCA.XEquip:GetEquipSuitSkillDescription(overrunSuitId)
-        for addCnt = 1, XEnumConst.EQUIP.OVERRUN_ADD_SUIT_CNT do
-            if skillDescs[addCnt] then
-                weaponEquipSuitInfo.Count = addCnt
+    if awarenessData then
+        for _, v in pairs(awarenessData) do
+            local equip = XMVCA.XEquip:GetEquip(v.EquipId)
+            if equip then
+                table.insert(equipList, equip)
             end
         end
     end
 
-    -- 意识依然可以用装备通用接口，只是武器由于可以自定义谐振，所以需要单独处理
+    -- 获取意识套装信息列表（不含武器）
     local suitInfoList = XMVCA.XEquip:GetWearingSuitInfoListByEquipListAndWeapon(equipList)
-    table.insert(suitInfoList, weaponEquipSuitInfo)
+
+    -- 处理武器超频套装
+    local weaponData = self:GetWeaponData(pos)
+    if not weaponData then
+        return suitInfoList
+    end
+
+    local usingWeaponId = weaponData.EquipId
+    local overrunSuitId = weaponData.WeaponOverrunSuitId
+    if not (XTool.IsNumberValid(usingWeaponId) and XTool.IsNumberValid(overrunSuitId)) then
+        return suitInfoList
+    end
+
+    -- 获取武器实体并检查是否可超限
+    local weaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
+    if not weaponEquip or not weaponEquip:CanOverrun() then
+        return suitInfoList
+    end
+
+    -- 构建武器套装信息基础数据
+    local suitName = XMVCA.XEquip:GetSuitName(overrunSuitId)
+    local weaponEquipSuitInfo = {
+        SuitId = overrunSuitId,
+        Name = suitName,
+        Count = 0,
+        IsOverrun = true
+    }
+
+    -- 获取技能描述表（用于判断有效计数）
+    local skillDescs = XMVCA.XEquip:GetEquipSuitSkillDescription(overrunSuitId)
+    if not skillDescs then
+        return suitInfoList
+    end
+
+    -- 查找是否有相同套装ID的意识套装
+    local targetSuitInfo = nil
+    for _, suitInfo in pairs(suitInfoList) do
+        if suitInfo.SuitId == overrunSuitId then
+            targetSuitInfo = suitInfo
+            break
+        end
+    end
+
+    -- 计算可叠加的有效计数（仿照XEquipAgency的逻辑）
+    local curCnt = targetSuitInfo and targetSuitInfo.Count or 0
+    local maxAddCnt = 0
+    for addCnt = 1, XEnumConst.EQUIP.OVERRUN_ADD_SUIT_CNT do
+        -- 关键判断：只有技能描述存在时才认为计数有效
+        if skillDescs[curCnt + addCnt] then
+            maxAddCnt = addCnt
+        end
+    end
+
+    if maxAddCnt <= 0 then
+        return suitInfoList
+    end
+
+    -- 应用计数叠加
+    if targetSuitInfo then
+        targetSuitInfo.Count = curCnt + maxAddCnt
+        targetSuitInfo.IsOverrun = true
+    else
+        weaponEquipSuitInfo.Count = maxAddCnt
+        table.insert(suitInfoList, weaponEquipSuitInfo)
+    end
+
     return suitInfoList
 end
 
@@ -336,6 +413,8 @@ function XTeamPrefab:SwapPosData(posA, posB, notSyncToServer)
         return
     end
 
+    self:GetFullSnapshot()
+
     -- 1. 交换角色 ID
     self.EntitiyIds[posA], self.EntitiyIds[posB] = self.EntitiyIds[posB], self.EntitiyIds[posA]
 
@@ -363,6 +442,8 @@ function XTeamPrefab:CopyRealCharacterEquipData(characterId, pos, notSyncToServe
     -- 检查队伍里对应的角色，并拿到
     if not characterId then return end
     if not XTool.IsNumberValid(pos) then return end
+
+    self:GetFullSnapshot()
 
     local equipData = XMVCA.XEquip:GetCharacterEquips(characterId)
     for k, xEquip in pairs(equipData) do
@@ -406,6 +487,8 @@ function XTeamPrefab:CopyRealWeaponData(equipId, pos, notSyncToServer, cb)
         return
     end
 
+    self:GetFullSnapshot()
+
     local data = 
     {
         EquipId = equipId,
@@ -417,6 +500,8 @@ function XTeamPrefab:CopyRealWeaponData(equipId, pos, notSyncToServer, cb)
 end
 
 function XTeamPrefab:CopyRealWeaponResonance(resonanceDict, pos, notSyncToServer)
+    self:GetFullSnapshot()
+
     local weaponData = self:GetWeaponData(pos)
     if not weaponData then return end
     weaponData.ResonanceDict = resonanceDict
@@ -424,6 +509,8 @@ function XTeamPrefab:CopyRealWeaponResonance(resonanceDict, pos, notSyncToServer
 end
 
 function XTeamPrefab:CopyRealWeaponWeaponOverrunSuitId(weaponOverrunSuitId, pos, notSyncToServer)
+    self:GetFullSnapshot()
+
     local weaponData = self:GetWeaponData(pos)
     if not weaponData then return end
     weaponData.WeaponOverrunSuitId = weaponOverrunSuitId
@@ -465,6 +552,7 @@ end
 --- 用真正的队伍数据xTeam覆盖当前预设数据(from)
 ---@param xTeam XTeam
 function XTeamPrefab:CoverFromRealTeamData(xTeam, cb, notSyncToServer)
+    self:GetFullSnapshot()
     self:UpdateEntityIds(xTeam:GetEntityIds())
     self:UpdateCaptainPosAndFirstFightPos(xTeam:GetCaptainPos(), xTeam:GetFirstFightPos())
     self:SetEnterCgIndex(xTeam:GetEnterCgIndex(), true)
@@ -535,16 +623,178 @@ function XTeamPrefab:SetSettleCgIndex(index, notSyncToServer, cb)
     end
 end
 
--- 获取指定位置的所有数据快照
-function XTeamPrefab:GetFullSnapshotAt(pos)
-    return {
-        CharacterId = self:GetCharacterId(pos),
-        Weapon = self:GetWeaponData(pos),
-        Resonance = self:GetWeaponResonance(pos),
-        OverrunSuitId = self:GetWeaponOverrunSuitId(pos),
-        Awareness = self:GetAllAwarenessData(pos),
-        PartnerId = self:GetPartnerData():GetPartnerIdByPos(pos),
-    }
+-- 修改GetFullSnapshot方法以减少GC
+function XTeamPrefab:GetFullSnapshot()
+    -- 初始化快照结构（仅在首次调用或结构变更时创建）
+    if not self._LastSnapshot then
+        self._LastSnapshot = {
+            EntityIds = {},
+            WeaponData = {},
+            AwarenessData = {},
+            PartnerData = nil,
+            CaptainPos = 0,
+            FirstFightPos = 0,
+            TeamName = "",
+            SelectedGeneralSkill = 0,
+            EnterCgIndex = 0,
+            SettleCgIndex = 0
+        }
+    end
+    local snapshot = self._LastSnapshot
+
+    -- 1. 处理角色ID列表（循环赋值复用table）
+    local entityIds = self:GetEntityIds()
+    -- 先清空现有数据
+    for i = 1, #snapshot.EntityIds do
+        snapshot.EntityIds[i] = nil
+    end
+    -- 再填充新数据
+    for i = 1, #entityIds do
+        snapshot.EntityIds[i] = entityIds[i]
+    end
+
+    -- 2. 处理武器数据（复用一级table，仅深拷贝二级数据）
+    -- 先清空现有位置数据
+    for pos in pairs(snapshot.WeaponData) do
+        snapshot.WeaponData[pos] = nil
+    end
+    -- 再填充新数据
+    if self.WeaponData then
+        for pos, data in pairs(self.WeaponData) do
+            if data then
+                -- 复用或创建二级table
+                local target = snapshot.WeaponData[pos] or {}
+                -- 复制基础字段
+                target.EquipId = data.EquipId
+                target.WeaponOverrunSuitId = data.WeaponOverrunSuitId
+                -- 处理ResonanceDict（复用table）
+                if not target.ResonanceDict then
+                    target.ResonanceDict = {}
+                else
+                    -- 清空现有共鸣数据
+                    for k in pairs(target.ResonanceDict) do
+                        target.ResonanceDict[k] = nil
+                    end
+                end
+                -- 填充新共鸣数据
+                if data.ResonanceDict then
+                    for k, v in pairs(data.ResonanceDict) do
+                        target.ResonanceDict[k] = v
+                    end
+                end
+                snapshot.WeaponData[pos] = target
+            end
+        end
+    end
+
+    -- 3. 处理意识数据（复用多级table）
+    -- 先清空现有位置数据
+    for pos in pairs(snapshot.AwarenessData) do
+        snapshot.AwarenessData[pos] = nil
+    end
+    -- 再填充新数据
+    if self.AwarenessData then
+        for pos, slotDict in pairs(self.AwarenessData) do
+            if slotDict then
+                -- 复用或创建位置级table
+                local posTable = snapshot.AwarenessData[pos] or {}
+                -- 清空槽位数据
+                for slot in pairs(posTable) do
+                    posTable[slot] = nil
+                end
+                -- 填充槽位数据
+                for slot, data in pairs(slotDict) do
+                    if data then
+                        -- 复用或创建槽位级table
+                        local slotData = posTable[slot] or {}
+                        slotData.EquipId = data.EquipId
+                        -- 处理ResonanceDict（复用table）
+                        if not slotData.ResonanceDict then
+                            slotData.ResonanceDict = {}
+                        else
+                            for k in pairs(slotData.ResonanceDict) do
+                                slotData.ResonanceDict[k] = nil
+                            end
+                        end
+                        if data.ResonanceDict then
+                            for k, v in pairs(data.ResonanceDict) do
+                                slotData.ResonanceDict[k] = v
+                            end
+                        end
+                        posTable[slot] = slotData
+                    end
+                end
+                snapshot.AwarenessData[pos] = posTable
+            end
+        end
+    end
+
+    -- 4. 处理其他基础数据（直接赋值）
+    snapshot.PartnerData = self:GetPartnerData()
+    snapshot.CaptainPos = self.CaptainPos
+    snapshot.FirstFightPos = self.FirstFightPos
+    snapshot.TeamName = self.TeamName
+    snapshot.SelectedGeneralSkill = self.SelectedGeneralSkill
+    snapshot.EnterCgIndex = self.EnterCgIndex
+    snapshot.SettleCgIndex = self.SettleCgIndex
+
+    return snapshot
+end
+
+-- 从最近一次保存的快照还原数据
+function XTeamPrefab:RestoreFromSnapshot()
+    local snapshot = self._LastSnapshot
+    if not snapshot then return end
+    
+    -- 还原角色ID列表（循环赋值减少GC）
+    for i = 1, #snapshot.EntityIds do
+        self.EntitiyIds[i] = snapshot.EntityIds[i]
+    end
+    -- 清理原列表中可能存在的多余元素（如果快照长度更短）
+    for i = #snapshot.EntityIds + 1, #self.EntitiyIds do
+        self.EntitiyIds[i] = nil
+    end
+    
+    -- 还原武器数据
+    self.WeaponData = {}
+    if snapshot.WeaponData then
+        for pos, data in pairs(snapshot.WeaponData) do
+            if data then
+                local clonedData = XTool.Clone(data)
+                if clonedData.ResonanceDict then
+                    clonedData.ResonanceDict = XTool.Clone(clonedData.ResonanceDict)
+                end
+                self.WeaponData[pos] = clonedData
+            end
+        end
+    end
+    
+    -- 还原意识数据
+    self.AwarenessData = {}
+    if snapshot.AwarenessData then
+        for pos, slotDict in pairs(snapshot.AwarenessData) do
+            if slotDict then
+                self.AwarenessData[pos] = {}
+                for slot, data in pairs(slotDict) do
+                    local clonedData = XTool.Clone(data)
+                    if clonedData.ResonanceDict then
+                        clonedData.ResonanceDict = XTool.Clone(clonedData.ResonanceDict)
+                    end
+                    self.AwarenessData[pos][slot] = clonedData
+                end
+            end
+        end
+    end
+    
+    -- 还原伙伴数据
+    
+    -- 还原其他核心数据
+    self.CaptainPos = snapshot.CaptainPos
+    self.FirstFightPos = snapshot.FirstFightPos
+    self.TeamName = snapshot.TeamName
+    self.SelectedGeneralSkill = snapshot.SelectedGeneralSkill
+    self.EnterCgIndex = snapshot.EnterCgIndex
+    self.SettleCgIndex = snapshot.SettleCgIndex
 end
 
 --- 同步接口

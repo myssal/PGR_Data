@@ -5,6 +5,10 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 local XExFubenMainLineManager = XClass(XExFubenBaseManager, "XExFubenMainLineManager")
 
 function XExFubenMainLineManager:ExOpenChapterUi(viewModel, difficulty)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, viewModel:GetId()) then
+        return
+    end
+    
     if viewModel.OnOpenChapterUi then
         viewModel:OnOpenChapterUi()
         return

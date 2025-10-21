@@ -21,7 +21,18 @@ function XUiPanelCharacterCard:OnStart(pos)
     self.SA_ImgSelect2.color = XDataCenter.TeamManager.GetTeamMemberSelectColor(pos)
 
     self.ProxyTable = {
-        AOPOnBtnJoinTeamClickedAfter = function(curProxy)
+        AOPOnBtnJoinTeamClickedBefore = function(curProxy, uiBattleRoomRoleDetail, currentNeedAddEntityId)
+            if not XTool.IsNumberValid(currentNeedAddEntityId) then
+                return false
+            end
+            local weaponEquipId = XMVCA.XEquip:GetCharacterWeaponId(currentNeedAddEntityId)
+            local res = self.TeamPrefab:CheckEquipIdInTeam(weaponEquipId)
+            if res then
+                XUiManager.TipText("TeamPrefabWeaponEquippedByOtherInPreset")
+            end
+            return res
+        end,
+        AOPOnBtnJoinTeamClickedAfter = function(curProxy, uiBattleRoomRoleDetail)
             local newCharId = self.TeamPrefab:GetEntityIdByTeamPos(self.Pos)
             self.TeamPrefab:CopyRealCharacterToPos(newCharId, self.Pos)
             XScheduleManager.ScheduleNextFrame(function ()
@@ -35,7 +46,7 @@ function XUiPanelCharacterCard:OnStart(pos)
                 self:PlayAnimation("QieHuanRole")
             end)
         end,
-        AOPOnStartAfter = function(roomDetailUiProxy, uiBattleRoomRoleDetail)
+        AOPOnStartAfter = function(curProxy, uiBattleRoomRoleDetail)
             uiBattleRoomRoleDetail.BtnPartner.gameObject:SetActiveEx(false)
             uiBattleRoomRoleDetail.BtnConsciousness.gameObject:SetActiveEx(false)
             uiBattleRoomRoleDetail.BtnWeapon.gameObject:SetActiveEx(false)
@@ -62,22 +73,23 @@ function XUiPanelCharacterCard:OnBtnEquipResonanceClick(slot)
     local weaponEquipId = weaponData.EquipId
     local equip = XMVCA.XEquip:GetEquip(weaponEquipId)
 
-    if equip:IsWeapon() and equip:GetResonanceBindCharacterId(slot) == characterId then
-        XLuaUiManager.Open("UiTeamPrefabEquipResonanceSkillChange", self.TeamPrefab, characterId, weaponEquipId, self.Pos, function ()
-            self.Parent:RefreshRightInfo()
-        end)
+    if not (equip:IsWeapon() and equip:GetResonanceBindCharacterId(slot) == characterId) then
+        XUiManager.TipText("TeamPrefabResonanceNeedUnlock")
+        return
     end
+
+    XLuaUiManager.Open("UiTeamPrefabEquipResonanceSkillChange", self.TeamPrefab, characterId, weaponEquipId, self.Pos, function ()
+        self.Parent:RefreshRightInfo()
+    end)
 end
+
 
 function XUiPanelCharacterCard:OnBtnOverrunBlindClick()
     local weaponData = self.TeamPrefab:GetWeaponData(self.Pos)
     local weaponEquipId = weaponData.EquipId
     local equip = XMVCA.XEquip:GetEquip(weaponEquipId)
-    if not equip:CanOverrun() then
-        return
-    end
-
-    if not equip:IsOverrunCanBlindSuit() then
+    if not equip:CanOverrun() or not equip:IsOverrunCanBlindSuit() then
+        XUiManager.TipText("TeamPrefabOverrunNeedUnlock")
         return
     end
 

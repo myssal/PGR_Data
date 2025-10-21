@@ -1210,6 +1210,10 @@ function XMainLine2Model:OnResumeUiFubenMainLineChapter()
         return data
     end
 end
+
+function XMainLine2Model:ClearCacheDatasUiFubenMainLineChapter()
+    self.CacheDatasUiFubenMainLineChapter = nil
+end
 --endregion
 
 return XMainLine2Model

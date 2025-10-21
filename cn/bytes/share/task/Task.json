@@ -260745,7 +260745,7 @@
         "Id": 9999991,
         "SourceGroupId": 0,
         "Type": 11,
-        "Priority": 8900,
+        "Priority": 8800,
         "Title": "星选预测 Ⅰ",
         "Desc": "累积完成3项单场预测",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive1.png",
@@ -260769,7 +260769,7 @@
         "Id": 9999992,
         "SourceGroupId": 0,
         "Type": 11,
-        "Priority": 8800,
+        "Priority": 8700,
         "Title": "星选预测 Ⅱ",
         "Desc": "累积完成12项单场预测",
         "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive1.png",
@@ -260955,6 +260955,30 @@
         "ShowCondition": 0,
         "Condition": [
             9999999
+        ]
+    },
+    {
+        "Id": 9999880,
+        "SourceGroupId": 0,
+        "Type": 11,
+        "Priority": 8900,
+        "Title": "神寂启示录Ⅲ",
+        "Desc": "亡命死竞模式下完成5胜场以上的对局",
+        "Icon": "Assets/Product/Texture/Image/IconTask/TaskIconAcitive1.png",
+        "PreTaskId": 0,
+        "Result": 1,
+        "DropId": 0,
+        "RewardId": 67228,
+        "SkipId": 89092,
+        "ShowAfterTaskId": 0,
+        "AchvType": 0,
+        "GroupId": 0,
+        "ShowAfterGroup": 0,
+        "GroupTheme": 0,
+        "ShowType": 0,
+        "ShowCondition": 0,
+        "Condition": [
+            9999880
         ]
     }
 ]

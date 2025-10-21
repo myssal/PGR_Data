@@ -136,20 +136,23 @@ function XUiTeamPrefabEquipOverrunSelect:GetSuitDataList()
     end
 
     -- 意识套装是否穿戴
-    if self.Equip:IsWearing() then 
-        local awarenessIds = XMVCA.XEquip:GetCharacterAwarenessIds(self.Equip.CharacterId)
-        for _, awarenessId in ipairs(awarenessIds) do
-            local templateId = XMVCA.XEquip:GetEquipTemplateId(awarenessId)
-            local equipCfg = XMVCA.XEquip:GetConfigEquip(templateId)
-            local suitData = suitDataDic[equipCfg.SuitId]
-            if suitData then
-                suitData.IsCharWear = true
-                suitData.CharWearCnt = suitData.CharWearCnt + 1
+    if self.TeamPrefab:GetPosByEquipId(self.EquipId) == self.CurrentPos then 
+        -- 意识套装是否穿戴（改为基于预设数据）
+        local awarenessData = self.TeamPrefab:GetAllAwarenessData(self.CurrentPos)
+        if awarenessData then
+            for _, item in pairs(awarenessData) do
+                local templateId = XMVCA.XEquip:GetEquipTemplateId(item.EquipId)
+                local equipCfg = XMVCA.XEquip:GetConfigEquip(templateId)
+                local sd = suitDataDic[equipCfg.SuitId]
+                if sd then
+                    sd.IsCharWear = true
+                    sd.CharWearCnt = sd.CharWearCnt + 1
+                end
             end
         end
     end
 
-    -- 意识套装是否已激活（从预设中获取）
+    -- 意识套装是否已激活
     local activeSuits = self.Equip:GetOverrunActiveSuits()
     for _, suitId in ipairs(activeSuits) do
         local suitData = suitDataDic[suitId]

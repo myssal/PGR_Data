@@ -118,13 +118,24 @@ end
 function XRaceControl:GetLastGuessRoundId()
     local sortRoundId = self._Model:GetSortRoundId()
     local curRoundId = self:GetCurRound()
-    local idx = self:IsAllMatchFinish() and #sortRoundId or table.indexof(sortRoundId, curRoundId)
-    if idx > 1 then
-        for i = idx - 1, 1, -1 do
+    if self:IsAllMatchFinish() then
+        local idx = #sortRoundId
+        for i = idx, 1, -1 do
             local roundId = sortRoundId[i]
             local info = self._Model._BasePlayerData.RoundGuessDict[roundId]
             if info then
                 return roundId
+            end
+        end
+    else
+        local idx = table.indexof(sortRoundId, curRoundId)
+        if idx > 1 then
+            for i = idx - 1, 1, -1 do
+                local roundId = sortRoundId[i]
+                local info = self._Model._BasePlayerData.RoundGuessDict[roundId]
+                if info then
+                    return roundId
+                end
             end
         end
     end
@@ -269,6 +280,10 @@ function XRaceControl:EnterGame(roundId, mode)
     XMVCA.XRace:EnterMatchScene(roundId, etcd.MapId, roleIds, mode)
 end
 
+function XRaceControl:IsRoundResultCheck(roundId)
+    return self._Model:IsRoundResultCheck(roundId)
+end
+
 --endregion
 
 --region 预测
@@ -340,13 +355,13 @@ function XRaceControl:IsPredictHasResult(roundId, guessId)
     return data:HasResult(guessId)
 end
 
----获取没领取奖励的比赛Id
-function XRaceControl:GetRewardDontGainRoundId()
-    local roundIds = self._Model:GetSortRoundId()
-    for _, roundId in ipairs(roundIds) do
-        local data = self:GetRoundGuessData(roundId)
-        if not data:IsAllRewardGain() then
-            return roundId
+---获取【参与预测且还没查看过】or【有预测奖励没领】的比赛
+function XRaceControl:GetDontViewedRoundId()
+    local lastRoundId = self:GetLastGuessRoundId()
+    if XTool.IsNumberValid(lastRoundId) then
+        local data = self:GetRoundGuessData(lastRoundId)
+        if not self:IsRoundResultCheck(lastRoundId) or not data:IsAllRewardGain() then
+            return lastRoundId
         end
     end
     return nil

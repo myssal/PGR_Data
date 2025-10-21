@@ -934,6 +934,27 @@ function XSubPackageAgency:CheckAllComplete()
     return complete
 end
 
+function XSubPackageAgency:CheckResDownloadByFunctionType(enterType, param)
+    if not self:IsOpen() then
+        return false, nil
+    end
+
+    local resIds = self._Model:GetAllSubpackageIds(enterType, param)
+    if XTool.IsTableEmpty(resIds) then
+        return false, nil
+    end
+
+    for _, resId in pairs(resIds) do
+        local complete = self:CheckResDownloadComplete(resId)
+        if not complete then
+            return true, resId
+        end
+    end
+
+    return false, nil
+end
+
+
 function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
     if not self:IsOpen() then
         return true

@@ -18,6 +18,7 @@ end
 
 function XUiTeamPrefabPopupRename:OnBtnNameSureClick()
     local str = self.InputField.text
+    str = self:Trim(str)
     if string.IsNilOrEmpty(str) then
         XUiManager.TipText("TeamPrefabWithoutName")
         return
@@ -44,4 +45,10 @@ function XUiTeamPrefabPopupRename:OnStart(confirmCb)
     self.ConfirmCb = confirmCb
 end
 
+-- 修改 trim 函数，同时过滤所有换行符
+function XUiTeamPrefabPopupRename:Trim(s)
+    -- 先移除所有换行符（\n）和回车符（\r），再处理首尾空白
+    s = string.gsub(s, "[\n\r]", "")  -- 过滤换行和回车
+    return (string.gsub(s, "^%s*(.-)%s*$", "%1"))  -- 原有的首尾空白处理
+end
 

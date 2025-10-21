@@ -36,7 +36,9 @@ function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex)
             rankInfo.Rank = rankData.Rank
             rankInfo.PassTime = rankData.PassTime
             rankInfo.AddTime = add
-            add = rankData.PassTime
+            if add == 0 then
+                add = rankData.PassTime
+            end
         end
         self._rankFinishCount = rankCount
     end

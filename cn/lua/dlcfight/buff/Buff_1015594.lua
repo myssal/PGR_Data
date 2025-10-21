@@ -12,7 +12,7 @@ function XBuffScript1015594:Init()
     self.runeId = 20594            --符纹ID赋值
     self.magicLevel = 1 --初始buff等级1级
     self.signalIdArr = {
-        1015911,         --【定时】状态标记，标记管理脚本见1015910
+        1015911, --【定时】状态标记，标记管理脚本见1015910
         1015743         --【概率触发】标记
     }
     ------------执行------------
@@ -38,16 +38,12 @@ function XBuffScript1015594:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         return
     end
     --如果不是【定时】标记和【概率触发】标记，则返回
-    for _, signalId in ipairs(self.signalIdArr) do
-        if buffId == signalId then
-            break
-        end
-        return
+    local isSignalAdd = buffId==self.signalIdArr[1] or buffId ==self.signalIdArr[2]
+    if isSignalAdd then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
+        self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
+        self._proxy:AddAutoChessGemTriggerRecord(self._uuid, self.runeId, 1)  --记录一次触发
     end
-
-    self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
-    self._proxy:SetAutoChessGemActiveState(self._uuid, self.runeId)
-
 end
 
 --endregion

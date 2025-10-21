@@ -10,7 +10,7 @@ function XBuffScript1015906:Init()
     ------------配置------------
     self.signalId = 1015907         --开局标记Buff
     self.signalLevel = 1
-    self.effectTimeInit = 10        --开局效果初始时间/秒
+    self.effectTimeInit = 12        --开局效果初始时间/秒
     self.effectTime = self.effectTimeInit          --实际生效的开局效果时长
     self.effectTimer = 0            --开局效果计时器
     self.battleStartBuffId = 1015992    --战斗开始标记buff

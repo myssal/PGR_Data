@@ -73,6 +73,7 @@ function XBuffScript1015700:Init()
     self.magicId = ConfigMagicIdDict[self._buffId]          --属性提升Buff
     self.runeId = ConfigRuneIdDict[self._buffId]            --符纹ID赋值
     self.magicLevel = 1 --初始buff等级1级
+    self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.signalId = 1015913         --【概率】状态标记，标记管理脚本见1015910
     self.signalCtrlId = 1015912     --【概率】状态管理Buff
     self.magicStacks = 1            --【概率】触发时，添加的Buff层数
@@ -111,10 +112,11 @@ function XBuffScript1015700:Init()
     --增强Buff[6]配置
     self.enhBuff6Stacks = 1         --有Buff[6]时，且处于【背水】状态时，成功触发时，额外获得一层效果
     self.enhBuff6SignalId = 1015901 --【背水】标记ID
+    self.enhBuff6signalCtrlId = 1015900 --【背水】管理Buff
 
     --增强Buff[7]配置
     self.enhBuff7SignalId = 1015939 --标记ID
-    self.enhBuff7Prob = 5           --每层提升的概率
+    self.enhBuff7Prob = 8           --每层提升的概率
 
     --增强Buff[8]配置
     self.enhBuff8SignalId = 1015949 --标记ID
@@ -140,6 +142,13 @@ function XBuffScript1015700:InitEventCallBackRegister()
 end
 
 function XBuffScript1015700:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    --开局处理
+    if npcUUID == self._uuid and buffId == self.battleStartBuffId then
+        if self._proxy:CheckBuffByKind(self._uuid,self.enhBuffIdDict[6]) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self.enhBuff6signalCtrlId, 1)   --为自己添加【背水】管理Buff
+        end
+    end
+
     --获得【概率】标记时，进行此逻辑
     if npcUUID == self._uuid and buffId == self.signalId then
         --如果有Buff[2]，则添加层数+1
@@ -166,7 +175,8 @@ function XBuffScript1015700:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         end
         --如果有Buff[7]，则概率调整为
         if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[7]) then
-            magicProb = self.enhBuff7Prob + magicProb
+            local stacks = self._proxy:GetBuffStacks(self._uuid, self.enhBuff7SignalId)
+            magicProb = self.enhBuff7Prob * stacks + magicProb
         end
         --进行一次Roll，满足概率条件即可获得Buff
         local seed = self._proxy:Random(1, 100)

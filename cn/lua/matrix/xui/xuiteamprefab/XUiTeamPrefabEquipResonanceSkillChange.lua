@@ -26,12 +26,12 @@ function XUiTeamPrefabEquipResonanceSkillChange:OnStart(teamPrefab, characterId,
     local equip = XMVCA.XEquip:GetEquip(self.EquipId)
     local resonanceInfoDic = equip:GetResonanceInfoDic()
     self.ResonanceCount = 0
-    self.ResonancePosSkillDic = {}
+    self.ResonanceOperatedPosSkillDic = {} -- 被操作的
     self.IsSelectFull = true
     for _, info in pairs(resonanceInfoDic) do
         if info and info.CharacterId == self.CharacterId then 
             self.ResonanceCount = self.ResonanceCount + 1
-            self.ResonancePosSkillDic[info.Slot] = resonanceDict[info.Slot] or 0
+            self.ResonanceOperatedPosSkillDic[info.Slot] = resonanceDict[info.Slot] or 0
         end
     end
 
@@ -51,7 +51,19 @@ function XUiTeamPrefabEquipResonanceSkillChange:OnBtnEnterClick()
     end
 
     -- 更新预设中的共鸣技能数据
-    self.TeamPrefab:CopyRealWeaponResonance(self.ResonancePosSkillDic, self.CurrentPos)
+    -- 因为操作前把非同共鸣角色的skillId过滤了，这里要检测并加回来
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
+    local resonanceInfoDic = equip:GetResonanceInfoDic()
+    local resonanceDictInTeamPrefab = self.TeamPrefab:GetWeaponResonance(self.CurrentPos) or {} 
+    for i = 1, XEnumConst.EQUIP.MAX_RESONANCE_SKILL_COUNT, 1 do
+        local infoInResonanceOperatedPosSkillDic = self.ResonanceOperatedPosSkillDic[i]
+        local skillIdInTeamPrefab = resonanceDictInTeamPrefab[i]
+        local infoInRealEquip = resonanceInfoDic[i]
+        if not infoInResonanceOperatedPosSkillDic and skillIdInTeamPrefab and infoInRealEquip.CharacterId ~= self.CharacterId then
+            self.ResonanceOperatedPosSkillDic[i] = skillIdInTeamPrefab
+        end
+    end
+    self.TeamPrefab:CopyRealWeaponResonance(self.ResonanceOperatedPosSkillDic, self.CurrentPos)
 
     if self.ConfirmCb then
         self.ConfirmCb()
@@ -77,7 +89,7 @@ end
 -- 刷新当前选择的技能数
 function XUiTeamPrefabEquipResonanceSkillChange:UpdateSelectSkillCount()
     local selectCnt = 0
-    for _, skillId in pairs(self.ResonancePosSkillDic) do
+    for _, skillId in pairs(self.ResonanceOperatedPosSkillDic) do
         if skillId and skillId ~= 0 then
             selectCnt = selectCnt + 1
         end
@@ -100,14 +112,14 @@ function XUiTeamPrefabEquipResonanceSkillChange:UpdateSkillList()
         end
 
         skillGrid:Refresh(self.EquipId, skillInfo)
-        skillGrid:UpdateSelectState(self.ResonancePosSkillDic)
+        skillGrid:UpdateSelectState(self.ResonanceOperatedPosSkillDic)
     end
 end
 
 function XUiTeamPrefabEquipResonanceSkillChange:OnGridSkillClick(selectSkillId)
     -- 技能是否已选中
     local selectPos
-    for pos, skillId in pairs(self.ResonancePosSkillDic) do
+    for pos, skillId in pairs(self.ResonanceOperatedPosSkillDic) do
         if skillId == selectSkillId then 
             selectPos = pos
             break
@@ -116,13 +128,13 @@ function XUiTeamPrefabEquipResonanceSkillChange:OnGridSkillClick(selectSkillId)
 
     -- 已选中的取消选中
     if selectPos then
-        self.ResonancePosSkillDic[selectPos] = 0
+        self.ResonanceOperatedPosSkillDic[selectPos] = 0
     else
         -- 技能未满的，可以成功选中
         local isSelectSuccess = false
-        for pos, skillId in pairs(self.ResonancePosSkillDic) do
+        for pos, skillId in pairs(self.ResonanceOperatedPosSkillDic) do
             if skillId == 0 then
-                self.ResonancePosSkillDic[pos] = selectSkillId
+                self.ResonanceOperatedPosSkillDic[pos] = selectSkillId
                 isSelectSuccess = true
                 break
             end
@@ -137,13 +149,13 @@ function XUiTeamPrefabEquipResonanceSkillChange:OnGridSkillClick(selectSkillId)
     -- 刷新技能的选中
     for index, skillInfo in ipairs(self.SkillInfoList) do
         local skillGrid = self.ResonanceSkillGrids[index]
-        skillGrid:UpdateSelectState(self.ResonancePosSkillDic)
+        skillGrid:UpdateSelectState(self.ResonanceOperatedPosSkillDic)
     end
     self:UpdateSelectSkillCount()
 
     -- 刷新确定按钮
     self.IsSelectFull = true
-    for pos, skillId in pairs(self.ResonancePosSkillDic) do
+    for pos, skillId in pairs(self.ResonanceOperatedPosSkillDic) do
         if skillId == 0 then
             self.IsSelectFull = false
             break

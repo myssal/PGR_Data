@@ -156,7 +156,9 @@ function XFubenBossSingleModel:GetBossSectionConfigIdBySectionId(sectionId)
     local sectionMap = self:GetBossSectionConfigMap()
     local afreshId = self:GetBossSingleData():GetBossSingleAfreshId()
 
-    return sectionMap[sectionId][afreshId]
+    if sectionMap[sectionId] then
+        return sectionMap[sectionId][afreshId]
+    end
 end
 
 function XFubenBossSingleModel:GetAutoFightCount()

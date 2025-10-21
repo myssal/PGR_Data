@@ -50,11 +50,21 @@ function XUiFubenBossSingleRankMyBossRank:Refresh(rankData, id, isChallenge)
     end
 
     if id then
-        local curBossScore = self._Control:GetBossCurScore(id)
+        local curBossScore
+        if isChallenge then
+            curBossScore = rankData:GetScore()
+        else    
+            curBossScore = self._Control:GetBossCurScore(id)
+        end
         self.TxtRankScore.text = XUiHelper.GetText("BossSingleBossRankScore", curBossScore)
     else
         local boosSingleData = self._Control:GetBossSingleData()
-        local totalScore = boosSingleData:GetBossSingleTotalScore()
+        local totalScore = 0
+        if isChallenge then
+            totalScore = boosSingleData:GetBossSingleChallengeTotalScore()
+        else
+            totalScore = boosSingleData:GetBossSingleTotalScore()
+        end
         self.TxtRankScore.text = XUiHelper.GetText("BossSingleAllRankScore", totalScore)
     end
 

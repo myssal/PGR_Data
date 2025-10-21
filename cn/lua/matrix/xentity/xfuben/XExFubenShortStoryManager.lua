@@ -4,6 +4,10 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 local XExFubenShortStoryManager = XClass(XExFubenBaseManager, "XExFubenShortStoryManager")
 
 function XExFubenShortStoryManager:ExOpenChapterUi(viewModel)
+    if not XMVCA.XSubPackage:CheckSubpackage(self:ExGetFunctionNameType(), viewModel:GetId()) then
+        return
+    end
+
     if viewModel.OnOpenChapterUi then
         viewModel:OnOpenChapterUi()
         return

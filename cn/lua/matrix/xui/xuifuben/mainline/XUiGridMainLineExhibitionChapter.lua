@@ -70,6 +70,19 @@ function XUiGridMainLineExhibitionChapter:OnLoadCompleted()
     end
 end
 
+-- 显示预制体
+function XUiGridMainLineExhibitionChapter:ShowPrefab()
+    self:LoadPrefab()
+    self.LinkGo.gameObject:SetActiveEx(true)
+end
+
+-- 隐藏预制体
+function XUiGridMainLineExhibitionChapter:HidePrefab()
+    if self:IsLoaded() then
+        self.LinkGo.gameObject:SetActiveEx(false)
+    end
+end
+
 function XUiGridMainLineExhibitionChapter:RegisterUiEvents()
     self.UiBriefButton = self.UiBrief:GetComponent("XUiButton")
     XUiHelper.RegisterClickEvent(self, self.UiBriefButton, self.OnButtonClick, nil)

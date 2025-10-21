@@ -87,6 +87,9 @@ end
 
 ---@param content XBWMessageContentEntity
 function XUiBigWorldMessageChat:OnPlayMessage(content)
+    local stepId = content:GetStepId()
+
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content. StepId: " .. tonumber(stepId) .. "\n" .. debug.traceback())
     if content:IsReceive() then
         local grid = self:_GetReceiveGrid()
 
@@ -333,6 +336,7 @@ end
 
 ---@param content XBWMessageContentEntity
 function XUiBigWorldMessageChat:_RefreshEnd(content)
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Play Finish Event. StepId: " .. tostring(content:GetStepId()) .. "\n" .. debug.traceback())
     self:_RefreshTeskPanel(content)
     self:_ShowMessageEnd()
     self._Control:SendMessageComplete(content:GetMessageId())

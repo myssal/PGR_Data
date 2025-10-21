@@ -5,9 +5,11 @@
 local XUiPanelTheatre5Gem = XClass(XUiNode, 'XUiPanelTheatre5Gem')
 local XUiGridTheatre5ShopGemSlot = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5ShopGemSlot')
 
-function XUiPanelTheatre5Gem:OnStart(customContainerCls)
+function XUiPanelTheatre5Gem:OnStart(customContainerCls, containerType)
     self:InitGemContainers(customContainerCls)
     self:RefreshGemShow()
+    
+    self._ContainerType = containerType
 end
 
 function XUiPanelTheatre5Gem:OnEnable()
@@ -56,6 +58,9 @@ function XUiPanelTheatre5Gem:RefreshGemShow()
         v:SetItemData(itemData)
         v:SetLockShow(i > unlockCount, i == unlockCount + 1)
         v:UpdateInvalid(itemData)
+        if self._ContainerType then
+            v:SetContainerType(self._ContainerType)
+        end
     end
 end
 

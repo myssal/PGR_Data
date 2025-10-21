@@ -18,10 +18,20 @@ function XUiPanelRace3DCamera:OnStart(sceneType)
     self._SceneType = sceneType
     ---@type XUiPanelRoleModel[]
     self._RoleModels = {}
-    self._StateName = self._Control:GetClientConfig("RaceMainRoleStateName")
+    self._StateNameArray = self._Control:GetClientConfigs("RaceMainRoleStateName")
+    local randTimeConfig = self._Control:GetClientConfigs("RaceMainRoleRandomTime")
+    self._RandMinTime = tonumber(randTimeConfig[1]) or 100
+    self._RandMaxTime = tonumber(randTimeConfig[2]) or 1000
+
     self._Offset = CS.UnityEngine.Vector3(0, self._Control:GetIntClientConfig("HUDOffsetY"), 0)
     self._Pivot = CS.UnityEngine.Vector2(0.5, 0.5)
     self._RoleIds = {}
+
+    self._TimerList = {}
+    self._TimerCountList = {}
+    self._AnimList = {}
+    self._AnimStandStateList = {}
+    self._AnimStateNameList = {}
 end
 
 ---注册角色点击事件
@@ -97,6 +107,7 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId)
     CS.XShadowHelper.AddShadow(model.gameObject, true)
     ---@type UnityEngine.Animator
     local anim = model:GetComponent("Animator")
+    anim.applyRootMotion = false
     if self._SceneType == SceneType.MatchPredict then
         anim:Play("Greet01", 0, 0)
         self:RemoveAnimTimer()
@@ -107,10 +118,32 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId)
         end, 10, 0)
         self.Parent:_AddTimerId(self._AnimTimer)
     else
-        if not XTool.UObjIsNil(anim) and not string.IsNilOrEmpty(self._StateName) then
-            anim:CrossFade(self._StateName, 0.2, 0)
+        if not XTool.UObjIsNil(anim) then
+            self:RemoveRoleTimer(roleId)
+            self:AddRoleTimer(roleId)
+            self._AnimList[roleId] = anim
         end
     end
+end
+
+function XUiPanelRace3DCamera:LoadCar(node, roleId)
+    local characterCfg = self._Control:GetRaceCharacterById(roleId)
+    local carGo = node:LoadPrefab(characterCfg.CarModel)
+    carGo:SetLayerRecursively(NameToLayer("UiNear"))
+    CS.XShadowHelper.AddShadow(carGo.gameObject, true)
+    ---@type UnityEngine.Animator
+    local carAnim = carGo:GetComponent("Animator")
+    carAnim.applyRootMotion = false
+    local charRoot = carGo.transform:Find("Root")
+    local charGo = charRoot:LoadPrefab(characterCfg.CharacterModel)
+    charGo:SetLayerRecursively(NameToLayer("UiNear"))
+    CS.XShadowHelper.AddShadow(charGo.gameObject, true)
+    charGo.transform.localEulerAngles = Vector3(90, 0, 0)
+    ---@type UnityEngine.Animator
+    local charAnim = charGo:GetComponent("Animator")
+    local charControllerAsset = CS.LoadHelper.LoadUiController(characterCfg.AnimPath, "UiRaceFightSettlement")
+    charAnim.runtimeAnimatorController = charControllerAsset
+    charAnim.applyRootMotion = false
 end
 
 function XUiPanelRace3DCamera:LoadOption()
@@ -135,7 +168,7 @@ function XUiPanelRace3DCamera:LookAt(roleId)
         self:LoadRole(self.RoleMatch, roleId) --直接替换角色
         self:ShowCamera(MatchGuessRoleCam)
     elseif self._SceneType == SceneType.Settlement then
-        self:LoadRole(self.PanelSettleRoleModel, roleId)
+        self:LoadCar(self.PanelSettleRoleModel, roleId)
         self:ShowCamera(SettlementCam)
     else
         for i = 1, NodeCount do
@@ -239,6 +272,77 @@ function XUiPanelRace3DCamera:RemoveAnimTimer()
         self.Parent:_RemoveTimerIdAndDoCallback(self._AnimTimer)
         self._AnimTimer = nil
     end
+end
+
+function XUiPanelRace3DCamera:RemoveRoleTimer(roleId)
+    if not roleId or not self._TimerList[roleId] then return end
+    XScheduleManager.UnSchedule(self._TimerList[roleId])
+    self._TimerList[roleId] = nil
+end
+
+function XUiPanelRace3DCamera:AddRoleTimerCallback(roleId)
+    local updateCnt = 123
+    self._TimerList[roleId] = XScheduleManager.ScheduleForever(function()
+        local anim = self._AnimList[roleId]
+        if not anim.gameObject.activeInHierarchy then
+            return
+        end
+        local cnt = self._TimerCountList[roleId]
+        cnt = cnt - updateCnt
+        if cnt <= 0 then
+            local info = anim:GetCurrentAnimatorStateInfo(0)
+            local stateName = self._AnimStateNameList[roleId] or "Stand02"
+            if (info:IsName(stateName) and info.normalizedTime >= 1) or not info:IsName(stateName) then
+                --播放下一个动作
+                if not self._AnimStandStateList[roleId] then
+                    self._AnimStandStateList[roleId] = true
+                    
+                    local maxNameCnt = #self._StateNameArray
+                    local randIndex = math.random(1, maxNameCnt)
+                    stateName = self._StateNameArray[randIndex]
+                    anim:CrossFade(stateName, 0.2, 0)
+                    cnt = updateCnt * 4
+                else
+                    self._AnimStandStateList[roleId] = false
+                    stateName = "Stand02"
+                    anim:CrossFade(stateName, 0.2, 0)
+                    cnt = math.random(self._RandMinTime, self._RandMaxTime)
+                end
+                self._AnimStateNameList[roleId] = stateName
+            end
+        end
+        self._TimerCountList[roleId] = cnt
+    end, updateCnt)
+end
+
+function XUiPanelRace3DCamera:AddRoleTimer(roleId)
+    if self._TimerList[roleId] then return end
+
+    self._TimerCountList[roleId] = math.random(self._RandMinTime, self._RandMaxTime)
+    self:AddRoleTimerCallback(roleId)
+end
+
+function XUiPanelRace3DCamera:OnEnable()
+    for roleId, timerId in pairs(self._TimerList) do
+        self:AddRoleTimerCallback(roleId)
+    end
+end
+
+function XUiPanelRace3DCamera:OnDisable()
+    for roleId, timerId in pairs(self._TimerList) do
+        XScheduleManager.UnSchedule(timerId)
+    end
+end
+
+function XUiPanelRace3DCamera:OnDestroy()
+    self:RemoveAnimTimer()
+    for roleId, timerId in pairs(self._TimerList) do
+        XScheduleManager.UnSchedule(self._TimerList[roleId])
+    end
+    self._TimerList = nil
+    self._TimerCountList = nil
+    self._AnimList = nil
+    self._AnimStateNameList = nil
 end
 
 return XUiPanelRace3DCamera

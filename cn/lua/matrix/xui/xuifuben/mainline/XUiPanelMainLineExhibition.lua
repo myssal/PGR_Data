@@ -32,7 +32,7 @@ function XUiPanelMainLineExhibition:OnEnable()
     self:RefreshBriefAndDetailUiShow()
     self:RefreshBtnBookmark()
     self:RefreshBtnGoLastPassedChapter()
-    self:CheckLoadChapterPrefab()
+    self:CheckShowChapterPrefab()
     
     -- 新手提示，新手期间禁用拖拽和缩放
     local isNewable, tips = self:IsNewbie()
@@ -137,8 +137,8 @@ function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
     self:RefreshBgByPos()
     -- 更新跳转按钮
     self:RefreshBtnGoLastPassedChapter()
-    -- 检测加载章节预制体
-    self:CheckLoadChapterPrefab()
+    -- 检测显示章节预制体
+    self:CheckShowChapterPrefab()
 end
 
 function XUiPanelMainLineExhibition:IsDragOperation()
@@ -359,15 +359,17 @@ function XUiPanelMainLineExhibition:RefreshBtnGoLastPassedChapter()
     end
 end
 
--- 检测加载章节预制体
-function XUiPanelMainLineExhibition:CheckLoadChapterPrefab()
+-- 检测显示章节预制体
+function XUiPanelMainLineExhibition:CheckShowChapterPrefab()
     local showAreaWidth = self:GetShowAreaWidth()
     for moduleIndex, module in ipairs(self.ModuleList) do
         local chapterList = module:GetChapterList()
         for chapterIndex, chapter in ipairs(chapterList) do
             local isInArea, isInAreaLeft = self:IsExhibitionChapterInShowArea(moduleIndex, chapterIndex, showAreaWidth)
             if isInArea then
-                chapter:LoadPrefab()
+                chapter:ShowPrefab()
+            else
+                chapter:HidePrefab()
             end
         end
     end

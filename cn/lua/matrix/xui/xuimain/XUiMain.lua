@@ -107,6 +107,7 @@ end
 
 function XUiMain:OnEnable()
     XDataCenter.FunctionEventManager.SetMainEventIsEnd(false)
+    XMVCA.XMainLine2:ClearCacheDatasUiFubenMainLineChapter()
 
     if XDataCenter.GuideManager.CheckIsInGuide() then
         RightMidType = MenuType.Main

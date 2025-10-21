@@ -10,6 +10,14 @@ function XUiGridRaceFightCharacter:OnStart(...)
     self.PanelSkillTalkSmall.gameObject:SetActive(false)
     self.TagPredict.gameObject:SetActive(false)
     self.PanelBallShow.gameObject:SetActive(false)
+    
+    if self.PanelNumber then
+        self.PanelNumber.gameObject:SetActive(false)
+    end
+    if self.PanelEmoji then
+        self.PanelEmoji.gameObject:SetActive(false)
+    end
+
     self._Balls = {}
 end
 
@@ -37,21 +45,29 @@ end
 
 -- 显示表情
 function XUiGridRaceFightCharacter:ShowEmoji(path, time)
+    if not self.PanelEmoji then return end
     if string.IsNilOrEmpty(path) then
         return
     end
 
+    self.PanelEmoji.gameObject:SetActive(true)
+    self.ImgEmoji:SetSprite(path)
     self:RemoveEmojiTimer()
     self._EmojiTimerId = XScheduleManager.ScheduleOnce(function()
-        -- self.
+        self.PanelEmoji.gameObject:SetActive(false)
     end, time or 1000)
+end
+
+function XUiGridRaceFightCharacter:SetRank(rank)
+    if not self.PanelNumber then return end
+    self.PanelNumber.gameObject:SetActive(true)
+    self.Number:SetSprite(self._Control:GetClientConfig("RankNumIcon" .. rank))
 end
 
 function XUiGridRaceFightCharacter:SetState(state)
     -- 3 受击
-    if state == 3 then
-        self:ShowEmoji(self._Control:GetClientConfig("HitEmoji"), tonumber(self._Control:GetClientConfig("HitEmojiTime")))
-    end
+    if state ~= 3 then return end
+    self:ShowEmoji(self._Control:GetClientConfig("HitEmoji"), tonumber(self._Control:GetClientConfig("HitEmojiTime")))
 end
 
 function XUiGridRaceFightCharacter:ShowSkill(skillId)
@@ -70,6 +86,7 @@ end
 
 function XUiGridRaceFightCharacter:ShowGetSignalBall(signalId)
     if signalId > 0 then
+        self:RemoveTimer()
         self.PanelBallShow.gameObject:SetActive(true)
         self:PlayAnimation("SlotEnable")
         self.PanelBall.gameObject:SetActive(false)

@@ -90,7 +90,7 @@ function XUiTeamPrefabPartner:OnClickPartner(idx)
     
     self.SelectPartnerIndex = idx
     local grids = self.DynamicTable:GetGrids()
-    for i, grid in ipairs(grids) do
+    for i, grid in pairs(grids) do
         grid:SetSelect(i == idx)
     end
 
@@ -106,6 +106,7 @@ end
 function XUiTeamPrefabPartner:OnDynamicTableEvent(evt, idx, grid)
     if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self.PartnerList[idx], self.CarriedDict, idx)
+        grid:SetSelect(idx == self.SelectPartnerIndex)
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self:OnClickPartner(idx)
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then

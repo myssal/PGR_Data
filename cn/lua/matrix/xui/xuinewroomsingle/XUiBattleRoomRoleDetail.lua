@@ -303,7 +303,7 @@ function XUiBattleRoomRoleDetail:OnBtnFilterClicked()
 end
 
 function XUiBattleRoomRoleDetail:OnBtnJoinTeamClicked()
-    local isStop = self.Proxy:AOPOnBtnJoinTeamClickedBefore(self)
+    local isStop = self.Proxy:AOPOnBtnJoinTeamClickedBefore(self, self.CurrentEntityId)
     if isStop then
         return
     end

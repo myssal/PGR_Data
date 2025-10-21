@@ -60,7 +60,7 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
         self._proxy:ApplyMagic(self._uuid, self._uuid,  10510701, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1010583, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1010586, 1)
-        self._proxy:AddTimerTask(10, function()--延迟10秒后，恢复CD
+        self._proxy:AddTimerTask(6, function()--延迟6秒后，恢复CD
             self.kaiguan = true
         end)
         if self._proxy:GetBuffStacks(self._uuid, 1010586) == 1 then

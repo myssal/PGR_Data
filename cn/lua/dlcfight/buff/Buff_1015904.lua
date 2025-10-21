@@ -10,7 +10,7 @@ function XBuffScript1015904:Init()
     ------------配置------------
     self.signalId = 1015905      --斩杀标记Buff
     self.signalLevel = 1
-    self.effectHpRateInit = 0.2     --触发斩杀效果的初始Hp比例，敌人生命小于等于此条件即可触发
+    self.effectHpRateInit = 0.4     --触发斩杀效果的初始Hp比例，敌人生命小于等于此条件即可触发
     self.effectHpRate = 0           --实际生效的Hp比例
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     --增强Buff列表，enh = enhance
@@ -32,7 +32,7 @@ function XBuffScript1015904:Init()
 
     }
     --增强Buff[1]配置
-    self.enhBuff1HpRate = 0.4          --斩杀线提高后的值
+    self.enhBuff1HpRate = 0.8          --斩杀线提高后的值
     --增强Buff[2]配置
     self.enhDurTime = 5                 --延迟失效时间
     self.enhDurTimer = 0                --延迟失效计时器

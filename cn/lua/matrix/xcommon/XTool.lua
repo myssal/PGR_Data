@@ -111,6 +111,10 @@ XTool.CsObjectFields2LuaTable = function(CsObj)
     return Json.decode(jsonStr)
 end
 
+XTool.Json2LuaTable = function(jsonStr)
+    return Json.decode(jsonStr)
+end
+
 XTool.Clone = function(t)
     local cache = {}
 

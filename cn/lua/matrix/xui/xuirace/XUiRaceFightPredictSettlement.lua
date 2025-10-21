@@ -5,7 +5,7 @@ local XUiRaceFightPredictSettlement = XLuaUiManager.Register(XLuaUi, "UiRaceFigh
 function XUiRaceFightPredictSettlement:OnAwake()
     self.BtnPlayback.CallBack = handler(self, self.OnBtnPlaybackClick)
     self.BtnRaceDetail.CallBack = handler(self, self.OnBtnRaceDetailClick)
-    self.BtnNext.CallBack = handler(self, self.Close)
+    self.BtnNext.CallBack = handler(self, self.OnClose)
     self.BtnGetReward.CallBack = handler(self, self.OnBtnGetRewardClick)
 end
 
@@ -44,6 +44,11 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
     ---@type GuessInfo[]
     local infos = {}
     for _, v in pairs(infoDict) do
+        local guessId = v.GuessId
+        local isCorrect = self._Control:IsPredictSuccess(self._ResultRoundId, guessId)
+        if isCorrect then
+            self._CanGainReward = true
+        end
         table.insert(infos, v)
     end
     table.sort(infos, function(a, b)
@@ -121,7 +126,6 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
 
         --预测正确奖励
         if isCorrect then
-            self._CanGainReward = true
             uiObject.RImgIcon:SetRawImage(itemIcon)
             uiObject.TxtNum.text = string.format("+%s", guessCfg.RewardNum)
         end
@@ -148,7 +152,6 @@ end
 function XUiRaceFightPredictSettlement:OnBtnPlaybackClick()
     self._Control:OpenPopup("TipTitle", "RaceReviewPopupTitle", nil, function()
         self._Control:EnterGame(self._ResultRoundId, XEnumConst.Race.GameMode.Playback)
-        self:Close()
     end)
 end
 
@@ -175,8 +178,20 @@ function XUiRaceFightPredictSettlement:ShowRewardAndClose(itemCount)
     reward.TemplateId = self._ItemId
     reward.Count = itemCount
     self._Control:OpenUiObtain({ reward }, nil, function()
-        self:Close()
+        self:OnClose()
     end)
+end
+
+function XUiRaceFightPredictSettlement:OnClose()
+    if self._Control:IsAllMatchFinish() then
+        self:Close()
+    else
+        self._Control:RequestCurRoundSupportRate(function()
+            XLuaUiManager.OpenWithCallback("UiRacePredict", function()
+                XLuaUiManager.Remove("UiRaceFightPredictSettlement")
+            end)
+        end)
+    end
 end
 
 return XUiRaceFightPredictSettlement

@@ -91,6 +91,7 @@ function XUiPanelMainLineRoot:OpenPanelMainLineExhibition()
     
     if not self.UiPanelMainLineExhibition then
         local ui = self.PanelMainLineExhibition.gameObject:LoadPrefab(self.Params[1])
+        XUiHelper.SetCanvasesSortingOrder(ui.transform)
         ui.transform:SetAsFirstSibling()
         self.UiPanelMainLineExhibition = require("XUi/XUiFuben/MainLine/XUiPanelMainLineExhibition").New(ui, self.RootUi)
         self.UiPanelMainLineExhibition:SetData(self.FirstTagId, self.CurrentGroupId, self.CurrentChapterIndex)
@@ -107,6 +108,7 @@ function XUiPanelMainLineRoot:OpenPanelMainLine()
     
     if not self.UiPanelMainLine then
         local ui = self.PanelMainLine.gameObject:LoadPrefab(self.Params[2])
+        XUiHelper.SetCanvasesSortingOrder(ui.transform)
         self.UiPanelMainLine = require("XUi/XUiFuben/MainLine/XUiPanelMainLine").New(ui, self.RootUi)
         self.UiPanelMainLine:SetData(self.FirstTagId, self.CurrentGroupId, self.CurrentChapterIndex)
     end

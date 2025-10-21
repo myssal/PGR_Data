@@ -4,7 +4,8 @@
 local XUiPanelRaceMatchInfo = XClass(XUiNode, "XUiPanelRaceMatchInfo")
 
 function XUiPanelRaceMatchInfo:OnStart()
-    self.BtnCourse.CallBack = handler(self, self.OnBtnCourseClick)
+    --self.BtnCourse.CallBack = handler(self, self.OnBtnCourseClick)
+    self.BtnCourse.gameObject:SetActiveEx(false)
 end
 
 function XUiPanelRaceMatchInfo:Update()

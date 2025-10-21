@@ -165,6 +165,11 @@ function XRaceModel:SetRoundResultCheck(roundId)
     end
 end
 
+function XRaceModel:IsRoundResultCheck(roundId)
+    local raceRoundInfo = self._BasePlayerData.RoundGuessDict[roundId]
+    return raceRoundInfo and raceRoundInfo.IsSee
+end
+
 function XRaceModel:UpdateRoundSupport(roundId, supportInfos)
     local datas = {}
     if not XTool.IsTableEmpty(supportInfos) then

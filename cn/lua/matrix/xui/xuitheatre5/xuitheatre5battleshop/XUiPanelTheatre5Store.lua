@@ -83,7 +83,7 @@ function XUiPanelTheatre5Store:RefreshStoreShow(isRefreshNew)
         local refreshCost = self._Control.ShopControl:GetShopRefreshCost()
         self.BtnRefresh:SetNameByGroup(1, refreshCost)
         
-        local isGoldEnough = self._Control.ShopControl:GetGoldNum() >= self.CurRefreshCfg.GoldCost
+        local isGoldEnough = self._Control.ShopControl:GetGoldNum() >= refreshCost
         
         self.BtnRefresh:SetButtonState(isGoldEnough and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
     end
@@ -186,7 +186,8 @@ function XUiPanelTheatre5Store:OnBtnRefreshClickEvent()
             return
         end
         
-        if self._Control.ShopControl:GetGoldNum() >= self.CurRefreshCfg.GoldCost then
+        local goldCost = self._Control.ShopControl:GetShopRefreshCost()
+        if self._Control.ShopControl:GetGoldNum() >= goldCost then
             XMVCA.XTheatre5:RequestTheatre5ShopRefresh(function(success)
                 if success then
                     self._Control.ShopControl:RefreshAfterRefreshRequest()

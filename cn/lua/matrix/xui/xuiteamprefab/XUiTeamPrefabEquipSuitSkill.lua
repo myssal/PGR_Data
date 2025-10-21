@@ -70,14 +70,35 @@ end
 
 -- 刷新套装列表（保持原版分页逻辑）
 function XUiTeamPrefabEquipSuitSkill:UpdateSuitList()
+    -- 预设里该位的全部意识
+    local awarenessData = self.TeamPrefab:GetAllAwarenessData(self.CurrentPos)  -- 若无该函数，可用 self.TeamPrefab.AwarenessData[self.CurrentPos]
     for i = 1, PAGE_SUIT_CONT do
         local infoIndex = self.PageIndex * PAGE_SUIT_CONT + i
         local suitInfo = self.SuitInfoList[infoIndex]
         local uiGridSuitSkill = self.SkillGridList[i]
+
+        if suitInfo and awarenessData then
+            local wearCnt = 0
+            for _, item in pairs(awarenessData) do
+                if item and item.EquipId then
+                    local tid = XMVCA.XEquip:GetEquipTemplateId(item.EquipId)
+                    local cfg = XMVCA.XEquip:GetConfigEquip(tid)
+                    if cfg and cfg.SuitId == suitInfo.SuitId then
+                        wearCnt = wearCnt + 1
+                    end
+                end
+            end
+            suitInfo.WearCnt = wearCnt  -- ✅ 只统计预设中真实穿戴数量
+        else
+            suitInfo = suitInfo or nil
+            if suitInfo then suitInfo.WearCnt = 0 end
+        end
+
         uiGridSuitSkill:UpdateView(self.CharacterId, suitInfo)
-    end    
+    end
     self:UpdateSwitchBtn()
 end
+
 
 -- 刷新切换按钮状态（复用原版逻辑）
 function XUiTeamPrefabEquipSuitSkill:UpdateSwitchBtn()
@@ -112,13 +133,14 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
     local iconPath = XMVCA:GetAgency(ModuleId.XEquip):GetEquipSuitIconPath(suitInfo.SuitId)
     self.RImgIcon:SetRawImage(iconPath)
 
-    -- 激活数量计算（适配预设数据）
-    local activeCount = suitInfo.Count
-    local isOverrun = suitInfo.IsOverrun
+    -- XUiGridSuitSkill:UpdateView（关键替换）
+    local activeCount = suitInfo.WearCnt or 0          -- ✅ 只用预设穿戴数量
+    local isOverrun   = suitInfo.IsOverrun == true     -- 仍可用来显示“可由超限激活”的提示
+
     local skillDesList = XMVCA:GetAgency(ModuleId.XEquip):GetSuitActiveSkillDesList(
-        suitInfo.SuitId, 
-        activeCount, 
-        isOverrun, 
+        suitInfo.SuitId,
+        activeCount,
+        isOverrun,
         isOverrun
     )
 

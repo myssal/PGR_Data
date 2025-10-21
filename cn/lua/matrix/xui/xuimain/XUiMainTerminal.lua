@@ -81,6 +81,8 @@ function XUiMainTerminal:OnEnable(uiMain)
     XEventManager.AddEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
     XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
     self:Show()
+    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
+    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
 end
 
 function XUiMainTerminal:Show()

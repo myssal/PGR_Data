@@ -567,6 +567,9 @@ end
 
 --- 获取某个Boss的所有stageId配置
 function XFubenBossSingleControl:GetBossStageList(bossId)
+    if not bossId then
+        return {}
+    end
     local config = self:GetBossSectionConfigByBossId(bossId)
 
     return config.StageId or {}

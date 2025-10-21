@@ -489,61 +489,87 @@ function XUiTeamPrefabWeapon:UpdateEquipResonance()
     self.PanelAdd2:ShowReddot(isResonanceConflict)
 end
 
--- 刷新单个装备共鸣（结合预设技能ID和实际绑定角色）
+-- 刷新单个装备共鸣（预设优先；非本位武器回退仓库）
 function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
-    -- 获取预设中当前位置的共鸣技能ID
-    local resonanceDict = self.TeamPrefab:GetWeaponResonance(self.CurrentPos) or {}
-    local presetSkillId = resonanceDict[pos] or 0
-    local hasPresetResonance = presetSkillId ~= 0
-    --是预设中的当前武器才会使用预设里的共鸣数据
-    local isCurSeleEquipForCurPos = self.SelectEquipId == self.TeamPrefab:GetWeaponData(self.CurrentPos).EquipId 
-    
-    -- 判断是否有共鸣数据（预设技能ID或实际装备有共鸣）
-    local isEquip = isCurSeleEquipForCurPos and hasPresetResonance or XMVCA.XEquip:CheckEquipPosResonanced(self.SelectEquipId, pos) ~= nil
     local uiObj = self["GridEquipResonance" .. pos]
-    uiObj:GetComponent("XUiButton"):SetDisable(not isEquip)
-    self["GridEquipResonanceEffect"..pos].gameObject:SetActiveEx(false)
-    
-    if isEquip then
-        if not self.ResonanceSkillDic then 
-            self.ResonanceSkillDic = {} 
+    local effectObj = self["GridEquipResonanceEffect" .. pos]
+    local button = uiObj:GetComponent("XUiButton")
+    local entityId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
+
+    local teamWeaponData = self.TeamPrefab:GetWeaponData(self.CurrentPos)
+    local isCurSelectEquipInCurrentPos = teamWeaponData and (self.SelectEquipId == teamWeaponData.EquipId)
+
+    ------------------------------------------------------------
+    -- ✅ 1. 当前武器是预设位置武器：仅展示预设共鸣数据
+    ------------------------------------------------------------
+    if isCurSelectEquipInCurrentPos then
+        local resonanceDict = self.TeamPrefab:GetWeaponResonance(self.CurrentPos) or {}
+        local presetSkillId = resonanceDict[pos] or 0
+
+        -- 预设没有共鸣 → 不显示
+        if presetSkillId == 0 then
+            button:SetDisable(true)
+            effectObj.gameObject:SetActiveEx(false)
+            return
         end
 
-        -- 按钮状态列表（Normal/Press）
-        local stateNameList = {"Normal", "Press"}
-        if not self.ResonanceSkillDic[pos] then 
-            self.ResonanceSkillDic[pos] = {}
-            for _, stateName in ipairs(stateNameList) do
-                local stateGo = uiObj:GetObject(stateName)
-                -- 构造共鸣格子时，传入当前角色ID
-                self.ResonanceSkillDic[pos][stateName] = XUiGridResonanceSkill.New(
-                    stateGo, 
-                    self.SelectEquipId, 
-                    pos, 
-                    self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos), -- 当前角色ID
-                    function() self:OnBtnResonanceSkill(pos) end, 
-                    nil, 
-                    self.ForceShowBindCharacter
-                )
-            end
-        end
-
-        -- 从预设获取技能信息（无预设时使用实际装备数据）
+        -- 构造预设 skillInfo
         local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
-        local xWeaponEquip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
-        local skillType = XMVCA.XEquip:GuessResonanceType(presetSkillId, xWeaponEquip.TemplateId)
-        local skillInfo = XSkillInfoObj.New(skillType, presetSkillId, self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos))
-        
-        -- 获取实际装备的绑定角色ID（预设不存储绑定角色）
-        local realBindCharacterId = XMVCA.XEquip:GetResonanceBindCharacterId(self.SelectEquipId, pos)
-        
-        -- 刷新所有状态的共鸣格子
-        for _, stateName in ipairs(stateNameList) do
-            local grid = self.ResonanceSkillDic[pos][stateName]
-            grid:SetEquipIdAndPos(self.SelectEquipId, pos)
-            grid:SetCharacterId(self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)) -- 更新角色ID
-            grid:Refresh(isCurSeleEquipForCurPos and skillInfo or nil, realBindCharacterId) -- 传入预设技能信息和实际绑定角色
+        local xEquip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
+        local skillType = XMVCA.XEquip:GuessResonanceType(presetSkillId, xEquip.TemplateId)
+        local skillInfo = XSkillInfoObj.New(skillType, presetSkillId, entityId)
+
+        -- ✅ 预设模式没有绑定角色，不显示“不共鸣”
+        local bindCharacterId = 0
+
+        self:RefreshResonanceUI(uiObj, pos, skillInfo, entityId, bindCharacterId, button, effectObj)
+        return
+    end
+
+    ------------------------------------------------------------
+    -- ✅ 2. 非预设武器：展示仓库共鸣数据（含“不共鸣”标识）
+    ------------------------------------------------------------
+    local hasResonance = XMVCA.XEquip:CheckEquipPosResonanced(self.SelectEquipId, pos) ~= nil
+    button:SetDisable(not hasResonance)
+    effectObj.gameObject:SetActiveEx(false)
+    if not hasResonance then return end
+
+    -- 读取仓库绑定角色（让 UI 判断出不共鸣状态）
+    local bindCharacterId = XMVCA.XEquip:GetResonanceBindCharacterId(self.SelectEquipId, pos)
+
+    -- skillInfo 传 nil → UI 内部自动从仓库加载技能数据
+    self:RefreshResonanceUI(uiObj, pos, nil, entityId, bindCharacterId, button, effectObj)
+end
+
+------------------------------------------------------------
+-- ✅ 抽公共刷新函数，保证两种情况都正确显示
+------------------------------------------------------------
+function XUiTeamPrefabWeapon:RefreshResonanceUI(uiObj, pos, skillInfo, entityId, bindCharacterId, button, effectObj)
+    button:SetDisable(false)
+    effectObj.gameObject:SetActiveEx(false)
+
+    self.ResonanceSkillDic = self.ResonanceSkillDic or {}
+    if not self.ResonanceSkillDic[pos] then
+        self.ResonanceSkillDic[pos] = {}
+        for _, stateName in ipairs({"Normal", "Press"}) do
+            local stateGo = uiObj:GetObject(stateName)
+            self.ResonanceSkillDic[pos][stateName] = XUiGridResonanceSkill.New(
+                stateGo,
+                self.SelectEquipId,
+                pos,
+                entityId,
+                function() self:OnBtnResonanceSkill(pos) end,
+                nil,
+                self.ForceShowBindCharacter
+            )
         end
+    end
+
+    for _, stateName in ipairs({"Normal", "Press"}) do
+        local grid = self.ResonanceSkillDic[pos][stateName]
+        grid:SetEquipIdAndPos(self.SelectEquipId, pos)
+        grid:SetCharacterId(entityId)
+        grid:Refresh(skillInfo, bindCharacterId)
     end
 end
 
@@ -615,8 +641,8 @@ function XUiTeamPrefabWeapon:UpdateBtnState()
     -- 穿戴/已装备状态
     local currentWeaponId = self:GetCurrentWeaponId()
     local isEquip = currentWeaponId == self.SelectEquipId
-    self.BtnTakeOn.gameObject:SetActiveEx(true)
-    self.ImgEquipOn.gameObject:SetActiveEx(false)
+    self.BtnTakeOn.gameObject:SetActiveEx(not isEquip)
+    self.ImgEquipOn.gameObject:SetActiveEx(isEquip)
 end
 
 -- 刷新扩展按钮名称

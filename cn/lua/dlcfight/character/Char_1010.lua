@@ -58,7 +58,7 @@ function XCharTes1010:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, t
         if self._proxy:CheckBuffByKind(self._uuid, 1010518) and self.Jishu < 4 then
             self.Jishu = self.Jishu + 1
         else
-            self._proxy:ApplyMagic(self._uuid, targetId, 1010520, 1) --删除强化效果
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1010520, 1) --删除强化效果
         end
     end
 end

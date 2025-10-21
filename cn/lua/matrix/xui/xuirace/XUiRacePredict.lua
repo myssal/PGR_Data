@@ -64,7 +64,11 @@ function XUiRacePredict:UpdateRound()
 
     if not self._CurRound or self._RoundInfo.Round.Id ~= self._CurRound.Id then
         -- 显示赛事名称
-        self.TxtMatchName.text = string.format("%s·%s", self._RoundInfo.Round.Name, self._RoundInfo.Round.SubTitle)
+        if string.IsNilOrEmpty(self._RoundInfo.Round.SubTitle) then
+            self.TxtMatchName.text = self._RoundInfo.Round.Name
+        else
+            self.TxtMatchName.text = string.format("%s·%s", self._RoundInfo.Round.Name, self._RoundInfo.Round.SubTitle)
+        end
         -- 显示预测项目
         self:ShowGuseeItem()
     end

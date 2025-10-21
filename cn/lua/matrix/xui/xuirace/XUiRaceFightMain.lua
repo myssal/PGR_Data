@@ -55,6 +55,7 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
         end
     end
 
+    self._ExtraChangeWaitTime = 2
     self._SceneType = sceneType
     self._WaitingTime = 0
     self._StartCountTime = 3
@@ -68,8 +69,10 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
         if self._GapTime < 0 then
             local leftTime = -self._GapTime
             self._StartCountTime = math.min(leftTime, self._StartCountTime)
-            leftTime = leftTime - self._StartCountTime
-            self._WaitingTime = math.max(leftTime, 0)
+            leftTime = math.max(leftTime - self._StartCountTime, 0)
+            self._ExtraChangeWaitTime = math.min(leftTime, self._ExtraChangeWaitTime)
+            leftTime = math.max(leftTime - self._StartCountTime, 0)
+            self._WaitingTime = leftTime
         else
             self._StartCountTime = 0
         end
@@ -79,8 +82,20 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
         -- XLog.Warning("[XUiRaceFightMain] OnStart: _WaitingTime ", self._WaitingTime)
         -- XLog.Warning("[XUiRaceFightMain] OnStart: delayTime ", delayTime)
     else
+        self._WaitingTime = 0
+        self._ExtraChangeWaitTime = 1
+        -- self._GapTime = -20
+        -- if self._GapTime < 0 then
+        --     local leftTime = -self._GapTime
+        --     self._StartCountTime = math.min(leftTime, self._StartCountTime)
+        --     leftTime = math.max(leftTime - self._StartCountTime, 0)
+        --     self._ExtraChangeWaitTime = math.min(leftTime, self._ExtraChangeWaitTime)
+        --     leftTime = math.max(leftTime - self._StartCountTime, 0)
+        --     self._WaitingTime = leftTime
+        -- else
+        --     self._StartCountTime = 0
+        -- end
         self._GapTime = 0
-        self._WaitingTime = 1
     end
 
     self._DefaultPos = self.PanelSkillDetail.transform.anchoredPosition
@@ -101,7 +116,6 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._UiCallback = handler(self, self.UiCallback)
     self._Control:InitRacePowerData(#self._RaceIds)
     self:InitRace()
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMStart")))
     self:Record(1)
 end
 
@@ -115,17 +129,21 @@ function XUiRaceFightMain:InitServerDataFinish()
     self._Scene:PlayMatch()
     -- finish
     XMVCA.XRace:CloseLoading()
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMStart")))
 end
 
 function XUiRaceFightMain:SetPanelUiShow(isShow)
     if self.PanelUiShow.gameObject.activeSelf == isShow then
         return
     end
-    self.PanelUiShow.gameObject:SetActive(isShow)
+    
     if isShow then
+        self.PanelUiShow.gameObject:SetActive(isShow)
         self:PlayAnimation("PanelUiShowEnable")
     else
-        self:PlayAnimation("PanelUiShowDisable")
+        self:PlayAnimation("PanelUiShowDisable", function()
+            self.PanelUiShow.gameObject:SetActive(isShow)
+        end)
     end
 end
 
@@ -142,13 +160,14 @@ end
 
 -- 更新排行榜
 function XUiRaceFightMain:OnC2LUpdateRank()
-    if not self._SprintIndexList[self._SelectIndex] then
+    if self._ShowingFinishIndex ~= self._SelectIndex then
         self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
     end
 end
 
--- 进入中断路程
+-- 进入中段路程
 function XUiRaceFightMain:OnC2LFinishHalf()
+    self._IsMiddle = true
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMMiddle")))
 end
 
@@ -159,12 +178,19 @@ function XUiRaceFightMain:OnC2LError()
 end
 
 function XUiRaceFightMain:ShowFinish(isFinish)
-    if isFinish == self.PanelFinish.gameObject.activeSelf then
+    if not isFinish and isFinish == self.PanelFinish.gameObject.activeSelf then
         return
+    end
+    if isFinish and self.PanelFinish.gameObject.activeSelf then
+        self.PanelFinish.gameObject:SetActive(false)
     end
     self.PanelFinish.gameObject:SetActive(isFinish)
     if isFinish then
-        self:PlayAnimation("Finish")
+        self._ShowingFinishIndex = self._SelectIndex
+        self:PlayAnimation("Finish", function()
+            self._ShowingFinishIndex = nil
+            self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
+        end)
     end
 end
 
@@ -179,9 +205,9 @@ function XUiRaceFightMain:OnEnterSprintMode(isSprintMode)
     self.PanelSkillDetail.gameObject:SetActive(not isSprintMode)
     self.BtnHide.gameObject:SetActive(not isSprintMode)
     self:ShowFinish(false)
-    if not isSprintMode then
-        self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
-    end
+    -- if not isSprintMode then
+    --     self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
+    -- end
 end
 
 function XUiRaceFightMain:OnC2LSprint(csActorIndex)
@@ -189,6 +215,10 @@ function XUiRaceFightMain:OnC2LSprint(csActorIndex)
     self._SprintIndexList[actorIndex] = true
     if actorIndex == self._SelectIndex then
         self:OnEnterSprintMode(true)
+    end
+    if not self._FirstFinish then
+        self._FirstFinish = true
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMEnd")))
     end
 end
 
@@ -200,10 +230,7 @@ function XUiRaceFightMain:OnC2LSprintFinish(csActorIndex)
         self:OnEnterSprintMode(false)
         self:ShowFinish(self._FinishIndexList[self._SelectIndex])
     end
-    if not self._FirstFinish then
-        self._FirstFinish = true
-        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMEnd")))
-    end
+    self._Heads[actorIndex]:SetRank(table.nums(self._FinishIndexList))
 end
 
 function XUiRaceFightMain:OnC2LFinish()
@@ -222,7 +249,7 @@ function XUiRaceFightMain:OnC2LFinish()
 end
 
 function XUiRaceFightMain:UiCallback(name, ...)
-    XLog.Warning("UiCallback", name, ...)
+    -- XLog.Warning("UiCallback", name, ...)
     local func = self[name]
     if func then
         func(self, ...)
@@ -305,6 +332,8 @@ function XUiRaceFightMain:InitRace()
     -- 显示等待界面
     if self._WaitingTime > 0 then
         self:ShowWaiting()
+    elseif self._ExtraChangeWaitTime > 0 then
+        self:ShowExtraWaiting()
     elseif self._StartCountTime > 0 then
         self:ShowCountDown(self._StartCountTime)
     end
@@ -317,6 +346,7 @@ end
 
 function XUiRaceFightMain:OnDestroy()
     self:RemoveTimer()
+    self:RemoveDelayTimer()
     XMVCA.XRace:LeaveMatchScene()
 end
 
@@ -326,13 +356,34 @@ function XUiRaceFightMain:RemoveTimer()
     self._CountDownTimerId = nil
 end
 
+function XUiRaceFightMain:RemoveDelayTimer()
+    if not self._DelayTimerId then return end
+    XScheduleManager.UnSchedule(self._DelayTimerId)
+    self._DelayTimerId = nil
+end
+
 function XUiRaceFightMain:ShowWaiting()
     self:SetMatchStatus(MatchStatus.Wait)
+    
+    self:SetPanelUiShow(true)
+    self._Scene:PlayTrackAnim(true)
+
+    self:RemoveTimer()
+    self._CountDownTimerId = XScheduleManager.ScheduleOnce(function()
+        self:ShowExtraWaiting()
+    end, self._WaitingTime * 1000)
+end
+
+
+function XUiRaceFightMain:ShowExtraWaiting()
+    self:SetMatchStatus(MatchStatus.Wait)
+    self:SetPanelUiShow(false)
+    self._Scene:PlayTrackAnim(false)
 
     self:RemoveTimer()
     self._CountDownTimerId = XScheduleManager.ScheduleOnce(function()
         self:ShowCountDown(self._StartCountTime)
-    end, self._WaitingTime * 1000)
+    end, self._ExtraChangeWaitTime * 1000)
 end
 
 function XUiRaceFightMain:UpdateSkillInfo(isInit)
@@ -364,6 +415,8 @@ function XUiRaceFightMain:OnBtnHeadClick(index, isInit)
     self._Scene:MoveCamera2Index(index)
 
     self:UpdateSkillInfo(isInit)
+    
+    self.PanelSkillDetail.gameObject:SetActive(true)
     self._PanelRaceDataUi:SelectIndex(index, self._RaceIds[self._SelectIndex])
 
     if self._SprintIndexList[self._SelectIndex] then
@@ -386,6 +439,13 @@ function XUiRaceFightMain:ShowTextInfo(index)
     self:PlayAnimation("Countdown")
 end
 
+function XUiRaceFightMain:DelayStartRace()
+    self:RemoveDelayTimer()
+    self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
+        self._Scene:PlayMatch()
+    end, 150)
+end
+
 function XUiRaceFightMain:ShowCountDown(count)
     if self._IsPlaying then return end
 
@@ -398,24 +458,28 @@ function XUiRaceFightMain:ShowCountDown(count)
     self:ShowTextInfo(self._TimeCount)
 
     self:RemoveTimer()
+    local timeGap = 1
     self._CountDownTimerId = XScheduleManager.ScheduleForever(function()
-        self._TimeCount = self._TimeCount - 1
+        self._TimeCount = self._TimeCount - timeGap
         if self._TimeCount >= 0 then
             if self._TimeCount == 0 then
+                self:DelayStartRace()
                 self:SetMatchStatus(MatchStatus.Matching)
-                self._Scene:PlayMatch()
                 self.PanleGo.gameObject:SetActive(true)
                 self:PlayAnimation("Go")
                 self.PanelCountdown.gameObject:SetActive(false)
+                XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, tonumber(self._Control:GetClientConfig("BGMStart")))
             else
-                self:ShowTextInfo(self._TimeCount)
+                if self._TimeCount - math.floor(self._TimeCount) < 0.2 then
+                    self:ShowTextInfo(self._TimeCount)
+                end
             end
         else
             self.PanleGo.gameObject:SetActive(false)
             XScheduleManager.UnSchedule(self._CountDownTimerId)
             self._CountDownTimerId = nil
         end
-    end, 1000)
+    end, timeGap * 1000)
 end
 
 function XUiRaceFightMain:SetMatchStatus(status)
@@ -440,6 +504,7 @@ function XUiRaceFightMain:OnBtnDirectorClick()
     end
     self._SelectIndex = -1
     self._Scene:SetAutoCamera()
+    self.PanelSkillDetail.gameObject:SetActive(false)
     self:Record(3)
 end
 

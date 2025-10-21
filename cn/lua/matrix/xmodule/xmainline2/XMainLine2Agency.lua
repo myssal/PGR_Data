@@ -660,6 +660,10 @@ end
 ---@param stageId number 关卡Id
 ---@param isOpenStageDetail boolean 是否打开关卡详情
 function XMainLine2Agency:OpenChapterUi(mainId, chapterId, stageId, isOpenStageDetail)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapterId) then
+        return
+    end
+
     -- 章节未解锁
     if chapterId then
         local isUnlock, tips = self:IsChapterUnlock(chapterId)
@@ -1065,6 +1069,10 @@ end
 -- UiFubenMainLineChapter界面，战斗结束后获取缓存数据
 function XMainLine2Agency:OnResumeUiFubenMainLineChapter()
     return self._Model:OnResumeUiFubenMainLineChapter()
+end
+
+function XMainLine2Agency:ClearCacheDatasUiFubenMainLineChapter()
+    self._Model:ClearCacheDatasUiFubenMainLineChapter()
 end
 --endregion
 
