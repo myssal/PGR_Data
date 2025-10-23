@@ -227,6 +227,7 @@ function XUiBattleRoleRoom:OnEnable()
 
     self.FirstInFin = true
     XEventManager.AddEventListener(XEventId.EVENT_FIGHT_ANIM_ENABLE, self.RefreshAnimationSet, self)
+    XEventManager.AddEventListener(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE, self.OnTeamEntityChange, self)
 end
 
 -- 此方法调用优先级高于所有方法，此时self.Proxy是空的
@@ -243,6 +244,7 @@ function XUiBattleRoleRoom:OnDisable()
     XUiBattleRoleRoom.Super.OnDisable(self)
     XMVCA.XFavorability:StopCv()
     XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_ANIM_ENABLE, self.RefreshAnimationSet, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE, self.OnTeamEntityChange, self)
 end
 
 function XUiBattleRoleRoom:OnDestroy()
@@ -396,38 +398,91 @@ function XUiBattleRoleRoom:OnBtnSupportToggleClicked(state)
     end
 end
 
+------------------------------------------------------------
+-- 当预设队伍成员变更时刷新界面
+------------------------------------------------------------
+function XUiBattleRoleRoom:OnTeamEntityChange()
+    if not self.Team then
+        XLog.Warning("[XUiBattleRoleRoom] OnTeamEntityChange: Team is nil")
+        return
+    end
+
+    -- 刷新角色显示
+    self:RefreshRoleModels()
+    self:RefreshCharacterRImgType()
+    self:RefreshPartners()
+    self:RefreshRoleDetalInfo(true)
+    self:RefreshRobotTeamBlenderShow()
+    self:RefreshBtnEnterFight()
+    self:RefreshAnimationSet()
+end
+
 function XUiBattleRoleRoom:OnBtnTeamPrefabClicked()
     local oldCaptainEntityId = self.Team:GetCaptainPosEntityId()
     local oldEntityIds = XTool.Clone(self.Team:GetEntityIds())
-    RunAsyn(function()
-        XLuaUiManager.OpenWithCloseCallback("UiTeamPrefabMain", function()
-            local playEntityId = 0
-            local soundType = XEnumConst.Favorability.SoundEventType.MemberJoinTeam
-            -- 优先队长音效
-            local newCaptainEntityId = self.Team:GetCaptainPosEntityId()
-            if XTool.IsNumberValid(newCaptainEntityId) and oldCaptainEntityId ~= newCaptainEntityId then
-                playEntityId = newCaptainEntityId
-                soundType = XEnumConst.Favorability.SoundEventType.CaptainJoinTeam
-            else
-                -- 其次队员音效
-                for pos, newEntityId in ipairs(self.Team:GetEntityIds()) do
-                    if XTool.IsNumberValid(newEntityId) and oldEntityIds[pos] ~= newEntityId then
-                        playEntityId = newEntityId
-                        soundType = XEnumConst.Favorability.SoundEventType.MemberJoinTeam
-                        break
-                    end
+
+    -- 打开预设界面
+    XLuaUiManager.OpenWithCloseCallback("UiTeamPrefabMain", function()
+        ------------------------------------------------------------
+        -- [1] 播放 CV 逻辑（保持原逻辑）
+        ------------------------------------------------------------
+        local playEntityId = 0
+        local soundType = XEnumConst.Favorability.SoundEventType.MemberJoinTeam
+        local newCaptainEntityId = self.Team:GetCaptainPosEntityId()
+
+        if XTool.IsNumberValid(newCaptainEntityId) and oldCaptainEntityId ~= newCaptainEntityId then
+            playEntityId = newCaptainEntityId
+            soundType = XEnumConst.Favorability.SoundEventType.CaptainJoinTeam
+        else
+            for pos, newEntityId in ipairs(self.Team:GetEntityIds()) do
+                if XTool.IsNumberValid(newEntityId) and oldEntityIds[pos] ~= newEntityId then
+                    playEntityId = newEntityId
+                    soundType = XEnumConst.Favorability.SoundEventType.MemberJoinTeam
+                    break
                 end
             end
+        end
 
-            if XLuaUiManager.IsUiShow("UiRoomTeamPrefab") then
-                XLuaUiManager.Close("UiRoomTeamPrefab")
+        if XTool.IsNumberValid(playEntityId) then
+            XMVCA.XFavorability:PlayCvByType(self.Proxy:GetCharacterIdByEntityId(playEntityId), soundType)
+        end
+
+        ------------------------------------------------------------
+        -- [2] 若有差异检查角色（纯回调逻辑）
+        ------------------------------------------------------------
+        local nowEntityIds = self.Team:GetEntityIds()
+        local isDiff = false
+        for pos, entityId in ipairs(nowEntityIds) do
+            if oldEntityIds[pos] ~= entityId then
+                isDiff = true
+                break
             end
-            if XTool.IsNumberValid(playEntityId) then
-                XMVCA.XFavorability:PlayCvByType(self.Proxy:GetCharacterIdByEntityId(playEntityId)
-                , soundType)
-            end
-        end, self.Team)
-    end)
+        end
+        if isDiff and self.Proxy and self.Proxy.FilterPresetTeamEntitiyIdsCallback then
+            local teamInfoData = {
+                TeamData = XTool.Clone(self.Team:GetEntityIds()),
+                CaptainPos = self.Team:GetCaptainPos(),
+                FirstFightPos = self.Team:GetFirstFightPos(),
+                EnterCgIndex = self.Team.GetEnterCgIndex and self.Team:GetEnterCgIndex() or 0,
+                SettleCgIndex = self.Team.GetSettleCgIndex and self.Team:GetSettleCgIndex() or 0,
+                SelectedGeneralSkill = self.Team.GetSelectedGeneralSkill and self.Team:GetSelectedGeneralSkill() or 0,
+            }
+    
+            self.Proxy:FilterPresetTeamEntitiyIdsCallback(teamInfoData, function()
+                ------------------------------------------------------------
+                -- [3] 所有弹窗交互结束后刷新 UI
+                ------------------------------------------------------------
+                self:RefreshRoleModels()
+                self:RefreshPartners()
+                self:RefreshRoleDetalInfo(true)
+                self:RefreshRobotTeamBlenderShow()
+                self:RefreshBtnEnterFight()
+                self:RefreshAnimationSet()
+                XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
+            end)
+        end
+
+    end, self.Team)
 end
 
 function XUiBattleRoleRoom:OnBeginBattleAutoRemove()

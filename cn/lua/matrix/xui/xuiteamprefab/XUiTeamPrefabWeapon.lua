@@ -519,8 +519,8 @@ function XUiTeamPrefabWeapon:UpdateEquipResonanceSkill(pos)
         local skillType = XMVCA.XEquip:GuessResonanceType(presetSkillId, xEquip.TemplateId)
         local skillInfo = XSkillInfoObj.New(skillType, presetSkillId, entityId)
 
-        -- ✅ 预设模式没有绑定角色，不显示“不共鸣”
-        local bindCharacterId = 0
+        -- ✅ 改为：用真实仓库的绑定角色ID，这样“不共鸣”标签还能正确显示
+        local bindCharacterId = XMVCA.XEquip:GetResonanceBindCharacterId(self.SelectEquipId, pos)
 
         self:RefreshResonanceUI(uiObj, pos, skillInfo, entityId, bindCharacterId, button, effectObj)
         return

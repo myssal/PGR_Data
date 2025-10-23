@@ -62,15 +62,24 @@ function XUiPanelMainLineRoot:SetData(firstTagId, groupIndex, chapterIndex)
     self.CurrentGroupId = groupIndex
     self.CurrentChapterIndex = chapterIndex
     self.IsOpenExhibition = XMVCA.XMainLine2:GetIsOpenExhibition()
-end
 
-function XUiPanelMainLineRoot:Refresh()
+    -- 打开当前面板
     if self.IsOpenExhibition then
         self:OpenPanelMainLineExhibition()
     else
         self:OpenPanelMainLine()
     end
     self:RefreshBtnSwitch()
+end
+
+function XUiPanelMainLineRoot:Refresh()
+    if self.IsOpenExhibition and self.UiPanelMainLineExhibition then
+        self:OpenPanelMainLineExhibition()
+        self:RefreshBtnSwitch()
+    elseif self.UiPanelMainLine then
+        self:OpenPanelMainLine()
+        self:RefreshBtnSwitch()
+    end
 end
 
 -- 刷新切换按钮

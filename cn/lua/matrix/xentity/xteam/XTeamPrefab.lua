@@ -446,11 +446,19 @@ function XTeamPrefab:CopyRealCharacterEquipData(characterId, pos, notSyncToServe
     self:GetFullSnapshot()
 
     local equipData = XMVCA.XEquip:GetCharacterEquips(characterId)
+    local hasDataAwarenessSiteDic = {}
     for k, xEquip in pairs(equipData) do
         if xEquip:IsWeapon() then
             self:CopyRealWeaponData(xEquip.Id, pos, true)
         else
             self:UpdateEquipAt(pos, xEquip:GetSite(), {EquipId = xEquip.Id, ResonanceDict = {}, WeaponOverrunSuitId = 0}, true)
+            hasDataAwarenessSiteDic[xEquip:GetSite()] = true
+        end
+    end
+    -- 单独检测空的意识槽位
+    for i = 1, XEnumConst.EQUIP.WEAR_AWARENESS_COUNT, 1 do
+        if not hasDataAwarenessSiteDic[i] then
+            self:UpdateEquipAt(pos, i, nil, true)
         end
     end
     -- 检测 如果没有成功复制武器 说明复制有问题 中断并清空所有数据

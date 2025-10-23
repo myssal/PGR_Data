@@ -401,6 +401,7 @@ function XLuaAudioManager.SetWholeSelector(selectorName, labelName)
 end
 
 function XLuaAudioManager.MuteAisacByPlayType(type, isMute, cruveTime)
+    cruveTime = cruveTime or 0
     local curType = XLuaAudioManager.Sound2PlayType[type]
     XAudioManager.MuteAisacByPlayType(curType, isMute, cruveTime)
 end

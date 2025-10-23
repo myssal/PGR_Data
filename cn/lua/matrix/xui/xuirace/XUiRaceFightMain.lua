@@ -16,7 +16,7 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self:_RegisterButtonClicks()
     -- 后续开启
     self.GridSkillTalk.gameObject:SetActive(false)
-    self.BtnDirector.gameObject:SetActive(true)
+    self.BtnDirector.gameObject:SetActive(false)
     self.PanelCountdown.gameObject:SetActive(false)
     self.BtnRaceExit.gameObject:SetActive(false)
     self:ShowFinish(false)
@@ -201,7 +201,7 @@ end
 function XUiRaceFightMain:OnEnterSprintMode(isSprintMode)
     self.PanelMap.gameObject:SetActive(not isSprintMode)
     self.HeadBg.gameObject:SetActive(not isSprintMode)
-    self.BtnDirector.gameObject:SetActive(not isSprintMode)
+    --self.BtnDirector.gameObject:SetActive(not isSprintMode)
     self.PanelSkillDetail.gameObject:SetActive(not isSprintMode)
     self.BtnHide.gameObject:SetActive(not isSprintMode)
     self:ShowFinish(false)
@@ -240,10 +240,9 @@ function XUiRaceFightMain:OnC2LFinish()
     self:SetPanelUiShow(false)
     self.BtnRaceExit.gameObject:SetActive(true)
     self.HeadBg.gameObject:SetActive(false)
-    self.BtnDirector.gameObject:SetActive(false)
     self.PanelSkillDetail.gameObject:SetActive(false)
     self.PanelMap.gameObject:SetActive(false)
-    self.BtnDirector.gameObject:SetActive(false)
+    --self.BtnDirector.gameObject:SetActive(false)
     self._IsFinish = true
     self:Record(6)
 end
@@ -586,7 +585,7 @@ end
 
 function XUiRaceFightMain:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnDirector.CallBack = Handler(self, self.OnBtnDirectorClick)
+    --self.BtnDirector.CallBack = Handler(self, self.OnBtnDirectorClick)
     self.BtnExit.CallBack = Handler(self, self.OnBtnExitClick)
     self.BtnHide.CallBack = Handler(self, self.OnBtnHideClick)
     self.BtnMask.CallBack = Handler(self, self.OnBtnMaskClick)

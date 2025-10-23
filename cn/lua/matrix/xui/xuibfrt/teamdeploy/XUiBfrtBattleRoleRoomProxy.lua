@@ -79,6 +79,74 @@ end
 --    self._ReplaceTeamData = {}
 --end
 
+-- 回调式重复角色检测（不依赖协程）
+function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoData, finishCb)
+    local teamData = teamInfoData.TeamData
+    if not teamData then
+        if finishCb then finishCb() end
+        return
+    end
+
+    local indexList = {}
+    for charPos, charId in pairs(teamData) do
+        if XTool.IsNumberValid(charId) then
+            local otherTeamIdx, otherTeamPos = self:_CheckCharacterSameToOtherTeam(charId)
+            if otherTeamIdx > 0 then
+                table.insert(indexList, {Pos = charPos, CharId = charId, OtherTeamIdx = otherTeamIdx, OtherTeamPos = otherTeamPos})
+            end
+        end
+    end
+
+    -- 如果没有冲突，直接完成
+    if #indexList == 0 then
+        return
+    end
+
+    ------------------------------------------------------------
+    -- 有冲突：递归弹窗处理
+    ------------------------------------------------------------
+    local function ShowNextConflict(idx)
+        if idx > #indexList then
+            -- 所有弹窗处理完，更新队伍并回调
+            self.Team:UpdateEntityIds(teamData)
+            self.Team:UpdateCaptainPos(teamInfoData.CaptainPos)
+            self.Team:UpdateFirstFightPos(teamInfoData.FirstFightPos)
+            XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
+            if finishCb then finishCb() end
+            return
+        end
+
+        local info = indexList[idx]
+        local showCharacterId = XRobotManager.GetCharacterId(info.CharId)
+        local characterName = XMVCA.XCharacter:GetCharacterName(showCharacterId)
+        local echelonType = XDataCenter.BfrtManager.GetCurSelectFightType()
+        local oldTeamName = XDataCenter.BfrtManager.GetEchelonNameTxt(echelonType, info.OtherTeamIdx)
+        local curSelectTeamIdx = XDataCenter.BfrtManager.GetCurSelectTeamIdx()
+        local newTeamName = XDataCenter.BfrtManager.GetEchelonNameTxt(echelonType, curSelectTeamIdx)
+        local title = CsXTextManager.GetText("BfrtDeployTipTitle")
+        local content = CsXTextManager.GetText("BfrtDeployTipContent", characterName, oldTeamName, newTeamName)
+
+        -- 打开提示弹窗（纯回调）
+        XUiManager.DialogTip(title, content,
+            XUiManager.DialogType.Normal,
+            function() -- 取消
+                teamData[info.Pos] = 0
+                self.Team:UpdateEntityIds(teamData)
+                XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
+                ShowNextConflict(idx + 1)
+            end,
+            function() -- 确定
+                XDataCenter.BfrtManager.SetViewGroupFightTeamData(info.OtherTeamIdx, info.OtherTeamPos, 0)
+                self.Team:UpdateEntityIds(teamData)
+                XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
+                ShowNextConflict(idx + 1)
+            end
+        )
+    end
+
+    ShowNextConflict(1)
+end
+
 function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIds(teamInfoData)
     --self._ReplaceTeamData = {}
     local teamInfoDataClone = XTool.Clone(teamInfoData)

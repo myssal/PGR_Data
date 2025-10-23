@@ -271,10 +271,14 @@ function XRaceAgency:CheckTip(tipType)
         return
     end
     local roundId = self._Model:GetCurRound()
-    if roundId == -1 then
+    if not roundId or roundId == -1 then
         return
     end
     local etcd = self._Model:GetEtcdRoundConfig(roundId)
+    if not etcd then
+        XLog.Error(string.format("【赛马】检查播报时找不到RoundId=%s的etcd配置", roundId))
+        return
+    end
     local nowTime = XTime.GetServerNowTimestamp()
     local startTime = etcd.StartTimeLong
     local leftMinute = math.max(startTime - nowTime, 0) / 60
@@ -368,17 +372,36 @@ end
 
 function XRaceAgency:CheckRoundGuessRedPoint()
     if self:GetIsOpen(true) then
-        local resultDatas = self._Model:GetBaseRoundGuessResult()
-        local roundId = self._Model:GetCurRound()
-        for _, resultData in pairs(resultDatas) do
-            for _, data in pairs(resultData) do
-                local info = data.PlayerGuessInfo
-                if info then
-                    if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
-                        return true --有奖励未领取
+        local hasPredicted = {}
+        local curRoundId = self._Model:GetCurRound()
+        local playerData = self._Model:GetBasePlayerData()
+        
+        if playerData and playerData.RoundGuessDict then
+            for roundId, v in pairs(playerData.RoundGuessDict) do
+                local infoDict = v.RaceRoundGuessInfoDict
+                if infoDict then
+                    for guessId, info in pairs(infoDict) do
+                        if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
+                            return true --有奖励未领取
+                        end
+                        if curRoundId == roundId then
+                            if XTool.IsNumberValid(info.CharacterId) or XTool.IsNumberValid(info.OptionId) then
+                                --已预测选项
+                                hasPredicted[guessId] = true
+                            end
+                        end
                     end
-                    if id == roundId and not XTool.IsNumberValid(info.CharacterId) and not XTool.IsNumberValid(info.OptionId) then
-                        return true --有选项没预测
+                end
+            end
+        end
+        
+        if curRoundId ~= -1 then
+            --当前比赛所有预测选项
+            local etcd = self._Model:GetEtcdRoundConfig(curRoundId)
+            if etcd then
+                for _, guessId in pairs(etcd.Guess) do
+                    if not hasPredicted[guessId] then
+                        return true
                     end
                 end
             end
