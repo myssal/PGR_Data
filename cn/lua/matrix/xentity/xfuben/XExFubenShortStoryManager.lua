@@ -174,6 +174,10 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(zhouMuId)
             end,
             GetIsLocked = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return true
+                end
+
                 local result = not XDataCenter.ShortStoryChapterManager.IsUnlock(proxy:GetId())    
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 -- 如果锁定并且是活动，判断下一层
@@ -183,6 +187,10 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                 return result
             end,
             GetLockTip = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
+                end
+
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 if not isActivity then 
                     local ret, desc = XDataCenter.ShortStoryChapterManager.CheckOpenCondition(proxy:GetId())

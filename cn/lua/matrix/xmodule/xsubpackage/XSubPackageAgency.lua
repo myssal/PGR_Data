@@ -935,23 +935,27 @@ function XSubPackageAgency:CheckAllComplete()
 end
 
 function XSubPackageAgency:CheckResDownloadByFunctionType(enterType, param)
-    if not self:IsOpen() then
+    if self.DebugForceOpenSubpackage then
         return false, nil
+    end
+
+    if not self:IsOpen() then
+        return true, nil
     end
 
     local resIds = self._Model:GetAllSubpackageIds(enterType, param)
     if XTool.IsTableEmpty(resIds) then
-        return false, nil
+        return true, nil
     end
 
     for _, resId in pairs(resIds) do
         local complete = self:CheckResDownloadComplete(resId)
         if not complete then
-            return true, resId
+            return false, resId
         end
     end
 
-    return false, nil
+    return true, nil
 end
 
 

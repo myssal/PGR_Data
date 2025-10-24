@@ -109,6 +109,7 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._PanelRaceDataUi = XUiPanelRaceFightRankDetail.New(self.PanelRaceData, self)
     self._PanelRaceDataUi:Open()
     self._PanelRaceDataUi:InitRace(#self._RaceIds)
+    self._PanelRaceDataUi:UpdateRank(self._SelectIndex)
 
     self._Scene = XMVCA.XScene:GetScene(SceneIds.XRaceScene)
     self._UpdatePowerCallback = handler(self, self.UpdatePowerCallback)
@@ -508,6 +509,8 @@ function XUiRaceFightMain:OnBtnDirectorClick()
 end
 
 function XUiRaceFightMain:NormalClose()
+    if self._IsCloseUiRaceFightMain then return end
+    self._IsCloseUiRaceFightMain = true
     self:Close()
     self:Record(2)
 end
@@ -590,7 +593,8 @@ function XUiRaceFightMain:_RegisterButtonClicks()
     self.BtnHide.CallBack = Handler(self, self.OnBtnHideClick)
     self.BtnMask.CallBack = Handler(self, self.OnBtnMaskClick)
     self.BtnClose.CallBack = Handler(self, self.OnBtnCloseClick)
-    self.BtnRaceExit.CallBack = Handler(self, self.OnBtnRaceExitClick)
+    -- self.BtnRaceExit.CallBack = Handler(self, self.OnBtnRaceExitClick)
+    self.BtnRaceExit:AddEventListener(handler(self, self.OnBtnRaceExitClick))
 end
 
 return XUiRaceFightMain

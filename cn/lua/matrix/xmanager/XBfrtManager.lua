@@ -418,6 +418,7 @@ XBfrtManagerCreator = function()
     function XBfrtManager.Init()
         _IsInitStageInfo = false
         XBfrtManager._TeamData = nil
+        XBfrtManager._GirdEchelonIndexTempTeam = {}
         BfrtChapterTemplates = XBfrtConfigs.GetBfrtChapterTemplates()
         BfrtGroupTemplates = XBfrtConfigs.GetBfrtGroupTemplates()
         EchelonInfoTemplates = XBfrtConfigs.GetEchelonInfoTemplates()
@@ -2017,6 +2018,32 @@ XBfrtManagerCreator = function()
         end
 
         return XBfrtManager._TeamData
+    end
+
+    -- 只为记录据点UiBfrtDeploy临时生成的队伍引用
+    function XBfrtManager.SetGirdEchelonIndexTempTeam(teamData, index)
+        if not teamData or not index then
+            return
+        end
+        XBfrtManager._GirdEchelonIndexTempTeam[index] = teamData
+    end
+
+    ---@return XTeam
+    function XBfrtManager.GetGirdEchelonIndexTempTeam(index)
+        if not index then
+            return
+        end
+        return XBfrtManager._GirdEchelonIndexTempTeam[index]
+    end
+
+    function XBfrtManager.ClearGirdEchelonIndexTempTeam()
+        local t = XBfrtManager._GirdEchelonIndexTempTeam
+        if not t then
+            return
+        end
+        for k in pairs(t) do
+            t[k] = nil
+        end
     end
 
     function XBfrtManager.SetTeamAndDoCB(groupId, fightTeamList, logisticsTeamList, cb)

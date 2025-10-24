@@ -182,6 +182,7 @@ function XUiGridMainLineExhibitionChapter:RefreshUi()
         self:RefreshPanelTag(viewModel)
         -- 进度
         self:RefreshPanelProgress(viewModel)
+        self:RefreshLockByViewModel(viewModel)
     elseif chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.CHALLENGE then
         -- 上锁
         self:RefreshLock()
@@ -234,13 +235,28 @@ function XUiGridMainLineExhibitionChapter:RefreshRImgBg(icon)
     self.UiDetail:GetObject("RImgBg"):SetRawImage(icon)
 end
 
+function XUiGridMainLineExhibitionChapter:RefreshLockByViewModel(viewModel)
+    local isLock = viewModel:GetIsLocked()
+    local lockText = viewModel:GetLockTip()
+    self.UiBriefButton:SetDisable(isLock)
+    self.UiDetailButton:SetDisable(isLock)
+    self.UiDetailButton:SetNameByGroup(0, lockText)
+end
+
 -- 刷新上锁状态
 function XUiGridMainLineExhibitionChapter:RefreshLock()
     local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
     local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
-    local isLock = not XFunctionManager.JudgeCanOpen(challengeBannerConfig.FunctionId)
+    local lockFun = not XFunctionManager.JudgeCanOpen(challengeBannerConfig.FunctionId)
+    local lockSubPackage = not XMVCA.XSubPackage:CheckResDownloadByFunctionType(challengeBannerConfig.FunctionId)
+    local isLock = lockFun or lockSubPackage
+    local lockText = XUiHelper.GetText("NecessaryResourcesNotDownloaded")
+    if lockFun then
+        lockText = XUiHelper.GetText("CommonLockedTip")
+    end
     self.UiBriefButton:SetDisable(isLock)
     self.UiDetailButton:SetDisable(isLock)
+    self.UiDetailButton:SetNameByGroup(0, lockText)
 end
 
 -- 刷新成就
@@ -311,7 +327,7 @@ end
 -- 刷新完成进度
 function XUiGridMainLineExhibitionChapter:RefreshPanelProgress(viewModel)
     local currentProgress, maxProgress = XMVCA.XMainLine2:GetViewModelCurrentAndMaxProgress(viewModel)
-    local progress = math.floor(currentProgress / maxProgress * 100) .. "%"
+    local progress = math.ceil(currentProgress / maxProgress * 100) .. "%"
     
     local isCompleted = currentProgress >= maxProgress
     local uiObjs = { self.UiBrief, self.UiDetail }

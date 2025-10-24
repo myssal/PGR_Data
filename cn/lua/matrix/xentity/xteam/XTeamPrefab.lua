@@ -591,6 +591,14 @@ function XTeamPrefab:CoverToRealTeamData(xTeam)
     end
 end
 
+function XTeamPrefab:UpdateSelectGeneralSkill(skillId, notSyncToServer, cb)
+    self:GetFullSnapshot()
+    self.SelectedGeneralSkill = skillId or 0
+    if not notSyncToServer then
+        self:SyncMetaDataToServer(cb)
+    end
+end
+
 function XTeamPrefab:UpdateTeamName(name, cb)
     local oldName = self.TeamName
     self.TeamName = name
@@ -604,6 +612,7 @@ function XTeamPrefab:UpdateTeamName(name, cb)
 end
 
 function XTeamPrefab:UpdateFirstFightPos(value, notSyncToServer, cb)
+    self:GetFullSnapshot()
     self.FirstFightPos = value
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -611,6 +620,7 @@ function XTeamPrefab:UpdateFirstFightPos(value, notSyncToServer, cb)
 end
 
 function XTeamPrefab:UpdateCaptainPos(value, notSyncToServer, cb)
+    self:GetFullSnapshot()
     self.CaptainPos = value
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -618,6 +628,7 @@ function XTeamPrefab:UpdateCaptainPos(value, notSyncToServer, cb)
 end
 
 function XTeamPrefab:SetEnterCgIndex(index, notSyncToServer, cb)
+    self:GetFullSnapshot()
     self.EnterCgIndex = index
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -625,6 +636,7 @@ function XTeamPrefab:SetEnterCgIndex(index, notSyncToServer, cb)
 end
 
 function XTeamPrefab:SetSettleCgIndex(index, notSyncToServer, cb)
+    self:GetFullSnapshot()
     self.SettleCgIndex = index
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -794,8 +806,6 @@ function XTeamPrefab:RestoreFromSnapshot()
         end
     end
     
-    -- 还原伙伴数据
-    
     -- 还原其他核心数据
     self.CaptainPos = snapshot.CaptainPos
     self.FirstFightPos = snapshot.FirstFightPos
@@ -823,6 +833,11 @@ function XTeamPrefab:SyncPartnerDataToServer(pos, cb)
 end
 
 function XTeamPrefab:SyncMetaDataToServer(cb)
+    local name = self:GetName()
+    if string.IsNilOrEmpty(name) then 
+        return 
+    end
+
     XDataCenter.TeamManager.TeamPrefabUpdateMetadataRequest(self, cb)
 end
 

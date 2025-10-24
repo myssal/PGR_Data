@@ -242,9 +242,17 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(chapterConfig.ZhouMuId)
             end,
             GetIsLocked = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return true
+                end
+            
                 return self:ExGetChapterIsLockAndLockTip(proxy:GetExtralData().MainId, proxy:GetExtralData().Difficulty)
             end,
             GetLockTip = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
+                end
+
                 if proxy:CheckHasTimeLimitTag() then
                     local ret, desc = XDataCenter.FubenMainLineManager.CheckActivityCondition(proxy:GetId())
                     if not ret then

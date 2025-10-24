@@ -68954,9 +68954,11 @@
             "33|Magic|111800|0|",
             "20|Magic|181898|0|",
             "19|Magic|111800|0|",
-            "32|Magic|111801|0|"
+            "32|Magic|111801|0|",
+            "0|Effect|FxR4LunaAtk51Ma|root||||||||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -69244,7 +69246,7 @@
             "999|Magic|171805|0|",
             "999|Cast|11183016",
             "0|Magic|171801|0|",
-            "0|Effect|FxR4LunaAtk41Xuli||1|||||||"
+            "999|Effect|FxR4LunaAtk41Xuli||1|||||||"
         ],
         "Condition": [
             "nil",
@@ -69259,7 +69261,7 @@
             "nil",
             "nil",
             "nil",
-            "82701=1"
+            "#82701=1"
         ]
     },
     {
@@ -69296,6 +69298,7 @@
             "999|Effect||||||||||",
             "13|Cast|11183212",
             "999|Magic|181867|0|",
+            "0|Effect|FxR4LunaAtk43HeiDongXiaLuo|||||||||",
             "14|Magic|111838|0|",
             "2|Shake|5|0.65|-2|10|0.1|2|||",
             "14|Shake|2|0.8|-1|15|0.15|1|||",
@@ -69323,6 +69326,7 @@
             "nil",
             "nil",
             "nil",
+            1718820,
             "nil",
             "nil",
             "nil",
@@ -69350,6 +69354,7 @@
             "5|Magic|102273|0|",
             "2|Cast|11183308",
             "10|Cast|11183309",
+            "0|Effect|FxR4LunaAtk43HeiDongXiaLuo|||||||||",
             "999|Magic|111820|0|",
             "999|Effect||||||||||",
             "13|Cast|11183314",
@@ -69378,6 +69383,7 @@
             "nil",
             "nil",
             "nil",
+            1718820,
             "nil",
             "nil",
             "nil",
@@ -69456,6 +69462,7 @@
             "12|Cast|11183516",
             "0|Cast|11183517",
             "10|Cast|11183518",
+            "0|Effect|FxR4LunaAtk43HeiDongXiaLuo|||||||||",
             "999|Magic|171898|0||||",
             "2|Cast|11183522",
             "999|Magic|181867|0|",
@@ -69491,6 +69498,7 @@
             "nil",
             "nil",
             "nil",
+            1718820,
             1718820,
             "nil",
             "nil",
@@ -71413,7 +71421,7 @@
             "999|Magic|111837|0|",
             "0|Magic|171800|0|",
             "0|Magic|171805|0|",
-            "0|Effect|FxR4LunaAtk42Xuli|HitCase|1|||||||"
+            "999|Effect|FxR4LunaAtk42Xuli|HitCase|1|||||||"
         ],
         "Condition": [
             "nil",
@@ -71449,10 +71457,12 @@
         "Id": 111813,
         "Key": [
             "0|Cast|11181302",
-            "0|Effect|FxR4LunaAtk45Xuli||1|||||||",
+            "999|Effect|FxR4LunaAtk45Xuli||1|||||||",
+            "999|Effect|FxR4LunaAtk49Xuli||1|||||||",
             "0|Turn|360|4|1|||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -71538,11 +71548,11 @@
             "0|Turn|480|1|1|||",
             "0|RecordTarget|1|1|1|1|1|||",
             "999|Effect|FxR4LunaAtk4202|||||||||",
-            "999|Cast|11189604",
+            "999|Cast|11189604|11189609",
             "999|Magic|111837|0|",
             "0|Magic|171800|0|",
             "0|Magic|171805|0|",
-            "0|Effect|FxR4LunaAtk42Xuli|HitCase|1|||||||"
+            "999|Effect|FxR4LunaAtk42Xuli|HitCase|1|||||||"
         ],
         "Condition": [
             "nil",
@@ -71783,7 +71793,7 @@
     {
         "Id": 191816,
         "Key": [
-            "0|Effect|FxR4LunaAtk43HeiDongXiaLuo||1|||||||"
+            "999|Effect|FxR4LunaAtk43HeiDongXiaLuo||1|||||||"
         ],
         "Condition": [
             "nil"
@@ -71821,6 +71831,29 @@
             "0|Cast|19181904"
         ],
         "Condition": [
+            "nil",
+            "nil",
+            "nil"
+        ]
+    },
+    {
+        "Id": 191820,
+        "Key": [
+            "0|Effect|FxR4LunaAtkWin|||||||||",
+            "108|Effect|FxR4LunaAtkWin01|||||||||",
+            "0|Effect|FxR4LunaAtkWin02|||||||||",
+            "0|Magic|191853|0||||",
+            "80|Effect|FxR4LunaAtkWinMd01|Bip001||||||||",
+            "0|Magic|191812|0|",
+            "-1|AddSkillBuff|10625201|196224|0|||",
+            "110|RemoveSkillBuff|10625201|||"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -120098,7 +120131,7 @@
             "12|Cast|10530707",
             "0|Cast|10530708|10530710",
             "0|Move|3|0.6|||",
-            "12|Effect|FxR5LifuAtk11Ex|||||||||||"
+            "12|Effect|FxR5LifuAtk11Ex||1|||||||||"
         ],
         "Condition": [
             "nil",
@@ -120150,17 +120183,21 @@
             "2|Turn|720|0.4|1",
             "1|Magic|105337|0|",
             "4|Magic|125310|0|",
-            "10|Magic|100094|0|"
+            "10|Magic|100094|0|",
+            "2|MoveXZ|10530914|3|0.4|90|8|-20||",
+            "2|Move|20|0.3|-20||"
         ],
         "Condition": [
             "nil",
             "nil",
             "nil",
+            "!1253990",
             "nil",
             "nil",
             "nil",
             "nil",
-            "nil"
+            1253990,
+            1253990
         ]
     },
     {
@@ -120221,25 +120258,25 @@
         "Id": 105312,
         "Key": [
             "0|Effect|FxR5LifuWin|||||||||||",
-            "0|Effect|FxR5LifuWin02|||||||||||",
+            "0|Effect|FxR5LifuWin02|WeaponCaseR||||||||||",
             "0|Effect|FxR5LifuWinMA|||||||||||",
             "0|Magic|125384|0|",
-            "0|Effect|FxR5LifuWinTrail|LotusBone03||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone04||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone05||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone06||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone07||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone08||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone09||||||||||",
-            "0|Effect|FxR5LifuWinTrail|LotusBone10||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone03||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone04||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone05||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone06||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone07||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone08||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone09||||||||||",
-            "81|Effect|FxR5LifuWinTrail02|LotusBone10||||||||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone03||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone04||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone05||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone06||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone07||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone08||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone09||||||-1||||",
+            "20|Effect|FxR5LifuWinTrail|LotusBone10||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone03||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone04||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone05||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone06||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone07||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone08||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone09||||||-1||||",
+            "94|Effect|FxR5LifuWinTrail02|LotusBone10||||||-1||||",
             "0|Magic|125391|0|"
         ],
         "Condition": [
@@ -120332,10 +120369,10 @@
             "1|Cast|10531703|10531704",
             "3|Cast|10531705",
             "40|Cast|10531706|10531707",
-            "42|AddSkillBuff|10531708|105315|0",
+            "40|AddSkillBuff|10531708|105315|0",
             "49|AddSkillBuff|10531709|100092|0",
             "0|Magic|115344|0|",
-            "40|AddSkillBuff|10531711|105317|0",
+            "38|AddSkillBuff|10531711|105317|0",
             "0|Magic|115346|0|",
             "24|Magic|125365|0|",
             "999|Cast|10531714",
@@ -120423,12 +120460,12 @@
             "87|AddSkillBuff|10531709|100092|0",
             "0|Magic|116334|0|",
             "0|Magic|105383|0|",
-            "0|Effect|FxR5LifuAtk52Scene||1|||0.1|0.1|0.1||||",
+            "0|Effect|FxR5LifuAtk52Scene||1|||||||||",
             "58|Effect|FxR5LifuAtk52Boom||1|||||||||",
             "58|Effect|FxR5LifuAtk52BoliPosui||1|||||||||",
             "0|Effect|FxR5LifuAtk52Boli||1|||0.1|0.1|0.1||||",
             "0|Effect|FxR5LifuAtk52Scene1||1|||0.1|0.1|0.1||||",
-            "77|Magic|105318|0|",
+            "70|Magic|105318|0|",
             "0|Cast|10531820",
             "5|Cast|10531821",
             "10|Cast|10531822",
@@ -120467,7 +120504,8 @@
             "0|Effect|FxR5LifuAtk52HandTrailR|Bip001RHand|1|||||||||",
             "84|Cast|10531859",
             "0|Magic|125379|0|",
-            "0|Magic|116357|0|"
+            "0|Magic|116357|0|",
+            "86|Magic|145324|0|"
         ],
         "Condition": [
             "nil",
@@ -120523,14 +120561,15 @@
             "nil",
             "nil",
             "nil",
-            1063630
+            1063630,
+            "nil"
         ]
     },
     {
         "Id": 105319,
         "Key": [
             "12|Effect|FxR5LifuAtk11|||||||||||",
-            "4|Magic|105353|0|",
+            "0|Magic|116374|0|",
             "999|Cast|10531906|10531907",
             "0|Cast|10531908|10531910",
             "0|Move|3|0.6|||",
@@ -120538,8 +120577,8 @@
             "10|Magic|115353|0|",
             "16|Shake|1|0.05|0|8|0.7|1",
             "999|Cast|10531917",
-            "12|Effect|FxR5LifuAtk11Ex|||||||||||",
-            "12|Effect|FxR5LifuAtk11|||||||||||",
+            "12|Effect|FxR5LifuAtk11Ex||1|||||||||",
+            "12|Effect|FxR5LifuAtk11||1|||||||||",
             "999|Cast|10531920",
             "0|Magic|125360|0|",
             "11|Magic|125361|0|",
@@ -120567,7 +120606,7 @@
         "Id": 105320,
         "Key": [
             "12|Effect|FxR5LifuAtk11|||||||||||",
-            "4|Magic|105353|0|",
+            "0|Magic|116374|0|",
             "999|Cast|10532006|10532007",
             "0|Cast|10532008|10532010",
             "0|Move|3|0.6|||",
@@ -120575,8 +120614,8 @@
             "10|Magic|115353|0|",
             "16|Shake|1|0.05|0|8|0.7|1",
             "999|Cast|10532017",
-            "12|Effect|FxR5LifuAtk11Ex|||||||||||",
-            "12|Effect|FxR5LifuAtk11|||||||||||",
+            "12|Effect|FxR5LifuAtk11Ex||1|||||||||",
+            "12|Effect|FxR5LifuAtk11||1|||||||||",
             "999|Cast|10532020",
             "0|Magic|125360|0|",
             "11|Magic|125361|0|",
@@ -120604,8 +120643,8 @@
         "Id": 105321,
         "Key": [
             "12|Effect|FxR5LifuAtk11|||||||||||",
-            "4|Magic|105353|0|",
-            "4|Magic|105353|0|",
+            "0|Magic|116374|0|",
+            "0|Magic|116374|0|",
             "999|Cast|10532106|10532107",
             "0|Cast|10532108|10532110",
             "0|Move|3|0.6|||",
@@ -120613,8 +120652,8 @@
             "5|Magic|115353|0|",
             "16|Shake|1|0.05|0|8|0.7|1",
             "999|Cast|10532117",
-            "12|Effect|FxR5LifuAtk11Ex|||||||||||",
-            "12|Effect|FxR5LifuAtk11|||||||||||",
+            "12|Effect|FxR5LifuAtk11Ex||1|||||||||",
+            "12|Effect|FxR5LifuAtk11||1|||||||||",
             "999|Cast|10532120",
             "0|Magic|125360|0|",
             "11|Magic|125361|0|",
@@ -120866,13 +120905,14 @@
     {
         "Id": 105328,
         "Key": [
-            "12|Magic|105353|0|",
+            "0|Magic|116374|0|",
             "1|Cast|10532806",
             "13|Cast|10532807",
             "0|Turn|720|0.3|1",
             "1|Cast|10532809",
-            "12|Effect|FxR5LifuAtk31DilieEx|||||0|0|0||||",
-            "12|Effect|FxR5LifuAtk31Dilie|||||0|0|0||||",
+            "999|Cast|10532810|10532811",
+            "12|Magic|145336|0|",
+            "12|Magic|145337|0|",
             "0|MoveXZ|10533018|3|0.05|90|5|-10||",
             "2|MoveXZ|10533019|3|0.1|-90|5|-10||",
             "2|Move|-10|0.1|10||",
@@ -120885,6 +120925,7 @@
             "0|Effect|FxR5LifuAtk31|||||0.1|0.1|0.1||||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -120907,14 +120948,14 @@
     {
         "Id": 105329,
         "Key": [
-            "14|Magic|105353|0|",
-            "12|Magic|105353|0|",
+            "0|Magic|116374|0|",
             "1|Cast|10532906",
             "13|Cast|10532907",
             "0|Turn|720|0.3|1",
             "1|Cast|10532909",
-            "12|Effect|FxR5LifuAtk31DilieEx|||||0|0|0||||",
-            "12|Effect|FxR5LifuAtk31Dilie|||||0|0|0||||",
+            "999|Cast|10532910|10532911",
+            "12|Magic|145336|0|",
+            "12|Magic|145337|0|",
             "0|MoveXZ|10533018|3|0.05|90|5|-10||",
             "2|MoveXZ|10533019|3|0.1|-90|5|-10||",
             "2|Move|-10|0.1|10||",
@@ -120950,14 +120991,15 @@
     {
         "Id": 105330,
         "Key": [
-            "14|Magic|105353|0|",
-            "12|Magic|105353|0|",
+            "0|Magic|116374|0|",
+            "0|Magic|116374|0|",
             "1|Cast|10533006",
             "13|Cast|10533007",
             "0|Turn|720|0.3|1",
             "1|Cast|10533009",
-            "12|Effect|FxR5LifuAtk31DilieEx|||||0|0|0||||",
-            "12|Effect|FxR5LifuAtk31Dilie|||||0|0|0||||",
+            "999|Cast|10533010|10533011",
+            "12|Magic|145336|0|",
+            "12|Magic|145337|0|",
             "0|MoveXZ|10533018|3|0.05|90|5|-10||",
             "2|MoveXZ|10533019|3|0.1|-90|5|-10||",
             "2|Move|-10|0.1|10||",
@@ -120970,6 +121012,7 @@
             "0|Effect|FxR5LifuAtk31|||||0.1|0.1|0.1||||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -121011,7 +121054,7 @@
             "0|AddSkillBuff|10533119|115312|0",
             "0|AddSkillBuff|10533120|115313|0",
             "9|Magic|106364|0|",
-            "0|Effect|FxR5LifuAtk41WeaponCase1|WeaponCase1||||||||||",
+            "0|Effect|FxR5LifuAtk41WeaponCase1|WeaponCase1|1|||||||||",
             "2|Magic|105337|0|",
             "6|Cast|10533127",
             "0|Cast|10533128",
@@ -121060,8 +121103,8 @@
         "Key": [
             "0|Magic|125309|0|",
             "0|Magic|105342|0|",
-            "4|AddSkillBuff|10533205|105343|0",
-            "4|AddSkillBuff|10533206|105344|0",
+            "5|AddSkillBuff|10533205|105343|0",
+            "5|AddSkillBuff|10533206|105344|0",
             "14|Cast|10533207|10533208",
             "13|Magic|106311|2|",
             "12|Cast|10533210",
@@ -121075,7 +121118,10 @@
             "12|Cast|10533218",
             "0|Effect|FxR5LifuAtk42WeaponTrail|LotusBone03||||||||||",
             "14|Cast|10533220",
-            "999|Cast|10533221|10533223"
+            "999|Cast|10533221|10533223",
+            "10|Cast|10533225",
+            "28|Magic|116368|0|",
+            "0|AddSkillBuff|10533228|145342|0"
         ],
         "Condition": [
             "nil",
@@ -121093,6 +121139,9 @@
             "nil",
             1063630,
             1063630,
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -121112,9 +121161,8 @@
             "0|Magic|115338|0|",
             "0|AddSkillBuff|10533319|115339|0",
             "0|AddSkillBuff|10533320|115340|0",
-            "4|Move|20|0.1|0||",
-            "8|Magic|115341|0|",
-            "8|Magic|115342|0|",
+            "15|AddSkillBuff|10533322|115341|0",
+            "15|AddSkillBuff|10533323|115342|0",
             "22|Magic|106368|2|",
             "22|Magic|106369|2|",
             "4|Cast|10533326",
@@ -121125,7 +121173,9 @@
             "23|Cast|10533331",
             "22|Magic|116339|0|",
             "0|AddSkillBuff|10533333|116353|0",
-            "0|Magic|105325|0|"
+            "0|Magic|105325|0|",
+            "5|AddSkillBuff|10533338|145315|0",
+            "24|Magic|116368|0|"
         ],
         "Condition": [
             "nil",
@@ -121142,16 +121192,17 @@
             "nil",
             "nil",
             "nil",
+            1063630,
+            "!1063630",
+            "!1063630",
+            "!1063630",
+            1063630,
+            1063630,
+            1063630,
+            1163010,
+            1163010,
             "nil",
-            1063630,
-            "!1063630",
-            "!1063630",
-            "!1063630",
-            1063630,
-            1063630,
-            1063630,
-            1163010,
-            1163010,
+            "nil",
             "nil"
         ]
     },
@@ -121175,7 +121226,8 @@
             "10|AddSkillBuff|10533416|125369|0",
             "6|Shake|4|1|-0.6|10|0.2|0",
             "6|Shake|1|0.2|-0.4|10|1|1",
-            "22|AddSkillBuff|10533419|125372|0"
+            "22|AddSkillBuff|10533419|125372|0",
+            "24|Magic|116368|0|"
         ],
         "Condition": [
             "nil",
@@ -121195,11 +121247,50 @@
             "nil",
             "nil",
             "nil",
+            "nil",
             "nil"
         ]
     },
     {
-        "Id": 105335
+        "Id": 105335,
+        "Key": [
+            "0|RecordTarget|0.2|60|1|1|1",
+            "0|Move|20|0.2|-10||",
+            "0|Effect|FxR5LifuAtk22|||||||||||",
+            "0|AddSkillBuff|10532704|105374|0",
+            "0|AddSkillBuff|10532705|105375|0",
+            "0|AddSkillBuff|10532706|105376|0",
+            "0|AddSkillBuff|10532707|105377|0",
+            "0|AddSkillBuff|10532708|105378|0",
+            "0|AddSkillBuff|10532709|105379|0",
+            "0|AddSkillBuff|10532710|105380|0",
+            "0|AddSkillBuff|10532711|105381|0",
+            "0|Cast|10533513|10533514",
+            "0|Turn|720|0.4|1",
+            "0|MoveXZ|10532716|3|0.2|-60|15|-10||",
+            "0|AddSkillBuff|10532719|115374|0",
+            "0|AddSkillBuff|10532720|115375|0",
+            "7|Cast|10533521"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil"
+        ]
     },
     {
         "Id": 105336
@@ -121213,17 +121304,19 @@
             "0|MoveXZ|10533705|2|0.15|90|10|-10||",
             "4|MoveXZ|10533706|2|0.15|-90|10|-10||",
             "0|Magic|115390|0|",
-            "0|Turn|920|0.1|1",
+            "0|Turn|920|0.15|1",
             "0|Magic|115392|0|",
             "4|AddSkillBuff|10533710|115393|0",
             "4|AddSkillBuff|10533711|115394|0",
             "4|AddSkillBuff|10533712|115395|0",
             "4|AddSkillBuff|10533713|115396|0",
-            "0|Move|12|0.1|-10||",
             "0|Magic|125307|0|",
             "0|AddSkillBuff|10533716|105373|0",
             "5|Magic|125358|0|",
-            "0|Effect|FxR5LifuMove2MA||1||||||0.4|||"
+            "0|Effect|FxR5LifuMove2MA||1||||||0.4|||",
+            "0|Move|10|0.2|||",
+            "0|RecordTarget|0.2|60|0|1|1",
+            "4|Move|15|0.1|-20||"
         ],
         "Condition": [
             "nil",
@@ -121240,8 +121333,10 @@
             "!1253580#11531001=2^11531001=3",
             "nil",
             "nil",
-            "nil",
             "!1253580",
+            "nil",
+            "nil",
+            "nil",
             "nil"
         ]
     },
@@ -121347,7 +121442,10 @@
             "2|Move|20|0.3|-20||",
             "8|Cast|10534613",
             "8|Cast|10534614",
-            "0|AddSkillBuff|10534615|115376|0"
+            "0|AddSkillBuff|10534615|115376|0",
+            "6|Shake|3|0.3|-1|6|0.2|2",
+            "6|Cast|10534621",
+            "6|Shake|1|0.1|-0.8|10|0.2|1"
         ],
         "Condition": [
             "nil",
@@ -121363,16 +121461,15 @@
             "nil",
             "!1063630",
             1063630,
+            "nil",
+            "nil",
+            "nil",
             "nil"
         ]
     },
     {
         "Id": 105347,
         "Key": [
-            "0|Effect|FxR5LifuAtk62WeaponTrail|LotusBone03|||||||0.5|||",
-            "0|Effect|FxR5LifuAtk62WeaponTrail|LotusBone09|||||||0.5|||",
-            "0|Effect|FxR5LifuAtk62WeaponTrail|LotusBone10|||||||0.5|||",
-            "2|Effect|FxR5LifuAtk62Dimian|||||||||||",
             "5|Cast|10534705",
             "0|Cast|10534706",
             "6|Cast|10534707",
@@ -121389,10 +121486,6 @@
             "nil",
             "nil",
             "nil",
-            "nil",
-            "nil",
-            "nil",
-            "nil",
             "!1063630",
             "nil",
             "nil",
@@ -121404,7 +121497,7 @@
     {
         "Id": 105348,
         "Key": [
-            "0|Effect|FxR5LifuAtk63;0;0;5;0;0;0|||||||||||",
+            "0|Effect|FxR5LifuAtk63;0;0;5;0;0;0|||||0|0|0||||",
             "0|Magic|105389|0|",
             "0|Cast|10534804",
             "0|Magic|106309|2|",
@@ -121414,7 +121507,9 @@
             "0|Magic|106367|0|",
             "5|Cast|10534810",
             "0|AddSkillBuff|10534811|125301|0",
-            "0|AddSkillBuff|10534812|125302|0"
+            "0|AddSkillBuff|10534812|125302|0",
+            "0|MoveXZ|10534813|3|0.1|90|18|-20||",
+            "2|MoveXZ|10534814|3|0.1|-90|18|-20||"
         ],
         "Condition": [
             "nil",
@@ -121426,6 +121521,8 @@
             "nil",
             1063630,
             1063630,
+            "nil",
+            "nil",
             "nil",
             "nil"
         ]
@@ -121438,8 +121535,9 @@
             "1|Cast|10534906|10534907",
             "3|Cast|10534908|10534909",
             "4|Cast|10534910|10534911",
-            "2|MoveXZ|10534912|3|0.4|90|12|-15||",
+            "2|MoveXZ|10534912|3|0.4|90|10|-20||",
             "2|Turn|720|0.4|1",
+            "2|Move|-15|0.3|10||",
             "999|Cast|10534916",
             "0|Magic|106366|2|",
             "0|Magic|106367|0|",
@@ -121451,9 +121549,13 @@
             "0|AddSkillBuff|10534960|125357|0",
             "0|Magic|106311|1|",
             "999|Cast|10534971",
-            "3|Magic|125385|0|"
+            "3|Magic|125385|0|",
+            "4|Shake|6|0.4|0|10|0.1|1",
+            "9|Shake|2|0.25|0|10|0.1|1",
+            "6|Shake|7|0.4|0|10|0.1|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -121467,6 +121569,9 @@
             "nil",
             "!1063630",
             1063630,
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -121478,15 +121583,13 @@
     {
         "Id": 105350,
         "Key": [
-            "0|Magic|106309|3|",
+            "8|Magic|106309|3|",
             "999|Cast|10535006|10535007|10535008|10535009|10535010|10535011|10535012|10535013",
-            "0|Magic|106366|2|",
-            "0|Magic|106367|0|",
-            "0|Magic|106367|0|",
-            "0|Magic|106311|1|",
-            "0|Magic|106311|1|",
-            "0|AddSkillBuff|10535033|115379|0",
-            "0|AddSkillBuff|10535034|115380|0",
+            "8|Magic|106366|2|",
+            "8|Magic|106367|0|",
+            "8|Magic|106367|0|",
+            "8|Magic|106311|1|",
+            "8|Magic|106311|1|",
             "0|Effect|FxR5LifuAtk64WeaponTrail|LotusBone03|||||||0.8|||",
             "0|Effect|FxR5LifuAtk64WeaponTrail|LotusBone04|||||||0.8|||",
             "0|Effect|FxR5LifuAtk64WeaponTrail|LotusBone05|||||||0.8|||",
@@ -121497,14 +121600,21 @@
             "0|Effect|FxR5LifuAtk64WeaponTrail|LotusBone10|||||||0.8|||",
             "0|Effect|FxR5LifuAtk65WeaponMA|WeaponCase1||||||||||",
             "0|Cast|10535046",
-            "1|Cast|10535047",
-            "2|Cast|10535048",
+            "2|Cast|10535047",
+            "6|Cast|10535048",
             "0|Cast|10535050",
-            "1|Cast|10535051",
-            "2|Cast|10535052",
+            "2|Cast|10535051",
+            "6|Cast|10535052",
             "999|Cast|10535054",
-            "0|Magic|125386|0|",
-            "0|Magic|125395|0|"
+            "5|Magic|125386|0|",
+            "0|Magic|125395|0|",
+            "3|AddSkillBuff|10535057|145307|0",
+            "3|AddSkillBuff|10535058|145308|0",
+            "6|Magic|145309|0|",
+            "0|Cast|10535060",
+            "0|AddSkillBuff|10535061|145311|0",
+            "0|AddSkillBuff|10535062|145312|0",
+            "1|Shake|3|0.6|-1|4|0.1|3"
         ],
         "Condition": [
             "nil",
@@ -121523,14 +121633,19 @@
             "nil",
             "nil",
             "nil",
+            "!1063630",
+            "!1063630",
+            "!1063630",
+            1063630,
+            1063630,
+            1063630,
             "nil",
             "nil",
-            "!1063630",
-            "!1063630",
-            "!1063630",
-            1063630,
-            1063630,
-            1063630,
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -121608,7 +121723,11 @@
             "1|Cast|10535343|10535344",
             "3|Cast|10535345",
             "20|Cast|10535346|10535347",
-            "0|Magic|116361|0|"
+            "0|Magic|116361|0|",
+            "0|Magic|116362|0|",
+            "1|Cast|10535351",
+            "0|AddSkillBuff|10533190|116366|0",
+            "4|Cast|10535353"
         ],
         "Condition": [
             "nil",
@@ -121621,33 +121740,89 @@
             "nil",
             "nil",
             "#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
             "nil",
-            "#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11531001=2^11531001=3#11635401=0",
-            "#11635401=0",
-            "#11635401=0",
-            "#11635401=0",
+            "1163690#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11531001=2^11531001=3#11635401=0",
+            "1163690#11635401=0",
+            "1163690#11635401=0",
+            "1163690#11635401=0",
             "nil",
             "nil",
+            1163690,
+            "1163690#11635401=1",
+            "1163690#11635401=1",
+            "1163690#11635401=1",
             "nil",
-            "#11635401=1",
-            "#11635401=1",
-            "#11635401=1",
+            1163690,
+            "1163690#11635401=0",
+            1163690,
             "nil"
         ]
     },
     {
-        "Id": 105354
+        "Id": 105354,
+        "Key": [
+            "0|Effect|FxR5LifuWin|||||||||||",
+            "0|Effect|FxR5LifuWin02|||||||||||",
+            "0|Effect|FxR5LifuWinMA|||||||||||",
+            "0|Magic|125384|0|",
+            "0|Effect|FxR5LifuWinTrail|LotusBone03||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone04||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone05||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone06||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone07||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone08||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone09||||||||||",
+            "0|Effect|FxR5LifuWinTrail|LotusBone10||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone03||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone04||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone05||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone06||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone07||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone08||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone09||||||||||",
+            "81|Effect|FxR5LifuWinTrail02|LotusBone10||||||||||",
+            "0|Magic|125391|0|"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil"
+        ]
     },
     {
-        "Id": 105355
+        "Id": 105355,
+        "Key": [
+            "64|Magic|145323|0|"
+        ],
+        "Condition": [
+            "nil"
+        ]
     },
     {
         "Id": 105356
@@ -258112,6 +258287,7 @@
         "Key": [
             "3|Turn|90|1.13|1",
             "49|Turn|180|0.4|1",
+            "0|Magic|912904|1|",
             "53|MoveXZ|912910|4|0.2|3|40|0|1|",
             "4|Cast|91291008",
             "30|Cast|91291009",
@@ -258142,6 +258318,7 @@
             "60|Magic|912236|0|"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -258272,7 +258449,7 @@
         "Id": 912915,
         "Key": [
             "23|Cast|91291502",
-            "40|MoveXZ|91221503|4|0.5|3|40|0|1|",
+            "40|MoveXZ|91221503|4|0.5|3|20|0|1|",
             "57|Cast|91291504",
             "33|Turn|180|1|1",
             "0|Turn|360|1|1",

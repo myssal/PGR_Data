@@ -810,6 +810,11 @@ XMovieManagerCreator = function()
         if CurrentAction then
             return CurrentAction:GetActionId()
         end
+
+        local action = WaitToPlayList[CurPlayingActionIndex]
+        if action then
+            return action:GetActionId()
+        end
         return 0
     end
 

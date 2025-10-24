@@ -51,6 +51,10 @@ function XUiPanelMainLine:SetData(firstTagId, groupIndex, chapterIndex)
 end
 
 function XUiPanelMainLine:OnEnable()
+    -- 防止多次触发OnEnable时，动画异常。
+    -- XUiNewFuben在OnBtnBottomTabClicked切换加载旧主线时触发了一次OnEnable
+    -- 随后XUiNewFuben在OnChildPanelEnable主动触发了一次OnEnable
+    if self.IsEnable then return end
     self.IsEnable = true
     local gridDic = self.CurrentChapterListControl:GetGridDic()
     for _, grid in pairs(gridDic) do

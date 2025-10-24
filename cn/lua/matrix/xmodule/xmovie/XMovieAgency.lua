@@ -352,7 +352,17 @@ function XMovieAgency:OnBookmarkMovieEnd(bookmarkData)
         return
     end
     
-    -- 进战斗
+    -- 速通关卡战斗
+    local isSpeedrun = XMVCA.XPlotExhibition:GetIsSpeedrun(stageId)
+    if isSpeedrun then
+        local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
+        local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+        local team = XDataCenter.TeamManager.GetXTeamByStageId(speedrunStageId)
+        XMVCA.XFuben:EnterFight(stageConfig, team:GetId(), nil, nil, nil, nil, true)
+        return
+    end
+    
+    -- 主线关卡战斗
     local team
     local stageConfig = XMVCA.XFuben:GetStageCfg(stageId)
     local robots = stageConfig.RobotId

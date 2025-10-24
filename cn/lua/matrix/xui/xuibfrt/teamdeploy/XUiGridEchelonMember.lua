@@ -340,7 +340,7 @@ function XUiGridEchelonMember:OnBtnClickClick()
     }
     local tempTeamdata = self.TeamTeamDataDic[self.EchelonIndex] or XDataCenter.BfrtManager.GetTeam(createTeamData)
     self.TeamTeamDataDic[self.EchelonIndex] = tempTeamdata
-
+    XDataCenter.BfrtManager.SetGirdEchelonIndexTempTeam(tempTeamdata, self.EchelonIndex)
     XDataCenter.BfrtManager.SetCurSelectTeamIdx(self.EchelonIndex)
     XDataCenter.BfrtManager.SetCurSelectFightType(self.EchelonType)
     XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, tempTeamdata, XUiBattleRoleRoomDefaultProxy)

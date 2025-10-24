@@ -22699,7 +22699,7 @@ XTable = {
         Values = Type1ValueTypestring,
     },
     XTableRaceHomeNews = {
-        Id = ValueTypestring,
+        Id = ValueTypeint,
         Desc = ValueTypestring,
     },
     XTableRacePoint = {

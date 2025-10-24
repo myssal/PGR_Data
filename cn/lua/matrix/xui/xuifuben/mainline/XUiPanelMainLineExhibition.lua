@@ -26,6 +26,7 @@ function XUiPanelMainLineExhibition:SetData(firstTagId, groupIndex, chapterIndex
 end
 
 function XUiPanelMainLineExhibition:OnEnable()
+    if self.IsEnable then return end
     self.IsEnable = true
 
     self:RefreshBgByPos()

@@ -5,6 +5,11 @@ local XUiRaceFightSettlement = XLuaUiManager.Register(XLuaUi, "UiRaceFightSettle
 
 function XUiRaceFightSettlement:OnAwake()
     self.BtnNext.CallBack = handler(self, self.OnBtnNextClick)
+    self.BtnNext.gameObject:SetActive(false)
+    -- local tr = self.Transform:Find("SafeAreaContentPane/UiRaceTransition")
+    -- if tr then
+    --     tr.gameObject:SetActive(false)
+    -- end
 end
 
 function XUiRaceFightSettlement:OnStart(roundId)
@@ -20,6 +25,12 @@ function XUiRaceFightSettlement:OnStart(roundId)
     else
         self:ShowEliminatorResult()
     end
+
+    -- 按键延迟点击
+    local timerId2 = XScheduleManager.ScheduleOnce(function()
+        self.BtnNext.gameObject:SetActive(true)
+    end, 2000)
+    self:_AddTimerId(timerId2)
 
     self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, XEnumConst.Race.SceneType.Settlement)
     self._3DCamera:LookAt(self._RoleIds and self._RoleIds[1])
@@ -177,7 +188,7 @@ end
 function XUiRaceFightSettlement:OnBtnNextClick()
     self._Control:RequestGuessSingleRoundResult(self._ResultRoundId, function()
         XLuaUiManager.Open("UiRaceFightPredictSettlement", self._ResultRoundId)
-        self:Close()
+        XLuaUiManager.Remove("UiRaceFightSettlement")
     end)
 end
 

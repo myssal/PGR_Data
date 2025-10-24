@@ -10,6 +10,7 @@ local CsXTextManager = CS.XTextManager
 local XUiBattleRoleRoomDefaultProxy = require("XUi/XUiNewRoomSingle/XUiBattleRoleRoomDefaultProxy")
 local XUiBfrtBattleRoleRoomProxy = XClass(XUiBattleRoleRoomDefaultProxy, "XUiBfrtBattleRoleRoomProxy")
 
+---@param team XTeam
 function XUiBfrtBattleRoleRoomProxy:Ctor(team, stageId)
     self.Team = team
     self.StageId = stageId
@@ -137,6 +138,14 @@ function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoD
             end,
             function() -- 确定
                 XDataCenter.BfrtManager.SetViewGroupFightTeamData(info.OtherTeamIdx, info.OtherTeamPos, 0)
+                -- 同步被替换的队伍对象，确保逻辑层数据一致
+                local replacedTeam = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam and 
+                XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(info.OtherTeamIdx)
+                if replacedTeam then
+                    replacedTeam:UpdateEntityTeamPos(info.CharId, info.OtherTeamPos, false)
+                else
+                    XLog.Warning(string.format("[BfrtProxy] 未找到被替换队伍：%s", tostring(info.OtherTeamIdx)))
+                end
                 self.Team:UpdateEntityIds(teamData)
                 XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
                 ShowNextConflict(idx + 1)

@@ -14,7 +14,6 @@ function XUiPanelMainLineRoot:Ctor(ui, root, panelData)
     self.Params = panelData.Params
     XUiHelper.InitUiClass(self, panelData.UiParent)
 
-    self:Refresh()
     self:RegisterUiEvents()
 end
 
@@ -40,7 +39,11 @@ function XUiPanelMainLineRoot:OnBtnSwitchClick()
 end
 
 function XUiPanelMainLineRoot:OnEnable()
-    self:Refresh()
+    if self.IsOpenExhibition and self.UiPanelMainLineExhibition then
+        self.UiPanelMainLineExhibition:OnEnable()
+    elseif self.UiPanelMainLine then
+        self.UiPanelMainLine:OnEnable()
+    end
 end
 
 function XUiPanelMainLineRoot:OnDisable()
@@ -70,16 +73,6 @@ function XUiPanelMainLineRoot:SetData(firstTagId, groupIndex, chapterIndex)
         self:OpenPanelMainLine()
     end
     self:RefreshBtnSwitch()
-end
-
-function XUiPanelMainLineRoot:Refresh()
-    if self.IsOpenExhibition and self.UiPanelMainLineExhibition then
-        self:OpenPanelMainLineExhibition()
-        self:RefreshBtnSwitch()
-    elseif self.UiPanelMainLine then
-        self:OpenPanelMainLine()
-        self:RefreshBtnSwitch()
-    end
 end
 
 -- 刷新切换按钮
