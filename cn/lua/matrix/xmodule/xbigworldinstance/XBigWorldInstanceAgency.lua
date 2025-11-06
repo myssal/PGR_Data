@@ -11,6 +11,11 @@ function XBigWorldInstanceAgency:OnInit()
         JumpPlay = 1, --跳跳乐
         Review = 2, --回顾副本
     }
+    
+    self.LevelType = {
+        BigWorld = 1, -- 大世界
+        Instance = 2, -- 副本
+    }
 
     self.LevelSubType = {
         StoryInst = 1, -- 剧情副本

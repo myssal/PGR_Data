@@ -27,6 +27,20 @@ end
 
 function XUiPhotographSDKPanel:AutoRegisterBtn()
     local shareSDKIds = XDataCenter.PhotographManager.GetShareSDKIds()
+    if XOverseaManager.IsOverSeaRegion() then 
+        local Application = CS.UnityEngine.Application
+        local Platform = Application.platform
+        local RuntimePlatform = CS.UnityEngine.RuntimePlatform
+        local tempOrigin = XOverseaManager.IsKRRegion() and Platform == RuntimePlatform.Android
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc or tempOrigin then
+            shareSDKIds = 
+            {
+                [1] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
+            }
+        else
+            shareSDKIds = XPhotographConfigs.OverSeaPlatform
+        end
+    end
     local shareBtnCount = #shareSDKIds
     
     -- 先全部隐藏
@@ -41,7 +55,13 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
         for i, id in ipairs(shareSDKIds) do
             local shareInfo = XPhotographConfigs.GetShareInfoByType(id)
             -- 存在数据且功能开启，需要显示入口
-            if shareInfo and XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id) then
+            local isShow = false
+            if XOverseaManager.IsOverSeaRegion()  then
+                isShow = shareInfo and (shareInfo.Id == XPhotographConfigs.OverseaSharePlatform.ShareLink or XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id) )
+            else
+                isShow = shareInfo and XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id)
+            end
+            if isShow then
                 if btnIndex <= shareBtnCount then
                     self.ShareBtnList[btnIndex].gameObject:SetActiveEx(true)
                     self.ShareBtnList[btnIndex].CallBack = function()
@@ -59,14 +79,14 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
     end
     
     self.BtnSave.CallBack = function()
-        XDataCenter.PhotographManager.SharePhotoBefore(self.RootUi.PhotoName, self.RootUi.ShareTexture, XPlatformShareConfigs.PlatformType.Local)
+        XDataCenter.PhotographManager.SharePhotoBefore(self.RootUi.PhotoName, self.RootUi.SaveTexture and self.RootUi.SaveTexture or self.RootUi.ShareTexture, XPlatformShareConfigs.PlatformType.Local)
         if self.RootUi.OnBtnSaveCallBack then
             self.RootUi:OnBtnSaveCallBack()
         end
     end
     if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
         if self.BtnExplorerPc then
-            self.BtnExplorerPc.gameObject:SetActiveEx(true)
+            self.BtnExplorerPc.gameObject:SetActiveEx(not XOverseaManager.IsOverSeaRegion())
             self.BtnExplorerPc.CallBack = function()
                 local path = CS.XTool.GetPhotoAlbumPath()
                 path = string.gsub(path, "/", "\\")
@@ -80,10 +100,11 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
         if self.BtnExplorerPc then
             self.BtnExplorerPc.gameObject:SetActiveEx(false)
         end
+        if XOverseaManager.IsOverSeaRegion() then
+            self.BtnSave.gameObject:SetActiveEx(false)
+        end
     end
-    if XOverseaManager.IsOverSeaRegion() then
-        self.BtnSave.gameObject:SetActiveEx(false)
-    end
+ 
 end
 
 function XUiPhotographSDKPanel:Show()
@@ -96,6 +117,16 @@ end
 
 --shareId,shareInfo中的Id，且与枚举XEnumConst.SharePlatform对应
 function XUiPhotographSDKPanel:OnClickShareBtn(shareId)
+    if shareId == XPhotographConfigs.OverseaSharePlatform.ShareLink then 
+        local info = XPhotographConfigs.GetShareInfoByType(shareId)
+        XTool.CopyToClipboard(info.Text)
+        XUiManager.TipMsg("HoldRegressionShareNetLinkTW")
+        if self.RootUi.OnBtnSaveCallBack then
+            self.RootUi:OnBtnSaveCallBack()
+        end
+        return
+    end
+
     local result = self:EmitSignal("ShareBtnClicked", shareId, self)
     if result and result.isAwait then
         RunAsyn(function()
@@ -118,7 +149,7 @@ function XUiPhotographSDKPanel:Share(shareId)
     if DBEUG_SHOW_CUSTOM_SHARE_TEXT then
         XLog.Warning(customText or "其他系统测试分享")
     end
-    XDataCenter.PhotographManager.SharePhoto(self.RootUi.PhotoName, self.RootUi.ShareTexture, shareId, customText)
+    XDataCenter.PhotographManager.SharePhoto(self.RootUi.PhotoName, self.RootUi.SaveTexture and self.RootUi.SaveTexture or self.RootUi.ShareTexture, shareId, customText)
 end
 
 return XUiPhotographSDKPanel

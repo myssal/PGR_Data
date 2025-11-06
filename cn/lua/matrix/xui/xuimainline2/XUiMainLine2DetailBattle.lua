@@ -71,7 +71,7 @@ function XUiMainLine2DetailBattle:OnBtnEnterClick()
     local speedStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
     local team
     if speedStageId then
-        team = XDataCenter.TeamManager.GetXTeamByStageIdEx(speedStageId)
+        team = XDataCenter.TeamManager.GetXTeamSpeedrun(stageId)
     else
         team = XDataCenter.TeamManager.GetXTeamByStageIdEx(stageId)
     end

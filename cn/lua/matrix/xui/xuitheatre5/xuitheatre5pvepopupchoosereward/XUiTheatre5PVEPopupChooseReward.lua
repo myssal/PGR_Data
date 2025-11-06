@@ -21,8 +21,8 @@ function XUiTheatre5PVEPopupChooseReward:OnStart(chooseRewardType, chapterBattle
 end
 
 function XUiTheatre5PVEPopupChooseReward:AddUIListener()
-    self:RegisterClickEvent(self.BtnCharacterDetail, self.OnClickCharacterDetail, true)
-    self:RegisterClickEvent(self.BtnRefresh, self.OnClickRefresh, true)
+    self:RegisterClickEvent(self.BtnCharacterDetail, self.OnClickCharacterDetail, true, true)
+    self:RegisterClickEvent(self.BtnRefresh, self.OnClickRefresh, true, true)
 end
 
 function XUiTheatre5PVEPopupChooseReward:AddEventListener()

@@ -2,7 +2,6 @@
 local XUiLottoStoryLineMode = XClass(XUiNode, "XUiLottoStoryLineMode")
 
 function XUiLottoStoryLineMode:OnStart()
-    self:InitStageList()
 end
 
 function XUiLottoStoryLineMode:InitStageList()

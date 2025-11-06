@@ -43,9 +43,7 @@ function XUiBigWorldTaskObtainDrama:InitCb()
             self:Close()
         end
     end
-    self.BtnClose.CallBack = function()
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 function XUiBigWorldTaskObtainDrama:InitView()

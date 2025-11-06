@@ -27,11 +27,13 @@ XPhotographConfigs.PreviewOpenType=
     SceneSetting=1, --场景切换设置界面里打开
     Others=2 --其他地方
 }
-
-XPhotographConfigs.OverSeaPlatform=
+XPhotographConfigs.OverseaSharePlatform =
 {
-    [1] = 1 --目前就推特
+    Twitter = 1, --推特
+    Facebook = 2,
+    ShareLink = 18--链接分享
 }
+XPhotographConfigs.OverSeaPlatform = {}
 
 --- 需要弹窗提示权限获取的一级渠道
 XPhotographConfigs.NeedShowPermissionRequestDialogChannelId = {
@@ -47,6 +49,33 @@ local SceneTemplates = {}
 local ShareInfo = {}
 
 function XPhotographConfigs.Init()
+    if XOverseaManager.IsJPRegion() then
+        XPhotographConfigs.OverSeaPlatform =
+        {
+            [1] = XPhotographConfigs.OverseaSharePlatform.Twitter,
+            [2] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
+        }
+    elseif XOverseaManager.IsTWRegion() then
+        XPhotographConfigs.OverSeaPlatform =
+        {
+            [1] = XPhotographConfigs.OverseaSharePlatform.Facebook,
+            [2] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
+        }
+    elseif XOverseaManager.IsENRegion() then
+        XPhotographConfigs.OverSeaPlatform =
+        {
+            [1] = XPhotographConfigs.OverseaSharePlatform.Twitter,
+            [2] = XPhotographConfigs.OverseaSharePlatform.Facebook,
+            [3] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
+        }
+    elseif XOverseaManager.IsKRRegion() then
+        XPhotographConfigs.OverSeaPlatform =
+        {
+            [1] = XPhotographConfigs.OverseaSharePlatform.Twitter,
+            [2] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
+        }
+    end
+
     SceneTemplates = XTableManager.ReadByIntKey(TABLE_BACK_GROUND, XTable.XTableBackground, "Id")
     ShareInfo = XTableManager.ReadByIntKey(TABLE_PHOTOMODE_SHARE_INFO, XTable.XTablePhotoModeShareInfo, "Id")
 end

@@ -92,6 +92,11 @@ end
 
 function XUiGridMainLineExhibitionChapter:OnButtonClick()
     if self.UiPanelExhibition:IsDragOperation() then return end
+    
+    -- 播放音效
+    if self.AudioObject then
+        self.AudioObject:PlayByKeyName("BtnClick")
+    end
 
     -- 上锁提示
     local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
@@ -149,14 +154,14 @@ function XUiGridMainLineExhibitionChapter:RefreshNoChangeUi()
         self:RefreshTitle(name, chapterCfg.SubTitleName)
         -- 背景图
         local iconBg = viewModel:GetIcon()
-        self:RefreshRImgBg(iconBg)
+        self:RefreshRImgBg(chapterCfg, iconBg)
     elseif chapterCfg.ExhibitionFubenType == XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.CHALLENGE then
         -- 多维演绎
         -- 标题
         self:RefreshTitle(chapterCfg.TitleName, chapterCfg.SubTitleName)
         -- 背景图
         local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
-        self:RefreshRImgBg(challengeBannerConfig.Icon)
+        self:RefreshRImgBg(chapterCfg, challengeBannerConfig.Icon)
         -- 隐藏成就
         self:HidePanelAchievement()
         -- 隐藏页签
@@ -203,6 +208,7 @@ function XUiGridMainLineExhibitionChapter:SwitchDetailUi()
     if self:IsLoaded() then
         self.UiBrief.gameObject:SetActiveEx(false)
         self.UiDetail.gameObject:SetActiveEx(true)
+        XUiHelper.PlayUiNodeAnimation(self.Transform, "QieHuan")
     end
 end
 
@@ -211,6 +217,7 @@ function XUiGridMainLineExhibitionChapter:SwitchBriefUi()
     if self:IsLoaded() then
         self.UiBrief.gameObject:SetActiveEx(true)
         self.UiDetail.gameObject:SetActiveEx(false)
+        XUiHelper.PlayUiNodeAnimation(self.Transform, "QieHuan")
     end
 end
 
@@ -230,9 +237,18 @@ function XUiGridMainLineExhibitionChapter:RefreshTitle(titleName, subTitleName)
 end
 
 -- 刷新背景图
-function XUiGridMainLineExhibitionChapter:RefreshRImgBg(icon)
-    self.UiBrief:GetObject("RImgBg"):SetRawImage(icon)
-    self.UiDetail:GetObject("RImgBg"):SetRawImage(icon)
+function XUiGridMainLineExhibitionChapter:RefreshRImgBg(chapterCfg, originBgPath)
+    local bgPath = string.IsNilOrEmpty(chapterCfg.BgPath) and originBgPath or chapterCfg.BgPath
+    local rImgBgBrief = self.UiBrief:GetObject("RImgBg")
+    rImgBgBrief:SetRawImage(bgPath)
+    local rImgBgDetail = self.UiDetail:GetObject("RImgBg")
+    rImgBgDetail:SetRawImage(bgPath)
+
+    if chapterCfg.BgPosX ~= 0 and chapterCfg.BgPosY ~= 0 then
+        local pos = XLuaVector3.New(chapterCfg.BgPosX / 1000, chapterCfg.BgPosY / 1000, 0)
+        rImgBgBrief.transform.anchoredPosition = pos
+        rImgBgDetail.transform.anchoredPosition = pos
+    end
 end
 
 function XUiGridMainLineExhibitionChapter:RefreshLockByViewModel(viewModel)
@@ -405,7 +421,7 @@ function XUiGridMainLineExhibitionChapter:IsConditionShow()
     local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
     local conditionId = chapterCfg.ShowConditionId
     if XTool.IsNumberValidEx(conditionId) then
-        local isShow, decs = XConditionManager.CheckCondition(conditionId)
+        local isShow, desc = XConditionManager.CheckCondition(conditionId)
         return isShow
     end
     return true

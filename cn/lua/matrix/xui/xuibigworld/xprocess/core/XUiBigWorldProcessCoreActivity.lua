@@ -87,9 +87,9 @@ end
 
 function XUiBigWorldProcessCoreActivity:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnHelp.CallBack = Handler(self, self.OnBtnHelpClick)
-    self.BtnGo.CallBack = Handler(self, self.OnBtnGoClick)
-    self.BtnOngoing.CallBack = Handler(self, self.OnBtnOngoingClick)
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
+    self.BtnOngoing:AddEventListener(handler(self, self.OnBtnOngoingClick))
 end
 
 function XUiBigWorldProcessCoreActivity:_RegisterListeners()

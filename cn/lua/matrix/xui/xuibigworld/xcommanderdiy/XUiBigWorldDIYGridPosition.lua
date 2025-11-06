@@ -74,7 +74,9 @@ function XUiBigWorldDIYGridPosition:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
     self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self.GridEnable:PlayTimelineAnimation()
+        if self:IsNodeShow() then
+            self.GridEnable:PlayTimelineAnimation()
+        end
         self:StopAnimationTimer()
     end, 80 * index)
 end

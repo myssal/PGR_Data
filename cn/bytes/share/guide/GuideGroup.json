@@ -42,6 +42,21 @@
         ]
     },
     {
+        "Id": 100004,
+        "Priority": 4,
+        "Ignore": 0,
+        "Desc": "动态漫",
+        "GuideType": 2,
+        "CompleteId": 100004,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 1,
+        "ConditionId": [
+            850000,
+            863058
+        ]
+    },
+    {
         "Id": 50000,
         "Priority": 50000,
         "Ignore": 0,
@@ -52,7 +67,8 @@
         "RewardId": 0,
         "GroupId": 50000,
         "ConditionId": [
-            850000
+            850000,
+            863057
         ]
     },
     {
@@ -104,11 +120,12 @@
         "Desc": "完成1-3 领取奖励丽芙",
         "GuideType": 1,
         "CompleteId": 50201,
-        "ActiveUi": "UiMain",
+        "ActiveUi": "UiFubenMainLineChapter",
+        "CheckNodeActive": "FuBenNor01(Clone)",
         "RewardId": 0,
         "GroupId": 50201,
         "ConditionId": [
-            850201
+            70102
         ]
     },
     {
@@ -132,11 +149,12 @@
         "Desc": "完成1-3 引导上阵丽芙",
         "GuideType": 1,
         "CompleteId": 50203,
-        "ActiveUi": "UiMain",
+        "ActiveUi": "UiBattleRoleRoom",
         "RewardId": 0,
         "GroupId": 50201,
         "ConditionId": [
-            850203
+            70102,
+            863074
         ]
     },
     {
@@ -150,22 +168,22 @@
         "RewardId": 0,
         "GroupId": 50301,
         "ConditionId": [
-            850301
+            70103
         ]
     },
     {
         "Id": 50610,
         "Priority": 50610,
         "Ignore": 0,
-        "Desc": "完成1-4 引导成员进化",
+        "Desc": "完成1-11 引导成员进化",
         "GuideType": 1,
         "CompleteId": 50610,
-        "ActiveUi": "UiCharacterSystemV2P6",
-        "CheckNodeActive": "BtnEvolution",
+        "ActiveUi": "UiMain",
         "RewardId": 0,
         "GroupId": 50610,
         "ConditionId": [
-            850301
+            84100111,
+            863057
         ]
     },
     {
@@ -180,36 +198,162 @@
         "RewardId": 0,
         "GroupId": 50611,
         "ConditionId": [
-            850301
+            70103,
+            863057
+        ]
+    },
+    {
+        "Id": 50612,
+        "Priority": 50612,
+        "Ignore": 0,
+        "Desc": "完成1-11 红莲引导回主线",
+        "GuideType": 1,
+        "CompleteId": 50612,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 50612,
+        "ConditionId": [
+            863065,
+            863066
+        ]
+    },
+    {
+        "Id": 50613,
+        "Priority": 50613,
+        "Ignore": 0,
+        "Desc": "完成1-12 引导疾雷手册 领取雷毛",
+        "GuideType": 1,
+        "CompleteId": 50613,
+        "ActiveUi": "UiMain",
+        "CheckNodeActive": "GridBtnActivity13",
+        "RewardId": 0,
+        "GroupId": 50613,
+        "ConditionId": [
+            84100112,
+            863060
+        ]
+    },
+    {
+        "Id": 50614,
+        "Priority": 50614,
+        "Ignore": 0,
+        "Desc": "完成1-12 引导疾雷手册 雷毛教学",
+        "GuideType": 1,
+        "CompleteId": 50614,
+        "ActiveUi": "UiWheelchairManualMain",
+        "RewardId": 0,
+        "GroupId": 50614,
+        "ConditionId": [
+            84100112,
+            863067
+        ]
+    },
+    {
+        "Id": 50615,
+        "Priority": 50615,
+        "Ignore": 0,
+        "Desc": "完成1-12 引导疾雷手册 关注21号",
+        "GuideType": 1,
+        "CompleteId": 50615,
+        "ActiveUi": "UiWheelchairManualMain",
+        "RewardId": 0,
+        "GroupId": 50615,
+        "ConditionId": [
+            84100112,
+            863096
+        ]
+    },
+    {
+        "Id": 50616,
+        "Priority": 50616,
+        "Ignore": 0,
+        "Desc": "Lv11 从任务界面 领取21号",
+        "GuideType": 1,
+        "CompleteId": 50616,
+        "ActiveUi": "UiFubenMainLineChapter|UiMain",
+        "RewardId": 0,
+        "GroupId": 50616,
+        "ConditionId": [
+            84100904,
+            770417,
+            863106
+        ]
+    },
+    {
+        "Id": 50617,
+        "Priority": 50617,
+        "Ignore": 0,
+        "Desc": "Lv11 疾雷手册 21号进教学",
+        "GuideType": 1,
+        "CompleteId": 50617,
+        "ActiveUi": "UiWheelchairManualMain",
+        "RewardId": 0,
+        "GroupId": 50617,
+        "ConditionId": [
+            84100904,
+            863090,
+            863093
+        ]
+    },
+    {
+        "Id": 50618,
+        "Priority": 50618,
+        "Ignore": 0,
+        "Desc": "Lv11 疾雷手册 关注后续",
+        "GuideType": 1,
+        "CompleteId": 50618,
+        "ActiveUi": "UiWheelchairManualMain",
+        "RewardId": 0,
+        "GroupId": 50618,
+        "ConditionId": [
+            84100904,
+            863091
+        ]
+    },
+    {
+        "Id": 50619,
+        "Priority": 50619,
+        "Ignore": 0,
+        "Desc": "Lv11 疾雷手册 关注剩余任务",
+        "GuideType": 1,
+        "CompleteId": 50619,
+        "ActiveUi": "UiMain",
+        "CheckNodeActive": "GridBtnActivity13",
+        "RewardId": 0,
+        "GroupId": 50619,
+        "ConditionId": [
+            770424,
+            863092
         ]
     },
     {
         "Id": 50401,
         "Priority": 50401,
         "Ignore": 0,
-        "Desc": "完成1-6 引导新手目标",
+        "Desc": "Lv11 引导新手目标",
         "GuideType": 1,
         "CompleteId": 50401,
-        "ActiveUi": "UiMain",
-        "CheckNodeActive": "GridBtnActivity14",
+        "ActiveUi": "UiTask",
         "RewardId": 0,
         "GroupId": 50401,
         "ConditionId": [
-            850401
+            770417
         ]
     },
     {
         "Id": 50501,
-        "Priority": 50402,
+        "Priority": 51602,
         "Ignore": 0,
-        "Desc": "完成1-6 引导意识装备（原为1-8引导晋升）",
+        "Desc": "Lv24 引导意识装备",
         "GuideType": 1,
         "CompleteId": 50501,
         "ActiveUi": "UiMain",
         "RewardId": 0,
-        "GroupId": 50401,
+        "GroupId": 50501,
         "ConditionId": [
-            850401
+            863061,
+            863071,
+            349
         ]
     },
     {
@@ -269,10 +413,26 @@
         ]
     },
     {
+        "Id": 50804,
+        "Priority": 50804,
+        "Ignore": 0,
+        "Desc": "完成1-8 七实引导回主线",
+        "GuideType": 1,
+        "CompleteId": 50804,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 50804,
+        "ConditionId": [
+            863069,
+            863068,
+            863057
+        ]
+    },
+    {
         "Id": 50901,
         "Priority": 50901,
-        "Ignore": 0,
-        "Desc": "完成1-8 引导成员介绍（原为2-1再次引导主线）",
+        "Ignore": 1,
+        "Desc": "（废弃）完成1-8 引导成员介绍",
         "GuideType": 1,
         "CompleteId": 50901,
         "ActiveUi": "UiMain",
@@ -286,15 +446,14 @@
         "Id": 50902,
         "Priority": 50902,
         "Ignore": 0,
-        "Desc": "完成1-8 引导检定研发",
+        "Desc": "完成1-11 引导检定研发",
         "GuideType": 1,
         "CompleteId": 50902,
         "ActiveUi": "UiNewDrawMain",
         "RewardId": 0,
         "GroupId": 50902,
         "ConditionId": [
-            770402,
-            862742
+            84100111
         ]
     },
     {
@@ -304,7 +463,7 @@
         "Desc": "完成1-8 引导赛利卡补习班",
         "GuideType": 1,
         "CompleteId": 51101,
-        "ActiveUi": "UiMain|UiFubenPractice",
+        "ActiveUi": "UiFubenPractice",
         "RewardId": 0,
         "GroupId": 51101,
         "ConditionId": [
@@ -312,24 +471,39 @@
         ]
     },
     {
+        "Id": 50601,
+        "Priority": 50601,
+        "Ignore": 0,
+        "Desc": "完成1-6 发放紫刀",
+        "GuideType": 1,
+        "CompleteId": 50601,
+        "ActiveUi": "UiMain",
+        "RewardId": 705031,
+        "GroupId": 50601,
+        "ConditionId": [
+            70104,
+            863062
+        ]
+    },
+    {
         "Id": 50602,
         "Priority": 50602,
         "Ignore": 0,
-        "Desc": "完成1-9 装备紫刀",
+        "Desc": "完成1-6 装备紫刀",
         "GuideType": 1,
         "CompleteId": 50602,
-        "ActiveUi": "UiMain",
+        "ActiveUi": "UiCharacterSystemV2P6",
         "RewardId": 0,
         "GroupId": 50602,
         "ConditionId": [
-            850602
+            70104
         ]
     },
     {
         "Id": 50603,
         "Priority": 50603,
-        "Ignore": 0,
-        "Desc": "完成1-9 升级紫刀",
+        "Ignore": 1,
+        "Desc": "（废弃）完成1-9 升级紫刀",
         "GuideType": 1,
         "CompleteId": 50603,
         "ActiveUi": "UiEquipReplaceV2P6|UiMain",
@@ -340,45 +514,147 @@
         ]
     },
     {
+        "Id": 50604,
+        "Priority": 50604,
+        "Ignore": 0,
+        "Desc": "完成1-6 测试武器进主线",
+        "GuideType": 1,
+        "CompleteId": 50604,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 50604,
+        "ConditionId": [
+            863063,
+            863064
+        ]
+    },
+    {
         "Id": 50931,
         "Priority": 50931,
         "Ignore": 0,
-        "Desc": "完成2-2 引导日常副本（原为单个日常副本）",
+        "Desc": "Lv16 引导日常副本（原为单个日常副本）",
         "GuideType": 1,
         "CompleteId": 50931,
         "ActiveUi": "UiMain",
         "RewardId": 0,
         "GroupId": 50931,
         "ConditionId": [
-            772800
+            84100112,
+            770422
+        ]
+    },
+    {
+        "Id": 50932,
+        "Priority": 50932,
+        "Ignore": 0,
+        "Desc": "完成1-12 引导意识购买",
+        "GuideType": 1,
+        "CompleteId": 50932,
+        "ActiveUi": "UiActivityBriefShop",
+        "CheckNodeActive": "BtnTong1422",
+        "RewardId": 0,
+        "GroupId": 50932,
+        "ConditionId": [
+            863070,
+            863060,
+            770422
         ]
     },
     {
         "Id": 53401,
         "Priority": 53401,
         "Ignore": 0,
-        "Desc": "完成2-2 引导装备目标推荐",
+        "Desc": "Lv16 引导装备目标推荐",
         "GuideType": 1,
         "CompleteId": 53401,
         "ActiveUi": "UiMain",
         "RewardId": 0,
         "GroupId": 53401,
         "ConditionId": [
-            770403
+            84100112,
+            349,
+            770422
         ]
     },
     {
         "Id": 53402,
         "Priority": 53402,
         "Ignore": 0,
-        "Desc": "完成2-2 引导使用装备目标",
+        "Desc": "完成1-12 引导使用装备目标",
         "GuideType": 1,
         "CompleteId": 53402,
         "ActiveUi": "UiEquipGuideDetail",
-        "RewardId": 0,
+        "RewardId": 705032,
         "GroupId": 53402,
         "ConditionId": [
-            770404
+            84100112,
+            770422
+        ]
+    },
+    {
+        "Id": 80901,
+        "Priority": 80901,
+        "Ignore": 0,
+        "Desc": "完成1-12 引导新版剧情界面",
+        "GuideType": 1,
+        "CompleteId": 80901,
+        "ActiveUi": "UiNewFuben",
+        "CheckNodeActive": "PanelMainLineRoot",
+        "RewardId": 0,
+        "GroupId": 80901,
+        "ConditionId": [
+            84100112
+        ]
+    },
+    {
+        "Id": 80902,
+        "Priority": 80902,
+        "Ignore": 0,
+        "Desc": "完成1-12 新玩家剧情指引（第九章）",
+        "GuideType": 1,
+        "CompleteId": 80902,
+        "ActiveUi": "UiNewFuben",
+        "CheckNodeActive": "PanelMainLineRoot",
+        "RewardId": 0,
+        "GroupId": 80902,
+        "ConditionId": [
+            1008150,
+            863071,
+            84100112,
+            863075
+        ]
+    },
+    {
+        "Id": 80903,
+        "Priority": 80903,
+        "Ignore": 0,
+        "Desc": "完成1-12 新玩家剧情指引（最新章）",
+        "GuideType": 1,
+        "CompleteId": 80903,
+        "ActiveUi": "UiNewFuben",
+        "CheckNodeActive": "PanelMainLineRoot",
+        "RewardId": 0,
+        "GroupId": 80903,
+        "ConditionId": [
+            1008151,
+            863071,
+            84100112,
+            863076
+        ]
+    },
+    {
+        "Id": 50402,
+        "Priority": 50402,
+        "Ignore": 0,
+        "Desc": "Lv26 引导每日任务",
+        "GuideType": 1,
+        "CompleteId": 50402,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 50402,
+        "ConditionId": [
+            770425,
+            863071
         ]
     },
     {
@@ -399,56 +675,56 @@
         "Id": 53201,
         "Priority": 53201,
         "Ignore": 0,
-        "Desc": "完成2-4 引导考级系统",
+        "Desc": "Lv22 引导考级系统",
         "GuideType": 1,
         "CompleteId": 53201,
         "ActiveUi": "UiMain",
         "RewardId": 0,
         "GroupId": 53201,
         "ConditionId": [
-            774500
+            770424
         ]
     },
     {
         "Id": 53202,
         "Priority": 53202,
         "Ignore": 0,
-        "Desc": "完成2-4 引导课程界面",
+        "Desc": "Lv22 引导课程界面",
         "GuideType": 1,
         "CompleteId": 53202,
         "ActiveUi": "UiCourseTutorial",
         "RewardId": 0,
         "GroupId": 53201,
         "ConditionId": [
-            774500
+            770424
         ]
     },
     {
         "Id": 53203,
         "Priority": 53203,
         "Ignore": 0,
-        "Desc": "完成2-4 引导执照界面",
+        "Desc": "Lv22 引导执照界面",
         "GuideType": 1,
         "CompleteId": 53203,
         "ActiveUi": "UiCourseCombatlicense",
         "RewardId": 0,
         "GroupId": 53203,
         "ConditionId": [
-            774500
+            770424
         ]
     },
     {
         "Id": 53204,
         "Priority": 53204,
         "Ignore": 0,
-        "Desc": "完成2-4 引导执照关卡界面",
+        "Desc": "Lv22 引导执照关卡界面",
         "GuideType": 1,
         "CompleteId": 53204,
         "ActiveUi": "UiCourseManagement",
         "RewardId": 0,
         "GroupId": 53204,
         "ConditionId": [
-            774500
+            770424
         ]
     },
     {
@@ -511,21 +787,21 @@
         "Id": 51601,
         "Priority": 51601,
         "Ignore": 0,
-        "Desc": "lv15或2-11 了解意识营救战",
+        "Desc": "Lv24 了解意识营救战",
         "GuideType": 1,
         "CompleteId": 51601,
         "ActiveUi": "UiMain",
         "RewardId": 0,
         "GroupId": 51601,
         "ConditionId": [
-            862859
+            863061
         ]
     },
     {
         "Id": 51701,
         "Priority": 51701,
-        "Ignore": 0,
-        "Desc": "完成2-12 引导隐藏剧情",
+        "Ignore": 1,
+        "Desc": "（屏蔽）完成2-12 引导隐藏剧情",
         "GuideType": 1,
         "CompleteId": 51701,
         "ActiveUi": "UiMain",
@@ -539,7 +815,7 @@
         "Id": 52602,
         "Priority": 52602,
         "Ignore": 0,
-        "Desc": "完成2-12 引导维系者行动",
+        "Desc": "Lv19 引导维系者行动",
         "GuideType": 1,
         "CompleteId": 52602,
         "ActiveUi": "UiTask",
@@ -547,21 +823,52 @@
         "RewardId": 0,
         "GroupId": 52602,
         "ConditionId": [
-            852601
+            770408
         ]
     },
     {
         "Id": 53005,
         "Priority": 53005,
         "Ignore": 0,
-        "Desc": "Lv20 引导师徒系统",
+        "Desc": "Lv20 引导师徒系统（师徒系统内）",
         "GuideType": 1,
         "CompleteId": 53005,
-        "ActiveUi": "UiMain",
+        "ActiveUi": "UiMentorMain",
         "RewardId": 0,
         "GroupId": 53005,
         "ConditionId": [
-            870003
+            870003,
+            863078
+        ]
+    },
+    {
+        "Id": 53015,
+        "Priority": 53015,
+        "Ignore": 0,
+        "Desc": "Lv28 引导师徒系统(主界面)",
+        "GuideType": 1,
+        "CompleteId": 53015,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 53015,
+        "ConditionId": [
+            863077,
+            770426
+        ]
+    },
+    {
+        "Id": 63442,
+        "Priority": 63442,
+        "Ignore": 0,
+        "Desc": "Lv30 引导莉莉丝卡池转移入口",
+        "GuideType": 1,
+        "CompleteId": 63442,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 63442,
+        "ConditionId": [
+            863073,
+            1050098
         ]
     },
     {
@@ -766,6 +1073,20 @@
         "ConditionId": [
             862112,
             10436000
+        ]
+    },
+    {
+        "Id": 60613,
+        "Priority": 60613,
+        "Ignore": 0,
+        "Desc": "Lv31 引导玩家编队",
+        "GuideType": 1,
+        "CompleteId": 60613,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 60613,
+        "ConditionId": [
+            863107
         ]
     },
     {
@@ -7734,7 +8055,7 @@
     },
     {
         "Id": 63301,
-        "Priority": 63301,
+        "Priority": 50803,
         "Ignore": 0,
         "Desc": "v3.0 引导S任选礼包打开",
         "GuideType": 1,
@@ -8325,8 +8646,8 @@
     {
         "Id": 63441,
         "Priority": 63441,
-        "Ignore": 0,
-        "Desc": "v3.1 引导莉莉丝卡池限时研发",
+        "Ignore": 1,
+        "Desc": "v3.1 引导莉莉丝卡池限时研发(已屏蔽)",
         "GuideType": 1,
         "CompleteId": 63441,
         "ActiveUi": "UiGachaCanLiverMain",
@@ -8334,20 +8655,6 @@
         "GroupId": 63441,
         "ConditionId": [
             1050104
-        ]
-    },
-    {
-        "Id": 63442,
-        "Priority": 63442,
-        "Ignore": 0,
-        "Desc": "v3.1 引导莉莉丝卡池转移入口",
-        "GuideType": 1,
-        "CompleteId": 63442,
-        "ActiveUi": "UiMain",
-        "RewardId": 0,
-        "GroupId": 63442,
-        "ConditionId": [
-            1050098
         ]
     },
     {
@@ -8992,7 +9299,7 @@
     {
         "Id": 63700,
         "Priority": 63700,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 首次入关",
         "GuideType": 1,
         "CompleteId": 63700,
@@ -9007,7 +9314,7 @@
     {
         "Id": 63701,
         "Priority": 63701,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第1关",
         "GuideType": 1,
         "CompleteId": 63701,
@@ -9023,7 +9330,7 @@
     {
         "Id": 63702,
         "Priority": 63702,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第3关",
         "GuideType": 1,
         "CompleteId": 63702,
@@ -9039,7 +9346,7 @@
     {
         "Id": 63703,
         "Priority": 63703,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第6关",
         "GuideType": 1,
         "CompleteId": 63703,
@@ -9055,7 +9362,7 @@
     {
         "Id": 63704,
         "Priority": 63704,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第8关",
         "GuideType": 1,
         "CompleteId": 63704,
@@ -9071,7 +9378,7 @@
     {
         "Id": 63705,
         "Priority": 63705,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第11关",
         "GuideType": 1,
         "CompleteId": 63705,
@@ -9087,7 +9394,7 @@
     {
         "Id": 63706,
         "Priority": 63706,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第12关",
         "GuideType": 1,
         "CompleteId": 63706,
@@ -9103,7 +9410,7 @@
     {
         "Id": 63707,
         "Priority": 63707,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第15关",
         "GuideType": 1,
         "CompleteId": 63707,
@@ -9119,7 +9426,7 @@
     {
         "Id": 63708,
         "Priority": 63708,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第5关",
         "GuideType": 1,
         "CompleteId": 63708,
@@ -9135,7 +9442,7 @@
     {
         "Id": 63709,
         "Priority": 63709,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第10关",
         "GuideType": 1,
         "CompleteId": 63709,
@@ -9151,7 +9458,7 @@
     {
         "Id": 63710,
         "Priority": 63710,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.4 引导薇拉2048 2.0 第11关  累计数字",
         "GuideType": 1,
         "CompleteId": 63710,
@@ -9479,7 +9786,8 @@
         "ConditionId": [
             862112,
             774800,
-            863034
+            863034,
+            863103
         ]
     },
     {
@@ -9646,7 +9954,8 @@
         "ConditionId": [
             862112,
             774800,
-            863035
+            863035,
+            863103
         ]
     },
     {
@@ -9664,6 +9973,55 @@
             774800,
             863034,
             1050238
+        ]
+    },
+    {
+        "Id": 63923,
+        "Priority": 63923,
+        "Ignore": 0,
+        "Desc": "v4.0 引导肉鸽5 饰品选择",
+        "GuideType": 1,
+        "CompleteId": 63923,
+        "ActiveUi": "UiTheatre5PVEPopupChooseReward",
+        "CheckNodeActive": "BtnRefresh",
+        "RewardId": 0,
+        "GroupId": 63923,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 63924,
+        "Priority": 63924,
+        "Ignore": 0,
+        "Desc": "v4.0 引导肉鸽5 角色升级",
+        "GuideType": 1,
+        "CompleteId": 63924,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "RewardId": 0,
+        "GroupId": 63924,
+        "ConditionId": [
+            862112,
+            774800,
+            863101
+        ]
+    },
+    {
+        "Id": 63925,
+        "Priority": 63925,
+        "Ignore": 0,
+        "Desc": "v4.0 引导肉鸽5 商店购买角色升级",
+        "GuideType": 1,
+        "CompleteId": 63925,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "RewardId": 0,
+        "GroupId": 63925,
+        "ConditionId": [
+            862112,
+            774800,
+            863102,
+            863103
         ]
     },
     {
@@ -10115,7 +10473,7 @@
         "Desc": "v3.8 引导维罗妮卡大秘境 图鉴加成",
         "GuideType": 1,
         "CompleteId": 64114,
-        "ActiveUi": "UiRiftChooseChapter",
+        "ActiveUi": "UiRiftFightLayerSelect",
         "RewardId": 0,
         "GroupId": 64114,
         "ConditionId": [
@@ -10201,6 +10559,167 @@
             862112,
             774800,
             863056
+        ]
+    },
+    {
+        "Id": 64200,
+        "Priority": 64200,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 主界面",
+        "GuideType": 1,
+        "CompleteId": 64200,
+        "ActiveUi": "UiGame2048Main",
+        "RewardId": 0,
+        "GroupId": 64200,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64201,
+        "Priority": 64201,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第1关",
+        "GuideType": 1,
+        "CompleteId": 64201,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64201,
+        "ConditionId": [
+            862112,
+            774800,
+            863097
+        ]
+    },
+    {
+        "Id": 64202,
+        "Priority": 64202,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第3关",
+        "GuideType": 1,
+        "CompleteId": 64202,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64202,
+        "ConditionId": [
+            862112,
+            774800,
+            863098
+        ]
+    },
+    {
+        "Id": 64203,
+        "Priority": 64203,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第5关",
+        "GuideType": 1,
+        "CompleteId": 64203,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64203,
+        "ConditionId": [
+            862112,
+            774800,
+            863108
+        ]
+    },
+    {
+        "Id": 64204,
+        "Priority": 64204,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第6关",
+        "GuideType": 1,
+        "CompleteId": 64204,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64204,
+        "ConditionId": [
+            862112,
+            774800,
+            863099
+        ]
+    },
+    {
+        "Id": 64205,
+        "Priority": 64205,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第10关",
+        "GuideType": 1,
+        "CompleteId": 64205,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64205,
+        "ConditionId": [
+            862112,
+            774800,
+            863109
+        ]
+    },
+    {
+        "Id": 64206,
+        "Priority": 64206,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第11关",
+        "GuideType": 1,
+        "CompleteId": 64206,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64206,
+        "ConditionId": [
+            862112,
+            774800,
+            863100
+        ]
+    },
+    {
+        "Id": 64207,
+        "Priority": 64207,
+        "Ignore": 0,
+        "Desc": "v4.0 引导丽芙2048 3.0 第15关",
+        "GuideType": 1,
+        "CompleteId": 64207,
+        "ActiveUi": "UiGame2048Game",
+        "RewardId": 0,
+        "GroupId": 64207,
+        "ConditionId": [
+            862112,
+            774800,
+            863110
+        ]
+    },
+    {
+        "Id": 64211,
+        "Priority": 64211,
+        "Ignore": 0,
+        "Desc": "v4.0 引导跑马-赛程内",
+        "GuideType": 1,
+        "CompleteId": 64211,
+        "ActiveUi": "UiRaceMain",
+        "RewardId": 0,
+        "GroupId": 64211,
+        "ConditionId": [
+            862112,
+            774800,
+            863112,
+            863113
+        ]
+    },
+    {
+        "Id": 64212,
+        "Priority": 64212,
+        "Ignore": 0,
+        "Desc": "v4.0 引导跑马-赛程结束",
+        "GuideType": 1,
+        "CompleteId": 64212,
+        "ActiveUi": "UiRaceMain",
+        "RewardId": 0,
+        "GroupId": 64212,
+        "ConditionId": [
+            862112,
+            774800,
+            863115,
+            863114
         ]
     }
 ]

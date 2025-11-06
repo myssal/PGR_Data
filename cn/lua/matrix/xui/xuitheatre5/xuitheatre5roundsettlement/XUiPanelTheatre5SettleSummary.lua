@@ -61,6 +61,7 @@ function XUiPanelTheatre5SettleSummary:RefreshAllShow()
     else
         self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData)
     end
+    self:UpdateCharacterAndLevel()
 end
 
 ---- 刷新宝珠列表
@@ -99,6 +100,7 @@ function XUiPanelTheatre5SettleSummary:RefreshRunesShow()
             grid:Open()
             grid:SetItemData(itemData)
 
+            grid.PanelTrigger.gameObject:SetActiveEx(true)
             if runesData:ContainsKey(id) then
                 grid:SetTriggerTimes(runesData[id])
             else
@@ -231,6 +233,30 @@ end
 
 function XUiPanelTheatre5SettleSummary:OnBtnMaskDetailShowClickEvent()
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL)
+end
+
+function XUiPanelTheatre5SettleSummary:UpdateCharacterAndLevel()
+    if self.ViewSide == ViewSideEnum.Self then
+        if self.RoleSelf then
+            self.PanelMyRole.gameObject:SetActiveEx(true)
+            self.PanelEnemyRole.gameObject:SetActiveEx(false)
+            self.TxtLevelSelf.text = self._Control.CharacterControl:GetCharacterLevel()
+            local icon = self._Control:GetCharacterIcon()
+            self.RoleSelf:SetRawImage(icon)
+        end
+    else
+        if self.RoleEnemy then
+            self.PanelMyRole.gameObject:SetActiveEx(false)
+            self.PanelEnemyRole.gameObject:SetActiveEx(true)
+            if self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData then
+                local level = self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData.AutoChessData.CharacterLevel
+                local characterId = self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData.AutoChessData.CharacterId
+                local characterIcon = self._Control:GetCharacterIcon(characterId)
+                self.TxtLevelEnemy.text = level
+                self.RoleEnemy:SetRawImage(characterIcon)
+            end
+        end
+    end
 end
 
 return XUiPanelTheatre5SettleSummary

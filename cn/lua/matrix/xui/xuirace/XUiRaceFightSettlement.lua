@@ -16,15 +16,28 @@ function XUiRaceFightSettlement:OnStart(roundId)
     self._ResultRoundId = roundId
     local roundCfg = self._Control:GetRaceRoundById(self._ResultRoundId)
     local etcd = self._Control:GetEtcdRoundConfig(self._ResultRoundId)
+    local isPointsRace = etcd.TypeId == XEnumConst.Race.Format.PointsRace
     self.TxtTitle01.text = roundCfg.Name
     self.TxtTitle02.text = roundCfg.SubTitle
     self._IsShowChampion = roundCfg.EndShowType == XEnumConst.Race.RankTag.Champion
-    self._RoleIds = nil
-    if etcd.TypeId == XEnumConst.Race.Format.PointsRace then
-        self:ShowPointsRaceResult(etcd.PointGroupId)
+    self._Timelines = {}
+    if isPointsRace then
+        local data = self._Control:GetPointsRaceData(etcd.PointGroupId)
+        self._RoleIds = data:GetRankRoleIds()
     else
-        self:ShowEliminatorResult()
+        local data = self._Control:GetEliminatorData(self._ResultRoundId)
+        self._RoleIds = data:GetRankRoleIds()
     end
+
+    self.GridData.gameObject:SetActiveEx(false)
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        if isPointsRace then
+            self:ShowPointsRaceResult(etcd.PointGroupId)
+        else
+            self:ShowEliminatorResult()
+        end
+    end, 1000)
+    self:_AddTimerId(timerId)
 
     -- 按键延迟点击
     local timerId2 = XScheduleManager.ScheduleOnce(function()
@@ -34,6 +47,7 @@ function XUiRaceFightSettlement:OnStart(roundId)
 
     self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, XEnumConst.Race.SceneType.Settlement)
     self._3DCamera:LookAt(self._RoleIds and self._RoleIds[1])
+    self._3DCamera:PlaySettleEffect()
 
     local endTime = self._Control:GetTime()
     self:SetAutoCloseInfo(endTime, function(isClose)
@@ -54,12 +68,18 @@ function XUiRaceFightSettlement:OnStart(roundId)
     XLuaUiManager.Remove("UiRaceProjectChose")
 end
 
+function XUiRaceFightSettlement:OnDestroy()
+    for _, timeLine in pairs(self._Timelines) do
+        timeLine:StopTimelineAnimation()
+    end
+end
+
 function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
     local data = self._Control:GetPointsRaceData(pointGroupId)
-    self._RoleIds = data:GetRankRoleIds()
     local historyRoleIds = XTool.Clone(self._RoleIds)
     local roundIds = data:GetRounds()
     local curIndex = table.indexof(roundIds, self._ResultRoundId) --当前轮次
+    self._NumberTweenInfos = {}
 
     if curIndex > 1 then
         --计算上一轮的排名
@@ -71,6 +91,7 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
     end
 
     --1、显示原先积分和增加的积分
+    self._Count = #historyRoleIds
     self:RefreshCustomizedList(historyRoleIds, function(i, roleId, grid)
         local addPoint = data:GetSinglePoint(roleId, curIndex) --当前场次增加的积分
         local point --上一场积分
@@ -96,9 +117,62 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
         grid.ImgFailBgResult01.gameObject:SetActiveEx(false)
         grid.ImgFailBg01.gameObject:SetActiveEx(false)
         grid.ImgWinBg01.gameObject:SetActiveEx(true)
-    end)
+        table.insert(self._NumberTweenInfos, { addPoint, grid })
 
-    --2、播放动效后 显示最新积分并且重新排序
+        --错帧动画
+        local gridDataEnable = grid.Transform:FindTransform("GridDataEnable")
+        table.insert(self._Timelines, gridDataEnable)
+        grid.GameObject:SetActiveEx(false)
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid.GameObject:SetActiveEx(true)
+            if not XTool.UObjIsNil(gridDataEnable) then
+                gridDataEnable:PlayTimelineAnimation(function()
+                    if i == self._Count then
+                        self:PlayPointsRaceNumberAnim(data, curIndex)
+                    end
+                end)
+            end
+        end, 50 * i)
+        self:_AddTimerId(timerId)
+    end)
+end
+
+---播放积分赛数字变化动画
+function XUiRaceFightSettlement:PlayPointsRaceNumberAnim(data, curIndex)
+    --延迟1s让玩家看清数值
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        for i, info in ipairs(self._NumberTweenInfos) do
+            local addPoint = info[1]
+            local grid = info[2]
+            local numTimerId = XUiHelper.Tween(1, function(progress)
+                -- 插值计算
+                local currentA = math.floor(addPoint - addPoint * progress)
+                local currentB = math.floor(addPoint * progress)
+                -- 更新UI
+                grid.TxtAdd1.text = string.format("+%s", currentA)
+                grid.TxtAdd2.text = string.format("+%s", currentA)
+                grid.TxtTotal1.text = currentB
+                grid.TxtTotal2.text = currentB
+            end, function()
+                -- 动画结束时，确保数值是最终值
+                grid.TxtAdd1.text = ""
+                grid.TxtAdd2.text = ""
+                grid.TxtTotal1.text = addPoint
+                grid.TxtTotal2.text = addPoint
+                if i == self._Count then
+                    self:PlayRankChangeAnim(data, curIndex)
+                end
+            end)
+            self:_AddTimerId(numTimerId)
+        end
+    end, 1000)
+    self:_AddTimerId(timerId)
+end
+
+---再次播放错帧动画
+---@param data XRacePointsRaceData
+function XUiRaceFightSettlement:PlayRankChangeAnim(data, curIndex)
+    --延迟1s让玩家看清数值
     local timerId = XScheduleManager.ScheduleOnce(function()
         self:RefreshCustomizedList(self._RoleIds, function(i, roleId, grid)
             local point = 0
@@ -110,8 +184,9 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
             -- 只有最后一轮才显示晋升和淘汰
             local isUp = data:IsRoleUp(roleId)
             local isDown = data:IsRoleDown(roleId)
+            local isGroupEnd = data:IsGroupEnd()
             grid.Result.gameObject:SetActiveEx(true)
-            grid.WinTxtName.gameObject:SetActiveEx(isUp)
+            grid.WinTxtName.gameObject:SetActiveEx(isUp or not isGroupEnd)
             grid.FailTxtName.gameObject:SetActiveEx(isDown)
             grid.Win.gameObject:SetActiveEx(isUp)
             grid.Fail.gameObject:SetActiveEx(isDown)
@@ -121,15 +196,24 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
             grid.ImgWinBgResult01.gameObject:SetActiveEx(false)
             grid.ImgFailBgResult01.gameObject:SetActiveEx(false)
             grid.ImgFailBg01.gameObject:SetActiveEx(isDown)
-            grid.ImgWinBg01.gameObject:SetActiveEx(isUp)
-            end)
+            grid.ImgWinBg01.gameObject:SetActiveEx(isUp or not isGroupEnd)
+
+            local gridDataEnable = grid.Transform:FindTransform("GridDataEnable")
+            grid.GameObject:SetActiveEx(false)
+            local timerId = XScheduleManager.ScheduleOnce(function()
+                grid.GameObject:SetActiveEx(true)
+                if not XTool.UObjIsNil(gridDataEnable) then
+                    gridDataEnable:PlayTimelineAnimation()
+                end
+            end, 50 * i)
+            self:_AddTimerId(timerId)
+        end)
     end, 1000)
     self:_AddTimerId(timerId)
 end
 
 function XUiRaceFightSettlement:ShowEliminatorResult()
     local data = self._Control:GetEliminatorData(self._ResultRoundId)
-    self._RoleIds = data:GetRankRoleIds()
     self:RefreshCustomizedList(self._RoleIds, function(i, roleId, grid)
         local timeStr = self._Control:GetPassTimeStr(data:GetRolePassTime(roleId))
         grid.TxtAdd1.gameObject:SetActiveEx(false)
@@ -163,6 +247,16 @@ function XUiRaceFightSettlement:ShowEliminatorResult()
             grid.ImgWinBgResult01.gameObject:SetActiveEx(isUp)
             grid.ImgFailBgResult01.gameObject:SetActiveEx(isDown)
         end
+
+        local gridDataEnable = grid.Transform:FindTransform("GridDataEnable")
+        grid.GameObject:SetActiveEx(false)
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid.GameObject:SetActiveEx(true)
+            if not XTool.UObjIsNil(gridDataEnable) then
+                gridDataEnable:PlayTimelineAnimation()
+            end
+        end, 50 * i)
+        self:_AddTimerId(timerId)
     end)
 end
 

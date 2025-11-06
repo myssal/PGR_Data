@@ -252,6 +252,17 @@ function XGame2048GridsControl:CheckGridIsInCleanUpRange(x, y)
     
     return false
 end
+
+--- 获取消除方块的标准坐标
+function XGame2048GridsControl:GetDispelGridNormalizePos()
+    local dispelGrid = self:GetFirstGridEntityFromArrayByType(XMVCA.XGame2048.EnumConst.GridType.Dispel)
+
+    if dispelGrid then
+        return dispelGrid:GetX(), dispelGrid:GetY()
+    else
+        return 0, 0
+    end
+end
 --endregion
 
 --region Set

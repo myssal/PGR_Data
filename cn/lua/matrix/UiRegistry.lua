@@ -162,10 +162,12 @@ local UiRegistry = {
     UiLottoLunaQuickWear = "XUi/XUiLotto/Tip/XUiLottoLunaQuickWear",
     UiLottoLifuQuickWear = "XUi/XUiLotto/Tip/XUiLottoLifuQuickWear",
     UiLottoVeraQuickWear = "XUi/XUiLotto/Tip/XUiLottoVeraQuickWear",
+    UiLottoCibeizheQuickWear = "XUi/XUiLotto/Tip/XUiLottoCibeizheQuickWear",
     UiLottoKareninaPassport = "XUi/XUiLotto/Tip/XUiLottoKareninaPassport",
     UiLottoLunaPassport = "XUi/XUiLotto/Tip/XUiLottoLunaPassport",
     UiLottoLifuPassport = "XUi/XUiLotto/Tip/XUiLottoLifuPassport",
     UiLottoVeraPassport = "XUi/XUiLotto/Tip/XUiLottoVeraPassport",
+    UiLottoCibeizhePassport = "XUi/XUiLotto/Tip/XUiLottoCibeizhePassport",
     UiArchiveMonsterDetail = "XUi/XUiArchive/XUiArchiveMonsterDetail",
     UiChessPursuitRankLineup = "XUi/XUiChessPursuit/XUi/Rank/XUiChessPursuitRankLineup",
     UiWhitedayReady = "XUi/XUiMiniGame/WhiteValentine2021/XUiWhiteValentineDispatch",
@@ -2128,6 +2130,7 @@ local UiRegistry = {
     UiTheatre5Story = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5Story",
     UiTheatre5PopupHandBook = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5PopupHandBook",
     UiTheatre5PopupStrengthen = "XUi/XUiTheatre5/XUiTheatre5PopupStrengthen/XUiTheatre5PopupStrengthen",
+    UiTheatre5PopupNewSeason = "XUi/XUiTheatre5/XUiTheatre5PopupNewSeason/XUiTheatre5PopupNewSeason",
     --endregion
     
     --region 悬赏任务
@@ -2194,6 +2197,7 @@ local UiRegistry = {
     UiRaceMissionShop = "XUi/XUiRace/XUiRaceMissionShop",
     UiRaceRank = "XUi/XUiRace/XUiRaceRank",
     UiRaceToastHall = "XUi/XUiRace/XUiRaceToastHall",
+    UiRaceToastHallChat = "XUi/XUiRace/XUiRaceToastHallChat",
     UiRaceObtain = "XUi/XUiRace/XUiRaceObtain",
     --endregion
 
@@ -2218,6 +2222,8 @@ local UiRegistry = {
     --endregion
 
     UiFirstDownloadTips = "XUi/XUiSubPackage/XUiFirstDownloadTips",
+
+    UiPurchaseDialog = "XUi/XUiPurchase/XUiPurchaseDialog",
 }
 
 return UiRegistry

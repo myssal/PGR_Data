@@ -80,6 +80,7 @@ end
 function XUiTheatre5BattleShop:OnEnable()
     self:RefreshAll()
     XMVCA.XTheatre5:TriggerInterruptEvent()
+    self:PlayCharacterAction()
 end
 
 function XUiTheatre5BattleShop:OnDestroy()
@@ -162,14 +163,9 @@ function XUiTheatre5BattleShop:InitCharacter3D()
 
     if characterCfg then
         local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(characterCfg.Id)
-        local detailIdleAnima = self._Control.CharacterControl:GetDetailIdleAnimaByCharacterIdCurMode(characterCfg.Id)
         local fashionId, weaponId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(characterCfg.Id)
 
         self.Model3D:UpdateRoleModelByHand(characterCfg.CharacterId, fashionId, weaponId, animatorController)
-        -- 播放战备界面的待机动画
-        if not string.IsNilOrEmpty(detailIdleAnima) then
-            self.Model3D.UiPanelRoleModel:PlayAnimaCross(detailIdleAnima)
-        end
         self.BtnName:SetNameByGroup(0, characterCfg.Name)
     end
 end
@@ -213,6 +209,12 @@ function XUiTheatre5BattleShop:OnClickClose()
 end
 
 function XUiTheatre5BattleShop:OnBtnFightClickEvent()
+    if self._Control:HasEnoughExpToAutoUpgrade() then
+        XLog.Warning("[XUiTheatre5BattleShop] 在可升级状态下，手动点击升级按钮，予以拦截，并触发升级检测")
+        XMVCA.XTheatre5:TriggerInterruptEvent()
+        return
+    end
+    
     if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         if not XMVCA.XTheatre5:CheckInPVPActivityTime() then
             -- 不提示，提示由踢出定时器弹出
@@ -324,6 +326,18 @@ end
 function XUiTheatre5BattleShop:EndDragErrorCheckTimer()
     if UNITY.Input.GetMouseButtonUp(0) or (UNITY.Input.touchCount > 0 and UNITY.Input.GetTouch(0).phase == UNITY.TouchPhase.Ended) then
         self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHECK_AND_FIX_DRAGGING_STATE)
+    end
+end
+
+function XUiTheatre5BattleShop:PlayCharacterAction()
+    ---@type XTableTheatre5Character
+    local characterCfg = self._Control:GetCurCharacterCfg()
+
+    if characterCfg then
+        local detailIdleAnima = self._Control.CharacterControl:GetDetailIdleAnimaByCharacterIdCurMode(characterCfg.Id)
+        if not string.IsNilOrEmpty(detailIdleAnima) then
+            self.Model3D.UiPanelRoleModel:PlayAnimaCross(detailIdleAnima)
+        end
     end
 end
 

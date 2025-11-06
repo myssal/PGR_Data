@@ -43,9 +43,10 @@ function XUiGridGame2048Grid:RefreshData(data)
     self.Id = data.Id
     self.Uid = data.Uid
 
-    if data:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.HeartShape then    
-        -- 显示加时方块的加时数
+    if data:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.HeartShape then
         if self.GridPoint then
+            self.GridPoint.transform.parent.gameObject:SetActiveEx(true)
+
             local curExValue = data:GetExValue()
             local maxExValue = self._Control.GameControl:GetHeartAddMax()
             

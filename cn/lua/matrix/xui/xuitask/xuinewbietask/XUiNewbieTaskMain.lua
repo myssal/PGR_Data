@@ -131,6 +131,7 @@ function XUiNewbieTaskMain:OnClickTabCallBack(tabIndex)
     local isSave = XDataCenter.NewbieTaskManager.SaveRegisterDayBtnClick(day)
     if isSave then
         self:RefreshBtnDayTabStatus()
+        XEventManager.DispatchEvent(XEventId.EVENT_NEWBIE_TASK_UNLOCK_PERIOD_CHANGED)
     end
 end
 

@@ -59,37 +59,21 @@ function XUiSkyGardenDormPhotoWall:InitUi()
 end
 
 function XUiSkyGardenDormPhotoWall:InitCb()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     
-    self.BtnDelete.CallBack = function() 
-        self:OnBtnDeleteClick()
-    end
+    self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
     
-    self.BtnReset.CallBack = function() 
-        self:OnBtnResetClick()
-    end
+    self.BtnReset:AddEventListener(handler(self, self.OnBtnResetClick))
     
-    self.BtnSave.CallBack = function() 
-        self:OnBtnSaveClick()
-    end
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
     
-    self.BtnHideClose.CallBack = function() 
-        self:OnBtnHideClick()
-    end
+    self.BtnHideClose:AddEventListener(handler(self, self.OnBtnHideClick))
     
-    self.BtnHideOpen.CallBack = function() 
-        self:OnBtnHideClick()
-    end
+    self.BtnHideOpen:AddEventListener(handler(self, self.OnBtnHideClick))
     
-    self.BtnPresuppose.CallBack = function() 
-        self:OnBtnPresupposeClick()
-    end
+    self.BtnPresuppose:AddEventListener(handler(self, self.OnBtnPresupposeClick))
     
-    self.BtnCodex.CallBack = function() 
-        self:OnBtnCodeClick()
-    end
+    self.BtnCodex:AddEventListener(handler(self, self.OnBtnCodeClick))
     
     self._OnPressPCKeyHandler = function(inputDeviceType, key, operationType) 
         self:OnPressPCKeyHandle(inputDeviceType, key, operationType)

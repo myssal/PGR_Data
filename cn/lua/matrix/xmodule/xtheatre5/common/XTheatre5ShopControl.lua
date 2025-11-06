@@ -422,6 +422,16 @@ function XTheatre5ShopControl:_EndDragForBuyFromNormalShop(cb)
         XUiManager.TipMsg(self:GetShopBuyBagContainerIndexIsFullTips(self._FocusContainerType))
         return false
     end
+    
+    -- 不能把炼金锤拖到装备栏/技能栏
+    if self._DraggingItemData.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Hammer then
+        if self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.EquipBlock
+            or self._FocusContainerType == XMVCA.XTheatre5.EnumConst.ItemContainerType.SkillBlock
+        then
+            XUiManager.TipMsg(self._Model:GetTheatre5ClientConfigText("HammerDragFail"))
+            return
+        end
+    end
 
     local isEquipped = self._FocusContainerType ~= XMVCA.XTheatre5.EnumConst.ItemContainerType.BagBlock
     local itemType = self._DraggingItemData.ItemType

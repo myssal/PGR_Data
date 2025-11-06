@@ -42,12 +42,14 @@
     {
         "Id": 9,
         "EffectPath": "Assets/Product/Effect/Prefab/FxWanfa/FxDuma/FxDumaBuff.prefab",
-        "Delay": 0
+        "Delay": 0,
+        "Follow": "EffectRoot"
     },
     {
         "Id": 10,
         "EffectPath": "Assets/Product/Effect/Prefab/FxWanfa/FxDuma/FxDumaDebuff.prefab",
-        "Delay": 0
+        "Delay": 0,
+        "Follow": "EffectRoot"
     },
     {
         "Id": 11,
@@ -108,5 +110,10 @@
         "Id": 22,
         "EffectPath": "Assets/Product/Effect/Prefab/FxWanfa/FxDuma/FxDumaBujidianHit.prefab",
         "Delay": 1000
+    },
+    {
+        "Id": 23,
+        "EffectPath": "Assets/Product/Scene/GamePlay/DirectFile/Prefab/Race/Prefabs/FxDumaPiaoyiPenhuo.prefab",
+        "Delay": 0
     }
 ]

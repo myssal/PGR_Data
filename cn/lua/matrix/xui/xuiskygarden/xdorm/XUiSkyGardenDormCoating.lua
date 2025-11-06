@@ -37,25 +37,15 @@ end
 function XUiSkyGardenDormCoating:InitCb()
     self._DoRefreshHideCb = handler(self, self.DoRefreshHide)
     
-    self.BtnHideClose.CallBack = function() 
-        self:OnBtnHideClick()
-    end
+    self.BtnHideClose:AddEventListener(handler(self, self.OnBtnHideClick))
     
-    self.BtnHideOpen.CallBack = function() 
-        self:OnBtnHideClick()
-    end
+    self.BtnHideOpen:AddEventListener(handler(self, self.OnBtnHideClick))
     
-    self.BtnBack.CallBack = function() 
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
     
-    self.BtnTips.CallBack = function() 
-        self:OnBtnTipsClick()
-    end
+    self.BtnTips:AddEventListener(handler(self, self.OnBtnTipsClick))
     
-    self.BtnSave.CallBack = function() 
-        self:OnBtnSaveClick()
-    end
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
 end
 
 function XUiSkyGardenDormCoating:InitView()

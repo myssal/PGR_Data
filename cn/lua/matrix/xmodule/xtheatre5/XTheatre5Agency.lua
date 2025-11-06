@@ -866,22 +866,14 @@ function XTheatre5Agency:XTheatre5CharacterLevelUpRequest()
         return
     end
     XNetwork.Call("XTheatre5CharacterLevelUpRequest", { }, function(res)
-        if not self._TimerCheckLevelUpdate then
-            self._TimerCheckLevelUpdate = XScheduleManager.ScheduleOnce(function()
-                self._TimerCheckLevelUpdate = false
-                if XMVCA.XTheatre5:HasRelicToSelect() then
-                    print("因为选择饰品拦截了升级")
-                    return
-                end
-                if self:CheckLevelUpdate() then
-                    print("因为自动升级而拦截了解锁")
-                    return
-                end
-                print("升级后，判断免费解锁")
-                self:CheckFreeUnlockRuneSlot()
-
-            end, XScheduleManager.SECOND)
+        if self._TimerCheckLevelUpdate then
+            XScheduleManager.UnSchedule(self._TimerCheckLevelUpdate)
         end
+        self._TimerCheckLevelUpdate = XScheduleManager.ScheduleOnce(function()
+            self._TimerCheckLevelUpdate = false
+            self:TriggerInterruptEvent()
+
+        end, XScheduleManager.SECOND)
 
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -956,7 +948,6 @@ function XTheatre5Agency:XTheatre5BuyExpRequest(exp)
         local costGold = res.CostGold
         local gold = self._Model.CurAdventureData:GetGoldNum()
         self._Model.CurAdventureData:UpdateGoldNum(gold - costGold)
-        self:CheckLevelUpdate()
         XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
     end)
 end
@@ -1127,12 +1118,12 @@ function XTheatre5Agency:TriggerInterruptEvent(callback)
     -- 延迟一帧检测,避免因为数据更新导致多次请求
     self._TimerCheckInterrupt = XScheduleManager.ScheduleNextFrame(function()
         self._TimerCheckInterrupt = nil
-        print("检查额外流程")
-
+        --print("检查额外流程")
+        
         -- pvp没有做流程, 只能在商店界面插入
         if XMVCA.XTheatre5:HasRelicToSelect() then
-            print("弹出选择饰品")
-            if not XLuaUiManager.IsUiLoad("UiTheatre5PVEPopupChooseReward") then
+            --print("弹出选择饰品")
+            if not XLuaUiManager.IsStackUiOpen("UiTheatre5PVEPopupChooseReward") then
                 XLuaUiManager.Open("UiTheatre5PVEPopupChooseReward", XMVCA.XTheatre5.EnumConst.ChooseRewardType.Relic, callback)
             end
             return
@@ -1140,12 +1131,15 @@ function XTheatre5Agency:TriggerInterruptEvent(callback)
 
         -- 自动升级
         if XMVCA.XTheatre5:CheckLevelUpdate() then
-            print("因为自动升级而拦截了解锁")
+            --print("因为自动升级而拦截了解锁")
             return
         end
 
         -- 自动解锁技能槽
-        self:CheckFreeUnlockRuneSlot()
+        if not self._Model:HasEnoughExpToAutoUpgrade() then
+            self:CheckFreeUnlockRuneSlot()
+            return
+        end
     end)
 end
 
@@ -1172,12 +1166,25 @@ function XTheatre5Agency:GetText(key, ...)
     return XUiHelper.FormatText(text, ...)
 end
 
+function XTheatre5Agency:GetClientConfig(key, index, ...)
+    local text = self._Model:GetTheatre5ClientConfigText(key, index)
+    if not text then
+        XLog.Error("[XTheatre5Agency] 获取文本失败：" .. tostring(key))
+        return ""
+    end
+    return XUiHelper.FormatText(text, ...)
+end
+
 function XTheatre5Agency:SaveData(data)
     self._Data = data
 end
 
 function XTheatre5Agency:GetData()
     return self._Data
+end
+
+function XTheatre5Agency:ResetNewSeason()
+    self._Model:ResetNewSeason()
 end
 
 return XTheatre5Agency

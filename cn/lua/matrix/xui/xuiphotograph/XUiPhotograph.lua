@@ -387,7 +387,7 @@ end
 --============================
 -- 通用CV播放
 --============================
-function XUiPhotograph:_DoPlayCv(cvId, cvType)
+function XUiPhotograph:_DoPlayCv(cvId, cvType, element)
     if not (cvId and cvId > 0) then return end
 
     local targetFace = self.RoleModel and self.RoleModel:GetSkinMeshFace()
@@ -398,8 +398,17 @@ function XUiPhotograph:_DoPlayCv(cvId, cvType)
     else
         self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
     end
+    
+    -- 播放某些看板Cv时检测静音Bgm
+    if element.SignBoardConfig.TurnOffBgm then
+        if self.PlayingCv then
+            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
+            self.PlayingCv.FinishCb = function ()
+                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+            end
+        end
+    end
 end
-
 
 --============================
 -- 动作/特效
@@ -428,16 +437,7 @@ function XUiPhotograph:Play(element)
     self.PhotographPanel:RefreshActionPanel(true, self.SignBoardActionId ~= nil)
 
     -- 播放CV
-    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType)
-    -- 播放某些看板Cv时检测静音Bgm
-    if element.SignBoardConfig.TurnOffBgm then
-        if self.PlayingCv then
-            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
-            self.PlayingCv.FinishCb = function ()
-                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
-            end
-        end
-    end
+    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType, element)
 
     -- 播放动作
     self:_PlayAction(element, false)
@@ -458,7 +458,7 @@ function XUiPhotograph:PlayCross(element)
     end
 
     -- 播放CV
-    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType)
+    self:_DoPlayCv(element.SignBoardConfig.CvId, element.CvType, element)
 
     -- 播放动作（Cross版）
     self:_PlayAction(element, true)

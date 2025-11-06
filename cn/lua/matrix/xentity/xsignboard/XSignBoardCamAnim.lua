@@ -229,6 +229,7 @@ function XSignBoardCamAnim:_InitNode(uiNode)
     end
 
     ----v2.11 拍照界面的角色模型管理节点坐标比主界面的偏移了Vector3(-0.058, 0, -0.006)
+    --[[
     ----会导致动画额外模型坐标也发生偏移，因此手动校准
     local isSetOffset = self.UiRoot.Name == "UiPhotograph" or self.UiRoot.Name == "UiPhotographPortrait"
     -- 为了保证拍照界面的镜头角度和主界面的镜头角度一致, 目前拉米娅的会, 因为拉米娅动画的镜头参考是主界面的坐标
@@ -246,7 +247,7 @@ function XSignBoardCamAnim:_InitNode(uiNode)
         if EffectParent then
             EffectParent.localPosition = isSetOffset and Vector3(-0.058, 0, -0.006) or Vector3.zero
         end
-    end
+    end--]] -- 3.8 因自赛琳娜版本后统一了镜头参数，不再需要手动偏移，因此注释掉偏移处理逻辑，保留代码以便随时回溯，确认完全没问题后可完全删除
 end
 
 function XSignBoardCamAnim:_InitCam(farCam, nearCam)

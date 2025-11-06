@@ -27,6 +27,7 @@ XActivityConfigs.ActivityType = {
     RepeatChallengeReward = 12, --复刷关，跳转类型派生
     WheelChairManual = 13, --轮椅手册
     GachaCanLiver = 14, -- 可肝卡池
+    Reward = 15, -- 奖励（带有任务跟跳转）
 }
 
 -- 活动背景类型

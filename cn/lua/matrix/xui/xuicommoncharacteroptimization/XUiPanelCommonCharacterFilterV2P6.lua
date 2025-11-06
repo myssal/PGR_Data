@@ -1205,8 +1205,8 @@ function XUiPanelCommonCharacterFilterV2P6:CloseGeneralSkillPanel()
 end
 
 function XUiPanelCommonCharacterFilterV2P6:InitGeneralSkillList()
-    local configs = XMVCA.XCharacter:GetModelCharacterGeneralSkill()
-    local count = #configs - 1 
+    local configs = XMVCA.XCharacter:GetCharacterGeneralSkillWithOutNoneSelect()
+    local count = #configs
     self._GridSkills = {}
     self._GridSkillAnims = {}
     self._GridSkillTimers = {}

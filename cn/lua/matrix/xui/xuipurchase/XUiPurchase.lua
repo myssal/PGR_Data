@@ -621,6 +621,8 @@ function XUiPurchase:InitGroupTab(uiTypes)
         self:GroupTabSkip(tab)
     end)
     self.GroupTab:SelectIndex(selectIndex)
+    
+    self:TryFocusStage(self.TabBtns[selectIndex])
 end
 
 function XUiPurchase:GroupTabSkip(tab)
@@ -778,3 +780,43 @@ function XUiPurchase:RefreshTimeData()
         tjPanel:RefreshTimeData()
     end
 end
+
+--region -------------------- 滚动视图 --------------------
+
+function XUiPurchase:PlayScrollViewMoveBack(tarPosY, isElastic)
+    local moveDuration = CS.XGame.ClientConfig:GetFloat('KotodamaActivityStageMoveDuration')
+    local tarPos = self.PanelTabGroupScrollView.content.localPosition
+    tarPos.y = tarPosY
+
+    XLuaUiManager.SetMask(true)
+    self._FocusScrollMoving = true
+    self.PanelTabGroupScrollView.inertia = false
+    XUiHelper.DoMove(self.PanelTabGroupScrollView.content, tarPos, moveDuration, XUiHelper.EaseType.Sin, function()
+        if isElastic then
+            self.PanelTabGroupScrollView.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Elastic
+        else
+            self.PanelTabGroupScrollView.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
+        end
+        XLuaUiManager.SetMask(false)
+        self._FocusScrollMoving = false
+        self.PanelTabGroupScrollView.inertia = true
+    end)
+end
+
+function XUiPurchase:TryFocusStage(selectGrid)
+    if not self.PanelTabGroupScrollView then
+        return
+    end
+    
+    if selectGrid then
+        local halfScreenHeight = self.PanelTabGroupScrollView.viewport.rect.height / 2
+        local moveMinY = halfScreenHeight
+        local moveMaxY = self.PanelTabGroupScrollView.content.rect.height - halfScreenHeight
+
+        local tarPosY = - selectGrid.transform.localPosition.y
+        local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)
+        self:PlayScrollViewMoveBack(fixedPositionY, true)
+    end
+end
+
+--endregion

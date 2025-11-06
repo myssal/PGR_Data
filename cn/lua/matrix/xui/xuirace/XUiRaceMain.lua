@@ -9,22 +9,19 @@ local XUiRaceMain = XLuaUiManager.Register(XLuaUi, "UiRaceMain")
 
 function XUiRaceMain:OnAwake()
     self:BindHelpBtn(self.BtnHelp, "RaceMainHelp")
-    --self.BtnPredictAll.CallBack = handler(self, self.OnBtnPredictAllClick)
+    self.BtnPredictAll.CallBack = handler(self, self.OnBtnPredictAllClick)
     self.BtnPredictOne.CallBack = handler(self, self.OnBtnPredictOneClick)
     self.BtnRank.CallBack = handler(self, self.OnBtnRankClick)
     self.BtnShop.CallBack = handler(self, self.OnBtnShopClick)
-    --self.BtnSkin.CallBack = handler(self, self.OnBtnSkinClick)
-    self.BtnSkin.gameObject:SetActiveEx(false)
-    self.BtnPredictAll.gameObject:SetActiveEx(false)
+    self.BtnSkin.CallBack = handler(self, self.OnBtnSkinClick)
 end
 
 function XUiRaceMain:OnStart()
     self._ActivityConfig = self._Control:GetCurrentConfig()
     self._MatchInfoPanel = require("XUi/XUiRace/Panel/XUiPanelRaceMatchInfo").New(self.PanelMatchInfo, self)
     self._TaskReward = require("XUi/XUiRace/Panel/XUiPanelRaceTaskBubble").New(self.PanelTaskReward, self)
-    self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, XEnumConst.Race.SceneType.Normal)
-
-    self._MatchGuessEndTime = XFunctionManager.GetEndTimeByTimeId(self._ActivityConfig.MatchGuessTime)
+    self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, XEnumConst.Race.SceneType.Main)
+    
     self._TimeToMatchCountDown = self._Control:GetIntClientConfig("TimeToMatchCountDown") * 24 * 60 * 60
 
     self._Shown = {}
@@ -32,30 +29,33 @@ function XUiRaceMain:OnStart()
     self._Broadcasts = self._Control:GetRaceHomeNewsConfigs()
     self._BroadcastCount = XTool.GetTableCount(self._Broadcasts)
     self._BroadcastDelay = self._Control:GetIntClientConfig("MainBroadcastWordShowTime")
-    self._IsMatchGuessClose = false
 
+    self:ShowSkinPopup()
     self:CountDown()
     self:InitUi()
     self:PlayBroadcast()
-    self._3DCamera:ShowRole()
+    
     self._3DCamera:RegisterRoleClick()
+
+    local animStart = self.UiModelGo.transform:Find("Animation/AnimStart")
+    if not XTool.UObjIsNil(animStart) then
+        animStart:PlayTimelineAnimation()
+    end
 end
 
 function XUiRaceMain:OnEnable()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Race)
-    
+
+    self._3DCamera:ShowRoundRole()
+    self:PlayPlatformDown()
     self:RefreshView()
     self:UpdateSkinBtn()
     self:CheckLastRound()
-    self:ShowRedPoint()
-end
-
-function XUiRaceMain:OnDisable()
-   
 end
 
 function XUiRaceMain:OnDestroy()
     self:RemoveBroadcastTimer()
+    self._Control:SetRoleRandomSite(nil)
 end
 
 function XUiRaceMain:Close()
@@ -84,26 +84,24 @@ function XUiRaceMain:CheckLastRound()
 end
 
 function XUiRaceMain:UpdateGuessBtn()
-    if not self._IsMatchGuessClose then
-        local nowTime = XTime.GetServerNowTimestamp()
-        local leftTime = self._MatchGuessEndTime - nowTime
-        if leftTime >= self._TimeToMatchCountDown then
-            --self.BtnPredictAll:SetSpriteVisible(false)
-        elseif leftTime > 0 and leftTime < self._TimeToMatchCountDown then
-            -- 赛事预测剩余时间不足三天，显示倒计时
-            --local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.CHATEMOJITIMER)
-            --self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessTime", timeStr))
-            --self.BtnPredictAll:SetSpriteVisible(true)
+    local nowTime = XTime.GetServerNowTimestamp()
+    local matchGuessEndTime = XFunctionManager.GetEndTimeByTimeId(self._ActivityConfig.MatchGuessTime)
+    local leftTime = matchGuessEndTime - nowTime
+    if leftTime >= self._TimeToMatchCountDown then
+        self.BtnPredictAll:SetSpriteVisible(false)
+    elseif leftTime > 0 and leftTime < self._TimeToMatchCountDown then
+        -- 赛事预测剩余时间不足三天，显示倒计时
+        local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.CHATEMOJITIMER)
+        self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessTime", timeStr))
+        self.BtnPredictAll:SetSpriteVisible(true)
+    else
+        self._IsMatchResultCheck = self._Control:IsMatchResultCheck()
+        if self._Control:IsAllMatchFinish() and not self._IsMatchResultCheck then
+            -- 比赛全部结束且存在赛事预测奖励没领取
+            self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessReward"))
+            self.BtnPredictAll:SetSpriteVisible(true)
         else
-            self._IsMatchGuessClose = true
-            self._CanMatchGuessGain = self._Control:HasJoinGuess() and not self._Control:IsAllGuessRewardGain()
-            --if self._CanMatchGuessGain then
-            --    -- 存在赛事预测奖励没领取
-            --    self.BtnPredictAll:SetNameByGroup(1, XUiHelper.GetText("RaceAllGuessReward"))
-            --    self.BtnPredictAll:SetSpriteVisible(true)
-            --else
-            --    self.BtnPredictAll:SetSpriteVisible(false)
-            --end
+            self.BtnPredictAll:SetSpriteVisible(false)
         end
     end
 
@@ -224,25 +222,39 @@ function XUiRaceMain:RefreshView()
 
     self._RoundInfo = self._Control:GetCurRoundInfo()
 
+    local isOpenUiRacePopupGameStart = false
     -- 进入活动主界面时比赛已经开始了，则弹比赛开始弹框
-    if not self._CheckOpenStartGamePopup then
-        if self._RoundInfo.State == XEnumConst.Race.RoundState.InProgress then
-            XLuaUiManager.Open("UiRacePopupGameStart")
+    if self._Control:CheckShowGameStart() then
+        if not self._CheckOpenStartGamePopup then
+            if self._RoundInfo.State == XEnumConst.Race.RoundState.InProgress then
+                XLuaUiManager.Open("UiRacePopupGameStart")
+                isOpenUiRacePopupGameStart = false
+            end
+            self._CheckOpenStartGamePopup = true
         end
-        self._CheckOpenStartGamePopup = true
+    end
+    if isOpenUiRacePopupGameStart and self._RoundInfo.State == XEnumConst.Race.RoundState.InProgress then
+        if not XMVCA.XRace:IsRunninghMatch() then
+            self._Control:OpenSettlePanel()
+        end
     end
 
     self:UpdateGuessBtn()
     self._MatchInfoPanel:Update()
     self._TaskReward:Update()
+    self:ShowRedPoint()
 end
 
 function XUiRaceMain:OnBtnPredictAllClick()
-    if self._IsMatchGuessClose and self._CanMatchGuessGain then
-        --比赛全部结束+有赛事预测奖励没领取=打开结算界面
+    if self._Control:IsAllMatchFinish() then
         self._Control:RequestGuessGlobalResult(function()
-            self._Control:SetSettleParam(false)
-            XLuaUiManager.Open("UiRaceFightPredictSettlement", nil)
+            if not self._IsMatchResultCheck then
+                --比赛全部结束+有赛事预测奖励没领取=打开结算界面
+                self._Control:SetSettleParam(false)
+                XLuaUiManager.Open("UiRaceFightPredictSettlement", nil)
+            else
+                XLuaUiManager.Open("UiRaceProjectChose")
+            end
         end)
     else
         XLuaUiManager.Open("UiRaceProjectChose")
@@ -280,21 +292,41 @@ function XUiRaceMain:OnBtnShopClick()
     XLuaUiManager.Open("UiRaceMissionShop")
 end
 
---function XUiRaceMain:OnBtnSkinClick()
---    XLuaUiManager.OpenWithCloseCallback("UiRacePopupSkin", function()
---        self:UpdateSkinBtn()
---    end)
---end
+function XUiRaceMain:OnBtnSkinClick()
+    XLuaUiManager.OpenWithCloseCallback("UiRacePopupSkin", function()
+        self:UpdateSkinBtn()
+    end)
+end
 
 function XUiRaceMain:ShowRedPoint()
-    --local isMatchRed = XMVCA.XRace:CheckMatchGuessRedpoint()
-    --self.BtnPredictAll:ShowReddot(isMatchRed)
+    local isMatchRed = XMVCA.XRace:CheckMatchGuessRedpoint()
+    self.BtnPredictAll:ShowReddot(isMatchRed)
 
     local isTaskRed = XMVCA.XRace:CheckTaskRedPoint()
     self.BtnShop:ShowReddot(isTaskRed)
 
     local isRoundRed = XMVCA.XRace:CheckRoundGuessRedPoint()
     self.BtnPredictOne:ShowReddot(isRoundRed)
+end
+
+function XUiRaceMain:ShowSkinPopup()
+    if self._Control:IsGainSkinReward() or not self._Control:CheckShowSkinPopup() then
+        return
+    end
+    self:OnBtnSkinClick()
+end
+
+function XUiRaceMain:PlayPlatformDown()
+    local platform = self.UiSceneInfo.Transform:FindTransform("Racing_BanjiangtaiAni")
+    if XTool.UObjIsNil(platform) then
+        return
+    end
+    ---@type UnityEngine.Animator
+    local animator = platform:GetComponent("Animator")
+    if XTool.UObjIsNil(animator) then
+        return
+    end
+    animator:Play("FloorDownLoop")
 end
 
 return XUiRaceMain

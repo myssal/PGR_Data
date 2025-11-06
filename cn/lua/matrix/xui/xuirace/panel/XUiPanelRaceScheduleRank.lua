@@ -112,7 +112,9 @@ function XUiPanelRaceScheduleRank:UpdatePointsRaceData()
         end
     end
 
-    for i = 1, #roleIds do
+    local roleCount = #roleIds
+    local totalCount = #self._RankCells
+    for i = 1, roleCount do
         local rankCell = self:GetRankGrid(i)
         local roleId = roleIds[i]
         local rankData = data:GetRoleRankData(roleId)
@@ -120,9 +122,13 @@ function XUiPanelRaceScheduleRank:UpdatePointsRaceData()
         local isPointRepeat = false
         if point and repeatPoint[point] and #repeatPoint[point] > 1 then
             isPointRepeat = true
-            repeatPoint[point] = nil
         end
-        rankCell:SetPointsRaceData(i, roleId, data, self._IsShowTime, repeatPoint)
+        rankCell:Open()
+        rankCell:SetPointsRaceData(i, roleId, data, self._IsShowTime, isPointRepeat)
+    end
+    for i = roleCount + 1, totalCount do
+        local rankCell = self:GetRankGrid(i)
+        rankCell:Close()
     end
 end
 
@@ -157,10 +163,17 @@ function XUiPanelRaceScheduleRank:UpdateEliminatorData()
     if XTool.IsTableEmpty(roleIds) then
         roleIds = data:GetShowRoleIds()
     end
-    for i = 1, #roleIds do
+    local roleCount = #roleIds
+    local totalCount = #self._RankCells
+    for i = 1, roleCount do
         local rankCell = self:GetRankGrid(i)
         local roleId = roleIds[i]
+        rankCell:Open()
         rankCell:SetEliminatorData(i, roleId, data)
+    end
+    for i = roleCount + 1, totalCount do
+        local rankCell = self:GetRankGrid(i)
+        rankCell:Close()
     end
 end
 
@@ -214,6 +227,7 @@ function XUiPanelRaceScheduleRank:OnSelectTab(index)
     end
     self._TabIndex = index
     self:UpdateRankData()
+    self.Parent:PlayAnimationWithMask("QieHuan")
 end
 
 function XUiPanelRaceScheduleRank:ShowPointTip(dimObj)

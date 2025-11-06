@@ -35,28 +35,22 @@ function XRaceEliminatorData:UpdateRole()
         -- 没有服务端数据 读上一把晋升数据
         local serverDatas = self._Model:GetRoundDict()
         local roundCfg = self._OwnControl:GetEtcdRoundConfig(self._RoundId)
-
-        if XTool.IsTableEmpty(roundCfg.FromRoundIds) then
-            local characterIds = self._OwnControl:GetRaceCharacterGroupById(roundCfg.CharacterGroupId).CharacterId
-            self._RoleIds = XTool.Clone(characterIds)
-        else
-            for i, id in ipairs(roundCfg.FromRoundIds) do
-                local etcd = self._OwnControl:GetEtcdRoundConfig(id)
-                if etcd.TypeId == XEnumConst.Race.Format.PointsRace then
-                    -- 积分赛 → 淘汰赛
-                    local pointsRace = self._OwnControl:GetPointsRaceData(etcd.PointGroupId)
-                    if pointsRace:IsGroupEnd() then
-                        for _, id in pairs(pointsRace:GetUpRoleIds()) do
-                            table.insert(self._RoleIds, id)
-                        end
+        for i, id in ipairs(roundCfg.FromRoundIds) do
+            local etcd = self._OwnControl:GetEtcdRoundConfig(id)
+            if etcd.TypeId == XEnumConst.Race.Format.PointsRace then
+                -- 积分赛 → 淘汰赛
+                local pointsRace = self._OwnControl:GetPointsRaceData(etcd.PointGroupId)
+                if pointsRace:IsGroupEnd() then
+                    for _, id in pairs(pointsRace:GetUpRoleIds()) do
+                        table.insert(self._RoleIds, id)
                     end
-                else
-                    -- 淘汰赛 → 总决赛
-                    local eliminator = self._OwnControl:GetEliminatorData(id)
-                    if eliminator:IsMatchEnd() then
-                        for _, id in pairs(eliminator:GetUpRoleIds()) do
-                            table.insert(self._RoleIds, id)
-                        end
+                end
+            else
+                -- 淘汰赛 → 总决赛
+                local eliminator = self._OwnControl:GetEliminatorData(id)
+                if eliminator:IsMatchEnd() then
+                    for _, id in pairs(eliminator:GetUpRoleIds()) do
+                        table.insert(self._RoleIds, id)
                     end
                 end
             end

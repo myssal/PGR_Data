@@ -63,6 +63,27 @@ end
 
 function XUiGridRaceScheduleGroup:UpdateEliminator()
     local isMatchEnd = self._Eliminator:IsMatchEnd()
+    local roleIds = self._Eliminator:GetShowRoleIds()
+    if self._IsFinal then
+        --总决赛的角色显示 要把AB和CD组的晋升角色排在同一边
+        roleIds = XTool.Clone(roleIds)
+        local roleFromDict = {}
+        local etcd = self._Control:GetEtcdRoundConfig(self._RoundId)
+        for _, roundId in pairs(etcd.FromRoundIds) do
+            local data = self._Control:GetEliminatorData(roundId)
+            for _, roleId in pairs(data:GetUpRoleIds()) do
+                roleFromDict[roleId] = roundId
+            end
+        end
+        table.sort(roleIds, function(a, b)
+            local aSort = roleFromDict[a] or 0
+            local bSort = roleFromDict[b] or 0
+            if aSort ~= bSort then
+                return aSort < bSort
+            end
+            return a < b
+        end)
+    end
     for i = 1, self._Eliminator:GetRoleCount() do
         ---@type XUiGridRaceScheduleHead
         local head = self._Heads[i]
@@ -72,7 +93,7 @@ function XUiGridRaceScheduleGroup:UpdateEliminator()
             head = require("XUi/XUiRace/Grid/XUiGridRaceScheduleHead").New(go, self)
             self._Heads[i] = head
         end
-        local roleId = self._Eliminator:GetShowRoleId(i)
+        local roleId = roleIds[i]
         if not roleId then
             head:SetRoleId()
         elseif isMatchEnd then

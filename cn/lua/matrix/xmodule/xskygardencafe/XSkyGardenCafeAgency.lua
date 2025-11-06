@@ -287,7 +287,9 @@ function XSkyGardenCafeAgency:DoLevelLevel()
     XMVCA.XBigWorldGamePlay:DeactivateVCamera("UiSkyGardenCoffeeCameraMain")
     --显示指挥官
     XMVCA.XBigWorldGamePlay:SetCurNpcActive(true)
-    XMVCA.XBigWorldUI:SafeClose("UiSkyGardenCafeMain")
+    if XLoginManager.IsLogin() then
+        XMVCA.XBigWorldUI:SafeClose("UiSkyGardenCafeMain")
+    end
 end
 
 --region Util

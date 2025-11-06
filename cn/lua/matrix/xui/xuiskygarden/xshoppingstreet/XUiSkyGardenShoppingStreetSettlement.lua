@@ -93,7 +93,7 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetSettlement:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnLeave.CallBack = function() self:OnBtnLeaveClick() end
+    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick))
 end
 --endregion
 

@@ -149,12 +149,12 @@ end
 
 function XUiBigWorldPhotographPopupAlbumDetail:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
-    self.BtnSave.CallBack = Handler(self, self.OnBtnSaveClick)
-    self.BtnDetele.CallBack = Handler(self, self.OnBtnDeteleClick)
-    self.BtnName.CallBack = Handler(self, self.OnBtnNameClick)
-    self.BtnLeft.CallBack = Handler(self, self.OnBtnLeftClick)
-    self.BtnRight.CallBack = Handler(self, self.OnBtnRightClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
+    self.BtnDetele:AddEventListener(handler(self, self.OnBtnDeteleClick))
+    self.BtnName:AddEventListener(handler(self, self.OnBtnNameClick))
+    self.BtnLeft:AddEventListener(handler(self, self.OnBtnLeftClick))
+    self.BtnRight:AddEventListener(handler(self, self.OnBtnRightClick))
 end
 
 return XUiBigWorldPhotographPopupAlbumDetail

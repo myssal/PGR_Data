@@ -39,12 +39,8 @@ function XUiSkyGardenDormCodex:InitUi()
 end
 
 function XUiSkyGardenDormCodex:InitCb()
-    self.BtnTanchuangClose.CallBack = function()
-        self:Close()
-    end
-    self.BtnView.CallBack = function()
-        self:OnBtnViewClick()
-    end
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.Close))
+    self.BtnView:AddEventListener(handler(self, self.OnBtnViewClick))
 end
 
 function XUiSkyGardenDormCodex:InitView()

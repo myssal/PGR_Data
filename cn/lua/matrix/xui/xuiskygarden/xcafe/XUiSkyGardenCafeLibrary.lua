@@ -1,7 +1,7 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@class XUiSkyGardenCafeLibrary : XLuaUi
 ---@field _Control XSkyGardenCafeControl
-local XUiSkyGardenCafeLibrary = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafeLibrary")
+local XUiSkyGardenCafeLibrary = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafeLibrary")
 
 local XUiGridSGCardItem = require("XUi/XUiSkyGarden/XCafe/Grid/XUiGridSGCardItem")
 
@@ -22,9 +22,7 @@ function XUiSkyGardenCafeLibrary:InitUi()
 end
 
 function XUiSkyGardenCafeLibrary:InitCb()
-    self.BtnClose.CallBack = function() 
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 function XUiSkyGardenCafeLibrary:InitView()

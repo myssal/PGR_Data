@@ -51,9 +51,7 @@ function XUiBigWorldObtain:InitUi()
 end
 
 function XUiBigWorldObtain:InitCb()
-    self.BtnBack.CallBack = function()
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
 end
 
 function XUiBigWorldObtain:RemoveCb()

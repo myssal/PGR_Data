@@ -5,6 +5,10 @@ local XUiPurchaseComboGrid = require("XUi/XUiPurchase/XUiPurchaseComboGrid")
 ---@field Parent XUiPurchase
 local XUiPurchaseCombo = XClass(XUiNode, "XUiPurchaseCombo")
 
+function XUiPurchaseCombo:OnStart(purchaseLBCb)
+    self.PurchaseLBCb = purchaseLBCb
+end
+
 function XUiPurchaseCombo:OnEnable()
     self.GridBundleLb.gameObject:SetActiveEx(false)
 end
@@ -22,7 +26,7 @@ function XUiPurchaseCombo:OnRefresh(uiType)
     end
     
     if not self.DynamicTableNormal then
-        self.DynamicTableNormal = XUiHelper.DynamicTableNormal(self, self.DynamicTable, XUiPurchaseComboGrid)
+        self.DynamicTableNormal = XUiHelper.DynamicTableNormal(self, self.DynamicTable, XUiPurchaseComboGrid, self.PurchaseLBCb)
     end
     local dataSource = XDataCenter.PurchaseManager.GetComboPurchaseData(uiType)
     self.DynamicTableNormal:SetDataSource(dataSource)

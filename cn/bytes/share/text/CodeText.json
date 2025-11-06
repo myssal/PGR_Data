@@ -252,6 +252,11 @@
         "Text": 20000011
     },
     {
+        "Id": 20000012,
+        "Key": "PlayerFunctionIdNotFound",
+        "Text": "20000012找不到功能ID"
+    },
+    {
         "Id": 20001001,
         "Key": "RpcRequestQpsLimited",
         "Text": "20001001请求频率过高"
@@ -367,6 +372,16 @@
         "Id": 20002022,
         "Key": "PlayerDataManagerChangeGenderTimeLimit",
         "Text": "性别修改冷却期中，请耐心等候"
+    },
+    {
+        "Id": 20002023,
+        "Key": "PlayerDataManagerPointMarkCfgNoExit",
+        "Text": "20002023蓝点配置不存在"
+    },
+    {
+        "Id": 20002024,
+        "Key": "PlayerDataManagerPointTypeNoExit",
+        "Text": "20002024蓝点类型不存在"
     },
     {
         "Id": 20003001,
@@ -744,436 +759,476 @@
     },
     {
         "Id": 20003076,
+        "Key": "FubenBossSingleResetNoOpen",
+        "Text": "20003076囚笼重置未开启"
+    },
+    {
+        "Id": 20003077,
+        "Key": "FubenBossSingleResetGradeLimit",
+        "Text": "20003077囚笼重置分区限制"
+    },
+    {
+        "Id": 20003078,
+        "Key": "FubenBossSingleResetNoStageRecordData",
+        "Text": "20003078囚笼重置没有当前关卡数据"
+    },
+    {
+        "Id": 20003079,
+        "Key": "FubenBossSingleResetCharacterPointData",
+        "Text": "20003079囚笼重置没有角色耐力数据"
+    },
+    {
+        "Id": 20003080,
+        "Key": "FubenBossSingleResetAlready",
+        "Text": "20003080囚笼关卡已经重置"
+    },
+    {
+        "Id": 20003081,
         "Key": "FubenBossOnlineSectionNotFound",
         "Text": "找不到章节信息"
     },
     {
-        "Id": 20003077,
+        "Id": 20003082,
         "Key": "FubenMainLinePassTimesNotEnough",
         "Text": "主线挑战次数不足"
     },
     {
-        "Id": 20003078,
+        "Id": 20003083,
         "Key": "FubenMainLineChapterIsNotExist",
         "Text": "章节不存在"
     },
     {
-        "Id": 20003079,
+        "Id": 20003084,
         "Key": "FubenMainLineActivityHideChapterNotOpen",
         "Text": "隐藏章节活动未开启"
     },
     {
-        "Id": 20003080,
+        "Id": 20003085,
         "Key": "FubenMainLineActivityVariationsChapterNotOpen",
         "Text": "20003074主线活动异变章节未开启"
     },
     {
-        "Id": 20003081,
+        "Id": 20003086,
         "Key": "FubenPrequelStageNotPass",
         "Text": "关卡尚未通关"
     },
     {
-        "Id": 20003082,
+        "Id": 20003087,
         "Key": "FubenPrequelStageRewardAlready",
         "Text": "星级奖励已领取"
     },
     {
-        "Id": 20003083,
+        "Id": 20003088,
         "Key": "FubenPrequelStageIdError",
         "Text": "无效的前传关卡"
     },
     {
-        "Id": 20003084,
+        "Id": 20003089,
         "Key": "FubenPrequelCoverIdError",
         "Text": "无效的前传封面Id"
     },
     {
-        "Id": 20003085,
+        "Id": 20003090,
         "Key": "FubenPrequelChallengeIdError",
         "Text": "无效的前传挑战Id"
     },
     {
-        "Id": 20003086,
+        "Id": 20003091,
         "Key": "FubenPrequelChallengeLock",
         "Text": "前传关卡尚未解锁"
     },
     {
-        "Id": 20003087,
+        "Id": 20003092,
         "Key": "FubenPrequelChallengeUnlockAlready",
         "Text": "前传关卡已经解锁"
     },
     {
-        "Id": 20003088,
+        "Id": 20003093,
         "Key": "FubenPrequelChallengeCountLimit",
         "Text": "挑战次数不足"
     },
     {
-        "Id": 20003089,
+        "Id": 20003094,
         "Key": "FubenPrequelChapterNotFind",
         "Text": "碎片关卡对应间章不存在"
     },
     {
-        "Id": 20003090,
+        "Id": 20003095,
         "Key": "FubenPrequelCoverNotFind",
         "Text": "20003084碎片关卡对应表配置不存在"
     },
     {
-        "Id": 20003091,
+        "Id": 20003096,
         "Key": "FubenManagerAutoFightStageNotExist",
         "Text": "副本不存在"
     },
     {
-        "Id": 20003092,
+        "Id": 20003097,
         "Key": "FubenManagerAutoFightStageInvalid",
         "Text": "副本无效"
     },
     {
-        "Id": 20003093,
+        "Id": 20003098,
         "Key": "FubenManagerAutoFightHaventPassed",
         "Text": "副本未通关"
     },
     {
-        "Id": 20003094,
+        "Id": 20003099,
         "Key": "FubenManagerAutoFightPoolIsFull",
         "Text": "队伍数量已满"
     },
     {
-        "Id": 20003095,
+        "Id": 20003100,
         "Key": "FubenManagerAutoFightAlreadyRunning",
         "Text": "自动作战中"
     },
     {
-        "Id": 20003096,
+        "Id": 20003101,
         "Key": "FubenManagerAutoFightNotEnoughTimes",
         "Text": "剩余挑战次数不足"
     },
     {
-        "Id": 20003097,
+        "Id": 20003102,
         "Key": "FubenManagerAutoFightNotEnoughActionPoint",
         "Text": "体力不足"
     },
     {
-        "Id": 20003098,
+        "Id": 20003103,
         "Key": "FubenManagerAutoFightIndexInvalid",
         "Text": "自动作战编号无效"
     },
     {
-        "Id": 20003099,
+        "Id": 20003104,
         "Key": "FubenManagerAutoFightStageNotMatch",
         "Text": "自动作战副本不匹配"
     },
     {
-        "Id": 20003100,
+        "Id": 20003105,
         "Key": "FubenManagerAutoFightNotComplete",
         "Text": "自动作战未完成"
     },
     {
-        "Id": 20003101,
+        "Id": 20003106,
         "Key": "FubenManagerTrialIdIsNotFound",
         "Text": "试炼副本不存在"
     },
     {
-        "Id": 20003102,
+        "Id": 20003107,
         "Key": "FubenManagerTrialPreIdIsNotPass",
         "Text": "请先通关前置关卡"
     },
     {
-        "Id": 20003103,
+        "Id": 20003108,
         "Key": "FubenManagerTrialIdIsNotPass",
         "Text": "请先通关"
     },
     {
-        "Id": 20003104,
+        "Id": 20003109,
         "Key": "FubenManagerTrialPassRewardAlreadyGet",
         "Text": "通关奖励已领取"
     },
     {
-        "Id": 20003105,
+        "Id": 20003110,
         "Key": "FubenManagerTrialTypeRewardIsNotExit",
         "Text": "奖励不存在"
     },
     {
-        "Id": 20003106,
+        "Id": 20003111,
         "Key": "FubenManagerTrialTypeRewardAlreadyGet",
         "Text": "奖励已领取"
     },
     {
-        "Id": 20003107,
+        "Id": 20003112,
         "Key": "FubenManagerTrialTypeRewardIsNotFinish",
         "Text": "关卡未完成"
     },
     {
-        "Id": 20003108,
+        "Id": 20003113,
         "Key": "FubenManagerDailyChapterNotFound",
         "Text": "找不到日常本章节配置"
     },
     {
-        "Id": 20003109,
+        "Id": 20003114,
         "Key": "FubenManagerDailySectionNotFound",
         "Text": "找不到日常本配置"
     },
     {
-        "Id": 20003110,
+        "Id": 20003115,
         "Key": "FubenManagerDailyConditionInvalid",
         "Text": "无效的日常本条件配置"
     },
     {
-        "Id": 20003111,
+        "Id": 20003116,
         "Key": "FubenManagerDailyTimeNotFit",
         "Text": "未到达开启时间"
     },
     {
-        "Id": 20003112,
+        "Id": 20003117,
         "Key": "FubenManagerAutoFightTimesError",
         "Text": "自动战斗次数错误"
     },
     {
-        "Id": 20003113,
+        "Id": 20003118,
         "Key": "FubenManagerBossSingleResetCanNotSaveScore",
         "Text": "玩法已刷新，无法保存记录"
     },
     {
-        "Id": 20003114,
+        "Id": 20003119,
         "Key": "FubenManagerBossSingleDataIsRefresh",
         "Text": "副本数据已刷新，请重新打开页面"
     },
     {
-        "Id": 20003115,
+        "Id": 20003120,
         "Key": "FubenManagerStartFightIntervalFast",
         "Text": "副本挑战间隔过快"
     },
     {
-        "Id": 20003116,
+        "Id": 20003121,
         "Key": "FubenAssignChapterNotFound",
         "Text": "章节信息配置异常"
     },
     {
-        "Id": 20003117,
+        "Id": 20003122,
         "Key": "FubenAssignGroupNotFound",
         "Text": "关卡信息配置异常"
     },
     {
-        "Id": 20003118,
+        "Id": 20003123,
         "Key": "FubenAssignTeamInfoNotFound",
         "Text": "队伍信息配置异常"
     },
     {
-        "Id": 20003119,
+        "Id": 20003124,
         "Key": "FubenAssignGroupFightCountLimit",
         "Text": "挑战次数已用尽"
     },
     {
-        "Id": 20003120,
+        "Id": 20003125,
         "Key": "FubenAssignGroupTeamNotSet",
         "Text": "队伍未设置，不能出战"
     },
     {
-        "Id": 20003121,
+        "Id": 20003126,
         "Key": "FubenAssignFightCardCountError",
         "Text": "出战成员数量有误，无法出战"
     },
     {
-        "Id": 20003122,
+        "Id": 20003127,
         "Key": "FubenAssignFightCardNotInTeam",
         "Text": "边界公约出战角色未在队伍中"
     },
     {
-        "Id": 20003123,
+        "Id": 20003128,
         "Key": "FubenAssignFightGroupIdNotMatch",
         "Text": "边界公约关卡组不匹配"
     },
     {
-        "Id": 20003124,
+        "Id": 20003129,
         "Key": "FubenAssignFightStageAlreadyFinish",
         "Text": "边界公约关卡已完成"
     },
     {
-        "Id": 20003125,
+        "Id": 20003130,
         "Key": "FubenAssignFightPreStageNotFinish",
         "Text": "边界公约前置关卡未完成"
     },
     {
-        "Id": 20003126,
+        "Id": 20003131,
         "Key": "FubenAssignWinStageNotMatch",
         "Text": "边界公约胜利关卡不匹配"
     },
     {
-        "Id": 20003127,
+        "Id": 20003132,
         "Key": "FubenAssignWinGroupIdNotMatch",
         "Text": "边界公约胜利关卡组不匹配"
     },
     {
-        "Id": 20003128,
+        "Id": 20003133,
         "Key": "FubenAssignGroupTeamListNotFound",
         "Text": "队伍列表不存在，不能出战"
     },
     {
-        "Id": 20003129,
+        "Id": 20003134,
         "Key": "FubenAssignPreGroupNotFinish",
         "Text": "前置章节未完成"
     },
     {
-        "Id": 20003130,
+        "Id": 20003135,
         "Key": "FubenAssignTeamListIsEmpty",
         "Text": "队伍数量为空，不能出战"
     },
     {
-        "Id": 20003131,
+        "Id": 20003136,
         "Key": "FubenAssignTeamCountError",
         "Text": "队伍数量与要求不符，不能出战"
     },
     {
-        "Id": 20003132,
+        "Id": 20003137,
         "Key": "FubenAssignTeamIsEmpty",
         "Text": "队伍人数不足，不能出战"
     },
     {
-        "Id": 20003133,
+        "Id": 20003138,
         "Key": "FubenAssignTeamMemberCountLimit",
         "Text": "队伍人数与要求不符，不能出战"
     },
     {
-        "Id": 20003134,
+        "Id": 20003139,
         "Key": "FubenAssignTeamMemberRepeated",
         "Text": "队伍成员重复，不能出战"
     },
     {
-        "Id": 20003135,
+        "Id": 20003140,
         "Key": "FubenAssignChapterNotFinish",
         "Text": "章节未完成"
     },
     {
-        "Id": 20003136,
+        "Id": 20003141,
         "Key": "FubenAssignChapterUseSameCharacter",
         "Text": "角色已被安排驻守"
     },
     {
-        "Id": 20003137,
+        "Id": 20003142,
         "Key": "FubenAssignChapterCharacterAlreadyUse",
         "Text": "角色已在其他区域驻守"
     },
     {
-        "Id": 20003138,
+        "Id": 20003143,
         "Key": "FubenAssignChapterRewardAlreadyGet",
         "Text": "章节奖励已领取"
     },
     {
-        "Id": 20003139,
+        "Id": 20003144,
         "Key": "FubenAssignStageInfoNotFound",
         "Text": "20003132关卡信息未找到"
     },
     {
-        "Id": 20003140,
+        "Id": 20003145,
         "Key": "FubenAssignGroupInfoNotExist",
         "Text": "20003133当前节点没有进度"
     },
     {
-        "Id": 20003141,
+        "Id": 20003146,
         "Key": "FubenAssignGroupStageNotFinish",
         "Text": "20003134当前节点关卡未完成，不能重置"
     },
     {
-        "Id": 20003142,
+        "Id": 20003147,
         "Key": "FubenAssignFinishedStageCanNotChangeTeam",
         "Text": "20003135已完成的关卡不能改变队伍"
     },
     {
-        "Id": 20003143,
+        "Id": 20003148,
         "Key": "FubenManagerFightRestartFightIdNotMatch",
         "Text": "战斗重开战斗Id不匹配"
     },
     {
-        "Id": 20003144,
+        "Id": 20003149,
         "Key": "FubenManagerFightRestartPreFightDataNotMatch",
         "Text": "战斗重开战斗数据不匹配"
     },
     {
-        "Id": 20003145,
+        "Id": 20003150,
+        "Key": "FubenSpeedrunTemplateNotFound",
+        "Text": "20003150未找到速通模式关卡ID"
+    },
+    {
+        "Id": 20003151,
+        "Key": "FubenSpeedrunStageInfoNotFound",
+        "Text": "20003151未找到速通模式关卡ID信息"
+    },
+    {
+        "Id": 20003152,
+        "Key": "FubenSpeedrunModeLocked",
+        "Text": "20003152速通模式未解锁"
+    },
+    {
+        "Id": 20003153,
         "Key": "FubenBfrtChapterNotOpen",
         "Text": "该据点章节未开放"
     },
     {
-        "Id": 20003146,
+        "Id": 20003154,
         "Key": "FubenBfrtTeamSetCharacterRepeat",
         "Text": "设置队伍角色重复"
     },
     {
-        "Id": 20003147,
+        "Id": 20003155,
         "Key": "FubenManagerStageConfigNotExist",
         "Text": "关卡配置不存在"
     },
     {
-        "Id": 20003148,
+        "Id": 20003156,
         "Key": "FubenFightNpcIsNullOrEmpty",
         "Text": "上阵角色不能为空"
     },
     {
-        "Id": 20003149,
+        "Id": 20003157,
         "Key": "FubenFightCharacterAndNpcIndexRepeat",
         "Text": "20003149上阵机器人数据与Npc数据位置冲突"
     },
     {
-        "Id": 20003150,
+        "Id": 20003158,
         "Key": "FubenRepeatedCharacter",
         "Text": "不能存在相同的上阵角色"
     },
     {
-        "Id": 20003151,
+        "Id": 20003159,
         "Key": "FubenActivityReset",
         "Text": "活动已重置"
     },
     {
-        "Id": 20003152,
+        "Id": 20003160,
         "Key": "FubenBossSingleIsNotTrialStage",
         "Text": "20003137该关卡不是体验关"
     },
     {
-        "Id": 20003153,
+        "Id": 20003161,
         "Key": "FubenStageCharacterNpcIdCfgNotExit",
         "Text": "20003139找不到该关卡类型的角色NpcId配置"
     },
     {
-        "Id": 20003154,
+        "Id": 20003162,
         "Key": "FubenManagerBfrtClearIsNotOpen",
         "Text": "据点不可一键通关"
     },
     {
-        "Id": 20003155,
+        "Id": 20003163,
         "Key": "FubenManagerBfrtNotSetTeam",
         "Text": "据点没有设置队伍"
     },
     {
-        "Id": 20003156,
+        "Id": 20003164,
         "Key": "FubenManagerBfrtGroupTeamSeqCfgNotFound",
         "Text": "找不到据点队伍配置"
     },
     {
-        "Id": 20003157,
+        "Id": 20003165,
         "Key": "FubenManagerBfrtTeamFightNotEnough",
         "Text": "战力不足，无法一件通关"
     },
     {
-        "Id": 20003158,
+        "Id": 20003166,
         "Key": "FubenManagerBfrtProgressStageNotExist",
         "Text": "关卡没有压制，无法重置"
     },
     {
-        "Id": 20003159,
+        "Id": 20003167,
         "Key": "FubenManagerBfrtNotCourseRewardToReceived",
         "Text": "没有可领取的历程奖励"
     },
     {
-        "Id": 20003160,
+        "Id": 20003168,
         "Key": "FubenManagerBfrtGroupIsNotPass",
         "Text": "据点未通关，无法领取"
     },
     {
-        "Id": 20003161,
+        "Id": 20003169,
         "Key": "FubenManagerBfrtGroupRewardAlreadyReceived",
         "Text": "据点奖励已领取"
     },
     {
-        "Id": 20003162,
+        "Id": 20003170,
         "Key": "FubenManagerBfrtGroupRewardNotFound",
         "Text": "据点没有找到对应的奖励"
     },
@@ -1221,6 +1276,46 @@
         "Id": 20004009,
         "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
         "Text": "20004008辅助机预设为空不能设置技能"
+    },
+    {
+        "Id": 20004010,
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "20004010站位没有角色不能穿戴装备"
+    },
+    {
+        "Id": 20004011,
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "20004011该编队已在最上面"
+    },
+    {
+        "Id": 20004012,
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "20004012预设编队存在重复穿着装备"
+    },
+    {
+        "Id": 20004013,
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "20004013预设编队存在重复穿着共鸣"
+    },
+    {
+        "Id": 20004014,
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "20004014站位角色装备数据为空"
+    },
+    {
+        "Id": 20004015,
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "20004015编队名不能为空"
+    },
+    {
+        "Id": 20004016,
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "20004016预设编队存在重复装备辅助机器"
+    },
+    {
+        "Id": 20004017,
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "20004017预设编队存在重复角色"
     },
     {
         "Id": 20007001,
@@ -2723,6 +2818,21 @@
         "Text": "20021117意识一键超频数量超过上限"
     },
     {
+        "Id": 20021118,
+        "Key": "EquipWeaponCanNotResonance",
+        "Text": "20021118该武器无法共鸣"
+    },
+    {
+        "Id": 20021119,
+        "Key": "EquipPrefabCharacterPutOnSameEquip",
+        "Text": "20021119预设存在不同角色穿着相同装备"
+    },
+    {
+        "Id": 20021120,
+        "Key": "EquipPrefabSameResonanceInOneEquip",
+        "Text": "20021120预设存在单个武器共鸣相同技能"
+    },
+    {
         "Id": 20026001,
         "Key": "TaskManagerInitFail",
         "Text": "任务系统初始化失败"
@@ -3091,6 +3201,11 @@
         "Id": 20030020,
         "Key": "ShopOwnedUnknown",
         "Text": "商店所属类型未知"
+    },
+    {
+        "Id": 20030021,
+        "Key": "ShopNeedBuyPreGoods",
+        "Text": "20030021无法购买商品，需要购买前置商品"
     },
     {
         "Id": 20031001,
@@ -3995,6 +4110,66 @@
         "Text": "当前章节未达成章节通关次数"
     },
     {
+        "Id": 20034124,
+        "Key": "ConditionTheatre5EnterShopCutLimit",
+        "Text": "20034124肉鸽5-进入商店次数不满足"
+    },
+    {
+        "Id": 20034125,
+        "Key": "ConditionTheatre5LeaveShopCutLimit",
+        "Text": "20034125肉鸽5-离开商店次数不满足"
+    },
+    {
+        "Id": 20034126,
+        "Key": "ConditionTheatre5LoseCntLimit",
+        "Text": "20034126肉鸽5-失败次数满足条件不满足"
+    },
+    {
+        "Id": 20034127,
+        "Key": "ConditionTheatre5HpLimit",
+        "Text": "20034127肉鸽5-心数满足条件不满足"
+    },
+    {
+        "Id": 20034128,
+        "Key": "ConditionTheatre5LvLimit",
+        "Text": "20034128肉鸽5-等级满足条件不满足"
+    },
+    {
+        "Id": 20034129,
+        "Key": "ConditionTheatre5ItemTypeLimit",
+        "Text": "20034129肉鸽5-本次购买某种类型的道具不满足"
+    },
+    {
+        "Id": 20034130,
+        "Key": "ConditionTheatre5ItemIdLimit",
+        "Text": "20034130肉鸽5-本次购买特定道具不满足"
+    },
+    {
+        "Id": 20034131,
+        "Key": "ConditionTheatre5ContinueWinLimit",
+        "Text": "20034131肉鸽5-连续胜利指定次数不满足"
+    },
+    {
+        "Id": 20034132,
+        "Key": "ConditionTheatre5TagRuneLimit",
+        "Text": "20034132肉鸽5-装备指定数量的特定稀有度&Tag符纹不满足"
+    },
+    {
+        "Id": 20034133,
+        "Key": "ConditionTheatre5GoldCutLimit",
+        "Text": "20034133肉鸽5-金币数量满足条件数量不满足"
+    },
+    {
+        "Id": 20034134,
+        "Key": "ConditionTheatre5FightParamLimit",
+        "Text": "20034134肉鸽5-前一场战斗内传出参数满足特定条件不满足"
+    },
+    {
+        "Id": 20034135,
+        "Key": "ConditionManagerCharacterLevelNotEnough",
+        "Text": "20034135成员等级不满足"
+    },
+    {
         "Id": 20036001,
         "Key": "RobotManagerInitCharacterQualityFail",
         "Text": "机器人角色错误品质"
@@ -4700,6 +4875,16 @@
         "Text": "当前状态不能进行该操作"
     },
     {
+        "Id": 20045043,
+        "Key": "MatchSyncRelinkDataPlayerIsReady",
+        "Text": "20045043准备状态下无法设置数据"
+    },
+    {
+        "Id": 20045044,
+        "Key": "MatchPlayerRelinkDataError",
+        "Text": "20045044战斗数据异常"
+    },
+    {
         "Id": 20046001,
         "Key": "ExploreChapterIsNotExist",
         "Text": "探索章节不存在"
@@ -5093,6 +5278,36 @@
         "Id": 20053034,
         "Key": "PurchaseAlreadyHaveCharacter",
         "Text": "采购礼包失败已拥有角色"
+    },
+    {
+        "Id": 20053035,
+        "Key": "PurchaseHistroyNotMatch",
+        "Text": "20053035礼包购买条件不满足"
+    },
+    {
+        "Id": 20053036,
+        "Key": "PurchaseNotBuyMonthCard",
+        "Text": "20053036未购买月卡"
+    },
+    {
+        "Id": 20053037,
+        "Key": "PurchaseComboPackageNotFound",
+        "Text": "20053037捆绑包配置不存在"
+    },
+    {
+        "Id": 20053038,
+        "Key": "PurchaseComboPackageIsSoldOut",
+        "Text": "20053038捆绑包已达购买上限"
+    },
+    {
+        "Id": 20053039,
+        "Key": "PurchaseComboSubPackageIsSoldOut",
+        "Text": "20053039捆绑包所有商品已被购买"
+    },
+    {
+        "Id": 20053101,
+        "Key": "PurchaseExistMutexItem",
+        "Text": "Already own a conflicting product. Cannot purchase and replace it now."
     },
     {
         "Id": 20054001,
@@ -7923,6 +8138,11 @@
         "Id": 20063366,
         "Key": "GuildThemeNotOwn",
         "Text": "20063366公会主题未拥有"
+    },
+    {
+        "Id": 20063367,
+        "Key": "GuildGetMemberBaseInfoFail",
+        "Text": "20063367获取成员信息失败，请稍后再试"
     },
     {
         "Id": 20064001,
@@ -15463,7 +15683,7 @@
     {
         "Id": 20151001,
         "Key": "ReviewActivityDataNotExist",
-        "Text": "需在2024年12月5日前创建角色"
+        "Text": "需在2025年12月5日前创建角色"
     },
     {
         "Id": 20151002,
@@ -26202,78 +26422,188 @@
     },
     {
         "Id": 20282029,
+        "Key": "Theatre5PveStoryLineCharacterBeBand",
+        "Text": "20282029故事线战斗节点禁用角色"
+    },
+    {
+        "Id": 20282030,
         "Key": "Theatre5PveRandomEventError",
         "Text": "随机事件错误"
     },
     {
-        "Id": 20282030,
+        "Id": 20282031,
         "Key": "Theatre5PveEventChooseNotFound",
         "Text": "事件选择不存在"
     },
     {
-        "Id": 20282031,
+        "Id": 20282032,
         "Key": "Theatre5PveCurEventError",
         "Text": "只能先处理当前事件"
     },
     {
-        "Id": 20282032,
+        "Id": 20282033,
         "Key": "Theatre5StatusNoEventHandle",
         "Text": "当前不在事件处理状态"
     },
     {
-        "Id": 20282033,
+        "Id": 20282034,
         "Key": "Theatre5PveEventOptionError",
         "Text": "事件选项错误"
     },
     {
-        "Id": 20282034,
+        "Id": 20282035,
         "Key": "Theatre5PveEventOptionConditionLimit",
         "Text": "事件选项未解锁"
     },
     {
-        "Id": 20282035,
+        "Id": 20282036,
         "Key": "Theatre5PveEventOptionCostCfgError",
         "Text": "事件选项消耗配置错误"
     },
     {
-        "Id": 20282036,
+        "Id": 20282037,
         "Key": "Theatre5PveEventOptionCostLimit",
         "Text": "事件选项消耗道具不足"
     },
     {
-        "Id": 20282037,
+        "Id": 20282038,
         "Key": "Theatre5PveEventOptionContainLimit",
         "Text": "事件选项不包含道具"
     },
     {
-        "Id": 20282038,
+        "Id": 20282039,
         "Key": "Theatre5PveEventOptionItemCfgError",
         "Text": "事件选项道具配置错误"
     },
     {
-        "Id": 20282039,
+        "Id": 20282040,
         "Key": "Theatre5ScriptNotUnlock",
         "Text": "当前推演还没解锁"
     },
     {
-        "Id": 20282040,
+        "Id": 20282041,
         "Key": "Theatre5ScriptIsComplete",
         "Text": "当前推演已完成"
     },
     {
-        "Id": 20282041,
+        "Id": 20282042,
         "Key": "Theatre5ScriptNotFound",
         "Text": "当前推演不存在"
     },
     {
-        "Id": 20282042,
+        "Id": 20282043,
         "Key": "Theatre5ScriptStepNotFound",
         "Text": "当前推演步骤不存在"
     },
     {
-        "Id": 20282043,
+        "Id": 20282044,
         "Key": "Theatre5RandomFightEnemyError",
         "Text": "生成战斗机器人失败"
+    },
+    {
+        "Id": 20282045,
+        "Key": "Theatre5StoryLineUnlock",
+        "Text": "20282045故事线未解锁"
+    },
+    {
+        "Id": 20283001,
+        "Key": "Theatre5CharacterLvUpExpLimit",
+        "Text": "20283001角色升级exp不足"
+    },
+    {
+        "Id": 20283002,
+        "Key": "Theatre5CharacterLevelCfgNoFound",
+        "Text": "20283002角色等级配置不存在"
+    },
+    {
+        "Id": 20283003,
+        "Key": "Theatre5CharacterMaxLevelLimit",
+        "Text": "20283003角色最大等级限制"
+    },
+    {
+        "Id": 20283004,
+        "Key": "Theatre5RelicRefreshCountLimit",
+        "Text": "20283004饰品刷新次数限制"
+    },
+    {
+        "Id": 20283005,
+        "Key": "Theatre5RelicChooseNoFound",
+        "Text": "20283005饰品选择不存在"
+    },
+    {
+        "Id": 20283006,
+        "Key": "Theatre5RelicChooseNoChoose",
+        "Text": "20283006饰品未选择"
+    },
+    {
+        "Id": 20283007,
+        "Key": "Theatre5RelicChooseNoRandom",
+        "Text": "20283007饰品未随机"
+    },
+    {
+        "Id": 20283008,
+        "Key": "Theatre5BuyExpLimit",
+        "Text": "20283008该删点不支持购买经验"
+    },
+    {
+        "Id": 20283009,
+        "Key": "Theatre5CanLevelUp",
+        "Text": "20283009需要先升级"
+    },
+    {
+        "Id": 20283010,
+        "Key": "Theatre5RuneHasStrengthen",
+        "Text": "20283010强化府文已强化"
+    },
+    {
+        "Id": 20283011,
+        "Key": "Theatre5StrengthenNoIntersect",
+        "Text": "20283011强化无交集"
+    },
+    {
+        "Id": 20283012,
+        "Key": "Theatre5StrengthenQualityNoSame",
+        "Text": "20283012强化锤子仅能够对稀有度与自身相同的符纹进行强化"
+    },
+    {
+        "Id": 20283013,
+        "Key": "Theatre5NeedUnlockFreeGaid",
+        "Text": "20283013需要先解锁免费格子"
+    },
+    {
+        "Id": 20283014,
+        "Key": "Theatre5EffectConfigNoFound",
+        "Text": "20283014效果配置不存在"
+    },
+    {
+        "Id": 20283015,
+        "Key": "Theatre5EffectTypeNoFound",
+        "Text": "20283015效果类型不存在"
+    },
+    {
+        "Id": 20283016,
+        "Key": "Theatre5EffectTriggerLimit",
+        "Text": "20283016效果触发次数限制"
+    },
+    {
+        "Id": 20283017,
+        "Key": "Theatre5EffectParamError",
+        "Text": "20283017效果参数错误"
+    },
+    {
+        "Id": 20283018,
+        "Key": "Theatre5ShopNoInit",
+        "Text": "20283018商店未初始化"
+    },
+    {
+        "Id": 20283019,
+        "Key": "Theatre5BuyExpParamsError",
+        "Text": "20283019购买参数错误"
+    },
+    {
+        "Id": 20283020,
+        "Key": "Theatre5BuyExpTooMatch",
+        "Text": "20283020购买经验溢出"
     },
     {
         "Id": 20290001,
@@ -26571,32 +26901,457 @@
         "Text": "20311013关卡目标数量异常"
     },
     {
+        "Id": 20312001,
+        "Key": "SgDroneGameNotOpen",
+        "Text": "20312001无人机玩法未开启"
+    },
+    {
+        "Id": 20312002,
+        "Key": "SgDroneGameDataNotInit",
+        "Text": "20312002无人机玩法数据未初始化"
+    },
+    {
+        "Id": 20312003,
+        "Key": "SgDroneGameStageNotExist",
+        "Text": "20312003关卡不存在"
+    },
+    {
+        "Id": 20312004,
+        "Key": "SgDroneGameHasSavedStageData",
+        "Text": "20312004存在不同关卡的进度数据"
+    },
+    {
+        "Id": 20312005,
+        "Key": "SgDroneGamePreStageNotCompleted",
+        "Text": "20312005前置关卡未完成"
+    },
+    {
+        "Id": 20312006,
+        "Key": "SgDroneGamePreQuestNotCompleted",
+        "Text": "20312006前置任务未完成"
+    },
+    {
+        "Id": 20312007,
+        "Key": "SgDroneGameNoCurrentStageData",
+        "Text": "20312007关卡数据不存在"
+    },
+    {
+        "Id": 20313001,
+        "Key": "StageBookmarkStageCfgNotExist",
+        "Text": "20313001关卡配置不存在"
+    },
+    {
+        "Id": 20313002,
+        "Key": "StageBookmarkMovieIdEmpty",
+        "Text": "20313002MovieId为空"
+    },
+    {
+        "Id": 20313003,
+        "Key": "StageBookmarkActionIdInvalid",
+        "Text": "20313003ActionId非法"
+    },
+    {
+        "Id": 20320001,
+        "Key": "RaceActivityNotOpen",
+        "Text": "20320001活动未开启"
+    },
+    {
+        "Id": 20320002,
+        "Key": "RaceActivityNotExist",
+        "Text": "20320002活动不存在"
+    },
+    {
+        "Id": 20320003,
+        "Key": "RaceRoundNotOpen",
+        "Text": "20320003比赛未开启"
+    },
+    {
+        "Id": 20320004,
+        "Key": "RaceRoundNotStart",
+        "Text": "20320004比赛未开始"
+    },
+    {
+        "Id": 20320005,
+        "Key": "RaceRoundNotEnd",
+        "Text": "20320005比赛未结束"
+    },
+    {
+        "Id": 20320006,
+        "Key": "RaceRoundConfigNotExist",
+        "Text": "20320006比赛配置异常"
+    },
+    {
+        "Id": 20320007,
+        "Key": "RaceStartTimeError",
+        "Text": "20320007比赛开始时间异常"
+    },
+    {
+        "Id": 20320008,
+        "Key": "RaceGuessTimeEnd",
+        "Text": "20320008比赛竞猜时间结束"
+    },
+    {
+        "Id": 20320009,
+        "Key": "RaceCharacterConfigError",
+        "Text": "20320009选手配置异常"
+    },
+    {
+        "Id": 20320010,
+        "Key": "RaceLastRoundExistReward",
+        "Text": "20320010存在上一轮比赛未领取奖励"
+    },
+    {
+        "Id": 20320011,
+        "Key": "RaceLoadRoundManError",
+        "Text": "20320011加载比赛选手异常"
+    },
+    {
+        "Id": 20320012,
+        "Key": "RaceFromRoundIdError",
+        "Text": "20320012比赛轮次异常"
+    },
+    {
+        "Id": 20320013,
+        "Key": "RacePromotionManError",
+        "Text": "20320013比赛晋级选手异常"
+    },
+    {
+        "Id": 20320014,
+        "Key": "RaceGuessIdNotConfig",
+        "Text": "20320014竞猜配置异常"
+    },
+    {
+        "Id": 20320015,
+        "Key": "RaceRoundNotSupportGuess",
+        "Text": "20320015比赛不支持此项竞猜"
+    },
+    {
+        "Id": 20320016,
+        "Key": "RaceNotSupportGuess",
+        "Text": "20320016竞猜项未支持"
+    },
+    {
+        "Id": 20320017,
+        "Key": "RaceGlobalGuessTimeEnd",
+        "Text": "20320017竞猜时间结束"
+    },
+    {
+        "Id": 20320018,
+        "Key": "RaceCharacterNotExist",
+        "Text": "20320018不存在选手"
+    },
+    {
+        "Id": 20320019,
+        "Key": "RaceNotAllMatchEnd",
+        "Text": "20320019所有比赛未结束"
+    },
+    {
+        "Id": 20320020,
+        "Key": "RaceNotGuess",
+        "Text": "20320020未投注该竞猜项"
+    },
+    {
+        "Id": 20320021,
+        "Key": "RaceHasGainThisGuess",
+        "Text": "20320021已领取该投注奖励"
+    },
+    {
+        "Id": 20320022,
+        "Key": "RaceGuessNotExistOpt",
+        "Text": "20320022不存在竞猜选项"
+    },
+    {
+        "Id": 20320023,
+        "Key": "RaceGuessSuccess",
+        "Text": "20320023竞猜成功"
+    },
+    {
+        "Id": 20320024,
+        "Key": "RaceGuessFail",
+        "Text": "20320024竞猜失败"
+    },
+    {
+        "Id": 20320025,
+        "Key": "RaceRepeatGainSkin",
+        "Text": "20320025重复领取奖励"
+    },
+    {
+        "Id": 20320026,
+        "Key": "RaceNotConfigSkinReward",
+        "Text": "20320026未配置奖励"
+    },
+    {
+        "Id": 20320027,
+        "Key": "RaceNotInGuild",
+        "Text": "20320027未加入公会"
+    },
+    {
+        "Id": 20320028,
+        "Key": "RaceGetGuildMemberNull",
+        "Text": "20320028不存在公会玩家"
+    },
+    {
+        "Id": 20320029,
+        "Key": "RaceReportNotExist",
+        "Text": "20320029不存在比赛结果"
+    },
+    {
+        "Id": 20320030,
+        "Key": "RaceRepeateSelect",
+        "Text": "20320030重复选择选项"
+    },
+    {
+        "Id": 20320031,
+        "Key": "RaceNotFoundGuessType",
+        "Text": "20320031未找到竞猜类型"
+    },
+    {
+        "Id": 20320032,
+        "Key": "RaceNotSelectCharacter",
+        "Text": "20320032未选择竞猜角色"
+    },
+    {
+        "Id": 20320033,
+        "Key": "RaceSelectCharacterError",
+        "Text": "20320033不可选择竞猜角色"
+    },
+    {
+        "Id": 20320034,
+        "Key": "RaceSelectOptError",
+        "Text": "20320034不可选择竞猜选项"
+    },
+    {
+        "Id": 20320035,
+        "Key": "RaceGuildGetScoreError",
+        "Text": "20320035获取公会成员分数失败，请稍后再试"
+    },
+    {
+        "Id": 20320036,
+        "Key": "RaceValidResultIsNull",
+        "Text": "20320036获取信息异常"
+    },
+    {
+        "Id": 20320037,
+        "Key": "RaceUpdateRankError",
+        "Text": "20320037更新排行榜失败"
+    },
+    {
+        "Id": 20320038,
+        "Key": "RaceSkillDeadLoop",
+        "Text": "20320038技能效果死循环"
+    },
+    {
+        "Id": 20320039,
+        "Key": "RaceSkillNotFound",
+        "Text": "20320039玩家技能列表找不到该技能"
+    },
+    {
+        "Id": 20320040,
+        "Key": "RaceSkillProbabilityError",
+        "Text": "20320040技能随机失败"
+    },
+    {
+        "Id": 20320041,
+        "Key": "RaceSkillUseTimesNotEnough",
+        "Text": "20320041技能使用次数不足"
+    },
+    {
+        "Id": 20320042,
+        "Key": "RaceSkillConditionError",
+        "Text": "20320042未能达到技能触发条件"
+    },
+    {
+        "Id": 20320043,
+        "Key": "RaceCharacterSkillTemplateNotFound",
+        "Text": "20320043RaceCharacterSkill表找不到对应配置"
+    },
+    {
+        "Id": 20320044,
+        "Key": "RaceSkillConditionTemplateNotFound",
+        "Text": "20320044RaceSkillCondition表找不到对应配置"
+    },
+    {
+        "Id": 20320045,
+        "Key": "RaceMagicTemplateNotFound",
+        "Text": "20320045RaceMagic表找不到对应配置"
+    },
+    {
+        "Id": 20320046,
+        "Key": "RaceMagicSearchTemplateNotFound",
+        "Text": "20320046RaceMagicSearch表找不到对应配置"
+    },
+    {
+        "Id": 20320047,
+        "Key": "RaceSignalBallTemplateNotFound",
+        "Text": "20320047RaceSignalBall表找不到对应配置"
+    },
+    {
+        "Id": 20320048,
+        "Key": "RaceSignalGroupTemplateNotFound",
+        "Text": "20320048RaceSignalGroup表找不到对应配置"
+    },
+    {
+        "Id": 20320049,
+        "Key": "RaceSignalBallRankGroupTemplateNotFound",
+        "Text": "20320049RaceSignalBallRankGroup表找不到对应配置"
+    },
+    {
+        "Id": 20320050,
+        "Key": "RaceMagicBuffTemplateNotFound",
+        "Text": "20320050RaceMagicBuff表找不到对应配置"
+    },
+    {
+        "Id": 20320051,
+        "Key": "RaceMagicBuffTagTemplateNotFound",
+        "Text": "20320051RaceMagicBuffTag表找不到对应配置"
+    },
+    {
+        "Id": 20320052,
+        "Key": "SignalBallNotEnough",
+        "Text": "20320052信号球数量不足"
+    },
+    {
+        "Id": 20320053,
+        "Key": "GetTargetParamError",
+        "Text": "20320053获取技能目标参数错误"
+    },
+    {
+        "Id": 20320054,
+        "Key": "RankNotFoundActor",
+        "Text": "20320054排行榜没找到这个玩家"
+    },
+    {
+        "Id": 20320055,
+        "Key": "RaceNotExistReward",
+        "Text": "20320055无奖励领取"
+    },
+    {
+        "Id": 20320056,
+        "Key": "RaceGetRaceReportError",
+        "Text": "20320056获取比赛报告失败"
+    },
+    {
+        "Id": 20320057,
+        "Key": "RaceGetGuessReportError",
+        "Text": "20320057获取比赛竞猜结果失败"
+    },
+    {
+        "Id": 20320058,
+        "Key": "RaceConditionParamError",
+        "Text": "20320058条件参数错误"
+    },
+    {
+        "Id": 20320059,
+        "Key": "RaceOptionCalcError",
+        "Text": "20320059选项获取异常"
+    },
+    {
+        "Id": 20320060,
+        "Key": "RaceGuessEnd",
+        "Text": "20320060竞猜结束"
+    },
+    {
+        "Id": 20320061,
+        "Key": "RaceRoundManError",
+        "Text": "20320061比赛选手异常"
+    },
+    {
+        "Id": 20320062,
+        "Key": "RankParamError",
+        "Text": "20320062排名参数错误"
+    },
+    {
+        "Id": 20320063,
+        "Key": "RaceRegLiveInvalidRoundState",
+        "Text": "20320062回合状态错误"
+    },
+    {
+        "Id": 20320064,
+        "Key": "RaceRegLivePlayerNotFound",
+        "Text": "20320063未找到玩家数据"
+    },
+    {
+        "Id": 20320065,
+        "Key": "RaceRegLiveGetSectorInfoFailed",
+        "Text": "20320064无法找到赛段信息"
+    },
+    {
+        "Id": 20320066,
+        "Key": "RacePlaybackInvalidRound",
+        "Text": "20320064无效的回合"
+    },
+    {
+        "Id": 20320067,
+        "Key": "RacePlaybackRoundDataNotFound",
+        "Text": "20320065未找到回合数据"
+    },
+    {
+        "Id": 20320068,
+        "Key": "RacePlaybackInvalidFrameIdx",
+        "Text": "20320066无效的帧索引"
+    },
+    {
+        "Id": 20320069,
+        "Key": "RacePlaybackInvalidFrameCount",
+        "Text": "20320067无限的帧数量"
+    },
+    {
+        "Id": 20320070,
+        "Key": "RaceRankInvalidRankId",
+        "Text": "20320069排行榜标识错误"
+    },
+    {
+        "Id": 20320071,
+        "Key": "RaceEnd",
+        "Text": "20320070比赛已结束"
+    },
+    {
+        "Id": 20321001,
+        "Key": "FixRewardRewardInvalidCount",
+        "Text": "20321001无效的数量"
+    },
+    {
+        "Id": 20321002,
+        "Key": "FixRewardInvalidRewardType",
+        "Text": "20321002不支持的奖励类型"
+    },
+    {
+        "Id": 20321003,
+        "Key": "FixRewardRewardTypeNotMatch",
+        "Text": "20321003奖励类型不一致"
+    },
+    {
         "Id": 25000001,
         "Key": "DlcWorldInfoTemplateNotFound",
         "Text": "25000001Dlc世界信息配置不存在"
     },
     {
         "Id": 25000002,
+        "Key": "DlcFightWorldTypeNotFound",
+        "Text": "25000002世界类型不存在"
+    },
+    {
+        "Id": 25000003,
         "Key": "DlcCharacterTemplateNotFound",
         "Text": "25000002角色配置不存在"
     },
     {
-        "Id": 25000003,
+        "Id": 25000004,
         "Key": "DlcCharacterCreateCharacterFail",
         "Text": "25000003角色创建失败"
     },
     {
-        "Id": 25000004,
+        "Id": 25000005,
         "Key": "DlcCharacterCreateCharacterAlreadyExist",
         "Text": "25000004角色已存在"
     },
     {
-        "Id": 25000005,
+        "Id": 25000006,
         "Key": "DlcCharacterGetCharacterByIdNotFound",
         "Text": "25000005角色不存在"
     },
     {
-        "Id": 25000006,
+        "Id": 25000007,
         "Key": "DlcCharacterAlreadyFighting",
         "Text": "25000006角色已出战"
     },
@@ -26894,6 +27649,16 @@
         "Id": 25003019,
         "Key": "DlcSwitchWorldTypeUnMatch",
         "Text": "25003017关卡切换类型不匹配"
+    },
+    {
+        "Id": 25003020,
+        "Key": "DlcWorldPhotographFilterNotFound",
+        "Text": "25003020相机滤镜ID不存在"
+    },
+    {
+        "Id": 25003021,
+        "Key": "DlcWorldPhotographActionNotFound",
+        "Text": "25003021角色拍照动作ID不存在"
     },
     {
         "Id": 25004001,
@@ -27257,493 +28022,883 @@
     },
     {
         "Id": 25200004,
+        "Key": "DlcFashionPartIdNotOwn",
+        "Text": "25200004未拥有时装"
+    },
+    {
+        "Id": 25200005,
+        "Key": "DlcFashionResIdNotFound",
+        "Text": 25200005
+    },
+    {
+        "Id": 25200006,
+        "Key": "DlcFashionNotSupportChangeColor",
+        "Text": "25200006时装不支持更换颜色"
+    },
+    {
+        "Id": 25200007,
+        "Key": "DlcFashionNotExistColor",
+        "Text": "25200007时装不存在颜色"
+    },
+    {
+        "Id": 25200008,
+        "Key": "DlcLackMustWearPart",
+        "Text": "25200008缺少必须穿戴部位"
+    },
+    {
+        "Id": 25200009,
         "Key": "BigWorldMessageStepCfgNull",
         "Text": "25200004找不到该消息的配置"
     },
     {
-        "Id": 25200005,
+        "Id": 25200010,
         "Key": "BigWorldMessageNotFinish",
         "Text": "25200005阅读短信未完成"
     },
     {
-        "Id": 25200006,
+        "Id": 25200011,
         "Key": "BigWorldMessageStepRepeat",
         "Text": "25200005消息Id重复"
     },
     {
-        "Id": 25200007,
+        "Id": 25200012,
         "Key": "BigWorldMessageIsFinish",
         "Text": "25200006该消息已经阅读"
     },
     {
-        "Id": 25200008,
+        "Id": 25200013,
         "Key": "BigWorldHelpCourseCfgNotFound",
         "Text": "25200007找不到图文教学的配置"
     },
     {
-        "Id": 25200009,
+        "Id": 25200014,
         "Key": "BigWorldHelpCourseDataIsUnlocked",
         "Text": "25200008图文教学已解锁"
     },
     {
-        "Id": 25200010,
+        "Id": 25200015,
         "Key": "BigWorldHelpCourseDataNotUnlock",
         "Text": "25200009图文教学数据未解锁"
     },
     {
-        "Id": 25200011,
+        "Id": 25200016,
         "Key": "BigWorldHelpCourseDataIsRead",
         "Text": "25200010图文教学已读"
     },
     {
-        "Id": 25200012,
+        "Id": 25200017,
         "Key": "BigWorldMessageNotReadOptionPreStepId",
         "Text": "25200011未阅读选项之前的消息"
     },
     {
-        "Id": 25200013,
+        "Id": 25200018,
         "Key": "BigWorldMessageIsActive",
         "Text": "25200012该消息已经激活"
     },
     {
-        "Id": 25200014,
+        "Id": 25200019,
         "Key": "BigWorldMessageNotActive",
         "Text": "25200013该消息还未激活"
     },
     {
-        "Id": 25200015,
+        "Id": 25200020,
         "Key": "BigWorldMessageNotReadLastStep",
         "Text": "25200014未阅读前置消息分支"
     },
     {
-        "Id": 25200016,
+        "Id": 25200021,
         "Key": "BigWorldMessageLastStepError",
         "Text": "25200015前置消息错误"
     },
     {
-        "Id": 25200017,
+        "Id": 25200022,
         "Key": "DlcWorldRepetitionOpenCollectable",
         "Text": "25200007重复开采采集物"
     },
     {
-        "Id": 25200018,
+        "Id": 25200023,
         "Key": "DlcWorldCollectableIsOpen",
         "Text": "25200008已经是开启状态"
     },
     {
-        "Id": 25200019,
+        "Id": 25200024,
+        "Key": "DlcWorldQuestItemCollectableIsOpen",
+        "Text": "25200024任务道具已经是开启状态"
+    },
+    {
+        "Id": 25200025,
+        "Key": "DlcWorldNotSupportCollectType",
+        "Text": "25200025不支持采集类型"
+    },
+    {
+        "Id": 25200026,
         "Key": "DlcWorldCollectableStateChangePaError",
         "Text": "25200009激活状态错误"
     },
     {
-        "Id": 25200020,
+        "Id": 25200027,
         "Key": "DlcWorldSceneObjectIdNotExist",
         "Text": "25200014场景物体Id不存在"
     },
     {
-        "Id": 25200021,
+        "Id": 25200028,
         "Key": "DlcWorldLevelIdNotExist",
         "Text": "25200011关卡Id不存在"
     },
     {
-        "Id": 25200022,
+        "Id": 25200029,
         "Key": "DlcWorldWorldIdNotExist",
         "Text": "25200012WorldId不存在"
     },
     {
-        "Id": 25200023,
+        "Id": 25200030,
         "Key": "DlcWorldSaveDataNotExist",
         "Text": "25200023World数据不存在"
     },
     {
-        "Id": 25200024,
+        "Id": 25200031,
         "Key": "DlcWorldNotSaveInstLevel",
         "Text": "25200024关卡非持久性关卡无需保存"
     },
     {
-        "Id": 25200025,
+        "Id": 25200032,
         "Key": "DlcWorldSceneCollectableAwardConfigError",
         "Text": "25200013采集物奖励配置错误"
     },
     {
-        "Id": 25200026,
+        "Id": 25200033,
         "Key": "DlcWorldSceneAwardSendError",
         "Text": "25200014采集物奖励发放错误"
     },
     {
-        "Id": 25200027,
+        "Id": 25200034,
         "Key": "DlcWorldSceneObjectCanNotCreate",
         "Text": "25200027场景物体不能创建"
     },
     {
-        "Id": 25200028,
+        "Id": 25200035,
         "Key": "DlcWorldLevelStateCheckParamsError",
         "Text": "25200015关卡状态处理参数错误"
     },
     {
-        "Id": 25200029,
+        "Id": 25200036,
         "Key": "BigWorldCafeNotOpen",
         "Text": "25200025咖啡厅功能还未开放"
     },
     {
-        "Id": 25200030,
+        "Id": 25200037,
         "Key": "BigWorldCafeDataNotInit",
         "Text": "25200008咖啡厅数据还未初始化"
     },
     {
-        "Id": 25200031,
+        "Id": 25200038,
         "Key": "BigWorldCafeGroupIdError",
         "Text": "25200009咖啡厅卡组Id超过上限"
     },
     {
-        "Id": 25200032,
+        "Id": 25200039,
         "Key": "BigWorldCafeGroupListError",
         "Text": "25200010咖啡厅卡片最大数量超过上限"
     },
     {
-        "Id": 25200033,
+        "Id": 25200040,
         "Key": "BigWorldCafeStageConfigError",
         "Text": "25200011咖啡厅关卡不存在"
     },
     {
-        "Id": 25200034,
+        "Id": 25200041,
         "Key": "BigWorldCafeAwardConfigError",
         "Text": "25200012咖啡厅关卡奖励配置错误"
     },
     {
-        "Id": 25200035,
+        "Id": 25200042,
         "Key": "BigWorldCafeAwardSendError",
         "Text": "25200013咖啡厅关卡奖励发放错误"
     },
     {
-        "Id": 25200036,
+        "Id": 25200043,
         "Key": "BigWorldCafeStageConditionError",
         "Text": "25200032咖啡厅关卡目标条件不满足"
     },
     {
-        "Id": 25200037,
+        "Id": 25200044,
         "Key": "BigWorldCafeCardIdNotExsitError",
         "Text": "25200014咖啡厅卡片Id不存在"
     },
     {
-        "Id": 25200038,
+        "Id": 25200045,
         "Key": "BigWorldCafeCardNumOverown",
         "Text": "25200015咖啡厅回合中出现的卡片数量超出了玩家拥有的数量"
     },
     {
-        "Id": 25200039,
+        "Id": 25200046,
         "Key": "BigWorldCafeNewRoundError",
         "Text": "25200016咖啡厅新牌局必须从第一回合开始"
     },
     {
-        "Id": 25200040,
+        "Id": 25200047,
         "Key": "BigWorldCafeNextRoundError",
         "Text": "25200017咖啡厅牌局回合数量错误"
     },
     {
-        "Id": 25200041,
+        "Id": 25200048,
         "Key": "BigWorldCafeCafeGamblingIsError",
         "Text": "25200018咖啡厅牌局数据为空"
     },
     {
-        "Id": 25200042,
+        "Id": 25200049,
         "Key": "BigWorldCafeCafeGroupIsNullError",
         "Text": "25200019咖啡卡组数据为空"
     },
     {
-        "Id": 25200043,
+        "Id": 25200050,
         "Key": "BigWorldCafeCafeCardIdNotInConfigError",
         "Text": "25200020咖啡卡顾客Id不存在"
     },
     {
-        "Id": 25200044,
+        "Id": 25200051,
         "Key": "BigWorldCafeCardTypeError",
         "Text": "25200033关卡Type错误"
     },
     {
-        "Id": 25200045,
+        "Id": 25200052,
         "Key": "BigWorldCafeListNotNull",
         "Text": "25200034剧情模式下卡牌列表不为空"
     },
     {
-        "Id": 25200046,
+        "Id": 25200053,
         "Key": "BigWorldCafeCardListIsNull",
         "Text": "25200035挑战模式下卡牌列表为空"
     },
     {
-        "Id": 25200047,
+        "Id": 25200054,
         "Key": "BigWorldCafeStageIdError",
         "Text": "25200036牌局关卡Id异常"
     },
     {
-        "Id": 25200048,
+        "Id": 25200055,
         "Key": "BigWorldCafeBuffSizeError",
         "Text": "25200037牌局Buff数据尺寸异常"
     },
     {
-        "Id": 25200049,
+        "Id": 25200056,
         "Key": "BigWorldCafeNextRoundBuffsSizeError",
         "Text": "25200043下一局牌局Buff数据尺寸异常"
     },
     {
-        "Id": 25200050,
+        "Id": 25200057,
         "Key": "BigWorldCafeUseNotActivityCard",
         "Text": "25200038玩家使用了未激活的卡牌"
     },
     {
-        "Id": 25200051,
+        "Id": 25200058,
         "Key": "BigWorldCafeNotPass",
         "Text": "25200047咖啡厅牌局还未通关"
     },
     {
-        "Id": 25200052,
+        "Id": 25200059,
         "Key": "BigWorldCafeAlreadyKickOut",
         "Text": "25200048咖啡厅场景跳转引导已经执行"
     },
     {
-        "Id": 25200053,
+        "Id": 25200060,
         "Key": "BigWorldCafeNotAllowKickOut",
         "Text": "25200049咖啡厅该关卡不允许执行场景跳转引导"
     },
     {
-        "Id": 25200054,
+        "Id": 25200061,
         "Key": "BigWorldCafeRoundCardError",
         "Text": "25200054咖啡厅本回合手牌异常"
     },
     {
-        "Id": 25200055,
+        "Id": 25200062,
         "Key": "BigWorldCafeRoundHandCardError",
         "Text": "25200055咖啡厅本回合出牌前手牌异常"
     },
     {
-        "Id": 25200056,
+        "Id": 25200063,
         "Key": "BigWorldCafeRoundReviewError",
         "Text": "25200056咖啡厅点赞数据异常"
     },
     {
-        "Id": 25200057,
+        "Id": 25200064,
         "Key": "BigWorldFightError",
         "Text": "25200039服务器世界内部异常"
     },
     {
-        "Id": 25200058,
+        "Id": 25200065,
         "Key": "BigWorldNotCreateFight",
         "Text": "25200040未预先创建世界"
     },
     {
-        "Id": 25200059,
+        "Id": 25200066,
         "Key": "BigWorldNotInit",
         "Text": "25200041未初始化世界"
     },
     {
-        "Id": 25200060,
+        "Id": 25200067,
         "Key": "BigWorldNotInitPlayer",
         "Text": "25200047未初始化玩家数据"
     },
     {
-        "Id": 25200061,
+        "Id": 25200068,
         "Key": "BigWorldLevelNotInWorld",
         "Text": "25200048副本场景不属于大世界"
     },
     {
-        "Id": 25200062,
+        "Id": 25200069,
         "Key": "BigWorldPlayerNotInLevel",
         "Text": "25200049玩家不在副本"
     },
     {
-        "Id": 25200063,
+        "Id": 25200070,
         "Key": "BigWorldNotLoadComplete",
         "Text": "25200060世界未加载完毕"
     },
     {
-        "Id": 25200064,
+        "Id": 25200071,
         "Key": "BigWorldCreateLevelFail",
         "Text": "25200061创建副本失败"
     },
     {
-        "Id": 25200065,
+        "Id": 25200072,
         "Key": "BigWorldEnterNullLevel",
         "Text": "25200062进入关卡进入空副本"
     },
     {
-        "Id": 25200066,
+        "Id": 25200073,
         "Key": "BigWorldReEnterNullLevel",
         "Text": "25200063重回关卡进入空副本"
     },
     {
-        "Id": 25200067,
+        "Id": 25200074,
         "Key": "BigWorldNotHasLevelData",
         "Text": "25200064当前世界并无该副本数据"
     },
     {
-        "Id": 25200068,
+        "Id": 25200075,
         "Key": "BigWorldChallengeWorldError",
         "Text": "25200065不能挑战大世界"
     },
     {
-        "Id": 25200069,
+        "Id": 25200076,
         "Key": "BigWorldChallengeLevelSubTypeErrorStoryInst",
         "Text": "25200066不能挑战剧情副本"
     },
     {
-        "Id": 25200070,
+        "Id": 25200077,
         "Key": "BigWorldCanNotLeaveWorldByInstLeaveInst",
         "Text": "25200067不能直接离开大世界"
     },
     {
-        "Id": 25200071,
+        "Id": 25200078,
         "Key": "BigWorldLeaveInstLevelExecptionError",
         "Text": "25200068离开副本异常"
     },
     {
-        "Id": 25200072,
+        "Id": 25200079,
         "Key": "BigWorldEnterInstLevelRequestError",
         "Text": "25200069进入副本请求错误"
     },
     {
-        "Id": 25200073,
+        "Id": 25200080,
         "Key": "BigWorldEnterInstLevelIdError",
         "Text": "25200070进入副本id错误"
     },
     {
-        "Id": 25200074,
-        "Key": "BigWorldEnterInstLevelNotFromBigWorld",
-        "Text": "25200071只能从大世界进入副本"
+        "Id": 25200081,
+        "Key": "BigWorldEnterInstLevelAlreadyInLevel",
+        "Text": "25200081已经在同一副本中"
     },
     {
-        "Id": 25200075,
+        "Id": 25200082,
         "Key": "BigWorldEnterInstLevelSubTypeErrorInstance",
         "Text": "25200072不能进入非副本类型关卡"
     },
     {
-        "Id": 25200076,
+        "Id": 25200083,
         "Key": "BigWorldEnterInstLevelExecptionError",
         "Text": "25200073进入副本异常"
     },
     {
-        "Id": 25200077,
+        "Id": 25200084,
         "Key": "BigWorldFinishInstTypeError",
         "Text": "25200074非副本类型不能完成副本"
     },
     {
-        "Id": 25200078,
+        "Id": 25200085,
         "Key": "BigWorldFinishInstSubTypeError",
         "Text": "25200075完成副本子类型错误"
     },
     {
-        "Id": 25200079,
+        "Id": 25200086,
         "Key": "BigWorldCreateFightError",
         "Text": "25200076大世界创建战斗框架失败"
     },
     {
-        "Id": 25200080,
+        "Id": 25200087,
         "Key": "BigWorldEnterWorldExecptionError",
         "Text": "25200077进入大世界异常"
     },
     {
-        "Id": 25200081,
+        "Id": 25200088,
         "Key": "BigWorldEnterInstLevelTargetPosError",
         "Text": "25200078进入副本坐标获取失败"
     },
     {
-        "Id": 25200082,
+        "Id": 25200089,
         "Key": "BigWorldInstLevelSettleDataIsNull",
         "Text": "25200079副本结算记录数据为空"
     },
     {
-        "Id": 25200083,
+        "Id": 25200090,
         "Key": "BigWorldModuleAddTimerError",
         "Text": "25200079大世界计时器添加错误"
     },
     {
-        "Id": 25200084,
+        "Id": 25200091,
         "Key": "BigWorldModuleAddRepeatTimerError",
         "Text": "25200080大世界定时计时器添加错误"
     },
     {
-        "Id": 25200085,
+        "Id": 25200092,
         "Key": "BigWorldAlbumFull",
         "Text": "25200081相册相片到达上限"
     },
     {
-        "Id": 25200086,
+        "Id": 25200093,
         "Key": "BigWorldAlbumInvalidDeleteIds",
         "Text": "25200082需删除相片Id参数无效"
     },
     {
-        "Id": 25200087,
+        "Id": 25200094,
         "Key": "BigWorldAlbumPhotoRemarkeIsNullOrEmpty",
         "Text": "25200083相片备注为空"
     },
     {
-        "Id": 25200088,
+        "Id": 25200095,
         "Key": "BigWorldAlbumPhotoRemarkInvalid",
         "Text": "25200084相片备注非法"
     },
     {
-        "Id": 25200089,
+        "Id": 25200096,
         "Key": "BigWorldAlbumPhotoRemarkTooLong",
         "Text": "25200085相片备注超出长度"
     },
     {
-        "Id": 25200090,
+        "Id": 25200097,
         "Key": "BigWorldAlbumPhotoNotFound",
         "Text": "25200086相片不存在"
     },
     {
-        "Id": 25200091,
+        "Id": 25200098,
         "Key": "DlcFashionSuitIdNotFound",
         "Text": "25200087未配置的时装套装Id"
     },
     {
-        "Id": 25200092,
+        "Id": 25200099,
         "Key": "DlcFashionSuitCheckError",
         "Text": "25200088设置中有不符合套装要求的部位"
     },
     {
-        "Id": 25200093,
+        "Id": 25200100,
         "Key": "DlcFashionSuitEmptyError",
         "Text": "25200089还没获得该时装"
     },
     {
-        "Id": 25200094,
+        "Id": 25200101,
         "Key": "DlcFashionTypeIdNotFound",
         "Text": "25200090未配置的时装部位"
     },
     {
-        "Id": 25200095,
+        "Id": 25200102,
         "Key": "DlcFashionSexualParamError",
         "Text": "25200091性别参数异常"
     },
     {
-        "Id": 25200096,
+        "Id": 25200103,
         "Key": "BigWorldSysModInvalidSysModId",
         "Text": "25200092无效的大世界系统模块id"
     },
     {
-        "Id": 25200097,
+        "Id": 25200104,
         "Key": "BigWorldPlayerRepeatedlyEnterWorld",
         "Text": "25200093重复进入大世界"
     },
     {
-        "Id": 25200098,
+        "Id": 25200105,
         "Key": "BigWorldPlayerOffline",
         "Text": "25200094玩家已离线"
     },
     {
-        "Id": 25200099,
+        "Id": 25200106,
         "Key": "BigWorldPlayerExit",
         "Text": "25200095玩家已退出"
     },
     {
-        "Id": 25200100,
+        "Id": 25200107,
         "Key": "BigWorldNotAvailable",
         "Text": "25200100功能不可用"
     },
     {
-        "Id": 25200101,
+        "Id": 25200108,
+        "Key": "DlcWorldSceneObjectIsNotCollect",
+        "Text": "25200108对象不可采集"
+    },
+    {
+        "Id": 25200109,
         "Key": "DlcWorldSceneObjectIsNotTreasureBox",
         "Text": "25200101该物品不属于宝箱"
+    },
+    {
+        "Id": 25200110,
+        "Key": "BigWorldSaveFovGroupIdNotFound",
+        "Text": "25200110保存视角的组Id不存在"
+    },
+    {
+        "Id": 25200111,
+        "Key": "BigWorldSaveFovEFovTypeError",
+        "Text": "25200111保存视角类型无效"
+    },
+    {
+        "Id": 25300001,
+        "Key": "RelinkActivityNotOpen",
+        "Text": "25300001联机共斗活动未开启"
+    },
+    {
+        "Id": 25300002,
+        "Key": "RelinkEquipTemplateNotFound",
+        "Text": "25300002联机共斗找不到装备的配置"
+    },
+    {
+        "Id": 25300003,
+        "Key": "RelinkEquipTypeNotFound",
+        "Text": "25300003联机共斗不存在的装备槽位类型"
+    },
+    {
+        "Id": 25300004,
+        "Key": "RelinkEquipNotOwned",
+        "Text": "25300004联机共斗玩家未拥有此装备"
+    },
+    {
+        "Id": 25300005,
+        "Key": "RelinkEquipAlreadyOwned",
+        "Text": "25300005联机共斗玩家已拥有此装备"
+    },
+    {
+        "Id": 25300006,
+        "Key": "RelinkEquipAlreadyLocked",
+        "Text": "25300006联机共斗装备已被锁定"
+    },
+    {
+        "Id": 25300007,
+        "Key": "RelinkEquipUnlocked",
+        "Text": "25300007联机共斗装备未被锁定"
+    },
+    {
+        "Id": 25300008,
+        "Key": "RelinkEquipAlreadyWorn",
+        "Text": "25300008联机共斗装备已被穿戴"
+    },
+    {
+        "Id": 25300009,
+        "Key": "RelinkEquipSlotNotMatch",
+        "Text": "25300009联机共斗装备槽位不匹配"
+    },
+    {
+        "Id": 25300010,
+        "Key": "RelinkEquipNotWorn",
+        "Text": "25300010联机共斗装备未被穿戴"
+    },
+    {
+        "Id": 25300011,
+        "Key": "RelinkEquipSlotNotExist",
+        "Text": "25300011联机共斗装备槽位不存在"
+    },
+    {
+        "Id": 25300012,
+        "Key": "RelinkEquipNormalExpandSlotNotEnough",
+        "Text": "25300012联机共斗装备可用基础扩展槽不足"
+    },
+    {
+        "Id": 25300013,
+        "Key": "RelinkCharaterDataNotFound",
+        "Text": "25300013联机共斗找不到玩家的角色数据"
+    },
+    {
+        "Id": 25300014,
+        "Key": "RelinkEquipBagIsFull",
+        "Text": "25300014联机共斗仓库已满"
+    },
+    {
+        "Id": 25300015,
+        "Key": "RelinkEquipPresetNameInvalid",
+        "Text": "25300015联机共斗装备预设套装名称中包含非法字符"
+    },
+    {
+        "Id": 25300016,
+        "Key": "RelinkEquipPresetNameTooLong",
+        "Text": "25300016联机共斗装备预设套装名称过长"
+    },
+    {
+        "Id": 25300017,
+        "Key": "RelinkEquipPresetNotFound",
+        "Text": "25300017联机共斗找不到装备预设套装"
+    },
+    {
+        "Id": 25300018,
+        "Key": "RelinkEquipComposeTemplateNotFound",
+        "Text": "25300018联机共斗找不到合成总表的配置"
+    },
+    {
+        "Id": 25300019,
+        "Key": "RelinkEquipComposePoolTemplateNotFound",
+        "Text": "25300019联机共斗找不到合成装备池的配置"
+    },
+    {
+        "Id": 25300020,
+        "Key": "RelinkEquipBreakTemplateNotFound",
+        "Text": "25300020联机共斗找不到装备分解的配置"
+    },
+    {
+        "Id": 25300021,
+        "Key": "RelinkActivityNotExist",
+        "Text": "25300021活动不存在"
+    },
+    {
+        "Id": 25300022,
+        "Key": "RelinkReachMaxLevel",
+        "Text": "25300022已经达到最大等级"
+    },
+    {
+        "Id": 25300023,
+        "Key": "RelinkNotExistNextLevel",
+        "Text": 25300023
+    },
+    {
+        "Id": 25300024,
+        "Key": "RelinkNotEnoughCoin",
+        "Text": "25300024升级所需金币不够"
+    },
+    {
+        "Id": 25300025,
+        "Key": "RelinkUpLevelNotPassFail",
+        "Text": "25300025未通关指定关卡"
+    },
+    {
+        "Id": 25300026,
+        "Key": "RelinkNotExistNpcId",
+        "Text": "25300026角色不存在"
+    },
+    {
+        "Id": 25300027,
+        "Key": "RelinkNpcFail",
+        "Text": "25300027非法机体"
+    },
+    {
+        "Id": 25300028,
+        "Key": "RelinkNpcNotLockFail",
+        "Text": "25300028角色未解锁"
+    },
+    {
+        "Id": 25300029,
+        "Key": "RelinkEmojiWheelOverLimit",
+        "Text": "25300029表情超过最大上限"
+    },
+    {
+        "Id": 25300030,
+        "Key": "RelinkEmojiWheelRepeat",
+        "Text": "25300030表情重复保存"
+    },
+    {
+        "Id": 25300031,
+        "Key": "RelinkEmojiNotExist",
+        "Text": "25300031表情不存在"
+    },
+    {
+        "Id": 25300032,
+        "Key": "RelinkEmojiNotOwn",
+        "Text": "25300032未拥有表情"
+    },
+    {
+        "Id": 25300033,
+        "Key": "RelinkSignConfigError",
+        "Text": "25300033签到数据错误"
+    },
+    {
+        "Id": 25300034,
+        "Key": "RelinkSignDefaultConfigError",
+        "Text": "25300034签到奖励错误"
+    },
+    {
+        "Id": 25300035,
+        "Key": "RelinkLevelNotExist",
+        "Text": "25300035关卡不存在"
+    },
+    {
+        "Id": 25300036,
+        "Key": "RelinkPreLevelNotExist",
+        "Text": "25300036前置关卡不存在"
+    },
+    {
+        "Id": 25300037,
+        "Key": "RelinkPreLevelNotPass",
+        "Text": "25300037前置未通关"
+    },
+    {
+        "Id": 25300038,
+        "Key": "RelinkChapterNotExist",
+        "Text": "25300038章节不存在"
+    },
+    {
+        "Id": 25300039,
+        "Key": "RelinkChapterNotOpen",
+        "Text": "25300039章节未开启"
+    },
+    {
+        "Id": 25300040,
+        "Key": "RelinkLevelNotOpen",
+        "Text": "25300040关卡未开启"
+    },
+    {
+        "Id": 25300041,
+        "Key": "RelinkChapterConditionError",
+        "Text": "25300041章节未满足开启条件"
+    },
+    {
+        "Id": 25300042,
+        "Key": "RelinkLevelConditionError",
+        "Text": "25300042关卡未满足开启条件"
+    },
+    {
+        "Id": 25300043,
+        "Key": "RelinkDropGroupNotExist",
+        "Text": "25300043奖池不存在"
+    },
+    {
+        "Id": 25300044,
+        "Key": "RelinkDropGroupCountError",
+        "Text": "25300044奖池数量异常"
+    },
+    {
+        "Id": 25300045,
+        "Key": "RelinkDropGroupNullError",
+        "Text": "25300045奖池异常"
+    },
+    {
+        "Id": 25300046,
+        "Key": "RelinkRewardGroupNotExist",
+        "Text": "25300046奖励组不存在"
+    },
+    {
+        "Id": 25300047,
+        "Key": "RelinkRewardGroupCountError",
+        "Text": "25300047奖励组数量异常"
+    },
+    {
+        "Id": 25300048,
+        "Key": "RelinkNotSetNpc",
+        "Text": "25300048未设置出战角色"
+    },
+    {
+        "Id": 25300049,
+        "Key": "RelinkSetEmojiParamError",
+        "Text": "25300049设置表情参数错误"
+    },
+    {
+        "Id": 25300050,
+        "Key": "RelinkPlayerIsReady",
+        "Text": "25300050准备中无法操作"
+    },
+    {
+        "Id": 25300051,
+        "Key": "RelinkUpdateRankError",
+        "Text": "25300051更新排行榜数据加载异常"
+    },
+    {
+        "Id": 25300052,
+        "Key": "RelinkUpdateRankEmptyDataError",
+        "Text": "25300052更新排行榜空数据异常"
+    },
+    {
+        "Id": 25300053,
+        "Key": "RelinkUpdateRankLevelDataError",
+        "Text": "25300053更新排行榜关卡数据异常"
+    },
+    {
+        "Id": 25300054,
+        "Key": "RelinkUpdateRankScoreDataError",
+        "Text": "25300054更新排行榜分数数据异常"
+    },
+    {
+        "Id": 25300055,
+        "Key": "RelinkUpdateRankDataError",
+        "Text": "25300055更新排行榜数据异常"
+    },
+    {
+        "Id": 25300056,
+        "Key": "RelinkLevelNotRankError",
+        "Text": "25300056关卡未配置排行榜"
+    },
+    {
+        "Id": 25300057,
+        "Key": "RelinkOccError",
+        "Text": "25300057非法职业"
+    },
+    {
+        "Id": 25300058,
+        "Key": "RelinkSameOccError",
+        "Text": "25300058当前已是该职业"
+    },
+    {
+        "Id": 25300059,
+        "Key": "RelinkOccNotExistNpcId",
+        "Text": "25300059角色职业不存在"
+    },
+    {
+        "Id": 25300060,
+        "Key": "RelinkMainEquipNotAllowAbsort",
+        "Text": "25300060主要装备不能被吸收"
+    },
+    {
+        "Id": 25300061,
+        "Key": "RelinkDeputyFactorIsEmpty",
+        "Text": "25300061词条删除次数为空"
+    },
+    {
+        "Id": 25300062,
+        "Key": "RelinkFactorSlotIsMax",
+        "Text": "25300062词条插槽已满"
+    },
+    {
+        "Id": 25300063,
+        "Key": "RelinkFactorSlotNotFind",
+        "Text": "25300063词条插槽不存在"
+    },
+    {
+        "Id": 25300064,
+        "Key": "RelinkChapterNotConfig",
+        "Text": "25300064章节未配置"
+    },
+    {
+        "Id": 25300065,
+        "Key": "RelinkPlayerLevelNotFind",
+        "Text": "25300065等级配置不存在"
+    },
+    {
+        "Id": 25300066,
+        "Key": "RelinkNamePlateIdNotMatch",
+        "Text": "25300066铭牌不匹配"
+    },
+    {
+        "Id": 25300067,
+        "Key": "RelinkReadyStateDonSwitchChar",
+        "Text": "25300067准备状态下不可切换"
+    },
+    {
+        "Id": 25300068,
+        "Key": "RelinkMatchParamError",
+        "Text": "25300068匹配参数错误"
     },
     {
         "Id": 30002001,
@@ -27759,6 +28914,31 @@
         "Id": 30002003,
         "Key": "RequestError",
         "Text": "请求错误"
+    },
+    {
+        "Id": 30003001,
+        "Key": "CloudGamePostError",
+        "Text": "30003001请求微端服务器失败"
+    },
+    {
+        "Id": 30003002,
+        "Key": "CloudGameInternalError",
+        "Text": "30003002请求微端服务器发生错误"
+    },
+    {
+        "Id": 30003003,
+        "Key": "CloudGameAddGameTaskFail",
+        "Text": "30003003添加云游戏离线任务失败"
+    },
+    {
+        "Id": 30003004,
+        "Key": "CloudGameUrlIsNullError",
+        "Text": "30003004无法找到微端服务器地址"
+    },
+    {
+        "Id": 30003005,
+        "Key": "PassportTimeCardNotFound",
+        "Text": "30003005无法找到云时长配置"
     },
     {
         "Id": 40001001,
@@ -27875,16 +29055,36 @@
     },
     {
         "Id": 40001024,
+        "Key": "PayUnsupportedTargetType",
+        "Text": 40001024
+    },
+    {
+        "Id": 40001025,
+        "Key": "PayInvalidPlatformForPay",
+        "Text": 40001025
+    },
+    {
+        "Id": 40001026,
+        "Key": "PayPlatformPayKeyNotMatch",
+        "Text": 40001026
+    },
+    {
+        "Id": 40001027,
+        "Key": "PayModuleNotHandled",
+        "Text": 40001027
+    },
+    {
+        "Id": 40001028,
         "Key": "PayPlatformShield",
         "Text": "暂不开放充值功能"
     },
     {
-        "Id": 40001025,
+        "Id": 40001029,
         "Key": "AccumulatedExtraPayRewardIdIsNotExist",
         "Text": "40001025累充额外奖励Id无效"
     },
     {
-        "Id": 40001026,
+        "Id": 40001030,
         "Key": "PayCheckReceiptCurrencyUnMatch",
         "Text": "40001026充值凭证币种不匹配"
     },
@@ -27892,10 +29092,5 @@
         "Id": 202700023,
         "Key": "DevilMayCryDataDbEnd",
         "Text": "202700023鬼泣卡池已结束"
-    },
-    {
-        "Id": 20053101,
-        "Key": "PurchaseExistMutexItem",
-        "Text": "Already own a conflicting product. Cannot purchase and replace it now."
     }
 ]

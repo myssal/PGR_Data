@@ -6,6 +6,10 @@ local XMainLine2Agency = XClass(XFubenActivityAgency, "XMainLineAgency")
 function XMainLine2Agency:OnInit()
     --初始化一些变量
     self:RegisterFuben(XEnumConst.FuBen.StageType.Mainline2)
+
+    -- 添加协程相关的字段
+    self._Coroutine = nil
+    self._IsRunningCoroutine = false
 end
 
 function XMainLine2Agency:AfterInitManager()
@@ -19,6 +23,13 @@ end
 function XMainLine2Agency:InitEvent()
     --实现跨Agency事件注册
     --self:AddAgencyEvent()
+    XEventManager.AddEventListener(XEventId.EVENT_SCENE_UIMAIN_ENABLE, self._SendRecordAsync, self)
+end
+
+function XMainLine2Agency:RemoveEvent()
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_ENABLE, self._SendRecordAsync, self)
+    -- 停止协程
+    self:_StopCoroutine()
 end
 
 --- 获取章节类型
@@ -40,18 +51,72 @@ function XMainLine2Agency:ExGetChapterViewModelBySubChapterId(chapterId)
     return nil
 end
 
---region rpc
-function XMainLine2Agency:OnLoginNotify(fubenMainLine2Data)
-    self._Model:OnLoginNotify(fubenMainLine2Data)
+--region 埋点
+-- 停止协程的函数
+function XMainLine2Agency:_StopCoroutine()
+    self._IsRunningCoroutine = false
+    self._Coroutine = nil
+end
+
+
+function XMainLine2Agency:_SendRecordAsync()
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_ENABLE, self._SendRecordAsync, self)
+
+    -- 检查是否已有协程在运行，避免重复发起
+    if self._IsRunningCoroutine and self._Coroutine then
+        XLog.Debug("协程已在运行中，跳过重复发起")
+        return
+    end
     
-    -- 主线进度埋点
+    -- 使用协程分帧处理
+    self._IsRunningCoroutine = true
+    self._Coroutine = coroutine.create(function()  -- TODO 优化全局变量
+        self:_ProcessMainLineData()
+    end)
+
+    -- 启动协程
+    local function ResumeCoroutine()
+        if self._Coroutine and coroutine.status(self._Coroutine) ~= "dead" then
+            local success, err = coroutine.resume(self._Coroutine)
+            if not success then
+                XLog.Error("协程执行出错:", err)
+                self:_StopCoroutine()
+            else
+                -- 如果协程还未结束，下一帧继续执行
+                if self._Coroutine and coroutine.status(self._Coroutine) ~= "dead" then
+                    XScheduleManager.ScheduleOnce(ResumeCoroutine, 1)
+                end
+            end
+        end
+    end
+
+    ResumeCoroutine()
+end
+
+-- 分帧处理函数
+function XMainLine2Agency:_ProcessMainLineData()
+    self._IsRunningCoroutine = true
+
     local dict = {}
     local mainline = {}
     dict["mainline"] = mainline
     local moduleCfgs = XMVCA.XMainLine2:GetConfigExhibitionModule()
-    for _, moduleCfg in ipairs(moduleCfgs) do
+    local i = 1
+    local moduleCnt = #moduleCfgs
+    local startTime = os.clock()
+
+    while self._IsRunningCoroutine and i <= moduleCnt do
+        -- 检查是否超时（避免单帧处理时间过长）
+        if os.clock() - startTime > 0.016 then
+            -- 约1帧时间
+            -- 让出控制权，下一帧继续执行
+            coroutine.yield()
+            startTime = os.clock()
+        end
+
+        local moduleCfg = moduleCfgs[i]
         local module = {}
-        mainline[moduleCfg.Id] = module
+        mainline[tostring(moduleCfg.Id)] = module
         local currentProgress, maxProgress = XMVCA.XMainLine2:GetExhibitionModuleProgress(moduleCfg.Id)
         local chapters = {}
         module["progress"] = string.format("%.2f", currentProgress / maxProgress)
@@ -59,16 +124,28 @@ function XMainLine2Agency:OnLoginNotify(fubenMainLine2Data)
         for _, exhibitionChapterId in ipairs(moduleCfg.ChapterIds) do
             local currentChapterProgress, maxChapterProgress = self:GetExhibitionChapterProgress(exhibitionChapterId)
             if maxChapterProgress ~= 0 then
-                chapters[exhibitionChapterId] = string.format("%.2f", currentChapterProgress / maxChapterProgress)
+                chapters[tostring(exhibitionChapterId)] = string.format("%.2f", currentChapterProgress / maxChapterProgress)
             end
         end
+        i = i + 1
     end
-    -- 角色剧情进度埋点
-    local plot = {}
-    dict["plot"] = plot
-    -- TODO 角色剧情进度埋点，临时起的plot，可修改
-    
-    CS.XRecord.Record(dict, "200022", "MainlineProgress")
+
+    -- 处理完成后的操作
+    if self._IsRunningCoroutine then
+        --XLog.Error("埋点耗时:", os.clock() - startTime)
+        CS.XRecord.Record(dict, "200022", "MainlineProgress")
+        --XLog.Error(dict)
+    end
+
+    self._IsRunningCoroutine = false
+    self._Coroutine = nil
+end
+
+--endregion
+
+--region rpc
+function XMainLine2Agency:OnLoginNotify(fubenMainLine2Data)
+    self._Model:OnLoginNotify(fubenMainLine2Data)
 end
 
 --- 请求领取成就
@@ -892,11 +969,12 @@ function XMainLine2Agency:GetExhibitionCurrentChapterIndex(moduleId)
             local viewModel = self:GetExhibitionViewModel(chapterCfg.ExhibitionFubenConfigId)
             local currentProgress, maxProgress = viewModel:GetCurrentAndMaxProgress()
             if currentProgress < maxProgress then
-                return j
+                return j -- 返回第一个进度未达到100%的章节
             end
         end
     end
-    return #moduleConfig.ChapterIds
+    -- 全通关返回第一个章节
+    return 1
 end
 
 -- 打开时间轴内章节

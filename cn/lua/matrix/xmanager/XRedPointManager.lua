@@ -227,3 +227,14 @@ function XRedPointManager.CheckEventExist(eventId)
     end
     return RedPointEventDic[eventId] ~= nil
 end
+
+function XRedPointManager.SafeCheckSingleRedCondition(key, arg)
+    local redPointCondition = XRedPointConditions[key]
+
+    if redPointCondition then
+        return redPointCondition.Check(arg)
+    else
+        XLog.Error('红点不存在，key：' .. tostring(key))
+        return false
+    end
+end 

@@ -39,7 +39,7 @@ function XUiTheatre5Level:Update()
             self.TxtExpNum.text = uiData.Exp
             self.ImgBar.fillAmount = 1
         end
-        if uiData.Money then
+        if uiData.Money and uiData.IsCanUpgrade then
             self.BtnUpgrade.gameObject:SetActiveEx(true)
             self.BtnUpgrade:SetNameByGroup(0, uiData.Money)
         else

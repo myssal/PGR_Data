@@ -214,7 +214,7 @@ function XUiComGame2048GridAction:DoDispel(cb)
             end
 
             if self.GridPoint then
-                self.GridPoint.gameObject:SetActiveEx(false)
+                self.GridPoint.transform.parent.gameObject:SetActiveEx(false)
             end
 
             local delayTime = self._DispelPlayTime - self._DispelHideTime

@@ -20,8 +20,8 @@ local PANEL_UI_MAP = {
         QuickWear = "UiLottoVeraQuickWear"
     },
     [XEnumConst.Lotto.Cibeizhe] = {
-        Passport = "UiLottoVeraPassport",
-        QuickWear = "UiLottoVeraQuickWear"
+        Passport = "UiLottoCibeizhePassport",
+        QuickWear = "UiLottoCibeizheQuickWear"
     }
 }
 

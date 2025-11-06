@@ -3,6 +3,10 @@ local XUiGridTheatre5Item = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGri
 ---@class XUiGridTheatre5SettleGem: XUiGridTheatre5Item
 local XUiGridTheatre5SettleGem = XClass(XUiGridTheatre5Item, 'XUiGridTheatre5SettleGem')
 
+function XUiGridTheatre5SettleGem:Ctor()
+    self.OwnerContainerType = XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails
+end
+
 ---@overload
 function XUiGridTheatre5SettleGem:OnGridBtnClickEvent()
     self.IsSelected = not self.IsSelected

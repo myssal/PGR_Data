@@ -19,4 +19,10 @@ function XUiPlotExhibitionMainGrid:Update(data)
     end
 end
 
+function XUiPlotExhibitionMainGrid:GetRoleId()
+    if self._Data then
+        return self._Data.Id
+    end
+end
+
 return XUiPlotExhibitionMainGrid

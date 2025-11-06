@@ -15,13 +15,18 @@ function XUiTheatre5SkillHandbook:OnAwake()
     ---@type XUiTheatre5SkillHandbookTabGrid[]
     self._Tabs = {}
     ---@type XUiTheatre5SkillHandbookTag[]
-    self._Tags = {}
+    self._Tags = { XUiTheatre5SkillHandbookTag.New(self.GridTag, self) }
     self:BindExitBtns()
 
     self._TimerDelayInit = false
+    self._LastCheckVisibleTime = 0
+    self._CheckVisibleInterval = 0.1 -- 0.1秒间隔
 
     ---@type UnityEngine.UI.ScrollRect
     self.PanelItemList = self.PanelItemList or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelItemList", "ScrollRect")
+    self.PanelItemList.onValueChanged:AddListener(function()
+        self:CheckGridVisible()
+    end)
 
     self._Index = 0
 
@@ -66,12 +71,15 @@ end
 function XUiTheatre5SkillHandbook:OnDestroy()
     if self._TimerDelayInit then
         XScheduleManager.UnSchedule(self._TimerDelayInit)
+        self:_RemoveTimerIdAndDoCallback(self._TimerDelayInit)
         self._TimerDelayInit = nil
     end
     if self._TimerDelaySelectTab then
         XScheduleManager.UnSchedule(self._TimerDelaySelectTab)
         self._TimerDelaySelectTab = nil
     end
+    -- 重置检查可见性的时间记录
+    self._LastCheckVisibleTime = 0
 end
 
 function XUiTheatre5SkillHandbook:Update()
@@ -90,62 +98,69 @@ function XUiTheatre5SkillHandbook:OnSelectTab(index)
 
     -- 切换页签后，滚到0的位置
     self.PanelItemList.verticalNormalizedPosition = 1
+
+    -- 根据索引确定类型和数据
+    local type
     if index == Tab.Skill then
-        local type = XMVCA.XTheatre5.EnumConst.ItemType.Skill
-        local datas = self._Control:GetDataHandBook(type)
-        XTool.UpdateDynamicItemLazy(self._Tabs, datas, self.Panel, XUiTheatre5SkillHandbookTabGrid, self, 1, 24)
-        -- 默认选中第一个
-        if datas and #datas > 0 and datas[1].Items and #datas[1].Items > 0 then
-            self:OnSelectItem(datas[1].Items[1])
-        else
-            XLog.Error("[XUiTheatre5SkillHandbook] default select fail")
-        end
+        type = XMVCA.XTheatre5.EnumConst.ItemType.Skill
+    elseif index == Tab.Rune then
+        type = XMVCA.XTheatre5.EnumConst.ItemType.Equip
+    elseif index == Tab.Relic then
+        type = XMVCA.XTheatre5.EnumConst.ItemType.Relic
+    else
+        XLog.Error("[XUiTheatre5SkillHandbook] invalid tab index: " .. tostring(index))
         return
     end
-    if index == Tab.Rune then
-        local type = XMVCA.XTheatre5.EnumConst.ItemType.Equip
-        local datas = self._Control:GetDataHandBook(type)
-        XTool.UpdateDynamicItemLazy(self._Tabs, datas, self.Panel, XUiTheatre5SkillHandbookTabGrid, self, 1, 24)
-        -- 默认选中第一个
-        if datas and #datas > 0 and datas[1].Items and #datas[1].Items > 0 then
-            self:OnSelectItem(datas[1].Items[1])
-        else
-            XLog.Error("[XUiTheatre5SkillHandbook] default select fail")
+
+    local datas = self._Control:GetDataHandBook(type)
+
+    -- 前面12格播放动画
+    local firstPage = datas[1]
+    ---@type XUiTheatre5SkillHandbookItemGridData[]
+    local items = firstPage.Items
+    for i = 1, 12 do
+        local item = items[i]
+        if item then
+            item.PlayAnimation = true
         end
-        return
     end
-    if index == Tab.Relic then
-        local type = XMVCA.XTheatre5.EnumConst.ItemType.Relic
-        local datas = self._Control:GetDataHandBook(type)
-        XTool.UpdateDynamicItemLazy(self._Tabs, datas, self.Panel, XUiTheatre5SkillHandbookTabGrid, self, 1, 24)
-        -- 默认选中第一个
-        if datas and #datas > 0 and datas[1].Items and #datas[1].Items > 0 then
-            self:OnSelectItem(datas[1].Items[1])
-        else
-            XLog.Error("[XUiTheatre5SkillHandbook] default select fail")
-        end
-        return
+
+    XTool.UpdateDynamicItemLazy(self._Tabs, datas, self.Panel, XUiTheatre5SkillHandbookTabGrid, self, 1, 24)
+    self:CheckGridVisible(true)
+
+    -- 默认选中第一个
+    if datas and #datas > 0 and datas[1].Items and #datas[1].Items > 0 then
+        self:OnSelectItem(datas[1].Items[1])
+    else
+        XLog.Error("[XUiTheatre5SkillHandbook] default select fail")
     end
 end
 
 ---@param data XUiTheatre5SkillHandbookItemGridData
 function XUiTheatre5SkillHandbook:OnSelectItem(data)
+    -- 先关闭所有面板
+    self._GridSkill:Close()
+    self._GridGem:Close()
+    self._GridRelic:Close()
+
+    -- 根据索引打开对应面板并刷新显示
+    local showStoryParent = false
     if self._Index == Tab.Skill then
         self._GridSkill:Open()
-        self._GridGem:Close()
-        self._GridRelic:Close()
         self._GridSkill:RefreshShow(data)
+        showStoryParent = false
     elseif self._Index == Tab.Rune then
         self._GridGem:Open()
-        self._GridSkill:Close()
-        self._GridRelic:Close()
         self._GridGem:RefreshShow(data)
+        --"相同效果，仅最高稀有度生效" 只在符文页签提示
+        showStoryParent = true
     elseif self._Index == Tab.Relic then
         self._GridRelic:Open()
-        self._GridSkill:Close()
-        self._GridGem:Close()
         self._GridRelic:RefreshShow(data)
+        showStoryParent = false
     end
+
+    self.TxtStory.transform.parent.gameObject:SetActiveEx(showStoryParent)
 
     --if self.TxtStory then
     --    self.TxtStory.text = data.Desc
@@ -168,6 +183,60 @@ function XUiTheatre5SkillHandbook:OnSelectItem(data)
 
     for i, tags in pairs(self._Tabs) do
         tags:UpdateSelectState(data)
+    end
+end
+
+-- 检测格子是否可见, 把不可见的格子隐藏, 因为会卡顿
+function XUiTheatre5SkillHandbook:CheckGridVisible(force)
+    -- 添加更新间隔，避免过于频繁的检查
+    local currentTime = CS.UnityEngine.Time.time
+    if force or (currentTime - self._LastCheckVisibleTime < self._CheckVisibleInterval) then
+        return
+    end
+    self._LastCheckVisibleTime = currentTime
+
+    local viewport = self.PanelItemList.viewport
+    local content = self.PanelItemList.content
+
+    -- 获取viewport在content坐标系中的矩形范围
+    ---@type System.Array
+    local Array = CS.System.Array
+    local worldCorners = Array.CreateInstance(typeof(CS.UnityEngine.Vector3), 4)
+    viewport:GetWorldCorners(worldCorners)
+    local viewportRectMin = content:InverseTransformPoint(worldCorners[0])
+    local viewportRectMax = content:InverseTransformPoint(worldCorners[2])
+
+    -- 增加一个格子高度的范围，防止格子在边界处完全消失
+    local gridHeightBuffer = 0
+    if #self._Tabs > 0 and self._Tabs[1]:IsNodeShow() then
+        local grids = self._Tabs[1]:GetGrids()
+        if #grids > 0 and grids[1].Transform then
+            gridHeightBuffer = grids[1].Transform.rect.height
+        end
+    end
+
+    for i = 1, #self._Tabs do
+        local tab = self._Tabs[i]
+        if tab:IsNodeShow() then
+            local grids = tab:GetGrids()
+            for j = 1, #grids do
+                ---@type XUiTheatre5SkillHandbookItemGrid
+                local grid = grids[j]
+                if grid:IsNodeShow() then
+                    local transform = grid.Transform
+
+                    -- 将grid的位置转换为content坐标系中的位置
+                    local gridWorldPos = transform:TransformPoint(CS.UnityEngine.Vector3.zero)
+                    local gridLocalPos = content:InverseTransformPoint(gridWorldPos)
+
+                    -- 检查grid是否在viewport可见区域内（增加缓冲区）
+                    local isVisible = gridLocalPos.y >= viewportRectMin.y - gridHeightBuffer and
+                            gridLocalPos.y <= viewportRectMax.y + gridHeightBuffer
+
+                    grid:SetVisibleInScrollView(isVisible)
+                end
+            end
+        end
     end
 end
 

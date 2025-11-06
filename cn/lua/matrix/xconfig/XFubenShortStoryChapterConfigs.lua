@@ -297,6 +297,11 @@ function XFubenShortStoryChapterConfigs.CheckChapterDetailsByChapterId(chapterId
     end
     return false
 end
+
+function XFubenShortStoryChapterConfigs.GetChapterIsBtnMissionWhite(id)
+    local config = GetChapterDetails(id)
+    return config.IsBtnMissionWhite == 1
+end
 ------------------------------------------ShortStoryDetails.tab End-----------------------------------------------------
 ------------------------------------------ShortStoryStarTreasure.tab Start----------------------------------------------
 function XFubenShortStoryChapterConfigs.GetRequireStarByTreasureId(treasureId)

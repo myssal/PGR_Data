@@ -205,96 +205,11 @@ function XPlotExhibitionControl:GetProgressByCharacterId(characterId)
     local currentProgress, totalProgress = 0, 0
     for i = 1, #storyConfigs do
         local storyConfig = storyConfigs[i]
-        local currentProgressChild, totalProgressChild = self:GetProgressByStoryConfig(storyConfig)
+        local currentProgressChild, totalProgressChild = XMVCA.XPlotExhibition:GetProgressByStoryConfig(storyConfig)
         currentProgress = currentProgress + currentProgressChild
         totalProgress = totalProgress + totalProgressChild
     end
     return currentProgress, totalProgress
-end
-
----@param storyConfig XTablePlotExhibitionStoryLine
-function XPlotExhibitionControl:GetProgressByStoryConfig(storyConfig)
-    if not storyConfig then
-        return 0, 0
-    end
-    local chapterType, chapterId = storyConfig.StoryType, storyConfig.StoryChapter
-
-    -- 好感度剧情
-    if chapterType == XEnumConst.FuBen.ChapterType.FavorabilityStory then
-        local characterId = storyConfig.CharacterId
-        local plotDatas = XMVCA.XFavorability:GetCharacterStoryById(characterId)
-        -- 刷新通关进度
-        local totalCount = XTool.GetTableCount(plotDatas)
-        if not XMVCA.XCharacter:IsOwnCharacter(characterId) then
-            return 0, totalCount
-        end
-
-        local passCount = 0
-        if not XTool.IsTableEmpty(plotDatas) then
-            for i, v in ipairs(plotDatas) do
-                if XTool.IsNumberValid(v.StoryId) then
-                    if XMVCA.XFavorability:CheckStoryIsSatisfyUnlockCondition(characterId, v.Id) then
-                        passCount = passCount + 1
-                    end
-                elseif XTool.IsNumberValid(v.StageId) then
-                    if XMVCA.XFuben:CheckStageIsPass(v.StageId) then
-                        passCount = passCount + 1
-                    end
-                end
-            end
-        end
-        return passCount, totalCount
-    end
-    -- 主线等剧情
-    local difficult = XDataCenter.FubenManager.DifficultNormal
-
-    --主线
-    if chapterType == XEnumConst.FuBen.ChapterType.MainLine then
-        local viewModel = XDataCenter.FubenMainLineManager:ExGetChapterViewModelById(chapterId, difficult)
-        return viewModel:GetCurrentAndMaxProgress()
-    end
-
-    --外篇旧闻
-    if chapterType == XEnumConst.FuBen.ChapterType.ExtralChapter then
-        local viewModel = XDataCenter.ExtraChapterManager:ExGetChapterViewModelById(chapterId, difficult)
-        return viewModel:GetCurrentAndMaxProgress()
-    end
-
-    --浮点纪实
-    if chapterType == XEnumConst.FuBen.ChapterType.ShortStory then
-        local viewModel = XDataCenter.ShortStoryChapterManager:ExGetChapterViewModelById(chapterId, difficult)
-        return viewModel:GetCurrentAndMaxProgress()
-    end
-
-    --间章旧闻
-    if chapterType == XEnumConst.FuBen.ChapterType.Prequel then
-        local viewModel = XDataCenter.PrequelManager:ExGetChapterViewModelByChapterId(chapterId)
-        if viewModel then
-            return viewModel:GetCurrentAndMaxProgress()
-        else
-            XLog.Error("[XPlotExhibitionControl] 未找到间章旧闻:" .. tostring(chapterId))
-        end
-        return 0, 0
-    end
-
-    --本我回廊（角色塔）
-    if chapterType == XEnumConst.FuBen.ChapterType.CharacterTower then
-        local viewModel = XDataCenter.CharacterTowerManager:ExGetChapterViewModelBuyChapterId(chapterId)
-        if viewModel then
-            return viewModel:GetCurrentAndMaxProgress()
-        else
-            XLog.Error("[XPlotExhibitionControl] 未找到本我回廊:" .. tostring(chapterId))
-        end
-        return 0, 0
-    end
-
-    --主线2
-    if chapterType == XEnumConst.FuBen.ChapterType.MainLine2 then
-        -- 这个函数参数是mainId，但是实际含义是chapterId
-        return XMVCA.XMainLine2:GetMainProgress(chapterId)
-    end
-    XLog.Error("[XPlotExhibitionControl] 未实现的剧情进度:" .. chapterType)
-    return 0, 0
 end
 
 function XPlotExhibitionControl:IsForceSelected(forceId)
@@ -349,6 +264,10 @@ function XPlotExhibitionControl:SetFilterForceSelected(forceId, value)
     end
     self:UpdateFilter(true)
     self:UpdateMain(true)
+end
+
+function XPlotExhibitionControl:IsFilterEmpty()
+    return XTool.IsTableEmpty(self._FilterForce)
 end
 
 function XPlotExhibitionControl:ClearFilterForceSelected()
@@ -466,7 +385,7 @@ function XPlotExhibitionControl:UpdateStoryDetail(forceUpdate)
                     forceList[k] = self:GetForce(characterConfig.Force[k])
                 end
 
-                local currentProgress, totalProgress = self:GetProgressByStoryConfig(storyConfig)
+                local currentProgress, totalProgress = XMVCA.XPlotExhibition:GetProgressByStoryConfig(storyConfig)
                 local newTimeId = storyConfig.NewTime
                 local isNew
                 if newTimeId then
@@ -655,7 +574,7 @@ function XPlotExhibitionControl:GetProgress4Text(current, total)
         --XLog.Error("[XPlotExhibitionControl] 剧情进度上限为0")
         return 0
     else
-        return math.floor(current / total * 100)
+        return math.ceil(current / total * 100)
     end
 end
 

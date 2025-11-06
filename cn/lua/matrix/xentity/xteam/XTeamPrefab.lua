@@ -12,6 +12,7 @@ function XTeamPrefab:Ctor(data)
     self.SelectedGeneralSkill = data.SelectedGeneralSkill
     self.EnterCgIndex = data.EnterCgIndex
     self.SettleCgIndex = data.SettleCgIndex
+    self._InSnapshotBatch = nil
 
     -- 空位初始
     self.EntitiyIds = {0,0,0}
@@ -25,6 +26,21 @@ function XTeamPrefab:Ctor(data)
     self:InitPartnerData(data.PartnerData)
     self:InitEquipData(data.EquipData)
     self:RefreshGeneralSkills(true, true)  -- 假设此方法本身不需要上行
+end
+
+function XTeamPrefab:UpdateEntityIds(value)
+    if not self.IsStandAlone then
+        local isSameEntityId, index = XMVCA.XCharacter:HasDuplicateCharId(value)
+        if isSameEntityId then
+            value[index] = 0
+        end
+    end
+
+    for pos, entityId in ipairs(value) do
+        self.EntitiyIds[pos] = entityId
+    end
+
+    self:RefreshGeneralSkills(true)
 end
 
 --- 更新伙伴预设数据
@@ -88,7 +104,7 @@ function XTeamPrefab:ClearPosData(pos)
 end
 
 function XTeamPrefab:ClearAwarenessData(pos, notSyncToServer)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     for i = 1, 6, 1 do
         self:UpdateEquipAt(pos, i, nil, true)
@@ -413,7 +429,7 @@ function XTeamPrefab:SwapPosData(posA, posB, notSyncToServer)
         return
     end
 
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     -- 1. 交换角色 ID
     self.EntitiyIds[posA], self.EntitiyIds[posB] = self.EntitiyIds[posB], self.EntitiyIds[posA]
@@ -443,7 +459,7 @@ function XTeamPrefab:CopyRealCharacterEquipData(characterId, pos, notSyncToServe
     if not characterId then return end
     if not XTool.IsNumberValid(pos) then return end
 
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     local equipData = XMVCA.XEquip:GetCharacterEquips(characterId)
     local hasDataAwarenessSiteDic = {}
@@ -495,7 +511,7 @@ function XTeamPrefab:CopyRealWeaponData(equipId, pos, notSyncToServer, cb)
         return
     end
 
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     local data = 
     {
@@ -508,7 +524,7 @@ function XTeamPrefab:CopyRealWeaponData(equipId, pos, notSyncToServer, cb)
 end
 
 function XTeamPrefab:CopyRealWeaponResonance(resonanceDict, pos, notSyncToServer)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     local weaponData = self:GetWeaponData(pos)
     if not weaponData then return end
@@ -517,7 +533,7 @@ function XTeamPrefab:CopyRealWeaponResonance(resonanceDict, pos, notSyncToServer
 end
 
 function XTeamPrefab:CopyRealWeaponWeaponOverrunSuitId(weaponOverrunSuitId, pos, notSyncToServer)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
 
     local weaponData = self:GetWeaponData(pos)
     if not weaponData then return end
@@ -527,8 +543,11 @@ end
 
 -- 将角色数据复制到对应位置（武器、意识、辅助机），角色Id为空时卸载对应位置
 function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
-    local isCharIdValid = XTool.IsNumberValid(characterId)
-    self:UpdateEntityTeamPos(characterId, pos, isCharIdValid)
+    local getCurPosEntityId = self:GetEntityIdByTeamPos(pos)
+    if getCurPosEntityId ~= characterId then
+        local isCharIdValid = XTool.IsNumberValid(characterId)
+        self:UpdateEntityTeamPos(characterId, pos, isCharIdValid)
+    end
     if XTool.IsNumberValid(characterId) then
         self:CopyRealCharacterEquipData(characterId, pos, true)
         local realTeamPartner = XDataCenter.PartnerManager.GetCarryPartnerEntityByCarrierId(characterId)
@@ -548,11 +567,10 @@ function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
         self:GetPartnerData():Unload(pos)
     end
 
-    self:RefreshGeneralSkills(true)
-
     self:CheckOnlyOneEntityToSyncFirstAndCaptainPos()
 
     if not notSyncToServer then
+        self:RefreshGeneralSkills(true)
         self:SyncFullDataToServer()
     end
 end
@@ -560,17 +578,16 @@ end
 --- 用真正的队伍数据xTeam覆盖当前预设数据(from)
 ---@param xTeam XTeam
 function XTeamPrefab:CoverFromRealTeamData(xTeam, cb, notSyncToServer)
-    self:GetFullSnapshot()
-    self:UpdateEntityIds(xTeam:GetEntityIds())
+    self:BeginSnapshotBatch()
+    self:ClearAllData()
     self:UpdateCaptainPosAndFirstFightPos(xTeam:GetCaptainPos(), xTeam:GetFirstFightPos())
     self:SetEnterCgIndex(xTeam:GetEnterCgIndex(), true)
     self:SetSettleCgIndex(xTeam:GetSettleCgIndex(), true)
-    self:RefreshGeneralSkills(true, true)  -- 假设此方法本身不需要上行
-    if XTool.IsNumberValid(self.SelectedGeneralSkill) then -- 必须要判断，因为有可能是0
-        self.SelectedGeneralSkill = xTeam.SelectedGeneralSkill
-    end
     for pos, characterId in ipairs(xTeam:GetEntityIds()) do
         self:CopyRealCharacterToPos(characterId, pos, true)
+    end
+    if xTeam:GetCurGeneralSkill() then -- 所有数据相信原队伍 它选效应Id = 0 也要相信
+        self.SelectedGeneralSkill = xTeam:GetCurGeneralSkill()
     end
 
     if not notSyncToServer then
@@ -592,7 +609,7 @@ function XTeamPrefab:CoverToRealTeamData(xTeam)
 end
 
 function XTeamPrefab:UpdateSelectGeneralSkill(skillId, notSyncToServer, cb)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
     self.SelectedGeneralSkill = skillId or 0
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -612,7 +629,7 @@ function XTeamPrefab:UpdateTeamName(name, cb)
 end
 
 function XTeamPrefab:UpdateFirstFightPos(value, notSyncToServer, cb)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
     self.FirstFightPos = value
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -620,7 +637,7 @@ function XTeamPrefab:UpdateFirstFightPos(value, notSyncToServer, cb)
 end
 
 function XTeamPrefab:UpdateCaptainPos(value, notSyncToServer, cb)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
     self.CaptainPos = value
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -628,7 +645,7 @@ function XTeamPrefab:UpdateCaptainPos(value, notSyncToServer, cb)
 end
 
 function XTeamPrefab:SetEnterCgIndex(index, notSyncToServer, cb)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
     self.EnterCgIndex = index
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
@@ -636,15 +653,29 @@ function XTeamPrefab:SetEnterCgIndex(index, notSyncToServer, cb)
 end
 
 function XTeamPrefab:SetSettleCgIndex(index, notSyncToServer, cb)
-    self:GetFullSnapshot()
+    self:BeginSnapshotBatch()
     self.SettleCgIndex = index
     if not notSyncToServer then
         self:SyncMetaDataToServer(cb)
     end
 end
 
+-- 加一层“快照保护模式”
+function XTeamPrefab:BeginSnapshotBatch()
+    self:GetFullSnapshot()
+    self._InSnapshotBatch = true
+end
+
+function XTeamPrefab:EndSnapshotBatch()
+    self._InSnapshotBatch = false
+end
+
 -- 修改GetFullSnapshot方法以减少GC
 function XTeamPrefab:GetFullSnapshot()
+    if self._InSnapshotBatch then
+        return
+    end
+
     -- 初始化快照结构（仅在首次调用或结构变更时创建）
     if not self._LastSnapshot then
         self._LastSnapshot = {

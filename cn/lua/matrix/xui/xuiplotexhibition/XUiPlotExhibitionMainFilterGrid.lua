@@ -20,8 +20,21 @@ function XUiPlotExhibitionMainFilterGrid:Update(data)
 end
 
 function XUiPlotExhibitionMainFilterGrid:OnClick()
-    self._Control:SetFilterForceSelected(self._Data.Id, not self._Data.IsSelected)
-    self.Parent:UpdateByFilter()
+    local isSelected = not self._Data.IsSelected
+    if isSelected then
+        -- 收集上一次ui显示上存在的角色，在下一次筛选刷新后，有新的角色出现时，播放动画
+        local data = self._Control:GetUiData().Main
+        local roleList = data.FilterRoleList
+        local existRoleDict = {}
+        for i, v in ipairs(roleList) do
+            existRoleDict[v.Id] = true
+        end
+        self._Control:SetFilterForceSelected(self._Data.Id, isSelected)
+        self.Parent:UpdateByFilter(existRoleDict)
+    else
+        self._Control:SetFilterForceSelected(self._Data.Id, isSelected)
+        self.Parent:UpdateByFilter()
+    end
 end
 
 return XUiPlotExhibitionMainFilterGrid

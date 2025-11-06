@@ -41,17 +41,11 @@ function XUiPanelBWTaskContent:OnStart()
 end
 
 function XUiPanelBWTaskContent:InitCb()
-    self.BtnGo.CallBack = function()
-        self:OnBtnGoClick()
-    end
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
 
-    self.BtnTrack.CallBack = function()
-        self:OnBtnTrackClick()
-    end
+    self.BtnTrack:AddEventListener(handler(self, self.OnBtnTrackClick))
 
-    self.BtnUntrack.CallBack = function()
-        self:OnBtnUntrackClick()
-    end
+    self.BtnUntrack:AddEventListener(handler(self, self.OnBtnUntrackClick))
 end
 
 function XUiPanelBWTaskContent:InitView()
@@ -142,7 +136,7 @@ function XUiPanelBWTaskContent:RefreshStep(step)
             count = count + 1
             local grid = self._StepGrid
             if not grid then
-                grid = XUiGridBWObjective.New(self.GridStep, self.Parent)
+                grid = XUiGridBWObjective.New(self.GridStep, self)
                 self._StepGrid = grid
             end
             grid:Refresh(step, true)

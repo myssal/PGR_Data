@@ -19,16 +19,13 @@ function XUiRacePredict:OnStart(roleId, isMatch, guessId)
     self._SelectRoleId = roleId
     self._SelectGuessId = guessId
     self._IsMatch = isMatch
-    local sceneType = isMatch and XEnumConst.Race.SceneType.MatchPredict or XEnumConst.Race.SceneType.Normal
-    if isMatch then
-        self:PlayPlatformUp()
-    else
+    if not isMatch then
         self._RoundId = self._Control:GetCurRound()
     end
     self._ActivityConfig = self._Control:GetCurrentConfig()
     self._CharacterDetail = require("XUi/XUiRace/Panel/XUiPanelRaceCharacterDetail").New(self.PanelSkill, self)
     self._PredictChoose = require("XUi/XUiRace/Panel/XUiPanelRaceChoose").New(self.PanelChoose, self)
-    self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, sceneType)
+    self._3DCamera = require("XUi/XUiRace/Panel/XUiPanelRace3DCamera").New(self.UiModelGo.transform, self, XEnumConst.Race.SceneType.Predict)
     self._MatchPredictEndTime = XFunctionManager.GetEndTimeByTimeId(self._ActivityConfig.MatchGuessTime)
     self._GridProjectHeight = self.GridProject.rect.height
     self._LayoutSpaceY = self.PanelProjectLayout.spacing
@@ -36,8 +33,8 @@ function XUiRacePredict:OnStart(roleId, isMatch, guessId)
     self:InitUi()
     self:CountDown()
     self:OnBtnBubbleCloseClick()
-    self._3DCamera:ShowRole()
     self._3DCamera:LoadOption()
+    self:PlayPlatformUp()
 end
 
 function XUiRacePredict:OnEnable()
@@ -147,12 +144,20 @@ function XUiRacePredict:OnSelectGuessTab(i)
     if self._CurGuessId == tab:GetGuessId() then
         return
     end
+    local oldGuessId = self._CurGuessId
     self._CurGuessId = tab:GetGuessId()
     self._IsTabRole = tab:IsRole()
     self.RImgRoleDetailBg.gameObject:SetActiveEx(self._IsTabRole)
     -- 显示选项列表
     self._PredictChoose:ShowList(self._IsTabRole, self._CurGuessId)
     self._Control:SetEnterGuess(self._RoundId, self._CurGuessId)
+    --动效
+    for k, v in pairs(self._GuessTabs) do
+        local guessId = v:GetGuessId()
+        if not oldGuessId or guessId == oldGuessId or guessId == self._CurGuessId then
+            v:PlayTween()
+        end
+    end
 end
 
 function XUiRacePredict:UpdateGuessTabState()
@@ -177,12 +182,14 @@ function XUiRacePredict:OnClickPredictOption(isRole, id)
         self._HudTimer = XScheduleManager.ScheduleForever(function()
             self:UpdateHud()
         end, 10)
+        self._3DCamera:PlayRoleEffect()
     else
         self._CurRoleId = 0
         self._CurOptionId = id
         self.PanelRoleName.gameObject:SetActiveEx(false)
         self:UpdateHud()
         self._3DCamera:ShowOption()
+        self._3DCamera:PlayOptionEffect()
     end
     self:UpdatePredictBtn()
     local rate = self:GetVotingRate(id)

@@ -64,12 +64,27 @@ function XRaceScene:InitMatch(uiCallback)
     self._XRaceViewManager:SetLuaCallback(uiCallback)
     self._XRaceViewManager:InitCamera(self._MapCfg.CameraConfigPath)
     self._XRaceViewManager:Init(false)
-    self._XRaceViewManager:Enter(self._SceneType, self._RoundId, self._ReportName)
+    self._XRaceViewManager:Enter(self._SceneType, self._RoundId, self._ReportName, false)
 end
 
 function XRaceScene:PlayTrackAnim(isPlay)
     if not self._CamTrack then return end
     self._CamTrack.gameObject:SetActive(isPlay)
+end
+
+function XRaceScene:CheckMapEffect()
+    if not self._MapEffect then return end
+
+    local actor = self._XRaceViewManager:GetRankActor(1)
+    if actor.Distance >= self._MapCfg.EffectDistance then
+        self._MapEffect.gameObject:SetActive(true)
+        self._MapEffect = nil
+    end
+end
+
+function XRaceScene:Stop()
+    if XTool.UObjIsNil(self._XRaceViewManager) then return end
+    self._XRaceViewManager.IsLockTime = true
 end
 
 ----------public end----------
@@ -87,6 +102,10 @@ function XRaceScene:OnEnter()
             if self._CamTrack then
                 self._CamTrack.gameObject:SetActive(false)
             end
+            self._MapEffect = self._Road.transform:Find("MapEffect")
+            if self._MapEffect then
+                self._MapEffect.gameObject:SetActive(false)
+            end
             self._XRaceViewManager = self._SceneRaceGameRoot:GetComponent(typeof(CS.XRace.XRaceViewManager))
             XLuaUiManager.Open("UiRaceFightMain", self._RoundId, self._Ids, self._SceneType)
         end)
@@ -95,7 +114,9 @@ end
 
 function XRaceScene:OnExit()
     if not XTool.UObjIsNil(self._XRaceViewManager) then
-        self._XRaceViewManager:Exit()
+        if XLoginManager.IsLogin() then
+            self._XRaceViewManager:Exit()
+        end
     end
 end
 

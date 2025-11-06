@@ -448,6 +448,10 @@ function XBigWorldServiceAgency:FinishTask(taskId, callback)
     XDataCenter.TaskManager.FinishTask(taskId, callback)
 end
 
+function XBigWorldServiceAgency:FinishMultiTasks(taskIds, callback, notTip, isLoopReceive)
+    XDataCenter.TaskManager.FinishMultiTaskRequest(taskIds, callback, notTip, isLoopReceive)
+end
+
 -- endregion
 
 -- region QuestItem

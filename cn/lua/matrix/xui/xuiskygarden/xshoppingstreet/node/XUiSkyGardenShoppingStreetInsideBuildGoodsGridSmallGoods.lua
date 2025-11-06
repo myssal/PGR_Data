@@ -4,9 +4,9 @@
 local XUiSkyGardenShoppingStreetInsideBuildGoodsGridSmallGoods = XClass(XUiNode, "XUiSkyGardenShoppingStreetInsideBuildGoodsGridSmallGoods")
 
 function XUiSkyGardenShoppingStreetInsideBuildGoodsGridSmallGoods:OnStart()
-    self.GridSmallGoods.CallBack = function () self:OnGridSmallGoodsClick() end
-    self.BtnAdd.CallBack = function () self:OnBtnAddClick() end
-    self.BtnMinus.CallBack = function () self:OnBtnMinusClick() end
+    self.GridSmallGoods:AddEventListener(function () self:OnGridSmallGoodsClick() end)
+    self.BtnAdd:AddEventListener(function () self:OnBtnAddClick() end)
+    self.BtnMinus:AddEventListener(function () self:OnBtnMinusClick() end)
 end
 
 function XUiSkyGardenShoppingStreetInsideBuildGoodsGridSmallGoods:Update(goodId, index)

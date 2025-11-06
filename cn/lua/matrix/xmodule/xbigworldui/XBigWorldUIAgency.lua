@@ -61,6 +61,10 @@ function XBigWorldUIAgency:IsPopupModality(uiName)
     return self._Model:IsPopupModality(uiName)
 end
 
+function XBigWorldUIAgency:IsLockOperation()
+    return not XLoginManager.IsLogin() or not XMVCA.XBigWorldGamePlay:IsInGame()
+end
+
 function XBigWorldUIAgency:GetPopupPriority(uiName)
     return self._Model:GetPopupPriority(uiName)
 end
@@ -126,6 +130,9 @@ function XBigWorldUIAgency:CloseAllUpperUiWithCallback(uiName, cb)
 end
 
 function XBigWorldUIAgency:Close(uiName, callback)
+    if self:IsLockOperation() then
+        return
+    end
     if callback then
         XLuaUiManager.CloseWithCallback(uiName, callback)
     else
@@ -134,12 +141,18 @@ function XBigWorldUIAgency:Close(uiName, callback)
 end
 
 function XBigWorldUIAgency:Remove(uiName)
+    if self:IsLockOperation() then
+        return
+    end
     if XLuaUiManager.IsUiLoad(uiName) then
         XLuaUiManager.Remove(uiName)
     end
 end
 
 function XBigWorldUIAgency:SafeClose(uiName)
+    if self:IsLockOperation() then
+        return
+    end
     XLuaUiManager.SafeClose(uiName)
 end
 
@@ -292,9 +305,9 @@ function XBigWorldUIAgency:OpenBigWorldRewardGoods(rewardData, title, closeCb)
     local expensiveRewards = {}
     local specialRewards = {}
     for _, reward in ipairs(rewardData) do
-        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.Id) then
+        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.TemplateId) then
             table.insert(expensiveRewards, reward)
-        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.Id) then
+        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.TemplateId) then
             table.insert(specialRewards, reward)
         end
     end

@@ -58,6 +58,7 @@ function XUiPlotExhibitionDetailStoryGrid:Update(data)
                 self._Control:OpenUiForceDetail(force)
             end)
         end
+        button.gameObject:SetActiveEx(true)
         local component = button:GetComponent("XUiButton")
         if component then
             --component:SetNameByGroup(0, data.Force[i].Name)

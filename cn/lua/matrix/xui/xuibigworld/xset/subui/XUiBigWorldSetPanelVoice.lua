@@ -39,6 +39,10 @@ function XUiBigWorldSetPanelVoice:OnAwake()
     self._OnColor = self.ImgMusicON.color
     self._FillColor = self.ImgMusicFill.color
     self._VoiceTextColor = self.TxtMusic.color
+    self._VoiceChange = {
+        [1] = 2,
+        [2] = 1,
+    }
 
     self:_InitUi()
 end
@@ -90,7 +94,7 @@ function XUiBigWorldSetPanelVoice:OnTLanguageGroupClick(index)
 end
 
 function XUiBigWorldSetPanelVoice:OnTFashionGroupClick(index)
-    self._Setting:SetFashionVoiceValue(index)
+    self._Setting:SetFashionVoiceValue(self._VoiceChange[index] or 2)
 end
 
 function XUiBigWorldSetPanelVoice:OnTogJPClick(value)
@@ -138,7 +142,7 @@ function XUiBigWorldSetPanelVoice:_RegisterButtonClicks()
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderMusic, self.OnSliderMusicValueChanged, false)
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderSound, self.OnSliderSoundValueChanged, false)
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderVoice, self.OnSliderVoiceValueChanged, false)
-    self.TogControl.CallBack = Handler(self, self.OnTogControlClick)
+    self.TogControl:AddEventListener(handler(self, self.OnTogControlClick))
 
     self.TLanguageGroup:Init({
         self.TogJP,
@@ -151,7 +155,7 @@ function XUiBigWorldSetPanelVoice:_RegisterButtonClicks()
         self.TogFashionOpen,
     }, Handler(self, self.OnTFashionGroupClick))
 
-    self.TogMute.CallBack = Handler(self, self.OnTogMuteClick)
+    self.TogMute:AddEventListener(handler(self, self.OnTogMuteClick))
 end
 
 function XUiBigWorldSetPanelVoice:_RegisterListeners()
@@ -202,7 +206,7 @@ function XUiBigWorldSetPanelVoice:_Refresh()
     end
 
     self.TLanguageGroup:SelectIndex(self._Setting:GetCvTypeValue(), false)
-    self.TFashionGroup:SelectIndex(self._Setting:GetFashionVoiceValue(), false)
+    self.TFashionGroup:SelectIndex(self._VoiceChange[self._Setting:GetFashionVoiceValue()] or 1, false)
     self.SliderMusic.value = self._Setting:GetMusicVolumeValue()
     self.SliderSound.value = self._Setting:GetSoundVolumeValue()
     self.SliderVoice.value = self._Setting:GetVoiceVolumeValue()

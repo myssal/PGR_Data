@@ -13,11 +13,11 @@ local XUiBigWorldBackpackItem = XClass(XUiNode, "XUiBigWorldBackpackItem")
 
 function XUiBigWorldBackpackItem:OnStart()
     self.CanvasGroup = self.Grid.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
-    self.Grid.CallBack = function()
+    self.Grid:AddEventListener(function()
         if self._Grid then
             if self._Grid:IsNodeShow() then self._Grid:OnClick() end
         end
-    end
+    end)
     ---@type XUiGridBWItem
     self._Grid = false
     self._Index = 0

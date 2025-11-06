@@ -4,9 +4,26 @@
 local XUiGridRaceRoleOption = XClass(XUiNode, "XUiGridRaceRoleOption")
 
 local Sort = XEnumConst.Race.Sort
+local Tween = {
+    None = 0,
+    Expand = 1,
+    Storage = 2,
+}
 
 function XUiGridRaceRoleOption:OnStart()
     self.GridMember:SetButtonState(XUiButtonState.Normal)
+    self._Storage = self.Transform:FindTransform("Storage")
+    self._Expand = self.Transform:FindTransform("Expand")
+    self._CurTween = Tween.None
+end
+
+function XUiGridRaceRoleOption:OnDestroy()
+    if not XTool.UObjIsNil(self._Storage) then
+        self._Storage:StopTimelineAnimation()
+    end
+    if not XTool.UObjIsNil(self._Expand) then
+        self._Expand:StopTimelineAnimation()
+    end
 end
 
 function XUiGridRaceRoleOption:SetRoleId(roleId, sortRule)
@@ -38,6 +55,28 @@ function XUiGridRaceRoleOption:SetRoleId(roleId, sortRule)
         end
         self.ImgAttribute.gameObject:SetActiveEx(true)
         self.ImgAttribute:SetSprite(icon)
+    end
+end
+
+function XUiGridRaceRoleOption:GetRoleId()
+    return self._RoleId
+end
+
+function XUiGridRaceRoleOption:PlayTween()
+    if self.GridMember.ButtonState == CS.UiButtonState.Select then
+        if self._CurTween ~= Tween.Expand then
+            if not XTool.UObjIsNil(self._Expand) then
+                self._Expand:PlayTimelineAnimation()
+                self._CurTween = Tween.Expand
+            end
+        end
+    else
+        if self._CurTween ~= Tween.Storage then
+            if not XTool.UObjIsNil(self._Storage) then
+                self._Storage:PlayTimelineAnimation()
+                self._CurTween = Tween.Storage
+            end
+        end
     end
 end
 

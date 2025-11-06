@@ -107,6 +107,11 @@ function XFubenMainLineConfigs.GetConfigChapterTaskGroupId(id)
     return config.TaskGroupId
 end
 
+function XFubenMainLineConfigs.GetConfigChapterIsBtnMissionWhite(id)
+    local config = XFubenMainLineConfigs.GetChapterCfg(id)
+    return config.IsBtnMissionWhite == 1
+end
+
 function XFubenMainLineConfigs.GetTreasureCfg()
     return TreasureCfg
 end

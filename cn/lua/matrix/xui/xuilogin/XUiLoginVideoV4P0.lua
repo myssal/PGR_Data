@@ -6,6 +6,8 @@ function XUiLoginVideoV4P0:OnAwake()
     self.BtnGo.CallBack = function() self:OnBtnGoClick() end
 
     self.VideoPlayerUgui1.ActionEnded = function ()
+        self.Effect.gameObject:SetActiveEx(true)
+        self:PlayAnimation("BtnEnable")
         self.VideoPlayerUgui2:Prepare()
         self.Step2.gameObject:SetActiveEx(true)
     end

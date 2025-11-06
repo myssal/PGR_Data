@@ -100,6 +100,7 @@ function XCameraHelper.ScreenShotNew(image, camera, cb, beginCb)
     if beginCb then
         beginCb()
     end
+   
     CS.XScreenCapture.ScreenCaptureWithCallBack(camera, function(texture)
         local rect = CS.UnityEngine.Rect(0, 0, texture.width, texture.height)
         local sprite = CS.UnityEngine.Sprite.Create(texture, rect, CS.UnityEngine.Vector2.zero);
@@ -163,14 +164,7 @@ function XCameraHelper.PhotographWithFixedRatio(image, cb, beginCb, showPanelPre
         return
     end
 
-    local resourceLoader = ui.GameObject:GetLoader()
-
-    local photographNodeRes = resourceLoader:Load(photographNodePrefabPath)
-    if photographNodeRes == nil then
-        return
-    end
-
-    local photographNode = CS.UnityEngine.Object.Instantiate(photographNodeRes, CS.XUiManager.Instance:GetUiRoot())
+    local photographNode =  CS.XUiManager.Instance:GetUiRoot():LoadPrefabEx(photographNodePrefabPath)
     if photographNode == nil then
         return
     end
@@ -192,7 +186,7 @@ function XCameraHelper.PhotographWithFixedRatio(image, cb, beginCb, showPanelPre
     if string.IsNilOrEmpty(showPanelPrefabPath) then
         return
     end
-    local showPanelPrefabRes = resourceLoader:Load(showPanelPrefabPath)
+    local showPanelPrefabRes = uiPhotographNode.Canvas.transform:LoadPrefabEx(showPanelPrefabPath)
     if showPanelPrefabRes == nil then
         uiPhotographNode = nil
         CS.UnityEngine.Object.Destroy(photographNode)

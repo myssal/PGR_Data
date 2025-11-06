@@ -14,6 +14,7 @@ function XUiGridGame2048Buff:InitData(buffId, initCharge)
     
     self.GridBtn:SetRawImage(self._Control:GetBuffIcon(self._BuffId))
     self._IsTriggerOnce = self._Control:GetBuffIsTriggerOnce(self._BuffId)
+    self._Type = self._Control:GetBuffType(self._BuffId)
     self._HadTrigger = false
     self.TxtNum.text = ''
     self.TxtNum.transform.parent.gameObject:SetActiveEx(true)
@@ -45,7 +46,7 @@ function XUiGridGame2048Buff:RefreshaBuffStatus()
         self._HadTrigger = true
     end
 
-    if self._HadTrigger and self._IsTriggerOnce then
+    if (self._HadTrigger and self._IsTriggerOnce) or self._Type == XMVCA.XGame2048.EnumConst.BuffType.ClientShow then
         self.TxtNum.text = ''
         self.TxtNum.transform.parent.gameObject:SetActiveEx(false)
     else

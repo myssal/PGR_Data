@@ -346,7 +346,7 @@ function XSkyGardenCafeBattle:OpenBattleView(deckId)
     end, stageId)
 end
 
-function XSkyGardenCafeBattle:RequestEnterGame(deckId)
+function XSkyGardenCafeBattle:RequestEnterGame(deckId, func)
     local cardList
     if deckId and deckId > 0 then
         local deck = self._Model:GetCardDeck(deckId)
@@ -360,9 +360,11 @@ function XSkyGardenCafeBattle:RequestEnterGame(deckId)
         --埋点：首回合放弃的牌
         AbandonedCardList = self._RoundEntity:GetReDrawSelectIds(true),
     }
+    local handleError = function() self:HandleError() end
     XNetwork.Call("BigWorldCafeNewRoundRequest", req, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
+            handleError()
             return
         end
         if deckId and deckId > 0 then
@@ -373,7 +375,18 @@ function XSkyGardenCafeBattle:RequestEnterGame(deckId)
         battleInfo:SetDeckCount(self._Model:GetMaxCustomer(self._StageId))
         battleInfo:NewBattle(req.CafeGambling)
         self:ResetResetTimes()
-    end)
+        if func then
+            func()
+        end
+    end, nil, handleError)
+end
+
+function XSkyGardenCafeBattle:HandleError()
+    if self._StageId <= 0 then
+        return
+    end
+    self:DoExitFight()
+    XMVCA.XBigWorldUI:SafeClose("UiSkyGardenCafeGame")
 end
 
 function XSkyGardenCafeBattle:OnCardUpdate(evt, type, index, card)

@@ -305,9 +305,9 @@ end
 
 function XUiSkyGardenShoppingStreetUpgrade:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnBack.CallBack = function (...) self:OnBtnBackClick() end
-    self.BtnYes.CallBack = function (...) self:OnBtnYesClick() end
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnYes:AddEventListener(handler(self, self.OnBtnYesClick))
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
     -- self.BtnYes2.CallBack = function (...) self:OnBtnBackClick() end
 end
 

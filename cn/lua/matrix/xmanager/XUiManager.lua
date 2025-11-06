@@ -1,7 +1,8 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local tableUnpack = table.unpack
 local stringFind = string.find
-local FightUiPrefix = "UiFight"
+local stringMarch = string.match
+local FightUiPrefix = "Ui.-Fight"
 
 XUi = XClass(nil, "XUi")
 
@@ -757,8 +758,10 @@ function XUiManager.MoveToTopAuto(nodeGo, clickBtn, cb, upOrder)
 end
 
 function XUiManager.IsFightUi(uiName)
-    local begin, _ = stringFind(uiName, FightUiPrefix)
-    return begin and begin > 0
+    if stringMarch(uiName, FightUiPrefix) then
+        return true
+    end
+    return false
 end
 
 XUiManager.Init()

@@ -43,6 +43,10 @@ function XUiSkyGardenCafeMain:OnDisable()
     self:ChangePanel(PanelState.None)
 end
 
+function XUiSkyGardenCafeMain:OnDestroy()
+    self._IsPrepareQuit = false
+end
+
 function XUiSkyGardenCafeMain:InitUi()
     self._Rewards = {}
     self._PreRewards = {}
@@ -58,19 +62,19 @@ function XUiSkyGardenCafeMain:InitUi()
 end
 
 function XUiSkyGardenCafeMain:InitCb()
-    self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
     
-    self.BtnTanchuangClose.CallBack = function() self:OnBtnCloseClick() end
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
     
-    self.BtnStart.CallBack = function() self:OnBtnStartClick() end
+    self.BtnStart:AddEventListener(handler(self, self.OnBtnStartClick))
     
-    self.BtnChallenge.CallBack = function() self:OnBtnChallengeClick() end
+    self.BtnChallenge:AddEventListener(handler(self, self.OnBtnChallengeClick))
     
-    self.BtnHistory.CallBack = function() self:OnBtnHistoryClick() end
+    self.BtnHistory:AddEventListener(handler(self, self.OnBtnHistoryClick))
     
-    self.BtnHelp.CallBack = function() 
+    self.BtnHelp:AddEventListener(function() 
         XMVCA.XBigWorldTeach:OpenTeachTipUi(XMVCA.XSkyGardenCafe:GetTeachId())
-    end
+    end)
     
     local function onAnimationCb()
         local isMain = self._PanelState == PanelState.Main
@@ -259,12 +263,14 @@ function XUiSkyGardenCafeMain:OnBtnCloseClick()
         end)
         return
     end
-    
+    if self._IsPrepareQuit then
+        return
+    end
     local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-
     confirmData:InitInfo(self._Control:GetTipTitle(), self._Control:GetQuitText())
-    confirmData:InitToggleActive(false):InitSureClick(nil, function() 
-        self:PlayAnimation("PanelMainDisable", function()
+    confirmData:InitToggleActive(false):InitSureClick(nil, function()
+        self._IsPrepareQuit = true
+        self:PlayAnimationWithMask("PanelMainDisable", function()
             XMVCA.XSkyGardenCafe:ExitGameLevel()
         end)
     end)

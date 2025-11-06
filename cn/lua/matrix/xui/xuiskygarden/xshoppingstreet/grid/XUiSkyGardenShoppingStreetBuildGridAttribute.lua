@@ -9,7 +9,7 @@ function XUiSkyGardenShoppingStreetBuildGridAttribute:OnStart()
         self.TipsCloseArea.gameObject:SetActive(false)
     end
     if self.ImgDetail then
-        self.ImgDetail.CallBack = function() self:ShowBubbleTips() end
+        self.ImgDetail:AddEventListener(handler(self, self.ShowBubbleTips))
     end
     self._TxtNum = self.TxtDetailNum or self.TxtNum
 end

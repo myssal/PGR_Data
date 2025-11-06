@@ -52,9 +52,9 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetPopupTaskConfirmation:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
-    self.BtnYes.CallBack = function() self:OnBtnYesClick() end
-    self.BtnCancel.CallBack = function() self:OnBtnCancelClick() end
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnYes:AddEventListener(handler(self, self.OnBtnYesClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
 end
 --endregion
 

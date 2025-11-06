@@ -152,8 +152,8 @@ end
 
 function XUiSkyGardenShoppingStreetGameGridOutsideBuild:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.UiSkyGardenShoppingStreetGameGridOutsideBuild.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridOutsideBuildClick() end
-    self.RedUpgrade.CallBack = function() self:OnRedUpgradeClick() end
+    self.UiSkyGardenShoppingStreetGameGridOutsideBuild:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridOutsideBuildClick))
+    self.RedUpgrade:AddEventListener(handler(self, self.OnRedUpgradeClick))
 end
 
 --endregion

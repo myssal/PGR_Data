@@ -1,5 +1,5 @@
 local TableKey = {
-    PlotExhibitionRoleGroup = { DirPath = XConfigUtil.DirectoryType.Client },
+    PlotExhibitionRoleGroup = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     PlotExhibitionStoryLine = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     PlotExhibitionForce = { DirPath = XConfigUtil.DirectoryType.Client },
     PlotExhibitionCharacter = { DirPath = XConfigUtil.DirectoryType.Client },

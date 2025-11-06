@@ -81,8 +81,6 @@ function XUiMainTerminal:OnEnable(uiMain)
     XEventManager.AddEventListener(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.RefreshGridTips, self)
     XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_NEED_REFRESH, self.RefreshGridTips, self)
     self:Show()
-    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
-    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
 end
 
 function XUiMainTerminal:Show()
@@ -181,8 +179,7 @@ function XUiMainTerminal:InitUi()
     self.BtnWeek.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ActivityCalendar) and not XUiManager.IsHideFunc)
     self.BtnScreenShot.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
 
-    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
-    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
+
     self.BtnSocial.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.SocialFriend) and not XUiManager.IsHideFunc)
     self.BtnSet.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Setting))
     
@@ -233,6 +230,9 @@ function XUiMainTerminal:OnMusicPlayerClose()
 end
 
 function XUiMainTerminal:RefreshSubMenu()
+    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
+    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
+    
     local dataList = self:GetSubMenuList()
     if XTool.IsTableEmpty(dataList) then
         self.SubMenuList = {

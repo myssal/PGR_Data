@@ -8,6 +8,8 @@ function XUiSkyGardenShoppingStreetGameCustomer:OnStart(...)
     self._FollowComponet = XUiHelper.TryAddComponent(self.GameObject, typeof(CS.SetUiFollowTarget))
     self:UnBindingCustomer()
 
+    self._EventRay = self.UiSkyGardenShoppingStreetGameGridEvent.gameObject:GetComponent(typeof(CS.UnityEngine.UI.GraphicRaycaster))
+    self._FeedbackRay = self.UiSkyGardenShoppingStreetGameGridFeedback.gameObject:GetComponent(typeof(CS.UnityEngine.UI.GraphicRaycaster))
     self.UiSkyGardenShoppingStreetGridFeedback.gameObject:SetActive(false)
     -- self._FeedbackUi = XUiSkyGardenShoppingStreetInsideBuildGridFeedback.New(self.UiSkyGardenShoppingStreetGridFeedback.gameObject, self)
     -- self._FeedbackUi:Close()
@@ -145,7 +147,9 @@ function XUiSkyGardenShoppingStreetGameCustomer:OnUiSkyGardenShoppingStreetGameG
     local waitTime = tonumber(self._Control:GetGlobalConfigByKey(keyStr)) * 1000
     self.Parent:RemoveCustomerDelayCallback(self._NpcId, self._TimerId)
     self._TimerId = false
+    self._EventRay.enabled = false
     self._TimerId = self.Parent:AddCustomerDelayCallback(self._NpcId, waitTime, function()
+        self._EventRay.enabled = true
         self.UiSkyGardenShoppingStreetGameGridEvent.gameObject:SetActive(false)
     end)
     if self.Effect then
@@ -168,8 +172,10 @@ function XUiSkyGardenShoppingStreetGameCustomer:OnUiSkyGardenShoppingStreetGameG
     -- local waitTime = tonumber(self._Control:GetGlobalConfigByKey(keyStr)) * 1000
     local waitTime = 1000--预留给特效的时间
     self.Parent:RemoveCustomerDelayCallback(self._NpcId, self._TimerId)
+    self._FeedbackRay.enabled = false
     self._TimerId = false
     self._TimerId = self.Parent:AddCustomerDelayCallback(self._NpcId, waitTime, function()
+        self._FeedbackRay.enabled = true
         self.UiSkyGardenShoppingStreetGameGridFeedback.gameObject:SetActive(false)
     end)
 
@@ -198,9 +204,9 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetGameCustomer:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.UiSkyGardenShoppingStreetGameGridEvent.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridEventClick() end
-    self.UiSkyGardenShoppingStreetGameGridFeedback.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridFeedbackClick() end
-    self.UiSkyGardenShoppingStreetGridFeedback.CallBack = function() self:OnUiSkyGardenShoppingStreetGridFeedbackClick() end
+    self.UiSkyGardenShoppingStreetGameGridEvent:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridEventClick))
+    self.UiSkyGardenShoppingStreetGameGridFeedback:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridFeedbackClick))
+    self.UiSkyGardenShoppingStreetGridFeedback:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGridFeedbackClick))
 end
 --endregion
 

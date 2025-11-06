@@ -21,6 +21,7 @@ local ipairs = ipairs
 local stringFormat = string.format
 
 local IsDebugBuild = CS.XApplication.Debug
+local CsLog = CS.XLog
 
 --分包下载源
 local DownloadType = DOWNLOAD_SOURCE.SUBPACKAGE
@@ -570,6 +571,7 @@ function XSubPackageAgency:OnComplete(subpackageId)
 
     --埋点
     self:DoRecordSubpackageComplete(id)
+   self:Print(string.format("[SubPackage] Subpackage(%s) Download Complete!", subpackageId))
 end
 
 function XSubPackageAgency:OnProgressUpdate(progress, taskGrpId)
@@ -1436,6 +1438,10 @@ function XSubPackageAgency:DoRecordDownloadError(fileName, fileSize)
     dict["type"] = RES_FILE_TYPE.MATRIX_FILE
 
     CS.XRecord.Record(dict, "80007", "XFileManagerDownloadError")
+end
+
+function XSubPackageAgency:Print(info)
+    CsLog.Debug(info)
 end
 
 return XSubPackageAgency

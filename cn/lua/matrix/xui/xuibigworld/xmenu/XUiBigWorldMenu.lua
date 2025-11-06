@@ -61,7 +61,7 @@ function XUiBigWorldMenu:AddUiButtonEvent(btn, click)
     if not btn or not click then
         return
     end
-    btn.CallBack = click
+    btn:AddEventListener(click)
 end
 
 function XUiBigWorldMenu:OnBtnHandbookClick()

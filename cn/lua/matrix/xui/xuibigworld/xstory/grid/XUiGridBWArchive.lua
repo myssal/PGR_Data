@@ -23,7 +23,7 @@ end
 
 function XUiGridBWArchive:InitCb()
     if self.BtnClick then
-        self.BtnClick.CallBack = handler(self, self.OnClick)
+        self.BtnClick:AddEventListener(handler(self, self.OnClick))
     end
     self._OnCloseDetailCb = function() 
         self:SetSelect(false)

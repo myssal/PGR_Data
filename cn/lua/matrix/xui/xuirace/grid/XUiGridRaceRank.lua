@@ -24,8 +24,10 @@ function XUiGridRaceRank:RefreshMine(rankInfo, totalCount)
         -- 101名及以上显示百分比
         if rankInfo.Rank > 100 then
             self.TxtRank.text = math.max(1, math.floor(rankInfo.Rank * 100 / totalCount)) .. "%" -- 最小显示1%
-        else
+        elseif rankInfo.Rank > 0 and rankInfo.Rank <= 100 then
             self.TxtRank.text = rankInfo.Rank
+        else
+            self.TxtRank.text = XUiHelper.GetText("RaceNotListed")
         end
     else
         self.TxtPoint.text = "0"

@@ -17,7 +17,16 @@ function XUiPurchaseBundleGrid:Update(data)
             self.RImgIcon:SetNativeSize()
         end)
     end
-    self._Button:SetButtonState(data.IsSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    
+    local state = data.IsSoldOut and CS.UiButtonState.Disable or CS.UiButtonState.Normal
+
+    if data.IsSelected then
+        state = CS.UiButtonState.Select
+    end
+    
+    self._Button:SetButtonState(state)
+
+    self.ImgMask.gameObject:SetActiveEx(data.IsSoldOut)
 end
 
 function XUiPurchaseBundleGrid:OnClick()
@@ -27,6 +36,7 @@ function XUiPurchaseBundleGrid:OnClick()
     local panelUi = self.Parent.Parent
     panelUi.Data = self._Data
     panelUi:SetList()
+    panelUi:InitAndCheckNormalDiscount()
     panelUi:CheckLBRewardIsHave()
     panelUi:RefreshBtnBuyPrice()
 end

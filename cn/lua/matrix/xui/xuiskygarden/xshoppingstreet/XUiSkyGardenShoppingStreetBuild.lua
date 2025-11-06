@@ -470,12 +470,12 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetBuild:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnUnlock.CallBack = function() self:OnBtnUnlockClick() end
-    self.BtnUpgrade.CallBack = function() self:OnBtnUpgradeClick() end
-    self.BtnRecommend.CallBack = function() self:OnBtnRecommendClick() end
-    self.BtnBack.CallBack = function() self:OnBtnBackClick() end
-    self.BtnChooseSale.CallBack = function() self:OnBtnChooseSaleClick() end
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
+    self.BtnUnlock:AddEventListener(handler(self, self.OnBtnUnlockClick))
+    self.BtnUpgrade:AddEventListener(handler(self, self.OnBtnUpgradeClick))
+    self.BtnRecommend:AddEventListener(handler(self, self.OnBtnRecommendClick))
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnChooseSale:AddEventListener(handler(self, self.OnBtnChooseSaleClick))
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
 end
 --endregion
 

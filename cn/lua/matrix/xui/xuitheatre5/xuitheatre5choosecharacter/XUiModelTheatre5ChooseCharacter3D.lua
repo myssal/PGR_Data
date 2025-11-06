@@ -6,6 +6,13 @@ local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XTheatre5CharacterAnimatorFSM = require('XModule/XTheatre5/XTheatre5CharacterAnimatorFSM')
 
 local DefaultRoleAnimaName = "StandAct0101"
+function XUiModelTheatre5ChooseCharacter3D:OnStart()
+    -- 莉莉丝特调，只有莉莉丝模型有Ui特效，其他角色都不播放
+    local IndexLilith = 4
+    self._CharacterIndexPlayUiEffect = {
+        [IndexLilith] = true
+    }
+end
 
 function XUiModelTheatre5ChooseCharacter3D:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CHARACTER_FASHION_CHANGED, self.RefreshCharacterShow, self)
@@ -55,9 +62,9 @@ function XUiModelTheatre5ChooseCharacter3D:LoadCharacters(characterCfgs)
             break
         end
     end
-    
+
     -- 从新手战斗退出之后，从ui栈恢复ui时，出现动作和模型不一致问题，需要重置
-    self._TimerResetAllActionAndUiEffect = XScheduleManager.ScheduleNextFrame(function() 
+    self._TimerResetAllActionAndUiEffect = XScheduleManager.ScheduleNextFrame(function()
         self:ResetAllActionAndUiEffect()
         self._TimerResetAllActionAndUiEffect = false
     end)
@@ -177,11 +184,13 @@ function XUiModelTheatre5ChooseCharacter3D:SetCharacterFocus(index)
         return
     end
 
+    local isFullView = false
     if XTool.IsNumberValid(self._CurFocusIndex) then
         -- 取消动画
         local animaFsm = self.CharacterAnimFSM[self._CurFocusIndex]
 
         if animaFsm then
+            isFullView = true
             animaFsm:SetState(XMVCA.XTheatre5.EnumConst.CharacterAnimaState.FullView)
         end
     end
@@ -206,6 +215,23 @@ function XUiModelTheatre5ChooseCharacter3D:SetCharacterFocus(index)
 
     if animaFsm then
         animaFsm:SetState(XMVCA.XTheatre5.EnumConst.CharacterAnimaState.Choose)
+    end
+
+    -- 返回全局视角时,需要重新播放动画和特效
+    if index == nil then
+        self:ResetAllActionAndUiEffect()
+        
+        -- 非全局视角下, 停止播放特效
+    elseif not isFullView then
+        -- 莉莉丝特调:需要停止播放纸牌特效, 否则纸牌特效会在桌面上播放, 会穿帮
+        if index and index > 0 then
+            for indexToStopEffect, _ in pairs(self._CharacterIndexPlayUiEffect) do
+                local roleModel = self.UiPanelRoleModels[indexToStopEffect]
+                if roleModel then
+                    roleModel:StopUiLoopEffect()
+                end
+            end
+        end
     end
 end
 
@@ -235,11 +261,16 @@ function XUiModelTheatre5ChooseCharacter3D:PlayAnimaCross(index, type, noCross)
         if not string.IsNilOrEmpty(anima) then
             if noCross then
                 roleModel:PlayAnima(anima, 0)
-                roleModel:ReplayUiLoopEffect()
+                if self._CharacterIndexPlayUiEffect[index] then
+                    roleModel:ReplayUiLoopEffect()
+                end
             else
                 roleModel:PlayAnimaCross(anima)
-                roleModel:PlayCharacterUiEffect()
-                roleModel:ReplayUiLoopEffect()
+                -- 其他角色的特效是一次性的，不loop，不能replay，否则在切换镜头的时候会重复播放特效
+                if self._CharacterIndexPlayUiEffect[index] then
+                    roleModel:PlayCharacterUiEffect()
+                    roleModel:ReplayUiLoopEffect()
+                end
             end
         end
     end
@@ -247,13 +278,14 @@ end
 
 function XUiModelTheatre5ChooseCharacter3D:ResetAllActionAndUiEffect()
     if self.CharacterCfgs then
-        --for i = 1, #self.CharacterCfgs do
-        -- v3.8 莉莉丝特调
-        -- 只处理莉莉丝，因为其他角色的模型是一次性的，不loop的，不会出现这个问题
-        if self.CharacterCfgs[4] then
-            self:PlayAnimaCross(4, XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch, true)
+        for i = 1, #self.CharacterCfgs do
+            if self._CharacterIndexPlayUiEffect[i] then
+                -- 只处理莉莉丝，因为其他角色的模型是一次性的，不loop的，不会出现这个问题
+                if self.CharacterCfgs[i] then
+                    self:PlayAnimaCross(i, XMVCA.XTheatre5.EnumConst.CharacterAnimaType.FullViewSwitch, true)
+                end
+            end
         end
-        --end
     end
 end
 

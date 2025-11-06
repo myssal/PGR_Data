@@ -129,6 +129,8 @@ XNewbieTaskManagerCreator = function()
             if cb then
                 cb(res.RewardGoodsList)
             end
+
+            XEventManager.DispatchEvent(XEventId.EVENT_NEWBIETASK_PROGRESSCHANGED)
         end)
     end
 

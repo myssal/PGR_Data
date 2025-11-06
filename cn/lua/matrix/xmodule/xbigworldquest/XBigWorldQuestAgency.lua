@@ -6,6 +6,7 @@ local XBigWorldQuestAgency = XClass(XAgency, "XBigWorldQuestAgency")
 local stringFormat = string.format
 
 local DlcEventId = XMVCA.XBigWorldService.DlcEventId
+local CsSyncFight = CS.StatusSyncFight
 
 local Pattern = "{(.-)}"
 
@@ -36,6 +37,8 @@ function XBigWorldQuestAgency:ResetData()
     self._Model:ResetData()
 end
 
+--region Condition
+
 -- 条件判断初始化
 function XBigWorldQuestAgency:InitConditionCheck()
     XMVCA.XBigWorldService:RegisterConditionFunc(10101001, handler(self, self.ConditionCheckQuestFinish))
@@ -53,6 +56,112 @@ function XBigWorldQuestAgency:ReleaseConditionCheck()
     XMVCA.XBigWorldService:UnRegisterConditionFunc(10101002)
     XMVCA.XBigWorldService:UnRegisterConditionFunc(10101003)
 end
+
+--- 检查任务是否完成
+---@param template XTableCondition
+---@return boolean, string
+function XBigWorldQuestAgency:ConditionCheckQuestFinish(template)
+    local params = template.Params
+    local questId = params[1]
+    return self:CheckQuestFinish(questId), template.Desc
+end
+
+--- 检查任务是否完成
+---@param template XTableCondition
+---@return boolean, string
+function XBigWorldQuestAgency:ConditionCheckQuestInProgressAndReady(template)
+    local params = template.Params
+    local questId = params[1]
+    local isSuccess = self:CheckQuestInProgress(questId) or self:CheckQuestReady(questId)
+
+    return isSuccess, template.Desc
+end
+
+--- 检查任务步骤是否完成
+---@param template XTableCondition
+---@return boolean, string
+function XBigWorldQuestAgency:ConditionCheckStepFinish(template)
+    local params = template.Params
+    local stepId = params[1]
+    return self:CheckStepFinish(stepId), template.Desc
+end
+
+--- 检查到任务目标是否完成
+---@param template XTableCondition
+---@return boolean, string
+function XBigWorldQuestAgency:ConditionCheckObjectiveFinish(template)
+    local params = template.Params
+    local objectiveId = params[1]
+    local questId = self._Model:GetQuestIdByObjectiveId(objectiveId)
+    if not questId or questId <= 0 then
+        XLog.Warning(string.format("此任务目标配置了无效QuestId, ObjectiveId = %s", objectiveId))
+        return false, template.Desc
+    end
+    return self:CheckObjectiveFinish(questId, objectiveId), template.Desc
+end
+
+function XBigWorldQuestAgency:CheckQuestFinish(questId)
+    return self._Model:CheckQuestFinish(questId)
+end
+
+function XBigWorldQuestAgency:CheckQuestInProgress(questId)
+    return self._Model:CheckQuestInProgress(questId)
+end
+
+function XBigWorldQuestAgency:CheckQuestReady(questId)
+    return self._Model:CheckQuestReady(questId)
+end
+
+function XBigWorldQuestAgency:CheckStepFinish(stepId)
+    local questId = self._Model:GetQuestIdByStepId(stepId)
+    if questId <= 0 then
+        return false
+    end
+
+    if self._Model:CheckQuestFinish(questId) then
+        return true
+    end
+
+    local questData = self:GetQuestData(questId)
+    if not questData then
+        return false
+    end
+    --任务已经完成
+    if questData:IsFinish() then
+        return true
+    end
+    local state = questData:GetState()
+    --任务刚激活，还未领取
+    if state == self.QuestState.Ready then
+        return false
+    end
+    local stepData = questData:GetStep(stepId)
+    if not stepData then
+        return false
+    end
+    return stepData:IsFinish()
+end
+
+function XBigWorldQuestAgency:CheckObjectiveFinish(questId, objectiveId)
+    if self._Model:CheckQuestFinish(questId) then
+        return true
+    end
+    return self:CheckObjectiveFinishOnlyObjective(questId, objectiveId)
+end
+
+function XBigWorldQuestAgency:CheckObjectiveFinishOnlyObjective(questId, objectiveId)
+    local questData = self:GetQuestData(questId)
+    if not questData then
+        return false
+    end
+    if questData:CheckObjectiveFinish(objectiveId) then
+        return true
+    end
+    local objective = questData:GetObjective(objectiveId)
+    return objective and objective:IsFinish() or false
+end
+
+--endregion Condition
 
 function XBigWorldQuestAgency:InitShieldController()
     XMVCA.XBigWorldFunction:RegisterFunctionControllerByMethod(XMVCA.XBigWorldFunction.FunctionType.Task, self,
@@ -204,58 +313,6 @@ function XBigWorldQuestAgency:InitEnum()
     end
 end
 
---- 检查任务是否完成
----@param template XTableCondition
----@return boolean, string
-function XBigWorldQuestAgency:ConditionCheckQuestFinish(template)
-    local params = template.Params
-    local questId = params[1]
-    return self:CheckQuestFinish(questId), template.Desc
-end
-
---- 检查任务是否完成
----@param template XTableCondition
----@return boolean, string
-function XBigWorldQuestAgency:ConditionCheckQuestInProgressAndReady(template)
-    local params = template.Params
-    local questId = params[1]
-    local isSuccess = self:CheckQuestInProgress(questId) or self:CheckQuestReady(questId)
-
-    return isSuccess, template.Desc
-end
-
---- 检查任务步骤是否完成
----@param template XTableCondition
----@return boolean, string
-function XBigWorldQuestAgency:ConditionCheckStepFinish(template)
-    local params = template.Params
-    local stepId = params[1]
-    return self:CheckStepFinish(stepId), template.Desc
-end
-
---- 检查到任务目标是否完成
----@param template XTableCondition
----@return boolean, string
-function XBigWorldQuestAgency:ConditionCheckObjectiveFinish(template)
-    local params = template.Params
-    local objectiveId = params[1]
-
-    -- local objTemplate = self._Model:GetQuestStepObjectiveTemplate(objectiveId)
-    -- local stepId = objTemplate.StepId
-    -- if not stepId or stepId <= 0 then
-    --     XLog.Warning("此任务目标配置了无效StepId, ObjectiveId = " .. objectiveId)
-    --     return false, template.Desc
-    -- end
-
-    -- local stepTemplate = self._Model:GetQuestStepTemplate(stepId)
-    local questId = self._Model:GetQuestIdByObjectiveId(objectiveId)
-    if not questId or questId <= 0 then
-        XLog.Warning(string.format("此任务目标配置了无效QuestId, ObjectiveId = %s", objectiveId))
-        return false, template.Desc
-    end
-    return self:CheckObjectiveFinish(questId, objectiveId), template.Desc
-end
-
 function XBigWorldQuestAgency:IsQuestItem(id)
     if not XTool.IsNumberValid(id) then
         return false
@@ -264,39 +321,28 @@ function XBigWorldQuestAgency:IsQuestItem(id)
     return XArrangeConfigs.GetType(id) == XArrangeConfigs.Types.QuestItem
 end
 
---region Quest Data
+--region 战斗同步任务数据
 
+--- 全量初始化任务数据
 function XBigWorldQuestAgency:InitQuest(data)
     if not data then
         return
     end
     local quests = data.ActiveQuests
-    local trackInstQuest = false --是否追踪了副本任务
-    local trackId = self._Model:GetTrackQuestId()
     for _, quest in pairs(quests) do
         local questData = self._Model:GetQuestData(quest.Id)
         questData:UpdateData(quest)
-        if self:IsInstQuest(quest.Id) then
-            --更新缓存
-            self:UpdateTrackQuestCache(trackId)
-            --强制追踪副本任务
+        --处于副本内，强制追踪副本任务
+        if self:IsInstQuest(quest.Id) and XMVCA.XBigWorldGamePlay:IsInstLevel() then
             self:TrackQuest(quest.Id)
-            trackInstQuest = true
         end
     end
     self._Model:UpdateFinishQuest(data.FinishedQuestIds)
-    if trackId and trackId > 0 and not trackInstQuest then
-        self:NotifyFightTrackQuest(trackId, true)
-    end
-
-    if trackId > 0 then
-        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, trackId, 0, 0)
-    end
-
     --更新红点
     XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH)
 end
 
+--- 任务状态激活
 function XBigWorldQuestAgency:OnQuestActivated(data)
     if not data then
         return
@@ -307,68 +353,68 @@ function XBigWorldQuestAgency:OnQuestActivated(data)
     XEventManager.DispatchEvent(DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY, data.Id)
 end
 
+--- 领取到任务
 function XBigWorldQuestAgency:OnQuestUndertaken(data)
     if not data then
         return
     end
     local questData = self._Model:GetQuestData(data.Id)
     questData:UpdateData(data)
-    local isTrack = false
     if self:IsInstQuest(data.Id) then
-        --记录上次追踪的任务
-        local tracId = self:GetLastTrackQuestId()
-        self:UpdateTrackQuestCache(tracId)
         --强制追踪副本任务
         self:TrackQuest(data.Id)
-        isTrack = true
     else
         self:PopupTaskObtain(data.Id, false)
+        --领取到的任务是默认追踪的任务
         if self:IsDefaultTrackQuest(data.Id) and not self._SyncTracking then
             local trackId = self:GetTrackQuestId()
             --是默认追踪任务，且当前没有任务需要追踪
             if not trackId or trackId <= 0 then
                 self:TrackQuest(data.Id)
-                isTrack = true
             end
         end
-    end
-    if isTrack then
-        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, data.Id, 0, 0)
     end
     XEventManager.DispatchEvent(DlcEventId.EVENT_MESSAGE_QUEST_NOTIFY, data.Id)
     --更新红点
     XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH)
 end
 
+--- 任务完成
 function XBigWorldQuestAgency:OnQuestFinished(data)
     if not data then
         return
     end
-    local lastQuestId = 0
-    local trackId = self._Model:GetTrackQuestId()
-    local untrack = false
+    local theLastOneQuestId = 0
+    local untrackIds
     for _, id in pairs(data) do
         local quest = self:GetQuestData(id)
         quest:SetState(XMVCA.XBigWorldQuest.QuestState.Finished)
-        lastQuestId = id
-        if not untrack and trackId == id then
-            untrack = true
+        --追踪的任务已经完成，需要取消追踪
+        if self._Model:IsTrackQuest(id) then
+            if not untrackIds then
+                untrackIds = {}
+            end
+            untrackIds[#untrackIds + 1] = id
         end
+        theLastOneQuestId = id
     end
     self._Model:UpdateFinishQuest(data)
-    if lastQuestId > 0 then
-        self:PopupTaskObtain(lastQuestId, true)
+    --只弹最后一个
+    if theLastOneQuestId > 0 then
+        --任务完成弹窗
+        self:PopupTaskObtain(theLastOneQuestId, true)
+        --刷新界面，推进演出
+        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestFinish, theLastOneQuestId, 0, 0)
     end
-    --刷新界面，推进演出
-    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestFinish, lastQuestId, 0, 0)
-    local tracked = false
-    --如果不是在副本内，有任务完成(完成的任务需要是正在追踪的)，看看还有没有领取需要自动追踪的任务
-    if untrack and not XMVCA.XBigWorldGamePlay:IsInstLevel() then
-        tracked = self:TryTrackDefault()
+    --取消追踪任务
+    if untrackIds then
+        for _, id in pairs(untrackIds) do
+            self:UnTrackQuest(id)
+        end
     end
-    --没有追踪到默认任务 且 需要取消追踪上一个任务，则还原追踪
-    if not tracked and untrack then
-        self:UnTrackQuest(trackId)
+    local currentTrackId = self:GetTrackQuestId()
+    if not currentTrackId or currentTrackId <= 0 then
+        self:TryTrackDefault()
     end
 
     --更新红点
@@ -377,50 +423,29 @@ function XBigWorldQuestAgency:OnQuestFinished(data)
     XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_FINISH)
 end
 
+--- 任务移除
 function XBigWorldQuestAgency:OnQuestRemove(data)
     if not data then
         return
     end
     local id = data.Id
     if self:IsInstQuest(id) then
-        --如果处于还处于副本内，则不还原追踪，直接取消追踪当前任务
-        if XMVCA.XBigWorldGamePlay:IsInstLevel() then
-            self:UnTrackQuest(id)
-        else
-            if self._TrackQuestIdCache and self._TrackQuestIdCache > 0 then
-                self:TrackQuest(self._TrackQuestIdCache)
-                self:UpdateTrackQuestCache(false)
-            else
-                self:UnTrackQuest(id)
-            end
-        end
+        self:UnTrackQuest(id)
     end
     self._Model:RemoveQuestRedPoint(id)
 end
 
+--- 任务重新接取
 function XBigWorldQuestAgency:OnQuestRelaunch(data)
     if not data then
         return
     end
-    local trackId = 0
-    for _, quest in pairs(data) do
-        local questData = self._Model:GetQuestData(quest.Id)
-        questData:UpdateData(quest)
-        if self:IsInstQuest(quest.Id) then
-            --更新追踪任务缓存
-            local tracId = self:GetLastTrackQuestId()
-            self:UpdateTrackQuestCache(tracId)
-            --强制追踪副本任务
-            self:TrackQuest(quest.Id)
-            trackId = quest.Id
-        end
+    for _, questData in pairs(data) do
+        self:OnQuestUndertaken(questData)
     end
-    --更新界面
-    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, trackId, 0, 0)
-    --更新红点
-    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH)
 end
 
+--- 任务单个步骤状态发生改变
 function XBigWorldQuestAgency:OnStepChanged(data)
     if not data then
         return
@@ -428,12 +453,12 @@ function XBigWorldQuestAgency:OnStepChanged(data)
     local questData = self._Model:GetQuestData(data.QuestId)
     local stepData = questData:TryGetStep(data.StepId)
 
-    local notifyFinish = false
+    local notifyEvent = false
     stepData:SetState(data.State)
     local op
     if stepData:IsFinish() then
         op = self.QuestOpType.StepFinish
-        notifyFinish = true
+        notifyEvent = true
     elseif stepData:IsActive() then
         op = self.QuestOpType.StepActive
     end
@@ -441,12 +466,13 @@ function XBigWorldQuestAgency:OnStepChanged(data)
         XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, op, data.QuestId, data.StepId, 0)
     end
 
-    if notifyFinish then
-        --任务完成
+    if notifyEvent then
+        --通知界面刷新
         XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_FINISH)
     end
 end
 
+--- 任务单个操作状态发生改变
 function XBigWorldQuestAgency:OnObjectiveChanged(data)
     if not data then
         return
@@ -459,11 +485,11 @@ function XBigWorldQuestAgency:OnObjectiveChanged(data)
     objectiveData:SetIsAnimation(data.SkipUiRefreshEffect)
 
     local op
-    local notifyFinish = false
+    local notifyEvent = false
     local ObjectiveState = self.ObjectiveState
     if data.State == ObjectiveState.Finished then
         op = self.QuestOpType.ObjectiveFinish
-        notifyFinish = true
+        notifyEvent = true
     elseif data.State == ObjectiveState.Enter then
         op = self.QuestOpType.ObjectiveActive
     elseif data.State == ObjectiveState.InProgress 
@@ -475,29 +501,25 @@ function XBigWorldQuestAgency:OnObjectiveChanged(data)
         XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, op, data.QuestId, data.StepId, data.ObjectiveId)
     end
 
-    if notifyFinish then
-        --任务完成
+    if notifyEvent then
+        --通知界面刷新
         XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_FINISH)
     end
 end
 
-function XBigWorldQuestAgency:UpdateTrackQuestCache(questId)
-    if questId and questId > 0 then
-        --如果已经追踪的任务是副本任务，则不用缓存
-        if self:IsInstQuest(questId) then
-            return
-        end
-        --已经记录了，不用更新
-        if self._TrackQuestIdCache and self._TrackQuestIdCache > 0 then
-            return
-        end
-        --记录上次追踪的任务
-        self._TrackQuestIdCache = questId
-    else
-        self._TrackQuestIdCache = questId
-    end
+---@return XBigWorldQuest
+function XBigWorldQuestAgency:GetQuestData(questId)
+    return self._Model:GetQuestData(questId)
 end
 
+--endregion 战斗同步任务数据
+
+--region 战斗交互
+
+--- 添加任务值修改的回调
+---@param questId number 任务Id
+---@param key string 任务值key
+---@param func function 回调函数
 function XBigWorldQuestAgency:AddQuestValueChangeListener(questId, key, func)
     if not questId or questId <= 0 then
         return
@@ -512,6 +534,10 @@ function XBigWorldQuestAgency:AddQuestValueChangeListener(questId, key, func)
     })
 end
 
+--- 移除任务值修改的回调
+---@param questId number 任务Id
+---@param key string 任务值key
+---@param func function 回调函数
 function XBigWorldQuestAgency:RemoveQuestValueChangeListener(questId, key, func)
     if not questId or questId <= 0 then
         return
@@ -526,73 +552,78 @@ function XBigWorldQuestAgency:RemoveQuestValueChangeListener(questId, key, func)
     })
 end
 
----@return XBigWorldQuest
-function XBigWorldQuestAgency:GetQuestData(questId)
-    return self._Model:GetQuestData(questId)
-end
-
 --- 追踪任务
 ---@param questId number 任务Id  
 --------------------------
 function XBigWorldQuestAgency:TrackQuest(questId, cb)
-    local trackId = self._Model:GetTrackQuestId()
-    if trackId == questId then
-        if trackId ~= 0 then
-            self:NotifyFightTrackQuest(questId, false, nil)
-            self:NotifyFightTrackQuest(questId, true, cb)
-        end
-        return
-    end
-    self._SyncTracking = true
-    XNetwork.Call("DlcQuestTraceIdChangeRequest", { ChangeTraceQuestId = questId }, function(res)
-        self._SyncTracking = false
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        self._Model:SetTrackQuestId(questId)
-        self:NotifyFightTrackQuest(questId, true, cb)
+    local category = self._Model:GetQuestCategory(questId)
+    local serverTrackId = self._Model:GetTrackQuestId(category)
 
-        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, questId, 0, 0)
-    end)
+    --当前追踪的Id与服务器Id一致，仅通知战斗
+    if serverTrackId == questId then
+        self:NotifyFightTrackQuest(questId, true, cb)
+    else
+        self._SyncTracking = true
+        local req = {
+            ChangeTraceQuestId = questId,
+            IsCancel = false,
+        }
+        XNetwork.Call("DlcQuestTraceIdChangeRequest", req, function(res)
+            self._SyncTracking = false
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                return
+            end
+            self._Model:SetTrackQuestId(category, questId)
+            self:NotifyFightTrackQuest(questId, true, cb)
+        end)
+    end
+    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestTrack, questId, 0, 0)
 end
 
 --- 取消追踪
 ---@param questId number 任务Id    
 --------------------------
 function XBigWorldQuestAgency:UnTrackQuest(questId, cb)
-    local trackId = self._Model:GetTrackQuestId()
-    if not trackId or trackId <= 0 then
+    local category = self._Model:GetQuestCategory(questId)
+    local serverTrackId = self._Model:GetTrackQuestId(category)
+    if serverTrackId ~= questId then
         return
     end
-
-    if questId ~= trackId then
-        return
-    end
-
-    XNetwork.Call("DlcQuestTraceIdChangeRequest", { ChangeTraceQuestId = 0 }, function(res)
+    self._SyncTracking = true
+    local req = {
+        ChangeTraceQuestId = questId,
+        IsCancel = true,
+    }
+    XNetwork.Call("DlcQuestTraceIdChangeRequest", req, function(res)
+        self._SyncTracking = false
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
         end
-        self._Model:SetTrackQuestId(0)
+        self._Model:SetTrackQuestId(category, 0)
         self:NotifyFightTrackQuest(questId, false, cb)
-
-        XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestUnTrack, questId, 0, 0)
     end)
+    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.QuestOpType.QuestUnTrack, questId, 0, 0)
 end
 
+--- 同步战斗追踪状态
+---@param questId number 任务Id
+---@param enable boolean 是否追踪
+---@param enable function 回调函数
 function XBigWorldQuestAgency:NotifyFightTrackQuest(questId, enable, cancelCb)
     if not questId or questId <= 0 then
         return
     end
 
-    --追踪了一个已完成的任务
-    if enable and self:CheckQuestFinish(questId) then
+    local isInstQuest = self:IsInstQuest(questId)
+    local isInstLevel = XMVCA.XBigWorldGamePlay:IsInstLevel()
+    --追踪了一个已完成的非副本任务， 副本任务可以重复接取
+    if enable and (not isInstQuest and self:CheckQuestFinish(questId)) then
         return
     end
     
-    if self:IsInstQuest(questId) and not XMVCA.XBigWorldGamePlay:IsInstLevel() then
+    if isInstQuest ~= isInstLevel then
         return
     end
     
@@ -600,7 +631,6 @@ function XBigWorldQuestAgency:NotifyFightTrackQuest(questId, enable, cancelCb)
         QuestId = questId,
         Enable = enable,
     }
-    
     local result = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_QUEST_SET_NAVIGTION_ENABLE, data)
     local cancelId = 0
     if result and result.CanceledQuestId and result.CanceledQuestId > 0 then
@@ -626,6 +656,9 @@ function XBigWorldQuestAgency:TryTrackDefault()
     return true
 end
 
+--- 获取任务跳转数据
+---@param questId number 任务Id
+---@return table 跳转数据
 function XBigWorldQuestAgency:GetQuestSkipInfo(questId)
     local objectiveId
     local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
@@ -649,6 +682,8 @@ function XBigWorldQuestAgency:GetQuestSkipInfo(questId)
     return data
 end
 
+--- 尝试根据战斗跳转数据进行条状
+---@param data table 跳转数据
 function XBigWorldQuestAgency:TrySkipToByFightSkipInfo(data)
     if not data then
         XLog.Error("跳转失败, 数据为空！")
@@ -672,6 +707,8 @@ function XBigWorldQuestAgency:TrySkipToByFightSkipInfo(data)
     end
 end
 
+--- 根据战斗跳转数据获取跳转的状态
+---@return number
 function XBigWorldQuestAgency:CheckSkipToByFightSkipInfo(data)
     if not data then
         XLog.Error("跳转失败, 数据为空！")
@@ -714,6 +751,8 @@ function XBigWorldQuestAgency:CheckSkipToByFightSkipInfo(data)
     end
 end
 
+--- 根据战斗跳转数据获取跳转的文本
+---@return string
 function XBigWorldQuestAgency:GetQuestSkipToText(data)
     local text
     if data then
@@ -733,149 +772,52 @@ function XBigWorldQuestAgency:GetQuestSkipToText(data)
     return text
 end
 
-function XBigWorldQuestAgency:GetTrackQuestId()
-    return self._Model:GetTrackQuestId()
-end
+--endregion 战斗交互
 
-function XBigWorldQuestAgency:GetLastTrackQuestId()
-    --更新追踪任务缓存
-    local tracId = self._Model:GetTrackQuestId()
-    if not tracId or tracId <= 0 then
-        tracId = self._TrackQuestIdCache
+--- 当前场景支持接取的任务类型
+---@param levelId number 场景Id
+---@return number 任务类型
+function XBigWorldQuestAgency:GetLevelSupportCategory(levelId)
+    ---@type StatusSyncFight.XTableLevel
+    local template = CsSyncFight.XLevelConfig.GetTemplate(levelId)
+    local levelType = template and template.LevelType or 0
+    local levelSubType = template and template.LevelSubType or 0
+
+    if levelType == XMVCA.XBigWorldInstance.LevelType.BigWorld then
+        return self.QuestCategory.NormalQuest
+    elseif levelType == XMVCA.XBigWorldInstance.LevelType.Instance then
+        if levelSubType == XMVCA.XBigWorldInstance.LevelSubType.StoryInst then
+            return self.QuestCategory.InstLevelStoryQuest
+        elseif levelSubType == XMVCA.XBigWorldInstance.LevelSubType.LevelPlayInst then
+            return self.QuestCategory.InstLevelPlayQuest
+        end
     end
-    return tracId
+    XLog.Error("未找到当前Level支持的任务类型，请检查！！！ LevelId = " .. levelId)
+    return self.QuestCategory.NormalQuest
 end
 
---- 尝试还原追踪任务，如果在副本内完成了任务，此时不能立即还原，需要等切换到正常场景后才能切换
-function XBigWorldQuestAgency:TryRestoreTrackQuest()
+--- 当前追踪的任务
+---@param category number 任务类型，不填时为当前场景支持的任务类型
+---@return number
+function XBigWorldQuestAgency:GetTrackQuestId(category)
+    category = category or self:GetLevelSupportCategory(XMVCA.XBigWorldGamePlay:GetCurrentLevelId())
+    return self._Model:GetTrackQuestId(category)
+end
+
+--- 场景切换完成
+function XBigWorldQuestAgency:DoLevelChangeComplete()
+    --场景切换完成，如果是副本任务，会接取到任务，在接取时追踪即可
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
         return
     end
-    if self._TrackQuestIdCache and self._TrackQuestIdCache > 0 then
-        self:TrackQuest(self._TrackQuestIdCache)
-        self:UpdateTrackQuestCache(false)
-    end
+    --切换到非副本场景时，如果存在追踪的任务，则进行还原
+    local questId = self:GetTrackQuestId()
+    self:TrackQuest(questId)
 end
 
-function XBigWorldQuestAgency:UpdateData(trackQuestId)
-    self._Model:SetTrackQuestId(trackQuestId or 0)
+function XBigWorldQuestAgency:UpdateData(traceQuestIds)
+    self._Model:UpdateTrackIds(traceQuestIds)
 end
-
-function XBigWorldQuestAgency:CheckQuestFinish(questId)
-    return self._Model:CheckQuestFinish(questId)
-end
-
-function XBigWorldQuestAgency:CheckQuestInProgress(questId)
-    return self._Model:CheckQuestInProgress(questId)
-end
-
-function XBigWorldQuestAgency:CheckQuestReady(questId)
-    return self._Model:CheckQuestReady(questId)
-end
-
-function XBigWorldQuestAgency:CheckStepFinish(stepId)
-    -- local t = self._Model:GetQuestStepTemplate(stepId)
-    -- if not t then
-    --     return false
-    -- end
-
-    local questId = self._Model:GetQuestIdByStepId(stepId)
-    if questId <= 0 then
-        return false
-    end
-
-    if self._Model:CheckQuestFinish(questId) then
-        return true
-    end
-
-    local questData = self:GetQuestData(questId)
-    if not questData then
-        return false
-    end
-    --任务已经完成
-    if questData:IsFinish() then
-        return true
-    end
-    local state = questData:GetState()
-    --任务刚激活，还未领取
-    if state == self.QuestState.Ready then
-        return false
-    end
-    local stepData = questData:GetStep(stepId)
-    if not stepData then
-        return false
-    end
-    return stepData:IsFinish()
-end
-
-function XBigWorldQuestAgency:CheckObjectiveFinish(questId, objectiveId)
-    if self._Model:CheckQuestFinish(questId) then
-        return true
-    end
-    return self:CheckObjectiveFinishOnlyObjective(questId, objectiveId)
-end
-
-function XBigWorldQuestAgency:CheckObjectiveFinishOnlyObjective(questId, objectiveId)
-    local questData = self:GetQuestData(questId)
-    if not questData then
-        return false
-    end
-    if questData:CheckObjectiveFinish(objectiveId) then
-        return true
-    end
-    local objective = questData:GetObjective(objectiveId)
-    return objective and objective:IsFinish() or false
-end
-
---endregion Quest Data
-
---region Quest Item Config
-
-function XBigWorldQuestAgency:GetQuestItemIcon(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Icon or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemName(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Name or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemPriority(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Priority or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemQuality(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Quality or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemDescription(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Description or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemWorldDescription(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.WorldDescription or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemType(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Type or ""
-end
-
-function XBigWorldQuestAgency:GetQuestItemParams(templateId)
-    local template = self._Model:GetQuestItemTemplate(templateId)
-    return template and template.Params or nil
-end
-
-function XBigWorldQuestAgency:GetGroupIdByQuestId(questId)
-    return self._Model:GetGroupIdByQuestId(questId, true)
-end
-
---endregion Quest Item Config
 
 ---@param stepData XBigWorldQuestStep
 ---@return XBigWorldQuestObjective[]
@@ -935,6 +877,56 @@ function XBigWorldQuestAgency:GetQuestDisplayProgress(questId)
     end
     return list
 end
+
+--region Quest Item Config
+
+function XBigWorldQuestAgency:GetQuestItemIcon(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Icon or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemName(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Name or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemPriority(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Priority or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemQuality(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Quality or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemDescription(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Description or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemWorldDescription(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.WorldDescription or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemType(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Type or ""
+end
+
+function XBigWorldQuestAgency:GetQuestItemParams(templateId)
+    local template = self._Model:GetQuestItemTemplate(templateId)
+    return template and template.Params or nil
+end
+
+function XBigWorldQuestAgency:GetGroupIdByQuestId(questId)
+    return self._Model:GetGroupIdByQuestId(questId, true)
+end
+
+--endregion Quest Item Config
+
+--region Quest Config
 
 function XBigWorldQuestAgency:GetObjectiveProgressDescByObjectiveId(questId, objectiveId)
     local questData = self:GetQuestData(questId)
@@ -1010,8 +1002,6 @@ function XBigWorldQuestAgency:GetQuestIdByObjectiveId(objectiveId)
 
     return self._Model:GetQuestIdByObjectiveId(objectiveId)
 end
-
---region Quest Config
 
 function XBigWorldQuestAgency:GetQuestIcon(questId)
     local t = self._Model:GetQuestTemplate(questId)
@@ -1101,7 +1091,7 @@ function XBigWorldQuestAgency:GetQuestStepTextByStepId(stepId)
     return self._Model:GetQuestStepText(stepId)
 end
 
--- endregion
+--endregion Quest Config
 
 --region Ui Open
 
@@ -1154,7 +1144,6 @@ function XBigWorldQuestAgency:OnChangeControlState(controlData)
 end
 
 --endregion Ui Open
-
 
 --region 红点
 function XBigWorldQuestAgency:CheckQuestRed()

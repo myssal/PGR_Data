@@ -22,7 +22,11 @@ function XUiPurchaseYKListItem:SetData(data, finishedFunc)
     end
     self.TxtTimeTip.text = XUiHelper.GetText("PurchaseYKTimeTip", remainDay)
     self.TxtTimeTip.gameObject:SetActiveEx(XPurchaseConfigs.IsYKID(data:GetId()))
-    self.TxtCountLimit.text = XUiHelper.GetText("PurchaseYKLimitCountTip", data:GetCurrentBuyTime(), data:GetBuyLimitTime())
+    
+    local buyLimitTimes = data:GetBuyLimitTime()
+    local curBuyTimes = math.min(buyLimitTimes, data:GetCurrentBuyTime())
+    
+    self.TxtCountLimit.text = XUiHelper.GetText("PurchaseYKLimitCountTip", curBuyTimes, buyLimitTimes)
     local tips = self.YKUiItemConfig.Tips
     self.TxtTip1.text = tips[1]
     self.TxtTip2.text = string.gsub(tips[2], "\\n", "\n")

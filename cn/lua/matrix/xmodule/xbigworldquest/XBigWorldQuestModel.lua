@@ -59,7 +59,7 @@ function XBigWorldQuestModel:OnInit()
     self._FinishQuest = false
     self._QuestRedDict = false
     self:InitQuestRed()
-    self._TrackQuestId = 0
+    self._TrackQuestDict = {}
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem", TableQuestKey)
 end
 
@@ -111,6 +111,37 @@ function XBigWorldQuestModel:UpdateFinishQuest(questIds)
             self._FinishQuest[questId] = true
         end
     end
+end
+
+function XBigWorldQuestModel:UpdateTrackIds(traceQuestIds)
+    local dict = traceQuestIds
+    if not dict then
+        return
+    end
+    for category, questId in pairs(dict) do
+        self._TrackQuestDict[category] = questId
+    end
+end
+
+--- 当前正在追踪的任务
+---@return number
+--------------------------
+function XBigWorldQuestModel:GetTrackQuestId(category)
+    local questId = self._TrackQuestDict[category] or 0
+    return questId
+end
+
+--- 设置当前类型的追踪的任务Id
+function XBigWorldQuestModel:SetTrackQuestId(category, questId)
+    self._TrackQuestDict[category] = questId
+end
+
+function XBigWorldQuestModel:IsTrackQuest(questId)
+    if not questId or questId <= 0 then
+        return false
+    end
+    local category = self:GetQuestCategory(questId)
+    return self:GetTrackQuestId(category) == questId
 end
 
 function XBigWorldQuestModel:CheckQuestFinish(questId)
@@ -176,21 +207,6 @@ function XBigWorldQuestModel:GetReceiveAndDefaultTrackQuestIds()
     return list
 end
 
---- 当前正在追踪的任务
----@return number
---------------------------
-function XBigWorldQuestModel:GetTrackQuestId()
-    return self._TrackQuestId
-end
-
-function XBigWorldQuestModel:SetTrackQuestId(value)
-    self._TrackQuestId = value
-end
-
-function XBigWorldQuestModel:IsTrackQuest(questId)
-    return self._TrackQuestId == questId
-end
-
 function XBigWorldQuestModel:CheckPopViewOpenWhenQuestReceive(questId)
     local t = self:GetQuestTemplate(questId)
     if not t then
@@ -236,6 +252,9 @@ function XBigWorldQuestModel:IsFirstStatusBarPlay(questId)
 end
 
 function XBigWorldQuestModel:GetQuestCategory(questId)
+    if not questId or questId <= 0 then
+        return 0
+    end
     local t = self:GetQuestTemplate(questId)
     return t and t.Category:GetHashCode() or 0
 end

@@ -132,9 +132,9 @@ end
 
 function XUiBigWorldTeachMain:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnBack.CallBack = Handler(self, self.OnBtnBackClick)
-    self.BtnDelete.CallBack = Handler(self, self.OnBtnDeleteClick)
-    self.BtnSearch.CallBack = Handler(self, self.OnBtnSearchClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
+    self.BtnSearch:AddEventListener(handler(self, self.OnBtnSearchClick))
     self.InputField.onValueChanged:AddListener(Handler(self, self.OnInputChanged))
     self.InputField.onSubmit:AddListener(Handler(self, self.OnInputSubmit))
 end

@@ -177,8 +177,8 @@ end
 function XUiSkyGardenShoppingStreetAsset:_RegisterButtonClicks()
     --在此处注册按钮事件
     if not self.PanelAsset then return end
-    self.PanelAsset.CallBack = function() self:ShowAssetInfo() end
-    self.PanelBuff.CallBack = function() self:ShowBuffInfo() end
+    self.PanelAsset:AddEventListener(handler(self, self.ShowAssetInfo))
+    self.PanelBuff:AddEventListener(handler(self, self.ShowBuffInfo))
 end
 
 function XUiSkyGardenShoppingStreetAsset:_AddTextGameObject()

@@ -9,16 +9,17 @@ local NodeCount = 8
 local NameToLayer = CS.UnityEngine.LayerMask.NameToLayer
 local SceneType = XEnumConst.Race.SceneType
 local MainCam = 1
-local RoundGuessRoleCam = 2
-local MatchGuessRoleCam = 3
-local GuessOptionCam = 4
-local SettlementCam = 5
+local GuessRoleCam = 2
+local GuessOptionCam = 3
+local SettlementCam = 4
 
 function XUiPanelRace3DCamera:OnStart(sceneType)
     self._SceneType = sceneType
     ---@type XUiPanelRoleModel[]
     self._RoleModels = {}
     self._StateNameArray = self._Control:GetClientConfigs("RaceMainRoleStateName")
+    self._EffectPath = self._Control:GetClientConfig("FxHuangguan")
+    self._EffectOffsetY = self._Control:GetIntClientConfig("FxHuangguanOffsetY")
     local randTimeConfig = self._Control:GetClientConfigs("RaceMainRoleRandomTime")
     self._RandMinTime = tonumber(randTimeConfig[1]) or 100
     self._RandMaxTime = tonumber(randTimeConfig[2]) or 1000
@@ -32,6 +33,24 @@ function XUiPanelRace3DCamera:OnStart(sceneType)
     self._AnimList = {}
     self._AnimStandStateList = {}
     self._AnimStateNameList = {}
+
+    self.UiChangeCamFarMatch = self.Transform:FindTransform("UiChangeCamFarMatch")
+    self.UiChangeCamFarOption = self.Transform:FindTransform("UiChangeCamFarOption")
+end
+
+function XUiPanelRace3DCamera:PlayRoleEffect()
+    self.Effect01.gameObject:SetActiveEx(false)
+    self.Effect01.gameObject:SetActiveEx(true)
+end
+
+function XUiPanelRace3DCamera:PlayOptionEffect()
+    self.Effect02.gameObject:SetActiveEx(false)
+    self.Effect02.gameObject:SetActiveEx(true)
+end
+
+function XUiPanelRace3DCamera:PlaySettleEffect()
+    self.Effect03.gameObject:SetActiveEx(false)
+    self.Effect03.gameObject:SetActiveEx(true)
 end
 
 ---注册角色点击事件
@@ -46,24 +65,24 @@ function XUiPanelRace3DCamera:RegisterRoleClick()
     end
 end
 
-function XUiPanelRace3DCamera:ShowRole()
-    if self._SceneType == SceneType.Normal then
-        self:ShowRoundRole()
-    end
-end
-
 function XUiPanelRace3DCamera:ShowRoundRole()
     self._RoleIds = self._Control:GetRoleRandomSite()
-    if XTool.IsTableEmpty(self._RoleIds) then
-        self:RandomRoleSite()
+    if not XTool.IsTableEmpty(self._RoleIds) then
+        return
     end
-    self:InitRole()
-    self:ShowCamera(MainCam)
-end
-
-function XUiPanelRace3DCamera:RefreshRole()
+    self._ChampionId = nil
+    if self._Control:IsAllMatchFinish() then
+        local roundId = self._Control:GetFinalRoundId()
+        local data = self._Control:GetEliminatorData(roundId)
+        local upIds = data and data:GetUpRoleIds()
+        if not XTool.IsTableEmpty(upIds) then
+            self._ChampionId = upIds[1]
+        end
+    end
+    self:RemoveTimer()
     self:RandomRoleSite()
     self:InitRole()
+    self:ShowCamera(MainCam)
 end
 
 function XUiPanelRace3DCamera:RandomRoleSite()
@@ -90,9 +109,14 @@ function XUiPanelRace3DCamera:InitRole()
             XLog.Error(string.format("节点%s不存在", i))
             goto continue
         end
+        
+        local effect = self[string.format("EffectRole%s", i)]
+        if not XTool.UObjIsNil(effect) then
+            effect.gameObject:SetActiveEx(roleId)
+        end
 
         if roleId then
-            self:LoadRole(node, roleId)
+            self:LoadRole(node, roleId, true)
         else
             node.gameObject:SetActiveEx(false)
         end
@@ -100,7 +124,7 @@ function XUiPanelRace3DCamera:InitRole()
     end
 end
 
-function XUiPanelRace3DCamera:LoadRole(node, roleId)
+function XUiPanelRace3DCamera:LoadRole(node, roleId, isHideSelfCollider)
     local characterCfg = self._Control:GetRaceCharacterById(roleId)
     local model = node:LoadPrefab(characterCfg.CharacterModel)
     model:SetLayerRecursively(NameToLayer("UiNear"))
@@ -108,7 +132,7 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId)
     ---@type UnityEngine.Animator
     local anim = model:GetComponent("Animator")
     anim.applyRootMotion = false
-    if self._SceneType == SceneType.MatchPredict then
+    if self._SceneType == SceneType.Predict then
         anim:Play("Greet01", 0, 0)
         self:RemoveAnimTimer()
         self._AnimTimer = XScheduleManager.ScheduleForever(function()
@@ -123,7 +147,30 @@ function XUiPanelRace3DCamera:LoadRole(node, roleId)
             self:AddRoleTimer(roleId)
             self._AnimList[roleId] = anim
         end
+        if self._SceneType == SceneType.Main and roleId == self._ChampionId then
+            self:LoadChampionEffect(model)
+        end
     end
+    if isHideSelfCollider then
+        --不隐藏会影响Input的点击
+        local bip001 = model:FindTransform("Bip001")
+        if not XTool.UObjIsNil(bip001) then
+            local collider = bip001:GetComponent("CapsuleCollider")
+            if not XTool.UObjIsNil(collider) then
+                collider.enabled = false
+            end
+        end
+    end
+end
+
+--皇冠特效
+function XUiPanelRace3DCamera:LoadChampionEffect(model)
+    local effectRoot = CS.UnityEngine.GameObject("ChamptionEffect")
+    effectRoot.transform:SetParent(model.transform, false)
+    effectRoot:SetLayerRecursively(NameToLayer("UiNear"))
+    local effect = effectRoot:LoadPrefab(self._EffectPath)
+    effect:SetLayerRecursively(NameToLayer("UiNear"))
+    effect.transform.localPosition = Vector3(0, self._EffectOffsetY, 0)
 end
 
 function XUiPanelRace3DCamera:LoadCar(node, roleId)
@@ -161,24 +208,15 @@ function XUiPanelRace3DCamera:LookAt(roleId)
     end
     
     self.Option.gameObject:SetActiveEx(false)
-    self.RoleMatch.gameObject:SetActiveEx(self._SceneType == SceneType.MatchPredict)
+    self.RoleMatch.gameObject:SetActiveEx(self._SceneType ~= SceneType.Settlement)
     self.PanelSettleRoleModel.gameObject:SetActiveEx(self._SceneType == SceneType.Settlement)
     
-    if self._SceneType == SceneType.MatchPredict then
+    if self._SceneType == SceneType.Predict then
         self:LoadRole(self.RoleMatch, roleId) --直接替换角色
-        self:ShowCamera(MatchGuessRoleCam)
+        self:ShowCamera(GuessRoleCam)
     elseif self._SceneType == SceneType.Settlement then
         self:LoadCar(self.PanelSettleRoleModel, roleId)
         self:ShowCamera(SettlementCam)
-    else
-        for i = 1, NodeCount do
-            local node = self[string.format("Role%s", i)]
-            if not XTool.UObjIsNil(node) then
-                local isShow = self._RoleIds[i] == roleId
-                node.gameObject:SetActiveEx(isShow)
-            end
-        end
-        self:ShowCamera(RoundGuessRoleCam, table.indexof(self._RoleIds, roleId)) --摄像头滑动到角色上
     end
 end
 
@@ -197,20 +235,23 @@ end
 function XUiPanelRace3DCamera:ShowCamera(cameraType, camIndex)
     self.UiMainCamFar.gameObject:SetActiveEx(cameraType == MainCam)
     self.UiMainCamNear.gameObject:SetActiveEx(cameraType == MainCam)
-    self.UiChangeCamNearMatch.gameObject:SetActiveEx(cameraType == MatchGuessRoleCam)
+    self.UiChangeCamNearMatch.gameObject:SetActiveEx(cameraType == GuessRoleCam)
+    self.UiChangeCamFarMatch.gameObject:SetActiveEx(cameraType == GuessRoleCam)
     self.UiChangeCamNearOption.gameObject:SetActiveEx(cameraType == GuessOptionCam)
+    self.UiChangeCamFarOption.gameObject:SetActiveEx(cameraType == GuessOptionCam)
     self.UiChangeCamFarFightSettlement.gameObject:SetActiveEx(cameraType == SettlementCam)
     self.UiChangeCamNearFightSettlement.gameObject:SetActiveEx(cameraType == SettlementCam)
 
+    --已废弃
     for i = 1, NodeCount do
         local farCam = self[string.format("UiChangeCamFar%s", i)]
         if not XTool.UObjIsNil(farCam) then
-            farCam.gameObject:SetActiveEx(cameraType == RoundGuessRoleCam and i == camIndex)
+            farCam.gameObject:SetActiveEx(false)
         end
 
         local nearCam = self[string.format("UiChangeCamNear%s", i)]
         if not XTool.UObjIsNil(nearCam) then
-            nearCam.gameObject:SetActiveEx(cameraType == RoundGuessRoleCam and i == camIndex)
+            nearCam.gameObject:SetActiveEx(false)
         end
     end
 end
@@ -231,7 +272,7 @@ function XUiPanelRace3DCamera:SetViewPosToTransformLocalPosition(uiTransform, ro
     if XTool.UObjIsNil(self.UiNearCamera) then
         return
     end
-    if self._SceneType == SceneType.MatchPredict then
+    if self._SceneType == SceneType.Predict then
         if not XTool.UObjIsNil(self.RoleMatch) then
             CS.XUiHelper.SetViewPosToTransformLocalPosition(self.UiNearCamera, uiTransform, self.RoleMatch, self._Offset, self._Pivot)
         end
@@ -334,12 +375,16 @@ function XUiPanelRace3DCamera:OnDisable()
     end
 end
 
-function XUiPanelRace3DCamera:OnDestroy()
+function XUiPanelRace3DCamera:RemoveTimer()
     self:RemoveAnimTimer()
-    for roleId, timerId in pairs(self._TimerList) do
-        XScheduleManager.UnSchedule(self._TimerList[roleId])
+    for _, timerId in pairs(self._TimerList) do
+        XScheduleManager.UnSchedule(timerId)
     end
-    self._TimerList = nil
+    self._TimerList = {}
+end
+
+function XUiPanelRace3DCamera:OnDestroy()
+    self:RemoveTimer()
     self._TimerCountList = nil
     self._AnimList = nil
     self._AnimStateNameList = nil

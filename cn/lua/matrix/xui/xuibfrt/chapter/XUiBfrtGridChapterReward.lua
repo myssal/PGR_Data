@@ -32,6 +32,7 @@ function XUiBfrtGridChapterReward:_RefreshTask()
     self:_RefreshTaskProcess(self._TaskData, config)
 end
 
+--[[
 function XUiBfrtGridChapterReward:_RefreshTaskProcess(taskData, config)
     if #config.Condition < 2 then--显示进度
         self.ImgProgress.transform.parent.gameObject:SetActive(true)
@@ -53,6 +54,7 @@ function XUiBfrtGridChapterReward:_RefreshTaskProcess(taskData, config)
         end
     end
 end
+]]
 --endregion
 
 --region Ui - RewardTask

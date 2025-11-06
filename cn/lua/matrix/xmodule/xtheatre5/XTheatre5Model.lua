@@ -130,4 +130,22 @@ function XTheatre5Model:UpdateOneRelicCollect(relicId)
     self._RelicCollects[#self._RelicCollects + 1] = relicId
 end
 
+function XTheatre5Model:HasEnoughExpToAutoUpgrade()
+    local levelConfig = self:GetCharacterLevelConfig(self.CurAdventureData)
+    if not levelConfig then
+        XLog.Error("[XTheatre5Model] 角色检测升级，但是对应等级的配置数据为空")
+        return false
+    end
+    local nextLevel = self:GetCharacterLevelConfig(self.CurAdventureData, levelConfig.Level + 1)
+    if not nextLevel then
+        --XLog.Error("[XTheatre5Model] 已经满级")
+        return false
+    end
+    local exp = self.CurAdventureData:GetCharacterExp()
+    if exp >= levelConfig.Exp then
+        return true
+    end
+    return false
+end
+
 return XTheatre5Model

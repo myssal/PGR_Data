@@ -186,6 +186,7 @@ function XTheatre5Model:GetTheatre5SkillCfgById(id, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemSkill, id, notips)
 end
 
+---@return XTableTheatre5ItemRune
 function XTheatre5Model:GetTheatre5RuneCfgById(id, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TablePrivate.Theatre5ItemRune, id, notips)
 end
@@ -802,8 +803,20 @@ function XTheatre5Model:GetCharacterLevelGroupConfig(adventureData)
         groupId = self:GetTheatre5ConfigValByKey("PvpLevelGroup")
     elseif gameMode == XTheatre5EnumConst.GameMode.PVE then
         local chapterId = adventureData:GetChapterId()
+        if chapterId == 0 then
+            -- 结算时，获取不到chapterId
+            chapterId = adventureData:GetChapterIdCompleted()
+            if chapterId == 0 then
+                XLog.Error("[XTheatre5Model] 找不到对应的等级配置, Theatre5PveChapter:" .. tostring(chapterId))
+                return {}
+            end
+        end
         local chapter = self:GetPveChapterCfg(chapterId)
-        groupId = chapter.LevelGroup
+        if chapter then
+            groupId = chapter.LevelGroup
+        else
+            XLog.Error("[XTheatre5Model] 找不到对应的等级配置, Theatre5PveChapter:" .. tostring(chapterId))
+        end
     else
         XLog.Error("[XTheatre5Model] 找不到对应的等级配置:" .. tostring(gameMode))
     end
@@ -831,6 +844,12 @@ end
 
 function XTheatre5Model:GetCharacterLevelAttr(characterId, level, attribs)
     attribs = attribs or {}
+
+    -- 怪物等级是0，不参与属性计算
+    if level < 1 then
+        return attribs
+    end
+    
     local characterConfig = self:GetTheatre5CharacterCfgById(characterId)
     if not characterConfig then
         XLog.Error("[XTheatre5CharacterControl] 获取角色配置失败")
@@ -923,7 +942,10 @@ function XTheatre5Model:GetRelicEffectConfigs(relicId)
             local effectId = effects[i]
             local effectConfig = self:GetTheatre5RelicEffectCfgById(effectId)
             if effectConfig then
-                table.insert(effectConfigs, effectConfig)
+                table.insert(effectConfigs, {
+                    EffectConfig = effectConfig,
+                    Condition = relicConfig.Condition[i],
+                })
             else
                 XLog.Error("[XTheatre5Model] 找不到对应的饰品效果配置:" .. tostring(effectId))
             end
@@ -932,6 +954,20 @@ function XTheatre5Model:GetRelicEffectConfigs(relicId)
     else
         XLog.Error("[XTheatre5Model] 找不到对应的饰品配置:" .. tostring(relicId))
     end
+end
+
+function XTheatre5Model:IsNewSeason()
+    local oldActivityId = self._SaveUtil:GetData("ActivityId")
+    local newActivityId = self:GetActivityId()
+    if oldActivityId ~= newActivityId then
+        self._SaveUtil:SaveData("ActivityId", newActivityId)
+        return true
+    end
+    return false
+end
+
+function XTheatre5Model:ResetNewSeason()
+    self._SaveUtil:SaveData("ActivityId", 0)
 end
 
 return XTheatre5Model

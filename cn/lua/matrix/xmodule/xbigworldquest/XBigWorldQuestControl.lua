@@ -103,15 +103,8 @@ function XBigWorldQuestControl:GetGroupIdByQuestId(questId)
     return self._Model:GetGroupIdByQuestId(questId, true)
 end
 
-function XBigWorldQuestControl:GetTrackQuestId()
-    return self._Model:GetTrackQuestId()
-end
-
 function XBigWorldQuestControl:IsTrackQuest(questId)
-    if not questId or questId <= 0 then
-        return false
-    end
-    return self:GetTrackQuestId() == questId
+    return self._Model:IsTrackQuest(questId)
 end
 
 ---@return XBigWorldQuestStep[]

@@ -13,7 +13,7 @@ function XBuffScript1016025:Init()
     self.magicLevel = 1
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.signalId = 1015909 --【疲劳】标记
-    self.cd = 1
+    self.cd = 5
     self.timer = 0
     self.enhBuffId = 1016242    --【疲劳】通用强化buff标记
     ------------执行------------
@@ -27,12 +27,15 @@ function XBuffScript1016025:Update(dt)
     if not self._proxy:CheckBuffByKind(self._uuid, self.signalId) then
         return
     end
-    if not self._proxy:CheckNpc(self.targetId) then
+
+    local targetId = self._proxy:GetFightTargetId(self._uuid)
+
+    if not self._proxy:CheckNpc(targetId) then
         return
     end
+
     if self._proxy:GetNpcTime(self._uuid) >= self.timer then
-        self._proxy:ApplyMagic(self._uuid,self.targetId,self.magicId,self.magicLevel)
-        self._proxy:ApplyMagic(self._uuid,self.targetId,self.dmgMagicId,self.magicLevel)
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel)
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.cd
     end
 end
@@ -50,9 +53,6 @@ function XBuffScript1016025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         self.timer = self.cd + self._proxy:GetNpcTime(self._uuid)
         --更新magic等级
         self.magicLevel = self._proxy:GetBuffStacks(self._uuid, self.enhBuffId)
-    end
-    if npcUUID == self._uuid and buffId == self.signalId then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
     end
 end
 --endregion

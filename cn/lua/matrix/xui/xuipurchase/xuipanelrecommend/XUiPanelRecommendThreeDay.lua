@@ -9,9 +9,13 @@ function XUiPanelRecommendThreeDay:Ctor(ui, parent)
     self.RootUi = parent
     XTool.InitUiObject(self)
 
-    self.BtnHelp.CallBack = handler(self, self.OnBtnHelpClick)
+    if self.BtnHelp then
+        self.BtnHelp.CallBack = handler(self, self.OnBtnHelpClick)
+    end
     ---@type XUiGridPurchaseThreeDay[]
     self.Grids = {}
+    
+    XEventManager.BindEvent(self.GameObject, XEventId.EVENT_DAYLY_REFESH_RECHARGE_BTN, self.RefreshByPurchasePackageData, self)
 end
 
 ---@param isShow boolean 福利界面打开时'isShow'为false，打脸打开时为true
@@ -38,6 +42,7 @@ function XUiPanelRecommendThreeDay:RefreshByPurchasePackageData()
         self.BtnBuyLB:SetRawImage(icon)
     end
     self.BtnBuyLB:SetName(self.PurchaseData.ConsumeCount)
+    self.IsSellOut = self.PurchaseData.BuyLimitTimes > 0 and self.PurchaseData.BuyTimes == self.PurchaseData.BuyLimitTimes
     if self.PurchaseData.BuyTimes < self.PurchaseData.BuyLimitTimes then
         self.BtnBuyLB:SetDisable(false)
     else
@@ -61,7 +66,7 @@ function XUiPanelRecommendThreeDay:SetRewardInfos()
             grid = require("XUi/XUiPurchase/Grid/XUiGridPurchaseThreeDay").New(go, self)
             self.Grids[index] = grid
         end
-        grid:UpdateData(self.PurchaseData.Id, reward, true, false, index)
+        grid:UpdateData(self.PurchaseData.Id, reward, true, false, index, self.IsSellOut)
         :: continue ::
     end
 end

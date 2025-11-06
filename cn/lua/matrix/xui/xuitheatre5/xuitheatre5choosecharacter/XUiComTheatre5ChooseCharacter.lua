@@ -63,8 +63,13 @@ function XUiComTheatre5ChooseCharacter:RefreshDetailShow(index, cfg)
     self.Model3D:SetCharacterFocus(index)
     -- 检查引导
     XDataCenter.GuideManager.CheckGuideOpen()
-    
-    self.TxtName.text = cfg.Name
+
+    local gameMode = self._Control:GetCurPlayingMode()
+    if gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+        self.TxtName.text = cfg.Name
+    else
+        self.TxtName.transform.parent.gameObject:SetActiveEx(false)
+    end
     if self:CheckIsShowDetail() then
         self:PlayAnimation('FadeOut', function()
             self.PanelCharacterDetail:RefreshShow(cfg)

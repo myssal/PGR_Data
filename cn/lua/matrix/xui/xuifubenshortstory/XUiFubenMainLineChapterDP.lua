@@ -8,6 +8,8 @@ local XUiFubenMainLineChapterDP = XLuaUiManager.Register(XLuaUi,"UiFubenMainLine
 local XUiFubenMainLineQuickJumpBtnDP = require("XUi/XUiFubenShortStory/XUiFubenMainLineQuickJumpBtnDP")
 local XUiGridTreasureGradeDP = require("XUi/XUiFubenShortStory/XUiGridTreasureGradeDP")
 function XUiFubenMainLineChapterDP:OnAwake()
+    self.BtnMission.gameObject:SetActiveEx(false)
+    self.BtnMissionWhite.gameObject:SetActiveEx(false)
     self:AddListener()
 end
 
@@ -38,6 +40,7 @@ function XUiFubenMainLineChapterDP:OnStart(chapterId, stageId, hideDiffTog)
     
     self.PanelTreasure.gameObject:SetActiveEx(false)
     self.BtnMissionRed.gameObject:SetActiveEx(false)
+    self.BtnMissionWhiteRed.gameObject:SetActiveEx(false)
     
     --保存初始颜色
     self.OriginalColors = {
@@ -57,6 +60,8 @@ function XUiFubenMainLineChapterDP:OnStart(chapterId, stageId, hideDiffTog)
     -- 注册红点事件
     self.RedPointId = XRedPointManager.AddRedPointEvent(self.BtnMissionRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_SHORT_STORY_TREASURE }, self.ChapterId, false)
     self.RedPointZhouMuId = XRedPointManager.AddRedPointEvent(self.BtnMissionRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_ZHOUMU_TASK }, self.ZhouMuId, false)
+    self.RedPointIdWhite = XRedPointManager.AddRedPointEvent(self.BtnMissionWhiteRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_SHORT_STORY_TREASURE }, self.ChapterId, false)
+    self.RedPointZhouMuIdWhite = XRedPointManager.AddRedPointEvent(self.BtnMissionWhiteRed, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_ZHOUMU_TASK }, self.ZhouMuId, false)
     
     -- 注册stage事件
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_STAGE_SYNC, self.OnSyncStage, self)
@@ -110,6 +115,8 @@ function XUiFubenMainLineChapterDP:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_AUTO_FIGHT_START, self.OnAutoFightStart, self)
     XRedPointManager.RemoveRedPointEvent(self.RedPointId)
     XRedPointManager.RemoveRedPointEvent(self.RedPointZhouMuId)
+    XRedPointManager.RemoveRedPointEvent(self.RedPointIdWhite)
+    XRedPointManager.RemoveRedPointEvent(self.RedPointZhouMuIdWhite)
 end
 
 function XUiFubenMainLineChapterDP:InitPanelBottom()
@@ -176,7 +183,7 @@ function XUiFubenMainLineChapterDP:EnterFight(stage)
     end
     local team = nil
     local proxy = nil
-    if stage.HideAction == 1 then
+    if stage.HideAction == 1 and not XMVCA.XPlotExhibition:GetIsSpeedrun(stage.StageId) then
         team = XDataCenter.TeamManager.GetXTeamByStageId(stage.StageId)
         team:UpdateEntityIds(XTool.Clone(stage.RobotId))
         proxy = require("XUi/XUiFubenShortStory/BattleRole/XUiShortStoryBattleRoleRoom")
@@ -189,10 +196,12 @@ function XUiFubenMainLineChapterDP:OnCheckRewards(count, chapterId)
     if self.IsOnZhouMu then
         if self.BtnMissionRed and chapterId == self.ZhouMuId then
             self.BtnMissionRed.gameObject:SetActiveEx(count >= 0)
+            self.BtnMissionWhiteRed.gameObject:SetActiveEx(count >= 0)
         end
     else
         if self.BtnMissionRed and chapterId == self.ChapterId then
             self.BtnMissionRed.gameObject:SetActiveEx(count >= 0)
+            self.BtnMissionWhiteRed.gameObject:SetActiveEx(count >= 0)
         end
     end
 end
@@ -203,6 +212,7 @@ function XUiFubenMainLineChapterDP:AddListener()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnMission, self.OnBtnTreasureClick)
+    self:RegisterClickEvent(self.BtnMissionWhite, self.OnBtnTreasureClick)
     self:RegisterClickEvent(self.BtnCloseDifficult, self.OnBtnCloseDifficultClick)
     self:RegisterClickEvent(self.BtnCloseDetail, self.OnBtnCloseDetailClick)
 
@@ -777,6 +787,7 @@ function XUiFubenMainLineChapterDP:UpdateChapterStars()
         received = XDataCenter.FubenZhouMuManager.ZhouMuTaskIsAllFinish(self.ZhouMuId)
 
         XRedPointManager.Check(self.RedPointZhouMuId, self.ZhouMuId)
+        XRedPointManager.Check(self.RedPointZhouMuIdWhite, self.ZhouMuId)
     else
         -- 收集奖励
         local treasureId = XFubenShortStoryChapterConfigs.GetTreasureIdByChapterId(self.ChapterId)
@@ -791,11 +802,16 @@ function XUiFubenMainLineChapterDP:UpdateChapterStars()
         self.ImgStarIcon.gameObject:SetActiveEx(true)
 
         XRedPointManager.Check(self.RedPointId, self.ChapterId)
+        XRedPointManager.Check(self.RedPointIdWhite, self.ChapterId)
     end
 
+    self.BtnMission.gameObject:SetActiveEx(false)
+    self.BtnMissionWhite.gameObject:SetActiveEx(false)
+    local isBtnWhite = XFubenShortStoryChapterConfigs.GetChapterIsBtnMissionWhite(self.ChapterId)
+    local btn = isBtnWhite and self.BtnMissionWhite or self.BtnMission
     local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
-    self.BtnMission:SetName(progress)
-    self.BtnMission.gameObject:SetActiveEx(true)
+    btn:SetName(progress)
+    btn.gameObject:SetActiveEx(true)
 end
 
 function XUiFubenMainLineChapterDP:OnBtnTreasureClick()

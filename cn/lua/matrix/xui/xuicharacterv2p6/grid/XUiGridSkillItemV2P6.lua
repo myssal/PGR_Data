@@ -17,12 +17,12 @@ function XUiGridSkillItemV2P6:UpdateEnhanceSkillInfo(characterId, skillInfo)
             break
         end
     end
-    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkillVisible"))
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkill2Visible"))
     self.ImgTreeIcon.gameObject:SetActiveEx(isShowTreeIcon and isShowTreeControl)
     if isShowTreeIcon then
         local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
         if powerConfig then
-            self.ImgTreeIcon:SetSprite(powerConfig.IconSkill)
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSkill2)
         end
     end
 end
@@ -49,12 +49,12 @@ function XUiGridSkillItemV2P6:UpdateNormalSkillInfo(characterId, skill)
             break
         end
     end
-    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkillVisible"))
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkill2Visible"))
     self.ImgTreeIcon.gameObject:SetActiveEx(isShowTreeIcon and isShowTreeControl)
     if isShowTreeIcon then
         local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
         if powerConfig then
-            self.ImgTreeIcon:SetSprite(powerConfig.IconSkill)
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSkill2)
         end
     end
 end

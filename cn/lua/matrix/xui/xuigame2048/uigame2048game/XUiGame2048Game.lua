@@ -249,6 +249,11 @@ function XUiGame2048Game:OnGameOverEvent(res, noResume, popDelay)
 end
 
 function XUiGame2048Game:SettleByHand()
+    if not self._GameControl:CheckCanDragState() then
+        XUiManager.TipMsg(self._Control:GetClientConfigText('SettleInWaterFireSelectionTips'))
+        return
+    end
+    
     if self._GameControl:GetIsUsingProp() or self._GameControl:GetIsActionPlaying() or self._GameControl:GetIsWaitForNextStep() or self._Control:GetIsWaitForSettle() then
         return
     end

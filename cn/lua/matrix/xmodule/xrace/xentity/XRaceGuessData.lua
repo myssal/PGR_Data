@@ -38,7 +38,7 @@ function XRaceGuessData:SetPlayerGuess(guessId, roleId, optionIndex)
     info.GuessOptionIndex = optionIndex
 end
 
-function XRaceGuessData:SetResultData(guessId, baseGuessData, baseResultData)
+function XRaceGuessData:SetResultData(guessId, baseGuessData, baseResultDatas)
     local info = self._GuessInfoDict[guessId]
     if not info then
         info = {}
@@ -47,6 +47,7 @@ function XRaceGuessData:SetResultData(guessId, baseGuessData, baseResultData)
     end
 
     -- 名次/次数/时间/速度
+    local baseResultData = baseResultDatas[1]
     local property = self._OwnControl:GetGuessProperty(guessId)
     if property == PropertyType.Rank then
         info.ResultPropertyValue = baseResultData.RankParam
@@ -64,7 +65,10 @@ function XRaceGuessData:SetResultData(guessId, baseGuessData, baseResultData)
         XLog.Error(string.format("未知类型:%s", info.ResultPropertyValue))
     end
 
-    info.ResultRoleId = baseResultData.CharacterId
+    info.ResultRoleIds = {} --可能出现第一名有多个的情况
+    for _, data in pairs(baseResultDatas) do
+        table.insert(info.ResultRoleIds, data.CharacterId)
+    end
 
     -- 如果预测的是选项，则实际结果需要自己计算得出
     if info.GuessOptionIndex then
@@ -104,21 +108,21 @@ function XRaceGuessData:UpdateRoundResult()
     end
 
     for _, baseGuess in pairs(baseGuesses) do
-        if XTool.IsTableEmpty(baseGuess.ResultGuessResult) then
+        if XTool.IsTableEmpty(baseGuess.ResultGuessResults) then
             --预测没有结果
             goto continue
         end
         local guessId = baseGuess.GuessId
         local info = baseGuess.PlayerGuessInfo
         if info then
-            self:SetResultData(guessId, info.RaceGuessFinalResult, baseGuess.ResultGuessResult)
+            self:SetResultData(guessId, info.RaceGuessFinalResult, baseGuess.ResultGuessResults)
             if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
                 -- 未领取奖励的预测项目
                 self._Unclaimeds[guessId] = true
             end
             self._GuessState[guessId] = info.GuessState
         else
-            self:SetResultData(guessId, nil, baseGuess.ResultGuessResult)
+            self:SetResultData(guessId, nil, baseGuess.ResultGuessResults)
             self._GuessState[guessId] = XEnumConst.Race.GuessState.GuessFail
         end
         :: continue ::
@@ -145,22 +149,35 @@ function XRaceGuessData:UpdateMatchResult()
 
     local baseGuesses = self._Model:GetBaseMatchGuessResult()
     if XTool.IsTableEmpty(baseGuesses) then
+        --服务端在登录协议里有下发IsGain
+        local basePlayerData = self._Model:GetBasePlayerData()
+        local matchGuess = basePlayerData and basePlayerData.GlobalGuessDict
+        if not XTool.IsTableEmpty(matchGuess) then
+            for guessId, info in pairs(matchGuess) do
+                if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
+                    -- 未领取奖励的预测项目
+                    self._Unclaimeds[guessId] = true
+                end
+            end
+        end
         return
     end
 
     for _, baseGuess in pairs(baseGuesses) do
-        if XTool.IsTableEmpty(baseGuess.ResultGuessResult) then
+        if XTool.IsTableEmpty(baseGuess.ResultGuessResults) then
             --预测没有结果（赛事预测不会 做个保底）
             goto continue
         end
         local guessId = baseGuess.GuessId
-        self:SetResultData(guessId, baseGuess.PlayerGuessInfo and baseGuess.PlayerGuessInfo.RaceGuessFinalResult, baseGuess.ResultGuessResult)
+        self:SetResultData(guessId, baseGuess.PlayerGuessInfo and baseGuess.PlayerGuessInfo.RaceGuessFinalResult, baseGuess.ResultGuessResults)
         local info = baseGuess.PlayerGuessInfo
-        if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
-            -- 未领取奖励的预测项目
-            self._Unclaimeds[guessId] = true
+        if info then
+            if info.GuessState == XEnumConst.Race.GuessState.GuessSuccess and not info.IsGain then
+                -- 未领取奖励的预测项目
+                self._Unclaimeds[guessId] = true
+            end
+            self._GuessState[guessId] = info.GuessState
         end
-        self._GuessState[guessId] = info.GuessState
         :: continue ::
     end
 end
@@ -218,7 +235,7 @@ return XRaceGuessData
 ---@field GuessId number
 ---@field GuessRoleId number 预测角色Id
 ---@field GuessOptionIndex number 预测选项索引
----@field ResultRoleId number 实际角色Id
+---@field ResultRoleIds number[] 实际角色Id（可能有多个）
 ---@field ResultOptionIndex number 实际选项索引
 ---@field GuessPropertyValue number 预测对象属性值
 ---@field ResultPropertyValue number 实际结果属性值

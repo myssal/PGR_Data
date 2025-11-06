@@ -13,11 +13,10 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
     self._CanGainReward = false
     self._ResultRoundId = roundId
     self._ItemId = self._Control:GetCurrentConfig().ItemId
-    local itemIcon = XDataCenter.ItemManager.GetItemIcon(self._ItemId)
     local infoDict = {}
 
     local param = self._Control:GetSettleParam()
-    local isFromRound = param and param.IsFromRound
+    self._IsFromRound = param and param.IsFromRound
     
     if roundId then
         --单场竞猜
@@ -30,7 +29,8 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
         else
             self.TxtRace.text = string.format("%s-%s", cfg.Name, cfg.SubTitle)
         end
-        self.BtnPlayback.gameObject:SetActiveEx(not isFromRound)
+        self.BtnPlayback.gameObject:SetActiveEx(not self._IsFromRound)
+        self.BtnRaceDetail.gameObject:SetActiveEx(not self._IsFromRound)
         self._Control:SetRoundResultCheck(roundId)
     else
         --赛事竞猜
@@ -39,8 +39,9 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
 
         self.TxtRace.text = ""
         self.BtnPlayback.gameObject:SetActiveEx(false)
+        self.BtnRaceDetail.gameObject:SetActiveEx(false)
     end
-    self.BtnRaceDetail.gameObject:SetActiveEx(not isFromRound)
+    
     ---@type GuessInfo[]
     local infos = {}
     for _, v in pairs(infoDict) do
@@ -55,6 +56,32 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
         return a.GuessId < b.GuessId
     end)
 
+    self.GridPredict.gameObject:SetActiveEx(false)
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        self:ShowPredictResult(infos)
+    end, 500)
+    self:_AddTimerId(timerId)
+
+    local endTime = self._Control:GetTime()
+    self:SetAutoCloseInfo(endTime, function(isClose)
+        if isClose then
+            self._Control:HandleActivityEnd()
+            return
+        end
+    end)
+
+    self.BtnGetReward.gameObject:SetActiveEx(self._CanGainReward)
+    self.BtnNext.gameObject:SetActiveEx(not self._CanGainReward)
+end
+
+function XUiRaceFightPredictSettlement:OnDestroy()
+    if not XLuaUiManager.IsUiShow("UiRaceFightSettlement") then
+        self._Control:ClearSettleParam()
+    end
+end
+
+function XUiRaceFightPredictSettlement:ShowPredictResult(infos)
+    local itemIcon = XDataCenter.ItemManager.GetItemIcon(self._ItemId)
     XUiHelper.RefreshCustomizedList(self.GridPredict.parent, self.GridPredict, #infos, function(i, go)
         local info = infos[i]
         local guessId = info.GuessId
@@ -63,7 +90,6 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
         local isPredict = self._Control:IsPredict(self._ResultRoundId, guessId)
         local isRole = self._Control:IsGuessNeedCharacter(guessId)
         local isCorrect = self._Control:IsPredictSuccess(self._ResultRoundId, guessId)
-        local hasResult = self._Control:IsPredictHasResult(self._ResultRoundId, guessId)
         local isPropertyRank = property == XEnumConst.Race.PropertyType.Rank
         local uiObject = {}
         local roleCfg
@@ -71,23 +97,23 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
         XUiHelper.InitUiClass(uiObject, go)
         uiObject.Transform.name = guessId
         uiObject.TxtTitle.text = guessCfg.Name
-        uiObject.RImgRole.gameObject:SetActiveEx(isRole and hasResult)
-        uiObject.PanelOption.gameObject:SetActiveEx(not isRole and hasResult)
+        uiObject.RImgRole.gameObject:SetActiveEx(isRole)
+        uiObject.PanelOption.gameObject:SetActiveEx(not isRole)
         uiObject.PanelMyPredict.gameObject:SetActiveEx(isPredict)
         uiObject.PanelNone.gameObject:SetActiveEx(not isPredict)
         uiObject.PanelActualData.gameObject:SetActiveEx(isRole and not isPropertyRank) --预测属性是排名时 不需要显示
-        uiObject.PanelTopRole.gameObject:SetActiveEx(isRole and isPropertyRank and hasResult)
+        uiObject.PanelTopRole.gameObject:SetActiveEx(isRole and isPropertyRank)
         uiObject.Win.gameObject:SetActiveEx(isCorrect) --预测结果是否正确
         uiObject.Lost.gameObject:SetActiveEx(not isCorrect)
+        uiObject.TagParallel.gameObject:SetActiveEx(self._Control:IsGuessProjectMultiRole(self._ResultRoundId, guessId))
 
         local resultId = self._Control:GetGuessProjectResult(self._ResultRoundId, guessId)
         if isRole then
             --实际结果
-            if hasResult then
-                roleCfg = self._Control:GetRaceCharacterById(resultId)
-                uiObject.RImgRole:SetRawImage(roleCfg.Icon)
-                uiObject.TxtValue.text = self._Control:GetPropertyDesc(guessId, info.ResultPropertyValue)
-            end
+            local resultRoleId = isCorrect and info.GuessRoleId or resultId
+            roleCfg = self._Control:GetRaceCharacterById(resultRoleId)
+            uiObject.RImgRole:SetRawImage(roleCfg.Icon)
+            uiObject.TxtValue.text = self._Control:GetPropertyDesc(guessId, info.ResultPropertyValue)
             --预测结果
             if isCorrect then
                 uiObject.PanelHeadWin.gameObject:SetActiveEx(isPredict)
@@ -108,9 +134,7 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
             end
         else
             --实际结果
-            if hasResult then
-                uiObject.TxtOption.text = self._Control:GetPropertyDesc(guessId, info.ResultPropertyValue)
-            end
+            uiObject.TxtOption.text = self._Control:GetPropertyDesc(guessId, info.ResultPropertyValue)
             --预测结果
             local guessOptionId = self._Control:GetGuessProjectOption(self._ResultRoundId, guessId)
             if isCorrect then
@@ -129,24 +153,13 @@ function XUiRaceFightPredictSettlement:OnStart(roundId)
             uiObject.RImgIcon:SetRawImage(itemIcon)
             uiObject.TxtNum.text = string.format("+%s", guessCfg.RewardNum)
         end
+
+        uiObject.GameObject:SetActiveEx(false)
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            uiObject.GameObject:SetActiveEx(true)
+        end, i * 50)
+        self:_AddTimerId(timerId)
     end)
-
-    local endTime = self._Control:GetTime()
-    self:SetAutoCloseInfo(endTime, function(isClose)
-        if isClose then
-            self._Control:HandleActivityEnd()
-            return
-        end
-    end)
-
-    self.BtnGetReward.gameObject:SetActiveEx(self._CanGainReward)
-    self.BtnNext.gameObject:SetActiveEx(not self._CanGainReward)
-end
-
-function XUiRaceFightPredictSettlement:OnDestroy()
-    if not XLuaUiManager.IsUiShow("UiRaceFightSettlement") then
-        self._Control:ClearSettleParam()
-    end
 end
 
 function XUiRaceFightPredictSettlement:OnBtnPlaybackClick()
@@ -183,7 +196,7 @@ function XUiRaceFightPredictSettlement:ShowRewardAndClose(itemCount)
 end
 
 function XUiRaceFightPredictSettlement:OnClose()
-    if self._Control:IsAllMatchFinish() then
+    if self._Control:IsAllMatchFinish() or self._IsFromRound then
         self:Close()
     else
         self._Control:RequestCurRoundSupportRate(function()

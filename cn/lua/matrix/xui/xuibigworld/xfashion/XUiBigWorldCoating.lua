@@ -68,13 +68,13 @@ function XUiBigWorldCoating:InitUi()
 end
 
 function XUiBigWorldCoating:InitCb()
-    self.BtnBack.CallBack = handler(self, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     
-    self.BtnLensIn.CallBack = handler(self, self.OnBtnLensInClick)
-    self.BtnLensOut.CallBack = handler(self, self.OnBtnLensOutClick)
-    self.BtnUse.CallBack = handler(self, self.OnBtnUseClick)
-    self.BtnCharacterFilter.CallBack = handler(self, self.OnBtnCharacterFilterClick)
-    self.BtnCloseFilter.CallBack = handler(self, self.OnBtnCloseFilterClick)
+    self.BtnLensIn:AddEventListener(handler(self, self.OnBtnLensInClick))
+    self.BtnLensOut:AddEventListener(handler(self, self.OnBtnLensOutClick))
+    self.BtnUse:AddEventListener(handler(self, self.OnBtnUseClick))
+    self.BtnCharacterFilter:AddEventListener(handler(self, self.OnBtnCharacterFilterClick))
+    self.BtnCloseFilter:AddEventListener(handler(self, self.OnBtnCloseFilterClick))
 
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacter, self.OnSliderCharacterChanged)
 end

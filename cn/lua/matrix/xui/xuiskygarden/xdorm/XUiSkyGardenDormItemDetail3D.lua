@@ -26,9 +26,7 @@ function XUiSkyGardenDormItemDetail3D:InitUi()
 end
 
 function XUiSkyGardenDormItemDetail3D:InitCb()
-    self.BtnBack.CallBack = function() 
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
 end
 
 function XUiSkyGardenDormItemDetail3D:InitView()

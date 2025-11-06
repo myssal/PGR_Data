@@ -12,7 +12,7 @@ local NodeTypeToClass = {
     [XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterMain] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5PVEBattleChapterMainNode"),
     [XMVCA.XTheatre5.EnumConst.PVENodeType.ItemBoxSelect] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5ItemBoxSelectNode"),
     [XMVCA.XTheatre5.EnumConst.PVENodeType.BattleChapterInit] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5BattleChapterInitNode"),
-    [XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5SelectRelicNode"),
+    --[XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic] = require("XModule/XTheatre5/PVE/Rouge/XTheatre5SelectRelicNode"),
 }
 
 function XTheatre5PVELink:Ctor()
@@ -42,11 +42,12 @@ function XTheatre5PVELink:_AddStartNode(storyLineId, storyEntranceId, characterI
     --章节战斗中：多类型的故事线还有复刷章节
     local chapterBattleData = self._Model.PVEAdventureData:GetCurChapterBattleData()
     if chapterBattleData then
+        -- 进入商店后, 才选择饰品
         -- 选择饰品
-        if XMVCA.XTheatre5:HasRelicToSelect() then
-            self:AddSelectRelicNode()
-            return
-        end
+        --if XMVCA.XTheatre5:HasRelicToSelect() then
+        --    self:AddSelectRelicNode()
+        --    return
+        --end
         local itemBoxSelectData = self._Model.PVEAdventureData:GetItemBoxSelectData()
         local hasItemBoxSelect = not XTool.IsTableEmpty(itemBoxSelectData)
         if hasItemBoxSelect then
@@ -142,9 +143,9 @@ function XTheatre5PVELink:AddItemBoxSelectNode()
 end
 
 --选择饰品
-function XTheatre5PVELink:AddSelectRelicNode()
-    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic)
-end
+--function XTheatre5PVELink:AddSelectRelicNode()
+--    self:_AddNode(XMVCA.XTheatre5.EnumConst.PVENodeType.SelectRelic)
+--end
 
 --章节战斗初始化
 function XTheatre5PVELink:AddChapterBattleInitNode(storyEntranceId, characterId)

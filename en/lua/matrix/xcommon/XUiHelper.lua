@@ -1581,14 +1581,18 @@ end
 --规范：小于6位不转换，大于等于6位转换为w并保留小数点后2位
 --比如 600000 返回 60w
 function XUiHelper.GetLargeIntNumText(num)
+    local tenThousandStr = XUiHelper.GetText("TenThousand")
+    if XOverseaManager.IsTWRegion() then
+       tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
+    end
     local t = type(num)
     if t == "number" then
         if num >= 100000 then
             local bigNum = num / 10000
             if math.floor(bigNum) < bigNum then
-                return string.format("%.2f", bigNum) .. XUiHelper.GetText("TenThousand")
+                return string.format("%.2f", bigNum) .. tenThousandStr
             else
-                return string.format("%d", bigNum) .. XUiHelper.GetText("TenThousand")
+                return string.format("%d", bigNum) .. tenThousandStr
             end
         else
             return tostring(num)

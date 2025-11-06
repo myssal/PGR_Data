@@ -616,6 +616,7 @@ function XTheatre5Control:GetDataHandBook(itemType)
                             ---@class XUiTheatre5SkillHandbookTabGridData
                             ---@field TagName string
                             ---@field Items XUiTheatre5SkillHandbookItemGridData[]
+                            ---@field HideTagName boolean
                             tab[characterId] = tab[characterId] or {
                                 Items = {},
                                 TagName = nil,
@@ -726,8 +727,9 @@ function XTheatre5Control:GetDataHandBook(itemType)
         return tabSorted
     end
     if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Relic then
+        ---@type XUiTheatre5SkillHandbookTabGridData
         local tabOnlyOne = {
-            TagName = "OnlyOne",
+            TagName = "",
             Id = 0,
             Items = {},
             Order = 0,
@@ -878,6 +880,7 @@ function XTheatre5Control:GetUiDataLevel()
         MaxExp = maxExp,
         Money = money,
         IsMax = level == maxLevel,
+        IsCanUpgrade = self._Model.CurAdventureData.Status == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
     }
 end
 
@@ -886,8 +889,8 @@ function XTheatre5Control:GetCharacterLevel()
     return level
 end
 
-function XTheatre5Control:GetCharacterIcon()
-    local characterId = self._Model.CurAdventureData:GetCharacterId()
+function XTheatre5Control:GetCharacterIcon(characterId)
+    characterId = characterId or self._Model.CurAdventureData:GetCharacterId()
     return self.CharacterControl:GetPortraitByCharacterIdCurMode(characterId)
 end
 
@@ -969,11 +972,12 @@ end
 function XTheatre5Control:GetUiDataRelicsByData(relics)
     local uiData = {}
     for i = 1, #relics do
-        local itemConfig = self._Model:GetTheatre5ItemCfgById(relics[i])
+        local itemId = relics[i]
+        local itemConfig = self._Model:GetTheatre5ItemCfgById(itemId)
         ---@type XUiGridTheatre5RelicData
         local data = {
             IsUnlock = true,
-            --Item = item,
+            Item = itemId,
             Icon = itemConfig and itemConfig.IconRes,
             --Level = i,
         }
@@ -1056,6 +1060,35 @@ function XTheatre5Control:GetItemDataFromEquipBag(itemId)
         end
     end
     --XLog.Warning("[XTheatre5Control] 从符文栏找不到对应的物品:" .. tostring(itemId))
+end
+
+function XTheatre5Control:CheckNewSeason()
+    if self._Model:IsNewSeason() then
+        XLuaUiManager.Open("UiTheatre5PopupNewSeason")
+    end
+end
+
+function XTheatre5Control:GetActivityTime()
+    local activityId = self._Model:GetActivityId()
+    if XTool.IsNumberValid(activityId) then
+        local activityCfg = self._Model:GetTheatre5ActivityCfgById(activityId)
+        local timeId = activityCfg.TimeId
+        local startTimeStamp = XFunctionManager.GetStartTimeByTimeId(timeId)
+        local endTimeStamp = XFunctionManager.GetEndTimeByTimeId(timeId)
+        -- 获得类似"08.25-11.25"的时间格式
+        if startTimeStamp and endTimeStamp then
+            local startTimeTab = os.date("*t", startTimeStamp)
+            local endTimeTab = os.date("*t", endTimeStamp)
+            return string.format("%.2d.%.2d-%.2d.%.2d",
+                    startTimeTab.month, startTimeTab.day,
+                    endTimeTab.month, endTimeTab.day)
+        end
+    end
+    return ""
+end
+
+function XTheatre5Control:HasEnoughExpToAutoUpgrade()
+    return self._Model:HasEnoughExpToAutoUpgrade()
 end
 
 return XTheatre5Control

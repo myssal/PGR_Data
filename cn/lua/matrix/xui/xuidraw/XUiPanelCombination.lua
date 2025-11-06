@@ -65,6 +65,10 @@ function XUiPanelCombination:SetData(index, drawId, goodsType, isSelect)
         end
     end
 
+    if self.TagPower then
+        self.TagPower.gameObject:SetActiveEx(XDrawConfigs.GetDrawPower(drawId))
+    end
+
     -- 选中
     self:SetSelectState(isSelect)
 end

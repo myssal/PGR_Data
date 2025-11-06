@@ -28,6 +28,9 @@ function XUiVideoPlayer:OnAwake()
     self.OnClick = function(inputDevice, key, type, operationType)
         if type == XOperationClickType.KeyDown then
             if key == ToInt32(CS.XVideoOperationKey.Pause) then
+                if not self.BtnAuto.gameObject.activeInHierarchy then
+                    return
+                end
                 self:Pause()
                 if self.IsPause then
                     self.BtnAuto.ButtonState = CS.UiButtonState.Select
@@ -36,8 +39,11 @@ function XUiVideoPlayer:OnAwake()
                 end
             end
             if key == ToInt32(CS.XVideoOperationKey.Stop) then
+                if not self.BtnSkip.gameObject.activeInHierarchy then
+                    return
+                end
                 self:Close()
-            end     
+            end
         end
     end
 end

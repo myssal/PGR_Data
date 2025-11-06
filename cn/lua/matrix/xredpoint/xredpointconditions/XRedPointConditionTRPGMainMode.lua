@@ -12,8 +12,11 @@ function XRedPointConditionTRPGMainMode.GetSubConditions()
 end
 
 function XRedPointConditionTRPGMainMode.Check(isFromMain)
-    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TRPG_TRUTH_ROAD_REWARD) then
-        return true
+    -- 求真之路相关不穿透到外面
+    if not isFromMain then
+        if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TRPG_TRUTH_ROAD_REWARD) then
+            return true
+        end
     end
     
     -- 珍藏不穿透到外面

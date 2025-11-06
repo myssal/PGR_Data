@@ -25,9 +25,7 @@ end
 function XUiGridSGCardItem:InitCb()
     if self.BtnCheck then
         self.BtnCheck.gameObject:SetActiveEx(true)
-        self.BtnCheck.CallBack = function()
-            self:OnBtnCheckClick()
-        end
+        self.BtnCheck:AddEventListener(handler(self, self.OnBtnCheckClick))
     end
 
     if self.TxtDetail then
@@ -74,7 +72,7 @@ function XUiGridSGCardItem:RefreshSmall(card)
         self._ClickSmallCb = function()
             self.Parent:OnClickSmallItem(self._Index, self)
         end
-        self.BtnClick.CallBack = self._ClickSmallCb
+        self.BtnClick:AddEventListener(self._ClickSmallCb)
     end
 end
 

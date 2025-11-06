@@ -35,7 +35,7 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetSaleGridTab:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnTab1.CallBack = function() self:OnBtnTab1Click() end
+    self.BtnTab1:AddEventListener(handler(self, self.OnBtnTab1Click))
 end
 --endregion
 

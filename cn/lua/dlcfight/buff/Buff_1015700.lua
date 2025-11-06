@@ -78,6 +78,7 @@ function XBuffScript1015700:Init()
     self.signalCtrlId = 1015912     --【概率】状态管理Buff
     self.magicStacks = 1            --【概率】触发时，添加的Buff层数
     self.magicProb = 40             --【概率】符纹触发概率
+    self.maxStacks = 4
     --增强Buff列表，enh = enhance
     self.enhBuffIdDict = {
         [1] = 1015740, --带有【概率触发】条件的效果触发时，自身额外获得X%的伤害提升（注意，不吃定时的效果翻倍，因为这个效果不带有【每隔X秒】条件）
@@ -102,6 +103,7 @@ function XBuffScript1015700:Init()
 
     --增强Buff[2]配置
     self.enhBuff2Stacks = 1         --有Buff[2]时，成功触发时，额外获得一层效果
+    self.enhBuff2maxStacks = 8      --最大层数翻倍
 
     --增强Buff[3]配置
     self.enhBuff3MagicProb = 10     --有Buff[3]时，触发概率提升10%
@@ -147,6 +149,14 @@ function XBuffScript1015700:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         if self._proxy:CheckBuffByKind(self._uuid,self.enhBuffIdDict[6]) then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self.enhBuff6signalCtrlId, 1)   --为自己添加【背水】管理Buff
         end
+        if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2]) then
+            self.maxStacks = self.enhBuff2maxStacks
+        end
+    end
+
+    --达到层数上限时，不进行后续逻辑
+    if self._proxy:GetBuffStacks(self._uuid,self.magicId) >= self.maxStacks then
+        return
     end
 
     --获得【概率】标记时，进行此逻辑

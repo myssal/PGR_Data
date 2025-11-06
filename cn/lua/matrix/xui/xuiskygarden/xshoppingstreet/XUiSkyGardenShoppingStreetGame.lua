@@ -520,22 +520,22 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetGame:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnLeave.CallBack = function() self:OnBtnLeaveClick() end
-    self.BtnNews.CallBack = function() self:OnBtnNewsClick() end
-    self.BtnSettlement.CallBack = function() self:OnBtnSettlementClick() end
-    self.BtnLight.CallBack = function() self:OnBtnLightClick() end
-    self.BtnStart.CallBack = function() self:OnBtnStartClick() end
-    self.BtnChooseLight.CallBack = function() self:OnBtnLightClick() end
-    self.BtnChooseCelebration.CallBack = function() self:OnBtnChooseSaleClick() end
-    self.BtnTarget.CallBack = function() self:OnBtnTargetClick() end
-    self.BtnControl.CallBack = function() self:OnBtnControlClick() end
-    self.BtnEndRound.CallBack = function() self:OnBtnEndRoundClick() end
-    self.BtnPlay.CallBack = function() self:OnBtnPlayClick() end
-    self.Btn1X.CallBack = function() self:_SetTimeScaleByScaleIndex(1, true) end
-    self.Btn2X.CallBack = function() self:_SetTimeScaleByScaleIndex(2, true) end
-    self.Btn4X.CallBack = function() self:_SetTimeScaleByScaleIndex(3, true) end
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
-    self.BtnSettlementFinish.CallBack = function() self:OnBtnSettlementFinishClick() end
+    self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClick))
+    self.BtnNews:AddEventListener(handler(self, self.OnBtnNewsClick))
+    self.BtnSettlement:AddEventListener(handler(self, self.OnBtnSettlementClick))
+    self.BtnLight:AddEventListener(handler(self, self.OnBtnLightClick))
+    self.BtnStart:AddEventListener(handler(self, self.OnBtnStartClick))
+    self.BtnChooseLight:AddEventListener(handler(self, self.OnBtnLightClick))
+    self.BtnChooseCelebration:AddEventListener(handler(self, self.OnBtnChooseSaleClick))
+    self.BtnTarget:AddEventListener(handler(self, self.OnBtnTargetClick))
+    self.BtnControl:AddEventListener(handler(self, self.OnBtnControlClick))
+    self.BtnEndRound:AddEventListener(handler(self, self.OnBtnEndRoundClick))
+    self.BtnPlay:AddEventListener(handler(self, self.OnBtnPlayClick))
+    self.Btn1X:AddEventListener(function() self:_SetTimeScaleByScaleIndex(1, true) end)
+    self.Btn2X:AddEventListener(function() self:_SetTimeScaleByScaleIndex(2, true) end)
+    self.Btn4X:AddEventListener(function() self:_SetTimeScaleByScaleIndex(3, true) end)
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
+    self.BtnSettlementFinish:AddEventListener(handler(self, self.OnBtnSettlementFinishClick))
 end
 
 function XUiSkyGardenShoppingStreetGame:_ShowEdit()
@@ -718,6 +718,7 @@ end
 
 --- 开始游戏
 function XUiSkyGardenShoppingStreetGame:_StartGame()
+    self._ShowTime = 0
     self._Control:UpdateMusicPart(0)
     self.BtnLeave.gameObject:SetActive(false)
     self.BtnHelp.gameObject:SetActive(false)
@@ -969,6 +970,12 @@ function XUiSkyGardenShoppingStreetGame:_UpdateTimer()
     -- end
     self:_CheckAndCreateCustomer()
     self:_UpdateCustomer()
+
+    local showTime = math.floor(self._TotalTimeCount / 1000)
+    if self._ShowTime ~= showTime and self.AnimTime then
+        self._ShowTime = showTime
+        self.AnimTime.text = XUiHelper.GetTime(self._ShowTime)
+    end
 end
 
 -- 结束游戏

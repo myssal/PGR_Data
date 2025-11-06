@@ -116,8 +116,8 @@ end
 
 function XUiSkyGardenShoppingStreetGamePet:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.PanelTalk.CallBack = function() self:OnPanelTalkClick() end
-    self.ImgPet.CallBack = function() self:OnImgPetClick() end
+    self.PanelTalk:AddEventListener(handler(self, self.OnPanelTalkClick))
+    self.ImgPet:AddEventListener(handler(self, self.OnImgPetClick))
 end
 
 function XUiSkyGardenShoppingStreetGamePet:_AddMessage(msg, moodId)

@@ -150,11 +150,19 @@ function XUiActivityBriefRefreshButton:RefreshNormal()
         activityBrieButton:ShowTag(true, tagOffset)
     end
     --redCondition
-    local redCondition = XActivityBriefConfigs.GetActivityBriefGroupRedCondition(activityGroupId)
+    local redConditions = XActivityBriefConfigs.GetActivityBriefGroupRedCondition(activityGroupId)
     local redParam = XActivityBriefConfigs.GetActivityBriefGroupRedParam(activityGroupId)
 
-    if not string.IsNilOrEmpty(redCondition) and XRedPointConditions.Types[redCondition] then
-        activityBrieButton:AddRedPointEvent({ XRedPointConditions.Types[redCondition] }, redParam)
+    if not XTool.IsTableEmpty(redConditions) then
+        if XMain.IsDebug then
+            for i, v in pairs(redConditions) do
+                if not XRedPointConditions.Types[v] then
+                    XLog.Error('无效的红点配置, activityGroupId: '..tostring(activityGroupId)..' redPointCondition: '..tostring(v))
+                end
+            end
+        end
+
+        activityBrieButton:AddRedPointEvent(redConditions, redParam)
     end
 
     activityBrieButton:Refresh()

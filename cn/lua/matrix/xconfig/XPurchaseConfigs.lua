@@ -133,7 +133,7 @@ XPurchaseConfigs.UiType = {
     Pay = 1, --充值
     CoatingLB = 8, -- 皮肤补给包
     Scene = 10, -- 场景补给包
-    ComboPackage = 13, -- 捆绑包
+    ComboPackage = 14, -- 捆绑包
 }
 
 XPurchaseConfigs.RecommendSkipType = {

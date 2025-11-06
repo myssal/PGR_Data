@@ -77,7 +77,6 @@ function XUiMainRightMid:OnStart(rootUi)
     -- XTool.InitUiObject(self)
     --ClickEvent
     self.BtnFight.CallBack = function() self:OnBtnFight() end
-    --self.BtnTask.CallBack = function() self:OnBtnTask() end
     self.BtnBuilding.CallBack = function() self:OnBtnBuilding() end
     self.BtnReward.CallBack = function() self:OnBtnReward() end
     --self.BtnSkipTask.CallBack = function() self:OnBtnSkipTask() end
@@ -91,17 +90,21 @@ function XUiMainRightMid:OnStart(rootUi)
     self.BtnEquipGuide.CallBack = function() XDataCenter.EquipGuideManager.OpenEquipGuideDetail() end
     self.BtnBag.CallBack = function() self:OnBtnBag() end
     --self.BtnStore.CallBack = function() self:OnBtnStore() end
+
+    if XUiManager.IsHideFunc then
+        self.BtnTask.CallBack = function() self:OnBtnTask() end
+    else
+        self._FuncBtnTask = XUiHelper.XUiFunctionShowControl(self.BtnTask, self)
+        self._FuncBtnTask:Open()
+
+        self._FuncBtnTask:AddButtonClickEvent(handler(self, self.OnBtnTask))
+    end
     
     self._FuncBtnStore = XUiHelper.XUiFunctionShowBtn(self.BtnStore, self)
     self._FuncBtnStore:AddButtonClickEvent(handler(self, self.OnBtnStore))
     
     self.BtnGuild.gameObject:SetActiveEx(true)
     
-    self._FuncBtnTask = XUiHelper.XUiFunctionShowControl(self.BtnTask, self)
-    self._FuncBtnTask:Open()
-    
-    self._FuncBtnTask:AddButtonClickEvent(handler(self, self.OnBtnTask))
-
     if XUiManager.IsHideFunc then
         self.BtnActivityBrief.gameObject:SetActiveEx(false)
         self.BtnGuild.gameObject:SetActiveEx(false)
@@ -168,9 +171,13 @@ function XUiMainRightMid:OnEnable()
     self._FuncBtnStore:RefreshAll()
 end
 
-function XUiMainRightMid:CheckRedPoint() 
-    self._FuncBtnTask:AddAdditionRedPointEvent(RedPointConditionGroup.Task)
-    --self:AddRedPointEvent(self.BtnTask.ReddotObj, self.OnCheckTaskNews, self, RedPointConditionGroup.Task)
+function XUiMainRightMid:CheckRedPoint()
+    if XUiManager.IsHideFunc then
+        self:AddRedPointEvent(self.BtnTask.ReddotObj, self.OnCheckTaskNews, self, RedPointConditionGroup.Task)
+    else
+        self._FuncBtnTask:AddAdditionRedPointEvent(RedPointConditionGroup.Task)
+    end
+    
     self:AddRedPointEvent(self.BtnBuilding.ReddotObj, self.OnCheckBuildingNews, self, RedPointConditionGroup.Dorm)
     self:AddRedPointEvent(self.ImgBuldingRedDot, self.OnCheckGuildRedPoint, self, RedPointConditionGroup.Guild)
 
@@ -256,7 +263,7 @@ end
 
 --任务入口
 function XUiMainRightMid:OnBtnTask()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Task) then
+    if not XUiManager.IsHideFunc and not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Task) then
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnTask)

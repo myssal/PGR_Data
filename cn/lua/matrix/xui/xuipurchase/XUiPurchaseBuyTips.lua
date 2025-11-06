@@ -155,6 +155,7 @@ function XUiPurchaseBuyTips:Init()
     self._PanelRandomItemList = XUiPanelRandomSelectPurchaseItemList.New(self.PanelRandomReward, self)
     self._PanelRandomItemList:Close()
 
+    self.PanelBundle.gameObject:SetActiveEx(false)
     self._PanelBundle = XUiPurchaseBundle.New(self.PanelBundle, self)
     self._PanelBundle:Close()
 
@@ -664,6 +665,11 @@ function XUiPurchaseBuyTips:SetList()
     self.ListDirData = {}
     self.ListDayData = {}
     local rewards0 = self.Data.RewardGoodsList or {}
+
+    if self.Data.SubDatas then
+        rewards0 = self:RewardDataFilter(self.Data)
+    end
+    
     for _, v in pairs(rewards0) do
         v.LBGetType = LBGetTypeConfig.Direct
         table.insert(self.ListDirData, v)
@@ -701,6 +707,8 @@ function XUiPurchaseBuyTips:SetList()
         if not XTool.IsTableEmpty(self.ListDirData) then
             self._PanelNormalItemList:Open()
             self._PanelNormalItemList:InitGoodsShow(self.ListDirData, self.Data.ConsumeCount ~= 0, self.Data.ConvertSwitch == 0)
+        else
+            self._PanelNormalItemList:Close()
         end
 
         if not XTool.IsTableEmpty(self.ListDayData) then
@@ -992,7 +1000,10 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
             self._PanelRandomItemList:SetIsNormalAllOwn(true)
         else
             self.BtnBuy:SetDisable(false)
-            if (self.Data.BuyLimitTimes > 0 and self.Data.BuyTimes == self.Data.BuyLimitTimes) or (self.Data.TimeToShelve > 0 and self.Data.TimeToShelve <= self.NowTime) or (self.Data.TimeToUnShelve > 0 and self.Data.TimeToUnShelve <= self.NowTime) then
+            if (self.Data.BuyLimitTimes > 0 and self.Data.BuyTimes == self.Data.BuyLimitTimes) or
+                    (self.Data.TimeToShelve > 0 and self.Data.TimeToShelve <= self.NowTime) or
+                    (self.Data.TimeToUnShelve > 0 and self.Data.TimeToUnShelve <= self.NowTime) or
+                    self.Data.IsSoldOut then
                 --卖完了，不管。
                 self.TXtTime.text = ""
                 self.TXtTime.transform.parent.gameObject:SetActiveEx(false)
@@ -1178,3 +1189,37 @@ function XUiPurchaseBuyTips:CheckNormalAndDailyContainsOwn()
 end
 --endregion
 
+---@param data XPurchaseComboData
+function XUiPurchaseBuyTips:RewardDataFilter(data)
+    local result = {}
+
+    for i, v in pairs(data.RewardGoodsList) do
+        result[i] = v
+    end
+
+    if data.SubDatas then
+        ---@param v XUiPurchaseComboSubGridData
+        for i, v in pairs(data.SubDatas) do
+            if v.IsSoldOut then
+                for i, reward in pairs(v.RewardGoodsList) do
+                    local isin = false
+                    local targetIndex = 0
+                    
+                    for index, resultData in pairs(result) do
+                        if resultData.Id == reward.Id then
+                            isin = true
+                            targetIndex = index
+                            break
+                        end
+                    end
+
+                    if isin then
+                        table.remove(result, targetIndex)
+                    end
+                end
+            end
+        end
+    end
+    
+    return result
+end 

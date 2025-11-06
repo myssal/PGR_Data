@@ -129,6 +129,7 @@ function XUiLottoCibeizhe:InitStageList()
         local XUiLottoStoryLineMode = require("XUi/XUiLotto/Grid/XUiLottoStoryTreeMode")
         self.PanelStoryStage = XUiLottoStoryLineMode.New(self.PanelStory, self)
     end
+    self.PanelStoryStage:InitStageList()
 end
 
 --endregion
@@ -187,8 +188,8 @@ end
 function XUiLottoCibeizhe:InitReward()
     ---@type XUiPanelLottoPreview
     local XUiPanelLottoPreview = require("XUi/XUiLotto/XUiPanelLottoPreview")
-    local weaponFashionId = XLottoConfigs.GetLottoClientConfigNumber("LunaWeaponFashionId")
-    local fashionDesc = XUiHelper.GetText("LottoLunaFashionDesc")
+    local weaponFashionId = XLottoConfigs.GetLottoClientConfigNumber("CibeizheWeaponFashionId")
+    local fashionDesc = XUiHelper.GetText("LottoCibeizheFashionDesc")
     self._PanelLottoPreview = XUiPanelLottoPreview.New(self.PanelPreview, self, self._LottoGroupData, weaponFashionId, fashionDesc)
 end
 
@@ -289,10 +290,12 @@ function XUiLottoCibeizhe:_PlayLongStartAnim(time)
     end, 0, 0)
 	
 	-- 场景的long动画
-    local timeEnableLong = self.UiSceneInfo.Transform:Find("Animation/AnimEnableLong")
     XScheduleManager.ScheduleNextFrame(function()
+        local timeEnableLong = self._SceneAnimRoot:FindTransform("AnimEnableLong")
         timeEnableLong.gameObject:SetActiveEx(true)
-        timeEnableLong:GetComponent("PlayableDirector"):Play()
+        timeEnableLong:PlayTimelineAnimation(function ()
+            timeEnableLong.gameObject:SetActiveEx(false)
+        end)
     end)
 end
 
@@ -306,6 +309,9 @@ end
 function XUiLottoCibeizhe:PlayShortEnableAnim()
     if self:CheckPanelType(PANEL_TYPE.SHOW) then
         -- 入场短动画
+        local animEnableLoop = self._SceneAnimRoot:FindTransform("AnimEnableLoop")
+        animEnableLoop:PlayTimelineAnimation()
+
         if self._IsBackMain then
             self:PlayAnimationWithMask("AnimStart1", function()
                 -- 额外奖励和皮肤弹窗摆这里是因为结果回来会播该动画
@@ -334,7 +340,9 @@ function XUiLottoCibeizhe:PlayStageAnim(isDisableTop)
         self._InitPanelType = nil
         self:PlayAnimationWithMask("AnimStart2")
     else
-        self:PlayAnimationWithMask("AnimEnableStory")
+        self:PlayAnimationWithMask("AnimEnableStory", function ()
+            self.PanelStoryStage:Open()
+        end)
     end
     self:StopTimeLineAnim(self._CamAnimDisableStory)
     self:PlayTimeLineAnim(self._CamAnimEnableStory)
@@ -342,7 +350,9 @@ end
 
 ---关卡镜头动画
 function XUiLottoCibeizhe:PlayStageDisableAnim()
-    self:PlayAnimationWithMask("AnimDisableStory")
+    self:PlayAnimationWithMask("AnimDisableStory", function ()
+        self.PanelStoryStage:Close()
+    end)
     self:StopTimeLineAnim(self._CamAnimEnableStory)
     self:PlayTimeLineAnim(self._CamAnimDisableStory)
 end

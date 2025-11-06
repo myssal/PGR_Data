@@ -12,48 +12,56 @@ function XUiRaceToastHall:OnAwake()
 
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_UIMAIN_DISABLE, self.CloseMainTip, self)
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_UICHAT_DISABLE, self.CloseChatTip, self)
+    XEventManager.AddEventListener(XEventId.EVENT_RACE_TOAST_HALL_UPDATE, self.ShowTip, self)
 end
 
 function XUiRaceToastHall:OnStart(data, tipType)
-    self._TipType = tipType
-    if not self.Viewport or not self.PanelRace then
-        self:Close()
-        return
-    end
-
-    if tipType == XEnumConst.Race.Tip.Main then
-        self:ShowMainTip(data)
-    elseif tipType == XEnumConst.Race.Tip.Chat then
-        self:ShowChatTip(data)
-    end
+    self:ShowTip(data, tipType)
 end
 
 function XUiRaceToastHall:OnDestroy()
     XMVCA.XRace:SetTipShowing(self._TipType, false)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_DISABLE, self.CloseMainTip, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UICHAT_DISABLE, self.CloseChatTip, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_RACE_TOAST_HALL_UPDATE, self.ShowTip, self)
+end
+
+function XUiRaceToastHall:ShowTip(data, tipType)
+    self._TipType = tipType
+    XMVCA.XRace:SetTipShow(tipType, data.Id)
+
+    local timerId = XScheduleManager.ScheduleNextFrame(function()
+        if tipType == XEnumConst.Race.Tip.Main then
+            self:ShowMainTip(data)
+        elseif tipType == XEnumConst.Race.Tip.Chat then
+            self:ShowChatTip(data)
+        end
+    end)
+    self:_AddTimerId(timerId)
 end
 
 ---@param data XTableRaceBroadcast
 function XUiRaceToastHall:ShowMainTip(data)
     self.PanelMain.gameObject:SetActiveEx(true)
     self.PanelRace.gameObject:SetActiveEx(false)
+    self:StopTweener(self._MainMoveTimer)
+    self:StopTweener(self._MainWaitTimer)
     self.Txt.text = data.Desc
 
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.Content)
-    local startPosX = self.Viewport.rect.width
-    local endPosX = -self.Content.rect.width
+    local startPosX = self.Viewport.rect.width + self.Content.rect.width
+    local endPosX = 0
     self.Content.anchoredPosition = Vector2(startPosX, 0)
-    local moveTimer = XUiHelper.Tween(self._MoveSpeed, function(t)
+    self._MainMoveTimer = XUiHelper.Tween(self._MoveSpeed, function(t)
         if not self.Content:Exist() then
             return true
         end
         self.Content.anchoredPosition = Vector2(MathLerp(startPosX, endPosX, t), 0)
     end, function()
-        local waitTimer = XScheduleManager.ScheduleOnce(handler(self, self.Close), self._WaitCloseTime)
-        self:_AddTimerId(waitTimer)
+        self._MainWaitTimer = XScheduleManager.ScheduleOnce(handler(self, self.Close), self._WaitCloseTime)
+        self:_AddTimerId(self._MainWaitTimer)
     end)
-    self:_AddTimerId(moveTimer)
+    self:_AddTimerId(self._MainMoveTimer)
 end
 
 ---@param data XTableRaceBroadcast

@@ -1,10 +1,10 @@
 [
     {
         "Id": 201,
-        "Name": "[Infection] Main Story Pack",
+        "Name": "【感染】主线包",
         "Index": 1,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Infection] and subsequent main story stages.",
+        "Desc": "游玩【感染】主线及后续主线的必要资源包",
         "DownloadTaskId": 0,
         "ResIds": [
             201
@@ -12,10 +12,10 @@
     },
     {
         "Id": 202,
-        "Name": "[Whirlpool] Main Story Pack",
+        "Name": "【漩涡】主线包",
         "Index": 2,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Whirlpool] and subsequent main story stages.",
+        "Desc": "游玩【漩涡】主线及后续主线的必要资源包",
         "DownloadTaskId": 0,
         "ResIds": [
             202
@@ -26,10 +26,10 @@
     },
     {
         "Id": 203,
-        "Name": "[Catastrophe] Main Story Pack",
+        "Name": "【灾诞】主线包",
         "Index": 3,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Catastrophe] and subsequent main story stages.",
+        "Desc": "游玩【灾诞】主线及后续主线的必要资源包",
         "DownloadTaskId": 0,
         "ResIds": [
             203
@@ -41,10 +41,10 @@
     },
     {
         "Id": 204,
-        "Name": "[Destiny] Main Story Pack",
+        "Name": "【命途】主线包",
         "Index": 4,
         "Type": 1,
-        "Desc": "Contains the necessary resources required for [Destiny] and subsequent main story stages.",
+        "Desc": "游玩【命途】主线及后续主线的必要资源包",
         "DownloadTaskId": 0,
         "ResIds": [
             204
@@ -56,11 +56,24 @@
         ]
     },
     {
-        "Id": 901,
-        "Name": "Cantonese Voiceover",
+        "Id": 401,
+        "Name": "空中花园",
         "Index": 1,
         "Type": 2,
-        "Desc": "Can use Cantonese voiceover once it's downloaded.",
+        "Desc": "游玩空中花园的必要资源包",
+        "DownloadTaskId": 0,
+        "ResIds": [
+            301,
+            402,
+            403
+        ]
+    },
+    {
+        "Id": 901,
+        "Name": "粤语配音",
+        "Index": 1,
+        "Type": 2,
+        "Desc": "下载后可使用粤语配音",
         "DownloadTaskId": 0,
         "ResIds": [
             901
@@ -68,10 +81,10 @@
     },
     {
         "Id": 902,
-        "Name": "Japanese Voiceover",
+        "Name": "日语配音",
         "Index": 2,
         "Type": 2,
-        "Desc": "Can use Japanese voiceover once it's downloaded.",
+        "Desc": "下载后可使用日语配音",
         "DownloadTaskId": 0,
         "ResIds": [
             902
@@ -79,10 +92,10 @@
     },
     {
         "Id": 903,
-        "Name": "English Voiceover",
+        "Name": "英语配音",
         "Index": 3,
         "Type": 2,
-        "Desc": "Can use English voiceover once it's downloaded.",
+        "Desc": "下载后可使用英语配音",
         "DownloadTaskId": 0,
         "ResIds": [
             903
@@ -90,10 +103,10 @@
     },
     {
         "Id": 904,
-        "Name": "Story Video",
+        "Name": "剧情视频",
         "Index": 4,
         "Type": 2,
-        "Desc": "Download to play all story videos.",
+        "Desc": "下载后可播放所有剧情视频",
         "DownloadTaskId": 0,
         "ResIds": [
             1002,
@@ -146,15 +159,16 @@
             1049,
             1050,
             1051,
-            1052
+            1052,
+            1053
         ]
     },
     {
         "Id": 905,
-        "Name": "Game Mode Video",
+        "Name": "玩法视频",
         "Index": 5,
         "Type": 2,
-        "Desc": "Download to play all game mode videos.",
+        "Desc": "下载后可播放所有玩法视频",
         "DownloadTaskId": 0,
         "ResIds": [
             2000,
@@ -168,17 +182,27 @@
         ]
     },
     {
-        "Id": 9999,
-        "Name": "Expansion Pack",
-        "Index": 5,
-        "Type": 1,
-        "Desc": "Contains the necessary resources required for new main story stages and events.",
+        "Id": 3000,
+        "Name": "主题音乐",
+        "Index": 6,
+        "Type": 2,
+        "Desc": "使用主界面音乐播放器及公会音乐盒的必要资源包",
         "DownloadTaskId": 0,
         "ResIds": [
-            9999,
-            300,
-            400,
-            401
+            3000,
+            3001,
+            3002
+        ]
+    },
+    {
+        "Id": 9999,
+        "Name": "玩法扩充包",
+        "Index": 5,
+        "Type": 1,
+        "Desc": "游玩全新主线以及活动玩法的必要资源包",
+        "DownloadTaskId": 0,
+        "ResIds": [
+            9999
         ],
         "PreIds": [
             201,

@@ -23,22 +23,22 @@ function XUiBWOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId
         local name = XCSInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.One)
         self.BtnKeyItem:SetName(name)
         if isCustom or oneKeyIsCustom then
-            self.BtnKeyItem.CallBack = function()
+            self.BtnKeyItem:AddEventListener(function()
                 if oneKeyIsCustom then
                     XUiManager.TipMsg(CS.XTextManager.GetText("PcKeyBoardButtonNoCusTip"))
                 else
                     self.Cb(operationKey, self, XSetConfigs.PressKeyIndex.One, self.CurOperationType)
                 end
-            end
+            end)
         end
         
         isCustom = XCSInputManager.IsCustomKey(operationKey, 1, self._KeySetType, self.CurOperationType)
         self.BtnKeyItem2.enabled = isCustom
         name = XCSInputManager.GetKeyCodeString(self._KeySetType, curInputMapIdEnum, operationKey, operationTypeToEnum, CS.PressKeyIndex.Two)
         self.BtnKeyItem2:SetName(name)
-        self.BtnKeyItem2.CallBack = function()
+        self.BtnKeyItem2:AddEventListener(function()
             self.Cb(operationKey, self, XSetConfigs.PressKeyIndex.Two, self.CurOperationType)
-        end
+        end)
         if (resetTextOnly == true) then
             return
         end

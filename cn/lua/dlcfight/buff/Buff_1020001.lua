@@ -10,7 +10,7 @@ function XBuffScript1020001:Init() --初始化
         local camp = self._proxy:GetNpcCamp(self._uuid)
         local targetRota2 = {x = 0, y = 180, z =0}
         local targetBehindPos = self._proxy:GetNpcOffsetPositionByFacing(target, targetRota2, 1)
-        self.Jingmo = self._proxy:GenerateNpc(1020, camp, targetBehindPos, targetRota2,false,false)--生成镜魔
+        self.Jingmo = self._proxy:GenerateNpc(1020, camp, targetBehindPos, targetRota2)--生成镜魔
         self._proxy:CastActionToTarget(self.Jingmo,102001,target)
         self._proxy:AddTimerTask(1.75, function()--延迟1.75秒后，释放子弹
             if not self._proxy:CheckActorExist(target) then  --检测目标是否存活

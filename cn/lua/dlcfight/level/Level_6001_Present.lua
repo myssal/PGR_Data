@@ -78,7 +78,7 @@ function XLevelScript6001:Init()
         self.TreasureChests2 = 700095
         self.TreasureChests3 = 700096
         self.WinTrigger = 700111
-        self._MoveLimit = {700112,700113,700143,700144}
+        self._MoveLimit = {700112,700113,700143}
         self._rot = { x = 0, y = -95, z = 0 }
         self._rot1 = { x = 0, y = -95, z = 0 }
         self._rot2 = { x = 0, y = -80, z = 0 }
@@ -212,9 +212,9 @@ function XLevelScript6001:DoTeleportWithCouple(teleportPlaceId1, pos, rot, cb)
         self._proxy:SetSceneObjectActive(teleportPlaceId1, true)
     end)
     if rot then
-        XScriptTool.DoTeleportNpcPosAndRotWithBlackScreen(self._proxy, self._proxy:GetLocalPlayerNpcId(), pos, rot, 0.1, 0, 300012, cb)
+        XScriptTool.DoTeleportNpcPosAndRotWithBlackScreen(self._proxy, self._proxy:GetLocalPlayerNpcId(), pos, rot, 0.5, 0, 300012, cb)
     else
-        XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, self._proxy:GetLocalPlayerNpcId(), pos, 0.1, 0, 300012)
+        XScriptTool.DoTeleportNpcPosWithBlackScreen(self._proxy, self._proxy:GetLocalPlayerNpcId(), pos, 0.5, 0, 300012)
     end
 end
 

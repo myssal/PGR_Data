@@ -150,7 +150,7 @@
         "Id": 11,
         "Type": 1,
         "Name": "加星星咩",
-        "Desc": "星星咩可以和任意方块（除泡泡咩）发生合成。",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
         "TriggerCD": 5,
         "TriggerBlockId": 10094,
@@ -163,7 +163,7 @@
         "Id": 12,
         "Type": 1,
         "Name": "加星星咩",
-        "Desc": "星星咩可以和任意方块（除泡泡咩）发生合成。",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
         "TriggerCD": 10,
         "TriggerBlockId": 10094,
@@ -209,8 +209,8 @@
     {
         "Id": 15,
         "Type": 1,
-        "Name": "加心心咩",
-        "Desc": "生成心心咩，心心咩合成3次后，泡泡咩数值直接达到合成目标",
+        "Name": "加心心方块",
+        "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
         "TriggerCD": 10,
         "TriggerBlockId": 0,
@@ -225,8 +225,8 @@
     {
         "Id": 16,
         "Type": 1,
-        "Name": "加心心咩",
-        "Desc": "生成心心咩，心心咩合成3次后，泡泡咩数值直接达到合成目标",
+        "Name": "加心心方块",
+        "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
         "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
         "TriggerCD": 15,
         "TriggerBlockId": 0,
@@ -317,5 +317,57 @@
         "ReplaceValueFormBlockTypes": [
             4
         ]
+    },
+    {
+        "Id": 22,
+        "Type": 3,
+        "Name": "加热热方块",
+        "Desc": "生成热热方块，和凉凉方块合成将随机生成方块属性",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff13.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 23,
+        "Type": 3,
+        "Name": "加凉凉方块",
+        "Desc": "生成凉凉方块，和热热方块合成将随机生成方块属性",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff14.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 24,
+        "Type": 3,
+        "Name": "加坨坨方块",
+        "Desc": "坨坨方块可以被破碎，数字表示需要碰撞的次数",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff15.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 25,
+        "Type": 3,
+        "Name": "加星星方块",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
     }
 ]

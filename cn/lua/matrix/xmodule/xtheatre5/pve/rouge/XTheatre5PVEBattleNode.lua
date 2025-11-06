@@ -41,13 +41,6 @@ function XTheatre5PVEBattleNode:_OnEnter()
             end
         end)
     else
-        if XMVCA.XTheatre5:HasRelicToSelect() then
-            XMVCA.XTheatre5:TriggerInterruptEvent(function()
-                self:_OnEnter()
-            end)
-            return
-        end
-        
         self:OpenShopPanel()
     end
 end

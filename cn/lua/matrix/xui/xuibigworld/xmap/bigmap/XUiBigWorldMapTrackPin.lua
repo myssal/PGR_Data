@@ -57,7 +57,7 @@ function XUiBigWorldMapTrackPin:_RefreshPin(pinData)
 end
 
 function XUiBigWorldMapTrackPin:_RegisterButtonClicks()
-    self.BtnAnchor.CallBack = Handler(self, self.OnBtnAnchorClick)
+    self.BtnAnchor:AddEventListener(handler(self, self.OnBtnAnchorClick))
 end
 
 return XUiBigWorldMapTrackPin

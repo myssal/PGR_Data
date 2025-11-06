@@ -8,9 +8,7 @@ local LerpTime = 700
 function XUiGridBWRoleVTeam:OnStart()
     if self.BtnClick then
         self.BtnClick.gameObject:SetActiveEx(true)
-        self.BtnClick.CallBack = function() 
-            self:OnBtnClick()
-        end
+        self.BtnClick:AddEventListener(handler(self, self.OnBtnClick))
     end
 end
 

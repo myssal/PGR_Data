@@ -331,9 +331,16 @@ function XSkyGardenCafeRound:DoRequestRoundChange(dealCardIds, deckCardIds, revi
     }
     local maxRound = self._Model:GetStageRounds(self._StageId)
     local info = self._Model:GetBattleInfo()
+    local handleError = function() 
+        self._OwnControl:GiveUp(function() 
+            XMVCA.XBigWorldUI:SafeClose("UiSkyGardenCafeGame")
+        end) 
+    end
     XNetwork.Call("BigWorldCafeNextRoundRequest", req, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
+            handleError()
+            return
         end
         info:UpdateData(serverData)
         local curRound = info:GetRound()
@@ -348,7 +355,7 @@ function XSkyGardenCafeRound:DoRequestRoundChange(dealCardIds, deckCardIds, revi
         end
         self._OwnControl:ResetResetTimes()
         self._OwnControl:ChangeRoundSettle(false)
-    end)
+    end, nil, handleError)
 end
 
 function XSkyGardenCafeRound:InitBattleInfoWithClint()
@@ -693,10 +700,12 @@ function XSkyGardenCafeRound:DoPoolToDeck(cards)
             self:RecordCount(dict, card)
         end
     end
-    for _, card in pairs(cards) do
-        --放进手牌
-        self:InsertDeck(card)
-        self:RecordCount(dict, card)
+    if not XTool.IsTableEmpty(cards) then
+        for _, card in pairs(cards) do
+            --放进手牌
+            self:InsertDeck(card)
+            self:RecordCount(dict, card)
+        end
     end
     --移除掉卡组
     self:RemovePoolCards(self:CloneRecord(dict))
@@ -854,26 +863,27 @@ function XSkyGardenCafeRound:ReDrawToDeck()
     self._OwnControl:ReDrawToDeck(indexList)
     
     --触发Buff之前同步给服务器
-    self._OwnControl:RequestEnterGame(self:GetDeckId())
-    local triggerDict = {
-        [EffectTriggerId.DrawCard] = true,
-        [EffectTriggerId.RoundBegin] = true,
-    }
-    --触发抽卡Buff
-    self:DoApplyBuff(true, true, false, triggerDict, {
-        [EffectTriggerId.DrawCard] = { DrawCardType.Round, toReDrawCards }
-    })
-    --预览在手上的buff
-    self:DoPreviewBuff(true, true, false, self._TriggerDictWhenInDeck, nil)
-    for i = #toReDrawCards, 1, -1 do
-        self:RemoveReDraw(i)
-    end
-    --加载npc
-    self._OwnControl:GetNpcFactory():LoadNpcWhenDrawCard(self._DeckEntities)
-    XMVCA.XSkyGardenCafe:DispatchInnerEvent(DlcEventId.EVENT_CAFE_RE_DRAW_CARD, false)
-    XMVCA.XSkyGardenCafe:DispatchInnerEvent(DlcEventId.EVENT_CAFE_POOL_CARD_COUNT_UPDATE)
-    --弹关卡目标
-    self:OpenBroadcastFirst()
+    self._OwnControl:RequestEnterGame(self:GetDeckId(), function()
+        local triggerDict = {
+            [EffectTriggerId.DrawCard] = true,
+            [EffectTriggerId.RoundBegin] = true,
+        }
+        --触发抽卡Buff
+        self:DoApplyBuff(true, true, false, triggerDict, {
+            [EffectTriggerId.DrawCard] = { DrawCardType.Round, toReDrawCards }
+        })
+        --预览在手上的buff
+        self:DoPreviewBuff(true, true, false, self._TriggerDictWhenInDeck, nil)
+        for i = #toReDrawCards, 1, -1 do
+            self:RemoveReDraw(i)
+        end
+        --加载npc
+        self._OwnControl:GetNpcFactory():LoadNpcWhenDrawCard(self._DeckEntities)
+        XMVCA.XSkyGardenCafe:DispatchInnerEvent(DlcEventId.EVENT_CAFE_RE_DRAW_CARD, false)
+        XMVCA.XSkyGardenCafe:DispatchInnerEvent(DlcEventId.EVENT_CAFE_POOL_CARD_COUNT_UPDATE)
+        --弹关卡目标
+        self:OpenBroadcastFirst()
+    end)
 end
 
 --- 牌组替换手牌

@@ -503,6 +503,51 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessNpcData(autoChessNpcDataServer)
     return autoChessNpcData
 end
 
+---@param noLoop@防止因为配置错误导致的死循环
+function XTheatre5BattleAgencyCom:CheckCondition(conditionId, autoChessDataServer, noLoop)
+    local template = XConditionManager.GetConditionTemplate(conditionId)
+    -- 这是测试代码, 这部分逻辑应该写在服务端上
+    if template.Type == 17850 then
+        local tag = template.Params[1]
+        local color = template.Params[2]
+        local amount = template.Params[3]
+        -- 统计数量
+        local count = 0
+        for _, rune in ipairs(autoChessDataServer.RuneEvolves) do
+            local runeId = rune.RuneId
+            local runeConfig = self._Model:GetTheatre5ItemCfgById(runeId)
+            if runeConfig then
+                if runeConfig.Quality == color then
+                    if tag == 0 then
+                        count = count + 1
+                    else
+                        for i, runeTag in ipairs(runeConfig.Tags) do
+                            if runeTag == tag then
+                                count = count + 1
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+        end
+        return count >= amount
+    end
+    if not string.IsNilOrEmpty(template.Formula) and not noLoop then
+        --template.Formula格式是这样的, 1050291&1050292
+        -- 遍历formula中的每个元素
+        for id in string.gmatch(template.Formula, "%d+") do
+            local numericId = tonumber(id)
+            if not self:CheckCondition(numericId, autoChessDataServer, true) then
+                return false
+            end
+        end
+        return true -- 所有条件都满足才返回true
+    end
+    -- 其他condition放他过
+    return true
+end
+
 function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebug)
     local autoChessData = CS.XAutoChessData()
 
@@ -537,7 +582,7 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
         for i, v in ipairs(autoChessDataServer.Relics) do
             autoChessData.Relics:Add(v)
         end
-        
+
         -- 正常流程下，Relic（饰品/遗物）的magicId,是服务端下发的,但是在测试流程下，需要客户端自己来
         if isDebug then
             local baseAttr = {}
@@ -551,26 +596,35 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
                 local effectConfigs = self._Model:GetRelicEffectConfigs(relicId)
                 if effectConfigs then
                     for i = 1, #effectConfigs do
-                        local effectConfig = effectConfigs[i]
-                        if effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddBuff then
-                            autoChessData.MagicIds:Add(effectConfig.Param[1])
+                        local effectConfig = effectConfigs[i].EffectConfig
+                        local conditionId = effectConfigs[i].Condition
+                        local isValid = true
+                        if conditionId and conditionId ~= 0 then
+                            if not self:CheckCondition(conditionId, autoChessDataServer) then
+                                isValid = false
+                            end
+                        end
+                        if isValid then
+                            if effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddBuff then
+                                autoChessData.MagicIds:Add(effectConfig.Param[1])
 
-                        elseif effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddAttr then
-                            local attrType = effectConfig.Param[1]
-                            local baseAttrValue = baseAttr[attrType] or 0
+                            elseif effectConfig.Type == XMVCA.XTheatre5.EnumConst.Theatre5EffectType.AddAttr then
+                                local attrType = effectConfig.Param[1]
+                                local baseAttrValue = baseAttr[attrType] or 0
 
-                            --属性类型	固定值数值	万分比数值	特定变量	比例（万分比）
-                            local fixVal = effectConfig.Param[2]
-                            local rateVal = effectConfig.Param[3]
-                            local specificVal = effectConfig.Param[4]
-                            local specificRateVal = effectConfig.Param[5]
+                                --属性类型	固定值数值	万分比数值	特定变量	比例（万分比）
+                                local fixVal = effectConfig.Param[2]
+                                local rateVal = effectConfig.Param[3]
+                                local specificVal = effectConfig.Param[4]
+                                local specificRateVal = effectConfig.Param[5]
 
-                            --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
-                            local changeValue = fixVal + baseAttrValue * rateVal / 10000 + specificVal * specificRateVal / 10000
-                            if autoChessData.Attribs:ContainsKey(attrType) then
-                                autoChessData.Attribs[attrType] = autoChessData.Attribs[attrType] + changeValue
+                                --属性改变=固定值+基础值*万分比+特定变量*比例 (基础值=角色基础属性+等级属性+符纹属性)
+                                local changeValue = fixVal + baseAttrValue * rateVal / 10000 + specificVal * specificRateVal / 10000
+                                if autoChessData.Attribs:ContainsKey(attrType) then
+                                    autoChessData.Attribs[attrType] = autoChessData.Attribs[attrType] + changeValue
                             else
                                 autoChessData.Attribs:Add(attrType, changeValue)
+                            end
                             end
                         end
                     end
@@ -578,7 +632,7 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
             end
         end
     end
-    
+
     if autoChessDataServer.MagicIds then
         for i, v in pairs(autoChessDataServer.MagicIds) do
             autoChessData.MagicIds[i] = v
@@ -658,14 +712,14 @@ function XTheatre5BattleAgencyCom:_CalNpcAttribsAfterEnterFightRequest(autoChess
         end
     end
 
+    -- 等级属性
+    local level = autoChessData.CharacterLevel
+    if level then
+        self._Model:GetCharacterLevelAttr(autoChessData.CharacterId, level, autoChessData.Attribs)
+    end
+
     -- 玩家专属属性
     if isSelfData then
-        -- 等级属性
-        local level = self._Model.CurAdventureData:GetCharacterLevel()
-        if level then
-            self._Model:GetCharacterLevelAttr(autoChessData.CharacterId, level, autoChessData.Attribs)
-        end
-
         -- v4.0新增Event带来的临时属性加成
         -- 基础属性，计算用
         local baseAttrs = {}

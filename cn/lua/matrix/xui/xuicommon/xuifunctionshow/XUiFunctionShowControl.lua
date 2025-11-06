@@ -130,6 +130,8 @@ function XUiFunctionShowControl:AddAdditionRedPointEvent(conditionGroup, args, i
         table.insert(self._AdditionReddotEventIds, reddotEventId)
 
         self._ReddotIndex2EventId[index] = reddotEventId
+        
+        return reddotEventId
     end
 end
 
@@ -144,6 +146,16 @@ function XUiFunctionShowControl:RemoveAdditionRedPointEvent(redEventId)
     if isIn then
         self:RemoveRedPointEvent(redEventId)
         table.remove(self._AdditionReddotEventIds, index)
+        
+        -- 移除对应的结果
+        self._ReddotEventId2ShowStateMap[redEventId] = nil
+        
+        -- 从索引表中移除
+        local isInIndex, indexInIndex = table.contains(self._ReddotIndex2EventId, redEventId)
+
+        if isInIndex then
+            self._ReddotIndex2EventId[indexInIndex] = nil
+        end
     end
 end
 

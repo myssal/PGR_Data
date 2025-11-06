@@ -894,6 +894,9 @@ function XGame2048GameControl:_CheckCanMerge(curGrid, nextGrid, onlyCheck)
                         if gridTypeA == XMVCA.XGame2048.EnumConst.GridType.Transmit or gridTypeB == XMVCA.XGame2048.EnumConst.GridType.Transmit then
                             self._NeedTransmit = true
                         end
+                        
+                        -- 使用局部变量，是因为同时满足爱心方块效果和消除方块合成时，防止冲突
+                        local needDispelToTargetThisTime = false
 
                         -- 合成方块存在爱心方块，且合成后的方块也是爱心方块，则该方块fever累积值+1（最大值为FeverAddMax 
                         if (gridTypeA == XMVCA.XGame2048.EnumConst.GridType.HeartShape or gridTypeB == XMVCA.XGame2048.EnumConst.GridType.HeartShape) and curGrid:GetGridType() == XMVCA.XGame2048.EnumConst.GridType.HeartShape then
@@ -908,13 +911,14 @@ function XGame2048GameControl:_CheckCanMerge(curGrid, nextGrid, onlyCheck)
                             if curGrid:GetExValue() >= HeartAddMax then
                                 -- 触发消除方块升级效果
                                 self._NeedDispelToTarget = true
+                                needDispelToTargetThisTime = true
                             end
                         end
 
                         -- 添加合并行为
                         self.ActionsControl:AddMergeAction(nextGrid.Uid, curGrid.Uid, curGrid.Id)
 
-                        if self._NeedDispelToTarget then
+                        if needDispelToTargetThisTime then
                             -- 清除累计，并播放动画更新状态，时机和消除方块升级一致
                             curGrid:SetExValue(0)
                             self.ActionsControl:AddGridChangedAction(curGrid.Uid, XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterDoubleLevelUp)
@@ -1092,6 +1096,9 @@ function XGame2048GameControl:DoFeverLevelUp(targetType)
             :: CONTINUE ::
         end
         
+        -- 插入消除范围特效显示动画
+        self.ActionsControl:AddDispelRangeEffectAction(true)
+        self.ActionsControl:AddDispelRangeEffectAction(false)
     end
 
     -- 有下一级配置才能升级

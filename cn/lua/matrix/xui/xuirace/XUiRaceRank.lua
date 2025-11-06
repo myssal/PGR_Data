@@ -26,7 +26,11 @@ function XUiRaceRank:InitTab()
     self.BtnTabGroup:Init(btns, function(index)
         self:OnSelectedTag(index)
     end)
-    self.BtnTabGroup:SelectIndex(1)
+
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        self.BtnTabGroup:SelectIndex(1)
+    end, 500)
+    self:_AddTimerId(timerId)
 
     self._IsJoin = XDataCenter.GuildManager.IsJoinGuild()
     self.GridTab2:SetButtonState(self._IsJoin and XUiButtonState.Normal or XUiButtonState.Disable)
@@ -123,6 +127,22 @@ function XUiRaceRank:OnDynamicTableEvent(event, index, grid)
         local rankInfo = self._DataList[index]
         rankInfo.Rank = index
         grid:Refresh(rankInfo)
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        ---@type XUiGridRaceRank[]
+        local grids = self._DynamicTable:GetGrids()
+        local gridCount = XTool.GetTableCount(grids)
+        if XTool.IsTableEmpty(grids) or #grids <= 0 then
+            --非完整完成不播动画
+            return
+        end
+        for i, grid in ipairs(grids) do
+            grid:Close()
+            local timerId = XScheduleManager.ScheduleOnce(function()
+                grid:Open()
+                grid:PlayAnimationWithMask("GridRankEnable")
+            end, 50 * i)
+            self:_AddTimerId(timerId)
+        end
     end
 end
 

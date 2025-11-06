@@ -1041,6 +1041,7 @@ XEnumConst = {
             Zoom = 2, -- 跃升（废弃）
             Multi = 3, -- 多关卡（废弃）
             Challenge = 4, -- 挑战关
+            Monster = 6, -- 消灭一定数量的怪物
         },
         AttributeLevelStr = {
             [1] = "B",
@@ -3496,8 +3497,8 @@ XEnumConst = {
             Playback = 2, -- 回放
         },
         SceneType = {
-            Normal = 1,
-            MatchPredict = 2,
+            Main = 1,
+            Predict = 2,
             Settlement = 3,
         },
     },

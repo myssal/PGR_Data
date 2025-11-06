@@ -43,6 +43,10 @@ function XUiGridRaceFightCharacter:OnNotify(event, actorIndex, powerIndex, power
     end
 end
 
+function XUiGridRaceFightCharacter:ShowTagPredict(isShow)
+    self.TagPredict.gameObject:SetActive(isShow)
+end
+
 -- 显示表情
 function XUiGridRaceFightCharacter:ShowEmoji(path, time)
     if not self.PanelEmoji then return end
@@ -105,7 +109,10 @@ function XUiGridRaceFightCharacter:ShowGetSignalBallInfo(powerIndex)
 
     self.PanelBall.gameObject:SetActive(true)
     self:PlayAnimation("SlotDisable")
-    self.RImgBall:SetRawImage(self._Control:GetRaceSignalBallIconById(powerIndex))
+    
+    local ballConfig = self._Control:GetRaceSignalBallById(powerIndex)
+    self.RImgBall:SetRawImage(ballConfig.RollIcon)
+    self:ShowEmoji(ballConfig.Emoji, ballConfig.EmojiTime)
     
     self._SignalId = false
     self:RemoveTimer()

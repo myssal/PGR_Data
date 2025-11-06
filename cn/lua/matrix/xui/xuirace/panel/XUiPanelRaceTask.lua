@@ -101,7 +101,7 @@ function XUiPanelRaceTask:OnDynamicTableEvent(event, index, grid)
             XScheduleManager.ScheduleOnce(function()
                 if not XTool.UObjIsNil(grid.GameObject) then
                     grid.GameObject:SetActiveEx(true)
-                    local animTrans = XUiHelper.TryGetComponent(grid.Transform, "Animation/PanelEnable", nil)
+                    local animTrans = XUiHelper.TryGetComponent(grid.Transform, "Animation/GridTaskEnable", nil)
                     if animTrans then
                         animTrans:PlayTimelineAnimation()
                     end

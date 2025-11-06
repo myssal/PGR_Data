@@ -563,6 +563,10 @@ function XSkyGardenCafeControl:GetQualityLimitDict()
     return dict
 end
 
+function XSkyGardenCafeControl:GetCafeCameraScreenRatio()
+    return tonumber(self._Model:GetConfig("CafeCameraScreenRatio"))
+end
+
 --endregion
 
 --region 本地数据

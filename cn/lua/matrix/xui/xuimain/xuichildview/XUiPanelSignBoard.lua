@@ -926,7 +926,9 @@ function XUiPanelSignBoard:_PlayUi(element)
 
     self.TxtSplitCvContent:ShowContent(cvId, cvType, content)
     self:ShowNormalContent(not string.IsNilOrEmpty(element.SignBoardConfig.Content) and self.DialogTrigger)
-    self.PanelOpration.gameObject:SetActiveEx(element.SignBoardConfig.ShowButton ~= nil and self.OperateTrigger)
+    if not XUiManager.IsHideFunc then
+        self.PanelOpration.gameObject:SetActiveEx(element.SignBoardConfig.ShowButton ~= nil and self.OperateTrigger)
+    end
 end
 
 

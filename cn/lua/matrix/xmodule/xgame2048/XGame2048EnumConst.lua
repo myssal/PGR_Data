@@ -47,6 +47,8 @@ local XGame2048EnumConst = {
         GridChanged = 16, -- 通用方块变更, 时机在ferver等级提升之后
         GridChangedAfterMerge = 17, -- 通用方块变更，时机是合并之后
         GridChangedAfterDoubleLevelUp = 18, -- 通用方块变更，时机是在各种翻倍效果执行之后
+        OpenDispelRangeEffect = 19, -- 打开消除范围特效，与消除操作同时
+        CloseDispelRangeEffect = 20, -- 关闭消除范围特效，在消除操作之后
     },
     -- 行为队列优先级，相同优先级的将会在同一时刻执行, 优先级数越小的最先执行
     -- key: 对应ActionType里的枚举值
@@ -67,8 +69,10 @@ local XGame2048EnumConst = {
         [6] = 7, -- 石头降级
         [4] = 8, -- 消除
         [9] = 8, -- fever等级提升
+        [19] = 8, -- 打开消除范围特效
         [14] = 9, -- 盘面升级检查
         [16] = 9, -- 通用方块变更
+        [20] = 9, -- 关闭消除范围特效
     },
     
     -- 角色模型动作优先级
@@ -120,6 +124,13 @@ local XGame2048EnumConst = {
         None = 0,
         WaterFireSelection = 1,
     },
+    
+    --- Buff类型, 与服务端枚举一致
+    BuffType = {
+        GenTypeBlock = 1, -- 生成特定类型方块
+        ReplaceTypeBlock = 2, -- 替换为特定类型块
+        ClientShow = 3, -- 纯客户端显示
+    }
 }
 
 return XGame2048EnumConst

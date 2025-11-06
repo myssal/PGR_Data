@@ -40,6 +40,9 @@ function XUiTheatre5Main:OnEnable()
     self:UpdateAssetPanel()
     self:RefreshReddots()
     self:RemindNewStoryLine()
+    
+    -- 新赛季弹窗
+    self._Control:CheckNewSeason()
 end
 
 function XUiTheatre5Main:OnDisable()

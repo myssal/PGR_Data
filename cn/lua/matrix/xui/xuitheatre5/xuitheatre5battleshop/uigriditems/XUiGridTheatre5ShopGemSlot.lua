@@ -54,6 +54,10 @@ function XUiGridTheatre5ShopGemSlot:OnBtnLockClickEvent()
 
     -- 判断金币是否足够
     if cost <= goldNum then
+        -- 在手机上可以同时点击两个不同位置的槽位，导致重复弹出
+        if XLuaUiManager.IsStackUiOpen("UiTheatre5PopupCommon") then
+            return
+        end
         XMVCA.XTheatre5:TryPopupDialog(XUiHelper.GetText("TipTitle"), content, nil, function()
             XMVCA.XTheatre5:RequestTheatre5ShopUnlockGridRequest(XMVCA.XTheatre5.EnumConst.ItemType.Equip)
         end, nil, nil, nil, nil, nil, true)

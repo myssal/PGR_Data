@@ -18,7 +18,7 @@ function XUiGridPurchaseThreeDay:Update()
 end
 
 ---@param purchase XPurchasePackage
-function XUiGridPurchaseThreeDay:UpdateData(id, reward, isPurchaseEnter, isShow, index)
+function XUiGridPurchaseThreeDay:UpdateData(id, reward, isPurchaseEnter, isShow, index, isBuyPurchase)
     self.Id = id
     self.Reward = reward
     self.IsPurchaseEnter = isPurchaseEnter
@@ -32,19 +32,34 @@ function XUiGridPurchaseThreeDay:UpdateData(id, reward, isPurchaseEnter, isShow,
         isToday = index == self.WeekData:GetCurRoundDay()
         isGain = self.WeekData:CheckIsGotByRoundAndDay(1, index)
         isExpired = self.WeekData:CheckIsPreviousDay(1, index)
+    else
+        -- 三日礼包不会过期，没有数据默认已全部领取完
+        if isPurchaseEnter then
+            isGain = isBuyPurchase
+        end
     end
 
     --大奖
     self.RImgBgHighlight.gameObject:SetActiveEx(isBatter)
+    -- 已领取和已过期不能同时有，优先已领取
     --已领取
     self.ImgGot.gameObject:SetActiveEx(isGain)
-    --已过期
-    self.ImgMask.gameObject:SetActiveEx(isExpired)
+    --已过期：从礼包中打开
+    if self.ImgMask then
+        -- 通用逻辑是前天或当天的奖励都属于之前的奖励
+        if isExpired then
+            -- 如果是当天的奖励，且没有领取，则不属于过期范畴
+            if isToday and not isGain then
+                isExpired = false
+            end
+        end
+        self.ImgMask.gameObject:SetActiveEx(isExpired and not isGain)
+    end
 
     if reward then
         self.TemplateId = reward.TemplateId
         self.BtnGift:SetRawImage(XDataCenter.ItemManager.GetItemIcon(self.TemplateId))
-        self.BtnGift:SetNameByGroup(0, reward.Count)
+        self.BtnGift:SetNameByGroup(0, XUiHelper.GetText('PayQuickBuyNumber', reward.Count))
     end
 
     if not isPurchaseEnter and not reward then
@@ -52,7 +67,8 @@ function XUiGridPurchaseThreeDay:UpdateData(id, reward, isPurchaseEnter, isShow,
         return
     end
 
-    if not isShow or not isToday then
+    -- 如果是礼包打开详情，或不属于当天的奖励，则不进行后续领取的逻辑
+    if self.IsPurchaseEnter or not isToday then
         return
     end
 
@@ -79,6 +95,7 @@ function XUiGridPurchaseThreeDay:GetThreeDayCardReward()
             self:HandlerReward(rewards)
             self.WeekData:SetWeekCardGotToday()
             self:Update()
+            XEventManager.DispatchEvent(XEventId.EVENT_DAYLY_REFESH_RECHARGE_BTN)
         end)
     end)
 end

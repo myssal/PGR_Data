@@ -37,7 +37,7 @@ end
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field _Control XSkyGardenCafeControl
-local XUiSkyGardenCafePopupSettlement = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafePopupSettlement")
+local XUiSkyGardenCafePopupSettlement = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafePopupSettlement")
 
 function XUiSkyGardenCafePopupSettlement:OnAwake()
     self:InitUi()
@@ -59,18 +59,10 @@ function XUiSkyGardenCafePopupSettlement:InitUi()
 end
 
 function XUiSkyGardenCafePopupSettlement:InitCb()
-    self.BtnTanchuangCloseBig.CallBack = function() 
-       self:OnBtnCloseClick()
-    end
-    self.BtnAgain.CallBack = function()
-        self:OnBtnAgainClick()
-    end
-    self.BtnRechallenge.CallBack = function()
-        self:OnBtnRechallengeClick()
-    end
-    self.BtnContinue.CallBack = function()
-        self:OnBtnContinueClick()
-    end
+    self.BtnTanchuangCloseBig:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnAgain:AddEventListener(handler(self, self.OnBtnAgainClick))
+    self.BtnRechallenge:AddEventListener(handler(self, self.OnBtnRechallengeClick))
+    self.BtnContinue:AddEventListener(handler(self, self.OnBtnContinueClick))
 end
 
 function XUiSkyGardenCafePopupSettlement:InitView()

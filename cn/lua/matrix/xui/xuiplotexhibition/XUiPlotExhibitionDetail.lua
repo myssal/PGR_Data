@@ -6,6 +6,9 @@ local XUiPlotExhibitionDetailStoryGrid = require("XUi/XUiPlotExhibition/XUiPlotE
 local XUiPlotExhibitionDetail = XLuaUiManager.Register(XLuaUi, "UiPlotExhibitionDetail")
 
 function XUiPlotExhibitionDetail:OnAwake()
+    self._IsScrolling = false
+    self._TimerNextSetScrollingFalse = false
+
     self.GridMember.gameObject:SetActiveEx(false)
     self.GridChapter.gameObject:SetActiveEx(false)
     self:BindExitBtns()
@@ -14,6 +17,49 @@ function XUiPlotExhibitionDetail:OnAwake()
 
     ---@type XDynamicTableNormal
     self.DynamicTableNormal = XUiHelper.DynamicTableNormal(self, self.ListMember, XUiPlotExhibitionDetailCharacterGrid)
+
+    ---@type UnityEngine.UI.ScrollRect
+    local listChapter = self.ListChapter
+    local gridHeight = self.GridChapter.rect.height
+    local autoLayoutGroup = listChapter.content:GetComponent("XAutoLayoutGroup")
+    local spacing = 0
+    if autoLayoutGroup then
+        spacing = autoLayoutGroup.Spacing.y
+    else
+        spacing = 36
+        XLog.Error("[XUiPlotExhibitionDetail] 根据剧情滚动选中角色可能出错。ui结构发生了改变？找不到XAutoLayoutGroup")
+    end
+    gridHeight = gridHeight + spacing
+
+    listChapter.onValueChanged:AddListener(function()
+        if self._IsScrolling then
+            return
+        end
+        local y = listChapter.content.transform.anchoredPosition.y
+        local index = math.ceil(y / gridHeight - 0.5) + 1
+        local storyList = self._Control:GetUiData().StoryDetail.StoryList
+        index = XMath.Clamp(index, 1, #storyList)
+        ---@type XPlotExhibitionControlStory
+        local data = storyList[index]
+        if data then
+            local characterId = data.CharacterId
+            ---@type XPlotExhibitionControlCharacter[]
+            local characterDatas = self.DynamicTableNormal.DataSource
+            for i = 1, #characterDatas do
+                if characterDatas[i].Id == characterId then
+                    self:SetCharacterSelected(i)
+                    break
+                end
+            end
+        end
+    end)
+end
+
+function XUiPlotExhibitionDetail:OnDestroy()
+    if self._TimerNextSetScrollingFalse then
+        XScheduleManager.UnSchedule(self._TimerNextSetScrollingFalse)
+        self._TimerNextSetScrollingFalse = false
+    end
 end
 
 function XUiPlotExhibitionDetail:OnStart(characterId)
@@ -35,7 +81,7 @@ function XUiPlotExhibitionDetail:OnDisable()
 end
 
 function XUiPlotExhibitionDetail:Update(characterId)
-    self._Control:UpdateDetail()
+    self._Control:UpdateDetail(true)
     local data = self._Control:GetUiData().Detail
     local characterList = data.CharacterList
     self.DynamicTableNormal:SetDataSource(characterList)
@@ -47,7 +93,6 @@ function XUiPlotExhibitionDetail:Update(characterId)
     end
     self.TxtTitle01.text = data.Name
     self:UpdateStory()
-
 end
 
 ---@param grid XUiPlotExhibitionDetailCharacterGrid
@@ -60,11 +105,24 @@ function XUiPlotExhibitionDetail:OnDynamicTableEvent(event, index, grid)
         local data = self.DynamicTableNormal:GetData(index)
         self:ScrollToCharacterId(data.Id)
 
+        ---@type XUiPlotExhibitionDetailCharacterGrid[]
         local girds = self.DynamicTableNormal:GetGrids()
         for i, otherGrid in pairs(girds) do
             if index ~= i then
                 otherGrid:Deselected()
             end
+        end
+    end
+end
+
+function XUiPlotExhibitionDetail:SetCharacterSelected(index)
+    ---@type XUiPlotExhibitionDetailCharacterGrid[]
+    local girds = self.DynamicTableNormal:GetGrids()
+    for i, grid in pairs(girds) do
+        if index == i then
+            grid:Select()
+        else
+            grid:Deselected()
         end
     end
 end
@@ -93,7 +151,7 @@ function XUiPlotExhibitionDetail:ScrollToCharacterId(characterId)
 end
 
 function XUiPlotExhibitionDetail:UpdateStory()
-    self._Control:UpdateStoryDetail()
+    self._Control:UpdateStoryDetail(true)
     XTool.UpdateDynamicItem(self._GridStory, self._Control:GetUiData().StoryDetail.StoryList, self.GridChapter, XUiPlotExhibitionDetailStoryGrid, self)
 end
 
@@ -150,9 +208,15 @@ function XUiPlotExhibitionDetail:ScrollTo(scrollRect, childTransform, time)
 
     -- 如果有时间参数，则使用插值滚动
     if time and time > 0 then
+        self._IsScrolling = true
         local startPosition = scrollRect.verticalNormalizedPosition
         XUiHelper.Tween(time, function(value)
             scrollRect.verticalNormalizedPosition = startPosition * (1 - value) + targetPosition * value
+        end, function()
+            self._TimerNextSetScrollingFalse = XScheduleManager.ScheduleNextFrame(function()
+                self._IsScrolling = false
+                self._TimerNextSetScrollingFalse = false
+            end)
         end)
     else
         -- 直接设置位置

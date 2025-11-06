@@ -21,7 +21,7 @@ local TableKey = {
     Theatre3Config = { ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key" },
     Theatre3Task = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client },
     Theatre3EquipSuit = {},
-    Theatre3EquipSuitEffectGroup = {CacheType = XConfigUtil.CacheType.Temp},
+    Theatre3EquipSuitEffectGroup = {},
     Theatre3Equip = {},
     Theatre3Item = {},
     Theatre3Ending = { CacheType = XConfigUtil.CacheType.Normal },

@@ -101,10 +101,10 @@ function XPanelCharacterOwnedInfoV2P6:OnEnable()
     --XRedPointConditions.Types.CONDITION_CHARACTER_NEW_ENHANCESKILL_TIPS, XRedPointConditions.Types.CONDITION_CHARACTER_EVO_SKILL_TIPS_RED }, characterId)
     --self.RedBtnEvolution = XRedPointManager.AddRedPointEvent(self.BtnEvolution, self.OnCheckEvolutionRedPoint, self, { XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
 
-    self._FuncBtnFree:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_EXHIBITION_NEW }, characterId)
-    self._FuncBtnTrain:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_GRADE,
+    self.RedBtnFree = self._FuncBtnFree:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_EXHIBITION_NEW }, characterId)
+    self.RedBtnTrain = self._FuncBtnTrain:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_GRADE,
                                                   XRedPointConditions.Types.CONDITION_CHARACTER_NEW_ENHANCESKILL_TIPS, XRedPointConditions.Types.CONDITION_CHARACTER_EVO_SKILL_TIPS_RED }, characterId)
-    self._FuncBtnEvolution:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
+    self.RedBtnEvolution = self._FuncBtnEvolution:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
 end
 
 function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
@@ -201,9 +201,10 @@ function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
     -- self:AprilFoolShowHandle()
 
     -- 蓝点
-    --XRedPointManager.Check(self.RedBtnFree, characterId)
-    --XRedPointManager.Check(self.RedBtnTrain, characterId)
-    --XRedPointManager.Check(self.RedBtnEvolution, characterId)
+    -- 因为参数变了，需要单独重新刷新
+    XRedPointManager.Check(self.RedBtnFree, characterId)
+    XRedPointManager.Check(self.RedBtnTrain, characterId)
+    XRedPointManager.Check(self.RedBtnEvolution, characterId)
     
     self._FuncBtnFree:RefreshReddot()
     self._FuncBtnTrain:RefreshReddot()

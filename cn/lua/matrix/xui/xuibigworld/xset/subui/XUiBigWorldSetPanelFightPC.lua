@@ -184,15 +184,9 @@ function XUiBigWorldSetPanelFightPC:_RegisterButtonClicks()
         self:OnPatternGroupClick(index)
     end)
 
-    self.TogEnableJoystick.CallBack = function()
-        self:OnTogEnableJoystickClick()
-    end
-    self.TogEnableKeyboard.CallBack = function()
-        self:OnTogEnableKeyboardClick()
-    end
-    self.BtnCloseInput.CallBack = function()
-        self:OnBtnCloseInputClick()
-    end
+    self.TogEnableJoystick:AddEventListener(handler(self, self.OnTogEnableJoystickClick))
+    self.TogEnableKeyboard:AddEventListener(handler(self, self.OnTogEnableKeyboardClick))
+    self.BtnCloseInput:AddEventListener(handler(self, self.OnBtnCloseInputClick))
     self.BtnCloseInput:SetBarrierType(XUiRespondBarrierType.Mouse2)
 end
 

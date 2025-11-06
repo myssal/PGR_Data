@@ -5,11 +5,12 @@ local XUiPanelTheatre5SettleGameDetail = XClass(XUiNode, 'XUiPanelTheatre5Settle
 local XUiPanelTheatre5SettleSkill = require('XUi/XUiTheatre5/XUiTheatre5Settlement/XUiPanelTheatre5SettleSkill')
 local XUiPanelTheatre5SettleGem = require('XUi/XUiTheatre5/XUiTheatre5Settlement/XUiPanelTheatre5SettleGem')
 local XUiGridTheatre5Container = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Container')
+local XUiGridTheatre5Relic = require("XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Relic")
 
 ---@param resultData XDlcFightSettleData
 function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
     self.ResultData = resultData
-    
+
     ---@type XUiPanelTheatre5Skill
     self.PanelSkill = XUiPanelTheatre5SettleSkill.New(self.ListSkillBag, self, XUiGridTheatre5Container)
     ---@type XUiPanelTheatre5Gem
@@ -21,8 +22,21 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
     self.BtnName.CallBack = handler(self, self.OnBtnNameClickEvent)
     self.BtnBagMaskDetailShow.CallBack = handler(self, self.OnBtnMaskDetailShowClickEvent)
     self.BtnNextPage.CallBack = handler(self, self.OnBtnNextPageClickEvent)
-    
+
     self:InitCharacter()
+
+    self._GridRelics = {}
+    self.RelicContainer = self.RelicContainer or XUiHelper.TryGetComponent(self.Transform, "PanelRight/PanelListRelic/PanelRelic/RelicContainer", "RectTransform")
+    if self.RelicContainer then
+        self.RelicContainer.gameObject:SetActiveEx(false)
+        local relics = self._Control:GetUiDataRelics()
+        for i = #relics, 1, -1 do
+            if not relics[i].IsUnlock then
+                table.remove(relics, i)
+            end
+        end
+        XTool.UpdateDynamicItem(self._GridRelics, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
+    end
 end
 
 function XUiPanelTheatre5SettleGameDetail:OnEnable()
@@ -42,15 +56,19 @@ function XUiPanelTheatre5SettleGameDetail:InitCharacter()
 
     if characterCfg then
         self.BtnName:SetNameByGroup(0, characterCfg.Name)
-        
+
         local matchImg = self._Control.CharacterControl:GetMatchImgByCharacterIdCurMode(characterCfg.Id)
 
         if not string.IsNilOrEmpty(matchImg) then
             self.ImgHead:SetRawImage(matchImg)
         end
     end
-end
 
+    local level = self._Control:GetCharacterLevel()
+    if self.TxtNum then
+        self.TxtNum.text = level
+    end
+end
 
 function XUiPanelTheatre5SettleGameDetail:RefreshGameProgressShow()
     if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
@@ -72,23 +90,23 @@ function XUiPanelTheatre5SettleGameDetail:RefreshGameProgressShow()
         local chapterIdCompleted = self._Control.PVEControl:GetChapterIdCompleted()
         local chapterLevelCompleted = self._Control.PVEControl:GetChapterLevelCompleted()
         local chapterCfg = self._Control.PVEControl:GetPveChapterCfg(chapterIdCompleted)
-        local chapterLevelCfgs = self._Control.PVEControl:GetPveChapterLevelCfgs(chapterCfg.LevelGroup)    
+        local chapterLevelCfgs = self._Control.PVEControl:GetPveChapterLevelCfgs(chapterCfg.LevelGroup)
         local targetCount = #chapterLevelCfgs
         local curChapterLevel = chapterLevelCompleted
         if curChapterLevel == -1 then
             curChapterLevel = targetCount + 1
-        end    
+        end
         self._CupList = XUiHelper.RefreshUiObjectList(self._CupList, self.ListCup, self.GridCup, targetCount, function(index, grid)
             if grid.ImgOn then
                 grid.ImgOn.gameObject:SetActiveEx(index < curChapterLevel)
             end
         end)
-        
+
         local chapterIdCompleted = self._Control.PVEControl:GetChapterIdCompleted()
         if XTool.IsNumberValid(chapterIdCompleted) then
             local chapterCfg = self._Control.PVEControl:GetPveChapterCfg(chapterIdCompleted)
             self.TxtLifeNum.text = string.format("%d/%d", self.ResultData.XAutoChessGameplayResult.Health, chapterCfg.Hp)
-        end    
+        end
 
     end
 end

@@ -6,7 +6,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 ---@field Transform UnityEngine.Transform
 ---@field _Control XSkyGardenCafeControl
 ---@field _GridCardSmall XUiGridSGCardItem[]
-local XUiSkyGardenCafeHandBook = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafeHandBook")
+local XUiSkyGardenCafeHandBook = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafeHandBook")
 
 local XUiGridSGCardItem = require("XUi/XUiSkyGarden/XCafe/Grid/XUiGridSGCardItem")
 local XUiSGGridQualityLimit = require("XUi/XUiSkyGarden/XCafe/Grid/XUiSGGridQualityLimit")
@@ -95,21 +95,21 @@ function XUiSkyGardenCafeHandBook:InitUi()
 end
 
 function XUiSkyGardenCafeHandBook:InitCb()
-    self.BtnBack.CallBack = function() self:OnBtnBackClick() end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     
-    self.BtnDelete.CallBack = function() self:OnBtnDeleteClick() end
+    self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
     
-    self.BtnStart.CallBack = function() self:OnBtnStartClick() end
+    self.BtnStart:AddEventListener(handler(self, self.OnBtnStartClick))
     
-    self.BtnSave.CallBack = function() self:OnBtnSaveClick() end
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
     
-    self.BtnToggle.CallBack = function() self:OnBtnToggleClick() end
+    self.BtnToggle:AddEventListener(handler(self, self.OnBtnToggleClick))
     
-    self.BtnArriveNew.CallBack = function() self:OnBtnArriveNewClick() end
+    self.BtnArriveNew:AddEventListener(handler(self, self.OnBtnArriveNewClick))
     
-    self.BtnToggleScreen.CallBack = function() self:OnBtnToggleScreenClick() end
+    self.BtnToggleScreen:AddEventListener(handler(self, self.OnBtnToggleScreenClick))
     
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
     
     self._SortCardIdAscendingCb = function(idA, idB)
         local pA = self._Control:GetCustomerQuality(idA)

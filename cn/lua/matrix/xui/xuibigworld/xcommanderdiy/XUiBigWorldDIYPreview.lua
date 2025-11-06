@@ -20,7 +20,7 @@ function XUiBigWorldDIYPreview:Refresh(entity)
 end
 
 function XUiBigWorldDIYPreview:_RegisterButtonClicks()
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
 end
 
 return XUiBigWorldDIYPreview

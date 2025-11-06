@@ -155,6 +155,23 @@ function XBigWorldCourseControl:SyncCurrentRecordTaskProgress(versionId)
     self._CurrentTaskProgress[versionId] = self._Model:GetCurrentTaskProgress(versionId)
 end
 
+---@param taskEntitys XBWCourseTaskEntity[]
+function XBigWorldCourseControl:FinishMultiTask(taskEntitys)
+    local taskIds = {}
+
+    if not XTool.IsTableEmpty(taskEntitys) then
+        for _, taskEntity in pairs(taskEntitys) do
+            if taskEntity:IsAchieved() then
+                table.insert(taskIds, taskEntity:GetTaskId())
+            end
+        end
+    end
+
+    if not XTool.IsTableEmpty(taskIds) then
+        XMVCA.XBigWorldService:FinishMultiTasks(taskIds)
+    end
+end
+
 --- endregion
 
 --- region 箱庭探索

@@ -16,7 +16,7 @@ function XBuffScript1016018:Init()
     self.timer = 0
     self.stopTimer = 0
     self.cd = 1
-    self.effTime = 10
+    self.effTime = 10.5   --延迟0.5秒结束，避免伤害段数被吞
     ------------执行------------
 end
 ---@param dt number @ delta time

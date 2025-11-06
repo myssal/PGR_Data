@@ -15,6 +15,8 @@ function XUiPanelMainLineExhibition:Ctor(ui, root)
     self.GridChapterFubenChallenge.gameObject:SetActiveEx(false)
     self.BtnGoRight.gameObject:SetActiveEx(false)
     self.BtnGoLeft.gameObject:SetActiveEx(false)
+    -- 滚动条总是显示，显隐交给动画控制
+    self.ScrollBar.gameObject:SetActiveEx(true)
     self:RegisterUiEvents()
     self:InitDragArea()
     self:InitModuleList()
@@ -22,11 +24,13 @@ function XUiPanelMainLineExhibition:Ctor(ui, root)
 end
 
 function XUiPanelMainLineExhibition:SetData(firstTagId, groupIndex, chapterIndex)
-    
+
 end
 
 function XUiPanelMainLineExhibition:OnEnable()
-    if self.IsEnable then return end
+    if self.IsEnable then
+        return
+    end
     self.IsEnable = true
 
     self:RefreshBgByPos()
@@ -34,7 +38,7 @@ function XUiPanelMainLineExhibition:OnEnable()
     self:RefreshBtnBookmark()
     self:RefreshBtnGoLastPassedChapter()
     self:CheckShowChapterPrefab()
-    
+
     -- 新手提示，新手期间禁用拖拽和缩放
     local isNewable, tips = self:IsNewbie()
     self.LockText.text = tips
@@ -51,7 +55,7 @@ function XUiPanelMainLineExhibition:OnEnable()
             self:LocateByIndex(curModuleIndex, curChapterIndex)
         end
     end
-    
+
     -- 子界面OnEnable
     for _, module in pairs(self.ModuleList) do
         module:OnEnable()
@@ -80,7 +84,7 @@ function XUiPanelMainLineExhibition:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnGoRight, self.OnBtnGoLastPassedChapter, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnGoLeft, self.OnBtnGoLastPassedChapter, nil, true)
     XEventManager.AddEventListener(XEventId.EVENT_MAINLINE_EXHIBITION_LOCATE, self.OnEventLocate, self)
-    
+
     -- 滑动条
     self.ScrollBar.onValueChanged:AddListener(function(v)
         self:OnScrollBarValueChanged(v)
@@ -93,7 +97,7 @@ function XUiPanelMainLineExhibition:OnBtnBookmarkClick()
     if not bookmarkData then
         local tips = XMVCA.XMainLine2:GetClientConfigParams("NoBookmarkTips", 1)
         XUiManager.TipError(tips)
-        return 
+        return
     end
 
     -- 二次确认是否播放书签剧情
@@ -128,12 +132,16 @@ function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
     local allWidth = self:GetAllDragAreaWidth()
     local width = math.abs(posX + pivotX * allWidth)  -- 计算pivotX为0时的位置
     local progress = width / allWidth
-    if progress > 1 then progress = 1 end
-    if progress < 0 then progress = 0 end
+    if progress > 1 then
+        progress = 1
+    end
+    if progress < 0 then
+        progress = 0
+    end
     self.IsUpdateScrollBarProgress = true -- 仅更新进度不触发回调
     self.ScrollBar.value = progress
     self.IsUpdateScrollBarProgress = false
-    
+
     -- 更新背景图
     self:RefreshBgByPos()
     -- 更新跳转按钮
@@ -158,7 +166,7 @@ end
 
 -- 事件触发定位
 function XUiPanelMainLineExhibition:OnEventLocate(...)
-    local args = {...}
+    local args = { ... }
     local exhibitionModuleId = tonumber(args[1])
     local exhibitionChapterId = tonumber(args[2])
 
@@ -183,7 +191,7 @@ function XUiPanelMainLineExhibition:OnEventLocate(...)
         XLog.Error(string.format("定位到 ExhibitionModuleId:%s 失败！", exhibitionModuleId))
         return
     end
-    
+
     local curModuleIndex, curChapterIndex = XMVCA.XMainLine2:GetExhibitionCurrentModuleIndexAndChapterIndex()
     self:LocateByIndex(curModuleIndex, curChapterIndex)
 end
@@ -194,9 +202,13 @@ function XUiPanelMainLineExhibition:SwitchDetailUi()
     for _, module in pairs(self.ModuleList) do
         module:SwitchDetailUi()
     end
-    
+
+    -- 改为常驻显现，不需要动画和切换
+    --[[
     self.UiPanelModuleDropdown:Open()
     self:HideScrollBar()
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnCurModuleEnable")
+    ]]
 end
 
 -- 切换章节简略UI
@@ -206,8 +218,15 @@ function XUiPanelMainLineExhibition:SwitchBriefUi()
         module:SwitchBriefUi()
     end
 
-    self.UiPanelModuleDropdown:Close()
-    self:ShowScrollBar()
+    -- 改为常驻显现，不需要动画和切换
+    --[[
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnCurModuleDisable", function()
+        if self.IsShowDetailUi == false then
+            self.UiPanelModuleDropdown:Close()
+            self:ShowScrollBar()
+        end
+    end)
+    ]]
 end
 
 function XUiPanelMainLineExhibition:InitDragArea()
@@ -266,11 +285,11 @@ function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex)
     self.CurModuleIndex = moduleIndex
     self.CurChapterIndex = chapterIndex
     local halfShowAreaWidth = self:GetHalfShowAreaWidth()
-    
+
     -- 以模块的左边确定位置
     local moveWidth = self:GetMoveToModuleStartWidth(moduleIndex)
     moveWidth = moveWidth * scale
-    
+
     -- 配置chapterIndex时，对应章节在屏幕中心显示
     if chapterIndex then
         local gridModule = self.ModuleList[moduleIndex]
@@ -287,7 +306,7 @@ function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex)
         if offsetWidth > maxOffsetWidth then
             offsetWidth = maxOffsetWidth
         end
-        
+
         moveWidth = moveWidth + offsetWidth
     end
 
@@ -315,6 +334,13 @@ end
 
 -- 刷新背景图
 function XUiPanelMainLineExhibition:RefreshBg(moduleId)
+    if self._OldModuleId == moduleId then
+        return
+    end
+    if self._OldModuleId then
+        XUiHelper.PlayUiNodeAnimation(self.Transform, "BgQieHuan")
+    end
+    self._OldModuleId = moduleId
     local moduleConfig = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
     self.BgImage:SetRawImage(moduleConfig.BgImage)
     self:SetDropdownModuleId(moduleId)
@@ -328,7 +354,7 @@ function XUiPanelMainLineExhibition:RefreshBgByPos()
     local paddingLeft = self.PanelModuleLayoutGroup.padding.left * scale
     local spacing = self.PanelModuleLayoutGroup.spacing * scale
     moveWidth = moveWidth + halfShowAreaWidth - paddingLeft -- 屏幕中心点位置
-    
+
     for _, module in ipairs(self.ModuleList) do
         local moduleWidth = module:GetWidth() * scale
         if moveWidth >= 0 and moveWidth - moduleWidth <= 0 then
@@ -348,15 +374,43 @@ function XUiPanelMainLineExhibition:RefreshBtnGoLastPassedChapter()
         self.BtnGoRight.gameObject:SetActiveEx(false)
         return
     end
-    
+
     local moduleIndex, chapterIndex = self:GetExhibitionChapterIndex(exhibitionChapterId)
     local isInArea, isInAreaLeft = self:IsExhibitionChapterInShowArea(moduleIndex, chapterIndex)
-    if isInArea then
-        self.BtnGoLeft.gameObject:SetActiveEx(false)
-        self.BtnGoRight.gameObject:SetActiveEx(false)
-    else
-        self.BtnGoLeft.gameObject:SetActiveEx(isInAreaLeft)
-        self.BtnGoRight.gameObject:SetActiveEx(not isInAreaLeft)
+    --if isInArea then
+    --    self.BtnGoLeft.gameObject:SetActiveEx(false)
+    --    self.BtnGoRight.gameObject:SetActiveEx(false)
+    --else
+    --    self.BtnGoLeft.gameObject:SetActiveEx(isInAreaLeft)
+    --    self.BtnGoRight.gameObject:SetActiveEx(not isInAreaLeft)
+    --end
+    local isLeft = not isInArea and isInAreaLeft
+    local isRight = not isInArea and not isInAreaLeft
+    if self._IsLeft ~= isLeft then
+        self._IsLeft = isLeft
+        if isLeft then
+            self.BtnGoLeft.gameObject:SetActiveEx(true)
+            XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnGoLeftEnable")
+        else
+            XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnGoLeftDisable",function()
+                if not self._IsLeft then
+                    self.BtnGoLeft.gameObject:SetActiveEx(false)
+                end
+            end)
+        end
+    end
+    if self._IsRight ~= isRight then
+        self._IsRight = isRight
+        if isRight then
+            self.BtnGoRight.gameObject:SetActiveEx(true)
+            XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnGoRightEnable")
+        else
+            XUiHelper.PlayUiNodeAnimation(self.Transform, "BtnGoRightDisable",function()
+                if not self._IsRight then
+                    self.BtnGoRight.gameObject:SetActiveEx(false)
+                end
+            end)
+        end
     end
 end
 
@@ -401,7 +455,7 @@ end
 ---@return boolean 是否在显示区域左边
 function XUiPanelMainLineExhibition:IsExhibitionChapterInShowArea(moduleIndex, chapterIndex, offset)
     offset = offset or 0
-    
+
     -- 左边到模块开始的长度
     local scale = self:GetCurrentScale()
     local moduleStartWidth = self:GetMoveToModuleStartWidth(moduleIndex) * scale
@@ -412,11 +466,11 @@ function XUiPanelMainLineExhibition:IsExhibitionChapterInShowArea(moduleIndex, c
     local gridChapter = gridModule:GetGridChapter(chapterIndex)
     local chapterPosX = gridChapter:GetLocalPosition().x
     local maxMoveWidth = moduleStartWidth + (moduleWidth / 2 + chapterPosX) * scale
-    
+
     -- 最小移动长度
     local showAreaWidth = self:GetShowAreaWidth()
     local minMoveWidth = maxMoveWidth - showAreaWidth
-    
+
     local curMoveWidth = math.abs(self.PanelModule.anchoredPosition.x)
     local isInArea = curMoveWidth >= (minMoveWidth - offset) and curMoveWidth <= (maxMoveWidth + offset)
     local isInAreaLeft = curMoveWidth > maxMoveWidth
@@ -427,8 +481,10 @@ end
 function XUiPanelMainLineExhibition:GetMoveToModuleStartWidth(moduleIndex)
     self.ModuleStartWidthDic = self.ModuleStartWidthDic or {}
     local width = self.ModuleStartWidthDic[moduleIndex]
-    if width then return width end
-    
+    if width then
+        return width
+    end
+
     width = self.PanelModuleLayoutGroup.padding.left
     local spacing = self.PanelModuleLayoutGroup.spacing
     for i, gridModule in ipairs(self.ModuleList) do
@@ -493,8 +549,10 @@ end
 -- 滚动条的值发生变化
 function XUiPanelMainLineExhibition:OnScrollBarValueChanged(v)
     -- 仅更新进度不触发回调
-    if self.IsUpdateScrollBarProgress then return end
-    
+    if self.IsUpdateScrollBarProgress then
+        return
+    end
+
     local allWidth = self:GetAllDragAreaWidth()
     local curPosX = allWidth * v
     self.PanelModule.anchoredPosition = XLuaVector2.New(-curPosX, 0)
@@ -503,13 +561,15 @@ end
 -- 显示滑动条
 function XUiPanelMainLineExhibition:ShowScrollBar()
     self.IsShowScrollBar = true
-    self.ScrollBar.gameObject:SetActiveEx(true)
+    --self.ScrollBar.gameObject:SetActiveEx(true)
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "ScrollBarEnable")
 end
 
 -- 隐藏滑动条
 function XUiPanelMainLineExhibition:HideScrollBar()
     self.IsShowScrollBar = false
-    self.ScrollBar.gameObject:SetActiveEx(false)
+    --self.ScrollBar.gameObject:SetActiveEx(false)
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "ScrollBarDisable")
 end
 --endregion
 
@@ -543,7 +603,7 @@ function XUiPanelMainLineExhibition:GetFirstNewTagExhibitionChapterId()
     if self.firstNewTagExhibitionChapterId then
         return self.firstNewTagExhibitionChapterId
     end
-    
+
     if not self.firstNewTagExhibitionChapterId then
         for _, module in ipairs(self.ModuleList) do
             local chapterList = module:GetChapterList()

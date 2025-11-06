@@ -87,7 +87,7 @@ function XUiSkyGardenShoppingStreetTargetGridTarget:SetFinish(cb)
     self.ImgComplete.gameObject:SetActive(true)
 
     if cb then
-        self.UiSkyGardenShoppingStreetGridTarget.CallBack = function () cb(self._index) end
+        self.UiSkyGardenShoppingStreetGridTarget:AddEventListener(function () cb(self._index) end)
     end
 end
 

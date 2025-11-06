@@ -46,8 +46,10 @@ function XUiGridRaceFightUltraSkill:Update(charCfg, actorIndex, index)
     self:RemoveTimer()
     self._WaitTimerId = XScheduleManager.ScheduleOnce(function()
         self:ClearCamera()
-        self.Parent:HideTips(charCfg, index)
+        self.Parent:HideTips(charCfg, self)
     end, tonumber(self._Control:GetClientConfig("UtlraSkillShowTime")) or 2000)
+
+    self.Transform:SetAsLastSibling()
 end
 
 function XUiGridRaceFightUltraSkill:_RegisterButtonClicks()

@@ -3880,7 +3880,7 @@
     },
     {
         "Key": "GradeStarNum",
-        "Text": "<size=50><color=#0f70bc>{0}</color></size>/{1}"
+        "Text": "<size=42><color=#0f70bc>{0}</color></size>/{1}"
     },
     {
         "Key": "FurnitureCreateSuccess",
@@ -5976,7 +5976,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "<size=36>{0}/{1}</size>"
+        "Text": "{0}<color=#00000><size=34>/{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -19730,6 +19730,10 @@
         "Text": "退出游戏"
     },
     {
+        "Key": "CloudGameLaunchErrMsg",
+        "Text": "云游戏启动失败，请稍后重试或联系客服"
+    },
+    {
         "Key": "StorySkipDesc",
         "Text": "是否跳过该剧情？”"
     },
@@ -19791,7 +19795,7 @@
     },
     {
         "Key": "RaceRoundTimeTip1",
-        "Text": "距离竞猜结束还有{0}"
+        "Text": "距离预测结束还有{0}"
     },
     {
         "Key": "RaceRoundTimeTip2",
@@ -19903,7 +19907,7 @@
     },
     {
         "Key": "RaceFightQuitContent",
-        "Text": "是否退出直播"
+        "Text": "是否退出比赛"
     },
     {
         "Key": "RaceMatchTimeLeft",
@@ -20022,8 +20026,16 @@
         "Text": "第{0}名"
     },
     {
+        "Key": "RaceNotAchieved",
+        "Text": "未达成"
+    },
+    {
         "Key": "RaceEndDesc",
-        "Text": "比赛已结束，即将返回比赛现场"
+        "Text": "比赛已结束，即将返回星间飞驰主界面"
+    },
+    {
+        "Key": "RaceErrorDesc",
+        "Text": "直播异常，即将返回星间飞驰主界面"
     },
     {
         "Key": "TeamPrefabMaxCountReached",
@@ -20147,7 +20159,7 @@
     },
     {
         "Key": "PurchaseFirstRechargeTipTitle",
-        "Text": "首充说明"
+        "Text": "首次采购说明"
     },
     {
         "Key": "EquipTakeOffSuccess",
@@ -20159,7 +20171,7 @@
     },
     {
         "Key": "TeamPrefabResonanceNeedUnlock",
-        "Text": "共鸣未解锁，无法使用"
+        "Text": "当前共鸣槽位无法使用"
     },
     {
         "Key": "TeamPrefabOverrunNeedUnlock",
@@ -20168,5 +20180,13 @@
     {
         "Key": "TeamPrefabWeaponEquippedByOtherInPreset",
         "Text": "编队内其他角色使用了重复装备，无法上阵"
+    },
+    {
+        "Key": "NecessaryResourcesNotDownloaded",
+        "Text": "未下载必要资源"
+    },
+    {
+        "Key": "SpeedRunTips",
+        "Text": "跳过包含<color=#28CFFFFF>剧情探索及互动</color>的常规关卡流程，击败所有敌人即可通关"
     }
 ]

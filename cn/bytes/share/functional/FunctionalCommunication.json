@@ -1,5 +1,20 @@
 [
     {
+        "Id": 100,
+        "Name": "哈桑回顾",
+        "Priority": 1,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 100,
+        "ConditionIds": [
+            863058
+        ]
+    },
+    {
         "Id": 101,
         "Name": "剧情任务",
         "Priority": 1,
@@ -18,8 +33,8 @@
         "Id": 102,
         "Name": "获得角色丽芙",
         "Priority": 2,
-        "SkipId": 21,
-        "BtnContent": "好的，我知道了",
+        "SkipId": 0,
+        "BtnContent": "欢迎入队，丽芙",
         "NpcName": "丽芙",
         "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
         "Type": 1,
@@ -91,8 +106,8 @@
     },
     {
         "Id": 2,
-        "Name": "装备与培养武器",
-        "Priority": 7,
+        "Name": "角色碎片",
+        "Priority": 26,
         "SkipId": 21,
         "BtnContent": "好的，我知道了",
         "NpcName": "丽芙",
@@ -101,7 +116,7 @@
         "UiType": 1,
         "ContentsGroupId": 114,
         "ConditionIds": [
-            84100109
+            84100111
         ]
     },
     {
@@ -176,7 +191,7 @@
         "UiType": 1,
         "ContentsGroupId": 5,
         "ConditionIds": [
-            70005
+            770424
         ]
     },
     {
@@ -241,7 +256,7 @@
     },
     {
         "Id": 8,
-        "Name": "挑战-试炼副本",
+        "Name": "意识营救战",
         "Priority": 17,
         "SkipId": 21,
         "BtnContent": "好的，我知道了",
@@ -251,7 +266,7 @@
         "UiType": 1,
         "ContentsGroupId": 8,
         "ConditionIds": [
-            70008
+            863061
         ]
     },
     {
@@ -431,7 +446,7 @@
         "UiType": 1,
         "ContentsGroupId": 18,
         "ConditionIds": [
-            70018
+            601000
         ]
     },
     {
@@ -446,7 +461,7 @@
         "UiType": 1,
         "ContentsGroupId": 19,
         "ConditionIds": [
-            771801
+            770411
         ]
     },
     {
@@ -461,7 +476,7 @@
         "UiType": 1,
         "ContentsGroupId": 20,
         "ConditionIds": [
-            70020
+            601000
         ]
     },
     {
@@ -883,6 +898,22 @@
         "ConditionIds": [
             870002,
             773400
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "剧情全解锁",
+        "Priority": 26,
+        "SkipId": 21,
+        "BtnContent": "好的，我知道了",
+        "NpcName": "哈桑",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 26,
+        "ConditionIds": [
+            84100112,
+            863060
         ]
     }
 ]

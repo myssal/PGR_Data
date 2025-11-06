@@ -4,7 +4,7 @@
 local XUiSkyGardenShoppingStreetBuildBtnTab = XClass(XUiNode, "XUiSkyGardenShoppingStreetBuildBtnTab")
 
 function XUiSkyGardenShoppingStreetBuildBtnTab:OnStart()
-    self.GridBuild.CallBack = function() self:OnGridBuildClick() end
+    self.GridBuild:AddEventListener(handler(self, self.OnGridBuildClick))
 end
 
 function XUiSkyGardenShoppingStreetBuildBtnTab:SetSelect(isSelect)

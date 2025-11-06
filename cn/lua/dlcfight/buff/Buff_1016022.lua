@@ -8,9 +8,9 @@ function XBuffScript1016022:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    self.missileId = 10210111
+    self.missileId = { 10210111, 10210126, 10210127, 10210128, 10210129, 10210130, 10210131 }
     self.damageMagicId = 1021003
-    self.atkBuffId = 1021003
+    self.atkBuffId = 1021002
     self.magicLevel = 1
     self.battleStartBuffId = 1015992    --战斗开始标记buff
     self.signalId = 1015903 --【浑身】标记
@@ -19,6 +19,7 @@ function XBuffScript1016022:Init()
     self.timer = 0
     self.prob = 50
     self.enhBuffId = 1016239    --【浑身】通用强化buff标记
+    self.enhLevel = 0
     ------------执行------------
 
 end
@@ -34,14 +35,18 @@ function XBuffScript1016022:Update(dt)
     if not self._proxy:CheckBuffByKind(self._uuid, self.battleStartBuffId) then
         return
     end
+    if self.targetId == 0 then
+        return
+    end
+    local selfPos = self._proxy:GetNpcPosition(self._uuid)
+    local targetPos = self._proxy:GetNpcPosition(self.targetId)
     if self._proxy:GetNpcTime(self._uuid) >= self.timer then
         local seed = self._proxy:Random(1, 100)
         if seed > self.prob then
-            self._proxy:LaunchMissile(self._uuid, self.targetId, self.missileId, self.missileId, self.magicLevel)
-            self._proxy:ApplyMagic(self._uuid, self.targetId, self.damageMagicId, self.magicLevel)
+            self._proxy:LaunchMissileFromPosToPos(self._uuid, self.missileId[self.enhLevel], self.missileId[self.enhLevel], targetPos, targetPos, self.magicLevel)
         else
-            self._proxy:LaunchMissile(self._uuid, self._uuid, self.missileId, self.missileId, self.magicLevel)
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self.atkBuffId, self.magicLevel)
+            self._proxy:LaunchMissileFromPosToPos(self._uuid, self.missileId[self.enhLevel], self.missileId[self.enhLevel], selfPos, selfPos, self.magicLevel)
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self.atkBuffId, self.enhLevel)
         end
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.cd
     end
@@ -59,8 +64,8 @@ function XBuffScript1016022:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     if npcUUID == self._uuid and buffId == self.battleStartBuffId then
         self.targetId = self._proxy:GetFightTargetId(self._uuid)
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.cd
-        --更新magic等级
-        self.magicLevel = self._proxy:GetBuffStacks(self._uuid,self.enhBuffId)
+        --更新强化Buff标记层数
+        self.enhLevel = self._proxy:GetBuffStacks(self._uuid, self.enhBuffId)
     end
 
 end

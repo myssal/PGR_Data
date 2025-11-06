@@ -858,11 +858,6 @@ local UIBindControl = {
     UiBigWorldSetPanelOtherPC = ModuleId.XBigWorldSet,
     UiBigWorldSetPanelFightPC = ModuleId.XBigWorldSet,
     -- endregion
-
-    -- region 大世界Loading
-    UiBigWorldLoading = ModuleId.XBigWorldLoading,
-    UiBigWorldShowLoading = ModuleId.XBigWorldLoading,
-    -- endregion
     
     --region 合版本活动
     UiVersionGift = ModuleId.XVersionGift,
@@ -945,6 +940,7 @@ local UIBindControl = {
     UiTheatre5Story = ModuleId.XTheatre5,
     UiTheatre5PopupHandBook = ModuleId.XTheatre5,
     UiTheatre5PopupStrengthen = ModuleId.XTheatre5,
+    UiTheatre5PopupNewSeason = ModuleId.XTheatre5,
     --endregion
     
     --region 悬赏挑战
@@ -1016,6 +1012,7 @@ local UIBindControl = {
     UiRaceMissionShop = ModuleId.XRace,
     UiRaceRank = ModuleId.XRace,
     UiRaceToastHall = ModuleId.XRace,
+    UiRaceToastHallChat = ModuleId.XRace,
     UiRaceObtain = ModuleId.XRace,
     --endregion
 

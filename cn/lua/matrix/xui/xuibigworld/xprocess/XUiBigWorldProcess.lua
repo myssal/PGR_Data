@@ -129,8 +129,8 @@ end
 
 function XUiBigWorldProcess:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnSwitch.CallBack = Handler(self, self.OnBtnSwitchClick)
-    self.BtnClose.CallBack = Handler(self, self.OnBtnCloseClick)
+    self.BtnSwitch:AddEventListener(handler(self, self.OnBtnSwitchClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiBigWorldProcess:_RegisterListeners()

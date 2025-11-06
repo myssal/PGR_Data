@@ -75,7 +75,7 @@ function XUiBigWorldPanelQuest:AddEventListener()
     local eventId = XMVCA.XBigWorldService.DlcEventId
     
     XEventManager.AddEventListener(eventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.Enqueue, self)
-    XEventManager.AddEventListener(eventId.EVENT_MAP_PIN_ADD, self.AfterTempShowRefresh, self)
+    XEventManager.AddEventListener(eventId.EVENT_MAP_PIN_ADD, self.AfterMapPinAdd, self)
     XEventManager.AddEventListener(eventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.AfterTempShowRefresh, self)
 end
 
@@ -83,7 +83,7 @@ function XUiBigWorldPanelQuest:RemoveEventListener()
     local eventId = XMVCA.XBigWorldService.DlcEventId
 
     XEventManager.RemoveEventListener(eventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, self.Enqueue, self)
-    XEventManager.RemoveEventListener(eventId.EVENT_MAP_PIN_ADD, self.AfterTempShowRefresh, self)
+    XEventManager.RemoveEventListener(eventId.EVENT_MAP_PIN_ADD, self.AfterMapPinAdd, self)
     XEventManager.RemoveEventListener(eventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.AfterTempShowRefresh, self)
 end
 
@@ -254,6 +254,14 @@ function XUiBigWorldPanelQuest:RefreshAll()
     local trackId = XMVCA.XBigWorldQuest:GetTrackQuestId()
     if not trackId or trackId <= 0 then
         self:HideAll()
+        return
+    end
+    self:AfterTempShowRefresh()
+end
+
+function XUiBigWorldPanelQuest:AfterMapPinAdd()
+    --如果队列里还有内容，则以任务的数据为权威
+    if not self._OperateBehavior:IsEmpty() then
         return
     end
     self:AfterTempShowRefresh()

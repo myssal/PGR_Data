@@ -44,10 +44,10 @@ function XBuffScript1015910:Update(dt)
     end
 
     local calSignalTime = self.signalTime
-    --如果存在Buff[2]，则根据标记层数额外减少时间
+    --如果存在Buff[1]，则根据标记层数额外减少时间
     if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[1]) then
         local calEnhBuff1Time = self._proxy:GetBuffStacks(self._uuid, self.enhBuff1SignalId) * self.enhBuff1Time
-        if self.signalTime - calEnhBuff1Time <= self.enhBuff1MinTimeMinTime then
+        if self.signalTime - calEnhBuff1Time <= self.enhBuff1MinTime then
             calSignalTime = self.enhBuff1MinTime
         else
             calSignalTime = self.signalTime - calEnhBuff1Time
@@ -75,27 +75,6 @@ function XBuffScript1015910:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         end
         --初始化计时器
         self.timer = self._proxy:GetNpcTime(self._uuid) + self.signalTime
-    end
-
-
-end
-
-function XBuffScript1015910:HandleLuaEvent(eventType, eventArgs)
-    --释放肉鸽5技能时触发事件
-    Base.HandleLuaEvent(self, eventType, eventArgs)
-    --没有Buff[2]时直接返回
-    if self._proxy:CheckBuffByKind(self._uuid, self.enhBuffIdDict[2]) then
-        return
-    end
-    --释放技能时，缩短触发时间
-    if eventType == EFightLuaEvent.AutoChessItemSkillComboStart then
-        --如果下一次释放时间距离当前不足Buff[2]最低要求，则无需生效
-        if self.timer <= self._proxy:GetNpcTime(self._uuid) + self.enhBuff2MinTime then
-            return
-        end
-        --计时器减去Buff[2]提前的时间，触发icon特效
-        self.timer = self.timer - self.enhBuff2Time
-        self._proxy:SetAutoChessGemTriggerState(self._uuid, self.enhRuneIdDict[2])
     end
 end
 --endregion

@@ -11,10 +11,20 @@ function XUiSignThreeDay:OnStart()
     if self.BtnTanchuangCloseWhite then
         self.BtnTanchuangCloseWhite.CallBack = handler(self.Parent, self.Parent.Close)
     end
-    self.BtnHelp.CallBack = handler(self, self.OnBtnHelpClick)
+
+    if self.BtnHelp then
+        self.BtnHelp.CallBack = handler(self, self.OnBtnHelpClick)
+    end
+
+    if self.BtnHelpMonthPlus then
+        self.BtnHelpMonthPlus.CallBack = handler(self, self.OnBtnHelpMonthPlusClick)
+    end
+    
     ---@type XUiGridPurchaseThreeDay[]
     self.Grids = {}
     self.SkipId = CS.XGame.ClientConfig:GetInt("MonthCardPlusSkipId")
+    self.MonthCardPlusIsShowCondition = CS.XGame.ClientConfig:GetInt('MonthCardPlusIsShowCondition')
+    self.MonthCardPlusPackId = CS.XGame.ClientConfig:GetInt('MonthCardPlusPackId')
 end
 
 function XUiSignThreeDay:OnGetLuaEvents()
@@ -29,9 +39,16 @@ function XUiSignThreeDay:OnNotify(evt, ...)
     end
 end
 
----@param isShow boolean 福利界面打开时'isShow'为false，打脸打开时为true
+---@param isShow boolean 只显示三日时为false，需要显示月卡plus时为true
 function XUiSignThreeDay:Refresh(signId, isShow, data)
     self.IsShow = isShow
+
+    if self.IsShow then
+        if XTool.IsNumberValidEx(self.MonthCardPlusIsShowCondition) and not XConditionManager.CheckCondition(self.MonthCardPlusIsShowCondition) then
+            self.IsShow = false
+        end
+    end
+    
     self.SignId = signId
     self.IsPurchaseEnter = data ~= nil
     self.Purchase = XDataCenter.PurchaseManager.GetPurchasePackageBySignId(signId)
@@ -55,12 +72,19 @@ function XUiSignThreeDay:Refresh(signId, isShow, data)
         self:RefreshBySignIn()
     end
     
-    local isSellOut = self.Purchase:GetIsSellOut()
     if self.PanelCard then
-        self.PanelCard.gameObject:SetActiveEx(self.IsShow and not isSellOut)
+        self.PanelCard.gameObject:SetActiveEx(self.IsShow)
     end
     if self.PanelCardGain then
-        self.PanelCardGain.gameObject:SetActiveEx(not self.IsShow or isSellOut)
+        self.PanelCardGain.gameObject:SetActiveEx(not self.IsShow)
+    end
+
+    if self.Bg3 then
+        self.Bg3.gameObject:SetActiveEx(not self.IsShow)
+    end
+
+    if self.BtnSkipToPlus then
+        self.BtnSkipToPlus.gameObject:SetActiveEx(self.IsShow)
     end
 
     if self.Parent.RefreshBuyButtonStatus then
@@ -83,6 +107,7 @@ function XUiSignThreeDay:RefreshByPurchasePackageData()
         end
     end
     self.TxtTips.text = self.PurchaseData.Desc
+    self.IsSellOut = self.PurchaseData.BuyLimitTimes > 0 and self.PurchaseData.BuyTimes == self.PurchaseData.BuyLimitTimes
     self:SetRewardInfos()
 end
 
@@ -97,6 +122,14 @@ function XUiSignThreeDay:RefreshBySignIn()
     self.TxtTips.text = self.WeekCardData:GetDesc()
     self:SetRewardInfos()
     self:RefreshPanelComplete()
+
+    if self.IsShow then
+        self:SetMonthPlusRewardInfos()
+
+        if self.TxtNum then
+            self.TxtNum.text = CS.XGame.ClientConfig:GetString('MonthCardTotalPrice2')
+        end
+    end
 end
 
 function XUiSignThreeDay:SetRewardInfos()
@@ -110,7 +143,31 @@ function XUiSignThreeDay:SetRewardInfos()
             grid = require("XUi/XUiPurchase/Grid/XUiGridPurchaseThreeDay").New(go, self)
             self.Grids[index] = grid
         end
-        grid:UpdateData(self.Purchase:GetId(), reward, self.IsPurchaseEnter, self.IsShow, index)
+        grid:UpdateData(self.Purchase:GetId(), reward, self.IsPurchaseEnter, self.IsShow, index, self.IsSellOut)
+    end
+end
+
+function XUiSignThreeDay:SetMonthPlusRewardInfos()
+    if XTool.IsNumberValidEx(self.MonthCardPlusPackId) then
+        local packData = XDataCenter.PurchaseManager.GetPurchasePackageById(self.MonthCardPlusPackId)
+        
+        if packData then
+            packData = packData:GetRawData()
+            
+            if not XTool.IsTableEmpty(packData.RewardGoodsList) then
+                for i, v in ipairs(packData.RewardGoodsList) do
+                    local btn = self['BtnGift0' .. i]
+
+                    if btn then
+                        btn:SetNameByGroup(0, XUiHelper.GetText('PayQuickBuyNumber', v.Count))
+                        btn:SetRawImage(XGoodsCommonManager.GetGoodsIcon(v.TemplateId))
+                        btn:AddEventListener(function()
+                            XLuaUiManager.Open("UiTip", v, true, self.Parent and self.Parent.Name)
+                        end, true)
+                    end
+                end
+            end
+        end
     end
 end
 
@@ -118,6 +175,10 @@ function XUiSignThreeDay:OnBtnHelpClick()
     local sigInCfg = XSignInConfigs.GetSignInConfig(self.SignId)
     local subRoundCfg = XSignInConfigs.GetSubRoundConfig(sigInCfg.SubRoundId[1])
     XUiManager.UiFubenDialogTip("", subRoundCfg.SubRoundDesc or "")
+end
+
+function XUiSignThreeDay:OnBtnHelpMonthPlusClick()
+    XUiManager.UiFubenDialogTip("", XUiHelper.GetText("PurchaseMonthPlusDesc"))
 end
 
 function XUiSignThreeDay:OnBtnBuyClick()
@@ -128,6 +189,7 @@ end
 
 function XUiSignThreeDay:OnBtnSkipToPlusClick()
     if XTool.IsNumberValid(self.SkipId) then
+        XLuaUiManager.Close('UiSignBanner')
         XFunctionManager.SkipInterface(self.SkipId)
     end
 end

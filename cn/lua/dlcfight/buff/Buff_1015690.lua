@@ -11,7 +11,7 @@ function XBuffScript1015690:Init()
     self.magicId = 1015692
     self.magicKind = 1015692
     self.magicLevel = 1
-    self.tiredBuff = 1015909
+    self.tiredBuff = 1010029
     self.enhBuffId = 1015960    --带有【未进入疲劳阶段时】条件的所有触发效果翻倍
     self.enhMagicLevel = 1      --存在增强Buff时，等级+1
     self.battleStartBuffId = 1015992    --战斗开始标记buff
@@ -51,6 +51,9 @@ function XBuffScript1015690:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     --获得疲劳标记时删除
     if self._uuid == npcUUID and self.tiredBuff == buffId then
         self._proxy:RemoveBuff(self._uuid, self.magicKind)
+        if self.targetId ~= 0 then
+            self._proxy:RemoveBuff(self.targetId, self.magicKind)
+        end
         self._proxy:SetAutoChessGemData(self._uuid, self.runeId, 0, 0)
     end
 end

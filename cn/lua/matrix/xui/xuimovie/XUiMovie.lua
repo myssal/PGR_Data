@@ -26,6 +26,7 @@ local InsertPanelDisableAnimationDic = {
 function XUiMovie:OnAwake()
     self.UiMovieRImgBg.gameObject:SetActiveEx(false)
     self.UiMoviePanelActor.gameObject:SetActiveEx(false)
+    self.BtnAutoTextStop.gameObject:SetActiveEx(false)
     self.RImgBg1.gameObject:SetActiveEx(false)
     self.UiMovieBg = require("XUi/XUiMovie/XUiMovieBg").New(self)
     self:AddListener()
@@ -551,7 +552,7 @@ function XUiMovie:OnClickBtnAuto()
 
     -- 显示倍速
     self.BtnScreenSpeed.gameObject:SetActiveEx(isAutoPlay)
-    self.BtnAuto.ButtonState = isAutoPlay and CS.UiButtonState.Select or CS.UiButtonState.Normal
+    self.BtnAuto:SetButtonState(isAutoPlay and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     if isAutoPlay then
         self:StartAutoTimer()
         

@@ -2687,6 +2687,24 @@ function XCharacterAgency:GetModelCharacterGeneralSkill()
     return self._Model:GetCharacterGeneralSkill()
 end
 
+function XCharacterAgency:GetCharacterGeneralSkillWithOutNoneSelect()
+    if self._Model.TempWholeDic["CharacterGeneralSkillWithOutNoneSelect"] then
+        return self._Model.TempWholeDic["CharacterGeneralSkillWithOutNoneSelect"]
+    end
+
+    local allConfigs = self._Model:GetCharacterGeneralSkill()
+    local res = {}
+    for id, v in pairs(allConfigs) do
+        if XTool.IsNumberValid(v.Id) and id ~= XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
+            table.insert(res, v)
+        end
+    end
+
+    self._Model.TempWholeDic["CharacterGeneralSkillWithOutNoneSelect"] = res
+
+    return res
+end
+
 function XCharacterAgency:GetModelGetCharacterSkillUpgradeDetail()
     return self._Model:GetCharacterSkillUpgradeDetail()
 end

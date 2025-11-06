@@ -224,7 +224,7 @@
     {
         "Id": 14000010,
         "Name": "离诗遗城",
-        "Type": 1,
+        "Type": 3,
         "Quality": 6,
         "Description": "获得后解锁该场景",
         "WorldDescription": "神遗之地，死城颓圮。",
@@ -298,6 +298,49 @@
         "SwitchDesc": [
             "白昼",
             "夜晚"
+        ]
+    },
+    {
+        "Id": 14000013,
+        "Name": "黄金假日",
+        "Type": 3,
+        "Quality": 5,
+        "Description": "获得后解锁该场景",
+        "WorldDescription": "浮雕在光影里沁出琥珀光泽，铸铁街灯住旧韵的尾音。长椅驮着垂坠的芬芳，店铺拱窗漫溢出悠闲的香气，在砖缝与流光的褶皱间，时光被酿成了黄金色的记忆。",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconMain3dStreetSp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconMain3dStreet.png",
+        "IconPath": "Assets/Product/Texture/Image/UiPhotograph/scene13.png",
+        "SceneModelId": 15,
+        "LockDec": "六周年贺礼签到获得",
+        "Priority": 22,
+        "IsFree": 0,
+        "IsMainScene": 0,
+        "SceneRotation": 1,
+        "ItemKey": 49,
+        "ItemCount": 23,
+        "SkipId": 0
+    },
+    {
+        "Id": 14000014,
+        "Name": "慈悲至观",
+        "Type": 3,
+        "Quality": 6,
+        "Description": "获得后解锁该场景",
+        "WorldDescription": "你的自由太广阔，你的齿轮无法被撼动。",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconMain3d016Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconMain3d016.png",
+        "IconPath": "Assets/Product/Texture/Image/UiPhotograph/scene16.png",
+        "SceneModelId": 16,
+        "LockDec": "限时采购中购买获得",
+        "Priority": 23,
+        "IsFree": 0,
+        "IsMainScene": 0,
+        "SceneRotation": 1,
+        "ItemKey": 49,
+        "ItemCount": 23,
+        "SkipId": 0,
+        "Tag": [
+            "专属音乐"
         ]
     }
 ]

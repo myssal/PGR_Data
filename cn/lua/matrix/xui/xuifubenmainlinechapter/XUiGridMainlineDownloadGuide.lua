@@ -50,9 +50,12 @@ function XUiGridMainlineDownloadGuide:CheckShow()
     
     local isConditionSuccess = not XTool.IsNumberValidEx(condition) or XConditionManager.CheckCondition(condition)
     
-    -- 需满足未下载完成且满足条件
-    if not XMVCA.XSubPackage:CheckNecessaryComplete() and isConditionSuccess then
-        isShow = true  
+    -- 奖励没有领取完才考虑是否显示
+    if not XMVCA.XSubPackage:CheckNecessaryTaskState(XDataCenter.TaskManager.TaskState.Finish) then
+        -- 需满足未下载完成且满足条件
+        if not XMVCA.XSubPackage:CheckNecessaryComplete() and isConditionSuccess then
+            isShow = true
+        end
     end
 
     if not isShow then
@@ -72,9 +75,26 @@ end
 function XUiGridMainlineDownloadGuide:CheckState()
     self.BtnDownload:SetNameByGroup(1, '')
     self:StopProgressTimer()
+    
+    -- 隐藏完成的图标
+    if self.ImgIcon3 then
+        self.ImgIcon3.gameObject:SetActiveEx(false)
+    end
+
+    if self.ImgIcon2Root then
+        self.ImgIcon2Root.gameObject:SetActiveEx(true)
+    end
 
     if XMVCA.XSubPackage:CheckNecessaryComplete() then
         self.BtnDownload:SetNameByGroup(1, XMVCA.XMainLine2:GetClientConfigParams('DownloadEntranceRewardTips', 1))
+
+        if self.ImgIcon3 then
+            self.ImgIcon3.gameObject:SetActiveEx(true)
+        end
+
+        if self.ImgIcon2Root then
+            self.ImgIcon2Root.gameObject:SetActiveEx(false)
+        end
     elseif XMVCA.XSubPackage:CheckNecessaryIsPaused() then
         self:UpdateProgressOnPaused()
     else
@@ -117,6 +137,8 @@ function XUiGridMainlineDownloadGuide:CheckAndStartProgressTimer()
     if XMVCA.XSubPackage:CheckNecessaryIsReadyDownload() then
         self:UpdateProgress()
         self._DownloadProgressTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateProgress), XScheduleManager.SECOND)
+        self:StopAnimation('ImgIcon2Loop')
+        self:PlayAnimation('DownloadLoop', nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
     end
 end
 
@@ -125,6 +147,9 @@ function XUiGridMainlineDownloadGuide:StopProgressTimer()
         XScheduleManager.UnSchedule(self._DownloadProgressTimerId)
         self._DownloadProgressTimerId = nil
     end
+    
+    self:StopAnimation('DownloadLoop')
+    self:PlayAnimation('ImgIcon2Loop', nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
 end
 
 function XUiGridMainlineDownloadGuide:UpdateProgress()

@@ -30,6 +30,12 @@ function XBuffScript1012216:Update(dt)
     Base.Update(self, dt)
     if self._proxy:CheckBuffByKind(self._uuid, 1010029) and  self.kaiguan == true then
         self.kaiguan = false
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012315, 1) --旧buff删除
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012316, 1) --旧buff删除
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012317, 1) --旧buff删除
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012318, 1) --旧buff删除
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012319, 1) --旧buff删除
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1012320, 1) --旧buff删除
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1012225, 1) --疲劳强化
     end
 end

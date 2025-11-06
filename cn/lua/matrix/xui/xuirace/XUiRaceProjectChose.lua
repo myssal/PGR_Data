@@ -9,6 +9,8 @@ end
 function XUiRaceProjectChose:OnStart()
     self._ActivityConfig = self._Control:GetCurrentConfig()
     self._MatchData = self._Control:GetMatchGuessData()
+    ---@type XUiGridRaceMatchProject[]
+    self._ProjectGrids = {}
 
     self:InitUi()
     self:CountDown()
@@ -19,20 +21,31 @@ function XUiRaceProjectChose:OnEnable()
 end
 
 function XUiRaceProjectChose:InitUi()
-    self:InitProject()
     XUiHelper.NewPanelActivityAssetSafe({ self._ActivityConfig.ItemId }, self.PanelSpecialTool, self)
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
+
+    self.GridProject.gameObject:SetActiveEx(false)
+    local timerId = XScheduleManager.ScheduleOnce(function()
+        self:InitProject()
+    end, 500)
+    self:_AddTimerId(timerId)
 end
 
 function XUiRaceProjectChose:InitProject()
-    ---@type XUiGridRaceMatchProject[]
-    self._ProjectGrids = {}
     local matchGuesses = self._ActivityConfig.MatchGuess
     XUiHelper.RefreshCustomizedList(self.GridProject.parent, self.GridProject, #matchGuesses, function(i, go)
         ---@type XUiGridRaceMatchProject
         local grid = require("XUi/XUiRace/Grid/XUiGridRaceMatchProject").New(go, self, matchGuesses[i])
         table.insert(self._ProjectGrids, grid)
+        --动效
+        grid:Close()
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid:Open()
+            grid:PlayAnimationWithMask("GridProjectEnable")
+        end, i * 50)
+        self:_AddTimerId(timerId)
     end)
+    self:UpdateProjectState()
 end
 
 function XUiRaceProjectChose:UpdateProject(matchState)
@@ -54,7 +67,7 @@ end
 
 function XUiRaceProjectChose:UpdateProjectState()
     for _, grid in pairs(self._ProjectGrids) do
-        grid:Update()
+        grid:UpdateView()
     end
 end
 

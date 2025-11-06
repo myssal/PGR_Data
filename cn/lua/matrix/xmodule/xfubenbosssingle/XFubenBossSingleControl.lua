@@ -1021,15 +1021,17 @@ function XFubenBossSingleControl:IsResetBtnEnable(stageId)
     --local curScore = stageData and stageData.Score or 0
     local curScore = self:GetStageCurrentScore(stageId)
     if curScore > 0 then
-        local autoFightData = self:CheckAutoFight(stageId)
-        if autoFightData then
-            local characterList = autoFightData:GetCharacterList()
-            if characterList then
-                return #characterList > 0
-            end
+        -- 本期挑战记录
+        local history = self._Model:GetRecordCurrentByStageId(stageId)
+        if history and history.Score > 0 then
+            return true
         end
     end
     return false
+end
+
+function XFubenBossSingleControl:GetRecordCurrentByStageId(stageId)
+    return self._Model:GetRecordCurrentByStageId(stageId)
 end
 
 function XFubenBossSingleControl:GetStageCurrentScore(stageId)

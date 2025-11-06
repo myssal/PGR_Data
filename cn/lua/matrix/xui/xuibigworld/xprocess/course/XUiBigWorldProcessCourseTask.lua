@@ -23,6 +23,8 @@ local XUiBigWorldProcessCourseTask = XClass(XUiBWProcessAnimationBase, "XUiBigWo
 function XUiBigWorldProcessCourseTask:OnStart()
     ---@type XBWCourseTaskEntity
     self._Entity = false
+    ---@type XBWCourseContentEntity
+    self._Content = false
 
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -52,10 +54,8 @@ function XUiBigWorldProcessCourseTask:OnBtnGoClick()
 end
 
 function XUiBigWorldProcessCourseTask:OnBtnFinishClick()
-    local taskId = self._Entity:GetTaskId()
-
-    if XTool.IsNumberValid(taskId) then
-        XMVCA.XBigWorldService:FinishTask(taskId)
+    if self._Content then
+        self._Control:FinishMultiTask(self._Content:GetTaskEntitys())
     end
 end
 
@@ -71,8 +71,10 @@ function XUiBigWorldProcessCourseTask:OnBtnRewardClick()
 end
 
 ---@param entity XBWCourseTaskEntity
-function XUiBigWorldProcessCourseTask:Refresh(entity)
+---@param content XBWCourseContentEntity
+function XUiBigWorldProcessCourseTask:Refresh(entity, content)
     self._Entity = entity
+    self._Content = content
     self:_RefreshReward(entity:GetDisplayRewardData())
     self.TxtName.text = entity:GetTitle()
     self.TxtDescribe.text = entity:GetDescription()
@@ -84,10 +86,10 @@ end
 
 function XUiBigWorldProcessCourseTask:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnGo.CallBack = Handler(self, self.OnBtnGoClick)
-    self.BtnFinish.CallBack = Handler(self, self.OnBtnFinishClick)
-    self.BtnOngoing.CallBack = Handler(self, self.OnBtnOngoingClick)
-    self.BtnAllReceive.CallBack = Handler(self, self.OnBtnAllReceiveClick)
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
+    self.BtnFinish:AddEventListener(handler(self, self.OnBtnFinishClick))
+    self.BtnOngoing:AddEventListener(handler(self, self.OnBtnOngoingClick))
+    self.BtnAllReceive:AddEventListener(handler(self, self.OnBtnAllReceiveClick))
     XUiHelper.RegisterClickEvent(self, self.RImgIcon, self.OnBtnRewardClick, true)
 end
 

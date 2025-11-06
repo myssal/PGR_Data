@@ -18,8 +18,8 @@ function XCharTes8213:InitEventCallBackRegister()
     --按需求解除注释进行注册
 end
 
-function XCharTes8213:OnNpcCastSkillBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)--动画层根据对应技能切换
-    Base.OnNpcCastSkillBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XCharTes8213:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)--动画层根据对应技能切换
+    Base.OnNpcCastActionBeforeEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
 
     if launcherId ~= self._uuid then
         return

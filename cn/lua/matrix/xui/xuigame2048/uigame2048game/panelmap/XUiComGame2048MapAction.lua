@@ -35,6 +35,9 @@ function XUiComGame2048MapAction:InitActionEvents()
         [XMVCA.XGame2048.EnumConst.ActionType.GridChanged] = handler(self, self.GridChangedAction),
         [XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterMerge] = handler(self, self.GridChangedAction),
         [XMVCA.XGame2048.EnumConst.ActionType.GridChangedAfterDoubleLevelUp] = handler(self, self.GridChangedAction),
+        [XMVCA.XGame2048.EnumConst.ActionType.OpenDispelRangeEffect] = handler(self, self.OpenDispelRangeEffect),
+        [XMVCA.XGame2048.EnumConst.ActionType.CloseDispelRangeEffect] = handler(self, self.CloseDispelRangeEffect),
+
     }
     
     self._GameControl:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_NOTIFY_ACTION_EVENT, self.OnActionEventNotify, self)
@@ -498,6 +501,18 @@ end
 --region -------------------- 特效动画 -------------------->>>
 function XUiComGame2048MapAction:UnDoAllAnimation()
     
+end
+
+---@param action XGame2048ActionParams
+function XUiComGame2048MapAction:OpenDispelRangeEffect(action)
+    self.Parent.DispelMaskPanel:ShowDispelRangeEffect()
+    self._GameControl.ActionsControl:EndAction(action)
+end
+
+---@param action XGame2048ActionParams
+function XUiComGame2048MapAction:CloseDispelRangeEffect(action)
+    self.Parent.DispelMaskPanel:HideDispelRangeEffect()
+    self._GameControl.ActionsControl:EndAction(action)
 end
 --endregion <<<---------------------------------------------
 

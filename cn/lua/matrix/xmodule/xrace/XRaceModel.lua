@@ -121,6 +121,7 @@ function XRaceModel:UpdateBaseRoundResult(roundId, results)
 end
 
 function XRaceModel:UpdateBaseMatchResult(results)
+    self._BasePlayerData.IsSeeGlobal = true
     self._BaseMatchGuessResult = results
     -- 更新竞猜状态
     for _, result in pairs(results) do
@@ -143,6 +144,14 @@ function XRaceModel:UpdateMatchRewardGain()
     if self._BasePlayerData.GlobalGuessDict then
         for _, v in pairs(self._BasePlayerData.GlobalGuessDict) do
             v.IsGain = true
+        end
+    end
+    if self._BaseMatchGuessResult then
+        for _, baseGuess in pairs(self._BaseMatchGuessResult) do
+            local info = baseGuess.PlayerGuessInfo
+            if info then
+                info.IsGain = true
+            end
         end
     end
 end
@@ -251,6 +260,10 @@ function XRaceModel:SetGainSkinReward()
     self._BasePlayerData.IsGainSkinReward = true
 end
 
+function XRaceModel:IsGainSkinReward()
+    return self._BasePlayerData.IsGainSkinReward
+end
+
 function XRaceModel:IsSkinRewardGain()
     return self._BasePlayerData.IsGainSkinReward
 end
@@ -352,17 +365,22 @@ function XRaceModel:GetSortBroadcasts(uiType)
 end
 
 function XRaceModel:IsTipHasShow(uiType, id)
-    return self._TipShowDict and self._TipShowDict[uiType] and self._TipShowDict[uiType][id]
+    if not self._CurRoundId or self._CurRoundId == -1 then
+        return false
+    end
+    local key = self._CurRoundId * 10000 + uiType * 1000 + id
+    return self._TipShowDict and self._TipShowDict[key]
 end
 
 function XRaceModel:SetTipShow(uiType, id)
+    if not self._CurRoundId or self._CurRoundId == -1 then
+        return
+    end
+    local key = self._CurRoundId * 10000 + uiType * 1000 + id
     if not self._TipShowDict then
         self._TipShowDict = {}
     end
-    if not self._TipShowDict[uiType] then
-        self._TipShowDict[uiType] = {}
-    end
-    self._TipShowDict[uiType][id] = true
+    self._TipShowDict[key] = true
 end
 
 function XRaceModel:GetMainRightMidShowTime()

@@ -61,7 +61,7 @@ end
 
 function XUiBigWorldProcessCourseRewardGrid:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnClick.CallBack = Handler(self, self.OnRewardClick)
+    self.BtnClick:AddEventListener(handler(self, self.OnRewardClick))
 end
 
 function XUiBigWorldProcessCourseRewardGrid:_RegisterListeners()

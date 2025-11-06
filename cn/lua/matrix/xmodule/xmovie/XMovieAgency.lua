@@ -356,8 +356,7 @@ function XMovieAgency:OnBookmarkMovieEnd(bookmarkData)
     local isSpeedrun = XMVCA.XPlotExhibition:GetIsSpeedrun(stageId)
     if isSpeedrun then
         local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
-        local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
-        local team = XDataCenter.TeamManager.GetXTeamByStageId(speedrunStageId)
+        local team = XDataCenter.TeamManager.GetXTeamSpeedrun(stageId)
         XMVCA.XFuben:EnterFight(stageConfig, team:GetId(), nil, nil, nil, nil, true)
         return
     end

@@ -18,4 +18,8 @@ function XUiPlotExhibitionDetailCharacterGrid:Deselected()
     self.GridMember:SetButtonState(CS.UiButtonState.Normal)
 end
 
+function XUiPlotExhibitionDetailCharacterGrid:Select()
+    self.GridMember:SetButtonState(CS.UiButtonState.Select)
+end
+
 return XUiPlotExhibitionDetailCharacterGrid

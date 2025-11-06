@@ -26,21 +26,13 @@ function XUiPanelBWRoleInfo:InitCb()
         --self:RefreshView(self._TeamId, self._EntityId, self._Pos)
         self.Parent:OnBtnDetailClicked()
     end
-    self.BtnJoin.CallBack = function()
-        self:OnBtnJoinClick()
-    end
+    self.BtnJoin:AddEventListener(handler(self, self.OnBtnJoinClick))
 
-    self.BtnQuit.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
     
-    self.BtnFashion.CallBack = function()
-        self:OnBtnFashionClick()
-    end
+    self.BtnFashion:AddEventListener(handler(self, self.OnBtnFashionClick))
     
-    self.BtnExchange.CallBack = function() 
-        self:OnBtnExchangeClick()
-    end
+    self.BtnExchange:AddEventListener(handler(self, self.OnBtnExchangeClick))
 end
 
 function XUiPanelBWRoleInfo:InitView()

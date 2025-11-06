@@ -314,8 +314,8 @@ function XUiBigWorldMapPin:_InitTarget(target, targetParent)
 end
 
 function XUiBigWorldMapPin:_RegisterButtonClick()
-    self.BtnPin.CallBack = Handler(self, self.OnBtnPinClick)
-    self.BtnSelect.CallBack = Handler(self, self.OnBtnSelectClick)
+    self.BtnPin:AddEventListener(handler(self, self.OnBtnPinClick))
+    self.BtnSelect:AddEventListener(handler(self, self.OnBtnSelectClick))
 end
 
 return XUiBigWorldMapPin

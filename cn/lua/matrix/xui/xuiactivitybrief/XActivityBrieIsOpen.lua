@@ -100,7 +100,7 @@ function XActivityBrieIsOpen.Get(activityGroupId, ...)
 
         return func(...)
     else
-        XLog.Error("活动没有配置开放条件：" .. funcName)
+        XLog.Error("活动没有配置开放条件：" .. tostring(activityGroupId))
         return false
     end
 end

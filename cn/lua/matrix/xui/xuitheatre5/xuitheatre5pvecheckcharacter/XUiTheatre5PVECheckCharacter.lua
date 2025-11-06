@@ -67,7 +67,7 @@ function XUiTheatre5PVECheckCharacter:InitCharacter3D()
         self.Model3D:UpdateRoleModelByHand(characterCfg.CharacterId, fashionId, weaponId, animatorController)
         -- 播放战备界面的待机动画
         if not string.IsNilOrEmpty(detailIdleAnima) then
-            self.Model3D.UiPanelRoleModel:PlayAnimaCross(detailIdleAnima)
+            self.Model3D.UiPanelRoleModel:PlayAnima(detailIdleAnima)
         end
         self.BtnName:SetNameByGroup(0, characterCfg.Name)
     end

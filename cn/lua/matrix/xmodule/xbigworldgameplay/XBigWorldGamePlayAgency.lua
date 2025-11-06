@@ -606,7 +606,7 @@ function XBigWorldGamePlayAgency:OnLevelBeginUpdate()
     end
     self:GetCurrentAgency():LevelBeginUpdate(levelId)
     self:SetFightPerspective(self:GetCurrentAgency():GetPerspective(self:GetCurrentLevelId()), false)
-    XMVCA.XBigWorldQuest:TryRestoreTrackQuest()
+    XMVCA.XBigWorldQuest:DoLevelChangeComplete()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, levelId)
 end
 
@@ -629,11 +629,17 @@ function XBigWorldGamePlayAgency:ResumeFight()
 end
 
 function XBigWorldGamePlayAgency:ChangeFightInput()
+    if not self:IsInGame() then
+        return
+    end
     self:GetCurrentAgency():OnInputMapResume()
     self:TrySetControlCameraByDrag(false)
 end
 
 function XBigWorldGamePlayAgency:ChangeSystemInput()
+    if not self:IsInGame() then
+        return
+    end
     self:GetCurrentAgency():OnInputMapChanged(CS.XInputMapId.SkyGardenSystem)
     self:TrySetControlCameraByDrag(true)
 end

@@ -260,7 +260,11 @@ function XUiBagItemInfoPanel:SetupBaseInfo()
     local template = self.ItemData.Template
     self.TxtName.text = template.Name
     self.TxtDescription.text = template.Description
-    self.TxtWorldDesc.text = XUiHelper.ReplaceTextNewLine(template.WorldDesc)
+   if template.WorldDesc ~= nil then
+        self.TxtWorldDesc.text = XUiHelper.ReplaceTextNewLine(template.WorldDesc)
+    else
+        self.TxtWorldDesc.text = ""
+    end
     local count = self:GetGridCount()
     self.TxtCount.text = tostring(count)
     self.RImgIcon:SetRawImage(template.BigIcon)

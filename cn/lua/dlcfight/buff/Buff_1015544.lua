@@ -19,9 +19,12 @@ function XBuffScript1015544:Init()
     self.enhBuff1Id = 1015790 --狂飙开幕类型符纹效果翻倍
     self.enhBuff1Percent = 0.8
     self.enhBuff1MagicLevel = 2
+    self.signalCtrlId = 1015906     --【开局】状态管理Buff
     ------------执行------------
     self.runeId = self.magicId1 - 1015000 + 20000 - 1
     self.activeTimer = 0  --确保能吃到开局效果的加成，延迟0.1秒释放
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self.signalCtrlId, 1)   --为自己添加【开局】管理Buff
+
 end
 
 ---@param dt number @ delta time

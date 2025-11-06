@@ -2,11 +2,11 @@
     {
         "Id": 1,
         "Name": "主线活动",
-        "SkipId": 528,
+        "SkipId": 529,
         "BtnInitMethodName": "RefreshActivityMainLine2",
-        "TimeId": 41201,
+        "TimeId": 42801,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 8,
+        "RemindPriority": 9,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
@@ -30,14 +30,16 @@
         "Name": "超难关",
         "SkipId": 11724,
         "BtnInitMethodName": "RefreshActivityBossSingle",
-        "TimeId": 41601,
+        "TimeId": 42301,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 7,
-        "RedCondition": "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD",
+        "RemindPriority": 4,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_ACTIVITY_BOSS_SINGLE_REWARD"
+        ]
     },
     {
         "Id": 4,
@@ -73,11 +75,13 @@
         "TimeId": 39801,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD"
+        ]
     },
     {
         "Id": 7,
@@ -97,14 +101,16 @@
         "Name": "复刷关",
         "SkipId": 20017,
         "BtnInitMethodName": "RefreshActivityRepeateChallenge",
-        "TimeId": 41802,
+        "TimeId": 42702,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 1,
-        "RedCondition": "CONDITION_REPEAT_CHALLENGE_ENTRANCE",
+        "RemindPriority": 2,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_REPEAT_CHALLENGE_ENTRANCE"
+        ]
     },
     {
         "Id": 9,
@@ -347,24 +353,26 @@
         "Name": "新角色试玩",
         "SkipId": 20235,
         "BtnInitMethodName": "RefreshNewCharActivity",
-        "TimeId": 41808,
+        "TimeId": 42911,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 4,
-        "RedCondition": "CONDITION_KOROMCHARACTIVITYMAINRED",
+        "RemindPriority": 6,
         "RedParam": 0,
         "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_KOROMCHARACTIVITYMAINRED"
+        ]
     },
     {
         "Id": 28,
         "Name": "涂装试玩关",
         "SkipId": 10035,
         "BtnInitMethodName": "RefreshFubenActivityTrial",
-        "TimeId": 41605,
+        "TimeId": 42402,
         "IsRemindWhenOpen": 1,
-        "RemindPriority": 6,
+        "RemindPriority": 8,
         "RedParam": 0,
         "TagCondition": "CONDITION_NEWCHARACT_SKIP_TRIAL",
         "TagOffset": 0.0,
@@ -557,13 +565,15 @@
         "SkipId": 20128,
         "BtnInitMethodName": "RefreshRpgMaker",
         "TimeId": 41501,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 3,
-        "RedCondition": "CONDITION_RPG_MAKER_GAME_RED",
+        "IsRemindWhenOpen": 0,
+        "RemindPriority": 0,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_RPG_MAKER_GAME_RED"
+        ]
     },
     {
         "Id": 44,
@@ -573,11 +583,13 @@
         "TimeId": 38500,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_REFORM_All_RED_POINT",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_REFORM_All_RED_POINT"
+        ]
     },
     {
         "Id": 45,
@@ -651,11 +663,13 @@
         "TimeId": 26501,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_SAMECOLOR_IS_CHALLENGE",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_SAMECOLOR_IS_CHALLENGE"
+        ]
     },
     {
         "Id": 51,
@@ -665,12 +679,14 @@
         "TimeId": 28401,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "XRedPointConditionAreaWarActivity",
         "RedParam": 0,
         "TagCondition": "XRedPointConditionAreaWarActivityTag",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "XRedPointConditionAreaWarActivity"
+        ]
     },
     {
         "Id": 52,
@@ -841,11 +857,13 @@
         "TimeId": 39301,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_GUILDWAR_Main",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_GUILDWAR_Main"
+        ]
     },
     {
         "Id": 65,
@@ -853,14 +871,16 @@
         "SkipId": 20177,
         "BtnInitMethodName": "RefreshGoldenMiner",
         "TimeId": 41809,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 5,
-        "RedCondition": "CONDITION_GOLDEN_MINER_REWARD",
+        "IsRemindWhenOpen": 0,
+        "RemindPriority": 0,
         "RedParam": 0,
         "TagCondition": "Default",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_GOLDEN_MINER_REWARD"
+        ]
     },
     {
         "Id": 66,
@@ -1013,13 +1033,15 @@
         "SkipId": 80201,
         "BtnInitMethodName": "RefreshActivityRift",
         "TimeId": 41804,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 9,
-        "RedCondition": "CONDITION_RIFT_ENTRANCE",
+        "IsRemindWhenOpen": 0,
+        "RemindPriority": 0,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_RIFT_ENTRANCE"
+        ]
     },
     {
         "Id": 78,
@@ -1095,11 +1117,13 @@
         "TimeId": 38401,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_ACTIVITY_FESTIVAL_DMC",
         "RedParam": 15010306,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_ACTIVITY_FESTIVAL_DMC"
+        ]
     },
     {
         "Id": 84,
@@ -1190,11 +1214,13 @@
         "TimeId": 37501,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_BLACK_ROCK_CHESS_ENTRANCE",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BLACK_ROCK_CHESS_ENTRANCE"
+        ]
     },
     {
         "Id": 91,
@@ -1204,11 +1230,13 @@
         "TimeId": 33701,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_ROGUESIM_ACTIVITY",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_ROGUESIM_ACTIVITY"
+        ]
     },
     {
         "Id": 92,
@@ -1218,11 +1246,13 @@
         "TimeId": 23713,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_MAINLINE_CHAPTER_REWARD",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_MAINLINE_CHAPTER_REWARD"
+        ]
     },
     {
         "Id": 94,
@@ -1245,11 +1275,13 @@
         "TimeId": 23401,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_DLC_CASUAL_ACTIVITY",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_DLC_CASUAL_ACTIVITY"
+        ]
     },
     {
         "Id": 96,
@@ -1271,12 +1303,14 @@
         "TimeId": 39100,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_FANGKUAI_MAIN",
         "RedParam": 0,
         "TagCondition": "CONDITION_FANGKUAI_CHALLENGE",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_FANGKUAI_MAIN"
+        ]
     },
     {
         "Id": 98,
@@ -1285,12 +1319,14 @@
         "TimeId": 27930,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_KOTODAMA_MAIN",
         "RedParam": 0,
         "TagCondition": "CONDITION_KOTODAMA_NO_PASS_ALLSTAGE",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_KOTODAMA_MAIN"
+        ]
     },
     {
         "Id": 99,
@@ -1300,12 +1336,14 @@
         "TimeId": 25601,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_TEMPLE_MAIN",
         "RedParam": 0,
         "TagCondition": "CONDITION_TEMPLE_CHALLENGE",
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_TEMPLE_MAIN"
+        ]
     },
     {
         "Id": 100,
@@ -1314,11 +1352,13 @@
         "TimeId": 26101,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_LINKCRAFT_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_LINKCRAFT_MAIN"
+        ]
     },
     {
         "Id": 101,
@@ -1327,11 +1367,13 @@
         "TimeId": 35301,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_DLC_MOUSE_HUNTER_ACTIVITY",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_DLC_MOUSE_HUNTER_ACTIVITY"
+        ]
     },
     {
         "Id": 102,
@@ -1355,11 +1397,13 @@
         "TimeId": 40701,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_LINE_ARITHMETIC",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_LINE_ARITHMETIC"
+        ]
     },
     {
         "Id": 104,
@@ -1368,11 +1412,13 @@
         "TimeId": 28101,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_MECHANISM_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_MECHANISM_MAIN"
+        ]
     },
     {
         "Id": 105,
@@ -1381,11 +1427,13 @@
         "TimeId": 29751,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_FASHION_STORY_ENTRANCE",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_FASHION_STORY_ENTRANCE"
+        ]
     },
     {
         "Id": 106,
@@ -1394,11 +1442,13 @@
         "TimeId": 38101,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_BOSS_INSHOT",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BOSS_INSHOT"
+        ]
     },
     {
         "Id": 107,
@@ -1407,11 +1457,13 @@
         "TimeId": 37101,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_SUCCEED_BOSS",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_SUCCEED_BOSS"
+        ]
     },
     {
         "Id": 108,
@@ -1420,11 +1472,13 @@
         "TimeId": 36305,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_SIMULATE_TRAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_SIMULATE_TRAIN"
+        ]
     },
     {
         "Id": 109,
@@ -1433,11 +1487,13 @@
         "TimeId": 31010,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_TEMPLE2",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_TEMPLE2"
+        ]
     },
     {
         "Id": 110,
@@ -1446,24 +1502,28 @@
         "TimeId": 36001,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_BAGORGANIZE_ANY",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BAGORGANIZE_ANY"
+        ]
     },
     {
         "Id": 111,
         "Name": 2048,
         "SkipId": 89075,
-        "TimeId": 37901,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedCondition": "CONDITION_GAME2048_MAIN",
+        "TimeId": 42921,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 7,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_GAME2048_MAIN"
+        ]
     },
     {
         "Id": 112,
@@ -1472,24 +1532,28 @@
         "TimeId": 33010,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_FPSGAME_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_FPSGAME_MAIN"
+        ]
     },
     {
         "Id": 113,
         "Name": "精选关",
         "SkipId": 90010,
-        "TimeId": 33011,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedCondition": "CONDITION_STAGE_MEMORY",
+        "TimeId": 42710,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 3,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_STAGE_MEMORY"
+        ]
     },
     {
         "Id": 114,
@@ -1510,11 +1574,13 @@
         "TimeId": 34001,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_MAVERICK3_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_MAVERICK3_MAIN"
+        ]
     },
     {
         "Id": 116,
@@ -1523,11 +1589,13 @@
         "TimeId": 34201,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_LUCKY_TENANT",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_LUCKY_TENANT"
+        ]
     },
     {
         "Id": 117,
@@ -1536,11 +1604,13 @@
         "TimeId": 34210,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_GACHACANLIVER_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_GACHACANLIVER_MAIN"
+        ]
     },
     {
         "Id": 118,
@@ -1549,11 +1619,13 @@
         "TimeId": 35330,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_BOSS_INSHOT",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BOSS_INSHOT"
+        ]
     },
     {
         "Id": 119,
@@ -1562,11 +1634,13 @@
         "TimeId": 35201,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_PCG_ACTIVITY",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_PCG_ACTIVITY"
+        ]
     },
     {
         "Id": 120,
@@ -1575,11 +1649,13 @@
         "TimeId": 40801,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_POKER_GUESSING2",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_POKER_GUESSING2"
+        ]
     },
     {
         "Id": 121,
@@ -1588,11 +1664,13 @@
         "TimeId": 36101,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_SCORETOWER_MAIN",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_SCORETOWER_MAIN"
+        ]
     },
     {
         "Id": 122,
@@ -1601,24 +1679,28 @@
         "TimeId": 38200,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_PACMAN2_NEW_STAGE",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_PACMAN2_NEW_STAGE"
+        ]
     },
     {
         "Id": 123,
         "Name": "肉鸽5",
         "SkipId": 89092,
-        "TimeId": 39911,
-        "IsRemindWhenOpen": 0,
-        "RemindPriority": 0,
-        "RedCondition": "CONDITION_THEATRE5_MAIN",
+        "TimeId": 42711,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 1,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_THEATRE5_PVP_NEW_ACTIVITY"
+        ]
     },
     {
         "Id": 124,
@@ -1640,23 +1722,74 @@
         "TimeId": 39601,
         "IsRemindWhenOpen": 0,
         "RemindPriority": 0,
-        "RedCondition": "CONDITION_BOUNTY_CHALLENGE",
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BOUNTY_CHALLENGE"
+        ]
     },
     {
         "Id": 126,
         "Name": "作战覆写",
         "SkipId": 89094,
         "TimeId": 41805,
-        "IsRemindWhenOpen": 1,
-        "RemindPriority": 2,
-        "RedCondition": "CONDITION_SOLO_REFORM_MAIN",
+        "IsRemindWhenOpen": 0,
+        "RemindPriority": 0,
         "RedParam": 0,
         "TagOffset": 0.0,
         "ActivityRewardIds": [],
-        "RewardShowTimeIds": []
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_SOLO_REFORM_MAIN"
+        ]
+    },
+    {
+        "Id": 133,
+        "Name": "赌马",
+        "SkipId": 89100,
+        "TimeId": 42102,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 5,
+        "RedParam": 0,
+        "TagOffset": 0.0,
+        "ActivityRewardIds": [],
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_RACE_MAIN"
+        ]
+    },
+    {
+        "Id": 134,
+        "Name": "周年面板",
+        "SkipId": 89047,
+        "TimeId": 42713,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 0,
+        "RedParam": 0,
+        "TagOffset": 0.0,
+        "ActivityRewardIds": [],
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_ANNIVERSARY_REPEATCHALLENGE",
+            "CONDITION_ANNIVERSARY_DRAW",
+            "CONDITION_SUMMER_SIGNIN_ACTIVITY"
+        ]
+    },
+    {
+        "Id": 135,
+        "Name": "空花1.0",
+        "SkipId": 89076,
+        "TimeId": 42712,
+        "IsRemindWhenOpen": 1,
+        "RemindPriority": 10,
+        "RedParam": 0,
+        "TagOffset": 0.0,
+        "ActivityRewardIds": [],
+        "RewardShowTimeIds": [],
+        "RedConditions": [
+            "CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE"
+        ]
     }
 ]

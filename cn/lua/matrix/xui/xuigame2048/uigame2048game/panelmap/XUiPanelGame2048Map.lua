@@ -6,6 +6,7 @@ local XUiGridGame2048BgGrid = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/X
 local XUiGridGame2048Grid = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiGridGame2048Grid')
 local XUiPanelGame2048Option = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiPanelGame2048Option')
 local XUiComGame2048MapAction = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiComGame2048MapAction')
+local XUiPanelGame2048DispelMask = require('XUi/XUiGame2048/UiGame2048Game/PanelMap/XUiPanelGame2048DispelMask')
 
 function XUiPanelGame2048Map:OnStart()
     self._Grid2Type = {
@@ -48,6 +49,14 @@ function XUiPanelGame2048Map:OnStart()
     if self.ImgMask then
         self.ImgMask.gameObject:SetActiveEx(false)
     end
+
+    if self.EffectEliminateMask then
+        self.EffectEliminateMask.gameObject:SetActiveEx(false)
+    end
+    
+    ---@type XUiPanelGame2048DispelMask
+    self.DispelMaskPanel = XUiPanelGame2048DispelMask.New(self.PanelMask, self)
+    self.DispelMaskPanel:Open()
 end
 
 function XUiPanelGame2048Map:InitGridPools()
@@ -284,26 +293,7 @@ function XUiPanelGame2048Map:OnWaterFireDispelSelectionEnter()
         self.ImgTips.gameObject:SetActiveEx(true)
     end
 
-    if self.ImgMask then
-        -- 获取无效区域的左下角和右上角
-        local hasInValidArea, leftDownX, leftDownY, rightUpX, rightUpY = self._GameControl.GridsControl:GetDispelGridCleanUpInvalidRange()
-        
-        if hasInValidArea then
-            self.ImgMask.gameObject:SetActiveEx(true)
-
-            local leftDownGrid = self:GetBgUiGridByNormalizePos(leftDownX, leftDownY)
-            local rightUpGrid = self:GetBgUiGridByNormalizePos(rightUpX, rightUpY)
-
-            self.ImgMask.transform.position = (leftDownGrid.Transform.position + rightUpGrid.Transform.position) / 2
-
-            local width = self.BgLayout.cellSize.x * (rightUpX - leftDownX + 1) + self.BgLayout.spacing.x * (rightUpX - leftDownX)
-            local height = self.BgLayout.cellSize.y * (rightUpY - leftDownY + 1) + self.BgLayout.spacing.y * (rightUpY - leftDownY)
-
-            self.ImgMask.transform:SetUISizeDelta(width, height)
-        else
-            self.ImgMask.gameObject:SetActiveEx(false)
-        end
-    end
+    self.DispelMaskPanel:ShowInvalidMask()
 end
 
 function XUiPanelGame2048Map:OnWaterFireDispelSelectionExit()
@@ -319,9 +309,7 @@ function XUiPanelGame2048Map:OnWaterFireDispelSelectionExit()
         self.ImgTips.gameObject:SetActiveEx(false)
     end
 
-    if self.ImgMask then
-        self.ImgMask.gameObject:SetActiveEx(false)
-    end
+    self.DispelMaskPanel:HideInvalidMask()
 end
 
 --region get/set

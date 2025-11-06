@@ -19,9 +19,7 @@ function XUiBigWorldLineChapter:InitUi()
 end
 
 function XUiBigWorldLineChapter:InitCb()
-    self.BtnClose.CallBack = function()
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 function XUiBigWorldLineChapter:InitView()

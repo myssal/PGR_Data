@@ -39,7 +39,8 @@ function XUiSkyGardenShoppingStreetInsideBuild:OnStart(pos, isInside, isCameraFr
         return result
     end, true)
 
-    self._DynamicTable = XUiHelper.DynamicTableNormal(self, self.ListFeedback.gameObject, XUiSkyGardenShoppingStreetInsideBuildGridFeedback)
+    self.GridFeedback.gameObject:SetActive(false)
+    -- self._DynamicTable = XUiHelper.DynamicTableNormal(self, self.ListFeedback.gameObject, XUiSkyGardenShoppingStreetInsideBuildGridFeedback)
 end
 
 function XUiSkyGardenShoppingStreetInsideBuild:OnDisable()
@@ -107,11 +108,11 @@ function XUiSkyGardenShoppingStreetInsideBuild:RefreshBuildingInfo(shopId)
     -- end
     
     self.PanelFeedback.gameObject:SetActive(true)
-    -- XTool.UpdateDynamicItem(self._Feedback, self._Infos, self.GridFeedback, XUiSkyGardenShoppingStreetInsideBuildGridFeedback, self)
-    self._DynamicTable:SetDataSource(self._Infos)
-    self._DynamicTable:ReloadDataSync()
+    XTool.UpdateDynamicItem(self._Feedback, self._Infos, self.GridFeedback, XUiSkyGardenShoppingStreetInsideBuildGridFeedback, self)
+    -- self._DynamicTable:SetDataSource(self._Infos)
+    -- self._DynamicTable:ReloadDataSync()
 
-    self.ListFeedback.gameObject:SetActive(#self._Infos > 0)
+    -- self.ListFeedback.gameObject:SetActive(#self._Infos > 0)
     self.PanelNone.gameObject:SetActive(#self._Infos <= 0)
     self.PanelFeedback.gameObject:SetActive(hasInfo)
 
@@ -186,8 +187,8 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetInsideBuild:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnBack.CallBack = function() self:OnBtnBackClick() end
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
 end
 --endregion
 

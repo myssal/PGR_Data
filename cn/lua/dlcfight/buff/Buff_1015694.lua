@@ -11,7 +11,7 @@ function XBuffScript1015694:Init()
     self.magicId = 1015695
     self.magicKind = 1015695
     self.magicLevel = 1
-    self.tiredBuff = 1015909
+    self.tiredBuff = 1010029
     self.enhBuffId = 1015960    --带有【未进入疲劳阶段时】条件的所有触发效果翻倍
     self.enhMagicLevel = 1      --存在增强Buff时，等级+1
     self.battleStartBuffId = 1015992    --战斗开始标记buff

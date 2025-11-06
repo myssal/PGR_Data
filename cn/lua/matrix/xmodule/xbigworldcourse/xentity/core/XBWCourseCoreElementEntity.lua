@@ -57,7 +57,11 @@ function XBWCourseCoreElementEntity:IsComplete()
 end
 
 function XBWCourseCoreElementEntity:IsSkip()
-    return not self:IsComplete() and XTool.IsNumberValid(self:GetCurrentSkipId())
+    if self:IsQuest() then
+        return not self:IsComplete() and XTool.IsNumberValid(self:GetCurrentSkipId())
+    end
+
+    return XTool.IsNumberValid(self:GetCurrentSkipId())
 end
 
 function XBWCourseCoreElementEntity:IsHaveTeach()
@@ -96,7 +100,7 @@ end
 
 function XBWCourseCoreElementEntity:IsSkipStateChange()
     if not self:IsNil() then
-        return self:IsSkip() and not self._Model:GetCoreElementRecord(self:GetElementId())
+        return (not self:IsLocked()) and self:IsSkip() and not self._Model:GetCoreElementRecord(self:GetElementId())
     end
 
     return false

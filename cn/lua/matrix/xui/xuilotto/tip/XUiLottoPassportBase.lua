@@ -1,5 +1,5 @@
 ---@class XUiLottoPassportBase : XLuaUi
-local XUiLottoPassportBase = XLuaUiManager.Register(XLuaUi, "UiLottoLunaPassport")
+local XUiLottoPassportBase = XLuaUiManager.Register(XLuaUi, "UiLottoPassportBase")
 
 function XUiLottoPassportBase:OnAwake()
     self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)

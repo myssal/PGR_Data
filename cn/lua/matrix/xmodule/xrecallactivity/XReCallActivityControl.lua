@@ -106,7 +106,7 @@ end
 function XReCallActivityControl:GetTaskList()
     local taskData = self._Model:GetTaskData()
     local taskList = {}
-    for _,v in ipairs(taskData) do
+    for _,v in pairs(taskData) do
         local timeIndex = self:GetTimeIndex(v.timeId)
         if timeIndex ~= 4 then
             v.priorityL = timeIndex

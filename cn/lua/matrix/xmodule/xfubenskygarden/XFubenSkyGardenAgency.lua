@@ -10,6 +10,14 @@ function XFubenSkyGardenAgency:OnInit()
     self.ExChapterType = self:ExGetChapterType()
 end
 
+function XFubenSkyGardenAgency:ResetAll()
+    self:ClearProgressTip()
+end
+
+function XFubenSkyGardenAgency:OnRelease()
+    self:ClearProgressTip()
+end
+
 function XFubenSkyGardenAgency:ExGetChapterType()
     return XEnumConst.FuBen.ChapterType.SkyGarden
 end

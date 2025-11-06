@@ -72,6 +72,9 @@ function XUiMainLineExhibitionMission:InitButtonGroup()
 end
 
 function XUiMainLineExhibitionMission:OnSelectBtnTab(index)
+    if self.TabIndex and self.TabIndex ~= index then
+        self:PlayAnimation("QieHuan")
+    end
     self.TabIndex = index
     if index == 1 then
         self:CloseTreasure()

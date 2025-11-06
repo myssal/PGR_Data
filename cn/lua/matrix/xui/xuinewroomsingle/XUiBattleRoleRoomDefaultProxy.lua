@@ -115,7 +115,15 @@ end
 -- return : bool
 function XUiBattleRoleRoomDefaultProxy:CheckStageForceConditionWithTeamEntityId(team, stageId, showTip)
     local fubenManager = XDataCenter.FubenManager
-    local _, forceConditionIds = fubenManager.GetConditonByMapId(stageId)
+    
+    local _, forceConditionIds
+    -- 速通关卡
+    if XMVCA.XPlotExhibition:GetIsSpeedrun(stageId) then
+        local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+        _, forceConditionIds = fubenManager.GetConditonByMapId(speedrunStageId)
+    else
+        _, forceConditionIds = fubenManager.GetConditonByMapId(stageId)
+    end
     return fubenManager.CheckFightConditionByTeamData(forceConditionIds, team:GetEntityIds(), showTip)
 end
 

@@ -216,15 +216,28 @@ function XSignBoardCamAnimNew:_ControlTime(isPlay)
         return
     end
 
-    self.ToChargeTimeLine.gameObject:SetActiveEx(false)
-    self.ToFullTimeLine.gameObject:SetActiveEx(false)
+    if not XTool.UObjIsNil(self.ToChargeTimeLine) then
+        self.ToChargeTimeLine.gameObject:SetActiveEx(false)
+    end
+    if not XTool.UObjIsNil(self.ToFullTimeLine) then
+        self.ToFullTimeLine.gameObject:SetActiveEx(false)
+    end
 
     if isPlay then
-        self.FullTimeLine.gameObject:SetActiveEx(false)
-        self.ChargeTimeLine.gameObject:SetActiveEx(false)
+        if not XTool.UObjIsNil(self.FullTimeLine) then
+            self.FullTimeLine.gameObject:SetActiveEx(false)
+        end
+        if not XTool.UObjIsNil(self.ChargeTimeLine) then
+            self.ChargeTimeLine.gameObject:SetActiveEx(false)
+        end
         self.AnimEnableLong.gameObject:SetActiveEx(true)
     else
+        self.AnimEnableLong.transform:StopTimelineAnimation()
         self.AnimEnableLong.gameObject:SetActiveEx(false)
+        if not XTool.UObjIsNil(self.AnimEnableLoop) then
+            self.AnimEnableLoop.gameObject:SetActiveEx(true)
+            self.AnimEnableLoop.gameObject:PlayTimelineAnimation()
+        end
         XScheduleManager.ScheduleNextFrame(function()
             if XTool.UObjIsNil(self.FullTimeLine) or XTool.UObjIsNil(self.ChargeTimeLine) then
                 return
@@ -291,6 +304,10 @@ function XSignBoardCamAnimNew:_InitModelRoot(ui)
         self.FullTimeLine = sceneModel:Find("Animations/FullTimeLine")
         self.ChargeTimeLine = sceneModel:Find("Animations/ChargeTimeLine")
         self.AnimEnableLong = sceneModel:Find("Animations/AnimEnableLong"):GetComponent("PlayableDirector")
+        local animLoop = sceneModel:Find("Animations/AnimEnableLoop")
+        if animLoop then
+            self.AnimEnableLoop = animLoop:GetComponent("PlayableDirector")
+        end
     end
 end
 --endregion

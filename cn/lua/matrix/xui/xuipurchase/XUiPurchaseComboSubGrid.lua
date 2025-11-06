@@ -2,16 +2,28 @@
 ---@field _Control
 local XUiPurchaseComboSubGrid = XClass(XUiNode, "XUiPurchaseComboSubGrid")
 
-function XUiPurchaseComboSubGrid:OnStart()
+function XUiPurchaseComboSubGrid:OnStart(purchaseLBCb)
+    self.CallBack = purchaseLBCb
     self.Button.gameObject:SetActiveEx(true)
     XUiHelper.RegisterClickEvent(self, self.Button, self.OnClick)
 end
 
+function XUiPurchaseComboSubGrid:SetCallBack(cb)
+    self.CallBack = cb
+end
+
 function XUiPurchaseComboSubGrid:OnClick()
     if self._Data then
-        XLuaUiManager.Open("UiPurchaseBuyTips", self._Data, nil, function()
-            self.Parent:UpdateAllData()
-        end)
+        -- 特殊处理，通过checkFunc字段传递进去，实际上callback不是checkFunc
+        if not XTool.IsTableEmpty(self._Data.SubDatas) then
+            XLuaUiManager.Open("UiPurchaseBuyTips", self._Data, self.CallBack, function()
+                self.Parent:UpdateAllData()
+            end)
+        else
+            XLuaUiManager.Open("UiPurchaseBuyTips", self._Data, self.CallBack, function()
+                self.Parent:UpdateAllData()
+            end)
+        end
     end
 end
 
@@ -31,13 +43,19 @@ function XUiPurchaseComboSubGrid:Update(data)
         end)
     end
 
+
+    if data.BuyLimitTimes and data.BuyLimitTimes > 0 then
+        self.TxtQuota.text = XUiHelper.GetText("PurchaseLimitBuy", data.BuyTimes, data.BuyLimitTimes)
+    else
+        self.TxtQuota.text = ''
+    end
+    
     -- 卖完
     if data.IsSoldOut or (data.BuyLimitTimes and data.BuyLimitTimes > 0 and data.BuyTimes == data.BuyLimitTimes) then
         self.ImgSellout.gameObject:SetActive(true)
         self.TxtSetOut.text = XUiHelper.GetText("PurchaseSettOut")
         self.TxtFree.gameObject:SetActive(false)
         self.TxtHk.gameObject:SetActive(false)
-        self.TxtQuota.text = XUiHelper.GetText("PurchaseLimitBuy", data.BuyTimes, data.BuyLimitTimes)
         self.PanelLabel.gameObject:SetActiveEx(false)
         self.TxtHk2.gameObject:SetActiveEx(false)
         self.TxtPrice.gameObject:SetActiveEx(false)
@@ -67,7 +85,7 @@ function XUiPurchaseComboSubGrid:Update(data)
             self.TxtPrice.text = data.OriginalPrice
             if data.Discount then
                 self.PanelLabel.gameObject:SetActiveEx(true)
-                self.TxtTagDes.text = XUiHelper.GetDiscountText(data.Discount)
+                self.TxtTagDes.text = XUiHelper.GetDiscountTextV2(data.Discount)
             else
                 self.PanelLabel.gameObject:SetActiveEx(false)
             end

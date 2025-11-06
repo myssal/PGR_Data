@@ -45,12 +45,15 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
     self.BtnMenu.gameObject:SetActive(not self._ParamConfig.HideMenu)
     self.BtnAlbum.gameObject:SetActive(not self._ParamConfig.HideAlbum)
     self.SliderScale.gameObject:SetActive(not self._DisableCameraOperation)
+    self.BtnMinus.gameObject:SetActive(not self._DisableCameraOperation)
+    self.BtnAdd.gameObject:SetActive(not self._DisableCameraOperation)
 
     self.ImgBg.gameObject:SetActive(false)
     self._isShowMenu = self.ImgBg.gameObject.activeSelf
 
     self._SettingConfig = {}
     local hideNpcIndex = false
+    self._IsSetNpcActiveExcludePlayerNpc = false
     if not self._ParamConfig.HideNpc then
         hideNpcIndex = #self._SettingConfig + 1
         local configA = {
@@ -58,6 +61,7 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
             IsOn = false,
             Callback = function(isOn)
                 self._SettingConfig[hideNpcIndex].IsOn = isOn
+                self._IsSetNpcActiveExcludePlayerNpc = isOn
                 XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not isOn)
             end,
         }
@@ -81,12 +85,14 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
         table.insert(self._SettingConfig, configB)
     end
 
+    self._IsLookAtCamera = false
     local lookatIndex = #self._SettingConfig + 1
     local configC = {
         Name = XMVCA.XBigWorldService:GetText("SG_P_LookAt"),
         IsOn = false,
         Callback = function(isOn)
             self._SettingConfig[lookatIndex].IsOn = isOn
+            self._IsLookAtCamera = isOn
             XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(isOn)
         end,
     }
@@ -112,7 +118,7 @@ function XUiBigWorldPhotographControl:OnStart(paramId, detectionNpcPlaceIdList, 
         self._SettingConfig[lookatIndex].Callback(isLookAt)
     end
 
-    if self._ParamConfig.HideCameraMove then
+    if self._ParamConfig.HideCameraMove and self._DisableCameraOperation then
         self.OnPcPressCb = function () end
         self.PanelJoystick.gameObject:SetActive(false)
     else
@@ -265,12 +271,16 @@ function XUiBigWorldPhotographControl:OnDisable()
 end
 
 function XUiBigWorldPhotographControl:OnDestroy()
-    XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(false)
+    if self._IsLookAtCamera then
+        XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(false)
+    end
     if not self._X3CExit then
         XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
         self._X3CExit = true
     end
-    XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(true)
+    if self._IsSetNpcActiveExcludePlayerNpc then
+        XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(true)
+    end
     XMVCA.XBigWorldGamePlay:SetCurNpcActive(self._LastNpcActiveStatus)
     XMVCA.XBigWorldLoading:CloseBlackMaskLoading()
 end
@@ -394,16 +404,16 @@ end
 
 function XUiBigWorldPhotographControl:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnMenuClick)
-    self.BtnMenu.CallBack = Handler(self, self.OnBtnMenuClick)
-    self.BtnAlbum.CallBack = Handler(self, self.OnBtnAlbumClick)
-    self.BtnPhotograph.CallBack = Handler(self, self.OnBtnPhotographClick)
-    self.BtnHide.CallBack = Handler(self, self.OnBtnHideClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnMenuClick))
+    self.BtnMenu:AddEventListener(handler(self, self.OnBtnMenuClick))
+    self.BtnAlbum:AddEventListener(handler(self, self.OnBtnAlbumClick))
+    self.BtnPhotograph:AddEventListener(handler(self, self.OnBtnPhotographClick))
+    self.BtnHide:AddEventListener(handler(self, self.OnBtnHideClick))
     if self.ShowHide then
-        self.ShowHide.CallBack = Handler(self, self.OnBtnHideClick)
+        self.ShowHide:AddEventListener(handler(self, self.OnBtnHideClick))
     end
-    self.BtnRestore.CallBack = Handler(self, self.OnBtnRestoreClick)
-    self.BtnQuit.CallBack = Handler(self, self.OnBtnQuitClick)
+    self.BtnRestore:AddEventListener(handler(self, self.OnBtnRestoreClick))
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
 
     self.SliderScale.onValueChanged:AddListener(function(value)
         XMVCA.XBigWorldAlbum:X3CCameraPhotographSetScale(1 - value)

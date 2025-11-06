@@ -308,18 +308,23 @@ function XBigWorldMapModel:RemoveVirtualMapPin(levelId, referPinId)
 
     if not XTool.IsTableEmpty(virtualPinDatas) then
         local pinDatas = self:GetPinDatasByLevelId(levelId, true)
+        local result = {}
 
-        self._VirtualPinDataMap[referPinId] = nil
         for _, pinData in pairs(virtualPinDatas) do
-            local bindDatas = self:GetVirtualPinDatasByBindId(pinData.BindPinId, true)
-
-            if pinDatas then
-                pinDatas[pinData.PinId] = nil
-            end
-            if bindDatas then
-                bindDatas[pinData.PinId] = nil
+            if pinData.LevelId == levelId then
+                local bindDatas = self:GetVirtualPinDatasByBindId(pinData.BindPinId, true)
+                
+                if pinDatas then
+                    pinDatas[pinData.PinId] = nil
+                end
+                if bindDatas then
+                    bindDatas[pinData.PinId] = nil
+                end
+            else
+                result[pinData.PinId] = pinData
             end
         end
+        self._VirtualPinDataMap[referPinId] = result
     end
 end
 

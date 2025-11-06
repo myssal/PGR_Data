@@ -12,7 +12,7 @@ function XBuffScript1016026:Init()
     self.dmgMagicId = 1021101
     self.magicLevel = 1
     self.battleStartBuffId = 1015992    --战斗开始标记buff
-    self.signalId = 1015913 --【概率】标记
+    self.signalId = 1015743 --【概率】成功标记
     self.cnt = 0
     self.cntTarget = 3
     self.enhBuffId = 1016243    --【概率】通用强化buff标记

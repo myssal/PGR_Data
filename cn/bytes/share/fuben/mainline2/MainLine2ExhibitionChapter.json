@@ -1,0 +1,738 @@
+[
+    {
+        "Id": 1,
+        "TitleName": "序章",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1000,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 2,
+        "TitleName": "涂鸦艺术",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1001,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            1
+        ]
+    },
+    {
+        "Id": 3,
+        "TitleName": "黑星坠落",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1009,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 4,
+        "TitleName": "极地暗流",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2000,
+        "ShowConditionId": 84100913,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            3
+        ]
+    },
+    {
+        "Id": 5,
+        "TitleName": "永久列车",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1010,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            3
+        ]
+    },
+    {
+        "Id": 6,
+        "TitleName": "九龙夜航",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1011,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            5
+        ]
+    },
+    {
+        "Id": 7,
+        "TitleName": "九龙环城",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1012,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            6
+        ]
+    },
+    {
+        "Id": 8,
+        "TitleName": "湛蓝曙日",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2001,
+        "ShowConditionId": 770400,
+        "BgPosX": -2420,
+        "BgPosY": -45000,
+        "PreIds": [
+            7
+        ]
+    },
+    {
+        "Id": 9,
+        "TitleName": "重返极夜",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2002,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            8
+        ]
+    },
+    {
+        "Id": 10,
+        "TitleName": "古铭遗章",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2003,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            9
+        ]
+    },
+    {
+        "Id": 11,
+        "TitleName": "终焉福音",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1013,
+        "ShowConditionId": 770400,
+        "BgPosX": -35000,
+        "BgPosY": 0,
+        "PreIds": [
+            9
+        ]
+    },
+    {
+        "Id": 12,
+        "TitleName": "咏叹回声",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2004,
+        "ShowConditionId": 770400,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            11
+        ]
+    },
+    {
+        "Id": 13,
+        "TitleName": "视线囚笼",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1014,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 14,
+        "TitleName": "迷境刻痕",
+        "SubTitleName": "外篇旧闻",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 2,
+        "ExhibitionFubenConfigId": 2005,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -124000,
+        "PreIds": [
+            13
+        ]
+    },
+    {
+        "Id": 15,
+        "TitleName": "绝海星火",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1015,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            14
+        ]
+    },
+    {
+        "Id": 16,
+        "TitleName": "永夜胎动",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1016,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            15
+        ]
+    },
+    {
+        "Id": 17,
+        "TitleName": "湮灭残昼",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1017,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            16
+        ]
+    },
+    {
+        "Id": 18,
+        "TitleName": "游云鲸梦",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2000,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            17
+        ]
+    },
+    {
+        "Id": 19,
+        "TitleName": "宣叙妄想",
+        "SubTitleName": "多维演绎",
+        "UiName": "GridChapterFubenChallenge",
+        "ExhibitionFubenType": 3,
+        "ExhibitionFubenConfigId": 11,
+        "ShowConditionId": 0,
+        "BgPath": "Assets/Product/Texture/Image/UiMainLineExhibition/UiMainLineExhibitionUiTheatre1.png",
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            17
+        ]
+    },
+    {
+        "Id": 20,
+        "TitleName": "署星致意",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1018,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 21,
+        "TitleName": "遥岸方舟",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2001,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -70000,
+        "PreIds": [
+            20
+        ]
+    },
+    {
+        "Id": 22,
+        "TitleName": "空晓界限",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1019,
+        "ShowConditionId": 0,
+        "BgPosX": 23000,
+        "BgPosY": 0,
+        "PreIds": [
+            21
+        ]
+    },
+    {
+        "Id": 23,
+        "TitleName": "枯朽为灯",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2002,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            22
+        ]
+    },
+    {
+        "Id": 24,
+        "TitleName": "烬海异途",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1020,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            23
+        ]
+    },
+    {
+        "Id": 25,
+        "TitleName": "厄愿潮声",
+        "SubTitleName": "多维演绎",
+        "UiName": "GridChapterFubenChallenge",
+        "ExhibitionFubenType": 3,
+        "ExhibitionFubenConfigId": 15,
+        "ShowConditionId": 0,
+        "BgPath": "Assets/Product/Texture/Image/UiMainLineExhibition/UiMainLineExhibitionUiTheatre2.png",
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            24
+        ]
+    },
+    {
+        "Id": 26,
+        "TitleName": "未语庭言",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2003,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            24
+        ]
+    },
+    {
+        "Id": 27,
+        "TitleName": "刻命螺旋",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1021,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            26
+        ]
+    },
+    {
+        "Id": 28,
+        "TitleName": "创绘映想",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1022,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 29,
+        "TitleName": "凛至鸣渊",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1023,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            28
+        ]
+    },
+    {
+        "Id": 30,
+        "TitleName": "浮英枕梦行",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2004,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            29
+        ]
+    },
+    {
+        "Id": 31,
+        "TitleName": "萦森歧路",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1024,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            29
+        ]
+    },
+    {
+        "Id": 32,
+        "TitleName": "怒逐沉沙",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2005,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            31
+        ]
+    },
+    {
+        "Id": 33,
+        "TitleName": "爝火长明",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1025,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            32
+        ]
+    },
+    {
+        "Id": 34,
+        "TitleName": "摇篮游行",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1026,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            33
+        ]
+    },
+    {
+        "Id": 35,
+        "TitleName": "矩阵循声",
+        "SubTitleName": "多维演绎",
+        "UiName": "GridChapterFubenChallenge",
+        "ExhibitionFubenType": 3,
+        "ExhibitionFubenConfigId": 18,
+        "ShowConditionId": 0,
+        "BgPath": "Assets/Product/Texture/Image/UiMainLineExhibition/UiMainLineExhibitionUiTheatre3.png",
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            34
+        ]
+    },
+    {
+        "Id": 36,
+        "TitleName": "碑火铸脊",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1027,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            34
+        ]
+    },
+    {
+        "Id": 37,
+        "TitleName": "络勾陈",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1028,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            35
+        ]
+    },
+    {
+        "Id": 38,
+        "TitleName": "源解信标",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1029,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 39,
+        "TitleName": "镜像星尘",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1030,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            38
+        ]
+    },
+    {
+        "Id": 40,
+        "TitleName": "幽塔黎光",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2006,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            39
+        ]
+    },
+    {
+        "Id": 41,
+        "TitleName": "云梁觅影",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2007,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -112000,
+        "PreIds": [
+            39
+        ]
+    },
+    {
+        "Id": 42,
+        "TitleName": "暮往长离",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2008,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            41
+        ]
+    },
+    {
+        "Id": 43,
+        "TitleName": "剪身成蝶",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1031,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            42
+        ]
+    },
+    {
+        "Id": 44,
+        "TitleName": "寒境曙光",
+        "SubTitleName": "多维演绎",
+        "UiName": "GridChapterFubenChallenge",
+        "ExhibitionFubenType": 3,
+        "ExhibitionFubenConfigId": 20,
+        "ShowConditionId": 0,
+        "BgPath": "Assets/Product/Texture/Image/UiMainLineExhibition/UiMainLineExhibitionUiTheatre4.png",
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            43
+        ]
+    },
+    {
+        "Id": 45,
+        "TitleName": "晨昏庭影",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2009,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            43
+        ]
+    },
+    {
+        "Id": 46,
+        "TitleName": "遥行循星",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1032,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            43
+        ]
+    },
+    {
+        "Id": 47,
+        "TitleName": "锈夜逐光",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1033,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            46
+        ]
+    },
+    {
+        "Id": 48,
+        "TitleName": "醉狱谲笼",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2010,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -123000,
+        "PreIds": [
+            47
+        ]
+    },
+    {
+        "Id": 49,
+        "TitleName": "梦赴光寥之乡",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1034,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0
+    },
+    {
+        "Id": 50,
+        "TitleName": "逐生复始",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2011,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -118000,
+        "PreIds": [
+            49
+        ]
+    },
+    {
+        "Id": 51,
+        "TitleName": "末路燎原",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2012,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -103000,
+        "PreIds": [
+            49
+        ]
+    },
+    {
+        "Id": 52,
+        "TitleName": "覆海离声",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1035,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            49
+        ]
+    },
+    {
+        "Id": 53,
+        "TitleName": "溯梦归途",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1036,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            52
+        ]
+    },
+    {
+        "Id": 54,
+        "TitleName": "织奏序言",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2013,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            53
+        ]
+    },
+    {
+        "Id": 55,
+        "TitleName": "理想笼",
+        "SubTitleName": "浮点纪实",
+        "UiName": "GridChapterBranchLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 2014,
+        "ShowConditionId": 0,
+        "BgPosX": -2420,
+        "BgPosY": -128000,
+        "PreIds": [
+            53
+        ]
+    },
+    {
+        "Id": 56,
+        "TitleName": "眠于厄寐之境",
+        "UiName": "GridChapterMainLine",
+        "ExhibitionFubenType": 1,
+        "ExhibitionFubenConfigId": 1037,
+        "ShowConditionId": 0,
+        "BgPosX": 0,
+        "BgPosY": 0,
+        "PreIds": [
+            53
+        ]
+    }
+]

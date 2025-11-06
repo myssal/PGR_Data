@@ -15,6 +15,12 @@ function XMovieActionAnimationPlay:OnRunning()
         return
     end
 
+    -- 父节点隐藏导致的动画节点隐藏
+    if not anim.transform.parent.gameObject.activeInHierarchy then
+        anim.gameObject:SetActiveEx(false)
+        return
+    end
+
     -- 是否是循环动画
     local isLoop = false
     local director = anim.transform:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))

@@ -35,7 +35,7 @@ function XUiPanelRecommendCompanyPackage:SetData(data, skipFunc, buyFinished)
                 btnBuy = self._ThreeDay.BtnBuyLB
             elseif index == 2 then
                 local data = XDataCenter.PurchaseManager.GetPurchasePackageById(rawData.CompanyPackage)
-                self._Plus:Refresh(data:GetId())
+                self._Plus:Refresh(data:GetId(), rawData)
                 btnBuy = self._Plus.BtnBuyYK
             end
 

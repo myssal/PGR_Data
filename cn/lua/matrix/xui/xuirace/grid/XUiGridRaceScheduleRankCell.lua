@@ -80,6 +80,9 @@ function XUiGridRaceScheduleRankCell:ShowResult(isFinal)
     self.PanelWin.gameObject:SetActiveEx(not self._IsDown)
     self.PanelFail.gameObject:SetActiveEx(self._IsDown)
     self.Win.gameObject:SetActiveEx(self._IsUp)
+    self.Fail.gameObject:SetActiveEx(self._IsDown and not isFinal)
+    self.TxtWin1.gameObject:SetActiveEx(self._IsUp and not isFinal)
+    self.TxtWin2.gameObject:SetActiveEx(self._IsUp and isFinal)
 end
 
 function XUiGridRaceScheduleRankCell:ShowNode(isPointRace, isShowTime, isShowBtnTip)

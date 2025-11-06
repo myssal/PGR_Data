@@ -185,14 +185,14 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetMain:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
-    self.BtnStart.CallBack = function() self:OnBtnStartClick() end
-    self.BtnContinue.CallBack = function() self:OnBtnStartClick() end
-    self.BtnChallenge.CallBack = function() self:OnBtnChallengeClick() end
-    self.BtnHistory.CallBack = function() self:OnBtnHistoryClick() end
-    self.BtnReturn.CallBack = function() self:OnBtnReturnClick() end
-    self.BtnGiveup.CallBack = function() self:OnBtnGiveupClick() end
-    self.BtnBack.CallBack = function() self:OnBtnLeaveClick() end
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
+    self.BtnStart:AddEventListener(handler(self, self.OnBtnStartClick))
+    self.BtnContinue:AddEventListener(handler(self, self.OnBtnStartClick))
+    self.BtnChallenge:AddEventListener(handler(self, self.OnBtnChallengeClick))
+    self.BtnHistory:AddEventListener(handler(self, self.OnBtnHistoryClick))
+    self.BtnReturn:AddEventListener(handler(self, self.OnBtnReturnClick))
+    self.BtnGiveup:AddEventListener(handler(self, self.OnBtnGiveupClick))
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnLeaveClick))
 end
 --endregion
 

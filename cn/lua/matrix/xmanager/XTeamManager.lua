@@ -536,11 +536,18 @@ XTeamManagerCreator = function()
                         PartnerId = partnerId,
                         SkillData = partnerData:GetSkillDataByPos(pos)
                     }
-
-                    XMessagePack.MarkAsTable(request.PartnerData[pos])
-                    if request.PartnerData[pos].SkillData then
-                        XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
+                else
+                    local curPosEntityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
+                    if XTool.IsNumberValid(curPosEntityId) then
+                        request.PartnerData[pos] = 
+                        {
+                            PartnerId = 0,
+                        }
                     end
+                end
+                XMessagePack.MarkAsTable(request.PartnerData[pos])
+                if request.PartnerData[pos].SkillData then
+                    XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
                 end
             end
         end
@@ -580,6 +587,7 @@ XTeamManagerCreator = function()
         -- ✅ 发送请求
         ----------------------------------------
         XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
+            xTeamPrefab:EndSnapshotBatch()
             if response.Code ~= XCode.Success then
                 XUiManager.TipCode(response.Code)
                 xTeamPrefab:RestoreFromSnapshot()
@@ -628,6 +636,7 @@ XTeamManagerCreator = function()
         end
 
         XNetwork.Call("TeamPrefabUpdateEquipRequest", request, function(res)
+            xTeamPrefab:EndSnapshotBatch()
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 xTeamPrefab:RestoreFromSnapshot()
@@ -704,6 +713,7 @@ XTeamManagerCreator = function()
         XMessagePack.MarkAsTable(request.PrefabTeamInfo)
 
         XNetwork.Call("TeamPrefabUpdateMetadataRequest", request, function(res)
+            xTeamPrefab:EndSnapshotBatch()
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 xTeamPrefab:RestoreFromSnapshot()
@@ -713,7 +723,6 @@ XTeamManagerCreator = function()
             if cb then cb() end
         end)
     end
-
 
     -- 更新TeamId的数据缓存，服务器的XTeamData只在登录的时候下发
     function XTeamManager.SetPlayerTeamLocal(curTeam, isPrefab, cb, saveXTeam)
@@ -1316,6 +1325,19 @@ XTeamManagerCreator = function()
         return result
     end
 
+    function XTeamManager.GetXTeamSpeedrun(stageId)
+        local groupId = XMVCA.XPlotExhibition:GetSpeedrunStageGroupId(stageId)
+        local teamId = string.format("%s%s_%s", TeamDataKey, tostring(XPlayer.Id), groupId)
+        ---@type XTeam
+        local result = TeamDic[teamId]
+        if result == nil then
+            result = XTeam.New(teamId)
+            result:UpdateAutoSave(true)
+            TeamDic[teamId] = result
+        end
+        return result
+    end
+    
     --- 该接口获取的XTeam启用内部变更自动保存，无需外部手动调用保存接口
     function XTeamManager.GetXTeamByStageIdEx(stageId)
         local teamId = GetTeamKey(stageId)

@@ -14,6 +14,7 @@ function XUiBigWorldMessageTips:OnAwake()
     self._SequentialId = 0
     self._IsForce = false
     self._Timer = false
+    self._IsOpenedSingle = false
 
     self:_RegisterButtonClicks()
 end
@@ -43,6 +44,9 @@ end
 function XUiBigWorldMessageTips:OnDestroy()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE)
     XMVCA.XBigWorldMessage:RecordStatistical(self._MessageData.MessageId, XMVCA.XBigWorldMessage.OperatorType.Leave, 0, self.Name)
+    if self._IsForce then
+        self:ChangeInput(false)
+    end
 end
 
 -- endregion
@@ -132,12 +136,13 @@ function XUiBigWorldMessageTips:_AutoOpenMessage()
     local messageData = self._MessageData
 
     if messageData then
-        --self:InsertQueueBeforeClose("UiBigWorldPopupMessageSingle", messageData.MessageId)
+        if self._IsOpenedSingle then
+            XLog.Error("[BigWorldMessage]: Repeat Open Single Message Tips.")
+            return
+        end
+
+        self._IsOpenedSingle = true
         self:InsertQueueBeforeClose("UiBigWorldPopupMessageSingle", messageData.MessageId, self._SequentialId)
-        -- XMVCA.XBigWorldUI:Close(self.Name, function() 
-        --     -- XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupMessageSingle", messageData.MessageId)
-        --     --- Todo zjx 后续优化弹窗队列后一并优化
-        -- end)
     else
         self:Close()
     end

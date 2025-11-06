@@ -15,9 +15,10 @@ function XBuffScript1016027:Init()
     self.signalId = 1015911 --【定时】标记
     self.cnt = 0
     self.cntTarget = 3
-    self.level = 0
-    self.maxLevel =4
+    self.level = 1
+    self.maxLevel = 4
     self.enhBuffId = 1016244    --【定时】通用强化buff标记
+    self.enhLevel = 0
     ------------执行------------
 end
 ---@param dt number @ delta time
@@ -39,16 +40,27 @@ function XBuffScript1016027:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
     if npcUUID == self._uuid and buffId == self.battleStartBuffId then
         self.targetId = self._proxy:GetFightTargetId(self._uuid)
         --更新magic等级
-        self.magicLevel = self._proxy:GetBuffStacks(self._uuid,self.enhBuffId)
+        self.magicLevel = self._proxy:GetBuffStacks(self._uuid, self.enhBuffId)
+        --更新强化Buff标记层数
+        self.enhLevel = self._proxy:GetBuffStacks(self._uuid, self.enhBuffId)
     end
     if npcUUID == self._uuid and buffId == self.signalId then
+        local targetPos = self._proxy:GetNpcPosition(self.targetId)
         self.cnt = self.cnt + 1
         if self.cnt >= self.cntTarget then
-            self._proxy:LaunchMissile(self._uuid,self.targetId,self.missileIds[self.level],self.missileIds[self.level],self.magicLevel)
-            self._proxy:LaunchMissile(self._uuid,self.targetId,self.dmgMissileIds[self.level],self.dmgMissileIds[self.level],self.magicLevel)
-            self.level = math.min(self.level +1 ,self.maxLevel)
+            self._proxy:LaunchMissileFromPosToPos(self._uuid, self.missileIds[self.level], self.missileIds[self.level], targetPos, targetPos, self.magicLevel)
+            self._proxy:AddTimerTask(0.8, function()
+                --延迟0.7秒后，释放伤害
+                if not self._proxy:CheckNpc(self.targetId) then
+                    return
+                end
+                for i = 1, self.enhLevel do
+                    self._proxy:LaunchMissileFromPosToPos(self._uuid, self.dmgMissileIds[self.level], self.dmgMissileIds[self.level], targetPos, targetPos, self.magicLevel)
+                end
+                self.level = math.min(self.level + 1, self.maxLevel)
+                self.cnt = 0
+            end)
         end
-
     end
 end
 --endregion

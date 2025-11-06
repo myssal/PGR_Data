@@ -183,4 +183,8 @@ function XPurchaseRecommend:GetPriority()
     return self.Priority or 0
 end
 
+function XPurchaseRecommend:GetCfgComboPackageIds()
+    return self.Config.ComboPackageIds
+end
+
 return XPurchaseRecommend

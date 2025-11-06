@@ -10,6 +10,9 @@ function XUiGridMainLineExhibitionModule:Ctor(uiPanelExhibition, ui, moduleId, i
     self.ModuleId = moduleId
     self.Index = index
 
+    -- 总是显示，显隐交给动画来控制
+    self.PanelTitle.gameObject:SetActiveEx(true)
+    self.PanelTitle2.gameObject:SetActiveEx(true)
     self:InitChapterList()
     self:IniModuleName()
 end
@@ -60,8 +63,10 @@ end
 
 -- 切换章节详情UI
 function XUiGridMainLineExhibitionModule:SwitchDetailUi()
-    self.PanelTitle.gameObject:SetActiveEx(false)
-    self.PanelTitle2.gameObject:SetActiveEx(true)
+    --self.PanelTitle2.gameObject:SetActiveEx(false)
+    --self.PanelTitle.gameObject:SetActiveEx(true)
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "PanelTitle2Enable")
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "PanelTitleDisable")
     for _, chapter in pairs(self.ChapterList) do
         chapter:SwitchDetailUi()
     end
@@ -69,8 +74,10 @@ end
 
 -- 切换章节简略UI
 function XUiGridMainLineExhibitionModule:SwitchBriefUi()
-    self.PanelTitle.gameObject:SetActiveEx(true)
-    self.PanelTitle2.gameObject:SetActiveEx(false)
+    --self.PanelTitle.gameObject:SetActiveEx(true)
+    --self.PanelTitle2.gameObject:SetActiveEx(false)
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "PanelTitle2Disable")
+    XUiHelper.PlayUiNodeAnimation(self.Transform, "PanelTitleEnable")
     local currentProgress, maxProgress = XMVCA.XMainLine2:GetExhibitionModuleProgress(self.ModuleId)
     self.TxtProgress.text = math.floor(currentProgress / maxProgress * 100) .. "%"
 

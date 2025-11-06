@@ -67,13 +67,9 @@ function XUiBigWorldTaskMain:InitUi()
 end
 
 function XUiBigWorldTaskMain:InitCb()
-    self.BtnBack.CallBack = function()
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
 
-    self.BtnStory.CallBack = function()
-        self:OnBtnStoryClick()
-    end
+    self.BtnStory:AddEventListener(handler(self, self.OnBtnStoryClick))
 end
 
 function XUiBigWorldTaskMain:InitView()

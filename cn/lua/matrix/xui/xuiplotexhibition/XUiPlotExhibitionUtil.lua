@@ -7,6 +7,14 @@ function XUiPlotExhibitionUtil.Init(ui, path)
     if ui.SpeedrunBtnToggle then
         ui.SpeedrunTips = ui.SpeedrunTips or XUiHelper.TryGetComponent(ui.SpeedrunBtnToggle.transform.parent.transform, "PanelTips", "RectTransform")
     end
+    if ui.SpeedrunBtnToggle then
+        local txtTips = XUiHelper.TryGetComponent(ui.SpeedrunBtnToggle.transform.parent, "PanelTips/TxtTips", "Text")
+        if txtTips then
+            txtTips.text = XUiHelper.GetText("SpeedRunTips")
+        else
+            XLog.Warning("[XUiPlotExhibitionUtil] 修改速通提示文本失败")    
+        end
+    end
 end
 
 ---@param ui XLuaUi|XUiNode

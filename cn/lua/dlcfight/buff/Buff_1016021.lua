@@ -44,9 +44,6 @@ function XBuffScript1016021:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
         self._proxy:ApplyMagic(self._uuid, self._uuid, self.magicId, self.magicLevel)
     end
 
-    if buffId == 1018205 then
-        self._proxy:RemoveBuff(self._uuid,self.magicId)
-    end
 
 end
 

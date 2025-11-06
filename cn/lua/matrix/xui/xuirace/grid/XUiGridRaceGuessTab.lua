@@ -6,6 +6,17 @@ local XUiGridRaceGuessTab = XClass(XUiNode, "XUiGridRaceGuessTab")
 function XUiGridRaceGuessTab:OnStart()
     local activityConfig = self._Control:GetCurrentConfig()
     self.RImgMoney:SetRawImage(XDataCenter.ItemManager.GetItemIcon(activityConfig.ItemId))
+    self._Storage = self.Transform:FindTransform("Storage")
+    self._Expand = self.Transform:FindTransform("Expand")
+end
+
+function XUiGridRaceGuessTab:OnDestroy()
+    if not XTool.UObjIsNil(self._Storage) then
+        self._Storage:StopTimelineAnimation()
+    end
+    if not XTool.UObjIsNil(self._Expand) then
+        self._Expand:StopTimelineAnimation()
+    end
 end
 
 function XUiGridRaceGuessTab:SetGuessId(guessId)
@@ -53,6 +64,18 @@ end
 
 function XUiGridRaceGuessTab:GetGuessId()
     return self._GuessId
+end
+
+function XUiGridRaceGuessTab:PlayTween()
+    if self._GuessId == self.Parent._CurGuessId then
+        if not XTool.UObjIsNil(self._Expand) then
+            self._Expand:PlayTimelineAnimation()
+        end
+    else
+        if not XTool.UObjIsNil(self._Storage) then
+            self._Storage:PlayTimelineAnimation()
+        end
+    end
 end
 
 return XUiGridRaceGuessTab

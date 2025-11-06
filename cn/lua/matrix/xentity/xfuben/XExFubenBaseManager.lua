@@ -38,6 +38,9 @@ end
 
 -- return : XFunctionManager.FunctionName
 function XExFubenBaseManager:ExGetFunctionNameType()
+    if not self.ExConfig then
+        return
+    end
     return self.ExConfig.FunctionNameId
 end
 
@@ -101,6 +104,10 @@ end
 
 -- 打开玩法主界面
 function XExFubenBaseManager:ExOpenMainUi(...)
+    local functionName = self:ExGetFunctionNameType()
+    if functionName and not XMVCA.XSubPackage:CheckSubpackage(functionName) then
+        return
+    end
     XFunctionManager.SkipInterface(self.ExConfig.SkipId, nil, ...)
 end
 

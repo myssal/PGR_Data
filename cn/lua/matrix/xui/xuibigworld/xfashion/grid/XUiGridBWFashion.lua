@@ -25,9 +25,7 @@ end
 
 function XUiGridBWFashion:InitCb()
     if self.BtnClick then
-        self.BtnClick.CallBack = function() 
-            self:OnBtnClick()
-        end
+        self.BtnClick:AddEventListener(handler(self, self.OnBtnClick))
     end
 end
 

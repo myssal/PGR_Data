@@ -163,7 +163,7 @@ function XBigWorldMessageControl:CheckMessageIsForcePlay(messageId)
 end
 
 function XBigWorldMessageControl:ReplaceMessageContentPlayerName(text)
-    return string.gsub(text, "%[PlayerName%]", XPlayer.Name)
+    return XUiHelper.ReplaceWithPlayerName(text, "%[PlayerName%]")
 end
 
 function XBigWorldMessageControl:SendMessageComplete(messageId)

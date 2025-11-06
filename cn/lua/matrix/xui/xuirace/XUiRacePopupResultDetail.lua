@@ -12,11 +12,13 @@ function XUiRacePopupResultDetail:OnStart(guessId)
     self._GuessId = guessId
     self._MatchData = self._Control:GetMatchGuessData()
     self._Info = self._MatchData:GetInfo(guessId)
+    self._IsHideRank = self._Control:IsGuessHideRank(guessId)
 
-    local isSuccess = self._MatchData:IsPredictSuccess(guessId)
-    self.ImgRight.gameObject:SetActiveEx(isSuccess)
-    self.ImgWrong.gameObject:SetActiveEx(not isSuccess)
+    self._IsSuccess = self._MatchData:IsPredictSuccess(guessId)
+    self.ImgRight.gameObject:SetActiveEx(self._IsSuccess)
+    self.ImgWrong.gameObject:SetActiveEx(not self._IsSuccess)
     self.TxtProject.text = self._Control:GetRaceGuessById(guessId).Name
+    self.BtnPlayback.gameObject:SetActiveEx(not self._Control:IsGuessHidePlayback(guessId))
 
     self:InitPredict(self.PanelWinner, true)
     self:InitPredict(self.PanelMine, false)
@@ -35,25 +37,40 @@ function XUiRacePopupResultDetail:InitPredict(go, isResultOrPredict)
     local mineOption = self._Control:GetGuessProjectOption(nil, self._GuessId)
     local resultOption = self._Control:GetGuessProjectResult(nil, self._GuessId)
     local option = isResultOrPredict and resultOption or mineOption
+    if self._IsSuccess and isResultOrPredict and self._Control:IsGuessProjectMultiRole(nil, self._GuessId) then
+        option = mineOption
+    end
 
+    local uiObject = {}
+    XUiHelper.InitUiClass(uiObject, isResultOrPredict and self.PanelWinner or self.PanelMine)
     if isRole then
         local roleCfg = self._Control:GetRaceCharacterById(option)
         local property = isResultOrPredict and self._Info.ResultPropertyValue or self._Info.GuessPropertyValue
-        self.PanelRole.gameObject:SetActiveEx(true)
-        self.PanelOption.gameObject:SetActiveEx(false)
-        self.ImgHead:SetRawImage(roleCfg.Icon)
-        self.TxtRoleName.text = roleCfg.Name
-        self.TxtType.text = self._Control:GetPropertyName(self._GuessId)
-        self.TxtDetail.text = self._Control:GetPropertyDesc(self._GuessId, property)
+        uiObject.PanelRole.gameObject:SetActiveEx(true)
+        uiObject.PanelOption.gameObject:SetActiveEx(false)
+        uiObject.ImgHead:SetRawImage(roleCfg.Icon)
+        uiObject.TxtRoleName.text = roleCfg.Name
+        if self._IsHideRank then
+            uiObject.TxtType.gameObject:SetActiveEx(false)
+        else
+            uiObject.TxtType.gameObject:SetActiveEx(true)
+            uiObject.TxtType.text = string.format("%s：", self._Control:GetPropertyName(self._GuessId))
+        end
+        uiObject.TxtDetail.text = self._Control:GetPropertyDesc(self._GuessId, property)
     else
-        self.PanelRole.gameObject:SetActiveEx(false)
-        self.PanelOption.gameObject:SetActiveEx(true)
-        self.TxtOption.text = self._Control:GetGuessParamDesc(option)
+        uiObject.PanelRole.gameObject:SetActiveEx(false)
+        uiObject.PanelOption.gameObject:SetActiveEx(true)
+        uiObject.TxtOption.text = self._Control:GetGuessParamDesc(option)
     end
 end
 
 function XUiRacePopupResultDetail:OnBtnPlaybackClick()
-
+    local roundId = self._Control:GetPlaybackRoundId(self._GuessId)
+    if XTool.IsNumberValid(roundId) then
+        self._Control:EnterGame(roundId, XEnumConst.Race.GameMode.Playback)
+    else
+        XLog.Error(string.format("赛事竞猜:GuessId=%s没有配置回放场次Id", self._GuessId))
+    end
 end
 
 return XUiRacePopupResultDetail

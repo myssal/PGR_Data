@@ -77,7 +77,7 @@ end
 
 function XUiTheatre5RoundSettlement:UpdateRelics(data)
     if self.RelicContainer then
-        -- 显示自己拥有的饰品
+        -- 显示自己拥有的饰品/敌人的饰品
         local relics = self._Control:GetUiDataRelicsByData(data.AutoChessData.Relics)
         XTool.UpdateDynamicItem(self._RelicGrids, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
     end

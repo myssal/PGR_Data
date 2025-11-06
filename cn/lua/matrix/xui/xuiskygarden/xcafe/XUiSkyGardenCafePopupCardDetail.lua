@@ -3,7 +3,7 @@
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field _Control XSkyGardenCafeControl
-local XUiSkyGardenCafePopupCardDetail = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafePopupCardDetail")
+local XUiSkyGardenCafePopupCardDetail = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafePopupCardDetail")
 
 function XUiSkyGardenCafePopupCardDetail:OnAwake()
     self:InitUi()
@@ -20,9 +20,7 @@ function XUiSkyGardenCafePopupCardDetail:InitUi()
 end
 
 function XUiSkyGardenCafePopupCardDetail:InitCb()
-    self.BtnClose.CallBack = function() 
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 function XUiSkyGardenCafePopupCardDetail:InitView()

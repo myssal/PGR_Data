@@ -5,8 +5,8 @@
 local XUiSkyGardenShoppingStreetInsideBuildGridMaterial = XClass(XUiNode, "XUiSkyGardenShoppingStreetInsideBuildGridMaterial")
 
 function XUiSkyGardenShoppingStreetInsideBuildGridMaterial:OnStart()
-    self.BtnUp.CallBack = function() self:OnBtnUpClick() end
-    self.BtnDown.CallBack = function() self:OnBtnDownClick() end
+    self.BtnUp:AddEventListener(handler(self, self.OnBtnUpClick))
+    self.BtnDown:AddEventListener(handler(self, self.OnBtnDownClick))
 end
 
 function XUiSkyGardenShoppingStreetInsideBuildGridMaterial:OnBtnUpClick()

@@ -31,14 +31,14 @@ function XUiFubenBossSingleDetailPanelReset:Update(config)
         grid:Close()
     end
 
-    local autoFightData = self._Control:CheckAutoFight(self._CurBossStageConfig.StageId)
+    local autoFightData = self._Control:GetRecordCurrentByStageId(self._CurBossStageConfig.StageId)
 
     if not autoFightData then
         XUiManager.TipText("BossSingleAutoFightDesc1")
         return
     end
 
-    for i, characterId in pairs(autoFightData:GetCharacterList()) do
+    for i, characterId in pairs(autoFightData.Characters) do
         if characterId > 0 then
             local grid = self._TeamMemberList[i]
             grid:SetCharacterId(characterId)

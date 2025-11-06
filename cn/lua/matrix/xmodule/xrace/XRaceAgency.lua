@@ -24,6 +24,20 @@ function XRaceAgency:InitEvent()
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_UICHAT_DISABLE, self.CloseChatTip, self)
 end
 
+function XRaceAgency:RemoveEvent()
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_ENABLE, self.CheckOpenMainTip, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_DISABLE, self.CloseMainTip, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UICHAT_ENABLE, self.CheckOpenChatTip, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UICHAT_DISABLE, self.CloseChatTip, self)
+end
+
+function XRaceAgency:ResetAll()
+    for _, timerId in pairs(self._WaitTimers) do
+        XScheduleManager.UnSchedule(timerId)
+    end
+    self._WaitTimers = {}
+end
+
 ----------public start----------
 
 function XRaceAgency:GetCurrentConfig()
@@ -52,6 +66,17 @@ function XRaceAgency:OpenMain()
     end)
 end
 
+function XRaceAgency:IsGamePlaying()
+    local roundId = self._Model:GetCurRound()
+    if roundId ~= -1 then
+        local etcd = self._Model:GetEtcdRoundConfig(roundId)
+        if etcd then
+            return etcd.StartTimeLong < XTime.GetServerNowTimestamp()
+        end
+    end
+    return false
+end
+
 --region 场景相关--------------------------------------------------
 function XRaceAgency:OpenLoading(maxPercentage, time)
     if self._IsShowLoading then return end
@@ -65,8 +90,13 @@ function XRaceAgency:CloseLoading()
     self._IsShowLoading = false
 end
 
+function XRaceAgency:IsEnterScene()
+    return self._IsEnterScene
+end
+
 -- 进入场景
 function XRaceAgency:EnterMatchScene(...)
+    self._IsEnterScene = true
     self:OpenLoading()
     XMVCA.XScene:LoadScene(SceneIds.XRaceScene, true, nil, nil, ...)
 end
@@ -74,6 +104,7 @@ end
 -- 离开场景
 function XRaceAgency:LeaveMatchScene()
     XMVCA.XScene:ExitScene(SceneIds.XRaceScene)
+    self._IsEnterScene = false
 end
 
 function XRaceAgency:GetRaceStartTime()
@@ -129,7 +160,7 @@ function XRaceAgency:ExGetRunningTimeStr()
 end
 
 function XRaceAgency:ExGetRightMidCustomText()
-    if not self:GetIsOpen() then
+    if not self:GetIsOpen(true) then
         return nil
     end
     local roundId = self._Model:GetCurRound()
@@ -198,43 +229,53 @@ function XRaceAgency:NotifyRaceRoundConfig(data)
     XEventManager.DispatchEvent(XEventId.EVENT_RACE_TIME_UPDATE)
 end
 
+function XRaceAgency:IsRunninghMatch()
+    if self._IsRunningMatch == nil then
+        return XTime.GetServerNowTimestamp() >= self:GetRaceStartTime()
+    end
+    return self._IsRunningMatch
+end
+
 function XRaceAgency:NotifyRaceRoundStart(data)
+    self._IsRunningMatch = true
     self._Model:NotifyRaceRoundStart(data)
     XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_START)
 end
 
 function XRaceAgency:NotifyRaceRoundEnd(data)
-    if XLuaUiManager.IsUiShow("UiRaceFightMain") then
+    self._IsRunningMatch = false
+    self:CheckMainPanelRoleSite(data.RoundId)
+    if self:IsEnterScene() then
+        XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_END_IN_SCENE, data.RoundId)
         return --走局内的结算逻辑
     end
-    XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_END, data.RoundId)
+    XNetwork.CallWithAutoHandleErrorCode("RaceGetAllRoundResultRequest", {}, function(res)
+        self._Model:UpdateAllRoundResult(res)
+        XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_END, data.RoundId)
+    end)
+end
+
+--重置主界面角色站位
+function XRaceAgency:CheckMainPanelRoleSite(curRoundId)
+    local sortRoundIds = self._Model:GetSortRoundId()
+    local curIdx = table.indexof(sortRoundIds, curRoundId)
+    if curIdx >= #sortRoundIds then
+        return --总决赛除外
+    end
+    local curEtcd = self._Model:GetEtcdRoundConfig(curRoundId)
+    local nextEtcd = self._Model:GetEtcdRoundConfig(sortRoundIds[curIdx + 1])
+    if not curEtcd or not nextEtcd then
+        return
+    end
+    local curPointGroup = curEtcd.PointGroupId
+    local nextPointGroup = nextEtcd.PointGroupId
+    if XTool.IsNumberValid(curPointGroup) and XTool.IsNumberValid(nextPointGroup) and curPointGroup == nextPointGroup then
+        return --下一次比赛是同组的积分赛时除外（因为角色没变化）
+    end
+    self._Model:SetRoleRandomSite(nil)
 end
 
 --region 飘字
-
-function XRaceAgency:IsTipHasShow(uiType, id)
-    return self._Model:IsTipHasShow(uiType, id)
-end
-
-function XRaceAgency:SetTipShow(uiType, id)
-    self._Model:SetTipShow(uiType, id)
-end
-
-function XRaceAgency:GetSortBroadcasts(uiType)
-    return self._Model:GetSortBroadcasts(uiType)
-end
-
-function XRaceAgency:GetCurRound()
-    return self._Model:GetCurRound()
-end
-
-function XRaceAgency:GetEtcdRoundConfig(roundId)
-    return self._Model:GetEtcdRoundConfig(roundId)
-end
-
-function XRaceAgency:ParseToTimestamp(timeStr)
-    return self._Model:ParseToTimestamp(timeStr)
-end
 
 -- UiMain的OnEnable时机可能比协议下发快
 function XRaceAgency:CheckOpenMainTip()
@@ -282,24 +323,46 @@ function XRaceAgency:CheckTip(tipType)
     local nowTime = XTime.GetServerNowTimestamp()
     local startTime = etcd.StartTimeLong
     local leftMinute = math.max(startTime - nowTime, 0) / 60
-    for i, v in ipairs(configs) do
-        if leftMinute <= v.BeforeTime then
-            if not self._Model:IsTipHasShow(tipType, v.Id) then
-                self._Model:SetTipShow(tipType, v.Id)
-                if not self:IsTipShowing(tipType) then
-                    self:SetTipShowing(tipType, true)
-                    XLuaUiManager.Open("UiRaceToastHall", v, tipType)
+    local maxBeforeTime = configs[#configs].BeforeTime
+    if leftMinute > maxBeforeTime then
+        --还未到飘横幅的时候
+        self:DoCountDown(tipType, startTime, maxBeforeTime)
+    else
+        for i, v in ipairs(configs) do
+            if leftMinute <= v.BeforeTime then
+                if v.IsStill or not self._Model:IsTipHasShow(tipType, v.Id) then
+                    if self:IsTipShowing(tipType) then
+                        XEventManager.DispatchEvent(XEventId.EVENT_RACE_TOAST_HALL_UPDATE, v, tipType)
+                    else
+                        --不能打开2个同名的Ui界面
+                        if tipType == XEnumConst.Race.Tip.Main then
+                            local isChatShow = XLuaUiManager.IsUiShow("UiChatServeMain")
+                            if not isChatShow then
+                                self:SetTipShowing(tipType, true)
+                                XLuaUiManager.Open("UiRaceToastHall", v, tipType)
+                            end
+                        else
+                            self:SetTipShowing(tipType, true)
+                            XLuaUiManager.Open("UiRaceToastHallChat", v, tipType)
+                        end
+                    end
                 end
+                -- 倒计时显示下一条播报
+                if i > 1 then
+                    self:DoCountDown(tipType, startTime, configs[i - 1].BeforeTime)
+                end
+                return
             end
-            -- 倒计时显示下一条播报
-            if i > 1 then
-                local nextTime = startTime - configs[i - 1].BeforeTime * 60
-                local waitTime = (nextTime - nowTime) * 1000
-                self._WaitTimers[tipType] = XScheduleManager.ScheduleOnce(handler(self, self.CheckOpenMainTip), waitTime)
-            end
-            break
         end
     end
+end
+
+function XRaceAgency:DoCountDown(tipType, startTime, beforeTime)
+    local nextTime = startTime - beforeTime * 60
+    local waitTime = (nextTime - XTime.GetServerNowTimestamp()) * 1000
+    self._WaitTimers[tipType] = XScheduleManager.ScheduleOnce(function()
+        self:CheckTip(tipType)
+    end, waitTime)
 end
 
 --todo 停服公告出现时隐藏
@@ -309,6 +372,7 @@ end
 
 function XRaceAgency:CloseChatTip()
     self:CloseTip(XEnumConst.Race.Tip.Chat)
+    self:CheckTip(XEnumConst.Race.Tip.Main)
 end
 
 function XRaceAgency:CloseTip(tipType)
@@ -331,6 +395,10 @@ function XRaceAgency:IsTipShowing(tipType)
     return self._TipShowDict and self._TipShowDict[tipType]
 end
 
+function XRaceAgency:SetTipShow(tipType, id)
+    self._Model:SetTipShow(tipType, id)
+end
+
 --endregion
 
 --region 红点
@@ -348,12 +416,19 @@ function XRaceAgency:CheckTaskRedPoint()
     return false
 end
 
+function XRaceAgency:GetTimeToMatchCountDown()
+    local config = self._Model:GetClintConfigById("TimeToMatchCountDown")
+    return tonumber(config.Values[1]) * 24 * 60 * 60
+end
+
 function XRaceAgency:CheckMatchGuessRedpoint()
     if self:GetIsOpen(true) then
         local activity = self:GetCurrentConfig()
         local nowTime = XTime.GetServerNowTimestamp()
         local matchGuessEndTime = XFunctionManager.GetEndTimeByTimeId(activity.MatchGuessTime)
-        if nowTime <= matchGuessEndTime then
+        local timeToMatchCountDown = self:GetTimeToMatchCountDown()
+        local leftTime = matchGuessEndTime - nowTime
+        if leftTime > 0 and leftTime < timeToMatchCountDown then
             --预测时间是否结束
             local matchGuess = activity.MatchGuess
             local playerData = self._Model:GetBasePlayerData()

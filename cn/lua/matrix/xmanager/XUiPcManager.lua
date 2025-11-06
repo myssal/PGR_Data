@@ -230,7 +230,8 @@ XUiPcManagerCreator = function()
 
     XUiPcManager.GetLessHeightResolution = function(resolutions, height)
         -- 反向遍历, 求得一个小于目标值的分辨率
-        local taskbarHeight = CS.XWin32Api.GetTaskbarSize().x
+        -- local taskbarHeight = CS.XWin32Api.GetTaskbarSize().x
+        local taskbarHeight = 40
         CS.XLog.Debug(string.format("任务栏高度%d", taskbarHeight))
         for i = #resolutions, 1, -1 do
             local resolution = resolutions[i]
@@ -344,7 +345,7 @@ XUiPcManagerCreator = function()
     XUiPcManager.SetResolution = function(width, height, fullScreenMode)
         CS.XSettingHelper.SetResolution(width, height, fullScreenMode)
         XUiPcManager.SaveScreen(width, height)
-        XUiPcManager.SaveFullScreen(fullScreenMode == FullScreenMode.FullScreenWindow)
+        XUiPcManager.SaveFullScreen(fullScreenMode == FullScreenMode.FullScreenWindow or fullScreenMode == FullScreenMode.ExclusiveFullScreen)
         XUiPcManager.SaveFullScreenMode(fullScreenMode)
         if XDataCenter.UiPcManager.IsPcServer() then
             XLog.Error(string.format("设置窗口大小调试日志 SetResolution，width：%s，height：%s，fullScreenMode：%s", width, height, fullScreenMode))

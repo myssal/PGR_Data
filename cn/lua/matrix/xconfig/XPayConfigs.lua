@@ -35,7 +35,7 @@ end
 function XPayConfigs.GetPayConfig()
     if not PayListDataConfig or #PayListDataConfig <=0 then
         PayListDataConfig = {}
-        if XOverseaManager.IsENRegion() then
+        if XOverseaManager.IsENRegion() or XOverseaManager.IsTWRegion() then
             for _,v in pairs(PayTemplates)do
                 if XOverseaManager.IsENRegion() and v.ShowUIType ~= 1 then
                     goto continue

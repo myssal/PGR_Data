@@ -229,6 +229,7 @@ function XUiPanelGraphicsSet:OnStart()
             if open then
                 self.Dirty = true
                 self:OnClickFrameRateSettings(resolutionId)
+                self:OnClickBigWorldFrameRateLevelSettings(resolutionId)
             end
 
             if self.CurQualityLevel ~= 0 then

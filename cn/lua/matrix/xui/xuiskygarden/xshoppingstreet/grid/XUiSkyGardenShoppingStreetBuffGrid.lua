@@ -40,13 +40,13 @@ end
 function XUiSkyGardenShoppingStreetBuffGrid:SetClickCallback(cb)
     self._CallBack = cb
     self.UiSkyGardenShoppingStreetGridBuff.enabled = true
-    self.UiSkyGardenShoppingStreetGridBuff.CallBack = function ()
+    self.UiSkyGardenShoppingStreetGridBuff:AddEventListener(function ()
         if self._CallBack then
             self._CallBack()
         else
             XMVCA.XSkyGardenShoppingStreet:ShowBuffTips(self._buffId, self.ImgBuff.transform.position)
         end
-    end
+    end)
 end
 --endregion
 

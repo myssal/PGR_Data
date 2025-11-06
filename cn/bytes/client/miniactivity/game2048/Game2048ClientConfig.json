@@ -2,7 +2,7 @@
     {
         "Key": "ShowRewardId",
         "Values": [
-            66241
+            67210
         ]
     },
     {
@@ -44,8 +44,8 @@
     {
         "Key": "ShopItemTextColor",
         "Values": [
-            "fefefe",
-            828282
+            133346,
+            "99A4AA"
         ]
     },
     {
@@ -58,12 +58,6 @@
         "Key": "GameDragTriggerLength",
         "Values": [
             40
-        ]
-    },
-    {
-        "Key": "PropCannotUseTips",
-        "Values": [
-            "道具冷却中"
         ]
     },
     {
@@ -113,14 +107,14 @@
     {
         "Key": "MoveTweenTimer",
         "Values": [
-            0.2
+            0.1
         ]
     },
     {
         "Key": "MergeTweenTimer",
         "Values": [
             0.1,
-            0.1
+            0.01
         ]
     },
     {
@@ -186,45 +180,9 @@
         ]
     },
     {
-        "Key": "AgainLabelInSettle",
-        "Values": [
-            "再来一次"
-        ]
-    },
-    {
-        "Key": "NextStageLabelInSettle",
-        "Values": [
-            "下一关"
-        ]
-    },
-    {
-        "Key": "TipsCannotUseCopyWhenFull",
-        "Values": [
-            "没有多余的位置，无法使用该道具"
-        ]
-    },
-    {
         "Key": "StageTimeLockTips",
         "Values": [
             "{0}后解锁"
-        ]
-    },
-    {
-        "Key": "ExitLabel",
-        "Values": [
-            "退出"
-        ]
-    },
-    {
-        "Key": "ThunderTime",
-        "Values": [
-            0.5
-        ]
-    },
-    {
-        "Key": "ThunderBeforeWaitTime",
-        "Values": [
-            0.5
         ]
     },
     {
@@ -309,13 +267,19 @@
     {
         "Key": "GameScoreMaxLimit",
         "Values": [
-            9999
+            999999999
         ]
     },
     {
         "Key": "ChapterProgressShowLabel",
         "Values": [
-            "{0}<color=#FFFFFF><size=34>/{1}</size></color>"
+            "{0}<color=#234A95><size=34>/{1}</size></color>"
+        ]
+    },
+    {
+        "Key": "ChapterProgressShowTitle",
+        "Values": [
+            "{0}<color=#FFFFFF><size=32>/{1}</size></color>"
         ]
     },
     {
@@ -334,6 +298,54 @@
         "Key": "GameSettlePopDelay",
         "Values": [
             1
+        ]
+    },
+    {
+        "Key": "GridHeartAddMax",
+        "Values": [
+            3
+        ]
+    },
+    {
+        "Key": "BackInWaterFireSelectionTips",
+        "Values": [
+            "选择消除的方块类型后才可返回"
+        ]
+    },
+    {
+        "Key": "SettleInWaterFireSelectionTips",
+        "Values": [
+            "选择消除的方块类型后才可提前结算"
+        ]
+    },
+    {
+        "Key": "WaterFireSelectionTips",
+        "Values": [
+            "点击消除所有同元素方块"
+        ]
+    },
+    {
+        "Key": "NoWaterFireCanDispelTips",
+        "Values": [
+            "清除方块无目标，本次不生效"
+        ]
+    },
+    {
+        "Key": "NoWaterFireCanDispelTipsTime",
+        "Values": [
+            2
+        ]
+    },
+    {
+        "Key": "GameTransBlockTips",
+        "Values": [
+            "入梦层级提升后小于<color=#FFDE3B>{0}</color>的方块变成石头"
+        ]
+    },
+    {
+        "Key": "SpecialAdjustLevelUpId",
+        "Values": [
+            10094
         ]
     }
 ]

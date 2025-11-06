@@ -257,8 +257,8 @@ end
 
 --region 私有方法
 function XUiSkyGardenShoppingStreetInsideBuildFood:_RegisterButtonClicks()
-    self.BtnMinus.CallBack = function() self:OnBtnMinusClick() end
-    self.BtnAdd.CallBack = function() self:OnBtnAddClick() end
+    self.BtnMinus:AddEventListener(handler(self, self.OnBtnMinusClick))
+    self.BtnAdd:AddEventListener(handler(self, self.OnBtnAddClick))
 end
 --endregion
 

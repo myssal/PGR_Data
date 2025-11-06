@@ -1,67 +1,65 @@
 ---@class XUiLottoStoryTreeMode : XUiNode
 local XUiLottoStoryTreeMode = XClass(XUiNode, "XUiLottoStoryTreeMode")
 
-function XUiLottoStoryTreeMode:OnStart()
-    self:InitStageList()
-end
-
 function XUiLottoStoryTreeMode:InitStageList()
     local storyObj = self.PaneStageTree
     XTool.InitUiObjectByInstance(storyObj, self) -- 将line的UiObjet引用加进来
+end
 
-    local stageActivityId = XLottoConfigs.GetLottoStageActivity(self.Parent._LottoGroupData:GetId())
-    local festivalActivity = XFestivalActivityConfig.GetFestivalById(stageActivityId)
-    local XStageItem = require("XUi/XUiEpicFashionGacha/Grid/XStageItem")
+-- 判断关卡是否解锁，返回：是否解锁, 第一个未解锁的前置关卡名
+function XUiLottoStoryTreeMode:IsStageUnlocked(stageId)
+    local preStageIds = XMVCA.XFuben:GetPreStageId(stageId)
+    if XTool.IsTableEmpty(preStageIds) then
+        return true, nil
+    end
 
-    ---@type XStageItem[]
-    self._StageGridList = {}
-    self._StageIndexDir = {}
-
-    for i, stageId in pairs(festivalActivity.StageId) do
-        local stageTransform = self.PanelStageContent:GetChild(i - 1)
-        if stageTransform then
-            self._StageGridList[i] = XStageItem.New(self, stageTransform)
-            self._StageIndexDir[stageId] = i
+    for _, preStageId in pairs(preStageIds) do
+        local isPreStagePass = XMVCA.XFuben:CheckStageIsPass(preStageId)
+        if not isPreStagePass then
+            local preStageCfg = XMVCA.XFuben:GetStageCfg(preStageId)
+            local preStageName = preStageCfg and preStageCfg.Name or ""
+            return false, preStageName
         end
     end
+
+    return true, nil
 end
 
 function XUiLottoStoryTreeMode:RefreshStageList()
     self.PaneStageTree.gameObject:SetActiveEx(true)
-    for stageId, index in pairs(self._StageIndexDir) do
-        local activityId = XLottoConfigs.GetLottoStageActivity(self.Parent._LottoGroupData:GetId())
-        local fStage = XDataCenter.FubenFestivalActivityManager.GetFestivalStageByFestivalIdAndStageId(activityId, stageId)
-        local isOpen, _ = fStage:GetCanOpen()
-        local stageTransform = self.PanelStageContent:GetChild(index - 1)
-        if isOpen then
-            if stageTransform then
-                stageTransform.gameObject:SetActiveEx(true)
-            end
-            self._StageGridList[index].GameObject:SetActiveEx(true)
-            self._StageGridList[index]:UpdateNode(activityId, stageId)
-        else
-            if stageTransform then
-                stageTransform.gameObject:SetActiveEx(false)
-            end
-            self._StageGridList[index].GameObject:SetActiveEx(false)
-        end
-    end
-end
+    local stageActivityId = XLottoConfigs.GetLottoStageActivity(self.Parent._LottoGroupData:GetId())
+    local festivalActivity = XFestivalActivityConfig.GetFestivalById(stageActivityId)
 
-function XUiLottoStoryTreeMode:UpdateNodesSelect(stageId)
-    for gridStageId, index in pairs(self._StageIndexDir) do
-        self._StageGridList[index]:SetNodeSelect(gridStageId == stageId)
-        if gridStageId == stageId then
-            self._LastOpenStage = index
+    for i, stageId in pairs(festivalActivity.StageId) do
+        local stageTransform = self.PanelStageContent:GetChild(i - 1)
+        local stageObj = stageTransform:GetComponent("UiObject")
+        local btn = stageObj:GetObject("BtnStage")
+
+        if btn then
+            local stageCfg = XMVCA.XFuben:GetStageCfg(stageId)
+            btn.CallBack = function()
+                self:OpenStageDetails(stageId)
+            end
+            btn:SetNameByGroup(0, stageCfg.Name)
         end
+
+        -- 使用封装好的方法判断是否解锁
+        local isUnlocked = self:IsStageUnlocked(stageId)
+        btn:SetDisable(not isUnlocked)
+
+        local isCurStageClear = XMVCA.XFuben:CheckStageIsPass(stageId)
+        btn:ShowTag(isCurStageClear)
     end
 end
 
 function XUiLottoStoryTreeMode:OpenStageDetails(stageId)
-    XLuaUiManager.Open("UiEpicFashionGachaStageDetail", stageId)
-end
+    local isUnlocked, preStageName = self:IsStageUnlocked(stageId)
+    if not isUnlocked then
+        XUiManager.TipText("FubenPreStage", nil, nil, preStageName)
+        return
+    end
 
-function XUiLottoStoryTreeMode:MoveIntoStage(stageIndex)
+    XLuaUiManager.Open("UiEpicFashionGachaStageDetail", stageId)
 end
 
 return XUiLottoStoryTreeMode

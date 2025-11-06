@@ -5,7 +5,7 @@ local TableKey = {
     RaceActivity = { CacheType = XConfigUtil.CacheType.Normal },
     RaceBroadcast = { CacheType = XConfigUtil.CacheType.Normal },
     RaceRoundClient = { DirPath = XConfigUtil.DirectoryType.Client },
-    RaceGuess = {},
+    RaceGuess = { CacheType = XConfigUtil.CacheType.Normal },
     RaceGuessOption = {},
     RaceCharacter = {},
     RaceCharacterSkill = {},
@@ -17,7 +17,7 @@ local TableKey = {
     RaceCharacterGroupAuto = { DirPath = XConfigUtil.DirectoryType.Client },
     RaceMap = {},
     RacePoint = {},
-    RaceGuessType = {},
+    RaceGuessType = { CacheType = XConfigUtil.CacheType.Normal },
 }
 
 function XRaceConfig:OnInit()

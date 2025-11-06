@@ -311,10 +311,10 @@ function XBigWorldMapControl:GetQuickGoingPinData(targetPinData)
                         local position = pinData.WorldPosition
 
                         result = pinData
-                        minDistance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.y - targetPosition.y), 2)
+                        minDistance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
                     else
                         local position = pinData.WorldPosition
-                        local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.y - targetPosition.y), 2)
+                        local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
 
                         if distance < minDistance then
                             result = pinData

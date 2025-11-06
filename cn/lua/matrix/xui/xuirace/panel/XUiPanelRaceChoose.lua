@@ -24,7 +24,7 @@ function XUiPanelRaceChoose:InitDrdSort()
         end
         self._SortRule = index
         if self._IsRole then
-            self:UpdateSortRole()
+            self:UpdateSortRole(true)
         else
             self:UpdateSortOption()
         end
@@ -101,7 +101,7 @@ function XUiPanelRaceChoose:ShowRoleList()
 end
 
 ---按照某种顺序显示角色列表
-function XUiPanelRaceChoose:UpdateSortRole()
+function XUiPanelRaceChoose:UpdateSortRole(isDrd)
     table.sort(self._RoleDatas, function(a, b)
         local valueA, valueB
         if self._SortRule == Sort.Support then
@@ -126,15 +126,26 @@ function XUiPanelRaceChoose:UpdateSortRole()
     end)
 
     -- 刷新角色
+    local curIndex
     for i, data in ipairs(self._RoleDatas) do
         self._RoleGrids[i]:SetRoleId(data.Id, self._SortRule)
+        if data.Id == self._CurRoleId then
+            curIndex = i
+        end
+    end
+    if isDrd and curIndex then
+        self.PanelMemberGroup:SelectIndex(curIndex)
     end
 end
 
 function XUiPanelRaceChoose:OnSelectMemberTab(i)
-    local id = self._RoleDatas[i].Id
-    self._HistoryChooses[self._CurGuessId] = id
-    self.Parent:OnClickPredictOption(true, id)
+    self._CurRoleId = self._RoleDatas[i].Id
+    self._HistoryChooses[self._CurGuessId] = self._CurRoleId
+    self.Parent:OnClickPredictOption(true, self._CurRoleId)
+    --动效
+    for i, v in ipairs(self._RoleGrids) do
+        v:PlayTween()
+    end
 end
 
 --endregion

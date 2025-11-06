@@ -1130,6 +1130,7 @@ function XFubenBossSingleAgency:BossSingleResetStageRequest(stageId, cb)
         -- 设置数据
         --XLuaUiManager.Close("UiFubenBossSingleDetail")
         --res.StageRecord
+        self:ClearRankData()
     end)
 end
 
@@ -1188,7 +1189,11 @@ function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
         return false
     end
     local entityIds = team:GetEntityIds()
-    local characterIdsInRecord = self:GetCharacterListInRecord(stageId)
+    local record = self._Model:GetRecordCurrentByStageId(stageId)
+    if not record then
+        return false
+    end
+    local characterIdsInRecord = record.Characters--self:GetCharacterListInRecord(stageId)
     if not characterIdsInRecord or #characterIdsInRecord == 0 then
         return false
     end
@@ -1215,6 +1220,13 @@ function XFubenBossSingleAgency:IsCharacterHasRecord(stageId, characterId)
         end
     end
     return false
+end
+
+function XFubenBossSingleAgency:ClearRankData()
+    -- 在重置之后,需要清空排行榜数据
+    self._LastSyncServerRankTimes = {}
+    self._LastSyncServerBossRankTimes = {}
+    self._LastSyncServerChallengeRankTimes = {}
 end
 
 return XFubenBossSingleAgency

@@ -38,10 +38,10 @@ end
 
 function XUiBigWorldPhotographPopupPhotoReName:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnClose.CallBack = Handler(self, self.OnBtnCloseClick)
-    self.BtnNameCancel.CallBack = Handler(self, self.OnBtnNameCancelClick)
-    self.BtnNameSure.CallBack = Handler(self, self.OnBtnNameSureClick)
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnNameCancel:AddEventListener(handler(self, self.OnBtnNameCancelClick))
+    self.BtnNameSure:AddEventListener(handler(self, self.OnBtnNameSureClick))
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
 end
 
 return XUiBigWorldPhotographPopupPhotoReName

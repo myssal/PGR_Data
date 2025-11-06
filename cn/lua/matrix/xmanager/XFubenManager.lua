@@ -332,10 +332,6 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:SetFightBeginData(value)
     end
 
-    function XFubenManager.RecordFightBeginData(stageId, charList, isHasAssist, assistPlayerData, challengeCount, roleData, fightData)
-        return XMVCA.XFuben:RecordFightBeginData(stageId, charList, isHasAssist, assistPlayerData, challengeCount, roleData, fightData)
-    end
-
     function XFubenManager.GetFightBeginClientPreData()
         return XMVCA.XFuben:GetFightBeginClientPreData()
     end

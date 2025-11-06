@@ -18,6 +18,7 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
     --刷新是否解锁
     local isUnLock = XDataCenter.FubenActivityBossSingleManager.IsChallengeUnlockByStageId(stageId)
     self.BtnStage:SetButtonState(isUnLock and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
+    self.BtnStage:SetNameByGroup(0, XFubenActivityBossSingleConfigs.GetBossChallengeDetailTitle(stageId))
     local bgMaskName = "Img" .. index .. "BgMask"
     if self.Parent[bgMaskName] then
         self.Parent[bgMaskName].gameObject:SetActiveEx(isUnLock)

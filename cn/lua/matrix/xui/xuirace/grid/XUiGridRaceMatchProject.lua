@@ -18,11 +18,13 @@ function XUiGridRaceMatchProject:OnStart(guessId)
     self.Transform.name = guessId
 end
 
-function XUiGridRaceMatchProject:Update()
+function XUiGridRaceMatchProject:UpdateView()
     local state = self.Parent._MatchState
     local mineGuessId = self._Control:GetGuessProjectOption(nil, self._GuessId)
     local isRoleType = self._Control:IsGuessNeedCharacter(self._GuessId)
-
+    local isResult = false
+    self.TagBg01.gameObject:SetActiveEx(false)
+    
     if state == MatchState.Guess then
         self:NormalPredict()
     elseif self._MatchData:IsWaitOpen(self._GuessId) then --等待开奖
@@ -37,10 +39,13 @@ function XUiGridRaceMatchProject:Update()
         else
             self:PredictFail()
         end
+        isResult = true
+        local isMultiRole = self._Control:IsGuessProjectMultiRole(nil, self._GuessId)
+        self.TagBg01.gameObject:SetActiveEx(isMultiRole)
     end
 
     if isRoleType then
-        self:ShowRole(mineGuessId)
+        self:ShowRole(mineGuessId, isResult)
     else
         self:ShowOption(mineGuessId)
     end
@@ -86,7 +91,7 @@ function XUiGridRaceMatchProject:PredictFail()
     self.GridProject:ShowReddot(false)
 end
 
-function XUiGridRaceMatchProject:ShowRole(roleId)
+function XUiGridRaceMatchProject:ShowRole(roleId, isResult)
     self.PanelRole.gameObject:SetActiveEx(true)
     self.PanleOption.gameObject:SetActiveEx(false)
     if roleId then
@@ -96,7 +101,7 @@ function XUiGridRaceMatchProject:ShowRole(roleId)
         self.RImgHead2:SetRawImage(roleIcon)
         self.ImgRoleEmpty.gameObject:SetActiveEx(false)
         self.RImgHead1.gameObject:SetActiveEx(true)
-        self.ImgFail.gameObject:SetActiveEx(isObsolete)
+        self.ImgFail.gameObject:SetActiveEx(isObsolete and not isResult)
     else
         self.ImgRoleEmpty.gameObject:SetActiveEx(true)
         self.RImgHead1.gameObject:SetActiveEx(false)

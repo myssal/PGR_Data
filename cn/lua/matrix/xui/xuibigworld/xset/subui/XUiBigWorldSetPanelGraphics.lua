@@ -283,22 +283,22 @@ end
 -- end
 
 function XUiBigWorldSetPanelGraphics:_RegisterToggleHDR()
-    self.TogHDR.CallBack = Handler(self, self.OnTogHDRClick)
+    self.TogHDR:AddEventListener(handler(self, self.OnTogHDRClick))
 end
 
 function XUiBigWorldSetPanelGraphics:_RegisterToggleFXAA()
-    self.TogFXAA.CallBack = Handler(self, self.OnTogFXAAClick)
+    self.TogFXAA:AddEventListener(handler(self, self.OnTogFXAAClick))
 end
 
 function XUiBigWorldSetPanelGraphics:_RegisterToggleFrameRate()
-    self.TogFrameRate.CallBack = Handler(self, self.OnTogFrameRateClick)
+    self.TogFrameRate:AddEventListener(handler(self, self.OnTogFrameRateClick))
 end
 
 function XUiBigWorldSetPanelGraphics:_RegisterTogBigWorldHighFrameRateMode()
     if not self.TogBigWorldHighFrameRateMode then
         return
     end
-    self.TogBigWorldHighFrameRateMode.CallBack = Handler(self, self.OnTogBigWorldHighFrameRateModeClick)
+    self.TogBigWorldHighFrameRateMode:AddEventListener(handler(self, self.OnTogBigWorldHighFrameRateModeClick))
 end
 
 function XUiBigWorldSetPanelGraphics:_RegisterListeners()

@@ -270,6 +270,7 @@ function XUiSettleWinMainLine:InitRewardCharacterList(data)
         for i = 1, #stageConfig.RobotId do
             if stageConfig.RobotId[i] > 0 then
                 local ui = CS.UnityEngine.Object.Instantiate(self.GridWinRole)
+                ---@type XUiGridSettleWinRole
                 local grid = XUiGridWinRole.New(self, ui)
                 grid.Transform:SetParent(self.PanelRoleContent, false)
                 grid:UpdateRobotInfo(stageConfig.RobotId[i])
@@ -286,6 +287,7 @@ function XUiSettleWinMainLine:InitRewardCharacterList(data)
         for i = 1, count do
 
             local ui = CS.UnityEngine.Object.Instantiate(self.GridWinRole)
+            ---@type XUiGridSettleWinRole
             local grid = XUiGridWinRole.New(self, ui)
             grid.Transform:SetParent(self.PanelRoleContent, false)
             local cardExp = XDataCenter.FubenManager.GetCardExp(self.CurrentStageId)

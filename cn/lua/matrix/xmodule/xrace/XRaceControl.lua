@@ -142,6 +142,10 @@ function XRaceControl:GetLastGuessRoundId()
     return nil
 end
 
+function XRaceControl:IsGainSkinReward()
+    return self._Model:IsGainSkinReward()
+end
+
 --endregion
 
 --region 赛程
@@ -284,6 +288,10 @@ function XRaceControl:IsRoundResultCheck(roundId)
     return self._Model:IsRoundResultCheck(roundId)
 end
 
+function XRaceControl:IsMatchResultCheck()
+    return self._Model._BasePlayerData.IsSeeGlobal
+end
+
 --endregion
 
 --region 预测
@@ -388,7 +396,7 @@ function XRaceControl:GetGuessProjectOption(roundId, guessId)
 end
 
 ---预测项目最终结果（角色Id/选项Id）
----预测角色的项目可能有多个结果，如果玩家预测成功，则显示玩家预测的角色；如果玩家预测失败，则显示第一个角色（服务端发过来的ResultRoleId即是第一个角色）
+---预测角色的项目可能有多个结果，如果玩家预测成功，则显示玩家预测的角色；如果玩家预测失败，则显示第一个角色
 ---@param roundId number 传nil表示赛事预测，否则表示单场预测
 function XRaceControl:GetGuessProjectResult(roundId, guessId)
     local data = roundId == nil and self:GetMatchGuessData() or self:GetRoundGuessData(roundId)
@@ -398,13 +406,24 @@ function XRaceControl:GetGuessProjectResult(roundId, guessId)
             if data:IsPredictSuccess(guessId) then
                 return info.GuessRoleId
             else
-                return info.ResultRoleId
+                return info.ResultRoleIds and info.ResultRoleIds[1] --如果实际结果有多个角色，玩家预测错误则显示第一个；如果预测正确则显示玩家预测的那个
             end
         else
             return info.ResultOptionIndex
         end
     end
     return nil
+end
+
+function XRaceControl:IsGuessProjectMultiRole(roundId, guessId)
+    if self:IsGuessNeedCharacter(guessId) then
+        local data = roundId == nil and self:GetMatchGuessData() or self:GetRoundGuessData(roundId)
+        local info = data:GetInfo(guessId)
+        if info and info.ResultRoleIds then
+            return #info.ResultRoleIds > 1
+        end
+    end
+    return false
 end
 
 ---角色/选项投票率
@@ -496,7 +515,11 @@ function XRaceControl:GetPropertyDesc(guessId, value)
         return self:GetPassTimeStr(value)
     elseif property == XEnumConst.Race.PropertyType.Rank then
         --第{0}名
-        return XUiHelper.GetText("RaceGuessPropertyRank", value)
+        if XTool.IsNumberValid(value) then
+            return XUiHelper.GetText("RaceGuessPropertyRank", value)
+        end
+        --未达成
+        return XUiHelper.GetText("RaceNotAchieved")
     else
         return value
     end
@@ -656,6 +679,21 @@ function XRaceControl:IsGuessNeedCharacter(guessId)
     return self._Model:GetRaceGuessTypeById(guessType).NeedCharacter
 end
 
+function XRaceControl:IsGuessHidePlayback(guessId)
+    local guessType = self:GetRaceGuessById(guessId).GuessType
+    return self._Model:GetRaceGuessTypeById(guessType).IsHidePlayback
+end
+
+function XRaceControl:IsGuessHideRank(guessId)
+    local guessType = self:GetRaceGuessById(guessId).GuessType
+    return self._Model:GetRaceGuessTypeById(guessType).IsHideRank
+end
+
+function XRaceControl:GetPlaybackRoundId(guessId)
+    local guessType = self:GetRaceGuessById(guessId).GuessType
+    return self._Model:GetRaceGuessTypeById(guessType).PlaybackRoundId
+end
+
 -- 获取能量图
 function XRaceControl:GetRaceSignalBallIconById(id)
     if id == 0 then
@@ -781,25 +819,39 @@ function XRaceControl:GetRoleRandomSite()
 end
 
 function XRaceControl:StartGame()
-    if not XLuaUiManager.IsUiShow("UiRaceFightMain") then
+    if not self:CheckShowGameStart() then
+        return
+    end
+    if not XLuaUiManager.IsUiLoad("UiRaceMain") then
+        --游戏开始弹框只在活动内显示（主界面会出现赛马的横幅，control可能还没被销毁）
+        return
+    end
+    if not XMVCA.XRace:IsEnterScene() then
         XLuaUiManager.Open("UiRacePopupGameStart")
     end
     XLuaUiManager.Remove("UiRacePredict")
 end
 
---局外用
+--局外用（协议在Agency里请求）
 function XRaceControl:EndGame(roundId, finishCb)
-    self:RequestAllRoundResult(function()
-        self:SetSettleParam(true)
-        XLuaUiManager.Open("UiRaceFightSettlement", roundId)
-        if finishCb then finishCb() end
-    end)
+    self:UpdateRaceData()
+    self:SetSettleParam(true)
+    XLuaUiManager.Open("UiRaceFightSettlement", roundId)
+    if finishCb then
+        finishCb()
+    end
 end
 
 --局内用
-function XRaceControl:OpenSettlePanel(finishCb)
-    local roundId = self:GetCurRound()
-    self:EndGame(roundId, finishCb)
+function XRaceControl:OpenSettlePanel(targetRoundId, finishCb)
+    local roundId = targetRoundId or self:GetCurRound()
+    self:RequestAllRoundResult(function()
+        self:SetSettleParam(true)
+        XLuaUiManager.Open("UiRaceFightSettlement", roundId)
+        if finishCb then
+            finishCb()
+        end
+    end)
 end
 
 function XRaceControl:GetRankSprites(rank)
@@ -842,6 +894,41 @@ end
 
 function XRaceControl:GetSettleParam()
     return self._Model:GetSettleParam()
+end
+
+---对【玩家是否已完成引导】进行判定，若未完成则不跳该弹窗
+function XRaceControl:CheckShowGameStart()
+    if XLuaUiManager.IsUiShow("UiRacePopupSkin") or XLuaUiManager.IsUiPushing("UiRacePopupSkin") then
+        return false
+    end
+    if XLuaUiManager.IsUiShow("UiRacePopupGameStart") then
+        return false
+    end
+    local values = self:GetClientConfigs("GameStartCheckGuide")
+    if not XTool.IsTableEmpty(values) then
+        for _, v in pairs(values) do
+            local guideId = tonumber(v)
+            if XDataCenter.GuideManager.CheckIsGuide(guideId) then
+                return true
+            end
+        end
+        return false
+    end
+    return true
+end
+
+function XRaceControl:CheckShowSkinPopup()
+    local values = self:GetClientConfigs("PopupSkinCheckGuide")
+    if not XTool.IsTableEmpty(values) then
+        for _, v in pairs(values) do
+            local guideId = tonumber(v)
+            if XDataCenter.GuideManager.CheckIsGuide(guideId) then
+                return true
+            end
+        end
+        return false
+    end
+    return true
 end
 
 --endregion

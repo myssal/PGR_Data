@@ -4,7 +4,7 @@ local XUiSkyGardenShoppingStreetBuffDetailGrid = require("XUi/XUiSkyGarden/XShop
 
 --region 生命周期
 function XUiSkyGardenShoppingStreetGameBuffTips:OnAwake()
-    self.BtnClose.CallBack = function() self:Close() end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
     self._GridBuffDetailUi = XUiSkyGardenShoppingStreetBuffDetailGrid.New(self.GridBuffDetail, self)
 end
 

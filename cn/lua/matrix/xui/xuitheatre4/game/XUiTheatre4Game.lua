@@ -115,6 +115,10 @@ function XUiTheatre4Game:OnStart()
 end
 
 function XUiTheatre4Game:OnEnable()
+    self._LastSimulateMouseWithTouches = CS.UnityEngine.Input.simulateMouseWithTouches
+    if not self._LastSimulateMouseWithTouches then
+        CS.UnityEngine.Input.simulateMouseWithTouches = true
+    end
     self:RefreshInfo()
     self:RefreshBuildPoint()
     self:RefreshProsperity()
@@ -218,6 +222,7 @@ function XUiTheatre4Game:OnNotify(event, ...)
 end
 
 function XUiTheatre4Game:OnDisable()
+    CS.UnityEngine.Input.simulateMouseWithTouches = self._LastSimulateMouseWithTouches
     self._Control:ClearNewAdventureFlag()
     self.EffectScreen.gameObject:SetActiveEx(false)
     self.Effect.gameObject:SetActiveEx(false)

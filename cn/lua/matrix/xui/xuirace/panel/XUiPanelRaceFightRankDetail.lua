@@ -23,8 +23,8 @@ function XUiPanelRaceFightRankDetail:InitRace(count)
     end
 end
 
-function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex)
-    local isShow = false
+function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex, skipAnim, isShowForce)
+    local isShow = isShowForce or false
     local rankCount = self._Scene:GetRankFinishCount()
     if rankCount ~= self._rankFinishCount then
         local rankData = self._Scene:GetRankData()
@@ -43,26 +43,28 @@ function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex)
         self._rankFinishCount = rankCount
     end
 
-    for i = 1, #self._rankData do
-        local rankData = self._rankData[i]
-        if self._rankFinishCount >= rankData.Rank and rankData.CharacterId == self._characterId then
-            isShow = true
-            break
+    if not isShow then
+        for i = 1, #self._rankData do
+            local rankData = self._rankData[i]
+            if self._rankFinishCount >= rankData.Rank and rankData.CharacterId == self._characterId then
+                isShow = true
+                break
+            end
         end
     end
     
     if isShow then
-        self:ShowInfo(isShow, selectIndex)
+        self:ShowInfo(isShow, selectIndex, skipAnim)
         XTool.UpdateDynamicItemByUiCache(self._RankUI, self._rankData, self.GridRankData.transform.parent, nil, self)
         for i = 1, #self._RankUI do
             local rankInfo = self._rankData[i]
             local ui = self._RankUI[i]
             if self._rankFinishCount >= i and rankInfo.CharacterId and rankInfo.AddTime then
-                local finishTime = math.floor(rankInfo.PassTime / 1000)
-                local lastFinishTime = math.floor(rankInfo.AddTime / 1000)
-                ui.TxtTime01.text = XUiHelper.GetTime(finishTime)
+                local finishTime = math.floor(rankInfo.PassTime)
+                local lastFinishTime = math.floor(rankInfo.AddTime)
+                ui.TxtTime01.text = self._Control:GetPassTimeStr(finishTime)
                 if rankInfo.AddTime > 0 then
-                    ui.TxtTime02.text = "+" .. XUiHelper.GetTime(finishTime - lastFinishTime)
+                    ui.TxtTime02.text = "+" .. self._Control:GetPassTimeStr(finishTime - lastFinishTime)
                 else
                     ui.TxtTime02.text = ""
                 end
@@ -83,17 +85,19 @@ function XUiPanelRaceFightRankDetail:UpdateRank(selectIndex)
         if #self._RankUI > 0 then
             XTool.UpdateDynamicItemByUiCache(self._RankUI, {}, self.GridRankData.transform.parent, nil, self)
         end
-        self:ShowInfo(isShow, selectIndex)
+        self:ShowInfo(isShow, selectIndex, skipAnim)
     end
 end
 
-function XUiPanelRaceFightRankDetail:ShowInfo(isShow, selectIndex)
+function XUiPanelRaceFightRankDetail:ShowInfo(isShow, selectIndex, skipAnim)
     if self.GameObject.activeSelf == self.GameObject then
         return
     end
     if isShow then
         if self._selectIndex ~= selectIndex then
-            self.Parent:PlayRaceDataEnable()
+            if not skipAnim then
+                self.Parent:PlayRaceDataEnable()
+            end
             self._selectIndex = selectIndex
         end
     else

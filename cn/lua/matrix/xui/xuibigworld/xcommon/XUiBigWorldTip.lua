@@ -29,9 +29,7 @@ function XUiBigWorldTip:InitUi()
 end
 
 function XUiBigWorldTip:InitCb()
-    self.BtnBack.CallBack = function() 
-        self:OnBtnBackClick()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiBigWorldTip:UpdateView()

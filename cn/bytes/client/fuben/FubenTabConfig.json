@@ -6,16 +6,21 @@
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZongmianban.png",
         "ProxyPath": "XUi/XUiFuben/Main/XUiPanelMain",
         "UiParentName": "PanelMain",
-        "ConditionDesc": "指挥官等级达到1级开启"
+        "ConditionDesc": "指挥官等级达到30级开启",
+        "UnlockCondition": 770411
     },
     {
         "Id": 2,
         "Name": "主 线",
-        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/MainLineChapter.prefab",
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhuxian.png",
-        "ProxyPath": "XUi/XUiFuben/MainLine/XUiPanelMainLine",
-        "UiParentName": "PanelMainLine",
-        "ConditionDesc": "指挥官等级达到1级开启"
+        "ProxyPath": "XUi/XUiFuben/MainLine/XUiPanelMainLineRoot",
+        "UiParentName": "PanelMainLineRoot",
+        "ConditionDesc": "指挥官等级达到1级开启",
+        "UnlockCondition": 0,
+        "Params": [
+            "Assets/Product/Ui/Prefab/UiMainLineExhibition/UiMainLineExhibitionMain.prefab",
+            "Assets/Product/Ui/ComponentPrefab/FuBenNew/MainLineChapter.prefab"
+        ]
     },
     {
         "Id": 3,
@@ -24,7 +29,8 @@
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhixian.png",
         "ProxyPath": "XUi/XUiFuben/ExtralLine/XUiPanelExtralLine",
         "UiParentName": "PanelExtralLine",
-        "ConditionDesc": "通关普通剧情3-8副本后开启"
+        "ConditionDesc": "通关普通剧情1-12副本后开启",
+        "UnlockCondition": 770400
     },
     {
         "Id": 4,
@@ -33,7 +39,8 @@
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconYanxi.png",
         "ProxyPath": "XUi/XUiFuben/XUiPanelCollegeStudy",
         "UiParentName": "PanelCollegeBanner",
-        "ConditionDesc": "指挥官等级达到1级开启"
+        "ConditionDesc": "通关普通剧情1-8副本后开启",
+        "UnlockCondition": 774501
     },
     {
         "Id": 5,
@@ -42,7 +49,8 @@
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZiyuan.png",
         "ProxyPath": "XUi/XUiFuben/XUiPanelResourceCollection",
         "UiParentName": "PanelResource",
-        "ConditionDesc": "通关普通剧情2-2副本后开启"
+        "ConditionDesc": "指挥官等级达到16级开启",
+        "UnlockCondition": 770422
     },
     {
         "Id": 6,
@@ -51,6 +59,7 @@
         "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconTiaozhan.png",
         "ProxyPath": "XUi/XUiFuben/XUiPanelSimulationChallenge",
         "UiParentName": "PanelChallengeBanner",
-        "ConditionDesc": "通关普通剧情2-11副本后开启"
+        "ConditionDesc": "指挥官等级达到24级开启",
+        "UnlockCondition": 770423
     }
 ]

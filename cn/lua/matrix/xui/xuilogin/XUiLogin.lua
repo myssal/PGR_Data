@@ -192,7 +192,13 @@ function XUiLogin:InitUiView()
     self.BtnMenu.gameObject:SetActiveEx(false)
     if XOverseaManager.IsOverSeaRegion() then
         self.IsUserAgree = true
-        self.BtnMenu.gameObject:SetActiveEx(XOverseaManager.IsJP_KRRegion() or XOverseaManager.IsENRegion())
+        
+        if XOverseaManager.IsENRegion() then
+			local showBtn = not XUiManager.IsHideFunc
+           	self.BtnMenu.gameObject:SetActiveEx(showBtn)
+        else
+            self.BtnMenu.gameObject:SetActiveEx(XOverseaManager.IsJP_KRRegion())
+        end
         self.BtnAge.gameObject:SetActiveEx(false)
         self.PanelUserAgreement.gameObject:SetActiveEx(false)
         self.HtmlText.text = ""

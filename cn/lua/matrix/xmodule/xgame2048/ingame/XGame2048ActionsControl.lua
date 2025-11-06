@@ -467,6 +467,16 @@ function XGame2048ActionsControl:AddGridChangedAction(gridUid, targetActionType)
     return action
 end
 
+function XGame2048ActionsControl:AddDispelRangeEffectAction(isEnable)
+    local targetActionType = isEnable and XMVCA.XGame2048.EnumConst.ActionType.OpenDispelRangeEffect or XMVCA.XGame2048.EnumConst.ActionType.CloseDispelRangeEffect
+
+    local action = self:GetAnimationFromPool()
+    action:SetActionType(targetActionType)
+
+    self:InsertActionToList(action)
+    return action
+end
+
 function XGame2048ActionsControl:_GetCloneTempGridData(gridUid)
     -- 获取数据
     local gridData = self._MainControl:GetGridEntityByUid(gridUid)

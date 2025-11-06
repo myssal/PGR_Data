@@ -466,6 +466,11 @@ local DoLoginTimeOut = function(cb)
     XLoginManager.Disconnect()
     XLuaUiManager.ClearAnimationMask()
     CS.XRecord.Record("24016", "DoLoginTimeOut")
+    if XDataCenter.UiPcManager.IsCloudGame() then
+        -- 云游戏进游戏超时直接弹出提示，关闭游戏
+        CS.XWLinkAgent.Exit(CS.XTextManager.GetText("CloudGameLaunchErrMsg"))
+        return
+    end
     XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText("LoginTimeOut"), XUiManager.DialogType.Normal, function()
         OnLogin(XCode.Fail)
     end, function()
@@ -800,6 +805,7 @@ function XLoginManager.DoLoginGame(cb)
         DeviceId = CS.XHeroSdkAgent.GetDeviceId(),
         OaId = CS.XHeroSdkAgent.OAID,
         ClientVersion = CS.XRemoteConfig.DocumentVersion,
+        IsCloudGame = (CS.XInfo.IsCloudGame and 1 or 0),
     }, function(res)
         if res.Code ~= XCode.Success then
             if IsRelogining then
@@ -1227,10 +1233,16 @@ function XLoginManager.ResetHeartbeatTimeout()
 end
 
 XRpc.ForceLogoutNotify = function(res)
+    local error_txt = CS.XTextManager.GetCodeText(res.Code)
     XLoginManager.Disconnect()
     CS.XFightNetwork.Disconnect()
     ClearHeartbeatTimer()
-    XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetCodeText(res.Code), XUiManager.DialogType.OnlySure, nil, function()
+    if XDataCenter.UiPcManager.IsCloudGame() then
+        -- 云游戏在部分错误情况下，直接弹出提示，关闭游戏
+        CS.XWLinkAgent.Exit(error_txt)
+        return
+    end
+    XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"),error_txt, XUiManager.DialogType.OnlySure, nil, function()
         XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
         XFightUtil.ClearFight()
         if XDataCenter.MovieManager then
@@ -1240,7 +1252,7 @@ XRpc.ForceLogoutNotify = function(res)
         CsXUiManager.Instance:Clear()
         XMVCA.XBigWorldGamePlay:OnExitFight()
         XHomeSceneManager.LeaveScene()
-        XLoginManager.BackToUiLogin(CS.XTextManager.GetCodeText(res.Code))
+        XLoginManager.BackToUiLogin(error_txt)
     end)
 end
 

@@ -91,27 +91,12 @@ function XUiPanelBWTaskGroup:RefreshSelect()
         return
     end
     --再没有则用第一个
-    local typeId
-    if self._IsAllType then
-        local typeIds = self._Control:GetQuestTypeIds()
-        typeId = typeIds[1]
-    else
-        typeId = self._TypeId
-    end
-    local groupIds = self._Control:GetGroupIdsByTypeId(typeId)
-    if XTool.IsTableEmpty(groupIds) then
+    questId = self:GetFirstQuestId()
+    if not questId or questId <= 0 then
         -- 刷新空
         self.Parent:RefreshTaskContent(0, 0, 0)
         return
     end
-    local groupId = groupIds[1]
-    local questIds = self._Control:GetQuestIdsByGroupId(groupId, self._AllReceiveQuestIds)
-    if XTool.IsTableEmpty(questIds) then
-        -- 刷新空
-        self.Parent:RefreshTaskContent(0, 0, 0)
-        return
-    end
-    questId = questIds[1]
     result = self:TryClickSecondButton(questId)
     if result then
         return
@@ -380,8 +365,12 @@ end
 function XUiPanelBWTaskGroup:DoClickSecondButton(typeId, groupId, questId)
     local groupData = self._TypeToTabData[typeId][groupId]
     local lastSelect = self:GetLastSelectData()
+    local childData = groupData.ChildData[questId]
+    if not childData then
+        return
+    end
     --选中当前
-    local btn = groupData.ChildData[questId].Button
+    local btn = childData.Button
     --重复点击
     if lastSelect.TypeId == typeId and lastSelect.GroupId == groupId and lastSelect.QuestId == questId then
         btn:SetButtonState(CsSelect)
@@ -432,6 +421,35 @@ function XUiPanelBWTaskGroup:CancelLastSelect()
     end
     local btn = childData[lastSelect.QuestId].Button
     btn:SetButtonState(CsNormal)
+end
+
+function XUiPanelBWTaskGroup:GetFirstQuestId()
+    if self._IsAllType then
+        local typeIds = self._Control:GetQuestTypeIds()
+        for _, typeId in pairs(typeIds) do
+            local result, questId = self:TryGetFirstQuestIdByTypeId(typeId)
+            if result then
+                return questId
+            end
+        end
+    else
+        local result, questId = self:TryGetFirstQuestIdByTypeId(self._TypeId)
+        if result then
+            return questId
+        end
+    end
+    return 0
+end
+
+function XUiPanelBWTaskGroup:TryGetFirstQuestIdByTypeId(typeId)
+    local groupIds = self._Control:GetGroupIdsByTypeId(typeId)
+    for _, groupId in pairs(groupIds) do
+        local questIds = self._Control:GetQuestIdsByGroupId(groupId, self._AllReceiveQuestIds)
+        if not XTool.IsTableEmpty(questIds) then
+            return true, questIds[1]
+        end
+    end
+    return false, 0
 end
 
 ---@class XUiGridBWQuestGroupTab

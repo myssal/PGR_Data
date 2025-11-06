@@ -23,6 +23,10 @@ function XUiPanelTaskStory:Ctor(ui, parent, chapterId)
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTaskStoryList.gameObject)
     self.DynamicTable:SetProxy(XDynamicGridTask)
     self.DynamicTable:SetDelegate(self)
+
+    if XUiManager.IsHideFunc then
+        self.Course.GameObject:SetActiveEx(false)
+    end
 end
 
 --动态列表事件
@@ -62,8 +66,11 @@ function XUiPanelTaskStory:ShowPanel(isPlayAnimation)
     self.PanelNoneStoryTask.gameObject:SetActive(#self.StoryTasks <= 0)
     self.DynamicTable:SetDataSource(self.StoryTasks)
     self.DynamicTable:ReloadDataASync()
-    self.Course:SetSViewIndex()
-    self.Course:PlayImgFill()
+
+    if not XUiManager.IsHideFunc then
+        self.Course:SetSViewIndex()
+        self.Course:PlayImgFill()
+    end
 end
 
 function XUiPanelTaskStory:HidePanel()
@@ -88,7 +95,9 @@ function XUiPanelTaskStory:Refresh()
 end
 
 function XUiPanelTaskStory:RefreshCourse()
-    self.Course:RefreshCourse()
+    if not XUiManager.IsHideFunc then
+        self.Course:RefreshCourse()
+    end
 end
 
 function XUiPanelTaskStory:GetTasks()

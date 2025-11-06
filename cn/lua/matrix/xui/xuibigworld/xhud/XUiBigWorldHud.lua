@@ -61,53 +61,29 @@ function XUiBigWorldHud:InitCb()
         end
         self.ListMenu.gameObject:SetActiveEx(self._IsShowMenu)
     end
-    self.BtnQuit.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
 
-    self.BtnQuitDoor2.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuitDoor2:AddEventListener(handler(self, self.OnBtnQuitClick))
 
-    self.BtnTask.CallBack = function()
-        self:OnBtnTaskClick()
-    end
+    self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
 
-    self.BtnMessage.CallBack = function()
-        self:OnBtnMessageClick()
-    end
+    self.BtnMessage:AddEventListener(handler(self, self.OnBtnMessageClick))
 
-    self.BtnMessageList.CallBack = function()
-        self:OnBtnMessageListClick()
-    end
+    self.BtnMessageList:AddEventListener(handler(self, self.OnBtnMessageListClick))
 
-    self.BtnTeam.CallBack = function()
-        self:OnBtnTeamClick()
-    end
+    self.BtnTeam:AddEventListener(handler(self, self.OnBtnTeamClick))
 
-    self.BtnBag.CallBack = function()
-        self:OnBtnBagClick()
-    end
+    self.BtnBag:AddEventListener(handler(self, self.OnBtnBagClick))
 
-    self.BtnHandBook.CallBack = function()
-        self:OnBtnHandBookClick()
-    end
+    self.BtnPhoto:AddEventListener(handler(self, self.OnBtnPhotoClick))
 
-    self.BtnPhoto.CallBack = function()
-        self:OnBtnPhotoClick()
-    end
+    self.BtnSet:AddEventListener(handler(self, self.OnBtnSetClick))
 
-    self.BtnSet.CallBack = function()
-        self:OnBtnSetClick()
-    end
+    self.BtnTeach:AddEventListener(handler(self, self.OnBtnTeachClick))
 
-    self.BtnTeach.CallBack = function()
-        self:OnBtnTeachClick()
-    end
-
-    self.BtnMenu.CallBack = function()
-        self:OnBtnMenuClick()
-    end
+    self.BtnMenu:AddEventListener(handler(self, self.OnBtnMenuClick))
+    
+    self.BtnHandBook:AddEventListener(handler(self, self.OnBtnHandBookClick))
 
     self.BtnFrist:AddEventListener(handler(self, self.OnBtnFirstClick))
 
@@ -449,7 +425,7 @@ function XUiBigWorldHud:RefreshMessage()
             and not XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Message)
     
     local isShow = XMVCA.XBigWorldMessage:CheckUnReadMessage() and not XMVCA.XBigWorldMessage:CheckUnReadMessageShield() 
-            and isShowList
+            and isShowList and not XMVCA.XBigWorldMessage:CheckHaveForceMessage()
 
     self.BtnMessage.gameObject:SetActiveEx(isShow)
     self.BtnMessageList.gameObject:SetActiveEx(isShowList)

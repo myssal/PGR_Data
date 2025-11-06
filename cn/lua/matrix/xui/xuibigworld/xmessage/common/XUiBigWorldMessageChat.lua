@@ -188,10 +188,10 @@ function XUiBigWorldMessageChat:_RefreshAnswerOptions(content)
 
         answer:SetNameByGroup(0, text)
         answer.gameObject:SetActiveEx(true)
-        answer.CallBack = function()
+        answer:AddEventListener(function()
             self:_ShowAnswerOptions(false)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_OPTION_SELECT_NOTIFY, index)
-        end
+        end)
     end
     for i = count + 1, table.nums(self._AnswerGroup) do
         self._AnswerGroup[i].gameObject:SetActiveEx(false)

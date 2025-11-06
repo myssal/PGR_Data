@@ -142,12 +142,17 @@ function XUiGridSimulationBranchStyleChallenge:UpdateTimer(timeId, forceUpdate)
         -- 暂时不方便动态控制定时器的开始关闭，先针对节点隐藏做跳过处理
         return
     end
-    
+    local showTimeStr = self.Manager.ExGetTimerShowStr and self.Manager:ExGetTimerShowStr() or nil
     if self.TxtTime then
-        self.TxtTime.text = self.Manager:ExGetTimerShowStr()
+        if string.IsNilOrEmpty(showTimeStr) then
+            self.TxtTime.gameObject:SetActiveEx(false)
+        else
+            self.TxtTime.gameObject:SetActiveEx(true)
+            self.TxtTime.text = showTimeStr
+        end
     end
 
-    if not self.Manager:ExCheckInTimerShow() then
+    if self.Manager.ExCheckInTimerShow and not self.Manager:ExCheckInTimerShow() then
         self:StopTimer()
     end
 end

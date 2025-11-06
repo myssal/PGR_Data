@@ -111,6 +111,7 @@ function XTheatre5AdventureDataBase:UpdateCurPlayStatus(status)
             XLog.Debug("[XTheatre5AdventureDataBase] 触发中断事件")
             XMVCA.XTheatre5:TriggerInterruptEvent()
         end
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
     end
 end
 
@@ -872,8 +873,13 @@ function XTheatre5AdventureDataBase:UpdateCharacterLevel(value)
     self.CharacterLv = value
 end
 
-function XTheatre5AdventureDataBase:UpdateCharacterExp(value)
+function XTheatre5AdventureDataBase:UpdateCharacterExp(value, triggerInterruptEvent)
     self.CharacterExp = value
+
+    if triggerInterruptEvent ~= false then
+        -- 触发升级检测
+        XMVCA.XTheatre5:TriggerInterruptEvent()
+    end
 end
 
 function XTheatre5AdventureDataBase:UpdateRelicUseRefreshCount(value)
@@ -946,7 +952,8 @@ end
 -- 此参数来自服务端的XAutoChessGameplayResult，战斗结算时处理
 ---@param autoChessGameplayResult XAutoChessGameplayResult
 function XTheatre5AdventureDataBase:HandleAutoChessGameplayResult(autoChessGameplayResult)
-    self:UpdateCharacterExp(self:GetCharacterExp() + autoChessGameplayResult.AddExp)
+    -- 战斗结算时，不触发升级检查
+    self:UpdateCharacterExp(self:GetCharacterExp() + autoChessGameplayResult.AddExp, false)
     self:UpdateIsCanFreeUnlockGrid(autoChessGameplayResult.IsCanFreeUnlockGrid)
 end
 

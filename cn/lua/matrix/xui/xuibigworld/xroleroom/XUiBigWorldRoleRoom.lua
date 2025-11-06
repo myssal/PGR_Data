@@ -148,21 +148,13 @@ function XUiBigWorldRoleRoom:InitCharBtn()
 end
 
 function XUiBigWorldRoleRoom:InitCb()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 
-    self.BtnEnterFight.CallBack = function()
-        self:OnBtnEnterFight()
-    end
+    self.BtnEnterFight:AddEventListener(handler(self, self.OnBtnEnterFight))
 
-    self.BtnBuffDetailClose.CallBack = function()
-        self:OnBtnDetailClicked()
-    end
+    self.BtnBuffDetailClose:AddEventListener(handler(self, self.OnBtnDetailClicked))
 
-    self.BtnQuick.CallBack = function()
-        self:OnBtnQuickClick()
-    end
+    self.BtnQuick:AddEventListener(handler(self, self.OnBtnQuickClick))
 
     self:RegisterClickEvent(self.FullscreenClose, self.OnBtnDetailClicked)
 end

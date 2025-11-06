@@ -17,12 +17,8 @@ function XUiGridSGFurniturePhotoOp:OnDestroy()
 end
 
 function XUiGridSGFurniturePhotoOp:InitCb()
-    self.BtnPackUp.CallBack = function()
-        self:OnBtnPackUpClick()
-    end
-    self.BtnCancel.CallBack = function()
-        self:OnBtnCancelClick()
-    end
+    self.BtnPackUp:AddEventListener(handler(self, self.OnBtnPackUpClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
     self.BtnRotate:AddPointerDownListener(function(eventData)
         self:OnRotateDown(eventData)
     end)
@@ -126,9 +122,7 @@ function XUiPanelSGPhotoWallOp:InitCb()
         [SgFurnitureType.DecorationBoard] = function(id, cfgId) self:OnRemoveDecorationBoard(id, cfgId) end,
     }
     
-    self.BtnCancelAll.CallBack = function() 
-        self:BtnCancelAllClick()
-    end
+    self.BtnCancelAll:AddEventListener(handler(self, self.BtnCancelAllClick))
 end
 
 function XUiPanelSGPhotoWallOp:CreateContainer()

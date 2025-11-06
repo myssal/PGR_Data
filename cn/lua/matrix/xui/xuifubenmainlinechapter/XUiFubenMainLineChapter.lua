@@ -13,6 +13,7 @@ local XUiFubenMainLineChapter = XLuaUiManager.Register(XLuaUi, "UiFubenMainLineC
 
 function XUiFubenMainLineChapter:OnAwake()
     self.BtnMission.gameObject:SetActiveEx(false)
+    self.BtnMissionWhite.gameObject:SetActiveEx(false)
     self:InitAutoScript()
 end
 
@@ -35,6 +36,7 @@ function XUiFubenMainLineChapter:OnStart(chapter, stageId, hideDiffTog)
         self.StageId = stageId
         self.HideDiffTog = hideDiffTog
     end
+    
     self.Opened = false
     self.IsOnZhouMu = false
     ---@type XUiGridTreasureGrade[]
@@ -106,8 +108,10 @@ function XUiFubenMainLineChapter:OnEnable()
     end
 
     -- 检查主线副本活动(如果没有隐藏章节和(异变章节、异变未解锁） 直接隐藏toggle)
-    local isActivePanelTop = XDataCenter.FubenMainLineManager.CheckActivePanelTopDifficult(self.Chapter.OrderId)
-    self.PanelTopDifficult.gameObject:SetActiveEx(isActivePanelTop)
+    if not XUiManager.IsHideFunc then
+        local isActivePanelTop = XDataCenter.FubenMainLineManager.CheckActivePanelTopDifficult(self.Chapter.OrderId)
+        self.PanelTopDifficult.gameObject:SetActiveEx(isActivePanelTop)
+    end
 
     self:UpdateDifficultToggles()
     self:OnOpenInit()
@@ -288,7 +292,7 @@ function XUiFubenMainLineChapter:EnterFight(stage)
     else
         local team = nil
         local proxy = nil
-        if stage.HideAction == 1 then
+        if stage.HideAction == 1 and not XMVCA.XPlotExhibition:GetIsSpeedrun(stage.StageId) then
             team = XDataCenter.TeamManager.GetXTeamByStageId(stage.StageId)
             team:UpdateEntityIds(XTool.Clone(stage.RobotId))
             proxy = require("XUi/XUiFubenShortStory/BattleRole/XUiShortStoryBattleRoleRoom")
@@ -361,6 +365,7 @@ function XUiFubenMainLineChapter:AutoAddListener()
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnTreasure, self.OnBtnTreasureClick)
     self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
+    self:RegisterClickEvent(self.BtnMissionWhite, self.OnBtnMissionClick)
     self:RegisterClickEvent(self.BtnSkip, self.OnBtnSkipClick)
     self:RegisterClickEvent(self.BtnBountyTask, self.OnBtnBountyTaskClick)
     self:RegisterClickEvent(self.BtnCloseDifficult, self.OnBtnCloseDifficultClick)
@@ -383,12 +388,6 @@ function XUiFubenMainLineChapter:AutoAddListener()
     end
     self.BtnSwitch2Normal.CallBack = function()
         self:OnBtnSwitch2NormalClidk()
-    end
-    if XOverseaManager.IsJP_KRRegion() and self.BtnHelp then
-        self.BtnHelp.gameObject:SetActiveEx(true)
-        self.BtnHelp.CallBack = function()
-            self:OnBtnHelpClick()
-        end
     end
 end
 -- auto
@@ -838,7 +837,6 @@ function XUiFubenMainLineChapter:UpdateChapterStars()
         self.MultipleWeeksTxet.gameObject:SetActiveEx(true)
         self.TxtDesc.gameObject:SetActiveEx(false)
         self.ImgStarIcon.gameObject:SetActiveEx(false)
-        self.BtnMission.gameObject:SetActiveEx(false)
 
         curStars, totalStars = XDataCenter.FubenZhouMuManager.GetZhouMuTaskProgress(self.ZhouMuId)
         received = XDataCenter.FubenZhouMuManager.ZhouMuTaskIsAllFinish(self.ZhouMuId)
@@ -898,15 +896,17 @@ function XUiFubenMainLineChapter:UpdateChapterStars()
         end
 
         -- 进度奖励未领取蓝点
-        if totalCnt == 0 then
-            self.BtnMission.gameObject:SetActiveEx(false)
-        else
-            self.BtnMission.gameObject:SetActiveEx(true)
+        self.BtnMission.gameObject:SetActiveEx(false)
+        self.BtnMissionWhite.gameObject:SetActiveEx(false)
+        if totalCnt > 0 then
+            local isBtnWhite = XFubenMainLineConfigs.GetConfigChapterIsBtnMissionWhite(chapterId)
+            local btn = isBtnWhite and self.BtnMissionWhite or self.BtnMission
+            btn.gameObject:SetActiveEx(true)
             local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
-            self.BtnMission:SetName(progress)
+            btn:SetName(progress)
 
             local isRed = XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, chapterId)
-            self.BtnMission:ShowReddot(isRed)
+            btn:ShowReddot(isRed)
         end
     end
 end

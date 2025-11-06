@@ -1581,14 +1581,18 @@ end
 --规范：小于6位不转换，大于等于6位转换为w并保留小数点后2位
 --比如 600000 返回 60w
 function XUiHelper.GetLargeIntNumText(num)
+    local tenThousandStr = XUiHelper.GetText("TenThousand")
+    if XOverseaManager.IsTWRegion() then
+       tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
+    end
     local t = type(num)
     if t == "number" then
         if num >= 100000 then
             local bigNum = num / 10000
             if math.floor(bigNum) < bigNum then
-                return string.format("%.2f", bigNum) .. XUiHelper.GetText("TenThousand")
+                return string.format("%.2f", bigNum) .. tenThousandStr
             else
-                return string.format("%d", bigNum) .. XUiHelper.GetText("TenThousand")
+                return string.format("%d", bigNum) .. tenThousandStr
             end
         else
             return tostring(num)
@@ -2487,6 +2491,25 @@ function XUiHelper.GetDiscountText(discount)
     if XOverseaManager.IsENRegion() or XOverseaManager.IsJP_KRRegion() then
         -- 其他服显示 (100-xx)% off
         local text = XUiHelper.GetText("Snap", tostring(100 - discount))
+        return text
+    else
+        --国服显示 x折(为什么除以10? 因为中文显示的是6折,而不是60折)
+        -- 策划要求保留小数，这个似乎是在海外刻意修复的~~ 所以屏蔽这两行
+        --if discount % 10 == 0 then
+        --    discount = math.floor(discount / 10)
+        --else
+        --end
+        discount = discount / 10
+        local text = tostring(discount) .. XUiHelper.GetText("Snap")
+        return text
+    end
+end
+
+-- 折扣显示2 区分海外国服
+function XUiHelper.GetDiscountTextV2(discount)
+    if XOverseaManager.IsENRegion() or XOverseaManager.IsJP_KRRegion() then
+        -- 其他服显示 固定的文本
+        local text = XUiHelper.GetText("SnapLabel")
         return text
     else
         --国服显示 x折(为什么除以10? 因为中文显示的是6折,而不是60折)

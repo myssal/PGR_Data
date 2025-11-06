@@ -115,7 +115,7 @@ end
 
 function XUiBigWorldPanelLittleMap:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnBigMap.CallBack = Handler(self, self.OnBtnBigMapClick)
+    self.BtnBigMap:AddEventListener(handler(self, self.OnBtnBigMapClick))
 end
 
 function XUiBigWorldPanelLittleMap:_RegisterSchedules()

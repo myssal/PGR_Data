@@ -50,6 +50,10 @@ function XUiPanelGraphicsSetPc:AutoInitUi()
         self.FullscreenTogGraphics_2.gameObject:SetActiveEx(false)
     end
 
+    self.FrameRateLevel = self.Transform:Find("SView/Viewport/PanelContent/FrameRateLevel")
+    if self.FrameRateLevel then
+        self.FrameRateLevel.gameObject:SetActive(true)
+    end
 end
 
 function XUiPanelGraphicsSetPc:InitPc()

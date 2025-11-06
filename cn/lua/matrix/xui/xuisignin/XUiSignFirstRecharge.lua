@@ -129,7 +129,7 @@ function XUiSignFirstRecharge:Refresh(configId)
             return a.IsBigReward
         end
         -- 升序
-        return a.RewardId < b.RewardId
+        return a.RewardId > b.RewardId
     end)
     --for i = 1, #bigRewardItems do
     --    self:SetRewardInfo(bigRewardItems, i, true)

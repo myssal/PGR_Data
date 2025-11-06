@@ -79,6 +79,12 @@ function XNewActivityCalendarControl:GetTimeLimitRewardItemData(activityId)
     table.sort(mainTemplateData, function(a, b)
         local goodsShowParamsA = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(a.TemplateId)
         local goodsShowParamsB = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(b.TemplateId)
+        if not goodsShowParamsA.Quality then
+            return false
+        end
+        if not goodsShowParamsB.Quality then
+            return true
+        end
         if goodsShowParamsA.Quality ~= goodsShowParamsB.Quality then
             return goodsShowParamsA.Quality > goodsShowParamsB.Quality
         end

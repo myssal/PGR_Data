@@ -45,7 +45,7 @@ function XUiBigWorldProcessCourse:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local entity = self._DynamicTable:GetData(index)
 
-        grid:Refresh(entity)
+        grid:Refresh(entity, self._Entity)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         self:PlayDynamicAnimation()
     end
@@ -95,12 +95,14 @@ end
 function XUiBigWorldProcessCourse:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefresh, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FINISH_MULTI, self.OnRefresh, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_REWARD_RECEIVE, self.OnRefresh, self)
 end
 
 function XUiBigWorldProcessCourse:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefresh, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_MULTI, self.OnRefresh, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_REWARD_RECEIVE, self.OnRefresh,
         self)
 end

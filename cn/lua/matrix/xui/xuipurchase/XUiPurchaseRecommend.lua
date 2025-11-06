@@ -124,6 +124,17 @@ function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
         -- 数组越界处理
         if self.CurrentIndex > #btns then self.CurrentIndex = #btns end
         self.PanelTabGroup:SelectIndex(self.CurrentIndex)
+        
+        XScheduleManager.ScheduleNextFrame(function()
+            -- 判断自己有没销毁
+            if not self or not self.GameObject:Exist() then
+                return
+            end
+            
+            local button = self.PanelTabGroup:GetButtonByIndex(self.CurrentIndex)
+            -- 尝试滑动聚焦到该按钮
+            self:TryFocusStage(button)
+        end)
     end
     -- 刷新推荐
     self.DynamicTable:SetDataSource(self.Recommends)
@@ -218,5 +229,45 @@ function XUiPurchaseRecommend:GetCurrentSelectIndex()
 
     return self.CurrentIndex
 end
+
+--region -------------------- 滚动视图 --------------------
+
+function XUiPurchaseRecommend:PlayScrollViewMoveBack(tarPosY, isElastic)
+    local moveDuration = CS.XGame.ClientConfig:GetFloat('KotodamaActivityStageMoveDuration')
+    local tarPos = self.PanelGroupList.content.localPosition
+    tarPos.y = tarPosY
+
+    XLuaUiManager.SetMask(true)
+    self._FocusScrollMoving = true
+    self.PanelGroupList.inertia = false
+    XUiHelper.DoMove(self.PanelGroupList.content, tarPos, moveDuration, XUiHelper.EaseType.Sin, function()
+        if isElastic then
+            self.PanelGroupList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Elastic
+        else
+            self.PanelGroupList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
+        end
+        XLuaUiManager.SetMask(false)
+        self._FocusScrollMoving = false
+        self.PanelGroupList.inertia = true
+    end)
+end
+
+function XUiPurchaseRecommend:TryFocusStage(selectGrid)
+    if not self.PanelGroupList then
+        return
+    end
+    
+    if selectGrid then
+        local halfScreenHeight = self.PanelGroupList.viewport.rect.height / 2
+        local moveMinY = halfScreenHeight
+        local moveMaxY = self.PanelGroupList.content.rect.height - halfScreenHeight
+
+        local tarPosY = - selectGrid.transform.localPosition.y
+        local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)
+        self:PlayScrollViewMoveBack(fixedPositionY, true)
+    end
+end
+
+--endregion
 
 return XUiPurchaseRecommend

@@ -18,9 +18,7 @@ function XUiGridSGFurnitureGiftOp:InitUi()
 end
 
 function XUiGridSGFurnitureGiftOp:InitCb()
-    self.BtnPackUp.CallBack = function()
-        self:OnBtnPackUpClick()
-    end
+    self.BtnPackUp:AddEventListener(handler(self, self.OnBtnPackUpClick))
 end
 
 function XUiGridSGFurnitureGiftOp:Refresh(index, id)

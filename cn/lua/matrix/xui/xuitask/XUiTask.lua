@@ -18,6 +18,12 @@ local TabType = {
     NewbieTarget = 5, -- 新手目标任务
 }
 
+local ShowTypeInHideFunc = {
+    None = 0,
+    AlwaysShow = 1,
+    AlwaysHide = 2,
+}
+
 function XUiTask:OnAwake()
     self:InitBtnSound()
 end
@@ -117,12 +123,28 @@ function XUiTask:InitTabList()
 end
 
 --- 实例化页签UI节点
+---@param cfg XTableMainTaskTabControl
 function XUiTask:InitTabByCfg(cfg, isParent, subIndex, curFirstTabCount)
     -- 如果没有实例化，先判断它的显示是否满足条件
+    local isCanShow = true
+    
     if XTool.IsNumberValidEx(cfg.ShowCondition) and not XConditionManager.CheckCondition(cfg.ShowCondition) then
-        return
+        isCanShow = false
     elseif XTool.IsNumberValidEx(cfg.FunctionId) and XFunctionManager.CheckFunctionFitter(cfg.FunctionId) then
-        return    
+        isCanShow = false    
+    end
+    
+    -- 判断提审模式下的特殊处理
+    if XUiManager.IsHideFunc then
+        if cfg.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysShow then
+            isCanShow = true
+        elseif cfg.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysHide then
+            isCanShow = false    
+        end
+    end
+
+    if not isCanShow then
+        return
     end
 
     -- 如果要显示，根据它的类型克隆对应的预制体
@@ -225,6 +247,15 @@ function XUiTask:UpdateTabListShow()
                 isShow = true
             end
 
+            -- 判断提审模式下的特殊处理
+            if XUiManager.IsHideFunc then
+                if v.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysShow then
+                    isShow = true
+                elseif v.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysHide then
+                    isShow = false
+                end
+            end
+
             if isShow then
                 btn.gameObject:SetActiveEx(true)
                 btn.transform:SetAsLastSibling()
@@ -308,6 +339,14 @@ function XUiTask:_CheckTogLockStatus(btn, cfg)
             btnStatus = XFunctionManager.JudgeCanOpen(cfg.FunctionId) and CS.UiButtonState.Normal or CS.UiButtonState.Disable
         elseif XTool.IsNumberValidEx(cfg.UnlockCondition) then
             btnStatus = XConditionManager.CheckCondition(cfg.UnlockCondition) and CS.UiButtonState.Normal or CS.UiButtonState.Disable
+        end
+
+        -- 判断提审模式下的特殊处理
+        if XUiManager.IsHideFunc then
+            if cfg.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysShow then
+                -- 提审模式下不能有锁定状态，所以强制显示则强制解锁
+                btnStatus = CS.UiButtonState.Normal
+            end
         end
 
         self._TabId2UnlockState[cfg.Id] = btnStatus ~= CS.UiButtonState.Disable
@@ -482,14 +521,26 @@ function XUiTask:OnTaskPanelSelect(index)
         XLog.Error('对应索引不存在配置：'..tostring(index))
         return
     end
+    
+    local isForceOpen = false
 
-    if XTool.IsNumberValidEx(cfg.UnlockCondition) and not XConditionManager.CheckCondition(cfg.UnlockCondition) then
-        XUiManager.TipMsg(XConditionManager.GetConditionDescById(cfg.UnlockCondition))
-        return
+    -- 判断提审模式下的特殊处理
+    if XUiManager.IsHideFunc then
+        if cfg.ShowTypeInHideFunc == ShowTypeInHideFunc.AlwaysShow then
+            -- 提审模式下不能有锁定状态，所以强制显示则强制解锁
+            isForceOpen = true
+        end
     end
 
-    if XTool.IsNumberValidEx(cfg.FunctionId) and not XFunctionManager.DetectionFunction(cfg.FunctionId) then
-        return
+    if not isForceOpen then
+        if XTool.IsNumberValidEx(cfg.UnlockCondition) and not XConditionManager.CheckCondition(cfg.UnlockCondition) then
+            XUiManager.TipMsg(XConditionManager.GetConditionDescById(cfg.UnlockCondition))
+            return
+        end
+
+        if XTool.IsNumberValidEx(cfg.FunctionId) and not XFunctionManager.DetectionFunction(cfg.FunctionId) then
+            return
+        end
     end
 
     self.PreToggleType = index
@@ -508,7 +559,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskDay) then
+        if not isForceOpen and not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskDay) then
             return
         end
 
@@ -524,7 +575,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskWeekly) then
+        if not isForceOpen and not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskWeekly) then
             return
         end
 
@@ -537,7 +588,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
-        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskActivity) then
+        if not isForceOpen and not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.TaskActivity) then
             return
         end
 
@@ -549,7 +600,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
-        if not XFunctionManager.DetectionFunction(cfg.FunctionId) then
+        if not isForceOpen and not XFunctionManager.DetectionFunction(cfg.FunctionId) then
             return
         end
 
@@ -560,7 +611,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
-        if not XFunctionManager.DetectionFunction(cfg.FunctionId) then
+        if not isForceOpen and not XFunctionManager.DetectionFunction(cfg.FunctionId) then
             return
         end
 

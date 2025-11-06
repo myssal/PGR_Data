@@ -147,13 +147,13 @@ end
 
 function XUiBigWorldPhotographPopupAlbum:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnSelect.CallBack = Handler(self, self.OnBtnSelectClick)
+    self.BtnSelect:AddEventListener(handler(self, self.OnBtnSelectClick))
     if self.BtnSelectOff then
-        self.BtnSelectOff.CallBack = Handler(self, self.OnBtnSelectClick)
+        self.BtnSelectOff:AddEventListener(handler(self, self.OnBtnSelectClick))
     end
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
-    self.BtnDetele.CallBack = Handler(self, self.OnBtnDeteleClick)
-    self.BtnCancel.CallBack = Handler(self, self.OnBtnCancelClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
+    self.BtnDetele:AddEventListener(handler(self, self.OnBtnDeteleClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
 end
 
 return XUiBigWorldPhotographPopupAlbum

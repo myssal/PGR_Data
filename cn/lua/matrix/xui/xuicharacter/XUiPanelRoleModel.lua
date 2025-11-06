@@ -3274,32 +3274,12 @@ function XUiPanelRoleModel:ReplayUiLoopEffect()
         local model = self.RoleModelPool[self.CurRoleName]
         if model then
             if model.UiEffect then
-                local isActive = false
-                for i = 1, #model.UiEffect do
-                    local effect = model.UiEffect[i]
-                    if effect.gameObject.activeSelf then
-                        isActive = true
-                        break
-                    end
-                end
-                if isActive then
-                    self:SetCurrentUiEffectActive(model.UiEffect, false)
-                    self:SetCurrentUiEffectActive(model.UiEffect, true)
-                end
+                self:SetCurrentUiEffectActive(model.UiEffect, false)
+                self:SetCurrentUiEffectActive(model.UiEffect, true)
             end
             if model.UiEquipEffect then
-                local isActive = false
-                for i = 1, #model.UiEquipEffect do
-                    local effect = model.UiEquipEffect[i]
-                    if effect.gameObject.activeSelf then
-                        isActive = true
-                        break
-                    end
-                end
-                if isActive then
-                    self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
-                    self:SetCurrentUiEffectActive(model.UiEquipEffect, true)
-                end
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, true)
             end
         end
     end
@@ -3308,10 +3288,32 @@ function XUiPanelRoleModel:ReplayUiLoopEffect()
         local effectList = self.EffectDic["Customize_ModelLoopEffect"]
         if effectList then
             for _, effect in pairs(effectList) do
+                -- 强制刷新
+                effect.gameObject:SetActiveEx(false)
+                effect.gameObject:SetActiveEx(true)
+            end
+        end
+    end
+end
+
+function XUiPanelRoleModel:StopUiLoopEffect()
+    if self.RoleModelPool then
+        local model = self.RoleModelPool[self.CurRoleName]
+        if model then
+            if model.UiEffect then
+                self:SetCurrentUiEffectActive(model.UiEffect, false)
+            end
+            if model.UiEquipEffect then
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+            end
+        end
+    end
+    if self.EffectDic then
+        local effectList = self.EffectDic["Customize_ModelLoopEffect"]
+        if effectList then
+            for _, effect in pairs(effectList) do
                 if effect.gameObject.activeSelf then
-                    -- 强制刷新
                     effect.gameObject:SetActiveEx(false)
-                    effect.gameObject:SetActiveEx(true)
                 end
             end
         end

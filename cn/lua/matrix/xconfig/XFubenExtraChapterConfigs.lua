@@ -42,6 +42,11 @@ function XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
     return ExtraChapterDetailsCfgs
 end
 
+function XFubenExtraChapterConfigs.GetExtraChapterDetailsIsBtnMissionWhite(id)
+    local config = ExtraChapterDetailsCfgs[id]
+    return config.IsBtnMissionWhite == 1
+end
+
 function XFubenExtraChapterConfigs.GetExtraChapterStarTreasuresCfgs()
     return ExtraChapterStarTreasureCfgs
 end

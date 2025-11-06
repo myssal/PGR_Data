@@ -447,6 +447,47 @@ PlayerCondition = {
         
         return result, condition.Desc
     end,
+    
+    -- 判断是否提审模式
+    [10162] = function(condition)
+        local inverse = XTool.IsNumberValidEx(condition.Params[1])
+        
+        local result = XUiManager.IsHideFunc
+
+        if inverse then
+            result = not result
+        end
+        
+        return result, condition.Desc
+    end,
+    
+    -- 判断任意一个角色进化至指定品质
+    [10163] = function(condition)
+        local isInverse = XTool.IsNumberValidEx(condition.Params[1])
+        local quality = condition.Params[2]
+
+        local result = false
+        
+        for i = 3, #condition.Params do
+            local characterId = condition.Params[i]
+
+            if XTool.IsNumberValidEx(characterId) then
+                local curQuality = XMVCA.XCharacter:GetCharacterQuality(characterId)
+
+                if curQuality >= quality then
+                    result = true
+                    break
+                end
+            end
+        end
+
+        if isInverse then
+            result = not result
+        end
+        
+        return result, condition.Desc
+    end,
+    
     [10189] = function(condition)
         -- 判断主界面功能事件队列是否已完成
         
@@ -2550,6 +2591,13 @@ PlayerCondition = {
         local stageId = condition.Params[1]
         local curStageId = XMVCA.XRpgMakerGame:GetCurrentStageId()
         return stageId == curStageId, condition.Desc
+    end,
+    --endregion
+    
+    --region 赛马
+    [17450] = function(condition)
+        -- 比赛是否未进行
+        return not XMVCA.XRace:IsGamePlaying(), condition.Desc
     end,
     --endregion
 }

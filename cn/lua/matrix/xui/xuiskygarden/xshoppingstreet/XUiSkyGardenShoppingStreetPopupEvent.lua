@@ -219,9 +219,9 @@ end
 
 function XUiSkyGardenShoppingStreetPopupEvent:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnCustomer.CallBack = function() self:OnBtnCustomerClick() end
-    self.BtnStore.CallBack = function() self:OnBtnStoreClick() end
-    self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
+    self.BtnCustomer:AddEventListener(handler(self, self.OnBtnCustomerClick))
+    self.BtnStore:AddEventListener(handler(self, self.OnBtnStoreClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiSkyGardenShoppingStreetPopupEvent:_SetSelectState()

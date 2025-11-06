@@ -206,6 +206,7 @@ end
 function XUiWelfare:InitRefreshFunc()
     self.ActivityInViewFunc = {
         [XActivityConfigs.ActivityType.Task] = handler(self, self.OnRefreshTask),
+        [XActivityConfigs.ActivityType.Reward] = handler(self, self.OnRefreshReward),
         [XActivityConfigs.ActivityType.Shop] = handler(self, self.OnRefreshShop),
         [XActivityConfigs.ActivityType.Skip] = handler(self, self.OnRefreshSkip),
         [XActivityConfigs.ActivityType.Link] = handler(self, self.OnRefreshLink),
@@ -459,6 +460,15 @@ function XUiWelfare:OnRefreshLink(template)
     XDataCenter.ActivityManager.HandleLinkActivityRedPoint(template.Id)
 end
 
+---@desc 刷新活动 - 奖励类型界面
+---@param template XTableActivity 活动配置 Activity.tab
+---@return nil
+function XUiWelfare:OnRefreshReward(template)
+    self.PanelReward.gameObject:SetActiveEx(true)
+    self.SkipAndTaskPanel = self.SkipAndTaskPanel or require("XUi/XUiActivityBase/XUiPanelSkipAndTask").New(self.PanelReward, self)
+    self.SkipAndTaskPanel:Refresh(template)
+end
+
 --region   ------------------自定义活动类型 start-------------------
 
 function XUiWelfare:OnRefreshSendInvitation(template)
@@ -696,7 +706,7 @@ function XUiWelfare:OnRefreshWelfareThreeDayCard(template)
     end
     
     prefab:Open()
-    prefab:Refresh(template.Id, true)
+    prefab:Refresh(template.Id, false)
     local btn = self.TabButtons[self.TabIndex]
     local weekCardData = XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(template.Id)
     if btn and weekCardData then

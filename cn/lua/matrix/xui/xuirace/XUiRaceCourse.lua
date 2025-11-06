@@ -86,6 +86,7 @@ function XUiRaceCourse:OnSelectTab(index)
     self:UpdateState()
     self._JumpToPointGroupId = nil
     self._JumpToRoundId = nil
+    self:PlayAnimationWithMask("QieHuan")
 end
 
 function XUiRaceCourse:SortRound(aId, bId)

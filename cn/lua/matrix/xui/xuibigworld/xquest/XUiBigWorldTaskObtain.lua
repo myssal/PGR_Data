@@ -40,9 +40,7 @@ function XUiBigWorldTaskObtain:InitUi()
 end
 
 function XUiBigWorldTaskObtain:InitCb()
-    self.BtnClose.CallBack = function()
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 function XUiBigWorldTaskObtain:InitView()

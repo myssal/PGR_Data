@@ -128,7 +128,7 @@ XPayManagerCreator = function()
             return data.IsDailyRewardGet
         else
             if not monthlyCardId then
-                return false
+                return true
             end
             local data = XDataCenter.PurchaseManager.GetYKInfoDataById(monthlyCardId)
             if not data or data.DailyRewardRemainDay == 0 then
@@ -233,8 +233,6 @@ XPayManagerCreator = function()
                     }
                     table.insert(rewards, data)
                 end
-            else
-                XLog.Error("XPayManager.GetSmallRewards rewardId not exist: " .. rewardId)
             end
         end
         return rewards
