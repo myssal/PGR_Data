@@ -41,17 +41,11 @@ function XUiPanelBWTaskContent:OnStart()
 end
 
 function XUiPanelBWTaskContent:InitCb()
-    self.BtnGo.CallBack = function()
-        self:OnBtnGoClick()
-    end
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
 
-    self.BtnTrack.CallBack = function()
-        self:OnBtnTrackClick()
-    end
+    self.BtnTrack:AddEventListener(handler(self, self.OnBtnTrackClick))
 
-    self.BtnUntrack.CallBack = function()
-        self:OnBtnUntrackClick()
-    end
+    self.BtnUntrack:AddEventListener(handler(self, self.OnBtnUntrackClick))
 end
 
 function XUiPanelBWTaskContent:InitView()
@@ -142,7 +136,7 @@ function XUiPanelBWTaskContent:RefreshStep(step)
             count = count + 1
             local grid = self._StepGrid
             if not grid then
-                grid = XUiGridBWObjective.New(self.GridStep, self.Parent)
+                grid = XUiGridBWObjective.New(self.GridStep, self)
                 self._StepGrid = grid
             end
             grid:Refresh(step, true)
@@ -177,7 +171,9 @@ function XUiPanelBWTaskContent:RefreshObjective(objectiveList)
 end
 
 function XUiPanelBWTaskContent:OnBtnGoClick()
-    XMVCA.XBigWorldMap:OpenBigWorldMapUiAnchorQuest(self._QuestId)
+    local questId = self._QuestId
+    local data = XMVCA.XBigWorldQuest:GetQuestSkipInfo(questId)
+    XMVCA.XBigWorldQuest:TrySkipToByFightSkipInfo(data)
 end
 
 function XUiPanelBWTaskContent:OnBtnTrackClick()
@@ -185,8 +181,18 @@ function XUiPanelBWTaskContent:OnBtnTrackClick()
     XMVCA.XBigWorldQuest:TrackQuest(questId, function()
         self:RefreshBtn()
         self.Parent:RefreshTabButton()
-        if not XMVCA.XBigWorldMap:OpenBigWorldMapUiAnchorQuest(questId, true) then
+        local data = XMVCA.XBigWorldQuest:GetQuestSkipInfo(questId)
+        local state = XMVCA.XBigWorldQuest:CheckSkipToByFightSkipInfo(data)
+        if state  == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.None then
             self.Parent:Close()
+        elseif state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.NotExistMap
+                or state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.NotExistMessage
+                or state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.NotExistPin then
+            self.Parent:Close()
+        elseif state == XMVCA.XBigWorldQuest.EQuestSkipToByFightState.SameAreaGroup then
+            self.Parent:Close()
+        else
+            XMVCA.XBigWorldQuest:TrySkipToByFightSkipInfo(data)
         end
     end)
 end

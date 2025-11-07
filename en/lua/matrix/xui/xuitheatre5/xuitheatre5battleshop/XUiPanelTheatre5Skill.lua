@@ -5,9 +5,11 @@
 local XUiPanelTheatre5Skill = XClass(XUiNode, 'XUiPanelTheatre5Skill')
 local XUiGridTheatre5ShopContainer = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5ShopContainer')
 
-function XUiPanelTheatre5Skill:OnStart(customContainerCls)
+function XUiPanelTheatre5Skill:OnStart(customContainerCls, containerType)
     self:InitSkillContainers(customContainerCls)
     self:RefreshSkillShow()
+    
+    self._ContainerType = containerType
 end
 
 function XUiPanelTheatre5Skill:OnEnable()
@@ -25,7 +27,7 @@ function XUiPanelTheatre5Skill:InitSkillContainers(customContainerCls)
     local skillGridCount = self._Control.ShopControl:GetSkillListSize()
 
     self.GridSkill.gameObject:SetActiveEx(false)
-    
+
     for index = 1, skillGridCount do
         local go = CS.UnityEngine.GameObject.Instantiate(self.GridSkill, self.GridSkill.transform.parent.transform)
         ---@type XUiGridTheatre5ShopContainer
@@ -45,6 +47,9 @@ end
 function XUiPanelTheatre5Skill:RefreshSkillShow()
     for i, v in ipairs(self.GridContainers) do
         v:SetItemData(self._Control.ShopControl:GetItemInSkillListByIndex(i))
+        if self._ContainerType then
+            v:SetContainerType(self._ContainerType)
+        end
     end
 end
 

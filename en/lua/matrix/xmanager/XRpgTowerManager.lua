@@ -2,7 +2,7 @@ local XExRpgTowerManager = require("XEntity/XFuben/XExRpgTowerManager")
 
 --兵法蓝图玩法管理器
 XRpgTowerManagerCreator = function()
-    local XRpgTowerManager = XExRpgTowerManager.New(XFubenConfigs.ChapterType.RpgTower, "RpgTowerManager")
+    local XRpgTowerManager = XExRpgTowerManager.New(XEnumConst.FuBen.ChapterType.RpgTower, "RpgTowerManager")
     local RpgTowerConfig = XRpgTowerConfig
     local RpgTowerCharacter = require("XEntity/XRpgTower/XRpgTowerCharacter")
     local RpgTowerStage = require("XEntity/XRpgTower/XRpgTowerStage")

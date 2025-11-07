@@ -17,7 +17,7 @@ function XUiGridStoryJump:Refresh(data)
     end
     self.SkipId = data.SkipId
     local chapterType = data.ChapterType
-    local isPrequel = chapterType == XFubenConfigs.ChapterType.Prequel
+    local isPrequel = chapterType == XEnumConst.FuBen.ChapterType.Prequel
     self.NormalPanelTxt.gameObject:SetActiveEx(isPrequel)
     self.PressPanelTxt.gameObject:SetActiveEx(isPrequel)
     if isPrequel then

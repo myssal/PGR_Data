@@ -22,49 +22,25 @@ function XBWMapAxisConversion:ChangeAxis(levelId)
     self._PixelRatio = XMVCA.XBigWorldMap:GetMapPixelRatioByLevelId(levelId) or 1
 end
 
-function XBWMapAxisConversion:WorldToScreenPosition2D(x, y, z)
-    local camera = CS.XUiManager.Instance.UiCamera
-
-    if camera then
-        return CS.XAxisConverter.Instance:WorldToScreenPoint(Vector3(x, y, z), camera)
-    end
-
-    return Vector2.zero
-end
-
 function XBWMapAxisConversion:WorldToMapPosition2D(x, y, pixelRatio)
     pixelRatio = self:_GetValidPixelRatio(pixelRatio)
 
     local offsetX = (x - self._OriginPos.x) * pixelRatio
     local offsetY = (y - self._OriginPos.y) * pixelRatio
-
-    return Vector2(offsetX, offsetY)
-end
-
-function XBWMapAxisConversion:MapToWorldPosition2D(x, y, pixelRatio)
-    pixelRatio = self:_GetValidPixelRatio(pixelRatio)
-
-    local offsetX = x / pixelRatio + self._OriginPos.x
-    local offsetY = y / pixelRatio + self._OriginPos.y
-
-    return Vector2(offsetX, offsetY)
+    
+    return offsetX, offsetY
 end
 
 function XBWMapAxisConversion:ScreenToRectPosition2D(transform, x, y)
-    return CS.XAxisConverter.Instance:ScreenToUILocalPoint(transform, Vector2(x, y), self._CanvasType)
-end
-
-function XBWMapAxisConversion:ScreenToWorldPosition2D(x, y)
-    local camera = CS.XUiManager.Instance.UiCamera
-
-    return CS.XAxisConverter.Instance:ScreenToWorldPoint(Vector2(x, y), camera)
+    local posX, posY = CS.XAxisConverter.Instance:ScreenToUILocalPoint(transform, x, y, self._CanvasType)
+    return posX, posY
 end
 
 function XBWMapAxisConversion:WorldToMapUIWorldPosition2D(transform, x, y, pixelRatio)
-    local position = self:WorldToMapPosition2D(x, y, pixelRatio)
-    local worldPosition = transform:TransformPoint(position.x, position.y, 0)
+    local xOffset, yOffset = self:WorldToMapPosition2D(x, y, pixelRatio)
+    local posX, poY, _ = transform:TransformPoint(xOffset, yOffset, 0)
 
-    return Vector2(worldPosition.x, worldPosition.y)
+    return posX, poY
 end
 
 function XBWMapAxisConversion:UIToScreenPosition2D(transform)
@@ -73,10 +49,10 @@ end
 
 function XBWMapAxisConversion:ScreenToUIDistance(transform, distance, standardScreenWidth)
     local size = CS.UnityEngine.Screen.width / standardScreenWidth * distance
-    local leftPos = self:ScreenToRectPosition2D(transform, -size, -size)
-    local rightPos = self:ScreenToRectPosition2D(transform, size, size)
+    local leftPosX, _ = self:ScreenToRectPosition2D(transform, -size, -size)
+    local rightPosX, _ = self:ScreenToRectPosition2D(transform, size, size)
 
-    return math.abs(rightPos.x - leftPos.x)
+    return math.abs(rightPosX - leftPosX)
 end
 
 function XBWMapAxisConversion:ConversionAreaGroupColor(groupList, currentIndex)
@@ -128,17 +104,18 @@ function XBWMapAxisConversion:FilterScreenPointNearPinDataList(targetPos, pinNod
 end
 
 function XBWMapAxisConversion:FilterOutScreenPlayerPosition(transform, targetTransform)
-    local playerPos = self:GetCurrentNpcPosition()
-    local trackPos = self:FilterOutScreenPosition(transform, targetTransform, playerPos.x, playerPos.z)
+    local playerPosX, _, playerPosZ = self:GetCurrentNpcPosition()
+    local trackPos = self:FilterOutScreenPosition(transform, targetTransform, playerPosX, playerPosZ)
 
     return trackPos
 end
 
 ---@param pinDatas table<number, XBWMapPinData>
 function XBWMapAxisConversion:FilterOutScreenPinsPosition(pinDatas, transform, targetTransform, pixelRatio)
-    local result = {}
+    local result
 
     if not XTool.IsTableEmpty(pinDatas) then
+        result = {}
         for _, pinData in pairs(pinDatas) do
             local pinPosition = pinData:GetWorldPosition2D()
             local trackPos = self:FilterOutScreenPosition(transform, targetTransform, pinPosition.x, pinPosition.y,
@@ -155,21 +132,21 @@ end
 
 function XBWMapAxisConversion:FilterOutScreenPosition(transform, targetTransform, posX, posY, pixelRatio)
     local result = nil
-    local mapPosition = self:WorldToMapPosition2D(posX, posY, pixelRatio)
+    local mapX, mapY = self:WorldToMapPosition2D(posX, posY, pixelRatio)
     local screenRect = self:GetScreenUIRect(transform)
     local targetRect = self:GetScreenUIRect(targetTransform)
 
-    if not screenRect:Contains(mapPosition) then
+    if not screenRect:Contains(mapX, mapY) then
         local centerPos = screenRect.center
         local trackPos = Vector2.zero
         local direction = Vector2.zero
-        local xOffset = mapPosition.x - centerPos.x
-        local yOffset = mapPosition.y - centerPos.y
+        local xOffset = mapX - centerPos.x
+        local yOffset = mapY - centerPos.y
 
-        if mapPosition.x < screenRect.xMin then
+        if mapX < screenRect.xMin then
             trackPos.x = -targetRect.width / 2
             direction.x = -1
-        elseif mapPosition.x > screenRect.xMax then
+        elseif mapX > screenRect.xMax then
             trackPos.x = targetRect.width / 2
             direction.x = 1
         else
@@ -178,10 +155,10 @@ function XBWMapAxisConversion:FilterOutScreenPosition(transform, targetTransform
             trackPos.x = xOffset * ratio
             direction.x = 0
         end
-        if mapPosition.y < screenRect.yMin then
+        if mapY < screenRect.yMin then
             trackPos.y = -targetRect.height / 2
             direction.y = -1
-        elseif mapPosition.y > screenRect.yMax then
+        elseif mapY > screenRect.yMax then
             trackPos.y = targetRect.height / 2
             direction.y = 1
         else
@@ -195,7 +172,7 @@ function XBWMapAxisConversion:FilterOutScreenPosition(transform, targetTransform
             Position = trackPos,
             Direction = direction,
             Priority = math.pow(xOffset, 2) + math.pow(yOffset, 2),
-            Angle = Vector2.SignedAngle(Vector2.up, Vector2(xOffset, yOffset)),
+            Angle = CS.XAxisConverter.Instance:SignedAngle(0, 1, xOffset, yOffset),
         }
     end
 
@@ -214,7 +191,7 @@ function XBWMapAxisConversion:ConstrainingPointWithinEllipse(x, y, xAxis, yAxis)
         v = v / magnitude
     end
 
-    return Vector2(u * xAxis, v * yAxis)
+    return u * xAxis, v * yAxis
 end
 
 function XBWMapAxisConversion:CheckNearbyDistance(position, targetPosition, targetDistance)
@@ -225,7 +202,7 @@ function XBWMapAxisConversion:CheckNearbyDistance(position, targetPosition, targ
     return distance <= targetDistance
 end
 
----@param pinNode XBWMapPinData
+---@param pinData XBWMapPinData
 function XBWMapAxisConversion:CheckUnimportantPin(pinData, groupId)
     if pinData then
         if not pinData.TeleportEnable and not XMVCA.XBigWorldMap:CheckPinTracking(pinData.LevelId, pinData.PinId) then
@@ -247,7 +224,7 @@ end
 function XBWMapAxisConversion:GetCurrentNpcPosition()
     local transform = self:GetCurrentNpcTransform()
 
-    return transform.position
+    return transform:GetPosition()
 end
 
 function XBWMapAxisConversion:GetScreenUIRect(transform)

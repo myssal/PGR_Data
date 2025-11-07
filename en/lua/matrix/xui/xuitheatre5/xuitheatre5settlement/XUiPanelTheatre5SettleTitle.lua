@@ -12,7 +12,7 @@ end
 
 function XUiPanelTheatre5SettleTitle:RefreshShow()
     local isWin
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         local targetCnt = self._Control.PVPControl:GetPVPTargetCountFromConfig()
         isWin = self.ResultData.XAutoChessGameplayResult.TrophyNum >= targetCnt
     else

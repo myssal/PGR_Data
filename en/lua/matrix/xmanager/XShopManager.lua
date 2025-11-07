@@ -95,6 +95,7 @@ XShopManager.ActivityShopType = {
     BlackRockChessShop = 11, --国际战旗商店
     Maverick3Shop = 12, --孤胆枪手商店
     Theatre5Shop = 13, --肉鸽5商店
+    RaceShop = 14, --赛马商店
 }
 
 --分解商店分类

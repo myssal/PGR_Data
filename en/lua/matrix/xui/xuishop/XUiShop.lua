@@ -314,6 +314,14 @@ function XUiShop:SetShopBtn(shopType)
 end
 
 function XUiShop:CheckBtnState(shopType, btn)
+    -- 检查功能是否开启
+    local functionOpenId = ShopFunctionOpenIdDic[shopType]
+
+    if XTool.IsNumberValidEx(functionOpenId) and not XFunctionManager.DetectionFunction(functionOpenId, true, true) then
+        btn:SetButtonState(CS.UiButtonState.Disable)
+        return
+    end
+
     local togActlist = self:GetShopBaseInfoByTypeAndTag(shopType)
     if #togActlist <= 0 then
         btn:SetButtonState(CS.UiButtonState.Disable)

@@ -139,6 +139,9 @@ local Theatre5EventIds = {
     --返回主界面
     EVENT_GUIDE_THEATRE5_RETURN_MAIN = "EVENT_GUIDE_THEATRE5_RETURN_MAIN",
     --endregion
+    
+    --- 饰品更新
+    EVENT_RELIC_UPDATE = "EVENT_RELIC_UPDATE",
 }
 
 return Theatre5EventIds

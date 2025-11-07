@@ -82,9 +82,9 @@ function XUiBWBtnKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId, curOper
         
         local isCustom = XCSInputManager.IsCustomKey(operationKey, 0, self._KeySetType, self.CurInputMapId)
         self.BtnKeyItem.enabled = isCustom
-        self.BtnKeyItem.CallBack = function()
+        self.BtnKeyItem:AddEventListener(function()
             self.Cb(operationKey, self)
-        end
+        end)
         if (resetTextOnly == true) and not XDataCenter.UiPcManager.IsPc() then
             return
         end

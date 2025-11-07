@@ -11,15 +11,18 @@ local XUiBigWorldMessageTips = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMessag
 function XUiBigWorldMessageTips:OnAwake()
     ---@type XBWMessageData
     self._MessageData = false
+    self._SequentialId = 0
     self._IsForce = false
     self._Timer = false
+    self._IsOpenedSingle = false
 
     self:_RegisterButtonClicks()
 end
 
 ---@param messageData XBWMessageData
-function XUiBigWorldMessageTips:OnStart(messageData)
+function XUiBigWorldMessageTips:OnStart(messageData, sequentialId)
     self._MessageData = messageData
+    self._SequentialId = sequentialId or 0
     
     self:_Init()
     XMVCA.XBigWorldMessage:RecordStatistical(messageData.MessageId, XMVCA.XBigWorldMessage.OperatorType.Enter, 0, self.Name)
@@ -41,6 +44,9 @@ end
 function XUiBigWorldMessageTips:OnDestroy()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE)
     XMVCA.XBigWorldMessage:RecordStatistical(self._MessageData.MessageId, XMVCA.XBigWorldMessage.OperatorType.Leave, 0, self.Name)
+    if self._IsForce then
+        self:ChangeInput(false)
+    end
 end
 
 -- endregion
@@ -52,6 +58,13 @@ function XUiBigWorldMessageTips:OnBtnClickClick()
 end
 
 -- endregion
+
+function XUiBigWorldMessageTips:Close()
+    if XTool.IsNumberValid(self._SequentialId) then
+        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
+    end
+    self.Super.Close(self)
+end
 
 -- region 私有方法
 
@@ -123,10 +136,13 @@ function XUiBigWorldMessageTips:_AutoOpenMessage()
     local messageData = self._MessageData
 
     if messageData then
-        --self:BeginOpenOperatorAfterClose("UiBigWorldPopupMessageSingle", messageData.MessageId)
-        XMVCA.XBigWorldUI:Close(self.Name, function() 
-            XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldPopupMessageSingle", messageData.MessageId)
-        end)
+        if self._IsOpenedSingle then
+            XLog.Error("[BigWorldMessage]: Repeat Open Single Message Tips.")
+            return
+        end
+
+        self._IsOpenedSingle = true
+        self:InsertQueueBeforeClose("UiBigWorldPopupMessageSingle", messageData.MessageId, self._SequentialId)
     else
         self:Close()
     end

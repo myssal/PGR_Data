@@ -1,6 +1,6 @@
 ---@class XTheatre5PVENode
----@field NextNode XTheatre5PVENod
----@field private _MainControl XTheatre5FlowControl
+---@field NextNode XTheatre5PVENode
+---@field private _MainControl XTheatre5FlowController
 ---@field _MainModel XTheatre5Model
 local XTheatre5PVENode = XClass(nil, "XTheatre5PVENode")
 

@@ -29,9 +29,9 @@ end
 
 function XUiBigWorldPopupSkipDialogue:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
-    self.BtnContinue.CallBack = Handler(self, self.OnBtnContinueClick)
-    self.BtnSkip.CallBack = Handler(self, self.OnBtnSkipClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
+    self.BtnContinue:AddEventListener(handler(self, self.OnBtnContinueClick))
+    self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkipClick))
 end
 
 function XUiBigWorldPopupSkipDialogue:_NotifyClose(isSkip)

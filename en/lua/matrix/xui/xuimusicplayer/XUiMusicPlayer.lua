@@ -8,7 +8,7 @@ local XUiGridMusicPlayer = require("XUi/XUiMusicPlayer/XUiGridMusicPlayer")
 local XUiPanelMusicSpectrum = require("XUi/XUiMusicPlayer/XUiPanelMusicSpectrum")
 
 local ScheduleIntervalTime = CS.XGame.ClientConfig:GetInt("MusicPlayerSpectrumIntervalTime")
-local CSXAudioManager = CS.XAudioManager
+local XAudioManager = CS.XAudioManager
 
 function XUiMusicPlayer:OnAwake()
     self.PanelSpectrumList = {
@@ -24,9 +24,6 @@ function XUiMusicPlayer:OnStart(closeCallback)
     self.CloseCallback = closeCallback
     self.IsFirstHandleSelect = true
 
-    -- CSXAudioManager.StopAll()
-
-    self.CurMusicVolume = CSXAudioManager.GetMusicVolume()
     self.DynamicTableDataList = XMVCA.XAudio:GetAlbumIdList()
 
     local uiMainNeedPlayedAlbumId = XMVCA.XAudio:GetUiMainNeedPlayedAlbumId()
@@ -55,8 +52,6 @@ function XUiMusicPlayer:OnDisable()
         XScheduleManager.UnSchedule(self.ScheduleId)
         self.ScheduleId = nil
     end
-    -- CSXAudioManager.StopMusicWithAnalyzer()
-    -- CSXAudioManager.PlayMusic(CSXAudioManager.UiMainNeedPlayedBgmCueId)
 end
 
 function XUiMusicPlayer:AutoAddListener()
@@ -113,13 +108,13 @@ end
 
 function XUiMusicPlayer:UpdateSpectrum(id)
     local template = XMVCA.XAudio:GetAlbumTemplateById(id)
-    CSXAudioManager.PlayMusicCDWithAnalyzer(template.CueId, 2, 4)
+    XAudioManager.PlayMusicCDWithAnalyzer(template.CueId, 2, 4)
     if self.ScheduleId then
         XScheduleManager.UnSchedule(self.ScheduleId)
         self.ScheduleId = nil
     end
     self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        local spectrumData = CSXAudioManager.GetSpectrumLvData()
+        local spectrumData = XAudioManager.GetSpectrumLvData()
         for _, panel in ipairs(self.PanelSpectrumList) do
             panel:UpdateSpectrum(spectrumData)
         end
@@ -130,10 +125,10 @@ function XUiMusicPlayer:UpdateSelect(index)
     local id = self.DynamicTableDataList[index]
     self:UpdateAlbumContent(id)
     local isOpen = self:GetIsOpen(id)
-    if self.CurMusicVolume ~= 0 and isOpen then
+    if XAudioManager.CheckMusicCanPlayLevel() and isOpen then
         self:UpdateSpectrum(id)
     else
-        CSXAudioManager.StopMusicWithAnalyzer()
+        XLuaAudioManager.StopCurrentBGM()
     end
     local startIndex = self.DynamicTable.Imp.StartIndex
     for idx, grid in pairs(self.DynamicTable:GetGrids()) do

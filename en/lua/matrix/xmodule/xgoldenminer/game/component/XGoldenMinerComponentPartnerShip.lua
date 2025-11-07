@@ -335,7 +335,7 @@ function XGoldenMinerComponentPartnerShip:UpdateMovePos(deltaTime)
         return
     end
     self._CurMoveShipPos:AddVector(self._CurMoveDirection * deltaTime * self._MoveSpeed)
-    self.Transform:SetAnchoedPosition(self._CurMoveShipPos.x, self._CurMoveShipPos.y)
+    self.Transform:SetAnchoredPosition(self._CurMoveShipPos.x, self._CurMoveShipPos.y)
     self._CurMoveTime = self._CurMoveTime - deltaTime
     self._CurAimPassTime = self._CurAimPassTime + deltaTime
 end
@@ -374,7 +374,7 @@ function XGoldenMinerComponentPartnerShip:_UpdateGrabTargetAnchoredPosition(enti
     local targetTrans = entity:GetTransform()
     
     local oldAnchoredPosX, oldAnchoredPosY = targetTrans:GetAnchoredPosition()
-    targetTrans:SetAnchoedPosition(oldAnchoredPosX, oldAnchoredPosY + deltaPos)
+    targetTrans:SetAnchoredPosition(oldAnchoredPosX, oldAnchoredPosY + deltaPos)
 end
 
 function XGoldenMinerComponentPartnerShip:GrabbingTarget()

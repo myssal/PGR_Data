@@ -12,6 +12,7 @@ end
 
 --######################## XUiBossSingleBattleRoleRoom ########################
 local XUiBattleRoleRoomDefaultProxy = require("XUi/XUiNewRoomSingle/XUiBattleRoleRoomDefaultProxy")
+---@class XUiBossSingleBattleRoleRoom:XUiBattleRoleRoomDefaultProxy
 local XUiBossSingleBattleRoleRoom = XClass(XUiBattleRoleRoomDefaultProxy, "XUiBossSingleBattleRoleRoom")
 
 function XUiBossSingleBattleRoleRoom:OnNotify(event, stageType)
@@ -27,8 +28,10 @@ function XUiBossSingleBattleRoleRoom:GetRoleDetailProxy()
         AOPOnBtnJoinTeamClickedBefore = function(proxy, rootUi)
             local challengeCount = XMVCA.XFubenBossSingle:GetCharacterChallengeCount(rootUi.CurrentEntityId)
             if challengeCount >= XMVCA.XFubenBossSingle:GetMaxStamina() then
-                XUiManager.TipCode(XCode.FubenBossSingleCharacterPointsNotEnough)
-                return true
+                if not XMVCA.XFubenBossSingle:IsCharacterHasRecord(rootUi.StageId, rootUi.CurrentEntityId) then
+                    XUiManager.TipCode(XCode.FubenBossSingleCharacterPointsNotEnough)
+                    return true
+                end
             end
         end,
         GetGridProxy = function()
@@ -45,7 +48,7 @@ end
 -- team : XTeam
 -- stageId : number
 function XUiBossSingleBattleRoleRoom:EnterFight(team, stageId, challengeCount, isAssist)
-    if not self:CheckRoleStanmina(team) then
+    if not self:CheckRoleStanmina(team, stageId) then
         return
     end
     self.Super.EnterFight(self,team, stageId, challengeCount, isAssist)
@@ -71,12 +74,17 @@ end
 
 ----------------------------------------
 
-function XUiBossSingleBattleRoleRoom:CheckRoleStanmina(team)
+function XUiBossSingleBattleRoleRoom:CheckRoleStanmina(team, stageId)
     for i = 1, 3 do
         local posData = team:GetEntityIdByTeamPos(i)
         if posData and posData > 0 then
             local curStamina = XMVCA.XFubenBossSingle:GetMaxStamina() - XMVCA.XFubenBossSingle:GetCharacterChallengeCount(posData)
             if curStamina <= 0 then
+                -- 虽然疲劳为0，但是有历史记录，所以可以操作
+                if XMVCA.XFubenBossSingle:IsInRecordTeam(stageId, posData) then
+                    return true
+                end
+                
                 local charName = XMVCA.XCharacter:GetCharacterName(posData)
                 local text = CSXTextManagerGetText("BossSingleNoStamina", charName)
                 XUiManager.TipError(text)

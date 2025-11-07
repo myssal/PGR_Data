@@ -24,7 +24,7 @@ local function GetResonanceSkillInfoByType(equipResonanceType, templateId)
     elseif equipResonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.CHARACTER_SKILL then
         return XMVCA.XCharacter:GetCharacterSkillPoolSkillInfo(templateId)
     elseif equipResonanceType == XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL then
-        return XMVCA.XEquip:GetConfigWeaponSkill(templateId)
+        return XMVCA.XEquip:GetConfigWeaponSkill(templateId, true)
     end
 end
 

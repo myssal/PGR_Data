@@ -287,7 +287,8 @@ end
 
 function XUiBlackRockChessBattle:OnRelease()
     self._Control:ExitFight()
-    CS.XAudioManager.StopMusicWithAnalyzer()
+    -- CS.XAudioManager.StopMusicWithAnalyzer()
+    XLuaAudioManager.StopCurrentBGM()
     self.Super.OnRelease(self)
 end
 

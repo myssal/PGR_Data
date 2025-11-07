@@ -631,6 +631,61 @@ function XUiGridChapter:SetStageList()
             self:SetLineActive(i, false)
         end
     end
+    
+    -- 特殊关卡（不计入进度）
+    local parentEx = self.PanelStageContent.transform:Find("StageEx")
+    local parentLineEx = self.PanelStageContent.transform:Find("LineEx")
+    
+    if parentEx then
+        if XTool.IsNumberValidEx(self.Chapter.ExStageId) then
+            local stageCfg = XDataCenter.FubenManager.GetStageCfg(self.Chapter.ExStageId)
+            local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.Chapter.ExStageId)
+
+            if stageInfo.IsOpen then
+                if not self.ExStageGrid then
+                    -- 优先找已经有的，这里实际只能针对序章动态漫样式，目前没其他需求先这样写
+                    local prefab = parentEx.transform:Find("GridExStage")
+                    
+                    if prefab then
+                        local XUiGridStageExNewbie = require('XUi/XUiFubenMainLineChapter/XUiGridStageExNewbie')
+                        self.ExStageGrid = XUiGridStageExNewbie.New(prefab, self, self.RootUi, stageCfg)
+                        prefab.gameObject:SetActiveEx(true)
+                    else
+                        local uiName = "GridStage"
+
+                        uiName = stageCfg.StageGridStyle and uiName .. stageCfg.StageGridStyle or uiName
+
+                        local prefabName = CS.XGame.ClientConfig:GetString(uiName)
+                        prefab = parentEx:LoadPrefab(prefabName)
+
+                        local XUiGridStageEx = require('XUi/XUiFubenMainLineChapter/XUiGridStageEx')
+
+                        self.ExStageGrid = XUiGridStageEx.New(self.RootUi, prefab, nil, XFubenConfigs.FUBENTYPE_NORMAL, false, self.IsOnZhouMu, uiName)
+                        self.ExStageGrid.Parent = parentEx
+
+                        self.ExStageGrid:UpdateStageMapGrid(stageCfg, self.Chapter.OrderId)
+                    end
+
+                    parentEx.gameObject:SetActiveEx(true)
+
+                    if parentLineEx then
+                        parentLineEx.gameObject:SetActiveEx(true)
+                    end
+                end
+
+
+                if self.ExStageGrid.Refresh then
+                    self.ExStageGrid:Refresh()
+                end
+            else
+                parentEx.gameObject:SetActiveEx(false)
+
+                if parentLineEx then
+                    parentLineEx.gameObject:SetActiveEx(false)
+                end
+            end
+        end
+    end
 
     -- 移动至ListView正确的位置
     if self.BoundSizeFitter then

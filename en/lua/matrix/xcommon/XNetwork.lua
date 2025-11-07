@@ -139,9 +139,14 @@ function XNetwork.ConnectGateServer(args)
                         -- 处于调试模式时进错服显示取消按钮，否则不显示
                         local cancelCb = XMain.IsDebug and function() end or nil
                         if XDataCenter.UiPcManager.IsPc() then
-                            CS.XTool.WaitCoroutine(CS.XApplication.CoDialog(CS.XApplication.GetText("Tip"),
-                                CS.XStringEx.Format(CS.XApplication.GetText("PCUpdateApplication"), CS.XInfo.Version), cancelCb, 
-                                CS.XApplication.Exit))
+                            if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+                                --XLog.Error("[XLoginManager] 云游戏需要返回登录大厅，而不是登录界面")
+                                XDataCenter.CloudGameManager.Exit(CS.XApplication.GetText("CloudGameUpdateApplication"))
+                            else
+                                CS.XTool.WaitCoroutine(CS.XApplication.CoDialog(CS.XApplication.GetText("Tip"),
+                                    CS.XStringEx.Format(CS.XApplication.GetText("PCUpdateApplication"), CS.XInfo.Version), cancelCb, 
+                                    CS.XApplication.Exit))
+                            end
                         else
                             CS.XTool.WaitCoroutine(CS.XApplication.CoDialog(CS.XApplication.GetText("Tip"),
                                 CS.XStringEx.Format(CS.XApplication.GetText("UpdateApplication"), CS.XInfo.Version), cancelCb, 

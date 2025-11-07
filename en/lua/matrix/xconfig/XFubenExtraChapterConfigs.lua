@@ -42,6 +42,11 @@ function XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
     return ExtraChapterDetailsCfgs
 end
 
+function XFubenExtraChapterConfigs.GetExtraChapterDetailsIsBtnMissionWhite(id)
+    local config = ExtraChapterDetailsCfgs[id]
+    return config.IsBtnMissionWhite == 1
+end
+
 function XFubenExtraChapterConfigs.GetExtraChapterStarTreasuresCfgs()
     return ExtraChapterStarTreasureCfgs
 end
@@ -107,4 +112,22 @@ function XFubenExtraChapterConfigs.GetMainIdByChapterId(chapterId)
             end
         end
     end
-end 
+end
+
+-- 根据关卡获取ShortStoryChapter.tab的Id
+function XFubenExtraChapterConfigs.GetStageMainId(stageId)
+    local chapterMainConfigs = XFubenExtraChapterConfigs.GetExtraChapterCfgs()
+    local chapterDetailsConfigs = XFubenExtraChapterConfigs.GetExtraChapterDetailsCfgs()
+    for _, chapterMainConfig in pairs(chapterMainConfigs) do
+        for _, chapterId in pairs(chapterMainConfig.ChapterId) do
+            if XTool.IsNumberValidEx(chapterId) then
+                local chapter = chapterDetailsConfigs[chapterId]
+                for _, sId in pairs(chapter.StageId) do
+                    if sId == stageId then
+                        return chapterMainConfig.Id, chapterId
+                    end
+                end
+            end
+        end
+    end
+end

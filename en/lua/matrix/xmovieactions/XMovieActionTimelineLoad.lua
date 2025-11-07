@@ -1,6 +1,6 @@
 local XMovieActionTimelineLoad = XClass(XMovieActionBase,"XMovieActionTimelineLoad")
 
-function XMovieActionTimelineLoad:Ctor(actionData)
+function XMovieActionTimelineLoad:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.TimelinePath = params[1]
@@ -11,7 +11,7 @@ function XMovieActionTimelineLoad:Ctor(actionData)
     self.Rotation = CS.UnityEngine.Vector3(paramToNumber(rotation[1]),paramToNumber(rotation[2]),paramToNumber(rotation[3]))
 end
 
-function XMovieActionTimelineLoad:OnInit()
+function XMovieActionTimelineLoad:OnEnter()
     self.UiRoot:AddTimeline(self.TimelinePath,self.TimelineName,self.Position,self.Rotation)
 end
 

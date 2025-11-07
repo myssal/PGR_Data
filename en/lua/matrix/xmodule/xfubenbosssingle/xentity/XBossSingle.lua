@@ -62,6 +62,18 @@ function XBossSingle:GetBossSingleTotalScore()
     end
 end
 
+function XBossSingle:GetBossSingleTotalScoreBestRecord()
+    if self:IsBossSingleEmpty() then
+        return 0
+    else
+        if self._BossSingleData:IsResetOpen() then
+            return self._BossSingleData:GetTotalScoreBestRecord()
+        else
+            return self._BossSingleData:GetTotalScore()
+        end
+    end
+end
+
 function XBossSingle:GetBossSingleMaxScore()
     if self:IsBossSingleEmpty() then
         return 0
@@ -413,6 +425,26 @@ end
 
 function XBossSingle:UnlockChallenge()
     self._IsFirstUnlockChallenge = false
+end
+
+function XBossSingle:IsResetOpen()
+    return self._BossSingleData:IsResetOpen()
+end
+
+function XBossSingle:GetMaxTotalScore()
+    return self._BossSingleData:GetMaxTotalScore()
+end
+
+function XBossSingle:GetHistoryBestRecord()
+    return self._BossSingleData:GetHistoryBestRecord()
+end
+
+function XBossSingle:GetRecordCurrent()
+    return self._BossSingleData:GetRecordCurrent()
+end
+
+function XBossSingle:GetTotalScoreBestRecord()
+    return self._BossSingleData:GetTotalScoreBestRecord()
 end
 
 return XBossSingle

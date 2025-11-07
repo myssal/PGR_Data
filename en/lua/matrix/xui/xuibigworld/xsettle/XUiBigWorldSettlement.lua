@@ -77,17 +77,11 @@ function XUiBigWorldSettlement:InitUi()
 end
 
 function XUiBigWorldSettlement:InitCb()
-    self.BtnClose.CallBack = function() 
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
     
-    self.BtnCancel.CallBack = function() 
-        self:OnBtnCancelClick()
-    end
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
 
-    self.BtnReStart.CallBack = function() 
-        self:OnBtnReStartClick()
-    end
+    self.BtnReStart:AddEventListener(handler(self, self.OnBtnReStartClick))
 end
 
 function XUiBigWorldSettlement:InitView()

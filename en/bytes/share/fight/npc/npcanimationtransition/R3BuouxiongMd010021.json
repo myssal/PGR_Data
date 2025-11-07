@@ -308,7 +308,31 @@
     {
         "Role": "R3BuouxiongMd010021",
         "Layer": 0,
+        "Target": "Jumpfalling1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
         "Target": "Jumpfall2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Jumpfalling2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Jumpdown2",
         "TransitionDuration": 0.1
     },
     {
@@ -422,6 +446,12 @@
     {
         "Role": "R3BuouxiongMd010021",
         "Layer": 0,
+        "Target": "Attack15",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
         "Target": "Attack21",
         "TransitionDuration": 0.1
     },
@@ -470,7 +500,25 @@
     {
         "Role": "R3BuouxiongMd010021",
         "Layer": 0,
+        "Target": "Attack50",
+        "TransitionDuration": 0.0
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
         "Target": "Attack51",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Attack52",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Attack53",
         "TransitionDuration": 0.1
     },
     {
@@ -506,7 +554,19 @@
     {
         "Role": "R3BuouxiongMd010021",
         "Layer": 0,
+        "Target": "Attack68",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
         "Target": "Attack71",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "Target": "Attack72",
         "TransitionDuration": 0.1
     },
     {
@@ -1014,6 +1074,118 @@
         "Role": "R3BuouxiongMd010021",
         "Layer": 0,
         "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfall1",
+        "Target": "Jumpfalling1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfall1",
+        "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfalling1",
+        "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown1",
+        "Target": "Run",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown1",
+        "Target": "RunStart",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown1",
+        "Target": "Walk",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown1",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfall2",
+        "Target": "Jumpfalling2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfall2",
+        "Target": "Jumpdown2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfall2",
+        "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfalling2",
+        "Target": "Jumpdown2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpfalling2",
+        "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown2",
+        "Target": "Run",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown2",
+        "Target": "RunStart",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown2",
+        "Target": "Walk",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R3BuouxiongMd010021",
+        "Layer": 0,
+        "State": "Jumpdown2",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     },

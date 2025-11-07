@@ -7,7 +7,7 @@ function XUiTheatre5Loading:OnStart(enemyData)
     self._DelayTimeId = nil
     XMVCA.XTheatre5:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FIGHT_ENTER_FINISHED, self.OnFinishFightEnter, self)
     self:RefreshEnemyInfo(enemyData)
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         self:PVELoading()
     else
         self:PVPLoading()

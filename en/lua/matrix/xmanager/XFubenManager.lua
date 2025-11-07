@@ -4,7 +4,7 @@ XFubenManagerCreator = function()
     local XMVCA = XMVCA
     
     XFubenManager.StageType = XEnumConst.FuBen.StageType
-    XFubenManager.ChapterType = XFubenConfigs.ChapterType
+    XFubenManager.ChapterType = XEnumConst.FuBen.ChapterType
     XFubenManager.ModeType = XMVCA.XFuben.ModeType
     XFubenManager.ChapterFunctionName = XMVCA.XFuben.ChapterFunctionName
 
@@ -330,10 +330,6 @@ XFubenManagerCreator = function()
 
     function XFubenManager.SetFightBeginData(value)
         return XMVCA.XFuben:SetFightBeginData(value)
-    end
-
-    function XFubenManager.RecordFightBeginData(stageId, charList, isHasAssist, assistPlayerData, challengeCount, roleData, fightData)
-        return XMVCA.XFuben:RecordFightBeginData(stageId, charList, isHasAssist, assistPlayerData, challengeCount, roleData, fightData)
     end
 
     function XFubenManager.GetFightBeginClientPreData()

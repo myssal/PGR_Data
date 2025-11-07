@@ -84,14 +84,22 @@ function XMessagePlayer:_PlayNext(content, isRecord)
     self:_RemoveTimer()
 
     local duration = content:GetDuration()
+    local isComplete = content:IsComplete()
 
-    if XTool.IsNumberValid(duration) and not content:IsComplete() then
+    if XTool.IsNumberValid(duration) and not isComplete then
+        CS.XLog.Debug("[BigWorldMessage]: Play NonComplete Message Content, Duration: " .. tostring(duration) .. "\n" .. debug.traceback())
+
         self:_OnProxyPlayBeginLoading(content)
         self._Timer = XScheduleManager.ScheduleOnce(function()
             self._Timer = false
             self:_OnPlaying(content, isRecord)
         end, duration * XScheduleManager.SECOND)
     else
+        if isComplete then
+            CS.XLog.Debug("[BigWorldMessage]: Play Complete Message Content.\n" .. debug.traceback())
+        else
+            CS.XLog.Debug("[BigWorldMessage]: Play NonComplete Message Content, Duration: 0\n" .. debug.traceback())
+        end
         self:_OnPlaying(content, isRecord)
     end
 end
@@ -102,6 +110,7 @@ function XMessagePlayer:_OnPlaying(content, isRecord)
     self:_OnProxyPlay(content)
 
     if content:IsEnd() then
+        CS.XLog.Debug("[BigWorldMessage]: Play Message Content Finish.\n" .. debug.traceback())
         self:_RequestCurrentMessageReadRecord(content)
         self:Stop()
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_FINISH_NOTIFY)

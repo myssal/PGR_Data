@@ -20,15 +20,15 @@ function XTheatre5Control:OnInit()
 
     self._EnterFightHandler = handler(self, self.OnFightEnterEvent)
     self._ExitFightHandler = handler(self, self.OnFightExitEvent)
-
     CsGameEventManager:RegisterEvent(XEventId.EVENT_DLC_FIGHT_ENTER, self._EnterFightHandler)
     CsGameEventManager:RegisterEvent(XEventId.EVENT_DLC_FIGHT_EXIT, self._ExitFightHandler)
-    -- 开发过程中，关闭界面后立即热更代码，会出错，故zlb开发过程中，不做延迟
-    if not XMain.IsZlbDebug then
-        self:SetDelayReleaseTime(10) --战斗、剧情之后，栈中的界面被Release, 后续当PopThenOpen关闭瞬间会释放control，故做延迟
-    end
+    self:SetDelayReleaseTime(10) --战斗、剧情之后，栈中的界面被Release, 后续当PopThenOpen关闭瞬间会释放control，故做延迟
 
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_SET_BATTLE_PAUSEORCONTINUE, self.OnFightPauseOrResumeEvent, self)
+end
+
+function XTheatre5Control:UseUiStackOperationRef()
+    return true
 end
 
 function XTheatre5Control:AddAgencyEvent()
@@ -70,13 +70,14 @@ function XTheatre5Control:RefreshCharacterStatusAdds()
     if not XTool.IsTableEmpty(runeDict) then
         attrAddsMap = {}
 
+        -- 符文属性
         for i, v in pairs(runeDict) do
             ---@type XTableTheatre5ItemRune
             local runeCfg = self._Model:GetTheatre5RuneCfgById(v.ItemId)
 
             if runeCfg and XTool.IsNumberValid(runeCfg.RuneAttrId) then
                 ---@type XTableTheatre5ItemRuneAttr
-                local runeAttrCfg = self._Model:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)
+                local runeAttrCfg = self:GetRuneAttr(v)
 
                 if runeAttrCfg then
                     for i, v in ipairs(runeAttrCfg.AttrTypes) do
@@ -87,6 +88,11 @@ function XTheatre5Control:RefreshCharacterStatusAdds()
                 end
             end
         end
+
+        -- 角色属性
+        local characterId = self._Model.CurAdventureData:GetCharacterId()
+        local characterLevel = self._Model.CurAdventureData:GetCharacterLevel()
+        self._Model:GetCharacterLevelAttr(characterId, characterLevel, attrAddsMap)
     end
 
     self._Model.CurAdventureData:UpdateCharacterStatusAdds(attrAddsMap)
@@ -100,6 +106,10 @@ end
 
 function XTheatre5Control:GetGoldNum()
     return self._Model.CurAdventureData:GetGoldNum()
+end
+
+function XTheatre5Control:GetRandomRelics()
+    return self._Model.CurAdventureData:GetRandomRelics()
 end
 
 function XTheatre5Control:GetTrophyNum()
@@ -126,7 +136,7 @@ end
 
 --清空战斗数据
 function XTheatre5Control:ClearAdventureData()
-    self._Model.CurAdventureData:ClearData()
+    self._Model.CurAdventureData:ClearAdventureData()
 end
 
 --- 获取玩家的技能列表（不包含普攻）
@@ -273,12 +283,11 @@ function XTheatre5Control:ReturnTheatre5Main()
     self.FlowControl:ExitModel()
 end
 
---region Configs
+--region Configs 
 
 --region 角色相关
 
 function XTheatre5Control:GetTheatre5CharacterCfgs()
-    ---@type XTableTheatre5Character[]
     local allCfgs = self._Model:GetTheatre5CharacterCfgs()
     if XTool.IsTableEmpty(allCfgs) then
         return
@@ -286,16 +295,7 @@ function XTheatre5Control:GetTheatre5CharacterCfgs()
     local characterCfgs = {}
     for _, cfg in pairs(allCfgs) do
         if XTool.IsNumberValid(cfg.Priority) then
-            if XOverseaManager.IsENRegion() then
-                --todo:3.8En特殊处理，屏蔽PVP莉莉丝
-                local lilithId = 4
-
-                if not (self:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP) or cfg.Id ~= lilithId then
-                    table.insert(characterCfgs, cfg)
-                end
-            else
-                table.insert(characterCfgs, cfg)
-            end
+            table.insert(characterCfgs, cfg)
         end
     end
     table.sort(characterCfgs, function(a, b)
@@ -358,6 +358,20 @@ end
 
 function XTheatre5Control:GetTheatre5ItemRuneAttrCfgById(id, notips)
     return self._Model:GetTheatre5ItemRuneAttrCfgById(id, notips)
+end
+
+---@param itemData XTheatre5Item
+function XTheatre5Control:GetRuneAttr(itemData, isStrengthen)
+    if isStrengthen == nil then
+        isStrengthen = itemData.IsStrengthen
+    end
+    local runeCfg = self:GetTheatre5ItemRuneCfgById(itemData.ItemId)
+    if isStrengthen and runeCfg.EvolveAttrId and runeCfg.EvolveAttrId > 0 then
+        local config = self:GetTheatre5ItemRuneAttrCfgById(runeCfg.EvolveAttrId)
+        return config
+    end
+    local config = self:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)
+    return config
 end
 
 function XTheatre5Control:CheckHasEquipOrSkill(itemType, itemId)
@@ -596,27 +610,31 @@ function XTheatre5Control:GetDataHandBook(itemType)
             if config.IsShow then
                 if config.Type == itemType then
                     -- 技能按角色区分
-                    local characterId = config.CharacterId
-                    if characterId and characterId > 0 then
-                        ---@class XUiTheatre5SkillHandbookTabGridData
-                        ---@field TagName string
-                        ---@field Items XUiTheatre5SkillHandbookItemGridData[]
-                        tab[characterId] = tab[characterId] or {
-                            Items = {},
-                            TagName = nil,
-                            Order = characterId
-                        }
-                        ---@class XUiTheatre5SkillHandbookItemGridData
-                        local data = {
-                            Id = id,
-                            Order = config.Order,
-                            Name = config.Name,
-                            Quality = 0,
-                            Icon = config.IconRes,
-                            Desc = self:GetItemDesc(config),
-                            Tags = config.Tags,
-                        }
-                        table.insert(tab[characterId].Items, data)
+                    if config.CharacterId then
+                        for i = 1, #config.CharacterId do
+                            local characterId = config.CharacterId[i]
+                            ---@class XUiTheatre5SkillHandbookTabGridData
+                            ---@field TagName string
+                            ---@field Items XUiTheatre5SkillHandbookItemGridData[]
+                            ---@field HideTagName boolean
+                            tab[characterId] = tab[characterId] or {
+                                Items = {},
+                                TagName = nil,
+                                Order = characterId
+                            }
+                            ---@class XUiTheatre5SkillHandbookItemGridData
+                            local data = {
+                                Id = id,
+                                ItemId = id,
+                                Order = config.Order,
+                                Name = config.Name,
+                                Quality = 0,
+                                Icon = config.IconRes,
+                                Desc = self:GetItemDesc(config),
+                                Tags = config.Tags,
+                            }
+                            table.insert(tab[characterId].Items, data)
+                        end
                     end
                 end
             end
@@ -669,6 +687,7 @@ function XTheatre5Control:GetDataHandBook(itemType)
                     ---@type XUiTheatre5SkillHandbookItemGridData
                     local data = {
                         Id = id,
+                        ItemId = id,
                         Order = config.Order,
                         Name = config.Name,
                         Quality = 0,
@@ -706,6 +725,38 @@ function XTheatre5Control:GetDataHandBook(itemType)
             end)
         end
         return tabSorted
+    end
+    if itemType == XMVCA.XTheatre5.EnumConst.ItemType.Relic then
+        ---@type XUiTheatre5SkillHandbookTabGridData
+        local tabOnlyOne = {
+            TagName = "",
+            Id = 0,
+            Items = {},
+            Order = 0,
+            HideTagName = true,
+        }
+        local itemConfigs = self._Model:GetTheatre5ItemCfgs()
+        for id, config in pairs(itemConfigs) do
+            -- 配置了IsShow的才显示
+            if config.IsShow then
+                if config.Type == itemType then
+                    -- 符文/宝珠 按tag区分
+                    ---@type XUiTheatre5SkillHandbookItemGridData
+                    local data = {
+                        Id = id,
+                        ItemId = id,
+                        Order = config.Order,
+                        Name = config.Name,
+                        Quality = 0,
+                        Icon = config.IconRes,
+                        Desc = self:GetItemDesc(config),
+                        Tags = config.Tags,
+                    }
+                    table.insert(tabOnlyOne.Items, data)
+                end
+            end
+        end
+        return { tabOnlyOne }
     end
     XLog.Error("[XTheatre5Control] unimplemented item type")
     return {}
@@ -785,15 +836,259 @@ function XTheatre5Control:FormatString(format, args)
     return result
 end
 
-function XTheatre5Control:GetItemDesc(itemConfig)
+function XTheatre5Control:GetItemDesc(itemConfig, isStrengthen)
     if not string.IsNilOrEmpty(itemConfig.Desc) then
         local desc = XUiHelper.ReplaceTextNewLine(itemConfig.Desc) or ''
-        if #itemConfig.DescDigit > 0 then
-            desc = self:FormatString(desc, itemConfig.DescDigit)
+        if isStrengthen and not string.IsNilOrEmpty(itemConfig.EvolveDescDigit) then
+            if #itemConfig.EvolveDescDigit > 0 then
+                desc = self:FormatString(desc, itemConfig.EvolveDescDigit)
+            end
+        else
+            if #itemConfig.DescDigit > 0 then
+                desc = self:FormatString(desc, itemConfig.DescDigit)
+            end
         end
         return desc
     end
     return ""
+end
+
+function XTheatre5Control:GetItemAddDesc(itemConfig, isStrengthen)
+    if isStrengthen then
+        if not string.IsNilOrEmpty(itemConfig.AddDesc) then
+            if #itemConfig.AddDigit > 0 then
+                return self:FormatString(itemConfig.AddDesc, itemConfig.AddDigit)
+            end
+            return itemConfig.AddDesc
+        end
+    end
+end
+
+function XTheatre5Control:GetUiDataLevel()
+    local level = self._Model.CurAdventureData:GetCharacterLevel()
+    local exp = self._Model.CurAdventureData:GetCharacterExp()
+    local maxLevel = self._Model:GetMaxLevel()
+    local maxExp
+    local levelConfig = self._Model:GetCharacterLevelConfig(self._Model.CurAdventureData)
+    if levelConfig then
+        maxExp = levelConfig.Exp
+    end
+    local money = self.CharacterControl:GetPriceToNextLevel()
+    return {
+        Level = level,
+        Exp = exp,
+        MaxExp = maxExp,
+        Money = money,
+        IsMax = level == maxLevel,
+        IsCanUpgrade = self._Model.CurAdventureData.Status == XMVCA.XTheatre5.EnumConst.PlayStatus.Shopping
+    }
+end
+
+function XTheatre5Control:GetCharacterLevel()
+    local level = self.CharacterControl:GetCharacterLevel()
+    return level
+end
+
+function XTheatre5Control:GetCharacterIcon(characterId)
+    characterId = characterId or self._Model.CurAdventureData:GetCharacterId()
+    return self.CharacterControl:GetPortraitByCharacterIdCurMode(characterId)
+end
+
+-- 是否有符文可强化
+function XTheatre5Control:HasRuneCanStrengthen(hammerItemData)
+    if not hammerItemData then
+        return false
+    end
+    local itemsToStrengthen = self:GetItemsCanStrengthen(hammerItemData)
+    return #itemsToStrengthen > 0, itemsToStrengthen
+end
+
+function XTheatre5Control:GetItemsCanStrengthen(hammerItemData)
+    local bagData = self._Model.CurAdventureData.BagData
+    if not bagData then
+        return
+    end
+    local itemsToStrengthen = {}
+    self:_GetItemsCanStrengthen(hammerItemData, itemsToStrengthen, bagData.BagItemDict)
+    self:_GetItemsCanStrengthen(hammerItemData, itemsToStrengthen, bagData.RuneDict)
+    return itemsToStrengthen
+end
+
+---@param bag XTheatre5Item[]
+function XTheatre5Control:_GetItemsCanStrengthen(hammerItemData, itemsToStrengthen, bag)
+    if not bag then
+        return
+    end
+    local hammerItemId = hammerItemData.ItemId
+    local hammerItemConfig = self._Model:GetTheatre5ItemCfgById(hammerItemId)
+    local hammerItemTags = hammerItemConfig.Tags
+
+    for position, itemData in pairs(bag) do
+        local itemId = itemData.ItemId
+        if not itemData.IsStrengthen then
+            local itemConfig = self._Model:GetTheatre5ItemCfgById(itemId)
+            if itemConfig then
+                if itemConfig.Type == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+                    if hammerItemConfig.Quality == itemConfig.Quality then
+                        local tags = itemConfig.Tags
+                        if #hammerItemTags == 0 or self:_CheckTagsOverlap(tags, hammerItemTags) then
+                            itemsToStrengthen[#itemsToStrengthen + 1] = itemData
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+-- 检查两个标签数组，是否有重叠
+function XTheatre5Control:_CheckTagsOverlap(tags1, tags2)
+    for i = 1, #tags1 do
+        local tag1 = tags1[i]
+        for j = 1, #tags2 do
+            local tag2 = tags2[j]
+            if tag1 == tag2 then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+function XTheatre5Control:GetRemainRelicRefreshCount()
+    local relicRefreshCount = self._Model:GetTheatre5ConfigValByKey("RelicRefresh")
+    if not relicRefreshCount or relicRefreshCount <= 0 then
+        XLog.Error("[XTheatre5Control] 未配置饰品刷新次数")
+        return 0
+    end
+    local useRelicRefreshCount = self._Model.CurAdventureData:GetUseRelicRefreshCount()
+    if not useRelicRefreshCount then
+        XLog.Error("[XTheatre5Control] 未获取当前冒险数据使用饰品刷新次数")
+        return relicRefreshCount
+    end
+    return math.max(relicRefreshCount - useRelicRefreshCount, 0)
+end
+
+function XTheatre5Control:GetUiDataRelicsByData(relics)
+    local uiData = {}
+    for i = 1, #relics do
+        local itemId = relics[i]
+        local itemConfig = self._Model:GetTheatre5ItemCfgById(itemId)
+        ---@type XUiGridTheatre5RelicData
+        local data = {
+            IsUnlock = true,
+            Item = itemId,
+            Icon = itemConfig and itemConfig.IconRes,
+            --Level = i,
+        }
+        uiData[#uiData + 1] = data
+    end
+    return uiData
+end
+
+function XTheatre5Control:GetUiDataRelics()
+    local uiData = {}
+    local levelGroups = self._Model:GetCharacterLevelGroupConfig(self._Model.CurAdventureData)
+    local level = self._Model.CurAdventureData:GetCharacterLevel()
+    local relicOrder = self._Model.CurAdventureData:GetRelicOrders()
+    if not relicOrder then
+        relicOrder = {}
+        XLog.Error("[XTheatre5Control] 未获取当前冒险数据饰品顺序")
+    end
+    local relicIndex = 0
+    -- 等级配置是从0开始的
+    for i = 0, #levelGroups do
+        local levelConfig = levelGroups[i]
+        if levelConfig.RelicGroup and #levelConfig.RelicGroup > 0 then
+            relicIndex = relicIndex + 1
+            local relicInstanceId = relicOrder[relicIndex]
+            ---@type XTheatre5Item
+            local item
+            ---@type XTableTheatre5Item
+            local itemConfig
+            if relicInstanceId then
+                item = self._Model.CurAdventureData:GetRelicById(relicInstanceId)
+                if item then
+                    itemConfig = self._Model:GetTheatre5ItemCfgById(item.ItemId)
+                end
+            end
+            ---@class XUiGridTheatre5RelicData
+            local data = {
+                IsUnlock = level >= levelConfig.Level and relicInstanceId,
+                Item = item,
+                Icon = itemConfig and itemConfig.IconRes,
+                Level = levelConfig.Level + 1,
+            }
+            uiData[#uiData + 1] = data
+        end
+    end
+    return uiData
+end
+
+function XTheatre5Control:GetUiDataRelicsUnlocked()
+    local datas = self:GetUiDataRelics()
+    local result = {}
+    for i = 1, #datas do
+        local data = datas[i]
+        if data.IsUnlock then
+            result[#result + 1] = data
+        end
+    end
+    return result
+end
+
+function XTheatre5Control:GetLevelAttr(attrTable)
+    local level = self._Model.CurAdventureData:GetCharacterLevel()
+    if level then
+        local characterId = self._Model.CurAdventureData:GetCharacterId()
+        self._Model:GetCharacterLevelAttr(characterId, level, attrTable)
+    end
+end
+
+function XTheatre5Control:GetItemDataFromEquipBag(itemId)
+    if self._Model.CurAdventureData then
+        local bagData = self._Model.CurAdventureData.BagData
+        if bagData then
+            local runeDict = bagData.RuneDict
+            if runeDict then
+                for pos, itemData in pairs(runeDict) do
+                    if itemData.ItemId == itemId then
+                        return itemData
+                    end
+                end
+            end
+        end
+    end
+    --XLog.Warning("[XTheatre5Control] 从符文栏找不到对应的物品:" .. tostring(itemId))
+end
+
+function XTheatre5Control:CheckNewSeason()
+    if self._Model:IsNewSeason() then
+        XLuaUiManager.Open("UiTheatre5PopupNewSeason")
+    end
+end
+
+function XTheatre5Control:GetActivityTime()
+    local activityId = self._Model:GetActivityId()
+    if XTool.IsNumberValid(activityId) then
+        local activityCfg = self._Model:GetTheatre5ActivityCfgById(activityId)
+        local timeId = activityCfg.TimeId
+        local startTimeStamp = XFunctionManager.GetStartTimeByTimeId(timeId)
+        local endTimeStamp = XFunctionManager.GetEndTimeByTimeId(timeId)
+        -- 获得类似"08.25-11.25"的时间格式
+        if startTimeStamp and endTimeStamp then
+            local startTimeTab = os.date("*t", startTimeStamp)
+            local endTimeTab = os.date("*t", endTimeStamp)
+            return string.format("%.2d.%.2d-%.2d.%.2d",
+                    startTimeTab.month, startTimeTab.day,
+                    endTimeTab.month, endTimeTab.day)
+        end
+    end
+    return ""
+end
+
+function XTheatre5Control:HasEnoughExpToAutoUpgrade()
+    return self._Model:HasEnoughExpToAutoUpgrade()
 end
 
 return XTheatre5Control

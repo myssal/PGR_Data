@@ -504,5 +504,16 @@ function XDynamicTableNormal:ScrollIndexOnEnd(index, duration, beginCb, endCb)
     end)
 end
 
+function XDynamicTableNormal:ReloadVisibleGrids()
+    if self.Imp then
+        local grids = self:GetGrids()
+        if grids then
+            for i, grid in pairs(grids) do
+                grid:Update(self:GetData(i))
+            end
+        end
+    end
+end
+
 --todo 其他布局接口这里暂时不一一实现，因为布局属性在编辑阶段已经设置过
 return XDynamicTableNormal

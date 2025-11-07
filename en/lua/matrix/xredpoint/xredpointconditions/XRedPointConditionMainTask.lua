@@ -5,30 +5,35 @@ local SubConditions = nil
 function XRedPointConditionMainTask.GetSubConditions()
     SubConditions = SubConditions or
     {
-        XRedPointConditions.Types.CONDITION_TASK_COURSE,
         XRedPointConditions.Types.CONDITION_TASK_TYPE,
+        XRedPointConditions.Types.CONDITION_MAIN_NEWPLAYER_TASK,
+        XRedPointConditions.Types.CONDITION_MAIN_NEWBIE_TASK,
     }
     return SubConditions
 end
 
 function XRedPointConditionMainTask.Check()
-
-    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_COURSE) and (not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.TaskStory)) then
+    -- 新手入门任务
+    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAIN_NEWBIE_TASK) then
         return true
     end
-
-    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_TYPE, XDataCenter.TaskManager.TaskType.Story) then
+    
+    -- 新手目标任务
+    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAIN_NEWPLAYER_TASK) then
         return true
     end
-
+    
+    -- 每日类型任务蓝点
     if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_TYPE, XDataCenter.TaskManager.TaskType.Daily) then
         return true
     end
 
+    -- 每周类型任务蓝点
     if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_TYPE, XDataCenter.TaskManager.TaskType.Weekly) then
         return true
     end
 
+    -- 活动类型任务蓝点
     if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_TASK_TYPE, XDataCenter.TaskManager.TaskType.Activity) then
         return true
     end

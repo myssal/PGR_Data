@@ -30,7 +30,7 @@ end
 
 function XUiGame2048Chapter:OnEnable()
     self:RefreshStages()
-    self.TxtStarNum.text = XUiHelper.FormatText(self._Control:GetClientConfigText('ChapterProgressShowLabel'), self._Control:GetChapterCurStarSummary(self._ChapterId), self._Control:GetChapterStarTotalById(self._ChapterId))
+    self.TxtStarNum.text = XUiHelper.FormatText(self._Control:GetClientConfigText('ChapterProgressShowTitle'), self._Control:GetChapterCurStarSummary(self._ChapterId), self._Control:GetChapterStarTotalById(self._ChapterId))
 
     self._Control:AddEventListener(XMVCA.XGame2048.EventIds.EVENT_GAME2048_UNSELECT_STAGE, self.OnCloseEvent, self)
 end

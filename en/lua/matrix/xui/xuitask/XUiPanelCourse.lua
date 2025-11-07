@@ -52,7 +52,7 @@ function XUiPanelCourse:RefreshCourseList(chapterId)
         if not grid then
             local ui = CS.UnityEngine.Object.Instantiate(self.GridCourse)
             grid = XUiGridCourse.New(self.RootUi, ui, self.StroyUi, function(cId)
-                self:RefreshCourseList(cId)
+                --self:RefreshCourseList(cId)
             end, function()
                 -- self:SetSViewIndex()
             end)

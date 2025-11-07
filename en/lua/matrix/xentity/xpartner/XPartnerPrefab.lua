@@ -8,6 +8,7 @@ local PASSIVE_SKILL_TYPE = XPartnerConfigs.SkillType.PassiveSkill
 --==============================
 ---@desc 辅助机预设类
 --==============================
+---@class XPartnerPrefab
 local XPartnerPrefab = XClass(nil, "XPartnerPrefab")
 
 function XPartnerPrefab:Ctor(teamId, data)
@@ -45,6 +46,15 @@ function XPartnerPrefab:GetPartnerIdByPos(pos)
     
     local data = self.TeamPartnerData[pos]
     return data and data.PartnerId or partnerId
+end
+
+function XPartnerPrefab:GetSkillDataByPos(pos)
+    if not pos or pos <= 0 then return end
+
+    if XTool.IsTableEmpty(self.TeamPartnerData) then return end
+    
+    local data = self.TeamPartnerData[pos]
+    return data and data.SkillData or {}
 end
 
 --==============================
@@ -93,6 +103,10 @@ function XPartnerPrefab:GetCharacterId(partnerId)
 
     local carriedDict = self:GetCarriedDict()
     local pos = carriedDict[partnerId]
+    if not pos then
+        return 0
+    end
+    
     return teamData.TeamData[pos]
 end
 
@@ -138,6 +152,15 @@ function XPartnerPrefab:Equip(pos, newPartnerId)
     end
     self.TeamPartnerData[pos].PartnerId = newPartnerId
     self:UpdateSkillData(pos, newPartnerId)
+end
+
+function XPartnerPrefab:EquipWithRealSkill(pos, newPartnerId)
+    if not XTool.IsNumberValid(newPartnerId) then return end
+    if not self.TeamPartnerData[pos] then
+        self.TeamPartnerData[pos] = {}
+    end
+    self.TeamPartnerData[pos].PartnerId = newPartnerId
+    self:UpdateSkillDataSyncRealPartnerData(pos, newPartnerId)
 end
 
 --==============================
@@ -202,6 +225,41 @@ function XPartnerPrefab:UpdateSkillData(pos, partnerId)
     
     local mainSkillGroups    = XDataCenter.PartnerManager.GetPresetSkillList(partnerId, MAIN_SKILL_TYPE)
     local passiveSkillGroups = XDataCenter.PartnerManager.GetPresetSkillList(partnerId, PASSIVE_SKILL_TYPE)
+    
+    --更新回调
+    local updateFunc = function(groups)
+        local skills = {}
+        for _, group in ipairs(groups) do
+            if XTool.IsTableEmpty(group) then
+                goto Continue
+            end
+            local skillId = group:GetDefaultActiveSkillId()
+            if XTool.IsNumberValid(skillId) then
+                table.insert(skills, skillId)
+            end
+            ::Continue::
+        end
+        return skills
+    end
+
+    local skill = {
+        [MAIN_SKILL_TYPE]    = updateFunc(mainSkillGroups),
+        [PASSIVE_SKILL_TYPE] = updateFunc(passiveSkillGroups)
+    }
+    XMessagePack.MarkAsTable(skill)
+    self.TeamPartnerData[pos].SkillData = skill
+    --刷新到缓存中
+    self:__RefreshSkillData(self.TeamPartnerData[pos])
+    return skill
+end
+
+function XPartnerPrefab:UpdateSkillDataSyncRealPartnerData(pos, partnerId)
+    if not XTool.IsNumberValid(partnerId) then return end
+
+    local realPartner = XDataCenter.PartnerManager.GetPartnerEntityById(partnerId)
+
+    local mainSkillGroups = realPartner:GetCarryMainSkillGroupList()
+    local passiveSkillGroups = realPartner:GetCarryPassiveSkillGroupList()
     
     --更新回调
     local updateFunc = function(groups)
@@ -320,6 +378,25 @@ function XPartnerPrefab:IsSkillChangeWithPrefab2Cache(partnerId)
 
     return false
     
+end
+
+--==============================
+---@desc 交换两个位置的辅助机数据
+---@param posA number
+---@param posB number
+--==============================
+function XPartnerPrefab:SwapPosData(posA, posB)
+    if not posA or not posB or posA == posB then
+        return
+    end
+
+    -- 确保两个位置的数据表存在，防止 nil 交换报错
+    self.TeamPartnerData[posA] = self.TeamPartnerData[posA] or {}
+    self.TeamPartnerData[posB] = self.TeamPartnerData[posB] or {}
+
+    -- 直接交换引用（PartnerId 和 SkillData 一起交换）
+    self.TeamPartnerData[posA], self.TeamPartnerData[posB] =
+        self.TeamPartnerData[posB], self.TeamPartnerData[posA]
 end
 
 --region 私有方法

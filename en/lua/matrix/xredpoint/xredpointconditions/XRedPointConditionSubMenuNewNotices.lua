@@ -10,6 +10,11 @@ function XRedPointConditionSubMenuNewNotices.GetSubEvents()
 end
 
 function XRedPointConditionSubMenuNewNotices.Check()
+    -- 整体屏蔽判断
+    if not XMVCA.XUiMain:CheckUiMainTerminalMobileListUnlock() then
+        return false
+    end
+    
     return XDataCenter.NoticeManager.CheckSubMenuRedPoint()
 end
 

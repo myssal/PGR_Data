@@ -168,9 +168,10 @@ end
 function XStageMemoryAgency:OpenMain()
     if self:ExCheckInTime() then
         XLuaUiManager.Open("UiStageMemory")
-    else
-        XUiManager.TipText("FestivalActivityNotInActivityTime")
+        return true
     end
+    XUiManager.TipText("FestivalActivityNotInActivityTime")
+    return false
 end
 
 return XStageMemoryAgency

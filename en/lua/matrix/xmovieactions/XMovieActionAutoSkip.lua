@@ -1,6 +1,6 @@
 local XMovieActionAutoSkip = XClass(XMovieActionBase, "XMovieActionAutoSkip")
 
-function XMovieActionAutoSkip:Ctor(actionData)
+function XMovieActionAutoSkip:OnInit(actionData)
     local params = actionData.Params
     self.ManSkipActionId = XMVCA.XMovie:ParamToNumber(params[1]) -- 男指挥官跳转ActionId
     self.WomanSkipActionId = XMVCA.XMovie:ParamToNumber(params[2]) -- 女指挥官跳转ActionId
@@ -9,7 +9,12 @@ function XMovieActionAutoSkip:Ctor(actionData)
 
 end
 
-function XMovieActionAutoSkip:OnInit()
+function XMovieActionAutoSkip:OnEnter()
+    self:GenSelectedActionId()
+end
+
+-- 生成跳转ActionId
+function XMovieActionAutoSkip:GenSelectedActionId()
     local OpenMovieThirdGender = XMVCA.XMovie:GetOpenMovieThirdGender()
     --OpenMovieThirdGender配置1第三性别功能开启，且玩家选择的性别为保密时
     local gender = XPlayer.GetShowGender()
@@ -25,7 +30,7 @@ function XMovieActionAutoSkip:OnInit()
         self.SelectedActionId = self.SkipActionId
         return
     end
-    
+
     if gender == XEnumConst.PLAYER.GENDER_TYPE.MAN then
         self.SelectedActionId = self.ManSkipActionId
     elseif gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
@@ -36,8 +41,10 @@ function XMovieActionAutoSkip:OnInit()
 end
 
 function XMovieActionAutoSkip:GetSelectedActionId()
+    if not self.SelectedActionId then
+        self:GenSelectedActionId()
+    end
     return self.SelectedActionId or 0
 end
-
 
 return XMovieActionAutoSkip

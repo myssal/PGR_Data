@@ -1,5 +1,20 @@
 [
     {
+        "Id": 100,
+        "Name": "Hassen Review",
+        "Priority": 1,
+        "SkipId": 21,
+        "BtnContent": "I got it",
+        "NpcName": "Hassen",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 100,
+        "ConditionIds": [
+            863058
+        ]
+    },
+    {
         "Id": 101,
         "Name": "Story Mission",
         "Priority": 1,
@@ -18,8 +33,8 @@
         "Id": 102,
         "Name": "Obtain Character Liv",
         "Priority": 2,
-        "SkipId": 21,
-        "BtnContent": "I got it",
+        "SkipId": 0,
+        "BtnContent": "Welcome to the team, Liv.",
         "NpcName": "Liv",
         "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/RoleHeadLifu1.png",
         "Type": 1,
@@ -91,8 +106,8 @@
     },
     {
         "Id": 2,
-        "Name": "Equipment and Training Weapon",
-        "Priority": 7,
+        "Name": "Construct Shard",
+        "Priority": 26,
         "SkipId": 21,
         "BtnContent": "I got it",
         "NpcName": "Liv",
@@ -101,7 +116,7 @@
         "UiType": 1,
         "ContentsGroupId": 114,
         "ConditionIds": [
-            84100109
+            84100111
         ]
     },
     {
@@ -176,7 +191,7 @@
         "UiType": 1,
         "ContentsGroupId": 5,
         "ConditionIds": [
-            70005
+            770424
         ]
     },
     {
@@ -241,7 +256,7 @@
     },
     {
         "Id": 8,
-        "Name": "Challenge - Trial Mission",
+        "Name": "Memory Rescue",
         "Priority": 17,
         "SkipId": 21,
         "BtnContent": "I got it",
@@ -251,7 +266,7 @@
         "UiType": 1,
         "ContentsGroupId": 8,
         "ConditionIds": [
-            70008
+            863061
         ]
     },
     {
@@ -431,7 +446,7 @@
         "UiType": 1,
         "ContentsGroupId": 18,
         "ConditionIds": [
-            70018
+            601000
         ]
     },
     {
@@ -446,7 +461,7 @@
         "UiType": 1,
         "ContentsGroupId": 19,
         "ConditionIds": [
-            771801
+            770411
         ]
     },
     {
@@ -461,7 +476,7 @@
         "UiType": 1,
         "ContentsGroupId": 20,
         "ConditionIds": [
-            70020
+            601000
         ]
     },
     {
@@ -883,6 +898,22 @@
         "ConditionIds": [
             870002,
             773400
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "Unlock All Stories",
+        "Priority": 26,
+        "SkipId": 21,
+        "BtnContent": "I got it",
+        "NpcName": "Hassen",
+        "NpcHandIcon": "Assets/Product/Texture/Image/RoleCharacter/HasangNomal01.png",
+        "Type": 1,
+        "UiType": 1,
+        "ContentsGroupId": 26,
+        "ConditionIds": [
+            84100112,
+            863060
         ]
     }
 ]

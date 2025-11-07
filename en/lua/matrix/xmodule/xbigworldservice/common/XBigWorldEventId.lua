@@ -237,11 +237,23 @@ local dlcEventId = {
     -- 历程界面红点刷新
     EVENT_COURSE_RED_POINT_REFRESH = NewId(),
 
-    -- 历程界面
+    -- 历程界面领取奖励
     EVENT_COURSE_REWARD_RECEIVE = NewId(),
+
+    -- 历程切换页签
+    EVENT_COURSE_CHANGE_PAGE = NewId(),
 
     -- 图文教程解锁触发
     EVENT_HELP_COURSE_UNLOCK_TRIGGER = NewId(),
+    
+    -- 视角发生变化
+    EVENT_BIG_WORLD_PERSPECTIVE_CHANGED = NewId(),
+    
+    -- 视角按钮功能禁用
+    EVENT_BIG_WORLD_PERSPECTIVE_DISABLE = NewId(),
+    
+    -- 背包更新
+    EVENT_BIG_WORLD_BACKPACK_UPDATE = NewId(),
 }
 
 return dlcEventId

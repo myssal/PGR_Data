@@ -1,6 +1,6 @@
 local XMovieActionInterrupt = XClass(XMovieActionBase, "XMovieActionInterrupt")
 
-function XMovieActionInterrupt:Ctor(actionData)
+function XMovieActionInterrupt:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -11,5 +11,8 @@ function XMovieActionInterrupt:OnRunning()
     XLuaAudioManager.StopAudioByCueId(self.CueId)
 end
 
+function XMovieActionInterrupt:GetCueId()
+    return self.CueId
+end
 
 return XMovieActionInterrupt

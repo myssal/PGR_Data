@@ -49,7 +49,6 @@ function XLuaVideoManager.CheckCgUrl()
         videoUrlPc = CS.XBundleManager.GetFile(bundleNamePc)
         needCGBtn = true
         if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
-            local path = videoUrl
             local streamingAssetPath = CS.UnityEngine.Application.streamingAssetsPath
             local len = string.len(streamingAssetPath)
 
@@ -65,6 +64,14 @@ function XLuaVideoManager.CheckCgUrl()
         end
     end
     return needCGBtn, videoUrl, videoUrlPc, width, height
+end
+
+function XLuaVideoManager.GetIsSkipAllCG()
+    if not CS.XApplication.Debug then
+        return false
+    end
+
+    return CS.XUiFightVideoPlayer.SkipAllCG
 end
 
 ---@return XTableVideoConfig

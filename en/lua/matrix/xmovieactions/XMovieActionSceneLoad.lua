@@ -1,5 +1,5 @@
 local XMovieActionSceneLoad = XClass(XMovieActionBase,"XMovieActionSceneLoad")
-function XMovieActionSceneLoad:Ctor(actionData)
+function XMovieActionSceneLoad:OnInit(actionData)
     local params        = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     local Vector3       = CS.UnityEngine.Vector3
@@ -12,7 +12,7 @@ function XMovieActionSceneLoad:Ctor(actionData)
     self.SceneScale     = Vector3(paramToNumber(scale[1]), paramToNumber(scale[2]), paramToNumber(scale[3]))
 end
 
-function XMovieActionSceneLoad:OnInit()
+function XMovieActionSceneLoad:OnEnter()
     self.UiRoot:Switch3DMovie()
     local root = self.UiRoot.UiModelGo.transform
     local obj = CS.LoadHelper.InstantiateScene(self.ScenePath)
@@ -20,6 +20,23 @@ function XMovieActionSceneLoad:OnInit()
     obj.transform.localScale = self.SceneScale
     obj.transform.localPosition = self.ScenePos
     obj.transform.localEulerAngles = self.SceneRotation
+end
+
+function XMovieActionSceneLoad:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+function XMovieActionSceneLoad:IsAdvanceStartAction()
+    return true
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionSceneLoad:IsActionCover(action)
+    return action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.BG_SWITCH
 end
 
 

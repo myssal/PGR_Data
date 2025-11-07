@@ -36,17 +36,17 @@ function XUiSign:OnDisable()
 end
 
 function XUiSign:AddListener()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    -- self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    -- self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
 end
 
-function XUiSign:OnBtnMainUiClick()
-    XLuaUiManager.RunMain()
-end
+-- function XUiSign:OnBtnMainUiClick()
+--     XLuaUiManager.RunMain()
+-- end
 
-function XUiSign:OnBtnBackClick()
-    self:Close()
-end
+-- function XUiSign:OnBtnBackClick()
+--     self:Close()
+-- end
 
 function XUiSign:InitTabGroup(defaultType)
     self.WelfareConfigs = XSignInConfigs.GetWelfareConfigs()

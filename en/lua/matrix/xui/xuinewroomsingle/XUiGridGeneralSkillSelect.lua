@@ -51,6 +51,7 @@ function XUiGridGeneralSkillSelect:OnSelectEvent()
     else
         self.Parent._Team:UpdateSelectGeneralSkill(self._Id)
         self.Parent:RefreshList()
+        self.Parent:Close()
     end
 end
 

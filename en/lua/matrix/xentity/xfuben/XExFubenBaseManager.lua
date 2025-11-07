@@ -38,6 +38,9 @@ end
 
 -- return : XFunctionManager.FunctionName
 function XExFubenBaseManager:ExGetFunctionNameType()
+    if not self.ExConfig then
+        return
+    end
     return self.ExConfig.FunctionNameId
 end
 
@@ -66,6 +69,10 @@ end
 -- 获取活动常用图标
 function XExFubenBaseManager:ExGetIcon()
     return self.ExConfig.Icon
+end
+
+function XExFubenBaseManager:ExGetIconMain()
+    return self.ExConfig.IconMain
 end
 
 -- 获取活动对外显示名称
@@ -97,6 +104,10 @@ end
 
 -- 打开玩法主界面
 function XExFubenBaseManager:ExOpenMainUi(...)
+    local functionName = self:ExGetFunctionNameType()
+    if functionName and not XMVCA.XSubPackage:CheckSubpackage(functionName) then
+        return
+    end
     XFunctionManager.SkipInterface(self.ExConfig.SkipId, nil, ...)
 end
 
@@ -183,6 +194,18 @@ function XExFubenBaseManager:ExGetChapterViewModelBySubChapterId(chapterId)
     if self.__ChapterViewModelIdDic then
         return self.__ChapterViewModelIdDic[chapterId]
     end
+end
+
+function XExFubenBaseManager:ExGetChapterViewModelByCharacterId(characterId)
+    local viewModels = self:ExGetChapterViewModels()
+    local viewModel
+    for index, v in pairs(viewModels) do
+        if characterId == v:GetConfig().CharacterId then
+            viewModel = v
+            break
+        end
+    end
+    return viewModel
 end
 
 return XExFubenBaseManager

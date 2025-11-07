@@ -5,7 +5,7 @@ local XUiSkyGardenShoppingStreetBuffAssetGrid = require("XUi/XUiSkyGarden/XShopp
 
 --region 生命周期
 function XUiSkyGardenShoppingStreetBillboardGrid:OnStart(...)
-    self.GridTask.CallBack = function() self:OnGridLightClick() end
+    self.GridTask:AddEventListener(handler(self, self.OnGridLightClick))
 
     self._GridBuffsUi = {}
     self._GridBuffsUi2 = {}

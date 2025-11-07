@@ -1,142 +1,25 @@
 local XDynamicTableCurve = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableCurve")
---######################## XUiPanelRecommend ########################
-local XUiPanelRecommend = XClass(nil, "XUiPanelRecommend")
-
-function XUiPanelRecommend:Ctor()
-    self.PurchaseManager = XDataCenter.PurchaseManager
-    self.Recommend = nil
-    self.SkipFunc = nil
-    self.BuyFinished = nil
-    self.BtnGiftNameList = {}
-end
-
-function XUiPanelRecommend:SetUi(ui)
-    -- 清除无用Btn引用
-    for _, btnName in ipairs(self.BtnGiftNameList) do
-        self[btnName] = nil
-    end
-    self.ImgSellOut = nil
-    XUiHelper.InitUiClass(self, ui)
-end
-
-function XUiPanelRecommend:SetData(data, skipFunc, buyFinished)
-    self.Recommend = data
-    self.SkipFunc = skipFunc
-    self.BuyFinished = buyFinished
-    
-    -- v1.28-采购优化-根据PurchasePackageId注册跳转方式
-    local isHavePackageId = XTool.IsNumberValid(#self.Recommend:GetPurchasePackageIdList())
-    local allSellOut = true
-    if isHavePackageId and self.BtnGiftBuy1 then  -- 配了PurchasePackageId且拥有礼包按钮
-        --self.BtnBuy.gameObject:SetActiveEx(false)
-        for index, _ in ipairs(self.Recommend:GetPurchasePackageIdList()) do
-            local package = self.Recommend:GetPurchasePackage()[index]
-            local btnName = "BtnGiftBuy" .. index
-            if package == nil then
-                -- 页签显示时间内但找不到礼包数据则不显示
-                self[btnName].gameObject:SetActiveEx(false)
-            else
-                -- 保存已有Btn引用
-                self.BtnGiftNameList[index] = btnName
-                -- 设置礼包状态
-                if package:GetIsHave() then 
-                    self[btnName]:SetDisable(true)
-                    self:ShowBuyBtnSoldOutOrOwned(self[btnName].transform, false)
-                end
-                if package:GetIsSellOut() then
-                    self[btnName]:SetDisable(true)
-                    self:ShowBuyBtnSoldOutOrOwned(self[btnName].transform, true)
-                else
-                    allSellOut = false
-                end
-                -- 注册礼包购买
-                XUiHelper.RegisterClickEvent(self, self[btnName], function ()
-                    if package:GetIsSellOut() then
-                        XUiManager.TipErrorWithKey("PurchaseSettOut")
-                        return
-                    end
-                    local buyData = self.Recommend:GetPurchasePackage()
-                    if buyData then
-                        self.PurchaseManager.OpenPurchaseBuyUiByPurchasePackage(package, function(_, payCount)
-                            self.SkipFunc(XPurchaseConfigs.TabsConfig.Pay, nil, payCount)
-                        end, nil, self.BuyFinished)
-                    end
-                end)
-            end
-        end
-    -- else                                          -- 不配PurchasePackageId
-    --     self.BtnBuy.gameObject:SetActiveEx(true)
-    --     XUiHelper.RegisterClickEvent(self, self.BtnBuy, self.OnBtnBuyClicked)
-    end
-
-    if self.ImgSellOut then 
-        self.ImgSellOut.gameObject:SetActiveEx(allSellOut)
-    end
-
-    XUiHelper.RegisterClickEvent(self, self.BtnBuy, self.OnBtnBuyClicked)
-
-    -- self.TxtTime.gameObject:SetActiveEx(data:GetIsShowTimeTip())
-    -- self.TxtTime.text = string.format("%s~%s", data:GetStartTimeDate(), data:GetEndTimeDate())
-    -- self.ImgSellOut.gameObject:SetActiveEx(data:GetIsSellOut())
-end
-
-function XUiPanelRecommend:OnBtnBuyClicked()
-    local skipSteps = self.Recommend:GetSkipSteps()
-    if #skipSteps > 0 then
-        if skipSteps[1] == XPurchaseConfigs.RecommendSkipType.Lb then
-            self.SkipFunc(skipSteps[2], skipSteps[3])
-        elseif skipSteps[1] == XPurchaseConfigs.RecommendSkipType.SkipId then
-            XFunctionManager.SkipInterface(skipSteps[2])
-        end
-        return
-    end
-    if self.Recommend:GetIsSellOut() then
-        XUiManager.TipErrorWithKey("PurchaseSettOut")
-        return
-    end
-end
-
-function XUiPanelRecommend:PlayEnableAnim()
-    if not XTool.UObjIsNil(self.AnimEnable) then
-        self.AnimEnable:Stop()
-        self.AnimEnable:Play()
-    end    
-end
-
--- v1.31显示购买按钮已售罄或者已拥有
-function XUiPanelRecommend:ShowBuyBtnSoldOutOrOwned(btn, isSoldOut)
-    local uiObject = btn:GetComponent("UiObject")
-    if uiObject == nil then 
-        return
-    end
-
-    local txtSoldOut= uiObject:GetObject("TxtSoldOut")
-    if txtSoldOut then
-        txtSoldOut.gameObject:SetActiveEx(isSoldOut)
-    end
-    local rImgSoldOut= uiObject:GetObject("RImgSoldOut")
-    if rImgSoldOut then
-        rImgSoldOut.gameObject:SetActiveEx(isSoldOut)
-    end
-    local txtOwned= uiObject:GetObject("TxtOwned")
-    if txtOwned then
-        txtOwned.gameObject:SetActiveEx(not isSoldOut)
-    end
-    local rImgOwned= uiObject:GetObject("RImgOwned")
-    if rImgOwned then
-        rImgOwned.gameObject:SetActiveEx(not isSoldOut)
-    end
-end
+local XUiPanelRecommendBase = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendBase")
 
 --######################## XUiRecommendGrid ########################
+---@class XUiRecommendGrid
 local XUiRecommendGrid = XClass(nil, "XUiRecommendGrid")
+
+local RecommendUiProxy = {
+    [XEnumConst.Purchase.Recommend.Luna] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendLuna"),
+    [XEnumConst.Purchase.Recommend.CompanyPackage] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendCompanyPackage"),
+    [XEnumConst.Purchase.Recommend.ComboPackage] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendComboPackage/XUiPanelRecommendComboPackage")
+}
 
 function XUiRecommendGrid:Ctor(ui)
     XUiHelper.InitUiClass(self, ui)
-    self.UiPanelRecommend = XUiPanelRecommend.New()
+    ---@type XUiPanelRecommendBase
+    self.UiPanelRecommend = nil
 end
 
+---@param data XPurchaseRecommend
 function XUiRecommendGrid:SetData(data, skipFunc, buyFinished)
+    self:SetUiProxy(data:GetPurchasePackageId())
     local go
     if self.Transform.childCount > 0 then
         go = self.Transform:GetChild(0):LoadPrefab(data:GetAssetPath())
@@ -148,7 +31,18 @@ function XUiRecommendGrid:SetData(data, skipFunc, buyFinished)
 end
 
 function XUiRecommendGrid:PlayEnableAnim()
-    self.UiPanelRecommend:PlayEnableAnim()
+    if self.UiPanelRecommend then
+        self.UiPanelRecommend:PlayEnableAnim()
+    end
+end
+
+function XUiRecommendGrid:SetUiProxy(purchaseId)
+    local cls = RecommendUiProxy[purchaseId]
+    if cls then
+        self.UiPanelRecommend = cls.New()
+    else
+        self.UiPanelRecommend = XUiPanelRecommendBase.New()
+    end
 end
 
 --######################## XUiPurchaseRecommend ########################
@@ -161,11 +55,13 @@ function XUiPurchaseRecommend:Ctor(ui, rootUi, skipFunc)
     XUiHelper.InitUiClass(self, ui)
     self.PurchaseManager = XDataCenter.PurchaseManager
     self.RecommendManager = self.PurchaseManager.GetRecommendManager()
+    ---@type XPurchaseRecommend[]
     self.Recommends = nil
     self.CurrentIndex = 1
     self.CurrentSelectId = nil
     self.RootUi = rootUi
     self.SkipFunc = skipFunc
+    ---@type XDynamicTableCurve
     self.DynamicTable = XDynamicTableCurve.New(self.PanelList)
     self.DynamicTable:SetProxy(XUiRecommendGrid)
     self.DynamicTable:SetDelegate(self)
@@ -228,12 +124,24 @@ function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
         -- 数组越界处理
         if self.CurrentIndex > #btns then self.CurrentIndex = #btns end
         self.PanelTabGroup:SelectIndex(self.CurrentIndex)
+        
+        XScheduleManager.ScheduleNextFrame(function()
+            -- 判断自己有没销毁
+            if not self or not self.GameObject:Exist() then
+                return
+            end
+            
+            local button = self.PanelTabGroup:GetButtonByIndex(self.CurrentIndex)
+            -- 尝试滑动聚焦到该按钮
+            self:TryFocusStage(button)
+        end)
     end
     -- 刷新推荐
     self.DynamicTable:SetDataSource(self.Recommends)
     self.DynamicTable:ReloadData(self.CurrentIndex - 1)
 end
 
+---@param grid XUiRecommendGrid
 function XUiPurchaseRecommend:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:SetData(self.DynamicTable.DataSource[index + 1], self.SkipFunc, function()
@@ -321,5 +229,45 @@ function XUiPurchaseRecommend:GetCurrentSelectIndex()
 
     return self.CurrentIndex
 end
+
+--region -------------------- 滚动视图 --------------------
+
+function XUiPurchaseRecommend:PlayScrollViewMoveBack(tarPosY, isElastic)
+    local moveDuration = CS.XGame.ClientConfig:GetFloat('KotodamaActivityStageMoveDuration')
+    local tarPos = self.PanelGroupList.content.localPosition
+    tarPos.y = tarPosY
+
+    XLuaUiManager.SetMask(true)
+    self._FocusScrollMoving = true
+    self.PanelGroupList.inertia = false
+    XUiHelper.DoMove(self.PanelGroupList.content, tarPos, moveDuration, XUiHelper.EaseType.Sin, function()
+        if isElastic then
+            self.PanelGroupList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Elastic
+        else
+            self.PanelGroupList.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
+        end
+        XLuaUiManager.SetMask(false)
+        self._FocusScrollMoving = false
+        self.PanelGroupList.inertia = true
+    end)
+end
+
+function XUiPurchaseRecommend:TryFocusStage(selectGrid)
+    if not self.PanelGroupList then
+        return
+    end
+    
+    if selectGrid then
+        local halfScreenHeight = self.PanelGroupList.viewport.rect.height / 2
+        local moveMinY = halfScreenHeight
+        local moveMaxY = self.PanelGroupList.content.rect.height - halfScreenHeight
+
+        local tarPosY = - selectGrid.transform.localPosition.y
+        local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)
+        self:PlayScrollViewMoveBack(fixedPositionY, true)
+    end
+end
+
+--endregion
 
 return XUiPurchaseRecommend

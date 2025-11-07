@@ -67,7 +67,7 @@
     {
         "Key": "AnniversaryDrawId",
         "Type": "string",
-        "Value": "5061|5062|5063|5064|5065|5066|5067|5068|5069|5070|5071|5072|5073|5074|5075|5076|5077|5078|5079|5080|5081|5082|5083|5084|5085|5086|5087|5088|5089"
+        "Value": "5090|5091|5092|5093|5094|5095|5096|5097|5098|5099|5100|5101|5102|5103|5104|5105|5106|5107|5108|5109|5110|5111|5112|5113|5114|5115|5116|5117|5117|5119|5120|5121|5122|5123|5124"
     },
     {
         "Key": "AnniversaryReviewFixPosSpeed",
@@ -2535,11 +2535,6 @@
         "Value": 90
     },
     {
-        "Key": "NewUserMovieId",
-        "Type": "string",
-        "Value": "ZX00000BA"
-    },
-    {
         "Key": "NieREasterEggBulletChatDelayTime",
         "Type": "float",
         "Value": 2
@@ -2643,6 +2638,11 @@
         "Key": "PanelEquipV2P6",
         "Type": "string",
         "Value": "Assets/Product/Ui/ComponentPrefab/Character/PanelEquipV2P6.prefab"
+    },
+    {
+        "Key": "PanelEquipTeamPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/Prefab/UiTeamPrefab/PanelEquipTeamPrefab.prefab"
     },
     {
         "Key": "PanelQualitySingleV2P6",
@@ -2907,7 +2907,7 @@
     {
         "Key": "SkyGardenGuideData",
         "Type": "string",
-        "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
+        "Value": "Assets/Product/Behavior/BigWorld/SkyGarden/Guide/SkyGardenGuideData.bytes"
     },
     {
         "Key": "RogueLikeBossNode",
@@ -4977,17 +4977,17 @@
     {
         "Key": "TeachActIds",
         "Type": "string",
-        "Value": "40-41-42"
+        "Value": 0
     },
     {
         "Key": "GroupActIds",
         "Type": "string",
-        "Value": "129-130-3"
+        "Value": 0
     },
     {
         "Key": "IsCombBP",
         "Type": "int",
-        "Value": 1
+        "Value": 0
     },
     {
         "Key": "ArenaOnlineCloseTime",
@@ -5065,6 +5065,56 @@
         "Value": "4:83028|1300002:90032"
     },
     {
+        "Key": "UiMainTerminalMobileListUnlockCondition",
+        "Type": "int",
+        "Value": 1050284
+    },
+    {
+        "Key": "CharacterPowerIconVisible",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CharacterPowerDrawIconVisible",
+        "Type": "int",
+        "Value": 0
+    },
+    {
+        "Key": "CharacterPowerIconSmallVisible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "CharacterPowerIconSkillVisible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "CharacterPowerSkillUnderVisible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "CharacterPowerIconEvolveVisible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "CharacterPowerIconDetailVisible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "CharacterPowerIconSkill2Visible",
+        "Type": "int",
+        "Value": 1
+    },
+    {
+        "Key": "BtnEvolutionDefaultTexture",
+        "Type": "string",
+        "Value": "Assets/Product/Texture/Image/UiCharacter/PanelCharBtnBg7.png"
+    },
+    {
         "Key": "MonthlyCardABg",
         "Type": "string",
         "Value": "Assets/Product/Texture/Image/UiSignRechargeBanner/UiSignRechargeBannerBgYueka.jpg"
@@ -5073,5 +5123,45 @@
         "Key": "MonthlyCardCBg",
         "Type": "string",
         "Value": "Assets/Product/Texture/Image/UiSignRechargeBanner/UiSignRechargeBannerBgEnYuekaC.jpg"
+    },
+    {
+        "Key": "CheckSubPackageCDDownloadConditionId",
+        "Type": "int",
+        "Value": 1050285
+    },
+    {
+        "Key": "MonthCardPlusPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/UiPurchase/UiPurchaseV400/PanelYKPlusBuy.prefab"
+    },
+    {
+        "Key": "MonthCardPlusSkipId",
+        "Type": "int",
+        "Value": 90054
+    },
+    {
+        "Key": "MonthCardPlusIsShowCondition",
+        "Type": "int",
+        "Value": 1060004
+    },
+    {
+        "Key": "IceBreakingCharacterId",
+        "Type": "int",
+        "Value": 1171004
+    },
+    {
+        "Key": "MonthCardPlusPackId",
+        "Type": "int",
+        "Value": 1969
+    },
+    {
+        "Key": "MonthCardTotalPrice",
+        "Type": "int",
+        "Value": 3300
+    },
+    {
+        "Key": "MonthCardTotalPrice2",
+        "Type": "string",
+        "Value": "3300+"
     }
 ]

@@ -320,69 +320,29 @@
         "Value": 1
     },
     {
-        "Key": "NpcLookAtEaseIn",
+        "Key": "NpcLookAtOnAngularSpeed",
         "Type": "float",
-        "Value": 0.5
+        "Value": 170
     },
     {
-        "Key": "NpcLookAtEaseOut",
+        "Key": "NpcLookAtOffAngularSpeed",
         "Type": "float",
-        "Value": 0.5
+        "Value": 170
     },
     {
-        "Key": "NpcLookAtLerpSpeed",
+        "Key": "NpcLookAtOffDelay",
         "Type": "float",
-        "Value": 3
+        "Value": 0
     },
     {
-        "Key": "NpcLookAtCancelDelay",
+        "Key": "NpcLookAtHeadRotThreshold",
         "Type": "float",
-        "Value": 2
+        "Value": 15
     },
     {
         "Key": "JoystickTouchRange",
         "Type": "float",
         "Value": 107
-    },
-    {
-        "Key": "DramaTextDisplaySpeed",
-        "Type": "float",
-        "Value": 25
-    },
-    {
-        "Key": "DramaInterTitleFadeDuration",
-        "Type": "float",
-        "Value": 0.3
-    },
-    {
-        "Key": "DramaCameraSnapHeightOffset",
-        "Type": "float",
-        "Value": 0.7
-    },
-    {
-        "Key": "DramaCameraSnapDistanceOffset",
-        "Type": "float",
-        "Value": 2.6
-    },
-    {
-        "Key": "DramaCameraSnapTime",
-        "Type": "float",
-        "Value": 1
-    },
-    {
-        "Key": "DramaLookEaseTime",
-        "Type": "float",
-        "Value": 0.4
-    },
-    {
-        "Key": "DramaSlideQteTolerance",
-        "Type": "float",
-        "Value": 10
-    },
-    {
-        "Key": "DramaSlideQteMinDistance",
-        "Type": "float",
-        "Value": 100
     },
     {
         "Key": "BigWorldSwitchNpcEffectName",
@@ -460,29 +420,14 @@
         "Value": 4001006
     },
     {
-        "Key": "AssistNpcId",
-        "Type": "int",
-        "Value": 6030
-    },
-    {
-        "Key": "AssistNpcBornOffsetPosX",
-        "Type": "float",
-        "Value": 0.9
-    },
-    {
-        "Key": "AssistNpcBornOffsetPosY",
-        "Type": "float",
-        "Value": 0.5
-    },
-    {
-        "Key": "AssistNpcBornOffsetPosZ",
-        "Type": "float",
-        "Value": -0.2
-    },
-    {
         "Key": "DynamicResCacheTime",
         "Type": "float",
         "Value": 30
+    },
+    {
+        "Key": "MaxTotalLoadingResCount",
+        "Type": "int",
+        "Value": 20
     },
     {
         "Key": "BlackScreenEffectID",
@@ -538,5 +483,115 @@
         "Key": "SerialSequentialJobsMaxExecuteTime",
         "Type": "float",
         "Value": 10
+    },
+    {
+        "Key": "SoftLockLoopEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaojiLoop"
+    },
+    {
+        "Key": "HardLockLoopEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaojiRedLoop"
+    },
+    {
+        "Key": "ForceLockLoopEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaojiRedLoop"
+    },
+    {
+        "Key": "LockInteractOptionId",
+        "Type": "int",
+        "Value": 6
+    },
+    {
+        "Key": "LevelNpcRandomFacePlayFrame",
+        "Type": "int",
+        "Value": 200
+    },
+    {
+        "Key": "FirstPersonCameraConfigId",
+        "Type": "int",
+        "Value": 810106
+    },
+    {
+        "Key": "FirstPersonCameraNearClipPanel",
+        "Type": "float",
+        "Value": 0.01
+    },
+    {
+        "Key": "FirstPersonCameraNearClipPanelAndroid",
+        "Type": "float",
+        "Value": 0.3
+    },
+    {
+        "Key": "DefaultCameraNearClipPanel",
+        "Type": "float",
+        "Value": 0.1
+    },
+    {
+        "Key": "DefaultCameraFarClipPanel",
+        "Type": "float",
+        "Value": 1000
+    },
+    {
+        "Key": "StepMaterialCheckDistance",
+        "Type": "float",
+        "Value": 0.2
+    },
+    {
+        "Key": "UiBlackMaskLoadingName",
+        "Type": "string",
+        "Value": "UiBigWorldBlackMaskLoading"
+    },
+    {
+        "Key": "CantChangeFPStateWithNotPlayerNpcTipId",
+        "Type": "int",
+        "Value": 4001007
+    },
+    {
+        "Key": "ChangeFPModeToFirstTipId",
+        "Type": "int",
+        "Value": 4001008
+    },
+    {
+        "Key": "ChangeFPModeToThirdTipId",
+        "Type": "int",
+        "Value": 4001009
+    },
+    {
+        "Key": "CantChangeFPModeWithNpcStateTipId",
+        "Type": "int",
+        "Value": 4001010
+    },
+    {
+        "Key": "CantChangeFPModeTipId",
+        "Type": "int",
+        "Value": 4001011
+    },
+    {
+        "Key": "InteractCDTime",
+        "Type": "float",
+        "Value": 0.5
+    },
+    {
+        "Key": "InteractButtonUpDelay",
+        "Type": "int",
+        "Value": 230
+    },
+    {
+        "Key": "MaxUpdateStepDelta",
+        "Type": "float",
+        "Value": 0.03
+    },
+    {
+        "Key": "MaxUpdateStepCount",
+        "Type": "int",
+        "Value": 10
+    },
+    {
+        "Key": "OpenRenderPos",
+        "Type": "bool",
+        "Value": 1
     }
 ]

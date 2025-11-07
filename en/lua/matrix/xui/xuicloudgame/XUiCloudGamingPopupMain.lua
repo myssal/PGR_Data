@@ -39,14 +39,20 @@ function XUiCloudGamingPopupMain:Update()
 
     if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Default then
         -- 移动端
-        if CS.UnityEngine.Application == CS.UnityEngine.RuntimePlatform.IOS then
+        if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.IPhonePlayer then
             -- ios，显示ios的
             self.BtnAndroidDownload.gameObject:SetActiveEx(false)
             self.BtnIosDownload.gameObject:SetActiveEx(true)
             XUiHelper.RegisterClickEvent(self, self.BtnIosDownload, self.OnIosDownloadClick)
 
-        elseif CS.UnityEngine.Application == CS.UnityEngine.RuntimePlatform.Android then
+        elseif CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
             -- 安卓，显示安卓的
+            self.BtnAndroidDownload.gameObject:SetActiveEx(true)
+            self.BtnIosDownload.gameObject:SetActiveEx(false)
+            XUiHelper.RegisterClickEvent(self, self.BtnAndroidDownload, self.OnAndroidDownloadClick)
+            
+            -- 内网测试环境，既不是ios，也不是安卓，当成安卓
+        else
             self.BtnAndroidDownload.gameObject:SetActiveEx(true)
             self.BtnIosDownload.gameObject:SetActiveEx(false)
             XUiHelper.RegisterClickEvent(self, self.BtnAndroidDownload, self.OnAndroidDownloadClick)
@@ -85,11 +91,11 @@ function XUiCloudGamingPopupMain:Update()
 end
 
 function XUiCloudGamingPopupMain:OnIosDownloadClick()
-    --todo by zlb 云游戏, 移动端，跳转网页
+    XMVCA.XUrl:SkipByUrlId(XMVCA.XUrl.UrlId.CloudGameIos)
 end
 
 function XUiCloudGamingPopupMain:OnAndroidDownloadClick()
-    --todo by zlb 云游戏, 移动端，跳转网页
+    XMVCA.XUrl:SkipByUrlId(XMVCA.XUrl.UrlId.CloudGameAndroid)
 end
 
 function XUiCloudGamingPopupMain:OnClickBuy()

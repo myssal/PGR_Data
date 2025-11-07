@@ -637,7 +637,6 @@
         "UiName": "UiBigWorldHud",
         "InputMapSectionId": 0,
         "BtnName": [
-            "BtnQuit",
             "BtnHandBook",
             "BtnBag",
             "BtnTeam",
@@ -651,10 +650,12 @@
             "BtnTrack",
             "BtnBigMap",
             "BtnGo",
-            "BtnQuitDoor2"
+            "BtnQuitDoor2",
+            "BtnThird",
+            "BtnFrist",
+            "BtnQuit"
         ],
         "DefaultKeyMapIds": [
-            11501,
             11503,
             11502,
             11507,
@@ -668,6 +669,9 @@
             11508,
             11505,
             11508,
+            11501,
+            11548,
+            11548,
             11501
         ]
     },
@@ -678,13 +682,21 @@
             "ButtonChange",
             "ButtonScan",
             "ButtonJump",
-            "BtnTeach"
+            "BtnTeach",
+            "BtnThird",
+            "BtnQuitDoor2",
+            "BtnFirst",
+            "BtnQuit"
         ],
         "DefaultKeyMapIds": [
             11016,
             11024,
             11558,
-            11516
+            11512,
+            11548,
+            11501,
+            11548,
+            11501
         ]
     },
     {
@@ -1118,6 +1130,16 @@
         ]
     },
     {
+        "UiName": "UiSkyGardenShoppingStreetTarget",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnBack"
+        ],
+        "DefaultKeyMapIds": [
+            11541
+        ]
+    },
+    {
         "UiName": "UiSkyGardenShoppingStreetToastEventReward",
         "InputMapSectionId": 0,
         "BtnName": [
@@ -1261,8 +1283,8 @@
         ],
         "DefaultKeyMapIds": [
             11523,
-            11541,
-            11536
+            11560,
+            11541
         ]
     },
     {
@@ -1271,14 +1293,16 @@
         "BtnName": [
             "UiBigWorldCommonBtnTracking",
             "UiBigWorldCommonBtnCancelTracking",
-            "UiBigWorldCommonBtnBtnTransmit",
-            "BtnTanchuangClose"
+            "UiBigWorldCommonBtnTransmit",
+            "BtnTanchuangClose",
+            "UiBigWorldCommonBtnGo"
         ],
         "DefaultKeyMapIds": [
             11515,
             11515,
             11514,
-            11541
+            11541,
+            11514
         ]
     },
     {

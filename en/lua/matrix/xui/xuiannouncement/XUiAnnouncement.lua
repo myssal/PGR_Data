@@ -166,7 +166,9 @@ function XUiAnnouncement:RefreshWebView(url)
             return
         end
         HtmlContent[url] = html
-        self.ImgLoading.gameObject:SetActiveEx(false)
+        if not XTool.UObjIsNil(self.ImgLoading) then
+            self.ImgLoading.gameObject:SetActiveEx(false)
+        end
         self:ShowHtml(html)
     end)
 end

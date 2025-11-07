@@ -116,6 +116,7 @@ function XPurchaseRecommend:GetIsShow()
     return self:GetIsInTime()
 end
 
+---@return XPurchasePackage[]
 function XPurchaseRecommend:GetPurchasePackage()
     -- 默认为{}
     return self.PurchasePackage
@@ -180,6 +181,10 @@ end
 
 function XPurchaseRecommend:GetPriority()
     return self.Priority or 0
+end
+
+function XPurchaseRecommend:GetCfgComboPackageIds()
+    return self.Config.ComboPackageIds
 end
 
 return XPurchaseRecommend

@@ -52,7 +52,7 @@ end
 
 function XUiBigWorldProcessExploreRegion:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnRegion.CallBack = Handler(self, self.OnBtnRegionClick)
+    self.BtnRegion:AddEventListener(handler(self, self.OnBtnRegionClick))
 end
 
 function XUiBigWorldProcessExploreRegion:_RegisterListeners()

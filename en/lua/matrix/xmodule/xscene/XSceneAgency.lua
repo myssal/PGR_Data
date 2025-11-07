@@ -1,6 +1,5 @@
 local XLuaScene
 local SceneRegistry
-
 local SceneClass = {}
 
 local CsNoneSceneType = CS.XSceneType.None:GetHashCode()
@@ -159,6 +158,7 @@ function XSceneAgency:GetOrRequireSceneClass(sceneId)
     local class = SceneClass[sceneName]
     if not class then
         self:TryRequire(sceneName)
+        class = SceneClass[sceneName]
     end
     if not class then
         XLog.Error(string.format("场景:%s require异常，请检查配置。", sceneName))

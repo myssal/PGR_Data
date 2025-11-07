@@ -1,8 +1,14 @@
 local XChapterViewModel = require("XEntity/XFuben/XChapterViewModel")
 local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
+
+---@class XExFubenMainLineManager
 local XExFubenMainLineManager = XClass(XExFubenBaseManager, "XExFubenMainLineManager")
 
 function XExFubenMainLineManager:ExOpenChapterUi(viewModel, difficulty)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, viewModel:GetId()) then
+        return
+    end
+    
     if viewModel.OnOpenChapterUi then
         viewModel:OnOpenChapterUi()
         return
@@ -52,10 +58,10 @@ function XExFubenMainLineManager:ExGetChapterViewModels(groupId, difficulty)
         result = appendArray(result, self:ExGetChapterViewModels(groupId, XDataCenter.FubenManager.DifficultHard))
         return result
     end
-    if self.__ChapterViewModelDic == nil then self.__ChapterViewModelDic = {} end
-    if self.__ChapterViewModelDic[groupId] == nil then self.__ChapterViewModelDic[groupId] = {} end
-    if self.__ChapterViewModelDic[groupId][difficulty] then return self.__ChapterViewModelDic[groupId][difficulty] end
-    self.__ChapterViewModelDic[groupId][difficulty] = {}
+
+    --- 因为要实时判断开放情况，因此每次获取都重新遍历
+    local result = {}
+    
     for i, config in ipairs(self:ExGetChapterConfigs(groupId, difficulty)) do
         local subChapterId = self:GetSubChapterId(config, difficulty)
         local chapterMainId = config.Id
@@ -63,15 +69,20 @@ function XExFubenMainLineManager:ExGetChapterViewModels(groupId, difficulty)
             -- 提审服屏蔽第一章以外的
             if XUiManager.IsHideFunc then
                 if config.Id == 1001 then -- 第一章id
-                    table.insert(self.__ChapterViewModelDic[groupId][difficulty], self:ExGetChapterViewModelById(chapterMainId, difficulty, i))
+                    table.insert(result, self:ExGetChapterViewModelById(chapterMainId, difficulty, i))
+                    break
                 end
             else
+                ---@type XChapterViewModel
                 local viewModel = self:ExGetChapterViewModelById(chapterMainId, difficulty, i)
-                table.insert(self.__ChapterViewModelDic[groupId][difficulty], viewModel)
+
+                if not XTool.IsNumberValidEx(viewModel.Config.ShowCondition) or XConditionManager.CheckCondition(viewModel.Config.ShowCondition) then
+                    table.insert(result, viewModel)
+                end
             end
         end
     end
-    return self.__ChapterViewModelDic[groupId][difficulty]
+    return result
 end
 
 -- 获取主线章节配置数据, 服务器数据走XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain
@@ -107,13 +118,24 @@ end
 
 -- 获取主线章节分组配置数据
 function XExFubenMainLineManager:ExGetChapterGroupConfigs()
+    ---@type XTableChapterMainGroup[]
     local resultConfigs = XFubenMainLineConfigs.GetAllConfigs(XFubenMainLineConfigs.TableKey.ChapterMainGroup)
     if XUiManager.IsHideFunc then
         local tempConfigs = {}
         table.insert(tempConfigs, resultConfigs[1])
         resultConfigs = tempConfigs
+        return resultConfigs
+    else
+        local showConfigs = {}
+
+        for i, v in pairs(resultConfigs) do
+            if not XTool.IsNumberValidEx(v.ShowCondition) or XConditionManager.CheckCondition(v.ShowCondition) then
+                table.insert(showConfigs, v)
+            end
+        end
+        
+        return showConfigs
     end
-    return resultConfigs
 end
 
 -- 检查章节分组是否有红点
@@ -181,7 +203,20 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
     if subChapterId ~= nil and subChapterId > 0 then
         result = CreateAnonClassInstance({
             CheckHasRedPoint = function(proxy)
-                return XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, proxy:GetId())
+                local hasReward = XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, subChapterId)
+                if hasReward then 
+                    return true 
+                end
+                
+                -- 如果有隐藏模式
+                local haradChapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterMainId, XDataCenter.FubenMainLineManager.DifficultHard)
+                if haradChapterId and haradChapterId > 0 then
+                    local hasHardReward = XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, haradChapterId)
+                    if hasHardReward then
+                        return true
+                    end
+                end
+                return false
             end,
             CheckHasNewTag = function(proxy)
                 local hideId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterMainId, XDataCenter.FubenMainLineManager.DifficultHard)
@@ -207,9 +242,17 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(chapterConfig.ZhouMuId)
             end,
             GetIsLocked = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return true
+                end
+            
                 return self:ExGetChapterIsLockAndLockTip(proxy:GetExtralData().MainId, proxy:GetExtralData().Difficulty)
             end,
             GetLockTip = function(proxy)
+                if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                    return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
+                end
+
                 if proxy:CheckHasTimeLimitTag() then
                     local ret, desc = XDataCenter.FubenMainLineManager.CheckActivityCondition(proxy:GetId())
                     if not ret then
@@ -276,7 +319,8 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 Index = index,
             },
             FirstStage = XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficulty).FirstStage,
-            ActivityCondition = XDataCenter.FubenMainLineManager.GetChapterCfg(subChapterId).ActivityCondition
+            ActivityCondition = XDataCenter.FubenMainLineManager.GetChapterCfg(subChapterId).ActivityCondition,
+            ShowCondition = config.ShowCondition,
         })
         self.__ChapterViewModelIdDic[subChapterId] = result
     end 

@@ -50,8 +50,8 @@ function XUiBigWorldTeachContent:_Refresh()
 end
 
 function XUiBigWorldTeachContent:_RegisterButtonClicks()
-    self.BtnLast.CallBack = Handler(self, self.OnBtnLastClick)
-    self.BtnNext.CallBack = Handler(self, self.OnBtnNextClick)
+    self.BtnLast:AddEventListener(handler(self, self.OnBtnLastClick))
+    self.BtnNext:AddEventListener(handler(self, self.OnBtnNextClick))
 end
 
 function XUiBigWorldTeachContent:_RefreshContent(index, oldIndex)

@@ -1,7 +1,7 @@
 local XMovieActionTimelinePlay = XClass(XMovieActionBase, "XMovieActionTimelinePlay")
 local CAMERA_TRACK = "Camera"
 
-function XMovieActionTimelinePlay:Ctor(actionData)
+function XMovieActionTimelinePlay:OnInit(actionData)
     local params = actionData.Params
     self.TimelineName = params[1]
     self.TrackDic = {}

@@ -2,7 +2,7 @@
 ---@field UiRoot XUiMovie
 local XMovieActionActorAlphaChange = XClass(XMovieActionBase, "XMovieActionActorAlphaChange")
 local FRONT_BG_INDEX = 999
-function XMovieActionActorAlphaChange:Ctor(actionData)
+function XMovieActionActorAlphaChange:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -31,6 +31,28 @@ function XMovieActionActorAlphaChange:OnRunning()
         rImgBg:SetColor(newColor)
         rImgBg:SetAlpha(self.EndAlpha, self.Duration)
     end
+end
+
+function XMovieActionActorAlphaChange:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionActorAlphaChange:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return self.ActorIndex == action.ActorIndex
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.ACTOR_DISAPPEAR then
+        return action:IsDisappear(self.ActorIndex)
+    end
+    return false
+end
+
+function XMovieActionActorAlphaChange:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionActorAlphaChange

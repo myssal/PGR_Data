@@ -22,6 +22,11 @@ end
 function XMovieControl:GetKeywordConfig(id)
     return self._Model:GetKeywordConfig(id)
 end
+
+-- 获取ClientConfig表配置
+function XMovieControl:GetClientConfig(key, index)
+    return self._Model:GetClientConfig(key, index)
+end
 --============================================================== #endregion 配置表 ==============================================================
 
 return XMovieControl

@@ -56,6 +56,7 @@ useMultiModel)
     self.AnimaPlayedCallBackList = {}
     self.IsStandAnimaHideNode = false
     self._MySkinMeshFace = nil
+    self._MyXAnimationSound = nil
     if useMultiModel == nil then
         self.UseMultiModel = true
     end
@@ -246,7 +247,14 @@ needFightController)
             if CS.XAudioManager.IsOpenFashionVoice == 1 then
                 self:SetUiStandAnimaFinishCallback(model, function()
                     XLuaAudioManager.StopAudioByCueId(fashionCueId)
-                    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, fashionCueId)
+                    local xAnimationSound = self:GetXAnimationSound()
+                    if xAnimationSound then
+                        xAnimationSound:PlaySoundByCueId(fashionCueId)
+                    else
+                        -- 兼容播放，如果是角色模型还跑到这要查问题了
+                        XLog.Warning("PlayFashionCue xAnimationSound is nil, use default playAudio ", fashionCueId)
+                        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, fashionCueId)
+                    end
                 end, function()
                     XLuaAudioManager.StopAudioByCueId(fashionCueId)
                 end,false, true)
@@ -256,15 +264,19 @@ needFightController)
         if sfxCueId and not sfxCueIdCacheDic[sfxCueId] then
             sfxCueIdCacheDic[sfxCueId] = true
             XLuaAudioManager.StopAudioByCueId(sfxCueId)
-            local cueInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, sfxCueId)
-            cueInfo.FinishCb = function ()
-                sfxCueIdCacheDic[sfxCueId] = nil
-            end
-            cueInfo.UpdateCb = function()
-                local curModel = self:GetCurRoleModel()
-                if not curModel or XTool.UObjIsNil(curModel.gameObject) or not curModel.gameObject.activeSelf then
-                    XLuaAudioManager.StopAudioByCueId(sfxCueId)
-                    cueInfo.UpdateCb = nil
+            local xAnimationSound = self:GetXAnimationSound()
+            if xAnimationSound then
+                xAnimationSound:PlaySoundByCueId(sfxCueId)
+            else
+                -- 兼容播放，如果是角色模型还跑到这要查问题了
+                -- 目前辅助机还是只能走这，因为策划没给辅助机模型配XAnimationSound，只能兼容播放
+                local cueInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, sfxCueId)
+                cueInfo.UpdateCb = function()
+                    local curModel = self:GetCurRoleModel()
+                    if not curModel or XTool.UObjIsNil(curModel.gameObject) or not curModel.gameObject.activeSelf then
+                        XLuaAudioManager.StopAudioByCueId(sfxCueId)
+                        cueInfo.UpdateCb = nil
+                    end
                 end
             end
         end
@@ -3218,7 +3230,11 @@ function XUiPanelRoleModel:GetSkinMeshFace()
     if not XTool.UObjIsNil(self._MySkinMeshFace) then
         return self._MySkinMeshFace
     end
-    local skinMeshFaceList = self.GameObject:GetComponentsInChildren(typeof(CS.UnityEngine.SkinnedMeshRenderer), true)
+    local transform = self:GetTransform()
+    if not transform then
+        return
+    end
+    local skinMeshFaceList = transform.gameObject:GetComponentsInChildren(typeof(CS.UnityEngine.SkinnedMeshRenderer), true)
     if not skinMeshFaceList then
         return
     end
@@ -3234,38 +3250,36 @@ function XUiPanelRoleModel:GetSkinMeshFace()
     return targetSkinMeshFace
 end
 
+function XUiPanelRoleModel:GetXAnimationSound()
+    -- 如果已经获取过组件，直接返回缓存的结果
+    if not XTool.UObjIsNil(self._MyXAnimationSound) then
+        return self._MyXAnimationSound
+    end
+    
+    -- 获取所有子物体中的XAnimationSound组件
+    local transform = self:GetTransform()
+    if not transform then
+        return
+    end
+    local animationSound = transform:GetComponent(typeof(CS.XAnimationSound))
+    
+    -- 缓存结果并返回
+    self._MyXAnimationSound = animationSound
+    return animationSound
+end
+
 -- 手动重置特效，修复播放其他动作后，loop特效周期与特效不一致的问题
 function XUiPanelRoleModel:ReplayUiLoopEffect()
     if self.RoleModelPool then
         local model = self.RoleModelPool[self.CurRoleName]
         if model then
             if model.UiEffect then
-                local isActive = false
-                for i = 1, #model.UiEffect do
-                    local effect = model.UiEffect[i]
-                    if effect.gameObject.activeSelf then
-                        isActive = true
-                        break
-                    end
-                end
-                if isActive then
-                    self:SetCurrentUiEffectActive(model.UiEffect, false)
-                    self:SetCurrentUiEffectActive(model.UiEffect, true)
-                end
+                self:SetCurrentUiEffectActive(model.UiEffect, false)
+                self:SetCurrentUiEffectActive(model.UiEffect, true)
             end
             if model.UiEquipEffect then
-                local isActive = false
-                for i = 1, #model.UiEquipEffect do
-                    local effect = model.UiEquipEffect[i]
-                    if effect.gameObject.activeSelf then
-                        isActive = true
-                        break
-                    end
-                end
-                if isActive then
-                    self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
-                    self:SetCurrentUiEffectActive(model.UiEquipEffect, true)
-                end
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, true)
             end
         end
     end
@@ -3274,10 +3288,32 @@ function XUiPanelRoleModel:ReplayUiLoopEffect()
         local effectList = self.EffectDic["Customize_ModelLoopEffect"]
         if effectList then
             for _, effect in pairs(effectList) do
+                -- 强制刷新
+                effect.gameObject:SetActiveEx(false)
+                effect.gameObject:SetActiveEx(true)
+            end
+        end
+    end
+end
+
+function XUiPanelRoleModel:StopUiLoopEffect()
+    if self.RoleModelPool then
+        local model = self.RoleModelPool[self.CurRoleName]
+        if model then
+            if model.UiEffect then
+                self:SetCurrentUiEffectActive(model.UiEffect, false)
+            end
+            if model.UiEquipEffect then
+                self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+            end
+        end
+    end
+    if self.EffectDic then
+        local effectList = self.EffectDic["Customize_ModelLoopEffect"]
+        if effectList then
+            for _, effect in pairs(effectList) do
                 if effect.gameObject.activeSelf then
-                    -- 强制刷新
                     effect.gameObject:SetActiveEx(false)
-                    effect.gameObject:SetActiveEx(true)
                 end
             end
         end

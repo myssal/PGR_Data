@@ -4,19 +4,20 @@ local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 ---@field Transform UnityEngine.Transform
 ---@field _Proxy XBigWorldBattleRoomProxy
 ---@field _Control XBigWorldControl
----@field _PanelRoleList XUiPanelBWRoleSheet
+---@field _PanelRoleList XUiPanelBWRoleSheet 快捷编队界面
 ---@field _PanelRoleInfo XUiPanelBWRoleInfo
 ---@field _PanelRoleVList XUiPanelBWRoleList
+---@field _DisplayController XUiModelDisplayController
 local XUiBigWorldRoleRoom = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldRoleRoom")
 
 local XUiModelDisplayController = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayController")
-
 
 local MaxTeamPos = 3
 
 local VirtualCamera = {
     Main = 1,
     Role = 2,
+    Enter = 3,
 }
 
 function XUiBigWorldRoleRoom:OnAwake()
@@ -37,7 +38,8 @@ end
 function XUiBigWorldRoleRoom:OnDisable()
     self._DefaultIndex = self._TabIndex
     self._TabIndex = nil
-    self:HideAllModel()
+    self:HideAll()
+    self:HideAllChangeRoleEffect()
 end
 
 function XUiBigWorldRoleRoom:OnDestroy()
@@ -48,6 +50,7 @@ function XUiBigWorldRoleRoom:OnDestroy()
 end
 
 function XUiBigWorldRoleRoom:InitUi()
+    -- 快捷编队界面
     self._PanelRoleList = require("XUi/XUiBigWorld/XRoleRoom/Panel/XUiPanelBWRoleSheet").New(self.PlayerInfoBaseNew, self)
     self._PanelRoleList:Close()
     self.FullscreenClose.gameObject:SetActiveEx(false)
@@ -84,34 +87,38 @@ end
 
 function XUiBigWorldRoleRoom:InitCharBtn()
     local uiModelRoot = self.UiModelGo.transform
-    self._DisplayControllers = {
-        XUiModelDisplayController.New(uiModelRoot:FindTransform("PanelRoleModel1"), true),
-        XUiModelDisplayController.New(uiModelRoot:FindTransform("PanelRoleModel2"), true),
-        XUiModelDisplayController.New(uiModelRoot:FindTransform("PanelRoleModel3"), true),
+    self._ParentList = {
+        uiModelRoot:FindTransform("PanelRoleModel1"),
+        uiModelRoot:FindTransform("PanelRoleModel2"),
+        uiModelRoot:FindTransform("PanelRoleModel3"),
     }
+    self._DisplayController = XUiModelDisplayController.New(uiModelRoot, true)
     
-    self._FxChangeRoles = {
-        uiModelRoot:Find("UiNearRoot/PanelRoleModel1/PanelEffectHuanren"),
-        uiModelRoot:Find("UiNearRoot/PanelRoleModel2/PanelEffectHuanren"),
-        uiModelRoot:Find("UiNearRoot/PanelRoleModel3/PanelEffectHuanren"),
-    }
-    
-    self._FxRoleAvailable = {
-        uiModelRoot:Find("UiNearRoot/PanelRoleEffect1"),
-        uiModelRoot:Find("UiNearRoot/PanelRoleEffect2"),
-        uiModelRoot:Find("UiNearRoot/PanelRoleEffect3"),
-    }
-    
+    uiModelRoot:Find("UiNearRoot/PanelRoleEffect1").gameObject:SetActiveEx(true)
+    uiModelRoot:Find("UiNearRoot/PanelRoleEffect2").gameObject:SetActiveEx(true)
+    uiModelRoot:Find("UiNearRoot/PanelRoleEffect3").gameObject:SetActiveEx(true)
+
     self._FxRoleBg = {
         uiModelRoot:Find("UiNearRoot/PanelBgEffect1"),
         uiModelRoot:Find("UiNearRoot/PanelBgEffect2"),
         uiModelRoot:Find("UiNearRoot/PanelBgEffect3"),
     }
+    
+    ---@type XMaterialAnimation3StepRendererMuteBinder[]
+    self._FxRoleDisappear = {
+        uiModelRoot:Find("UiNearRoot/PanelEffectDisappear1/FxUiBigWorldRoleRoom3DXianYin"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+        uiModelRoot:Find("UiNearRoot/PanelEffectDisappear2/FxUiBigWorldRoleRoom3DXianYin"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+        uiModelRoot:Find("UiNearRoot/PanelEffectDisappear3/FxUiBigWorldRoleRoom3DXianYin"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+    }
+    for _, binder in pairs(self._FxRoleDisappear) do
+        binder.gameObject:SetActiveEx(false)
+    end
 
     local vRoot = uiModelRoot:FindTransform("VirtualCameraRoot")
     self._VirtualCameraDict = {
         [VirtualCamera.Main] = vRoot.transform:Find("VCameraMain"),
         [VirtualCamera.Role] = vRoot.transform:Find("VCameraRole"),
+        [VirtualCamera.Enter] = vRoot.transform:Find("VCameraEnter"),
     }
 
     self._NearCamera = uiModelRoot:FindTransform("UiNearCamera")
@@ -126,7 +133,7 @@ function XUiBigWorldRoleRoom:InitCharBtn()
         end
         self._RoleCameraPoints[index] = {
             Point = t.transform.localPosition,
-            Rotation =  t.transform.localRotation
+            Rotation = t.transform.localRotation
         }
         index = index + 1
     end
@@ -138,81 +145,103 @@ function XUiBigWorldRoleRoom:InitCharBtn()
     self:RegisterClickEvent(self.BtnChar1, self.OnBtnChar1Clicked)
     self:RegisterClickEvent(self.BtnChar2, self.OnBtnChar2Clicked)
     self:RegisterClickEvent(self.BtnChar3, self.OnBtnChar3Clicked)
-
-    self:UpdateCamera(VirtualCamera.Main)
 end
 
 function XUiBigWorldRoleRoom:InitCb()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 
-    self.BtnEnterFight.CallBack = function()
-        self:OnBtnEnterFight()
-    end
+    self.BtnEnterFight:AddEventListener(handler(self, self.OnBtnEnterFight))
 
-    self.BtnBuffDetailClose.CallBack = function()
-        self:OnBtnDetailClicked()
-    end
+    self.BtnBuffDetailClose:AddEventListener(handler(self, self.OnBtnDetailClicked))
 
-    self.BtnQuick.CallBack = function()
-        self:OnBtnQuickClick()
-    end
-    
+    self.BtnQuick:AddEventListener(handler(self, self.OnBtnQuickClick))
+
     self:RegisterClickEvent(self.FullscreenClose, self.OnBtnDetailClicked)
 end
 
 function XUiBigWorldRoleRoom:InitView()
-    self.BtnGroup:SelectIndex(self._DefaultIndex)
+    local start = self.UiModelGo.transform:Find("Animation/Start")
+    if start then
+        start:PlayTimelineAnimation(function()
+            self.BtnGroup:SelectIndex(self._DefaultIndex)
+        end)
+    end
 end
 
 function XUiBigWorldRoleRoom:UpdateView()
     for i = 1, MaxTeamPos do
         self:UpdateSingleModel(i, self._Team:GetEntityId(i))
+        self:DisableLookAtIK(i)
     end
     self:UpdateCurrentTeam()
 end
 
-function XUiBigWorldRoleRoom:HideAllModel()
-    for _, display in pairs(self._DisplayControllers) do
-        display:HideAllModel()
+function XUiBigWorldRoleRoom:HideAll()
+    self._DisplayController:HideAllModel()
+end
+
+function XUiBigWorldRoleRoom:HideAllChangeRoleEffect()
+    if not self._FxRoleChange then
+        return
     end
+    for _, effect in pairs(self._FxRoleChange) do
+        effect.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiBigWorldRoleRoom:HideModel(index)
+    local entityId = self._EntityIds[index]
+    if not entityId or entityId <= 0 then
+        return
+    end
+    local modelId = self._Proxy:GetUiModelId(entityId)
+    self._DisplayController:SetModelActive(modelId, false)
 end
 
 function XUiBigWorldRoleRoom:UpdateSingleModel(index, entityId)
     local isValid = XTool.IsNumberValid(entityId)
     self["ImgAdd" .. index].gameObject:SetActiveEx(not isValid)
     self["PanelName" .. index].gameObject:SetActiveEx(isValid)
-    local display = self._DisplayControllers[index]
+    local display = self._DisplayController
     local oldId = self._EntityIds[index]
-    local oldModelId
-    if oldId and oldId > 0 then
-        oldModelId = self._Proxy:GetUiModelId(oldId)
-    end
-
-    if oldModelId then
-        display:SetModelActive(oldModelId, false)
-    end
-    self._FxRoleAvailable[index].gameObject:SetActiveEx(isValid)
+    local isPlayEffect = oldId ~= entityId and isValid
+    local modelGo
     if isValid then
         self["TxtRank" .. index].text = string.format("%02d", index)
         self["TxtName" .. index].text = XMVCA.XBigWorldCharacter:GetCharacterLogName(entityId)
         self["UiBigWorldPanelStory" .. index].gameObject:SetActiveEx(XMVCA.XBigWorldCharacter:CheckCharacterTrial(entityId))
         local modelId = self._Proxy:GetUiModelId(entityId)
-        local modelUrl = self._Proxy:GetModelUrl(entityId)
-        local controllerUrl = self._Proxy:GetModelController(entityId)
-        local helper = display:GetDisplayHelper()
-        local modelInfo = helper.CreateBWModelDisplayInfo(modelId, modelUrl, controllerUrl, self._NearCamera)
+        local fashionId = self._Proxy:GetFashionId(entityId)
 
         if self._Proxy:IsCommandant(entityId) then
-            XMVCA.XBigWorldCommanderDIY:LoadCurrentModel(display, self._NearCamera)
+            XMVCA.XBigWorldCommanderDIY:LoadCurrentModel(display, self._NearCamera, self._ParentList[index])
+            modelGo = display:GetModelObject(modelId, XEnumConst.PlayerFashion.PartType.Fashion)
         else
-            display:AddOrUpdateModel(modelInfo)
+            local modelUrl = self._Proxy:GetModelUrl(entityId)
+            local controllerUrl = self._Proxy:GetModelController(entityId)
+            local helper = display:GetDisplayHelper()
+            local modelInfo = helper.CreateBWModelDisplayInfo(modelId, modelUrl, controllerUrl, self._NearCamera,
+                    self._ParentList[index], 0)
+
+            helper.AddEffectInfos(modelInfo, fashionId)
+
+            display:AddOrSetParentModel(modelInfo)
+            modelGo = display:GetModelObject(modelId, 0)
+            self:SetShowOrDisappear(index)
         end
         local animaName = self._Proxy:GetDefaultAnimName(entityId)
         display:PlayAnimation(modelId, animaName)
     end
+    if modelGo and isPlayEffect then
+        --比较无语的解法
+        --由于渐显特效生效是跟加载出来不在同一帧，为了避免闪，先将模型移到比较远的地方
+        --生效时再挪回来
+        modelGo.transform:SetLocalPosition(500, 500, 500)
+    end
     self._EntityIds[index] = entityId
+    self:SetShowOrDisappear(index, modelGo)
+    self:PlayChangeRoleEffect(index, isPlayEffect, modelGo)
+    
 end
 
 function XUiBigWorldRoleRoom:UpdateCurrentTeam()
@@ -231,6 +260,14 @@ function XUiBigWorldRoleRoom:UpdateCurrentTeam()
     self.BtnEnterFight:SetDisable(isCurrent, not isCurrent)
 end
 
+function XUiBigWorldRoleRoom:SetShowOrDisappear(index, model)
+    if not model then
+        -- 必须要有值才会更新
+        model = self._NearCamera.gameObject
+    end
+    self._FxRoleDisappear[index].TargetModel = model
+end
+
 function XUiBigWorldRoleRoom:OnSelectTab(tabIndex)
     if self._TabIndex == tabIndex then
         return
@@ -239,27 +276,35 @@ function XUiBigWorldRoleRoom:OnSelectTab(tabIndex)
     self._TabIndex = tabIndex
     self._TeamId = XMVCA.XBigWorldCharacter:GetCommonTeamId(tabIndex)
     self._Team = XMVCA.XBigWorldCharacter:GetDlcTeam(self._TeamId)
+    self:HideAll()
     self:UpdateView()
 end
 
 function XUiBigWorldRoleRoom:OnBtnDetailClicked()
+    self.BtnBuffDetailClose.gameObject:SetActiveEx(false)
+    self.PanelUnder.gameObject:SetActiveEx(true)
     if self._PanelRoleList and self._PanelRoleList:IsNodeShow() then
-     --直接关闭界面时，恢复原队伍数据
+        self:HideAll()
+        --直接关闭界面时，恢复原队伍数据
         self._Team:Restore()
         self._PanelRoleList:Close()
         self.FullscreenClose.gameObject:SetActiveEx(false)
+        self:UpdateView()
     end
-
+    
     if self._PanelRoleVList and self._PanelRoleVList:IsNodeShow() then
         self:UpdateCamera(VirtualCamera.Main)
+        local pos, entityId = self._PanelRoleVList:GetPosAndEntityId()
+        if entityId ~= self._EntityIds[pos] then
+            self:HideModel(pos)
+        end
         self._PanelRoleVList:Close()
-        self:SetFxRoleBgShow(-1)
         self._PanelRoleInfo:Close()
         self.PanelRoom.gameObject:SetActiveEx(true)
+        self:UpdateView()
+        self:UpdateRoleActive(0)
+        self:SetFxRoleBgShow(-1)
     end
-    self.BtnBuffDetailClose.gameObject:SetActiveEx(false)
-    self.PanelUnder.gameObject:SetActiveEx(true)
-    self:UpdateView()
 end
 
 function XUiBigWorldRoleRoom:OnBtnChar1Clicked()
@@ -293,6 +338,7 @@ function XUiBigWorldRoleRoom:OnClickRole(index)
     self._PanelRoleVList:RefreshView(self._TeamId, self._EntityIds[index], index)
     self.BtnBuffDetailClose.gameObject:SetActiveEx(true)
     self:UpdateCamera(VirtualCamera.Role)
+    self:UpdateRoleActive(index)
 end
 
 function XUiBigWorldRoleRoom:OnBtnChar1LongClicked(time)
@@ -363,8 +409,10 @@ function XUiBigWorldRoleRoom:OnBtnCharLongPressUp(index)
     --不同步给服务器
     --self:UpdateView()
     --同步给服务器
+    local team = self._Team
     XMVCA.XBigWorldCharacter:RequestUpdateTeam(self._TeamId, function()
-        self:UpdateView()
+        self:UpdateSingleModel(index, team:GetEntityId(index))
+        self:UpdateSingleModel(switchPos, team:GetEntityId(switchPos))
     end)
 end
 
@@ -372,16 +420,28 @@ function XUiBigWorldRoleRoom:GetClickPosition()
     return XUiHelper.GetScreenClickPosition(self.Transform, self._Camera)
 end
 
-function XUiBigWorldRoleRoom:OnSelectSingle(index, entityId)
+function XUiBigWorldRoleRoom:OnSelectSingle(index, entityId, lerpTime)
+    self:HideModel(index)
+    local lastIndex = self:GetEntityIndex(entityId)
+    if lastIndex > 0 and lastIndex ~= index then
+        --先显示上一个
+        self._FxRoleDisappear[lastIndex].gameObject:SetActiveEx(true)
+        --置空上一个
+        self:SetShowOrDisappear(lastIndex)
+        --再显示这个一个
+        self._FxRoleDisappear[index].gameObject:SetActiveEx(true)
+        --隐藏上一个，避免切换角色时不显示
+        self._FxRoleDisappear[lastIndex].gameObject:SetActiveEx(false)
+        self._FxRoleDisappear[index].gameObject:SetActiveEx(false)
+    end
     self:UpdateSingleModel(index, entityId)
     if entityId and entityId > 0 then
         self._PanelRoleInfo:RefreshView(self._TeamId, entityId, index)
     end
-    self:PlayChangeRoleEffect(index)
+    self:SetLookAtIK(index, lerpTime)
 end
 
 function XUiBigWorldRoleRoom:OnBtnQuickClick()
-    --self.BtnBuffDetailClose.gameObject:SetActiveEx(true)
     self.PanelUnder.gameObject:SetActiveEx(false)
     self._PanelRoleList:Open()
     self._PanelRoleList:RefreshView(self._TeamId)
@@ -420,13 +480,46 @@ function XUiBigWorldRoleRoom:UpdateCamera(state)
     end
 end
 
-function XUiBigWorldRoleRoom:PlayChangeRoleEffect(index)
-    local effect= self._FxChangeRoles[index]
+function XUiBigWorldRoleRoom:UpdateRoleActive(index)
+    if index <= 0 then
+        for i, parent in pairs(self._FxRoleDisappear) do
+            parent.gameObject:SetActiveEx(false)
+        end
+    else
+        for i, parent in pairs(self._FxRoleDisappear) do
+            parent.gameObject:SetActiveEx(i ~= index)
+        end
+    end
+end
+
+function XUiBigWorldRoleRoom:PlayChangeRoleEffect(index, isPlay, modelGo)
+    if not self._FxRoleChange then
+        self._FxRoleChange = {}
+        local uiModelRoot = self.UiModelGo.transform
+        self._FxRoleChange = {
+            uiModelRoot:Find("UiNearRoot/PanelEffectHuanren1/FxUiBigWorldRoleRoom3DHuanrenMA(Clone)"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+            uiModelRoot:Find("UiNearRoot/PanelEffectHuanren2/FxUiBigWorldRoleRoom3DHuanrenMA(Clone)"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+            uiModelRoot:Find("UiNearRoot/PanelEffectHuanren3/FxUiBigWorldRoleRoom3DHuanrenMA(Clone)"):GetComponent(typeof(CS.XMaterialAnimation3StepRendererMuteBinder)),
+        }
+    end
+    modelGo = modelGo or self._NearCamera.gameObject
+    self._FxRoleChange[index].TargetModel = modelGo
+    local effect = self._FxRoleChange[index]
     if not effect then
         return
     end
-    effect.gameObject:SetActiveEx(false)
-    effect.gameObject:SetActiveEx(true)
+    if isPlay then
+        effect.gameObject:SetActiveEx(false)
+        XMVCA.XBigWorldUI:SetMaskActive(true)
+        XScheduleManager.ScheduleOnce(function()
+            XMVCA.XBigWorldUI:SetMaskActive(false)
+            effect.gameObject:SetActiveEx(true)
+            modelGo.transform:SetLocalPosition(0, 0, 0)
+        end, 10)
+        
+    else
+        effect.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiBigWorldRoleRoom:PlayEnableAnimation(finCb)
@@ -441,4 +534,51 @@ function XUiBigWorldRoleRoom:SetFxRoleBgShow(index)
     for i = 1, #self._FxRoleBg do
         self._FxRoleBg[i].gameObject:SetActiveEx(i == index)
     end
+end
+
+function XUiBigWorldRoleRoom:SetLookAtIK(index, lerpTime)
+    local controller = self._DisplayController
+    if not controller then
+        return
+    end
+    local entityId = self._EntityIds[index]
+    if not entityId or entityId <= 0 then
+        return
+    end
+    if self._Proxy:IsCommandant(entityId) then
+        XMVCA.XBigWorldCommanderDIY:SetLookAtIK(controller, self._NearCamera.transform, lerpTime)
+
+    else
+        local id = self._Proxy:GetUiModelId(entityId)
+        local componentId = 0
+        controller:SetLookAtIKWithInfo(id, componentId, self._NearCamera.transform, lerpTime)
+    end
+end
+
+function XUiBigWorldRoleRoom:DisableLookAtIK(index)
+    local controller = self._DisplayController
+    if not controller then
+        return
+    end
+    local entityId = self._EntityIds[index]
+    if not entityId or entityId <= 0 then
+        return
+    end
+
+    if self._Proxy:IsCommandant(entityId) then
+        XMVCA.XBigWorldCommanderDIY:DisableLookAtIK(controller)
+    else
+        local id = self._Proxy:GetUiModelId(entityId)
+        local componentId = 0
+        controller:DisableLookAtIK(id, componentId)
+    end
+end
+
+function XUiBigWorldRoleRoom:GetEntityIndex(entityId)
+    for i, id in pairs(self._EntityIds) do
+        if id == entityId then
+            return i
+        end
+    end
+    return -1
 end

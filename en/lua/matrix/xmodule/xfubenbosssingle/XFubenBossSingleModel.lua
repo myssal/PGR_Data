@@ -156,7 +156,9 @@ function XFubenBossSingleModel:GetBossSectionConfigIdBySectionId(sectionId)
     local sectionMap = self:GetBossSectionConfigMap()
     local afreshId = self:GetBossSingleData():GetBossSingleAfreshId()
 
-    return sectionMap[sectionId][afreshId]
+    if sectionMap[sectionId] then
+        return sectionMap[sectionId][afreshId]
+    end
 end
 
 function XFubenBossSingleModel:GetAutoFightCount()
@@ -393,6 +395,39 @@ end
 
 function XFubenBossSingleModel:SetIsUseSelectIndex(value)
     self._IsUseSelectIndex = value
+end
+
+function XFubenBossSingleModel:IsResetOpen()
+    return self._BossSingle:IsResetOpen()
+end
+
+function XFubenBossSingleModel:GetHistoryBestRecord()
+    return self._BossSingle:GetHistoryBestRecord()
+end
+
+function XFubenBossSingleModel:GetRecordCurrent()
+    return self._BossSingle:GetRecordCurrent()
+end
+
+function XFubenBossSingleModel:GetRecordCurrentByStageId(stageId)
+    local records = self._BossSingle:GetRecordCurrent()
+    for _, record in pairs(records) do
+        if record.StageId == stageId then
+            return record
+        end
+    end
+end
+
+function XFubenBossSingleModel:GetTotalScoreBestRecord()
+    return self._BossSingle:GetTotalScoreBestRecord()
+end
+
+function XFubenBossSingleModel:SetTimeStampResetCooldown(value)
+    self._SaveUtil:SaveData("TimeStampResetCooldown", value)
+end
+
+function XFubenBossSingleModel:GetTimeStampResetCooldown()
+    return self._SaveUtil:GetData("TimeStampResetCooldown")
 end
 
 return XFubenBossSingleModel

@@ -1,6 +1,6 @@
 local XMovieActionModelMove = XClass(XMovieActionBase,"XMovieActionModelMove")
 
-function XMovieActionModelMove:Ctor(actionData)
+function XMovieActionModelMove:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.RoleId = params[1]

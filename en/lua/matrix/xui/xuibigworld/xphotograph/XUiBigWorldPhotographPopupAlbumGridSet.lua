@@ -4,7 +4,7 @@ local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local XUiBigWorldPhotographPopupAlbumGridSet = XClass(XUiNode, "XUiBigWorldPhotographPopupAlbumGridSet")
 
 function XUiBigWorldPhotographPopupAlbumGridSet:Ctor()
-    self.BtnCheckBox.CallBack = function() self:OnBtnCheckBoxClick() end
+    self.BtnCheckBox:AddEventListener(handler(self, self.OnBtnCheckBoxClick))
 end
 
 function XUiBigWorldPhotographPopupAlbumGridSet:OnBtnCheckBoxClick()

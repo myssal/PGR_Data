@@ -7,21 +7,24 @@ local XUiGridTheatre5ShopContainer = require('XUi/XUiTheatre5/XUiTheatre5BattleS
 
 local BagLimit = nil
 
-function XUiPanelTheatre5Bag:OnStart()
+function XUiPanelTheatre5Bag:OnStart(containerType)
     if BagLimit == nil or XMain.IsEditorDebug then
         BagLimit = self._Control.ShopControl:GetBagSizeLimit()
     end
     
+    self._ContainerType = containerType
     self:InitBagContainers()
     self:RefreshBagShow()
 end
 
 function XUiPanelTheatre5Bag:OnEnable()
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
 end
 
 function XUiPanelTheatre5Bag:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_BAG_SHOW, self.RefreshBagShow, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE5_UPDATE_BAG, self.RefreshBagShow, self)
 end
 
 function XUiPanelTheatre5Bag:InitBagContainers()
@@ -50,6 +53,9 @@ end
 function XUiPanelTheatre5Bag:RefreshBagShow()
     for i, v in ipairs(self.GridContainers) do
         v:SetItemData(self._Control.ShopControl:GetItemInBagByIndex(i))
+        if self._ContainerType then
+            v:SetContainerType(self._ContainerType)
+        end
     end
 end
 

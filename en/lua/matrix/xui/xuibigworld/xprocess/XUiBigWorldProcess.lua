@@ -25,6 +25,8 @@ function XUiBigWorldProcess:OnAwake()
     self._VersionValidCache = {}
 
     self._Timer = false
+    self._SequentialId = 0
+    self._TargetContentId = 0
 
     self._TabMap = {}
     self._TabCache = {}
@@ -39,12 +41,15 @@ function XUiBigWorldProcess:OnAwake()
     self:_RegisterButtonClicks()
 end
 
-function XUiBigWorldProcess:OnStart()
+function XUiBigWorldProcess:OnStart(id, contentId)
+    self._SequentialId = id or 0
+    self._TargetContentId = contentId or 0
+
     self:_InitUi()
 end
 
 function XUiBigWorldProcess:OnEnable()
-    self:_RefreshTab()
+    self:_RefreshTargetTab()
     self:_RefreshVersion()
     self:_RefreshRedPoint()
     self:_RegisterListeners()
@@ -59,6 +64,10 @@ end
 
 function XUiBigWorldProcess:OnDestroy()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_HUD_RED_POINT_REFRESH)
+
+    if XTool.IsNumberValid(self._SequentialId) then
+        XMVCA.XBigWorldCommon:FinishSequentialJob(self._SequentialId)
+    end
 end
 
 function XUiBigWorldProcess:OnTopTabGroupClick(index)
@@ -99,16 +108,36 @@ function XUiBigWorldProcess:OnRefreshRedPoint()
     self:_RefreshRedPoint()
 end
 
+function XUiBigWorldProcess:OnChangePage(contentId)
+    local versionEntity = self:_GetCurrentVersion()
+
+    if versionEntity then
+        local index = 1
+        local contentEntitys = versionEntity:GetContentEntitys()
+
+        for i, contentEntity in pairs(contentEntitys) do
+            if contentEntity:GetContentId() == contentId then
+                index = i
+            end
+        end
+
+        if XTool.IsNumberValid(index) then
+            self.TopTabGroup:SelectIndex(index)
+        end
+    end
+end
+
 function XUiBigWorldProcess:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnSwitch.CallBack = Handler(self, self.OnBtnSwitchClick)
-    self.BtnClose.CallBack = Handler(self, self.OnBtnCloseClick)
+    self.BtnSwitch:AddEventListener(handler(self, self.OnBtnSwitchClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiBigWorldProcess:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_RED_POINT_REFRESH,
         self.OnRefreshRedPoint, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_PAGE, self.OnChangePage, self)
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefreshRedPoint, self)
 end
 
@@ -116,6 +145,8 @@ function XUiBigWorldProcess:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_RED_POINT_REFRESH,
         self.OnRefreshRedPoint, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_PAGE, self.OnChangePage,
+        self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefreshRedPoint, self)
 end
 
@@ -159,6 +190,30 @@ function XUiBigWorldProcess:_InitUi()
     self.BtnTab.gameObject:SetActive(false)
 end
 
+function XUiBigWorldProcess:_RefreshTargetTab()
+    if not XTool.IsNumberValid(self._TargetContentId) then
+        local versionEntity = self:_GetCurrentVersion()
+        
+        if versionEntity then
+            local index = 1
+            local contentEntitys = versionEntity:GetContentEntitys()
+            
+            for i, contentEntity in pairs(contentEntitys) do
+                if contentEntity:GetContentId() == self._TargetContentId then
+                    index = i
+                    break
+                end
+            end
+
+            self:_RefreshTab(index)
+        end
+
+        return
+    end
+
+    self:_RefreshTab()
+end
+
 function XUiBigWorldProcess:_RefreshTab(currentSelectIndex)
     local versionEntity = self:_GetCurrentVersion()
     self._TabMap = {}
@@ -193,12 +248,16 @@ function XUiBigWorldProcess:_RefreshTab(currentSelectIndex)
         end
 
         if not XTool.IsNumberValid(selectIndex) then
-            selectIndex = currentSelectIndex or 1
+            if XTool.IsNumberValid(currentSelectIndex) then
+                selectIndex = currentSelectIndex
+            else
+                selectIndex = 1
+            end
 
             if selectIndex > #tabList then
                 selectIndex = 1
             end
-       end
+        end
 
         self.TopTabGroup:Init(tabList, Handler(self, self.OnTopTabGroupClick))
         self.TopTabGroup:SelectIndex(selectIndex)

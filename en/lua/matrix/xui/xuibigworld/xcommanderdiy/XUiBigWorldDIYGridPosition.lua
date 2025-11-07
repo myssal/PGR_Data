@@ -35,7 +35,6 @@ function XUiBigWorldDIYGridPosition:OnDisable()
 end
 
 function XUiBigWorldDIYGridPosition:OnDestroy()
-
 end
 -- endregion
 
@@ -47,29 +46,13 @@ function XUiBigWorldDIYGridPosition:Refresh(entity, index)
 
     self._Entity = entity
     self._Index = index
-    self.TxtName.text = entity:GetName()
-    if not entity:IsTemporary() then
-        self.ImgPosition:SetSprite(entity:GetIcon())
-    end
-    self:SetSelect(entity:IsAttired(), true)
-    self:_RefreshEmpty(entity:IsTemporary())
-    self:_RefreshPanelNow(entity:IsNow())
-    self:_RefreshSuit(entity:IsSuit())
-    self:_RefreshExclusive(entity:IsIncompatible())
+    self:_Refresh(entity, self.Parent:IsPlayAnimationsOneByOne())
 end
 
 function XUiBigWorldDIYGridPosition:RefreshCurrent()
     local entity = self._Entity
 
-    self.TxtName.text = entity:GetName()
-    if not entity:IsTemporary() then
-        self.ImgPosition:SetSprite(entity:GetIcon())
-    end
-    self:SetSelect(entity:IsAttired(), false)
-    self:_RefreshEmpty(entity:IsTemporary())
-    self:_RefreshPanelNow(entity:IsNow())
-    self:_RefreshSuit(entity:IsSuit())
-    self:_RefreshExclusive(entity:IsIncompatible())
+    self:_Refresh(entity, false)
 end
 
 function XUiBigWorldDIYGridPosition:SetSelect(isSelect, isPlayEnable)
@@ -91,7 +74,9 @@ function XUiBigWorldDIYGridPosition:PlayEnableAnimation(index)
     self:StopAnimationTimer()
     self.CanvasGroup.alpha = 0
     self._AnimationTimer = XScheduleManager.ScheduleOnce(function()
-        self.GridEnable:PlayTimelineAnimation()
+        if self:IsNodeShow() then
+            self.GridEnable:PlayTimelineAnimation()
+        end
         self:StopAnimationTimer()
     end, 80 * index)
 end
@@ -120,6 +105,10 @@ function XUiBigWorldDIYGridPosition:OnBtnClickClick()
         self.Parent:ChangeSelect(self._Index)
         self:SetSelect(true, false)
     end
+    self._Entity:Record()
+    self:_RefreshRedDot(false)
+    self.Parent:RefreshTabRedDot(self._Entity:GetTypeId())
+    self.Parent:OpenPreview(self._Entity)
 end
 
 -- endregion
@@ -149,6 +138,37 @@ function XUiBigWorldDIYGridPosition:_RefreshExclusive(isExclusive)
     if self.PanelExclusive then
         self.PanelExclusive.gameObject:SetActiveEx(isExclusive)
     end
+end
+
+function XUiBigWorldDIYGridPosition:_RefreshPreview(isPreview)
+    if self.PanelPreview then
+        self.PanelPreview.gameObject:SetActiveEx(isPreview)
+    end
+end
+
+function XUiBigWorldDIYGridPosition:_RefreshRedDot(isShow)
+    if self.Red then
+        self.Red.gameObject:SetActiveEx(isShow)
+    end
+end
+
+---@param entity XBWCommanderDIYPartEntity
+function XUiBigWorldDIYGridPosition:_Refresh(entity, isPlayEnable)
+    if not entity then
+        return
+    end
+
+    self.TxtName.text = entity:GetName()
+    if not entity:IsTemporary() then
+        self.ImgPosition:SetSprite(entity:GetIcon())
+    end
+    self:SetSelect(entity:IsAttired(), isPlayEnable)
+    self:_RefreshEmpty(entity:IsTemporary())
+    self:_RefreshPanelNow(entity:IsNow())
+    self:_RefreshSuit(entity:IsSuit())
+    self:_RefreshExclusive(entity:IsIncompatible())
+    self:_RefreshPreview(entity:IsPreview() and not entity:IsUnlock())
+    self:_RefreshRedDot(entity:IsNew())
 end
 
 function XUiBigWorldDIYGridPosition:_RegisterSchedules()

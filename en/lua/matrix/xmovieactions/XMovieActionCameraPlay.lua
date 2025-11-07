@@ -1,6 +1,6 @@
 local XMovieActionCameraPlay = XClass(XMovieActionBase, "XMovieActionCameraPlay")
 
-function XMovieActionCameraPlay:Ctor(actionData)
+function XMovieActionCameraPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.CameraName = params[1]

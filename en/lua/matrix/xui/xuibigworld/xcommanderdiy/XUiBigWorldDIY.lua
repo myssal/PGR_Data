@@ -2,6 +2,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 local XUiBigWorldDIYModelHelper = require("XUi/XUiBigWorld/XCommanderDIY/XUiBigWorldDIYModelHelper")
 local XUiBigWorldDIYGridPosition = require("XUi/XUiBigWorld/XCommanderDIY/XUiBigWorldDIYGridPosition")
 local XUiBigWorldDIYGridColour = require("XUi/XUiBigWorld/XCommanderDIY/XUiBigWorldDIYGridColour")
+local XUiBigWorldDIYPreview = require("XUi/XUiBigWorld/XCommanderDIY/XUiBigWorldDIYPreview")
 
 ---@class XUiBigWorldDIY : XBigWorldUi
 ---@field BtnBack XUiComponent.XUiButton
@@ -24,9 +25,11 @@ local XUiBigWorldDIYGridColour = require("XUi/XUiBigWorld/XCommanderDIY/XUiBigWo
 ---@field BtnSelectMan XUiComponent.XUiButton
 ---@field BtnSelectWoman XUiComponent.XUiButton
 ---@field PanelComponent UnityEngine.RectTransform
+---@field PanelPreviewPopup UnityEngine.RectTransform
 ---@field BtnChange XUiComponent.XUiButton
 ---@field BtnLensIn XUiComponent.XUiButton
 ---@field BtnLensOut XUiComponent.XUiButton
+---@field BtnPreviewClose XUiComponent.XUiButton
 ---@field SliderCharacter UnityEngine.UI.Slider
 ---@field PanelDrag XDrag
 ---@field _Control XBigWorldCommanderDIYControl
@@ -37,13 +40,16 @@ local XUiBigWorldDIY = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldDIY")
 function XUiBigWorldDIY:OnAwake()
     local itemSize = self.GridPosition.rect
     local parentSize = self.GridPosition.parent.parent.rect
-    self.ColCount = math.floor(parentSize.width / itemSize.width)
-    self.RowCount = math.ceil(parentSize.height / itemSize.height)
+
+    local spaceX = 40
+    local spaceY = 70
+    self.ColCount = math.floor(parentSize.width / (itemSize.width + spaceX))
+    self.RowCount = math.ceil(parentSize.height / (itemSize.height + spaceY))
     self.MaxCount = self.ColCount * self.RowCount
 
     ---@type XBWCommanderDIYTypeEntity[]
     self._TypeEntitys = self._Control:GetTypeEntitys()
-    self._TabGroupList = {self.BtnFashion, self.BtnHeadPortrait, self.BtnEyes, self.BtnHand}
+    self._TabGroupList = { self.BtnFashion, self.BtnHeadPortrait, self.BtnEyes, self.BtnHand }
 
     ---@type XDynamicTableNormal
     self._PartDynamicTable = XDynamicTableNormal.New(self.ListPosition)
@@ -63,7 +69,13 @@ function XUiBigWorldDIY:OnAwake()
     self._IsInit = false
     self._IsFrist = false
 
+    self._IsPlayPreviewEnable = false
+    self._IsPlayPreviewDisable = false
+
     self._CameraMoveRange = self._Control:GetCameraMoveRange()
+
+    ---@type XUiBigWorldDIYPreview
+    self._PreviewUi = XUiBigWorldDIYPreview.New(self.PanelPreviewPopup, self)
 
     self:_InitUi()
     self:_RegisterButtonClicks()
@@ -74,6 +86,7 @@ function XUiBigWorldDIY:OnStart()
     self.BtnMainUi.gameObject:SetActiveEx(false)
     self:_InitFirstPanel()
     self:_ShowPanel()
+    self:ClosePreview()
 end
 
 function XUiBigWorldDIY:OnEnable()
@@ -111,6 +124,7 @@ function XUiBigWorldDIY:ChangeSelectPart(index, isIncompatible)
         self:_ChangeSelectPart(index, self._CurrentSelectPartIndex, isIncompatible)
         self._CurrentSelectPartIndex = index
         self:_PlayCurrentEffect()
+        self:ClosePreview()
     end
 end
 
@@ -139,6 +153,40 @@ function XUiBigWorldDIY:ShowColor(entity, isPlayEnable)
     end
 end
 
+---@param entity XBWCommanderDIYPartEntity
+function XUiBigWorldDIY:OpenPreview(entity)
+    if entity and entity:IsPreview() and not entity:IsUnlock() then
+        self:_PlayPreviewEnable(function()
+            self._PreviewUi:Open()
+            self._PreviewUi:Refresh(entity)
+            self.BtnPreviewClose.gameObject:SetActiveEx(true)
+        end)
+    end
+end
+
+function XUiBigWorldDIY:ClosePreview()
+    self:_PlayPreviewDisable(function()
+        self._PreviewUi:Close()
+        self.BtnPreviewClose.gameObject:SetActiveEx(false)
+    end)
+end
+
+function XUiBigWorldDIY:RefreshTabRedDot(typeId)
+    if not XTool.IsTableEmpty(self._TypeEntitys) then
+        for i, entity in pairs(self._TypeEntitys) do
+            if entity:GetTypeId() == typeId then
+                local tab = self._TabGroupList[i]
+
+                if tab then
+                    tab:ShowReddot(entity:IsNew())
+                end
+
+                break
+            end
+        end
+    end
+end
+
 -- region 按钮事件
 
 function XUiBigWorldDIY:OnBtnBackClick()
@@ -152,7 +200,7 @@ function XUiBigWorldDIY:OnBtnBackClick()
             self:Close()
         end)
         confirmData:InitSureClick(nil, function()
-            self._Control:SaveFashionInfo(Handler(self, self.Close))
+            self._Control:TrySaveFashionInfo(Handler(self, self.Close))
         end)
         XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
     else
@@ -178,16 +226,23 @@ end
 
 function XUiBigWorldDIY:OnBtnSaveClick()
     if self._IsFrist then
-        local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+        self._Control:TryOpenPreviewSavePopup(function()
+            self:_TryOpenPerspectiveUi(function()
+                local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
 
-        confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYConfirmTips"))
-        confirmData:InitToggleActive(false)
-        confirmData:InitSureClick(nil, function()
-            self._Control:SaveFashionInfo(Handler(self, self.Close))
+                confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYConfirmTips"))
+                confirmData:InitToggleActive(false)
+                confirmData:InitSureClick(nil, function()
+                    self._Control:SaveFashionInfo(Handler(self, self.Close))
+                end)
+                XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
+            end)
         end)
-        XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
     else
-        self._Control:SaveFashionInfo(Handler(self, self._RefreshTabGroup))
+        self._Control:TrySaveFashionInfo(function()
+            self:_ReloadCurrentModel()
+            self:_RefreshTabGroup()
+        end)
     end
 end
 
@@ -225,6 +280,10 @@ function XUiBigWorldDIY:OnBtnLensOutClick()
     self:_ChangeBodyCamera(true)
 end
 
+function XUiBigWorldDIY:OnBtnPreviewCloseClick()
+    self:ClosePreview()
+end
+
 function XUiBigWorldDIY:OnSliderCharacterChange(value)
     local offset = value * self._CameraMoveRange
 
@@ -234,6 +293,7 @@ end
 function XUiBigWorldDIY:OnTabGroupClick(index)
     self:_RefreshPartList(index)
     self:_ChangeTypeCamera(index)
+    self:_RefreshTabRedDots()
 end
 
 ---@param grid XUiBigWorldDIYGridPosition
@@ -251,6 +311,10 @@ function XUiBigWorldDIY:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiBigWorldDIY:PlayEnableAnimation()
+    if not self:IsPlayAnimationsOneByOne() then
+        return
+    end
+    self._LastPlayIndex = self._CurrentSelectTypeIndex
     local allUseGird = self._PartDynamicTable:GetGrids()
     for index, grid in pairs(allUseGird) do
         if index <= self.MaxCount then
@@ -261,6 +325,10 @@ function XUiBigWorldDIY:PlayEnableAnimation()
             grid:PlayEnableAnimation(1)
         end
     end
+end
+
+function XUiBigWorldDIY:IsPlayAnimationsOneByOne()
+    return self._CurrentSelectTypeIndex ~= self._LastPlayIndex
 end
 
 -- endregion
@@ -277,6 +345,7 @@ function XUiBigWorldDIY:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnChange, self.OnBtnChangeClick, true)
     self:RegisterClickEvent(self.BtnLensIn, self.OnBtnLensInClick, true)
     self:RegisterClickEvent(self.BtnLensOut, self.OnBtnLensOutClick, true)
+    self:RegisterClickEvent(self.BtnPreviewClose, self.OnBtnPreviewCloseClick, true)
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacter, self.OnSliderCharacterChange, true)
     self.PanelTabGroup:Init(self._TabGroupList, Handler(self, self.OnTabGroupClick))
 end
@@ -413,6 +482,7 @@ function XUiBigWorldDIY:_RefreshPartList(index)
     if self._CurrentSelectTypeIndex ~= index then
         local entity = self._TypeEntitys[index]
 
+        self:ClosePreview()
         self:_RefreshAnimation(entity:GetTypeId())
         self:_PlayDragRotationTween()
         if entity and not entity:IsNil() then
@@ -443,6 +513,18 @@ function XUiBigWorldDIY:_RefreshAnimation(typeId, gender)
 
     gender = gender or self._Control:GetCurrentValidGender()
     self._ModelHelper:PlayChangePartAnimation(gender, entryAnimation, typeId)
+end
+
+function XUiBigWorldDIY:_RefreshTabRedDots()
+    if not XTool.IsTableEmpty(self._TypeEntitys) then
+        for i, tab in pairs(self._TabGroupList) do
+            local entity = self._TypeEntitys[i]
+
+            if entity then
+                tab:ShowReddot(entity:IsNew())
+            end
+        end
+    end
 end
 
 function XUiBigWorldDIY:_RefreshColorList(isPlayEnable)
@@ -526,6 +608,7 @@ end
 function XUiBigWorldDIY:_ChangeLensActive(isActive)
     self.BtnLensOut.gameObject:SetActiveEx(isActive)
     self.BtnLensIn.gameObject:SetActiveEx(isActive)
+    self.SliderCharacter.gameObject:SetActiveEx(isActive)
 end
 
 function XUiBigWorldDIY:_GetCurrentBodyCameraKey()
@@ -577,6 +660,14 @@ function XUiBigWorldDIY:_LoadAllModel()
 
     self:_TryLoadModel(XEnumConst.PlayerFashion.Gender.Male, entitys)
     self:_TryLoadModel(XEnumConst.PlayerFashion.Gender.Female, entitys)
+end
+
+function XUiBigWorldDIY:_ReloadCurrentModel()
+    local entitys = self._Control:GetUsePartEntitys()
+    local gender = self._Control:GetCurrentGender()
+
+    self._ModelHelper:ChangeModel(gender, entitys, true)
+    self._ModelHelper:PlayResettingAnimation(gender)
 end
 
 function XUiBigWorldDIY:_ChangeSelectPart(selectIndex, oldSelectIndex, isIncompatible)
@@ -642,6 +733,64 @@ end
 
 function XUiBigWorldDIY:_PlayDragRotationTween()
     self._ModelHelper:PlayRotationTween(self._Control:GetCurrentValidGender(), self)
+end
+
+function XUiBigWorldDIY:_TryOpenPerspectiveUi(confirmCb)
+    if not self._IsFrist then
+        if confirmCb then confirmCb() end
+        return false
+    end
+    if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+        if confirmCb then confirmCb() end
+        return false
+    end
+    XMVCA.XBigWorldUI:OpenPerspectiveUi(XMVCA.XBigWorldGamePlay:GetCurrentLevelId(), true, nil, confirmCb)
+end
+
+function XUiBigWorldDIY:_PlayPreviewEnable(callback)
+    if not self._IsPlayPreviewEnable then
+        self._IsPlayPreviewEnable = true
+
+        if self._IsPlayPreviewDisable then
+            self._IsPlayPreviewDisable = false
+            self:StopAnimation("PreviewPopupDisable", false, true)
+        end
+
+        if callback then
+            callback()
+        end
+
+        self:PlayAnimation("PreviewPopupEnable", function()
+            self._IsPlayPreviewEnable = false
+        end)
+    else
+        if callback then
+            callback()
+        end
+    end
+end
+
+function XUiBigWorldDIY:_PlayPreviewDisable(callback)
+    if not self._IsPlayPreviewDisable then
+        self._IsPlayPreviewDisable = true
+
+        if self._IsPlayPreviewEnable then
+            self._IsPlayPreviewEnable = false
+            self:StopAnimation("PreviewPopupEnable", false, true)
+        end
+
+        self:PlayAnimation("PreviewPopupDisable", function()
+            self._IsPlayPreviewDisable = false
+
+            if callback then
+                callback()
+            end
+        end)
+    else
+        if callback then
+            callback()
+        end
+    end
 end
 
 -- endregion

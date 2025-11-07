@@ -79,6 +79,10 @@ function XUiGridBWItem:IsAllowSkip()
     return false
 end
 
+function XUiGridBWItem:SetClickProxy(clickProxy)
+    self._ClickProxy = clickProxy
+end
+
 function XUiGridBWItem:_RefreshClickHandler(component, clickHandler)
     if XTool.UObjIsNil(component) then
         return

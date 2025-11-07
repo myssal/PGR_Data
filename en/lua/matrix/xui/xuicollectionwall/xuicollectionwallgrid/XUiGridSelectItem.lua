@@ -51,6 +51,7 @@ function XUiGridSelectItem:UpdateGrid(data, selectType)
             self.TxtName.resizeTextForBestFit = true
         else
             self.TxtName.text = XCollectionWallConfigs.GetColDecName(data.Id)
+            self.TxtName.resizeTextForBestFit = false
         end
         self.ImgDecorationIcon:SetRawImage(XCollectionWallConfigs.GetColDecIcon(data.Id))
 
@@ -70,6 +71,7 @@ function XUiGridSelectItem:UpdateGrid(data, selectType)
             self.TxtName.resizeTextForBestFit = true
         else
             self.TxtName.text = XMedalConfigs.GetCollectionNameById(data)
+            self.TxtName.resizeTextForBestFit = false
         end
 
         local prefabPath = XMedalConfigs.GetCollectionPrefabPath(data)

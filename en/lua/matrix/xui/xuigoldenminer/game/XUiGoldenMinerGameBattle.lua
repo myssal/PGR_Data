@@ -575,7 +575,7 @@ end
 
 --region Ui - Pause Dialog
 function XUiGoldenMinerGameBattle:InitPauseGuideUi()
-    local isPc = XDataCenter.UiPcManager.IsPc()
+    local isPc = self:IsUseKeyboard()
     if self.PanelGuide then
         self.PanelGuide.gameObject:SetActiveEx(false)
     end
@@ -830,13 +830,13 @@ function XUiGoldenMinerGameBattle:InitBtn()
     self.PcBtnShootShow = XUiHelper.TryGetComponent(self.BtnChange.transform, "BtnChangePC", "XUiPcCustomKey")
     if self.PcBtnShootShow then
         self.PcBtnShootShow:SetKey(CS.XInputMapId.ActivityGame, XEnumConst.GOLDEN_MINER.GAME_PC_KEY.Shoot, CS.XInputManager.XOperationType.ActivityGame)
-        self.PcBtnShootShow.gameObject:SetActiveEx(XDataCenter.UiPcManager.IsPc())
+        self.PcBtnShootShow.gameObject:SetActiveEx(self:IsUseKeyboard())
     end
 
     self.PcBtnChangeSunMoonShow = XUiHelper.TryGetComponent(self.BtnSwitch.transform, "Normal/BtnSwitchPC", "XUiPcCustomKey")
     if self.PcBtnChangeSunMoonShow then
         self.PcBtnChangeSunMoonShow:SetKey(CS.XInputMapId.ActivityGame, XEnumConst.GOLDEN_MINER.GAME_PC_KEY.ChangeSunAndMoon, CS.XInputManager.XOperationType.ActivityGame)
-        self.PcBtnChangeSunMoonShow.gameObject:SetActiveEx(XDataCenter.UiPcManager.IsPc())
+        self.PcBtnChangeSunMoonShow.gameObject:SetActiveEx(self:IsUseKeyboard())
     end
 end
 
@@ -1773,5 +1773,9 @@ function XUiGoldenMinerGameBattle:OnBtnSwitchClick()
 
     self._Game.SystemMap:SetSunMoonChange()
     self:RefreshBtnSwitchState()
+end
+
+function XUiGoldenMinerGameBattle:IsUseKeyboard()
+    return XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
 end
 --endregion

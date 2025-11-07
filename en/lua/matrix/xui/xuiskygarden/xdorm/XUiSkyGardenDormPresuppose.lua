@@ -24,9 +24,7 @@ function XUiSkyGardenDormPresuppose:InitUi()
 end
 
 function XUiSkyGardenDormPresuppose:InitCb()
-    self.BtnTanchuangClose.CallBack = function() 
-        self:Close()
-    end
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.Close))
     
     --self.BtnConfirm.CallBack = function() 
     --    self:OnBtnConfirmClick()

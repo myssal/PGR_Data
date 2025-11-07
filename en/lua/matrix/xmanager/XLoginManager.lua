@@ -17,8 +17,10 @@ local SinceStartupMilliSeconds = function() return math.floor(CS.UnityEngine.Tim
 
 local TableLoginErrCode = "Share/Login/LoginCode.tab"
 local TableLoginProtect = "Client/Login/LoginProtect.tab"
+local TableLoginPromoFeature = "Client/Login/LoginPromoFeature.tab"
 local LoginErrCodeTemplate
 local LoginProtectTemplate
+local LoginPromoFeatureTemplate
 
 -- 登陆token缓存
 local LoginTokenCache
@@ -464,6 +466,11 @@ local DoLoginTimeOut = function(cb)
     XLoginManager.Disconnect()
     XLuaUiManager.ClearAnimationMask()
     CS.XRecord.Record("24016", "DoLoginTimeOut")
+    if XDataCenter.UiPcManager.IsCloudGame() then
+        -- 云游戏进游戏超时直接弹出提示，关闭游戏
+        CS.XWLinkAgent.Exit(CS.XTextManager.GetText("CloudGameLaunchErrMsg"))
+        return
+    end
     XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText("LoginTimeOut"), XUiManager.DialogType.Normal, function()
         OnLogin(XCode.Fail)
     end, function()
@@ -798,6 +805,7 @@ function XLoginManager.DoLoginGame(cb)
         DeviceId = CS.XHeroSdkAgent.GetDeviceId(),
         OaId = CS.XHeroSdkAgent.OAID,
         ClientVersion = CS.XRemoteConfig.DocumentVersion,
+        IsCloudGame = (CS.XInfo.IsCloudGame and 1 or 0),
     }, function(res)
         if res.Code ~= XCode.Success then
             if IsRelogining then
@@ -1003,7 +1011,7 @@ XRpc.NotifyLogin = function(data)
 
     local mailLine2Profiler = loginProfiler:CreateChild("MainLine2Agency")
     mailLine2Profiler:Start()
-    XMVCA:GetAgency(ModuleId.XMainLine2):OnLoginNotify(data.FubenMainLine2Data)
+    XMVCA.XMainLine2:OnLoginNotify(data.FubenMainLine2Data)
     mailLine2Profiler:Stop()
 
     local fubenExtraChapterProfiler = loginProfiler:CreateChild("FubenExtraChapterManager")
@@ -1105,6 +1113,24 @@ end
 function XLoginManager.Init()
     LoginErrCodeTemplate = XTableManager.ReadByIntKey(TableLoginErrCode, XTable.XTableLoginCode, "ErrCode")
     LoginProtectTemplate = XTableManager.ReadByIntKey(TableLoginProtect, XTable.XTableLoginProtect, "Id")
+    LoginPromoFeatureTemplate = XTableManager.ReadByIntKey(TableLoginPromoFeature, XTable.XTableLoginPromoFeature, "Id")
+end
+
+---@return XTableLoginPromoFeature[]
+function XLoginManager.GetLoginPromoFeatureTemplate()
+    return LoginPromoFeatureTemplate
+end
+
+-- 获取当前可用的登录推广功能配置
+function XLoginManager.GetCurrentLoginPromoFeature()
+    local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
+    for _, config in pairs(allConfigs) do
+        if XConditionManager.CheckCondition(config.ConditionId)
+        and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
+            return config
+        end
+    end
+    return nil
 end
 
 function XLoginManager.CheckLimitLogin()
@@ -1207,10 +1233,16 @@ function XLoginManager.ResetHeartbeatTimeout()
 end
 
 XRpc.ForceLogoutNotify = function(res)
+    local error_txt = CS.XTextManager.GetCodeText(res.Code)
     XLoginManager.Disconnect()
     CS.XFightNetwork.Disconnect()
     ClearHeartbeatTimer()
-    XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetCodeText(res.Code), XUiManager.DialogType.OnlySure, nil, function()
+    if XDataCenter.UiPcManager.IsCloudGame() then
+        -- 云游戏在部分错误情况下，直接弹出提示，关闭游戏
+        CS.XWLinkAgent.Exit(error_txt)
+        return
+    end
+    XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"),error_txt, XUiManager.DialogType.OnlySure, nil, function()
         XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
         XFightUtil.ClearFight()
         if XDataCenter.MovieManager then
@@ -1220,7 +1252,7 @@ XRpc.ForceLogoutNotify = function(res)
         CsXUiManager.Instance:Clear()
         XMVCA.XBigWorldGamePlay:OnExitFight()
         XHomeSceneManager.LeaveScene()
-        XLoginManager.BackToUiLogin(CS.XTextManager.GetCodeText(res.Code))
+        XLoginManager.BackToUiLogin(error_txt)
     end)
 end
 

@@ -133,10 +133,11 @@ function XUiGridTheatre5PVPRank:RefreshByScore(rating, notShowProgress, isShowNa
 end
 
 function XUiGridTheatre5PVPRank:ShowRankName(isShow, rankName)
-    if isShow == nil then
-        isShow = true
-    end
-
+    --if isShow == nil then
+    --    isShow = true
+    --end
+    -- 总是显示段位
+    isShow = true
     if self.TxtNameRank then
         self.TxtNameRank.gameObject:SetActiveEx(isShow)
 

@@ -19,7 +19,7 @@ function XGame2048TurnControl:OnInit()
 end
 
 function XGame2048TurnControl:OnRelease()
-
+    
 end
 
 function XGame2048TurnControl:InitOnNewGame(stageContext)
@@ -45,6 +45,10 @@ function XGame2048TurnControl:GetBoardLv()
     return self._StageDataFromServer:GetBoardLv()
 end
 
+function XGame2048TurnControl:GetBoardNextLv()
+    return self._StageDataFromServer:GetBoardLv() + 1
+end
+
 function XGame2048TurnControl:GetFeverLeftRound()
     return self._StageDataFromServer:GetFeverLeftRound()
 end
@@ -64,6 +68,21 @@ function XGame2048TurnControl:GetCurTargetMergeValue()
     return 0
 end
 
+function XGame2048TurnControl:GetCurTargetMergeShowValue()
+    local blockId = self:GetCurTargetBlockId()
+
+    if XTool.IsNumberValid(blockId) then
+        ---@type XTableGame2048Block
+        local blockCfg = self._Model:GetGame2048BlockCfgById(blockId)
+
+        if blockCfg then
+            return blockCfg.ShowLevel
+        end
+    end
+
+    return 0
+end
+
 function XGame2048TurnControl:GetCurTargetBlockCfg()
     local blockId = self:GetCurTargetBlockId()
 
@@ -78,6 +97,10 @@ end
 --endregion <----------------------------
 
 --region ---------- Getter ---------->
+
+function XGame2048TurnControl:GetStartTime()
+    return self._StageDataFromServer:GetStartTime()
+end
 
 --- 获取当前回合方块信息源数据
 function XGame2048TurnControl:GetGridInfos()
@@ -96,6 +119,16 @@ function XGame2048TurnControl:GetCurBoardCfgId()
 
     local id = ferverState + self:GetBoardLv() * 10 + boardId * 10000
     
+    return id
+end
+
+function XGame2048TurnControl:GetNextBoardCfgId()
+    local boardId = self._MainControl:GetCurBoardId()
+
+    local ferverState = XTool.IsNumberValid(self:GetFeverLeftRound()) and 1 or 0
+
+    local id = ferverState + self:GetBoardNextLv() * 10 + boardId * 10000
+
     return id
 end
 
@@ -145,6 +178,113 @@ function XGame2048TurnControl:CheckHasNextTarget()
     local boardCfg = self._Model:GetGame2048BoardCfgById(id, true)
 
     return boardCfg and true or false
+end
+
+--- 检查当前盘面等级和ferver状态下的生成方块等级
+function XGame2048TurnControl:GetCurBoardLvGenerateGridLevel()
+    local boardCfgId = self:GetCurBoardCfgId()
+
+    if XTool.IsNumberValidEx(boardCfgId) then
+        ---@type XTableGame2048Board
+        local boardCfg = self._Model:GetGame2048BoardCfgById(boardCfgId)
+        
+        if boardCfg then
+            if XTool.IsNumberValidEx(boardCfg.TransBlockId) then
+                local blockCfg = self._Model:GetGame2048BlockCfgById(boardCfg.TransBlockId)
+                
+                return blockCfg and blockCfg.Level or 0
+            else
+                local generatedGroupId = boardCfg.GeneratedGroupId
+                ---@type XTableGame2048GeneratedGroup
+                local generatedGroupCfg = self._Model:GetGame2048GeneratedGroupById(generatedGroupId)
+
+                if generatedGroupCfg then
+                    local minLevel = math.maxinteger
+
+                    for i, v in ipairs(generatedGroupCfg.BlockIds) do
+                        ---@type XTableGame2048Block
+                        local blockCfg = self._Model:GetGame2048BlockCfgById(v)
+
+                        if blockCfg and blockCfg.Level < minLevel then
+                            minLevel = blockCfg.Level
+                        end
+                    end
+
+                    return minLevel
+                end
+            end
+            
+        end
+    end
+    
+    return 0
+end
+
+--- 获取当前棋盘等级下生成的最低等级方块的显示等级
+function XGame2048TurnControl:GetBoardLvGenerateGridShowLevel(boardCfgId)
+    if XTool.IsNumberValidEx(boardCfgId) then
+        local boardCfg = self._Model:GetGame2048BoardCfgById(boardCfgId, true)
+        if boardCfg then
+            if XTool.IsNumberValidEx(boardCfg.TransBlockId) then
+                local blockCfg = self._Model:GetGame2048BlockCfgById(boardCfg.TransBlockId)
+
+                return blockCfg and blockCfg.ShowLevel or 0
+            else
+                local generatedGroupId = boardCfg.GeneratedGroupId
+                ---@type XTableGame2048GeneratedGroup
+                local generatedGroupCfg = self._Model:GetGame2048GeneratedGroupById(generatedGroupId)
+
+                if generatedGroupCfg then
+                    local minLevel = math.maxinteger
+                    local showLevel = 0
+
+                    for i, v in ipairs(generatedGroupCfg.BlockIds) do
+                        ---@type XTableGame2048Block
+                        local blockCfg = self._Model:GetGame2048BlockCfgById(v)
+
+                        if blockCfg and blockCfg.Level < minLevel then
+                            minLevel = blockCfg.Level
+                            showLevel = blockCfg.ShowLevel
+                        end
+                    end
+
+                    return showLevel
+                end
+            end
+
+        end
+    end
+
+    return ''
+end
+
+
+--- 从给定的id出发，找到与盘面目标等级相同的消除方块Id
+function XGame2048TurnControl:GetTargetIdByCurId(id)
+    -- 目标的等级
+    local targetLevel = self:GetCurTargetMergeValue()
+    ---@type XTableGame2048Block
+    local cfg = self._Model:GetGame2048BlockCfgById(id)
+
+    -- 防卡死计数
+    local index = 0
+    
+    while cfg and index < 999 do
+        if cfg.Level == targetLevel then
+            if cfg.Id == id then
+                return -- 如果当前方块已经满足了，则当不存在
+            end
+            return cfg.Id
+        end
+
+        if XTool.IsNumberValidEx(cfg.LevelUpId) then
+            cfg = self._Model:GetGame2048BlockCfgById(cfg.LevelUpId)
+        else
+            break
+        end
+        
+        index = index + 1
+    end
 end
 
 --endregion <-------------------------
@@ -219,6 +359,7 @@ end
 function XGame2048TurnControl:ClearLastTurnData()
     self._TransformData:Reset()
     self._StageDataFromServer:ClearLastInTurnData()
+    self._StageDataFromServer:ClearRemoveMarkAfterServerRequest()
 end
 
 --endregion <----------------------------

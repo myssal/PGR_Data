@@ -2126,7 +2126,7 @@
         "Phase": 3,
         "Name": "Unswerving Tranquility",
         "Level": 1,
-        "Intro": "After casting <color=#D91414>Shadow Strangle</color>, <color=#D91414>Twilight Form</color> QTE Base DMG +<color=#D91414>1000%</color> throughout the battle. During <color=#D91414>Devouring Sky</color>, can input an additional set of Signal Orbs. Based on the number of orbs pinged, <color=#D91414>Devouring Sky - Collapsing Twilight</color> Base DMG +<color=#D91414>60%/120%/180%</color>. During <color=#D91414>Shattering Sky</color>, can input an additional set of Signal Orbs, increasing <color=#D91414>Shattering Sky - Collapsing Radiance</color> Base DMG by <color=#D91414>40%/80%/120%</color>. Signal Orbs consumed this way will be refunded when the next <color=#D91414>Shadow Strangle</color> or <color=#D91414>Ember Extinction</color> is cast.",
+        "Intro": "After casting <color=#D91414>Shadow Strangle</color>, <color=#D91414>Twilight Form</color> QTE Base DMG increases by <color=#D91414>1000%</color> throughout the battle. During <color=#D91414>Devouring Sky</color>, can input an additional set of Signal Orbs. Based on the number of orbs pinged, Base DMG of <color=#D91414>Devouring Sky - Collapsing Twilight</color> cast this time increases by <color=#D91414>60%/120%/180%</color>. During <color=#D91414>Shattering Sky</color>, can input an additional set of Signal Orbs, increasing the Base DMG of <color=#D91414>Shattering Sky - Collapsing Radiance</color> cast this time by <color=#D91414>40%/80%/120%</color>. Signal Orbs consumed this way will be refunded when the next <color=#D91414>Shadow Strangle</color> or <color=#D91414>Ember Extinction</color> is cast.",
         "SkillId": 104525
     },
     {
@@ -2308,5 +2308,75 @@
         "Level": 3,
         "Intro": "Extra DMG of <color=#D91414>Blazing Desolation</color> and <color=#D91414>Ruinous Ember</color> increases by <color=#D91414>30%</color>.",
         "SkillId": 138326
+    },
+    {
+        "Id": 232,
+        "CharacterId": 1031005,
+        "Quality": 3,
+        "Phase": 5,
+        "Name": "Dayfire Tempered",
+        "Level": 1,
+        "Intro": "Casting <color=#D91414>Heavenly Flash</color>, <color=#D91414>Dawn Dream</color>, or <color=#D91414>Signature - Mirrored Renewal</color> will activate all available QTEs.",
+        "SkillId": 103524
+    },
+    {
+        "Id": 233,
+        "CharacterId": 1031005,
+        "Quality": 4,
+        "Phase": 0,
+        "Name": "Dayfire Tempered",
+        "Level": 2,
+        "Intro": "When entering battle, gains <color=#D91414>4</color> <color=#D91414>Flying Blades</color> and <color=#D91414>24</color> Signature Energy when first casting <color=#D91414>Heavenly Flash</color>. <color=#D91414>Heavenly Flash</color> and <color=#D91414>Mirror Blade Orb</color> Base DMG increases by <color=#D91414>40%</color>. After casting <color=#D91414>Signature - Mirrored Renewal</color> and exiting the battlefield, enters <color=#D91414>Harmonic Dance</color>, launching an attack every <color=#D91414>2s</color> that deals <color=#D91414>2000%</color> Lightning DMG. If <color=#D91414>12 stacks of Delicate Heart</color> were consumed when casting <color=#D91414>Signature - Mirrored Renewal</color>, deals one additional instance of <color=#D91414>2000%</color> Lightning DMG. Exits this state after <color=#D91414>4</color> attacks.",
+        "SkillId": 103524
+    },
+    {
+        "Id": 234,
+        "CharacterId": 1031005,
+        "Quality": 4,
+        "Phase": 3,
+        "Name": "Mirrored Sorrow",
+        "Level": 1,
+        "Intro": "After casting <color=#D91414>Dream Dive</color>, gains <color=#D91414>2</color> <color=#D91414>White Orbs</color> and <color=#D91414>12</color> Signature Energy. After casting <color=#D91414>Signature - Mirrored Renewal</color> at max stacks, gains <color=#D91414>2</color> <color=#D91414>Flying Blades</color>. <color=#D91414>Thousand Rays</color> and <color=#D91414>Dawn Dream</color> Base DMG increases by <color=#D91414>80%</color>. After casting <color=#D91414>Signature - Mirrored Renewal</color>, QTE Base DMG increases by <color=#D91414>1000%</color> throughout the battle.",
+        "SkillId": 103525
+    },
+    {
+        "Id": 235,
+        "CharacterId": 1031005,
+        "Quality": 5,
+        "Phase": 0,
+        "Name": "Mirrored Sorrow",
+        "Level": 2,
+        "Intro": "Casting <color=#D91414>Dawn Dream - Light Seeker</color> triggers <color=#D91414>Time Lag Calculation</color> and grants <color=#D91414>50</color> <color=#D91414>Sonance</color>. <color=#D91414>Signature - Cosmic Rebirth</color> deals <color=#D91414>90%</color> more DMG. During <color=#D91414>Harmonic Dance</color>, Extra DMG increases by <color=#D91414>100%</color>.",
+        "SkillId": 103525
+    },
+    {
+        "Id": 236,
+        "CharacterId": 1031005,
+        "Quality": 5,
+        "Phase": 3,
+        "Name": "Eternal Lampbearer",
+        "Level": 1,
+        "Intro": "Extra DMG of <color=#D91414>Thousand Rays</color> and <color=#D91414>Dawn Dream</color> increases by <color=#D91414>50%</color>.",
+        "SkillId": 103526
+    },
+    {
+        "Id": 237,
+        "CharacterId": 1031005,
+        "Quality": 5,
+        "Phase": 6,
+        "Name": "Eternal Lampbearer",
+        "Level": 2,
+        "Intro": "Extra DMG of <color=#D91414>Heavenly Flash</color> and <color=#D91414>Mirror Blade Orbs</color> increases by <color=#D91414>50%</color>.",
+        "SkillId": 103526
+    },
+    {
+        "Id": 238,
+        "CharacterId": 1031005,
+        "Quality": 6,
+        "Phase": 0,
+        "Name": "Eternal Lampbearer",
+        "Level": 3,
+        "Intro": "Extra DMG of <color=#D91414>Signature - Cosmic Rebirth</color> increases by <color=#D91414>40%</color>.",
+        "SkillId": 103526
     }
 ]

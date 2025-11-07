@@ -66,6 +66,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseTaskUnlockParamsByTaskId(ta
     return config.UnlockParams
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseTaskConditionIdByTaskId(taskId)
+    local config = self:GetBigWorldCourseTaskConfigByTaskId(taskId)
+
+    return config.ConditionId
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseTaskTitleByTaskId(taskId)
     local config = self:GetBigWorldCourseTaskConfigByTaskId(taskId)
 
@@ -448,22 +454,16 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementSkipIdById(id)
     return config.SkipId
 end
 
-function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipIdById(id)
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipIdsById(id)
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
-    return config.LockSkipId
+    return config.LockSkipIds
 end
 
-function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipConditionIdById(id)
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementLockSkipConditionIdsById(id)
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 
-    return config.LockSkipConditionId
-end
-
-function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementConditionIdsById(id)
-    local config = self:GetBigWorldCourseCoreElementConfigById(id)
-
-    return config.ConditionIds
+    return config.LockSkipConditionIds
 end
 
 ---@return XTableBigWorldCourseCoreGroup[]

@@ -214,6 +214,8 @@ function XUiMail:ShowMailInfoNormal(mailInfo)
     
     content = self._Control:FixCommonUrlContent(content)
     
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+    
     if self._Control:HasMailReward(mailInfo.Id) then
         self.PanelContent.gameObject:SetActiveEx(true)
         self.PanelExpire.gameObject:SetActiveEx(false)

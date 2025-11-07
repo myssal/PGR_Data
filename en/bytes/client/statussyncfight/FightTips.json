@@ -484,7 +484,7 @@
     {
         "Id": 4001003,
         "Type": 1,
-        "Desc": "The target is around you. Auto tracking ended automatically.",
+        "Desc": "The target is nearby. Auto tracking ended automatically.",
         "Time": 3.0,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
     },
@@ -498,7 +498,7 @@
     {
         "Id": 4001005,
         "Type": 1,
-        "Desc": "剧情角色离开队伍",
+        "Desc": "Story character left the team",
         "Time": 2.0,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
     },
@@ -524,7 +524,7 @@
     {
         "Id": 9001004,
         "Type": 22,
-        "Title": "System Notice",
+        "Title": "Notice",
         "Desc": "Abandon the ongoing game?",
         "Time": 0.0,
         "PrefabPath": "Assets/Product/Ui/UiFightPrefab/UiTheatre5/UiTheatre5PopupCommon.prefab"
@@ -532,8 +532,57 @@
     {
         "Id": 4001006,
         "Type": 1,
-        "Desc": "终端信标已解锁",
+        "Desc": "Terminal Beacon unlocked",
         "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001007,
+        "Type": 1,
+        "Desc": "Switched to first-person mode (Switch the character to \"Commandant\" to enter first-person perspective)",
+        "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001008,
+        "Type": 1,
+        "Desc": "Switched to first-person mode",
+        "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001009,
+        "Type": 1,
+        "Desc": "Switched to third-person mode",
+        "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001010,
+        "Type": 1,
+        "Desc": "Cannot switch perspective in current state",
+        "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001011,
+        "Type": 1,
+        "Desc": "Cannot switch perspective",
+        "Time": 2.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001012,
+        "Type": 1,
+        "Desc": "Open Photo Mode from the main menu to take pictures",
+        "Time": 4.0,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
+    },
+    {
+        "Id": 4001013,
+        "Type": 1,
+        "Desc": "<color=#7BF7FF>Use Scan to find mission clues</color>",
+        "Time": 10.0,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelCenterTip.prefab"
     }
 ]

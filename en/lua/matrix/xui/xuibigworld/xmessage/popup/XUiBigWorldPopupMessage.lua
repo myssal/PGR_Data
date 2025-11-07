@@ -16,7 +16,7 @@ local XUiBigWorldPopupMessage = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldPopup
 
 function XUiBigWorldPopupMessage:OnAwake()
     ---@type XUiBigWorldMessageChat
-    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self)
+    self._ChatUi = XUiBigWorldMessageChat.New(self.PanelChat, self, self.XAudioObjectPlayer)
     self._DynamicTable = XDynamicTableNormal.New(self.ListContacts)
     self._CurrrentSelectIndex = 0
     self._MessageList = self._Control:GetUnreadMessageList()
@@ -88,6 +88,7 @@ function XUiBigWorldPopupMessage:OnBtnCloseClick()
 end
 
 function XUiBigWorldPopupMessage:OnMessageFinish()
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Finish Event.\n" .. debug.traceback())
     self:_RefreshDynamicTable()
 end
 

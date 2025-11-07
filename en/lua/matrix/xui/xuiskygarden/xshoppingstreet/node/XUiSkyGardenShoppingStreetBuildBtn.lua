@@ -4,7 +4,7 @@
 local XUiSkyGardenShoppingStreetBuildBtn = XClass(XUiNode, "XUiSkyGardenShoppingStreetBuildBtn")
 
 function XUiSkyGardenShoppingStreetBuildBtn:OnStart()
-    self.GridBuild.CallBack = function() self:OnGridBuildClick() end
+    self.GridBuild:AddEventListener(handler(self, self.OnGridBuildClick))
     self.PanelBuild.gameObject:SetActive(false)
 end
 

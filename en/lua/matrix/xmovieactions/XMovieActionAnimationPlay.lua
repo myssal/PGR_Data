@@ -2,7 +2,7 @@
 ---@field UiRoot XUiMovie
 local XMovieActionAnimationPlay = XClass(XMovieActionBase, "XMovieActionAnimationPlay")
 
-function XMovieActionAnimationPlay:Ctor(actionData)
+function XMovieActionAnimationPlay:OnInit(actionData)
     local params = actionData.Params
     self.AnimName = params[1]
 end
@@ -12,6 +12,12 @@ function XMovieActionAnimationPlay:OnRunning()
     local anim = self.UiRoot:GetUiAnimation(animName)
     if not anim then
         XLog.Error("XMovieActionAnimationPlay:OnRunning error: Animation not Exist, animName is: " .. animName)
+        return
+    end
+
+    -- 父节点隐藏导致的动画节点隐藏
+    if not anim.transform.parent.gameObject.activeInHierarchy then
+        anim.gameObject:SetActiveEx(false)
         return
     end
 

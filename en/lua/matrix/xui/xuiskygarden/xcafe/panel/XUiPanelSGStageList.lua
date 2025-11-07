@@ -8,6 +8,7 @@ local XUiPanelSGStageList = XClass(XUiNode, "XUiPanelSGStageList")
 
 function XUiPanelSGStageList:OnStart(isChallenge)
     self._IsChallenge = isChallenge
+    self._IsPlayAnimation = false
     self:InitCb()
     self:InitView()
 end
@@ -29,10 +30,11 @@ function XUiPanelSGStageList:OnEnable()
 end
 
 function XUiPanelSGStageList:InitCb()
-    self.BtnReturn.CallBack = function() self.Parent:ChangePanel(1) end
-
+    self.BtnReturn:AddEventListener(function() 
+        self.Parent:ChangePanel(1) 
+    end)
     if self.BtnHandBook then
-        self.BtnHandBook.CallBack = function() self:OnBtnHandBookClick() end
+        self.BtnHandBook:AddEventListener(handler(self, self.OnBtnHandBookClick))
     end
 end
 
@@ -75,8 +77,13 @@ function XUiPanelSGStageList:OnDynamicTableEvent(evt, index, grid)
     if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self._DataList[index])
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
+        if self._IsPlayAnimation then
+            return
+        end
+        self._IsPlayAnimation = true
         grid:PlayClickAnimation(function()
             self:OnBtnItemClick(self._DataList[index])
+            self._IsPlayAnimation = false
         end)
     end
 end

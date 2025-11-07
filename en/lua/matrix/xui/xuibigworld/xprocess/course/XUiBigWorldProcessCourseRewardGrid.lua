@@ -14,6 +14,7 @@ function XUiBigWorldProcessCourseRewardGrid:OnStart()
     self._Entity = false
     ---@type XUiGridBWItem
     self._Grid = false
+    self._SpecialEffect = self.GridCommon:FindTransform("Effect")
     self._ClickHandler = false
 
     self:_InitUi()
@@ -24,6 +25,7 @@ function XUiBigWorldProcessCourseRewardGrid:OnEnable()
     self:_RegisterListeners()
     self:_RegisterSchedules()
     self:_RegisterRedPointEvents()
+    self:PlayAnimation("SpecialRewardGridEnable", Handler(self, self._RefreshSpecialEffect))
 end
 
 function XUiBigWorldProcessCourseRewardGrid:OnDisable()
@@ -51,9 +53,15 @@ function XUiBigWorldProcessCourseRewardGrid:Refresh(progressEntity, reward)
     self:_RefreshState(progressEntity)
 end
 
+function XUiBigWorldProcessCourseRewardGrid:PlayDisableAnimation()
+    if self:IsNodeShow() then
+        self:PlayAnimation("SpecialRewardGridDisable")
+    end
+end
+
 function XUiBigWorldProcessCourseRewardGrid:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnClick.CallBack = Handler(self, self.OnRewardClick)
+    self.BtnClick:AddEventListener(handler(self, self.OnRewardClick))
 end
 
 function XUiBigWorldProcessCourseRewardGrid:_RegisterListeners()
@@ -88,7 +96,6 @@ function XUiBigWorldProcessCourseRewardGrid:_RefreshReward(reward)
 
     self._Grid:Open()
     self._Grid:Refresh(reward)
-    self._Grid:RefreshCount()
 end
 
 ---@param entity XBWCourseTaskProgressEntity
@@ -97,6 +104,17 @@ function XUiBigWorldProcessCourseRewardGrid:_RefreshState(entity)
 
     self.Effect.gameObject:SetActiveEx(entity:IsComplete() and not isAcquired)
     self.PanelReceive.gameObject:SetActiveEx(isAcquired)
+    self:_RefreshSpecialEffect()
+end
+
+function XUiBigWorldProcessCourseRewardGrid:_RefreshSpecialEffect()
+    if self._SpecialEffect then
+        if self._Entity then
+            local isAcquired = self._Entity:IsAcquired()
+
+            self._SpecialEffect.gameObject:SetActiveEx(not isAcquired)
+        end
+    end
 end
 
 return XUiBigWorldProcessCourseRewardGrid

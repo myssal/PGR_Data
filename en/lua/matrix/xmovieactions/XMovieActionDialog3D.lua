@@ -1,6 +1,6 @@
 local XMovieActionDialog3D = XClass(XMovieActionBase, "XMovieActionDialog3D")
 
-function XMovieActionDialog3D:Ctor(actionData)
+function XMovieActionDialog3D:OnInit(actionData)
     local params = actionData.Params
     local toNumber = XDataCenter.MovieManager.ParamToNumber
     self.RoleId = params[1]
@@ -12,7 +12,7 @@ function XMovieActionDialog3D:Ctor(actionData)
     self.IsModel = toNumber(params[7])
 end
 
-function XMovieActionDialog3D:OnInit()
+function XMovieActionDialog3D:OnEnter()
     local panel3D = self.UiRoot.Panel3D
     ---@type XTable.XTableMovie3DRole
     local roleConfig = CS.Movie.XMovie3DManager.GetRoleConfig(self.RoleId)

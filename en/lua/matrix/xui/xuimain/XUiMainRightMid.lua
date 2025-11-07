@@ -77,7 +77,6 @@ function XUiMainRightMid:OnStart(rootUi)
     -- XTool.InitUiObject(self)
     --ClickEvent
     self.BtnFight.CallBack = function() self:OnBtnFight() end
-    self.BtnTask.CallBack = function() self:OnBtnTask() end
     self.BtnBuilding.CallBack = function() self:OnBtnBuilding() end
     self.BtnReward.CallBack = function() self:OnBtnReward() end
     --self.BtnSkipTask.CallBack = function() self:OnBtnSkipTask() end
@@ -90,10 +89,22 @@ function XUiMainRightMid:OnStart(rootUi)
     self.BtnRecharge.CallBack = function() self:OnBtnRecharge() end
     self.BtnEquipGuide.CallBack = function() XDataCenter.EquipGuideManager.OpenEquipGuideDetail() end
     self.BtnBag.CallBack = function() self:OnBtnBag() end
-    self.BtnStore.CallBack = function() self:OnBtnStore() end
+    --self.BtnStore.CallBack = function() self:OnBtnStore() end
+
+    if XUiManager.IsHideFunc then
+        self.BtnTask.CallBack = function() self:OnBtnTask() end
+    else
+        self._FuncBtnTask = XUiHelper.XUiFunctionShowControl(self.BtnTask, self)
+        self._FuncBtnTask:Open()
+
+        self._FuncBtnTask:AddButtonClickEvent(handler(self, self.OnBtnTask))
+    end
+    
+    self._FuncBtnStore = XUiHelper.XUiFunctionShowBtn(self.BtnStore, self)
+    self._FuncBtnStore:AddButtonClickEvent(handler(self, self.OnBtnStore))
     
     self.BtnGuild.gameObject:SetActiveEx(true)
-
+    
     if XUiManager.IsHideFunc then
         self.BtnActivityBrief.gameObject:SetActiveEx(false)
         self.BtnGuild.gameObject:SetActiveEx(false)
@@ -155,11 +166,18 @@ function XUiMainRightMid:OnEnable()
     self:OnCheckMemberTag()
     self:OnCheckRechargeNews()
     self:OnCheckStore()
-    self:RefreshSubPanelState(self:GetSubPanelState())
+    self:RefreshSubPanelState(self:GetSubPanelState(), true)
+
+    self._FuncBtnStore:RefreshAll()
 end
 
-function XUiMainRightMid:CheckRedPoint() 
-    self:AddRedPointEvent(self.BtnTask.ReddotObj, self.OnCheckTaskNews, self, RedPointConditionGroup.Task)
+function XUiMainRightMid:CheckRedPoint()
+    if XUiManager.IsHideFunc then
+        self:AddRedPointEvent(self.BtnTask.ReddotObj, self.OnCheckTaskNews, self, RedPointConditionGroup.Task)
+    else
+        self._FuncBtnTask:AddAdditionRedPointEvent(RedPointConditionGroup.Task)
+    end
+    
     self:AddRedPointEvent(self.BtnBuilding.ReddotObj, self.OnCheckBuildingNews, self, RedPointConditionGroup.Dorm)
     self:AddRedPointEvent(self.ImgBuldingRedDot, self.OnCheckGuildRedPoint, self, RedPointConditionGroup.Guild)
 
@@ -198,6 +216,10 @@ function XUiMainRightMid:OnDisable()
     
     XDataCenter.DormManager.StopDormRedTimer()
     self:StopActivityEntryTimer()
+end
+
+function XUiMainRightMid:OnDestroy()
+    self._FuncBtnStore:ReleaseReddotEvents()
 end
 
 function XUiMainRightMid:OnNotify(evt)
@@ -241,11 +263,13 @@ end
 
 --任务入口
 function XUiMainRightMid:OnBtnTask()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Task) then
+    if not XUiManager.IsHideFunc and not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Task) then
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnTask)
     XLuaUiManager.Open("UiTask")
+    
+    return true
 end
 
 --任务跳转按钮点击
@@ -508,6 +532,7 @@ function XUiMainRightMid:CheckStartActivityEntryTimer()
         self:UpdateBtnActivityEntry()
         self:UpdateBtnActivityBrief()
         self:CheckBtnActivityEntryRedPoint()
+        self:UpdateBtnActivityCustomText()
         if endTimeStamp <= serverTimestamp then
             self:StopActivityEntryTimer()
         end
@@ -518,6 +543,30 @@ function XUiMainRightMid:StopActivityEntryTimer()
     if self.ActivityEntryTimer then
         XScheduleManager.UnSchedule(self.ActivityEntryTimer)
         self.ActivityEntryTimer = nil
+    end
+end
+
+function XUiMainRightMid:UpdateBtnActivityCustomText()
+    local configs = XDataCenter.ActivityBriefManager.GetNowActivityEntryConfig()
+    for index, config in ipairs(configs) do
+        local managerName = config.ManagerName
+        local btn = self[string.format("BtnActivityEntry%s", index)]
+        local panelTime = self[string.format("PanelTime%s", index)]
+        if btn and panelTime then
+            local content
+            if not string.IsNilOrEmpty(managerName) then
+                local cls = XDataCenter[managerName] or XMVCA[managerName]
+                if cls and cls.ExGetRightMidCustomText then
+                    content = cls:ExGetRightMidCustomText()
+                end
+            end
+            if string.IsNilOrEmpty(content) then
+                panelTime.gameObject:SetActiveEx(false)
+            else
+                panelTime.gameObject:SetActiveEx(true)
+                btn:SetNameByGroup(0, content)
+            end
+        end
     end
 end
 -------------活动入口 End-------------------
@@ -545,7 +594,7 @@ function XUiMainRightMid:OnDragSwitch(state, eventData)
             return
         end
         local isShow = tmpY > self.DragY
-        self:RefreshSubPanelState(isShow)
+        self:RefreshSubPanelState(isShow, true)
 
         -- 埋点
         if isShow then
@@ -557,6 +606,14 @@ function XUiMainRightMid:OnDragSwitch(state, eventData)
 end
 
 function XUiMainRightMid:OnBtnOpenClick()
+    -- 判断是否开启
+    local isUnlock, desc = XFunctionManager.CheckUiNodeIsUnlockByFunctionShowId(XFunctionConfig.FunctionalShowId.UiMainBtnOpen)
+
+    if not isUnlock then
+        XUiManager.TipMsg(desc)
+        return
+    end
+    
     self:RefreshSubPanelState(true)
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.ClickAnimPanelRightMidSecond)
 end
@@ -566,10 +623,20 @@ function XUiMainRightMid:OnBtnCloseClick()
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.ClickAnimPanelRightMid)
 end
 
-function XUiMainRightMid:RefreshSubPanelState(show)
+function XUiMainRightMid:RefreshSubPanelState(show, checkUnlock)
     if self.IsShowSubPanel == show then
         return
     end
+
+    if checkUnlock and show then
+        -- 判断是否开启
+        local isUnlock, desc = XFunctionManager.CheckUiNodeIsUnlockByFunctionShowId(XFunctionConfig.FunctionalShowId.UiMainBtnOpen)
+
+        if not isUnlock then
+            show = false
+        end
+    end
+    
     self:UpdateSubPanelState(show)
     self.IsShowSubPanel = show
     local animName = show and "AnimPanelRightMidSecond" or "AnimPanelRightMid"
@@ -596,6 +663,9 @@ function XUiMainRightMid:OnBtnStore()
             or XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopActive) then
         XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnStore)
         XLuaUiManager.Open("UiShop", XShopManager.ShopType.Common)
+        
+        -- 消除首次蓝点
+        XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiMainBtnStore, XFunctionConfig.RedPointType.NewbieFirstShow)
     end
 end
 
@@ -603,7 +673,8 @@ end
 function XUiMainRightMid:OnCheckStore()
     local isOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ShopCommon)
             or XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ShopActive)
-    self.BtnStore:SetDisable(not isOpen)
+    --self.BtnStore:SetDisable(not isOpen)
+    self._FuncBtnStore:SetUnlockByHand(isOpen)
 end
 
 --仓库入口
@@ -660,9 +731,10 @@ function XUiMainRightMid:OnCheckPartnerRedPoint(count)
 end
 
 --任务红点
+--[[
 function XUiMainRightMid:OnCheckTaskNews(count)
     self.BtnTask:ShowReddot(count >= 0)
-end
+end--]]
 
 --宿舍红点
 function XUiMainRightMid:OnCheckBuildingNews(count)

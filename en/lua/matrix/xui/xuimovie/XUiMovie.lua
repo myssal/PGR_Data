@@ -1,12 +1,10 @@
 local tableInsert = table.insert
-local CSXTextManagerGetText = CS.XTextManager.GetText
-local TipSkipTitle = CSXTextManagerGetText("MovieSkipTipTitle")
-local TipSkipContent = CSXTextManagerGetText("MovieSkipTipContent")
 local XUiGridMovieActor = require("XUi/XUiMovie/XUiGridMovieActor")
 local XUiGridMovieSpineActor = require("XUi/XUiMovie/XUiGridMovieSpineActor")
 local XUiPanelMovie3D = require("XUi/XUiMovie/XUiPanelMovie3D")
 ---@field UiPanelText XUiPanelText
 ---@field UiMovieBg XUiMovieBg
+---@field _Control XMovieControl
 ---@class XUiMovie
 local XUiMovie = XLuaUiManager.Register(XLuaUi, "UiMovie")
 
@@ -26,22 +24,56 @@ local InsertPanelDisableAnimationDic = {
 }
 
 function XUiMovie:OnAwake()
+    self.UiMovieRImgBg.gameObject:SetActiveEx(false)
+    self.UiMoviePanelActor.gameObject:SetActiveEx(false)
+    self.BtnAutoTextStop.gameObject:SetActiveEx(false)
     self.RImgBg1.gameObject:SetActiveEx(false)
     self.UiMovieBg = require("XUi/XUiMovie/XUiMovieBg").New(self)
     self:AddListener()
+    XMVCA.XMovie:RequestGetStageBookmark()
 end
 
 function XUiMovie:OnStart(hideSkipBtn)
     self:InitView()
     self:OnInitScene()
     self.BtnSkip.gameObject:SetActiveEx(not hideSkipBtn)
+    local isShowBookmark = XDataCenter.MovieManager.IsShowBookmark()
+    self.BtnBookmark.gameObject:SetActiveEx(isShowBookmark)
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_OPEN, self)
 end
 
 function XUiMovie:OnEnable()
     self.LastOperationType = CS.XInputManager.CurInputMapID
     CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
-    XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
+
+    local isExitPassedAction = XDataCenter.MovieManager.IsExitPassedActions()
+    if isExitPassedAction then
+        XDataCenter.MovieManager.StartPassedActions()
+        local isStartAfterLoading = XDataCenter.MovieManager.IsStartActionAfterLoading()
+        if not isStartAfterLoading then
+            XDataCenter.MovieManager.StartActions()
+        end
+
+        self:RemoveLoadingTimer()
+        local LOADING_TIME = 1000
+        self.PanelLoading.gameObject:SetActiveEx(true)
+        self.LoadingTimer = XScheduleManager.ScheduleOnce(function()
+            self.LoadingTimer = nil
+            self.PanelLoading.gameObject:SetActiveEx(false)
+            if isStartAfterLoading then
+                XDataCenter.MovieManager.StartActions()
+            end
+        end, LOADING_TIME)
+    else
+        XDataCenter.MovieManager.StartActions()
+    end
+end
+
+function XUiMovie:RemoveLoadingTimer()
+    if self.LoadingTimer then
+        XScheduleManager.UnSchedule(self.LoadingTimer)
+        self.LoadingTimer = nil
+    end
 end
 
 function XUiMovie:SelectPanelShowing()
@@ -53,10 +85,10 @@ function XUiMovie:OnDisable()
 end
 
 function XUiMovie:OnDestroy()
+    self:RemoveLoadingTimer()
     XLuaAudioManager.StopAudioByType(XLuaAudioManager.SoundType.SFX | XLuaAudioManager.SoundType.Voice | XLuaAudioManager.SoundType.Music)
     self.UiMovieBg:OnDestroy()
     XLuaAudioManager.SetMusicSourceFirstBlockIndex(0)
-    XDataCenter.MovieManager.RestSpeed()
     self:ClearAutoTimer()
 
     for _, actor in pairs(self.Actors) do
@@ -90,7 +122,7 @@ function XUiMovie:OnDestroy()
     end
     self.TimelineDic = {}
 
-    self:ReleaseBtnNextEvent()
+    self:RemoveBtnNextCallback()
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_DESTROY)
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_CLOSED)
 end
@@ -173,7 +205,10 @@ function XUiMovie:AddListener()
     self.PanelHideMaskInputHandler:AddPointerClickListener(handler(self, self.OnClickHideMask))
     self.TxtWords.onClick = function() self:OnBtnNextClick() end
     self.TxtWords.onLinkClick = function(arg) self:OnClickTxtWords(arg) end
-    self:RegisterBtnNextEvent()
+    self.BtnNextInputHandler:AddPointerClickListener(function() self:OnBtnNextClick() end)
+    self.BtnNextInputHandler:AddPressListener(function(pressTime) self:OnBtnNextPress(pressTime) end)
+    self.BtnNextInputHandler:AddPointerUpListener(function() self:OnBtnNextPointerUp() end)
+    self:RegisterClickEvent(self.BtnBookmark, self.OnBtnBookmarkClick)
 end
 
 function XUiMovie:OnClickBtnSkip()
@@ -192,9 +227,9 @@ function XUiMovie:OnClickBtnSkip()
     end
     
     if not XTool.IsTableEmpty(skipSummaryCfg) then
-        XLuaUiManager.Open("UiMovieSummary", XMVCA.XMovie.XEnumConst.SkipType.Summary, skipSummaryCfg, nil, closeCb)
+        XLuaUiManager.Open("UiMovieSummary", XMVCA.XMovie.EnumConst.SkipType.Summary, skipSummaryCfg, nil, closeCb)
     else
-        XLuaUiManager.Open("UiMovieSummary", XMVCA.XMovie.XEnumConst.SkipType.OnlyTips, nil, nil, closeCb)
+        XLuaUiManager.Open("UiMovieSummary", XMVCA.XMovie.EnumConst.SkipType.OnlyTips, nil, nil, closeCb)
     end
 end
 
@@ -223,7 +258,7 @@ function XUiMovie:OnClickBtnPause()
     if self:SelectPanelShowing() then
         return
     end
-    if not XDataCenter.MovieManager.IsAutoPlay() then
+    if not XDataCenter.MovieManager.GetIsAutoPlay() then
         return
     end
     XDataCenter.MovieManager.SwitchMovieState()
@@ -234,6 +269,8 @@ function XUiMovie:OnClickBtnPause()
         self:PlayAnimation("ImgPauseIconDisable")
     end
     self.ImgPauseIcon.gameObject:SetActiveEx(isMoviePause)
+    self.BtnAutoTextPlaying.gameObject:SetActiveEx(not isMoviePause)
+    self.BtnAutoTextStop.gameObject:SetActiveEx(isMoviePause)
 end
 
 function XUiMovie:OnClickBtnTurn()
@@ -243,14 +280,6 @@ end
 function XUiMovie:OnClickBtnScreenSpeed()
     local isShow = not self.IsShowSpeedList
     self:ShowSpeedList(isShow)
-end
-
-function XUiMovie:GetActor(actorIndex)
-    local actor = self.Actors[actorIndex]
-    if not actor then
-        XLog.Error("XUiMovie:GetActor error:ActorIndex is not match, actorIndex is " .. actorIndex)
-    end
-    return actor
 end
 
 function XUiMovie:GetSpineActor(actorIndex)
@@ -468,7 +497,6 @@ function XUiMovie:OnClickSpeedButtonCallBack(index)
         XDataCenter.MovieManager.SetSpeed(selectSpeed)
     end
 
-    local config = XMovieConfigs.GetMovieSpeedConfig(index)
     local desc = XUiHelper.GetText("MovieSpeed", config.Name)
     self.BtnScreenSpeed:SetName(desc)
 end
@@ -492,11 +520,19 @@ end
 -- 获取UI动画
 function XUiMovie:GetUiAnimation(animName)
     if string.sub(animName, 1, 6) == "RImgBg" then
-        local bgIndex = tonumber(string.sub(animName, 7, 7))
+        local bgIndexStr, shortAnimName = string.match(animName, "^RImgBg(%d+)(%a+%d*%a*)$")
+        local bgIndex = tonumber(bgIndexStr)
+        local bgAnimName = "RImgBg" .. shortAnimName
         local bg = self.UiMovieBg:GetBg(bgIndex)
-        local bgAnimName = "RImgBg" .. string.sub(animName, 8)
         bg:Show() -- 需要节点显示才能播放动画，否则动画的activeInHierarchy为false
         return bg:GetAnim(bgAnimName)
+        
+    elseif string.sub(animName, 1, 10) == "PanelActor" then
+        local actorIndexStr, shortAnimName = string.match(animName, "^PanelActor(%d+)(%a+%d*%a*)$")
+        local actorIndex = tonumber(actorIndexStr)
+        local actor = self:GetActor(actorIndex)
+        return actor:GetAnim(shortAnimName)
+        
     else
         return self[animName]
     end
@@ -506,35 +542,37 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
-    if self:SelectPanelShowing() then
-        return
-    end
-
-    local isAutoPlay = not XDataCenter.MovieManager.IsAutoPlay()
+    local isAutoPlay = not XDataCenter.MovieManager.GetIsAutoPlay()
+    XDataCenter.MovieManager.SetMoviePause(false)
+    XDataCenter.MovieManager.SetAutoPlay(isAutoPlay)
+    
     self.BtnTurn:SetDisable(isAutoPlay, not isAutoPlay)
     self.PanelMask.gameObject:SetActiveEx(isAutoPlay)
     self.ImgPauseIcon.gameObject:SetActiveEx(false)
 
     -- 显示倍速
     self.BtnScreenSpeed.gameObject:SetActiveEx(isAutoPlay)
+    self.BtnAuto:SetButtonState(isAutoPlay and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     if isAutoPlay then
-        self:ShowSpeedList(false)
-        self.BtnAuto.ButtonState = CS.UiButtonState.Select
         self:StartAutoTimer()
-    else
-        self.BtnAuto.ButtonState = CS.UiButtonState.Normal
-        self:ClearAutoTimer()
-    end
+        
+        -- 按钮显示当前倍速
+        local curSpeed = XDataCenter.MovieManager.GetSpeed()
+        local configSpeed = math.floor(curSpeed * 1000)
+        local index, config = XMovieConfigs.GetMovieSpeedConfigBySpeed(configSpeed)
+        self.PanelSpeedGroup:SelectIndex(index)
 
-    XDataCenter.MovieManager.SwitchAutoPlay()
-    if XDataCenter.MovieManager.IsMoviePause() then
-        XDataCenter.MovieManager.SetMoviePause(false)
+        -- 自动播放按钮文本
+        self.BtnAutoTextPlaying.gameObject:SetActiveEx(true)
+        self.BtnAutoTextStop.gameObject:SetActiveEx(false)
+    else
+        self:ClearAutoTimer()
     end
 end
 
 -- 关闭自动播放
 function XUiMovie:ResetAutoPlay()
-    if XDataCenter.MovieManager.IsAutoPlay() then
+    if XDataCenter.MovieManager.GetIsAutoPlay() then
         self.BtnAuto:SetButtonState(XUiButtonState.Normal)
         self:OnClickBtnAuto()
     end
@@ -558,7 +596,7 @@ function XUiMovie:StartAutoTimer()
             self.LastActionTime = nowTime
         else
             local actionType = XDataCenter.MovieManager.GetCurPlayingActionType()
-            local AUTO_PLAY_CLICK_ACTION = XMVCA.XMovie.XEnumConst.AUTO_PLAY_CLICK_ACTION
+            local AUTO_PLAY_CLICK_ACTION = XMVCA.XMovie.EnumConst.AUTO_PLAY_CLICK_ACTION
             local offset = AUTO_PLAY_CLICK_ACTION[actionType] or AUTO_PLAY_CLICK_ACTION.DEFAULT
             if type(offset) == "number" and (nowTime - self.LastActionTime) >= (offset / 1000) then
                 self:OnBtnNextClick()
@@ -589,7 +627,25 @@ end
 --============================================================== #endregion PanelDialog ==============================================================
 
 
---============================================================== #region PanelText ==============================================================
+
+--region Actor
+
+---@return XUiGridMovieActor
+function XUiMovie:GetActor(actorIndex)
+    local actor = self.Actors[actorIndex]
+    if not actor then
+        XLog.Error("XUiMovie:GetActor error:ActorIndex is not match, actorIndex is " .. actorIndex)
+    end
+    return actor
+end
+
+-- 获取Actor预制体模版
+function XUiMovie:GetUiMoviePanelActor()
+    return self.UiMoviePanelActor
+end
+--endregion
+
+--region PanelText
 -- 显示文本
 function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
     if not self.UiPanelText then
@@ -616,24 +672,13 @@ end
 function XUiMovie:TextPlayAnim(id, time, pos, rotation, scale)
     return self.UiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
 end
---============================================================== #endregion PanelText ==============================================================
 
-
---============================================================== #region BtnNext ==============================================================
--- 注册BtnNext函数
-function XUiMovie:RegisterBtnNextEvent()
-    self:RegisterClickEvent(self.BtnNext, self.OnBtnNextClick)
-    --XDataCenter.InputManagerPc.RegisterFunc(CS.XUiPc.XUiPcCustomKeyEnum.UiMovieNext, function()
-    --    self:OnBtnNextClick()
-    --end, 0)
+function XUiMovie:GetText(id)
+    return self.UiPanelText:GetText(id)
 end
+--endregion
 
--- 释放BtnNext函数
-function XUiMovie:ReleaseBtnNextEvent()
-    self:RemoveBtnNextCallback()
-    --XDataCenter.InputManagerPc.UnregisterFunc(CS.XUiPc.XUiPcCustomKeyEnum.UiMovieNext)
-end
-
+--region BtnNext
 -- 设置BtnNext回调函数
 function XUiMovie:SetBtnNextCallback(cb)
     self.BtnNextCb = cb
@@ -661,6 +706,61 @@ function XUiMovie:OnBtnNextClick()
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
     end
 end
---============================================================== #endregion BtnNext ==============================================================
+
+-- BtnNext长按回调
+function XUiMovie:OnBtnNextPress(pressTime)
+    -- 进入自动播放
+    if pressTime > XMVCA.XMovie.EnumConst.LONG_PRESS_ENTER_AUTO_PLAY_TIME and not XDataCenter.MovieManager.GetIsAutoPlay() then
+        XDataCenter.MovieManager.SetLongPressAutoPlay(true)
+        self:OnClickBtnAuto()
+    end
+end
+
+-- BtnNext抬起
+function XUiMovie:OnBtnNextPointerUp()
+    -- 暂停自动播放
+    if XDataCenter.MovieManager.GetIsAutoPlay() then
+        XDataCenter.MovieManager.SetLongPressAutoPlay(false)
+        self:OnClickBtnAuto()
+    end
+end
+--endregion
+
+--region BtnBookmark
+-- 点击书签按钮
+function XUiMovie:OnBtnBookmarkClick()
+    -- 自动播放时，暂停自动播放
+    if XDataCenter.MovieManager.GetIsAutoPlay() then
+        local isMoviePause = XDataCenter.MovieManager.IsMoviePause()
+        if not isMoviePause then
+            self:OnClickBtnPause()
+        end
+    end
+    
+    local bookmarkData = XMVCA.XMovie:GetBookmarkData()
+    if bookmarkData ~= nil then
+        local bookmarkName = XMVCA.XMovie:GetBookmarkName()
+        local params = XMVCA.XMovie:GetClientConfigParams("BookmarkCoverTips")
+        local tipTitle = params[1]
+        local contentFormat = params[2]
+        local content = string.format(contentFormat, bookmarkName)
+        content = XUiHelper.ConvertLineBreakSymbol(content)
+        local confirmCb = function()
+            self:RequestAddStageBookmark()
+        end
+        XLuaUiManager.Open("UiSystemDialog", tipTitle, content, XUiManager.DialogType.Normal, nil, confirmCb)
+    else
+        self:RequestAddStageBookmark()
+    end
+end
+
+-- 请求添加书签
+function XUiMovie:RequestAddStageBookmark()
+    XMVCA.XMovie:RequestAddStageBookmark(function()
+        local content = self._Control:GetClientConfig("BookmarkSuccessTips")
+        XLuaUiManager.Open("UiLeftTip", content)
+    end)
+end
+--endregion
 
 return XUiMovie

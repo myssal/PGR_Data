@@ -1,4 +1,5 @@
 local XUiGridResonanceSkill = require("XUi/XUiEquipResonanceSkill/XUiGridResonanceSkill")
+---@class XUiGridResonanceDoubleSkillV2P6
 local XUiGridResonanceDoubleSkillV2P6 = XClass(nil, "XUiGridResonanceDoubleSkillV2P6")
 
 function XUiGridResonanceDoubleSkillV2P6:Ctor(ui, rootUi)

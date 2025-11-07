@@ -361,6 +361,9 @@ function XUiNode:BindTweenAnimationAgency()
     end
 end
 
+function XUiNode:Update()
+end
+
 function XUiNode:Release()
     self._IsNodeShow = false
     self._StateFlag = XUiNodeState.Release
@@ -466,16 +469,7 @@ function XUiNode:PlayAnimationWithMask(animeName, finCb, beginCb, wrapMode)
 end
 
 function XUiNode:PlayAnimation(animeName, finCb, beginCb, wrapMode)
-    if XTool.UObjIsNil(self.Transform) then
-        return
-    end
-
-    local animRoot = self.Transform:Find("Animation")
-    if XTool.UObjIsNil(animRoot) then
-        return
-    end
-
-    local animTrans = animRoot:FindTransform(animeName)
+    local animTrans = self:GetTimelineTransform(animeName)
     if not animTrans or not animTrans.gameObject.activeInHierarchy then
         return
     end
@@ -490,21 +484,41 @@ function XUiNode:PlayAnimation(animeName, finCb, beginCb, wrapMode)
 end
 
 function XUiNode:StopAnimation(animeName)
-    if XTool.UObjIsNil(self.Transform) then
-        return
-    end
-
-    local animRoot = self.Transform:Find("Animation")
-    if XTool.UObjIsNil(animRoot) then
-        return
-    end
-
-    local animTrans = animRoot:FindTransform(animeName)
+    local animTrans = self:GetTimelineTransform(animeName)
     if not animTrans or not animTrans.gameObject.activeInHierarchy then
         return
     end
 
     animTrans:StopTimelineAnimation()
+end
+
+function XUiNode:ForceSkipToEndAnimation(animeName)
+    local animTrans = self:GetTimelineTransform(animeName)
+    if not animTrans then return end
+
+    local director = animTrans:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    if not director then return end
+
+    director.time = director.duration
+    director:Evaluate()
+end
+
+function XUiNode:GetTimelineTransform(animeName)
+    if XTool.UObjIsNil(self.Transform) then
+        return nil
+    end
+
+    local animRoot = self.Transform:Find("Animation")
+    if XTool.UObjIsNil(animRoot) then
+        return nil
+    end
+
+    local animTrans = animRoot:FindTransform(animeName)
+    if XTool.UObjIsNil(animTrans) or not animTrans.gameObject.activeInHierarchy then
+        return nil
+    end
+
+    return animTrans
 end
 
 --region Tween动画

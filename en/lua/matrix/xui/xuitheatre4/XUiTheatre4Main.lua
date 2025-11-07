@@ -4,6 +4,7 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiTheatre4Main = XLuaUiManager.Register(XLuaUi, "UiTheatre4Main")
 
 function XUiTheatre4Main:OnAwake()
+    XMVCA.XMainLine2:SetLastExhibitionChapterByChapterType(XEnumConst.FuBen.ChapterType.Theatre4)
     ---@type XUiGridCommon
     self._BattlePassReward = nil
     self:RegisterUiEvents()

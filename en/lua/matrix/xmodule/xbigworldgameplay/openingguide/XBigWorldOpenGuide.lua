@@ -41,6 +41,11 @@ function XBigWorldOpenGuide:Start()
     if self._Queue:IsEmpty() then
         return self:Finish()
     end
+    --进入新手流程时，检查一下需要开启的系统
+    XMVCA.XBigWorldFunction:TryOpenFunction()
+    
+    --开始时关闭当前音乐，避免上次BGM影响
+    XLuaAudioManager.StopCurrentBGM()
     -- 打开按键检测冲突
     CS.XInputManager.InputMapper:SetIsOpenInputMapSectionCheck(true)
     self:PreLaunch()

@@ -27,7 +27,7 @@ function XUiTheatre5Settlement:OnStart(resultData)
 end
 
 function XUiTheatre5Settlement:OnDestroy()
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._Control.PVPControl:ClearAdventureData()
     end
 end
@@ -37,7 +37,7 @@ function XUiTheatre5Settlement:OnGameDetailNextEvent()
     self:PlayAnimationWithMask('SecondToThird', function()
         self.PanelGameDetail:Close()
         -- 播放动画
-        if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+        if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
             self.PanelReward:ShowRankAnimation()
             -- 检查弹窗
             XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_RESULT_WIN)

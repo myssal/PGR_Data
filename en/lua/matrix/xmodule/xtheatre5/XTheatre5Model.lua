@@ -25,6 +25,8 @@ function XTheatre5Model:OnInit()
     self.PVERougeData = XTheatre5PVERougeData.New(self)
     ---@type XTheatre5PVEAdventureData
     self.PVEAdventureData = XTheatre5PVEAdventureData.New(self)
+    
+    self._RelicCollects = {}
 end
 
 function XTheatre5Model:ClearPrivate()
@@ -65,7 +67,7 @@ end
 function XTheatre5Model:SetCurPlayingMode(mode)
     self._CurPlayingMode = mode
 
-    if self._CurPlayingMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._CurPlayingMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self.CurAdventureData = self.PVPAdventureData
     else
         self.CurAdventureData = self.PVEAdventureData
@@ -80,10 +82,10 @@ end
 
 function XTheatre5Model:ChangePlayingMode()
     local curPlayingMode = self._CurPlayingMode
-    if curPlayingMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
-        curPlayingMode = XMVCA.XTheatre5.EnumConst.GameModel.PVP
+    if curPlayingMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
+        curPlayingMode = XMVCA.XTheatre5.EnumConst.GameMode.PVP
     else
-        curPlayingMode = XMVCA.XTheatre5.EnumConst.GameModel.PVE
+        curPlayingMode = XMVCA.XTheatre5.EnumConst.GameMode.PVE
     end
     self:SetCurPlayingMode(curPlayingMode)        
 end
@@ -110,10 +112,40 @@ function XTheatre5Model:GetCharacterWinGameCountData()
 end
 
 function XTheatre5Model:GetTheatre5WorldIdByActivityId(activityId)
-    if self:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         return self:GetTheatre5PVPWorldIdByActivityId(activityId)
     end
     return self:GetTheatre5PVEWorldIdByActivityId()    
+end
+
+function XTheatre5Model:UpdateRelicCollects(relicCollects)
+    if not relicCollects then
+        XLog.Error("[XTheatre5Model] 更新饰品图鉴，但是服务端数据为空")
+    end
+    self._RelicCollects = relicCollects or {}
+end
+
+function XTheatre5Model:UpdateOneRelicCollect(relicId)
+    self._RelicCollects = self._RelicCollects or {}
+    self._RelicCollects[#self._RelicCollects + 1] = relicId
+end
+
+function XTheatre5Model:HasEnoughExpToAutoUpgrade()
+    local levelConfig = self:GetCharacterLevelConfig(self.CurAdventureData)
+    if not levelConfig then
+        XLog.Error("[XTheatre5Model] 角色检测升级，但是对应等级的配置数据为空")
+        return false
+    end
+    local nextLevel = self:GetCharacterLevelConfig(self.CurAdventureData, levelConfig.Level + 1)
+    if not nextLevel then
+        --XLog.Error("[XTheatre5Model] 已经满级")
+        return false
+    end
+    local exp = self.CurAdventureData:GetCharacterExp()
+    if exp >= levelConfig.Exp then
+        return true
+    end
+    return false
 end
 
 return XTheatre5Model

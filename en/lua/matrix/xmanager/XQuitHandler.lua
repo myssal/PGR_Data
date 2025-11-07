@@ -67,6 +67,11 @@ XQuitHandler.ExitGame = function()
     local title = CS.XTextManager.GetText("TipTitle")
     local content = CS.XTextManager.GetText("GameExitMsg")
     local confirmCb = function()
+        if XDataCenter.UiPcManager.IsCloudGame() then
+            -- 云游戏退出直接弹出提示，关闭游戏
+            CS.XWLinkAgent.Exit(CS.XTextManager.GetText("GameExitMsg"))
+            return
+        end
         CS.XDriver.Exit()
     end
     -- 会关闭公告, 尝试不发此事件

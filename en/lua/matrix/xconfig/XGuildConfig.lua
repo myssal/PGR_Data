@@ -46,7 +46,7 @@ local GuildCustomNameTemplate = {}
 local GuildSignTemplate = {}
 local GuildSignEventTemplate = {}
 local GuildGoods = {}
-local SortedTalentPoint = {}
+local SortedTalentPoint
 
 XGuildConfig.KEY_LAST_LEVEL = "KeyGuildLastLevel"
 XGuildConfig.KEY_LAST_RANK = "KeyGuildLastRank"
@@ -267,7 +267,7 @@ function XGuildConfig.Init()
     
 
     XGuildConfig.InitGuildGift()
-    XGuildConfig.InitGuildTalent()
+    --XGuildConfig.InitGuildTalent()
     XGuildConfig.InitMemberSortFunc()
 end
 
@@ -534,6 +534,7 @@ function XGuildConfig.GetGuildTalentConfigById(id)
 end
 
 function XGuildConfig.InitGuildTalent()
+    SortedTalentPoint = {}
     for _, v in pairs(GuildTalentDetails) do
         SortedTalentPoint[v.IndexInMap] = {
             Id = v.Id,
@@ -558,6 +559,9 @@ function XGuildConfig.InitGuildTalent()
 end
 
 function XGuildConfig.GetSortedTalentPoints()
+    if not SortedTalentPoint then
+        XGuildConfig.InitGuildTalent()
+    end
     return SortedTalentPoint
 end
 

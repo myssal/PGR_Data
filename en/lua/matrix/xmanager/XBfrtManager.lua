@@ -63,7 +63,7 @@ XBfrtManagerCreator = function()
 
     -- 据点战管理器
     ---@class XBfrtManager:XExFubenSimulationChallengeManager
-    local XBfrtManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Bfrt)
+    local XBfrtManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Bfrt)
 
     --据点战梯队类型
     XBfrtManager.EchelonType = {
@@ -418,6 +418,7 @@ XBfrtManagerCreator = function()
     function XBfrtManager.Init()
         _IsInitStageInfo = false
         XBfrtManager._TeamData = nil
+        XBfrtManager._GirdEchelonIndexTempTeam = {}
         BfrtChapterTemplates = XBfrtConfigs.GetBfrtChapterTemplates()
         BfrtGroupTemplates = XBfrtConfigs.GetBfrtGroupTemplates()
         EchelonInfoTemplates = XBfrtConfigs.GetEchelonInfoTemplates()
@@ -491,7 +492,7 @@ XBfrtManagerCreator = function()
         if isLogistics then
             return _ViewGroupLogisticsTeams
         else
-            return _ViewGroupFightTeams
+            return _ViewGroupFightTeams -- 在XTeam的EntityIds里刷新 同步这里刷新
         end
     end
 
@@ -1913,6 +1914,7 @@ XBfrtManagerCreator = function()
     end
 
     ---==========================================
+    --- 传入的echelonId就是stageId
     --- 得到队伍首发位
     --- 当首发位不为空时，直接返回首发位，否则返回默认首发位
     ---（因为服务器在之前只有队长位，后面区分了队长位与首发位，存在有队长位数据，没有首发位数据的情况）
@@ -2016,6 +2018,32 @@ XBfrtManagerCreator = function()
         end
 
         return XBfrtManager._TeamData
+    end
+
+    -- 只为记录据点UiBfrtDeploy临时生成的队伍引用
+    function XBfrtManager.SetGirdEchelonIndexTempTeam(teamData, index)
+        if not teamData or not index then
+            return
+        end
+        XBfrtManager._GirdEchelonIndexTempTeam[index] = teamData
+    end
+
+    ---@return XTeam
+    function XBfrtManager.GetGirdEchelonIndexTempTeam(index)
+        if not index then
+            return
+        end
+        return XBfrtManager._GirdEchelonIndexTempTeam[index]
+    end
+
+    function XBfrtManager.ClearGirdEchelonIndexTempTeam()
+        local t = XBfrtManager._GirdEchelonIndexTempTeam
+        if not t then
+            return
+        end
+        for k in pairs(t) do
+            t[k] = nil
+        end
     end
 
     function XBfrtManager.SetTeamAndDoCB(groupId, fightTeamList, logisticsTeamList, cb)

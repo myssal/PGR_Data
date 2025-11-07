@@ -80,6 +80,7 @@ local TABLE_DRAW_CLIENT_CONFIG = "Client/Draw/DrawClientConfig.tab"
 local TABLE_DRAW_PREDICT = "Client/Draw/DrawPredict.tab"
 local TABLE_DRAW_PREDICT_POS = "Client/Draw/DrawPredictPos.tab"
 local TABLE_DRAW_NEW_PLAYER_ASSIGN_TAG = "Client/Draw/DrawNewPlayerAssignTag.tab"
+local TABLE_DRAW_DRAW_POWER = "Client/Draw/DrawPower.tab"
 
 local TABLE_DRAW_COMBINATIONS = "Share/Draw/DrawCombinations.tab"
 local TABLE_DRAW_TICKET = "Share/DrawTicket/DrawTicket.tab"
@@ -104,6 +105,8 @@ local DrawGroupRelationDic = {}
 local DrawSkipCfg = {}
 local DrawSceneCfg = {}
 local DrawTicketCfg = {}
+---@type XTableDrawPower[]
+local DrawPower = {}
 ---@type XTableDrawActivityTargetShow[]
 local DrawActivityTargetShowCfg = {}
 ---@type XTableDrawActivityTargetRoleBg[]
@@ -149,6 +152,7 @@ function XDrawConfigs.Init()
     DrawPreviewGoodsCfg = XTableManager.ReadByIntKey(TABLE_DRAW_PREVIEW_GOODS, XTable.XTableRewardGoods, "Id")
     DevilMayCryActivityCfg = XTableManager.ReadByIntKey(TABLE_DEVILMAYCRY_ACTIVITY, XTable.XTableDevilMayCryActivity, "DrawId")
     DrawProbs = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "DrawId")
+    DrawPower = XTableManager.ReadByIntKey(TABLE_DRAW_DRAW_POWER, XTable.XTableDrawPower, "DrawId")
 
     XDrawConfigs.SetDrawSubGroupDic()
     XDrawConfigs.SetGroupRelationDic()
@@ -269,6 +273,10 @@ end
 
 function XDrawConfigs.GetDrawProbById(id)
     return DrawProbs[id]
+end
+
+function XDrawConfigs.GetDrawPower(id)
+    return DrawPower[id]
 end
 
 function XDrawConfigs.GetDrawTypeChangeCfg()
@@ -409,27 +417,33 @@ function XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowTabDesc(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).TabDesc
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.TabDesc or ""
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowTitleList(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).Title
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.Title or {}
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowDescList(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).Desc
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.Desc or {}
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowBannerPrefab(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).BannerPrefab
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.BannerPrefab or ""
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowActiveTipTxt(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).ActiveTipTxt
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.ActiveTipTxt or ""
 end
 
 function XDrawConfigs.GetDrawActivityTargetShowRuleTipTxt(activityId)
-    return XDrawConfigs.GetDrawActivityTargetShowCfg(activityId).RuleTipTxt
+    local cfg = XDrawConfigs.GetDrawActivityTargetShowCfg(activityId)
+    return cfg and cfg.RuleTipTxt or ""
 end
 --endregion
 

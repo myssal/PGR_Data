@@ -201,7 +201,10 @@ function XUiTRPGYingDi:OnSelectRole(index)
 
     local notNext = index + 1 > self.RoleCount
     local notLast = index - 1 < 1
-    self:FindChildUiObj("UiTRPGTalenTree"):RefreshData(roleId, notNext, notLast)
+    local UiTRPGTalenTree =  self:FindChildUiObj("UiTRPGTalenTree")
+    if UiTRPGTalenTree then
+        UiTRPGTalenTree:RefreshData(roleId, notNext, notLast)
+    end
 end
 
 function XUiTRPGYingDi:OnSelectNextRole()

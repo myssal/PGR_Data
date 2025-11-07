@@ -672,6 +672,15 @@ local type = {
     
     --启明卡池
     CONDITION_LOTTO_MAIN_ENTER = "XRedPointLottoMainEnter", --主界面入口红点
+    
+    -- 通用功能开启蓝点
+    CONDITION_COMMON_FUNCTION_SHOW = "XRedPointCommonFunctionShow", 
+    
+    --赛马
+    CONDITION_RACE_MAIN = "XRedPointRaceMain", --主红点
+    CONDITION_RACE_TASK = "XRedPointRaceTask", --任务红点
+    CONDITION_RACE_ROUND_GUESS = "XRedPointRaceRoundGuess", --单场预测红点
+    CONDITION_RACE_MATCH_GUESS = "XRedPointRaceMatchGuess", --赛事预测红点
 }
 XRedPointConditions.Conditions = type
 

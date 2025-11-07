@@ -31,6 +31,7 @@ function XUiBigWorldHud:OnEnable()
     self:RefreshBtnQuit()
     self:RefreshRedPoint()
     self:RefreshShield()
+    self:RefreshPerspective()
     self:AddEventHandler()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_UI_HUD_ENABLE)
 end
@@ -50,6 +51,7 @@ function XUiBigWorldHud:InitUi()
     self.PanelQuest = require("XUi/XUiBigWorld/XHud/Panel/XUiBigWorldPanelQuest").New(self.PanelTask, self)
     ---@type XUiBigWorldPanelLittleMap
     self.LittleMap = require("XUi/XUiBigWorld/XHud/Panel/XUiBigWorldPanelLittleMap").New(self.PanelLittleMap, self)
+    self.CanvasGroup = self.Transform:FindTransform("SafeAreaContentPane"):GetComponent(typeof(CS.UnityEngine.CanvasGroup))
 end
 
 function XUiBigWorldHud:InitCb()
@@ -59,53 +61,33 @@ function XUiBigWorldHud:InitCb()
         end
         self.ListMenu.gameObject:SetActiveEx(self._IsShowMenu)
     end
-    self.BtnQuit.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
 
-    self.BtnQuitDoor2.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuitDoor2:AddEventListener(handler(self, self.OnBtnQuitClick))
 
-    self.BtnTask.CallBack = function()
-        self:OnBtnTaskClick()
-    end
+    self.BtnTask:AddEventListener(handler(self, self.OnBtnTaskClick))
 
-    self.BtnMessage.CallBack = function()
-        self:OnBtnMessageClick()
-    end
+    self.BtnMessage:AddEventListener(handler(self, self.OnBtnMessageClick))
 
-    self.BtnMessageList.CallBack = function()
-        self:OnBtnMessageListClick()
-    end
+    self.BtnMessageList:AddEventListener(handler(self, self.OnBtnMessageListClick))
 
-    self.BtnTeam.CallBack = function()
-        self:OnBtnTeamClick()
-    end
+    self.BtnTeam:AddEventListener(handler(self, self.OnBtnTeamClick))
 
-    self.BtnBag.CallBack = function()
-        self:OnBtnBagClick()
-    end
+    self.BtnBag:AddEventListener(handler(self, self.OnBtnBagClick))
 
-    self.BtnHandBook.CallBack = function()
-        self:OnBtnHandBookClick()
-    end
+    self.BtnPhoto:AddEventListener(handler(self, self.OnBtnPhotoClick))
 
-    self.BtnPhoto.CallBack = function()
-        self:OnBtnPhotoClick()
-    end
+    self.BtnSet:AddEventListener(handler(self, self.OnBtnSetClick))
 
-    self.BtnSet.CallBack = function()
-        self:OnBtnSetClick()
-    end
+    self.BtnTeach:AddEventListener(handler(self, self.OnBtnTeachClick))
 
-    self.BtnTeach.CallBack = function()
-        self:OnBtnTeachClick()
-    end
+    self.BtnMenu:AddEventListener(handler(self, self.OnBtnMenuClick))
+    
+    self.BtnHandBook:AddEventListener(handler(self, self.OnBtnHandBookClick))
 
-    self.BtnMenu.CallBack = function()
-        self:OnBtnMenuClick()
-    end
+    self.BtnFrist:AddEventListener(handler(self, self.OnBtnFirstClick))
+
+    self.BtnThird:AddEventListener(handler(self, self.OnBtnThirdClick))
     
     self._OnEnableAnimCb = handler(self, self.OnEnableAnimEnd)
     self._OnDisableAnimCb = handler(self, self.OnDisableAnimEnd)
@@ -128,7 +110,10 @@ function XUiBigWorldHud:AddEventHandler()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_BEGIN, self.RefreshFunction, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.RefreshBtnQuit, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BOX_DATA_UPDATE, self.OnRefreshCourseRedPoint, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_CHANGED, self.RefreshPerspective, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.AddEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
 end
 
 function XUiBigWorldHud:RemoveEventHandler()
@@ -144,7 +129,10 @@ function XUiBigWorldHud:RemoveEventHandler()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_BEGIN, self.RefreshFunction, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.RefreshBtnQuit, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BOX_DATA_UPDATE, self.OnRefreshCourseRedPoint, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_CHANGED, self.RefreshPerspective, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
 end
 
 
@@ -153,22 +141,19 @@ end
 function XUiBigWorldHud:OnBtnQuitClick()
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
         self:RecordHudClick(BtnIndex.BtnQuitInst)
-        local t = CS.StatusSyncFight.XLevelConfig.GetTemplate(XMVCA.XBigWorldGamePlay:GetCurrentLevelId())
-        XMVCA.XBigWorldCommon:OnOpenLeaveInstLevelPopup({
-            LevelSubType = t.LevelSubType
-        })
+        XMVCA.XBigWorldInstance:ShowExitLevelPopup()
     else
         self:RecordHudClick(BtnIndex.BtnQuit)
         if self:IsShowConfirm() then
             local data = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-            local toggleTip = XMVCA.XBigWorldService:GetText("NoTipToday")
+            --local toggleTip = XMVCA.XBigWorldService:GetText("NoTipToday")
             local tip = XMVCA.XBigWorldService:GetText("WordTipExit")
             local exitCb = function()
                 self:SaveConfirm()
                 XMVCA.XBigWorldGamePlay:ExitGame()
             end
-            local toggleCb = handler(self, self.UpdateConfirm)
-            data:InitInfo(nil, tip):InitSureClick(nil, exitCb):InitToggle(toggleTip, toggleCb)
+            --local toggleCb = handler(self, self.UpdateConfirm)
+            data:InitInfo(nil, tip):InitSureClick(nil, exitCb):InitToggleActive(false)--InitToggle(toggleTip, toggleCb)
             --打开界面失败，直接退出空花
             if not XMVCA.XBigWorldUI:OpenConfirmPopup(data) then
                 XMVCA.XBigWorldGamePlay:ExitGame()
@@ -214,7 +199,7 @@ end
 
 function XUiBigWorldHud:OnBtnPhotoClick()
     self:RecordHudClick(BtnIndex.BtnPhoto)
-    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto()
+    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto(false)
 end
 
 function XUiBigWorldHud:OnBtnSetClick()
@@ -229,10 +214,20 @@ end
 
 function XUiBigWorldHud:OnBtnMenuClick()
     self._IsShowMenu = not self._IsShowMenu
-    local cueId = self._IsShowMenu and 5600053 or 5600054
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    local cueKey = self._IsShowMenu and "Visibility" or "Collapsed"
+    self.BtnMenuPlayer:PlayByKeyName(cueKey)
     self:RefreshMenu()
     self:RecordHudClick(BtnIndex.BtnMenu)
+end
+
+function XUiBigWorldHud:OnBtnFirstClick()
+    XMVCA.XBigWorldGamePlay:SetFightPerspective(XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson, true)
+    self:RefreshPerspective()
+end
+
+function XUiBigWorldHud:OnBtnThirdClick()
+    XMVCA.XBigWorldGamePlay:SetFightPerspective(XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson, true)
+    self:RefreshPerspective()
 end
 
 function XUiBigWorldHud:RefreshMenu()
@@ -275,12 +270,30 @@ function XUiBigWorldHud:RefreshBtnQuit()
     self.BtnQuit.gameObject:SetActiveEx(not isInstLevel)
 end
 
+function XUiBigWorldHud:RefreshPerspective()
+    local isShow = XMVCA.XBigWorldFunction:CheckFunctionOpen(XMVCA.XBigWorldFunction.FunctionId.BigWorldPerspective) 
+            and not XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Perspective)
+    if not isShow then
+        self.BtnFrist.gameObject:SetActiveEx(false)
+        self.BtnThird.gameObject:SetActiveEx(false)
+        return
+    end
+    local isDisable = XMVCA.XBigWorldGamePlay:GetCurrentAgency():IsDisablePerspective()
+    self.BtnFrist:SetDisable(isDisable)
+    self.BtnThird:SetDisable(isDisable)
+    
+    local perspective = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(XMVCA.XBigWorldGamePlay:GetCurrentLevelId())
+    self.BtnFrist.gameObject:SetActiveEx(perspective == XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson)
+    self.BtnThird.gameObject:SetActiveEx(perspective == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson)
+end
+
 function XUiBigWorldHud:RefreshRedPoint()
     self:RefreshQuestRedPoint()
     self:RefreshButtonHelpRedPoint()
     self:RefreshCourseRedPoint()
     self:RefreshMessageRedPoint()
     self:RefreshMainMenuRedPoint()
+    self:RefreshBackpackRedPoint()
 end
 
 function XUiBigWorldHud:RefreshQuestRedPoint()
@@ -299,11 +312,15 @@ function XUiBigWorldHud:RefreshMessageRedPoint()
     self.BtnMessageList:ShowReddot(XMVCA.XBigWorldMessage:CheckUnReadMessage())
 end
 
+function XUiBigWorldHud:RefreshBackpackRedPoint()
+    self.BtnBag:ShowReddot(XMVCA.XBigWorldBackpack:CheckHasNotRecord())
+end
+
 function XUiBigWorldHud:RefreshMainMenuRedPoint()
-    if XMVCA.XBigWorldTeach:CheckHasUnReadTeach() or XMVCA.XBigWorldMessage:CheckUnReadMessage() then
-        self.BtnMenu:ShowReddot(true)
-        return
-    end
+    --if XMVCA.XBigWorldTeach:CheckHasUnReadTeach() or XMVCA.XBigWorldMessage:CheckUnReadMessage() then
+    --    self.BtnMenu:ShowReddot(true)
+    --    return
+    --end
     
     self.BtnMenu:ShowReddot(false)
 end
@@ -356,6 +373,12 @@ function XUiBigWorldHud:OnShieldChange()
     else
         self.BtnTeach.gameObject:SetActiveEx(true)
     end
+    if XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Exit) then
+        self.BtnQuit.gameObject:SetActiveEx(false)
+        self.BtnQuitDoor2.gameObject:SetActiveEx(false)
+    else
+        self:RefreshBtnQuit()
+    end
 end
 
 function XUiBigWorldHud:OnShieldControl()
@@ -365,7 +388,11 @@ end
 function XUiBigWorldHud:OnMessageChange()
     self:RefreshMessage()
     self:RefreshMessageRedPoint()
-    self:RefreshMainMenuRedPoint()
+    --self:RefreshMainMenuRedPoint()
+end
+
+function XUiBigWorldHud:OnBackpackUpdate()
+    self:RefreshBackpackRedPoint()
 end
 
 -- endregion
@@ -398,7 +425,7 @@ function XUiBigWorldHud:RefreshMessage()
             and not XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Message)
     
     local isShow = XMVCA.XBigWorldMessage:CheckUnReadMessage() and not XMVCA.XBigWorldMessage:CheckUnReadMessageShield() 
-            and isShowList
+            and isShowList and not XMVCA.XBigWorldMessage:CheckHaveForceMessage()
 
     self.BtnMessage.gameObject:SetActiveEx(isShow)
     self.BtnMessageList.gameObject:SetActiveEx(isShowList)
@@ -422,7 +449,7 @@ function XUiBigWorldHud:OnSetActive(value)
         end
         self._PlayingAnima = false
         self:SetActive(value)
-        
+        self.CanvasGroup.alpha = value and 1 or 0
         return
     end
     self._SetFrameCount = frameCount
@@ -472,7 +499,7 @@ function XUiBigWorldHud:OnRefreshCourseRedPoint()
 end
 
 function XUiBigWorldHud:OnRefreshTeachRedPoint()
-    self:RefreshMainMenuRedPoint()
+    --self:RefreshMainMenuRedPoint()
     self:RefreshButtonHelpRedPoint()
 end
 

@@ -73,7 +73,7 @@ function XTableManager.ReadArray(path, xTable, identifier)
     return tabLoader.ReadArray(path, xTable, identifier)
 end
 
-function XTableManager.ReleaseAll(unload)
+function XTableManager.ReleaseAll()
     bytesLoader.ReleaseCache()
     packLoader.ReleaseCache()
 end

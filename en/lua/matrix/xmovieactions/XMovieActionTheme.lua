@@ -1,6 +1,6 @@
 local XMovieActionTheme = XClass(XMovieActionBase, "XMovieActionTheme")
 
-function XMovieActionTheme:Ctor(actionData)
+function XMovieActionTheme:OnInit(actionData)
     local params = actionData.Params
 
     self.Title = params[1]
@@ -9,7 +9,7 @@ function XMovieActionTheme:Ctor(actionData)
     self.Content2 = params[4]
 end
 
-function XMovieActionTheme:OnInit()
+function XMovieActionTheme:OnEnter()
     self.UiRoot.TxtTitle.text = self.Title
     self.UiRoot.TxtContent.text = self.Content
     self.UiRoot:SetUiSprite(self.UiRoot.ImgLogo, self.LogoPath)
@@ -22,6 +22,35 @@ end
 
 function XMovieActionTheme:OnExit()
     -- self.UiRoot.PanelTheme.gameObject:SetActiveEx(false)
+end
+
+function XMovieActionTheme:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionTheme:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return true
+    end
+
+    if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.ANIMATION_PLAY then
+        local params = action:GetParams()
+        local animName = params[1]
+        if animName == XMVCA.XMovie.EnumConst.ANIMATION.THEME_ENABLE then
+            return true
+        end
+    end
+
+    return false
+end
+
+function XMovieActionTheme:OnPassedActionRun()
+    self:OnEnter()
 end
 
 return XMovieActionTheme

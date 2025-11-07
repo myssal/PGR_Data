@@ -11,19 +11,12 @@ local XUiFubenBossSingleRankMyBossRank = XClass(XUiNode, "XUiFubenBossSingleRank
 
 ---@param rankData XBossSingleRankData
 function XUiFubenBossSingleRankMyBossRank:Refresh(rankData, id, isChallenge)
-    local totalScore = 0
-    local boosSingleData = self._Control:GetBossSingleData()
     local maxCount = self._Control:GetMaxRankCount()
     local maxSpecialNumber = self._Control:GetMaxSpecialNumber()
     local rankNumber = rankData:GetRankNumber()
     local totalCount = rankData:GetTotalCount()
     local historyScore = rankData:GetHistoryNumber()
 
-    if isChallenge then
-        totalScore = boosSingleData:GetBossSingleChallengeTotalScore()
-    else
-        totalScore = boosSingleData:GetBossSingleTotalScore()
-    end
     if rankNumber <= maxCount and rankNumber > 0 then
         self.TxtRankPercent.gameObject:SetActive(false)
         self.TxtRankNormal.gameObject:SetActive(math.floor(rankNumber) > maxSpecialNumber)
@@ -57,10 +50,21 @@ function XUiFubenBossSingleRankMyBossRank:Refresh(rankData, id, isChallenge)
     end
 
     if id then
-        local curBossScore = isChallenge and self._Control:GetBossStageScore(id) or self._Control:GetBossCurScore(id)
-
+        local curBossScore
+        if isChallenge then
+            curBossScore = rankData:GetScore()
+        else    
+            curBossScore = self._Control:GetBossCurScore(id)
+        end
         self.TxtRankScore.text = XUiHelper.GetText("BossSingleBossRankScore", curBossScore)
     else
+        local boosSingleData = self._Control:GetBossSingleData()
+        local totalScore = 0
+        if isChallenge then
+            totalScore = boosSingleData:GetBossSingleChallengeTotalScore()
+        else
+            totalScore = boosSingleData:GetBossSingleTotalScore()
+        end
         self.TxtRankScore.text = XUiHelper.GetText("BossSingleAllRankScore", totalScore)
     end
 

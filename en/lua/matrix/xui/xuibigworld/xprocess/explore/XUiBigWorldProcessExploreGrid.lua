@@ -81,8 +81,8 @@ end
 
 function XUiBigWorldProcessExploreGrid:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnHelp.CallBack = Handler(self, self.OnBtnHelpClick)
-    self.BtnReward.CallBack = Handler(self, self.OnBtnRewardClick)
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
+    self.BtnReward:AddEventListener(handler(self, self.OnBtnRewardClick))
 end
 
 function XUiBigWorldProcessExploreGrid:_RegisterListeners()

@@ -13,7 +13,7 @@ end
 
 function XUiSkyGardenShoppingStreetGameTargetTips:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnClose.CallBack = function() self:Close() end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 end
 
 return XUiSkyGardenShoppingStreetGameTargetTips

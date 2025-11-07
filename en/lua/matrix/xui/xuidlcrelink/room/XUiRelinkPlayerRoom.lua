@@ -343,7 +343,7 @@ function XUiRelinkPlayerRoom:OnBtnChatClick()
 end
 
 function XUiRelinkPlayerRoom:OnBtnInviteClick()
-    self._Control:OpenFriendInviteUi()
+    self._Control:OpenFriendInviteUi("UiRelinkPopupPlayerInvite")
 end
 
 function XUiRelinkPlayerRoom:OnBtnCancelReadyClick()

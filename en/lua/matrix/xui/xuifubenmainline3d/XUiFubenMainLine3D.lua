@@ -1,6 +1,7 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridTreasureGrade = require("XUi/XUiFubenMainLineChapter/XUiGridTreasureGrade")
 local XUiPanelStory = require("XUi/XUiActivityBrief/XUiPanelStory")
+---@class UiFubenMainLine3D:XLuaUi
 local XUiFubenMainLine3D = XLuaUiManager.Register(XLuaUi,"UiFubenMainLine3D")
 local XUiGridFubenMainLineStage = require("XUi/XUiFubenMainLine3D/XUiGridFubenMainLineStage")
 local XUiGridFubenMainLineTheme = require("XUi/XUiFubenMainLine3D/XUiGridFubenMainLineTheme")
@@ -16,7 +17,7 @@ function XUiFubenMainLine3D:OnStart(chapterIndex,stageIndex,stageId)
     self:InitScene()
     self.IsOnZhouMu = false
     self.BtnHelp.gameObject:SetActiveEx(false)
-    self.RedPointId = XRedPointManager.AddRedPointEvent(self.ImgRedProgress, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_MAINLINE_TREASURE }, self.ChapterMainCfg.ChapterId[1], false)
+    --self.RedPointId = XRedPointManager.AddRedPointEvent(self.ImgRedProgress, self.OnCheckRewards, self, { XRedPointConditions.Types.CONDITION_MAINLINE_TREASURE }, self.ChapterMainCfg.ChapterId[1], false)
     self:InitPanelStoryJump()
     if chapterIndex then
         self:OnSelectChapter(chapterIndex,function()
@@ -74,7 +75,7 @@ function XUiFubenMainLine3D:OnDestroy()
     self.GridTreasureList = {}
     self.GridMultipleWeeksTaskList = {}
     self.LineDic = {}
-    XRedPointManager.RemoveRedPointEvent(self.RedPointId)
+    --XRedPointManager.RemoveRedPointEvent(self.RedPointId)
 end
 
 function XUiFubenMainLine3D:InitStageCfg()
@@ -199,7 +200,7 @@ function XUiFubenMainLine3D:RegisterButton()
     end
     self:RegisterClickEvent(self.BtnTreasure, self.OnBtnTreasureClick)
     self:RegisterClickEvent(self.BtnTreasureBg, self.OnBtnTreasureBgClick)
-
+    self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
 end
 
 function XUiFubenMainLine3D:ResetCamera(cb)
@@ -488,6 +489,11 @@ function XUiFubenMainLine3D:OnBtnTreasureBgClick()
     self.PanelAsset.gameObject:SetActiveEx(true)
 end
 
+function XUiFubenMainLine3D:OnBtnMissionClick()
+    local chapterId = self.ChapterMainCfg.ChapterId[1]
+    XLuaUiManager.Open("UiMainLineExhibitionMission", chapterId)
+end
+
 -- 是否显示红点
 function XUiFubenMainLine3D:OnCheckRewards(count, chapterId)
     if self.IsOnZhouMu then
@@ -506,18 +512,24 @@ function XUiFubenMainLine3D:UpdateChapterStars()
     local totalStars
     local received = true
 
-    self.PanelDesc.gameObject:SetActiveEx(true)
 
     if self.IsOnZhouMu then
         -- 周目奖励
         self.MultipleWeeksTxet.gameObject:SetActiveEx(true)
         self.TxtDesc.gameObject:SetActiveEx(false)
         self.ImgStarIcon.gameObject:SetActiveEx(false)
+        self.PanelMission.gameObject:SetActiveEx(false)
+        self.PanelDesc.gameObject:SetActiveEx(true)
 
         curStars, totalStars = XDataCenter.FubenZhouMuManager.GetZhouMuTaskProgress(self.ZhouMuId)
         received = XDataCenter.FubenZhouMuManager.ZhouMuTaskIsAllFinish(self.ZhouMuId)
 
+        self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
+        self.ImgJindu.gameObject:SetActiveEx(true)
+        self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
+        self.ImgLingqu.gameObject:SetActiveEx(received)
     else
+        --[[
         -- 主线收集奖励
         curStars, totalStars = XDataCenter.FubenMainLineManager.GetChapterStars(self.ChapterMainCfg.ChapterId[1])
         local chapterTemplate = XDataCenter.FubenMainLineManager.GetChapterCfg(self.ChapterMainCfg.ChapterId[1])
@@ -534,12 +546,46 @@ function XUiFubenMainLine3D:UpdateChapterStars()
         self.ImgStarIcon.gameObject:SetActiveEx(true)
 
         XRedPointManager.Check(self.RedPointId, self.ChapterMainCfg.ChapterId[1])
-    end
+        ]]
 
-    self.ImgJindu.fillAmount = totalStars > 0 and curStars / totalStars or 0
-    self.ImgJindu.gameObject:SetActiveEx(true)
-    self.TxtStarNum.text = CS.XTextManager.GetText("Fract", curStars, totalStars)
-    self.ImgLingqu.gameObject:SetActiveEx(received)
+        self.PanelJundu.gameObject:SetActiveEx(false)
+        self.PanelDesc.gameObject:SetActiveEx(false)
+        self.PanelMission.gameObject:SetActiveEx(true)
+        local curCnt = 0
+        local totalCnt = 0
+
+        -- 收集挑战目标数量和蓝点
+        local chapterId = self.ChapterMainCfg.ChapterId[1]
+        local chapter = XFubenMainLineConfigs.GetChapterCfg(chapterId)
+        for _, tId in pairs(chapter.TreasureId or {}) do
+            if XDataCenter.FubenMainLineManager.IsTreasureGet(tId) then
+                curCnt = curCnt + 1
+            end
+            totalCnt = totalCnt + 1
+        end
+
+        -- 收集任务数量和蓝点
+        local taskGroupId = XFubenMainLineConfigs.GetConfigChapterTaskGroupId(chapterId)
+        local tasks = XDataCenter.TaskManager.GetStoryTaskListByGroupId(taskGroupId)
+        for _, v in pairs(tasks) do
+            if v.State == XDataCenter.TaskManager.TaskState.Finish then
+                curCnt = curCnt + 1
+            end
+            totalCnt = totalCnt + 1
+        end
+
+        -- 进度奖励未领取蓝点
+        if totalCnt == 0 then
+            self.BtnMission.gameObject:SetActiveEx(false)
+        else
+            self.BtnMission.gameObject:SetActiveEx(true)
+            local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
+            self.BtnMission:SetName(progress)
+
+            local isRed = XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_MAINLINE_CHAPTER_REWARD, chapterId)
+            self.BtnMission:ShowReddot(isRed)
+        end
+    end
 end
 
 function XUiFubenMainLine3D:EnterFight(stage)
@@ -565,7 +611,7 @@ end
 
 function XUiFubenMainLine3D:PanelStoryJumpRefresh()
     if not self.IsInChapter then
-        self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.MainLine3DId, XFubenConfigs.ChapterType.MainLine)
+        self.PanelStoryJump:Refresh(XDataCenter.FubenMainLineManager.MainLine3DId, XEnumConst.FuBen.ChapterType.MainLine)
     else
         self.PanelStoryJump.GameObject:SetActiveEx(false)
     end

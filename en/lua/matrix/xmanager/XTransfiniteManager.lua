@@ -5,9 +5,9 @@ local Pairs = pairs
 XTransfiniteManagerCreator = function()
     local _Debug = true
 
-    local config = XFubenConfigs.GetChapterBannerByType(XFubenConfigs.ChapterType.Transfinite)
+    local config = XFubenConfigs.GetChapterBannerByType(XEnumConst.FuBen.ChapterType.Transfinite)
     ---@class XTransfiniteManager
-    local XTransfiniteManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Transfinite, config)
+    local XTransfiniteManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Transfinite, config)
 
     local RequestProto = {
         SetTeam = "TransfiniteSetTeamRequest",

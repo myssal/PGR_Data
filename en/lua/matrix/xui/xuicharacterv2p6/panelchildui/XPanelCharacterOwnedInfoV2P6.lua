@@ -6,18 +6,29 @@ function XPanelCharacterOwnedInfoV2P6:OnStart()
 end
 
 function XPanelCharacterOwnedInfoV2P6:InitButton()
-    XUiHelper.RegisterClickEvent(self, self.BtnType, self.OnBtnCareerTipsClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnElementDetail, self.OnBtnElementDetailClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnUniframeTip, self.OnBtnUniframeTipClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnFree, self.OnBtnFreeClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnTrain, self.OnBtnTrainClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnEvolution, self.OnBtnEvolutionClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnGeneralSkill1, function ()
+    self.BtnType.CallBack = function()
+        self:OnBtnCareerTipsClick()
+    end
+    
+    self.BtnElementDetail.CallBack = function()
+        self:OnBtnElementDetailClick()
+    end
+    
+    self.BtnUniframeTip.CallBack = function()
+        self:OnBtnUniframeTipClick()
+    end
+    
+    self.BtnGeneralSkill1.CallBack = function()
         self:OnBtnGeneralSkillClick(1)
-    end)
-    XUiHelper.RegisterClickEvent(self, self.BtnGeneralSkill2, function ()
+    end
+    
+    self.BtnGeneralSkill2.CallBack = function()
         self:OnBtnGeneralSkillClick(2)
-    end)
+    end
+
+    self.BtnTree.CallBack = function ()
+        self:OnBtnTreeClick()
+    end
 
     self.XGoInputHandler:AddDragUpListener(function ()
         self:OnDragUp()
@@ -31,6 +42,18 @@ function XPanelCharacterOwnedInfoV2P6:InitButton()
     self.XGoInputHandler:AddMidButtonScrollDownListener(function (v)
         self:OnScrollDown()
     end)
+    
+    self._FuncBtnFree = XUiHelper.XUiFunctionShowControl(self.BtnFree, self)
+    self._FuncBtnTrain = XUiHelper.XUiFunctionShowControl(self.BtnTrain, self)
+    self._FuncBtnEvolution = XUiHelper.XUiFunctionShowControl(self.BtnEvolution, self)
+
+    self._FuncBtnFree:Open()
+    self._FuncBtnTrain:Open()
+    self._FuncBtnEvolution:Open()
+
+    self._FuncBtnFree:AddButtonClickEvent(handler(self, self.OnBtnFreeClick))
+    self._FuncBtnTrain:AddButtonClickEvent(handler(self, self.OnBtnTrainClick))
+    self._FuncBtnEvolution:AddButtonClickEvent(handler(self, self.OnBtnEvolutionClick))
 end
 
 function XPanelCharacterOwnedInfoV2P6:InitPanelEquip()
@@ -46,6 +69,7 @@ function XPanelCharacterOwnedInfoV2P6:InitPanelEquip()
 end
 
 function XPanelCharacterOwnedInfoV2P6:OnDisable()
+    --[[
     if self.RedBtnFree then
         XRedPointManager.RemoveRedPointEvent(self.RedBtnFree)
     end
@@ -55,15 +79,32 @@ function XPanelCharacterOwnedInfoV2P6:OnDisable()
     if self.RedBtnEvolution then
         XRedPointManager.RemoveRedPointEvent(self.RedBtnEvolution)
     end
+    --]]
+
+    if self.RedBtnFree then
+        self._FuncBtnFree:RemoveAdditionRedPointEvent(self.RedBtnFree)
+    end
+    if self.RedBtnTrain then
+        self._FuncBtnTrain:RemoveAdditionRedPointEvent(self.RedBtnTrain)
+    end
+    if self.RedBtnEvolution then
+        self._FuncBtnEvolution:RemoveAdditionRedPointEvent(self.RedBtnEvolution)
+    end
+    
 end
 
 function XPanelCharacterOwnedInfoV2P6:OnEnable()
     -- 红点
     local characterId = self.Parent.CurCharacter.Id
-    self.RedBtnFree = XRedPointManager.AddRedPointEvent(self.BtnFree, self.OnCheckExhibitionRedPoint, self, { XRedPointConditions.Types.CONDITION_EXHIBITION_NEW }, characterId)
-    self.RedBtnTrain = XRedPointManager.AddRedPointEvent(self.BtnTrain, self.OnCheckTrainRedPoint, self, { XRedPointConditions.Types.CONDITION_CHARACTER_GRADE, 
-    XRedPointConditions.Types.CONDITION_CHARACTER_NEW_ENHANCESKILL_TIPS, XRedPointConditions.Types.CONDITION_CHARACTER_EVO_SKILL_TIPS_RED }, characterId)
-    self.RedBtnEvolution = XRedPointManager.AddRedPointEvent(self.BtnEvolution, self.OnCheckEvolutionRedPoint, self, { XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
+    --self.RedBtnFree = XRedPointManager.AddRedPointEvent(self.BtnFree, self.OnCheckExhibitionRedPoint, self, { XRedPointConditions.Types.CONDITION_EXHIBITION_NEW }, characterId)
+    --self.RedBtnTrain = XRedPointManager.AddRedPointEvent(self.BtnTrain, self.OnCheckTrainRedPoint, self, { XRedPointConditions.Types.CONDITION_CHARACTER_GRADE, 
+    --XRedPointConditions.Types.CONDITION_CHARACTER_NEW_ENHANCESKILL_TIPS, XRedPointConditions.Types.CONDITION_CHARACTER_EVO_SKILL_TIPS_RED }, characterId)
+    --self.RedBtnEvolution = XRedPointManager.AddRedPointEvent(self.BtnEvolution, self.OnCheckEvolutionRedPoint, self, { XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
+
+    self.RedBtnFree = self._FuncBtnFree:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_EXHIBITION_NEW }, characterId)
+    self.RedBtnTrain = self._FuncBtnTrain:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_GRADE,
+                                                  XRedPointConditions.Types.CONDITION_CHARACTER_NEW_ENHANCESKILL_TIPS, XRedPointConditions.Types.CONDITION_CHARACTER_EVO_SKILL_TIPS_RED }, characterId)
+    self.RedBtnEvolution = self._FuncBtnEvolution:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_CHARACTER_QUALITY }, characterId)
 end
 
 function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
@@ -72,7 +113,14 @@ function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
     self.CharacterId = characterId
 
     self.PanelEquips:UpdateCharacter(characterId)
-    
+
+    -- 生命树
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconVisible"))
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    self.BtnTree.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+    isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconEvolveVisible"))
+    self.ImgTreeBg.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+
     -- 机体名
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(characterId)
     self.TxtName.text = charConfig.Name
@@ -153,9 +201,15 @@ function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
     -- self:AprilFoolShowHandle()
 
     -- 蓝点
+    -- 因为参数变了，需要单独重新刷新
     XRedPointManager.Check(self.RedBtnFree, characterId)
     XRedPointManager.Check(self.RedBtnTrain, characterId)
     XRedPointManager.Check(self.RedBtnEvolution, characterId)
+    
+    self._FuncBtnFree:RefreshReddot()
+    self._FuncBtnTrain:RefreshReddot()
+    self._FuncBtnEvolution:RefreshReddot()
+
 end
 
 -- 2024愚人节显示处理
@@ -229,6 +283,16 @@ function XPanelCharacterOwnedInfoV2P6:OnBtnGeneralSkillClick(index)
     local realIndex = XMVCA.XCharacter:GetIndexInCharacterGeneralSkillIdsById(self.CharacterId, curId)
 
     XLuaUiManager.Open("UiCharacterAttributeDetail", self.CharacterId, XEnumConst.UiCharacterAttributeDetail.BtnTab.GeneralSkill, realIndex)
+end
+
+function XPanelCharacterOwnedInfoV2P6:OnBtnTreeClick()
+    local isBubbleTreeActive = self.BubbleTreeDetail.gameObject.activeSelf
+    self.Parent.BtnClose.gameObject:SetActiveEx(not isBubbleTreeActive)
+    self.BubbleTreeDetail.gameObject:SetActiveEx(not isBubbleTreeActive)
+end
+
+function XPanelCharacterOwnedInfoV2P6:CloseTreeBubble()
+    self.BubbleTreeDetail.gameObject:SetActiveEx(false)
 end
 
 function XPanelCharacterOwnedInfoV2P6:OnBtnTrainClick()

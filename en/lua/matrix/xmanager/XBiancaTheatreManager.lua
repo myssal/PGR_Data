@@ -8,7 +8,7 @@ local XAdventureDifficulty = require("XEntity/XBiancaTheatre/Adventure/XAdventur
 
 XBiancaTheatreManagerCreator = function()
     ---@class XBiancaTheatreManager
-    local XBiancaTheatreManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.BiancaTheatre)
+    local XBiancaTheatreManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.BiancaTheatre)
     -- 当前冒险管理 XAdventureManager
     local CurrentAdventureManager = nil
     -- 任务管理

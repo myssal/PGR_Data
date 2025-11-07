@@ -84,6 +84,7 @@ end
 function XUiSkillDetailsForEnhanceV2P6:InitSkillBtn()
     local tabGroup = {}
     local skillGroupIdList = self.Character:GetEnhanceSkillGroupIdList() or {}
+    local isShowTreeBg = false
     for index, skillGroupId in pairs(skillGroupIdList) do
         local btn = self.SkillBtnGrids[index]
         if not btn then
@@ -117,7 +118,30 @@ function XUiSkillDetailsForEnhanceV2P6:InitSkillBtn()
                 lockGo.gameObject:SetActiveEx(isLock)
             end
         end
+
+        -- 生命树
+        local enhanceSkillList = skillGroup:GetSkillIdList(skillGroupId)
+        local powerIds = XMVCA.XCharacter:GetCharacterPowerEnhanceSkillIds(self.CharacterId)
+        local isShowTreeIcon = nil
+        for k, skillId in pairs(enhanceSkillList) do
+            isShowTreeIcon = (not XTool.IsTableEmpty(powerIds)) and table.contains(powerIds, skillId)
+            if isShowTreeIcon then
+                isShowTreeBg = true
+                break
+            end
+        end
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkillVisible"))
+        btn:ShowTag(isShowTreeIcon and isShowTreeControl)
+        if isShowTreeIcon then
+            local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
+            if powerConfig and btn.TagObj then
+                btn.TagObj:GetComponent("Image"):SetSprite(powerConfig.IconSkill)
+            end
+        end
     end
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerSkillUnderVisible"))
+    self.ImgTreeBg.gameObject:SetActiveEx(isShowTreeBg and isShowTreeControl)
+
     self.PanelTagGroup:Init(tabGroup, function(tabIndex)
         self:OnClickTabCallBack(tabIndex)
     end)

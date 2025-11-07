@@ -360,7 +360,26 @@ function XFubenConfigAgency:GetFubenActivityConfigByManagerName(managerName)
 end
 
 function XFubenConfigAgency:GetSecondTagConfigsByFirstTagId(firstTagId)
-    return self._Model:GetSecondTagConfigsByFirstTagId(firstTagId)
+    local result = {}
+    
+    ---@type XTableFubenSecondTag[]
+    local cfgs = self._Model:GetSecondTagConfigsByFirstTagId(firstTagId)
+
+    if not XTool.IsTableEmpty(cfgs) then
+        for i, v in pairs(cfgs) do
+            if not XTool.IsNumberValidEx(v.ShowCondition) or XConditionManager.CheckCondition(v.ShowCondition) then
+                table.insert(result, v)
+            end
+        end
+
+        if not XTool.IsTableEmpty(result) then
+            table.sort(result, function(a, b) 
+                return a.Order < b.Order
+            end)
+        end
+    end
+    
+    return result
 end
 
 function XFubenConfigAgency:GetSecondTagConfigById(id)

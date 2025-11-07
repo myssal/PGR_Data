@@ -48,6 +48,7 @@ function XUiTheatre5PVEEventChat:UpdateReward(eventCfg)
     local hasReward = XTool.IsNumberValid(eventCfg.EventLevelGroup) and XTool.IsNumberValid(chapterLevelCfg.EventLevel)
     self.NodeReward.gameObject:SetActiveEx(hasReward)       
     if not hasReward then
+        XTool.UpdateDynamicItem(self._ItemGridList, {}, self.GridTheatre5Item, XUiTheatre5GetPVERewardItem, self)
         return false
     end
     local eventLevelCfgs = self._Control.PVEControl:GetPveEventLevelCfgs(eventCfg.EventLevelGroup)

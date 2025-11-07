@@ -19,7 +19,7 @@ XPayConfigs.PayTemplateType = {
 
 function XPayConfigs.Init()
     PayTemplates = XTableManager.ReadByStringKey(TABLE_PAY_PATH, XTable.XTablePay, "Key")
-    FirstPayTemplates = XTableManager.ReadByIntKey(TABLE_FIRST_PAY_PATH, XTable.XTableFirstPayReward, "NeedPayMoney")
+    FirstPayTemplates = XTableManager.ReadByIntKey(TABLE_FIRST_PAY_PATH, XTable.XTableFirstPayReward, "Id")
 end
 
 function XPayConfigs.GetPayTemplate(key)
@@ -60,6 +60,10 @@ function XPayConfigs.GetPayConfig()
     
     end
     return PayListDataConfig
+end
+
+function XPayConfigs.GetFirstPayConfigs()
+    return FirstPayTemplates
 end
 
 function XPayConfigs.CheckFirstPay(totalPayMoney)

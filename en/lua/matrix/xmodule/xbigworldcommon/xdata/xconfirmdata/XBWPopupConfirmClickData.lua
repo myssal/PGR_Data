@@ -1,8 +1,10 @@
 ---@class XBWPopupConfirmClickData
 local XBWPopupConfirmClickData = XClass(nil, "XBWPopupConfirmClickData")
 
-function XBWPopupConfirmClickData:Ctor(text, callback, isActive)
-    self:Init(text, callback, isActive)
+function XBWPopupConfirmClickData:Ctor()
+    self.Text = ""
+    self.Callback = false
+    self.IsActive = true
 end
 
 function XBWPopupConfirmClickData:InvokeClick()

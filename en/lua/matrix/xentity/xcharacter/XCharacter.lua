@@ -230,6 +230,21 @@ function XCharacter:GetEnhanceSkillGroupIdList()
     return self:GetEnhanceSkillCfg().SkillGroupId
 end
 
+function XCharacter:GetEnhanceSkillIdList()
+    if self._EnhanceSkillIdList then
+        return self._EnhanceSkillIdList
+    end
+
+    local res = {}
+    local skillGroupIds = self:GetEnhanceSkillGroupIdList()
+    for k, skillGroupId in pairs(skillGroupIds) do
+        local skillGroupData = self:GetEnhanceSkillGroupData(skillGroupId)
+        appendArray(res, skillGroupData:GetSkillIdList())
+    end
+    self._EnhanceSkillIdList = res
+    return res
+end
+
 function XCharacter:GetEnhanceSkillPosList()
     return self:GetEnhanceSkillCfg().Pos
 end

@@ -490,7 +490,11 @@ function XMailControl:FixSurveyContent(mailInfo)
         local btnContent = string.match(str,'@&&(.+),url')
         local link = string.match(str,'url=(.+),qid')
         --对链接增加参数
-        local linkParm = '?sojumpparm=%s&parmsign=%s'
+        -- 先判断链接本身是不是已经有参数了
+        local linkHasOriParams = string.find(link, '?') and true or false
+        -- 如果有参数了，则不再需要追加参数标识符
+        local linkParm = linkHasOriParams and '&sojumpparm=%s&parmsign=%s' or '?sojumpparm=%s&parmsign=%s'
+        
         local qid = string.match(str,'qid=(.+),title')
         linkParm = string.format(linkParm, XMVCA.XUrl:GetSojumpParm(), XMVCA.XUrl:GetParmSign(qid))
         fixContent = string.format(fixContent, link..linkParm,btnContent)
@@ -499,6 +503,11 @@ function XMailControl:FixSurveyContent(mailInfo)
             local strCount = (#btnContent)/2+2--韩服字体竟然占4个字节
             local spaceStr = string.rep(" ",strCount)
             fixedContent = string.gsub(fixedContent,"]</link>","]"..spaceStr.."</a>")
+        end
+        
+        -- ‘？’有特殊含义需要转义
+        if linkHasOriParams then
+            str = string.gsub(str, '%?', '%%?')
         end
 
         fixedContent = string.gsub(fixedContent, "|", "\"")

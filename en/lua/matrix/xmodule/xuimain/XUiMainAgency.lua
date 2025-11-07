@@ -4,6 +4,7 @@
 local XUiMainAgency = XClass(XAgency, "XUiMainAgency")
 function XUiMainAgency:OnInit()
     --初始化一些变量
+    self._UiLoginVideoV4P0OpenTrigger = false
     self:CheckClearAllPanelTipClicked()
 end
 
@@ -26,6 +27,16 @@ function XUiMainAgency:NotifyBoardEffectData(data)
 end
 
 ----------public start----------
+
+function XUiMainAgency:SetUiLoginVideoV4P0OpenTriggerTrue()
+    self._UiLoginVideoV4P0OpenTrigger = true
+end
+
+function XUiMainAgency:GetUiLoginVideoV4P0OpenTrigger()
+    local flag = self._UiLoginVideoV4P0OpenTrigger
+    self._UiLoginVideoV4P0OpenTrigger = false
+    return flag
+end
 
 function XUiMainAgency:SetLastPlaySignBoardCfgId(id)
     self._Model.LastPlaySignBoardCfgId = id
@@ -110,16 +121,21 @@ end
 function XUiMainAgency:GetScrollTipList(ignoreOnTerminal)
     local list = {}
     local templates = self:GetModelUiPanelTip() or {}
+    
+    local isInsideUnlock = self:CheckUiMainTerminalMobileListUnlock()
+    
     for _, template in pairs(templates) do
         if not ignoreOnTerminal or (ignoreOnTerminal and template.IgnoreOnTerminal ~= 1) then
-            local func = self[template.FunctionName]
-            local tip = func and func(self, ignoreOnTerminal) or nil
-            if not string.IsNilOrEmpty(tip) then
-                table.insert(list, {
-                    Tips = tip,
-                    Type = template.Type,
-                    Config = template
-                })
+            if not template.IsLockWithTerminalMobile or isInsideUnlock then
+                local func = self[template.FunctionName]
+                local tip = func and func(self, ignoreOnTerminal) or nil
+                if not string.IsNilOrEmpty(tip) then
+                    table.insert(list, {
+                        Tips = tip,
+                        Type = template.Type,
+                        Config = template
+                    })
+                end
             end
         end
     end
@@ -413,6 +429,18 @@ function XUiMainAgency:TriggerBoardEffect(cb)
 end
 
 --endregion
+
+--- 特殊处理，判断终端内中间面板相关内容是否解锁，用于控制红点穿透、信息穿透等
+function XUiMainAgency:CheckUiMainTerminalMobileListUnlock()
+    -- 整体屏蔽判断
+    local unlockCondition = CS.XGame.ClientConfig:GetInt('UiMainTerminalMobileListUnlockCondition')
+
+    if XTool.IsNumberValidEx(unlockCondition) and not XConditionManager.CheckCondition(unlockCondition) then
+        return false
+    end
+    
+    return true
+end
 
 ----------public end----------
 

@@ -8,11 +8,11 @@ function XUiPanelTheatre5TopInfo:OnStart()
 end
 
 function XUiPanelTheatre5TopInfo:OnEnable()
-    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW, self.RefreshCoinShow, self)
+    XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW, self.RefreshCoinShow, self)
 end
 
 function XUiPanelTheatre5TopInfo:OnDisable()
-    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW, self.RefreshCoinShow, self)
+    XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW, self.RefreshCoinShow, self)
 end
 
 function XUiPanelTheatre5TopInfo:RefreshAll()
@@ -22,7 +22,7 @@ function XUiPanelTheatre5TopInfo:RefreshAll()
 end
 
 function XUiPanelTheatre5TopInfo:RefreshCupsShow()
-    local isPvp = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP
+    local isPvp = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP
     if isPvp then
         self:RefreshPVPCupsShow()
     else

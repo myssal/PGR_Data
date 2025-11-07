@@ -692,6 +692,14 @@ local function SortRewardGoodsList(rewardGoodsList)
     tableSort(rewardGoodsList, function(a, b)
         local rewardType1, rewardType2 = a.RewardType, b.RewardType
 
+        --- 兼容战斗传过来Reward类的情况
+        if type(rewardType1) == "userdata" then
+            rewardType1 = CS.System.Convert.ToInt32(rewardType1)
+        end
+        if type(rewardType2) == "userdata" then
+            rewardType2 = CS.System.Convert.ToInt32(rewardType2)
+        end
+
         if rewardType1 ~= rewardType2 then
             local priority1 = SortRewardTypePrioriy[rewardType1]
             local priority2 = SortRewardTypePrioriy[rewardType2]
@@ -870,6 +878,35 @@ function XRewardManager.GetRewardListNotCount(id)
         table.insert(rewardNotCountList, tmpList)
     end
     return rewardNotCountList
+end
+
+function XRewardManager.GetRewardInListNoCount(id, index)
+    index = index or 1
+    
+    local rewardList = XRewardManager.GetRewardList(id)
+    
+    if not rewardList then
+        XLog.Error("XRewardManager.GetRewardList error: can not found reward, id is " .. id)
+        return
+    end
+
+    local rewardData = rewardList[index]
+
+    if not rewardData then
+        XLog.Error("XRewardManager.GetRewardInList error: can not found reward, id is " .. id .. 'index: '.. tostring(index))
+        return
+    end
+
+
+    local tmpList = {}
+    
+    for k, v in pairs(rewardData) do
+        if k ~= "Count" then
+            tmpList[k] = v
+        end
+    end
+    
+    return tmpList
 end
 
 function XRewardManager.CheckRewardOwn(rewardType, templateId)

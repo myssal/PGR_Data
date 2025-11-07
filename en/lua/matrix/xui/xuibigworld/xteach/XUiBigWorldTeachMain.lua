@@ -101,15 +101,7 @@ function XUiBigWorldTeachMain:OnBtnDeleteClick()
 end
 
 function XUiBigWorldTeachMain:OnBtnSearchClick()
-    local searchKey = self.InputField.text
-
-    if not string.IsNilOrEmpty(searchKey) then
-        local teachs = self._Control:SearchTeach(searchKey)
-
-        self._SearchKey = searchKey
-        self:_RefreshDynamicTableWithTeachs(teachs)
-        self:_InitSearch(false)
-    end
+    self:_RefreshSearch(self.InputField.text)
 end
 
 function XUiBigWorldTeachMain:OnInputChanged(value)
@@ -119,6 +111,10 @@ function XUiBigWorldTeachMain:OnInputChanged(value)
         self._SearchKey = ""
         self:_RefreshDynamicTable(self._SelectTabIndex)
     end
+end
+
+function XUiBigWorldTeachMain:OnInputSubmit(value)
+    self:_RefreshSearch(value)
 end
 
 ---@param grid XUiBigWorldTeachGrid
@@ -136,10 +132,11 @@ end
 
 function XUiBigWorldTeachMain:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnBack.CallBack = Handler(self, self.OnBtnBackClick)
-    self.BtnDelete.CallBack = Handler(self, self.OnBtnDeleteClick)
-    self.BtnSearch.CallBack = Handler(self, self.OnBtnSearchClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
+    self.BtnSearch:AddEventListener(handler(self, self.OnBtnSearchClick))
     self.InputField.onValueChanged:AddListener(Handler(self, self.OnInputChanged))
+    self.InputField.onSubmit:AddListener(Handler(self, self.OnInputSubmit))
 end
 
 function XUiBigWorldTeachMain:_RegisterListeners()
@@ -201,6 +198,16 @@ end
 function XUiBigWorldTeachMain:_InitSearch(isSearch)
     self.BtnSearch.gameObject:SetActiveEx(isSearch)
     self.BtnDelete.gameObject:SetActiveEx(not isSearch)
+end
+
+function XUiBigWorldTeachMain:_RefreshSearch(searchKey)
+    if not string.IsNilOrEmpty(searchKey) then
+        local teachs = self._Control:SearchTeach(searchKey)
+
+        self._SearchKey = searchKey
+        self:_RefreshDynamicTableWithTeachs(teachs)
+        self:_InitSearch(false)
+    end
 end
 
 function XUiBigWorldTeachMain:_RefreshDynamicTable(index)

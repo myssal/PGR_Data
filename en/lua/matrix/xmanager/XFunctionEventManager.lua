@@ -1,5 +1,7 @@
 XFunctionEventManagerCreator = function()
     local InMainUi = false
+    local MainUiIsEndEvent = false
+    
     local FunctionEvenState =    {
         IDLE = 1,
         PLAYING = 2,
@@ -121,6 +123,12 @@ XFunctionEventManagerCreator = function()
 
         if FunctionState ~= FunctionEvenState.PLAYING then
             XEventManager.DispatchEvent(XEventId.EVENT_FUNCTION_EVENT_END)
+
+            if InMainUi then
+                MainUiIsEndEvent = true
+            end
+            
+            XDataCenter.GuideManager.CheckGuideOpen()
         end
     end
 
@@ -241,7 +249,14 @@ XFunctionEventManagerCreator = function()
         end
         return false
     end
+    
+    function XFunctionEventManager.SetMainEventIsEnd(isEnd)
+        MainUiIsEndEvent = isEnd
+    end
 
+    function XFunctionEventManager.GetMainEventIsEnd()
+        return MainUiIsEndEvent
+    end
 
     XFunctionEventManager.Init()
     return XFunctionEventManager

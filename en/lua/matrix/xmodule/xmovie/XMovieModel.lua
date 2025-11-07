@@ -30,6 +30,8 @@ end
 function XMovieModel:ResetAll()
     --这里执行重登数据清理
     --XLog.Error("重登数据清理")
+    self.BookmarkData = nil
+    self.IsRequestBookmarkData = false
 end
 
 -- 打包成OptionId
@@ -147,6 +149,24 @@ function XMovieModel:IsOpenMovieSkipThirdGender()
     return self.OpenMovieSkipThirdGender == 1
 end
 
+-- 设置书签数据
+function XMovieModel:SetBookmarkData(data, isRequest)
+    self.BookmarkData = data
+    if isRequest then
+        self.IsRequestBookmarkData = true
+    end
+end
+
+-- 获取书签数据
+function XMovieModel:GetBookmarkData()
+    --[[
+        int StageId
+        string MovieId
+        int ActionId
+        Dictionary<int, int> OptionDic
+    ]]
+    return self.BookmarkData, self.IsRequestBookmarkData
+end
 
 --============================================================== #endregion 协议数据 ==============================================================
 

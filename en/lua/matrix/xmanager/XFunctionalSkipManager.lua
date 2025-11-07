@@ -514,7 +514,7 @@ XFunctionalSkipManagerCreator = function()
     -- 前往资源副本
     function XFunctionalSkipManager.OnOpenUiFubenDaily(list)
         -- 检测是否有开放, 跳往战斗入口界面，全部转换为检测其对应打开界面的二级标签
-        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XFubenConfigs.ChapterType.Daily)
+        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XEnumConst.FuBen.ChapterType.Daily)
         local isOpen, lockTip = XDataCenter.FubenManagerEx.CheckHasOpenBySecondTagId(secondTagId)
         if not isOpen then
             XUiManager.TipMsg(lockTip)
@@ -525,7 +525,7 @@ XFunctionalSkipManagerCreator = function()
         local param2 = (list.CustomParams[2] ~= 0) and list.CustomParams[2]
         if param1 == nil or param1 == 0 then
             -- XLuaUiManager.Open("UiFuben", XDataCenter.FubenManager.StageType.Resource)
-            XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.Daily)
+            XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.Daily)
             return
         end
 
@@ -566,14 +566,14 @@ XFunctionalSkipManagerCreator = function()
     -- 前往角色碎片(v1.30新入口)
     function XFunctionalSkipManager.OnOpenUiFragment(list)
         -- 检测是否有开放, 跳往战斗入口界面，全部转换为检测其对应打开界面的二级标签
-        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XFubenConfigs.ChapterType.CharacterFragment)
+        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XEnumConst.FuBen.ChapterType.CharacterFragment)
         local isOpen, lockTip = XDataCenter.FubenManagerEx.CheckHasOpenBySecondTagId(secondTagId)
         if not isOpen then
             XUiManager.TipMsg(lockTip)
             return
         end
 
-        XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.CharacterFragment)
+        XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.CharacterFragment)
     end
 
     -- 是否能前往前传
@@ -602,13 +602,13 @@ XFunctionalSkipManagerCreator = function()
         -- local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or 1
         -- XLuaUiManager.Open("UiFuben", 1, nil, param1)
         -- 检测是否有开放, 跳往战斗入口界面，全部转换为检测其对应打开界面的二级标签
-        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XFubenConfigs.ChapterType.Prequel)
+        local _, __, secondTagId = XDataCenter.FubenManagerEx.GetTagConfigByChapterType(XEnumConst.FuBen.ChapterType.Prequel)
         local isOpen, lockTip = XDataCenter.FubenManagerEx.CheckHasOpenBySecondTagId(secondTagId)
         if not isOpen then
             XUiManager.TipMsg(lockTip)
             return
         end
-        XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.Prequel)
+        XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.Prequel)
     end
 
     -- 前往隐藏关卡主界面
@@ -1163,7 +1163,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        return XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
+        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================
@@ -1282,6 +1282,22 @@ XFunctionalSkipManagerCreator = function()
         end
 
         XMVCA.XRift:OpenMain()
+        return true
+    end
+
+    function XFunctionalSkipManager.SkipRace()
+        if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Race) then
+            -- 条件
+            XUiManager.TipText("FubenRepeatNotInActivityTime")
+            return false
+        end
+
+        if not XMVCA.XRace:GetIsOpen() then
+            XUiManager.TipText("FubenRepeatNotInActivityTime")
+            return false
+        end
+
+        XMVCA.XRace:OpenMain()
         return true
     end
 
@@ -1610,6 +1626,15 @@ XFunctionalSkipManagerCreator = function()
             XUiManager.TipMsg(desc)
         end
     end
+    
+    function XFunctionalSkipManager.SkipToUiWelfare(list)
+        local functionType = list.CustomParams[1]
+        local welfareId = list.CustomParams[2]
+        XLuaUiManager.Open("UiWelfare", nil, nil,{
+            FunctionType = functionType,
+            WelfareId = welfareId,
+        })
+    end
 
     function XFunctionalSkipManager.SkipToRepeatChallengeActivityShopByIndex(list)
         local shopIndex = (list.CustomParams[1] ~= 0) and list.CustomParams[1]
@@ -1719,7 +1744,7 @@ XFunctionalSkipManagerCreator = function()
         local param2 = (list.CustomParams[2] ~= 0) and list.CustomParams[2] or nil
         local param3 = (list.CustomParams[3] ~= 0) and list.CustomParams[3] or nil
         if not XTool.IsNumberValid(param1) then
-            XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.CharacterTower)
+            XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.CharacterTower)
             return false
         end
 
@@ -2133,6 +2158,15 @@ XFunctionalSkipManagerCreator = function()
         return true
     end
 
+    function XFunctionalSkipManager:SkipToRace()
+        if XMVCA.XRace:ExOpenMainUi() then
+            return true
+        end
+
+        XUiManager.TipText("FubenRepeatNotInActivityTime")
+        return false
+    end
+
     function XFunctionalSkipManager:SkipToTemple()
         if not XMVCA.XTemple:ExCheckInTime() then
             XUiManager.TipText("FubenRepeatNotInActivityTime")
@@ -2258,6 +2292,14 @@ XFunctionalSkipManagerCreator = function()
             Operation = XPurchaseConfigs.UiPurchaseCustomOperation.OpenPurchaseTab,
         })
     end
+
+    function XFunctionalSkipManager:SkipToUiPurchaseWithOpenBuyTip(skipData)
+        local childTab = skipData.CustomParams[1]
+        XLuaUiManager.Open("UiPurchase", 1, nil, childTab, {
+            Operation = XPurchaseConfigs.UiPurchaseCustomOperation.OpenBuyTip,
+            PackageId = skipData.CustomParams[2],
+        })
+    end
     
     -- 肉鸽4
     function XFunctionalSkipManager:SkipToTheatre4()
@@ -2324,7 +2366,7 @@ XFunctionalSkipManagerCreator = function()
     end
     
     function XFunctionalSkipManager.SkipToStageMemory()
-        XMVCA.XStageMemory:OpenMain()
+        return XMVCA.XStageMemory:OpenMain()
     end
     
     function XFunctionalSkipManager.SkipToReCallActivity()
@@ -2415,6 +2457,10 @@ XFunctionalSkipManagerCreator = function()
         XMVCA.XDlcRelink:OpenMainUi()
     end
 
+    function XFunctionalSkipManager.SkipToTeamPrefab(list)
+        XLuaUiManager.Open("UiTeamPrefabMain", nil, list.CustomParams[1])
+    end
+
     --endregion
     
     -- region CrossVersion 因为不是"实例"方法, 因此没有被覆写成功 #203409
@@ -2474,12 +2520,7 @@ XFunctionalSkipManagerCreator = function()
         end
         XMVCA.XPassportComb:OpenMainUi()
     end
-    
-    function XFunctionalSkipManager.OpenLotto(list)
-        local groupId = tonumber(list.CustomParams[1])
-        XDataCenter.LottoManager.OpenLottoUi(groupId)
-    end
-    
+
     function XFunctionalSkipManager.OnOpenSlotmachine(list)
         local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
         XDataCenter.SlotMachineManager.OpenSlotMachine(param1)

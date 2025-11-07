@@ -95,9 +95,9 @@ end
 
 function XUiBigWorldSet:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnSave.CallBack = Handler(self, self.OnBtnSaveClick)
-    self.BtnDefault.CallBack = Handler(self, self.OnBtnDefaultClick)
-    self.BtnBack.CallBack = Handler(self, self.OnBtnBackClick)
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
+    self.BtnDefault:AddEventListener(handler(self, self.OnBtnDefaultClick))
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
 end
 
 function XUiBigWorldSet:_RegisterListeners()
@@ -149,6 +149,8 @@ function XUiBigWorldSet:_RefreshSubPage(index)
     local typeData = self._TypeDatas[index]
 
     if typeData then
+        self.BtnSave.gameObject:SetActive(true)
+        self.BtnDefault.gameObject:SetActive(true)
         local uiName = typeData:GetUiName()
         self:OpenOneChildUi(uiName, self)
     end

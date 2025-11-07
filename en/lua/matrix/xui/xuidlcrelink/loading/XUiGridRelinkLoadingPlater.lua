@@ -17,7 +17,7 @@ function XUiGridRelinkLoadingPlater:Refresh(playerData)
     self.TxtName.text = playerData:GetNickname()
     self.TxtNum.text = "0%"
     self.ImgBar.fillAmount = 0
-    self.RImgHead:SetRawImage(self._Control:GetCharacterSquareHeadImage(characterId))
+    self.RImgHead:SetRawImage(XMVCA.XCharacter:GetCharSmallHeadIcon(characterId))
 
     self:RefreshImgBg()
 end

@@ -12,7 +12,7 @@ end
 
 function XDlcRelinkWorldFight:OnFightForceExit(worldType)
     XLuaUiManager.Open("UiDlcSettleLose")
-    XLuaUiManager.SafeClose("UiRelinkPlayerRoom")
+    XLuaUiManager.SafeClose("UiDlcRelinkRoom")
 end
 
 return XDlcRelinkWorldFight

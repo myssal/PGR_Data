@@ -7,9 +7,11 @@ end
 
 ---@param tagId number
 function XUiTheatre5SkillHandbookTag:Update(tagId)
+    ---@type XTableTheatre5ItemTag
     local tagConfig = self._Control:GetTheatre5ItemTagCfgById(tagId)
     if tagConfig then
         self.TxtTag.text = tagConfig.Name
+        self.RImgIcon:SetRawImage(tagConfig.IconRes)
     end
 end
 

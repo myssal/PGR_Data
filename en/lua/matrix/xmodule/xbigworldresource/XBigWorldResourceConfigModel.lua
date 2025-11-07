@@ -44,6 +44,12 @@ function XBigWorldResourceConfigModel:GetDlcUiEffectEffectUrlById(id)
     return config.EffectUrl
 end
 
+function XBigWorldResourceConfigModel:GetDlcUiEffectDelayTimeById(id)
+    local config = self:GetDlcUiEffectConfigById(id)
+
+    return config.DelayTime
+end
+
 ---@return XTableBigWorldUiModel[]
 function XBigWorldResourceConfigModel:GetDlcUiModelConfigs()
     return self._ConfigUtil:GetByTableKey(DlcResourceTableKey.BigWorldUiModel) or {}

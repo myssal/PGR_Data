@@ -1,6 +1,6 @@
 local XMovieActionSpineActorAnimationPlay = XClass(XMovieActionBase, "XMovieActionSpineActorAnimationPlay")
 
-function XMovieActionSpineActorAnimationPlay:Ctor(actionData)
+function XMovieActionSpineActorAnimationPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -16,6 +16,28 @@ end
 function XMovieActionSpineActorAnimationPlay:OnRunning()
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
     actor:PlayUiAnimation(self.AnimName)
+end
+
+function XMovieActionSpineActorAnimationPlay:IsPassedActionRun(index)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionSpineActorAnimationPlay:IsActionCover(action)
+    if action:GetType() == self:GetType() then
+        return self.ActorIndex == action.ActorIndex
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SPINE_DISAPPEAR then
+        return action:IsDisappear(self.ActorIndex)
+    end
+    return false
+end
+
+function XMovieActionSpineActorAnimationPlay:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionSpineActorAnimationPlay

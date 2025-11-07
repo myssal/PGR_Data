@@ -62,7 +62,7 @@
     {
         "Id": 1007,
         "Key": "LoginInvalidLoginToken",
-        "Text": "Account has expired, please login again."
+        "Text": "\"Account has expired, please login again.\""
     },
     {
         "Id": 1008,
@@ -129,7 +129,7 @@
     {
         "Id": 1021,
         "Key": "GameServerFullLoad",
-        "Text": "Server is full, please try again later."
+        "Text": "\"Server is full, please try again later.\""
     },
     {
         "Id": 1022,
@@ -144,7 +144,7 @@
     {
         "Id": 1024,
         "Key": "GameServerIsMaintenance",
-        "Text": "Game server updating, please try again later"
+        "Text": "\"Game server updating, please try again later\""
     },
     {
         "Id": 1025,
@@ -252,6 +252,11 @@
         "Text": 20000011
     },
     {
+        "Id": 20000012,
+        "Key": "PlayerFunctionIdNotFound",
+        "Text": "20000012 Function ID not found"
+    },
+    {
         "Id": 20001001,
         "Key": "RpcRequestQpsLimited",
         "Text": "20001001 Requests too frequent"
@@ -274,12 +279,12 @@
     {
         "Id": 20002003,
         "Key": "PlayerDataManagerChangeNameInvalid",
-        "Text": "Improper name, please check again."
+        "Text": "\"Improper name, please check again.\""
     },
     {
         "Id": 20002004,
         "Key": "PlayerDataManagerChangeSignInvalid",
-        "Text": "Improper signature, please check again."
+        "Text": "\"Improper signature, please check again.\""
     },
     {
         "Id": 20002005,
@@ -367,6 +372,16 @@
         "Id": 20002022,
         "Key": "PlayerDataManagerChangeGenderTimeLimit",
         "Text": "Gender change is on cooldown. Please wait."
+    },
+    {
+        "Id": 20002023,
+        "Key": "PlayerDataManagerPointMarkCfgNoExit",
+        "Text": "20002023 Blue point configuration not found"
+    },
+    {
+        "Id": 20002024,
+        "Key": "PlayerDataManagerPointTypeNoExit",
+        "Text": "20002024 Blue point type not found"
     },
     {
         "Id": 20003001,
@@ -744,436 +759,476 @@
     },
     {
         "Id": 20003076,
+        "Key": "FubenBossSingleResetNoOpen",
+        "Text": "20003076 Cage reset not available"
+    },
+    {
+        "Id": 20003077,
+        "Key": "FubenBossSingleResetGradeLimit",
+        "Text": "20003077 Cage reset zone restriction"
+    },
+    {
+        "Id": 20003078,
+        "Key": "FubenBossSingleResetNoStageRecordData",
+        "Text": "20003078 Cage reset: no current stage data"
+    },
+    {
+        "Id": 20003079,
+        "Key": "FubenBossSingleResetCharacterPointData",
+        "Text": "20003079 Cage reset: no character stamina data"
+    },
+    {
+        "Id": 20003080,
+        "Key": "FubenBossSingleResetAlready",
+        "Text": "20003080 Cage stage already reset"
+    },
+    {
+        "Id": 20003081,
         "Key": "FubenBossOnlineSectionNotFound",
         "Text": "Chapter info not found"
     },
     {
-        "Id": 20003077,
+        "Id": 20003082,
         "Key": "FubenMainLinePassTimesNotEnough",
         "Text": "Insufficient Main Story attempts"
     },
     {
-        "Id": 20003078,
+        "Id": 20003083,
         "Key": "FubenMainLineChapterIsNotExist",
         "Text": "Chapter does not exist"
     },
     {
-        "Id": 20003079,
+        "Id": 20003084,
         "Key": "FubenMainLineActivityHideChapterNotOpen",
         "Text": "Hidden chapter event not yet available"
     },
     {
-        "Id": 20003080,
+        "Id": 20003085,
         "Key": "FubenMainLineActivityVariationsChapterNotOpen",
         "Text": "20003074 Main event mutation chapter not available"
     },
     {
-        "Id": 20003081,
+        "Id": 20003086,
         "Key": "FubenPrequelStageNotPass",
-        "Text": "The stage has not been cleared yet"
+        "Text": "Stage not completed"
     },
     {
-        "Id": 20003082,
+        "Id": 20003087,
         "Key": "FubenPrequelStageRewardAlready",
-        "Text": "Rank reward claimed"
+        "Text": "Star reward claimed"
     },
     {
-        "Id": 20003083,
+        "Id": 20003088,
         "Key": "FubenPrequelStageIdError",
         "Text": "Invalid Side Story stage"
     },
     {
-        "Id": 20003084,
+        "Id": 20003089,
         "Key": "FubenPrequelCoverIdError",
         "Text": "Invalid Side Story cover ID"
     },
     {
-        "Id": 20003085,
+        "Id": 20003090,
         "Key": "FubenPrequelChallengeIdError",
         "Text": "Invalid Side Story ID"
     },
     {
-        "Id": 20003086,
+        "Id": 20003091,
         "Key": "FubenPrequelChallengeLock",
         "Text": "Side Story not yet unlocked"
     },
     {
-        "Id": 20003087,
+        "Id": 20003092,
         "Key": "FubenPrequelChallengeUnlockAlready",
         "Text": "Side Story unlocked"
     },
     {
-        "Id": 20003088,
+        "Id": 20003093,
         "Key": "FubenPrequelChallengeCountLimit",
         "Text": "Insufficient attempts"
     },
     {
-        "Id": 20003089,
+        "Id": 20003094,
         "Key": "FubenPrequelChapterNotFind",
         "Text": "Corresponding Interlude does not exist"
     },
     {
-        "Id": 20003090,
+        "Id": 20003095,
         "Key": "FubenPrequelCoverNotFind",
         "Text": "20003084 Shard stage corresponding configuration does not exist"
     },
     {
-        "Id": 20003091,
+        "Id": 20003096,
         "Key": "FubenManagerAutoFightStageNotExist",
         "Text": "Mission does not exist"
     },
     {
-        "Id": 20003092,
+        "Id": 20003097,
         "Key": "FubenManagerAutoFightStageInvalid",
         "Text": "Invalid mission"
     },
     {
-        "Id": 20003093,
+        "Id": 20003098,
         "Key": "FubenManagerAutoFightHaventPassed",
         "Text": "Mission not yet cleared"
     },
     {
-        "Id": 20003094,
+        "Id": 20003099,
         "Key": "FubenManagerAutoFightPoolIsFull",
         "Text": "Max number of teams reached"
     },
     {
-        "Id": 20003095,
+        "Id": 20003100,
         "Key": "FubenManagerAutoFightAlreadyRunning",
         "Text": "Auto Clearing"
     },
     {
-        "Id": 20003096,
+        "Id": 20003101,
         "Key": "FubenManagerAutoFightNotEnoughTimes",
         "Text": "Insufficient attempts left"
     },
     {
-        "Id": 20003097,
+        "Id": 20003102,
         "Key": "FubenManagerAutoFightNotEnoughActionPoint",
         "Text": "Insufficient Stamina"
     },
     {
-        "Id": 20003098,
+        "Id": 20003103,
         "Key": "FubenManagerAutoFightIndexInvalid",
         "Text": "Invalid Auto Clear number"
     },
     {
-        "Id": 20003099,
+        "Id": 20003104,
         "Key": "FubenManagerAutoFightStageNotMatch",
         "Text": "Auto Clear mission mismatch"
     },
     {
-        "Id": 20003100,
+        "Id": 20003105,
         "Key": "FubenManagerAutoFightNotComplete",
         "Text": "Auto Clear not completed"
     },
     {
-        "Id": 20003101,
+        "Id": 20003106,
         "Key": "FubenManagerTrialIdIsNotFound",
         "Text": "Trial Mission does not exist"
     },
     {
-        "Id": 20003102,
+        "Id": 20003107,
         "Key": "FubenManagerTrialPreIdIsNotPass",
         "Text": "Complete the previous stage first"
     },
     {
-        "Id": 20003103,
+        "Id": 20003108,
         "Key": "FubenManagerTrialIdIsNotPass",
         "Text": "Complete the stage first"
     },
     {
-        "Id": 20003104,
+        "Id": 20003109,
         "Key": "FubenManagerTrialPassRewardAlreadyGet",
         "Text": "Clearance reward claimed"
     },
     {
-        "Id": 20003105,
+        "Id": 20003110,
         "Key": "FubenManagerTrialTypeRewardIsNotExit",
         "Text": "Reward does not exist"
     },
     {
-        "Id": 20003106,
+        "Id": 20003111,
         "Key": "FubenManagerTrialTypeRewardAlreadyGet",
         "Text": "Reward already claimed"
     },
     {
-        "Id": 20003107,
+        "Id": 20003112,
         "Key": "FubenManagerTrialTypeRewardIsNotFinish",
         "Text": "Reward already claimed"
     },
     {
-        "Id": 20003108,
+        "Id": 20003113,
         "Key": "FubenManagerDailyChapterNotFound",
         "Text": "Daily mission chapter configuration not found"
     },
     {
-        "Id": 20003109,
+        "Id": 20003114,
         "Key": "FubenManagerDailySectionNotFound",
         "Text": "Daily mission configuration not found"
     },
     {
-        "Id": 20003110,
+        "Id": 20003115,
         "Key": "FubenManagerDailyConditionInvalid",
         "Text": "Invalid daily mission requirement configuration"
     },
     {
-        "Id": 20003111,
+        "Id": 20003116,
         "Key": "FubenManagerDailyTimeNotFit",
         "Text": "Not open yet"
     },
     {
-        "Id": 20003112,
+        "Id": 20003117,
         "Key": "FubenManagerAutoFightTimesError",
         "Text": "Auto Clear attempts error"
     },
     {
-        "Id": 20003113,
+        "Id": 20003118,
         "Key": "FubenManagerBossSingleResetCanNotSaveScore",
         "Text": "Cannot save as the mode has been refreshed"
     },
     {
-        "Id": 20003114,
+        "Id": 20003119,
         "Key": "FubenManagerBossSingleDataIsRefresh",
-        "Text": "Mission data has been refreshed, please reload the page"
+        "Text": "\"Mission data has been refreshed, please reload the page\""
     },
     {
-        "Id": 20003115,
+        "Id": 20003120,
         "Key": "FubenManagerStartFightIntervalFast",
         "Text": "You cannot challenge the mission yet"
     },
     {
-        "Id": 20003116,
+        "Id": 20003121,
         "Key": "FubenAssignChapterNotFound",
         "Text": "Chapter info configuration error"
     },
     {
-        "Id": 20003117,
+        "Id": 20003122,
         "Key": "FubenAssignGroupNotFound",
         "Text": "Stage info configuration error"
     },
     {
-        "Id": 20003118,
+        "Id": 20003123,
         "Key": "FubenAssignTeamInfoNotFound",
         "Text": "Team info configuration error"
     },
     {
-        "Id": 20003119,
+        "Id": 20003124,
         "Key": "FubenAssignGroupFightCountLimit",
         "Text": "Challenge attempts used up"
     },
     {
-        "Id": 20003120,
+        "Id": 20003125,
         "Key": "FubenAssignGroupTeamNotSet",
         "Text": "Team not yet set up. Cannot deploy"
     },
     {
-        "Id": 20003121,
+        "Id": 20003126,
         "Key": "FubenAssignFightCardCountError",
         "Text": "Battle member number error. Cannot deploy"
     },
     {
-        "Id": 20003122,
+        "Id": 20003127,
         "Key": "FubenAssignFightCardNotInTeam",
         "Text": "Border Pact character not in team"
     },
     {
-        "Id": 20003123,
+        "Id": 20003128,
         "Key": "FubenAssignFightGroupIdNotMatch",
         "Text": "Border Pact stage group does not match"
     },
     {
-        "Id": 20003124,
+        "Id": 20003129,
         "Key": "FubenAssignFightStageAlreadyFinish",
         "Text": "Border Pact stage completed"
     },
     {
-        "Id": 20003125,
+        "Id": 20003130,
         "Key": "FubenAssignFightPreStageNotFinish",
         "Text": "Border Pact prerequisite stage incomplete"
     },
     {
-        "Id": 20003126,
+        "Id": 20003131,
         "Key": "FubenAssignWinStageNotMatch",
         "Text": "Border Pact victory stage does not match"
     },
     {
-        "Id": 20003127,
+        "Id": 20003132,
         "Key": "FubenAssignWinGroupIdNotMatch",
         "Text": "Border Pact victory stage group does not match"
     },
     {
-        "Id": 20003128,
+        "Id": 20003133,
         "Key": "FubenAssignGroupTeamListNotFound",
         "Text": "Team list does not exist. Cannot deploy"
     },
     {
-        "Id": 20003129,
+        "Id": 20003134,
         "Key": "FubenAssignPreGroupNotFinish",
         "Text": "You have not completed the previous chapter yet"
     },
     {
-        "Id": 20003130,
+        "Id": 20003135,
         "Key": "FubenAssignTeamListIsEmpty",
         "Text": "Team number empty. Cannot deploy"
     },
     {
-        "Id": 20003131,
+        "Id": 20003136,
         "Key": "FubenAssignTeamCountError",
         "Text": "Team number does not match the requirement. Cannot deploy"
     },
     {
-        "Id": 20003132,
+        "Id": 20003137,
         "Key": "FubenAssignTeamIsEmpty",
         "Text": "Insufficient team members. Cannot deploy"
     },
     {
-        "Id": 20003133,
+        "Id": 20003138,
         "Key": "FubenAssignTeamMemberCountLimit",
         "Text": "Team size does not match the requirement. Cannot deploy"
     },
     {
-        "Id": 20003134,
+        "Id": 20003139,
         "Key": "FubenAssignTeamMemberRepeated",
         "Text": "Duplicate team member. Cannot deploy"
     },
     {
-        "Id": 20003135,
+        "Id": 20003140,
         "Key": "FubenAssignChapterNotFinish",
-        "Text": "Chapter not completed"
+        "Text": "Character already assigned to stationing"
     },
     {
-        "Id": 20003136,
+        "Id": 20003141,
         "Key": "FubenAssignChapterUseSameCharacter",
         "Text": "Character already assigned to stationing"
     },
     {
-        "Id": 20003137,
+        "Id": 20003142,
         "Key": "FubenAssignChapterCharacterAlreadyUse",
         "Text": "Character already stationed in another area"
     },
     {
-        "Id": 20003138,
+        "Id": 20003143,
         "Key": "FubenAssignChapterRewardAlreadyGet",
         "Text": "Chapter reward claimed"
     },
     {
-        "Id": 20003139,
+        "Id": 20003144,
         "Key": "FubenAssignStageInfoNotFound",
         "Text": "20003132 Stage info not found"
     },
     {
-        "Id": 20003140,
+        "Id": 20003145,
         "Key": "FubenAssignGroupInfoNotExist",
         "Text": "20003133 Current node has no progress"
     },
     {
-        "Id": 20003141,
+        "Id": 20003146,
         "Key": "FubenAssignGroupStageNotFinish",
         "Text": "20003134 The stage in current node is incomplete and cannot be reset"
     },
     {
-        "Id": 20003142,
+        "Id": 20003147,
         "Key": "FubenAssignFinishedStageCanNotChangeTeam",
         "Text": "20003135 Unable to change team for already completed stage"
     },
     {
-        "Id": 20003143,
+        "Id": 20003148,
         "Key": "FubenManagerFightRestartFightIdNotMatch",
         "Text": "Battle restart ID mismatch"
     },
     {
-        "Id": 20003144,
+        "Id": 20003149,
         "Key": "FubenManagerFightRestartPreFightDataNotMatch",
         "Text": "Battle restart data not matching"
     },
     {
-        "Id": 20003145,
+        "Id": 20003150,
+        "Key": "FubenSpeedrunTemplateNotFound",
+        "Text": "20003150 Speedrun mode stage ID not found"
+    },
+    {
+        "Id": 20003151,
+        "Key": "FubenSpeedrunStageInfoNotFound",
+        "Text": "20003151 Quick Clear stage ID information not found"
+    },
+    {
+        "Id": 20003152,
+        "Key": "FubenSpeedrunModeLocked",
+        "Text": "20003152 Quick Clear locked"
+    },
+    {
+        "Id": 20003153,
         "Key": "FubenBfrtChapterNotOpen",
         "Text": "Stronghold chapter is not yet available"
     },
     {
-        "Id": 20003146,
+        "Id": 20003154,
         "Key": "FubenBfrtTeamSetCharacterRepeat",
         "Text": "Duplicate character in team"
     },
     {
-        "Id": 20003147,
+        "Id": 20003155,
         "Key": "FubenManagerStageConfigNotExist",
         "Text": "Stage settings not found"
     },
     {
-        "Id": 20003148,
+        "Id": 20003156,
         "Key": "FubenFightNpcIsNullOrEmpty",
         "Text": "Character deployed cannot be empty"
     },
     {
-        "Id": 20003149,
+        "Id": 20003157,
         "Key": "FubenFightCharacterAndNpcIndexRepeat",
         "Text": "Cannot deploy the same character again"
     },
     {
-        "Id": 20003150,
+        "Id": 20003158,
         "Key": "FubenRepeatedCharacter",
         "Text": "20003149 Deployed robot data and NPC data position conflict"
     },
     {
-        "Id": 20003151,
+        "Id": 20003159,
         "Key": "FubenActivityReset",
         "Text": "Cannot deploy the same character again"
     },
     {
-        "Id": 20003152,
+        "Id": 20003160,
         "Key": "FubenBossSingleIsNotTrialStage",
         "Text": "Event has been reset"
     },
     {
-        "Id": 20003153,
+        "Id": 20003161,
         "Key": "FubenStageCharacterNpcIdCfgNotExit",
         "Text": "20003137 Stage is not a trial stage"
     },
     {
-        "Id": 20003154,
+        "Id": 20003162,
         "Key": "FubenManagerBfrtClearIsNotOpen",
         "Text": "20003139 Character NPC ID configuration matching the stage type not found"
     },
     {
-        "Id": 20003155,
+        "Id": 20003163,
         "Key": "FubenManagerBfrtNotSetTeam",
         "Text": "Quick Clear disabled for the stronghold"
     },
     {
-        "Id": 20003156,
+        "Id": 20003164,
         "Key": "FubenManagerBfrtGroupTeamSeqCfgNotFound",
         "Text": "No team set for the stronghold"
     },
     {
-        "Id": 20003157,
+        "Id": 20003165,
         "Key": "FubenManagerBfrtTeamFightNotEnough",
         "Text": "Stronghold team configuration not found"
     },
     {
-        "Id": 20003158,
+        "Id": 20003166,
         "Key": "FubenManagerBfrtProgressStageNotExist",
         "Text": "Insufficient Battle Power. Unable to Quick Clear."
     },
     {
-        "Id": 20003159,
+        "Id": 20003167,
         "Key": "FubenManagerBfrtNotCourseRewardToReceived",
         "Text": "Stage not suppressed. Unable to reset."
     },
     {
-        "Id": 20003160,
+        "Id": 20003168,
         "Key": "FubenManagerBfrtGroupIsNotPass",
         "Text": "No journey rewards to claim"
     },
     {
-        "Id": 20003161,
+        "Id": 20003169,
         "Key": "FubenManagerBfrtGroupRewardAlreadyReceived",
         "Text": "Stronghold not cleared. Unable to claim."
     },
     {
-        "Id": 20003162,
+        "Id": 20003170,
         "Key": "FubenManagerBfrtGroupRewardNotFound",
         "Text": "Stronghold reward already claimed"
     },
@@ -1220,7 +1275,47 @@
     {
         "Id": 20004009,
         "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
-        "Text": "20004008 CUB preset empty, cannot set skills"
+        "Text": "\"20004008 CUB preset empty, cannot set skills\""
+    },
+    {
+        "Id": 20004010,
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "20004010 No character in position. Cannot equip equipment"
+    },
+    {
+        "Id": 20004011,
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "20004011 Formation is already at the top"
+    },
+    {
+        "Id": 20004012,
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "20004012 Preset formation contains duplicate equipped equipment"
+    },
+    {
+        "Id": 20004013,
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "20004013 Preset formation contains duplicate equipped resonance"
+    },
+    {
+        "Id": 20004014,
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "20004014 Position character equipment data is empty"
+    },
+    {
+        "Id": 20004015,
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "20004015 Team name cannot be empty"
+    },
+    {
+        "Id": 20004016,
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "20004016 Preset formation contains duplicate equipped CUBs"
+    },
+    {
+        "Id": 20004017,
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "20004017 Preset formation contains duplicate characters"
     },
     {
         "Id": 20007001,
@@ -1665,7 +1760,7 @@
     {
         "Id": 20009063,
         "Key": "CharacterCollectStateRepeatSet",
-        "Text": "20009063 Status already set, cannot set repeatedly"
+        "Text": "\"20009063 Status already set, cannot set repeatedly\""
     },
     {
         "Id": 20010001,
@@ -1900,7 +1995,7 @@
     {
         "Id": 20014001,
         "Key": "ArrangeManagerCalTypeFail",
-        "Text": "Invalid ID, unable to identify the type."
+        "Text": "\"Invalid ID, unable to identify the type.\""
     },
     {
         "Id": 20017001,
@@ -2055,7 +2150,7 @@
     {
         "Id": 20018025,
         "Key": "DrawManagerAdjustTimesAlreadyMaxLimit",
-        "Text": "Check max limit reached, cannot select"
+        "Text": "\"Check max limit reached, cannot select\""
     },
     {
         "Id": 20018026,
@@ -2085,12 +2180,12 @@
     {
         "Id": 20019003,
         "Key": "GuideManagerCompleteGuideErrorAlreadyCompleted",
-        "Text": "Guide error, it has been completed already."
+        "Text": "\"Guide error, it has been completed already.\""
     },
     {
         "Id": 20019004,
         "Key": "GuideManagerCompleteGuideErrorNotNeedReq",
-        "Text": "Guide error, no need to retry."
+        "Text": "\"Guide error, no need to retry.\""
     },
     {
         "Id": 20019005,
@@ -2723,6 +2818,21 @@
         "Text": "20021117 - Memory Hypertune all limit exceeded"
     },
     {
+        "Id": 20021118,
+        "Key": "EquipWeaponCanNotResonance",
+        "Text": "20021118 This weapon cannot resonate"
+    },
+    {
+        "Id": 20021119,
+        "Key": "EquipPrefabCharacterPutOnSameEquip",
+        "Text": "20021119 Preset contains different characters wearing same equipment"
+    },
+    {
+        "Id": 20021120,
+        "Key": "EquipPrefabSameResonanceInOneEquip",
+        "Text": "20021120 Preset contains duplicate resonance skills for single weapon"
+    },
+    {
         "Id": 20026001,
         "Key": "TaskManagerInitFail",
         "Text": "Failed to initialize mission system"
@@ -3093,6 +3203,11 @@
         "Text": "Shop type unknown"
     },
     {
+        "Id": 20030021,
+        "Key": "ShopNeedBuyPreGoods",
+        "Text": "20030021 Cannot purchase item. Prerequisite item must be purchased first"
+    },
+    {
         "Id": 20031001,
         "Key": "FriendManagerApplyFriendFailedIsRefused",
         "Text": "Friend request has been rejected"
@@ -3280,7 +3395,7 @@
     {
         "Id": 20032008,
         "Key": "FightCheckManagerClientVersionError",
-        "Text": "Client version is too low, unable to conduct a battle"
+        "Text": "\"Client version is too low, unable to conduct a battle\""
     },
     {
         "Id": 20032009,
@@ -3757,137 +3872,137 @@
     {
         "Id": 20034076,
         "Key": "ConditionManagerRpgTeamLevelNotEnough",
-        "Text": "20034074 Insufficient team level"
+        "Text": "20034074队伍等级不足"
     },
     {
         "Id": 20034077,
         "Key": "ConditionManagerPartnerHadNotOwner",
-        "Text": "You never owned this CUB"
+        "Text": "未拥有过该辅助机"
     },
     {
         "Id": 20034078,
         "Key": "ConditionManagerSpTargetProgressNotEnough",
-        "Text": "Target stage progress not reached"
+        "Text": "目标关卡进度尚未达到"
     },
     {
         "Id": 20034079,
         "Key": "ConditionManagerRegression2NotSatisfied",
-        "Text": "20034077 New returning condition not met"
+        "Text": "20034077新回归条件不满足"
     },
     {
         "Id": 20034080,
         "Key": "ConditionManagerCoupleCombatOccupyNotEnough",
-        "Text": "20034078 Insufficient number of stages occupied"
+        "Text": "20034078关卡占领数量不足"
     },
     {
         "Id": 20034081,
         "Key": "ConditionManagerTimeIdNotEnough",
-        "Text": "20034079 Event not available"
+        "Text": "20034079不在活动期间"
     },
     {
         "Id": 20034082,
         "Key": "ConditionGoldenMinerUnlockNotEnough",
-        "Text": "20034080 Insufficient points to unlock the miner"
+        "Text": "20034080矿工解锁消耗的积分不足"
     },
     {
         "Id": 20034083,
         "Key": "ConditionManagerSceneIsLock",
-        "Text": "20034081 Scene locked"
+        "Text": "20034081场景未解锁"
     },
     {
         "Id": 20034084,
         "Key": "ConditionManagerSceneIsUnLock",
-        "Text": "20034082 Scene unlocked"
+        "Text": "20034082场景已解锁"
     },
     {
         "Id": 20034085,
         "Key": "ConditionManagerSceneUnLockCountLimit",
-        "Text": "20034084 Scene unlock quantity limit"
+        "Text": "20034084场景解锁个数限制"
     },
     {
         "Id": 20034086,
         "Key": "ConditionManagerLivWarmActivityStageUnFinish",
-        "Text": "20034083 Liv: Empyrea Match Game stage not cleared"
+        "Text": "20034083未通过超丽芙消消乐关卡"
     },
     {
         "Id": 20034087,
         "Key": "ConditionManagerLivWarmActivitySoundStageUnFinish",
-        "Text": "20034084 Liv: Empyrea Audio Puzzle stage not cleared"
+        "Text": "20034084未通过超丽芙音频解谜关卡"
     },
     {
         "Id": 20034088,
         "Key": "ConditionManagerStageStarsCountNotEnough",
-        "Text": "Insufficient Stage Rank"
+        "Text": "关卡星级数不足"
     },
     {
         "Id": 20034089,
         "Key": "ConditionManagerCharacterTrustLevelNotEnough",
-        "Text": "Insufficient Affection"
+        "Text": "角色好感度不足"
     },
     {
         "Id": 20034090,
         "Key": "ConditionManagerDormQuestTeamNotMatch",
-        "Text": "20034088 Dispatch member does not match"
+        "Text": "20034088派遣成员不匹配"
     },
     {
         "Id": 20034091,
         "Key": "ConditionManagerDormQuestTeamAttribNotSatisfy",
-        "Text": "20034089 Dispatch member does not satisfy the recommended stats"
+        "Text": "20034089派遣成员不满足推荐属性"
     },
     {
         "Id": 20034092,
         "Key": "ConditionManagerQuestError",
-        "Text": "20034090 Accepted commission not found"
+        "Text": "20034090已接取委托不存在"
     },
     {
         "Id": 20034093,
         "Key": "ConditionManagerRegression3StateNotMatch",
-        "Text": "20034091 Special Return - Return status does not match"
+        "Text": "20034091特殊回归-回归状态不匹配"
     },
     {
         "Id": 20034094,
         "Key": "ConditionManagerRegression3PassportExpNotEnough",
-        "Text": "20034092 Special Return - Insufficient Pass EXP"
+        "Text": "20034092特殊回归-战令经验不足"
     },
     {
         "Id": 20034095,
         "Key": "ConditionManagerMixedTeamEmpty",
-        "Text": "20034093 Mixed Team - Team Empty"
+        "Text": "20034093混编队伍-队伍为空"
     },
     {
         "Id": 20034096,
         "Key": "ConditionManagerMixedTeamPositionConflicted",
-        "Text": "20034094 Mixed Team - Role Conflict"
+        "Text": "20034094混编队伍-位置冲突"
     },
     {
         "Id": 20034097,
         "Key": "ConditionManagerMixedTeamCharNpcNotFound",
-        "Text": "20034095 Mixed Team - Character NPC Not Found"
+        "Text": "20034095混编队伍-找不到角色NPC"
     },
     {
         "Id": 20034098,
         "Key": "ConditionManagerMixedTeamRobotNotFound",
-        "Text": "20034096 Mixed Team - Robot Not Found"
+        "Text": "20034096混编队伍-找不到机器人"
     },
     {
         "Id": 20034099,
         "Key": "ConditionManagerMixedTeamRobotNpcNotFound",
-        "Text": "20034097 Mixed Team - Robot NPC Not Found"
+        "Text": "20034097混编队伍-找不到机器人NPC"
     },
     {
         "Id": 20034100,
         "Key": "ConditionManagerFubenEventDataNotMatch",
-        "Text": "20034098 Mission event - data mismatch"
+        "Text": "20034098副本事件-数据不匹配"
     },
     {
         "Id": 20034101,
         "Key": "ConditionManagerBossInshotScoreNotMatch",
-        "Text": "20034099 Low stage rating"
+        "Text": "20034099所需通关的关卡评级不满足"
     },
     {
         "Id": 20034102,
         "Key": "ConditionManagerBossInshotStageCountNotMatch",
-        "Text": "20034100 Insufficient stages cleared"
+        "Text": "20034100所需通关的关卡数量不满足"
     },
     {
         "Id": 20034103,
@@ -3982,17 +4097,77 @@
     {
         "Id": 20034121,
         "Key": "ConditionTheatre5CurBattleLevelLimit",
-        "Text": "Not all battles completed in current chapter"
+        "Text": "当前章节未完成所有战斗"
     },
     {
         "Id": 20034122,
         "Key": "ConditionTheatre5ClueLimit",
-        "Text": "Not all clues collected in current chapter"
+        "Text": "当前章节未收集所有线索"
     },
     {
         "Id": 20034123,
         "Key": "ConditionTheatre5ChaptPassCutLimit",
-        "Text": "Failed to reach the required number of chapter clears in current chapter"
+        "Text": "当前章节未达成章节通关次数"
+    },
+    {
+        "Id": 20034124,
+        "Key": "ConditionTheatre5EnterShopCutLimit",
+        "Text": "20034124 Roguelike 5: Required shop visits not met"
+    },
+    {
+        "Id": 20034125,
+        "Key": "ConditionTheatre5LeaveShopCutLimit",
+        "Text": "20034125 Roguelike 5: Required shop exits not met"
+    },
+    {
+        "Id": 20034126,
+        "Key": "ConditionTheatre5LoseCntLimit",
+        "Text": "20034126 Roguelike 5: Required failure count not met"
+    },
+    {
+        "Id": 20034127,
+        "Key": "ConditionTheatre5HpLimit",
+        "Text": "20034127 Roguelike 5: Required heart count not met"
+    },
+    {
+        "Id": 20034128,
+        "Key": "ConditionTheatre5LvLimit",
+        "Text": "20034128 Roguelike 5: Level requirements not met"
+    },
+    {
+        "Id": 20034129,
+        "Key": "ConditionTheatre5ItemTypeLimit",
+        "Text": "20034129 Roguelike 5: Required item type not purchased"
+    },
+    {
+        "Id": 20034130,
+        "Key": "ConditionTheatre5ItemIdLimit",
+        "Text": "20034130 Roguelike 5: Required specific item not purchased"
+    },
+    {
+        "Id": 20034131,
+        "Key": "ConditionTheatre5ContinueWinLimit",
+        "Text": "20034131 Roguelike 5: Required winning streak not achieved"
+    },
+    {
+        "Id": 20034132,
+        "Key": "ConditionTheatre5TagRuneLimit",
+        "Text": "20034132 Roguelike 5: Required number of Runes with specific rarity & tag not equipped"
+    },
+    {
+        "Id": 20034133,
+        "Key": "ConditionTheatre5GoldCutLimit",
+        "Text": "20034133 Roguelike 5: Insufficient coins"
+    },
+    {
+        "Id": 20034134,
+        "Key": "ConditionTheatre5FightParamLimit",
+        "Text": "20034134 Roguelike 5: Previous battle parameters do not meet required conditions"
+    },
+    {
+        "Id": 20034135,
+        "Key": "ConditionManagerCharacterLevelNotEnough",
+        "Text": "20034135 Member has not reached the required level"
     },
     {
         "Id": 20036001,
@@ -4032,7 +4207,7 @@
     {
         "Id": 20036008,
         "Key": "RobotManagerRobotNotExit",
-        "Text": "Assist character not selected, unable to enter"
+        "Text": "\"Assist character not selected, unable to enter\""
     },
     {
         "Id": 20036009,
@@ -4447,7 +4622,7 @@
     {
         "Id": 20044040,
         "Key": "ArenaActivityStatusNotMatch",
-        "Text": "20044040 War Zone status not met"
+        "Text": "20044040战区状态不满足"
     },
     {
         "Id": 20044041,
@@ -4457,37 +4632,37 @@
     {
         "Id": 20044042,
         "Key": "ArenaActivityInviteTargetIsNotJoin",
-        "Text": "Failed to invite. Player is not in the War Zone yet."
+        "Text": "邀请失败，该玩家尚未进入本期战区"
     },
     {
         "Id": 20044043,
         "Key": "ArenaActivityStageCanNotAutoFight",
-        "Text": "Mission does not allow Auto Clear"
+        "Text": "该副本不能自动作战"
     },
     {
         "Id": 20044044,
         "Key": "ArenaActivityStageAutoFightNotUnlock",
-        "Text": "Auto Clear is locked for this mission"
+        "Text": "该副本自动作战暂未解锁"
     },
     {
         "Id": 20044045,
         "Key": "ArenaActivityStageMaxPointCanNotAutoFight",
-        "Text": "You cannot Auto Clear a full-score stage"
+        "Text": "满分不能进行自动作战"
     },
     {
         "Id": 20044046,
         "Key": "ArenaActivityTeamIsNotOpen",
-        "Text": "20044045 War Zone squad temporarily not available"
+        "Text": "20044045战区小队暂停开放"
     },
     {
         "Id": 20044047,
         "Key": "ArenaActivityEnvBuffNotFind",
-        "Text": "20044046 War Zone environment buff not found"
+        "Text": "20044046战区环境Buff找不到"
     },
     {
         "Id": 20044048,
         "Key": "ArenaActivityGroupFightEventNotFind",
-        "Text": "20044047 War Zone support group not found"
+        "Text": "20044047战区支援组不存在"
     },
     {
         "Id": 20045001,
@@ -4622,12 +4797,12 @@
     {
         "Id": 20045027,
         "Key": "MatchServerMaintenance",
-        "Text": "Online function maintenance, unable to conduct a match battle"
+        "Text": "\"Online function maintenance, unable to conduct a match battle\""
     },
     {
         "Id": 20045028,
         "Key": "MatchClientVersionError",
-        "Text": "Client version is too low, unable to conduct a match battle"
+        "Text": "\"Client version is too low, unable to conduct a match battle\""
     },
     {
         "Id": 20045029,
@@ -4698,6 +4873,16 @@
         "Id": 20045042,
         "Key": "MatchRoomSucceedNotDoIt",
         "Text": "You cannot do this under the current state"
+    },
+    {
+        "Id": 20045043,
+        "Key": "MatchSyncRelinkDataPlayerIsReady",
+        "Text": "20045043 Cannot set data during preparation"
+    },
+    {
+        "Id": 20045044,
+        "Key": "MatchPlayerRelinkDataError",
+        "Text": "20045044 Battle data error"
     },
     {
         "Id": 20046001,
@@ -5095,24 +5280,54 @@
         "Text": "Pack purchase failed - character already owned"
     },
     {
+        "Id": 20053035,
+        "Key": "PurchaseHistroyNotMatch",
+        "Text": "20053035 Pack purchase requirements not met"
+    },
+    {
+        "Id": 20053036,
+        "Key": "PurchaseNotBuyMonthCard",
+        "Text": "20053036 Monthly Pass not purchased"
+    },
+    {
+        "Id": 20053037,
+        "Key": "PurchaseComboPackageNotFound",
+        "Text": "20053037 Bundle configuration not found"
+    },
+    {
+        "Id": 20053038,
+        "Key": "PurchaseComboPackageIsSoldOut",
+        "Text": "20053038 Bundle purchase limit reached"
+    },
+    {
+        "Id": 20053039,
+        "Key": "PurchaseComboSubPackageIsSoldOut",
+        "Text": "20053039 All items in bundle already purchased"
+    },
+    {
+        "Id": 20053101,
+        "Key": "PurchaseExistMutexItem",
+        "Text": "Already own a conflicting product. Cannot purchase and replace it now."
+    },
+    {
         "Id": 20054001,
         "Key": "CdKeyInvalid",
-        "Text": "Invalid gift code, please check again."
+        "Text": "\"Invalid gift code, please check again.\""
     },
     {
         "Id": 20054002,
         "Key": "CdKeyNotTimeYet",
-        "Text": "Out of exchange period, please check again."
+        "Text": "\"Out of exchange period, please check again.\""
     },
     {
         "Id": 20054003,
         "Key": "CdKeyTotalCountFull",
-        "Text": "Gift code has been used, please check again."
+        "Text": "\"Gift code has been used, please check again.\""
     },
     {
         "Id": 20054004,
         "Key": "CdKeyChannelWrong",
-        "Text": "Invalid channel, please check again."
+        "Text": "\"Invalid channel, please check again.\""
     },
     {
         "Id": 20054005,
@@ -5122,7 +5337,7 @@
     {
         "Id": 20054006,
         "Key": "CdKeyTimeOut",
-        "Text": "Gift code has expired, please check again."
+        "Text": "\"Gift code has expired, please check again.\""
     },
     {
         "Id": 20054007,
@@ -7925,6 +8140,11 @@
         "Text": "20063366 Guild theme not owned"
     },
     {
+        "Id": 20063367,
+        "Key": "GuildGetMemberBaseInfoFail",
+        "Text": "20063367 Failed to obtain member info. Please try again later"
+    },
+    {
         "Id": 20064001,
         "Key": "RogueLikeActivityNotOpen",
         "Text": "Outside the event period."
@@ -8327,7 +8547,7 @@
     {
         "Id": 20066021,
         "Key": "RegressionInviteOperating",
-        "Text": "Now busy, please wait"
+        "Text": "\"Now busy, please wait\""
     },
     {
         "Id": 20066022,
@@ -10924,12 +11144,12 @@
     {
         "Id": 20106081,
         "Key": "MentorCannotApplyMentorByBlockList",
-        "Text": "Currently blacklisted, cannot establish collaboration."
+        "Text": "\"Currently blacklisted, cannot establish collaboration.\""
     },
     {
         "Id": 20106082,
         "Key": "MentorCannotApplyStudentByBlockList",
-        "Text": "Currently blacklisted, cannot send request."
+        "Text": "\"Currently blacklisted, cannot send request.\""
     },
     {
         "Id": 20106083,
@@ -11664,7 +11884,7 @@
     {
         "Id": 20113066,
         "Key": "StrongholdGroupStageNotFinish",
-        "Text": "Current Stronghold stage not cleared, cannot reset"
+        "Text": "\"Current Stronghold stage not cleared, cannot reset\""
     },
     {
         "Id": 20113067,
@@ -11909,12 +12129,12 @@
     {
         "Id": 20114044,
         "Key": "PartnerIsNullCanNotWearSkill",
-        "Text": "20114045 Companion empty, cannot set skills"
+        "Text": "\"20114045 Companion empty, cannot set skills\""
     },
     {
         "Id": 20114045,
         "Key": "PartnerCanNotSetWhenCharacterIsNull",
-        "Text": "20114046 Character empty, cannot set companions"
+        "Text": "\"20114046 Character empty, cannot set companions\""
     },
     {
         "Id": 20114046,
@@ -13768,7 +13988,7 @@
     {
         "Id": 20133010,
         "Key": "SuperTowerBagIsFull",
-        "Text": "Insufficient Add-on Inventory capacity, please first consume or scrap Add-ons"
+        "Text": "\"Insufficient Add-on Inventory capacity, please first consume or scrap Add-ons\""
     },
     {
         "Id": 20133011,
@@ -13938,12 +14158,12 @@
     {
         "Id": 20133044,
         "Key": "SuperTowerBagCapacityNotEnough",
-        "Text": "Insufficient Add-on Inventory capacity, cannot advance to the Infinite Abyss. Please first consume or scrap Add-ons"
+        "Text": "\"Insufficient Add-on Inventory capacity, cannot advance to the Infinite Abyss. Please first consume or scrap Add-ons\""
     },
     {
         "Id": 20133045,
         "Key": "SuperTowerPluginIdNotExistOnBuyList",
-        "Text": "Purchased Add-on is not found in purchasable list, please refresh"
+        "Text": "\"Purchased Add-on is not found in purchasable list, please refresh\""
     },
     {
         "Id": 20133046,
@@ -15463,7 +15683,7 @@
     {
         "Id": 20151001,
         "Key": "ReviewActivityDataNotExist",
-        "Text": "Create character before Dec 5, 2024"
+        "Text": "Create character before Dec 5, 2025"
     },
     {
         "Id": 20151002,
@@ -17428,7 +17648,7 @@
     {
         "Id": 20169014,
         "Key": "MultiDimNotInOpenTime",
-        "Text": "Multiplayer challenge is not available now, please try again later"
+        "Text": "\"Multiplayer challenge is not available now, please try again later\""
     },
     {
         "Id": 20169015,
@@ -17703,7 +17923,7 @@
     {
         "Id": 20173502,
         "Key": "GuildDormPlayerNotInGuild",
-        "Text": "Have not joined a Guild, cannot perform this action"
+        "Text": "\"Have not joined a Guild, cannot perform this action\""
     },
     {
         "Id": 20173503,
@@ -19403,7 +19623,7 @@
     {
         "Id": 20185030,
         "Key": "RestaurantStorageFull",
-        "Text": "Storage full, cannot speed up"
+        "Text": "\"Storage full, cannot speed up\""
     },
     {
         "Id": 20185031,
@@ -21903,12 +22123,12 @@
     {
         "Id": 20208081,
         "Key": "RogueSimTurnSettleMainLevelUpExist",
-        "Text": "Main city can be upgraded, needs processing"
+        "Text": "\"Main city can be upgraded, needs processing\""
     },
     {
         "Id": 20208082,
         "Key": "RogueSimTurnSettleCityLevelUpExist",
-        "Text": "City can be upgraded, needs processing"
+        "Text": "\"City can be upgraded, needs processing\""
     },
     {
         "Id": 20208083,
@@ -22308,7 +22528,7 @@
     {
         "Id": 20210033,
         "Key": "FangKuaiFrenzyHistorySyncError",
-        "Text": "20210033 Fervor sync error"
+        "Text": "20210033狂热同步异常"
     },
     {
         "Id": 20211001,
@@ -22653,42 +22873,42 @@
     {
         "Id": 20217009,
         "Key": "LineArithmeticNormalSettleFinishTargetCountError",
-        "Text": "20217009 Cannot settle directly without completing any objectives"
+        "Text": "20217009未完成任何目标不能直接结算"
     },
     {
         "Id": 20217010,
         "Key": "LineArithmeticGridInfoRecordNullError",
-        "Text": "20217010 Stage operation record is empty"
+        "Text": "20217010关卡操作记录为空"
     },
     {
         "Id": 20217011,
         "Key": "LineArithmeticGridInfoRecordCountError",
-        "Text": "20217011 Stage operation record quantity error"
+        "Text": "20217011关卡操作记录数量异常"
     },
     {
         "Id": 20217012,
         "Key": "LineArithmeticActivityMaxGridCountError",
-        "Text": "20217012 Failed to retrieve stage max tile quantity configuration"
+        "Text": "20217012关卡最大格子数量配置获取错误"
     },
     {
         "Id": 20217013,
         "Key": "LineArithmeticGridInfoRecordPointCountError",
-        "Text": "20217013 Stage operation record tile operation quantity error"
+        "Text": "20217013关卡操作记录操作格子数量异常"
     },
     {
         "Id": 20217014,
         "Key": "LineArithmeticStageMaxRecordCountError",
-        "Text": "20217014 Failed to retrieve stage max operation count configuration"
+        "Text": "20217014关卡最大可操作次数配置获取错误"
     },
     {
         "Id": 20217015,
         "Key": "LineArithmeticSettleNormalGridInfoError",
-        "Text": "20217015 Operation record value is empty during settlement"
+        "Text": "20217015结算时操作记录值为空"
     },
     {
         "Id": 20217016,
         "Key": "LineArithmeticSettleReStartGridInfoError",
-        "Text": "20217016 Operation record value reset error"
+        "Text": "20217016重置操作记录值异常"
     },
     {
         "Id": 20218001,
@@ -23833,12 +24053,12 @@
     {
         "Id": 20233013,
         "Key": "NonogramChapterIsOngoing",
-        "Text": "20233013 Chapter already started, cannot start again"
+        "Text": "\"20233013 Chapter already started, cannot start again\""
     },
     {
         "Id": 20233014,
         "Key": "NonogramChapterIsSettle",
-        "Text": "20233014 Chapter already ended, cannot start again"
+        "Text": "\"20233014 Chapter already ended, cannot start again\""
     },
     {
         "Id": 20233015,
@@ -25483,27 +25703,27 @@
     {
         "Id": 20246027,
         "Key": "PokerGuessing2PlayerChangedCardsError",
-        "Text": "20246027 Player card modification data error"
+        "Text": "20246027玩家改牌数据错误"
     },
     {
         "Id": 20246028,
         "Key": "PokerGuessing2PlayerChangedCardsCountError",
-        "Text": "20246028 Insufficient player card modification attempts"
+        "Text": "20246028玩家改牌次数不足"
     },
     {
         "Id": 20246029,
         "Key": "PokerGuessing2RobotChangedCardsError",
-        "Text": "20246029 Opponent card modification data error"
+        "Text": "20246029对手改牌数据错误"
     },
     {
         "Id": 20246030,
         "Key": "PokerGuessing2RobotChangedCardsCountError",
-        "Text": "20246030 Insufficient opponent card modification attempts"
+        "Text": "20246030对手改牌次数不足"
     },
     {
         "Id": 20246031,
         "Key": "PokerGuessing2ActionPlayerChangedCardsNotMatch",
-        "Text": "20246031 Original card and modified card mismatch"
+        "Text": "20246031原牌和改牌不对应"
     },
     {
         "Id": 20247001,
@@ -26138,7 +26358,7 @@
     {
         "Id": 20282016,
         "Key": "Theatre5PveChapterRepeatInBattle",
-        "Text": "Failed to activate repeated challenge chapter: You are at a chapter combat node"
+        "Text": "\"Failed to activate repeated challenge chapter: You are at a chapter combat node\""
     },
     {
         "Id": 20282017,
@@ -26202,78 +26422,188 @@
     },
     {
         "Id": 20282029,
+        "Key": "Theatre5PveStoryLineCharacterBeBand",
+        "Text": "20282029 Character disabled for storyline battle node"
+    },
+    {
+        "Id": 20282030,
         "Key": "Theatre5PveRandomEventError",
         "Text": "Random event error"
     },
     {
-        "Id": 20282030,
+        "Id": 20282031,
         "Key": "Theatre5PveEventChooseNotFound",
         "Text": "Event selection not found"
     },
     {
-        "Id": 20282031,
+        "Id": 20282032,
         "Key": "Theatre5PveCurEventError",
         "Text": "You can only deal with the current event first"
     },
     {
-        "Id": 20282032,
+        "Id": 20282033,
         "Key": "Theatre5StatusNoEventHandle",
         "Text": "You are not handling an event right now"
     },
     {
-        "Id": 20282033,
+        "Id": 20282034,
         "Key": "Theatre5PveEventOptionError",
         "Text": "Event option error"
     },
     {
-        "Id": 20282034,
+        "Id": 20282035,
         "Key": "Theatre5PveEventOptionConditionLimit",
         "Text": "Event option locked"
     },
     {
-        "Id": 20282035,
+        "Id": 20282036,
         "Key": "Theatre5PveEventOptionCostCfgError",
         "Text": "Event option consumable configuration error"
     },
     {
-        "Id": 20282036,
+        "Id": 20282037,
         "Key": "Theatre5PveEventOptionCostLimit",
         "Text": "Insufficient event option consumable items"
     },
     {
-        "Id": 20282037,
+        "Id": 20282038,
         "Key": "Theatre5PveEventOptionContainLimit",
         "Text": "Event option does not include item"
     },
     {
-        "Id": 20282038,
+        "Id": 20282039,
         "Key": "Theatre5PveEventOptionItemCfgError",
         "Text": "Event option item configuration error"
     },
     {
-        "Id": 20282039,
+        "Id": 20282040,
         "Key": "Theatre5ScriptNotUnlock",
         "Text": "Current simulation is still locked"
     },
     {
-        "Id": 20282040,
+        "Id": 20282041,
         "Key": "Theatre5ScriptIsComplete",
         "Text": "Current simulation completed"
     },
     {
-        "Id": 20282041,
+        "Id": 20282042,
         "Key": "Theatre5ScriptNotFound",
         "Text": "Current simulation does not exist"
     },
     {
-        "Id": 20282042,
+        "Id": 20282043,
         "Key": "Theatre5ScriptStepNotFound",
         "Text": "Current simulation step does not exist"
     },
     {
-        "Id": 20282043,
+        "Id": 20282044,
         "Key": "Theatre5RandomFightEnemyError",
         "Text": "Failed to generate combat robot"
+    },
+    {
+        "Id": 20282045,
+        "Key": "Theatre5StoryLineUnlock",
+        "Text": "20282045 Storyline is still locked"
+    },
+    {
+        "Id": 20283001,
+        "Key": "Theatre5CharacterLvUpExpLimit",
+        "Text": "20283001 Insufficient character upgrade EXP"
+    },
+    {
+        "Id": 20283002,
+        "Key": "Theatre5CharacterLevelCfgNoFound",
+        "Text": "20283002 Character level configuration not found"
+    },
+    {
+        "Id": 20283003,
+        "Key": "Theatre5CharacterMaxLevelLimit",
+        "Text": "20283003 Character max level limit"
+    },
+    {
+        "Id": 20283004,
+        "Key": "Theatre5RelicRefreshCountLimit",
+        "Text": "20283004 Accessory refresh limit reached"
+    },
+    {
+        "Id": 20283005,
+        "Key": "Theatre5RelicChooseNoFound",
+        "Text": "20283005 Accessory selection not found"
+    },
+    {
+        "Id": 20283006,
+        "Key": "Theatre5RelicChooseNoChoose",
+        "Text": "20283006 Accessory not selected"
+    },
+    {
+        "Id": 20283007,
+        "Key": "Theatre5RelicChooseNoRandom",
+        "Text": "20283007 Accessory not randomized"
+    },
+    {
+        "Id": 20283008,
+        "Key": "Theatre5BuyExpLimit",
+        "Text": "20283008 This location does not support EXP purchase"
+    },
+    {
+        "Id": 20283009,
+        "Key": "Theatre5CanLevelUp",
+        "Text": "20283009 Requires upgrade first"
+    },
+    {
+        "Id": 20283010,
+        "Key": "Theatre5RuneHasStrengthen",
+        "Text": "20283010 Enhancement Rune already enhanced"
+    },
+    {
+        "Id": 20283011,
+        "Key": "Theatre5StrengthenNoIntersect",
+        "Text": "20283011 No compatible enhancements"
+    },
+    {
+        "Id": 20283012,
+        "Key": "Theatre5StrengthenQualityNoSame",
+        "Text": "20283012 Enhancement Hammers can only enhance Runes of the same rarity"
+    },
+    {
+        "Id": 20283013,
+        "Key": "Theatre5NeedUnlockFreeGaid",
+        "Text": "20283013 Must unlock free slots first"
+    },
+    {
+        "Id": 20283014,
+        "Key": "Theatre5EffectConfigNoFound",
+        "Text": "20283014 Effect configuration not found"
+    },
+    {
+        "Id": 20283015,
+        "Key": "Theatre5EffectTypeNoFound",
+        "Text": "20283015 Effect type not found"
+    },
+    {
+        "Id": 20283016,
+        "Key": "Theatre5EffectTriggerLimit",
+        "Text": "20283016 Effect trigger limit reached"
+    },
+    {
+        "Id": 20283017,
+        "Key": "Theatre5EffectParamError",
+        "Text": "20283017 Effect parameter error"
+    },
+    {
+        "Id": 20283018,
+        "Key": "Theatre5ShopNoInit",
+        "Text": "20283018 Shop not initialized"
+    },
+    {
+        "Id": 20283019,
+        "Key": "Theatre5BuyExpParamsError",
+        "Text": "20283019 Purchase parameter error"
+    },
+    {
+        "Id": 20283020,
+        "Key": "Theatre5BuyExpTooMatch",
+        "Text": "20283020 EXP purchase overflow"
     },
     {
         "Id": 20290001,
@@ -26503,72 +26833,492 @@
     {
         "Id": 20301020,
         "Key": "BountyChallengeCurrentBattleInfoIsNull",
-        "Text": "20301020 Player has not selected enemy and difficulty"
+        "Text": "20301020玩家未选择怪物和难度"
     },
     {
         "Id": 20311001,
         "Key": "SoloReformNotOpen",
-        "Text": "20311001 Event not available"
+        "Text": "20311001活动未开启"
     },
     {
         "Id": 20311002,
         "Key": "SoloReformChapterNotOpen",
-        "Text": "20311002 Chapter not available"
+        "Text": "20311002章节未开放"
     },
     {
         "Id": 20311003,
         "Key": "SoloReformActivityCfgNotExit",
-        "Text": "20311003 Event configuration not found"
+        "Text": "20311003未找到活动配置"
     },
     {
         "Id": 20311004,
         "Key": "SoloReformStageCfgNotExit",
-        "Text": "20311004 Stage configuration not found"
+        "Text": "20311004未找到关卡配置"
     },
     {
         "Id": 20311005,
         "Key": "SoloReformChapterCfgNotExit",
-        "Text": "20311005 Chapter configuration not found"
+        "Text": "20311005未找到章节配置"
     },
     {
         "Id": 20311006,
         "Key": "SoloReformChapterDataNotExit",
-        "Text": "20311006 Chapter data not found"
+        "Text": "20311006未找到章节数据"
     },
     {
         "Id": 20311007,
         "Key": "SoloReformIllegalCharacter",
-        "Text": "20311007 Cannot use characters outside the selection range"
+        "Text": "20311007不能使用选取范围外的角色"
     },
     {
         "Id": 20311008,
         "Key": "SoloReformIllegalRobot",
-        "Text": "20311008 Cannot use trial characters outside the selection range"
+        "Text": "20311008不能使用选取范围外的试用角色"
     },
     {
         "Id": 20311009,
         "Key": "SoloReformStageLocked",
-        "Text": "20311009 Difficulty locked"
+        "Text": "20311009难度未解锁"
     },
     {
         "Id": 20311010,
         "Key": "SoloReformCharacterChooseError",
-        "Text": "20311010 Character selection quantity error"
+        "Text": "20311010角色选取数量异常"
     },
     {
         "Id": 20311011,
         "Key": "SoloReformStageChooseError",
-        "Text": "20311011 Stage selection error"
+        "Text": "20311011关卡选取异常"
     },
     {
         "Id": 20311012,
         "Key": "SoloReformChapterDifficultError",
-        "Text": "20311012 Chapter difficulty configuration error"
+        "Text": "20311012章节难度配置异常"
     },
     {
         "Id": 20311013,
         "Key": "SoloReformStageStarNumError",
-        "Text": "20311013 Stage objective quantity error"
+        "Text": "20311013关卡目标数量异常"
+    },
+    {
+        "Id": 20312001,
+        "Key": "SgDroneGameNotOpen",
+        "Text": "20312001 Drone mode not available"
+    },
+    {
+        "Id": 20312002,
+        "Key": "SgDroneGameDataNotInit",
+        "Text": "20312002 Drone mode data not initialized"
+    },
+    {
+        "Id": 20312003,
+        "Key": "SgDroneGameStageNotExist",
+        "Text": "20312003 Stage does not exist"
+    },
+    {
+        "Id": 20312004,
+        "Key": "SgDroneGameHasSavedStageData",
+        "Text": "20312004 Conflicting stage progress data detected"
+    },
+    {
+        "Id": 20312005,
+        "Key": "SgDroneGamePreStageNotCompleted",
+        "Text": "20312005 Previous stage not complete"
+    },
+    {
+        "Id": 20312006,
+        "Key": "SgDroneGamePreQuestNotCompleted",
+        "Text": "20312006 Prerequisite mission not completed"
+    },
+    {
+        "Id": 20312007,
+        "Key": "SgDroneGameNoCurrentStageData",
+        "Text": "20312007 Stage data not found"
+    },
+    {
+        "Id": 20313001,
+        "Key": "StageBookmarkStageCfgNotExist",
+        "Text": "20313001 Stage configuration not found"
+    },
+    {
+        "Id": 20313002,
+        "Key": "StageBookmarkMovieIdEmpty",
+        "Text": "20313002 MovieId is empty"
+    },
+    {
+        "Id": 20313003,
+        "Key": "StageBookmarkActionIdInvalid",
+        "Text": "20313003 ActionId invalid"
+    },
+    {
+        "Id": 20320001,
+        "Key": "RaceActivityNotOpen",
+        "Text": "20320001 Event not available"
+    },
+    {
+        "Id": 20320002,
+        "Key": "RaceActivityNotExist",
+        "Text": "20320002 Event does not exist"
+    },
+    {
+        "Id": 20320003,
+        "Key": "RaceRoundNotOpen",
+        "Text": "20320003 Match not available"
+    },
+    {
+        "Id": 20320004,
+        "Key": "RaceRoundNotStart",
+        "Text": "20320004 Match not started"
+    },
+    {
+        "Id": 20320005,
+        "Key": "RaceRoundNotEnd",
+        "Text": "20320005 Match not finished"
+    },
+    {
+        "Id": 20320006,
+        "Key": "RaceRoundConfigNotExist",
+        "Text": "20320006 Match configuration error"
+    },
+    {
+        "Id": 20320007,
+        "Key": "RaceStartTimeError",
+        "Text": "20320007 Match start time error"
+    },
+    {
+        "Id": 20320008,
+        "Key": "RaceGuessTimeEnd",
+        "Text": "20320008 Match prediction time is over"
+    },
+    {
+        "Id": 20320009,
+        "Key": "RaceCharacterConfigError",
+        "Text": "20320009 Contestant configuration error"
+    },
+    {
+        "Id": 20320010,
+        "Key": "RaceLastRoundExistReward",
+        "Text": "20320010 Unclaimed rewards from previous match round exist"
+    },
+    {
+        "Id": 20320011,
+        "Key": "RaceLoadRoundManError",
+        "Text": "20320011 Loading match contestant error"
+    },
+    {
+        "Id": 20320012,
+        "Key": "RaceFromRoundIdError",
+        "Text": "20320012 Match round error"
+    },
+    {
+        "Id": 20320013,
+        "Key": "RacePromotionManError",
+        "Text": "20320013 Match advancing contestant error"
+    },
+    {
+        "Id": 20320014,
+        "Key": "RaceGuessIdNotConfig",
+        "Text": "20320014 Prediction configuration error"
+    },
+    {
+        "Id": 20320015,
+        "Key": "RaceRoundNotSupportGuess",
+        "Text": "20320015 Match does not support this prediction item"
+    },
+    {
+        "Id": 20320016,
+        "Key": "RaceNotSupportGuess",
+        "Text": "20320016 Prediction item not supported"
+    },
+    {
+        "Id": 20320017,
+        "Key": "RaceGlobalGuessTimeEnd",
+        "Text": "20320017 Prediction time is over"
+    },
+    {
+        "Id": 20320018,
+        "Key": "RaceCharacterNotExist",
+        "Text": "20320018 Contestant does not exist"
+    },
+    {
+        "Id": 20320019,
+        "Key": "RaceNotAllMatchEnd",
+        "Text": "20320019 All matches not finished"
+    },
+    {
+        "Id": 20320020,
+        "Key": "RaceNotGuess",
+        "Text": "20320020 No bet placed on this prediction"
+    },
+    {
+        "Id": 20320021,
+        "Key": "RaceHasGainThisGuess",
+        "Text": "20320021 Betting reward already claimed"
+    },
+    {
+        "Id": 20320022,
+        "Key": "RaceGuessNotExistOpt",
+        "Text": "20320022 Prediction option does not exist"
+    },
+    {
+        "Id": 20320023,
+        "Key": "RaceGuessSuccess",
+        "Text": "20320023 Prediction successful"
+    },
+    {
+        "Id": 20320024,
+        "Key": "RaceGuessFail",
+        "Text": "20320024 Prediction failed"
+    },
+    {
+        "Id": 20320025,
+        "Key": "RaceRepeatGainSkin",
+        "Text": "20320025 Reward already claimed"
+    },
+    {
+        "Id": 20320026,
+        "Key": "RaceNotConfigSkinReward",
+        "Text": "20320026 Rewards not configured"
+    },
+    {
+        "Id": 20320027,
+        "Key": "RaceNotInGuild",
+        "Text": "20320027 Have not joined a guild"
+    },
+    {
+        "Id": 20320028,
+        "Key": "RaceGetGuildMemberNull",
+        "Text": "20320028 Guild player does not exist"
+    },
+    {
+        "Id": 20320029,
+        "Key": "RaceReportNotExist",
+        "Text": "20320029 Match result does not exist"
+    },
+    {
+        "Id": 20320030,
+        "Key": "RaceRepeateSelect",
+        "Text": "20320030 Duplicate option selected"
+    },
+    {
+        "Id": 20320031,
+        "Key": "RaceNotFoundGuessType",
+        "Text": "20320031 Prediction type not found"
+    },
+    {
+        "Id": 20320032,
+        "Key": "RaceNotSelectCharacter",
+        "Text": "20320032 Prediction character not selected"
+    },
+    {
+        "Id": 20320033,
+        "Key": "RaceSelectCharacterError",
+        "Text": "20320033 Cannot select prediction character"
+    },
+    {
+        "Id": 20320034,
+        "Key": "RaceSelectOptError",
+        "Text": "20320034 Cannot select prediction option"
+    },
+    {
+        "Id": 20320035,
+        "Key": "RaceGuildGetScoreError",
+        "Text": "20320035 Failed to obtain guild member scores. Please try again later"
+    },
+    {
+        "Id": 20320036,
+        "Key": "RaceValidResultIsNull",
+        "Text": "20320036 Information retrieval error"
+    },
+    {
+        "Id": 20320037,
+        "Key": "RaceUpdateRankError",
+        "Text": "20320037 Failure to update leaderboard"
+    },
+    {
+        "Id": 20320038,
+        "Key": "RaceSkillDeadLoop",
+        "Text": "20320038 Skill effect infinite loop"
+    },
+    {
+        "Id": 20320039,
+        "Key": "RaceSkillNotFound",
+        "Text": "20320039 Player skill not found"
+    },
+    {
+        "Id": 20320040,
+        "Key": "RaceSkillProbabilityError",
+        "Text": "20320040 Skill randomization failed"
+    },
+    {
+        "Id": 20320041,
+        "Key": "RaceSkillUseTimesNotEnough",
+        "Text": "20320041 Insufficient skill usage attempts"
+    },
+    {
+        "Id": 20320042,
+        "Key": "RaceSkillConditionError",
+        "Text": "20320042 Skill trigger conditions not met"
+    },
+    {
+        "Id": 20320043,
+        "Key": "RaceCharacterSkillTemplateNotFound",
+        "Text": "20320043 RaceCharacterSkill table configuration not found"
+    },
+    {
+        "Id": 20320044,
+        "Key": "RaceSkillConditionTemplateNotFound",
+        "Text": "20320044 RaceSkillCondition table configuration not found"
+    },
+    {
+        "Id": 20320045,
+        "Key": "RaceMagicTemplateNotFound",
+        "Text": "20320045 RaceMagic table configuration not found"
+    },
+    {
+        "Id": 20320046,
+        "Key": "RaceMagicSearchTemplateNotFound",
+        "Text": "20320046 RaceMagicSearch table configuration not found"
+    },
+    {
+        "Id": 20320047,
+        "Key": "RaceSignalBallTemplateNotFound",
+        "Text": "20320047 RaceSignalBall table configuration not found"
+    },
+    {
+        "Id": 20320048,
+        "Key": "RaceSignalGroupTemplateNotFound",
+        "Text": "20320048 RaceSignalGroup table configuration not found"
+    },
+    {
+        "Id": 20320049,
+        "Key": "RaceSignalBallRankGroupTemplateNotFound",
+        "Text": "20320049 RaceSignalBallRankGroup table configuration not found"
+    },
+    {
+        "Id": 20320050,
+        "Key": "RaceMagicBuffTemplateNotFound",
+        "Text": "20320050 RaceMagicBuff table configuration not found"
+    },
+    {
+        "Id": 20320051,
+        "Key": "RaceMagicBuffTagTemplateNotFound",
+        "Text": "20320051 RaceMagicBuffTag table configuration not found"
+    },
+    {
+        "Id": 20320052,
+        "Key": "SignalBallNotEnough",
+        "Text": "20320052 Insufficient Signal Orbs"
+    },
+    {
+        "Id": 20320053,
+        "Key": "GetTargetParamError",
+        "Text": "20320053 Skill target parameter error"
+    },
+    {
+        "Id": 20320054,
+        "Key": "RankNotFoundActor",
+        "Text": "20320054 Player not found on leaderboard"
+    },
+    {
+        "Id": 20320055,
+        "Key": "RaceNotExistReward",
+        "Text": "20320055 No rewards to claim"
+    },
+    {
+        "Id": 20320056,
+        "Key": "RaceGetRaceReportError",
+        "Text": "20320056 Failed to retrieve match report"
+    },
+    {
+        "Id": 20320057,
+        "Key": "RaceGetGuessReportError",
+        "Text": "20320057 Failed to retrieve match prediction results"
+    },
+    {
+        "Id": 20320058,
+        "Key": "RaceConditionParamError",
+        "Text": "20320058 Condition parameter error"
+    },
+    {
+        "Id": 20320059,
+        "Key": "RaceOptionCalcError",
+        "Text": "20320059 Option retrieval error"
+    },
+    {
+        "Id": 20320060,
+        "Key": "RaceGuessEnd",
+        "Text": "20320060 Prediction is over"
+    },
+    {
+        "Id": 20320061,
+        "Key": "RaceRoundManError",
+        "Text": "20320061 Match contestant error"
+    },
+    {
+        "Id": 20320062,
+        "Key": "RankParamError",
+        "Text": "20320062 Ranking parameter error"
+    },
+    {
+        "Id": 20320063,
+        "Key": "RaceRegLiveInvalidRoundState",
+        "Text": "20320062 Round status error"
+    },
+    {
+        "Id": 20320064,
+        "Key": "RaceRegLivePlayerNotFound",
+        "Text": "20320063 Player data not found"
+    },
+    {
+        "Id": 20320065,
+        "Key": "RaceRegLiveGetSectorInfoFailed",
+        "Text": "20320064 Race segment information not found"
+    },
+    {
+        "Id": 20320066,
+        "Key": "RacePlaybackInvalidRound",
+        "Text": "20320064 Invalid round"
+    },
+    {
+        "Id": 20320067,
+        "Key": "RacePlaybackRoundDataNotFound",
+        "Text": "20320065 Round data not found"
+    },
+    {
+        "Id": 20320068,
+        "Key": "RacePlaybackInvalidFrameIdx",
+        "Text": "20320066 Invalid frame index"
+    },
+    {
+        "Id": 20320069,
+        "Key": "RacePlaybackInvalidFrameCount",
+        "Text": "20320067 Infinite frame quantity"
+    },
+    {
+        "Id": 20320070,
+        "Key": "RaceRankInvalidRankId",
+        "Text": "20320069 Ranking identifier error"
+    },
+    {
+        "Id": 20320071,
+        "Key": "RaceEnd",
+        "Text": "20320070 Match is over"
+    },
+    {
+        "Id": 20321001,
+        "Key": "FixRewardRewardInvalidCount",
+        "Text": "20321001 Invalid quantity"
+    },
+    {
+        "Id": 20321002,
+        "Key": "FixRewardInvalidRewardType",
+        "Text": "20321002 Reward type not supported"
+    },
+    {
+        "Id": 20321003,
+        "Key": "FixRewardRewardTypeNotMatch",
+        "Text": "20321003 Reward type mismatch"
     },
     {
         "Id": 25000001,
@@ -26577,26 +27327,31 @@
     },
     {
         "Id": 25000002,
+        "Key": "DlcFightWorldTypeNotFound",
+        "Text": "25000002 World type not found"
+    },
+    {
+        "Id": 25000003,
         "Key": "DlcCharacterTemplateNotFound",
         "Text": "25000002 Character settings not found"
     },
     {
-        "Id": 25000003,
+        "Id": 25000004,
         "Key": "DlcCharacterCreateCharacterFail",
         "Text": "25000003 Character creation failed"
     },
     {
-        "Id": 25000004,
+        "Id": 25000005,
         "Key": "DlcCharacterCreateCharacterAlreadyExist",
         "Text": "25000004 Character already exists"
     },
     {
-        "Id": 25000005,
+        "Id": 25000006,
         "Key": "DlcCharacterGetCharacterByIdNotFound",
         "Text": "25000005 Character does not exist"
     },
     {
-        "Id": 25000006,
+        "Id": 25000007,
         "Key": "DlcCharacterAlreadyFighting",
         "Text": "25000006 Character already deployed"
     },
@@ -26894,6 +27649,16 @@
         "Id": 25003019,
         "Key": "DlcSwitchWorldTypeUnMatch",
         "Text": "25003017 Mismatched stage switch type"
+    },
+    {
+        "Id": 25003020,
+        "Key": "DlcWorldPhotographFilterNotFound",
+        "Text": "25003020 Camera filter ID does not exist"
+    },
+    {
+        "Id": 25003021,
+        "Key": "DlcWorldPhotographActionNotFound",
+        "Text": "25003021 Photo Mode pose ID does not exist"
     },
     {
         "Id": 25004001,
@@ -27257,493 +28022,883 @@
     },
     {
         "Id": 25200004,
+        "Key": "DlcFashionPartIdNotOwn",
+        "Text": "25200004 Outfit not owned"
+    },
+    {
+        "Id": 25200005,
+        "Key": "DlcFashionResIdNotFound",
+        "Text": 25200005
+    },
+    {
+        "Id": 25200006,
+        "Key": "DlcFashionNotSupportChangeColor",
+        "Text": "25200006 Outfit does not support color changes"
+    },
+    {
+        "Id": 25200007,
+        "Key": "DlcFashionNotExistColor",
+        "Text": "25200007 Outfit color does not exist"
+    },
+    {
+        "Id": 25200008,
+        "Key": "DlcLackMustWearPart",
+        "Text": "25200008 Missing required equipment slot"
+    },
+    {
+        "Id": 25200009,
         "Key": "BigWorldMessageStepCfgNull",
         "Text": "25200004 Configuration for this message not found"
     },
     {
-        "Id": 25200005,
+        "Id": 25200010,
         "Key": "BigWorldMessageNotFinish",
         "Text": "25200005 Text message reading incomplete"
     },
     {
-        "Id": 25200006,
+        "Id": 25200011,
         "Key": "BigWorldMessageStepRepeat",
         "Text": "25200005 Duplicate Message ID"
     },
     {
-        "Id": 25200007,
+        "Id": 25200012,
         "Key": "BigWorldMessageIsFinish",
         "Text": "25200006 This message already read"
     },
     {
-        "Id": 25200008,
+        "Id": 25200013,
         "Key": "BigWorldHelpCourseCfgNotFound",
         "Text": "25200007 Image guide configuration not found"
     },
     {
-        "Id": 25200009,
+        "Id": 25200014,
         "Key": "BigWorldHelpCourseDataIsUnlocked",
         "Text": "25200008 Image guide already unlocked"
     },
     {
-        "Id": 25200010,
+        "Id": 25200015,
         "Key": "BigWorldHelpCourseDataNotUnlock",
         "Text": "25200009 Image guide data locked"
     },
     {
-        "Id": 25200011,
+        "Id": 25200016,
         "Key": "BigWorldHelpCourseDataIsRead",
         "Text": "25200010 Image guide already read"
     },
     {
-        "Id": 25200012,
+        "Id": 25200017,
         "Key": "BigWorldMessageNotReadOptionPreStepId",
         "Text": "25200011 Message before options not read"
     },
     {
-        "Id": 25200013,
+        "Id": 25200018,
         "Key": "BigWorldMessageIsActive",
         "Text": "25200012 Message already activated"
     },
     {
-        "Id": 25200014,
+        "Id": 25200019,
         "Key": "BigWorldMessageNotActive",
         "Text": "25200013 Message not activated"
     },
     {
-        "Id": 25200015,
+        "Id": 25200020,
         "Key": "BigWorldMessageNotReadLastStep",
         "Text": "25200014 Prerequisite message branch not read"
     },
     {
-        "Id": 25200016,
+        "Id": 25200021,
         "Key": "BigWorldMessageLastStepError",
         "Text": "25200015 Prerequisite message error"
     },
     {
-        "Id": 25200017,
+        "Id": 25200022,
         "Key": "DlcWorldRepetitionOpenCollectable",
         "Text": "25200007 Mining duplicate collectible"
     },
     {
-        "Id": 25200018,
+        "Id": 25200023,
         "Key": "DlcWorldCollectableIsOpen",
         "Text": "25200008 Already unlocked"
     },
     {
-        "Id": 25200019,
+        "Id": 25200024,
+        "Key": "DlcWorldQuestItemCollectableIsOpen",
+        "Text": "25200024 Mission item already unlocked"
+    },
+    {
+        "Id": 25200025,
+        "Key": "DlcWorldNotSupportCollectType",
+        "Text": "25200025 Collection type not supported"
+    },
+    {
+        "Id": 25200026,
         "Key": "DlcWorldCollectableStateChangePaError",
         "Text": "25200009 Activation status error"
     },
     {
-        "Id": 25200020,
+        "Id": 25200027,
         "Key": "DlcWorldSceneObjectIdNotExist",
         "Text": "25200014 Scene Item ID not found"
     },
     {
-        "Id": 25200021,
+        "Id": 25200028,
         "Key": "DlcWorldLevelIdNotExist",
         "Text": "25200011 Stage ID not found"
     },
     {
-        "Id": 25200022,
+        "Id": 25200029,
         "Key": "DlcWorldWorldIdNotExist",
         "Text": "25200012 WorldId not found"
     },
     {
-        "Id": 25200023,
+        "Id": 25200030,
         "Key": "DlcWorldSaveDataNotExist",
         "Text": "25200023 World data not found"
     },
     {
-        "Id": 25200024,
+        "Id": 25200031,
         "Key": "DlcWorldNotSaveInstLevel",
         "Text": "25200024 Stage is non-persistent; no save required"
     },
     {
-        "Id": 25200025,
+        "Id": 25200032,
         "Key": "DlcWorldSceneCollectableAwardConfigError",
         "Text": "25200013 Collectible reward configuration error"
     },
     {
-        "Id": 25200026,
+        "Id": 25200033,
         "Key": "DlcWorldSceneAwardSendError",
         "Text": "25200014 Collectible reward issue error"
     },
     {
-        "Id": 25200027,
+        "Id": 25200034,
         "Key": "DlcWorldSceneObjectCanNotCreate",
         "Text": "25200027 Scene object cannot be created"
     },
     {
-        "Id": 25200028,
+        "Id": 25200035,
         "Key": "DlcWorldLevelStateCheckParamsError",
         "Text": "25200015 Stage status processing parameter error"
     },
     {
-        "Id": 25200029,
+        "Id": 25200036,
         "Key": "BigWorldCafeNotOpen",
         "Text": "25200025 Cafe feature not yet available"
     },
     {
-        "Id": 25200030,
+        "Id": 25200037,
         "Key": "BigWorldCafeDataNotInit",
         "Text": "25200008 Cafe data not initialized yet"
     },
     {
-        "Id": 25200031,
+        "Id": 25200038,
         "Key": "BigWorldCafeGroupIdError",
         "Text": "25200009 Cafe card group ID exceeding the upper limit"
     },
     {
-        "Id": 25200032,
+        "Id": 25200039,
         "Key": "BigWorldCafeGroupListError",
         "Text": "25200010 Cafe max card quantity exceeding the upper limit"
     },
     {
-        "Id": 25200033,
+        "Id": 25200040,
         "Key": "BigWorldCafeStageConfigError",
         "Text": "25200011 Cafe Stage not found"
     },
     {
-        "Id": 25200034,
+        "Id": 25200041,
         "Key": "BigWorldCafeAwardConfigError",
         "Text": "25200012 Cafe stage reward configuration not found"
     },
     {
-        "Id": 25200035,
+        "Id": 25200042,
         "Key": "BigWorldCafeAwardSendError",
         "Text": "25200013 Cafe Stage reward distribution error"
     },
     {
-        "Id": 25200036,
+        "Id": 25200043,
         "Key": "BigWorldCafeStageConditionError",
         "Text": "25200032 Cafe stage target condition not met"
     },
     {
-        "Id": 25200037,
+        "Id": 25200044,
         "Key": "BigWorldCafeCardIdNotExsitError",
         "Text": "25200014 Cafe Card ID not found"
     },
     {
-        "Id": 25200038,
+        "Id": 25200045,
         "Key": "BigWorldCafeCardNumOverown",
         "Text": "25200015 Cafe round cards exceeding player's cards"
     },
     {
-        "Id": 25200039,
+        "Id": 25200046,
         "Key": "BigWorldCafeNewRoundError",
         "Text": "25200016 Cafe new game must start from round 1"
     },
     {
-        "Id": 25200040,
+        "Id": 25200047,
         "Key": "BigWorldCafeNextRoundError",
         "Text": "25200017 Cafe card game round number error"
     },
     {
-        "Id": 25200041,
+        "Id": 25200048,
         "Key": "BigWorldCafeCafeGamblingIsError",
         "Text": "25200018 Cafe card game data is empty"
     },
     {
-        "Id": 25200042,
+        "Id": 25200049,
         "Key": "BigWorldCafeCafeGroupIsNullError",
         "Text": "25200019 Coffee card group data is empty"
     },
     {
-        "Id": 25200043,
+        "Id": 25200050,
         "Key": "BigWorldCafeCafeCardIdNotInConfigError",
         "Text": "25200020 Coffee card Customer ID not found"
     },
     {
-        "Id": 25200044,
+        "Id": 25200051,
         "Key": "BigWorldCafeCardTypeError",
         "Text": "25200033 Stage type error"
     },
     {
-        "Id": 25200045,
+        "Id": 25200052,
         "Key": "BigWorldCafeListNotNull",
         "Text": "25200034 Story mode card list is not empty"
     },
     {
-        "Id": 25200046,
+        "Id": 25200053,
         "Key": "BigWorldCafeCardListIsNull",
         "Text": "25200035 Challenge mode card list is empty"
     },
     {
-        "Id": 25200047,
+        "Id": 25200054,
         "Key": "BigWorldCafeStageIdError",
         "Text": "25200036 Card game Stage ID error"
     },
     {
-        "Id": 25200048,
+        "Id": 25200055,
         "Key": "BigWorldCafeBuffSizeError",
         "Text": "25200037 Card game buff data size error"
     },
     {
-        "Id": 25200049,
+        "Id": 25200056,
         "Key": "BigWorldCafeNextRoundBuffsSizeError",
         "Text": "25200043 Next round card game buff data size error"
     },
     {
-        "Id": 25200050,
+        "Id": 25200057,
         "Key": "BigWorldCafeUseNotActivityCard",
         "Text": "25200038 Player using unactivated card(s)"
     },
     {
-        "Id": 25200051,
+        "Id": 25200058,
         "Key": "BigWorldCafeNotPass",
         "Text": "25200047 Cafe card game not yet cleared"
     },
     {
-        "Id": 25200052,
+        "Id": 25200059,
         "Key": "BigWorldCafeAlreadyKickOut",
         "Text": "25200048 Cafe scene transition guidance already executed"
     },
     {
-        "Id": 25200053,
+        "Id": 25200060,
         "Key": "BigWorldCafeNotAllowKickOut",
         "Text": "25200049 Cafe - This stage does not allow scene transition guidance execution"
     },
     {
-        "Id": 25200054,
+        "Id": 25200061,
         "Key": "BigWorldCafeRoundCardError",
         "Text": "25200054 Cafe current round hand card error"
     },
     {
-        "Id": 25200055,
+        "Id": 25200062,
         "Key": "BigWorldCafeRoundHandCardError",
         "Text": "25200055 Cafe current round pre-play hand card error"
     },
     {
-        "Id": 25200056,
+        "Id": 25200063,
         "Key": "BigWorldCafeRoundReviewError",
         "Text": "25200056 Cafe like data error"
     },
     {
-        "Id": 25200057,
+        "Id": 25200064,
         "Key": "BigWorldFightError",
         "Text": "25200039 Server world internal error"
     },
     {
-        "Id": 25200058,
+        "Id": 25200065,
         "Key": "BigWorldNotCreateFight",
         "Text": "25200040 World not pre-created"
     },
     {
-        "Id": 25200059,
+        "Id": 25200066,
         "Key": "BigWorldNotInit",
         "Text": "25200041 World not initialized"
     },
     {
-        "Id": 25200060,
+        "Id": 25200067,
         "Key": "BigWorldNotInitPlayer",
         "Text": "25200047 Player data not initialized"
     },
     {
-        "Id": 25200061,
+        "Id": 25200068,
         "Key": "BigWorldLevelNotInWorld",
         "Text": "25200048 Mission scene does not belong to the big world"
     },
     {
-        "Id": 25200062,
+        "Id": 25200069,
         "Key": "BigWorldPlayerNotInLevel",
         "Text": "25200049 Player not found in mission"
     },
     {
-        "Id": 25200063,
+        "Id": 25200070,
         "Key": "BigWorldNotLoadComplete",
         "Text": "25200060 World not fully loaded"
     },
     {
-        "Id": 25200064,
+        "Id": 25200071,
         "Key": "BigWorldCreateLevelFail",
         "Text": "25200061 Failed to create mission"
     },
     {
-        "Id": 25200065,
+        "Id": 25200072,
         "Key": "BigWorldEnterNullLevel",
         "Text": "25200062 Stage entry error: empty mission"
     },
     {
-        "Id": 25200066,
+        "Id": 25200073,
         "Key": "BigWorldReEnterNullLevel",
         "Text": "25200063 Return to stage error: empty mission"
     },
     {
-        "Id": 25200067,
+        "Id": 25200074,
         "Key": "BigWorldNotHasLevelData",
         "Text": "25200064 Current world does not contain this mission data"
     },
     {
-        "Id": 25200068,
+        "Id": 25200075,
         "Key": "BigWorldChallengeWorldError",
         "Text": "25200065 Cannot challenge open world"
     },
     {
-        "Id": 25200069,
+        "Id": 25200076,
         "Key": "BigWorldChallengeLevelSubTypeErrorStoryInst",
         "Text": "25200066 Cannot challenge story missions"
     },
     {
-        "Id": 25200070,
+        "Id": 25200077,
         "Key": "BigWorldCanNotLeaveWorldByInstLeaveInst",
         "Text": "25200067 Cannot directly leave open world"
     },
     {
-        "Id": 25200071,
+        "Id": 25200078,
         "Key": "BigWorldLeaveInstLevelExecptionError",
         "Text": "25200068 Leave mission error"
     },
     {
-        "Id": 25200072,
+        "Id": 25200079,
         "Key": "BigWorldEnterInstLevelRequestError",
         "Text": "25200069 Mission entry request error"
     },
     {
-        "Id": 25200073,
+        "Id": 25200080,
         "Key": "BigWorldEnterInstLevelIdError",
         "Text": "25200070 Mission entry ID error"
     },
     {
-        "Id": 25200074,
-        "Key": "BigWorldEnterInstLevelNotFromBigWorld",
-        "Text": "25200071 Can only enter missions from open world"
+        "Id": 25200081,
+        "Key": "BigWorldEnterInstLevelAlreadyInLevel",
+        "Text": "25200081 Already in the same mission"
     },
     {
-        "Id": 25200075,
+        "Id": 25200082,
         "Key": "BigWorldEnterInstLevelSubTypeErrorInstance",
         "Text": "25200072 Cannot enter non-mission stage"
     },
     {
-        "Id": 25200076,
+        "Id": 25200083,
         "Key": "BigWorldEnterInstLevelExecptionError",
         "Text": "25200073 Mission entry error"
     },
     {
-        "Id": 25200077,
+        "Id": 25200084,
         "Key": "BigWorldFinishInstTypeError",
         "Text": "25200074 Cannot complete mission in non-mission stage"
     },
     {
-        "Id": 25200078,
+        "Id": 25200085,
         "Key": "BigWorldFinishInstSubTypeError",
         "Text": "25200075 Complete mission subtype error"
     },
     {
-        "Id": 25200079,
+        "Id": 25200086,
         "Key": "BigWorldCreateFightError",
         "Text": "25200076 Failed to create open world battle framework"
     },
     {
-        "Id": 25200080,
+        "Id": 25200087,
         "Key": "BigWorldEnterWorldExecptionError",
         "Text": "25200077 Open world entry error"
     },
     {
-        "Id": 25200081,
+        "Id": 25200088,
         "Key": "BigWorldEnterInstLevelTargetPosError",
         "Text": "25200078 Failed to obtain mission entry coordinates"
     },
     {
-        "Id": 25200082,
+        "Id": 25200089,
         "Key": "BigWorldInstLevelSettleDataIsNull",
         "Text": "25200079 Mission result record data is empty"
     },
     {
-        "Id": 25200083,
+        "Id": 25200090,
         "Key": "BigWorldModuleAddTimerError",
         "Text": "25200079 Open world timer addition error"
     },
     {
-        "Id": 25200084,
+        "Id": 25200091,
         "Key": "BigWorldModuleAddRepeatTimerError",
         "Text": "25200080 Open world scheduled timer addition error"
     },
     {
-        "Id": 25200085,
+        "Id": 25200092,
         "Key": "BigWorldAlbumFull",
         "Text": "25200081 Photo album limit reached"
     },
     {
-        "Id": 25200086,
+        "Id": 25200093,
         "Key": "BigWorldAlbumInvalidDeleteIds",
         "Text": "25200082 Photo ID parameter for deletion is invalid"
     },
     {
-        "Id": 25200087,
+        "Id": 25200094,
         "Key": "BigWorldAlbumPhotoRemarkeIsNullOrEmpty",
         "Text": "25200083 Photo caption is empty"
     },
     {
-        "Id": 25200088,
+        "Id": 25200095,
         "Key": "BigWorldAlbumPhotoRemarkInvalid",
         "Text": "25200084 Photo caption illegal"
     },
     {
-        "Id": 25200089,
+        "Id": 25200096,
         "Key": "BigWorldAlbumPhotoRemarkTooLong",
         "Text": "25200085 Photo caption exceeds length limit"
     },
     {
-        "Id": 25200090,
+        "Id": 25200097,
         "Key": "BigWorldAlbumPhotoNotFound",
         "Text": "25200086 Photo not found"
     },
     {
-        "Id": 25200091,
+        "Id": 25200098,
         "Key": "DlcFashionSuitIdNotFound",
         "Text": "25200087 Invalid outfit set ID"
     },
     {
-        "Id": 25200092,
+        "Id": 25200099,
         "Key": "DlcFashionSuitCheckError",
         "Text": "25200088 Configuration contains parts that do not meet outfit set requirements"
     },
     {
-        "Id": 25200093,
+        "Id": 25200100,
         "Key": "DlcFashionSuitEmptyError",
         "Text": "25200089 Outfit not yet obtained"
     },
     {
-        "Id": 25200094,
+        "Id": 25200101,
         "Key": "DlcFashionTypeIdNotFound",
         "Text": "25200090 Invalid outfit part"
     },
     {
-        "Id": 25200095,
+        "Id": 25200102,
         "Key": "DlcFashionSexualParamError",
         "Text": "25200091 Gender parameter error"
     },
     {
-        "Id": 25200096,
+        "Id": 25200103,
         "Key": "BigWorldSysModInvalidSysModId",
         "Text": "25200092 Invalid open world system module ID"
     },
     {
-        "Id": 25200097,
+        "Id": 25200104,
         "Key": "BigWorldPlayerRepeatedlyEnterWorld",
         "Text": "25200093 Duplicate World Mode entry"
     },
     {
-        "Id": 25200098,
+        "Id": 25200105,
         "Key": "BigWorldPlayerOffline",
         "Text": "25200094 Player is offline"
     },
     {
-        "Id": 25200099,
+        "Id": 25200106,
         "Key": "BigWorldPlayerExit",
         "Text": "25200095 Player has left"
     },
     {
-        "Id": 25200100,
+        "Id": 25200107,
         "Key": "BigWorldNotAvailable",
         "Text": "25200100 Feature not available"
     },
     {
-        "Id": 25200101,
+        "Id": 25200108,
+        "Key": "DlcWorldSceneObjectIsNotCollect",
+        "Text": "25200108 Cannot collect object"
+    },
+    {
+        "Id": 25200109,
         "Key": "DlcWorldSceneObjectIsNotTreasureBox",
         "Text": "25200101 This item does not belong in chest"
+    },
+    {
+        "Id": 25200110,
+        "Key": "BigWorldSaveFovGroupIdNotFound",
+        "Text": "25200110 Saved viewpoint group ID not found"
+    },
+    {
+        "Id": 25200111,
+        "Key": "BigWorldSaveFovEFovTypeError",
+        "Text": "25200111 Invalid saved viewpoint type"
+    },
+    {
+        "Id": 25300001,
+        "Key": "RelinkActivityNotOpen",
+        "Text": "25300001 Co-op battle event not available"
+    },
+    {
+        "Id": 25300002,
+        "Key": "RelinkEquipTemplateNotFound",
+        "Text": "25300002 Co-op battle equipment configuration not found"
+    },
+    {
+        "Id": 25300003,
+        "Key": "RelinkEquipTypeNotFound",
+        "Text": "25300003 Co-op battle equipment slot type does not exist"
+    },
+    {
+        "Id": 25300004,
+        "Key": "RelinkEquipNotOwned",
+        "Text": "25300004 Co-op battle player does not own this equipment"
+    },
+    {
+        "Id": 25300005,
+        "Key": "RelinkEquipAlreadyOwned",
+        "Text": "25300005 Co-op battle player already owns this equipment"
+    },
+    {
+        "Id": 25300006,
+        "Key": "RelinkEquipAlreadyLocked",
+        "Text": "25300006 Co-op battle equipment already locked"
+    },
+    {
+        "Id": 25300007,
+        "Key": "RelinkEquipUnlocked",
+        "Text": "25300007 Co-op battle equipment not locked"
+    },
+    {
+        "Id": 25300008,
+        "Key": "RelinkEquipAlreadyWorn",
+        "Text": "25300008 Co-op battle equipment already equipped"
+    },
+    {
+        "Id": 25300009,
+        "Key": "RelinkEquipSlotNotMatch",
+        "Text": "25300009 Co-op battle equipment slot mismatch"
+    },
+    {
+        "Id": 25300010,
+        "Key": "RelinkEquipNotWorn",
+        "Text": "25300010 Co-op battle equipment not equipped"
+    },
+    {
+        "Id": 25300011,
+        "Key": "RelinkEquipSlotNotExist",
+        "Text": "25300011 Co-op battle equipment slot not found"
+    },
+    {
+        "Id": 25300012,
+        "Key": "RelinkEquipNormalExpandSlotNotEnough",
+        "Text": "25300012 Co-op battle insufficient available basic expansion slots"
+    },
+    {
+        "Id": 25300013,
+        "Key": "RelinkCharaterDataNotFound",
+        "Text": "25300013 Co-op battle player character data not found"
+    },
+    {
+        "Id": 25300014,
+        "Key": "RelinkEquipBagIsFull",
+        "Text": "25300014 Co-op battle warehouse full"
+    },
+    {
+        "Id": 25300015,
+        "Key": "RelinkEquipPresetNameInvalid",
+        "Text": "25300015 Co-op battle equipment preset name contains illegal characters"
+    },
+    {
+        "Id": 25300016,
+        "Key": "RelinkEquipPresetNameTooLong",
+        "Text": "25300016 Co-op battle equipment preset name too long"
+    },
+    {
+        "Id": 25300017,
+        "Key": "RelinkEquipPresetNotFound",
+        "Text": "25300017 Co-op battle equipment preset not found"
+    },
+    {
+        "Id": 25300018,
+        "Key": "RelinkEquipComposeTemplateNotFound",
+        "Text": "25300018 Co-op battle synthesis master table configuration not found"
+    },
+    {
+        "Id": 25300019,
+        "Key": "RelinkEquipComposePoolTemplateNotFound",
+        "Text": "25300019 Co-op battle synthesis equipment pool configuration not found"
+    },
+    {
+        "Id": 25300020,
+        "Key": "RelinkEquipBreakTemplateNotFound",
+        "Text": "25300020 Co-op battle equipment scrap configuration not found"
+    },
+    {
+        "Id": 25300021,
+        "Key": "RelinkActivityNotExist",
+        "Text": "25300021 Event does not exist"
+    },
+    {
+        "Id": 25300022,
+        "Key": "RelinkReachMaxLevel",
+        "Text": "25300022 Max level reached"
+    },
+    {
+        "Id": 25300023,
+        "Key": "RelinkNotExistNextLevel",
+        "Text": 25300023
+    },
+    {
+        "Id": 25300024,
+        "Key": "RelinkNotEnoughCoin",
+        "Text": "25300024 Insufficient coins for upgrade"
+    },
+    {
+        "Id": 25300025,
+        "Key": "RelinkUpLevelNotPassFail",
+        "Text": "25300025 Designated stage not cleared"
+    },
+    {
+        "Id": 25300026,
+        "Key": "RelinkNotExistNpcId",
+        "Text": "25300026 Character does not exist"
+    },
+    {
+        "Id": 25300027,
+        "Key": "RelinkNpcFail",
+        "Text": "25300027 Illegal frame"
+    },
+    {
+        "Id": 25300028,
+        "Key": "RelinkNpcNotLockFail",
+        "Text": "25300028 Character locked"
+    },
+    {
+        "Id": 25300029,
+        "Key": "RelinkEmojiWheelOverLimit",
+        "Text": "25300029 Expressions exceed maximum limit"
+    },
+    {
+        "Id": 25300030,
+        "Key": "RelinkEmojiWheelRepeat",
+        "Text": "25300030 Duplicate stamp save"
+    },
+    {
+        "Id": 25300031,
+        "Key": "RelinkEmojiNotExist",
+        "Text": "25300031 Stamp does not exist"
+    },
+    {
+        "Id": 25300032,
+        "Key": "RelinkEmojiNotOwn",
+        "Text": "25300032 Stamp not owned"
+    },
+    {
+        "Id": 25300033,
+        "Key": "RelinkSignConfigError",
+        "Text": "25300033 Check-in data error"
+    },
+    {
+        "Id": 25300034,
+        "Key": "RelinkSignDefaultConfigError",
+        "Text": "25300034 Sign-in reward error"
+    },
+    {
+        "Id": 25300035,
+        "Key": "RelinkLevelNotExist",
+        "Text": "25300035 Stage does not exist"
+    },
+    {
+        "Id": 25300036,
+        "Key": "RelinkPreLevelNotExist",
+        "Text": "25300036 Prerequisite stage does not exist"
+    },
+    {
+        "Id": 25300037,
+        "Key": "RelinkPreLevelNotPass",
+        "Text": "25300037 Prerequisite not cleared"
+    },
+    {
+        "Id": 25300038,
+        "Key": "RelinkChapterNotExist",
+        "Text": "25300038 Chapter does not exist"
+    },
+    {
+        "Id": 25300039,
+        "Key": "RelinkChapterNotOpen",
+        "Text": "25300039 Chapter not available"
+    },
+    {
+        "Id": 25300040,
+        "Key": "RelinkLevelNotOpen",
+        "Text": "25300040 Stage not available"
+    },
+    {
+        "Id": 25300041,
+        "Key": "RelinkChapterConditionError",
+        "Text": "25300041 Chapter unlock requirements not met"
+    },
+    {
+        "Id": 25300042,
+        "Key": "RelinkLevelConditionError",
+        "Text": "25300042 Stage unlock requirements not met"
+    },
+    {
+        "Id": 25300043,
+        "Key": "RelinkDropGroupNotExist",
+        "Text": "25300043 Reward pool does not exist"
+    },
+    {
+        "Id": 25300044,
+        "Key": "RelinkDropGroupCountError",
+        "Text": "25300044 Reward pool number error"
+    },
+    {
+        "Id": 25300045,
+        "Key": "RelinkDropGroupNullError",
+        "Text": "25300045 Reward pool error"
+    },
+    {
+        "Id": 25300046,
+        "Key": "RelinkRewardGroupNotExist",
+        "Text": "25300046 Reward group not found"
+    },
+    {
+        "Id": 25300047,
+        "Key": "RelinkRewardGroupCountError",
+        "Text": "25300047 Reward group number error"
+    },
+    {
+        "Id": 25300048,
+        "Key": "RelinkNotSetNpc",
+        "Text": "25300048 Deployed character not set"
+    },
+    {
+        "Id": 25300049,
+        "Key": "RelinkSetEmojiParamError",
+        "Text": "25300049 Expression setting parameter error"
+    },
+    {
+        "Id": 25300050,
+        "Key": "RelinkPlayerIsReady",
+        "Text": "25300050 Cannot perform actions during preparation"
+    },
+    {
+        "Id": 25300051,
+        "Key": "RelinkUpdateRankError",
+        "Text": "25300051 Error loading leaderboard data update"
+    },
+    {
+        "Id": 25300052,
+        "Key": "RelinkUpdateRankEmptyDataError",
+        "Text": "25300052 Error updating empty leaderboard data"
+    },
+    {
+        "Id": 25300053,
+        "Key": "RelinkUpdateRankLevelDataError",
+        "Text": "25300053 Error updating leaderboard stage data"
+    },
+    {
+        "Id": 25300054,
+        "Key": "RelinkUpdateRankScoreDataError",
+        "Text": "25300054 Error updating leaderboard score data"
+    },
+    {
+        "Id": 25300055,
+        "Key": "RelinkUpdateRankDataError",
+        "Text": "25300055 Error updating leaderboard data"
+    },
+    {
+        "Id": 25300056,
+        "Key": "RelinkLevelNotRankError",
+        "Text": "25300056 Leaderboard not configured for this stage"
+    },
+    {
+        "Id": 25300057,
+        "Key": "RelinkOccError",
+        "Text": "25300057 Illegal class"
+    },
+    {
+        "Id": 25300058,
+        "Key": "RelinkSameOccError",
+        "Text": "25300058 Already that class"
+    },
+    {
+        "Id": 25300059,
+        "Key": "RelinkOccNotExistNpcId",
+        "Text": "25300059 Character class does not exist"
+    },
+    {
+        "Id": 25300060,
+        "Key": "RelinkMainEquipNotAllowAbsort",
+        "Text": "25300060 Main equipment cannot be absorbed"
+    },
+    {
+        "Id": 25300061,
+        "Key": "RelinkDeputyFactorIsEmpty",
+        "Text": "25300061 Affix deletion count is empty"
+    },
+    {
+        "Id": 25300062,
+        "Key": "RelinkFactorSlotIsMax",
+        "Text": "25300062 Affix slots are full"
+    },
+    {
+        "Id": 25300063,
+        "Key": "RelinkFactorSlotNotFind",
+        "Text": "25300063 Affix slot does not exist"
+    },
+    {
+        "Id": 25300064,
+        "Key": "RelinkChapterNotConfig",
+        "Text": "25300064 Chapter not configured"
+    },
+    {
+        "Id": 25300065,
+        "Key": "RelinkPlayerLevelNotFind",
+        "Text": "25300065 Level settings not found"
+    },
+    {
+        "Id": 25300066,
+        "Key": "RelinkNamePlateIdNotMatch",
+        "Text": "25300066 Nameplate mismatch"
+    },
+    {
+        "Id": 25300067,
+        "Key": "RelinkReadyStateDonSwitchChar",
+        "Text": "25300067 Cannot switch during preparation"
+    },
+    {
+        "Id": 25300068,
+        "Key": "RelinkMatchParamError",
+        "Text": "25300068 Matching parameter error"
     },
     {
         "Id": 30002001,
@@ -27759,6 +28914,31 @@
         "Id": 30002003,
         "Key": "RequestError",
         "Text": "Request error"
+    },
+    {
+        "Id": 30003001,
+        "Key": "CloudGamePostError",
+        "Text": "30003001 Micro-client server request failed"
+    },
+    {
+        "Id": 30003002,
+        "Key": "CloudGameInternalError",
+        "Text": "30003002 Micro-client server request error"
+    },
+    {
+        "Id": 30003003,
+        "Key": "CloudGameAddGameTaskFail",
+        "Text": "30003003 Failed to add cloud gaming offline mission"
+    },
+    {
+        "Id": 30003004,
+        "Key": "CloudGameUrlIsNullError",
+        "Text": "30003004 Micro-client server address not found"
+    },
+    {
+        "Id": 30003005,
+        "Key": "PassportTimeCardNotFound",
+        "Text": "30003005 Cloud duration configuration not found"
     },
     {
         "Id": 40001001,
@@ -27889,16 +29069,6 @@
         "Text": 40001026
     },
     {
-        "Id": 202700023,
-        "Key": "DevilMayCryDataDbEnd",
-        "Text": "202700023 DMC Pool has ended"
-    },
-    {
-        "Id": 20053101,
-        "Key": "PurchaseExistMutexItem",
-        "Text": "Already own a conflicting product. Cannot purchase and replace it now."
-    },
-    {
         "Id": 40001027,
         "Key": "PayModuleNotHandled",
         "Text": 40001027
@@ -27917,5 +29087,10 @@
         "Id": 40001030,
         "Key": "PayCheckReceiptCurrencyUnMatch",
         "Text": "40001026 Currency on the recharge permit mismatched"
+    },
+    {
+        "Id": 202700023,
+        "Key": "DevilMayCryDataDbEnd",
+        "Text": "202700023 DMC Pool has ended"
     }
 ]

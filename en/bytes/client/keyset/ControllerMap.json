@@ -67,7 +67,7 @@
     {
         "Id": 8,
         "Type": 3,
-        "Title": "Camera Angle Sensitivity",
+        "Title": "Camera Sensitivity",
         "InputMapId": 1,
         "IsMutexIgnoreInputMapSectionId": false
     },
@@ -184,7 +184,7 @@
     {
         "Id": 20,
         "Type": 2,
-        "Title": "Switch (QTE) 1",
+        "Title": "Change Character 1 (QTE 1)",
         "InputMapId": 1,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -194,7 +194,7 @@
     {
         "Id": 21,
         "Type": 2,
-        "Title": "Switch (QTE) 2",
+        "Title": "Change Character 2 (QTE 2)",
         "InputMapId": 1,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -588,7 +588,7 @@
     {
         "Id": 61,
         "Type": 2,
-        "Title": "Story Next",
+        "Title": "Next",
         "InputMapId": 4,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1025,7 +1025,7 @@
     {
         "Id": 102,
         "Type": 2,
-        "Title": "Cancel Attack",
+        "Title": "Camera Horizontal Movement",
         "InputMapId": 7,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1035,7 +1035,7 @@
     {
         "Id": 103,
         "Type": 2,
-        "Title": "Camera Movement (Horizontal)",
+        "Title": "Camera Horizontal Movement",
         "InputMapId": 7,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1239,7 +1239,7 @@
     {
         "Id": 124,
         "Type": 2,
-        "Title": "Leap",
+        "Title": "Jump",
         "InputMapId": 8,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1469,7 +1469,7 @@
     {
         "Id": 147,
         "Type": 2,
-        "Title": "Leap",
+        "Title": "Jump",
         "InputMapId": 9,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1602,7 +1602,7 @@
     {
         "Id": 160,
         "Type": 2,
-        "Title": "Leap",
+        "Title": "Jump",
         "InputMapId": 10,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -1852,7 +1852,7 @@
     {
         "Id": 185,
         "Type": 2,
-        "Title": "Leap",
+        "Title": "Jump",
         "InputMapId": 13,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -2244,12 +2244,25 @@
     {
         "Id": 10015,
         "Type": 3,
-        "Title": "Angle Sensitivity",
+        "Title": "Third-Person Camera Sensitivity",
         "InputMapId": 11,
-        "IsMutexIgnoreInputMapSectionId": false
+        "IsMutexIgnoreInputMapSectionId": false,
+        "DefaultKeyMapIds": [
+            2
+        ]
     },
     {
         "Id": 10016,
+        "Type": 3,
+        "Title": "First-Person Camera Sensitivity",
+        "InputMapId": 11,
+        "IsMutexIgnoreInputMapSectionId": false,
+        "DefaultKeyMapIds": [
+            1
+        ]
+    },
+    {
+        "Id": 10017,
         "Type": 2,
         "Title": "Camera Move: Up",
         "InputMapId": 11,
@@ -2259,7 +2272,7 @@
         ]
     },
     {
-        "Id": 10017,
+        "Id": 10018,
         "Type": 2,
         "Title": "Camera Move: Down",
         "InputMapId": 11,
@@ -2269,7 +2282,7 @@
         ]
     },
     {
-        "Id": 10018,
+        "Id": 10019,
         "Type": 2,
         "Title": "Camera Move: Left",
         "InputMapId": 11,
@@ -2279,9 +2292,9 @@
         ]
     },
     {
-        "Id": 10019,
+        "Id": 10020,
         "Type": 2,
-        "Title": "Dodge",
+        "Title": "Camera Move: Right",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
@@ -2289,14 +2302,14 @@
         ]
     },
     {
-        "Id": 10020,
+        "Id": 10021,
         "Type": 1,
         "Title": "Story",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false
     },
     {
-        "Id": 10021,
+        "Id": 10022,
         "Type": 2,
         "Title": "Skip",
         "InputMapId": 11,
@@ -2306,7 +2319,7 @@
         ]
     },
     {
-        "Id": 10022,
+        "Id": 10023,
         "Type": 2,
         "Title": "Next in Story",
         "InputMapId": 11,
@@ -2316,27 +2329,35 @@
         ]
     },
     {
-        "Id": 10023,
+        "Id": 10024,
         "Type": 2,
-        "Title": "Story Auto Play",
+        "Title": "Auto Play",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
             11021
+        ],
+        "KeySetTypes": [
+            1,
+            2
         ]
     },
     {
-        "Id": 10024,
+        "Id": 10025,
         "Type": 2,
         "Title": "Hide UI",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
             11022
+        ],
+        "KeySetTypes": [
+            1,
+            2
         ]
     },
     {
-        "Id": 10025,
+        "Id": 10026,
         "Type": 2,
         "Title": "Scan System",
         "InputMapId": 11,
@@ -2346,24 +2367,28 @@
         ]
     },
     {
-        "Id": 10026,
+        "Id": 10027,
         "Type": 1,
         "Title": "Main Interface Features",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false
     },
     {
-        "Id": 10027,
+        "Id": 10028,
         "Type": 2,
         "Title": "Exit Babylonia",
         "InputMapId": 11,
         "IsMutexIgnoreInputMapSectionId": false,
         "DefaultKeyMapIds": [
             11501
+        ],
+        "KeySetTypes": [
+            1,
+            2
         ]
     },
     {
-        "Id": 10028,
+        "Id": 10029,
         "Type": 2,
         "Title": "Inventory",
         "InputMapId": 11,
@@ -2373,7 +2398,7 @@
         ]
     },
     {
-        "Id": 10029,
+        "Id": 10030,
         "Type": 2,
         "Title": "Operation Guide",
         "InputMapId": 11,
@@ -2383,7 +2408,7 @@
         ]
     },
     {
-        "Id": 10030,
+        "Id": 10031,
         "Type": 2,
         "Title": "Mission",
         "InputMapId": 11,
@@ -2393,7 +2418,7 @@
         ]
     },
     {
-        "Id": 10031,
+        "Id": 10032,
         "Type": 2,
         "Title": "Map",
         "InputMapId": 11,
@@ -2403,7 +2428,7 @@
         ]
     },
     {
-        "Id": 10032,
+        "Id": 10033,
         "Type": 2,
         "Title": "Unread Comms",
         "InputMapId": 11,
@@ -2413,7 +2438,7 @@
         ]
     },
     {
-        "Id": 10033,
+        "Id": 10034,
         "Type": 2,
         "Title": "Team",
         "InputMapId": 11,
@@ -2423,7 +2448,7 @@
         ]
     },
     {
-        "Id": 10034,
+        "Id": 10035,
         "Type": 2,
         "Title": "Track Mission",
         "InputMapId": 11,
@@ -2433,7 +2458,7 @@
         ]
     },
     {
-        "Id": 10035,
+        "Id": 10036,
         "Type": 2,
         "Title": "Menu",
         "InputMapId": 11,
@@ -2443,7 +2468,7 @@
         ]
     },
     {
-        "Id": 10036,
+        "Id": 10037,
         "Type": 2,
         "Title": "Photo",
         "InputMapId": 11,
@@ -2453,7 +2478,7 @@
         ]
     },
     {
-        "Id": 10037,
+        "Id": 10038,
         "Type": 2,
         "Title": "Comms",
         "InputMapId": 11,
@@ -2463,7 +2488,7 @@
         ]
     },
     {
-        "Id": 10038,
+        "Id": 10039,
         "Type": 2,
         "Title": "Settings",
         "InputMapId": 11,
@@ -2473,7 +2498,7 @@
         ]
     },
     {
-        "Id": 10039,
+        "Id": 10040,
         "Type": 2,
         "Title": "Image Guide",
         "InputMapId": 11,

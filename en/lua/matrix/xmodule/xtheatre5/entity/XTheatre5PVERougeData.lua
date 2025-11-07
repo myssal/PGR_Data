@@ -301,17 +301,19 @@ function XTheatre5PVERougeData:IsStoryLineCompleted(storyLineId)
             return false
         end
         local contentCfgs = self._OwnerModel:GetContentCfgs(storyLineId)
-        for _, contentCfg in pairs(contentCfgs) do
-            local completed = false
-            for k, completedContentId in pairs(storyLineData.FinishContents) do
-                if contentCfg.Id == completedContentId then
-                    completed = true
-                    break
-                end    
+        if contentCfgs then
+            for _, contentCfg in pairs(contentCfgs) do
+                local completed = false
+                for k, completedContentId in pairs(storyLineData.FinishContents) do
+                    if contentCfg.Id == completedContentId then
+                        completed = true
+                        break
+                    end
+                end
+                if not completed then
+                    return false
+                end
             end
-            if not completed then
-                return false
-            end        
         end
         return true
     end

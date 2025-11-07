@@ -6,7 +6,7 @@ local CSXAudioManager = CS.XAudioManager
 
 local XMovieActionSoundPlay = XClass(XMovieActionBase, "XMovieActionSoundPlay")
 
-function XMovieActionSoundPlay:Ctor(actionData)
+function XMovieActionSoundPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -20,6 +20,14 @@ function XMovieActionSoundPlay:Ctor(actionData)
         local cfg = CSXAudioManager.GetCueTemplate(self.CueId)
         self.SoundType = cfg.PlayType
     end
+end
+
+function XMovieActionSoundPlay:GetCueId()
+    return self.CueId
+end
+
+function XMovieActionSoundPlay:GetSoundType()
+    return self.SoundType
 end
 
 function XMovieActionSoundPlay:OnUiRootInit()
@@ -92,6 +100,32 @@ function XMovieActionSoundPlay:StopLastCv()
         end
         PlayingCvInfo = nil
     end
+end
+
+function XMovieActionSoundPlay:IsPassedActionRun(index)
+    if self.SoundType ~= XLuaAudioManager.SoundType.Music then
+        return false
+    end
+    
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionSoundPlay:IsActionCover(action)
+    if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUDIO_PLAY then
+        return action:GetSoundType() == self:GetSoundType() and action:GetSoundType() == XLuaAudioManager.SoundType.Music
+    elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUDIO_INTERRUPT then
+        return self:GetCueId() == action:GetCueId()
+    end
+    return false
+end
+
+function XMovieActionSoundPlay:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionSoundPlay

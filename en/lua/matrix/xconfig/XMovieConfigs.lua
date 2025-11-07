@@ -261,6 +261,16 @@ function XMovieConfigs.GetMovieSpeedConfig(id)
     end
 end
 
+function XMovieConfigs.GetMovieSpeedConfigBySpeed(speed)
+    for i, config in pairs(MovieSpeedTemplates) do
+        if config.Speed == speed then
+            return i, config
+        end
+    end
+    XLog.Error("XMovieConfigs GetMovieSpeedConfigBySpeed error:未找到, Speed: " .. speed .. "对应的配置表, 配置路径: " .. TABLE_MOVIE_SPEED_PATH)
+    return 1
+end
+
 function XMovieConfigs.GetMovieSkipSummaryCfgById(storyId, noTips)
     if not IsLoadMovieSkipSummary then
         MovieSkipSummaryTemplates = XTableManager.ReadByStringKey(TABLE_MOVIE_SKIP_SUMMARY_PATH, XTable.XTableMovieSkipSummary, "StoryId")

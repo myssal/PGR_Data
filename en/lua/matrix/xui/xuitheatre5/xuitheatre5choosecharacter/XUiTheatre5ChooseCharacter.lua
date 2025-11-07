@@ -21,11 +21,11 @@ end
 function UiTheatre5ChooseCharacter:OnStart(gameMode)
     self:ResetShow()
     XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_PVE_OPEN_OR_CLOSE_CHAT, self.OnPveOpenOrCloseChat, self)
-    if gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         ---@type XUiComTheatre5ChooseCharacter
         self.ComChooseCharacter = XUiComTheatre5PVPChooseCharacter.New(self.GameObject, self)
         self.ComChooseCharacter:Open()
-    elseif gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    elseif gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         ---@type XUiComTheatre5PVEChooseCharacter
         self.ComChooseCharacter = XUiComTheatre5PVEChooseCharacter.New(self.GameObject, self)
         self.ComChooseCharacter:Open()
@@ -33,7 +33,7 @@ function UiTheatre5ChooseCharacter:OnStart(gameMode)
 
     self.ComChooseCharacter:Init()
 
-    if gameMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if gameMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         --教学线逻辑放在最后面，要做特殊梳理
         ---@type XUiTheatre5CharacterTeaching
         self.CharacterTeaching = XUiTheatre5CharacterTeaching.New(self.GameObject, self)
@@ -86,7 +86,7 @@ end
 
 function UiTheatre5ChooseCharacter:PVEStoryNodeCheck()
     local mode = self._Control:GetCurPlayingMode()
-    if mode ~= XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    if mode ~= XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         return
     end
     --先触发ending

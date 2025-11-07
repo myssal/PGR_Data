@@ -5,17 +5,20 @@
 local XUiPanelTheatre5Gem = XClass(XUiNode, 'XUiPanelTheatre5Gem')
 local XUiGridTheatre5ShopGemSlot = require('XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5ShopGemSlot')
 
-function XUiPanelTheatre5Gem:OnStart(customContainerCls)
+function XUiPanelTheatre5Gem:OnStart(customContainerCls, containerType)
     self:InitGemContainers(customContainerCls)
     self:RefreshGemShow()
+    
+    self._ContainerType = containerType
 end
 
 function XUiPanelTheatre5Gem:OnEnable()
-    self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
+    self:RefreshGemShow()
+    XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
 end
 
 function XUiPanelTheatre5Gem:OnDisable()
-    self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
+    XEventManager.RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW, self.RefreshGemShow, self)
 end
 
 function XUiPanelTheatre5Gem:InitGemContainers(customContainerCls)
@@ -55,6 +58,9 @@ function XUiPanelTheatre5Gem:RefreshGemShow()
         v:SetItemData(itemData)
         v:SetLockShow(i > unlockCount, i == unlockCount + 1)
         v:UpdateInvalid(itemData)
+        if self._ContainerType then
+            v:SetContainerType(self._ContainerType)
+        end
     end
 end
 

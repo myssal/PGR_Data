@@ -1,4 +1,5 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiSignWeekCardGridDay:XUiNode
 local XUiSignWeekCardGridDay = XClass(XUiNode, "XUiSignWeekCardGridDay")
 
 function XUiSignWeekCardGridDay:Ctor(ui, rootUi)
@@ -70,6 +71,7 @@ end
 
 function XUiSignWeekCardGridDay:Refresh(weekCardData, roundIndex, index, isShow, forceSetTomorrow)
     self.IsShow = isShow
+    ---@type XPurchaseWeekCardData
     self.WeekCardData = weekCardData
     self.RoundIndex = roundIndex
     self.Index = index

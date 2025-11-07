@@ -2,7 +2,7 @@
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field _Control XSkyGardenCafeControl
-local XUiSkyGardenCafePopupBroadcast = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafePopupBroadcast")
+local XUiSkyGardenCafePopupBroadcast = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafePopupBroadcast")
 
 function XUiSkyGardenCafePopupBroadcast:OnAwake()
     self:InitUi()

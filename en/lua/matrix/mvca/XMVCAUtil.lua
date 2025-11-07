@@ -4,6 +4,10 @@
 ---
 local Dir = "XModule/"
 XMVCAUtil = {}
+function XMVCAUtil.GetModelClsPath(key)
+    return Dir .. key .. "/" .. key .. "Model"
+end
+
 function XMVCAUtil.GetAgencyCls(key)
     local path = Dir .. key .. "/" .. key .. "Agency"
     local cls = require(path)
@@ -11,8 +15,7 @@ function XMVCAUtil.GetAgencyCls(key)
 end
 
 function XMVCAUtil.GetModelCls(key)
-    local path = Dir .. key .. "/" .. key .. "Model"
-    local cls = require(path)
+    local cls = require(XMVCAUtil.GetModelClsPath(key))
     return cls
 end
 

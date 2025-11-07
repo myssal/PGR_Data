@@ -1,10 +1,8 @@
-local stringFormat = string.format
-
 ---@class XMovieActionUnLoad
 ---@field UiRoot XUiMovie
 local XMovieActionUnLoad = XClass(XMovieActionBase, "XMovieActionUnLoad")
 
-function XMovieActionUnLoad:Ctor(actionData)
+function XMovieActionUnLoad:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.AnimName = params[1]
@@ -21,12 +19,7 @@ end
 
 function XMovieActionUnLoad:OnRunning()
     local animName = self.AnimName
-    local effectPath = self.EffectPath
-    local effectActorIndex = self.EffectActorIndex
-    local isActorEffect = effectActorIndex > 0 and effectActorIndex <= XMovieConfigs.MAX_ACTOR_NUM
-    if string.IsNilOrEmpty(self.EffectKey) then
-        self.EffectKey = isActorEffect and stringFormat("%s%s", effectPath, effectActorIndex) or effectPath
-    end
+    self.EffectKey = self:GetEffectKey()
 
     if animName then
         local anim = self.UiRoot:GetUiAnimation(animName)
@@ -49,6 +42,22 @@ function XMovieActionUnLoad:OnRunning()
             animInfo.Prefab.gameObject:SetActiveEx(false)
         end
     end
+end
+
+function XMovieActionUnLoad:GetEffectKey()
+    if not string.IsNilOrEmpty(self.EffectKey) then
+        return self.EffectKey
+    end
+
+    if self.EffectActorIndex > 0 and self.EffectActorIndex <= XMovieConfigs.MAX_ACTOR_NUM then
+        return string.format("%s%s", self.EffectPath, self.EffectActorIndex)
+    else
+        return self.EffectPath
+    end
+end
+
+function XMovieActionUnLoad:GetAnimName()
+    return self.AnimName
 end
 
 return XMovieActionUnLoad

@@ -12,7 +12,6 @@ local XUiBigWorldProcessCourseRewardGrid = require("XUi/XUiBigWorld/XProcess/Cou
 ---@field RImgOnIconBig UnityEngine.UI.RawImage
 ---@field RImgOffIcon UnityEngine.UI.RawImage
 ---@field RImgOffIconBig UnityEngine.UI.RawImage
----@field LayoutElement UnityEngine.UI.LayoutElement
 ---@field _Control XBigWorldCourseControl
 local XUiBigWorldProcessCourseReward = XClass(XUiNode, "XUiBigWorldProcessCourseReward")
 
@@ -43,16 +42,11 @@ function XUiBigWorldProcessCourseReward:OnDestroy()
 end
 
 ---@param progressEntity XBWCourseTaskProgressEntity
-function XUiBigWorldProcessCourseReward:Refresh(progressEntity, flexibleWidth)
+function XUiBigWorldProcessCourseReward:Refresh(progressEntity)
     self._Entity = progressEntity
     self.ImgPointOff.gameObject:SetActiveEx(not progressEntity:IsComplete())
     self.ImgPointOn.gameObject:SetActiveEx(progressEntity:IsComplete())
     self.TxtNum.text = tostring(progressEntity:GetProgress())
-
-    if self.LayoutElement then
-        self.LayoutElement.flexibleWidth = flexibleWidth or 0
-    end
-
     self:_RefreshRewards(progressEntity:GetRewardList(true), progressEntity:IsSpecial())
     self:_RefreshIcon(progressEntity:GetProgressIconNoneColor())
     self:_PlayProcessCue(progressEntity)
@@ -61,6 +55,9 @@ end
 function XUiBigWorldProcessCourseReward:PlayDisableAnimation()
     if self:IsNodeShow() then
         self:PlayAnimation("GridRewardDisable")
+        for _, grid in pairs(self._RewardGrids) do
+            grid:PlayDisableAnimation()
+        end
     end
 end
 
@@ -141,12 +138,7 @@ end
 ---@param progressEntity XBWCourseTaskProgressEntity
 function XUiBigWorldProcessCourseReward:_PlayProcessCue(progressEntity)
     if progressEntity:IsComplete() and progressEntity:IsCompleteStateChange() then
-        local cueId = self._Control:GetProgressCueId()
-
-        if XTool.IsNumberValid(cueId) then
-            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
-        end
-
+        self.Parent:PlayTaskProcessAudio()
         self._Control:SyncCurrentRecordTaskProgress(progressEntity:GetVersionId())
     end
 end

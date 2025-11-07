@@ -315,7 +315,7 @@ XFurnitureManagerCreator = function()
     -- 获取家具配置表By 唯一Id
     function XFurnitureManager.GetFurnitureConfigByUniqueId(uniqueId, dormDataType)
         local t = XFurnitureManager.GetFurnitureById(uniqueId, dormDataType)
-        if XOverseaManager.IsOverSeaRegion() and not t then --海外修改，防止访问不存在ID时报错问题
+        if not t then
             return nil
         end
         return XFurnitureConfigs.GetFurnitureTemplateById(t.ConfigId)

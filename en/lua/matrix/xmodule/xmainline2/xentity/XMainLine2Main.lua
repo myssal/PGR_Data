@@ -93,12 +93,20 @@ end
 
 -- 是否上锁
 function XMainLine2Main:GetIsLocked()
+    if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(XFunctionManager.FunctionName.MainLine, self:GetId()) then
+        return true
+    end
+
     local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return not isUnlock
 end
 
 -- 获取锁提示
 function XMainLine2Main:GetLockTip()
+    if not XMVCA.XSubPackage:CheckResDownloadByFunctionType(XFunctionManager.FunctionName.MainLine, self:GetId()) then
+        return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
+    end
+
     local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return tips
 end

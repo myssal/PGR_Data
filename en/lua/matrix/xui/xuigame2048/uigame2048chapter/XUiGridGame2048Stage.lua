@@ -48,9 +48,10 @@ function XUiGridGame2048Stage:Refresh()
     
     self._StageType = self._Control:GetStageTypeById(self._StageId)
     self.GridBtn:SetButtonState(self._UnLock and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
-    self.TxtScore.gameObject:SetActiveEx(self._UnLock and self._StageType == XMVCA.XGame2048.EnumConst.StageType.Endless)
-    self.GridStar.transform.parent.gameObject:SetActiveEx(self._UnLock and self._StageType == XMVCA.XGame2048.EnumConst.StageType.Normal)
-
+    --self.TxtScore.gameObject:SetActiveEx(self._UnLock and self._StageType == XMVCA.XGame2048.EnumConst.StageType.Endless)
+    --self.GridStar.transform.parent.gameObject:SetActiveEx(self._UnLock and self._StageType == XMVCA.XGame2048.EnumConst.StageType.Normal)
+    self.TxtScore.gameObject:SetActiveEx(false)
+    self.GridStar.transform.parent.gameObject:SetActiveEx(self._UnLock)
     
     -- 更新关卡贴图
     local curChapterId = self._Control:GetCurChapterId()
@@ -64,32 +65,22 @@ function XUiGridGame2048Stage:Refresh()
         self.CommonFuBenClear.gameObject:SetActiveEx(self._Control:GetStageCurStarCountById(self._StageId) >= #self._Control:GetStageStarRewardIds(self._StageId))
         --self.RImgFace:SetRawImage(self._Control:GetStageEntranceEmojiIcon(self._StageId))
 
-        if self._StageType == XMVCA.XGame2048.EnumConst.StageType.Normal then
-            -- 普通关显示星级
-            if self._StarGrids == nil then
-                self._StarGrids = {}
-            end
-            local curTargetCount = self._Control:GetStageCurStarCountById(self._StageId)
-            local targetCount = #self._Control:GetStageStarRewardIds(self._StageId)
-            XUiHelper.RefreshCustomizedList(self.GridStar.transform.parent, self.GridStar, targetCount, function(index, go)
-                local grid = self._StarGrids[index]
-
-                if not grid then
-                    grid = XUiGridGame2048StageStar.New(go, self)
-                    grid:Open()
-                end
-
-                grid:SetIsOn(curTargetCount >= index)
-            end)
-        elseif self._StageType == XMVCA.XGame2048.EnumConst.StageType.Endless then
-            --无尽关显示分数    
-            local maxScore = self._Control:GetStageMaxScoreById(self._StageId)
-            if XTool.IsNumberValid(maxScore) then
-                self.TxtScore.text = XUiHelper.FormatText(self._Control:GetClientConfigText('BaseScoreLabel'), maxScore)
-            else
-                self.TxtScore.gameObject:SetActiveEx(false)
-            end
+        -- 普通关显示星级
+        if self._StarGrids == nil then
+            self._StarGrids = {}
         end
+        local curTargetCount = self._Control:GetStageCurStarCountById(self._StageId)
+        local targetCount = #self._Control:GetStageStarRewardIds(self._StageId)
+        XUiHelper.RefreshCustomizedList(self.GridStar.transform.parent, self.GridStar, targetCount, function(index, go)
+            local grid = self._StarGrids[index]
+
+            if not grid then
+                grid = XUiGridGame2048StageStar.New(go, self)
+                grid:Open()
+            end
+
+            grid:SetIsOn(curTargetCount >= index)
+        end)
     else
         self.CommonFuBenClear.gameObject:SetActiveEx(false)
 

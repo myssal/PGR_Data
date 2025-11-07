@@ -68,13 +68,13 @@ function XUiBigWorldCoating:InitUi()
 end
 
 function XUiBigWorldCoating:InitCb()
-    self.BtnBack.CallBack = handler(self, self.OnBtnBackClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     
-    self.BtnLensIn.CallBack = handler(self, self.OnBtnLensInClick)
-    self.BtnLensOut.CallBack = handler(self, self.OnBtnLensOutClick)
-    self.BtnUse.CallBack = handler(self, self.OnBtnUseClick)
-    self.BtnCharacterFilter.CallBack = handler(self, self.OnBtnCharacterFilterClick)
-    self.BtnCloseFilter.CallBack = handler(self, self.OnBtnCloseFilterClick)
+    self.BtnLensIn:AddEventListener(handler(self, self.OnBtnLensInClick))
+    self.BtnLensOut:AddEventListener(handler(self, self.OnBtnLensOutClick))
+    self.BtnUse:AddEventListener(handler(self, self.OnBtnUseClick))
+    self.BtnCharacterFilter:AddEventListener(handler(self, self.OnBtnCharacterFilterClick))
+    self.BtnCloseFilter:AddEventListener(handler(self, self.OnBtnCloseFilterClick))
 
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacter, self.OnSliderCharacterChanged)
 end
@@ -112,7 +112,9 @@ function XUiBigWorldCoating:UpdateCharacterModel()
     local fashionId = self._FashionId
     local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
     local helper = self._DisplayController:GetDisplayHelper()
-    local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera)
+    local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera, nil, 0)
+
+    helper.AddEffectInfos(modelInfo, fashionId)
 
     if self._CurrentModelId and self._CurrentModelId ~= uiModelId then
         self._DisplayController:SetModelActive(self._CurrentModelId, false)
@@ -126,6 +128,7 @@ function XUiBigWorldCoating:UpdateCharacterModel()
     if model then
         self._Drag.Target = model.transform
     end
+    self._DisplayController:DisableLookAtIK(uiModelId, 0)
     model.transform:Reset()
 end
 

@@ -179,8 +179,7 @@ function XUiMainTerminal:InitUi()
     self.BtnWeek.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.ActivityCalendar) and not XUiManager.IsHideFunc)
     self.BtnScreenShot.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
 
-    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
-    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
+
     self.BtnSocial.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.SocialFriend) and not XUiManager.IsHideFunc)
     self.BtnSet.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Setting))
     
@@ -231,6 +230,9 @@ function XUiMainTerminal:OnMusicPlayerClose()
 end
 
 function XUiMainTerminal:RefreshSubMenu()
+    local isShowConfig = CS.XGame.ClientConfig:GetInt("IsBtnSceneSettingShow") == 1
+    self.BtnScreen.gameObject:SetActiveEx(not XUiManager.IsHideFunc and isShowConfig)
+    
     local dataList = self:GetSubMenuList()
     if XTool.IsTableEmpty(dataList) then
         self.SubMenuList = {
@@ -307,7 +309,7 @@ end
 
 --音乐播放器
 function XUiMainTerminal:OnBtnMusicPlayerClick()
-    if not XMVCA.XSubPackage:CheckSubpackage() then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.UiMainMusicAlbum) then
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnMusicPlayer)
@@ -345,6 +347,9 @@ function XUiMainTerminal:OnBtnSocialClick()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnSocial)
     XLuaUiManager.Open("UiSocial")
+    
+    -- 消除红点
+    XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiMainTerminalSocial, XFunctionConfig.RedPointType.NewbieFirstShow)
 end
 
 --系统设置

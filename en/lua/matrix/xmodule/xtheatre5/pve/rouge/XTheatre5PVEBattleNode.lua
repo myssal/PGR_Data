@@ -1,5 +1,5 @@
 local XTheatre5PVENode = require("XModule/XTheatre5/PVE/Rouge/XTheatre5PVENode")
----@class XTheatre5PVEBattleNode
+---@class XTheatre5PVEBattleNode:XTheatre5PVENode
 local XTheatre5PVEBattleNode = XClass(XTheatre5PVENode, "XTheatre5PVEBattleNode")
 
 function XTheatre5PVEBattleNode:Ctor()
@@ -18,6 +18,7 @@ function XTheatre5PVEBattleNode:_OnEnter()
     XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_BATTLE_RESULT_EXIT, self.OnContinueChapter, self)
     XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_WHOLE_BATTLE_EXIT, self.OnWholeBattleExit, self)
     XEventManager.AddEventListener(XMVCA.XTheatre5.EventId.EVENT_WHOLE_BATTLE_AGAIN, self.OnAgainBattle, self)
+    
     local curStatus = self._MainModel.CurAdventureData:GetCurPlayStatus()
     if curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.Battling then
         XMVCA.XTheatre5.BattleCom:RequestTheatre5InterruptBattle(function(giveUpSuccess, isFinish)
@@ -32,8 +33,8 @@ function XTheatre5PVEBattleNode:_OnEnter()
             end
         end)
     elseif curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.BattleFinish or
-        curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.NotStart then
-       -- curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.ChoiceSkill then
+            curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.NotStart then
+        -- curStatus == XMVCA.XTheatre5.EnumConst.PlayStatus.ChoiceSkill then
         XMVCA.XTheatre5:RequestTheatre5EnterShop(function(success)
             if success then
                 self:OpenShopPanel()
@@ -41,7 +42,7 @@ function XTheatre5PVEBattleNode:_OnEnter()
         end)
     else
         self:OpenShopPanel()
-    end 
+    end
 end
 
 function XTheatre5PVEBattleNode:OpenShopPanel()
@@ -121,9 +122,9 @@ function XTheatre5PVEBattleNode:ChapterCompleted()
     local uiTheatre5ChooseCharacter = "UiTheatre5ChooseCharacter"
     local isOpen = XLuaUiManager.IsStackUiOpen(uiTheatre5ChooseCharacter)
     if isOpen then
-        XLuaUiManager.CloseAllUpperUi(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameModel.PVE) 
+        XLuaUiManager.CloseAllUpperUi(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE) 
     else
-        XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameModel.PVE)
+        XLuaUiManager.PopThenOpen(uiTheatre5ChooseCharacter, XMVCA.XTheatre5.EnumConst.GameMode.PVE)
     end        
 end
 

@@ -2,6 +2,7 @@
 local XUiTRPGSecondMain = XLuaUiManager.Register(XLuaUi, "UiTRPGSecondMain")
 
 function XUiTRPGSecondMain:OnAwake()
+    XMVCA.XMainLine2:SetEnterExhibitionChapterTRPG()
     self.IsSwitchStatusOpenView = false     --是否从切换模式按钮打开本界面
     self:AutoAddListener()
 end
@@ -36,6 +37,8 @@ function XUiTRPGSecondMain:Refresh()
         ret = XDataCenter.TRPGManager.CheckSecondMainCondition(secondMainId)
         self["PanelEntrance" .. i]:SetDisable(not ret)
     end
+    
+    self:RefreshBtnMission()
 end
 
 function XUiTRPGSecondMain:AutoAddListener()
@@ -43,6 +46,7 @@ function XUiTRPGSecondMain:AutoAddListener()
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:BindHelpBtn(self.BtnHelpCourse, "TRPGMainLine")
     self:RegisterClickEvent(self.PanelCut, self.OnPanelCutClick)
+    self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
 
     local secondMainIdList = XTRPGConfigs.GetSecondMainIdList()
     for i, secondMainId in ipairs(secondMainIdList) do
@@ -88,3 +92,30 @@ end
 function XUiTRPGSecondMain:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
 end
+
+function XUiTRPGSecondMain:OnBtnMissionClick()
+    XLuaUiManager.Open("UiMainLineExhibitionMission", XEnumConst.MAINLINE2.SPECIAL_MAINID.THIRTEENTH)
+end
+
+function XUiTRPGSecondMain:RefreshBtnMission()
+    local curCnt = 0
+    local totalCnt = 0
+    local isRed = false
+    -- 收集任务数量和蓝点
+    local taskGroupId = XFubenMainLineConfigs.GetConfigChapterTaskGroupId(XEnumConst.MAINLINE2.SPECIAL_MAINID.THIRTEENTH)
+    local tasks = XDataCenter.TaskManager.GetStoryTaskListByGroupId(taskGroupId)
+    for _, v in pairs(tasks) do
+        if v.State == XDataCenter.TaskManager.TaskState.Achieved then
+            isRed = true
+        elseif v.State == XDataCenter.TaskManager.TaskState.Finish then
+            curCnt = curCnt + 1
+        end
+        totalCnt = totalCnt + 1
+    end
+
+    local progress = CS.XTextManager.GetText("Fract", curCnt, totalCnt)
+    self.BtnMission:SetName(progress)
+    self.BtnMission:ShowReddot(isRed)
+end
+
+return XUiTRPGSecondMain

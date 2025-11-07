@@ -237,6 +237,7 @@ function XUiPartnerMain:SelectPartner(partner)
     self:UpdateListTabAndBtnChangeVisible()
 end
 
+---@param partner XPartner
 function XUiPartnerMain:IsTrialShow(partner)
     if not partner then
         return false
@@ -246,7 +247,9 @@ function XUiPartnerMain:IsTrialShow(partner)
         return false
     end
 
-    return partner:GetStageSkipId() > 0
+    local id = partner:GetTemplateId()
+
+    return id and id > 0
 end
 
 function XUiPartnerMain:UpdatePanel(data)
@@ -641,27 +644,6 @@ function XUiPartnerMain:GetPartnerRecommendCharacterId(partner)
     return false
 end
 
--- 新增页签 all 普通 联动
-function XUiPartnerMain:UpdateListTabAndBtnChangeVisible()
-    if self:IsUiOverview() then
-        -- 只在 辅助机总览界面 才显示页签
-        self.ListTab.gameObject:SetActiveEx(true)
-
-        local lastPartner = self:GetLastPartner(self.CurUiState)
-        local config = XPartnerConfigs.GetPartnerModelById(lastPartner:GetTemplateId())
-        if (config.SToCAnime == nil or config.SToCAnime == "")
-                and (config.CtoSAnime == nil or config.CtoSAnime == "")
-                and (config.StandbyBornAnime == nil or config.StandbyBornAnime == "")
-                and (config.CombatBornAnime == nil or config.CombatBornAnime == "") then
-            self.BtnChange.gameObject:SetActiveEx(false)
-        else
-            self.BtnChange.gameObject:SetActiveEx(true)
-        end
-    else
-        self.ListTab.gameObject:SetActiveEx(false)
-        self.BtnChange.gameObject:SetActiveEx(false)
-    end
-end
 -- 新增页签 all 普通 联动
 function XUiPartnerMain:UpdateListTabAndBtnChangeVisible()
     if self:IsUiOverview() then

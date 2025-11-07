@@ -116,7 +116,7 @@ function XBigWorldMessageModel:AddUnReadMessage(data)
         table.insert(self._UnReadMessageList, messageData)
         self._MessageMap[messageData.MessageId] = messageData
     else
-        XLog.Error("[短信][NotifyBigWorldNotReadMessage] : " .. "Repeat Notify Message => MessageId = " ..
+        XLog.Warning("[短信][NotifyBigWorldNotReadMessage] : " .. "Repeat Notify Message => MessageId = " ..
                        messageData.MessageId)
     end
 end
@@ -135,7 +135,7 @@ function XBigWorldMessageModel:AddForceMessage(data)
         self._MessageMap[messageData.MessageId] = messageData
         table.insert(self._UnReadMessageList, messageData)
     else
-        XLog.Error("[短信][NotifyBigWorldNotReadMessage] : " .. "Repeat Notify Message => MessageId = " ..
+        XLog.Warning("[短信][NotifyBigWorldNotReadMessage] : " .. "Repeat Notify Message => MessageId = " ..
                        messageData.MessageId)
     end
 end

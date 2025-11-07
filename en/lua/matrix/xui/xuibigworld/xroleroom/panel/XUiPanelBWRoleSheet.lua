@@ -7,9 +7,7 @@ local FullTeamEntityCount = XMVCA.XBigWorldCharacter:GetFullTeamEntityCount()
 local Delay = 80
 
 function XUiGridBWRoleTeam:OnStart()
-    self.BtnCharacter.CallBack = function()
-        self:OnClickBtnRole()
-    end
+    self.BtnCharacter:AddEventListener(handler(self, self.OnClickBtnRole))
     self._CanvasGroup = self.GameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
 end
 
@@ -37,10 +35,10 @@ function XUiGridBWRoleTeam:OnClickBtnRole()
     if not team then
         return
     end
-    self._IsSelect = not self._IsSelect
+    local select = not self._IsSelect
     local pos = 0
     -- 操作：选中
-    if self._IsSelect then
+    if select then
         pos = team:GetFirstEmptyPos()
         --正常编队-还未满员
         if pos > FullTeamEntityCount then
@@ -49,10 +47,13 @@ function XUiGridBWRoleTeam:OnClickBtnRole()
         end
         team:AddLast(self._Id, true)
     else
-        -- 操作：取消选中
-        pos = team:UpdateTeamByPos(self._Pos, 0)
+        if self._Pos > 0 then
+            -- 操作：取消选中
+            pos = team:UpdateTeamByPos(self._Pos, 0)
+            self._IsSelect = select
+        end
     end
-    self.Parent:SetupDynamicTable()
+    self.Parent:SetupDynamicTableOnlyRefresh()
 end
 
 function XUiGridBWRoleTeam:StopAnimationTimer()
@@ -83,8 +84,10 @@ local XUiPanelBWRoleSheet = XClass(XUiNode, "XUiPanelBWRoleSheet")
 function XUiPanelBWRoleSheet:OnStart()
     local itemSize = self.PlayerInfoCharacterGrid.rect
     local parentSize = self.PlayerInfoCharacterGrid.parent.parent.rect
-    self.ColCount = math.floor(parentSize.width / itemSize.width)
-    self.RowCount = math.ceil(parentSize.height / itemSize.height)
+    local spaceX = 20
+    local spaceY = 20
+    self.ColCount = math.floor(parentSize.width / (itemSize.width + spaceX))
+    self.RowCount = math.ceil(parentSize.height / (itemSize.height + spaceY))
     self.MaxCount = self.ColCount * self.RowCount
         
     self:InitCb()
@@ -106,9 +109,7 @@ function XUiPanelBWRoleSheet:Close()
 end
 
 function XUiPanelBWRoleSheet:InitCb()
-    self.BtnConfirm.CallBack = function()
-        self:OnBtnConfirmClick()
-    end
+    self.BtnConfirm:AddEventListener(handler(self, self.OnBtnConfirmClick))
 end
 
 function XUiPanelBWRoleSheet:InitView()
@@ -134,7 +135,16 @@ function XUiPanelBWRoleSheet:SetupDynamicTable()
     end
 
     self._DynamicTable:SetDataSource(self._DataList)
-    self._DynamicTable:ReloadDataSync()
+    self._DynamicTable:ReloadDataSync(1)
+end
+
+function XUiPanelBWRoleSheet:SetupDynamicTableOnlyRefresh()
+    local grids = self._DynamicTable:GetGrids()
+    for index, grid in pairs(grids) do
+        local entityId = self._DataList[index]
+        local pos = self._Team:GetEntityPos(entityId)
+        grid:Refresh(entityId, pos)
+    end
 end
 
 function XUiPanelBWRoleSheet:OnDynamicTableEvent(event, index, grid)
@@ -158,7 +168,6 @@ end
 function XUiPanelBWRoleSheet:OnBtnConfirmClick()
     XMVCA.XBigWorldCharacter:RequestUpdateTeam(self._TeamId, function()
         self:SetupDynamicTable()
-        self.Parent:UpdateView()
         self.Parent:OnBtnDetailClicked()
     end)
 end

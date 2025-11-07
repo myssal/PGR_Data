@@ -190,7 +190,7 @@ function XUiSettleWinSingleBoss:GetMyTotalHistory()
 
         score = stageData and stageData.Score or 0
     end
-    
+
     return score
 end
 
@@ -199,7 +199,31 @@ function XUiSettleWinSingleBoss:RefreshButton(data)
 
     if isNormal then
         -- 体验版和凹分区隐藏体力文本提示
-        self.BtnSave.transform:Find("Text").gameObject:SetActiveEx(isNormal)
+        local textBtnSave = self.BtnSave.transform:Find("Text"):GetComponent("Text")
+        textBtnSave.gameObject:SetActiveEx(isNormal)
+
+        if self._Control:IsResetOpen() then
+            -- 这一关第一次进来，还没保存过分数 do nothing
+            local stageId = data.StageId
+            local hasRecord = self._Control:HasStageRecord(stageId)
+            if hasRecord then
+                local score = self._Control:GetStageCurrentScore(stageId)
+                if score > 0 then
+                    local bossId = self._Control:GetBossIdByStageId(stageId)
+                    local teamId = self._Control:GetTeamIdByBossId(bossId)
+                    ---@type XTeam
+                    local team = XDataCenter.TeamManager.GetXTeam(teamId)
+                    local isChange = XMVCA.XFubenBossSingle:CheckTeamDifferentWithRecord(stageId, team)
+                    -- 如果和挑战的记录角色不相同，则显示“扣除角色耐力”
+                    if isChange then
+                        textBtnSave.text = XUiHelper.GetText("BossSingleSettleTips2")
+                    else
+                        -- 如果和挑战的记录角色相同，则显示“不额外扣除角色耐力及挑战次数”
+                        textBtnSave.text = XUiHelper.GetText("BossSingleSettleTips1")
+                    end
+                end
+            end
+        end
     else
         local isChallenge = self._Control:IsBossSingleChallenge()
 
@@ -218,7 +242,8 @@ function XUiSettleWinSingleBoss:RefreshButton(data)
                 local isClash = false
                 local clashFeatureMap = {}
 
-                if not XMVCA.XFubenBossSingle:GetRelieveTeamAstrict() then -- 先锋服解除编队限制
+                if not XMVCA.XFubenBossSingle:GetRelieveTeamAstrict() then
+                    -- 先锋服解除编队限制
                     if not XTool.IsTableEmpty(characterList) then
                         for _, exp in pairs(characterList) do
                             table.insert(characterIds, exp.Id)

@@ -12,7 +12,7 @@ function XExPrequelManager:ExOpenChapterUi(viewModel)
         XUiManager.TipMsg(XDataCenter.PrequelManager.GetChapterUnlockDescription(viewModel:GetConfig().Id))
         return
     end
-    
+
     if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Prequel, viewModel:GetConfig().Id) then
         return
     end
@@ -26,10 +26,10 @@ function XExPrequelManager:ExGetFunctionNameType()
 end
 
 function XExPrequelManager:GetCharacterListIdByChapterViewModels()
-    local result ={}
+    local result = {}
     for i, chapterViewModel in ipairs(self:ExGetChapterViewModels()) do
         local characterId = chapterViewModel:GetConfig().CharacterId
-        result[i] = {Id = characterId}
+        result[i] = { Id = characterId }
         if not self.CharacterIdModelDic then
             self.CharacterIdModelDic = {}
         end
@@ -46,6 +46,47 @@ function XExPrequelManager:SortModelViewByCharacterList(characterList)
     return result
 end
 
+function XExPrequelManager:ExGetChapterViewModelByChapterId(chapterId)
+    local chapterList = XDataCenter.PrequelManager.GetChapterList()
+    for _, chapterInfo in ipairs(chapterList) do
+        if chapterInfo.ChapterId == chapterId then
+            return self:ExCreateChapterViewModel(chapterInfo)
+        end
+    end
+end
+
+function XExPrequelManager:ExCreateChapterViewModel(chapterInfo)
+    return CreateAnonClassInstance({
+        GetCurrentAndMaxProgress = function(proxy)
+            return XDataCenter.PrequelManager.GetChapterProgress(proxy.Config.Id)
+        end,
+        GetProgressTips = function(proxy)
+            local finishedNum, totalNum = XDataCenter.PrequelManager.GetChapterProgress(proxy.Config.Id)
+            return CS.XTextManager.GetText("PrequelCompletion", finishedNum, totalNum)
+        end,
+        CheckHasTimeLimitTag = function(proxy)
+            return proxy.Config.ExtralData.IsActivity
+        end,
+        GetLockTip = function(proxy)
+            return XDataCenter.PrequelManager.GetChapterUnlockDescription(proxy.Config.Id)
+        end,
+        GetIsLocked = function(proxy)
+            return XDataCenter.PrequelManager.GetChapterLockStatus(proxy.Config.Id)
+        end,
+        GetMinCharacterName = function(proxy)
+            return XMVCA.XCharacter:GetCharacterTradeName(chapterInfo.PequelChapterCfg.CharacterId)
+        end
+    }, XChapterViewModel
+    , {
+                Id = chapterInfo.ChapterId,
+                ExtralName = nil,
+                Name = chapterInfo.PequelChapterCfg.ChapterName,
+                Icon = chapterInfo.PequelChapterCfg.Bg,
+                ExtralData = chapterInfo,
+                CharacterId = chapterInfo.PequelChapterCfg.CharacterId
+            })
+end
+
 function XExPrequelManager:ExGetChapterViewModels()
     local result = {}
     local chapterList = XDataCenter.PrequelManager.GetChapterList()
@@ -53,35 +94,7 @@ function XExPrequelManager:ExGetChapterViewModels()
         -- local showChapterInfo = XPrequelConfigs.GetPrequelChapterById(cover.Id)
         -- if cover.CoverVal.Priority and cover.CoverVal.Priority > 0 then -- Priority为空则不显示间章
         -- end
-        table.insert(result, CreateAnonClassInstance({
-            GetCurrentAndMaxProgress = function(proxy)
-                return XDataCenter.PrequelManager.GetChapterProgress(proxy.Config.Id)
-            end,
-            GetProgressTips = function(proxy)
-                local finishedNum, totalNum = XDataCenter.PrequelManager.GetChapterProgress(proxy.Config.Id)
-                return CS.XTextManager.GetText("PrequelCompletion", finishedNum, totalNum)
-            end,
-            CheckHasTimeLimitTag = function(proxy)
-                return proxy.Config.ExtralData.IsActivity
-            end,
-            GetLockTip = function(proxy)
-                return XDataCenter.PrequelManager.GetChapterUnlockDescription(proxy.Config.Id)
-            end,
-            GetIsLocked = function(proxy)
-                return XDataCenter.PrequelManager.GetChapterLockStatus(proxy.Config.Id)
-            end,
-            GetMinCharacterName = function(proxy)
-                return XMVCA.XCharacter:GetCharacterTradeName(chapterInfo.PequelChapterCfg.CharacterId)
-            end
-        }, XChapterViewModel
-        , {
-            Id = chapterInfo.ChapterId,
-            ExtralName = nil,
-            Name = chapterInfo.PequelChapterCfg.ChapterName,
-            Icon = chapterInfo.PequelChapterCfg.Bg,
-            ExtralData = chapterInfo,
-            CharacterId = chapterInfo.PequelChapterCfg.CharacterId
-        }))
+        table.insert(result, self:ExCreateChapterViewModel(chapterInfo))
     end
     return result
 end

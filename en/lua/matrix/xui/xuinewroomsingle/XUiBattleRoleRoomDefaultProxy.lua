@@ -115,7 +115,15 @@ end
 -- return : bool
 function XUiBattleRoleRoomDefaultProxy:CheckStageForceConditionWithTeamEntityId(team, stageId, showTip)
     local fubenManager = XDataCenter.FubenManager
-    local _, forceConditionIds = fubenManager.GetConditonByMapId(stageId)
+    
+    local _, forceConditionIds
+    -- 速通关卡
+    if XMVCA.XPlotExhibition:GetIsSpeedrun(stageId) then
+        local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+        _, forceConditionIds = fubenManager.GetConditonByMapId(speedrunStageId)
+    else
+        _, forceConditionIds = fubenManager.GetConditonByMapId(stageId)
+    end
     return fubenManager.CheckFightConditionByTeamData(forceConditionIds, team:GetEntityIds(), showTip)
 end
 
@@ -123,21 +131,40 @@ end
 -- team : XTeam
 -- stageId : number
 function XUiBattleRoleRoomDefaultProxy:EnterFight(team, stageId, challengeCount, isAssist)
-    local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
-    local teamId = team:GetId()
-    local isAssist = isAssist
-    local challengeCount = challengeCount
-    XDataCenter.FubenManager.EnterFight(stageConfig, teamId, isAssist, challengeCount)
+    local sureCallback = function()
+        local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
+        local teamId = team:GetId()
+        local isAssist = isAssist
+        local challengeCount = challengeCount
+        XDataCenter.FubenManager.EnterFight(stageConfig, teamId, isAssist, challengeCount)
+    end
+    
+    local isChange = XMVCA.XFubenBossSingle:CheckTeamDifferentWithRecord(stageId, team)
+    if isChange then
+        XUiManager.DialogTip(nil, XUiHelper.GetText("BossSingleChangeMember"), XUiManager.DialogType.Normal, nil, sureCallback)
+        return
+    end
+    sureCallback()
 end
 
 -- 检查是否能够编辑队伍，关卡若是配置了固定机器人为不可编辑
 function XUiBattleRoleRoomDefaultProxy:CheckIsCanEditorTeam(stageId, showTip)
     if showTip == nil then showTip = true end
-    if #XDataCenter.FubenManager.GetStageCfg(stageId).RobotId > 0 then
-        if showTip then
-            XUiManager.TipError(XUiHelper.GetText("NewRoomSingleCannotSetRobot"))
+    -- 速通关卡
+    local speedStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+    if speedStageId then
+        stageId = speedStageId
+    end
+    local config = XDataCenter.FubenManager.GetStageCfg(stageId)
+    if config then
+        if #config.RobotId > 0 then
+            if showTip then
+                XUiManager.TipError(XUiHelper.GetText("NewRoomSingleCannotSetRobot"))
+            end
+            return false
         end
-        return false
+    else
+        XLog.Error("[XUiBattleRoleRoomDefaultProxy] 判断队伍是否可编辑，但是找不到对应的关卡配置:" .. tostring(stageId))
     end
     return true
 end
@@ -216,6 +243,10 @@ function XUiBattleRoleRoomDefaultProxy:AOPOnStartAfter(rootUi)
 end
 
 function XUiBattleRoleRoomDefaultProxy:AOPOnEnableAfter(rootUi)
+    
+end
+
+function XUiBattleRoleRoomDefaultProxy:AOPOnDestroyAfter(rootUi)
     
 end
 

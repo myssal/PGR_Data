@@ -9,17 +9,19 @@ XPurchaseManagerCreator = function()
         PurchaseGetDailyRewardReq = "PurchaseGetDailyRewardRequest",
         GetPurchaseListReq = "GetPurchaseListRequest", -- 采购列表请求
         PurchaseReq = "PurchaseRequest", -- 普通采购请求
+        PurchaseComboReq = "PurchaseComboRequest", -- 捆绑包购买
     }
 
     local Next = _G.next
     local PurchaseInfosData = {}
+    local _PurchaseComboInfosData = {}
     local PurchaseLbRedUiTypes = {}
     local AccumulatedData = {}
     local LBExpireIdKey = "LBExpireIdKey"
     local LBExpireIdDic = nil
     local IsYKShowContinueBuy = false
     local WeekCardData = {}
-    
+
     local PurchaseSelectionData = nil -- 礼包自选数据，仅UI使用，不长期缓存
 
     --不显示在研发按钮红点的UiType
@@ -95,7 +97,8 @@ XPurchaseManagerCreator = function()
 
         for _, data in pairs(datas) do
             if data and not data.IsSelloutHide then
-                if not (data.TimeToUnShelve > 0 and data.TimeToUnShelve <= nowTime) then--下架了
+                if not (data.TimeToUnShelve > 0 and data.TimeToUnShelve <= nowTime) then
+                    --下架了
                     --不显示
                     itemCount = itemCount + 1
                 end
@@ -115,6 +118,7 @@ XPurchaseManagerCreator = function()
         end
     end
 
+    ---@return XPurchasePackage
     function XPurchaseManager.GetPurchasePackageById(id)
         for _, datas in pairs(PurchaseInfosData) do
             for _, data in pairs(datas) do
@@ -123,6 +127,18 @@ XPurchaseManagerCreator = function()
                 end
             end
         end
+    end
+
+    ---@return XPurchasePackage
+    function XPurchaseManager.GetPurchasePackageBySignId(signId)
+        for _, datas in pairs(PurchaseInfosData) do
+            for _, data in pairs(datas) do
+                if data.SignInId == signId or (data.PurchaseSignInInfo and data.PurchaseSignInInfo.PurchaseSignInShowId == signId) then
+                    return XPurchaseManager.CreatePurchasePackage(data.Id, data)
+                end
+            end
+        end
+        return nil
     end
 
     function XPurchaseManager.GetBoughtYKId()
@@ -174,6 +190,10 @@ XPurchaseManagerCreator = function()
             end
 
             XPurchaseManager.HandlePurchaseData(uiTypeList, res.PurchaseInfoList)
+
+            -- v4.0 新增，捆绑礼包
+            XPurchaseManager.HandleComboPurchaseData(uiTypeList, res.PurchaseComboInfoList)
+
             if cb then
                 cb()
             end
@@ -204,16 +224,189 @@ XPurchaseManagerCreator = function()
         end
     end
 
+    function XPurchaseManager.HandleComboPurchaseData(uiTypeList, purchaseComboInfoList)
+        if not purchaseComboInfoList then
+            return
+        end
+        for _, uiType in pairs(uiTypeList) do
+            _PurchaseComboInfosData[uiType] = {}
+        end
+        for _, v in pairs(purchaseComboInfoList) do
+            if v.UiType then
+                table.insert(_PurchaseComboInfosData[v.UiType], v)
+            end
+        end
+    end
+    
+    function XPurchaseManager.UpdateComboPurchaseData(data)
+        local list = _PurchaseComboInfosData[data.UiType]
+
+        if not list then
+            list = {}
+        end
+
+        local replace = false
+        
+        if not XTool.IsTableEmpty(list) then
+            local key = nil
+            
+            for i, v in pairs(list) do
+                if v.Id == data.Id then
+                    key = i
+                    replace = true
+                    break
+                end    
+            end
+
+            if replace then
+                list[key] = data
+            end
+        end
+
+        if not replace then
+            table.insert(list, data)
+        end
+
+        _PurchaseComboInfosData[data.UiType] = list
+    end
+
+    function XPurchaseManager.GetComboPurchaseData(uiType)
+        local comboDatas = _PurchaseComboInfosData[uiType]
+        if not comboDatas then
+            return {}
+        end
+        ---@type XPurchaseComboData[]
+        local uiData = {}
+        for i = 1, #comboDatas do
+            --来自服务端的 XPurchaseComboDataForClient
+            local comboData = comboDatas[i]
+
+            local price = 0
+            local originalPrice = 0
+            local subPackageDiscounts = comboData.SubPackageDiscounts
+            for id, discountPrice in pairs(subPackageDiscounts) do
+                local purchaseInfo = XPurchaseManager.GetPurchaseInfoDataById(id)
+                if purchaseInfo then
+                    if purchaseInfo.BuyLimitTimes and purchaseInfo.BuyLimitTimes > 0 then
+                        if purchaseInfo.BuyTimes < purchaseInfo.BuyLimitTimes then
+                            price = price + discountPrice
+                            originalPrice = originalPrice + purchaseInfo.ConsumeCount
+                        end
+                    else
+                        price = price + discountPrice
+                        originalPrice = originalPrice + purchaseInfo.ConsumeCount
+                    end
+                else
+                    XLog.Error("[XPurchaseManager] 捆绑包找不到对应的子礼包:" .. tostring(id))
+                end
+            end
+            -- 保留两位小数
+            local discount
+            if originalPrice > 0 then
+                discount = math.floor(price / originalPrice * 100)
+            end
+
+            -- 子礼包只显示原价
+            ---@class XPurchaseComboData
+            local uiDataCombo = {
+                IsComboData = true,
+                TimeToInvalid = comboData.TimeToInvalid,
+                Name = comboData.Name,
+                Price = price,
+                OriginalPrice = originalPrice,
+                Discount = discount,
+                Desc = comboData.Desc,
+                Icon = comboData.Icon,
+                Tag = comboData.Tag,
+                BuyTimes = comboData.BuyTimes,
+                BuyLimitParam = comboData.BuyLimitParam,
+                BuyLimitTimes = comboData.BuyLimitParam,
+                ---@type XUiPurchaseComboSubGridData[]
+                SubDatas = {},
+                RewardGoodsList = {},
+                TimeToInvalid = comboData.TimeToInvalid,
+                ConsumeId = comboData.ConsumeId or 0,
+                TimeToShelve = comboData.TimeToShelve or 0,
+                TimeToUnShelve = comboData.TimeToUnShelve or 0,
+                IsSelected = false,
+                IsSoldOut = false,
+                Id = comboData.Id,
+            }
+            uiData[#uiData + 1] = uiDataCombo
+
+            local soldOutAmount = 0
+            local totalAmount = 0
+            for id, discountPrice in pairs(subPackageDiscounts) do
+                totalAmount = totalAmount + 1
+                local purchaseInfo = XPurchaseManager.GetPurchaseInfoDataById(id)
+                if purchaseInfo.BuyLimitTimes then
+                    if purchaseInfo.BuyLimitTimes > 0 and purchaseInfo.BuyTimes >= purchaseInfo.BuyLimitTimes then
+                        soldOutAmount = soldOutAmount + 1
+                    end
+                end
+            end
+            if soldOutAmount == totalAmount then
+                uiDataCombo.IsSoldOut = true
+            end
+
+            for id, discountPrice in pairs(subPackageDiscounts) do
+                local purchaseInfo = XPurchaseManager.GetPurchaseInfoDataById(id)
+                if purchaseInfo then
+                    ---@class XUiPurchaseComboSubGridData
+                    local uiDataSub = {
+                        IsComboData = true,
+                        Id = id,
+                        Name = purchaseInfo.Name,
+                        --Price = discountPrice,
+                        --OriginalPrice = purchaseInfo.ConsumeCount,
+                        Price = purchaseInfo.ConsumeCount,
+                        Discount = math.floor(discountPrice / purchaseInfo.ConsumeCount * 100),
+                        Icon = purchaseInfo.Icon,
+                        Tag = purchaseInfo.Tag,
+                        BuyTimes = purchaseInfo.BuyTimes,
+                        BuyLimitParam = purchaseInfo.BuyLimitParam,
+                        BuyLimitTimes = purchaseInfo.BuyLimitTimes,
+                        TimeToInvalid = purchaseInfo.TimeToInvalid,
+                        ConsumeId = purchaseInfo.ConsumeId or 0,
+                        TimeToShelve = purchaseInfo.TimeToShelve or 0,
+                        TimeToUnShelve = purchaseInfo.TimeToUnShelve or 0,
+                        RewardGoodsList = {},
+                        MainComboData = uiDataCombo,
+                        IsSelected = false,
+                        IsSoldOut = false,
+                        Id = id,
+                    }
+                    uiDataSub.IsSoldOut = purchaseInfo.BuyLimitTimes and purchaseInfo.BuyLimitTimes > 0 and purchaseInfo.BuyTimes >= purchaseInfo.BuyLimitTimes
+                    uiDataCombo.SubDatas[#uiDataCombo.SubDatas + 1] = uiDataSub
+
+                    -- RewardGoodsList
+                    for _, reward in pairs(purchaseInfo.RewardGoodsList) do
+                        uiDataSub.RewardGoodsList[#uiDataSub.RewardGoodsList + 1] = reward
+                    end
+
+                    -- RewardGoodsList
+                    for _, reward in pairs(purchaseInfo.RewardGoodsList) do
+                        uiDataCombo.RewardGoodsList[#uiDataCombo.RewardGoodsList + 1] = reward
+                    end
+                end
+            end
+        end
+        return uiData
+    end
+
     -- 普通采购请求
     -- public List<XRewardGoods> RewardList;
     function XPurchaseManager.PurchaseRequest(id, cb, count, discountId, uiTypeList, randomSelectGoodsIds, selectGroups, selectGroupGoodsIds)
-        if not discountId then -- 等于 -1 为不使用打折券
+        if not discountId then
+            -- 等于 -1 为不使用打折券
             discountId = -1
         end
-        if not count then -- 默认数量为1
+        if not count then
+            -- 默认数量为1
             count = 1
         end
-        if count > 1 and discountId ~= -1 then -- 打折券不能使用批量购买
+        if count > 1 and discountId ~= -1 then
+            -- 打折券不能使用批量购买
             XUiManager.TipError(CS.XTextManager.GetText("PurchaseErrorCantMultiplyWithDiscount"))
             return
         end
@@ -221,17 +414,17 @@ XPurchaseManagerCreator = function()
             uiTypeList = {}
         end
         XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.RECHARGE)
-        
+
         local reqContent = {
-            Id = id, 
-            Count = count, 
-            DiscountId = discountId, 
-            UiTypeList = uiTypeList, 
+            Id = id,
+            Count = count,
+            DiscountId = discountId,
+            UiTypeList = uiTypeList,
             RandomSelectGoodsIds = randomSelectGoodsIds,
             SelectGroups = selectGroups,
             SelectGroupGoodsIds = selectGroupGoodsIds,
         }
-        
+
         XNetwork.Call(PurchaseRequest.PurchaseReq, reqContent, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
@@ -242,10 +435,10 @@ XPurchaseManagerCreator = function()
             XPurchaseManager.CurBuyIds[id] = id
 
             XPurchaseManager.PurchaseSuccess(id, res.PurchaseInfo, res.NewPurchaseInfoList)
-            
+
             local commonRewardCount = XTool.GetTableCount(res.RewardList)
             local specialRewardCount = XTool.GetTableCount(res.RewardGoodsListByType)
-            
+
             if commonRewardCount >= 1 or specialRewardCount > 0 then
                 -- 福袋道具和其他道具分开两个弹窗
                 if not XTool.IsTableEmpty(res.RewardGoodsListByType) then
@@ -263,24 +456,24 @@ XPurchaseManagerCreator = function()
                                 end
                             end
                         else
-                            table.insert(otherRewardList, v.RewardGoods)    
+                            table.insert(otherRewardList, v.RewardGoods)
                         end
                     end
 
                     local commonList = XTool.MergeArray(otherRewardList, res.RewardList)
-                    
+
                     local popQueue = {}
 
                     if not XTool.IsTableEmpty(randomDrawRewardList) then
                         table.insert(popQueue, function()
-                            
+
                             XLuaUiManager.OpenWithCloseCallback("UiPurchaseRandomObtain", function()
                                 table.remove(popQueue, 1)
                                 if not XTool.IsTableEmpty(popQueue) then
                                     popQueue[1]()
                                 end
                             end, randomDrawRewardList, afterSendRewardList)
-                            
+
                         end)
                     end
 
@@ -293,7 +486,7 @@ XPurchaseManagerCreator = function()
                                 if not XTool.IsTableEmpty(popQueue) then
                                     popQueue[1]()
                                 end
-                            end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo)})
+                            end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
                         end)
                     end
 
@@ -306,15 +499,14 @@ XPurchaseManagerCreator = function()
                     XUiManager.OpenUiObtain(res.RewardList, nil, function()
                         XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                         XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
-                    end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo)})
+                    end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
                 end
             else
                 XUiManager.TipText("PurchaseLBBuySuccessTips")
                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                 XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
             end
-            
-            
+
             if cb then
                 cb(res.RewardList)
             end
@@ -324,6 +516,108 @@ XPurchaseManagerCreator = function()
         end)
     end
 
+    --- 购买捆绑包
+    function XPurchaseManager.PurchaseComboRequest(comboId, cb)
+        if not XTool.IsNumberValidEx(comboId) then
+            return
+        end
+        XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.RECHARGE)
+
+        XNetwork.Call(PurchaseRequest.PurchaseComboReq, { ComboId = comboId }, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                return
+            end
+
+            XPurchaseManager.CurBuyIds[comboId] = comboId
+
+            XPurchaseManager.PurchaseSuccess(comboId, res.PurchaseInfo, res.NewPurchaseInfoList)
+
+            if res.ComboInfo then
+                XPurchaseManager.UpdateComboPurchaseData(res.ComboInfo)
+            end
+
+            local commonRewardCount = XTool.GetTableCount(res.RewardList)
+            local specialRewardCount = XTool.GetTableCount(res.RewardGoodsListByType)
+
+            if commonRewardCount >= 1 or specialRewardCount > 0 then
+                -- 福袋道具和其他道具分开两个弹窗
+                if not XTool.IsTableEmpty(res.RewardGoodsListByType) then
+                    local randomDrawRewardList = {}
+                    local otherRewardList = {}
+                    local afterSendRewardList = {}
+
+                    for i, v in pairs(res.RewardGoodsListByType) do
+                        if v.RewardGoodsType == XPurchaseConfigs.XPurchaseRewardGoodsType.Random then
+                            table.insert(randomDrawRewardList, v.RewardGoods)
+                            -- 记录福袋奖励重复获得的转换道具
+                            if not XTool.IsTableEmpty(v.AfterSendRewardGoods) then
+                                for index, afterGoods in pairs(v.AfterSendRewardGoods) do
+                                    table.insert(afterSendRewardList, afterGoods)
+                                end
+                            end
+                        else
+                            table.insert(otherRewardList, v.RewardGoods)
+                        end
+                    end
+
+                    local commonList = XTool.MergeArray(otherRewardList, res.RewardList)
+
+                    local popQueue = {}
+
+                    if not XTool.IsTableEmpty(randomDrawRewardList) then
+                        table.insert(popQueue, function()
+
+                            XLuaUiManager.OpenWithCloseCallback("UiPurchaseRandomObtain", function()
+                                table.remove(popQueue, 1)
+                                if not XTool.IsTableEmpty(popQueue) then
+                                    popQueue[1]()
+                                end
+                            end, randomDrawRewardList, afterSendRewardList)
+
+                        end)
+                    end
+
+                    if not XTool.IsTableEmpty(commonList) then
+                        table.insert(popQueue, function()
+                            XUiManager.OpenUiObtain(commonList, nil, function()
+                                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                                XPurchaseManager.OnBuyPurchasePackageCheckSkip(comboId)
+                                table.remove(popQueue, 1)
+                                if not XTool.IsTableEmpty(popQueue) then
+                                    popQueue[1]()
+                                end
+                            end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                        end)
+                    end
+
+                    if not XTool.IsTableEmpty(popQueue) then
+                        popQueue[1]()
+                    else
+                        XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                    end
+                else
+                    XUiManager.OpenUiObtain(res.RewardList, nil, function()
+                        XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                        XPurchaseManager.OnBuyPurchasePackageCheckSkip(comboId)
+                    end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                end
+            else
+                XUiManager.TipText("PurchaseLBBuySuccessTips")
+                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                XPurchaseManager.OnBuyPurchasePackageCheckSkip(comboId)
+            end
+
+            if cb then
+                cb(res.RewardList)
+            end
+
+            XEventManager.DispatchEvent(XEventId.EVENT_LB_UPDATE)
+            XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+        end)
+    end
+    
     -- 采购成功修正数据
     function XPurchaseManager.PurchaseSuccess(id, purchaseInfo, newPurchaseInfoList)
         XPurchaseManager.UpdateSingleData(id, purchaseInfo)
@@ -452,7 +746,7 @@ XPurchaseManagerCreator = function()
             if not datas[1] then
                 return nil
             end
-            
+
             return datas[1]
         end
     end
@@ -704,7 +998,7 @@ XPurchaseManagerCreator = function()
         end
         return false
     end
-    
+
     --- 礼包是否锁定：prepurchaseId未购买完或condition不通过
     function XPurchaseManager.IsLBLock(lbData)
         if XTool.IsNumberValid(lbData.PrePurchaseId) then
@@ -724,7 +1018,7 @@ XPurchaseManagerCreator = function()
                 end
             end
         end
-        
+
         return false
     end
 
@@ -791,7 +1085,7 @@ XPurchaseManagerCreator = function()
                     cb(rewardGoodsList)
                 end
             end
-             --CheckPoint: APPEVENT_TOTAL_PURCHASE
+            --CheckPoint: APPEVENT_TOTAL_PURCHASE
             XAppEventManager.AccumulatePayAppLogEvent(rewardId)
             XEventManager.DispatchEvent(XEventId.EVENT_ACCUMULATED_REWARD)
         end
@@ -1033,10 +1327,12 @@ XPurchaseManagerCreator = function()
         return purchasePackageInfo.PurchaseSignInInfo ~= nil
     end
 
+    ---@return XPurchaseWeekCardData
     function XPurchaseManager.GetWeekCardData(id)
         return WeekCardData[id]
     end
 
+    ---@return XPurchaseWeekCardData
     function XPurchaseManager.GetWeekCardDataBySignInId(signInId)
         for _, data in pairs(WeekCardData) do
             if signInId == data:GetPurchaseSignInId() then
@@ -1048,7 +1344,7 @@ XPurchaseManagerCreator = function()
     function XPurchaseManager.GetWeekCardDatas()
         return WeekCardData
     end
-    
+
     --- 检查是否有任意周卡当天可领取
     function XPurchaseManager.CheckAnyWeekCardCanGet()
         if XTool.IsTableEmpty(WeekCardData) then
@@ -1119,7 +1415,7 @@ XPurchaseManagerCreator = function()
                 return true
             end
         end
-        
+
         return false
     end
     --endregion
@@ -1264,11 +1560,13 @@ XPurchaseManagerCreator = function()
     function XPurchaseManager.GetPurchaseMaxBuyCount(purchaseData)
         local buyTimes = purchaseData.BuyTimes
         local maxBuyTimes = nil
-        if purchaseData.BuyLimitTimes and purchaseData.BuyLimitTimes > 0 then -- 限购数量
+        if purchaseData.BuyLimitTimes and purchaseData.BuyLimitTimes > 0 then
+            -- 限购数量
             maxBuyTimes = purchaseData.BuyLimitTimes - buyTimes
         end
 
-        if purchaseData.NormalDiscounts then -- 存在打折
+        if purchaseData.NormalDiscounts then
+            -- 存在打折
             local curTimes = buyTimes + 1
             local lastDiscountAreaTimes = 0 -- 下一个打折区间次数
             for times, _ in pairs(purchaseData.NormalDiscounts) do
@@ -1314,9 +1612,9 @@ XPurchaseManagerCreator = function()
     ---@param data XPurchasePackage
     function XPurchaseManager.OpenPurchaseBuyUiByPurchasePackage(data, notEnoughCb, beforeBuyCb, buyFinishedCb)
         local templateId, isWeaponFashion = data:CheckIsSingleFashion()
-        
+
         local isSingleScene, sceneId = data:CheckIsSingleScene()
-        
+
         -- 皮肤礼包特殊处理
         if templateId and data:GetUiType() == XPurchaseConfigs.UiType.CoatingLB then
             local buyData = data:GetUiFashionDetailBuyData(buyFinishedCb, notEnoughCb)
@@ -1351,11 +1649,11 @@ XPurchaseManagerCreator = function()
                 , mergeBuyFinishedCb, mergeBeforeBuyCb, data:GetUiTypes())
             end
 
-               
+
         end
 
     end
-    
+
     ---@param data @服务端下发的XPurchaseClientInfo数据
     function XPurchaseManager.OpenPurchaseBuyUiByClientInfo(data, checkCb, finishCb, beforeBuyCb, uiTypes)
         local uiType = data.UiType
@@ -1369,7 +1667,7 @@ XPurchaseManagerCreator = function()
                 return
             end
         end
-        
+
         -- 通用界面
         XLuaUiManager.Open("UiPurchaseBuyTips", data, checkCb, finishCb, beforeBuyCb, uiTypes)
     end
@@ -1395,7 +1693,7 @@ XPurchaseManagerCreator = function()
     local PurchasePackageId2Class = {
         [XPurchaseConfigs.YKID] = require("XEntity/XPurchase/XYKPurchasePackage"),
     }
-    
+
     if XOverseaManager.IsENRegion() then
         -- EN有多个月卡
         PurchasePackageId2Class[83028] = require("XEntity/XPurchase/XYKPurchasePackage")
@@ -1421,14 +1719,14 @@ XPurchaseManagerCreator = function()
         end
         return XPurchaseManager.__RecommendManager
     end
-    
+
     --region 3.0新增自选礼包
-    
+
     --- 自选、福袋礼包选择情况界面临时缓存
     function XPurchaseManager.InitPurchaseSelectionData()
         PurchaseSelectionData = require('XEntity/XPurchase/XPurchaseSelectionData').New()
     end
-    
+
     function XPurchaseManager.GetPurchaseSelectionData()
         return PurchaseSelectionData
     end
@@ -1458,30 +1756,70 @@ XPurchaseManagerCreator = function()
         end
         return false
     end
-    
+
     function XPurchaseManager.ClearRandomBoxChoices()
         if PurchaseSelectionData then
             PurchaseSelectionData:ClearRandomBoxChoices()
         end
     end
-    
+
     function XPurchaseManager.ClearPurchaseSelectionData()
         if PurchaseSelectionData then
             PurchaseSelectionData = nil
         end
     end
-    
+
     function XPurchaseManager.CheckNeedForcePopTips()
         -- 每个版本只提示一次
         if XSaveTool.GetData('LastPurchaseRandomTipsForcePop') == CS.XRemoteConfig.ApplicationVersion then
             return false
         end
-        
+
         XSaveTool.SaveData('LastPurchaseRandomTipsForcePop', CS.XRemoteConfig.ApplicationVersion)
-        
+
         return true
     end
     --endregion
+
+    ---判断指定Id的礼包是否已购买，且距离最后一次购买此礼包的时间大于X秒
+    ---@param negate number 对结果是否取反 0=取反 1=取正
+    ---@param paskageId number 礼包Id
+    ---@param buyState number 参数1=已购买过至少一次，0=一次都未购买
+    ---@param judgingType number 参数1:等于 2:大于等于 3:小于等于
+    ---@param seconds number 参数3为1时可选填，填距离最后一次购买后的秒数
+    function XPurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds)
+        if XTool.IsNumberValid(paskageId) then
+            local data = XPurchaseManager.GetPurchasePackageById(paskageId)
+            if not data then
+                return false
+            end
+            local curTimes = data:GetCurrentBuyTime()
+            local targetTimes = buyState == 1 and 1 or 0
+            local now = XTime.GetServerNowTimestamp()
+            local result = false
+            if buyState == 1 then
+                result = curTimes >= 1
+                if result and XTool.IsNumberValid(seconds) then
+                    local lastTime = data:GetLastBuyTime()
+                    local passTime = now - lastTime
+                    if judgingType == 1 then
+                        result = passTime == seconds
+                    elseif judgingType == 2 then
+                        result = passTime >= seconds
+                    elseif judgingType == 3 then
+                        result = passTime <= seconds
+                    end
+                end
+            else
+                result = curTimes <= 0
+            end
+            if negate == 0 then
+                return not result
+            end
+            return result
+        end
+        return false
+    end
 
     XPurchaseManager.Init()
     return XPurchaseManager

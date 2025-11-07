@@ -10,7 +10,6 @@ function XBigWorldCourseControl:OnInit()
     self._VersionEntitys = false
 
     self._CurrentTaskProgress = {}
-    self._ProgressCueId = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("CourseTaskProcessCueId")
 
     self:_InitCurrentTaskProgress()
 end
@@ -25,7 +24,6 @@ end
 function XBigWorldCourseControl:OnRelease()
     -- XLog.Error("这里执行Control的释放")
     self._CurrentTaskProgress = {}
-    self._ProgressCueId = 0
 end
 
 ---@return XBWCourseVersionEntity[]
@@ -149,16 +147,29 @@ function XBigWorldCourseControl:GetTaskProgressCountByContentId(contentId)
     return table.nums(self:GetTaskProgressIdsByContentId(contentId))
 end
 
-function XBigWorldCourseControl:GetProgressCueId()
-    return self._ProgressCueId
-end
-
 function XBigWorldCourseControl:GetCurrentRecordTaskProgress(versionId)
     return self._CurrentTaskProgress[versionId] or 0
 end
 
 function XBigWorldCourseControl:SyncCurrentRecordTaskProgress(versionId)
     self._CurrentTaskProgress[versionId] = self._Model:GetCurrentTaskProgress(versionId)
+end
+
+---@param taskEntitys XBWCourseTaskEntity[]
+function XBigWorldCourseControl:FinishMultiTask(taskEntitys)
+    local taskIds = {}
+
+    if not XTool.IsTableEmpty(taskEntitys) then
+        for _, taskEntity in pairs(taskEntitys) do
+            if taskEntity:IsAchieved() then
+                table.insert(taskIds, taskEntity:GetTaskId())
+            end
+        end
+    end
+
+    if not XTool.IsTableEmpty(taskIds) then
+        XMVCA.XBigWorldService:FinishMultiTasks(taskIds)
+    end
 end
 
 --- endregion

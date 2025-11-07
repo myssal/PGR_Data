@@ -30,13 +30,9 @@ function XUiBigWorldStoryStageDetail:InitUi()
 end
 
 function XUiBigWorldStoryStageDetail:InitCb()
-    self.BtnClose.CallBack = function()
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 
-    self.BtnEnter.CallBack = function()
-        self:OnBtnEnterClick()
-    end
+    self.BtnEnter:AddEventListener(handler(self, self.OnBtnEnterClick))
     
     self:RegisterClickEvent(self.ImgAutoFighting, self.OnBtnImgAutoClick)
 end

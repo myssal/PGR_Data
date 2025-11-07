@@ -119,6 +119,7 @@ function XUiNewFubenChapterBfrt:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnBtnBackClick)
     XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnBtnMainUiClick)
     XUiHelper.RegisterClickEvent(self, self.RewardsBubble, self.OnBtnImportRewardIdClick)
+
 end
 
 --据点点击了帮助按钮

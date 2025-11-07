@@ -37,6 +37,8 @@ function XBigWorldMapModel:OnInit()
 
     self._NearDistance = 0
 
+    self._MapScaleCache = 0
+
     self:_InitTableKey()
 end
 
@@ -60,6 +62,8 @@ function XBigWorldMapModel:ResetAll()
     self._CoincidenceReferenceMap = {}
 
     self._IsShieldBigMap = false
+
+    self._MapScaleCache = 0
 
     self._CurrentAreaGroupData = {
         GroupId = 0,
@@ -304,18 +308,23 @@ function XBigWorldMapModel:RemoveVirtualMapPin(levelId, referPinId)
 
     if not XTool.IsTableEmpty(virtualPinDatas) then
         local pinDatas = self:GetPinDatasByLevelId(levelId, true)
+        local result = {}
 
-        self._VirtualPinDataMap[referPinId] = nil
         for _, pinData in pairs(virtualPinDatas) do
-            local bindDatas = self:GetVirtualPinDatasByBindId(pinData.BindPinId, true)
-
-            if pinDatas then
-                pinDatas[pinData.PinId] = nil
-            end
-            if bindDatas then
-                bindDatas[pinData.PinId] = nil
+            if pinData.LevelId == levelId then
+                local bindDatas = self:GetVirtualPinDatasByBindId(pinData.BindPinId, true)
+                
+                if pinDatas then
+                    pinDatas[pinData.PinId] = nil
+                end
+                if bindDatas then
+                    bindDatas[pinData.PinId] = nil
+                end
+            else
+                result[pinData.PinId] = pinData
             end
         end
+        self._VirtualPinDataMap[referPinId] = result
     end
 end
 
@@ -371,6 +380,27 @@ function XBigWorldMapModel:CancelTrackPins(levelId, trackType)
     end
 
     self:TrackPins(levelId, nil, trackType)
+end
+
+function XBigWorldMapModel:CancelTrackPinByPinId(targetLevelId, targetPinId)
+    if not XTool.IsTableEmpty(self._CurrentTrackPins) then
+        for levelId, trackData in pairs(self._CurrentTrackPins) do
+            if levelId == targetLevelId then
+                if not XTool.IsTableEmpty(trackData) then
+                    for trackType, pinIdMap in pairs(trackData) do
+                        if not XTool.IsTableEmpty(pinIdMap) then
+                            for pinId, _ in pairs(pinIdMap) do
+                                if pinId == targetPinId then
+                                    self:CancelTrackSinglePin(targetLevelId, trackType, targetPinId)
+                                    break
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
 end
 
 function XBigWorldMapModel:CancelTrackSinglePin(levelId, trackType, pinId)
@@ -456,6 +486,18 @@ function XBigWorldMapModel:GetNearDistance()
     end
 
     return self._NearDistance
+end
+
+function XBigWorldMapModel:GetMapScaleCache(defaultValue)
+    if XTool.IsNumberValid(self._MapScaleCache) then
+        return self._MapScaleCache
+    end
+
+    return defaultValue or 0
+end
+
+function XBigWorldMapModel:SetMapScaleCache(value)
+    self._MapScaleCache = value
 end
 
 function XBigWorldMapModel:GetLevelName(levelId)

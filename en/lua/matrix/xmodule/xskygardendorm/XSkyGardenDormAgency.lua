@@ -97,7 +97,7 @@ function XSkyGardenDormAgency:OpenPhotoWall()
     --黑屏
     XMVCA.XBigWorldLoading:OpenBlackMaskLoading(function()
         --隐藏指挥官
-        XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(false, false)
+        XMVCA.XBigWorldGamePlay:SetCurNpcActive(false)
         --推进相机
         XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenDormCameraPhotoWall", self.CameraDuration)
         --修改相机投影方式
@@ -116,7 +116,7 @@ function XSkyGardenDormAgency:OpenGiftWall()
     --黑屏
     XMVCA.XBigWorldLoading:OpenBlackMaskLoading(function()
         --隐藏指挥官
-        XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(false, false)
+        XMVCA.XBigWorldGamePlay:SetCurNpcActive(false)
         --推进相机
         XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenDormCameraFrame", self.CameraDuration)
         --修改相机投影方式
@@ -129,7 +129,7 @@ function XSkyGardenDormAgency:OpenGiftWall()
 end
 
 function XSkyGardenDormAgency:OpenFashion()
-    XMVCA.XBigWorldGamePlay:SetCurNpcAndAssistActive(false, false)
+    XMVCA.XBigWorldGamePlay:SetCurNpcActive(false)
     XMVCA.XBigWorldUI:Open("UiSkyGardenDormCoating")
     XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenDormCameraChangeSkin", self.CameraDuration)
 end
@@ -322,6 +322,53 @@ end
 
 function XSkyGardenDormAgency:GetFurnitureCount(templateId)
     return self._Model:GetDormData():GetFurnitureCount(templateId)
+end
+
+function XSkyGardenDormAgency:GetOwnFurnitureList(itemTypes)
+    local list = {}
+    
+    if XTool.IsTableEmpty(itemTypes) then
+        return list
+    end
+    local typeDict = {}
+    for _, type in pairs(itemTypes) do
+        typeDict[type] = true
+    end
+    
+    local dict = {}
+    local furnitureDict = self._Model:GetDormData():GetOwnFurnitureDict()
+    for _, furniture in pairs(furnitureDict) do
+        local templateId = furniture:GetCfgId()
+        local typeId = self._Model:GetFurnitureTypeId(templateId)
+        if typeDict[typeId] then
+            if not dict[templateId] then
+                dict[templateId] = 1
+                list[#list + 1] = {
+                    TemplateId = templateId,
+                    Count = 0
+                }
+            else
+                dict[templateId] = dict[templateId] + 1
+            end
+        end
+    end
+    for _, item in pairs(list) do
+        local templateId = item.TemplateId
+        item.Count = dict[templateId] or 0
+    end
+    if #list > 1 then
+        table.sort(list, function(a, b)
+            local idA = a.TemplateId
+            local idB = b.TemplateId
+            local tA = self._Model:GetFurnitureTemplate(idA)
+            local tB = self._Model:GetFurnitureTemplate(idB)
+            if tA.Priority ~= tB.Priority then
+                return tA.Priority < tB.Priority
+            end
+            return a.TemplateId < b.TemplateId
+        end)
+    end
+    return list
 end
 
 function XSkyGardenDormAgency:GetFashionName(templateId)

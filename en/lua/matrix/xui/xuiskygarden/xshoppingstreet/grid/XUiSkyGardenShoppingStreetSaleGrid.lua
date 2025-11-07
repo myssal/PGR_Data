@@ -38,7 +38,7 @@ end
 
 --region 私有方法
 function XUiSkyGardenShoppingStreetSaleGrid:_RegisterButtonClicks()
-    self.GridCelebration.CallBack = function() self:OnGridCelebrationClick() end
+    self.GridCelebration:AddEventListener(handler(self, self.OnGridCelebrationClick))
 end
 --endregion
 

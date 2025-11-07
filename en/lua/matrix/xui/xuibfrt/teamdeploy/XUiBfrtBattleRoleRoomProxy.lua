@@ -10,6 +10,7 @@ local CsXTextManager = CS.XTextManager
 local XUiBattleRoleRoomDefaultProxy = require("XUi/XUiNewRoomSingle/XUiBattleRoleRoomDefaultProxy")
 local XUiBfrtBattleRoleRoomProxy = XClass(XUiBattleRoleRoomDefaultProxy, "XUiBfrtBattleRoleRoomProxy")
 
+---@param team XTeam
 function XUiBfrtBattleRoleRoomProxy:Ctor(team, stageId)
     self.Team = team
     self.StageId = stageId
@@ -18,22 +19,21 @@ end
 ---@param baseBattleRoleRoom XUiBattleRoleRoom
 function XUiBfrtBattleRoleRoomProxy:AOPOnStartAfter(baseBattleRoleRoom)
     self._TempGroupTeam = XDataCenter.BfrtManager.GetViewGroupFightTeams()
-    --self._ReplaceTeamData = {}
+end
+
+function XUiBfrtBattleRoleRoomProxy:AOPOnDestroyAfter(baseBattleRoleRoom)
+    self._UpdateData(baseBattleRoleRoom)
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnClickBtnBack(baseBattleRoleRoom)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     baseBattleRoleRoom:Close()
 
     return true
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnClickFight(baseBattleRoleRoom)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     baseBattleRoleRoom:Close()
 
     return true
@@ -44,24 +44,33 @@ function XUiBfrtBattleRoleRoomProxy:GetBtnEnterName()
 end
 
 function XUiBfrtBattleRoleRoomProxy:AOPOnCharacterClickBefore(baseBattleRoleRoom, index)
-    local team = baseBattleRoleRoom.Team
-    self._UpdateData(baseBattleRoleRoom.StageId, team:GetFirstFightPos(), team:GetCaptainPos(),
-            team:GetCurGeneralSkill(), team:GetEnterCgIndex(), team:GetSettleCgIndex())
+    self._UpdateData(baseBattleRoleRoom)
     XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
     XEventManager.DispatchEvent(XEventId.EVENT_BFRT_OPEN_BATTLE_ROOM_DETAIL, baseBattleRoleRoom.StageId, index)
 
     return true
 end
 
-function XUiBfrtBattleRoleRoomProxy._UpdateData(stageId, firstFightPos, captainPos, generalSkillId, enterCgIndex, settleCgIndex)
-    XDataCenter.BfrtManager.SetTeamFirstFightPos(stageId, firstFightPos)
-    XDataCenter.BfrtManager.SetTeamCaptainPos(stageId, captainPos)
+function XUiBfrtBattleRoleRoomProxy._UpdateData(baseBattleRoleRoom)
+    local stageId = baseBattleRoleRoom.StageId
+    ---@type XTeam
+    local team = baseBattleRoleRoom.Team
 
-    XDataCenter.BfrtManager.SetTeamGeneralSkillId(XDataCenter.BfrtManager.GetViewGroupId(), XDataCenter.BfrtManager.GetCurSelectTeamIdx(), generalSkillId)
+    XDataCenter.BfrtManager.SetTeamFirstFightPos(stageId, team:GetFirstFightPos())
+    XDataCenter.BfrtManager.SetTeamCaptainPos(stageId, team:GetCaptainPos())
+
+    local groupId = XDataCenter.BfrtManager.GetViewGroupId()
+    local curTeamIdx = XDataCenter.BfrtManager.GetCurSelectTeamIdx()
+    XDataCenter.BfrtManager.SetTeamGeneralSkillId(groupId, curTeamIdx, team:GetCurGeneralSkill())
     XDataCenter.BfrtManager.UpdateViewGroupGeneralSkills()
 
-    XDataCenter.BfrtManager.SetTeamCgIndex(XDataCenter.BfrtManager.GetViewGroupId(), XDataCenter.BfrtManager.GetCurSelectTeamIdx(), enterCgIndex, settleCgIndex)
+    XDataCenter.BfrtManager.SetTeamCgIndex(groupId, curTeamIdx, team:GetEnterCgIndex(), team:GetSettleCgIndex())
     XDataCenter.BfrtManager.UpdateViewCgIndexGroup()
+
+    local entityIds = team:GetEntityIds()
+    for pos, entityId in ipairs(entityIds) do
+        XDataCenter.BfrtManager.SetViewGroupFightTeamData(curTeamIdx, pos, entityId)
+    end
 end
 
 --function XUiBfrtBattleRoleRoomProxy:_UpdateReplaceTeamData()
@@ -70,6 +79,82 @@ end
 --    end
 --    self._ReplaceTeamData = {}
 --end
+
+-- 回调式重复角色检测（不依赖协程）
+function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoData, finishCb)
+    local teamData = teamInfoData.TeamData
+    if not teamData then
+        if finishCb then finishCb() end
+        return
+    end
+
+    local indexList = {}
+    for charPos, charId in pairs(teamData) do
+        if XTool.IsNumberValid(charId) then
+            local otherTeamIdx, otherTeamPos = self:_CheckCharacterSameToOtherTeam(charId)
+            if otherTeamIdx > 0 then
+                table.insert(indexList, {Pos = charPos, CharId = charId, OtherTeamIdx = otherTeamIdx, OtherTeamPos = otherTeamPos})
+            end
+        end
+    end
+
+    -- 如果没有冲突，直接完成
+    if #indexList == 0 then
+        return
+    end
+
+    ------------------------------------------------------------
+    -- 有冲突：递归弹窗处理
+    ------------------------------------------------------------
+    local function ShowNextConflict(idx)
+        if idx > #indexList then
+            -- 所有弹窗处理完，更新队伍并回调
+            self.Team:UpdateEntityIds(teamData)
+            self.Team:UpdateCaptainPos(teamInfoData.CaptainPos)
+            self.Team:UpdateFirstFightPos(teamInfoData.FirstFightPos)
+            XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
+            if finishCb then finishCb() end
+            return
+        end
+
+        local info = indexList[idx]
+        local showCharacterId = XRobotManager.GetCharacterId(info.CharId)
+        local characterName = XMVCA.XCharacter:GetCharacterName(showCharacterId)
+        local echelonType = XDataCenter.BfrtManager.GetCurSelectFightType()
+        local oldTeamName = XDataCenter.BfrtManager.GetEchelonNameTxt(echelonType, info.OtherTeamIdx)
+        local curSelectTeamIdx = XDataCenter.BfrtManager.GetCurSelectTeamIdx()
+        local newTeamName = XDataCenter.BfrtManager.GetEchelonNameTxt(echelonType, curSelectTeamIdx)
+        local title = CsXTextManager.GetText("BfrtDeployTipTitle")
+        local content = CsXTextManager.GetText("BfrtDeployTipContent", characterName, oldTeamName, newTeamName)
+
+        -- 打开提示弹窗（纯回调）
+        XUiManager.DialogTip(title, content,
+            XUiManager.DialogType.Normal,
+            function() -- 取消
+                teamData[info.Pos] = 0
+                self.Team:UpdateEntityIds(teamData)
+                XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
+                ShowNextConflict(idx + 1)
+            end,
+            function() -- 确定
+                XDataCenter.BfrtManager.SetViewGroupFightTeamData(info.OtherTeamIdx, info.OtherTeamPos, 0)
+                -- 同步被替换的队伍对象，确保逻辑层数据一致
+                local replacedTeam = XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam and 
+                XDataCenter.BfrtManager.GetGirdEchelonIndexTempTeam(info.OtherTeamIdx)
+                if replacedTeam then
+                    replacedTeam:UpdateEntityTeamPos(info.CharId, info.OtherTeamPos, false)
+                else
+                    XLog.Warning(string.format("[BfrtProxy] 未找到被替换队伍：%s", tostring(info.OtherTeamIdx)))
+                end
+                self.Team:UpdateEntityIds(teamData)
+                XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_ENTITY_CHANGE)
+                ShowNextConflict(idx + 1)
+            end
+        )
+    end
+
+    ShowNextConflict(1)
+end
 
 function XUiBfrtBattleRoleRoomProxy:FilterPresetTeamEntitiyIds(teamInfoData)
     --self._ReplaceTeamData = {}

@@ -94,8 +94,8 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetInsideBuildStrategy:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnSave.CallBack = function() self:OnBtnSaveClick() end
-    self.BtnReset.CallBack = function() self:OnBtnResetClick() end
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
+    self.BtnReset:AddEventListener(handler(self, self.OnBtnResetClick))
 end
 --endregion
 

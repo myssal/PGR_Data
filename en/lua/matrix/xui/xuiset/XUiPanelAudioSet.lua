@@ -106,7 +106,7 @@ end
 
 function XUiPanelAudioSet:OnTogFashionVoiceClick()
     if (self.FashionVoiceGuan.isOn) then
-        self.NewIsOpenFashionVoice = 0
+        self.NewIsOpenFashionVoice = 2
     elseif (self.FashionVoiceKai.isOn) then
         self.NewIsOpenFashionVoice = 1
     end

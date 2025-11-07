@@ -740,7 +740,7 @@ XDlcRoomManagerCreator = function()
         fightArgs.LuaSettleUiCb = function()
             local res = XMVCA.XDlcWorld._Model:GetResult()
 
-            XDataCenter.XDlcHuntAttrManager.ClearFightDelegate()
+            -- XDataCenter.XDlcHuntAttrManager.ClearFightDelegate()
             if res then
                 XDataCenter.DlcHuntManager.OnNotifyFightSettle(res.SettleData)
             end
@@ -749,7 +749,7 @@ XDlcRoomManagerCreator = function()
             return XMVCA.XDlcWorld:HasResult()
         end
 
-        XDataCenter.XDlcHuntAttrManager.InitFightDelegate()
+        -- XDataCenter.XDlcHuntAttrManager.InitFightDelegate()
         CS.StatusSyncFight.XFightClient.EnterFight(worldData, XPlayer.Id, fightArgs)
         _FightBeginData:SetWorldData(worldData)
     end
@@ -776,7 +776,7 @@ XDlcRoomManagerCreator = function()
         fightArgs.LuaSettleUiCb = function()
             local res = XMVCA.XDlcWorld._Model:GetResult()
             
-            XDataCenter.XDlcHuntAttrManager.ClearFightDelegate()
+            -- XDataCenter.XDlcHuntAttrManager.ClearFightDelegate()
             if res then
                 XDataCenter.DlcHuntManager.OnNotifyFightSettle(res.SettleData)
             end
@@ -785,7 +785,7 @@ XDlcRoomManagerCreator = function()
             return XMVCA.XDlcWorld:HasResult()
         end
 
-        XDataCenter.XDlcHuntAttrManager.InitFightDelegate()
+        -- XDataCenter.XDlcHuntAttrManager.InitFightDelegate()
         CS.StatusSyncFight.XFightClient.EnterFight(worldData, connectData.FightSerializeData, connectData.LevelSerializeData, XPlayer.Id, fightArgs)
         _FightBeginData:SetWorldData(worldData)
     end

@@ -74,8 +74,42 @@ function XFubenMainLineConfigs.GetChapterMainTemplates()
     return ChapterMainTemplates
 end
 
-function XFubenMainLineConfigs.GetChapterCfg()
-    return ChapterCfg
+-- 根据关卡获取ChapterMain.tab的Id
+function XFubenMainLineConfigs.GetStageMainId(stageId)
+    local chapterMainConfigs = XFubenMainLineConfigs.GetChapterMainTemplates()
+    for _, chapterMainConfig in pairs(chapterMainConfigs) do
+        for _, chapterId in pairs(chapterMainConfig.ChapterId) do
+            if XTool.IsNumberValidEx(chapterId) then
+                local chapter = XFubenMainLineConfigs.GetChapterCfg(chapterId)
+                if stageId == chapter.ExStageId then
+                    return chapterMainConfig.Id
+                end
+                for _, sId in pairs(chapter.StageId) do
+                    if sId == stageId then
+                        return chapterMainConfig.Id
+                    end
+                end
+            end
+        end
+    end
+end
+
+function XFubenMainLineConfigs.GetChapterCfg(id)
+    if id then
+        return ChapterCfg[id]
+    else
+        return ChapterCfg
+    end
+end
+
+function XFubenMainLineConfigs.GetConfigChapterTaskGroupId(id)
+    local config = XFubenMainLineConfigs.GetChapterCfg(id)
+    return config.TaskGroupId
+end
+
+function XFubenMainLineConfigs.GetConfigChapterIsBtnMissionWhite(id)
+    local config = XFubenMainLineConfigs.GetChapterCfg(id)
+    return config.IsBtnMissionWhite == 1
 end
 
 function XFubenMainLineConfigs.GetTreasureCfg()

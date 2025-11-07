@@ -23,10 +23,10 @@ function XUiPanelTheatre5SettleGem:InitGemContainers(customContainerCls)
     ---@type XUiGridTheatre5ShopGemSlot[]
     self.GridContainers = {}
 
-    local gemIdList = self._Control:GetCurSelfGemIdList(true)
+    local gemList = self._Control:GetCurSelfGemIdList(true)
     self.UiTheatre5GridGem.gameObject:SetActiveEx(false)
     
-    for i = 1, #gemIdList do
+    for i = 1, #gemList do
         local go = CS.UnityEngine.GameObject.Instantiate(self.UiTheatre5GridGem, self.UiTheatre5GridGem.transform.parent)
         
         ---@type XUiGridTheatre5ShopGemSlot
@@ -39,20 +39,22 @@ function XUiPanelTheatre5SettleGem:InitGemContainers(customContainerCls)
             grid:InitBindItem(XUiGridTheatre5SettleGem)
         end
         
-        grid:SetItemShowById(gemIdList[i])
+        --grid:SetItemShowById(gemIdList[i])
+        grid:SetItemData(gemList[i])
         
         self.GridContainers[i] = grid
     end
 end
 
 function XUiPanelTheatre5SettleGem:RefreshShow()
-    local gemIdList = self._Control:GetCurSelfGemIdList(true)
+    local gemList = self._Control:GetCurSelfGemIdList(true)
 
-    for i = 1, #gemIdList do
+    for i = 1, #gemList do
         local grid = self.GridContainers[i]
 
         if grid then
-            grid:SetItemShowById(gemIdList[i])
+            --grid:SetItemShowById(gemIdList[i])
+            grid:SetItemData(gemList[i])
         end
     end
 end

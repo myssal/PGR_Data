@@ -3,8 +3,8 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 local XChapterViewModel = require("XEntity/XFuben/XChapterViewModel")
 
 XPrequelManagerCreator = function()
-    local XPrequelManager = XExPrequelManager.New(XFubenConfigs.ChapterType.Prequel)
-    local XPrequelFragmentManager = XExFubenBaseManager.New(XFubenConfigs.ChapterType.CharacterFragment)  -- 管理角色碎片章节
+    local XPrequelManager = XExPrequelManager.New(XEnumConst.FuBen.ChapterType.Prequel)
+    local XPrequelFragmentManager = XExFubenBaseManager.New(XEnumConst.FuBen.ChapterType.CharacterFragment)  -- 管理角色碎片章节
 
     local UnlockChallengeStages = {}
     local RewardedStages = {}

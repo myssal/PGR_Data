@@ -228,8 +228,10 @@ function XExhibitionConfigs.GetExhibitionCfgByCharacterId(characterId)
 
     if cfg then
         return ExhibitionConfig[cfg.ExhibitionId]
-    else
-        XLog.Error('找不到角色Id：' .. tostring(characterId) .. ' 对应的Exhibition配置Id')
+    --else
+        --XLog.Error('找不到角色Id：' .. tostring(characterId) .. ' 对应的Exhibition配置Id')
+        -- 从4.0开始，新做了军团系统，旧的剧情系统配置不再维护，所以新的角色找不到，这里会报错
+        -- 但是由于策划的要求，旧系统暂时不予移除，保留恢复的可能性
     end
 end
 

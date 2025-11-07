@@ -70,6 +70,8 @@ function XGame2048Control:GetStageMaxBlockNumById(stageId)
     local info = self._Model:GetStageInfoById(stageId)
 
     if info then
+        -- 因为实际显示的积分文本和进行比较的值不一样, 服务端改下发Id
+        -- 且基于旧数据考虑服务端不方便改字段名称，所以维持原字段定义
         return info.MaxBlockNum or 0
     end
 
@@ -467,6 +469,16 @@ function XGame2048Control:GetStageTimeId(stageId)
     end
 end
 
+function XGame2048Control:GetStageDispelRule(stageId)
+    if XTool.IsNumberValid(stageId) then
+        ---@type XTableGame2048Stage
+        local stageCfg = self._Model:GetGame2048StageCfgs()[stageId]
+        if stageCfg then
+            return stageCfg.DispelRule
+        end
+    end
+end
+
 --- Buff
 function XGame2048Control:GetBuffIcon(buffId)
     if XTool.IsNumberValid(buffId) then
@@ -665,6 +677,10 @@ end
 function XGame2048Control:SetSelectStageIndex(chapterId, stageIndex)
     self._Model:SetSelectStageIndex(chapterId, stageIndex)
 end
+
+function XGame2048Control:GetCurStageDispelRule()
+    return self:GetStageDispelRule(self:GetCurStageId()) or 0
+end
 --endregion
 
 --region In Game
@@ -673,6 +689,7 @@ function XGame2048Control:EnterGameInit()
         self:RemoveSubControl(self.GameControl)
         self.GameControl = nil
     end
+    ---@type XGame2048GameControl
     self.GameControl = self:AddSubControl(require('XModule/XGame2048/InGame/XGame2048GameControl'))
 end
 
@@ -690,13 +707,15 @@ function XGame2048Control:ExitGameRelease(isOverGame)
             -- 清空缓存的回合数据
             self._Model:UpdateCurStageData(nil)
         else
-            -- 记录玩法内最后一个回合的初始状态缓存
-            self._Model:UpdateCurStageData(self.GameControl.TurnControl:GetStageContextFromClient())
+            if self.GameControl.TurnControl then
+                -- 记录玩法内最后一个回合的初始状态缓存
+                self._Model:UpdateCurStageData(self.GameControl.TurnControl:GetStageContextFromClient())
+            end
         end
         self:RemoveSubControl(self.GameControl)
         self.GameControl = nil
         self._StageLastMaxScore = nil
-        self._StageLastMaxBlockNum = nil
+        self._StageLastMaxBlockLevel = nil
         self._IsGameOver = false
         self._IsWaitForSettle = false
     end
@@ -711,15 +730,24 @@ function XGame2048Control:MarkStageLastMaxScore(stageId)
 end
 
 function XGame2048Control:MarkStageLastMaxBlockNum(stageId)
-    self._StageLastMaxBlockNum = self:GetStageMaxBlockNumById(stageId)
+    local blockId = self:GetStageMaxBlockNumById(stageId)
+    
+    local cfg = self:GetBlockCfgById(blockId)
+    
+    if cfg then
+        self._StageLastMaxBlockLevel = cfg.Level
+    else
+        self._StageLastMaxBlockLevel = blockId
+    end
+    
 end
 
 function XGame2048Control:GetStageLastMaxScore()
     return self._StageLastMaxScore
 end
 
-function XGame2048Control:GetStageLastMaxBlockNum()
-    return self._StageLastMaxBlockNum
+function XGame2048Control:GetStageLastMaxBlockLevel()
+    return self._StageLastMaxBlockLevel
 end
 
 function XGame2048Control:RequestGame2048EnterStage(stageId, cb)
@@ -775,6 +803,14 @@ function XGame2048Control:RequestGame2048GiveUp(cb)
         end
     end)
 end
+--endregion
+
+--region Configs
+
+function XGame2048Control:GetClientGameTransBlockTips()
+    return self._Model:GetClientConfigText('GameTransBlockTips')
+end
+
 --endregion
 
 return XGame2048Control

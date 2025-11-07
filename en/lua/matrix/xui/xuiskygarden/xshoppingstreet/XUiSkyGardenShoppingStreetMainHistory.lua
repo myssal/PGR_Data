@@ -47,7 +47,7 @@ function XUiSkyGardenShoppingStreetMainHistory:_InitDynamicTable()
 end
 
 function XUiSkyGardenShoppingStreetMainHistory:_RegisterButtonClicks()
-    -- self.BtnReturn.CallBack = function() self:OnBtnReturnClick() end
+    -- self.BtnReturn:AddEventListener(handler(self, self.OnBtnReturnClick))
 end
 --endregion
 

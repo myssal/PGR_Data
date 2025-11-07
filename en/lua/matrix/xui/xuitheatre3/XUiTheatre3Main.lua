@@ -4,6 +4,7 @@
 local XUiTheatre3Main = XLuaUiManager.Register(XLuaUi, "UiTheatre3Main")
 
 function XUiTheatre3Main:OnAwake()
+    XMVCA.XMainLine2:SetLastExhibitionChapterByChapterType(XEnumConst.FuBen.ChapterType.Theatre3)
     self:InitLineChange()
     self:AddEventListener()
 end

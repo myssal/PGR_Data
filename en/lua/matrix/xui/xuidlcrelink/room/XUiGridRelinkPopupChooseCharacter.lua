@@ -8,9 +8,9 @@ end
 
 function XUiGridRelinkPopupChooseCharacter:Refresh(characterId)
     self.CharacterId = characterId
-    self.RImgHeadIcon:SetRawImage(self._Control:GetCharacterSquareHeadImage(characterId))
-    self.TxtName.text = self._Control:GetCharacterName(characterId)
-    self.TxtTradeName.text = self._Control:GetCharacterTradeName(characterId)
+    self.RImgHeadIcon:SetRawImage(XMVCA.XCharacter:GetCharSmallHeadIcon(characterId))
+    self.TxtName.text = XMVCA.XCharacter:GetCharacterName(self.CharacterId)
+    self.TxtTradeName.text = XMVCA.XCharacter:GetCharacterTradeName(self.CharacterId)
 end
 
 function XUiGridRelinkPopupChooseCharacter:OnSelected(isSelect)

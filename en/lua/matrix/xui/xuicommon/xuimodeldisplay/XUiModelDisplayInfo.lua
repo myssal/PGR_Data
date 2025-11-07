@@ -10,6 +10,8 @@ function XUiModelDisplayInfo:Ctor(modelId)
     self.ComponentId = 0
     self.ComponentType = XEnumConst.UiModel.ComponentType.Base
     self.IsActive = true
+    ---@type XUiModelInfoBase[]
+    self.Infos = {}
     ---@type XUiModelDataBase[]
     self.ModelDatas = {}
 end
@@ -92,6 +94,13 @@ function XUiModelDisplayInfo:AddModelData(modelData)
     return self
 end
 
+---@param info XUiModelInfoBase
+function XUiModelDisplayInfo:AddInfo(info)
+    if info and not info:IsEmpty() then
+        table.insert(self.Infos, info)
+    end
+end
+
 ---@param helper XUiModelDisplayHelper
 function XUiModelDisplayInfo:InjectComponent(component, helper)
     if not component then
@@ -103,6 +112,25 @@ function XUiModelDisplayInfo:InjectComponent(component, helper)
             if not modelData:IsEmpty() and modelData:IsCompatibility(self.ComponentType, helper) then
                 modelData:InjectComponent(component)
             end
+        end
+    end
+end
+
+---@param controller XUiModelDisplayController
+function XUiModelDisplayInfo:InjectController(controller)
+    if not XTool.IsTableEmpty(self.Infos) then
+        for _, info in pairs(self.Infos) do
+            if not info:IsEmpty() then
+                info:InitModelController(controller, self)
+            end
+        end
+    end
+end
+
+function XUiModelDisplayInfo:GetInfoByType(infoType)
+    for _, info in pairs(self.Infos) do
+        if info:GetInfoType() == infoType then
+            return info
         end
     end
 end

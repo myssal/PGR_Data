@@ -14,6 +14,11 @@ local ParamEncryptionType = {
 local ParamsInsert = '{%%%%params%%%%}' -- %正则匹配有含义，表转义，实际对应字符串：{%%params%%}
 
 function XUrlAgency:OnInit()
+    self.UrlId = {
+        CloudGameAndroid = 13,  -- 安卓云游戏
+        CloudGameIos = 14,  -- IOS云游戏
+    }
+    
     self._ParamGetter = {
         ["sojumpparm"] = function(urlCfg)
             return self:GetSojumpParm()

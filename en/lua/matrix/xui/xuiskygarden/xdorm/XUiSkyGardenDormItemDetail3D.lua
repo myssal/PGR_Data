@@ -26,9 +26,7 @@ function XUiSkyGardenDormItemDetail3D:InitUi()
 end
 
 function XUiSkyGardenDormItemDetail3D:InitCb()
-    self.BtnBack.CallBack = function() 
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
 end
 
 function XUiSkyGardenDormItemDetail3D:InitView()
@@ -61,7 +59,10 @@ function XUiSkyGardenDormItemDetail3D:InitView()
             data.ActorRef:SetPosition(Vector3(p.x, p.y + positionY, p.z))
         end
         self._DragComponent:SetComponent(data.ActorRef)
+        self.Camera3D.transform.position = CS.StatusSyncFight.XFightClient.FightInstance.RLManager:GetRenderPos(self.Camera3D.transform.position)
     end
+
+    
 
     --endregion
 

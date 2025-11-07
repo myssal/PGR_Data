@@ -2,7 +2,7 @@ local CSXAudioManager = CS.XAudioManager
 local XExFubenActivityManager = require("XEntity/XFuben/XExFubenActivityManager")
 
 XMaverick2ManagerCreator = function()
-	local XMaverick2Manager = XExFubenActivityManager.New(XFubenConfigs.ChapterType.Maverick2, "Maverick2Manager")
+	local XMaverick2Manager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.Maverick2, "Maverick2Manager")
 
     -- 自定义数据
     local LastPassStageId = nil -- 上一次通关关卡id，登陆游戏后未打是为nil

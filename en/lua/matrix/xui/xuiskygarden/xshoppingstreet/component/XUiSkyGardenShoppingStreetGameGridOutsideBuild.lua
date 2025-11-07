@@ -75,10 +75,16 @@ function XUiSkyGardenShoppingStreetGameGridOutsideBuild:RefreshBuilding()
     self._ShopArea = self._Control:GetShopAreaByUiPos(self._ShopAreaPos, self._IsInside)
     local isEmpty = self._ShopArea:IsEmpty()
     if isEmpty or not self._ShopArea:IsUnlock() then
-        self:Close()
+        self.Edit.gameObject:SetActive(false)
+        self.PanelUnLock.gameObject:SetActive(false)
+        self.RedUpgrade.gameObject:SetActive(false)
+        self.ImgUpgrade.gameObject:SetActive(false)
+        self.ImgRed.gameObject:SetActive(false)
+        self.UiSkyGardenShoppingStreetGameGridConflict.gameObject:SetActive(false)
+        self.UiSkyGardenShoppingStreetGameGridOutsideBuild.NeedCallBack = false
         return
     end
-
+    self.UiSkyGardenShoppingStreetGameGridOutsideBuild.NeedCallBack = true
     self._IsUnlock = self._ShopArea:IsUnlock()
     local notHasShop = self._ShopArea:GetShopLevel() <= 0
     local showLock = not self._IsUnlock or notHasShop
@@ -146,8 +152,8 @@ end
 
 function XUiSkyGardenShoppingStreetGameGridOutsideBuild:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.UiSkyGardenShoppingStreetGameGridOutsideBuild.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridOutsideBuildClick() end
-    self.RedUpgrade.CallBack = function() self:OnRedUpgradeClick() end
+    self.UiSkyGardenShoppingStreetGameGridOutsideBuild:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridOutsideBuildClick))
+    self.RedUpgrade:AddEventListener(handler(self, self.OnRedUpgradeClick))
 end
 
 --endregion

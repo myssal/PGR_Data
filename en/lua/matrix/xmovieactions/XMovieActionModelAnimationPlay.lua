@@ -1,6 +1,6 @@
 local XMovieActionModelAnimationPlay = XClass(XMovieActionBase,"XMovieActionModelAnimationPlay")
 
-function XMovieActionModelAnimationPlay:Ctor(actionData)
+function XMovieActionModelAnimationPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.RoleId = params[1]

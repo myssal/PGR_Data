@@ -40,6 +40,11 @@ function XUiSkillDetails:OnStart(characterId, skills, pos, gridIndex)
     XDataCenter.ItemManager.AddCountUpdateListener(XDataCenter.ItemManager.ItemId.Coin, function()
         self:RefreshSkillDataByFastBuy()
     end, self.Transform)
+
+    -- 生命树
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerSkillUnderVisible"))
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    self.ImgTreeBg.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
 end
 
 function XUiSkillDetails:RefreshDataByChangePage(characterId, skills, pos, gridIndex)
@@ -188,6 +193,19 @@ function XUiSkillDetails:SetBtnInfo(btn, subSkillInfo)
     else
         self:ActiveImageLock(ImgLocks, subSkillInfo.Level <= 0)
         btn:ShowReddot(XMVCA.XCharacter:CheckCanUpdateSkill(self.CharacterId, subSkillInfo.SubSkillId, subSkillInfo.Level))
+    end
+
+    -- 生命树
+    local powerIds = XMVCA.XCharacter:GetCharacterPowerSkillIds(self.CharacterId)
+    local isShowTreeIcon = (not XTool.IsTableEmpty(powerIds)) and table.contains(powerIds, subSkillInfo.SubSkillId)
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSkillVisible"))
+    btn:ShowTag(isShowTreeIcon and isShowTreeControl)
+    self.IsShowTreeBg = (isShowTreeIcon and (not self.IsShowTreeBg)) and true or self.IsShowTreeBg
+    if isShowTreeIcon then
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
+        if powerConfig and btn.TagObj then
+            btn.TagObj:GetComponent("Image"):SetSprite(powerConfig.IconSkill)
+        end
     end
 end
 

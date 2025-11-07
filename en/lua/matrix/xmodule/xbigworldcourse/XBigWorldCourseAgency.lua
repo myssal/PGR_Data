@@ -30,13 +30,37 @@ function XBigWorldCourseAgency:OnNotifyBigWorldCourseExploreProgress(data)
     self._Model:UpdateExploreProgressData(data.VersionId, data.ExploreId, data.PoiId, data.Count)
 end
 
+function XBigWorldCourseAgency:OpenMainUi(contentId, ignorePipeline)
+    if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldCourse) then
+        return false
+    end
+
+    if not XMVCA.XBigWorldUI:CheckAllowOpenWithImpact("UiBigWorldProcess") then
+        return false
+    end
+
+    if ignorePipeline then
+        XMVCA.XBigWorldUI:Open("UiBigWorldProcess", 0, contentId)
+    else
+        local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
+        if XTool.IsNumberValid(id) then
+            XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
+                --- Todo zjx 后续优化弹窗队列后一并优化
+                XMVCA.XBigWorldUI:Open("UiBigWorldProcess", id, contentId)
+            end)
+        end
+    end
+
+    return true
+end
+
 function XBigWorldCourseAgency:CheckAllAchieved()
     return self:CheckAllTaskAchieved() or self:CheckAllExploreAchieved() or self:CheckAllNewCore()
 end
 
 function XBigWorldCourseAgency:CheckVersionAchieved(versionId)
     return self:CheckVersionTaskAchieved(versionId) or self:CheckVersionExploreAchieved(versionId) or
-               self:CheckVersionNewCore(versionId)
+            self:CheckVersionNewCore(versionId)
 end
 
 function XBigWorldCourseAgency:CheckAllTaskAchieved()
@@ -45,7 +69,7 @@ end
 
 function XBigWorldCourseAgency:CheckVersionTaskAchieved(versionId)
     return self:CheckVersionTaskRewardAchieved(versionId) or self:CheckVersionTaskProgressRewardAchieved(versionId) or
-               self:CheckVersionTaskNew(versionId)
+            self:CheckVersionTaskNew(versionId)
 end
 
 function XBigWorldCourseAgency:CheckAllTaskRewardAchieved()

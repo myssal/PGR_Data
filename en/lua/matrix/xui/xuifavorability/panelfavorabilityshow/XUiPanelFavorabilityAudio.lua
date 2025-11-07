@@ -165,7 +165,15 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
             self.CurrentPlayAudio = XLuaAudioManager.PlayCvWithCvType( clickAudio.config.CvId, self.Parent.CvType)
         end
 
-        self.CurrentPlayAudio.FinishCb = function() 
+        local isMuteBgm = clickAudio.config.TurnOffBgm
+        if isMuteBgm and self.CurrentPlayAudio then
+            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
+        end
+
+        self.CurrentPlayAudio.FinishCb = function()
+            if isMuteBgm then
+                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+            end
             if progress < 1 then
                 return
             end

@@ -41,8 +41,8 @@ function XBigWorldControl:OpenExplore()
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenExplore()
 end
 
-function XBigWorldControl:OpenPhoto()
-    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto()
+function XBigWorldControl:OpenPhoto(isSequence, ...)
+    XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto(isSequence, ...)
 end
 
 function XBigWorldControl:OpenTeaching()

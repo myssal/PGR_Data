@@ -10,7 +10,7 @@ end
 
 function XUiBigWorldProcessCoreStoryGrid:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnGo.CallBack = Handler(self, self.OnBtnGoClick)
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClick))
 end
 
 ---@param elementEntity XBWCourseCoreElementEntity

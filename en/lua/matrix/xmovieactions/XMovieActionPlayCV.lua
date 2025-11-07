@@ -1,12 +1,12 @@
 local XMovieActionPlayCV = XClass(XMovieActionBase,"XMovieActionPlayCV")
 
-function XMovieActionPlayCV:Ctor(actionData)
+function XMovieActionPlayCV:OnInit(actionData)
     local params = actionData.Params
     self.RoleId = params[1]
     self.CueId = XDataCenter.MovieManager.ParamToNumber(params[2])
 end
 
-function XMovieActionPlayCV:OnInit()
+function XMovieActionPlayCV:OnEnter()
     local role = self.UiRoot:GetModelActor(self.RoleId)
     self.AudioInfo = role:PlayCV(self.CueId)
 end

@@ -32,12 +32,15 @@ function XUiStageMemory:OnStart()
     local list = self.PanelList
     list.CallBack = function(index)
         index = index + 1
+        self._SelectedIndex = index
         self:UpdateStagePoints(index)
         self:UpdateArrow(index)
     end
 end
 
 function XUiStageMemory:OnEnable()
+    XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.StageMemory)
+    
     XEventManager.AddEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_TIME, self.UpdateTime, self)
     XEventManager.AddEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_REWARD, self.Update, self)
     self:Update()
@@ -52,6 +55,11 @@ end
 function XUiStageMemory:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_TIME, self.UpdateTime, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_STAGE_MEMORY_UPDATE_REWARD, self.Update, self)
+end
+
+function XUiStageMemory:Close()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.StageMemory)
+    self.Super.Close(self)
 end
 
 function XUiStageMemory:UpdateTime()
@@ -90,6 +98,11 @@ function XUiStageMemory:Update()
     XTool.UpdateDynamicItem(self._Points, points, self.PanelState, XUiStageMemoryProgressPoint, self)
 
     self.ImgProgress.fillAmount = data.PassedStageAmount / data.StageAmount
+
+    -- 更新奖励后，需要重新定位
+    if self._SelectedIndex then
+        self:UpdateStagePoints(self._SelectedIndex)
+    end
 end
 
 function XUiStageMemory:OnClickLeft()

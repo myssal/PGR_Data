@@ -11,9 +11,7 @@ function XUiGridSGStageEndless:OnStart()
 end
 
 function XUiGridSGStageEndless:InitCb()
-    self.BtnGiveup.CallBack = function() 
-        self:OnBtnGiveupClick()
-    end
+    self.BtnGiveup:AddEventListener(handler(self, self.OnBtnGiveupClick))
 end
 
 function XUiGridSGStageEndless:InitView()

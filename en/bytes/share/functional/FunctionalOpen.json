@@ -7,7 +7,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770100
+            770417
         ]
     },
     {
@@ -79,7 +79,7 @@
     },
     {
         "Id": 10,
-        "Name": "Main Interface Right Side Event Button",
+        "Name": "主界面右侧活动按钮",
         "Priority": 6,
         "Hint": 0,
         "Type": 1,
@@ -87,7 +87,7 @@
     },
     {
         "Id": 11,
-        "Name": "Main Interface Left Side Event Button",
+        "Name": "主界面左侧活动按钮",
         "Priority": 6,
         "Hint": 0,
         "Type": 1,
@@ -95,7 +95,7 @@
     },
     {
         "Id": 12,
-        "Name": "Close-up Image",
+        "Name": "打脸图",
         "Priority": 6,
         "Hint": 0,
         "Type": 1,
@@ -103,7 +103,15 @@
     },
     {
         "Id": 13,
-        "Name": "CV Entry Detection",
+        "Name": "CV入口检测",
+        "Priority": 6,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 14,
+        "Name": "Main Interface Music Player",
         "Priority": 6,
         "Hint": 0,
         "Type": 1,
@@ -121,7 +129,7 @@
         "Id": 102,
         "Name": "Member-Promote",
         "Priority": 8,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -137,7 +145,7 @@
         "Id": 104,
         "Name": "Member-Skills",
         "Priority": 10,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -145,11 +153,11 @@
         "Id": 105,
         "Name": "Member - Transcendant",
         "Priority": 55,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            774400
+            770400
         ]
     },
     {
@@ -175,7 +183,7 @@
         "Id": 108,
         "Name": "Members - Uniframe Leap",
         "Priority": 11,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -194,7 +202,7 @@
         "Id": 201,
         "Name": "Equip",
         "Priority": 11,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -202,7 +210,7 @@
         "Id": 202,
         "Name": "Equipment - Enhance",
         "Priority": 12,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -210,7 +218,7 @@
         "Id": 203,
         "Name": "Equipment - Resonance",
         "Priority": 13,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -218,7 +226,7 @@
         "Id": 204,
         "Name": "Gear - Quick Enhance",
         "Priority": 14,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
@@ -229,7 +237,7 @@
         "Id": 206,
         "Name": "Equipment - Quick Train",
         "Priority": 14,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -237,11 +245,11 @@
         "Id": 207,
         "Name": "Equipment Goal - Recommended",
         "Priority": 14,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            770400
         ]
     },
     {
@@ -252,7 +260,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            770400
         ]
     },
     {
@@ -270,7 +278,7 @@
         "Id": 301,
         "Name": "Warehouse",
         "Priority": 15,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -289,7 +297,7 @@
         "Id": 402,
         "Name": "Research - Equipment",
         "Priority": 17,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -308,15 +316,18 @@
         "Id": 501,
         "Name": "Mission",
         "Priority": 18,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
-        "FunctionType": 1
+        "FunctionType": 1,
+        "Condition": [
+            770427
+        ]
     },
     {
         "Id": 502,
         "Name": "Mission - Story",
         "Priority": 19,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -324,18 +335,18 @@
         "Id": 503,
         "Name": "Mission - Daily",
         "Priority": 20,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770500
+            770425
         ]
     },
     {
         "Id": 504,
         "Name": "Mission - Event",
         "Priority": 21,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -347,14 +358,14 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770500
+            770411
         ]
     },
     {
         "Id": 601,
         "Name": "Team",
         "Priority": 23,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -373,7 +384,7 @@
         "Id": 603,
         "Name": "Team - Achievement",
         "Priority": 25,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -381,7 +392,7 @@
         "Id": 604,
         "Name": "Team - Review",
         "Priority": 26,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -389,7 +400,7 @@
         "Id": 701,
         "Name": "Mail",
         "Priority": 27,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -401,7 +412,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770700
+            770409
         ]
     },
     {
@@ -412,7 +423,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            6000
+            770409
         ]
     },
     {
@@ -423,7 +434,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770700
+            770409
         ]
     },
     {
@@ -452,7 +463,7 @@
         "Id": 903,
         "Name": "Dormitory Commission",
         "Priority": 32,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
@@ -467,29 +478,29 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            770400
         ]
     },
     {
         "Id": 1002,
         "Name": "Event Shop",
         "Priority": 33,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            770400
         ]
     },
     {
         "Id": 1003,
         "Name": "Voucher Shop - Voucher Exchange",
         "Priority": 34,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            5001
         ]
     },
     {
@@ -530,7 +541,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            771400
+            770408
         ]
     },
     {
@@ -552,7 +563,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            84101226
+            770400
         ]
     },
     {
@@ -590,13 +601,13 @@
     },
     {
         "Id": 1308,
-        "Name": "Festival Mission Event",
+        "Name": "Festival Mission Event (Gacha Story)",
         "Priority": 59,
         "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772250
+            770410
         ]
     },
     {
@@ -691,29 +702,29 @@
         "Id": 1601,
         "Name": "Memory Rescue",
         "Priority": 53,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            862859
+            770423
         ]
     },
     {
         "Id": 1701,
         "Name": "Interlude/Construct Shard",
         "Priority": 35,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            774200
+            770400
         ]
     },
     {
         "Id": 1800,
         "Name": "Celica's Class",
         "Priority": 79,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
@@ -739,7 +750,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            774500
+            770424
         ]
     },
     {
@@ -789,6 +800,14 @@
         ]
     },
     {
+        "Id": 1905,
+        "Name": "Guild Music Player",
+        "Priority": 38,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
         "Id": 2001,
         "Name": "Support",
         "Priority": 39,
@@ -803,7 +822,7 @@
         "Id": 2100,
         "Name": "Collection",
         "Priority": 99,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -852,7 +871,7 @@
         "Id": 2400,
         "Name": "Photo System",
         "Priority": 114,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -906,7 +925,7 @@
         "Id": 6000,
         "Name": "Calendar System [This needs to be hidden. Unlock requirement changed into 120000. Unlocking changed into 5004]",
         "Priority": 123,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
@@ -933,11 +952,11 @@
         "Id": 10102,
         "Name": "Hidden Story",
         "Priority": 41,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            771400
+            770400
         ]
     },
     {
@@ -953,9 +972,9 @@
     },
     {
         "Id": 10104,
-        "Name": "Main Story Mission",
+        "Name": "主线副本",
         "Priority": 35,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1
     },
@@ -1084,13 +1103,13 @@
     },
     {
         "Id": 10306,
-        "Name": "Festival Stage",
+        "Name": "Festival Mission Event (Side Story - Event Records)",
         "Priority": 46,
         "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772250
+            770400
         ]
     },
     {
@@ -1119,11 +1138,11 @@
         "Id": 10309,
         "Name": "Simulated Battlefield",
         "Priority": 49,
-        "Hint": 1,
+        "Hint": 0,
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            772800
+            770422
         ]
     },
     {
@@ -1178,7 +1197,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            1007017
+            770400
         ]
     },
     {
@@ -1572,7 +1591,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            30406
+            770400
         ]
     },
     {
@@ -1584,6 +1603,17 @@
         "FunctionType": 1,
         "Condition": [
             30406
+        ]
+    },
+    {
+        "Id": 10354,
+        "Name": "Quiz Event",
+        "Priority": 57,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            774800
         ]
     },
     {
@@ -2163,7 +2193,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            770100
+            770417
         ]
     },
     {
@@ -2582,8 +2612,7 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            774700,
-            774501
+            6000
         ]
     },
     {
@@ -2789,7 +2818,29 @@
         "Type": 1,
         "FunctionType": 1,
         "Condition": [
-            200000
+            30406
+        ]
+    },
+    {
+        "Id": 10494,
+        "Name": "Character Story",
+        "Priority": 55,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            770400
+        ]
+    },
+    {
+        "Id": 10495,
+        "Name": "Quick Clear",
+        "Priority": 55,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            30406
         ]
     },
     {
@@ -2827,7 +2878,7 @@
     },
     {
         "Id": 200003,
-        "Name": "空花宿舍",
+        "Name": "Babylonia Dormitory",
         "Priority": 70,
         "Hint": 0,
         "Type": 1,
@@ -2870,14 +2921,14 @@
         ]
     },
     {
-        "Id": 400000,
-        "Name": "CombPassport",
+        "Id": 200007,
+        "Name": "Babylonia POV Switch",
         "Priority": 70,
         "Hint": 0,
         "Type": 1,
-        "FunctionType": 1,
+        "FunctionType": 2,
         "Condition": [
-            775500
+            50001551
         ]
     },
     {
@@ -2889,6 +2940,17 @@
         "FunctionType": 1,
         "Condition": [
             3000033
+        ]
+    },
+    {
+        "Id": 400000,
+        "Name": "CombPassport",
+        "Priority": 70,
+        "Hint": 0,
+        "Type": 1,
+        "FunctionType": 1,
+        "Condition": [
+            775500
         ]
     }
 ]

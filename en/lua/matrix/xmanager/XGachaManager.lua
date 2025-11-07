@@ -38,7 +38,6 @@ XGachaManagerCreator = function()
     end
     
     function XGachaManager.InitConfig()
-        XGachaManager.SetGachaProbShowInfo()
         local gachaCfg = XGachaConfigs.GetGachas()
         for k, v in pairs(gachaCfg) do
             XGachaManager.SetGachaRewardInfo(k)
@@ -164,20 +163,20 @@ XGachaManagerCreator = function()
     end
     
     function XGachaManager.GetGachaProbShowById(gaChaId)
-        local gachaProbShowInfo = GachaProbShows[gaChaId]
-        if gachaProbShowInfo then
-            table.sort(gachaProbShowInfo, function(a, b)
-                    if a.IsRare == b.IsRare then
-                        return a.Id < b.Id
-                    else
-                        return a.IsRare == XGachaConfigs.RareType.Rare
-                    end
-                end)
-        else
-            XLog.Error("ProbShows's Data Is Null By GachaId :"..gaChaId)
+        if GachaProbShows[gaChaId] then
+            return GachaProbShows[gaChaId]
         end
-        
-        return gachaProbShowInfo
+
+        ---@type XTableGachaProbShow
+        local gachaProbShowCfg = XGachaConfigs.GetGachaProbShows()[gaChaId]
+        local res = {}
+        for i = 1, #gachaProbShowCfg.Name, 1 do
+            local probShowList = string.Split(gachaProbShowCfg.ProbShowList[i], '|')
+            local config = {GachaId = gaChaId, IsRare = gachaProbShowCfg.IsRare[i], TemplateId = gachaProbShowCfg.TemplateId[i] or 0, Name = gachaProbShowCfg.Name[i], Type = gachaProbShowCfg.Type[i], ProbShow = probShowList}
+            table.insert(res, config)
+        end
+        GachaProbShows[gaChaId] = res
+        return res
     end
 
     function XGachaManager.GetCurCountOfAll(gachaId)
@@ -304,6 +303,7 @@ XGachaManagerCreator = function()
         GachaLogList[gachaId] = logList
     end
 
+    --- 这个数据虽然初始化是静态读表 但是每次登录后会根据服务器下发的数据修改其封装的缓存内容（如剩余抽卡次数）
     function XGachaManager.SetGachaRewardInfo(gachaId)
         local gachaRewardCfg = XGachaConfigs.GetGachaReward()
         local tempGachaInfo = GachaRewardInfos[gachaId]
@@ -323,14 +323,6 @@ XGachaManagerCreator = function()
                 entry.Cfg = reward
                 entry.CurCount = reward.UsableTimes or 0
             end
-        end
-    end
-
-    function XGachaManager.SetGachaProbShowInfo()
-        local gachaProbShowCfg = XGachaConfigs.GetGachaProbShows()
-        for _, probShow in pairs(gachaProbShowCfg) do
-            GachaProbShows[probShow.GachaId] = GachaProbShows[probShow.GachaId] or {}
-            table.insert(GachaProbShows[probShow.GachaId],probShow)
         end
     end
     

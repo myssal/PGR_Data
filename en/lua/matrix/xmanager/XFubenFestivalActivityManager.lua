@@ -2,7 +2,7 @@ local XExFubenFestivalManager = require("XEntity/XFuben/XExFubenFestivalManager"
 XFubenFestivalActivityManagerCreator = function()
     local XFestivalChapter = require("XEntity/XFestival/XFestivalChapter") 
     ---@class XFubenFestivalActivityManager
-    local XFubenFestivalActivityManager = XExFubenFestivalManager.New(XFubenConfigs.ChapterType.Festival)
+    local XFubenFestivalActivityManager = XExFubenFestivalManager.New(XEnumConst.FuBen.ChapterType.Festival)
     ---@type XFestivalChapter[]
     local FestivalChapters = {}
     XFubenFestivalActivityManager.StageFuben = 1    --战斗

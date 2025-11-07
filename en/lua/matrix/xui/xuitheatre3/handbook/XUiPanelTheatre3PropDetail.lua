@@ -128,6 +128,10 @@ function XUiPanelTheatre3PropDetail:RefreshView()
             end
             -- 默认隐藏
             self:OnHideSuitEffectDetail()
+        else
+            for _, grid in pairs(self.GridEquipmentList) do
+                grid:Close()
+            end
         end
     end
 end
@@ -140,6 +144,11 @@ function XUiPanelTheatre3PropDetail:RefreshStatus()
     self.PanelSet.gameObject:SetActiveEx(isSet)
     self.PanelProp.gameObject:SetActiveEx(isProp)
     self.TextLock.gameObject:SetActiveEx(false)
+    if not isSet then
+        for _, grid in pairs(self.GridEquipmentList) do
+            grid:Close()
+        end
+    end
 end
 
 function XUiPanelTheatre3PropDetail:OnShowSuitEffectDetail()

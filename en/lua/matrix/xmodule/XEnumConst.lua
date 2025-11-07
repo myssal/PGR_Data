@@ -391,6 +391,7 @@ XEnumConst = {
             Theatre5 = 105, -- 肉鸽5.0
             SkyGarden = 106, --空花
             DlcRelink = 107, -- 联机共斗
+            FavorabilityStory = 108, -- 好感度剧情
         },
         CharacterLimitType = {
             All = 0, --构造体/感染体
@@ -1040,6 +1041,7 @@ XEnumConst = {
             Zoom = 2, -- 跃升（废弃）
             Multi = 3, -- 多关卡（废弃）
             Challenge = 4, -- 挑战关
+            Monster = 6, -- 消灭一定数量的怪物
         },
         AttributeLevelStr = {
             [1] = "B",
@@ -2374,6 +2376,9 @@ XEnumConst = {
     },
     -- 主线2
     MAINLINE2 = {
+        SPECIAL_MAINID = {
+            THIRTEENTH = 1013,      -- 第13章，终焉福音
+        },
         -- 章节故事类型
         STORY_TYPE = {
             MAINLINE = 1, -- 主线
@@ -2410,7 +2415,26 @@ XEnumConst = {
             NEW = "0290FF", -- 新章节
             LIMIT_TIME = "6738F8", -- 限时开放
             SPECIAL = "F83847", -- 特殊页签，配置表配置开放
-        }
+        },
+        -- 进入章节的界面的方式
+        ENTER_CHAPTER_WAY_TYPE = {
+            MAINLINE = 1,       -- 旧主线界面
+            EXHIBITION = 2,     -- 时间轴
+            ACTIVITY = 3,       -- 活动页面
+            FIGHT = 4,          -- 战斗面板
+            PLOT = 5,           -- 角色剧情
+        },
+        -- 时间轴的副本类型
+        EXHIBITION_FUBEN_TYPE = {
+            MAINLINE = 1,               -- 主线/浮点纪实
+            EXTRA = 2,                  -- 外篇旧闻
+            CHALLENGE = 3,              -- 多维演绎
+        },
+        EXHIBITION_MAX_SCALE = 1,   -- 时间轴最大缩放
+        EXHIBITION_MIN_SCALE = 0.4, -- 时间轴最小缩放
+        EXHIBITION_SHOW_INIT_SCALE = 0.9,       -- 时间轴首次打开的初始大小
+        EXHIBITION_SHOW_DETAIL_SCALE = 0.55,    -- 时间轴显示章节详情UI的Scale值
+        EXHIBITION_SHOW_BRIEF_SCALE = 0.5,      -- 时间轴显示章节简略UI的Scale值
     },
     BossSingle = {
         LevelType = {
@@ -2907,6 +2931,7 @@ XEnumConst = {
             Normal = 0,
             All = 1,
             Quest = 2,
+            SGDorm = 3, -- 宿舍
         }
     },
     -- 首席打枪
@@ -3009,6 +3034,12 @@ XEnumConst = {
         Luna = 2,
         Karenina = 3,
         Vera = 4,
+        Cibeizhe = 5,
+        StroyStageMode = 
+        {
+            LineMode = 1,
+            TreeMode = 2,
+        }
     },
     Maverick3 = {
         Currency = {
@@ -3330,6 +3361,8 @@ XEnumConst = {
             AnimationNodeVisibility = 3, -- 动画节点控制
             Camera = 4, -- 相机
             Bone = 5, -- 动态骨骼
+            PartCombine = 6, --部位合并
+            Effect = 7, -- 特效
         },
     },
     TeamTypeId = {
@@ -3356,6 +3389,39 @@ XEnumConst = {
         BountyChallenge = 170,
         --友情提示，需要在TeamType.tab增加配置，这是保存在服务端的队伍数据，不然会报错
     },
+    DlcRelink = {
+        DefaultSelfIndex = 1, -- 默认自己在队伍中的位置
+        EquipSlotCount = 5, -- 装备槽数量
+        FactorType = {
+            MainSkill = 1, -- 技能词条
+            SkillAddition = 2, -- 技能伤害加成词条
+            Attribute = 3, -- 属性词条
+        },
+        ChatType = {
+            Text = 1, -- 文本
+            Emoji = 2, --表情
+        },
+        OccTypeEnum = {
+            Attacker = 1, -- 进攻
+            Armor = 2, -- 装甲
+            Assist = 3, -- 辅助
+        },
+        ItemType = {
+            Equ = 1, -- 装备
+        },
+        EquipType = {
+            None = 0,
+            Main = 1, -- 主要装备
+            Normal = 2, -- 普通装备
+        },
+        EquipSlotIndex = {
+            MainSlot = 1, -- 主控装备
+            NormalSlot1 = 2, -- 普通装备槽1
+            NormalSlot2 = 3, -- 普通装备槽2
+            NormalSlot3 = 4, -- 普通装备槽3
+            NormalExpand1 = 5, -- 扩展普通装备槽
+        },
+    },
     HelpCourse = {
         UiHelpType = {
             Default = 1, -- 常规动态列表图片样式
@@ -3363,5 +3429,84 @@ XEnumConst = {
             PopStyle = 3,
             Collections = 4, -- 集成样式，包含多个子教学
         }   
-    }
+    },
+    Race = {
+        ---单场比赛状态
+        RoundState = {
+            Guess = 1, --竞猜阶段
+            WaitStart = 2, --等待比赛开始
+            InProgress = 3, --比赛进行中
+            End = 4, --全部赛程结束
+        },
+        ---赛事状态
+        MatchState = {
+            Guess = 1, --竞猜阶段
+            GuessEnd = 2, --竞猜结束
+        },
+        Sort = {
+            Id = 0,
+            Support = 1,
+            Speed = 2,
+            Acc = 3,
+            Drift = 4,
+            Luck = 5,
+        },
+        Order = {
+            Sequential = 1, --正序
+            Reverse = 2, --倒序
+        },
+        ---预测类型
+        PropertyType = {
+            Rank = 1, --名次
+            Times = 2, --次数
+            Time = 3, --时间
+            Speed = 4, --速度
+        },
+        GuessType = {
+            Round = 1, --单场竞猜
+            Match = 2, --赛事竞猜
+        },
+        ---竞猜状态
+        GuessState = {
+            WaitOpen = 1, --未开奖
+            GuessSuccess = 2, --猜中
+            GuessFail = 3, --猜错
+        },
+        ---赛制
+        Format = {
+            PointsRace = 1, --积分赛
+            Eliminator = 2, --淘汰赛
+        },
+        ---排名变化页签显示类型
+        RankTag = {
+            None = 0, --不显示晋级和淘汰
+            UpOrDown = 1, ---显示晋级和淘汰
+            Champion = 2, --只显示总冠军
+        },
+        TipAlign = {
+            Left = 1, -- 居左
+            Right = 2, -- 居右
+        },
+        Tip = {
+            Chat = 1, -- 聊天播报
+            Main = 2, -- 主界面播报
+        },
+        GameMode = {
+            Local = 0,      -- 本地测试
+            LiveStream = 1, -- 直播
+            Playback = 2, -- 回放
+        },
+        SceneType = {
+            Main = 1,
+            Predict = 2,
+            Settlement = 3,
+        },
+    },
+    Purchase = {
+        Recommend = {
+            Luna = 206, --新手超S限定补给包（露娜）
+            CompanyPackage = 207, --新手三日限定补给+月卡Plus
+            ComboPackage = 213, -- 捆绑包，折扣需要动态计算
+        },
+    },
 }

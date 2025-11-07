@@ -33,6 +33,8 @@ XDlcHuntAttrManagerCreator = function()
         [XDlcNpcAttribType.WalkSpeedCOE] = true,
         [XDlcNpcAttribType.SprintSpeed] = true,
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
+        [XDlcNpcAttribType.BreakGauge] = true,
+        [XDlcNpcAttribType.OverDrive] = true,
     }
 
     local function ToXAttrib(attrTable)
@@ -76,7 +78,7 @@ XDlcHuntAttrManagerCreator = function()
         return result
     end
 
-    local function GetNpcBaseAttrib(npcTemplateId)
+    function XDlcHuntAttrManager.GetNpcBaseAttrib(npcTemplateId)
         local template = CS.StatusSyncFight.XNpcConfig.GetTemplate(npcTemplateId)
         if not template then
             return {}
@@ -86,7 +88,7 @@ XDlcHuntAttrManagerCreator = function()
         return ToXAttrib(attrTable)
     end
 
-    local function GetNpcAttrib(worldNpcData)
+    function XDlcHuntAttrManager.GetNpcAttrib(worldNpcData)
         local npcId = worldNpcData.Id
         local character = XDataCenter.DlcHuntCharacterManager.GetCharacterByNpcId(npcId)
         local attrTable
@@ -109,7 +111,7 @@ XDlcHuntAttrManagerCreator = function()
         return ToXAttrib(attrTable)
     end
 
-    local function GetWorldNpcBornMagicLevelMap(worldNpcData)
+    function XDlcHuntAttrManager.GetWorldNpcBornMagicLevelMap(worldNpcData)
         local magicDict = {}
         for i, chipData in pairs(worldNpcData.Chips) do
             ---@type XDlcHuntChip
@@ -125,18 +127,6 @@ XDlcHuntAttrManagerCreator = function()
             end
         end
         return magicDict
-    end
-
-    function XDlcHuntAttrManager.InitFightDelegate()
-        CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = GetNpcBaseAttrib
-        CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = GetNpcAttrib
-        CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = GetWorldNpcBornMagicLevelMap
-    end
-
-    function XDlcHuntAttrManager:ClearFightDelegate()
-        CS.StatusSyncFight.XFightDelegate.GetDlcBaseAttrib = nil
-        CS.StatusSyncFight.XFightDelegate.GetDlcNpcAttrib = nil
-        CS.StatusSyncFight.XFightDelegate.GetWorldNpcBornMagicLevelMap = nil
     end
 
     -- XDlcHuntAttrManager.Init()

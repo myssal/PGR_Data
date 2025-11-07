@@ -7,7 +7,7 @@ local XUiSkyGardenShoppingStreetUpgradeGridUpgrade = XClass(XUiNode, "XUiSkyGard
 
 function XUiSkyGardenShoppingStreetUpgradeGridUpgrade:OnStart()
     self._BuildingAttrs = {}
-    self.GridUpgrade.CallBack = function() self:OnGridUpgradeClick() end
+    self.GridUpgrade:AddEventListener(handler(self, self.OnGridUpgradeClick))
 end
 
 function XUiSkyGardenShoppingStreetUpgradeGridUpgrade:OnGridUpgradeClick()

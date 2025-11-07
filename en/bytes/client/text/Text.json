@@ -201,7 +201,7 @@
     },
     {
         "Key": "CharacterFullName",
-        "Text": "{0} - {1}"
+        "Text": "{0}: {1}"
     },
     {
         "Key": "CharacterFullName2",
@@ -281,7 +281,7 @@
     },
     {
         "Key": "EquipSuitPrefabCount",
-        "Text": " <color=#ff4e4e>{0}</color>/{1}"
+        "Text": "<color=#ff4e4e>{0}</color>/{1}"
     },
     {
         "Key": "EquipSuitPrefabCountMax",
@@ -410,6 +410,10 @@
     {
         "Key": "SettingSave",
         "Text": "Settings saved"
+    },
+    {
+        "Key": "SettingHighFrameRateTips",
+        "Text": "Babylonia's high-resolution mode puts a heavy load on device performance and may cause overheating or lag.\\nWe recommend adjusting your graphics settings."
     },
     {
         "Key": "TeamLevelToOpen",
@@ -625,7 +629,7 @@
     },
     {
         "Key": "Mouth",
-        "Text": " Month(s) "
+        "Text": "Month(s)"
     },
     {
         "Key": "Monthly",
@@ -633,39 +637,38 @@
     },
     {
         "Key": "Week",
-        "Text": " Week(s) "
+        "Text": "Week(s)"
     },
     {
         "Key": "Year",
-        "Text": " Year(s) "
+        "Text": "Year(s)"
     },
     {
         "Key": "Day",
-        "Text": " day(s) "
+        "Text": "day(s)"
     },
     {
         "Key": "Second",
-        "Text": " sec "
+        "Text": "sec"
     },
     {
         "Key": "Minute",
-        "Text": " min "
+        "Text": "min"
     },
     {
         "Key": "Minutes",
-        "Text": " min(s)"
+        "Text": "min(s)"
     },
     {
         "Key": "Snap",
         "Text": "{0}%Off"
     },
     {
-        "Key": "QuantifiersA",
-        "Text": " "
+        "Key": "QuantifiersA"
     },
     {
         "Key": "Hour",
-        "Text": " hour(s) "
+        "Text": "hour(s)"
     },
     {
         "Key": "Aha",
@@ -733,19 +736,19 @@
     },
     {
         "Key": "ToolMonthBefore",
-        "Text": " month(s) ago"
+        "Text": "month(s) ago"
     },
     {
         "Key": "ToolDayBrfore",
-        "Text": " day(s) ago"
+        "Text": "day(s) ago"
     },
     {
         "Key": "ToolHourBefore",
-        "Text": " hour(s) ago"
+        "Text": "hour(s) ago"
     },
     {
         "Key": "ToolMinuteBefore",
-        "Text": " minute(s) ago"
+        "Text": "minute(s) ago"
     },
     {
         "Key": "FriendCount",
@@ -761,7 +764,7 @@
     },
     {
         "Key": "FriendLatelyLogin",
-        "Text": "Last online: "
+        "Text": "Last online:"
     },
     {
         "Key": "FriendRemoveTip",
@@ -845,7 +848,7 @@
     },
     {
         "Key": "TimeSoldOut",
-        "Text": "Time remaining: {0} "
+        "Text": "Time remaining: {0}"
     },
     {
         "Key": "UseSuccess",
@@ -1296,6 +1299,18 @@
         "Text": "{0} is locked in another stage and cannot be deployed for the moment."
     },
     {
+        "Key": "BossSingleSettleTips1",
+        "Text": "No extra Stamina or challenge attempts will be consumed"
+    },
+    {
+        "Key": "BossSingleSettleTips2",
+        "Text": "Costs Stamina"
+    },
+    {
+        "Key": "BossSingleChangeMember",
+        "Text": "Your current lineup is different from the one in the record. Continue the battle anyway? Saving a new record will use up character Stamina."
+    },
+    {
         "Key": "CoureDesc",
         "Text": "Complete stage <color=#0E70BDFF>{0}</color> to get reward"
     },
@@ -1697,7 +1712,7 @@
     },
     {
         "Key": "FavorabilityCast",
-        "Text": "Voice: "
+        "Text": "Voice:"
     },
     {
         "Key": "FavorabilityNotOwnChar",
@@ -1713,7 +1728,7 @@
     },
     {
         "Key": "FavorabilityNotRemoveOnlyAssist",
-        "Text": " You cannot cancel the only assistant you have."
+        "Text": "You cannot cancel the only assistant you have."
     },
     {
         "Key": "FavorabilityRemoveAssistSucc",
@@ -1852,11 +1867,11 @@
     },
     {
         "Key": "ArenaActivityBeginCountDown",
-        "Text": "In Team: "
+        "Text": "In Team:"
     },
     {
         "Key": "ArenaActivityResultCountDown",
-        "Text": "Tallying: "
+        "Text": "Tallying:"
     },
     {
         "Key": "ArenaActivityEndCountDown",
@@ -1928,7 +1943,7 @@
     },
     {
         "Key": "ArenaActivityUpRegionContributeScoreDes",
-        "Text": "All squads except Legendary Squad can use 2 Reputation points to avoid being demoted. When the current War Zone score is 0, you won't earn any Reputation, no matter your rank."
+        "Text": "All squads except Legend Squad can use 2 Reputation points to avoid being demoted. When the current War Zone score is 0, you won't earn any Reputation, no matter your rank."
     },
     {
         "Key": "ArenaActivityStage",
@@ -1984,7 +1999,7 @@
     },
     {
         "Key": "ArenaOnlineSectionLeftTime",
-        "Text": "Available Time <color=#0F70BC><size=42>{0}</size></color> "
+        "Text": "Available Time <color=#0F70BC><size=42>{0}</size></color>"
     },
     {
         "Key": "ArenaOnlineStarDesc",
@@ -2256,7 +2271,7 @@
     },
     {
         "Key": "SelectGiftCount",
-        "Text": " (Select <color=#FF0000FF>{0}</color> Rewards)"
+        "Text": "(Select <color=#FF0000FF>{0}</color> Rewards)"
     },
     {
         "Key": "SelectGiftMaxCount",
@@ -2264,7 +2279,7 @@
     },
     {
         "Key": "SelectReplicatedGiftCount",
-        "Text": " (Select <color=#FF0000FF>{0}</color> Rewards)"
+        "Text": "(Select <color=#FF0000FF>{0}</color> Rewards)"
     },
     {
         "Key": "PrequelChapterTimes",
@@ -2504,7 +2519,7 @@
     },
     {
         "Key": "FurnitureDontRemakeTip",
-        "Text": "      Allocated points lower than those of the original Decor. The following Decor will not be remade:"
+        "Text": "Allocated points lower than those of the original Decor. The following Decor will not be remade:"
     },
     {
         "Key": "FurnitureRemakeNone",
@@ -2996,7 +3011,7 @@
     },
     {
         "Key": "ExploreBuffUnlockSeparate",
-        "Text": ", "
+        "Text": ","
     },
     {
         "Key": "ExploreRewardError",
@@ -3064,7 +3079,7 @@
     },
     {
         "Key": "ExploreBannerProgress",
-        "Text": "Newest Chapter: "
+        "Text": "Newest Chapter:"
     },
     {
         "Key": "ExploreBannerProgressEnd",
@@ -3096,7 +3111,7 @@
     },
     {
         "Key": "DormVisitFriendEmptyTips",
-        "Text": "No Friends "
+        "Text": "No Friends"
     },
     {
         "Key": "FurnitureSelectAType",
@@ -3208,7 +3223,7 @@
     },
     {
         "Key": "ActivityBranchShopLeftTime",
-        "Text": "Exchange Time Left: "
+        "Text": "Exchange Time Left:"
     },
     {
         "Key": "ActivityBranchChallengeBeginTime",
@@ -3364,11 +3379,11 @@
     },
     {
         "Key": "MaxRecommendFight",
-        "Text": "Construct BP must be higher than "
+        "Text": "Construct BP must be higher than"
     },
     {
         "Key": "AvgRecommendFight",
-        "Text": "Average Construct BP must be higher than "
+        "Text": "Average Construct BP must be higher than"
     },
     {
         "Key": "RecommendFight",
@@ -3675,6 +3690,10 @@
         "Text": "<color=#e53632>{0}/{1}</color>"
     },
     {
+        "Key": "BossSingleChallgeUnlimitedTimes",
+        "Text": "Unlimited"
+    },
+    {
         "Key": "DrawNotEnoughError",
         "Text": "Insufficient Coins"
     },
@@ -3737,6 +3756,10 @@
     {
         "Key": "PurchaseLBSettOff",
         "Text": "Not Available"
+    },
+    {
+        "Key": "PurchaseDiscount",
+        "Text": "*Bundle <color=#FFDB26>saves {0}%</color> vs. purchasing separately"
     },
     {
         "Key": "BattleLoseActorNum",
@@ -3856,7 +3879,7 @@
     },
     {
         "Key": "GradeStarNum",
-        "Text": "<size=50><color=#0f70bc>{0}</color></size>/{1}"
+        "Text": "<size=42><color=#0f70bc>{0}</color></size>/{1}"
     },
     {
         "Key": "FurnitureCreateSuccess",
@@ -3929,6 +3952,14 @@
     {
         "Key": "BossSingleAutoFightCount3",
         "Text": "Insufficient Auto Clear attempts"
+    },
+    {
+        "Key": "BossSingleTipReset",
+        "Text": "Using Reset Challenge will return the AP of team members in the record.\\nResetting clears your current stage Progress so you can challenge it again.\\nResetting will also clear related leaderboard scores.\\nBut it won't affect the Progress rewards you've already earned."
+    },
+    {
+        "Key": "BossSingleTitleReset",
+        "Text": "Reset Details"
     },
     {
         "Key": "DormVilityTxt",
@@ -4224,7 +4255,7 @@
     },
     {
         "Key": "SetInputFirstKey",
-        "Text": " (Release button to reflect changes)"
+        "Text": "(Release button to reflect changes)"
     },
     {
         "Key": "DormVistorFriend",
@@ -4440,7 +4471,7 @@
     },
     {
         "Key": "BabelTowerLeftTimeDesc",
-        "Text": "Remaining Time: "
+        "Text": "Remaining Time:"
     },
     {
         "Key": "BabelTowerLevelDesc",
@@ -4852,7 +4883,7 @@
     },
     {
         "Key": "RogueLikeQuestResetTime",
-        "Text": "Remaining Reset Time: "
+        "Text": "Remaining Reset Time:"
     },
     {
         "Key": "RogueLikeLeaveRestTitle",
@@ -4992,7 +5023,7 @@
     },
     {
         "Key": "PlayStory",
-        "Text": "  Play Story"
+        "Text": "Play Story"
     },
     {
         "Key": "PlayBeforeStory",
@@ -5360,7 +5391,7 @@
     },
     {
         "Key": "GuildChannelTypeAll",
-        "Text": "[The Bureau] "
+        "Text": "[The Bureau]"
     },
     {
         "Key": "GuildLogItemType",
@@ -5564,11 +5595,11 @@
     },
     {
         "Key": "UiFashionDetailTipTitleCharacter",
-        "Text": "   Coating Info"
+        "Text": "Coating Info"
     },
     {
         "Key": "UiFashionDetailTipTitleWeapon",
-        "Text": "   Weapon Coating Info"
+        "Text": "Weapon Coating Info"
     },
     {
         "Key": "GivenGiftText",
@@ -5604,7 +5635,7 @@
     },
     {
         "Key": "UnionDamageToBoss",
-        "Text": "Total damage dealt in the core stage:  "
+        "Text": "Total damage dealt in the core stage:"
     },
     {
         "Key": "UnionHadFightEventStage",
@@ -5944,7 +5975,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "<size=36>{0}/{1}</size>"
+        "Text": "{0}<color=#00000><size=34>/{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -5992,7 +6023,7 @@
     },
     {
         "Key": "InfestorExploreActionPointDes",
-        "Text": "Current Action Points: {0} "
+        "Text": "Current Action Points: {0}"
     },
     {
         "Key": "InfestorExploreTeamEmptyTip",
@@ -6223,8 +6254,7 @@
         "Text": "Event is over"
     },
     {
-        "Key": "InfestorFightScoreName",
-        "Text": "    "
+        "Key": "InfestorFightScoreName"
     },
     {
         "Key": "InfestorExploreLeftTime",
@@ -6232,7 +6262,7 @@
     },
     {
         "Key": "InfestorExploreCurActionPoint",
-        "Text": "Current Action Points: {0} "
+        "Text": "Current Action Points: {0}"
     },
     {
         "Key": "InfestorExploreRestNodeName",
@@ -6304,7 +6334,7 @@
     },
     {
         "Key": "InfestorExplorLeftTimeDesSection1",
-        "Text": "Time until analysis: "
+        "Text": "Time until analysis:"
     },
     {
         "Key": "InfestorExplorLeftTimeDesSection2",
@@ -6328,15 +6358,15 @@
     },
     {
         "Key": "InfestorExploreUpDiff",
-        "Text": "Grade improved to <color=#34AFF9><size=77>{0}</size></color> "
+        "Text": "Grade improved to <color=#34AFF9><size=77>{0}</size></color>"
     },
     {
         "Key": "InfestorExploreUnchangeDiff",
-        "Text": "Grade remains at <color=#34AFF9><size=77>{0}</size></color> "
+        "Text": "Grade remains at <color=#34AFF9><size=77>{0}</size></color>"
     },
     {
         "Key": "InfestorExploreDownDiff",
-        "Text": "Grade reduced to <color=#34AFF9><size=77>{0}</size></color> "
+        "Text": "Grade reduced to <color=#34AFF9><size=77>{0}</size></color>"
     },
     {
         "Key": "InfestorExploreRewardNodeCloseTipTitle",
@@ -6980,7 +7010,7 @@
     },
     {
         "Key": "WorldBossActionPoint",
-        "Text": "Tranquilizer: "
+        "Text": "Tranquilizer:"
     },
     {
         "Key": "WorldBossLevelDamege",
@@ -7048,7 +7078,7 @@
     },
     {
         "Key": "ExpeditionRoleListRoleButtonText",
-        "Text": "  Details"
+        "Text": "Details"
     },
     {
         "Key": "ExpeditionDoLikeOverTime",
@@ -7060,7 +7090,7 @@
     },
     {
         "Key": "ExpeditionRecruitTimeCountDown",
-        "Text": " Refresh attempts afterward <color=#0E70BD>+1</color>"
+        "Text": "Refresh attempts afterward <color=#0E70BD>+1</color>"
     },
     {
         "Key": "ExpeditionCharaRecruited",
@@ -7204,7 +7234,7 @@
     },
     {
         "Key": "WorldBossAttributeChallengeText",
-        "Text": "Area Challenge Attempts: "
+        "Text": "Area Challenge Attempts:"
     },
     {
         "Key": "WorldBossExploreScheduleText",
@@ -7764,7 +7794,7 @@
     },
     {
         "Key": "CaptainSkillLock",
-        "Text": " (Leader Skill locked)"
+        "Text": "(Leader Skill locked)"
     },
     {
         "Key": "MaintainerActionFightHint",
@@ -7792,7 +7822,7 @@
     },
     {
         "Key": "TRPGEnduranceDesc",
-        "Text": "While exploring the main story of Fake Ascension, stamina will be consumed to clear certain [Calculation] events.\\nEven if the Connector's Combat Squad abilities meet the [Calculation] requirement, the calculation cannot be completed without stamina.\\nStamina is restored daily at 07:00 UTC, at a rate of five points each day.\\nOnce the maximum limit is reached, stamina is no longer restored."
+        "Text": "While exploring the main story of Fake Ascension, stamina will be consumed to clear certain [Calculation] events.\\nEven if the Connector's Combat Squad abilities meet the [Calculation] requirement, the calculation cannot be completed without stamina.\\nStamina is restored daily at 05:00 UTC, at a rate of five points each day.\\nOnce the maximum limit is reached, stamina is no longer restored."
     },
     {
         "Key": "TRPGEnduranceTitle",
@@ -7808,7 +7838,7 @@
     },
     {
         "Key": "TRPGShopItemOversell",
-        "Text": "Today's items are sold out. Please come back when items are refreshed at 07:00 UTC tomorrow."
+        "Text": "Today's items are sold out. Please come back when items are refreshed at 05:00 UTC tomorrow."
     },
     {
         "Key": "TRPGMemoryChip",
@@ -7924,7 +7954,7 @@
     },
     {
         "Key": "TRPGExploreExmaineLackEndurance",
-        "Text": "Insufficient Stamina to calculate. Stamina will restore at 07:00 UTC tomorrow."
+        "Text": "Insufficient Stamina to calculate. Stamina will restore at 05:00 UTC tomorrow."
     },
     {
         "Key": "TRPGExploreExmaineCostItemTips",
@@ -8148,7 +8178,7 @@
     },
     {
         "Key": "NieRChapterOtherRate",
-        "Text": "Progress "
+        "Text": "Progress"
     },
     {
         "Key": "ActivityConsumeRewardTime",
@@ -8220,11 +8250,11 @@
     },
     {
         "Key": "AwarenessGroup",
-        "Text": "Memory Set "
+        "Text": "Memory Set"
     },
     {
         "Key": "AwarenessGroupWithName",
-        "Text": "{0} Memory Set "
+        "Text": "{0} Memory Set"
     },
     {
         "Key": "TRPGAreaAleardyOpen",
@@ -8600,7 +8630,7 @@
     },
     {
         "Key": "NieREasterEggAgeStr",
-        "Text": " years old, "
+        "Text": "years old,"
     },
     {
         "Key": "NieREasterEggLeftBtnStr",
@@ -8616,7 +8646,7 @@
     },
     {
         "Key": "NieREasterEggReviveStr",
-        "Text": " [{0}]"
+        "Text": "[{0}]"
     },
     {
         "Key": "CharacterFilterEmpty",
@@ -8784,7 +8814,7 @@
     },
     {
         "Key": "LottoExtraRewardProcessText",
-        "Text": "Progress "
+        "Text": "Progress"
     },
     {
         "Key": "LottoTimeStr",
@@ -9088,7 +9118,7 @@
     },
     {
         "Key": "SimulatedCombatBuffTipPrefix",
-        "Text": "Bonus: "
+        "Text": "Bonus:"
     },
     {
         "Key": "SimulatedCombatRewardTime",
@@ -9620,7 +9650,7 @@
     },
     {
         "Key": "SpecialFashionShopGiftTitle",
-        "Text": "   Gift Display"
+        "Text": "Gift Display"
     },
     {
         "Key": "WhiteValenDateInvite",
@@ -9636,11 +9666,11 @@
     },
     {
         "Key": "WhiteValentinePercentAdd",
-        "Text": " +{0}%"
+        "Text": "+{0}%"
     },
     {
         "Key": "WhiteValentinePercentMinus",
-        "Text": " -{0}%"
+        "Text": "-{0}%"
     },
     {
         "Key": "WhiteValentineEnergyCountDown",
@@ -9712,7 +9742,7 @@
     },
     {
         "Key": "PartnerNoBadyCarry",
-        "Text": "  N/A"
+        "Text": "N/A"
     },
     {
         "Key": "PartnerSkillLevelUp",
@@ -9988,7 +10018,7 @@
     },
     {
         "Key": "MoeWarMatchVoteRefresh",
-        "Text": "Total Cheer Points refreshed at {0} "
+        "Text": "Total Cheer Points refreshed at {0}"
     },
     {
         "Key": "MoeWarMatchVoteNoResult",
@@ -10388,7 +10418,7 @@
     },
     {
         "Key": "GachaOrganizeUnlockTips",
-        "Text": " Available after getting all the\\n<size=28><color=#FFF732>[Special Rewards]</color></size> in the last supply crate"
+        "Text": "Available after getting all the\\n<size=28><color=#FFF732>[Special Rewards]</color></size> in the last supply crate"
     },
     {
         "Key": "GachaOrganizeLockNotDraw",
@@ -10600,7 +10630,7 @@
     },
     {
         "Key": "ReformCharDetailText",
-        "Text": "  Details"
+        "Text": "Details"
     },
     {
         "Key": "ReformEvolvableStageUnlockTip",
@@ -11172,7 +11202,7 @@
     },
     {
         "Key": "KillZoneDailyRewardTips",
-        "Text": "Daily rewards will be calculated based on the player's total rank for Normal and Challenging Stages. Resets daily at 7:00 UTC."
+        "Text": "Daily rewards will be calculated based on the player's total rank for Normal and Challenging Stages. Resets daily at 5:00 UTC."
     },
     {
         "Key": "KillZoneSettleWinKillEnemyCount",
@@ -11204,7 +11234,7 @@
     },
     {
         "Key": "MineSweepingNotCoinHint",
-        "Text": "Insufficient [Deduction Data]. Unable to do this."
+        "Text": "You do not have sufficient [Dreamcatchers]."
     },
     {
         "Key": "STOverTimeHint",
@@ -11508,7 +11538,7 @@
     },
     {
         "Key": "STPluginDetailsStarStr",
-        "Text": " <color=#0f70bc><size=34>{0}</size></color>"
+        "Text": "<color=#0f70bc><size=34>{0}</size></color>"
     },
     {
         "Key": "CommonRemainTime",
@@ -11696,11 +11726,11 @@
     },
     {
         "Key": "UiFashionIntroFashion",
-        "Text": "   Coating Info"
+        "Text": "Coating Info"
     },
     {
         "Key": "UiFashionIntroHeadPortrait",
-        "Text": "   Unlock Requirements"
+        "Text": "Unlock Requirements"
     },
     {
         "Key": "UiFashionHeadPortraitConditionDefault",
@@ -12324,15 +12354,15 @@
     },
     {
         "Key": "BuyAssetDailyExchangeTip",
-        "Text": "Daily exchange attempts: "
+        "Text": "Daily exchange attempts:"
     },
     {
         "Key": "BuyAssetTotalExchangeTip",
-        "Text": "Remaining exchange attempts: "
+        "Text": "Remaining exchange attempts:"
     },
     {
         "Key": "PickFlipLayerLimitBuyTip",
-        "Text": "Exchange attempts for this tier: "
+        "Text": "Exchange attempts for this tier:"
     },
     {
         "Key": "BuyAssetTotalLeftCountTip",
@@ -12404,7 +12434,7 @@
     },
     {
         "Key": "MainLine3DTaskGuideTitle",
-        "Text": "Mission Guide: "
+        "Text": "Mission Guide:"
     },
     {
         "Key": "EmojiOverTime",
@@ -12472,7 +12502,7 @@
     },
     {
         "Key": "ReviewActivityPanelName",
-        "Text": "Career Record "
+        "Text": "Career Record"
     },
     {
         "Key": "DiceGameNoEnoughCoinHint",
@@ -12740,7 +12770,7 @@
     },
     {
         "Key": "NotOwnCurRole",
-        "Text": "You do not own this character "
+        "Text": "You do not own this character"
     },
     {
         "Key": "TheatreRestartCount",
@@ -13640,7 +13670,7 @@
     },
     {
         "Key": "EscapeSettleWinGrade",
-        "Text": "  (Rating: {0})"
+        "Text": "(Rating: {0})"
     },
     {
         "Key": "EscapeNotChallenge",
@@ -13760,7 +13790,7 @@
     },
     {
         "Key": "GoldenMinerReqportTotalScore",
-        "Text": " <color=#34AFF8><size=32>(+{0})</size></color>"
+        "Text": "<color=#34AFF8><size=32>(+{0})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportRadarScore",
@@ -14056,7 +14086,7 @@
     },
     {
         "Key": "GuildDormMainTopChannelName",
-        "Text": "Channel {0} "
+        "Text": "Channel {0}"
     },
     {
         "Key": "GuildDormGiftInfoCurrentContribution",
@@ -15196,11 +15226,11 @@
     },
     {
         "Key": "RiftCountDownDesc2",
-        "Text": "Sequence Remaining Time: "
+        "Text": "Sequence Remaining Time:"
     },
     {
         "Key": "RiftCountDownDesc3",
-        "Text": "Sequence Change Time: "
+        "Text": "Sequence Change Time:"
     },
     {
         "Key": "RiftCountDownDesc4",
@@ -16428,7 +16458,7 @@
     },
     {
         "Key": "SlotMachineTimeTextDesc",
-        "Text": "Remaining: "
+        "Text": "Remaining:"
     },
     {
         "Key": "SlotMachineTipsLock",
@@ -16640,7 +16670,7 @@
     },
     {
         "Key": "EquipOverrunActiveTips",
-        "Text": " <color=#FF0000FF>(Activated via Weapon Harmony Absorption)</color>"
+        "Text": "<color=#FF0000FF>(Activated via Weapon Harmony Absorption)</color>"
     },
     {
         "Key": "EquipOverrunNotEquip",
@@ -17132,19 +17162,19 @@
     },
     {
         "Key": "FavorabilityDropDownJPNCV",
-        "Text": "Japanese: "
+        "Text": "Japanese:"
     },
     {
         "Key": "FavorabilityDropDownCNCV",
-        "Text": "Mandarin: "
+        "Text": "Mandarin:"
     },
     {
         "Key": "FavorabilityDropDownENCV",
-        "Text": "English: "
+        "Text": "English:"
     },
     {
         "Key": "FavorabilityDropDownHKCV",
-        "Text": "Cantonese: "
+        "Text": "Cantonese:"
     },
     {
         "Key": "TransfiniteTeamMemberDead",
@@ -17620,7 +17650,7 @@
     },
     {
         "Key": "PreloadLeftTime",
-        "Text": "Estimated Time: "
+        "Text": "Estimated Time:"
     },
     {
         "Key": "PreloadCheckSubPackage",
@@ -17784,7 +17814,7 @@
     },
     {
         "Key": "AnniverReviewPlayDays",
-        "Text": " <color=#ffe1a6>{0}</color> "
+        "Text": "<color=#ffe1a6>{0}</color>"
     },
     {
         "Key": "AnniverReviewSignUpDay",
@@ -18280,7 +18310,7 @@
     },
     {
         "Key": "DunhuangSaveSuccess",
-        "Text": "Saved "
+        "Text": "Saved"
     },
     {
         "Key": "DunhuangPaintingEmpty",
@@ -18369,6 +18399,10 @@
     {
         "Key": "LottoLifuFashionDesc",
         "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Dreamcatcher] Event."
+    },
+    {
+        "Key": "LottoCibeizheFashionDesc",
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Nightfall Finale] Event."
     },
     {
         "Key": "DrawNeedChooseCharTip",
@@ -19024,7 +19058,7 @@
     },
     {
         "Key": "PurchaseSelfChoiceDesc",
-        "Text": "#NAME?"
+        "Text": "- Select only one item for each custom slot.\\n\\n- The pack is only available for purchase after all slots are filled.\\n\\n- The customized part will not affect the price of the pack."
     },
     {
         "Key": "PurchaseRandomSelectTitle",
@@ -19472,7 +19506,7 @@
     },
     {
         "Key": "VersionGiftLeftTime",
-        "Text": "Remaining Time: {0}"
+        "Text": "{0}"
     },
     {
         "Key": "VersionGiftActivityTaskTab",
@@ -19636,7 +19670,7 @@
     },
     {
         "Key": "SkyGardenProgressText",
-        "Text": "探索完成度: {0}%"
+        "Text": "Exploration Progress: {0}%"
     },
     {
         "Key": "ComicTips1",
@@ -19689,10 +19723,6 @@
     {
         "Key": "SoloReformNoCharacterInTeam",
         "Text": "No deployable characters in the team"
-    },
-    {
-        "Key": "Theatre5FashionOutOfDate",
-        "Text": "Coating no longer available"
     },
     {
         "Key": "CloudGameExitMsg",
@@ -19952,7 +19982,7 @@
     },
     {
         "Key": "SendMessageCooling",
-        "Text": "  <color=red>%d</color> s until next communication..."
+        "Text": "<color=red>%d</color> s until next communication..."
     },
     {
         "Key": "RefreshRecommended",
@@ -20100,7 +20130,7 @@
     },
     {
         "Key": "StorySkipDesc",
-        "Text": "Skip story?\"\""
+        "Text": "Skip story?\""
     },
     {
         "Key": "InputTips",
@@ -20113,6 +20143,10 @@
     {
         "Key": "BossSingleOpenTip",
         "Text": "3rd boss unlocked in Advanced area"
+    },
+    {
+        "Key": "BossSingleResetCooldown",
+        "Text": "Reset on cooldown"
     },
     {
         "Key": "RoomNoStamina",
@@ -20160,7 +20194,7 @@
     },
     {
         "Key": "FubenDailyRemainCount",
-        "Text": "Remaining: {0}   "
+        "Text": "Remaining: {0}"
     },
     {
         "Key": "WeekActive",
@@ -20196,7 +20230,7 @@
     },
     {
         "Key": "BfrtRequireNum1",
-        "Text": "Support Team: {0} "
+        "Text": "Support Team: {0}"
     },
     {
         "Key": "BfrtRequireNum2",
@@ -20752,11 +20786,11 @@
     },
     {
         "Key": "ArchiveAwarenessNormal",
-        "Text": "Normal Memory "
+        "Text": "Normal Memory"
     },
     {
         "Key": "ArchiveAwarenessActivity",
-        "Text": "Event Memory "
+        "Text": "Event Memory"
     },
     {
         "Key": "ArchiveEquipSettingWeapon",
@@ -20876,7 +20910,7 @@
     },
     {
         "Key": "RogueLikeWeekResetTime",
-        "Text": "Mission Time Left: "
+        "Text": "Mission Time Left:"
     },
     {
         "Key": "GuildDescPosition",
@@ -20888,7 +20922,7 @@
     },
     {
         "Key": "MusicPlayerMainUiTextDesc",
-        "Text": "Playing - "
+        "Text": "Playing -"
     },
     {
         "Key": "CollectionHide",
@@ -21036,7 +21070,7 @@
     },
     {
         "Key": "WorldBossQuestResetTime",
-        "Text": "Remaining Reset Time: "
+        "Text": "Remaining Reset Time:"
     },
     {
         "Key": "WorldBossFashionRuleTitle",
@@ -22880,7 +22914,7 @@
     },
     {
         "Key": "STCharacterPluginUnlockTip",
-        "Text": " Special Enhancement Unlocked"
+        "Text": "Special Enhancement Unlocked"
     },
     {
         "Key": "RpgMakerGameStageLockTitle",
@@ -22916,11 +22950,11 @@
     },
     {
         "Key": "UiFahionDetailTipTitleCharacter",
-        "Text": "   Coating Description"
+        "Text": "Coating Description"
     },
     {
         "Key": "UiFahionDetailTipTitleWeapon",
-        "Text": "   Weapon Coating Description"
+        "Text": "Weapon Coating Description"
     },
     {
         "Key": "ChatGuilyMsg",
@@ -23019,8 +23053,364 @@
         "Text": "Creation Operator: {0}/1500"
     },
     {
+        "Key": "RaceCountDown",
+        "Text": "Remaining Time: {0}"
+    },
+    {
+        "Key": "RaceMainCountDown",
+        "Text": "Remaining Time: <color=#FFE800>{0}</color>"
+    },
+    {
+        "Key": "RaceRoundTimeTip1",
+        "Text": "Prediction ends in {0}"
+    },
+    {
+        "Key": "RaceRoundTimeTip2",
+        "Text": "Match starts in {0}"
+    },
+    {
+        "Key": "RaceRoundTimeTip3",
+        "Text": "Match in progress"
+    },
+    {
+        "Key": "RaceRoundTimeTip4",
+        "Text": "All matches have ended"
+    },
+    {
+        "Key": "RaceRoundStartTime",
+        "Text": "{0} begins"
+    },
+    {
+        "Key": "RaceTimeFormat",
+        "Text": "M/d"
+    },
+    {
+        "Key": "RaceAllGuessTime",
+        "Text": "Closes in {0}"
+    },
+    {
+        "Key": "RaceAllGuessReward",
+        "Text": "Results Announced"
+    },
+    {
+        "Key": "RaceOneGuessState1",
+        "Text": "Predict This Match"
+    },
+    {
+        "Key": "RaceOneGuessState2",
+        "Text": "Watch Match"
+    },
+    {
+        "Key": "RaceOneGuessState3",
+        "Text": "Predicted Result"
+    },
+    {
+        "Key": "RaceOneGuessState4",
+        "Text": "Match is over"
+    },
+    {
+        "Key": "RaceGuessBtn1",
+        "Text": "Predict"
+    },
+    {
+        "Key": "RaceGuessBtn2",
+        "Text": "Predicted"
+    },
+    {
+        "Key": "RaceGuessBtn3",
+        "Text": "Prediction is over"
+    },
+    {
+        "Key": "RaceGuessSuccessTip",
+        "Text": "Prediction Successful"
+    },
+    {
+        "Key": "RaceGuessFailTip",
+        "Text": "Prediction time has expired"
+    },
+    {
+        "Key": "RaceGuessObsolete",
+        "Text": "This contestant has been eliminated. Confirm prediction?"
+    },
+    {
+        "Key": "RaceDefault",
+        "Text": "Default"
+    },
+    {
+        "Key": "RaceSupport",
+        "Text": "Support Rate"
+    },
+    {
+        "Key": "RaceSpeed",
+        "Text": "Speed"
+    },
+    {
+        "Key": "RaceSpeedDesc",
+        "Text": "Your maximum speed reached in a straight line."
+    },
+    {
+        "Key": "RaceAcc",
+        "Text": "Speed up"
+    },
+    {
+        "Key": "RaceAccDesc",
+        "Text": "The ability to boost speed to its maximum limit."
+    },
+    {
+        "Key": "RaceDrift",
+        "Text": "Drift"
+    },
+    {
+        "Key": "RaceDriftDesc",
+        "Text": "The ability to maintain speed through turns and gain acceleration on exit."
+    },
+    {
+        "Key": "RaceLuck",
+        "Text": "Luck"
+    },
+    {
+        "Key": "RaceLuckDesc",
+        "Text": "The ability to obtain Signal Orbs that match skill requirements."
+    },
+    {
+        "Key": "RaceFightQuitContent",
+        "Text": "Exit competition?"
+    },
+    {
+        "Key": "RaceMatchTimeLeft",
+        "Text": "Predictions left: {0}"
+    },
+    {
+        "Key": "RaceMatchTimePlaying",
+        "Text": "Rewards are distributed after finals end."
+    },
+    {
+        "Key": "RaceMatchGuessTip1",
+        "Text": "The prediction period has ended. Cannot make any new predictions now."
+    },
+    {
+        "Key": "RaceMatchGuessTip2",
+        "Text": "Please wait for results"
+    },
+    {
+        "Key": "RaceMatchGuessTip3",
+        "Text": "No prediction made for this event. No results available."
+    },
+    {
+        "Key": "RaceMatchGuessRange",
+        "Text": "Prediction Scope: All Matches"
+    },
+    {
+        "Key": "RaceScheduleRankTag11",
+        "Text": "First Match Ranking"
+    },
+    {
+        "Key": "RaceScheduleRankTag12",
+        "Text": "First Match Duration"
+    },
+    {
+        "Key": "RaceScheduleRankTag21",
+        "Text": "Second Match Ranking"
+    },
+    {
+        "Key": "RaceScheduleRankTag22",
+        "Text": "Second Match Duration"
+    },
+    {
+        "Key": "RaceReviewBtn1",
+        "Text": "Round {0}"
+    },
+    {
+        "Key": "RaceReviewBtn2",
+        "Text": "Match {0}: {1}"
+    },
+    {
+        "Key": "RaceReviewPopupTitle",
+        "Text": "Watch match replay?"
+    },
+    {
+        "Key": "RaceGuessPropertyTimes",
+        "Text": "{0} time(s)"
+    },
+    {
+        "Key": "RacePropertyName1",
+        "Text": "Rank"
+    },
+    {
+        "Key": "RacePropertyName2",
+        "Text": "Attempts"
+    },
+    {
+        "Key": "RacePropertyName3",
+        "Text": "Time"
+    },
+    {
+        "Key": "RacePropertyName4",
+        "Text": "Speed"
+    },
+    {
+        "Key": "RaceNotJoinGuildTIp",
+        "Text": "Please join a guild first"
+    },
+    {
+        "Key": "RaceNotInGuessTimeTip",
+        "Text": "Prediction for this round has ended"
+    },
+    {
+        "Key": "RaceResetTime",
+        "Text": "Mission Time Left: {0}"
+    },
+    {
+        "Key": "RaceActivityEnd",
+        "Text": "Event is over"
+    },
+    {
+        "Key": "RaceRightMidStartTime",
+        "Text": "Starting in {0} min(s)"
+    },
+    {
+        "Key": "RaceRightMidRunning",
+        "Text": "Match in progress"
+    },
+    {
+        "Key": "RaceNotListed",
+        "Text": "Out of the ranking"
+    },
+    {
+        "Key": "RaceNotGuild",
+        "Text": "No Guild"
+    },
+    {
+        "Key": "RaceChooseSupport",
+        "Text": "Support Rate: {0}"
+    },
+    {
+        "Key": "RaceRankDesc",
+        "Text": "(Refreshed every 30 mins)"
+    },
+    {
+        "Key": "RaceGuessPropertyRank",
+        "Text": "No. {0}"
+    },
+    {
+        "Key": "RaceNotAchieved",
+        "Text": "Incomplete"
+    },
+    {
+        "Key": "RaceEndDesc",
+        "Text": "Race finished. Returning to Stellar Rush main screen."
+    },
+    {
+        "Key": "RaceErrorDesc",
+        "Text": "Streaming error. Returning to Stellar Rush main screen."
+    },
+    {
         "Key": "PhotoModeCharacterActionLocked",
         "Text": "Locked"
+    },
+    {
+        "Key": "TeamPrefabMaxCountReached",
+        "Text": "Preset limit reached"
+    },
+    {
+        "Key": "TeamPrefabCannotDeleteLast",
+        "Text": "Cannot delete this. At least one preset lineup is required."
+    },
+    {
+        "Key": "TeamPrefabDeleteConfirm",
+        "Text": "Delete current team - {0}?"
+    },
+    {
+        "Key": "TeamPrefabDeleteSuccess",
+        "Text": "Team deleted"
+    },
+    {
+        "Key": "TeamPrefabNoCurrentTeam",
+        "Text": "No teams available"
+    },
+    {
+        "Key": "TeamPrefabCoverSuccess",
+        "Text": "Overwritten"
+    },
+    {
+        "Key": "TeamPrefabNoMembers",
+        "Text": "Current team cannot be used"
+    },
+    {
+        "Key": "TeamPrefabApplySuccess",
+        "Text": "Team used"
+    },
+    {
+        "Key": "TeamPrefabAdjustSuccess",
+        "Text": "Adjusted"
+    },
+    {
+        "Key": "TeamPrefabEffectSwitchSuccess",
+        "Text": "Effect modified"
+    },
+    {
+        "Key": "TeamPrefabCaptainSkillSetSuccess",
+        "Text": "Leader Skill modified"
+    },
+    {
+        "Key": "TeamPrefabPleaseEnterName",
+        "Text": "Enter a team name"
+    },
+    {
+        "Key": "TeamPrefabWeaponUpdateSuccess",
+        "Text": "Weapon modified"
+    },
+    {
+        "Key": "TeamPrefabPositionFirst",
+        "Text": "Cannot move preset higher. Already at the top."
+    },
+    {
+        "Key": "TeamPrefabNoActivableEffect",
+        "Text": "Current team has no available Effect."
+    },
+    {
+        "Key": "TeamPrefabEquipModifySuccess",
+        "Text": "Team preset equipment modified"
+    },
+    {
+        "Key": "TeamPrefabFirstFightAdjusted",
+        "Text": "Starting lineup updated"
+    },
+    {
+        "Key": "TeamPrefabCreated",
+        "Text": "Team created"
+    },
+    {
+        "Key": "TeamPrefabEquipConflictConfirm",
+        "Text": "There's a conflict with this preset. Do you want to overwrite it with the equipment your character is currently using?"
+    },
+    {
+        "Key": "TeamPrefabWeaponReplaceTip",
+        "Text": "This is currently equipped by {0}. Equipping will remove it from that Construct. Proceed?"
+    },
+    {
+        "Key": "TeamPrefabAwarenessReplaceTip",
+        "Text": "This is currently equipped by {0}. Equipping will remove it from that character. Proceed?"
+    },
+    {
+        "Key": "TeamPrefabNoAwarenessOwned",
+        "Text": "No Memories owned"
+    },
+    {
+        "Key": "TeamPrefabNoMemberCannotSetWeapon",
+        "Text": "Members not set. Cannot adjust equipment."
+    },
+    {
+        "Key": "TeamPrefabEquipmentInUse",
+        "Text": "Some weapons and Memories in this preset are currently used by other characters. Unequip them from those characters?"
+    },
+    {
+        "Key": "TeamPrefabAwarenessEquipSuccess",
+        "Text": "Preset Memories equipped"
+    },
+    {
+        "Key": "Theatre5FashionOutOfDate",
+        "Text": "Coating no longer available"
     },
     {
         "Key": "GuildWarStageResultsBreak",
@@ -23031,7 +23421,55 @@
         "Text": "x{0}"
     },
     {
+        "Key": "PurchaseMonthPlusDesc",
+        "Text": "1. Rules: Upon purchase, you will immediately receive 1000 Event R&D Tickets and 1 [Black Card Monthly Pass] (Black Card Monthly Pass provides a total of 3300 Black Cards).\\n2. Black Card Monthly Pass: Immediately grants 300 Black Cards when obtained. Starting from the activation date, you can log in daily to claim 100 Black Cards for 30 consecutive days. Daily rewards will be automatically claimed when you log in after 05:00 UTC every day, or you can manually claim the rewards in the [Monthly Pass] tab at [Main Interface - Event]. This tab also displays your remaining days of the Black Card Monthly Pass.\\n3. Purchase Limit: [Monthly Pass R&D Ticket Bundle] can only be purchased once and is not affected by the purchase limit of the current [Black Card Monthly Pass]. For example, if you currently have 2 active monthly passes (the maximum), you can still purchase the [Monthly Pass R&D Ticket Bundle]. After purchase, the remaining days of the Black Card Monthly Pass will be extended accordingly.\\nSpecial Note: You are unable to purchase [Monthly Pass R&D Ticket Bundle] if you have already purchased [Monthly Pass C]."
+    },
+    {
+        "Key": "PurchaseComboTitle",
+        "Text": "About the Supply Bundle"
+    },
+    {
+        "Key": "PurchaseComboContent",
+        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at a discounted price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
+    },
+    {
+        "Key": "PurchaseFirstRechargeTipTitle",
+        "Text": "First Purchase Info"
+    },
+    {
         "Key": "HoldRegressionShareNetLinkTW",
         "Text": "已複製至剪貼簿"
+    },
+    {
+        "Key": "EquipTakeOffSuccess",
+        "Text": "Equipment removed."
+    },
+    {
+        "Key": "TeamPrefabWeaponNotExistConflict",
+        "Text": "Some equipment in the current team is unavailable. Adjust your setup before deploying."
+    },
+    {
+        "Key": "TeamPrefabResonanceNeedUnlock",
+        "Text": "The Resonance Slot is unavailable."
+    },
+    {
+        "Key": "TeamPrefabOverrunNeedUnlock",
+        "Text": "Resonance feature locked."
+    },
+    {
+        "Key": "TeamPrefabWeaponEquippedByOtherInPreset",
+        "Text": "Duplicate equipment in the team. Unable to deploy."
+    },
+    {
+        "Key": "NecessaryResourcesNotDownloaded",
+        "Text": "Required resources not downloaded"
+    },
+    {
+        "Key": "SpeedRunTips",
+        "Text": "Skip regular stages with <color=#28CFFFFF>story, exploration, and interactions</color>. Defeat all enemies to clear."
+    },
+    {
+        "Key": "SnapLabel",
+        "Text": "Discount"
     }
 ]

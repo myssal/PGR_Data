@@ -1,7 +1,7 @@
 local XExFubenSimulationChallengeManager = require("XEntity/XFuben/XExFubenSimulationChallengeManager")
 
 XFubenExploreManagerCreator = function()
-    local XFubenExploreManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Explore)
+    local XFubenExploreManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Explore)
     --服务器数据
     local ExploreChapterData = {}
     --处理后的关卡数据

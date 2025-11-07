@@ -12,7 +12,9 @@ local DlcEventId = XMVCA.XBigWorldService.DlcEventId
 
 local TASK_TYPE_ALL = XMVCA.XBigWorldQuest.QuestType.All
 --策划需要缓存
-local Type2TabIndex = {}
+--local Type2TabIndex = {}
+
+local LastSelectQuest = nil
 
 function XUiBigWorldTaskMain:OnAwake()
     self:InitUi()
@@ -24,7 +26,6 @@ function XUiBigWorldTaskMain:OnStart(index, questId)
     self._DefaultQuestId = questId
     self:InitView()
     
-    XEventManager.AddEventListener(DlcEventId.EVENT_REFRESH_QUEST_MAIN, self.OnRefreshSelect, self)
     XEventManager.AddEventListener(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
 end
 
@@ -36,7 +37,6 @@ function XUiBigWorldTaskMain:OnDisable()
 end
 
 function XUiBigWorldTaskMain:OnDestroy()
-    XEventManager.RemoveEventListener(DlcEventId.EVENT_REFRESH_QUEST_MAIN, self.OnRefreshSelect, self)
     XEventManager.RemoveEventListener(DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
     
     XMVCA.XBigWorldQuest:SaveQuestRed()
@@ -67,17 +67,12 @@ function XUiBigWorldTaskMain:InitUi()
 end
 
 function XUiBigWorldTaskMain:InitCb()
-    self.BtnBack.CallBack = function()
-        self:Close()
-    end
+    self.BtnBack:AddEventListener(handler(self, self.Close))
 
-    self.BtnStory.CallBack = function()
-        self:OnBtnStoryClick()
-    end
+    self.BtnStory:AddEventListener(handler(self, self.OnBtnStoryClick))
 end
 
 function XUiBigWorldTaskMain:InitView()
-    
 end
 
 function XUiBigWorldTaskMain:OnSelectTab(tabIndex)
@@ -104,39 +99,30 @@ function XUiBigWorldTaskMain:RefreshTaskGroup()
     self._LastTypeId = typeId
 end
 
-function XUiBigWorldTaskMain:GetGroupSelectIndex()
-    if self._DefaultQuestIndex then
-        local index = self._DefaultQuestIndex
-        self._DefaultQuestIndex = nil
+function XUiBigWorldTaskMain:GetSelectData(typeId)
+    --默认选中外部传值
+    if self._DefaultQuestId then
+        local questId = self._DefaultQuestId
         self._DefaultQuestId = nil
-        return index
+        --Type2TabIndex[typeId] = questId
+        LastSelectQuest = questId
+        return questId
     end
-    
-    local typeId = self._TypeIds[self._TabIndex]
-    if Type2TabIndex[typeId] then
-        return Type2TabIndex[typeId]
-    end
-    
-    return 1
+    return LastSelectQuest
 end
 
-function XUiBigWorldTaskMain:SetGroupSelectIndex(index)
-    self._DefaultQuestIndex = index
+function XUiBigWorldTaskMain:SetSelectData(typeId, questId)
+    LastSelectQuest = questId
 end
 
-function XUiBigWorldTaskMain:RefreshTaskContent(isGroup, id, tabIndex)
-    if isGroup then
-        return
-    end
-    local typeId = self._TypeIds[self._TabIndex]
-    Type2TabIndex[typeId] = tabIndex
+function XUiBigWorldTaskMain:RefreshTaskContent(typeId, groupId, questId)
     if not self._PanelTaskContent then
         self._PanelTaskContent = require("XUi/XUiBigWorld/XQuest/Panel/XUiPanelBWTaskContent").New(self.PanelTask, self)
     end
-    if XTool.IsNumberValid(id) and XTool.IsNumberValid(tabIndex) then
-        self.PaneNothing.gameObject:SetActiveEx(false)
+    if typeId > 0 and groupId > 0 and questId > 0 then
         self._PanelTaskContent:Open()
-        self._PanelTaskContent:RefreshView(id)
+        self._PanelTaskContent:RefreshView(questId)
+        self.PaneNothing.gameObject:SetActiveEx(false)
     else
         self.PaneNothing.gameObject:SetActiveEx(true)
         self._PanelTaskContent:Close()
@@ -150,7 +136,7 @@ function XUiBigWorldTaskMain:GetPanelTaskGroup(typeId)
     end
     local ui = XUiHelper.Instantiate(self.PanelTitleBtnGroup, self.ContentGroup.transform)
     ui.gameObject:SetActiveEx(true)
-    panel = XUiPanelBWTaskGroup.New(ui, self, typeId, self._DefaultQuestId)
+    panel = XUiPanelBWTaskGroup.New(ui, self, typeId)
     self._PanelTaskGroup[typeId] = panel
 
     return panel
@@ -158,21 +144,6 @@ end
 
 function XUiBigWorldTaskMain:OnBtnStoryClick()
     XLuaUiManager.Open("UiBigWorldLineChapter")
-end
-
-function XUiBigWorldTaskMain:OnRefreshSelect(index, questId)
-    local typeId = self._TypeIds[index]
-    local panel = self._PanelTaskGroup[typeId]
-    --已经打开过
-    if panel then
-        local subIndex = panel:GetIndexByQuestId(questId)
-        Type2TabIndex[typeId] = subIndex
-    else
-        self._TabIndex = nil
-        self._DefaultQuestId = questId
-        
-    end
-    self.PanelTabBtnGroup:SelectIndex(index)
 end
 
 function XUiBigWorldTaskMain:CheckRedPoint(type)

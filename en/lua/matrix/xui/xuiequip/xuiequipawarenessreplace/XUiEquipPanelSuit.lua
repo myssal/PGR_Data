@@ -141,7 +141,7 @@ function XUiEquipPanelSuit:GetSuitInfoList()
     -- 初始化排序优先级
     if not self.PriorityDic then
         self.PriorityDic = {}
-        self.SuitPriorityCfg = self._Control:GetConfigCharacterSuitPriority(self.Parent.CharacterId)
+        self.SuitPriorityCfg = XMVCA.XEquip:GetConfigCharacterSuitPriority(self.Parent.CharacterId)
         if self.SuitPriorityCfg then
             for index, suitType in ipairs(self.SuitPriorityCfg.PriorityType) do
                 self.PriorityDic[suitType] = index
@@ -150,7 +150,7 @@ function XUiEquipPanelSuit:GetSuitInfoList()
     end
 
     -- 排序
-    local suitInfoList = self._Control:GetSuitInfoList(self.Parent.CharacterId, self.Parent.SelectSite)
+    local suitInfoList = XMVCA.XEquip:GetSuitInfoList(self.Parent.CharacterId, self.Parent.SelectSite)
     if self.CurSortType == self.SORT_TYPE.SUGGEST then
         table.sort(suitInfoList, function(a, b)
             return self:SortSuggest(a, b)

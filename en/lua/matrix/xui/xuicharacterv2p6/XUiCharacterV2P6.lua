@@ -19,14 +19,34 @@ end
 
 function XUiCharacterV2P6:InitButton()
     self:BindHelpBtn(self.BtnHelp, "Character")
-    XUiHelper.RegisterClickEvent(self, self.BtnCollect, self.OnBtnCollectClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnTeaching, self.OnBtnTeachingClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnFashion, self.OnBtnFashionClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnOwnedDetail, self.OnBtnOwnedDetailClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnFiles, self.OnBtnFileClick)
+    self.BtnCollect.CallBack = function()
+        self:OnBtnCollectClick()
+    end
+    
+    self.BtnTeaching.CallBack = function()
+        self:OnBtnTeachingClick()
+    end
+
+    self.BtnClose.CallBack = function()
+        self:OnBtnCloseClick()
+    end
+    
     self.PanelDrag:AddPointerDownListener(function ()
         self:OnDragPointerDown()
     end)
+    
+    self._FuncShowBtnFashion = XUiHelper.XUiFunctionShowControl(self.BtnFashion, self)
+    self._FuncShowBtnOwnedDetail = XUiHelper.XUiFunctionShowControl(self.BtnOwnedDetail, self)
+    self._FuncShowBtnFiles = XUiHelper.XUiFunctionShowControl(self.BtnFiles, self)
+
+    self._FuncShowBtnFashion:Open()
+    self._FuncShowBtnOwnedDetail:Open()
+    self._FuncShowBtnFiles:Open()
+
+    self._FuncShowBtnFashion:AddButtonClickEvent(handler(self, self.OnBtnFashionClick))
+    self._FuncShowBtnOwnedDetail:AddButtonClickEvent(handler(self, self.OnBtnOwnedDetailClick))
+    self._FuncShowBtnFiles:AddButtonClickEvent(handler(self, self.OnBtnFileClick))
+
 end
 
 function XUiCharacterV2P6:InitFilter()
@@ -100,9 +120,12 @@ end
 function XUiCharacterV2P6:RefreshButtonShow()
     local isOpenTeachingActivity = XDataCenter.FubenNewCharActivityManager.CheckActivityIsOpenByCharacterId(self.CurCharacter.Id)
 
-    self.BtnFiles.gameObject:SetActiveEx(isOpenTeachingActivity)
+    --self.BtnFiles.gameObject:SetActiveEx(isOpenTeachingActivity)
+    self._FuncShowBtnFiles:SetActiveByHand(isOpenTeachingActivity)
     self.BtnTeaching.gameObject:SetActiveEx(false)
-    self.BtnOwnedDetail.gameObject:SetActiveEx(not isOpenTeachingActivity)
+    
+    self._FuncShowBtnOwnedDetail:SetActiveByHand(not isOpenTeachingActivity)
+    --self.BtnOwnedDetail.gameObject:SetActiveEx(not isOpenTeachingActivity)
 end
 
 function XUiCharacterV2P6:OnEnable()
@@ -218,7 +241,8 @@ function XUiCharacterV2P6:OnSelectCharacter(character)
     local isWeaponFashionRed = XDataCenter.WeaponFashionManager.GetCurrCharHaveNewWeaponFashion(character.Id)
     local isHeadPortraitRed = XDataCenter.FashionManager.GetCurrCharHaveNewHeadPortrait(character.Id)
     local isRed = isFashionRed or isWeaponFashionRed or isHeadPortraitRed
-    self.BtnFashion:ShowReddot(isRed)
+    --self.BtnFashion:ShowReddot(isRed)
+    self._FuncShowBtnFashion:SetReddotShow(isRed)
     
     self:RefreshButtonShow()
 end
@@ -320,16 +344,25 @@ end
 function XUiCharacterV2P6:OnBtnTeachingClick()
     XMVCA.XCharacter:BuryingUiCharacterAction(self.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnTeaching, self.CurCharacter.Id)
     XDataCenter.PracticeManager.OpenUiFubenPractice(self.CurCharacter.Id)
+    return true
+end
+
+function XUiCharacterV2P6:OnBtnCloseClick()
+    self:GetCharPanel("PanelCharacterOwnedInfoV2P6"):CloseTreeBubble()
+    self:GetCharPanel("PanelCharacterUnOwnedInfoV2P6"):CloseTreeBubble()
+    self.BtnClose.gameObject:SetActiveEx(false)
 end
 
 function XUiCharacterV2P6:OnBtnFashionClick()
     XMVCA.XCharacter:BuryingUiCharacterAction(self.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnFashion, self.CurCharacter.Id)
     XLuaUiManager.Open("UiFashion", self.CurCharacter.Id)
+    return true
 end
 
 function XUiCharacterV2P6:OnBtnOwnedDetailClick()
     XMVCA.XCharacter:BuryingUiCharacterAction(self.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnOwnedDetail, self.CurCharacter.Id)
     XLuaUiManager.Open("UiCharacterDetail", self.CurCharacter.Id)
+    return true
 end
 
 function XUiCharacterV2P6:OnBtnFileClick()
@@ -338,6 +371,7 @@ function XUiCharacterV2P6:OnBtnFileClick()
             local actId = XFubenNewCharConfig.GetActivityIdByCharacterId(self.CurCharacter.Id)
             if XTool.IsNumberValid(actId) then
                 XDataCenter.FubenNewCharActivityManager.SkipToActivityMain(actId)
+                return true
             else
                 XLog.Error('角色:'..tostring(self.CurCharacter.Id)..' 对应的活动Id无效:'..tostring(actId))
             end

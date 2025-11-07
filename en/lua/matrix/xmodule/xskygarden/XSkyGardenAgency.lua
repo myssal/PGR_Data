@@ -18,6 +18,7 @@ function XSkyGardenAgency:OnInit()
 end
 
 function XSkyGardenAgency:OnEnterFight()
+    XMVCA.XBigWorldGamePlay:MarkSkyGardenEntryRedPoint()
 end
 
 function XSkyGardenAgency:OnExitFight()
@@ -106,6 +107,14 @@ end
 ---@return string
 function XSkyGardenAgency:GetBigWorldGuideIcon(iconId)
     return self._Model:GetGuideIcon(iconId)
+end
+
+function XSkyGardenAgency:InitPerspective(perspectiveData)
+    self._Model:InitPerspective(perspectiveData)
+end
+
+function XSkyGardenAgency:UpdatePerspective(groupId, perspectiveId)
+    self._Model:UpdatePerspective(groupId, perspectiveId)
 end
 
 return XSkyGardenAgency

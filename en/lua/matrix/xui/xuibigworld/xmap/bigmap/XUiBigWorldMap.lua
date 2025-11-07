@@ -32,6 +32,7 @@ local XBWBigMapInterface = require("XModule/XBigWorldMap/XInterface/XBWBigMapInt
 ---@field PanelPreSelect UnityEngine.RectTransform
 ---@field BtnDetailClose XUiComponent.XUiButton
 ---@field BtnSelectClose XUiComponent.XUiButton
+---@field Gesture XUiComponent.XGesture.XUiGestureFixedAreaScaleDrag
 ---@field _Control XBigWorldMapControl
 local XUiBigWorldMap = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMap")
 
@@ -71,15 +72,14 @@ function XUiBigWorldMap:OnAwake()
     self._MaxScale = 0
     self._MinScale = 0
 
+    self._RightPadding = self.Gesture.Padding.right
+
     self._IsDetailShow = false
     self._IsIgnoreSlider = false
     self._IsOnlyOneFloor = false
 
     ---@type XUiBigWorldMapDetail
     self._DetailUi = false
-
-    self._Gesture = XUiHelper.TryAddComponent(self.MapArea.gameObject,
-        typeof(CS.XUiComponent.XGesture.XUiGestureFixedAreaScaleDrag))
 
     ---@type XUiBigWorldMapSelect
     self._SelectPanel = XUiBigWorldMapSelect.New(self.PanelPreSelect, self)
@@ -147,15 +147,16 @@ end
 -- region 按钮事件
 
 function XUiBigWorldMap:OnSliderValueChanged(value)
-    if not self._IsIgnoreSlider then
-        local scale = (self._MaxScale - self._MinScale) * value + self._MinScale
+    local scale = (self._MaxScale - self._MinScale) * value + self._MinScale
 
+    if not self._IsIgnoreSlider then
         self:_RefreshTrackPin()
         self:_RefreshPlayerTrack()
-        self._Gesture.Scale = scale
+        self.Gesture.Scale = scale
     end
 
     self._IsIgnoreSlider = false
+    self._Control:SetMapScaleCache(scale)
 end
 
 function XUiBigWorldMap:OnGestureScaleValueChanged(value)
@@ -249,11 +250,11 @@ function XUiBigWorldMap:OnPinDetailClose()
 end
 
 function XUiBigWorldMap:OnTeleportPopupClose()
-    self._Gesture.WheelSensitivity = 0.1
+    self.Gesture.WheelSensitivity = 0.1
 end
 
 function XUiBigWorldMap:OnTeleportPopupOpen()
-    self._Gesture.WheelSensitivity = 0
+    self.Gesture.WheelSensitivity = 0
 end
 
 function XUiBigWorldMap:OnAnchorAndSelectPin(pinIdStr)
@@ -270,7 +271,6 @@ function XUiBigWorldMap:OpenPinDetail(selectPin, levelId, pinData)
         self:_CancelSelectPin()
         self:_CancelSelectTagPin()
         self:_CloseSelectPanel(true)
-        self:_ActiveSlider(false)
         self:_ActiveTrack(false)
         self._CurrentSelectPin = selectPin
         self.BtnDetailClose.gameObject:SetActiveEx(true)
@@ -286,7 +286,6 @@ function XUiBigWorldMap:OpenTagPinDetail(bindPin, levelId, pinData)
         self:_CancelSelectPin()
         self:_CancelSelectTagPin()
         self:_CloseSelectPanel(true)
-        self:_ActiveSlider(false)
         self:_ActiveTrack(false)
         self._CurrentSelectTagPin = bindPin
         self.BtnDetailClose.gameObject:SetActiveEx(true)
@@ -315,13 +314,13 @@ function XUiBigWorldMap:OpenSelectPinDetail(levelId, pinData)
 end
 
 ---@param pinDatas XBWMapPinData[]
-function XUiBigWorldMap:OpenPinSelectList(pinDatas, position)
+function XUiBigWorldMap:OpenPinSelectList(pinDatas, transform)
     if self._IsDetailShow then
         self:_CloseDetail()
     end
     if not XTool.IsTableEmpty(pinDatas) and table.nums(pinDatas) > 1 then
         self._SelectPanel:Open()
-        self._SelectPanel:Refresh(self._LevelId, pinDatas, position)
+        self._SelectPanel:Refresh(self._LevelId, pinDatas, transform)
         self:_ActiveSlider(false)
         self.BtnSelectClose.gameObject:SetActiveEx(true)
     end
@@ -332,17 +331,25 @@ function XUiBigWorldMap:AnchorToPin(pinId)
 
     self:_CloseSelectPanel()
     if pinNode then
-        pinNode:AnchorTo()
+        pinNode:AnchorTo(true)
     end
 end
 
-function XUiBigWorldMap:AnchorToPosition(x, y, isIgnoreTween)
+function XUiBigWorldMap:AnchorToPosition(x, y, isCenter, isIgnoreTween)
     self:_CloseSelectPanel()
-    if not XTool.UObjIsNil(self._Gesture) then
+    if not XTool.UObjIsNil(self.Gesture) then
         if isIgnoreTween then
-            self._Gesture:WorldPositionAnchorToSceneCenter(x, y)
+            if isCenter then
+                self.Gesture:WorldPositionAnchorToSceneCenter(x, y)
+            else
+                self.Gesture:WorldPositionAnchorToScenePercentage(x, y, 0.35, 0.5)
+            end
         else
-            self._Gesture:WorldPositionAnchorToSceneCenter(x, y, 0.5, CS.DG.Tweening.Ease.InOutQuart)
+            if isCenter then
+                self.Gesture:WorldPositionAnchorToSceneCenter(x, y, 0.5, CS.DG.Tweening.Ease.InOutQuart)
+            else
+                self.Gesture:WorldPositionAnchorToScenePercentage(x, y, 0.35, 0.5, 0.5, CS.DG.Tweening.Ease.InOutQuart)
+            end
         end
     end
 end
@@ -536,10 +543,9 @@ function XUiBigWorldMap:_RefreshPlayerTrack()
         local trackPos = self._AxisConversion:FilterOutScreenPlayerPosition(self:GetMapObject(), self.TrackPin)
 
         if trackPos then
-            local playerTargetPos = self.PlayerTarget.position
-
+            local posX, posY, _ = self.PlayerTarget:GetPosition()
             self._PlayerTrack:Open()
-            self._PlayerTrack:Refresh(playerTargetPos.x, playerTargetPos.y)
+            self._PlayerTrack:Refresh(posX, posY)
             self._PlayerTrack:SetPosition(trackPos.Position, trackPos.Direction, trackPos.Angle, self.TrackPin.rect)
         else
             self._PlayerTrack:Close()
@@ -549,11 +555,14 @@ end
 
 function XUiBigWorldMap:_RefreshTrackPin()
     local index = 1
-    local trackPinDatas = self._Control:GetTrackPinDatas(self._LevelId)
-    local trackPinIds = self._AxisConversion:FilterOutScreenPinsPosition(trackPinDatas, self:GetMapObject(),
+    self._TrackPinDataMap = self._Control:GetTrackPinDatas(self._LevelId, self._TrackPinDataMap)
+    local trackPinIds = self._AxisConversion:FilterOutScreenPinsPosition(self._TrackPinDataMap, self:GetMapObject(),
         self.TrackPin)
 
-    self._TrackPinMap = {}
+    for k, _ in pairs(self._TrackPinMap) do
+        self._TrackPinMap[k] = nil
+    end
+   
     if not XTool.IsTableEmpty(trackPinIds) then
         local trackPinNodes = {}
 
@@ -561,11 +570,12 @@ function XUiBigWorldMap:_RefreshTrackPin()
             local screenRect = self._AxisConversion:GetScreenUIRect(self:GetMapObject())
             local centerPos = screenRect.center
 
+            local posX, posY, _ = self.PlayerTarget:GetPosition()
             table.insert(trackPinNodes, {
                 PinId = 0,
                 Node = self._PlayerTrack,
-                Priority = math.pow(self.PlayerTarget.position.x - centerPos.x, 2) +
-                    math.pow(self.PlayerTarget.position.y - centerPos.y, 2),
+                Priority = math.pow(posX - centerPos.x, 2) +
+                    math.pow(posY - centerPos.y, 2),
             })
         end
 
@@ -612,10 +622,10 @@ end
 function XUiBigWorldMap:_RefreshPosition()
     if not XTool.IsNumberValid(self._TargetPinId) then
         if self._FocusPosition then
-            local position = self._AxisConversion:WorldToMapUIWorldPosition2D(self:GetMapObject(),
+            local posX, posY = self._AxisConversion:WorldToMapUIWorldPosition2D(self:GetMapObject(),
                 self._FocusPosition.x, self._FocusPosition.y)
 
-            self:AnchorToPosition(position.x, position.y, true)
+            self:AnchorToPosition(posX, posY, true, true)
         else
             if XTool.IsNumberValid(self._BindPinId) then
                 local pinData = self._Control:GetPinDataByLevelIdAndPinId(self._LevelId, self._BindPinId)
@@ -623,13 +633,11 @@ function XUiBigWorldMap:_RefreshPosition()
                 local pinNode = self._PinNodeMap[pinData.PinId]
 
                 if pinNode then
-                    pinNode:AnchorTo(true)
+                    pinNode:AnchorTo(true, true)
                 end
             else
-                local positionX = self.PlayerTarget.position.x
-                local positionY = self.PlayerTarget.position.y
-
-                self:AnchorToPosition(positionX, positionY, true)
+                local positionX, positionY, _ = self.PlayerTarget:GetPosition()
+                self:AnchorToPosition(positionX, positionY, true, true)
             end
         end
     else
@@ -671,11 +679,13 @@ function XUiBigWorldMap:_RefreshSelectGroup(pinData)
 end
 
 function XUiBigWorldMap:_RefreshDeatil(levelId, pinData)
-    self:_InitDetailUi()
-    self:_RefreshPinRangeSelectable(false)
     self._IsDetailShow = true
     self:OpenChildUi("UiBigWorldMapDetail")
+    self:_InitDetailUi()
+    self:_RefreshPinRangeSelectable(false)
+    self.Gesture.Padding.right = self._RightPadding + 200
     self._DetailUi:Refresh(levelId, pinData)
+    self:_ActiveSlider(false)
 end
 
 function XUiBigWorldMap:_RefreshPinRangeSelectable(isSelect)
@@ -709,7 +719,7 @@ function XUiBigWorldMap:_CloseSelectPanel(isIgnoreSlider)
     self.BtnSelectClose.gameObject:SetActiveEx(false)
 
     if not isIgnoreSlider then
-        self:_ActiveSlider(true)
+        self:_ActiveSlider(not self._IsDetailShow)
     end
 end
 
@@ -744,14 +754,15 @@ function XUiBigWorldMap:_AnchorTargetPin()
 end
 
 function XUiBigWorldMap:_CloseDetail()
+    self:CloseChildUi("UiBigWorldMapDetail")
+    self._IsDetailShow = false
     self:_CancelSelectPin()
     self:_CancelSelectTagPin()
     self:_ActiveSlider(true)
     self:_ActiveTrack(true)
     self.BtnDetailClose.gameObject:SetActiveEx(false)
     self:_RefreshPinRangeSelectable(true)
-    self:CloseChildUi("UiBigWorldMapDetail")
-    self._IsDetailShow = false
+    self.Gesture.Padding.right = self._RightPadding
 end
 
 function XUiBigWorldMap:_CloseOther()
@@ -765,7 +776,7 @@ end
 
 function XUiBigWorldMap:_ActiveSlider(isActive)
     self.PanelSlider.gameObject:SetActiveEx(isActive)
-    self._Gesture.WheelSensitivity = isActive and 0.1 or 0
+    self.Gesture.WheelSensitivity = isActive and 0.1 or 0
 end
 
 function XUiBigWorldMap:_ActiveTrack(isActive)
@@ -859,8 +870,8 @@ function XUiBigWorldMap:_InitAreaGroup()
                         local posZ = self._Control:GetAreaPosZByAreaId(areaId)
                         local pixelRatio = self._Control:GetAreaPixelRatioByAreaId(areaId)
 
-                        rectTransform.anchoredPosition = self._AxisConversion:WorldToMapPosition2D(posX, posZ,
-                            pixelRatio)
+                        local xOffset, yOffset = self._AxisConversion:WorldToMapPosition2D(posX, posZ, pixelRatio)
+                        rectTransform:SetAnchoredPosition(xOffset, yOffset)
                     end
 
                     imageList[index] = areaImage
@@ -882,7 +893,7 @@ function XUiBigWorldMap:_InitCurrentNpcIcon()
     else
         local npcTransform = self._AxisConversion:GetCurrentNpcTransform()
         local rotation = npcTransform.eulerAngles
-        local position = npcTransform.position
+        local positionX, _, positionZ = npcTransform:GetPosition()
         local cameraTransform = self._Control:GetCurrentCameraTransform()
         local transformBind = self.PanelPlayer.gameObject:GetComponent(typeof(CS.XTransformBind))
 
@@ -890,7 +901,9 @@ function XUiBigWorldMap:_InitCurrentNpcIcon()
             transformBind = self.PanelPlayer.gameObject:AddComponent(typeof(CS.XTransformBind))
         end
 
-        self.PlayerTarget.anchoredPosition = self._AxisConversion:WorldToMapPosition2D(position.x, position.z)
+        local xOffset, yOffset = self._AxisConversion:WorldToMapPosition2D(positionX, positionZ)
+        self.PlayerTarget:SetAnchoredPosition(xOffset, yOffset) 
+        
         self.ImgPlayer.rotation = CS.UnityEngine.Quaternion.Euler(0, 0, -rotation.y)
 
         transformBind:SetTarget(self.PlayerTarget)
@@ -917,29 +930,24 @@ function XUiBigWorldMap:_InitUi()
 end
 
 function XUiBigWorldMap:_InitGesture()
-    if not XTool.UObjIsNil(self._Gesture) then
-        self._Gesture.FixedArea = self.DragArea
-        self._Gesture.WheelSensitivity = 0.1
-        self._Gesture.MaxScale = self._MaxScale
-        self._Gesture.MinScale = self._MinScale
-        self._Gesture.Target = self.RImgBase.transform
-        self._Gesture.IsIgnoreStartedOverGui = true
-        self._Gesture.TranslateDamping = 10
-        self._Gesture.TranslateInertia = 0.1
-        self._Gesture:AddScaleValueChangedListener(Handler(self, self.OnGestureScaleValueChanged))
-        self._Gesture:AddTranslateValueChangedListener(Handler(self, self.OnGestureTranslateValueChanged))
+    if not XTool.UObjIsNil(self.Gesture) then
+        self.Gesture.MaxScale = self._MaxScale
+        self.Gesture.MinScale = self._MinScale
+        self.Gesture:AddScaleValueChangedListener(Handler(self, self.OnGestureScaleValueChanged))
+        self.Gesture:AddTranslateValueChangedListener(Handler(self, self.OnGestureTranslateValueChanged))
     end
 end
 
 function XUiBigWorldMap:_InitScale(scaleRatio)
-    local scale = self._Control:GetMapDefaultScale(self._LevelId)
+    local defaultScale = self._Control:GetMapDefaultScale(self._LevelId)
+    local scale = self._Control:GetMapScaleCache(defaultScale)
 
     if XTool.IsNumberValid(scaleRatio) then
         scale = self._MinScale + (self._MaxScale - self._MinScale) * (scaleRatio / 100)
     end
 
     scale = XMath.Clamp(scale, self._MinScale, self._MaxScale)
-    self._Gesture.Scale = scale
+    self.Gesture.Scale = scale
     self.Slider:SetValueWithoutNotify((scale - self._MinScale) / (self._MaxScale - self._MinScale))
 end
 

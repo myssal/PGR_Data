@@ -7,7 +7,7 @@ local XExFubenSimulationChallengeManager = require("XEntity/XFuben/XExFubenSimul
 
 XTheatreManagerCreator = function()
     ---@class XTheatreManager:XExFubenSimulationChallengeManager
-    local XTheatreManager = XExFubenSimulationChallengeManager.New(XFubenConfigs.ChapterType.Theatre)
+    local XTheatreManager = XExFubenSimulationChallengeManager.New(XEnumConst.FuBen.ChapterType.Theatre)
     -- 当前冒险管理 XAdventureManager
     ---@type XTheatreAdventureManager
     local CurrentAdventureManager = nil

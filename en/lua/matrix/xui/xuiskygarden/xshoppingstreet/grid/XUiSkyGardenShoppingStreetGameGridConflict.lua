@@ -25,7 +25,7 @@ end
 
 --region 私有方法
 function XUiSkyGardenShoppingStreetGameGridConflict:_RegisterButtonClicks()
-    self.UiSkyGardenShoppingStreetGameGridConflict.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridConflictClick() end
+    self.UiSkyGardenShoppingStreetGameGridConflict:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridConflictClick))
 end
 --endregion
 

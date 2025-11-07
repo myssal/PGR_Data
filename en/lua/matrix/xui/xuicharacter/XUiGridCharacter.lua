@@ -135,6 +135,16 @@ function XUiGridCharacter:UpdataBaseInfo()
         local icon = self.CharacterAgency:GetModelCharacterQualityIconInit(initQuality)
         self.ImgInitQuality:SetSprite(icon)
     end
+
+    -- 生命树
+    if self.ImgTreeIcon then
+        local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconSmallVisible"))
+        local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.Character.Id)
+        self.ImgTreeIcon.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+        if powerConfig then
+            self.ImgTreeIcon:SetSprite(powerConfig.IconSmall)
+        end
+    end
 end
 
 function XUiGridCharacter:UpdateRobotGrid()

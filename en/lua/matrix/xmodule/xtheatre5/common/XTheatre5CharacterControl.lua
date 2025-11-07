@@ -25,7 +25,7 @@ end
 function XTheatre5CharacterControl:GetFashionIdByCharacterIdInCurMode(characterId)
     local fashionId = nil
 
-    if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         fashionId = self._Model.PVPCharacterData:GetCharacterFashionId(characterId)
     else
         fashionId = self._Model.PVERougeData:GetCharacterFashionId(characterId)
@@ -39,7 +39,7 @@ function XTheatre5CharacterControl:GetFashionIdByCharacterIdInCurMode(characterI
             fashionId = charaCfg.FashionIds[XMVCA.XTheatre5.EnumConst.CharacterFashionIndexType.Default]
         end
     end
-    
+
     return fashionId
 end
 
@@ -187,6 +187,87 @@ function XTheatre5CharacterControl:GetDefaultFashionIdByCharacterId(characterId)
     if charaCfg then
         return charaCfg.FashionIds[XMVCA.XTheatre5.EnumConst.CharacterFashionIndexType.Default]
     end
+end
+--endregion
+
+--region 获取角色等级和经验
+-- 角色等级
+function XTheatre5CharacterControl:GetCharacterLevel()
+    return self._Model.CurAdventureData:GetCharacterLevel()
+end
+
+-- 角色经验值(达到最大等级之后，经验值会继续累计，可能超过上限，便于后续修改配置)
+function XTheatre5CharacterControl:GetCharacterExp()
+    return self._Model.CurAdventureData:GetCharacterExp()
+end
+
+-- 角色最大等级
+function XTheatre5CharacterControl:GetCharacterMaxLevel()
+    local adventureData = self._Model.CurAdventureData
+    local levelGroups = self._Model:GetCharacterLevelConfig(adventureData)
+    local lastConfig = levelGroups[#levelGroups]
+    if not lastConfig then
+        XLog.Error("[XTheatre5CharacterControl] 找不到对应的配置组")
+        return 0
+    end
+    return lastConfig.Level
+end
+
+-- 是否是当前等级最大等级
+function XTheatre5CharacterControl:IsCharacterMaxLevel()
+    local currentLevel = self:GetCharacterLevel()
+    local maxLevel = self:GetCharacterMaxLevel()
+    return currentLevel >= maxLevel
+end
+
+-- 获取当前等级最大值
+function XTheatre5CharacterControl:GetCharacterMaxExpThisLevel()
+    local adventureData = self._Model.CurAdventureData
+    local config = self._Model:GetCharacterLevelConfig(adventureData)
+    if not config then
+        -- maxLevel???
+        return 0
+    end
+    return config.Exp
+end
+
+-- 距离下一级差多少经验
+function XTheatre5CharacterControl:GetCharacterExpToNextLevel()
+    local expThisLevel = self:GetCharacterMaxExpThisLevel()
+    local currentExp = self:GetCharacterExp()
+    if expThisLevel <= currentExp and expThisLevel > 0 then
+        --XLog.Error("[XTheatre5CharacterControl] 当前拥有的经验已经超过等级上限，但是还没有升级，是不是有bug?")
+        return 0
+    end
+    return expThisLevel - currentExp
+end
+
+function XTheatre5CharacterControl:GetPriceToNextLevel()
+    local shopConfig = self._MainControl.ShopControl:GetCurShopCfg()
+    if not shopConfig then
+        -- 第一次进游戏，就是会获取失败
+        --XLog.Error("[XTheatre5CharacterControl] 获取限购商店配置失败")
+        return
+    end
+    local needExp = self:GetCharacterExpToNextLevel()
+    local expPrice = shopConfig.ExpPrice or 0
+    if needExp <= 0 or expPrice <= 0 then
+        --XLog.Error("[XTheatre5CharacterControl] 获取经验值失败")
+        return
+    end
+    local price = needExp * expPrice
+    return price
+end
+
+-- 购买经验到下一级
+function XTheatre5CharacterControl:BuyExp()
+    local price = self:GetPriceToNextLevel()
+    local money = self._Model.CurAdventureData:GetGoldNum()
+    if money < price then
+        XUiManager.TipText("XUiTheatre5Character.TipNotEnoughMoney")
+        return
+    end
+    -- 打开弹窗, 确定购买
 end
 --endregion
 

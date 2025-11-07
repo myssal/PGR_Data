@@ -37,6 +37,14 @@ end
 
 function XBWCourseTaskEntity:IsSkip()
     if not self:IsNil() then
+        local conditionId = self:GetConditionId()
+
+        if XTool.IsNumberValid(conditionId) then
+            if not XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                return false
+            end
+        end
+
         local skipId = self:GetSkipId()
 
         return XTool.IsNumberValid(skipId)
@@ -104,6 +112,14 @@ end
 function XBWCourseTaskEntity:GetRewardId()
     if not self:IsNil() then
         return XMVCA.XBigWorldService:GetTaskRewardIdByTaskId(self:GetTaskId())
+    end
+
+    return 0
+end
+
+function XBWCourseTaskEntity:GetConditionId()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseTaskConditionIdByTaskId(self:GetTaskId())
     end
 
     return 0

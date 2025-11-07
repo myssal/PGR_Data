@@ -3,7 +3,7 @@
 local XMovieActionBgScale = XClass(XMovieActionBase, "XMovieActionBgScale")
 local DefaultBgIndex = 1
 
-function XMovieActionBgScale:Ctor(actionData)
+function XMovieActionBgScale:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.Scale = paramToNumber(params[1])
@@ -33,6 +33,14 @@ function XMovieActionBgScale:OnRunning()
         self.RImgAnimBg:SetLocalScale(CS.UnityEngine.Vector3.one * self.Scale)
         self.RImgAnimBg:SetLocalPosition(self.Pos)
     end
+end
+
+function XMovieActionBgScale:IsPassedActionRun(index)
+    return true
+end
+
+function XMovieActionBgScale:OnPassedActionRun()
+    self:OnRunning()
 end
 
 return XMovieActionBgScale

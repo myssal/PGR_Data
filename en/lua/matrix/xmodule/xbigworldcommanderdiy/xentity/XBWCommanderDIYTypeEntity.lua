@@ -73,6 +73,22 @@ function XBWCommanderDIYTypeEntity:IsSuit()
     return false
 end
 
+function XBWCommanderDIYTypeEntity:IsNew()
+    if not self:IsNil() then
+        local entitys = self:GetDisplayPartEntitys()
+
+        if not XTool.IsTableEmpty(entitys) then
+            for _, partEntity in pairs(entitys) do
+                if partEntity:IsNew() then
+                    return true
+                end
+            end
+        end
+    end
+
+    return false
+end
+
 ---@return XBWCommanderDIYPartEntity[]
 function XBWCommanderDIYTypeEntity:GetPartEntitysWithTemporary()
     if self:IsRequired() then
@@ -181,7 +197,7 @@ function XBWCommanderDIYTypeEntity:GetDisplayPartEntitys()
     end
     if not XTool.IsTableEmpty(partEntitys) then
         for _, partEntity in pairs(partEntitys) do
-            if partEntity:IsUnlock() then
+            if partEntity:IsDisplay() then
                 table.insert(result, partEntity)
             end
         end

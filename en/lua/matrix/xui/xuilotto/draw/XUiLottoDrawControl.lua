@@ -2,36 +2,31 @@ local characterRecord = require("XUi/XUiDraw/XUiDrawTools/XUiDrawCharacterRecord
 ---@class XUiLottoDrawControl:XUiNode
 local XUiLottoDrawControl = XClass(XUiNode, "XUiLottoDrawControl")
 
+local PANEL_UI_MAP = {
+    [XEnumConst.Lotto.Karenina] = {
+        Passport = "UiLottoKareninaPassport",
+        QuickWear = "UiLottoKareninaQuickWear"
+    },
+    [XEnumConst.Lotto.Luna] = {
+        Passport = "UiLottoLunaPassport",
+        QuickWear = "UiLottoLunaQuickWear"
+    },
+    [XEnumConst.Lotto.Lifu] = {
+        Passport = "UiLottoLifuPassport",
+        QuickWear = "UiLottoLifuQuickWear"
+    },
+    [XEnumConst.Lotto.Vera] = {
+        Passport = "UiLottoVeraPassport",
+        QuickWear = "UiLottoVeraQuickWear"
+    },
+    [XEnumConst.Lotto.Cibeizhe] = {
+        Passport = "UiLottoCibeizhePassport",
+        QuickWear = "UiLottoCibeizheQuickWear"
+    }
+}
+
 ---@param lottoGroupData XLottoGroupEntity
 function XUiLottoDrawControl:OnStart(lottoGroupData)
-    --self._RewardList = {
-    --    [1] = {
-    --        ["ConvertFrom"] = 0,
-    --        ["RewardType"] = 1,
-    --        ["TemplateId"] = 6002306,
-    --        ["SpecialDrawEffectGroupId"] = 16,
-    --        ["Quality"] = 0,
-    --        ["Breakthrough"] = 0,
-    --        ["Id"] = 0,
-    --        ["Grade"] = 0,
-    --        ["Count"] = 120,
-    --        ["Level"] = 0,
-    --    },
-    --}
-
-    --self._ExtraRewardList = {
-    --    [1] = {
-    --        ["ConvertFrom"] = 0,
-    --        ["RewardType"] = 10,
-    --        ["TemplateId"] = 9010253,
-    --        ["Quality"] = 0,
-    --        ["Breakthrough"] = 0,
-    --        ["Id"] = 0,
-    --        ["Grade"] = 0,
-    --        ["Count"] = 1,
-    --        ["Level"] = 0,
-    --    },
-    --}
     self._IsCanDraw = true
     ---@type XLottoGroupEntity
     self._LottoGroupData = lottoGroupData
@@ -135,37 +130,28 @@ function XUiLottoDrawControl:_OnShowFashionRewardList(asynOpen, panelType)
     local lottoRewardEntity = drawData:GetRewardDataById(self._LottoRewardId)
     local rewardId = drawData:GetCoreRewardTemplateId()
     local isSame = false
+
+    local panelConfig = PANEL_UI_MAP[panelType]
+    if not panelConfig then
+        XLog.Error("快速使用角色涂装弹框未接入. PanelType=" .. tostring(panelType))
+    end
+
     for _, v in pairs(self._RewardList) do
-        if v.TemplateId == rewardId then
-            if panelType == XEnumConst.Lotto.Karenina then
-                asynOpen("UiLottoKareninaPassport", v)
-            elseif panelType == XEnumConst.Lotto.Luna then
-                asynOpen("UiLottoLunaPassport", v)
-            elseif panelType == XEnumConst.Lotto.Lifu then
-                asynOpen("UiLottoLifuPassport", v)
-            elseif panelType == XEnumConst.Lotto.Vera then
-                asynOpen("UiLottoVeraPassport", v)
-            else
-                XLog.Error("快速使用角色涂装弹框未接入. PanelType=" .. panelType)
-            end
+        -- 核心奖励（角色涂装）
+        if v.TemplateId == rewardId and panelConfig then
+            asynOpen(panelConfig.Passport, v)
         end
-        if XDataCenter.ItemManager.IsWeaponFashion(v.TemplateId) then
-            if panelType == XEnumConst.Lotto.Karenina then
-                asynOpen("UiLottoKareninaQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Luna then
-                asynOpen("UiLottoLunaQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Lifu then
-                asynOpen("UiLottoLifuQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Vera then
-                asynOpen("UiLottoVeraQuickWear", v.TemplateId)
-            else
-                XLog.Error("快速使用弹框未接入. PanelType=" .. panelType)
-            end
+
+        -- 武器涂装
+        if XDataCenter.ItemManager.IsWeaponFashion(v.TemplateId) and panelConfig then
+            asynOpen(panelConfig.QuickWear, v.TemplateId)
         end
+
         if v.TemplateId == lottoRewardEntity:GetTemplateId() then
             isSame = true
         end
     end
+
     if not isSame then
         asynOpen("UiObtain", self._RewardList, nil) -- UiObtain的第三个参数是closeBack
     end
@@ -177,27 +163,27 @@ function XUiLottoDrawControl:_OnShowExtraRewardList(asynOpen, panelType)
     if XTool.IsTableEmpty(self._ExtraRewardList) then
         return
     end
+
+    local panelConfig = PANEL_UI_MAP[panelType]
+    if not panelConfig then
+        XLog.Error("快速使用弹框未接入. PanelType=" .. tostring(panelType))
+    end
+
     -- 使用头像弹框
     for _, v in pairs(self._ExtraRewardList) do
         if XDataCenter.HeadPortraitManager.IsHeadPortraitValid(v.TemplateId) then
-            if panelType == XEnumConst.Lotto.Karenina then
-                asynOpen("UiLottoKareninaQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Luna then
-                asynOpen("UiLottoLunaQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Lifu then
-                asynOpen("UiLottoLifuQuickWear", v.TemplateId)
-            elseif panelType == XEnumConst.Lotto.Vera then
-                asynOpen("UiLottoVeraQuickWear", v.TemplateId)
-            else
-                XLog.Error("快速使用弹框未接入. PanelType=" .. panelType)
+            if panelConfig then
+                asynOpen(panelConfig.QuickWear, v.TemplateId)
             end
             self._ExtraRewardList = nil
             return
         end
     end
+
     asynOpen("UiObtain", self._ExtraRewardList, nil)
     self._ExtraRewardList = nil
 end
+
 --endregion
 
 return XUiLottoDrawControl

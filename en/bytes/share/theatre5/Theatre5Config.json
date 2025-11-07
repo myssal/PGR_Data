@@ -68,7 +68,7 @@
         "Key": "PvpShopGridsTotalCount",
         "Desc": "商店格子总数",
         "Values": [
-            6
+            8
         ]
     },
     {
@@ -301,7 +301,7 @@
         "Key": "PveVersion",
         "Desc": "PVE Mode Version Number",
         "Values": [
-            2
+            3
         ]
     },
     {
@@ -323,9 +323,9 @@
         "Desc": "Groups of 2: The 1st part is the ID, the 2nd is the quantity.",
         "Values": [
             50005,
-            1750,
+            2000,
             102,
-            3500,
+            4000,
             11000268,
             1
         ]
@@ -357,6 +357,38 @@
         "Values": [
             1000,
             2000
+        ]
+    },
+    {
+        "Key": "PvpLevelGroup",
+        "Desc": "PvP Level Configuration Set",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "RelicRefresh",
+        "Desc": "Accessory Refresh Attempts",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "StrengthenRate",
+        "Desc": "Enhanced Rune Price Multiplier",
+        "Values": [
+            20000
+        ]
+    },
+    {
+        "Key": "MinPvpFinishScores",
+        "Desc": "10胜通关进行保底(不同血量保底分数不同)",
+        "Values": [
+            10,
+            10,
+            15,
+            15,
+            15
         ]
     }
 ]

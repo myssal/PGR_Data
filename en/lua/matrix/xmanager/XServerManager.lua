@@ -157,30 +157,37 @@ function XServerManager.UpdateSortedServer()
     end
 end
 
-function XServerManager.InsertTempServer(ip)
+function XServerManager.InsertTempServer(address)
     if not XMain.IsDebug then
         return false, "该功能仅Debug模式下可使用！"
     end
+    local strList = string.Split(address, ":")
+    local ip, portStr = strList[1], strList[2]
 
     local ipValid, ipStr = string.IsIp(ip)
     if not ipValid then
         return false, "请输入合法Ip地址！"
     end
 
-    if TempServerDic[ipStr] then
+    if string.IsNilOrEmpty(portStr) then
+        portStr = "2333"
+    end
+
+    local host = string.format("%s:%s", ipStr, portStr)
+    if TempServerDic[host] then
         return false, "该临时服已存在"
     end
 
     local tempServer = {
         Id = #ServerList + 1,
-        Name = "临时服: " .. ipStr,
+        Name = string.format("[临时]%s", host),
         LastTime = 0,
-        LoginUrls = {string.format("http://%s:2333/api/Login/Login", ipStr)},
+        LoginUrls = {string.format("http://%s/api/Login/Login", host)},
         IsTempServer = true,
     }
 
     table.insert(ServerList, tempServer)
-    TempServerDic[ipStr] = true
+    TempServerDic[host] = true
     XServerManager.UpdateSortedServer()
 
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_SERVER_LIST_CHANGE)

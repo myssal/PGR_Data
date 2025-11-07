@@ -93,9 +93,9 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetLight:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnBack.CallBack = function() self:OnBtnBackClick() end
-    self.BtnSave.CallBack = function() self:OnBtnSaveClick() end
-    self.BtnHelp.CallBack = function() self:OnBtnHelpClick() end
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnSave:AddEventListener(handler(self, self.OnBtnSaveClick))
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
 end
 --endregion
 

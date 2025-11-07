@@ -222,6 +222,10 @@ function XBigWorldMapControl:GetPinIconByStyleId(styleId, isActive)
     return agency:GetPinIconByStyleId(styleId, isActive)
 end
 
+function XBigWorldMapControl:GetPinBriefIconByStyleId(styleId)
+    return self._Model:GetBigWorldMapPinStyleBriefIconByStyleId(styleId)
+end
+
 function XBigWorldMapControl:GetCollectableCount(levelId)
     return CS.StatusSyncFight.XLevelConfig.GetLevelCollectableSceneObjectCount(levelId)
 end
@@ -241,17 +245,12 @@ function XBigWorldMapControl:GetCurrentTrackPins(levelId)
     return self._Model:GetAllTrackPinsByLevelId(levelId)
 end
 
-function XBigWorldMapControl:GetCurrentTrackPinsIncludeVirtual(targetLevelId)
-    ---@type XBigWorldMapAgency
-    local agency = self:GetAgency()
-
-    return agency:GetCurrentTrackPinsIncludeVirtual(targetLevelId)
-end
-
-function XBigWorldMapControl:GetTrackPinDatas(levelId)
+function XBigWorldMapControl:GetTrackPinDatas(levelId, result)
     local trackIds = self:GetCurrentTrackPins(levelId)
-    local result = {}
-
+    result = result or {}
+    for k, _ in pairs(result) do
+        result[k] = nil
+    end
     if not XTool.IsTableEmpty(trackIds) then
         for pinId, _ in pairs(trackIds) do
             local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId)
@@ -294,6 +293,48 @@ function XBigWorldMapControl:GetTeleportLevelTips(levelId)
     local levelName = self:GetLevelName(levelId)
 
     return XMVCA.XBigWorldService:GetText("MapTeleportLevelTips", levelName)
+end
+
+---@param targetPinData XBWMapPinData
+function XBigWorldMapControl:GetQuickGoingPinData(targetPinData)
+    local result = nil
+
+    if targetPinData and not targetPinData:IsCouldTeleport() and targetPinData:IsTracking() then
+        local minDistance = math.maxinteger
+        local targetPosition = targetPinData.WorldPosition
+        local pinDatas = self:GetMapPinDatasByLevelId(targetPinData.LevelId)
+        
+        if not XTool.IsTableEmpty(pinDatas) then
+            for pinId, pinData in pairs(pinDatas) do
+                if pinData:IsTeleportInLevel() and pinData.MapAreaGroupId == targetPinData.MapAreaGroupId then
+                    if not result then
+                        local position = pinData.WorldPosition
+
+                        result = pinData
+                        minDistance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+                    else
+                        local position = pinData.WorldPosition
+                        local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+
+                        if distance < minDistance then
+                            result = pinData
+                            minDistance = distance
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    return result
+end
+
+function XBigWorldMapControl:GetMapScaleCache(defaultValue)
+    return self._Model:GetMapScaleCache(defaultValue)
+end
+
+function XBigWorldMapControl:SetMapScaleCache(value)
+    self._Model:SetMapScaleCache(value)
 end
 
 function XBigWorldMapControl:RefreshMapAreaGroup(groupList, currentIndex)
@@ -389,13 +430,6 @@ function XBigWorldMapControl:CheckHasTrackPin(levelId)
     return not XTool.IsTableEmpty(self:GetCurrentTrackPins(levelId))
 end
 
-function XBigWorldMapControl:CheckHasTrackPinIncludeVirtual(levelId)
-    ---@type XBigWorldMapAgency
-    local agency = self:GetAgency()
-
-    return agency:CheckHasTrackPinIncludeVirtual(levelId)
-end
-
 function XBigWorldMapControl:CheckHasArea(areaId)
     local configs = self._Model:GetBigWorldMapAreaConfigs()
 
@@ -427,6 +461,7 @@ function XBigWorldMapControl:CancelTrackPin(levelId, pinId)
         if pinData:IsQuest() then
             if self:CheckCurrentTrackPin(levelId, pinId) then
                 XMVCA.XBigWorldQuest:UnTrackQuest(pinData.QuestId)
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_DETAIL_CLOSE)
             end
         else
             self:RequestTrackMapPin(levelId, pinId, false)

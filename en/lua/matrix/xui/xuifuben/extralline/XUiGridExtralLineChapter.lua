@@ -92,14 +92,11 @@ function XUiGridExtralLineChapter:SetData(index, viewModel)
     -- 普通模式(之后不再需要普通模式标签)
     self.PanelNormal.gameObject:SetActiveEx(false)
     local chapterType = self.Manager:ExGetChapterType()
-    self.ImgKuai.gameObject:SetActiveEx(chapterType == XFubenConfigs.ChapterType.Prequel)
+    self.ImgKuai.gameObject:SetActiveEx(chapterType == XEnumConst.FuBen.ChapterType.Prequel)
     self.RImgLockMask.gameObject:SetActiveEx(viewModel:GetIsLocked())
 end
 
 function XUiGridExtralLineChapter:OnBtnSelfClicked()
-    if not XMVCA.XSubPackage:CheckSubpackage(self.Manager:ExGetFunctionNameType(), self.ChapterViewModel:GetId()) then
-        return
-    end
     if self.ClickFunc then
         self.ClickFunc(self.Index, self.ChapterViewModel)
     end

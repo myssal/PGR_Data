@@ -7,7 +7,9 @@ XPayManagerCreator = function()
     ---@class XPayManager
     local XPayManager = {}
     local IsGetFirstRechargeReward  -- 是否领取首充奖励
+    local FirstRewardReceivedList -- 领取首充奖励列表
     local IsFirstRecharge           -- 是否首充
+    local TotalPayMoney = 0 --累计充值
 
     local METHOD_NAME = {
         Initiated = "PayInitiatedRequest",
@@ -17,7 +19,7 @@ XPayManagerCreator = function()
 
     local function IsSupportPay()
         return Application.isMobilePlatform or
-        (Platform == RuntimePlatform.WindowsPlayer or Platform == RuntimePlatform.WindowsEditor)
+                (Platform == RuntimePlatform.WindowsPlayer or Platform == RuntimePlatform.WindowsEditor)
     end
 
     local function InitAgent()
@@ -44,7 +46,8 @@ XPayManagerCreator = function()
     end
 
     function XPayManager.Pay(productKey)
-        if XUserManager.HasLoginError() then -- 临时兼容sdk会回调多次登陆成功的问题
+        if XUserManager.HasLoginError() then
+            -- 临时兼容sdk会回调多次登陆成功的问题
             XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), "账号信息过期，请重新登陆", XUiManager.DialogType.OnlySure, nil, function()
                 XUserManager.ClearLoginData()
             end)
@@ -152,8 +155,11 @@ XPayManagerCreator = function()
     end
 
     function XPayManager.NotifyPayResult(data)
-        if not data then return end
+        if not data then
+            return
+        end
 
+        TotalPayMoney = data.TotalPayMoney
         IsFirstRecharge = XPayConfigs.CheckFirstPay(data.TotalPayMoney)
         local orderList = data.DealGameOrderList
         -- 测试充值
@@ -170,10 +176,92 @@ XPayManagerCreator = function()
     end
 
     function XPayManager.NotifyPayInfo(data)
-        if not data then return end
+        if not data then
+            return
+        end
 
-        IsGetFirstRechargeReward = data.IsGetFirstPayReward
+        -- v4.0 新增奖励，老玩家出现一半已领，一半未领取的情况
+        if not data.FirstRewardReceivedList then
+            IsGetFirstRechargeReward = data.IsGetFirstPayReward
+        else
+            FirstRewardReceivedList = data.FirstRewardReceivedList
+            IsGetFirstRechargeReward = false
+            local configs = XPayConfigs.GetFirstPayConfigs()
+            local matchCount = 0
+            for id, config in pairs(configs) do
+                for i = 1, #data.FirstRewardReceivedList do
+                    if data.FirstRewardReceivedList[i] == id then
+                        matchCount = matchCount + 1
+                        break
+                    end
+                end
+            end
+            if matchCount == #configs then
+                IsGetFirstRechargeReward = true
+            end
+        end
+        TotalPayMoney = data.TotalPayMoney
         IsFirstRecharge = XPayConfigs.CheckFirstPay(data.TotalPayMoney)
+    end
+    
+    function XPayManager.IsFirstRechargeRewardReceived(id)
+        if IsGetFirstRechargeReward then
+            return true
+        end
+        if FirstRewardReceivedList then
+            for i = 1, #FirstRewardReceivedList do
+                if FirstRewardReceivedList[i] == id then
+                    return true
+                end
+            end
+        end
+        return false
+    end
+    
+    function XPayManager.GetSmallRewards()
+        local configs = XPayConfigs.GetFirstPayConfigs()
+        local rewards = {}
+        for id, config in pairs(configs) do
+            local rewardId = config.SmallRewardId
+            local rewardList = XRewardManager.GetRewardList(rewardId)
+            if rewardList then
+                for i = 1, #rewardList do
+                    local data = {
+                        Item = rewardList[i],
+                        IsReceived = XDataCenter.PayManager.IsFirstRechargeRewardReceived(id),
+                        RewardId = rewardId,
+                    }
+                    table.insert(rewards, data)
+                end
+            end
+        end
+        return rewards
+    end
+    
+    function XPayManager.GetBigRewards()
+        local configs = XPayConfigs.GetFirstPayConfigs()
+        local rewards = {}
+        for id, config in pairs(configs) do
+            local rewardId = config.BigRewardId
+            local rewardList = XRewardManager.GetRewardList(rewardId)
+            if rewardList then
+                for i = 1, #rewardList do
+                    local data = {
+                        Item = rewardList[i],
+                        IsReceived = XDataCenter.PayManager.IsFirstRechargeRewardReceived(id),
+                        RewardId = rewardId
+                    }
+                    table.insert(rewards, data)
+                end
+            else
+                XLog.Error("XPayManager.GetBigRewards rewardId not exist: " .. rewardId)
+            end
+        end
+        return rewards
+    end
+
+    function XPayManager.GetTotalPayMoney()
+        return TotalPayMoney
     end
 
     DoInit()

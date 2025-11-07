@@ -79,6 +79,10 @@ function XActivityBrieIsOpen.Get(activityGroupId, ...)
     local groupConfig = XActivityBriefConfigs.GetActivityGroupConfig(activityGroupId)
     local beginTime, endTime = XFunctionManager.GetTimeByTimeId(groupConfig.TimeId)
     local skipConfig = XFunctionConfig.GetSkipFuncCfg(groupConfig.SkipId)
+    if not skipConfig then
+        XLog.Error("活动没有配置跳过功能：" .. tostring(groupConfig.Id) .. "跳转id是:" .. tostring(groupConfig.SkipId))
+        return false
+    end
     local isOpen = skipConfig.FunctionalId and XFunctionManager.JudgeCanOpen(skipConfig.FunctionalId)
     if groupConfig.TimeId and groupConfig.TimeId > 0 then
         local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, endTime, endTime)
@@ -96,7 +100,7 @@ function XActivityBrieIsOpen.Get(activityGroupId, ...)
 
         return func(...)
     else
-        XLog.Error("活动没有配置开放条件：" .. funcName)
+        XLog.Error("活动没有配置开放条件：" .. tostring(activityGroupId))
         return false
     end
 end
@@ -109,17 +113,17 @@ function XActivityBrieIsOpen.MainLine()
 end
 
 --function XActivityBrieIsOpen.Branch()
-    --local beginTime = XDataCenter.FubenActivityBranchManager.GetActivityBeginTime()
-    --local fightEndTime = XDataCenter.FubenActivityBranchManager.GetFightEndTime()
-    --local endTime = XDataCenter.FubenActivityBranchManager.GetActivityEndTime()
-    --local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, fightEndTime, endTime)
-    --if inTime then
-    --    local functionId = XFunctionManager.FunctionName.FubenActivityBranch
-    --    local isOpen = XFunctionManager.JudgeCanOpen(functionId)
-    --    return isOpen, XFunctionManager.GetFunctionOpenCondition(functionId), timeStr
-    --else
-    --    return false, openTimeTipsStr, timeStr
-    --end
+--local beginTime = XDataCenter.FubenActivityBranchManager.GetActivityBeginTime()
+--local fightEndTime = XDataCenter.FubenActivityBranchManager.GetFightEndTime()
+--local endTime = XDataCenter.FubenActivityBranchManager.GetActivityEndTime()
+--local inTime, timeStr, openTimeTipsStr = XActivityBrieIsOpen.RefreshAcitivityTime(beginTime, fightEndTime, endTime)
+--if inTime then
+--    local functionId = XFunctionManager.FunctionName.FubenActivityBranch
+--    local isOpen = XFunctionManager.JudgeCanOpen(functionId)
+--    return isOpen, XFunctionManager.GetFunctionOpenCondition(functionId), timeStr
+--else
+--    return false, openTimeTipsStr, timeStr
+--end
 --end
 
 function XActivityBrieIsOpen.BossSingle()
@@ -810,19 +814,19 @@ function XActivityBrieIsOpen.FubenShortStory()
     local isOpen = XFunctionManager.JudgeCanOpen(functionId) and XDataCenter.ShortStoryChapterManager.IsOpen(chapterId)
     if XOverseaManager.IsOverSeaRegion() then
         local decs = nil --海外修改，提示弹窗文本不准问题
-            for _, v in pairs(XFunctionConfig.GetFuncOpenCfg(functionId).Condition) do
-                if v and v ~= 0 then
-                    local Open, decsText = XConditionManager.CheckCondition(v)
-                    if not Open then
-                        decs = decsText
-                        break
-                    end
+        for _, v in pairs(XFunctionConfig.GetFuncOpenCfg(functionId).Condition) do
+            if v and v ~= 0 then
+                local Open, decsText = XConditionManager.CheckCondition(v)
+                if not Open then
+                    decs = decsText
+                    break
                 end
             end
-            if not decs then
-                decs = CSXTextManagerGetText("ActivityBriefMainlineNotInTime")
-            end
-        return isOpen,decs
+        end
+        if not decs then
+            decs = CSXTextManagerGetText("ActivityBriefMainlineNotInTime")
+        end
+        return isOpen, decs
     end
     return isOpen, XDataCenter.ShortStoryChapterManager.IsOpen(chapterId) and XFunctionManager.GetFunctionOpenCondition(functionId) or CSXTextManagerGetText("ActivityBriefMainlineNotInTime")
 end

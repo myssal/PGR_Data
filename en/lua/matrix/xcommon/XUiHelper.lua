@@ -2440,11 +2440,24 @@ end
 ---@param parentLuaUi XLuaUi
 ---@param dtGameObject UnityEngine.Component
 ---@param gridProxy XUiNode
+---@return XDynamicTableNormal
 function XUiHelper.DynamicTableNormal(parentLuaUi, dtGameObject, gridProxy, ...)
     local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
     local dynamicTable = XDynamicTableNormal.New(dtGameObject)
     dynamicTable:SetProxy(gridProxy, parentLuaUi, ...)
     dynamicTable:SetDelegate(parentLuaUi)
+    return dynamicTable
+end
+
+---@param parentLuaUi XLuaUi
+---@param dtGameObject UnityEngine.Component
+---@param gridProxy XUiNode
+---@return XDynamicTableNormal
+function XUiHelper.DynamicTableNormalWithDelegate(parentLuaUi, dtGameObject, gridProxy, delegate)
+    local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+    local dynamicTable = XDynamicTableNormal.New(dtGameObject)
+    dynamicTable:SetProxy(gridProxy, parentLuaUi)
+    dynamicTable:SetDelegate(delegate)
     return dynamicTable
 end
 
@@ -2455,11 +2468,48 @@ function XUiHelper.XUiPanelAsset(ui, parent, itemId1, itemId2, ...)
     return XUiPanelAsset.New(ui, parent, itemId1, itemId2, ...)
 end
 
+---@return XUiGridCommon
+function XUiHelper.XUiGridCommon(rootUi, ui, ...)
+    local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+    return XUiGridCommon.New(rootUi, ui, ...)
+end
+
+---@return XUiFunctionShowControl
+function XUiHelper.XUiFunctionShowControl(ui, parent, ...)
+    local XUiFunctionShowControl = require('XUi/XUiCommon/XUiFunctionShow/XUiFunctionShowControl')
+    return XUiFunctionShowControl.New(ui, parent, ...)
+end
+
+---@return XUiFunctionShowBtn
+function XUiHelper.XUiFunctionShowBtn(ui, parent, ...)
+    local XUiFunctionShowBtn = require('XUi/XUiCommon/XUiFunctionShow/XUiFunctionShowBtn')
+    return XUiFunctionShowBtn.New(parent, ui, ...)
+end
+
 --折扣显示 区分海外国服
 function XUiHelper.GetDiscountText(discount)
     if XOverseaManager.IsENRegion() or XOverseaManager.IsJP_KRRegion() then
         -- 其他服显示 (100-xx)% off
         local text = XUiHelper.GetText("Snap", tostring(100 - discount))
+        return text
+    else
+        --国服显示 x折(为什么除以10? 因为中文显示的是6折,而不是60折)
+        -- 策划要求保留小数，这个似乎是在海外刻意修复的~~ 所以屏蔽这两行
+        --if discount % 10 == 0 then
+        --    discount = math.floor(discount / 10)
+        --else
+        --end
+        discount = discount / 10
+        local text = tostring(discount) .. XUiHelper.GetText("Snap")
+        return text
+    end
+end
+
+-- 折扣显示2 区分海外国服
+function XUiHelper.GetDiscountTextV2(discount)
+    if XOverseaManager.IsENRegion() or XOverseaManager.IsJP_KRRegion() then
+        -- 其他服显示 固定的文本
+        local text = XUiHelper.GetText("SnapLabel")
         return text
     else
         --国服显示 x折(为什么除以10? 因为中文显示的是6折,而不是60折)

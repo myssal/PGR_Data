@@ -3,7 +3,7 @@ local XUiSkyGardenShoppingStreetGameTips = XMVCA.XBigWorldUI:Register(nil, "UiSk
 
 --region 生命周期
 function XUiSkyGardenShoppingStreetGameTips:OnStart(text, pos)
-    self.BtnClose.CallBack = function() self:Close() end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
     self.TxtDetail.text = text
     self.GridBuffDetail.transform.position = pos
 end

@@ -177,6 +177,7 @@ local UIBindControl = {
     --region 分包下载
     UiDownLoadMain = ModuleId.XSubPackage,
     UiDownloadPreview = ModuleId.XSubPackage,
+    UiFirstDownloadTips = ModuleId.XSubPackage,
     --endregion
 
     --region SameColor 三消
@@ -743,6 +744,7 @@ local UIBindControl = {
     XUiPanelWheelchairManualGuide = ModuleId.XWheelchairManual,
     XUiPanelWheelchairManualLotto = ModuleId.XWheelchairManual,
     XUiPanelWheelChairManualTeaching = ModuleId.XWheelchairManual,
+    XUiGridMainWheelchairEntranceEx = ModuleId.XWheelchairManual,
     --endregion
 
     --region 2.17战斗拍照玩法
@@ -856,11 +858,6 @@ local UIBindControl = {
     UiBigWorldSetPanelOtherPC = ModuleId.XBigWorldSet,
     UiBigWorldSetPanelFightPC = ModuleId.XBigWorldSet,
     -- endregion
-
-    -- region 大世界Loading
-    UiBigWorldLoading = ModuleId.XBigWorldLoading,
-    UiBigWorldShowLoading = ModuleId.XBigWorldLoading,
-    -- endregion
     
     --region 合版本活动
     UiVersionGift = ModuleId.XVersionGift,
@@ -942,6 +939,8 @@ local UIBindControl = {
     UiTheatre5SkillHandbook = ModuleId.XTheatre5,
     UiTheatre5Story = ModuleId.XTheatre5,
     UiTheatre5PopupHandBook = ModuleId.XTheatre5,
+    UiTheatre5PopupStrengthen = ModuleId.XTheatre5,
+    UiTheatre5PopupNewSeason = ModuleId.XTheatre5,
     --endregion
     
     --region 悬赏挑战
@@ -957,6 +956,16 @@ local UIBindControl = {
     UiRelinkSettlement = ModuleId.XDlcRelink,
     UiRelinkPopupChooseCharacter = ModuleId.XDlcRelink,
     UiRelinkPopupChooseRoom = ModuleId.XDlcRelink,
+
+    UiDlcRelinkMain = ModuleId.XDlcRelink,
+    UiDlcRelinkRoom = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupPlayerInvite = ModuleId.XDlcRelink,
+    UiDlcRelinkChooseBoss = ModuleId.XDlcRelink,
+    UiDlcRelinkCharacter = ModuleId.XDlcRelink,
+    UiDlcRelinkEquipBag = ModuleId.XDlcRelink,
+    UiDlcRelinkEquipReform = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupFilter = ModuleId.XDlcRelink,
+    UiDlcRelinkMatching = ModuleId.XDlcRelink,
     --endregion
 
     --region mini改造
@@ -982,6 +991,30 @@ local UIBindControl = {
     --endregion
 
     UiCloudGamingPopupMain = ModuleId.XCloudGame,
+    
+    --region 赛马
+    UiRaceMain = ModuleId.XRace,
+    UiRacePredict = ModuleId.XRace,
+    UiRacePopupMap = ModuleId.XRace,
+    UiRacePopupSkin = ModuleId.XRace,
+    UiRaceToastCommon = ModuleId.XRace,
+    UiRacePopupCommon = ModuleId.XRace,
+    UiRaceProjectChose = ModuleId.XRace,
+    UiRacePopupResultDetail = ModuleId.XRace,
+
+    UiRaceFightLoading = ModuleId.XRace,
+    UiRaceFightMain = ModuleId.XRace,
+    UiRaceCourse = ModuleId.XRace,
+    UiRaceMemberDetail = ModuleId.XRace,
+    UiRaceFightSettlement = ModuleId.XRace,
+    UiRaceFightPredictSettlement = ModuleId.XRace,
+    UiRacePopupGameStart = ModuleId.XRace,
+    UiRaceMissionShop = ModuleId.XRace,
+    UiRaceRank = ModuleId.XRace,
+    UiRaceToastHall = ModuleId.XRace,
+    UiRaceToastHallChat = ModuleId.XRace,
+    UiRaceObtain = ModuleId.XRace,
+    --endregion
 
     -- #203409 多次尝试后, 还是写在这里最稳妥
     --region combBP/passportComb
@@ -995,6 +1028,12 @@ local UIBindControl = {
     --region 合版本累消
     UiCombAccumulateDraw = ModuleId.XAccumulateExpendL,
     UiCombAccumulateDrawLog = ModuleId.XAccumulateExpendL,
+    --endregion
+    
+    --region 军团系统/PlotExhibition
+    UiPlotExhibitionDetail = ModuleId.XPlotExhibition,
+    UiPlotExhibitionMain = ModuleId.XPlotExhibition,
+    UiPlotExhibitionPopupPower = ModuleId.XPlotExhibition,
     --endregion
 }
 

@@ -3,6 +3,9 @@
 local XUiTheatre5SkillHandbookItemGrid = XClass(XUiNode, "XUiTheatre5SkillHandbookItemGrid")
 
 function XUiTheatre5SkillHandbookItemGrid:OnStart()
+    if self.Grid then
+        self.Grid.gameObject:SetActiveEx(false)
+    end
     XUiHelper.RegisterClickEvent(self, self.BtnClick, self.OnClick)
     self.RImgBgSelect = self.RImgBgSelect or XUiHelper.TryGetComponent(self.Transform, "PanelItem/RImgBgSelect", "RectTransform")
 end
@@ -18,6 +21,9 @@ function XUiTheatre5SkillHandbookItemGrid:Update(data)
         self.ImgQuality.gameObject:SetActiveEx(true)
         XUiHelper.SetQualityIcon(self.RootUi, self.ImgQuality, data.Quality)
     end
+    if data.PlayAnimation then
+        XUiHelper.PlayUiNodeAnimation(self.Grid, "GridShopAnimEnable")
+    end
 end
 
 function XUiTheatre5SkillHandbookItemGrid:OnClick()
@@ -31,6 +37,12 @@ function XUiTheatre5SkillHandbookItemGrid:UpdateSelectState(data)
         else
             self.RImgBgSelect.gameObject:SetActiveEx(false)
         end
+    end
+end
+
+function XUiTheatre5SkillHandbookItemGrid:SetVisibleInScrollView(value)
+    if self.Grid then
+        self.Grid.gameObject:SetActiveEx(value)
     end
 end
 

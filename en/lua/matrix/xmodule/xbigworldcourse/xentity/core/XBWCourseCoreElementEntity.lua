@@ -57,7 +57,11 @@ function XBWCourseCoreElementEntity:IsComplete()
 end
 
 function XBWCourseCoreElementEntity:IsSkip()
-    return self:IsUnlockSkip() or self:IsLockSkip()
+    if self:IsQuest() then
+        return not self:IsComplete() and XTool.IsNumberValid(self:GetCurrentSkipId())
+    end
+
+    return XTool.IsNumberValid(self:GetCurrentSkipId())
 end
 
 function XBWCourseCoreElementEntity:IsHaveTeach()
@@ -66,27 +70,9 @@ function XBWCourseCoreElementEntity:IsHaveTeach()
     return XTool.IsNumberValid(teachId) and XMVCA.XBigWorldTeach:CheckTeachUnlock(teachId)
 end
 
-function XBWCourseCoreElementEntity:IsUnlockSkip()
-    return not self:IsComplete() and not self:IsLocked() and XTool.IsNumberValid(self:GetSkipId())
-end
-
-function XBWCourseCoreElementEntity:IsLockSkip()
-    if self:IsComplete() or not self:IsLocked() or not XTool.IsNumberValid(self:GetLockSkipId()) then
-        return false
-    end
-
-    local conditionId = self:GetLockSkipConditionId()
-
-    if XTool.IsNumberValid(conditionId) then
-        return XMVCA.XBigWorldService:CheckCondition(conditionId)
-    end
-
-    return true
-end
-
 function XBWCourseCoreElementEntity:IsLocked()
     if not self:IsNil() then
-        local conditionIds = self._Model:GetBigWorldCourseCoreElementConditionIdsById(self:GetElementId())
+        local conditionIds = self._Model:GetBigWorldCourseCoreElementLockSkipConditionIdsById(self:GetElementId())
 
         if not XTool.IsTableEmpty(conditionIds) then
             for _, conditionId in pairs(conditionIds) do
@@ -114,7 +100,7 @@ end
 
 function XBWCourseCoreElementEntity:IsSkipStateChange()
     if not self:IsNil() then
-        return self:IsSkip() and not self._Model:GetCoreElementRecord(self:GetElementId())
+        return (not self:IsLocked()) and self:IsSkip() and not self._Model:GetCoreElementRecord(self:GetElementId())
     end
 
     return false
@@ -249,23 +235,44 @@ function XBWCourseCoreElementEntity:GetSkipId()
     return 0
 end
 
-function XBWCourseCoreElementEntity:GetLockSkipId()
+function XBWCourseCoreElementEntity:GetCurrentSkipId()
     if not self:IsNil() then
-        return self._Model:GetBigWorldCourseCoreElementLockSkipIdById(self:GetElementId())
+        local conditionIds = self:GetLockSkipConditionIds()
+        local lockSkipIds = self:GetLockSkipIds()
+
+        if not XTool.IsTableEmpty(conditionIds) then
+            for i, conditionId in pairs(conditionIds) do
+                if not XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                    return lockSkipIds[i] or 0
+                end
+            end
+        end
+
+        return self:GetSkipId()
+    end
+
+    return 0
+end
+
+function XBWCourseCoreElementEntity:GetLockSkipIds()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseCoreElementLockSkipIdsById(self:GetElementId())
     end
 
     return 0
 end
 
 function XBWCourseCoreElementEntity:GetUnableSkipTip()
-    if not self:IsNil() then
-        if not self:IsLockSkip() then
-            local conditionId = self:GetLockSkipConditionId()
+    if not self:IsNil() and self:IsLocked() then
+        local conditionIds = self:GetLockSkipConditionIds()
 
-            if XTool.IsNumberValid(conditionId) then
-                local _, text = XMVCA.XBigWorldService:CheckCondition(conditionId)
+        if not XTool.IsTableEmpty(conditionIds) then
+            for _, conditionId in pairs(conditionIds) do
+                local isSuccess, text = XMVCA.XBigWorldService:CheckCondition(conditionId)
 
-                return text
+                if not isSuccess and not string.IsNilOrEmpty(text) then
+                    return text
+                end
             end
         end
     end
@@ -273,9 +280,9 @@ function XBWCourseCoreElementEntity:GetUnableSkipTip()
     return XMVCA.XBigWorldService:GetText("BigWorldCourseCoreSkipUnableTip")
 end
 
-function XBWCourseCoreElementEntity:GetLockSkipConditionId()
+function XBWCourseCoreElementEntity:GetLockSkipConditionIds()
     if not self:IsNil() then
-        return self._Model:GetBigWorldCourseCoreElementLockSkipConditionIdById(self:GetElementId())
+        return self._Model:GetBigWorldCourseCoreElementLockSkipConditionIdsById(self:GetElementId())
     end
 
     return 0
@@ -292,14 +299,6 @@ end
 function XBWCourseCoreElementEntity:GetEntryId()
     if not self:IsNil() then
         return self._Model:GetBigWorldCourseCoreElementEntryIdById(self:GetElementId())
-    end
-
-    return 0
-end
-
-function XBWCourseCoreElementEntity:GetSkipId()
-    if not self:IsNil() then
-        return self._Model:GetBigWorldCourseCoreElementSkipIdById(self:GetElementId())
     end
 
     return 0

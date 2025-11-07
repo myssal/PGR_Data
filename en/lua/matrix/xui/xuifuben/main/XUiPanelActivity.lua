@@ -127,7 +127,7 @@ function XUiPanelActivity:RefreshActivityList(index)
     -- 活动管理器
     datas = appendArray(datas, self.FubenManagerEx.GetActivityManagers())
     -- 节日活动章节
-    --local festivalManager = self.FubenManagerEx.GetManager(XFubenConfigs.ChapterType.Festival)
+    --local festivalManager = self.FubenManagerEx.GetManager(XEnumConst.FuBen.ChapterType.Festival)
     --datas = appendArray(datas, festivalManager:ExGetChapterViewModels(XFestivalActivityConfig.UiType.Activity))
     -- 这两个表配置了共同的order进行排序
     table.sort(datas, function (dataA, dataB)

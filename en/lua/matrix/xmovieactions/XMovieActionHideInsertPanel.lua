@@ -1,6 +1,6 @@
 local XMovieActionHideInsertPanel = XClass(XMovieActionBase,"XMovieActionHideInsertPanel")
 
-function XMovieActionHideInsertPanel:Ctor(actionData)
+function XMovieActionHideInsertPanel:OnInit(actionData)
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.Direction = paramToNumber(actionData.Params[1])
     self.BgPath = actionData.Params[2]
@@ -15,6 +15,10 @@ end
 
 function XMovieActionHideInsertPanel:OnUndo()
     self.UiRoot:PlayInsertPanelEnableAnimation(self.Direction)
+end
+
+function XMovieActionHideInsertPanel:GetDirection()
+    return self.Direction
 end
 
 return XMovieActionHideInsertPanel

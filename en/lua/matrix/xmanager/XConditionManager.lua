@@ -425,6 +425,82 @@ PlayerCondition = {
         
         return XMVCA.XDlcMultiMouseHunter:GetFinishStageCount() >= condition.Params[1], condition.Desc
     end,
+    [10159] = function(condition)
+        -- 判断指定Id的礼包是否已购买，且距离最后一次购买此礼包的时间大于X秒
+        local negate = tonumber(condition.Params[1])
+        local paskageId = tonumber(condition.Params[2])
+        local buyState = tonumber(condition.Params[3])
+        local judgingType = tonumber(condition.Params[4])
+        local seconds = tonumber(condition.Params[5])
+        return XDataCenter.PurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds), condition.Desc
+    end,
+    -- 新手签到判断指定签到领取完毕
+    [10161] = function(condition)  
+        local signInId = condition.Params[1]
+        local isInverse = XTool.IsNumberValidEx(condition.Params[2])
+        
+        local result = not XDataCenter.SignInManager.IsSignInAllRecieve(signInId)
+
+        if isInverse then
+            result = not result 
+        end
+        
+        return result, condition.Desc
+    end,
+    
+    -- 判断是否提审模式
+    [10162] = function(condition)
+        local inverse = XTool.IsNumberValidEx(condition.Params[1])
+        
+        local result = XUiManager.IsHideFunc
+
+        if inverse then
+            result = not result
+        end
+        
+        return result, condition.Desc
+    end,
+    
+    -- 判断任意一个角色进化至指定品质
+    [10163] = function(condition)
+        local isInverse = XTool.IsNumberValidEx(condition.Params[1])
+        local quality = condition.Params[2]
+
+        local result = false
+        
+        for i = 3, #condition.Params do
+            local characterId = condition.Params[i]
+
+            if XTool.IsNumberValidEx(characterId) then
+                local curQuality = XMVCA.XCharacter:GetCharacterQuality(characterId)
+
+                if curQuality >= quality then
+                    result = true
+                    break
+                end
+            end
+        end
+
+        if isInverse then
+            result = not result
+        end
+        
+        return result, condition.Desc
+    end,
+    
+    [10189] = function(condition)
+        -- 判断主界面功能事件队列是否已完成
+        
+        local checkIsCompete = XTool.IsNumberValidEx(condition.Params[1])
+        
+        local isEnd = XDataCenter.FunctionEventManager.GetMainEventIsEnd()
+
+        if checkIsCompete then
+            return isEnd
+        else
+            return not isEnd    
+        end
+    end,
     [10200] = function(condition)
         -- 三头犬玩法关卡是否达到星级目标
         if not condition.Params then
@@ -659,8 +735,24 @@ PlayerCondition = {
         return not isGot, condition.Desc
     end,
     [21102] = function(condition)
+        XLog.Error("[XConditionManager] 21102条件已被屏蔽，首充奖励是否领取，请检查配置")
         -- 查询玩家是否未领取首充奖励
         return not XDataCenter.PayManager.GetFirstRechargeReward(), condition.Desc
+    end,
+    [21103] = function(condition)
+        -- 充值金额判断
+        local judgingType = tonumber(condition.Params[1]) --1:等于 2:大于等于 3:小于等于
+        local value = tonumber(condition.Params[2])
+        local totalMoney = XDataCenter.PayManager.GetTotalPayMoney()
+        local bo = false
+        if judgingType == 1 then
+            bo = value == totalMoney
+        elseif judgingType == 2 then
+            bo = value >= totalMoney
+        elseif judgingType == 3 then
+            bo = value <= totalMoney
+        end
+        return bo, condition.Desc
     end,
     [22001] = function(condition)
         -- 红包活动ID下指定NPC累计获得的物品数量
@@ -787,6 +879,14 @@ PlayerCondition = {
         local firstPassTime = XMVCA.XMainLine2:GetFirstPassTime(stageId)
         local isReach = firstPassTime ~= nil and (firstPassTime + passTimeStamp) < XTime.GetServerNowTimestamp()
         return isReach, condition.Desc
+    end,
+    -- 判断当前是否位于指定Stage关卡的编队房间
+    [15206] = function(condition)
+        local stageId = condition.Params[1]
+        
+        local curStageIdInBattleRoom = XMVCA.XFuben:GetCurStageIdInBattleRoom()
+        
+        return stageId == curStageIdInBattleRoom, condition.Desc
     end,
     [16100] = function(condition)
         --查询公会等级是否达到（服务端未实现）
@@ -1169,6 +1269,12 @@ PlayerCondition = {
         end
         --开启时，判断必要资源是否下载完毕
         return XMVCA.XSubPackage:CheckResDownloadComplete(resId), condition.Desc
+    end,
+    -- 任意角色达到指定等级
+    [20115] = function(condition)
+        local aimLevel = condition.Params[1]
+        
+        return XMVCA.XCharacter:CheckOwnCharacterLevelSatisfyAim(aimLevel, true), condition.Desc
     end,
     -- 战双餐厅相关
     [10179] = function(condition)
@@ -2437,9 +2543,9 @@ PlayerCondition = {
         local targetMode = condition.Params[1] --1=PVE, 2=PVP
         local curMode = XMVCA.XTheatre5:GetCurPlayingMode()
         if targetMode == 1 then
-            return curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE, condition.Desc
+            return curMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE, condition.Desc
         else
-            return curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP, condition.Desc
+            return curMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP, condition.Desc
         end        
     end,
     
@@ -2485,6 +2591,13 @@ PlayerCondition = {
         local stageId = condition.Params[1]
         local curStageId = XMVCA.XRpgMakerGame:GetCurrentStageId()
         return stageId == curStageId, condition.Desc
+    end,
+    --endregion
+    
+    --region 赛马
+    [17450] = function(condition)
+        -- 比赛是否未进行
+        return not XMVCA.XRace:IsGamePlaying(), condition.Desc
     end,
     --endregion
 }
@@ -3231,7 +3344,7 @@ local TeamCondition = {
     [18113] = function(condition)
         -- 当前战斗房间队伍里是否包含指定角色
         local targetCharId = condition.Params[1]
-        local xTeam, tempStageId = XDataCenter.TeamManager.GetBattleRoomCacheTeam()
+        local xTeam = XDataCenter.TeamManager.GetBattleRoomCacheTeam()
         local xBaseTeam = require("XEntity/XTeam/XTeam")
         -- 不是xTeam或不是继承自xTeam的都不能操作这些队伍
         if not xTeam or (xTeam.__cname ~= "XTeam" and xTeam.Super == nil) or (xTeam.__cname ~= "XTeam" and not CheckClassSuper(xTeam, xBaseTeam)) then

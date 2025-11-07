@@ -7,6 +7,7 @@ local FAVOR_AUTO_WINDOW_KEY = "TheatreFavorAutoWindow"         --好感度解锁
 local DECORATION_AUTO_WINDOW_KEY = "TheatreDecorationAutoWindow"   --装修改造解锁弹窗Key
 
 function XUiTheatreMain:OnAwake()
+    XMVCA.XMainLine2:SetLastExhibitionChapterByChapterType(XEnumConst.FuBen.ChapterType.Theatre)
     self.IsShowPanel = true
     XUiHelper.NewPanelActivityAssetSafe(XDataCenter.TheatreManager.GetAssetItemIds(), self.PanelSpecialTool, self)
     self:InitReward()

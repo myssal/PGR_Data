@@ -1,6 +1,6 @@
 local XMovieActionVideoPlay = XClass(XMovieActionBase, "XMovieActionVideoPlay")
 
-function XMovieActionVideoPlay:Ctor(actionData)
+function XMovieActionVideoPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 

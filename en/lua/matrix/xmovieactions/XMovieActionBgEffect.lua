@@ -2,20 +2,15 @@
 ---@field UiRoot XUiMovie
 local XMovieActionBgEffect = XClass(XMovieActionBase, "XMovieActionBgEffect")
 
-function XMovieActionBgEffect:Ctor(actionData)
+function XMovieActionBgEffect:OnInit(actionData)
     local params = actionData.Params
     self.IsShowEffect = params[1] == "1"
     self.EffectPath = params[2]
-
-    -- 特效类型
-    self.EFFECT_TYPE = {
-        SCREENSHOT = 1,     -- 屏幕截图特效类型
-    }
     self.EffectType = self:GetEffectType()
 end
 
-function XMovieActionBgEffect:OnInit()
-    if self.EffectType == self.EFFECT_TYPE.SCREENSHOT then
+function XMovieActionBgEffect:OnEnter()
+    if self.EffectType == XMVCA.XMovie.EnumConst.EFFECT_TYPE.SCREENSHOT then
         local fullScreenBackground = self.UiRoot.Transform:Find("FullScreenBackground")
         if self.IsShowEffect then
             self:LoadScreenshotEffect(fullScreenBackground)
@@ -58,7 +53,7 @@ function XMovieActionBgEffect:LoadScreenshotEffect(parent)
 end
 
 -- 加载特效
----@param parent transform 特效挂点
+---@param parent Transform 特效挂点
 function XMovieActionBgEffect:LoadEffect(parent)
     if not parent or not self.EffectPath then return end
 
@@ -82,9 +77,40 @@ function XMovieActionBgEffect:GetEffectType()
     local params = XMVCA.XMovie:GetClientConfigParams("ScreenshotEffect")
     for _, effectPath in ipairs(params) do
         if self.EffectPath == effectPath then
-            return self.EFFECT_TYPE.SCREENSHOT
+            return XMVCA.XMovie.EnumConst.EFFECT_TYPE.SCREENSHOT
         end
     end
+end
+
+function XMovieActionBgEffect:IsPassedActionRun(index)
+    -- 隐藏action跳过
+    if not self.IsShowEffect then return false end
+
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+function XMovieActionBgEffect:IsAdvanceStartAction()
+    return true
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionBgEffect:IsActionCover(action)
+    if action:GetType() == self:GetType() and self.EffectType == action:GetEffectType() then
+        return true
+    end
+    return false
+end
+
+function XMovieActionBgEffect:OnPassedActionRun()
+    self:OnEnter()
+end
+
+function XMovieActionBgEffect:IsStartAfterLoading()
+    return self.EffectType == XMVCA.XMovie.EnumConst.EFFECT_TYPE.SCREENSHOT
 end
 
 return XMovieActionBgEffect

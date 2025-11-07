@@ -87,8 +87,8 @@ end
 
 function XUiBigWorldTeachTips:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnTeach.CallBack = Handler(self, self.OnBtnTeachClick)
-    self.BtnClose.CallBack = Handler(self, self.OnBtnCloseClick)
+    self.BtnTeach:AddEventListener(handler(self, self.OnBtnTeachClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiBigWorldTeachTips:_RegisterListeners()

@@ -14,6 +14,7 @@ local METHOD_NAME = {
     ChooseLevelType = "BossSingleSelectLevelTypeRequest",
     GetChallengeSelfRank = "BossSingleChallengeRankInfoRequest",
     GetChallengeRankData = "BossSingleGetChallengeRankRequest",
+    BossSingleResetStageRequest = "BossSingleResetStageRequest",
 }
 
 function XFubenBossSingleAgency:OnInit()
@@ -35,7 +36,7 @@ function XFubenBossSingleAgency:InitRpc()
     XRpc.NotifyBossSingleRankInfo = Handler(self, self.OnNotifyBossSingleRankInfo)
     XRpc.NotifyBossSingleChallengeCount = Handler(self, self.OnNotifyBossSingleChallengeCount)
 end
-
+--30302803
 function XFubenBossSingleAgency:InitEvent()
     -- 实现跨Agency事件注册
     -- self:AddAgencyEvent()
@@ -101,7 +102,7 @@ function XFubenBossSingleAgency:GetChallengeCount()
 
     if XTool.IsTableEmpty(levelTypeConfig) then
         XLog.ErrorTableDataNotFound("XFubenBossSingleAgency:GetChallengeCount", "levelTypeCfg",
-            "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
+                "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
         return 0
     end
 
@@ -174,7 +175,7 @@ function XFubenBossSingleAgency:GetMaxStamina()
 
     if not staminaCount then
         XLog.ErrorTableDataNotFound("XFubenBossSingleAgency:GetMaxStamina", "levelTypeCfg",
-            "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
+                "Share/Fuben/BossSingle/BossSingleGrade.tab", "levelType", tostring(levelType))
         return 0
     end
 
@@ -199,7 +200,7 @@ function XFubenBossSingleAgency:GetRankSpecialIcon(number, levelType)
 
     if not configs[number] then
         XLog.Error(string.format("表BossSignleReward.tab不存在当前LevelType的RankIcon！索引:%d LevelType:%d",
-            number, levelType))
+                number, levelType))
         return
     end
 
@@ -483,7 +484,7 @@ end
 
 function XFubenBossSingleAgency:CheckShowRecommend(featureId)
     local recommendIds = self._Model:GetBossSingleChallengeFeatureShowRecommendIdsById(featureId)
-    
+
     return not XTool.IsTableEmpty(recommendIds)
 end
 
@@ -494,7 +495,7 @@ function XFubenBossSingleAgency:CheckCanChallengeRecord()
     if XTool.IsNumberValid(recordTime) then
         local nowTime = XTime.GetServerNowTimestamp()
         local endTime = recordTime + self._Model:GetChallengeRecordCD()
-        
+
         return endTime <= nowTime
     end
 
@@ -515,14 +516,14 @@ function XFubenBossSingleAgency:OpenBossSingleView(skipId)
 
         -- 获取异步跳转结果Id
         local skipResultId = XFunctionManager.GetNewResultId()
-        
-        self:RequestSelfRank(function() 
+
+        self:RequestSelfRank(function()
             self:OpenMainUi(skipId, skipResultId)
         end)
-        
+
         return skipResultId
     end
-    
+
     return false
 end
 
@@ -538,7 +539,7 @@ function XFubenBossSingleAgency:OpenMainUi(skipId, skipResultId)
         XFunctionManager.AcceptResult(skipResultId, false)
     end
 
-    
+
 end
 
 function XFubenBossSingleAgency:OpenTrialUi()
@@ -580,12 +581,12 @@ function XFubenBossSingleAgency:ExGetProgressTip()
             elseif not data:CheckHasChallengeData() then
                 local stageCount = self:GetNotPassStageCount()
                 local allStageCount = self:GetAllStageCount()
-                
+
                 progress = XUiHelper.GetText("BossSingleProgress", allStageCount - stageCount, allStageCount)
             else
                 local challengeData = self:GetChallengeSingleData()
                 local count = challengeData:GetRecordingFeatureCount()
-                
+
                 progress = XUiHelper.GetText("BossSingleProgress", count, 2)
             end
         else
@@ -595,7 +596,7 @@ function XFubenBossSingleAgency:ExGetProgressTip()
                 local allCount = self:GetChallengeCount()
                 local bossSingleData = self:GetBossSingleData()
                 local challengeCount = bossSingleData:GetBossSingleChallengeCount()
-    
+
                 progress = XUiHelper.GetText("BossSingleProgress", challengeCount, allCount)
             end
         end
@@ -690,8 +691,8 @@ function XFubenBossSingleAgency:ExOpenMainUi()
     else
         XFubenSimulationChallengeAgency.ExOpenMainUi(self)
     end
-    
-    
+
+
 end
 
 --- 获取倒计时(周历专用)
@@ -731,7 +732,7 @@ function XFubenBossSingleAgency:ExCheckShowInCalendar()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.FubenChallengeBossSingle, nil, true) then
         return false
     end
-    
+
     local data = self:GetBossSingleData()
     local endTime = data:GetBossSingleEndTime()
 
@@ -788,11 +789,19 @@ function XFubenBossSingleAgency:GetBossSectionId(stageId)
     end
 end
 
-function XFubenBossSingleAgency:CheckPreFight()
+function XFubenBossSingleAgency:CheckPreFight(stage)
     if self._Model:GetFightStageType() == XEnumConst.BossSingle.StageType.Challenge then
         return true
     end
-    
+
+    -- 重置后，不限挑战次数
+    local stageId = stage.StageId
+    if self._Model:IsResetOpen() then
+        if XMVCA.XFuben:CheckStageIsPass(stageId) then
+            return true
+        end
+    end
+
     local curCount = self:GetBossSingleData():GetBossSingleChallengeCount()
     local allCount = self:GetChallengeCount()
 
@@ -985,9 +994,9 @@ function XFubenBossSingleAgency:RequestRankData(callback, levelType, isForce)
 
     if not isForce then
         if self._LastSyncServerRankTimes[levelType] and self._LastSyncServerRankTimes[levelType] + self._SyncServerSecond
-            > now then
+                > now then
             local rankData = self._Model:GetRankDataCacheByLevelType(levelType)
-            
+
             if callback then
                 if rankData then
                     callback(rankData)
@@ -1022,9 +1031,9 @@ function XFubenBossSingleAgency:RequestBossRankData(callback, levelType, bossId,
 
     if not isForce then
         if self._LastSyncServerBossRankTimes[levelType] and self._LastSyncServerBossRankTimes[levelType][bossId]
-            and self._LastSyncServerBossRankTimes[levelType][bossId] + self._SyncServerSecond > now then
+                and self._LastSyncServerBossRankTimes[levelType][bossId] + self._SyncServerSecond > now then
             local rankData = self._Model:GetBossRankDataCacheByTypeAndBossId(levelType, bossId)
-            
+
             if callback then
                 if rankData then
                     callback(rankData)
@@ -1060,9 +1069,9 @@ function XFubenBossSingleAgency:RequestChallengeRankData(callback, stageId)
 
     stageId = stageId or 0
     if self._LastSyncServerChallengeRankTimes[stageId] and self._LastSyncServerChallengeRankTimes[stageId]
-        + self._SyncServerSecond > now then
+            + self._SyncServerSecond > now then
         local rankData = self._Model:GetChallengeRankDataCacheByStageId(stageId)
-            
+
         if callback then
             if rankData then
                 callback(rankData)
@@ -1108,5 +1117,116 @@ function XFubenBossSingleAgency:RequestSaveScore(stagedId, cb)
 end
 
 -- endregion
+
+-- 重置
+function XFubenBossSingleAgency:BossSingleResetStageRequest(stageId, cb)
+    XNetwork.Call(METHOD_NAME.BossSingleResetStageRequest, {
+        StageId = stageId,
+    }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        -- 设置数据
+        --XLuaUiManager.Close("UiFubenBossSingleDetail")
+        --res.StageRecord
+        self:ClearRankData()
+    end)
+end
+
+--- 检查自动战斗保存
+---@return XBossSingleStageHistory
+function XFubenBossSingleAgency:CheckAutoFight(stageId)
+    local data = self._Model:GetBossSingleData()
+
+    if not data:IsBossSingleEmpty() then
+        local historyList = data:GetBossSingleHistoryList()
+
+        if not XTool.IsTableEmpty(historyList) then
+            for _, history in pairs(historyList) do
+                if history:GetStageId() == stageId then
+                    return history
+                end
+            end
+        end
+    end
+
+    return nil
+end
+
+function XFubenBossSingleAgency:IsInRecordTeam(stageId, characterId)
+    local characterList = self:GetCharacterListInRecord(stageId)
+    if not characterList then
+        return false
+    end
+    for _, characterIdToFind in pairs(characterList) do
+        if characterIdToFind == characterId then
+            return true
+        end
+    end
+    return false
+end
+
+function XFubenBossSingleAgency:GetCharacterListInRecord(stageId)
+    local datas = self._Model:GetRecordCurrent()
+    if not datas then
+        return
+    end
+    for i, data in pairs(datas) do
+        if data.StageId == stageId then
+            return data.Characters
+        end
+    end
+    return
+end
+
+function XFubenBossSingleAgency:CheckTeamDifferentWithRecord(stageId, team)
+    if not self._Model:IsResetOpen() then
+        return false
+    end
+    if not team then
+        XLog.Error("[XFubenBossSingleAgency] 判断队伍是否发生修改时, 队伍数据为空")
+        return false
+    end
+    local entityIds = team:GetEntityIds()
+    local record = self._Model:GetRecordCurrentByStageId(stageId)
+    if not record then
+        return false
+    end
+    local characterIdsInRecord = record.Characters--self:GetCharacterListInRecord(stageId)
+    if not characterIdsInRecord or #characterIdsInRecord == 0 then
+        return false
+    end
+    -- 对比entityIds和characterIdsInRecord内容是否完全一致
+    local isChange = false
+    for i = 1, 3 do
+        local entityId = entityIds[i] or 0
+        local characterId = characterIdsInRecord[i] or 0
+        if entityId ~= characterId then
+            isChange = true
+            break
+        end
+    end
+    return isChange
+end
+
+function XFubenBossSingleAgency:IsCharacterHasRecord(stageId, characterId)
+    local stageRecord = self._Model:GetRecordCurrentByStageId(stageId)
+    if stageRecord then
+        for _, recordCharacterId in pairs(stageRecord.Characters) do
+            if recordCharacterId == characterId then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+function XFubenBossSingleAgency:ClearRankData()
+    -- 在重置之后,需要清空排行榜数据
+    self._LastSyncServerRankTimes = {}
+    self._LastSyncServerBossRankTimes = {}
+    self._LastSyncServerChallengeRankTimes = {}
+end
 
 return XFubenBossSingleAgency

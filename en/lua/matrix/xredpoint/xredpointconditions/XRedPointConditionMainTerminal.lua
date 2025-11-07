@@ -46,6 +46,12 @@ function XRedPointConditionMainTerminal.Check()
     if giftCount > 0 then
         return true
     end
+
+    local insideMsgUnlock = XMVCA.XUiMain:CheckUiMainTerminalMobileListUnlock()
+
+    if not insideMsgUnlock then
+        return false
+    end
     
     local dormEntrust = XDataCenter.DormQuestManager.CheckDormEntrustRedPoint(true)
     if dormEntrust then

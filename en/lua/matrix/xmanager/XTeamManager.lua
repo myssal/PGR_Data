@@ -1,4 +1,5 @@
 local XTeam = require("XEntity/XTeam/XTeam")
+local XTeamPrefab = require("XEntity/XTeam/XTeamPrefab")
 local XPartnerPrefab = require("XEntity/XPartner/XPartnerPrefab")
 XTeamManagerCreator = function()
     ---@class XTeamManager XTeamManager
@@ -19,6 +20,8 @@ XTeamManagerCreator = function()
 
     local PlayerTeamGroupData = {}
     local PlayerTeamPrefabData = {}
+    local EquipIdToPrefabTeamDic = {}
+    local PartnerIdToPrefabTeamDic = {}
     local GeneralSkillRefreshTrigger = false
 
     local METHOD_NAME = {
@@ -29,9 +32,10 @@ XTeamManagerCreator = function()
     -- XTeam
     -- 缓存队伍数据
     local TeamDic = {}
-    -- XTeam
+
     -- 缓存预设队伍数据
-    local TeamPrefabDic = {}
+    ---@type XTeamPrefab[]
+    local TeamPrefabList = {}
     ---@type XTeam
     local BattleRoomCacheTeam = nil
 
@@ -54,8 +58,170 @@ XTeamManagerCreator = function()
         end
         --EmptyTeam = XReadOnlyTable.Create(EmptyTeam)
         XTeamManager.EmptyTeam = EmptyTeam
+
+        if CS.XApplication.Debug then
+            CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DEBUGGERCHEAT_SERVER_RESPON_TEXT, XTeamManager.OnDebuggerCheatServerResponText)
+        end
     end
 
+    function XTeamManager.OnDebuggerCheatServerResponText(eventName, arg)
+        -- 先判断是否包含TeamName字符串
+        if not arg[0] or not string.find(arg[0], "TeamName") then
+            return
+        end
+        
+        local serverTeams = XTool.Json2LuaTable(arg[0])
+        local localTeams = XDataCenter.TeamManager.GetTeamPrefabList()
+    
+        -- 转换服务器数据为便于对比的格式（将数组转为按TeamId映射的表）
+        local serverTeamMap = {}
+        for _, serverTeam in ipairs(serverTeams) do
+            serverTeamMap[serverTeam.TeamId] = serverTeam
+        end
+        XLog.Debug("[TeamPrefab]ServerTeam ", serverTeamMap)
+    
+        -- 转换本地数据为便于对比的格式（将数组转为按TeamId映射的表）
+        local localTeamMap = {}
+        for _, localTeam in ipairs(localTeams) do
+            localTeamMap[localTeam.Id] = localTeam
+        end
+        XLog.Debug("[TeamPrefab]LocalTeam ", localTeamMap)
+    
+        local allMatch = true
+        local mismatchInfoList = {}
+    
+        -- 遍历所有服务器队伍进行对比
+        for teamId, serverTeam in pairs(serverTeamMap) do
+            local localTeam = localTeamMap[teamId]
+            if not localTeam then
+                allMatch = false
+                table.insert(mismatchInfoList, string.format(
+                    "队伍不存在 - 服务器存在该队伍但本地不存在，TeamId: %d, 队伍名: %s",
+                    teamId, serverTeam.TeamName or "未知"
+                ))
+                goto continue  -- 跳过不存在的本地队伍的后续对比
+            end
+    
+            -- 对比基础字段（非Pos相关）
+            local baseFields = {
+                {name = "TeamId", serverVal = serverTeam.TeamId, localVal = localTeam.Id},
+                {name = "TeamName", serverVal = serverTeam.TeamName, localVal = localTeam.TeamName},
+                {name = "CaptainPos", serverVal = serverTeam.CaptainPos, localVal = localTeam.CaptainPos},
+                {name = "FirstFightPos", serverVal = serverTeam.FirstFightPos, localVal = localTeam.FirstFightPos},
+                {name = "EnterCgIndex", serverVal = serverTeam.EnterCgIndex, localVal = localTeam.EnterCgIndex},
+                {name = "SettleCgIndex", serverVal = serverTeam.SettleCgIndex, localVal = localTeam.SettleCgIndex},
+                {name = "SelectedGeneralSkill", serverVal = serverTeam.SelectedGeneralSkill, localVal = localTeam.SelectedGeneralSkill or 0}
+            }
+    
+            for _, field in ipairs(baseFields) do
+                if field.serverVal ~= field.localVal then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "字段不一致 - TeamId: %d, 队伍名: %s, 字段: %s, 服务器值: %s, 本地值: %s",
+                        teamId, serverTeam.TeamName or "未知", field.name,
+                        tostring(field.serverVal), tostring(field.localVal)
+                    ))
+                end
+            end
+    
+            -- 对比角色数据（按位置）
+            local maxPos = XDataCenter.TeamManager.GetMaxPos() or 3  -- 使用配置的最大位置数，默认3
+            for pos = 1, maxPos do
+                -- 角色ID对比
+                local serverCharId = serverTeam.TeamData and serverTeam.TeamData[tostring(pos)] or 0
+                local localCharId = localTeam.EntitiyIds and localTeam.EntitiyIds[pos] or 0
+                if serverCharId ~= localCharId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "角色不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器角色Id: %d, 本地角色Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverCharId, localCharId
+                    ))
+                end
+    
+                -- 武器数据对比（slot=0）
+                local serverEquipData = serverTeam.EquipData and serverTeam.EquipData[tostring(pos)] or {}
+                local serverWeapon = serverEquipData.EquipDataDict and serverEquipData.EquipDataDict["0"] or {}
+                local serverWeaponId = serverWeapon.EquipId or 0
+                local serverOverrunSuitId = serverWeapon.WeaponOverrunSuitId or 0
+    
+                local localWeapon = localTeam.WeaponData and localTeam.WeaponData[pos] or {}
+                local localWeaponId = localWeapon.EquipId or 0
+                local localOverrunSuitId = localWeapon.WeaponOverrunSuitId or 0
+    
+                if serverWeaponId ~= localWeaponId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "武器不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器武器Id: %d, 本地武器Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverWeaponId, localWeaponId
+                    ))
+                end
+    
+                if serverOverrunSuitId ~= localOverrunSuitId then
+                    allMatch = false
+                    table.insert(mismatchInfoList, string.format(
+                        "武器超频套装不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 服务器套装Id: %d, 本地套装Id: %d",
+                        teamId, serverTeam.TeamName or "未知", pos, serverOverrunSuitId, localOverrunSuitId
+                    ))
+                end
+    
+                -- 意识数据对比（slot=1-6）
+                local serverAwarenessDict = serverEquipData.EquipDataDict or {}
+                local localAwarenessData = localTeam.AwarenessData and localTeam.AwarenessData[pos] or {}
+    
+                -- 收集所有需要对比的意识槽位（服务器和本地的并集）
+                local slotsToCheck = {}
+                for slotStr in pairs(serverAwarenessDict) do
+                    local slot = tonumber(slotStr)
+                    if slot and slot >= 1 and slot <= 6 then  -- 意识槽位范围1-6
+                        slotsToCheck[slot] = true
+                    end
+                end
+                for slot in pairs(localAwarenessData) do
+                    if slot >= 1 and slot <= 6 then
+                        slotsToCheck[slot] = true
+                    end
+                end
+    
+                -- 对比每个意识槽位
+                for slot in pairs(slotsToCheck) do
+                    local serverAwareness = serverAwarenessDict[tostring(slot)] or {}
+                    local localAwareness = localAwarenessData[slot] or {}
+    
+                    local serverEquipId = serverAwareness.EquipId or 0
+                    local localEquipId = localAwareness.EquipId or 0
+    
+                    if serverEquipId ~= localEquipId then
+                        allMatch = false
+                        table.insert(mismatchInfoList, string.format(
+                            "意识不一致 - TeamId: %d, 队伍名: %s, 位置: %d, 槽位: %d, 服务器意识Id: %d, 本地意识Id: %d",
+                            teamId, serverTeam.TeamName or "未知", pos, slot, serverEquipId, localEquipId
+                        ))
+                    end
+                end
+            end
+    
+            ::continue::
+        end
+    
+        -- 检查本地存在但服务器不存在的队伍
+        for teamId, localTeam in pairs(localTeamMap) do
+            if not serverTeamMap[teamId] then
+                allMatch = false
+                table.insert(mismatchInfoList, string.format(
+                    "队伍不存在 - 本地存在该队伍但服务器不存在，TeamId: %d, 队伍名: %s",
+                    teamId, localTeam.TeamName or "未知"
+                ))
+            end
+        end
+    
+        -- 输出结果
+        if allMatch then
+            print("[TeamPrefab]数据对比成功：服务器与本地队伍数据完全一致")
+        else
+            XLog.Error("[TeamPrefab]数据对比失败，不一致项如下：\n", mismatchInfoList)
+        end
+    end
+    
     function XTeamManager.SetGeneralSkillRefreshTrigger()
         GeneralSkillRefreshTrigger = true
     end
@@ -134,8 +300,12 @@ XTeamManagerCreator = function()
     end
 
     local function GetTeamKey(stageId)
-        local info = XDataCenter.FubenManager.GetStageInfo(stageId)
-        return string.format("%s%s_%d_%s", TeamDataKey, tostring(XPlayer.Id), info.Type, tostring(stageId))
+        local stageType = XMVCA.XFuben:GetStageType(stageId)
+        if not stageType then
+            XLog.Warning("[XTeamManager] 找不到这个关卡对应的stageType" .. tostring(stageId))
+            stageType = 0
+        end
+        return string.format("%s%s_%d_%s", TeamDataKey, tostring(XPlayer.Id), stageType, tostring(stageId))
     end
 
     -- 使用stageId作为Key本地保存编队信息
@@ -204,6 +374,353 @@ XTeamManagerCreator = function()
                 return
             end
             XTeamManager.SetPlayerTeamLocal(curTeam, isPrefab, cb)
+        end)
+    end
+
+    function XTeamManager.GetNewTeamPrfabTeamId()
+        local targetTeamId = nil
+        local teamIdSet = {}
+        local maxTeamId = 0
+        
+        -- 收集现有 TeamId，并记录最大值
+        for _, xTeamPrefab in pairs(TeamPrefabList) do
+            local teamId = xTeamPrefab:GetId()
+            teamIdSet[teamId] = true
+            if teamId > maxTeamId then
+                maxTeamId = teamId
+            end
+        end
+        
+        -- 查找最小缺失的TeamId
+        for i = 1, maxTeamId do
+            if not teamIdSet[i] then
+                targetTeamId = i
+                break
+            end
+        end
+        
+        -- 如果没有缺失，取最大值+1
+        if not targetTeamId then
+            targetTeamId = maxTeamId + 1
+        end
+        return targetTeamId
+    end
+
+    function XTeamManager.TeamPrefabMoveForwardRequest(teamId, cb)
+        XNetwork.Call("TeamPrefabMoveForwardRequest", {TeamId = teamId}, function(response)
+            if response.Code ~= XCode.Success then
+                XUiManager.TipCode(response.Code)
+                return
+            end
+
+            for i = 2, #TeamPrefabList do
+                local prefab = TeamPrefabList[i]
+                if prefab:GetId() == teamId then
+                    -- 交换当前位置 prefab 与前一个位置 prefab
+                    TeamPrefabList[i], TeamPrefabList[i - 1] = TeamPrefabList[i - 1], TeamPrefabList[i]
+                end
+            end
+
+            if cb then cb() end
+        end)
+    end
+
+    function XTeamManager.TeamPrefabAddRequestV4P0(cb)
+        local teamId = XTeamManager.GetNewTeamPrfabTeamId()
+
+        local teamData = {}
+        for i = 1, MaxPos do
+            teamData[i] = 0
+        end
+
+        local partnerData = {}
+        for i = 1, MaxPos do
+            partnerData[i] = {}
+        end
+
+        local equipData = {}
+        for i = 1, MaxPos do
+            equipData[i] = {}
+        end
+
+        -- 构造请求
+        local request = {
+            TeamId = teamId,
+            TeamName = CS.XTextManager.GetText("TeamPrefabDefaultName", teamId),
+            TeamData = teamData,
+            CaptainPos = 1,
+            FirstFightPos = 1,
+            EnterCgIndex = 0,
+            SettleCgIndex = 0,
+            PartnerData = partnerData,
+            EquipData = equipData,
+        }
+        XMessagePack.MarkAsTable(request.TeamData)
+        XMessagePack.MarkAsTable(request.PartnerData)
+        XMessagePack.MarkAsTable(request.EquipData)
+
+        XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
+            if response.Code ~= XCode.Success then
+                XUiManager.TipCode(response.Code)
+                return
+            end
+            
+            table.insert(TeamPrefabList, XTeamPrefab.New(request))
+
+            XUiManager.PopupLeftTip(XUiHelper.GetText("TeamPrefabCreated", request.TeamName))
+            if cb then cb() end
+        end)
+    end
+
+    function XTeamManager.TeamPrefabDelRequest(teamId, cb)
+        local request = {TeamId = teamId}
+        XNetwork.Call("TeamPrefabDelRequest", request, function (response)
+            if response.Code ~= XCode.Success then
+                XUiManager.TipCode(response.Code)
+                return
+            end
+
+            for index, xTeamPrefab in ipairs(TeamPrefabList) do
+                if xTeamPrefab:GetId() == teamId then
+                    table.remove(TeamPrefabList, index)
+                    break  -- 删除成功
+                end
+            end
+
+            XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
+
+            if cb then cb() end
+        end)
+    end
+
+    --- 完整修改单个TeamPrefab数据
+    ---@param xTeamPrefab XTeamPrefab
+    ---@param cb fun
+    function XTeamManager.TeamPrefabSetTeamRequestV4P40(xTeamPrefab, cb)
+        local partnerData = {}
+        for i = 1, MaxPos do
+            partnerData[i] = {}
+        end
+
+        local equipData = {}
+        for i = 1, MaxPos do
+            equipData[i] = {}
+        end
+
+        local request = {
+            TeamId = xTeamPrefab.Id,
+            TeamName = xTeamPrefab.TeamName,
+            TeamData = xTeamPrefab:GetEntityIds(), -- table<int>
+            CaptainPos = xTeamPrefab:GetCaptainPos(),
+            FirstFightPos = xTeamPrefab:GetFirstFightPos(),
+            PartnerData = partnerData, -- table<int, PartnerSkillData>
+            EquipData = equipData,   -- table<int, TeamEquipData>
+            SelectedGeneralSkill = xTeamPrefab:GetCurGeneralSkill(),
+            EnterCgIndex = xTeamPrefab.EnterCgIndex,
+            SettleCgIndex = xTeamPrefab.SettleCgIndex,
+        }
+        XMessagePack.MarkAsTable(request.TeamData)
+        XMessagePack.MarkAsTable(request.PartnerData)
+        XMessagePack.MarkAsTable(request.EquipData)
+
+        ----------------------------------------
+        -- 【构建辅助机数据 PartnerData】
+        ----------------------------------------
+        local partnerData = xTeamPrefab:GetPartnerData()
+        if partnerData then
+            for pos = 1, MaxPos, 1 do
+                local partnerId = partnerData:GetPartnerIdByPos(pos)
+                if XTool.IsNumberValid(partnerId) then
+                    request.PartnerData[pos] = 
+                    {
+                        PartnerId = partnerId,
+                        SkillData = partnerData:GetSkillDataByPos(pos)
+                    }
+                else
+                    local curPosEntityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
+                    if XTool.IsNumberValid(curPosEntityId) then
+                        request.PartnerData[pos] = 
+                        {
+                            PartnerId = 0,
+                        }
+                    end
+                end
+                XMessagePack.MarkAsTable(request.PartnerData[pos])
+                if request.PartnerData[pos].SkillData then
+                    XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
+                end
+            end
+        end
+
+        ----------------------------------------
+        -- 【构建装备数据 EquipData】
+        ----------------------------------------
+        for pos = 1, MaxPos do
+            local weapon = xTeamPrefab:GetWeaponData(pos)
+            local awareness = xTeamPrefab:GetAllAwarenessData(pos)
+
+            request.EquipData[pos] = request.EquipData[pos] or {}
+            request.EquipData[pos]["EquipDataDict"] = request.EquipData[pos]["EquipDataDict"] or {}
+
+            if weapon then
+                request.EquipData[pos]["EquipDataDict"][0] = weapon
+                XMessagePack.MarkAsTable(request.EquipData[pos])
+                XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"])
+                XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][0])
+                if request.EquipData[pos]["EquipDataDict"][0].ResonanceDict then
+                    XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][0].ResonanceDict)
+                end
+            end
+
+            if awareness then
+                for i, v in pairs(awareness) do
+                    request.EquipData[pos]["EquipDataDict"][i] = v
+                    XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][i])
+                    if request.EquipData[pos]["EquipDataDict"][i].ResonanceDict then
+                        XMessagePack.MarkAsTable(request.EquipData[pos]["EquipDataDict"][i].ResonanceDict)
+                    end
+                end
+            end
+        end
+
+        ----------------------------------------
+        -- ✅ 发送请求
+        ----------------------------------------
+        XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
+            xTeamPrefab:EndSnapshotBatch()
+            if response.Code ~= XCode.Success then
+                XUiManager.TipCode(response.Code)
+                xTeamPrefab:RestoreFromSnapshot()
+                return
+            end
+
+            -- 刷新equip预设缓存
+            XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
+
+            if cb then cb() end
+        end)
+    end
+
+    ---@param xTeamPrefab XTeamPrefab
+    function XTeamManager.TeamPrefabUpdateEquipRequest(xTeamPrefab, pos, cb)
+        local request = 
+        {
+            TeamId = xTeamPrefab:GetId(),
+            TeamPos = pos,
+            TeamPrefabEquipData = 
+            {
+                EquipDataDict = {}
+            }
+        }
+        XMessagePack.MarkAsTable(request.TeamPrefabEquipData)
+        XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"])
+
+        local weapon = xTeamPrefab:GetWeaponData(pos)
+        if weapon then
+            request.TeamPrefabEquipData["EquipDataDict"][0] = weapon
+            XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"][0])
+            if request.TeamPrefabEquipData["EquipDataDict"][0].ResonanceDict then
+                XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"][0].ResonanceDict)
+            end
+        end
+
+        local awareness = xTeamPrefab:GetAllAwarenessData(pos)
+        if awareness then
+            for i, v in pairs(awareness) do
+                request.TeamPrefabEquipData["EquipDataDict"][i] = v
+                XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"][i])
+                if request.TeamPrefabEquipData["EquipDataDict"][i].ResonanceDict then
+                    XMessagePack.MarkAsTable(request.TeamPrefabEquipData["EquipDataDict"][i].ResonanceDict)
+                end
+            end
+        end
+
+        XNetwork.Call("TeamPrefabUpdateEquipRequest", request, function(res)
+            xTeamPrefab:EndSnapshotBatch()
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                xTeamPrefab:RestoreFromSnapshot()
+                return
+            end
+            
+            -- 刷新equip预设缓存
+            XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
+
+            -- 提示成功
+            XUiManager.TipText("TeamPrefabEquipModifySuccess")
+            if cb then cb() end
+        end)
+    end
+
+    -- 应用当前编队的穿戴同步至角色
+    ---@param teamId number
+    function XTeamManager.TeamPrefabApplyRequest(teamId, cb)
+        local request = {TeamId = teamId}
+        XNetwork.Call("TeamPrefabApplyRequest", request, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                return
+            end
+
+            local xTeamPrefab = XTeamManager.GetTeamPrefabDataByTeamId(teamId)
+            if xTeamPrefab then
+                for pos = 1, MaxPos, 1 do
+                    local entityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
+                    if XTool.IsNumberValid(entityId) then
+                        -- 穿武器
+                        local weaponData = xTeamPrefab:GetWeaponData(pos)
+                        local weaponEquipId = weaponData and weaponData.EquipId
+                        if XTool.IsNumberValid(weaponEquipId) then
+                            XMVCA.XEquip:OnEquipPutOnSuccess(entityId, weaponEquipId)
+                        end
+
+                        -- 穿意识
+                        local allAwarenessData = xTeamPrefab:GetAllAwarenessData(pos)
+                        if allAwarenessData then
+                            for slot, v in pairs(allAwarenessData) do
+                                local awarenessEquipId = v.EquipId
+                                if XTool.IsNumberValid(awarenessEquipId) then
+                                    XMVCA.XEquip:OnEquipPutOnSuccess(entityId, awarenessEquipId)
+                                end
+                            end
+                        end
+
+                    end
+                end
+            end
+
+            -- 提示成功
+            XUiManager.TipText("TeamPrefabApplySuccess")
+            if cb then cb() end
+        end)
+    end
+    
+    ---@param xTeamPrefab XTeamPrefab
+    function XTeamManager.TeamPrefabUpdateMetadataRequest(xTeamPrefab, cb)
+        local request = 
+        {
+            TeamId = xTeamPrefab:GetId(),
+            PrefabTeamInfo = 
+            {
+                TeamName = xTeamPrefab:GetName(),
+                CaptainPos = xTeamPrefab:GetCaptainPos(),
+                FirstFightPos = xTeamPrefab:GetFirstFightPos(),
+                EnterCgIndex = xTeamPrefab:GetEnterCgIndex(),
+                SettleCgIndex = xTeamPrefab:GetSettleCgIndex(),
+                SelectedGeneralSkill = xTeamPrefab:GetCurGeneralSkill()
+            }
+        }
+        XMessagePack.MarkAsTable(request.PrefabTeamInfo)
+
+        XNetwork.Call("TeamPrefabUpdateMetadataRequest", request, function(res)
+            xTeamPrefab:EndSnapshotBatch()
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                xTeamPrefab:RestoreFromSnapshot()
+                return
+            end
+            
+            if cb then cb() end
         end)
     end
 
@@ -323,12 +840,30 @@ XTeamManagerCreator = function()
         return PlayerTeamGroupData[teamId] or false
     end
 
-    function XTeamManager.GetTeamData(teamId)
+    function XTeamManager.GetTeamPrefabDataByIndex(index)
+        return TeamPrefabList[index] or false
+    end
+
+    function XTeamManager.GetTeamPrefabDataByTeamId(teamId)
+        for _, teamPrefab in ipairs(TeamPrefabList) do
+            if teamPrefab:GetId() == teamId then
+                return teamPrefab
+            end
+        end
+    end
+
+    function XTeamManager.GetTeamPrefabList()
+        return TeamPrefabList
+    end
+
+    function XTeamManager.GetTeamData(teamId, noTips)
         local teamData = XTeamManager.GetXTeamEntityIds(teamId)
         if teamData then return teamData end
 
         if not XTeamConfig.GetTeamTypeCfg(teamId) and teamId ~= 0 then
-            XLog.Error("XTeamManager.GetTeamCaptainPos, 缺少TeamTypeCfg，teamId = ", tostring(teamId))
+            if not noTips then
+                XLog.Error("XTeamManager.GetTeamCaptainPos, 缺少TeamTypeCfg，teamId = ", tostring(teamId))
+            end
             return
         end
 
@@ -563,6 +1098,50 @@ XTeamManagerCreator = function()
         end
     end
 
+    function XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
+        -- 每次刷新前清空缓存
+        for k, v in pairs(EquipIdToPrefabTeamDic) do
+            EquipIdToPrefabTeamDic[k] = nil
+        end
+
+        for k, v in pairs(PartnerIdToPrefabTeamDic) do
+            PartnerIdToPrefabTeamDic[k] = nil
+        end
+
+        for i, v in ipairs(TeamPrefabList) do
+            local teamPrefab = v
+            for pos = 1, MaxPos do
+                -- 武器
+                local weapon = teamPrefab:GetWeaponData(pos)
+                if weapon and XTool.IsNumberValid(weapon.EquipId) then
+                    local charId = teamPrefab:GetEntityIdByTeamPos(pos)
+                    EquipIdToPrefabTeamDic[weapon.EquipId] = EquipIdToPrefabTeamDic[weapon.EquipId] or {}
+                    EquipIdToPrefabTeamDic[weapon.EquipId][charId] = EquipIdToPrefabTeamDic[weapon.EquipId][charId] or {}
+                    EquipIdToPrefabTeamDic[weapon.EquipId][charId][teamPrefab:GetId()] = true
+                end
+                
+                -- 意识
+                local awarenessList = teamPrefab:GetAllAwarenessData(pos)
+                if awarenessList then
+                    for _, v in pairs(awarenessList) do
+                        if XTool.IsNumberValid(v.EquipId) then
+                            local charId = teamPrefab:GetEntityIdByTeamPos(pos)
+                            EquipIdToPrefabTeamDic[v.EquipId] = EquipIdToPrefabTeamDic[v.EquipId] or {}
+                            EquipIdToPrefabTeamDic[v.EquipId][charId] = EquipIdToPrefabTeamDic[v.EquipId][charId] or {}
+                            EquipIdToPrefabTeamDic[v.EquipId][charId][teamPrefab:GetId()] = true
+                        end
+                    end
+                end
+
+                -- 辅助机
+                local partnerData = teamPrefab:GetPartnerData()
+                local partnerId = partnerData:GetPartnerIdByPos(pos)
+                if XTool.IsNumberValid(partnerId) then
+                    PartnerIdToPrefabTeamDic[partnerId] = true
+                end
+            end
+        end
+    end
 
     -- 在NotifyLogin中获取预编译队伍
     function XTeamManager.InitTeamPrefabData(teamPrefabData)
@@ -570,7 +1149,14 @@ XTeamManagerCreator = function()
             return
         end
 
-        for key, value in pairs(teamPrefabData) do
+        TeamPrefabList = {}
+        EquipIdToPrefabTeamDic = {} -- 初始化清空缓存
+        PartnerIdToPrefabTeamDic = {}
+        for key, value in ipairs(teamPrefabData) do
+            -- 新队伍预设
+            local prefab = XTeamPrefab.New(value)
+            table.insert(TeamPrefabList, prefab)
+
             local teamTemp = {}
             for teamDataKey, teamDataValue in pairs(value.TeamData) do
                 teamTemp[teamDataKey] = teamDataValue
@@ -588,12 +1174,14 @@ XTeamManagerCreator = function()
             PlayerTeamPrefabData[key].EnterCgIndex = value.EnterCgIndex
             PlayerTeamPrefabData[key].SettleCgIndex = value.SettleCgIndex
         end
+
+        XTeamManager.RefreshEquipIdAndPartnerIdToPrefabTeamDic()
     end
     
     --==============================
      ---@desc 获取辅助机预设
      ---@teamId teamId
-     ---@return table @class XPartnerPrefab
+     ---@return XPartnerPrefab
     --==============================
     function XTeamManager.GetPartnerPrefab(teamId)
         local teamData = PlayerTeamPrefabData[teamId]
@@ -620,6 +1208,37 @@ XTeamManagerCreator = function()
         return partnerPrefab
     end
 
+    function XTeamManager.CheckEquipIdIsInTeamPrefab(equipId)
+        local data = EquipIdToPrefabTeamDic[equipId]
+        return not XTool.IsTableEmpty(data)
+    end
+
+    function XTeamManager.CheckEquipIdCharIdIsInTeamPrefab(equipId, charId)
+        if not EquipIdToPrefabTeamDic[equipId] then
+            return false
+        end
+        local data = EquipIdToPrefabTeamDic[equipId][charId]
+        return not XTool.IsTableEmpty(data)
+    end
+
+    function XTeamManager.CheckEquipIdCharIdTeamIdIsInTeamPrefab(equipId, charId, teamId)
+        if not EquipIdToPrefabTeamDic[equipId] then
+            return false
+        end
+
+        if not EquipIdToPrefabTeamDic[equipId][charId] then
+            return false
+        end
+
+        local data = EquipIdToPrefabTeamDic[equipId][charId][teamId]
+        return data ~= nil
+    end
+
+
+    function XTeamManager.CheckPartnerIdIsInTeamPrefab(partnerId)
+        return PartnerIdToPrefabTeamDic[partnerId] ~= nil
+    end
+
     function XTeamManager.GetCaptainPos()
         return CaptainPos
     end
@@ -636,6 +1255,23 @@ XTeamManagerCreator = function()
         local colorStr = XTeamConfig.GetTeamCfgById(id).Color
         local color = XUiHelper.Hexcolor2Color(colorStr)
         return color
+    end
+
+    function XTeamManager.GetTeamMemberSelectColor(id)
+        local colorStr = XTeamConfig.GetTeamCfgById(id).SelectColor
+        local color = XUiHelper.Hexcolor2Color(colorStr)
+        return color
+    end
+
+    function XTeamManager.GetTeamMemberDiagonalColor(id)
+        local colorStr = XTeamConfig.GetTeamCfgById(id).DiagonalColor
+        local color = XUiHelper.Hexcolor2Color(colorStr)
+        return color
+    end
+
+    function XTeamManager.GetTeamMemberEffectPath(id)
+        local effectPath = XTeamConfig.GetTeamCfgById(id).EffectPath
+        return effectPath
     end
 
     function XTeamManager.GetTeamPrefabData()
@@ -671,7 +1307,8 @@ XTeamManagerCreator = function()
         result:UpdateFromTeamData(teamData)
         return result
     end
-    
+
+    ---@return XTeam
     function XTeamManager.GetXTeamByStageId(stageId)
         --- GetTeamKey接口获取的TeamId和XTeam内部自动保存时用的Id不一致（详见XTeam内GetSaveKey接口）
         --- 如果没有配套使用SaveTeamLocal接口，teamData将始终为空
@@ -688,6 +1325,19 @@ XTeamManagerCreator = function()
         return result
     end
 
+    function XTeamManager.GetXTeamSpeedrun(stageId)
+        local groupId = XMVCA.XPlotExhibition:GetSpeedrunStageGroupId(stageId)
+        local teamId = string.format("%s%s_%s", TeamDataKey, tostring(XPlayer.Id), groupId)
+        ---@type XTeam
+        local result = TeamDic[teamId]
+        if result == nil then
+            result = XTeam.New(teamId)
+            result:UpdateAutoSave(true)
+            TeamDic[teamId] = result
+        end
+        return result
+    end
+    
     --- 该接口获取的XTeam启用内部变更自动保存，无需外部手动调用保存接口
     function XTeamManager.GetXTeamByStageIdEx(stageId)
         local teamId = GetTeamKey(stageId)
@@ -724,6 +1374,10 @@ XTeamManagerCreator = function()
         local team = XTeamManager.GetXTeam(teamId)
         if team then
             return team:GetEntityIds()
+        end
+        local tempTeam = XTeamManager.GetTempTeam(teamId)
+        if tempTeam then
+            return tempTeam:GetEntityIds()
         end
         return nil
     end
@@ -806,8 +1460,6 @@ XTeamManagerCreator = function()
         result:UpdateLocalSave(false)
         return result
     end
-
-
     
     function XTeamManager.GetXTeamWithPrefab(teamId)
         local result
@@ -874,23 +1526,6 @@ XTeamManagerCreator = function()
         return false, false, nil
     end
 
-    local CacheStageIdForTeam = nil
-    function XTeamManager.SetBattleRoomCacheTeam(xTeam, stageId)
-        if not xTeam then
-            return
-        end
-        BattleRoomCacheTeam = xTeam
-        CacheStageIdForTeam = stageId
-    end
-
-    function XTeamManager.ClearBattleRoomCacheTeam()
-        BattleRoomCacheTeam = nil
-    end
-
-    function XTeamManager.GetBattleRoomCacheTeam()
-        return BattleRoomCacheTeam, CacheStageIdForTeam
-    end
-
     --- 根据传入的实体Id列表, 按照既定规则返回一个默认效应技能id(提供通用接口用于支持那些不会转换到XTeam处理的情况）
     --- 需注意本接口仅一次性查找、不能用于查其他玩家角色的数据，不会收集和处理可选技能，无法用于“效应选择”功能
     ---@param entityIds @队伍上阵实体的id列表（自机id或机器人id。按通用标准，无角色位填充0）
@@ -950,6 +1585,21 @@ XTeamManagerCreator = function()
         end
 
         return 0
+    end
+
+    function XTeamManager.SetBattleRoomCacheTeam(xTeam)
+        if not xTeam then
+            return
+        end
+        BattleRoomCacheTeam = xTeam
+    end
+
+    function XTeamManager.ClearBattleRoomCacheTeam()
+        BattleRoomCacheTeam = nil
+    end
+
+    function XTeamManager.GetBattleRoomCacheTeam()
+        return BattleRoomCacheTeam
     end
 
     XTeamManager.Init()

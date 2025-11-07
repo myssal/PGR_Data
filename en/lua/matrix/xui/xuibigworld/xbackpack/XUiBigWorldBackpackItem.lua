@@ -6,17 +6,18 @@ local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 ---@field PanelEmpty UnityEngine.RectTransform
 ---@field ItemGrid UnityEngine.RectTransform
 ---@field Parent XUiBigWorldBackpack
+---@field _Control XBigWorldBackpackControl
 local XUiBigWorldBackpackItem = XClass(XUiNode, "XUiBigWorldBackpackItem")
 
 -- region 生命周期
 
 function XUiBigWorldBackpackItem:OnStart()
     self.CanvasGroup = self.Grid.transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
-    self.Grid.CallBack = function()
+    self.Grid:AddEventListener(function()
         if self._Grid then
             if self._Grid:IsNodeShow() then self._Grid:OnClick() end
         end
-    end
+    end)
     ---@type XUiGridBWItem
     self._Grid = false
     self._Index = 0
@@ -45,6 +46,8 @@ end
 
 function XUiBigWorldBackpackItem:OnGridClick(itemParams, goodParams)
     self:SetSelect(true)
+    self._Control:AddRecordItemId(itemParams)
+    self:ShowReddot(false)
     self.Parent:OnItemGridClick(self._Index, itemParams, goodParams)
 end
 
@@ -60,9 +63,11 @@ function XUiBigWorldBackpackItem:Refresh(itemId, index, isSelect)
             self._Grid:OnClick()
         end
         self.PanelEmpty.gameObject:SetActiveEx(false)
+        self:ShowReddot(not self._Control:CheckItemIsRecord(itemId))
     else
         self._Grid:Close()
         self.PanelEmpty.gameObject:SetActiveEx(true)
+        self:ShowReddot(false)
     end
     self:SetSelect(isSelect)
 end

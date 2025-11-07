@@ -56,6 +56,19 @@
         ]
     },
     {
+        "Id": 401,
+        "Name": "Babylonia",
+        "Index": 1,
+        "Type": 2,
+        "Desc": "Necessary resources for experiencing Babylonia",
+        "DownloadTaskId": 0,
+        "ResIds": [
+            301,
+            402,
+            403
+        ]
+    },
+    {
         "Id": 901,
         "Name": "Cantonese Voiceover",
         "Index": 1,
@@ -146,7 +159,8 @@
             1049,
             1050,
             1051,
-            1052
+            1052,
+            1053
         ]
     },
     {
@@ -168,6 +182,19 @@
         ]
     },
     {
+        "Id": 3000,
+        "Name": "Theme Music",
+        "Index": 6,
+        "Type": 2,
+        "Desc": "Necessary resources for using Music Player in Main Interface and Music Box in Guild",
+        "DownloadTaskId": 0,
+        "ResIds": [
+            3000,
+            3001,
+            3002
+        ]
+    },
+    {
         "Id": 9999,
         "Name": "Expansion Pack",
         "Index": 5,
@@ -175,10 +202,7 @@
         "Desc": "Contains the necessary resources required for new main story stages and events.",
         "DownloadTaskId": 0,
         "ResIds": [
-            9999,
-            300,
-            400,
-            401
+            9999
         ],
         "PreIds": [
             201,

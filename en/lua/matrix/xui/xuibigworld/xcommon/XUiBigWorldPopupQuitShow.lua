@@ -59,15 +59,15 @@ function XUiBigWorldPopupQuitShow:_NotifyClose(operator)
         else
             data:InvokeCloseClick()
         end
-        data:Clear()
+        data:Dispose()
     end)
 end
 
 function XUiBigWorldPopupQuitShow:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnConfirm.CallBack = Handler(self, self.OnBtnConfirmClick)
-    self.BtnQuit.CallBack = Handler(self, self.OnBtnQuitClick)
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
+    self.BtnConfirm:AddEventListener(handler(self, self.OnBtnConfirmClick))
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
 end
 
 function XUiBigWorldPopupQuitShow:_RefreshTitle()

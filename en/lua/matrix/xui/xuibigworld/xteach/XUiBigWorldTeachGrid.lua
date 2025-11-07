@@ -66,7 +66,7 @@ function XUiBigWorldTeachGrid:OnBtnFirstClick()
 end
 
 function XUiBigWorldTeachGrid:_RegisterButtonClicks()
-    self.BtnFirst.CallBack = Handler(self, self.OnBtnFirstClick)
+    self.BtnFirst:AddEventListener(handler(self, self.OnBtnFirstClick))
 end
 
 function XUiBigWorldTeachGrid:_ShowReddot(isActive)

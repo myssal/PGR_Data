@@ -23,6 +23,24 @@ local FunctionType = {
     BigWorld = 2,
 }
 
+--- 功能显示Id，有些地方不方便用通用组件，又无法有效关联UI和Id，因此只能将Id作为常量定义在lua里了
+XFunctionConfig.FunctionalShowId = {
+    --- 主界面-折叠展开按钮
+    UiMainBtnOpen = 1022,
+    --- 主界面-商店
+    UiMainBtnStore = 1015,
+    --- 主界面-终端好友
+    UiMainTerminalSocial = 1021,
+    --- 成员界面-装备推荐
+    UiCharacterEquipRecommand = 2008,
+}
+
+--- 通用功能红点类型
+XFunctionConfig.RedPointType = {
+    --- 新手首次开启未点击
+    NewbieFirstShow = 1,
+}
+
 ---@type table<number, XTableFunctionalOpen>
 local FunctionalOpenTemplates = {}  --功能开启表
 local SecondaryFunctionalTemplates = {}  --二级功能配置
@@ -30,6 +48,9 @@ local SkipFunctionalTemplates = {}  --跳转功能表
 -- local MainAdTemplates = {}          --广告栏
 local MainActivitySkipTemplates = {} --活动便捷入口
 local ShieldFuncTemplates = {}      -- 功能对应的界面名称
+---@type XTableFunctionalShow[]
+local FunctionalShowTemplates = {}
+
 local OpenFunctionList = {
     [FunctionType.Basic] = false,
     [FunctionType.BigWorld] = false,
@@ -41,6 +62,7 @@ local TABLE_SKIP_FUNCTIONAL_PATH = "Client/Functional/SkipFunctional.tab"
 --local TABLE_MAIN_AD = "Client/Functional/MainAd.tab"
 local TABLE_MAIN_ACTIVITY_SKIP_PATH = "Client/Functional/MainActivitySkip.tab"
 local TABLE_SHIELD_FUNC_PATH = "Client/Functional/ShieldFuncList.tab"
+local TABLE_FUNCTIONAL_SHOW = "Share/Functional/FunctionalShow.tab"
 
 function XFunctionConfig.Init()
     XFunctionConfig.FunctionType = FunctionType
@@ -49,9 +71,10 @@ function XFunctionConfig.Init()
     SkipFunctionalTemplates = XTableManager.ReadByIntKey(TABLE_SKIP_FUNCTIONAL_PATH, XTable.XTableSkipFunctional, "SkipId")
     MainActivitySkipTemplates = XTableManager.ReadByIntKey(TABLE_MAIN_ACTIVITY_SKIP_PATH, XTable.XTableMainActivitySkip, "Id")
     ShieldFuncTemplates = XTableManager.ReadByIntKey(TABLE_SHIELD_FUNC_PATH, XTable.XTableShieldFunc, "Id")
-    
     ---@type table<number, XTableFunctionalOpen>
     local listOpenFunctional = XTableManager.ReadAllByIntKey(SHARE_FUNCTIONAL_OPEN, XTable.XTableFunctionalOpen, "Id")
+    FunctionalShowTemplates = XTableManager.ReadByIntKey(TABLE_FUNCTIONAL_SHOW, XTable.XTableFunctionalShow, "Id")
+
     --eg. 后面有逻辑判断-根据是否有有效的配置来判断功能是否开启，这里暂时不优化
     for k, v in pairs(listOpenFunctional) do
         if not XTool.IsTableEmpty(v.Condition) then
@@ -158,6 +181,11 @@ function XFunctionConfig.GetExplain(id)
     return ''
 end
 
+function XFunctionConfig.GetUiName(id)
+    local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
+    return cfg and cfg.UiName or ""
+end
+
 function XFunctionConfig.GetParamId(id)
     local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
 
@@ -210,3 +238,14 @@ function XFunctionConfig.GetFunctionalType(id)
         return cfg.Type
     end
 end
+
+---@return XTableFunctionalShow
+function XFunctionConfig.GetFunctionalShowCfg(id)
+    local cfg = FunctionalShowTemplates[id]
+
+    if not cfg then
+        XLog.ErrorTableDataNotFound(XFunctionConfig.GetFunctionalShowCfg, "FunctionalShow", TABLE_FUNCTIONAL_SHOW, "Id", id)
+    end
+    
+    return cfg
+end 

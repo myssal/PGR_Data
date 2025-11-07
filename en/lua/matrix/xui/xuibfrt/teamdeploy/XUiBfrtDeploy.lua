@@ -25,6 +25,7 @@ local XUiGridEchelon = require("XUi/XUiBfrt/TeamDeploy/XUiGridEchelon")
 local XUiBfrtDeploy = XLuaUiManager.Register(XLuaUi, "UiBfrtDeploy")
 
 function XUiBfrtDeploy:OnAwake()
+    XDataCenter.BfrtManager.ClearGirdEchelonIndexTempTeam()
     XDataCenter.BfrtManager.InitTeamCaptainPos()
     XDataCenter.BfrtManager.InitTeamFirstFightPos()
     self:AutoAddListener()

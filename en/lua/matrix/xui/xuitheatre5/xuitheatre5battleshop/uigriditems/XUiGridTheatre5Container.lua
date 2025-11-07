@@ -44,7 +44,7 @@ function XUiGridTheatre5Container:InitBindItem(cls)
     if self._IsInitBindItems then
         return
     end
-    
+
     local uiClass = cls and cls or require("XUi/XUiTheatre5/XUiTheatre5BattleShop/UiGridItems/XUiGridTheatre5Item")
 
     if uiClass then
@@ -57,9 +57,9 @@ function XUiGridTheatre5Container:InitBindItem(cls)
         end
 
         self._IsInitBindItems = true
-        
+
         self:_ClearItemShow()
-        
+
     else
         XLog.Error('物品类不存在:', uiClass)
     end
@@ -97,7 +97,7 @@ function XUiGridTheatre5Container:SetItemShowById(itemId)
         self:_ClearItemShow()
         return
     end
-    
+
     ---@type XTableTheatre5Item
     local itemCfg = self._Control:GetTheatre5ItemCfgById(itemId)
 
@@ -130,7 +130,9 @@ function XUiGridTheatre5Container:_SetItemType(type)
 
     if self.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Skill then
         self.CurUiGrid = self.UiGridSkill
-    elseif self.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip then
+    elseif self.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Equip
+            or self.ItemType == XMVCA.XTheatre5.EnumConst.ItemType.Hammer
+    then
         self.CurUiGrid = self.UiGridGem
     end
 end

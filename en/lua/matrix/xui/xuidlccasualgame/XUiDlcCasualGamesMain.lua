@@ -397,8 +397,8 @@ end
 
 function XUiDlcCasualGamesMain:_Match(needMatchCountCheck)
     local world = self._Control:GetCurrentWorld()
-
-    XMVCA.XDlcRoom:Match(world:GetWorldId(), needMatchCountCheck)
+    -- levelId是后面加的先默认传0
+    XMVCA.XDlcRoom:Match(world:GetWorldId(), 0, needMatchCountCheck)
 end
 
 function XUiDlcCasualGamesMain:_SwitchCamera(cameraType)

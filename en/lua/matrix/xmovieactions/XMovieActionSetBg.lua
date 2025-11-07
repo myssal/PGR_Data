@@ -1,6 +1,6 @@
 local XMovieActionSetBg = XClass(XMovieActionBase,"XMovieActionSetBg")
 
-function XMovieActionSetBg:Ctor(actionData)
+function XMovieActionSetBg:OnInit(actionData)
     self.BgPath = actionData.Params[1]
 end
 

@@ -276,7 +276,7 @@ function XUiGridMovieSpineActor:UpdateGrayScale(ignoreDefault)
     if not self.SpineUiObject then return end
     if ignoreDefault and self.GrayValue == DEFAULT_GRAY_SCALE then return end
 
-    for _, partName in pairs(XMVCA.XMovie.XEnumConst.SPINE_PART_NAME) do
+    for _, partName in pairs(XMVCA.XMovie.EnumConst.SPINE_PART_NAME) do
         local part = self.SpineUiObject:GetObject(partName, false)
         if part then 
             local matController = part.gameObject:GetComponent("XUiMaterialController")

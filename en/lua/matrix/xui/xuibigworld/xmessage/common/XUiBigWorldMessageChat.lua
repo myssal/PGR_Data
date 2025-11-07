@@ -22,7 +22,7 @@ local XUiBigWorldMessageChat = XClass(XUiNode, "XUiBigWorldMessageChat")
 
 -- region 生命周期
 
-function XUiBigWorldMessageChat:OnStart()
+function XUiBigWorldMessageChat:OnStart(audioPlayer)
     ---@type XUiBigWorldMessageGrid[]
     self._ReceiveGridList = {}
     ---@type XUiBigWorldMessageGrid[]
@@ -46,6 +46,8 @@ function XUiBigWorldMessageChat:OnStart()
     self._OnScrollEndCb = function()
         self._Scrolling = false
     end
+
+    self._AudioPlayer = audioPlayer
 
     self._TaskUi:Close()
     self:_InitUi()
@@ -85,16 +87,19 @@ end
 
 ---@param content XBWMessageContentEntity
 function XUiBigWorldMessageChat:OnPlayMessage(content)
+    local stepId = content:GetStepId()
+
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content. StepId: " .. tonumber(stepId) .. "\n" .. debug.traceback())
     if content:IsReceive() then
         local grid = self:_GetReceiveGrid()
 
         grid:Refresh(content)
-        grid:PlayEnableAnimation(content)
+        grid:PlayEnableAnimation(content, self._AudioPlayer)
     elseif content:IsSend() then
         local grid = self:_GetSendGrid()
 
         grid:Refresh(content)
-        grid:PlayEnableAnimation(content)
+        grid:PlayEnableAnimation(content, self._AudioPlayer)
     elseif content:IsSystem() then
         local tip = self:_GetSystemTip()
 
@@ -119,6 +124,7 @@ function XUiBigWorldMessageChat:OnPlayMessageBeginLoading(content)
 
         grid:Refresh(content)
         grid:SetLoadingEffectActive(true)
+        self:_RefreshScrolling()
     end
 end
 
@@ -182,10 +188,10 @@ function XUiBigWorldMessageChat:_RefreshAnswerOptions(content)
 
         answer:SetNameByGroup(0, text)
         answer.gameObject:SetActiveEx(true)
-        answer.CallBack = function()
+        answer:AddEventListener(function()
             self:_ShowAnswerOptions(false)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_OPTION_SELECT_NOTIFY, index)
-        end
+        end)
     end
     for i = count + 1, table.nums(self._AnswerGroup) do
         self._AnswerGroup[i].gameObject:SetActiveEx(false)
@@ -243,8 +249,8 @@ function XUiBigWorldMessageChat:_GetReceiveGrid()
     end
 
     grid:Open()
+    grid.Transform:SetAsLastSibling()
     if not self._IsLockGridIndex then
-        grid.Transform:SetAsLastSibling()
         self._ReceiveGridIndex = self._ReceiveGridIndex + 1
     end
 
@@ -263,8 +269,8 @@ function XUiBigWorldMessageChat:_GetSendGrid()
     end
 
     grid:Open()
+    grid.Transform:SetAsLastSibling()
     if not self._IsLockGridIndex then
-        grid.Transform:SetAsLastSibling()
         self._SendGridIndex = self._SendGridIndex + 1
     end
 
@@ -330,6 +336,7 @@ end
 
 ---@param content XBWMessageContentEntity
 function XUiBigWorldMessageChat:_RefreshEnd(content)
+    CS.XLog.Debug("[BigWorldMessage]: Play Message Content Receive Play Finish Event. StepId: " .. tostring(content:GetStepId()) .. "\n" .. debug.traceback())
     self:_RefreshTeskPanel(content)
     self:_ShowMessageEnd()
     self._Control:SendMessageComplete(content:GetMessageId())

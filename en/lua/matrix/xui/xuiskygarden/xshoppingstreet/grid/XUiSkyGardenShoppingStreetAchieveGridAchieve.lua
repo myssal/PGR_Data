@@ -78,7 +78,7 @@ end
 
 --region 私有方法
 function XUiSkyGardenShoppingStreetAchieveGridAchieveGridAchieve:_RegisterButtonClicks()
-    self.BtnClick.CallBack = function() self:OnBtnClickClick() end
+    self.BtnClick:AddEventListener(handler(self, self.OnBtnClickClick))
 end
 --endregion
 

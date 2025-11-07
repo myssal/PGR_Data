@@ -18,6 +18,7 @@ function XUiPanelTheatre5Store:OnStart()
 end
 
 function XUiPanelTheatre5Store:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
     self._Control:AddEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
@@ -25,6 +26,7 @@ function XUiPanelTheatre5Store:OnEnable()
 end
 
 function XUiPanelTheatre5Store:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_STORE_SHOW, self.RefreshStoreShow, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_FULLSHOPAREA_SHOW_STATE, self.SetFullAreaState, self)
     self._Control:RemoveEventListener(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_CANCEL_CONTAINERS_FOCUS, self.OnApplicationPauseEvent, self)
@@ -78,9 +80,10 @@ function XUiPanelTheatre5Store:RefreshStoreShow(isRefreshNew)
     self.CurRefreshCfg = self._Control.ShopControl:GetCurShopRefreshCntCostCfg()
 
     if self.CurRefreshCfg then
-        self.BtnRefresh:SetNameByGroup(1, self.CurRefreshCfg.GoldCost)
+        local refreshCost = self._Control.ShopControl:GetShopRefreshCost()
+        self.BtnRefresh:SetNameByGroup(1, refreshCost)
         
-        local isGoldEnough = self._Control.ShopControl:GetGoldNum() >= self.CurRefreshCfg.GoldCost
+        local isGoldEnough = self._Control.ShopControl:GetGoldNum() >= refreshCost
         
         self.BtnRefresh:SetButtonState(isGoldEnough and CS.UiButtonState.Normal or CS.UiButtonState.Disable)
     end
@@ -183,7 +186,8 @@ function XUiPanelTheatre5Store:OnBtnRefreshClickEvent()
             return
         end
         
-        if self._Control.ShopControl:GetGoldNum() >= self.CurRefreshCfg.GoldCost then
+        local goldCost = self._Control.ShopControl:GetShopRefreshCost()
+        if self._Control.ShopControl:GetGoldNum() >= goldCost then
             XMVCA.XTheatre5:RequestTheatre5ShopRefresh(function(success)
                 if success then
                     self._Control.ShopControl:RefreshAfterRefreshRequest()

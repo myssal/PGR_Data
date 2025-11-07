@@ -35,7 +35,7 @@ end
 
 function XUiGridExtralLineTab:RefreshRedPoint()
     local isRed = false
-    if self.Manager:ExGetChapterType() == XFubenConfigs.ChapterType.Festival then
+    if self.Manager:ExGetChapterType() == XEnumConst.FuBen.ChapterType.Festival then
         isRed = self.Manager:ExCheckIsShowRedPoint(XFestivalActivityConfig.UiType.ExtralLine)
     else
         isRed = self.Manager:ExCheckIsShowRedPoint()

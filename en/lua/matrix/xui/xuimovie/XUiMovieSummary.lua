@@ -15,10 +15,10 @@ function XUiMovieSummary:OnStart(skipType, summaryCfg, cancelCb, sureCb)
     self.CancelCb = cancelCb
     self.SureCb = sureCb
     
-    self.SummaryPanelRoot.gameObject:SetActiveEx(self.SkipType == XMVCA.XMovie.XEnumConst.SkipType.Summary)
-    self.TipsPanelRoot.gameObject:SetActiveEx(self.SkipType == XMVCA.XMovie.XEnumConst.SkipType.OnlyTips)
+    self.SummaryPanelRoot.gameObject:SetActiveEx(self.SkipType == XMVCA.XMovie.EnumConst.SkipType.Summary)
+    self.TipsPanelRoot.gameObject:SetActiveEx(self.SkipType == XMVCA.XMovie.EnumConst.SkipType.OnlyTips)
 
-    if self.SkipType == XMVCA.XMovie.XEnumConst.SkipType.Summary then
+    if self.SkipType == XMVCA.XMovie.EnumConst.SkipType.Summary then
         self:RefreshSummary()
     else
         self:RefreshTips()

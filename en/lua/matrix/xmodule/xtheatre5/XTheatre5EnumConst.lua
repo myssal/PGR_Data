@@ -1,18 +1,18 @@
 --- 玩法内部使用的枚举类，单独封装方便管理
 local Theatre5EnumConst = {
     --- 游戏模式
-    GameModel = {
+    GameMode = {
         PVP = 1,
         PVE = 2,
     },
-    
+
     --- 大段位状态
     RankMajorState = {
         Beyond = 1, -- 玩家当前段位超过目标大段位
         Belong = 2, -- 玩家当前段位处于目标大段位
         Below = 3, -- 玩家当前段位低于目标大段位
     },
-    
+
     --- 物品类型
     ItemType = {
         Skill = 1, -- 技能
@@ -20,9 +20,13 @@ local Theatre5EnumConst = {
         ItemBox = 3, --道具箱
         Gold = 4, --金币
         Clue = 5, --线索
-        Common = 6, --通用的道具， Item.tab
+        Hammer = 6, -- 锤子(背包)
+        Relic = 7, -- 饰品(背包)
+        Exp = 8, -- exp(非背包)
+        -- 1000开始的是客户端用的道具
+        Common = 1001, --通用的道具， Item.tab
     },
-    
+
     --- 物品容器类型
     ItemContainerType = {
         Goods = 1, -- 商品
@@ -33,7 +37,7 @@ local Theatre5EnumConst = {
         NormalDetails = 6, --常规详情展示(不要按钮)
         TempBagBlock = 7, --临时背包格子
     },
-    
+
     --- 商店操作类型
     ShopOperationType = {
         BuyGem = 1,
@@ -41,7 +45,7 @@ local Theatre5EnumConst = {
         SelectSkill = 3,
         DiscardSkill = 4,
     },
-    
+
     --- Theatre5ShopRefreshCost配置表Id的前缀
     RefreshCntCostIdPreix = 1000,
     PveSceneChatPreix = 1000,
@@ -50,7 +54,7 @@ local Theatre5EnumConst = {
     PveChapterLevelPreix = 1000,
     ShopNpcChatPreix = 1000,
     DeduceQuestionPreix = 1000,
-    
+
     --- 结算状态
     DlcFightSettleState = {
         None = 0, -- 正常结算
@@ -58,7 +62,7 @@ local Theatre5EnumConst = {
         AdvanceExit = 2, -- 完成对局提前结算
         PlayerOffline = 3, -- 玩家掉线
     },
-    
+
     --- 商店状态
     ShopState = {
         Normal = 1, -- 常规商店
@@ -138,24 +142,27 @@ local Theatre5EnumConst = {
         Event = 4, --事件
         BattleChapterMain = 5, --战斗章节
         Shop = 6, --商店节点
-        Battle = 7, --战斗
-        StoryLineEnd = 8, --故事线结束
-        BattleChapterStart = 9, --战斗章节关开始
-        BattleChapterEnd = 10, --战斗章节关结束
-        SkillSelect = 11, --技能选择
-        ItemBoxSelect = 12, --宝箱选择
-        BattleChapterInit = 13, --战斗章节初始化
+
+        -- 客户端自定义的枚举从1000开始
+        Battle = 1000, --战斗
+        StoryLineEnd = 1001, --故事线结束
+        BattleChapterStart = 1009, --战斗章节关开始
+        BattleChapterEnd = 1010, --战斗章节关结束
+        SkillSelect = 1011, --技能选择
+        ItemBoxSelect = 1012, --宝箱选择
+        BattleChapterInit = 1013, --战斗章节初始化
+        SelectRelic = 1014, --选择饰品
     },
-    
+
     --- 玩家游戏状态
     PlayStatus = {
         PveEveHandle = 1, --事件处理中
-        NotStart = 2,  -- 未开始游戏
-        ChoiceSkill = 3,  -- 技能三选一
-        Shopping = 4,  -- 商店购物中
-        Matching = 5,  -- 匹配中
-        Battling = 6,  -- 正在战斗
-        BattleFinish = 7,  -- 战斗结束（结算界面）
+        NotStart = 2, -- 未开始游戏
+        ChoiceSkill = 3, -- 技能三选一
+        Shopping = 4, -- 商店购物中
+        Matching = 5, -- 匹配中
+        Battling = 6, -- 正在战斗
+        BattleFinish = 7, -- 战斗结束（结算界面）
     },
 
     --章节关卡状态
@@ -171,7 +178,7 @@ local Theatre5EnumConst = {
         Purple = 2,
         Orange = 3,
     },
-    
+
     -- 宝珠类型
     GemType = {
         Passive = 0, -- 被动型
@@ -183,7 +190,7 @@ local Theatre5EnumConst = {
         SelectOne = 1, --多选一
         All = 2, --全部获得
     },
-    
+
     -- 角色属性显示方式
     AttribShowType = {
         Normal = 1, -- 自然数，直接显示数值
@@ -192,7 +199,7 @@ local Theatre5EnumConst = {
 
     -- 对话触发类型
     ChatTriggerType = {
-        UIPanel = 1,  --点击界面
+        UIPanel = 1, --点击界面
         ClickBtn = 2, --按钮点击
     },
 
@@ -209,7 +216,7 @@ local Theatre5EnumConst = {
         BattleChapterCompleted = 2, --战斗章节完成
         BattleAgain = 3, --再来一次
     },
-    
+
     -- 角色涂装配置索引
     CharacterFashionIndexType = {
         Default = 1, -- 默认涂装
@@ -221,7 +228,7 @@ local Theatre5EnumConst = {
         Shop = 1, --商店
         Task = 2, --任务
     },
-    
+
     -- 需要乘基数的属性枚举
     EnlargedAttribs = {
         [XDlcNpcAttribType.Speed] = true,
@@ -240,7 +247,7 @@ local Theatre5EnumConst = {
         [XDlcNpcAttribType.SprintSpeed] = true,
         [XDlcNpcAttribType.SprintSpeedCOE] = true,
     },
-    
+
     -- 角色动画状态
     CharacterAnimaState = {
         Start = 1, -- 动画开始状态，相当于AnyState
@@ -257,13 +264,77 @@ local Theatre5EnumConst = {
         Choose = 4, -- 选中时的待机动画
         Detail = 5, -- 局内详情页待机动画
     },
-    
+
     -- 引导战斗暂停指令
     FightPauseOrResumeType = {
         Resume = 0,
         Pause = 1,
+    },
+
+    -- V4.0:效果类型枚举
+    Theatre5EffectType = {
+        AddBuff = 1, --进入战斗时获得指定Buff
+        RandomItemGroup = 2, --在指定的RandomGroup中进行一次抽取,抽取时需排除[商店][临时背包][背包][装备中]达到数量上限的商品
+        AddItem = 3, --获得指定的道具
+        ChangeGold = 4, --获得金币.期待可配负值,等同于扣除金币.扣除时最多扣到0.(最终数量=参数1+参数2*参数3)
+        AddFreeFreshCnt = 5, --获得免费刷新次数(刷新价格固定为0,刷新时不计入已刷新次数)
+        AddExp = 6, --获得经验
+        RandomStealShopRune = 7, --随机偷取商店内的符纹(不消耗金币,随机购买)
+        AddAutoStrengthenCnt = 8, --将后续x次购买的符纹替换为强化状态的符纹
+        AddAttr = 9, --进入战斗时获得属性(期待数值和比例可配负值)
+        AutoSellRune = 10, --出售指定位置的符纹(不对技能操作)
+        AutoReplaceRune = 11, --将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
+        ChangeHp = 12, --心数增加、减少
+    },
+
+    Theatre5SpecificValType = {
+        Round = 1, --回合数
+        WinCnt = 2, --胜利数
+        LoseCnt = 3, --失败数
+        Hp = 4, --心数
+        Gold = 5, --金币数量
+        Lv = 6, --等级
+        TagCnt = 7, --当前装备的符纹Tag数量
+        BagCnt = 8, --背包空格数量
+    },
+
+    Theatre5TriggerType = {
+        AfterShopInit = 1, --商店初始化后
+        AfterLevelUp = 2, --升级后
+        AfterBuyItem = 3, --购买道具后
+        AfterChooseSkill = 4, --选择技能后
+        AfterChooseRelic = 5, --选择饰品后[选择当前饰品,只触发1次]
+        AfterEnterFight = 6, --进入战斗后
+        AfterEnterSkillFrame = 7, --进入技能三选一
+    },
+
+    -- 奖励界面可以选择道具或符文
+    ChooseRewardType = {
+        Item = 1, --道具
+        Relic = 2, --符文
+    },
+
+    -- 背包更新的方式
+    Theatre5BagUpdateType = {
+        Remove = 1,
+        Update = 2,
+        Add = 3,
+    },
+
+    Theatre5EffectType = {
+        AddBuff = 1, --进入战斗时获得指定Buff
+        RandomItemGroup = 2, --在指定的RandomGroup中进行一次抽取,抽取时需排除[商店][临时背包][背包][装备中]达到数量上限的商品
+        AddItem = 3, --获得指定的道具
+        ChangeGold = 4, --获得金币.期待可配负值,等同于扣除金币.扣除时最多扣到0.(最终数量=参数1+参数2*参数3)
+        AddFreeFreshCnt = 5, --获得免费刷新次数(刷新价格固定为0,刷新时不计入已刷新次数)
+        AddExp = 6, --获得经验
+        RandomStealShopRune = 7, --随机偷取商店内的符纹(不消耗金币,随机购买)
+        AddAutoStrengthenCnt = 8, --将后续x次购买的符纹替换为强化状态的符纹
+        AddAttr = 9, --进入战斗时获得属性(期待数值和比例可配负值)
+        AutoSellRune = 10, --出售指定位置的符纹(不对技能操作)
+        AutoReplaceRune = 11, --将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
+        ChangeHp = 12, --心数增加、减少
     }
 }
-
 
 return Theatre5EnumConst

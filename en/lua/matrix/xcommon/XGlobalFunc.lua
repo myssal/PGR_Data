@@ -79,7 +79,13 @@ end
 
 --异步执行
 function RunAsyn(func)
-    return coroutineWrap(func)()
+    return coroutineWrap(function(...)
+        local ok, res = pcall(func, ...)
+        if not ok then
+            XLog.Error(res)
+        end
+        return res
+    end)()
 end
 
 function appendArray(dst, src)

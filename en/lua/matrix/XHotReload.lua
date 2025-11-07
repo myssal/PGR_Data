@@ -118,6 +118,9 @@ function XHotReload.Reload(fileName)
         XLog.Error("XHotReload.Reload reload file error: file never loaded, fileName is: ", fileName)
         return
     end
+    
+    -- 释放延迟释放的control，避免热重载导致的问题
+    XMVCA:ReleaseDelayControl()
 
     local oldModule = package.loaded[fileName]
     package.loaded[fileName] = nil

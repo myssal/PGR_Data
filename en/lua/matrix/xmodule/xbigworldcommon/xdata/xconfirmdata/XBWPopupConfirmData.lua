@@ -164,4 +164,8 @@ function XBWPopupConfirmData:Clear()
     self.ToggleData:Clear()
 end
 
+function XBWPopupConfirmData:Dispose()
+    XMVCA.XBigWorldCommon:RepaidPopupConfirmData(self)
+end
+
 return XBWPopupConfirmData

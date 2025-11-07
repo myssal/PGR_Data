@@ -46,6 +46,9 @@ function XUiPurchaseLBListItem:SetData()
     self.TxtName.text = self.ItemData.Name
     self.ImgSellout.gameObject:SetActive(false)
     self.TxtUnShelveTime.gameObject:SetActive(false)
+    if self.ImgLock then
+        self.ImgLock.gameObject:SetActiveEx(false)
+    end
     if self.ImgHave then
         self.ImgHave.gameObject:SetActive(false)
     end
@@ -69,11 +72,19 @@ function XUiPurchaseLBListItem:SetData()
             local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.ItemData)
             if disCountValue < 1 then
                 local disCountStr = string.format("%.1f", disCountValue * 10)
-                if self.ItemData.DiscountShowStr and self.ItemData.DiscountShowStr ~= "" then
-                    disCountStr = self.ItemData.DiscountShowStr
+                if XOverseaManager.IsKRRegion()  or XOverseaManager.IsENRegion()then
+                    disCountStr = tostring(math.floor((1-disCountValue) * 100))
+                else
+                    if self.ItemData.DiscountShowStr and self.ItemData.DiscountShowStr ~= "" then
+                        disCountStr = self.ItemData.DiscountShowStr
+                    end
                 end
                 tagText = disCountStr..tagText
                 self.IsDisCount = true
+                --海外日服背景礼包不显示折扣
+                if XOverseaManager.IsJPRegion() and self.ItemData.UiType == 10 then
+                    tagText = TextManager.GetText("JPDiscountDes")
+                end
             else
                 isShowTag = false
             end
@@ -135,6 +146,20 @@ function XUiPurchaseLBListItem:SetData()
         end
         self.TxtHk.text = self.ItemData.ConsumeCount or ""
     end
+    
+    -- 达到限购次数
+    if self.ItemData.BuyLimitTimes and self.ItemData.BuyLimitTimes > 0 and self.ItemData.BuyTimes == self.ItemData.BuyLimitTimes then
+        self.TxtPutawayTime.gameObject:SetActive(false)
+        self.ImgSellout.gameObject:SetActive(true)
+        if XOverseaManager.IsKRRegion() and self.ImgHave then
+            self.ImgHave.gameObject:SetActive(false)
+        end
+        self.TxtSetOut.text = TextManager.GetText("PurchaseSettOut")
+        self.TxtFree.gameObject:SetActive(false)
+        self.TxtHk.gameObject:SetActive(false)
+        self:SetBuyDes()
+        return
+    end
 
     --是否已拥有
     local isShowHave = false
@@ -153,17 +178,6 @@ function XUiPurchaseLBListItem:SetData()
         else
             self.ImgLock.gameObject:SetActiveEx(false)
         end
-    end
-
-    -- 达到限购次数
-    if self.ItemData.BuyLimitTimes and self.ItemData.BuyLimitTimes > 0 and self.ItemData.BuyTimes == self.ItemData.BuyLimitTimes then
-        self.TxtPutawayTime.gameObject:SetActive(false)
-        self.ImgSellout.gameObject:SetActive(true)
-        self.TxtSetOut.text = TextManager.GetText("PurchaseSettOut")
-        self.TxtFree.gameObject:SetActive(false)
-        self.TxtHk.gameObject:SetActive(false)
-        self:SetBuyDes()
-        return
     end
 
     -- 上架时间
@@ -206,6 +220,9 @@ function XUiPurchaseLBListItem:SetData()
             self.TxtUnShelveTime.gameObject:SetActive(false)
             self:ActiveImgTimeBg(false)
             self.ImgSellout.gameObject:SetActive(true)
+            if XOverseaManager.IsKRRegion() and self.ImgHave then
+                self.ImgHave.gameObject:SetActive(false)
+            end
             self.TxtSetOut.text = TextManager.GetText("PurchaseLBSettOff")
         end
         return
@@ -232,6 +249,9 @@ function XUiPurchaseLBListItem:SetData()
             end
         else
             self.ImgSellout.gameObject:SetActive(true)
+            if XOverseaManager.IsKRRegion() and self.ImgHave then
+                self.ImgHave.gameObject:SetActive(false)
+            end
             self.TxtUnShelveTime.text = ""
             self:ActiveImgTimeBg(false)
             self.TxtSetOut.text = TextManager.GetText("PurchaseLBSettOff")
@@ -295,6 +315,9 @@ function XUiPurchaseLBListItem:UpdateTimer(isRecover, id)
         self.Parent:RemoveTimerFun(self.ItemData.Id)
         if self.UpdateTimerType == UpdateTimerTypeEnum.SettOff then
             self.ImgSellout.gameObject:SetActive(true)
+            if XOverseaManager.IsKRRegion() and self.ImgHave then
+                self.ImgHave.gameObject:SetActive(false)
+            end
             self.TxtUnShelveTime.text = ""
             self:ActiveImgTimeBg(false)
             self.TxtSetOut.text = TextManager.GetText("PurchaseLBSettOff")

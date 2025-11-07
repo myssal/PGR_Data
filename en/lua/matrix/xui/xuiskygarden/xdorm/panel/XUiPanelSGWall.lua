@@ -4,13 +4,12 @@
 ---@field _PanelMenu XUiPanelSGWallMenu
 ---@field _PanelTab XUiPanelSGWallTab
 ---@field _PanelOp XUiPanelSGWallOp
----@field CanvasGroup UnityEngine.CanvasGroup
 local XUiPanelSGWall = XClass(XUiNode, "XUiPanelSGWall")
 
 function XUiPanelSGWall:InitUi()
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
     local areaType = self._AreaType
     self._PanelMenu = require("XUi/XUiSkyGarden/XDorm/Panel/XUiPanelSGWallMenu").New(self.PanelMenu, self, areaType)
+    self.CanvasGroupList = self.Transform:GetComponentsInChildren(typeof(CS.UnityEngine.CanvasGroup))
 end
 
 function XUiPanelSGWall:InitCb()
@@ -73,13 +72,19 @@ function XUiPanelSGWall:OnDestroy()
 end
 
 function XUiPanelSGWall:SetVisible(value)
-    self.CanvasGroup.blocksRaycasts = value
+    self:SetBlocksRaycasts(value)
     if value then
         self._PanelMenu:Open()
         self._PanelTab:Open()
     else
         self._PanelMenu:Close()
         self._PanelTab:Close()
+    end
+end
+
+function XUiPanelSGWall:SetBlocksRaycasts(value)
+    for i = 0, self.CanvasGroupList.Length - 1 do
+        self.CanvasGroupList[i].blocksRaycasts = value
     end
 end
 

@@ -27,17 +27,11 @@ function XUiBigWorldPopupDelivery:InitUi()
 end
 
 function XUiBigWorldPopupDelivery:InitCb()
-    self.BtnClose.CallBack = function()
-        self:Close()
-    end
+    self.BtnClose:AddEventListener(handler(self, self.Close))
 
-    self.BtnCancel.CallBack = function()
-        self:Close()
-    end
+    self.BtnCancel:AddEventListener(handler(self, self.Close))
 
-    self.BtnConfirm.CallBack = function()
-        self:OnBtnConfirmClick()
-    end
+    self.BtnConfirm:AddEventListener(handler(self, self.OnBtnConfirmClick))
 end
 
 function XUiBigWorldPopupDelivery:InitView()

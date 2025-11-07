@@ -10,14 +10,14 @@ local CharacterTableKey =
     CharacterCareer = { Identifier = "Type" },
     CharacterGraph = { DirPath = XConfigUtil.DirectoryType.Client, TableDefindName = "XTableGraph", CacheType = XConfigUtil.CacheType.Private },
     CharacterRecommend = { DirPath = XConfigUtil.DirectoryType.Client },
-    CharacterTabId = { DirPath = XConfigUtil.DirectoryType.Client },
-    -- CharacterLiberation = { DirPath = XConfigUtil.DirectoryType.Client }, -- 已被优化
-    CharacterLiberationTextId = { DirPath = XConfigUtil.DirectoryType.Client },
-    CharacterLiberationTextOptimize = { DirPath = XConfigUtil.DirectoryType.Client },
+    CharacterTabId = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterRecommendTypeId" },
+    CharacterTabByRecommendTypeTab = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterRecommendTypeTabId" },
+    CharacterLiberation = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterGrowUpLevelId" },
     CharacterLiberationIcon = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "LiberationLv" },
     CharacterElement = { DirPath = XConfigUtil.DirectoryType.Client },
     CharacterFilterController = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "UiName", ReadFunc = XConfigUtil.ReadType.String },
     CharacterModelNodeEffectMapping  = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "PId", ReadFunc = XConfigUtil.ReadType.String },
+    CharacterPower  = { DirPath = XConfigUtil.DirectoryType.Client },
     CharacterQualityIcon = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Quality" }, 
     CharacterGeneralSkill  = {},
 }
@@ -46,6 +46,9 @@ local CharacterQualityTableKey =
     CharacterQualityFragment = {},
     CharacterQuality = {},
     CharacterSkillQualityApart = { DirPath = XConfigUtil.DirectoryType.Client },
+    CharacterSkillQualityApartByCharacterId = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId" },
+    CharacterSkillQualityApartByCharacterQualityId = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterQualityId" },
+    CharacterSkillQualityApartByCharacterQualityPhaseId = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterQualityPhaseId" },
     CharacterSkillQualityBigEffectBall = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Quality", CacheType = XConfigUtil.CacheType.Private },
 }
 
@@ -132,12 +135,9 @@ function XCharacterModel:OnInit()
     self:InitCharQualityConfig()
     self:IniCharQualityFragmentConfig()
     self:InitCharGradeConfig()
-    self:InitCharSkillQualityApart()
     self:InitSkillGroupDic()
     self:InitCharSkillIdToCharacterIdDic()
     self:InitCharacterSkillPoolConfig()
-    self:InitCharLiberationConfig()
-    self:InitRecommendConfig()
 end
 
 --region 基础读表
@@ -154,6 +154,11 @@ end
 ---@return XTableCharacterModelNodeEffectMapping[]
 function XCharacterModel:GetCharacterModelNodeEffectMapping()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterModelNodeEffectMapping)
+end
+
+---@return XTableCharacterPower[]
+function XCharacterModel:GetCharacterPower()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterPower)
 end
 
 -- 外部不存在直接获取所有configs
@@ -229,16 +234,18 @@ function XCharacterModel:GetCharacterRecommend()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterRecommend)
 end
 
+---@return XTableCharacterTabId[]
 function XCharacterModel:GetCharacterTabId()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterTabId)
 end
 
-function XCharacterModel:GetCharacterLiberationTextId()
-    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterLiberationTextId)
+---@return XTableCharacterTabByRecommendTypeTab[]
+function XCharacterModel:GetCharacterTabByRecommendTypeTab()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterTabByRecommendTypeTab)
 end
 
-function XCharacterModel:GetCharacterLiberationTextOptimize()
-    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterLiberationTextOptimize)
+function XCharacterModel:GetCharacterLiberation()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterLiberation)
 end
 
 function XCharacterModel:GetCharacterLiberationIcon()
@@ -247,6 +254,18 @@ end
 
 function XCharacterModel:GetCharacterSkillQualityApart()
     return self._ConfigUtil:GetByTableKey(CharacterQualityTableKey.CharacterSkillQualityApart)
+end
+
+function XCharacterModel:GetCharacterSkillQualityApartByCharacterId()
+    return self._ConfigUtil:GetByTableKey(CharacterQualityTableKey.CharacterSkillQualityApartByCharacterId)
+end
+
+function XCharacterModel:GetCharacterSkillQualityApartByCharacterQualityId()
+    return self._ConfigUtil:GetByTableKey(CharacterQualityTableKey.CharacterSkillQualityApartByCharacterQualityId)
+end
+
+function XCharacterModel:GetCharacterSkillQualityApartByCharacterQualityPhaseId()
+    return self._ConfigUtil:GetByTableKey(CharacterQualityTableKey.CharacterSkillQualityApartByCharacterQualityPhaseId)
 end
 
 function XCharacterModel:GetCharacterSkillQualityBigEffectBall()
@@ -567,22 +586,6 @@ function XCharacterModel:InitCharGradeConfig()
     end
 end
 
-function XCharacterModel:InitCharSkillQualityApart()
-    local charSkillQualityApartConfig = self:GetCharacterSkillQualityApart() 
-    for _, config in pairs(charSkillQualityApartConfig) do
-        if not self.CharSkillQualityApartDic[config.CharacterId] then
-            self.CharSkillQualityApartDic[config.CharacterId] = {}
-        end
-        if not self.CharSkillQualityApartDic[config.CharacterId][config.Quality] then
-            self.CharSkillQualityApartDic[config.CharacterId][config.Quality] = {}
-        end
-        if not self.CharSkillQualityApartDic[config.CharacterId][config.Quality][config.Phase] then
-            self.CharSkillQualityApartDic[config.CharacterId][config.Quality][config.Phase] = {}
-        end 
-        table.insert(self.CharSkillQualityApartDic[config.CharacterId][config.Quality][config.Phase], config.Id)
-    end
-end
-
 function XCharacterModel:InitSkillGroupDic()
     local charSkillGroupTemplates = self:GetCharacterSkillGroup()
     for _, config in pairs(charSkillGroupTemplates) do
@@ -646,75 +649,16 @@ function XCharacterModel:InitCharacterSkillPoolConfig()
     end
 end
 
-function XCharacterModel:InitCharLiberationConfig()
-    local tab = self:GetCharacterLiberationTextOptimize()
-    for _, config in pairs(tab) do
-        if not self.CharLiberationTemplates[config.CharacterId] then
-            self.CharLiberationTemplates[config.CharacterId] = {}
-        end
-        self.CharLiberationTemplates[config.CharacterId][config.GrowUpLevel] = config
-    end
-end
-
 function XCharacterModel:GetCharLiberationConfig(characterId, growUpLevel)
-    local config = self.CharLiberationTemplates[tonumber(characterId)]
-    if not config then
+    local tab = self:GetCharacterLiberation()
+    if not tab then
         return
     end
 
-    config = config[growUpLevel]
-    if not config then
-        return
-    end
-
-    local res = XTool.Clone(config)
-    if XTool.IsNumberValid(res.ModelId) then
-        res.ModelId = self:GetCharacterLiberationTextId()[config.ModelId].Text
-    else
-        res.ModelId = nil
-    end
-    if XTool.IsNumberValid(res.EffectRootName) then
-        res.EffectRootName = self:GetCharacterLiberationTextId()[config.EffectRootName].Text
-    else
-        res.EffectRootName = nil
-    end
-    if XTool.IsNumberValid(res.EffectPath) then
-        res.EffectPath = self:GetCharacterLiberationTextId()[config.EffectPath].Text
-    else
-        res.EffectPath = nil
-    end
-    if XTool.IsNumberValid(res.Title) then
-        res.Title = self:GetCharacterLiberationTextId()[config.Title].Text
-    else
-        res.Title = nil
-    end
-    if XTool.IsNumberValid(res.Desc) then
-        res.Desc = self:GetCharacterLiberationTextId()[config.Desc].Text
-    else
-        res.Desc = nil
-    end
-
-    return res
-end
-
-
-function XCharacterModel:InitRecommendConfig()
-    local templates = self:GetCharacterTabId()
-    for _, config in pairs(templates) do
-        local typeMap = self.CharacterTabToVoteGroupMap[config.CharacterId]
-        if not typeMap then
-            typeMap = {}
-            self.CharacterTabToVoteGroupMap[config.CharacterId] = typeMap
-        end
-
-        local tabMap = typeMap[config.RecommendType]
-        if not tabMap then
-            tabMap = {}
-            typeMap[config.RecommendType] = tabMap
-        end
-
-        tabMap[config.TabId] = config
-    end
+    -- 直接用 CharacterGrowUpLevelId 作为主键索引
+    local key = characterId * 10 + growUpLevel
+    local config = tab[key]
+    return config
 end
 
 function XCharacterModel:InitSkillIdAndEnhanceSkillIdGeneralSkillIdsDic()

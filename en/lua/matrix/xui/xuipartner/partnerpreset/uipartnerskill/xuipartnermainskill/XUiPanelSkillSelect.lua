@@ -87,10 +87,9 @@ end
 --=========================================类分界线=========================================--
 
 
-local XUiPanelSkillSelect = XClass(nil, "XUiPanelSkillSelect")
+local XUiPanelSkillSelect = XClass(XUiNode, "XUiPanelSkillSelect")
 
-function XUiPanelSkillSelect:Ctor(ui, partner, partnerPrefab, funcDict)
-    XTool.InitUiObjectByUi(self, ui)
+function XUiPanelSkillSelect:OnStart(partner, partnerPrefab, funcDict)
     self.Partner = partner
     self.PartnerPrefab = partnerPrefab
     for funcName, func in pairs(funcDict or {}) do
@@ -147,6 +146,7 @@ function XUiPanelSkillSelect:OnSelectCallback(group)
     self.SetCurrentGroup(group)
     
     self:Refresh()
+    self.Parent:OnBtnCloseClick()
 end
 
 return XUiPanelSkillSelect

@@ -3,7 +3,7 @@
 ---@field Transform UnityEngine.Transform
 ---@field _Control XSkyGardenCafeControl
 ---@field _Cards XUiGridSGCardItem[]
-local XUiSkyGardenCafeGame = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafeGame")
+local XUiSkyGardenCafeGame = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafeGame")
 
 local XUiGridSGCardBattleItem = require("XUi/XUiSkyGarden/XCafe/Grid/XUiGridSGCardBattleItem")
 local XUiGridSGCardBattleSmallItem = require("XUi/XUiSkyGarden/XCafe/Grid/XUiGridSGCardBattleSmallItem")
@@ -20,7 +20,7 @@ end
 function XUiSkyGardenCafeGame:OnStart()
     self:InitView()
 
-    XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenCoffeeCameraBattle", 0)
+    XMVCA.XBigWorldGamePlay:ActivateVCamera(self:GetBattleCameraName(), 0)
     local agency = XMVCA.XSkyGardenCafe
     agency:AddInnerEvent(DlcEventId.EVENT_CAFE_ROUND_BEGIN, self.OnRoundBegin, self)
     agency:AddInnerEvent(DlcEventId.EVENT_CAFE_UPDATE_PLAY_CARD, self.OnPlayCardUpdate, self)
@@ -64,6 +64,8 @@ function XUiSkyGardenCafeGame:OnDestroy()
         XMVCA.XBigWorldGamePlay:ActivateVCamera("UiSkyGardenCoffeeCameraMain", 0, true)
     end
     self._Control:SetChangeCamera(true)
+    self._Control:ClearStateMachineParam()
+    
 end
 
 function XUiSkyGardenCafeGame:InitUi()
@@ -100,6 +102,9 @@ function XUiSkyGardenCafeGame:InitUi()
 
     local isSelect = self._Control:IsSkipAnimation()
     self.BtnSwitch:SetButtonState(isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    
+    self._Control:CreateStateMachine(self.WWX1, self.WWX2)
+    self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.Idle)
 end
 
 function XUiSkyGardenCafeGame:InitCb()
@@ -124,9 +129,7 @@ function XUiSkyGardenCafeGame:InitCb()
         self:Close()
     end)
 
-    self.BtnCollapse.CallBack = function()
-        self:OnBtnCollapseClick()
-    end
+    self.BtnCollapse:AddEventListener(handler(self, self.OnBtnCollapseClick))
 
     self.BtnStart:AddEventListener(function()
         self:OnBtnStartClick()
@@ -237,6 +240,7 @@ end
 
 function XUiSkyGardenCafeGame:RefreshReDraw(isOpen)
     self.PanelReDraw.gameObject:SetActiveEx(isOpen)
+    self.PanelSettle.gameObject:SetActiveEx(not isOpen)
     if not isOpen then
         return
     end
@@ -265,14 +269,15 @@ function XUiSkyGardenCafeGame:OnCardReclaim(event, containerType, index, card)
 end
 
 function XUiSkyGardenCafeGame:OnCardClick(event, containerType, index, card)
+    local cardItem = self:FetchCardItem(card, containerType)
     if containerType == CardContainer.ReDraw then
-        local cardItem = self:FetchCardItem(card, containerType)
         if not cardItem then
             XLog.Error("卡牌获取异常：", event, containerType, index, card)
             return
         end
         cardItem:SetSelect(index + 1)
     else
+        self._ClickCardItem = cardItem
         local dataList = self:GetCardEntities(containerType)
         local data = dataList and dataList[index + 1] or nil
         self:RefreshBigItem(true, containerType, data)
@@ -357,13 +362,18 @@ function XUiSkyGardenCafeGame:RefreshBigItem(isShow, containerType, card)
         self._BigItem = self:FetchCardItem(self.UiBigCard, CardContainer.Deck)
     end
     self.PanelCardDetail.gameObject:SetActiveEx(isShow)
+    if self._ClickCardItem and self._ClickCardItem.PlayDragEffect then
+        self._ClickCardItem:PlayDragEffect(isShow and 1 or 0)
+    end
     if isShow then
         self._BigItem:Open()
         self._BigItem:Refresh(card, containerType, true)
         card:PrintBuff()
     else
         self._BigItem:Close()
+        self._ClickCardItem = nil
     end
+    
 end
 
 function XUiSkyGardenCafeGame:OnBtnCollapseClick()
@@ -371,6 +381,8 @@ end
 
 function XUiSkyGardenCafeGame:OnBtnStartClick()
     self._Control:GetBattle():Play()
+    XMVCA.XSkyGardenCafe:SetLastWaitTime(XTime.GetServerNowTimestamp())
+    self._Control:ChangeGamePetState(XMVCA.XSkyGardenCafe.GamePetState.Settle)
 end
 
 function XUiSkyGardenCafeGame:OnBtnRoleClick()
@@ -484,4 +496,15 @@ function XUiSkyGardenCafeGame:PlaySeatAudio(index)
         self:_RemoveTimerIdAndDoCallback(timerId)
     end, 900)
     self:_AddTimerId(timerId)
+end
+
+function XUiSkyGardenCafeGame:GetBattleCameraName()
+    local screen = CS.UnityEngine.Screen
+    local ratio = self._Control:GetCafeCameraScreenRatio()
+    local screenRatio = (screen.width / screen.height) * 1000
+    if screenRatio < ratio then
+        return "UiSkyGardenCoffeeCameraBattleIpad"
+    else
+        return "UiSkyGardenCoffeeCameraBattle"
+    end
 end

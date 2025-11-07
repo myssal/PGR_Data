@@ -121,7 +121,17 @@ function XUiTheatre5BubbleItemDetail:RefreshBaseShow()
             self.TxtStory.transform.parent.gameObject:SetActiveEx(false)
         end
         
-        self.TxtDes.text = self._Control:GetItemDesc(self.ItemConfig)
+        self.TxtDes.text = self._Control:GetItemDesc(self.ItemConfig, self.ItemData and self.ItemData.IsStrengthen)
+        
+        if self.TxtDes02 then
+            local addDesc = self._Control:GetItemAddDesc(self.ItemConfig, self.ItemData and self.ItemData.IsStrengthen)
+            if addDesc then
+                self.TxtDes02.gameObject:SetActiveEx(true)
+                self.TxtDes02.text = addDesc
+            else
+                self.TxtDes02.gameObject:SetActiveEx(false)
+            end
+        end
 
         if self.TagGrids == nil then
             self.TagGrids = {}
@@ -178,8 +188,13 @@ function XUiTheatre5BubbleItemDetail:RefreshGemShow()
         local runeCfg = self._Control:GetTheatre5ItemRuneCfgById(self.ItemConfig.Id)
 
         if runeCfg and XTool.IsNumberValid(runeCfg.RuneAttrId) then
-            ---@type XTableTheatre5ItemRuneAttr
-            local runeAttrCfg = self._Control:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)
+            local runeAttrCfg
+            if self.ItemData then
+                ---@type XTableTheatre5ItemRuneAttr
+                runeAttrCfg = self._Control:GetRuneAttr(self.ItemData)
+            else
+                runeAttrCfg = self._Control:GetTheatre5ItemRuneAttrCfgById(runeCfg.RuneAttrId)    
+            end
 
             if runeAttrCfg then
                 self.PanelGem.gameObject:SetActiveEx(true)

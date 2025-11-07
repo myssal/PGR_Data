@@ -7,7 +7,7 @@ function XTheatre5ItemBoxSelectNode:Ctor()
 end
 
 function XTheatre5ItemBoxSelectNode:_OnEnter()
-    self:OpenUiPanel("UiTheatre5PVEPopupChooseReward", handler(self, self.ChapterBattlePromote))
+    self:OpenUiPanel("UiTheatre5PVEPopupChooseReward", XMVCA.XTheatre5.EnumConst.ChooseRewardType.Item, handler(self, self.ChapterBattlePromote))
 end
 
 function XTheatre5ItemBoxSelectNode:_OnExit()

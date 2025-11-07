@@ -15,6 +15,11 @@ function XUiSignCardPopup:OnStart()
             self.TxtCount.text = CS.XTextManager.GetText("KRYKfirst")
         end
     end
+    if XOverseaManager.IsJPRegion() then
+        if self.TxtCount then
+            self.TxtCount.text = CS.XTextManager.GetText("JPYKfirst")
+        end
+    end
 end
 
 function XUiSignCardPopup:OnEnable()
@@ -34,7 +39,6 @@ function XUiSignCardPopup:RefreshGet()
     if not data then
         return
     end
-    
     local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
     if remainDay < 0 then
         remainDay = 0
@@ -66,15 +70,13 @@ function XUiSignCardPopup:RefreshInfo(data)
     local isA = data.Id == 83028
     self.CardBg:SetImage(isA and self.CardABgPath or self.CardCBgPath)
 
-    if not self.BlackCardAmount then
-        self.BlackCardAmount = self.Transform:Find("SafeAreaContentPane/SignCard/PanelGet/Tex/Text003"):GetComponent("Text")
+    if self.TxtCount then
+        self.TxtCount.text = data.RewardGoodsList[1].Count
     end
-    self.BlackCardAmount.text = data.RewardGoodsList[1].Count
 
-    if not self.Desc then
-        self.Desc = self.Transform:Find("SafeAreaContentPane/SignCard/PanelGet/Tex/Text004"):GetComponent("Text")
+    if self.TxtCountDay then
+        self.TxtCountDay.text = data.Desc
     end
-    self.Desc.text = data.Desc
 end
 
 function XUiSignCardPopup:AutoGetReward()

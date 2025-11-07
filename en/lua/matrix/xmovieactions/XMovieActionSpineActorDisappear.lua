@@ -1,6 +1,6 @@
 local XMovieActionSpineActorDisappear = XClass(XMovieActionBase, "XMovieActionSpineActorDisappear")
 
-function XMovieActionSpineActorDisappear:Ctor(actionData)
+function XMovieActionSpineActorDisappear:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -15,7 +15,7 @@ function XMovieActionSpineActorDisappear:Ctor(actionData)
     self.SkipAnim = paramToNumber(params[6]) ~= 0
 end
 
-function XMovieActionSpineActorDisappear:OnInit()
+function XMovieActionSpineActorDisappear:OnEnter()
     for actorIndex, _ in pairs(self.ActorIndexs) do
         local actor = self.UiRoot:GetSpineActor(actorIndex)
         if self.SkipAnim then
@@ -26,6 +26,10 @@ function XMovieActionSpineActorDisappear:OnInit()
             end)
         end
     end
+end
+
+function XMovieActionSpineActorDisappear:IsDisappear(actorIndex)
+    return self.ActorIndexs[actorIndex] ~= nil
 end
 
 return XMovieActionSpineActorDisappear

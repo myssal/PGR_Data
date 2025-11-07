@@ -1,10 +1,10 @@
 local XMovieActionCameraLoad = XClass(XMovieActionBase,"XMovieActionCameraLoad")
 
-function XMovieActionCameraLoad:Ctor(actionData)
+function XMovieActionCameraLoad:OnInit(actionData)
     self.Params = actionData.Params
 end
 
-function XMovieActionCameraLoad:OnInit()
+function XMovieActionCameraLoad:OnEnter()
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     for i = 1, #self.Params do
         local info = string.Split(self.Params[i],"|")

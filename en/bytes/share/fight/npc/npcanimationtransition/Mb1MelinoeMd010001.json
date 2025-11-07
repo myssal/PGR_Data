@@ -458,7 +458,19 @@
     {
         "Role": "Mb1MelinoeMd010001",
         "Layer": 0,
+        "Target": "Attack41",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
         "Target": "Attack80",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "Target": "Attack97",
         "TransitionDuration": 0.1
     },
     {
@@ -595,6 +607,34 @@
     {
         "Role": "Mb1MelinoeMd010001",
         "Layer": 0,
+        "State": "Walk",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walk",
+        "Target": "Walkb",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walk",
+        "Target": "Walkl",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walk",
+        "Target": "Walkr",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
         "State": "Runb",
         "Target": "Stand2",
         "TransitionDuration": 0.2
@@ -695,13 +735,20 @@
         "Layer": 0,
         "State": "Walkb",
         "Target": "Walkl",
-        "TransitionDuration": 0.1
+        "TransitionDuration": 0.2
     },
     {
         "Role": "Mb1MelinoeMd010001",
         "Layer": 0,
         "State": "Walkb",
         "Target": "Walkr",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walkb",
+        "Target": "Walkb",
         "TransitionDuration": 0.1
     },
     {
@@ -716,13 +763,13 @@
         "Layer": 0,
         "State": "Walkl",
         "Target": "Walk",
-        "TransitionDuration": 0.1
+        "TransitionDuration": 0.2
     },
     {
         "Role": "Mb1MelinoeMd010001",
         "Layer": 0,
         "State": "Walkl",
-        "Target": "Walkb",
+        "Target": "Walkl",
         "TransitionDuration": 0.1
     },
     {
@@ -730,6 +777,13 @@
         "Layer": 0,
         "State": "Walkl",
         "Target": "Walkr",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walkl",
+        "Target": "Walkb",
         "TransitionDuration": 0.2
     },
     {
@@ -744,6 +798,20 @@
         "Layer": 0,
         "State": "Walkr",
         "Target": "Walk",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walkr",
+        "Target": "Walkl",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "Mb1MelinoeMd010001",
+        "Layer": 0,
+        "State": "Walkr",
+        "Target": "Walkr",
         "TransitionDuration": 0.1
     },
     {
@@ -751,13 +819,6 @@
         "Layer": 0,
         "State": "Walkr",
         "Target": "Walkb",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "Mb1MelinoeMd010001",
-        "Layer": 0,
-        "State": "Walkr",
-        "Target": "Walkl",
         "TransitionDuration": 0.2
     },
     {

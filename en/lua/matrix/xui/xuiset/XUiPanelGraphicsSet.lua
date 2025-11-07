@@ -18,6 +18,7 @@ local function CopyCQualitySettings(luaQuality, cQuality)
 
     luaQuality.DistortionLevel = cQuality:GetDistortionLevel()
     luaQuality.FrameRateLevel = cQuality:GetFrameRateLevel()
+    luaQuality.BigWorldFrameRateLevel = cQuality:GetBigWorldFrameRateLevel()
 
     luaQuality.BloomLevel = cQuality:GetBloomLevel()
 end
@@ -36,7 +37,7 @@ local function GetCQualitySettings(luaQuality)
     quality:SetResolutionLevel(luaQuality.ResolutionLevel)
     quality:SetDistortionLevel(luaQuality.DistortionLevel)
     quality:SetFrameRateLevel(luaQuality.FrameRateLevel)
-
+    quality:SetBigWorldFrameRateLevel(luaQuality.BigWorldFrameRateLevel)
     quality:SetBloomLevel(luaQuality.BloomLevel)
 
     return quality
@@ -69,8 +70,6 @@ function XUiPanelGraphicsSet:OnStart()
         BloomLevel = nil
     }
 
-
-
     self.TogQualityGroup = {
         self.TogQuality_0, self.TogQuality_1, self.TogQuality_2, self.TogQuality_3, self.TogQuality_4, self.TogQuality_5,
     }
@@ -90,10 +89,10 @@ function XUiPanelGraphicsSet:OnStart()
         self.TogEffect_0, self.TogEffect_1, self.TogEffect_2, self.TogEffect_3
     }
 
-    self.TogOtherEffect_0 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_0"):GetComponent("Toggle")
-    self.TogOtherEffect_1 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_1"):GetComponent("Toggle")
-    self.TogOtherEffect_2 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_2"):GetComponent("Toggle")
-    self.TogOtherEffect_3 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_3"):GetComponent("Toggle")
+    -- self.TogOtherEffect_0 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_0"):GetComponent("Toggle")
+    -- self.TogOtherEffect_1 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_1"):GetComponent("Toggle")
+    -- self.TogOtherEffect_2 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_2"):GetComponent("Toggle")
+    -- self.TogOtherEffect_3 = self.Transform:Find("SView /Viewport/PanelContent/OtherEffectLevel/Array/TGroupResolution/TogEffect_3"):GetComponent("Toggle")
 
     self.TogOtherEffectGroup = {
         self.TogOtherEffect_0, self.TogOtherEffect_1, self.TogOtherEffect_2, self.TogOtherEffect_3
@@ -115,18 +114,17 @@ function XUiPanelGraphicsSet:OnStart()
         self.TogFrameRate_0, self.TogFrameRate_1, self.TogFrameRate_2, self.TogFrameRate_3, self.TogFrameRate_4
     }
 
-    self.TogBloom_0 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_0"):GetComponent("Toggle")
-    self.TogBloom_1 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_1"):GetComponent("Toggle")
-    self.TogBloom_2 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_2"):GetComponent("Toggle")
+    -- self.TogBloom_0 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_0"):GetComponent("Toggle")
+    -- self.TogBloom_1 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_1"):GetComponent("Toggle")
+    -- self.TogBloom_2 = self.Transform:Find("SView /Viewport/PanelContent/BloomLevel/Array/TGroupBloom/TogBloom_2"):GetComponent("Toggle")
 
     self.TogBloomGroup = {
         self.TogBloom_0, self.TogBloom_1, self.TogBloom_2
     }
 
-
-    self.TogDistortion_0 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_0"):GetComponent("Toggle")
-    self.TogDistortion_1 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_1"):GetComponent("Toggle")
-    self.TogDistortion_2 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_2"):GetComponent("Toggle")
+    -- self.TogDistortion_0 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_0"):GetComponent("Toggle")
+    -- self.TogDistortion_1 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_1"):GetComponent("Toggle")
+    -- self.TogDistortion_2 = self.Transform:Find("SView /Viewport/PanelContent/DistortionLevel/Array/TGroupResolution/TogDistortion_2"):GetComponent("Toggle")
 
     self.TogDistortionGroup = {
         self.TogDistortion_0, self.TogDistortion_1, self.TogDistortion_2
@@ -135,8 +133,8 @@ function XUiPanelGraphicsSet:OnStart()
     self.CurQualityLevel = nil
     self.Dirty = false
 
-    self.TogHDR = self.TogHDR
-    self.TogFxaa = self.TogFxaa
+    -- self.TogHDR = self.TogHDR
+    -- self.TogFxaa = self.TogFxaa
     -- self.TogDistortion = self.TogDistortion
     -- self.TogHighFrameRate = self.TogHighFrameRate
     XUiHelper.RegisterClickEvent(self, self.TogHDR, function(isEnable)
@@ -162,9 +160,7 @@ function XUiPanelGraphicsSet:OnStart()
 
     for index, tog in ipairs(self.TogDistortionGroup) do
         local qualityId = index - 1
-
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -182,9 +178,7 @@ function XUiPanelGraphicsSet:OnStart()
 
     for index, tog in ipairs(self.TogBloomGroup) do
         local qualityId = index - 1
-
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -199,11 +193,8 @@ function XUiPanelGraphicsSet:OnStart()
         end)
     end
 
-
-
     for index, tog in ipairs(self.TogQualityGroup) do
         local qualityId = index - 1
-
         XUiHelper.RegisterClickEvent(self, tog, function(open)
             if self.lock then return end
 
@@ -216,9 +207,7 @@ function XUiPanelGraphicsSet:OnStart()
 
     for index, tog in ipairs(self.TogResolutionGroup) do
         local resolutionId = index - 1
-
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -235,13 +224,12 @@ function XUiPanelGraphicsSet:OnStart()
 
     for index, tog in ipairs(self.TogFrameRateGroup) do
         local resolutionId = index - 1
-
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
                 self:OnClickFrameRateSettings(resolutionId)
+                self:OnClickBigWorldFrameRateLevelSettings(resolutionId)
             end
 
             if self.CurQualityLevel ~= 0 then
@@ -253,10 +241,8 @@ function XUiPanelGraphicsSet:OnStart()
     end
 
     for index, tog in ipairs(self.TogOtherEffectGroup) do
-
         local effectId = index - 1
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -274,10 +260,8 @@ function XUiPanelGraphicsSet:OnStart()
 
 
     for index, tog in ipairs(self.TogEffectGroup) do
-
         local effectId = index - 1
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -289,15 +273,12 @@ function XUiPanelGraphicsSet:OnStart()
                 self:OnClickQualitySettings(self.CurQualityLevel)
                 self:UpdatePanel()
             end
-
         end)
     end
 
     for index, tog in ipairs(self.TogShadowGroup) do
-
         local shadowId = index - 1
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
             if open then
                 self.Dirty = true
@@ -321,9 +302,7 @@ function XUiPanelGraphicsSet:OnStart()
             graphicId = index
         end
         XUiHelper.RegisterClickEvent(self, tog, function(open)
-
             -- if self.lock then return end
-
             if open then
                 self.Dirty = true
                 self:OnClickGraphicsLevel(graphicId)
@@ -338,7 +317,6 @@ function XUiPanelGraphicsSet:OnStart()
     end
 
     for index, tog in ipairs(self.TogMirrorGroup) do
-
         local mirrorId = index - 1
         XUiHelper.RegisterClickEvent(self, tog, function(open)
             -- if self.lock then return end
@@ -353,16 +331,12 @@ function XUiPanelGraphicsSet:OnStart()
                 self:UpdatePanel()
             end
         end)
-
     end
 
     local defaultLevel = XQualityManager:GetDefaultLevel() + 1
-
     for index, tog in ipairs(self.TogQualityGroup) do
-
         if index ~= 1 then
             local icon = tog.gameObject.transform:Find("Icon").gameObject
-
             if icon then
                 icon:SetActive(index == defaultLevel)
             end
@@ -370,11 +344,12 @@ function XUiPanelGraphicsSet:OnStart()
     end
 
     if not XDataCenter.UiPcManager.IsPc() then
-        XUiHelper.RegisterClickEvent(self, self.FrameRateLevel, function(open)
+        XUiHelper.RegisterClickEvent(self, self.TogMainLineHighFrameRateMode, function(open)
             if open then
                 self.Dirty = true
-                if self.FrameRateLevel.isOn then
+                if self.TogMainLineHighFrameRateMode.isOn then
                     self:OnClickFrameRateSettings(2)
+                    -- self:ShowHighFrameTips()
                 else
                     self:OnClickFrameRateSettings(0)
                 end
@@ -385,7 +360,27 @@ function XUiPanelGraphicsSet:OnStart()
                 self:UpdatePanel()
             end
         end)
+        XUiHelper.RegisterClickEvent(self, self.TogBigWorldHighFrameRateMode, function(open)
+            if open then
+                self.Dirty = true
+                if self.TogBigWorldHighFrameRateMode.isOn then
+                    self:OnClickBigWorldFrameRateLevelSettings(2)
+                    self:ShowHighFrameTips()
+                else
+                    self:OnClickBigWorldFrameRateLevelSettings(0)
+                end
+            end
+            if self.CurQualityLevel ~= 0 then
+                self.CurQualityLevel = 0
+                self:OnClickQualitySettings(self.CurQualityLevel)
+                self:UpdatePanel()
+            end
+        end)
     end
+end
+
+function XUiPanelGraphicsSet:ShowHighFrameTips()
+    XUiManager.DialogTip(nil, XUiHelper.ReplaceTextNewLine(XUiHelper.GetText("SettingHighFrameRateTips")), XUiManager.DialogType.OnlySure)
 end
 
 function XUiPanelGraphicsSet:OnEnable()
@@ -398,6 +393,10 @@ end
 
 function XUiPanelGraphicsSet:OnClickFrameRateSettings(id)
     self.QualitySettings.FrameRateLevel = id
+end
+
+function XUiPanelGraphicsSet:OnClickBigWorldFrameRateLevelSettings(id)
+    self.QualitySettings.BigWorldFrameRateLevel = id
 end
 
 function XUiPanelGraphicsSet:OnClickResolutionSettings(id)
@@ -545,9 +544,7 @@ end
 
 
 function XUiPanelGraphicsSet:UpdateByCurrentLevel()
-
     local cQuality = XQualityManager:GetQualitySettings(self.CurQualityLevel)
-
     CopyCQualitySettings(self.QualitySettings, cQuality)
 
     if self.CurQualityLevel == 0 then
@@ -581,12 +578,23 @@ function XUiPanelGraphicsSet:UpdateContents()
     -- self.TogDistortion.isOn = info.UseDistortion
     -- self.TogHighFrameRate.isOn = info.HighFrameRate
 
+    if self.MainLineHighFrameRateMode then
+        self.MainLineHighFrameRateMode.gameObject:SetActive(not XDataCenter.UiPcManager.IsPc())
+    end
+    if self.BigWorldHighFrameRateMode then
+        self.BigWorldHighFrameRateMode.gameObject:SetActive(not XDataCenter.UiPcManager.IsPc())
+    end
     if XDataCenter.UiPcManager.IsPc() then
         for i, tog in pairs(self.TogFrameRateGroup) do
             tog.isOn = info.FrameRateLevel == (i - 1)
         end
     else
-        self.FrameRateLevel.isOn = info.FrameRateLevel >= 2
+        if self.TogMainLineHighFrameRateMode then
+            self.TogMainLineHighFrameRateMode.isOn = info.FrameRateLevel >= 2
+        end
+        if self.TogBigWorldHighFrameRateMode then
+            self.TogBigWorldHighFrameRateMode.isOn = info.BigWorldFrameRateLevel >= 2
+        end
     end
 
     for i, tog in pairs(self.TogEffectGroup) do
@@ -667,6 +675,8 @@ function XUiPanelGraphicsSet:SaveChange()
     dict["mirror_level"] = self.QualitySettings["MirrorLevel"]
     --游戏帧率
     dict["frame_rate_level"] = self.QualitySettings["FrameRateLevel"]
+    --大世界帧率
+    dict["bigworld_frame_rate_level"] = self.QualitySettings["BigWorldFrameRateLevel"]
     --辉光等级
     dict["bloom_level"] = self.QualitySettings["BloomLevel"]
     --扭曲等级
@@ -699,94 +709,98 @@ function XUiPanelGraphicsSet:InitAutoScript()
 end
 
 function XUiPanelGraphicsSet:AutoInitUi()
-    self.TogQuality_0 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_0"):GetComponent("Toggle")
-    self.SView = self.Transform:Find("SView "):GetComponent("ScrollRect")
-    self.PanelContent = self.Transform:Find("SView /Viewport/PanelContent")
-    self.PanelLiangge2 = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2")
-    self.TogDistortion = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/Distortion/TogDistortion"):GetComponent("Toggle")
-    self.TxtFxaaA = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/Distortion/TxtFxaa"):GetComponent("Text")
-    self.TogHighFrameRate = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/HighFrameRate/TogHighFrameRate"):GetComponent("Toggle")
-    self.TxtFxaaB = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/HighFrameRate/TxtFxaa"):GetComponent("Text")
-    self.TogMirror_2 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2"):GetComponent("Toggle")
-    self.ImgResStandN = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2/ImgResStand"):GetComponent("Image")
-    self.TxtResStandN = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2/TxtResStand"):GetComponent("Text")
-    self.TogMirror_1 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1"):GetComponent("Toggle")
-    self.ImgResStandM = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1/ImgResStand"):GetComponent("Image")
-    self.TxtResStandM = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1/TxtResStand"):GetComponent("Text")
-    self.TogMirror_0 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0"):GetComponent("Toggle")
-    self.ImgResStandL = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0/ImgResStand"):GetComponent("Image")
-    self.TxtResStandL = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0/TxtResStand"):GetComponent("Text")
-    self.TxtResC = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/TxtRes"):GetComponent("Text")
-    self.TogShadow_3 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3"):GetComponent("Toggle")
-    self.ImgResStandK = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3/ImgResStand"):GetComponent("Image")
-    self.TxtResStandK = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3/TxtResStand"):GetComponent("Text")
-    self.TogShadow_2 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2"):GetComponent("Toggle")
-    self.ImgResStandJ = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2/ImgResStand"):GetComponent("Image")
-    self.TxtResStandJ = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2/TxtResStand"):GetComponent("Text")
-    self.TogShadow_1 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1"):GetComponent("Toggle")
-    self.ImgResStandI = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1/ImgResStand"):GetComponent("Image")
-    self.TxtResStandI = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1/TxtResStand"):GetComponent("Text")
-    self.TogShadow_0 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0"):GetComponent("Toggle")
-    self.ImgResStandH = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0/ImgResStand"):GetComponent("Image")
-    self.TxtResStandH = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0/TxtResStand"):GetComponent("Text")
-    self.TxtResB = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/TxtRes"):GetComponent("Text")
-    self.TogEffect_2 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2"):GetComponent("Toggle")
-    self.ImgResStandG = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2/ImgResStand"):GetComponent("Image")
-    self.TxtResStandG = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2/TxtResStand"):GetComponent("Text")
-    self.TogEffect_1 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1"):GetComponent("Toggle")
-    self.ImgResStandF = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1/ImgResStand"):GetComponent("Image")
-    self.TxtResStandF = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1/TxtResStand"):GetComponent("Text")
-    self.TogEffect_0 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0"):GetComponent("Toggle")
-    self.ImgResStandE = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0/ImgResStand"):GetComponent("Image")
-    self.TxtResStandE = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0/TxtResStand"):GetComponent("Text")
-    self.TxtResA = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/TxtRes"):GetComponent("Text")
-    self.TogGraphics_4 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4"):GetComponent("Toggle")
-    self.ImgResStandD = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4/ImgResStand"):GetComponent("Image")
-    self.TxtResStandD = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4/TxtResStand"):GetComponent("Text")
-    self.TogGraphics_3 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3"):GetComponent("Toggle")
-    self.ImgResStandC = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3/ImgResStand"):GetComponent("Image")
-    self.TxtResStandC = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3/TxtResStand"):GetComponent("Text")
-    self.TogGraphics_2 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2"):GetComponent("Toggle")
-    self.ImgResStandB = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2/ImgResStand"):GetComponent("Image")
-    self.TxtResStandB = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2/TxtResStand"):GetComponent("Text")
-    self.TogGraphics_1 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1"):GetComponent("Toggle")
-    self.ImgResStandA = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1/ImgResStand"):GetComponent("Image")
-    self.TxtResStandA = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1/TxtResStand"):GetComponent("Text")
-    self.TxtRes = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/TxtRes"):GetComponent("Text")
-    self.PanelLiangge = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge")
-    self.TxtFxaa = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FXAA/TxtFxaa"):GetComponent("Text")
-    self.TogFxaa = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FXAA/TogFxaa"):GetComponent("Toggle")
-    self.TxtHDR = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/HDR/TxtHDR"):GetComponent("Text")
-    self.TogHDR = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/HDR/TogHDR"):GetComponent("Toggle")
-    self.TxtResA = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/TxtRes"):GetComponent("Text")
-    self.TogResolution_0 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0"):GetComponent("Toggle")
-    self.ImgResStandE = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0/ImgResStand"):GetComponent("Image")
-    self.TxtResStandE = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0/TxtResStand"):GetComponent("Text")
-    self.TogResolution_1 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1"):GetComponent("Toggle")
-    self.ImgResStandF = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1/ImgResStand"):GetComponent("Image")
-    self.TxtResStandF = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1/TxtResStand"):GetComponent("Text")
-    self.TogResolution_2 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2"):GetComponent("Toggle")
-    self.ImgResStandG = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2/ImgResStand"):GetComponent("Image")
-    self.TxtResStandG = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2/TxtResStand"):GetComponent("Text")
-    self.TogResolution_3 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3"):GetComponent("Toggle")
-    self.ImgResStandH = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3/ImgResStand"):GetComponent("Image")
-    self.TxtResStandH = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3/TxtResStand"):GetComponent("Text")
-    self.TogEffect_3 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3"):GetComponent("Toggle")
-    self.ImgResStandP = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3/ImgResStand"):GetComponent("Image")
-    self.TxtResStandP = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3/TxtResStand"):GetComponent("Text")
-    self.TogMirror_3 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3"):GetComponent("Toggle")
-    self.ImgResStandT = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3/ImgResStand"):GetComponent("Image")
-    self.TxtResStandT = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3/TxtResStand"):GetComponent("Text")
-    self.TxtResE = self.Transform:Find("SView /Viewport/PanelContent/FrameRateLevel/TxtRes"):GetComponent("Text")
-    self.TogQuality_5 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_5"):GetComponent("Toggle")
-    self.TogQuality_4 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_4"):GetComponent("Toggle")
-    self.TogQuality_3 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_3"):GetComponent("Toggle")
-    self.TogAuto = self.Transform:Find("MainQuality/TGroupAuto/TogAuto"):GetComponent("Toggle")
-    self.TogQuality_2 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_2"):GetComponent("Toggle")
-    self.TogQuality_1 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_1"):GetComponent("Toggle")
+    -- self.TogQuality_0 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_0"):GetComponent("Toggle")
+    -- self.SView = self.Transform:Find("SView "):GetComponent("ScrollRect")
+    -- self.PanelContent = self.Transform:Find("SView /Viewport/PanelContent")
+    -- self.PanelLiangge2 = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2")
+    -- self.TogDistortion = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/Distortion/TogDistortion"):GetComponent("Toggle")
+    -- self.TxtFxaaA = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/Distortion/TxtFxaa"):GetComponent("Text")
+    -- self.TogHighFrameRate = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/HighFrameRate/TogHighFrameRate"):GetComponent("Toggle")
+    -- self.TxtFxaaB = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge2/HighFrameRate/TxtFxaa"):GetComponent("Text")
+    -- self.TogMirror_2 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2"):GetComponent("Toggle")
+    -- self.ImgResStandN = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandN = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_2/TxtResStand"):GetComponent("Text")
+    -- self.TogMirror_1 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1"):GetComponent("Toggle")
+    -- self.ImgResStandM = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandM = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_1/TxtResStand"):GetComponent("Text")
+    -- self.TogMirror_0 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0"):GetComponent("Toggle")
+    -- self.ImgResStandL = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandL = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_0/TxtResStand"):GetComponent("Text")
+    -- self.TxtResC = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/TxtRes"):GetComponent("Text")
+    -- self.TogShadow_3 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3"):GetComponent("Toggle")
+    -- self.ImgResStandK = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandK = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_3/TxtResStand"):GetComponent("Text")
+    -- self.TogShadow_2 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2"):GetComponent("Toggle")
+    -- self.ImgResStandJ = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandJ = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_2/TxtResStand"):GetComponent("Text")
+    -- self.TogShadow_1 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1"):GetComponent("Toggle")
+    -- self.ImgResStandI = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandI = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_1/TxtResStand"):GetComponent("Text")
+    -- self.TogShadow_0 = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0"):GetComponent("Toggle")
+    -- self.ImgResStandH = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandH = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/Array/TGroupResolution/TogShadow_0/TxtResStand"):GetComponent("Text")
+    -- self.TxtResB = self.Transform:Find("SView /Viewport/PanelContent/ShadowLevel/TxtRes"):GetComponent("Text")
+    -- self.TogEffect_2 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2"):GetComponent("Toggle")
+    -- self.ImgResStandG = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandG = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_2/TxtResStand"):GetComponent("Text")
+    -- self.TogEffect_1 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1"):GetComponent("Toggle")
+    -- self.ImgResStandF = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandF = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_1/TxtResStand"):GetComponent("Text")
+    -- self.TogEffect_0 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0"):GetComponent("Toggle")
+    -- self.ImgResStandE = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandE = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_0/TxtResStand"):GetComponent("Text")
+    -- self.TxtResA = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/TxtRes"):GetComponent("Text")
+    -- self.TogGraphics_4 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4"):GetComponent("Toggle")
+    -- self.ImgResStandD = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandD = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_4/TxtResStand"):GetComponent("Text")
+    -- self.TogGraphics_3 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3"):GetComponent("Toggle")
+    -- self.ImgResStandC = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandC = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_3/TxtResStand"):GetComponent("Text")
+    -- self.TogGraphics_2 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2"):GetComponent("Toggle")
+    -- self.ImgResStandB = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandB = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_2/TxtResStand"):GetComponent("Text")
+    -- self.TogGraphics_1 = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1"):GetComponent("Toggle")
+    -- self.ImgResStandA = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandA = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/Array/TGroupResolution/TogGraphics_1/TxtResStand"):GetComponent("Text")
+    -- self.TxtRes = self.Transform:Find("SView /Viewport/PanelContent/GraphicsLevel/TxtRes"):GetComponent("Text")
+    -- self.PanelLiangge = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge")
+    -- self.TxtFxaa = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FXAA/TxtFxaa"):GetComponent("Text")
+    -- self.TogFxaa = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FXAA/TogFxaa"):GetComponent("Toggle")
+    -- self.TxtHDR = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/HDR/TxtHDR"):GetComponent("Text")
+    -- self.TogHDR = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/HDR/TogHDR"):GetComponent("Toggle")
+    -- self.TxtResA = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/TxtRes"):GetComponent("Text")
+    -- self.TogResolution_0 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0"):GetComponent("Toggle")
+    -- self.ImgResStandE = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandE = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_0/TxtResStand"):GetComponent("Text")
+    -- self.TogResolution_1 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1"):GetComponent("Toggle")
+    -- self.ImgResStandF = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandF = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_1/TxtResStand"):GetComponent("Text")
+    -- self.TogResolution_2 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2"):GetComponent("Toggle")
+    -- self.ImgResStandG = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandG = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_2/TxtResStand"):GetComponent("Text")
+    -- self.TogResolution_3 = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3"):GetComponent("Toggle")
+    -- self.ImgResStandH = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandH = self.Transform:Find("SView /Viewport/PanelContent/ResolutionLevel/Array/TGroupResolution/TogResolution_3/TxtResStand"):GetComponent("Text")
+    -- self.TogEffect_3 = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3"):GetComponent("Toggle")
+    -- self.ImgResStandP = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandP = self.Transform:Find("SView /Viewport/PanelContent/EffectLevel/Array/TGroupResolution/TogEffect_3/TxtResStand"):GetComponent("Text")
+    -- self.TogMirror_3 = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3"):GetComponent("Toggle")
+    -- self.ImgResStandT = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3/ImgResStand"):GetComponent("Image")
+    -- self.TxtResStandT = self.Transform:Find("SView /Viewport/PanelContent/MirrorLevel/Array/TGroupResolution/TogMirror_3/TxtResStand"):GetComponent("Text")
+    -- self.TxtResE = self.Transform:Find("SView /Viewport/PanelContent/FrameRateLevel/TxtRes"):GetComponent("Text")
+    -- self.TogQuality_5 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_5"):GetComponent("Toggle")
+    -- self.TogQuality_4 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_4"):GetComponent("Toggle")
+    -- self.TogQuality_3 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_3"):GetComponent("Toggle")
+    -- self.TogAuto = self.Transform:Find("MainQuality/TGroupAuto/TogAuto"):GetComponent("Toggle")
+    -- self.TogQuality_2 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_2"):GetComponent("Toggle")
+    -- self.TogQuality_1 = self.Transform:Find("MainQuality/TGroupAuto/TogQuality_1"):GetComponent("Toggle")
 
-    if not XDataCenter.UiPcManager.IsPc() then
-        self.FrameRateLevel = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FrameRateLevel/TogFxaa"):GetComponent("Toggle")
+    -- if not XDataCenter.UiPcManager.IsPc() then
+    --     self.FrameRateLevel = self.Transform:Find("SView /Viewport/PanelContent/PanelLiangge/FrameRateLevel/TogFxaa"):GetComponent("Toggle")
+    -- end
+    self.FrameRateLevelTr = self.Transform:Find("SView/Viewport/PanelContent/FrameRateLevel")
+    if self.FrameRateLevelTr then
+        self.FrameRateLevelTr.gameObject:SetActive(false)
     end
 end
 

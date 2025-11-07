@@ -22,8 +22,8 @@ function XUiGridTreasureGrade:InitAutoScript()
 end
 
 function XUiGridTreasureGrade:AutoInitUi()
-    self.ImgGradeLine = self.Transform:Find("ImgGradeLine"):GetComponent("Image")
-    self.TxtGrade = self.Transform:Find("TxtGrade"):GetComponent("Text")
+    self.ImgGradeLine = XUiHelper.TryGetComponent(self.Transform, "ImgGradeLine", "Image")
+    self.TxtGrade = XUiHelper.TryGetComponent(self.Transform, "TxtGrade", "Text")
     self.TxtGradeStarNums = self.Transform:Find("TxtGradeStarNums"):GetComponent("Text")
     self.ImgGradeStarActive = self.Transform:Find("ImgGradeStarActive"):GetComponent("Image")
     self.ImgGradeStarUnactive = self.Transform:Find("ImgGradeStarUnactive"):GetComponent("Image")
@@ -198,6 +198,10 @@ function XUiGridTreasureGrade:Refresh()
             self:SetStarsActive(false)
             self:SetBtnCannotReceive()
         end
+
+        if self.IsShowStarProgress then
+            self:ShowStarProgress()
+        end
     end
 end
 
@@ -256,6 +260,19 @@ function XUiGridTreasureGrade:InitTreasureList()
             self.GridList[j].GameObject:SetActive(false)
         end
     end
+end
+
+-- 设置显示星星进度
+function XUiGridTreasureGrade:SetShowStarProgress()
+    self.IsShowStarProgress = true
+end
+
+-- 显示星星进度
+function XUiGridTreasureGrade:ShowStarProgress()
+    self.PanelMultipleWeeksJindu.gameObject:SetActiveEx(true)
+    local requireStars = self.TreasureCfg.RequireStar
+    local curStars = self.CurStars > requireStars and requireStars or self.CurStars
+    self.ImgProgress.fillAmount = curStars / requireStars
 end
 
 return XUiGridTreasureGrade

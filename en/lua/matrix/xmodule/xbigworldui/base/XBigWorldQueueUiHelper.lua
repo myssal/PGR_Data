@@ -13,10 +13,8 @@ function XBigWorldQueueUiHelper:Ctor()
     ---@type XBigWorldUiData[]
     self._UiDataPool = {}
 
-    self._OperatorStack = {}
     self._OpeningUiName = false
 
-    self._IsOperator = false
     self._IsRegistering = false
 
     self:_RegisterListenEvent()
@@ -32,21 +30,6 @@ function XBigWorldQueueUiHelper:OnUiDestroy(event, args)
     end
 
     self:_TryOpenNext(uiName)
-end
-
----@param event string 事件Id
----@param args System.Object[] 参数
-function XBigWorldQueueUiHelper:OnUiAwake(event, args)
-    if self:CheckOperational() then
-        local uiName = self:_GetUiName(args)
-
-        if XMVCA.XBigWorldUI:IsVirtual(uiName) then
-            return
-        end
-
-        self._OperatorStack[uiName] = self._OperatorStack[uiName] or 0
-        self._OperatorStack[uiName] = self._OperatorStack[uiName] + 1
-    end
 end
 
 ---@param event string 事件Id
@@ -70,19 +53,12 @@ function XBigWorldQueueUiHelper:Open(uiName, ...)
     local data = self:_FetchUiData(uiName, ...)
 
     -- 队列为空，直接打开UI
-    if self:CheckOpenDirectly(uiName) and not self:CheckOperational() and not self:CheckOpening() then
+    if self:CheckOpenDirectly(uiName) and not self:CheckOpening() then
         self:_OpenUi(data)
         return
     end
 
     self:_EnqueueData(data)
-end
-
-function XBigWorldQueueUiHelper:BeginOperation(uiName)
-    self._IsOperator = true
-    self._OperatorStack = {
-        [uiName] = 1,
-    }
 end
 
 function XBigWorldQueueUiHelper:InsertHeaderAwaitUi(uiName, ...)
@@ -117,10 +93,6 @@ function XBigWorldQueueUiHelper:CheckUiShowing(uiName)
     return self._ShowingUiMap[uiName]
 end
 
-function XBigWorldQueueUiHelper:CheckOperational()
-    return self._IsOperator
-end
-
 function XBigWorldQueueUiHelper:CheckOpening()
     return self._OpeningUiName
 end
@@ -134,10 +106,8 @@ function XBigWorldQueueUiHelper:Init()
 end
 
 function XBigWorldQueueUiHelper:Release()
-    self._IsOperator = false
     self._IsRegistering = false
     self._OpeningUiName = false
-    self._OperatorStack = {}
     self:_ClearQueue()
     self:_UnRegisterStopListenEvent()
 end
@@ -200,7 +170,6 @@ end
 function XBigWorldQueueUiHelper:_RegisterListenEvent()
     if not self._IsRegistering then
         self._IsRegistering = true
-        CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_AWAKE, self._UiAwakeHandler)
         CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
         CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
     end
@@ -208,7 +177,6 @@ end
 
 function XBigWorldQueueUiHelper:_UnRegisterStopListenEvent()
     if self._IsRegistering then
-        CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_AWAKE, self._UiAwakeHandler)
         CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
         CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_ALLOWOPERATE, self._UiAllowOperateHandler)
         self._IsRegistering = false
@@ -252,7 +220,7 @@ function XBigWorldQueueUiHelper:_TryOpenUi()
 
     local uiName = data:GetUiName()
 
-    if self:CheckOpenDirectly(uiName) and not self:CheckOperational() and not self:CheckOpening() then
+    if self:CheckOpenDirectly(uiName) and not self:CheckOpening() then
         self:_DequeueData()
         self:_OpenUi(data)
         self:_RecycleUiData(data)
@@ -281,41 +249,12 @@ function XBigWorldQueueUiHelper:_OpenNext()
 end
 
 function XBigWorldQueueUiHelper:_TryOpenNext(uiName)
-    if self:CheckOperational() then
-        local count = self._OperatorStack[uiName]
-
-        if count and count > 0 then
-            count = count - 1
-            self._OperatorStack[uiName] = XTool.IsNumberValid(count) and count or nil
-
-            if self:_CheckOperatorStackEmpty() then
-                self._IsOperator = false
-                self._OperatorStack = {}
-                self:_OpenNext()
-            end
-        else
-            self._OperatorStack[uiName] = nil
-        end
-    else
-        if not self:CheckUiShowing(uiName) then
-            return
-        end
-
-        self._ShowingUiMap[uiName] = nil
-        self:_OpenNext()
-    end
-end
-
-function XBigWorldQueueUiHelper:_CheckOperatorStackEmpty()
-    if not XTool.IsTableEmpty(self._OperatorStack) then
-        for _, count in pairs(self._OperatorStack) do
-            if count > 0 then
-                return false
-            end
-        end
+    if not self:CheckUiShowing(uiName) then
+        return
     end
 
-    return true
+    self._ShowingUiMap[uiName] = nil
+    self:_OpenNext()
 end
 
 function XBigWorldQueueUiHelper:_ClearQueue()

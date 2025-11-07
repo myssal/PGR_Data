@@ -42,9 +42,7 @@ function XUiGridSGPresuppose:InitUi()
 end
 
 function XUiGridSGPresuppose:InitCb()
-    self.BtnClick.CallBack = function() 
-        self:OnBtnClick()
-    end
+    self.BtnClick:AddEventListener(handler(self, self.OnBtnClick))
 end
 
 function XUiGridSGPresuppose:OnBtnClick()

@@ -54,6 +54,7 @@ function XResource:StartDownload()
         return
     end
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
+    XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Start to Download!", self._Id))
 end
 
 --等待状态
@@ -71,12 +72,14 @@ function XResource:Pause()
         return
     end
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+    XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Paused!", self._Id))
 end
 
 function XResource:Complete()
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
     XEventManager.DispatchEvent(XEventId.EVENT_RES_COMPLETE, self._Id)
     self:Release()
+    XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Download Complete!", self._Id))
 end
 
 function XResource:IsComplete()

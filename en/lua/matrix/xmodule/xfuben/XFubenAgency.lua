@@ -54,7 +54,7 @@ function XFubenAgency:OnInit()
         return self:CallFinishFight()
     end
 
-    self.ChapterType = XFubenConfigs.ChapterType
+    self.ChapterType = XEnumConst.FuBen.ChapterType
     self.NewChallengeInit = false
     self.NewChallengeRedPointTable = {}
     self.DefaultCharacterTypeConvert = {
@@ -157,6 +157,16 @@ function XFubenAgency:InitEvent()
 end
 
 ----------public start----------
+
+--- 记录当前编队房间所在的关卡
+function XFubenAgency:SetCurStageIdInBattleRoom(stageId)
+    self._Model:SetCurStageIdInBattleRoom(stageId)
+end
+
+function XFubenAgency:GetCurStageIdInBattleRoom()
+    return self._Model:GetCurStageIdInBattleRoom()
+end
+
 ---返回是否有注册玩法, 用来兼容老模块判定
 function XFubenAgency:HasRegisterAgency(fubenType)
     if self._Model.RegFubenDict[fubenType] then
@@ -351,26 +361,25 @@ function XFubenAgency:OnEnterFight(fightData)
 end
 
 ---进入战斗
-function XFubenAgency:EnterFightByStageId(stageId, teamId, isAssist, challengeCount, challengeId, callback)
+---@param isSkipMovie boolean 是否跳过剧情播放
+function XFubenAgency:EnterFightByStageId(stageId, teamId, isAssist, challengeCount, challengeId, callback, isSkipMovie)
     local stage = self._Model:GetStageCfg(stageId)
     if not stage then
         return
     end
-    self:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+    self:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, isSkipMovie)
 end
 
 ---进入战斗
-function XFubenAgency:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+function XFubenAgency:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, isSkipMovie)
     local enter = function()
-        self:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+        self:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, isSkipMovie)
     end
     -- v1.29 协同作战联机中不给跳转，防止跳出联机房间
     if XDataCenter.RoomManager.RoomData then
         -- 如果在房间中，需要先弹确认框
         local title = CsXTextManagerGetText("TipTitle")
         local cancelMatchMsg
-        local stageId = XDataCenter.RoomManager.RoomData.StageId
-        local stageType = self:GetStageType(stageId)
         cancelMatchMsg = CsXTextManagerGetText("OnlineInstanceQuitRoom")
 
         XUiManager.DialogTip(
@@ -432,7 +441,6 @@ function XFubenAgency:GetGeneralSkillIds(stageId)
     return self:GetStageCfg(stageId).GeneralSkillIds
 end
 
-
 function XFubenAgency:CheckHasValidGeneralSkillId(stageId)
     local skillIds = self:GetStageCfg(stageId).GeneralSkillIds
     if XTool.IsTableEmpty(skillIds) then
@@ -475,6 +483,19 @@ function XFubenAgency:GetStageType(stageId)
         --end
         return config.Type
     end
+end
+
+-- 是否是关卡的开始剧情
+function XFubenAgency:IsStageBeginStory(stageId, storyId)
+    local config = self._Model:GetStageCfg(stageId)
+    if config then
+        for _, sId in pairs(config.BeginStoryIds) do
+            if storyId == sId then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 --function XFubenAgency:GetStageName(stageId)
@@ -594,8 +615,8 @@ function XFubenAgency:CheckStageIsPass(stageId)
         return XDataCenter.FubenAssignManager.IsStagePass(stageId)
     elseif stageType == StageType.TRPG then
         return XDataCenter.TRPGManager.IsStagePass(stageId)
-    --elseif stageType == StageType.Maverick2 then
-    --    return XDataCenter.Maverick2Manager.IsStagePassed(stageId)
+        --elseif stageType == StageType.Maverick2 then
+        --    return XDataCenter.Maverick2Manager.IsStagePassed(stageId)
     elseif stageType == StageType.Maverick3 then
         return XMVCA.XMaverick3:IsStageFinish(stageId)
     else
@@ -935,15 +956,37 @@ function XFubenAgency:PreFight(stage, teamId, isAssist, challengeCount, challeng
     preFight.IsHasAssist = isAssist and true or false
     preFight.ChallengeCount = challengeCount or 1
     --local isSimulatedCombat = XDataCenter.FubenSimulatedCombatManager.CheckStageIsSimulatedCombat(stage.StageId)
-    local stageType = self:GetStageType(stage.StageId)
+    --local stageType = self:GetStageType(stage.StageId)
     -- 如果有试玩角色且没有隐藏模式，则不读取玩家队伍信息
-    if not stage.RobotId or #stage.RobotId <= 0 then
-        local teamData = XDataCenter.TeamManager.GetTeamData(teamId)
-        for _, v in pairs(teamData) do
-            table.insert(preFight.CardIds, v)
+    -- 速通模式要读
+    local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stage.StageId)
+    if speedrunStageId or not stage.RobotId or #stage.RobotId <= 0 then
+        local teamData = XDataCenter.TeamManager.GetTeamData(teamId, true)
+        if teamData then
+            for _, v in pairs(teamData) do
+                table.insert(preFight.CardIds, v)
+            end
+            local team = XDataCenter.TeamManager.GetTempTeam(teamId)
+            if team then
+                preFight.CaptainPos = team:GetCaptainPos()
+                preFight.FirstFightPos = team:GetFirstFightPos()
+            else
+                preFight.CaptainPos = XDataCenter.TeamManager.GetTeamCaptainPos(teamId)
+                preFight.FirstFightPos = XDataCenter.TeamManager.GetTeamFirstFightPos(teamId)
+            end
+
+            -- 如果是速通模式，把preFight.CardIds下的机器人id，转到preFight.RobotIds
+            -- 为什么不改成通用？因为原本有很多玩法，自定义了检测的逻辑，担心改了之后会出事，所以只针对速通关卡做这个
+            if speedrunStageId then
+                preFight.RobotIds = preFight.RobotIds or {}
+                for position, id in ipairs(preFight.CardIds) do
+                    if XRobotManager.CheckIsRobotId(id) then
+                        table.insert(preFight.RobotIds, id)
+                        preFight.CardIds[position] = 0
+                    end
+                end
+            end
         end
-        preFight.CaptainPos = XDataCenter.TeamManager.GetTeamCaptainPos(teamId)
-        preFight.FirstFightPos = XDataCenter.TeamManager.GetTeamFirstFightPos(teamId)
     end
     --if isSimulatedCombat then
     --    preFight.RobotIds = {}
@@ -972,14 +1015,19 @@ function XFubenAgency:PreFight(stage, teamId, isAssist, challengeCount, challeng
     return preFight
 end
 
-function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, isSkipMovie)
     if not self:CheckPreFight(stage, challengeCount) then
         return
     end
     local stageType = self:GetStageType(stage.StageId)
     local preFight
 
-    local ok, result = self:CallCustomFunc(stageType, ProcessFunc.PreFight, stage, teamId, isAssist, challengeCount, challengeId)
+    local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stage.StageId)
+    local stagePreFight = stage
+    if speedrunStageId then
+        stagePreFight = self._Model:GetStageCfg(speedrunStageId) or stagePreFight
+    end
+    local ok, result = self:CallCustomFunc(stageType, ProcessFunc.PreFight, stagePreFight, teamId, isAssist, challengeCount, challengeId)
     if ok then
         preFight = result
 
@@ -1001,6 +1049,7 @@ function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, chal
         preFight = self:PreFight(stage, teamId, isAssist, challengeCount, challengeId)
     end
 
+    preFight.StageId = stage.StageId
     if not self:CallCustomFunc(stageType, ProcessFunc.CustomOnEnterFight, preFight, callback) then
         self:NetWorkPreFightRequest({ PreFightData = preFight }, function(res)
             if callback then
@@ -1016,7 +1065,7 @@ function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, chal
             local beginStoryId = self._Model:GetBeginStoryId(stage.StageId)
             local isKeepPlayingStory = stage and self:IsKeepPlayingStory(stage.StageId)
             local isNotPass = stage and (not stageInfo or not stageInfo.Passed)
-            if beginStoryId and (isKeepPlayingStory or isNotPass) then
+            if beginStoryId and (isKeepPlayingStory or isNotPass) and not isSkipMovie then
                 -- 播放剧情，进入战斗
                 self:EnterRealFight(preFight, fightData, beginStoryId)
             else
@@ -1046,7 +1095,12 @@ function XFubenAgency:GetCurrentStageType()
     end
 end
 
-function XFubenAgency:RecordFightBeginData(stageId, charList, isHasAssist, assistPlayerData, challengeCount, roleData, fightData, firstFightPos)
+function XFubenAgency:RecordFightBeginData(stageId, preFightData, charList, assistPlayerData, roleData, fightData)
+    local isHasAssist = preFightData.IsHasAssist
+    local challengeCount = preFightData.ChallengeCount
+    local firstFightPos = preFightData.FirstFightPos
+    local speedrunStageId = preFightData.SpeedrunStageId
+    
     local beginData = {
         CharExp = {},
         RoleExp = 0,
@@ -1060,6 +1114,7 @@ function XFubenAgency:RecordFightBeginData(stageId, charList, isHasAssist, assis
         RoleData = roleData,
         FightData = fightData,
         FirstFightPos = firstFightPos,
+        SpeedrunStageId = speedrunStageId,
     }
     self._Model:SetBeginData(beginData)
 
@@ -1081,7 +1136,8 @@ function XFubenAgency:RecordFightBeginData(stageId, charList, isHasAssist, assis
     beginData.RoleExp = XPlayer.Exp
     beginData.RoleCoins = XDataCenter.ItemManager.GetCoinsNum()
     local stageType = self:GetStageType(stageId)
-    beginData.LastPassed = self._Model:IsPassed(stageId)
+    -- 速通模式下, 使用原关卡的通关记录, 进行首通判断
+    beginData.LastPassed = self._Model:IsPassed(speedrunStageId or stageId)
     beginData.AssistPlayerData = assistPlayerData
     beginData.IsHasAssist = isHasAssist
 
@@ -1210,7 +1266,8 @@ function XFubenAgency:DoEnterRealFight(preFightData, fightData)
         end
     end
 
-    self:RecordFightBeginData(fightData.StageId, charList, preFightData.IsHasAssist, assistInfo, preFightData.ChallengeCount, roleData, fightData, preFightData.FirstFightPos)
+    --fightData.StageId, charList, preFightData.IsHasAssist, assistInfo, preFightData.ChallengeCount, roleData, fightData, preFightData.FirstFightPos
+    self:RecordFightBeginData(fightData.StageId, preFightData, charList, assistInfo, roleData, fightData)
 
     -- 提示加锁
     XTipManager.Suspend()
@@ -1239,7 +1296,6 @@ function XFubenAgency:EnterRealFight(preFightData, fightData, movieId, endCb)
 
     RunAsyn(function()
         XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_BEFORE_ENTER)
-        
         --战前剧情
         local isSkipMovie = XDataCenter.MovieManager.IsSkipMovie()
         if movieId and not isSkipMovie then
@@ -1270,8 +1326,8 @@ function XFubenAgency:EnterRealFight(preFightData, fightData, movieId, endCb)
         asynWaitSecond(0.5)
 
         CsXBehaviorManager.Instance:Clear()
-        XTableManager.ReleaseAll(true)
-        CS.BinaryManager.OnPreloadFight(true)
+        XTableManager.ReleaseAll()
+        CS.BinaryManager.ReleaseAllCache()
         collectgarbage("collect")
 
         CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal, CS.XUiSceneManager.Clear)
@@ -1419,7 +1475,7 @@ function XFubenAgency:ChallengeWin(settleData)
             -- XLuaAudioManager.StopAll()
             XLuaAudioManager.StopCurrentBGM()
             self:CallShowReward(winData, true)
-        end)
+        end, nil, nil, nil, nil, nil, settleData.StageId)
     else
         -- 弹出结算
         self:CallShowReward(winData, false)
@@ -1532,6 +1588,9 @@ end
 
 ---结束剧情
 function XFubenAgency:FinishStoryRequest(stageId, cb)
+    -- 主线时间轴记录最后挑战关卡
+    XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(stageId)
+
     XNetwork.Call("EnterStoryRequest", { StageId = stageId }, function(res)
         cb = cb or function()
         end
@@ -1701,9 +1760,9 @@ end
 
 function XFubenAgency:OpenFuben(type, stageId)
     if type == StageType.Mainline then
-        type = XFubenConfigs.ChapterType.MainLine
+        type = XEnumConst.FuBen.ChapterType.MainLine
     elseif type == StageType.Daily then
-        type = XFubenConfigs.ChapterType.Daily
+        type = XEnumConst.FuBen.ChapterType.Daily
     end
     XLuaUiManager.Open("UiNewFuben", type)
 end
@@ -1834,7 +1893,7 @@ function XFubenAgency:RefreshStageInfo(stageList)
         if stageType then
             updateStageTypes[stageType] = true
         end
-        
+
         local stageConfig = self._Model:GetStageCfg(stageId, false)
         if stageConfig then
             local nextStageIds = stageConfig.NextStageId
@@ -2005,7 +2064,7 @@ function XFubenAgency:EnterSkillTeachFight(characterId)
 
     local endFightCb = function()
         if endStoryId then
-            XDataCenter.MovieManager.PlayMovie(endStoryId)
+            XDataCenter.MovieManager.PlayMovie(endStoryId, nil, nil, nil, nil, nil, nil, stageId)
         end
     end
 
@@ -2027,7 +2086,7 @@ function XFubenAgency:EnterSkillTeachFight(characterId)
 
     local beginStoryId = self._Model:GetBeginStoryId(stageId)
     if beginStoryId then
-        XDataCenter.MovieManager.PlayMovie(beginStoryId, enterFightFunc)
+        XDataCenter.MovieManager.PlayMovie(beginStoryId, enterFightFunc, nil, nil, nil, nil, nil, stageId)
     else
         enterFightFunc()
     end
@@ -2337,7 +2396,7 @@ function XFubenAgency:EnterStageWithRobot(stage, curTeam)
             table.insert(preFight.RobotIds, v)
         end
     end
-    
+
     self:EnterFight(stage, preFight)
 
     self:NetWorkPreFightRequest({ PreFightData = preFight }, function(res)
@@ -2924,7 +2983,9 @@ function XFubenAgency:GetTeamExp(stageId, isAuto)
     -- 当原字段为0时 返回新增字段数据
     if teamExp == 0 then
         local beginData = self._Model:GetBeginData()
-        if beginData.StageId == stageId and not isAuto then
+        if (beginData.StageId == stageId and not isAuto)
+                -- 如果是速通关卡, 使用原关卡的关卡配置
+                or (XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId) == beginData.StageId) then
             teamExp = not beginData.LastPassed and stageCfg.FirstTeamExp or stageCfg.FinishTeamExp
         else
             local stageInfo = self._Model:GetStageInfo(stageId)
@@ -3287,7 +3348,9 @@ function XFubenAgency:GetCardExp(stageId, isAuto)
     -- 当原字段为0时 返回新增字段数据
     if cardExp == 0 then
         local beginData = self:GetFightBeginData()
-        if beginData.StageId == stageId and not isAuto then
+        if (beginData.StageId == stageId and not isAuto)
+                -- 如果是速通关卡, 使用原关卡的关卡配置
+                or (XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId) == beginData.StageId) then
             cardExp = not beginData.LastPassed and stageCfg.FirstCardExp or stageCfg.FinishCardExp
         else
             local stageInfo = self._Model:GetStageInfo(stageId)
@@ -3307,6 +3370,48 @@ end
 --==============================--
 function XFubenAgency:EnterGuideFight(guiId, stageId, chars, weapons)
     CS.XCustomUi.Instance:SetCurScheme(0, true)
+
+    -- 剧情关
+    ---@type XTableStage
+    local stageCfg = XMVCA.XFuben:GetStageCfg(stageId)
+    if stageCfg.StageType == XFubenConfigs.STAGETYPE_STORY or stageCfg.StageType == XFubenConfigs.STAGETYPE_STORYEGG then
+        -- 请求引导完成
+        XDataCenter.GuideManager.ReqGuideComplete(guiId, function()
+            -- 播放剧情
+            local beginStoryId = XMVCA.XFuben:GetBeginStoryId(stageId)
+            XDataCenter.MovieManager.PlayMovie(beginStoryId, function()
+                local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
+                if guideFight and guideFight.Id ~= guiId then
+                    self:EnterGuideFight(guideFight.Id, guideFight.StageId, guideFight.NpcId, guideFight.Weapon)
+                else
+                    XLoginManager.SetFirstOpenMainUi(true)
+                    XLuaUiManager.RunMain()
+                end
+            end)
+        end)
+        
+        return
+    end
+    
+    -- 提审模式屏蔽引导进入战斗
+    if XUiManager.IsHideFunc then
+        -- 只请求引导完成
+        local req = { GuideGroupId = guiId }
+
+        XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GuideComplete, req, function()
+            XDataCenter.GuideManager.OnSyncGuideData(guiId)
+            
+            local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
+            if guideFight then
+                self:EnterGuideFight(guideFight.Id, guideFight.StageId, guideFight.NpcId, guideFight.Weapon)
+            else
+                XLoginManager.SetFirstOpenMainUi(true)
+                XLuaUiManager.RunMain()
+            end
+        end)
+        
+        return
+    end
 
     local fightData = {}
     fightData.RoleData = {}
@@ -3360,7 +3465,7 @@ function XFubenAgency:EnterGuideFight(guiId, stageId, chars, weapons)
                     XLoginManager.SetFirstOpenMainUi(true)
                     XLuaUiManager.RunMain()
                 end
-            end)
+            end, nil, nil, nil, nil, nil, stageId)
         else
             local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
             if guideFight then
@@ -3398,7 +3503,7 @@ function XFubenAgency:EnterGuideFight(guiId, stageId, chars, weapons)
 
     local beginStoryId = self._Model:GetBeginStoryId(stageId)
     if beginStoryId then
-        XDataCenter.MovieManager.PlayMovie(beginStoryId, enterFightFunc)
+        XDataCenter.MovieManager.PlayMovie(beginStoryId, enterFightFunc, nil, nil, nil, nil, nil, stageId)
     else
         enterFightFunc()
     end
@@ -3821,9 +3926,9 @@ end
 
 function XFubenAgency:GetActivityChaptersBySort()
     local chapters = XTool.MergeArray(
-            --XDataCenter.FubenBossOnlineManager.GetBossOnlineChapters()--联机boss
+    --XDataCenter.FubenBossOnlineManager.GetBossOnlineChapters()--联机boss
     --, XDataCenter.FubenActivityBranchManager.GetActivitySections()--副本支线活动
-     XDataCenter.FubenActivityBossSingleManager.GetActivitySections()--单挑BOSS活动
+            XDataCenter.FubenActivityBossSingleManager.GetActivitySections()--单挑BOSS活动
     , XDataCenter.FubenFestivalActivityManager.GetAvailableFestivals()--节日活动副本
     , XDataCenter.FubenBabelTowerManager.GetBabelTowerSection()--巴别塔计划
     , XDataCenter.FubenRepeatChallengeManager.GetActivitySections()--复刷本
@@ -3919,7 +4024,8 @@ function XFubenAgency:Log()
 end
 
 function XFubenAgency:NetWorkPreFightRequest(request, ...)
-    local args = {...}
+    local args = { ... }
+    local originStageId = request.PreFightData.StageId
     local stageId = request.PreFightData.StageId
 
     -- 视频弹窗检测
@@ -3948,11 +4054,22 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
         request.PreFightData.RobotReplaceSkillIdDict = robotReplaceSkillIdDict
     end
 
+    -- 速通模式下, 服务端将ID替换成对应的ID
+    local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+    if speedrunStageId then
+        request.PreFightData.SpeedrunStageId = stageId
+        request.PreFightData.StageId = speedrunStageId
+        stageId = speedrunStageId
+    end
+
     if request.PreFightData and request.PreFightData.GeneralSkill and request.PreFightData.GeneralSkill == XEnumConst.CHARACTER.GENERALSKILLID_NONESELECT then
         request.PreFightData.GeneralSkill = 0
     end
-    
-    XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({stageId}, function ()
+
+    -- 主线时间轴记录最后挑战关卡
+    XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(originStageId)
+
+    XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()
         XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
     end)
 end

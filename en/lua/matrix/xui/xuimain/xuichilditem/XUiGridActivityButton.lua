@@ -1,9 +1,18 @@
----@class XUiGridActivityButton: XUiNode
-local XUiGridActivityButton = XClass(XUiNode, "XUiGridActivityButton")
+local XUiFunctionShowNode = require('XUi/XUiCommon/XUiFunctionShow/XUiFunctionShowNode')
 
-function XUiGridActivityButton:Ctor(ui, parent, config)
+---@class XUiGridActivityButton: XUiNode
+local XUiGridActivityButton = XClass(XUiFunctionShowNode, "XUiGridActivityButton")
+
+function XUiGridActivityButton:OnStart(config, rootUi)
+    self:Init(config, rootUi)
+end
+
+---@param config XTableActivityBtn
+---@param rootUi XLuaUi
+function XUiGridActivityButton:Init(config, rootUi)
     self.Config = config
     self.GameObject.name = string.format("GridBtnActivity%d", config.Id)
+    self.RootUi = rootUi
    -- 名字/icon 海外主界面活动标题加换行
     local name = self.Config.Name
     local nameEN = self.Config.NameEN
@@ -42,6 +51,28 @@ function XUiGridActivityButton:Ctor(ui, parent, config)
     end
 
     XUiHelper.RegisterClickEvent(self, self.Btn, self.OnBtnClick)
+    
+    -- 扩展，使用对应系统自己的UI控件来实现额外的逻辑
+    if not string.IsNilOrEmpty(self.Config.ManagerName) then
+        local cls = nil
+        if self.Config.IsAgency then
+            local agency = XMVCA:GetAgency(self.Config.ManagerName)
+
+            if agency and agency.ExGetUIActivityBtnCls then
+                cls = agency:ExGetUIActivityBtnCls()
+            end
+        else
+            local manager = XDataCenter[self.Config.ManagerName]
+            
+            if manager and manager.ExGetUIActivityBtnCls then
+                cls = manager.ExGetUIActivityBtnCls()
+            end
+        end
+
+        if cls and CheckIsClass(cls) then
+            self.ExNode = cls.New(self.GameObject, self, self.RootUi)
+        end
+    end
 end
 
 function XUiGridActivityButton:OnBtnClick()

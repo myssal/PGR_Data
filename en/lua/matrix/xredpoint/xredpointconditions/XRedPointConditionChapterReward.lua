@@ -29,6 +29,17 @@ function XRedPointConditionChapterReward.Check(chapterId)
         return true
     end
 
+    -- 主线任务奖励未领取蓝点
+    local taskGroupId = XFubenMainLineConfigs.GetConfigChapterTaskGroupId(chapterId)
+    if XTool.IsNumberValidEx(taskGroupId) and XDataCenter.TaskManager.CheckStoryTaskCanGet(taskGroupId) then
+        return true
+    end
+    
+    -- 主线进度奖励未领取蓝点
+    if XDataCenter.TaskManager.CheckChapterCourseCanGet(chapterId) then
+        return true
+    end
+
     return false
 end
 

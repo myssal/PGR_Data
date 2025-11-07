@@ -36,12 +36,8 @@ function XUiPanelSGWallMenu:InitUi()
 end
 
 function XUiPanelSGWallMenu:InitCb()
-    self.BtnOrder.CallBack = function() 
-        self:OnBtnOrderClick()
-    end
-    self.BtnReverse.CallBack = function()
-        self:OnBtnReverseClick()
-    end
+    self.BtnOrder:AddEventListener(handler(self, self.OnBtnOrderClick))
+    self.BtnReverse:AddEventListener(handler(self, self.OnBtnReverseClick))
     self._Control:Subscribe(XMVCA.XSkyGardenDorm.XEventId.EVENT_DORM_FURNITURE_REFRESH, self.ClearListCache, self)
 end
 

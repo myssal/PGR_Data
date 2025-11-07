@@ -219,13 +219,13 @@ end
 
 function XUiSkyGardenShoppingStreetPopupRoundEnd:_RegisterButtonClicks()
     --在此处注册按钮事件
-    -- self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
-    self.BtnBack.CallBack = function() self:OnBtnCloseClick() end
-    self.BtnYes.CallBack = function() self:OnBtnYesClick() end
-    self.BtnFavorability.CallBack = function() self:OnBtnDetailClick() end
-    self.BtnIncome.CallBack = function() self:OnBtnDetailClick() end
-    self.PanelConflict.CallBack = function() self:OnPanelConflictClick() end
-    self.PanelEvent.CallBack = function() self:OnPanelEventClick() end
+    -- self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnYes:AddEventListener(handler(self, self.OnBtnYesClick))
+    self.BtnFavorability:AddEventListener(handler(self, self.OnBtnDetailClick))
+    self.BtnIncome:AddEventListener(handler(self, self.OnBtnDetailClick))
+    self.PanelConflict:AddEventListener(handler(self, self.OnPanelConflictClick))
+    self.PanelEvent:AddEventListener(handler(self, self.OnPanelEventClick))
 end
 
 --endregion

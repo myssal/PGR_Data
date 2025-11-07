@@ -11,7 +11,7 @@ local DEFAULT_ANIM_DURATION_PRE_LINE = 0.5--每行字幕滚动时间/s
 
 local XMovieActionStaff = XClass(XMovieActionBase, "XMovieActionStaff")
 
-function XMovieActionStaff:Ctor(actionData)
+function XMovieActionStaff:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -24,7 +24,7 @@ function XMovieActionStaff:Ctor(actionData)
     self.DelayAtEnd = paramToNumber(params[6]) * XScheduleManager.SECOND--结尾字幕停留时间(s)
 end
 
-function XMovieActionStaff:OnInit()
+function XMovieActionStaff:OnEnter()
     local bgPath = self.BgPath
     if not string.IsNilOrEmpty(bgPath) then
         self.UiRoot.RImgBgStaff:SetRawImage(bgPath)

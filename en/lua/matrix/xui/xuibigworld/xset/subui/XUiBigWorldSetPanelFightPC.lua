@@ -2,6 +2,8 @@ local XUiBWBtnKeyItem = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWBtnKey
 local XUiBWNotCustomKeyItem = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWNotCustomKeyItem")
 local XUiBWNotCustomKeyItemHandle = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWNotCustomKeyItemHandle")
 local XUiBWOneKeyCustomKeyItem = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWOneKeyCustomKeyItem")
+local XUiBWCameraSensitivitySliderItem = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWCameraSensitivitySliderItem")
+local XUiBWCursorSliderItem = require("XUi/XUiBigWorld/XSet/SubUi/XSetNode/XUiBWCursorSliderItem")
 
 local XJoystickCursorHelper = CS.XPc.XJoystickCursorHelper
 local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
@@ -9,6 +11,7 @@ local XInputManager = CS.XInputManager
 local ToInt32 = CS.System.Convert.ToInt32
 
 ---@class XUiBigWorldSetPanelFightPC : XBigWorldUI
+---@field _Control XBigWorldSetControl
 local XUiBigWorldSetPanelFightPC = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldSetPanelFightPC")
 local XUiRespondBarrierType = CS.XUiComponent.XUiButton.XUiRespondBarrierType
 
@@ -181,15 +184,9 @@ function XUiBigWorldSetPanelFightPC:_RegisterButtonClicks()
         self:OnPatternGroupClick(index)
     end)
 
-    self.TogEnableJoystick.CallBack = function()
-        self:OnTogEnableJoystickClick()
-    end
-    self.TogEnableKeyboard.CallBack = function()
-        self:OnTogEnableKeyboardClick()
-    end
-    self.BtnCloseInput.CallBack = function()
-        self:OnBtnCloseInputClick()
-    end
+    self.TogEnableJoystick:AddEventListener(handler(self, self.OnTogEnableJoystickClick))
+    self.TogEnableKeyboard:AddEventListener(handler(self, self.OnTogEnableKeyboardClick))
+    self.BtnCloseInput:AddEventListener(handler(self, self.OnBtnCloseInputClick))
     self.BtnCloseInput:SetBarrierType(XUiRespondBarrierType.Mouse2)
 end
 
@@ -221,14 +218,16 @@ function XUiBigWorldSetPanelFightPC:SetCursorMoveSensitivity(value)
     XJoystickCursorHelper.PreSetCursorMoveSensitivity(value)
 end
 
-function XUiBigWorldSetPanelFightPC:GetCameraMoveSensitivity()
-    local value = XInputManager.GetCameraMoveSensitivity(self:GetCurKeySetType())
+function XUiBigWorldSetPanelFightPC:GetCameraMoveSensitivity(viewType)
+    viewType = viewType or CS.CameraViewType.ThirdPerson
+    local value = XInputManager.GetCameraMoveSensitivity(self:GetCurKeySetType(), viewType)
     return math.max(0, value - 1)
 end
 
-function XUiBigWorldSetPanelFightPC:SetCameraMoveSensitivity(value)
+function XUiBigWorldSetPanelFightPC:SetCameraMoveSensitivity(value, viewType)
     value = value + 1
-    XInputManager.SetCameraMoveSensitivity(self:GetCurKeySetType(), value)
+    viewType = viewType or CS.CameraViewType.ThirdPerson
+    XInputManager.SetCameraMoveSensitivity(self:GetCurKeySetType(), value, viewType)
 end
 
 function XUiBigWorldSetPanelFightPC:ShowSetKeyTip(show)
@@ -329,10 +328,9 @@ function XUiBigWorldSetPanelFightPC:ResetToDefault()
             for inputMapId, _ in pairs(self.ShowInputMaps) do
                 XInputManager.InputMapper:DefaultKeysSetting(self:GetInputMapIdEnum(inputMapId), curKeySetType)
             end
-            XInputManager.DefaultCameraMoveSensitivitySetting(curKeySetType)
-            self.SliderCameraMoveSensitivityPc.value = self:GetCameraMoveSensitivity()
+            XInputManager.DefaultCameraMoveSensitivitySetting(curKeySetType, CS.CameraViewType.ThirdPerson)
+            XInputManager.DefaultCameraMoveSensitivitySetting(curKeySetType, CS.CameraViewType.FirstPerson)
             XJoystickCursorHelper.SetDefaultSensitivity()
-            self.CursorMoveSensitivity.value = self:GetCursorMoveSensitivity()
             if self.PanelBtnGroup then
                 local isDefault = CS.XInputManager.IsDefaultMainButton(self._lastJoystickType)
                 local defaultIndex = isDefault and 1 or 2
@@ -346,7 +344,8 @@ function XUiBigWorldSetPanelFightPC:ResetToDefault()
             for inputMapId, _ in pairs(self.ShowInputMaps) do
                 XInputManager.InputMapper:DefaultKeysSetting(self:GetInputMapIdEnum(inputMapId), CS.InputDeviceType.Keyboard)
             end
-            XInputManager.DefaultCameraMoveSensitivitySetting(CS.InputDeviceType.Keyboard)
+            XInputManager.DefaultCameraMoveSensitivitySetting(CS.InputDeviceType.Keyboard, CS.CameraViewType.ThirdPerson)
+            XInputManager.DefaultCameraMoveSensitivitySetting(CS.InputDeviceType.Keyboard, CS.CameraViewType.FirstPerson)
             self:InitKeyboardPanel(true)
         end)
     end
@@ -445,24 +444,14 @@ function XUiBigWorldSetPanelFightPC:InitControllerPanel(resetTextOnly)
             elseif v.Type == XSetConfigs.ControllerSetItemType.Slider then
                 if not grid then
                     if v.InputMapId == 1 or v.InputMapId == 11 then
-                        self.GridSlider:SetParent(self.ControllerSetContent, false)
-                        XUiHelper.RegisterSliderChangeEvent(self, self.SliderCameraMoveSensitivity, function(_, value)
-                            if self:GetCameraMoveSensitivity() == value then
-                                return
-                            end
-                            self:SetCameraMoveSensitivity(value)
-                        end)
-                        grid = grid or self.GridSlider
+                        local ui = CSUnityEngineObjectInstantiate(self.GridSlider, self.ControllerSetContent)
+                        grid = XUiBWCameraSensitivitySliderItem.New(ui, self, v)
                     elseif v.InputMapId == 4 then
-                        self.VirtualCursorPC:SetParent(self.ControllerSetContent, false)
-                        XUiHelper.RegisterSliderChangeEvent(self, self.CursorMoveSensitivity, function(_, value)
-                            self:SetCursorMoveSensitivity(value)
-                        end)
-                        grid = grid or self.VirtualCursorPC
+                        local ui = CSUnityEngineObjectInstantiate(self.VirtualCursorPC, self.ControllerSetContent)
+                        grid = XUiBWCursorSliderItem.New(ui, self, v)
                     end
                 end
-                self.SliderCameraMoveSensitivity.value = self:GetCameraMoveSensitivity()
-                grid = grid or self.GridSlider
+                grid:Update(v)
             elseif v.Type == XSetConfigs.ControllerSetItemType.DoubleToggle then
                 local isNotClone = not grid
                 if isNotClone then
@@ -501,9 +490,6 @@ function XUiBigWorldSetPanelFightPC:InitControllerPanel(resetTextOnly)
                     image2a:SetSprite(icons2[0])
                 end
             end
-
-            self.SliderCameraMoveSensitivity.value = self:GetCameraMoveSensitivity()
-            self.CursorMoveSensitivity.value = self:GetCursorMoveSensitivity()
 
             self.CtrlKeyItemList[id] = grid
             
@@ -544,20 +530,11 @@ function XUiBigWorldSetPanelFightPC:InitKeyboardPanel(resetTextOnly)
                 local txtTitle = grid:Find("TxtTitle"):GetComponent("Text")
                 txtTitle.text = item.Title
             elseif item.Type == XSetConfigs.ControllerSetItemType.Slider then
-                local isNotClone = not grid
                 if not grid then
-                    grid = XUiHelper.Instantiate(self.GridSliderPC, self.KeyboardSetContent)
+                    local ui = XUiHelper.Instantiate(self.GridSliderPC, self.KeyboardSetContent)
+                    grid = XUiBWCameraSensitivitySliderItem.New(ui, self, item)
                 end
-                local slider = XUiHelper.TryGetComponent(grid.transform, "SliderCameraMoveSensitivityPc", "Slider")
-                if isNotClone then
-                    XUiHelper.RegisterSliderChangeEvent(self, slider, function(_, value)
-                        if value == self:GetCameraMoveSensitivity() then
-                            return
-                        end
-                        self:SetCameraMoveSensitivity(value)
-                    end)
-                end
-                slider.value = self:GetCameraMoveSensitivity()
+                grid:Update(item)
             end
 
             self._KeyboardGridList[id] = grid
@@ -582,7 +559,9 @@ function XUiBigWorldSetPanelFightPC:RefreshJoystickPanel()
 
     local enable = XInputManager.EnableInputJoystick
     self.TogEnableJoystick:SetButtonState(XInputManager.EnableInputJoystick and XUiButtonState.Select or XUiButtonState.Normal)
-
+    self:ShowBtnSave(enable)
+    self:ShowBtnDefault(enable)
+    
     local isPc = XDataCenter.UiPcManager.IsPc()
     if enable then
         if not isPc then
@@ -604,6 +583,8 @@ function XUiBigWorldSetPanelFightPC:RefreshKeyboardPanel()
 
     local enable = XInputManager.EnableInputKeyboard
     self.TogEnableKeyboard:SetButtonState(enable and XUiButtonState.Select or XUiButtonState.Normal)
+    self:ShowBtnSave(enable)
+    self:ShowBtnDefault(enable)
 
     local isPc = XDataCenter.UiPcManager.IsPc()
     if enable then

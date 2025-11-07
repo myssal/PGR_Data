@@ -188,7 +188,7 @@ function XPartnerConfigs.Init()
     XPartnerConfigs.CreatePartnerBreakthroughDic()
     XPartnerConfigs.CreatePartnerQualityDic()
     XPartnerConfigs.CreatePartnerSkillEffectDic()
-    XPartnerConfigs.CreatePartnerSkillInfoDic()
+    --XPartnerConfigs.CreatePartnerSkillInfoDic()
     XPartnerConfigs.CreateMainSkillGroupDic()
     XPartnerConfigs.CreatePassiveSkillGroupDic()
     --XPartnerConfigs.CreatePartnerModelControlDic()
@@ -227,16 +227,16 @@ function XPartnerConfigs.CreatePartnerSkillEffectDic()
     end
 end
 
-function XPartnerConfigs.CreatePartnerSkillInfoDic()
-    PartnerSkillInfoDic = {}
-    for _,Info in pairs(PartnerSkillInfoCfg) do
-        PartnerSkillInfoDic[Info.SkillId] =
-        PartnerSkillInfoDic[Info.SkillId] or {}
-
-        PartnerSkillInfoDic[Info.SkillId][Info.Level] =
-        PartnerSkillInfoDic[Info.SkillId][Info.Level] or Info
-    end
-end
+--function XPartnerConfigs.CreatePartnerSkillInfoDic()
+--    PartnerSkillInfoDic = {}
+--    for _,Info in pairs(PartnerSkillInfoCfg) do
+--        PartnerSkillInfoDic[Info.SkillId] =
+--        PartnerSkillInfoDic[Info.SkillId] or {}
+--
+--        PartnerSkillInfoDic[Info.SkillId][Info.Level] =
+--        PartnerSkillInfoDic[Info.SkillId][Info.Level] or Info
+--    end
+--end
 
 function XPartnerConfigs.CreateMainSkillGroupDic()
     PartnerMainSkillGroupDic = {}
@@ -430,15 +430,13 @@ function XPartnerConfigs.GetPartnerSkillEffectByIdAndLevel(skillId, level)
 end
 
 function XPartnerConfigs.GetPartnerSkillInfoByIdAndLevel(skillId, level)
-    if not PartnerSkillInfoDic[skillId] then
-        XLog.Error("id is not exist in "..TABLE_PARTNER_SKILLINFO.." id = " .. skillId)
+    local key = skillId * 100 + level
+    local config = PartnerSkillInfoCfg[key]
+    if not config then
+        XLog.Error("id is not exist in "..TABLE_PARTNER_SKILLINFO.." id = " .. skillId,  level)
         return
     end
-    if not PartnerSkillInfoDic[skillId][level] then
-        XLog.Error("level is not exist in "..TABLE_PARTNER_SKILLINFO.." level = " .. level)
-        return
-    end
-    return PartnerSkillInfoDic[skillId][level]
+    return config
 end
 
 

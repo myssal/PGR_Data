@@ -214,7 +214,7 @@ function XUiComGame2048GridAction:DoDispel(cb)
             end
 
             if self.GridPoint then
-                self.GridPoint.gameObject:SetActiveEx(false)
+                self.GridPoint.transform.parent.gameObject:SetActiveEx(false)
             end
 
             local delayTime = self._DispelPlayTime - self._DispelHideTime
@@ -227,6 +227,10 @@ function XUiComGame2048GridAction:DoDispel(cb)
         end, self._DispelHideTime * XScheduleManager.SECOND)
     else
         self._CurAnimTimeId = XScheduleManager.ScheduleOnce(self._EndCurAnimationHandler, self._DispelPlayTime * XScheduleManager.SECOND)
+    end
+
+    if self.EffectDispelAimShow then
+        self.EffectDispelAimShow.gameObject:SetActiveEx(false)
     end
 end
 

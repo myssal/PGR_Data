@@ -46,6 +46,7 @@ XFunctionManager.FunctionName = {
     MainLeftTopActivity = 11, --主界面左侧活动按钮
     AutoWindow = 12, --打脸图
     CharacterVoice = 13, --CV入口检测参数
+    UiMainMusicAlbum = 14, --主界面CD机
 
     Character = 101, --构造体
     CharacterGrade = 102, --构造体晋升
@@ -117,8 +118,9 @@ XFunctionManager.FunctionName = {
     Course = 1802,  --考级系统
     PracticeDataExercise = 1803,  --赛利卡补习班数据演习
 
-    Guild = 1901, --指挥部
-    GuildBoss = 1904, --工会boss
+    Guild = 1901, --公会
+    GuildBoss = 1904, --公会boss
+    GuildBgm = 1905, --公会CD机
     OtherHelp = 2001, --助战
     Collection = 2100, --收藏品
     Medal = 2101, --勋章
@@ -259,6 +261,7 @@ XFunctionManager.FunctionName = {
     FpsGame = 10477, -- 首席打枪
     WheelchairManual = 10478, --轮椅手册
     ReCallActivity = 10479, -- 拉人回流
+    StageMemory = 10480, -- 周年精选关
     Maverick3 = 10482, -- 孤胆枪手
     GachaCanLiver = 10484, --3.1可肝卡池（常驻+限时组合）
     LuckyTenant = 10481, -- 幸运租客
@@ -269,8 +272,11 @@ XFunctionManager.FunctionName = {
     Theatre5 = 10491, -- 肉鸽5.0
     BountyChallenge = 10492, -- 悬赏挑战
     DlcRelink = 10493, -- 联机共斗
-
+    PlotExhibition = 10494, -- 军团（剧情）
+    SpeedrunStage = 10495, -- 速通模式
+    
     SkyGarden = 20000, --空中花园
+    Race = 10354, --赛马
 }   
 
 XFunctionManager.FunctionType = {
@@ -404,7 +410,7 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
     -- 提审包屏蔽，跳转到主线页面
     if XUiManager.IsHideFunc and list.IsHideFunc then
         -- XLuaUiManager.Open("UiFuben", XDataCenter.FubenManager.StageType.Mainline, nil, 1)
-        XLuaUiManager.Open("UiNewFuben", XFubenConfigs.ChapterType.MainLine)
+        XLuaUiManager.Open("UiNewFuben", XEnumConst.FuBen.ChapterType.MainLine)
         return false
     end
 
@@ -917,6 +923,279 @@ function XFunctionManager._DealWithSkipResult(result, skipId, fromMsg)
     end
 end
 
+--endregion
+
+--region 通用模块显隐控制
+
+---@type table<number, XUiComponent.XFunctionShowGroup>
+local FunctionShowGroupMap = nil
+local FunctionShowEventMap = nil
+local FunctionShowReddotMap = nil
+
+--- C#组件XFunctionShowGroup初始化时注册到Lua中，处理事件监听、红点检测等逻辑
+---@param functionShowGroup XUiComponent.XFunctionShowGroup
+function XFunctionManager.RegisterFunctionShowGroup(functionShowGroup, instanceId2functionShowId)
+    if not instanceId2functionShowId then
+        return
+    end
+
+    if FunctionShowGroupMap == nil then
+        FunctionShowGroupMap = {}
+    end
+    
+    if FunctionShowEventMap == nil then
+        FunctionShowEventMap = {}
+    end
+
+    if FunctionShowReddotMap == nil then
+        FunctionShowReddotMap = {}
+    end
+
+    -- 获取组件的instanceId，构建instanceId-组件实例的映射
+    local groupInstanceId = functionShowGroup:GetInstanceID()
+    
+    FunctionShowGroupMap[groupInstanceId] = functionShowGroup
+
+    
+    -- 注册刷新事件监听
+    local group = FunctionShowEventMap[groupInstanceId] or {}
+
+    for instanceId, id in pairs(instanceId2functionShowId) do
+        if XTool.IsNumberValidEx(id) then
+            XFunctionManager._AddFunctionShowEventListener(instanceId, id, group, groupInstanceId)
+        end
+    end
+
+    FunctionShowEventMap[groupInstanceId] = group
+    
+    -- 注册红点事件
+
+    for instanceId, id in pairs(instanceId2functionShowId) do
+        if XTool.IsNumberValidEx(id) then
+            XFunctionManager._AddFunctionShowReddotEvent(instanceId, id, groupInstanceId)
+        end
+    end
+end
+
+function XFunctionManager._AddFunctionShowEventListener(instanceId, id, functionShowEventGroup, groupInstanceId)
+    -- 根据Id获取配置中的eventId列表
+    local eventIds = nil
+    
+    local cfg = XFunctionConfig.GetFunctionalShowCfg(id)
+
+    if cfg then
+        eventIds = cfg.EventIds
+    end
+
+    if not XTool.IsTableEmpty(eventIds) then
+        -- 每个eventId对应一组实例
+        for i, eventId in pairs(eventIds) do
+            local eventData = functionShowEventGroup[eventId] or {}
+
+            eventData.InstanceList = eventData.InstanceList or {}
+            eventData.InstanceList[instanceId] = true
+
+            functionShowEventGroup[eventId] = eventData
+
+            local eventFunc = function()
+                XFunctionManager._AcceptFunctionShowEvent(groupInstanceId, eventData.InstanceList)
+            end
+
+            eventData.EventFuncList = eventData.EventFuncList or {}
+
+            table.insert(eventData.EventFuncList, eventFunc)
+
+            -- 注册事件监听
+            XEventManager.AddEventListener(eventId, eventFunc)
+        end
+    end
+end
+
+function XFunctionManager._AddFunctionShowReddotEvent(instanceId, id, groupInstanceId)
+    -- 根据Id获取配置中的eventId列表
+    local reddotConditions = nil
+
+    local cfg = XFunctionConfig.GetFunctionalShowCfg(id)
+
+    if cfg then
+        reddotConditions = cfg.RedPointConditions
+    end
+
+    if not XTool.IsTableEmpty(reddotConditions) then
+        local group = FunctionShowReddotMap[groupInstanceId] or {}
+        
+        local redEventId = XRedPointManager.AddRedPointEvent(FunctionShowGroupMap[groupInstanceId], function(count)
+            local isShow = count >= 0
+            XFunctionManager._AcceptFunctionShowReddotEvent(groupInstanceId, instanceId, isShow)
+        end, nil, reddotConditions, cfg.RedPointArgs, true)
+
+        table.insert(group, redEventId)
+
+        FunctionShowReddotMap[groupInstanceId] = group
+    end
+end
+
+function XFunctionManager._AcceptFunctionShowEvent(groupInstanceId, instanceList)
+    local functionShowGroup = FunctionShowGroupMap[groupInstanceId]
+    
+    if not functionShowGroup or not functionShowGroup:Exist() then
+        return
+    end
+    
+    if not XTool.IsTableEmpty(instanceList) then
+        for instanceId, v in pairs(instanceList) do
+            functionShowGroup:RefreshControlByInstanceId(instanceId)        
+        end
+    end
+end
+
+function XFunctionManager._AcceptFunctionShowReddotEvent(groupInstanceId, instanceId, isShow)
+    local functionShowGroup = FunctionShowGroupMap[groupInstanceId]
+
+    if not functionShowGroup or not functionShowGroup:Exist() then
+        return
+    end
+
+    functionShowGroup:RefreshControlReddotShowByInstanceId(instanceId, isShow)
+end
+
+
+---@param functionShowGroup XUiComponent.XFunctionShowGroup
+function XFunctionManager.RemoveFunctionShowGroup(functionShowGroup)
+    if FunctionShowGroupMap == nil then
+        return
+    end
+    
+    local instanceId = functionShowGroup:GetInstanceID()
+    -- 清除映射中的引用
+    FunctionShowGroupMap[instanceId] = nil
+
+    -- 移除所有事件
+    if FunctionShowEventMap[instanceId] then
+        local group = FunctionShowEventMap[instanceId]
+
+        for eventId, eventData in pairs(group) do
+            if not XTool.IsTableEmpty(eventData.EventFuncList) then
+                for i, func in ipairs(eventData.EventFuncList) do
+                    XEventManager.RemoveEventListener(eventId, func)
+                end
+            end
+        end
+        
+        FunctionShowEventMap[instanceId] = nil
+    end
+    
+    -- 移除所有红点
+    if FunctionShowReddotMap[instanceId] then
+        local group = FunctionShowReddotMap[instanceId]
+
+        for i, redEventId in pairs(group) do
+            XRedPointManager.RemoveRedPointEvent(redEventId)            
+        end
+
+        FunctionShowReddotMap[instanceId] = nil
+    end
+end
+
+function XFunctionManager.CheckUiNodeIsShowByFunctionShowId(id)
+    if not XTool.IsNumberValidEx(id) then
+        -- 没有条件默认显示
+        return true
+    end
+    
+    -- 读表判断condition
+    local cfg = XFunctionConfig.GetFunctionalShowCfg(id)
+
+    if not cfg then
+        return true
+    end
+    
+    -- 判断是否提审屏蔽
+    if cfg.IsCheckHideFunc and XUiManager.IsHideFunc then
+        return false
+    end
+    
+    -- 判断是否功能过滤
+    if XTool.IsNumberValidEx(cfg.FunctionId) and XFunctionManager.CheckFunctionFitter(cfg.FunctionId) then
+        return false
+    end
+
+    if not XTool.IsNumberValidEx(cfg.ShowCondition) then
+        return true
+    end
+    
+   
+    return XConditionManager.CheckCondition(cfg.ShowCondition)
+end
+
+function XFunctionManager.CheckUiNodeIsUnlockByFunctionShowId(id)
+    if not XTool.IsNumberValidEx(id) then
+        -- 没有条件默认解锁
+        return true
+    end
+
+    -- 读表判断condition
+    local cfg = XFunctionConfig.GetFunctionalShowCfg(id)
+
+    if not cfg then
+        return true
+    end
+
+    -- 判断是否提审屏蔽
+    if cfg.IsCheckHideFunc and XUiManager.IsHideFunc then
+        return false
+    end
+
+    -- 判断是否功能过滤
+    if XTool.IsNumberValidEx(cfg.FunctionId) and XFunctionManager.CheckFunctionFitter(cfg.FunctionId) then
+        return false
+    end
+
+    if not XTool.IsNumberValidEx(cfg.UnlockCondition) then
+        return true
+    end
+
+
+    return XConditionManager.CheckCondition(cfg.UnlockCondition)
+end
+
+function XFunctionManager.CheckRedNodeIsCanShowByFunctionShowId(id)
+    if not XTool.IsNumberValidEx(id) then
+        -- 没有条件默认显示
+        return true
+    end
+
+    -- 读表判断condition
+    local cfg = XFunctionConfig.GetFunctionalShowCfg(id)
+
+    if not cfg then
+        return true
+    end
+
+    -- 没有先决条件也允许显示
+    if XTool.IsTableEmpty(cfg.RedPointShowPreCondition) then
+        return true
+    end
+
+    for i, v in pairs(cfg.RedPointShowPreCondition) do
+        if XTool.IsNumberValidEx(v) and not XConditionManager.CheckCondition(v) then
+            return false
+        end
+    end
+    
+    return true
+end
+
+---刷新组内所有的红点，一般用于界面Enable时全量刷新
+function XFunctionManager.UpdateFunctionShowGroupAllReddot(groupInstanceId)
+    local group = FunctionShowReddotMap[groupInstanceId]
+
+    if not XTool.IsTableEmpty(group) then
+        for i, redEventId in pairs(group) do
+            XRedPointManager.Check(redEventId)
+        end
+    end
+end
 --endregion
 
 --AFDeepLink特定需求

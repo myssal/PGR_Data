@@ -18,11 +18,11 @@ function XUiGridEchelon:OnStart(data)
 end
 
 function XUiGridEchelon:OnEnable()
-    self:AddEventListener()
+    self:AddOnEnableEventListener()
 end
 
 function XUiGridEchelon:OnDisable()
-    self:RemoveEventListener()
+    self:RemoveOnDisableEventListener()
 end
 
 function XUiGridEchelon:OnDestroy()
@@ -30,8 +30,8 @@ function XUiGridEchelon:OnDestroy()
 end
 
 --region Data - Team
-function XUiGridEchelon:UpdateTeamInfo(team)
-    self._EchelonData.TeamList[self._EchelonData.EchelonIndex] = team
+function XUiGridEchelon:UpdateTeamInfo(entityIds)
+    self._EchelonData.TeamList[self._EchelonData.EchelonIndex] = entityIds
     XEventManager.DispatchEvent(XEventId.EVENT_BFRT_TEAM_UPDATE)
 end
 --endregion
@@ -284,11 +284,11 @@ end
 --endregion
 
 --region Event
-function XUiGridEchelon:AddEventListener()
+function XUiGridEchelon:AddOnEnableEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_BFRT_RESET_STAGE_RECORD, self._RefreshEchelonByResetRecord, self)
 end
 
-function XUiGridEchelon:RemoveEventListener()
+function XUiGridEchelon:RemoveOnDisableEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_BFRT_RESET_STAGE_RECORD, self._RefreshEchelonByResetRecord, self)
 end
 

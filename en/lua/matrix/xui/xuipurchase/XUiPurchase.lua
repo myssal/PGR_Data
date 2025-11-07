@@ -20,6 +20,7 @@ local XUiPurchaseHKExchange = require("XUi/XUiPurchase/XUiPurchaseHKExchange")
 local XUiPurchaseHKExchangeTop = require("XUi/XUiPurchase/XUiPurchaseHKExchangeTop")
 local XUiPurchaseCoatingLB = require("XUi/XUiPurchase/XUiPurchaseCoatingLB")
 local XUiPurchaseRecommend = require("XUi/XUiPurchase/XUiPurchaseRecommend")
+local XUiPurchaseCombo = require("XUi/XUiPurchase/XUiPurchaseCombo")
 
 local CustomerServiceUrl = CS.XGame.ClientConfig:GetString("CustomerServiceUrl") or ""
 
@@ -269,6 +270,9 @@ function XUiPurchase:InitUi()
     self.UiPanel[PanelExNameConfig.PanelYk] = XUiPurchaseYK.New(self.PanelYkEx, self, purchaseLBCb)
     self.UiPanel[PanelExNameConfig.PanelHksd] = XUiPurchaseHKShop.New(self.PanelHksdEx, self)
     self.UiPanel[PanelExNameConfig.PanelCoatingLb] = XUiPurchaseCoatingLB.New(self.PanelCoatingLbEx, self, purchaseLBCb)
+    self.PanelBundleLbEx = self.PanelBundleLbEx or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelsEx/PanelBundleLbEx", "RectTransform")
+    self.UiPanel[PanelExNameConfig.PanelBundleLbEx] = XUiPurchaseCombo.New(self.PanelBundleLbEx, self, purchaseLBCb)
+    self.UiPanel[PanelExNameConfig.PanelBundleLbEx]:Close()
 
     if self.PanelLjcz then
         self.PanelLjcz.gameObject:SetActiveEx(false)
@@ -313,6 +317,40 @@ function XUiPurchase:CheckCustomParams()
                     
                     break -- 找到第一个能续费的就弹
                 end
+            end
+        end
+    elseif self.CustomParams.Operation == XPurchaseConfigs.UiPurchaseCustomOperation.OpenBuyTip then
+        local packageId = self.CustomParams.PackageId
+        ---@type XUiPurchaseRecommend
+        local panel = self.UiPanel[PanelNameConfig.PanelTj]
+        if not panel.Recommends then
+            return
+        end
+        local curIndex = panel.CurrentIndex
+        local recommend = panel.Recommends[curIndex]
+        if not recommend then
+            return
+        end
+        ---@type XUiRecommendGrid
+        local grid = panel.DynamicTable:GetGridByIndex(curIndex)
+        if not grid then
+            return
+        end
+        local panelRec = grid.UiPanelRecommend
+        for index, _ in ipairs(recommend:GetPurchasePackageIdList()) do
+            local package = recommend:GetPurchasePackage()[index]
+            if package:GetId() == packageId then
+                if package:GetIsSellOut() then
+                    XUiManager.TipErrorWithKey("PurchaseSettOut")
+                    break
+                end
+                local buyData = recommend:GetPurchasePackage()
+                if buyData then
+                    XDataCenter.PurchaseManager.OpenPurchaseBuyUiByPurchasePackage(package, function(_, payCount)
+                        panelRec.SkipFunc(XPurchaseConfigs.TabsConfig.Pay, nil, payCount)
+                    end, nil, panelRec.BuyFinished)
+                end
+                break
             end
         end
     end
@@ -583,6 +621,8 @@ function XUiPurchase:InitGroupTab(uiTypes)
         self:GroupTabSkip(tab)
     end)
     self.GroupTab:SelectIndex(selectIndex)
+    
+    self:TryFocusStage(self.TabBtns[selectIndex])
 end
 
 function XUiPurchase:GroupTabSkip(tab)
@@ -740,3 +780,43 @@ function XUiPurchase:RefreshTimeData()
         tjPanel:RefreshTimeData()
     end
 end
+
+--region -------------------- 滚动视图 --------------------
+
+function XUiPurchase:PlayScrollViewMoveBack(tarPosY, isElastic)
+    local moveDuration = CS.XGame.ClientConfig:GetFloat('KotodamaActivityStageMoveDuration')
+    local tarPos = self.PanelTabGroupScrollView.content.localPosition
+    tarPos.y = tarPosY
+
+    XLuaUiManager.SetMask(true)
+    self._FocusScrollMoving = true
+    self.PanelTabGroupScrollView.inertia = false
+    XUiHelper.DoMove(self.PanelTabGroupScrollView.content, tarPos, moveDuration, XUiHelper.EaseType.Sin, function()
+        if isElastic then
+            self.PanelTabGroupScrollView.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Elastic
+        else
+            self.PanelTabGroupScrollView.movementType = CS.UnityEngine.UI.ScrollRect.MovementType.Unrestricted
+        end
+        XLuaUiManager.SetMask(false)
+        self._FocusScrollMoving = false
+        self.PanelTabGroupScrollView.inertia = true
+    end)
+end
+
+function XUiPurchase:TryFocusStage(selectGrid)
+    if not self.PanelTabGroupScrollView then
+        return
+    end
+    
+    if selectGrid then
+        local halfScreenHeight = self.PanelTabGroupScrollView.viewport.rect.height / 2
+        local moveMinY = halfScreenHeight
+        local moveMaxY = self.PanelTabGroupScrollView.content.rect.height - halfScreenHeight
+
+        local tarPosY = - selectGrid.transform.localPosition.y
+        local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)
+        self:PlayScrollViewMoveBack(fixedPositionY, true)
+    end
+end
+
+--endregion

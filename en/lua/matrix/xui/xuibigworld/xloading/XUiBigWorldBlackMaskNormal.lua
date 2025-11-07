@@ -9,3 +9,7 @@ function XUiBigWorldBlackMaskNormal:IsSetMask()
     return false
 end
 
+function XUiBigWorldBlackMaskNormal:IsRegisterX3CClose()
+    return false
+end
+

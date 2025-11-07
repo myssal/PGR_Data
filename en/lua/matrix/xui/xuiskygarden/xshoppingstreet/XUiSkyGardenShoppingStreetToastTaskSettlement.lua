@@ -75,7 +75,7 @@ end
 --region 私有方法
 function XUiSkyGardenShoppingStreetToastTaskSettlement:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 --endregion
 

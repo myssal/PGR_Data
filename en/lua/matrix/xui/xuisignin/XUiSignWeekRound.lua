@@ -2,6 +2,7 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local TextManager = CS.XTextManager
 
 local XUiSignWeekCardGridDay = require("XUi/XUiSignIn/XUiSignWeekCardGridDay")
+---@class XUiSignWeekRound:XUiNode
 local XUiSignWeekRound = XClass(XUiNode, "XUiSignWeekRound")
 
 local NUMBER_TABLE = {
@@ -24,6 +25,7 @@ function XUiSignWeekRound:Ctor(ui, rootUi, parent, setTomorrow)
     self.DaySmallGrids = {}
     self.GridDaySmall.gameObject:SetActiveEx(false)
     --table.insert(self.DaySmallGrids, XUiSignWeekCardGridDay.New(self.GridDaySmall, self.RootUi))
+    ---@type XUiSignWeekCardGridDay[]
     self.DayBigGrids = {}
     self.GridDayBig.gameObject:SetActiveEx(false)
     --table.insert(self.DayBigGrids, XUiSignWeekCardGridDay.New(self.GridDayBig, self.RootUi))

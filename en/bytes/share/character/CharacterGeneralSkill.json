@@ -5,6 +5,7 @@
         "Desc": "Triggers the disruption of the target's information field and temporarily reduces the shield of enemies with the Equilibrium Field.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeGeneralSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeGeneralSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeGeneralSkill01C.png",
         "FightEventId": 5001,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -30,6 +31,7 @@
         "Desc": "The frame's condensed nitrogen has been replaced with a newly created chemical material with an optimized ignition process, making it easier to set the target on fire and deal damage to it over time through attacks.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeBurnSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeBurnSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeBurnSkill01C.png",
         "FightEventId": 5002,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -65,6 +67,7 @@
         "Desc": "Adjusts the frame's operation process in battle for an instant output of computing power and launches an extremely powerful attack, dealing damage to the target.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeSwordPowerSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeSwordPowerSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeSwordPowerSkill01C.png",
         "FightEventId": 5004,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -102,6 +105,7 @@
         "Desc": "Unleashes powerful energy in a short period to disturb the electrical field of the surroundings. Spreads electric particles to deal damage periodically to the target.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeThunderShieldSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeThunderShieldSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeThunderShieldSkill01C.png",
         "FightEventId": 5003,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -135,6 +139,7 @@
         "Desc": "The cryogenic technology added after multiple iterations of battle modules allows frames to create a small low-temperature area during battle. Further attacks can be unlocked when the parameters in the area reach the preset values over time.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeFreezeSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeFreezeSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeFreezeSkill01C.png",
         "FightEventId": 5005,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -178,15 +183,18 @@
         "Desc": "Using a new type of accelerator technology, it generates and collects dark particles under high pressure, releasing a radiation wave upon reaching critical mass that creates a nullification effect on surrounding targets.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeRadiateSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeRadiateSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeRadiateSkill01C.png",
         "FightEventId": 5006,
         "IsSkipSkillCheck": false,
         "SkillId": [
             113401,
             113416,
             113417,
-            113421
+            113421,
+            103521
         ],
         "SkillLevel": [
+            0,
             0,
             0,
             0,
@@ -209,6 +217,7 @@
         "Desc": "When plasma is focused by the crystal cluster, the micromitter matrix unleashes it if the electric arc is constrained, producing the \"Raydiance\" effect, which deals massive damage to targets in a short time.",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeLightNoiseSkill01B.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeLightNoiseSkill01A.png",
+        "IconBlue": "Assets/Product/Texture/Image/IconType/IconTypeLightNoiseSkill01C.png",
         "FightEventId": 5007,
         "IsSkipSkillCheck": false,
         "SkillId": [
@@ -229,7 +238,7 @@
     {
         "Id": 9999,
         "Name": "No Effect",
-        "Desc": "No effect applied.",
+        "Desc": "No specific Effect selected",
         "Icon": "Assets/Product/Texture/Image/IconType/IconTypeYsWeizhi.png",
         "IconTranspose": "Assets/Product/Texture/Image/IconType/IconTypeYsWeizhiWhite.png",
         "FightEventId": 0,

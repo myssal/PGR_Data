@@ -1,6 +1,6 @@
 local XMovieActionCenterTips = XClass(XMovieActionBase, "XMovieActionCenterTips")
 
-function XMovieActionCenterTips:Ctor(actionData)
+function XMovieActionCenterTips:OnInit(actionData)
     local params = actionData.Params
 
     self.Content = params[1]
@@ -11,7 +11,7 @@ function XMovieActionCenterTips:Ctor(actionData)
     self.IsBgHide = params[6] == "1"
 end
 
-function XMovieActionCenterTips:OnInit()
+function XMovieActionCenterTips:OnEnter()
     self.UiRoot.PanelCenterTip.gameObject:SetActiveEx(not self.IsHide)
     if self.IsHide then
         return
@@ -30,6 +30,26 @@ function XMovieActionCenterTips:OnInit()
     self.UiRoot.TxtCenterTipDescLeft.text = content
     self.UiRoot.TxtCenterTipDescLeft.gameObject:SetActiveEx(self.IsLeft)
     self.UiRoot.PanelCenterTipBg.enabled = not self.IsBgHide
+end
+
+
+function XMovieActionCenterTips:IsPassedActionRun(index)
+    if self.IsHide then return false end
+
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionCenterTips:IsActionCover(action)
+    return action:GetType() == self:GetType()
+end
+
+function XMovieActionCenterTips:OnPassedActionRun()
+    self:OnEnter()
 end
 
 return XMovieActionCenterTips

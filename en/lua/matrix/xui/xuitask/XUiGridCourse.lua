@@ -101,12 +101,15 @@ function XUiGridCourse:Refresh(courseData, lastStageId, nextChapterId)
 end
 
 function XUiGridCourse:SetRectLine(curType, nextType)
+    local localPosition = self.RectLine.localPosition
     local h = self.RectLine.rect.height
-    local y, z = -68, 0
     local potPostion = PotPostion[curType][nextType]
     if potPostion then
+        self.RectLine.gameObject:SetActiveEx(true)
         self.RectLine.sizeDelta = CS.UnityEngine.Vector2(potPostion.w, h)
-        self.RectLine.localPosition = CS.UnityEngine.Vector3(potPostion.x, y, z)
+        self.RectLine.localPosition = CS.UnityEngine.Vector3(potPostion.x, localPosition.y, localPosition.z)
+    else
+        self.RectLine.gameObject:SetActiveEx(false)
     end
 end
 
@@ -141,6 +144,8 @@ function XUiGridCourse:OnBtnClickClick()
             end
 
             local func = function(allRewardGet)
+                self.PanelFinish.gameObject:SetActive(true)
+                self.PanelEffect.gameObject:SetActive(false)
                 if self.LastStageId and self.NextChapterId then
                     local lastStageInfo = XDataCenter.FubenManager.GetStageInfo(self.LastStageId)
                     if allRewardGet and lastStageInfo.Passed then
@@ -151,8 +156,6 @@ function XUiGridCourse:OnBtnClickClick()
                     end
                 end
                 if self.IndexCallBack then self.IndexCallBack() end
-                self.PanelFinish.gameObject:SetActive(true)
-                self.PanelEffect.gameObject:SetActive(false)
             end
             XDataCenter.TaskManager.GetCourseReward(self.CourseData.StageId, func)
         else -- 已领取的奖励则弹出详情

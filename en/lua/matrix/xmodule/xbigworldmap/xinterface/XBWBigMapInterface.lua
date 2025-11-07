@@ -21,15 +21,15 @@ function XBWBigMapInterface:OpenTagPinDetail(bindPin, levelId, pinData)
 end
 
 ---@param pinDatas XBWMapPinData[]
-function XBWBigMapInterface:OpenPinSelectList(pinDatas, position)
+function XBWBigMapInterface:OpenPinSelectList(pinDatas, transform)
     if self._Proxy then
-        self._Proxy:OpenPinSelectList(pinDatas, position)
+        self._Proxy:OpenPinSelectList(pinDatas, transform)
     end
 end
 
-function XBWBigMapInterface:AnchorToPosition(x, y, isIgnoreTween)
+function XBWBigMapInterface:AnchorToPosition(x, y, isCenter, isIgnoreTween)
     if self._Proxy then
-        self._Proxy:AnchorToPosition(x, y, isIgnoreTween)
+        self._Proxy:AnchorToPosition(x, y, isCenter, isIgnoreTween)
     end
 end
 

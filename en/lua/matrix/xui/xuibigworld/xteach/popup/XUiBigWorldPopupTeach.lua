@@ -49,7 +49,7 @@ end
 
 function XUiBigWorldPopupTeach:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.BtnTanchuangClose.CallBack = Handler(self, self.OnBtnTanchuangCloseClick)
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnTanchuangCloseClick))
 end
 
 function XUiBigWorldPopupTeach:_RegisterListeners()

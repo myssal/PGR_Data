@@ -12,6 +12,15 @@ function XPanelCharacterUnOwnedInfoV2P6:RefreshUiShow()
     local characterId = self.Parent.CurCharacter.Id
     self.CharacterId = characterId
     
+    -- 生命树
+    local isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconVisible"))
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    self.BtnTree.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+    if powerConfig then
+        self.TxtTreeDesc.text = powerConfig.Description
+        self.BtnTree:SetSprite(powerConfig.Icon)
+    end
+
     -- 机体名
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(characterId)
     self.TxtName.text = charConfig.Name
@@ -82,19 +91,45 @@ function XPanelCharacterUnOwnedInfoV2P6:RefreshUiShow()
 end
 
 function XPanelCharacterUnOwnedInfoV2P6:InitButton()
-    XUiHelper.RegisterClickEvent(self, self.BtnUniframeTip, self.OnBtnUniframeTipClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnType, self.OnBtnCareerTipsClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnElementDetail, self.OnBtnElementDetailClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnSkillFold, self.OnBtnSkillFoldClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnSkillUnFold, self.OnBtnSkillUnFoldClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnGet, self.OnBtnGetClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnUnlock, self.OnBtnUnlockClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnGeneralSkill1, function ()
+    self.BtnUniframeTip.CallBack = function()
+        self:OnBtnUniframeTipClick()
+    end
+    
+    self.BtnType.CallBack = function()
+        self:OnBtnCareerTipsClick()
+    end
+    
+    self.BtnElementDetail.CallBack = function()
+        self:OnBtnElementDetailClick()
+    end
+    
+    self.BtnSkillFold.CallBack = function()
+        self:OnBtnSkillFoldClick()
+    end
+    
+    self.BtnSkillUnFold.CallBack = function()
+        self:OnBtnSkillUnFoldClick()
+    end
+    
+    self.BtnGet.CallBack = function()
+        self:OnBtnGetClick()
+    end
+    
+    self.BtnUnlock.CallBack = function()
+        self:OnBtnUnlockClick()
+    end
+    
+    self.BtnGeneralSkill1.CallBack = function()
         self:OnBtnGeneralSkillClick(1)
-    end)
-    XUiHelper.RegisterClickEvent(self, self.BtnGeneralSkill2, function ()
+    end
+    
+    self.BtnGeneralSkill2.CallBack = function()
         self:OnBtnGeneralSkillClick(2)
-    end)
+    end
+
+    self.BtnTree.CallBack = function ()
+        self:OnBtnTreeClick()
+    end
 
     self.XGoInputHandler:AddDragUpListener(function ()
         self:OnDragUp()
@@ -120,6 +155,16 @@ end
 
 function XPanelCharacterUnOwnedInfoV2P6:OnBtnElementDetailClick()
     XLuaUiManager.Open("UiCharacterAttributeDetail", self.CharacterId, XEnumConst.UiCharacterAttributeDetail.BtnTab.Element)
+end
+
+function XPanelCharacterUnOwnedInfoV2P6:OnBtnTreeClick()
+    local isBubbleTreeActive = self.BubbleTreeDetail.gameObject.activeSelf
+    self.Parent.BtnClose.gameObject:SetActiveEx(not isBubbleTreeActive)
+    self.BubbleTreeDetail.gameObject:SetActiveEx(not isBubbleTreeActive)
+end
+
+function XPanelCharacterUnOwnedInfoV2P6:CloseTreeBubble()
+    self.BubbleTreeDetail.gameObject:SetActiveEx(false)
 end
 
 function XPanelCharacterUnOwnedInfoV2P6:OnBtnGeneralSkillClick(index)

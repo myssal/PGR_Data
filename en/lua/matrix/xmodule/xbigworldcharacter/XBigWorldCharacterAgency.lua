@@ -33,7 +33,7 @@ function XBigWorldCharacterAgency:InitRpc()
 end
 
 function XBigWorldCharacterAgency:InitEvent()
-    XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
+    
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcJoinTeam(data)
@@ -45,7 +45,6 @@ function XBigWorldCharacterAgency:OnTrialNpcLeaveTeam()
 end
 
 function XBigWorldCharacterAgency:OnRelease()
-    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.BigWorld, self)
 end
 
 --region 角色配置
@@ -171,13 +170,11 @@ function XBigWorldCharacterAgency:GetFightCharHeadIconWithCharacterId(characterI
 
     local headInfo = self._Model:GetHeadInfo(characterId)
 
-    local headFashionId = headInfo.HeadFashionId
-    local headFashionType = headInfo.HeadFashionType
-
-    if headFashionType == XFashionConfigs.HeadPortraitType.Liberation then
-        return XDataCenter.FashionManager.GetFashionRoundnessNotItemHeadIconLiberation(headFashionId)
+    if headInfo then
+        return XDataCenter.FashionManager.GetFashionSmallHeadIcon(headInfo.HeadFashionId, headInfo.HeadFashionType)
     end
-    return XDataCenter.FashionManager.GetFashionRoundnessNotItemHeadIcon(headFashionId)
+    local fashionId = self:GetFashionId(characterId)
+    return XDataCenter.FashionManager.GetFashionSmallHeadIconFashion(fashionId)
 end
 
 function XBigWorldCharacterAgency:GetCommandantNpcData()
@@ -616,6 +613,14 @@ end
 
 function XBigWorldCharacterAgency:CheckCharacterTrial(characterId)
     return self._Model:CheckTrialCharacter(characterId)
+end
+
+-- endregion
+
+-- region 特效
+
+function XBigWorldCharacterAgency:GetCharacterUiEffectInfos(fashionId)
+    return self._Model:GetCharacterUiEffectInfos(fashionId)
 end
 
 -- endregion

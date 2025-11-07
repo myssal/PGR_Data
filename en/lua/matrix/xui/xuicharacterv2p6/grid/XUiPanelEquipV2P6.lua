@@ -17,6 +17,11 @@ function XUiPanelEquipV2P6:Ctor(ui, parent, rootUi)
     self:InitButton()
 
     self.IsShowPanelAwareness = false
+
+    if self.BtnUnFold then
+        ---@type XUiComponent.XFunctionShowControl
+        self.BtnUnFoldFuncShowCtrl = self.BtnUnFold.gameObject:GetComponent(typeof(CS.XUiComponent.XFunctionShowControl))
+    end
 end
 
 function XUiPanelEquipV2P6:InitButton()
@@ -102,10 +107,19 @@ end
 -- 刷新角色面板
 function XUiPanelEquipV2P6:UpdateRoleView()
     local characterId = self.CharacterId
-    self.WeaponGrid = self.WeaponGrid or XUiGridEquip.New(self.GridWeapon, self.RootUi)
-    self.WeaponGrid:Open()
-    local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
-    self.WeaponGrid:Refresh(usingWeaponId)
+
+    if not self.WeaponGrid then
+        self.GridWeapon.gameObject:SetActiveEx(false)
+        self.WeaponGrid = XUiGridEquip.New(self.GridWeapon, self.RootUi)
+    end
+    
+    if self.GridWeapon.transform.parent.gameObject.activeSelf then
+        self.WeaponGrid:Open()
+        local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        self.WeaponGrid:Refresh(usingWeaponId)
+    else
+        self.WeaponGrid:Close()
+    end
 
     -- 推荐按钮
     local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
@@ -297,6 +311,12 @@ function XUiPanelEquipV2P6:DoUnFold()
         return
     end
 
+    if self.BtnUnFoldFuncShowCtrl then
+        if self.BtnUnFoldFuncShowCtrl:CheckIsValidShowState() == false then
+            return
+        end
+    end
+
     self:PlayAnimationWithMask("AnimUnFold")
     self.IsShowPanelAwareness = true
     self:InitUnFoldButton()
@@ -345,6 +365,8 @@ end
 function XUiPanelEquipV2P6:OnBtnRecommendClick()
     XDataCenter.EquipGuideManager.OpenEquipGuideView(self.CharacterId)
     XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnRecommend, self.CharacterId)
+    
+    XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiCharacterEquipRecommand, XFunctionConfig.RedPointType.NewbieFirstShow)
 end
 
 function XUiPanelEquipV2P6:OnBtnAwarenessSuitClick()

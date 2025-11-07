@@ -28,11 +28,7 @@ end
 function XUiPhotographSDKPanel:AutoRegisterBtn()
     local shareSDKIds = XDataCenter.PhotographManager.GetShareSDKIds()
     if XOverseaManager.IsOverSeaRegion() then 
-        local Application = CS.UnityEngine.Application
-        local Platform = Application.platform
-        local RuntimePlatform = CS.UnityEngine.RuntimePlatform
-        local tempOrigin = XOverseaManager.IsKRRegion() and Platform == RuntimePlatform.Android
-        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc or tempOrigin then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
             shareSDKIds = 
             {
                 [1] = XPhotographConfigs.OverseaSharePlatform.ShareLink,

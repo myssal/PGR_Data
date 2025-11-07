@@ -112,18 +112,25 @@ XNewbieTaskManagerCreator = function()
 
     -- 获取进度奖励
     function XNewbieTaskManager.GetNewbieReward(progress, cb)
-        local req = { Progress = progress }
-
-        XNetwork.Call(RequestProto.GetNewbieRewardRequest, req, function(res)
+        XNetwork.Call(RequestProto.GetNewbieRewardRequest, nil, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 return
             end
-            XNewbieTaskManager.UpdateNewbieRecordProgress(progress)
+
+            if not XTool.IsTableEmpty(res.NewbieRecvProgress) then
+                for i, v in pairs(res.NewbieRecvProgress) do
+                    XNewbieTaskManager.UpdateNewbieRecordProgress(v)
+                end
+            else
+                XNewbieTaskManager.UpdateNewbieRecordProgress(progress)
+            end
 
             if cb then
                 cb(res.RewardGoodsList)
             end
+
+            XEventManager.DispatchEvent(XEventId.EVENT_NEWBIETASK_PROGRESSCHANGED)
         end)
     end
 

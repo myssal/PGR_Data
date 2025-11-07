@@ -10,257 +10,451 @@ function XUiGridBwQuestTitle:RefreshView(typeId)
     self.ImgIcon:SetSprite(self._Control:GetQuestTypeIcon(typeId))
 end
 
+local IsDebugBuild = CS.XApplication.Debug
+
+local CsNormal = CS.UiButtonState.Normal
+local CsSelect = CS.UiButtonState.Select
+
 ---@class XUiPanelBWTaskGroup : XUiNode
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field Parent XUiBigWorldTaskMain
 ---@field _Control XBigWorldQuestControl
+---@field _TypeToGridTitle table<number, XUiGridBwQuestTitle>
+---@field _TypeToTabData table<number, table<number, XUiGridBWQuestGroupTab>>
 local XUiPanelBWTaskGroup = XClass(XUiNode, "XUiPanelBWTaskGroup")
 
-function XUiPanelBWTaskGroup:OnStart(typeId, selectQuestId)
-    -- typeId 可能为0
+function XUiPanelBWTaskGroup:OnStart(typeId)
     self._TypeId = typeId
-    self._SelectQuestId = selectQuestId
-    self._QuestId2BtnIndex = {}
-    self:InitCb()
+    self:InitData()
+    self:AddEventListener()
     self:InitView()
 end
 
 function XUiPanelBWTaskGroup:OnEnable()
-    self:RefreshView()
+    self:RefreshSelect()
 end
 
 function XUiPanelBWTaskGroup:OnDisable()
-    self._TabIndex = nil
+    self:CancelLastSelect()
+    self:SetLastSelectData(0, 0, 0)
 end
 
 function XUiPanelBWTaskGroup:OnDestroy()
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
+    self:RemoveEventListener()
 end
 
-function XUiPanelBWTaskGroup:InitCb()
+function XUiPanelBWTaskGroup:AddEventListener()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
 end
 
-function XUiPanelBWTaskGroup:InitView()
-    self._GridTitles = {}
-    local typeId = self._TypeId
+function XUiPanelBWTaskGroup:RemoveEventListener()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.RefreshRedPoint, self)
+end
+
+function XUiPanelBWTaskGroup:InitData()
+    self._TypeToTabData = {}
+    self._TypeToGridTitle = {}
+    self._LastSelectData = {
+        TypeId = 0,
+        GroupId = 0,
+        questId = 0,
+        IsValid = false
+    }
+    self.PanelTitle.gameObject:SetActiveEx(false)
     self.BtnFirst.gameObject:SetActiveEx(false)
     self.BtnSecond.gameObject:SetActiveEx(false)
-    self._ReceiveQuestIds = self._Control:GetReceiveQuestIds()
-    if typeId == XMVCA.XBigWorldQuest.QuestType.All then
-        self:InitMultiTypeGroupBtn()
+end
+
+function XUiPanelBWTaskGroup:InitView()
+    self._AllReceiveQuestIds = self._Control:GetReceiveQuestIds()
+    local isAll = self._TypeId == XMVCA.XBigWorldQuest.QuestType.All
+    if isAll then
+        self:InitMultiTaskGroup()
     else
-        self:InitSingleTypeGroupBtn()
+        self:InitTaskGroup(self._TypeId)
     end
+    self._IsAllType = isAll
 end
 
-function XUiPanelBWTaskGroup:InitSingleTypeGroupBtn()
-    local typeId = self._TypeId
-    local btnList = {}
-    local btnData = {}
-
-    self:InitTypeGroupBtn(1, typeId, btnData, btnList, 0)
-
-    self._TabData = btnData
-    self.PanelTitleBtnGroup:Init(btnList, function(tabIndex)
-        self:OnSelectTab(tabIndex)
-    end)
-end
-
-function XUiPanelBWTaskGroup:InitMultiTypeGroupBtn()
-    local typeIds = self._Control:GetQuestTypeIds()
-
-    local btnList = {}
-    local btnData = {}
-    local btnIndex = 0
-    for index, typeId in ipairs(typeIds) do
-        btnIndex = self:InitTypeGroupBtn(index, typeId, btnData, btnList, btnIndex)
+function XUiPanelBWTaskGroup:RefreshSelect()
+    --记录上次点击的
+    local questId = self.Parent:GetSelectData(self._TypeId)
+    local result
+    if questId and questId > 0 then
+        result = self:TryClickSecondButton(questId)
+    else --没有则用追踪的
+        questId = XMVCA.XBigWorldQuest:GetTrackQuestId()
+        result = self:TryClickSecondButton(questId)
     end
-    self._TabData = btnData
-    self.PanelTitleBtnGroup:Init(btnList, function(tabIndex)
-        self:OnSelectTab(tabIndex)
-    end)
-end
-
-function XUiPanelBWTaskGroup:InitTypeGroupBtn(typeIndex, typeId, btnData, btnList, btnIndex)
-    local groupIds = self._Control:GetGroupIdsByTypeId(typeId)
-    local receiveQuestIds = self._ReceiveQuestIds
-    local titleGrid = self:GetTitleGrid(typeIndex)
-    titleGrid:Close()
-    --local color = XUiHelper.Hexcolor2Color(self._Control:GetQuestTypeColorStr(typeId))
-    for _, groupId in ipairs(groupIds) do
-        local questIds = self._Control:GetQuestIdsByGroupId(groupId, receiveQuestIds)
-        local isCreateParent = not XTool.IsTableEmpty(questIds)
-        if not isCreateParent then
-            goto continue
-        end
-        titleGrid:RefreshView(typeId)
-        local btn = self:GetTabBtn(true)
-        btn:SetNameByGroup(0, self._Control:GetGroupName(groupId))
-        btn:ShowReddot(self:CheckRedPoint(true, groupId))
-        local groupIcon = self._Control:GetGroupIcon(groupId)
-        local validIcon = not string.IsNilOrEmpty(groupIcon)
-        ---@type XUiComponent.XUiComponentGroup
-        local componentGroup = btn.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
-        if componentGroup then
-            componentGroup:SetVisibleWithGroup(0, validIcon)
-            if validIcon then
-                componentGroup:SetRawImageWithGroup(0, groupIcon)
-            end
-        end
-
-        btnIndex = btnIndex + 1
-        btnList[btnIndex] = btn
-        btnData[btnIndex] = self:GetBtnData(true, groupId, btn)
-
-        local firstIndex = btnIndex
-        for _, questId in ipairs(questIds) do
-            local btnChild = self:GetTabBtn(false)
-            btnChild:SetNameByGroup(0, self._Control:GetQuestName(questId))
-            btnChild:SetSprite(self._Control:GetQuestIcon(questId))
-            btnChild:ShowReddot(self:CheckRedPoint(false, questId))
-            ---@type XUiComponent.XUiComponentGroup
-            componentGroup = btnChild.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
-            if componentGroup then
-                componentGroup:SetVisibleWithGroup(0, validIcon)
-                componentGroup:SetVisibleWithGroup(1, XMVCA.XBigWorldQuest:IsTrackQuest(questId))
-                if validIcon then
-                    componentGroup:SetRawImageWithGroup(0, groupIcon)
-                end
-            end
-            
-            btnChild.SubGroupIndex = firstIndex
-            btnIndex = btnIndex + 1
-            btnList[btnIndex] = btnChild
-            btnData[btnIndex] = self:GetBtnData(false, questId, btnChild)
-            if questId == self._SelectQuestId then
-                self.Parent:SetGroupSelectIndex(btnIndex)
-            end
-            self._QuestId2BtnIndex[questId] = btnIndex
-            local quest = XMVCA.XBigWorldQuest:GetQuestData(questId)
-            local step = quest:GetActiveStepData()
-            local location
-            if step then
-                location = self._Control:GetStepLocation(step:GetId())
-            end
-            if string.IsNilOrEmpty(location) then
-                if componentGroup then
-                    componentGroup:SetVisibleWithGroup(0, false)
-                end
-            else
-                btnChild:SetNameByGroup(1, location)
-                if componentGroup then
-                    componentGroup:SetVisibleWithGroup(0, true)
-                end
-            end
-            
-        end
-
-        :: continue ::
-    end
-    return btnIndex
-end
-
-function XUiPanelBWTaskGroup:RefreshView()
-    local selectIndex = self.Parent:GetGroupSelectIndex()
-    local data = self._TabData[selectIndex]
-    if data then
-        self.PanelTitleBtnGroup:SelectIndex(selectIndex)
-    else
-        self.Parent:RefreshTaskContent(false, nil, nil)
-    end
-end
-
-function XUiPanelBWTaskGroup:OnSelectTab(tabIndex)
-    if self._TabIndex == tabIndex then
+    if result then
         return
     end
-
-    self._TabIndex = tabIndex
-    local data = self._TabData[self._TabIndex]
-    if not data then
+    --再没有则用第一个
+    questId = self:GetFirstQuestId()
+    if not questId or questId <= 0 then
+        -- 刷新空
+        self.Parent:RefreshTaskContent(0, 0, 0)
         return
     end
-    if not data.IsGroup then
-        XMVCA.XBigWorldQuest:MarkQuestRedPoint(data.Id)
+    result = self:TryClickSecondButton(questId)
+    if result then
+        return
     end
-    self:RefreshRedPoint()
-    self.Parent:PlayAnimation("ContentQieHuan")
-    self.Parent:RefreshTaskContent(data.IsGroup, data.Id, tabIndex)
+    -- 刷新空
+    self.Parent:RefreshTaskContent(0, 0, 0)
 end
 
 function XUiPanelBWTaskGroup:RefreshButton()
-    if XTool.IsTableEmpty(self._TabData) then
-        return
-    end
-    for _, data in pairs(self._TabData) do
-        if not data.IsGroup then
-            local btn = data.Tab
-            local componentGroup = btn.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
-            if componentGroup then
-                componentGroup:SetVisibleWithGroup(1, XMVCA.XBigWorldQuest:IsTrackQuest(data.Id))
+    for _, typeData in pairs(self._TypeToTabData) do
+        for _, groupData in pairs(typeData) do
+            local childData = groupData.ChildData
+            if not XTool.IsTableEmpty(childData) then
+                for questId, questData in pairs(childData) do
+                    questData.Component:SetVisibleWithGroup(1, XMVCA.XBigWorldQuest:IsTrackQuest(questId))
+                end
             end
         end
     end
 end
 
----@return XUiComponent.XUiButton
-function XUiPanelBWTaskGroup:GetTabBtn(isFirst)
-    local prefab = isFirst and self.BtnFirst or self.BtnSecond
-    local btn = XUiHelper.Instantiate(prefab, self.PanelTitleBtnGroup.transform)
-    btn.gameObject:SetActiveEx(true)
-    return btn
-end
-
-function XUiPanelBWTaskGroup:GetBtnData(isGroup, id, btn)
-    return {
-        IsGroup = isGroup,
-        Id = id,
-        Tab = btn
-    }
-end
-
-function XUiPanelBWTaskGroup:CheckRedPoint(isGroup, id)
-    if isGroup then
-        for _, questId in pairs(self._ReceiveQuestIds) do
-            local groupId = self._Control:GetGroupIdByQuestId(questId)
-            if groupId == id and XMVCA.XBigWorldQuest:CheckQuestRedWithQuestId(questId) then
-                return true
+function XUiPanelBWTaskGroup:RefreshRedPoint()
+    for _, typeDict in pairs(self._TypeToTabData) do
+        for groupId, groupData in pairs(typeDict) do
+            groupData.Button:ShowReddot(self:CheckGroupRedPoint(groupId))
+            if not XTool.IsTableEmpty(groupData.ChildData) then
+                for questId, questData in pairs(groupData.ChildData) do
+                    questData.Button:ShowReddot(self:CheckQuestRedPoint(questId))
+                end
             end
         end
-    else
-        return XMVCA.XBigWorldQuest:CheckQuestRedWithQuestId(id)
+    end
+end
+
+function XUiPanelBWTaskGroup:CheckGroupRedPoint(groupId)
+    for _, questId in pairs(self._AllReceiveQuestIds) do
+        local gId = self._Control:GetGroupIdByQuestId(questId)
+        if groupId == gId and XMVCA.XBigWorldQuest:CheckQuestRedWithQuestId(questId) then
+            return true
+        end
     end
     return false
 end
 
-function XUiPanelBWTaskGroup:RefreshRedPoint()
-    if XTool.IsTableEmpty(self._TabData) then
-        return
+function XUiPanelBWTaskGroup:CheckQuestRedPoint(questId)
+    return XMVCA.XBigWorldQuest:CheckQuestRedWithQuestId(questId)
+end
+
+function XUiPanelBWTaskGroup:InitTaskGroup(typeId)
+    local groupIds = self._Control:GetGroupIdsByTypeId(typeId)
+    ---@type XUiGridBwQuestTitle
+    local gridTitle
+    for _, groupId in pairs(groupIds) do
+        --获取当前类型下，已经领取的任务
+        local questIds = self._Control:GetQuestIdsByGroupId(groupId, self._AllReceiveQuestIds)
+        if XTool.IsTableEmpty(questIds) then
+            goto continue
+        end
+        --刷新标题
+        gridTitle = self:GetOrCreateGridTitle(typeId)
+        gridTitle:RefreshView(typeId)
+        self:CreateAndRefreshFirstBtn(typeId, groupId)
+
+        --创建具体的任务类型
+        for _, questId in pairs(questIds) do
+            self:CreateAndRefreshSecondBtn(typeId, groupId, questId)
+        end
+        ::continue::
     end
-    
-    for _, data in pairs(self._TabData) do
-        local btn = data.Tab
-        btn:ShowReddot(self:CheckRedPoint(data.IsGroup, data.Id))
+end
+
+function XUiPanelBWTaskGroup:InitMultiTaskGroup()
+    local typeIds = self._Control:GetQuestTypeIds()
+    for _, typeId in pairs(typeIds) do
+        self:InitTaskGroup(typeId)
     end
 end
 
 ---@return XUiGridBwQuestTitle
-function XUiPanelBWTaskGroup:GetTitleGrid(index)
-    local grid = self._GridTitles[index]
+function XUiPanelBWTaskGroup:GetOrCreateGridTitle(typeId)
+    local grid = self._TypeToGridTitle[typeId]
     if not grid then
-        local ui = index == 1 and self.PanelTitle or XUiHelper.Instantiate(self.PanelTitle, self.Transform)
+        local ui = XUiHelper.Instantiate(self.PanelTitle, self.Transform)
+        if IsDebugBuild then
+            ui.gameObject.name = "Title_" .. typeId
+        end
         grid = XUiGridBwQuestTitle.New(ui, self)
-
-        self._GridTitles[index] = grid
+        self._TypeToGridTitle[typeId] = grid
     end
     return grid
 end
 
-function XUiPanelBWTaskGroup:GetIndexByQuestId(questId)
-    local index = self._QuestId2BtnIndex[questId]
-    return index and index or 1
+---@return XUiComponent.XUiButton
+function XUiPanelBWTaskGroup:CreateAndRefreshFirstBtn(typeId, groupId)
+    local typeData = self._TypeToTabData[typeId]
+    if not typeData then
+        typeData = {}
+        self._TypeToTabData[typeId] = typeData
+    end
+    local groupData = typeData[groupId]
+    ---@type XUiComponent.XUiButton
+    local btn
+    ---@type XUiComponent.XUiComponentGroup
+    local component
+    if not groupData then
+        groupData = {
+            Button = false,
+            Component = false
+        }
+        typeData[groupId] = groupData
+        btn = XUiHelper.Instantiate(self.BtnFirst, self.Transform)
+        component = btn.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
+        if not component then
+            component = btn.gameObject:AddComponent(typeof(CS.XUiComponent.XUiComponentGroup))
+        end
+        groupData.Button = btn
+        groupData.Component = component
+        btn:AddEventListener(function() 
+            self:OnClickFirstOrSecondBtn(typeId, groupId, 0)
+        end)
+    else
+        btn = groupData.Button
+        component = groupData.Component
+    end
+    btn.gameObject:SetActiveEx(true)
+    btn:SetNameByGroup(0, self._Control:GetGroupName(groupId))
+    btn:ShowReddot(self:CheckGroupRedPoint(groupId))
+    --策划需要全部展开
+    btn.IsFold = true
+    btn:SetButtonState(CsSelect)
+    local icon = self._Control:GetGroupIcon(groupId)
+    local valid = not string.IsNilOrEmpty(icon)
+    component:SetVisibleWithGroup(0, valid)
+    if valid then
+        component:SetRawImageWithGroup(0, icon)
+    end
+    return btn
 end
+
+---@return XUiComponent.XUiButton
+function XUiPanelBWTaskGroup:CreateAndRefreshSecondBtn(typeId, groupId, questId)
+    local typeData = self._TypeToTabData[typeId]
+    if not typeData then
+        XLog.Error("未创建Type数据，无法创建Quest！！！", typeId, groupId, questId)
+        return
+    end
+    local groupData = typeData[groupId]
+    if not groupData then
+        XLog.Error("未创建QuestGroup数据，无法创建Quest！！！", typeId, groupId, questId)
+        return
+    end
+    local childData = groupData.ChildData
+    if not childData then
+        childData = {}
+        groupData.ChildData = childData
+    end
+    
+    local questData = childData[questId]
+
+    ---@type XUiComponent.XUiButton
+    local btn
+    ---@type XUiComponent.XUiComponentGroup
+    local component
+
+    if not questData then
+        questData = {
+            Button = false,
+            Component = false
+        }
+        childData[questId] = questData
+        btn = XUiHelper.Instantiate(self.BtnSecond, self.Transform)
+        component = btn.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
+        if not component then
+            component = btn.gameObject:AddComponent(typeof(CS.XUiComponent.XUiComponentGroup))
+        end
+        questData.Button = btn
+        questData.Component = component
+        btn:AddEventListener(function()
+            self:OnClickFirstOrSecondBtn(typeId, groupId, questId)
+        end)
+    else
+        btn = questData.Button
+        component = questData.Component
+    end
+    btn.gameObject:SetActiveEx(true)
+    btn:SetNameByGroup(0, self._Control:GetQuestName(questId))
+    btn:SetSprite(self._Control:GetQuestIcon(questId))
+    btn:ShowReddot(self:CheckQuestRedPoint(questId))
+    component:SetVisibleWithGroup(1, XMVCA.XBigWorldQuest:IsTrackQuest(questId))
+    local step = XMVCA.XBigWorldQuest:GetQuestData(questId):GetActiveStepData()
+    local location
+    if step then
+        location = self._Control:GetStepLocation(step:GetId())
+    end
+    if string.IsNilOrEmpty(location) then
+        component:SetVisibleWithGroup(0, false)
+    else
+        btn:SetNameByGroup(1, location)
+        component:SetVisibleWithGroup(0, true)
+    end
+    return btn
+end
+
+function XUiPanelBWTaskGroup:TryClickSecondButton(questId)
+    if not questId or questId <= 0 then
+        return false
+    end
+    local typeId = self._Control:GetQuestType(questId)
+    local typeData = self._TypeToTabData[typeId]
+    if not typeData then
+        return false
+    end
+    local groupId = self._Control:GetGroupIdByQuestId(questId)
+    local groupData = typeData[groupId]
+    if not groupData then
+        return false
+    end
+    local childData = groupData.ChildData
+    if XTool.IsTableEmpty(childData) then
+        return false
+    end
+    self:OnClickFirstOrSecondBtn(typeId, groupId, questId)
+    return true
+end
+
+function XUiPanelBWTaskGroup:OnClickFirstOrSecondBtn(typeId, groupId, questId)
+    local typeData = self._TypeToTabData[typeId]
+    if not typeData then
+        return
+    end
+    local groupData = typeData[groupId]
+    if not groupData then
+        return
+    end
+    if questId <= 0 then --点击的是任务组
+        self:DoClickFirstButton(typeId, groupId, questId)
+    else
+        self:DoClickSecondButton(typeId, groupId, questId)
+    end
+end
+
+function XUiPanelBWTaskGroup:DoClickFirstButton(typeId, groupId, questId)
+    local groupData = self._TypeToTabData[typeId][groupId]
+    local btn = groupData.Button
+    local isFold = not btn.IsFold
+    btn.IsFold = isFold
+    local childData = groupData.ChildData
+    if childData then
+        local isSelectFirst = false
+        for qId, tabData in pairs(childData) do
+            if isFold then
+                tabData.Button.gameObject:SetActiveEx(true)
+                if not isSelectFirst then
+                    self:OnClickFirstOrSecondBtn(typeId, groupId, qId)
+                    isSelectFirst = true
+                end
+            else
+                tabData.Button.gameObject:SetActiveEx(false)
+                tabData.Button:SetButtonState(CsNormal)
+            end
+        end
+    end
+    btn:SetButtonState(isFold and CsSelect or CsNormal)
+end
+
+function XUiPanelBWTaskGroup:DoClickSecondButton(typeId, groupId, questId)
+    local groupData = self._TypeToTabData[typeId][groupId]
+    local lastSelect = self:GetLastSelectData()
+    local childData = groupData.ChildData[questId]
+    if not childData then
+        return
+    end
+    --选中当前
+    local btn = childData.Button
+    --重复点击
+    if lastSelect.TypeId == typeId and lastSelect.GroupId == groupId and lastSelect.QuestId == questId then
+        btn:SetButtonState(CsSelect)
+        return
+    end
+    --取消上次选中
+    self:CancelLastSelect()
+    btn:SetButtonState(CsSelect)
+    self.Parent:SetSelectData(self._TypeId, questId)
+    self:SetLastSelectData(typeId, groupId, questId)
+    --播放动画
+    self.Parent:PlayAnimation("ContentQieHuan")
+    --刷新右边
+    self.Parent:RefreshTaskContent(typeId, groupId, questId)
+    --标记已经被点击过
+    XMVCA.XBigWorldQuest:MarkQuestRedPoint(questId)
+    --刷新红点
+    self:RefreshRedPoint()
+end
+
+function XUiPanelBWTaskGroup:GetLastSelectData()
+    return self._LastSelectData
+end
+
+function XUiPanelBWTaskGroup:SetLastSelectData(typeId, groupId, questId)
+    self._LastSelectData.TypeId = typeId
+    self._LastSelectData.GroupId = groupId
+    self._LastSelectData.QuestId = questId
+    self._LastSelectData.IsValid = typeId > 0 and groupId > 0 and questId > 0
+end
+
+function XUiPanelBWTaskGroup:CancelLastSelect()
+    local lastSelect = self:GetLastSelectData()
+    if not lastSelect.IsValid then
+        return
+    end
+    local typeData = self._TypeToTabData[lastSelect.TypeId]
+    if not typeData then
+        return
+    end
+    local groupData = typeData[lastSelect.GroupId]
+    if not groupData then
+        return
+    end
+    local childData = groupData.ChildData
+    if not childData or lastSelect.QuestId <= 0 then
+        return
+    end
+    local btn = childData[lastSelect.QuestId].Button
+    btn:SetButtonState(CsNormal)
+end
+
+function XUiPanelBWTaskGroup:GetFirstQuestId()
+    if self._IsAllType then
+        local typeIds = self._Control:GetQuestTypeIds()
+        for _, typeId in pairs(typeIds) do
+            local result, questId = self:TryGetFirstQuestIdByTypeId(typeId)
+            if result then
+                return questId
+            end
+        end
+    else
+        local result, questId = self:TryGetFirstQuestIdByTypeId(self._TypeId)
+        if result then
+            return questId
+        end
+    end
+    return 0
+end
+
+function XUiPanelBWTaskGroup:TryGetFirstQuestIdByTypeId(typeId)
+    local groupIds = self._Control:GetGroupIdsByTypeId(typeId)
+    for _, groupId in pairs(groupIds) do
+        local questIds = self._Control:GetQuestIdsByGroupId(groupId, self._AllReceiveQuestIds)
+        if not XTool.IsTableEmpty(questIds) then
+            return true, questIds[1]
+        end
+    end
+    return false, 0
+end
+
+---@class XUiGridBWQuestGroupTab
+---@field public Button XUiComponent.XUiButton
+---@field public Component XUiComponent.XUiComponentGroup
+---@field public ChildData table<number, XUiGridBWQuestGroupTab>
 
 return XUiPanelBWTaskGroup

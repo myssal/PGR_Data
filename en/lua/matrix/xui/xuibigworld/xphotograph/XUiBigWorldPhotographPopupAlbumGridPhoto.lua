@@ -4,7 +4,7 @@ local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local XUiBigWorldPhotographPopupAlbumGridPhoto = XClass(XUiNode, "XUiBigWorldPhotographPopupAlbumGridPhoto")
 
 function XUiBigWorldPhotographPopupAlbumGridPhoto:Ctor()
-    self.GridPhoto.CallBack = function() self:OnGridPhotoClick() end
+    self.GridPhoto:AddEventListener(handler(self, self.OnGridPhotoClick))
     self._defaultSize = self.ImgPhoto.transform.sizeDelta
     self._sizeAspectRatio = self._defaultSize.x / self._defaultSize.y
 end

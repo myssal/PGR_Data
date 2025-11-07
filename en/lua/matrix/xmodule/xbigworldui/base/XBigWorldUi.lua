@@ -6,15 +6,12 @@ local XBigWorldUi = XClass(XLuaUi, "XBigWorldUi")
 function XBigWorldUi:OnAwakeUi()
     self._IsPauseFight = XMVCA.XBigWorldUI:IsPauseFight(self.Name)
     self._IsChangeInput = XMVCA.XBigWorldUI:IsChangeInput(self.Name)
+    self._CustomChangeInput = false
     self._IsHideFightUi = XMVCA.XBigWorldUI:IsHideFightUi(self.Name)
     self._IsCloseCameraControl = XMVCA.XBigWorldUI:IsCloseCameraControl(self.Name)
 
     if self._IsPauseFight then
         XMVCA.XBigWorldGamePlay:PauseFight()
-    end
-
-    if self._IsChangeInput then
-        XMVCA.XBigWorldGamePlay:ChangeSystemInput()
     end
 
     if self._IsHideFightUi then
@@ -27,10 +24,6 @@ end
 function XBigWorldUi:OnDestroyUi()
     if self._IsPauseFight then
         XMVCA.XBigWorldGamePlay:ResumeFight()
-    end
-    
-    if self._IsChangeInput then
-        XMVCA.XBigWorldGamePlay:ChangeFightInput()
     end
     
     if self._IsHideFightUi then
@@ -49,9 +42,15 @@ function XBigWorldUi:OnEnableUi(...)
     self:SetCameraControlStatus(false)
     XUiManager.AddControllerTips(self.Name)
     XLuaUi.OnEnableUi(self, ...)
+
+    -- 设置输入
+    self:ChangeSystemInput()
 end
 
 function XBigWorldUi:OnDisableUi(...)
+    -- 移除输入
+    self:ChangeFightInput()
+
     self:SetCameraControlStatus(true)
     XLuaUi.OnDisableUi(self, ...)
     XUiManager.RemoveControllerTips(self.Name)
@@ -68,14 +67,26 @@ function XBigWorldUi:ChangePauseFight(value)
     end
 end
 
+function XBigWorldUi:ChangeSystemInput()
+    if self._IsChangeInput then
+        XMVCA.XBigWorldGamePlay:ChangeSystemInput()
+    end
+end
+
+function XBigWorldUi:ChangeFightInput()
+    if self._IsChangeInput then
+        XMVCA.XBigWorldGamePlay:ChangeFightInput()
+    end
+end
+
 function XBigWorldUi:ChangeInput(value)
-    if value ~= self._IsChangeInput then
-        if self._IsChangeInput then
+    if value ~= self._CustomChangeInput then
+        if self._CustomChangeInput then
             XMVCA.XBigWorldGamePlay:ChangeFightInput()
         else
             XMVCA.XBigWorldGamePlay:ChangeSystemInput()
         end
-        self._IsChangeInput = value
+        self._CustomChangeInput = value
     end
 end
 
@@ -90,21 +101,11 @@ function XBigWorldUi:ChangeHideFightUi(value)
     end
 end
 
---- 锁住弹窗队列，直至打开的后续界面全部关闭
-function XBigWorldUi:BeginOpenOperator(uiName, ...)
-    if not string.IsNilOrEmpty(uiName) then
-        XMVCA.XBigWorldUI:BeginPopupQueueOperator(self.Name)
-        XMVCA.XBigWorldUI:Open(uiName, ...)
-    end
-end
-
---- 锁住弹窗队列，直至打开的后续界面全部关闭
-function XBigWorldUi:BeginOpenOperatorAfterClose(uiName, ...)
+--- 向队列头插入一个UI，保证队列下个打开的一定是这个UI
+function XBigWorldUi:InsertQueueBeforeClose(uiName, ...)
     if not string.IsNilOrEmpty(uiName) then
         XMVCA.XBigWorldUI:InsertHeaderAwaitUi(uiName, ...)
-        XMVCA.XBigWorldUI:Close(self.Name, function() 
-            XMVCA.XBigWorldUI:BeginPopupQueueOperator(uiName)
-        end)
+        self:Close()
     end
 end
 

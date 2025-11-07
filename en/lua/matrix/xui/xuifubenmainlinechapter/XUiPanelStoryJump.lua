@@ -20,11 +20,11 @@ function XUiPanelStoryJump:Ctor(ui, rootUi)
 end
 
 function XUiPanelStoryJump:GetConfig()
-    if self.Type == XFubenConfigs.ChapterType.MainLine then
+    if self.Type == XEnumConst.FuBen.ChapterType.MainLine then
         return XFubenMainLineConfigs.GetNextChapterCfgByChapterId(self.ChapterId)
-    elseif self.Type == XFubenConfigs.ChapterType.ShortStory then
+    elseif self.Type == XEnumConst.FuBen.ChapterType.ShortStory then
         return XFubenShortStoryChapterConfigs.GetNextChapterCfgByChapterId(self.ChapterId)
-    elseif self.Type == XFubenConfigs.ChapterType.ExtralChapter then
+    elseif self.Type == XEnumConst.FuBen.ChapterType.ExtralChapter then
         return XFubenExtraChapterConfigs.GetNextChapterCfgByChapterId(self.ChapterId)
     end
     return nil
@@ -72,7 +72,7 @@ function XUiPanelStoryJump:RefreshButton()
             ChapterId = chapterId,
             ChapterName = self.Config.StoryChapterName[index] or ""
         }
-        if chapterType == XFubenConfigs.ChapterType.Prequel then
+        if chapterType == XEnumConst.FuBen.ChapterType.Prequel then
             tableInsert(prequeldata, tempData)
         else
             tableInsert(storyData, tempData)
@@ -132,11 +132,11 @@ function XUiPanelStoryJump:GetShowPopupData()
     for index, chapterId in pairs(self.Config.StoryChapterId) do
         local data = {}
         local storyChpterType = self.Config.StoryChpterType[index]
-        if storyChpterType == XFubenConfigs.ChapterType.Prequel then
+        if storyChpterType == XEnumConst.FuBen.ChapterType.Prequel then
             local prequelChapter = XPrequelConfigs.GetPrequelChapterById(chapterId)
             data.ChapterName = prequelChapter.ChapterName
             tableInsert(prequeldata, data)
-        elseif storyChpterType == XFubenConfigs.ChapterType.MainLine then
+        elseif storyChpterType == XEnumConst.FuBen.ChapterType.MainLine then
             local mainlineChapter = XDataCenter.FubenMainLineManager.GetChapterCfg(chapterId)
             local chapterInfo = XDataCenter.FubenMainLineManager.GetChapterInfo(chapterId)
             data.ChapterName = XFubenMainLineConfigs.GetChapterMainChapterEn(chapterInfo.ChapterMainId)
@@ -146,9 +146,9 @@ function XUiPanelStoryJump:GetShowPopupData()
                 tableInsert(nextData, data)
             end
         else
-            if storyChpterType == XFubenConfigs.ChapterType.ShortStory then
+            if storyChpterType == XEnumConst.FuBen.ChapterType.ShortStory then
                 data.ChapterName = XFubenShortStoryChapterConfigs.GetChapterEnById(chapterId)
-            elseif storyChpterType == XFubenConfigs.ChapterType.ExtralChapter then
+            elseif storyChpterType == XEnumConst.FuBen.ChapterType.ExtralChapter then
                 local extralChapter = XDataCenter.ExtraChapterManager.GetChapterDetailsCfg(chapterId)
                 data.ChapterName = extralChapter.ChapterEn
             end

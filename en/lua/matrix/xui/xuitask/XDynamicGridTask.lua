@@ -70,7 +70,7 @@ function XDynamicGridTask:ResetData(data)
     local config = XDataCenter.TaskManager.GetTaskTemplate(self.Data.Id)
     self.tableData = config
     self.TxtTaskName.text = config.Title
-    self.TxtTaskDescribe.text = config.Desc
+    self.TxtTaskDescribe.text = XUiHelper.ReplaceTextNewLine(config.Desc)
     self.TxtSubTypeTip.text = config.Suffix or ""
     --self.RootUi:SetUiSprite(self.RImgTaskType, config.Icon)
     if self.RImgTaskType then
@@ -252,11 +252,29 @@ function XDynamicGridTask:OnBtnAllReceiveClick()
     end
 end
 
+function XDynamicGridTask:SetObtainUiCb(cb)
+    self._obtainCb = cb
+end
+
 function XDynamicGridTask:OpenUiObtain(...)
+    if self._obtainCb then
+        self._obtainCb(...)
+        return
+    end
     XUiManager.OpenUiObtain(...)
 end
 
+-- 设置领取单个任务奖励的时候，领取所有的任务奖励
+function XDynamicGridTask:SetReceiveAll()
+    self.IsReceiveAll = true
+end
+
 function XDynamicGridTask:OnBtnFinishClick()
+    if self.IsReceiveAll then
+        self:OnBtnAllReceiveClick()
+        return
+    end
+    
 	if self.BeforeFinishCheckEvent then
 		if not self.BeforeFinishCheckEvent(self.tableData) then
 			return 

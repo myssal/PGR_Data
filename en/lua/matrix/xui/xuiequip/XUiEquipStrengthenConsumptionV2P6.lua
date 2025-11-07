@@ -23,7 +23,9 @@ function XUiEquipStrengthenConsumptionV2P6:OnStart(equipId, consumes, changeCb)
     -- 展示用的列表
     self.ShowConsumes = {}
     for _, consume in ipairs(consumes) do
-        table.insert(self.ShowConsumes, consume)
+        if not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(consume.Id) then
+            table.insert(self.ShowConsumes, consume)
+        end
     end
     table.sort(self.ShowConsumes, self.ShowOrderSort)
 

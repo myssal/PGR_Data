@@ -12,8 +12,20 @@ local XUiBigWorldMessageGrid = XClass(XUiNode, "XUiBigWorldMessageGrid")
 -- region 生命周期
 
 function XUiBigWorldMessageGrid:OnStart()
+    local animation = self.Transform:FindTransform("Animation")
+    local panelChatEnable = animation:FindTransform("PanelChatEnable")
+    local panelCharacter = animation:FindTransform("PanelCharacter")
+
     self.LoadingEffect = self.Transform:FindTransform("PanelMessageLoading")
     self._AnimationName = "PanelCharacter"
+
+    if panelChatEnable then
+        self.ChatPlayable = panelChatEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    end
+    if panelCharacter then
+        self.CharacterPlayable = panelCharacter:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    end
+
     self:_RegisterButtonClicks()
 end
 
@@ -68,8 +80,21 @@ function XUiBigWorldMessageGrid:SetLoadingEffectActive(isActive)
 end
 
 ---@param content XBWMessageContentEntity
-function XUiBigWorldMessageGrid:PlayEnableAnimation(content)
+function XUiBigWorldMessageGrid:PlayEnableAnimation(content, audioPlayer)
     if content:IsComplete() then
+        if self._AnimationName == "PanelChatEnable" then
+            if self.ChatPlayable then
+                self.ChatPlayable.time = self.ChatPlayable.duration
+                self.ChatPlayable:Evaluate()
+            end
+        end
+        if self._AnimationName == "PanelCharacter" then
+            if self.CharacterPlayable then
+                self.CharacterPlayable.time = self.CharacterPlayable.duration
+                self.CharacterPlayable:Evaluate()
+            end
+        end
+
         self:_PlayFinish(content)
         return
     end
@@ -77,8 +102,17 @@ function XUiBigWorldMessageGrid:PlayEnableAnimation(content)
         return
     end
 
+    if audioPlayer then
+        if content:IsReceive() then
+            audioPlayer:PlayByKeyName("getmessage")
+        elseif content:IsSend() then
+            audioPlayer:PlayByKeyName("sendmessage")
+        end
+    end
+
     self._IsPlayed = true
-    self:PlayAnimation(self._AnimationName, function()
+
+    self:PlayAnimation(self._AnimationName, function(isFinish)
         self:_PlayFinish(content)
     end)
 end
@@ -117,6 +151,7 @@ function XUiBigWorldMessageGrid:_PlayFinish(content)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAY_NEXT_MESSAGE_NOTIFY)
 
     if content:IsEnd() then
+        CS.XLog.Debug("[BigWorldMessage]: Play Message Content Play Finish. StepId: " .. tostring(content:GetStepId()) .. "\n" .. debug.traceback())
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, content)
     end
 end

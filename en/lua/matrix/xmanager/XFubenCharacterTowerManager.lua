@@ -6,7 +6,7 @@ local XCharacterTowerRelationInfo = require("XEntity/XCharacterTower/XCharacterT
 
 XFubenCharacterTowerManagerCreator = function()
     ---@class XFubenCharacterTowerManager
-    local XFubenCharacterTowerManager = XExFubenCharacterTowerManager.New(XFubenConfigs.ChapterType.CharacterTower)
+    local XFubenCharacterTowerManager = XExFubenCharacterTowerManager.New(XEnumConst.FuBen.ChapterType.CharacterTower)
     
     local RequestProto = {
         CharacterTowerGetChapterRewardRequest = "CharacterTowerGetChapterRewardRequest", -- 领取章节奖励请求

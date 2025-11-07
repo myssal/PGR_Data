@@ -151,11 +151,37 @@ function XUiPartnerPresetPassiveSkill:DoSkillSelect()
 
     if self:IsSkillChange() then
         XDataCenter.PartnerManager.RefreshPresetSkillCache(self.Partner:GetId(), skillDict, XPartnerConfigs.SkillType.PassiveSkill)
+        self:CheckIsUpdateSkillData(self.Partner)
         XEventManager.DispatchEvent(XEventId.EVENT_PARTNER_PRESET_SKILL_CHANGE, self.Partner)
+    else
+        self:Close()
+    end
+end
+
+function XUiPartnerPresetPassiveSkill:CheckIsUpdateSkillData(partner)
+    if not partner then
+        return
     end
     
-    self:Close()
-end 
+    local id = partner:GetId()
+    local isCarried = XTool.IsNumberValid(self.PartnerPrefab:GetCarriedDict()[id])
+    -- local isCorresponding = self:GetEquipPartnerIndexBySelectRole() == self.SelectPartnerIndex
+    local changeSkill = self.PartnerPrefab:IsSkillChangeWithPrefab2Cache(id)
+    local pos = self.PartnerPrefab:GetCarriedDict()[id]
+
+    if changeSkill and isCarried then
+        self.PartnerPrefab:UpdateSkillData(pos, id)
+        local skillData = self.PartnerPrefab:GetSkillData(id)
+        local teamId = self.PartnerPrefab.TeamId
+        -- 提交更新到服务器（关联XTeamPrefab的TeamId）
+        XDataCenter.PartnerManager.TeamPreSetPartnerRequest(teamId, pos, id, skillData, function()
+            XLuaUiManager.Open("UiPartnerPopupTip", XUiHelper.GetText("PartnerTeamPrefabSkillSaveTips"))
+            self:Close()
+        end)
+    else
+        self:Close()
+    end
+end
 
 function XUiPartnerPresetPassiveSkill:IsSkillChange()
     local countInit = XTool.GetTableCount(self.InitGroup)

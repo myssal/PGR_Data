@@ -479,75 +479,7 @@ function XUiPanelSignBoard:OnBtnCommunicationClick()
 end
 
 --播放
-function XUiPanelSignBoard:Play(element)
-    if not element then
-        return
-    end
 
-    if self.PlayCb then
-        self.PlayCb()
-    end
-
-    --用CvId与CvType来索引Cv.tab,从而获得Content
-    local content
-    local cvId = element.SignBoardConfig.CvId
-    local cvType
-    if element.CvType then
-        cvType = element.CvType
-        --播放动作页签下的动作，使用页签选择的语言类型
-        content = XMVCA.XFavorability:GetCvContentByIdAndType(cvId, element.CvType)
-    else
-        --播放看板交互的动作，使用设置项的语言
-        cvType = CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
-        content = XMVCA.XFavorability:GetCvContentByIdAndType(cvId, cvType)
-    end
-    self.TxtSplitCvContent:ShowContent(cvId, cvType, content)
-
-    self:ShowNormalContent(element.SignBoardConfig.Content ~= nil and self.DialogTrigger)
-    self.PanelOpration.gameObject:SetActiveEx(element.SignBoardConfig.ShowButton ~= nil and self.OperateTrigger)
-
-    --self.BtnPhoto.gameObject:SetActiveEx(false)
-    --self.BtnInteractive.gameObject:SetActiveEx(false)
-    -- self.BtnActivity.gameObject:SetActiveEx(false)
-    -- if element.SignBoardConfig.ShowButton ~= nil then
-    --     local btnIds = string.Split(element.SignBoardConfig.ShowButton, "|")
-    --     if btnIds and #btnIds > 0 then
-    --         for i, v in ipairs(btnIds) do
-    --             if v == "1" then
-    --                 self.BtnPhoto.gameObject:SetActiveEx(not self.DisplayPanel.IsShow and self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN)
-    --             end
-    --             if v == "2" then
-    --                 self.BtnInteractive.gameObject:SetActiveEx(self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN)
-    --             end
-    --             if v == "3" then
-    --                 self.BtnActivity.gameObject:SetActiveEx(true)
-    --             end
-    --         end
-    --     end
-    -- end
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 and self.CvTrigger then
-        if element.CvType then
-            self:PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
-        else
-            self:PlayCv(element.SignBoardConfig.CvId)
-        end
-    end
-
-    local actionId = element.SignBoardConfig.ActionId
-    if actionId then
-        self:PlayAnima(actionId)
-        self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
-    end
-
-    if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
-        self.Parent:PlayAnimation("AnimOprationBegan")
-        self:StopTimerShow()
-        self.TimerShow = XScheduleManager.ScheduleOnce(function()
-            self.Parent:PlayAnimation("AnimOprationEnd")
-            self.PanelOpration.gameObject:SetActiveEx(false)
-        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
-    end
-end
 
 -- v1.32 播放角色特殊动作场景动画
 function XUiPanelSignBoard:PlaySceneAnim(element)
@@ -574,62 +506,6 @@ function XUiPanelSignBoard:PlayUiAnim()
     -- 隐藏Operation按钮完全交给策划用IsShowBtn控制
 end
 
-function XUiPanelSignBoard:PlayCross(element)
-    if not element then
-        return
-    end
-
-    if self.PlayCb then
-        self.PlayCb()
-    end
-
-    --用CvId与CvType来索引Cv.tab,从而获得Content
-    local content = ""
-    local cvId = element.SignBoardConfig.CvId
-    local cvType = CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
-    if XTool.IsNumberValid(cvId) then
-        if element.CvType then
-            cvType = element.CvType
-            --播放动作页签下的动作，使用页签选择的语言类型
-            content = XMVCA.XFavorability:GetCvContentByIdAndType(cvId, element.CvType)
-        else
-            --播放看板交互的动作，使用设置项的语言
-            cvType = CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
-            content = XMVCA.XFavorability:GetCvContentByIdAndType(cvId, cvType)
-        end
-    end
-    self.TxtSplitCvContent:ShowContent(cvId, cvType, content)
-
-    self:ShowNormalContent(not string.IsNilOrEmpty(element.SignBoardConfig.Content) and self.DialogTrigger)
-
-    local flag = element.SignBoardConfig.ShowButton ~= nil and self.OperateTrigger
-    self.PanelOpration.gameObject:SetActiveEx(flag)
-
-    if element.SignBoardConfig.CvId and element.SignBoardConfig.CvId > 0 and self.CvTrigger then
-        if element.CvType then
-            self:PlayCvWithCvType(element.SignBoardConfig.CvId, element.CvType)
-        else
-            self:PlayCv(element.SignBoardConfig.CvId)
-        end
-    end
-
-    XMVCA.XUiMain:SetLastPlaySignBoardCfgId(element.SignBoardConfig.Id)
-    local actionId = element.SignBoardConfig.ActionId
-    if actionId then
-        self:PlayAnimaCross(actionId)
-        self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
-    end
-
-    if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
-        self.Parent:PlayAnimation("AnimOprationBegan")
-        self:StopTimerShow()
-        self.TimerShow = XScheduleManager.ScheduleOnce(function()
-            self.Parent:PlayAnimation("AnimOprationEnd")
-            self.PanelOpration.gameObject:SetActiveEx(false)
-        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
-    end
-end
-
 --显示对白
 function XUiPanelSignBoard:ShowNormalContent(show)
     self:SetPanelLayoutActive(show)
@@ -638,7 +514,6 @@ function XUiPanelSignBoard:ShowNormalContent(show)
     self.BtnReplace:SetDisable(self:CheckBtnReplaceDisable())
     self.BtnCommunication:SetButtonState(CS.UiButtonState.Normal)
 end
-
 
 --显示操作按钮
 function XUiPanelSignBoard:ShowOprationBtn()
@@ -655,31 +530,6 @@ function XUiPanelSignBoard:ShowContent(cvId, cvType)
     self.TxtSplitCvContent:ShowContent(cvId, cvType, content)
 end
 
---播放CV
-function XUiPanelSignBoard:PlayCv(cvId)
-    local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-    if targetSkinMeshFace then
-        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace)
-    else
-        self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
-    end
-end
-
-function XUiPanelSignBoard:PlayCvWithCvType(cvId, cvType)
-    if self.PlayingAudio then
-        --正在播放语音页签下的语音，播放新动作需要打断语音并播放打断特效
-        self.Parent.FavorabilityMain.FavorabilityShow:UnScheduleAudioPlay()
-        self.Parent:PlayChangeActionEffect()
-        self.PlayingAudio = false
-    end
-    
-    local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-    if targetSkinMeshFace then
-        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace, cvType or -1)
-    else
-        self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
-    end
-end
 
 --是否在播放看板系统下语音页签的语音
 function XUiPanelSignBoard:SetPlayingAudio(value)
@@ -995,6 +845,128 @@ function XUiPanelSignBoard:OnAnimationEnter(evt, args)
     end
     self.RoleModel:DoAnimaCrossFinishCallBack()
     self.RoleModel:LoadCharacterUiEffect(self.DisplayCharacterId, actionId)
+end
+
+--============================
+-- 通用CV播放
+--============================
+function XUiPanelSignBoard:_DoPlayCv(cvId, cvType)
+    if not (cvId and cvId > 0) then return end
+
+    -- 如果正在播放，需要打断
+    if self.PlayingAudio then
+        self.Parent.FavorabilityMain.FavorabilityShow:UnScheduleAudioPlay()
+        self.Parent:PlayChangeActionEffect()
+        self.PlayingAudio = false
+    end
+
+    local targetFace = self.RoleModel and self.RoleModel:GetSkinMeshFace()
+    if targetFace then
+        self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetFace, cvType or -1)
+    elseif cvType then
+        self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
+    else
+        self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
+    end
+end
+
+--============================
+-- 播放入口: 普通
+--============================
+function XUiPanelSignBoard:Play(element)
+    if not element then return end
+    if self.PlayCb then self.PlayCb() end
+
+    self:_PlayUi(element)
+    self:_PlayCv(element)
+    self:_PlayAction(element, false)
+
+    if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
+        self.Parent:PlayAnimation("AnimOprationBegan")
+        self:StopTimerShow()
+        self.TimerShow = XScheduleManager.ScheduleOnce(function()
+            self.Parent:PlayAnimation("AnimOprationEnd")
+            self.PanelOpration.gameObject:SetActiveEx(false)
+        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
+    end
+end
+
+
+--============================
+-- 播放入口: Cross
+--============================
+function XUiPanelSignBoard:PlayCross(element)
+    if not element then return end
+    if self.PlayCb then self.PlayCb() end
+
+    self:_PlayUi(element)
+    self:_PlayCv(element)
+    self:_PlayAction(element, true)
+
+    XMVCA.XUiMain:SetLastPlaySignBoardCfgId(element.SignBoardConfig.Id)
+
+    if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
+        self.Parent:PlayAnimation("AnimOprationBegan")
+        self:StopTimerShow()
+        self.TimerShow = XScheduleManager.ScheduleOnce(function()
+            self.Parent:PlayAnimation("AnimOprationEnd")
+            self.PanelOpration.gameObject:SetActiveEx(false)
+        end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
+    end
+end
+
+
+--============================
+-- UI显示
+--============================
+function XUiPanelSignBoard:_PlayUi(element)
+    local cvId = element.SignBoardConfig.CvId
+    local cvType = element.CvType or CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
+    local content = XTool.IsNumberValid(cvId) and XMVCA.XFavorability:GetCvContentByIdAndType(cvId, cvType) or ""
+
+    self.TxtSplitCvContent:ShowContent(cvId, cvType, content)
+    self:ShowNormalContent(not string.IsNilOrEmpty(element.SignBoardConfig.Content) and self.DialogTrigger)
+    if not XUiManager.IsHideFunc then
+        self.PanelOpration.gameObject:SetActiveEx(element.SignBoardConfig.ShowButton ~= nil and self.OperateTrigger)
+    end
+end
+
+
+--============================
+-- CV播放调度
+--============================
+function XUiPanelSignBoard:_PlayCv(element)
+    local cvId = element.SignBoardConfig.CvId
+    if not (cvId and cvId > 0 and self.CvTrigger) then return end
+    
+    local cvType = element.CvType or CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
+    self:_DoPlayCv(cvId, cvType)
+
+    -- 播放某些看板Cv时检测静音Bgm
+    if element.SignBoardConfig.TurnOffBgm then
+        if self.PlayingCv then
+            XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
+            self.PlayingCv.FinishCb = function ()
+                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+            end
+        end
+    end
+end
+
+
+--============================
+-- 动作/特效
+--============================
+function XUiPanelSignBoard:_PlayAction(element, isCross)
+    local actionId = element.SignBoardConfig.ActionId
+    if not actionId then return end
+
+    if isCross then
+        self:PlayAnimaCross(actionId)
+    else
+        self:PlayAnima(actionId)
+    end
+    self.RoleModel:LoadCharacterUiEffect(tonumber(element.SignBoardConfig.RoleId), actionId)
 end
 
 return XUiPanelSignBoard

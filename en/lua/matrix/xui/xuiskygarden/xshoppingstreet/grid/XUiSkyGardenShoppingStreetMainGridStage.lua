@@ -5,7 +5,7 @@ local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local XUiSkyGardenShoppingStreetMainGridStage = XClass(XUiNode, "XUiSkyGardenShoppingStreetMainGridStage")
 
 function XUiSkyGardenShoppingStreetMainGridStage:Ctor()
-    self.GridStage.CallBack = function() self:OnGridStageClick() end
+    self.GridStage:AddEventListener(handler(self, self.OnGridStageClick))
     self._Items = {}
     self.StarComs = {
         self.ImgOn1,

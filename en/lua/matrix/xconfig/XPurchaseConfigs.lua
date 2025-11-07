@@ -98,7 +98,8 @@ XPurchaseConfigs.PanelExNameConfig = {
     PanelYk = "PanelYkEx",
     PanelHksd = "PanelHksdEx",
     PanelDh = "PanelDhEx",
-    PanelCoatingLb = "PanelCoatingLbEx"
+    PanelCoatingLb = "PanelCoatingLbEx",
+    PanelBundleLbEx = "PanelBundleLbEx",
 }
 
 XPurchaseConfigs.TabExConfig = {
@@ -132,6 +133,7 @@ XPurchaseConfigs.UiType = {
     Pay = 1, --充值
     CoatingLB = 8, -- 皮肤补给包
     Scene = 10, -- 场景补给包
+    ComboPackage = 14, -- 捆绑包
 }
 
 XPurchaseConfigs.RecommendSkipType = {
@@ -141,6 +143,7 @@ XPurchaseConfigs.RecommendSkipType = {
 
 XPurchaseConfigs.UiPurchaseCustomOperation = {
     OpenCanRenewWeekCardBuyTip = 1, -- 打开一个快到期可续费的周卡（n天卡）礼包购买弹窗界面
+    OpenBuyTip = 2, -- 选中【热门推荐】里某个页签并且打开购买弹窗
 }
 
 XPurchaseConfigs.UiRandomRewardTipsTabIndex = {

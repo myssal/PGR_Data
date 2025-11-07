@@ -3,12 +3,12 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 ---@field Parent XUiPanelBWRoleList
 local XUiGridBWRoleVTeam = XClass(XUiNode, "XUiGridBWRoleVTeam")
 
+local LerpTime = 700
+
 function XUiGridBWRoleVTeam:OnStart()
     if self.BtnClick then
         self.BtnClick.gameObject:SetActiveEx(true)
-        self.BtnClick.CallBack = function() 
-            self:OnBtnClick()
-        end
+        self.BtnClick:AddEventListener(handler(self, self.OnBtnClick))
     end
 end
 
@@ -60,6 +60,10 @@ function XUiPanelBWRoleList:OnEnable()
     self:SetupDynamicTable()
 end
 
+function XUiPanelBWRoleList:OnDisable()
+    self.LerpTime = 0
+end
+
 function XUiPanelBWRoleList:OnDestroy()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_ROLE_TEAM_STATUS_REFRESH, self.SetupDynamicTable, self)
 end
@@ -104,6 +108,7 @@ function XUiPanelBWRoleList:RefreshView(teamId, entityId, pos)
     local first = math.min(team:GetCount() + 1, #dataList)
     self._SelectEntityId = (entityId and entityId > 0) and entityId or dataList[first]
     self._DataList = dataList
+    self.LerpTime = LerpTime
     self:SetupDynamicTable()
 end
 
@@ -111,11 +116,21 @@ function XUiPanelBWRoleList:SetupDynamicTable()
     if XTool.IsTableEmpty(self._DataList) then
         return
     end
+    local startIndex
+    for i, entityId in pairs(self._DataList) do
+        if entityId == self._SelectEntityId then
+            startIndex = i
+            break
+        end
+    end
     self._DynamicTable:SetDataSource(self._DataList)
-    self._DynamicTable:ReloadDataSync()
+    self._DynamicTable:ReloadDataSync(startIndex)
 end
 
 function XUiPanelBWRoleList:OnDynamicTableEvent(evt, index, grid)
+    if not self._DataList then
+        return
+    end
     if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local entityId = self._DataList[index]
         local pos = self._Team:GetEntityPos(entityId)
@@ -130,7 +145,7 @@ function XUiPanelBWRoleList:OnDynamicTableEvent(evt, index, grid)
         end
         local temp = self._DynamicTable:GetGridByIndex(pos)
         self._Last = temp
-        self:DoLoadModel(self._SelectEntityId)
+        self:DoLoadModel(self._SelectEntityId, self.LerpTime)
     elseif evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self:OnSelect(index, grid)
     end
@@ -147,11 +162,15 @@ function XUiPanelBWRoleList:OnSelect(index, grid)
     self._SelectEntityId = targetId
     grid:SetSelect(true)
     self._Last = grid
-    self:DoLoadModel(targetId)
+    self:DoLoadModel(targetId, 0)
 end
 
-function XUiPanelBWRoleList:DoLoadModel(entityId)
-    self.Parent:OnSelectSingle(self._Pos, entityId)
+function XUiPanelBWRoleList:DoLoadModel(entityId, lerpTime)
+    self.Parent:OnSelectSingle(self._Pos, entityId, lerpTime)
+end
+
+function XUiPanelBWRoleList:GetPosAndEntityId()
+    return self._Pos,  XMVCA.XBigWorldCharacter:GetDlcTeam(self._TeamId):GetEntityId(self._Pos)
 end
 
 return XUiPanelBWRoleList

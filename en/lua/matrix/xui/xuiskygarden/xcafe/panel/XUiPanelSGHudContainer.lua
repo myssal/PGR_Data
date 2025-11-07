@@ -88,6 +88,9 @@ function XUiGridSGCafeHud:OnDestroy()
 end
 
 function XUiGridSGCafeHud:OnDispose()
+    self._Offset = nil
+    self._Target = nil
+    
     if self._TimerId then
         XScheduleManager.UnSchedule(self._TimerId)
         self._TimerId = nil
@@ -152,11 +155,6 @@ function XUiGridSGCafeHud:Refresh(id, target, offset, type, value)
             self.TxtMinus.text = value
         end
     end
-end
-
-function XUiGridSGCafeHud:OnDisable()
-    self._Offset = nil
-    self._Target = nil
 end
 
 ---@class XUiPanelSGHudContainer : XUiNode

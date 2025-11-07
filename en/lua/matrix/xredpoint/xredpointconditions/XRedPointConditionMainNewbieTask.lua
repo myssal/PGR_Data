@@ -7,6 +7,8 @@ function XRedPointConditionMainNewbieTask.GetSubEvents()
         XRedPointEventElement.New(XEventId.EVENT_TASK_SYNC),
         XRedPointEventElement.New(XEventId.EVENT_FUNCTION_OPEN_COMPLETE),
         XRedPointEventElement.New(XEventId.EVENT_NEWBIE_TASK_UNLOCK_PERIOD_CHANGED),
+        XRedPointEventElement.New(XEventId.EVENT_FINISH_MULTI),
+        XRedPointEventElement.New(XEventId.EVENT_NEWBIETASK_PROGRESSCHANGED),
     }
     return Evnets
 end

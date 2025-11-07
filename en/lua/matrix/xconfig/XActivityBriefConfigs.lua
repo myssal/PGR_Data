@@ -424,7 +424,7 @@ end
 
 function XActivityBriefConfigs.GetActivityBriefGroupRedCondition(groupId)
     local config = XActivityBriefConfigs.GetActivityGroupConfig(groupId)
-    return config and config.RedCondition or ""
+    return config and config.RedConditions or nil
 end
 
 function XActivityBriefConfigs.GetActivityBriefGroupRedParam(groupId)

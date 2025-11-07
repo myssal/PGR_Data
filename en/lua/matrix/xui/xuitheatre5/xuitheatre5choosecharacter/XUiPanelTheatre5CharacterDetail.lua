@@ -19,15 +19,16 @@ end
 function XUiPanelTheatre5CharacterDetail:RefreshShow(cfg)
     self.Config = cfg
     
-    self.TxtName.text = cfg.Name
     
     local condition = nil
 
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._IsUnlock = self._Control.PVPControl:CheckHasPVPCharacterDataById(cfg.Id)
         condition = self.Config.PvpCondition
+        self.TxtName.gameObject:SetActiveEx(false)
     else
-        --todo
+        self.TxtName.gameObject:SetActiveEx(true)
+        self.TxtName.text = cfg.Name
     end
 
     if self._IsUnlock then
@@ -50,7 +51,7 @@ function XUiPanelTheatre5CharacterDetail:RefreshShow(cfg)
     self.PVPRank:Refresh(self.Config.Id)
     
     -- 显示皮肤功能按钮
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP and self._IsUnlock then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP and self._IsUnlock then
         self.PanelFashion.gameObject:SetActiveEx(true)
         self:RefreshFashionTog()
     else

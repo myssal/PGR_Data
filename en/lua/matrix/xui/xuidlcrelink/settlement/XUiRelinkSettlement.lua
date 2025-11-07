@@ -36,7 +36,7 @@ function XUiRelinkSettlement:InitScene()
             return
         end
         self:InitModelRoot()
-        self:InitCharacterGrid()
+        --self:InitCharacterGrid()
         XLuaUiManager.Close("UiLoading")
     end)
 end

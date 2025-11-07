@@ -19,7 +19,7 @@ function XUiGridRelinkSettlementChar:Refresh(player)
     self.ImgMedalIcon.gameObject:SetActiveEx(player.IsLeader)
 
     self.RoleModel:ShowRoleModel()
-    self._Control:UpdateCharacterModel(self.RoleModel, player.Id, nil, self.Parent.Name, nil)
+    self.RoleModel:UpdateCharacterModel(player.Id, nil, self.Parent.Name, nil, nil)
 end
 
 return XUiGridRelinkSettlementChar

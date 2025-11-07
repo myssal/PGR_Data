@@ -1,6 +1,6 @@
 local XMovieActionSetActorTransform = XClass(XMovieActionBase,"XMovieActionSetActorTransform")
 
-function XMovieActionSetActorTransform:Ctor(actionData)
+function XMovieActionSetActorTransform:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.RoleId = params[1]
@@ -14,7 +14,7 @@ function XMovieActionSetActorTransform:Ctor(actionData)
     end
 end
 
-function XMovieActionSetActorTransform:OnInit()
+function XMovieActionSetActorTransform:OnEnter()
     ---@type Movie.XMovie3DRole
     local actor = self.UiRoot:GetModelActor(self.RoleId)
     if not actor then

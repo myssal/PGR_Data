@@ -4,8 +4,9 @@
         "Priority": 100,
         "Name": "Happy Birthday",
         "NameEN": "HAPPY BIRTHDAY",
+        "IsAgency": false,
         "SkipId": 89053,
-        "TimeId": 513,
+        "TimeId": 518,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBrithday01.png",
         "LeftTimeFun": "GetBirthday",
@@ -15,42 +16,11 @@
         ]
     },
     {
-        "Id": 2,
-        "Priority": 0,
-        "Name": "Target",
-        "NameEN": "NOVICE GOAL",
-        "SkipId": 89054,
-        "TimeId": 24,
-        "IsOrConditions": false,
-        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgA01.png",
-        "Conditions": [
-            32001
-        ],
-        "RedPointConditions": [
-            "CONDITION_MAIN_NEWPLAYER_TASK"
-        ]
-    },
-    {
-        "Id": 3,
-        "Priority": 0,
-        "Name": "Novice",
-        "NameEN": "NOVICE GUIDANCE",
-        "SkipId": 89055,
-        "TimeId": 24,
-        "IsOrConditions": false,
-        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgGuide01.png",
-        "Conditions": [
-            32000
-        ],
-        "RedPointConditions": [
-            "CONDITION_MAIN_NEWBIE_TASK"
-        ]
-    },
-    {
         "Id": 4,
         "Priority": 97,
         "Name": "Welcome Back",
         "NameEN": "RETURN",
+        "IsAgency": false,
         "SkipId": 89002,
         "TimeId": 14101,
         "IsOrConditions": false,
@@ -69,6 +39,7 @@
         "Priority": 86,
         "Name": "Preload",
         "NameEN": "PRE DOWNLOAD",
+        "IsAgency": false,
         "SkipId": 89042,
         "TimeId": 903,
         "IsOrConditions": false,
@@ -85,6 +56,7 @@
         "Priority": 0,
         "Name": "Whispers of Admiration",
         "NameEN": "Dearest Whispers",
+        "IsAgency": false,
         "SkipId": 189064,
         "TimeId": 0,
         "IsOrConditions": false,
@@ -98,6 +70,7 @@
         "Priority": 0,
         "Name": "Pulao's Desserts",
         "NameEN": "PULAO'S DESSERTS",
+        "IsAgency": false,
         "SkipId": 189065,
         "TimeId": 0,
         "IsOrConditions": false,
@@ -109,8 +82,9 @@
     {
         "Id": 8,
         "Priority": 0,
-        "Name": "Ebbtide Treasures",
+        "Name": "夕浪遗珍",
         "NameEN": "Wandering Waves",
+        "IsAgency": false,
         "SkipId": 89026,
         "TimeId": 39450,
         "IsOrConditions": false,
@@ -126,10 +100,11 @@
     {
         "Id": 9,
         "Priority": 88,
-        "Name": "Rippling Dreams",
-        "NameEN": "Rippling Dreams",
+        "Name": "Nighttime Radiance",
+        "NameEN": "Nighttime Radiance",
+        "IsAgency": false,
         "SkipId": 89056,
-        "TimeId": 39503,
+        "TimeId": 42201,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
         "LeftTimeFun": "GetAccumulateDraw",
@@ -146,6 +121,7 @@
         "Priority": 87,
         "Name": "Cerulean Embrace",
         "NameEN": "Cerulean Embrace",
+        "IsAgency": false,
         "SkipId": 20226,
         "TimeId": 39120,
         "IsOrConditions": false,
@@ -160,6 +136,7 @@
         "Priority": 0,
         "Name": "Sweet Express",
         "NameEN": "Sweet Express",
+        "IsAgency": false,
         "SkipId": 90037,
         "TimeId": 39201,
         "IsOrConditions": false,
@@ -177,6 +154,7 @@
         "Priority": 0,
         "Name": "Stellar Glow Supply",
         "NameEN": "SUPPLY",
+        "IsAgency": false,
         "SkipId": 20230,
         "TimeId": 32909,
         "IsOrConditions": false,
@@ -190,6 +168,8 @@
         "Priority": 98,
         "Name": "Thunderbolt Manual",
         "NameEN": "MANUAL",
+        "ManagerName": "XWheelchairManual",
+        "IsAgency": true,
         "SkipId": 89078,
         "TimeId": 906,
         "IsOrConditions": false,
@@ -203,29 +183,13 @@
         ]
     },
     {
-        "Id": 14,
-        "Priority": 99,
-        "Name": "Goal & Tutorial",
-        "NameEN": "GOAL & GUIDANCE",
-        "SkipId": 89080,
-        "TimeId": 24,
-        "IsOrConditions": false,
-        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainSpImgGuide01.png",
-        "Conditions": [
-            862857
-        ],
-        "RedPointConditions": [
-            "CONDITION_MAIN_NEWBIE_TASK",
-            "CONDITION_MAIN_NEWPLAYER_TASK"
-        ]
-    },
-    {
         "Id": 15,
         "Priority": 0,
         "Name": "Homeward-Bound Voyage",
         "NameEN": "WELCOME BACK",
+        "IsAgency": false,
         "SkipId": 89081,
-        "TimeId": 33809,
+        "TimeId": 41950,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainHoldRegression.png",
         "LeftTimeFun": "GetReCall",
@@ -240,10 +204,11 @@
     {
         "Id": 16,
         "Priority": 0,
-        "Name": "Returning Sparkles",
-        "NameEN": "Returning Sparkles",
+        "Name": "Starlit Dreams",
+        "NameEN": "Starlit Dreams",
+        "IsAgency": false,
         "SkipId": 89047,
-        "TimeId": 33202,
+        "TimeId": 42713,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/Main5thImg.png",
         "Conditions": [
@@ -260,6 +225,7 @@
         "Priority": 0,
         "Name": "Insatiable Research",
         "NameEN": "RESEARCH",
+        "IsAgency": false,
         "SkipId": 20239,
         "TimeId": 34210,
         "IsOrConditions": false,
@@ -276,8 +242,9 @@
         "Priority": 85,
         "Name": "Passage of the Past",
         "NameEN": "Passage of the Past",
+        "IsAgency": false,
         "SkipId": 90017,
-        "TimeId": 2160604,
+        "TimeId": 0,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainVersionGift01.png",
         "LeftTimeFun": "GetByTimeIdCommon",
@@ -294,6 +261,7 @@
         "Priority": 89,
         "Name": "Blissful Gift",
         "NameEN": "Blissful Gift",
+        "IsAgency": false,
         "SkipId": 90022,
         "TimeId": 35322,
         "IsOrConditions": false,
@@ -311,6 +279,7 @@
         "Priority": 88,
         "Name": "Fresh Dawning",
         "NameEN": "FRESH DAWNING",
+        "IsAgency": false,
         "SkipId": 1300569,
         "TimeId": 35320,
         "IsOrConditions": false,
@@ -328,6 +297,7 @@
         "Priority": 88,
         "Name": "Fresh Dawning",
         "NameEN": "FRESH DAWNING",
+        "IsAgency": false,
         "SkipId": 1300569,
         "TimeId": 2160593,
         "IsOrConditions": false,
@@ -338,6 +308,20 @@
         "RedPointConditions": [
             "EVENT_ACCUMULATE_DRWA_UPDATE_COMB",
             "CONDITION_ACCUMULATE_EXPEND_MAIN_COMB"
+        ]
+    },
+    {
+        "Id": 22,
+        "Priority": 97,
+        "Name": "Novice Arsenal",
+        "NameEN": "Novice Arsenal",
+        "IsAgency": false,
+        "SkipId": 50050,
+        "TimeId": 24,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainQiriqiandaoNew.png",
+        "Conditions": [
+            863105
         ]
     }
 ]

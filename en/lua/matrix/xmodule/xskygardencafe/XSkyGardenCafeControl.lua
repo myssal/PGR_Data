@@ -2,9 +2,11 @@
 ---@field private _Model XSkyGardenCafeModel
 ---@field private _Battle XSkyGardenCafeBattle
 ---@field private _Condition XSkyGardenCafeCondition
+---@field private _StateMachine XCafeStateMachine
 local XSkyGardenCafeControl = XClass(XControl, "XSkyGardenCafeControl")
 
 local EventId = XMVCA.XBigWorldService.DlcEventId
+local XCafeStateMachine
 
 function XSkyGardenCafeControl:OnInit()
     self._HudType2WorldPosition = {}
@@ -14,6 +16,9 @@ function XSkyGardenCafeControl:OnInit()
     XMVCA.XSkyGardenCafe:InitInnerEvent()
     
     self._Model:InitNewMark(self:GetAllShowCustomerIds())
+    if not XCafeStateMachine then
+        XCafeStateMachine = require("XModule/XSkyGardenCafe/StateMachine/XCafeStateMachine")
+    end
 end
 
 function XSkyGardenCafeControl:AddAgencyEvent()
@@ -34,6 +39,10 @@ end
 function XSkyGardenCafeControl:OnRelease()
     self._CardUpdateHandler = nil
     self._HudType2WorldPosition = nil
+    if self._StateMachine then
+        self._StateMachine:Clear()
+        self._StateMachine = nil
+    end
     XMVCA.XSkyGardenCafe:ClearAllInnerEvent()
 end
 
@@ -554,6 +563,10 @@ function XSkyGardenCafeControl:GetQualityLimitDict()
     return dict
 end
 
+function XSkyGardenCafeControl:GetCafeCameraScreenRatio()
+    return tonumber(self._Model:GetConfig("CafeCameraScreenRatio"))
+end
+
 --endregion
 
 --region 本地数据
@@ -820,6 +833,30 @@ end
 
 function XSkyGardenCafeControl:SetChangeCamera(value)
     self._NeedChangeCamera = value
+end
+
+function XSkyGardenCafeControl:CreateStateMachine(skeleton1, skeleton2)
+    if not XCafeStateMachine then
+        XCafeStateMachine = require("XModule/XSkyGardenCafe/StateMachine/XCafeStateMachine")
+    end
+    if not self._StateMachine then
+        self._StateMachine = XCafeStateMachine.New(skeleton1, skeleton2)
+    end
+    self._StateMachine:_InitParams(skeleton1, skeleton2)
+end
+
+function XSkyGardenCafeControl:ClearStateMachineParam()
+    if not self._StateMachine then
+        return
+    end
+    self._StateMachine:ClearParams()
+end
+
+function XSkyGardenCafeControl:ChangeGamePetState(state)
+    if not self._StateMachine then
+        return false
+    end
+    return self._StateMachine:ChangeState(state)
 end
 
 --endregion 战斗

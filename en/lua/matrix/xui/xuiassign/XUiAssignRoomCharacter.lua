@@ -387,15 +387,7 @@ function XUiAssignRoomCharacter:OnBtnTeamPrefabClick()
         self:Close()
     end
 
-    XLuaUiManager.Open("UiRoomTeamPrefab", 
-    self.CurrTeamData:GetLeaderIndex(),
-    self.CurrTeamData:GetFirstFightIndex(), 
-    characterLimitType,
-    nil, 
-    stageType, 
-    nil, 
-    closeCb, 
-    stageId)
+    XLuaUiManager.Open("UiTeamPrefabMain")
 end
 
 function XUiAssignRoomCharacter:OnBtnTeachingClicked()

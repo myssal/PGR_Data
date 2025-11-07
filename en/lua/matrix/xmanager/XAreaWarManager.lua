@@ -6,7 +6,7 @@ XAreaWarManagerCreator = function()
     local tableUnpack = table.unpack
 
     ---@class XAreaWarManager
-    local XAreaWarManager = require("XEntity/XFuben/XExFubenActivityManager").New(XFubenConfigs.ChapterType.AreaWar, "AreaWarManager")
+    local XAreaWarManager = require("XEntity/XFuben/XExFubenActivityManager").New(XEnumConst.FuBen.ChapterType.AreaWar, "AreaWarManager")
 
 
     --region   ------------------活动入口 start-------------------

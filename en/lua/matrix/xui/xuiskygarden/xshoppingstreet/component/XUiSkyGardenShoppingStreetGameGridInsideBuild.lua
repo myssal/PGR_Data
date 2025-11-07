@@ -23,10 +23,6 @@ function XUiSkyGardenShoppingStreetGameGridInsideBuild:OnStart(pos, isInside)
 end
 
 function XUiSkyGardenShoppingStreetGameGridInsideBuild:OnEnable()
-    if not self._ShopArea:IsUnlock() then
-        self:Close()
-        return
-    end
     self:RefreshBuilding()
 end
 
@@ -47,6 +43,15 @@ end
 --endregion
 
 function XUiSkyGardenShoppingStreetGameGridInsideBuild:RefreshBuilding()
+    if not self._ShopArea:IsUnlock() then
+        self.UiSkyGardenShoppingStreetGameGridInsideBuild.NeedCallBack = false
+        self.Edit.gameObject:SetActive(false)
+        self.PanelUnLock.gameObject:SetActive(false)
+        self.Effect.gameObject:SetActive(false)
+        self.UiSkyGardenShoppingStreetGameGridConflict.gameObject:SetActive(false)
+        return
+    end
+    self.UiSkyGardenShoppingStreetGameGridInsideBuild.NeedCallBack = true
     local isUnlock = self._ShopArea:IsUnlock()
     local hasBuilding = not self._ShopArea:IsEmpty()
     self.PanelLock.gameObject:SetActive(not hasBuilding)
@@ -161,8 +166,8 @@ end
 
 function XUiSkyGardenShoppingStreetGameGridInsideBuild:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.UiSkyGardenShoppingStreetGameGridInsideBuild.CallBack = function() self:OnUiSkyGardenShoppingStreetGameGridInsideBuildClick() end
-    self.RedUpgrade.CallBack = function() self:OnRedUpgradeClick() end
+    self.UiSkyGardenShoppingStreetGameGridInsideBuild:AddEventListener(handler(self, self.OnUiSkyGardenShoppingStreetGameGridInsideBuildClick))
+    self.RedUpgrade:AddEventListener(handler(self, self.OnRedUpgradeClick))
 end
 
 --endregion

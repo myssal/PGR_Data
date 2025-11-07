@@ -8,7 +8,7 @@ local XUiPanelSGHudContainer = require("XUi/XUiSkyGarden/XCafe/Panel/XUiPanelSGH
 ---@field _PanelCoffee XUiPanelSGHudContainer
 ---@field _PanelReview XUiPanelSGHudContainer
 ---@field _PanelExpression XUiPanelSGHudContainer
-local XUiSkyGardenCafeComponent = XLuaUiManager.Register(XLuaUi, "UiSkyGardenCafeComponent")
+local XUiSkyGardenCafeComponent = XMVCA.XBigWorldUI:Register(nil, "UiSkyGardenCafeComponent")
 local HudType = XMVCA.XSkyGardenCafe.HudType
 local EventId = XMVCA.XBigWorldService.DlcEventId
 

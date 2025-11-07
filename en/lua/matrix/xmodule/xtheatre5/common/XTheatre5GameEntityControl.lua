@@ -30,13 +30,13 @@ end
 function XTheatre5GameEntityControl:OnModeChanged(noTips)
     local curMode = self._Model:GetCurPlayingMode()
 
-    if curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if curMode == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         if not self._PVPGameEntity then
             self._PVPGameEntity = self:AddEntity(require('XModule/XTheatre5/ControlEntity/XTheatre5PVPGameEntity'))
         end
 
         self._CurGameEntity = self._PVPGameEntity
-    elseif curMode == XMVCA.XTheatre5.EnumConst.GameModel.PVE then
+    elseif curMode == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
         if not self._PVEGameEntity then
             self._PVEGameEntity = self:AddEntity(require('XModule/XTheatre5/ControlEntity/XTheatre5PVEGameEntity'))
         end

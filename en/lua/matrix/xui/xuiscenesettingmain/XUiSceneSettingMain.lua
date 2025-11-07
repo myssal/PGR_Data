@@ -528,11 +528,26 @@ function XUiSceneSettingMain:InitBatteryUi()
     self.fullTimeLine = self.animationRoot:Find("FullTimeLine")
     self.chargeTimeLine = self.animationRoot:Find("ChargeTimeLine")
 
+    if not self:CheckBatteryUiValid() then
+        return false
+    end
+
     self.toChargeTimeLine.gameObject:SetActiveEx(false)
     self.toFullTimeLine.gameObject:SetActiveEx(false)
     self.fullTimeLine.gameObject:SetActiveEx(false)
     self.chargeTimeLine.gameObject:SetActiveEx(false)
     
+    return true
+end
+
+function XUiSceneSettingMain:CheckBatteryUiValid()
+    if XTool.UObjIsNil(self.animationRoot)
+        or XTool.UObjIsNil(self.toChargeTimeLine)
+        or XTool.UObjIsNil(self.toFullTimeLine)
+        or XTool.UObjIsNil(self.fullTimeLine)
+        or XTool.UObjIsNil(self.chargeTimeLine) then
+        return false
+    end
     return true
 end
 

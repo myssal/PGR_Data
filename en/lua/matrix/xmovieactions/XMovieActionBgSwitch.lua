@@ -5,7 +5,7 @@ local DefaultBgIndex = 1
 ---@class XMovieActionBgSwitch
 local XMovieActionBgSwitch = XClass(XMovieActionBase, "XMovieActionBgSwitch")
 
-function XMovieActionBgSwitch:Ctor(actionData)
+function XMovieActionBgSwitch:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.Record = {}
@@ -51,7 +51,7 @@ function XMovieActionBgSwitch:OnUiRootDestroy()
     DefaultAspectRatio = 1
 end
 
-function XMovieActionBgSwitch:OnInit()
+function XMovieActionBgSwitch:OnEnter()
     if self.IsHide then
         self.RImgBg:Hide()
         return
@@ -100,6 +100,44 @@ end
 function XMovieActionBgSwitch:OnUndo()
     if self.Record.BgPath then
         self.RImgBg:SetBgPath(self.Record.BgPath)
+    end
+end
+
+function XMovieActionBgSwitch:IsPassedActionRun(index)
+    -- 隐藏action跳过
+    if self.IsHide then return false end
+
+    -- 有下一个刷新背景，不论是显示/隐藏，都是跳过
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
+        return self:IsActionCover(action)
+    end)
+    return not isCover
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionBgSwitch:IsActionCover(action)
+    if action:GetType() ~= self:GetType() then
+        return false
+    end
+
+    local params = action:GetParams()
+    local bgIndex = params[4]
+    bgIndex = bgIndex and XDataCenter.MovieManager.ParamToNumber(bgIndex) or DefaultBgIndex
+    return bgIndex == self.BgIndex
+end
+
+function XMovieActionBgSwitch:OnPassedActionRun()
+    -- 刷新背景图
+    self.Record.BgPath = self.RImgBg:GetBgPath()
+    self.RImgBg:SetBgPath(self.BgPath)
+    self.RImgBg:ResetPosition()
+    self.RImgBg:ResetScale()
+    local ratio = self.AspectRatioPercent > 0 and DefaultAspectRatio * self.AspectRatioPercent or DefaultAspectRatio
+    self.AspectRatioFitter.aspectRatio = ratio
+    self.RImgBg:Show()
+    if self.BgAlpha then
+        self.CanvasGroupBg.alpha = self.BgAlpha
     end
 end
 

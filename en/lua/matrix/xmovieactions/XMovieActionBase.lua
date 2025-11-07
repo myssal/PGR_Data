@@ -1,8 +1,5 @@
-local CSXScheduleManagerScheduleOnce = XScheduleManager.ScheduleOnce
-local CSXScheduleManagerUnSchedule = XScheduleManager.UnSchedule
-
 local ActionStatus = {
-    UNINIIALIZED = "UNINIIALIZED",
+    UNINITIALIZED = "UNINITIALIZED",
     ENTER = "ENTER",
     RUNNING = "RUNNING",
     BLOCK = "BLOCK",
@@ -16,7 +13,8 @@ XMovieActionBase = XClass(nil, "XMovieActionBase")
 
 function XMovieActionBase:Ctor(actionData)
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
-    self.Status = ActionStatus.UNINIIALIZED
+    self.Params = actionData.Params
+    self.Status = ActionStatus.UNINITIALIZED
     self.ActionId = actionData.ActionId
     self.IsActionBlock = paramToNumber(actionData.IsBlock) ~= 0
     self.IsEnd = actionData.IsEnd ~= 0
@@ -30,10 +28,16 @@ function XMovieActionBase:Ctor(actionData)
     XEventManager.AddEventListener(XEventId.EVENT_MOVIE_UI_OPEN, self.InitUiRoot, self)
     XEventManager.AddEventListener(XEventId.EVENT_MOVIE_UI_DESTROY, self.ClearUiRoot, self)
     XEventManager.AddEventListener(XEventId.EVENT_MOVIE_AUTO_PLAY, self.OnSwitchAutoPlay, self)
+    
+    self:OnInit(actionData)
 end
 
 function XMovieActionBase:GetActionId()
     return self.ActionId
+end
+
+function XMovieActionBase:GetParams()
+    return self.Params
 end
 
 function XMovieActionBase:GetNextActionId()
@@ -92,7 +96,7 @@ end
 function XMovieActionBase:ClearUiRoot()
     self.UiRoot = {}
     self:ClearDelayId()
-    self.Status = ActionStatus.UNINIIALIZED
+    self.Status = ActionStatus.UNINITIALIZED
     self:OnUiRootDestroy()
 end
 
@@ -100,7 +104,7 @@ function XMovieActionBase:Enter()
     if self.Status ~= ActionStatus.ENTER then
         return
     end
-    self:OnInit()
+    self:OnEnter()
     self:ChangeStatus(self:GetBeginDelay(), self:GetBeginAnim())
 end
 
@@ -148,7 +152,7 @@ function XMovieActionBase:ChangeStatus(delay, animName)
             return
         end
 
-        if self.Status == ActionStatus.UNINIIALIZED then
+        if self.Status == ActionStatus.UNINITIALIZED then
             self.Status = ActionStatus.ENTER
             self:Enter()
         elseif self.Status == ActionStatus.ENTER then
@@ -174,15 +178,10 @@ function XMovieActionBase:ChangeStatus(delay, animName)
 
     local animCb = function()
         if delay and delay ~= 0 then
-            self.DelayId =
-                self.DelayId or
-                CSXScheduleManagerScheduleOnce(
-                    function()
-                        self.DelayId = nil
-                        changeFunc()
-                    end,
-                    delay
-                )
+            self.DelayId = self.DelayId or XScheduleManager.ScheduleOnce(function()
+                self.DelayId = nil
+                changeFunc()
+            end, delay)
         else
             changeFunc()
         end
@@ -223,22 +222,31 @@ end
 
 function XMovieActionBase:ClearDelayId()
     if self.DelayId then
-        CSXScheduleManagerUnSchedule(self.DelayId)
+        XScheduleManager.UnSchedule(self.DelayId)
         self.DelayId = nil
     end
     self.Lock = false
 end
 
+--region 继承类重写函数
 function XMovieActionBase:OnUiRootInit()
+    
 end
 
 function XMovieActionBase:OnUiRootDestroy()
+    
 end
 
-function XMovieActionBase:OnInit()
+function XMovieActionBase:OnInit(actionData)
+
+end
+
+function XMovieActionBase:OnEnter()
+    
 end
 
 function XMovieActionBase:OnRunning()
+    
 end
 
 function XMovieActionBase:OnExit()
@@ -248,20 +256,24 @@ function XMovieActionBase:OnExit()
 end
 
 function XMovieActionBase:OnDestroy()
+    
 end
 
 function XMovieActionBase:OnSwitchAutoPlay()
-end
-
-function XMovieActionBase:CanContinue()
-    return true
-end
-
-function XMovieActionBase:OnReset()
-    self.Status = ActionStatus.UNINIIALIZED
+    
 end
 
 function XMovieActionBase:OnUndo()
+
+end
+
+function XMovieActionBase:OnReset()
+    self.Status = ActionStatus.UNINITIALIZED
+end
+--endregion
+
+function XMovieActionBase:CanContinue()
+    return true
 end
 
 -- 停止动画，触发结束回调
@@ -271,3 +283,40 @@ function XMovieActionBase:StopAnimtion(anim)
         timelineAnimation:Stop(false)
     end
 end
+
+--region PassAction
+-- 作为PassedAction，是否需要执行
+function XMovieActionBase:IsPassedActionRun(index)
+    return false
+end
+
+-- 是否导致开始播的Action提前
+function XMovieActionBase:IsAdvanceStartAction()
+    return false
+end
+
+function XMovieActionBase:RunPassedAction()
+    self:OnPassedActionRun()
+end
+
+-- PassedAction的执行函数
+function XMovieActionBase:OnPassedActionRun()
+
+end
+
+function XMovieActionBase:SkipPassedAction()
+    self:OnPassedActionSkip()
+end
+
+function XMovieActionBase:OnPassedActionSkip()
+
+end
+
+-- 当此Action为PassedActions之后的第一个时，需要判断这个Action是否在PanelLoading之后执行
+function XMovieActionBase:IsStartAfterLoading()
+    return false
+end
+
+--endregion
+
+return XMovieActionBase

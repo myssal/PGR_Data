@@ -22,6 +22,7 @@ function XUiBigWorldBackpackDetail:OnStart()
     self._ItemId = 0
     self._UseCount = 0
     self._MaxCount = 0
+    self:_InitCb()
     self:_RegisterButtonClicks()
 end
 
@@ -29,12 +30,12 @@ function XUiBigWorldBackpackDetail:OnEnable()
     self:_RegisterSchedules()
     self:_RegisterListeners()
     self:_RegisterRedPointEvents()
+    self:_RefreshConsume()
 end
 
 function XUiBigWorldBackpackDetail:OnDisable()
     self:_RemoveSchedules()
     self:_RemoveListeners()
-    self.PanelConsume.gameObject:SetActiveEx(false)
 end
 
 function XUiBigWorldBackpackDetail:OnDestroy()
@@ -64,6 +65,11 @@ function XUiBigWorldBackpackDetail:OnBtnMaxClick()
 end
 
 function XUiBigWorldBackpackDetail:OnBtnConfirmClick()
+    local type = XArrangeConfigs.GetType(self._ItemId)
+    local func = self._UseItemFunc[type]
+    if func then
+        return func(self._ItemId, self._UseCount)
+    end
     if XTool.IsNumberValid(self._UseCount) then
         XMVCA.XBigWorldService:UseItem(self._ItemId, nil, self._UseCount, function(rewardGoodsList)
             XMVCA.XBigWorldUI:OpenBigWorldObtain(rewardGoodsList, nil, function()
@@ -125,14 +131,20 @@ function XUiBigWorldBackpackDetail:Refresh(itemParams, goodsParams, isQuest)
         self.RImgIcon:SetRawImage(goodsParams.Icon)
     end
 
-    if not isQuest then
-        self:_RefreshConsume()
-    else
-        self.PanelConsume.gameObject:SetActiveEx(false)
-    end
+    self:_RefreshConsume()
 end
 
 -- region 私有方法
+
+function XUiBigWorldBackpackDetail:_InitCb()
+    self._ConsumeStateFunc = {
+        [XArrangeConfigs.Types.QuestItem] = handler(self, self._GetQuestItemConsumeState)
+    }
+    
+    self._UseItemFunc = {
+        [XArrangeConfigs.Types.QuestItem] = handler(self, self._DoUseQuestItem)
+    }
+end
 
 function XUiBigWorldBackpackDetail:_RegisterButtonClicks()
     -- 在此处注册按钮事件
@@ -165,12 +177,45 @@ function XUiBigWorldBackpackDetail:_RegisterRedPointEvents()
 end
 
 function XUiBigWorldBackpackDetail:_RefreshConsume()
-    if self._Control:CheckItemCanUse(self._ItemId) then
-        self.PanelConsume.gameObject:SetActiveEx(true)
-        self.PanelAdd.gameObject:SetActiveEx(self._MaxCount > 1)
-    else
-        self.PanelConsume.gameObject:SetActiveEx(false)
+    local showConsume, showAdd, text = self:_GetConsumeState(self._ItemId)
+    self.PanelConsume.gameObject:SetActiveEx(showConsume)
+    self.PanelAdd.gameObject:SetActiveEx(showAdd)
+    if showConsume then
+        self.BtnConfirm:SetNameByGroup(0, text)
     end
+end
+
+function XUiBigWorldBackpackDetail:_GetConsumeState(itemId)
+    if not itemId or itemId <= 0 then
+        return false, false, nil 
+    end
+    local type = XArrangeConfigs.GetType(itemId)
+    local func = self._ConsumeStateFunc[type]
+    if func then
+        return func(itemId)
+    end
+    return false, false, nil
+end
+
+function XUiBigWorldBackpackDetail:_GetQuestItemConsumeState(itemId)
+    local type = XMVCA.XBigWorldQuest:GetQuestItemType(itemId)
+    if type == XMVCA.XBigWorldQuest.QuestItemType.NormalItem then
+        return false, false, nil
+    end
+    return true, false, XMVCA.XBigWorldService:GetText("Open")
+end
+
+function XUiBigWorldBackpackDetail:_DoUseQuestItem(itemId, count)
+    local type = XMVCA.XBigWorldQuest:GetQuestItemType(itemId)
+    if type == XMVCA.XBigWorldQuest.QuestItemType.NormalItem then
+        return
+    end
+    local params = XMVCA.XBigWorldQuest:GetQuestItemParams(itemId)
+    local id = params and params[1] or 0
+    if id <= 0 then
+        return
+    end
+    XMVCA.XBigWorldUI:OpenNarrative(id)
 end
 
 -- endregion

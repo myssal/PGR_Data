@@ -30,7 +30,7 @@ end
 
 function XUiBigWorldTeachVisual:_RegisterButtonClicks()
     --在此处注册按钮事件
-    self.VideoBtn.CallBack = Handler(self, self.OnVideoBtnClick)
+    self.VideoBtn:AddEventListener(handler(self, self.OnVideoBtnClick))
 end
 
 function XUiBigWorldTeachVisual:_RefreshImage()

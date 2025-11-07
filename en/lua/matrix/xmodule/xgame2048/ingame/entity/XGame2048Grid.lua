@@ -64,12 +64,24 @@ function XGame2048Grid:GetScore()
     return self._Cfg.AddScore
 end
 
+function XGame2048Grid:GetShowLevel()
+    return self._Cfg.ShowLevel
+end
+
 function XGame2048Grid:GetLevelUpId()
     return self._Cfg.LevelUpId
 end
 
+function XGame2048Grid:GetLastLevelId()
+    return self._Cfg.LastLevelId
+end
+
 function XGame2048Grid:GetDoublingLevelUpId()
     return self._Cfg.DoublingLevelUpId
+end
+
+function XGame2048Grid:GetAdjustLevelUpId()
+    return self._Cfg.AdjustLevelUpId
 end
 
 -- 合成移动期间使用，判断是否禁止移动，目前主要用于冰块合成
@@ -99,7 +111,12 @@ function XGame2048Grid:SetNewConfig(blockCfg, typeCfg)
 end
 
 function XGame2048Grid:SetServerData(data)
-    self._ServerData = data
+    -- 因为查找和比较利用了表的hash值，所以只更新值，不替换表
+    for i, v in pairs(data) do
+        self._ServerData[i] = v
+    end
+    
+    self._ExtValue = data.ExtValue
 end
 
 function XGame2048Grid:SetValue(newValue)

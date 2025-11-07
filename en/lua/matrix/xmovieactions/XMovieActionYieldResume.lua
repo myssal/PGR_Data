@@ -3,7 +3,7 @@ local XMovieActionYieldResume = XClass(XMovieActionBase, "XMovieActionYieldResum
 local tableInsert = table.insert
 local MAX_SKIP_NUM = 3
 
-function XMovieActionYieldResume:Ctor(actionData)
+function XMovieActionYieldResume:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
 
@@ -16,7 +16,7 @@ function XMovieActionYieldResume:Ctor(actionData)
     end
 end
 
-function XMovieActionYieldResume:OnInit()
+function XMovieActionYieldResume:OnEnter()
     self.ResumeActionId = 0
 end
 

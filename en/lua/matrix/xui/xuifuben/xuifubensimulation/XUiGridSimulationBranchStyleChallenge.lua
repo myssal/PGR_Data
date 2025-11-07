@@ -57,12 +57,23 @@ function XUiGridSimulationBranchStyleChallenge:SetData(index, manager)
     -- 隐藏进度条
     self.ImgProgress.gameObject:SetActiveEx(false)
     self.BgProgress.gameObject:SetActiveEx(false)
-    self.TxtPercentNormal.gameObject:SetActiveEx(false)
+
+    if manager.ExGetProgressTip then
+        local text = manager:ExGetProgressTip()
+        if text then
+            self.TxtPercentNormal.gameObject:SetActiveEx(true)
+            self.TxtPercentNormal.text = text
+        else
+            self.TxtPercentNormal.gameObject:SetActiveEx(false)
+        end
+    else
+        self.TxtPercentNormal.gameObject:SetActiveEx(false)
+    end
     
     -- 普通模式(之后不再需要普通模式标签)
     self.PanelNormal.gameObject:SetActiveEx(false)
     local chapterType = self.Manager:ExGetChapterType()
-    self.ImgKuai.gameObject:SetActiveEx(chapterType == XFubenConfigs.ChapterType.Prequel)
+    self.ImgKuai.gameObject:SetActiveEx(chapterType == XEnumConst.FuBen.ChapterType.Prequel)
 
     -- 限时开放页签
     if self.Manager:ExCheckHasTimeLimitTag() then
@@ -131,12 +142,17 @@ function XUiGridSimulationBranchStyleChallenge:UpdateTimer(timeId, forceUpdate)
         -- 暂时不方便动态控制定时器的开始关闭，先针对节点隐藏做跳过处理
         return
     end
-    
+    local showTimeStr = self.Manager.ExGetTimerShowStr and self.Manager:ExGetTimerShowStr() or nil
     if self.TxtTime then
-        self.TxtTime.text = self.Manager:ExGetTimerShowStr()
+        if string.IsNilOrEmpty(showTimeStr) then
+            self.TxtTime.gameObject:SetActiveEx(false)
+        else
+            self.TxtTime.gameObject:SetActiveEx(true)
+            self.TxtTime.text = showTimeStr
+        end
     end
 
-    if not self.Manager:ExCheckInTimerShow() then
+    if self.Manager.ExCheckInTimerShow and not self.Manager:ExCheckInTimerShow() then
         self:StopTimer()
     end
 end

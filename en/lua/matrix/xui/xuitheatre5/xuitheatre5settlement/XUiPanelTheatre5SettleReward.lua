@@ -17,7 +17,7 @@ function XUiPanelTheatre5SettleReward:OnStart(resultData)
     self.BtnLeave:AddEventListener(handler(self, self.OnBtnLeaveClickEvent))
     self.BtnPreviousPage:AddEventListener(handler(self, self.OnBtnPreviousPageClickEvent))
      --pve再次挑战是否显示
-    local invisible = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVE and not self._Control.PVEControl:CanAgainBattle(resultData)
+    local invisible = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE and not self._Control.PVEControl:CanAgainBattle(resultData)
     self.BtnAgain.gameObject:SetActiveEx(not invisible)
     self:RefreshShow()
     
@@ -26,7 +26,7 @@ end
 
 function XUiPanelTheatre5SettleReward:RefreshShow()
     -- 差异化显示
-    local isPVP = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP
+    local isPVP = self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP
     self.PanelPVP.gameObject:SetActiveEx(isPVP)
     self.PanelPVE.gameObject:SetActiveEx(not isPVP)
 
@@ -131,7 +131,7 @@ function XUiPanelTheatre5SettleReward:RefreshPVERewardShow()
 end
 
 function XUiPanelTheatre5SettleReward:OnBtnAgainClickEvent()
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         XLuaUiManager.PopThenOpen('UiTheatre5ChooseCharacter', self._Control:GetCurPlayingMode())
     else
         --self.Parent:Close()
@@ -140,7 +140,7 @@ function XUiPanelTheatre5SettleReward:OnBtnAgainClickEvent()
 end
 
 function XUiPanelTheatre5SettleReward:OnBtnLeaveClickEvent()
-    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+    if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
         self._Control:ReturnTheatre5Main()
     else
         XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_WHOLE_BATTLE_EXIT, self.ResultData)

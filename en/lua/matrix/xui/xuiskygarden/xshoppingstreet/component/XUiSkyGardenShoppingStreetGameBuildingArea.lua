@@ -33,13 +33,13 @@ function XUiSkyGardenShoppingStreetGameBuildingArea:OnStart(...)
     end
 end
 
-function XUiSkyGardenShoppingStreetGameGridInsideBuild:OnGetLuaEvents()
+function XUiSkyGardenShoppingStreetGameBuildingArea:OnGetLuaEvents()
     return {
         XMVCA.XBigWorldService.DlcEventId.EVENT_BUSINESS_STREET_STAGE_REFRESH,
     }
 end
 
-function XUiSkyGardenShoppingStreetGameGridInsideBuild:OnNotify(event)
+function XUiSkyGardenShoppingStreetGameBuildingArea:OnNotify(event)
     if event == XMVCA.XBigWorldService.DlcEventId.EVENT_BUSINESS_STREET_STAGE_REFRESH then
         if self._InSideBuildings then
             for i = 1, #self._InSideBuildings do

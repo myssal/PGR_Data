@@ -162,7 +162,7 @@ end
 function XBWAudioSetting:_InitFashionVoiceValue()
     local voiceValue = CS.XAudioManager.IsOpenFashionVoice
     -- 缓存异常修复缓存
-    if voiceValue ~= 1 or voiceValue ~= 2 then
+    if voiceValue ~= 1 and voiceValue ~= 2 then
         CS.XAudioManager.IsOpenFashionVoice = 1
         voiceValue = 1
     end

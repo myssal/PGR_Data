@@ -25,6 +25,8 @@ local CmdPrefix = {
 
 local IgnorePrint
 
+local CsX3CProxyDebug = CS.X3CProxyDebug
+
 function X3CProxyAgency:OnInit()
     --初始化一些变量
     self._HandlerTab = {}
@@ -146,14 +148,17 @@ function X3CProxyAgency:PrintMsg(cmdType, cmd, sendData, receiveData)
     if not Print3CMsg then
         return
     end
-    if not self._X3CProxy.GetCmdNameByCmdId then
+    if not CsX3CProxyDebug or not CsX3CProxyDebug.Instance then
+        return
+    end
+    if not CsX3CProxyDebug.Instance.GetCmdNameByCmdId then
         self:SetPrintEnable(false)
         return
     end
     local color = CmdColor[cmdType]
     local name = self._CmdId2CmdName[cmd]
     if string.IsNilOrEmpty(name) then
-        name = self._X3CProxy:GetCmdNameByCmdId(cmd)
+        name = CsX3CProxyDebug.Instance:GetCmdNameByCmdId(cmd)
         self._CmdId2CmdName[cmd] = name
     end
     if IgnorePrint and IgnorePrint[name] then

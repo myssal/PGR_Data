@@ -1,0 +1,373 @@
+[
+    {
+        "Id": 1,
+        "Type": 1,
+        "Name": "More Stars",
+        "Desc": "Every 5 moves, adds 1 Compass that can merge with any block (except Compass).",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff07.png",
+        "TriggerCD": 5,
+        "TriggerBlockId": 10094,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
+    },
+    {
+        "Id": 2,
+        "Type": 1,
+        "Name": "More Stars",
+        "Desc": "Every 7 moves, adds 1 Compass that can merge with any block (except Compass).",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff07.png",
+        "TriggerCD": 7,
+        "TriggerBlockId": 10094,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
+    },
+    {
+        "Id": 3,
+        "Type": 1,
+        "Name": "More Stones",
+        "Desc": "Every 10 moves, adds 1 Stone block that disappears after being bumped for the required number of times.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff01.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 10095,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
+    },
+    {
+        "Id": 4,
+        "Type": 1,
+        "Name": "More Ice",
+        "Desc": "Every 10 moves, adds 1 Ballast that is immovable and becomes a Power Core after merging.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff08.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 2,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 1,
+        "Name": "Extra Conduction",
+        "Desc": "Adds 1 Hub every 10 moves. When any adjacent block's value doubles due to a Beacon, this block's value multiplies by 2.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff05.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 3,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 1,
+        "Name": "More Time+",
+        "Desc": "Every 10 moves, adds 1 Power Core that records a value after merging. The value will be added to the number of Enhanced Moves upon board level up.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff09.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 1,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 1,
+        "Name": "More Doubles",
+        "Desc": "Every 10 moves, adds 1 Beacon that can double the value of adjacent blocks (except Beacon) after merging.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 5,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 2,
+        "Name": "More Blocks",
+        "Desc": "Generates again based on the current board rules.",
+        "TriggerCD": 20,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 50
+    },
+    {
+        "Id": 9,
+        "Type": 1,
+        "Name": "More Doubles",
+        "Desc": "Every 7 moves, adds 1 Beacon that can double the value of adjacent blocks (except Beacon) after merging.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
+        "TriggerCD": 7,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 5,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 1,
+        "Name": "More Doubles",
+        "Desc": "Every 10 moves, adds 1 Beacon that can double the value of adjacent blocks (except Beacon) after merging.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 5,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 1,
+        "Name": "Add Star Block",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
+        "TriggerCD": 5,
+        "TriggerBlockId": 10094,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
+    },
+    {
+        "Id": 12,
+        "Type": 1,
+        "Name": "Add Star Block",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 10094,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100
+    },
+    {
+        "Id": 13,
+        "Type": 1,
+        "Name": "Add Runner Block",
+        "Desc": "Teleports the Bubble Block to the position that maximizes its clearing range.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
+        "TriggerCD": 15,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 9,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            11,
+            12
+        ]
+    },
+    {
+        "Id": 14,
+        "Type": 1,
+        "Name": "Add Runner Block",
+        "Desc": "Teleports the Bubble Block to the position that maximizes its clearing range.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 9,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            11,
+            12
+        ]
+    },
+    {
+        "Id": 15,
+        "Type": 1,
+        "Name": "加心心方块",
+        "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 10,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 1,
+        "Name": "加心心方块",
+        "Desc": "生成心心方块，心心方块合成3次后，泡泡方块数值直接达到合成目标",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff11.png",
+        "TriggerCD": 15,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 10,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 17,
+        "Type": 1,
+        "Name": "Add Runner Block",
+        "Desc": "Teleports the Bubble Block to the position that maximizes its clearing range.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
+        "TriggerCD": 20,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 9,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 1,
+        "Name": "Test Generate Water Block",
+        "Desc": "Test Generate Water Block",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
+        "TriggerCD": 1,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 11,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 1,
+        "Name": "Test Generate Fire Block",
+        "Desc": "Test Generate Fire Block",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff06.png",
+        "TriggerCD": 2,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 12,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 1,
+        "Name": "Add Runner Block",
+        "Desc": "Teleports the Bubble Block to the position that maximizes its clearing range.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
+        "TriggerCD": 15,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 9,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 21,
+        "Type": 1,
+        "Name": "Add Runner Block",
+        "Desc": "Teleports the Bubble Block to the position that maximizes its clearing range.",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff12.png",
+        "TriggerCD": 10,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 9,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": -1,
+        "TriggerRate": 100,
+        "ReplaceValueFormBlockTypes": [
+            4
+        ]
+    },
+    {
+        "Id": 22,
+        "Type": 3,
+        "Name": "加热热方块",
+        "Desc": "生成热热方块，和凉凉方块合成将随机生成方块属性",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff13.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 23,
+        "Type": 3,
+        "Name": "加凉凉方块",
+        "Desc": "生成凉凉方块，和热热方块合成将随机生成方块属性",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff14.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 24,
+        "Type": 3,
+        "Name": "加坨坨方块",
+        "Desc": "坨坨方块可以被破碎，数字表示需要碰撞的次数",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff15.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    },
+    {
+        "Id": 25,
+        "Type": 3,
+        "Name": "More Star Blocks",
+        "Desc": "星星方块可以和任意数字方块（除泡泡方块）发生合成",
+        "IconRes": "Assets/Product/Texture/Image/UiGame2048/UiGame2048IconBuff10.png",
+        "TriggerCD": 0,
+        "TriggerBlockId": 0,
+        "TriggerReplaceType": 0,
+        "TriggerFeverLv": 0,
+        "TriggerCountLimit": 0,
+        "TriggerRate": 0
+    }
+]

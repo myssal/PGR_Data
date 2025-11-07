@@ -115,7 +115,7 @@ end
 
 function XUiBigWorldPanelLittleMap:_RegisterButtonClicks()
     -- 在此处注册按钮事件
-    self.BtnBigMap.CallBack = Handler(self, self.OnBtnBigMapClick)
+    self.BtnBigMap:AddEventListener(handler(self, self.OnBtnBigMapClick))
 end
 
 function XUiBigWorldPanelLittleMap:_RegisterSchedules()
@@ -222,8 +222,8 @@ function XUiBigWorldPanelLittleMap:_InitAreaImage(levelId)
                         imageList[index] = areaImage
                     end
 
-                    areaImage.transform.anchoredPosition = self._AxisConversion:WorldToMapPosition2D(posX, posZ,
-                        pixelRatio)
+                    local xOffset, yOffset =  self._AxisConversion:WorldToMapPosition2D(posX, posZ, pixelRatio)
+                    areaImage.transform:SetAnchoredPosition(xOffset, yOffset)
                     areaImage.gameObject:SetActiveEx(true)
                     areaImage:SetImage(XMVCA.XBigWorldMap:GetAreaImageByAreaId(areaId), function()
                         areaImage:SetNativeSize()
@@ -390,16 +390,17 @@ function XUiBigWorldPanelLittleMap:_RefreshTrackPin(posX, posY)
         return
     end
 
-    local trackIds = XMVCA.XBigWorldMap:GetCurrentTrackPinsIncludeVirtual(self._LevelId)
+    self._TrackPinIdDict = XMVCA.XBigWorldMap:GetCurrentTrackPinsIncludeVirtual(self._LevelId, self._TrackPinIdDict)
 
-    if not XTool.IsTableEmpty(trackIds) then
+    if not XTool.IsTableEmpty(self._TrackPinIdDict) then
         local radius = self._TrackRadius
         local pixelRatio = XMVCA.XBigWorldMap:GetMapPixelRatioByLevelId(self._LevelId)
 
-        for pinId, _ in pairs(trackIds) do
+        for pinId, _ in pairs(self._TrackPinIdDict) do
             local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(self._LevelId, pinId)
 
             if pinData then
+                ---@type XUiBigWorldMapPin
                 local pinNode = nil
                 local worldPosition = pinData:GetAssistedPosition()
 
@@ -430,8 +431,8 @@ function XUiBigWorldPanelLittleMap:_RefreshTrackPin(posX, posY)
                             pinNode:RefreshStyle(pinData)
                             pinNode:RefreshEmptyTag()
                         end
-
-                        pinNode:RefreshPosition(self._AxisConversion:WorldToMapPosition2D(x, y))
+                        local xOffset, yOffset = self._AxisConversion:WorldToMapPosition2D(x, y)
+                        pinNode:RefreshPosition(xOffset, yOffset)
                     else
                         pinNode:RefreshOriginalPosition()
 

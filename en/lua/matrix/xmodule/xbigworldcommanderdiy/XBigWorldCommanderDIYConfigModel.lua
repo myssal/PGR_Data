@@ -129,6 +129,12 @@ function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartIsSuitPartById(
     return config.IsSuitPart
 end
 
+function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartIsPreviewById(id)
+    local config = self:GetDlcPlayerFashionPartConfigById(id)
+
+    return config.IsPreview
+end
+
 function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartIncompatibleTypeById(id)
     local config = self:GetDlcPlayerFashionPartConfigById(id)
 

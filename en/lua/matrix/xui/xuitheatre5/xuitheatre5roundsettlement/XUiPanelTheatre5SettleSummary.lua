@@ -1,4 +1,5 @@
 --- 回合结算统计数据显示
+---@field Parent XUiTheatre5RoundSettlement
 ---@class XUiPanelTheatre5SettleSummary: XUiNode
 ---@field protected _Control XTheatre5Control
 local XUiPanelTheatre5SettleSummary = XClass(XUiNode, 'XUiPanelTheatre5SettleSummary')
@@ -12,7 +13,8 @@ local ViewSideEnum = {
     Enemy = 2, -- 查看敌人的统计数据
 }
 
-function XUiPanelTheatre5SettleSummary:OnStart(summaryData)
+function XUiPanelTheatre5SettleSummary:OnStart(resultData, summaryData)
+    self.ResultData = resultData
     self.SummaryData = summaryData
 
     ---@type XPool
@@ -23,9 +25,9 @@ function XUiPanelTheatre5SettleSummary:OnStart(summaryData)
         grid:InitBindItem(XUiGridTheatre5SettleGem)
         return grid
     end,
-    function(grid)
-        grid:Close()
-    end, false)
+            function(grid)
+                grid:Close()
+            end, false)
 
     self.Container.gameObject:SetActiveEx(false)
     self.GridData.gameObject:SetActiveEx(false)
@@ -33,7 +35,7 @@ function XUiPanelTheatre5SettleSummary:OnStart(summaryData)
     self.ViewSide = ViewSideEnum.Self
 
     self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClickEvent))
-    
+
     ---@type XDynamicTableNormal
     self.BtnBagMaskDetailShow:AddEventListener(handler(self, self.OnBtnMaskDetailShowClickEvent))
 
@@ -53,6 +55,13 @@ function XUiPanelTheatre5SettleSummary:RefreshAllShow()
     self.BtnChange:SetNameByGroup(0, self._Control:GetClientConfigRoundSettleSummaryChangeLabel(self.ViewSide == ViewSideEnum.Self))
     self:RefreshRunesShow()
     self:RefreshSkillShow()
+
+    if self.ViewSide == ViewSideEnum.Self then
+        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.SelfData)
+    else
+        self.Parent:UpdateRelics(self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData)
+    end
+    self:UpdateCharacterAndLevel()
 end
 
 ---- 刷新宝珠列表
@@ -63,36 +72,35 @@ function XUiPanelTheatre5SettleSummary:RefreshRunesShow()
             self._GridGemPool:ReturnItemToPool(v)
         end
     end
-    
+
     if not self.SummaryData or not self.SummaryData.AutoChessRecord then
         self.TxtNone.gameObject:SetActiveEx(true)
         return
     end
-    
+
     local runesData
-    local runeIds
-    
+    local runes
+
     if self.ViewSide == ViewSideEnum.Self then
         runesData = self.SummaryData.AutoChessRecord.SelfRecord and self.SummaryData.AutoChessRecord.SelfRecord.GemRecord or nil
-        runeIds = self._Control:GetCurSelfGemIdList()
+        runes = self._Control:GetCurSelfGemIdList()
     else
         runesData = self.SummaryData.AutoChessRecord.EnemyRecord and self.SummaryData.AutoChessRecord.EnemyRecord.GemRecord or nil
-        runeIds = self._Control:GetCurEnemyGemIdList()
+        runes = self._Control:GetCurEnemyGemIdList()
     end
-    
-    
 
-    if runesData and not XTool.IsTableEmpty(runeIds) then
+    if runesData and not XTool.IsTableEmpty(runes) then
         self.TxtNone.gameObject:SetActiveEx(false)
 
         self._GridGemList = {}
 
-        for id, index in pairs(runeIds) do
+        for id, itemData in pairs(runes) do
             ---@type XUiGridTheatre5SettleGemSlot
             local grid = self._GridGemPool:GetItemFromPool()
             grid:Open()
-            grid:SetItemShowById(id)
+            grid:SetItemData(itemData)
 
+            grid.PanelTrigger.gameObject:SetActiveEx(true)
             if runesData:ContainsKey(id) then
                 grid:SetTriggerTimes(runesData[id])
             else
@@ -106,9 +114,9 @@ function XUiPanelTheatre5SettleSummary:RefreshRunesShow()
                 end
             end
 
-            self._GridGemList[index] = grid
+            self._GridGemList[itemData.Index] = grid
         end
-        
+
     else
         self.TxtNone.gameObject:SetActiveEx(true)
     end
@@ -130,7 +138,7 @@ function XUiPanelTheatre5SettleSummary:RefreshSkillShow()
     if self._SkillItemList == nil then
         self._SkillItemList = {}
     end
-    
+
     self.SkillDamageRecord = nil
     self.SkillCureRecord = nil
     self.SkillMaxDamage = 0
@@ -167,7 +175,7 @@ function XUiPanelTheatre5SettleSummary:RefreshSkillShow()
                 self.SkillMaxCure = v
             end
         end
-        
+
         -- 刷新UI
         if not XTool.IsTableEmpty(self.SkillIdList) then
             XUiHelper.RefreshCustomizedList(self.ListData.transform, self.GridData, #self.SkillIdList, function(index, go)
@@ -178,7 +186,7 @@ function XUiPanelTheatre5SettleSummary:RefreshSkillShow()
 
                     self._SkillItemList[go] = grid
                 end
-                
+
                 grid:Open()
                 --- 需要在打开后再初始化，接口内已做重复初始化跳过判断
                 grid:InitBindItem(XUiGridTheatre5SettleSkill)
@@ -196,12 +204,12 @@ end
 
 function XUiPanelTheatre5SettleSummary:OnBtnChangeClickEvent()
     self.ViewSide = self.ViewSide == ViewSideEnum.Self and ViewSideEnum.Enemy or ViewSideEnum.Self
-    
+
     self:RefreshAllShow()
-    
+
     -- 取消可能的详情展开
     self._Control:TryCloseItemDetail()
-    
+
     self.Parent:PlayAnimationWithMask('Qiehuan')
 end
 
@@ -227,5 +235,28 @@ function XUiPanelTheatre5SettleSummary:OnBtnMaskDetailShowClickEvent()
     self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_HIDE_ITEM_DETAIL)
 end
 
+function XUiPanelTheatre5SettleSummary:UpdateCharacterAndLevel()
+    if self.ViewSide == ViewSideEnum.Self then
+        if self.RoleSelf then
+            self.PanelMyRole.gameObject:SetActiveEx(true)
+            self.PanelEnemyRole.gameObject:SetActiveEx(false)
+            self.TxtLevelSelf.text = self._Control.CharacterControl:GetCharacterLevel()
+            local icon = self._Control:GetCharacterIcon()
+            self.RoleSelf:SetRawImage(icon)
+        end
+    else
+        if self.RoleEnemy then
+            self.PanelMyRole.gameObject:SetActiveEx(false)
+            self.PanelEnemyRole.gameObject:SetActiveEx(true)
+            if self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData then
+                local level = self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData.AutoChessData.CharacterLevel
+                local characterId = self.ResultData.ResultData.WorldData.AutoChessGameplayData.EnemyData.AutoChessData.CharacterId
+                local characterIcon = self._Control:GetCharacterIcon(characterId)
+                self.TxtLevelEnemy.text = level
+                self.RoleEnemy:SetRawImage(characterIcon)
+            end
+        end
+    end
+end
 
 return XUiPanelTheatre5SettleSummary

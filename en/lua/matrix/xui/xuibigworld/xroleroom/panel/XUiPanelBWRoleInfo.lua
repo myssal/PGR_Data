@@ -6,6 +6,7 @@
 local XUiPanelBWRoleInfo = XClass(XUiNode, "XUiPanelBWRoleInfo")
 
 function XUiPanelBWRoleInfo:OnStart()
+    self.IsFirstPlay = true
     self:InitCb()
     self:InitView()
 end
@@ -15,6 +16,7 @@ function XUiPanelBWRoleInfo:OnEnable()
 end
 
 function XUiPanelBWRoleInfo:Close()
+    self.IsFirstPlay = true
     self.Parent:PlayEnableAnimation()
     XUiNode.Close(self)
 end
@@ -24,21 +26,13 @@ function XUiPanelBWRoleInfo:InitCb()
         --self:RefreshView(self._TeamId, self._EntityId, self._Pos)
         self.Parent:OnBtnDetailClicked()
     end
-    self.BtnJoin.CallBack = function()
-        self:OnBtnJoinClick()
-    end
+    self.BtnJoin:AddEventListener(handler(self, self.OnBtnJoinClick))
 
-    self.BtnQuit.CallBack = function()
-        self:OnBtnQuitClick()
-    end
+    self.BtnQuit:AddEventListener(handler(self, self.OnBtnQuitClick))
     
-    self.BtnFashion.CallBack = function()
-        self:OnBtnFashionClick()
-    end
+    self.BtnFashion:AddEventListener(handler(self, self.OnBtnFashionClick))
     
-    self.BtnExchange.CallBack = function() 
-        self:OnBtnExchangeClick()
-    end
+    self.BtnExchange:AddEventListener(handler(self, self.OnBtnExchangeClick))
 end
 
 function XUiPanelBWRoleInfo:InitView()
@@ -47,7 +41,13 @@ end
 
 function XUiPanelBWRoleInfo:RefreshView(teamId, entityId, pos)
     self:Open()
-    self:PlayAnimation("PanelOwnedRefresh")
+    if self.IsFirstPlay then
+        self:PlayAnimation("PanelOwnedAnimEnable")
+        self.IsFirstPlay = false
+    else
+        self:PlayAnimation("PanelOwnedRefresh")
+    end
+    
     self._TeamId = teamId
     self._EntityId = entityId
     self._Pos = pos

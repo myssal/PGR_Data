@@ -21,6 +21,9 @@ function XTheatre5Agency:OnInit()
     self.BattleCom:Init(self, self._Model)
 
     self:RegisterChapterAgency()
+
+    self._TimerCheckLevelUpdate = nil
+    self._TimerCheckInterrupt = nil
 end
 
 function XTheatre5Agency:InitRpc()
@@ -32,6 +35,7 @@ function XTheatre5Agency:InitRpc()
     XRpc.NotifyPveStoryLineUnlock = handler(self, self.OnNotifyPveStoryLineUnlock)
     XRpc.NotifyTheatre5AddItem = handler(self, self.OnNotifyTheatre5AddItem)
     XRpc.NotifyTheatre5BagDataUpdate = handler(self, self.OnNotifyTheatre5BagDataUpdate)
+    XRpc.NotifyTheatre5Effect = handler(self, self.OnNotifyTheatre5Effect)
 end
 
 function XTheatre5Agency:InitEvent()
@@ -49,6 +53,14 @@ function XTheatre5Agency:OnRelease()
     self.PVEAgency = nil
     self.BattleCom:Release()
     self.BattleCom = nil
+    if self._TimerCheckInterrupt then
+        XScheduleManager.UnSchedule(self._TimerCheckInterrupt)
+        self._TimerCheckInterrupt = nil
+    end
+    if self._TimerCheckLevelUpdate then
+        XScheduleManager.UnSchedule(self._TimerCheckLevelUpdate)
+        self._TimerCheckLevelUpdate = nil
+    end
 
     XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.AutoChess, self)
 
@@ -185,24 +197,21 @@ function XTheatre5Agency:RequestTheatre5SkillChoice(instanceId, isEquipped, targ
 end
 
 --- 购买背包槽位
-function XTheatre5Agency:RequestTheatre5ShopUnlockGridRequest(itemType, cb)
+function XTheatre5Agency:RequestTheatre5ShopUnlockGridRequest(itemType)
     XNetwork.Call("XTheatre5ShopUnlockGridRequest", { GridType = itemType }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
-
             if cb then
                 cb(false)
             end
-
             return
         end
 
         self._Model.CurAdventureData:UpdateFullBagData(res.BagData)
         self._Model.CurAdventureData:UpdateGoldNum(res.GoldNum)
-
-        if cb then
-            cb(true)
-        end
+        self._Model.CurAdventureData:UpdateIsCanFreeUnlockGrid(res.IsCanFreeUnlockGrid)
+        XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_EQUIP_SHOW)
+        XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_GOLD_SHOW)
     end)
 end
 
@@ -218,7 +227,7 @@ function XTheatre5Agency:RequestTheatre5EnterShop(cb)
 
             return
         end
-
+        self._Model.CurAdventureData:UpdateEnterShopCnt(res.EnterShopCnt)
         self._Model.CurAdventureData:UpdateCurPlayStatus(res.Status)
 
         if cb then
@@ -243,6 +252,7 @@ function XTheatre5Agency:RequestTheatre5ShopBuyItem(instanceId, isEquipped, targ
         self._Model.CurAdventureData:UpdateGoldNum(res.GoldNum)
         self._Model.CurAdventureData:UpdateFullBagData(res.BagData)
         self._Model.CurAdventureData:UpdateFullShopData(res.ShopData)
+        self._Model.CurAdventureData:UpdateRuneAutoStrengthenCnt(res.RuneAutoStrengthenCnt)
 
         if cb then
             cb(true)
@@ -288,6 +298,7 @@ function XTheatre5Agency:RequestTheatre5ShopRefresh(cb)
 
         self._Model.CurAdventureData:UpdateFullShopData(res.ShopData)
         self._Model.CurAdventureData:UpdateGoldNum(res.GoldNum)
+        self._Model.CurAdventureData:UpdateEffectFreeRefreshCnt(res.UpdateEffectFreeRefreshCnt)
 
         if cb then
             cb(true)
@@ -414,6 +425,7 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
     self._Model.PVERougeData:UpdateHistoryChapters(theatre5DataDb.HistoryChapters)
 
     self._Model:SetCharacterWinGameCountData(theatre5DataDb.CommonFightCnt)
+    self._Model:UpdateRelicCollects(theatre5DataDb.RelicCollects)
 end
 
 function XTheatre5Agency:OnNotifyTheatre5UnlockCharacter(data)
@@ -429,6 +441,7 @@ function XTheatre5Agency:OnNotifyTheatre5ShopUpdate(data)
     self._Model.CurAdventureData:UpdateGoldNum(data.GoldNum)
     self._Model.CurAdventureData:UpdateFullShopData(data.ShopData)
     self._Model.CurAdventureData:UpdateFullBagData(data.BagData)
+    XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_UPDATE_BAG)
 end
 
 function XTheatre5Agency:OnNotifyTheatre5SkillChoiceUpdate(data)
@@ -468,7 +481,7 @@ function XTheatre5Agency:RequestTheatre5CharacterSkinSet(characterId, fashionId,
         end
 
         --todo 角色定义抽取基类
-        if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameModel.PVP then
+        if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
             self._Model.PVPCharacterData:UpdateCharacterFashionId(characterId, fashionId)
         else
 
@@ -486,6 +499,13 @@ end
 
 function XTheatre5Agency:GetTheatre5ItemCfgById(id)
     return self._Model:GetTheatre5ItemCfgById(id)
+end
+
+function XTheatre5Agency:GetTheatre5ItemTypeById(id)
+    local config = self._Model:GetTheatre5ItemCfgById(id)
+    if config then
+        return config.Type
+    end
 end
 
 function XTheatre5Agency:GetTheatre5ItemTagCfgById(id)
@@ -606,12 +626,12 @@ function XTheatre5Agency:CheckCharacterIsAchieveAimWinFightCount(charaId, winCou
 end
 --endregion
 
-function XTheatre5Agency:TryPopupDialog(title, content, closeCb, sureCb, cancelCb, needDailyIgnoreCheck, dailyIgnoreKey, hideFullClose)
+function XTheatre5Agency:TryPopupDialog(title, content, closeCb, sureCb, cancelCb, needDailyIgnoreCheck, dailyIgnoreKey, hideFullClose, hideCancel, showTxtTips)
     if needDailyIgnoreCheck then
         --todo: 暂无具体需求，先不处理
     end
 
-    XLuaUiManager.Open('UiTheatre5PopupCommon', title, content, closeCb, sureCb, cancelCb, dailyIgnoreKey, hideFullClose)
+    XLuaUiManager.Open('UiTheatre5PopupCommon', title, content, closeCb, sureCb, cancelCb, dailyIgnoreKey, hideFullClose, hideCancel, showTxtTips)
 end
 
 function XTheatre5Agency:TryPopupDialogWithOneBtn(title, content, closeCb, sureCb, needDailyIgnoreCheck, dailyIgnoreKey, hideFullClose)
@@ -704,12 +724,21 @@ function XTheatre5Agency:CheckShopConfigCanBuyGoods(shopCfg)
 end
 
 --限时能对换商品
-function XTheatre5Agency:CheckLimitShopCanBuyGoods()
+---@return XTableTheatre5Shop
+function XTheatre5Agency:GetLimitShopConfig()
     local limitShopId = self._Model:GetTheatre5ConfigValByKey('Theatre5LimitShop')
     if not XTool.IsNumberValid(limitShopId) then
         return false
     end
     local shopCfg = self._Model:GetTaskOrShopCfg(limitShopId)
+    if not shopCfg then
+        return false
+    end
+    return shopCfg
+end
+
+function XTheatre5Agency:CheckLimitShopCanBuyGoods()
+    local shopCfg = self:GetLimitShopConfig()
     if not shopCfg then
         return false
     end
@@ -829,6 +858,333 @@ function XTheatre5Agency:GetValidShopOrTaskList(type)
         end
     end
     return validTaskShopCfgs
+end
+
+-- 角色升级
+function XTheatre5Agency:XTheatre5CharacterLevelUpRequest()
+    if self._TimerCheckLevelUpdate then
+        return
+    end
+    XNetwork.Call("XTheatre5CharacterLevelUpRequest", { }, function(res)
+        if self._TimerCheckLevelUpdate then
+            XScheduleManager.UnSchedule(self._TimerCheckLevelUpdate)
+        end
+        self._TimerCheckLevelUpdate = XScheduleManager.ScheduleOnce(function()
+            self._TimerCheckLevelUpdate = false
+            self:TriggerInterruptEvent()
+
+        end, XScheduleManager.SECOND)
+
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        self._Model.CurAdventureData:UpdateCharacterLevelData(res)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
+    end)
+end
+
+-- 刷新饰品
+function XTheatre5Agency:XTheatre5RelicRefreshRequest(callback)
+    XNetwork.Call("XTheatre5RelicRefreshRequest", { }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        self._Model.CurAdventureData:UpdateRelicUseRefreshCount(res.UseRefreshCount)
+        self._Model.CurAdventureData:UpdateRandomRelics(res.RandomRelics)
+        if callback then
+            callback()
+        end
+    end)
+end
+
+function XTheatre5Agency:XTheatre5RelicChooseRequest(instanceId, callback)
+    XNetwork.Call("XTheatre5RelicChooseRequest", { InstanceId = instanceId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        self._Model.CurAdventureData:UpdateCurPlayStatus(res.Status)
+        self._Model.CurAdventureData:UpdateRelicUseRefreshCount(res.UseRefreshCount)
+        self._Model.CurAdventureData:UpdateRandomRelics(res.RandomRelics)
+        if res.ChooseRelic then
+            self._Model.CurAdventureData:UpdateOneRelic(res.ChooseRelic)
+            self._Model:UpdateOneRelicCollect(res.ChooseRelic.ItemId)
+            XEventManager.DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_RELIC_UPDATE)
+        else
+            XLog.Error("[XTheatre5Agency] 获取的已选饰品为空")
+        end
+        if callback then
+            callback()
+        end
+    end)
+end
+
+function XTheatre5Agency:XTheatre5HammerStrengthenRequest(hammerId, runeId, callback)
+    XNetwork.Call("XTheatre5HammerStrengthenRequest", { HammerId = hammerId, RuneId = runeId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        self._Model.CurAdventureData:RemoveItem(res.HammerId, true)
+        self._Model.CurAdventureData:UpdateRune(res.Rune)
+        if callback then
+            callback()
+        end
+    end)
+end
+
+function XTheatre5Agency:XTheatre5BuyExpRequest(exp)
+    XNetwork.Call("XTheatre5BuyExpRequest", { Exp = exp }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        local buyExp = res.BuyExp
+        local exp = self._Model.CurAdventureData:GetCharacterExp()
+        self._Model.CurAdventureData:UpdateCharacterExp(exp + buyExp)
+
+        local costGold = res.CostGold
+        local gold = self._Model.CurAdventureData:GetGoldNum()
+        self._Model.CurAdventureData:UpdateGoldNum(gold - costGold)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
+    end)
+end
+
+-- 角色升级，需要客户端主动判断
+function XTheatre5Agency:CheckLevelUpdate()
+    if self._TimerCheckLevelUpdate then
+        return false
+    end
+    if not XLuaUiManager.IsUiShow("UiTheatre5BattleShop") then
+        XLog.Debug("[XTheatre5Agency] 不在商店界面中，不能检查角色升级")
+        return false
+    end
+    if XMVCA.XTheatre5:HasRelicToSelect() then
+        XLog.Debug("[XTheatre5Agency] 角色升级，需要选择饰品")
+        return false
+    end
+    local levelConfig = self._Model:GetCharacterLevelConfig(self._Model.CurAdventureData)
+    if not levelConfig then
+        XLog.Error("[XTheatre5Model] 角色检测升级，但是对应等级的配置数据为空")
+        return false
+    end
+    local nextLevel = self._Model:GetCharacterLevelConfig(self._Model.CurAdventureData, levelConfig.Level + 1)
+    if not nextLevel then
+        --XLog.Error("[XTheatre5Model] 已经满级")
+        return false
+    end
+    local exp = self._Model.CurAdventureData:GetCharacterExp()
+    if exp >= levelConfig.Exp then
+        XMVCA.XTheatre5:XTheatre5CharacterLevelUpRequest()
+        return true
+    end
+    return false
+end
+
+-- 饰品未选择
+function XTheatre5Agency:HasRelicToSelect()
+    if self._Model.CurAdventureData then
+        if self._Model.CurAdventureData.RandomRelics then
+            if #self._Model.CurAdventureData.RandomRelics > 0 then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+function XTheatre5Agency:OnNotifyTheatre5Effect(data)
+    self._Model.CurAdventureData:UpdateEffectQueue(data.EffectQueue)
+    self:HandleEvents()
+    -- 只在商店阶段，可以自由触发
+    if self._Model.CurAdventureData:GetCurPlayStatus() == self.EnumConst.PlayStatus.Shopping then
+        self:TriggerInterruptEvent()
+    end
+end
+
+-- 服务端下推一堆事件下来，客户端找合适的时机，更新这一切事件
+function XTheatre5Agency:HandleEvents()
+    self._Model.CurAdventureData:ClearEventData()
+    local events = self._Model.CurAdventureData:GetEffectQueue()
+    local isSendBagUpdateEvent = false
+    for i = 1, #events do
+        if self:_HandleEvent(events[i]) then
+            isSendBagUpdateEvent = true
+        end
+    end
+    -- 清空
+    for i = 1, #events do
+        events[i] = nil
+    end
+    if isSendBagUpdateEvent then
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_UPDATE_BAG)
+    end
+end
+
+---XTheatre5Effect 这个类来自XTheatre5Define
+function XTheatre5Agency:_HandleEvent(event)
+    -- 进入战斗时获得指定Buff
+    if event.Type == self.EnumConst.Theatre5EffectType.AddBuff then
+        local data = event.AddBuffResult
+        self._Model.CurAdventureData:AddBuff(data.Buffs)
+        return
+    end
+    -- 在指定的RandomGroup中进行一次抽取,抽取时需排除[商店][临时背包][背包][装备中]达到数量上限的商品
+    if event.Type == self.EnumConst.Theatre5EffectType.RandomItemGroup then
+        local data = event.RandomItemGroupEffectResult
+        self._Model.CurAdventureData:HandleBagUpdates(data.UpdateItems)
+        return true
+    end
+    -- 获得指定的道具
+    if event.Type == self.EnumConst.Theatre5EffectType.AddItem then
+        local data = event.AddItemGroupEffectResult
+        self._Model.CurAdventureData:HandleBagUpdate(data.UpdateItem)
+        return true
+    end
+    -- 获得金币.期待可配负值,等同于扣除金币.扣除时最多扣到0.(最终数量=参数1+参数2*参数3)
+    if event.Type == self.EnumConst.Theatre5EffectType.ChangeGold then
+        local data = event.ChangeGoldResult
+        self._Model.CurAdventureData:UpdateGoldNum(data.NewGold)
+        return
+    end
+    -- 获得免费刷新次数(刷新价格固定为0,刷新时不计入已刷新次数)
+    if event.Type == self.EnumConst.Theatre5EffectType.AddFreeFreshCnt then
+        local data = event.AddFreeShopFreshCntResult
+        self._Model.CurAdventureData:UpdateEffectFreeRefreshCnt(data.NewEffectFreeRefreshCnt)
+        return
+    end
+    -- 获得经验
+    if event.Type == self.EnumConst.Theatre5EffectType.AddExp then
+        local data = event.AddExpResult
+        self._Model.CurAdventureData:UpdateCharacterExp(data.NewExp)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE5_REFRESH_LEVEL_EXP)
+        return
+    end
+    -- 随机偷取商店内的符纹(不消耗金币,随机购买)
+    if event.Type == self.EnumConst.Theatre5EffectType.RandomStealShopRune then
+        local data = event.RandomStealRuneResult
+        if data then
+            self._Model.CurAdventureData:HandleBagUpdates(data.UpdateItems)
+            self._Model.CurAdventureData:SetShopItemBuy(data.UpdateItems)
+            return true
+        else
+            XLog.Error("[XTheatre5Agency] 随机偷取商店内符纹错误")
+        end
+        return
+    end
+    -- 将后续x次购买的符纹替换为强化状态的符纹
+    if event.Type == self.EnumConst.Theatre5EffectType.AddAutoStrengthenCnt then
+        local data = event.AddAutoStrengthenCntResult
+        self._Model.CurAdventureData:UpdateRuneAutoStrengthenCnt(data.NewAutoStrengthenCnt)
+        return
+    end
+    -- 进入战斗时获得属性(期待数值和比例可配负值)
+    if event.Type == self.EnumConst.Theatre5EffectType.AddAttr then
+        local data = event.AddAttrResult
+        self._Model.CurAdventureData:AddCharacterAttr(data)
+        return
+    end
+    -- 出售指定位置的符纹(不对技能操作)
+    if event.Type == self.EnumConst.Theatre5EffectType.AutoSellRune then
+        local data = event.AutoSellRuneResult
+        self._Model.CurAdventureData:HandleBagUpdate(data.UpdateItem)
+        local gold = self._Model.CurAdventureData:GetGoldNum()
+        self._Model.CurAdventureData:UpdateGoldNum(gold + data.SellGold)
+        return true
+    end
+    -- 将指定位置的符纹删除,并根据删除符纹的稀有度抽取对应的RandomGroup(不对技能操作)
+    if event.Type == self.EnumConst.Theatre5EffectType.AutoReplaceRune then
+        local data = event.AutoRuneReplaceResult
+        self._Model.CurAdventureData:HandleBagUpdates(data.UpdateItems)
+        return true
+    end
+    -- 心数增加、减少
+    if event.Type == self.EnumConst.Theatre5EffectType.ChangeHp then
+        local data = event.ChangeHpEffectResult
+        self._Model.CurAdventureData:UpdateHealth(data.NewHp)
+        return
+    end
+    XLog.Error("[XTheatre5Agency] 未处理的事件：" .. tostring(event.Type))
+end
+
+-- 检查一些事情是否满足条件, 满足条件则触发
+-- 但是加在这里，需要担心一些问题，比如 打断了当前流程
+function XTheatre5Agency:TriggerInterruptEvent(callback)
+    if self._TimerCheckInterrupt then
+        return
+    end
+    -- 延迟一帧检测,避免因为数据更新导致多次请求
+    self._TimerCheckInterrupt = XScheduleManager.ScheduleNextFrame(function()
+        self._TimerCheckInterrupt = nil
+        --print("检查额外流程")
+        
+        -- pvp没有做流程, 只能在商店界面插入
+        if XMVCA.XTheatre5:HasRelicToSelect() then
+            --print("弹出选择饰品")
+            if not XLuaUiManager.IsStackUiOpen("UiTheatre5PVEPopupChooseReward") then
+                XLuaUiManager.Open("UiTheatre5PVEPopupChooseReward", XMVCA.XTheatre5.EnumConst.ChooseRewardType.Relic, callback)
+            end
+            return
+        end
+
+        -- 自动升级
+        if XMVCA.XTheatre5:CheckLevelUpdate() then
+            --print("因为自动升级而拦截了解锁")
+            return
+        end
+
+        -- 自动解锁技能槽
+        if not self._Model:HasEnoughExpToAutoUpgrade() then
+            self:CheckFreeUnlockRuneSlot()
+            return
+        end
+    end)
+end
+
+-- 检查是否可解锁技能槽
+function XTheatre5Agency:CheckFreeUnlockRuneSlot()
+    if not XLuaUiManager.IsUiShow("UiTheatre5BattleShop") then
+        XLog.Debug("[XTheatre5Agency] 不在商店界面中，不能检查解锁格子")
+        return false
+    end
+    if self._Model.CurAdventureData:GetIsCanFreeUnlockGrid() then
+        XMVCA.XTheatre5:RequestTheatre5ShopUnlockGridRequest(XMVCA.XTheatre5.EnumConst.ItemType.Equip)
+        XLog.Debug("自动解锁技能槽")
+        return true
+    end
+    return false
+end
+
+function XTheatre5Agency:GetText(key, ...)
+    local text = self._Model:GetTheatre5ClientConfigText(key, 1)
+    if not text then
+        XLog.Error("[XTheatre5Agency] 获取文本失败：" .. tostring(key))
+        return ""
+    end
+    return XUiHelper.FormatText(text, ...)
+end
+
+function XTheatre5Agency:GetClientConfig(key, index, ...)
+    local text = self._Model:GetTheatre5ClientConfigText(key, index)
+    if not text then
+        XLog.Error("[XTheatre5Agency] 获取文本失败：" .. tostring(key))
+        return ""
+    end
+    return XUiHelper.FormatText(text, ...)
+end
+
+function XTheatre5Agency:SaveData(data)
+    self._Data = data
+end
+
+function XTheatre5Agency:GetData()
+    return self._Data
+end
+
+function XTheatre5Agency:ResetNewSeason()
+    self._Model:ResetNewSeason()
 end
 
 return XTheatre5Agency

@@ -33,11 +33,11 @@ function XBWCommanderDIYColorEntity:GetPartId()
     end
 end
 
-function XBWCommanderDIYColorEntity:GetPartModelId()
+function XBWCommanderDIYColorEntity:GetModelId()
     local partEntity = self:GetPartEntity()
 
     if partEntity then
-        return partEntity:GetPartModelId()
+        return partEntity:GetModelId()
     else
         return ""
     end
@@ -66,10 +66,10 @@ end
 
 function XBWCommanderDIYColorEntity:GetMaterialConfigs()
     if not self:IsNil() then
-        local partModelId = self:GetPartModelId()
+        local modelId = self:GetModelId()
 
-        if not string.IsNilOrEmpty(partModelId) then
-            return self._OwnControl:GetMaterialConfigs(partModelId, self:GetColorId())
+        if not string.IsNilOrEmpty(modelId) then
+            return self._OwnControl:GetMaterialConfigs(modelId, self:GetColorId())
         end
     end
 

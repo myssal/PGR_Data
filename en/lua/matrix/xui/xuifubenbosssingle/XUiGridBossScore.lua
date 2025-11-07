@@ -103,8 +103,8 @@ function XUiGridBossScore:OnBtnReceiveClick()
         end
 
         XEventManager.DispatchEvent(XEventId.EVENT_BOSS_SINGLE_GET_REWARD)
-        self.PanelAlreadyGet.gameObject:SetActive(true)
-        self.BtnReceive.gameObject:SetActive(false)
+        --self.PanelAlreadyGet.gameObject:SetActive(true)
+        --self.BtnReceive.gameObject:SetActive(false)
     end)
 end
 

@@ -269,7 +269,7 @@ XActivityManagerCreator = function()
             local redPointParam = XActivityBriefConfigs.GetRedPointParamBySkipId(activityCfg.Params[1])
             if redPointCondition then
                 for _, red in pairs(redPointCondition) do
-                    if XRedPointConditions[red].Check(redPointParam) then
+                    if XRedPointManager.SafeCheckSingleRedCondition(red, redPointParam) then
                         return true
                     end
                 end
@@ -280,7 +280,7 @@ XActivityManagerCreator = function()
             local redPointParam = XActivityBriefConfigs.GetRedPointParamBySkipId(activityCfg.Params[1])
             if redPointCondition then
                 for _, red in pairs(redPointCondition) do
-                    if XRedPointConditions[red].Check(redPointParam) then
+                    if XRedPointManager.SafeCheckSingleRedCondition(red, redPointParam) then
                         return true
                     end
                 end
@@ -293,16 +293,16 @@ XActivityManagerCreator = function()
             if redPointCondition then
                 -- 特殊处理，首次未点击蓝点依附于子页签首位：阶段奖励
                 if tabType == XEnumConst.WheelchairManual.TabType.StepReward then
-                    return XRedPointConditions[redPointCondition].Check() or XRedPointConditions[XRedPointConditions.Types.CONDITION_WHEELCHAIRMANUAL_ENTRANCE_CHANGE].Check()
+                    return XRedPointManager.SafeCheckSingleRedCondition(redPointCondition) or XRedPointManager.SafeCheckSingleRedCondition(XRedPointConditions.Types.CONDITION_WHEELCHAIRMANUAL_ENTRANCE_CHANGE)
                 else
-                    return XRedPointConditions[redPointCondition].Check()
+                    return XRedPointManager.SafeCheckSingleRedCondition(redPointCondition)
                 end
             end
             
             return false
         -- GachaCanLiver卡池红点
         elseif activityCfg.ActivityType ==  XActivityConfigs.ActivityType.GachaCanLiver then
-            return XRedPointConditions[XRedPointConditions.Types.CONDITION_GACHACANLIVER_MAIN].Check()
+            return XRedPointManager.SafeCheckSingleRedCondition(XRedPointConditions.Types.CONDITION_GACHACANLIVER_MAIN)
         end
         --当活动类型（ActivityType）为Shop或Skip时，红点通过本地记录来判断是否显示
         return not HaveReadActivityIds[activityId]
