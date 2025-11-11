@@ -503,7 +503,8 @@ end
 
 function XRaceControl:GetPropertyDesc(guessId, value)
     if not value then
-        return ""
+        --没有数据 显示【未达成】
+        return XUiHelper.GetText("RaceNotAchieved")
     end
 
     local property = self:GetGuessProperty(guessId)
@@ -829,7 +830,6 @@ function XRaceControl:StartGame()
     if not XMVCA.XRace:IsEnterScene() then
         XLuaUiManager.Open("UiRacePopupGameStart")
     end
-    XLuaUiManager.Remove("UiRacePredict")
 end
 
 --局外用（协议在Agency里请求）

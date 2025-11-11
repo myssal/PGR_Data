@@ -9,10 +9,12 @@ function XUiCoursePrepare:OnAwake()
     --self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XCourseConfig.GetPointItemId())
 end
 
-function XUiCoursePrepare:OnStart(pcCloseCb)
+function XUiCoursePrepare:OnStart(pcCloseCb, stageId, chapterId)
     self.PcCloseCb = pcCloseCb
     --self.JumpStageCb = jumpStageCb  --跳转至课程关卡关卡回调
     self.PanelAsset = XUiCourseAssetPanel.New(self.PanelAsset)
+    
+    self:UpdateData(stageId, chapterId)
 end
 
 function XUiCoursePrepare:PcClose()

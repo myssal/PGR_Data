@@ -26,10 +26,10 @@ function XUiRaceMemberDetail:OnStart(roleId, dimObj, alignment)
     self.ImgAcc:SetSprite(self._Control:GetCharacterGradeIcon(roleCfg.ShowAcc))
     self.ImgLuck:SetSprite(self._Control:GetCharacterGradeIcon(roleCfg.ShowLuck))
 
-    XTool.SetUISizeDelta(self.ImgSpeedProgress, self:GetW(roleCfg.ShowSpeed), self._BarHeight)
-    XTool.SetUISizeDelta(self.ImgDriftProgress, self:GetW(roleCfg.ShowDrift), self._BarHeight)
-    XTool.SetUISizeDelta(self.ImgAccProgress, self:GetW(roleCfg.ShowAcc), self._BarHeight)
-    XTool.SetUISizeDelta(self.ImgLuckProgress, self:GetW(roleCfg.ShowLuck), self._BarHeight)
+    self.ImgSpeedProgress.transform.sizeDelta = Vector2(self:GetW(roleCfg.ShowSpeed), self._BarHeight)
+    self.ImgDriftProgress.transform.sizeDelta = Vector2(self:GetW(roleCfg.ShowDrift), self._BarHeight)
+    self.ImgAccProgress.transform.sizeDelta = Vector2(self:GetW(roleCfg.ShowAcc), self._BarHeight)
+    self.ImgLuckProgress.transform.sizeDelta = Vector2(self:GetW(roleCfg.ShowLuck), self._BarHeight)
 
     local normalSkill = self._Control:GetRaceCharacterSkillById(roleCfg.NormalSkill)
     self.TxtNormalName.text = normalSkill.Name

@@ -850,7 +850,7 @@ end
 --============================
 -- 通用CV播放
 --============================
-function XUiPanelSignBoard:_DoPlayCv(cvId, cvType)
+function XUiPanelSignBoard:_DoPlayCv(cvId, cvType, signBoardConfig)
     if not (cvId and cvId > 0) then return end
 
     -- 如果正在播放，需要打断
@@ -861,7 +861,7 @@ function XUiPanelSignBoard:_DoPlayCv(cvId, cvType)
     end
 
     local targetFace = self.RoleModel and self.RoleModel:GetSkinMeshFace()
-    if targetFace then
+    if targetFace and signBoardConfig.IsUseLipSync then
         self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetFace, cvType or -1)
     elseif cvType then
         self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
@@ -940,7 +940,7 @@ function XUiPanelSignBoard:_PlayCv(element)
     if not (cvId and cvId > 0 and self.CvTrigger) then return end
     
     local cvType = element.CvType or CS.UnityEngine.PlayerPrefs.GetInt("CV_TYPE", DEFAULT_CV_TYPE)
-    self:_DoPlayCv(cvId, cvType)
+    self:_DoPlayCv(cvId, cvType, element.SignBoardConfig)
 
     -- 播放某些看板Cv时检测静音Bgm
     if element.SignBoardConfig.TurnOffBgm then

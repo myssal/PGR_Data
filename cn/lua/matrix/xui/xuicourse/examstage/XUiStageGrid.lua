@@ -54,10 +54,13 @@ end
 
 function XUiStageGrid:OnBtnStageClick()
     self:SetSelectActive(true)
-    self.RootUi.ChildUiCoursePrepare:UpdateData(self.StageId, self.ChapterId)
+
+    if self.RootUi.ChildUiCoursePrepare then
+        self.RootUi.ChildUiCoursePrepare:UpdateData(self.StageId, self.ChapterId)
+    end
     --self.RootUi:OpenOneChildUi("UiCoursePrepare")
     if self.ClickStageCb then
-        self.ClickStageCb(self)
+        self.ClickStageCb(self, self.StageId, self.ChapterId)
     end
 end
 

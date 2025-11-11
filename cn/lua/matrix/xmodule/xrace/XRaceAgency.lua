@@ -6,6 +6,7 @@ local SceneIds = require("XModule/XScene/XScene/XLuaSceneDefine").SceneIds
 local XRaceAgency = XClass(XFubenActivityAgency, "XRaceAgency")
 
 function XRaceAgency:OnInit()
+    self._IsEnterScene = false
     self._WaitTimers = {}
     self:RegisterActivityAgency()
 end
@@ -36,6 +37,7 @@ function XRaceAgency:ResetAll()
         XScheduleManager.UnSchedule(timerId)
     end
     self._WaitTimers = {}
+    self._IsEnterScene = false
 end
 
 ----------public start----------
@@ -96,6 +98,7 @@ end
 
 -- 进入场景
 function XRaceAgency:EnterMatchScene(...)
+    if self._IsEnterScene then return end
     self._IsEnterScene = true
     self:OpenLoading()
     XMVCA.XScene:LoadScene(SceneIds.XRaceScene, true, nil, nil, ...)
@@ -244,7 +247,7 @@ end
 
 function XRaceAgency:NotifyRaceRoundEnd(data)
     self._IsRunningMatch = false
-    self:CheckMainPanelRoleSite(data.RoundId)
+    self._Model:SetRoleRandomSite(nil)
     if self:IsEnterScene() then
         XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_END_IN_SCENE, data.RoundId)
         return --走局内的结算逻辑
@@ -253,26 +256,6 @@ function XRaceAgency:NotifyRaceRoundEnd(data)
         self._Model:UpdateAllRoundResult(res)
         XEventManager.DispatchEvent(XEventId.EVENT_RACE_GAME_END, data.RoundId)
     end)
-end
-
---重置主界面角色站位
-function XRaceAgency:CheckMainPanelRoleSite(curRoundId)
-    local sortRoundIds = self._Model:GetSortRoundId()
-    local curIdx = table.indexof(sortRoundIds, curRoundId)
-    if curIdx >= #sortRoundIds then
-        return --总决赛除外
-    end
-    local curEtcd = self._Model:GetEtcdRoundConfig(curRoundId)
-    local nextEtcd = self._Model:GetEtcdRoundConfig(sortRoundIds[curIdx + 1])
-    if not curEtcd or not nextEtcd then
-        return
-    end
-    local curPointGroup = curEtcd.PointGroupId
-    local nextPointGroup = nextEtcd.PointGroupId
-    if XTool.IsNumberValid(curPointGroup) and XTool.IsNumberValid(nextPointGroup) and curPointGroup == nextPointGroup then
-        return --下一次比赛是同组的积分赛时除外（因为角色没变化）
-    end
-    self._Model:SetRoleRandomSite(nil)
 end
 
 --region 飘字

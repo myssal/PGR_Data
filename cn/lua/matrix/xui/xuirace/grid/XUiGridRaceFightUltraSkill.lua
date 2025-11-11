@@ -8,7 +8,7 @@ function XUiGridRaceFightUltraSkill:OnStart(...)
     -- self:_RegisterButtonClicks()
 
     self._Scene = XMVCA.XScene:GetScene(SceneIds.XRaceScene)
-    self._renderTexture = CS.XRenderTextureManager.GetTemporary(154, 154)
+    self._renderTexture = CS.XRenderTextureManager.GetTemporary(154, 154, 0, CS.UnityEngine.RenderTextureFormat.Default, CS.UnityEngine.RenderTextureReadWrite.Default, false)
     self.PanelCam.texture = self._renderTexture
 end
 

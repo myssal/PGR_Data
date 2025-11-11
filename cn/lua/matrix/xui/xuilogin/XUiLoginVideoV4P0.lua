@@ -5,12 +5,23 @@ function XUiLoginVideoV4P0:OnAwake()
     self.BtnTanchuangClose.CallBack = function() self:OnBtnCloseClick() end
     self.BtnGo.CallBack = function() self:OnBtnGoClick() end
 
-    self.VideoPlayerUgui1.ActionEnded = function ()
-        self.Effect.gameObject:SetActiveEx(true)
-        self:PlayAnimation("BtnEnable")
-        self.VideoPlayerUgui2:Prepare()
-        self.Step2.gameObject:SetActiveEx(true)
+    self.VideoPlayerUgui1.ActionPlayed = function ()
+        self.TimerId = XScheduleManager.ScheduleOnce(function()
+            self.Effect.gameObject:SetActiveEx(true)
+            self.Step2.gameObject:SetActiveEx(true)
+            self:PlayAnimation("BtnEnable")
+        end, XScheduleManager.SECOND * 7.85)
+        
+        self.TimerId2 = XScheduleManager.ScheduleOnce(function()
+            self.VideoPlayerUgui2:Play()
+            self.VideoPlayerUgui1:Stop()
+            self.VideoPlayerUgui1.gameObject:SetActiveEx(false)
+        end, XScheduleManager.SECOND * 8.2)
     end
+
+    self.VideoPlayerUgui1.DestroyOnPlayEnd = false
+    self.VideoPlayerUgui1.DestroyOnDisable = true
+    self.VideoPlayerUgui2.PlayAfterPrepare = false
 end
 
 function XUiLoginVideoV4P0:OnStart()
@@ -21,6 +32,7 @@ function XUiLoginVideoV4P0:OnStart()
     self.VideoPlayerUgui1:SetInfoByVideoId(targetGotoConfig.VideoConfigId1)
     self.VideoPlayerUgui2:SetInfoByVideoId(targetGotoConfig.VideoConfigId2)
     self.VideoPlayerUgui1:Prepare()
+    self.VideoPlayerUgui2:Prepare()
 
     self:InitTimes()
 
@@ -67,4 +79,14 @@ function XUiLoginVideoV4P0:OnBtnGoClick()
 
     self:Close()
     XFunctionManager.SkipInterface(self.LoginPromoFeatureConfig.GotoSkipId)
+end
+
+function XUiLoginVideoV4P0:OnDestroy()
+    if self.TimerId then
+        XScheduleManager.UnSchedule(self.TimerId)
+    end
+
+    if self.TimerId2 then
+        XScheduleManager.UnSchedule(self.TimerId2)
+    end
 end

@@ -96,17 +96,19 @@ function XRaceScene:OnEnter()
     self:LoadChildAsync(nil, self._MapCfg.ScenePath, function(loadId, obj)
         self._PrefabRoot = obj
         self:LoadChildAsync(obj, self._MapCfg.SceneRoadPath, function(loadId, obj2)
-            self._Road = obj2
-            self._SceneRaceGameRoot = self._Road.transform:Find("RaceGame")
-            self._CamTrack = self._Road.transform:Find("CamTrack")
-            if self._CamTrack then
-                self._CamTrack.gameObject:SetActive(false)
+            if not XTool.UObjIsNil(obj2) then
+                self._Road = obj2
+                self._SceneRaceGameRoot = self._Road.transform:Find("RaceGame")
+                self._CamTrack = self._Road.transform:Find("CamTrack")
+                if self._CamTrack then
+                    self._CamTrack.gameObject:SetActive(false)
+                end
+                self._MapEffect = self._Road.transform:Find("MapEffect")
+                if self._MapEffect then
+                    self._MapEffect.gameObject:SetActive(false)
+                end
+                self._XRaceViewManager = self._SceneRaceGameRoot:GetComponent(typeof(CS.XRace.XRaceViewManager))
             end
-            self._MapEffect = self._Road.transform:Find("MapEffect")
-            if self._MapEffect then
-                self._MapEffect.gameObject:SetActive(false)
-            end
-            self._XRaceViewManager = self._SceneRaceGameRoot:GetComponent(typeof(CS.XRace.XRaceViewManager))
             XLuaUiManager.Open("UiRaceFightMain", self._RoundId, self._Ids, self._SceneType)
         end)
     end)

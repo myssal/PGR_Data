@@ -239,7 +239,7 @@ function XUiPanelOtherSet:ShowOverSeaAgreement()
 end
 
 function XUiPanelOtherSet:ShowFilings()
-    if XDataCenter.UiPcManager.IsPc() then
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
         return
     end
     if XOverseaManager.IsOverSeaRegion() then
@@ -258,7 +258,14 @@ function XUiPanelOtherSet:ShowFilings()
     
     self.Filings.gameObject:SetActiveEx(true)
     self.HtmlText.HrefUnderLineColor = XUiHelper.Hexcolor2Color("0E70BD")
-    self.HtmlText.text = XUiHelper.GetHtmlHrefText("LinkICPFilingContent",
+    
+    local linkICPFilingContent
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        linkICPFilingContent = "LinkICPFilingContentCloudGame"
+    else
+        linkICPFilingContent = "LinkICPFilingContent"
+    end
+    self.HtmlText.text = XUiHelper.GetHtmlHrefText(linkICPFilingContent,
     XUiHelper.GetClientConfig("ICPFilingUrl", XUiHelper.ClientConfigType.String))
     self.HtmlText.HrefListener = Handler(self, self.OnHtmlHrefClick)
 end
@@ -591,7 +598,11 @@ function XUiPanelOtherSet:OnCaptionTypeChanged(index)
 end
 
 function XUiPanelOtherSet:OnHtmlHrefClick(url, content)
-    XHeroSdkManager.OpenURL(url)
+    if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        XHeroSdkManager.OpenWebview(url, nil, nil, false)
+    else
+        XHeroSdkManager.OpenURL(url)
+    end
 end
 
 function XUiPanelOtherSet:ShowPanel()

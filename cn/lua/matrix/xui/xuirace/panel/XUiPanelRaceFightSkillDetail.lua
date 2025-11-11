@@ -79,6 +79,7 @@ function XUiPanelRaceFightSkillDetail:SetRaceId(id, index)
     end
 
     self:UpdatePower()
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.Transform)
 end
 
 return XUiPanelRaceFightSkillDetail

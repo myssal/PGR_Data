@@ -61,14 +61,16 @@ function XPlotExhibitionAgency:GetIsSpeedrun(stageId)
 end
 
 function XPlotExhibitionAgency:AddSpeedrunRobots(stageId, entities)
-    local config = self._Model:GetStageSpeedrunConfig(stageId)
-    if config then
-        for _, robotId in pairs(config.RobotId) do
-            local robot = XRobotManager.GetRobotById(robotId)
-            if robot then
-                table.insert(entities, robot)
-            else
-                XLog.Error("XPlotExhibitionAgency:AddSpeedrunRobots robotId not exist:" .. tostring(robotId))
+    if self:GetIsSpeedrun(stageId) then
+        local config = self._Model:GetStageSpeedrunConfig(stageId)
+        if config then
+            for _, robotId in pairs(config.RobotId) do
+                local robot = XRobotManager.GetRobotById(robotId)
+                if robot then
+                    table.insert(entities, robot)
+                else
+                    XLog.Error("XPlotExhibitionAgency:AddSpeedrunRobots robotId not exist:" .. tostring(robotId))
+                end
             end
         end
     end

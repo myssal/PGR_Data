@@ -566,10 +566,9 @@ function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
         -- 清空辅助机
         self:GetPartnerData():Unload(pos)
     end
-
-    self:CheckOnlyOneEntityToSyncFirstAndCaptainPos()
-
+    
     if not notSyncToServer then
+        self:CheckOnlyOneEntityToSyncFirstAndCaptainPos()
         self:RefreshGeneralSkills(true)
         self:SyncFullDataToServer()
     end

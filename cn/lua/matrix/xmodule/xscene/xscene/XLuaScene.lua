@@ -348,6 +348,7 @@ end
 
 function XLuaScene:_LoadComplete(root, asset, url)
     root = root or self._Transform
+    if XTool.UObjIsNil(root) then return end
     local obj = XUiHelper.Instantiate(asset, root.transform)
     local loadId = self:_GetLoadId()
 
