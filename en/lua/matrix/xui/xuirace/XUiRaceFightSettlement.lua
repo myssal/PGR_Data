@@ -117,7 +117,7 @@ function XUiRaceFightSettlement:ShowPointsRaceResult(pointGroupId)
         grid.ImgFailBgResult01.gameObject:SetActiveEx(false)
         grid.ImgFailBg01.gameObject:SetActiveEx(false)
         grid.ImgWinBg01.gameObject:SetActiveEx(true)
-        table.insert(self._NumberTweenInfos, { addPoint, grid })
+        table.insert(self._NumberTweenInfos, { addPoint, point, grid })
 
         --错帧动画
         local gridDataEnable = grid.Transform:FindTransform("GridDataEnable")
@@ -143,11 +143,12 @@ function XUiRaceFightSettlement:PlayPointsRaceNumberAnim(data, curIndex)
     local timerId = XScheduleManager.ScheduleOnce(function()
         for i, info in ipairs(self._NumberTweenInfos) do
             local addPoint = info[1]
-            local grid = info[2]
+            local lastPoint = info[2]
+            local grid = info[3]
             local numTimerId = XUiHelper.Tween(1, function(progress)
                 -- 插值计算
                 local currentA = math.floor(addPoint - addPoint * progress)
-                local currentB = math.floor(addPoint * progress)
+                local currentB = math.floor(lastPoint + addPoint * progress)
                 -- 更新UI
                 grid.TxtAdd1.text = string.format("+%s", currentA)
                 grid.TxtAdd2.text = string.format("+%s", currentA)
@@ -157,8 +158,8 @@ function XUiRaceFightSettlement:PlayPointsRaceNumberAnim(data, curIndex)
                 -- 动画结束时，确保数值是最终值
                 grid.TxtAdd1.text = ""
                 grid.TxtAdd2.text = ""
-                grid.TxtTotal1.text = addPoint
-                grid.TxtTotal2.text = addPoint
+                grid.TxtTotal1.text = lastPoint + addPoint
+                grid.TxtTotal2.text = lastPoint + addPoint
                 if i == self._Count then
                     self:PlayRankChangeAnim(data, curIndex)
                 end

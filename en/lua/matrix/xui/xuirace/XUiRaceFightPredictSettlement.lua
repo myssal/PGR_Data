@@ -111,8 +111,13 @@ function XUiRaceFightPredictSettlement:ShowPredictResult(infos)
         if isRole then
             --实际结果
             local resultRoleId = isCorrect and info.GuessRoleId or resultId
-            roleCfg = self._Control:GetRaceCharacterById(resultRoleId)
-            uiObject.RImgRole:SetRawImage(roleCfg.Icon)
+            roleCfg = resultRoleId and self._Control:GetRaceCharacterById(resultRoleId)
+            if roleCfg then
+                uiObject.RImgRole.gameObject:SetActiveEx(true)
+                uiObject.RImgRole:SetRawImage(roleCfg.Icon)
+            else
+                uiObject.RImgRole.gameObject:SetActiveEx(false)
+            end
             uiObject.TxtValue.text = self._Control:GetPropertyDesc(guessId, info.ResultPropertyValue)
             --预测结果
             if isCorrect then

@@ -816,8 +816,8 @@
             "BtnTanchuangClose"
         ],
         "DefaultKeyMapIds": [
-            11515,
             11514,
+            11515,
             11541
         ]
     },
@@ -880,8 +880,8 @@
         "InputMapSectionId": 0,
         "BtnName": [
             "BtnTanchuangClose",
-            "BtnLast",
-            "BtnNext"
+            "BtnLeft",
+            "BtnRight"
         ],
         "DefaultKeyMapIds": [
             11541,
@@ -1275,6 +1275,20 @@
     },
     {
         "UiName": "UiBigWorldPopupQuitShow",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "UiBigWorldCommonBtnBigConfirm",
+            "UiBigWorldCommonBtnBigCancel",
+            "BtnTanchuangClose"
+        ],
+        "DefaultKeyMapIds": [
+            11523,
+            11560,
+            11541
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupSkipDialogue",
         "InputMapSectionId": 151,
         "BtnName": [
             "UiBigWorldCommonBtnBigConfirm",

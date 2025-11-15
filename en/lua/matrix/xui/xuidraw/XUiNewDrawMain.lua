@@ -78,6 +78,10 @@ function XUiNewDrawMain:OnDestroy()
     self:RemoveEventListener()
     self:MarkAllNewTag()
     XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, false)
+    if self.AfterRefreshPowerTagTimeId then
+        XScheduleManager.UnSchedule(self.AfterRefreshPowerTagTimeId)
+        self.AfterRefreshPowerTagTimeId = nil
+    end
 end
 
 function XUiNewDrawMain:Refresh()
@@ -755,31 +759,37 @@ function XUiNewDrawMain:CreateMainBtn(data)
         uiButton:SetNameByGroup(2, data:GetTxtName3())
         uiButton:SetRawImage(data:GetTabBg())
 
-        -- 检查Power标签是否需要显示
-        local tagPower = uiButton.transform:FindTransform("TagPower")
-        local needShowPower = false
-        if tagPower then
-            for _, drawGroup in ipairs(data.DrawGroupList) do
-                local groupId = drawGroup.Id
-                local drawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
-                if drawInfoList then
-                    for _, drawInfo in ipairs(drawInfoList) do
-                        if XDrawConfigs.GetDrawPower(drawInfo.Id) then
-                            needShowPower = true
-                            break
+        self.AfterRefreshPowerTagTimeId = XScheduleManager.ScheduleOnce(function()
+            if XTool.UObjIsNil(uiButton) then
+                return
+            end
+
+            -- 检查Power标签是否需要显示
+            local tagPower = uiButton.transform:FindTransform("TagPower")
+            local needShowPower = false
+            if tagPower then
+                for _, drawGroup in ipairs(data.DrawGroupList) do
+                    local groupId = drawGroup.Id
+                    local drawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
+                    if drawInfoList then
+                        for _, drawInfo in ipairs(drawInfoList) do
+                            if XDrawConfigs.GetDrawPower(drawInfo.Id) then
+                                needShowPower = true
+                                break
+                            end
                         end
                     end
+                    if needShowPower then break end
                 end
-                if needShowPower then break end
+                tagPower.gameObject:SetActiveEx(needShowPower)
             end
-            tagPower.gameObject:SetActiveEx(needShowPower)
-        end
-
-        -- ✅ Power优先逻辑：Power显示时禁用NewImg
-        local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
-        uiButton:ShowTag(canShowTag)
-        uiButton:ShowReddot(data:IsShowFreeTip())
-        uiButton.transform:FindTransform("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
+    
+            -- ✅ Power优先逻辑：Power显示时禁用NewImg
+            local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
+            uiButton:ShowTag(canShowTag)
+            uiButton:ShowReddot(data:IsShowFreeTip())
+            uiButton.transform:FindTransform("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
+        end, XScheduleManager.SECOND * 0.7)
 
         table.insert(self.AllBtnList, uiButton)
         table.insert(self.AllTabEntityList, data)
@@ -873,44 +883,43 @@ function XUiNewDrawMain:CreateSubBtn(subGroupIndex, data)
         uiObject:GetObject("S").gameObject:SetActiveEx(data:GetRareRank() == XDrawConfigs.RareRank.S)
 
         XDataCenter.DrawManager.GetDrawInfoList(data.Id, function()
+            local isShowTag = data:IsShowTag() and (not data:IsShowFreeTip())
             local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data.Id) -- data.Id就是GroupId
             local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(drawInfo and drawInfo.Id)
             uiObject:GetObject("TagReceive").gameObject:SetActiveEx(XTool.IsNumberValid(isCanReceive))
             uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(data.Id))
+            -- 检查Power标签是否需要显示
+            local tagPower = uiObject:GetObject("TagPower")
+            local needShowPower = false
+            if tagPower then
+                local groupId = data:GetId()
+                local allDrawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
+                if allDrawInfoList then
+                    for _, drawInfo in ipairs(allDrawInfoList) do
+                        if XDrawConfigs.GetDrawPower(drawInfo.Id) then
+                            needShowPower = true
+                            break
+                        end
+                    end
+                end
+                tagPower.gameObject:SetActiveEx(needShowPower)
+            end
+            
+            local isNewbieShow = data.MaxBottomTimes == data:GetNewHandBottomCount()
+            
+            -- ✅ Power优先逻辑：Power显示时禁用NewImg, 新手显示时禁用NewImg
+            local canShowTag = (not needShowPower) and isShowTag and not isNewbieShow
+            uiButton:ShowTag(canShowTag)
+    
+            if btnObjDir.PanelActivity then
+                btnObjDir.PanelActivity.gameObject:SetActiveEx(not canShowTag and groupTargetData)
+            end
         end)
 
         self.SkipIndexDic[data:GetRuleType()] = self.SkipIndexDic[data:GetRuleType()] or {}
         self.SkipIndexDic[data:GetRuleType()][data:GetId()] = self.BtnIndex
 
         uiButton:ShowReddot(data:IsShowFreeTip())
-        local isShowTag = data:IsShowTag() and (not data:IsShowFreeTip())
-
-        -- 检查Power标签是否需要显示
-        local tagPower = uiObject:GetObject("TagPower")
-        local needShowPower = false
-        if tagPower then
-            local groupId = data:GetId()
-            local allDrawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
-            if allDrawInfoList then
-                for _, drawInfo in ipairs(allDrawInfoList) do
-                    if XDrawConfigs.GetDrawPower(drawInfo.Id) then
-                        needShowPower = true
-                        break
-                    end
-                end
-            end
-            tagPower.gameObject:SetActiveEx(needShowPower)
-        end
-        
-        local isNewbieShow = data.MaxBottomTimes == data:GetNewHandBottomCount()
-        
-        -- ✅ Power优先逻辑：Power显示时禁用NewImg, 新手显示时禁用NewImg
-        local canShowTag = (not needShowPower) and isShowTag and not isNewbieShow
-        uiButton:ShowTag(canShowTag)
-
-        if btnObjDir.PanelActivity then
-            btnObjDir.PanelActivity.gameObject:SetActiveEx(not canShowTag and groupTargetData)
-        end
 
         table.insert(self.AllBtnList, uiButton)
         table.insert(self.AllTabEntityList, data)

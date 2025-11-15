@@ -281,10 +281,16 @@ function XUiLottoCibeizhe:_PlayLongStartAnim(time)
 
     self:_StopTimer()
     -- 因为要提前加影子保证最后效果一直，长动画需要检测卡列的动作加影子
+    local animEnableLong = self.Transform:FindTransform("AnimEnableLong"):GetComponent("PlayableDirector")
+    local animEnableLongDuration = math.floor(animEnableLong.duration)
+    local nowTimeStamp = XTime.GetServerNowTimestamp()
     self._LongAnimTimer = XScheduleManager.ScheduleForever(function()
         if not XTool.UObjIsNil(self._ModelAnimator) and self._ModelAnimator:GetCurrentAnimatorStateInfo(0):IsName("LottoStand01loop") then
             self:AddModelShadow()
             self:_StopTimer()
+        end
+        
+        if XTime.GetServerNowTimestamp() - nowTimeStamp == animEnableLongDuration then
             self._Volume:PlayEnd()
         end
     end, 0, 0)

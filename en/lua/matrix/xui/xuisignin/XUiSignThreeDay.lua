@@ -190,6 +190,9 @@ end
 function XUiSignThreeDay:OnBtnSkipToPlusClick()
     if XTool.IsNumberValid(self.SkipId) then
         XLuaUiManager.Close('UiSignBanner')
+        if XLuaUiManager.IsUiLoad('UiPurchase') then
+            XLuaUiManager.Remove('UiPurchase')
+        end
         XFunctionManager.SkipInterface(self.SkipId)
     end
 end

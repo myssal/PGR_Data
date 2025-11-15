@@ -607,10 +607,12 @@ function XUiPhotographPortrait:PlaySignBoardElement(element, isCross)
     local cvId = element.SignBoardConfig.CvId
     if cvId and cvId > 0 then
         local targetSkinMeshFace = self.RoleModel:GetSkinMeshFace()
-        if targetSkinMeshFace then
+        if targetSkinMeshFace and element.SignBoardConfig.IsUseLipSync then
             self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetSkinMeshFace, element.CvType or -1)
-        else
+        elseif element.CvType then
             self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, element.CvType)
+        else
+            self.PlayingCv = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId or -1)
         end
     end
     -- 播放某些看板Cv时检测静音Bgm

@@ -589,6 +589,8 @@ end
 function XUiMovie:StartAutoTimer()
     self:ClearAutoTimer()
     self.AutoTimer = XScheduleManager.ScheduleForever(function()
+        if not self.GameObject.activeInHierarchy then return end
+
         local actionIndex = XDataCenter.MovieManager.GetCurPlayingActionIndex()
         local nowTime = CS.UnityEngine.Time.realtimeSinceStartup
         if self.LastActionIndex ~= actionIndex then

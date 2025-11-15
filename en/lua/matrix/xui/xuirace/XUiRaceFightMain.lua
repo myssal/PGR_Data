@@ -30,6 +30,12 @@ function XUiRaceFightMain:OnStart(roundId, ids, sceneType)
     self._EnterCount = self._Control:GetEnterRaceCount()
     self._Control:SetEnterRaceCount(self._EnterCount + 1)
     local roundCfg = self._Control:GetEtcdRoundConfig(roundId)
+
+    if not XLoginManager.IsLogin() then
+        self:Close()
+        return
+    end
+
     if roundCfg then
         local guessList = roundCfg.Guess
         for i = 1, #guessList do
@@ -139,15 +145,17 @@ end
 
 function XUiRaceFightMain:OnNotify(evt, ...)
     if evt == XEventId.EVENT_RACE_GAME_END_IN_SCENE then
-        if self._IsFinish then return end
         self._IsFinish = true
+        self.BtnRaceExit.gameObject:SetActive(true)
+
+        if self._ClientFinish then return end
         self:RemoveDelayTimer()
         self._DelayTimerId = XScheduleManager.ScheduleOnce(function()
-            if self._NotTips or self._IsDestroyUi then return end
+            if self._NotTips or self._IsDestroyUi or self._OpenTips or self._ClientFinish then return end
             XUiManager.DialogTip(nil, XUiHelper.GetText("RaceEndDesc"), XUiManager.DialogType.OnlySure, nil, function()
                 self:OnBtnRaceExitClick()
             end)
-        end, 1000)
+        end, tonumber(self._Control:GetClientConfig("RaceFinishWaitTime")) or 3000)
     end
 end
 
@@ -244,18 +252,18 @@ function XUiRaceFightMain:OnEnterSprintMode(isSprintMode)
     if self._IsShowSprintMode == isSprintMode then return end
     if isSprintMode then
         self:PlayAnimation("Disable", function()
-            self.PanelMap.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-            self.HeadBg.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-            self.BtnDirector.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-            self.PanelSkillDetail.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-            self.BtnHide.gameObject:SetActive(not isSprintMode and not self._IsFinish)
+            self.PanelMap.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+            self.HeadBg.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+            self.BtnDirector.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+            self.PanelSkillDetail.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+            self.BtnHide.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
         end)
     else
-        self.PanelMap.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-        self.HeadBg.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-        self.BtnDirector.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-        self.PanelSkillDetail.gameObject:SetActive(not isSprintMode and not self._IsFinish)
-        self.BtnHide.gameObject:SetActive(not isSprintMode and not self._IsFinish)
+        self.PanelMap.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+        self.HeadBg.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+        self.BtnDirector.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+        self.PanelSkillDetail.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
+        self.BtnHide.gameObject:SetActive(not isSprintMode and not self._ClientFinish)
         self:PlayAnimation("Enable")
     end
     self._IsShowSprintMode = isSprintMode
@@ -296,15 +304,16 @@ function XUiRaceFightMain:OnC2LFinish()
     -- self.PanelRaceData.gameObject:SetActive(true)
     self._PanelRaceDataUi:UpdateRank(self._SelectIndex, true)
     self:SetPanelUiShow(false)
-    self.BtnRaceExit.gameObject:SetActive(true)
     self.HeadBg.gameObject:SetActive(false)
-    self.BtnDirector.gameObject:SetActive(false)
     self.PanelSkillDetail.gameObject:SetActive(false)
     self.PanelMap.gameObject:SetActive(false)
     self.BtnDirector.gameObject:SetActive(false)
-    self._IsFinish = true
+    self._ClientFinish = true
     self._NotTips = true
     self:Record(6)
+    if self._SceneType ~= XEnumConst.Race.GameMode.LiveStream then
+        self.BtnRaceExit.gameObject:SetActive(true)
+    end
 end
 
 function XUiRaceFightMain:UiCallback(name, ...)
@@ -468,11 +477,13 @@ end
 
 function XUiRaceFightMain:AddWaitExitTimer()
     self:RemoveWaitExitTimer()
+    local contentStr = self._IsFinish and XUiHelper.GetText("RaceEndDesc") or XUiHelper.GetText("RaceErrorDesc")
     self._WaitExitTimerId = XScheduleManager.ScheduleOnce(function()
         if self._IsDestroyUi then return end
+        self._OpenTips = true
         self._Scene:Stop()
         self:ShowLoadingMask(false)
-        XUiManager.DialogTip(nil, XUiHelper.GetText("RaceErrorDesc"), XUiManager.DialogType.OnlySure, nil, function()
+        XUiManager.DialogTip(nil, contentStr, XUiManager.DialogType.OnlySure, nil, function()
             self:OnBtnRaceExitClick()
         end)
     end, tonumber(self._Control:GetClientConfig("ErrorTime")) or 5000)
@@ -618,7 +629,7 @@ end
 
 function XUiRaceFightMain:SetMatchStatus(status)
     self.PanelWait.gameObject:SetActive(status == MatchStatus.Wait)
-    self.PanelMap.gameObject:SetActive(status == MatchStatus.Matching and not self._IsFinish)
+    self.PanelMap.gameObject:SetActive(status == MatchStatus.Matching and not self._ClientFinish)
     self.PanelRaceMatch.gameObject:SetActive(status == MatchStatus.Matching)
     if status == MatchStatus.Matching then
         for i = 1, #self._Heads do

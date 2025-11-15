@@ -159,7 +159,7 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
 
         --语音播放完后，isFinish还是处于false(progress未能达到阈值)，就会调用回调
         local targetSkinMeshFace = self.Parent.Parent.SignBoard.RoleModel:GetSkinMeshFace()
-        if targetSkinMeshFace then
+        if targetSkinMeshFace and clickAudio.config.IsUseLipSync then
             self.CurrentPlayAudio = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(clickAudio.config.CvId, targetSkinMeshFace, self.Parent.CvType or -1)
         else
             self.CurrentPlayAudio = XLuaAudioManager.PlayCvWithCvType( clickAudio.config.CvId, self.Parent.CvType)

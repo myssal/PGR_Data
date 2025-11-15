@@ -3218,6 +3218,7 @@ XTable = {
         AnimPrefabRoleModelName = ValueTypestring,
         IsCloseRoleShadow = ValueTypeint,
         TurnOffBgm = ValueTypebool,
+        IsUseLipSync = ValueTypebool,
     },
     XTableSignBoardFeedbackRoleMap = {
         Id = ValueTypeint,

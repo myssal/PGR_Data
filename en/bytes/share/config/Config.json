@@ -567,7 +567,7 @@
     {
         "Key": "MaxTeamPrefab",
         "Type": "int",
-        "Value": 15
+        "Value": 30
     },
     {
         "Key": "TeamPrefabNameLength",
@@ -607,7 +607,7 @@
     {
         "Key": "DefaultCvType",
         "Type": "int",
-        "Value": 4
+        "Value": 2
     },
     {
         "Key": "DefaultControl",
@@ -1883,5 +1883,25 @@
         "Key": "CloudGameChannelIds",
         "Type": "string",
         "Value": "0|18|19|56"
+    },
+    {
+        "Key": "InitializationTeamPrefab",
+        "Type": "int",
+        "Value": 15
+    },
+    {
+        "Key": "InitTeamName",
+        "Type": "string",
+        "Value": "Team"
+    },
+    {
+        "Key": "CloudGameRefundMailId",
+        "Type": "int",
+        "Value": 13
+    },
+    {
+        "Key": "CloudGameRefundNegativeMailId",
+        "Type": "int",
+        "Value": 14
     }
 ]

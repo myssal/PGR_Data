@@ -73,7 +73,7 @@ function XUiCourseManagement:Refresh()
 end
 
 -- 选中一个 stage grid
-function XUiCourseManagement:ClickStageGrid(grid)
+function XUiCourseManagement:ClickStageGrid(grid, stageId, chapterId)
     local curGrid = self.CurStageGrid
     if curGrid and curGrid:GetStageId() == grid:GetStageId() then
         return
@@ -90,7 +90,7 @@ function XUiCourseManagement:ClickStageGrid(grid)
     self.CurStageGrid = grid
 
     self.BtnCloseDetail.gameObject:SetActiveEx(true)
-    self:OpenOneChildUi("UiCoursePrepare", handler(self, self.CancelSelect))
+    self:OpenOneChildUi("UiCoursePrepare", handler(self, self.CancelSelect), stageId, chapterId)
     self.PaneStageList.enabled = false
     -- 面板移动
     self:PlayScrollViewMove(grid)

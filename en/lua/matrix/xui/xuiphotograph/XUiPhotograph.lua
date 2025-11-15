@@ -391,7 +391,7 @@ function XUiPhotograph:_DoPlayCv(cvId, cvType, element)
     if not (cvId and cvId > 0) then return end
 
     local targetFace = self.RoleModel and self.RoleModel:GetSkinMeshFace()
-    if targetFace then
+    if targetFace and element.SignBoardConfig.IsUseLipSync then
         self.PlayingCv = CS.XNpcSpeechUtility.PlayCvWithLipRealTime(cvId, targetFace, cvType or -1)
     elseif cvType then
         self.PlayingCv = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
