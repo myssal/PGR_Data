@@ -9218,5 +9218,868 @@
         "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
         "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1123.jpg",
         "NextFightGroup": 0
+    },
+    {
+        "Id": 6020101,
+        "Type": 1,
+        "NextEvent": 6020102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "Name": "以血为契",
+        "Desc": "解决了他们各自的问题以后，四位骑士再度聚集在你的身边，他们是刺向圣堂的尖刀，是这世界终结永恒白昼关键。",
+        "ConfirmContent": "清点战线",
+        "LocationName": "以血为契",
+        "LocationDesc": "战争、死亡、瘟疫、饥荒。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6101,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "Name": "以血为契",
+        "Desc": "尽管在骑士的助力下人类夺回了不少领土，可每个人仍不知道未来会如何，胜率有多少。\\n\\n但于你而言，要做的只要挥洒鲜血向前。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "以血为契",
+        "LocationDesc": "战争、死亡、瘟疫、饥荒。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "你只管发号施令，其他事情就交给我们吧。"
+        ]
+    },
+    {
+        "Id": 6020201,
+        "Type": 1,
+        "NextEvent": 6020202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "地狱的鸣叫",
+        "Desc": "在与助力者们的齐心协力之后，地狱列车回到了昔日的模样。\\n\\n最后的整修结束，薇拉以“摆渡人”的身份启动了列车，其后车头发出轰鸣，那声传遍了整片山谷，跟过来的恶魔们都欢喜地嘶吼起来。",
+        "ConfirmContent": "检查列车",
+        "LocationName": "地狱的鸣叫",
+        "LocationDesc": "地狱列车蓄势待发。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6102,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "地狱的鸣叫",
+        "Desc": "黑烟和硫磺味滚滚扑来，似是催促，似是兴奋，这辆来自地狱列车看来已经准备好冲上圣堂。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "地狱的鸣叫",
+        "LocationDesc": "地狱列车蓄势待发。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "这么说来，这个故事也是从这里开始的……哼，我已经准备好了，你呢？"
+        ]
+    },
+    {
+        "Id": 6020301,
+        "Type": 1,
+        "NextEvent": 6020302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "Name": "击落神明的武器",
+        "Desc": "在这片被神圣与邪恶激烈碰撞的破碎世界里，圣环巨炮宛如末日的象征，散发着令人胆寒又敬畏的气息。\\n\\n它不仅是能弑神的武器，更是能开启时代的武器，它的每次发射，都会为这世间带来巨大的变故。",
+        "ConfirmContent": "运送巨炮",
+        "LocationName": "击落神明的武器",
+        "LocationDesc": "弑神的兵器等待出鞘。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6103,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "Name": "击落神明的武器",
+        "Desc": "你们战胜了“铁殇”，获得了这尊巨炮与最后的银弹。\\n\\n当钢铁支架将巨炮拖进诡魇客栈时，木门在炮身重压下发出呻吟。你望着炮口映出的、客栈里摇曳的鬼火，忽然想起那些被它改写的过往——下一次炮声响起时，是会砸开永昼的枷锁，还是把这世界拖进更深的混沌？谁也说不准。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "击落神明的武器",
+        "LocationDesc": "弑神的兵器等待出鞘。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3600DubianNormal05.png"
+        ],
+        "RoleNames": [
+            "渡边"
+        ],
+        "RoleContents": [
+            "灰鸦，圣环巨炮会带来奇迹的，你也是。"
+        ]
+    },
+    {
+        "Id": 6020401,
+        "Type": 1,
+        "NextEvent": 6020402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1252.jpg",
+        "Name": "响应号召的义军",
+        "Desc": "除了钢铁军团以外，被你们解放的地区陆续都出现了对抗天使的义军，他们有些是饱受压迫的血奴，有些是鼓起勇气的逃民，甚至还有曾拦过你们路的混混。",
+        "ConfirmContent": "了解状况",
+        "LocationName": "响应号召的义军",
+        "LocationDesc": "你可曾听到人民在歌唱？",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1252.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6104,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1252.jpg",
+        "Name": "响应号召的义军",
+        "Desc": "虽然不多，但这些人都把这当成了最后一次争取自由的机会，为了明天，为了人类，为了这世间，他们的决心已然让其成为了不逊于四位骑士的优秀战士。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "响应号召的义军",
+        "LocationDesc": "你可曾听到人民在歌唱？",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1252.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V240hhNormal01.png"
+        ],
+        "RoleNames": [
+            "混混"
+        ],
+        "RoleContents": [
+            "天使不过是一堆臭肉，灰鸦，领着你那些人好好看我们发挥就行！"
+        ]
+    },
+    {
+        "Id": 6020501,
+        "Type": 1,
+        "NextEvent": 6020502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "圣座曾在",
+        "Desc": "主神曾被杀死，可其受损的躯壳仍在。\\n\\n那是你与万事同行时所看见的真实，主神虽死但其光辉依旧普照，天使们借主神的残光增长与战斗，就算是那个“天使长”，恐怕也是从中获得福荫，汲取力量，正因如此，圣座仍还是天使们最后的底牌。",
+        "ConfirmContent": "展开思考",
+        "LocationName": "圣座曾在",
+        "LocationDesc": "主神曾被杀死，可其受损的躯壳仍在。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6105,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "圣座曾在",
+        "Desc": "或许，只是或许，有没有可能天使们会用某种方法让主神复活，然后挡在灰鸦等人面前呢？",
+        "ConfirmContent": "继续前进",
+        "LocationName": "圣座曾在",
+        "LocationDesc": "主神曾被杀死，可其受损的躯壳仍在。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "不用担心，假如真有那天……我会想办法的。"
+        ]
+    },
+    {
+        "Id": 6020601,
+        "Type": 1,
+        "NextEvent": 6020602,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "赶在入夜前",
+        "Desc": "“夜晚快要来了——” 这句话压在每个人心头。\\n\\n为了从天使手中夺回黑夜，能战的都上了前线。后方，人们在废墟里拼命搜寻：碎铁片、残破的书页……任何能化作力量的东西，都被他们枯瘦却坚定的手收集起来。\\n\\n而天使们那耀眼的阵线，也前所未有地开始收缩、后退。",
+        "ConfirmContent": "整备后方",
+        "LocationName": "赶在入夜前",
+        "LocationDesc": "这是决战的前夜。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6020602,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 6106,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "赶在入夜前",
+        "Desc": "一丝紧绷的、带着硝烟味的气息弥漫开来。\\n\\n“饥荒”眯眼看着那片退却的纯白，嘴角似有似无地牵动。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "赶在入夜前",
+        "LocationDesc": "这是决战的前夜。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "这景色真让人陶醉，你还会让我看更多的对吗？"
+        ]
+    },
+    {
+        "Id": 6070101,
+        "Type": 1,
+        "NextEvent": 6070102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory757.jpg",
+        "Name": "固守防御",
+        "Desc": "情况尚不明朗，你决定让众人依托客栈残存的断壁残垣固守。",
+        "ConfirmContent": "指挥众人",
+        "LocationName": "固守防御",
+        "LocationDesc": "白光消散，密密麻麻的天使冲了过来。",
+        "LocationDescUnselect": "白光消散，密密麻麻的天使冲了过来。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory757.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6070102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory757.jpg",
+        "Name": "固守防御",
+        "Desc": "为了延缓敌人攻势，大家都将攻击的方向对准敌人必经的缺口。在碎石飞溅的轰鸣中，你们背靠背组成防御阵型，奇迹般地把敌人的冲锋一次次撞碎在瓦砾堆里，现在，敌人的第一波攻势已被你们死死摁在客栈外的焦土上。",
+        "ConfirmContent": "稍作调整",
+        "LocationName": "固守防御",
+        "LocationDesc": "白光消散，密密麻麻的天使冲了过来。",
+        "LocationDescUnselect": "白光消散，密密麻麻的天使冲了过来。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory757.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3600DubianNormal05.png"
+        ],
+        "RoleNames": [
+            "渡边"
+        ],
+        "RoleContents": [
+            "不要以为你们占得了上风！"
+        ]
+    },
+    {
+        "Id": 6070201,
+        "Type": 1,
+        "NextEvent": 6070202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1232.jpg",
+        "Name": "分散击破",
+        "Desc": "你决定让众人分散突围。",
+        "ConfirmContent": "安排路线",
+        "LocationName": "分散击破",
+        "LocationDesc": "白光消散，密密麻麻的天使冲了过来。",
+        "LocationDescUnselect": "白光消散，密密麻麻的天使冲了过来。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1232.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6070202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1232.jpg",
+        "Name": "分散击破",
+        "Desc": "为了搅乱敌人部署，在砖石飞溅的街巷中，你们如五颗流弹射向不同方向，奇迹般地让敌人的注意力被各自吸引，现在，追兵被分割成几股，其突破力也下降了好几个层级。",
+        "ConfirmContent": "确认战况",
+        "LocationName": "分散击破",
+        "LocationDesc": "白光消散，密密麻麻的天使冲了过来。",
+        "LocationDescUnselect": "白光消散，密密麻麻的天使冲了过来。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1232.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "要不下个注看看谁杀的多？"
+        ]
+    },
+    {
+        "Id": 6070301,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "Name": "交给同伴",
+        "Desc": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。\\n\\n你决定让附近的同伴前往防卫，天使们彷佛癫狂的饿兽前仆后继，在千钧一发之际，薇拉的长枪穿过天使的集团，然后燃魂的淬火在附近爆发开来。",
+        "ConfirmContent": "展开战线",
+        "LocationName": "交给同伴",
+        "LocationDesc": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "LocationDescUnselect": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory958.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "一群渣滓，给我死！"
+        ]
+    },
+    {
+        "Id": 6070401,
+        "Type": 1,
+        "NextEvent": 6070402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "自己出手",
+        "Desc": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。\\n\\n骑士们在各自的位置上奋战，权衡之后，你决定自己行动抢救这些物资，漏向后方的天使并不多，你在几发射击拉住它们注意以后，便迅速跑到了其中一个装有炸药的战备箱附近——",
+        "ConfirmContent": "躲避冲击",
+        "LocationName": "自己出手",
+        "LocationDesc": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "LocationDescUnselect": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6070402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "Name": "自己出手",
+        "Desc": "爆炸声响起，你发现万事就站在身旁，从爆炸中护下了你。",
+        "ConfirmContent": "点头回应",
+        "LocationName": "自己出手",
+        "LocationDesc": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "LocationDescUnselect": "突袭被挡了下来，但天使们发现了堆放在客栈中的战备物资。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory566.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "别太勉强，请多依赖些我们。"
+        ]
+    },
+    {
+        "Id": 6070501,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory346.jpg",
+        "Name": "集中火力应对",
+        "Desc": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。\\n\\n “天使长”比之前的任何一个敌人都强，明白这点的你决定无视其他天使，让骑士们集中力量应对，多亏了这个决策，“天使长”发起的攻击都被你们接了下来，从祂那无机质的脸上，你似乎看出了些许不悦。",
+        "ConfirmContent": "继续进攻",
+        "LocationName": "集中火力应对",
+        "LocationDesc": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。",
+        "LocationDescUnselect": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory346.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100JiabailieNormal03.png"
+        ],
+        "RoleNames": [
+            "“天使长”"
+        ],
+        "RoleContents": [
+            "自作聪明，不过是垂死挣扎。"
+        ]
+    },
+    {
+        "Id": 6070601,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory347.jpg",
+        "Name": "保持阵型防守",
+        "Desc": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。\\n\\n你之前就已经用身体领教过天使长的力量，正因如此，你认为不能冒然与其正面冲突，让其余人保持自己的位置，你则和在攻击落点的骑士合作将攻击引到了附近的天使群中，那攻击如雷般在天使和大地上留下灼痕，虽然有所防备，但你们也或多或少受了伤。",
+        "ConfirmContent": "继续进攻",
+        "LocationName": "保持阵型防守",
+        "LocationDesc": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。",
+        "LocationDescUnselect": "在刹那间，一道强力的攻击落下，“天使长”瞄准了你们。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory347.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100JiabailieNormal03.png"
+        ],
+        "RoleNames": [
+            "“天使长”"
+        ],
+        "RoleContents": [
+            "不会有下次。"
+        ]
+    },
+    {
+        "Id": 6090101,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgUi/BgFightLoading11.jpg",
+        "Name": "攻击星门",
+        "Desc": "不能让敌人无限增长，三位骑士各自对列车两边的星门发起攻击，刚出星门的天使因此而向后倒去，堵住了其他天使的来路，虽然不多，但还是有效缓解了敌人的进击。",
+        "ConfirmContent": "乘胜追击",
+        "LocationName": "攻击星门",
+        "LocationDesc": "天使，天使，天使，目之所及均是敌人，该怎么做？",
+        "LocationDescUnselect": "天使，天使，天使，目之所及均是敌人，该怎么做？",
+        "Icon": "Assets/Product/Texture/Image/BgUi/BgFightLoading11.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "还不能放松，血契者。"
+        ]
+    },
+    {
+        "Id": 6090201,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory142.png",
+        "Name": "坚守车室",
+        "Desc": "穿过星门的敌人难以全部阻挡，思考以后你觉集合骑士的力量守住现在的立足之地，要是这里挤满敌人的话那恐怕骑士们再有本领都会无处施展。",
+        "ConfirmContent": "规划阵线",
+        "LocationName": "坚守车室",
+        "LocationDesc": "天使，天使，天使，目之所及均是敌人，该怎么做？",
+        "LocationDescUnselect": "天使，天使，天使，目之所及均是敌人，该怎么做？",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory142.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "嗯，不会再让天使们靠近了。"
+        ]
+    },
+    {
+        "Id": 6090301,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory255.png",
+        "Name": "清扫列车残兵",
+        "Desc": "无法对你们造成损害，天使们选择直接撞击列车本身。\\n\\n这种撞击对于地狱的列车来说根本不痛不痒，虽然多少会有些摇晃，但它还是会按照原定的轨道前进，那么要干的事自然就是趁这个机会清扫残兵，尽可能取得更多战术空间。",
+        "ConfirmContent": "清扫战场",
+        "LocationName": "清扫列车残兵",
+        "LocationDesc": "无法对你们造成损害，天使们选择直接撞击列车本身。",
+        "LocationDescUnselect": "无法对你们造成损害，天使们选择直接撞击列车本身。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory255.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "这些腐肉根本不会对列车造成任何伤害，我们上！"
+        ]
+    },
+    {
+        "Id": 6090401,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgUi/BgFightLoading13.jpg",
+        "Name": "确认外部状况",
+        "Desc": "无法对你们造成损害，天使们选择直接撞击列车本身。\\n\\n虽然强调过车体的坚硬，但你出于以防万一的心态决定确认外面的状况，而结果就如你担心的那样，那些天使撞击车体以后直接落到车轮，不断卷入天使躯体的车轮有些因此出现了阻塞，有些则减缓了速度。\\n\\n见状，薇拉燃起了怒火。",
+        "ConfirmContent": "进行反击",
+        "LocationName": "确认外部状况",
+        "LocationDesc": "无法对你们造成损害，天使们选择直接撞击列车本身。",
+        "LocationDescUnselect": "无法对你们造成损害，天使们选择直接撞击列车本身。",
+        "Icon": "Assets/Product/Texture/Image/BgUi/BgFightLoading13.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "渣滓，这艘列车是你们能玷污的吗！"
+        ]
+    },
+    {
+        "Id": 6090501,
+        "Type": 1,
+        "NextEvent": 6090502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "卸下车厢",
+        "Desc": "只靠这点人防守列车果然还是太勉强了，无人的车厢已经挤满了天使，再过不久它们便会冲到眼前，为了避免这个状况只有一个办法，那就是将那些车厢卸下，将天使们彻底甩下去。",
+        "ConfirmContent": "只能动手",
+        "LocationName": "卸下车厢",
+        "LocationDesc": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "LocationDescUnselect": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6090502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "卸下车厢",
+        "Desc": "列车——要停了。",
+        "ConfirmContent": "准备面对",
+        "LocationName": "卸下车厢",
+        "LocationDesc": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "LocationDescUnselect": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "虽说是解决了一大批天使，但是列车……越走越慢了，灰鸦阁下。"
+        ]
+    },
+    {
+        "Id": 6090601,
+        "Type": 1,
+        "NextEvent": 6090602,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "封锁列车出入口",
+        "Desc": "眼下来不及思考什么策略，你决定先将会被天使当作侵入口全部封上，骑士们立刻依你的命令开始行动，舱室的天使被快速解决，然后它们的血肉变成了新的“窗户”，挡住了其余同类的入侵。",
+        "ConfirmContent": "应对局势",
+        "LocationName": "封锁列车出入口",
+        "LocationDesc": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "LocationDescUnselect": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6090602,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "封锁列车出入口",
+        "Desc": "列车——要停了。",
+        "ConfirmContent": "准备面对",
+        "LocationName": "封锁列车出入口",
+        "LocationDesc": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "LocationDescUnselect": "星门随着列车前进不断开启，之前的对策化作了流水。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "虽说是缓了口气，但是列车……越走越慢了，灰鸦阁下。"
+        ]
+    },
+    {
+        "Id": 6110101,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "Name": "杀光天使",
+        "Desc": "即便是坚固的地狱列车此刻也因洪水的挤压产生了变形，车室内空间越来越少，与其最后和天使挤在一起，不如趁现在还能活动将危险全部铲除。",
+        "ConfirmContent": "应对天使",
+        "LocationName": "杀光天使",
+        "LocationDesc": "拉弥亚的魔法就如欧米伽卵那灭世的洪水，你们和天使都被冲作一团。",
+        "LocationDescUnselect": "拉弥亚的魔法就如欧米伽卵那灭世的洪水，你们和天使都被冲作一团。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "我也同意，一起上吧，血契者。"
+        ]
+    },
+    {
+        "Id": 6110201,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "Name": "进行躲避",
+        "Desc": "列车虽然重新前进，但震荡越来越烈，比起攻击，现在更应该要做的应该是防守，与骑士们说出想法以后，大家躲到了掩体后面，然后大批天使因为剧烈的摇晃被甩出了车厢。",
+        "ConfirmContent": "坚守列车",
+        "LocationName": "进行躲避",
+        "LocationDesc": "拉弥亚的魔法就如欧米伽卵那灭世的洪水，你们和天使都被冲作一团。",
+        "LocationDescUnselect": "拉弥亚的魔法就如欧米伽卵那灭世的洪水，你们和天使都被冲作一团。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "一切如你所料，灰鸦阁下。"
+        ]
+    },
+    {
+        "Id": 6110301,
+        "Type": 1,
+        "NextEvent": 6110302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "清理附近的空间",
+        "Desc": "列车的坠落已无法避免，为了减轻坠落后可能造成的伤害，你决定与剩下的两位骑士一同扫平附近的空间，无论是天使，杂物，亦或是其他的什么。",
+        "ConfirmContent": "展开攻势",
+        "LocationName": "清理附近的空间",
+        "LocationDesc": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "LocationDescUnselect": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6110302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "清理附近的空间",
+        "Desc": "然后广播中传出了一些声音，虽听不清，但你听出了其中的决意。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "清理附近的空间",
+        "LocationDesc": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "LocationDescUnselect": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "能听见……我……一定——"
+        ]
+    },
+    {
+        "Id": 6110401,
+        "Type": 1,
+        "NextEvent": 6110402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "移动到安全的车厢",
+        "Desc": "在承受连环的冲击以后坠落已是无法避免，刺骨的洪水带着天使涌了进来，继续留在这里并不是什么好选择，于是你们大步流星，决定在坠落之前找到更安全的舱室。",
+        "ConfirmContent": "转移位置",
+        "LocationName": "移动到安全的车厢",
+        "LocationDesc": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "LocationDescUnselect": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 6110402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "Name": "移动到安全的车厢",
+        "Desc": "然后广播中传出了一些声音，虽听不清，但你听出了其中的决意。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "移动到安全的车厢",
+        "LocationDesc": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "LocationDescUnselect": "一阵嘶鸣声起，你感受到列车正在往下坠落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory465.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "能听见……我……一定——"
+        ]
     }
 ]

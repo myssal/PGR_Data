@@ -62,5 +62,117 @@
         "Values": [
             3
         ]
+    },
+    {
+        "Key": "RaceFlag",
+        "Desc": "珍藏标记",
+        "Values": [
+            4,
+            5
+        ]
+    },
+    {
+        "Key": "RaceRateAddByManualPass",
+        "Desc": "手动通关增加有珍稀标记随即组概率",
+        "Values": [
+            1000
+        ]
+    },
+    {
+        "Key": "RaceRateAddByPhysicalCost",
+        "Desc": "每消耗{参数1}体力提升对应{参数3}品质标记掉落组{参数2}概率(万分比)",
+        "Values": [
+            10,
+            500,
+            5
+        ]
+    },
+    {
+        "Key": "AuctionCoin",
+        "Desc": "拍卖行货币",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "ItemRoomLimit",
+        "Desc": "藏品室限制"
+    },
+    {
+        "Key": "AuctionRefreshFactor",
+        "Desc": "拍卖行数量刷新系数(万分比)",
+        "Values": [
+            5000
+        ]
+    },
+    {
+        "Key": "PriceFreshMinNum",
+        "Desc": "价格刷新个数范围(左闭区间)",
+        "Values": [
+            5
+        ]
+    },
+    {
+        "Key": "PriceFreshMaxNum",
+        "Desc": "价格刷新个数范围(右闭区间)",
+        "Values": [
+            10
+        ]
+    },
+    {
+        "Key": "PutOnNewItemFreshMin",
+        "Desc": "新上架刷新时间范围(左闭区间)",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "PutOnNewItemFreshMax",
+        "Desc": "新上架刷新时间范围(右闭区间)",
+        "Values": [
+            600
+        ]
+    },
+    {
+        "Key": "SupplementItemFreshMin",
+        "Desc": "补货刷新时间范围(左闭区间)",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "SupplementItemFreshMax",
+        "Desc": "补货刷新时间范围(右闭区间)",
+        "Values": [
+            600
+        ]
+    },
+    {
+        "Key": "PriceFreshMin",
+        "Desc": "价格刷新时间范围(左闭区间)",
+        "Values": [
+            300
+        ]
+    },
+    {
+        "Key": "PriceFreshMax",
+        "Desc": "价格刷新时间范围(右闭区间)",
+        "Values": [
+            600
+        ]
+    },
+    {
+        "Key": "MaxAutoSellTime",
+        "Desc": "最大出售时间(秒)",
+        "Values": [
+            86400
+        ]
+    },
+    {
+        "Key": "AuctionSellRate",
+        "Desc": "出售手续费万分比，配置1000则为10%",
+        "Values": [
+            500
+        ]
     }
 ]

@@ -146,6 +146,23 @@ function XMovieAgency:SplitParam(param, splitStr, isNumber)
     return result
 end
 
+-- 格式化剧情文本
+function XMovieAgency:FormatContent(content)
+    if not content or content == "" then
+        return ""
+    end
+    -- 替换玩家名称
+    content = XDataCenter.MovieManager.ReplacePlayerName(content)
+    -- 提取指挥官性别文本
+    content = self:ExtractGenderContent(content)
+    -- 替换十进制特殊符号
+    content = self:ReplaceDecimalismCodeToStr(content)
+    -- 字符串换行符可用化
+    content = XUiHelper.ConvertLineBreakSymbol(content)
+
+    return content
+end
+
 -- 提取指挥官性别对应文本
 function XMovieAgency:ExtractGenderContent(content)
     local gender = XPlayer.GetShowGender()

@@ -264,7 +264,7 @@ function XUiGridMainLineExhibitionChapter:RefreshLock()
     local chapterCfg = XMVCA.XMainLine2:GetConfigExhibitionChapter(self.ChapterId)
     local challengeBannerConfig = XMVCA.XFuben:GetNewChallengeConfigById(chapterCfg.ExhibitionFubenConfigId)
     local lockFun = not XFunctionManager.JudgeCanOpen(challengeBannerConfig.FunctionId)
-    local lockSubPackage = not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(challengeBannerConfig.FunctionId)
+    local lockSubPackage = not XMVCA.XSubPackage:CheckResDownloadByFunctionType(challengeBannerConfig.FunctionId)
     local isLock = lockFun or lockSubPackage
     local lockText = XUiHelper.GetText("NecessaryResourcesNotDownloaded")
     if lockFun then

@@ -498,9 +498,11 @@ end
 --==============================
 function XUiTeamPrefabPartner:OpenPopupTip(title, beginCb, endCb)
     title = title or ""
+    XLuaUiManager.SetMask(true)
     if beginCb then beginCb() end
     XLuaUiManager.Open("UiPartnerPopupTip", title, function()
         if endCb then endCb() end
+        XLuaUiManager.SetMask(false)
     end)
 end
 --endregion

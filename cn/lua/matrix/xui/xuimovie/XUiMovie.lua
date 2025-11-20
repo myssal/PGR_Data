@@ -5,6 +5,8 @@ local XUiPanelMovie3D = require("XUi/XUiMovie/XUiPanelMovie3D")
 ---@field UiPanelText XUiPanelText
 ---@field UiMovieBg XUiMovieBg
 ---@field _Control XMovieControl
+---@field Actors XUiGridMovieActor[]
+---@field SpineActors XUiGridMovieSpineActor[]
 ---@class XUiMovie
 local XUiMovie = XLuaUiManager.Register(XLuaUi, "UiMovie")
 
@@ -30,7 +32,6 @@ function XUiMovie:OnAwake()
     self.RImgBg1.gameObject:SetActiveEx(false)
     self.UiMovieBg = require("XUi/XUiMovie/XUiMovieBg").New(self)
     self:AddListener()
-    XMVCA.XMovie:RequestGetStageBookmark()
 end
 
 function XUiMovie:OnStart(hideSkipBtn)
@@ -282,6 +283,7 @@ function XUiMovie:OnClickBtnScreenSpeed()
     self:ShowSpeedList(isShow)
 end
 
+---@return XUiGridMovieSpineActor
 function XUiMovie:GetSpineActor(actorIndex)
     local actor = self.SpineActors[actorIndex]
     if not actor then
@@ -738,22 +740,23 @@ function XUiMovie:OnBtnBookmarkClick()
             self:OnClickBtnPause()
         end
     end
-    
-    local bookmarkData = XMVCA.XMovie:GetBookmarkData()
-    if bookmarkData ~= nil then
-        local bookmarkName = XMVCA.XMovie:GetBookmarkName()
-        local params = XMVCA.XMovie:GetClientConfigParams("BookmarkCoverTips")
-        local tipTitle = params[1]
-        local contentFormat = params[2]
-        local content = string.format(contentFormat, bookmarkName)
-        content = XUiHelper.ConvertLineBreakSymbol(content)
-        local confirmCb = function()
+
+    XMVCA.XMovie:RequestGetStageBookmark(function(bookmarkData)
+        if bookmarkData ~= nil then
+            local bookmarkName = XMVCA.XMovie:GetBookmarkName()
+            local params = XMVCA.XMovie:GetClientConfigParams("BookmarkCoverTips")
+            local tipTitle = params[1]
+            local contentFormat = params[2]
+            local content = string.format(contentFormat, bookmarkName)
+            content = XUiHelper.ConvertLineBreakSymbol(content)
+            local confirmCb = function()
+                self:RequestAddStageBookmark()
+            end
+            XLuaUiManager.Open("UiSystemDialog", tipTitle, content, XUiManager.DialogType.Normal, nil, confirmCb)
+        else
             self:RequestAddStageBookmark()
         end
-        XLuaUiManager.Open("UiSystemDialog", tipTitle, content, XUiManager.DialogType.Normal, nil, confirmCb)
-    else
-        self:RequestAddStageBookmark()
-    end
+    end)
 end
 
 -- 请求添加书签

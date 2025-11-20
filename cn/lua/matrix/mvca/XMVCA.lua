@@ -139,6 +139,8 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XRace XRaceAgency
 ---@field XPlotExhibition XPlotExhibitionAgency
 ---@field XFunction XFunctionAgency
+---@field XFashionSuit XFashionSuitAgency
+---@field XAreaWar XAreaWarAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -649,6 +651,8 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XFunction)
 
     self:RegisterAgency(ModuleId.XRace)
+    self:RegisterAgency(ModuleId.XFashionSuit)
+    self:RegisterAgency(ModuleId.XAreaWar)
 
     -- #203409 多次尝试后, 还是写在这里最稳妥
     self:RegisterAgency(ModuleId.XAccumulateExpendL)

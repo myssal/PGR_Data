@@ -7,7 +7,7 @@ function XUiPartnerPopupTip:OnStart(title, closeCb)
 end
 
 function XUiPartnerPopupTip:OnEnable()
-    self:PlayAnimationWithMask("AniUnlockTip", function()
+    self:PlayAnimation("AniUnlockTip", function()
         self:Close()
     end)
 end

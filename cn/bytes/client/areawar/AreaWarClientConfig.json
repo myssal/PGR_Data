@@ -197,5 +197,134 @@
             "取消",
             "兑换体力"
         ]
+    },
+    {
+        "Key": "ItemUnlockTips",
+        "Comment": "藏品解锁的提示文本",
+        "Values": [
+            "等级%s解锁"
+        ]
+    },
+    {
+        "Key": "ItemRoomAttrs",
+        "Comment": "藏品室属性",
+        "Values": [
+            "攻击",
+            "生命",
+            "多重挑战最大倍率"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpCost",
+        "Comment": "升级材料足够的数量显示",
+        "Values": [
+            "<color=#0E70BD>%s</color>/%s"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpCostNoEnough",
+        "Comment": "升级材料不够的数量显示",
+        "Values": [
+            "<color=#EE2323>%s</color>/%s"
+        ]
+    },
+    {
+        "Key": "ItemRoomLvUpNoEnoughTips",
+        "Comment": "升级材料不足提示",
+        "Values": [
+            "升级所需材料不足！"
+        ]
+    },
+    {
+        "Key": "AuctionItemRemainTips",
+        "Comment": "交易行道具剩余数量提示",
+        "Values": [
+            "（仅剩%s件）"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinTips",
+        "Comment": "交易行购买时货币不足提示",
+        "Values": [
+            "拍卖行货币不足"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughCoinColor",
+        "Comment": "交易行购买时货币不足颜色",
+        "Values": [
+            "<color=#EE2323>%s</color>"
+        ]
+    },
+    {
+        "Key": "AuctionBuyNoEnoughShopTips",
+        "Comment": "交易行购买时商品不足提示",
+        "Values": [
+            "商品补货中"
+        ]
+    },
+    {
+        "Key": "AuctionBuySuccessTips",
+        "Comment": "交易行购买成功提示",
+        "Values": [
+            "购买成功"
+        ]
+    },
+    {
+        "Key": "AuctionRefreshReBuyTips",
+        "Comment": "交易行购买时，数据刷新",
+        "Values": [
+            "交易行已刷新，请重新购买！"
+        ]
+    },
+    {
+        "Key": "LightUpNoEnoughTips",
+        "Comment": "点亮藏品数量不足提示",
+        "Values": [
+            "藏品数量不足"
+        ]
+    },
+    {
+        "Key": "QualityTabAll",
+        "Comment": "品质筛选里的全部页签",
+        "Values": [
+            "全部"
+        ]
+    },
+    {
+        "Key": "ItemDetailUnlockTips",
+        "Comment": "道具详情解锁获取提示",
+        "Values": [
+            "藏品室等级%s解锁获取"
+        ]
+    },
+    {
+        "Key": "OrderPutOffConfirmTips",
+        "Comment": "取消订单二次确认提示",
+        "Values": [
+            "提示",
+            "是否下架此商品？"
+        ]
+    },
+    {
+        "Key": "OrderPutOffFailTips",
+        "Comment": "在二次确认过程中，订单出售成功了的提示",
+        "Values": [
+            "下架商品失败，订单已出售成功！"
+        ]
+    },
+    {
+        "Key": "ServerRedisCircuitBreakerTips",
+        "Comment": "服务器交易行挂了，客户端不再请求协议，提示5秒后重试！",
+        "Values": [
+            "拍卖行繁忙，请5秒后重试！"
+        ]
+    },
+    {
+        "Key": "BtnCollectionUnlockConditionId",
+        "Comment": "收藏室按钮的解锁条件",
+        "Values": [
+            863120
+        ]
     }
 ]

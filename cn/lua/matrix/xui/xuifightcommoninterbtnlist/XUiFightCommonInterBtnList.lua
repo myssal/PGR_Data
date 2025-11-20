@@ -343,6 +343,12 @@ function XUiFightCommonInterBtnList:SetCommonInterBtn(...)
     if XTool.UObjIsNil(self.GameObject) then
         XLog.Error("UiFight未显示，行为节点-设置列表型交互按钮显示UI失败")
     end
+
+    local fight = CS.XFight.Instance
+    if not fight then
+        return
+    end
+    fight.InputControl:SetOpState(data[2], true)
 end
 
 function XUiFightCommonInterBtnList:SetFollowNpc(...)

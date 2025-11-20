@@ -89,7 +89,14 @@ function XTheatre5FlowController:_EnterPVE()
                 end)
         return
     end
-    XLuaUiManager.Open('UiTheatre5ChooseCharacter', XMVCA.XTheatre5.EnumConst.GameMode.PVE)
+    XLuaUiManager.OpenWithCallback('UiTheatre5ChooseCharacter', function() 
+        -- 判断是否需要立刻进入故事线
+        local storyLineId = self._MainControl.PVEControl:CheckEnterContentInCharaChoose()
+
+        if XTool.IsNumberValid(storyLineId) then
+            self:EnterStroryLineContent(storyLineId)
+        end
+    end,XMVCA.XTheatre5.EnumConst.GameMode.PVE)
 end
 
 function XTheatre5FlowController:_ExitPVE()
@@ -217,8 +224,43 @@ function XTheatre5FlowController:GetCurRunningNodeState()
     return self._PVEStroryLineLink and self._PVEStroryLineLink:GetCurRunningNodeState()
 end
 
-function XTheatre5FlowController:UpdateStoryLineProcess()
+function XTheatre5FlowController:UpdateStoryLineProcess(storyLineId, curStoryLineContentId, lastStoryLineContentId)
     self:ExitStroryLineContent()
+
+    self:CheckEventAfterNodeEnd(storyLineId, curStoryLineContentId, lastStoryLineContentId)
+end
+
+function XTheatre5FlowController:CheckEventAfterNodeEnd(storyLineId, curStoryLineContentId, lastStoryLineContentId)
+    if not XTool.IsNumberValidEx(storyLineId) or not XTool.IsNumberValidEx(lastStoryLineContentId) then
+        return
+    end
+
+    ---@type XTableTheatre5PveStoryLineContent
+    local storyLineContentCfg = self._Model:GetStoryLineContentCfg(lastStoryLineContentId)
+
+    if storyLineContentCfg.IsContinue then
+        self:EnterStroryLineContent(storyLineId)
+    elseif storyLineContentCfg.IsTickOutToTitle then
+        if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5ChooseCharacter' then
+            --栈顶是选人界面，直接关闭即可
+            XLuaUiManager.Close('UiTheatre5ChooseCharacter')
+        else
+            if XMain.IsWindowsEditor then
+                XLog.Debug('栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName() .. '延后0.2s检查')
+            end
+            
+            XScheduleManager.ScheduleOnce(function()
+                if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5ChooseCharacter' then
+                    --栈顶是选人界面，直接关闭即可
+                    XLuaUiManager.Close('UiTheatre5ChooseCharacter')
+                else
+                    if XMain.IsWindowsEditor then
+                        XLog.Debug('踢出失败，栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName())
+                    end
+                end
+            end, 0.2 * XScheduleManager.SECOND)
+        end
+    end
 end
 
 --战斗章节在主界面结束

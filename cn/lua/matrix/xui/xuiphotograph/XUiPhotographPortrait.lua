@@ -65,7 +65,6 @@ function XUiPhotographPortrait:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
-    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:Update()
@@ -572,7 +571,6 @@ function XUiPhotographPortrait:UpdateScene(sceneId)
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
-    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:ForcePlay(signBoardActionId, actionId)
@@ -618,11 +616,16 @@ function XUiPhotographPortrait:PlaySignBoardElement(element, isCross)
         end
     end
     -- 播放某些看板Cv时检测静音Bgm
+    self.CurElement = element
     if element.SignBoardConfig.TurnOffBgm then
         if self.PlayingCv then
             XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
             self.PlayingCv.FinishCb = function ()
-                XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+                if self.CurElement and element.SignBoardConfig.Id ~= self.CurElement.SignBoardConfig.Id and self.CurElement.SignBoardConfig.TurnOffBgm then
+                    -- 还处于Mute的config播放中，暂不做处理
+                else
+                    XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
+                end
             end
         end
     end

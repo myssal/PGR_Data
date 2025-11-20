@@ -12,7 +12,7 @@
         "Id": 2,
         "Name": "FULL COMBO",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex2.png",
-        "Desc": "成功抓取3次后扫描抓取1个未被电磁链接的物品，抓取的物品同色统计为万能牌",
+        "Desc": "成功抓取3次后扫描抓取1个未被电磁链接的物品，抓取的物品视为相同种类",
         "HexType": 2,
         "DropMapGroupId": 0,
         "HexUpgradeId": 120
@@ -21,7 +21,7 @@
         "Id": 3,
         "Name": "三类接触",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4.png",
-        "Desc": "召唤宇宙飞碟抓取距离最近的物品，抓取的物品同色统计为万能牌",
+        "Desc": "召唤宇宙飞碟抓取距离最近的物品，抓取的物品视为相同种类",
         "HexType": 2,
         "DropMapGroupId": 0,
         "HexUpgradeId": 130
@@ -48,7 +48,7 @@
         "Id": 7,
         "Name": "万能转换机",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4V2P17.png",
-        "Desc": "抓取的所有物品在同色奖励机制中都统计为万能牌",
+        "Desc": "抓取的所有物品在同类点数奖励中都视为相同种类",
         "HexType": 2,
         "DropMapGroupId": 0,
         "HexUpgradeId": 170
@@ -114,7 +114,7 @@
         "Id": 26,
         "Name": "电磁连锁模块",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex11.png",
-        "Desc": "每隔8秒，将最上方的1个物品和最下方的2个物品链接，抓取任一则可全部抓取",
+        "Desc": "每隔7秒，将最上方的1个物品和最下方的2个物品链接，抓取任一则可全部抓取",
         "HexType": 1,
         "DropMapGroupId": 704,
         "HexUpgradeId": 360
@@ -135,7 +135,7 @@
         "Id": 28,
         "Name": "无中生有模块",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex14.png",
-        "Desc": "所有物品的价值提升15%；抓取特定物品后，有60%的概率在物品原地生成一个复制品",
+        "Desc": "所有物品的价值提升25%；抓取特定物品后，有60%的概率在物品原地生成一个复制品",
         "HexType": 1,
         "DropMapGroupId": 703,
         "HexUpgradeId": 380

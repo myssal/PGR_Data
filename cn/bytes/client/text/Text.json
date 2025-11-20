@@ -3760,7 +3760,7 @@
     },
     {
         "Key": "PurchaseDiscount",
-        "Text": "*捆绑包比单独购买<color=#FFDB26>优惠{0}%</color>"
+        "Text": "*捆绑包比单独购买<color=#4851A3>优惠{0}%</color>"
     },
     {
         "Key": "BattleLoseActorNum",
@@ -5976,7 +5976,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}<color=#00000><size=34>/{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=34>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -10955,11 +10955,11 @@
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextBlue",
-        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗新枝（<color=#ffe956>{1}</color>/{2}）"
+        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗鲸音存储器（<color=#ffe956>{1}</color>/{2}）"
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextNormal",
-        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗新枝（{1}/{2}）"
+        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗鲸音存储器（{1}/{2}）"
     },
     {
         "Key": "InvertCardGameCurInvertConutText",
@@ -10975,7 +10975,7 @@
     },
     {
         "Key": "InvertCardGameHaveNotEnoughItem",
-        "Text": "【新枝】的数目不足，无法进行操作"
+        "Text": "【鲸音存储器】的数目不足，无法进行操作"
     },
     {
         "Key": "ActivityBriefNotOpenTips",
@@ -11091,7 +11091,7 @@
     },
     {
         "Key": "MineSweepingStageLoseHint",
-        "Text": "失败条件：踩到{0}次海盗帽（{1}/{2}）"
+        "Text": "失败条件：踩到{0}次蛛网（{1}/{2}）"
     },
     {
         "Key": "MineSweepingChapterWinHint",
@@ -19615,7 +19615,7 @@
     },
     {
         "Key": "PacMan2StarTarget",
-        "Text": "获得{0}分"
+        "Text": "抢救代码块{0}个"
     },
     {
         "Key": "PacMan2NoNextStage",
@@ -20115,7 +20115,7 @@
     },
     {
         "Key": "TeamPrefabEquipConflictConfirm",
-        "Text": "预设方案存在冲突，是否使用实际角色装备搭配覆盖当前预设"
+        "Text": "当前编队存在预设冲突，是否使用实际装备效果覆盖当前预设"
     },
     {
         "Key": "TeamPrefabWeaponReplaceTip",
@@ -20166,12 +20166,40 @@
         "Text": "首次采购说明"
     },
     {
+        "Key": "SuitAssistant",
+        "Text": "辅助"
+    },
+    {
+        "Key": "SuitEffect",
+        "Text": "效应"
+    },
+    {
+        "Key": "SuitAll",
+        "Text": "全部"
+    },
+    {
+        "Key": "SuitCommon",
+        "Text": "通用"
+    },
+    {
         "Key": "EquipTakeOffSuccess",
         "Text": "装备卸下成功"
     },
     {
+        "Key": "FashionSuitProgress",
+        "Text": "<color=#38C0FF>{0}</color>/{1}"
+    },
+    {
+        "Key": "FashionSuitWearTip",
+        "Text": "是否立即更换为该涂装？"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "当前编队部分角色装备无法使用，请重新设置后上阵"
+    },
+    {
+        "Key": "UnChoose",
+        "Text": "未选择"
     },
     {
         "Key": "TeamPrefabResonanceNeedUnlock",
@@ -20188,6 +20216,50 @@
     {
         "Key": "NecessaryResourcesNotDownloaded",
         "Text": "未下载必要资源"
+    },
+    {
+        "Key": "MainLineEventBoardInferredAllSuccess",
+        "Text": "事件都已推演完毕了，需要找到事件之间的关联"
+    },
+    {
+        "Key": "MainLineEventBoardConnectWrong",
+        "Text": "好像不太对"
+    },
+    {
+        "Key": "MainLineEventBoardNotCollected",
+        "Text": "线索还未收集齐哦"
+    },
+    {
+        "Key": "MainLineEventBoardUnLockName",
+        "Text": "？？？？"
+    },
+    {
+        "Key": "MainLineEventBoardNoSelectOption",
+        "Text": "请选择线索进行推演哦"
+    },
+    {
+        "Key": "FightTaskTipCurNum",
+        "Text": "当前<color={0}>{1}</color>次"
+    },
+    {
+        "Key": "XAreaWarDetail1",
+        "Text": "极大概率出绿色"
+    },
+    {
+        "Key": "XAreaWarDetail2",
+        "Text": "大概率"
+    },
+    {
+        "Key": "XAreaWarDetail3",
+        "Text": "中概率"
+    },
+    {
+        "Key": "XAreaWarDetail4",
+        "Text": "小概率"
+    },
+    {
+        "Key": "XAreaWarDetail5",
+        "Text": "极小概率"
     },
     {
         "Key": "SpeedRunTips",

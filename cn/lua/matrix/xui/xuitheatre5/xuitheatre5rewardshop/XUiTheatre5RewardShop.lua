@@ -40,11 +40,15 @@ function XUiTheatre5RewardShop:OnEnable()
 
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_TASK, self.UpdateRedDot, self)
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_MULTI, self.UpdateRedDot, self)
+    
+    self:StartTotalTimer()
 end
 
 function XUiTheatre5RewardShop:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.UpdateRedDot, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_MULTI, self.UpdateRedDot, self)
+    
+    self:StopTotalTimer()
 end
 
 function XUiTheatre5RewardShop:RefreshResourceBar()
@@ -71,6 +75,8 @@ function XUiTheatre5RewardShop:InitTags()
     self.FirstTab2IndexDict = {}
     self.TabBtns = {}
     local btnIndex = 0
+    
+    self.TimelimitIds = {}
 
     --一级标题
     for _, taskShopType in pairs(firstTags) do
@@ -98,6 +104,13 @@ function XUiTheatre5RewardShop:InitTags()
                 btnIndex = btnIndex + 1
 
                 self.TabIndexDic[btnIndex] = taskShopCfg
+
+                -- 收集所有时间用于界面过时检测
+                if XTool.IsNumberValidEx(taskShopCfg.TimeLimitId) then
+                    self.TimelimitIds[taskShopCfg.TimeLimitId] = true
+                elseif XTool.IsNumberValidEx(taskShopCfg.TaskTimeLimitId) then
+                    self.TimelimitIds[taskShopCfg.TaskTimeLimitId] = true
+                end
             end
         end
     end
@@ -116,10 +129,24 @@ function XUiTheatre5RewardShop:RemoveTag(taskShopId)
             if uiButtonList then
                 for _, uiButton in pairs(uiButtonList) do
                     uiButton.gameObject:SetActiveEx(false)
+                    
+                    local isin, index = table.contains(self.TabBtns, uiButton)
+                    
+                    table.remove(self.TabBtns, index)
                 end
             end
         end
     end
+end
+
+--- 清除所有页签，用于重新初始化
+function XUiTheatre5RewardShop:ClearTags()
+    for i = 1, #self.TabBtns do
+        self.TabBtns[i].gameObject:SetActiveEx(false)
+        CS.UnityEngine.GameObject.Destroy(self.TabBtns[i].gameObject)
+    end
+    
+    self.BtnTabGroup.TabBtnList:Clear()
 end
 
 function XUiTheatre5RewardShop:OnSelectedTag(index)
@@ -149,6 +176,8 @@ function XUiTheatre5RewardShop:OnSelectedTag(index)
     end
     self:StartTimer(taskShopCfg)
 end
+
+--region 单个页签的定时器
 
 function XUiTheatre5RewardShop:StartTimer(taskShopCfg)
     self:StopTimer()
@@ -204,6 +233,64 @@ function XUiTheatre5RewardShop:UpdateTime(taskShopCfg)
         self:OnSelectedTag(self.SelectIndex)
     end
 end
+
+--endregion
+
+--region 整个界面的定时器
+
+function XUiTheatre5RewardShop:StartTotalTimer()
+    if XTool.IsTableEmpty(self.TimelimitIds) then
+        return
+    end
+    
+    self:StopTotalTimer()
+    
+    self:UpdateTotalTimer()
+    self._TotalTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateTotalTimer), XScheduleManager.SECOND)
+end
+
+function XUiTheatre5RewardShop:StopTotalTimer()
+    if self._TotalTimerId then 
+        XScheduleManager.UnSchedule(self._TotalTimerId)
+        self._TotalTimerId = nil
+    end
+end
+
+function XUiTheatre5RewardShop:UpdateTotalTimer()
+    local endTimeId = nil
+    
+    for id, v in pairs(self.TimelimitIds) do
+        if not XFunctionManager.CheckInTimeByTimeId(id, true) then
+            if endTimeId == nil then
+                endTimeId = {}
+            end
+            
+            table.insert(endTimeId, id)
+        end
+    end
+
+    if not XTool.IsTableEmpty(endTimeId) then
+        -- 存在某个页签的timeId过期了
+        for i = 1, #endTimeId do
+            self.TimelimitIds[endTimeId[i]] = nil
+        end
+        
+        local oldSelectIndex = self.SelectIndex
+        
+        -- 因为触发频率不高，直接重新初始化页签
+        self:ClearTags()
+        self:InitTags()
+        
+        -- 重新选择
+        local newSelectIndex = math.min(oldSelectIndex, self.BtnTabGroup.TabBtnList.Count)
+        
+        self.BtnTabGroup:SelectIndex(newSelectIndex)
+        
+        XUiManager.TipMsg(self._Control:GetClientConfigTaskShopUpdateTips())
+    end
+end
+
+--endregion
 
 function XUiTheatre5RewardShop:UpdateAssetPanel()
     self.AssetActivityPanel:Refresh(self._ResourceBarCoins)

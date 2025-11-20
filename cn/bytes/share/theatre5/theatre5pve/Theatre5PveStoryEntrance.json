@@ -56,10 +56,24 @@
         ]
     },
     {
+        "Id": 5,
+        "SceneObject": "BtnCommonStory",
+        "BtnOpenCondition": 1050234,
+        "BtnCloseCondition": 1050402,
+        "StoryIsOpen": true,
+        "StoryLine": 6,
+        "RepeatChapterCondition": [
+            0
+        ],
+        "RepeatChapter": [
+            605
+        ]
+    },
+    {
         "Id": 6,
         "SceneObject": "BtnTeaching",
         "BtnOpenCondition": 0,
-        "BtnCloseCondition": 0,
+        "BtnCloseCondition": 1050401,
         "StoryIsOpen": true,
         "StoryLine": 1
     }

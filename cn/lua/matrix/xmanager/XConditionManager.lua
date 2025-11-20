@@ -1010,6 +1010,16 @@ PlayerCondition = {
         local ret = XDataCenter.AreaWarManager.IsBlockClear(blockId)
         return ret, condition.Desc
     end,
+    [64322] = function(condition)
+        -- 藏品室是否有道具
+        local isExit = XMVCA.XAreaWar:GetItemRoom():IsExitItem()
+        return isExit, condition.Desc
+    end,
+    [64323] = function(condition)
+        -- 藏品室是否获得过道具
+        local isObtained = XMVCA.XAreaWar:GetItemRoom():IsObtainedItem()
+        return isObtained, condition.Desc
+    end,
     --全服决战 end
     -- 肉鸽 begin
     [17000] = function(condition)
@@ -2598,6 +2608,12 @@ PlayerCondition = {
     [17450] = function(condition)
         -- 比赛是否未进行
         return not XMVCA.XRace:IsGamePlaying(), condition.Desc
+    end,
+    --endregion
+
+    --region 涂装套装
+    [17460] = function(condition)
+        return XMVCA.XFashionSuit:IsRed(), condition.Desc
     end,
     --endregion
 }

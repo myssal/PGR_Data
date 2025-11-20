@@ -231,7 +231,6 @@ function XSignBoardCamAnimNew:_ControlTime(isPlay)
             self.ChargeTimeLine.gameObject:SetActiveEx(false)
         end
         self.AnimEnableLong.gameObject:SetActiveEx(true)
-        self.AnimEnableLoop.gameObject:StopTimelineAnimation()
     else
         self.AnimEnableLong.transform:StopTimelineAnimation()
         self.AnimEnableLong.gameObject:SetActiveEx(false)
