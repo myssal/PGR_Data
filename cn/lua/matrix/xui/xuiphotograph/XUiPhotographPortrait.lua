@@ -65,6 +65,7 @@ function XUiPhotographPortrait:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:Update()
@@ -571,6 +572,7 @@ function XUiPhotographPortrait:UpdateScene(sceneId)
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:ForcePlay(signBoardActionId, actionId)
