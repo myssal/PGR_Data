@@ -530,5 +530,56 @@
         "SpWrongTips": [
             "这位创造者仍然留在幻境中。"
         ]
+    },
+    {
+        "Id": 61000001,
+        "GroupId": 61000,
+        "Step": 1,
+        "Desc": "该由哪些人突袭圣堂？",
+        "ShowClueGroupId": 61001,
+        "AnswerClue": 6101,
+        "AnswerTip": "己方最强战力构成精锐小队，不论是整备队伍还是实施突围都足够高效。",
+        "NormalWrongTip": "应该有更适合的战力。",
+        "Info": "仔细思考问题对应的线索吧。",
+        "SpWrongClues": [
+            6104
+        ],
+        "SpWrongTips": [
+            "规模庞大的军队不适合进行突袭作战。"
+        ]
+    },
+    {
+        "Id": 61000002,
+        "GroupId": 61000,
+        "Step": 2,
+        "Desc": "突袭队伍如何登上圣堂？",
+        "ShowClueGroupId": 61002,
+        "AnswerClue": 6102,
+        "AnswerTip": "驾驶地狱列车，快速接近圣堂。",
+        "NormalWrongTip": "这份支持不足以令我们登上圣堂。",
+        "Info": "由四骑士与灰鸦构成与圣堂决战的精锐小队。",
+        "SpWrongClues": [
+            6103
+        ],
+        "SpWrongTips": [
+            "这个想法未免过于异想天开了。"
+        ]
+    },
+    {
+        "Id": 61000003,
+        "GroupId": 61000,
+        "Step": 3,
+        "Desc": "登上圣堂后，如何对战坐镇其中的“天使长”？",
+        "ShowClueGroupId": 61003,
+        "AnswerClue": 6103,
+        "AnswerTip": "圣环巨炮通过发射银弹，可以对“天使长”造成致命伤。",
+        "NormalWrongTip": "这不一定能制造致命一击。",
+        "Info": "由四骑士与灰鸦构成与圣堂决战的精锐小队。通过驾驶地狱列车进入圣堂，随后展开战斗。",
+        "SpWrongClues": [
+            6101
+        ],
+        "SpWrongTips": [
+            "“瘟疫”与“饥荒”确实曾完成过类似的壮举，但他们如今无法使用对应的力量。"
+        ]
     }
 ]

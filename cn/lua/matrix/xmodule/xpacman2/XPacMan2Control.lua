@@ -211,4 +211,16 @@ function XPacMan2Control:GetCurrentStageId()
     end
 end
 
+function XPacMan2Control:GetStageTips()
+    return self._Model:GetStageTips()
+end
+
+function XPacMan2Control:GetToggleTouch()
+    return self._Model:GetToggleTouch()
+end
+
+function XPacMan2Control:SetToggleTouch(value)
+    self._Model:SetToggleTouch(value)
+end
+
 return XPacMan2Control

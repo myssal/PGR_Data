@@ -16651,7 +16651,7 @@
             "根据<color=#D91414>观测纪行</color>获得不同的能力：\\n-自身为装甲型：攻击使目标额外伤害减免降低。\\n-自身为增幅型：全队成员切换入场时，攻击力增加，伊什梅尔·幻日对应的属性伤害加成提高。"
         ],
         "SpecificDes": [
-            "根据<color=#D91414>观测纪行</color>获得不同的能力：\\n-自身为装甲型：攻击使目标额外伤害减免降低<color=#D91414>{0}%</color>，持续<color=#D91414>5</color>秒。\\n-自身为火、暗属性增幅型：全队成员切换入场时，攻击力增加<color=#D91414>{1}%</color>，伊什梅尔·幻日对应的属性伤害加成提高<color=#D91414>{2}%</color>，持续<color=#D91414>10</color>秒。\\n-自身为其他属性增幅型：全队成员切换入场时，攻击力增加<color=#D91414>{3}%</color>，伊什梅尔·幻日对应的属性伤害加成提高<color=#D91414>{4}%</color>，持续<color=#D91414>10</color>秒。"
+            "根据<color=#D91414>观测纪行</color>获得不同的能力：\\n-自身为装甲型：攻击使目标额外伤害减免降低<color=#D91414>{0}%</color>，持续<color=#D91414>5</color>秒。\\n-自身为火、暗、冰属性增幅型：全队成员切换入场时，攻击力增加<color=#D91414>{1}%</color>，伊什梅尔·幻日对应的属性伤害加成提高<color=#D91414>{2}%</color>，持续<color=#D91414>10</color>秒。\\n-自身为其他属性增幅型：全队成员切换入场时，攻击力增加<color=#D91414>{3}%</color>，伊什梅尔·幻日对应的属性伤害加成提高<color=#D91414>{4}%</color>，持续<color=#D91414>10</color>秒。"
         ]
     },
     {
@@ -20826,6 +20826,405 @@
             "<color=#D91414>千芒一刹</color>及<color=#D91414>晓梦寻光</color>的额外伤害提升<color=#D91414>50%</color>。",
             "<color=#D91414>天闪霆光</color>及<color=#D91414>镜刃球</color>的额外伤害提升<color=#D91414>50%</color>。",
             "<color=#D91414>必杀-于万象中重生</color>的额外伤害提升<color=#D91414>40%</color>。"
+        ]
+    },
+    {
+        "RefId": 1293010,
+        "Desc": "双馈转子",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghong1.png",
+        "TypeDes": "红色霓虹球",
+        "Title": [
+            "前馈启动—<color=#0d70bc>数域空间外+消除白噪信号球三次+点击红色霓虹球</color>",
+            "后馈坍塌—<color=#0d70bc>数域空间内+消除布朗信号球三次+点击红色霓虹球</color>"
+        ],
+        "BriefDes": [
+            "从数域空间中召唤一只熊爪攻击敌人并造成冰属性伤害。\\n-每记录一颗白噪信号球，额外造成冰属性伤害并获得<color=#D91414>20</color>点必杀能量。",
+            "在数域空间中召唤熊熊头槌激起数浪攻击敌人并造成冰属性伤害。"
+        ],
+        "SpecificDes": [
+            "从数域空间中召唤一只熊爪攻击敌人并造成<color=#D91414>{0}%</color>冰属性伤害。\\n-每记录一颗白噪信号球，额外造成<color=#D91414>{1}%</color>冰属性伤害并获得<color=#D91414>20</color>点必杀能量。",
+            "在数域空间中召唤熊熊头槌激起数浪攻击敌人并造成<color=#D91414>{0}%</color>冰属性伤害。"
+        ]
+    },
+    {
+        "RefId": 1293060,
+        "Desc": "超重低音混响",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghuang1.png",
+        "TypeDes": "黄色霓虹球",
+        "EntryId": [
+            111
+        ],
+        "Title": [
+            "双声道叩击—<color=#0d70bc>切换入场</color>",
+            "高分贝溃耳—<color=#0d70bc>切换入场+点击黄色霓虹球</color>",
+            "底噪声失控—<color=#0d70bc>数域空间内+普攻三段+点击黄色霓虹球</color>"
+        ],
+        "BriefDes": [
+            "使用磁感轰炸对敌人造成冰属性伤害，期间获得霸体和伤害减免并激活<color=#D91414>黄色霓虹球</color>。\\n-如果携带<color=#D91414>曝闪印记</color>，转而造成熠光伤害。",
+            "从数域空间中召唤两只巨大熊掌拍击敌人造成冰属性伤害并额外获得<color=#D91414>200</color>点必杀能量。\\n-如果携带<color=#D91414>曝闪印记</color>转而造成熠光伤害并在后摇期间激活<color=#D91414>黄色霓虹球</color>。\\n-再次点击黄色霓虹球释放<color=#D91414>脉噪声贯通</color>，跃向空中召唤熊熊持续对敌人造成熠光伤害并发射<color=#D91414>脉冲噪</color>造成熠光伤害，累计获得<color=#D91414>1000</color>熠光积蓄值，若<color=#D91414>熠光槽</color>满，随后激活<color=#D91414>圣辉浸礼状态</color>，释放期间触发<color=#D91414>时滞演算</color>。",
+            "在空中挥击撕裂空间攻击敌人并造成冰属性伤害。"
+        ],
+        "SpecificDes": [
+            "使用磁感轰炸对敌人造成<color=#D91414>{0}%</color>冰属性伤害，期间获得霸体和<color=#D91414>50%</color>的伤害减免并激活<color=#D91414>黄色霓虹球</color>。\\n-如果携带<color=#D91414>曝闪印记</color>，转而造成<color=#D91414>{1}%</color>熠光伤害。",
+            "从数域空间中召唤两只巨大熊掌拍击敌人造成<color=#D91414>{0}%</color>冰属性伤害并额外获得<color=#D91414>200</color>点必杀能量。\\n-如果携带<color=#D91414>曝闪印记</color>转而造成<color=#D91414>{1}%</color>熠光伤害并在后摇期间激活<color=#D91414>黄色霓虹球</color>。\\n-再次点击黄色霓虹球释放<color=#D91414>脉噪声贯通</color>，跃向空中召唤熊熊持续对敌人造成<color=#D91414>{2}%</color>熠光伤害并发射<color=#D91414>脉冲噪</color>造成<color=#D91414>{3}%</color>熠光伤害，累计获得<color=#D91414>1000</color>熠光积蓄值，若<color=#D91414>熠光槽</color>满，随后激活<color=#D91414>圣辉浸礼状态</color>，释放期间触发<color=#D91414>时滞演算</color>。",
+            "在空中挥击撕裂空间攻击敌人并造成<color=#D91414>{0}%</color>冰属性伤害。"
+        ]
+    },
+    {
+        "RefId": 1293110,
+        "Desc": "极巨化失调",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionglan1.png",
+        "TypeDes": "蓝色霓虹球",
+        "Title": [
+            "蓝色霓虹球—<color=#0d70bc>数域空间内+长按普攻+点击蓝色霓虹球</color>"
+        ],
+        "BriefDes": [
+            "从数域空间中召唤巨大熊熊协助攻击敌人并造成冰属性伤害。"
+        ],
+        "SpecificDes": [
+            "从数域空间中召唤巨大熊熊协助攻击敌人并造成<color=#D91414>{0}%</color>冰属性伤害。"
+        ]
+    },
+    {
+        "RefId": 1293160,
+        "Desc": "傅里叶展开",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxiongpugong1.png",
+        "TypeDes": "普通攻击",
+        "Title": [
+            "正变换—<color=#0d70bc>数域空间外+点击普攻</color>",
+            "逆变换—<color=#0d70bc>数域空间内+点击普攻</color>",
+            "前级放大—<color=#0d70bc>数域空间内+长按普攻</color>"
+        ],
+        "BriefDes": [
+            "召唤十字键刃攻击敌人并造成冰属性伤害。\\n-每段普攻后长按普攻可持续造成伤害，期间信号球回复效率提升<color=#D91414>100%</color>。\\n-造成持续伤害期间松开普攻后短时间内自动闪避比人攻击并释放<color=#D91414>调谐滤波</color>的闪避反击对敌人造成*冰属性伤害。",
+            "从数域空间中召唤闪烁噪和十字键刃攻击敌人，如果处于低空中，则转变为普攻第二段攻击敌人，当释放<color=#D91414>红色霓虹球</color>或<color=#D91414>蓝色霓虹球</color>技能后，点击普攻转变为普攻三段攻击敌人。",
+            "从空中旋转攻击敌人造成冰属性伤害，后摇期间激活蓝色霓虹球。"
+        ],
+        "SpecificDes": [
+            "召唤十字键刃攻击敌人并造成冰属性伤害。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害。\\n-释放第一/二/三段普攻后长按普攻分别造成<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>/<color=#D91414>{3}%</color>冰属性伤害，期间信号球回复效率提升<color=#D91414>100%</color>。\\n-造成持续伤害期间松开普攻后短时间内自动闪避敌人攻击并释放<color=#D91414>调谐滤波</color>的闪避反击对敌人造成<color=#D91414>{4}%</color>冰属性伤害。",
+            "从数域空间中召唤闪烁噪和十字键刃攻击敌人，如果处于低空中，则转变为普攻第二段攻击敌人，当释放<color=#D91414>红色霓虹球</color>或<color=#D91414>蓝色霓虹球</color>技能后，点击普攻转变为普攻三段攻击敌人。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害",
+            "从空中旋转攻击敌人，后摇期间激活<color=#D91414>蓝色霓虹球</color>。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害。"
+        ]
+    },
+    {
+        "RefId": 1293170,
+        "Desc": "“Z变换”",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxiongdazhao1.png",
+        "TypeDes": "必杀技",
+        "EntryId": [
+            111
+        ],
+        "Title": [
+            "数域空间·新维度展开—<color=#0d70bc>数域空间外+至少200点必杀能量+点击必杀</color>",
+            "数域空间·势垒裂隙—<color=#0d70bc>数域空间内+点击必杀</color>",
+            "数域空间·闪烁留存"
+        ],
+        "BriefDes": [
+            "展开数域空间，造成冰属性伤害并停留在空中，处于数域空间内每<color=#D91414>0.1</color>秒消耗<color=#D91414>1</color>点必杀能量，技能释放期间获得霸体和<color=#D91414>50%</color>的伤害减免，普通攻击、消除信号球无法获得必杀能量，释放期间触发<color=#D91414>时滞演算</color>。",
+            "蓄力跃向空中飞踢敌人，造成冰属性伤害；数域空间内每记录一种霓虹球颜色，额外造成冰属性伤害，结束后清除霓虹球色记录，释放期间触发<color=#D91414>时滞演算</color>。",
+            "释放<color=#D91414>数域空间·势垒裂隙</color>后，我方角色攻击命中敌人时，额外召唤熊爪对敌人进行追击造成冰属性伤害并对在场角色造成治疗，<color=#D91414>数域空间·闪烁留存</color>本身无法触发该效果，且有<color=#D91414>1</color>秒的冷却时间。\\n-<color=#D91414>数域空间·新维度展开</color>期间记录<color=#D91414>1/2/3</color>种霓虹球颜色，根据记录霓虹球色数获得<color=#D91414>5/7/12</color>次<color=#D91414>数域空间·闪烁留存</color>，最多持续<color=#D91414>15</color>秒。\\n-若携带<color=#D91414>曝闪印记</color>并释放<color=#D91414>脉噪声贯通</color>，立刻获得<color=#D91414>12</color>次<color=#D91414>数域空间·闪烁留存</color>转而造成熠光伤害。"
+        ],
+        "SpecificDes": [
+            "展开数域空间，造成<color=#D91414>{0}%</color>冰属性伤害并停留在空中，处于数域空间内每<color=#D91414>0.1</color>秒消耗<color=#D91414>1</color>点必杀能量，技能释放期间获得霸体和<color=#D91414>50%</color>的伤害减免，普通攻击、消除信号球无法获得必杀能量，释放期间触发<color=#D91414>时滞演算</color>。",
+            "蓄力跃向空中飞踢敌人，造成<color=#D91414>{0}%</color>冰属性伤害；数域空间内记录<color=#D91414>1/2/3</color>种霓虹球颜色，分别额外造成<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>/<color=#D91414>{3}%</color>冰属性伤害，结束后清除霓虹球色记录，释放期间触发<color=#D91414>时滞演算</color>。",
+            "释放<color=#D91414>数域空间·势垒裂隙</color>后，我方角色攻击命中敌人时，额外召唤熊爪对敌人进行追击造成<color=#D91414>{0}%</color>冰属性伤害并对在场角色造成<color=#D91414>{1}%</color>攻击力的治疗，<color=#D91414>数域空间·闪烁留存</color>本身无法触发该效果，且有<color=#D91414>1</color>秒的冷却时间。\\n-<color=#D91414>数域空间·新维度展开</color>期间记录<color=#D91414>1/2/3</color>种霓虹球颜色，根据记录霓虹球色数获得<color=#D91414>5/7/12</color>次<color=#D91414>数域空间·闪烁留存</color>，最多持续<color=#D91414>15</color>秒。\\n-若携带<color=#D91414>曝闪印记</color>并释放<color=#D91414>脉噪声贯通</color>，立刻获得<color=#D91414>12</color>次<color=#D91414>数域空间·闪烁留存</color>转而造成<color=#D91414>{2}%</color>熠光伤害。"
+        ]
+    },
+    {
+        "RefId": 1293180,
+        "Desc": "参量均衡",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/QTE1.png",
+        "TypeDes": "QTE",
+        "Title": [
+            "QTE—<color=#0d70bc>点击QTE</color>"
+        ],
+        "BriefDes": [
+            "造成伤害并施加治疗。\\n-若携带<color=#D91414>曝闪印记</color>，转而造成熠光伤害。"
+        ],
+        "SpecificDes": [
+            "造成伤害并施加治疗。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害。\\n-若携带<color=#D91414>曝闪印记</color>，转而造成<color=#D91414>{1}%</color>熠光伤害。\\n-施加<color=#D91414>{2}%</color>攻击力的治疗。"
+        ]
+    },
+    {
+        "RefId": 1293210,
+        "Desc": "集成霓虹",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghexin1.png",
+        "TypeDes": "核心被动",
+        "EntryId": [
+            45
+        ],
+        "Title": [
+            "留声链路",
+            "反相缓冲—<color=#0d70bc>数域空间外+点击白噪信号球</color>",
+            "流镜矩阵—<color=#0d70bc>数域空间内+点击布朗信号球</color>",
+            "骇破印记",
+            "模数转换",
+            "调谐滤波—<color=#0d70bc>长按闪避</color>",
+            "溢算运放",
+            "耦合干扰—<color=#0d70bc>点击能量条</color>",
+            "效应：熠光"
+        ],
+        "BriefDes": [
+            "在数域空间外只能获得<color=#D91414>白噪信号球</color>；数域空间内获得无限的<color=#D91414>布朗信号球</color>；球栏一号位固定为霓虹球位，在释放特定技能的后摇期间可激活对应颜色的<color=#D91414>霓虹球</color>，霓虹球视为三消信号球，释放期间获得霸体和<color=#D91414>75%</color>伤害减免。\\n-当队伍选择<color=#D91414>熠光</color>效应时，视为布偶熊·骇影携带<color=#D91414>曝闪印记</color>。",
+            "跃向空中并下落骑士踢击敌人，上升时可连续消除信号球召唤矩阵轰炸敌人，第三次消除所有白噪信号球，上升期间无敌并拥有闪避判定，最多记录<color=#D91414>16</color>颗白噪信号球。\\n-下落时骑士踢击敌人，后摇期间激活红色霓虹球，下落期间获得霸体和伤害减免。\\n-<color=#D91414>红色霓虹球-前馈启动</color>释放时，根据记录的白噪信号球数造成额外冰属性伤害且回复必杀能量。",
+            "攻击敌人，最多可连续消除三次，造成冰属性伤害，第三段释放后摇期间激活<color=#D91414>红色霓虹球</color>。",
+            "各色霓虹球技能以及<color=#D91414>必杀-数域空间·闪烁留存</color>的攻击会对首个命中的目标施加<color=#D91414>骇破标记</color>，持续<color=#D91414>10</color>秒，被骇入的目标受到伤害时，对目标区域追加进行轰炸攻击，场上最多同时存在<color=#D91414>1</color>枚<color=#D91414>骇破标记</color>。被骇入的目标死亡时，<color=#D91414>骇破标记</color>会就近传播并重置持续时间。\\n-轰炸攻击造成冰属性伤害，<color=#D91414>必杀-数域空间·势垒裂隙</color>会引爆印记造成冰属性伤害。\\n-若携带<color=#D91414>曝闪印记</color>，轰炸攻击转而造成熠光伤害。",
+            "数域空间内释放霓虹球技能时，记录其霓虹球颜色，每种颜色最多被记录一次。每消耗霓虹球释放对应技能时，自身获得治疗，并扣除至多<color=#D91414>1/3</color>必杀能量上限的必杀能量。",
+            "数域空间外成功闪避时，长按闪避可以反击对敌人造成冰属性伤害。\\n-数域空间内召唤熊熊手掌爪击敌人并造成冰属性伤害，后摇期间激活特殊霓虹球，消除特殊霓虹球造成冰属性伤害，获得<color=#D91414>90</color>点必杀能量，并清除初次记录的霓虹球颜色。",
+            "受到布偶熊·骇影治疗的友方单位获得冰属性伤害提升<color=#D91414>20%</color>的<color=#D91414>极凝霜晶</color>效果，熠光伤害提升<color=#D91414>22.5%</color>的<color=#D91414>频闪光伏</color>效果，持续<color=#D91414>8</color>秒，重复触发刷新持续时间。",
+            "召唤熊爪攻击敌人造成冰属性伤害。",
+            "积攒<color=#D91414>熠光槽</color>，攒满后可通过部分技能进入<color=#D91414>圣辉浸礼状态</color>，并获得<color=#D91414>10</color>层<color=#D91414>光冕</color>，特定技能可消耗<color=#D91414>光冕</color>层数获得强化效果，同时释放<color=#D91414>辉烬之拥</color>造成熠光伤害。\\n-<color=#D91414>熠光槽</color>上限为<color=#D91414>1000</color>点。\\n-<color=#D91414>辉烬之拥</color>造成<color=#D91414>330%</color>熠光伤害。"
+        ],
+        "SpecificDes": [
+            "在数域空间外只能获得<color=#D91414>白噪信号球</color>；数域空间内获得无限的<color=#D91414>布朗信号球</color>；球栏一号位固定为霓虹球位，在释放特定技能的后摇期间可激活对应颜色的<color=#D91414>霓虹球</color>，霓虹球视为三消信号球，释放期间获得霸体和<color=#D91414>75%</color>伤害减免。\\n-当队伍选择<color=#D91414>熠光</color>效应时，视为布偶熊·骇影携带<color=#D91414>曝闪印记</color>。",
+            "跃向空中并下落骑士踢击敌人，上升时可连续消除信号球召唤矩阵轰炸敌人，第三次消除所有白噪信号球，上升期间无敌并拥有闪避判定，最多记录<color=#D91414>16</color>颗白噪信号球。\\n-每次消除白噪信号球造成<color=#D91414>{0}%</color>冰属性伤害。\\n-下落时骑士踢击敌人造成<color=#D91414>{1}%</color>冰属性伤害，后摇期间激活红色霓虹球，下落期间获得霸体和<color=#D91414>50%</color>伤害减免。\\n-<color=#D91414>红色霓虹球-前馈启动</color>释放时，根据记录的白噪信号球数造成额外冰属性伤害且回复必杀能量。",
+            "攻击敌人，最多可连续消除三次，分别造成<color=#D91414>{0}%</color>/<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>冰属性伤害，第三段释放后摇期间激活<color=#D91414>红色霓虹球</color>。",
+            "各色霓虹球技能以及<color=#D91414>必杀-数域空间·闪烁留存</color>的攻击会对首个命中的目标施加<color=#D91414>骇破标记</color>，持续<color=#D91414>10</color>秒，被骇入的目标受到伤害时，对目标区域追加进行轰炸攻击，场上最多同时存在<color=#D91414>1</color>枚<color=#D91414>骇破标记</color>。被骇入的目标死亡时，<color=#D91414>骇破标记</color>会就近传播并重置持续时间。\\n-轰炸攻击造成<color=#D91414>{0}%</color>冰属性伤害，<color=#D91414>必杀-数域空间·势垒裂隙</color>会引爆印记造成<color=#D91414>{1}%</color>冰属性伤害。\\n-若携带<color=#D91414>曝闪印记</color>，轰炸攻击转而造成<color=#D91414>{2}%</color>熠光伤害。",
+            "数域空间内释放霓虹球技能时，记录其霓虹球颜色，每种颜色最多被记录一次。每消耗霓虹球释放对应技能时，自身获得<color=#D91414>{0}%</color>攻击力的治疗效果，并扣除至多<color=#D91414>1/3</color>必杀能量上限的必杀能量。",
+            "数域空间外成功闪避时，长按闪避可以反击对敌人造成<color=#D91414>{0}%</color>冰属性伤害。\\n-数域空间内召唤熊熊手掌爪击敌人并造成<color=#D91414>{1}%</color>冰属性伤害，后摇期间激活特殊霓虹球，消除特殊霓虹球造成<color=#D91414>{2}%</color>冰属性伤害，获得<color=#D91414>90</color>点必杀能量，并清除初次记录的霓虹球颜色。",
+            "受到布偶熊·骇影治疗的友方单位获得冰属性伤害提升<color=#D91414>20%</color>的<color=#D91414>极凝霜晶</color>效果，熠光伤害提升<color=#D91414>22.5%</color>的<color=#D91414>频闪光伏</color>效果，持续<color=#D91414>8</color>秒，重复触发刷新持续时间。",
+            "召唤熊爪攻击敌人，分别造成<color=#D91414>{0}%</color>/<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>冰属性伤害。",
+            "积攒<color=#D91414>熠光槽</color>，攒满后可通过部分技能进入<color=#D91414>圣辉浸礼状态</color>，并获得<color=#D91414>10</color>层<color=#D91414>光冕</color>，特定技能可消耗<color=#D91414>光冕</color>层数获得强化效果，同时释放<color=#D91414>辉烬之拥</color>造成熠光伤害。\\n-<color=#D91414>熠光槽</color>上限为<color=#D91414>1000</color>点。\\n-<color=#D91414>辉烬之拥</color>造成<color=#D91414>330%</color>熠光伤害。"
+        ]
+    },
+    {
+        "RefId": 1293220,
+        "Desc": "队长-“绝密域名”",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongA1.png",
+        "TypeDes": "队长技",
+        "BriefDes": [
+            "全队攻击力增加<color=#D91414>10%</color>，增幅型冰属性伤害及熠光伤害增加<color=#D91414>5%</color>。"
+        ],
+        "SpecificDes": [
+            "全队攻击力增加<color=#D91414>10%</color>，增幅型冰属性伤害及熠光伤害增加<color=#D91414>5%</color>。"
+        ]
+    },
+    {
+        "RefId": 1293230,
+        "Desc": "增幅型",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghexin1.png",
+        "TypeDes": "职业技",
+        "BriefDes": [
+            "全队成员切换入场时，攻击力增加，增幅型角色对应的属性伤害加成提高，熠光伤害提高。"
+        ],
+        "SpecificDes": [
+            "全队成员切换入场时，攻击力增加<color=#D91414>{0}%</color>，增幅型角色对应的属性伤害加成提高<color=#D91414>{1}%</color>，熠光伤害提高<color=#D91414>{2}%</color>，持续<color=#D91414>10</color>s。"
+        ]
+    },
+    {
+        "RefId": 1293270,
+        "Desc": "终阶解放",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/Jiefang1.png",
+        "TypeDes": "终阶解放",
+        "Title": [
+            "首次进入战斗时，立即获得3个信号球。"
+        ],
+        "BriefDes": [
+            "首次进入战斗时，立即获得3个信号球。"
+        ],
+        "SpecificDes": [
+            "首次进入战斗时，立即获得3个信号球。"
+        ]
+    },
+    {
+        "RefId": 1293240,
+        "Desc": "失真补偿",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS升阶被动",
+        "Title": [
+            "<color=#99a3b1>1级—<color=#0d70bc>S5升阶解锁</color></color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SS升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>释放霓虹球和数域空间·势垒裂隙时，激活未冷却的QTE。</color>",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，逆变换基础伤害提升75%，前级放大伤害提升100%，流镜矩阵基础伤害提升125%，获得霓虹球后的时间暂缓期间，获得无敌状态，释放脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲噪获得5%的基础伤害加成。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>释放霓虹球和数域空间·势垒裂隙时，激活未冷却的QTE。</color>",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，逆变换基础伤害提升75%，前级放大伤害提升100%，流镜矩阵基础伤害提升125%，获得霓虹球后的时间暂缓期间，获得无敌状态，释放脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲噪获得5%的基础伤害加成。</color>"
+        ]
+    },
+    {
+        "RefId": 1293241,
+        "Desc": "失真补偿",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS升阶被动",
+        "Title": [
+            "1级—<color=#0d70bc>S5升阶解锁</color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SS升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，逆变换基础伤害提升75%，前级放大伤害提升100%，流镜矩阵基础伤害提升125%，获得霓虹球后的时间暂缓期间，获得无敌状态，释放脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲噪获得5%的基础伤害加成。</color>"
+        ],
+        "SpecificDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，逆变换基础伤害提升75%，前级放大伤害提升100%，流镜矩阵基础伤害提升125%，获得霓虹球后的时间暂缓期间，获得无敌状态，释放脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲噪获得5%的基础伤害加成。</color>"
+        ]
+    },
+    {
+        "RefId": 1293242,
+        "Desc": "失真补偿",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS升阶被动",
+        "Title": [
+            "1级—<color=#0d70bc>S5升阶解锁</color>",
+            "2级—<color=#0d70bc>SS升阶解锁</color>"
+        ],
+        "BriefDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "切换入场时获得三颗白噪信号球，<color=#D91414>逆变换</color>基础伤害提升<color=#D91414>75%</color>，<color=#D91414>前级放大</color>伤害提升<color=#D91414>100%</color>，<color=#D91414>流镜矩阵</color>基础伤害提升<color=#D91414>125%</color>，获得霓虹球后的时间暂缓期间，获得无敌状态，释放<color=#D91414>脉噪声贯通</color>期间会自动消除白噪信号球，每消除<color=#D91414>1</color>颗白噪信号球，<color=#D91414>脉冲噪</color>获得<color=#D91414>5%</color>的基础伤害加成。"
+        ],
+        "SpecificDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "切换入场时获得三颗白噪信号球，<color=#D91414>逆变换</color>基础伤害提升<color=#D91414>75%</color>，<color=#D91414>前级放大</color>伤害提升<color=#D91414>100%</color>，<color=#D91414>流镜矩阵</color>基础伤害提升<color=#D91414>125%</color>，获得霓虹球后的时间暂缓期间，获得无敌状态，释放<color=#D91414>脉噪声贯通</color>期间会自动消除白噪信号球，每消除<color=#D91414>1</color>颗白噪信号球，<color=#D91414>脉冲噪</color>获得<color=#D91414>5%</color>的基础伤害加成。"
+        ]
+    },
+    {
+        "RefId": 1293250,
+        "Desc": "平滑阻抗",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS升阶被动",
+        "EntryId": [
+            45
+        ],
+        "Title": [
+            "<color=#99a3b1>1级—<color=#0d70bc>SS3升阶解锁</color></color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SSS升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-霓虹球的基础伤害提升100%，骇破标记的基础伤害提升50%。</color>",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-每记录一种霓虹球，数域空间·势垒裂隙基础伤害提升30%\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-霓虹球的基础伤害提升100%，骇破标记的基础伤害提升50%。</color>",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-每记录一种霓虹球，数域空间·势垒裂隙基础伤害提升30%\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293251,
+        "Desc": "平滑阻抗",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS升阶被动",
+        "EntryId": [
+            45
+        ],
+        "Title": [
+            "1级—<color=#0d70bc>SS3升阶解锁</color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SSS升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>的基础伤害提升<color=#D91414>100%</color>，<color=#D91414>骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-每记录一种霓虹球，数域空间·势垒裂隙基础伤害提升30%\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ],
+        "SpecificDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>的基础伤害提升<color=#D91414>100%</color>，<color=#D91414>骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果冰属性伤害提升10%，频闪光伏效果熠光伤害提升11.25%。\\n-每记录一种霓虹球，数域空间·势垒裂隙基础伤害提升30%\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293252,
+        "Desc": "平滑阻抗",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS升阶被动",
+        "EntryId": [
+            45
+        ],
+        "Title": [
+            "1级—<color=#0d70bc>SS3升阶解锁</color>",
+            "2级—<color=#0d70bc>SSS升阶解锁</color>"
+        ],
+        "BriefDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>的基础伤害提升<color=#D91414>100%</color>，<color=#D91414>骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-每记录一种霓虹球，<color=#D91414>数域空间·势垒裂隙</color>基础伤害提升<color=#D91414>30%</color>\\n-如果布偶熊·骇影在队伍中，<color=#D91414>光冕层数</color>上限增加<color=#D91414>10</color>。\\n-<color=#D91414>数域空间·闪烁留存</color>基础伤害提升<color=#D91414>100%</color>。"
+        ],
+        "SpecificDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>的基础伤害提升<color=#D91414>100%</color>，<color=#D91414>骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果冰属性伤害提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果熠光伤害提升<color=#D91414>11.25%</color>。\\n-每记录一种霓虹球，<color=#D91414>数域空间·势垒裂隙</color>基础伤害提升<color=#D91414>30%</color>\\n-如果布偶熊·骇影在队伍中，<color=#D91414>光冕层数</color>上限增加<color=#D91414>10</color>。\\n-<color=#D91414>数域空间·闪烁留存</color>基础伤害提升<color=#D91414>100%</color>。"
+        ]
+    },
+    {
+        "RefId": 1293260,
+        "Desc": "共源级超频",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+升阶被动",
+        "Title": [
+            "<color=#99a3b1>1级—<color=#0d70bc>SSS3升阶解锁</color></color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SSS6升阶解锁</color></color>",
+            "<color=#99a3b1>3级—<color=#0d70bc>SSS+升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>逆变换，前级放大，流镜矩阵额外伤害加成提升100%，骇破印记的额外伤害加成提升50%。</color>",
+            "<color=#99a3b1>霓虹球的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>逆变换，前级放大，流镜矩阵额外伤害加成提升100%，骇破印记的额外伤害加成提升50%。</color>",
+            "<color=#99a3b1>霓虹球的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293261,
+        "Desc": "共源级超频",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+升阶被动",
+        "Title": [
+            "1级—<color=#0d70bc>SSS3升阶解锁</color>",
+            "<color=#99a3b1>2级—<color=#0d70bc>SSS6升阶解锁</color></color>",
+            "<color=#99a3b1>3级—<color=#0d70bc>SSS+升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>霓虹球的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>霓虹球的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293262,
+        "Desc": "共源级超频",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+升阶被动",
+        "Title": [
+            "1级—<color=#0d70bc>SSS3升阶解锁</color>",
+            "2级—<color=#0d70bc>SSS6升阶解锁</color>",
+            "<color=#99a3b1>3级—<color=#0d70bc>SSS+升阶解锁</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#99a3b1>数域空间·势垒裂隙额外伤害加成提升80%，数域空间·闪烁留存额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293263,
+        "Desc": "共源级超频",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+升阶被动",
+        "Title": [
+            "1级—<color=#0d70bc>SSS3升阶解锁</color>",
+            "2级—<color=#0d70bc>SSS6升阶解锁</color>",
+            "3级—<color=#0d70bc>SSS+升阶解锁</color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#D91414>数域空间·势垒裂隙</color>额外伤害加成提升<color=#D91414>80%</color>，<color=#D91414>数域空间·闪烁留存</color>额外伤害加成提升<color=#D91414>50%</color>。"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>逆变换</color>，<color=#D91414>前级放大</color>，<color=#D91414>流镜矩阵</color>额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#D91414>数域空间·势垒裂隙</color>额外伤害加成提升<color=#D91414>80%</color>，<color=#D91414>数域空间·闪烁留存</color>额外伤害加成提升<color=#D91414>50%</color>。"
         ]
     }
 ]

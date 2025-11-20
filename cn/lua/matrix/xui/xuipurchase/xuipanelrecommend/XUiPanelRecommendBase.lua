@@ -24,6 +24,16 @@ function XUiPanelRecommendBase:SetUi(ui)
     XUiHelper.InitUiClass(self, ui)
 end
 
+function XUiPanelRecommendBase:AddEditableTextComponent(btn, index, package)
+    local recommendItem = self["RecommendItem" .. index]
+    if not recommendItem then
+        local XUiPanelRecommendItem = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendItem/XUiPanelRecommendItem")
+        recommendItem = XUiPanelRecommendItem.New(btn)
+        self["RecommendItem" .. index] = recommendItem
+    end
+    recommendItem:Update(package)
+end
+
 function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
     ---@type XPurchaseRecommend
     self.Recommend = data
@@ -40,6 +50,9 @@ function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
             local package = self.Recommend:GetPurchasePackage()[index]
             local btnName = "BtnGiftBuy" .. index
             local btn = self[btnName]
+            
+            self:AddEditableTextComponent(btn, index, package)
+            
             if not XTool.UObjIsNil(btn) then
                 if package == nil then
                     -- 页签显示时间内但找不到礼包数据则不显示

@@ -681,6 +681,9 @@ local type = {
     CONDITION_RACE_TASK = "XRedPointRaceTask", --任务红点
     CONDITION_RACE_ROUND_GUESS = "XRedPointRaceRoundGuess", --单场预测红点
     CONDITION_RACE_MATCH_GUESS = "XRedPointRaceMatchGuess", --赛事预测红点
+    
+    --涂装套装
+    CONDITION_FASHION_SUIT_MAIN_RED = "XRedPointFashionSuitMainRed",
 }
 XRedPointConditions.Conditions = type
 

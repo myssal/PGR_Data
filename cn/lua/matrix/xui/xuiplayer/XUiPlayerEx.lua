@@ -56,6 +56,7 @@ end
 function XUiPlayerEx:OnEnable()
     self.BtnAchievement:ShowReddot(XDataCenter.MedalManager.CheckHaveNewMedal() or XDataCenter.AchievementManager.CheckHasReward())
     self.BtnExhibition:ShowReddot(XDataCenter.ExhibitionManager.CheckNewCharacterReward())
+    self.BtnSkinSeries.gameObject:SetActiveEx(false)
 end
 
 function XUiPlayerEx:OnDisable()

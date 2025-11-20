@@ -102,6 +102,7 @@ function XMovieEnumConst:GetActionClass(actionType)
         [306] = require("XMovieActions/XMovieActionRoleMask"), --上下遮罩动画
         [307] = require("XMovieActions/XMovieActionCenterTips"), --居中提示文本
         [308] = require("XMovieActions/XMovieActionAutoSkip"), --自动跳转节点
+        [309] = require("XMovieActions/XMovieActionAddReview"), --增加回顾记录
 
         [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
         [402] = require("XMovieActions/XMovieActionAudioInterrupt"), --BGM/CV/音效 打断

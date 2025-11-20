@@ -1813,6 +1813,26 @@
         "Text": "20010010涂装随机池不能为空"
     },
     {
+        "Id": 20010011,
+        "Key": "FashionSuitConfigNotFound",
+        "Text": "20010011涂装套装配置未找到"
+    },
+    {
+        "Id": 20010012,
+        "Key": "FashionSuitIsNotComplete",
+        "Text": "20010012涂装套装未全部推出"
+    },
+    {
+        "Id": 20010013,
+        "Key": "FashionSuitIsNotGathered",
+        "Text": "20010013涂装套装未集齐"
+    },
+    {
+        "Id": 20010014,
+        "Key": "FashionSuitIsAlreadyReward",
+        "Text": "20010014涂装套装奖励已领取"
+    },
+    {
         "Id": 20012001,
         "Key": "ItemManagerGetItemTableFailed",
         "Text": "获取道具表失败"
@@ -4166,6 +4186,11 @@
     },
     {
         "Id": 20034135,
+        "Key": "ConditionAreaWar4ItemRoomLevelLimit",
+        "Text": "20034135特遣4-藏品室等级不满足条件"
+    },
+    {
+        "Id": 20034136,
         "Key": "ConditionManagerCharacterLevelNotEnough",
         "Text": "20034135成员等级不满足"
     },
@@ -15356,6 +15381,151 @@
         "Text": "20148043货币获取记录未达标"
     },
     {
+        "Id": 20148500,
+        "Key": "AreaWar4BlockDropTemplateNotFound",
+        "Text": "20148500特遣4关卡随机配置不存在"
+    },
+    {
+        "Id": 20148501,
+        "Key": "AreaWar4RandomGroupCacheNotFound",
+        "Text": "20148501特遣4随机组缓存不存在"
+    },
+    {
+        "Id": 20148502,
+        "Key": "AreaWar4RandomGroupIsNull",
+        "Text": "20148502特遣4随机组随机不到东西"
+    },
+    {
+        "Id": 20148503,
+        "Key": "AreaWar4ItemCountLimit",
+        "Text": "20148503特遣4道具数量不足"
+    },
+    {
+        "Id": 20148504,
+        "Key": "AreaWar4ItemRoomLevelLimit",
+        "Text": "20148504特遣4藏品室等级限制"
+    },
+    {
+        "Id": 20148505,
+        "Key": "AreaWar4ItemRoomLvUpCostLimit",
+        "Text": "20148505特遣4藏品室升级消耗限制"
+    },
+    {
+        "Id": 20148506,
+        "Key": "AreaWar4RaceItemSubmitTimesLimit",
+        "Text": "20148506特遣4珍稀藏品提交次数限制"
+    },
+    {
+        "Id": 20148507,
+        "Key": "AreaWar4RaceItemSubmitNumLimit",
+        "Text": "20148507特遣4珍稀藏品提交藏品不存在"
+    },
+    {
+        "Id": 20148508,
+        "Key": "AreaWar4RoomItemTemplateNotFound",
+        "Text": "20148508特遣4藏品配置不存在"
+    },
+    {
+        "Id": 20148509,
+        "Key": "AreaWar4RoomItemNotRace",
+        "Text": "20148509特遣4藏品不是珍稀品质"
+    },
+    {
+        "Id": 20148510,
+        "Key": "AreaWar4ItemRoomNumLimit",
+        "Text": "20148510特遣4藏品室背包数量限制"
+    },
+    {
+        "Id": 20148511,
+        "Key": "AreaWar4ItemRoomLevelCfgError",
+        "Text": "20148511特遣4藏品室等级配置不存在"
+    },
+    {
+        "Id": 20148512,
+        "Key": "AreaWar4ItemRoomNoEffectError",
+        "Text": "20148512特遣4藏品室藏品没有效果"
+    },
+    {
+        "Id": 20148600,
+        "Key": "AreaWar4AuctionItemError",
+        "Text": "20148600特遣4拍卖行货物不存在"
+    },
+    {
+        "Id": 20148601,
+        "Key": "AreaWar4AuctionTemplateNotFound",
+        "Text": "20148601特遣4拍拍卖行表配置不存在"
+    },
+    {
+        "Id": 20148602,
+        "Key": "AreaWar4AuctionSellTemplateNotFound",
+        "Text": "20148602特遣4拍卖行出售表配置不存在"
+    },
+    {
+        "Id": 20148603,
+        "Key": "AreaWar4AuctionSellTimeError",
+        "Text": "20148603特遣4拍卖行出售时间错误"
+    },
+    {
+        "Id": 20148604,
+        "Key": "AreaWar4AuctionCreateOrderError",
+        "Text": "20148604特遣4拍卖行创建订单错误"
+    },
+    {
+        "Id": 20148605,
+        "Key": "AreaWar4AuctionOrderError",
+        "Text": "20148605特遣4拍卖行订单错误"
+    },
+    {
+        "Id": 20148606,
+        "Key": "AreaWar4AuctionOrderNumLimit",
+        "Text": "20148606特遣4拍卖行订单数限制"
+    },
+    {
+        "Id": 20148607,
+        "Key": "AreaWar4AuctionBuyParamError",
+        "Text": "20148607特遣4拍卖行购买参数错误"
+    },
+    {
+        "Id": 20148608,
+        "Key": "AreaWar4AuctionBuyPartitionNoExit",
+        "Text": "20148608特遣4拍卖行购买区间不存在"
+    },
+    {
+        "Id": 20148609,
+        "Key": "AreaWar4AuctionIntMaxError",
+        "Text": "20148609特遣4拍卖行价格计算溢出"
+    },
+    {
+        "Id": 20148610,
+        "Key": "AreaWar4AuctionBuyAddError",
+        "Text": "20148610特遣4拍卖行购买时添加道具失败"
+    },
+    {
+        "Id": 20148611,
+        "Key": "AreaWar4AuctionReturnItemError",
+        "Text": "20148611特遣4拍卖行返还道具失败"
+    },
+    {
+        "Id": 20148612,
+        "Key": "AreaWar4AuctionSellPartitionError",
+        "Text": "20148612特遣4拍卖行出售区间配置错误"
+    },
+    {
+        "Id": 20148613,
+        "Key": "AreaWar4AuctionSellTimeLimit",
+        "Text": "20148613特遣4拍卖行未到出售时间"
+    },
+    {
+        "Id": 20148614,
+        "Key": "AreaWar4AuctionPutOffOver",
+        "Text": "20148614特遣4拍卖行订单超时不能下架"
+    },
+    {
+        "Id": 20148615,
+        "Key": "AreaWar4AuctionPutOnParamError",
+        "Text": "20148615特遣4拍卖行上传参数错误"
+    },
+    {
         "Id": 20149001,
         "Key": "SuperSmashBrosActivityModeNotExist",
         "Text": "赛区不存在"
@@ -23546,6 +23716,26 @@
         "Text": "20219011机器人不匹配"
     },
     {
+        "Id": 20219012,
+        "Key": "MainLine2ChapterEggNotFound",
+        "Text": "20219012章节彩蛋数据不存在"
+    },
+    {
+        "Id": 20219013,
+        "Key": "MainLine2MainEggsTreasureRewardConditionReceive",
+        "Text": "20219013章节彩蛋奖励条件不满足"
+    },
+    {
+        "Id": 20219014,
+        "Key": "MainLine2EggsTreasureNotFound",
+        "Text": "20219014彩蛋配置数据不存在"
+    },
+    {
+        "Id": 20219015,
+        "Key": "MainLine2EggsTreasureHaveGotten",
+        "Text": "20219015彩蛋奖励奖励已经领取"
+    },
+    {
         "Id": 20220001,
         "Key": "SucceedBossActivityNotOpen",
         "Text": "20220001活动未开启"
@@ -26606,6 +26796,11 @@
         "Text": "20283020购买经验溢出"
     },
     {
+        "Id": 20284001,
+        "Key": "Theatre5PveStoryLineSelectError",
+        "Text": "20284001选择节点错误"
+    },
+    {
         "Id": 20290001,
         "Key": "BigWorldCourseNotOpen",
         "Text": "20290001活动未开启"
@@ -26949,6 +27144,36 @@
         "Id": 20313003,
         "Key": "StageBookmarkActionIdInvalid",
         "Text": "20313003ActionId非法"
+    },
+    {
+        "Id": 20314001,
+        "Key": "DrawCanLiverNotOpen",
+        "Text": "20314001可肝卡池未开启"
+    },
+    {
+        "Id": 20314002,
+        "Key": "DrawCanLiverScheduleRewardActivityIdNotExist",
+        "Text": "20314002阶段奖励配置的活动不存在"
+    },
+    {
+        "Id": 20314003,
+        "Key": "DrawCanLiverScheduleRewardDrawIdNotExist",
+        "Text": "20314003阶段奖励配置不存在"
+    },
+    {
+        "Id": 20314004,
+        "Key": "DrawCanLiverScheduleRewardNotEnough",
+        "Text": "20314004阶段奖励进度不足"
+    },
+    {
+        "Id": 20314005,
+        "Key": "DrawCanLiverScheduleRewardAlreadyGet",
+        "Text": "20314005阶段奖励已领取"
+    },
+    {
+        "Id": 20314006,
+        "Key": "DrawCanLiverScheduleRewardNotExist",
+        "Text": "20314006领取的阶段奖励不存在"
     },
     {
         "Id": 20320001,
@@ -28832,71 +29057,86 @@
     },
     {
         "Id": 25300055,
+        "Key": "RelinkUpdateRankCharacterDataError",
+        "Text": "25300055更新排行榜角色数据异常"
+    },
+    {
+        "Id": 25300056,
+        "Key": "RelinkUpdateRankTeamKeyDataError",
+        "Text": "25300056更新排行榜小队数据异常"
+    },
+    {
+        "Id": 25300057,
         "Key": "RelinkUpdateRankDataError",
         "Text": "25300055更新排行榜数据异常"
     },
     {
-        "Id": 25300056,
+        "Id": 25300058,
         "Key": "RelinkLevelNotRankError",
         "Text": "25300056关卡未配置排行榜"
     },
     {
-        "Id": 25300057,
+        "Id": 25300059,
+        "Key": "RelinkActivityRankError",
+        "Text": "25300059排行榜活动标识异常"
+    },
+    {
+        "Id": 25300060,
         "Key": "RelinkOccError",
         "Text": "25300057非法职业"
     },
     {
-        "Id": 25300058,
+        "Id": 25300061,
         "Key": "RelinkSameOccError",
         "Text": "25300058当前已是该职业"
     },
     {
-        "Id": 25300059,
+        "Id": 25300062,
         "Key": "RelinkOccNotExistNpcId",
         "Text": "25300059角色职业不存在"
     },
     {
-        "Id": 25300060,
+        "Id": 25300063,
         "Key": "RelinkMainEquipNotAllowAbsort",
         "Text": "25300060主要装备不能被吸收"
     },
     {
-        "Id": 25300061,
+        "Id": 25300064,
         "Key": "RelinkDeputyFactorIsEmpty",
         "Text": "25300061词条删除次数为空"
     },
     {
-        "Id": 25300062,
+        "Id": 25300065,
         "Key": "RelinkFactorSlotIsMax",
         "Text": "25300062词条插槽已满"
     },
     {
-        "Id": 25300063,
+        "Id": 25300066,
         "Key": "RelinkFactorSlotNotFind",
         "Text": "25300063词条插槽不存在"
     },
     {
-        "Id": 25300064,
+        "Id": 25300067,
         "Key": "RelinkChapterNotConfig",
         "Text": "25300064章节未配置"
     },
     {
-        "Id": 25300065,
+        "Id": 25300068,
         "Key": "RelinkPlayerLevelNotFind",
         "Text": "25300065等级配置不存在"
     },
     {
-        "Id": 25300066,
+        "Id": 25300069,
         "Key": "RelinkNamePlateIdNotMatch",
         "Text": "25300066铭牌不匹配"
     },
     {
-        "Id": 25300067,
+        "Id": 25300070,
         "Key": "RelinkReadyStateDonSwitchChar",
         "Text": "25300067准备状态下不可切换"
     },
     {
-        "Id": 25300068,
+        "Id": 25300071,
         "Key": "RelinkMatchParamError",
         "Text": "25300068匹配参数错误"
     },

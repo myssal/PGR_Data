@@ -82,6 +82,14 @@ local UiRegistry = {
     UiFubenCoinSkill = "XUi/XUiFubenCoinSkill/XUiFubenCoinSkill",
     UiExpeditionReset = "XUi/XUiExpedition/MainPage/StageReset/XUiExpeditionStageReset",
     UiAreaWarMain = "XUi/XUiAreaWar/XUiAreaWarMain",
+    UiAreaWarCollection = "XUi/XUiAreaWar/XUiAreaWarCollection",
+    UiAreaWarPopupCollectionTip = "XUi/XUiAreaWar/XUiAreaWarPopupCollectionTip",
+    UiAreaWarPopupSell = "XUi/XUiAreaWar/XUiAreaWarPopupSell",
+    UiAreaWarPopupSellAll = "XUi/XUiAreaWar/XUiAreaWarPopupSellAll",
+    UiAreaWarAuction = "XUi/XUiAreaWar/XUiAreaWarAuction",
+    UiAreaWarPopupRecord = "XUi/XUiAreaWar/XUiAreaWarPopupRecord",
+    UiAreaWarPopupBuy = "XUi/XUiAreaWar/XUiAreaWarPopupBuy",
+    UiAreaWarRare = "XUi/XUiAreaWar/XUiAreaWarRare",
     UiAreaWarLogbuch = "XUi/XUiAreaWar/XUiAreaWarLogbuch",
     UiAreaWarGift = "XUi/XUiAreaWar/XUiAreaWarGift",
     UiAreaWarRepeatChallenge = "XUi/XUiAreaWar/XUiAreaWarRepeatChallenge",
@@ -1649,6 +1657,8 @@ local UiRegistry = {
     UiMainLine2Settlement = "XUi/XUiMainLine2/XUiMainLine2Settlement",
     UiMainLine2DetailAchievement = "XUi/XUiMainLine2/XUiMainLine2DetailAchievement",
     UiMainLine2PopupChooseGender = "XUi/XUiMainLine2/XUiMainLine2PopupChooseGender",
+    UiMainLine2EggsTreasureTips = "XUi/XUiMainLine2/XUiMainLine2EggsTreasureTips",
+    UiMainLine2EggsTreasureMail = "XUi/XUiMainLine2/XUiMainLine2EggsTreasureMail",
     UiMainLineExhibitionPopupChapter = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionPopupChapter",
     UiMainLineExhibitionPopupCG = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionPopupCG",
     UiMainLineExhibitionMission = "XUi/XUiFuben/MainLine/XUiMainLineExhibitionMission",
@@ -2130,6 +2140,8 @@ local UiRegistry = {
     UiTheatre5Story = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5Story",
     UiTheatre5PopupHandBook = "XUi/XUiTheatre5/XUiTheatre5Story/XUiTheatre5PopupHandBook",
     UiTheatre5PopupStrengthen = "XUi/XUiTheatre5/XUiTheatre5PopupStrengthen/XUiTheatre5PopupStrengthen",
+    UiTheatre5PopupBacktrack = "XUi/XUiTheatre5/XUiTheatre5PopupBacktrack/XUiTheatre5PopupBacktrack",
+    UiTheatre5PopupChoose = "XUi/XUiTheatre5/XUiTheatre5PopupChoose/XUiTheatre5PopupChoose",
     UiTheatre5PopupNewSeason = "XUi/XUiTheatre5/XUiTheatre5PopupNewSeason/XUiTheatre5PopupNewSeason",
     --endregion
     
@@ -2152,10 +2164,37 @@ local UiRegistry = {
     UiDlcRelinkPopupPlayerInvite = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupPlayerInvite",
     UiDlcRelinkChooseBoss = "XUi/XUiDlcRelink/Room/Boss/XUiDlcRelinkChooseBoss",
     UiDlcRelinkCharacter = "XUi/XUiDlcRelink/Room/Character/XUiDlcRelinkCharacter",
+    UiDlcRelinkCharacterOther = "XUi/XUiDlcRelink/Room/Character/XUiDlcRelinkCharacterOther",
     UiDlcRelinkEquipBag = "XUi/XUiDlcRelink/Equip/XUiDlcRelinkEquipBag",
     UiDlcRelinkEquipReform = "XUi/XUiDlcRelink/Equip/XUiDlcRelinkEquipReform",
+    UiDlcRelinkEquipDecompose = "XUi/XUiDlcRelink/Equip/XUiDlcRelinkEquipDecompose",
+    UiDlcRelinkPopupEquipDecomposeResult = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipDecomposeResult",
     UiDlcRelinkPopupFilter = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupFilter",
+    UiDlcRelinkPopupEquipCompose = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipCompose",
+    UiDlcRelinkPopupEquipComposeResult = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipComposeResult",
+    UiDlcRelinkPopupEquipAttributeDetail = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipAttributeDetail",
+    UiDlcRelinkPopupEquipReformResult = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipReformResult",
+    UiDlcRelinkPopupEquipPresets = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupEquipPresets",
+    UiDlcRelinkPopupCharacterAttributeDetail = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupCharacterAttributeDetail",
+    UiDlcRelinkPopupRename = "XUi/XUiDlcRelink/Equip/Popup/XUiDlcRelinkPopupRename",
     UiDlcRelinkMatching = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkMatching",
+    UiDlcRelinkBubbleEquipDetail = "XUi/XUiDlcRelink/Equip/Bubble/XUiDlcRelinkBubbleEquipDetail",
+    UiDlcRelinkPopupCommon = "XUi/XUiDlcRelink/Common/XUiDlcRelinkPopupCommon",
+    UiDlcRelinkToastCommon = "XUi/XUiDlcRelink/Common/XUiDlcRelinkToastCommon",
+    UiDlcRelinkToastCommonSmall = "XUi/XUiDlcRelink/Common/XUiDlcRelinkToastCommonSmall",
+    UiDlcRelinkPopupItemDetail = "XUi/XUiDlcRelink/Common/XUiDlcRelinkPopupItemDetail",
+    UiDlcRelinkPopupInvitation = "XUi/XUiDlcRelink/Common/XUiDlcRelinkPopupInvitation",
+    UiDlcRelinkSettlementNew = "XUi/XUiDlcRelink/Settlement/XUiDlcRelinkSettlementNew",
+    UiDlcRelinkLoadingNew = "XUi/XUiDlcRelink/Loading/XUiDlcRelinkLoadingNew",
+    UiDlcRelinkPopupResearch = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupResearch",
+    UiDlcRelinkToastResearchUp = "XUi/XUiDlcRelink/Common/XUiDlcRelinkToastResearchUp",
+    UiDlcRelinkPopupSwitchCareer = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupSwitchCareer",
+    UiDlcRelinkPopupExchangeWheel = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupExchangeWheel",
+    UiDlcRelinkPopupSkillDetail = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupSkillDetail",
+    UiDlcRelinkRank = "XUi/XUiDlcRelink/Rank/XUiDlcRelinkRank",
+    UiDlcRelinkLvReward = "XUi/XUiDlcRelink/Reward/XUiDlcRelinkLvReward",
+    UiDlcRelinkPopupGetReward = "XUi/XUiDlcRelink/Common/XUiDlcRelinkPopupGetReward",
+    UiDlcRelinkShopItem = "XUi/XUiDlcRelink/Common/XUiDlcRelinkShopItem",
     --endregion
 
     --region mini改造
@@ -2223,7 +2262,17 @@ local UiRegistry = {
 
     UiFirstDownloadTips = "XUi/XUiSubPackage/XUiFirstDownloadTips",
 
+    --region 涂装套装
+    UiFashionSuitMain = "XUi/XUiFashionSuit/XUiFashionSuitMain",
+    UiFashionSuitDetail = "XUi/XUiFashionSuit/XUiFashionSuitDetail",
+    UiFashionSuitPopupPic = "XUi/XUiFashionSuit/XUiFashionSuitPopupPic",
+    --endregion
+
     UiPurchaseDialog = "XUi/XUiPurchase/XUiPurchaseDialog",
+
+    --陀螺仪测试
+    UiHyxGyroTest = "XUi/XUiHyxGyroTest/XUiHyxGyroTest",
+    UiAreaWarObtain = "XUi/XUiAreaWar/XUiAreaWarObtain"
 }
 
 return UiRegistry

@@ -157,12 +157,7 @@ function XUiEquipReplaceV2P6:OnBtnTakeOnClick()
         end
 
         local fullName = XMVCA.XCharacter:GetCharacterFullNameStr(characterId)
-        local content = ""
-        if XOverseaManager.IsENRegion() then
-            content = CS.XTextManager.GetText("EquipReplaceTip", fullName)
-        else
-            content = string.gsub(CS.XTextManager.GetText("EquipReplaceTip", fullName), " ", "")
-        end
+        local content = string.gsub(CS.XTextManager.GetText("EquipReplaceTip", fullName), " ", "")
         XUiManager.DialogTip(CS.XTextManager.GetText("TipTitle"), content, XUiManager.DialogType.Normal, function() end, function()
             XMVCA:GetAgency(ModuleId.XEquip):PutOn(self.CharacterId, self.SelectEquipId)
             self.ChangeEquipSuccess = true

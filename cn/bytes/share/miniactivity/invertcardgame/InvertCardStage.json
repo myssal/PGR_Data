@@ -946,5 +946,163 @@
             61994,
             61995
         ]
+    },
+    {
+        "Id": 25,
+        "Name": "迷阵",
+        "RowCount": 2,
+        "ColumnCount": 4,
+        "CostCoinNum": 1,
+        "MaxCostNum": 15,
+        "TargetNum": 2,
+        "MaxOnCardsNum": 2,
+        "FailedPunishNum": 1,
+        "ClearConditionDesc": "同时翻开【相同】\\n的两张卡牌",
+        "ContainCards": [
+            701,
+            703,
+            705,
+            707,
+            702,
+            704,
+            706,
+            708
+        ],
+        "FinishGroups": [
+            "701|702",
+            "703|704",
+            "705|706",
+            "707|708"
+        ],
+        "FinishProgress": [
+            1,
+            2,
+            4
+        ],
+        "Rewards": [
+            61983,
+            61984,
+            61985
+        ]
+    },
+    {
+        "Id": 26,
+        "Name": "残梦",
+        "RowCount": 3,
+        "ColumnCount": 3,
+        "CostCoinNum": 1,
+        "MaxCostNum": 20,
+        "TargetNum": 3,
+        "MaxOnCardsNum": 3,
+        "FailedPunishNum": 1,
+        "ClearConditionDesc": "同时翻开【相同】\\n的三张卡牌",
+        "ContainCards": [
+            709,
+            712,
+            715,
+            710,
+            713,
+            716,
+            711,
+            714,
+            717
+        ],
+        "FinishGroups": [
+            "709|710|711",
+            "712|713|714",
+            "715|716|717"
+        ],
+        "FinishProgress": [
+            1,
+            2,
+            3
+        ],
+        "Rewards": [
+            61986,
+            61987,
+            61988
+        ]
+    },
+    {
+        "Id": 27,
+        "Name": "终响",
+        "RowCount": 3,
+        "ColumnCount": 3,
+        "CostCoinNum": 1,
+        "MaxCostNum": 20,
+        "TargetNum": 3,
+        "MaxOnCardsNum": 3,
+        "FailedPunishNum": 1,
+        "ClearConditionDesc": "同时翻开【相同】\\n的三张卡牌",
+        "ContainCards": [
+            718,
+            724,
+            720,
+            725,
+            719,
+            721,
+            722,
+            726,
+            723
+        ],
+        "FinishGroups": [
+            "718|719|720",
+            "721|722|723",
+            "724|725|726"
+        ],
+        "FinishProgress": [
+            1,
+            2,
+            3
+        ],
+        "Rewards": [
+            61989,
+            61990,
+            61991
+        ]
+    },
+    {
+        "Id": 28,
+        "Name": "铁骑",
+        "RowCount": 3,
+        "ColumnCount": 4,
+        "CostCoinNum": 1,
+        "MaxCostNum": 30,
+        "TargetNum": 3,
+        "MaxOnCardsNum": 3,
+        "FailedPunishNum": 1,
+        "ClearConditionDesc": "同时翻开【相同】\\n的三张卡牌",
+        "ContainCards": [
+            732,
+            727,
+            737,
+            733,
+            728,
+            731,
+            734,
+            730,
+            735,
+            738,
+            729,
+            736
+        ],
+        "FinishGroups": [
+            "727|728|729",
+            "730|731|732",
+            "733|734|735",
+            "736|737|738"
+        ],
+        "FinishProgress": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "Rewards": [
+            61992,
+            61993,
+            61994,
+            61995
+        ]
     }
 ]

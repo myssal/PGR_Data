@@ -23,6 +23,7 @@ end
 function XUiSceneSettingMain:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.Close)
     XUiHelper.RegisterClickEvent(self, self.ToggleRandomScene, self.OnToggleRandomSceneClick)
+    self.ToggleRandomScene.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("SetToggleRandomSceneVisible") == 1)
 
     -- 打开助理面板
     self.BtnAssistant.CallBack = function()

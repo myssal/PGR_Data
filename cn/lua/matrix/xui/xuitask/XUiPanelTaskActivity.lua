@@ -12,22 +12,27 @@ function XUiPanelTaskActivity:Ctor(ui, parent)
     self.Parent = parent
     XTool.InitUiObject(self)
 
+    self.BtnShop.CallBack = function()
+        local skipToShopId = 90055 -- 临时写死
+        XFunctionManager.SkipInterface(skipToShopId) 
+    end
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTaskActivityList)
     self.DynamicTable:SetProxy(XDynamicGridTask)
     self.DynamicTable:SetDelegate(self)
 end
 
 function XUiPanelTaskActivity:ShowPanel()
-    self.GameObject:SetActive(true)
+    self.GameObject:SetActiveEx(true)
+    self.PanelBtnShop.gameObject:SetActiveEx(XTool.IsNumberValid(XDataCenter.DrawManager.GetCanLiverActivityId()))
 
     self.ActivityTasks = self:GetTasks()
-    self.PanelNoneActivityTask.gameObject:SetActive(#self.ActivityTasks <= 0)
+    self.PanelNoneActivityTask.gameObject:SetActiveEx(#self.ActivityTasks <= 0)
     self.DynamicTable:SetDataSource(self.ActivityTasks)
     self.DynamicTable:ReloadDataASync(1)
 end
 
 function XUiPanelTaskActivity:HidePanel()
-    self.GameObject:SetActive(false)
+    self.GameObject:SetActiveEx(false)
 end
 
 function XUiPanelTaskActivity:CheckRefreshLeftNewTask()
@@ -65,7 +70,7 @@ function XUiPanelTaskActivity:Refresh(isMulti)
     end
 
     self.ActivityTasks = self:GetTasks()
-    self.PanelNoneActivityTask.gameObject:SetActive(#self.ActivityTasks <= 0)
+    self.PanelNoneActivityTask.gameObject:SetActiveEx(#self.ActivityTasks <= 0)
     self.DynamicTable:SetDataSource(self.ActivityTasks)
     self.DynamicTable:ReloadDataASync()
 end

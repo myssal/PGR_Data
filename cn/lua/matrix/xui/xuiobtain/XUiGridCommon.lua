@@ -91,6 +91,13 @@ function XUiGridCommon:SetBtnNotClick(statue)
     self.BtnNotClick = statue
 end
 
+function XUiGridCommon:SetBtnActive(statue)
+    if not self.BtnClick then
+        return
+    end
+    self.BtnClick.gameObject:SetActiveEx(statue)
+end
+
 -- auto
 function XUiGridCommon:OnBtnClickClick()
     if self.Disable or self.BtnNotClick then

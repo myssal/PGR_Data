@@ -48,12 +48,29 @@ function XUiPanelShopPeriod:ShowPanel(shopId)
         self.ShopId = shopId
     end
 
+    self:UpdateCanLiverInfo()
     self:UpdateShopBuyInfo()
     self:UpdateManualRefreshInfo()
     self:RemoveTimer()
     self:ShowTimer()
     self:SetPanelActive()
     self.GameObject:SetActive(true)
+end
+
+function XUiPanelShopPeriod:UpdateCanLiverInfo()
+    local showShopId = 1460
+    self.PanelTask.gameObject:SetActiveEx(showShopId == self.ShopId)
+    local canLiverActivityId = XDataCenter.DrawManager.GetCanLiverActivityId()
+    if not XTool.IsNumberValid(canLiverActivityId) then
+        return
+    end
+
+    local activityCfg = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+    self.RImgIcon:SetRawImage(XDataCenter.ItemManager.GetItemIcon(activityCfg.CoinItemId))
+
+    local canLiverGainCoinCount = XDataCenter.DrawManager.GetCanLiverGainCoinCount() or 0
+    local maxCount = activityCfg.CoinMaxCount
+    self.TxtNum.text = canLiverGainCoinCount .. "/" .. maxCount
 end
 
 function XUiPanelShopPeriod:UpdateManualRefreshInfo()

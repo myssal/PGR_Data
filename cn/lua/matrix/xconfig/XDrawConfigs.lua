@@ -85,6 +85,8 @@ local TABLE_DRAW_DRAW_POWER = "Client/Draw/DrawPower.tab"
 local TABLE_DRAW_COMBINATIONS = "Share/Draw/DrawCombinations.tab"
 local TABLE_DRAW_TICKET = "Share/DrawTicket/DrawTicket.tab"
 local TABLE_DEVILMAYCRY_ACTIVITY = "Share/Draw/DevilMayCryActivity.tab"
+local TABLE_DRAW_CAN_LIVER_REWARD  = "Share/Draw/DrawCanLiverReward.tab"
+local TABLE_DRAW_CAN_LIVER_ACTIVITY  = "Share/Draw/DrawCanLiverActivity.tab"
 
 local DrawPreviews = {}
 local DrawCombinations = {}
@@ -125,6 +127,10 @@ local DrawPreviewsCfg = {}
 local DrawPreviewGoodsCfg = {}
 ---@type XTableDevilMayCryActivity[]
 local DevilMayCryActivityCfg = {}
+---@type XTableDrawCanLiverReward[]
+local DrawCanLiverRewardCfg = {} 
+---@type XTableDrawCanLiverActivity[]
+local DrawCanLiverActivityCfg = {} 
 
 function XDrawConfigs.Init()
     DrawCombinations = XTableManager.ReadByIntKey(TABLE_DRAW_COMBINATIONS, XTable.XTableDrawCombinations, "Id")
@@ -153,6 +159,8 @@ function XDrawConfigs.Init()
     DevilMayCryActivityCfg = XTableManager.ReadByIntKey(TABLE_DEVILMAYCRY_ACTIVITY, XTable.XTableDevilMayCryActivity, "DrawId")
     DrawProbs = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "DrawId")
     DrawPower = XTableManager.ReadByIntKey(TABLE_DRAW_DRAW_POWER, XTable.XTableDrawPower, "DrawId")
+    DrawCanLiverRewardCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CAN_LIVER_REWARD, XTable.XTableDrawCanLiverReward, "DrawActivityId")
+    DrawCanLiverActivityCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CAN_LIVER_ACTIVITY, XTable.XTableDrawCanLiverActivity, "Id")
 
     XDrawConfigs.SetDrawSubGroupDic()
     XDrawConfigs.SetGroupRelationDic()
@@ -496,4 +504,21 @@ end
 
 function XDrawConfigs.GetDevilMayCryActivityCfg()
     return DevilMayCryActivityCfg
+end
+
+function XDrawConfigs.GetDrawCanLiverRewardCfg()
+    return DrawCanLiverRewardCfg
+end
+
+function XDrawConfigs.GetDrawCanLiverRewardCfgByDrawIdAndActivityId(drawId, activityId)
+    local pid = drawId * 100 + activityId
+    return DrawCanLiverRewardCfg[pid]
+end
+
+function XDrawConfigs.GetDrawCanLiverActivityCfg()
+    return DrawCanLiverActivityCfg
+end
+
+function XDrawConfigs.GetDrawCanLiverActivityCfgById(id)
+    return DrawCanLiverActivityCfg[id]
 end

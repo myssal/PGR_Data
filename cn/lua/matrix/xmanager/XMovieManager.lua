@@ -292,6 +292,7 @@ XMovieManagerCreator = function()
                     table.remove(PassedActions, i)
                 end
                 CurPlayingActionIndex = GetActionIndexById(CurPlayingMovieId, advanceActionId)
+                XLog.Debug(string.format("剧情提前到ActionIndex = %s开始播放", CurPlayingActionIndex))
             end
         end
         
