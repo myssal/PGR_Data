@@ -181,7 +181,7 @@ function XUiAreaWarCollection:RefreshCollection()
         attrUiObj.gameObject:SetActiveEx(true)
         local isLast = i == #attrNames
         attrUiObj:GetObject("TxtBuffName").text = attrName
-        attrUiObj:GetObject("TxtNumNow").text = isLast and attrValues[i] or "+" .. attrValues[i]
+        attrUiObj:GetObject("TxtNumNow").text = isLast and attrValues[i] or "+" .. attrValues[i] .. "%"
         
         -- 下一等级属性
         local imgArrow = attrUiObj:GetObject("TxtNumNow")
@@ -189,7 +189,7 @@ function XUiAreaWarCollection:RefreshCollection()
         imgArrow.gameObject:SetActiveEx(isNextLvExit)
         txtNumNext.gameObject:SetActiveEx(isNextLvExit)
         if isNextLvExit then
-            txtNumNext.text = isLast and nextValues[i] or "+" .. nextValues[i]
+            txtNumNext.text = isLast and nextValues[i] or "+" .. tostring(nextValues[i]) .. "%"
         end
     end
     
@@ -204,7 +204,6 @@ function XUiAreaWarCollection:RefreshCollection()
         XUiHelper.CreateTemplates(self, self.Items, rewardItems, XUiGridCommon.New, self.GridReward, self.GridReward.transform.parent, function(grid, data)
             grid:Refresh(data, nil, nil, false)
         end)
-        self.PanelReward.transform:SetAsLastSibling()
     end
 end
 

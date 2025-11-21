@@ -16,6 +16,7 @@ function XUiGridAreaWarBuyItem:Init()
     local icon = XItemConfigs.GetItemIconById(XDataCenter.ItemManager.ItemId.AreaWarAuctionCoin)
     self.Normal:GetObject("RImgToken"):SetRawImage(icon)
     self.Press:GetObject("RImgToken"):SetRawImage(icon)
+    self.Disable:GetObject("RImgToken"):SetRawImage(icon)
 end
 
 -- 设置道具Id
@@ -26,17 +27,21 @@ end
 
 -- 刷新道具，基于拥有数量的显示
 function XUiGridAreaWarBuyItem:Refresh()
+    local auction = self._Control:GetAuction()
+    local isUnlock = self._Control:IsItemUnlock(self.ItemId)
+    local isExit = auction:IsExitItem(self.ItemId)
+    local isDisable = not isUnlock or not isExit
+    
     -- 刷新道具
     self.GridAreaWarItem:RefreshItem(self.ItemId)
+    
     -- 刷新价格
-    local auction = self._Control:GetAuction()
-    local price = auction:GetItemMinPrice(self.ItemId)
+    local price = isDisable and self._Control:GetConfig():GetAuctionBasePrice(self.ItemId) or auction:GetItemMinPrice(self.ItemId)
     self.Normal:GetObject("TxtPrice").text = price
     self.Press:GetObject("TxtPrice").text = price
+    self.Disable:GetObject("TxtPrice").text = price
+    
     -- 未解锁/交易行未存在商品
-    local isExit = auction:IsExitItem(self.ItemId)
-    local isUnlock = self._Control:IsItemUnlock(self.ItemId)
-    local isDisable = not isUnlock or not isExit
     self.Button:SetButtonState(isDisable and CSUiButtonState.Disable or CSUiButtonState.Normal)
     if isDisable then
         if not isUnlock then
@@ -48,6 +53,7 @@ function XUiGridAreaWarBuyItem:Refresh()
         elseif not isExit then
             self.Disable:GetObject("TxtTips").gameObject:SetActiveEx(false)
             self.Disable:GetObject("ImgLock").gameObject:SetActiveEx(true)
+            self.Disable:GetObject("TxtLock").text = XAreaWarConfigs.GetAuctionBuyNoEnoughShopTips()
         end
     end
 end

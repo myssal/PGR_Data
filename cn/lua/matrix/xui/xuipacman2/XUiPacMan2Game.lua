@@ -36,6 +36,12 @@ local TipsType = {
     Switch = 9,      -- 切换操作方式
 }
 
+local BackgroundType = {
+    Default = 1,
+    PlayerKillGhost = 2,
+    GhostKillPlayer = 3,
+}
+
 ---@class UiPacMan2Game : XLuaUi
 ---@field _Control XPacMan2Control
 local XUiPacMan2Game = XLuaUiManager.Register(XLuaUi, "UiPacMan2Game")
@@ -135,6 +141,9 @@ function XUiPacMan2Game:OnAwake()
     text1.gameObject:SetActiveEx(false)
     text2.gameObject:SetActiveEx(false)
     self._TxtTipsArray = { text3:GetComponent("Text"), text2:GetComponent("Text"), text1 }
+
+    self._BackgroundType = BackgroundType.Default
+    self._Backgounrd = {}
 end
 
 function XUiPacMan2Game:OnStart(stageId)
@@ -162,6 +171,10 @@ function XUiPacMan2Game:OnDestroy()
     self._MoverPlayer = nil
     self._MoverEnemy:Destroy()
     self._MoverEnemy = nil
+    
+    -- 清理背景相关资源
+    self._Backgounrd = {}
+    self._BackgroundType = nil
 end
 
 function XUiPacMan2Game:OnEnable()
@@ -218,6 +231,7 @@ function XUiPacMan2Game:Update()
     self:UpdateProps()
     self:UpdateKills()
     self:UpdateKeyVisibility()
+    self:UpdatePlayerKillGhostPhase()
     self:ProcessTips()
 end
 
@@ -337,9 +351,13 @@ function XUiPacMan2Game:StartGame()
         else
             XLog.Warning("[XUiPacMan2Game] 错误，应该关闭游戏界面")
             --self:Close()
+            if XMain.IsZLBDebug then
+                self:StartCountDown()
+            end
         end
     end)
 
+    self:InitBackground()
     self:InitStarPosition()
     self:InitPanelExit()
     self:UpdateTips()
@@ -1076,6 +1094,54 @@ function XUiPacMan2Game:AppendText(text)
     if XMain.IsDebug then
         print("Append text:" .. text)
     end
+end
+
+function XUiPacMan2Game:UpdatePlayerKillGhostPhase()
+    if not self._GameManager then
+        return
+    end
+    
+    local isPlayerKillGhostPhase = self._GameManager.IsPlayerKillGhostPhase
+    local ghostState = self._GameManager:GetGhostState()
+    local backgroundType = BackgroundType.Default
+    if isPlayerKillGhostPhase then
+        backgroundType = BackgroundType.PlayerKillGhost
+    elseif ghostState == CS.XPacMan2.XPacMan2GhostState.Attack then
+        backgroundType = BackgroundType.GhostKillPlayer
+    end
+    if self._BackgroundType ~= backgroundType then
+        self._BackgroundType = backgroundType
+        self:UpdateBackground()
+    end
+end
+
+function XUiPacMan2Game:UpdateBackground()
+    local backgroundType = self._BackgroundType
+    
+    -- 遍历所有背景类型，显示当前类型，隐藏其他类型
+    for bgType, bgGameObject in pairs(self._Backgounrd) do
+        if bgGameObject then
+            bgGameObject.gameObject:SetActiveEx(bgType == backgroundType)
+        end
+    end
+end
+
+function XUiPacMan2Game:InitBackground()
+    local bgTileTextureSlow = self._StagePrefab.transform:Find("CameraLayer/TileMapCamera/UiPacMan2Background/GameObject/BgTileTextureSlow")
+    local bgTileTextureQuick = self._StagePrefab.transform:Find("CameraLayer/TileMapCamera/UiPacMan2Background/GameObject/BgTileTextureQuick")
+    local bgTileTextureReverse = self._StagePrefab.transform:Find("CameraLayer/TileMapCamera/UiPacMan2Background/GameObject/BgTileTextureReverse")
+    
+    if bgTileTextureSlow then
+        self._Backgounrd[BackgroundType.Default] = bgTileTextureSlow
+    end
+    if bgTileTextureQuick then
+        self._Backgounrd[BackgroundType.PlayerKillGhost] = bgTileTextureQuick
+    end
+    if bgTileTextureReverse then
+        self._Backgounrd[BackgroundType.GhostKillPlayer] = bgTileTextureReverse
+    end
+    
+    self:UpdateBackground()
 end
 
 return XUiPacMan2Game

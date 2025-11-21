@@ -82,8 +82,8 @@
         "Key": "RaceRateAddByPhysicalCost",
         "Desc": "每消耗{参数1}体力提升对应{参数3}品质标记掉落组{参数2}概率(万分比)",
         "Values": [
-            10,
-            500,
+            30,
+            200,
             5
         ]
     },
@@ -96,7 +96,10 @@
     },
     {
         "Key": "ItemRoomLimit",
-        "Desc": "藏品室限制"
+        "Desc": "藏品室限制",
+        "Values": [
+            100000
+        ]
     },
     {
         "Key": "AuctionRefreshFactor",

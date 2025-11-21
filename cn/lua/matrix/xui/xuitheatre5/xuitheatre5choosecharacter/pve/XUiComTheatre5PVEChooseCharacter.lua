@@ -124,6 +124,13 @@ function XUiComTheatre5PVEChooseCharacter:OnBtnStartClickEvent()
     if not isUnlock then
         return
     end
+    
+    -- 判断是否是当前节点禁用的角色
+    local isCanSelect, tips = self._Control:IsCharacterCanSelect(self._CharacterId)
+    if not isCanSelect then
+        XUiManager.TipMsg(tips)
+        return
+    end
    
     local storyEntranceCfg = self._Control.PVEControl:GetPveStoryEntranceCfg(self._EntranceName)
     local curStoryLineType = self._Control.PVEControl:GetStoryLineCurNodeType(storyEntranceCfg.StoryLine, self._EntranceName)

@@ -38,6 +38,7 @@ local XMovieEnumConst = {
         SPINE_CHANGE_ANIM = 214,        -- Spine切换动画
         SPINE_ANIMATION_PLAY = 215,     -- Spine动画播放
         
+        DIALOG = 301,                   -- 对话
         SELECTION = 302,                -- 选择分支对话
         SELECTION_DELAY_SKIP = 303,     -- 选择分支延迟跳转
         AUTO_SKIP = 308,                -- 自动跳转节点

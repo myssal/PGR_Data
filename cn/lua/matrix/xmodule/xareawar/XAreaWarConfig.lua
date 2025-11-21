@@ -3,6 +3,7 @@ local TableKey =
 {
     AreaWarItem = { CacheType = XConfigUtil.CacheType.Normal, Identifier = "ItemId" },
     AreaWarItemRoomLevel = { CacheType = XConfigUtil.CacheType.Normal, Identifier = "Lv" },
+    AreaWarAuction = { Identifier = "ItemId" },
     AreaWarAuctionSell = { Identifier = "ItemId" },
     AreaWarItemQuality = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Quality" },
     AreaWarModel = { DirPath = XConfigUtil.DirectoryType.Client },
@@ -132,6 +133,22 @@ function XAreaWarConfig:GetItemRoomLevelLvUpItemCounts(id)
     local config = self:GetConfigItemRoomLevel(id)
     return config.LvUpItemCounts
 end
+--endregion
+
+--region AreaWarAuction
+function XAreaWarConfig:GetConfigAuction(id)
+    if id then
+        return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.AreaWarAuction, id)
+    else
+        return self._ConfigUtil:GetByTableKey(TableKey.AreaWarAuction)
+    end
+end
+
+function XAreaWarConfig:GetAuctionBasePrice(id)
+    local config = self:GetConfigAuction(id)
+    return config.BasePrice
+end
+
 --endregion
 
 --region AreaWarAuctionSell

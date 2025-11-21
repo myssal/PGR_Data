@@ -1537,6 +1537,11 @@ function XAreaWarConfigs.GetBtnCollectionUnlockConditionId()
     return template.Values[1] and tonumber(template.Values[1]) or 0
 end
 
+function XAreaWarConfigs.GetRareModelUnlockEffect()
+    local template = GetClientConfig("RareModelUnlockEffect")
+    return template.Values[1]
+end
+
 function XAreaWarConfigs.GetSkipItemId()
     if SkilItemId then
         return SkilItemId

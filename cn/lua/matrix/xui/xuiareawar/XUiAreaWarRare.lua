@@ -18,11 +18,10 @@ end
 function XUiAreaWarRare:OnStart()
     self.DataList = self._Control:GetConfig():GetRareItems()
     self.SelectedIndex = 1
-    self:RefreshSelectRare()
 end
 
 function XUiAreaWarRare:OnEnable()
-    
+    self:RefreshSelectRare()
 end
 
 function XUiAreaWarRare:OnDisable()
@@ -177,15 +176,13 @@ end
 function XUiAreaWarRare:RefreshPanelReward()
     local itemId = self:GetSelectItemId()
     local isSubmit = self._Control:GetItemRoom():IsRaceItemSubmit(itemId)
-    self.PanelReward.gameObject:SetActiveEx(not isSubmit)
-    if isSubmit then return end
-
     local rewardId = self._Control:GetConfig():GetRareRewardId(itemId)
     local rewardItems = XRewardManager.GetRewardList(rewardId)
     self.Items = self.Items or {}
     local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
     XUiHelper.CreateTemplates(self, self.Items, rewardItems, XUiGridCommon.New, self.Grid256New, self.Grid256New.transform.parent, function(grid, data)
         grid:Refresh(data, nil, nil, false)
+        grid.ImgObtain.gameObject:SetActiveEx(isSubmit)
     end)
 end
 
@@ -194,6 +191,7 @@ function XUiAreaWarRare:RefreshModel()
     local modelId = self._Control:GetConfig():GetItemModelId(itemId)
     local modelConfig = self._Control:GetConfig():GetConfigModel(modelId)
     local model = self.PanelWeapon:LoadPrefab(modelConfig.ModelUrl, false)
+    self.Model = model
 
     -- 模型位置
     model.transform.localPosition = XLuaVector3.New(modelConfig.PositionX, modelConfig.PositionY, modelConfig.PositionZ)
@@ -208,6 +206,31 @@ function XUiAreaWarRare:RefreshModel()
 
     -- 设置旋转
     XModelManager.DragRotateWeapon(self.PanelDrag, model, nil, self.GameObject, true, nil, true)
+    
+    -- 未提交时添加模型特效
+    local isSubmit = self._Control:GetItemRoom():IsRaceItemSubmit(itemId)
+    if not isSubmit then
+        self:AddModelEffect()
+    else
+        self:RemoveModelEffect()
+    end
+end
+
+-- 添加模型特效
+function XUiAreaWarRare:AddModelEffect()
+    local effectPath = XAreaWarConfigs.GetRareModelUnlockEffect()
+    self.ModelEffect = self.Model:LoadPrefab(effectPath)
+    local renderingProxy = CS.XNPCRendingUIProxy.GetNPCRendingUIProxy(self.Model)
+    renderingProxy:BindEffect(self.ModelEffect)
+    self.ModelEffect.gameObject:SetActiveEx(false)
+    self.ModelEffect.gameObject:SetActiveEx(true)
+end
+
+-- 移除模型特效
+function XUiAreaWarRare:RemoveModelEffect()
+    if self.ModelEffect then
+        self.ModelEffect.gameObject:SetActiveEx(false)
+    end
 end
 
 return XUiAreaWarRare

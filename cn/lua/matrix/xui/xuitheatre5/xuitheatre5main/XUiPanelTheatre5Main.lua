@@ -9,13 +9,13 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 function XUiPanelTheatre5Main:OnStart()
     self:Init()
     
-    self:RefreshResourceBar()
-
     -- 注册蓝点
     self:InitReddots()
 end
 
 function XUiPanelTheatre5Main:OnEnable()
+    self:RefreshResourceBar()
+
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre5)
     self._IsPlayingEnableAnim = true
     self:TryPlayAnimationWithMask('AnimEnable', function()
@@ -29,7 +29,6 @@ function XUiPanelTheatre5Main:OnEnable()
     self:Refresh()
     self:StartPVPTimer()
     self:UpdateShopShowReward()
-    self:UpdateAssetPanel()
     self:RefreshReddots()
     self:RemindNewStoryLine()
 
@@ -101,14 +100,34 @@ function XUiPanelTheatre5Main:Refresh()
 end
 
 function XUiPanelTheatre5Main:RefreshResourceBar()
-    self._ResourceBarCoins = self._Control:GetTheatre5CoinIds()
-    self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelSpecialTool, self)
-    XDataCenter.ItemManager.AddCountUpdateListener(self._ResourceBarCoins, handler(self, self.UpdateAssetPanel), self.AssetActivityPanel)
-    for i = 1, #self._ResourceBarCoins do
-        self.AssetActivityPanel:SetButtonCb(i, function()
-            self:CustomCurrencyClick(i)
-        end)
+    local latestCoinIds = self._Control:GetTheatre5CoinIds()
+
+    if not self.AssetActivityPanel then
+        self._ResourceBarCoins = latestCoinIds
+        
+        ---@type XUiPanelActivityAsset
+        self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelSpecialTool, self)
+        for i = 1, #self._ResourceBarCoins do
+            self.AssetActivityPanel:SetButtonCb(i, function()
+                self:CustomCurrencyClick(i)
+            end)
+        end
+    else
+        -- 如果货币数量发生了变化，需要重新设置点击回调
+        if #self._ResourceBarCoins ~= #latestCoinIds then
+            for i = 1, #latestCoinIds do
+                self.AssetActivityPanel:SetButtonCb(i, function()
+                    self:CustomCurrencyClick(i)
+                end)
+            end
+        end
+
+        self._ResourceBarCoins = latestCoinIds
     end
+
+    XDataCenter.ItemManager.RemoveCountUpdateListener(self.AssetActivityPanel)
+    self.AssetActivityPanel:Refresh(self._ResourceBarCoins)
+    XDataCenter.ItemManager.AddCountUpdateListener(self._ResourceBarCoins, handler(self, self.UpdateAssetPanel), self.AssetActivityPanel)
 end
 
 function XUiPanelTheatre5Main:CustomCurrencyClick(index)

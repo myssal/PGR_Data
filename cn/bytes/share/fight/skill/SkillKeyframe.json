@@ -113147,9 +113147,11 @@
         "Key": [
             "0|Cast|11410501",
             "0|AddSkillExtendBuff|114131|114131|0",
-            "0|AddSkillExtendBuff|114138|114138|0"
+            "0|AddSkillExtendBuff|114138|114138|0",
+            "0|Effect|FxR3BuouxiongAtk68Dimian;0.401;0;1.998;0;17.3;0||1;0|||||||||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -113216,7 +113218,7 @@
     {
         "Id": 114115,
         "Key": [
-            "-1|Effect|FxR3BuouxiongAtk68Dimian;0;0;3;0;0;0||1;0|||||||||",
+            "-1|Effect|FxR3BuouxiongAtk68Dimian;0;0;1.5;0;0;0||1;0|||||||||",
             "0|Cast|11411502",
             "-1|AddSkillExtendBuff|11412912|114130|0"
         ],
@@ -113247,6 +113249,7 @@
         "Id": 114107,
         "Key": [
             "12|Magic|114115|3|",
+            "0|SwitchAir|0",
             "3|Shake|1|0.12|-0.75|15|0.15|0",
             "0|AddSkillBuff|114231|114231|0",
             "0|AddSkillBuff|114151|114151|0",
@@ -113262,10 +113265,11 @@
             "3|Cast|11410715",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "25|RemoveSkillBuff|106435"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113305,8 +113309,9 @@
             "3|Effect|FxR3BuouxiongAtk06Shifa||2;0|||||||||",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435"
+            "20|RemoveSkillBuff|114198",
+            "20|RemoveSkillBuff|106435",
+            "0|SwitchAir|0"
         ],
         "Condition": [
             "nil",
@@ -113320,6 +113325,7 @@
             "$11414801=0",
             "$11414801=1",
             "$11414801=1",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113465,8 +113471,8 @@
             "18|SetSkillGAL|11411933|0|3|0|0.3",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "18|RemoveSkillBuff|114197",
-            "18|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "25|RemoveSkillBuff|106435"
         ],
         "Condition": [
             "nil",
@@ -113509,14 +113515,16 @@
     {
         "Id": 114150,
         "Key": [
+            "0|SwitchAir|1",
             "1|Effect|FxR3BuouxiongAtk11Bip001|Bip001||||||||||",
             "2|Magic|114115|2|",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "6|RemoveSkillBuff|114197",
-            "6|RemoveSkillBuff|106435"
+            "20|RemoveSkillBuff|114197",
+            "16|RemoveSkillBuff|106435"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113548,10 +113556,12 @@
             "0|Cast|11412020|11412021",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435"
+            "26|RemoveSkillBuff|114198",
+            "30|RemoveSkillBuff|106435",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113584,6 +113594,7 @@
             "-1|AddSkillBuff|114193|114193|0",
             "15|RemoveSkillBuff|114193",
             "0|Effect|FxR3BuouxiongAtk41WeaponCase2|WeaponCase2|1|||||||||",
+            "0|SwitchAir|1",
             "15|RemoveSkillBuff|114216",
             "15|RemoveSkillBuff|114217",
             "15|Magic|114219|0|",
@@ -113632,6 +113643,7 @@
             "nil",
             "nil",
             "nil",
+            "nil",
             "nil"
         ]
     },
@@ -113649,9 +113661,11 @@
             "5|Magic|176448|0|",
             "0|AddSkillBuff|114259|114259|0",
             "0|Effect|FxR3BuouxiongAtk42Xuli|BearBoneR04||||||||||",
-            "5|Turn|9999|0.05|1"
+            "5|Turn|9999|0.05|1",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113676,9 +113690,11 @@
             "6|RunBehavior|11410805|0",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "0|AddSkillBuff|114259|114259|0"
+            "0|AddSkillBuff|114259|114259|0",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113692,7 +113708,7 @@
     {
         "Id": 114109,
         "Key": [
-            "6|Magic|114115|4|",
+            "10|Magic|114115|4|",
             "2|Cast|11410902",
             "3|Cast|11410903",
             "5|Cast|11410904",
@@ -113706,8 +113722,8 @@
             "20|Effect|FxR3BuouxiongAtk84||1;0|||||||||",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435",
+            "25|RemoveSkillBuff|114197",
+            "25|RemoveSkillBuff|106435",
             "3|RunBehavior|11410917|0",
             "0|AddSkillBuff|114259|114259|0",
             "3|AddSkillBuff|104223|104223|0",
@@ -113717,7 +113733,8 @@
             "5|SetSkillGAL|11410923|0|3|0|0.1",
             "999|Cast|11410924",
             "2|Cast|11410925",
-            "0|Turn|9999|0.05|1"
+            "0|Turn|9999|0.05|1",
+            "0|SwitchAir|1"
         ],
         "Condition": [
             "nil",
@@ -113741,6 +113758,7 @@
             1842270,
             1842270,
             1842270,
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113751,25 +113769,31 @@
     {
         "Id": 114135,
         "Key": [
-            "6|Cast|11413501|11413502",
-            "6|AddSkillBuff|114235|114235|0",
-            "6|AddSkillBuff|114236|114236|0",
-            "6|AddSkillBuff|114237|114237|0",
+            "3|Cast|11413501|11413502|11413503|11413504",
+            "-1|AddSkillExtendBuff|114216|114216|0",
+            "15|RemoveSkillExtendBuff|114216",
+            "-1|SwitchAir|1",
             "2|Effect|FxR3BuouxiongAtk72Move|||||0.1|0.1|||||",
-            "0|Effect|FxR3BuouxiongShifa||||||||0.5|||",
-            "6|Magic|114159|0|",
-            "6|Cast|11413509",
+            "-1|Effect|FxR3BuouxiongShifa||||||||0.5|||",
+            "18|Magic|114159|0|",
             "6|Effect|FxR3BuouxiongAtk43MA|Bip001||||||||||",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435",
-            "5|RunBehavior|11413515|0",
-            "0|AddSkillBuff|114259|114259|0",
-            "0|AddSkillExtendBuff|114216|114216|0",
-            "15|RemoveSkillExtendBuff|114216"
+            "26|RemoveSkillBuff|114198",
+            "36|RemoveSkillBuff|106435",
+            "6|RunBehavior|11413515|0",
+            "-1|AddSkillBuff|114259|114259|0",
+            "6|AddSkillBuff|114235|114235|0",
+            "6|AddSkillBuff|114236|114236|0",
+            "6|AddSkillBuff|114237|114237|0",
+            "28|RemoveSkillBuff|114235",
+            "28|RemoveSkillBuff|114236",
+            "28|RemoveSkillBuff|114237"
         ],
         "Condition": [
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113800,10 +113824,12 @@
             "1|SetSkillGAL|11412406|0|3|0|0.05",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "16|RemoveSkillBuff|106435",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113829,10 +113855,12 @@
             "0|Effect|FxR3BuouxiongAtk64|Root|2;0|||1|1|||||",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "18|RemoveSkillBuff|106435",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113872,13 +113900,15 @@
             "13|Cast|11412620",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435",
+            "25|RemoveSkillBuff|114197",
+            "30|RemoveSkillBuff|106435",
             "0|AddSkillBuff|114259|114259|0",
             "12|AddSkillExtendBuff|114268|114268|0",
-            "20|RemoveSkillExtendBuff|114268"
+            "20|RemoveSkillExtendBuff|114268",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113914,7 +113944,7 @@
             "4|Cast|11412701",
             "6|Cast|11412702",
             "8|Cast|11412703",
-            "999|Magic|114200|0|",
+            "0|SwitchAir|1",
             "6|Magic|105221|0|",
             "7|Magic|105223|0|",
             "999|Shake|1|0.35|-1|20|0.3|0",
@@ -113930,8 +113960,8 @@
             "4|RunBehavior|11412715|0",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435",
+            "26|RemoveSkillBuff|114198",
+            "36|RemoveSkillBuff|106435",
             "0|AddSkillBuff|114259|114259|0",
             "0|AddSkillExtendBuff|114268|114268|0",
             "8|RemoveSkillExtendBuff|114268",
@@ -113980,7 +114010,7 @@
         "Key": [
             "1|Cast|11413001",
             "6|Cast|11413002",
-            "999|RunBehavior|10412312|0",
+            "0|SwitchAir|1",
             "999|RunBehavior|10412313|0",
             "1|Cast|11413005",
             "6|Cast|11413006",
@@ -113991,8 +114021,8 @@
             "0|AddSkillExtendBuff|114139|114139|0",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "20|RemoveSkillBuff|106435"
         ],
         "Condition": [
             "nil",
@@ -114019,16 +114049,18 @@
             "8|Cast|11413102|11413103",
             "1|Cast|11413104",
             "4|Effect|FxR3BuouxiongAtk01;0.212;1.839;0.3;-43.788;79.783;50.093|||||||||||",
-            "8|Effect|FxR3BuouxiongAtk03;-0.08;1.253;0.3;66.929;-70.928;-91.715|||||||||||",
+            "6|Effect|FxR3BuouxiongAtk03;-0.08;1.253;0.3;66.929;-70.928;-91.715|||||||||||",
             "4|SetSkillSpeedY|10620701|0|3|5|0.2",
             "4|SetSkillGAL|10620702|0|3|-10|0.2",
             "0|AddSkillExtendBuff|114139|114139|0",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|114197",
+            "24|RemoveSkillBuff|106435",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114051,13 +114083,15 @@
             "18|Magic|114115|6|",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435",
+            "25|RemoveSkillBuff|114197",
+            "26|RemoveSkillBuff|106435",
             "0|AddSkillExtendBuff|114139|114139|0",
             "0|AddSkillBuff|114259|114259|0",
-            "2|Cast|11413213"
+            "2|Cast|11413213",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114078,17 +114112,15 @@
             "0|Magic|114158|0|",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435",
+            "26|RemoveSkillBuff|114198",
+            "30|RemoveSkillBuff|106435",
             "0|AddSkillExtendBuff|114139|114139|0",
             "0|AddSkillBuff|114259|114259|0",
-            "0|Cast|11412812",
-            "0|RunBehavior|11412114|0",
-            "0|Cast|11412814",
-            "0|AddSkillBuff|114271|114271|0"
+            "0|Cast|11412812|11412814",
+            "0|AddSkillBuff|114271|114271|0",
+            "0|SwitchAir|1"
         ],
         "Condition": [
-            "nil",
             "nil",
             "nil",
             "nil",
@@ -114109,6 +114141,7 @@
     {
         "Id": 114134,
         "Key": [
+            "0|SwitchAir|1",
             "14|Effect|FxR3BuouxiongAtk01;0;1.264;0.3;-50.706;90.845;75.782|||||||||||",
             "12|Effect|FxR3BuouxiongAtk42||2;0|||0.15|0.15|||||",
             "20|Magic|114115|7|",
@@ -114125,14 +114158,15 @@
             "9|Effect|FxR3BuouxiongAtk42MA|||||||||||",
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114197",
-            "15|RemoveSkillBuff|106435",
+            "25|RemoveSkillBuff|114197",
+            "25|RemoveSkillBuff|106435",
             "15|StableNoise|T0SmallSlashVeDownToTop|0.3|2|1",
             "0|AddSkillBuff|114259|114259|0",
             "0|AddSkillExtendBuff|114268|114268|0",
             "14|RemoveSkillExtendBuff|114268"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114202,10 +114236,14 @@
     {
         "Id": 114137,
         "Key": [
-            "0|Cast|11413701",
             "0|Cast|11413702",
-            "0|Cast|11413703",
-            "0|Cast|11413704",
+            "0|Cast|11413703|11413704",
+            "0|Cast|11413705|11413706",
+            "20|Cast|11413710",
+            "20|Cast|11413711",
+            "20|Cast|11413712",
+            "0|Cast|11413714",
+            "20|Cast|11413715",
             "-1|AddSkillBuff|114238|114238|0",
             "-1|AddSkillBuff|114239|114239|0",
             "-1|AddSkillBuff|114154|114154|0"
@@ -114214,6 +114252,10 @@
             "nil",
             "$11414801=0",
             "$11414801=1",
+            "nil",
+            "$11414801=0",
+            "$11414801=1",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114225,9 +114267,11 @@
         "Key": [
             "0|Effect|FxR3BuouxiongMove1||2;0|||0.05|0.05|||||",
             "0|AddSkillBuff|100090|100090|0",
-            "8|RemoveSkillBuff|100090"
+            "8|RemoveSkillBuff|100090",
+            "0|SwitchAir|0"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -114238,9 +114282,11 @@
         "Key": [
             "0|Effect|FxR3BuouxiongMove2||2;0|||0.05|0.05|||||",
             "0|AddSkillBuff|100090|100090|0",
-            "8|RemoveSkillBuff|100090"
+            "8|RemoveSkillBuff|100090",
+            "0|SwitchAir|0"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -114251,9 +114297,11 @@
         "Key": [
             "3|Effect|FxR3BuouxiongMove3||2;0|||0.05|0.05|||||",
             "0|AddSkillBuff|100090|100090|0",
-            "8|RemoveSkillBuff|100090"
+            "8|RemoveSkillBuff|100090",
+            "0|SwitchAir|1"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -114280,11 +114328,12 @@
             "71|Cast|11414116",
             "-1|Cast|11414117",
             "70|RunBehavior|11414118|0",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|WeaponCase1|1|||||||||",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|WeaponCase2|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|Bip001RCalf|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|Bip001LCalf|1|||||||||",
             "4|AddSkillExtendBuff|184205|184205|0",
             "-1|AddSkillExtendBuff|114112|114112|0",
             "-1|Magic|937291|0|",
+            "0|SwitchAir|1",
             "-1|AddSkillExtendBuff|166413|166413|0"
         ],
         "Condition": [
@@ -114304,6 +114353,7 @@
             "$2221761>0",
             "$2221762>0",
             "$2221763>0",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114335,11 +114385,12 @@
             "71|Cast|11414216",
             "-1|Cast|11414217",
             "70|RunBehavior|11414118|0",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|WeaponCase1|1|||||||||",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|WeaponCase2|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|Bip001RCalf|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|Bip001LCalf|1|||||||||",
             "4|AddSkillExtendBuff|184205|184205|0",
             "-1|AddSkillExtendBuff|114112|114112|0",
             "-1|Magic|937291|0|",
+            "0|SwitchAir|1",
             "-1|AddSkillExtendBuff|166413|166413|0"
         ],
         "Condition": [
@@ -114366,6 +114417,7 @@
             "nil",
             "nil",
             "nil",
+            "nil",
             "nil"
         ]
     },
@@ -114375,6 +114427,7 @@
             "12|Cast|11414701",
             "-1|AddSkillBuff|114141|114141|0",
             "12|RemoveSkillBuff|114141",
+            "14|SwitchAir|0",
             "-1|AddSkillExtendBuff|166413|166413|0",
             "14|RemoveSkillExtendBuff|166413",
             "-1|Cast|11414707",
@@ -114399,6 +114452,7 @@
             "nil",
             "nil",
             "nil",
+            "nil",
             "nil"
         ]
     },
@@ -114408,6 +114462,7 @@
             "12|Cast|11414801",
             "-1|AddSkillBuff|114141|114141|0",
             "12|RemoveSkillBuff|114141",
+            "14|SwitchAir|0",
             "-1|AddSkillExtendBuff|166413|166413|0",
             "14|RemoveSkillExtendBuff|166413",
             "-1|Cast|11414807",
@@ -114432,6 +114487,7 @@
             "nil",
             "nil",
             "nil",
+            "nil",
             "nil"
         ]
     },
@@ -114443,11 +114499,13 @@
         "Key": [
             "0|Effect|FxR3BuouxiongWin|||||0|0|||||",
             "0|AddSkillBuff|114252|114252|0",
-            "-1|AddSkillBuff|114255|114255|0",
+            "-1|Magic|114255|0|",
             "92|AddSkillExtendBuff|184205|184205|0",
-            "91|Effect|FxR3BuouxiongAtk50Bip001Head|Bip001Head||||||||||"
+            "91|Effect|FxR3BuouxiongAtk50Bip001Head|Bip001Head||||||||||",
+            "104|Effect|FxR3BuouxiongWinMA||1|||||||||"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114466,7 +114524,7 @@
         "Key": [
             "0|Effect|FxR3BuouxiongBorn|||||0|0|||||",
             "0|AddSkillBuff|114253|114253|0",
-            "0|Effect|FxR3BuouxiongBornWeaponCase2|WeaponCase2||||||||||",
+            "0|Effect|FxR3BuouxiongBornWeaponCase2|Bip001LCalf||||||||||",
             "0|Effect|FxR3BuouxiongBornLight|Bip001LHand||||||||||",
             "0|Effect|FxR3BuouxiongBornMA|||||0|0|||||",
             "-1|AddSkillBuff|114254|114254|0"
@@ -114500,11 +114558,11 @@
             "23|Magic|202225|0|",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
-            "15|RemoveSkillBuff|114198",
-            "15|RemoveSkillBuff|106435",
+            "35|RemoveSkillBuff|114198",
+            "36|RemoveSkillBuff|106435",
             "0|Magic|937290|0|",
             "-1|Magic|937291|0|",
-            "999|Cast|11415122",
+            "0|SwitchAir|1",
             "1|AddSkillBuff|114279|114279|0",
             "1|AddSkillBuff|114276|114276|0",
             "30|RemoveSkillBuff|114279",

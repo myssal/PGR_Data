@@ -102,7 +102,7 @@ function XMovieActionDialog:OnEnter()
     end
     self:PlaySpeakerAnim()
     if self.IsInReview then
-        XDataCenter.MovieManager.PushInReviewDialogList(roleName, dialogContent, self.CvId)
+        XDataCenter.MovieManager.PushInReviewDialogList(roleName, dialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
     end
 end
 
@@ -127,7 +127,7 @@ function XMovieActionDialog:OnClickBtnSkipDialog()
         
         -- 打字中，直接显示完所有字体
         self.IsTyping = false
-        self.UiRoot.DialogTypeWriter:Stop()
+        self.UiRoot.DialogTypeWriter:ShowAllText()
     else
         -- 字体完全显示，点击屏幕播放下一个MovieAction
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK, false)
@@ -244,12 +244,11 @@ function XMovieActionDialog:StopSpineActorTalk()
     end
 end
 
--- 生成要显示的DialogContent，涉及到PopReviewDialogContent，需要确保只执行一次
+-- 生成要显示的DialogContent
 function XMovieActionDialog:GenDialogContent()
-    if not string.IsNilOrEmpty(self.DialogContent) then return end
-
     if self.IsAppendContent then
-        local lastContent = self.UiRoot.TxtWords.text
+        local dialogData = XDataCenter.MovieManager.PopLastReviewDialog(XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
+        local lastContent = dialogData and dialogData.Content or ""
         self.DialogContent = lastContent .. XMVCA.XMovie:FormatContent(self.Content)
     else
         self.DialogContent = XMVCA.XMovie:FormatContent(self.Content)
@@ -277,14 +276,14 @@ function XMovieActionDialog:OnPassedActionRun()
     self.UiRoot.TxtName.gameObject:SetActiveEx(self.RoleName ~= "")
     self:PlaySpeakerAnim()
     if self.IsInReview then
-        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
+        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
     end
 end
 
 function XMovieActionDialog:OnPassedActionSkip()
     self:GenDialogContent()
     if self.IsInReview then
-        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId)
+        XDataCenter.MovieManager.PushInReviewDialogList(self.RoleName, self.DialogContent, self.CvId, XMVCA.XMovie.EnumConst.ACTION_TYPE.DIALOG)
     end
 end
 

@@ -13,7 +13,10 @@ function XUiAreaWarBattleRoomRoleDetail:Ctor(blockId)
 end
 
 function XUiAreaWarBattleRoomRoleDetail:AOPOnStartBefore(rootUi)
-    rootUi.PanelAsset.gameObject:SetActiveEx(false)
+    local childCount = rootUi.PanelAsset.childCount
+    for i = 1, childCount do
+        rootUi.PanelAsset:GetChild(i-1).gameObject:SetActiveEx(false)
+    end
     rootUi.BtnFilter.gameObject:SetActiveEx(false)
 end
 
