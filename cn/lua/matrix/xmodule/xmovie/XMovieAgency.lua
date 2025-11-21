@@ -84,7 +84,8 @@ function XMovieAgency:RequestAddStageBookmark(cb)
 
     local isCover = bookmarkData ~= nil
     local optionDic = XDataCenter.MovieManager.GetSelectionDataDic()
-    local req = { StageId = stageId, MovieId = movieId, ActionId = actionId, OptionDic = optionDic }
+    XMessagePack.MarkAsTable(optionDic)
+    local req = { StageId = stageId, MovieId = movieId, ActionId = actionId, OptionInfos = optionDic }
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AddStageBookmarkRequest, req, function(res)
         self._Model:SetBookmarkData(req)
         if cb then cb() end
@@ -344,7 +345,7 @@ function XMovieAgency:PlayBookmarkMovie()
     
     XDataCenter.MovieManager.PlayMovie(bookmarkData.MovieId, function()
         self:OnBookmarkMovieEnd(bookmarkData)
-    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionDic, stageId)
+    end, nil, nil, nil, bookmarkData.ActionId, bookmarkData.OptionInfos, stageId)
 end
 
 -- 书签剧情播放结束回调

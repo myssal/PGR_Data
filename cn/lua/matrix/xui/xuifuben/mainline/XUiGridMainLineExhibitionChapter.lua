@@ -278,6 +278,7 @@ end
 -- 刷新成就
 function XUiGridMainLineExhibitionChapter:RefreshPanelAchievement(viewModel)
     local achievementIcon = viewModel:GetAchievementIcon()
+    local achievementIconLock = viewModel:GetAchievementIconLock()
     local isShowAchieve = achievementIcon ~= nil
     self.UiDetail:GetObject("PanelAchievement").gameObject:SetActiveEx(isShowAchieve)
     if isShowAchieve then
@@ -289,7 +290,7 @@ function XUiGridMainLineExhibitionChapter:RefreshPanelAchievement(viewModel)
         if isUnlock then
             rImgAchievementColor:SetRawImage(achievementIcon)
         else
-            rImgAchievementGrey:SetRawImage(achievementIcon)
+            rImgAchievementGrey:SetRawImage(achievementIconLock)
         end
     end
 end

@@ -1023,18 +1023,4 @@ function XTheatre5Model:GetRelicEffectConfigs(relicId)
     end
 end
 
-function XTheatre5Model:IsNewSeason()
-    local oldActivityId = self._SaveUtil:GetData("ActivityId")
-    local newActivityId = self:GetActivityId()
-    if oldActivityId ~= newActivityId then
-        self._SaveUtil:SaveData("ActivityId", newActivityId)
-        return true
-    end
-    return false
-end
-
-function XTheatre5Model:ResetNewSeason()
-    self._SaveUtil:SaveData("ActivityId", 0)
-end
-
 return XTheatre5Model

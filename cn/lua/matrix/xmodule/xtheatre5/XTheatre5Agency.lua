@@ -1191,8 +1191,4 @@ function XTheatre5Agency:GetData()
     return self._Data
 end
 
-function XTheatre5Agency:ResetNewSeason()
-    self._Model:ResetNewSeason()
-end
-
 return XTheatre5Agency

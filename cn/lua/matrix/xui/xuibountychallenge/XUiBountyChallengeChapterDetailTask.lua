@@ -130,9 +130,14 @@ function XUiBountyChallengeChapterDetailTask:PlayStartAnimation(index)
     local delayTime = self._Control:GetConfigNum('UiTaskAnimDelayTime', 1)
     local interval = self._Control:GetConfigNum('UiTaskAnimIntervalTime', 1)
     
-    self:DelayCall(function() 
+    local fixDelayTime = math.floor((delayTime + index * interval) * XScheduleManager.SECOND)
+    
+    self:StopAnimation('Enable')
+    local animTimeId = XScheduleManager.ScheduleOnce(function()
         self:PlayAnimation('Enable')
-    end, delayTime + index * interval)
+    end, fixDelayTime)
+    
+    self._TweenAnimationAgency:_AddTimerId(animTimeId)
 end
 
 

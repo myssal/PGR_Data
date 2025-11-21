@@ -20308,6 +20308,7 @@ XTable = {
     },
     XTableAreaWarAuction = {
         ItemId = ValueTypeint,
+        BasePrice = ValueTypeint,
     },
     XTableAreaWarAuctionSell = {
         ItemId = ValueTypeint,

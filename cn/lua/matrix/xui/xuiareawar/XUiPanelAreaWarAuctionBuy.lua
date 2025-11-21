@@ -146,6 +146,7 @@ function XUiPanelAreaWarAuctionBuy:OnDynamicTableEvent(event, index, grid)
         local isDataValid = self._Control:GetAuction():IsDataValid()
         if not isDataValid then
             XMVCA.XAreaWar:RequestAreaWar4AuctionInfo(function()
+                self:RefreshItemList()
                 self:OnItemClick(itemId)
             end)
         else

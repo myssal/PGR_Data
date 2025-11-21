@@ -8,7 +8,6 @@ local XUiGridAreaWarItem = require("XUi/XUiAreaWar/XUiGridAreaWarItem")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiAreaWarFightResult:OnAwake()
-    self.GridReward.gameObject:SetActiveEx(false)
     self:AutoAddListener()
     self.GridRewards = {}
 end
@@ -148,6 +147,9 @@ function XUiAreaWarFightResult:RefreshQuest(info)
 end
 
 function XUiAreaWarFightResult:ShowReward(fightCount)
+    self.GridAreawarItem.gameObject:SetActiveEx(false)
+    self.GridReward.gameObject:SetActiveEx(false)
+
     if not self.Confirm then
         self.RewardShow = true
         return
@@ -162,8 +164,7 @@ function XUiAreaWarFightResult:ShowReward(fightCount)
             grid:Refresh(reward)
             grid.GameObject:SetActiveEx(true)
             grid:SetUiActive(grid.TxtName, false)
-        end
-
+    end
     for index, reward in pairs(self.areaWarItems) do
         if reward.ItemId and self._Control:GetConfig():IsExitItem(reward.ItemId) then
             local gridUi = XUiHelper.Instantiate(self.GridAreawarItem, self.PanelRewardContent)

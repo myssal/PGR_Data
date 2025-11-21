@@ -156,7 +156,7 @@ end
 -- 刷新藏品列表
 function XUiAreaWarPopupSellAll:RefreshItemList()
     ---@type XAreaWarItem[]
-    self.ItemDataList = self._Control:GetOwnItemDataList(true)
+    self.ItemDataList = self._Control:GetOwnItemDataList()
     self.ItemSelectedDic = {}
     self.DynamicTable:SetDataSource(self.ItemDataList)
     self.DynamicTable:ReloadDataSync()

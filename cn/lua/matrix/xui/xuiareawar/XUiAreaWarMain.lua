@@ -973,6 +973,10 @@ function XUiAreaWarMain:OnClickBlock(blockId)
                     asynPlayAnimation("DarkEnable")
                     asynOpenUi(blockId)
                     asynWaitSecond(0) --等待UI完全重新打开之后再播放动画
+
+                    -- 进战斗后还会继续跑协程
+                    if not self.GameObject then return end
+                    
                     self:OnCloseStageDetail(blockId)
                     asynPlayAnimation("DarkDisable")
                     self:StartActivityDataTimer()
