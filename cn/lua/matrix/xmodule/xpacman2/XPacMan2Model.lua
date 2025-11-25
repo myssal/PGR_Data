@@ -42,7 +42,7 @@ function XPacMan2Model:SetStageData(stageData)
     for i = 1, #self._StageRecords do
         local stageId = self._StageRecords[i].StageId
         if stageId == stageData.StageId then
-            self._StageRecords[stageId] = stageData
+            self._StageRecords[i] = stageData
             return
         end
     end

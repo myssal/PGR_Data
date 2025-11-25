@@ -239,6 +239,12 @@ function XTheatre5FlowController:CheckEventAfterNodeEnd(storyLineId, curStoryLin
     local storyLineContentCfg = self._Model:GetStoryLineContentCfg(lastStoryLineContentId)
 
     if storyLineContentCfg.IsContinue then
+        -- 推演界面立刻移除，不播enable动画
+        if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5PVEClueBoard' then
+            XLuaUiManager.Remove('UiTheatre5PVEClueBoard')
+        end
+        -- 其他不确定的上层UI正常流程关闭就好
+        XLuaUiManager.CloseAllUpperUi('UiTheatre5ChooseCharacter')
         self:EnterStroryLineContent(storyLineId)
     elseif storyLineContentCfg.IsTickOutToTitle then
         if XLuaUiManager.GetUIStackTopUiName() == 'UiTheatre5ChooseCharacter' then
@@ -257,6 +263,9 @@ function XTheatre5FlowController:CheckEventAfterNodeEnd(storyLineId, curStoryLin
                     if XMain.IsWindowsEditor then
                         XLog.Debug('踢出失败，栈顶UI：' .. XLuaUiManager.GetUIStackTopUiName())
                     end
+                    
+                    -- 保底逻辑再试一次
+                    XLuaUiManager.CloseAllUpperUi('UiTheatre5Main')
                 end
             end, 0.2 * XScheduleManager.SECOND)
         end
