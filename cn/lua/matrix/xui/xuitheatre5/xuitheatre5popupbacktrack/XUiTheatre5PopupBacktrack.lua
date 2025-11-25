@@ -26,7 +26,6 @@ end
 
 function XUiTheatre5PopupBacktrack:OnSubmit()
     XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(self.Cfg.StoryLineId, self.Cfg.Id, function()
-        self._Control.FlowControl:EnterStroryLineContent(self.Cfg.StoryLineId)
         -- 因为不确定其他节点是否会处理该界面，因此使用安全接口进行关闭
         XLuaUiManager.SafeClose('UiTheatre5PopupBacktrack')
     end)
