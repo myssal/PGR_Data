@@ -2111,6 +2111,15 @@ function XUiHelper.StopClockTimeTempFun(Ui, timer)
     TimeStopTrans = nil
 end
 
+function XUiHelper.SetSceneAnimHandler(Ui)
+    local sceneTrans = Ui.UiSceneInfo.Transform
+    local animEanbleLoop = sceneTrans:Find("Animations/AnimEnableLoop")
+    if not animEanbleLoop then
+        return
+    end
+    animEanbleLoop:PlayTimelineAnimation()
+end
+
 -- 设置场景类型
 function XUiHelper.SetSceneType(sceneType)
     if not sceneType then

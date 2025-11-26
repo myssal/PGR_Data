@@ -370,6 +370,7 @@ end
 
 -- 根据动画名称获取动画
 function XUiGridMovieActor:GetAnim(animShortName)
+    self:LoadPrefab()
     local animName = AnimNameHead .. animShortName
     local anim = self[animName]
     if anim then

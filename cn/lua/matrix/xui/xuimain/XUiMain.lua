@@ -161,6 +161,7 @@ function XUiMain:OnEnable()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
     CS.XUwaGpmLuaAgent.ChangeScene("UiMain")
+    XUiHelper.SetSceneAnimHandler(self)
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_ENABLE)
 end

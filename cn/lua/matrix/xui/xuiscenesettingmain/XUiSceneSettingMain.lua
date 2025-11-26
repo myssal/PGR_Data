@@ -814,6 +814,7 @@ function XUiSceneSettingMain:ReStartClockTime()
     self:StopClockTime()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiSceneSettingMain:StopClockTime()
