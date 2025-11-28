@@ -133,7 +133,7 @@ function XRaceControl:GetLastGuessRoundId()
             for i = idx - 1, 1, -1 do
                 local roundId = sortRoundId[i]
                 local info = self._Model._BasePlayerData.RoundGuessDict[roundId]
-                if info then
+                if info and not XTool.IsTableEmpty(info.RaceRoundGuessInfoDict) then
                     return roundId
                 end
             end

@@ -92,6 +92,7 @@ function XUiPhotograph:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotograph:Update()
@@ -257,6 +258,7 @@ function XUiPhotograph:ChangeScene(sceneId)
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotograph:AutoRegisterBtnListener()
