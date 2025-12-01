@@ -113266,7 +113266,13 @@
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
             "25|RemoveSkillBuff|114197",
-            "25|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|106435",
+            "1|Cast|11410720",
+            "2|Cast|11410721",
+            "3|Cast|11410722",
+            "4|Cast|11410723",
+            "5|Cast|11410724",
+            "6|Cast|11410725"
         ],
         "Condition": [
             "nil",
@@ -113284,6 +113290,12 @@
             "nil",
             "$11414801=0",
             "$11414801=1",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113474,9 +113486,11 @@
             "-1|AddSkillBuff|114197|114197|50",
             "-1|AddSkillBuff|106435|106435|0",
             "25|RemoveSkillBuff|114197",
-            "25|RemoveSkillBuff|106435"
+            "25|RemoveSkillBuff|106435",
+            "0|Cast|11411938"
         ],
         "Condition": [
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -113784,8 +113798,8 @@
             "15|RemoveSkillExtendBuff|114216",
             "-1|SwitchAir|1",
             "2|Effect|FxR3BuouxiongAtk72Move|||||0.1|0.1|||||",
-            "-1|Effect|FxR3BuouxiongShifa||||||||0.5|||",
-            "18|Magic|114159|0|",
+            "-1|Effect|FxR3BuouxiongShifa||||||||0.7|||",
+            "14|Magic|114159|0|",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
             "26|RemoveSkillBuff|114198",
@@ -114135,7 +114149,7 @@
         "Key": [
             "0|Effect|FxR3BuouxiongAtk23Shifa|||||||||||",
             "0|RunBehavior|11412802|0",
-            "0|Magic|114158|0|",
+            "14|Magic|114158|0|",
             "-1|AddSkillBuff|114198|114198|75",
             "-1|AddSkillBuff|106435|106435|0",
             "26|RemoveSkillBuff|114198",
@@ -114176,8 +114190,8 @@
             "12|Effect|FxR3BuouxiongAtk42||2;0|||0.15|0.15|||||",
             "20|Magic|114115|7|",
             "11|RunBehavior|11413405|0",
-            "9|AddSkillExtendBuff|114154|114154|0",
-            "13|RemoveSkillExtendBuff|114154",
+            "9|AddSkillExtendBuff|114224|114224|0",
+            "13|RemoveSkillExtendBuff|114224",
             "8|AddSkillExtendBuff|114155|114155|0",
             "11|RemoveSkillExtendBuff|114155",
             "11|MoveXZ|11413412|4|0.05|1|300|0|1|",
@@ -114282,9 +114296,7 @@
             "20|Cast|11413712",
             "0|Cast|11413714",
             "20|Cast|11413715",
-            "-1|AddSkillBuff|114238|114238|0",
-            "-1|AddSkillBuff|114239|114239|0",
-            "-1|AddSkillBuff|114154|114154|0"
+            "-1|AddSkillBuff|114224|114224|0"
         ],
         "Condition": [
             "nil",
@@ -114293,8 +114305,6 @@
             "nil",
             "$11414801=0",
             "$11414801=1",
-            "nil",
-            "nil",
             "nil",
             "nil",
             "nil"
@@ -114366,13 +114376,14 @@
             "69|Cast|11414116",
             "-1|Cast|11414117",
             "70|RunBehavior|11414118|0",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|Bip001RCalf|1|||||||||",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|Bip001LCalf|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|WeaponCase1|1|||||-1||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|WeaponCase2|1|||||-1||||",
             "4|AddSkillExtendBuff|184205|184205|0",
             "-1|AddSkillExtendBuff|114112|114112|0",
             "-1|Magic|937291|0|",
             "0|SwitchAir|1",
-            "-1|AddSkillExtendBuff|166413|166413|0"
+            "-1|AddSkillExtendBuff|166413|166413|0",
+            "0|Effect|FxR3BuouxiongAtk50Bip001Head|Bip001Head|1|||||||||"
         ],
         "Condition": [
             "nil",
@@ -114391,6 +114402,7 @@
             "$2221761>0",
             "$2221762>0",
             "$2221763>0",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114423,13 +114435,14 @@
             "69|Cast|11414216",
             "-1|Cast|11414217",
             "70|RunBehavior|11414118|0",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|Bip001RCalf|1|||||||||",
-            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|Bip001LCalf|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase1|WeaponCase1|1|||||||||",
+            "0|Effect|FxR3BuouxiongAtk50WeaponCase2|WeaponCase2|1|||||||||",
             "4|AddSkillExtendBuff|184205|184205|0",
             "-1|AddSkillExtendBuff|114112|114112|0",
             "-1|Magic|937291|0|",
             "0|SwitchAir|1",
-            "-1|AddSkillExtendBuff|166413|166413|0"
+            "-1|AddSkillExtendBuff|166413|166413|0",
+            "0|Effect|FxR3BuouxiongAtk50Bip001Head|Bip001Head|1|||||||||"
         ],
         "Condition": [
             "nil",
@@ -114448,6 +114461,7 @@
             "$2221761>0",
             "$2221762>0",
             "$2221763>0",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -114539,11 +114553,9 @@
             "0|AddSkillBuff|114252|114252|0",
             "-1|Magic|114255|0|",
             "92|AddSkillExtendBuff|184205|184205|0",
-            "91|Effect|FxR3BuouxiongAtk50Bip001Head|Bip001Head||||||||||",
             "104|Effect|FxR3BuouxiongWinMA||1|||||||||"
         ],
         "Condition": [
-            "nil",
             "nil",
             "nil",
             "nil",
@@ -114562,9 +114574,9 @@
         "Key": [
             "0|Effect|FxR3BuouxiongBorn|||||0|0|||||",
             "0|AddSkillBuff|114253|114253|0",
-            "0|Effect|FxR3BuouxiongBornWeaponCase2|Bip001LCalf||||||||||",
+            "0|Effect|FxR3BuouxiongBornWeaponCase2|WeaponCase2||||||-1||||",
             "0|Effect|FxR3BuouxiongBornLight|Bip001LHand||||||||||",
-            "0|Effect|FxR3BuouxiongBornMA|||||0|0|||||",
+            "94|Effect|FxR3BuouxiongBornMA|||||0|0|||||",
             "-1|AddSkillBuff|114254|114254|0"
         ],
         "Condition": [
@@ -114649,12 +114661,22 @@
             "7|Effect|FxR3BuouxiongAtk71Dimian||2;0|||0.01|0.01|||||",
             "0|Effect|FxR3BuouxiongAtk72|HitCase||||||||||",
             "0|Effect|FxR3BuouxiongAtk72|Bip001LHand||||||||||",
-            "3|RunBehavior|11415204|0"
+            "3|RunBehavior|11415204|0",
+            "-1|AddSkillBuff|100090|100090|0",
+            "10|RemoveSkillBuff|100090",
+            "0|DynamicTurnV3P6|3600|0.05|90|1|3",
+            "0|DynamicTurnV3P6|3600|0.05|-90|1|4",
+            "999|RunBehavior|11415209|0"
         ],
         "Condition": [
             "nil",
             "nil",
             "nil",
+            "nil",
+            "nil",
+            "nil",
+            "$11415209=1",
+            "$11415209=2",
             "nil"
         ]
     },
@@ -114664,17 +114686,41 @@
             "3|RunBehavior|11415204|0",
             "2|Effect|FxR3BuouxiongAtk72Move|||||0.1|0.1|||||",
             "0|Effect|FxR3BuouxiongShifa||||||||0.5|||",
-            "6|Effect|FxR3BuouxiongAtk43MA|Bip001||||||||||"
+            "6|Effect|FxR3BuouxiongAtk43MA|Bip001||||||||||",
+            "-1|AddSkillBuff|100090|100090|0",
+            "10|RemoveSkillBuff|100090",
+            "0|DynamicTurnV3P6|3600|0.05|90|1|3",
+            "0|DynamicTurnV3P6|3600|0.05|-90|1|4",
+            "999|RunBehavior|11415209|0"
         ],
         "Condition": [
             "nil",
             "nil",
             "nil",
+            "nil",
+            "nil",
+            "nil",
+            "$11415209=1",
+            "$11415209=2",
             "nil"
         ]
     },
     {
-        "Id": 114154
+        "Id": 114154,
+        "Key": [
+            "0|Effect|FxR3BuouxiongWin|||||||||||",
+            "0|AddSkillBuff|114252|114252|0",
+            "-1|Magic|114255|0|",
+            "92|AddSkillExtendBuff|184205|184205|0",
+            "104|Effect|FxR3BuouxiongWinMA||1|||||||||"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil"
+        ]
     },
     {
         "Id": 114155
