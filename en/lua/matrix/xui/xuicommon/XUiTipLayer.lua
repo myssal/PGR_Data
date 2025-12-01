@@ -165,3 +165,5 @@ function XUiTipLayer:OnDestroy()
         self.Timer = nil
     end
 end
+
+return XUiTipLayer

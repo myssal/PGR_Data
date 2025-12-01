@@ -156,13 +156,13 @@ function XUiGridMovieActor:SetFace(faceId)
     end
 end
 
-function XUiGridMovieActor:SetGrayScale(value)
+function XUiGridMovieActor:SetGrayScale(value, time)
     if not self:IsLoaded() then return end
 
     if self.GrayValue == value then return end
     self.GrayValue = value
-    self.MetearialActor:SetGrayScale(value)
-    self.MeterialFace:SetGrayScale(value)
+    self.MetearialActor:SetGrayScale(value, time)
+    self.MeterialFace:SetGrayScale(value, time)
 end
 
 function XUiGridMovieActor:RevertActorPanel()

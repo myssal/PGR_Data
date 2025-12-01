@@ -44,6 +44,10 @@ function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index)
         return
     end
 
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(true)
+    end
+
     local xCard = self.CharacterCardList[index]
     -- 跟随鼠标的Panel
     xCard.SA_ImgStaticBack.gameObject:SetActiveEx(false)
@@ -88,6 +92,10 @@ end
 function XUiTeamPrefabMain:OnCharacterCardEndDrag(index)
     if not self.CurDragCopyGo then
         return
+    end
+
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(false)
     end
 
     local curDragCard = self.CharacterCardList[self.CurDragCardIndex]

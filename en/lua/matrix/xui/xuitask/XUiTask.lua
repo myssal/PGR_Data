@@ -2,6 +2,7 @@ local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiPanelTaskDaily = require("XUi/XUiTask/XUiPanelTaskDaily")
 local XUiPanelTaskActivity = require("XUi/XUiTask/XUiPanelTaskActivity")
 local XUiPanelTaskWeekly = require("XUi/XUiTask/XUiPanelTaskWeekly")
+local XUiPanelTaskCanLiver = require("XUi/XUiTask/XUiPanelTaskCanLiver")
 local XUiNewbieTaskMain = require('XUi/XUiTask/XUiNewbieTask/XUiNewbieTaskMain')
 local XUiNewPlayerTask = require('XUi/XUiTask/XUiNewPlayerTask/XUiNewPlayerTask')
 ---@class XUiTask:XLuaUi
@@ -16,6 +17,7 @@ local TabType = {
     Activity = 3, -- 活动任务
     NewbieStart = 4, -- 新手入门任务
     NewbieTarget = 5, -- 新手目标任务
+    CanLiver = 6, -- 新手目标任务
 }
 
 local ShowTypeInHideFunc = {
@@ -77,6 +79,8 @@ function XUiTask:Init()
     self.TaskNewbieModule = XUiNewbieTaskMain.New(self.PanelNewbieTask, self, self)
     ---@type XUiNewPlayerTaskNew
     self.TaskNewPlayerTarget = XUiNewPlayerTask.New(self.PanelTargetTask, self, self)
+    ---@type XUiPanelTaskCanLiver
+    self.TaskCanLiver = XUiPanelTaskCanLiver.New(self.PanelTaskDrawCanLiver, self, self)
 
     self:InitTabList()
 
@@ -378,6 +382,10 @@ function XUiTask:OnTaskChangeSync(isMulti)
             if self.TaskNewPlayerTarget:IsNodeShow() then
                 self.TaskNewPlayerTarget:Refresh()
             end
+        elseif cfg.TagType == TabType.CanLiver then
+            if self.TaskCanLiver:IsNodeShow() then
+                self.TaskCanLiver:Refresh(isMulti)
+            end
         else
             XLog.Error('未知的页签类型：'..tostring(cfg.TagType))
         end
@@ -552,6 +560,7 @@ function XUiTask:OnTaskPanelSelect(index)
     self.TaskActivityModule:HidePanel()
     self.TaskNewbieModule:Close()
     self.TaskNewPlayerTarget:Close()
+    self.TaskCanLiver:Close()
 
     if cfg.TagType == TabType.Daily then
         if XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.TaskDay) then
@@ -616,6 +625,17 @@ function XUiTask:OnTaskPanelSelect(index)
         end
 
         self.TaskNewPlayerTarget:Open()
+    elseif cfg.TagType == TabType.CanLiver then
+        if XFunctionManager.CheckFunctionFitter(cfg.FunctionId) then
+            self.TaskCanLiver:Close()
+            return
+        end
+
+        if not isForceOpen and not XFunctionManager.DetectionFunction(cfg.FunctionId) then
+            return
+        end
+
+        self.TaskCanLiver:Open()
     end
 
     XDataCenter.TaskManager.SaveNewPlayerHint(XDataCenter.TaskManager.TaskLastSelectTab, index)

@@ -64,6 +64,7 @@ end
 function XRaceControl:GetClientConfig(id, index)
     index = index or 1
     local values = self:GetClientConfigs(id)
+    if not values then return nil end
     return values[index]
 end
 
