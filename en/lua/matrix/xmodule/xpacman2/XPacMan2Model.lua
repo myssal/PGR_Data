@@ -3,6 +3,7 @@ local TableKey = {
     PacMan2GameConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key", },
     PacMan2Activity = { CacheType = XConfigUtil.CacheType.Normal },
     PacMan2Stage = { CacheType = XConfigUtil.CacheType.Normal },
+    PacMan2StageTips = { DirPath = XConfigUtil.DirectoryType.Client }
 }
 
 ---@class XPacMan2Model : XModel
@@ -41,7 +42,7 @@ function XPacMan2Model:SetStageData(stageData)
     for i = 1, #self._StageRecords do
         local stageId = self._StageRecords[i].StageId
         if stageId == stageData.StageId then
-            self._StageRecords[stageId] = stageData
+            self._StageRecords[i] = stageData
             return
         end
     end
@@ -107,6 +108,18 @@ end
 function XPacMan2Model:GetEntityConfig(id)
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.PacMan2Entity, id, true)
     return config
+end
+
+function XPacMan2Model:GetStageTips()
+    return self._ConfigUtil:GetByTableKey(TableKey.PacMan2StageTips)
+end
+
+function XPacMan2Model:GetToggleTouch()
+    return self._SaveUtil:GetData("ToggleTouch", true)
+end
+
+function XPacMan2Model:SetToggleTouch(value)
+    self._SaveUtil:SaveData("ToggleTouch", value)
 end
 
 return XPacMan2Model

@@ -30,6 +30,10 @@ local ShopIndexDic = {
 }
 
 local NewFashionFilterShopList = {}
+local SelectType = {
+    Suit = 2,
+    Weapon= 3,
+}
 
 function XUiShop:OnAwake()
     self.TabBtnGroupSelectIndex = nil
@@ -53,7 +57,9 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     self.ConfigShopId = configShopId
     self.ScreenId = screenId
 
-    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem,
+        XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+    ---@type XUiPanelActivityAsset
     self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelActivityAsset, self, nil, self, true)
     self.ItemList = XUiPanelItemList.New(self.PanelItemList, self)
     self.FashionList = XUiPanelFashionList.New(self.PanelFashionList, self)
@@ -94,23 +100,26 @@ end
 function XUiShop:OnEnable()
     XUiShop.Super.OnEnable(self)
     XShopManager.GetBaseInfo(function()
-            self:SetShopBtn(self.Type)
-            self:UpdateTog()
-        end)
+        self:SetShopBtn(self.Type)
+        self:UpdateTog()
+    end)
     XEventManager.AddEventListener(XEventId.EVENT_SHOP_ITEM_NOT_ENOUGH, self.OnShopItemNotEnough, self)
 end
 
 function XUiShop:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_SHOP_ITEM_NOT_ENOUGH, self.OnShopItemNotEnough, self)
 end
-    
+
 function XUiShop:OnShopItemNotEnough(code, shopId, isHasCache)
     if isHasCache then
         if self.Type and self.Type == XShopManager.ShopType.Recharge then
-            local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
-            local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
-            local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
-    
+            local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(
+            XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
+            local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(
+            XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
+            local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(
+            XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
+
             if (shopId == XShopManager.RechargeShopType.CharacterShop and not isHasCharacterCoin)
                 or (shopId == XShopManager.RechargeShopType.EquipShop and not isHasEquipCoin)
                 or (shopId == XShopManager.RechargeShopType.PartnerShop and not isHasPartner) then
@@ -156,9 +165,9 @@ function XUiShop:AutoAddListener()
     self.BtnMainUi.CallBack = function()
         self:OnBtnMainUiClick()
     end
-    self.BtnScreenGroup.CallBack = function()
-        self:OnBtnScreenGroupClick()
-    end
+    -- self.BtnScreenGroup.CallBack = function()
+    --     self:OnBtnScreenGroupClick()
+    -- end
     self.BtnScreenWords.onValueChanged:AddListener(
         function()
             self.SelectTag = self.BtnScreenWords.captionText.text
@@ -187,8 +196,10 @@ function XUiShop:AutoAddListener()
             self:OnBtnScreenSuitClick()
         end
     )
+    self.BtnFilterSuit.CallBack = function()self:OpenSuitSelect()end
+    self.BtnFilterWeapon.CallBack = function() self:OpenWeaponSelect()end
     self.BtnScreening:ShowReddot(false)
-    
+
     self:RegisterClickEvent(self.BtnFilter, self.OnBtnFilterClick)
 end
 
@@ -235,24 +246,45 @@ function XUiShop:OnBtnFilterClick()
             end
         end
     end
-    
-    XLuaUiManager.Open('UiShopFashionFilter', self.CurShopId, self._TmpCareerTags, self._TmpElementTags, characterId, function(careerTags, elementTags, characterId)
-        self._TmpCareerTags = careerTags
-        self._TmpElementTags = elementTags
-        self.SelectTag = CS.XTextManager.GetText("ScreenAll")
-        -- characterId 转成selectTag
-        if screenGroupCfg then
-            for i, id in pairs(screenGroupCfg.ScreenID) do
-                if characterId == id then
-                    self.SelectTag = screenGroupCfg.ScreenName[i]
-                    break
-                end
-            end
+    local goodsList = XShopManager.GetShopGoodsList(self.CurShopId, true, true)
+    local dataProvider = {}
+    -- 获取商品里对应的角色Id
+    if not XTool.IsTableEmpty(goodsList) then
+        for i, goods in pairs(goodsList) do
+            local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
+            dataProvider[#dataProvider + 1] = {
+                characterId = characterId,
+            }
         end
-        -- 刷新列表
-        self.BtnFilter:SetNameByGroup(0, self.SelectTag)
-        self:UpdateList(self.CurShopId, false)
-    end)
+    end
+    local selectData = {
+        selectId = characterId,
+        careerTags = self._TmpCareerTags,
+        elementTags = self._TmpElementTags
+    }
+
+    XLuaUiManager.Open('UiShopFashionFilter', selectData, dataProvider,
+        function(resultData)
+            if resultData ~= nil then
+                self._TmpCareerTags = resultData.careerTags
+                self._TmpElementTags = resultData.elementTags
+                if resultData.selectId == nil then
+                    self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+                elseif screenGroupCfg then
+                    for i, id in pairs(screenGroupCfg.ScreenID) do
+                        if resultData.selectId == id then
+                            self.SelectTag = screenGroupCfg.ScreenName[i]
+                            break
+                        end
+                    end
+                end
+            else
+                self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+            end
+            -- 刷新列表
+            self.BtnFilter:SetNameByGroup(0, self.SelectTag)
+            self:UpdateList(self.CurShopId, false)
+        end)
 end
 
 function XUiShop:OnDestroy()
@@ -265,11 +297,14 @@ end
 
 function XUiShop:SetShopBtn(shopType)
     local btnList = nil
-    
+
     if self.BtnOptionalShop then
-        local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
-        local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
-        local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
+        local isHasCharacterCoin = XDataCenter.ItemManager.CheckItemCountById(
+        XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1)
+        local isHasEquipCoin = XDataCenter.ItemManager.CheckItemCountById(
+        XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1)
+        local isHasPartner = XDataCenter.ItemManager.CheckItemCountById(
+        XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1)
         local isOptionalOpen = isHasCharacterCoin or isHasEquipCoin or isHasPartner
 
         self.BtnOptionalShop.gameObject:SetActiveEx(isOptionalOpen)
@@ -291,9 +326,9 @@ function XUiShop:SetShopBtn(shopType)
     end
 
     self.ShopBtnGroup:Init(btnList, function(index) self:OnSelectedShopBtn(index) end)
-    
-    for index,bth in ipairs(btnList) do
-        self:CheckBtnState(ShopTypeDic[index],bth)
+
+    for index, bth in ipairs(btnList) do
+        self:CheckBtnState(ShopTypeDic[index], bth)
     end
 
     if shopType == XShopManager.ShopType.Common then
@@ -368,8 +403,8 @@ function XUiShop:UpdateTog()
     for index, info in pairs(infoList) do
         local btn = self.BtnGoList[self.tagCount]
         if self.shopGroup[info.Type] then
-            if self.shopGroup[info.Type] [index] then
-                btn = self.BtnGoList[self.shopGroup[info.Type] [index]]
+            if self.shopGroup[info.Type][index] then
+                btn = self.BtnGoList[self.shopGroup[info.Type][index]]
             end
         end
 
@@ -436,7 +471,7 @@ function XUiShop:UpdateTog()
     if self.Type == XShopManager.ShopType.Recharge then
         if XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1) then
             local index = self:GetRechargeTagIndex(infoList, XShopManager.RechargeShopType.EquipShop)
-        
+
             selectIndex = selectIndex or self.shopGroup[self.Type][index]
         elseif XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1) then
             local index = self:GetRechargeTagIndex(infoList, XShopManager.RechargeShopType.PartnerShop)
@@ -458,7 +493,7 @@ end
 
 function XUiShop:GetRechargeTagIndex(infoList, rechargeType)
     local index = 2
-            
+
     for i = 1, #infoList do
         if infoList[i].Id == rechargeType then
             index = i
@@ -474,15 +509,15 @@ function XUiShop:SetTitleName(typeId)
     else
         self.BtnTitle.gameObject:SetActiveEx(false)
     end
-    self.BtnEcerdayShop:SetNameByGroup(0,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Common).TypeName)
-    self.BtnActivityShop:SetNameByGroup(0,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Activity).TypeName)
-    self.BtnPointsShop:SetNameByGroup(0,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Points).TypeName)
-    self.BtnTitle:SetNameByGroup(0,XShopManager.GetShopTypeDataById(typeId).TypeName)
+    self.BtnEcerdayShop:SetNameByGroup(0, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Common).TypeName)
+    self.BtnActivityShop:SetNameByGroup(0, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Activity).TypeName)
+    self.BtnPointsShop:SetNameByGroup(0, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Points).TypeName)
+    self.BtnTitle:SetNameByGroup(0, XShopManager.GetShopTypeDataById(typeId).TypeName)
 
-    self.BtnEcerdayShop:SetNameByGroup(1,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Common).Desc)
-    self.BtnActivityShop:SetNameByGroup(1,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Activity).Desc)
-    self.BtnPointsShop:SetNameByGroup(1,XShopManager.GetShopTypeDataById(XShopManager.ShopType.Points).Desc)
-    self.BtnTitle:SetNameByGroup(1,XShopManager.GetShopTypeDataById(typeId).Desc)
+    self.BtnEcerdayShop:SetNameByGroup(1, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Common).Desc)
+    self.BtnActivityShop:SetNameByGroup(1, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Activity).Desc)
+    self.BtnPointsShop:SetNameByGroup(1, XShopManager.GetShopTypeDataById(XShopManager.ShopType.Points).Desc)
+    self.BtnTitle:SetNameByGroup(1, XShopManager.GetShopTypeDataById(typeId).Desc)
 end
 
 function XUiShop:ShowShop(shopId)
@@ -510,33 +545,36 @@ function XUiShop:UpdateInfo(shopId)
     self.ShopPeriod:HidePanel()
     self.ShopPeriod:ShowPanel(shopId)
     self:InitScreen(shopId)
-    self:UpdateDropdown()
-    self:UpdateList(shopId,false)
-
+    self:UpdateDropdown(shopId)
+    self:UpdateList(shopId, false)
 end
 
 function XUiShop:InitScreen(shopId)
+    self.BtnScreenGroup.gameObject:SetActiveEx(false)
+
     self.ScreenGroupIDList = XShopManager.GetShopScreenGroupIDList(shopId)
     if self.ScreenGroupIDList and #self.ScreenGroupIDList > 0 then
         self.IsHasScreen = true
-        self.ScreenNum = 1
-        self.BtnScreenGroup.gameObject:SetActiveEx(#self.ScreenGroupIDList > 1)
+        self.ScreenNum =  #self.ScreenGroupIDList
+        -- self.BtnScreenGroup.gameObject:SetActiveEx(#self.ScreenGroupIDList > 1)
     else
         self.IsHasScreen = false
     end
     self.PanelShaixuan.gameObject:SetActiveEx(self.IsHasScreen)
+    self.BtnScreenWords.gameObject:SetActiveEx(false)
+    self.BtnFilterSuit.gameObject:SetActiveEx(false)
+    self.BtnFilterWeapon.gameObject:SetActiveEx(false)
     if self:IsShowSuitScreen(shopId) then
         -- 商店优化 针对意识商店
-        self.BtnScreenGroup.gameObject:SetActiveEx(false)
-        self.BtnScreenWords.gameObject:SetActiveEx(false)
+        -- self.BtnScreenGroup.gameObject:SetActiveEx(false)
         self.BtnFilter.gameObject:SetActiveEx(false)
-        
+
         local group = 2
         local tagOfOthers = XShopManager.GetTagScreenOther()
         local others = XShopManager.GetScreenGoodsListByTagEx(shopId, group, tagOfOthers)
         if others and #others > 0 then
             self.BtnSwitch.gameObject:SetActiveEx(false)
-            self.BtnScreening.gameObject:SetActiveEx(true)    
+            self.BtnScreening.gameObject:SetActiveEx(true)
         else
             self.BtnSwitch.gameObject:SetActiveEx(true)
             self.BtnScreening.gameObject:SetActiveEx(false)
@@ -545,21 +583,132 @@ function XUiShop:InitScreen(shopId)
     else
         local isUseNewFliter = NewFashionFilterShopList[shopId]
 
-        self.BtnScreenGroup.gameObject:SetActiveEx(not isUseNewFliter)
-        self.BtnScreenWords.gameObject:SetActiveEx(not isUseNewFliter)
-        
+        -- self.BtnScreenGroup.gameObject:SetActiveEx(not isUseNewFliter)
+
         self.BtnFilter.gameObject:SetActiveEx(isUseNewFliter)
         self.BtnFilter:SetNameByGroup(0, CS.XTextManager.GetText("ScreenAll"))
         self._TmpCareerTags = nil
         self._TmpElementTags = nil
-        
+
         self.BtnSwitch.gameObject:SetActiveEx(false)
         self.BtnScreening.gameObject:SetActiveEx(false)
     end
 end
 
-function XUiShop:UpdateDropdown()
+function XUiShop:OpenSuitSelect()
+    if self.ScreenGroupIDList == nil then
+        return
+    end
+    self.ScreenTagList = XShopManager.GetScreenTagListById(self.CurShopId, self.ScreenGroupIDList[self.ScreenNum])
+
+    if self.ScreenTagList == nil then
+        return
+    end
+    local allProvider = self:GetSuitScreenDataProvider(true)
+    local dataProvider = {}
+    local tagSet = {}
+    for _, k in pairs(self.ScreenTagList) do
+        tagSet[k.Text] = true
+    end
+
+    for _, v in pairs(allProvider) do
+        if tagSet[v.text] then
+            table.insert(dataProvider, v)
+        end
+    end
+    local selectData = {}
+    selectData.WaferData = dataProvider[#dataProvider]
+    selectData.TagId = self.SelectTagId
+    local callBack = function(data)
+        if data.WaferData then
+            self.BtnFilterSuit:SetName(data.WaferData.text)
+            self.SelectTag = data.WaferData.text
+        else
+            self.BtnFilterSuit:SetName(CS.XTextManager.GetText("ScreenAll"))
+            self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+        end
+        self:UpdateList(self.CurShopId, false)
+        self.SelectTagId = data.TagId
+        -- self:UpdateList(self.CurShopId, false)
+    end
+    XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, callBack)
+end
+
+function XUiShop:OpenWeaponSelect()
+    if self.ScreenGroupIDList == nil then
+        return
+    end
+    local screenGroupCfg = XShopConfigs.GetShopScreenGroupTemplate()[self.ScreenGroupIDList[self.ScreenNum]]
+
+
+    local goodsList = XShopManager.GetShopGoodsList(self.CurShopId, true, true)
+    local dataProvider = {}
+    local dataProviderMap = {}
+    local weaponNameMap = {}
+    -- 获取商品里对应的角色Id
+    if not XTool.IsTableEmpty(goodsList) then
+        for i, goods in pairs(goodsList) do
+            if not XMVCA.XEquip:CheckTemplateIdIsEquip(goods.RewardGoods.TemplateId) then
+                goto continue
+            end
+            local characterId = XMVCA.XEquip:GetEquipRecommendCharacterId(goods.RewardGoods.TemplateId)
+
+            dataProviderMap[characterId] = XMVCA.XEquip:GetEquipType(goods.RewardGoods.TemplateId)
+            dataProvider[#dataProvider + 1] = {
+                characterId = characterId,
+            }
+
+            for i, id in pairs(screenGroupCfg.ScreenID) do
+                if dataProviderMap[characterId] == id then
+                    weaponNameMap[characterId] = screenGroupCfg.ScreenName[i]
+                    break
+                end
+            end
+            ::continue::
+        end
+    end
+
+    local selectData = {
+        selectId = self._TmpWeaponCharacterId,
+        careerTags = self._TmpWeaponCareerTags,
+        elementTags = self._TmpWeaponElementTags,
+        weaponData = self.SelectTag
+
+    }
+
+    XLuaUiManager.Open('UiShopFashionFilter', selectData, dataProvider, function(resultData)
+        if resultData ~= nil then
+            self._TmpWeaponCareerTags = resultData.careerTags
+            self._TmpWeaponElementTags = resultData.elementTags
+            self._TmpWeaponCharacterId = resultData.selectId
+            if resultData.selectId == nil then
+                self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+            elseif screenGroupCfg then
+                for i, id in pairs(screenGroupCfg.ScreenID) do
+                    if dataProviderMap[resultData.selectId] == id then
+                        self.SelectTag = screenGroupCfg.ScreenName[i]
+                        break
+                    end
+                end
+            end
+        else
+            self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+        end
+        -- 刷新列表
+        self.BtnFilterWeapon:SetNameByGroup(0, self.SelectTag)
+        self:UpdateList(self.CurShopId, false)
+    end, weaponNameMap)
+end
+
+function XUiShop:UpdateDropdown(shopId)
     if not self.IsHasScreen then
+        return
+    end
+    if shopId and self:IsShowSuitScreen(shopId) then
+        return
+    end
+    local isUseNewFliter = NewFashionFilterShopList[shopId]
+    if isUseNewFliter == true then
         return
     end
     local value, screenNum
@@ -572,20 +721,38 @@ function XUiShop:UpdateDropdown()
         end
         self.ScreenId = nil
     end
-    local icon = XShopManager.GetShopScreenGroupIconById(self.ScreenGroupIDList[self.ScreenNum])
-    if icon then
-        self.BtnScreenGroup:SetSprite(icon)
+    -- local icon = XShopManager.GetShopScreenGroupIconById(self.ScreenGroupIDList[self.ScreenNum])
+    -- if icon then
+    --     self.BtnScreenGroup:SetSprite(icon)
+    -- end
+    -- self.BtnScreenGroup:SetName(XShopManager.GetShopScreenGroupNameById(self.ScreenGroupIDList[self.ScreenNum]))
+
+    self.ScreenTagList = XShopManager.GetScreenTagListById(self.CurShopId, self.ScreenGroupIDList[self.ScreenNum])
+    self.BtnScreenWords.gameObject:SetActiveEx(false)
+    self.BtnFilterSuit.gameObject:SetActiveEx(false)
+    self.BtnFilterWeapon.gameObject:SetActiveEx(false)
+    if self.ScreenGroupIDList[self.ScreenNum] == SelectType.Suit then
+        self.BtnFilterSuit:SetName(CS.XTextManager.GetText("ScreenAll"))
+        self.BtnFilterSuit.gameObject:SetActiveEx(true)
+        return
     end
-    self.BtnScreenGroup:SetName(XShopManager.GetShopScreenGroupNameById(self.ScreenGroupIDList[self.ScreenNum]))
-    self.ScreenTagList = XShopManager.GetScreenTagListById(self.CurShopId,self.ScreenGroupIDList[self.ScreenNum])
+    if self.ScreenGroupIDList[self.ScreenNum] ==SelectType.Weapon then
+        if not self._TmpWeaponCharacterId then
+            self.BtnFilterWeapon:SetName(CS.XTextManager.GetText("ScreenAll"))
+        end
+        self.BtnFilterWeapon.gameObject:SetActiveEx(true)
+        return
+    end
+
+    self.BtnScreenWords.gameObject:SetActiveEx(true)
     self.BtnScreenWords:ClearOptions()
     self.BtnScreenWords.captionText.text = CS.XTextManager.GetText("ScreenAll")
-    for _,v in pairs(self.ScreenTagList or {}) do
+    for _, v in pairs(self.ScreenTagList or {}) do
         local op = Dropdown.OptionData()
         op.text = v.Text
         self.BtnScreenWords.options:Add(op)
     end
-    
+
     self.BtnScreenWords.value = XTool.IsNumberValid(value) and value - 1 or 0
     self.SelectTag = self.BtnScreenWords.captionText.text
 end
@@ -614,7 +781,7 @@ function XUiShop:GetScreenNotExistTips()
     end
 end
 
--- v1.29 商店优化 
+-- v1.29 商店优化
 -- 在shop表里新增字段refreshtips，控制对应的商店页签倒计时旁是否显示刷新tips，以及tips文本内容，若填写内容则显示tips按钮以及点击按钮后显示配置文本，若未填写，则不显示按钮。
 function XUiShop:UpdateRefreshTips(shopId)
     local refreshTips = XShopManager.GetShopShowRefreshTips(shopId)
@@ -633,9 +800,9 @@ function XUiShop:UpdateRefreshTipsContent()
         self.RefreshTips:SetText(refreshTips)
     end
 end
-  
+
 function XUiShop:UpdateBuy(data, cb, proxy)
-    XLuaUiManager.Open("UiShopItem",self,data, cb, nil, proxy)
+    XLuaUiManager.Open("UiShopItem", self, data, cb, nil, proxy)
     self:PlayAnimation("AnimTanChuang")
 end
 
@@ -660,22 +827,25 @@ end
 --region v1.29 优化当前分解商店-意识商店的筛选功能
 function XUiShop:OnBtnScreenSuitClick()
     local callBack = function(data)
-        if data then
-            self.SelectTag = data.text
+        if data.WaferData then
+            self.SelectTag = data.WaferData.text
         else
             self.SelectTag = nil
         end
         self:UpdateList(self.CurShopId, false)
+        self.SelectTagId = data.TagId
     end
-    local dataProvider = self:GetSuitScreenDataProvider()
-    local selectData = dataProvider[1]
+    local dataProvider = self:GetSuitScreenDataProvider(true)
+
+    local selectWafer = nil
     for i = 1, #dataProvider do
         local data = dataProvider[i]
         if data.text == self.SelectTag then
-            selectData = data
+            selectWafer = data
             break
         end
     end
+    local selectData = {TagId = self.SelectTagId,WaferData = selectWafer}
     XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, callBack)
 end
 
@@ -694,7 +864,7 @@ function XUiShop:FindFirstSuitId()
     return false
 end
 
-function XUiShop:GetSuitScreenDataProvider()
+function XUiShop:GetSuitScreenDataProvider(ignoreOther)
     local dataProvider = {}
     local hasOther = false
     local groupId = XShopManager.ScreenType.SuitName
@@ -713,24 +883,18 @@ function XUiShop:GetSuitScreenDataProvider()
                     local firstGood = goodsList[1]
                     local templateId = firstGood.RewardGoods.TemplateId
                     local suitId = XMVCA.XEquip:GetEquipSuitId(templateId)
-                    local suitCfg = XMVCA.XEquip:GetConfigEquipSuit(suitId)
-                    dataProvider[#dataProvider + 1] = {
-                        text = v.Text,
-                        icon = XMVCA.XEquip:GetEquipSuitIconPath(suitId),
-                        description = suitCfg.Description,
-                        suitQualityIcon = XMVCA.XEquip:GetSuitQualityIcon(suitId)
-                    }
+                    dataProvider[#dataProvider + 1] = XMVCA.XEquip:GetSuitFilterProvider(v.Text,suitId)
                 end
             end
         end
     end
-    if hasOther then
+    if ignoreOther ==nil and hasOther then
         local other = {
             text = XShopManager.GetTagScreenOther(),
             icon = CS.XGame.ClientConfig:GetString("UiShopOthers"),
             description = CS.XTextManager.GetText("ShopOthersDescription" .. shopId)
         }
-        table.insert(dataProvider, 1,other)
+        table.insert(dataProvider, 1, other)
     end
     return dataProvider
 end

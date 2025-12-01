@@ -1163,7 +1163,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转至2021端午活动主界面
     function XFunctionalSkipManager.SkipToRpgMakerGameMain()
-        XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
+        return XDataCenter.RpgMakerGameManager.RequestRpgMakerGameEnter()
     end
 
     --================
@@ -1483,6 +1483,14 @@ XFunctionalSkipManagerCreator = function()
     
     function XFunctionalSkipManager.SkipToUiPacMan2Main()
         return XMVCA.XPacMan2:OpenMain()
+    end
+
+    function XFunctionalSkipManager.SkipToUiRadioSignPopupHall(skipData)
+        local result = XMVCA.XRadioSign:Popup()
+        if not result then
+            XUiManager.TipText("ActivityBranchNotOpen")
+        end
+        return result
     end
 
     --跳转到累消活动
@@ -2454,7 +2462,7 @@ XFunctionalSkipManagerCreator = function()
 
     -- 跳转到联机共斗
     function XFunctionalSkipManager.SkipToDlcRelink()
-        XMVCA.XDlcRelink:OpenMainUi()
+        return XMVCA.XDlcRelink:OpenMainUi()
     end
 
     function XFunctionalSkipManager.SkipToTeamPrefab(list)

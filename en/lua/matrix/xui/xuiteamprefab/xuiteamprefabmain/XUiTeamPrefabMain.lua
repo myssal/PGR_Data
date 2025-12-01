@@ -33,11 +33,19 @@ function XUiTeamPrefabMain:InitCharacterCard()
 end
 
 local TempV2 = Vector2(0, 0)
-function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index) 
+function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index)
+    if self.CurDragCopyGo then
+        return
+    end
+
     local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
     local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(index)
     if not XTool.IsNumberValid(charId) then
         return
+    end
+
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(true)
     end
 
     local xCard = self.CharacterCardList[index]
@@ -84,6 +92,10 @@ end
 function XUiTeamPrefabMain:OnCharacterCardEndDrag(index)
     if not self.CurDragCopyGo then
         return
+    end
+
+    if self.DragMask then
+        self.DragMask.gameObject:SetActiveEx(false)
     end
 
     local curDragCard = self.CharacterCardList[self.CurDragCardIndex]

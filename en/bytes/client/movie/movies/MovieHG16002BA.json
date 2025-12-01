@@ -1646,7 +1646,6 @@
         "EndDelay": 0.0,
         "Params": [
             1,
-            36,
             1
         ]
     },
@@ -1660,13 +1659,28 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            2,
-            5905
+            1,
+            36,
+            1
         ]
     },
     {
         "Id": 116,
         "ActionId": 116,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5905
+        ]
+    },
+    {
+        "Id": 117,
+        "ActionId": 117,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -1679,8 +1693,8 @@
         ]
     },
     {
-        "Id": 117,
-        "ActionId": 117,
+        "Id": 118,
+        "ActionId": 118,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -1693,8 +1707,8 @@
         ]
     },
     {
-        "Id": 118,
-        "ActionId": 118,
+        "Id": 119,
+        "ActionId": 119,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1707,8 +1721,8 @@
         ]
     },
     {
-        "Id": 119,
-        "ActionId": 119,
+        "Id": 120,
+        "ActionId": 120,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -1720,8 +1734,8 @@
         ]
     },
     {
-        "Id": 120,
-        "ActionId": 120,
+        "Id": 121,
+        "ActionId": 121,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -1737,8 +1751,8 @@
         ]
     },
     {
-        "Id": 121,
-        "ActionId": 121,
+        "Id": 122,
+        "ActionId": 122,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -1748,22 +1762,6 @@
         "Params": [
             2,
             2704
-        ]
-    },
-    {
-        "Id": 122,
-        "ActionId": 122,
-        "NextActionId": 0,
-        "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 550.0,
-        "Params": [
-            1,
-            0.5,
-            50,
-            -100
         ]
     },
     {
@@ -1778,12 +1776,28 @@
         "Params": [
             1,
             0.5,
+            50,
             -100
         ]
     },
     {
         "Id": 124,
         "ActionId": 124,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 550.0,
+        "Params": [
+            1,
+            0.5,
+            -100
+        ]
+    },
+    {
+        "Id": 125,
+        "ActionId": 125,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -1792,8 +1806,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 125,
-        "ActionId": 125,
+        "Id": 126,
+        "ActionId": 126,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1807,8 +1821,8 @@
         ]
     },
     {
-        "Id": 126,
-        "ActionId": 126,
+        "Id": 127,
+        "ActionId": 127,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -1823,8 +1837,8 @@
         ]
     },
     {
-        "Id": 127,
-        "ActionId": 127,
+        "Id": 128,
+        "ActionId": 128,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1839,23 +1853,10 @@
         ]
     },
     {
-        "Id": 128,
-        "ActionId": 128,
-        "NextActionId": 0,
-        "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1
-        ]
-    },
-    {
         "Id": 129,
         "ActionId": 129,
         "NextActionId": 0,
-        "Type": 306,
+        "Type": 202,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
@@ -1868,13 +1869,13 @@
         "Id": 130,
         "ActionId": 130,
         "NextActionId": 0,
-        "Type": 301,
+        "Type": 306,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "You place your hand on the lance's tip, and a wave of heat rushes up through the metal."
+            1
         ]
     },
     {
@@ -1887,12 +1888,25 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Cold metal can transfer heat easily once it gets going, but this is way beyond just warm."
+            "You place your hand on the lance's tip, and a wave of heat rushes up through the metal."
         ]
     },
     {
         "Id": 132,
         "ActionId": 132,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Cold metal can transfer heat easily once it gets going, but this is way beyond just warm."
+        ]
+    },
+    {
+        "Id": 133,
+        "ActionId": 133,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -1901,8 +1915,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 133,
-        "ActionId": 133,
+        "Id": 134,
+        "ActionId": 134,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -1911,14 +1925,14 @@
         "EndDelay": 0.0,
         "Params": [
             "Hmm... medium-well. Suddenly in the mood for a barbecue?",
-            134,
+            135,
             "Talk about a scorcher!",
-            134
+            135
         ]
     },
     {
-        "Id": 134,
-        "ActionId": 134,
+        "Id": 135,
+        "ActionId": 135,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -1932,8 +1946,8 @@
         ]
     },
     {
-        "Id": 135,
-        "ActionId": 135,
+        "Id": 136,
+        "ActionId": 136,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -1946,8 +1960,8 @@
         ]
     },
     {
-        "Id": 136,
-        "ActionId": 136,
+        "Id": 137,
+        "ActionId": 137,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -1959,8 +1973,8 @@
         ]
     },
     {
-        "Id": 137,
-        "ActionId": 137,
+        "Id": 138,
+        "ActionId": 138,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -1973,8 +1987,8 @@
         ]
     },
     {
-        "Id": 138,
-        "ActionId": 138,
+        "Id": 139,
+        "ActionId": 139,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -1988,8 +2002,8 @@
         ]
     },
     {
-        "Id": 139,
-        "ActionId": 139,
+        "Id": 140,
+        "ActionId": 140,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2004,8 +2018,8 @@
         ]
     },
     {
-        "Id": 140,
-        "ActionId": 140,
+        "Id": 141,
+        "ActionId": 141,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2019,8 +2033,8 @@
         ]
     },
     {
-        "Id": 141,
-        "ActionId": 141,
+        "Id": 142,
+        "ActionId": 142,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2033,8 +2047,8 @@
         ]
     },
     {
-        "Id": 142,
-        "ActionId": 142,
+        "Id": 143,
+        "ActionId": 143,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -2047,8 +2061,8 @@
         ]
     },
     {
-        "Id": 143,
-        "ActionId": 143,
+        "Id": 144,
+        "ActionId": 144,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2062,8 +2076,8 @@
         ]
     },
     {
-        "Id": 144,
-        "ActionId": 144,
+        "Id": 145,
+        "ActionId": 145,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2076,8 +2090,8 @@
         ]
     },
     {
-        "Id": 145,
-        "ActionId": 145,
+        "Id": 146,
+        "ActionId": 146,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2089,8 +2103,8 @@
         ]
     },
     {
-        "Id": 146,
-        "ActionId": 146,
+        "Id": 147,
+        "ActionId": 147,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2099,12 +2113,12 @@
         "EndDelay": 0.0,
         "Params": [
             "That means it's happy.",
-            147
+            148
         ]
     },
     {
-        "Id": 147,
-        "ActionId": 147,
+        "Id": 148,
+        "ActionId": 148,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2117,8 +2131,8 @@
         ]
     },
     {
-        "Id": 148,
-        "ActionId": 148,
+        "Id": 149,
+        "ActionId": 149,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2130,8 +2144,8 @@
         ]
     },
     {
-        "Id": 149,
-        "ActionId": 149,
+        "Id": 150,
+        "ActionId": 150,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2140,12 +2154,12 @@
         "EndDelay": 0.0,
         "Params": [
             "How about giving it a name?",
-            150
+            151
         ]
     },
     {
-        "Id": 150,
-        "ActionId": 150,
+        "Id": 151,
+        "ActionId": 151,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2157,8 +2171,8 @@
         ]
     },
     {
-        "Id": 151,
-        "ActionId": 151,
+        "Id": 152,
+        "ActionId": 152,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2171,8 +2185,8 @@
         ]
     },
     {
-        "Id": 152,
-        "ActionId": 152,
+        "Id": 153,
+        "ActionId": 153,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2186,8 +2200,8 @@
         ]
     },
     {
-        "Id": 153,
-        "ActionId": 153,
+        "Id": 154,
+        "ActionId": 154,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -2199,8 +2213,8 @@
         ]
     },
     {
-        "Id": 154,
-        "ActionId": 154,
+        "Id": 155,
+        "ActionId": 155,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2212,8 +2226,8 @@
         ]
     },
     {
-        "Id": 155,
-        "ActionId": 155,
+        "Id": 156,
+        "ActionId": 156,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2225,8 +2239,8 @@
         ]
     },
     {
-        "Id": 156,
-        "ActionId": 156,
+        "Id": 157,
+        "ActionId": 157,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2238,8 +2252,8 @@
         ]
     },
     {
-        "Id": 157,
-        "ActionId": 157,
+        "Id": 158,
+        "ActionId": 158,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -2248,8 +2262,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 158,
-        "ActionId": 158,
+        "Id": 159,
+        "ActionId": 159,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2258,12 +2272,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Since you've got the heating thing down pat, mind boiling some water for me?",
-            159
+            160
         ]
     },
     {
-        "Id": 159,
-        "ActionId": 159,
+        "Id": 160,
+        "ActionId": 160,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -2276,8 +2290,8 @@
         ]
     },
     {
-        "Id": 160,
-        "ActionId": 160,
+        "Id": 161,
+        "ActionId": 161,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -2290,8 +2304,8 @@
         ]
     },
     {
-        "Id": 161,
-        "ActionId": 161,
+        "Id": 162,
+        "ActionId": 162,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2304,8 +2318,8 @@
         ]
     },
     {
-        "Id": 162,
-        "ActionId": 162,
+        "Id": 163,
+        "ActionId": 163,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2314,14 +2328,14 @@
         "EndDelay": 0.0,
         "Params": [
             "(Joke bombed... Assessment: zero sense of humor.)",
-            163,
+            164,
             "(That was actually a bit much...)",
-            163
+            164
         ]
     },
     {
-        "Id": 163,
-        "ActionId": 163,
+        "Id": 164,
+        "ActionId": 164,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2336,8 +2350,8 @@
         ]
     },
     {
-        "Id": 164,
-        "ActionId": 164,
+        "Id": 165,
+        "ActionId": 165,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2352,8 +2366,8 @@
         ]
     },
     {
-        "Id": 165,
-        "ActionId": 165,
+        "Id": 166,
+        "ActionId": 166,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2365,8 +2379,8 @@
         ]
     },
     {
-        "Id": 166,
-        "ActionId": 166,
+        "Id": 167,
+        "ActionId": 167,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2379,8 +2393,8 @@
         ]
     },
     {
-        "Id": 167,
-        "ActionId": 167,
+        "Id": 168,
+        "ActionId": 168,
         "NextActionId": 0,
         "Type": 402,
         "IsBlock": 0,
@@ -2392,8 +2406,8 @@
         ]
     },
     {
-        "Id": 168,
-        "ActionId": 168,
+        "Id": 169,
+        "ActionId": 169,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -2405,8 +2419,8 @@
         ]
     },
     {
-        "Id": 169,
-        "ActionId": 169,
+        "Id": 170,
+        "ActionId": 170,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -2419,8 +2433,8 @@
         ]
     },
     {
-        "Id": 170,
-        "ActionId": 170,
+        "Id": 171,
+        "ActionId": 171,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -2429,20 +2443,6 @@
         "EndDelay": 2000.0,
         "Params": [
             "Assets/Product/Texture/Image/BgStory/BgStory1016.jpg"
-        ]
-    },
-    {
-        "Id": 171,
-        "ActionId": 171,
-        "NextActionId": 0,
-        "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1,
-            5061
         ]
     },
     {
@@ -2455,13 +2455,27 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            2,
-            5886
+            1,
+            5061
         ]
     },
     {
         "Id": 173,
         "ActionId": 173,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5886
+        ]
+    },
+    {
+        "Id": 174,
+        "ActionId": 174,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2475,8 +2489,8 @@
         ]
     },
     {
-        "Id": 174,
-        "ActionId": 174,
+        "Id": 175,
+        "ActionId": 175,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2490,8 +2504,8 @@
         ]
     },
     {
-        "Id": 175,
-        "ActionId": 175,
+        "Id": 176,
+        "ActionId": 176,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2506,8 +2520,8 @@
         ]
     },
     {
-        "Id": 176,
-        "ActionId": 176,
+        "Id": 177,
+        "ActionId": 177,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2520,8 +2534,8 @@
         ]
     },
     {
-        "Id": 177,
-        "ActionId": 177,
+        "Id": 178,
+        "ActionId": 178,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2530,14 +2544,14 @@
         "EndDelay": 0.0,
         "Params": [
             "You're not seriously thinking that making it a snack-size meal will somehow make it chewable, are you?",
-            178,
+            179,
             "A cub this young can't eat solid food yet.",
-            178
+            179
         ]
     },
     {
-        "Id": 178,
-        "ActionId": 178,
+        "Id": 179,
+        "ActionId": 179,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2550,8 +2564,8 @@
         ]
     },
     {
-        "Id": 179,
-        "ActionId": 179,
+        "Id": 180,
+        "ActionId": 180,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2566,8 +2580,8 @@
         ]
     },
     {
-        "Id": 180,
-        "ActionId": 180,
+        "Id": 181,
+        "ActionId": 181,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2576,12 +2590,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Let's just smash this then... at least that'll be something it can actually stomach.",
-            181
+            182
         ]
     },
     {
-        "Id": 181,
-        "ActionId": 181,
+        "Id": 182,
+        "ActionId": 182,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2593,8 +2607,8 @@
         ]
     },
     {
-        "Id": 182,
-        "ActionId": 182,
+        "Id": 183,
+        "ActionId": 183,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -2606,8 +2620,8 @@
         ]
     },
     {
-        "Id": 183,
-        "ActionId": 183,
+        "Id": 184,
+        "ActionId": 184,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2621,8 +2635,8 @@
         ]
     },
     {
-        "Id": 184,
-        "ActionId": 184,
+        "Id": 185,
+        "ActionId": 185,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -2631,8 +2645,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 185,
-        "ActionId": 185,
+        "Id": 186,
+        "ActionId": 186,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2641,12 +2655,12 @@
         "EndDelay": 0.0,
         "Params": [
             "It can't live on blood, and the solution's not made for it.",
-            186
+            187
         ]
     },
     {
-        "Id": 186,
-        "ActionId": 186,
+        "Id": 187,
+        "ActionId": 187,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2662,8 +2676,8 @@
         ]
     },
     {
-        "Id": 187,
-        "ActionId": 187,
+        "Id": 188,
+        "ActionId": 188,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2679,8 +2693,8 @@
         ]
     },
     {
-        "Id": 188,
-        "ActionId": 188,
+        "Id": 189,
+        "ActionId": 189,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2694,8 +2708,8 @@
         ]
     },
     {
-        "Id": 189,
-        "ActionId": 189,
+        "Id": 190,
+        "ActionId": 190,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2704,12 +2718,12 @@
         "EndDelay": 0.0,
         "Params": [
             "What on earth do you think my job is? I'm a soldier.",
-            190
+            191
         ]
     },
     {
-        "Id": 190,
-        "ActionId": 190,
+        "Id": 191,
+        "ActionId": 191,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2722,8 +2736,8 @@
         ]
     },
     {
-        "Id": 191,
-        "ActionId": 191,
+        "Id": 192,
+        "ActionId": 192,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2737,8 +2751,8 @@
         ]
     },
     {
-        "Id": 192,
-        "ActionId": 192,
+        "Id": 193,
+        "ActionId": 193,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -2751,8 +2765,8 @@
         ]
     },
     {
-        "Id": 193,
-        "ActionId": 193,
+        "Id": 194,
+        "ActionId": 194,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2766,8 +2780,8 @@
         ]
     },
     {
-        "Id": 194,
-        "ActionId": 194,
+        "Id": 195,
+        "ActionId": 195,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2780,8 +2794,8 @@
         ]
     },
     {
-        "Id": 195,
-        "ActionId": 195,
+        "Id": 196,
+        "ActionId": 196,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2790,12 +2804,12 @@
         "EndDelay": 0.0,
         "Params": [
             "The solution is a no-brainer: we just need to find it a new mother.",
-            196
+            197
         ]
     },
     {
-        "Id": 196,
-        "ActionId": 196,
+        "Id": 197,
+        "ActionId": 197,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2805,12 +2819,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Even if we take the food issue off the table, it still needs the guidance of a pride to survive on the savanna.",
-            197
+            198
         ]
     },
     {
-        "Id": 197,
-        "ActionId": 197,
+        "Id": 198,
+        "ActionId": 198,
         "NextActionId": 0,
         "Type": 502,
         "IsBlock": 0,
@@ -2822,8 +2836,8 @@
         ]
     },
     {
-        "Id": 198,
-        "ActionId": 198,
+        "Id": 199,
+        "ActionId": 199,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2836,8 +2850,8 @@
         ]
     },
     {
-        "Id": 199,
-        "ActionId": 199,
+        "Id": 200,
+        "ActionId": 200,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -2850,8 +2864,8 @@
         ]
     },
     {
-        "Id": 200,
-        "ActionId": 200,
+        "Id": 201,
+        "ActionId": 201,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -2863,8 +2877,8 @@
         ]
     },
     {
-        "Id": 201,
-        "ActionId": 201,
+        "Id": 202,
+        "ActionId": 202,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -2877,8 +2891,8 @@
         ]
     },
     {
-        "Id": 202,
-        "ActionId": 202,
+        "Id": 203,
+        "ActionId": 203,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2891,8 +2905,8 @@
         ]
     },
     {
-        "Id": 203,
-        "ActionId": 203,
+        "Id": 204,
+        "ActionId": 204,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -2907,8 +2921,8 @@
         ]
     },
     {
-        "Id": 204,
-        "ActionId": 204,
+        "Id": 205,
+        "ActionId": 205,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2924,8 +2938,8 @@
         ]
     },
     {
-        "Id": 205,
-        "ActionId": 205,
+        "Id": 206,
+        "ActionId": 206,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2938,8 +2952,8 @@
         ]
     },
     {
-        "Id": 206,
-        "ActionId": 206,
+        "Id": 207,
+        "ActionId": 207,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -2948,12 +2962,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Good. Let's make this a \"quick in and out\" this time.",
-            207
+            208
         ]
     },
     {
-        "Id": 207,
-        "ActionId": 207,
+        "Id": 208,
+        "ActionId": 208,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -2966,8 +2980,8 @@
         ]
     },
     {
-        "Id": 208,
-        "ActionId": 208,
+        "Id": 209,
+        "ActionId": 209,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -2979,8 +2993,8 @@
         ]
     },
     {
-        "Id": 209,
-        "ActionId": 209,
+        "Id": 210,
+        "ActionId": 210,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -2993,8 +3007,8 @@
         ]
     },
     {
-        "Id": 210,
-        "ActionId": 210,
+        "Id": 211,
+        "ActionId": 211,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3006,8 +3020,8 @@
         ]
     },
     {
-        "Id": 211,
-        "ActionId": 211,
+        "Id": 212,
+        "ActionId": 212,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -3016,8 +3030,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 212,
-        "ActionId": 212,
+        "Id": 213,
+        "ActionId": 213,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3026,12 +3040,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Weird. Multiple prides in a place before migration season...",
-            213
+            214
         ]
     },
     {
-        "Id": 213,
-        "ActionId": 213,
+        "Id": 214,
+        "ActionId": 214,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3045,8 +3059,8 @@
         ]
     },
     {
-        "Id": 214,
-        "ActionId": 214,
+        "Id": 215,
+        "ActionId": 215,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3061,8 +3075,8 @@
         ]
     },
     {
-        "Id": 215,
-        "ActionId": 215,
+        "Id": 216,
+        "ActionId": 216,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3076,8 +3090,8 @@
         ]
     },
     {
-        "Id": 216,
-        "ActionId": 216,
+        "Id": 217,
+        "ActionId": 217,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -3090,8 +3104,8 @@
         ]
     },
     {
-        "Id": 217,
-        "ActionId": 217,
+        "Id": 218,
+        "ActionId": 218,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3104,8 +3118,8 @@
         ]
     },
     {
-        "Id": 218,
-        "ActionId": 218,
+        "Id": 219,
+        "ActionId": 219,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3114,12 +3128,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Shh, you—",
-            219
+            220
         ]
     },
     {
-        "Id": 219,
-        "ActionId": 219,
+        "Id": 220,
+        "ActionId": 220,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -3132,8 +3146,8 @@
         ]
     },
     {
-        "Id": 220,
-        "ActionId": 220,
+        "Id": 221,
+        "ActionId": 221,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3146,8 +3160,8 @@
         ]
     },
     {
-        "Id": 221,
-        "ActionId": 221,
+        "Id": 222,
+        "ActionId": 222,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3160,8 +3174,8 @@
         ]
     },
     {
-        "Id": 222,
-        "ActionId": 222,
+        "Id": 223,
+        "ActionId": 223,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -3174,8 +3188,8 @@
         ]
     },
     {
-        "Id": 223,
-        "ActionId": 223,
+        "Id": 224,
+        "ActionId": 224,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -3189,8 +3203,8 @@
         ]
     },
     {
-        "Id": 224,
-        "ActionId": 224,
+        "Id": 225,
+        "ActionId": 225,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3203,8 +3217,8 @@
         ]
     },
     {
-        "Id": 225,
-        "ActionId": 225,
+        "Id": 226,
+        "ActionId": 226,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3217,8 +3231,8 @@
         ]
     },
     {
-        "Id": 226,
-        "ActionId": 226,
+        "Id": 227,
+        "ActionId": 227,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3230,8 +3244,8 @@
         ]
     },
     {
-        "Id": 227,
-        "ActionId": 227,
+        "Id": 228,
+        "ActionId": 228,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -3243,8 +3257,8 @@
         ]
     },
     {
-        "Id": 228,
-        "ActionId": 228,
+        "Id": 229,
+        "ActionId": 229,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3253,14 +3267,14 @@
         "EndDelay": 0.0,
         "Params": [
             "Do you have a stress response to human contact?",
-            229,
+            230,
             "My bad, I just touched you by accident.",
-            229
+            230
         ]
     },
     {
-        "Id": 229,
-        "ActionId": 229,
+        "Id": 230,
+        "ActionId": 230,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3275,8 +3289,8 @@
         ]
     },
     {
-        "Id": 230,
-        "ActionId": 230,
+        "Id": 231,
+        "ActionId": 231,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3291,8 +3305,8 @@
         ]
     },
     {
-        "Id": 231,
-        "ActionId": 231,
+        "Id": 232,
+        "ActionId": 232,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3304,8 +3318,8 @@
         ]
     },
     {
-        "Id": 232,
-        "ActionId": 232,
+        "Id": 233,
+        "ActionId": 233,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -3318,8 +3332,8 @@
         ]
     },
     {
-        "Id": 233,
-        "ActionId": 233,
+        "Id": 234,
+        "ActionId": 234,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3334,8 +3348,8 @@
         ]
     },
     {
-        "Id": 234,
-        "ActionId": 234,
+        "Id": 235,
+        "ActionId": 235,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -3350,8 +3364,8 @@
         ]
     },
     {
-        "Id": 235,
-        "ActionId": 235,
+        "Id": 236,
+        "ActionId": 236,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -3366,8 +3380,8 @@
         ]
     },
     {
-        "Id": 236,
-        "ActionId": 236,
+        "Id": 237,
+        "ActionId": 237,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -3380,8 +3394,8 @@
         ]
     },
     {
-        "Id": 237,
-        "ActionId": 237,
+        "Id": 238,
+        "ActionId": 238,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3394,8 +3408,8 @@
         ]
     },
     {
-        "Id": 238,
-        "ActionId": 238,
+        "Id": 239,
+        "ActionId": 239,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3409,8 +3423,8 @@
         ]
     },
     {
-        "Id": 239,
-        "ActionId": 239,
+        "Id": 240,
+        "ActionId": 240,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3419,21 +3433,7 @@
         "EndDelay": 0.0,
         "Params": [
             "Whoa, hold on!",
-            240
-        ]
-    },
-    {
-        "Id": 240,
-        "ActionId": 240,
-        "NextActionId": 0,
-        "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1,
-            36
+            241
         ]
     },
     {
@@ -3446,13 +3446,27 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            2,
-            5890
+            1,
+            36
         ]
     },
     {
         "Id": 242,
         "ActionId": 242,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            5890
+        ]
+    },
+    {
+        "Id": 243,
+        "ActionId": 243,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3466,8 +3480,8 @@
         ]
     },
     {
-        "Id": 243,
-        "ActionId": 243,
+        "Id": 244,
+        "ActionId": 244,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3480,20 +3494,6 @@
         ]
     },
     {
-        "Id": 244,
-        "ActionId": 244,
-        "NextActionId": 0,
-        "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "Veronica! What are you doing?!",
-            245
-        ]
-    },
-    {
         "Id": 245,
         "ActionId": 245,
         "NextActionId": 0,
@@ -3503,15 +3503,29 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Hey! Shoving it straight under the lioness's belly is waaaaay too rough!",
-            246,
-            "Wait, just placing the cub under a lioness won't cut it!",
+            "Veronica! What are you doing?!",
             246
         ]
     },
     {
         "Id": 246,
         "ActionId": 246,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Hey! Shoving it straight under the lioness's belly is waaaaay too rough!",
+            247,
+            "Wait, just placing the cub under a lioness won't cut it!",
+            247
+        ]
+    },
+    {
+        "Id": 247,
+        "ActionId": 247,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3524,8 +3538,8 @@
         ]
     },
     {
-        "Id": 247,
-        "ActionId": 247,
+        "Id": 248,
+        "ActionId": 248,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3534,12 +3548,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Forget it! Run!",
-            248
+            249
         ]
     },
     {
-        "Id": 248,
-        "ActionId": 248,
+        "Id": 249,
+        "ActionId": 249,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3552,8 +3566,8 @@
         ]
     },
     {
-        "Id": 249,
-        "ActionId": 249,
+        "Id": 250,
+        "ActionId": 250,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -3566,8 +3580,8 @@
         ]
     },
     {
-        "Id": 250,
-        "ActionId": 250,
+        "Id": 251,
+        "ActionId": 251,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3580,8 +3594,8 @@
         ]
     },
     {
-        "Id": 251,
-        "ActionId": 251,
+        "Id": 252,
+        "ActionId": 252,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -3594,8 +3608,8 @@
         ]
     },
     {
-        "Id": 252,
-        "ActionId": 252,
+        "Id": 253,
+        "ActionId": 253,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3608,8 +3622,8 @@
         ]
     },
     {
-        "Id": 253,
-        "ActionId": 253,
+        "Id": 254,
+        "ActionId": 254,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -3621,8 +3635,8 @@
         ]
     },
     {
-        "Id": 254,
-        "ActionId": 254,
+        "Id": 255,
+        "ActionId": 255,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3631,12 +3645,12 @@
         "EndDelay": 0.0,
         "Params": [
             "I didn't do all those extra workouts just to race lions across the savanna...",
-            255
+            256
         ]
     },
     {
-        "Id": 255,
-        "ActionId": 255,
+        "Id": 256,
+        "ActionId": 256,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -3648,8 +3662,8 @@
         ]
     },
     {
-        "Id": 256,
-        "ActionId": 256,
+        "Id": 257,
+        "ActionId": 257,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3663,8 +3677,8 @@
         ]
     },
     {
-        "Id": 257,
-        "ActionId": 257,
+        "Id": 258,
+        "ActionId": 258,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3680,8 +3694,8 @@
         ]
     },
     {
-        "Id": 258,
-        "ActionId": 258,
+        "Id": 259,
+        "ActionId": 259,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3694,8 +3708,8 @@
         ]
     },
     {
-        "Id": 259,
-        "ActionId": 259,
+        "Id": 260,
+        "ActionId": 260,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -3709,8 +3723,8 @@
         ]
     },
     {
-        "Id": 260,
-        "ActionId": 260,
+        "Id": 261,
+        "ActionId": 261,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -3726,8 +3740,8 @@
         ]
     },
     {
-        "Id": 261,
-        "ActionId": 261,
+        "Id": 262,
+        "ActionId": 262,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -3740,8 +3754,8 @@
         ]
     },
     {
-        "Id": 262,
-        "ActionId": 262,
+        "Id": 263,
+        "ActionId": 263,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3754,8 +3768,8 @@
         ]
     },
     {
-        "Id": 263,
-        "ActionId": 263,
+        "Id": 264,
+        "ActionId": 264,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3765,14 +3779,14 @@
         "EndDelay": 0.0,
         "Params": [
             "What?!",
-            264,
+            265,
             "You did that on purpose...",
-            264
+            265
         ]
     },
     {
-        "Id": 264,
-        "ActionId": 264,
+        "Id": 265,
+        "ActionId": 265,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3785,8 +3799,8 @@
         ]
     },
     {
-        "Id": 265,
-        "ActionId": 265,
+        "Id": 266,
+        "ActionId": 266,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -3798,8 +3812,8 @@
         ]
     },
     {
-        "Id": 266,
-        "ActionId": 266,
+        "Id": 267,
+        "ActionId": 267,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -3812,8 +3826,8 @@
         ]
     },
     {
-        "Id": 267,
-        "ActionId": 267,
+        "Id": 268,
+        "ActionId": 268,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3826,8 +3840,8 @@
         ]
     },
     {
-        "Id": 268,
-        "ActionId": 268,
+        "Id": 269,
+        "ActionId": 269,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3843,8 +3857,8 @@
         ]
     },
     {
-        "Id": 269,
-        "ActionId": 269,
+        "Id": 270,
+        "ActionId": 270,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3859,8 +3873,8 @@
         ]
     },
     {
-        "Id": 270,
-        "ActionId": 270,
+        "Id": 271,
+        "ActionId": 271,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3869,12 +3883,12 @@
         "EndDelay": 0.0,
         "Params": [
             "...",
-            271
+            272
         ]
     },
     {
-        "Id": 271,
-        "ActionId": 271,
+        "Id": 272,
+        "ActionId": 272,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3888,8 +3902,8 @@
         ]
     },
     {
-        "Id": 272,
-        "ActionId": 272,
+        "Id": 273,
+        "ActionId": 273,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -3898,12 +3912,12 @@
         "EndDelay": 0.0,
         "Params": [
             "With your skills, seriously wounding the lioness and forcing it to nurse the cub wouldn't have been too hard, right?",
-            273
+            274
         ]
     },
     {
-        "Id": 273,
-        "ActionId": 273,
+        "Id": 274,
+        "ActionId": 274,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -3915,8 +3929,8 @@
         ]
     },
     {
-        "Id": 274,
-        "ActionId": 274,
+        "Id": 275,
+        "ActionId": 275,
         "NextActionId": 0,
         "Type": 507,
         "IsBlock": 0,
@@ -3928,8 +3942,8 @@
         ]
     },
     {
-        "Id": 275,
-        "ActionId": 275,
+        "Id": 276,
+        "ActionId": 276,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -3945,8 +3959,8 @@
         ]
     },
     {
-        "Id": 276,
-        "ActionId": 276,
+        "Id": 277,
+        "ActionId": 277,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -3960,8 +3974,8 @@
         ]
     },
     {
-        "Id": 277,
-        "ActionId": 277,
+        "Id": 278,
+        "ActionId": 278,
         "NextActionId": 0,
         "Type": 508,
         "IsBlock": 0,
@@ -3970,8 +3984,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 278,
-        "ActionId": 278,
+        "Id": 279,
+        "ActionId": 279,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -3983,8 +3997,8 @@
         ]
     },
     {
-        "Id": 279,
-        "ActionId": 279,
+        "Id": 280,
+        "ActionId": 280,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -3997,8 +4011,8 @@
         ]
     },
     {
-        "Id": 280,
-        "ActionId": 280,
+        "Id": 281,
+        "ActionId": 281,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -4010,8 +4024,8 @@
         ]
     },
     {
-        "Id": 281,
-        "ActionId": 281,
+        "Id": 282,
+        "ActionId": 282,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4024,8 +4038,8 @@
         ]
     },
     {
-        "Id": 282,
-        "ActionId": 282,
+        "Id": 283,
+        "ActionId": 283,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4034,8 +4048,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 283,
-        "ActionId": 283,
+        "Id": 284,
+        "ActionId": 284,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4051,8 +4065,8 @@
         ]
     },
     {
-        "Id": 284,
-        "ActionId": 284,
+        "Id": 285,
+        "ActionId": 285,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4068,8 +4082,8 @@
         ]
     },
     {
-        "Id": 285,
-        "ActionId": 285,
+        "Id": 286,
+        "ActionId": 286,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4082,8 +4096,8 @@
         ]
     },
     {
-        "Id": 286,
-        "ActionId": 286,
+        "Id": 287,
+        "ActionId": 287,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4098,8 +4112,8 @@
         ]
     },
     {
-        "Id": 287,
-        "ActionId": 287,
+        "Id": 288,
+        "ActionId": 288,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -4111,8 +4125,8 @@
         ]
     },
     {
-        "Id": 288,
-        "ActionId": 288,
+        "Id": 289,
+        "ActionId": 289,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -4125,8 +4139,8 @@
         ]
     },
     {
-        "Id": 289,
-        "ActionId": 289,
+        "Id": 290,
+        "ActionId": 290,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4142,8 +4156,8 @@
         ]
     },
     {
-        "Id": 290,
-        "ActionId": 290,
+        "Id": 291,
+        "ActionId": 291,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4157,8 +4171,8 @@
         ]
     },
     {
-        "Id": 291,
-        "ActionId": 291,
+        "Id": 292,
+        "ActionId": 292,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4173,8 +4187,8 @@
         ]
     },
     {
-        "Id": 292,
-        "ActionId": 292,
+        "Id": 293,
+        "ActionId": 293,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -4183,12 +4197,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Huh?",
-            293
+            294
         ]
     },
     {
-        "Id": 293,
-        "ActionId": 293,
+        "Id": 294,
+        "ActionId": 294,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -4201,8 +4215,8 @@
         ]
     },
     {
-        "Id": 294,
-        "ActionId": 294,
+        "Id": 295,
+        "ActionId": 295,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -4214,8 +4228,8 @@
         ]
     },
     {
-        "Id": 295,
-        "ActionId": 295,
+        "Id": 296,
+        "ActionId": 296,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4228,8 +4242,8 @@
         ]
     },
     {
-        "Id": 296,
-        "ActionId": 296,
+        "Id": 297,
+        "ActionId": 297,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -4242,8 +4256,8 @@
         ]
     },
     {
-        "Id": 297,
-        "ActionId": 297,
+        "Id": 298,
+        "ActionId": 298,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -4256,8 +4270,8 @@
         ]
     },
     {
-        "Id": 298,
-        "ActionId": 298,
+        "Id": 299,
+        "ActionId": 299,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4270,8 +4284,8 @@
         ]
     },
     {
-        "Id": 299,
-        "ActionId": 299,
+        "Id": 300,
+        "ActionId": 300,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4283,8 +4297,8 @@
         ]
     },
     {
-        "Id": 300,
-        "ActionId": 300,
+        "Id": 301,
+        "ActionId": 301,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4300,8 +4314,8 @@
         ]
     },
     {
-        "Id": 301,
-        "ActionId": 301,
+        "Id": 302,
+        "ActionId": 302,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4317,8 +4331,8 @@
         ]
     },
     {
-        "Id": 302,
-        "ActionId": 302,
+        "Id": 303,
+        "ActionId": 303,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -4330,8 +4344,8 @@
         ]
     },
     {
-        "Id": 303,
-        "ActionId": 303,
+        "Id": 304,
+        "ActionId": 304,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4344,8 +4358,8 @@
         ]
     },
     {
-        "Id": 304,
-        "ActionId": 304,
+        "Id": 305,
+        "ActionId": 305,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -4360,8 +4374,8 @@
         ]
     },
     {
-        "Id": 305,
-        "ActionId": 305,
+        "Id": 306,
+        "ActionId": 306,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -4373,8 +4387,8 @@
         ]
     },
     {
-        "Id": 306,
-        "ActionId": 306,
+        "Id": 307,
+        "ActionId": 307,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4387,8 +4401,8 @@
         ]
     },
     {
-        "Id": 307,
-        "ActionId": 307,
+        "Id": 308,
+        "ActionId": 308,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4401,8 +4415,8 @@
         ]
     },
     {
-        "Id": 308,
-        "ActionId": 308,
+        "Id": 309,
+        "ActionId": 309,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4415,8 +4429,8 @@
         ]
     },
     {
-        "Id": 309,
-        "ActionId": 309,
+        "Id": 310,
+        "ActionId": 310,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -4429,8 +4443,8 @@
         ]
     },
     {
-        "Id": 310,
-        "ActionId": 310,
+        "Id": 311,
+        "ActionId": 311,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -4443,8 +4457,8 @@
         ]
     },
     {
-        "Id": 311,
-        "ActionId": 311,
+        "Id": 312,
+        "ActionId": 312,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -4460,8 +4474,8 @@
         ]
     },
     {
-        "Id": 312,
-        "ActionId": 312,
+        "Id": 313,
+        "ActionId": 313,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4474,8 +4488,8 @@
         ]
     },
     {
-        "Id": 313,
-        "ActionId": 313,
+        "Id": 314,
+        "ActionId": 314,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4488,8 +4502,8 @@
         ]
     },
     {
-        "Id": 314,
-        "ActionId": 314,
+        "Id": 315,
+        "ActionId": 315,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4502,8 +4516,8 @@
         ]
     },
     {
-        "Id": 315,
-        "ActionId": 315,
+        "Id": 316,
+        "ActionId": 316,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4516,8 +4530,8 @@
         ]
     },
     {
-        "Id": 316,
-        "ActionId": 316,
+        "Id": 317,
+        "ActionId": 317,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4529,8 +4543,8 @@
         ]
     },
     {
-        "Id": 317,
-        "ActionId": 317,
+        "Id": 318,
+        "ActionId": 318,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4542,8 +4556,8 @@
         ]
     },
     {
-        "Id": 318,
-        "ActionId": 318,
+        "Id": 319,
+        "ActionId": 319,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4552,8 +4566,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 319,
-        "ActionId": 319,
+        "Id": 320,
+        "ActionId": 320,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -4562,14 +4576,14 @@
         "EndDelay": 0.0,
         "Params": [
             "It worked! Thank goodness he's not the sharpest tool in the shed.",
-            320,
+            321,
             "I can't believe this is actually working.",
-            320
+            321
         ]
     },
     {
-        "Id": 320,
-        "ActionId": 320,
+        "Id": 321,
+        "ActionId": 321,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -4585,8 +4599,8 @@
         ]
     },
     {
-        "Id": 321,
-        "ActionId": 321,
+        "Id": 322,
+        "ActionId": 322,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -4598,8 +4612,8 @@
         ]
     },
     {
-        "Id": 322,
-        "ActionId": 322,
+        "Id": 323,
+        "ActionId": 323,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4614,8 +4628,8 @@
         ]
     },
     {
-        "Id": 323,
-        "ActionId": 323,
+        "Id": 324,
+        "ActionId": 324,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4628,23 +4642,10 @@
         ]
     },
     {
-        "Id": 324,
-        "ActionId": 324,
-        "NextActionId": 0,
-        "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1
-        ]
-    },
-    {
         "Id": 325,
         "ActionId": 325,
         "NextActionId": 0,
-        "Type": 306,
+        "Type": 202,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
@@ -4657,6 +4658,19 @@
         "Id": 326,
         "ActionId": 326,
         "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 327,
+        "ActionId": 327,
+        "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
         "IsEnd": 0,
@@ -4667,8 +4681,8 @@
         ]
     },
     {
-        "Id": 327,
-        "ActionId": 327,
+        "Id": 328,
+        "ActionId": 328,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4677,8 +4691,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 328,
-        "ActionId": 328,
+        "Id": 329,
+        "ActionId": 329,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4690,8 +4704,8 @@
         ]
     },
     {
-        "Id": 329,
-        "ActionId": 329,
+        "Id": 330,
+        "ActionId": 330,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4707,8 +4721,8 @@
         ]
     },
     {
-        "Id": 330,
-        "ActionId": 330,
+        "Id": 331,
+        "ActionId": 331,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4721,8 +4735,8 @@
         ]
     },
     {
-        "Id": 331,
-        "ActionId": 331,
+        "Id": 332,
+        "ActionId": 332,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -4734,8 +4748,8 @@
         ]
     },
     {
-        "Id": 332,
-        "ActionId": 332,
+        "Id": 333,
+        "ActionId": 333,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4747,8 +4761,8 @@
         ]
     },
     {
-        "Id": 333,
-        "ActionId": 333,
+        "Id": 334,
+        "ActionId": 334,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -4757,14 +4771,14 @@
         "EndDelay": 0.0,
         "Params": [
             "Crap! She's totally doing this on purpose!",
-            334,
+            335,
             "...",
-            334
+            335
         ]
     },
     {
-        "Id": 334,
-        "ActionId": 334,
+        "Id": 335,
+        "ActionId": 335,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4776,8 +4790,8 @@
         ]
     },
     {
-        "Id": 335,
-        "ActionId": 335,
+        "Id": 336,
+        "ActionId": 336,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4789,8 +4803,8 @@
         ]
     },
     {
-        "Id": 336,
-        "ActionId": 336,
+        "Id": 337,
+        "ActionId": 337,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -4799,8 +4813,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 337,
-        "ActionId": 337,
+        "Id": 338,
+        "ActionId": 338,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -4813,8 +4827,8 @@
         ]
     },
     {
-        "Id": 338,
-        "ActionId": 338,
+        "Id": 339,
+        "ActionId": 339,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -4830,8 +4844,8 @@
         ]
     },
     {
-        "Id": 339,
-        "ActionId": 339,
+        "Id": 340,
+        "ActionId": 340,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4844,8 +4858,8 @@
         ]
     },
     {
-        "Id": 340,
-        "ActionId": 340,
+        "Id": 341,
+        "ActionId": 341,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -4861,8 +4875,8 @@
         ]
     },
     {
-        "Id": 341,
-        "ActionId": 341,
+        "Id": 342,
+        "ActionId": 342,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -4874,8 +4888,8 @@
         ]
     },
     {
-        "Id": 342,
-        "ActionId": 342,
+        "Id": 343,
+        "ActionId": 343,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -4891,8 +4905,8 @@
         ]
     },
     {
-        "Id": 343,
-        "ActionId": 343,
+        "Id": 344,
+        "ActionId": 344,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4908,8 +4922,8 @@
         ]
     },
     {
-        "Id": 344,
-        "ActionId": 344,
+        "Id": 345,
+        "ActionId": 345,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4921,8 +4935,8 @@
         ]
     },
     {
-        "Id": 345,
-        "ActionId": 345,
+        "Id": 346,
+        "ActionId": 346,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -4934,8 +4948,8 @@
         ]
     },
     {
-        "Id": 346,
-        "ActionId": 346,
+        "Id": 347,
+        "ActionId": 347,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -4950,8 +4964,8 @@
         ]
     },
     {
-        "Id": 347,
-        "ActionId": 347,
+        "Id": 348,
+        "ActionId": 348,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -4960,15 +4974,15 @@
         "EndDelay": 0.0,
         "Params": [
             "Messing around?!",
-            348,
+            349,
             "(Stay calm, be the bigger person here...)",
-            348,
+            349,
             "..."
         ]
     },
     {
-        "Id": 348,
-        "ActionId": 348,
+        "Id": 349,
+        "ActionId": 349,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -4981,8 +4995,8 @@
         ]
     },
     {
-        "Id": 349,
-        "ActionId": 349,
+        "Id": 350,
+        "ActionId": 350,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -4995,8 +5009,8 @@
         ]
     },
     {
-        "Id": 350,
-        "ActionId": 350,
+        "Id": 351,
+        "ActionId": 351,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5011,8 +5025,8 @@
         ]
     },
     {
-        "Id": 351,
-        "ActionId": 351,
+        "Id": 352,
+        "ActionId": 352,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -5024,8 +5038,8 @@
         ]
     },
     {
-        "Id": 352,
-        "ActionId": 352,
+        "Id": 353,
+        "ActionId": 353,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -5038,8 +5052,8 @@
         ]
     },
     {
-        "Id": 353,
-        "ActionId": 353,
+        "Id": 354,
+        "ActionId": 354,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5052,8 +5066,8 @@
         ]
     },
     {
-        "Id": 354,
-        "ActionId": 354,
+        "Id": 355,
+        "ActionId": 355,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -5062,12 +5076,12 @@
         "EndDelay": 0.0,
         "Params": [
             "(Of course now she doesn't have a delayed reaction...)",
-            355
+            356
         ]
     },
     {
-        "Id": 355,
-        "ActionId": 355,
+        "Id": 356,
+        "ActionId": 356,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5080,8 +5094,8 @@
         ]
     },
     {
-        "Id": 356,
-        "ActionId": 356,
+        "Id": 357,
+        "ActionId": 357,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5094,8 +5108,8 @@
         ]
     },
     {
-        "Id": 357,
-        "ActionId": 357,
+        "Id": 358,
+        "ActionId": 358,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5108,8 +5122,8 @@
         ]
     },
     {
-        "Id": 358,
-        "ActionId": 358,
+        "Id": 359,
+        "ActionId": 359,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -5121,8 +5135,8 @@
         ]
     },
     {
-        "Id": 359,
-        "ActionId": 359,
+        "Id": 360,
+        "ActionId": 360,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5135,8 +5149,8 @@
         ]
     },
     {
-        "Id": 360,
-        "ActionId": 360,
+        "Id": 361,
+        "ActionId": 361,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -5148,8 +5162,8 @@
         ]
     },
     {
-        "Id": 361,
-        "ActionId": 361,
+        "Id": 362,
+        "ActionId": 362,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5162,8 +5176,8 @@
         ]
     },
     {
-        "Id": 362,
-        "ActionId": 362,
+        "Id": 363,
+        "ActionId": 363,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5177,8 +5191,8 @@
         ]
     },
     {
-        "Id": 363,
-        "ActionId": 363,
+        "Id": 364,
+        "ActionId": 364,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5191,8 +5205,8 @@
         ]
     },
     {
-        "Id": 364,
-        "ActionId": 364,
+        "Id": 365,
+        "ActionId": 365,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -5207,8 +5221,8 @@
         ]
     },
     {
-        "Id": 365,
-        "ActionId": 365,
+        "Id": 366,
+        "ActionId": 366,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -5224,8 +5238,8 @@
         ]
     },
     {
-        "Id": 366,
-        "ActionId": 366,
+        "Id": 367,
+        "ActionId": 367,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5235,23 +5249,6 @@
         "Params": [
             2,
             2704
-        ]
-    },
-    {
-        "Id": 367,
-        "ActionId": 367,
-        "NextActionId": 0,
-        "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 250.0,
-        "Params": [
-            1,
-            0.25,
-            500,
-            50,
-            -100
         ]
     },
     {
@@ -5266,28 +5263,14 @@
         "Params": [
             1,
             0.25,
-            550,
-            0,
+            500,
+            50,
             -100
         ]
     },
     {
         "Id": 369,
         "ActionId": 369,
-        "NextActionId": 0,
-        "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            2,
-            2704
-        ]
-    },
-    {
-        "Id": 370,
-        "ActionId": 370,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5297,9 +5280,23 @@
         "Params": [
             1,
             0.25,
-            500,
-            50,
+            550,
+            0,
             -100
+        ]
+    },
+    {
+        "Id": 370,
+        "ActionId": 370,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            2704
         ]
     },
     {
@@ -5314,14 +5311,31 @@
         "Params": [
             1,
             0.25,
-            550,
-            0,
+            500,
+            50,
             -100
         ]
     },
     {
         "Id": 372,
         "ActionId": 372,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            1,
+            0.25,
+            550,
+            0,
+            -100
+        ]
+    },
+    {
+        "Id": 373,
+        "ActionId": 373,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5334,8 +5348,8 @@
         ]
     },
     {
-        "Id": 373,
-        "ActionId": 373,
+        "Id": 374,
+        "ActionId": 374,
         "NextActionId": 0,
         "Type": 502,
         "IsBlock": 0,
@@ -5347,8 +5361,8 @@
         ]
     },
     {
-        "Id": 374,
-        "ActionId": 374,
+        "Id": 375,
+        "ActionId": 375,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5362,8 +5376,8 @@
         ]
     },
     {
-        "Id": 375,
-        "ActionId": 375,
+        "Id": 376,
+        "ActionId": 376,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5376,8 +5390,8 @@
         ]
     },
     {
-        "Id": 376,
-        "ActionId": 376,
+        "Id": 377,
+        "ActionId": 377,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5392,8 +5406,8 @@
         ]
     },
     {
-        "Id": 377,
-        "ActionId": 377,
+        "Id": 378,
+        "ActionId": 378,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5409,8 +5423,8 @@
         ]
     },
     {
-        "Id": 378,
-        "ActionId": 378,
+        "Id": 379,
+        "ActionId": 379,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5426,8 +5440,8 @@
         ]
     },
     {
-        "Id": 379,
-        "ActionId": 379,
+        "Id": 380,
+        "ActionId": 380,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5440,8 +5454,8 @@
         ]
     },
     {
-        "Id": 380,
-        "ActionId": 380,
+        "Id": 381,
+        "ActionId": 381,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5454,8 +5468,8 @@
         ]
     },
     {
-        "Id": 381,
-        "ActionId": 381,
+        "Id": 382,
+        "ActionId": 382,
         "NextActionId": 0,
         "Type": 502,
         "IsBlock": 0,
@@ -5467,8 +5481,8 @@
         ]
     },
     {
-        "Id": 382,
-        "ActionId": 382,
+        "Id": 383,
+        "ActionId": 383,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5481,8 +5495,8 @@
         ]
     },
     {
-        "Id": 383,
-        "ActionId": 383,
+        "Id": 384,
+        "ActionId": 384,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5494,8 +5508,8 @@
         ]
     },
     {
-        "Id": 384,
-        "ActionId": 384,
+        "Id": 385,
+        "ActionId": 385,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5510,8 +5524,8 @@
         ]
     },
     {
-        "Id": 385,
-        "ActionId": 385,
+        "Id": 386,
+        "ActionId": 386,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -5523,8 +5537,8 @@
         ]
     },
     {
-        "Id": 386,
-        "ActionId": 386,
+        "Id": 387,
+        "ActionId": 387,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5539,8 +5553,8 @@
         ]
     },
     {
-        "Id": 387,
-        "ActionId": 387,
+        "Id": 388,
+        "ActionId": 388,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5553,8 +5567,8 @@
         ]
     },
     {
-        "Id": 388,
-        "ActionId": 388,
+        "Id": 389,
+        "ActionId": 389,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -5569,8 +5583,8 @@
         ]
     },
     {
-        "Id": 389,
-        "ActionId": 389,
+        "Id": 390,
+        "ActionId": 390,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5582,8 +5596,8 @@
         ]
     },
     {
-        "Id": 390,
-        "ActionId": 390,
+        "Id": 391,
+        "ActionId": 391,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5596,8 +5610,8 @@
         ]
     },
     {
-        "Id": 391,
-        "ActionId": 391,
+        "Id": 392,
+        "ActionId": 392,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -5606,12 +5620,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Wait.",
-            392
+            393
         ]
     },
     {
-        "Id": 392,
-        "ActionId": 392,
+        "Id": 393,
+        "ActionId": 393,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5624,8 +5638,8 @@
         ]
     },
     {
-        "Id": 393,
-        "ActionId": 393,
+        "Id": 394,
+        "ActionId": 394,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5639,8 +5653,8 @@
         ]
     },
     {
-        "Id": 394,
-        "ActionId": 394,
+        "Id": 395,
+        "ActionId": 395,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5652,8 +5666,8 @@
         ]
     },
     {
-        "Id": 395,
-        "ActionId": 395,
+        "Id": 396,
+        "ActionId": 396,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5668,8 +5682,8 @@
         ]
     },
     {
-        "Id": 396,
-        "ActionId": 396,
+        "Id": 397,
+        "ActionId": 397,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -5681,8 +5695,8 @@
         ]
     },
     {
-        "Id": 397,
-        "ActionId": 397,
+        "Id": 398,
+        "ActionId": 398,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -5691,12 +5705,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Excuse me, if I might just cut in for a second.",
-            398
+            399
         ]
     },
     {
-        "Id": 398,
-        "ActionId": 398,
+        "Id": 399,
+        "ActionId": 399,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -5708,8 +5722,8 @@
         ]
     },
     {
-        "Id": 399,
-        "ActionId": 399,
+        "Id": 400,
+        "ActionId": 400,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -5722,8 +5736,8 @@
         ]
     },
     {
-        "Id": 400,
-        "ActionId": 400,
+        "Id": 401,
+        "ActionId": 401,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -5736,8 +5750,8 @@
         ]
     },
     {
-        "Id": 401,
-        "ActionId": 401,
+        "Id": 402,
+        "ActionId": 402,
         "NextActionId": 0,
         "Type": 104,
         "IsBlock": 0,
@@ -5750,8 +5764,8 @@
         ]
     },
     {
-        "Id": 402,
-        "ActionId": 402,
+        "Id": 403,
+        "ActionId": 403,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5765,28 +5779,14 @@
         ]
     },
     {
-        "Id": 403,
-        "ActionId": 403,
+        "Id": 404,
+        "ActionId": 404,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0
-    },
-    {
-        "Id": 404,
-        "ActionId": 404,
-        "NextActionId": 0,
-        "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "I just want her to have a full belly before she heads back.",
-            405
-        ]
     },
     {
         "Id": 405,
@@ -5798,15 +5798,29 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "We humans have this thing called \"child support.\"",
-            406,
-            "We humans don't believe in working for free.",
+            "I just want her to have a full belly before she heads back.",
             406
         ]
     },
     {
         "Id": 406,
         "ActionId": 406,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "We humans have this thing called \"child support.\"",
+            407,
+            "We humans don't believe in working for free.",
+            407
+        ]
+    },
+    {
+        "Id": 407,
+        "ActionId": 407,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -5822,8 +5836,8 @@
         ]
     },
     {
-        "Id": 407,
-        "ActionId": 407,
+        "Id": 408,
+        "ActionId": 408,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5839,8 +5853,8 @@
         ]
     },
     {
-        "Id": 408,
-        "ActionId": 408,
+        "Id": 409,
+        "ActionId": 409,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -5853,8 +5867,8 @@
         ]
     },
     {
-        "Id": 409,
-        "ActionId": 409,
+        "Id": 410,
+        "ActionId": 410,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5868,8 +5882,8 @@
         ]
     },
     {
-        "Id": 410,
-        "ActionId": 410,
+        "Id": 411,
+        "ActionId": 411,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -5878,23 +5892,9 @@
         "EndDelay": 0.0,
         "Params": [
             "Thanks for the compliment. I did put more thought into this than you did.",
-            411,
+            412,
             "Naturally.",
-            411
-        ]
-    },
-    {
-        "Id": 411,
-        "ActionId": 411,
-        "NextActionId": 0,
-        "Type": 401,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            2,
-            2704
+            412
         ]
     },
     {
@@ -5908,12 +5908,26 @@
         "EndDelay": 0.0,
         "Params": [
             2,
-            4640
+            2704
         ]
     },
     {
         "Id": 413,
         "ActionId": 413,
+        "NextActionId": 0,
+        "Type": 401,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            2,
+            4640
+        ]
+    },
+    {
+        "Id": 414,
+        "ActionId": 414,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -5925,8 +5939,8 @@
         ]
     },
     {
-        "Id": 414,
-        "ActionId": 414,
+        "Id": 415,
+        "ActionId": 415,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5938,8 +5952,8 @@
         ]
     },
     {
-        "Id": 415,
-        "ActionId": 415,
+        "Id": 416,
+        "ActionId": 416,
         "NextActionId": 0,
         "Type": 402,
         "IsBlock": 0,
@@ -5951,8 +5965,8 @@
         ]
     },
     {
-        "Id": 416,
-        "ActionId": 416,
+        "Id": 417,
+        "ActionId": 417,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -5966,8 +5980,8 @@
         ]
     },
     {
-        "Id": 417,
-        "ActionId": 417,
+        "Id": 418,
+        "ActionId": 418,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -5980,8 +5994,8 @@
         ]
     },
     {
-        "Id": 418,
-        "ActionId": 418,
+        "Id": 419,
+        "ActionId": 419,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -5990,14 +6004,14 @@
         "EndDelay": 0.0,
         "Params": [
             "(Tsk... This is kind of embarrassing.)",
-            419,
+            420,
             "(What an appetite...)",
-            419
+            420
         ]
     },
     {
-        "Id": 419,
-        "ActionId": 419,
+        "Id": 420,
+        "ActionId": 420,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -6009,8 +6023,8 @@
         ]
     },
     {
-        "Id": 420,
-        "ActionId": 420,
+        "Id": 421,
+        "ActionId": 421,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6022,8 +6036,8 @@
         ]
     },
     {
-        "Id": 421,
-        "ActionId": 421,
+        "Id": 422,
+        "ActionId": 422,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6038,8 +6052,8 @@
         ]
     },
     {
-        "Id": 422,
-        "ActionId": 422,
+        "Id": 423,
+        "ActionId": 423,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6054,8 +6068,8 @@
         ]
     },
     {
-        "Id": 423,
-        "ActionId": 423,
+        "Id": 424,
+        "ActionId": 424,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6064,14 +6078,14 @@
         "EndDelay": 0.0,
         "Params": [
             "You go on, her cubs are waiting for her.",
-            424,
+            425,
             "Right, her cubs must be starving by now. Drop her off and be back as soon as you can.",
-            424
+            425
         ]
     },
     {
-        "Id": 424,
-        "ActionId": 424,
+        "Id": 425,
+        "ActionId": 425,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6083,8 +6097,8 @@
         ]
     },
     {
-        "Id": 425,
-        "ActionId": 425,
+        "Id": 426,
+        "ActionId": 426,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -6097,8 +6111,8 @@
         ]
     },
     {
-        "Id": 426,
-        "ActionId": 426,
+        "Id": 427,
+        "ActionId": 427,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6112,8 +6126,8 @@
         ]
     },
     {
-        "Id": 427,
-        "ActionId": 427,
+        "Id": 428,
+        "ActionId": 428,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6126,8 +6140,8 @@
         ]
     },
     {
-        "Id": 428,
-        "ActionId": 428,
+        "Id": 429,
+        "ActionId": 429,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -6140,8 +6154,8 @@
         ]
     },
     {
-        "Id": 429,
-        "ActionId": 429,
+        "Id": 430,
+        "ActionId": 430,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -6154,8 +6168,8 @@
         ]
     },
     {
-        "Id": 430,
-        "ActionId": 430,
+        "Id": 431,
+        "ActionId": 431,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -6168,8 +6182,8 @@
         ]
     },
     {
-        "Id": 431,
-        "ActionId": 431,
+        "Id": 432,
+        "ActionId": 432,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -6182,8 +6196,8 @@
         ]
     },
     {
-        "Id": 432,
-        "ActionId": 432,
+        "Id": 433,
+        "ActionId": 433,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -6196,8 +6210,8 @@
         ]
     },
     {
-        "Id": 433,
-        "ActionId": 433,
+        "Id": 434,
+        "ActionId": 434,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6210,8 +6224,8 @@
         ]
     },
     {
-        "Id": 434,
-        "ActionId": 434,
+        "Id": 435,
+        "ActionId": 435,
         "NextActionId": 0,
         "Type": 402,
         "IsBlock": 0,
@@ -6223,8 +6237,8 @@
         ]
     },
     {
-        "Id": 435,
-        "ActionId": 435,
+        "Id": 436,
+        "ActionId": 436,
         "NextActionId": 0,
         "Type": 505,
         "IsBlock": 0,
@@ -6236,8 +6250,8 @@
         ]
     },
     {
-        "Id": 436,
-        "ActionId": 436,
+        "Id": 437,
+        "ActionId": 437,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6249,8 +6263,8 @@
         ]
     },
     {
-        "Id": 437,
-        "ActionId": 437,
+        "Id": 438,
+        "ActionId": 438,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6259,12 +6273,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Huh?",
-            438
+            439
         ]
     },
     {
-        "Id": 438,
-        "ActionId": 438,
+        "Id": 439,
+        "ActionId": 439,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6280,8 +6294,8 @@
         ]
     },
     {
-        "Id": 439,
-        "ActionId": 439,
+        "Id": 440,
+        "ActionId": 440,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6294,8 +6308,8 @@
         ]
     },
     {
-        "Id": 440,
-        "ActionId": 440,
+        "Id": 441,
+        "ActionId": 441,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -6307,8 +6321,8 @@
         ]
     },
     {
-        "Id": 441,
-        "ActionId": 441,
+        "Id": 442,
+        "ActionId": 442,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -6321,8 +6335,8 @@
         ]
     },
     {
-        "Id": 442,
-        "ActionId": 442,
+        "Id": 443,
+        "ActionId": 443,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6334,8 +6348,8 @@
         ]
     },
     {
-        "Id": 443,
-        "ActionId": 443,
+        "Id": 444,
+        "ActionId": 444,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6344,14 +6358,14 @@
         "EndDelay": 0.0,
         "Params": [
             "Did you go fetch her this early?",
-            444,
+            445,
             "Thank you.",
-            444
+            445
         ]
     },
     {
-        "Id": 444,
-        "ActionId": 444,
+        "Id": 445,
+        "ActionId": 445,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6367,8 +6381,8 @@
         ]
     },
     {
-        "Id": 445,
-        "ActionId": 445,
+        "Id": 446,
+        "ActionId": 446,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6383,8 +6397,8 @@
         ]
     },
     {
-        "Id": 446,
-        "ActionId": 446,
+        "Id": 447,
+        "ActionId": 447,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6398,23 +6412,10 @@
         ]
     },
     {
-        "Id": 447,
-        "ActionId": 447,
-        "NextActionId": 0,
-        "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1
-        ]
-    },
-    {
         "Id": 448,
         "ActionId": 448,
         "NextActionId": 0,
-        "Type": 306,
+        "Type": 202,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
@@ -6427,6 +6428,19 @@
         "Id": 449,
         "ActionId": 449,
         "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 450,
+        "ActionId": 450,
+        "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
         "IsEnd": 0,
@@ -6438,30 +6452,14 @@
         ]
     },
     {
-        "Id": 450,
-        "ActionId": 450,
+        "Id": 451,
+        "ActionId": 451,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
         "EndDelay": 0.0
-    },
-    {
-        "Id": 451,
-        "ActionId": 451,
-        "NextActionId": 0,
-        "Type": 302,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            "Well, either way, we still have to pay her for her work.",
-            452,
-            "We can't let her do this for nothing.",
-            452
-        ]
     },
     {
         "Id": 452,
@@ -6473,13 +6471,29 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "I wonder if there are any porcupines left around here. Finding them is going to be a real pain... I barely managed to snag one yesterday—",
+            "Well, either way, we still have to pay her for her work.",
+            453,
+            "We can't let her do this for nothing.",
             453
         ]
     },
     {
         "Id": 453,
         "ActionId": 453,
+        "NextActionId": 0,
+        "Type": 302,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "I wonder if there are any porcupines left around here. Finding them is going to be a real pain... I barely managed to snag one yesterday—",
+            454
+        ]
+    },
+    {
+        "Id": 454,
+        "ActionId": 454,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6495,8 +6509,8 @@
         ]
     },
     {
-        "Id": 454,
-        "ActionId": 454,
+        "Id": 455,
+        "ActionId": 455,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6512,8 +6526,8 @@
         ]
     },
     {
-        "Id": 455,
-        "ActionId": 455,
+        "Id": 456,
+        "ActionId": 456,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6525,8 +6539,8 @@
         ]
     },
     {
-        "Id": 456,
-        "ActionId": 456,
+        "Id": 457,
+        "ActionId": 457,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -6539,8 +6553,8 @@
         ]
     },
     {
-        "Id": 457,
-        "ActionId": 457,
+        "Id": 458,
+        "ActionId": 458,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6555,8 +6569,8 @@
         ]
     },
     {
-        "Id": 458,
-        "ActionId": 458,
+        "Id": 459,
+        "ActionId": 459,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -6568,8 +6582,8 @@
         ]
     },
     {
-        "Id": 459,
-        "ActionId": 459,
+        "Id": 460,
+        "ActionId": 460,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -6585,8 +6599,8 @@
         ]
     },
     {
-        "Id": 460,
-        "ActionId": 460,
+        "Id": 461,
+        "ActionId": 461,
         "NextActionId": 0,
         "Type": 205,
         "IsBlock": 0,
@@ -6598,8 +6612,8 @@
         ]
     },
     {
-        "Id": 461,
-        "ActionId": 461,
+        "Id": 462,
+        "ActionId": 462,
         "NextActionId": 0,
         "Type": 501,
         "IsBlock": 0,
@@ -6612,8 +6626,8 @@
         ]
     },
     {
-        "Id": 462,
-        "ActionId": 462,
+        "Id": 463,
+        "ActionId": 463,
         "NextActionId": 0,
         "Type": 111,
         "IsBlock": 0,
@@ -6626,8 +6640,8 @@
         ]
     },
     {
-        "Id": 463,
-        "ActionId": 463,
+        "Id": 464,
+        "ActionId": 464,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6641,8 +6655,8 @@
         ]
     },
     {
-        "Id": 464,
-        "ActionId": 464,
+        "Id": 465,
+        "ActionId": 465,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -6654,8 +6668,8 @@
         ]
     },
     {
-        "Id": 465,
-        "ActionId": 465,
+        "Id": 466,
+        "ActionId": 466,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -6667,8 +6681,8 @@
         ]
     },
     {
-        "Id": 466,
-        "ActionId": 466,
+        "Id": 467,
+        "ActionId": 467,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6681,8 +6695,8 @@
         ]
     },
     {
-        "Id": 467,
-        "ActionId": 467,
+        "Id": 468,
+        "ActionId": 468,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6698,8 +6712,8 @@
         ]
     },
     {
-        "Id": 468,
-        "ActionId": 468,
+        "Id": 469,
+        "ActionId": 469,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6714,8 +6728,8 @@
         ]
     },
     {
-        "Id": 469,
-        "ActionId": 469,
+        "Id": 470,
+        "ActionId": 470,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -6728,8 +6742,8 @@
         ]
     },
     {
-        "Id": 470,
-        "ActionId": 470,
+        "Id": 471,
+        "ActionId": 471,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6743,8 +6757,8 @@
         ]
     },
     {
-        "Id": 471,
-        "ActionId": 471,
+        "Id": 472,
+        "ActionId": 472,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6753,12 +6767,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Wow, what a haul! You're a natural. I would've just been a third wheel.",
-            472
+            473
         ]
     },
     {
-        "Id": 472,
-        "ActionId": 472,
+        "Id": 473,
+        "ActionId": 473,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -6771,8 +6785,8 @@
         ]
     },
     {
-        "Id": 473,
-        "ActionId": 473,
+        "Id": 474,
+        "ActionId": 474,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6784,8 +6798,8 @@
         ]
     },
     {
-        "Id": 474,
-        "ActionId": 474,
+        "Id": 475,
+        "ActionId": 475,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6799,23 +6813,10 @@
         ]
     },
     {
-        "Id": 475,
-        "ActionId": 475,
-        "NextActionId": 0,
-        "Type": 202,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 0.0,
-        "Params": [
-            1
-        ]
-    },
-    {
         "Id": 476,
         "ActionId": 476,
         "NextActionId": 0,
-        "Type": 306,
+        "Type": 202,
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
@@ -6828,6 +6829,19 @@
         "Id": 477,
         "ActionId": 477,
         "NextActionId": 0,
+        "Type": 306,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 478,
+        "ActionId": 478,
+        "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
         "IsEnd": 0,
@@ -6839,8 +6853,8 @@
         ]
     },
     {
-        "Id": 478,
-        "ActionId": 478,
+        "Id": 479,
+        "ActionId": 479,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6852,8 +6866,8 @@
         ]
     },
     {
-        "Id": 479,
-        "ActionId": 479,
+        "Id": 480,
+        "ActionId": 480,
         "NextActionId": 0,
         "Type": 402,
         "IsBlock": 0,
@@ -6865,8 +6879,8 @@
         ]
     },
     {
-        "Id": 480,
-        "ActionId": 480,
+        "Id": 481,
+        "ActionId": 481,
         "NextActionId": 0,
         "Type": 306,
         "IsBlock": 0,
@@ -6875,8 +6889,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 481,
-        "ActionId": 481,
+        "Id": 482,
+        "ActionId": 482,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -6891,8 +6905,8 @@
         ]
     },
     {
-        "Id": 482,
-        "ActionId": 482,
+        "Id": 483,
+        "ActionId": 483,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6907,8 +6921,8 @@
         ]
     },
     {
-        "Id": 483,
-        "ActionId": 483,
+        "Id": 484,
+        "ActionId": 484,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6917,12 +6931,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Huh?",
-            484
+            485
         ]
     },
     {
-        "Id": 484,
-        "ActionId": 484,
+        "Id": 485,
+        "ActionId": 485,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6936,8 +6950,8 @@
         ]
     },
     {
-        "Id": 485,
-        "ActionId": 485,
+        "Id": 486,
+        "ActionId": 486,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -6946,12 +6960,12 @@
         "EndDelay": 0.0,
         "Params": [
             "Yikes!",
-            486
+            487
         ]
     },
     {
-        "Id": 486,
-        "ActionId": 486,
+        "Id": 487,
+        "ActionId": 487,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -6964,8 +6978,8 @@
         ]
     },
     {
-        "Id": 487,
-        "ActionId": 487,
+        "Id": 488,
+        "ActionId": 488,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -6978,8 +6992,8 @@
         ]
     },
     {
-        "Id": 488,
-        "ActionId": 488,
+        "Id": 489,
+        "ActionId": 489,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -6992,8 +7006,8 @@
         ]
     },
     {
-        "Id": 489,
-        "ActionId": 489,
+        "Id": 490,
+        "ActionId": 490,
         "NextActionId": 0,
         "Type": 101,
         "IsBlock": 0,
@@ -7005,8 +7019,8 @@
         ]
     },
     {
-        "Id": 490,
-        "ActionId": 490,
+        "Id": 491,
+        "ActionId": 491,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7019,8 +7033,8 @@
         ]
     },
     {
-        "Id": 491,
-        "ActionId": 491,
+        "Id": 492,
+        "ActionId": 492,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7033,8 +7047,8 @@
         ]
     },
     {
-        "Id": 492,
-        "ActionId": 492,
+        "Id": 493,
+        "ActionId": 493,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7047,8 +7061,8 @@
         ]
     },
     {
-        "Id": 493,
-        "ActionId": 493,
+        "Id": 494,
+        "ActionId": 494,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7061,8 +7075,8 @@
         ]
     },
     {
-        "Id": 494,
-        "ActionId": 494,
+        "Id": 495,
+        "ActionId": 495,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7075,8 +7089,8 @@
         ]
     },
     {
-        "Id": 495,
-        "ActionId": 495,
+        "Id": 496,
+        "ActionId": 496,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7090,8 +7104,8 @@
         ]
     },
     {
-        "Id": 496,
-        "ActionId": 496,
+        "Id": 497,
+        "ActionId": 497,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7103,8 +7117,8 @@
         ]
     },
     {
-        "Id": 497,
-        "ActionId": 497,
+        "Id": 498,
+        "ActionId": 498,
         "NextActionId": 0,
         "Type": 302,
         "IsBlock": 0,
@@ -7113,12 +7127,12 @@
         "EndDelay": 0.0,
         "Params": [
             "She's the one who really calls the shots around here.",
-            498
+            499
         ]
     },
     {
-        "Id": 498,
-        "ActionId": 498,
+        "Id": 499,
+        "ActionId": 499,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7130,8 +7144,8 @@
         ]
     },
     {
-        "Id": 499,
-        "ActionId": 499,
+        "Id": 500,
+        "ActionId": 500,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7144,8 +7158,8 @@
         ]
     },
     {
-        "Id": 500,
-        "ActionId": 500,
+        "Id": 501,
+        "ActionId": 501,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7159,8 +7173,8 @@
         ]
     },
     {
-        "Id": 501,
-        "ActionId": 501,
+        "Id": 502,
+        "ActionId": 502,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7177,8 +7191,8 @@
         ]
     },
     {
-        "Id": 502,
-        "ActionId": 502,
+        "Id": 503,
+        "ActionId": 503,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7191,8 +7205,8 @@
         ]
     },
     {
-        "Id": 503,
-        "ActionId": 503,
+        "Id": 504,
+        "ActionId": 504,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -7202,22 +7216,6 @@
         "Params": [
             1,
             0.3,
-            -100
-        ]
-    },
-    {
-        "Id": 504,
-        "ActionId": 504,
-        "NextActionId": 0,
-        "Type": 203,
-        "IsBlock": 0,
-        "IsEnd": 0,
-        "BeginDelay": 0.0,
-        "EndDelay": 250.0,
-        "Params": [
-            1,
-            0.2,
-            -50,
             -100
         ]
     },
@@ -7233,12 +7231,28 @@
         "Params": [
             1,
             0.2,
+            -50,
             -100
         ]
     },
     {
         "Id": 506,
         "ActionId": 506,
+        "NextActionId": 0,
+        "Type": 203,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 250.0,
+        "Params": [
+            1,
+            0.2,
+            -100
+        ]
+    },
+    {
+        "Id": 507,
+        "ActionId": 507,
         "NextActionId": 0,
         "Type": 204,
         "IsBlock": 0,
@@ -7251,8 +7265,8 @@
         ]
     },
     {
-        "Id": 507,
-        "ActionId": 507,
+        "Id": 508,
+        "ActionId": 508,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -7265,8 +7279,8 @@
         ]
     },
     {
-        "Id": 508,
-        "ActionId": 508,
+        "Id": 509,
+        "ActionId": 509,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7281,8 +7295,8 @@
         ]
     },
     {
-        "Id": 509,
-        "ActionId": 509,
+        "Id": 510,
+        "ActionId": 510,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7298,8 +7312,8 @@
         ]
     },
     {
-        "Id": 510,
-        "ActionId": 510,
+        "Id": 511,
+        "ActionId": 511,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -7313,8 +7327,8 @@
         ]
     },
     {
-        "Id": 511,
-        "ActionId": 511,
+        "Id": 512,
+        "ActionId": 512,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -7328,8 +7342,8 @@
         ]
     },
     {
-        "Id": 512,
-        "ActionId": 512,
+        "Id": 513,
+        "ActionId": 513,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7343,8 +7357,8 @@
         ]
     },
     {
-        "Id": 513,
-        "ActionId": 513,
+        "Id": 514,
+        "ActionId": 514,
         "NextActionId": 0,
         "Type": 202,
         "IsBlock": 0,
@@ -7358,8 +7372,8 @@
         ]
     },
     {
-        "Id": 514,
-        "ActionId": 514,
+        "Id": 515,
+        "ActionId": 515,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7375,8 +7389,8 @@
         ]
     },
     {
-        "Id": 515,
-        "ActionId": 515,
+        "Id": 516,
+        "ActionId": 516,
         "NextActionId": 0,
         "Type": 401,
         "IsBlock": 0,
@@ -7389,8 +7403,8 @@
         ]
     },
     {
-        "Id": 516,
-        "ActionId": 516,
+        "Id": 517,
+        "ActionId": 517,
         "NextActionId": 0,
         "Type": 203,
         "IsBlock": 0,
@@ -7405,8 +7419,8 @@
         ]
     },
     {
-        "Id": 517,
-        "ActionId": 517,
+        "Id": 518,
+        "ActionId": 518,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7422,8 +7436,8 @@
         ]
     },
     {
-        "Id": 518,
-        "ActionId": 518,
+        "Id": 519,
+        "ActionId": 519,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7437,8 +7451,8 @@
         ]
     },
     {
-        "Id": 519,
-        "ActionId": 519,
+        "Id": 520,
+        "ActionId": 520,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -7452,8 +7466,8 @@
         ]
     },
     {
-        "Id": 520,
-        "ActionId": 520,
+        "Id": 521,
+        "ActionId": 521,
         "NextActionId": 0,
         "Type": 201,
         "IsBlock": 0,
@@ -7469,8 +7483,8 @@
         ]
     },
     {
-        "Id": 521,
-        "ActionId": 521,
+        "Id": 522,
+        "ActionId": 522,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,

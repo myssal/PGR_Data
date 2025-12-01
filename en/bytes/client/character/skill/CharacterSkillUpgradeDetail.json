@@ -16651,7 +16651,7 @@
             "Gains different abilities based on <color=#D91414>Observation Notes</color>:\\n- When Ishmael is Tank: Attacks reduce the target's Extra DMG Reduction.\\n- When Ishmael is Amplifier: All switched-in members gain extra ATK. Ishmael: Parhelion's DMG Bonus of the corresponding element increases."
         ],
         "SpecificDes": [
-            "Gains different abilities based on <color=#D91414>Observation Notes</color>:\\n- When Ishmael is Tank: Attacks reduce the target's Extra DMG Reduction by <color=#D91414>{0}%</color> for <color=#D91414>5</color>s.\\n- When Ishmael is Fire or Dark Amplifier: All switched-in members gain an extra <color=#D91414>{1}%</color> ATK. Ishmael: Parhelion's DMG Bonus of the corresponding element increases by <color=#D91414>{2}%</color> for <color=#D91414>10</color>s.\\n- When Ishmael is Amplifier of other elements: All switched-in members gain an extra <color=#D91414>{3}%</color> ATK. Ishmael: Parhelion's DMG Bonus of the corresponding element increases by <color=#D91414>{4}%</color> for <color=#D91414>10</color>s."
+            "Gains different abilities based on <color=#D91414>Observation Notes</color>:\\n- When Ishmael is Tank: Attacks reduce the target's Extra DMG Reduction by <color=#D91414>{0}%</color> for <color=#D91414>5</color>s.\\n- When Ishmael is Fire, Dark, or Ice Amplifier: All switched-in members gain an extra <color=#D91414>{1}%</color> ATK. Ishmael: Parhelion's DMG Bonus of the corresponding element increases by <color=#D91414>{2}%</color> for <color=#D91414>10</color>s.\\n- When Ishmael is Amplifier of other elements: All switched-in members gain an extra <color=#D91414>{3}%</color> ATK. Ishmael: Parhelion's DMG Bonus of the corresponding element increases by <color=#D91414>{4}%</color> for <color=#D91414>10</color>s."
         ]
     },
     {
@@ -20826,6 +20826,409 @@
             "Extra DMG of <color=#D91414>Thousand Rays</color> and <color=#D91414>Dawn Dream</color> increases by <color=#D91414>50%</color>.",
             "Extra DMG of <color=#D91414>Heavenly Flash</color> and <color=#D91414>Mirror Blade Orbs</color> increases by <color=#D91414>50%</color>.",
             "Extra DMG of <color=#D91414>Signature - Cosmic Rebirth</color> increases by <color=#D91414>40%</color>."
+        ]
+    },
+    {
+        "RefId": 1293010,
+        "Desc": "Dual-Feed Rotor",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghong1.png",
+        "TypeDes": "Red Neon Orb",
+        "Title": [
+            "Feedforward Activation: <color=#0d70bc>Outside Digital Space + Ping White Noise Signal Orbs 3 Times + Tap Red Neon Orb</color>",
+            "Feedback Collapse: <color=#0d70bc>Inside Digital Space + Ping Brownian Signal Orbs 3 Times + Tap Red Neon Orb</color>"
+        ],
+        "BriefDes": [
+            "从数域空间中召唤一只熊爪攻击敌人并造成冰属性伤害。\\n-每记录一颗白噪信号球，额外造成冰属性伤害并获得<color=#D91414>20</color>点必杀能量，如果记录超过<color=#D91414>8</color>颗白噪信号球，额外获得<color=#D91414>8</color>点必杀能量。",
+            "Summons a teddy within Digital Space to perform a headbutt that stirs up digital waves, attacking enemies and dealing Ice DMG."
+        ],
+        "SpecificDes": [
+            "从数域空间中召唤一只熊爪攻击敌人并造成<color=#D91414>{0}%</color>冰属性伤害。\\n-每记录一颗白噪信号球，额外造成<color=#D91414>{1}%</color>冰属性伤害并获得<color=#D91414>20</color>点必杀能量，如果记录超过<color=#D91414>8</color>颗白噪信号球，额外获得<color=#D91414>8</color>点必杀能量。",
+            "Summons a teddy within Digital Space to perform a headbutt that stirs up digital waves, attacking enemies and dealing <color=#D91414>{0}%</color> Ice DMG."
+        ]
+    },
+    {
+        "RefId": 1293060,
+        "Desc": "Ultra Bass Reverb",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghuang1.png",
+        "TypeDes": "Yellow Neon Orb",
+        "EntryId": [
+            111
+        ],
+        "Title": [
+            "Dual-Channel Percussion: <color=#0d70bc>Switch In</color>",
+            "Deafening Blast: <color=#0d70bc>Switch In + Tap Yellow Neon Orb</color>",
+            "Noise Floor Haywire: <color=#0d70bc>Inside Digital Space + 3rd Hit of Basic Attack + Tap Yellow Neon Orb</color>"
+        ],
+        "BriefDes": [
+            "Uses magnetic bombardment to deal Ice DMG to enemies. While casting, gains Super Armor and DMG Reduction, and activates <color=#D91414>Yellow Neon Orb</color>.\\n- If carrying <color=#D91414>Exposure Mark</color>, deals Raydiance DMG instead.",
+            "从数域空间中召唤两只巨大熊掌拍击敌人造成冰属性伤害并额外获得<color=#D91414>200</color>点必杀能量。\\n-如果携带<color=#D91414>曝闪印记</color>转而造成熠光伤害并在后摇期间激活<color=#D91414>黄色霓虹球</color>。\\n-再次点击黄色霓虹球释放<color=#D91414>脉噪声贯通</color>，跃向空中召唤熊熊发射激光持续对敌人造成熠光伤害，后释放<color=#D91414>脉冲爆震</color>对敌人造成熠光伤害，累计获得<color=#D91414>1000</color>熠光积蓄值，若<color=#D91414>熠光槽</color>满，随后激活<color=#D91414>圣辉浸礼状态</color>，释放期间触发<color=#D91414>时滞演算</color>。",
+            "Launches a swinging attack while airborne to tear through space, attacking enemies and dealing Ice DMG."
+        ],
+        "SpecificDes": [
+            "Uses magnetic bombardment to deal <color=#D91414>{0}%</color> Ice DMG to enemies. While casting, gains Super Armor and <color=#D91414>50%</color> DMG Reduction, and activates <color=#D91414>Yellow Neon Orb</color>.\\n- If carrying <color=#D91414>Exposure Mark</color>, deals <color=#D91414>{1}%</color> Raydiance DMG instead.",
+            "从数域空间中召唤两只巨大熊掌拍击敌人造成<color=#D91414>{0}%</color>冰属性伤害并额外获得<color=#D91414>200</color>点必杀能量。\\n-如果携带<color=#D91414>曝闪印记</color>转而造成<color=#D91414>{1}%</color>熠光伤害并在后摇期间激活<color=#D91414>黄色霓虹球</color>。\\n-再次点击黄色霓虹球释放<color=#D91414>脉噪声贯通</color>，跃向空中召唤熊熊发射激光持续对敌人造成<color=#D91414>{2}%</color>熠光伤害，后释放<color=#D91414>脉冲爆震</color>对敌人造成<color=#D91414>{3}%</color>熠光伤害，累计获得<color=#D91414>1000</color>熠光积蓄值，若<color=#D91414>熠光槽</color>满，随后激活<color=#D91414>圣辉浸礼状态</color>，释放期间触发<color=#D91414>时滞演算</color>。",
+            "Launches a swinging attack while airborne to tear through space, attacking enemies and dealing <color=#D91414>{0}%</color> Ice DMG."
+        ]
+    },
+    {
+        "RefId": 1293110,
+        "Desc": "Mega Distortion",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionglan1.png",
+        "TypeDes": "Blue Neon Orb",
+        "Title": [
+            "Blue Neon Orb: <color=#0d70bc>Inside Digital Space + Press and Hold Basic Attack + Tap Blue Neon Orb</color>"
+        ],
+        "BriefDes": [
+            "Summons a giant teddy from Digital Space to attack enemies and deal Ice DMG."
+        ],
+        "SpecificDes": [
+            "Summons a giant teddy from Digital Space to attack enemies and deal <color=#D91414>{0}%</color> Ice DMG."
+        ]
+    },
+    {
+        "RefId": 1293160,
+        "Desc": "Fourier Expansion",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxiongpugong1.png",
+        "TypeDes": "Basic Attack",
+        "Title": [
+            "Positive Transformation: <color=#0d70bc>Outside Digital Space + Tap Basic Attack</color>",
+            "Inverse Transform: <color=#0d70bc>Inside Digital Space + Tap Basic Attack</color>",
+            "Pre-Amplification: <color=#0d70bc>Inside Digital Space + Press and Hold Basic Attack</color>"
+        ],
+        "BriefDes": [
+            "召唤十字键刃攻击敌人并造成冰属性伤害。\\n-每段普攻后长按普攻可持续造成伤害，期间信号球回复效率提升<color=#D91414>100%</color>。\\n-造成持续伤害期间松开普攻后短时间内自动闪避比人攻击并释放<color=#D91414>调谐滤波</color>的闪避反击对敌人造成*冰属性伤害。",
+            "从数域空间中召唤闪烁噪和十字键刃攻击敌人，如果处于低空中，则转变为普攻第二段攻击敌人，当释放<color=#D91414>红色霓虹球</color>或<color=#D91414>蓝色霓虹球</color>技能后，点击普攻转变为普攻三段攻击敌人。",
+            "Launches a spinning attack while airborne, dealing Ice DMG and activating Blue Neon Orb during the end lag."
+        ],
+        "SpecificDes": [
+            "召唤十字键刃攻击敌人并造成冰属性伤害。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害。\\n-释放第一/二/三段普攻后长按普攻分别造成<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>/<color=#D91414>{3}%</color>冰属性伤害，期间信号球回复效率提升<color=#D91414>100%</color>。\\n-造成持续伤害期间松开普攻后短时间内自动闪避敌人攻击并释放<color=#D91414>调谐滤波</color>的闪避反击对敌人造成<color=#D91414>{4}%</color>冰属性伤害。",
+            "从数域空间中召唤闪烁噪和十字键刃攻击敌人，如果处于低空中，则转变为普攻第二段攻击敌人，当释放<color=#D91414>红色霓虹球</color>或<color=#D91414>蓝色霓虹球</color>技能后，点击普攻转变为普攻三段攻击敌人。\\n-共造成<color=#D91414>{0}%</color>冰属性伤害",
+            "Launches a spinning attack while airborne, activating <color=#D91414>Blue Neon Orb</color> during the end lag.\\n- Deals <color=#D91414>{0}%</color> Ice DMG in total."
+        ]
+    },
+    {
+        "RefId": 1293170,
+        "Desc": "Z-Transform",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxiongdazhao1.png",
+        "TypeDes": "Signature Move",
+        "EntryId": [
+            111
+        ],
+        "Title": [
+            "Digital Space: New Dimension Expansion: <color=#0d70bc>Outside Digital Space + At Least 200 Signature Energy + Tap Signature</color>",
+            "Digital Space: Barrier Rift: <color=#0d70bc>Inside Digital Space + Tap Signature</color>",
+            "Digital Space: Flash Retention"
+        ],
+        "BriefDes": [
+            "展开数域空间，造成冰属性伤害并停留在空中，处于数域空间内每<color=#D91414>0.1</color>秒消耗<color=#D91414>1</color>点必杀能量，技能释放期间获得霸体和<color=#D91414>50%</color>的伤害减免，普通攻击、消除信号球无法获得必杀能量，释放期间触发<color=#D91414>时滞演算</color>。",
+            "蓄力跃向空中飞踢敌人，造成冰属性伤害；数域空间内每记录一种霓虹球颜色，额外造成冰属性伤害，结束后清除霓虹球色记录，释放期间触发<color=#D91414>时滞演算</color>。",
+            "释放<color=#D91414>数域空间·势垒裂隙</color>后，我方角色攻击命中敌人时，额外召唤熊爪对敌人进行追击造成冰属性伤害并对在场角色造成治疗，<color=#D91414>数域空间·闪烁留存</color>本身无法触发该效果，且有<color=#D91414>1</color>秒的冷却时间。\\n-<color=#D91414>数域空间·新维度展开</color>期间记录<color=#D91414>1/2/3</color>种霓虹球颜色，根据记录霓虹球色数获得<color=#D91414>5/7/12</color>次<color=#D91414>数域空间·闪烁留存</color>，最多持续<color=#D91414>30</color>秒。\\n-若携带<color=#D91414>曝闪印记</color>并释放<color=#D91414>脉噪声贯通</color>，立刻获得<color=#D91414>12</color>次<color=#D91414>数域空间·闪烁留存</color>转而造成熠光伤害。"
+        ],
+        "SpecificDes": [
+            "展开数域空间，造成<color=#D91414>{0}%</color>冰属性伤害并停留在空中，处于数域空间内每<color=#D91414>0.1</color>秒消耗<color=#D91414>1</color>点必杀能量，技能释放期间获得霸体和<color=#D91414>50%</color>的伤害减免，普通攻击、消除信号球无法获得必杀能量，释放期间触发<color=#D91414>时滞演算</color>。",
+            "蓄力跃向空中飞踢敌人，造成<color=#D91414>{0}%</color>冰属性伤害；数域空间内记录<color=#D91414>1/2/3</color>种霓虹球颜色，分别额外造成<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>/<color=#D91414>{3}%</color>冰属性伤害，结束后清除霓虹球色记录，释放期间触发<color=#D91414>时滞演算</color>。",
+            "释放<color=#D91414>数域空间·势垒裂隙</color>后，我方角色攻击命中敌人时，额外召唤熊爪对敌人进行追击造成<color=#D91414>{0}%</color>冰属性伤害并对在场角色造成<color=#D91414>{1}%</color>攻击力的治疗，<color=#D91414>数域空间·闪烁留存</color>本身无法触发该效果，且有<color=#D91414>1</color>秒的冷却时间。\\n-<color=#D91414>数域空间·新维度展开</color>期间记录<color=#D91414>1/2/3</color>种霓虹球颜色，根据记录霓虹球色数获得<color=#D91414>5/7/12</color>次<color=#D91414>数域空间·闪烁留存</color>，最多持续<color=#D91414>30</color>秒。\\n-若携带<color=#D91414>曝闪印记</color>并释放<color=#D91414>脉噪声贯通</color>，立刻获得<color=#D91414>12</color>次<color=#D91414>数域空间·闪烁留存</color>转而造成<color=#D91414>{2}%</color>熠光伤害。"
+        ]
+    },
+    {
+        "RefId": 1293180,
+        "Desc": "Parametric Equalizer",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/QTE1.png",
+        "TypeDes": "QTE",
+        "Title": [
+            "QTE— <color=#0d70bc>Tap QTE</color>"
+        ],
+        "BriefDes": [
+            "造成伤害并施加治疗。\\n-若携带<color=#D91414>曝闪印记</color>，转而造成熠光伤害。"
+        ],
+        "SpecificDes": [
+            "Deals DMG and heals.\\n- Deals a total of <color=#D91414>{0}%</color> Ice DMG.\\n- If carrying <color=#D91414>Exposure Mark</color>, deals <color=#D91414>{1}%</color> Raydiance DMG instead.\\n- Restores HP equal to <color=#D91414>{2}%</color> of ATK."
+        ]
+    },
+    {
+        "RefId": 1293210,
+        "Desc": "Integrated Neon",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghexin1.png",
+        "TypeDes": "Core Passive",
+        "EntryId": [
+            21,
+            45
+        ],
+        "Title": [
+            "Phonograph Circuit",
+            "Inverted Buffer: <color=#0d70bc>Outside Digital Space + Tap White Noise Orb</color>",
+            "Mirrorflow Matrix: <color=#0d70bc>Inside Digital Space + Tap Brownian Orb</color>",
+            "Hacked Mark",
+            "Analog-Digital Conversion",
+            "Tuned Filter: <color=#0d70bc>Press and hold Dodge</color>",
+            "Op-Amp Overflow",
+            "Coupling Interference: <color=#0d70bc>Tap Energy Bar</color>",
+            "Trickster: <color=#0d70bc>Move Joystick + Press and Hold Dodge</color>"
+        ],
+        "BriefDes": [
+            "在数域空间外只能获得<color=#D91414>白噪信号球</color>；数域空间内获得无限的<color=#D91414>布朗信号球</color>；球栏一号位固定为霓虹球位，在释放特定技能的后摇期间可激活对应颜色的<color=#D91414>霓虹球</color>，霓虹球视为三消信号球，释放期间获得霸体和<color=#D91414>75%</color>伤害减免。\\n-当队伍选择<color=#D91414>熠光</color>效应时，视为布偶熊·骇影携带<color=#D91414>曝闪印记</color>。",
+            "跃向空中并下落使用骑士踢攻击敌人，上升时可连续消除信号球召唤矩阵轰炸敌人，第三次消除所有白噪信号球，上升期间无敌并拥有闪避判定，最多记录<color=#D91414>16</color>颗白噪信号球。\\n-下落时使用骑士踢攻击敌人，后摇期间激活红色霓虹球，下落期间获得霸体和伤害减免。\\n-<color=#D91414>红色霓虹球-前馈启动</color>释放时，根据记录的白噪信号球数造成额外冰属性伤害且回复必杀能量。",
+            "Attacks enemies, pinging up to 3 times consecutively and dealing Ice DMG. Activates <color=#D91414>Red Neon Orb</color> during the end lag of the third hit.",
+            "各色霓虹球技能以及<color=#D91414>必杀-数域空间·闪烁留存</color>的攻击会对首个命中的目标施加<color=#D91414>骇破标记</color>，持续<color=#D91414>10</color>秒，被骇入的目标受到伤害时，对目标区域追加进行轰炸攻击，场上最多同时存在<color=#D91414>1</color>枚<color=#D91414>骇破标记</color>。被骇入的目标死亡时，<color=#D91414>骇破标记</color>会就近传播并重置持续时间。\\n-轰炸攻击造成冰属性伤害，<color=#D91414>必杀-数域空间·势垒裂隙</color>会引爆印记对骇入目标造成冰属性伤害。\\n-若携带<color=#D91414>曝闪印记</color>，轰炸攻击转而造成熠光伤害。",
+            "数域空间内释放霓虹球技能时，记录其霓虹球颜色，并扣除至多<color=#D91414>1/3</color>必杀能量上限的必杀能量，每种颜色最多被记录一次。每消耗霓虹球释放对应技能时，自身获得治疗并根据当前记录霓虹球颜色数目对敌人造成额外冰属性伤害。",
+            "成功闪避时，长按闪避可以反击对敌人造成冰属性伤害，闪避反击期间长按闪避如果再次受到攻击，则扣除<color=#D91414>250</color>闪避值并再次反击对敌人造成冰属性伤害。\\n-数域空间内召唤熊熊手掌爪击敌人并造成冰属性伤害，后摇期间激活特殊霓虹球，消除特殊霓虹球对敌人造成冰属性伤害，获得<color=#D91414>90</color>点必杀能量，并清除初次记录的霓虹球颜色。",
+            "受到布偶熊·骇影治疗的友方单位获得冰属性伤害提升<color=#D91414>20%</color>的<color=#D91414>极凝霜晶</color>效果，熠光伤害提升<color=#D91414>22.5%</color>的<color=#D91414>频闪光伏</color>效果，持续<color=#D91414>8</color>秒，重复触发刷新持续时间。",
+            "Summons bear claws to attack enemies, dealing Ice DMG.",
+            "Accumulates <color=#D91414>Raydiance Gauge</color>. When the gauge is full, Bianca can enter <color=#D91414>Radiant Baptism Form</color> through some skills and gain <color=#D91414>10</color> stacks of <color=#D91414>Radiant Crown</color>. Some skills consume <color=#D91414>Radiant Crown</color> stacks and grant enhancements while triggering <color=#D91414>Radiant Embrace</color> to deal Raydiance DMG.\\n- <color=#D91414>Raydiance Gauge</color> is capped at <color=#D91414>1000</color> points.\\n- <color=#D91414>Radiant Embrace</color> deals <color=#D91414>330%</color> Raydiance DMG."
+        ],
+        "SpecificDes": [
+            "在数域空间外只能获得<color=#D91414>白噪信号球</color>；数域空间内获得无限的<color=#D91414>布朗信号球</color>；球栏一号位固定为霓虹球位，在释放特定技能的后摇期间可激活对应颜色的<color=#D91414>霓虹球</color>，霓虹球视为三消信号球，释放期间获得霸体和<color=#D91414>75%</color>伤害减免。\\n-当队伍选择<color=#D91414>熠光</color>效应时，视为布偶熊·骇影携带<color=#D91414>曝闪印记</color>。",
+            "跃向空中并下落使用骑士踢攻击敌人，上升时可连续消除信号球召唤矩阵轰炸敌人，第三次消除所有白噪信号球，上升期间无敌并拥有闪避判定，最多记录<color=#D91414>16</color>颗白噪信号球。\\n-每次消除白噪信号球造成<color=#D91414>{0}%</color>冰属性伤害。\\n-下落时使用骑士踢攻击敌人造成<color=#D91414>{1}%</color>冰属性伤害，后摇期间激活红色霓虹球，下落期间获得霸体和<color=#D91414>50%</color>伤害减免。\\n-<color=#D91414>红色霓虹球-前馈启动</color>释放时，根据记录的白噪信号球数造成额外冰属性伤害且回复必杀能量。",
+            "Attack enemies, pinging up to 3 times consecutively and dealing <color=#D91414>{0}%</color>/<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color> Ice DMG respectively. Activates <color=#D91414>Red Neon Orb</color> during the end lag of the third hit.",
+            "各色霓虹球技能以及<color=#D91414>必杀-数域空间·闪烁留存</color>的攻击会对首个命中的目标施加<color=#D91414>骇破标记</color>，持续<color=#D91414>10</color>秒，被骇入的目标受到伤害时，对目标区域追加进行轰炸攻击，场上最多同时存在<color=#D91414>1</color>枚<color=#D91414>骇破标记</color>。被骇入的目标死亡时，<color=#D91414>骇破标记</color>会就近传播并重置持续时间。\\n-轰炸攻击造成<color=#D91414>{0}%</color>冰属性伤害，<color=#D91414>必杀-数域空间·势垒裂隙</color>会引爆印记对骇入目标造成<color=#D91414>{1}%</color>冰属性伤害。\\n-若携带<color=#D91414>曝闪印记</color>，轰炸攻击转而造成<color=#D91414>{2}%</color>熠光伤害。",
+            "数域空间内释放霓虹球技能时，记录其霓虹球颜色，并扣除至多<color=#D91414>1/3</color>必杀能量上限的必杀能量，每种颜色最多被记录一次。每消耗霓虹球释放对应技能时，自身获得<color=#D91414>{0}%</color>攻击力的治疗效果，根据当前记录1/2/3种霓虹球颜色分别对敌人造成<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color>/<color=#D91414>{3}%</color>冰属性伤害",
+            "成功闪避时，长按闪避可以反击对敌人造成<color=#D91414>{0}%</color>冰属性伤害，闪避反击期间长按闪避如果再次受到攻击，则扣除<color=#D91414>250</color>闪避值并再次反击对敌人造成<color=#D91414>{1}%</color>冰属性伤害。\\n-数域空间内召唤熊熊手掌爪击敌人并造成<color=#D91414>{2}%</color>冰属性伤害，后摇期间激活特殊霓虹球，消除特殊霓虹球对敌人造成<color=#D91414>{3}%</color>冰属性伤害，获得<color=#D91414>90</color>点必杀能量，并清除初次记录的霓虹球颜色。",
+            "受到布偶熊·骇影治疗的友方单位获得冰属性伤害提升<color=#D91414>20%</color>的<color=#D91414>极凝霜晶</color>效果，熠光伤害提升<color=#D91414>22.5%</color>的<color=#D91414>频闪光伏</color>效果，持续<color=#D91414>8</color>秒，重复触发刷新持续时间。",
+            "Summons bear claws to attack enemies, dealing <color=#D91414>{0}%</color>/<color=#D91414>{1}%</color>/<color=#D91414>{2}%</color> Ice DMG respectively.",
+            "Accumulates <color=#D91414>Raydiance Gauge</color>. When the gauge is full, Bianca can enter <color=#D91414>Radiant Baptism Form</color> through some skills and gain <color=#D91414>10</color> stacks of <color=#D91414>Radiant Crown</color>. Some skills consume <color=#D91414>Radiant Crown</color> stacks and grant enhancements while triggering <color=#D91414>Radiant Embrace</color> to deal Raydiance DMG.\\n- <color=#D91414>Raydiance Gauge</color> is capped at <color=#D91414>1000</color> points.\\n- <color=#D91414>Radiant Embrace</color> deals <color=#D91414>330%</color> Raydiance DMG."
+        ]
+    },
+    {
+        "RefId": 1293220,
+        "Desc": "Leader - \"Classified Domain\"",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongA1.png",
+        "TypeDes": "Leader Skill",
+        "BriefDes": [
+            "Increases ATK of all members by <color=#D91414>10%</color>. Increases Ice DMG and Raydiance DMG of all Amplifiers in the team by <color=#D91414>5%</color>."
+        ],
+        "SpecificDes": [
+            "Increases ATK of all members by <color=#D91414>10%</color>. Increases Ice DMG and Raydiance DMG of all Amplifiers in the team by <color=#D91414>5%</color>."
+        ]
+    },
+    {
+        "RefId": 1293230,
+        "Desc": "Amplifier",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Buouxionghexin1.png",
+        "TypeDes": "Class Skill",
+        "BriefDes": [
+            "全队成员切换入场时，攻击力增加，增幅型角色对应的属性伤害加成提高，熠光伤害提高。"
+        ],
+        "SpecificDes": [
+            "全队成员切换入场时，攻击力增加<color=#D91414>{0}%</color>，增幅型角色对应的属性伤害加成提高<color=#D91414>{1}%</color>，熠光伤害提高<color=#D91414>{2}%</color>，持续<color=#D91414>10</color>s。"
+        ]
+    },
+    {
+        "RefId": 1293270,
+        "Desc": "Ultima Awaken",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/Jiefang1.png",
+        "TypeDes": "Ultima Awaken",
+        "Title": [
+            "Gains 3 Signal Orbs when entering battle."
+        ],
+        "BriefDes": [
+            "Gains 3 Signal Orbs when entering battle."
+        ],
+        "SpecificDes": [
+            "Gains 3 Signal Orbs when entering battle."
+        ]
+    },
+    {
+        "RefId": 1293240,
+        "Desc": "Distortion Compensation",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS Rank Passive Skill",
+        "Title": [
+            "<color=#99a3b1>Lv.1: <color=#0d70bc>Unlocked at S5 Rank</color></color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SS Rank</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>释放霓虹球和必杀-数域空间·势垒裂隙时，激活未冷却的QTE。</color>",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，普攻-逆变换基础伤害提升125%，普攻-前级放大基础伤害提升75%，核心被动-流镜矩阵基础伤害提升100%，霓虹球激活期间，获得无敌状态，释放黄色霓虹球-脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲爆震获得5%的基础伤害加成。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>释放霓虹球和必杀-数域空间·势垒裂隙时，激活未冷却的QTE。</color>",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，普攻-逆变换基础伤害提升125%，普攻-前级放大基础伤害提升75%，核心被动-流镜矩阵基础伤害提升100%，霓虹球激活期间，获得无敌状态，释放黄色霓虹球-脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲爆震获得5%的基础伤害加成。</color>"
+        ]
+    },
+    {
+        "RefId": 1293241,
+        "Desc": "Distortion Compensation",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS Rank Passive Skill",
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at S5 Rank</color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SS Rank</color></color>"
+        ],
+        "BriefDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>必杀-数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，普攻-逆变换基础伤害提升125%，普攻-前级放大基础伤害提升75%，核心被动-流镜矩阵基础伤害提升100%，霓虹球激活期间，获得无敌状态，释放黄色霓虹球-脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲爆震获得5%的基础伤害加成。</color>"
+        ],
+        "SpecificDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>必杀-数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "<color=#99a3b1>切换入场时获得三颗白噪信号球，普攻-逆变换基础伤害提升125%，普攻-前级放大基础伤害提升75%，核心被动-流镜矩阵基础伤害提升100%，霓虹球激活期间，获得无敌状态，释放黄色霓虹球-脉噪声贯通期间会自动消除白噪信号球，每消除1颗白噪信号球，脉冲爆震获得5%的基础伤害加成。</color>"
+        ]
+    },
+    {
+        "RefId": 1293242,
+        "Desc": "Distortion Compensation",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongS1.png",
+        "TypeDes": "SS Rank Passive Skill",
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at S5 Rank</color>",
+            "Lv.2: <color=#0d70bc>Unlocked at SS Rank</color>"
+        ],
+        "BriefDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>必杀-数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "切换入场时获得三颗白噪信号球，<color=#D91414>普攻-逆变换</color>基础伤害提升<color=#D91414>125%</color>，<color=#D91414>普攻-前级放大</color>基础伤害提升<color=#D91414>75%</color>，<color=#D91414>核心被动-流镜矩阵</color>基础伤害提升<color=#D91414>100%</color>，霓虹球激活期间，获得无敌状态，释放<color=#D91414>黄色霓虹球-脉噪声贯通</color>期间会自动消除白噪信号球，每消除<color=#D91414>1</color>颗白噪信号球，<color=#D91414>脉冲爆震</color>获得<color=#D91414>5%</color>的基础伤害加成。"
+        ],
+        "SpecificDes": [
+            "释放<color=#D91414>霓虹球</color>和<color=#D91414>必杀-数域空间·势垒裂隙</color>时，激活未冷却的QTE。",
+            "切换入场时获得三颗白噪信号球，<color=#D91414>普攻-逆变换</color>基础伤害提升<color=#D91414>125%</color>，<color=#D91414>普攻-前级放大</color>基础伤害提升<color=#D91414>75%</color>，<color=#D91414>核心被动-流镜矩阵</color>基础伤害提升<color=#D91414>100%</color>，霓虹球激活期间，获得无敌状态，释放<color=#D91414>黄色霓虹球-脉噪声贯通</color>期间会自动消除白噪信号球，每消除<color=#D91414>1</color>颗白噪信号球，<color=#D91414>脉冲爆震</color>获得<color=#D91414>5%</color>的基础伤害加成。"
+        ]
+    },
+    {
+        "RefId": 1293250,
+        "Desc": "Smooth Impedance",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS Rank Passive Skill",
+        "EntryId": [
+            21,
+            45
+        ],
+        "Title": [
+            "<color=#99a3b1>Lv.1: <color=#0d70bc>Unlocked at SS3 Rank</color></color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SSS Rank</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-霓虹球和核心被动-模数转换的基础伤害提升60%，核心被动-骇破标记的基础伤害提升50%。</color>",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-每记录一种霓虹球，必杀-数域空间·势垒裂隙基础伤害提升30%。\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-必杀-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-霓虹球和核心被动-模数转换的基础伤害提升60%，核心被动-骇破标记的基础伤害提升50%。</color>",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-每记录一种霓虹球，必杀-数域空间·势垒裂隙基础伤害提升30%。\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-必杀-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293251,
+        "Desc": "Smooth Impedance",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS Rank Passive Skill",
+        "EntryId": [
+            21,
+            45
+        ],
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at SS3 Rank</color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SSS Rank</color></color>"
+        ],
+        "BriefDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的基础伤害提升<color=#D91414>60%</color>，<color=#D91414>核心被动-骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-每记录一种霓虹球，必杀-数域空间·势垒裂隙基础伤害提升30%。\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-必杀-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ],
+        "SpecificDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的基础伤害提升<color=#D91414>60%</color>，<color=#D91414>核心被动-骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得极凝霜晶效果提升10%，频闪光伏效果提升11.25%。\\n-每记录一种霓虹球，必杀-数域空间·势垒裂隙基础伤害提升30%。\\n-如果布偶熊·骇影在队伍中，光冕层数上限增加10。\\n-必杀-数域空间·闪烁留存基础伤害提升100%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293252,
+        "Desc": "Smooth Impedance",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSS1.png",
+        "TypeDes": "SSS Rank Passive Skill",
+        "EntryId": [
+            21,
+            45
+        ],
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at SS3 Rank</color>",
+            "Lv.2: <color=#0d70bc>Unlocked at SSS Rank</color>"
+        ],
+        "BriefDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的基础伤害提升<color=#D91414>60%</color>，<color=#D91414>核心被动-骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-每记录一种霓虹球，<color=#D91414>必杀-数域空间·势垒裂隙</color>基础伤害提升<color=#D91414>30%</color>。\\n-如果布偶熊·骇影在队伍中，<color=#D91414>光冕层数</color>上限增加<color=#D91414>10</color>。\\n-<color=#D91414>必杀-数域空间·闪烁留存</color>基础伤害提升<color=#D91414>100%</color>。"
+        ],
+        "SpecificDes": [
+            "受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的基础伤害提升<color=#D91414>60%</color>，<color=#D91414>核心被动-骇破标记</color>的基础伤害提升<color=#D91414>50%</color>。",
+            "全队切换入场时，重置QTE技能冷却时间。 \\n-受到布偶熊·骇影治疗的友方单位获得<color=#D91414>极凝霜晶</color>效果提升<color=#D91414>10%</color>，<color=#D91414>频闪光伏</color>效果提升<color=#D91414>11.25%</color>。\\n-每记录一种霓虹球，<color=#D91414>必杀-数域空间·势垒裂隙</color>基础伤害提升<color=#D91414>30%</color>。\\n-如果布偶熊·骇影在队伍中，<color=#D91414>光冕层数</color>上限增加<color=#D91414>10</color>。\\n-<color=#D91414>必杀-数域空间·闪烁留存</color>基础伤害提升<color=#D91414>100%</color>。"
+        ]
+    },
+    {
+        "RefId": 1293260,
+        "Desc": "Common-Source Overclock",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+ Rank Passive Skill",
+        "Title": [
+            "<color=#99a3b1>Lv.1: <color=#0d70bc>Unlocked at SSS3 Rank</color></color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SSS6 Rank</color></color>",
+            "<color=#99a3b1>Lv.3: <color=#0d70bc>Unlocked at SSS+ Rank</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#99a3b1>普攻-逆变换，普攻-前级放大，核心被动-流镜矩阵的额外伤害加成提升100%，核心被动-骇破印记的额外伤害加成提升50%。</color>",
+            "<color=#99a3b1>霓虹球和核心被动-模数转换的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#99a3b1>普攻-逆变换，普攻-前级放大，核心被动-流镜矩阵的额外伤害加成提升100%，核心被动-骇破印记的额外伤害加成提升50%。</color>",
+            "<color=#99a3b1>霓虹球和核心被动-模数转换的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293261,
+        "Desc": "Common-Source Overclock",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+ Rank Passive Skill",
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at SSS3 Rank</color>",
+            "<color=#99a3b1>Lv.2: <color=#0d70bc>Unlocked at SSS6 Rank</color></color>",
+            "<color=#99a3b1>Lv.3: <color=#0d70bc>Unlocked at SSS+ Rank</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>霓虹球和核心被动-模数转换的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#99a3b1>霓虹球和核心被动-模数转换的额外伤害加成提升100%。</color>",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293262,
+        "Desc": "Common-Source Overclock",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+ Rank Passive Skill",
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at SSS3 Rank</color>",
+            "Lv.2: <color=#0d70bc>Unlocked at SSS6 Rank</color>",
+            "<color=#99a3b1>Lv.3: <color=#0d70bc>Unlocked at SSS+ Rank</color></color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#99a3b1>必杀-数域空间·势垒裂隙的额外伤害加成提升80%，必杀-数域空间·闪烁留存的额外伤害加成提升50%。</color>"
+        ]
+    },
+    {
+        "RefId": 1293263,
+        "Desc": "Common-Source Overclock",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3BuouxiongSSS1.png",
+        "TypeDes": "SSS+ Rank Passive Skill",
+        "Title": [
+            "Lv.1: <color=#0d70bc>Unlocked at SSS3 Rank</color>",
+            "Lv.2: <color=#0d70bc>Unlocked at SSS6 Rank</color>",
+            "Lv.3: <color=#0d70bc>Unlocked at SSS+ Rank</color>"
+        ],
+        "BriefDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#D91414>必杀-数域空间·势垒裂隙</color>的额外伤害加成提升<color=#D91414>80%</color>，<color=#D91414>必杀-数域空间·闪烁留存</color>的额外伤害加成提升<color=#D91414>50%</color>。"
+        ],
+        "SpecificDes": [
+            "<color=#D91414>普攻-逆变换</color>，<color=#D91414>普攻-前级放大</color>，<color=#D91414>核心被动-流镜矩阵</color>的额外伤害加成提升<color=#D91414>100%</color>，<color=#D91414>核心被动-骇破印记</color>的额外伤害加成提升<color=#D91414>50%</color>。",
+            "<color=#D91414>霓虹球</color>和<color=#D91414>核心被动-模数转换</color>的额外伤害加成提升<color=#D91414>100%</color>。",
+            "<color=#D91414>必杀-数域空间·势垒裂隙</color>的额外伤害加成提升<color=#D91414>80%</color>，<color=#D91414>必杀-数域空间·闪烁留存</color>的额外伤害加成提升<color=#D91414>50%</color>。"
         ]
     }
 ]

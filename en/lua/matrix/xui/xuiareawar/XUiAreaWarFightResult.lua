@@ -4,21 +4,22 @@ local ToInt = XMath.ToInt
 --local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
 
 local XUiAreaWarFightResult = XLuaUiManager.Register(XLuaUi, "UiAreaWarFightResult")
+local XUiGridAreaWarItem = require("XUi/XUiAreaWar/XUiGridAreaWarItem")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiAreaWarFightResult:OnAwake()
     self:AutoAddListener()
-    self.TxtRemainHp.gameObject:SetActiveEx(false)
-    self.TxtRewardNumber.gameObject:SetActiveEx(false)
     self.GridRewards = {}
 end
 
 function XUiAreaWarFightResult:OnStart(data, closeCb)
     self.WinData = data
     self.CloseCb = closeCb
-
+    self:ConfirmRequest()
     local endTime = XDataCenter.AreaWarManager.GetEndTime()
     self.EndTime = endTime
     self:SetAutoCloseInfo(endTime, handler(self, self.OnCheckActivity))
+    self.BtnEndExplore.gameObject:SetActiveEx(false)
 end
 
 function XUiAreaWarFightResult:OnEnable()
@@ -39,9 +40,11 @@ function XUiAreaWarFightResult:UpdateView()
     self.GridScoreInfo1.gameObject:SetActiveEx(not isQuest)
     self.GridScoreInfo2.gameObject:SetActiveEx(not isQuest)
     self.GridScoreInfo3.gameObject:SetActiveEx(not isQuest)
-    self.AllScore.gameObject:SetActiveEx(not isQuest)
+    -- self.AllScore.gameObject:SetActiveEx(not isQuest)
     self.PanelSearch.gameObject:SetActiveEx(isQuest)
-    
+    self.TxtConsumeAgain.gameObject:SetActiveEx(not isQuest)
+    self.BtnConsumeAgain.gameObject:SetActiveEx(not isQuest)
+    self.GridScoreInfo1.transform.parent.gameObject:SetActiveEx(not isQuest)
     if isQuest then
         self:RefreshQuest(info)
     else
@@ -58,10 +61,10 @@ function XUiAreaWarFightResult:RefreshBlock(info)
     end
     --区块名称
     self.TxtTile.text = XAreaWarConfigs.GetBlockName(blockId)
-
-    --确认消耗
-    self.RImgConsume:SetRawImage(XDataCenter.AreaWarManager.GetActionPointItemIcon())
-    self.TxtConsume.text = XAreaWarConfigs.GetBlockActionPoint(blockId) * fightCount
+    self.BtnConsume.gameObject:SetActiveEx(false)
+    -- --确认消耗
+    -- self.RImgConsume:SetRawImage(XDataCenter.AreaWarManager.GetActionPointItemIcon())
+    -- self.TxtConsume.text = XAreaWarConfigs.GetBlockActionPoint(blockId) * fightCount
 
     self.RImgConsumeAgain:SetRawImage(XDataCenter.AreaWarManager.GetActionPointItemIcon())
     self.TxtConsumeAgain.text = XAreaWarConfigs.GetBlockActionPoint(blockId) * fightCount
@@ -124,6 +127,7 @@ function XUiAreaWarFightResult:RefreshBlock(info)
                 end
             end
     )
+    
 end
 
 function XUiAreaWarFightResult:RefreshQuest(info)
@@ -145,17 +149,41 @@ function XUiAreaWarFightResult:RefreshQuest(info)
 end
 
 function XUiAreaWarFightResult:ShowReward(fightCount)
+    self.GridAreawarItem.gameObject:SetActiveEx(false)
+    self.GridReward.gameObject:SetActiveEx(false)
+
+    if not self.Confirm then
+        self.RewardShow = true
+        return
+    end
+
     fightCount = fightCount or 1
-    local data = self.WinData.SettleData.AreaWarFightResult
     --奖励物品
-    local reward = data.RewardGoods and data.RewardGoods[1]
-    if not XTool.IsTableEmpty(reward) then
-        local itemId = reward.TemplateId
-        self.RImgIcon:SetRawImage(XItemConfigs.GetItemIconById(itemId))
-        self.TxtRewardNumber.text = reward.Count * fightCount
-        self.TxtRewardNumber.gameObject:SetActiveEx(true)
-    else
-        self.TxtRewardNumber.gameObject:SetActiveEx(false)
+    self.RewardGrids = self.RewardGrids or {}
+    for index, reward in pairs(self.rewardGoodsList) do
+        local grid = self.RewardGrids[index]
+        if not grid then
+            local gridUi = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
+            gridUi.gameObject:SetActiveEx(true)
+            grid = XUiGridCommon.New(self,gridUi)
+            table.insert(self.RewardGrids, grid)
+            grid.BtnClick = gridUi.gameObject:AddComponent(typeof(CS.XUiComponent.XUiButton))
+            grid:AutoAddListener()
+        end
+        grid:Refresh(reward)
+        grid:SetUiActive(grid.TxtName, false)
+    end
+    self.AreaItemGrids = self.AreaItemGrids or {}
+    for index, reward in pairs(self.areaWarItems) do
+        local grid = self.AreaItemGrids[index]
+        if not grid then
+            local gridUi = XUiHelper.Instantiate(self.GridAreawarItem, self.PanelRewardContent)
+            gridUi.gameObject:SetActiveEx(true)
+            grid = XUiGridAreaWarItem.New(gridUi, self)
+            table.insert(self.AreaItemGrids, grid)
+        end
+        grid:RefreshItem(reward.ItemId ,reward.Num)
+        grid:SetDefaultClickCallBack()
     end
 end
 
@@ -166,18 +194,15 @@ function XUiAreaWarFightResult:ShowQuestReward()
     local data = self.WinData.SettleData.AreaWarFightResult
     --奖励物品
     local rewards = data.RewardGoods
-    if XTool.IsTableEmpty(rewards) then
-        self.GridReward.gameObject:SetActiveEx(false)
-        return
-    end
     for index, reward in ipairs(rewards) do
         local grid = self.GridRewards[index]
         if not grid then
-            local ui = index == 1 and self.GridReward or XUiHelper.Instantiate(self.GridReward, self.ListReward)
+            local ui = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
             grid = {}
             XTool.InitUiObjectByUi(grid, ui)
             self.GridRewards[index] = grid
         end
+        grid.GameObject:SetActiveEx(true)
         grid.TxtCount.text = reward.Count
         grid.RImgIcon:SetRawImage(XItemConfigs.GetItemIconById(reward.TemplateId))
         grid.GameObject:SetActiveEx(true)
@@ -191,14 +216,15 @@ function XUiAreaWarFightResult:StopAudio()
 end
 
 function XUiAreaWarFightResult:AutoAddListener()
-    self.BtnExitFight.CallBack = function()
-        if XDataCenter.AreaWarManager.OnActivityEnd() then
-            return
-        end
-        self:Close()
-    end
-    self.BtnConsume.CallBack = handler(self, self.OnClickBtnConsume)
-    self.BtnEndExplore.CallBack = handler(self, self.OnClickBtnConsume)
+    -- self.BtnExitFight.CallBack = function()
+    --     if XDataCenter.AreaWarManager.OnActivityEnd() then
+    --         return
+    --     end
+    --     self:Close()
+    -- end
+    self.BtnExitFight.CallBack = handler(self, self.OnClickBtnConsume)
+    -- self.BtnConsume.CallBack = handler(self, self.OnClickBtnConsume)
+    -- self.BtnEndExplore.CallBack = handler(self, self.OnClickBtnConsume)
     self.BtnConsumeAgain.CallBack=handler(self,self.OnClickBtnConsumeAgain)
 end
 
@@ -206,18 +232,7 @@ function XUiAreaWarFightResult:OnClickBtnConsume()
     if XDataCenter.AreaWarManager.OnActivityEnd() then
         return
     end
-    local stageId = self.WinData.StageId
-    local info = XDataCenter.AreaWarManager.GetPersonal():GetFightData()
-    local questId = info.IsQuest and info.Id or 0
-    local fightCount = info.FightCount
-    XDataCenter.AreaWarManager.AreaWarConfirmFightResultRequest(
-        stageId, questId, fightCount, 
-        function(rewardGoodsList)
-            if not XTool.IsTableEmpty(rewardGoodsList) then
-                XUiManager.OpenUiObtain(rewardGoodsList)
-            end
-        end
-    )
+    --self:ShowObtain()
     self:Close()
 end
 
@@ -226,29 +241,45 @@ function XUiAreaWarFightResult:OnClickBtnConsumeAgain()
         return
     end
     local stageId = self.WinData.StageId
-    local info = XDataCenter.AreaWarManager.GetPersonal():GetFightData()
-    local questId = info.IsQuest and info.Id or 0
-    local fightCount = info.FightCount
-    XDataCenter.AreaWarManager.AreaWarConfirmFightResultRequest(
-            stageId, questId, fightCount,
-            function(rewardGoodsList)
-                if not XTool.IsTableEmpty(rewardGoodsList) then
-                    XUiManager.OpenUiObtain(rewardGoodsList)
-                end
-            end
-    )
     XLuaUiManager.PopThenOpen(
             "UiBattleRoleRoom",
             stageId,
             XDataCenter.AreaWarManager.GetTeam(),
             require("XUi/XUiAreaWar/XUiAreaWarBattleRoleRoom")
     )
+    --self:ShowObtain()
 end
 
+function XUiAreaWarFightResult:ShowObtain()
+    if not XTool.IsTableEmpty(self.rewardGoodsList) or not XTool.IsTableEmpty(self.areaWarItems) then
+        XMVCA.XAreaWar:OpenUiAreaWarObtain(self.rewardGoodsList, self.areaWarItems)
+    end
+end
 function XUiAreaWarFightResult:OnCheckActivity(isClose)
     if not isClose then
         return
     end
 
     XDataCenter.AreaWarManager.OnActivityEnd()
+end
+
+function XUiAreaWarFightResult:ConfirmRequest() 
+       local stageId = self.WinData.StageId
+        local info = XDataCenter.AreaWarManager.GetPersonal():GetFightData()
+        local questId = info.IsQuest and info.Id or 0
+        local fightCount = info.FightCount
+   
+        XDataCenter.AreaWarManager.AreaWarConfirmFightResultRequest(
+                stageId, questId, fightCount,
+                function(rewardGoodsList,areaWarItems)
+                    self.rewardGoodsList = rewardGoodsList
+                    self.areaWarItems = areaWarItems
+                    local info = XDataCenter.AreaWarManager.GetPersonal():GetFightData()
+                    self.Confirm = true
+                    if self.RewardShow == true and info and info.FightCount then
+                        fightCount = info.FightCount
+                        self:ShowReward(fightCount)
+                    end
+                end
+        )
 end
