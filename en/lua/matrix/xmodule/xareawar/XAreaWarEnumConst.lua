@@ -22,6 +22,14 @@ local XAreaWarEnumConst = {
     },
     -- 提升道具掉落概率的生效道具最低品质
     SHOW_PROBABILITY_MIN_QUALITY = 4,
+    -- 道具品质
+    ITEM_QUALITY = {
+        GREEN = 1,
+        BLUE = 2,
+        PURPLE = 3,
+        GOLD = 4,
+        RED = 5,
+    },
 }
 
 return XAreaWarEnumConst

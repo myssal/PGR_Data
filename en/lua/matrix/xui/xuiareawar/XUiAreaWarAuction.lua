@@ -48,6 +48,9 @@ end
 
 function XUiAreaWarAuction:OnSelectTab(index)
     if self.TabIndex == index then return end
+    if self.TabIndex then
+        self:PlayAnimation("Qiehuan")
+    end
     self.TabIndex = index
 
     if index == self.TAB_TYPE.BUY then

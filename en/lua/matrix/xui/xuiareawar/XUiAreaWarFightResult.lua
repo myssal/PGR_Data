@@ -3,6 +3,8 @@ local ToInt = XMath.ToInt
 --local CsXTextManagerGetText = CsXTextManagerGetText
 --local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
 
+---@class XUiAreaWarFightResult
+---@field _Control XAreaWarControl
 local XUiAreaWarFightResult = XLuaUiManager.Register(XLuaUi, "UiAreaWarFightResult")
 local XUiGridAreaWarItem = require("XUi/XUiAreaWar/XUiGridAreaWarItem")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
@@ -173,6 +175,8 @@ function XUiAreaWarFightResult:ShowReward(fightCount)
         grid:Refresh(reward)
         grid:SetUiActive(grid.TxtName, false)
     end
+
+    local isPlayItemAudio = false
     self.AreaItemGrids = self.AreaItemGrids or {}
     for index, reward in pairs(self.areaWarItems) do
         local grid = self.AreaItemGrids[index]
@@ -184,6 +188,16 @@ function XUiAreaWarFightResult:ShowReward(fightCount)
         end
         grid:RefreshItem(reward.ItemId ,reward.Num)
         grid:SetDefaultClickCallBack()
+
+        -- 掉落超过金色品质的道具，播放音效
+        local quality = self._Control:GetConfig():GetItemQuality(reward.ItemId)
+        if quality > XMVCA.XAreaWar.EnumConst.ITEM_QUALITY.GOLD then
+            isPlayItemAudio = true
+        end
+    end
+
+    if isPlayItemAudio then
+        self:PlaySound("awardplus")
     end
 end
 
@@ -197,15 +211,15 @@ function XUiAreaWarFightResult:ShowQuestReward()
     for index, reward in ipairs(rewards) do
         local grid = self.GridRewards[index]
         if not grid then
-            local ui = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
-            grid = {}
-            XTool.InitUiObjectByUi(grid, ui)
-            self.GridRewards[index] = grid
+            local gridUi = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
+            gridUi.gameObject:SetActiveEx(true)
+            grid = XUiGridCommon.New(self, gridUi)
+            table.insert(self.GridRewards, grid)
+            grid.BtnClick = gridUi.gameObject:AddComponent(typeof(CS.XUiComponent.XUiButton))
+            grid:AutoAddListener()
         end
-        grid.GameObject:SetActiveEx(true)
-        grid.TxtCount.text = reward.Count
-        grid.RImgIcon:SetRawImage(XItemConfigs.GetItemIconById(reward.TemplateId))
-        grid.GameObject:SetActiveEx(true)
+        grid:Refresh(reward)
+        grid:SetUiActive(grid.TxtName, false)
     end
 end
 
@@ -283,3 +297,13 @@ function XUiAreaWarFightResult:ConfirmRequest()
                 end
         )
 end
+
+-- 播放音效
+function XUiAreaWarFightResult:PlaySound(name)
+    self.AudioPlayer = self.AudioPlayer or self.Transform:GetComponent(typeof(CS.XAudioObjectPlayer))
+    if self.AudioPlayer then
+        self.AudioPlayer:PlayByKeyName(name)
+    end
+end
+
+return XUiAreaWarFightResult

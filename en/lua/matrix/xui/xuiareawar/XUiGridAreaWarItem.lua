@@ -31,7 +31,7 @@ function XUiGridAreaWarItem:RefreshItem(itemId, num, ignoreNumX)
     self:RefreshQuality()
     self:RefreshNum()
     self:RefreshTagNew()
-    self:HideEffect()
+    self:ShowEffect()
 end
 
 -- 刷新道具用于消耗
@@ -183,7 +183,12 @@ end
 function XUiGridAreaWarItem:ShowEffect()
     self.Effect = self.Effect or self.Transform:Find("Effect")
     if self.Effect then
-        self.Effect.gameObject:SetActiveEx(true)
+        local quality = self._Control:GetConfig():GetItemQuality(self.ItemId)
+        local effectPath = self._Control:GetConfig():GetItemQualityEffect(quality)
+        if not string.IsNilOrEmpty(effectPath) then
+            self.Effect.gameObject:SetActiveEx(true)
+            self.Effect:LoadPrefab(effectPath)
+        end
     end
 end
 

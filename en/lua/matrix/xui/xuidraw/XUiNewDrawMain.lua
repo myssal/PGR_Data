@@ -1017,12 +1017,17 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     self.Effect2.gameObject:SetActive(true)
 
     -- 可肝卡池商店跳转按钮
-    -- local isCurDrawIsOpenCanLiverDraw = nil 
-    -- local canLiverCoinActivityId = XDataCenter.DrawManager.GetCanLiverActivityId()
-    -- if canLiverCoinActivityId and XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverCoinActivityId) then
-    --     isCurDrawIsOpenCanLiverDraw = true
-    -- end
-    -- self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
+
+    local cId = 770400 -- 临时写死
+    local isCurDrawIsOpenCanLiverDraw = XConditionManager.CheckCondition(cId) and drawInfo.IsShowShop
+    self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
+    --==============================
+    -- 可肝卡池商店按钮红点逻辑
+    --==============================
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(drawId))
+    local hasClicked = XSaveTool.GetData(key)
+    -- 未点击过 → 显示红点
+    self.BtnShop:ShowReddot(not hasClicked)
 
     self.CurBanner:UpdateNewDrawChar(self.GoodsShowParams.Icon, isShowQuality, self.GoodsShowParams.QualityIcon)
 end
@@ -1129,6 +1134,9 @@ end
 function XUiNewDrawMain:OnBtnShopClick()
     local skipToShopId = 90055 -- 临时写死
     XFunctionManager.SkipInterface(skipToShopId) 
+    local curDrawId = self.DrawInfo.Id
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(curDrawId))
+    XSaveTool.SaveData(key, true)
 end
 
 function XUiNewDrawMain:OnBtnActivityTargetClick()

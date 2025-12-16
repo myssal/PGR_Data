@@ -27,8 +27,8 @@ function XDynamicDrawCanLiverTask:PlayAnimation()
     self.GridTaskTimeline:PlayTimelineAnimation()
 end
 
-function XDynamicDrawCanLiverTask:SetNeedUpdateStaticTime(flag)
-    self.IsNeedUpdateStaticTime = flag
+function XDynamicDrawCanLiverTask:SetIsUpdateWeeklyTime(flag)
+    self.IsUpdateWeeklyTime = flag
 end
 
 function XDynamicDrawCanLiverTask:ResetData(data)
@@ -129,7 +129,12 @@ function XDynamicDrawCanLiverTask:UpdateTimes()
     local taskTemplates = XDataCenter.TaskManager.GetTaskTemplate(taskId)
     if not taskTemplates then return end
 
-    local isShowPanelTime = self.Data.State ~= XDataCenter.TaskManager.TaskState.Finish and not self.Data.ReceiveAll and self.IsNeedUpdateStaticTime
+    if self.IsUpdateWeeklyTime then
+        self:UpdateWeeklyTime()
+        return
+    end
+
+    local isShowPanelTime = self.Data.State ~= XDataCenter.TaskManager.TaskState.Finish and not self.Data.ReceiveAll
     if self.PanelTime and self.TxtTime then
         self.PanelTime.gameObject:SetActiveEx(isShowPanelTime)
         local taskTemplate = XDataCenter.TaskManager.GetTaskTemplate(self.Data.Id)
@@ -142,10 +147,6 @@ function XDynamicDrawCanLiverTask:UpdateTimes()
             self.TxtTime.text = text
             return
         end
-    end
-
-    if XDataCenter.TaskManager.TaskType.Weekly == taskTemplates.Type then
-        self:UpdateWeeklyTime()
     end
 end
 

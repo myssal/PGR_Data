@@ -33,6 +33,7 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, fashionId)
     self._SuitConfig = self._Control:GetFashionSuitById(fashionSuitId)
     self._FashionConfig = XFashionConfigs.GetFashionTemplate(fashionId)
     self._FashionCount = #self._SuitConfig.FashionIds
+    self._IsModelDrag = self._Control:GetIntClientConfig("IsModelDrag") == 1
     ---@type XUiPanelFashionSuitButtonGroup
     self._ButtonGroup = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitButtonGroup").New(self.PanelBtnGroup, self)
     
@@ -233,7 +234,12 @@ end
 function XUiFashionSuitDetail:UpdateModel()
     self.RoleModelPanel:UpdateCharacterResModel(self._FashionConfig.ResourcesId, self._FashionConfig.CharacterId, "UiFashionSuitDetail", function(model)
         model.transform.localPosition = Vector3(self._SuitConfig.RolePosX, self._SuitConfig.RolePosY, self._SuitConfig.RolePosZ)
-        self.PanelDrag:GetComponent("XDrag").Target = model.transform
+        if self._IsModelDrag then
+            self.PanelDrag.gameObject:SetActiveEx(true)
+            self.PanelDrag:GetComponent("XDrag").Target = model.transform
+        else
+            self.PanelDrag.gameObject:SetActiveEx(false)
+        end
         self:ShowImgEffectHuanren(self._FashionConfig.CharacterId)
     end)
 end
@@ -361,6 +367,15 @@ function XUiFashionSuitDetail:UpdatePlayBtn()
 end
 
 function XUiFashionSuitDetail:OnBtnPlayClick()
+    local skip = self._FashionConfig.FashionSuitTestPlayLevelSkipId
+    local skipConfig = XFunctionConfig.GetSkipFuncCfg(skip)
+    if XTool.IsNumberValid(skipConfig.ConditionId) then
+        local result, desc = XConditionManager.CheckCondition(skipConfig.ConditionId)
+        if not result then
+            XUiManager.TipError(desc)
+            return
+        end
+    end
     XFunctionManager.SkipInterface(self._FashionConfig.FashionSuitTestPlayLevelSkipId)
 end
 

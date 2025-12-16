@@ -4,7 +4,12 @@ local XTheatre5PVEStoryLineEndNode = XClass(XTheatre5PVENode, "XTheatre5PVEStory
 
 function XTheatre5PVEStoryLineEndNode:_OnEnter()
     XLuaUiManager.OpenWithCloseCallback("UiTheatre5PVEStoryEnding", function()
-        XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(self._StoryLineId, self._StoryLineContentId)
+        XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(self._StoryLineId, self._StoryLineContentId, function() 
+            -- 检查引导
+            if not XDataCenter.GuideManager.CheckIsInGuide() then
+                XDataCenter.GuideManager.CheckGuideOpen()
+            end
+        end)
     end, self._StoryLineId, self._StoryLineContentId)  
 end
 

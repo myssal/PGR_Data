@@ -50,6 +50,7 @@ function XUiTheatre5PopupChoose:InitShow()
         self.BtnGroup:Init(btnGroup, handler(self, self.OnBranchSelect))
     end
     
+    self._NotSelectAnyYield = true
 end
 
 function XUiTheatre5PopupChoose:OnBranchSelect(index, force)
@@ -66,6 +67,14 @@ function XUiTheatre5PopupChoose:OnBranchSelect(index, force)
             XUiManager.TipMsg(desc)
             return
         end
+    end
+
+    if self._NotSelectAnyYield then
+        self._NotSelectAnyYield = false
+
+        self:PlayAnimationWithMask('Switch' .. tostring(index))
+    else
+        self:PlayAnimationWithMask('Switch' .. tostring(self.CurIndex) .. 'To' .. tostring(index))
     end
 
     self.CurIndex = index

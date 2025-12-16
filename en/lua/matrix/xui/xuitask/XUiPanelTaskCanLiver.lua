@@ -19,6 +19,11 @@ function XUiPanelTaskCanLiver:OnEnable()
 
     self.CanLiverTasks = self:GetTasks()
     self.PanelNoneCanLiverTask.gameObject:SetActive(#self.CanLiverTasks <= 0)
+    if XMVCA.XItemRestrict:IsAllItemsReachMax(XEnumConst.ItemRestrict.Type.DrawCanLiver) then
+        self.TxtNone.text = XUiHelper.GetText("DrawCanLiverItemReachMax")
+    else
+        self.TxtNone.text = XUiHelper.GetText("DrawCanLiverWeekTaskFinish")
+    end
     self.PanelBtnShop.gameObject:SetActiveEx(XTool.IsNumberValid(XDataCenter.DrawManager.GetCanLiverActivityId()))
     self.DynamicTable:SetDataSource(self.CanLiverTasks)
     self.DynamicTable:ReloadDataASync()
@@ -70,6 +75,11 @@ function XUiPanelTaskCanLiver:Refresh(isMulti)
 
     self.CanLiverTasks = self:GetTasks()
     self.PanelNoneCanLiverTask.gameObject:SetActive(#self.CanLiverTasks <= 0)
+    if XMVCA.XItemRestrict:IsAllItemsReachMax(XEnumConst.ItemRestrict.Type.DrawCanLiver) then
+        self.TxtNone.text = XUiHelper.GetText("DrawCanLiverItemReachMax")
+    else
+        self.TxtNone.text = XUiHelper.GetText("DrawCanLiverWeekTaskFinish")
+    end
     self.DynamicTable:SetDataSource(self.CanLiverTasks)
     self.DynamicTable:ReloadDataSync()
 end
@@ -89,13 +99,14 @@ function XUiPanelTaskCanLiver:GetTasks()
         return {}
     end
 
-    local tasks = {}
-    for _, groupId in ipairs(taskGroupIds) do
+    local tasks = XDataCenter.TaskManager.GetCanLiverTaskList()
+    for index, groupId in ipairs(taskGroupIds) do
         if XTool.IsNumberValid(groupId) then
-            local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId)
-            if list then
-                for _, task in pairs(list) do
-                    table.insert(tasks, task)
+            if CS.XGame.ClientConfig:GetInt("DrawCanLiverWeekTaskGroupIdIndex") == index then
+                local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId)
+                self.CurrDrawCanLiverWeekTaskList = self.CurrDrawCanLiverWeekTaskList or {}
+                for k, task in pairs(list) do
+                    self.CurrDrawCanLiverWeekTaskList[task.Id] = true
                 end
             end
         end
@@ -157,11 +168,10 @@ function XUiPanelTaskCanLiver:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.CanLiverTasks[index]
         grid.RootUi = self.Parent
+        local isSetUpdateWeeklyTime = self.CurrDrawCanLiverWeekTaskList and self.CurrDrawCanLiverWeekTaskList[data.Id]
+        grid:SetIsUpdateWeeklyTime(isSetUpdateWeeklyTime)
+        grid:SetTxtTaskLimitVisible(XMVCA.XItemRestrict:IsItemReachMaxByIndex(XEnumConst.ItemRestrict.Type.DrawCanLiver, 1))
         grid:ResetData(data)
-
-        grid:SetTxtTaskLimitVisible(
-            XMVCA.XItemRestrict:IsItemReachMaxByIndex(XEnumConst.ItemRestrict.Type.DrawCanLiver, 1)
-        )
     end
 end
 

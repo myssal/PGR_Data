@@ -19,12 +19,26 @@ local PlayState = {
     PlayingVideo = 2, -- 正在播放Video
 }
 
+-- 奖励请求状态枚举
+local RewardRequestState = {
+    None = 0,      -- 未请求
+    Pending = 1,   -- 请求中
+    Completed = 2, -- 已完成
+}
+
 ---@class XUiRadioSignMain : XLuaUi
 ---@field _Control XRadioSignControl
 local XUiRadioSignMain = XLuaUiManager.Register(XLuaUi, "UiRadioSignMain")
 
 function XUiRadioSignMain:OnAwake()
-    self:BindExitBtns()
+    self:RegisterClickEvent(self.BtnBack, function()
+        self:TryShowPendingReward()
+        self:Close()
+    end, nil, true)
+    self:RegisterClickEvent(self.BtnMainUi, function()
+        self:TryShowPendingReward()
+        self:Close()
+    end, nil, true)
 
     ---@type XUiGridCommon
     self._GridReward = XUiGridCommon.New(self, self.Grid256New)
@@ -42,29 +56,29 @@ function XUiRadioSignMain:OnAwake()
     -- 显示范围（转换为0-100）
     self._DisplayMinFm = 0
     self._DisplayMaxFm = 100
-    self._StandTimerId = nil           -- 停留定时器ID
-    self._CurrentConfig = nil          -- 当前停留的配置
-    self._SubtitleTimerIds = {}        -- 字幕定时器ID列表
-    self._LightTimerIds = {}           -- 灯光定时器ID列表
-    self._PlayState = PlayState.Idle   -- 播放状态
+    self._StandTimerId = nil                           -- 停留定时器ID
+    self._CurrentConfig = nil                          -- 当前停留的配置
+    self._SubtitleTimerIds = {}                        -- 字幕定时器ID列表
+    self._LightTimerIds = {}                           -- 灯光定时器ID列表
+    self._PlayState = PlayState.Idle                   -- 播放状态
     -- 长按按钮组件
-    self._BtnAddLongClick = nil        -- BtnAdd长按组件
-    self._BtnSubLongClick = nil        -- BtnSub长按组件
+    self._BtnAddLongClick = nil                        -- BtnAdd长按组件
+    self._BtnSubLongClick = nil                        -- BtnSub长按组件
     -- Press GameObject 引用
-    self._BtnAddPress = nil            -- BtnAdd的Press子对象
-    self._BtnSubPress = nil            -- BtnSub的Press子对象
+    self._BtnAddPress = nil                            -- BtnAdd的Press子对象
+    self._BtnSubPress = nil                            -- BtnSub的Press子对象
     -- RMS 相关
-    self._RMSScheduleId = nil          -- RMS定时器ID
-    self._PlayingAudioInfo = nil       -- 当前播放的音频信息
-    self._PlayingVideoContent = nil    -- 当前播放视频的content配置
-    self._RewardRequestState = nil     -- 奖励请求状态：nil=未请求, "pending"=请求中, "completed"=已完成
-    self._RewardRequestSuccess = false -- 奖励请求是否成功
-    self._PendingRewardList = nil      -- 延后显示的奖励列表
+    self._RMSScheduleId = nil                          -- RMS定时器ID
+    self._PlayingAudioInfo = nil                       -- 当前播放的音频信息
+    self._PlayingVideoContent = nil                    -- 当前播放视频的content配置
+    self._RewardRequestState = RewardRequestState.None -- 奖励请求状态
+    self._RewardRequestSuccess = false                 -- 奖励请求是否成功
+    self._PendingRewardList = nil                      -- 延后显示的奖励列表
     -- 初始化标志
-    self._IsInStart = false            -- 是否在 OnStart 阶段，用于控制 ImageStart 的隐藏
+    self._IsInStart = false                            -- 是否在 OnStart 阶段，用于控制 ImageStart 的隐藏
     -- RMS 可视化组件
-    self._RMSStrip1 = nil              -- PanelStrip1 的 RMS 可视化组件（左声道）
-    self._RMSStrip2 = nil              -- PanelStrip2 的 RMS 可视化组件（右声道）
+    self._RMSStrip1 = nil                              -- PanelStrip1 的 RMS 可视化组件（左声道）
+    self._RMSStrip2 = nil                              -- PanelStrip2 的 RMS 可视化组件（右声道）
 
     ---@type CS.UnityEngine.Image[]
     self._ImgLights = { self.ImgLight1, self.ImgLight2, self.ImgLight3, self.ImgLight4, self.ImgLight5, self.ImgLight6,
@@ -78,6 +92,11 @@ function XUiRadioSignMain:OnAwake()
         self.TxtSubtitles.gameObject:SetActiveEx(false)
     end
 
+    -- 默认隐藏 SoundNoise 节点
+    if self.SoundNoise then
+        self:SetGameObjectActive(self.SoundNoise.gameObject, false)
+    end
+
     -- 绑定BtnPlayAgain按钮
     if self.BtnPlayAgain then
         XUiHelper.RegisterClickEvent(self, self.BtnPlayAgain, self.OnBtnPlayAgainClick)
@@ -85,6 +104,11 @@ function XUiRadioSignMain:OnAwake()
 
     -- 初始化长按按钮组件
     self:InitLongClickButtons()
+
+    -- 默认隐藏 BtnKnobDisable（视频播放时才显示）
+    if self.BtnKnobDisable then
+        self:SetGameObjectActive(self.BtnKnobDisable.gameObject, false)
+    end
 
     -- 初始化 RMS 可视化组件
     if self.PanelStrip1 then
@@ -102,6 +126,36 @@ end
 function XUiRadioSignMain:OnStart(content)
     -- 设置初始化标志，防止 SetValue 触发时隐藏 ImageStart
     self._IsInStart = true
+
+    -- 如果没有传入content，使用默认content
+    if not content then
+        local contents = self._Control:GetContentConfigs()
+        
+        -- 将 contents 转换为数组并按 id 排序
+        local sortedContents = {}
+        for _, contentItem in pairs(contents) do
+            table.insert(sortedContents, contentItem)
+        end
+        table.sort(sortedContents, function(a, b)
+            return a.Id < b.Id
+        end)
+        
+        -- 按 id 顺序遍历，找到第一个在时间范围内且未领奖的content
+        for _, contentItem in ipairs(sortedContents) do
+            local timeId = contentItem.TimeId
+            if XFunctionManager.CheckInTimeByTimeId(timeId) then
+                if not self._Control:IsRewardReceived(contentItem.Id) then
+                    content = contentItem
+                    break
+                end
+            end
+        end
+        
+        -- 如果没有找到未领奖的，使用第一个
+        if not content and #sortedContents > 0 then
+            content = sortedContents[1]
+        end
+    end
 
     local defaultFM = content.DefaultFM
     -- 将配置表中的FM值转换为0-100范围，然后转换为0-1的value
@@ -180,10 +234,10 @@ function XUiRadioSignMain:OnBtnTabClick(index)
         end
     end
 
-    -- 切换Tab前，如果有待弹出的奖励列表，先弹出
+    -- 切换Tab前，如果有待弹出的奖励列表，先弹出（必须在ResetAll之前，因为ResetAll会清理状态）
     self:TryShowPendingReward()
 
-    -- 切换Tab时重置一切
+    -- 切换Tab时重置一切（包括停止视频播放）
     self:ResetAll()
     self:Update(index)
 end
@@ -254,8 +308,9 @@ function XUiRadioSignMain:OnEnable()
 end
 
 function XUiRadioSignMain:OnDisable()
+    -- 改到了点下按钮时，因为如果在这里才弹出，背景截图将会是黑色的
     -- 离开界面前，如果有待弹出的奖励列表，先弹出
-    self:TryShowPendingReward()
+    -- self:TryShowPendingReward()
 
     -- RMS在UI生命周期内持续播放，在OnDisable时停止
     self:StopRMS()
@@ -277,6 +332,18 @@ function XUiRadioSignMain:OnDestroy()
     self:StopRMS()
     self:CleanupAllTimers()
     self:StopVideo(nil)
+
+    -- 确保清除所有视频回调（防御性清理）
+    if self.Video then
+        self.Video.ActionEnded = nil
+        self.Video.ActionPlayed = nil
+        self.Video.ActionError = nil
+        if self.Video.VideoPlayerUgui then
+            self.Video.VideoPlayerUgui.ActionEnded = nil
+            self.Video.VideoPlayerUgui.ActionError = nil
+        end
+    end
+
     -- 清理长按按钮组件（UI销毁时确保清理，OnDisable可能已经清理过了，这里做防御性检查）
     if self._BtnAddLongClick then
         self._BtnAddLongClick:Destroy()
@@ -414,9 +481,10 @@ function XUiRadioSignMain:UpdateReceivedRewardUI(isReceived, config)
             self:SetGameObjectActive(self.ImgVideo and self.ImgVideo.gameObject, false)
         end
 
-        -- 已领奖时隐藏ImgTips和ImageStart
+        -- 已领奖时隐藏ImgTips和ImageStart，显示LineGroup
         self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, false)
         self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, false)
+        self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
 
         -- 更新ImgMask和BtnPlayAgain显示状态（考虑播放状态）
         -- ImgMask：已领奖时显示，但如果正在播放视频则隐藏
@@ -430,8 +498,10 @@ function XUiRadioSignMain:UpdateReceivedRewardUI(isReceived, config)
         self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, false)
         self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, false)
         self:SetGameObjectActive(self.ImgVideo and self.ImgVideo.gameObject, false)
-        -- 未领奖时显示ImageStart
+        -- 未领奖时显示ImageStart和ImgTips，隐藏LineGroup
         self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, true)
+        self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, true)
+        self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
     end
 end
 
@@ -516,6 +586,11 @@ function XUiRadioSignMain:UpdateAllButtons()
         if config then
             self:UpdateButtonState(xBtn, config)
         end
+    end
+    
+    -- 刷新后重新设置当前页签的选中状态
+    if self._Index and self.PanelTab then
+        self.PanelTab:SelectIndex(self._Index)
     end
 end
 
@@ -815,7 +890,7 @@ function XUiRadioSignMain:PlayVideo(content)
 
         -- 视频播放前，暂停 RMS 分析器
         XAudioManager.StopAnalyzer()
-        
+
         -- 暂时屏蔽随机模式，尝试从 video 获取 RMS
         -- 视频播放时，启动 RMS 随机模式
         -- if self._RMSStrip1 then
@@ -834,18 +909,27 @@ function XUiRadioSignMain:PlayVideo(content)
             -- 如果当前content未领奖，在视频播放时提前发送奖励请求
             if self._CurrentContentConfig then
                 local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
-                if not isReceived then
-                    self._RewardRequestState = "pending"
+                -- 防止重复触发：只有未领奖且未在请求中时才发送请求
+                if not isReceived and self._RewardRequestState ~= RewardRequestState.Pending then
+                    self._RewardRequestState = RewardRequestState.Pending
                     local contentId = self._CurrentContentConfig.Id
                     XMVCA.XRadioSign:RadioSignGainRewardRequest(contentId, function(isSuccess, rewardGoodsList)
-                        self._RewardRequestState = "completed"
+                        self._RewardRequestState = RewardRequestState.Completed
                         self._RewardRequestSuccess = isSuccess
                         -- 保存奖励列表，延后到视频播放完成后弹出
                         self._PendingRewardList = rewardGoodsList
                         if not isSuccess then
                             XLog.Debug("[XUiRadioSignMain] ActionPlayed: 奖励请求失败, contentId =", contentId)
+                        else
+                            -- 请求成功后立即更新按钮状态，解锁页签，允许玩家跳过视频
+                            self:UpdateAllButtons()
                         end
                     end, true) -- 延后显示奖励
+                else
+                    if self._RewardRequestState == RewardRequestState.Pending then
+                        XLog.Debug("[XUiRadioSignMain] ActionPlayed: 请求已在进行中，忽略重复触发, contentId =",
+                            self._CurrentContentConfig.Id)
+                    end
                 end
             end
         end
@@ -863,18 +947,18 @@ end
 -- 如果请求还在进行中，等待请求完成后再弹出
 function XUiRadioSignMain:TryShowPendingReward()
     -- 如果奖励请求已完成且成功，且有待弹出的奖励列表，则弹出
-    if self._RewardRequestState == "completed" and self._RewardRequestSuccess and self._PendingRewardList then
+    if self._RewardRequestState == RewardRequestState.Completed and self._RewardRequestSuccess and self._PendingRewardList then
         XUiManager.OpenUiObtain(self._PendingRewardList)
         self._PendingRewardList = nil
         -- 更新界面
         self:UpdateRewardUI()
         -- 重置请求状态
-        self._RewardRequestState = nil
+        self._RewardRequestState = RewardRequestState.None
         self._RewardRequestSuccess = false
-    elseif self._RewardRequestState == "pending" then
+    elseif self._RewardRequestState == RewardRequestState.Pending then
         -- 如果请求还在进行中，等待请求完成后再弹出
         local function CheckRequest()
-            if self._RewardRequestState == "completed" then
+            if self._RewardRequestState == RewardRequestState.Completed then
                 if self._RewardRequestSuccess and self._PendingRewardList then
                     XUiManager.OpenUiObtain(self._PendingRewardList)
                     self._PendingRewardList = nil
@@ -882,7 +966,7 @@ function XUiRadioSignMain:TryShowPendingReward()
                     self:UpdateRewardUI()
                 end
                 -- 重置请求状态
-                self._RewardRequestState = nil
+                self._RewardRequestState = RewardRequestState.None
                 self._RewardRequestSuccess = false
             else
                 -- 继续等待
@@ -899,7 +983,7 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
     -- 如果正常播放结束，处理奖励请求结果
     if isNormalEnd == true and self._CurrentContentConfig then
         -- 如果奖励请求已完成，直接更新UI
-        if self._RewardRequestState == "completed" then
+        if self._RewardRequestState == RewardRequestState.Completed then
             if self._RewardRequestSuccess then
                 -- 弹出延后的奖励
                 if self._PendingRewardList then
@@ -910,12 +994,12 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
                 self:UpdateRewardUI()
             end
             -- 重置请求状态
-            self._RewardRequestState = nil
+            self._RewardRequestState = RewardRequestState.None
             self._RewardRequestSuccess = false
-        elseif self._RewardRequestState == "pending" then
+        elseif self._RewardRequestState == RewardRequestState.Pending then
             -- 如果请求还在进行中，等待请求完成后再更新UI
             local function CheckRequest()
-                if self._RewardRequestState == "completed" then
+                if self._RewardRequestState == RewardRequestState.Completed then
                     if self._RewardRequestSuccess then
                         -- 弹出延后的奖励
                         if self._PendingRewardList then
@@ -926,7 +1010,7 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
                         self:UpdateRewardUI()
                     end
                     -- 重置请求状态
-                    self._RewardRequestState = nil
+                    self._RewardRequestState = RewardRequestState.None
                     self._RewardRequestSuccess = false
                 else
                     -- 继续等待
@@ -941,7 +1025,7 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
         end
     else
         -- 非正常结束或手动停止，重置请求状态
-        self._RewardRequestState = nil
+        self._RewardRequestState = RewardRequestState.None
         self._RewardRequestSuccess = false
         self._PendingRewardList = nil
     end
@@ -958,23 +1042,35 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
         self.LineGroup.gameObject:SetActiveEx(true)
     end
 
-    -- 显示ImgTips和ImageStart
-    self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, true)
-    self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, true)
-
-    -- 视频播放结束后，如果已领奖，恢复显示ImgMask和BtnPlayAgain
+    -- 根据领奖状态显示不同的UI元素
     if self._CurrentContentConfig then
         local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
         if isReceived then
+            -- 已领奖：隐藏ImgTips和ImageStart，显示ImgMask、BtnPlayAgain和LineGroup
+            self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, false)
+            self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, false)
             self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, true)
             self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, true)
+            self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
+        else
+            -- 未领奖：显示ImgTips和ImageStart，隐藏ImgMask、BtnPlayAgain和LineGroup
+            self:SetGameObjectActive(self.ImgTips and self.ImgTips.gameObject, true)
+            self:SetGameObjectActive(self.ImageStart and self.ImageStart.gameObject, true)
+            self:SetGameObjectActive(self.ImgMask and self.ImgMask.gameObject, false)
+            self:SetGameObjectActive(self.BtnPlayAgain and self.BtnPlayAgain.gameObject, false)
+            self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, false)
         end
     end
 
     -- 清除视频回调
-    if self.Video and self.Video.VideoPlayerUgui then
-        self.Video.VideoPlayerUgui.ActionEnded = nil
-        self.Video.VideoPlayerUgui.ActionError = nil
+    if self.Video then
+        self.Video.ActionEnded = nil
+        self.Video.ActionPlayed = nil
+        self.Video.ActionError = nil
+        if self.Video.VideoPlayerUgui then
+            self.Video.VideoPlayerUgui.ActionEnded = nil
+            self.Video.VideoPlayerUgui.ActionError = nil
+        end
     end
 
     -- 清除当前播放的content配置
@@ -1132,11 +1228,13 @@ function XUiRadioSignMain:OnBtnKnobValueChanged(value, isUserAction)
         self.ImgMask.gameObject:SetActiveEx(false)
     end
 
-    -- 只有用户手动操作时才隐藏ImageStart（初始化时不隐藏）
+    -- 只有用户手动操作时才隐藏ImageStart（初始化时不隐藏），并显示LineGroup
     if isUserAction then
         if self.ImageStart and self.ImageStart.gameObject then
             self.ImageStart.gameObject:SetActiveEx(false)
         end
+        -- ImageStart隐藏时，显示LineGroup
+        self:SetGameObjectActive(self.LineGroup and self.LineGroup.gameObject, true)
     end
 
     -- 更新ImgMine位置
@@ -1147,6 +1245,9 @@ function XUiRadioSignMain:OnBtnKnobValueChanged(value, isUserAction)
 
     -- 设置当前FM值
     self.LineGroup:SetCurrentValue(fm)
+
+    -- 检测是否在过渡区，并激活/隐藏 SoundNoise 节点
+    self:CheckAndUpdateSoundNoise(fm)
 
     -- 查找当前FM值在哪个配置范围内
     local targetConfig = self:FindConfigByFm(fm)
@@ -1240,6 +1341,40 @@ function XUiRadioSignMain:ConvertFmToRange(fmValue)
     -- 从原始范围(_MinFm到_MaxFm)转换为显示范围(0-100)
     local normalizedValue = (fmValue - self._MinFm) / (self._MaxFm - self._MinFm)
     return normalizedValue * (self._DisplayMaxFm - self._DisplayMinFm) + self._DisplayMinFm
+end
+
+-- 检测是否在过渡区，并激活/隐藏 SoundNoise 节点
+---@param fm number FM值（0-100范围）
+function XUiRadioSignMain:CheckAndUpdateSoundNoise(fm)
+    if not self._RangeConfigs then
+        return
+    end
+
+    local isInTransition = false
+
+    -- 检查是否在左侧或右侧过渡区
+    for _, config in pairs(self._RangeConfigs) do
+        -- 左侧过渡区：从 MinVagueFM 到 MinPreciseFM
+        local leftMinFm = self:ConvertFmToRange(config.MinVagueFM)
+        local leftMaxFm = self:ConvertFmToRange(config.MinPreciseFM)
+        if fm >= leftMinFm and fm < leftMaxFm then
+            isInTransition = true
+            break
+        end
+
+        -- 右侧过渡区：从 MaxPreciseFM 到 MaxVagueFM
+        local rightMinFm = self:ConvertFmToRange(config.MaxPreciseFM)
+        local rightMaxFm = self:ConvertFmToRange(config.MaxVagueFM)
+        if fm > rightMinFm and fm <= rightMaxFm then
+            isInTransition = true
+            break
+        end
+    end
+
+    -- 激活或隐藏 SoundNoise 节点
+    if self.SoundNoise then
+        self:SetGameObjectActive(self.SoundNoise.gameObject, isInTransition)
+    end
 end
 
 -- 根据FM值查找匹配的配置
@@ -1381,7 +1516,7 @@ function XUiRadioSignMain:PlayRMS()
     self._RMSScheduleId = XScheduleManager.ScheduleForever(function()
         local rmsLeft = 0
         local rmsRight = 0
-        
+
         -- 如果正在播放视频，尝试从 video 获取 RMS
         if self._PlayState == PlayState.PlayingVideo and self.Video then
             -- 尝试从 video 获取 RMS 值
@@ -1406,9 +1541,9 @@ function XUiRadioSignMain:PlayRMS()
         end
 
         -- 调试
-        if XMain.IsEditorDebug then
-            XLog.Debug("RadioSign RMS Left:", rmsLeft, "Right:", rmsRight, "PlayingVideo:", self._PlayState == PlayState.PlayingVideo)
-        end
+        -- if XMain.IsEditorDebug then
+        --     XLog.Debug("RadioSign RMS Left:", rmsLeft, "Right:", rmsRight, "PlayingVideo:", self._PlayState == PlayState.PlayingVideo)
+        -- end
     end, RMS_SCHEDULE_INTERVAL, 0)
 end
 

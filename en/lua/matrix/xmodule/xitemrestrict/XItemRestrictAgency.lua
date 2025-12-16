@@ -49,8 +49,8 @@ end
 
 -- 配置更新：List<ItemRestrictConfigUpdateData>
 function XItemRestrictAgency:OnNotifyItemRestrictConfigUpdate(data)
-    if not data or not data.config then return end
-    self._Model:UpdateConfigData(data.config)
+    if not data or not data.Config then return end
+    self._Model:UpdateConfigData(data.Config)
 end
 
 -------------------------------------------------------

@@ -230,6 +230,11 @@ function XAreaWarConfig:GetItemQualitySellTips(id)
     return config.SellTips
 end
 
+function XAreaWarConfig:GetItemQualityEffect(id)
+    local config = self:GetConfigItemQuality(id)
+    return config.Effect
+end
+
 -- 获取品质Id列表，需要排序
 function XAreaWarConfig:GetItemQualityIdsWithOrder()
     local qualityIds = {}

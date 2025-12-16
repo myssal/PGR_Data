@@ -151,8 +151,8 @@
         "Desc": "How did you meet the Death Knight?",
         "ShowClueGroupId": 31001,
         "AnswerClue": 3101,
-        "AnswerTip": "In my memories, I forged a pact with her using an entrenching shovel.",
-        "NormalWrongTip": "No, that's not how I met her.",
+        "AnswerTip": "We seemed to have signed some kind of covenant with something. (Temporary Text)",
+        "NormalWrongTip": "That's not right. We didn't sign the covenant with this. (Temporary Text)",
         "Info": "Think carefully about the clues that correspond to each problem."
     },
     {
@@ -530,5 +530,173 @@
         "SpWrongTips": [
             "The one who made them still remains within the illusion."
         ]
+    },
+    {
+        "Id": 61000001,
+        "GroupId": 61000,
+        "Step": 1,
+        "Desc": "Which people should raid the Sanctuary?",
+        "ShowClueGroupId": 61001,
+        "AnswerClue": 6101,
+        "AnswerTip": "Our strongest fighters form an elite squad, efficient in both preparations and assaults.",
+        "NormalWrongTip": "There may be forces better suited for the job.",
+        "Info": "Think carefully about the clues that correspond to each problem.",
+        "SpWrongClues": [
+            6104
+        ],
+        "SpWrongTips": [
+            "A full-scale army isn't fit for a raid like this."
+        ]
+    },
+    {
+        "Id": 61000002,
+        "GroupId": 61000,
+        "Step": 2,
+        "Desc": "How will the raid squad ascend to the Sanctuary?",
+        "ShowClueGroupId": 61002,
+        "AnswerClue": 6102,
+        "AnswerTip": "Pilot the Hell Train to quickly reach the Sanctuary.",
+        "NormalWrongTip": "That alone won't be enough to get us to the Sanctuary.",
+        "Info": "An elite squad formed by the Four Horsemen and Gray Raven will spearhead the final battle against the Sanctuary.",
+        "SpWrongClues": [
+            6103
+        ],
+        "SpWrongTips": [
+            "That idea is too fanciful."
+        ]
+    },
+    {
+        "Id": 61000003,
+        "GroupId": 61000,
+        "Step": 3,
+        "Desc": "After ascending to the Sanctuary, how do we battle the archangel stationed within?",
+        "ShowClueGroupId": 61003,
+        "AnswerClue": 6103,
+        "AnswerTip": "The Halo Cannon, loaded with silver rounds, can deliver a fatal blow to the archangel.",
+        "NormalWrongTip": "That alone may not guarantee a kill.",
+        "Info": "The elite squad formed by the Four Horsemen and Gray Raven. They'll ride the Hell Train into the Sanctuary, then engage in a decisive battle.",
+        "SpWrongClues": [
+            6101
+        ],
+        "SpWrongTips": [
+            "Pestilence and Famine may have pulled off such feats before, but they no longer wield those powers."
+        ]
+    },
+    {
+        "Id": 71000001,
+        "GroupId": 71000,
+        "Step": 1,
+        "Desc": "Where am I right now?",
+        "ShowClueGroupId": 71001,
+        "AnswerClue": 7101,
+        "AnswerTip": "It looks like Nirvatia used her dual power to create this special world.",
+        "NormalWrongTip": "There has to be clearer evidence pointing out what makes this place different.",
+        "Info": "Think carefully about the clues that correspond to each problem."
+    },
+    {
+        "Id": 71000002,
+        "GroupId": 71000,
+        "Step": 2,
+        "Desc": "What exactly is she trying to show me?",
+        "ShowClueGroupId": 71002,
+        "AnswerClue": 7102,
+        "AnswerTip": "Nirvatia showed me her memories through illusions. Maybe she wants me to understand something.",
+        "NormalWrongTip": "This place is far clearer than any dream.",
+        "Info": "This world was likely built from Nirvatia's memories."
+    },
+    {
+        "Id": 71000003,
+        "GroupId": 71000,
+        "Step": 3,
+        "Desc": "Where's... the way out?",
+        "ShowClueGroupId": 71003,
+        "AnswerClue": 7103,
+        "AnswerTip": "Invisible boundaries are keeping me trapped here. Looks like I have no choice but to do what Nirvatia wants.",
+        "NormalWrongTip": "Maybe this unique environment is the key to breaking through.",
+        "Info": "This world was probably built from Nirvatia's memories.\\nShe's showing them to me as illusions. Maybe she wants me to see something."
+    },
+    {
+        "Id": 72000001,
+        "GroupId": 72000,
+        "Step": 1,
+        "Desc": "Was Nirvatia truly evil in the past?",
+        "ShowClueGroupId": 72001,
+        "AnswerClue": 7201,
+        "AnswerTip": "She used to teach the children for free and got along well with the villagers. That wasn't all just for show.",
+        "NormalWrongTip": "Many others also reacted to the things she did back then.",
+        "Info": "Think carefully about the clues that correspond to each problem.",
+        "SpWrongClues": [
+            7202
+        ],
+        "SpWrongTips": [
+            "In that situation, it actually became a tool to fabricate charges."
+        ]
+    },
+    {
+        "Id": 72000002,
+        "GroupId": 72000,
+        "Step": 2,
+        "Desc": "Was Nirvatia a kind person in the past?",
+        "ShowClueGroupId": 72002,
+        "AnswerClue": 7202,
+        "AnswerTip": "As a demon, she responded with violence when danger appeared.",
+        "NormalWrongTip": "Nirvatia isn't involved at this point.",
+        "Info": "Nirvatia isn't completely evil."
+    },
+    {
+        "Id": 72000003,
+        "GroupId": 72000,
+        "Step": 3,
+        "Desc": "What changed her soul in the past?",
+        "ShowClueGroupId": 72003,
+        "AnswerClue": 7203,
+        "AnswerTip": "The humans who were part of her life slowly changed her without her realizing.",
+        "NormalWrongTip": "There must be something more direct at play.",
+        "Info": "Nirvatia isn't completely evil, but she isn't entirely good either."
+    },
+    {
+        "Id": 73000001,
+        "GroupId": 73000,
+        "Step": 1,
+        "Desc": "After the Cataclysm, what exactly was she trying to achieve?",
+        "ShowClueGroupId": 73001,
+        "AnswerClue": 7301,
+        "AnswerTip": "She wants to become the goddess of a new world.",
+        "NormalWrongTip": "No, there must be a clearer clue.",
+        "Info": "Think carefully about the clues that correspond to each problem.",
+        "SpWrongClues": [
+            7305
+        ],
+        "SpWrongTips": [
+            "Looking at it now, she used this mission as a stepping stone to reach her goal."
+        ]
+    },
+    {
+        "Id": 73000002,
+        "GroupId": 73000,
+        "Step": 2,
+        "Desc": "What made Nirvatia choose this path?",
+        "ShowClueGroupId": 73002,
+        "AnswerClue": 7302,
+        "AnswerTip": "She wants a world that's absolutely fair.",
+        "NormalWrongTip": "This still isn't enough to shape a true belief.",
+        "Info": "Nirvatia wants to become the goddess of a new world.",
+        "SpWrongClues": [
+            7306
+        ],
+        "SpWrongTips": [
+            "There's no way those two had such a strong bond or shared belief."
+        ]
+    },
+    {
+        "Id": 73000003,
+        "GroupId": 73000,
+        "Step": 3,
+        "Desc": "Why is she so fixated on building an absolutely fair world?",
+        "ShowClueGroupId": 73003,
+        "AnswerClue": 7303,
+        "AnswerTip": "She once tried to be a good person by imitating others, but fate rejected her effort.",
+        "NormalWrongTip": "There must be someone or something that ties directly to her beliefs.",
+        "Info": "Nirvatia wants to become the goddess of a new world, and shape it into one that's absolutely fair."
     }
 ]

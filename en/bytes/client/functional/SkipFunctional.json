@@ -2617,7 +2617,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 134,
-        "Explain": "v4.0 1st Recharge Reset Close-up",
+        "Explain": "Summer Event Cogsgiving Gifts Sign-in",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -2630,7 +2630,7 @@
         "Origin": 2,
         "UiName": "UiAutoWindow",
         "ParamId": 135,
-        "Explain": "v4.0 Luna Pack Close-up",
+        "Explain": "3.8 Version 7-Day Sign-in",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -2852,6 +2852,32 @@
         "UiName": "UiAutoWindow",
         "ParamId": 152,
         "Explain": "v4.1版本打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40152,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 153,
+        "Explain": "v4.1布偶熊伴生皮打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40153,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 154,
+        "Explain": "v4.1神寂启示录涂装打脸",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -3815,7 +3841,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 42,
-        "Explain": "New Player Sign-in [Novice Arsenal]",
+        "Explain": "3.8 Mid-Autumn 3-Day Sign-in",
         "IsRecord": false,
         "ConditionId": 84100111,
         "FunctionalId": 0,
@@ -4530,7 +4556,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 96,
-        "Explain": "3.8 Version 7-Day Sign-in",
+        "Explain": "Go to Recycle",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -4543,7 +4569,7 @@
         "Origin": 2,
         "UiName": "UiSignBanner",
         "ParamId": 97,
-        "Explain": "3.8 Mid-Autumn 3-Day Sign-in",
+        "Explain": "Go to Main Stage",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -4600,6 +4626,32 @@
         "ConditionId": 0,
         "FunctionalId": 0,
         "TimeId": 42955,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 50110,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 102,
+        "Explain": "4.1版本签到",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 43502,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 50111,
+        "Origin": 2,
+        "UiName": "UiSignBanner",
+        "ParamId": 103,
+        "Explain": "4.1元旦签到",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 43503,
         "IsHideFunc": true,
         "IsShowExplain": false
     },
@@ -5112,7 +5164,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            2
+            4
         ]
     },
     {
@@ -9042,6 +9094,38 @@
         "IsShowExplain": false,
         "CustomParams": [
             1037
+        ]
+    },
+    {
+        "SkipId": 530,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ParamId": 0,
+        "Explain": "新主线第三十八章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10308,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1038
+        ]
+    },
+    {
+        "SkipId": 531,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ParamId": 0,
+        "Explain": "新主线第三十九章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10308,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1039
         ]
     },
     {
@@ -17824,7 +17908,7 @@
         "Origin": 6,
         "UiName": "UiFubenPractice",
         "ParamId": 0,
-        "Explain": "Go to Member Tutorial Stage (original Celica)",
+        "Explain": "Complete Normal Chapter 5",
         "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 1800,
@@ -18328,11 +18412,43 @@
         ]
     },
     {
+        "SkipId": 7137,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "ParamId": 0,
+        "Explain": "To CUB Tutorial Trial - Chapter 30",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1801,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            30
+        ]
+    },
+    {
+        "SkipId": 7138,
+        "Origin": 7,
+        "UiName": "SkipToPartnerTeachingChapter",
+        "ParamId": 0,
+        "Explain": "前往辅助机教学试玩-第三十一章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1801,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            31
+        ]
+    },
+    {
         "SkipId": 7200,
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Member Tutorial Stage (original Celica)",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -18631,7 +18747,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Commandant Level Up (new battle screen)",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -18847,7 +18963,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Hidden Story 1-6",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19076,7 +19192,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Hidden Story 4-6",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19211,7 +19327,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Clear Normal Story 6-12",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19326,7 +19442,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Mission (Daily)",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19441,7 +19557,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Advance to Simulated Battlefield",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19556,7 +19672,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Simulation Shop Exchange",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19603,7 +19719,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            2,
+            4,
             0,
             0
         ]
@@ -19676,7 +19792,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Go to Commandant Level Up (new battle screen)",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19825,7 +19941,7 @@
         "Origin": 1,
         "UiName": "UiNewFuben",
         "ParamId": 0,
-        "Explain": "Go to Main Stage",
+        "Explain": "Main Story Chapter 3",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19838,7 +19954,7 @@
         "Origin": 7,
         "UiName": "OnOpenMainLineStage",
         "ParamId": 0,
-        "Explain": "Main Story Chapter 1",
+        "Explain": "Main Story Chapter 5",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -19854,7 +19970,7 @@
         "Origin": 6,
         "UiName": "UiNewDrawMain",
         "ParamId": 0,
-        "Explain": "Go to Research",
+        "Explain": "Main Story Chapter 7",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 401,
@@ -24940,7 +25056,7 @@
         "Origin": 7,
         "UiName": "SkipToCharacterV2P6",
         "ParamId": 0,
-        "Explain": "Advance to Members",
+        "Explain": "Go to Members",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 101,
@@ -25148,7 +25264,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -25290,7 +25406,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -25494,7 +25610,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            2,
+            4,
             0,
             0
         ]
@@ -25577,7 +25693,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            2,
+            4,
             0,
             0
         ]
@@ -25914,7 +26030,7 @@
         "CustomParams": [
             2,
             0,
-            4
+            5
         ]
     },
     {
@@ -25953,7 +26069,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -26724,7 +26840,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -26974,7 +27090,7 @@
         "UiName": "SkipToRpgMakerGameMain",
         "ParamId": 0,
         "Explain": "Go to the Plum Snow event.",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10345,
         "TimeId": 0,
@@ -27438,7 +27554,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -28689,7 +28805,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            43
+            44
         ]
     },
     {
@@ -28794,7 +28910,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -28896,7 +29012,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -28982,7 +29098,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29175,7 +29291,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29282,7 +29398,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29492,7 +29608,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29705,7 +29821,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29810,7 +29926,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -29851,7 +29967,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "Complete \"Phantom Delusion\" event missions",
+        "Explain": "Complete \"Phantom Delusions\" event missions",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -29864,50 +29980,11 @@
         ]
     },
     {
-        "SkipId": 20305,
-        "Origin": 6,
-        "UiName": "UiNewDrawMain",
-        "ParamId": 0,
-        "Explain": "【神丽芙】前往主题卡池",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 401,
-        "TimeId": 0,
-        "StartTime": "2025/11/13 5:00",
-        "CloseTime": "2025/12/22 5:00",
-        "IsHideFunc": true,
-        "IsShowExplain": false,
-        "CustomParams": [
-            1,
-            11
-        ]
-    },
-    {
-        "SkipId": 20306,
-        "Origin": 6,
-        "UiName": "UiPurchase",
-        "ParamId": 0,
-        "Explain": "【神丽芙】前往涂装补给包",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 3,
-        "TimeId": 0,
-        "StartTime": "2025/11/13 5:00",
-        "CloseTime": "2025/12/22 5:00",
-        "IsHideFunc": true,
-        "IsShowExplain": false,
-        "CustomParams": [
-            2,
-            0,
-            3
-        ]
-    },
-    {
         "SkipId": 20307,
         "Origin": 6,
         "UiName": "UiFubenPracticeCharacterDetail",
         "ParamId": 0,
-        "Explain": "跳转赛利卡教学（露娜跃升）",
+        "Explain": "To Celica Tutorial (Luna Leap)",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1800,
@@ -29917,6 +29994,22 @@
         "CustomParams": [
             1171004,
             30100185
+        ]
+    },
+    {
+        "SkipId": 20308,
+        "Origin": 7,
+        "UiName": "OnOpenCharacterFileFubenActivity",
+        "ParamId": 0,
+        "Explain": "【测试】涂装套装试玩跳转测试",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10325,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            43
         ]
     },
     {
@@ -29940,7 +30033,7 @@
         "Origin": 6,
         "UiName": "UiFavorabilityStory",
         "ParamId": 0,
-        "Explain": "前往丽芙好感度剧情",
+        "Explain": "Go to Liv Affection Story",
         "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -29949,6 +30042,166 @@
         "IsShowExplain": false,
         "CustomParams": [
             1031005
+        ]
+    },
+    {
+        "SkipId": 20311,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "ParamId": 0,
+        "Explain": "完成“4.1预热”活动任务",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            106
+        ]
+    },
+    {
+        "SkipId": 20312,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "【布偶熊】前往主题卡池",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            11
+        ]
+    },
+    {
+        "SkipId": 20313,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "【布偶熊】前往涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 3,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 20314,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "ParamId": 0,
+        "Explain": "布偶熊赛利卡补习班跳转（33期之后，新增跳转id）",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 10325,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            44
+        ]
+    },
+    {
+        "SkipId": 20315,
+        "Origin": 1,
+        "UiName": "UiFubenExperiment",
+        "ParamId": 18,
+        "Explain": "Coating Set Trial_The Godfall Revelation_Watanabe_Hell Sing",
+        "IsRecord": false,
+        "ConditionId": 770400,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            18
+        ]
+    },
+    {
+        "SkipId": 20316,
+        "Origin": 1,
+        "UiName": "UiFubenExperiment",
+        "ParamId": 18,
+        "Explain": "Coating Set Trial_The Godfall Revelation_Vera_Hollow Crown",
+        "IsRecord": false,
+        "ConditionId": 770400,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            18
+        ]
+    },
+    {
+        "SkipId": 20317,
+        "Origin": 1,
+        "UiName": "UiFubenExperiment",
+        "ParamId": 18,
+        "Explain": "Coating Set Trial_The Godfall Revelation_Lilith_Roulette of Stolen Time",
+        "IsRecord": false,
+        "ConditionId": 770400,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            18
+        ]
+    },
+    {
+        "SkipId": 20318,
+        "Origin": 1,
+        "UiName": "UiFubenExperiment",
+        "ParamId": 18,
+        "Explain": "Coating Set Trial_The Godfall Revelation_Wanshi_Infernal Deliverance",
+        "IsRecord": false,
+        "ConditionId": 770400,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            18
+        ]
+    },
+    {
+        "SkipId": 20319,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往布偶熊好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1291003
         ]
     },
     {
@@ -35625,7 +35878,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35716,7 +35969,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35736,7 +35989,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35775,7 +36028,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35814,7 +36067,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35847,7 +36100,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35886,7 +36139,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35951,7 +36204,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -35990,7 +36243,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36010,7 +36263,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36045,7 +36298,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36084,7 +36337,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36156,7 +36409,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36210,7 +36463,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36335,7 +36588,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36400,7 +36653,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36439,7 +36692,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36459,7 +36712,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36513,7 +36766,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36548,7 +36801,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36602,7 +36855,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36641,7 +36894,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36710,7 +36963,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36802,7 +37055,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36856,7 +37109,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36876,7 +37129,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36930,7 +37183,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36950,7 +37203,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -36970,7 +37223,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37024,7 +37277,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37044,7 +37297,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37079,7 +37332,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37133,7 +37386,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37190,7 +37443,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37240,7 +37493,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37260,7 +37513,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37280,7 +37533,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37319,7 +37572,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37354,7 +37607,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37374,7 +37627,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37409,7 +37662,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37429,7 +37682,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37687,7 +37940,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37707,7 +37960,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37727,7 +37980,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37780,7 +38033,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37800,7 +38053,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37820,7 +38073,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37874,7 +38127,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37894,7 +38147,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37914,7 +38167,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37934,7 +38187,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -37954,7 +38207,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38007,7 +38260,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38061,7 +38314,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38096,7 +38349,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38154,7 +38407,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38219,7 +38472,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38258,7 +38511,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38311,7 +38564,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38350,7 +38603,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38440,7 +38693,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38479,7 +38732,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38532,7 +38785,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38552,7 +38805,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38591,7 +38844,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38630,7 +38883,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38669,7 +38922,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38689,7 +38942,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38743,7 +38996,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38763,7 +39016,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38802,7 +39055,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38890,7 +39143,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38928,7 +39181,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38967,7 +39220,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -38987,7 +39240,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39022,7 +39275,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39076,7 +39329,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39115,7 +39368,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39150,7 +39403,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39188,7 +39441,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39227,7 +39480,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39247,7 +39500,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39351,7 +39604,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39423,7 +39676,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39443,7 +39696,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39512,7 +39765,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39532,7 +39785,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39571,7 +39824,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39591,7 +39844,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39663,7 +39916,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39702,7 +39955,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39737,7 +39990,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39757,7 +40010,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39811,7 +40064,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39846,7 +40099,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39885,7 +40138,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39920,7 +40173,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39959,7 +40212,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39979,7 +40232,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -39999,7 +40252,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40019,7 +40272,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40039,7 +40292,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40089,7 +40342,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40109,7 +40362,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40184,7 +40437,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40204,7 +40457,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40258,7 +40511,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40278,7 +40531,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40316,7 +40569,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40355,7 +40608,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40375,7 +40628,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40395,7 +40648,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40415,7 +40668,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40454,7 +40707,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40511,7 +40764,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40565,7 +40818,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -40637,6 +40890,99 @@
             1,
             0,
             0
+        ]
+    },
+    {
+        "SkipId": 80274,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 0:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80275,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1001,
+        "TimeId": 0,
+        "StartTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            504
+        ]
+    },
+    {
+        "SkipId": 80276,
+        "Origin": 7,
+        "UiName": "OnOpenPassport",
+        "ParamId": 0,
+        "Explain": "Tactical Assessment Manual",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10342,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/2/2 4:59",
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 80277,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 0:00",
+        "CloseTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80278,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1001,
+        "TimeId": 0,
+        "StartTime": "2026/2/2 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            502
         ]
     },
     {
@@ -42507,6 +42853,18 @@
         "IsShowExplain": false
     },
     {
+        "SkipId": 189071,
+        "Origin": 9,
+        "ParamId": 15,
+        "Explain": "Christmas Bliss",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false
+    },
+    {
         "SkipId": 89074,
         "Origin": 7,
         "UiName": "SkipToTemple2",
@@ -42543,11 +42901,7 @@
         "FunctionalId": 20000,
         "TimeId": 0,
         "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            400,
-            4001
-        ]
+        "IsShowExplain": false
     },
     {
         "SkipId": 89077,
@@ -42624,7 +42978,7 @@
         "ParamId": 0,
         "Explain": "Advance to Golden Vortex",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10405,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42637,7 +42991,7 @@
         "ParamId": 0,
         "Explain": "Construct Shard",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 770428,
         "FunctionalId": 1701,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42700,7 +43054,7 @@
         "ParamId": 0,
         "Explain": "Lightning and Thunder",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10448,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42713,7 +43067,7 @@
         "ParamId": 0,
         "Explain": "Advance to event [Cursed Waves]",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10433,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42726,7 +43080,7 @@
         "ParamId": 0,
         "Explain": "Derived from Matrix",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10453,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42739,7 +43093,7 @@
         "ParamId": 0,
         "Explain": "Awakening Tundra",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10470,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -42877,6 +43231,24 @@
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
+    },
+    {
+        "SkipId": 89101,
+        "Origin": 7,
+        "UiName": "SkipToBigWorld",
+        "ParamId": 0,
+        "Explain": "4.2罗塞塔主线，跳空花罗塞塔Quest",
+        "IsRecord": false,
+        "ConditionId": 1050153,
+        "FunctionalId": 20000,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            400,
+            4001,
+            1
+        ]
     },
     {
         "SkipId": 90000,
@@ -43174,7 +43546,7 @@
         "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10486,
-        "TimeId": 0,
+        "TimeId": 44028,
         "IsHideFunc": false,
         "IsShowExplain": false
     },
@@ -43273,7 +43645,7 @@
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10490,
-        "TimeId": 38200,
+        "TimeId": 43701,
         "IsHideFunc": true,
         "IsShowExplain": false
     },
@@ -43657,7 +44029,7 @@
         "Origin": 7,
         "UiName": "SkipToUiWelfare",
         "ParamId": 0,
-        "Explain": "跳转倒首充活动界面",
+        "Explain": "To 1st Recharge Event Screen",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -43702,6 +44074,73 @@
             0,
             207
         ]
+    },
+    {
+        "SkipId": 90055,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 0,
+        "Explain": "Skip to Grind Shop",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            1460
+        ]
+    },
+    {
+        "SkipId": 90056,
+        "Origin": 6,
+        "UiName": "UiTask",
+        "ParamId": 0,
+        "Explain": "Weekly Mission",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 505,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            5,
+            0,
+            0
+        ]
+    },
+    {
+        "SkipId": 90057,
+        "Origin": 6,
+        "UiName": "UiTask",
+        "ParamId": 0,
+        "Explain": "Service Mission",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 501,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            7,
+            0,
+            0
+        ]
+    },
+    {
+        "SkipId": 90058,
+        "Origin": 7,
+        "UiName": "SkipToUiRadioSignPopupHall",
+        "ParamId": 0,
+        "Explain": "4.1空花签到调频",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10497,
+        "TimeId": 43920,
+        "IsHideFunc": true,
+        "IsShowExplain": false
     },
     {
         "SkipId": 1300001,
@@ -43901,7 +44340,7 @@
         "IsHideFunc": false,
         "IsShowExplain": false,
         "CustomParams": [
-            2,
+            4,
             0,
             0
         ]
@@ -44387,7 +44826,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -44606,7 +45045,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -44697,7 +45136,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -45337,7 +45776,7 @@
         "CustomParams": [
             2,
             0,
-            3
+            4
         ]
     },
     {
@@ -47029,6 +47468,57 @@
         "IsShowExplain": false,
         "CustomParams": [
             22,
+            1
+        ]
+    },
+    {
+        "SkipId": 1300624,
+        "Origin": 6,
+        "UiName": "UiActivityBriefBase",
+        "ParamId": 0,
+        "Explain": "KR4.1活动面板deeplink",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10303,
+        "TimeId": 2160703,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "SkipId": 1300625,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "KR4.1布偶熊角色卡池deeplink",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 2160704,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            11
+        ]
+    },
+    {
+        "SkipId": 1300626,
+        "Origin": 2,
+        "UiName": "UiAccumulateExpendShopMain",
+        "ParamId": 0,
+        "Explain": "累销商店",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
             1
         ]
     }

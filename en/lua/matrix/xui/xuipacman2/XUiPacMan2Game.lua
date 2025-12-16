@@ -1,6 +1,8 @@
 local XUiPacMan2StarTarget = require("XUi/XUiPacMan2/XUiPacMan2StarTarget")
 local XUiPacMan2GridLife = require("XUi/XUiPacMan2/XUiPacMan2GridLife")
 local XUiPacMan2MoveTo = require("XUi/XUiPacMan2/XUiPacMan2MoveTo")
+local XUiPacMan2GamepadInput = require("XUi/XUiPacMan2/XUiPacMan2GamepadInput")
+local XUiToggle = require("XUi/XUiCommon/XUiToggle")
 
 -- 游戏实体类型枚举
 local EntityEnum = {
@@ -42,6 +44,15 @@ local BackgroundType = {
     GhostKillPlayer = 3,
 }
 
+-- 方向枚举
+local Direction = {
+    None = 0,  -- 无方向
+    Up = 1,    -- 上
+    Down = 2,  -- 下
+    Left = 3,  -- 左
+    Right = 4, -- 右
+}
+
 ---@class UiPacMan2Game : XLuaUi
 ---@field _Control XPacMan2Control
 local XUiPacMan2Game = XLuaUiManager.Register(XLuaUi, "UiPacMan2Game")
@@ -69,6 +80,8 @@ function XUiPacMan2Game:OnAwake()
     -- 初始化拖拽相关变量
     self._DragOffset = XLuaVector2.New()
     self._OperationPos = XLuaVector2.New()
+    -- 初始化当前方向（本地记录，不使用movement的方向，使用枚举值）
+    self._CurrentDirection = Direction.None
     
     -- 初始化星级相关
     ---@type XTablePacMan2Stage
@@ -116,13 +129,17 @@ function XUiPacMan2Game:OnAwake()
     
     -- 初始化操作方式相关
     self._IsTouch = self._Control:GetToggleTouch()
-    self.BtnSwitch.CallBack = function(value)
+    -- 初始化 XUiToggle 组件
+    ---@type XUiToggle
+    self._ToggleSwitch = XUiToggle.New(self.BtnSwitch, self)
+    self._ToggleSwitch:SetOnValueChanged(function(value)
         self._IsTouch = value == 0
         self._Control:SetToggleTouch(self._IsTouch)
         self:UpdateInput()
         self:UpdateTipsTextBySwitchInput()
-    end
-    self.BtnSwitch:SetButtonState(self._IsTouch and CS.UiButtonState.Normal or CS.UiButtonState.Select)
+    end)
+    -- 设置初始状态：IsTouch=true -> On状态(value=0), IsTouch=false -> Off状态(value=1)
+    self._ToggleSwitch:SetToggleState(self._IsTouch)
     self:InitInput()
     
     -- 初始化进度条相关
@@ -144,6 +161,33 @@ function XUiPacMan2Game:OnAwake()
 
     self._BackgroundType = BackgroundType.Default
     self._Backgounrd = {}
+    
+    -- 初始化像素化特效节点列表（用于选择最近的节点）
+    self._PixelationNodes = {}
+    if self.FxPixelation01 then
+        table.insert(self._PixelationNodes, self.FxPixelation01)
+    end
+    if self.FxPixelation02 then
+        table.insert(self._PixelationNodes, self.FxPixelation02)
+    end
+    if self.FxPixelation03 then
+        table.insert(self._PixelationNodes, self.FxPixelation03)
+    end
+    
+    -- 初始化像素化特效定时器列表
+    self._PixelationTimers = {}
+    
+    -- 初始化 FlashKill 特效定时器列表
+    self._FlashKillTimers = {}
+    
+    -- 初始化 FlashKill 特效节点
+    if self.FlashKill then
+        self.FlashKill.gameObject:SetActiveEx(false)
+    end
+    
+    ---@type XUiPacMan2GamepadInput
+    -- 初始化手柄输入处理
+    self._GamepadInput = XUiPacMan2GamepadInput.New(self)
 end
 
 function XUiPacMan2Game:OnStart(stageId)
@@ -152,6 +196,9 @@ function XUiPacMan2Game:OnStart(stageId)
 end
 
 function XUiPacMan2Game:OnDestroy()
+    -- 禁用道具音效（需要在 _StagePrefab 被置为 nil 之前调用）
+    self:_DisableItemSounds()
+    
     -- 因为会缓存 prefab，所以这里要手动销毁
     -- 避免下次打开游戏, 使用了缓存的prefab
     local prefabComponent = self.UiSceneInfo.Transform:GetComponent("XUiLoadPrefab")
@@ -161,6 +208,8 @@ function XUiPacMan2Game:OnDestroy()
     self._StagePrefab = nil
     self._GameManager = nil
     self._PlayerMovement = nil
+    
+    -- XUiToggle 继承自 XUiNode，会自动随父节点销毁，无需手动调用
 
     ---@type XGoInputHandler
     local goInputHandler = self.InputHandler
@@ -175,6 +224,18 @@ function XUiPacMan2Game:OnDestroy()
     -- 清理背景相关资源
     self._Backgounrd = {}
     self._BackgroundType = nil
+    
+    -- 清理像素化特效定时器
+    self:_ClearPixelationTimers()
+    
+    -- 清理 FlashKill 特效定时器
+    self:_ClearFlashKillTimers()
+    
+    -- 销毁手柄输入处理
+    if self._GamepadInput then
+        self._GamepadInput:Dispose()
+        self._GamepadInput = nil
+    end
 end
 
 function XUiPacMan2Game:OnEnable()
@@ -200,6 +261,11 @@ function XUiPacMan2Game:OnEnable()
             self.BtnRight.gameObject:SetActiveEx(true)
         end
     end
+    
+    -- 启用手柄输入
+    if self._GamepadInput then
+        self._GamepadInput:Enable()
+    end
 end
 
 function XUiPacMan2Game:OnDisable()
@@ -209,6 +275,11 @@ function XUiPacMan2Game:OnDisable()
     --    XScheduleManager.UnSchedule(self._CountDownTimer)
     --    self._CountDownTimer = false
     --end
+    
+    -- 禁用手柄输入
+    if self._GamepadInput then
+        self._GamepadInput:Disable()
+    end
 end
 
 local GameState = {
@@ -310,6 +381,10 @@ function XUiPacMan2Game:UpdateKills()
     if self._LastKillAmount ~= self._GameManager.Kills then
         self._LastKillAmount = self._GameManager.Kills
         self:UpdateTips(TipsType.KillMonster)
+        -- 当 kills 数量变化时，显示像素化特效
+        self:ShowPixelationEffect()
+        -- 当 kills 数量变化时，显示 FlashKill 特效
+        self:ShowFlashKillEffect()
     end
 end
 
@@ -365,6 +440,12 @@ function XUiPacMan2Game:StartGame()
 end
 
 function XUiPacMan2Game:OpenSettlement()
+    -- 结算时恢复鼠标显示并禁用手柄输入检测
+    if self._GamepadInput then
+        self._GamepadInput:RestoreCursor()
+        self._GamepadInput:Disable()
+    end
+    
     -- 只有成功才发送请求
     if self._GameManager:GetGameState() == GameState.GameClear then
         local data = {
@@ -658,6 +739,33 @@ function XUiPacMan2Game:Divide1000(value)
     return value / 1000
 end
 
+--- 禁用道具音效（在离开关卡时调用）
+function XUiPacMan2Game:_DisableItemSounds()
+    if not self._StagePrefab then
+        return
+    end
+    
+    -- 查找所有 XPacMan2SlowDownGhosts 组件
+    local ghostSlowDownGhosts = self._StagePrefab:GetComponentsInChildren(typeof(CS.XPacMan2.XPacMan2SlowDownGhosts), true)
+    for i = 0, ghostSlowDownGhosts.Length - 1 do
+        local component = ghostSlowDownGhosts[i]
+        local soundComp = component:GetComponent("XUguiPlaySoundWithSource")
+        if soundComp then
+            soundComp.CueId = 0
+        end
+    end
+    
+    -- 查找所有 XPacMan2SpeedUpPlayer 组件
+    local speedUpPlayers = self._StagePrefab:GetComponentsInChildren(typeof(CS.XPacMan2.XPacMan2SpeedUpPlayer), true)
+    for i = 0, speedUpPlayers.Length - 1 do
+        local component = speedUpPlayers[i]
+        local soundComp = component:GetComponent("XUguiPlaySoundWithSource")
+        if soundComp then
+            soundComp.CueId = 0
+        end
+    end
+end
+
 function XUiPacMan2Game:UpdateRange(range, value)
     -- 这一期没有范围怪
     --if value then
@@ -708,20 +816,36 @@ function XUiPacMan2Game:OnDrag(eventData)
         local yAbs = math.abs(offsetY)
         if xAbs > yAbs then
             if offsetX > 0 then
-                self._PlayerMovement:MoveRight()
-                self._PlayerMovement:CheckOccupied(Vector2.right)
-                isTriggerMove = true
+                -- 如果当前方向已经是Right，则不调用Move
+                if self._CurrentDirection ~= Direction.Right then
+                    self._CurrentDirection = Direction.Right
+                    self._PlayerMovement:MoveRight()
+                    self._PlayerMovement:CheckOccupied(Vector2.right)
+                    isTriggerMove = true
+                end
             else
-                self._PlayerMovement:MoveLeft()
-                isTriggerMove = true
+                -- 如果当前方向已经是Left，则不调用Move
+                if self._CurrentDirection ~= Direction.Left then
+                    self._CurrentDirection = Direction.Left
+                    self._PlayerMovement:MoveLeft()
+                    isTriggerMove = true
+                end
             end
         else
             if offsetY > 0 then
-                self._PlayerMovement:MoveUp()
-                isTriggerMove = true
+                -- 如果当前方向已经是Up，则不调用Move
+                if self._CurrentDirection ~= Direction.Up then
+                    self._CurrentDirection = Direction.Up
+                    self._PlayerMovement:MoveUp()
+                    isTriggerMove = true
+                end
             else
-                self._PlayerMovement:MoveDown()
-                isTriggerMove = true
+                -- 如果当前方向已经是Down，则不调用Move
+                if self._CurrentDirection ~= Direction.Down then
+                    self._CurrentDirection = Direction.Down
+                    self._PlayerMovement:MoveDown()
+                    isTriggerMove = true
+                end
             end
         end
         -- 其实人的手并没有那么精准，经常会拖出介于两者之间的角度，所以当处于边界角度时，需要进行“聪明”的判断，否则会被认为“操作手感不好”
@@ -789,10 +913,16 @@ end
 function XUiPacMan2Game:StartCountDown()
     self._IsCountDown = true
     self.PanelCountdown.gameObject:SetActiveEx(true)
+    -- 重置当前方向
+    self._CurrentDirection = Direction.None
     self:PlayAnimation("Countdown", function()
         self._IsCountDown = false
         self.PanelCountdown.gameObject:SetActiveEx(false)
         self._GameManager:Resume()
+        -- 恢复游戏时重新启用手柄功能
+        if self._GamepadInput then
+            self._GamepadInput:Enable()
+        end
     end)
     --local countDown = 4
     --self._CountDown = countDown - 1
@@ -849,6 +979,11 @@ function XUiPacMan2Game:OpenPauseUi()
     -- 修复:复活触发倒计时的时候，点快点能打开暂停界面
     if self._GameManager:GetGameState() == GameState.Playing then
         self._GameManager:Pause()
+        -- 暂停游戏时恢复鼠标显示并禁用手柄功能
+        if self._GamepadInput then
+            self._GamepadInput:RestoreCursor()
+            self._GamepadInput:Disable()
+        end
         XLuaUiManager.Open("UiPacMan2PopupStageStop", self._StageId, function()
             self:StartCountDown()
             --self._GameManager:Resume()
@@ -859,18 +994,22 @@ function XUiPacMan2Game:OpenPauseUi()
 end
 
 function XUiPacMan2Game:OnClickUp()
+    self._CurrentDirection = Direction.Up
     self._PlayerMovement:MoveUp()
 end
 
 function XUiPacMan2Game:OnClickDown()
+    self._CurrentDirection = Direction.Down
     self._PlayerMovement:MoveDown()
 end
 
 function XUiPacMan2Game:OnClickLeft()
+    self._CurrentDirection = Direction.Left
     self._PlayerMovement:MoveLeft()
 end
 
 function XUiPacMan2Game:OnClickRight()
+    self._CurrentDirection = Direction.Right
     self._PlayerMovement:MoveRight()
 end
 
@@ -896,7 +1035,8 @@ function XUiPacMan2Game:UpdateTips(tipsType, params1)
             if tipsType == TipsType.GetItem and tipsConfig.TriggerType == TipsType.GetItem then
                 local itemId = params1
                 if itemId == tipsConfig.TriggerPram[1] then
-                    self:AppendText(XUiHelper.ReplaceTextNewLine(tipsConfig.TipsContent))
+                    -- 道具类型的tips，即使文本相同也要显示（传入true强制添加）
+                    self:AppendText(XUiHelper.ReplaceTextNewLine(tipsConfig.TipsContent), true)
                 end
             end
 
@@ -1079,8 +1219,12 @@ function XUiPacMan2Game:InitPanelExit()
     self.PanelExit.transform.position = position
 end
 
-function XUiPacMan2Game:AppendText(text)
-    if self._TxtTipsArray[1].text == text then
+--- 添加提示文本
+---@param text string 提示文本
+---@param forceAppend? boolean 是否强制添加（即使文本相同），默认false
+function XUiPacMan2Game:AppendText(text, forceAppend)
+    -- 如果不是强制添加，且文本相同，则跳过
+    if not forceAppend and self._TxtTipsArray[1].text == text then
         return
     end
     for i = #self._TxtTipsArray, 2, -1 do
@@ -1135,13 +1279,234 @@ function XUiPacMan2Game:InitBackground()
         self._Backgounrd[BackgroundType.Default] = bgTileTextureSlow
     end
     if bgTileTextureQuick then
-        self._Backgounrd[BackgroundType.PlayerKillGhost] = bgTileTextureQuick
+        self._Backgounrd[BackgroundType.PlayerKillGhost] = bgTileTextureReverse
     end
     if bgTileTextureReverse then
-        self._Backgounrd[BackgroundType.GhostKillPlayer] = bgTileTextureReverse
+        self._Backgounrd[BackgroundType.GhostKillPlayer] = bgTileTextureQuick
     end
     
     self:UpdateBackground()
+end
+
+--- 显示像素化特效（当 kills 数量变化时）
+function XUiPacMan2Game:ShowPixelationEffect()
+    if not self.FxPixelation01 or not self._GameManager or not self._GameManager.Player then
+        return
+    end
+    
+    -- 获取玩家世界坐标
+    local playerWorldPosition = self._GameManager.Player.transform.position
+    
+    -- 获取场景相机（TileMapCamera）
+    local sceneCameraTransform = self._StagePrefab and self._StagePrefab.transform:Find("CameraLayer/TileMapCamera")
+    if not sceneCameraTransform then
+        return
+    end
+    
+    local sceneCamera = sceneCameraTransform:GetComponent("Camera")
+    if not sceneCamera then
+        return
+    end
+    
+    -- 将玩家世界坐标转换为视口坐标
+    local playerViewportPos = sceneCamera:WorldToViewportPoint(playerWorldPosition)
+    
+    -- 获取UI相机
+    local uiCamera = CS.XUiManager.Instance.UiCamera
+    
+    -- 获取 _MoverPlayer 的位置（PanelPlayer 的 UI 世界坐标）
+    local moverPlayerWorldPos = self.PanelPlayer.transform.position
+    local moverPlayerViewportPos = uiCamera:WorldToViewportPoint(moverPlayerWorldPos)
+    
+    -- 计算玩家到 _MoverPlayer 的距离
+    local dxPlayer = playerViewportPos.x - moverPlayerViewportPos.x
+    local dyPlayer = playerViewportPos.y - moverPlayerViewportPos.y
+    local playerToMoverDistance = math.sqrt(dxPlayer * dxPlayer + dyPlayer * dyPlayer)
+    
+    -- 计算 _MoverPlayer 到 3 个节点的距离
+    local nodeDistances = {}
+    if self._PixelationNodes then
+        for i, node in ipairs(self._PixelationNodes) do
+            if node and not XTool.UObjIsNil(node) then
+                local nodeWorldPos = node.transform.position
+                local nodeViewportPos = uiCamera:WorldToViewportPoint(nodeWorldPos)
+                
+                local dx = moverPlayerViewportPos.x - nodeViewportPos.x
+                local dy = moverPlayerViewportPos.y - nodeViewportPos.y
+                local distance = math.sqrt(dx * dx + dy * dy)
+                
+                nodeDistances[i] = {
+                    node = node,
+                    distance = distance
+                }
+            end
+        end
+    end
+    
+    -- 选择节点
+    local selectedNode = nil
+    
+    -- 如果没有节点距离数据，使用默认的 FxPixelation01
+    if XTool.IsTableEmpty(nodeDistances) then
+        selectedNode = self.FxPixelation01
+    else
+        -- 按距离排序（从小到大）
+        table.sort(nodeDistances, function(a, b)
+            return a.distance < b.distance
+        end)
+        
+        -- 根据玩家到 _MoverPlayer 的距离选择节点
+        if #nodeDistances == 1 then
+            selectedNode = nodeDistances[1].node
+        elseif #nodeDistances == 2 then
+            local d1 = nodeDistances[1].distance
+            local d2 = nodeDistances[2].distance
+            
+            if playerToMoverDistance <= d1 then
+                selectedNode = nodeDistances[1].node
+            elseif playerToMoverDistance <= d2 then
+                -- 在 d1 和 d2 之间，看更接近哪个
+                local distToD1 = math.abs(playerToMoverDistance - d1)
+                local distToD2 = math.abs(playerToMoverDistance - d2)
+                selectedNode = (distToD1 < distToD2) and nodeDistances[1].node or nodeDistances[2].node
+            else
+                selectedNode = nodeDistances[2].node
+            end
+        elseif #nodeDistances >= 3 then
+            local d1 = nodeDistances[1].distance
+            local d2 = nodeDistances[2].distance
+            local d3 = nodeDistances[3].distance
+            
+            if playerToMoverDistance <= d1 then
+                selectedNode = nodeDistances[1].node
+            elseif playerToMoverDistance <= d2 then
+                -- 在 d1 和 d2 之间，看更接近哪个
+                local distToD1 = math.abs(playerToMoverDistance - d1)
+                local distToD2 = math.abs(playerToMoverDistance - d2)
+                selectedNode = (distToD1 < distToD2) and nodeDistances[1].node or nodeDistances[2].node
+            elseif playerToMoverDistance <= d3 then
+                -- 在 d2 和 d3 之间，看更接近哪个
+                local distToD2 = math.abs(playerToMoverDistance - d2)
+                local distToD3 = math.abs(playerToMoverDistance - d3)
+                selectedNode = (distToD2 < distToD3) and nodeDistances[2].node or nodeDistances[3].node
+            else
+                selectedNode = nodeDistances[3].node
+            end
+        end
+    end
+    
+    -- 如果没有找到可用的节点，使用默认的 FxPixelation01
+    if not selectedNode then
+        selectedNode = self.FxPixelation01
+    end
+    
+    -- 克隆选中的节点
+    local clonedFx = XUiHelper.Instantiate(selectedNode.gameObject, selectedNode.transform.parent)
+    
+    -- 获取节点原始位置的 z 坐标（保持在相同的 UI 层级）
+    local originalZ = selectedNode.transform.position.z
+    
+    -- 计算相机到节点的距离（用于 ViewportToWorldPoint）
+    local cameraToNodeDistance = originalZ - uiCamera.transform.position.z
+    
+    -- 将玩家视口坐标转换为UI世界坐标，使用相机到节点的距离作为 z
+    local viewportPosWithDepth = CS.UnityEngine.Vector3(playerViewportPos.x, playerViewportPos.y, cameraToNodeDistance)
+    local uiWorldPosition = uiCamera:ViewportToWorldPoint(viewportPosWithDepth)
+    
+    -- 设置克隆体的位置
+    clonedFx.transform.position = uiWorldPosition
+    
+    -- 激活克隆体
+    clonedFx:SetActiveEx(true)
+    
+    -- 保存定时器ID以便后续销毁
+    if not self._PixelationTimers then
+        self._PixelationTimers = {}
+    end
+    
+    -- 先声明 timerId，才能在回调函数内使用
+    local timerId
+    -- 一定时间后移除克隆体
+    timerId = XScheduleManager.ScheduleOnce(function()
+        if clonedFx and not XTool.UObjIsNil(clonedFx) then
+            CS.UnityEngine.Object.Destroy(clonedFx)
+        end
+        -- 从定时器列表中移除
+        if self._PixelationTimers then
+            for i, id in ipairs(self._PixelationTimers) do
+                if id == timerId then
+                    table.remove(self._PixelationTimers, i)
+                    break
+                end
+            end
+        end
+    end, XScheduleManager.SECOND * 5)
+    
+    -- 保存定时器ID以便后续销毁
+    table.insert(self._PixelationTimers, timerId)
+end
+
+--- 清理所有像素化特效定时器
+function XUiPacMan2Game:_ClearPixelationTimers()
+    if self._PixelationTimers then
+        for _, timerId in ipairs(self._PixelationTimers) do
+            if timerId then
+                XScheduleManager.UnSchedule(timerId)
+            end
+        end
+        self._PixelationTimers = {}
+    end
+end
+
+--- 显示 FlashKill 特效（当 kills 数量变化时）
+function XUiPacMan2Game:ShowFlashKillEffect()
+    if not self.FlashKill then
+        return
+    end
+    
+    -- 克隆 FlashKill 节点
+    local clonedFx = XUiHelper.Instantiate(self.FlashKill.gameObject, self.FlashKill.transform.parent)
+    
+    -- 激活克隆体
+    clonedFx:SetActiveEx(true)
+    
+    -- 保存定时器ID以便后续销毁
+    if not self._FlashKillTimers then
+        self._FlashKillTimers = {}
+    end
+    
+    -- 先声明 timerId，才能在回调函数内使用
+    local timerId
+    -- 5秒后移除克隆体
+    timerId = XScheduleManager.ScheduleOnce(function()
+        if clonedFx and not XTool.UObjIsNil(clonedFx) then
+            CS.UnityEngine.Object.Destroy(clonedFx)
+        end
+        -- 从定时器列表中移除
+        if self._FlashKillTimers then
+            for i, id in ipairs(self._FlashKillTimers) do
+                if id == timerId then
+                    table.remove(self._FlashKillTimers, i)
+                    break
+                end
+            end
+        end
+    end, XScheduleManager.SECOND * 5)
+    
+    -- 保存定时器ID以便后续销毁
+    table.insert(self._FlashKillTimers, timerId)
+end
+
+--- 清理所有 FlashKill 特效定时器
+function XUiPacMan2Game:_ClearFlashKillTimers()
+    if self._FlashKillTimers then
+        for _, timerId in ipairs(self._FlashKillTimers) do
+            if timerId then
+                XScheduleManager.UnSchedule(timerId)
+            end
+        end
+        self._FlashKillTimers = {}
+    end
 end
 
 return XUiPacMan2Game

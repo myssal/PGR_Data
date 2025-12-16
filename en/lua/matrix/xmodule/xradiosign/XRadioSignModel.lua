@@ -96,4 +96,40 @@ function XRadioSignModel:GetClientConfigs()
     return configs
 end
 
+--- 获取已弹出过的contentId列表（从本地存储读取）
+---@return number[] 已弹出过的contentId数组
+function XRadioSignModel:GetPopupContentIds()
+    local popupKey = "RadioSignPopupContentIds"
+    return self._SaveUtil:GetData(popupKey) or {}
+end
+
+--- 保存已弹出的contentId到本地存储
+---@param contentId number 要保存的contentId
+function XRadioSignModel:AddPopupContentId(contentId)
+    if not contentId or contentId == 0 then
+        return
+    end
+    
+    local popupKey = "RadioSignPopupContentIds"
+    local popupContentIds = self:GetPopupContentIds()
+    
+    -- 检查是否已存在
+    for _, id in ipairs(popupContentIds) do
+        if id == contentId then
+            return
+        end
+    end
+    
+    -- 添加到列表并保存
+    table.insert(popupContentIds, contentId)
+    self._SaveUtil:SaveData(popupKey, popupContentIds)
+end
+
+--- Debug方法：清空已弹出过的contentId本地缓存
+function XRadioSignModel:ClearPopupContentIds()
+    local popupKey = "RadioSignPopupContentIds"
+    self._SaveUtil:SaveData(popupKey, {})
+    XLog.Debug("[XRadioSignModel] ClearPopupContentIds: 已清空本地缓存")
+end
+
 return XRadioSignModel

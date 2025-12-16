@@ -585,7 +585,7 @@
         "Name": "Thunderstrike Tempest III",
         "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1004.png",
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
-        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times.",
+        "Desc": "Dealing Lightning DMG grants a Lightning Shield. When the shield stacks to its maximum, it will automatically detonate, significantly increasing Lightning DMG dealt to the boss. The shield can stack up to 4 times. (Raydiance Effect DMG slightly increased)",
         "FightEventIds": [
             2300054
         ]
@@ -601,6 +601,29 @@
         ],
         "ShowRecommendIds": [
             6
+        ]
+    },
+    {
+        "Id": 56,
+        "Name": "Frostbound Chasm III",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg02.png",
+        "Desc": "Dealing Ice DMG accumulates Frost, which significantly increases Ice DMG delt to the boss. Stacks up to 3 times.",
+        "FightEventIds": [
+            2300056
+        ]
+    },
+    {
+        "Id": 57,
+        "Name": "Flare Burst I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1014.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenChallengeMapBoss/IconBg01.png",
+        "Desc": "For each orb pinged, significantly increases Raydiance DMG taken by the Boss for 10s, stacking up to 5 times. Duration resets every time the effect is triggered.",
+        "FightEventIds": [
+            2300057
+        ],
+        "ShowRecommendIds": [
+            7
         ]
     }
 ]
