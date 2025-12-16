@@ -59,6 +59,11 @@ function XPacMan2Model:GetActivityConfig()
     return config
 end
 
+---@return table<number, XTablePacMan2Activity>
+function XPacMan2Model:GetAllActivityConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.PacMan2Activity)
+end
+
 function XPacMan2Model:GetStageConfigs()
     local configs = self._ConfigUtil:GetByTableKey(TableKey.PacMan2Stage)
     return configs

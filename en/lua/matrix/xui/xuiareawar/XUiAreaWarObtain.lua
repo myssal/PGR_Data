@@ -1,5 +1,8 @@
 local XUiObtain = require("XUi/XUiObtain/XUiObtain")
 local XUiGridAreaWarItem = require("XUi/XUiAreaWar/XUiGridAreaWarItem")
+
+---@class XUiAreaWarObtain
+---@field _Control XAreaWarControl
 local XUiAreaWarObtain =  XLuaUiManager.Register(XUiObtain, "UiAreaWarObtain")
 
 function XUiAreaWarObtain:OnStart(rewardGoodsList,areaWarItemList, title, closeCb, sureCb, horizontalNormalizedPosition, customParams)
@@ -35,16 +38,36 @@ function XUiAreaWarObtain:OnStart(rewardGoodsList,areaWarItemList, title, closeC
 end
 
 function XUiAreaWarObtain:RefreshAreaWarItem(areaWarItemList,horizontalNormalizedPosition)
+    local isPlayItemAudio = false
     for _, itemData in pairs(areaWarItemList) do
         local go = XUiHelper.Instantiate(self.GridAreawarItem, self.PanelContent)
         go.gameObject:SetActiveEx(true)
         local grid = XUiGridAreaWarItem.New(go, self)
         grid:RefreshItem(itemData.ItemId, itemData.Num)
         grid:SetDefaultClickCallBack()
+        
+        -- 掉落超过金色品质的道具，播放音效
+        local quality = self._Control:GetConfig():GetItemQuality(itemData.ItemId)
+        if quality > XMVCA.XAreaWar.EnumConst.ITEM_QUALITY.GOLD then
+            isPlayItemAudio = true
+        end
+    end
+
+    if isPlayItemAudio then
+        self:PlaySound("awardplus")
     end
 
     if horizontalNormalizedPosition then
         self.ScrView.horizontalNormalizedPosition = horizontalNormalizedPosition
     end
 end
+
+-- 播放音效
+function XUiAreaWarObtain:PlaySound(name)
+    self.AudioPlayer = self.AudioPlayer or self.Transform:GetComponent(typeof(CS.XAudioObjectPlayer))
+    if self.AudioPlayer then
+        self.AudioPlayer:PlayByKeyName(name)
+    end
+end
+
 return XUiAreaWarObtain

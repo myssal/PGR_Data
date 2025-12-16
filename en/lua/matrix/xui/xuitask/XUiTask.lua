@@ -30,9 +30,10 @@ function XUiTask:OnAwake()
     self:InitBtnSound()
 end
 
-function XUiTask:OnStart(tabIndex)
+function XUiTask:OnStart(skipIndex)
     local lastSelectTab = XDataCenter.TaskManager.GetNewPlayerHint(XDataCenter.TaskManager.TaskLastSelectTab, 1)
-    self.CurTabIndex = tabIndex or lastSelectTab
+    self.SkipIndex = skipIndex -- 这个是tabCfg的顺序下标 不是动态的btnList数量下标
+    self.CurTabIndex = lastSelectTab
 
     if self.CurTabIndex == nil then
         self.CurTabIndex = 1
@@ -116,6 +117,7 @@ function XUiTask:InitTabList()
     -- 初始化页签实时索引对应配置的映射字典
     ---@type table<number, XTableMainTaskTabControl>
     self._TabIndex2Cfg = {}
+    self._CfgIndex2TabIndex = {}
 
     --- 记录各个页签的解锁状态，用于辅助红点显示
     ---@type table<number, boolean>
@@ -273,6 +275,7 @@ function XUiTask:UpdateTabListShow()
 
                 table.insert(buttonList, btn)
                 self._TabIndex2Cfg[#buttonList] = v
+                self._CfgIndex2TabIndex[i] = #buttonList
             else
                 btn.gameObject:SetActiveEx(false)
 
@@ -289,9 +292,8 @@ function XUiTask:UpdateTabListShow()
                 end
                 table.insert(buttonList, uiButton)
                 self._TabIndex2Cfg[#buttonList] = v
+                self._CfgIndex2TabIndex[i] = #buttonList
             end
-
-            
         end
     end
     
@@ -304,6 +306,9 @@ function XUiTask:UpdateTabListShow()
     local firstEnableIndex = self:CheckTogLockStatus()
     
     -- 修正当前选中页签
+    if self.SkipIndex and self._CfgIndex2TabIndex[self.SkipIndex] then
+        self.CurTabIndex = self._CfgIndex2TabIndex[self.SkipIndex]
+    end
     self.CurTabIndex = math.min(#buttonList, self.CurTabIndex)
     
     local cfg = self._TabIndex2Cfg[self.CurTabIndex]
@@ -508,8 +513,15 @@ function XUiTask:InitBtnSound()
     self.SpecialSoundMap[self:GetAutoKey(self.BtnMainUi, "onClick")] = XLuaAudioManager.UiBasicsMusic.Return
 end
 
-function XUiTask:OnTaskChangeTab(index)
-    self.TabPanelGroup:SelectIndex(index)
+function XUiTask:OnTaskChangeTab(skipIndex)
+    local targetTabIndex = self._CfgIndex2TabIndex[skipIndex] or skipIndex
+
+    -- 越界修正：保持和生成标签时一致
+    local maxIndex = #self.TabList
+    local fixedIndex = math.min(maxIndex, math.max(1, targetTabIndex))
+
+    -- 触发选择
+    self.BtnContent:SelectIndex(fixedIndex)
 end
 
 function XUiTask:OnTaskPanelSelect(index)

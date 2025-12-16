@@ -55,6 +55,8 @@ function XUiAreaWarPopupSellAll:OnBtnSellClick()
             })
         end
     end
+    if #sellItems == 0 then return end
+
     XMVCA.XAreaWar:RequestAreaWar4AuctionPutOn(sellItems)
     self:Close()
 end

@@ -53,15 +53,49 @@ function XRadioSignAgency:Popup()
     if self:IsInTime() then
         local contentOpened
         local contents = self._Model:GetContentConfigs()
+        
+        -- 获取已弹出过的contentId列表（从本地存储读取）
+        local popupContentIds = self._Model:GetPopupContentIds()
+        local popupContentIdsMap = {}
+        for _, id in ipairs(popupContentIds) do
+            popupContentIdsMap[id] = true
+        end
+        
+        -- 将 contents 转换为数组并按 id 排序
+        local sortedContents = {}
         for _, content in pairs(contents) do
+            table.insert(sortedContents, content)
+        end
+        table.sort(sortedContents, function(a, b)
+            return a.Id < b.Id
+        end)
+        
+        -- 按 id 顺序遍历
+        for i, content in ipairs(sortedContents) do
             local timeId = content.TimeId
             if XFunctionManager.CheckInTimeByTimeId(timeId) then
                 if not self._Model:IsContentReceived(content.Id) then
-                    contentOpened = content
+                    -- 检查是否已经弹出过
+                    if not popupContentIdsMap[content.Id] then
+                        -- 检查解锁顺序：前一个尚未领取的，下一个就不进行popup判定
+                        if i > 1 then
+                            local prevContent = sortedContents[i - 1]
+                            if prevContent and not self._Model:IsContentReceived(prevContent.Id) then
+                                -- 前一个尚未领取，跳过当前content
+                                break
+                            end
+                        end
+                        
+                        contentOpened = content
+                        break
+                    end
                 end
             end
         end
         if contentOpened then
+            -- 保存已弹出的contentId到本地
+            self._Model:AddPopupContentId(contentOpened.Id)
+            
             XLuaUiManager.Open("UiRadioSignPopupHall", contentOpened)
             return true
         end
@@ -70,9 +104,25 @@ function XRadioSignAgency:Popup()
 end
 
 function XRadioSignAgency:DebugOpenPopup()
+    if not XMain.IsEditorDebug then
+        XLog.Error("[XRadioSignAgency] DebugOpenPopup: 此方法仅在编辑器调试模式下可用")
+        return
+    end
+    
     local contentOpened
     local contents = self._Model:GetContentConfigs()
+    
+    -- 将 contents 转换为数组并按 id 排序
+    local sortedContents = {}
     for _, content in pairs(contents) do
+        table.insert(sortedContents, content)
+    end
+    table.sort(sortedContents, function(a, b)
+        return a.Id < b.Id
+    end)
+    
+    -- 按 id 顺序遍历
+    for _, content in ipairs(sortedContents) do
         local timeId = content.TimeId
         if XFunctionManager.CheckInTimeByTimeId(timeId) then
             if not self._Model:IsContentReceived(content.Id) then
@@ -82,7 +132,7 @@ function XRadioSignAgency:DebugOpenPopup()
         end
     end
     if not contentOpened then
-        for _, content in pairs(contents) do
+        for _, content in ipairs(sortedContents) do
             contentOpened = content
             break
         end
@@ -143,6 +193,17 @@ function XRadioSignAgency:HasRewardAvailable()
     end
 
     return false
+end
+
+--- Debug方法：清空已弹出过的contentId本地缓存
+function XRadioSignAgency:DebugClearPopupCache()
+    if not XMain.IsEditorDebug then
+        XLog.Error("[XRadioSignAgency] DebugClearPopupCache: 此方法仅在编辑器调试模式下可用")
+        return
+    end
+    
+    self._Model:ClearPopupContentIds()
+    XUiManager.TipMsg("已清空RadioSign弹出缓存")
 end
 
 return XRadioSignAgency

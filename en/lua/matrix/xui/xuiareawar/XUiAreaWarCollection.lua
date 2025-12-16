@@ -36,6 +36,10 @@ function XUiAreaWarCollection:OnDisable()
     self._Control:GetItemRoom():ClearAllItemNewGet(self.CacheItemIdDic)
 end
 
+function XUiAreaWarCollection:OnDestroy()
+    self:RemoveObtainTimer()
+end
+
 function XUiAreaWarCollection:OnGetLuaEvents()
     return {
         XEventId.EVENT_AREA_WAR_ITEM_ROOM_ITEM_CHANGE
@@ -102,7 +106,7 @@ function XUiAreaWarCollection:OnBtnLevelUpClick()
     end
     if not isUnlock then
         local tips = XAreaWarConfigs.GetCollectionLockTips()
-        local blockName = XAreaWarConfigs.GetBlockName(needCleanBlockId)
+        local blockName = XAreaWarConfigs.GetBlockNameEn(needCleanBlockId)
         XUiManager.TipError(string.format(tips, blockName))
         return
     end
@@ -113,9 +117,27 @@ function XUiAreaWarCollection:OnBtnLevelUpClick()
         return
     end
 
-    XMVCA.XAreaWar:RequestAreaWar4ItemRoomLevelUp(function()
+    XMVCA.XAreaWar:RequestAreaWar4ItemRoomLevelUp(function(rewards)
+        self:PlayAnimation("Unlock")
         self:Refresh()
+        self:StartObtainTimer(rewards)
     end)
+end
+
+-- 延迟弹出奖励弹窗，先播动效
+function XUiAreaWarCollection:StartObtainTimer(rewards)
+    self:RemoveObtainTimer()
+    self.ObtainTimer = XScheduleManager.ScheduleOnce(function()
+        self.ObtainTimer = nil
+        XUiManager.OpenUiObtain(rewards)
+    end, 1000)
+end
+
+function XUiAreaWarCollection:RemoveObtainTimer()
+    if self.ObtainTimer then
+        XScheduleManager.UnSchedule(self.ObtainTimer)
+        self.ObtainTimer = nil
+    end
 end
 
 function XUiAreaWarCollection:Refresh()
@@ -198,7 +220,7 @@ function XUiAreaWarCollection:RefreshCollection()
         attrUiObj:GetObject("TxtNumNow").text = isLast and attrValues[i] or "+" .. attrValues[i] .. "%"
         
         -- 下一等级属性
-        local imgArrow = attrUiObj:GetObject("TxtNumNow")
+        local imgArrow = attrUiObj:GetObject("ImgArrow")
         local txtNumNext = attrUiObj:GetObject("TxtNumNext")
         imgArrow.gameObject:SetActiveEx(isNextLvExit)
         txtNumNext.gameObject:SetActiveEx(isNextLvExit)
@@ -235,9 +257,11 @@ function XUiAreaWarCollection:RefreshPaneLevelUp()
     if self.IsFullLv then 
         self.BtnLevelFull.gameObject:SetActiveEx(true)
         self.BtnLevelFull:SetDisable(true)
+        self.PaneLevelUp.gameObject:SetActiveEx(false)
         return 
     end
 
+    self.PaneLevelUp.gameObject:SetActiveEx(true)
     self.BtnLevelUp.gameObject:SetActiveEx(true)
     local needCleanBlockId = self._Control:GetConfig():GetItemRoomLevelNeedCleanBlock(nextLv)
     local isUnlock = true

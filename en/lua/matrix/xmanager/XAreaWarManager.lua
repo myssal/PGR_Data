@@ -2071,6 +2071,8 @@ XAreaWarManagerCreator = function()
             preFight.FirstFightPos = team:GetFirstFightPos()
             preFight.CaptainPos = team:GetCaptainPos()
             preFight.GeneralSkill = team:GetCurGeneralSkill()
+            preFight.EnterCgIndex = team:GetEnterCgIndex()
+            preFight.SettleCgIndex = team:GetSettleCgIndex()
         
             preFight.AreaWar4PreFightInfo ={ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()} 
 

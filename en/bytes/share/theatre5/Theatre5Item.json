@@ -342,7 +342,7 @@
         ],
         "DescDigit": [
             35,
-            100,
+            125,
             3
         ],
         "Tags": [
@@ -367,7 +367,7 @@
         ],
         "DescDigit": [
             35,
-            100,
+            125,
             3
         ],
         "Tags": [
@@ -393,7 +393,7 @@
         "DescDigit": [
             14,
             14,
-            100,
+            125,
             3
         ],
         "Tags": [
@@ -2863,7 +2863,7 @@
         ],
         "EvolveDescDigit": [
             20,
-            6,
+            3,
             1
         ],
         "Tags": [
@@ -4345,9 +4345,9 @@
             40
         ],
         "AddDigit": [
-            300,
-            30,
-            30
+            150,
+            20,
+            20
         ],
         "Tags": [
             11
@@ -4894,7 +4894,7 @@
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Same effect. Only the one with the highest rarity is activated.",
         "Desc": "Rhythmic Suffering Runes' effects increase by {0}%.",
-        "AddDesc": "After [Rhythmic Suffering] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
+        "AddDesc": "After [Calamity Beat] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
         "IsShow": true,
         "Order": 552,
         "DescDigit": [
@@ -4922,7 +4922,7 @@
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Same effect. Only the one with the highest rarity is activated.",
         "Desc": "Rhythmic Suffering Runes' trigger interval is reduced by {0}s.",
-        "AddDesc": "After [Rhythmic Suffering] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
+        "AddDesc": "After [Calamity Beat] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
         "IsShow": true,
         "Order": 553,
         "DescDigit": [
@@ -4950,7 +4950,7 @@
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Same effect. Only the one with the highest rarity is activated.",
         "Desc": "Takes {1}% less damage for {0}s upon triggering Rhythmic Suffering or Life-Risking Trick Runes.",
-        "AddDesc": "After [Rhythmic Suffering] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
+        "AddDesc": "After [Calamity Beat] Runes trigger {0} times, summons fireballs to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. After each summon, fireball damage increases by {2}%, up to {3}%. This is stackable.",
         "IsShow": true,
         "Order": 554,
         "DescDigit": [
@@ -7262,9 +7262,9 @@
         "IsShow": true,
         "Order": 273,
         "AddDigit": [
-            300,
-            30,
-            30
+            150,
+            20,
+            20
         ],
         "Tags": [
             11
@@ -7286,12 +7286,12 @@
         "IsShow": true,
         "Order": 274,
         "DescDigit": [
-            5
+            4
         ],
         "AddDigit": [
-            300,
-            30,
-            30
+            150,
+            20,
+            20
         ],
         "Tags": [
             11
@@ -7314,12 +7314,12 @@
         "Order": 275,
         "DescDigit": [
             12,
-            60
+            40
         ],
         "AddDigit": [
-            300,
-            30,
-            30
+            150,
+            20,
+            20
         ],
         "Tags": [
             11
@@ -8229,10 +8229,10 @@
         "SellPrice": 12,
         "Quality": 1,
         "BuffType": 0,
-        "Name": "Sigil Chest: Minor",
+        "Name": "Rune Chest: Minor",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxGreen.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Minor Sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Minor Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8244,10 +8244,10 @@
         "SellPrice": 12,
         "Quality": 2,
         "BuffType": 0,
-        "Name": "Sigil Chest: Medium",
+        "Name": "Rune Chest: Medium",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxBlue.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Medium Sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Medium Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8259,10 +8259,10 @@
         "SellPrice": 12,
         "Quality": 3,
         "BuffType": 0,
-        "Name": "Sigil Chest: Major",
+        "Name": "Rune Chest: Major",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem05.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Major Sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Major Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8274,10 +8274,10 @@
         "SellPrice": 12,
         "Quality": 4,
         "BuffType": 0,
-        "Name": "Sigil Chest: Extreme",
+        "Name": "Rune Chest: Extreme",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxOrange.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Extreme Sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Extreme Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8289,10 +8289,10 @@
         "SellPrice": 12,
         "Quality": 4,
         "BuffType": 0,
-        "Name": "Sigil Chest: Random",
+        "Name": "Rune Chest: Random",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8304,10 +8304,10 @@
         "SellPrice": 12,
         "Quality": 4,
         "BuffType": 0,
-        "Name": "Sigil Chest: Random",
+        "Name": "Rune Chest: Random",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
-        "Info": "This mysterious sigil chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random sigil.",
+        "Info": "This mysterious rune chest hums with an otherworldly aura.",
+        "Desc": "Crack it open to get a random Rune.",
         "IsShow": false,
         "Order": 0
     },
@@ -8351,7 +8351,7 @@
         "BuffType": 0,
         "Name": "Inferno Bond",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre4Item41.png",
-        "Desc": "For the first {0} turns, gain {1} extra coins each time you enter the Mysterious Tavern, then lose {2} coins per turn after that.",
+        "Desc": "For the first {0} turns, gain {1} extra coins each time you enter the Mysterious Tavern, then lose {2} coin(s) per turn after that.",
         "IsShow": true,
         "Order": 1,
         "DescDigit": [
@@ -8447,8 +8447,8 @@
         "IsShow": true,
         "Order": 6,
         "DescDigit": [
-            10,
-            3
+            8,
+            2
         ]
     },
     {
@@ -8512,14 +8512,14 @@
         "BuffType": 0,
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
-        "Desc": "For every {0} character levels gained, receive {1} coins. When entering battle, gain bonus stats based on the current level: {2} Attack and {3} Health per level.",
+        "Desc": "For every {0} character level(s) gained, receive {1} coins. When entering battle, gain bonus stats based on the current level: {2} Attack and {3} Health per level.",
         "IsShow": true,
         "Order": 10,
         "DescDigit": [
             1,
             2,
-            10,
-            50
+            6,
+            35
         ]
     },
     {
@@ -8532,12 +8532,12 @@
         "BuffType": 0,
         "Name": "Traveler's Pack",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityGift2005010.png",
-        "Desc": "Each time you enter the Mysterious Tavern, gain {1} bonus EXP for every {0} empty slots in your inventory.",
+        "Desc": "Each time you enter the Mysterious Tavern, gain {1} bonus EXP for every {0} empty slot(s) in your inventory.",
         "IsShow": true,
         "Order": 11,
         "DescDigit": [
             1,
-            2
+            1
         ]
     },
     {
@@ -8836,9 +8836,9 @@
         ],
         "DescDigit": [
             10,
-            10,
+            7,
             40,
-            20
+            14
         ]
     },
     {
@@ -8872,7 +8872,7 @@
         "BuffType": 0,
         "Name": "Phoenix Tail",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by {1}% every {0}s. During the Death Speed phase, the HP recovery bonus increases to {2}%, up to a maximum of {3}%.",
+        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by an additional {1}% every {0}s. This effect stacks up to {2} times. During the Death Speed phase, the accumulated bonus recovery instantly increases by {3}%.",
         "IsShow": true,
         "Order": 31,
         "CharacterId": [
@@ -8988,8 +8988,8 @@
         "IsShow": true,
         "Order": 37,
         "DescDigit": [
-            20,
-            20
+            14,
+            14
         ]
     },
     {
@@ -9043,7 +9043,7 @@
         "Order": 47,
         "DescDigit": [
             1,
-            25
+            18
         ]
     },
     {
@@ -9061,7 +9061,7 @@
         "Order": 48,
         "DescDigit": [
             2,
-            60
+            40
         ]
     },
     {

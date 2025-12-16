@@ -455,9 +455,8 @@ function XUiTeamPrefabMain:OnBtnSkipToTeamRecommendationClick()
 end
 
 ---@param xRealTeam XTeam
-function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseAndCoverBtn)
+function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseBtn, forceHideCoverBtn)
     self.XRealTeam = xRealTeam
-    self.ForceHideUseAndCoverBtn = forceHideUseAndCoverBtn
     local XTeam = require("XEntity/XTeam/XTeam")
     -- 不是xTeam或不是继承自xTeam的都不能操作这些队伍
     if not xRealTeam or (xRealTeam.__cname ~= "XTeam" and xRealTeam.Super == nil) or (xRealTeam.__cname ~= "XTeam" and not CheckClassSuper(xRealTeam, XTeam)) then
@@ -468,8 +467,8 @@ function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseAndCoverBtn)
         self.ForbiddenRealTeamOperate = true
     end
 
-    self.BtnUse.gameObject:SetActiveEx(not forceHideUseAndCoverBtn)
-    self.BtnCover.gameObject:SetActiveEx(not forceHideUseAndCoverBtn)
+    self.BtnUse.gameObject:SetActiveEx(not forceHideUseBtn)
+    self.BtnCover.gameObject:SetActiveEx(not forceHideCoverBtn)
 end
 
 function XUiTeamPrefabMain:OnEnable()

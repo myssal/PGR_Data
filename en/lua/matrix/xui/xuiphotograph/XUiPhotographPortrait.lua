@@ -258,9 +258,8 @@ function XUiPhotographPortrait:InitCb()
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
-        self.BtnPhotograph.CallBack = function() 
-            self:OnBtnPhotographClick()
-        end
+        self.BtnPhotograph:AddEventListener(handler(self, self.OnBtnPhotographClick))
+
     end
 end 
 

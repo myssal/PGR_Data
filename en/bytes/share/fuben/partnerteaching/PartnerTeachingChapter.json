@@ -652,7 +652,7 @@
     {
         "Id": 27,
         "Name": "Adaptation Fitting: Noctiluca",
-        "ActivityTimeId": 39806,
+        "ActivityTimeId": 0,
         "StagePrefix": "ZL-",
         "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter27.png",
         "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg27.png",
@@ -677,7 +677,7 @@
     {
         "Id": 28,
         "Name": "Adaptation Fitting: Scaled Rampart",
-        "ActivityTimeId": 41603,
+        "ActivityTimeId": 0,
         "StagePrefix": "LL-",
         "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter28.png",
         "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg28.png",
@@ -702,7 +702,7 @@
     {
         "Id": 29,
         "Name": "Adaptation Fitting: Levvi",
-        "ActivityTimeId": 42401,
+        "ActivityTimeId": 0,
         "StagePrefix": "FF-",
         "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter29.png",
         "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg29.png",
@@ -722,6 +722,31 @@
         ],
         "StageIds": [
             30101106
+        ]
+    },
+    {
+        "Id": 30,
+        "Name": "Adaptation Fitting: Beep-Boop",
+        "ActivityTimeId": 43201,
+        "StagePrefix": "BB-",
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter30.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg30.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner24.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBiboStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "Order": 30,
+        "NewTag": "New CUB",
+        "ActivityCondition": [
+            8006
+        ],
+        "OpenCondition": [
+            1002144
+        ],
+        "StageIds": [
+            30101108
         ]
     }
 ]

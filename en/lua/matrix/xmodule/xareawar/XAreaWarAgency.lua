@@ -56,10 +56,7 @@ function XAreaWarAgency:RequestAreaWar4ItemRoomLevelUp(cb)
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AreaWar4ItemRoomLevelUpRequest, req, function(res)
         local itemRoom = self._Model:GetItemRoom()
         itemRoom:RefreshLv(res.ItemRoomLevel)
-        if res.Rewards and #res.Rewards > 0 then
-            XUiManager.OpenUiObtain(res.Rewards)
-        end
-        if cb then cb() end
+        if cb then cb(res.Rewards) end
     end)
 end
 
@@ -220,8 +217,7 @@ function XAreaWarAgency:RequestAreaWar4SubmitRaceItem(itemId, cb)
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AreaWar4SubmitRaceItemRequest, req, function(res)
         local itemRoom = self._Model:GetItemRoom()
         itemRoom:AddSubmitRaceItem(itemId)
-        XUiManager.OpenUiObtain(res.Rewards)
-        if cb then cb() end
+        if cb then cb(res.Rewards) end
     end)
 end
 

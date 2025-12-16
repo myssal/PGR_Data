@@ -2,7 +2,7 @@
     {
         "Id": 1,
         "OnlyRedPoint": 0,
-        "TimeId": 42712,
+        "TimeId": 0,
         "Condition": 30406,
         "SkipId": 89076,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnUiBigWorld.png",
@@ -13,29 +13,29 @@
     {
         "Id": 2,
         "OnlyRedPoint": 1,
-        "TimeId": 42702,
+        "TimeId": 43902,
         "Condition": 70111,
         "SkipId": 20017,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnRift2.png",
         "ActivityType": 2,
         "RedPointConditions": "CONDITION_REPEAT_CHALLENGE_REWARD",
-        "Param": 574
+        "Param": 594
     },
     {
         "Id": 3,
         "OnlyRedPoint": 0,
-        "TimeId": 42714,
+        "TimeId": 43906,
         "Condition": 0,
-        "SkipId": 20310,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLifuV400.png",
+        "SkipId": 20319,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnLifuV401.png",
         "ActivityType": 2,
         "RedPointConditions": "CONDITION_FAVORABILITY_PLOT",
-        "Param": 1031005
+        "Param": 1291003
     },
     {
         "Id": 4,
         "OnlyRedPoint": 0,
-        "TimeId": 42101,
+        "TimeId": 0,
         "Condition": 774800,
         "SkipId": 20298,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnCibeizheLotto.png",
@@ -45,10 +45,10 @@
     {
         "Id": 5,
         "OnlyRedPoint": 0,
-        "TimeId": 42715,
+        "TimeId": 43102,
         "Condition": 774800,
         "SkipId": 11724,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBossActivity10.png",
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBossActivity11.png",
         "ActivityType": 1,
         "RedPointConditions": "CONDITION_ACTIVITYBRIE_BOSSSINGLE",
         "Param": 0
@@ -56,19 +56,18 @@
     {
         "Id": 6,
         "OnlyRedPoint": 0,
-        "TimeId": 42716,
-        "Condition": 774800,
-        "SkipId": 89100,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnRace.png",
+        "TimeId": 43601,
+        "Condition": 30406,
+        "SkipId": 20076,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/ConnectingLineMainBtn004.png",
         "ActivityType": 1,
-        "RedPointConditions": "CONDITION_RACE_MAIN",
-        "Param": 0,
-        "ManagerName": "XRace"
+        "RedPointConditions": "CONDITION_INVERTCARDGAME_RED",
+        "Param": 0
     },
     {
         "Id": 7,
         "OnlyRedPoint": 0,
-        "TimeId": 42717,
+        "TimeId": 43907,
         "Condition": 774800,
         "SkipId": 89092,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5season2.png",
@@ -79,7 +78,7 @@
     {
         "Id": 8,
         "OnlyRedPoint": 0,
-        "TimeId": 42718,
+        "TimeId": 43908,
         "Condition": 774800,
         "SkipId": 89092,
         "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnTheatre5season2.png",
@@ -90,34 +89,45 @@
     {
         "Id": 9,
         "OnlyRedPoint": 0,
-        "TimeId": 42508,
-        "Condition": 30406,
-        "SkipId": 89037,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/ConnectingLineMainBtn005.png",
+        "TimeId": 43909,
+        "Condition": 774700,
+        "SkipId": 89093,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnBountyChallenge.png",
         "ActivityType": 1,
-        "RedPointConditions": "CONDITION_CONNECTING_LINE",
+        "RedPointConditions": "CONDITION_BOUNTY_CHALLENGE",
         "Param": 0
     },
     {
         "Id": 10,
         "OnlyRedPoint": 0,
-        "TimeId": 42719,
+        "TimeId": 43701,
         "Condition": 774800,
-        "SkipId": 90010,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnStageMemory.png",
+        "SkipId": 90025,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnPacMan2.png",
         "ActivityType": 1,
-        "RedPointConditions": "CONDITION_STAGE_MEMORY",
+        "RedPointConditions": "CONDITION_PACMAN2_NEW_STAGE",
         "Param": 0
     },
     {
         "Id": 11,
         "OnlyRedPoint": 0,
-        "TimeId": 42720,
-        "Condition": 30406,
-        "SkipId": 89075,
-        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtn2048V4P0.png",
+        "TimeId": 43920,
+        "Condition": 774800,
+        "SkipId": 90058,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnRadioSign.png",
         "ActivityType": 1,
-        "RedPointConditions": "CONDITION_GAME2048_MAIN",
+        "RedPointConditions": "CONDITION_RADIO_SIGN",
+        "Param": 0
+    },
+    {
+        "Id": 12,
+        "OnlyRedPoint": 0,
+        "TimeId": 43301,
+        "Condition": 84601200,
+        "SkipId": 80176,
+        "Bg": "Assets/Product/Texture/Image/UiFubenActivity/MainBtnAreaWar4.png",
+        "ActivityType": 1,
+        "RedPointConditions": "XRedPointConditionAreaWarActivity",
         "Param": 0
     }
 ]

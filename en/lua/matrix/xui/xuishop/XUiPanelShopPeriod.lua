@@ -59,19 +59,51 @@ end
 
 function XUiPanelShopPeriod:UpdateCanLiverInfo()
     local showShopId = 1460
+    local itemRestrictType = XEnumConst.ItemRestrict.Type.DrawCanLiver
+
+    -- 显示是否匹配指定的 ShopId
     self.PanelTask.gameObject:SetActiveEx(showShopId == self.ShopId)
-    local canLiverActivityId = XDataCenter.DrawManager.GetCanLiverActivityId()
-    if not XTool.IsNumberValid(canLiverActivityId) then
+    if showShopId ~= self.ShopId then
         return
     end
 
-    local itemRestrictType = XEnumConst.ItemRestrict.Type.DrawCanLiver
-    local coinItemId = XMVCA.XItemRestrict:GetItemIdList(itemRestrictType)[1]
-    self.RImgIcon:SetRawImage(XDataCenter.ItemManager.GetItemIcon(coinItemId))
+    ----------------------------------------------------------------------
+    -- 获取 ItemId 列表
+    ----------------------------------------------------------------------
+    local itemIdList = XMVCA.XItemRestrict:GetItemIdList(itemRestrictType)
+    local coinItemId = itemIdList and itemIdList[1]
 
-    local canLiverGainCoinCount = XMVCA.XItemRestrict:GetGainItemCountList(itemRestrictType)[1] or 0
-    local maxCount = XMVCA.XItemRestrict:GetItemMaxCountList(itemRestrictType)[1] or 0
-    self.TxtNum.text = canLiverGainCoinCount .. "/" .. maxCount
+    if not coinItemId then
+        -- 没有 ItemId 就把图标清掉或隐藏
+        self.PanelTask.gameObject:SetActiveEx(false)
+        return
+    end
+
+    ----------------------------------------------------------------------
+    -- 设置图标
+    ----------------------------------------------------------------------
+    local icon = XDataCenter.ItemManager.GetItemIcon(coinItemId)
+    if self.RImgIcon and icon then
+        self.RImgIcon:SetRawImage(icon)
+    elseif self.RImgIcon then
+        self.RImgIcon:SetRawImage(nil)
+    end
+
+    ----------------------------------------------------------------------
+    -- 获取数量（GainItemCountList / MaxCountList）
+    ----------------------------------------------------------------------
+    local gainList = XMVCA.XItemRestrict:GetGainItemCountList(itemRestrictType)
+    local maxList  = XMVCA.XItemRestrict:GetItemMaxCountList(itemRestrictType)
+
+    local canLiverGainCoinCount = (gainList and gainList[1]) or 0
+    local maxCount = (maxList and maxList[1]) or 0
+
+    ----------------------------------------------------------------------
+    -- 数值显示
+    ----------------------------------------------------------------------
+    if self.TxtNum then
+        self.TxtNum.text = canLiverGainCoinCount .. "/" .. maxCount
+    end
 end
 
 function XUiPanelShopPeriod:UpdateManualRefreshInfo()

@@ -25,9 +25,16 @@ function XUiTheatre5PopupBacktrack:InitShow()
 end
 
 function XUiTheatre5PopupBacktrack:OnSubmit()
+    -- 这里是特殊处理的，下一个节点必须是“选择分支界面”这种打开界面的节点。如果是其他类型的节点，这里会有问题。
+    -- 目前客户端不知道下一个节点是什么，下一个节点的Id依靠故事线推进后服务端下发
     XMVCA.XTheatre5.PVEAgency:RequestPveStoryLinePromote(self.Cfg.StoryLineId, self.Cfg.Id, function()
-        -- 因为不确定其他节点是否会处理该界面，因此使用安全接口进行关闭
-        XLuaUiManager.SafeClose('UiTheatre5PopupBacktrack')
+        self:PlayAnimationWithMask('AnimDisable', function()
+            self._Control.FlowControl:EnterStroryLineContent(self.Cfg.StoryLineId)
+            -- 等下一个界面完全打开后，直接移除当前界面，之所以要这么处理，是为了实现界面无缝切换，不要露出底下的角色选择界面
+            self:Tween(0.5, nil, function()
+                XLuaUiManager.Remove('UiTheatre5PopupBacktrack')
+            end)
+        end)
     end)
 end
 

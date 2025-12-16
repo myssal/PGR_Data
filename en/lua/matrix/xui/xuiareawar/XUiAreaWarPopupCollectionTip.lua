@@ -56,12 +56,13 @@ function XUiAreaWarPopupCollectionTip:OnBtnGetBuyClick()
 end
 
 function XUiAreaWarPopupCollectionTip:OnBtnGetFightClick()
-    local blockId = XDataCenter.AreaWarManager.GetLastUnlockBlockId()
+    local blockId = XDataCenter.AreaWarManager.GetNextFightingBlockId()
     self:Close()
     XLuaUiManager.OpenSingleUi("UiAreaWarMain", blockId)
     XLuaUiManager.Remove("UiAreaWarCollection")
     XLuaUiManager.Remove("UiAreaWarRare")
     XLuaUiManager.Remove("UiAreaWarAuction")
+    XLuaUiManager.Remove("UiAreaWarStageDetail")
 end
 
 function XUiAreaWarPopupCollectionTip:Refresh()

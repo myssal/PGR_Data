@@ -12,11 +12,6 @@ function XRedPointConditionTaskCanLiver.GetSubEvents()
 end
 
 function XRedPointConditionTaskCanLiver.Check()
-    local activityId = XDataCenter.DrawManager.GetCanLiverActivityId()
-    if not XTool.IsNumberValid(activityId) then
-        return false
-    end
-
     local itemRestrictType = XEnumConst.ItemRestrict.Type.DrawCanLiver
 
     -- 已达到最大，直接无红点

@@ -7002,7 +7002,7 @@ XTable = {
         SkipId = ValueTypeint,
     },
     XTablePhotoModeShareInfo = {
-        Id = ValueTypeint,
+        Id = ValueTypestring,
         Name = ValueTypestring,
         IconPath = ValueTypestring,
         Text = ValueTypestring,
@@ -9790,7 +9790,7 @@ XTable = {
     },
     XTableSharePaltformConfig = {
         Id = ValueTypestring,
-        SdkId = Type1ValueTypeint,
+        SdkId = Type1ValueTypestring,
     },
     XTableRepeatChatForbid = {
         Id = ValueTypeint,
@@ -11085,6 +11085,7 @@ XTable = {
         Icon = ValueTypestring,
         SellTipsType = ValueTypeint,
         SellTips = ValueTypestring,
+        Effect = ValueTypestring,
     },
     XTableAreaWarPlate = {
         Id = ValueTypeint,

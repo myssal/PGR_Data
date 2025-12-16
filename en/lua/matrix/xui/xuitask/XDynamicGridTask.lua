@@ -24,10 +24,6 @@ function XDynamicGridTask:PlayAnimation()
     self.GridTaskTimeline:PlayTimelineAnimation()
 end
 
-function XDynamicGridTask:SetNeedUpdateStaticTime(flag)
-    self.IsNeedUpdateStaticTime = flag
-end
-
 function XDynamicGridTask:ResetData(data)
     if not data then
         self.GameObject:SetActiveEx(false)
@@ -61,6 +57,9 @@ function XDynamicGridTask:ResetData(data)
             -- 修复: 后增加的txtLock应该是默认隐藏的
             if self.TxtLock then
                 self.TxtLock.gameObject:SetActiveEx(false)
+            end
+            if self.PanelTime then
+                self.PanelTime.gameObject:SetActiveEx(false)
             end
 
             self.TaskReceive.gameObject:SetActive(false)
@@ -111,28 +110,7 @@ function XDynamicGridTask:ResetData(data)
         end
     end
 
-    local isFinish = data.State == XDataCenter.TaskManager.TaskState.Finish
-    if not isFinish then
-        self:UpdateStaticTime()
-    end
-
     self:AprilFoolShowHandle()
-end
-
-function XDynamicGridTask:UpdateStaticTime()
-    local isShowPanelTime = self.Data.State ~= XDataCenter.TaskManager.TaskState.Finish and not self.Data.ReceiveAll and self.IsNeedUpdateStaticTime
-    if self.PanelTime and self.TxtTime then
-        self.PanelTime.gameObject:SetActiveEx(isShowPanelTime)
-        local taskTemplate = XDataCenter.TaskManager.GetTaskTemplate(self.Data.Id)
-        local endTimeStamp = XTime.ParseToTimestamp(taskTemplate.EndTime) or 0
-        local nowTime = XTime.GetServerNowTimestamp()
-        local leftTime = endTimeStamp - nowTime
-        if leftTime and leftTime > 0 then
-            local timeStr = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-            local text = CS.XTextManager.GetText("Residue") .. timeStr
-            self.TxtTime.text = text
-        end
-    end
 end
 
 function XDynamicGridTask:AprilFoolShowHandle()
@@ -163,7 +141,6 @@ end
 function XDynamicGridTask:AutoInitUi()
     self.PanelAnimation = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation", nil)
     self.PanelTime = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/PanelTime", nil)
-    self.TxtTime = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/PanelTime/Text/TxtTime", "Text")
     self.RImgTaskType = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/RImgTaskType", "RawImage")
     self.ImgProgress = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/ProgressBg/ImgProgress", "Image")
     self.GridCommon = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/TaskGridList/Viewport/Content/GridCommon", nil)
@@ -180,7 +157,6 @@ function XDynamicGridTask:AutoInitUi()
     self.ImgComplete = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/ImgComplete", "Image") or XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/ImgComplete", "RawImage")
     self.TaskReceive = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/TaskReceive", nil) -- 一键领取面板
     self.TxtLock = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/TxtLock", "Text")
-    self.TxtTaskLimit = XUiHelper.TryGetComponent(self.Transform, "PanelAnimation/TxtTaskLimit", "Text")
 end
 
 function XDynamicGridTask:GetAutoKey(uiNode, eventName)
@@ -427,12 +403,6 @@ end
 
 function XDynamicGridTask:SetSkipCallBack(skipCb)
     self._SkipCb = skipCb
-end
-
-function XDynamicGridTask:SetTxtTaskLimitVisible(flag)
-    if self.TxtTaskLimit then
-        self.TxtTaskLimit.gameObject:SetActiveEx(flag)
-    end
 end
 
 return XDynamicGridTask

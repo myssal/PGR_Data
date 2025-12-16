@@ -24,7 +24,7 @@ function XUiGridAreaWarRareTab:Refresh()
     
     -- 蓝点
     local ownNum = self._Control:GetItemRoom():GetItemNum(self.ItemId)
-    local isRed = ownNum >= XMVCA.XAreaWar.EnumConst.SUBMIT_NUM
+    local isRed = not isSubmit and ownNum >= XMVCA.XAreaWar.EnumConst.SUBMIT_NUM
     self.Button:ShowReddot(isRed)
 end
 
