@@ -15,6 +15,10 @@ function XUiMainLine2EggsTreasureTips:OnEnable()
     self:Refresh()
 end
 
+function XUiMainLine2EggsTreasureTips:OnDestroy()
+    self:RemoveTimer()
+end
+
 function XUiMainLine2EggsTreasureTips:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnTips, self.OnBtnTipsClick)
 end
@@ -28,6 +32,22 @@ end
 
 function XUiMainLine2EggsTreasureTips:Refresh()
     self.TxtTitle.text = self._Control:GetEggTipsText(self.EggId)
+    self:StartTimer()
+end
+
+function XUiMainLine2EggsTreasureTips:StartTimer()
+    self:RemoveTimer()
+    self.Timer = XScheduleManager.ScheduleOnce(function()
+        self.Timer = nil
+        self:OnBtnTipsClick()
+    end, 1000)
+end
+
+function XUiMainLine2EggsTreasureTips:RemoveTimer()
+    if self.Timer then
+        XScheduleManager.UnSchedule(self.Timer)
+        self.Timer = nil
+    end
 end
 
 return XUiMainLine2EggsTreasureTips

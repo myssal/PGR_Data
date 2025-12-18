@@ -159,12 +159,12 @@ XAreaWarManagerCreator = function()
     local _LastTimeReqActivityData = 0
     function XAreaWarManager.EnterUiMain(beforeOpenUiCb)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.AreaWar) then
-            return
+            return false
         end
 
         if not XAreaWarManager.IsOpen() then
             XUiManager.TipText("AreaWarActivityNotOpen")
-            return
+            return false
         end
 
         --主动gc一次
@@ -192,6 +192,7 @@ XAreaWarManagerCreator = function()
             requestCount = 1
             XAreaWarManager.RequestEnter(onResponse)
         end
+        return true
     end
 
     function XAreaWarManager.DoEnterUiMain(beforeOpenUiCb)
@@ -2071,6 +2072,8 @@ XAreaWarManagerCreator = function()
             preFight.FirstFightPos = team:GetFirstFightPos()
             preFight.CaptainPos = team:GetCaptainPos()
             preFight.GeneralSkill = team:GetCurGeneralSkill()
+            preFight.EnterCgIndex = team:GetEnterCgIndex()
+            preFight.SettleCgIndex = team:GetSettleCgIndex()
         
             preFight.AreaWar4PreFightInfo ={ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()} 
 
@@ -2203,10 +2206,29 @@ XAreaWarManagerCreator = function()
     end
 
     function XAreaWarManager.GetUsingProbabilityItems()
-        if not _UsingProbabilityItems then
-            _UsingProbabilityItems = {}
+        local result = {}
+        if _UsingProbabilityItems then
+            for _, itemId in pairs(_UsingProbabilityItems) do
+                local num = XMVCA.XAreaWar:GetItemRoom():GetItemNum(itemId)
+                if num > 0 then
+                    table.insert(result, itemId)
+                end
+            end
         end
-       return _UsingProbabilityItems
+        return result
+    end
+    
+    function XAreaWarManager.GetUsingProbabilityItemsMinNum()
+        local minItemNum = 0
+        if _UsingProbabilityItems then
+            for _, itemId in pairs(_UsingProbabilityItems) do
+                local itemNum = XMVCA.XAreaWar:GetItemRoom():GetItemNum(itemId)
+                if minItemNum == 0 or itemNum < minItemNum then
+                    minItemNum = itemNum
+                end
+            end
+        end
+        return minItemNum
     end
     --endregion------------------副本相关 finish------------------
 

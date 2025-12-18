@@ -78,13 +78,14 @@ function XUiPanelAreaWarDetailTips:InitCollectionDropPanel()
         return obj
     end
     for i = #self.QualityDic, 1, -1 do
+        local quality = i
         local v = self.QualityDic[i]
         if #v > 0 then
             local prefab = CS.UnityEngine.GameObject.Instantiate(self.PanelCollectionDrop.gameObject,
                 self.PanelCollectionDrop.parent.transform)
             local panel = bindPanelObj(prefab, v)
             prefab:SetActiveEx(true)
-            table.insert(self.CollectionDropPanels, panel)
+            self.CollectionDropPanels[quality] = panel
             panel.TxtTitle.text = XUiHelper.GetText("XAreaWarDetail" .. i)
             panel.GameObject:SetActiveEx(true)
         end
@@ -100,7 +101,6 @@ function XUiPanelAreaWarDetailTips:InitTokenDropPanel()
             local itemGo = CS.UnityEngine.GameObject.Instantiate(self.TokenDropPanel.GridItem.gameObject, self.TokenDropPanel.GridItem.parent.transform)
             itemGo.gameObject:SetActiveEx(true)
             local btnData = itemGo:GetComponent("XUiButton")
-            local itemConfig = self._Control:GetConfig():GetConfigItem(itemId)
             btnData:SetRawImage(itemConfig.Icon)
             local icon = self._Control:GetConfig():GetItemQualityIcon(itemConfig.Quality)
             btnData:SetSprite(icon)
@@ -119,8 +119,9 @@ function XUiPanelAreaWarDetailTips:InitTokenDropPanel()
 
 end
 function XUiPanelAreaWarDetailTips:Refresh(curProbability)
-    for _, panel in pairs(self.CollectionDropPanels) do
-        panel.TxtNum.transform.parent.gameObject:SetActiveEx(curProbability ~= OriginProbability)
+    for quality, panel in pairs(self.CollectionDropPanels) do
+        local isShow = curProbability ~= OriginProbability and quality >= XMVCA.XAreaWar.EnumConst.SHOW_PROBABILITY_MIN_QUALITY
+        panel.TxtNum.transform.parent.gameObject:SetActiveEx(isShow)
         panel.TxtNum.text = "x" .. curProbability .. "%"
     end
 end
@@ -129,7 +130,7 @@ function XUiPanelAreaWarDetailTips:Show(showCurProbility)
     self.GameObject:SetActiveEx(true)
     self.TokenDropPanel.GameObject:SetActiveEx(showCurProbility)
     for _, panel in pairs(self.CollectionDropPanels) do
-       panel.GameObject:SetActiveEx(not showCurProbility)
+        panel.GameObject:SetActiveEx(not showCurProbility)
     end
 end
 

@@ -14,7 +14,7 @@ function XUiPanelRecommendItem:Update(package)
     local consumeCount = package:GetConsumeCount()
     local discountTag = package:GetTag()
     local discountDes = XPurchaseConfigs.GetTagDes(discountTag)
-
+    
     if self.TxtName then
         self.TxtName.text = name
     end
@@ -22,6 +22,11 @@ function XUiPanelRecommendItem:Update(package)
         self.TxtDiscountDes.text = discountDes
     end
     if self.TxtPrice then
+        local discount = package:GetDiscount()
+        if discount and XTool.IsNumberValid(discount[1]) then
+            consumeCount = consumeCount * (discount[1] / 10000)
+            consumeCount = tostring(math.floor(consumeCount))
+        end
         self.TxtPrice.text = consumeCount
     end
     if self.TxtBuyLimit then

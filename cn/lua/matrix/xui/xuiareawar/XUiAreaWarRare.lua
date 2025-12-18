@@ -29,7 +29,7 @@ function XUiAreaWarRare:OnDisable()
 end
 
 function XUiAreaWarRare:OnDestroy()
-    
+    self:RemoveObtainTimer()
 end
 
 function XUiAreaWarRare:OnGetLuaEvents()
@@ -91,8 +91,9 @@ function XUiAreaWarRare:OnBtnLightUpClick()
         return
     end
     
-    XMVCA.XAreaWar:RequestAreaWar4SubmitRaceItem(itemId, function()
+    XMVCA.XAreaWar:RequestAreaWar4SubmitRaceItem(itemId, function(rewards)
         self:OnSubmitRaceItemSuccess()
+        self:StartObtainTimer(rewards)
     end)
 end
 
@@ -107,6 +108,8 @@ function XUiAreaWarRare:OnSubmitRaceItemSuccess()
     self:RefreshSelectRare()
     -- 刷新Tab
     self.UiPanelTab:OnSubmitRaceItemSuccess()
+    -- 播放动效
+    self.FxUiCharacterV2QiuUnLock01.gameObject:SetActiveEx(true)
 end
 
 function XUiAreaWarRare:OnItemClick(index)
@@ -158,6 +161,9 @@ function XUiAreaWarRare:RefreshSelectRare()
 
     -- 刷新模型
     self:RefreshModel()
+    
+    -- 隐藏动效
+    self.FxUiCharacterV2QiuUnLock01.gameObject:SetActiveEx(false)
 end
 
 -- 刷新消耗Item
@@ -230,6 +236,22 @@ end
 function XUiAreaWarRare:RemoveModelEffect()
     if self.ModelEffect then
         self.ModelEffect.gameObject:SetActiveEx(false)
+    end
+end
+
+-- 延迟弹出奖励弹窗，先播动效
+function XUiAreaWarRare:StartObtainTimer(rewards)
+    self:RemoveObtainTimer()
+    self.ObtainTimer = XScheduleManager.ScheduleOnce(function()
+        self.ObtainTimer = nil
+        XUiManager.OpenUiObtain(rewards)
+    end, 1000)
+end
+
+function XUiAreaWarRare:RemoveObtainTimer()
+    if self.ObtainTimer then
+        XScheduleManager.UnSchedule(self.ObtainTimer)
+        self.ObtainTimer = nil
     end
 end
 

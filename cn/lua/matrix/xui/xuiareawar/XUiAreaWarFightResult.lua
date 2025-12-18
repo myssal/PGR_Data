@@ -3,6 +3,8 @@ local ToInt = XMath.ToInt
 --local CsXTextManagerGetText = CsXTextManagerGetText
 --local CSUnityEngineObjectInstantiate = CS.UnityEngine.Object.Instantiate
 
+---@class XUiAreaWarFightResult
+---@field _Control XAreaWarControl
 local XUiAreaWarFightResult = XLuaUiManager.Register(XLuaUi, "UiAreaWarFightResult")
 local XUiGridAreaWarItem = require("XUi/XUiAreaWar/XUiGridAreaWarItem")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
@@ -19,6 +21,7 @@ function XUiAreaWarFightResult:OnStart(data, closeCb)
     local endTime = XDataCenter.AreaWarManager.GetEndTime()
     self.EndTime = endTime
     self:SetAutoCloseInfo(endTime, handler(self, self.OnCheckActivity))
+    self.BtnEndExplore.gameObject:SetActiveEx(false)
 end
 
 function XUiAreaWarFightResult:OnEnable()
@@ -39,9 +42,10 @@ function XUiAreaWarFightResult:UpdateView()
     self.GridScoreInfo1.gameObject:SetActiveEx(not isQuest)
     self.GridScoreInfo2.gameObject:SetActiveEx(not isQuest)
     self.GridScoreInfo3.gameObject:SetActiveEx(not isQuest)
-    self.AllScore.gameObject:SetActiveEx(not isQuest)
+    -- self.AllScore.gameObject:SetActiveEx(not isQuest)
     self.PanelSearch.gameObject:SetActiveEx(isQuest)
-    
+    self.TxtConsumeAgain.gameObject:SetActiveEx(not isQuest)
+    self.BtnConsumeAgain.gameObject:SetActiveEx(not isQuest)
     self.GridScoreInfo1.transform.parent.gameObject:SetActiveEx(not isQuest)
     if isQuest then
         self:RefreshQuest(info)
@@ -157,23 +161,43 @@ function XUiAreaWarFightResult:ShowReward(fightCount)
 
     fightCount = fightCount or 1
     --奖励物品
+    self.RewardGrids = self.RewardGrids or {}
     for index, reward in pairs(self.rewardGoodsList) do
+        local grid = self.RewardGrids[index]
+        if not grid then
             local gridUi = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
-            local grid = nil
+            gridUi.gameObject:SetActiveEx(true)
             grid = XUiGridCommon.New(self,gridUi)
-            grid:Refresh(reward)
-            grid.GameObject:SetActiveEx(true)
-            grid:SetUiActive(grid.TxtName, false)
-    end
-    for index, reward in pairs(self.areaWarItems) do
-        if reward.ItemId and self._Control:GetConfig():IsExitItem(reward.ItemId) then
-            local gridUi = XUiHelper.Instantiate(self.GridAreawarItem, self.PanelRewardContent)
-            local grid = nil
-            grid = XUiGridAreaWarItem.New(gridUi, self)
-            grid:RefreshItem(reward.ItemId ,reward.Num)
-            grid.GameObject:SetActiveEx(true)
+            table.insert(self.RewardGrids, grid)
+            grid.BtnClick = gridUi.gameObject:AddComponent(typeof(CS.XUiComponent.XUiButton))
+            grid:AutoAddListener()
         end
+        grid:Refresh(reward)
+        grid:SetUiActive(grid.TxtName, false)
+    end
 
+    local isPlayItemAudio = false
+    self.AreaItemGrids = self.AreaItemGrids or {}
+    for index, reward in pairs(self.areaWarItems) do
+        local grid = self.AreaItemGrids[index]
+        if not grid then
+            local gridUi = XUiHelper.Instantiate(self.GridAreawarItem, self.PanelRewardContent)
+            gridUi.gameObject:SetActiveEx(true)
+            grid = XUiGridAreaWarItem.New(gridUi, self)
+            table.insert(self.AreaItemGrids, grid)
+        end
+        grid:RefreshItem(reward.ItemId ,reward.Num)
+        grid:SetDefaultClickCallBack()
+
+        -- 掉落超过金色品质的道具，播放音效
+        local quality = self._Control:GetConfig():GetItemQuality(reward.ItemId)
+        if quality > XMVCA.XAreaWar.EnumConst.ITEM_QUALITY.GOLD then
+            isPlayItemAudio = true
+        end
+    end
+
+    if isPlayItemAudio then
+        self:PlaySound("awardplus")
     end
 end
 
@@ -187,15 +211,15 @@ function XUiAreaWarFightResult:ShowQuestReward()
     for index, reward in ipairs(rewards) do
         local grid = self.GridRewards[index]
         if not grid then
-            local ui = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
-            grid = {}
-            XTool.InitUiObjectByUi(grid, ui)
-            self.GridRewards[index] = grid
+            local gridUi = XUiHelper.Instantiate(self.GridReward, self.PanelRewardContent)
+            gridUi.gameObject:SetActiveEx(true)
+            grid = XUiGridCommon.New(self, gridUi)
+            table.insert(self.GridRewards, grid)
+            grid.BtnClick = gridUi.gameObject:AddComponent(typeof(CS.XUiComponent.XUiButton))
+            grid:AutoAddListener()
         end
-        grid.GameObject:SetActiveEx(true)
-        grid.TxtCount.text = reward.Count
-        grid.RImgIcon:SetRawImage(XItemConfigs.GetItemIconById(reward.TemplateId))
-        grid.GameObject:SetActiveEx(true)
+        grid:Refresh(reward)
+        grid:SetUiActive(grid.TxtName, false)
     end
 end
 
@@ -222,7 +246,7 @@ function XUiAreaWarFightResult:OnClickBtnConsume()
     if XDataCenter.AreaWarManager.OnActivityEnd() then
         return
     end
-    self:ShowObtain()
+    --self:ShowObtain()
     self:Close()
 end
 
@@ -237,12 +261,12 @@ function XUiAreaWarFightResult:OnClickBtnConsumeAgain()
             XDataCenter.AreaWarManager.GetTeam(),
             require("XUi/XUiAreaWar/XUiAreaWarBattleRoleRoom")
     )
-    self:ShowObtain()
-
+    --self:ShowObtain()
 end
+
 function XUiAreaWarFightResult:ShowObtain()
     if not XTool.IsTableEmpty(self.rewardGoodsList) or not XTool.IsTableEmpty(self.areaWarItems) then
-        XUiManager.OpenUiAreaWarObtain(self.rewardGoodsList,self.areaWarItems)
+        XMVCA.XAreaWar:OpenUiAreaWarObtain(self.rewardGoodsList, self.areaWarItems)
     end
 end
 function XUiAreaWarFightResult:OnCheckActivity(isClose)
@@ -273,3 +297,13 @@ function XUiAreaWarFightResult:ConfirmRequest()
                 end
         )
 end
+
+-- 播放音效
+function XUiAreaWarFightResult:PlaySound(name)
+    self.AudioPlayer = self.AudioPlayer or self.Transform:GetComponent(typeof(CS.XAudioObjectPlayer))
+    if self.AudioPlayer then
+        self.AudioPlayer:PlayByKeyName(name)
+    end
+end
+
+return XUiAreaWarFightResult

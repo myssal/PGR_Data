@@ -65,6 +65,7 @@ function XUiPhotographPortrait:OnEnable()
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:Update()
@@ -257,9 +258,8 @@ function XUiPhotographPortrait:InitCb()
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
-        self.BtnPhotograph.CallBack = function() 
-            self:OnBtnPhotographClick()
-        end
+        self.BtnPhotograph:AddEventListener(handler(self, self.OnBtnPhotographClick))
+
     end
 end 
 
@@ -571,6 +571,7 @@ function XUiPhotographPortrait:UpdateScene(sceneId)
 
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
+    XUiHelper.SetSceneAnimHandler(self)
 end
 
 function XUiPhotographPortrait:ForcePlay(signBoardActionId, actionId)

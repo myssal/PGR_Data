@@ -586,6 +586,7 @@ function XUiAreaWarMain:CheckPopups()
 
         --挂机收益功能解锁弹窗
         if XDataCenter.AreaWarManager.CheckHangUpUnlockPopUp() and isGuide then
+            self:UpdateHangUp()
             asyncOpenUi("UiAreaWarHangUpJs")
             XDataCenter.AreaWarManager.SetHangUpUnlockPopUpCookie()
             popped = true
@@ -611,10 +612,12 @@ function XUiAreaWarMain:CheckPopups()
 
         -- 跳转区块
         if self.SkipBlockId then
+            self.IsFocusAnim = true
             asynWaitSecond(1)
             local duration = self.BlockList3DPanel:GetFocusBlockDuration(self.SkipBlockId)
             self.BlockList3DPanel:FocusTargetBlock(self.SkipBlockId)
             asynWaitSecond(duration + 0.5)
+            self.IsFocusAnim = false
             self:OnClickBlock(self.SkipBlockId)
             self.SkipBlockId = nil
         else
@@ -958,6 +961,11 @@ end
 
 --区域被点击
 function XUiAreaWarMain:OnClickBlock(blockId)
+    -- 防止定位块的过程中玩家点击块触发弹窗
+    if self.IsFocusAnim then
+        return
+    end
+    
     if CS.XAreaWarManager.Instance.IsUnlockPlaying then
         return
     end
@@ -988,7 +996,7 @@ function XUiAreaWarMain:OnClickBlock(blockId)
         XDataCenter.MovieManager.PlayMovie(movieId)
     else
         --打开区块详情界面
-        XLuaUiManager.Open("UiAreaWarStageDetail", false, blockId, self.IsRepeatChallenge, handler(self, self
+        XLuaUiManager.OpenSingleUi("UiAreaWarStageDetail", false, blockId, self.IsRepeatChallenge, handler(self, self
                 .OnCloseStageDetail))
         self:OnOpenStageDetail(blockId)
     end
@@ -1000,7 +1008,7 @@ function XUiAreaWarMain:OnClickQuest(questId)
         return
     end
     --打开区块详情界面
-    XLuaUiManager.Open("UiAreaWarStageDetail", true, questId, handler(self, self.OnCloseQuestDetail))
+    XLuaUiManager.OpenSingleUi("UiAreaWarStageDetail", true, questId, handler(self, self.OnCloseQuestDetail))
     self:OnOpenQuestDetail(questId)
 end
 

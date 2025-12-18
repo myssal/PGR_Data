@@ -141,6 +141,8 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XFunction XFunctionAgency
 ---@field XFashionSuit XFashionSuitAgency
 ---@field XAreaWar XAreaWarAgency
+---@field XRadioSign XRadioSignAgency
+---@field XItemRestrict XItemRestrictAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -658,6 +660,8 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XAccumulateExpendL)
     self:RegisterAgency(ModuleId.XPassportComb)
     self:RegisterAgency(ModuleId.XPlotExhibition)
+    self:RegisterAgency(ModuleId.XRadioSign)
+    self:RegisterAgency(ModuleId.XItemRestrict)
 end
 
 function XMVCACls:AddPreloadConfig(path)

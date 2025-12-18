@@ -20,6 +20,16 @@ local XAreaWarEnumConst = {
         KEEP_ONE = 1, -- 保留最少一个
         UN_SUBMIT = 2, -- 未提交点亮的珍稀藏品
     },
+    -- 提升道具掉落概率的生效道具最低品质
+    SHOW_PROBABILITY_MIN_QUALITY = 4,
+    -- 道具品质
+    ITEM_QUALITY = {
+        GREEN = 1,
+        BLUE = 2,
+        PURPLE = 3,
+        GOLD = 4,
+        RED = 5,
+    },
 }
 
 return XAreaWarEnumConst

@@ -1,11 +1,11 @@
 local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local XDrawTabBtnEntity = require("XEntity/XDrawMianButton/XDrawTabBtnEntity")
 local XNormalDrawGroupBtnEntity = require("XEntity/XDrawMianButton/XNormalDrawGroupBtnEntity")
-local XLottoDrawGroupBtnEntity = require("XEntity/XDrawMianButton/XLottoDrawGroupBtnEntity")
 local XUiDrawControl = require("XUi/XUiDraw/XUiDrawControl")
 local XUiDrawScene = require("XUi/XUiDraw/XUiDrawScene")
 local XUiNewGridDrawBanner = require("XUi/XUiDraw/XUiNewGridDrawBanner")
 local XUiDrawPanelLbItem = require("XUi/XUiDraw/XUiDrawPanelLbItem")
+local XUiDrawPanelCanLiverJourneyReward = require("XUi/XUiDraw/XUiDrawPanelCanLiverJourneyReward")
 local XModelHX = require("XModule/XModel/XModelHX")
 
 ---@class XUiNewDrawMain:XLuaUi
@@ -43,7 +43,10 @@ function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool)
     self.DefaultDrawId = defaultDrawId
     self.IsFirstIn = true
     self.CurrentSelectTemplateId = false
+    ---@type XUiDrawPanelLbItem
     self.CurPanelLbItem = XUiDrawPanelLbItem.New(self.PanelLbItem, self)
+    ---@type XUiDrawPanelCanLiverJourneyReward
+    self.CurPanelCanLiverJourneyReward = XUiDrawPanelCanLiverJourneyReward.New(self.PanelCanLiverReward, self)
 
     --2.7处理多卡池情况
     self:FindDrawGroupId()
@@ -97,6 +100,7 @@ function XUiNewDrawMain:Refresh()
     self:UpdateBtnDiscount()
     self:RefreshNormalUiShow()
     self.CurPanelLbItem:Refresh(self.DrawInfo)
+    self.CurPanelCanLiverJourneyReward:CheckToShow(self.DrawInfo)
 end
 
 function XUiNewDrawMain:RefreshNormalUiShow()
@@ -977,6 +981,19 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     local drawInfo = XDataCenter.DrawManager.GetDrawInfo(drawId)
     self.DrawInfo = drawInfo
     self:UpdatePurchase()
+
+    -- 可肝卡池商店跳转按钮
+    local cId = 770400 -- 临时写死
+    local isCurDrawIsOpenCanLiverDraw = XConditionManager.CheckCondition(cId) and drawInfo.IsShowShop
+    self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
+    --==============================
+    -- 可肝卡池商店按钮红点逻辑
+    --==============================
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(drawId))
+    local hasClicked = XSaveTool.GetData(key)
+    -- 未点击过 → 显示红点
+    self.BtnShop:ShowReddot(not hasClicked)
+
     self.DrawControl:Update(drawInfo, self.GroupId)
     local combination = XDataCenter.DrawManager.GetDrawCombination(drawInfo.Id)
     if not combination then
@@ -1011,14 +1028,6 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     -- 播放切换特效
     self.Effect2.gameObject:SetActive(false)
     self.Effect2.gameObject:SetActive(true)
-
-    -- 可肝卡池商店跳转按钮
-    -- local isCurDrawIsOpenCanLiverDraw = nil 
-    -- local canLiverActivityId = XDataCenter.DrawManager.GetCanLiverActivityId()
-    -- if canLiverActivityId and XDrawConfigs.GetDrawCanLiverRewardCfgByDrawIdAndActivityId(drawId, canLiverActivityId) then
-    --     isCurDrawIsOpenCanLiverDraw = true
-    -- end
-    -- self.BtnShop.gameObject:SetActiveEx(isCurDrawIsOpenCanLiverDraw)
 
     self.CurBanner:UpdateNewDrawChar(self.GoodsShowParams.Icon, isShowQuality, self.GoodsShowParams.QualityIcon)
 end
@@ -1125,6 +1134,9 @@ end
 function XUiNewDrawMain:OnBtnShopClick()
     local skipToShopId = 90055 -- 临时写死
     XFunctionManager.SkipInterface(skipToShopId) 
+    local curDrawId = self.DrawInfo.Id
+    local key = string.format("NewDraw_ShopRedDot_%s", tostring(curDrawId))
+    XSaveTool.SaveData(key, true)
 end
 
 function XUiNewDrawMain:OnBtnActivityTargetClick()

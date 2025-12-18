@@ -104,8 +104,17 @@ function XAreaWarModel:IsRedUpgradeCollection()
     -- 是否有下一等级
     local lv = self:GetItemRoom():GetLv()
     if lv < 1 then lv = 1 end -- 收藏室最低为1级
-    local isNextLvExit = self:GetConfig():IsItemRoomLevelExit(lv + 1)
+    local nextLv = lv + 1
+    local isNextLvExit = self:GetConfig():IsItemRoomLevelExit(nextLv)
     if not isNextLvExit then return false end
+
+    -- 是否需要块解锁
+    local needCleanBlockId = self:GetConfig():GetItemRoomLevelNeedCleanBlock(nextLv)
+    local isBlockUnlock = true
+    if XTool.IsNumberValidEx(needCleanBlockId) then
+        isBlockUnlock = XDataCenter.AreaWarManager.IsBlockClear(needCleanBlockId)
+    end
+    if not isBlockUnlock then return false end
 
     -- 升级材料是否足够
     local lvUpItems = self:GetConfig():GetItemRoomLevelLvUpItems(lv)

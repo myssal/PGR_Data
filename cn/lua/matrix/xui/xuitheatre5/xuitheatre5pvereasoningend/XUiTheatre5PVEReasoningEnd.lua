@@ -33,7 +33,13 @@ function XUiTheatre5PVEReasoningEnd:OnConfirm()
         XLuaUiManager.Remove(self.Name)
         XDataCenter.MovieManager.PlayMovie(clueCfg.StoryId, self.CloseCb)
     else
+        local cb = self.CloseCb
+        
         self:Close()
+
+        if cb then
+            cb()
+        end
     end         
    
 end

@@ -6,6 +6,8 @@ local XUiGridFashionSuitFashion = XClass(XUiNode, "XUiGridFashionSuitFashion")
 function XUiGridFashionSuitFashion:OnStart()
     self._RImgBgs = { self.RImgBg1, self.RImgBg2, self.RImgBg3, self.RImgBg4 }
     self._Spines = { self.Spine1, self.Spine2, self.Spine3, self.Spine4 }
+    self._RImgOwnBoxs = { self.RImgOwnBox1, self.RImgOwnBox2 }
+    self._RImgNotOwnBoxs = { self.RImgNotOwnBox1, self.RImgNotOwnBox2 }
 end
 
 function XUiGridFashionSuitFashion:OnEnable()
@@ -43,12 +45,31 @@ function XUiGridFashionSuitFashion:Refresh(fashionSuitId, fashionId)
         end
     end
 
+    local tex = self._Control:GetClientConfig("SuitImageBorder", config.FashionSuitRare)
+    for _, rImg in ipairs(self._RImgOwnBoxs) do
+        if string.IsNilOrEmpty(tex) then
+            rImg.gameObject:SetActiveEx(false)
+        else
+            rImg.gameObject:SetActiveEx(true)
+            rImg:SetRawImage(tex)
+        end
+    end
+
+    tex = self._Control:GetClientConfig("LockSuitImageBorder", config.FashionSuitRare)
+    for _, rImg in ipairs(self._RImgNotOwnBoxs) do
+        if string.IsNilOrEmpty(tex) then
+            rImg.gameObject:SetActiveEx(false)
+        else
+            rImg.gameObject:SetActiveEx(true)
+            rImg:SetRawImage(tex)
+        end
+    end
+
     self.TxtSkinName1.text = config.Name
     self.TxtSkinName2.text = config.Name
     self.TxtCharacterName1.text = roleName
     self.TxtCharacterName2.text = roleName
-    self.ImgTagNew1.gameObject:SetActiveEx(not isViewed)
-    self.ImgTagNew2.gameObject:SetActiveEx(not isViewed)
+    self.ImgTagNew.gameObject:SetActiveEx(not isViewed)
 end
 
 function XUiGridFashionSuitFashion:UpdateSelect(isSelected)

@@ -108,7 +108,6 @@ function XUiShopWaferSelect:OnBtnCloseClick()
 end
 function XUiShopWaferSelect:_InitTags()
     self.EnableElementTags = {}
-    self.BtnElementTagDic = {}  -- [elementId] = btn
     self:_InitElementTagsData()
     self:_CreateTagsUi()
 end
@@ -133,7 +132,11 @@ function XUiShopWaferSelect:_InitElementTagsData()
 
 end
 function XUiShopWaferSelect:_CreateTagsUi()
-    for k, tag in ipairs(self.EnableElementTags) do
+    local tagButton = {}
+    local defaultSelect =  1
+  
+    for index = 1,#self.EnableElementTags do
+        local tag = self.EnableElementTags[index]
         local prefab = CS.UnityEngine.GameObject.Instantiate(self.GridCharacterBtnTag.gameObject, self.GridCharacterBtnTag.transform.parent)
         prefab.gameObject:SetActiveEx(true)
         local btnTag = prefab:GetComponent("XUiButton")
@@ -141,29 +144,28 @@ function XUiShopWaferSelect:_CreateTagsUi()
            btnTag:SetName(XUiHelper.GetText("SpEnhanceSkillTab"))
         else
             btnTag:SetName(tag.ElementName)
+        end 
+        if  self.CurData.TagId == tag.Id then
+            defaultSelect = index
         end
-        self.BtnElementTagDic[tag.Id] = btnTag
-        XUiHelper.RegisterClickEvent(self,btnTag, function ()
-        
-        for key, value in pairs(self.BtnElementTagDic) do
-            value.ButtonState = CS.UiButtonState.Normal
-        end
-        self:RefreshDataByTag(tag.Id)
-        btnTag.ButtonState = CS.UiButtonState.Select
-        end)
-        if self.CurData.TagId == nil and tag.Id == Equip_Type.SuitAll  then
-            btnTag.ButtonState = CS.UiButtonState.Select
-        elseif self.CurData.TagId == tag.Id then
-            self:RefreshDataByTag(tag.Id)
-            btnTag.ButtonState = CS.UiButtonState.Select
-        end
-     
+        table.insert(tagButton,btnTag)
     end
+    self.PanelBtnContent:Init(tagButton,function(index) self:RefreshDataByTag(index) end)
+    
+    self.PanelBtnContent:SelectIndex(defaultSelect)
+        -- if self.CurData.TagId == nil and tag.Id == Equip_Type.SuitAll  then
+        --     btnTag.ButtonState = CS.UiButtonState.Select
+        -- elseif self.CurData.TagId == tag.Id then
+        --     self:RefreshDataByTag(tag.Id)
+        --     btnTag.ButtonState = CS.UiButtonState.Select
+        -- end
+
+
 
 end
-function XUiShopWaferSelect:RefreshDataByTag(tagType)
+function XUiShopWaferSelect:RefreshDataByTag(tagIndex)
     self.DataProvider = {}
-    
+    local tagType = self.EnableElementTags[tagIndex].Id
     if tagType == Equip_Type.SuitAll then
         self.DataProvider = self.OrginDataProvider
         self:UpdateGridList()

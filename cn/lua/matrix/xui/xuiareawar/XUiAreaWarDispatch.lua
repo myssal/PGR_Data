@@ -218,6 +218,13 @@ function XUiAreaWarDispatch:OnClickBtnDispatch()
         return
     end
 
+    local minItemNum = XDataCenter.AreaWarManager.GetUsingProbabilityItemsMinNum()
+    if minItemNum > 0 and minItemNum < self.DispatchCount then
+        local tips = XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+        XUiManager.TipError(tips)
+        return
+    end
+
     if self.IsQuest then
         self:DoDispatchQuest()
     else
@@ -262,7 +269,7 @@ function XUiAreaWarDispatch:SyncWhenResponse(rewardGoodsList,areaWarItems, isClo
         closeUi()
         if not XTool.IsTableEmpty(areaWarItems) then
             local openObtain = asynTask(function(cb)
-                XUiManager.OpenUiAreaWarObtain(rewardGoodsList, areaWarItems,nil, cb)
+                XMVCA.XAreaWar:OpenUiAreaWarObtain(rewardGoodsList, areaWarItems, nil, cb)
             end)
             openObtain()
         elseif not XTool.IsTableEmpty(rewardGoodsList) then

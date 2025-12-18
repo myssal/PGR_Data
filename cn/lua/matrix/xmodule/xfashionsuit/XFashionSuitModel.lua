@@ -9,7 +9,6 @@ local TableKey = {
 
 function XFashionSuitModel:OnInit()
     self._ConfigUtil:InitConfigByTableKey("Fashion", TableKey)
-    self._FashionSuitDict = nil
 end
 
 function XFashionSuitModel:ClearPrivate()
@@ -17,7 +16,7 @@ function XFashionSuitModel:ClearPrivate()
 end
 
 function XFashionSuitModel:ResetAll()
-    
+    self._FashionSuitDict = nil
 end
 
 ----------public start----------
@@ -42,11 +41,11 @@ function XFashionSuitModel:SetSuitRewardGain(id)
 end
 
 function XFashionSuitModel:SetFashionViewed(fashionId)
-    XSaveTool.SaveData(string.format("FashionSuitViewed_%s", fashionId), 1)
+    XSaveTool.SaveData(string.format("FashionSuitViewed_%s_%s", XPlayer.Id, fashionId), 1)
 end
 
 function XFashionSuitModel:IsFashionViewed(fashionId)
-    return XSaveTool.GetData(string.format("FashionSuitViewed_%s", fashionId)) == 1
+    return XSaveTool.GetData(string.format("FashionSuitViewed_%s_%s", XPlayer.Id, fashionId)) == 1
 end
 
 function XFashionSuitModel:GetSuitShopIds(suitId)

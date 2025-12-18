@@ -75,7 +75,9 @@ end
 
 function XFashionSuitControl:CheckFashionShopOpen(suitId)
     local shopIds = self:GetSuitShopIds(suitId)
-    XShopManager.RequestShopValidInfo(shopIds)
+    if not XTool.IsTableEmpty(shopIds) then
+        XShopManager.RequestShopValidInfo(shopIds)
+    end
 end
 
 ---领取涂装套装奖励

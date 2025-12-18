@@ -108,10 +108,12 @@ function XUiGridMovieActor:GetImagePos()
 end
 
 function XUiGridMovieActor:GetEffectGo()
+    self:LoadPrefab()
     return self.EffctActor
 end
 
 function XUiGridMovieActor:GetEffectParentGo()
+    self:LoadPrefab()
     return self.RImgActor.transform
 end
 

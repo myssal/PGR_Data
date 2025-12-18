@@ -22,7 +22,27 @@ function XFashionSuitAgency:SetFashionSuitData(fashionSuitList)
 end
 
 function XFashionSuitAgency:OpenMain()
-    XLuaUiManager.Open("UiFashionSuitMain")
+    local config = self._Model:GetClientConfigById("CloseGuideGroupId")
+    local guideGroupIds = config and config.Values
+    local needCloseIds = {}
+
+    if not XTool.IsTableEmpty(guideGroupIds) then
+        for _, idStr in ipairs(guideGroupIds) do
+            local id = tonumber(idStr)
+            if not XDataCenter.GuideManager.CheckIsGuide(id) then
+                table.insert(needCloseIds, id)
+            end
+        end
+    end
+
+    if #needCloseIds > 0 then
+        --玩家主动进入套装界面后，强制完成指定ID的强引导
+        XDataCenter.GuideManager.ReqMultiGuideComplete(needCloseIds, function()
+            XLuaUiManager.Open("UiFashionSuitMain")
+        end)
+    else
+        XLuaUiManager.Open("UiFashionSuitMain")
+    end
 end
 
 function XFashionSuitAgency:IsRed()

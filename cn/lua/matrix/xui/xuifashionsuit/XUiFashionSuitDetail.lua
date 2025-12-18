@@ -7,6 +7,10 @@ local CameraIndex = {
     Near = 2,
     Far = 3,
     FarNormal = 4,
+    Hide = 5,
+    FarHide = 6,
+    HideNear = 7,
+    FarHideNear = 8,
 }
 
 function XUiFashionSuitDetail:OnAwake()
@@ -28,8 +32,8 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, fashionId)
     self._Id = fashionId
     self._SuitConfig = self._Control:GetFashionSuitById(fashionSuitId)
     self._FashionConfig = XFashionConfigs.GetFashionTemplate(fashionId)
-    self._IsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(fashionId) and not XDataCenter.WeaponFashionManager.IsFashionTimeLimit(fashionId)
     self._FashionCount = #self._SuitConfig.FashionIds
+    self._IsModelDrag = self._Control:GetIntClientConfig("IsModelDrag") == 1
     ---@type XUiPanelFashionSuitButtonGroup
     self._ButtonGroup = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitButtonGroup").New(self.PanelBtnGroup, self)
     
@@ -54,7 +58,16 @@ function XUiFashionSuitDetail:OnDestroy()
 end
 
 function XUiFashionSuitDetail:InitView()
+    local color = XUiHelper.Hexcolor2Color(self._SuitConfig.LineColor)
     self.Grid256New.gameObject:SetActiveEx(false)
+    self.RImgDetailBg:SetRawImage(self._SuitConfig.DetailBg)
+    self.RImgLogoBg:SetRawImage(self._SuitConfig.LogoBg)
+    self.ImgLine1.color = color
+    self.ImgLine2.color = color
+    self.ImgWord1.color = color
+    self.ImgWord2.color = color
+    self._ButtonGroup:SetButtonBg(self._SuitConfig.BtnBuyBg, self._SuitConfig.BtnGetBg, self._SuitConfig.BtnWearBg)
+    
     self:OnBtnShowUiClick()
     self:OnBtnTipsCloseClick()
 end
@@ -100,14 +113,13 @@ function XUiFashionSuitDetail:ShowGift()
         self.PanelGift.gameObject:SetActiveEx(false)
     else
         self.PanelGift.gameObject:SetActiveEx(true)
+        local isHaveFashion = XDataCenter.FashionManager.CheckHasFashion(self._Id) and XDataCenter.FashionManager.IsFashionInTime(self._Id)
         local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
         XUiHelper.CreateTemplates(self, self._ItemPools, goodIdList, XUiGridCommon.New, self.Grid256New, self.Grid256New.parent, function(grid, data)
             grid:Refresh(data)
             -- 已拥有图标显示
             -- 涂装子道具随绑定涂装的拥有而显示已拥有状态
-            if data.IsSubItem and self._IsHaveFashion then
-                grid.ImgReceived.gameObject:SetActiveEx(true)
-            end
+            grid.ImgReceived.gameObject:SetActiveEx(isHaveFashion)
         end)
     end
 end
@@ -127,6 +139,9 @@ function XUiFashionSuitDetail:OnBtnHideUiClick()
     self.BtnPic.gameObject:SetActiveEx(false)
     self.BtnHideUi.gameObject:SetActiveEx(false)
     self.BtnShowUi.gameObject:SetActiveEx(true)
+    self._IsHideUi = true
+    self:OnBtnLensInClick()
+    self:UpdateCamera(CameraIndex.Hide)
 end
 
 function XUiFashionSuitDetail:OnBtnShowUiClick()
@@ -134,6 +149,8 @@ function XUiFashionSuitDetail:OnBtnShowUiClick()
     self.BtnPic.gameObject:SetActiveEx(true)
     self.BtnHideUi.gameObject:SetActiveEx(true)
     self.BtnShowUi.gameObject:SetActiveEx(false)
+    self._IsHideUi = false
+    self:OnBtnLensInClick()
 end
 
 --endregion
@@ -145,7 +162,11 @@ function XUiFashionSuitDetail:OnBtnLensInClick()
     self.BtnLensIn.gameObject:SetActiveEx(false)
     self.SliderCharacterHight.gameObject:SetActiveEx(false)
     self:UpdateSwitchBtn()
-    self:UpdateCamera(CameraIndex.Normal)
+    if self._IsHideUi then
+        self:UpdateCamera(CameraIndex.Hide)
+    else
+        self:UpdateCamera(CameraIndex.Normal)
+    end
 end
 
 function XUiFashionSuitDetail:OnBtnLensOutClick()
@@ -153,21 +174,32 @@ function XUiFashionSuitDetail:OnBtnLensOutClick()
     self.BtnLensIn.gameObject:SetActiveEx(true)
     self.SliderCharacterHight.gameObject:SetActiveEx(true)
     self:SetSwitchBtnVisible(false, false)
-    self:UpdateCamera(CameraIndex.Near)
+    if self._IsHideUi then
+        self:UpdateCamera(CameraIndex.HideNear)
+    else
+        self:UpdateCamera(CameraIndex.Near)
+    end
+    self:OnSliderCharacterHightChanged()
 end
 
 function XUiFashionSuitDetail:UpdateCamera(camera)
     self.ModelCamera[CameraIndex.Normal].gameObject:SetActiveEx(CameraIndex.Normal == camera)
     self.ModelCamera[CameraIndex.FarNormal].gameObject:SetActiveEx(CameraIndex.Normal == camera)
-    self.ModelCamera[CameraIndex.Near].gameObject:SetActiveEx(CameraIndex.Normal ~= camera)
-    self.ModelCamera[CameraIndex.Far].gameObject:SetActiveEx(CameraIndex.Normal ~= camera)
+    self.ModelCamera[CameraIndex.Near].gameObject:SetActiveEx(CameraIndex.Near == camera)
+    self.ModelCamera[CameraIndex.Far].gameObject:SetActiveEx(CameraIndex.Near == camera)
+    self.ModelCamera[CameraIndex.Hide].gameObject:SetActiveEx(CameraIndex.Hide == camera)
+    self.ModelCamera[CameraIndex.FarHide].gameObject:SetActiveEx(CameraIndex.Hide == camera)
+    self.ModelCamera[CameraIndex.HideNear].gameObject:SetActiveEx(CameraIndex.HideNear == camera)
+    self.ModelCamera[CameraIndex.FarHideNear].gameObject:SetActiveEx(CameraIndex.HideNear == camera)
 end
 
 function XUiFashionSuitDetail:OnSliderCharacterHightChanged()
-    local pos = self.ModelCamera[CameraIndex.Near].position
+    local near = self.ModelCamera[self._IsHideUi and CameraIndex.HideNear or CameraIndex.Near]
+    local far = self.ModelCamera[self._IsHideUi and CameraIndex.FarHideNear or CameraIndex.Far]
+    local pos = near.position
     local target = CS.UnityEngine.Vector3(pos.x, 1.7 - self.SliderCharacterHight.value, pos.z)
-    self.ModelCamera[CameraIndex.Near].position = target
-    self.ModelCamera[CameraIndex.Far].position = target
+    near.position = target
+    far.position = target
 end
 
 --endregion
@@ -179,15 +211,21 @@ function XUiFashionSuitDetail:InitSceneRoot()
     self.ModelCamera = {}
     self:LoadUiScene(self._SuitConfig.ScenePrefabPath, cameraPath, function()
         local root = self.UiModelGo.transform
+        local uiObject = {}
+        XUiHelper.InitUiClass(uiObject, root)
         ---@type XUiPanelRoleModel
-        self.RoleModelPanel = require("XUi/XUiCharacter/XUiPanelRoleModel").New(root:FindTransform("UiModelParent"), self.Name, nil, true, nil, true)
-        self.ModelCamera[CameraIndex.Normal] = root:FindTransform("FashionCamNearMain")
-        self.ModelCamera[CameraIndex.Near] = root:FindTransform("FashionCamNearest")
-        self.ModelCamera[CameraIndex.FarNormal] = root:FindTransform("FashionCamFarMain")
-        self.ModelCamera[CameraIndex.Far] = root:FindTransform("FashionCamFarest")
+        self.RoleModelPanel = require("XUi/XUiCharacter/XUiPanelRoleModel").New(uiObject.UiModelParent, self.Name, nil, true, nil, true)
+        self.ModelCamera[CameraIndex.Normal] = uiObject.FashionCamNearMain
+        self.ModelCamera[CameraIndex.FarNormal] = uiObject.FashionCamFarMain
+        self.ModelCamera[CameraIndex.Near] = uiObject.FashionCamNearest
+        self.ModelCamera[CameraIndex.Far] = uiObject.FashionCamFarest
+        self.ModelCamera[CameraIndex.Hide] = uiObject.UiNearHideUiCamera
+        self.ModelCamera[CameraIndex.FarHide] = uiObject.UiFarHideUiCamera
+        self.ModelCamera[CameraIndex.HideNear] = uiObject.UiNearHideUiCameraNearest
+        self.ModelCamera[CameraIndex.FarHideNear] = uiObject.UiFarHideUiCameraFarest
         
-        self.ImgEffectHuanren = root:FindTransform("ImgEffectHuanren")
-        self.ImgEffectHuanren1 = root:FindTransform("ImgEffectHuanren1")
+        self.ImgEffectHuanren = uiObject.ImgEffectHuanren
+        self.ImgEffectHuanren1 = uiObject.ImgEffectHuanren1
         self:OnBtnLensInClick()
         self:InitCameraTransform()
     end)
@@ -196,7 +234,12 @@ end
 function XUiFashionSuitDetail:UpdateModel()
     self.RoleModelPanel:UpdateCharacterResModel(self._FashionConfig.ResourcesId, self._FashionConfig.CharacterId, "UiFashionSuitDetail", function(model)
         model.transform.localPosition = Vector3(self._SuitConfig.RolePosX, self._SuitConfig.RolePosY, self._SuitConfig.RolePosZ)
-        self.PanelDrag:GetComponent("XDrag").Target = model.transform
+        if self._IsModelDrag then
+            self.PanelDrag.gameObject:SetActiveEx(true)
+            self.PanelDrag:GetComponent("XDrag").Target = model.transform
+        else
+            self.PanelDrag.gameObject:SetActiveEx(false)
+        end
         self:ShowImgEffectHuanren(self._FashionConfig.CharacterId)
     end)
 end
@@ -226,11 +269,18 @@ function XUiFashionSuitDetail:InitCameraTransform(modelUrl)
     virtualNearCameraTran.localEulerAngles = angles
     virtualFarCameraTran.localEulerAngles = angles
 
-    local virtualCamera = virtualNearCameraTran:GetComponent("CinemachineVirtualCamera")
-    if not XTool.UObjIsNil(virtualCamera) then
-        local newLens = virtualCamera.m_Lens
+    local nearVirtualCamera = virtualNearCameraTran:GetComponent("CinemachineVirtualCamera")
+    if not XTool.UObjIsNil(nearVirtualCamera) then
+        local newLens = nearVirtualCamera.m_Lens
         newLens.FieldOfView = self._SuitConfig.CameraFov
-        virtualCamera.m_Lens = newLens
+        nearVirtualCamera.m_Lens = newLens
+    end
+
+    local farVirtualCamera = virtualFarCameraTran:GetComponent("CinemachineVirtualCamera")
+    if not XTool.UObjIsNil(farVirtualCamera) then
+        local newLens = farVirtualCamera.m_Lens
+        newLens.FieldOfView = self._SuitConfig.CameraFov
+        farVirtualCamera.m_Lens = newLens
     end
 end
 
@@ -317,6 +367,15 @@ function XUiFashionSuitDetail:UpdatePlayBtn()
 end
 
 function XUiFashionSuitDetail:OnBtnPlayClick()
+    local skip = self._FashionConfig.FashionSuitTestPlayLevelSkipId
+    local skipConfig = XFunctionConfig.GetSkipFuncCfg(skip)
+    if XTool.IsNumberValid(skipConfig.ConditionId) then
+        local result, desc = XConditionManager.CheckCondition(skipConfig.ConditionId)
+        if not result then
+            XUiManager.TipError(desc)
+            return
+        end
+    end
     XFunctionManager.SkipInterface(self._FashionConfig.FashionSuitTestPlayLevelSkipId)
 end
 

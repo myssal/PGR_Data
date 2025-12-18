@@ -129,4 +129,6 @@ ModuleId = {
   XAccumulateExpendL = "XAccumulateExpendL",
   XPlotExhibition = "XPlotExhibition",
   XFashionSuit = "XFashionSuit",
+  XRadioSign = "XRadioSign",
+  XItemRestrict = "XItemRestrict",
 }

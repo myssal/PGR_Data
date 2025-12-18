@@ -10,7 +10,8 @@ end
 
 function XCharTest:Init()
     Base.Init(self)
-    
+
+    self:ResetFixAirErrorParam()
     self:InitHandleJumpTurnSpeedParams()
     -- 这其实是每个Npc都在调用Camera的全局开关, 行为树版本也一样，待v0.3或v0.4版本优化
     self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
@@ -19,11 +20,13 @@ end
 ---@param dt number @ delta time
 function XCharTest:Update(dt)
     Base.Update(self, dt)
-    
+
     if self._proxy:IsNpcBackState(self._uuid) then -- 在后台不触发逻辑
         return
     end
-    
+
+    self:UpdateAndCheckAirError(dt)
+
     self:ProcessSwitchNpc()
     self:ProcessChangeMoveState()
     self:ProcessHandleJumpTurnSpeed()
@@ -37,6 +40,7 @@ function XCharTest:HandleEvent(eventType, eventArgs)
 end
 
 function XCharTest:Terminate()
+    self:ResetFixAirErrorParam()
     Base.Terminate(self)
 end
 
@@ -45,11 +49,39 @@ end
 function XCharTest:CheckNpcCanChangeAction()
     if self._proxy:CheckNpcOnAir(self._uuid) then   -- 角色在空中不切换
         return false
-    end 
+    end
     if self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) then -- 角色在跳跃中不切换
         return false
     end
     return true
+end
+--endregion
+
+--region 卡斜坡碰撞 or 卡空中掉落
+function XCharTest:ResetFixAirErrorParam()
+    self._airErrorTime = 5
+    self._curAirErrorTime = 0
+    self._cueBeforeAirPos = nil
+    self:RecordBeforeAirPos();
+end
+
+function XCharTest:UpdateAndCheckAirError(dt)
+    if not self._proxy:GetNpcActive(self._uuid) then
+        return
+    end
+    if not self._proxy:CheckNpcOnAir(self._uuid) then
+        self._curAirErrorTime = 0
+        return
+    end
+    self._curAirErrorTime = self._curAirErrorTime + dt
+    if self._curAirErrorTime >= self._airErrorTime then
+        self._curAirErrorTime = 0
+        self._proxy:TeleportWithBlackUi(self._uuid, self._cueBeforeAirPos, self._proxy:GetNpcRotation(self._uuid))
+    end
+end
+
+function XCharTest:RecordBeforeAirPos()
+    self._cueBeforeAirPos = self._proxy:GetNpcPosition(self._uuid)
 end
 --endregion
 
@@ -137,6 +169,7 @@ function XCharTest:ProcessChangeJumpState()
     if self._proxy:CheckNpcOnAir(self._uuid) then                                           -- 空中没有二段跳
         return false
     end
+    self:RecordBeforeAirPos()
     if not (self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.None) or
             self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.IdleJumpToStand) or
             self._proxy:CheckNpcJumpState(self._uuid, ENpcJumpState.MoveJumpToStand)) then    -- 除跳跃落地阶段外外，其它状态无法跳跃

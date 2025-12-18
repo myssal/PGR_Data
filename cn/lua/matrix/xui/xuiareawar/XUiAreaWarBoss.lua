@@ -351,6 +351,14 @@ function XUiAreaWarBoss:OnClickBtnFight()
         self.ChallengeCount = 1
     end
     self.ChallengeCount = math.max(1, self.ChallengeCount)
+
+    local minItemNum = XDataCenter.AreaWarManager.GetUsingProbabilityItemsMinNum()
+    if minItemNum > 0 and minItemNum < self.ChallengeCount then
+        local tips = XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+        XUiManager.TipError(tips)
+        return
+    end
+    
     local personal = XDataCenter.AreaWarManager.GetPersonal()
     if personal:IsOpenMultiChallenge() then
         personal:SetSelectLocal(self.ChallengeCount)

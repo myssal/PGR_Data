@@ -6,9 +6,9 @@ local XUiPanelRecommendBase = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPane
 local XUiRecommendGrid = XClass(nil, "XUiRecommendGrid")
 
 local RecommendUiProxy = {
-    [XEnumConst.Purchase.Recommend.Luna] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendLuna"),
-    [XEnumConst.Purchase.Recommend.CompanyPackage] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendCompanyPackage"),
-    [XEnumConst.Purchase.Recommend.ComboPackage] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendComboPackage/XUiPanelRecommendComboPackage")
+    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.Luna)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendLuna"),
+    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.CompanyPackage)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendCompanyPackage"),
+    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.ComboPackage)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendComboPackage/XUiPanelRecommendComboPackage")
 }
 
 function XUiRecommendGrid:Ctor(ui)
@@ -261,6 +261,11 @@ function XUiPurchaseRecommend:TryFocusStage(selectGrid)
         local halfScreenHeight = self.PanelGroupList.viewport.rect.height / 2
         local moveMinY = halfScreenHeight
         local moveMaxY = self.PanelGroupList.content.rect.height - halfScreenHeight
+        
+        -- 无法滑动
+        if moveMaxY <= moveMinY then
+            moveMaxY = moveMinY
+        end
 
         local tarPosY = - selectGrid.transform.localPosition.y
         local fixedPositionY = CS.UnityEngine.Mathf.Clamp(tarPosY, moveMinY, moveMaxY)

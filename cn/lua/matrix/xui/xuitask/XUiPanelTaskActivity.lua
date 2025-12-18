@@ -12,10 +12,6 @@ function XUiPanelTaskActivity:Ctor(ui, parent)
     self.Parent = parent
     XTool.InitUiObject(self)
 
-    self.BtnShop.CallBack = function()
-        local skipToShopId = 90055 -- 临时写死
-        XFunctionManager.SkipInterface(skipToShopId) 
-    end
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTaskActivityList)
     self.DynamicTable:SetProxy(XDynamicGridTask)
     self.DynamicTable:SetDelegate(self)
@@ -23,7 +19,6 @@ end
 
 function XUiPanelTaskActivity:ShowPanel()
     self.GameObject:SetActiveEx(true)
-    self.PanelBtnShop.gameObject:SetActiveEx(XTool.IsNumberValid(XDataCenter.DrawManager.GetCanLiverActivityId()))
 
     self.ActivityTasks = self:GetTasks()
     self.PanelNoneActivityTask.gameObject:SetActiveEx(#self.ActivityTasks <= 0)

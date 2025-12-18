@@ -56,10 +56,7 @@ function XAreaWarAgency:RequestAreaWar4ItemRoomLevelUp(cb)
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AreaWar4ItemRoomLevelUpRequest, req, function(res)
         local itemRoom = self._Model:GetItemRoom()
         itemRoom:RefreshLv(res.ItemRoomLevel)
-        if res.Rewards and #res.Rewards > 0 then
-            XUiManager.OpenUiObtain(res.Rewards)
-        end
-        if cb then cb() end
+        if cb then cb(res.Rewards) end
     end)
 end
 
@@ -220,8 +217,7 @@ function XAreaWarAgency:RequestAreaWar4SubmitRaceItem(itemId, cb)
     XNetwork.CallWithAutoHandleErrorCode(self.RequestName.AreaWar4SubmitRaceItemRequest, req, function(res)
         local itemRoom = self._Model:GetItemRoom()
         itemRoom:AddSubmitRaceItem(itemId)
-        XUiManager.OpenUiObtain(res.Rewards)
-        if cb then cb() end
+        if cb then cb(res.Rewards) end
     end)
 end
 
@@ -280,6 +276,21 @@ end
 -- 是否有藏品室蓝点
 function XAreaWarAgency:IsRedCollection()
     return self._Model:IsRedCollection()
+end
+
+function XAreaWarAgency:OpenUiAreaWarObtain(data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    if not CS.XFightInterface.IsOutFight then
+        return -- 战斗不弹
+    end
+
+    -- 等待父级ui中列表异步刷新完成，以保证弹窗的截图效果正常
+    if XUiManager.IsTableAsyncLoading() then
+        XUiManager.WaitTableLoadComplete(function()
+            XLuaUiManager.Open("UiAreaWarObtain", data,areaWarItems, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+        end)
+    else
+        XLuaUiManager.Open("UiAreaWarObtain", data, areaWarItems,title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)
+    end
 end
 
 return XAreaWarAgency

@@ -53,6 +53,9 @@ function XUiPanelFashionSuitButtonGroup:OnBtnBuyClick()
 end
 
 function XUiPanelFashionSuitButtonGroup:UpdateBuyBtn(id)
+    if self._Id then
+        self.Parent:RemoveTimerFun(self._Id)
+    end
     self._Id = id
     self._FashionConfig = XFashionConfigs.GetFashionTemplate(id)
     local isShowBuy, isShowGet, isShowWear
@@ -250,10 +253,6 @@ function XUiPanelFashionSuitButtonGroup:ShowPurchase(itemData)
     self:ShowDiscount()
     --价格
     self:ShowPrice()
-    --上架时间
-    if self:CheckReleaseDate() then
-        return
-    end
     --生效时间
     if self:CheckExpirationTime() then
         return
@@ -424,6 +423,7 @@ function XUiPanelFashionSuitButtonGroup:OnPurchaseBuy()
         if self._ItemData and self._ItemData.Id then
             XDataCenter.PurchaseManager.PurchaseRequest(self._ItemData.Id, function()
                 self:UpdateView()
+                self.Parent:ShowGift()
             end, 1, nil, XPurchaseConfigs.GetLBUiTypesList(), nil, nil, nil, function()
                 self:ShowWearPopup()
             end)
@@ -635,6 +635,7 @@ function XUiPanelFashionSuitButtonGroup:OnShopBuy()
 
     XShopManager.BuyShop(self._GainParams[1], self._GoodsData.Id, 1, function(res)
         self:UpdateView()
+        self.Parent:ShowGift()
         local text = XUiHelper.GetText("BuySuccess")
         XUiManager.TipMsg(text, nil, function()
             if res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
@@ -663,6 +664,12 @@ function XUiPanelFashionSuitButtonGroup:ShowWearPopup()
             self:UpdateView()
         end)
     end)
+end
+
+function XUiPanelFashionSuitButtonGroup:SetButtonBg(buyBg, getBg, wearBg)
+    self.BtnBuy:SetRawImage(buyBg)
+    self.BtnGet:SetRawImage(getBg)
+    self.BtnWear:SetRawImage(wearBg)
 end
 
 return XUiPanelFashionSuitButtonGroup

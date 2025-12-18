@@ -1180,8 +1180,8 @@ function XMainLine2Agency:CheckOpenUiEggsTreasureTips(chapterId)
     local eggIds = self._Model:GetChapterEggIds(chapterId)
     for _, eggId in pairs(eggIds) do
         if not self._Model:IsEggGet(eggId) then
-            local confitionId = self._Model:GetEggConditionId(eggId)
-            local isReach, desc = XConditionManager.CheckCondition(confitionId)
+            local conditionId = self._Model:GetEggConditionId(eggId)
+            local isReach, desc = XConditionManager.CheckCondition(conditionId)
             if isReach then
                 XLuaUiManager.Open("UiMainLine2EggsTreasureTips", chapterId, eggId)
                 return

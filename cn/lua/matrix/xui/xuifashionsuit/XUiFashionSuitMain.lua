@@ -21,6 +21,7 @@ function XUiFashionSuitMain:OnStart()
     local suitId = self._Control:GetIntClientConfig("TempSuitIdV41")
     local config = self._Control:GetFashionSuitById(suitId)
     local go = self.PanelSuit:LoadPrefab(config.PrefabPath)
+    ---@type XUiPanelFashionSuitNormal
     self._SuitView = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitNormal").New(go, self)
     self._SuitView:SetSuitId(suitId)
 
@@ -29,7 +30,7 @@ function XUiFashionSuitMain:OnStart()
 end
 
 function XUiFashionSuitMain:OnEnable()
-
+    self._SuitView:UpdateView()
 end
 
 function XUiFashionSuitMain:OnDisable()

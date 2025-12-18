@@ -55,6 +55,8 @@ function XUiAreaWarPopupSellAll:OnBtnSellClick()
             })
         end
     end
+    if #sellItems == 0 then return end
+
     XMVCA.XAreaWar:RequestAreaWar4AuctionPutOn(sellItems)
     self:Close()
 end
@@ -100,7 +102,9 @@ function XUiAreaWarPopupSellAll:OnQualityTabClick(qualityId)
             selNum = selNum + num
             selItemNum[itemId] = selNum
             local grid = self.DynamicTable:GetGridByIndex(i)
-            self:RefreshItemSelected(grid, isSelected)
+            if grid then
+                self:RefreshItemSelected(grid, isSelected)
+            end
             :: CONTINUE ::
         end
     end

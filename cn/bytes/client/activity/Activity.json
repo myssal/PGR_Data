@@ -1,24 +1,494 @@
 [
     {
-        "Id": 1,
-        "Name": "先锋服体验任务",
-        "GroupId": 1,
+        "Id": 998,
+        "Name": "邀请好友",
+        "GroupId": 3,
         "SortId": 1,
-        "TimeId": 44001,
+        "TimeId": 0,
+        "ActivityType": 4,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6InviteFriend.png",
+        "ActivityTitle": "邀请好友",
+        "ActivityDes": "您可以把邀请码分享给等级≥40级的回归指挥官，若对方成功输入邀请码，即可邀请成功",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelSendInvitation.prefab",
+        "ConditionId": 770400,
+        "Params": [
+            2,
+            10015,
+            3
+        ]
+    },
+    {
+        "Id": 999,
+        "Name": "邀请码",
+        "GroupId": 3,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 5,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase5OtherInviteCode.png",
+        "ActivityTitle": "邀请码",
+        "ActivityDes": "欢迎回到灰鸦指挥部，您可以输入其他指挥官的邀请码，领取相应奖励",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelAcceptInvitation.prefab",
+        "ConditionId": 770400,
+        "Params": [
+            2,
+            10016
+        ]
+    },
+    {
+        "Id": 980,
+        "Name": "问卷调查",
+        "GroupId": 16,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 7,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuestionnaire.png",
+        "ActivityTitle": "问卷调查",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n为了给指挥官提供更好的支援，指挥部决定进行一次问卷调查，请指挥官点击下面的【前往】按钮，发表自己的意见吧！填写了问卷的指挥官，可以获得奖励哦。",
+        "ConditionId": 770400,
+        "Params": [
+            1,
+            29,
+            1
+        ]
+    },
+    {
+        "Id": 981,
+        "Name": "回归玩家体验调查",
+        "GroupId": 16,
+        "SortId": 1,
+        "TimeId": 0,
+        "ActivityType": 11,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuestionnaire.png",
+        "ActivityTitle": "回归玩家体验调查",
+        "ActivityDes": "「参与条件」：指挥官等级达到40\\n\\n「活动说明」：\\n为了给指挥官提供更好的支援，指挥部决定进行一次回归玩家体验问卷调查，请指挥官点击下面的【前往】按钮，发表自己的意见吧！填写了问卷的指挥官，可以获得奖励哦。",
+        "ConditionId": 770400,
+        "Params": [
+            2,
+            11641,
+            1
+        ]
+    },
+    {
+        "Id": 970,
+        "Name": "回归支援",
+        "GroupId": 5,
+        "SortId": 1,
+        "TimeId": 0,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiAssestBaseMainLine.png",
-        "ActivityTitle": "先锋服体验任务",
-        "ActivityDes": "体验先锋服活动，完成系列任务",
-        "ConditionId": 0,
-        "ShowBeginTime": "2025/11/20 18:00",
-        "ShowEndTime": "2025/12/2 18:00",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityTitle": "回归支援",
+        "ActivityDes": "活动期间，处于“回归状态”的指挥官，完成相应任务可获得奖励（若回归状态结束，则活动相应结束）",
+        "ConditionId": 845020,
         "Params": [
             0,
-            594,
-            595,
-            596,
-            597
+            31
+        ]
+    },
+    {
+        "Id": 960,
+        "Name": "阶段奖励",
+        "GroupId": 152,
+        "SortId": 1,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualStepReward.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            1
+        ]
+    },
+    {
+        "Id": 961,
+        "Name": "勋业奖励",
+        "GroupId": 152,
+        "SortId": 2,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualPassport.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            2
+        ]
+    },
+    {
+        "Id": 962,
+        "Name": "阶段任务",
+        "GroupId": 152,
+        "SortId": 3,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTask.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            3
+        ]
+    },
+    {
+        "Id": 963,
+        "Name": "疾雷研发",
+        "GroupId": 152,
+        "SortId": 4,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualLotto.prefab",
+        "ConditionId": 862858,
+        "ShowEndTime": "常驻",
+        "Params": [
+            4
+        ]
+    },
+    {
+        "Id": 964,
+        "Name": "勋业补给",
+        "GroupId": 152,
+        "SortId": 5,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGiftPack.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            5
+        ]
+    },
+    {
+        "Id": 965,
+        "Name": "疾雷教学",
+        "GroupId": 152,
+        "SortId": 6,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualTeaching.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            6
+        ]
+    },
+    {
+        "Id": 966,
+        "Name": "活动指引",
+        "GroupId": 152,
+        "SortId": 7,
+        "TimeId": 906,
+        "ActivityType": 13,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBase6OtherHuigui.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiWheelChairManual/UiWheelChairManualGuide.prefab",
+        "ConditionId": 862850,
+        "ShowEndTime": "常驻",
+        "Params": [
+            7
+        ]
+    },
+    {
+        "Id": 900,
+        "Name": "妄婪研发",
+        "GroupId": 153,
+        "SortId": 1,
+        "TimeId": 908,
+        "ActivityType": 14,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanV214.png",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiGachaCanLiver/UiGachaCanLiverDraw.prefab",
+        "ConditionId": 1050098,
+        "ShowEndTime": "常驻"
+    },
+    {
+        "Id": 400,
+        "Name": "推想视限",
+        "GroupId": 228,
+        "SortId": 1,
+        "TimeId": 43505,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev401.png",
+        "ActivityTitle": "推想视限",
+        "ActivityDes": "活动说明：体验全新故事【推想视限】，完成系列任务",
+        "ConditionId": 770400,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            0,
+            615
+        ]
+    },
+    {
+        "Id": 401,
+        "Name": "拟战场域",
+        "GroupId": 228,
+        "SortId": 2,
+        "TimeId": 43505,
+        "ActivityType": 12,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
+        "ActivityTitle": "拟战场域",
+        "ActivityDes": "「参与条件」：\\n通关普通剧情2-2副本后开启\\n\\n「副本说明」：\\n1、通关关卡可获得拟战绩分\\n2、消耗拟战绩分可在拟战商店购买物品\\n3、版本限定商店兑换结束：2026-02-02 05:00\\n4、版本时间内通关拟战场域关卡，累计消耗一定血清可领取奖励。",
+        "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
+        "ConditionId": 770403,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            20017,
+            594
+        ]
+    },
+    {
+        "Id": 402,
+        "Name": "全境特遣·墟市猎商",
+        "GroupId": 228,
+        "SortId": 3,
+        "TimeId": 43301,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanjingv401.png",
+        "ActivityTitle": "全境特遣·墟市猎商",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到52\\n\\n「活动说明」：\\n1、全境特遣·墟市猎商共有4个区域，随时间逐步开放；每个区域由若干个区块组成，攻破前置区块即可解锁相邻区块；\\n2、指挥官们可通过【作战】或【派遣】的形式，消耗【浮点算力】，对区块提供进度贡献，获得活动货币【试作原型】；\\n3、全服所有指挥官对区块的贡献累计达到一定值后，该区块被攻破成功，全服指挥官都将获得该区块全服奖励及加成；\\n4、本期新增拍卖行系统，玩家可通关关卡获得藏品升级藏品室并获得奖励，也可通过拍卖行使用货币交易藏品。\\n5、使用藏品升级藏品室和点亮珍稀藏品可获得丰厚奖励。\\n6、攻破指定角色区块，可获得对应角色试玩，并且该角色在活动作战中将获得强力增幅；\\n7、攻破第一区域的【暗区】，将解锁【阶段战果】，每小时进行一次结算，获得一定数量【试作原型】。随着各个区域的【暗区】被攻破，每小时结算收益将变高；\\n8、通过参与活动获得的货币【试作原型】，可在【特遣补给】中兑换丰富奖励！",
+        "ConditionId": 84601200,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            80176
+        ]
+    },
+    {
+        "Id": 403,
+        "Name": "神寂启示录",
+        "GroupId": 228,
+        "SortId": 4,
+        "TimeId": 43926,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRoguev401.png",
+        "ActivityTitle": "神寂启示录",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n\\n「活动说明」：\\n1、「启示之路」新增终章剧情故事，通关渡边、薇拉、万事和莉莉丝的剧情故事后，进入活动界面点击任一角色即可进入。\\n2、常驻商店新增表情包等道具。\\n3、对角色技能、饰品与符纹数值进行了平衡性调整",
+        "ConditionId": 770401,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "ShowEndTime": "常驻",
+        "Params": [
+            89092
+        ]
+    },
+    {
+        "Id": 404,
+        "Name": "抢险敲敲敲",
+        "GroupId": 228,
+        "SortId": 5,
+        "TimeId": 43701,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseChidouv401.png",
+        "ActivityTitle": "抢险敲敲敲",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n\\n「活动说明」：\\n1、骇入代码世界，完成工程抢险。\\n2、活动共有12个关卡。\\n3、活动内指挥官们需要操控角色躲避怪物，抢修代码块，并通过特定道具击杀怪物，夺回被抢走的代码块，完成修复工作。\\n4、活动内将会提供多种道具帮助指挥官们完成目标。\\n5、完成指定挑战后，可完成任务领取「活动角色研发券」、「贸易凭据」等道具。",
+        "ConditionId": 774800,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            90025
+        ]
+    },
+    {
+        "Id": 405,
+        "Name": "疾速追缉",
+        "GroupId": 228,
+        "SortId": 6,
+        "TimeId": 43001,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanxiv401.png",
+        "ActivityTitle": "疾速追缉",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到42\\n\\n「活动说明」：\\n1、活动拥有4个关卡，每个关卡拥有四个难度可挑战。\\n2、限制指定角色，挑战不同难度的悬赏boss。\\n3、完成悬赏任务可领取悬赏奖励。",
+        "ConditionId": 774700,
+        "Params": [
+            89093
+        ]
+    },
+    {
+        "Id": 406,
+        "Name": "虚实罅隙",
+        "GroupId": 228,
+        "SortId": 7,
+        "TimeId": 43101,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv401.png",
+        "ActivityTitle": "虚实罅隙",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n\\n「活动说明」：\\n1、挑战关卡共分为6个难度，均为高难度挑战，将与【伪·折翼鸟】进行对战。\\n2、在挑战过程中，指挥官的角色在死亡时会重启，帮助指挥官完成挑战。\\n3、各关卡有3星条件，所有关卡中累计获得3星即可获得收藏品奖励。继续挑战获得更高星级可提升收藏品的品质。",
+        "ConditionId": 1050141,
+        "Params": [
+            11724
+        ]
+    },
+    {
+        "Id": 407,
+        "Name": "泛用机体狙击",
+        "GroupId": 228,
+        "SortId": 8,
+        "TimeId": 43506,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv401.png",
+        "ActivityTitle": "泛用机体狙击",
+        "ActivityDes": "「全新角色」：\\n※S级冰系增幅型【布偶熊·骇影】\\n「新武器」：\\n※6星【霓虹穿梭机】（数码战靴）\\n\\n「说明」：\\n1.角色研发：\\n※【布偶熊·骇影】将进入【主题研发】研发池，占S级出率100%\\n2.武器研发：\\n※【霓虹穿梭机】将进入【武器研发】研发池，规则和出率与其他武器相同",
+        "ConditionId": 770400,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            7209
+        ]
+    },
+    {
+        "Id": 408,
+        "Name": "辅助机狙击",
+        "GroupId": 228,
+        "SortId": 9,
+        "TimeId": 43506,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv401.png",
+        "ActivityTitle": "辅助机狙击",
+        "ActivityDes": "「全新辅助机」：\\n※ S级辅助机【吡啵】\\n※ 推荐搭配角色【布偶熊·骇影】\\n※【吡啵】 将进入【辅助机研发】研发池。\\n指挥官进行辅助机研发时，可以选择任意S级辅助机进行狙击研发\\n活动期间若选择【吡啵】进行狙击，则【吡啵】占S级辅助机出率的100%",
+        "ConditionId": 8006,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            7212
+        ]
+    },
+    {
+        "Id": 409,
+        "Name": "新涂装-熊迹旅诗",
+        "GroupId": 228,
+        "SortId": 10,
+        "TimeId": 43508,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBuouxiongCoatingv401.png",
+        "ActivityTitle": "新涂装-熊迹旅诗",
+        "ActivityDes": "「新涂装」：\\n泛用机体【布偶熊·骇影】涂装【熊迹旅诗】\\n「说明」：\\n活动期间【熊迹旅诗】在“采购-涂装补给包”中以原价“7折”出售",
+        "ConditionId": 770400,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            20020
+        ]
+    },
+    {
+        "Id": 410,
+        "Name": "系列涂装-神寂启示录",
+        "GroupId": 228,
+        "SortId": 11,
+        "TimeId": 43508,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRoguev401.png",
+        "ActivityTitle": "系列涂装-神寂启示录",
+        "ActivityDes": "「涂装复刻」：\\n【神寂启示录】系列涂装复刻\\n「说明」：\\n活动期间【神寂启示录】系列涂装，在“采购-涂装补给包”中以原价“7折”出售。",
+        "ConditionId": 770400,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            20020
+        ]
+    },
+    {
+        "Id": 411,
+        "Name": "战略评定手册",
+        "GroupId": 228,
+        "SortId": 12,
+        "TimeId": 43507,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPv401.png",
+        "ActivityTitle": "战略评定手册",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n「活动说明」：\\n1.玩家完成每日.每轮及本期情报手册的评定任务积累情报值\\n2.积累一定的情报值可以提升本期评定等级\\n3.达到指定评定等级可以获得对应奖励\\n4.指挥官还可以购买额外的情报获得更为丰厚的奖励",
+        "ConditionId": 770401,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            20171
+        ]
+    },
+    {
+        "Id": 412,
+        "Name": "解惑者自苦",
+        "GroupId": 229,
+        "SortId": 1,
+        "TimeId": 43911,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv401.png",
+        "ActivityTitle": "解惑者自苦",
+        "ActivityDes": "「参与条件」：通关普通剧情1-8副本",
+        "ConditionId": 774501,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            20235,
+            616
+        ]
+    },
+    {
+        "Id": 413,
+        "Name": "适配拟合-吡啵",
+        "GroupId": 230,
+        "SortId": 1,
+        "TimeId": 43201,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv401.png",
+        "ActivityTitle": "适配拟合-吡啵",
+        "ActivityDes": "「参与条件」：指挥官等级达到61。",
+        "ConditionId": 8006,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            7107,
+            617
+        ]
+    },
+    {
+        "Id": 414,
+        "Name": "熊迹旅诗",
+        "GroupId": 231,
+        "SortId": 1,
+        "TimeId": 43202,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBuouxiongEffectCoatingv401.png",
+        "ActivityTitle": "熊迹旅诗",
+        "ActivityDes": "「新涂装」：\\n泛用机体【布偶熊·骇影】涂装【熊迹旅诗】",
+        "ConditionId": 770400,
+        "ShowBeginTime": "2025-12-23 更新后",
+        "Params": [
+            10035,
+            618
+        ]
+    },
+    {
+        "Id": 418,
+        "Name": "极境统合",
+        "GroupId": 227,
+        "SortId": 1,
+        "TimeId": 43601,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv401.png",
+        "ActivityTitle": "极境统合",
+        "ActivityDes": "「活动说明」：完成每日任务，获得【鲸音存储器】",
+        "ConditionId": 0,
+        "Params": [
+            20076,
+            595
         ]
     }
 ]

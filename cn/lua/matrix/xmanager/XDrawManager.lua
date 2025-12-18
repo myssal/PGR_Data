@@ -44,10 +44,8 @@ XDrawManagerCreator = function()
 
     -- 可肝卡池相关数据
     local CanLiverActivityId = nil
-    local CanLiverSchedules = nil
-    local CanLiverGainCoinCount = nil
-    local CanOverMaxCountNum = nil
-
+    local CanLiverDrawCount = nil
+    local CanLiverRewardIndex = nil
     XDrawManager.DrawEventType = { Normal = 0, NewHand = 1, Activity = 2, OldActivity = 3 }
 
     function XDrawManager.Init()
@@ -910,40 +908,32 @@ XDrawManagerCreator = function()
         return IsDevilMayCryDrawOpen
     end
 
-    -- 可肝卡池活动开启数据
+
     function XDrawManager.NotifyDrawCanLiverData(data)
         CanLiverActivityId = data.ActivityId
-        CanLiverSchedules = data.Schedules
-        CanLiverGainCoinCount = data.GainCoinCount
-        CanOverMaxCountNum = data.OverMaxCountNum
+        CanLiverDrawCount = data.DrawCount or 0
+        CanLiverRewardIndex = data.RewardIndex
     end
-    
+
     function XDrawManager.GetCanLiverActivityId()
         return CanLiverActivityId
     end
-    
-    function XDrawManager.GetCanLiverSchedules()
-        return CanLiverSchedules
+
+    function XDrawManager.GetCanLiverDrawCount()
+        return CanLiverDrawCount
     end
 
-    function XDrawManager.GetScheduleDataByDrawId(drawId)
-        for k, v in pairs(CanLiverSchedules) do
-            if v.DrawId == drawId then
-                return v
-            end
-        end
-        return nil
+    function XDrawManager.GetCanLiverRewardIndex()
+        return CanLiverRewardIndex
     end
-
-    function XDrawManager.IsCanJourneyRewardGet(drawId, index)
-        local scheduleData = XDrawManager.GetScheduleDataByDrawId(drawId)
-        if not scheduleData then
+    function XDrawManager.IsCanJourneyRewardGet(index)
+        if not CanLiverRewardIndex then
             return false
         end
 
         -- 获取配置中的对应num
-        local canLiverActivity = XDrawManager.GetCanLiverActivityId()
-        local config = XDrawConfigs.GetDrawCanLiverRewardCfgByDrawIdAndActivityId(drawId, canLiverActivity)
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
         if not config or not config.Schedules then
             return false
         end
@@ -952,28 +942,32 @@ XDrawManagerCreator = function()
             return false
         end
 
-        return scheduleData.DrawCount >= num and not table.contains(scheduleData.RewardIndex, index - 1) -- RewardIndex是C#侧下标
+        return CanLiverDrawCount >= num and not table.contains(CanLiverRewardIndex, index - 1) -- RewardIndex是C#侧下标
+    end
+
+    function XDrawManager.IsJourneyRewardReceived(index)
+        if not CanLiverRewardIndex then
+            return false
+        end
+    
+        -- RewardIndex 是 C# 的下标，所以要减 1
+        return table.contains(CanLiverRewardIndex, index - 1)
     end
 
     -- 返回当前卡池中最小可领取奖励的index，没有则返回nil
-    function XDrawManager.GetFirstCanJourneyRewardIndex(drawId)
-        local scheduleData = XDrawManager.GetScheduleDataByDrawId(drawId)
-        if not scheduleData then
+    function XDrawManager.GetFirstCanJourneyRewardIndex()
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        if not canLiverActivityId then
             return nil
         end
 
-        local canLiverActivity = XDrawManager.GetCanLiverActivityId()
-        if not canLiverActivity then
-            return nil
-        end
-
-        local config = XDrawConfigs.GetDrawCanLiverRewardCfgByDrawIdAndActivityId(drawId, canLiverActivity)
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
         if not config or not config.Schedules then
             return nil
         end
 
         for index, _ in ipairs(config.Schedules) do
-            if XDrawManager.IsCanJourneyRewardGet(drawId, index) then
+            if XDrawManager.IsCanJourneyRewardGet(index) then
                 return index
             end
         end
@@ -981,38 +975,29 @@ XDrawManagerCreator = function()
     end
 
     -- 获取最近一个未领取奖励的index（无论是否可领，只要还没领）
-    function XDrawManager.GetFirstUnGetJourneyRewardIndex(drawId)
-        local scheduleData = XDrawManager.GetScheduleDataByDrawId(drawId)
-        if not scheduleData then
+    function XDrawManager.GetFirstUnGetJourneyRewardIndex()
+        local canLiverActivityId = XDrawManager.GetCanLiverActivityId()
+        if not canLiverActivityId then
             return nil
         end
 
-        local canLiverActivity = XDrawManager.GetCanLiverActivityId()
-        if not canLiverActivity then
+        if not CanLiverRewardIndex then
             return nil
         end
 
-        local config = XDrawConfigs.GetDrawCanLiverRewardCfgByDrawIdAndActivityId(drawId, canLiverActivity)
+        local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
         if not config or not config.Schedules then
             return nil
         end
 
         for index, _ in ipairs(config.Schedules) do
             -- RewardIndex 是C#的下标
-            if not table.contains(scheduleData.RewardIndex, index - 1) then
+            if not table.contains(CanLiverRewardIndex, index - 1) then
                 return index
             end
         end
 
         return nil
-    end
-    
-    function XDrawManager.GetCanLiverGainCoinCount()
-        return CanLiverGainCoinCount
-    end
-    
-    function XDrawManager.GetCanOverMaxCountNum()
-        return CanOverMaxCountNum
     end
     --endregion
     
@@ -1214,20 +1199,14 @@ XDrawManagerCreator = function()
     end
 
     -- 可肝卡池的奖励领取
-    function XDrawManager.DrawCanLiverRewardRequest(drawId, rewardIndex, cb)
-        XNetwork.Call("DrawCanLiverRewardRequest", {DrawId = drawId}, function(res)
+    function XDrawManager.DrawCanLiverRewardRequest(cb)
+        XNetwork.Call("DrawCanLiverRewardRequest", {}, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 return
             end
 
-            for k, v in pairs(CanLiverSchedules) do
-                if v.DrawId == drawId then
-                    v.RewardIndex = v.RewardIndex or {}
-                    v.RewardIndex = XTool.MergeArray(v.RewardIndex, res.RewardIndexSet)
-                    break
-                end
-            end
+            CanLiverRewardIndex = XTool.MergeArray(CanLiverRewardIndex, res.RewardIndexSet)
 
             if cb then
                 cb(res.RewardGoodsList)

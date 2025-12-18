@@ -1542,6 +1542,16 @@ function XAreaWarConfigs.GetRareModelUnlockEffect()
     return template.Values[1]
 end
 
+function XAreaWarConfigs.GetUseItemNumNoEnoughTips()
+    local template = GetClientConfig("UseItemNumNoEnoughTips")
+    return template.Values[1]
+end
+
+function XAreaWarConfigs.GetCollectionLockTips()
+    local template = GetClientConfig("CollectionLockTips")
+    return template.Values[1]
+end
+
 function XAreaWarConfigs.GetSkipItemId()
     if SkilItemId then
         return SkilItemId

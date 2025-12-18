@@ -1815,22 +1815,22 @@
     {
         "Id": 20010011,
         "Key": "FashionSuitConfigNotFound",
-        "Text": "20010011涂装套装配置未找到"
+        "Text": "未找到衣橱涂装系列"
     },
     {
         "Id": 20010012,
         "Key": "FashionSuitIsNotComplete",
-        "Text": "20010012涂装套装未全部推出"
+        "Text": "衣橱涂装系列未全部上架"
     },
     {
         "Id": 20010013,
         "Key": "FashionSuitIsNotGathered",
-        "Text": "20010013涂装套装未集齐"
+        "Text": "衣橱涂装系列未全部收集"
     },
     {
         "Id": 20010014,
         "Key": "FashionSuitIsAlreadyReward",
-        "Text": "20010014涂装套装奖励已领取"
+        "Text": "衣橱涂装系列全收集奖励已领取"
     },
     {
         "Id": 20012001,
@@ -2011,6 +2011,11 @@
         "Id": 20012036,
         "Key": "ItemManagerBuyAssetMaxTotalTimes",
         "Text": "已达到最大总购买次数"
+    },
+    {
+        "Id": 20012037,
+        "Key": "ItemRestrictGainCountLimit",
+        "Text": "勤务证明获取数量已达上限，无法再获得任务奖励"
     },
     {
         "Id": 20014001,
@@ -15478,7 +15483,7 @@
     {
         "Id": 20148606,
         "Key": "AreaWar4AuctionOrderNumLimit",
-        "Text": "20148606特遣4拍卖行订单数限制"
+        "Text": "当前上架道具超过1000，请下架道具或等待道具出售成功后再试。"
     },
     {
         "Id": 20148607,
@@ -15524,6 +15529,21 @@
         "Id": 20148615,
         "Key": "AreaWar4AuctionPutOnParamError",
         "Text": "20148615特遣4拍卖行上传参数错误"
+    },
+    {
+        "Id": 20148616,
+        "Key": "AreaWar4AuctionBuyLevelLimit",
+        "Text": "20148616特遣4拍卖行购买等级限制"
+    },
+    {
+        "Id": 20148617,
+        "Key": "AreaWar4RedisSyncError",
+        "Text": "20148617特遣4拍卖行同步redis错误"
+    },
+    {
+        "Id": 20148618,
+        "Key": "AreaWar4RedisCircuitBreaker",
+        "Text": "\"20148618特遣4拍卖行繁忙,请5秒后重试\""
     },
     {
         "Id": 20149001,
@@ -27152,28 +27172,23 @@
     },
     {
         "Id": 20314002,
-        "Key": "DrawCanLiverScheduleRewardActivityIdNotExist",
-        "Text": "20314002阶段奖励配置的活动不存在"
+        "Key": "DrawCanLiverTemplateNotExist",
+        "Text": "20314002可肝卡池配置不存在"
     },
     {
         "Id": 20314003,
-        "Key": "DrawCanLiverScheduleRewardDrawIdNotExist",
-        "Text": "20314003阶段奖励配置不存在"
-    },
-    {
-        "Id": 20314004,
         "Key": "DrawCanLiverScheduleRewardNotEnough",
         "Text": "20314004阶段奖励进度不足"
     },
     {
-        "Id": 20314005,
+        "Id": 20314004,
         "Key": "DrawCanLiverScheduleRewardAlreadyGet",
         "Text": "20314005阶段奖励已领取"
     },
     {
-        "Id": 20314006,
-        "Key": "DrawCanLiverScheduleRewardNotExist",
-        "Text": "20314006领取的阶段奖励不存在"
+        "Id": 20314005,
+        "Key": "DrawCanLiverCoinNotOpen",
+        "Text": "20314005代币可肝活动未开启"
     },
     {
         "Id": 20320001,
@@ -27544,6 +27559,31 @@
         "Id": 20321003,
         "Key": "FixRewardRewardTypeNotMatch",
         "Text": "20321003奖励类型不一致"
+    },
+    {
+        "Id": 20420001,
+        "Key": "RadioSignActivityNotOpen",
+        "Text": "20420001活动未开启"
+    },
+    {
+        "Id": 20420002,
+        "Key": "RadioSignContentNotOpen",
+        "Text": "20420002内容未开启"
+    },
+    {
+        "Id": 20420003,
+        "Key": "RadioSignContentNotFound",
+        "Text": "20420003内容不存在"
+    },
+    {
+        "Id": 20420004,
+        "Key": "RadioSignRepeatGain",
+        "Text": "20420004重复领取奖励"
+    },
+    {
+        "Id": 20420005,
+        "Key": "RadioSignNotGainPreContentReward",
+        "Text": "20420005未领取前置内容奖励"
     },
     {
         "Id": 25000001,

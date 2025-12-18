@@ -192,7 +192,7 @@ XMovieManagerCreator = function()
         local isSuccess = false
         local index = 1
         local allActionCnt = #WaitToPlayList
-        while index < allActionCnt do
+        while index <= allActionCnt do
             ---@type XMovieActionBase
             local action = WaitToPlayList[index]
             local actionId = action:GetActionId()

@@ -50,12 +50,18 @@ function XUiGuildSignBase:RefreshSignInfo()
     local signInfo = XDataCenter.GuildManager.GetSignInfo()
     local signCfg = XGuildConfig.GetGuildSignById(signInfo.Id)
     local contentDic = {}
+    local combineStr = ""
+    if XOverseaManager.IsENRegion() or XOverseaManager.IsKRRegion() then
+        combineStr = ", "
+    else
+        combineStr = "、"
+    end
     for i, id in ipairs(signInfo.SignEventIds) do
         local eventCfg = XGuildConfig.GetGuildSignEventById(id)
         if not contentDic[eventCfg.Pos] then
             contentDic[eventCfg.Pos] = eventCfg.SignContent
         else
-            contentDic[eventCfg.Pos] = contentDic[eventCfg.Pos] .."、".. eventCfg.SignContent
+            contentDic[eventCfg.Pos] = contentDic[eventCfg.Pos] ..combineStr.. eventCfg.SignContent
         end
     end
     self.TxtYiContent.text = contentDic[TxtPos.Yi] or ""

@@ -36,6 +36,10 @@ function XUiAreaWarCollection:OnDisable()
     self._Control:GetItemRoom():ClearAllItemNewGet(self.CacheItemIdDic)
 end
 
+function XUiAreaWarCollection:OnDestroy()
+    self:RemoveObtainTimer()
+end
+
 function XUiAreaWarCollection:OnGetLuaEvents()
     return {
         XEventId.EVENT_AREA_WAR_ITEM_ROOM_ITEM_CHANGE
@@ -93,15 +97,47 @@ end
 function XUiAreaWarCollection:OnBtnLevelUpClick()
     if self.IsFullLv then return end
 
+    local lv = self._Control:GetItemRoom():GetLv()
+    local nextLv = lv + 1
+    local needCleanBlockId = self._Control:GetConfig():GetItemRoomLevelNeedCleanBlock(nextLv)
+    local isUnlock = true
+    if XTool.IsNumberValidEx(needCleanBlockId) then
+        isUnlock = XDataCenter.AreaWarManager.IsBlockClear(needCleanBlockId)
+    end
+    if not isUnlock then
+        local tips = XAreaWarConfigs.GetCollectionLockTips()
+        local blockName = XAreaWarConfigs.GetBlockNameEn(needCleanBlockId)
+        XUiManager.TipError(string.format(tips, blockName))
+        return
+    end
+
     if not self.IsLvUpItemEnough then
         local tips = XAreaWarConfigs.GetItemRoomLvUpNoEnoughTips()
         XUiManager.TipError(tips)
         return
     end
 
-    XMVCA.XAreaWar:RequestAreaWar4ItemRoomLevelUp(function()
+    XMVCA.XAreaWar:RequestAreaWar4ItemRoomLevelUp(function(rewards)
+        self:PlayAnimation("Unlock")
         self:Refresh()
+        self:StartObtainTimer(rewards)
     end)
+end
+
+-- 延迟弹出奖励弹窗，先播动效
+function XUiAreaWarCollection:StartObtainTimer(rewards)
+    self:RemoveObtainTimer()
+    self.ObtainTimer = XScheduleManager.ScheduleOnce(function()
+        self.ObtainTimer = nil
+        XUiManager.OpenUiObtain(rewards)
+    end, 1000)
+end
+
+function XUiAreaWarCollection:RemoveObtainTimer()
+    if self.ObtainTimer then
+        XScheduleManager.UnSchedule(self.ObtainTimer)
+        self.ObtainTimer = nil
+    end
 end
 
 function XUiAreaWarCollection:Refresh()
@@ -184,7 +220,7 @@ function XUiAreaWarCollection:RefreshCollection()
         attrUiObj:GetObject("TxtNumNow").text = isLast and attrValues[i] or "+" .. attrValues[i] .. "%"
         
         -- 下一等级属性
-        local imgArrow = attrUiObj:GetObject("TxtNumNow")
+        local imgArrow = attrUiObj:GetObject("ImgArrow")
         local txtNumNext = attrUiObj:GetObject("TxtNumNext")
         imgArrow.gameObject:SetActiveEx(isNextLvExit)
         txtNumNext.gameObject:SetActiveEx(isNextLvExit)
@@ -209,18 +245,31 @@ end
 
 -- 刷新升级面板
 function XUiAreaWarCollection:RefreshPaneLevelUp()
+    self.BtnLevelUp.gameObject:SetActiveEx(false)
+    self.BtnLevelFull.gameObject:SetActiveEx(false)
     for _, grid in ipairs(self.GridCostItems) do
         grid:Close()
     end
     
     local lv = self._Control:GetItemRoom():GetLv()
     local nextLv = lv + 1
-    local isNextLvExit = self._Control:GetConfig():IsItemRoomLevelExit(nextLv)
-    self.PaneLevelUp.gameObject:SetActiveEx(isNextLvExit)
-    self.IsFullLv = not isNextLvExit
-    self.BtnLevelUp:SetDisable(self.IsFullLv) -- 满级时显示disable状态
+    self.IsFullLv = not self._Control:GetConfig():IsItemRoomLevelExit(nextLv)
+    if self.IsFullLv then 
+        self.BtnLevelFull.gameObject:SetActiveEx(true)
+        self.BtnLevelFull:SetDisable(true)
+        self.PaneLevelUp.gameObject:SetActiveEx(false)
+        return 
+    end
+
+    self.PaneLevelUp.gameObject:SetActiveEx(true)
+    self.BtnLevelUp.gameObject:SetActiveEx(true)
+    local needCleanBlockId = self._Control:GetConfig():GetItemRoomLevelNeedCleanBlock(nextLv)
+    local isUnlock = true
+    if XTool.IsNumberValidEx(needCleanBlockId) then
+        isUnlock = XDataCenter.AreaWarManager.IsBlockClear(needCleanBlockId)
+    end
+    self.BtnLevelUp:SetDisable(not isUnlock)
     self.BtnLevelUp:ShowReddot(false)
-    if self.IsFullLv then return end
     
     self.IsLvUpItemEnough = true
     local lvUpItems = self._Control:GetConfig():GetItemRoomLevelLvUpItems(lv)
@@ -242,7 +291,7 @@ function XUiAreaWarCollection:RefreshPaneLevelUp()
         end
     end
     
-    self.BtnLevelUp:ShowReddot(self.IsLvUpItemEnough)
+    self.BtnLevelUp:ShowReddot(self.IsLvUpItemEnough and isUnlock)
 end
 --endregion
 

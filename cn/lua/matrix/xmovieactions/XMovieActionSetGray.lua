@@ -77,7 +77,7 @@ end
 -- 设置背景的灰度值
 function XMovieActionSetGray:SetBgGray(index, value, time)
     if index == ALL_BG_INDEX then
-        self:SetAllBgGray(value)
+        self:SetAllBgGray(value, time)
     else
         local bgIndex = index % 1000
         local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
@@ -87,13 +87,9 @@ end
 
 -- 设置所有背景的灰度值
 function XMovieActionSetGray:SetAllBgGray(value, time)
-    local index = 1
-    while(true) do
-        local bg = self.UiRoot.UiMovieBg:GetBg(index)
-        if not bg then break end
-        
+    local bgDic = self.UiRoot.UiMovieBg:GetBgDic()
+    for _, bg in pairs(bgDic) do
         bg:SetGrayScale(value, time)
-        index = index + 1
     end
 end
 

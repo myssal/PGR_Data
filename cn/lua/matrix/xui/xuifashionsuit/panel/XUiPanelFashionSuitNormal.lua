@@ -8,6 +8,14 @@ function XUiPanelFashionSuitNormal:OnStart()
     self._RewardGrids = {}
     self._Dots = {}
     self._SelectIndex = 0
+
+    if not self.FullScreenBackground then
+        self.FullScreenBackground = self.Transform:FindTransform("FullScreenBackground")
+    end
+    if not XTool.UObjIsNil(self.FullScreenBackground) then
+        self.FullScreenBackground:SetParent(self.Parent.FullScreenBackground)
+        self.FullScreenBackground.name = "Clone"
+    end
 end
 
 function XUiPanelFashionSuitNormal:SetSuitId(id)
@@ -35,7 +43,6 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
     end
 
     self:ShowDynamicTable()
-    self:UpdateView()
 end
 
 function XUiPanelFashionSuitNormal:ShowDynamicTable()
@@ -51,7 +58,7 @@ function XUiPanelFashionSuitNormal:ShowDynamicTable()
         fashionGrid:UpdateSelect(true)
         fashionGrid:AddClickEvt()
     elseif count >= 2 then
-        self:SetAutoTweenToIndex()
+        --self:SetAutoTweenToIndex()
         local list = count == 2 and self.PanelFashionListSmall or self.PanelFashionListBig
         self.PanelFashionListSmall.gameObject:SetActiveEx(count == 2)
         self.PanelFashionListBig.gameObject:SetActiveEx(count > 2)
@@ -64,7 +71,7 @@ function XUiPanelFashionSuitNormal:ShowDynamicTable()
         self.GridFashion.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(true)
         for i = 1, count do
-            local dot = i == 1 and self.ImgDotNormal or XUiHelper.Instantiate(self.ImgDotNormal, self.ImgDotNormal.parent)
+            local dot = i == 1 and self.Dot or XUiHelper.Instantiate(self.Dot, self.Dot.parent)
             local uiObj = {}
             XUiHelper.InitUiClass(uiObj, dot)
             self._Dots[i] = uiObj
@@ -123,9 +130,9 @@ function XUiPanelFashionSuitNormal:OnDynamicTableEvent(event, index, grid)
         self:UpdateFashionSelect(selectIndex)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self.DynamicTable.Imp:TweenToIndex(index)
-        grid:OpenDetail()
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
-
+        if self.DynamicTable.Imp.StartIndex == index then
+            grid:OpenDetail()
+        end
     end
 end
 
@@ -137,6 +144,7 @@ function XUiPanelFashionSuitNormal:UpdateFashionSelect(startIndex)
         grid:UpdateSelect(i == index)
     end
     for i, grid in ipairs(self._Dots) do
+        grid.ImgDotNormal.gameObject:SetActiveEx(i ~= startIndex)
         grid.ImgDotSelect.gameObject:SetActiveEx(i == startIndex)
     end
 end

@@ -9765,7 +9765,7 @@
         "Exp": 0,
         "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory142.png",
         "Name": "坚守车室",
-        "Desc": "穿过星门的敌人难以全部阻挡，思考以后你觉集合骑士的力量守住现在的立足之地，要是这里挤满敌人的话那恐怕骑士们再有本领都会无处施展。",
+        "Desc": "穿过星门的敌人难以全部阻挡，思考以后你决定集合骑士的力量守住现在的立足之地，要是这里挤满敌人的话那恐怕骑士们再有本领都会无处施展。",
         "ConfirmContent": "规划阵线",
         "LocationName": "坚守车室",
         "LocationDesc": "天使，天使，天使，目之所及均是敌人，该怎么做？",
@@ -10080,6 +10080,1256 @@
         ],
         "RoleContents": [
             "能听见……我……一定——"
+        ]
+    },
+    {
+        "Id": 7010101,
+        "Type": 1,
+        "NextEvent": 7010102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory752.jpg",
+        "Name": "第一纪元的烛光",
+        "Desc": "你从地上捡起一个已经完全和烛油凝固为一体的灯台，金属制的烛托上遍布着重复灼烧后又添加进蜡油的痕迹，显然，这件物品并不是来源于“永恒白昼”降临后的烬土边疆。",
+        "ConfirmContent": "检查灯台",
+        "LocationName": "第一纪元的烛光",
+        "LocationDesc": "烛油在地上苟延残喘成一道风干的泪痕。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory752.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7010102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7101,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory752.jpg",
+        "Name": "第一纪元的烛光",
+        "Desc": "翻转灯台，你试图在这个残破的物件上找到更多。终于，在许久之后，你在底座上发现了一道潦草的铭文：第一纪元，于白夜月制。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "第一纪元的烛光",
+        "LocationDesc": "烛油在地上苟延残喘成一道风干的泪痕。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory752.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal03.png"
+        ],
+        "RoleNames": [
+            "？？？"
+        ],
+        "RoleContents": [
+            "第一纪元，那真是一个遥远的过去。和现在相比，灰鸦，你认为哪一段“历史”更好？"
+        ]
+    },
+    {
+        "Id": 7010201,
+        "Type": 1,
+        "NextEvent": 7010202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory42.jpg",
+        "Name": "始终相伴的视线",
+        "Desc": "你走过了一段漫长的历史，在那段时光里面，你亲眼目睹着风沙摧毁巨岩，流水冲开沟壑，参天的古木枯萎而地上又重新长出嫩芽。但无论时光如何更迭，这片大陆上的苦难却总是一成不变，血税和判决如处刑台的铡刀一样永远高悬在他们的脖颈上，纵使无数次投身于转世轮回，都无法在这场漫长的苦厄中解脱。",
+        "ConfirmContent": "看向远方",
+        "LocationName": "始终相伴的视线",
+        "LocationDesc": "站在历史的中间，你突然发现，这其实是她一路走来的记忆。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory42.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7010202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7102,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory42.jpg",
+        "Name": "始终相伴的视线",
+        "Desc": "而在这段历史中，始终有一道视线冥冥中陪伴于你身侧，陪伴你一同见证这场没有尽头的苦旅——你能明白，她之所以这么做，是希望你明白她曾见证过的一切。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "始终相伴的视线",
+        "LocationDesc": "站在历史的中间，你突然发现，这其实是她一路走来的记忆。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory42.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal03.png"
+        ],
+        "RoleNames": [
+            "？？？"
+        ],
+        "RoleContents": [
+            "继续往前走吧，这里不会是我们的终点。"
+        ]
+    },
+    {
+        "Id": 7010301,
+        "Type": 1,
+        "NextEvent": 7010302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory536.jpg",
+        "Name": "方寸之间",
+        "Desc": "在这个世界探索的过程中，你逐渐开始感到疲惫，开始试图不按照蜡烛的指引，偏离它所“规划”的路径走去。但是每当你试图开始走出烛光照亮的范围，头脑中便会开始逐渐失去方向感，而当你回过神来的时候，往往已经又在一片漆黑之中走回了原点。",
+        "ConfirmContent": "找回方向",
+        "LocationName": "方寸之间",
+        "LocationDesc": "你看似可以去往任何地方，但实际上无处可去。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory536.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7010302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7103,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory536.jpg",
+        "Name": "方寸之间",
+        "Desc": "几次之后，你逐渐明白了，在这个世界中你不可能和它的“造物主”抗衡，起码是现在暂时，你必须按照她的意愿行动。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "方寸之间",
+        "LocationDesc": "你看似可以去往任何地方，但实际上无处可去。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory536.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal03.png"
+        ],
+        "RoleNames": [
+            "？？？"
+        ],
+        "RoleContents": [
+            "别急，从今往后我们还有很多时间……当下，有些事我必须马上先告诉你。"
+        ]
+    },
+    {
+        "Id": 7010401,
+        "Type": 1,
+        "NextEvent": 7010402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory524.jpg",
+        "Name": "陈旧的书页",
+        "Desc": "你路过一间破败的诊所，见窗内燃亮着微黄的灯火，便决定进去暂且歇息。\\n\\n推门而入，房内无数灰尘簌簌而下，你捂着口鼻，在地上找到一张泛黄的医学书籍撕页：",
+        "ConfirmContent": "阅读书籍",
+        "LocationName": "陈旧的书页",
+        "LocationDesc": "“你如何确信自身不是愚昧？确信于你的知识，信仰，还是意志？”",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory524.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7010402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7104,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory524.jpg",
+        "Name": "陈旧的书页",
+        "Desc": "“无梦症，指在沉睡中无法做梦，长期处于深度睡眠状态的患者。长期以来，学界一直对此类患者持有偏见，认为他们是恶魔转世而来，然而经过长期医学发展，我们逐渐发现，这二者之间不一定有确切的关联，无梦症可能也会经由各种外部因素诱发……”",
+        "ConfirmContent": "继续前进",
+        "LocationName": "陈旧的书页",
+        "LocationDesc": "“你如何确信自身不是愚昧？确信于你的知识，信仰，还是意志？”",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory524.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal03.png"
+        ],
+        "RoleNames": [
+            "？？？"
+        ],
+        "RoleContents": [
+            "…………"
+        ]
+    },
+    {
+        "Id": 7010501,
+        "Type": 1,
+        "NextEvent": 7010502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+        "Name": "水仙平原的传说",
+        "Desc": "在烛光照亮的路径上，地上零零碎碎地盛开着一些水仙，你摘起一朵，还没来得及定睛凝望，纤细透明的水仙花便像初春的雪花遇到日光一样，在掌心尽数融化了。",
+        "ConfirmContent": "凝视掌心",
+        "LocationName": "水仙平原的传说",
+        "LocationDesc": "它们不为任何人而盛开。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7010502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7105,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+        "Name": "水仙平原的传说",
+        "Desc": "目睹着这副虚幻的情景，你不禁联想到烬土边疆上一个古老的传说——所有善良的灵魂，都会在往生之后，于水仙原野上和自己的挚爱和亲朋重新相逢，那是一片没有忧愁，四季如春的至福净土。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "水仙平原的传说",
+        "LocationDesc": "它们不为任何人而盛开。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1118.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal03.png"
+        ],
+        "RoleNames": [
+            "？？？"
+        ],
+        "RoleContents": [
+            "不必为它们而驻足停留，这些花朵自会盛放和枯萎。"
+        ]
+    },
+    {
+        "Id": 7020101,
+        "Type": 1,
+        "NextEvent": 7020102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg",
+        "Name": "精致的花环",
+        "Desc": "在这个幻境世界里面一路走来，你看到了许多留在涅缇娅心底里的回忆之物。\\n\\n其中有一圈已经枯萎了的水仙花环，仍被她珍重地收藏在一个木匣子里。从涅缇娅的回忆看来，这似乎是她的学生亲手制作，赠予她的礼物。",
+        "ConfirmContent": "陷入沉思",
+        "LocationName": "精致的花环",
+        "LocationDesc": "草冠上的水仙已然枯萎，但仍能看出制作者的细致用心。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7020102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7201,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg",
+        "Name": "精致的花环",
+        "Desc": "从中看来，她在过去曾因为自己不求回报，善意付出的举动赢得过他人的信任，涅缇娅并不是一个彻底的邪恶之人。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "精致的花环",
+        "LocationDesc": "草冠上的水仙已然枯萎，但仍能看出制作者的细致用心。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory609.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "此处不值得我们留恋……走吧。"
+        ]
+    },
+    {
+        "Id": 7020201,
+        "Type": 1,
+        "NextEvent": 7020202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory737.jpg",
+        "Name": "破损的捕梦网",
+        "Desc": "你还在路上发现了一些破损的捕梦网，世界的创造者似乎对这种物件抱有极大的负面感情，它们大多都被撕扯溃烂，七零八落地零碎散在各个角落里面，就像是要以此表露出自己的怨恨。",
+        "ConfirmContent": "检查碎网",
+        "LocationName": "破损的捕梦网",
+        "LocationDesc": "捕梦网的铜铃深埋在泥土中，已不能再迎风而鸣。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory737.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7020202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7202,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory737.jpg",
+        "Name": "破损的捕梦网",
+        "Desc": "联想起涅缇娅的经历，不难揣测，她确实对这件物件抱有极大的恶意。那一天，若果不是捕魔队举着捕梦网进入村庄，也许她确实能一直在那里过着平静的生活。但当她的身份被捕梦网识破的时候，涅缇娅的下意识反应也是企图动用武力去杀死捕魔队的成员，以此保护自己的学生。从此看来，无论她以往所作所为如何，光从这一点说，她确实是一个货真价实的“恶魔”。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "破损的捕梦网",
+        "LocationDesc": "捕梦网的铜铃深埋在泥土中，已不能再迎风而鸣。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory737.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "没错，我确实讨厌捕梦网，因为它夺走了我曾经拥有的一切。"
+        ]
+    },
+    {
+        "Id": 7020301,
+        "Type": 1,
+        "NextEvent": 7020302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg",
+        "Name": "行走在凡间的众生",
+        "Desc": "在回忆中，你看到了涅缇娅在凡间生活的点点滴滴。在人类村庄生活的那段日子里，她见到了凡人的善意和坚强，也有了自己的信念和理想，但这一切在后来都被恶魔狂信者和天使们摧毁了。",
+        "ConfirmContent": "越过旧屋",
+        "LocationName": "行走在凡间的众生",
+        "LocationDesc": "那些路过她生命的人，也在她的灵魂中刻下了印记。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7020302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7203,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg",
+        "Name": "行走在凡间的众生",
+        "Desc": "她的灵魂也因为和芸芸众生的相遇而有所改变，从单纯的为了模仿你而行动，变成后来的为了守护某人而甘愿牺牲自己，在不知不觉中，她其实已经变成了一个某种意义上的“好人”，只是她自身没有察觉到这点改变。如今的她将所有恨意都指向了塑造出这一切不公规则的至高天。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "行走在凡间的众生",
+        "LocationDesc": "那些路过她生命的人，也在她的灵魂中刻下了印记。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3801_05.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "我不会原谅那些夺去我一切的人……他们只是打着正义的旗号，在释放另一种邪恶。"
+        ]
+    },
+    {
+        "Id": 7020401,
+        "Type": 1,
+        "NextEvent": 7020402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory736.jpg",
+        "Name": "一则旧闻",
+        "Desc": "在前进的路上发现了一则陈旧的报道，泛黄的纸张上写着一则让你读后恍如隔世的短讯：在三十年前，那场改变了烬土边疆一切的灾变发生后，“灰鸦”神秘失踪，而在“灰鸦”消失前，曾有人目睹其和一位恶魔女子共同行动。因此也有一部分人揣测，欧石兰和“灰鸦”的行动理念存在巨大分歧。据闻，欧石兰主张和圣堂正面开战，而被恶魔女子蛊惑的“灰鸦”却不赞同此理念，因此欧石兰为了主张自己的话语权才夺取了圣环巨炮，诱发了这场让三界为之动荡的战争。",
+        "ConfirmContent": "翻阅报纸",
+        "LocationName": "一则旧闻",
+        "LocationDesc": "落叶捎来过往的消息。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory736.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7020402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7204,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory736.jpg",
+        "Name": "一则旧闻",
+        "Desc": "你对报纸上的信息持有怀疑，但是这些都已经过去太久了，这篇陈旧的报道就如逝去的三十年光阴一样，无人知晓背后到底真正发生过什么。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "一则旧闻",
+        "LocationDesc": "落叶捎来过往的消息。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory736.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "何必在意这些报道？将一切恶果都推卸到一个不能抗辩的消失之人身上，不就是他们的拿手好戏吗？"
+        ]
+    },
+    {
+        "Id": 7020501,
+        "Type": 1,
+        "NextEvent": 7020502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "Name": "善恶天秤",
+        "Desc": "审判庭是由四大天使长之一的米迦勒所执掌的机构，在这里，每个人一生的回忆都会映照在水镜中，米迦勒会亲自从水镜中打捞起其中最重要的记忆，将善与恶之事分别置于天秤两侧，若代表恶行的砝码重量更沉，这个人的灵魂便会被裁决为恶魔，剥夺轮回重生的资格，永生永世只能在地狱中生活。但天使的审判标准却无比诡谲，有时候，即便是屠戮孩童，只要被认为此行为是为了遵从圣堂的命令，也会被判定是“善良”的行为。",
+        "ConfirmContent": "查阅记录",
+        "LocationName": "善恶天秤",
+        "LocationDesc": "每个人一生的故事，都会被放到天秤上接受检阅。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7020502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7205,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "Name": "善恶天秤",
+        "Desc": "多年前，涅缇娅正是在此被判决为恶魔，也曾要到此接受第二次裁决，但在天灾发生之后，由于生死律法崩坏，审判庭便再也没有承担起这个职能。",
+        "ConfirmContent": "继续前进",
+        "LocationName": "善恶天秤",
+        "LocationDesc": "每个人一生的故事，都会被放到天秤上接受检阅。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "哈哈，他们不会真的以为，光凭一面水镜就能审判我的一生吧……米迦勒那些蠢货，根本就没有真正明白过这片大陆上在发生什么。"
+        ]
+    },
+    {
+        "Id": 7030101,
+        "Type": 1,
+        "NextEvent": 7030102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "Name": "血契的真相",
+        "Desc": "涅缇娅将死亡大君赐予她的权能，以“血契”的形式转移给了灰鸦，万事也因此得以成为“瘟疫骑士”，在无意中依照着她的意愿行动，在提灯中吸纳了大量无法进入生死轮回的亡者灵魂。",
+        "ConfirmContent": "凝视提灯",
+        "LocationName": "血契的真相",
+        "LocationDesc": "在此宣告——旧世界的终焉。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7301,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "Name": "血契的真相",
+        "Desc": "而在死亡大君凭借这些死魂的力量复活后，涅缇娅再次夺取了这座提灯，在同时得到了枢机主神和死亡大君的权柄后，她成为了新世界的神。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "血契的真相",
+        "LocationDesc": "在此宣告——旧世界的终焉。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "不，我的目的不止于此，如果不把这一切背后真正的推手拉到台前，一切还是毫无意义。"
+        ]
+    },
+    {
+        "Id": 7030201,
+        "Type": 1,
+        "NextEvent": 7030202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1017.jpg",
+        "Name": "命运的戏弄",
+        "Desc": "从她至今为止的言行看来，涅缇娅曾试图通过模仿你的行为，来成为一个“好人”。但在见证了你的理想之火最终也熄灭在尸山血海堆成的污潭中后，她曾经一度因你而重塑的信念产生了极大的改变，并开始认为自己必须转而寻求更强大的力量，来回避这一切再次发生。",
+        "ConfirmContent": "望向上空",
+        "LocationName": "命运的戏弄",
+        "LocationDesc": "一位正直者之死。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1017.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7302,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1017.jpg",
+        "Name": "命运的戏弄",
+        "Desc": "而成为新世界的神，是塑造她理想中的，“绝对公平的世界”必须的第一步，她为此对你许下了许多个谎言——但其中，应当也包含着希望你能协助她共同肃正这个颠倒的世界的真心。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "命运的戏弄",
+        "LocationDesc": "一位正直者之死。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1017.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "我不会对你至今以来信奉的一切加以否定，正是这些经历铸造了如今的你。只是，你现在可以选择另一条道路。"
+        ]
+    },
+    {
+        "Id": 7030301,
+        "Type": 1,
+        "NextEvent": 7030302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory139.png",
+        "Name": "崩毁的世界",
+        "Desc": "在漫长的时间里，涅缇娅曾以许多身份活过，但无论她采取什么行动，一切的结局都是最终走向崩坏——当她身为人类的时候，同为人类的捕魔队认为她是恶魔，将她唯一的家人杀死；当她身为恶魔的时候，同类却对她加以鄙夷，她只能通过收割人类的灵魂证明自身的价值；而当她想要跟随心灵的指引，活成她理想中的“善人”之时，圣堂却把曾对她示好的村民们都屠杀殆尽。",
+        "ConfirmContent": "越过荒坟",
+        "LocationName": "崩毁的世界",
+        "LocationDesc": "这个世界在最初的时候，早已陷入疯狂。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory139.png",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7303,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory139.png",
+        "Name": "崩毁的世界",
+        "Desc": "涅缇娅在遍历了一切之后，最终将仇恨的终点指向了促成这一切矛盾的至高天，她不愿看到这一切悲剧反复重演，为此，她必须创造一个“绝对公平”的新世界。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "崩毁的世界",
+        "LocationDesc": "这个世界在最初的时候，早已陷入疯狂。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory139.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "灰鸦……我坚信，你是这个世界上唯一一个能与我真正感同身受之人，你不会让我失望的吧？"
+        ]
+    },
+    {
+        "Id": 7030401,
+        "Type": 1,
+        "NextEvent": 7030402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "Name": "神秘的客栈",
+        "Desc": "在复活你之后，涅缇娅在人间开设了一所地址隐蔽，供有意反抗圣堂之人暗中联络的根据地——诡魇客栈，这座客栈后来也成为了你和四骑士落脚的地方。",
+        "ConfirmContent": "离开座位",
+        "LocationName": "神秘的客栈",
+        "LocationDesc": "在你初次苏醒的时候，不知道为何就对这间客栈感到亲切。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7304,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "Name": "神秘的客栈",
+        "Desc": "涅缇娅以客栈老板的身份，在此处收集各种有利的情报，并暗中策划了四位骑士的“死亡”，使他们以恶魔身份复苏，接替过死亡大君分散出来的权柄。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "神秘的客栈",
+        "LocationDesc": "在你初次苏醒的时候，不知道为何就对这间客栈感到亲切。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory748.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "我不否认，为了达成这一切我使用了很多遭人鄙夷的手段。但正是因为你绝不会这么做，所以这一切只能由我来完成。"
+        ]
+    },
+    {
+        "Id": 7030501,
+        "Type": 1,
+        "NextEvent": 7030502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1285.jpg",
+        "Name": "告死渡鸦",
+        "Desc": "三十年前，涅缇娅以替死亡大君卖命为代价，恳求死亡大君复活已死的“灰鸦”。死亡大君同意了这个交易，将“告死渡鸦”之席赐予了她，让她以恶魔领主的身份在三界活动，为大君搜罗来凡人的灵魂，铺成通往祂复苏之路的阶梯。",
+        "ConfirmContent": "觉察细节",
+        "LocationName": "告死渡鸦",
+        "LocationDesc": "在初次与她见面的时候，她身边便落着鸦羽铺成的浊雨。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1285.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7305,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1285.jpg",
+        "Name": "告死渡鸦",
+        "Desc": "但涅缇娅显然并不甘愿单纯做一个任人摆布的棋子，她反过来利用了死亡大君的使命。在为死亡大君收割灵魂的同时，她更隐蔽地为自己布下了天罗地网般的伏线，而此时，正是所有暗线汇于一处，作为幕后的操纵之人登上前台之时。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "告死渡鸦",
+        "LocationDesc": "在初次与她见面的时候，她身边便落着鸦羽铺成的浊雨。",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1285.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "奈亚希茨，祂的想法有点意思，但是眼界实在太短窄了，即使是作为盟友，也没有被利用的价值。"
+        ]
+    },
+    {
+        "Id": 7030601,
+        "Type": 1,
+        "NextEvent": 7030602,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory394.jpg",
+        "Name": "“千里眼”摩利甘",
+        "Desc": "在过去，摩利甘在地狱里被称为“千里眼”，是和如今的“告死渡鸦”涅缇娅身份平起平坐的恶魔领主。它曾教导给不久之前还是个人类小姑娘的涅缇娅在地狱活下去所需的知识和手段，但后来为了协助涅缇娅复活“灰鸦”触怒了死亡大君，恶魔领主之席和曾经的记忆都被尽数剥夺。",
+        "ConfirmContent": "目送魔宠",
+        "LocationName": "“千里眼”摩利甘",
+        "LocationDesc": "“在地狱，千万别招惹千里眼，因为它的记恨足以延续成千上万年。”",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory394.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7030602,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 7306,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory394.jpg",
+        "Name": "“千里眼”摩利甘",
+        "Desc": "如今跟随在自己身边的摩利甘化为了魔宠，全无身为恶魔领主之时的记忆，也不复当时的聪明睿智，虽然它是遵从着涅缇娅的命令为了监视自己而来，但也曾数次运用恶魔的知识协助自己逃出生天，它对自己和四骑士的态度应该别有深意。",
+        "ConfirmContent": "终局将至",
+        "LocationName": "“千里眼”摩利甘",
+        "LocationDesc": "“在地狱，千万别招惹千里眼，因为它的记恨足以延续成千上万年。”",
+        "LocationDescUnselect": "此处沉睡着你尚未揭晓的秘辛……",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory394.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "如今的摩利甘虽然什么都不记得了，有时候还会表现得有点傻乎乎的……但它仍然是我最忠诚的盟友之一。"
+        ]
+    },
+    {
+        "Id": 7040101,
+        "Type": 1,
+        "NextEvent": 7040102,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory325.png",
+        "Name": "边远的乡村",
+        "Desc": "来自偏远乡村的农民们听闻涅缇娅和灰鸦的名号之后，纷纷拿起武器，自愿化为恶魔，加入这队剑指圣堂的浩荡大军之中。",
+        "ConfirmContent": "收编民兵",
+        "LocationName": "边远的乡村",
+        "LocationDesc": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "LocationDescUnselect": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory325.png",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040102,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory325.png",
+        "Name": "边远的乡村",
+        "Desc": "这些乡民生来就饱受圣堂税务官的血税压迫，即便是夜日继日勤奋工作，也无法满足这些天使的贪欲。为了保住自己的生命，也为了替自己无辜死去的家人出口恶气，他们决意变为恶魔，亲手让这些贪得无厌的天使们血债血偿。",
+        "ConfirmContent": "一共前进",
+        "LocationName": "边远的乡村",
+        "LocationDesc": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "LocationDescUnselect": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory325.png",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/TongyongShihuangzheNormal02.png"
+        ],
+        "RoleNames": [
+            "农民"
+        ],
+        "RoleContents": [
+            "哪怕我们不服从命运，迎接我们的也是米迦勒的审判，与其如此，那还不如就干脆做个恶魔！"
+        ]
+    },
+    {
+        "Id": 7040201,
+        "Type": 1,
+        "NextEvent": 7040202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory710.jpg",
+        "Name": "繁华的城镇",
+        "Desc": "城镇的居民们原本大多受圣堂庇护，以为天使卖命作为代价，换取衣食无忧的生活。而如今恶魔大军进攻整座大陆，天使们都自顾不暇慌忙逃窜，城镇中的居民也成为了他们的弃子。",
+        "ConfirmContent": "占领城镇",
+        "LocationName": "繁华的城镇",
+        "LocationDesc": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "LocationDescUnselect": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory710.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory710.jpg",
+        "Name": "繁华的城镇",
+        "Desc": "而那些被抛下的人却誓死不愿沦为恶魔，因为在他们心中，背弃信仰是比死亡更为可怕的事情，他们坚信圣堂的败退只是暂时的，神圣的秩序终会回归这片大地。",
+        "ConfirmContent": "转身前进",
+        "LocationName": "繁华的城镇",
+        "LocationDesc": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "LocationDescUnselect": "永夜君主涅缇娅指挥着恶魔大军，进攻向烬土边疆的每一个角落。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory710.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V2110npcNormal01.png"
+        ],
+        "RoleNames": [
+            "镇民"
+        ],
+        "RoleContents": [
+            "米迦勒大人一定会惩罚你们这些不知天高地厚的罪人，现在马上改悔，还来得及！"
+        ]
+    },
+    {
+        "Id": 7040301,
+        "Type": 1,
+        "NextEvent": 7040302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory608.jpg",
+        "Name": "指挥大军迎击",
+        "Desc": "你身为指挥官，命令永夜君主的军队前进蹂躏那些试图负隅顽抗的天使，恶魔大军的铁蹄如側刀，把所到之处的都化为了流着血与肉的蜜巢。",
+        "ConfirmContent": "排兵布阵",
+        "LocationName": "指挥大军迎击",
+        "LocationDesc": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "LocationDescUnselect": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory608.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory608.jpg",
+        "Name": "指挥大军迎击",
+        "Desc": "“土地啊，我们的田啊！求求你们大发慈悲，不要再摧毁更多的作物了……”麦田边的庄稼汉看到自己的农地沦为一片血腥的战场，纷纷恳求你们停下这征战的脚步。但涅缇娅只是随手扔了一些玛门金币作为补偿，随后再次举起宣战的旌旗，示意大军继续前进。",
+        "ConfirmContent": "前进！",
+        "LocationName": "指挥大军迎击",
+        "LocationDesc": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "LocationDescUnselect": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory608.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "如果妇人之仁可以终结纷争，那他们早就靠自己把米迦勒给赶下来了，我从不对弱者施加怜悯。"
+        ]
+    },
+    {
+        "Id": 7040401,
+        "Type": 1,
+        "NextEvent": 7040402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory534.jpg",
+        "Name": "单枪匹马杀入敌阵",
+        "Desc": "涅缇娅认为圣堂那些苟延残喘的走狗根本不足为恶魔大军的对手，只与你二人一同踏上战场，抬手之间便摧毁了一队还试图负隅顽抗的天使。",
+        "ConfirmContent": "踏过残骸",
+        "LocationName": "单枪匹马杀入敌阵",
+        "LocationDesc": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "LocationDescUnselect": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory534.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/Bgstory534.jpg",
+        "Name": "单枪匹马杀入敌阵",
+        "Desc": "周遭的镇民们目睹着你们的英姿，纷纷感叹真正的救世主终于到来了，这一次，他们必定可以挣脱圣堂统治的桎梏。在烬土边疆的各地甚至举起了欢迎恶魔大军到来的旗帜，他们都盼望着你和涅缇娅能把他们从苦税里拯救出来。",
+        "ConfirmContent": "前进！",
+        "LocationName": "单枪匹马杀入敌阵",
+        "LocationDesc": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "LocationDescUnselect": "米迦勒也组织起了庞大的军队，试图集结圣堂所有剩余的力量发起反攻。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/Bgstory534.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "真无聊，都事到如今了，还做着哪怕什么都不做，救世主自会降临的大梦吗？只留下甘愿成为恶魔的人即可……至于剩下的软弱者，我没有兴趣。"
+        ]
+    },
+    {
+        "Id": 7040501,
+        "Type": 1,
+        "NextEvent": 7040502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "Name": "为了夺回一切",
+        "Desc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。\\n\\n你走到众魔面前，叙述自身曾被圣堂夺走的一切，我们都曾有着平凡而又美好的人生，但贪得无厌的圣堂摧毁了这一切，以压榨我们的血肉为养分，供养了那些不知饱足的行尸。",
+        "ConfirmContent": "沉痛演说",
+        "LocationName": "为了夺回一切",
+        "LocationDesc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "LocationDescUnselect": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "Name": "为了夺回一切",
+        "Desc": "而如今，夺回一切的日子终于来临了，这场战争必定会让那些曾经高高在上的天使们付出代价，他们休想在掠夺了所有之后还想全身而退。",
+        "ConfirmContent": "战火不休",
+        "LocationName": "为了夺回一切",
+        "LocationDesc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "LocationDescUnselect": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V290lrNormal01.png"
+        ],
+        "RoleNames": [
+            "众魔们"
+        ],
+        "RoleContents": [
+            "为了夺回一切，让他们血债血偿！！！"
+        ]
+    },
+    {
+        "Id": 7040601,
+        "Type": 1,
+        "NextEvent": 7040602,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "Name": "为了永恒和平",
+        "Desc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。\\n\\n你走到众魔面前，叙说自身其实并不渴望战争，而是圣堂促成了这一切的纷乱，这是一场神圣的战役，是为了将烬土边疆从无尽的折磨中解放出来，追求永恒和平的止战之战。",
+        "ConfirmContent": "激昂演说",
+        "LocationName": "为了永恒和平",
+        "LocationDesc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "LocationDescUnselect": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7040602,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "Name": "为了永恒和平",
+        "Desc": "台下的恶魔们纷纷高举起拳头，高呼为了愿意达成这个崇高的理想而付出一切，当真正的和平到来之日，他们会把天使的尸体在城楼上悬吊起来，作为对已逝亲人的祭念。",
+        "ConfirmContent": "战火不休",
+        "LocationName": "为了永恒和平",
+        "LocationDesc": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "LocationDescUnselect": "在全歼米迦勒的军队之后，身为恶魔大军指挥官的你站到了演讲台上。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1242.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V290lrNormal01.png"
+        ],
+        "RoleNames": [
+            "众魔们"
+        ],
+        "RoleContents": [
+            "为了永恒的和平，我们必须前进，前进！！！"
+        ]
+    },
+    {
+        "Id": 7050101,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "Name": "战争之王",
+        "Desc": "火枪在一声声剧烈的轰鸣中喷吐着灼热的火舌，将涅缇娅指挥的白肉们纷纷化为焦尸。\\n\\n而在这片使人头晕目眩的枪林弹雨中，渡边始终伴随在你身边，一路将你护送到圣座的台阶前，你抬头，看到通往主座的遥遥长阶高悬在头顶之上，似是在嗤笑着凡人的不自量力。",
+        "ConfirmContent": "集中攻击",
+        "LocationName": "战争之王",
+        "LocationDesc": "开战的钟声鸣响，渡边召唤出无数火枪，子弹如暴雨倾泻于整座残庭上。",
+        "LocationDescUnselect": "开战的钟声鸣响，渡边召唤出无数火枪，子弹如暴雨倾泻于整座残庭上。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory771.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3600DubianNormal05.png"
+        ],
+        "RoleNames": [
+            "渡边"
+        ],
+        "RoleContents": [
+            "往前走，去完成你该做的事，我为你守住身后！"
+        ]
+    },
+    {
+        "Id": 7050201,
+        "Type": 1,
+        "NextEvent": 7050202,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1038.jpg",
+        "Name": "驭死铁骑",
+        "Desc": "“都给我——统统滚开！”\\n\\n薇拉咆哮着，挥舞着手上的双刃枪，伴随着熊熊炽焰燃烧，她以蛮力撕扯开那些活死人的血肉，然后一脚将他们踹进深渊。",
+        "ConfirmContent": "剑锋出鞘",
+        "LocationName": "驭死铁骑",
+        "LocationDesc": "在你登上长阶的同时，千万腐尸也对你伸出手掌，要把你拽下冥土的幽壑。",
+        "LocationDescUnselect": "在你登上长阶的同时，千万腐尸也对你伸出手掌，要把你拽下冥土的幽壑。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1038.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7050202,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1038.jpg",
+        "Name": "驭死铁骑",
+        "Desc": "你试图回头对她的施以援手表达谢意，却马上被一道更为强大的力量推出了白肉腐尸们的包围圈，逼迫你继续往前跑去。",
+        "ConfirmContent": "为我开路",
+        "LocationName": "驭死铁骑",
+        "LocationDesc": "在你登上长阶的同时，千万腐尸也对你伸出手掌，要把你拽下冥土的幽壑。",
+        "LocationDescUnselect": "在你登上长阶的同时，千万腐尸也对你伸出手掌，要把你拽下冥土的幽壑。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1038.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3400wlNormal013.png"
+        ],
+        "RoleNames": [
+            "薇拉"
+        ],
+        "RoleContents": [
+            "别回头，继续跑！我不是为了一句无关痛痒的感激才跟随你直到如今的！"
+        ]
+    },
+    {
+        "Id": 7050301,
+        "Type": 1,
+        "NextEvent": 7050302,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1201.jpg",
+        "Name": "送葬医师",
+        "Desc": "终于跑到距离主座还有几步之遥的距离，但胸中的痛楚却骤然加剧，是涅缇娅在通过“心脏”干扰你的行动。",
+        "ConfirmContent": "还有机会",
+        "LocationName": "送葬医师",
+        "LocationDesc": "你继续拾级而上，长阶顶端的主神圣座已经清晰可见。",
+        "LocationDescUnselect": "你继续拾级而上，长阶顶端的主神圣座已经清晰可见。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1201.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7050302,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1201.jpg",
+        "Name": "送葬医师",
+        "Desc": "你苦涩地大口呼吸着，试图用自己的意志去对抗这种肉体的负担，但下一秒，另一股温暖的热流注入了你的躯体，你抬头望去，是那位医者在释放着力量，为你抵挡那股侵扰。",
+        "ConfirmContent": "交付后背",
+        "LocationName": "送葬医师",
+        "LocationDesc": "你继续拾级而上，长阶顶端的主神圣座已经清晰可见。",
+        "LocationDescUnselect": "你继续拾级而上，长阶顶端的主神圣座已经清晰可见。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1201.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700WsNormal03.png"
+        ],
+        "RoleNames": [
+            "万事"
+        ],
+        "RoleContents": [
+            "别忘了，我们都在你身边，你可以更多地依赖我们。"
+        ]
+    },
+    {
+        "Id": 7050401,
+        "Type": 1,
+        "NextEvent": 7050402,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "Name": "饥渴之主",
+        "Desc": "即将踏上圣座时，涅缇娅扇动着黑翼从天而降，泼天的气流将你推至座下。\\n\\n但你并没有坠入深渊，而是掉落到了一面柔软，坚韧的丝绸伞布之上。",
+        "ConfirmContent": "不止好运",
+        "LocationName": "饥渴之主",
+        "LocationDesc": "即将踏上圣座时，涅缇娅扇动着黑翼从天而降，泼天的气流将你推至座下。",
+        "LocationDescUnselect": "即将踏上圣座时，涅缇娅扇动着黑翼从天而降，泼天的气流将你推至座下。",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7050402,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "Name": "饥渴之主",
+        "Desc": "你环顾四周，发现是莉莉丝提早在座下布下了结界，而她现在收起月伞，轻巧地将你拉了起来，与你一同将锋锐的伞尖直指向空中的涅缇娅。",
+        "ConfirmContent": "机不可失",
+        "LocationName": "饥渴之主",
+        "LocationDesc": "即将踏上圣座时，涅缇娅扇动着黑翼从天而降，泼天的气流将你推至座下。",
+        "LocationDescUnselect": "即将踏上圣座时，涅缇娅扇动着黑翼从天而降，泼天的气流将你推至座下。",
+        "Icon": "Assets/Product/Texture/Image/BgCg/Cg3401_19.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V3700LilisNormal02.png"
+        ],
+        "RoleNames": [
+            "莉莉丝"
+        ],
+        "RoleContents": [
+            "好了，预热的戏码都已经演够了吧？再不进入正题的话，我真的要不耐烦了哦。"
+        ]
+    },
+    {
+        "Id": 7050501,
+        "Type": 1,
+        "NextEvent": 7050502,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 0,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "Name": "最后的魔女",
+        "Desc": "涅缇娅操纵的扈从已经尽数倒下，你们一起走到残庭圣座之上，枪口指向那苦心筹谋一切至今却功败垂成的永夜君主。",
+        "ConfirmContent": "直面",
+        "LocationName": "最后的魔女",
+        "LocationDesc": "你与四骑士登上长阶之巅，共同迎战那企图将整个世界化为永夜的魔女。",
+        "LocationDescUnselect": "你与四骑士登上长阶之巅，共同迎战那企图将整个世界化为永夜的魔女。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "NextFightGroup": 0
+    },
+    {
+        "Id": 7050502,
+        "Type": 1,
+        "NextEvent": 0,
+        "NextEventGroup": 0,
+        "OptionGroupId": 0,
+        "EventLevelGroup": 1,
+        "Clue": 0,
+        "Exp": 0,
+        "BgAsset": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "Name": "最后的魔女",
+        "Desc": "她手上已经再无可以利用的棋子，但仍还有一具仍不愿就此倒下的躯体。她捂着胸口鲜血淋漓的大洞，挣扎着再次飞起，驱使着身躯内所有剩余的力量，和你们发起最后的绝境死斗。",
+        "ConfirmContent": "应敌",
+        "LocationName": "最后的魔女",
+        "LocationDesc": "你与四骑士登上长阶之巅，共同迎战那企图将整个世界化为永夜的魔女。",
+        "LocationDescUnselect": "你与四骑士登上长阶之巅，共同迎战那企图将整个世界化为永夜的魔女。",
+        "Icon": "Assets/Product/Texture/Image/BgStory/BgStory1218.jpg",
+        "NextFightGroup": 0,
+        "RoleIcons": [
+            "Assets/Product/Texture/Image/RoleStory/V4100NietiyaNormal04.png"
+        ],
+        "RoleNames": [
+            "涅缇娅"
+        ],
+        "RoleContents": [
+            "很好！那就让我来看看，到底是谁的“意志”能贯彻到最后！"
         ]
     }
 ]

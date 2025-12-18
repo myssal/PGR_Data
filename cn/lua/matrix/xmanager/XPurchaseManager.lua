@@ -339,7 +339,7 @@ XPurchaseManagerCreator = function()
             for id, discountPrice in pairs(subPackageDiscounts) do
                 totalAmount = totalAmount + 1
                 local purchaseInfo = XPurchaseManager.GetPurchaseInfoDataById(id)
-                if purchaseInfo.BuyLimitTimes then
+                if purchaseInfo and purchaseInfo.BuyLimitTimes then
                     if purchaseInfo.BuyLimitTimes > 0 and purchaseInfo.BuyTimes >= purchaseInfo.BuyLimitTimes then
                         soldOutAmount = soldOutAmount + 1
                     end

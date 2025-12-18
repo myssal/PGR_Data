@@ -31,6 +31,7 @@ function XUiGridAreaWarItem:RefreshItem(itemId, num, ignoreNumX)
     self:RefreshQuality()
     self:RefreshNum()
     self:RefreshTagNew()
+    self:ShowEffect()
 end
 
 -- 刷新道具用于消耗
@@ -175,6 +176,27 @@ end
 function XUiGridAreaWarItem:SetDefaultClickCallBack()
     self.ClickCb = function()
         XLuaUiManager.Open("UiAreaWarPopupCollectionTip", self.ItemId)
+    end
+end
+
+-- 显示特效
+function XUiGridAreaWarItem:ShowEffect()
+    self.Effect = self.Effect or self.Transform:Find("Effect")
+    if self.Effect then
+        local quality = self._Control:GetConfig():GetItemQuality(self.ItemId)
+        local effectPath = self._Control:GetConfig():GetItemQualityEffect(quality)
+        if not string.IsNilOrEmpty(effectPath) then
+            self.Effect.gameObject:SetActiveEx(true)
+            self.Effect:LoadPrefab(effectPath)
+        end
+    end
+end
+
+-- 隐藏特效
+function XUiGridAreaWarItem:HideEffect()
+    self.Effect = self.Effect or self.Transform:Find("Effect")
+    if self.Effect then
+        self.Effect.gameObject:SetActiveEx(false)
     end
 end
 

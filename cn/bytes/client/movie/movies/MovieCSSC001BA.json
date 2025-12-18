@@ -49,7 +49,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Assets/Product/Ui/Spine/4-0Spine/CiBeiZheYHPassportSkinV40/CiBeiZheYHPassportSkinV40.prefab"
+            "Assets/Product/Ui/Spine/4_1Spine/UiMovie_S_BuouxiongHJTV41/UiMovie_S_BuouxiongHJTV41.prefab"
         ]
     },
     {
@@ -60,13 +60,71 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginAnim": "DialogEnable",
-        "EndAnim": "DialogDisable",
         "BeginDelay": 0.0,
         "EndDelay": 0.0
     },
     {
         "Id": 6,
         "ActionId": 6,
+        "NextActionId": 0,
+        "Type": 105,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 7,
+        "ActionId": 7,
+        "NextActionId": 0,
+        "Type": 101,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Texture/Image/BgStory/BgStory0.png"
+        ]
+    },
+    {
+        "Id": 8,
+        "ActionId": 8,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 9,
+        "ActionId": 9,
+        "NextActionId": 0,
+        "Type": 105,
+        "IsBlock": 1,
+        "IsEnd": 0,
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0,
+        "Params": [
+            "Assets/Product/Ui/Spine/4-0Spine/CiBeiZheYHPassportSkinV40/CiBeiZheYHPassportSkinV40.prefab"
+        ]
+    },
+    {
+        "Id": 10,
+        "ActionId": 10,
+        "NextActionId": 0,
+        "Type": 301,
+        "IsBlock": 0,
+        "IsEnd": 0,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": 0.0,
+        "EndDelay": 0.0
+    },
+    {
+        "Id": 11,
+        "ActionId": 11,
         "NextActionId": 0,
         "Type": 105,
         "IsBlock": 1,
@@ -78,8 +136,8 @@
         ]
     },
     {
-        "Id": 7,
-        "ActionId": 7,
+        "Id": 12,
+        "ActionId": 12,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,
@@ -89,8 +147,8 @@
         "EndDelay": 0.0
     },
     {
-        "Id": 8,
-        "ActionId": 8,
+        "Id": 13,
+        "ActionId": 13,
         "NextActionId": 0,
         "Type": 301,
         "IsBlock": 0,

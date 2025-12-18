@@ -1190,7 +1190,7 @@ local UiRegistry = {
     UiFightBangbiPaper = "XUi/XUiFightBangbiSkill/XUiFightBangbiPaper",
     UiDlcHuntMatching = "XUi/XUiDlcHunt/Room/XUiDlcHuntMatching",
     UiDlcHuntPlayerRoom = "XUi/XUiDlcHunt/XUiDlcHuntPlayerRoom",
-    --region dlc new 
+    --region dlc new
     UiDlcHuntMain = "XUi/XUiDlcHunt/XUiDlcHuntMain",
     UiDlcHuntBag = "XUi/XUiDlcHunt/Bag/XUiDlcHuntBag",
     UiDlcHuntChipDetails = "XUi/XUiDlcHunt/Chip/XUiDlcHuntChipDetail",
@@ -2072,7 +2072,7 @@ local UiRegistry = {
     UiBagOrganizePopupRankDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupRankDetails/XUiBagOrganizePopupRankDetails",
     UiBagOrganizePopupEventDetails = "XUi/XUiBagOrganizeActivity/UiBagOrganizePopupEventDetails/XUiBagOrganizePopupEventDetails",
     UiMainLineExhibitionPopupComic = "XUi/XUiFubenMainLineChapter/XUiMainLineExhibitionPopupComic",
-    
+
     --region 新矿区
     UiScoreTowerMain = "XUi/XUiScoreTower/XUiScoreTowerMain",
     UiScoreTowerChapterDetail = "XUi/XUiScoreTower/Chapter/XUiScoreTowerChapterDetail",
@@ -2144,7 +2144,7 @@ local UiRegistry = {
     UiTheatre5PopupChoose = "XUi/XUiTheatre5/XUiTheatre5PopupChoose/XUiTheatre5PopupChoose",
     UiTheatre5PopupNewSeason = "XUi/XUiTheatre5/XUiTheatre5PopupNewSeason/XUiTheatre5PopupNewSeason",
     --endregion
-    
+
     --region 悬赏任务
     UiBountyChallengeMain = "XUi/XUiBountyChallenge/XUiBountyChallengeMain",
     UiBountyChallengeChapterDetail = "XUi/XUiBountyChallenge/XUiBountyChallengeChapterDetail",
@@ -2215,7 +2215,7 @@ local UiRegistry = {
     UiPurchaseTips = "XUi/Oversea/XUiPurchaseTips",
     UiMonthlyCardEn = "XUi/Oversea/XUiMonthlyCardEn",
     --endregion
-    
+
     --region 赛马
     UiRaceMain = "XUi/XUiRace/XUiRaceMain",
     UiRacePredict = "XUi/XUiRace/XUiRacePredict",
@@ -2253,7 +2253,7 @@ local UiRegistry = {
     UiTeamPrefabPartner = "XUi/XUiTeamPrefab/XUiTeamPrefabPartner/XUiTeamPrefabPartner",
     UiTeamPrefabEquipSuitSkill = "XUi/XUiTeamPrefab/XUiTeamPrefabEquipSuitSkill",
     --endregion
-    
+
     --region 军团系统/PlotExhibition
     UiPlotExhibitionMain = "XUi/XUiPlotExhibition/XUiPlotExhibitionMain",
     UiPlotExhibitionDetail = "XUi/XUiPlotExhibition/XUiPlotExhibitionDetail",
@@ -2272,7 +2272,12 @@ local UiRegistry = {
 
     --陀螺仪测试
     UiHyxGyroTest = "XUi/XUiHyxGyroTest/XUiHyxGyroTest",
-    UiAreaWarObtain = "XUi/XUiAreaWar/XUiAreaWarObtain"
+    UiAreaWarObtain = "XUi/XUiAreaWar/XUiAreaWarObtain",
+
+    --region 空花签到
+    UiRadioSignMain = "XUi/XUiRadioSign/XUiRadioSignMain",
+    UiRadioSignPopupHall = "XUi/XUiRadioSign/XUiRadioSignPopupHall",
+    --endregion
 }
 
 return UiRegistry

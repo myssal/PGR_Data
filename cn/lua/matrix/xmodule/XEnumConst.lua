@@ -2366,13 +2366,13 @@ XEnumConst = {
         }
     },
     SharePlatform = {
-        KJQ = 1, -- 库街区
-        QQ = 2, -- QQ
-        QQSpace = 3, -- QQ空间
-        WX = 4, -- 微信
-        WXMoments = 5, -- 微信朋友圈
-        Bilibili = 6, -- B站
-        Weibo = 7, -- 微博
+        KJQ = 'KURO_BBS', -- 库街区
+        QQ = 'QQ', -- QQ
+        QQSpace = 'QQ_ZONE', -- QQ空间
+        WX = 'WECHAT', -- 微信
+        WXMoments = 'WECHAT_MOMENTS', -- 微信朋友圈
+        Bilibili = 'BILIBILI', -- B站
+        Weibo = 'WEI_BO', -- 微博
     },
     -- 主线2
     MAINLINE2 = {
@@ -3507,9 +3507,9 @@ XEnumConst = {
     },
     Purchase = {
         Recommend = {
-            Luna = 206, --新手超S限定补给包（露娜）
-            CompanyPackage = 207, --新手三日限定补给+月卡Plus
-            ComboPackage = 213, -- 捆绑包，折扣需要动态计算
+            Luna = 'PurchaseLunaRecommendId', --新手超S限定补给包（露娜）
+            CompanyPackage = 'PurchaseCompanyPackRecommendId', --新手三日限定补给+月卡Plus
+            ComboPackage = 'PurchaseComboPackRecommendId', -- 捆绑包，折扣需要动态计算
         },
     },
     FashionSuit = {
@@ -3520,4 +3520,11 @@ XEnumConst = {
             Skip = 3, --跳转
         },
     },
+    ItemRestrict = 
+    {
+        Type = 
+        {
+            DrawCanLiver = 1
+        }
+    }
 }

@@ -148,7 +148,12 @@ end
 function XUiShopFashionFilter:OnCancelFliter()
     self:Close()
     if self.SelectCallBack then
-        self.SelectCallBack()
+         local resultData ={
+                selectId = nil,
+                careerTags = nil,
+                elementTags = nil
+            }
+        self.SelectCallBack(resultData)
     end
 end
 

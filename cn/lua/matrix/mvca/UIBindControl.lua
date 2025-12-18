@@ -1090,6 +1090,12 @@ local UIBindControl = {
     UiAreaWarBossSpecial = ModuleId.XAreaWar,
     UiAreaWarObtain = ModuleId.XAreaWar,
     --endregion
+    
+    --region 空花签到
+    UiRadioSignMain = ModuleId.XRadioSign,
+    UiRadioSignPopupHall = ModuleId.XRadioSign,
+    --endregion
+
 }
 
 return UIBindControl

@@ -149,8 +149,10 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
         if resultData ~= nil then
             self._TmpCareerTags = resultData.careerTags
             self._TmpElementTags = resultData.elementTags
-            -- characterId 转成selectTag
-            if screenGroupCfg then
+            if resultData.selectId == nil then
+                self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+            elseif screenGroupCfg then
+                -- characterId 转成selectTag
                 for i, id in pairs(screenGroupCfg.ScreenID) do
                     if characterId == id then
                         self.SelectTag = screenGroupCfg.ScreenName[i]
@@ -167,7 +169,6 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
         self:RefreshDynamicTable()
     end)
 end
-
 ------------------------------------------------------- 监听函数end -------------------------------------------------------
 
 ------------------------------------------------------- 页签start -------------------------------------------------------

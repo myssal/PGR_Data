@@ -52,6 +52,7 @@ function XUiPanelAreaWarUseItem:InitView()
     self.GameObject:SetActiveEx(showItem)
     self:RefreshProbability(0,true)
 end
+
 function XUiPanelAreaWarUseItem:RefreshView() 
     if self.GameObject:Equals(nil) then
         return
@@ -76,25 +77,23 @@ function XUiPanelAreaWarUseItem:RefreshView()
             self:RefreshProbability(math.floor(itemConfig.EffectProbability/100), self.SelectStatus[itemConfig.ItemId])
         end
     end
-
 end
+
 function XUiPanelAreaWarUseItem:BindUseItem(itemData, itemConfig, grid, disable)
- 
-    local bindObj = function(grid)
-        local obj = {}
-        XTool.InitUiObjectByUi(obj, grid)
-        local selfBtn = obj.GameObject:GetComponent("XUiButton")
-        selfBtn:SetNameByGroup(1, "+" .. math.floor(itemConfig.EffectProbability/100) .. "%")
-        selfBtn:SetNameByGroup(0, itemData.Num)
-        selfBtn:SetRawImage(itemConfig.Icon)
-        selfBtn:SetDisable(disable)
-        
-        obj.BtnClick:AddEventListener(handler(self, function()
-            self:OnSelect(obj,disable, itemConfig)
-        end))
-        return obj
-    end
-    return bindObj(grid)
+    local obj = {}
+    XTool.InitUiObjectByUi(obj, grid)
+    local selfBtn = obj.GameObject:GetComponent("XUiButton")
+    selfBtn:SetNameByGroup(1, "+" .. math.floor(itemConfig.EffectProbability/100) .. "%")
+    selfBtn:SetNameByGroup(0, itemData.Num)
+    selfBtn:SetRawImage(itemConfig.Icon)
+    selfBtn.transform:Find("Select/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(itemConfig.Icon)
+    selfBtn.transform:Find("Disable/RImgIcon"):GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(itemConfig.Icon)
+    selfBtn:SetDisable(disable)
+    
+    obj.BtnClick:AddEventListener(handler(self, function()
+        self:OnSelect(obj,disable, itemConfig)
+    end))
+    return obj
 end
 
 function XUiPanelAreaWarUseItem:OnSelect(btnobj,disable, itemConfig)

@@ -133,6 +133,11 @@ function XAreaWarConfig:GetItemRoomLevelLvUpItemCounts(id)
     local config = self:GetConfigItemRoomLevel(id)
     return config.LvUpItemCounts
 end
+
+function XAreaWarConfig:GetItemRoomLevelNeedCleanBlock(id)
+    local config = self:GetConfigItemRoomLevel(id)
+    return config.NeedCleanBlock
+end
 --endregion
 
 --region AreaWarAuction
@@ -223,6 +228,11 @@ end
 function XAreaWarConfig:GetItemQualitySellTips(id)
     local config = self:GetConfigItemQuality(id)
     return config.SellTips
+end
+
+function XAreaWarConfig:GetItemQualityEffect(id)
+    local config = self:GetConfigItemQuality(id)
+    return config.Effect
 end
 
 -- 获取品质Id列表，需要排序

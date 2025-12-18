@@ -73,6 +73,10 @@ function XPurchasePackage:GetConsumeCount()
     return self.Data.ConsumeCount
 end
 
+function XPurchasePackage:GetDiscount()
+    return self.Data.NormalDiscounts
+end
+
 function XPurchasePackage:GetConsumeId()
     return self.Data.ConsumeId
 end

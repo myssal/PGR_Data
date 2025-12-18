@@ -144,6 +144,9 @@ end
 function XUiPurchaseBuyTips:Init()
     self.PanelAssetPay.gameObject:SetActiveEx(true)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAssetPay, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa)
+    XDataCenter.ItemManager.AddCountUpdateListener({
+        XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa
+    }, handler(self, self.RefreshItemCount), self)
     self._PanelNormalItemList = XUiPanelNormalPurchaseItemList.New(self.PanelNormalReward, self)
     self._PanelNormalItemList:Close()
 
@@ -327,13 +330,13 @@ function XUiPurchaseBuyTips:InitAndCheckNormalDiscount()
         if self.IsDisCount then
             -- 打折的
             if self.Data.ConsumeCount then
-                self:PayCoinStates(self.Data.ConsumeCount * self.NormalDisCountValue,self.Data.ConsumeId)
+                self:PayCoinStates(self.Data.ConsumeId,self.Data.ConsumeCount * self.NormalDisCountValue)
                 -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount * self.NormalDisCountValue)
                 self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.ConsumeCount)
                 self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
 
             elseif self.Data.Price then
-                self:PayCoinStates(self.Data.Price,self.Data.ConsumeId)
+                self:PayCoinStates(self.Data.ConsumeId,self.Data.Price)
                 -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
                 if self.Data.OriginalPrice then
                     self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.OriginalPrice)
@@ -344,7 +347,7 @@ function XUiPurchaseBuyTips:InitAndCheckNormalDiscount()
             end
         else
             self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", false)
-            self:PayCoinStates(self.Data.ConsumeCount or self.Data.Price,self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,self.Data.ConsumeCount or self.Data.Price)
             -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount or self.Data.Price)
         end
 
@@ -601,27 +604,27 @@ function XUiPurchaseBuyTips:RefreshDiscount(discountItemIndex)
             -- 打折的
             self.RawImageConsume.gameObject:SetActiveEx(true)
             -- self.BtnBuy:SetName(math.modf(self.Data.ConsumeCount * self.NormalDisCountValue))
-            self:PayCoinStates(math.modf(self.Data.ConsumeCount * self.NormalDisCountValue),self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,math.modf(self.Data.ConsumeCount * self.NormalDisCountValue))
             local icon = XDataCenter.ItemManager.GetItemIcon(self.Data.ConsumeId)
             if icon then
                 self.RawImageConsume:SetRawImage(icon)
             end
             self._BtnBuy:SetActive("PanelTxt", true)
             -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount)
-            self:PayCoinStates(self.Data.ConsumeCount,self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,self.Data.ConsumeCount)
         else
             -- self.BtnBuy:SetName(self.Data.ConsumeCount)
-            self:PayCoinStates(self.Data.ConsumeCount,self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,self.Data.ConsumeCount)
             self._BtnBuy:SetActive("PanelTxt", false)
         end
     else
         local couponDisCountValue = XDataCenter.PurchaseManager.GetLBCouponDiscountValue(self.Data, discountItemIndex)
         self.RawImageConsume.gameObject:SetActiveEx(true)
         -- self.BtnBuy:SetName(math.modf(self.Data.ConsumeCount * couponDisCountValue))
-        self:PayCoinStates(math.modf(self.Data.ConsumeCount * couponDisCountValue),self.Data.ConsumeId)
+        self:PayCoinStates(self.Data.ConsumeId,math.modf(self.Data.ConsumeCount * couponDisCountValue))
         self._BtnBuy:SetActive("PanelTxt", true)
         -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.ConsumeCount)
-        self:PayCoinStates(self.Data.ConsumeCount,self.Data.ConsumeId)
+        self:PayCoinStates(self.Data.ConsumeId,self.Data.ConsumeCount)
     end
 end
 
@@ -783,7 +786,7 @@ function XUiPurchaseBuyTips:RefreshBtnBuyPrice()
     if not self.Data.ConsumeCount then
         if self.Data.Price then
             -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
-            self:PayCoinStates(self.Data.Price,self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,self.Data.Price)
         end
         return
     end
@@ -794,7 +797,7 @@ function XUiPurchaseBuyTips:RefreshBtnBuyPrice()
     end
     local disCountConsume = math.floor(self.NormalDisCountValue * consumeCount)
     -- self._BtnBuy:SetText("PanelTxt/TxtPrice", consumeCount * self.CurrentBuyCount)
-    self:PayCoinStates(consumeCount * self.CurrentBuyCount,self.Data.ConsumeId)
+    self:PayCoinStates(self.Data.ConsumeId,consumeCount * self.CurrentBuyCount)
 end
 
 function XUiPurchaseBuyTips:RefreshBuyTimeShowBtnState()
@@ -983,7 +986,7 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
             end
             --self.BtnBuy:SetName(remainPrice)
             -- self._BtnBuy:SetText("PanelTxt/TxtPrice", remainPrice)
-            self:PayCoinStates(remainPrice,self.Data.ConsumeId)
+            self:PayCoinStates(self.Data.ConsumeId,remainPrice)
             self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
             self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.ConsumeCount)
         end
@@ -1201,20 +1204,26 @@ function XUiPurchaseBuyTips:CheckNormalAndDailyContainsOwn()
 end
 --endregion
 
-function XUiPurchaseBuyTips:PayCoinStates(priceTxt,itemId)
+function XUiPurchaseBuyTips:RefreshItemCount(itemId, priceTxt)
+    if itemId ~= self.CurItemId then
+        return
+    end
+    self:PayCoinStates(self.CurItemId, self.CurPriceTxt)
+end
+
+function XUiPurchaseBuyTips:PayCoinStates(itemId, priceTxt)
+    self.CurPriceTxt = priceTxt
+    self.CurItemId = itemId
     local colorEnough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor1")
     local colorUnenough = CS.XGame.ClientConfig:GetString("UiPurchaseBuyTipsButtonColor2")
-    local itemCount =  XDataCenter.ItemManager.GetItem(itemId).Count
+    local itemCount = XDataCenter.ItemManager.GetItem(itemId).Count
     local priceText = ""
-    if itemCount>= tonumber(priceTxt) then
-        priceText =string.format("<color=%s>%s</color>",colorEnough,priceTxt) 
-        
+    if itemCount >= tonumber(priceTxt) then
+        priceText = string.format("<color=%s>%s</color>", colorEnough, priceTxt)
     else
-        priceText =string.format("<color=%s>%s</color>",colorUnenough,priceTxt) 
+        priceText = string.format("<color=%s>%s</color>", colorUnenough, priceTxt)
     end
     self.BtnBuy:SetName(priceText)
-    
-
 end
 
 ---@param data XPurchaseComboData
