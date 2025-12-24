@@ -1417,7 +1417,7 @@ XFunctionalSkipManagerCreator = function()
 
     --跳转到全服决战
     function XFunctionalSkipManager.SkipToAreaWar()
-        XDataCenter.AreaWarManager.EnterUiMain()
+        return XDataCenter.AreaWarManager.EnterUiMain()
     end
 
     --跳转到周年意识营救战

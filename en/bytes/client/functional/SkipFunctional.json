@@ -9113,22 +9113,6 @@
         ]
     },
     {
-        "SkipId": 531,
-        "Origin": 7,
-        "UiName": "SkipToMainLine2",
-        "ParamId": 0,
-        "Explain": "新主线第三十九章",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 10308,
-        "TimeId": 0,
-        "IsHideFunc": true,
-        "IsShowExplain": false,
-        "CustomParams": [
-            1039
-        ]
-    },
-    {
         "SkipId": 700,
         "Origin": 3,
         "UiName": "UiNewFuben",
@@ -18425,22 +18409,6 @@
         "IsShowExplain": false,
         "CustomParams": [
             30
-        ]
-    },
-    {
-        "SkipId": 7138,
-        "Origin": 7,
-        "UiName": "SkipToPartnerTeachingChapter",
-        "ParamId": 0,
-        "Explain": "前往辅助机教学试玩-第三十一章",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 1801,
-        "TimeId": 0,
-        "IsHideFunc": true,
-        "IsShowExplain": false,
-        "CustomParams": [
-            31
         ]
     },
     {
@@ -29967,7 +29935,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "Complete \"Phantom Delusions\" event missions",
+        "Explain": "Complete \"Phantom Delusion\" event missions",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -30049,7 +30017,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "完成“4.1预热”活动任务",
+        "Explain": "Complete \"Arctic Amalgamation\" event missions",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -39083,7 +39051,7 @@
         "UiName": "SkipToAreaWar",
         "ParamId": 0,
         "Explain": "Go to event [Coordinated Simulation]",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10349,
         "TimeId": 0,
@@ -42901,7 +42869,11 @@
         "FunctionalId": 20000,
         "TimeId": 0,
         "IsHideFunc": false,
-        "IsShowExplain": false
+        "IsShowExplain": false,
+        "CustomParams": [
+            400,
+            4001
+        ]
     },
     {
         "SkipId": 89077,
@@ -42978,7 +42950,7 @@
         "ParamId": 0,
         "Explain": "Advance to Golden Vortex",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10405,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -43054,7 +43026,7 @@
         "ParamId": 0,
         "Explain": "Lightning and Thunder",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10448,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -43067,7 +43039,7 @@
         "ParamId": 0,
         "Explain": "Advance to event [Cursed Waves]",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10433,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -43080,7 +43052,7 @@
         "ParamId": 0,
         "Explain": "Derived from Matrix",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10453,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -43093,7 +43065,7 @@
         "ParamId": 0,
         "Explain": "Awakening Tundra",
         "IsRecord": true,
-        "ConditionId": 0,
+        "ConditionId": 1050153,
         "FunctionalId": 10470,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -43231,24 +43203,6 @@
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false
-    },
-    {
-        "SkipId": 89101,
-        "Origin": 7,
-        "UiName": "SkipToBigWorld",
-        "ParamId": 0,
-        "Explain": "4.2罗塞塔主线，跳空花罗塞塔Quest",
-        "IsRecord": false,
-        "ConditionId": 1050153,
-        "FunctionalId": 20000,
-        "TimeId": 0,
-        "IsHideFunc": true,
-        "IsShowExplain": false,
-        "CustomParams": [
-            400,
-            4001,
-            1
-        ]
     },
     {
         "SkipId": 90000,
@@ -43546,7 +43500,7 @@
         "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10486,
-        "TimeId": 44028,
+        "TimeId": 0,
         "IsHideFunc": false,
         "IsShowExplain": false
     },
@@ -43642,7 +43596,7 @@
         "UiName": "SkipToUiPacMan2Main",
         "ParamId": 0,
         "Explain": "Pac-Man Mode",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10490,
         "TimeId": 43701,
@@ -47504,22 +47458,6 @@
         "CustomParams": [
             1,
             11
-        ]
-    },
-    {
-        "SkipId": 1300626,
-        "Origin": 2,
-        "UiName": "UiAccumulateExpendShopMain",
-        "ParamId": 0,
-        "Explain": "累销商店",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 0,
-        "TimeId": 0,
-        "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            1
         ]
     }
 ]

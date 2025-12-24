@@ -159,12 +159,12 @@ XAreaWarManagerCreator = function()
     local _LastTimeReqActivityData = 0
     function XAreaWarManager.EnterUiMain(beforeOpenUiCb)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.AreaWar) then
-            return
+            return false
         end
 
         if not XAreaWarManager.IsOpen() then
             XUiManager.TipText("AreaWarActivityNotOpen")
-            return
+            return false
         end
 
         --主动gc一次
@@ -192,6 +192,7 @@ XAreaWarManagerCreator = function()
             requestCount = 1
             XAreaWarManager.RequestEnter(onResponse)
         end
+        return true
     end
 
     function XAreaWarManager.DoEnterUiMain(beforeOpenUiCb)
