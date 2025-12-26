@@ -1961,7 +1961,7 @@ XAreaWarManagerCreator = function()
 
     --请求派遣(robotIds为上阵特攻角色对应的robotId，characterIds为上阵的自己拥有成员的characterId)
     function XAreaWarManager.AreaWarDetachRequest(blockId, characterIds, robotIds, multiple, cb)
-        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds = XAreaWarManager.GetUsingProbabilityItems()}
+        local req = {BlockId = blockId, CardIds = characterIds, RobotIds = robotIds, Multiple = multiple,ChooseItemIds =XAreaWarManager.GetUsingProbabilityItems()}
         XNetwork.Call(
                 "AreaWarDetachRequest",
                 req,

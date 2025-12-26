@@ -188,7 +188,7 @@ function XUiDlcRelinkLvReward:UpdateBuy(data, cb)
             cb()
         end
         self:RefreshRedPoint()
-    end, "000000ff")
+    end, self._Control:GetClientConfig("ShopCanBuyColor"))
 end
 
 function XUiDlcRelinkLvReward:GetCurShopId()
@@ -203,8 +203,8 @@ function XUiDlcRelinkLvReward:RefreshBuy()
 end
 
 function XUiDlcRelinkLvReward:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
-    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkLvReward:OnBtnBackClick()

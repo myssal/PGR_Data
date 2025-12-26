@@ -27,6 +27,7 @@ local ArenaTableKey = {
         Identifier = "ChallengeId",
         CacheType = XConfigUtil.CacheType.Normal,
     },
+    AreaDistributeType = {},
 }
 
 function XArenaConfigModel:_InitTableKey()
@@ -114,7 +115,7 @@ end
 function XArenaConfigModel:GetAreaStageBuffIdById(id)
     local config = self:GetAreaStageConfigById(id)
 
-    return config.BuffId
+    return config.BuffIds
 end
 
 function XArenaConfigModel:GetAreaStageBuffDescById(id)
@@ -157,6 +158,12 @@ function XArenaConfigModel:GetAreaStageRegionById(id)
     local config = self:GetAreaStageConfigById(id)
 
     return config.Region
+end
+
+function XArenaConfigModel:GetAreaStageDistributeTypeById(id)
+    local config = self:GetAreaStageConfigById(id)
+
+    return config.DistributeTypes
 end
 
 ---@return XTableChallengeArea[]
@@ -471,6 +478,16 @@ function XArenaConfigModel:GetArenaGroupFightEventsById(id)
     local config = self:GetArenaGroupFightEventConfigById(id)
 
     return config.FightEvents
+end
+
+---@return XTableAreaDistributeType[]
+function XArenaConfigModel:GetAreaDistributeTypeConfigs()
+    return self._ConfigUtil:GetByTableKey(ArenaTableKey.AreaDistributeType) or {}
+end
+
+---@return XTableAreaDistributeType
+function XArenaConfigModel:GetAreaDistributeTypeConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(ArenaTableKey.AreaDistributeType, id, false) or {}
 end
 
 return XArenaConfigModel

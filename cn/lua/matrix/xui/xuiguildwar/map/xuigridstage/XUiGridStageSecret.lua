@@ -1,3 +1,5 @@
+--[[4.2 到九期为止都没在用过，注释掉减少代码重构的调整范围
+
 local XUiGridStage = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStage")
 --三期双子节点
 ---@class XUiGridStageSecret
@@ -42,3 +44,5 @@ function XUiGridStageSecret:OnBtnStageClick(selectedNodeId)
 end
 
 return XUiGridStageSecret
+
+--]]

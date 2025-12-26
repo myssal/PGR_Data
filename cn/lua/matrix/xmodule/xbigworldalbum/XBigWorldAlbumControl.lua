@@ -7,6 +7,7 @@ function XBigWorldAlbumControl:OnInit()
     self._TextureCache = false
     self._SelectPhotoIndex = 0
     self._PrefsAutoSaveKey = XPlayer.Id .. "_PG_AutoSave"
+    self._PrefsDefaultFirstPersonKey = XPlayer.Id .. "_PG_DefaultFirstPerson"
 end
 
 function XBigWorldAlbumControl:AddAgencyEvent()
@@ -29,56 +30,28 @@ function XBigWorldAlbumControl:RemoveTextureCache()
     end
 end
 
-function XBigWorldAlbumControl:CaptureTexture(isHideOtherBtn, hasDetectedAllEnvTarget, needCloseControl)
-    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_PHOTOGRAPH_DO_TAKE_PHOTO)
+function XBigWorldAlbumControl:CaptureTextureNow(callback)
     CS.XScreenCapture.ScreenCaptureWithCallBack(XMVCA.XBigWorldGamePlay:GetCamera(), function(tex)
         self:RemoveTextureCache()
         self._TextureCache = tex
-        XMVCA.XBigWorldUI:Open("UiBigWorldPhotographPopupPhoto", isHideOtherBtn, hasDetectedAllEnvTarget, needCloseControl)
+        if callback then callback(tex) end
     end)
+end
+
+function XBigWorldAlbumControl:CaptureTexture(...)
+    XMVCA.XBigWorldUI:Open("UiBigWorldPhotographPopupPhoto", ...)
 end
 
 function XBigWorldAlbumControl:GetCaptureTexture()
     return self._TextureCache
 end
 
-function XBigWorldAlbumControl:UploadTexture(texture, cb, width, height)
-    self:BigWorldAlbumAddPhotoRequest(function(photoData)
-        self:CacheTexture(photoData, texture, width, height)
-        if cb then cb() end
-    end)
-end
-
-function XBigWorldAlbumControl:CacheTexture(photoData, texture, width, height)
-    CS.XTool.SavePhotoImage(XPlayer.Id, photoData.Id, photoData.CheckSalt, texture)
-    local smallTexture = CS.XTool.ResizeTexture(width or 308, height or 174, texture)
-    CS.XTool.SavePhotoImage(XPlayer.Id, photoData.Id, photoData.CheckSalt, smallTexture, true)
-    CS.UnityEngine.Object.DestroyImmediate(smallTexture)
-end
-
 function XBigWorldAlbumControl:GetPhotoTexture(photoData, isSmall)
+    if not photoData then return end
     return CS.XTool.GetPhotoImage(XPlayer.Id, photoData.Id, photoData.CheckSalt, isSmall or false)
 end
 
 --region 协议
-
--- 大世界相册增加相片请求
-function XBigWorldAlbumControl:BigWorldAlbumAddPhotoRequest(cb)
-    XNetwork.Call(
-        "BigWorldAlbumAddPhotoRequest",
-        nil,
-        function(res)
-            if res.Code ~= XCode.Success then
-                XUiManager.TipCode(res.Code)
-                return
-            end
-            XUiManager.TipMsgEnqueue(XMVCA.XBigWorldService:GetText("SG_P_UploadSucess"))
-            self._Model:AddPhotoDatas(res.PhotoData)
-            -- 刷新数据
-            if cb then cb(res.PhotoData) end
-        end
-   )
-end
 
 -- 大世界相册删除相片请求
 function XBigWorldAlbumControl:BigWorldAlbumDeletePhotoRequest(PhotoIds, cb)
@@ -176,6 +149,16 @@ function XBigWorldAlbumControl:SetAutoSave(isSave)
     XSaveTool.SaveData(self._PrefsAutoSaveKey, isSave and 1 or 0)
 end
 
+function XBigWorldAlbumControl:GetDefaultFirstPerson()
+    local isAuto = XSaveTool.GetData(self._PrefsDefaultFirstPersonKey)
+    if isAuto == nil then return false end
+    return isAuto == 1
+end
+
+function XBigWorldAlbumControl:SetDefaultFirstPerson(isFirstPerson)
+    XSaveTool.SaveData(self._PrefsDefaultFirstPersonKey, isFirstPerson and 1 or 0)
+end
+
 function XBigWorldAlbumControl:ModifySelectPhotoIndex(index)
     self._SelectPhotoIndex = self._SelectPhotoIndex + index
     if self._SelectPhotoIndex > #self._Model:GetPhotoDatas() then
@@ -198,6 +181,22 @@ end
 
 function XBigWorldAlbumControl:GetParamConfigById(envId)
     return self._Model:GetParamConfigById(envId)
+end
+
+function XBigWorldAlbumControl:GetFiltersConfig()
+    return self._Model:GetFiltersConfig()
+end
+
+function XBigWorldAlbumControl:GetCharacterActionsConfig(characterId)
+    return self._Model:GetCharacterActionsConfig(characterId)
+end
+
+function XBigWorldAlbumControl:ReadUnlock(unlockId, subId, isNew)
+    self._Model:ReadUnlock(unlockId, subId, isNew)
+end
+
+function XBigWorldAlbumControl:IsShowRedDotContent(unlockId, subId)
+    return self._Model:IsShowRedDotContent(unlockId, subId)
 end
 
 return XBigWorldAlbumControl

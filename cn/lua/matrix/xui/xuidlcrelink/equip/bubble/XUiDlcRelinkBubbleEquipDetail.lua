@@ -5,6 +5,7 @@ local XUiDlcRelinkBubbleEquipDetail = XLuaUiManager.Register(XLuaUi, "UiDlcRelin
 
 local CSVector2 = CS.UnityEngine.Vector2
 local CSVector3 = CS.UnityEngine.Vector3
+local EquipSlotIndex = XEnumConst.DlcRelink.EquipSlotIndex
 
 function XUiDlcRelinkBubbleEquipDetail:OnAwake()
     self:RegisterUiEvents()
@@ -186,9 +187,7 @@ function XUiDlcRelinkBubbleEquipDetail:LayoutPanelSkill()
 end
 
 function XUiDlcRelinkBubbleEquipDetail:CheckExtendSlotAndMainSlotWearEquip()
-    local isExtendSlot = self._Control:CheckIsExpandSlotIndex(self.SlotIndex)
-    local isMainSlotWearEquip = XTool.IsNumberValid(self.MainEquipUid)
-    return isExtendSlot and isMainSlotWearEquip
+    return self.SlotIndex >= EquipSlotIndex.NormalExpandBegin and self.SlotIndex < EquipSlotIndex.NormalSlotBegin
 end
 
 function XUiDlcRelinkBubbleEquipDetail:RefreshEquipDetail()
@@ -220,7 +219,7 @@ function XUiDlcRelinkBubbleEquipDetail:RefreshPanelSkill()
 end
 
 function XUiDlcRelinkBubbleEquipDetail:RegisterUiEvents()
-    self:RegisterClickEvent(self.BtnClose, self.OnBtnCloseClick)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
 function XUiDlcRelinkBubbleEquipDetail:OnBtnCloseClick()
