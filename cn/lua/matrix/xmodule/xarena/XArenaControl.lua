@@ -712,13 +712,7 @@ function XArenaControl:GetContributeScoreByChallengeId(groupRank, challengeId, p
 end
 
 function XArenaControl:GetMarkIdByAreaId(areaId)
-    local stageId = self:GetAreaStageLastStageIdById(areaId)
-
-    if XTool.IsNumberValid(stageId) then
-        return self._Model:GetArenaStageMarkIdByStageId(stageId) or 0
-    end
-
-    return 0
+    return self._Model:GetAreaStageMarkIdById(areaId) or 0
 end
 
 function XArenaControl:IsMarkShowEnemyHp(markId)

@@ -11,6 +11,12 @@ function XUiDlcRelinkLvReward:OnAwake()
     self.BtnChild.gameObject:SetActiveEx(false)
     self.PanelTaskStory.gameObject:SetActiveEx(false)
     self.PanelItemList.gameObject:SetActiveEx(false)
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin }
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
+        local itemId = itemIds[index]
+        XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
+    end)
 end
 
 function XUiDlcRelinkLvReward:OnStart()

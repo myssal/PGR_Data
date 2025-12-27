@@ -138,8 +138,7 @@ end
 
 function XArenaConfigModel:GetAreaStageMarkIdById(id)
     local config = self:GetAreaStageConfigById(id)
-
-    return config.MarkId
+    return config.MarkId[1]
 end
 
 function XArenaConfigModel:GetAreaStageAutoFightById(id)

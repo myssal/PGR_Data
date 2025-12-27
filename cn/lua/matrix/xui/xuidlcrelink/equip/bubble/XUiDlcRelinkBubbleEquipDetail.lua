@@ -204,16 +204,18 @@ function XUiDlcRelinkBubbleEquipDetail:RefreshPanelSkill()
     local equipType = self._Control:GetEquipType(templateId)
 
     local isMainEquip = equipType == XEnumConst.DlcRelink.EquipType.Main
-    self.PanelSkill.gameObject:SetActiveEx(isMainEquip)
     if not isMainEquip then
+        self.PanelSkill.gameObject:SetActiveEx(false)
         return
     end
 
     local mainSkillAttr = self._Control:GetEquipMainFactorByUid(self.EquipUid, true, self.IsNotSelf)
     if not mainSkillAttr then
+        self.PanelSkill.gameObject:SetActiveEx(false)
         return
     end
 
+    self.PanelSkill.gameObject:SetActiveEx(true)
     self.TxtName.text = self._Control:GetEquipSkillFactorName(mainSkillAttr.FactorId)
     self.TxtDesc.text = self._Control:GetEquipSkillFactorDescription(mainSkillAttr.FactorId)
 end

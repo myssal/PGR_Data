@@ -39,7 +39,7 @@ function XUiDlcRelinkPopupEquipCompose:OnEnable()
 end
 
 function XUiDlcRelinkPopupEquipCompose:UpdateMaxComposeCount()
-    if self._ChooseAttribute and self._ChooseAttribute:IsChooseedAttr() then
+    if self._ChooseAttribute and self._ChooseAttribute:IsChooseAttr() then
         local haveCount = XDataCenter.ItemManager.GetCount(self._ItemId)
         self.MaxComposeCount = math.floor(haveCount / self._ItemCount)
     else
@@ -64,7 +64,7 @@ function XUiDlcRelinkPopupEquipCompose:SetInputSelectData()
 end
 
 function XUiDlcRelinkPopupEquipCompose:GetItemIdAndCount()
-    if self._ChooseAttribute:IsChooseedAttr() then
+    if self._ChooseAttribute:IsChooseAttr() then
         --定向合成的消耗
         return self._ItemId, self._ItemCount
     else

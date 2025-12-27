@@ -710,9 +710,12 @@ function XArenaAgency:CheckOpenActivityResultUi(isInActivityOpen)
 end
 
 function XArenaAgency:CheckIsArenaStage(stageId)
-    local config = self._Model:GetArenaStageConfigByStageId(stageId)
-
-    return not XTool.IsTableEmpty(config)
+    local stageConfig = XMVCA.XFuben:GetStageCfg(stageId)
+    if not stageConfig then
+        return false
+    end
+    
+    return stageConfig.Type == XEnumConst.FuBen.StageType.Arena
 end
 
 function XArenaAgency:CheckIsSpecialAreaNumber(number)

@@ -44,6 +44,7 @@ function XUiPaintingExperiencePassV4P2:AddListener()
 end
 
 function XUiPaintingExperiencePassV4P2:UpdateFirstReward()
+    self.GridCommon.gameObject:SetActiveEx(false)
     local stage = XDataCenter.FubenManager.GetStageCfg(self.TrialLevelInfo.SingStageId)
     local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.TrialLevelInfo.SingStageId)
     local rewardId = 0
@@ -67,6 +68,7 @@ function XUiPaintingExperiencePassV4P2:UpdateFirstReward()
         local panel = self.RewardPanelList[i]
         if not panel then
             local ui = CS.UnityEngine.Object.Instantiate(self.GridCommon)
+            ui.gameObject:SetActiveEx(true)
             ui.transform:SetParent(self.PanelDropContent, false)
             panel = XUiGridCommon.New(self, ui)
             table.insert(self.RewardPanelList, panel)

@@ -21807,6 +21807,12 @@ XTable = {
         LifeEnergy8 = ValueTypefix,
         LifeEnergy9 = ValueTypefix,
         LifeEnergy10 = ValueTypefix,
+        CustomEnergyGroup5 = ValueTypefix,
+        CustomEnergyGroup6 = ValueTypefix,
+        CustomEnergyGroup7 = ValueTypefix,
+        CustomEnergyGroup8 = ValueTypefix,
+        CustomEnergyGroup9 = ValueTypefix,
+        CustomEnergyGroup10 = ValueTypefix,
     },
     XTableSkillRelease = {
         Id = ValueTypeint,

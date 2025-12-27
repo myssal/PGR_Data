@@ -20,17 +20,18 @@ function XUiPanelDlcRelinkEquipChooseAttribute:GetAttrId()
     return self._CurAttrId
 end
 
-function XUiPanelDlcRelinkEquipChooseAttribute:IsChooseedAttr()
+function XUiPanelDlcRelinkEquipChooseAttribute:IsChooseAttr()
     return XTool.IsNumberValid(self._CurAttrId)
 end
 
 function XUiPanelDlcRelinkEquipChooseAttribute:CheckFuncUnlock()
     self._IsUnlock = true
+    self._LockDesc = ""
     local conditionIds = self._Control:GetTargetingComposeConsumeConditionIds()
     if not XTool.IsTableEmpty(conditionIds) then
         for _, conditionId in ipairs(conditionIds) do
-            if not XConditionManager.CheckCondition(tonumber(conditionId)) then
-                self._IsUnlock = false
+            self._IsUnlock, self._LockDesc = XConditionManager.CheckCondition(tonumber(conditionId))
+            if not self._IsUnlock then
                 return
             end
         end
@@ -59,7 +60,11 @@ function XUiPanelDlcRelinkEquipChooseAttribute:UpdateAttribute()
 end
 
 function XUiPanelDlcRelinkEquipChooseAttribute:OnBtnChooseClick()
-    if not self._IsUnlock or self._CurAttrId then
+    if XTool.IsNumberValid(self._CurAttrId) then
+        return
+    end
+    if not self._IsUnlock then
+        self._Control:OpenCommonTipMsg(self._LockDesc)
         return
     end
 

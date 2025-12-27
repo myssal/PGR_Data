@@ -521,7 +521,7 @@ end
 
 function XUiSkyGardenSGDroneGame:_RegisterSchedules()
     -- 在此处注册定时器
-    self._Timer = XScheduleManager.ScheduleForeverEx(Handler(self, self._Update), XScheduleManager.SECOND)
+    self._Timer = XScheduleManager.ScheduleForeverEx(Handler(self, self._Update), XScheduleManager.SECOND * 0.5)
 end
 
 function XUiSkyGardenSGDroneGame:_RemoveSchedules()
@@ -543,6 +543,7 @@ end
 
 function XUiSkyGardenSGDroneGame:_Update()
     self:_RefreshProgress()
+    self:_RefreshProgressPoint()
 
     local playDialogues = {}
 
@@ -563,7 +564,7 @@ function XUiSkyGardenSGDroneGame:_Update()
 
     self:_PlayDialogues(playDialogues)
 
-    self._TimeDetail = self._TimeDetail + 1
+    self._TimeDetail = self._TimeDetail + 0.5
 end
 
 function XUiSkyGardenSGDroneGame:_InitUi()

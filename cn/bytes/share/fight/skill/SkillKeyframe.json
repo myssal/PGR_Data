@@ -123834,10 +123834,10 @@
         "Key": [
             "6|Cast|10460102",
             "6|Cast|10460103",
-            "5|Effect|FxR4LuosaitaAtk01||2;0|||||||||",
-            "4|Effect|FxR4LuosaitaAtk01Chong||2;0|||||||||",
-            "1|Magic|104620|0|",
-            "41|Magic|104630|0|"
+            "3|Effect|FxR4LuosaitaAtk01||2;0|||||||||",
+            "3|Effect|FxR4LuosaitaAtk01Chong||2;0|||||||||",
+            "1|Magic|104631|0|",
+            "18|Magic|104630|0|"
         ],
         "Condition": [
             "!2002910",
@@ -123859,13 +123859,17 @@
             "4|Effect|FxR4LuosaitaAtk02A||2;0|||||||||",
             "4|Magic|104617|0|",
             "4|Magic|104619|0|",
-            "4|Magic|154651|0|"
+            "4|Magic|154651|0|",
+            "1|Magic|104631|0|",
+            "12|Magic|104630|0|"
         ],
         "Condition": [
             "!2002910",
             "!2002910",
             2002910,
             2002910,
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -123876,28 +123880,24 @@
     {
         "Id": 104603,
         "Key": [
-            "43|Magic|104630|0|",
             "4|Cast|10460302",
             "8|Cast|10460303",
             "11|Cast|10460304",
             "4|Cast|10460305",
             "8|Cast|10460306",
             "11|Cast|10460307",
-            "1|Magic|104620|0|",
-            "3|Effect|FxR4LuosaitaAtk03A||2;0|||||||||",
-            "10|Effect|FxR4LuosaitaAtk03B||2;0|||||||||",
+            "3|Effect|FxR4LuosaitaAtk03A||2;0|||0|0|||||",
+            "10|Effect|FxR4LuosaitaAtk03B||2;0|||0||||||",
             "0|SetActiveGravity|2.5",
-            "7|SetSkillSpeedY|104603|1|4|13|0.2"
+            "9|SetSkillSpeedY|104603|1|4|45|0.05"
         ],
         "Condition": [
-            "nil",
             "!2002910",
             "!2002910",
             "!2002910",
             2002910,
             2002910,
             2002910,
-            "nil",
             "nil",
             "nil",
             "nil",
@@ -123915,13 +123915,17 @@
             "9|Effect|FxR4LuosaitaAtk05Dilie;0;0;1;0;0;0||2;0|||0|0|0||||",
             "10|Move|10|0.15|||",
             "0|Magic|156541|0|",
-            "8|Cast|10460411"
+            "8|Cast|10460411",
+            "0|SetActiveGravity|2",
+            "8|SetSkillSpeedY|104604|1|4|-999|0.05"
         ],
         "Condition": [
             "!2002910",
             "!2002910",
             2002910,
             2002910,
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -124353,7 +124357,7 @@
         "Id": 104617,
         "Key": [
             "8|Magic|100094|0|",
-            "0|Effect|FxR3LuosaitaMove01|1||||||||||",
+            "0|Effect|FxR4LuosaitaMove01|1||||||||||",
             "0|SetActiveGravity|0.6"
         ],
         "Condition": [
@@ -124366,7 +124370,7 @@
         "Id": 104618,
         "Key": [
             "8|Magic|100094|0|",
-            "0|Effect|FxR3LuosaitaMove02|1||||||||||",
+            "0|Effect|FxR4LuosaitaMove02|1||||||||||",
             "0|SetActiveGravity|0.6",
             "2|SetSkillSpeedY|10461705|1|4|22|0.15",
             "5|SetSkillSpeedY|10461705|1|4|-25|0.2"
@@ -124397,9 +124401,29 @@
         "Key": [
             "0|Magic|110563|0|",
             "0|Magic|110500|0|",
-            "0|Effect|FxR3LuosaitaWin||1|||||||||"
+            "0|Effect|FxR4LuosaitaWin01||1|||||||||",
+            "0|Effect|FxR4LuosaitaWinBip|Bip001|1|||||||||",
+            "5|Effect|FxR4LuosaitaPlanktonBoneLWin|planktonBoneL00|1|||||||||",
+            "5|Effect|FxR4LuosaitaPlanktonBoneRWin|planktonBoneR00|1|||||||||",
+            "99|Effect|FxR4LuosaitaBip001WinTrail|Bip001|1|||||||||",
+            "42|Effect|FxR4LuosaitaHindBoneL05WinFire|HindBoneL05|1|||||||||",
+            "42|Effect|FxR4LuosaitaHindBoneR05WinFire|HindBoneR05|1|||||||||",
+            "91|Effect|FxR4LuosaitaFireRHindBoneR07|HindBoneR07|1|||||||||",
+            "91|Effect|FxR4LuosaitaFireLHindBoneL07|HindBoneL07|1|||||||||",
+            "57|Effect|FxR4LuosaitaBip001WinTrail01|||||||||||",
+            "0|Effect|FxR4LuosaitaWinScene|||||||||||"
         ],
         "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -124464,15 +124488,15 @@
     {
         "Id": 104625,
         "Key": [
-            "4|Move|70|0.1|0||",
+            "4|Move|150|0.05|0||",
             "4|Turn|7200|0.05|1",
             "4|Magic|154650|0|",
             "6|Cast|10462505",
             "6|Cast|10462506",
-            "5|Effect|FxR4LuosaitaAtk01||1|||||||||",
-            "4|Effect|FxR4LuosaitaAtk01Chong||1|||||||||",
-            "1|Magic|104620|0|",
-            "41|Magic|104630|0|"
+            "3|Effect|FxR4LuosaitaAtk01|||||||||||",
+            "3|Effect|FxR4LuosaitaAtk01Chong||1|||||||||",
+            "1|Magic|104631|0|",
+            "18|Magic|104630|0|"
         ],
         "Condition": [
             "nil",
@@ -124526,7 +124550,7 @@
         "Key": [
             "0|Move|10|1|0||",
             "0|Turn|200|1|1",
-            "0|Magic|105637|0|",
+            "0|Magic|104683|0|",
             "0|SetActiveGravity|0.6"
         ],
         "Condition": [
@@ -124541,7 +124565,7 @@
         "Key": [
             "0|Move|10|1|0||",
             "0|Turn|200|1|1",
-            "0|Magic|105637|0|",
+            "0|Magic|104683|0|",
             "0|SetActiveGravity|0.6"
         ],
         "Condition": [
@@ -124556,9 +124580,13 @@
         "Key": [
             "6|Effect|FxR4LuosaitaAtk12A|||||0.2|0.2|0.2||||",
             "11|Effect|FxR4LuosaitaAtk12B|||||0.2|0.2|0.2||||",
-            "0|SetActiveGravity|0.7"
+            "0|SetActiveGravity|0.7",
+            "0|Effect|FxR4LuosaitaAtk44Canying|||||||||||",
+            "0|Effect|FxR4LuosaitaAtk44TrailBip001|||||||||||"
         ],
         "Condition": [
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -124569,9 +124597,13 @@
         "Key": [
             "6|Effect|FxR4LuosaitaAtk12A|||||0.2|0.2|0.2||||",
             "11|Effect|FxR4LuosaitaAtk12B|||||0.2|0.2|0.2||||",
-            "0|SetActiveGravity|0.7"
+            "0|SetActiveGravity|0.7",
+            "0|Effect|FxR4LuosaitaAtk44Canying|||||||||||",
+            "0|Effect|FxR4LuosaitaAtk44TrailBip001|||||||||||"
         ],
         "Condition": [
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -124707,7 +124739,7 @@
             "2|Cast|10463504",
             "2|Cast|10463505",
             "0|Magic|105607|0|",
-            "3|Effect|FxR4LuosaitaAtk43||2;0|||||||||",
+            "0|Effect|FxR4LuosaitaAtk43Ti|||||||||||",
             "2|Cast|10463510",
             "-1|AddSkillBuff|10463513|806941|0",
             "0|Magic|104667|0|",
@@ -124741,7 +124773,8 @@
             "10|Magic|104671|0|",
             "0|Magic|174608|0|",
             "-1|AddSkillBuff|10463513|806941|0",
-            "2|Cast|10463615"
+            "2|Cast|10463615",
+            "0|Effect|FxR4LuosaitaAtk43Ti|||||||||||"
         ],
         "Condition": [
             "nil",
@@ -124754,6 +124787,7 @@
             1046600,
             "#1046160101=1",
             8069400,
+            "nil",
             "nil"
         ]
     },
@@ -124929,7 +124963,7 @@
             "1|Cast|10464504",
             "1|Cast|10464505",
             "0|Cast|10464507",
-            "0|Effect|FxR4LuosaitaAtk24|||||||||||",
+            "0|Effect|FxR4LuosaitaAtk24||||0|0|0|||||",
             "0|Effect|FxR4LuosaitaAtk2401|WeaponCase1||||||||||",
             "0|Effect|FxR4LuosaitaAtk24Wea|WeaponCase1||||||||||",
             "-1|AddSkillBuff|10464512|104675|0",
@@ -124956,7 +124990,7 @@
             "1|Cast|10464604",
             "1|Cast|10464605",
             "0|Cast|10464607",
-            "0|Effect|FxR4LuosaitaAtk24|||||||||||",
+            "0|Effect|FxR4LuosaitaAtk24||||0|0|0|||||",
             "0|Effect|FxR4LuosaitaAtk2401|WeaponCase1||||||||||",
             "0|Effect|FxR4LuosaitaAtk24Wea|WeaponCase1||||||||||",
             "-1|AddSkillBuff|10464612|104675|0",
@@ -124978,19 +125012,25 @@
     {
         "Id": 104647,
         "Key": [
-            "11|Cast|10464702|10464703",
-            "11|Cast|10464704|10464705",
-            "11|Cast|10464706|10464707",
-            "11|Cast|10464708|10464709",
-            "11|Effect|FxR4LuosaitaAtk25|||||0|0|0||||",
-            "11|Effect|FxR4LuosaitaAtk25Dilie|||||0|0|0||||",
-            "1|Magic|154610|0|"
+            "10|Cast|10464702|10464703",
+            "10|Cast|10464704|10464705",
+            "10|Cast|10464706|10464707",
+            "10|Cast|10464708|10464709",
+            "0|Effect|FxR4LuosaitaAtk2501|WeaponCase1||||||||||",
+            "9|Effect|FxR4LuosaitaAtk25|||||0|0|0||||",
+            "10|Effect|FxR4LuosaitaAtk25Dilie|||||0|0|0||||",
+            "1|Magic|154610|0|",
+            "-1|AddSkillBuff|10464717|104677|0",
+            "-1|AddSkillBuff|10464718|104678|0"
         ],
         "Condition": [
             "!2002910#10465901=0",
             "!2002910#10465901=1",
             "2002910#10465901=0",
             "2002910#10465901=1",
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil"
@@ -125076,9 +125116,13 @@
         "Id": 104652,
         "Key": [
             "0|Effect|FxR4LuosaitaAtk36|||||||||||",
-            "1|Magic|154610|0|"
+            "1|Magic|154610|0|",
+            "8|Cast|10465207",
+            "0|Effect|FxR4LuosaitaAtk2501|WeaponCase1||||||||||"
         ],
         "Condition": [
+            "nil",
+            "nil",
             "nil",
             "nil"
         ]
@@ -125091,7 +125135,7 @@
             "1|Cast|10465304",
             "1|Cast|10465305",
             "0|Cast|10465306",
-            "0|Effect|FxR4LuosaitaAtk37||1;0;0|||||||||",
+            "0|Magic|104682|0|",
             "0|Move|10|2|0||",
             "0|Turn|250|0.5|2",
             "1|Magic|154610|0|"
@@ -125111,19 +125155,35 @@
     {
         "Id": 104654,
         "Key": [
-            "6|Cast|10465401|10465402|10465403",
-            "6|Cast|10465404|10465405|10465406",
-            "6|Cast|10465407|10465408|10465409",
-            "6|Cast|10465410|10465411|10465412",
-            "10|Effect|FxR4LuosaitaAtk38|||||0|0|0||||",
-            "11|Effect|FxR4LuosaitaAtk38Dilie|||||0|0|0||||",
-            "0|Cast|10465416",
+            "9|Cast|10465401",
+            "11|Cast|10465402",
+            "13|Cast|10465403",
+            "9|Cast|10465404",
+            "11|Cast|10465405",
+            "13|Cast|10465406",
+            "9|Cast|10465407",
+            "11|Cast|10465408",
+            "13|Cast|10465409",
+            "9|Cast|10465410",
+            "11|Cast|10465411",
+            "13|Cast|10465412",
+            "9|Effect|FxR4LuosaitaAtk38|||||0|0|0||||",
+            "9|Effect|FxR4LuosaitaAtk38Dilie|||||0|0|0||||",
+            "3|Cast|10465416",
             "1|Magic|154610|0|"
         ],
         "Condition": [
             "!2002910#10465901=0",
+            "!2002910#10465901=0",
+            "!2002910#10465901=0",
+            "!2002910#10465901=1",
+            "!2002910#10465901=1",
             "!2002910#10465901=1",
             "2002910#10465901=0",
+            "2002910#10465901=0",
+            "2002910#10465901=0",
+            "2002910#10465901=1",
+            "2002910#10465901=1",
             "2002910#10465901=1",
             "nil",
             "nil",
@@ -125207,10 +125267,36 @@
         ]
     },
     {
-        "Id": 104662
+        "Id": 104662,
+        "Key": [
+            "8|Magic|100094|0|",
+            "0|Effect|FxR3LuosaitaMove01|1||||||||||",
+            "0|SetActiveGravity|0.6",
+            "0|Move|5|0.4|-4||"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil"
+        ]
     },
     {
-        "Id": 104663
+        "Id": 104663,
+        "Key": [
+            "8|Magic|100094|0|",
+            "0|Effect|FxR3LuosaitaMove02|1||||||||||",
+            "0|SetActiveGravity|0.6",
+            "2|SetSkillSpeedY|10461705|1|4|22|0.15",
+            "5|SetSkillSpeedY|10461705|1|4|-25|0.2"
+        ],
+        "Condition": [
+            "nil",
+            "nil",
+            "nil",
+            "nil",
+            "nil"
+        ]
     },
     {
         "Id": 104664
