@@ -200,6 +200,10 @@ function XUiDlcRelinkPopupEquipCompose:OnBtnComposeClick()
         return
     end
 
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
     local factorId = self._ChooseAttribute:GetAttrId() or 0
     local composeId = XTool.IsNumberValid(factorId) and 0 or self.ComposeId
 

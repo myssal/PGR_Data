@@ -140,6 +140,10 @@ function XUiDlcRelinkPopupResearch:OnBtnEnterClick()
         return
     end
 
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
     self._Control:RequestBuyExp(function()
         self:RefreshInfo()
         self:RefreshPropertyList()
