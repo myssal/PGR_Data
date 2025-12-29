@@ -307,7 +307,8 @@
     {
         "Key": "PVPNotOpenTips",
         "Values": [
-            "玩法未开启"
+            "玩法未开启",
+            "{0}日后开启"
         ]
     },
     {
@@ -404,45 +405,48 @@
         "Key": "PvpPopUpTitle",
         "Values": [
             "亡命死竞",
-            "第2赛季"
+            "全新赛季"
         ]
     },
     {
         "Key": "PvpPopUpContent1",
         "Values": [
-            "全新饰品系统",
-            "多样饰品，逆转死局"
+            "全新赛季内容",
+            "全新赛季内容"
         ]
     },
     {
         "Key": "PvpPopUpContent2",
         "Values": [
-            "全新铭牌奖励"
+            "全新赛季内容"
         ]
     },
     {
         "Key": "PvpPopUpContent3",
         "Values": [
-            "全新符纹强化系统"
+            "全新赛季奖励"
         ]
     },
     {
-        "Key": "PvpPopUpImgNameplate",
-        "Values": [
-            "Assets/Product/Texture/Atlas/UiNameplate/UiNameplateTheatre506.png"
-        ]
+        "Key": "PvpPopUpImgNameplate"
     },
     {
         "Key": "PvpPopUpImgRune",
         "Values": [
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecialSp.png"
+            "Assets/Product/Texture/Image/IconTools/IconConsumeTicF3.png"
         ]
     },
     {
-        "Key": "CrowModelOutLineShowCondition"
+        "Key": "CrowModelOutLineShowCondition",
+        "Values": [
+            1050238
+        ]
     },
     {
-        "Key": "CrowModelOutLineHideCondition"
+        "Key": "CrowModelOutLineHideCondition",
+        "Values": [
+            1050355
+        ]
     },
     {
         "Key": "TaskShopUpdateTips",
@@ -454,6 +458,123 @@
         "Key": "PopUpversion",
         "Values": [
             1
+        ]
+    },
+    {
+        "Key": "MissionLevelUpCostLinks",
+        "Values": [
+            "{0}",
+            "{0}/{1}",
+            "{0}/{1}/{2}",
+            "{0}/{1}/{2}/{3}",
+            "{0}/{1}/{2}/{3}/{4}",
+            "{0}/{1}/{2}/{3}/{4}/{5}"
+        ]
+    },
+    {
+        "Key": "MissionLevelUpCostHighLine",
+        "Values": [
+            "<color=#F9E6A5>{0}</color>"
+        ]
+    },
+    {
+        "Key": "MissionRewardLinks",
+        "Values": [
+            "{0}",
+            "{0}/{1}",
+            "{0}/{1}/{2}",
+            "{0}/{1}/{2}/{3}",
+            "{0}/{1}/{2}/{3}/{4}",
+            "{0}/{1}/{2}/{3}/{4}/{5}"
+        ]
+    },
+    {
+        "Key": "MissionRewardHighLine",
+        "Values": [
+            "<color=#EAC572>{0}</color>"
+        ]
+    },
+    {
+        "Key": "MissionLvFormat",
+        "Values": [
+            "Lv.{0}"
+        ]
+    },
+    {
+        "Key": "MissionMaxLevelLabel",
+        "Values": [
+            "已升至最高阶"
+        ]
+    },
+    {
+        "Key": "MissionCompleteLabel",
+        "Values": [
+            "已激活玛门的嘉赏"
+        ]
+    },
+    {
+        "Key": "MissionGridLevelLabel",
+        "Values": [
+            "lv.{0}",
+            "MAX"
+        ]
+    },
+    {
+        "Key": "MissionLevelUpNoEnoughGold",
+        "Values": [
+            "升阶所需的金币不足"
+        ]
+    },
+    {
+        "Key": "NoMissionTips",
+        "Values": [
+            "1回合后可接取委托",
+            "玛门事务所正在准备委托"
+        ]
+    },
+    {
+        "Key": "MissionGridTitle",
+        "Values": [
+            "委托",
+            "结算中"
+        ]
+    },
+    {
+        "Key": "MissonIsLockInBook",
+        "Values": [
+            "尚未发现"
+        ]
+    },
+    {
+        "Key": "MissionLevelUpNoTimes",
+        "Values": [
+            "当前回合已进行过一次嘉赏升阶"
+        ]
+    },
+    {
+        "Key": "PVPNotStartTips",
+        "Values": [
+            "{0}日后开启",
+            "未开启"
+        ]
+    },
+    {
+        "Key": "PVPReasonTips",
+        "Values": [
+            "{0}日后开启",
+            "赛季已开启"
+        ]
+    },
+    {
+        "Key": "MissionLevelUpInSkillSelectionPart",
+        "Values": [
+            "完成技能选择前，不能升阶嘉赏"
+        ]
+    },
+    {
+        "Key": "MissionFinishTipsInSkillChoicePart",
+        "Values": [
+            "完成技能选择后，将结算委托"
         ]
     }
 ]

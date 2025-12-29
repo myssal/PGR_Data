@@ -9,6 +9,7 @@ local Quaternion = CS.UnityEngine.Quaternion
 local XUiGridLuosaitaMemberArmy = XClass(XUiGridLuosaitaMember, "XUiGridLuosaitaMemberArmy")
 
 function XUiGridLuosaitaMemberArmy:OnStart()
+    self.RImgHead = self.RImgHead or self.Transform:FindTransform("RImgHead"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self:RegisterUiEvents()
 end
 
@@ -35,11 +36,14 @@ function XUiGridLuosaitaMemberArmy:Refresh(memberData)
         return
     end
 
+    local armyId = memberData:GetArmyId()
     local posId = memberData:GetPosId()
     local curHp = self._Control:GetPositionCurHp(posId)
     local curAttack = self._Control:GetPositionCurAttack(posId)
     self.TxtAttack.text = tostring(curAttack)
     self.TxtHP.text = tostring(curHp)
+    local head = self._Control:GetConfig():GetArmyHead(armyId)
+    self.RImgHead:SetRawImage(head)
 end
 
 function XUiGridLuosaitaMemberArmy:OnCharacterBeginDrag(eventData)

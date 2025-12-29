@@ -4,7 +4,9 @@
         "NpcId": 1051,
         "KeyId": 1,
         "SkillGroupList": [
-            "Attack"
+            "Attack",
+            "Attack_ex",
+            "Attack_Null"
         ]
     },
     {
@@ -20,7 +22,8 @@
         "NpcId": 1051,
         "KeyId": 14,
         "SkillGroupList": [
-            "Skill_1"
+            "Skill_1",
+            "Skill_1_end"
         ]
     },
     {
@@ -36,7 +39,8 @@
         "NpcId": 1051,
         "KeyId": 16,
         "SkillGroupList": [
-            "Skill_3"
+            "Skill_3",
+            "Skill_3_ex"
         ]
     },
     {
@@ -86,7 +90,7 @@
         "DefaultSkillGroup": "ball_null",
         "SkillGroupList": [
             "ball1",
-            "Ball1_1"
+            "ball1_1"
         ]
     },
     {
@@ -102,7 +106,7 @@
         "Id": 1052016,
         "NpcId": 1052,
         "KeyId": 16,
-        "DefaultSkillGroup": "Ball3_1",
+        "DefaultSkillGroup": "ball3_1",
         "SkillGroupList": [
             "ball3"
         ]
@@ -136,7 +140,10 @@
         "NpcId": 1053,
         "KeyId": 1,
         "SkillGroupList": [
-            "atk"
+            "atk",
+            "ExAtk",
+            "ExAtk1",
+            "ExAtk2"
         ]
     },
     {
@@ -160,7 +167,8 @@
         "NpcId": 1053,
         "KeyId": 15,
         "SkillGroupList": [
-            "sk2"
+            "sk2",
+            "ExSk2"
         ]
     },
     {
@@ -168,7 +176,8 @@
         "NpcId": 1053,
         "KeyId": 16,
         "SkillGroupList": [
-            "sk3"
+            "sk4H",
+            "sk4D"
         ]
     },
     {
@@ -176,7 +185,7 @@
         "NpcId": 1053,
         "KeyId": 17,
         "SkillGroupList": [
-            "sk4"
+            "sk3"
         ]
     },
     {
@@ -198,6 +207,227 @@
     {
         "Id": 1053090,
         "NpcId": 1053,
+        "KeyId": 90,
+        "SkillGroupList": [
+            "break"
+        ]
+    },
+    {
+        "Id": 1056001,
+        "NpcId": 1056,
+        "KeyId": 1,
+        "SkillGroupList": [
+            "Attack",
+            "Attack_ex",
+            "Attack_Null"
+        ]
+    },
+    {
+        "Id": 1056002,
+        "NpcId": 1056,
+        "KeyId": 2,
+        "SkillGroupList": [
+            "Dodge"
+        ]
+    },
+    {
+        "Id": 1056014,
+        "NpcId": 1056,
+        "KeyId": 14,
+        "SkillGroupList": [
+            "Skill_1",
+            "Skill_1_end"
+        ]
+    },
+    {
+        "Id": 1056015,
+        "NpcId": 1056,
+        "KeyId": 15,
+        "SkillGroupList": [
+            "Skill_2"
+        ]
+    },
+    {
+        "Id": 1056016,
+        "NpcId": 1056,
+        "KeyId": 16,
+        "SkillGroupList": [
+            "Skill_3",
+            "Skill_3_ex"
+        ]
+    },
+    {
+        "Id": 1056004,
+        "NpcId": 1056,
+        "KeyId": 4,
+        "SkillGroupList": [
+            "Ult"
+        ]
+    },
+    {
+        "Id": 1056090,
+        "NpcId": 1056,
+        "KeyId": 90,
+        "SkillGroupList": [
+            "QTE"
+        ]
+    },
+    {
+        "Id": 1056078,
+        "NpcId": 1056,
+        "KeyId": 78,
+        "SkillGroupList": [
+            "LimitSkill"
+        ]
+    },
+    {
+        "Id": 1057001,
+        "NpcId": 1057,
+        "KeyId": 1,
+        "SkillGroupList": [
+            "atk"
+        ]
+    },
+    {
+        "Id": 1057002,
+        "NpcId": 1057,
+        "KeyId": 2,
+        "SkillGroupList": [
+            "dodge"
+        ]
+    },
+    {
+        "Id": 1057014,
+        "NpcId": 1057,
+        "KeyId": 14,
+        "DefaultSkillGroup": "ball_null",
+        "SkillGroupList": [
+            "ball1",
+            "ball1_1",
+            "ball4",
+            "ball4_1"
+        ]
+    },
+    {
+        "Id": 1057015,
+        "NpcId": 1057,
+        "KeyId": 15,
+        "DefaultSkillGroup": "ball_null",
+        "SkillGroupList": [
+            "ball2",
+            "ball2_1",
+            "ball5",
+            "ball5_1",
+            "ball6",
+            "ball6_1"
+        ]
+    },
+    {
+        "Id": 1057016,
+        "NpcId": 1057,
+        "KeyId": 16,
+        "DefaultSkillGroup": "ball3_1",
+        "SkillGroupList": [
+            "ball3"
+        ]
+    },
+    {
+        "Id": 1057004,
+        "NpcId": 1057,
+        "KeyId": 4,
+        "SkillGroupList": [
+            "exskill"
+        ]
+    },
+    {
+        "Id": 1057090,
+        "NpcId": 1057,
+        "KeyId": 90,
+        "SkillGroupList": [
+            "breakqte"
+        ]
+    },
+    {
+        "Id": 1057078,
+        "NpcId": 1057,
+        "KeyId": 78,
+        "SkillGroupList": [
+            "limitskill"
+        ]
+    },
+    {
+        "Id": 1058001,
+        "NpcId": 1058,
+        "KeyId": 1,
+        "SkillGroupList": [
+            "atk",
+            "ExAtk",
+            "ExAtk1",
+            "ExAtk2"
+        ]
+    },
+    {
+        "Id": 1058002,
+        "NpcId": 1058,
+        "KeyId": 2,
+        "SkillGroupList": [
+            "dash"
+        ]
+    },
+    {
+        "Id": 1058014,
+        "NpcId": 1058,
+        "KeyId": 14,
+        "SkillGroupList": [
+            "sk1",
+            "ExSk1"
+        ]
+    },
+    {
+        "Id": 1058015,
+        "NpcId": 1058,
+        "KeyId": 15,
+        "SkillGroupList": [
+            "sk2",
+            "ExSk2"
+        ]
+    },
+    {
+        "Id": 1058016,
+        "NpcId": 1058,
+        "KeyId": 16,
+        "SkillGroupList": [
+            "sk4H",
+            "sk4D"
+        ]
+    },
+    {
+        "Id": 1058017,
+        "NpcId": 1058,
+        "KeyId": 17,
+        "SkillGroupList": [
+            "sk3"
+        ]
+    },
+    {
+        "Id": 1058004,
+        "NpcId": 1058,
+        "KeyId": 4,
+        "SkillGroupList": [
+            "ult"
+        ]
+    },
+    {
+        "Id": 1058078,
+        "NpcId": 1058,
+        "KeyId": 78,
+        "SkillGroupList": [
+            "limit"
+        ]
+    },
+    {
+        "Id": 1058090,
+        "NpcId": 1058,
         "KeyId": 90,
         "SkillGroupList": [
             "break"

@@ -318,6 +318,19 @@ function XUiSkyGardenSGDroneGame:OnGameRestoreComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+
+    local bullets = XSGDGInstance.Instance.ObjectManager:GetObjectsByTag("BulletDrone")
+    local stageRoot = XSGDGInstance.Instance.Engine.StageRoot
+
+    if not stageRoot then
+        return
+    end
+
+    XTool.LoopCollection(bullets, function(bullet)
+        if bullet.Transform.parent == stageRoot then
+            bullet:Disappear()
+        end
+    end)
 end
 
 function XUiSkyGardenSGDroneGame:OnGameRestartComplete()
@@ -327,6 +340,19 @@ function XUiSkyGardenSGDroneGame:OnGameRestartComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+
+    local bullets = XSGDGInstance.Instance.ObjectManager:GetObjectsByTag("BulletDrone")
+    local stageRoot = XSGDGInstance.Instance.Engine.StageRoot
+
+    if not stageRoot then
+        return
+    end
+
+    XTool.LoopCollection(bullets, function(bullet)
+        if bullet.Transform.parent == stageRoot then
+            bullet:Disappear()
+        end
+    end)
 end
 
 function XUiSkyGardenSGDroneGame:OnGameRelease()

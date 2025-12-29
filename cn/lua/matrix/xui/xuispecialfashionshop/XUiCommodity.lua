@@ -364,10 +364,16 @@ function XUiCommodity:OnBtnBuyClick()
                 end
             end)
 
-            self.Parent:OnBuySuccessCb()
+            self:OnBuySuccessCb()
         end)
     end
-    XMVCA.XShop:OpenFashionDetailUi(self.Id,buyData,{isWeaponFashion = self.IsWeaponFashion})
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion, updateCb = handler(self, self.OnBuySuccessCb) })
+end
+
+function XUiCommodity:OnBuySuccessCb()
+    if self.Parent and self.Parent.OnBuySuccessCb then
+        self.Parent:OnBuySuccessCb()
+    end
 end
 
 return XUiCommodity

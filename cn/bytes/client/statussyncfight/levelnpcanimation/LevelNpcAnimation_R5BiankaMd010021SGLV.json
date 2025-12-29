@@ -1,0 +1,476 @@
+[
+    {
+        "Name": "Walk",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Walk.anim"
+    },
+    {
+        "Name": "WalkStart",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/WalkStart.anim"
+    },
+    {
+        "Name": "WalkEnd",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 846125279,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop_Walk_L",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_L.anim"
+    },
+    {
+        "Name": "Stop_Walk_R",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -895785005,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Walk_R.anim"
+    },
+    {
+        "Name": "RunStart",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "RunStartEnd01",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 895008329,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "RunStartEnd01_L",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_L.anim"
+    },
+    {
+        "Name": "RunStartEnd01_R",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStartEnd01_R.anim"
+    },
+    {
+        "Name": "Run",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1391530821,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Run.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 1601072779,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop_Run_L",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_L.anim"
+    },
+    {
+        "Name": "Stop_Run_R",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": -162882405,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Run_R.anim"
+    },
+    {
+        "Name": "SprintStart",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/RunStart.anim"
+    },
+    {
+        "Name": "SprintStartEnd01",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": 0,
+        "BlendParameter": 714672925,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintStop.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Sprint",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": 0,
+        "BlendParameter": -1977151796,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintLeanL.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Sprint.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/SprintLeanR.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -20.0,
+            0.0,
+            20.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "SprintStop",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": 0,
+        "BlendParameter": -1989393594,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Stop_Sprint_L",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_L.anim"
+    },
+    {
+        "Name": "Stop_Sprint_R",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stop_Sprint_R.anim"
+    },
+    {
+        "Name": "Jumpsquat1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim"
+    },
+    {
+        "Name": "Jumprise1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim"
+    },
+    {
+        "Name": "Jumpchange1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpchange1.anim"
+    },
+    {
+        "Name": "Jumpfall1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpfall1.anim"
+    },
+    {
+        "Name": "Jumpfalling1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpfalling1.anim"
+    },
+    {
+        "Name": "Jumpdown1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown1.anim"
+    },
+    {
+        "Name": "Jumpsquat2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat2.anim"
+    },
+    {
+        "Name": "Jumprise2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise2.anim"
+    },
+    {
+        "Name": "Jumpchange2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpchange2.anim"
+    },
+    {
+        "Name": "Jumpfall2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpfall2.anim"
+    },
+    {
+        "Name": "Jumpfalling2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpfalling2.anim"
+    },
+    {
+        "Name": "Jumpdown2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown2.anim"
+    },
+    {
+        "Name": "Stand2",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stand2.anim"
+    },
+    {
+        "Name": "Stand1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Stand2.anim"
+    },
+    {
+        "Name": "Turn90L",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Turn90L.anim"
+    },
+    {
+        "Name": "Turn90R",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Turn90R.anim"
+    },
+    {
+        "Name": "IdleJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown11.anim"
+    },
+    {
+        "Name": "MoveJumpToStandHeavy",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpdown21.anim"
+    },
+    {
+        "Name": "FPJumpSquat",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": 0,
+        "BlendParameter": 587217167,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumpsquat1.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "FPJumpRise",
+        "Layer": "BaseLayer",
+        "MotionType": 1,
+        "SpeedParameter": 0,
+        "BlendParameter": -198437067,
+        "BlendTreeMotionClips": [
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim",
+            "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Jumprise1.anim"
+        ],
+        "BlendTreeMotionThresholds": [
+            0.0,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+        ],
+        "BlendTreeMotionTimeScales": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+        ]
+    },
+    {
+        "Name": "Cafe_Init_1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Cafe_Init_1.anim"
+    },
+    {
+        "Name": "Cafe_Drink_1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Cafe_Drink_1.anim"
+    },
+    {
+        "Name": "Cafe_Loop_1",
+        "Layer": "BaseLayer",
+        "MotionType": 0,
+        "SpeedParameter": 0,
+        "BlendParameter": 0,
+        "AnimationMotionClip": "Assets/Product/Role/DlcAnimation/BigWorld/Common/R5BiankaMdCommonSG/R5BiankaMdCommonSG/CommonLayer/Cafe_Loop_1.anim"
+    }
+]

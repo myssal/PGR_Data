@@ -232,15 +232,11 @@ end
 --endregion
 
 --region 块
--- 块是否全部通过
-function XMainLineLuosaitaControl:IsBlockPassed(blockId)
-    local posConfigs = self._Model:GetConfig():GetConfigPositionsByBlockId(blockId)
-    for _, posConfig in pairs(posConfigs) do
-        if not self:IsPositionPassed(posConfig.Id) then
-            return false
-        end
-    end
-    return true
+-- 块是否占领
+function XMainLineLuosaitaControl:IsBlockOccupied(blockId)
+    local sectionId = self:GetConfig():GetBlockSectionId(blockId)
+    local sectionInfo = self:GetSectionInfo(sectionId)
+    return sectionInfo:IsBlockOccupied(blockId)
 end
 
 -- 地块是否相邻
@@ -318,8 +314,8 @@ function XMainLineLuosaitaControl:IsCanMovePosition(startPosInfo, endPosInfo)
     
     -- 不同地块
     if startBlockId ~= endBlockId then
-        -- 当前地块未通关不可移去其他地块
-        if not self:IsBlockPassed(startBlockId) then
+        -- 当前地块未占领不可移去其他地块
+        if not self:IsBlockOccupied(startBlockId) then
             return false, self:GetConfig():GetConfigString("DragTips2", 1)
         end
 
@@ -327,7 +323,7 @@ function XMainLineLuosaitaControl:IsCanMovePosition(startPosInfo, endPosInfo)
         local isEdgPassed = false
         local edgBlockIds = self._Model:GetConfig():GetBlockEdgeBlocks(endBlockId)
         for _, edgBlockId in pairs(edgBlockIds) do
-            if self:IsBlockPassed(edgBlockId) then
+            if self:IsBlockOccupied(edgBlockId) then
                 isEdgPassed = true
                 break
             end

@@ -11,6 +11,10 @@ local ipairs = ipairs
 local XUiMainLineLuosaitaMain = XLuaUiManager.Register(XLuaUi, "UiMainLineLuosaitaMain")
 
 function XUiMainLineLuosaitaMain:OnAwake()
+    -- 先锋屏蔽成就和任务按钮
+    self.BtnAchievement.gameObject:SetActiveEx(false)
+    self.BtnMission.gameObject:SetActiveEx(false)
+    
     self.Arrow.gameObject:SetActiveEx(false)
     self.PanelFight.gameObject:SetActiveEx(false)
     self.PanelPositionDetail.gameObject:SetActiveEx(false)

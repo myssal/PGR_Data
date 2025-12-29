@@ -1355,7 +1355,7 @@ XNoticeManagerCreator = function()
             end
         end
         CS.XRecord.Record("24004", "RequestLoginNoticeStart")
-        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb, RequestInterval[XNoticeType.Login])
+        XNoticeManager.RequestNotice(XNoticeType.Login, requestCb, requestCb)
     end
 
     function XNoticeManager.AutoOpenLoginNotice()
@@ -1887,10 +1887,13 @@ XNoticeManagerCreator = function()
         --if ((not nowTime) or (not noticeType) or (not interval)) then
         --    XLog.Warning("XNoticeManager nowTime", nowTime,"noticeType", noticeType,"LastRequestTime", LastRequestTime[noticeType],"interval", interval)
         --end
-        if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
-                and nowTime - LastRequestTime[noticeType] < interval then
-            if unaskedCb then unaskedCb() end
-            return
+        -- 兼容 interval 为 0 的情况：如果 interval 为 0 或 nil，不进行时间间隔检查，直接请求
+        if interval and interval > 0 then
+            if LastRequestTime[noticeType] and LastRequestTime[noticeType] > 0
+                    and nowTime - LastRequestTime[noticeType] < interval then
+                if unaskedCb then unaskedCb() end
+                return
+            end
         end
         LastRequestTime[noticeType] = nowTime
 

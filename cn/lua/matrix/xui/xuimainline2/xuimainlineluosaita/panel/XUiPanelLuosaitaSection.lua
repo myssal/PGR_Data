@@ -15,6 +15,11 @@ local DOTween = CS.DG.Tweening.DOTween
 local XUiPanelLuosaitaSection = XClass(XUiNode, "XUiPanelLuosaitaSection")
 
 function XUiPanelLuosaitaSection:OnStart(sectionId)
+    -- 先锋空花按钮
+    if self.BtnSkyGarden then
+        self.BtnSkyGarden.gameObject:SetActiveEx(false)
+    end
+    
     self:RegisterUiEvents()
     
     for i = 0, self.PanelBlock.childCount - 1 do

@@ -1,0 +1,224 @@
+[
+    {
+        "Id": 101,
+        "Name": "地块1",
+        "SectionId": 1,
+        "UiNodeName": "Block1",
+        "EdgeBlocks": [
+            102
+        ]
+    },
+    {
+        "Id": 102,
+        "Name": "地块2",
+        "SectionId": 1,
+        "UiNodeName": "Block2",
+        "EdgeBlocks": [
+            101,
+            103
+        ]
+    },
+    {
+        "Id": 103,
+        "Name": "地块3",
+        "SectionId": 1,
+        "UiNodeName": "Block3",
+        "EdgeBlocks": [
+            102,
+            104
+        ]
+    },
+    {
+        "Id": 104,
+        "Name": "地块4",
+        "SectionId": 1,
+        "UiNodeName": "Block4",
+        "EdgeBlocks": [
+            103,
+            105
+        ]
+    },
+    {
+        "Id": 105,
+        "Name": "地块5",
+        "SectionId": 1,
+        "UiNodeName": "Block5",
+        "EdgeBlocks": [
+            106,
+            108,
+            104
+        ]
+    },
+    {
+        "Id": 106,
+        "Name": "地块6",
+        "SectionId": 1,
+        "UiNodeName": "Block6",
+        "EdgeBlocks": [
+            105,
+            107
+        ]
+    },
+    {
+        "Id": 107,
+        "Name": "地块7",
+        "SectionId": 1,
+        "UiNodeName": "Block7",
+        "EdgeBlocks": [
+            106
+        ]
+    },
+    {
+        "Id": 108,
+        "Name": "地块8",
+        "SectionId": 1,
+        "UiNodeName": "Block8",
+        "EdgeBlocks": [
+            105,
+            109
+        ]
+    },
+    {
+        "Id": 109,
+        "Name": "地块9",
+        "SectionId": 1,
+        "UiNodeName": "Block9",
+        "EdgeBlocks": [
+            108,
+            110
+        ]
+    },
+    {
+        "Id": 110,
+        "Name": "地块10",
+        "SectionId": 1,
+        "UiNodeName": "Block10",
+        "EdgeBlocks": [
+            109
+        ]
+    },
+    {
+        "Id": 201,
+        "Name": "地块1",
+        "SectionId": 2,
+        "UiNodeName": "Block1",
+        "EdgeBlocks": [
+            202,
+            209,
+            208,
+            205
+        ]
+    },
+    {
+        "Id": 202,
+        "Name": "地块2",
+        "SectionId": 2,
+        "UiNodeName": "Block2",
+        "EdgeBlocks": [
+            201,
+            203,
+            209
+        ]
+    },
+    {
+        "Id": 203,
+        "Name": "地块3",
+        "SectionId": 2,
+        "UiNodeName": "Block3",
+        "EdgeBlocks": [
+            202,
+            204,
+            209,
+            210
+        ]
+    },
+    {
+        "Id": 204,
+        "Name": "地块4",
+        "SectionId": 2,
+        "UiNodeName": "Block4",
+        "EdgeBlocks": [
+            203
+        ]
+    },
+    {
+        "Id": 205,
+        "Name": "地块5",
+        "SectionId": 2,
+        "UiNodeName": "Block5",
+        "EdgeBlocks": [
+            201,
+            208,
+            206
+        ]
+    },
+    {
+        "Id": 206,
+        "Name": "地块6",
+        "SectionId": 2,
+        "UiNodeName": "Block6",
+        "EdgeBlocks": [
+            205,
+            207
+        ]
+    },
+    {
+        "Id": 207,
+        "Name": "地块7",
+        "SectionId": 2,
+        "UiNodeName": "Block7",
+        "EdgeBlocks": [
+            208,
+            206,
+            211
+        ]
+    },
+    {
+        "Id": 208,
+        "Name": "地块8",
+        "SectionId": 2,
+        "UiNodeName": "Block8",
+        "EdgeBlocks": [
+            207,
+            205,
+            201,
+            209,
+            211
+        ]
+    },
+    {
+        "Id": 209,
+        "Name": "地块9",
+        "SectionId": 2,
+        "UiNodeName": "Block9",
+        "EdgeBlocks": [
+            210,
+            208,
+            201,
+            202,
+            203
+        ]
+    },
+    {
+        "Id": 210,
+        "Name": "地块10",
+        "SectionId": 2,
+        "UiNodeName": "Block10",
+        "EdgeBlocks": [
+            211,
+            209,
+            203
+        ]
+    },
+    {
+        "Id": 211,
+        "Name": "地块11",
+        "SectionId": 2,
+        "UiNodeName": "Block11",
+        "EdgeBlocks": [
+            208,
+            207,
+            210
+        ]
+    }
+]

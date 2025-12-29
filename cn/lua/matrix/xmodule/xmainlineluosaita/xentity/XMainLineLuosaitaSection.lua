@@ -35,6 +35,12 @@ function XMainLineLuosaitaSection:GetBlockInfo(blockId)
     return blockInfo
 end
 
+-- 获取块是否占领
+function XMainLineLuosaitaSection:IsBlockOccupied(blockId)
+    local blockInfo = self:GetBlockInfo(blockId)
+    return blockInfo:IsOccupied()
+end
+
 -- 获取位置数据哈希表
 ---@return table<number, XMainLineLuosaitaPositionInfo>
 function XMainLineLuosaitaSection:GetPositionInfoDic()

@@ -8,6 +8,7 @@ local XUiGridLuosaitaMember = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid
 local XUiGridLuosaitaMemberEnemy = XClass(XUiGridLuosaitaMember, "XUiGridLuosaitaMemberEnemy")
 
 function XUiGridLuosaitaMemberEnemy:OnStart()
+    self.RImgHead = self.RImgHead or self.Transform:FindTransform("RImgHead"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self:RegisterUiEvents()
 end
 
@@ -33,6 +34,8 @@ function XUiGridLuosaitaMemberEnemy:Refresh(posInfo)
     local curHp = self._Control:GetPositionCurHp(posId)
     local curAttack = self._Control:GetPositionCurAttack(posId)
 
+    local head = self._Control:GetConfig():GetEnemyHead(enemyId)
+    self.RImgHead:SetRawImage(head)
     self.TxtAttack.text = tostring(curAttack)
     self.TxtHP.text = tostring(curHp)
     local docIds = self.UiMain._Control:GetConfig():GetEnemyDocIds(enemyId)

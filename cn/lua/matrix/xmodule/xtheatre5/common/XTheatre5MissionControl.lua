@@ -61,10 +61,13 @@ function XTheatre5MissionControl:GetCurMissionItemId()
 end
 
 function XTheatre5MissionControl:GetMatchEnemyMissionData()
-    local enemeyData = self._Model.CurAdventureData:GetCurMatchedEnemy()
+    -- pvp和pve的匹配敌人数据结构不一样
+    if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+        local enemeyData = self._Model.CurAdventureData:GetCurMatchedEnemy()
 
-    if enemeyData then
-        return enemeyData.MissionId, enemeyData.MissionBountyLevel, enemeyData.MissionRelicId
+        if enemeyData then
+            return enemeyData.MissionId, enemeyData.MissionBountyLevel, enemeyData.MissionRelicId
+        end
     end
 end
 --endregion

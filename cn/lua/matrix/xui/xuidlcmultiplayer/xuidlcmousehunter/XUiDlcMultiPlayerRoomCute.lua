@@ -112,6 +112,7 @@ function XUiDlcMultiPlayerRoomCute:OnStart()
 
     self:_InitRoom()
     self:_InitScene()
+    self:CheckGuide()
 end
 
 function XUiDlcMultiPlayerRoomCute:OnEnable()
@@ -394,6 +395,9 @@ end
 function XUiDlcMultiPlayerRoomCute:_RegisterSchedules()
     -- 在此处注册定时器
     self:_RegisterActivityTimer()
+    if self.CheckGuideTimeId then
+        XScheduleManager.UnSchedule(self.CheckGuideTimeId)
+    end
 end
 
 function XUiDlcMultiPlayerRoomCute:_RemoveSchedules()
@@ -855,6 +859,20 @@ end
 
 function XUiDlcMultiPlayerRoomCute:_PlayAnimation(callback)
     self:PlayAnimation("Enable", callback)
+end
+
+function XUiDlcMultiPlayerRoomCute:CheckGuide()
+    local guideId = 64431 --todo 临时写死躲猫猫首次进入引导
+    if not XDataCenter.GuideManager.CheckIsGuide(guideId) then
+        self.CheckGuideTimeId = XScheduleManager.ScheduleForever(function()
+            if not XLuaUiManager.IsUiShow("UiLoading") then
+                local template = XDataCenter.GuideManager.GetGuideGroupTemplatesById(guideId)
+                if XDataCenter.GuideManager.TryActiveGuide(template) then
+                    XScheduleManager.UnSchedule(self.CheckGuideTimeId)
+                end
+            end
+        end, 10, 100)
+    end
 end
 
 -- endregion
