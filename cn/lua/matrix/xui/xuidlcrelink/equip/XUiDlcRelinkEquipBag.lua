@@ -147,11 +147,8 @@ function XUiDlcRelinkEquipBag:EnsureInitialSelection()
     local hasAnyEquip = not XTool.IsTableEmpty(unWeareEquipUids)
 
     if hasAnyEquip then
-        -- 情况2：背包有装备，选中背包第一件
-        local _, occupationType = self:FindFirstAvailableBagEquip(unWeareEquipUids)
-        if XTool.IsNumberValid(occupationType) then
-            self.DefaultSelectTabIndex = occupationType
-        end
+        -- 情况2：背包有装备，选中全部页签第一件
+        self.DefaultSelectTabIndex = 0
     else
         -- 情况3：背包无装备，按优先级找已穿戴
         local slot, uid = self:FindFirstWornEquipByPriority()
@@ -215,13 +212,11 @@ function XUiDlcRelinkEquipBag:OnEquipSlotCallBack(grid)
         return
     end
     self:SetCurrentSlot(slotIndex)
-    -- 重置职业选择并刷新列表
+    local defaultIndex = self.CurSelectTabIndex
+    if defaultIndex < 0 then
+        defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
+    end
     self.CurSelectTabIndex = -1
-    self.CurSelectEquipUid = 0
-    self.CurSelectGrid = nil
-    self.EquipFilterCache = {}
-
-    local defaultIndex = self:GetDefaultSelectEquipOccupationIndex()
     self.PanelTab:SelectIndex(defaultIndex)
 end
 
@@ -308,6 +303,7 @@ function XUiDlcRelinkEquipBag:RefreshEquipTotalAttribute()
         end
         grid:Open()
         grid:CustomRefresh(attribute)
+        grid:SetBg(index % 2 ~= 0)
     end
 
     for i = #totalAttributes + 1, #self.EquipTotalAttributeGridList do

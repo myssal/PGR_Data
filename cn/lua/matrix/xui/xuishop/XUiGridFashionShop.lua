@@ -70,6 +70,9 @@ function XUiGridFashionShop:OnBtnBuyClick()
         end
 
         XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function(res)
+            if XTool.UObjIsNil(self.ImgSellOut) then
+                return
+            end
             self:RefreshSellOut()
             self:RefreshCondition()
             self:RefreshOnSales()

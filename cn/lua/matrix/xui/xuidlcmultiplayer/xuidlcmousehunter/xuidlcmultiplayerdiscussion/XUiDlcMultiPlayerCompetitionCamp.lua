@@ -13,7 +13,7 @@ local LeftColorGroup = {
     },
     disableGroup = {
         "908e82",
-        "5e7fbc",
+        "5e7f6c",
         "9a9790",
         "8e8b85"
     },
@@ -38,7 +38,7 @@ local RightColorGroup = {
         "fff9e8",
         "ebe4d6"
     },
-    diableGroup = {
+    disableGroup = {
         "96907f",
         "9c8266",
         "9e9a90",
@@ -60,17 +60,12 @@ local RightColorGroup = {
 }
 function XUiDlcMultiPlayerCompetitionCamp:OnStart(camp)
     self._CurCamp = camp
-    if camp == 1 then
+    if camp == CampEnum.Camp1 then
         self.ColorGroup = LeftColorGroup
     else
         self.ColorGroup = RightColorGroup
     end
     self.TxtDiscussionSupport.text = XUiHelper.GetText("MultiMouseHunterChoice")
-
-    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[1])
-    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[2])
-    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[3])
-    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[4])
 end
 
 -- 根据阵营设置标题和描述
@@ -113,6 +108,17 @@ function XUiDlcMultiPlayerCompetitionCamp:_SetRateByCamp(discussion, mode)
     end
 end
 
+function XUiDlcMultiPlayerCompetitionCamp:SetNormalStyle(discussion)
+    if discussion:GetPlayerCamp() and discussion:GetPlayerCamp() ~= 0 then
+        self:_ApplyTitleStyle(discussion:GetPlayerCamp() == self._CurCamp)
+        return
+    end
+    self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[1])
+    self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[2])
+    self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[3])
+    self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.normalGroup[4])
+end
+
 -- 设置标题样式（颜色、轮廓、引号）
 function XUiDlcMultiPlayerCompetitionCamp:_ApplyTitleStyle(isSelected, addQuotes, mode)
     if not mode then
@@ -121,11 +127,23 @@ function XUiDlcMultiPlayerCompetitionCamp:_ApplyTitleStyle(isSelected, addQuotes
             self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[2])
             self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[3])
             self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.selectGroup[4])
+            if self._CurCamp == CampEnum.Camp1 then
+                self.Parent.BtnBlue:SetDisable(false)
+            
+            else
+                self.Parent.BtnRed:SetDisable(false)
+            end
         else
             self.TxtDiscussionRate.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[1])
             self.TxtDiscussionTitle2.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[2])
             self.TxtDiscussionTitle.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[3])
             self.SupportTxt.color = XUiHelper.Hexcolor2Color(self.ColorGroup.disableGroup[4])
+            if self._CurCamp == CampEnum.Camp1 then
+                self.Parent.BtnBlue:SetDisable(true)
+            
+            else
+                self.Parent.BtnRed:SetDisable(true)
+            end
         end
     end
 

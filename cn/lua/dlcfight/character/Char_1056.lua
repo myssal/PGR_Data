@@ -458,6 +458,9 @@ end
 
 function XCharR5Lucia2:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     Base.OnNpcAddBuffEvent(self, casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if npcUUID ~= self._uuid then
+        return
+    end
     if (buffId == 10513101) then
         --切换动画层
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
@@ -539,7 +542,7 @@ function XCharR5Lucia2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
         end
     end
     --判断自己
-    if not npcUUID == self._uuid then
+    if npcUUID ~= self._uuid then
         return
     end
     if (buffId == 10513101) then
@@ -727,7 +730,10 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
-                if not self._proxy:CheckBuffByKind(eventArgs.Target, 10511034) then
+                if eventArgs.Id == 1056021 then
+                    return
+                end
+                if not self._proxy:CheckBuffByKind(self._uuid, 10511034) then
                     self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056021)
                     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511034)
                 end
@@ -746,7 +752,10 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
-                if not self._proxy:CheckBuffByKind(eventArgs.Target, 10511034) then
+                if eventArgs.Id == 1056021 then
+                    return
+                end
+                if not self._proxy:CheckBuffByKind(self._uuid, 10511034) then
                     self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056021)
                     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511034)
                 end
@@ -780,6 +789,9 @@ end
 --极限闪避处理
 function XCharR5Lucia2:OnNpcDodge(SourceUUID, AttackerUUID, Type)
     Base.OnNpcDodge(self, SourceUUID, AttackerUUID, Type)
+    if (SourceUUID ~= self._uuid) then
+        return
+    end
     if self._DodgeEffect == false then
         return
     end

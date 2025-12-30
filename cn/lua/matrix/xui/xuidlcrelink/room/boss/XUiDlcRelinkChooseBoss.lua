@@ -176,17 +176,10 @@ function XUiDlcRelinkChooseBoss:OnBtnBackClick()
     self:Close()
 end
 
-function XUiDlcRelinkChooseBoss:OnBtnTeachingClick()
-    local levelId = self._Control:GetTeachingLevelId()
-    local chapterId = self._Control:GetLevelChapterId(levelId)
-    self._Control:SetCurrentSelectLevelData(chapterId, levelId)
-    self:Close()
-end
-
-function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
+function XUiDlcRelinkChooseBoss:SelectSpecialLevel(levelId)
     local isNeedQuit = false
     if XMVCA.XDlcRoom:IsInRoom() then
-        --房间内有其他玩家时，无法选择训练关
+        --房间内有其他玩家时，无法选择训练关\教学关
         local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
         if team and team:GetMemberAmount() > 1 then
             self._Control:OpenCommonTipText("SelectTrainingTip")
@@ -196,7 +189,6 @@ function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
         isNeedQuit = true
     end
 
-    local levelId = self._Control:GetTrainingLevelId()
     local chapterId = self._Control:GetLevelChapterId(levelId)
     self._Control:SetCurrentSelectLevelData(chapterId, levelId)
 
@@ -205,6 +197,14 @@ function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
     else
         self:Close()
     end
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTeachingClick()
+    self:SelectSpecialLevel(self._Control:GetTeachingLevelId())
+end
+
+function XUiDlcRelinkChooseBoss:OnBtnTrainingClick()
+    self:SelectSpecialLevel(self._Control:GetTrainingLevelId())
 end
 
 return XUiDlcRelinkChooseBoss

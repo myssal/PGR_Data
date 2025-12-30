@@ -104,18 +104,23 @@ function XTheatre5MissionControl:GetTableMissionConditionDescById(id, notips)
         if string.find(cfg.Desc, '{.+}') then
             local fixedDesc = cfg.Desc
             
-            -- 插值规则是直接用表头
-            for key, valType in pairs(XTable.XTableTheatre5MissionCondition) do
-                -- 需要判断是值还是表
-                if type(cfg[key]) == 'table' then
-                    -- 表的话需要遍历
-                    for i, v in pairs(cfg[key]) do
-                        local format = '{' .. tostring(key) .. '%[' .. tostring(i) .. '%]}'
-                        fixedDesc = string.gsub(fixedDesc, format, tostring(v))
+            -- 获取配置到配置表里的表头定义
+            local fieldNames = self._Model:GetTheatre5ClientConfigTextArray('Theatre5MissionConditionTableDefine')
+
+            if not XTool.IsTableEmpty(fieldNames) then
+                -- 插值规则是直接用表头
+                for _, key in pairs(fieldNames) do
+                    -- 需要判断是值还是表
+                    if type(cfg[key]) == 'table' then
+                        -- 表的话需要遍历
+                        for i, v in pairs(cfg[key]) do
+                            local format = '{' .. tostring(key) .. '%[' .. tostring(i) .. '%]}'
+                            fixedDesc = string.gsub(fixedDesc, format, tostring(v))
+                        end
+                    else
+                        -- 值的话直接替换
+                        fixedDesc = string.gsub(fixedDesc, '{' .. tostring(key) .. '}', tostring(cfg[key]))
                     end
-                else
-                    -- 值的话直接替换
-                    fixedDesc = string.gsub(fixedDesc, '{' .. tostring(key) .. '}', tostring(cfg[key]))
                 end
             end
             

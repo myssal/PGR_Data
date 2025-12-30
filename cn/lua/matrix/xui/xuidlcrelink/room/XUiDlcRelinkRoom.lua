@@ -650,13 +650,6 @@ function XUiDlcRelinkRoom:OnBtnCreateClick()
     end
 
     if self._Control:IsTutorialChapter() then
-        local title = self._Control:GetClientConfig("TipTitle")
-        local msg = self._Control:GetClientConfig("TrainingCreateRoomTip")
-        local extraData = { TipsKey = "TrainingLevelCreateRoom" }
-        self._Control:OpenCommonTipDialog(title, msg, nil, function()
-            self._Control:SetCurrentSelectLevelData(nil)
-            self:OnBtnCreateClick()
-        end, extraData)
         return
     end
 

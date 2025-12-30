@@ -250,6 +250,7 @@ end
 function XUiPanelDlcRelinkCharacterRight:OnBtnSwitchClick()
     XLuaUiManager.Open("UiDlcRelinkPopupSwitchCareer", self.CharacterId, self.StyleType, function()
         self.StyleType = self._Control:GetStyleTypeByCharacterId(self.CharacterId)
+        self:RefreshInfo()
         self:RefreshBtn()
     end)
 end

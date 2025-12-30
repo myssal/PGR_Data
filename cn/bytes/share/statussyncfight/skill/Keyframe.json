@@ -1949,7 +1949,7 @@
             "999|||Missile|10511104|10511104||||",
             "999|||Missile|10511105|10511105||||",
             "0.15|||MoveXZ|4|0.1|0.5|40|-30|0|1|",
-            "0|||Magic|10511108||",
+            "0||1|Magic|10511108||",
             "0|1051105|1;0|Magic|10511053||",
             "0.8|1051105|0;1|Magic|10511054||",
             "0.5|||PopInputCache"
@@ -2287,7 +2287,8 @@
             "1.1|||Magic|10510512||",
             "0.4|||Magic|10510513||",
             "1.1|||BindEffect|FxR5LuxiyaAtk05Hit||0|0|0||0,0,2||||||||||",
-            "0.8|1051001||Magic|1051037||"
+            "0.8|1051001||Magic|1051037||",
+            "0||1|Magic|10519113||"
         ]
     },
     {
@@ -2369,7 +2370,8 @@
             "0.85|||MoveXZ|4|0.1|0.5|20|-20|0||",
             "0.4|||LookAt|250|0.2|2|",
             "0.7|||LookAt|2500|0.1|2|",
-            "0.6|1051001||Magic|1051044||"
+            "0.6|1051001||Magic|1051044||",
+            "0||1|Magic|10519113||"
         ]
     },
     {
@@ -5181,8 +5183,9 @@
             "0|||Magic|105303010||",
             "0.85|||Magic|1053030101||",
             "0.85|||Magic|105305002||",
-            "0.85|10535001||Magic|10530802||",
-            "0.85|10580005||Magic|10530803||",
+            "0.85|10535001|1;1|Magic|10530802||",
+            "0.85|10580005|1;1|Magic|10530803||",
+            "0.85|10580005|1;1|Magic|10530811||",
             "1|||PopInputCache"
         ]
     },
@@ -5253,17 +5256,18 @@
             "0|||LookAt|240|1.5|1|",
             "0|||BindEffect|FxR4LifuMd010031Attack61GlowBone001||1|0|||||||||||||1,105301,Bone001",
             "0|||BindEffect|FxR4LifuMd010031Attack61XuliBone001||1|1|||||||||||||1,105301,Bone001",
-            "0.73|||BindEffect|FxR4LifuMd010031Attack61Boo||1|1|||||||||||||",
+            "0.73|||BindEffect|FxR4LifuMd010031Attack61Boo||1|1|0|0|||||||||||",
             "0.73|||BindEffect|FxR4LifuMd010031Attack61Noise1|Bip001Pelvis|1|1|||||||||||||",
             "0.83|||BindEffect|FxR4LifuMd010031Attack61Noise2|WeaponCase2|1|0|||||||||||||",
             "0.83|||BindEffect|FxR4LifuMd010031Attack61Noise3|WeaponCase3|1|0|||||||||||||",
-            "1|||BindEffect|FxR4LifuMd010031Attack61Scene||1|0|||||||||||||",
+            "1|||BindEffect|FxR4LifuMd010031Attack61Scene||1|0|0|0|||||||||||",
             "0.73|||BindEffect|FxR4LifuMd010031Attack61Glow||1|1|||||||||||||",
             "0.35|||Magic|105301002||",
             "0.73|||Magic|105301003||",
             "0.73|||SendEvent|10533414|Skill34_teamAtkUp|1",
             "0.73|10531005||Magic|105305002||",
-            "0.73|10531005||Magic|1053050010||"
+            "0.73|10531005||Magic|1053050010||",
+            "0.73|10580005|1;1|Magic|10530810||"
         ]
     },
     {
@@ -5282,20 +5286,20 @@
             "0.6|||Magic|105301034||",
             "1.35|||Magic|105301035||",
             "0.6|||SendEvent|10534014|Skill31_healSelf|1",
-            "1.35|||SendEvent|10534015|Skill31_healTeam|1"
+            "1.35|||SendEvent|10534015|Skill31_healTeam|1",
+            "0.6|10580005|1;1|Magic|10530810||"
         ]
     },
     {
         "Id": 105341,
         "Key": [
-            "0|||BindEffect|FxR4LifuMd010031Attack71ShanXian||1|1|||||||||||||",
-            "0.05|||BindEffect|FxR4LifuMd010031Attack71ShanXianEnd||1|1|||||||||||||",
-            "0.1|||BindEffect|FxR4LifuMd010031Attack71hudunStat||1||||||||||||||",
-            "1.05|||BindEffect|FxR4LifuMd010031Attack71hudunLoop||1|1|||||||0|10|||||",
-            "2|||BindEffect|FxR4LifuMd010031Attack71baofa||1|1|||||||||||||",
-            "0.33|||BindEffect|FxR4LifuMd010031Attack71Xuli||1|1|||||||||||||",
-            "0.4|||BindEffect|FxR4LifuMd010031Attack71XuliBone001|Bone001|1|1|||||||||||||",
-            "0.33|||BindEffect|FxR4LifuMd010031Attack71Glow|Bip001RHand|1|1|||||||||||||",
+            "0|||BindEffect|FxR4LifuMd010031Attack71ShanXian|Bip001Pelvis|0|0|1||||||||||||",
+            "0.5|||BindEffect|FxR4LifuMd010031Attack71ShanXianEnd|Bip001Pelvis|0|0|1||||||||||||",
+            "0.1|||BindEffect|FxR4LifuMd010031Attack71hudunStat||0|1|0|0|||||||||||",
+            "2|||BindEffect|FxR4LifuMd010031Attack71baofa||0|1|0|0|||||||||||",
+            "0.33|||BindEffect|FxR4LifuMd010031Attack71Xuli||1|0|||||||||||||",
+            "0.4|||BindEffect|FxR4LifuMd010031Attack71XuliBone001|Bone001|1|0|||||||||||||",
+            "0.33|||BindEffect|FxR4LifuMd010031Attack71Glow|Bip001RHand|1|0|||||||||||||",
             "2|||Magic|105303008||",
             "2|||Magic|1053030081||",
             "1|||Missile|10534110|10534110|0|||",

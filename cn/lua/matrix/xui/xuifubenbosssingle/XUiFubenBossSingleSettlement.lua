@@ -589,7 +589,7 @@ function XUiFubenBossSingleSettlement:_RefreshTotalScoreRate()
     if totalRate > 0 then
         if self.TxtScoreAddPercent then
             self.TxtScoreAddPercent.gameObject:SetActiveEx(true)
-            self.TxtScoreAddPercent.text = string.format("+%.0f%%", totalRate / 100)
+            self.TxtScoreAddPercent.text = string.format("+%.1f%%", totalRate / 100)
         end
     end
 end

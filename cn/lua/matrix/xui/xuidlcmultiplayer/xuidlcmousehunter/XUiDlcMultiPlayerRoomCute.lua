@@ -395,15 +395,16 @@ end
 function XUiDlcMultiPlayerRoomCute:_RegisterSchedules()
     -- 在此处注册定时器
     self:_RegisterActivityTimer()
-    if self.CheckGuideTimeId then
-        XScheduleManager.UnSchedule(self.CheckGuideTimeId)
-    end
+
 end
 
 function XUiDlcMultiPlayerRoomCute:_RemoveSchedules()
     -- 在此处移除定时器
     self:_RemoveActivityTimer()
     self:_RemoveMatchingTimer()
+    if self.CheckGuideTimeId then
+        XScheduleManager.UnSchedule(self.CheckGuideTimeId)
+    end
 end
 
 function XUiDlcMultiPlayerRoomCute:_RegisterListeners()

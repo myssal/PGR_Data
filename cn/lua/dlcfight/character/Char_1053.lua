@@ -76,7 +76,6 @@ function XCharR4LivH:ScriptInit(isGainControl)
     self._skill31HealMagic = 105308002
     self._skill31HealMagicPro = 1053080021
     self._skill32HealMagic = 1053080022
-    self._skill32HealMagicPro = 1053080023
     self._ultHealMagicPro = 10530801
     self._limitHeal = 105308005
     --技能4增伤magicID
@@ -601,8 +600,8 @@ function XCharR4LivH:CoreManager(isAdd, count)
             local addCount = level - self._coreLevel  --用于决定后续核心magic要给多少层，第一风格的治疗子弹给多少个
             self._proxy:ApplyMagic(self._uuid, self._uuid, 105305001, 1, 0, addCount)
             self._proxy:ApplyMagic(self._uuid, self._uuid, 10530804, 1, 0, addCount) --核心层数自定义能量+1，用于UI表现
+            --第一风格逻辑：核心被动治疗【援助治疗】逻辑，筛查队友状态并建立队友列表，以队友为目标释放治疗子弹
             if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
-                --第一风格逻辑：核心被动治疗【援助治疗】逻辑，筛查队友状态并建立队友列表，以队友为目标释放治疗子弹
                 self:TeamListManager(1)
                 for i = 1, addCount do
                     for i, v in ipairs(self._teamList) do
@@ -630,7 +629,13 @@ function XCharR4LivH:CoreManager(isAdd, count)
     --核心被动清除逻辑
     if isAdd == false then
         self._coreCount = self._coreCount - count
+        if self._coreCount <= 0 then
+            self._coreCount = 0
+        end
         self._coreLevel = self._coreLevel - math.floor(count / 4)
+        if self._coreLevel <= 0 then
+            self._coreLevel = 0
+        end
         --第二风格专属逻辑：低于8层时换回技能组1-普攻
         if self._coreLevel < 2 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
             self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)

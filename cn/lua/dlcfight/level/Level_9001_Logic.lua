@@ -343,7 +343,9 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.OverDriveStackP,2000,0)  --OD倍率
         self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.OverDriveDecreaseSpeed,75,0)  --OD自然衰减速度
         self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.OverDriveDecreaseP,2000,0)  --OD挨打倍率
-        self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,8005974) --喷火技能
+        self._timer:Schedule(10, self, function()  
+            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,8005974) --喷火技能
+        end)
         XLog.Debug("阶段进入!Phase.ODSkill_3")
     elseif phase == Phase.ODSikll_4 then
         self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.OverDriveDecreaseSpeed,25,0)  --OD自然衰减速度恢复
@@ -356,6 +358,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._proxy:SetLevelMemoryInt(40001,10)
         XLog.Debug("阶段进入!Phase.ODSkill_4")
     elseif phase == Phase.Break_1 then
+        self.hasEnd = false
         self.hasODfire_PhaseBreak = false 
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,true) 
         self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,1) 
@@ -369,7 +372,7 @@ function XLevelScript9001:OnEnterPhase(phase)
 
     elseif phase == Phase.Final then
         self.hasODfire_PhaseFinal = false 
-        self.hasEnd = false
+        
         self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.DmgAmplification,8000,0)    --把boss易伤挂上
         XLog.Debug("阶段进入!Phase.Final")
     elseif phase == Phase.End then
@@ -556,9 +559,10 @@ function XLevelScript9001:OnUpdatePhase(dt)
                     self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,false) 
                     self._timer:Schedule(0.35, self, function()              --连携拼刀表演手K版
                         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcNanami,IsActivated=false})
+                        self._proxy:ApplyMagic(self._localNpc,self._localNpc,10512106)
                     end)
                 
-                    self._timer:Schedule(0.82, self, function()                  --发生帧在0.8~0.9之间
+                    self._timer:Schedule(0.85, self, function()                  --发生帧在0.8~0.9之间
                         self._proxy:AbortAction(self._localNpc,true)
                         self._proxy:TeleportResetNpcOnGround(self._localNpc)                  --贴地
                         self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051011,self.monster_UUID,0,0)        --1技能
@@ -575,9 +579,9 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:SetNpcPosition(self.monster_UUID,{x=self.monsterPDPos2.x,y=1.87,z=self.monsterPDPos2.z},false) --传送白龙
                         self._proxy:AbortAction(self._localNpc,true)
                     end)
-                    self._timer:Schedule(1.66, self, function()
-                        self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051081,self.monster_UUID)
-                        self._proxy:RemoveBuff(self.monster_UUID,8005906)
+                    self._timer:Schedule(1.64, self, function()
+                        self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051081,self.monster_UUID)      --拼刀技能
+                        self._proxy:RemoveBuff(self.monster_UUID,8005906)                   --移除怪物的霸体
                     end)
                     self._timer:Schedule(2.7, self, function()
                         self._proxy:SetNpcPosition(self.NpcNanami,{x=self._proxy:GetNpcPosition(self._localNpc).x,y=5,z=self._proxy:GetNpcPosition(self._localNpc).z}) --传送nanami
@@ -587,14 +591,14 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106219,self.monster_UUID)   --七实登龙
                         self._proxy:ShowDlcGuide(90005111,EFightUiType.Commentary)--七实登场
                     end)
-                    self._timer:Schedule(5.5, self, function()
+                    self._timer:Schedule(5, self, function()
                         self._proxy:SetNpcPosition(self.NpcLiv,{x=(self._proxy:GetNpcPosition(self._localNpc).x+self._proxy:GetNpcPosition(self.NpcNanami).x)/2,y=5,z=(self._proxy:GetNpcPosition(self._localNpc).z+self._proxy:GetNpcPosition(self.NpcNanami).z)/2}) --传送lIV
                         self._proxy:TeleportResetNpcOnGround(self.NpcLiv)
                         self._proxy:AddThreat(self.NpcLiv,self.monster_UUID,100,1000)
                         self._proxy:AbortAction(self.NpcLiv,true)
                         self._proxy:ShowDlcGuide(90005112,EFightUiType.Commentary)--丽芙登场
                     end)
-                    self._timer:Schedule(6, self, function()      --开启UI，开启NPCai
+                    self._timer:Schedule(5.5, self, function()      --开启UI，开启NPCai
                         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcNanami,IsActivated=true})
                         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=true})
                         self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,1) 
@@ -611,6 +615,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,true) 
                         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localNpc,true) 
                         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,true) 
+                        self._proxy:RemoveBuff(self._localNpc,10512106)
                     end)
                     self._timer:Schedule(10, self, function()
                         self._proxy:ShowDlcGuide(90005124,EFightUiType.Commentary)--"太好了是七实和丽芙"
@@ -651,51 +656,45 @@ function XLevelScript9001:OnUpdatePhase(dt)
         end
 
     elseif self._currentPhase == Phase.Break_1 then
-        self._timer:Schedule(15, self, function()
-            if self._proxy:CheckNpc(self.monster_UUID) == true or self._proxy:CheckActorExist(self.monster_UUID) == true then
-                if self._proxy:CheckBuffByKind(self.monster_UUID,1000446) then
-                    self._proxy:RemoveBuff(self.monster_UUID,1000446) --锁血不死移除
-                end
-            end
-        end) 
-        if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseBreak == false then
-            self.hasODfire_PhaseBreak = true
-            self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--丽芙罩子
-            self._timer:Schedule(4, self, function()
-                    self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
-                    self._proxy:AbortAction(self.NpcLiv,true)
-                    self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
-                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
-                    self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)--丽芙登场
-            end)
-            self._timer:Schedule(5.5, self, function()
-                self._proxy:RemoveNpcFocusTarget(self._localNpc)
-            end)
-            self._timer:Schedule(20, self, function()
-                self.hasODfire_PhaseBreak = false 
-            end)
-        end
-        if self._proxy:CheckNpcCurrentAction(self._localNpc,1051091) and self.hasTeamSkill == false then
-            self.hasTeamSkill = true
-            self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.DmgAmplification,5000,0)    --把boss易伤挂上
-            self._timer:Schedule(1, self, function()        
-                self._proxy:AbortAction(self.NpcNanami,true)
-                self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106222,self.monster_UUID)       --70大招
-            end)
-            self._timer:Schedule(2, self, function()   
-                self._proxy:AbortAction(self.NpcLiv,true)            
-                self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106350,self.monster_UUID)          --丽芙大招
-            end)
-            self._timer:Schedule(5, self, function() 
-                self:SetPhase(Phase.Final)
-            end)
-            self._timer:Schedule(15, self, function() 
-                self.hasTeamSkill = false
-            end)
-        end
+        
         if self._proxy:CheckNpc(self.monster_UUID) == true or self._proxy:CheckActorExist(self.monster_UUID) == true then
             if self._proxy:CheckBuffByKind(self.monster_UUID,1000446) then
                 self._proxy:RemoveBuff(self.monster_UUID,1000446) --锁血不死移除
+            end
+            if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseBreak == false then
+                self.hasODfire_PhaseBreak = true
+                self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--丽芙罩子
+                self._timer:Schedule(4, self, function()
+                        self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
+                        self._proxy:AbortAction(self.NpcLiv,true)
+                        self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
+                        self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
+                        self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)
+                end)
+                self._timer:Schedule(5.5, self, function()
+                    self._proxy:RemoveNpcFocusTarget(self._localNpc)
+                end)
+                self._timer:Schedule(20, self, function()
+                    self.hasODfire_PhaseBreak = false 
+                end)
+            end
+            if self._proxy:CheckNpcCurrentAction(self._localNpc,1051091) and self.hasTeamSkill == false then
+                self.hasTeamSkill = true
+                self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.DmgAmplification,5000,0)    --把boss易伤挂上
+                self._timer:Schedule(1, self, function()        
+                    self._proxy:AbortAction(self.NpcNanami,true)
+                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106222,self.monster_UUID)       --70大招
+                end)
+                self._timer:Schedule(2, self, function()   
+                    self._proxy:AbortAction(self.NpcLiv,true)            
+                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106350,self.monster_UUID)          --丽芙大招
+                end)
+                self._timer:Schedule(5, self, function() 
+                    self:SetPhase(Phase.Final)
+                end)
+                self._timer:Schedule(15, self, function() 
+                    self.hasTeamSkill = false
+                end)
             end
             if self._proxy:IsNpcDead(self.monster_UUID) and self.hasEnd == false then
                     self._proxy:SettleFight(true)          --后端结算通知API
@@ -719,40 +718,41 @@ function XLevelScript9001:OnUpdatePhase(dt)
         end
 
     elseif self._currentPhase == Phase.Final then  --最后阶段时
-        if self._proxy:CheckNpcCurrentAction(self._localNpc,1051091) and self.hasTeamSkill == false then
-            self.hasTeamSkill = true
-            self._timer:Schedule(1, self, function()        
-                self._proxy:AbortAction(self.NpcNanami,true)
-                self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106222,self.monster_UUID)       --70大招
-            end)
-            self._timer:Schedule(2, self, function()   
-                self._proxy:AbortAction(self.NpcLiv,true)            
-                self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106350,self.monster_UUID)          --丽芙大招
-            end)
-            self._timer:Schedule(15, self, function() 
-                self.hasTeamSkill = false
-            end)
-        end
-        if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseFinal == false then
-            self.hasODfire_PhaseFinal = true
-            self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--丽芙罩子
-            self._timer:Schedule(4, self, function()
-                    self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
-                    self._proxy:AbortAction(self.NpcLiv,true)
-                    self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
-                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
-                    self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)--丽芙登场
-            end)
-            self._timer:Schedule(5.5, self, function()
-                self._proxy:RemoveNpcFocusTarget(self._localNpc)
-            end)
-            self._timer:Schedule(20, self, function()
-                self.hasODfire_PhaseFinal = false 
-            end)
-        end
+        
         if self._proxy:CheckNpc(self.monster_UUID) == true or self._proxy:CheckActorExist(self.monster_UUID) == true then
             if self._proxy:CheckBuffByKind(self.monster_UUID,1000446) then
                 self._proxy:RemoveBuff(self.monster_UUID,1000446) --锁血不死移除
+            end
+            if self._proxy:CheckNpcCurrentAction(self._localNpc,1051091) and self.hasTeamSkill == false then
+                self.hasTeamSkill = true
+                self._timer:Schedule(1, self, function()        
+                    self._proxy:AbortAction(self.NpcNanami,true)
+                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106222,self.monster_UUID)       --70大招
+                end)
+                self._timer:Schedule(2, self, function()   
+                    self._proxy:AbortAction(self.NpcLiv,true)            
+                    self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106350,self.monster_UUID)          --丽芙大招
+                end)
+                self._timer:Schedule(15, self, function() 
+                    self.hasTeamSkill = false
+                end)
+            end
+            if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseFinal == false then
+                self.hasODfire_PhaseFinal = true
+                self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--丽芙罩子
+                self._timer:Schedule(4, self, function()
+                        self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
+                        self._proxy:AbortAction(self.NpcLiv,true)
+                        self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
+                        self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
+                        self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)--丽芙登场
+                end)
+                self._timer:Schedule(5.5, self, function()
+                    self._proxy:RemoveNpcFocusTarget(self._localNpc)
+                end)
+                self._timer:Schedule(20, self, function()
+                    self.hasODfire_PhaseFinal = false 
+                end)
             end
             if self._proxy:IsNpcDead(self.monster_UUID) and self.hasEnd == false then
                     self._proxy:SettleFight(true)          --后端结算通知API

@@ -323,6 +323,14 @@ function XTheatre5Model:GetTheatre5ClientConfigText(key, index, notips)
     return ''
 end
 
+function XTheatre5Model:GetTheatre5ClientConfigTextArray(key, notips)
+    local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5ClientConfig, key, notips)
+
+    if cfg then
+        return cfg.Values
+    end
+end
+
 function XTheatre5Model:GetTheatre5ClientConfigNum(key, index, notips)
     local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5ClientConfig, key, notips)
 

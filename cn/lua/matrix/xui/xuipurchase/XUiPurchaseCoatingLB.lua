@@ -135,6 +135,9 @@ end
 
 -- 更新数据
 function XUiPurchaseCoatingLB:OnRefresh(uiType)
+    if XTool.UObjIsNil(self.GameObject)  then
+        return
+    end
     local data = XDataCenter.PurchaseManager.GetDatasByUiType(uiType)
     if not data then
         return

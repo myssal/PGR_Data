@@ -678,7 +678,7 @@ end
 function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
     self.Btns = nil
-    if self.IsClearData then
+    if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
         XDataCenter.PurchaseManager.ClearData()
     end
 

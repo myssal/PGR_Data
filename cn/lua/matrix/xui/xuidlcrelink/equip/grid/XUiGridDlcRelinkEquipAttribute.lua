@@ -13,7 +13,7 @@ end
 
 ---@param data { FactorId: number, IsSkill:boolean, CurLevel:number }
 function XUiGridDlcRelinkEquipAttribute:CustomRefresh(data)
-    self:SetBg(data.IsSkill)
+    --self:SetBg(data.IsSkill)
     self:SetLevelText(data.CurLevel)
     self:SetName(data.FactorId)
     local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
@@ -35,6 +35,14 @@ function XUiGridDlcRelinkEquipAttribute:RefreshAttributeDetails(data)
         local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
         local isMaxLevel = data.Level >= maxLevel
         self:SetNormal(data.FactorId, data.Level, isMaxLevel)
+    end
+    -- 设置背景交替显示
+    local isShowBg1 = data.Level % 2 ~= 0
+    if self.Image1 then
+        self.Image1.gameObject:SetActiveEx(isShowBg1)
+    end
+    if self.Image2 then
+        self.Image2.gameObject:SetActiveEx(not isShowBg1)
     end
 end
 

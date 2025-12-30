@@ -41,7 +41,7 @@ function XBigWorldCharacterAgency:OnTrialNpcJoinTeam(data)
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcLeaveTeam()
-    self._Model:ClearTrialCharacterIds()
+    self:ClearTrialCharacterIds()
 end
 
 function XBigWorldCharacterAgency:OnRelease()
@@ -618,6 +618,10 @@ end
 
 function XBigWorldCharacterAgency:CheckCharacterTrial(characterId)
     return self._Model:CheckTrialCharacter(characterId)
+end
+
+function XBigWorldCharacterAgency:ClearTrialCharacterIds()
+    self._Model:ClearTrialCharacterIds()
 end
 
 -- endregion

@@ -85,6 +85,9 @@ end
 
 -- 购买成功后刷新
 function XUiSpecialFashionShop:OnBuySuccessCb()
+    if self.DynamicTable == nil then
+        return
+    end
     self:RefreshDynamicTable()
     self.AssetActivityPanel:Refresh(XShopManager.GetShopShowIdList(self.ShopId))
 end

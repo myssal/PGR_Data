@@ -12,12 +12,12 @@ function XBuffScript10511013:Init()
     self.CureEquipdelayTime = 0.13
     self.DelayTime = 0.5
     self._cureEquipSwitch = false
-    --设置核心插件子弹发射ID
-    self._lunchId = {}
-    self._lunchId[1] = 10511011
-    self._lunchId[2] = 10511012
-    self._lunchId[3] = 10511013
-    self._lunchId[4] = 10511014
+    -- --设置核心插件子弹发射ID
+    -- self._lunchId = {}
+    -- self._lunchId[1] = 10511011
+    -- self._lunchId[2] = 10511012
+    -- self._lunchId[3] = 10511013
+    -- self._lunchId[4] = 10511014
 
     ------------执行------------
     self.CureEquipdelayTimer = self._proxy:GetFightTime() + self.DelayTime
@@ -31,12 +31,12 @@ function XBuffScript10511013:Update(dt)
     Base.Update(self, dt)
     if self._cureEquipSwitch then
         if self._proxy:CheckBuffByKind(self._uuid, 10511012) then
-            if self._proxy:CheckBuffByKind(self._casterUUID,1051101) then
-                self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511011, 1)
-            end
-            if self._proxy:CheckBuffByKind(self._casterUUID,1051102) then
-                self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511021, 1)
-            end
+            -- if self._proxy:CheckBuffByKind(self._casterUUID,1051101) then
+            --     self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511011, 1)
+            -- end
+            -- if self._proxy:CheckBuffByKind(self._casterUUID,1051102) then
+            --     self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511021, 1)
+            -- end
             self._cureEquipSwitch = false
             self._proxy:RemoveBuffByKindAndCount(self._uuid,10511012,1)
         else

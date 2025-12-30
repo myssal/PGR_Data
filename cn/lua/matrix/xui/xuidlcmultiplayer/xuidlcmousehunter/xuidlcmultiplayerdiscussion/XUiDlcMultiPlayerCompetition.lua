@@ -18,8 +18,7 @@ function XUiDlcMultiPlayerCompetition:OnStart()
     self._CurSelectCamp = nil
     self._DiscussionTimer = nil
     self._CurDiscussionStatus = StatusEnum.None
-    self._MonsterClickCount = 0
-    self._MonsterClickUploadTimer = nil
+
 
     ---@type XUiDlcMultiPlayerCompetitionCamp
     self._BlueCamp = XUiDlcMultiPlayerCompetitionCamp.New(self.BlueCampPanel, self, CampEnum.Camp1)
@@ -29,8 +28,13 @@ function XUiDlcMultiPlayerCompetition:OnStart()
 end
 
 function XUiDlcMultiPlayerCompetition:OnEnable()
-    self._MonsterClickCount = self._Control:GetMonsterClickCount()
     self:_RefreshDiscussion()
+    self:SetNormalStyle()
+end
+
+function XUiDlcMultiPlayerCompetition:SetNormalStyle()
+    self._BlueCamp:SetNormalStyle( self._Control:GetDiscussion())
+    self._RedCamp:SetNormalStyle( self._Control:GetDiscussion())
 end
 
 function XUiDlcMultiPlayerCompetition:OnGetLuaEvents()
@@ -49,7 +53,7 @@ function XUiDlcMultiPlayerCompetition:OnDisable()
     self._CurSelectCamp = nil
     self._CurDiscussionStatus = StatusEnum.None
     self:_RemoveDiscussionTimer()
-    self:_RemoveMonsterClickUploadTimer()
+
 end
 
 function XUiDlcMultiPlayerCompetition:_RefreshDiscussion()
@@ -171,6 +175,8 @@ function XUiDlcMultiPlayerCompetition:_RefreshSelectCamp(selectCamp, enableClick
     end
 end
 
+
+
 function XUiDlcMultiPlayerCompetition:_RefreshTxtDiscussionTime(endTimestamp)
     if XTool.UObjIsNil(self.TxtTime) then
         return
@@ -276,10 +282,7 @@ function XUiDlcMultiPlayerCompetition:RegisterUiEvents()
 end
 
 function XUiDlcMultiPlayerCompetition:OnBtnCloseClick()
-    self:_RemoveMonsterClickUploadTimer()
-    self:_UploadMonsterClickCount(function()
-        self:Close()
-    end)
+    self:Close()
 end
 
 function XUiDlcMultiPlayerCompetition:OnBtnBlueClick()
@@ -322,11 +325,8 @@ function XUiDlcMultiPlayerCompetition:OnBtnVoteClick()
 end
 
 function XUiDlcMultiPlayerCompetition:OnBtnMonsterClick()
-    self._MonsterClickCount = self._MonsterClickCount + 1
     self._ClickCount = self._ClickCount + 1
-    -- TODO 播放击打动画，可连续点击
-    -- 重置上传计时器，停止点击10秒后上传
-    self:_ResetMonsterClickUploadTimer()
+
 end
 
 function XUiDlcMultiPlayerCompetition:_RemoveDiscussionTimer()
@@ -343,32 +343,7 @@ function XUiDlcMultiPlayerCompetition:_RefreshDiscussionTimer(func)
     end
 end
 
-function XUiDlcMultiPlayerCompetition:_RemoveMonsterClickUploadTimer()
-    if self._MonsterClickUploadTimer then
-        XScheduleManager.UnSchedule(self._MonsterClickUploadTimer)
-        self._MonsterClickUploadTimer = nil
-    end
-end
 
-function XUiDlcMultiPlayerCompetition:_ResetMonsterClickUploadTimer()
-    self:_RemoveMonsterClickUploadTimer()
-    self._MonsterClickUploadTimer = XScheduleManager.ScheduleOnce(function()
-        if XTool.UObjIsNil(self.GameObject) then
-            return
-        end
-        self:_UploadMonsterClickCount()
-    end, CLICK_UPLOAD_DELAY * XScheduleManager.SECOND)
-end
-
-function XUiDlcMultiPlayerCompetition:_UploadMonsterClickCount(callback)
-    if self._MonsterClickCount > self._Control:GetMonsterClickCount() then
-        XMVCA.XDlcMultiMouseHunter:RequestDlcMultiplayerMonsterClick(self._MonsterClickCount, callback)
-    else
-        if callback then
-            callback()
-        end
-    end
-end
 
 function XUiDlcMultiPlayerCompetition:OnDestroy()
     if XLoginManager.IsLogin() and self._ClickCount > 0 then

@@ -124450,18 +124450,22 @@
             "0|Magic|110563|0|",
             "0|Magic|110500|0|",
             "0|Effect|FxR4LuosaitaWin01||1|||||||||",
+            "0|Magic|104615|0|",
             "0|Effect|FxR4LuosaitaWinBip|Bip001|1|||||||||",
             "5|Effect|FxR4LuosaitaPlanktonBoneLWin|planktonBoneL00|1|||||||||",
             "5|Effect|FxR4LuosaitaPlanktonBoneRWin|planktonBoneR00|1|||||||||",
-            "99|Effect|FxR4LuosaitaBip001WinTrail|Bip001|1|||||||||",
+            "100|Effect|FxR4LuosaitaBip001WinTrail|Bip001|1|||||||||",
             "42|Effect|FxR4LuosaitaHindBoneL05WinFire|HindBoneL05|1|||||||||",
             "42|Effect|FxR4LuosaitaHindBoneR05WinFire|HindBoneR05|1|||||||||",
             "91|Effect|FxR4LuosaitaFireRHindBoneR07|HindBoneR07|1|||||||||",
             "91|Effect|FxR4LuosaitaFireLHindBoneL07|HindBoneL07|1|||||||||",
             "57|Effect|FxR4LuosaitaBip001WinTrail01|||||||||||",
-            "0|Effect|FxR4LuosaitaWinScene|||||||||||"
+            "0|Effect|FxR4LuosaitaWinScene|||||||||||",
+            "0|Magic|154623|0|"
         ],
         "Condition": [
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -125376,14 +125380,12 @@
         "Id": 104662,
         "Key": [
             "8|Magic|100094|0|",
-            "0|Effect|FxR3LuosaitaMove01|1||||||||||",
             "0|SetActiveGravity|0.6",
             "0|Move|6|0.4|-4||",
             "7|Magic|104684|0|",
             "0|Effect|FxR4LuosaitaAtk44Canying||||||||0.4|||"
         ],
         "Condition": [
-            "nil",
             "nil",
             "nil",
             "nil",
@@ -125395,7 +125397,6 @@
         "Id": 104663,
         "Key": [
             "8|Magic|100094|0|",
-            "0|Effect|FxR3LuosaitaMove02|1||||||||||",
             "0|SetActiveGravity|0.6",
             "13|Magic|104684|0|",
             "0|Effect|FxR4LuosaitaAtk44Canying||||||||0.7|||",
@@ -125405,7 +125406,6 @@
             "11|SetSkillSpeedY|10466305|1|4|-30|0.2"
         ],
         "Condition": [
-            "nil",
             "nil",
             "nil",
             "nil",

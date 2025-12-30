@@ -76,6 +76,7 @@ function XChar8005:ScriptInit(isGainControl)
     self:InitChasingSystem()
     self:InitCoreCombatSystem()
     self:InitDelayCallSystem()
+    self:InitAudioSystem()
 
     -- 换主控保底内容
     --- 换主控流程是否处理完成
@@ -114,6 +115,7 @@ function XChar8005:ScriptInit(isGainControl)
         end
         -- 继续运行状态机
         self._fightSM:Enable()
+
     else
         -- 开始运行AI
         self._fightSM:Activate()
@@ -517,7 +519,7 @@ function XChar8005:UpdateAggroSystem(dt)
         -- 对于非仇恨列表的目标，强制拉入仇恨列表
         local players = self._proxy:GetPlayerNpcList()
         for i, player in ipairs(players) do
-            if not self._proxy:CheckNpcInThreatList(self._uuid, player) then
+            if not self._proxy:CheckNpcInThreatList(self._uuid, player) and not self._proxy:IsNpcDead(player) then
                 if self:IsPlayerTank(player) then
                     self._proxy:AddThreat(self._uuid, player, 0, 1000)
                 else
@@ -868,7 +870,6 @@ end
 --region 核心战斗系统：技能释放系统
 function XChar8005:InitCoreCombatSkillCastSystem()
     --- @class SkillInfo
-
     -- 战斗: 技能
     -- 关于修正：因为目前修正只考虑正向释放的攻击性技能，像例如吼叫或者背后攻击，是不会专门修正的
     -- 关于距离条件：格式为 { 最小距离，最大距离 }
@@ -2007,6 +2008,17 @@ function XChar8005:RefreshSkillCD(forceRefresh)
 end
 --endregion
 
+--region 音效
+--- 初始化音效系统
+function XChar8005:InitAudioSystem()
+    -- 音效事件magics
+    self._cvEventMagics = {
+        CastCounterSkill = 1000507,
+        CastHighDmgSkill = 1000508
+    }
+end
+--endregion
+
 --region Unity事件
 function XChar8005:HandleLuaEvent(eventType, eventArgs)
     -- 响应AI开启和停止
@@ -2101,12 +2113,12 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
 
     -- 弹刀类技能触发预警事件，主要用于CV响应
     if self:Contain(self._counterSkills, skillId) then
-        --self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc, EFightLuaEvent.RelinkCastCounterSkill, { SourceNpcUUID = launcherId, TargetNpcUUID = targetId })
+        --self:ApplyMagicsToSelf({self._cvEventMagics.CastCounterSkill}, 1)
     end
 
     -- 常规高强类技能触发预警事件，主要用于CV响应
     if self:Contain(self._powerfulSkills, skillId) then
-        self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc, EFightLuaEvent.RelinkMonsterCastPowerfulSkill, { NpcUUid = self._uuid })
+        --self:ApplyMagicsToSelf({self._cvEventMagics.CastHighDmgSkill}, 1)
     end
 end
 
@@ -2182,7 +2194,7 @@ function XChar8005:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physica
     -- 特殊受击(Fullchain终结Hit, 只会向后击退)
     if magicId == 12000108 or magicId == 12000112 or magicId == 12000113 then
         self._proxy:AbortAction(self._uuid, true)
-        self._proxy:CastAction(self._uuid, 8005313)
+        self._proxy:CastAction(self._uuid, 8005311)
         return
     end
 
@@ -3174,7 +3186,7 @@ function XChar8005:InitFightStateMachine()
         -- 给玩家团队技能量
         local hasGiveEnergy = false
         for k, playerID in ipairs(self._proxy:GetPlayerNpcList()) do
-            if not hasGiveEnergy and self._proxy:CheckNpc(playerID) and self._proxy:IsNpcDead(playerID) then
+            if not hasGiveEnergy and self._proxy:CheckNpc(playerID) and not self._proxy:IsNpcDead(playerID) then
                 self._proxy:AddTeamWorkEnergy(playerID, 50)                        -- 给50能量
                 hasGiveEnergy = true
             end
