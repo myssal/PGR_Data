@@ -66,6 +66,9 @@ function XChar8006:ScriptInit(isGainControl)
     self._maxRectifyIrritation = math.maxinteger
     self._irritationSkills = {}
 
+    -- 白龙入场语音magic设置
+    self._cvMagics.EnterScene = 8005755
+
     -- 创建教学关状态机
     self._tutorialSM = RelinkStateMachine.New("教学关状态机")
 
@@ -159,6 +162,7 @@ function XChar8006:ScriptInit(isGainControl)
     end
     self._fightSM:SetTransition(Base.EFightState.Normal, 0, self._normalToOD, 0, 0)
 
+    -- 取消交互QTE修正
     self._enableQTEInteractFix = false
 end
 

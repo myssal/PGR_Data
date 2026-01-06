@@ -4,7 +4,19 @@ local Base = require("Character/FightCharBase/XRelinkCharBase")
 ---共斗_极昼丽芙_第一风格角色脚本
 ---@class XCharR4LivH : XRelinkCharBase
 local XCharR4LivH = XDlcScriptManager.RegCharScript(1053, "XCharR4LivH", Base)
-
+--核心改造2伤害ID
+XCharR4LivH._coreLazerDamgMagic = {
+    [105302031] = true,
+    [105302032] = true,
+    [105302033] = true,
+    [105302034] = true,
+    [105302035] = true,
+    [105302036] = true,
+    [10580131] = true,
+    [10580132] = true,
+    [10580133] = true,
+    [10580134] = true,
+}
 function XCharR4LivH:ScriptInit(isGainControl)
     Base.ScriptInit(self, isGainControl)
     self._proxy:SetNpcSoftLockTargetConfig(self._uuid, 2)
@@ -127,19 +139,7 @@ function XCharR4LivH:ScriptInit(isGainControl)
     self._secMod4Skill31CD = { [1] = 105308017, [2] = 105308022 }
     self._secMod4Skill32CD = { [1] = 105308018, [2] = 105308023 }
     self._secMod4Skill4CD = { [1] = 105308019, [2] = 105308024 }
-    --核心改造2伤害ID
-    self._coreLazerDamgMagic = {
-        [105302031] = true,
-        [105302032] = true,
-        [105302033] = true,
-        [105302034] = true,
-        [105302035] = true,
-        [105302036] = true,
-        [10580131] = true,
-        [10580132] = true,
-        [10580133] = true,
-        [10580134] = true,
-    }
+
 end
 
 --region EventCallBack
@@ -249,6 +249,7 @@ end
 
 function XCharR4LivH:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     Base.OnNpcRemoveBuffEvent(self, casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if npcUUID ~= self._uuid then return end
     --极昼状态结束技能3改回默认技能组
     if buffId == self._coreStateMagic then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 105305003, 1)
@@ -343,6 +344,7 @@ function XCharR4LivH:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, Ta
         elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._coreMagicD80, 1) --第二风格清除8层
             self:CoreManager(false, 8)
+            self._proxy:RemoveBuffByKindAndCount(self._uuid, 105305001, 2)
         end
     end
 
@@ -351,6 +353,7 @@ function XCharR4LivH:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, Ta
         if SkillId == self._skill4Id or SkillId == self._skill34Id then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._coreMagicD40, 1)
             self:CoreManager(false, 4)
+            self._proxy:RemoveBuffByKindAndCount(self._uuid, 105305001, 1)
         end
     end
 
@@ -510,19 +513,7 @@ function XCharR4LivH:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Launcher ~= self._uuid then
         return
     end
-    --镜像端初始化
-    self._coreLazerDamgMagic = {
-        [105302031] = true,
-        [105302032] = true,
-        [105302033] = true,
-        [105302034] = true,
-        [105302035] = true,
-        [105302036] = true,
-        [10580131] = true,
-        [10580132] = true,
-        [10580133] = true,
-        [10580134] = true,
-    }
+
     self._coreMod2LazerDamgeUp = 105308020
     self._coreMod2R = 10531004
     --初始化END
@@ -665,12 +656,14 @@ end
 
 function XCharR4LivH:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
     Base.OnNpcWaitRebootEvent(self, npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
-    --if npcUUID ~= self._uuid then return end
+    if npcUUID ~= self._uuid then return end
     self._coreCount = 0
     self._coreLevel = 0
     self._proxy:RemoveBuff(self._uuid, 105305001)
     self._proxy:RemoveBuffByKindAndCount(self._uuid, self._skill3Mod2Magic, 1)
+    --清空48、49核心能量
     self._proxy:ApplyMagic(self._uuid, self._uuid, 105308009, 1)
+    self._proxy:ApplyMagic(self._uuid, self._uuid, 10530805, 1)
     --XLog.Warning("极昼丽芙濒死！！！")
     self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)
     self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG07Id)

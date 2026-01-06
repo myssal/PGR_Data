@@ -13,7 +13,10 @@ end
 -- 初始化
 function XLevelScript9002:Init()
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
+    self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)                 --事件注册：触发区碰撞
+
     self._localPlayerNpc = self._proxy:GetLocalPlayerNpcId()                         -- 获取本端玩家npc
+    self._spawnPoint = {} 
     self._ShowPhaseUiOff = false
     self._levelTime = 0
     self._ShowPhaseUiOn = false
@@ -27,15 +30,26 @@ function XLevelScript9002:Init()
     self._initEndPhase = false
     self._limitTimeToEnd = false
     self.LimitTime = 1770
+    self._deathZoneId = 1        -- 1为死区的PlacedID
     self.levelId = self._proxy:GetCurrentLevelId()  --当前关卡ID
     self._localPlayerID = self._proxy:GetPlayerIdByNpc(self._localPlayerNpc)
+    for i = 1, 5 do
+        self._spawnPoint[i] = self._proxy:GetSpot(i)    --获取关卡编辑器中配置好的点，1为BOSS出生点，2为场地中心，3~5是玩家出生点
+    end
 end
 
 -- 事件
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevelScript9002:HandleEvent(eventType, eventArgs)
+    if eventType == EWorldEvent.ActorTrigger then
+        if eventArgs.HostSceneObjectPlaceId == self._deathZoneId and eventArgs.TriggerState == 1 then 
+            self._proxy:SetNpcPosition(eventArgs.EnteredActorUUID,self._spawnPoint[2],false)
+            self._proxy:ShowTip(90204)
+        end
+    end
 end
+
 local UIControl = {
     On = 100,                               --全开
     Off = 10                                --全关
@@ -206,7 +220,6 @@ function XLevelScript9002:Update(dt)
         end
     end
 end
-
 
 -- 脚本终止
 function XLevelScript9002:Terminate()

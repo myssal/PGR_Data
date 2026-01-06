@@ -116,6 +116,7 @@ end
 ---@param dt number @ delta time
 function XLevel5001Present:Update(dt)
     --每帧更新逻辑
+    self:UpdateNpcFallDown(dt)
 end
 
 ---@param eventType number
@@ -457,6 +458,45 @@ function XLevel5001Present:DoorMovieTriggerExit(LimitTrigger, Rotate1, Rotate2)
         self._proxy:RotateSceneObject(self._MovieDoor2, 0.5, Rotate2, 1, true)
         self._proxy:SetSceneObjectActive(LimitTrigger, true)
     end)
+end
+--endregion
+
+--region xf处理可能掉下去的任务npc
+local npcPosDict = {
+    [1500002] = { x = 502.747, y = 185.8834, z = 955.1886 },
+    [1500008] = { x = 532.238, y = 186.555, z = 956.588 },
+    [1500009] = { x = 499.8166, y = 189.145, z = 974.2689 },
+    [1500011] = { x = 526.21, y = 189.621, z = 1002.54 },
+    [1500012] = { x = 503.437, y = 185.8847, z = 955.1406 },
+    [1500013] = { x = 507.062, y = 185.88, z = 959.913 },
+    [1500014] = { x = 478.929, y = 186.546, z = 955.145 },
+    [1500015] = { x = 585.8852, y = 194.0679, z = 1002.449 },
+    [1500016] = { x = 586.7229, y = 194.0679, z = 1004.671 },
+    [1500017] = { x = 590.7931, y = 194.0679, z = 1022.947 },
+    [1500018] = { x = 609.004, y = 194.066, z = 1000.691 },
+    [1500020] = { x = 571.2034, y = 194.561, z = 974.8865 },
+    [1500046] = { x = 503.68, y = 189.14, z = 978.64 },
+    [1500047] = { x = 506.039, y = 185.934, z = 959.767 },
+}
+
+function XLevel5001Present:UpdateNpcFallDown(dt)
+    if not self._checkTime then
+        self._checkTime = 0
+        return
+    end
+    if self._checkTime <= 3 then
+        self._checkTime = self._checkTime + dt
+        return
+    end
+    self._checkTime = 0
+    for placeId, pos in pairs(npcPosDict) do
+        local uuid = self._proxy:GetNpcUUID(placeId)
+        if uuid > 0 and not self._proxy:CheckNpcDistanceWithPos(uuid, pos.x, pos.y, pos.z, 0.2) then
+            if not self._proxy:CheckNpcAction(uuid, ENpcAction.Move) then
+                self._proxy:SetNpcPosition(uuid, pos)
+            end
+        end
+    end
 end
 --endregion
 

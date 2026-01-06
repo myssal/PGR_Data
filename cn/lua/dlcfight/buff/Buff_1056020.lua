@@ -26,7 +26,10 @@ function XBuffScript1056020:Update(dt)
     Base.Update(self, dt)
     ------------执行------------
     if (self._proxy:GetFightTime() > self.damageTimer) then
-        self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056021)
+        if self._proxy:CheckNpc(self._casterUUID) then
+            self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056021)
+            self._proxy:ApplyMagic(self._casterUUID,self._uuid,1056038)
+        end
         self.damageTimer = self._proxy:GetFightTime() + self.damageTime
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1056024,1)
         self._proxy:RemoveBuffByKindAndCount(self._uuid,1056025,1)

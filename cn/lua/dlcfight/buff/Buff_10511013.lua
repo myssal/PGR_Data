@@ -30,6 +30,10 @@ function XBuffScript10511013:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     if self._cureEquipSwitch then
+        --判断NPC是否存活
+        if self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Death, -1) then
+            return
+        end
         if self._proxy:CheckBuffByKind(self._uuid, 10511012) then
             -- if self._proxy:CheckBuffByKind(self._casterUUID,1051101) then
             --     self._proxy:LaunchMissile(self._casterUUID, self._uuid, self._lunchId[self._proxy:Random(1,4)], 10511011, 1)

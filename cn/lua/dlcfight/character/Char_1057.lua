@@ -38,12 +38,18 @@ function XCharR5Nanami2:ScriptInit(isGainControl)
     ----存个角力响应对象
     self.WrestleTarget = 0
     --XLog.Warning("现在是1057")
+
+    ----黑板值处理
     ----存超解系数到黑板
     self:RegBB(1057001)
     self:SetBBFloat(1057001,0.001)
     ----存超解值到黑板
     self:RegBB(1057002)
     self:SetBBInt(1057002,self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup2))
+
+    ----重连部分效果初始化保底
+    ----技能组初始化
+    self:ReconnectedCheckSkillGroup()
 end
 
 ----region 黑板值同步封装用，省两个值
@@ -88,7 +94,8 @@ end
 ---@param dt number @ delta time
 function XCharR5Nanami2:Update(dt)
     Base.Update(self, dt)
-    self:TestInputLogic()
+
+    --self:TestInputLogic()
     self:CheckInputDuringAxeWrestle()
     self:EnergyBarChangeColorCheck()
     self:EnergySwitch()
@@ -449,9 +456,7 @@ end
 
 --region 按键测试逻辑
 function XCharR5Nanami2:TestInputLogic()
-    --[[
     if self._proxy:IsKeyDown(ENpcOperationKey.Ball4) then
-
         --测试技能释放
         local testskill = 105731
         XLog.Warning("放技能看效果:"..testskill)
@@ -494,7 +499,6 @@ function XCharR5Nanami2:TestInputLogic()
         self._proxy:ApplyMagic(self._uuid,self._uuid,1057020,1)
         XLog.Warning("测试添加镜头效果缓冲")
     end
-    --]]
 end
 --endregion
 
@@ -826,6 +830,22 @@ function XCharR5Nanami2:OnExitJumpWeaponShow() -- 出跳跃显示
     end
 end
 
-
+function XCharR5Nanami2:ReconnectedCheckSkillGroup()
+    if self._proxy:CheckBuffByKind(self._uuid,105218) then
+        --XLog.Warning("重连技能组初始化..105218")
+        self._proxy:SetNpcAnimationLayer(self._uuid,1)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105710) --切换技能组3
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105713) --切换技能组为龙车1
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715) --切换技能组为斧红球
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052359,1) --常驻fov增加
+    elseif self._proxy:CheckBuffByKind(self._uuid,105217) then
+        --XLog.Warning("重连技能组初始化..105217")
+        self._proxy:SetNpcAnimationLayer(self._uuid,0)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105705) --切换技能组3
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703) --还原技能组1
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704) --还原技能组2
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052360,1) --移除常驻fov增加
+    end
+end
 --endregion
 return XCharR5Nanami2

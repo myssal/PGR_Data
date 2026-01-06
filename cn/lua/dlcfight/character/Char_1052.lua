@@ -34,6 +34,8 @@ function XCharR5Nanami1:ScriptInit(isGainControl)
     self.OverReleaseCoeAdd = 0.5
     ----存个角力响应对象
     self.WrestleTarget = 0
+
+    ----黑板值处理
     ----存能量黑板值
     self._proxy:RegisterBBSync(1, self._uuid, 1052001)
     self._proxy:SetBBInt(1, self._uuid, 1052001, self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1))
@@ -47,6 +49,10 @@ function XCharR5Nanami1:ScriptInit(isGainControl)
     ----存超解气势增长系数到黑板
     self:RegBB(1052004)
     self:SetBBFloat(1052004,0.5)
+
+    ----重连部分效果初始化保底
+    ----技能组初始化
+    self:ReconnectedCheckSkillGroup()
 end
 
 ----region 黑板值同步封装用，省两个值
@@ -175,6 +181,7 @@ function XCharR5Nanami1:OnNpcDamageEvent(launcherId, targetId, magicId, kind, ph
             --XLog.Warning("完美弹刀格挡")
             self._proxy:CastActionEx(self._uuid,105240,0.26,3.83) --剑盾受击触发弹刀释放精确格挡
             if self._proxy:CheckBuffByKind(self._uuid, 105218) then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,1052283,1) --添加斧反击标记
                 self._proxy:AbortAction(self._uuid, true)
                 self._proxy:CastActionEx(self._uuid,105243,0,2) --斧受击触发弹刀释放精确格挡
             end
@@ -184,6 +191,7 @@ function XCharR5Nanami1:OnNpcDamageEvent(launcherId, targetId, magicId, kind, ph
             --XLog.Warning("精确格挡受击")
             self._proxy:CastActionEx(self._uuid,105220,0.26,3.83) --剑盾受击释放精确格挡
             if self._proxy:CheckBuffByKind(self._uuid, 105218) then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,1052283,1) --添加斧反击标记
                 self._proxy:AbortAction(self._uuid, true)
                 self._proxy:CastActionEx(self._uuid,105238,0,2) --斧受击释放精确格挡
             end
@@ -191,6 +199,7 @@ function XCharR5Nanami1:OnNpcDamageEvent(launcherId, targetId, magicId, kind, ph
             self._proxy:AbortAction(self._uuid, true)
             self._proxy:CastActionEx(self._uuid,105234,0.26,3.83) --剑盾受击释放普通格挡
             if self._proxy:CheckBuffByKind(self._uuid, 105218) then
+                self._proxy:ApplyMagic(self._uuid,self._uuid,1052283,1) --添加斧反击标记
                 self._proxy:AbortAction(self._uuid, true)
                 self._proxy:CastActionEx(self._uuid,105239,0,2) --斧受击释放普通格挡
             end
@@ -1054,6 +1063,17 @@ function XCharR5Nanami1:OnExitJumpWeaponShow() -- 出跳跃显示
     end
 end
 
-
+function XCharR5Nanami1:ReconnectedCheckSkillGroup()
+    if self._proxy:CheckBuffByKind(self._uuid,105218) then
+        --XLog.Warning("重连技能组初始化")
+        self._proxy:SetNpcAnimationLayer(self._uuid,1)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105210) --切换技能组3
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052359,1) --常驻fov增加
+    elseif self._proxy:CheckBuffByKind(self._uuid,105217) then
+        self._proxy:SetNpcAnimationLayer(self._uuid,0)
+        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball3,105205) --切换技能组3
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052360,1) --移除常驻fov增加
+    end
+end
 --endregion
 return XCharR5Nanami1

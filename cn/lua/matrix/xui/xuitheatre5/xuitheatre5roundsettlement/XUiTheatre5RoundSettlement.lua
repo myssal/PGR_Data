@@ -119,6 +119,15 @@ function XUiTheatre5RoundSettlement:UpdateRelics(data, isSelf)
         --local relics = self._Control:GetUiDataRelicsByData(data.AutoChessData.Relics)
         --XTool.UpdateDynamicItem(self._RelicGrids, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
         
+        -- pve敌人没有任务
+        if self._Control:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVE then
+            self.BtnReward.gameObject:SetActiveEx(isSelf and true or false)
+
+            if not isSelf then
+                return
+            end
+        end
+        
         --4.2 按照任务奖励的形式显示饰品
         local missionRelicId = 0
         local missionLevel = 0

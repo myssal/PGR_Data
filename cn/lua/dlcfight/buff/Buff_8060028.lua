@@ -44,7 +44,8 @@ function XBuffScript8060028:InitEventCallBackRegister()
 end
 
 function XBuffScript8060028:OnNpcGuardianAngelConsume(npcUUID, npcPlaceId, npcKind, isPlayer, buffTemplateId)
-    if npcUUID==self._uuid and not self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
+    if buffTemplateId~=self.magicId then return end
+    if npcUUID==self._uuid then
         self.timer=self._proxy:GetFightTime(self._uuid)+self.cd --重新加BUFF
         self.hasBuff=false
     end

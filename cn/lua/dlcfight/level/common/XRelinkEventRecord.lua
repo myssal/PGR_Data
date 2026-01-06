@@ -138,9 +138,7 @@ function XRelinkEventRecord:HandleEvent(eventType, eventArgs)
     elseif  eventType == EWorldEvent.NpcBrokenBefore then   --怪物破韧次数
         self._data.BreakCount = self._data.BreakCount + 1
     elseif  eventType == EWorldEvent.NpcMultiParrySucceed then -- 多人弹刀成功
-        if self._data.MultiGuardTimes[eventArgs.TargetUUID] ~= nil then
-            self._data.MultiGuardTimes[eventArgs.TargetUUID] = self._data.MultiGuardTimes[eventArgs.TargetUUID] + 1
-        end
+            self._data.MultiGuardTimes = self._data.MultiGuardTimes + 1
     elseif eventType == EWorldEvent.NpcTeamWorkSkillCast then  -- 极限技成功次数
         if self._data.TeamWorkSkillTimes[eventArgs.sourceUUID] ~= nil then
             self._data.TeamWorkSkillTimes[eventArgs.sourceUUID] = self._data.TeamWorkSkillTimes[eventArgs.sourceUUID] + 1

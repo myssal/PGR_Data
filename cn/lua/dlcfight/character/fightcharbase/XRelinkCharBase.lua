@@ -3,6 +3,9 @@ local base = require("Common/XFightBase")
 ---@class XRelinkCharBase : XFightBase
 ---@field _followController XNpcFollowController 跟随组件
 local XRelinkCharBase = XClass(base, "XRelinkCharBase")
+local EGameplayTag = require("Enum/XGameplayTag")
+local GameplayTag = require("Tools/GameplayTag/GameplayTag")
+local EFightCVAction = require("Enum/XFightCVAction")
 
 function XRelinkCharBase:ScriptInit(isGainControl)
     self:RegisterKeyboard()   --注册按键映射
@@ -31,34 +34,15 @@ function XRelinkCharBase:ScriptInit(isGainControl)
     self._curLifeRatio = 0
 
     -- CV相关
-    self._cvMagics = {
-        fullChainStart = nil,
-        fullChainResponse = nil,
-        fullChainContinue = nil,
-        fullChainSuccess = nil,
-        twoChainSuccess = nil,
-        teamworkSkillCast = nil,
-        offerHelp = nil,
-        takeHelp = nil,
-        getBuff = nil,
-        counterWarning = nil,
-        counterSuccess = nil,
-        lowLifeWarning = nil,
-        multiQTEEnter = nil,
-        multiQTEFirstSup = nil,
-        multiQTESecondSup = nil,
-        bossDead = nil
-    }
     -- CV事件magic
     self._cvEventMagics = {
-        counterWarning = 1000508,
-        counterSuccess = 1000509,
-        lowLife = 1000511,
-        lowLifeWarning = 1000514
+        PraiseCounterSuccess = 1000509,
+        LowLifeWarning = 1000511,
     }
+
     -- CV残血阈值
     self._cvIsInLowLifeMode = false
-    self._cvLowLifeRatioThreshold = 0.25
+    self._cvLowLifeRatioThreshold = 0.3
 
     -- 公共Npc
     self._publicNpc = nil
@@ -337,11 +321,8 @@ function XRelinkCharBase:UpdateCV()
     local isLowLife = self._curLifeRatio <= self._cvLowLifeRatioThreshold
 
     if not self._cvIsInLowLifeMode and isLowLife then
-        -- 由非残血进入残血状态, 向公共Npc发信
-        local publicNpc = self:TryGetPublicNpc()
-        if self._proxy:CheckNpc(publicNpc) then
-            self._proxy:ApplyMagic(self._uuid, publicNpc, self._cvEventMagics.lowLife, 1)
-        end
+        -- 由非残血进入残血状态
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvEventMagics.LowLifeWarning, 1)
     end
 
     self._cvIsInLowLifeMode = isLowLife
@@ -377,6 +358,8 @@ function XRelinkCharBase:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.NpcWrestleStart)
     self._proxy:RegisterEvent(EWorldEvent.NpcMultiParryStart)
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCure)
+
 
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCounterSuccess, self._uuid)  -- OnNpcCounterSuccess
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcAfterSyncCounterSuccess, self._uuid) -- OnNpcAfterSyncCounterSuccess
@@ -444,24 +427,6 @@ function XRelinkCharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffK
     if buffId == self._BreakQteBuff  then
         self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,true)
     end
-
-    if npcUUID == self._uuid then
-        -- CV: 弹刀预警
-        if self._cvMagics.counterWarning ~= nil and buffId == self._cvEventMagics.counterWarning then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.counterWarning, 1)
-        end
-
-        -- CV: 弹刀成功夸赞
-        if self._cvMagics.counterSuccess ~= nil and buffId == self._cvEventMagics.counterSuccess then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.counterSuccess, 1)
-        end
-
-        if self._cvMagics.lowLife ~= nil and buffId == self._cvEventMagics.lowLifeWarning then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.lowLife, 1)
-        end
-    end
-
-
 end
 
 function XRelinkCharBase:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -555,8 +520,17 @@ function XRelinkCharBase:CheckFocusTarget() --若当前有锁定，但是通过�
 end
 
 function XRelinkCharBase:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+    if self._uuid ~= counterNpcUUID then
+        return
+    end
     -- 弹刀成功后无敌
     self._proxy:ApplyMagic(self._uuid, self._uuid, self._counterImmortalMagicId, 1)
+
+    -- CV: 弹刀成功，通知关卡找玩家夸一句(多人弹刀不触发这句)
+    if GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_MultiInteract}) then
+        return
+    end
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvEventMagics.PraiseCounterSuccess, 1)
 end
 
 function XRelinkCharBase:OnNpcAfterSyncCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
@@ -567,8 +541,8 @@ function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainR
         return
     end
 
-    if chainLevel > 1 and self._cvMagics.fullChainResponse ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.fullChainResponse, 1)
+    if chainLevel > 1 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.All)
     end
 end
 
@@ -577,12 +551,12 @@ function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRem
         return
     end
 
-    if chainLevel == 1 and self._cvMagics.fullChainStart ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.fullChainStart, 1)
+    if chainLevel == 1 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ActivateFullChain, EAudioLuaFuncSyncType.All)
     end
 
-    if chainLevel == 2 and self._cvMagics.fullChainContinue ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.fullChainContinue, 1)
+    if chainLevel == 2 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.NotifyFullChain, EAudioLuaFuncSyncType.All)
     end
 end
 
@@ -598,34 +572,20 @@ function XRelinkCharBase:OnCastFullChainFinalSkill(gameplayActive, isInChain, ch
     if not isInChainList then
         return
     end
-
-    if chainLevel == 2 and self._cvMagics.twoChainSuccess ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.twoChainSuccess, 1)
-    end
-
-    if chainLevel == 3 and self._cvMagics.fullChainSuccess ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.fullChainSuccess, 1)
-    end
 end
 
 function XRelinkCharBase:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
     if targetNpcUUID ~= self._uuid then
         return
     end
-
-    if self._cvMagics.multiQTEEnter ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.multiQTEEnter, 1)
-    end
+    self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.EnterMultiQTE, EAudioLuaFuncSyncType.All)
 end
 
 function XRelinkCharBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID, succeed)
     if targetNpcUUID ~= self._uuid then
         return
     end
-
-    if self._cvMagics.multiQTEEnter ~= nil then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvMagics.multiQTEEnter, 1)
-    end
+    self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.EnterMultiQTE, EAudioLuaFuncSyncType.All)
 end
 
 function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
@@ -660,6 +620,24 @@ end
 function XRelinkCharBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
     if targetId ~= self._uuid then
         return
+    end
+end
+
+function XRelinkCharBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillId)
+    if targetId ~= self._uuid then
+        return
+    end
+
+    if launcherId == self._uuid then
+        return
+    end
+
+    local maxLife = self._proxy:GetNpcAttribMaxValue(targetId, ENpcAttrib.Life)
+    local curLife = self._proxy:GetNpcAttribValue(targetId, ENpcAttrib.Life)
+    local tarLifeRatio = (curLife + value) / maxLife
+
+    if self._cvIsInLowLifeMode and tarLifeRatio > self._cvLowLifeRatioThreshold then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.PowerUpOrHealFromTeammate, EAudioLuaFuncSyncType.All)
     end
 end
 --endregion

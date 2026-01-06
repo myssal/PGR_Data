@@ -64,7 +64,7 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
         self._proxy:AddTimerTask(3, function()--延迟6秒后，恢复CD
             self.kaiguan = true
         end)
-        if self.jishu < 1 then  -- 第1次释放时的伤害
+        if self.jishu == 1 then  -- 第1次释放时的伤害
             if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010651, 1)  -- 强化1级伤害
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
@@ -77,7 +77,7 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010663, 1)  -- 强化5级伤害
             end
 
-        elseif self.jishu < 2 then  -- 第2次释放时的伤害
+        elseif self.jishu == 2 then  -- 第2次释放时的伤害
             if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010652, 1)  -- 强化1级伤害
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
@@ -89,7 +89,7 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010664, 1)  -- 强化5级伤害
             end
-        elseif self.jishu < 3 then  -- 第3次释放时的伤害
+        elseif self.jishu == 3 then  -- 第3次释放时的伤害
             if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010653, 1)  -- 强化1级伤害
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then
@@ -101,7 +101,7 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016389)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010665, 1)  -- 强化5级伤害
             end
-        elseif self.jishu < 4 then  -- 第4次释放时的伤害
+        elseif self.jishu == 4 then  -- 第4次释放时的伤害
             if self._proxy:CheckBuffByKind(self._uuid, 1016385)  then
                 self._proxy:ApplyMagic(self._uuid, self._uuid,  1010654, 1)  -- 强化1级伤害
             elseif self._proxy:CheckBuffByKind(self._uuid, 1016386)  then

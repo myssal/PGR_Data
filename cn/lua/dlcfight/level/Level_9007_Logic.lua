@@ -1,8 +1,8 @@
----V4.2 白龙战斗
+---V4.2 小辉辉战斗
 local XLevelScript9007 = XDlcScriptManager.RegLevelLogicScript(9007, "XLevelLogicScript9007") --注册脚本类到管理器（逻辑脚本注册
 local XPlayerNpcContainer = require("Level/Common/XPlayerNpcContainer")
-local Timer = require("Level/Common/XTaskScheduler")
 local XRelinkEventRecord = require("Level/Common/XRelinkEventRecord")
+local Timer = require("Level/Common/XTaskScheduler")
 
 ---@param proxy XDlcCSharpFuncs
 function XLevelScript9007:Ctor(proxy) --构造函数，用于执行与外部无关的内部构造逻辑（例如：创建内部变量等）
@@ -14,14 +14,15 @@ function XLevelScript9007:Ctor(proxy) --构造函数，用于执行与外部无�
 end
 
 function XLevelScript9007:Init() --初始化逻辑
-    --事件注册
     self._eventRecord:Init(self._proxy, "XLevelScript9007")
+    --事件注册
+
     --XLog.Debug("开启挂起啊初始化逻辑")    
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)                                       --事件注册：NPC死亡
     self._proxy:RegisterEvent(EWorldEvent.EnterLevel)
-    self._proxy:RegisterEvent(EWorldEvent.MasterControllerChanged)              --事件注册：主控端切换
-    --self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                   --事件注册：加buff   (eventArgs.NpcUUID,eventArgs.BuffTableId)
-
+    self._proxy:RegisterEvent(EWorldEvent.MasterControllerChanged)              --事件注册：主控端切换 
+    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)                --事件注册：BUFF移除
+    
     self._localPlayerDeathTimes = 0                                                      -- 初始化本端玩家死亡次数
     self._spawnPoint = {}                                                               --获取点位序号，初始化中获取
     self._isFinishFight = false                                                         --完成战斗的flag
@@ -32,22 +33,28 @@ function XLevelScript9007:Init() --初始化逻辑
     self._hasSettleLevel = false                                                                --是否已经上传过服务器结果了
     self._currentPhase = 0                                                              --当前阶段
     self._lastPhase = 0                                                                  --上一阶段
-    self._playerNpcList = {}     
-    self._proxy:SetLevelMemoryInt(40001, 0)                                                         --玩家列表
+    self._playerNpcList = {}                                                            --玩家列表
+    self.LimitTime = 1770
+    self._soloFlag = false 
+    self._soloReborn = true 
+    self._soloCanRebornTimes = 2
+    self._proxy:SetLevelMemoryInt(40001, 0)                                             --初始化关卡
+    
     --拿到玩家列表和关卡编辑器中的所有点位
+    XLog.Debug("玩家列表长度现在是"..#self._playerNpcList)
     for i = 1, 5 do
         self._spawnPoint[i] = self._proxy:GetSpot(i)    --获取关卡编辑器中配置好的点，1为BOSS出生点，2为场地中心，3~5是玩家出生点
     end
-    -- self._proxy:SwitchSceneSubPrefab(0)
+    
      --初始化怪物配置
     local monsterId = {
-        Level01 = 8052,   --小辉辉
+        Level01 = 8052,     --难度1
         Level02 = 8052,     --难度2
         Level03 = 8052,     --难度3
         Level04 = 8052,     --难度4
         Level05 = 8052,      --难度5
         default= 8052
-    }
+    }   --白龙
     local monsterCamp= ENpcCampType.Camp2
     local monsterBornPos = self._spawnPoint[1]
     local monsterBornRota = {x = 0, y = 180, z = 0}
@@ -63,49 +70,29 @@ function XLevelScript9007:Init() --初始化逻辑
     self._delayToLosedTime = 5
     self._levelEndTime = 99999               --临时记录游戏结束的时间(初始化一个超级大的时间)
     -----------------创建怪物--------------------------------------------------------------------------------------------
-    if self._levelId == 9007 then
+    
+    
+    if self._levelId == 9007 then                                                              --难度2
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.Level01, monsterCamp, monsterBornPos, monsterBornRota,false)
-    elseif self._levelId == 9008 then
+    elseif  self._levelId == 9008 then
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.Level02, monsterCamp, monsterBornPos, monsterBornRota,false)
-    elseif self._levelId == 9009 then   
+    elseif  self._levelId == 9009 then
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.Level03, monsterCamp, monsterBornPos, monsterBornRota,false)
-    elseif self._levelId == 9010 then
+    elseif  self._levelId == 9010 then
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.Level04, monsterCamp, monsterBornPos, monsterBornRota,false)
-    elseif self._levelId == 9011 then
+    elseif  self._levelId == 9011 then
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.Level05, monsterCamp, monsterBornPos, monsterBornRota,false)
     else
         self.monster_UUID = self._proxy:GenerateNpc(monsterId.default, monsterCamp, monsterBornPos, monsterBornRota,false)
     end
     self._proxy:SetNpcFaceToPosition(self.monster_UUID,self._spawnPoint[3])                --BOSS看向玩家1的位置
-
     -----------------创建公共NPC--------------------------------------------------------------------------------------------
     self.commonNpc_UUID = self._proxy:GenerateNpc(commonNpcId, commonNpcCamp, commonNpcBornPos, commonNpcBornRota)
     self._proxy:SetTeamWorkSkillActive(true,300,5)
     self.playerDeadCountList = {}
     XLog.Debug("开启团队协作系统")
-    -----------------传送玩家位置--------------------------------------------------------------------------------------------
-    for i, _ in ipairs(self._playerNpcList) do
-        if self._proxy:CheckNpc(self._playerNpcList[i]) then
-            self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
-            self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
-        end
-    end
+   
     ------------初始化配置----------------------------------------------------------------------------------------
-    --  self._proxy:SetUiActive(UIObjectID,false)                                                                 --初始化UI隐藏
-
-    self._proxy:SetObstacleGroupActive(1,false)--大圈
-    self._proxy:SetObstacleGroupActive(2,false)--小圈
-
-    for i=10,17 do
-        self._proxy:SetObstacleActive(i,false)
-    end
-
-
-
-
-
-
-    XLog.Debug("初始化完毕")
 end
 
 --region 关卡阶段管理
@@ -126,16 +113,19 @@ local Phase = {
 
 ---@param dt number @ delta time
 function XLevelScript9007:Update(dt) --每帧更新逻辑
-    self._levelTime = self._levelTime + dt       --记录关卡已进行时间
     self._timer:Update(dt)
+    self._levelTime = self._levelTime + dt       --记录关卡已进行时间
     self:OnUpdatePhase(dt)
 end
+
+
+
 function XLevelScript9007:InitPhase()
     --初始化关卡各个阶段的相关变量
 end
 ---@param phase number
 function XLevelScript9007:SetPhase(phase)    --跳转关卡阶段
-
+    
     if phase == self._currentPhase then
         return
     end
@@ -148,7 +138,8 @@ function XLevelScript9007:SetPhase(phase)    --跳转关卡阶段
 end
 function XLevelScript9007:OnEnterPhase(phase)
     --进入一个关卡阶段时需要做的事情在这里实现（最好不要在这里跳转关卡阶段
-    if phase == Phase.Show then                                                         --一开始默认在Start，所以只有Show阶段开始才会有Enter流程
+    if phase == Phase.Show then    
+         --一开始默认在Start，所以只有Show阶段开始才会有Enter流程
         XLog.Debug("进入Show阶段")
         self.timeToBattle = false 
         self._proxy:SetLevelMemoryInt(50001, self.monster_UUID)       --传给present               --通知BOSS开始播入场动画
@@ -156,21 +147,17 @@ function XLevelScript9007:OnEnterPhase(phase)
     elseif phase == Phase.Battle then
         XLog.Debug("进入Battle阶段")
         self._proxy:SetLevelMemoryInt(40001, 2)
-        
     elseif phase == Phase.LosedStart then
         XLog.Debug("进入LosedStart阶段")
         self._LosedStartFlag = false
         self._timer:Schedule(3, self, function()
             self._LosedStartFlag = true
         end)
-        self._proxy:SetLevelMemoryInt(40001, 3)
     elseif phase == Phase.LosedDelay then
         XLog.Debug("进入失败过场阶段")
-        self._proxy:SetLevelMemoryInt(40001, 4)
         self._levelEndTime = self._levelTime
     elseif phase == Phase.LosedDialog then
         XLog.Debug("进入失败弹窗阶段")
-        self._proxy:SetLevelMemoryInt(40001, 5)
     elseif phase == Phase.WinStart then
         XLog.Debug("进入WinStart阶段")
         self._WinStartFlag = false
@@ -182,7 +169,6 @@ function XLevelScript9007:OnEnterPhase(phase)
         self._timer:Schedule(3.8, self, function()
             self._WinStartFlag = true
         end)
-        self._proxy:SetLevelMemoryInt(40001, 6)
     elseif phase == Phase.WinMissle then
         XLog.Debug("进入WinMissle阶段")
         self._proxy:PlayDropEffect()
@@ -190,41 +176,60 @@ function XLevelScript9007:OnEnterPhase(phase)
         self._proxy:SetLevelMemoryInt(40001, 7)
     elseif phase == Phase.WinDelay then
         XLog.Debug("进入胜利过场阶段")
-        self._proxy:SetLevelMemoryInt(40001, 8)
         self._levelEndTime = self._levelTime
     elseif phase == Phase.WinDialog then
         XLog.Debug("进入胜利弹窗阶段")
-        self._proxy:SetLevelMemoryInt(40001, 9)
     elseif phase == Phase.End then
         XLog.Debug("进入结束关卡阶段")
-        self._proxy:SetLevelMemoryInt(40001, 10)
     end
 end
 
 ---@param dt number @ delta time
 function XLevelScript9007:OnUpdatePhase(dt)
     --当前关卡阶段需要一直执行的逻辑在这里实现（一般在这里跳转关卡阶段
-    if self._currentPhase == Phase.Start then                                                               
+    if self._currentPhase == Phase.Start then  
+
         self._playerNpcContainer:Init()         --从系统层获取playerNpcList
         self:InitialPlayerSet()                 -- 从playerNpcContainer获取:self._playerNpcList
-        
         if #self._playerNpcList == 1 then                                                                --判断是否是单人进入，用完结列表长度进行判断
             if not self._proxy:CheckBuffByKind(self._playerNpcList[1],1000495) then
                 XLog.Debug("一个人?给你上个buff")
-                self._proxy:ApplyMagic(self._playerNpcList[1],self._playerNpcList[1],1000495)          --给唯一的玩家上一个单人模式的复活buff
+                self._proxy:ApplyMagic(self._playerNpcList[1],self._playerNpcList[1],1000495)
                 self._proxy:ApplyMagic(self._playerNpcList[1],self._playerNpcList[1],1000516)
+                self._soloFlag = true
+            end
+        end
+ -----------------传送玩家位置--------------------------------------------------------------------------------------------
+        for i, _ in ipairs(self._playerNpcList) do
+            if self._proxy:CheckNpc(self._playerNpcList[i]) then
+                self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
+                self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
             end
         end
         self:SetPhase(Phase.Show)  
-       
     elseif self._currentPhase == Phase.Show then   
         if self.timeToBattle == false  then 
             self.timeToBattle = true
-            self._timer:Schedule(7, self, function()                --8秒后切阶段打开小辉辉AI
-                self:SetPhase(Phase.Battle)                                                                             --跳转到战斗阶段
+            self._timer:Schedule(5, self, function()                --8秒后切阶段打开白龙AI
+                self:SetPhase(Phase.Battle)                        --跳转到战斗阶段
             end)
         end
     elseif self._currentPhase == Phase.Battle then
+        ------超时判负---------------
+        if self._levelTime >= (self.LimitTime) then        
+            XLog.Debug("战斗超时，判负处理")
+            self._isPlayerWin = false
+            self._isFinishFight = true
+            self._proxy:SetLevelMemoryInt(40001,100)
+            self._eventRecord:SetResultData(self._proxy)
+            self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
+            self:SetPhase(Phase.LosedStart)                                     --失败流程
+        elseif self._levelTime >= (self.LimitTime - 11) then 
+            XLog.Debug("超时倒计时")
+            self._proxy:SetLevelMemoryInt(60001,math.floor(self._levelTime))
+            self._proxy:SetLevelMemoryInt(40001,200)
+        end
+        ------正常胜负判断---------------
         self:CheckLevelEnd()                                                        --检测关卡结束
         if self._isFinishFight then                                                 --是否已经完成战斗的判断
             if self._isPlayerWin then
@@ -270,7 +275,7 @@ function XLevelScript9007:HandlePhaseEvent(eventType, eventArgs)
 end
 
 ---@param eventType number
----@param eventArgs userdata
+---@param eventArgs userdata 
 function XLevelScript9007:HandleEvent(eventType, eventArgs) --事件响应逻辑
     self._playerNpcContainer:HandleEvent(eventType, eventArgs)
     self._eventRecord:HandleEvent(eventType, eventArgs)--让record自己去监听
@@ -278,26 +283,48 @@ function XLevelScript9007:HandleEvent(eventType, eventArgs) --事件响应逻辑
         self._playerNpcContainer:Init(function(npc, index)
             self:InitialPlayerSet(npc, index)
         end)
-    end
-
+    elseif eventType == EWorldEvent.MasterControllerChanged then 
+        self._proxy:ShowTip(90201,5)
+        self._timer:Schedule(4, self, function()        
+            self._proxy:CloseTip(90201)
+        end)
+    elseif eventType == EWorldEvent.NpcRemoveBuff then 
+            if eventArgs.BuffTableId == 1000495 or eventArgs.BuffTableId == 1000516 then 
+                self._soloCanRebornTimes = self._soloCanRebornTimes - 1     --  次数-1
+                if self._soloCanRebornTimes <= 0 then 
+                    self._timer:Schedule(1, self, function()        
+                        self._soloReborn = false 
+                    end)
+                end 
+            end
+   
+     end
 end
 
 function XLevelScript9007:CheckAllPlayerDead() --检查是否所有玩家都死亡了
-    if self._playerNpcList == nil then
-        XLog.Debug("玩家列表为空,再次获取!!!")
-        self._playerNpcList = self._playerNpcContainer:GetPlayerNpcList()
-    end
-    for i = 1,#self._playerNpcList do                                           --还没死完
-        if self._proxy:IsNpcDead(self._playerNpcList[i]) == false then
-            --任意一个没死，就返回False
-            return false
-        elseif self._proxy:IsNpcDead(self._playerNpcList[i]) == true and (self._proxy:CheckBuffByKind(self._playerNpcList[i],1000495) == true
-        or self._proxy:CheckBuffByKind(self._playerNpcList[i],1000516) == true) then  --死了但是还有复活甲，用于单人检测
-            return false
+    if self._soloFlag == false then            --非单人
+        for i = 1,#self._playerNpcList do                                           --还没死完
+            if self._proxy:IsNpcDead(self._playerNpcList[i]) == false then
+                --任意一个没死，就返回False
+                return false
+            end
         end
+        XLog.Debug("真死完了!!!")
+        return true
+    elseif self._soloFlag == true then    --单人
+        for i, _ in pairs (self._playerNpcList) do 
+            if self._proxy:IsNpcDead(self._playerNpcList[i]) == true and 
+            self._soloReborn == true  then  --死了但是还有复活甲，用于单人检测
+                return false
+            elseif self._proxy:IsNpcDead(self._playerNpcList[i]) == false then
+                return false
+            end
+            
+        end 
+        XLog.Debug("用完复活甲了")
+        return true 
     end
-    XLog.Debug("真死完了!!!")
-    return true
+    
 end
 
 function XLevelScript9007:CheckLevelEnd() --检查关卡结束
@@ -322,6 +349,8 @@ function XLevelScript9007:CheckLevelEnd() --检查关卡结束
             XLog.Debug("检测到所有玩家死亡")
             self._eventRecord:SetResultData(self._proxy)--传值
             self._proxy:SettleFight(self._isPlayerWin)          --后端结算通知API
+            self._proxy:SetLevelMemoryInt(40001,100)                  --失败关闭所有UI
+            self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
             return
         end
     end

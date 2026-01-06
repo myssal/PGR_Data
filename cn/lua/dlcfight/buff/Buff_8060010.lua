@@ -13,11 +13,6 @@ function XBuffScript8060010:Init()
     self.attribType=0--生命属性
     self.thresholdNum=16000; --触发需要的生命值门槛
     self.hasLevel=false
-    ------------执行------------
-    local hpNum=self._proxy:GetNpcAttribValue(self._uuid,self.attribType) --初始化的时候就判断加上
-    if hpNum>=self.thresholdNum and not self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
-        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel) --上BUFF
-    end
 end
 
 ---@param dt number @ delta time
@@ -27,6 +22,10 @@ function XBuffScript8060010:Update(dt)
     ------------执行-------------
     if self.hasLevel==false then
         self.hasLevel,self.magicLevel=self._proxy:TryQueryBuffLevel(self._uuid,8060010)--获取自身的BUFF等级
+        local hpNum=self._proxy:GetNpcAttribValue(self._uuid,self.attribType) --血量门槛判断
+        if hpNum>=self.thresholdNum and not self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
+            self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel) --上BUFF
+        end
     end
 end
 

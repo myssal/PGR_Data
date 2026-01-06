@@ -223,7 +223,7 @@ function XLevelScript1041:Init()
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -254,7 +254,7 @@ function XLevelScript1041:Init()
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -276,7 +276,7 @@ function XLevelScript1041:Init()
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 10,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -299,7 +299,7 @@ function XLevelScript1041:Init()
         self._generateTimes = 1
         -- 猫阵营核心数据
         self._catData = {
-            target = 8,         -- 触发技能所需奶酪数
+            target = 15,         -- 触发技能所需奶酪数
             current = 0,        -- 当前收集进度
             --isActive = false,   -- 技能激活状态，加了冷却后没用了
             cooldown = 20,       -- 冷却时间(秒)
@@ -660,9 +660,9 @@ function XLevelScript1041:HandleEvent(eventType, eventArgs)
                         XLog.Debug("[状态升级] 玩家 "..npcuuid.." 首次获得奶酪 | 移除旧BUFF:"..tostring(1900147))
                         XLog.Debug("[BUFF变更] 新BUFFID:"..1900148)
                         if self._currentPhase == 1 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,13/55,-0.1)
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,13/55,-0.03)
                         elseif self._currentPhase == 3 then
-                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,21/70,-0.1)
+                            self._proxy:MouseHunterSetMouseCheeseData(npcuuid,1,3,21/70,-0.03)
                         end
                         self._takeCheeseCount[npcuuid] = self._takeCheeseCount[npcuuid] +1
                         XLog.Debug("ID为"..npcuuid.."的这只猫目前共获得奶酪数"..self._takeCheeseCount[npcuuid])

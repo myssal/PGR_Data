@@ -94,6 +94,8 @@ function XUiSkyGardenSGDroneGame:OnAwake()
     self._IsGuidePauseGame = false
     self._IsGuideFocusObject = false
 
+    self._IsMaskActive = false
+
     self._NoiseTimer = false
 
     self._CacheGuideOperator = false
@@ -113,7 +115,7 @@ function XUiSkyGardenSGDroneGame:OnStart(stageId, mapId, stageData, isHardMode, 
     self._StageId = stageId
     self._IsHardMode = isHardMode
     self._MapId = mapId
-    
+
     self:_InitUi()
     self:_InitGame(stageData.Seed)
     self:_InitMode(isHardMode, easyDroneHp, isEnableAssistance)
@@ -318,6 +320,7 @@ function XUiSkyGardenSGDroneGame:OnGameRestoreComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+    self:_SetMaskActive(false)
 
     local bullets = XSGDGInstance.Instance.ObjectManager:GetObjectsByTag("BulletDrone")
     local stageRoot = XSGDGInstance.Instance.Engine.StageRoot
@@ -340,6 +343,7 @@ function XUiSkyGardenSGDroneGame:OnGameRestartComplete()
     self:_RefreshTarget()
     self:_RefreshProgress()
     self:_PlayNoiseEffect()
+    self:_SetMaskActive(false)
 
     local bullets = XSGDGInstance.Instance.ObjectManager:GetObjectsByTag("BulletDrone")
     local stageRoot = XSGDGInstance.Instance.Engine.StageRoot
@@ -360,13 +364,11 @@ function XUiSkyGardenSGDroneGame:OnGameRelease()
 end
 
 function XUiSkyGardenSGDroneGame:OnBeginSaveGame()
-    self.Mask.gameObject:SetActiveEx(true)
-    XMVCA.XBigWorldUI:SetMaskActive(true, self.Name)
+    self:_SetMaskActive(true)
 end
 
 function XUiSkyGardenSGDroneGame:OnEndSaveGame()
-    self.Mask.gameObject:SetActiveEx(false)
-    XMVCA.XBigWorldUI:SetMaskActive(false, self.Name)
+    self:_SetMaskActive(false)
     self:_RefreshProgressPoint()
 end
 
@@ -408,7 +410,7 @@ end
 
 function XUiSkyGardenSGDroneGame:OnTagTriggered(triggerTag)
     local dialogues = self._TriggeredDialogues[triggerTag]
-    
+
     if not XTool.IsTableEmpty(dialogues) then
         local playDialogues = {}
 
@@ -872,6 +874,14 @@ function XUiSkyGardenSGDroneGame:_DoGuideOperator()
     end
 
     self._CacheGuideOperator = false
+end
+
+function XUiSkyGardenSGDroneGame:_SetMaskActive(isActive)
+    if self._IsMaskActive ~= isActive then
+        self._IsMaskActive = isActive
+        self.Mask.gameObject:SetActiveEx(isActive)
+        XMVCA.XBigWorldUI:SetMaskActive(isActive, self.Name)
+    end
 end
 
 function XUiSkyGardenSGDroneGame:_PlayNoiseEffect()

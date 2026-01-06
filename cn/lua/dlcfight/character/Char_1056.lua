@@ -5,7 +5,36 @@ local EGameplayTag = require("Enum/XGameplayTag")
 ---Relink-R5露西亚脚本
 ---@class XChar1056 : XRelinkCharBase
 local XCharR5Lucia2 = XDlcScriptManager.RegCharScript(1056, "XChar1056", Base)
-
+--设置登龙伤害表（用于核心插件）
+XCharR5Lucia2.DenglongDmgTbl = {
+    [10566010] = true,
+    [10566101] = true,
+    [10566105] = true,
+    [10566201] = true,
+    [10566205] = true,
+    [10566310] = true,
+    [10566314] = true,
+    [10566401] = true,
+    [10566410] = true,
+}
+XCharR5Lucia2.DenglongEquipDmgTbl = {
+    [10566010] = true,
+    [10566101] = true,
+    [10566105] = true,
+    [10566201] = true,
+    [10566205] = true,
+    [10566310] = true,
+    [10566314] = true,
+    [10566401] = true,
+    [10566410] = true,
+    [10561015] = true,
+    [10561025] = true,
+}
+--设置剑气伤害(用于核心插件)
+XCharR5Lucia2.JianqiDmgTbl = {
+    [10564101] = true,
+    [10564601] = true,
+}
 function XCharR5Lucia2:ScriptInit(isGainControl)
     Base.ScriptInit(self, isGainControl)
 
@@ -46,7 +75,7 @@ function XCharR5Lucia2:ScriptInit(isGainControl)
     self._jianqiCounter = 0
     self._canCastSkill = false
 
-    --设置核心能量
+    --初始化剑气值
     self._proxy:ApplyMagic(self._uuid, self._uuid, 1056001, 1)
 
     --注册技能事件
@@ -61,42 +90,31 @@ function XCharR5Lucia2:ScriptInit(isGainControl)
     self._JuheXuliSkillTypeTwo = 1051025
     self._JuheXuliSkill = 1051026
 
-    -- --设置登龙伤害表（用于核心插件）
-    -- self.DenglongDmgTbl = {
-    --     [10566010] = true,
-    --     [10566101] = true,
-    --     [10566105] = true,
-    --     [10566201] = true,
-    --     [10566205] = true,
-    --     [10566310] = true,
-    --     [10566314] = true,
-    --     [10566401] = true,
-    --     [10566410] = true,
-    -- }
-    -- self.DenglongEquipDmgTbl = {
-    --     [10566010] = true,
-    --     [10566101] = true,
-    --     [10566105] = true,
-    --     [10566201] = true,
-    --     [10566205] = true,
-    --     [10566310] = true,
-    --     [10566314] = true,
-    --     [10566401] = true,
-    --     [10566410] = true,
-    --     [10561015] = true,
-    --     [10561025] = true,
-    -- }
-    --设置剑气伤害(用于核心插件)
-    -- self.JianqiDmgTbl = {
-    --     [10564101] = true,
-    --     [10564601] = true,
-    -- }
     --设置核心插件子弹发射ID
     self._lunchId = {}
     self._lunchId[1] = 10511011
     self._lunchId[2] = 10511012
     self._lunchId[3] = 10511013
     self._lunchId[4] = 10511014
+    
+    --重连时执行判断自身处于大太刀模式还是小太刀模式，从而更改技能组设置
+    if self._proxy:CheckBuffByKind(self._uuid, 10513101) then
+        --切换普攻按键
+        self._AttackButton = 105602
+        self._SkillThird = 105613
+        --切换技能组按键
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._AttackButton)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._SkillThird)
+        --切换剑气技能
+        self._JianqiSkillGroup[1] = 1051047
+        self._JianqiSkillGroup[2] = 1051046
+        self._JianqiSkillGroup[3] = 1051048
+        self._JianqiSkillGroup[4] = 1051049
+        --切换居合技能
+        self._JuheXuli = 1051015
+        self._JuheXuliSkillTypeTwo = 1051075
+        self._JuheXuliSkill = 1051076
+    end
 end
 
 ---@param dt number @ delta time
@@ -381,7 +399,7 @@ function XCharR5Lucia2:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId,
             end
             local targertangle, cameraAngle = self._proxy:GetCameraPosInfo(self._uuid, npcid)
             --XLog.Warning("角度" .. cameraAngle)
-            if cameraAngle <= 188 then
+            if cameraAngle <= 180 then
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10519210)
             else
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10519209)
@@ -402,6 +420,7 @@ function XCharR5Lucia2:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId,
         end
 
         if (self._proxy:CheckBuffByKind(self._uuid, 10511108)) then
+            --1技能可连段
             if (SkillId ~= 1051011) then
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511109)
             end
@@ -462,16 +481,15 @@ function XCharR5Lucia2:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKin
         return
     end
     if (buffId == 10513101) then
+        --进入大太刀模式
         --切换动画层
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
         --切换普攻按键
         self._AttackButton = 105602
+        self._SkillThird = 105613
         --切换技能按键
-        -- self._proxy:SetNpcInputActionGroup(self._uuid, 105151)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, 105602)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, -1)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball2, -1)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, 105613)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._AttackButton)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._SkillThird)
         --设置大太刀剑气技能组
         self._JianqiSkillGroup[1] = 1051047
         self._JianqiSkillGroup[2] = 1051046
@@ -526,6 +544,7 @@ function XCharR5Lucia2:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKin
     end
 
     if (buffId == 10511108) then
+        --1技能第二段切换
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105612)
     end
 end
@@ -546,16 +565,15 @@ function XCharR5Lucia2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
         return
     end
     if (buffId == 10513101) then
+        --大太刀模式结束
         --切换动画层
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
-        -- self._proxy:SetNpcInputActionGroup(self._uuid, 105101)
         --设置普攻键
         self._AttackButton = 105601
+        self._SkillThird = 105608
         --切换技能按键
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, 105601)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105606)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball2, 105607)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, 105608)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._AttackButton)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._SkillThird)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10513117)
         --切换剑气技能
         self._JianqiSkillGroup[1] = 1051042
@@ -574,18 +592,20 @@ function XCharR5Lucia2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
         end
     end
     if (buffId == 10513118) then
+        --大太刀模式增伤结束
         self._proxy:RemoveBuff(self._uuid, 10513119)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10512107)
     end
 
     if (buffId == 10510706) then
-        --XLog.Warning("弹刀结束")
+        --弹刀状态结束
         self._DodgeJianqi = false
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._AttackButton)
         self._CastJianqi = false
     end
 
     if (buffId == 10514001) then
+        --剑气状态结束
         self._jianqiCounter = 0
         self._canUseJianqi = false
         -- self._proxy:ApplyMagic(self._uuid, self._uuid, 10514115)
@@ -607,29 +627,9 @@ function XCharR5Lucia2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
     end
 
     if (buffId == 10511108) then
+        --1技能连段时间结束
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105606)
     end
-
-    -- if not self._proxy:CheckNpcCurrentAction(self._uuid, 1051068) then
-    --     if(buffId == 10516317) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516321)
-    --     end
-    --     if(buffId == 10516319) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516322)
-    --     end
-    --     if(buffId == 10516321) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516323)
-    --     end
-    --     if(buffId == 10516322) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516324)
-    --     end
-    --     if(buffId == 10516323) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516325)
-    --     end
-    --     if(buffId == 10516324) then
-    --         self._proxy:ApplyMagic(self._uuid,self._uuid,10516326)
-    --     end
-    -- end
 end
 
 function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
@@ -639,30 +639,6 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Launcher == self._uuid then
         --核心改造1-1
         if self._proxy:CheckBuffByKind(self._uuid, 1051101) then
-            self.DenglongDmgTbl = {
-                [10566010] = true,
-                [10566101] = true,
-                [10566105] = true,
-                [10566201] = true,
-                [10566205] = true,
-                [10566310] = true,
-                [10566314] = true,
-                [10566401] = true,
-                [10566410] = true,
-            }
-            self.DenglongEquipDmgTbl = {
-                [10566010] = true,
-                [10566101] = true,
-                [10566105] = true,
-                [10566201] = true,
-                [10566205] = true,
-                [10566310] = true,
-                [10566314] = true,
-                [10566401] = true,
-                [10566410] = true,
-                [10561015] = true,
-                [10561025] = true,
-            }
             --登龙伤害加成:所有登龙伤害都可以吃到这个伤害加成
             if self.DenglongDmgTbl[eventArgs.Id] then
                 --XLog.Warning("登龙伤害加成")
@@ -679,30 +655,6 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
         end
         --核心改造1-2
         if self._proxy:CheckBuffByKind(self._uuid, 1051102) then
-            self.DenglongDmgTbl = {
-                [10566010] = true,
-                [10566101] = true,
-                [10566105] = true,
-                [10566201] = true,
-                [10566205] = true,
-                [10566310] = true,
-                [10566314] = true,
-                [10566401] = true,
-                [10566410] = true,
-            }
-            self.DenglongEquipDmgTbl = {
-                [10566010] = true,
-                [10566101] = true,
-                [10566105] = true,
-                [10566201] = true,
-                [10566205] = true,
-                [10566310] = true,
-                [10566314] = true,
-                [10566401] = true,
-                [10566410] = true,
-                [10561015] = true,
-                [10561025] = true,
-            }
             --登龙伤害加成
             if self.DenglongDmgTbl[eventArgs.Id] then
                 --XLog.Warning("登龙伤害加成")
@@ -719,10 +671,6 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
         end
         --核心改造2-1
         if self._proxy:CheckBuffByKind(self._uuid, 1051103) then
-            self.JianqiDmgTbl = {
-                [10564101] = true,
-                [10564601] = true,
-            }
             if self.JianqiDmgTbl[eventArgs.Id] then
                 --XLog.Warning("剑气伤害加成-核心2-1")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511031, 1, eventArgs.ContextId, 1)
@@ -735,16 +683,13 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
                 end
                 if not self._proxy:CheckBuffByKind(self._uuid, 10511034) then
                     self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056021)
+                    self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056038)
                     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511034)
                 end
             end
         end
         --核心改造2-2
         if self._proxy:CheckBuffByKind(self._uuid, 1051104) then
-            self.JianqiDmgTbl = {
-                [10564101] = true,
-                [10564601] = true,
-            }
             if self.JianqiDmgTbl[eventArgs.Id] then
                 --XLog.Warning("剑气伤害加成-核心2-2")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511041, 1, eventArgs.ContextId, 1)
@@ -757,6 +702,7 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
                 end
                 if not self._proxy:CheckBuffByKind(self._uuid, 10511034) then
                     self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056021)
+                    self._proxy:ApplyMagic(self._uuid, eventArgs.Target, 1056038)
                     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511034)
                 end
             end
@@ -1078,7 +1024,7 @@ function XCharR5Lucia2:JianqiCombo()
                     local success, axis = self._proxy:TryGetQueryStickAxis()
                     if success and self._jianqiCounter < 5 and not self._proxy:CheckBuffByKind(self._uuid, 10513101) then
                         if self._jianqiCounter == 3 then
-                            self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
+                            -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
                         end
                         self._proxy:CastAction(self._uuid, 1051042)
                         self._useJianqi = false
@@ -1091,7 +1037,7 @@ function XCharR5Lucia2:JianqiCombo()
                         self._proxy:CastAction(self._uuid, self._JianqiSkillGroup[self._jianqiCounter])
                     elseif self._jianqiCounter >= 3 and self._jianqiCounter < 5 then
                         if self._jianqiCounter == 3 then
-                            self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
+                            -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
                         end
                         self._proxy:CastAction(self._uuid, self._JianqiSkillGroup[self._proxy:Random(1, 3)])
                     else --self._jianqiCounter == 5 then
@@ -1116,7 +1062,7 @@ function XCharR5Lucia2:JianqiCombo()
                     self._canUseJianqi = true
                     --XLog.Warning("重置输入")
                     if self._jianqiCounter == 3 then
-                        self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
+                        -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
                     end
                 end
 
@@ -1125,7 +1071,7 @@ function XCharR5Lucia2:JianqiCombo()
                         targetNpc)
                 elseif self._jianqiCounter >= 3 and self._jianqiCounter < 5 then
                     if self._jianqiCounter == 3 then
-                        self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
+                        -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1056036)
                     end
                     self._proxy:CastActionToSearchTarget(self._uuid, self._JianqiSkillGroup[self._proxy:Random(1, 3)],
                         targetNpc)

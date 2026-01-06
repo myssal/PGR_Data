@@ -48,7 +48,7 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipInfo()
         self.EquipNode = XUiGridDlcRelinkEquipment.New(self.GridEquipment, self)
         self.EquipNode:Open()
     end
-    self.EquipNode:Refresh(self.EquipUid)
+    self.EquipNode:Refresh(self.EquipUid, nil, self.IsNotSelf)
     local templateId = self._Control:GetEquipTemplateIdByEquipUid(self.EquipUid, self.IsNotSelf)
     self._OccupationType = self._Control:GetEquipOccupationType(templateId)
     -- 装备名称
@@ -73,6 +73,11 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipInfo()
 end
 
 function XUiPanelDlcRelinkEquipDetail:RefreshIsLocked()
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.BtnLock.gameObject:SetActiveEx(false)
+        return
+    end
+    self.BtnLock.gameObject:SetActiveEx(true)
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.BtnLock:SetButtonState(isLocked and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end

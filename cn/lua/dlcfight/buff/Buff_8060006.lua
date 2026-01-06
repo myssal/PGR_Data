@@ -24,8 +24,9 @@ function XBuffScript8060006:InitEventCallBackRegister()
 end
 
 function XBuffScript8060006:AfterCureCalc(eventArgs)
-    if not self._proxy:CheckNpc(self._uuid) and not eventArgs.Launcher==self._uuid then return end
-    self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel)
+    if self._proxy:CheckNpc(self._uuid) and eventArgs.Launcher==self._uuid then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel)
+    end
 end
 --endregion
 

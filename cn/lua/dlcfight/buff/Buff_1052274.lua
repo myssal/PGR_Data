@@ -7,7 +7,7 @@ function XBuffScript1052274:Init()--初始化
     Base.Init(self)
     self.ShieldCoe = 0.001
     -----------------------------配置------------------------
-    XLog.Warning("盾斧切换剑盾护盾buff添加")
+    --XLog.Warning("盾斧切换剑盾护盾buff添加")
     self:ShieldCal()
 end
 
@@ -26,7 +26,7 @@ end
 
 function XBuffScript1052274:Terminate()
     Base.Terminate(self)
-    XLog.Warning("buff移除")
+    --XLog.Warning("buff移除")
     self._proxy:RemoveProtector()
 end
 
@@ -36,7 +36,7 @@ function XBuffScript1052274:ShieldCal()
     self.ShieldVal = math.floor(self.CustomPower1 * self.ShieldCoe * self.MaxLife)
     self._proxy:AddProtector(self.ShieldVal,EDamageType.None,0)
     self._proxy:ApplyMagic(self._uuid,self._uuid,105238,4)
-    XLog.Warning("打印盾值"..self.ShieldVal)
+    --XLog.Warning("打印盾值"..self.ShieldVal)
 end
 
 return XBuffScript1052274

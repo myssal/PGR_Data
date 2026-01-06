@@ -374,6 +374,43 @@ function XChar8005:Terminate()
 end
 --endregion
 
+--region 连招类技能究极大保底
+function XChar8005:UpdateComboSkillSafeProtection()
+    local curActionId = self:GetSyncVarLocal(self._syncKeys.curActionId)
+
+    -- 狂暴标记
+    self:ProtectComboSkill(curActionId, 1000497, 1000498, {8005300, 8005301, 8005518, 8055519})
+    self:ProtectComboSkill(curActionId, 1000465, 1000466, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
+    self:ProtectComboSkill(curActionId, 1000467, 1000468, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
+    self:ProtectComboSkill(curActionId, 1000469, 1000470, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
+    self:ProtectComboSkill(curActionId, self._immuUltraAbortMagicId, self._cancelImmuUltraAbortMagicId, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
+end
+
+function XChar8005:ProtectComboSkill(curActionId, buffTemplateId, removeBuffTemplateId, actionIds)
+    local isInAnyAction = false
+
+    -- 检测是否在任意一个连招action内
+    for index, actionId in ipairs(actionIds) do
+        if actionId == curActionId then
+            isInAnyAction = true
+            break
+        end
+    end
+
+    -- 如果在任意连招内，则确保该效果存在，否则移除该效果
+    local hasBuff = self._proxy:CheckBuffByKind(self._uuid, buffTemplateId)
+    if isInAnyAction then
+        if not hasBuff then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, buffTemplateId, 1)
+        end
+    else
+        if hasBuff then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, removeBuffTemplateId, 1)
+        end
+    end
+end
+--endregion
+
 --region 延迟调用系统
 --- 延迟调用函数：参数1：函数名，参数2：延迟，后续参数：函数参
 function XChar8005:DelayCall(...)
@@ -519,7 +556,7 @@ function XChar8005:UpdateAggroSystem(dt)
         -- 对于非仇恨列表的目标，强制拉入仇恨列表
         local players = self._proxy:GetPlayerNpcList()
         for i, player in ipairs(players) do
-            if not self._proxy:CheckNpcInThreatList(self._uuid, player) and not self._proxy:IsNpcDead(player) then
+            if not self._proxy:CheckNpcInThreatList(self._uuid, player) and not self._proxy:IsNpcDead(player) and not self._proxy:CheckNpcIsDisconnect(player) then
                 if self:IsPlayerTank(player) then
                     self._proxy:AddThreat(self._uuid, player, 0, 1000)
                 else
@@ -1235,6 +1272,10 @@ function XChar8005:InitCoreCombatSkillCastSystem()
         8005041,
         8005043,
         8005051
+    }
+    -- 角力联弹技能列表
+    self._multiQTESkills = {
+        8005505
     }
 end
 
@@ -2013,8 +2054,17 @@ end
 function XChar8005:InitAudioSystem()
     -- 音效事件magics
     self._cvEventMagics = {
+        CastMultiQTESkill = 1000505,
+        MultiQTESuccess = 1000506,
         CastCounterSkill = 1000507,
         CastHighDmgSkill = 1000508
+    }
+
+    self._cvMagics = {
+        EnterScene = 8005751,
+        DPSCheckStart = 8005752,
+        DPSCheckSuccess = 8005753,
+        DPSCheckFail = 8005754
     }
 end
 --endregion
@@ -2063,6 +2113,8 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
         self:ApplyMagicsToAllPlayers({ 8005466}, 1) -- 临时镜头
         self._proxy:ApplyMagic(self._uuid, self._uuid, 8005961, 1) -- 开护盾部位
         self:LockGameplayState(true, true, true, true, true, false)
+        -- DPS检测语音
+        self:ApplyMagicsToSelf({ self._cvMagics.DPSCheckStart }, 1)
     end
 
     -- DPS检测失败终结技
@@ -2103,7 +2155,8 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
 
     -- 入场动画
     if skillId == 8005315 then
-        self:ApplyMagicsToAllPlayers({8005751}, 1)
+        -- 入场语音
+        self:ApplyMagicsToAllPlayers({ self._cvMagics.EnterScene }, 1)
     end
 
     -- 角力联弹触发攻击 锁状态
@@ -2114,11 +2167,19 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
     -- 弹刀类技能触发预警事件，主要用于CV响应
     if self:Contain(self._counterSkills, skillId) then
         --self:ApplyMagicsToSelf({self._cvEventMagics.CastCounterSkill}, 1)
+        if targetId ~= nil and targetId ~= 0 then
+            self._proxy:ApplyMagic(self._uuid, targetId, self._cvEventMagics.CastCounterSkill, 1)
+        end
     end
 
     -- 常规高强类技能触发预警事件，主要用于CV响应
     if self:Contain(self._powerfulSkills, skillId) then
-        --self:ApplyMagicsToSelf({self._cvEventMagics.CastHighDmgSkill}, 1)
+        self:ApplyMagicsToSelf({self._cvEventMagics.CastHighDmgSkill}, 1)
+    end
+
+    -- 角力联弹技能触发预警事件，主要用于CV响应
+    if self:Contain(self._multiQTESkills, skillId) then
+        self:ApplyMagicsToSelf({self._cvEventMagics.CastMultiQTESkill }, 1)
     end
 end
 
@@ -2261,6 +2322,8 @@ function XChar8005:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     -- 决定DPS检测是否通过
     if buffId == 8005070 then
         if self._proxy:GetNpcProtector(self._uuid) <= 0 then
+            -- 优先打断动作防止卡状态
+            self._proxy:AbortAction(self._uuid, true)
             -- 移除所有子弹
             self._proxy:DestroyAllMissileDependOnLauncher(self._uuid)
             -- 解锁状态
@@ -2269,11 +2332,15 @@ function XChar8005:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
             self:ApplyMagicsToSelf({8005959, 8005915}, 1)
             -- 强制关闭机制条
             self._proxy:HideMechanismBar(3)
+            -- 成功语音
+            self:ApplyMagicsToAllPlayers({ self._cvMagics.DPSCheckSuccess }, 1)
         else
             self._proxy:AbortAction(self._uuid, true)
             self._proxy:CastActionToPosition(self._uuid, self._ultraEndActionId, self._battleSceneCenter)
             --  DPS检测失败通知
             self:ApplyMagicsToSelf({8005916}, 1)
+            -- 失败语音
+            self:ApplyMagicsToAllPlayers({ self._cvMagics.DPSCheckFail }, 1)
         end
         -- 碎盾特效子弹
         self._proxy:LaunchMissile(self._uuid, self._uuid, 8005113, 8005106)
@@ -2466,6 +2533,10 @@ function XChar8005:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID ~= self._uuid then return end
 
     self:ExitQTEInteract()
+    -- 延迟通知赛利卡发出语音
+    self._proxy:AddTimerTask(1.5, function()
+        self:ApplyMagicsToSelf({self._cvEventMagics.MultiQTESuccess}, 1)
+    end)
 end
 
 function XChar8005:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
@@ -2473,6 +2544,10 @@ function XChar8005:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID ~= self._uuid then return end
 
     self:ExitQTEInteract()
+    -- 延迟通知赛利卡发出语音
+    self._proxy:AddTimerTask(1.5, function()
+        self:ApplyMagicsToSelf({self._cvEventMagics.MultiQTESuccess}, 1)
+    end)
 end
 
 function XChar8005:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID, succeed)
@@ -2489,6 +2564,11 @@ function XChar8005:OnNpcMultiParrySucceed(launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID ~= self._uuid then return end
 
     self:ExitQTEInteract()
+    -- 延迟通知赛利卡发出语音
+    self._proxy:AddTimerTask(1.5, function()
+        self:ApplyMagicsToSelf({self._cvEventMagics.MultiQTESuccess}, 1)
+        XLog.Debug("音频测试：联弹成功！")
+    end)
 end
 
 function XChar8005:OnNpcMultiParryFail(launcherNpcUUID, targetNpcUUID)
@@ -3250,7 +3330,11 @@ function XChar8005:InitFightStateMachine()
     self._fightSM:AddTransition(XChar8005.EFightState.ODBreaking, XChar8005.EFightState.Normal, 0, self.odBreakingToNormal, 0, 0)
 
     self._onFightSMStateChangedHandler = function(previousStateId, nextStateId)
-        local previousState = self._fightSM:GetState(previousStateId)
+        -- 规避初始进入时候，首个stateId为nil导致报错的情况
+        local previousState = nil
+        if previousStateId ~= nil then
+            previousState = self._fightSM:GetState(previousStateId)
+        end
         local nextState = self._fightSM:GetState(nextStateId)
 
         -- 初始进入战斗状态时，给全场玩家加仇恨值(T+5000, 非T+1), 强制刷一遍CD

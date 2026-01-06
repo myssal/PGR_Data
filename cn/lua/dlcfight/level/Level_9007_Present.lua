@@ -2,6 +2,7 @@
 local XLevelScript9007 = XDlcScriptManager.RegLevelPresentScript(9007, "XLevelPresentScript9007")
 local Timer = require("Level/Common/XTaskScheduler")
 
+
 -- 脚本构造函数
 ---@param proxy XDlcCSharpFuncs
 function XLevelScript9007:Ctor(proxy)
@@ -12,7 +13,10 @@ end
 -- 初始化
 function XLevelScript9007:Init()
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
+    self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)                 --事件注册：触发区碰撞
+
     self._localPlayerNpc = self._proxy:GetLocalPlayerNpcId()                         -- 获取本端玩家npc
+    self._spawnPoint = {} 
     self._ShowPhaseUiOff = false
     self._levelTime = 0
     self._ShowPhaseUiOn = false
@@ -24,17 +28,36 @@ function XLevelScript9007:Init()
     self._initWinDelayPhase = false
     self._initWinDialogPhase = false
     self._initEndPhase = false
-    self.LimitTime = 1800   --限时1800秒
-    
+    self._limitTimeToEnd = false
+    self.LimitTime = 1770
+    self._deathZoneId = 1        -- 1为死区的PlacedID
+    self.levelId = self._proxy:GetCurrentLevelId()  --当前关卡ID
     self._localPlayerID = self._proxy:GetPlayerIdByNpc(self._localPlayerNpc)
+    for i = 1, 5 do
+        self._spawnPoint[i] = self._proxy:GetSpot(i)    --获取关卡编辑器中配置好的点，1为BOSS出生点，2为场地中心，3~5是玩家出生点
+    end
+    --场景碰撞预处理
+    self._proxy:SetObstacleGroupActive(1,false)--大圈
+    self._proxy:SetObstacleGroupActive(2,false)--小圈
+    for i=10,17 do
+        self._proxy:SetObstacleActive(i,false)
+    end
+
+
 end
 
 -- 事件
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevelScript9007:HandleEvent(eventType, eventArgs)
-    
+    if eventType == EWorldEvent.ActorTrigger then
+        if eventArgs.HostSceneObjectPlaceId == self._deathZoneId and eventArgs.TriggerState == 1 then 
+            self._proxy:SetNpcPosition(eventArgs.EnteredActorUUID,self._spawnPoint[2],false)
+            self._proxy:ShowTip(90204)
+        end
+    end
 end
+
 local UIControl = {
     On = 100,                               --全开
     Off = 10                                --全关
@@ -54,7 +77,19 @@ function XLevelScript9007:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localPlayerNpc,3)     --隐藏DLC额外面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localPlayerNpc,3)    --隐藏聊天记录
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localPlayerNpc,3)    --隐藏聊天轮盘
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localPlayerNpc,3)    --隐藏队友信息
         self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localPlayerNpc,3)    --隐藏任务
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localPlayerNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localPlayerNpc,false)
+
+
     elseif SwitchType == UIControl.On then
         self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --显示摇杆
         self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localPlayerNpc,1)         --显示右侧面板
@@ -67,6 +102,17 @@ function XLevelScript9007:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localPlayerNpc,1)     --显示DLC额外面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localPlayerNpc,1)    --显示聊天记录
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localPlayerNpc,1)    --显示聊天轮盘
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localPlayerNpc,1)    --显示队友信息
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localPlayerNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localPlayerNpc,true)
+
     end
 end
 -- 每帧执行
@@ -142,8 +188,10 @@ function XLevelScript9007:Update(dt)
             self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localPlayerNpc,3) 
             self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --只显示摇杆，屏蔽其他
             self._WinStartPhaseUiOff = true
+
         elseif self.haruCore == 100 and self._initLosedStartPhase == false then 
             XLog.Debug("检测到所有玩家死亡,关闭所有UI")
+            
             self:ControlLevelUI(UIControl.Off)
             self._proxy:SetLevelUiState(EFightUiType.CommonReborn,self._localPlayerNpc,3)            --隐藏摇杆
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localPlayerNpc,false)
@@ -163,18 +211,23 @@ function XLevelScript9007:Update(dt)
             self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localPlayerNpc,3)
             self._proxy:CloseTip(90203)
             self._initLosedStartPhase = true
+        elseif self.haruCore == 200 and self._limitTimeToEnd == false then 
+            self._limitTimeToEnd = true
         end
-        if self._levelTime > (self.LimitTime-10) then 
-            self.timeToEnd = self.LimitTime - self._levelTime
-            if self.timeToEnd >=0 then 
-                self._proxy:ShowTip(90202, math.floor(self.timeToEnd) )
-            elseif self.timeToEnd <  0 then
-                self._proxy:CloseTip(90202)
+        if self._limitTimeToEnd == true then 
+            if self._proxy:CheckLevelMemoryInt(60001) then
+                self.mainLevelTime = self._proxy:GetLevelMemoryInt(60001)
+                self.timeToEnd = self.LimitTime - self.mainLevelTime 
+                if self.timeToEnd <= 1 then
+                    self._proxy:CloseTip(90202)
+                    XLog.Debug("关闭倒计时")
+                elseif self.timeToEnd >= 2 then 
+                    self._proxy:ShowTip(90202, math.floor(self.timeToEnd)-1 )
+                end
             end
         end
     end
 end
-
 
 -- 脚本终止
 function XLevelScript9007:Terminate()

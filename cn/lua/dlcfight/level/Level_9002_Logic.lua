@@ -21,8 +21,8 @@ function XLevelScript9002:Init() --初始化逻辑
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)                                       --事件注册：NPC死亡
     self._proxy:RegisterEvent(EWorldEvent.EnterLevel)
     self._proxy:RegisterEvent(EWorldEvent.MasterControllerChanged)              --事件注册：主控端切换 
-    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)              --事件注册：BUFF移除
-
+    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)                --事件注册：BUFF移除
+    
     self._localPlayerDeathTimes = 0                                                      -- 初始化本端玩家死亡次数
     self._spawnPoint = {}                                                               --获取点位序号，初始化中获取
     self._isFinishFight = false                                                         --完成战斗的flag
@@ -39,6 +39,7 @@ function XLevelScript9002:Init() --初始化逻辑
     self._soloReborn = true 
     self._soloCanRebornTimes = 2
     self._proxy:SetLevelMemoryInt(40001, 0)                                             --初始化关卡
+    
     --拿到玩家列表和关卡编辑器中的所有点位
     XLog.Debug("玩家列表长度现在是"..#self._playerNpcList)
     for i = 1, 5 do
@@ -116,6 +117,9 @@ function XLevelScript9002:Update(dt) --每帧更新逻辑
     self._levelTime = self._levelTime + dt       --记录关卡已进行时间
     self:OnUpdatePhase(dt)
 end
+
+
+
 function XLevelScript9002:InitPhase()
     --初始化关卡各个阶段的相关变量
 end
@@ -286,16 +290,15 @@ function XLevelScript9002:HandleEvent(eventType, eventArgs) --事件响应逻辑
         end)
     elseif eventType == EWorldEvent.NpcRemoveBuff then 
             if eventArgs.BuffTableId == 1000495 or eventArgs.BuffTableId == 1000516 then 
-                XLog.Debug("复活甲没了1哦!!!")
                 self._soloCanRebornTimes = self._soloCanRebornTimes - 1     --  次数-1
                 if self._soloCanRebornTimes <= 0 then 
                     self._timer:Schedule(1, self, function()        
                         self._soloReborn = false 
-                        XLog.Debug("复活甲没了哦!!!")
                     end)
                 end 
-            end 
-    end
+            end
+   
+     end
 end
 
 function XLevelScript9002:CheckAllPlayerDead() --检查是否所有玩家都死亡了

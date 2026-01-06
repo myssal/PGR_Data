@@ -29,7 +29,7 @@
         "Ability": 100,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
         "Name": "超算闪电",
-        "Description": "超算空间内移动速度大幅提升，使空间内所有敌人额外伤害减免降低10%。",
+        "Description": "超算空间内/超维预演持续时间内移动速度大幅提升，使空间内所有敌人额外伤害减免降低10%。",
         "DesLinkCharacterSkillId": 0,
         "BornMagic": [
             509201
@@ -221,7 +221,7 @@
         "Ability": 100,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool7.png",
         "Name": "共振回音",
-        "Description": "装甲型职业技能造成的效果持续时间增加至8秒，重复触发刷新持续时间",
+        "Description": "装甲/破甲型职业技能造成的效果持续时间增加至8秒，重复触发刷新持续时间",
         "DesLinkCharacterSkillId": 0,
         "BornMagic": [
             509020
@@ -2908,6 +2908,41 @@
         "Account": "攻击强化",
         "BornMagic": [
             512418
+        ]
+    },
+    {
+        "Id": 2624001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "余震系统",
+        "Description": "攻击力增加5%。",
+        "DesLinkCharacterSkillId": 0,
+        "BornMagic": [
+            512429
+        ]
+    },
+    {
+        "Id": 2625001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "幻象增强器",
+        "Description": "暗属性伤害提高10%。",
+        "DesLinkCharacterSkillId": 0,
+        "Account": "新手过渡",
+        "BornMagic": [
+            512430
+        ]
+    },
+    {
+        "Id": 2626001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "第三型统合",
+        "Description": "攻击力提高10%。双身肃转的基础伤害提升100%，罪痕印刻强化增伤效果提升50%。",
+        "DesLinkCharacterSkillId": 0,
+        "Account": "攻击强化",
+        "BornMagic": [
+            512431
         ]
     }
 ]

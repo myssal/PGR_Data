@@ -384,6 +384,9 @@ function XUiPurchase:CheckChildCount(childs, names)
                 if k ~= self.CurUiNames[k] then
                     self.UiPanel[k]:HidePanel()
                 else
+                    if self.CurUiView then
+                        self.CurUiView:HidePanel()
+                    end
                     self.CurUiView = self.UiPanel[v]
                     if XTool.IsNumberValid(self.PaySelectIndex) then
                         self.CurUiView:OnRefresh(self.CurUiTypes[1], self.PaySelectIndex)

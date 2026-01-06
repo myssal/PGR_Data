@@ -90,6 +90,10 @@ end
 
 -- 刷新锁定状态
 function XUiGridDlcRelinkEquipment:RefreshIsLocked()
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.Lock.gameObject:SetActiveEx(false)
+        return
+    end
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.Lock.gameObject:SetActiveEx(isLocked)
 end

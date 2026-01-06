@@ -9,7 +9,7 @@ function XBuffScript1052906:Init()
     --初始化
     Base.Init(self)
     ------------配置------------
-    XLog.Warning("Buff脚本已加载")
+    --XLog.Warning("Buff脚本已加载")
     if not self._proxy:CheckBuffByKind(self._uuid,1057015) then
         self._proxy:ApplyMagic(self._uuid,self._uuid,1052804,1)
     end
@@ -34,7 +34,7 @@ end
 
 function XBuffScript1052906:Terminate()
     Base.Terminate(self)
-    XLog.Warning("移除添加伤害上限")
+    --XLog.Warning("移除添加伤害上限")
     self._proxy:RemoveBuffByKindAndCount(self._uuid,1052804)
 end
 
