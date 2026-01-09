@@ -57,6 +57,7 @@ function XUiCharacterV2P6:InitFilter()
         end
         -- 记录角色新标签，默认选的也要消
         self.NewCharRecord[character.Id] = true
+        XMVCA.XCharacter:RecordUiCharacterV2P6ClickCharacterCarrerByCharId(character.Id)
         self:OnSelectCharacter(character)
 
         -- 记录最后一次点击选择的角色和标签

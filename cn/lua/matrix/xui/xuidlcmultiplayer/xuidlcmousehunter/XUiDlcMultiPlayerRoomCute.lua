@@ -112,7 +112,6 @@ function XUiDlcMultiPlayerRoomCute:OnStart()
 
     self:_InitRoom()
     self:_InitScene()
-    self:CheckGuide()
 end
 
 function XUiDlcMultiPlayerRoomCute:OnEnable()
@@ -138,6 +137,7 @@ function XUiDlcMultiPlayerRoomCute:OnEnable()
 
     self._IsReadyEnterWorld = false
     self._IsRefreshedCharacter = false
+    XEventManager.AddEventListener(XEventId.EVENT_UILOADING_CLOSED, self.CheckGuide, self)
 end
 
 function XUiDlcMultiPlayerRoomCute:OnDisable()
@@ -145,6 +145,7 @@ function XUiDlcMultiPlayerRoomCute:OnDisable()
     self:_RemoveListeners()
 
     self._Control:RegisterEventCacheListeners()
+    XEventManager.RemoveEventListener(XEventId.EVENT_UILOADING_CLOSED, self.CheckGuide, self)
 end
 
 -- endregion
@@ -402,9 +403,6 @@ function XUiDlcMultiPlayerRoomCute:_RemoveSchedules()
     -- 在此处移除定时器
     self:_RemoveActivityTimer()
     self:_RemoveMatchingTimer()
-    if self.CheckGuideTimeId then
-        XScheduleManager.UnSchedule(self.CheckGuideTimeId)
-    end
 end
 
 function XUiDlcMultiPlayerRoomCute:_RegisterListeners()
@@ -863,17 +861,7 @@ function XUiDlcMultiPlayerRoomCute:_PlayAnimation(callback)
 end
 
 function XUiDlcMultiPlayerRoomCute:CheckGuide()
-    local guideId = 64431 --todo 临时写死躲猫猫首次进入引导
-    if not XDataCenter.GuideManager.CheckIsGuide(guideId) then
-        self.CheckGuideTimeId = XScheduleManager.ScheduleForever(function()
-            if not XLuaUiManager.IsUiShow("UiLoading") then
-                local template = XDataCenter.GuideManager.GetGuideGroupTemplatesById(guideId)
-                if XDataCenter.GuideManager.TryActiveGuide(template) then
-                    XScheduleManager.UnSchedule(self.CheckGuideTimeId)
-                end
-            end
-        end, 10, 100)
-    end
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 -- endregion

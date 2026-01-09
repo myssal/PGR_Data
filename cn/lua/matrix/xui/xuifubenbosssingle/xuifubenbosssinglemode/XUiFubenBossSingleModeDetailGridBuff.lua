@@ -83,6 +83,9 @@ function XUiFubenBossSingleModeDetailGridBuff:Refresh(feature, index, featureGro
     end
 
     self:_RefreshRecordTime(index == 1)
+
+    -- 从Model同步选中状态数据（不显示UI，详情面板关闭时只需要同步数据）
+    self:_SyncSelectableFeaturesFromModel()
 end
 
 function XUiFubenBossSingleModeDetailGridBuff:SetDetailActive(isActive)
@@ -273,12 +276,48 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshTimer()
     end
 end
 
+-- v4.2 新增：从Model同步选中状态数据（不显示UI）
+function XUiFubenBossSingleModeDetailGridBuff:_SyncSelectableFeaturesFromModel()
+    if not self._Feature then
+        return
+    end
+    
+    local featureId = self._Feature:GetFeatureId()
+    local buffGroupId = XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupIdByFeatureId(self._FeatureGroupId, featureId)
+    if not buffGroupId or buffGroupId <= 0 then
+        return
+    end
+    
+    local buffFeatureIds = XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupBuffById(buffGroupId)
+    if XTool.IsTableEmpty(buffFeatureIds) then
+        return
+    end
+    
+    -- 只同步选中状态数据，不显示UI
+    local buffFeatureId = self._Feature:GetFeatureId()
+    local savedSelectedIds = self._Control:GetSelectedSelectableFeatureIds(buffFeatureId) or {}
+    
+    for _, selectableFeatureId in ipairs(buffFeatureIds) do
+        local isSelected = false
+        for _, savedId in ipairs(savedSelectedIds) do
+            if savedId == selectableFeatureId then
+                isSelected = true
+                break
+            end
+        end
+        self._SelectedSelectableFeatures[selectableFeatureId] = isSelected or nil
+    end
+end
+
 -- v4.2 新增：刷新可选词缀列表
 function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
     if not self._Feature then
         XLog.Error("[XUiFubenBossSingleModeDetailGridBuff] _Feature is nil")
         return
     end
+    
+    -- 确保数据已从Model同步（如果还没同步的话）
+    self:_SyncSelectableFeaturesFromModel()
     
     local featureId = self._Feature:GetFeatureId()
     -- v4.2 修正：根据featureGroupId和featureId获取对应的BuffGroupId
@@ -348,21 +387,8 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
             gridSelectable:Open()
             gridSelectable:Refresh(selectableFeature)
             
-            -- 从Model恢复选中状态（本次登录期间持久化）
-            local buffFeatureId = self._Feature:GetFeatureId()
-            local savedSelectedIds = self._Control:GetSelectedSelectableFeatureIds(buffFeatureId) or {}
-            local isSelected = false
-            for _, savedId in ipairs(savedSelectedIds) do
-                if savedId == selectableFeatureId then
-                    isSelected = true
-                    break
-                end
-            end
-            
-            -- 同步到UI层的选中状态记录
-            self._SelectedSelectableFeatures[selectableFeatureId] = isSelected or nil
-            
-            -- 恢复UI选中状态
+            -- 从已同步的数据中恢复UI选中状态
+            local isSelected = self._SelectedSelectableFeatures[selectableFeatureId] or false
             gridSelectable:SetSelected(isSelected)
         end
     end

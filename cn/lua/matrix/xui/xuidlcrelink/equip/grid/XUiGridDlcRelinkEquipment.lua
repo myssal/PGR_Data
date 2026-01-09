@@ -181,6 +181,11 @@ function XUiGridDlcRelinkEquipment:SetRedDot(isShow)
     self.Red.gameObject:SetActiveEx(isShow)
 end
 
+-- 设置是否响应穿透事件
+function XUiGridDlcRelinkEquipment:SetRespondPassEvent(isRespond)
+    self.BtnEquip.IsRespondPassEvent = isRespond
+end
+
 function XUiGridDlcRelinkEquipment:OnBtnEquipClick()
     if self.CallBack then
         self.CallBack(self)

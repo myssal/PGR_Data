@@ -85,7 +85,7 @@ end
 
 -- 购买成功后刷新
 function XUiSpecialFashionShop:OnBuySuccessCb()
-    if self.DynamicTable == nil then
+    if XTool.UObjIsNil(self.PanelFashionList) then
         return
     end
     self:RefreshDynamicTable()
@@ -132,11 +132,10 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
             end
         end
     end
-    local goodsList = XShopManager.GetShopGoodsList(self:GetCurShopId(), true, true)
     local dataProvider = {}
     -- 获取商品里对应的角色Id
-    if not XTool.IsTableEmpty(goodsList) then
-        for i, goods in pairs(goodsList) do
+    if not XTool.IsTableEmpty(self.GoodList) then
+        for i, goods in pairs(self.GoodList) do
             local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
             dataProvider[#dataProvider + 1] = {
                 characterId = characterId,
@@ -251,7 +250,7 @@ function XUiSpecialFashionShop:OnSelectedTab(index)
 
     self.CurTabIndex = index
     self:InitDropDown()
-    self:FilterGoodList()
+    self:ResetFilter()
     self:RefreshDynamicTable()
 end
 ------------------------------------------------------- 页签end -------------------------------------------------------
@@ -314,9 +313,7 @@ function XUiSpecialFashionShop:InitDropDown()
         end
 
         if isUseNewFliter and self.BtnFilter then
-            self.BtnFilter:SetNameByGroup(0, CS.XTextManager.GetText("ScreenAll"))
-            self._TmpCareerTags = nil
-            self._TmpElementTags = nil
+            self:ResetFilter()
         else
             self.DropFilter:ClearOptions()
             self.DropFilter.captionText.text = self.SelectTag
@@ -328,6 +325,14 @@ function XUiSpecialFashionShop:InitDropDown()
             self.DropFilter.value = 0
         end
     end
+end
+
+function XUiSpecialFashionShop:ResetFilter()
+    self.BtnFilter:SetNameByGroup(0, CS.XTextManager.GetText("ScreenAll"))
+    self.SelectTag = CS.XTextManager.GetText("ScreenAll")
+    self._TmpCareerTags = nil
+    self._TmpElementTags = nil
+    self:FilterGoodList()
 end
 
 function XUiSpecialFashionShop:FilterGoodList()

@@ -44,7 +44,8 @@ end
 function XBigWorldMapAgency:InitEnum()
     self.MapPinDisplayType = {
         Point = 1 << 0,
-        Radius = 1 << 1,
+        LittleMapRadius = 1 << 1,
+        BigMapRadius = 1 << 2,
     }
 end
 
@@ -133,9 +134,11 @@ end
 function XBigWorldMapAgency:OnCancelTrackMapPin(data)
     local levelId = data.MapPinLevelId
 
-    self:RequestCancelTrackMapPin(levelId, function()
-        self._Model:CancelTrackPins(levelId)
-    end)
+    if self:CheckLevelPinsTracking(levelId) then
+        self:RequestCancelTrackMapPin(levelId, function()
+            self._Model:CancelTrackPins(levelId)
+        end)
+    end
 end
 
 function XBigWorldMapAgency:OnPlayerEnterArea(data)
@@ -192,6 +195,10 @@ end
 
 function XBigWorldMapAgency:OnOpenBigMap(data)
     self:OpenBigWorldMapUiWithPinId(data.WorldId, data.LevelId, data.PinId)
+end
+
+function XBigWorldMapAgency:OnLittleMapPinRemove(data)
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, data.MapPinLevelId, data.MapPinId)
 end
 
 ---@param controlData XBWFunctionControlData
@@ -298,6 +305,7 @@ function XBigWorldMapAgency:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, 
         local linkWorldId = self._Model:GetBigWorldMapLinkLinkWorldIdByLevelId(levelId)
         local bindPinId = self._Model:GetBigWorldMapLinkBindPinIdByLevelId(levelId)
 
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_BIG_MAP_OPENED_NOTIFY)
         XMVCA.XBigWorldUI:Open("UiBigWorldMap", linkWorldId, linkLevelId, bindPinId, targetPinId, focusPos, scaleRatio, openAiMemory)
         return true
     elseif self:CheckLevelHasMap(levelId) then
@@ -309,6 +317,7 @@ function XBigWorldMapAgency:TryOpenBigWorldMapUi(worldId, levelId, targetPinId, 
                 bindPinId = self._Model:GetBigWorldMapLinkBindPinIdByLevelId(currentLevelId)
             end
         end
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_BIG_MAP_OPENED_NOTIFY)
         XMVCA.XBigWorldUI:Open("UiBigWorldMap", worldId, levelId, bindPinId, targetPinId, focusPos, scaleRatio, openAiMemory)
         return true
     end
@@ -501,6 +510,12 @@ function XBigWorldMapAgency:CheckPinTracking(levelId, pinId)
     local currentPinIds = self._Model:GetAllTrackPinsByLevelId(levelId)
 
     return currentPinIds and currentPinIds[pinId]
+end
+
+function XBigWorldMapAgency:CheckLevelPinsTracking(levelId, trackType)
+    local currentPinIds = self._Model:GetTrackPinsByLevelIdAndType(levelId, trackType)
+
+    return not XTool.IsTableEmpty(currentPinIds)
 end
 
 function XBigWorldMapAgency:OnNotifyBigWorldBoxData(data)

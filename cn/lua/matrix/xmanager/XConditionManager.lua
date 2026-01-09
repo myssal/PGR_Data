@@ -2702,7 +2702,7 @@ PlayerCondition = {
     [10502] = function(condition)
         local itemId = condition.Params[1]
         local count = condition.Params[2]
-        return XMVCA.XShop:GetAccumulateExpendShopConvertedCount() > count, condition.Desc
+        return XMVCA.XShop:GetAccumulateExpendShopConvertedCount() >= count, condition.Desc
     end,
     --endregion
 
@@ -3078,6 +3078,13 @@ local CharacterCondition = {
             end
         end
         return false, condition.Desc
+    end,
+    [13123] = function(condition)
+        local carrer1 = tonumber(condition.Params[1])
+        local carrer2 = tonumber(condition.Params[2])
+        local res1 = carrer1 and XMVCA.XCharacter:GetUiCharacterV2P6ClickCharacterCarrer(carrer1)
+        local res2 = carrer2 and XMVCA.XCharacter:GetUiCharacterV2P6ClickCharacterCarrer(carrer2)
+        return res1 or res2, condition.Desc
     end,
 }
 

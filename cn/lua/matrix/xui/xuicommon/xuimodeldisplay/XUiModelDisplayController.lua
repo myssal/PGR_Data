@@ -24,7 +24,7 @@ function XUiModelDisplayController:Ctor(modelRoot, showShadow, fixLight)
 
     self._ModelInfos = {}
 
-    self.Controller:SetShadow(false, fixLight)
+    self.Controller:SetShadow(showShadow, fixLight)
 end
 
 ---@return XUiModelDisplayHelper

@@ -1015,7 +1015,7 @@ function XMainLine2Model:IsStageUnlock(stageId)
         return isUnlock, desc
     end
 
-    return true
+    return true, ""
 end
 
 --- 关卡是否显示

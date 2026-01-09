@@ -337,22 +337,28 @@ function XMainLineLuosaitaConfig:GetConfigCharacters()
     return self._ConfigUtil:GetByTableKey(TableKey.MainLineLuosaitaCharacter)
 end
 
----@return number 角色名称
+---@return string 角色名称
 function XMainLineLuosaitaConfig:GetCharacterName(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Name or ""
 end
 
----@return number 角色详情
+---@return string 角色详情
 function XMainLineLuosaitaConfig:GetCharacterDesc(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Desc or ""
 end
 
----@return number 角色头像
+---@return string 角色头像
 function XMainLineLuosaitaConfig:GetCharacterHead(id)
     local config = self:GetConfigCharacter(id)
     return config and config.Head or ""
+end
+
+---@return string 角色头像边框
+function XMainLineLuosaitaConfig:GetCharacterHeadCircle(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.HeadCircle or ""
 end
 --endregion
 

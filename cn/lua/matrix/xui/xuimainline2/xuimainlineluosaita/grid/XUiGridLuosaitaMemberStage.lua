@@ -69,6 +69,7 @@ function XUiGridLuosaitaMemberStage:OnBtnStageClick()
     elseif detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_NORMAL or detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_SPECIAL or detailType == XEnumConst.MAINLINE2.STAGE_DETAIL_TYPE.FIGHT_BOSS then
         XLuaUiManager.Open("UiMainLine2DetailBattle", self.StageIds, self.ChapterId, self.MainId)
     end
+    self.Parent:SetIsLastOperationEnemy(false)
 end
 
 -- 刷新关卡信息
@@ -89,7 +90,14 @@ function XUiGridLuosaitaMemberStage:RefreshInfo()
         stageName = string.format("%s-%s %s", chapterTitle, stageCfg.OrderId, stageCfg.Name)
     end
     uiObj:GetObject("TxtName").text = stageName
-    uiObj:GetObject("RImgIcon"):SetRawImage(stageCfg.Icon)
+    local rImgIcon = uiObj:GetObject("RImgIcon", false)
+    local spriteIcon = uiObj:GetObject("SpriteIcon", false)
+    if rImgIcon then
+        rImgIcon:SetRawImage(stageCfg.Icon)
+    end
+    if spriteIcon then
+        spriteIcon:SetSprite(stageCfg.Icon)
+    end
 end
 
 -- 刷新关卡进度

@@ -36,8 +36,8 @@ function XUiGridDlcRelinkSettlementCharacter:OnNotify(event, ...)
 end
 
 ---@param playerSettleResult XDlcRelinkPlayerSettleResult
----@param customData table<number, number>
-function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customData, fixedScore)
+---@param customDatas table<number, table<number, number>> @第一层是playerId-customdata
+function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customDatas, fixedScore)
     if not playerSettleResult then
         return
     end
@@ -61,7 +61,7 @@ function XUiGridDlcRelinkSettlementCharacter:Refresh(playerSettleResult, customD
     -- 分数
     self.TxtNum.text = fixedScore
     -- 战斗称号
-    local battleTitleIds = self._Control:GetBattleTitleIdsByCustomData(customData)
+    local battleTitleIds = self._Control:GetBattleTitleIdsByCustomData(customDatas, playerSettleResult.PlayerId)
     
     self:RefreshTag(battleTitleIds)
     -- 刷新按钮

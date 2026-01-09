@@ -4,9 +4,9 @@ local XUiFubenBossSingleSettlementGridSelectableFeature = require("XUi/XUiFubenB
 local XBossSingleStageStatus = {
     -- 首次挑战 显示 扣除角色耐力及挑战次数
     FirstChallenge = 0,
-    -- 非首次挑战且已重置 显示 不额外扣除角色耐力及挑战次数
+    -- 非首次挑战且已重置 显示 扣除角色耐力
     NonFirstChallengeReset = 1,
-    -- 非首次挑战且未重置，使用与记录阵容相同的角色 显示 扣除角色耐力
+    -- 非首次挑战且未重置，使用与记录阵容相同的角色 显示 不额外扣除角色耐力及挑战次数
     NonFirstChallengeNonResetSameCharacters = 2,
     -- 非首次挑战且未重置，使用与记录阵容不相同的角色 显示 扣除角色耐力
     NonFirstChallengeNonResetDifferentCharacters = 3
@@ -18,6 +18,9 @@ local XBossSingleStageStatus = {
 ---@field ListSelectableFeatures UnityEngine.RectTransform  -- v4.2 新增：可选词缀列表
 ---@field GridSelectableFeature UnityEngine.RectTransform  -- v4.2 新增：可选词缀Grid模板
 ---@field _Control XFubenBossSingleControl
+---@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
+---@field _AnimationPlayTimerId number|nil 动画播放延迟定时器ID
+---@field _IsInAnimationDelay boolean 是否在动画延迟期间（配合Unity动画演出）
 local XUiFubenBossSingleSettlement = XLuaUiManager.Register(XLuaUi, "UiFubenBossSingleSettlement")
 
 function XUiFubenBossSingleSettlement:OnAwake()
@@ -47,6 +50,8 @@ function XUiFubenBossSingleSettlement:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_HIDE_SETTLE, self.Hide, self)
     XDataCenter.AntiAddictionManager.EndFightAction()
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SINGLE_BOSS_RESET, self.OnActivityEnd, self)
+    self:_ClearAnimationDelayTimer()
+    self:_ClearAnimationPlayTimer()
 end
 
 function XUiFubenBossSingleSettlement:OnActivityEnd()
@@ -148,15 +153,23 @@ function XUiFubenBossSingleSettlement:ShowPanel(data)
     local isChallenge = self._Control:IsBossSingleChallenge()
     local difficultName = self._Control:GetBossDifficultName(data.StageId)
 
+    -- 设置文本类型的内容（名称、标题等）
     SafeSetText(self.TxtBossDifficulty, difficultName)
-
+    
     -- Boss名称显示
     if self.TxtBossName then
         local bossId = self._Control:GetBossIdByStageId(data.StageId)
         self.TxtBossName.text = self._Control:GetBossName(bossId)
     end
+    
+    -- 设置数值类型文本的默认值为0
+    self:_InitDefaultValues()
 
     local settleData = data.SettleData
+    -- 刷新角色列表显示（提前显示，不延迟）
+    self:_RefreshCharacterList(settleData)
+    -- 刷新UI信息显示（提前显示，不延迟）
+    self:RefreshNewUI(data)
     local result = settleData.BossSingleFightResult
     -- 获取阶段状态枚举值
     self.StageStatus = result.StageStatus
@@ -180,15 +193,24 @@ function XUiFubenBossSingleSettlement:ShowPanel(data)
         self.GameObject:SetActiveEx(true)
     end
 
-    -- 播放音效
-    self.AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX,
-        XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number)
+    -- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
+    self:_StartAnimationDelay()
 
-    -- 播放分数动画
-    self:PlayScoreAnimation(result, myTotalHistory, bossTotalScore, curBossTotalScore, curBossMaxScore, isChallenge)
-
-    self:RefreshButton(data)
-    self:RefreshNewUI(data)
+    -- 延迟3秒后播放音效、分数动画和刷新UI（配合Unity动画演出）
+    self:_ClearAnimationPlayTimer()
+    self._AnimationPlayTimerId = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.Transform) then
+            return
+        end
+        self._AnimationPlayTimerId = nil
+        -- 播放音效
+        self.AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX,
+            XLuaAudioManager.UiBasicsMusic.UiSettle_Win_Number)
+        -- 播放分数动画
+        self:PlayScoreAnimation(result, myTotalHistory, bossTotalScore, curBossTotalScore, curBossMaxScore, isChallenge)
+        -- 刷新按钮
+        self:RefreshButton(data)
+    end, 3 * XScheduleManager.SECOND)
 end
 
 -- 播放分数动画
@@ -230,6 +252,31 @@ function XUiFubenBossSingleSettlement:PlayScoreAnimation(result, myTotalHistory,
     end)
 end
 
+--- 刷新角色列表显示（提前显示，不延迟）
+---@param settleData table 结算数据
+function XUiFubenBossSingleSettlement:_RefreshCharacterList(settleData)
+    if not self.ListCharacter or not self.GridCharacter1 then
+        return
+    end
+    
+    -- 显示参与战斗的角色列表
+    for _, v in ipairs(settleData.NpcHpInfo) do
+        local characterId = v.CharacterId
+        if characterId and characterId > 0 then
+            local grid = self.GridCharacter1
+            local gridObj = XUiHelper.Instantiate(grid, self.ListCharacter)
+            local imgHead = gridObj.transform:Find("RImgHead")
+            if imgHead then
+                local rawImage = imgHead:GetComponent("RawImage")
+                if rawImage then
+                    rawImage:SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(characterId))
+                end
+            end
+        end
+    end
+    self.GridCharacter1.gameObject:SetActiveEx(false)
+end
+
 function XUiFubenBossSingleSettlement:RefreshNewUI(data)
     -- 1. 刷新特征信息显示（显示进入战斗的feature）
     if self.PanelFeature and self.TxtFeatureName and self.IconFeature then
@@ -260,27 +307,7 @@ function XUiFubenBossSingleSettlement:RefreshNewUI(data)
         end
     end
 
-    -- 2. 刷新角色列表显示
-    if self.ListCharacter and self.GridCharacter1 then
-        -- 显示参与战斗的角色列表
-        for _, v in ipairs(data.SettleData.NpcHpInfo) do
-            local characterId = v.CharacterId
-            if characterId and characterId > 0 then
-                local grid = self.GridCharacter1
-                local gridObj = XUiHelper.Instantiate(grid, self.ListCharacter)
-                local imgHead = gridObj.transform:Find("RImgHead")
-                if imgHead then
-                    local rawImage = imgHead:GetComponent("RawImage")
-                    if rawImage then
-                        rawImage:SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(characterId))
-                    end
-                end
-            end
-        end
-        self.GridCharacter1.gameObject:SetActiveEx(false)
-    end
-
-    -- 3. 刷新挑战相关信息显示（显示选中的可选feature，type=2）
+    -- 2. 刷新挑战相关信息显示（显示选中的可选feature，type=2）
     if self.PanelChallenge and self.GridChallenge and self.ListChallenge then
         local currentBuffFeatureId = self._Control:GetCurrentFeatureId()
         local selectedFeatureIds = {}
@@ -337,8 +364,21 @@ function XUiFubenBossSingleSettlement:RefreshNewUI(data)
 end
 
 function XUiFubenBossSingleSettlement:SetDefaultText()
+    -- 设置所有数值类型文本的默认值为0
+    self:_InitDefaultValues()
+end
+
+--- 初始化数值类型文本的默认值（设置为0）
+function XUiFubenBossSingleSettlement:_InitDefaultValues()
     SafeSetText(self.TxtClearTime, XUiHelper.GetTime(0))
     SafeSetText(self.TxtScoreTotal, "0")
+    SafeSetText(self.TxtScore, "0")
+    SafeSetText(self.TxtBossLoseHp, "0")
+    SafeSetText(self.TxtBossLoseHpScore, "0")
+    SafeSetText(self.TxtLeftTime, XUiHelper.GetTime(0))
+    SafeSetText(self.TxtLeftTimeScore, "0")
+    SafeSetText(self.TxtCharLeftHp, "0")
+    SafeSetText(self.TxtCharLeftHpScore, "0")
 end
 
 function XUiFubenBossSingleSettlement:StopAudio()
@@ -348,6 +388,11 @@ function XUiFubenBossSingleSettlement:StopAudio()
 end
 
 function XUiFubenBossSingleSettlement:OnBtnCloseClick()
+    -- 检查是否在动画延迟期间
+    if self._IsInAnimationDelay then
+        return
+    end
+
     self:StopAudio()
     -- 退出战斗（参考 XUiTransfiniteBattleSettlement）
     XMVCA.XFubenBossSingle:ExitFight()
@@ -356,6 +401,11 @@ function XUiFubenBossSingleSettlement:OnBtnCloseClick()
 end
 
 function XUiFubenBossSingleSettlement:OnBtnSaveClick()
+    -- 检查是否在动画延迟期间
+    if self._IsInAnimationDelay then
+        return
+    end
+
     if self.IsClash then
         self._Control:OpenChallengeSaveDialog(self.CharacterIds, self.CurAllScore, self.StageId, self.ClashMap)
     elseif self.IsSave then
@@ -373,6 +423,11 @@ function XUiFubenBossSingleSettlement:OnBtnSaveClick()
 end
 
 function XUiFubenBossSingleSettlement:OnBtnCancelClick()
+    -- 检查是否在动画延迟期间
+    if self._IsInAnimationDelay then
+        return
+    end
+
     local myTotalHistory = self:GetMyTotalHistory()
 
     if self.CurAllScore <= myTotalHistory then
@@ -430,11 +485,11 @@ function XUiFubenBossSingleSettlement:RefreshNormalButton(data)
         -- 使用ui的默认值
         return
     elseif stageStatus == XBossSingleStageStatus.NonFirstChallengeReset then
-        -- NonFirstChallengeReset: 非首次挑战且已重置，显示"不额外扣除角色耐力及挑战次数"
-        text = XUiHelper.GetText("BossSingleSettleTips1")
-    elseif stageStatus == XBossSingleStageStatus.NonFirstChallengeNonResetSameCharacters then
-        -- NonFirstChallengeNonResetSameCharacters: 非首次挑战且未重置，使用与记录阵容相同的角色，显示"扣除角色耐力"
+        -- NonFirstChallengeReset: 非首次挑战且已重置，显示"扣除角色耐力"
         text = XUiHelper.GetText("BossSingleSettleTips2")
+    elseif stageStatus == XBossSingleStageStatus.NonFirstChallengeNonResetSameCharacters then
+        -- NonFirstChallengeNonResetSameCharacters: 非首次挑战且未重置，使用与记录阵容相同的角色，显示"不额外扣除角色耐力及挑战次数"
+        text = XUiHelper.GetText("BossSingleSettleTips1")
     elseif stageStatus == XBossSingleStageStatus.NonFirstChallengeNonResetDifferentCharacters then
         -- NonFirstChallengeNonResetDifferentCharacters: 非首次挑战且未重置，使用与记录阵容不相同的角色，显示"扣除角色耐力"
         text = XUiHelper.GetText("BossSingleSettleTips2")
@@ -467,7 +522,6 @@ function XUiFubenBossSingleSettlement:RefreshNormalButton(data)
     
     -- bug ui没有赋值text
     local uiText = XUiHelper.TryGetComponent(self.BtnSave.transform, "Text", "Text")
-    XLog.Error("uiText", uiText, text)
     if uiText then
         uiText.text = text
     end
@@ -547,6 +601,37 @@ function XUiFubenBossSingleSettlement:Hide()
     if self.GameObject and not XTool.UObjIsNil(self.GameObject) then
         self.GameObject:SetActiveEx(false)
     end
+end
+
+--- 清理动画延迟定时器
+function XUiFubenBossSingleSettlement:_ClearAnimationDelayTimer()
+    if self._AnimationDelayTimerId then
+        XScheduleManager.UnSchedule(self._AnimationDelayTimerId)
+        self._AnimationDelayTimerId = nil
+    end
+end
+
+--- 清理动画播放定时器
+function XUiFubenBossSingleSettlement:_ClearAnimationPlayTimer()
+    if self._AnimationPlayTimerId then
+        XScheduleManager.UnSchedule(self._AnimationPlayTimerId)
+        self._AnimationPlayTimerId = nil
+    end
+end
+
+--- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
+function XUiFubenBossSingleSettlement:_StartAnimationDelay()
+    self:_ClearAnimationDelayTimer()
+    self._IsInAnimationDelay = true
+    
+    -- 延迟3秒后允许操作
+    self._AnimationDelayTimerId = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.Transform) then
+            return
+        end
+        self._IsInAnimationDelay = false
+        self._AnimationDelayTimerId = nil
+    end, 3 * XScheduleManager.SECOND)
 end
 
 -- v4.2 新增：计算并刷新总讨伐值倍率

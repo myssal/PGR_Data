@@ -24,6 +24,8 @@ function XUiPanelSwitchableSceneAnim:Ctor()
 end
 
 function XUiPanelSwitchableSceneAnim:InitScene(sceneId, sceneTran)
+    ---@type UnityEngine.Playables.PlayableDirector
+    self._Playable = nil
     if XTool.UObjIsNil(sceneTran) then
         return
     end
@@ -31,8 +33,26 @@ function XUiPanelSwitchableSceneAnim:InitScene(sceneId, sceneTran)
     if XTool.UObjIsNil(animGo) then
         return
     end
-    ---@type UnityEngine.Playables.PlayableDirector
     self._Playable = animGo:GetComponent("PlayableDirector")
+
+    ---@type XLuaBehaviour
+    self._LuaBehaviour = sceneTran.gameObject:GetOrAddComponent(typeof(CS.XLuaBehaviour))
+    if not XTool.UObjIsNil(self._LuaBehaviour) then
+        self._LuaBehaviour.LuaLateUpdate = handler(self, self.OnLateUpdate)
+    end
+end
+
+function XUiPanelSwitchableSceneAnim:OnLateUpdate()
+    if not self._IsPlaying then
+        return
+    end
+    self:LateUpdate()
+end
+
+function XUiPanelSwitchableSceneAnim:OnDestory()
+    if not XTool.UObjIsNil(self._LuaBehaviour) then
+        self._LuaBehaviour.LuaLateUpdate = nil
+    end
 end
 
 ---是否接着上个界面的播放进度继续播放
@@ -44,7 +64,7 @@ end
 function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
     local isSwitchScene = self._SceneId and sceneId ~= self._SceneId
     self._SceneId = sceneId
-    self:StopTimer()
+    self:Pause()
     if not XTool.IsNumberValid(sceneId) then
         XLog.Error("播放场景动画失败，SceneId为空.")
         return
@@ -76,22 +96,23 @@ function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
         local offsetTime = self._IsContinuePlay and XMVCA.XSwitchableScene:GetPlayProgress() or 0
         self._CurTime = XMath.Clamp(offsetTime, 0, self._Duration)
     end
-    self._TimerId = XScheduleManager.ScheduleForever(handler(self, self.Update), 0)
     self._IsPlaying = true
 end
 
 ---恢复播放
 function XUiPanelSwitchableSceneAnim:Resume()
-    if self._IsPlaying then
-        return
-    end
-    self._TimerId = XScheduleManager.ScheduleForever(handler(self, self.Update), 0)
+    self._IsPlaying = true
+end
+
+---暂停播放
+function XUiPanelSwitchableSceneAnim:Pause()
+    self._IsPlaying = false
 end
 
 ---停止播放
 function XUiPanelSwitchableSceneAnim:Stop()
     --场景动画是手动控制的 时间没更新 动画就不会继续播
-    self:StopTimer()
+    self:Pause()
     XMVCA.XSwitchableScene:SetPlayProgress(self._CurTime)
     --关闭云游戏的陀螺仪监听
     if XDataCenter.UiPcManager.GetUiPcMode() == XUiPcMode.CloudGame then
@@ -109,9 +130,10 @@ function XUiPanelSwitchableSceneAnim:InitPlayData()
     self._AltActive = false
 end
 
-function XUiPanelSwitchableSceneAnim:Update()
+---更新timeline的时机不能比渲染时机早（Update）
+function XUiPanelSwitchableSceneAnim:LateUpdate()
     if XTool.UObjIsNil(self._Playable) then
-        self:StopTimer()
+        self:Pause()
         return
     end
 
@@ -169,7 +191,7 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByGyro()
         local speedValue = XMVCA.XSwitchableScene:GetSpeedByAngle(self._SceneId, math.abs(pitch))
         --在某个角度内时不改变旋转方向
         if math.abs(pitch) > self._EulerZKeep then
-            self._PlayOrder = pitch >= 0 and Reverse or Sequential
+            self._PlayOrder = pitch >= 0 and Sequential or Reverse
             self:SetTargetSpeedWithDir(speedValue)
         else
             self:SetTargetSpeedWithoutDir(speedValue)
@@ -195,7 +217,7 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByMouse()
         self:ShowDebugInfo(string.format("delta:%0.2f,speed:%0.2f", delta, speedValue))
 
         if math.abs(delta) > self._MoveXKeep then
-            self._PlayOrder = delta >= 0 and Sequential or Reverse
+            self._PlayOrder = delta >= 0 and Reverse or Sequential
         end
         self:SetTargetSpeedWithDir(speedValue)
     else
@@ -219,7 +241,7 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByCloud(attitude)
         local speedValue = XMVCA.XSwitchableScene:GetSpeedByAngle(self._SceneId, math.abs(pitch))
         --在某个角度内时不改变旋转方向
         if math.abs(pitch) > self._EulerZKeep then
-            self._PlayOrder = pitch >= 0 and Reverse or Sequential
+            self._PlayOrder = pitch >= 0 and Sequential or Reverse
             self:SetTargetSpeedWithDir(speedValue)
         else
             self:SetTargetSpeedWithoutDir(speedValue)
@@ -242,14 +264,6 @@ end
 --目标速度不会出现为0的情况（当前速度则会）
 function XUiPanelSwitchableSceneAnim:SetTargetSpeedWithoutDir(value)
     self._TargetSpeed = self._TargetSpeed >= 0 and value or -value
-end
-
-function XUiPanelSwitchableSceneAnim:StopTimer()
-    if self._TimerId then
-        XScheduleManager.UnSchedule(self._TimerId)
-        self._TimerId = nil
-    end
-    self._IsPlaying = false
 end
 
 function XUiPanelSwitchableSceneAnim:GetCurPlayTime()

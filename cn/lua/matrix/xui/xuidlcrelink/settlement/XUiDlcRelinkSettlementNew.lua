@@ -93,7 +93,7 @@ function XUiDlcRelinkSettlementNew:RefreshPanelReward()
         end
     end
     -- 刷新奖励
-    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList)
+    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList, self.WorldData.LevelId)
 end
 
 return XUiDlcRelinkSettlementNew

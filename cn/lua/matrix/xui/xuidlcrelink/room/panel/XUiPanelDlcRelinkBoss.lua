@@ -140,6 +140,10 @@ function XUiPanelDlcRelinkBoss:OnBtnBossClick()
     end
 
     if not XMVCA.XDlcRoom:IsInRoom() then
+        if self._Control:IsGlobalMatchEnabled() then
+            self._Control:OpenCommonTipText("GlobalMatchDisableChooseBossTip")
+            return
+        end
         self:OpenChooseBoss()
         return
     end

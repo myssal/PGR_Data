@@ -11,10 +11,6 @@ local ipairs = ipairs
 local XUiMainLineLuosaitaMain = XLuaUiManager.Register(XLuaUi, "UiMainLineLuosaitaMain")
 
 function XUiMainLineLuosaitaMain:OnAwake()
-    -- 先锋屏蔽成就和任务按钮
-    self.BtnAchievement.gameObject:SetActiveEx(false)
-    self.BtnMission.gameObject:SetActiveEx(false)
-    
     self.Arrow.gameObject:SetActiveEx(false)
     self.PanelFight.gameObject:SetActiveEx(false)
     self.PanelPositionDetail.gameObject:SetActiveEx(false)
@@ -49,13 +45,24 @@ function XUiMainLineLuosaitaMain:OnReleaseInst()
     return data
 end
 
+function XUiMainLineLuosaitaMain:OnGetEvents()
+    return {  XEventId.EVENT_UI_AWAKE, XEventId.EVENT_UI_DESTROY }
+end
+
+function XUiMainLineLuosaitaMain:OnNotify(evt, ...)
+    local args = { ... }
+    if evt == XEventId.EVENT_UI_AWAKE then
+        self:SetAreaDragEnable(false)
+    elseif evt == XEventId.EVENT_UI_DESTROY then
+        self:SetAreaDragEnable(true)
+    end
+end
+
 function XUiMainLineLuosaitaMain:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnCurDropdown, self.OnBtnCurDropdownClick)
     self:RegisterClickEvent(self.BtnCloseDropdown, self.CloseDropdown)
-    self:RegisterClickEvent(self.BtnGoLeft, self.OnClickFocusTarget)
-    self:RegisterClickEvent(self.BtnGoRight, self.OnClickFocusTarget)
     self:RegisterClickEvent(self.BtnReview, self.OnBtnReviewClick)
     self:RegisterClickEvent(self.BtnMission, self.OnBtnMissionClick)
     self:RegisterClickEvent(self.BtnAchievement, self.OnBtnAchievementClick)
@@ -71,6 +78,9 @@ end
 
 function XUiMainLineLuosaitaMain:OnBtnReviewClick()
     XLuaUiManager.Open("UiMainLineLuosaitaPopupReview", self._CurSectionId)
+    
+    self._Control:SetDocumentReviewRed(false)
+    self:RefreshBtnReview()
 end
 
 function XUiMainLineLuosaitaMain:OnBtnMissionClick()
@@ -87,6 +97,7 @@ function XUiMainLineLuosaitaMain:Refresh()
     self:RefreshDropDown()
     self:RefreshAchievement()
     self:RefreshTask()
+    self:RefreshBtnReview()
     -- XUiPanelLuosaitaSection 在OnEnable刷新
 end
 
@@ -151,17 +162,11 @@ function XUiMainLineLuosaitaMain:RefreshTask()
     self.BtnMission:ShowReddot(isRed)
 end
 
---region 导航按钮
-function XUiMainLineLuosaitaMain:ShowFocusTipsBtn(way)
-    self.BtnGoRight.gameObject:SetActiveEx(way > 0)
-    self.BtnGoLeft.gameObject:SetActiveEx(way < 0)
+-- 刷新文件回顾按钮
+function XUiMainLineLuosaitaMain:RefreshBtnReview()
+    local isRed = self._Control:GetDocumentReviewRed()
+    self.BtnReview:ShowReddot(isRed)
 end
-
-function XUiMainLineLuosaitaMain:OnClickFocusTarget()
-    local panelSection = self:GetCurPanelSection()
-    panelSection:GotoFocusTarget()
-end
---endregion
 
 --region 下拉列表
 -- 初始化下拉列表
@@ -232,6 +237,9 @@ function XUiMainLineLuosaitaMain:OpenDropdown()
 
     self._DropDownDynamic:SetDataSource(self._DropDownDates)
     self._DropDownDynamic:ReloadDataSync()
+
+    -- 禁用面板拖拽
+    self:SetAreaDragEnable(false)
 end
 
 function XUiMainLineLuosaitaMain:CloseDropdown()
@@ -242,6 +250,15 @@ function XUiMainLineLuosaitaMain:CloseDropdown()
     self.ImgArrowUpNormal.gameObject:SetActiveEx(false)
     self.ImgArrowDownPress.gameObject:SetActiveEx(true)
     self.ImgArrowUpPress.gameObject:SetActiveEx(false)
+
+    -- 动态滑动列表
+    local grids = self._DropDownDynamic:GetGrids()
+    for _, grid in pairs(grids) do
+        grid:Close()
+    end
+
+    -- 启用面板拖拽
+    self:SetAreaDragEnable(true)
 end
 --endregion
 
@@ -287,6 +304,14 @@ end
 ---@return XUiPanelLuosaitaSection
 function XUiMainLineLuosaitaMain:GetCurPanelSection()
     return self._UiPanelSectionDic[self._CurSectionId]
+end
+
+-- 设置拖拽组件是否启用
+function XUiMainLineLuosaitaMain:SetAreaDragEnable(isEnable)
+    local panel = self:GetCurPanelSection()
+    if panel then
+        panel:SetAreaDragEnable(isEnable)
+    end
 end
 
 -- 检测下一阶段是否解锁，自动切换下一阶段

@@ -321,7 +321,8 @@ function XUiGridFashionShop:RefreshPanelSale()
     if self.Data.ActivityIsOpen then 
         self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
         self.TxtSaleRate.gameObject:SetActiveEx(true)
-        self.TxtSaleRate.text = self.Sales / 1000 .. CS.XTextManager.GetText("Snap")
+      
+        self.TxtSaleRate.text =   XUiHelper.GetDiscountText(self.Sales / 100)
     end
 end
 

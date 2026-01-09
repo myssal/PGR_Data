@@ -384,9 +384,6 @@ function XUiPurchase:CheckChildCount(childs, names)
                 if k ~= self.CurUiNames[k] then
                     self.UiPanel[k]:HidePanel()
                 else
-                    if self.CurUiView then
-                        self.CurUiView:HidePanel()
-                    end
                     self.CurUiView = self.UiPanel[v]
                     if XTool.IsNumberValid(self.PaySelectIndex) then
                         self.CurUiView:OnRefresh(self.CurUiTypes[1], self.PaySelectIndex)
@@ -453,6 +450,12 @@ function XUiPurchase:TabSkip(tab)
     self.CurUiTypes = {}
     self.CurUiNames = {}
 
+    if XPurchaseConfigs.TabRecordIndexMap[tab] then
+        XDataCenter.PurchaseManager.SetPurchaseBuyCustomParam(XPurchaseConfigs.PurchaseBuyCustomParamKeys.RecordFrom, tab)
+    else
+        XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam(XPurchaseConfigs.PurchaseBuyCustomParamKeys.RecordFrom)
+    end
+    
     -- 充值的读表不需后端数据
     -- 获取充值的UiType, 充值的UiType是不配置在礼包里，默认是不知道哪里写死的1
     local payUiTypes = XPurchaseConfigs.GetPayUiTypes()
@@ -690,6 +693,9 @@ function XUiPurchase:OnDestroy()
             panel.BuyUiTips:OnDestroy()
         end
     end
+    
+    -- 清除所有临时的自定义参数
+    XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam()
 end
 
 function XUiPurchase:IsLBUiType(cfg)

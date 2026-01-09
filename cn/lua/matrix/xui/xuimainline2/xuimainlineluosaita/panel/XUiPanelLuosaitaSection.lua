@@ -3,64 +3,48 @@ local XUiGridLuosaitaMemberCharacter = require("XUi/XUiMainLine2/XUiMainLineLuos
 local XUiGridLuosaitaMemberArmy = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid/XUiGridLuosaitaMemberArmy")
 local XUiGridLuosaitaMemberEnemy = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid/XUiGridLuosaitaMemberEnemy")
 local XUiGridLuosaitaMemberStage = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid/XUiGridLuosaitaMemberStage")
-local CSInstantiate = CS.UnityEngine.Object.Instantiate
 local CSTween = CS.DG.Tweening
-local DOTween = CS.DG.Tweening.DOTween
+local Vector3 = CS.UnityEngine.Vector3
 
 -- 罗塞塔主线阶段面板
 ---@class XUiPanelLuosaitaSection : XUiNode
 ---@field Parent XUiMainLineLuosaitaMain
 ---@field _Control XMainLineLuosaitaControl
 ---@field _GridPositions table<number, XUiGridLuosaitaMember>
+---@field _GridBlocks table<number, XUiGridLuosaitaBlock>
+---@field IsMapMoving boolean 地图是否在移动中
 local XUiPanelLuosaitaSection = XClass(XUiNode, "XUiPanelLuosaitaSection")
 
 function XUiPanelLuosaitaSection:OnStart(sectionId)
-    -- 先锋空花按钮
-    if self.BtnSkyGarden then
-        self.BtnSkyGarden.gameObject:SetActiveEx(false)
-    end
-    
-    self:RegisterUiEvents()
-    
-    for i = 0, self.PanelBlock.childCount - 1 do
-        self.PanelBlock:GetChild(i).gameObject:SetActiveEx(false)
-    end
-
     self.SectionId = sectionId
     self._GridBlocks = {}
     self._GridPositions = {}
-    local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
-    for k, blockConfig in pairs(self._Control:GetConfig():GetConfigBlocksBySectionId(self.SectionId)) do
-        local blockTransform = self.PanelBlock:Find(blockConfig.UiNodeName)
-        if not blockTransform then
-            goto continue
-        end
-        blockTransform.gameObject:SetActiveEx(true)
-        if not sectionInfo:GetBlockInfo(blockConfig.Id) then
-            goto continue
-        end
-        self._GridBlocks[blockConfig.Id] = XUiGridLuosaitaBlock.New(blockTransform, self)
-        self._GridBlocks[blockConfig.Id]:Refresh(sectionInfo:GetBlockInfo(blockConfig.Id))
-        ::continue::
-    end
+    self.FOCUS_SPEED = self._Control:GetConfig():GetConfigNumber("FocusSpeed", 1)
+    self:RegisterUiEvents()
+    self:LoadSectionLoopAnim()
 end
 
 function XUiPanelLuosaitaSection:OnEnable()
-    -- 恢复到上次关闭时候的位置
     local pos = self.Parent:GetSectionLastPosition(self.SectionId)
     if pos then
+        -- 恢复到上次关闭时候的位置
         self:SetAreaScaleDragPosition(pos)
-
         -- 等待切换阶段动画播完，再播移动动画
-        self:Refresh(true, false, true, true)
+        local WAIT_TIEM = 1500
+        self:Refresh(false, WAIT_TIEM)
     else
-        self:GotoFocusTarget()
-        self:Refresh(true)
+        -- 定位可挑战关卡/敌军
+        self:GotoFocusTarget(false)
+        -- 刷新界面
+        self:Refresh(false)
     end
+    
+    -- 禁用缩放组件
+    self:SetAreaDragEnable(true)
 end
 
 function XUiPanelLuosaitaSection:OnDestroy()
-    self:RemoveDragTimer()
+    self:ClearSequence()
     self:RemoveAnimWaitTimer()
 end
 
@@ -68,7 +52,6 @@ function XUiPanelLuosaitaSection:RegisterUiEvents()
     if self.BtnSkyGarden then
         XUiHelper.RegisterClickEvent(self, self.BtnSkyGarden, self.OnBtnSkyGardenClick)
     end
-    self.PanelAreaScaleDrag:AddTranslateValueChangedListener(Handler(self, self.OnTranslateValueChanged))
 end
 
 function XUiPanelLuosaitaSection:OnBtnSkyGardenClick()
@@ -86,50 +69,38 @@ function XUiPanelLuosaitaSection:OnBtnSkyGardenClick()
     XLuaUiManager.Open("UiMainLineLuosaitaPopupSkyGardenDetail")
 end
 
-function XUiPanelLuosaitaSection:OnTranslateValueChanged(value)
-    if not self.FocusTarget then
-        return
-    end
-
-    self.EndValue = value
-    local screenPointV3 = self.FocusTarget.Camera:WorldToScreenPoint(self.EndValue)
-    local screenPointV2 = Vector2(screenPointV3.x, screenPointV3.y)
-    if not self.DragTimer then
-        self:RemoveDragTimer()
-        self.DragTimer = XScheduleManager.ScheduleOnce(function()
-            if not self.FocusTarget:IsInScreenSize(screenPointV2) then
-                local offsetSize = self.PanelAreaScaleDrag.Target.transform.localPosition.x - self.FocusTarget.Transform.localPosition.x
-                if offsetSize ~= 0 then
-                    self.Parent:ShowFocusTipsBtn(offsetSize)
-                end
-            else
-                self.Parent:ShowFocusTipsBtn(0)
-            end
-            self.DragTimer = nil
-        end, 200)
-    end
-end
-
-function XUiPanelLuosaitaSection:RemoveDragTimer()
-    if self.DragTimer then
-        XScheduleManager.UnSchedule(self.DragTimer)
-        self.DragTimer = nil
-    end
-end
-
-function XUiPanelLuosaitaSection:Refresh(isCheckFocus, isCheckSwitchSection, isFocusAnim, isFocusWait)
+function XUiPanelLuosaitaSection:Refresh(isCheckSwitchSection, checkWaitTime)
+    self:ClearCharacterMoveNode()
     self:RefreshBlocks()
     self:RefreshPositions()
     self:RefreshSkyGardenButton()
 
-    if isCheckFocus then
-        local isOpen = self:CheckOpenPopUpDocument()
-        if isOpen then return end
-        local isPlay = self:CheckPlayCharacterMove()
-        if isPlay then return end
-        self:GotoFocusTarget(isFocusAnim, isFocusWait)
+    if checkWaitTime then
+        self:RemoveAnimWaitTimer()
+        self.AnimWaitTimer = XScheduleManager.ScheduleOnce(function()
+            self:CheckAnim(isCheckSwitchSection)
+        end, checkWaitTime)
+    else
+        self:CheckAnim(isCheckSwitchSection)
     end
+end
 
+function XUiPanelLuosaitaSection:CheckAnim(isCheckSwitchSection)
+    -- 检查打开文件弹窗
+    if self:CheckOpenPopUpDocument() then
+        return
+    end
+    -- 检查播放角色移动
+    if self:CheckPlayCharacterMove() then
+        return
+    end
+    -- 检查播放阶段特效动画
+    if self:CheckPlaySectionEnableAnim() then
+        return
+    end
+    -- 定位军队/关卡
+    self:GotoFocusTarget(true)
+    -- 检查切换阶段
     if isCheckSwitchSection then
         self.Parent:CheckSwitchNextSection()
     end
@@ -137,10 +108,24 @@ end
 
 -- 刷新块
 function XUiPanelLuosaitaSection:RefreshBlocks()
-    self.FocusTarget = nil
     local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
-    for blockId, blockUiData in pairs(self._GridBlocks) do
-        blockUiData:Refresh(sectionInfo:GetBlockInfo(blockId))
+    local blockInfos = sectionInfo:GetBlockInfoDic()
+    for _, blockInfo in pairs(blockInfos) do
+        local blockId = blockInfo:GetId()
+        local gridBlock = self._GridBlocks[blockId]
+        if not gridBlock then
+            local uiNodeName = self._Control:GetConfig():GetBlockUiNodeName(blockId)
+            local blockTransform = self.PanelBlock:Find(uiNodeName)
+            if not blockTransform then
+                XLog.Error("阶段预制体缺少地块:" .. uiNodeName)
+                goto CONTINUE
+            end
+            gridBlock = XUiGridLuosaitaBlock.New(blockTransform, self)
+            self._GridBlocks[blockId] = gridBlock
+        end
+        gridBlock:Open()
+        gridBlock:Refresh(blockInfo)
+        :: CONTINUE ::
     end
 end
 
@@ -205,7 +190,6 @@ function XUiPanelLuosaitaSection:RefreshPositions()
         grid:Open()
         grid:Refresh(posInfo)
         self._GridPositions[posId] = grid
-        self:SetFocusTaget(grid, posInfo)
         :: CONTINUE ::
     end
 end
@@ -237,7 +221,7 @@ end
 -- 检测是否播放角色移动
 function XUiPanelLuosaitaSection:CheckPlayCharacterMove()
     -- 移动中
-    if self.CloneMoveNode then
+    if self.CharacterMoveNode then
         return true
     end
     
@@ -260,28 +244,41 @@ end
 ---@param startPosId number
 ---@param endPosId number
 function XUiPanelLuosaitaSection:PlayCharacterMove(startPosId, endPosId, time)
+    self:ClearCharacterMoveNode()
+    
     local startUiNodeName = self._Control:GetConfig():GetPositionUiNodeName(startPosId)
     local endUiNodeName = self._Control:GetConfig():GetPositionUiNodeName(endPosId)
-    local startLinkGo = self:GetPositionLinkGo(startUiNodeName)
+    self.CharacterMoveNode = self:GetPositionLinkGo(startUiNodeName)
     local endLinkGo = self:GetPositionLinkGo(endUiNodeName)
 
-    XLuaUiManager.SetMask(true)
-    self:DestroyCloneMoveNode()
-    self.CloneMoveNode = CSInstantiate(startLinkGo, self.PanelPosition.transform)
-    startLinkGo.gameObject:SetActiveEx(false)
-    self.CloneMoveNode.transform:DOLocalMove(endLinkGo.transform.localPosition, time):SetEase(CSTween.Ease.OutQuad):OnComplete(function()
-        XLuaUiManager.SetMask(false)
-        self:DestroyCloneMoveNode()
-        self:Refresh(true, true, true)
+    local moveStartPos = self.CharacterMoveNode.transform.localPosition -- 角色移动开始位置
+    local moveAimPos = endLinkGo.transform.localPosition -- 角色移动结束位置
+    self.CharacterMoveNodeOriginPos = moveStartPos
+
+    local focusAimPos = Vector3(moveAimPos.x - moveStartPos.x, moveAimPos.y - moveStartPos.y, moveAimPos.z - moveStartPos.z)
+    self:FocusWithTargetPos(focusAimPos, true, function()
+        XLuaUiManager.SetMask(true)
+        self.IsMapMoving = true
+        self.CharacterMoveNode.transform:DOLocalMove(moveAimPos, time):SetEase(CSTween.Ease.OutQuad):OnComplete(function()
+            XLuaUiManager.SetMask(false)
+            self.IsMapMoving = false
+            self:Refresh(true)
+        end)
     end)
 end
 
--- 销毁克隆出来的移动节点
-function XUiPanelLuosaitaSection:DestroyCloneMoveNode()
-    if self.CloneMoveNode then
-        self.CloneMoveNode.gameObject:SetActiveEx(false)
-        CS.UnityEngine.Object.Destroy(self.CloneMoveNode.gameObject)
-        self.CloneMoveNode = nil
+function XUiPanelLuosaitaSection:ClearSequence()
+    if self.Sequence then
+        self.Sequence:Kill()
+        self.Sequence = nil
+    end
+end
+
+-- 复原角色移动节点
+function XUiPanelLuosaitaSection:ClearCharacterMoveNode()
+    if self.CharacterMoveNode then
+        self.CharacterMoveNode.transform.localPosition = self.CharacterMoveNodeOriginPos
+        self.CharacterMoveNode = nil
     end
 end
 --endregion
@@ -294,52 +291,80 @@ function XUiPanelLuosaitaSection:CheckOpenPopUpDocument()
     if isShow then
         return true
     end
-    
+
     local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
     local docId = sectionInfo:GetUnUseDocId()
     if docId then
-        XLuaUiManager.Open("UiMainLineLuosaitaPopupFileDetail", self.SectionId, docId, function()  
-            self:SetAreaScaleDragEnable(false)
+        XLuaUiManager.Open("UiMainLineLuosaitaPopupFileDetail", self.SectionId, docId, function()
+            self:SetAreaDragEnable(false)
         end, function()
-            self:SetAreaScaleDragEnable(true)
+            self:SetAreaDragEnable(true)
             self:OnPopUpDocumentClose()
         end)
-        return true        
+        return true
     end
     return false
 end
 
 -- 文件弹窗关闭回调
 function XUiPanelLuosaitaSection:OnPopUpDocumentClose()
-    self:Refresh(true, true, true)
+    self:Refresh(true)
+end
+--endregion
+
+--region 阶段动效
+-- 检测播放阶段第一次满足条件激活的Enable动画
+function XUiPanelLuosaitaSection:CheckPlaySectionEnableAnim()
+    local sectionConfig = self._Control:GetConfig():GetConfigSection(self.SectionId)
+    for i, uiNodeName in ipairs(sectionConfig.FocusPosUiNodeNames) do
+        local conditionId = sectionConfig.ConditionIds[i]
+        local isReach = true -- 不填conditionId视为
+        local tips
+        if XTool.IsNumberValidEx(conditionId) then
+            isReach, tips = XConditionManager.CheckCondition(conditionId)
+        end
+        if isReach and not self.ActivatedAnimDic[i] then
+            self.ActivatedAnimDic[i] = true
+            local enableAnim = sectionConfig.EnableAnims[i]
+            self:FocusWithUiNodeName(uiNodeName, true, function()
+                if not string.IsNilOrEmpty(enableAnim) then
+                    self:PlayAnimationWithMask(enableAnim, function()
+                        self:Refresh()
+                    end)
+                end
+            end)
+            return true
+        end
+    end
+    return false
+end
+
+-- 加载阶段满足条件激活的Loop动画
+function XUiPanelLuosaitaSection:LoadSectionLoopAnim()
+    self.ActivatedAnimDic = {}
+    local sectionConfig = self._Control:GetConfig():GetConfigSection(self.SectionId)
+    for i, _ in ipairs(sectionConfig.FocusPosUiNodeNames) do
+        local conditionId = sectionConfig.ConditionIds[i]
+        local isReach = true -- 不填conditionId视为
+        local tips
+        if XTool.IsNumberValidEx(conditionId) then
+            isReach, tips = XConditionManager.CheckCondition(conditionId)
+        end
+        if isReach then
+            self.ActivatedAnimDic[i] = true
+            local loopAnim = sectionConfig.LoopAnims[i]
+            if not string.IsNilOrEmpty(loopAnim) then
+                self:PlayAnimation(loopAnim)
+            end
+        end
+    end
 end
 --endregion
 
 function XUiPanelLuosaitaSection:MoveToPos(curPosId, targetPosId)
     XMVCA.XMainLineLuosaita:RequestMainLineLuosaitaMove(self.SectionId, curPosId, targetPosId, function()
-        self:Refresh(true, true, true)
+        self:Refresh(true)
     end)
-end
-
-function XUiPanelLuosaitaSection:SetFocusTaget(uiNode, postionInfo)
-    local stageType = XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.STAGE
-    if not self.FocusTarget then
-        if uiNode:GetType() == XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ENEMY then
-            self.FocusTarget = uiNode
-        end
-        if uiNode:GetType() == stageType then
-            if self._Control:IsStageShow(postionInfo:GetStageId()) and self._Control:IsStageUnlock(postionInfo:GetStageId()) then
-                self.FocusTarget = uiNode
-            end
-        end
-    end
-    if self.FocusTarget then
-        if self.FocusTarget.MemberData:IsStage() and uiNode:GetType() == stageType then
-            if self._Control:IsStageShow(postionInfo:GetStageId()) and self._Control:IsStageUnlock(postionInfo:GetStageId()) then
-                self.FocusTarget = uiNode
-            end
-        end
-    end
 end
 
 function XUiPanelLuosaitaSection:GetGridBlocks()
@@ -374,7 +399,7 @@ function XUiPanelLuosaitaSection:GetFocusTargetUiNodeName()
         return
     end
     
-    -- 显示但未通关的关卡
+    -- 有未通关的关卡
     for _, posInfo in ipairs(positionInfos) do
         local posId = posInfo:GetPosId()
         if posInfo:IsStage() then
@@ -386,53 +411,95 @@ function XUiPanelLuosaitaSection:GetFocusTargetUiNodeName()
         end
     end
 
-    -- 显示但未通关的敌军
-    for _, posInfo in ipairs(positionInfos) do
-        local posId = posInfo:GetPosId()
-        if posInfo:IsEnemy() then
-            local enemyId = posInfo:GetEnemyId()
-            local isShow = self._Control:IsEnemyShow(enemyId)
-            if isShow then
-                return self._Control:GetConfig():GetPositionUiNodeName(posId)
+    -- 刚进阶段/挑战关卡回来，定位目标都需要包括敌军
+    local isFocusWithEnemy = not self.IsLastOperationEnemy
+    if isFocusWithEnemy then
+        -- 有可挑战的敌军，多个军队的时候定位到id最大的军队
+        local focusEnemyId = nil
+        local focusEnemyPosId = nil
+        for _, posInfo in ipairs(positionInfos) do
+            if posInfo:IsEnemy() and self._Control:IsEnemyCanAttack(self.SectionId, posInfo) then
+                local enemyId = posInfo:GetEnemyId()
+                if not focusEnemyId or focusEnemyId < enemyId then
+                    focusEnemyId = enemyId
+                    focusEnemyPosId = posInfo:GetPosId()
+                end
             end
+        end
+        if focusEnemyPosId then
+            return self._Control:GetConfig():GetPositionUiNodeName(focusEnemyPosId)
         end
     end
 end
 
 -- 聚焦到目标为止
----@param isWait boolean 是否等待
-function XUiPanelLuosaitaSection:GotoFocusTarget(isAnim, isWait)
+---@param isWait boolean 是否等待UiMainLineLuosaitaMain的AnimEnable播放完毕
+function XUiPanelLuosaitaSection:GotoFocusTarget(isAnim)
     local uiNodeName = self:GetFocusTargetUiNodeName()
-    if string.IsNilOrEmpty(uiNodeName) then 
-        return 
+    self:FocusWithUiNodeName(uiNodeName, isAnim)
+end
+
+-- 聚焦到节点
+function XUiPanelLuosaitaSection:FocusWithUiNodeName(uiNodeName, isAnim, cb)
+    if string.IsNilOrEmpty(uiNodeName) then
+        return
     end
 
     local posTransform = self:GetPositionLinkGo(uiNodeName)
     if not posTransform then
         return
     end
-    
+
+    self:FocusWithTargetPos(posTransform.localPosition, isAnim, cb)
+end
+
+-- 聚焦到位置
+---@param targetPos Vector3 目标位置
+function XUiPanelLuosaitaSection:FocusWithTargetPos(targetPos, isAnim, cb)
+    -- 根据缩放确定聚焦位置
+    local fixedArea = self.PanelAreaScaleDrag.FixedArea
     local target = self.PanelAreaScaleDrag.Target
     local scale = target.transform.localScale
-    local localPos = posTransform.localPosition
-    local aimPos = XLuaVector3.New(-localPos.x * scale.x, -localPos.y * scale.y, localPos.z)
-    
+    local focusX = -targetPos.x * scale.x
+    local focusY = -targetPos.y * scale.y
+    local focusZ = targetPos.z * scale.z
+
+    -- 根据拖拽范围调整聚焦位置
+    local absWidth = target.rect.width * target.localScale.x - fixedArea.rect.width * fixedArea.localScale.x
+    local absHeight = fixedArea.rect.width * fixedArea.localScale.x - fixedArea.rect.height * fixedArea.localScale.y
+    local maxFocusPosX = absWidth > 0 and absWidth / 2 or 0
+    local maxFocusPosY = absHeight > 0 and absHeight / 2 or 0
+    if focusX > maxFocusPosX then
+        focusX = maxFocusPosX
+    elseif focusX < -maxFocusPosX then
+        focusX = -maxFocusPosX
+    end
+    if focusY > maxFocusPosY then
+        focusY = maxFocusPosY
+    elseif focusY < -maxFocusPosY then
+        focusY = -maxFocusPosY
+    end
+    local focusPos = Vector3(focusX, focusY, focusZ)
+
     -- 不播动画
     if not isAnim then
-        target.transform.localPosition = aimPos
+        target.transform.localPosition = focusPos
+        if cb then cb() end
         return
     end
-    
-    local ANIM_TIME = 0.5
-    local WAIT_TIEM = 1500
-    if isWait then
-        self:RemoveAnimWaitTimer()
-        self.AnimWaitTimer = XScheduleManager.ScheduleOnce(function()
-            target.transform:DOLocalMove(aimPos, ANIM_TIME)
-        end, WAIT_TIEM)
-    else
-        target.transform:DOLocalMove(aimPos, ANIM_TIME)
-    end
+
+    -- 播动画
+    XLuaUiManager.SetMask(true)
+    self.IsMapMoving = true
+    self:SetAreaDragEnable(false)
+    local distance = CS.UnityEngine.Vector3.Distance(target.transform.localPosition, focusPos)
+    local animTime = distance / self.FOCUS_SPEED
+    target.transform:DOLocalMove(focusPos, animTime):OnComplete(function()
+        XLuaUiManager.SetMask(false)
+        self.IsMapMoving = false
+        self:SetAreaDragEnable(true)
+        if cb then cb() end
+    end)
 end
 
 -- 移除动画等待时间
@@ -447,9 +514,10 @@ function XUiPanelLuosaitaSection:IsDragOperation()
     return self.PanelAreaScaleDrag.DragTranslate.IsFingerDrag
 end
 
--- 设置拖拽和缩放组件是否启用
-function XUiPanelLuosaitaSection:SetAreaScaleDragEnable(isEnable)
-    self.PanelAreaScaleDrag.enabled = isEnable
+-- 设置拖拽组件是否启用
+function XUiPanelLuosaitaSection:SetAreaDragEnable(isEnable)
+    self.PanelAreaScaleDrag.DragTranslate.enabled = isEnable
+    self.PanelAreaScaleDrag.PinchScale.enabled = false
 end
 
 function XUiPanelLuosaitaSection:GetAreaScaleDragPosition()
@@ -458,6 +526,11 @@ end
 
 function XUiPanelLuosaitaSection:SetAreaScaleDragPosition(pos)
     self.PanelAreaScaleDrag.Target.transform.localPosition = pos
+end
+
+-- 设置最后的操作是攻击敌军
+function XUiPanelLuosaitaSection:SetIsLastOperationEnemy(isEnemy)
+    self.IsLastOperationEnemy = isEnemy
 end
 
 return XUiPanelLuosaitaSection

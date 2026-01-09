@@ -457,6 +457,7 @@ local UIBindControl = {
     UiDlcMultiPlayerSettlementBeach = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementDorm = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerSettlementMarket = ModuleId.XDlcMultiMouseHunter,
+    UiDlcMultiPlayerSettlementLantern = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerExchange = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerData = ModuleId.XDlcMultiMouseHunter,
     UiDlcMultiPlayerCompetition = ModuleId.XDlcMultiMouseHunter,

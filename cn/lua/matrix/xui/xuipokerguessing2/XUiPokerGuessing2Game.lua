@@ -166,10 +166,8 @@ function XUiPokerGuessing2Game:PlayAnimationConfirmResult(state, roundState, rou
     self:TimerQuick(function()
         if roundState == XPokerGuessing2Enum.RoundState.RoundWin then
             self._Player:SetTheRevealCardWin()
-            self._Player:ShowEffectSuccess()
         elseif roundState == XPokerGuessing2Enum.RoundState.RoundLose then
             self._Enemy:SetTheRevealCardWin()
-            self._Enemy:ShowEffectSuccess()
         elseif roundState == XPokerGuessing2Enum.RoundState.RoundDrawn then
             self.PanelDraw.gameObject:SetActiveEx(true)
         end

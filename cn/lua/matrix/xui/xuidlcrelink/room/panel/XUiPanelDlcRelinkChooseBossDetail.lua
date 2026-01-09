@@ -333,6 +333,10 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshReward()
         grid:SetProxyClickFunc(function()
             XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
         end)
+        -- 首通标识
+        if grid.ImgClear then
+            grid.ImgClear.gameObject:SetActiveEx(not isPass)
+        end
         grid.GameObject:SetActiveEx(true)
         grid.Transform:SetAsLastSibling()
     end

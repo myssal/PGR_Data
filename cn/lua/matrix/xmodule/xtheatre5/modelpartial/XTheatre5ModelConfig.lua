@@ -61,7 +61,7 @@ local PVETableKey = {
     Theatre5PveMonster = {},
     Theatre5PveStoryEntrance = {},
     Theatre5PveStoryLine = {},
-    Theatre5PveStoryLineContent = {},
+    Theatre5PveStoryLineContent = { CacheType = XConfigUtil.CacheType.Normal },
     Theatre5PveSceneChat = {},
     Theatre5PveEnding = { DirPath = XConfigUtil.DirectoryType.Client },
     Theatre5PveSceneChatStoryPool = {},
@@ -1103,6 +1103,17 @@ function XTheatre5Model:GetTheatre5MissionBountyGroupByBountyId(bountyId)
     end
     
     return group
+end
+
+function XTheatre5Model:GetTheatre5MissionBountyMaxLevel(bounty)
+    local bountyCfgs = self:GetTheatre5MissionBountyGroupByBountyId(bounty)
+
+    -- 目前数量与等级一一对应
+    if bountyCfgs then
+        return #bountyCfgs
+    end
+    
+    return 1
 end
 --endregion
 

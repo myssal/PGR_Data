@@ -8,10 +8,14 @@ function XUiDlcRelinkPopupGetReward:OnAwake()
     self.GridReward.gameObject:SetActiveEx(false)
     self.GridEquipment.gameObject:SetActiveEx(false)
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+
     ---@type XUiGridCommon[]
     self.RewardGridList = {}
     ---@type XUiGridDlcRelinkEquipment[]
     self.EquipGridList = {}
+
+    self.CurSelectGrid = nil
+    self.CurSelectEquipUid = 0
 end
 
 function XUiDlcRelinkPopupGetReward:OnStart(rewardGoodsList, equipUidList)
@@ -58,7 +62,7 @@ function XUiDlcRelinkPopupGetReward:RefreshEquip(equipUidList)
         local grid = self.EquipGridList[index]
         if not grid then
             local go = XUiHelper.Instantiate(self.GridEquipment, self.PanelContent)
-            grid = XUiGridDlcRelinkEquipment.New(go, self)
+            grid = XUiGridDlcRelinkEquipment.New(go, self, handler(self, self.OnEquipGridCallBack))
             self.EquipGridList[index] = grid
         end
         grid:Open()
@@ -71,6 +75,29 @@ function XUiDlcRelinkPopupGetReward:RefreshEquip(equipUidList)
             grid:Close()
         end
     end
+end
+
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkPopupGetReward:OnEquipGridCallBack(grid)
+    local equipUid = grid:GetEquipUid()
+    if equipUid == self.CurSelectEquipUid then
+        return
+    end
+    if self.CurSelectGrid then
+        self.CurSelectGrid:SetSelect(false)
+    end
+    grid:SetSelect(true)
+    self.CurSelectEquipUid = equipUid
+    self.CurSelectGrid = grid
+    XLuaUiManager.Open("UiDlcRelinkBubbleEquipDetail", equipUid, grid.Transform, handler(self, self.OnBubbleEquipDetailClose))
+end
+
+function XUiDlcRelinkPopupGetReward:OnBubbleEquipDetailClose()
+    if self.CurSelectGrid then
+        self.CurSelectGrid:SetSelect(false)
+    end
+    self.CurSelectEquipUid = 0
+    self.CurSelectGrid = nil
 end
 
 function XUiDlcRelinkPopupGetReward:OnBtnBackClick()

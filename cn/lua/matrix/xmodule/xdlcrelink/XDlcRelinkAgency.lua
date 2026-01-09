@@ -17,7 +17,7 @@ function XDlcRelinkAgency:InitRpc()
     XRpc.NotifyDlcRelinkRemoveEquip = handler(self, self.NotifyDlcRelinkRemoveEquip)
     XRpc.NotifyDlcRelinkEquipPreset = handler(self, self.NotifyDlcRelinkEquipPreset)
     XRpc.NotifyDlcRelinkCharacterData = handler(self, self.NotifyDlcRelinkCharacterData)
-    XRpc.NotifyDlcRelinkSignDailyReset = handler(self, self.NotifyDlcRelinkSignDailyReset)
+    XRpc.NotifyDlcRelinkDailyReset = handler(self, self.NotifyDlcRelinkDailyReset)
 end
 
 function XDlcRelinkAgency:InitEvent()
@@ -95,8 +95,8 @@ function XDlcRelinkAgency:NotifyDlcRelinkCharacterData(data)
     end
 end
 
---- 每日重置签到数据
-function XDlcRelinkAgency:NotifyDlcRelinkSignDailyReset(data)
+--- 每日重置通知
+function XDlcRelinkAgency:NotifyDlcRelinkDailyReset(data)
     if not data then
         return
     end
@@ -104,7 +104,8 @@ function XDlcRelinkAgency:NotifyDlcRelinkSignDailyReset(data)
         return
     end
     self._Model.ActivityData:SetDailySign(data.DailySign)
-    XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_SYNC_DAILY_SIGN)
+    self._Model.ActivityData:SetGlobalMatchRewardTimes(data.GlobalMatchRewardTimes)
+    XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_DAILY_RESET)
 end
 
 --endregion
@@ -130,7 +131,7 @@ function XDlcRelinkAgency:OpenMainUi()
     end
 
     -- 玩法重连检查
-    XMVCA.XDlcRoom:ReqPreCheckReconnect(function()
+    XMVCA.XDlcRoom:ReqPreCheckReconnect(self:DlcGetWorldType(), function()
         -- 重连处理
         if XMVCA.XDlcWorld:OnReconnectFight() then
             return
@@ -388,7 +389,7 @@ function XDlcRelinkAgency:RecordTeachingLevel(settleData)
         guide_id = guideId,
         guide_state = state,
     }
-    CS.XRecord.Record(dict, "1000011", "DlcRelinkTeachingLevelGuide")
+    CS.XRecord.Record(dict, "1000012", "DlcRelinkTeachingLevelGuide")
 end
 
 --endregion

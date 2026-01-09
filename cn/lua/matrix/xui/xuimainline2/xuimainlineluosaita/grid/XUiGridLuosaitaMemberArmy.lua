@@ -47,8 +47,24 @@ function XUiGridLuosaitaMemberArmy:Refresh(memberData)
 end
 
 function XUiGridLuosaitaMemberArmy:OnCharacterBeginDrag(eventData)
-    self.Parent:SetAreaScaleDragEnable(false)
+    if self.Parent.IsMapMoving then return end
+
+    -- 阶段完成，不给拖拽
+    local sectionId = self.Parent.SectionId
+    if self._Control:IsSectionFinish(sectionId) then
+        return
+    end
     
+    -- 有已解锁关卡未首通，提示先完成关卡
+    if self._Control:IsSectionExitUnlockAndUnPassedStage(sectionId) then
+        local tips = self._Control:GetConfig():GetConfigString("DragTips7", 1)
+        XUiManager.TipError(tips)
+        return
+    end
+
+    self.IsDraging = true
+    self.Parent:SetAreaDragEnable(false)
+
     local pos = XUiHelper.GetScreenClickPosition(self.UiMain.Transform, self.Camera)
     self.DragStarPos = pos
     self.Arrow.localPosition = pos
@@ -58,6 +74,8 @@ function XUiGridLuosaitaMemberArmy:OnCharacterBeginDrag(eventData)
 end
 
 function XUiGridLuosaitaMemberArmy:OnCharacterDrag(eventData)
+    if not self.IsDraging then return end
+
     local pos = XUiHelper.GetScreenClickPosition(self.UiMain.Transform, self.Camera)
 
     self.V2.x = pos.x - self.DragStarPos.x
@@ -71,7 +89,10 @@ function XUiGridLuosaitaMemberArmy:OnCharacterDrag(eventData)
 end
 
 function XUiGridLuosaitaMemberArmy:OnCharacterEndDrag(eventData)
-    self.Parent:SetAreaScaleDragEnable(true)
+    if not self.IsDraging then return end
+    
+    self.IsDraging = false
+    self.Parent:SetAreaDragEnable(true)
     
     if self.PreSelectTarget then
         self.Parent:MoveToPos(self.MemberData:GetPosId(), self.PreSelectTarget)
@@ -79,6 +100,7 @@ function XUiGridLuosaitaMemberArmy:OnCharacterEndDrag(eventData)
     self.Arrow.gameObject:SetActiveEx(false)
     self.UiMain:ClearTalk()
     self.UiMain:ClosePanelFight()
+    self.Parent:SetIsLastOperationEnemy(true)
 end
 
 local TempV2Target = Vector2(0, 0)
@@ -92,17 +114,20 @@ function XUiGridLuosaitaMemberArmy:PreSelectEnemy(screenPoint)
     if not pos or pos == self.MemberData:GetPosId() then
         self.UiMain:SetTalkByClientConfigKey(XMVCA.XMainLineLuosaita.EnumConst.TALK_TYPE.INFO, "DragTips1")
         self.UiMain:ClosePanelFight()
+        self:SetArrowGray(false)
         return
     end
     local enemyId = posUi.MemberData:GetEnemyId()
     if not posUi.MemberData:IsEnemy() or not self._Control:IsEnemyShow(enemyId) then
         self.UiMain:SetTalkByClientConfigKey(XMVCA.XMainLineLuosaita.EnumConst.TALK_TYPE.INFO, "DragTips1")
+        self:SetArrowGray(true)
         return
     end
     local endPosInfo = self._Control:GetPositionInfo(pos)
     local isCanMove, tips = self._Control:IsCanMovePosition(self.MemberData, endPosInfo)
     if not isCanMove then
         self.UiMain:SetTalk(XMVCA.XMainLineLuosaita.EnumConst.TALK_TYPE.WARNING, tips)
+        self:SetArrowGray(true)
         return
     end
 
@@ -110,6 +135,7 @@ function XUiGridLuosaitaMemberArmy:PreSelectEnemy(screenPoint)
     self.PreSelectTarget = pos
     self.PreSelectTargetData = posUi
     self.UiMain:SetFight(self.MemberData, self.PreSelectTargetData.MemberData)
+    self:SetArrowGray(false)
 end
 
 function XUiGridLuosaitaMemberArmy:GetBlockIndex(screenPointV2)
@@ -134,6 +160,14 @@ function XUiGridLuosaitaMemberArmy:GetPosIndex(screenPointV2)
         end
     end
     return targetPosId, targetPosData
+end
+
+-- 设置拖拽箭头灰色
+function XUiGridLuosaitaMemberArmy:SetArrowGray(isGray)
+    self.ArrowNormal = self.ArrowNormal or self.Arrow:FindTransform("ArrowNormal")
+    self.ArrowGray = self.ArrowGray or self.Arrow:FindTransform("ArrowGray")
+    self.ArrowNormal.gameObject:SetActiveEx(not isGray)
+    self.ArrowGray.gameObject:SetActiveEx(isGray)
 end
 
 return XUiGridLuosaitaMemberArmy

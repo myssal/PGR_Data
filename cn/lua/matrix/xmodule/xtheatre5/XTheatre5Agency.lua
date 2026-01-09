@@ -448,6 +448,8 @@ function XTheatre5Agency:OnNotifyTheatre5ActivityData(data)
 
     self._Model:SetCharacterWinGameCountData(theatre5DataDb.CommonFightCnt)
     self._Model:UpdateRelicCollects(theatre5DataDb.RelicCollects)
+    
+    self.PVEAgency:AfterActivityDataNotify()
 end
 
 function XTheatre5Agency:OnNotifyTheatre5UnlockCharacter(data)
@@ -556,6 +558,11 @@ function XTheatre5Agency:RequestTheatre5MissionChoose(positionId, cb)
 
         self._Model.CurAdventureData:ClearChooseMissionsAfterEndChoose()
         self._Model.CurAdventureData:UpdateCurMissioning(res.ChooseMission)
+        -- 更新已解锁任务客户端缓存
+        if res.ChooseMission then
+            local bounty = res.ChooseMission.MissionBounty.Bounty
+            self._Model.CurAdventureData:AddChooseMissionBounty(bounty)
+        end
         
         self:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_REFRESH_CUR_MISSION)
         if cb then

@@ -166,6 +166,8 @@ function XUiPokerGuessing2Card:OnDrag(eventData)
     local transform = self.Transform
     transform.position = worldPosition
 
+    transform.localScale = Vector3(1, 1, 1)
+
     self._IsOnOriginalParent = false
 end
 
@@ -188,7 +190,6 @@ function XUiPokerGuessing2Card:OnEndDrag(eventData)
         self:SetPlayerSelected()
         self.Parent:RevertCardParentAndPosition(self)
         self.Parent:SetAllCardPutOnGroup(false)
-        self.Parent:ShowEffectPutDown()
         self:SetPutOnGround(true)
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
     else
@@ -229,11 +230,11 @@ function XUiPokerGuessing2Card:PlayAnimationCardToPutDown(duration)
     self._IsPutOnGround = true
     self.Transform:SetParent(self._ParentOnDrag, true)
     self.Transform.localEulerAngles = Vector3(0, 0, 0)
+    self.Transform.localScale = Vector3(1, 1, 1)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2SelectCard)
     -- 移动到父节点的局部坐标原点，而不是父节点的anchoredPosition3D
     self:DoMove(self.Transform, Vector3.zero, duration, nil, function()
         XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.PokerGuessing2DropDownCard)
-        self.Parent:ShowEffectPutDown()
         self._Control:SetEnemySelectedCard(self._Data)
     end)
 end

@@ -85,6 +85,13 @@ function XBWCourseCoreElementEntity:GetName()
     return self._Proxy:GetName()
 end
 
+function XBWCourseCoreElementEntity:GetSortIndex()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseCoreElementSortIndexById(self:GetElementId())
+    end
+    return 0
+end
+
 function XBWCourseCoreElementEntity:GetRewards()
     if not self._Proxy then
         return

@@ -51,6 +51,8 @@ function XUiPanelDlcRelinkSettlementResult:Refresh(resultData, relinkSettleResul
     end
     -- 背景图
     self.RImgBg:SetRawImage(self._Control:GetClientConfig("SettlementResultBg", isWin and 1 or 2))
+    -- 背景特效
+    self.RImgBg.gameObject:LoadUiEffect(self._Control:GetClientConfig("SettlementResultEffect", isWin and 1 or 2))
 end
 
 -- 获取通关时间

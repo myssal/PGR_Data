@@ -14,6 +14,14 @@ function XUiPanelDlcRelinkEquipDetail:OnStart(isNotSelf)
     self.GridNone.gameObject:SetActiveEx(false)
     self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
 
+    if self.BtnDescFold then
+        self.BtnDescFold:AddEventListener(handler(self, self.OnBtnDescFold))
+    end
+
+    if self.PanelDetail then
+        self.PanelDetail.gameObject:SetActiveEx(false)
+    end
+
     self.IsNotSelf = isNotSelf or false
 
     ---@type XUiGridDlcRelinkEquipAttribute
@@ -32,6 +40,10 @@ function XUiPanelDlcRelinkEquipDetail:OnStart(isNotSelf)
     if canvas then
         self.DefaultLayer = canvas.sortingOrder
     end
+
+    self._IsShowDetail = self._Control:GetEquipAttrDescIsDetail()
+
+    self:RefreshFoldIcon()
 end
 
 function XUiPanelDlcRelinkEquipDetail:Refresh(equipUid)
@@ -91,7 +103,8 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
     if mainSkillAttr then
         local node = self:EnsureMainAttrNode(true)
         node:Refresh(mainSkillAttr)
-        node.Transform:SetAsLastSibling()
+        node:RefreshDetailShow(self._IsShowDetail, mainSkillAttr)
+        node:MoveToParentLatest()
         node:ShowBg1()
     end
 
@@ -100,7 +113,8 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
     if mainAttr then
         local node = self:EnsureMainAttrNode(false)
         node:Refresh(mainAttr)
-        node.Transform:SetAsLastSibling()
+        node:RefreshDetailShow(self._IsShowDetail, mainAttr)
+        node:MoveToParentLatest()
         --背景图交错开
         if mainSkillAttr then
             node:ShowBg2()
@@ -152,6 +166,16 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
     end
 end
 
+function XUiPanelDlcRelinkEquipDetail:RefreshFoldIcon()
+    if self.IconSimpleState then
+        self.IconSimpleState.gameObject:SetActiveEx(not self._IsShowDetail)
+    end
+
+    if self.IconDetailState then
+        self.IconDetailState.gameObject:SetActiveEx(self._IsShowDetail)
+    end
+end
+
 function XUiPanelDlcRelinkEquipDetail:HideEquipAttributes()
     if self.MainSkillAttribute then
         self.MainSkillAttribute:Close()
@@ -191,7 +215,9 @@ function XUiPanelDlcRelinkEquipDetail:EnsureMainAttrNode(isSkill)
     local field = isSkill and "MainSkillAttribute" or "MainAttribute"
     if not self[field] then
         local go = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
-        self[field] = XUiGridDlcRelinkEquipAttribute.New(go, self)
+        
+        local detailGo = self.PanelDetail and XUiHelper.Instantiate(self.PanelDetail, self.PanelGroup) or nil
+        self[field] = XUiGridDlcRelinkEquipAttribute.New(go, self, detailGo)
     end
     local node = self[field]
     node:Open()
@@ -225,18 +251,32 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     local attrCount = #attributes
 
     grid:GetObject("GridAttribute1").gameObject:SetActiveEx(attrCount >= 1)
+    
+    local panelDetail1 = grid:GetObject("PanelDetail1")
+
+    if panelDetail1 then
+        panelDetail1.gameObject:SetActiveEx(attrCount >= 1)
+    end
+
     local hasSecond = attrCount >= 2
     grid:GetObject("Line").gameObject:SetActiveEx(hasSecond)
     grid:GetObject("GridAttribute2").gameObject:SetActiveEx(hasSecond)
 
+    local panelDetail2 = grid:GetObject("PanelDetail2")
+
+    if panelDetail2 then
+        panelDetail2.gameObject:SetActiveEx(hasSecond)
+    end
+
     self.DeputyAttributeNodes[index] = self.DeputyAttributeNodes[index] or {}
     for i = 1, math.min(attrCount, 2) do
         if not self.DeputyAttributeNodes[index][i] then
-            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self)
+            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self, grid:GetObject("PanelDetail" .. i))
         end
         local node = self.DeputyAttributeNodes[index][i]
         node:Open()
         node:Refresh(attributes[i])
+        node:RefreshDetailShow(self._IsShowDetail, attributes[i])
         if i & 1 == 1 then
             node:ShowBg1()
         else
@@ -400,5 +440,17 @@ function XUiPanelDlcRelinkEquipDetail:CloseDeleteFactorPanel()
         end
     end
 end
+
+--- 装备详情
+function XUiPanelDlcRelinkEquipDetail:OnBtnDescFold()
+    self._IsShowDetail = not self._IsShowDetail
+
+    -- 刷新词条详情显示情况
+    self:RefreshEquipAttributes()
+    self:RefreshFoldIcon()
+    
+    self._Control:SetEquipAttrDescIsDetail(self._IsShowDetail)
+end
+
 
 return XUiPanelDlcRelinkEquipDetail

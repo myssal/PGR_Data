@@ -121,8 +121,8 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_LoadConfig()
     self._CachedDanmakuDesc = descConfig and descConfig.Values[1] or ""
 
     -- 获取屏幕尺寸
-    self._ScreenWidth = CS.UnityEngine.Screen.width
-    self._ScreenHeight = CS.UnityEngine.Screen.height
+    self._ScreenWidth = self.PanelBulletChat.rect.width
+    self._ScreenHeight = self.PanelBulletChat.rect.height
 end
 
 function XUiDlcMultiPlayerCompetitionBulletChat:_InitRails()
@@ -516,6 +516,7 @@ function XUiDlcMultiPlayerCompetitionBulletChat:AddOwnDanmakuData(camp)
         end
         table.insert(self[listKey], insertIndex, newDanmakuData)
     end
+    self:_StartDanmakuShoot()
 end
 --endregion
 

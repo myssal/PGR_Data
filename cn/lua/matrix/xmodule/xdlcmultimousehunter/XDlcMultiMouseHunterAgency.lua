@@ -63,11 +63,11 @@ function XDlcMultiMouseHunterAgency:InitEvent()
 end
 
 function XDlcMultiMouseHunterAgency:OpenMainUi()
-    if self.InCd  then
+    if self.InCd then
         return
     end
     -- 玩法重连检查
-    XMVCA.XDlcRoom:ReqPreCheckReconnect(function()
+    XMVCA.XDlcRoom:ReqPreCheckReconnect(self:DlcGetWorldType(), function()
         -- 重连处理
         if XMVCA.XDlcWorld:OnReconnectFight() then
             return
@@ -80,7 +80,7 @@ function XDlcMultiMouseHunterAgency:OpenMainUi()
     end)
     XScheduleManager.ScheduleOnce(function()
         self.InCd = false
-    end,1000)--增加1s Cd
+    end, 1000)--增加1s Cd
     self.InCd = true
 end
 
@@ -177,7 +177,7 @@ end
 
 --- 选择讨论阵营投票
 ---@param camp number 阵营
-function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp)
+function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp, oncall)
     local request = {
         Camp = camp,
     }
@@ -188,6 +188,9 @@ function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp)
         end
 
         self._Model:SetDiscussionInfo(res.DiscussionInfo)
+        if oncall then
+            oncall()
+        end
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_DISCUSSION_DATA)
     end)
 end

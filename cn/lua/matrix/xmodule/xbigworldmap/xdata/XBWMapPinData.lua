@@ -135,9 +135,11 @@ end
 
 function XBWMapPinData:IsDisplaying()
     if XTool.IsNumberValid(self.ConditionId) then
-        return XMVCA.XBigWorldService:CheckCondition(self.ConditionId)
+        if not XMVCA.XBigWorldService:CheckCondition(self.ConditionId) then
+            return false
+        end
     end
-    
+
     return self.IsDisplay
 end
 
@@ -220,8 +222,12 @@ function XBWMapPinData:IsPointPin()
     return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Point) ~= 0
 end
 
-function XBWMapPinData:IsRadiusPin()
-    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.Radius) ~= 0
+function XBWMapPinData:IsLittleMapRadiusPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.LittleMapRadius) ~= 0
+end
+
+function XBWMapPinData:IsBigMapRadiusPin()
+    return (self.DisplayType & XMVCA.XBigWorldMap.MapPinDisplayType.BigMapRadius) ~= 0
 end
 
 function XBWMapPinData:SetDisplayType(value)

@@ -122,11 +122,13 @@ function XUiGachaBiankaStageLine:HandleStageLines()
         self._FestivalStageLine[i] = itemLine
     end
 
-    -- 隐藏多余组件
+    -- 隐藏/显示多余组件
+    local stageInfo = XDataCenter.FubenManager.GetStageInfo(self._StageIds[#self._StageIds])
+    local isAllOpen = stageInfo and stageInfo.IsOpen
     local indexLine = #self._FestivalStageLine
     local extraLine = self.PanelStageContent:Find(string.format("Line%d", indexLine))
     while extraLine do
-        extraLine.gameObject:SetActiveEx(false)
+        extraLine.gameObject:SetActiveEx(isAllOpen)
         indexLine = indexLine + 1
         extraLine = self.PanelStageContent:Find(string.format("Line%d", indexLine))
     end
@@ -146,21 +148,6 @@ function XUiGachaBiankaStageLine:LoadEffect(effectUrl)
 
     self.PanelEffect.gameObject:LoadUiEffect(effectUrl)
     self.PanelEffect.gameObject:SetActiveEx(true)
-end
-
--- 更新刷新
-function XUiGachaBiankaStageLine:RefreshFestivalNodes()
-    if not self._ChapterTemplate or not self._StageIds then
-        return
-    end
-    for i = 1, #self._StageIds do
-        self._Stages[i]:UpdateNode(i, self._ChapterTemplate.Id, self._StageIds[i])
-    end
-    self:UpdateNodeLines()
-    -- 移动至ListView正确的位置
-    if self.PanelStageContentSizeFitter then
-        self.PanelStageContentSizeFitter:SetLayoutHorizontal()
-    end
 end
 
 -- 更新节点线条

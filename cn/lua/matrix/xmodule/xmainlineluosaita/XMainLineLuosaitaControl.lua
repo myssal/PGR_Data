@@ -178,6 +178,8 @@ end
 function XMainLineLuosaitaControl:GetSectionMessageId(sectionId)
     local messageIds = {}
     local sectionInfo = self:GetSectionInfo(sectionId)
+    if not sectionInfo then return end
+    
     local armyPosInfos = sectionInfo:GetPositionInfosByType(XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY)
     local posInfoDic = sectionInfo:GetPositionInfoDic()
     for _, posInfo in pairs(posInfoDic) do
@@ -219,6 +221,12 @@ end
 
 -- 敌军是否可以被攻击
 function XMainLineLuosaitaControl:IsEnemyCanAttack(sectionId, enemyInfo)
+    local enemyId = enemyInfo:GetEnemyId()
+    local isShow = self:IsEnemyShow(enemyId)
+    if not isShow then 
+        return false 
+    end
+
     local sectionInfo = self:GetSectionInfo(sectionId)
     local armyPosInfos = sectionInfo:GetPositionInfosByType(XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY)
     for _, armyPosInfo in pairs(armyPosInfos) do
@@ -228,6 +236,31 @@ function XMainLineLuosaitaControl:IsEnemyCanAttack(sectionId, enemyInfo)
         end
     end
     return false
+end
+
+-- 阶段是否存在解锁关卡未首通
+function XMainLineLuosaitaControl:IsSectionExitUnlockAndUnPassedStage(sectionId)
+    local sectionInfo = self:GetSectionInfo(sectionId)
+    local posInfoDic = sectionInfo:GetPositionInfoDic()
+    for _, posInfo in pairs(posInfoDic) do
+        if posInfo:IsStage() then
+            local stageId = posInfo:GetStageId()
+            if self:IsStageShow(stageId) and self:IsStageUnlock(stageId) and not XMVCA.XFuben:CheckStageIsPass(stageId) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+-- 增加文件回顾蓝点
+function XMainLineLuosaitaControl:SetDocumentReviewRed(isRed)
+    self._Model:SetDocumentReviewRed(isRed)
+end
+
+-- 获取文件回顾蓝点
+function XMainLineLuosaitaControl:GetDocumentReviewRed()
+    return self._Model:GetDocumentReviewRed()
 end
 --endregion
 
@@ -366,6 +399,9 @@ end
 
 -- 关卡是否解锁
 function XMainLineLuosaitaControl:IsStageUnlock(stageId)
+    if XMVCA.XFuben:CheckStageIsPass(stageId) then
+        return true, ""
+    end
     return XMVCA.XMainLine2:IsStageUnlock(stageId)
 end
 --endregion

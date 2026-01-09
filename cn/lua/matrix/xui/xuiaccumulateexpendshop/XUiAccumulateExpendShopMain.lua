@@ -21,11 +21,13 @@ function XUiAccumulateExpendShopMain:OnAwake()
 end
 
 function XUiAccumulateExpendShopMain:OnStart(...)
-    -- self._Control:AccumulateExpendShopSign()
+    self._Control:EnterAccumulateExpendShop()
+
     XMVCA.XShop:EnterAccumulateExpendShop()
     self:GetCurActivityConfig()
     self:InitView()
     self:_RegisterButtonClicks()
+    self:CheckTimeEnd()
 end
 
 function XUiAccumulateExpendShopMain:OnDestroy()
@@ -40,6 +42,7 @@ end
 
 function XUiAccumulateExpendShopMain:OnNotify(event, ...)
     if event == XEventId.EVENT_NOTIFY_ACCUMULATE_EXPEND_SHOP_DATA then
+        self:CheckTimeEnd()
         self:RefreshAccumemlateDataTxt()
     end
 end
@@ -98,9 +101,10 @@ function XUiAccumulateExpendShopMain:RefreshTime()
         self.SignTxtTime.text = ""
     end
 
-     self.TxtTime.text = XUiHelper.GetInTimeDesc(
-            XFunctionManager.GetStartTimeByTimeId(self.ActivityConfig.TimeId),
-            XFunctionManager.GetEndTimeByTimeId(self.ActivityConfig.TimeId))
+    self.TxtTime.text = XUiHelper.GetInTimeDesc(
+        XFunctionManager.GetStartTimeByTimeId(self.ActivityConfig.TimeId),
+        XFunctionManager.GetEndTimeByTimeId(self.ActivityConfig.TimeId))
+    self:CheckTimeEnd()
 end
 
 function XUiAccumulateExpendShopMain:_RegisterButtonClicks()
@@ -112,7 +116,7 @@ function XUiAccumulateExpendShopMain:_RegisterButtonClicks()
     self.BtnMainUi:AddEventListener(handler(self, XLuaUiManager.RunMain))
     self.BtnClose:AddEventListener(handler(self, self.HideBubble))
     self.BtnTips:AddEventListener(handler(self, self.ShowBubble))
-    self.SignBtn:AddEventListener(function() 
+    self.SignBtn:AddEventListener(function()
         self._Control:AccumulateExpendShopSign()
     end)
 end
@@ -125,7 +129,10 @@ function XUiAccumulateExpendShopMain:ShowShop(shopId)
 end
 
 function XUiAccumulateExpendShopMain:UpdateInfo(shopId)
-    self.GoodsList = XShopManager.GetShopGoodsList(shopId)
+    if XTool.UObjIsNil(self.PanelItemList) then
+        return
+    end
+    self.GoodsList = self.ShopDataEntity:SortGoodList(shopId)
     self.DynamicTable:SetDataSource(self.GoodsList)
     self.DynamicTable:ReloadDataASync()
 end
@@ -189,10 +196,30 @@ function XUiAccumulateExpendShopMain:HideBubble()
 end
 
 function XUiAccumulateExpendShopMain:GetTomorrowTime()
-    self.IsNextDay = self.IsNextDay or XTime.GetSeverTomorrowFreshTime() - XTime.GetServerNowTimestamp() <= 0
-    local timeStr = XUiHelper.GetTime(XTime.GetSeverTomorrowFreshTime() - XTime.GetServerNowTimestamp(),
+    local now = XTime.GetServerNowTimestamp()
+    local todayFreshTime = XTime.GetSeverTodayFreshTime()
+    local tomorrowFreshTime = XTime.GetSeverTomorrowFreshTime()
+    local tempTime = now >= todayFreshTime and tomorrowFreshTime  or todayFreshTime
+
+    self.IsNextDay = self.IsNextDay or tempTime - XTime.GetServerNowTimestamp() <= 0
+    local timeStr = XUiHelper.GetTime(tempTime- XTime.GetServerNowTimestamp(),
         XUiHelper.TimeFormatType.ACTIVITY)
     return timeStr
+end
+
+function XUiAccumulateExpendShopMain:CheckTimeEnd()
+    local configId = self._Control:GetModel():GetAccumulateExpendShop():GetActivityId()
+    if configId == 0 then
+        XUiManager.TipText("ActivityMainLineEnd")
+        XLuaUiManager.RunMain()
+        return
+    end
+    local config = self._Control:GetModel():GetAccumulateExpendShopActivityConfig(configId)
+    if not config or not XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
+        XUiManager.TipText("ActivityMainLineEnd")
+        XLuaUiManager.RunMain()
+        return
+    end
 end
 
 return XUiAccumulateExpendShopMain

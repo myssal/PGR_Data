@@ -37,7 +37,7 @@ function XBigWorldCharacterAgency:InitEvent()
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcJoinTeam(data)
-    self._Model:UpdateTrialCharacterIds(data.TrialNpcCharacterIds, data.Cover, data.CurCharacterId)
+    self._Model:UpdateTrialCharacterIds(data.TrialNpcConfigs, data.Cover, data.CurCharacterId)
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcLeaveTeam()

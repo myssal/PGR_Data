@@ -30,7 +30,10 @@ function XShopControl:AccumulateExpendShopSign()
     else
         XMVCA.XShop:EnterAccumulateExpendShop()
     end
-    self._Model:GetAccumulateExpendShop():EnterShop()
+    self:EnterAccumulateExpendShop()
 end
 
+function XShopControl:EnterAccumulateExpendShop()
+    self._Model:GetAccumulateExpendShop():EnterShop()
+end
 return XShopControl

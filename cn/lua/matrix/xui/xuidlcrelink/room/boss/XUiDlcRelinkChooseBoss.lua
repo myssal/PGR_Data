@@ -177,6 +177,11 @@ function XUiDlcRelinkChooseBoss:OnBtnBackClick()
 end
 
 function XUiDlcRelinkChooseBoss:SelectSpecialLevel(levelId)
+    if XMVCA.XDlcRoom:IsMatching() then
+        self._Control:OpenCommonTipCode(XCode.MatchPlayerIsMatching)
+        return
+    end
+
     local isNeedQuit = false
     if XMVCA.XDlcRoom:IsInRoom() then
         --房间内有其他玩家时，无法选择训练关\教学关

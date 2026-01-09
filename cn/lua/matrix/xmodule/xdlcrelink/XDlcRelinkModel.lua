@@ -84,9 +84,11 @@ function XDlcRelinkModel:OnInit()
     -- 结算缓存数据
     ---@type XDlcRelinkSettlementCache
     self.SettlementCacheData = nil
-    
+
     -- 登录wifi提醒 
     self._NeedPopWifiTips = true
+    -- 是否开启了全局匹配
+    self.GlobalMatchEnabled = false
 end
 
 function XDlcRelinkModel:ClearPrivate()
@@ -104,6 +106,7 @@ function XDlcRelinkModel:ResetAll()
     self.SettlementCacheData = nil
 
     self._NeedPopWifiTips = true
+    self.GlobalMatchEnabled = false
 end
 
 --region 服务端信息更新和获取
@@ -113,7 +116,7 @@ function XDlcRelinkModel:NotifyActivityData(data)
         return
     end
     local isFinishedTutorial = false
-    
+
     if not self.ActivityData then
         self.ActivityData = require("XModule/XDlcRelink/XEntity/XDlcRelinkActivity").New()
     else
@@ -198,9 +201,38 @@ function XDlcRelinkModel:GetChapterConfig(chapterId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkChapter, chapterId)
 end
 
+function XDlcRelinkModel:GetChapterTimeId(chapterId)
+    local config = self:GetChapterConfig(chapterId)
+    return config and config.TimeId or 0
+end
+
+function XDlcRelinkModel:GetChapterConditionIds(chapterId)
+    local config = self:GetChapterConfig(chapterId)
+    return config and config.Condition or {}
+end
+
 function XDlcRelinkModel:GetChapterLevelIds(chapterId)
     local config = self:GetChapterConfig(chapterId)
     return config and config.LevelIds or {}
+end
+
+function XDlcRelinkModel:CheckChapterUnlock(chapterId)
+    if not XTool.IsNumberValid(chapterId) then
+        return false
+    end
+
+    local timeId = self:GetChapterTimeId(chapterId)
+    if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
+        return false
+    end
+
+    local conditionIds = self:GetChapterConditionIds(chapterId)
+    for _, conditionId in ipairs(conditionIds) do
+        if conditionId > 0 and not XConditionManager.CheckCondition(conditionId) then
+            return false
+        end
+    end
+    return true
 end
 
 --endregion
@@ -645,9 +677,9 @@ function XDlcRelinkModel:GetClientConfigVal(key, index)
     if not config then
         return 0
     end
-    
+
     index = index or 1
-    
+
     local param = config.Params and config.Params[index] or ""
 
     if not string.IsNilOrEmpty(param) and string.IsFloatNumber(param) then
@@ -758,10 +790,33 @@ function XDlcRelinkModel:RecordLevelViewed(levelId)
     if not XTool.IsNumberValid(levelId) then
         return
     end
+    if not self:CheckLevelUnlock(levelId) then
+        return
+    end
     local key = self:GetLevelViewedKey(levelId)
     if not XSaveTool.GetData(key) then
         XSaveTool.SaveData(key, true)
     end
+end
+
+--- 获取技能描述是否为详细
+function XDlcRelinkModel:GetSkillDescIsDetail()
+    return self._SaveUtil:GetData('IsSkillDescIsDetail') or false
+end
+
+--- 设置技能描述是否为详细
+function XDlcRelinkModel:SetSkillDescIsDetail(isDetail)
+    self._SaveUtil:SaveData('IsSkillDescIsDetail', isDetail)
+end
+
+--- 获取装备描述是否为详细
+function XDlcRelinkModel:GetEquipAttrDescIsDetail()
+    return self._SaveUtil:GetData('IsEquipAttrDescIsDetail') or false
+end
+
+--- 设置装备描述是否为详细
+function XDlcRelinkModel:SetEquipAttrDescIsDetail(isDetail)
+    self._SaveUtil:SaveData('IsEquipAttrDescIsDetail', isDetail)
 end
 
 --endregion
@@ -790,6 +845,12 @@ function XDlcRelinkModel:CheckChapterHasAnyNewLevel(chapterId)
         return false
     end
 
+    -- 检查章节是否解锁
+    if not self:CheckChapterUnlock(chapterId) then
+        return false
+    end
+
+    -- 检查章节下的关卡是否有新解锁
     local levelIds = self:GetChapterLevelIds(chapterId)
     for _, levelId in ipairs(levelIds) do
         if self:CheckLevelHasNewUnlock(levelId) then

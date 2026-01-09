@@ -86,6 +86,7 @@ function XUiBigWorldPanelLittleMap:OnPositionChange(data)
     if pinNode then
         local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(data.MapPinLevelId, data.MapPinId)
         if pinData then
+            pinNode:Open()
             pinNode:_RefreshPosition(pinData)
         end
     end
@@ -94,6 +95,16 @@ end
 function XUiBigWorldPanelLittleMap:OnPinStateChange()
     if not self._IsEmpty then
         self:_RefreshPin()
+    end
+end
+
+function XUiBigWorldPanelLittleMap:OnPinHide(levelId, pinId)
+    local pinNode = self._PinNodeMap[pinId]
+    if pinNode then
+        local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(levelId, pinId)
+        if pinData then
+            pinNode:Close()
+        end
     end
 end
 
@@ -172,6 +183,7 @@ function XUiBigWorldPanelLittleMap:_RegisterListeners()
             self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
             self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
 function XUiBigWorldPanelLittleMap:_RemoveListeners()
@@ -195,6 +207,7 @@ function XUiBigWorldPanelLittleMap:_RemoveListeners()
             self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
             self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
 function XUiBigWorldPanelLittleMap:_RegisterRedPointEvents()
@@ -400,7 +413,7 @@ function XUiBigWorldPanelLittleMap:_RefreshPin()
                 pinNode:SetPlayerTagActive(false)
                 self._PinNodeMap[pinData.PinId] = pinNode
             end
-            if isDisplay and pinData:IsRadiusPin() then
+            if isDisplay and pinData:IsLittleMapRadiusPin() then
                 self:_RefreshPinArea(areaIndex, pinData)
                 areaIndex = areaIndex + 1
             end

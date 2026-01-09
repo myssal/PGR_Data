@@ -35,7 +35,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "新节点测试测试"
+        ]
     },
     {
         "Id": 4,
@@ -45,7 +48,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "测试一"
+        ]
     },
     {
         "Id": 5,
@@ -57,7 +63,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "这是一行文本这是一行文本这是一行文本"
+            "这是一行文本这是一行文本这是一行文本",
+            80
         ]
     },
     {
@@ -70,7 +77,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "切换文本"
+            "切换文本",
+            1
         ]
     },
     {
@@ -95,6 +103,9 @@
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "结束"
+        ]
     }
 ]

@@ -94,4 +94,16 @@ end
 
 --endregion
 
+--region 本地缓存
+--- 缓存文件回顾蓝点
+function XMainLineLuosaitaModel:SetDocumentReviewRed(isRed)
+    self._SaveUtil:SaveData("DocumentReviewRed", isRed)
+end
+
+--- 获取文件回顾蓝点缓存
+function XMainLineLuosaitaModel:GetDocumentReviewRed()
+    return self._SaveUtil:GetData("DocumentReviewRed") or false
+end
+--endregion
+
 return XMainLineLuosaitaModel

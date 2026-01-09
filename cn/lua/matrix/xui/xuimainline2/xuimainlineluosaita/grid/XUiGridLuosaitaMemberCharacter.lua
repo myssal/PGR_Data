@@ -28,7 +28,9 @@ function XUiGridLuosaitaMemberCharacter:Refresh(memberData)
 
     local characterId = memberData:GetCharacterId()
     local head = self._Control:GetConfig():GetCharacterHead(characterId)
+    local headCircle = self._Control:GetConfig():GetCharacterHeadCircle(characterId)
     self.RImgHead:SetRawImage(head)
+    self.ImgCircle:SetSprite(headCircle)
 end
 
 function XUiGridLuosaitaMemberCharacter:OnDestory()

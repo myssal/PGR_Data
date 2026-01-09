@@ -100,10 +100,21 @@ function XUiTheatre5RoundSettlement:OnBtnRewardClickEvent()
     if XTool.IsNumberValidEx(self.MissionRelicId) then
         if self.TaskDetail then
             if self.TaskDetail:IsNodeShow() then
-                self.TaskDetail:Close()
+                self.TaskDetail:CloseWithAnimation()
             else
                 self.TaskDetail:Open()
-                self.TaskDetail:RefreshDetail(self.MissionRelicId, self.MissionLevel)
+                
+                local isMaxLevel = false
+
+                if XTool.IsNumberValidEx(self.MissionId) then
+                    local bountyId = self._Control.MissionControl:GetTheatre5MissionBountyId(self.MissionId)
+
+                    if XTool.IsNumberValidEx(bountyId) then
+                        isMaxLevel = self._Control.MissionControl:CheckMissionIsMaxLevel(bountyId, self.MissionLevel)
+                    end
+                end
+                
+                self.TaskDetail:RefreshDetail(self.MissionRelicId, self.MissionLevel, isMaxLevel)
             end
         end
     end
@@ -155,11 +166,16 @@ function XUiTheatre5RoundSettlement:UpdateRelics(data, isSelf)
                 end
             else
                 self.BtnReward:SetButtonState(CS.UiButtonState.Disable)
+                
+                local desc = self._Control.MissionControl:GetClientConfigMissionStateLabelInRoundSettle(XTool.IsNumberValidEx(missionId))
+                
+                self.BtnReward:SetNameByGroup(2, desc)
             end
         end
         
         self.MissionRelicId = missionRelicId
         self.MissionLevel = missionLevel
+        self.MissionId = missionId
     end
 end
 

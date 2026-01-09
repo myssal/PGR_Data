@@ -10,7 +10,8 @@ function XUiDlcRelinkWiki:OnAwake()
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
 end
 
-function XUiDlcRelinkWiki:OnStart()
+function XUiDlcRelinkWiki:OnStart(jumpWikiId)
+    self._JumpWikiId = jumpWikiId
     ---@type XDynamicTableNormal
     self.DynamicTable = XDynamicTableNormal.New(self.ScrollTitleTab)
     self.DynamicTable:SetProxy(require("XUi/XUiDlcRelink/Wiki/XUiGridWikiTab"), self)
@@ -36,6 +37,12 @@ function XUiDlcRelinkWiki:InitWikiData()
     ---@type XTableDlcRelinkWiki[]
     self._AllWiki = {}
 
+    if XTool.IsNumberValid(self._JumpWikiId) then
+        --外部跳转
+        self._CurWiki = self._Control:GetWikiConfigById(self._JumpWikiId)
+        self._SelectTab = self._CurWiki.Type + 1
+    end
+
     local datas = self._Control:GetWikiConfigs()
     for _, v in pairs(datas) do
         table.insert(self._AllWiki, v)
@@ -44,7 +51,7 @@ function XUiDlcRelinkWiki:InitWikiData()
         return a.Id < b.Id
     end)
 
-    for _, v in ipairs(self._AllWiki) do
+    for i, v in ipairs(self._AllWiki) do
         if not self._WikiDict[v.Type] then
             self._WikiDict[v.Type] = {}
         end
@@ -52,11 +59,18 @@ function XUiDlcRelinkWiki:InitWikiData()
         if not self._TabTypes[v.Type] then
             self._TabTypes[v.Type] = v.Type
         end
+        if self._CurWiki and v.Id == self._CurWiki.Id then
+            self._ScrollTo = i
+        end
     end
 
     table.sort(self._TabTypes)
-    --默认选中第一个
-    self._CurWiki = self._AllWiki[1]
+
+    if not self._CurWiki then
+        --默认选中第一个
+        self._CurWiki = self._AllWiki[1]
+        self._SelectTab = 1
+    end
 end
 
 function XUiDlcRelinkWiki:ShowTab()
@@ -81,7 +95,7 @@ function XUiDlcRelinkWiki:ShowTab()
     self.PanelTab:Init(tabs, function(index)
         self:OnSelectTab(index)
     end)
-    self.PanelTab:SelectIndex(1)
+    self.PanelTab:SelectIndex(self._SelectTab)
 end
 
 function XUiDlcRelinkWiki:OnSelectTab(index)
@@ -105,6 +119,10 @@ function XUiDlcRelinkWiki:OnDynamicTableEvent(event, index, grid)
         self:SelectWiki(wiki)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         self:SelectWiki(self._CurWiki)
+        if XTool.IsNumberValid(self._ScrollTo) then
+            self.DynamicTable:ScrollToIndex(self._ScrollTo, 0.5)
+        end
+        self._ScrollTo = nil
     end
 end
 

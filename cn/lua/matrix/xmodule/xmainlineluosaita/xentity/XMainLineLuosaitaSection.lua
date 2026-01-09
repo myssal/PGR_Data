@@ -151,7 +151,7 @@ end
 -- 获取解锁的文件Id列表
 function XMainLineLuosaitaSection:GetUnlockDocIds()
     local result = {}
-    for id, _ in ipairs(self._UnlockDocInfoDic) do
+    for id, _ in pairs(self._UnlockDocInfoDic) do
         tableInsert(result, id)
     end
     tableSort(result)

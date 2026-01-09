@@ -94,7 +94,6 @@ function XUiReCallActivityShare:Photograph()
     end
     local RecallPhotoPanelPath = CS.XGame.ClientConfig:GetString("RecallPhotoPanelPath")
 
-    local Texture2D = CS.UnityEngine.Texture2D
     local RenderTexture = CS.UnityEngine.RenderTexture
     local Graphics = CS.UnityEngine.Graphics
     local Rect = CS.UnityEngine.Rect
@@ -104,7 +103,7 @@ function XUiReCallActivityShare:Photograph()
         Graphics.Blit(source, rt)
 
         CS.UnityEngine.RenderTexture.active = rt
-        local result = Texture2D(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
+        local result = XTool.GenTexture2DReleaseManually(width, height, CS.UnityEngine.TextureFormat.RGBA32, false)
         result:ReadPixels(Rect(0, 0, width, height), 0, 0)
         result:Apply()
 

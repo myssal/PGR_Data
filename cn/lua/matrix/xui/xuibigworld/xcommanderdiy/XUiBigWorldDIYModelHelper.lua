@@ -311,14 +311,6 @@ function XUiBigWorldDIYModelHelper:_LoadFashionModel(entity, gender)
         local helper = self._ModelContorller:GetDisplayHelper()
         local modelInfo = helper.CreateBWCommonModelDisplayInfo(modelId, self._NearCamera, parent, typeId)
 
-        if not string.IsNilOrEmpty(modelInfo.ModelUrl) then
-            local resourse = CS.XResourceManager.Load(modelInfo.ModelUrl);
-
-            if resourse and resourse.Asset then
-                resourse.Asset:SetActiveEx(true)
-            end
-        end
-
         self._ModelContorller:AddModel(modelInfo)
     end
 
@@ -352,14 +344,6 @@ function XUiBigWorldDIYModelHelper:_LoadPartModel(modelId, entity, gender, fashi
 
         modelInfo:InitComponentType(XEnumConst.UiModel.ComponentType.Materials)
         modelInfo:AddModelData(boneData)
-
-        if not string.IsNilOrEmpty(modelInfo.ModelUrl) then
-            local resourse = CS.XResourceManager.Load(modelInfo.ModelUrl);
-
-            if resourse and resourse.Asset then
-                resourse.Asset:SetActiveEx(true)
-            end
-        end
 
         self._ModelContorller:AddModelComponent(modelInfo)
     end

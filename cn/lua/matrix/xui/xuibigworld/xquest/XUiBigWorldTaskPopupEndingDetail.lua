@@ -38,7 +38,8 @@ function XUiBigWorldTaskPopupEndingDetail:InitView()
     self:RefreshReward(self._Control:GetInviteQuestResultRewardId(self._ResultId))
 
     self.BtnView.gameObject:SetActiveEx(self._IsPCMode)
-    self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation)
+    --策划需求：第一次弹窗时不也显示按钮，避免此时弹窗过多
+    self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation and not XMVCA.XBigWorldQuest:IsFirstFinishResult())
     
     self:RefreshTagNew(self._ShowTag)
 end

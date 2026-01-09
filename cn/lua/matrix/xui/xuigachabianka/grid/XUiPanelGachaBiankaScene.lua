@@ -31,7 +31,7 @@ function XUiPanelGachaBiankaScene:Init3DSceneInfo()
     --- 卡池场景为白昼 不受电量和实际时间的影响
     local animationRoot = self.Parent.UiSceneInfo.Transform:Find("Animations")
     if not XTool.UObjIsNil(animationRoot) then
-        local fullTimeLine = animationRoot:Find("FullTimeLine"):GetComponent("PlayableDirector")
+        local fullTimeLine = animationRoot:Find("FullTimeLine")
         if fullTimeLine then
             fullTimeLine.gameObject:SetActiveEx(true)
         end

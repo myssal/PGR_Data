@@ -53,12 +53,6 @@ function XUiPokerGuessing2Character:OnStart(isPlayer)
         end
     end
 
-    if self.PutDownEffect then
-        self.PutDownEffect.gameObject:SetActiveEx(false)
-    end
-    if self.SuccessEffect then
-        self.SuccessEffect.gameObject:SetActiveEx(false)
-    end
     if self.PanelWin then
         self.PanelWin.gameObject:SetActiveEx(false)
     end
@@ -295,16 +289,29 @@ function XUiPokerGuessing2Character:Reset()
         local card = self._Cards[i]
         card:Reset()
     end
+    self:HideCardWin()
 end
 
-function XUiPokerGuessing2Character:ShowEffectPutDown()
-    self.PutDownEffect.gameObject:SetActiveEx(false)
-    self.PutDownEffect.gameObject:SetActiveEx(true)
-end
-
-function XUiPokerGuessing2Character:ShowEffectSuccess()
-    self.SuccessEffect.gameObject:SetActiveEx(false)
-    self.SuccessEffect.gameObject:SetActiveEx(true)
+-- 重置克隆卡牌的特效值
+function XUiPokerGuessing2Character:ResetClonedCardDissolutionEffect(clonedGameObject)
+    if not clonedGameObject then
+        return
+    end
+    
+    -- 查找并让 animation/ChangeCard 的 PlayableDirector 跳到最后一帧并停止
+    local animRoot = clonedGameObject.transform:Find("Animation")
+    if animRoot then
+        local changeCardAnim = animRoot:Find("ChangeCard")
+        if changeCardAnim then
+            local playableDirector = changeCardAnim:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+            if playableDirector then
+                -- 跳到最后一帧并停止
+                playableDirector.time = playableDirector.duration
+                playableDirector:Evaluate()
+                playableDirector:Stop()
+            end
+        end
+    end
 end
 
 -- 使所有牌背面向上
@@ -366,6 +373,9 @@ function XUiPokerGuessing2Character:CloneCardOnCurrentNode()
         local clonedTransform = clonedGameObject.transform
         clonedTransform.localPosition = Vector3.zero
         clonedTransform.localRotation = CS.UnityEngine.Quaternion.identity
+        
+        -- 重置克隆体的特效值
+        self:ResetClonedCardDissolutionEffect(clonedGameObject)
     end
 end
 

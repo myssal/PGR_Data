@@ -1714,6 +1714,7 @@ local UiRegistry = {
     UiDlcMultiPlayerSettlementBeach = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementBeach",
     UiDlcMultiPlayerSettlementDorm = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementDorm",
     UiDlcMultiPlayerSettlementMarket = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementMarket",
+    UiDlcMultiPlayerSettlementLantern = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerSettlementLantern",
     UiDlcMultiPlayerExchange = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerExchange",
     UiDlcMultiPlayerData = "XUi/XUiDlcMultiPlayer/XUiDlcMouseHunter/XUiDlcMultiPlayerData",
     UiBossInshotMain = "XUi/XUiBossInshot/XUiBossInshotMain",
