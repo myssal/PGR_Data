@@ -136,10 +136,11 @@ end
 
 function XUiGuildDormPanelPhotograph:Photograph()
     XCameraHelper.ScreenShotNew(self.ImgPicture, CS.XUiManager.Instance.UiCamera, function(screenShot)
+        self:AddCacheTexture(screenShot, 1)
         -- 截图后操作
         XCameraHelper.ScreenShotNew(self.CapturePanel.ImagePhoto, self.CameraCupture, function(shot) -- 把合成后的图片渲染到游戏UI中的照片展示(最终要分享的图片)
             CsXUiManager.Instance:ChangeCanvasTypeCamera(CsXUiType.Normal, CS.XUiManager.Instance.UiCamera)
-            self.ShareTexture = shot
+            self:AddCacheTexture(shot, 2)
             self.PhotoName = "[" .. tostring(XPlayer.Id) .. "]" .. XTime.GetServerNowTimestamp()
             self.Photo:PlayTimelineAnimation(function()
                 if not XTool.UObjIsNil(self.ImgPicture.mainTexture) and self.ImgPicture.mainTexture.name ~= "UnityWhite" then -- 销毁texture2d (UnityWhite为默认的texture2d)

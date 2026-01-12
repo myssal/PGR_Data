@@ -563,7 +563,7 @@ function XStrongholdTeam:GetOrCreateTempTeam()
                     RobotId = member:GetRobotId(),
                     Ability = member:GetAbility(),
                 }
-                charIdToDataDic[member:GetCharacterId()] = data
+                charIdToDataDic[member:GetRoleId()] = data
             end
         end
 

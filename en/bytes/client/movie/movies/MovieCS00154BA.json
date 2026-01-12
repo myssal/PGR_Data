@@ -35,7 +35,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "New Node Test"
+        ]
     },
     {
         "Id": 4,
@@ -45,7 +48,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "Test 1"
+        ]
     },
     {
         "Id": 5,
@@ -57,7 +63,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "This is a string of text this is a string of text this is a string of text"
+            "This is a string of text this is a string of text this is a string of text",
+            80
         ]
     },
     {
@@ -70,7 +77,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            "Switch Text"
+            "Switch Text",
+            1
         ]
     },
     {
@@ -95,6 +103,9 @@
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "End"
+        ]
     }
 ]

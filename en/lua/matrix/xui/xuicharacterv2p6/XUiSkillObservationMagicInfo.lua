@@ -67,7 +67,7 @@ function XUiSkillObservationMagicInfo:OnEnable()
         end
 
         local data = { IndexInCfg = k,  Level = self.ObsCfg.Level[k] }
-        if obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Tank then
+        if obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Tank or obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Breaker then
             table.insert(self.DataTank[v], data)
         elseif obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Amplifier then
             table.insert(self.DataAmplifier[v], data)

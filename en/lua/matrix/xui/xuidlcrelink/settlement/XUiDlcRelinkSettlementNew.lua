@@ -74,7 +74,7 @@ function XUiDlcRelinkSettlementNew:RefreshPanelCharacter()
         self.PanelCharacterNode = XUiPanelDlcRelinkSettlementCharacter.New(self.PanelCharacter, self)
     end
     self.PanelCharacterNode:Open()
-    self.PanelCharacterNode:Refresh(self.RelinkSettleResult.SettleResults)
+    self.PanelCharacterNode:Refresh(self.RelinkSettleResult.SettleResults, self.ResultData.CustomData)
 end
 
 function XUiDlcRelinkSettlementNew:RefreshPanelReward()
@@ -93,7 +93,7 @@ function XUiDlcRelinkSettlementNew:RefreshPanelReward()
         end
     end
     -- 刷新奖励
-    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList)
+    self.PanelRewardNode:Refresh(myPlayerSettleResult, self.RelinkSettleResult.RewardGoodsList, self.WorldData.LevelId)
 end
 
 return XUiDlcRelinkSettlementNew
