@@ -58,7 +58,7 @@ function XBigWorldMessageAgency:OnNotifyBigWorldNotReadMessage(data)
     else
         self._IsLockUnRead = true
         self._Model:AddForceMessage(data)
-        self:TryOpenMessageTipUi()
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CHECK_FUNCTION_POPUP)
     end
 end
 
@@ -120,35 +120,56 @@ function XBigWorldMessageAgency:CheckUnReadMessageShield()
 end
 
 function XBigWorldMessageAgency:TryOpenMessageTipUi()
-    if self:CheckCanPlayMessageTip() then
-        local messageData = self._Model:PeekForceMessageData()
-
-        if messageData then
-            if not XMVCA.XBigWorldUI:CheckAllowOpenWithImpact("UiBigWorldMessageTips") then
-                return false
-            end
-
-            local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
-
-            if XTool.IsNumberValid(id) then
-                self._Model:DequeueForceMessageData()
-                XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
-                    --- Todo zjx 后续优化弹窗队列后一并优化
-                    self._IsLockUnRead = false
-                    XMVCA.XBigWorldUI:Open("UiBigWorldMessageTips", messageData, id)
-                end)
-
-                return true
-            else
-                return false
-            end
-        end
+    if not self:CheckCanPlayMessageTip() then
+        return false
+    end
+    local messageData = self._Model:PeekForceMessageData()
+    if not messageData then
+        return false
+    end
+    
+    local messageId = messageData.MessageId
+    local messageType = self._Model:GetBigWorldMessageTypeById(messageId)
+    local uiName
+    local param1
+    if messageType == XEnumConst.BWMessage.MessageType.Send then
+        uiName = "UiBigWorldPopupMessageSingle"
+        param1 = messageId
+    else
+        uiName = "UiBigWorldMessageTips"
+        param1 = messageData
+    end
+    if not uiName then
+        return false
+    end
+    if not XMVCA.XBigWorldUI:CheckAllowOpenWithImpact(uiName) then
+        return false
     end
 
+    local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
+    if XTool.IsNumberValid(id) then
+        self._Model:DequeueForceMessageData()
+        XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
+            self._IsLockUnRead = false
+            --UI打开失败了
+            if not XMVCA.XBigWorldUI:Open(uiName, param1, id) then
+                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_FUNCTION_EVENT_COMPLETE)
+                --直接完成当前job
+                XMVCA.XBigWorldCommon:FinishSequentialJob(id)
+                --失败后重新插到队头
+                self._Model:EnqueueFrontForceMessageData(messageData)
+            end
+        end)
+    end
+    
     return false
 end
 
 function XBigWorldMessageAgency:TryOpenMessageSingle(messageId)
+    if self._IsLockUnRead then
+        return false
+    end
+
     if self:CheckHasMessage(messageId) then
         local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
         

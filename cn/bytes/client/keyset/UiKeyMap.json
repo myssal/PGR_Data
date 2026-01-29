@@ -503,26 +503,28 @@
         "BtnName": [
             "JumpButtonPC",
             "BtnAttackPC",
-            "BtnPropPC",
-            "BtnScanPC",
             "BtnHenshinPC",
             "BtnChangePC",
             "BtnStealthPC",
             "BtnPerspectivePC",
             "BtnTurnLeftPC",
-            "BtnTurnRightPC"
+            "BtnTurnRightPC",
+            "BtnFstSkillBtnPC",
+            "BtnSndSkillBtnPC",
+            "BtnDropPC"
         ],
         "DefaultKeyMapIds": [
             10006,
             10005,
-            10008,
-            10020,
             10010,
             10010,
             10014,
             10013,
             10011,
-            10012
+            10012,
+            10008,
+            10020,
+            10021
         ]
     },
     {
@@ -653,7 +655,8 @@
             "BtnQuitDoor2",
             "BtnThird",
             "BtnFrist",
-            "BtnQuit"
+            "BtnQuit",
+            "BtnNews"
         ],
         "DefaultKeyMapIds": [
             11503,
@@ -672,7 +675,8 @@
             11501,
             11548,
             11548,
-            11501
+            11501,
+            11549
         ]
     },
     {
@@ -762,13 +766,41 @@
             "BtnTrack",
             "BtnUntrack",
             "BtnGo",
-            "BtnBack"
+            "BtnBack",
+            "BtnInvitation"
         ],
         "DefaultKeyMapIds": [
             11514,
             11515,
             11514,
-            11541
+            11541,
+            11545
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTaskMainInvitation",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnStart",
+            "BtnBack",
+            "BtnContinue"
+        ],
+        "DefaultKeyMapIds": [
+            11514,
+            11541,
+            11514
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnTanchuangClose",
+            "BtnAgain"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11514
         ]
     },
     {
@@ -950,6 +982,16 @@
         "InputMapSectionId": 0,
         "BtnName": [
             "BtnBack"
+        ],
+        "DefaultKeyMapIds": [
+            11541
+        ]
+    },
+    {
+        "UiName": "UiBigWorldVideoPreview",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "UiBigWorldBtnTanchuangCloseWhite"
         ],
         "DefaultKeyMapIds": [
             11541
@@ -1341,11 +1383,23 @@
         "BtnName": [
             "BtnMinusSelect",
             "BtnAddSelect",
-            "BtnBack"
+            "BtnBack",
+            "BtnOverview"
         ],
         "DefaultKeyMapIds": [
             11544,
             11543,
+            11541,
+            11545
+        ]
+    },
+    {
+        "UiName": "UiBigWorldMapOverview",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnBack"
+        ],
+        "DefaultKeyMapIds": [
             11541
         ]
     },
@@ -1371,12 +1425,16 @@
     },
     {
         "UiName": "UiBigWorldProcess",
-        "InputMapSectionId": 0,
+        "InputMapSectionId": 1001,
         "BtnName": [
-            "BtnBack"
+            "BtnBack",
+            "BtnSwitch",
+            "BtnSwitchNext"
         ],
         "DefaultKeyMapIds": [
-            11541
+            11541,
+            11565,
+            11565
         ]
     },
     {
@@ -1437,6 +1495,114 @@
             104,
             104,
             104
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupDelivery",
+        "InputMapSectionId": 1001,
+        "BtnName": [
+            "BtnTanchuangClose",
+            "BtnRequire"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11564
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupNews",
+        "InputMapSectionId": 1002,
+        "BtnName": [
+            "BtnTeach",
+            "BtnBack",
+            "UiBigWorldCommonBtnBigConfirm"
+        ],
+        "DefaultKeyMapIds": [
+            11566,
+            11541,
+            11568
+        ]
+    },
+    {
+        "UiName": "UiBigWorldTextDialog",
+        "InputMapSectionId": 1003,
+        "BtnName": [
+            "BtnClose"
+        ],
+        "DefaultKeyMapIds": [
+            11541
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupAdvance",
+        "InputMapSectionId": 1004,
+        "BtnName": [
+            "BtnTanchuangClose",
+            "BtnYes",
+            "BtnCancel"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11571,
+            11572
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPopupEnvironmentalStory",
+        "InputMapSectionId": 1005,
+        "BtnName": [
+            "BtnTanchuangClose"
+        ],
+        "DefaultKeyMapIds": [
+            11541
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneGame",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnSpeedUp",
+            "BtnChange",
+            "BtnStop",
+            "BtnSpecial1",
+            "BtnSpecial4"
+        ],
+        "DefaultKeyMapIds": [
+            11514,
+            11515,
+            11534,
+            11562,
+            11562
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupStop",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnTanchuangClose",
+            "UiSkyGardenSGDroneBtnConfirm",
+            "UiSkyGardenSGDroneBtnBigCancel(1)",
+            "UiSkyGardenSGDroneBtnBigCancel"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11564,
+            11565,
+            11564
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupSettlement",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnTanchuangClose",
+            "UiSkyGardenSGDroneBtnConfirm",
+            "UiSkyGardenSGDroneBtnBigCancel"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11514,
+            11565
         ]
     }
 ]

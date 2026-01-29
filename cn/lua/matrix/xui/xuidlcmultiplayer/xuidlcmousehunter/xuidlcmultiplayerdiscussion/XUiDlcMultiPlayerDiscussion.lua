@@ -87,6 +87,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshVoteUnSelect(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(false)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion
@@ -100,6 +101,7 @@ function XUiDlcMultiPlayerDiscussion:_RefreshVoteSelect(discussion)
     self:_RefreshDiscussionTimer(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end)
+    self.TxtDiscussionTitle.gameObject:SetActiveEx(true)
 end
 
 ---@param discussion XDlcMultiMouseHunterDiscussion

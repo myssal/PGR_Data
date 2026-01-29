@@ -9968,8 +9968,7 @@
         "ConditionId": [
             862112,
             774800,
-            863035,
-            863103
+            863035
         ]
     },
     {
@@ -9992,7 +9991,7 @@
     {
         "Id": 63923,
         "Priority": 63923,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.0 引导肉鸽5 饰品选择",
         "GuideType": 1,
         "CompleteId": 63923,
@@ -10008,7 +10007,7 @@
     {
         "Id": 63924,
         "Priority": 63924,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.0 引导肉鸽5 角色升级",
         "GuideType": 1,
         "CompleteId": 63924,
@@ -10024,7 +10023,7 @@
     {
         "Id": 63925,
         "Priority": 63925,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.0 引导肉鸽5 商店购买角色升级",
         "GuideType": 1,
         "CompleteId": 63925,
@@ -10041,7 +10040,7 @@
     {
         "Id": 63926,
         "Priority": 63926,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v4.1 引导肉鸽5 活动主界面进肉鸽（版本限定）",
         "GuideType": 1,
         "CompleteId": 63926,
@@ -10069,6 +10068,37 @@
             774800,
             863034,
             1020916
+        ]
+    },
+    {
+        "Id": 63928,
+        "Priority": 63928,
+        "Ignore": 0,
+        "Desc": "v4.2 引导肉鸽5 任务选择",
+        "GuideType": 1,
+        "CompleteId": 63928,
+        "ActiveUi": "UiTheatre5ChooseTask",
+        "RewardId": 0,
+        "GroupId": 63928,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 63929,
+        "Priority": 63929,
+        "Ignore": 0,
+        "Desc": "v4.2 引导肉鸽5 商店内委托",
+        "GuideType": 1,
+        "CompleteId": 63929,
+        "ActiveUi": "UiTheatre5BattleShop",
+        "RewardId": 0,
+        "GroupId": 63929,
+        "ConditionId": [
+            862112,
+            774800,
+            863133
         ]
     },
     {
@@ -10344,7 +10374,7 @@
     {
         "Id": 64020,
         "Priority": 64020,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.7 Guide: Double Seventh Festival Card Game - Welcome",
         "GuideType": 1,
         "CompleteId": 64020,
@@ -10360,7 +10390,7 @@
     {
         "Id": 64021,
         "Priority": 64021,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.7 Guide: Double Seventh Festival Card Game - Stage 11 Round 1",
         "GuideType": 1,
         "CompleteId": 64021,
@@ -10376,7 +10406,7 @@
     {
         "Id": 64022,
         "Priority": 64022,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.7 Guide: Double Seventh Festival Card Game - Stage 11 Round 2",
         "GuideType": 1,
         "CompleteId": 64022,
@@ -11001,6 +11031,70 @@
         "ConditionId": [
             862112,
             774800
+        ]
+    },
+    {
+        "Id": 64400,
+        "Priority": 64400,
+        "Ignore": 0,
+        "Desc": "v4.2 引导主干进入空花",
+        "GuideType": 1,
+        "CompleteId": 64400,
+        "ActiveUi": "UiMain",
+        "RewardId": 0,
+        "GroupId": 64400,
+        "ConditionId": [
+            862112,
+            774800,
+            863127
+        ]
+    },
+    {
+        "Id": 64460,
+        "Priority": 64460,
+        "Ignore": 0,
+        "Desc": "v4.2 引导七夕打牌-欢迎",
+        "GuideType": 1,
+        "CompleteId": 64460,
+        "ActiveUi": "UiPokerGuessing2Main",
+        "RewardId": 0,
+        "GroupId": 64460,
+        "ConditionId": [
+            862112,
+            774800,
+            862782
+        ]
+    },
+    {
+        "Id": 64461,
+        "Priority": 64461,
+        "Ignore": 0,
+        "Desc": "v4.2 引导七夕打牌-关卡11回合1",
+        "GuideType": 1,
+        "CompleteId": 64461,
+        "ActiveUi": "UiPokerGuessing2Game",
+        "RewardId": 0,
+        "GroupId": 64461,
+        "ConditionId": [
+            862112,
+            774800,
+            863134
+        ]
+    },
+    {
+        "Id": 64462,
+        "Priority": 64462,
+        "Ignore": 0,
+        "Desc": "v4.2 引导七夕打牌-关卡11回合2",
+        "GuideType": 1,
+        "CompleteId": 64462,
+        "ActiveUi": "UiPokerGuessing2ToastRound",
+        "RewardId": 0,
+        "GroupId": 64462,
+        "ConditionId": [
+            862112,
+            774800,
+            863135
         ]
     }
 ]

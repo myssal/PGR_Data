@@ -3,13 +3,15 @@ local base = require("Common/XFightBase")
 ---@class XRelinkCharBase : XFightBase
 ---@field _followController XNpcFollowController 跟随组件
 local XRelinkCharBase = XClass(base, "XRelinkCharBase")
+local EGameplayTag = require("Enum/XGameplayTag")
+local GameplayTag = require("Tools/GameplayTag/GameplayTag")
+local EFightCVAction = require("Enum/XFightCVAction")
 
-function XRelinkCharBase:Init() --初始化
-    base.Init(self)
+function XRelinkCharBase:ScriptInit(isGainControl)
     self:RegisterKeyboard()   --注册按键映射
     self:InitHandleJumpTurnSpeedParams()  --初始化跳跃相关逻辑
-    -- 这其实是每个Npc都在调用Camera的全局开关, 行为树版本也一样，待v0.3或v0.4版本优化
-    self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
+    ---- 这其实是每个Npc都在调用Camera的全局开关, 行为树版本也一样，待v0.3或v0.4版本优化
+    --self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
     self._DodgeIsNotCd = true
     self:JumpWeaponHidShowCheckInit()
     --- 弹刀无敌通用buff id
@@ -18,7 +20,33 @@ function XRelinkCharBase:Init() --初始化
     --- 初始化隐藏qte按钮
     self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,false)
     --- 破韧通知buff
-    self._BreakQteBuff = 8005902
+    self._BreakQteBuff = 1000492
+    --- 闪避能量禁止恢复buff
+    self._BanDodgeRecoverBuff = 1000515
+    --- 闪避能量Check开关
+    self._DodgeCheck = true
+    --初始化团队极限技使用次数
+    -- self._proxy:SetTeamWorkSkillNpcRemainUseCount(self._uuid,1)
+
+    -- 属性记录
+    self._attribRecordInterval = 0.5
+    self._attribRecordTimer = 0
+    self._curLifeRatio = 0
+
+    -- CV相关
+    -- CV事件magic
+    self._cvEventMagics = {
+        PraiseCounterSuccess = 1000509,
+        LowLifeWarning = 1000511,
+    }
+
+    -- CV残血阈值
+    self._cvIsInLowLifeMode = false
+    self._cvLowLifeRatioThreshold = 0.3
+
+    -- 公共Npc
+    self._publicNpc = nil
+    self._publicNpcMarkBuff = 1000510
 end
 
 ---@param dt number @ delta time 
@@ -28,11 +56,14 @@ function XRelinkCharBase:Update(dt)
     end
     self:JumpWeaponHidShowCheck()
     self:HardLockInput() --手动锁定
+    self:CheckDodgeEnergyAddBanRecover() --检测闪避为0
     self:ProcessChangeMoveState()
     self:ProcessResetSprintMoveTypeOnJump()
     self:ProcessHandleJumpTurnSpeed()
     self:ProcessChangeJumpState()
-    self:RebootCheckUpdate()
+    --self:RebootCheckUpdate()
+    self:UpdateRecordAttribute(dt)
+    self:UpdateCV()
 end
 
 ---@param eventType number
@@ -46,17 +77,8 @@ function XRelinkCharBase:HandleEvent(eventType, eventArgs) --事件中转站
     if eventType == EWorldEvent.LockTargetChanged then --锁定变更事件
         self:OnLockTargetChanged(eventArgs.CurTargetUID,eventArgs.LastTargetUID,eventArgs.LockTargetType)
     end
-    if eventType == EWorldEvent.FullChainSkillStart then
-        self:OnFullChainSkillStart(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.FullChainSkillEnd then
-        self:OnFullChainSkillEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.CastFullChainFinalSkill then
-        self:OnCastFullChainFinalSkill(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
-    end
-    if eventType == EWorldEvent.FullChainStageEnd then
-        self:OnFullChainStageEnd(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpc, eventArgs.ChainLevel)
+    if eventType == EWorldEvent.EnterLevel then --进入关卡事件，设置相机。
+        self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
     end
 end
 
@@ -67,7 +89,7 @@ end
 
 ---跳跃控制武器显隐
 function XRelinkCharBase:JumpWeaponHidShowCheck()
-    local isJumping = self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) or self._proxy:CheckNpcAction(self._uuid, ENpcAction.Move)--当前是否在跳跃中
+    local isJumping = self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) --当前是否在跳跃中
     if self.lastActionIsJump and (not isJumping)then
         self:OnExitJumpWeaponShow()
     end
@@ -120,46 +142,7 @@ function XRelinkCharBase:RebootCheckUpdate()
     end
     
 end
-
-
 --endregion
-
----FullChain开启连锁
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-end
-
----FullChain连锁结束
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-end
-
----FullChainSkill释放！
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XRelinkCharBase:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-end
-
----FullChainSkill释放！
----@param gameplayActive number 是否开启玩法
----@param isInChain number 是否在连锁状态
----@param chainRemainTime number 连锁剩余时间
----@param chainNpc number 正在锁链的Npc
----@param chainLevel number 当前连锁段数
-function XRelinkCharBase:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-end
-
 
 function XRelinkCharBase:Terminate()
 end
@@ -198,7 +181,7 @@ function XRelinkCharBase:TryDoChangeMoveState()
 
 
     if curMoveType == ENpcMoveType.Walk then
-        if moveNormalizedDist >= normalizedWalk2Run and moveNormalizedDist < normalizedRun2Sprint then                  -- 摇杆大于慢走阈值则切换为普通跑
+        if moveNormalizedDist >= normalizedWalk2Run and moveNormalizedDist <= normalizedRun2Sprint then                  -- 摇杆大于慢走阈值则切换为普通跑
             nextMoveType = ENpcMoveType.Run
         end
     elseif curMoveType == ENpcMoveType.Run then
@@ -318,7 +301,35 @@ function XRelinkCharBase:ProcessChangeJumpState()
 end
 --endregion
 
---region EventCallBack
+--region 属性记录
+function XRelinkCharBase:UpdateRecordAttribute(dt)
+    -- 计时器确保不会频繁记录
+    if self._attribRecordTimer <= 0 then
+        self._attribRecordTimer = self._attribRecordInterval
+
+        -- 记录属性
+        self._curLifeRatio = self._proxy:GetNpcAttribValue(self._uuid, ENpcAttrib.Life) / self._proxy:GetNpcAttribMaxValue(self._uuid, ENpcAttrib.Life)
+    end
+
+    -- 更新计时器
+    self._attribRecordTimer = self._attribRecordTimer - dt
+end
+--endregion
+
+--region CV相关
+function XRelinkCharBase:UpdateCV()
+    local isLowLife = self._curLifeRatio <= self._cvLowLifeRatioThreshold
+
+    if not self._cvIsInLowLifeMode and isLowLife then
+        -- 由非残血进入残血状态
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvEventMagics.LowLifeWarning, 1)
+    end
+
+    self._cvIsInLowLifeMode = isLowLife
+end
+--endregion
+
+--region EventCallBack 事件回调
 function XRelinkCharBase:InitEventCallBackRegister()
     --按需求解除注释进行注册
     XLog.Warning("开始注册")
@@ -344,14 +355,21 @@ function XRelinkCharBase:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.FullChainSkillEnd)        --OnFullChainSkillEnd
     self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)        --OnCastFullChainFinalSkill
     self._proxy:RegisterEvent(EWorldEvent.FullChainStageEnd)        --OnFullChainStageEnd
+    self._proxy:RegisterEvent(EWorldEvent.NpcWrestleStart)
+    self._proxy:RegisterEvent(EWorldEvent.NpcMultiParryStart)
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCure)
+
 
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCounterSuccess, self._uuid)  -- OnNpcCounterSuccess
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcAfterSyncCounterSuccess, self._uuid) -- OnNpcAfterSyncCounterSuccess
 
-    XLog.Warning("Relink基类注册事件")
+    self._proxy:RegisterEvent(EWorldEvent.EnterLevel)        --OnEnterLevel
 end
 
---设置技能释放前上下文
+function XRelinkCharBase:HandleLuaEvent(eventType, eventArgs)
+end
+
 function XRelinkCharBase:OnNpcCastActionByInputActionBeforeEvent(args)
     local skillId = args.SkillId
     local launcher = args.LauncherUUID
@@ -370,8 +388,10 @@ function XRelinkCharBase:OnNpcCastActionByInputActionBeforeEvent(args)
     self._proxy:SetCastSkillByInputActionBeforeValue(contextId, ESkillTargetType.Npc, npcid, targetPos,locktaregetid) --设置技能上下文
 end
 
+function XRelinkCharBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+    self:CheckDodgeEnergyAddBanRecover();
+end
 
---demo基础索敌逻辑
 function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, TargetSceneObjId, IsAbort)
     --技能目标为自己，返回
     if TargetId == self._uuid then
@@ -400,34 +420,40 @@ function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetI
 end
 
 function XRelinkCharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if npcUUID ~= self._uuid then
+        return
+    end
+
     if buffId == self._BreakQteBuff  then
         self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,true)
     end
 end
 
 function XRelinkCharBase:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if npcUUID ~= self._uuid then
+        return
+    end
+
     if buffId == self._BreakQteBuff  then
         self._proxy:SetPlayerButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._uuid,false)
     end
 end
 
-function XRelinkCharBase:OnNpcDodge(SourceUUID, AttackerUUID, Type)
+function XRelinkCharBase:OnNpcDodge(SourceUUID, AttackerUUID, Type, MissileTemplateId)
     
     if (SourceUUID ~= self._uuid) then
         return
     end
-
     if (Type == 1) then 
         if not self._DodgeIsNotCd then
             return
         end
 
-        XLog.Warning("极限闪避成功:")
-
-        self._proxy:AddBuff(self._uuid, 10510701)
-        self._proxy:AddBuff(self._uuid, 10510702)
-        self._proxy:AddBuff(self._uuid, 10510703)
-        self._proxy:AddBuff(self._uuid, 10510705)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 10510701, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 10510702, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 10510703, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 10510705, 1)
+        
         self._DodgeIsNotCd = false
 
         self._proxy:AddTimerTask(  1,  function()
@@ -437,7 +463,7 @@ function XRelinkCharBase:OnNpcDodge(SourceUUID, AttackerUUID, Type)
 end
 
 function XRelinkCharBase:HardLockInput() -- tab键手动锁定
-    --XLog.Warning("update手动锁定")
+    ----新tab逻辑
     if self._proxy:IsKeyDown(ENpcOperationKey.Focus) then  --按下tab键
         local locktarget, _ = self._proxy:GetLockTarget()
         if locktarget ~= 0 then               --锁定目标不为空
@@ -446,22 +472,11 @@ function XRelinkCharBase:HardLockInput() -- tab键手动锁定
             self:CheckFocusTarget()
             if locktargettype == ELockTargetType.ForceLock then   --强制锁定，直接返回
                 return
-            elseif locktargettype == ELockTargetType.HardLock then    --硬锁定，执行切换锁定目标逻辑
-                local searchtargetlist = self._proxy:GetSearchTargetList(self._uuid, ENpcTargetType.Enemy)
-                if searchtargetlist == nil then
-                    return
-                end
-                for _ , target in pairs(searchtargetlist) do
-                    if target == nil then
-                        return
-                    end
-                    if target ~= locktarget then
-                        self._proxy:SetHardLock(self._uuid,target)
-                        break
-                    end
-                end
+            elseif locktargettype == ELockTargetType.HardLock then    --硬锁定，取消
+                self._proxy:CancelHardLockTarget(self._uuid)
+                self._proxy:CancelSoftLockTarget(self._uuid)
             else
-                self._proxy:SetHardLock(self._uuid,locktarget)
+                self._proxy:SetHardLock(self._uuid,locktarget) --软锁，切硬锁
             end
         else
             local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
@@ -469,17 +484,7 @@ function XRelinkCharBase:HardLockInput() -- tab键手动锁定
                 return
             end
             self._proxy:SetHardLock(self._uuid,searchtarget)
-            local _, npc = self._proxy:GetLockTarget()
-            --self._proxy:SetNpcFocusTarget(self._uuid, npc)
-            --self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
         end
-    end
-    local iskeyhold,holdtime = self._proxy:IsKeyHold(8)
-    if iskeyhold and holdtime >= 0.5 then --长按tab键手动取消
-        --self._proxy:ApplyMagic(self._uuid,self._uuid,105297,1)  --移除限制镜头拖动输入
-        self._proxy:CancelHardLockTarget(self._uuid)
-        self._proxy:CancelSoftLockTarget(self._uuid)
-        --self._proxy:RemoveNpcFocusTarget(self._uuid)
     end
 end
 
@@ -490,6 +495,17 @@ function XRelinkCharBase:OnLockTargetChanged(CurTargetUID,LastTargetUID,LockTarg
         self._proxy:RemoveNpcFocusTarget(self._uuid)
     end
     --]]
+end
+
+function XRelinkCharBase:CheckDodgeEnergyAddBanRecover()
+    if self._DodgeCheck == true and self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.DodgeEnergy) == 0 then
+        --XLog.Warning("闪避为0时禁用")
+        self._DodgeCheck = false
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._BanDodgeRecoverBuff, 1)
+    elseif self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.DodgeEnergy) > 0 then
+        self._DodgeCheck = true
+        self._proxy:RemoveBuffByKindAndCount(self._uuid,self._BanDodgeRecoverBuff,0)
+    end
 end
 
 function XRelinkCharBase:CheckFocusTarget() --若当前有锁定，但是通过拖动镜头移除了镜头维持目标，重新设置
@@ -504,30 +520,144 @@ function XRelinkCharBase:CheckFocusTarget() --若当前有锁定，但是通过�
 end
 
 function XRelinkCharBase:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
+    if self._uuid ~= counterNpcUUID then
+        return
+    end
     -- 弹刀成功后无敌
     self._proxy:ApplyMagic(self._uuid, self._uuid, self._counterImmortalMagicId, 1)
+
+    -- CV: 弹刀成功，通知关卡找玩家夸一句(多人弹刀不触发这句)
+    if GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_MultiInteract}) then
+        return
+    end
+    self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvEventMagics.PraiseCounterSuccess, 1)
 end
 
 function XRelinkCharBase:OnNpcAfterSyncCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
 end
---endregion
 
----npc死亡事件
-function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
-    if npcUUID ~= self._uuid then
-        return  
+function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainStartNpcId)
+    if curChainStartNpcId ~= self._uuid then
+        return
     end
-    XLog.Warning("我死了"..self._uuid)
-    self._proxy:ApplyMagic(self._uuid,self._uuid,1000480,1)--死亡次数标记buff，每次一次都加一层
+
+    if chainLevel > 1 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.All)
+    end
 end
 
----npc复活事件
-function XRelinkCharBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
+function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainEndNpcId)
+    if curChainEndNpcId ~= self._uuid then
+        return
+    end
+
+    if chainLevel == 1 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ActivateFullChain, EAudioLuaFuncSyncType.All)
+    end
+
+    if chainLevel == 2 then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.NotifyFullChain, EAudioLuaFuncSyncType.All)
+    end
+end
+
+function XRelinkCharBase:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+    local isInChainList = false
+    for i, player in ipairs(chainNpcList) do
+        if player == self._uuid then
+            isInChainList = true
+            break
+        end
+    end
+
+    if not isInChainList then
+        return
+    end
+end
+
+function XRelinkCharBase:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.EnterMultiQTE, EAudioLuaFuncSyncType.All)
+end
+
+function XRelinkCharBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID, succeed)
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.EnterMultiQTE, EAudioLuaFuncSyncType.All)
+end
+
+function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     if npcUUID ~= self._uuid then
         return
     end
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000480,1)--死亡次数标记buff，每次一次都加一层
+end
+
+function XRelinkCharBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
+    if npcUUID == self._uuid then
+        self:OnSelfReviveEvent()
+    end
+end
+
+function XRelinkCharBase:OnSelfReviveEvent()
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000478,1)--复活无敌
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000477,1)--复活特效
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000485)--去掉支援等待救援特效
 end
+
+function XRelinkCharBase:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
+    if npcUUID == self._uuid then
+        self:OnSelfWaitRebootEvent()
+    end
+end
+
+function XRelinkCharBase:OnSelfWaitRebootEvent()
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000484)--挂上支援等待救援特效
+end
+
+function XRelinkCharBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+    if targetId ~= self._uuid then
+        return
+    end
+end
+
+function XRelinkCharBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillId)
+    if targetId ~= self._uuid then
+        return
+    end
+
+    if launcherId == self._uuid then
+        return
+    end
+
+    local maxLife = self._proxy:GetNpcAttribMaxValue(targetId, ENpcAttrib.Life)
+    local curLife = self._proxy:GetNpcAttribValue(targetId, ENpcAttrib.Life)
+    local tarLifeRatio = (curLife + value) / maxLife
+
+    if self._cvIsInLowLifeMode and tarLifeRatio > self._cvLowLifeRatioThreshold then
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.PowerUpOrHealFromTeammate, EAudioLuaFuncSyncType.All)
+    end
+end
+--endregion
+
+--region 工具封装
+---尝试获取公共Npc，有可能为nil
+function XRelinkCharBase:TryGetPublicNpc()
+    if self._publicNpc ~= nil and self._proxy:CheckNpc(self._publicNpc) then
+        return self._publicNpc
+    end
+
+    for i, npc in ipairs(self._proxy:GetNpcList()) do
+        if self._proxy:CheckBuffByKind(self._uuid, self._publicNpcMarkBuff) then
+            self._publicNpc = npc
+            break
+        end
+    end
+
+    return self._publicNpc
+end
+--endregion
 
 return XRelinkCharBase

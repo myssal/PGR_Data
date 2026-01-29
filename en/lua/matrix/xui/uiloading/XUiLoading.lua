@@ -57,3 +57,7 @@ function XUiLoading:OnStart(stageLoadingType)
     end
 
 end
+
+function XUiLoading:OnDestroy()
+    XEventManager.DispatchEvent(XEventId.EVENT_UILOADING_CLOSED)
+end

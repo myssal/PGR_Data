@@ -220,6 +220,7 @@ function XUiCommodity:RefreshBuyCount()
     if not self.ImgLimitLable then
         return
     end
+    self.ImgLimitLable.gameObject:SetActiveEx(false)
 
     if not self.TxtLimitLable then
         return
@@ -227,7 +228,7 @@ function XUiCommodity:RefreshBuyCount()
 
     if self.Data.BuyTimesLimit <= 0 then
         self.TxtLimitLable.gameObject:SetActiveEx(false)
-        self.ImgLimitLable.gameObject:SetActiveEx(false)
+        -- self.ImgLimitLable.gameObject:SetActiveEx(false)
     else
         local buynumber = self.Data.BuyTimesLimit - self.Data.TotalBuyTimes
         local limitLabel =  XShopConfigs.GetBuyLimitLabel(self.Data.AutoResetClockId)
@@ -235,7 +236,7 @@ function XUiCommodity:RefreshBuyCount()
 
         self.TxtLimitLable.text = text
         self.TxtLimitLable.gameObject:SetActiveEx(true)
-        self.ImgLimitLable.gameObject:SetActiveEx(true)
+        -- self.ImgLimitLable.gameObject:SetActiveEx(true)
     end
 end
 
@@ -363,11 +364,16 @@ function XUiCommodity:OnBtnBuyClick()
                 end
             end)
 
-            self.Parent:OnBuySuccessCb()
+            self:OnBuySuccessCb()
         end)
     end
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion, updateCb = handler(self, self.OnBuySuccessCb) })
+end
 
-    XLuaUiManager.Open("UiFashionDetail", self.Id, self.IsWeaponFashion, buyData)
+function XUiCommodity:OnBuySuccessCb()
+    if self.Parent and self.Parent.OnBuySuccessCb then
+        self.Parent:OnBuySuccessCb()
+    end
 end
 
 return XUiCommodity

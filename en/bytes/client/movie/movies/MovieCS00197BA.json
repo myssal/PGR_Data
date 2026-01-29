@@ -51,7 +51,8 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
-            1
+            1,
+            "Test - Screen Shatter Effect"
         ]
     },
     {
@@ -92,6 +93,7 @@
         "BeginDelay": 0.0,
         "EndDelay": 0.0,
         "Params": [
+            1,
             1
         ]
     },
@@ -116,7 +118,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "Screen Shatter"
+        ]
     },
     {
         "Id": 10,
@@ -126,7 +131,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "Test - Blur Effect"
+        ]
     },
     {
         "Id": 11,
@@ -150,7 +158,10 @@
         "IsBlock": 0,
         "IsEnd": 0,
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "Obscured"
+        ]
     },
     {
         "Id": 13,
@@ -161,6 +172,9 @@
         "IsEnd": 1,
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": 0.0,
-        "EndDelay": 0.0
+        "EndDelay": 0.0,
+        "Params": [
+            "Test Complete"
+        ]
     }
 ]

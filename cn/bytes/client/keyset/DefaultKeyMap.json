@@ -1641,7 +1641,7 @@
         "OperationKey": 9,
         "XboxKeyCode": "JoystickButton3",
         "PsKeyCode": "JoystickButton3",
-        "KeyboardKeyCode": "R",
+        "KeyboardKeyCode": "C",
         "InputMapId": 10,
         "KeyCodeType": 3,
         "OperationType": 7,
@@ -1769,7 +1769,20 @@
     {
         "Id": 10020,
         "OperationKey": 10,
-        "KeyboardKeyCode": "C",
+        "XboxKeyCode": "JoystickButton4",
+        "PsKeyCode": "JoystickButton4",
+        "KeyboardKeyCode": "V",
+        "InputMapId": 10,
+        "KeyCodeType": 3,
+        "OperationType": 7,
+        "InputMapSectionId": 101
+    },
+    {
+        "Id": 10021,
+        "OperationKey": 11,
+        "XboxKeyCode": "JoystickButton5",
+        "PsKeyCode": "JoystickButton5",
+        "KeyboardKeyCode": "B",
         "InputMapId": 10,
         "KeyCodeType": 3,
         "OperationType": 7,
@@ -2145,6 +2158,28 @@
         "InputMapSectionId": 112
     },
     {
+        "Id": 11037,
+        "OperationKey": 91,
+        "XboxKeyCode": "JoystickButton4",
+        "PsKeyCode": "JoystickButton4",
+        "KeyboardKeyCode": "Z",
+        "InputMapId": 11,
+        "KeyCodeType": 2,
+        "OperationType": 7,
+        "InputMapSectionId": 111
+    },
+    {
+        "Id": 11038,
+        "OperationKey": 92,
+        "XboxKeyCode": "JoystickButton5",
+        "PsKeyCode": "JoystickButton5",
+        "KeyboardKeyCode": "Mouse0",
+        "InputMapId": 11,
+        "KeyCodeType": 2,
+        "OperationType": 7,
+        "InputMapSectionId": 111
+    },
+    {
         "Id": 11501,
         "OperationKey": 27,
         "XboxKeyCode": "JoystickButton6",
@@ -2246,9 +2281,9 @@
     {
         "Id": 11510,
         "OperationKey": 283,
-        "XboxKeyCode": "JoystickButton4&JoystickButton0",
-        "PsKeyCode": "JoystickButton4&JoystickButton1",
-        "KeyboardKeyCode": "F2",
+        "XboxKeyCode": "Axis3P&JoystickButton3",
+        "PsKeyCode": "JoystickButton7&JoystickButton3",
+        "KeyboardKeyCode": "L",
         "InputMapId": 11,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2388,7 +2423,7 @@
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
-        "InputMapSectionId": 0
+        "InputMapSectionId": 151
     },
     {
         "Id": 11524,
@@ -2415,6 +2450,7 @@
         "OperationKey": 299,
         "XboxKeyCode": "JoystickButton4&JoystickButton3",
         "PsKeyCode": "JoystickButton4&JoystickButton3",
+        "KeyboardKeyCode": "V",
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2435,6 +2471,7 @@
         "OperationKey": 301,
         "XboxKeyCode": "JoystickButton5",
         "PsKeyCode": "JoystickButton5",
+        "KeyboardKeyCode": "C",
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2523,13 +2560,14 @@
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
-        "InputMapSectionId": 0
+        "InputMapSectionId": 154
     },
     {
         "Id": 11537,
         "OperationKey": 67,
         "XboxKeyCode": "JoystickButton9",
         "PsKeyCode": "JoystickButton11",
+        "KeyboardKeyCode": "R",
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2600,10 +2638,21 @@
         "InputMapSectionId": 0
     },
     {
+        "Id": 11545,
+        "OperationKey": 313,
+        "XboxKeyCode": "JoystickButton7",
+        "PsKeyCode": "JoystickButton9",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 0
+    },
+    {
         "Id": 11547,
         "OperationKey": 282,
         "XboxKeyCode": "JoystickButton4",
         "PsKeyCode": "JoystickButton4",
+        "KeyboardKeyCode": "Z",
         "InputMapId": 15,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2615,6 +2664,17 @@
         "XboxKeyCode": "JoystickButton4&Axis7P",
         "PsKeyCode": "JoystickButton4&Axis8P",
         "KeyboardKeyCode": "F6",
+        "InputMapId": 11,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 111
+    },
+    {
+        "Id": 11549,
+        "OperationKey": 1001,
+        "XboxKeyCode": "Axis3P&Axis7P",
+        "PsKeyCode": "JoystickButton7&Axis8P",
+        "KeyboardKeyCode": "N",
         "InputMapId": 11,
         "KeyCodeType": 2,
         "OperationType": 4,
@@ -2668,6 +2728,79 @@
         "KeyCodeType": 2,
         "OperationType": 4,
         "InputMapSectionId": 151
+    },
+    {
+        "Id": 11562,
+        "OperationKey": 119,
+        "XboxKeyCode": "JoystickButton8",
+        "PsKeyCode": "JoystickButton10",
+        "KeyboardKeyCode": "F",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 0
+    },
+    {
+        "Id": 11564,
+        "OperationKey": 2002,
+        "XboxKeyCode": "JoystickButton3",
+        "PsKeyCode": "JoystickButton3",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1001
+    },
+    {
+        "Id": 11565,
+        "OperationKey": 2003,
+        "XboxKeyCode": "JoystickButton2",
+        "PsKeyCode": "JoystickButton0",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1001
+    },
+    {
+        "Id": 11566,
+        "OperationKey": 2004,
+        "XboxKeyCode": "JoystickButton7",
+        "PsKeyCode": "JoystickButton9",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1002
+    },
+    {
+        "Id": 11568,
+        "OperationKey": 2006,
+        "XboxKeyCode": "JoystickButton3",
+        "PsKeyCode": "JoystickButton3",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1002
+    },
+    {
+        "Id": 11571,
+        "OperationKey": 2009,
+        "XboxKeyCode": "JoystickButton1",
+        "PsKeyCode": "JoystickButton2",
+        "KeyboardKeyCode": "J",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1004
+    },
+    {
+        "Id": 11572,
+        "OperationKey": 2010,
+        "XboxKeyCode": "JoystickButton6",
+        "PsKeyCode": "JoystickButton8",
+        "KeyboardKeyCode": "K",
+        "InputMapId": 15,
+        "KeyCodeType": 2,
+        "OperationType": 4,
+        "InputMapSectionId": 1004
     },
     {
         "Id": 12007,

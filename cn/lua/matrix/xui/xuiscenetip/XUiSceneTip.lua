@@ -45,6 +45,9 @@ function XUiSceneTip:Refresh()
 end
 
 function XUiSceneTip:SetBatteryUi()
+    if XMVCA.XSwitchableScene:IsSceneGyro(self.SceneId) then
+        return
+    end
     --self:SetGameObject()
     -- 场景虚拟相机
     self.CamFarMain = self:FindVirtualCamera("CamFarMain")

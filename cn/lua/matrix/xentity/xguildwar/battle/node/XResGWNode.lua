@@ -1,3 +1,4 @@
+--[[4.2 五期驻守炮击玩法，直到九期都未再用过，注释掉
 local XNormalGWNode = require("XEntity/XGuildWar/Battle/Node/XNormalGWNode")
 -- 资源点
 local XReslGWNode = XClass(XNormalGWNode, "XReslGWNode")
@@ -33,3 +34,5 @@ function XReslGWNode:GetFirstFightEventCfg()
 end
 
 return XReslGWNode
+
+--]]

@@ -52,6 +52,13 @@ end
 local XUiPurchaseRecommend = XClass(nil, "XUiPurchaseRecommend")
 
 function XUiPurchaseRecommend:Ctor(ui, rootUi, skipFunc)
+    --- 页签切换索引偏差，超过这个偏差不滑动到目标而是直接重新加载
+    self._IndexOffsetLimitForReload = CS.XGame.ClientConfig:GetInt('PurchaseRecommendReloadIndexOffset')
+
+    if not XTool.IsNumberValidEx(self._IndexOffsetLimitForReload) then
+        self._IndexOffsetLimitForReload = 2
+    end
+    
     XUiHelper.InitUiClass(self, ui)
     self.PurchaseManager = XDataCenter.PurchaseManager
     self.RecommendManager = self.PurchaseManager.GetRecommendManager()
@@ -118,6 +125,15 @@ function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
     end)
     self.PanelTabGroup:Init(btns, function(tabIndex)
         self:OnBtnTabClicked(tabIndex)
+        if self.LastIndex and tabIndex ~= self.LastIndex then
+            local button = btns[self.LastIndex]
+            XScheduleManager.ScheduleNextFrame(function()
+                local layoutGroup = button.transform:GetComponentInChildren(typeof(CS.UnityEngine.UI.VerticalLayoutGroup))
+                layoutGroup.enabled = false
+                layoutGroup.enabled = true
+            end)
+        end
+        self.LastIndex = tabIndex
     end)
     self.CurrentIndex = self:GetCurrentSelectIndex()
     if #btns > 0 then
@@ -145,6 +161,9 @@ end
 function XUiPurchaseRecommend:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:SetData(self.DynamicTable.DataSource[index + 1], self.SkipFunc, function()
+            if XTool.UObjIsNil(self.RootUi.TabGroup) then
+                return
+            end
             self:OnRefresh()
         end)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
@@ -171,11 +190,20 @@ function XUiPurchaseRecommend:HidePanel()
 end
 
 function XUiPurchaseRecommend:OnBtnTabClicked(index)
+    local indexOffset = math.abs(index - self.CurrentIndex)
+    
     self.CurrentIndex = index
     local recommend = self.Recommends[index]
     recommend:SetShowRedPoint()
     self.CurrentSelectId = recommend:GetPurchasePackageId()
-    self.DynamicTable:TweenToIndex(index - 1)
+
+    if indexOffset <= self._IndexOffsetLimitForReload then
+        self.DynamicTable:TweenToIndex(index - 1)
+    else
+        self.DynamicTable:SetDataSource(self.Recommends)
+        self.DynamicTable:ReloadData(index - 1)
+    end
+
     local button = self.PanelTabGroup:GetButtonByIndex(index)
     button:ShowReddot(false)
     XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_RECOMMEND_RED)

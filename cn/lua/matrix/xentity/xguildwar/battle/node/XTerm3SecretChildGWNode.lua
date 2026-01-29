@@ -1,3 +1,5 @@
+--[[4.2 直到九期都未再用过，注释掉
+
 local XNormalGWNode = require("XEntity/XGuildWar/Battle/Node/XNormalGWNode")
 local XGuildWarAreaTeam = require("XEntity/XGuildWar/Team/XGuildWarAreaTeam")
 --三期隐藏节点 (视未来变化 看看是通用节点 还是三期特有节点)
@@ -124,3 +126,5 @@ function XTerm3SecretChildGWNode:CleanUpTeamCache()
 end
 
 return XTerm3SecretChildGWNode
+
+--]]

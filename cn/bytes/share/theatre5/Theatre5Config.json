@@ -17,7 +17,7 @@
         "Key": "PvpTarget",
         "Desc": "PvP模式目标奖杯数",
         "Values": [
-            10
+            12
         ]
     },
     {
@@ -301,7 +301,7 @@
         "Key": "PveVersion",
         "Desc": "PVE模式版本号",
         "Values": [
-            4
+            5
         ]
     },
     {
@@ -389,6 +389,49 @@
             15,
             15,
             15
+        ]
+    },
+    {
+        "Key": "MissionFreshCnt",
+        "Desc": "任务选择界面每个槽位的刷新次数",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "CharacterInitExp",
+        "Desc": "pvp/pve角色初始化经验",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "PvpMultiplierLimit",
+        "Desc": "pvp倍率限制",
+        "Values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Key": "PveMultiplierLimit",
+        "Desc": "pve倍率限制",
+        "Values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Key": "MissionLevelUpForRound",
+        "Desc": "每回合升级次数",
+        "Values": [
+            1
         ]
     }
 ]
