@@ -30,10 +30,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            120102
+            120102,
+            120104
         ],
         "SkillDescription": [
-            "ATK +10"
+            "ATK +10",
+            "HP +50"
         ],
         "EquipIds": [
             3012001,
@@ -54,10 +56,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            130102
+            130102,
+            130104
         ],
         "SkillDescription": [
-            "Extra DMG Bonus increases by 3% when attacking enemies within 2m."
+            "Extra DMG Bonus increases by 3% when attacking enemies within 2m.",
+            "Extra DMG Reduction increases by 3% when attacked by enemies within 2m."
         ],
         "EquipIds": [
             3013001,
@@ -78,10 +82,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            130402
+            130402,
+            130404
         ],
         "SkillDescription": [
-            "Extra DMG Bonus increases by 3% when attacking enemies farther than 3m."
+            "Extra DMG Bonus increases by 3% when attacking enemies farther than 3m.",
+            "Extra DMG Reduction increases by 3% when attacked by enemies farther than 3m."
         ],
         "EquipIds": [
             3013002,
@@ -102,10 +108,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            140102
+            140102,
+            140104
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 5%."
+            "Basic Attack's Extra DMG Bonus increases by 5%.",
+            "In every 10s, the next Basic Attack increases Basic Attack DMG by 10% for 4s."
         ],
         "EquipIds": [
             3014001,
@@ -126,10 +134,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            140402
+            140402,
+            140404
         ],
         "SkillDescription": [
-            "Signal Orb skill DMG increases by 5%."
+            "Signal Orb skill DMG increases by 5%.",
+            "After a 3-Ping, Extra DMG Bonus increases by 5% for 5s. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3014002,
@@ -150,10 +160,12 @@
         "SuitType": 12,
         "EquipType": 8,
         "SkillEffect": [
-            140702
+            140702,
+            140704
         ],
         "SkillDescription": [
-            "Healing effect increases by 5%."
+            "Healing effect increases by 5%.",
+            "Healing increases the target's Physical DMG and Elemental DMG by 4% for 4s. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3014003,
@@ -174,10 +186,12 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            141002
+            141002,
+            141004
         ],
         "SkillDescription": [
-            "Physical and Elemental DMG increase by 5% when attacking enemies with Super Armor."
+            "Physical and Elemental DMG increase by 5% when attacking enemies with Super Armor.",
+            "If being attacked multiple times within 5s, gain a shield that reduces the next DMG taken by 30%. 5s cooldown."
         ],
         "EquipIds": [
             3014004,
@@ -218,10 +232,14 @@
         "SuitType": 12,
         "EquipType": 9,
         "SkillEffect": [
-            141602
+            141602,
+            141604,
+            141606
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 5%."
+            "Basic Attack's Extra DMG Bonus increases by 5%.",
+            "Extra DMG Bonus of 3-Ping is increased by 5%.",
+            "After an Entrance Skill, Extra DMG Bonus increases by 10% for 8s."
         ],
         "EquipIds": [
             3014006,
@@ -242,10 +260,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            150102
+            150102,
+            150104
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 10%."
+            "Basic Attack's Extra DMG Bonus increases by 10%.",
+            "Basic Attack's Extra DMG Bonus increases by 15% when not attacked. This effect enters a 12s cooldown upon being attacked."
         ],
         "EquipIds": [
             3015001,
@@ -266,10 +286,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            150202
+            150202,
+            150204
         ],
         "SkillDescription": [
-            "For each orb pinged, Extra DMG Bonus increases by 2% for 3s. Can be stacked up to 5 times. Duration resets every time it is triggered."
+            "For each orb pinged, Extra DMG Bonus increases by 2% for 3s. Can be stacked up to 5 times. Duration resets every time it is triggered.",
+            "Enters Matrix upon a 3-Ping. 60s cooldown."
         ],
         "EquipIds": [
             3015002,
@@ -290,10 +312,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            150302
+            150302,
+            150304
         ],
         "SkillDescription": [
-            "Extra DMG Bonus increases by 2% and all Elemental DMG increases by 4%."
+            "Extra DMG Bonus increases by 2% and all Elemental DMG increases by 4%.",
+            "When dealing Elemental DMG, you have a 15% chance to inflict Burn, Electrocute, Frost, and Corruption depending on the element. Lasts 5s and has an 8s Cooldown on the same unit."
         ],
         "EquipIds": [
             3015003,
@@ -314,10 +338,12 @@
         "SuitType": 10,
         "EquipType": 8,
         "SkillEffect": [
-            150402
+            150402,
+            150404
         ],
         "SkillDescription": [
-            "Attacks reduce the target's DEF by 10% for 5s. 12s cooldown."
+            "Attacks reduce the target's DEF by 10% for 5s. 12s cooldown.",
+            "When taking damage, reduces the attacker's Physical DEF by 15% for 7s. Can be stacked up to 2 times. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3015004,
@@ -338,10 +364,12 @@
         "SuitType": 11,
         "EquipType": 8,
         "SkillEffect": [
-            150502
+            150502,
+            150504
         ],
         "SkillDescription": [
-            "Attacks reduce the target's all Elemental Resistance by 6% for 5s. 12s cooldown."
+            "Attacks reduce the target's all Elemental Resistance by 6% for 5s. 12s cooldown.",
+            "When taking damage, reduces all Elemental Resistance of enemies within 5m by 6% for 7s. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3015005,
@@ -362,10 +390,12 @@
         "SuitType": 7,
         "EquipType": 8,
         "SkillEffect": [
-            150602
+            150602,
+            150604
         ],
         "SkillDescription": [
-            "Healing effect increases by 5%. Next healing effect increases the target's Physical DMG by 8% for 4s. 5s cooldown."
+            "Healing effect increases by 5%. Next healing effect increases the target's Physical DMG by 8% for 4s. 5s cooldown.",
+            "Gains a random Signal Orb for every 8 orbs pinged. 5s cooldown."
         ],
         "EquipIds": [
             3015006,
@@ -386,10 +416,12 @@
         "SuitType": 8,
         "EquipType": 8,
         "SkillEffect": [
-            150702
+            150702,
+            150704
         ],
         "SkillDescription": [
-            "Healing effect increases by 5%. Next healing effect increases the target's all Elemental DMG by 8% for 4s. 5s cooldown."
+            "Healing effect increases by 5%. Next healing effect increases the target's all Elemental DMG by 8% for 4s. 5s cooldown.",
+            "The next healing skill cast leaves an elemental aura that increases all Elemental DMG and Elemental Resistance of the allies in the area by 8% and 5% respectively. 10s cooldown."
         ],
         "EquipIds": [
             3015007,
@@ -410,10 +442,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            150802
+            150802,
+            150804
         ],
         "SkillDescription": [
-            "Extra DMG Bonus increases by 15% when in Matrix."
+            "Extra DMG Bonus increases by 15% when in Matrix.",
+            "Deals 200% damage to all enemies on screen when you enter Matrix."
         ],
         "EquipIds": [
             3015008,
@@ -434,10 +468,14 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            150902
+            150902,
+            150904,
+            150906
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 7%."
+            "Basic Attack's Extra DMG Bonus increases by 7%.",
+            "All DMG dealt and Movement Speed are increased by 5% and 10% when in Matrix.",
+            "Extra DMG Bonus increases by 3% upon dealing DMG. It can only be triggered once per 2s. Stacks up to 5 times until taking DMG."
         ],
         "EquipIds": [
             3015009,
@@ -458,10 +496,12 @@
         "SuitType": 12,
         "EquipType": 8,
         "SkillEffect": [
-            155002
+            155002,
+            155004
         ],
         "SkillDescription": [
-            "Signal Orb skill's Extra DMG Bonus and healing effect increase by 5%."
+            "Signal Orb skill's Extra DMG Bonus and healing effect increase by 5%.",
+            "Attacks have a 20% chance to drop Christmas gifts next to the enemy. Picking up a gift restores 5 Energy and increases Extra DMG Bonus by 5% for 5s. 10s cooldown."
         ],
         "EquipIds": [
             3015050,
@@ -527,10 +567,12 @@
         "Description": "Anniversary",
         "SuitType": 12,
         "SkillEffect": [
-            155052
+            155052,
+            155054
         ],
         "SkillDescription": [
-            "Gain 10% Extra DMG Reduction for 3s upon dodge."
+            "Gain 10% Extra DMG Reduction for 3s upon dodge.",
+            "The own max. HP restores by 10% when entering Matrix, and is triggered every 30s."
         ],
         "EquipIds": [
             3015053,
@@ -596,10 +638,12 @@
         "Description": "Survival Boost",
         "SuitType": 12,
         "SkillEffect": [
-            155062
+            155062,
+            155064
         ],
         "SkillDescription": [
-            "Movement speed increases by 10%"
+            "Movement speed increases by 10%",
+            "After a 3-Ping, increases healing by 10% and gains a shield of 10% max HP for 5s."
         ],
         "EquipIds": [
             3015057,
@@ -619,10 +663,12 @@
         "Description": "2nd Anniversary Memory",
         "SuitType": 12,
         "SkillEffect": [
-            155072
+            155072,
+            155074
         ],
         "SkillDescription": [
-            "DEF increases by 10%."
+            "DEF increases by 10%.",
+            "After a 3-Ping, gain a shield of 15% max HP for 8s. Can be triggered once per 8s."
         ],
         "EquipIds": [
             3015058,
@@ -642,10 +688,12 @@
         "Description": "3rd Year Anniversary Memory",
         "SuitType": 12,
         "SkillEffect": [
-            155902
+            155902,
+            155904
         ],
         "SkillDescription": [
-            "Movement speed increases by 10%"
+            "Movement speed increases by 10%",
+            "After a 3-Ping, DEF increases by 10% for 5s."
         ],
         "EquipIds": [
             3015059,
@@ -665,10 +713,12 @@
         "Description": "Eden Festival",
         "SuitType": 12,
         "SkillEffect": [
-            156002
+            156002,
+            156004
         ],
         "SkillDescription": [
-            "Every 20s, receives a healing effect equal to 10% of max HP."
+            "Every 20s, receives a healing effect equal to 10% of max HP.",
+            "Every 30s, when taking DMG, gains a shield equal to 25% of max HP, lasting for 5s."
         ],
         "EquipIds": [
             3015060,
@@ -688,10 +738,12 @@
         "Description": "4th Anniversary",
         "SuitType": 12,
         "SkillEffect": [
-            156102
+            156102,
+            156104
         ],
         "SkillDescription": [
-            "DEF increases by 10%"
+            "DEF increases by 10%",
+            "After a 3-Ping, restores HP equal to 50% of ATK. Can be triggered once every 5s."
         ],
         "EquipIds": [
             3015061,
@@ -872,10 +924,12 @@
         "Description": "5th Anniversary Memory",
         "SuitType": 12,
         "SkillEffect": [
-            156902
+            156902,
+            156904
         ],
         "SkillDescription": [
-            "DEF increases by 10%"
+            "DEF increases by 10%",
+            "After a 3-Ping, restores HP equal to 50% of ATK. Can be triggered once every 5s."
         ],
         "EquipIds": [
             3015069,
@@ -918,10 +972,12 @@
         "Description": "5.5th Anniversary Memory",
         "SuitType": 12,
         "SkillEffect": [
-            157102
+            157102,
+            157104
         ],
         "SkillDescription": [
-            "DEF increases by 10%."
+            "DEF increases by 10%.",
+            "After a 3-Ping, restores HP equal to 50% of ATK. Can be triggered once every 5s."
         ],
         "EquipIds": [
             3015071,
@@ -941,10 +997,12 @@
         "Description": "6th Anniversary Memory",
         "SuitType": 12,
         "SkillEffect": [
-            157202
+            157202,
+            157204
         ],
         "SkillDescription": [
-            "DEF increases by 10%."
+            "DEF increases by 10%.",
+            "After a 3-Ping, restores HP equal to 50% of ATK. Can be triggered once every 5s."
         ],
         "EquipIds": [
             3015072,
@@ -965,10 +1023,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            160102
+            160102,
+            160104
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 15%."
+            "Basic Attack's Extra DMG Bonus increases by 15%.",
+            "Basic Attacks have a 50% chance to go berserk, increasing the Extra Damage Bonus of Basic Attack by 20% for 5s. 8s cooldown."
         ],
         "EquipIds": [
             3016001,
@@ -989,10 +1049,12 @@
         "SuitType": 2,
         "EquipType": 2,
         "SkillEffect": [
-            160202
+            160202,
+            160204
         ],
         "SkillDescription": [
-            "All ATK increases by 3% and Fire DMG increases by 7%."
+            "All ATK increases by 3% and Fire DMG increases by 7%.",
+            "Extra DMG Bonus increases by 10%. Attacking a target will inflict them with Burn, reducing their Fire Resistance by 15% for 8s (10s cooldown on the same target). Attacking targets affected by Burn will trigger an Explosion that deals 600% Fire DMG (6s cooldown on the same target)."
         ],
         "EquipIds": [
             3016002,
@@ -1013,10 +1075,12 @@
         "SuitType": 4,
         "EquipType": 4,
         "SkillEffect": [
-            160302
+            160302,
+            160304
         ],
         "SkillDescription": [
-            "All ATK increases by 3% and Lightning DMG increases by 7%."
+            "All ATK increases by 3% and Lightning DMG increases by 7%.",
+            "Extra DMG Bonus increases by 10%. Attacking a target will inflict them with Electrocute, reducing their Lightning Resistance by 15% for 8s (10s cooldown on the same target). Attacking targets affected by Electrocute will trigger a Thunderstorm that deals 600% Lightning DMG (6s cooldown on the same target)."
         ],
         "EquipIds": [
             3016003,
@@ -1037,10 +1101,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            160402
+            160402,
+            160404
         ],
         "SkillDescription": [
-            "For each orb pinged, Extra DMG Bonus increases by 3% for 4s. Can be stacked up to 5 times. Duration resets every time it is triggered."
+            "For each orb pinged, Extra DMG Bonus increases by 3% for 4s. Can be stacked up to 5 times. Duration resets every time it is triggered.",
+            "Records the color of Signal Orbs pinged. When all 3 colors are recorded, unleashes a 12m shockwave that deals 600% Physical DMG and resets the record."
         ],
         "EquipIds": [
             3016004,
@@ -1061,10 +1127,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            160502
+            160502,
+            160504
         ],
         "SkillDescription": [
-            "Extra DMG Bonus of 3-Ping skills increases by 25%."
+            "Extra DMG Bonus of 3-Ping skills increases by 25%.",
+            "For every 30s, enters Matrix upon a 3-Ping and gains a random Signal Orb."
         ],
         "EquipIds": [
             3016005,
@@ -1085,10 +1153,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            160602
+            160602,
+            160604
         ],
         "SkillDescription": [
-            "Gains 20% more Energy when pinging an orb. Signature Move requires 20% less Energy."
+            "Gains 20% more Energy when pinging an orb. Signature Move requires 20% less Energy.",
+            "Extra DMG Bonus increases by 15% for 10s when performing a Signature Move. Gains Super Armor that increases Extra DMG Reduction by 20% for 5s after the Signature Move. Triggering these effects again will renew their duration."
         ],
         "EquipIds": [
             3016006,
@@ -1109,10 +1179,12 @@
         "SuitType": 9,
         "EquipType": 8,
         "SkillEffect": [
-            160702
+            160702,
+            160704
         ],
         "SkillDescription": [
-            "When QTE is triggered, the controlling character gains 10% ATK and 20% DEF for 8s. Duration resets every time it is triggered."
+            "When QTE is triggered, the controlling character gains 10% ATK and 20% DEF for 8s. Duration resets every time it is triggered.",
+            "When QTE is triggered, triggers another character's QTE. 8s cooldown. If there are 3 characters on the field, all characters' ATK is increased by 20% for 2s."
         ],
         "EquipIds": [
             3016007,
@@ -1133,10 +1205,12 @@
         "SuitType": 10,
         "EquipType": 8,
         "SkillEffect": [
-            160802
+            160802,
+            160804
         ],
         "SkillDescription": [
-            "QTE and 3-Ping skills reduce the target's Physical DEF by 20% for 8s. 10s cooldown."
+            "QTE and 3-Ping skills reduce the target's Physical DEF by 20% for 8s. 10s cooldown.",
+            "When taking damage, gains a shield that absorbs 1000 DMG, as well as increasing the Physical DMG dealt by 15% for 5s. 8s cooldown."
         ],
         "EquipIds": [
             3016008,
@@ -1157,10 +1231,12 @@
         "SuitType": 11,
         "EquipType": 8,
         "SkillEffect": [
-            160902
+            160902,
+            160904
         ],
         "SkillDescription": [
-            "QTE and 3-Ping skills reduce the target's all Elemental Resistance by 15% for 8s. 10s cooldown."
+            "QTE and 3-Ping skills reduce the target's all Elemental Resistance by 15% for 8s. 10s cooldown.",
+            "When taking damage, releases an elemental aura, gaining 20% Elemental Resistance for 5s. All Elemental DMG dealt increases by 15% when the aura is present. 8s cooldown."
         ],
         "EquipIds": [
             3016009,
@@ -1181,10 +1257,12 @@
         "SuitType": 7,
         "EquipType": 8,
         "SkillEffect": [
-            161002
+            161002,
+            161004
         ],
         "SkillDescription": [
-            "Increase Heal by 10%. Healing allies increases their Physical DMG and DEF by 10% for 5s (CD: 8s)."
+            "Increase Heal by 10%. Healing allies increases their Physical DMG and DEF by 10% for 5s (CD: 8s).",
+            "A healing drone will be charged when healing is performed. When fully charged, the next time you performing healing will consume all charged energy to summon the healing drone. It will follow an ally with the lowest HP percentage, healing allies in a 5m radius for 2% maximum HP per second and increasing their Physical DMG by 15% for 5s. 12s cooldown."
         ],
         "EquipIds": [
             3016010,
@@ -1205,10 +1283,12 @@
         "SuitType": 8,
         "EquipType": 8,
         "SkillEffect": [
-            161102
+            161102,
+            161104
         ],
         "SkillDescription": [
-            "Healing effect increases by 10%. Next healing effect increases the target's all Elemental DMG and Resistance by 10% for 5s. 8s cooldown."
+            "Healing effect increases by 10%. Next healing effect increases the target's all Elemental DMG and Resistance by 10% for 5s. 8s cooldown.",
+            "Each healing cast will charge up the drone. When the drone is fully charged, the next healing effect will consume all charged energy to summon an elemental drone. The drone automatically follows the ally with the lowest HP percentage, healing allies in a 5m radius for 2% maximum HP per second and increasing their all Elemental DMG by 15% for 5s. 12s cooldown."
         ],
         "EquipIds": [
             3016011,
@@ -1229,10 +1309,12 @@
         "SuitType": 6,
         "EquipType": 9,
         "SkillEffect": [
-            161202
+            161202,
+            161204
         ],
         "SkillDescription": [
-            "Each dodge increases Movement Speed by 15% and Extra DMG Bonus by 5% for 5s. Can be stacked up to 3 times. Duration resets every time it is triggered."
+            "Each dodge increases Movement Speed by 15% and Extra DMG Bonus by 5% for 5s. Can be stacked up to 3 times. Duration resets every time it is triggered.",
+            "Triggering Matrix reduces all enemies' Speed by 20% and Extra DMG Reduction by 15% for 4s. 8s cooldown."
         ],
         "EquipIds": [
             3016012,
@@ -1253,10 +1335,12 @@
         "SuitType": 5,
         "EquipType": 5,
         "SkillEffect": [
-            161302
+            161302,
+            161304
         ],
         "SkillDescription": [
-            "ATK increases by 3% and Dark DMG increases by 7%"
+            "ATK increases by 3% and Dark DMG increases by 7%",
+            "Extra DMG Bonus increases by 10%. Attacking a target will inflict them with Corruption, reducing their Dark Resistance by 15% for 8s (10s cooldown on the same target). Attacking targets affected by Corruption will trigger an Explosion that deals 600% Dark DMG (6s cooldown on the same target)."
         ],
         "EquipIds": [
             3016013,
@@ -1277,10 +1361,12 @@
         "SuitType": 1,
         "EquipType": 1,
         "SkillEffect": [
-            161402
+            161402,
+            161404
         ],
         "SkillDescription": [
-            "ATK increases by 3% and Physical DMG increases by 7%."
+            "ATK increases by 3% and Physical DMG increases by 7%.",
+            "Extra DMG Bonus increases by 10%. Attacking a target will inflict them with Impale, reducing their Physical Resistance by 7% for 8s (10s cooldown on the same target). Attacking targets affected by Impale will trigger an Explosion that deals 600% Physical DMG (6s cooldown on the same target)."
         ],
         "EquipIds": [
             3016014,
@@ -1301,10 +1387,12 @@
         "SuitType": 3,
         "EquipType": 3,
         "SkillEffect": [
-            161502
+            161502,
+            161504
         ],
         "SkillDescription": [
-            "ATK increases by 3% and Ice DMG increases by 7%"
+            "ATK increases by 3% and Ice DMG increases by 7%",
+            "Extra DMG Bonus increases by 10%. Attacking a target will inflict them with Frost, reducing their Ice Resistance by 15% for 8s (10s cooldown on the same target). Attacking targets affected by Frost will trigger an Icy Blast that deals 600% Ice DMG (6s cooldown on the same target)."
         ],
         "EquipIds": [
             3016015,
@@ -1326,10 +1414,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1511003,
         "SkillEffect": [
-            161602
+            161602,
+            161604,
+            161606
         ],
         "SkillDescription": [
-            "Extra DMG increases by 10%."
+            "Extra DMG increases by 10%.",
+            "Gains 20% energy when switched in. Signal Orb Skill DMG increases by 10% while a shield exists.",
+            "When Camu: Crocotta is Berserk, increases Damage Dealt by 10% and Speed by 20%. Ping Skills that deal damage also inflict Fear for the duration of Berserk. Fear: Reduces ATK DMG by 10% and deals an additional 10% ATK DMG to the target."
         ],
         "EquipIds": [
             3016016,
@@ -1351,10 +1443,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1141003,
         "SkillEffect": [
-            161702
+            161702,
+            161704
         ],
         "SkillDescription": [
-            "ATK increases by 3% and Physical DMG increases by 7%"
+            "ATK increases by 3% and Physical DMG increases by 7%",
+            "The effect of Piercing Blow launched by Rosetta: Rigor increases by 20%. Attacks at targets hit by Piercing Blow will deal 5% more damage."
         ],
         "EquipIds": [
             3016017,
@@ -1376,10 +1470,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1521003,
         "SkillEffect": [
-            161802
+            161802,
+            161804,
+            161806
         ],
         "SkillDescription": [
-            "Basic Attack's Extra DMG Bonus increases by 5%, Physical DMG increases by 7%."
+            "Basic Attack's Extra DMG Bonus increases by 5%, Physical DMG increases by 7%.",
+            "The Super Armor of Sweeping Tempest lasts 2s longer. Physical DMG increases by 15% while Super Armor is active.",
+            "Gains 24 Energy upon entering Concentrated Will. Immediately gains one Signal Orb of each color after casting Signature - Dragon's Wrath."
         ],
         "EquipIds": [
             3016018,
@@ -1401,10 +1499,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1171003,
         "SkillEffect": [
-            161902
+            161902,
+            161904
         ],
         "SkillDescription": [
-            "Dark DMG increases by 5% and ATK increases by 5%"
+            "Dark DMG increases by 5% and ATK increases by 5%",
+            "After entering annihilation state, the aphotic DMG increases by 30%. DMG of End is Nigh increases by 30%. Gain extra 10 Energy after the annihilation orb is eliminated."
         ],
         "EquipIds": [
             3016019,
@@ -1426,10 +1526,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1531003,
         "SkillEffect": [
-            162002
+            162002,
+            162004,
+            162006
         ],
         "SkillDescription": [
-            "Lightning DMG increases by 10%."
+            "Lightning DMG increases by 10%.",
+            "Upon triggering Chord, gain bonus 15 energy and 10% Extra DMG Bonus for 5s.",
+            "Extra DMG Bonus increases by 20% when attacking enemies affected by Concerto."
         ],
         "EquipIds": [
             3016020,
@@ -1468,10 +1572,12 @@
         "EquipType": 4,
         "RecommendCharacterId": 1131003,
         "SkillEffect": [
-            162202
+            162202,
+            162204
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Lightning DMG increases by 5%"
+            "ATK increases by 5% and Lightning DMG increases by 5%",
+            "DMG from Spear Lunge increases by 50%. Victorious War Flag causes Turbulence Interference on the target for 2s. Refreshes every time it is triggered. Basic DMG from Lightning Fall increases by 100%."
         ],
         "EquipIds": [
             3016022,
@@ -1493,10 +1599,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1541003,
         "SkillEffect": [
-            162302
+            162302,
+            162304,
+            162306
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Fire DMG increases by 7%."
+            "ATK increases by 5% and Fire DMG increases by 7%.",
+            "Basic Attack combo has 10% more Extra DMG Bonus and returns 10 bonus Deception Points.",
+            "Gains 30 bonus energy each time upon deployment. After casting a valid combo, recovers 50/75/100 Dodge Gauge based on the combo type. The Extra DMG Bonus of Incinerating Orb increases by 100%. After casting a Signature Move, Attack increases by 5% for 8s."
         ],
         "EquipIds": [
             3016023,
@@ -1518,10 +1628,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1031004,
         "SkillEffect": [
-            162402
+            162402,
+            162404
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Fire DMG increases by 5%."
+            "ATK increases by 5% and Fire DMG increases by 5%.",
+            "Extra DMG Bonus of Oaths will increase by 50%. When equipped by Liv: Empyrea, upon a 3-Ping by any team member, Liv: Empyrea's drones will appear and cast White Oracle against the target, dealing damage equal to 3% Liv: Empyrea's ATK every second for 20s. This effect can be stacked up to 5 times. Meanwhile, Liv: Empyrea will restore HP equal to 15% of her ATK every second for team members within the range for 4s."
         ],
         "EquipIds": [
             3016024,
@@ -1543,10 +1655,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1531004,
         "SkillEffect": [
-            162502
+            162502,
+            162504
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Dark DMG increases by 5%."
+            "ATK increases by 5% and Dark DMG increases by 5%.",
+            "A random Reprise deals 100% more damage. Allies healed by Selena: Capriccio gain a Dark Radiation effect of dealing 10% more Dark DMG for 8s. The duration will be reset every time the effect is triggered."
         ],
         "EquipIds": [
             3016025,
@@ -1568,10 +1682,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1551003,
         "SkillEffect": [
-            162602
+            162602,
+            162604,
+            162606
         ],
         "SkillDescription": [
-            "Deals 7% more Physical DMG and 5% more Basic Attack DMG."
+            "Deals 7% more Physical DMG and 5% more Basic Attack DMG.",
+            "When Pulao: Dragontoll catches Dragon Axe while being hit, removes her own Hit status and throws it again. Meanwhile, removes the red penalty on the Dodge Gauge and restores 250 Dodge Gauge value.",
+            "Dragon Force Combo's Base DMG increases by 50%. When the first hit of Dragon Force Combo is triggered, Dragon Axe will release Dragon Roar to pull enemies to Pulao and she gains a shield equal to 15% max HP for 6s."
         ],
         "EquipIds": [
             3016026,
@@ -1593,10 +1711,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1051004,
         "SkillEffect": [
-            162702
+            162702,
+            162704
         ],
         "SkillDescription": [
-            "Increases Fire DMG by 10%."
+            "Increases Fire DMG by 10%.",
+            "Oops! Missed it!/\"Perfect!\"/Burning Blow deals 100% more Base DMG. Nanami: Starfarer's QTE Skill will inflict Scorching Invasion that reduces the target's Fire Resistance by 15% upon hitting it for 8s."
         ],
         "EquipIds": [
             3016027,
@@ -1618,10 +1738,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1561003,
         "SkillEffect": [
-            162802
+            162802,
+            162804,
+            162806
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Ice DMG increases by 7%."
+            "ATK increases by 5% and Ice DMG increases by 7%.",
+            "Frost-Treated Blade: Quench deals 15% more Base DMG.",
+            "Bitter Frost deals 200% more Ice DMG to enemies with Frozen Status."
         ],
         "EquipIds": [
             3016028,
@@ -1643,10 +1767,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1071004,
         "SkillEffect": [
-            162902
+            162902,
+            162904
         ],
         "SkillDescription": [
-            "Dark DMG increases by 10%."
+            "Dark DMG increases by 10%.",
+            "Doubles the Base DMG increase effect of Karenina: Scire's Kinetic Energy for Starshatter Horizon and the Base DMG multiplier of Leap Attack and Radiant Whirlwind."
         ],
         "EquipIds": [
             3016029,
@@ -1668,10 +1794,14 @@
         "EquipType": 7,
         "RecommendCharacterId": 1571003,
         "SkillEffect": [
-            163002
+            163002,
+            163004,
+            163006
         ],
         "SkillDescription": [
-            "Lightning DMG increases by 10%."
+            "Lightning DMG increases by 10%.",
+            "Gains Super Armor when casting a 3-Ping and Combo Strike. Whenever taking DMG during a 3-Ping, Gear-Break Combo, or Assault-Rising Combo, loses Dodge Gauge instead of HP until the DMG taken exceeds the available Dodge Gauge.",
+            "The Base DMG multiplier of Gear-Break Combo and Assault-Rising Combo doubles."
         ],
         "EquipIds": [
             3016030,
@@ -1693,10 +1823,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1041004,
         "SkillEffect": [
-            163102
+            163102,
+            163104
         ],
         "SkillDescription": [
-            "Basic Attacks deal 5% more DMG. ATK increases by 7%."
+            "Basic Attacks deal 5% more DMG. ATK increases by 7%.",
+            "Glowing Lanternlight deals 50% more Base DMG. Afterglow Shadow deals 100% more Base DMG. Every time upon entering Luminous Realm, rearranges the Signal Orbs when casting Glowing Lanternlight."
         ],
         "EquipIds": [
             3016031,
@@ -1718,10 +1850,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1011004,
         "SkillEffect": [
-            163202
+            163202,
+            163204
         ],
         "SkillDescription": [
-            "Fire DMG increases by 10%."
+            "Fire DMG increases by 10%.",
+            "Hypermatrix Strike and Signature - Collapsing Realm's Base DMG increases by 100%. Casting Hypermatrix Strike in Hypermatrix increases the duration of Hypermatrix by 1s."
         ],
         "EquipIds": [
             3016032,
@@ -1743,10 +1877,12 @@
         "EquipType": 3,
         "RecommendCharacterId": 1091003,
         "SkillEffect": [
-            163302
+            163302,
+            163304
         ],
         "SkillDescription": [
-            "Extra DMG Bonus increases by 5% and Ice DMG increases by 5%."
+            "Extra DMG Bonus increases by 5% and Ice DMG increases by 5%.",
+            "Base DMG of Pure Color: Theme Emphasis and Color Mix: Clash of Concepts increases by 50%. Base DMG of Vibrant Brushstroke increases by 80%."
         ],
         "EquipIds": [
             3016033,
@@ -1768,10 +1904,12 @@
         "EquipType": 4,
         "RecommendCharacterId": 1021005,
         "SkillEffect": [
-            163402
+            163402,
+            163404
         ],
         "SkillDescription": [
-            "Lightning DMG increases by 10%."
+            "Lightning DMG increases by 10%.",
+            "The efficiency of acquiring Blade Aura increases by 50%. The Base DMG of Unquenchable Flare's Leaping Thrust increases by 50%, and the Base DMG of Signature - Weave: Karmic Inferno increases by 80%."
         ],
         "EquipIds": [
             3016034,
@@ -1793,10 +1931,12 @@
         "EquipType": 4,
         "RecommendCharacterId": 1221003,
         "SkillEffect": [
-            163502
+            163502,
+            163504
         ],
         "SkillDescription": [
-            "Lightning DMG increases by 5% and Extra DMG Bonus increases by 5%."
+            "Lightning DMG increases by 5% and Extra DMG Bonus increases by 5%.",
+            "Dusk Fluorescence and Forest Predator's Base DMG increases by 100%. Wolfspirit Release's Base DMG increases by 70%."
         ],
         "EquipIds": [
             3016035,
@@ -1818,10 +1958,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1261003,
         "SkillEffect": [
-            163602
+            163602,
+            163604
         ],
         "SkillDescription": [
-            "Physical DMG increases by 5% and Extra DMG Bonus increases by 5%."
+            "Physical DMG increases by 5% and Extra DMG Bonus increases by 5%.",
+            "The Base DMG of Imprisoning Co-Strike and Soulbreaking Co-Strike increases by 100%. Allies healed by Echo gain an extra 20% CRIT DMG and 75% CRIT Rate for 8s. Triggering this effect again will renew its duration."
         ],
         "EquipIds": [
             3016036,
@@ -1843,10 +1985,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1271003,
         "SkillEffect": [
-            163702
+            163702,
+            163704
         ],
         "SkillDescription": [
-            "Dark DMG increases by 10%."
+            "Dark DMG increases by 10%.",
+            "Base DMG of Torrent Orbs, Tidal Orbs, and Signature - Sunken Finale increases by 100%. After casting Signature - Sunken Finale, if Lamia is switched out of battle, she will still cast co-attacks when any teammate actively casts their Signature. Co-attacks deal 3000% Dark DMG each time, and can be triggered up to 3 times after every Signature - Sunken Finale."
         ],
         "EquipIds": [
             3016037,
@@ -1868,10 +2012,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1081004,
         "SkillEffect": [
-            163802
+            163802,
+            163804
         ],
         "SkillDescription": [
-            "Fire DMG increases by 10%."
+            "Fire DMG increases by 10%.",
+            "The Base DMG of Flame Eruption and Thermal Erosion increases by 100%. Firepower Bulwark will inflict Scorching Invasion on the target hit, which will reduce their Fire Resistance for 8s. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3016038,
@@ -1892,10 +2038,14 @@
         "SuitType": 12,
         "EquipType": 7,
         "SkillEffect": [
-            163902
+            163902,
+            163904,
+            163906
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Extra DMG increases by 5%."
+            "ATK increases by 5% and Extra DMG increases by 5%.",
+            "Extra DMG increases by 10% in Matrix.",
+            "When switched into battle, all Elemental DMG and Physical DMG increase by 15% for 8s."
         ],
         "EquipIds": [
             3016039,
@@ -1917,10 +2067,12 @@
         "EquipType": 3,
         "RecommendCharacterId": 1521004,
         "SkillEffect": [
-            164002
+            164002,
+            164004
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Ice DMG increases by 5%."
+            "ATK increases by 5% and Ice DMG increases by 5%.",
+            "The Base DMG multiplier of Will Bearer, Snow Drifter, and Mountain Caller increases by 100%. Sovereign's Presence's DMG multiplier is doubled."
         ],
         "EquipIds": [
             3016040,
@@ -1942,10 +2094,12 @@
         "EquipType": 6,
         "RecommendCharacterId": 1171004,
         "SkillEffect": [
-            164102
+            164102,
+            164104
         ],
         "SkillDescription": [
-            "Nihil DMG increases by 10%"
+            "Nihil DMG increases by 10%",
+            "Gains Eclipse Points 100% faster. Luna: Oblivion gains 30% Extra DMG Bonus when in Main Sequence/Finality."
         ],
         "EquipIds": [
             3016041,
@@ -1967,10 +2121,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1241003,
         "SkillEffect": [
-            164202
+            164202,
+            164204
         ],
         "SkillDescription": [
-            "Physical DMG increases by 10%"
+            "Physical DMG increases by 10%",
+            "Harmonic Orbs' Base DMG increases by 100%. The effect of Piercing Blow launched by Hanying: Solacetune increases by 20%. Upon quitting the Lunartone Field, the field will still exist for 12s and deal 50% Physical DMG to enemies within it once every second."
         ],
         "EquipIds": [
             3016042,
@@ -1992,10 +2148,12 @@
         "EquipType": 3,
         "RecommendCharacterId": 1211003,
         "SkillEffect": [
-            164302
+            164302,
+            164304
         ],
         "SkillDescription": [
-            "Ice DMG increases by 10%"
+            "Ice DMG increases by 10%",
+            "When Frozen Zone deals DMG, triggers Frost Corrosion and reduces the target's Ice Resistance for 8s. Triggering this effect again will renew its duration. In Repeater Mode, each shot adds an extra stack of Maim, with a stacking limit of 24. When casting Destructive Wave, the Base DMG increase effect of each Correction Projectile increases to 10%."
         ],
         "EquipIds": [
             3016043,
@@ -2017,10 +2175,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1021006,
         "SkillEffect": [
-            164402
+            164402,
+            164404
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Fire DMG and Plasma Beam DMG increase by 5%."
+            "ATK increases by 5% and Fire DMG and Plasma Beam DMG increase by 5%.",
+            "Increase Aura Value accumulation efficiency by 100% and double the multipliers of Signature - Crowd Slash and Signature - Eclipse Daybreak."
         ],
         "EquipIds": [
             3016044,
@@ -2041,10 +2201,12 @@
         "SuitType": 4,
         "EquipType": 10,
         "SkillEffect": [
-            164502
+            164502,
+            164504
         ],
         "SkillDescription": [
-            "Lightning DMG increases by 5% and Plasma Beam DMG increases by 10%."
+            "Lightning DMG increases by 5% and Plasma Beam DMG increases by 10%.",
+            "ATK +5% and Plasma Beam DMG +10% during Electric Storm Flash."
         ],
         "EquipIds": [
             3016045,
@@ -2066,10 +2228,12 @@
         "EquipType": 4,
         "RecommendCharacterId": 1051005,
         "SkillEffect": [
-            164602
+            164602,
+            164604
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Lightning DMG and Ignition DMG increase by 5%."
+            "ATK increases by 5% and Lightning DMG and Ignition DMG increase by 5%.",
+            "Thunderfire Domain inflicts Resistance Reduction while dealing damage for 8s. QTE continuous damage also applies Resistance Reduction for 2s. Base DMG of Cosmic Starstrike and Starshard Slash is doubled, and casting them grants two Signal Orbs, prioritizing 3-Ping Orb combinations."
         ],
         "EquipIds": [
             3016046,
@@ -2091,10 +2255,12 @@
         "EquipType": 6,
         "RecommendCharacterId": 1321003,
         "SkillEffect": [
-            164702
+            164702,
+            164704
         ],
         "SkillDescription": [
-            "Nihil DMG increases by 10%."
+            "Nihil DMG increases by 10%.",
+            "Casting Phantom Annihilation grants 18/36/36/36/54 Collapse Points based on the hit count. Casting Ethereal Mirage grants 150 Phantom Points immediately. Casting Dimensional Collapse increases Base DMG of the next Signature - Silent Punishment by 100%. When hitting enemies with Hyperspace Realm as a Tank, reduces enemy Elemental Resistance based on Observation Notes. When Hyperspace Realm is active, as an Amplifier, heals allies for 8% of ATK per second and increases their Elemental DMG based on Observation Notes."
         ],
         "EquipIds": [
             3016047,
@@ -2116,10 +2282,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1331003,
         "SkillEffect": [
-            164802
+            164802,
+            164804
         ],
         "SkillDescription": [
-            "ATK increases by 7% and Dark DMG and Plasma Beam DMG increase by 3%."
+            "ATK increases by 7% and Dark DMG and Plasma Beam DMG increase by 3%.",
+            "Base DMG of Invitation to a Radiant Dream doubles."
         ],
         "EquipIds": [
             3016048,
@@ -2141,10 +2309,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1531005,
         "SkillEffect": [
-            164902
+            164902,
+            164904
         ],
         "SkillDescription": [
-            "ATK increases by 5% and Physical DMG and Glaciation DMG increase by 5%."
+            "ATK increases by 5% and Physical DMG and Glaciation DMG increase by 5%.",
+            "Gains 2 Signal Orbs upon casting Rhythmic Piercing. Damage of Echoing Melody, Rhythmic Piercing, Signature - Majestic Interlude, and Signature - Note of Termination doubles."
         ],
         "EquipIds": [
             3016049,
@@ -2165,10 +2335,12 @@
         "SuitType": 4,
         "EquipType": 10,
         "SkillEffect": [
-            165002
+            165002,
+            165004
         ],
         "SkillDescription": [
-            "Ice DMG increases by 5% and Glaciation DMG increases by 10%."
+            "Ice DMG increases by 5% and Glaciation DMG increases by 10%.",
+            "When there are Ice Spikes, ATK increases by 5% and Glaciation DMG increases by 10%."
         ],
         "EquipIds": [
             3016050,
@@ -2190,10 +2362,12 @@
         "EquipType": 2,
         "RecommendCharacterId": 1131004,
         "SkillEffect": [
-            165102
+            165102,
+            165104
         ],
         "SkillDescription": [
-            "ATK increases by 5%. Fire DMG and Darkflow DMG increase by 5%."
+            "ATK increases by 5%. Fire DMG and Darkflow DMG increase by 5%.",
+            "Gains 3 bonus Blue Orbs after casting Scorched in Void. Doubles the bonus Absolute Pyre duration granted by pinging a set of Red Orbs."
         ],
         "EquipIds": [
             3016051,
@@ -2215,10 +2389,12 @@
         "EquipType": 5,
         "RecommendCharacterId": 1041005,
         "SkillEffect": [
-            165202
+            165202,
+            165204
         ],
         "SkillDescription": [
-            "ATK increases by 5%. Dark DMG and Raydiance DMG increase by 5%."
+            "ATK increases by 5%. Dark DMG and Raydiance DMG increase by 5%.",
+            "Severed Sea DMG is doubled. When casting Corrosive Chain: Gain 10 Prayer stacks per Commandment point consumed. Consuming 9 Commandment points grants an additional 45 Prayer stacks."
         ],
         "EquipIds": [
             3016052,
@@ -2240,10 +2416,12 @@
         "EquipType": 1,
         "RecommendCharacterId": 1381003,
         "SkillEffect": [
-            165302
+            165302,
+            165304
         ],
         "SkillDescription": [
-            "Physical DMG and Ignition DMG increase by 5%. Extra DMG Bonus increases by 5%. When Veronica restores HP to allies, allies gain the Deep Penetration effect that increases CRIT DMG by 20%, as well as 75% CRIT Rate, lasting 8s. Duration resets every time it is triggered."
+            "Physical DMG and Ignition DMG increase by 5%. Extra DMG Bonus increases by 5%. When Veronica restores HP to allies, allies gain the Deep Penetration effect that increases CRIT DMG by 20%, as well as 75% CRIT Rate, lasting 8s. Duration resets every time it is triggered.",
+            "Clearing Red Orbs with Heavy Edge grants Signature Energy. Each Red Orb cleared grants 5 Purge Value. When 9 or more Red Orbs are cleared in a single instance, each Red Orb beyond the 9th grants an additional 5 Purge Value. Base DMG of Raging Thornfire and Severing Domain increases by 50%. During Execution, each Purge Value consumed increases Ruinous Ember's Base DMG by 0.5%, up to a maximum of 50%. This enhancement resets when exiting the battlefield or casting Ruinous Ember."
         ],
         "EquipIds": [
             3016053,
@@ -2265,10 +2443,12 @@
         "EquipType": 4,
         "RecommendCharacterId": 1031005,
         "SkillEffect": [
-            165402
+            165402,
+            165404
         ],
         "SkillDescription": [
-            "ATK increases by 5%. Lightning DMG and Darkflow DMG increase by 5%."
+            "ATK increases by 5%. Lightning DMG and Darkflow DMG increase by 5%.",
+            "Enhanced Base DMG effect of Delicate Heart doubles."
         ],
         "EquipIds": [
             3016054,
@@ -2289,10 +2469,12 @@
         "SuitType": 4,
         "EquipType": 10,
         "SkillEffect": [
-            165502
+            165502,
+            165504
         ],
         "SkillDescription": [
-            "Dark DMG increases by 5% and Darkflow DMG increases by 10%."
+            "Dark DMG increases by 5% and Darkflow DMG increases by 10%.",
+            "When casting a Signature Move, ATK increases by 5% and Darkflow DMG increases by 10% for 10s. Duration resets every time it is triggered."
         ],
         "EquipIds": [
             3016055,
@@ -2314,10 +2496,12 @@
         "EquipType": 3,
         "RecommendCharacterId": 1291003,
         "SkillEffect": [
-            165602
+            165602,
+            165604
         ],
         "SkillDescription": [
-            "ATK increases by 5%. Ice DMG and Raydiance DMG increase by 5%."
+            "ATK increases by 5%. Ice DMG and Raydiance DMG increase by 5%.",
+            "Digital Space: Flash Retention DMG increases by 125%. Digital Space: Barrier Rift DMG doubles."
         ],
         "EquipIds": [
             3016056,
@@ -2337,10 +2521,12 @@
         "Description": "Survival Boost",
         "SuitType": 12,
         "SkillEffect": [
-            3000002
+            3000002,
+            3000004
         ],
         "SkillDescription": [
-            "Gain a shield equal to 20% Max HP for 5s every 30s after taking DMG."
+            "Gain a shield equal to 20% Max HP for 5s every 30s after taking DMG.",
+            "Gain a Heal effect equal to 15% Max HP every 20s."
         ],
         "EquipIds": [
             3018053,
@@ -2360,6 +2546,7 @@
         "Description": "Enhance Material I",
         "SuitType": 0,
         "SkillDescription": [
+            "N/A",
             "N/A"
         ],
         "EquipIds": [
@@ -2380,6 +2567,7 @@
         "Description": "Enhance Material II",
         "SuitType": 0,
         "SkillDescription": [
+            "N/A",
             "N/A"
         ],
         "EquipIds": [
@@ -2400,6 +2588,7 @@
         "Description": "Enhance Material III",
         "SuitType": 0,
         "SkillDescription": [
+            "N/A",
             "N/A"
         ],
         "EquipIds": [
@@ -2420,6 +2609,7 @@
         "Description": "Enhance Material III",
         "SuitType": 0,
         "SkillDescription": [
+            "N/A",
             "N/A"
         ],
         "EquipIds": [
@@ -2440,10 +2630,12 @@
         "Description": "Enhance Material III",
         "SuitType": 0,
         "SkillEffect": [
-            190202
+            190202,
+            190204
         ],
         "SkillDescription": [
-            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%."
+            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%.",
+            "Lose 5% of maximum HP every 5s."
         ],
         "EquipIds": [
             3915001,
@@ -2463,10 +2655,12 @@
         "Description": "Enhance Material III",
         "SuitType": 0,
         "SkillEffect": [
-            190202
+            190202,
+            190204
         ],
         "SkillDescription": [
-            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%."
+            "Reduces Extra DMG Bonus by 15% and Extra DMG Reduction by 30%.",
+            "Lose 5% of maximum HP every 5s."
         ],
         "EquipIds": [
             3916001,
@@ -2486,10 +2680,12 @@
         "Description": "Attack HP Recovery",
         "SuitType": 12,
         "SkillEffect": [
-            3000006
+            3000006,
+            3000008
         ],
         "SkillDescription": [
-            "Upon a 3-Ping, gains 5% ATK for 5s. Cooldown: 10s."
+            "Upon a 3-Ping, gains 5% ATK for 5s. Cooldown: 10s.",
+            "When in Matrix, restores HP equal to 200% of the current ATK next time when dealing DMG. Cooldown: 25s."
         ],
         "EquipIds": [
             3019050,
@@ -2508,10 +2704,12 @@
         "Description": "Physical Boost",
         "SuitType": 12,
         "SkillEffect": [
-            2000002
+            2000002,
+            2000004
         ],
         "SkillDescription": [
-            "Movement Speed +10%"
+            "Movement Speed +10%",
+            "会心率が3%上昇、物理ダメージが2%上昇"
         ],
         "EquipIds": [
             3015501,
@@ -2528,10 +2726,12 @@
         "Description": "Exclusive Memory",
         "SuitType": 12,
         "SkillEffect": [
-            5000002
+            5000002,
+            5000004
         ],
         "SkillDescription": [
-            "Basic Attack DMG increases by 10%."
+            "Basic Attack DMG increases by 10%.",
+            "After any 3-Ping, randomly gain one of the below effects for 3s. 4s cooldown. Wild Rocker: All DMG increases by 7%. Soothing Chord: Receives a shield equal to 15% of your Defense. The shield refreshes when this effect is triggered again."
         ],
         "EquipIds": [
             3015650,
