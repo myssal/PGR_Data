@@ -1180,13 +1180,11 @@
         "EquipType": 8,
         "SkillEffect": [
             160702,
-            160704,
-            160706
+            160704
         ],
         "SkillDescription": [
             "QTE时登场会给操控的角色增加10%的攻击，20%的防御力，持续8秒，重复触发刷新持续时间。",
-            "QTE出场时，使另一角色QTE充能次数加一并激活，有8秒的冷却时间。三个角色同时在场时为所有角色增加20%攻击，持续2秒，重复触发累计持续时间。",
-            "达芬奇四件套效果取消冷却时间限制，无法与同类效果叠加。"
+            "QTE出场时，激活另1角色QTE，有8秒的冷却时间，三个角色同时在场时为所有角色增加20%攻击，持续2秒。"
         ],
         "EquipIds": [
             3016007,
@@ -1316,7 +1314,7 @@
         ],
         "SkillDescription": [
             "每次闪避增加15%移动速度和5%的额外伤害加成，持续5秒，最多可叠加3层，重复触发刷新持续时间。",
-            "角色触发超算空间时，使全场敌人速度减少20%，超算空间内/超维预演持续时间内额外伤害减免降低15%，持续4秒。有8秒的冷却时间。"
+            "角色触发超算空间时，使全场敌人速度减少20%，额外伤害减免降低15%，持续4秒。有8秒的冷却时间。"
         ],
         "EquipIds": [
             3016012,
@@ -2315,7 +2313,7 @@
             164904
         ],
         "SkillDescription": [
-            "攻击增加5%，物理伤害及覆冰伤害提高5%。SS升阶新增：释放流韵穿刺后，退场时视为已释放必杀-间岚啸鸣。",
+            "攻击增加5%，物理伤害及覆冰伤害提高5%",
             "释放流韵穿刺时立即获得2个信号球。音刃延鸣、流韵穿刺、必杀-间岚啸鸣、必杀-徒花的终止符的伤害翻倍。"
         ],
         "EquipIds": [
@@ -2512,59 +2510,6 @@
             3046056,
             3056056,
             3066056
-        ]
-    },
-    {
-        "Id": 1657,
-        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/ENiumuI01001Sp.png",
-        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/ENiumuI01001.png",
-        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/ENiumuI01002.png",
-        "Name": "妮缪",
-        "Description": "暗系强化",
-        "SuitType": 5,
-        "EquipType": 5,
-        "RecommendCharacterId": 1141004,
-        "SkillEffect": [
-            165702,
-            165704
-        ],
-        "SkillDescription": [
-            "攻击力提升5%，暗属性及真意斩伤害提升5%",
-            "涅索斯拟态下获得的必杀能量翻倍。涅索斯拟态下消耗覆态馈赠获得的必杀基础伤害提升效果翻倍，最多提升90%。"
-        ],
-        "EquipIds": [
-            3016057,
-            3026057,
-            3036057,
-            3046057,
-            3056057,
-            3066057
-        ]
-    },
-    {
-        "Id": 1658,
-        "IconPath": "Assets/Product/Texture/Image/IconToolsSp/EBenShengI01001Sp.png",
-        "ClearIconPath": "Assets/Product/Texture/Image/IconTools/EBenShengI01001.png",
-        "WaferBagPath": "Assets/Product/Texture/Image/RoleWaferBag/EBenShengI01002.png",
-        "Name": "本笙",
-        "Description": "真意斩强化",
-        "SuitType": 4,
-        "EquipType": 10,
-        "SkillEffect": [
-            165802,
-            165804
-        ],
-        "SkillDescription": [
-            "物理伤害伤害提高5%，真意斩伤害提高10%。",
-            "真意值≥5时，攻击力增加5%，真意斩伤害提高10%。"
-        ],
-        "EquipIds": [
-            3016058,
-            3026058,
-            3036058,
-            3046058,
-            3056058,
-            3066058
         ]
     },
     {
