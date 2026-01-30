@@ -5,6 +5,8 @@ local XUiGridLuosaitaMemberEnemy = require("XUi/XUiMainLine2/XUiMainLineLuosaita
 local XUiGridLuosaitaMemberStage = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid/XUiGridLuosaitaMemberStage")
 local CSTween = CS.DG.Tweening
 local Vector3 = CS.UnityEngine.Vector3
+local Quaternion = CS.UnityEngine.Quaternion
+local Mathf = CS.UnityEngine.Mathf
 
 -- 罗塞塔主线阶段面板
 ---@class XUiPanelLuosaitaSection : XUiNode
@@ -20,27 +22,27 @@ function XUiPanelLuosaitaSection:OnStart(sectionId)
     self._GridBlocks = {}
     self._GridPositions = {}
     self.FOCUS_SPEED = self._Control:GetConfig():GetConfigNumber("FocusSpeed", 1)
+    
+    self:InitDragArea()
+    self:InitPositions()
     self:RegisterUiEvents()
     self:LoadSectionLoopAnim()
-end
 
-function XUiPanelLuosaitaSection:OnEnable()
-    local pos = self.Parent:GetSectionLastPosition(self.SectionId)
+    local pos = self.Parent:GetResumePos(self.SectionId)
     if pos then
         -- 恢复到上次关闭时候的位置
         self:SetAreaScaleDragPosition(pos)
-        -- 等待切换阶段动画播完，再播移动动画
-        local WAIT_TIEM = 1500
-        self:Refresh(false, WAIT_TIEM)
+        self:Refresh(false)
     else
         -- 定位可挑战关卡/敌军
         self:GotoFocusTarget(false)
         -- 刷新界面
         self:Refresh(false)
     end
-    
-    -- 禁用缩放组件
-    self:SetAreaDragEnable(true)
+end
+
+function XUiPanelLuosaitaSection:OnEnable()
+    self:UpdateAreaDragEnable()
 end
 
 function XUiPanelLuosaitaSection:OnDestroy()
@@ -74,8 +76,9 @@ function XUiPanelLuosaitaSection:Refresh(isCheckSwitchSection, checkWaitTime)
     self:RefreshBlocks()
     self:RefreshPositions()
     self:RefreshSkyGardenButton()
+    self:UpdateAreaDragEnable()
 
-    if checkWaitTime then
+    if checkWaitTime and checkWaitTime > 0 then
         self:RemoveAnimWaitTimer()
         self.AnimWaitTimer = XScheduleManager.ScheduleOnce(function()
             self:CheckAnim(isCheckSwitchSection)
@@ -129,23 +132,46 @@ function XUiPanelLuosaitaSection:RefreshBlocks()
     end
 end
 
+-- 初始化拖拽缩放组件设置
+function XUiPanelLuosaitaSection:InitDragArea()
+    self.PanelAreaScaleDrag.MaxScale = XMVCA.XMainLineLuosaita.EnumConst.MAX_SCALE
+    self.PanelAreaScaleDrag.MinScale = XMVCA.XMainLineLuosaita.EnumConst.MIN_SCALE
+end
+
+-- 初始化点位
+function XUiPanelLuosaitaSection:InitPositions()
+    -- 默认隐藏
+    local childCnt = self.PanelPosition.transform.childCount
+    local btnSkyGardenName = "BtnSkyGarden"
+    for i = 1, childCnt do
+        local childGo = self.PanelPosition.transform:GetChild(i - 1)
+        if childGo.gameObject.name ~= btnSkyGardenName then
+            childGo.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 -- 刷新点位
 function XUiPanelLuosaitaSection:RefreshPositions()
     local sectionInfo = self._Control:GetSectionInfo(self.SectionId)
     local posConfigs = self._Control:GetConfig():GetConfigPositionsBySectionId(self.SectionId)
     for _, posConfig in pairs(posConfigs) do
+        -- UI节点检测
+        local posTransform = self:GetPositionLinkGo(posConfig.UiNodeName)
+        if not posTransform then
+            goto CONTINUE
+        end
+        
         local posId = posConfig.Id
         local grid = self._GridPositions[posId]
         local posInfo = sectionInfo:GetPositionInfo(posId)
         
         -- 移除点位
         if not posInfo then
-            if grid then
-                grid.LinkGameObject.gameObject:SetActiveEx(false)
-                self:RemoveChildNode(grid)
-                self._GridPositions[posId] = nil
-                grid = nil
+            if grid and grid:IsNodeShow() then
+                grid:Hide()
             end
+            posTransform.gameObject:SetActiveEx(false)
             goto CONTINUE
             
         -- 点位类型变化，删除旧点位，加载新点位
@@ -154,15 +180,9 @@ function XUiPanelLuosaitaSection:RefreshPositions()
             self._GridPositions[posId] = nil
             grid = nil
         end
-        
-        -- UI节点检测
-        local posTransform = self:GetPositionLinkGo(posConfig.UiNodeName)
-        if not posTransform then
-            goto CONTINUE
-        end
-        posTransform.gameObject:SetActiveEx(true)
 
         -- 创建
+        posTransform.gameObject:SetActiveEx(true)
         if not grid then
             if posInfo:IsArmy() then
                 local prefabPath =  self._Control:GetConfig():GetConfigString("ArmyPrefab", 1)
@@ -192,6 +212,9 @@ function XUiPanelLuosaitaSection:RefreshPositions()
         self._GridPositions[posId] = grid
         :: CONTINUE ::
     end
+    
+    -- 清理缓存
+    sectionInfo:ClearLastPositionInfoDic()
 end
 
 -- 刷新空花入口按钮
@@ -215,6 +238,14 @@ function XUiPanelLuosaitaSection:RefreshSkyGardenButton()
     self._ConditionDesc = desc
     self.BtnSkyGarden:SetDisable(not passed)
     self.BtnSkyGarden:ShowTag(passed and taskFinished)
+    
+    -- 已完成隐藏特效
+    if passed and taskFinished then
+        self.FxUiBtnSkyGardenV42 = self.FxUiBtnSkyGardenV42 or self.BtnSkyGarden.transform:FindTransform("FxUiBtnSkyGardenV42")
+        if self.FxUiBtnSkyGardenV42 then
+            self.FxUiBtnSkyGardenV42.gameObject:SetActiveEx(false)
+        end
+    end
 end
 
 --region 角色移动
@@ -246,22 +277,30 @@ end
 function XUiPanelLuosaitaSection:PlayCharacterMove(startPosId, endPosId, time)
     self:ClearCharacterMoveNode()
     
-    local startUiNodeName = self._Control:GetConfig():GetPositionUiNodeName(startPosId)
     local endUiNodeName = self._Control:GetConfig():GetPositionUiNodeName(endPosId)
-    self.CharacterMoveNode = self:GetPositionLinkGo(startUiNodeName)
+    ---@type XUiGridLuosaitaMemberCharacter
+    local startGrid = self._GridPositions[startPosId]
+    self.CharacterMoveNode = startGrid.LinkGameObject
     local endLinkGo = self:GetPositionLinkGo(endUiNodeName)
 
     local moveStartPos = self.CharacterMoveNode.transform.localPosition -- 角色移动开始位置
     local moveAimPos = endLinkGo.transform.localPosition -- 角色移动结束位置
     self.CharacterMoveNodeOriginPos = moveStartPos
 
-    local focusAimPos = Vector3(moveAimPos.x - moveStartPos.x, moveAimPos.y - moveStartPos.y, moveAimPos.z - moveStartPos.z)
+    local focusAimPos = Vector3((moveAimPos.x - moveStartPos.x)/2, (moveAimPos.y + moveStartPos.y)/2, (moveAimPos.z - moveStartPos.z)/2)
     self:FocusWithTargetPos(focusAimPos, true, function()
         XLuaUiManager.SetMask(true)
         self.IsMapMoving = true
+        self:SetAreaDragEnable(false)
+        startGrid:ShowMovingEffect(true)
         self.CharacterMoveNode.transform:DOLocalMove(moveAimPos, time):SetEase(CSTween.Ease.OutQuad):OnComplete(function()
             XLuaUiManager.SetMask(false)
             self.IsMapMoving = false
+            self:UpdateAreaDragEnable()
+            
+            startGrid:ShowMovingEffect(false)
+            startGrid:Close()
+            self:ClearCharacterMoveNode()
             self:Refresh(true)
         end)
     end)
@@ -296,9 +335,6 @@ function XUiPanelLuosaitaSection:CheckOpenPopUpDocument()
     local docId = sectionInfo:GetUnUseDocId()
     if docId then
         XLuaUiManager.Open("UiMainLineLuosaitaPopupFileDetail", self.SectionId, docId, function()
-            self:SetAreaDragEnable(false)
-        end, function()
-            self:SetAreaDragEnable(true)
             self:OnPopUpDocumentClose()
         end)
         return true
@@ -308,6 +344,7 @@ end
 
 -- 文件弹窗关闭回调
 function XUiPanelLuosaitaSection:OnPopUpDocumentClose()
+    self.Parent:RefreshBtnReview()
     self:Refresh(true)
 end
 --endregion
@@ -316,7 +353,8 @@ end
 -- 检测播放阶段第一次满足条件激活的Enable动画
 function XUiPanelLuosaitaSection:CheckPlaySectionEnableAnim()
     local sectionConfig = self._Control:GetConfig():GetConfigSection(self.SectionId)
-    for i, uiNodeName in ipairs(sectionConfig.FocusPosUiNodeNames) do
+    for i, enableAnim in ipairs(sectionConfig.EnableAnims) do
+        local uiNodeName = sectionConfig.FocusPosUiNodeNames[i]
         local conditionId = sectionConfig.ConditionIds[i]
         local isReach = true -- 不填conditionId视为
         local tips
@@ -325,10 +363,11 @@ function XUiPanelLuosaitaSection:CheckPlaySectionEnableAnim()
         end
         if isReach and not self.ActivatedAnimDic[i] then
             self.ActivatedAnimDic[i] = true
-            local enableAnim = sectionConfig.EnableAnims[i]
             self:FocusWithUiNodeName(uiNodeName, true, function()
                 if not string.IsNilOrEmpty(enableAnim) then
+                    self:SetAreaDragEnable(false)
                     self:PlayAnimationWithMask(enableAnim, function()
+                        self:UpdateAreaDragEnable()
                         self:Refresh()
                     end)
                 end
@@ -341,8 +380,23 @@ end
 
 -- 加载阶段满足条件激活的Loop动画
 function XUiPanelLuosaitaSection:LoadSectionLoopAnim()
-    self.ActivatedAnimDic = {}
     local sectionConfig = self._Control:GetConfig():GetConfigSection(self.SectionId)
+    
+    -- 关卡战斗回来按照战斗前缓存的特效来播
+    self.ActivatedAnimDic = self.Parent:GetResumeActivatedAnimDic(self.SectionId)
+    if self.ActivatedAnimDic then
+        for i, _ in ipairs(sectionConfig.FocusPosUiNodeNames) do
+            local isReach = self.ActivatedAnimDic[i] == true
+            local loopAnim = sectionConfig.LoopAnims[i]
+            if isReach and not string.IsNilOrEmpty(loopAnim) then
+                self:PlayAnimation(loopAnim)
+            end
+        end
+        return
+    end
+    
+    -- 进入界面/切换阶段 重新计算达成条件进行播放
+    self.ActivatedAnimDic = {}
     for i, _ in ipairs(sectionConfig.FocusPosUiNodeNames) do
         local conditionId = sectionConfig.ConditionIds[i]
         local isReach = true -- 不填conditionId视为
@@ -359,13 +413,82 @@ function XUiPanelLuosaitaSection:LoadSectionLoopAnim()
         end
     end
 end
+
+function XUiPanelLuosaitaSection:GetActivatedAnimDic()
+    return self.ActivatedAnimDic
+end
 --endregion
 
-function XUiPanelLuosaitaSection:MoveToPos(curPosId, targetPosId)
-    XMVCA.XMainLineLuosaita:RequestMainLineLuosaitaMove(self.SectionId, curPosId, targetPosId, function()
-        self:Refresh(true)
-    end)
+--region 引导
+-- 引导支持：预览友军攻击敌军
+function XUiPanelLuosaitaSection:GuideAttackPreview(armyNodeName, enemyNodeName)
+    self:GuideClearAttackPreview()
+    
+    local arrow = self.Parent.Arrow
+    local target = self.PanelAreaScaleDrag.Target
+    local scale = target.transform.localScale
+    
+    self.GuideGridArmy = self:GetGridPositionByUiNodeName(armyNodeName)
+    self.GuideGridEnemy = self:GetGridPositionByUiNodeName(enemyNodeName)
+    arrow.gameObject:SetActiveEx(true)
+    local armyPos = self.GuideGridArmy.LinkGameObject.localPosition
+    local enemyPos = self.GuideGridEnemy.LinkGameObject.localPosition
+    local v2 = XLuaVector2.New((enemyPos.x - armyPos.x) * scale.x, (enemyPos.y - armyPos.y) * scale.y) -- 起点到终点的向量
+    local ADD_HEIGHT = 40 -- 由于箭头图片预留空白，这里增加箭头高度，指向敌军中心点
+    local height = XLuaVector2.Magnitude(v2) + ADD_HEIGHT -- 计算箭头高度
+    local rotationAngle = math.atan(v2.y, v2.x) * Mathf.Rad2Deg - 90
+    local rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward)
+    arrow.position = self.GuideGridArmy.LinkGameObject.position
+    arrow.sizeDelta = Vector2(arrow.sizeDelta.x, height)
+    arrow.rotation = rotation
+    self.GuideGridEnemy:ShowSelectEffect(true)
+
+    self.Parent:SetFight(self.GuideGridArmy.MemberData, self.GuideGridEnemy.MemberData)
 end
+
+-- 引导支持：清除友军攻击敌军预览
+function XUiPanelLuosaitaSection:GuideClearAttackPreview()
+    if self.GuideGridEnemy then
+        self.GuideGridEnemy:ShowSelectEffect(false)
+        self.GuideGridEnemy = nil
+    end
+    self.Parent.Arrow.gameObject:SetActiveEx(false)
+end
+
+-- 引导支持：友军攻击敌军
+function XUiPanelLuosaitaSection:GuideAttack(armyNodeName, enemyNodeName)
+    self:GuideClearAttackPreview()
+
+    local guideGridArmy = self:GetGridPositionByUiNodeName(armyNodeName)
+    local guideGridEnemy = self:GetGridPositionByUiNodeName(enemyNodeName)
+    local armyId = guideGridArmy:GetArmyId()
+    local armyPosId = guideGridArmy.MemberData:GetPosId()
+    local enemyPosId = guideGridEnemy.MemberData:GetPosId()
+    
+    -- 请求移动
+    XMVCA.XMainLineLuosaita:RequestMainLineLuosaitaMove(self.SectionId, armyPosId, enemyPosId, function()
+        -- 先播敌军死亡
+        guideGridEnemy:PlayAnimDead(function()
+            -- 播友军消失
+            guideGridArmy:PlayAnimDisEnable(function()
+                -- 刷新阶段
+                local CHECK_ANIM_WAIT_TIME = 500
+                self:Refresh(true, CHECK_ANIM_WAIT_TIME)
+                -- 播放友军出现动画
+                local grid = self:GetGridPosArmy(armyId)
+                if grid then
+                    grid:PlayAnimEnable()
+                end
+            end)
+        end)
+    end)
+
+    self.Parent:ClearTalk()
+    self.Parent:ClosePanelFight()
+    self:SetIsLastOperationEnemy(true)
+end
+
+--endregion
 
 function XUiPanelLuosaitaSection:GetGridBlocks()
     return self._GridBlocks
@@ -373,6 +496,27 @@ end
 
 function XUiPanelLuosaitaSection:GetGridMembers()
     return self._GridPositions
+end
+
+---@return XUiGridLuosaitaMemberArmy
+function XUiPanelLuosaitaSection:GetGridPosArmy(armId)
+    for _, grid in pairs(self._GridPositions) do
+        if grid:GetType() == XMVCA.XMainLineLuosaita.EnumConst.POS_TYPE.ARMY then
+            if armId == grid:GetArmyId() then
+                return grid
+            end
+        end
+    end
+end
+
+-- 通过ui挂点名称获取位置单位
+---@return XUiGridLuosaitaMember
+function XUiPanelLuosaitaSection:GetGridPositionByUiNodeName(uiNodeName)
+    for _, grid in pairs(self._GridPositions) do
+        if grid.LinkGameObject.name == uiNodeName then
+            return grid
+        end
+    end
 end
 
 -- 获取位置挂点的Go
@@ -394,12 +538,12 @@ end
 ---@return string
 function XUiPanelLuosaitaSection:GetFocusTargetUiNodeName()
     local sectionInfo =  self._Control:GetSectionInfo(self.SectionId)
-    local positionInfos = sectionInfo:GetPositionInfos()
     if sectionInfo:IsFinish() then
         return
     end
     
     -- 有未通关的关卡
+    local positionInfos = sectionInfo:GetPositionInfos()
     for _, posInfo in ipairs(positionInfos) do
         local posId = posInfo:GetPosId()
         if posInfo:IsStage() then
@@ -466,7 +610,7 @@ function XUiPanelLuosaitaSection:FocusWithTargetPos(targetPos, isAnim, cb)
 
     -- 根据拖拽范围调整聚焦位置
     local absWidth = target.rect.width * target.localScale.x - fixedArea.rect.width * fixedArea.localScale.x
-    local absHeight = fixedArea.rect.width * fixedArea.localScale.x - fixedArea.rect.height * fixedArea.localScale.y
+    local absHeight = target.rect.height * target.localScale.y - fixedArea.rect.height * fixedArea.localScale.y
     local maxFocusPosX = absWidth > 0 and absWidth / 2 or 0
     local maxFocusPosY = absHeight > 0 and absHeight / 2 or 0
     if focusX > maxFocusPosX then
@@ -497,7 +641,7 @@ function XUiPanelLuosaitaSection:FocusWithTargetPos(targetPos, isAnim, cb)
     target.transform:DOLocalMove(focusPos, animTime):OnComplete(function()
         XLuaUiManager.SetMask(false)
         self.IsMapMoving = false
-        self:SetAreaDragEnable(true)
+        self:UpdateAreaDragEnable()
         if cb then cb() end
     end)
 end
@@ -512,6 +656,12 @@ end
 
 function XUiPanelLuosaitaSection:IsDragOperation()
     return self.PanelAreaScaleDrag.DragTranslate.IsFingerDrag
+end
+
+-- 更新拖拽组件是否启用
+function XUiPanelLuosaitaSection:UpdateAreaDragEnable()
+    local isTopUi = XLuaUiManager.GetTopUiName() == "UiMainLineLuosaitaMain"
+    self:SetAreaDragEnable(isTopUi)
 end
 
 -- 设置拖拽组件是否启用

@@ -30,11 +30,15 @@ function XCharTes1011:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     end
 
     if buffId == 1010584 then
+        local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
+        if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+            return
+        end
         self._proxy:AbortAction(self._uuid, true)
         self._proxy:CastAction(self._uuid, 101131)
         self._proxy:AddTimerTask(0.5, function()--延迟0.5秒后，释放子弹
-            local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
-            if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+            local target2 = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
+            if not self._proxy:CheckActorExist(target2) then --检测目标是否存活
                 return
             end
             self._proxy:AbortAction(self._uuid, true)

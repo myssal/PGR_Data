@@ -33,16 +33,8 @@ function XRelinkCharBase:ScriptInit(isGainControl)
     self._attribRecordTimer = 0
     self._curLifeRatio = 0
 
-    -- CV相关
-    -- CV事件magic
-    self._cvEventMagics = {
-        PraiseCounterSuccess = 1000509,
-        LowLifeWarning = 1000511,
-    }
-
-    -- CV残血阈值
-    self._cvIsInLowLifeMode = false
-    self._cvLowLifeRatioThreshold = 0.3
+    -- 初始化CV
+    self:InitCV()
 
     -- 公共Npc
     self._publicNpc = nil
@@ -75,7 +67,7 @@ function XRelinkCharBase:Update(dt)
     self:ProcessChangeJumpState()
     --self:RebootCheckUpdate()
     self:UpdateRecordAttribute(dt)
-    self:UpdateCV()
+    self:UpdateCV(dt)
 end
 
 ---@param eventType number
@@ -102,7 +94,7 @@ end
 ---跳跃控制武器显隐
 function XRelinkCharBase:JumpWeaponHidShowCheck()
     local isJumping = self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) --当前是否在跳跃中
-    if self.lastActionIsJump and (not isJumping)then
+    if self.lastActionIsJump and (not isJumping) then
         self:OnExitJumpWeaponShow()
     end
 
@@ -329,15 +321,68 @@ end
 --endregion
 
 --region CV相关
-function XRelinkCharBase:UpdateCV()
-    local isLowLife = self._curLifeRatio <= self._cvLowLifeRatioThreshold
+function XRelinkCharBase:InitCV()
+    --- CV事件magic (CV事件是指，通过magic的同步特性通知在服务器运行的[关卡logic]脚本播放一些特定的互动语音)
+    self._cvEventMagics = {
+        PraiseCounterSuccess = 1000509,
+        LowLifeWarning = 1000511
+    }
 
+    -- CV残血阈值
+    --- 是否在残血状态下
+    self._cvIsInLowLifeMode = false
+    --- 残血的血量归一化阈值（必须0 - 1）
+    self._cvLowLifeRatioThreshold = 0.5
+
+    -- CV 救和被救相关
+    --[[
+        被救援逻辑：起身时，若有玩家参与了救助，且一定范围内存在其他玩家，则播放语音
+        救援逻辑：在开始救助他人时，确保
+            当前公共播音冷却不在CD（防俩倒地的人贴一起，救的时候连播两声）并且
+            对被救助目标的独立冷却（防止对同一目标多次播放）不在CD的话,
+            才能播放语音
+    ]]
+    --- 在倒地期间是否有玩家参与了救助
+    self._cvHasBeenRescuedByOther = false
+    --- 倒地起身时，检测该范围内是否存在玩家来决定是否需要播出语音
+    self._cvRescuedByOtherSuccessCheckRadius = 15
+    --- 自身救助其他倒地玩家时播出语音的公共冷却时间
+    self._cvRescueOtherPlayerPublicCd = 5
+    --- 自身救助其他倒地玩家时播出语音的公共冷却计时器
+    self._cvRescueOtherPlayerCdPublicTimer = 0
+    --- 自身救助其他倒地玩家时，对于每个角色播出语音的冷却时间
+    self._cvRescueOtherPlayerForEachCd = 5
+    --- 自身救助其他倒地玩家时，对于每个角色的救助冷却计时器
+    --- @type table<int, float>
+    self._cvRescueOtherPlayerForEachCdTimer = {}
+end
+
+function XRelinkCharBase:UpdateCV(dt)
+    --region 残血CV更新逻辑
+    local isLowLife = self._curLifeRatio <= self._cvLowLifeRatioThreshold
     if not self._cvIsInLowLifeMode and isLowLife then
         -- 由非残血进入残血状态
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._cvEventMagics.LowLifeWarning, 1)
     end
-
     self._cvIsInLowLifeMode = isLowLife
+    --endregion
+
+    --region 救助CV相关冷却更新
+    -- 防止浮点数不精确问题，统一到 -1 时才停止更新计时器
+
+    -- 公共救人CV冷却更新
+    if self._cvRescueOtherPlayerCdPublicTimer >= -1 then
+        self._cvRescueOtherPlayerCdPublicTimer = self._cvRescueOtherPlayerCdPublicTimer - dt
+    end
+
+    -- 对目标救人CV冷却更新
+    for playerUUID, timer in pairs(self._cvRescueOtherPlayerForEachCdTimer) do
+        if self._cvRescueOtherPlayerForEachCdTimer[playerUUID] >= -1 then
+            XLog.Debug(string.format("目标%d救助冷却%.2f", playerUUID, self._cvRescueOtherPlayerForEachCdTimer[playerUUID]))
+            self._cvRescueOtherPlayerForEachCdTimer[playerUUID] = self._cvRescueOtherPlayerForEachCdTimer[playerUUID] - dt
+        end
+    end
+    --endregion
 end
 --endregion
 
@@ -375,6 +420,7 @@ function XRelinkCharBase:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.NpcDamage)
     self._proxy:RegisterEvent(EWorldEvent.NpcCure)
 
+    self._proxy:RegisterEvent(EWorldEvent.OnNpcBeginRescue)
 
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCounterSuccess, self._uuid)  -- OnNpcCounterSuccess
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcAfterSyncCounterSuccess, self._uuid) -- OnNpcAfterSyncCounterSuccess
@@ -405,6 +451,13 @@ end
 
 function XRelinkCharBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     self:CheckDodgeEnergyAddBanRecover();
+    if launcherId ~= self._uuid then
+        return
+    end
+    local succeed, actionId, actionType = self._proxy:TryGetCurrentAction(self._uuid)
+    if succeed and actionType == 9 then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1200010)
+    end
 end
 
 function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, TargetSceneObjId, IsAbort)
@@ -620,8 +673,10 @@ function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainR
     end
 
     if chainLevel > 1 then
-        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.All)
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.ExcludeScriptController)
     end
+
+    self:ControlUltUI(UIControl.Off)
 end
 
 function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainEndNpcId)
@@ -636,10 +691,12 @@ function XRelinkCharBase:OnFullChainSkillEnd(gameplayActive, isInChain, chainRem
     if chainLevel == 2 then
         self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.NotifyFullChain, EAudioLuaFuncSyncType.All)
     end
+
+    self:ControlUltUI(UIControl.On)
 end
 
 function XRelinkCharBase:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
-    XLog.Warning("进入表演")
+    --XLog.Warning("进入表演")
     self:ControlFullChainUI(UIControl.Off)
 end
 
@@ -677,9 +734,12 @@ end
 
 function XRelinkCharBase:OnNpcMultiParryStart(launcherNpcUUID, targetNpcUUID, succeed)
     if targetNpcUUID ~= self._uuid then
+        -- 非多人弹刀角色，在多人弹刀触发后添加标记（用于处理角力与弹刀复用动作，弹刀流程需要打断效果）
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1000517,1) --buff标记持续3s，且仅处理支援qte
         return
     end
     self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.EnterMultiQTE, EAudioLuaFuncSyncType.All)
+
 end
 
 function XRelinkCharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
@@ -700,6 +760,29 @@ function XRelinkCharBase:OnSelfReviveEvent()
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000478,1)--复活无敌
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000477,1)--复活特效
     self._proxy:ApplyMagic(self._uuid,self._uuid,1000485)--去掉支援等待救援特效
+
+    -- 播放被救的语音
+    if self._cvHasBeenRescuedByOther then
+        -- 检测是否有其他玩家在范围内
+        local hasPlayerInRange = false
+        for key, player in ipairs(self._proxy:GetPlayerNpcList()) do
+            if player ~= self._uuid and self._proxy:CheckNpcDistance(self._uuid, player, self._cvRescuedByOtherSuccessCheckRadius) then
+                hasPlayerInRange = true
+                break
+            end
+        end
+
+        -- 播放被救的感谢语音
+        if hasPlayerInRange then
+            self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.RescuedByTeammate, EAudioLuaFuncSyncType.All)
+        end
+    end
+
+    -- 重置被救播CV的状态
+    self._cvHasBeenRescuedByOther = false
+    -- 重置救人播CV的状态
+    self._cvRescueOtherPlayerCdPublicTimer = 0
+    self._cvRescueOtherPlayerForEachCdTimer = {}
 end
 
 function XRelinkCharBase:OnNpcWaitRebootEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId)
@@ -738,12 +821,14 @@ function XRelinkCharBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, val
     end
 end
 
-function XRelinkCharBase:ControlFullChainUI(SwitchType)    --FullChain控制UI的方法
+function XRelinkCharBase:ControlFullChainUI(SwitchType)    --FullChain控制UI隐藏
     if SwitchType == UIControl.Off then
         self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,3)            --隐藏摇杆
         self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,3)         --隐藏右侧面板
         self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localNpc,3)              --隐藏目标面板
         self._proxy:SetLevelUiState(EFightUiType.CommonTip,self._localNpc,3)          --隐藏关卡面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonRollNumber,self._localNpc,3)          --隐藏伤害飘字
+        self._proxy:SetLevelUiState(EFightUiType.CommonBuff,self._localNpc,3)          --隐藏buff飘字
         self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localNpc,3)          --隐藏锁定面板
         self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,3)                --隐藏从菜单面板
         self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localNpc,3)          --隐藏能量条面板
@@ -754,6 +839,7 @@ function XRelinkCharBase:ControlFullChainUI(SwitchType)    --FullChain控制UI�
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localNpc,3)    --隐藏聊天轮盘
         self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localNpc,3)    --隐藏队友信息
         self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localNpc,3)    --隐藏任务
+        self._proxy:SetLevelUiState(EFightUiType.RelinkMechanicInfo,self._localNpc,3)    --隐藏机制进度
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,false)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,false)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,false)
@@ -776,18 +862,23 @@ function XRelinkCharBase:ControlFullChainUI(SwitchType)    --FullChain控制UI�
 
 
     elseif SwitchType == UIControl.On then
-        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,1)            --显示摇杆
-        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,1)         --显示右侧面板
-        self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localNpc,1)              --显示目标面板
-        self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localNpc,1)          --显示锁定面板
-        self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,1)                --显示从菜单面板
-        self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localNpc,1)          --显示能量条面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkTeamInfo,self._localNpc,1)            --显示队伍信息面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --显示玩法面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localNpc,1)     --显示DLC额外面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localNpc,1)    --显示聊天记录
-        self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localNpc,1)    --显示聊天轮盘
-        self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localNpc,1)    --显示队友信息
+        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,1)            --隐藏摇杆
+        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,1)         --隐藏右侧面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localNpc,1)              --隐藏目标面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonTip,self._localNpc,1)          --隐藏关卡面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonRollNumber,self._localNpc,1)          --隐藏伤害飘字
+        self._proxy:SetLevelUiState(EFightUiType.CommonBuff,self._localNpc,1)          --隐藏buff飘字
+        self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localNpc,1)          --隐藏锁定面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,1)                --隐藏从菜单面板
+        self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localNpc,1)          --隐藏能量条面板
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTeamInfo,self._localNpc,1)            --隐藏队伍信息面板
+        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --隐藏玩法面板
+        self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localNpc,1)     --隐藏DLC额外面板
+        self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localNpc,1)    --隐藏聊天记录
+        self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localNpc,1)    --隐藏聊天轮盘
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localNpc,1)    --隐藏队友信息
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localNpc,1)    --隐藏任务
+        self._proxy:SetLevelUiState(EFightUiType.RelinkMechanicInfo,self._localNpc,1)    --隐藏机制进度
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,true)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,true)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,true)
@@ -810,6 +901,90 @@ function XRelinkCharBase:ControlFullChainUI(SwitchType)    --FullChain控制UI�
     end
 end
 
+function XRelinkCharBase:ControlUltUI(SwitchType)    --大招控制UI隐藏
+    if SwitchType == UIControl.Off then
+        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,3)            --隐藏摇杆
+        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,3)         --隐藏右侧面板
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball4,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,false)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,false)
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localNpc,3)
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Focus,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball1,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball2,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball3,self._localNpc,3) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball4,self._localNpc,3)
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localNpc,3) 
+
+    elseif SwitchType == UIControl.On then
+        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,1)            --隐藏摇杆
+        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,1)         --隐藏右侧面板
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball4,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,true)
+        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,true)
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localNpc,1)
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Focus,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball1,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball2,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball3,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball4,self._localNpc,1) 
+        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localNpc,1)
+    end
+end
+
+function XRelinkCharBase:OnNpcBeginRescueEvent(npcUUID, npcPlaceId, npcKind, isPlayer, rescuerUUID)
+    -- 我开始被救
+    if npcUUID == self._uuid then
+        -- 如果没人救过我，则标记为有人救过了
+        if not self._cvHasBeenRescuedByOther then
+            self._cvHasBeenRescuedByOther = true
+        end
+    end
+
+    -- 我开始救人
+    if rescuerUUID == self._uuid then
+        -- 如果公共冷却还在转，则不给播
+        if self._cvRescueOtherPlayerCdPublicTimer >= 0 then
+            return
+        end
+
+        if self:ContainsKey(self._cvRescueOtherPlayerForEachCdTimer, npcUUID) then
+            -- 这个人最近被播过语音了，看看对他的冷却到了没
+            local timer = self._cvRescueOtherPlayerForEachCdTimer[npcUUID]
+            if timer >= 0 then
+                return
+            else
+                -- 冷却好了，播
+                self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.StartRescueTeammate, EAudioLuaFuncSyncType.All)
+                self._cvRescueOtherPlayerForEachCdTimer[npcUUID] = self._cvRescueOtherPlayerForEachCd
+                self._cvRescueOtherPlayerCdPublicTimer = self._cvRescueOtherPlayerPublicCd
+            end
+        else
+            -- 对这人没播过救助语音，播一下
+            self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.StartRescueTeammate, EAudioLuaFuncSyncType.All)
+            self._cvRescueOtherPlayerForEachCdTimer[npcUUID] = self._cvRescueOtherPlayerForEachCd
+            self._cvRescueOtherPlayerCdPublicTimer = self._cvRescueOtherPlayerPublicCd
+        end
+    end
+end
 --endregion
 
 --region 工具封装
@@ -827,6 +1002,22 @@ function XRelinkCharBase:TryGetPublicNpc()
     end
 
     return self._publicNpc
+end
+
+--- 检测KeyValuePair样的table是否包含指定key
+--- @param targetTable table @ 目标table
+--- @param targetKey @ 目标键
+--- @return boolean @ 是否包含key
+function XRelinkCharBase:ContainsKey(targetTable, targetKey)
+    local result = false
+    for key, val in pairs(targetTable) do
+        if key == targetKey then
+            result = true
+            break
+        end
+    end
+
+    return result
 end
 --endregion
 

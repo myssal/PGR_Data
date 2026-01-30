@@ -707,8 +707,8 @@ end
 
 --region 邀约任务
 ---@return XTableDlcInviteQuest
-function XBigWorldQuestModel:GetInviteQuestTemplate(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuest, id)
+function XBigWorldQuestModel:GetInviteQuestTemplate(id, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuest, id, noTips)
 end
 
 function XBigWorldQuestModel:GetInviteIds()
@@ -751,8 +751,8 @@ function XBigWorldQuestModel:GetInviteQuestRolePath(id)
     return t and t.RolePath
 end
 
-function XBigWorldQuestModel:GetInviteQuestRoleIcon(id)
-    local t = self:GetInviteQuestTemplate(id)
+function XBigWorldQuestModel:GetInviteQuestRoleIcon(id, noTips)
+    local t = self:GetInviteQuestTemplate(id, noTips)
     return t and t.RoleIcon
 end
 

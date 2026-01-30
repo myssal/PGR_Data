@@ -21,7 +21,7 @@ local StateEnum = {
 ---@type table<number, Vector3>
 local StatePos = {
     [StateEnum.Garden] = { x = 469.4728, y = 193.5831, z = 1007.583 },
-    [StateEnum.CinemaPlaza] = { x = 589.64, y = 194.09, z = 966.59 },
+    [StateEnum.CinemaPlaza] = {x=589.64, y=194.09, z=966.59 },
     [StateEnum.Platform] = { x = 536.1525, y = 195.5267, z = 960.2019 },
 }
 ---寻路路径
@@ -29,14 +29,18 @@ local StatePos = {
 local StatePath = {
     [StateEnum.Garden] = {
         StatePos[StateEnum.Garden],
-        { x = 485.3941, y = 193.6244, z = 1021.004 },
-        { x = 514.0338, y = 189.6201, z = 1006.527 },
-        { x = 528.831,  y = 189.7296, z = 1005.151 },
-        { x = 541.97,   y = 192.11,   z = 1003.13 },
-        { x = 550.5229, y = 192.19,   z = 1011.98 },
-        { x = 559.3719, y = 193.0384, z = 1011.054 },
-        { x = 578.3996, y = 194.0679, z = 1004.22 },
-        { x = 586.37,   y = 194.03,   z = 994.4137 },
+        {x=485.3941, y=193.6244, z=1021.004},
+        {x=509.7,    y=193.4,    z=1018.2},
+        {x=512.4915, y=189.6201, z=1007.088},
+        {x=514.0338, y=189.6201, z=1006.527},
+        {x=528.831,  y=189.7296, z=1005.151},
+        {x=541.97,   y=192.11,   z=1003.13},
+        {x=550.5229, y=192.19,   z=1011.98},
+        {x=559.3719, y=193.0384, z=1011.054},
+        {x=578.3996, y=194.0679, z=1004.22},
+        {x=586.37,   y=194.03,   z=994.4137},
+        {x=586.7,    y=193.4,    z=980.9},
+        {x=586.1,    y=193.9,    z=971.6},
         StatePos[StateEnum.CinemaPlaza],
     },
     [StateEnum.CinemaPlaza] = {
@@ -81,7 +85,7 @@ function XBiankaGardenState:InitStateConfig()
     self.StateConfig.StateEnum = StateEnum.Garden
     self.StateConfig.StateAnim = "Drama_Stand_02"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 1
+    self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -110,7 +114,7 @@ function XBiankaCinemaPlazaState:InitStateConfig()
     self.StateConfig.StateEnum = StateEnum.CinemaPlaza
     self.StateConfig.StateAnim = "Drama_Stand_01"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 2
+    self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -131,6 +135,12 @@ function XBiankaCinemaPlazaState:InitStateConfig()
         },
     }
 end
+
+function XBiankaCinemaPlazaState:PlayPerformAnim()
+    if self.StateConfig and self.StateConfig.StateAnim then
+        self._proxy:PlayNpcCustomPerformAnim(self._uuid, self.StateConfig.StateAnim, 0, 0, false, {x=0,y=0,z=0}, true)
+    end
+end
 --endregion
 
 
@@ -145,7 +155,7 @@ function XBiankaPlatformState:InitStateConfig()
     self.StateConfig.StateEnum = StateEnum.Platform
     self.StateConfig.StateAnim = "Drama_Stand_03"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 3
+    self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,

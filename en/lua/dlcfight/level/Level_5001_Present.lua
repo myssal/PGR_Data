@@ -12,7 +12,7 @@ function XLevel5001Present:Init()
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractStart)
     self._proxy:RegisterEvent(EWorldEvent.SceneObjectMoveStop)
     self._proxy:RegisterEvent(EWorldEvent.SceneObjectActionFinish)
-    
+
     --军备区小电梯
     self:InitElevator()
     --军备区入口电梯
@@ -25,19 +25,32 @@ function XLevel5001Present:Init()
     self:InitMovieDoor()
     --电影区广告
     self:InitMovieAdvertise()
+    --电影放映机
+    self:InitMoviePlay()
     --花园全息特效
     self:InitGardenMessage()
-    
     self:ElevatorEffect(1100029,1)
     self:ElevatorEffect(1100005,1)
     self:ElevatorEffect(1100028,1)
     self:ElevatorEffect(1100030,1)
+    --随机电影海报
+    self._MovieObjR = { 2200023, 2200038 }
+    self._MovieObjL = { 2200035, 2200026 }
+    self:RandomMovie(self._MovieObjR)
+    self:RandomMovie(self._MovieObjL)
+    --鲸鱼
+    self._WhalePlay = 2200050
+    self._WhalePlayCD = 34
+    self._WhalePlayTimer = 0
+    self._WhalePlaying = false
+    self:WhalePlay(self._WhalePlay, 9010)
 end
 
 ---@param dt number @ delta time
 function XLevel5001Present:Update(dt)
     --每帧更新逻辑
     self:UpdateDoorInfo(dt)
+    self:UpdateWhalePlay(dt)
 end
 
 ---@param eventType number
@@ -76,12 +89,13 @@ function XLevel5001Present:HandleEvent(eventType, eventArgs)
             self:OnMovieDoorTriggerExit(eventType, eventArgs)
         end
     end
-    
+
     --是玩家发起的交互
     if eventType == EWorldEvent.NpcInteractStart and self._proxy:IsPlayerNpc(eventArgs.LauncherId) then
         self:OnElevatorNpcInteractStart(eventType, eventArgs)
         self:OnZoneElevatorInteractStart(eventType, eventArgs)
         self:OnMovieAdvertiseNpcInteractStart(eventType, eventArgs)
+        self:OnMoviePlayerNpcInteractStart(eventType, eventArgs)
     end
     --移动机关停止
     if eventType == EWorldEvent.SceneObjectMoveStop then
@@ -92,35 +106,44 @@ function XLevel5001Present:HandleEvent(eventType, eventArgs)
     end
     --机关动作停止
     if eventType == EWorldEvent.SceneObjectActionFinish then
-        self:OnZoneElevatorSceneObjectActionFinish(eventType, eventArgs)
+        self:OnZoneElevatorEndMove(eventType, eventArgs)
         self:OnArmamentDoorSceneObjectActionFinish(eventType, eventArgs)
+        self:OnWhalePlaySceneObjectActionFinish(eventType, eventArgs)
+        self:OnMoviePlayerSceneObjectActionFinish(eventType, eventArgs)
     end
 end
 
 function XLevel5001Present:Terminate()
-    self:OnZoneElevatorEnd()
-    --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
+    self:OnZoneElevatorLeaveLevel()
 end
 
 --region 军备区电梯
-local EnterElevatorState = {
-    EnterStand = 0,
-    EnterLoop = 1,
-    LeaveStand = 2,
-    LeaveLoop = 3,
+local EZoneElevatorStandType = {
+    Down = 0,
+    Up = 1,
+}
+
+local EZoneElevatorState = {
+    Stand = 0,
+    Moving = 1,
+    Calling = 2,
 }
 
 function XLevel5001Present:InitZoneElevator()
     self._ArmamentElevator = {
         PlaceId = 1100069,
-        EnterElevatorState = EnterElevatorState.EnterStand,
-        AirWall_01 = 1100071,
-        AirWall_02 = 1100072,
-        CallElevator_01 = 1100001,
-        CallElevator_02 = 1100002,
-        InteractTrigger_01 = 1100061, ---离开军备区
-        InteractTrigger_02 = 1100062, ---进入军备区
-        PlayerInElevator = false, ---玩家在电梯中
+        State = EZoneElevatorState.Stand,
+        StandType = EZoneElevatorStandType.Down,
+        UpAirWall = 1100072,        --上层电梯空气墙
+        DownAirWall = 1100071,      --下层电梯空气墙
+        UpTrigger = 1100061,        --离开军备区触发点
+        DownTrigger = 1100062,      --前往军备区触发点
+        Up2DownCaller = 1100002,    --从军备区呼叫电梯触发点
+        Down2UpCaller = 1100001,    --从广场呼叫电梯触发点
+        GoDownActionId = 8004,      --离开军备区动画
+        GoUpActionId = 8003,        --前往军备区动画
+        PlayerInElevator = false,   --玩家在电梯中
+        Moving = false,             --电梯启动中
     }
     ---保底传送区域
     self.TpTrigger = {
@@ -131,77 +154,26 @@ function XLevel5001Present:InitZoneElevator()
     }
 
     self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",false)
-    self._proxy:LoadSceneObject(self._ArmamentElevator.AirWall_02)
+    self._proxy:LoadSceneObject(self._ArmamentElevator.UpAirWall)
+    self:RefreshZoneElevatorTriggerInteract()
 end
 
 function XLevel5001Present:OnZoneElevatorInteractStart(eventType, eventArgs)
-    if eventArgs.TargetPlaceId == self._ArmamentElevator.InteractTrigger_02 then
-        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",true)
-        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",true)
-        self._ArmamentElevator.EnterElevatorState = EnterElevatorState.EnterLoop
-        self._proxy:UnloadSceneObject(self._ArmamentElevator.AirWall_02)
-        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, 8003)
-        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.InteractTrigger_02, false)
-
-        self:OnZoneElevatorStart()
+    if eventArgs.TargetPlaceId == self._ArmamentElevator.DownTrigger then
+        self:TriggerZoneElevator(EZoneElevatorStandType.Down, EZoneElevatorStandType.Up)
     end
-    if eventArgs.TargetPlaceId == self._ArmamentElevator.InteractTrigger_01 then
-        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",true)
-        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",true)
-        self._ArmamentElevator.EnterElevatorState = EnterElevatorState.LeaveLoop
-        self._proxy:UnloadSceneObject(self._ArmamentElevator.AirWall_01)
-        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, 8004)
-        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.InteractTrigger_01, false)
-
-        self:OnZoneElevatorStart()
+    if eventArgs.TargetPlaceId == self._ArmamentElevator.UpTrigger then
+        self:TriggerZoneElevator(EZoneElevatorStandType.Up, EZoneElevatorStandType.Down)
     end
-
-    if eventArgs.TargetPlaceId == self._ArmamentElevator.CallElevator_02 then
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.LeaveStand then
-            self._ArmamentElevator.EnterElevatorState = EnterElevatorState.LeaveLoop
-            self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, 8004)
-        end
+    if eventArgs.TargetPlaceId == self._ArmamentElevator.Up2DownCaller then
+        self:CallZoneElevator(EZoneElevatorStandType.Up, EZoneElevatorStandType.Down)
     end
-    if eventArgs.TargetPlaceId == self._ArmamentElevator.CallElevator_01 then
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.EnterStand then
-            self._ArmamentElevator.EnterElevatorState = EnterElevatorState.EnterLoop
-            self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, 8003)
-        end
-    end
-end
-
-function XLevel5001Present:OnZoneElevatorSceneObjectActionFinish(eventType, eventArgs)
-    if self._ArmamentElevator.PlaceId == eventArgs.SceneObjectId then
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.EnterLoop then
-            self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",false)
-            self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",true)
-            self._proxy:UnloadSceneObject(self._ArmamentElevator.AirWall_02)
-            self._ArmamentElevator.EnterElevatorState = EnterElevatorState.LeaveStand
-            self._proxy:LoadSceneObject(self._ArmamentElevator.AirWall_01)
-        end
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.LeaveLoop then
-            self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",true)
-            self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",false)
-            self._proxy:UnloadSceneObject(self._ArmamentElevator.AirWall_01)
-            self._ArmamentElevator.EnterElevatorState = EnterElevatorState.EnterStand
-            self._proxy:LoadSceneObject(self._ArmamentElevator.AirWall_02)
-        end
-        self:OnZoneElevatorEnd()
+    if eventArgs.TargetPlaceId == self._ArmamentElevator.Down2UpCaller then
+        self:CallZoneElevator(EZoneElevatorStandType.Down, EZoneElevatorStandType.Up)
     end
 end
 
 function XLevel5001Present:OnZoneElevatorActorTriggerEnter(eventType, eventArgs)
-    if eventArgs.HostSceneObjectPlaceId == self._ArmamentElevator.InteractTrigger_02 then
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.EnterStand then
-            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.InteractTrigger_02, true)
-        end
-    end
-    if eventArgs.HostSceneObjectPlaceId == self._ArmamentElevator.InteractTrigger_01 then
-        if self._ArmamentElevator.EnterElevatorState == EnterElevatorState.LeaveStand then
-            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.InteractTrigger_01, true)
-        end
-    end
-    
     ---进入区域传送
     if eventArgs.HostSceneObjectPlaceId == self.TpTrigger.PlaceId_1 then
         self._proxy:TeleportWithBlackUi(eventArgs.EnteredActorUUID, self.TpTrigger.tpPos, self.TpTrigger.tpRot)
@@ -209,26 +181,139 @@ function XLevel5001Present:OnZoneElevatorActorTriggerEnter(eventType, eventArgs)
     if eventArgs.HostSceneObjectPlaceId == self.TpTrigger.PlaceId_2 then
         self._proxy:TeleportWithBlackUi(eventArgs.EnteredActorUUID, self.TpTrigger.tpPos, self.TpTrigger.tpRot)
     end
+
+    if eventArgs.HostSceneObjectPlaceId == self._ArmamentElevator.PlaceId then
+        if not self._ArmamentElevator.PlayerInElevator then
+            self._ArmamentElevator.PlayerInElevator = true
+            if self._ArmamentElevator.State == EZoneElevatorState.Moving then
+                self:ZoneElevatorClosePhoto()
+            end
+        end
+    end
 end
 
 function XLevel5001Present:OnZoneElevatorActorTriggerExit(eventType, eventArgs)
+    -- 防止在电梯过程中从地图传送出去拍照功能没有开启
     if eventArgs.HostSceneObjectPlaceId == self._ArmamentElevator.PlaceId then
-        self:OnZoneElevatorEnd()
+        if self._ArmamentElevator.PlayerInElevator then
+            self._ArmamentElevator.PlayerInElevator = false
+            if self._ArmamentElevator.State == EZoneElevatorState.Moving then
+                self:ZoneElevatorOpenPhoto()
+            end
+        end
     end
 end
 
-function XLevel5001Present:OnZoneElevatorStart()
-    if not self._ArmamentElevator.PlayerInElevator then
-        self._ArmamentElevator.PlayerInElevator = true
-        self._proxy:SetSystemFuncEntryEnable(ESystemFunctionType.Photo, false)
+---启动军备区电梯
+function XLevel5001Present:TriggerZoneElevator(fromStandType, toStandType)
+    if self._ArmamentElevator.StandType == toStandType then
+        return
+    end
+
+    if self._ArmamentElevator.StandType == EZoneElevatorStandType.Down then
+        self._proxy:UnloadSceneObject(self._ArmamentElevator.UpAirWall)
+        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, self._ArmamentElevator.GoUpActionId)
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.DownTrigger, false)
+    else
+        self._proxy:UnloadSceneObject(self._ArmamentElevator.DownAirWall)
+        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, self._ArmamentElevator.GoDownActionId)
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.UpTrigger, false)
+    end
+
+    self:SwitchZoneElevatorState(EZoneElevatorState.Moving)
+end
+
+---呼叫军备区电梯
+function XLevel5001Present:CallZoneElevator(fromStandType, toStandType)
+    if self._ArmamentElevator.StandType == toStandType then
+        return
+    end
+
+    if self._ArmamentElevator.StandType == EZoneElevatorStandType.Down then
+        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, self._ArmamentElevator.GoUpActionId)
+    else
+        self._proxy:DoSceneObjectAction(self._ArmamentElevator.PlaceId, self._ArmamentElevator.GoDownActionId)
+    end
+    self:SwitchZoneElevatorState(EZoneElevatorState.Calling)
+end
+
+function XLevel5001Present:OnZoneElevatorEndMove(eventType, eventArgs)
+    if self._ArmamentElevator.PlaceId ~= eventArgs.SceneObjectId then
+        return
+    end
+
+    self:SwitchZoneElevatorState(EZoneElevatorState.Stand)
+end
+
+---刷新电梯选项显示
+function XLevel5001Present:RefreshZoneElevatorTriggerInteract()
+    if self._ArmamentElevator.State ~= EZoneElevatorState.Stand then
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.DownTrigger, false)
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.DownTrigger, false)
+        return
+    end
+    if self._ArmamentElevator.StandType == EZoneElevatorStandType.Down then
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.DownTrigger, true)
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.UpTrigger, false)
+    else
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.DownTrigger, false)
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._ArmamentElevator.UpTrigger, true)
     end
 end
 
-function XLevel5001Present:OnZoneElevatorEnd()
-    if self._ArmamentElevator.PlayerInElevator then
-        self._ArmamentElevator.PlayerInElevator = false
-        self._proxy:SetSystemFuncEntryEnable(ESystemFunctionType.Photo, true)
+function XLevel5001Present:SwitchZoneElevatorState(state)
+    if self._ArmamentElevator.State == state then
+        return
     end
+    local lastState = self._ArmamentElevator.State
+    self._ArmamentElevator.State = state
+
+    -- 状态切换时
+    if state == EZoneElevatorState.Stand then
+        -- 由Moving到Stand 且 玩家在电梯 时刷新拍照功能
+        if lastState == EZoneElevatorState.Moving and self._ArmamentElevator.PlayerInElevator then
+            self:ZoneElevatorOpenPhoto()
+        end
+        -- 设置
+        local down2Up = self._ArmamentElevator.StandType == EZoneElevatorStandType.Down
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",not down2Up)
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",down2Up)
+        if down2Up then
+            self._ArmamentElevator.StandType = EZoneElevatorStandType.Up
+            self._proxy:UnloadSceneObject(self._ArmamentElevator.UpAirWall)
+            self._proxy:LoadSceneObject(self._ArmamentElevator.DownAirWall)
+        else
+            self._ArmamentElevator.StandType = EZoneElevatorStandType.Down
+            self._proxy:UnloadSceneObject(self._ArmamentElevator.DownAirWall)
+            self._proxy:LoadSceneObject(self._ArmamentElevator.UpAirWall)
+        end
+    elseif state == EZoneElevatorState.Moving then
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",true)
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",true)
+        if self._ArmamentElevator.PlayerInElevator then
+            self:ZoneElevatorClosePhoto()
+        end
+    elseif state == EZoneElevatorState.Calling then
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_01",true)
+        self._proxy:SetSceneObjectNodesActive(self._ArmamentElevator.PlaceId,"Wall_02",true)
+    end
+    -- 刷新电梯选项
+    self:RefreshZoneElevatorTriggerInteract()
+end
+
+function XLevel5001Present:OnZoneElevatorLeaveLevel()
+    -- 离开Level之后如果是在电梯中恢复拍照功能
+    if self._ArmamentElevator.State == EZoneElevatorState.Moving then
+        self:ZoneElevatorOpenPhoto()
+    end
+end
+
+function XLevel5001Present:ZoneElevatorClosePhoto()
+    self._proxy:SetSystemFuncEntryEnable(ESystemFunctionType.Photo, false)
+end
+
+function XLevel5001Present:ZoneElevatorOpenPhoto()
+    self._proxy:SetSystemFuncEntryEnable(ESystemFunctionType.Photo, true)
 end
 --endregion
 
@@ -578,6 +663,60 @@ function XLevel5001Present:OnMovieAdvertiseNpcInteractStart(eventType, eventArgs
 end
 --endregion
 
+--region 电影放映机
+local EMoviePlayerState = {
+    Play = 1,
+    Stop = 2,
+    Changed = 3,
+}
+
+function XLevel5001Present:InitMoviePlay()
+    self._MoviePlayer = {}
+    self._MoviePlayer.PlaceId = 2200025
+    self._MoviePlayer.State = EMoviePlayerState.Play
+    self._MoviePlayer.InAnim = false
+    self._MoviePlayer.StateAction = { 
+        [EMoviePlayerState.Play] = 9006,
+        [EMoviePlayerState.Stop] = 9008,
+        [EMoviePlayerState.Changed] = 9007,
+    }
+end
+
+function XLevel5001Present:OnMoviePlayerNpcInteractStart(eventType, eventArgs)
+    if eventArgs.TargetActorType == ETargetActorType.SceneObject 
+        and eventArgs.TargetPlaceId == self._MoviePlayer.PlaceId
+        and not self._MoviePlayer.InAnim
+    then
+        self._MoviePlayer.InAnim = true
+        if self._MoviePlayer.State == EMoviePlayerState.Play then
+            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._MoviePlayer.PlaceId, false)
+            self._proxy:DoSceneObjectAction(self._MoviePlayer.PlaceId, self._MoviePlayer.StateAction[self._MoviePlayer.State])
+            self._MoviePlayer.State = EMoviePlayerState.Stop
+        elseif self._MoviePlayer.State == EMoviePlayerState.Stop then
+            self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._MoviePlayer.PlaceId, false)
+            self._proxy:DoSceneObjectAction(self._MoviePlayer.PlaceId, self._MoviePlayer.StateAction[self._MoviePlayer.State])
+            self._MoviePlayer.State = EMoviePlayerState.Changed
+            self._proxy:AddTimerTask(4, function()
+                self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._MoviePlayer.PlaceId, true)
+                self._proxy:DoSceneObjectAction(self._MoviePlayer.PlaceId, self._MoviePlayer.StateAction[self._MoviePlayer.State])
+                self._MoviePlayer.InAnim = false
+                self._MoviePlayer.State = EMoviePlayerState.Play
+            end)
+        end
+    end
+end
+
+function XLevel5001Present:OnMoviePlayerSceneObjectActionFinish(eventType, eventArgs)    --鲸鱼自动播放结束事件响应
+    if eventArgs.SceneObjectId == self._MoviePlayer.PlaceId then
+        if not self._MoviePlayer.InAnim then
+            return
+        end
+        self._MoviePlayer.InAnim = false
+        self._proxy:SetActorInteractableComponentEnableByPlaceId(ETargetActorType.SceneObject, self._MoviePlayer.PlaceId, true)
+    end
+end
+--endregion
+
 --region 电影自动门
 ---@class XMoveDoorInfo 电影自动门
 ---@field State number 门状态，取值：EMovieDoorState
@@ -615,7 +754,7 @@ function XLevel5001Present:SetMovieDoorOpen(doorInfo, state, isFrontTrigger, ope
     if state == doorInfo.State then
         return
     end
-    
+
     doorInfo.State = state
     doorInfo.IsFrontTrigger = isFrontTrigger
     local isOpen = doorInfo.State == EMovieDoorState.Open
@@ -716,6 +855,37 @@ function XLevel5001Present:OnGardenMessageActorTriggerExit(eventType, eventArgs)
     if eventArgs.HostSceneObjectPlaceId == self._GardenTrigger2 then
         for _, HideObj in pairs(self._GardenMessage2) do
             self._proxy:UnloadSceneObject(HideObj)
+        end
+    end
+end
+
+function XLevel5001Present:RandomMovie(list)
+    self._proxy:LoadSceneObject(list[self._proxy:Random(1, #list)])
+end
+
+function XLevel5001Present:WhalePlay(ObjPlaceId, Action1) --鲸鱼自动播放器
+    self._WhalePlaying = true
+    self._proxy:DoSceneObjectAction(ObjPlaceId, Action1)
+    self._proxy:BindSceneObjectEffect(ObjPlaceId, "FxSkyGardenArtDR02", { x = 0, y = 0, z = 0 }, { x = 0, y = 0, z = 0 }, { x = 1, y = 1, z = 1 })
+end
+ 
+
+function XLevel5001Present:UpdateWhalePlay(dt)    --鲸鱼自动播放器
+    if not self._WhalePlaying then
+        self._WhalePlayTimer = self._WhalePlayTimer + dt
+        if self._WhalePlayTimer >= self._WhalePlayCD then
+            self:WhalePlay(self._WhalePlay, 9010)
+        end
+    end
+end
+
+function XLevel5001Present:OnWhalePlaySceneObjectActionFinish(eventType, eventArgs)    --鲸鱼自动播放结束事件响应
+    if eventArgs.SceneObjectId == self._WhalePlay then
+        if eventArgs.ActionId == 9010 then
+            self._proxy:DoSceneObjectAction(self._WhalePlay, 9009)
+        elseif eventArgs.ActionId == 9009 then
+            self._WhalePlayTimer = 0
+            self._WhalePlaying = false
         end
     end
 end

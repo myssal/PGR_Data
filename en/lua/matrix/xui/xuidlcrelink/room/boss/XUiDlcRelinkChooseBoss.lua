@@ -47,6 +47,7 @@ function XUiDlcRelinkChooseBoss:InitChapterGrid()
     self.BossGridList = {}
     local chapterIds = self._Control:GetActivityChapterIds()
     if XTool.IsTableEmpty(chapterIds) then
+        XLog.Error("XUiDlcRelinkChooseBoss:InitChapterGrid error: chapterIds is empty")
         return
     end
 

@@ -116,11 +116,25 @@ function XEcologyCharAIBase:TryInitAIEnterState()
         end
     end
 
+    if haveSave then
+        -- by v4.2 xf反馈触发太慢, 每次进入时自动跳转到下一状态
+        if haveSavePath and curStateEnum == self.FindPathStateEnum then
+            curStateEnum = findPathStartEnum + 1
+        else
+            curStateEnum = curStateEnum + 1
+        end
+        -- 到达最大状态枚举后从1开始
+        if curStateEnum >= self.FindPathStateEnum then
+            curStateEnum = 1
+        end
+        self._proxy:SetNpcPosition(self._uuid, self.StateTargetPosDict[curStateEnum], false)
+    end
+
     --XLog.Debug("[脚本: "..self._proxy.Id.."]读取AI数据:", 
     --        "haveSave: ", haveSave, "curStateEnum: ", curStateEnum,
     --        "haveSavePath: ", haveSavePath, "findPathStartEnum: ", findPathStartEnum,
     --        "haveSavePathIndex: ", haveSavePathIndex, "findPathTargetIndex: ", findPathTargetIndex)
-    
+
     self._stateMachine:SwitchState(curStateEnum)
     -- 没有保存寻路目标状态就以默认状态
     if curStateEnum == self.FindPathStateEnum then
@@ -165,6 +179,10 @@ function XEcologyCharAIBase:UpdateCheckLostWay(dt)
         local state = self._stateMachine:GetState(self.FindPathStateEnum)
         -- 移动暂停时不检查脱离路径
         if not state._isMove then
+            -- 停下时重置脱离路径计时
+            if self._curCheckLostWatTimer > 0 then
+                self._curCheckLostWatTimer = 0
+            end
             return
         end
     end

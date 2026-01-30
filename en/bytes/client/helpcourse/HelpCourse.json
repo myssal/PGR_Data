@@ -1305,11 +1305,11 @@
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo2.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo3.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo4.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo5.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpInvertCardGame2Topo6.png"
+            "Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp01.png",
+            "Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp02.png",
+            "Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp03.png",
+            "Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp04.png",
+            "Assets/Product/Texture/Image/UiInvertCardGame/UiInvertCardHelp05.png"
         ],
         "TextGroupIds": [
             1008301,
@@ -1574,7 +1574,7 @@
         "Id": 10102,
         "Name": "Special Dispatch: Wasteland Merchant",
         "Function": "AreaWarMain",
-        "Describe": "Wasteland Merchant",
+        "Describe": "Coordinated Simulation",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -1618,7 +1618,7 @@
         "Id": 10103,
         "Name": "Special Dispatch: Wasteland Merchant",
         "Function": "AreaWarSpecialRole",
-        "Describe": "Wasteland Merchant",
+        "Describe": "Coordinated Simulation",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -1662,7 +1662,7 @@
         "Id": 10104,
         "Name": "Special Dispatch: Wasteland Merchant",
         "Function": "AreaWarJingHua",
-        "Describe": "Wasteland Merchant",
+        "Describe": "Coordinated Simulation",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -1706,7 +1706,7 @@
         "Id": 10105,
         "Name": "Special Dispatch: Wasteland Merchant",
         "Function": "AreaWarHangUp",
-        "Describe": "Wasteland Merchant",
+        "Describe": "Coordinated Simulation",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -1720,7 +1720,7 @@
         "Id": 10106,
         "Name": "Special Dispatch: Wasteland Merchant",
         "Function": "UiAreaWarBoss",
-        "Describe": "Wasteland Merchant",
+        "Describe": "Coordinated Simulation",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -1828,16 +1828,20 @@
     },
     {
         "Id": 10111,
-        "Name": "Springtime Tavern",
+        "Name": "Nightmare Roulette",
         "Function": "DiceGameActivityHelp",
         "Describe": "Dice Minigame Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame01.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame02.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame03.png",
             "Assets/Product/Texture/Image/UiHelp/UiHelpDiceGame04.png"
+        ],
+        "TextGroupIds": [
+            1011101,
+            1011102,
+            1011103
         ]
     },
     {
@@ -2901,10 +2905,10 @@
             "Assets/Product/Texture/Image/UiConnectingLine/UiConnectingLineHelp01.png",
             "Assets/Product/Texture/Image/UiConnectingLine/UiConnectingLineHelp02.png",
             "Assets/Product/Texture/Image/UiConnectingLine/UiConnectingLineHelp03.png",
-            "Assets/Product/Texture/Image/UiConnectingLine/UiConnectingLineHelp04.png",
-            1018401
+            "Assets/Product/Texture/Image/UiConnectingLine/UiConnectingLineHelp04.png"
         ],
         "TextGroupIds": [
+            1018401,
             1018402,
             1018403,
             1018404
@@ -3049,19 +3053,31 @@
         "Name": "Crouching Cat, Hidden Rat",
         "Function": "DlcMouseHunterHelp",
         "Describe": "Crouching Cat, Hidden Rat Image Guide",
-        "IsShowCourse": 1,
+        "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer01.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer02.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer03.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer04.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer05.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer06.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer07.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer08.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer09.png",
-            "Assets/Product/Texture/Image/UiHelp/UiHelpDlcMultiPlayer010.png"
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp01.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp02.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp03.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp04.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp05.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp06.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp07.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp08.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp09.png",
+            "Assets/Product/Texture/Image/UiDlcMultiPlayer/UiDlcMultiPlayerHelp10.png"
+        ],
+        "TextGroupIds": [
+            1019301,
+            1019302,
+            1019303,
+            1019304,
+            1019305,
+            1019306,
+            1019307,
+            1019308,
+            1019309,
+            1019310
         ]
     },
     {
@@ -3296,7 +3312,7 @@
         "Id": 21000,
         "Name": "Rules",
         "Function": "UiReCallActivity",
-        "Describe": "参加条件\\n指挥官等级≥40级\\n\\n回归指挥官\\n指挥官等级≥40级且连续未登录天数≥30天\\n\\n活动时间\\n2025/11/01 10:00:00 ～ 2025/12/23 05:00:00\\n邀请及任务时间\\n2025/11/01 10:00:00 ～ 2025/12/23 05:00:00\\n\\n活动说明\\n1.活动期间，收到邀请的回归指挥官登录游戏并成功输入邀请码后，被邀请指挥官可领取相应的奖励\\n2.邀请码可重复使用（最多同时邀请10名玩家），受邀回归的指挥官在游戏中完成指定活跃任务，邀请指挥官可获得相应奖励\\n3.邀请指挥官与被邀请指挥官可通过首次分享或下载保存图片后，领取对应奖励（仅限一次）\\n4.回归指挥官输入邀请码后，不可解除绑定更换邀请码\\n5.活动期间指挥官仅能参加一次活动，活动结束后奖励将无法领取",
+        "Describe": "Requirement\\nCommandant ≥Lv.40\\n\\nReturning Commandant\\nCommandant ≥Lv.40 and Consecutive Offline Days ≥30\\n\\nEvent Time\\n11/01/2025 10:00 - 12/23/2025 05:00 (UTC)\\nInvite and Mission Time\\n11/01/2025 10:00 - 12/23/2025 05:00 (UTC)\\n\\nEvent Info\\n1. During the event, Commandants who get invited and come back can claim rewards after logging in to the game and entering the invite code.\\n2. Each invite code can be used up to 10 times. Returning Commandants can complete designated Activity Missions for rewards.\\n3. Both the inviter and the invitee can each receive a reward the first time they share or download the picture.\\n4. Returning Commandants cannot unbind or change the invite code after entering it.\\n5. Each Commandant can only participate in the event once. Once the event ends, you'll not be able to claim the rewards.",
         "IsShowCourse": 2,
         "SubIds": [],
         "TextGroupIds": [
@@ -3354,9 +3370,9 @@
     },
     {
         "Id": 10211,
-        "Name": "Wishing Upon a Star",
+        "Name": "A Flash of Love",
         "Function": "PokerGuessing2Help",
-        "Describe": "Wishing Upon a Star",
+        "Describe": "A Flash of Love",
         "IsShowCourse": 3,
         "SubIds": [],
         "ImageAsset": [
@@ -3410,7 +3426,7 @@
     },
     {
         "Id": 10214,
-        "Name": "Debugging Frenzy",
+        "Name": "Rescue Frenzy",
         "Function": "PacMan2Help",
         "Describe": "抢险敲敲敲图文教学",
         "IsShowCourse": 3,
@@ -3458,13 +3474,14 @@
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help04.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help05.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help06.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help07.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help08.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help09.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help09.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help13.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help14.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help15.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help15.png",
             "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help10.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help11.png",
-            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help12.png"
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help16.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help17.png",
+            "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5V4P0Help18.png"
         ],
         "TextGroupIds": [
             1021601,
@@ -3478,8 +3495,9 @@
             1021609,
             1021610,
             1021611,
-            1021612,
-            1021613
+            1021613,
+            1021614,
+            1021615
         ]
     },
     {
@@ -3546,6 +3564,60 @@
             1022003,
             1022004,
             1022005
+        ]
+    },
+    {
+        "Id": 10222,
+        "Name": "Resistance Deduction Details",
+        "Function": "UiSkillDetailsHelp",
+        "Describe": "Tank/Breaker Image Guide",
+        "IsShowCourse": 3,
+        "SubIds": [],
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiHelp/UiHelpPojia.png"
+        ],
+        "TextGroupIds": [
+            1022201
+        ]
+    },
+    {
+        "Id": 10223,
+        "Name": "Hyperlink Array",
+        "Function": "DlcRelink",
+        "Describe": "relink图文教程",
+        "IsShowCourse": 3,
+        "SubIds": [],
+        "ImageAsset": [
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp1.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp2.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp3.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp4.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp5.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp6.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp7.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp8.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp9.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp10.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp11.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp12.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp13.png",
+            "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp14.png"
+        ],
+        "TextGroupIds": [
+            1022301,
+            1022302,
+            1022303,
+            1022304,
+            1022305,
+            1022306,
+            1022307,
+            1022308,
+            1022309,
+            1022310,
+            1022311,
+            1022312,
+            1022313,
+            1022314
         ]
     },
     {

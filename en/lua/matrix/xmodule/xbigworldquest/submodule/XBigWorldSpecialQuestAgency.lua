@@ -178,8 +178,8 @@ end
 --endregion 环境任务 
 
 --region 配置相关
-function XBigWorldQuestAgency:GetInviteQuestRoleIcon(inviteId)
-    return self._Model:GetInviteQuestRoleIcon(inviteId)
+function XBigWorldQuestAgency:GetInviteQuestRoleIcon(inviteId, noTips)
+    return self._Model:GetInviteQuestRoleIcon(inviteId, noTips)
 end
 
 function XBigWorldQuestAgency:IsInviteQuest(questId)

@@ -728,6 +728,22 @@
         ]
     },
     {
+        "Id": 53501,
+        "Priority": 53501,
+        "Ignore": 0,
+        "Desc": "引导破甲型/装甲型介绍",
+        "GuideType": 1,
+        "CompleteId": 53501,
+        "ActiveUi": "UiCharacterSystemV2P6",
+        "CheckNodeActive": "PanelOwned",
+        "RewardId": 0,
+        "GroupId": 53501,
+        "ConditionId": [
+            84100112,
+            863136
+        ]
+    },
+    {
         "Id": 51201,
         "Priority": 51201,
         "Ignore": 1,
@@ -8833,7 +8849,7 @@
     {
         "Id": 63531,
         "Priority": 63531,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 Guide \"Hide and Seek\" 2.0 First Entry",
         "GuideType": 1,
         "CompleteId": 63531,
@@ -8848,7 +8864,7 @@
     {
         "Id": 63532,
         "Priority": 63532,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 Guide \"Hide and Seek\" 2.0 Guide Matchmaking",
         "GuideType": 1,
         "CompleteId": 63532,
@@ -8863,7 +8879,7 @@
     {
         "Id": 63533,
         "Priority": 63533,
-        "Ignore": 0,
+        "Ignore": 1,
         "Desc": "v3.2 Guide \"Hide and Seek\" 2.0 Guide Skill Switch",
         "GuideType": 1,
         "CompleteId": 63533,
@@ -10093,6 +10109,7 @@
         "GuideType": 1,
         "CompleteId": 63929,
         "ActiveUi": "UiTheatre5BattleShop",
+        "CheckNodeActive": "BtnUpgrade",
         "RewardId": 0,
         "GroupId": 63929,
         "ConditionId": [
@@ -11047,6 +11064,273 @@
             862112,
             774800,
             863127
+        ]
+    },
+    {
+        "Id": 64411,
+        "Priority": 64411,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink主界面",
+        "GuideType": 1,
+        "CompleteId": 64411,
+        "ActiveUi": "UiDlcRelinkMain",
+        "RewardId": 0,
+        "GroupId": 64411,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64412,
+        "Priority": 64412,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink试玩关",
+        "GuideType": 1,
+        "CompleteId": 64412,
+        "ActiveUi": "UiDlcRelinkRoom",
+        "RewardId": 0,
+        "GroupId": 64412,
+        "ConditionId": [
+            862112,
+            774800,
+            863140
+        ]
+    },
+    {
+        "Id": 64413,
+        "Priority": 64413,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink房间界面",
+        "GuideType": 1,
+        "CompleteId": 64413,
+        "ActiveUi": "UiDlcRelinkRoom",
+        "CheckNodeActive": "GridAdd",
+        "RewardId": 0,
+        "GroupId": 64413,
+        "ConditionId": [
+            862112,
+            774800,
+            863139,
+            863140
+        ]
+    },
+    {
+        "Id": 64414,
+        "Priority": 64414,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink角色选择",
+        "GuideType": 1,
+        "CompleteId": 64414,
+        "ActiveUi": "UiDlcRelinkCharacter",
+        "RewardId": 0,
+        "GroupId": 64414,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64415,
+        "Priority": 64415,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink装备选择",
+        "GuideType": 1,
+        "CompleteId": 64415,
+        "ActiveUi": "UiDlcRelinkEquipBag",
+        "RewardId": 0,
+        "GroupId": 64415,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64416,
+        "Priority": 64416,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink创建房间",
+        "GuideType": 1,
+        "CompleteId": 64416,
+        "ActiveUi": "UiDlcRelinkRoom",
+        "CheckNodeActive": "BtnOpen",
+        "RewardId": 0,
+        "GroupId": 64416,
+        "ConditionId": [
+            862112,
+            774800,
+            863140
+        ]
+    },
+    {
+        "Id": 64417,
+        "Priority": 64417,
+        "Ignore": 0,
+        "Desc": "v4.2 引导relink装备选择左右槽",
+        "GuideType": 1,
+        "CompleteId": 64417,
+        "ActiveUi": "UiDlcRelinkEquipBag",
+        "RewardId": 0,
+        "GroupId": 64417,
+        "ConditionId": [
+            862112,
+            774800,
+            863138
+        ]
+    },
+    {
+        "Id": 64421,
+        "Priority": 64421,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线简介",
+        "GuideType": 1,
+        "CompleteId": 64421,
+        "ActiveUi": "UiMainLineLuosaitaMain",
+        "RewardId": 0,
+        "GroupId": 64421,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64422,
+        "Priority": 64422,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线介绍机制",
+        "GuideType": 1,
+        "CompleteId": 64422,
+        "ActiveUi": "UiMainLineLuosaitaMain",
+        "RewardId": 0,
+        "GroupId": 64422,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64423,
+        "Priority": 64423,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线操作",
+        "GuideType": 1,
+        "CompleteId": 64423,
+        "ActiveUi": "UiMainLineLuosaitaMain",
+        "RewardId": 0,
+        "GroupId": 64423,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64424,
+        "Priority": 64424,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线获得文件",
+        "GuideType": 1,
+        "CompleteId": 64424,
+        "ActiveUi": "UiMainLineLuosaitaPopupFileDetail",
+        "RewardId": 0,
+        "GroupId": 64424,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64425,
+        "Priority": 64425,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线文件后续",
+        "GuideType": 1,
+        "CompleteId": 64425,
+        "ActiveUi": "UiMainLineLuosaitaMain",
+        "RewardId": 0,
+        "GroupId": 64425,
+        "ConditionId": [
+            862112,
+            774800,
+            863137
+        ]
+    },
+    {
+        "Id": 64426,
+        "Priority": 64426,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线获得增益",
+        "GuideType": 1,
+        "CompleteId": 64426,
+        "ActiveUi": "UiMainLineLuosaitaPopupFileDetail",
+        "RewardId": 0,
+        "GroupId": 64426,
+        "ConditionId": [
+            862112,
+            774800,
+            1007204
+        ]
+    },
+    {
+        "Id": 64427,
+        "Priority": 64427,
+        "Ignore": 0,
+        "Desc": "v4.2 引导罗塞塔主线下一阶段",
+        "GuideType": 1,
+        "CompleteId": 64427,
+        "ActiveUi": "UiMainLineLuosaitaMain",
+        "CheckNodeActive": "UiMainLineLuosaitaPhase02(Clone)",
+        "RewardId": 0,
+        "GroupId": 64427,
+        "ConditionId": [
+            862112,
+            774800,
+            1007206
+        ]
+    },
+    {
+        "Id": 64431,
+        "Priority": 64431,
+        "Ignore": 0,
+        "Desc": "v4.2 引导躲猫猫3.0 首次进入",
+        "GuideType": 1,
+        "CompleteId": 64431,
+        "ActiveUi": "UiDlcMultiPlayerRoomCute",
+        "RewardId": 0,
+        "GroupId": 64431,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64432,
+        "Priority": 64432,
+        "Ignore": 0,
+        "Desc": "v4.2 引导躲猫猫3.0 技能选择",
+        "GuideType": 1,
+        "CompleteId": 64432,
+        "ActiveUi": "UiDlcMultiPlayerRoomCute",
+        "RewardId": 0,
+        "GroupId": 64432,
+        "ConditionId": [
+            862112,
+            774800
+        ]
+    },
+    {
+        "Id": 64441,
+        "Priority": 64441,
+        "Ignore": 0,
+        "Desc": "v4.2 引导众志行征驻扎",
+        "GuideType": 1,
+        "CompleteId": 64441,
+        "ActiveUi": "UiGuildWarStageDetail",
+        "CheckNodeActive": "PanelStay",
+        "RewardId": 0,
+        "GroupId": 64441,
+        "ConditionId": [
+            862112,
+            774800
         ]
     },
     {

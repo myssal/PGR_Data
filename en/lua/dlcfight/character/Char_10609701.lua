@@ -19,7 +19,7 @@ local StateEnum = {
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Port] = {x=527.9, y=195.5, z=957.1},
+    [StateEnum.Port] = {x=533.1, y=195.5, z=959.5},
     [StateEnum.Cinema] = {x=599.0862,y=194.2651, z=984.3744},
     [StateEnum.Garden] = {x=499.9398, y=189.6071, z=1004.228},
 }
@@ -28,6 +28,7 @@ local StatePos = {
 local StatePath = {
     [StateEnum.Port] = {
         StatePos[StateEnum.Port],
+        {x=563.5,y=190.8,z=957.4},
         {x=560.2,y=191.4,z=971.1},
         {x=541.3,y=192.2,z=992.7},
         {x=600.3,y=194.1,z=993.5},
@@ -36,6 +37,7 @@ local StatePath = {
     },
     [StateEnum.Cinema] = {
         StatePos[StateEnum.Cinema],
+        {x=603.8,y=194.1,z=993.4},
         {x=602.1,y=194.1,z=997.6},
         {x=600.3,y=194.1,z=993.5},
         {x=541.3,y=192.2,z=992.7},

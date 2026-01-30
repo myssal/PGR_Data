@@ -442,6 +442,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementNameById(id)
     return config.Name
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementProgressTitleById(id)
+    local config = self:GetBigWorldCourseCoreElementConfigById(id)
+
+    return config.ProgressTitle
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseCoreElementBackgroundById(id)
     local config = self:GetBigWorldCourseCoreElementConfigById(id)
 

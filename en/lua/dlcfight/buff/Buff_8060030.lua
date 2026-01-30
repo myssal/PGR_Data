@@ -8,13 +8,13 @@ local XBuffScript8060030 = XDlcScriptManager.RegBuffScript(8060030, "XBuffScript
 
 function XBuffScript8060030:Ctor()
     self.magicId = 8060031 --增伤BUFF
-    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
 end
 
-function XBuffScript8060030:Init()
+function XBuffScript8060030:ScriptInit(isGainControl)
     --初始化
-    Base.Init(self)
+    Base.ScriptInit(self,isGainControl)
     ------------配置------------
+    self.magicLevel=1 --等新接口直接获取自己的BUFF等级
     self.hasBuff=false
     self.hasLevel=false
     ------------执行------------

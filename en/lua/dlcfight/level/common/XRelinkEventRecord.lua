@@ -4,7 +4,7 @@ local XRelinkEventRecord = XClass(nil, "XRelinkEventRecord")
 function XRelinkEventRecord:Ctor(proxy)
     self._proxy = proxy --脚本代理对象，通过它来调用战斗程序开放的函数接口。
 end
-function XRelinkEventRecord:Init(Porxy, LevelName)
+function XRelinkEventRecord:Init(Proxy, LevelName)
     self._levelName = LevelName
     -- self._data ={
     --     MakeDamageData = {
@@ -46,13 +46,15 @@ function XRelinkEventRecord:Init(Porxy, LevelName)
         Qtes = 133016,                      --QTE                    --无
         CounterData = 133017,               --拼刀成功
         ClashFailCount = 133018,            --拼刀失败次数          --无 
-        FullChain_2 = 133019,               --触发2人fullchain     --无了 
+        FullChain_2 = 133019,               --触发2人fullchain
         FullChain_3 = 133020,               --触发3人fullchain
         WrestleTimes = 133021,              --角力次数
-        TeamWorkSkillTimes = 133022,         --极限技释放次数
-        DragonDpsCheckTimes= 133023,         --白龙DPS检测通过次数
+        TeamWorkSkillTimes = 133022,        --极限技释放次数
+        DragonDpsCheckTimes= 133023,        --白龙DPS检测通过次数
         OverDriveTimes = 133024,            --进入OD次数
         DragonDpsCheckFailTimes = 133025,   --白龙DPS检测失败次数
+        MonsterLostLife = 133026,            --怪物死亡剩余血量百分比
+        IsPlayerWin = 133027                     --玩家是否胜利
     }
 
     self._data = {
@@ -70,12 +72,13 @@ function XRelinkEventRecord:Init(Porxy, LevelName)
         --团队项目
         BreakCount = 0,                     --Break次数
         LinkTimes = 0,                      --破韧次数
-        FullChain_2 = 0,                    --触发2人fullchain     --无
+        FullChain_2 = 0,                    --触发2人fullchain
         FullChain_3 = 0,                   --触发3人fullchain
         DragonDpsCheckTimes = 0,             --白龙DPS检测通过次数
         DragonDpsCheckFailTimes = 0,          --白龙DPS检测失败次数
         OverDriveTimes = 0,                 --进入OD次数
         MultiGuardTimes = 0,               --多人参与弹刀
+        IsPlayerWin = 0                    --玩家是否胜利，胜利1，失败0
     }
 
     self._QteSkill = {
@@ -95,7 +98,6 @@ function XRelinkEventRecord:Init(Porxy, LevelName)
         [105274]= true,
         [105768]= true,
         [105787]= true,
-        [105773]= true,
         [1051096]= true,
         [105360]= true,
         [105860]= true,
@@ -103,19 +105,19 @@ function XRelinkEventRecord:Init(Porxy, LevelName)
 
     self._playerIdDictionary = {}
 
-    Porxy:RegisterEvent(EWorldEvent.NpcDamage)                                     --事件注册：NPC伤害
-    Porxy:RegisterEvent(EWorldEvent.NpcCure)                                       --事件注册：NPC治疗
-    Porxy:RegisterEvent(EWorldEvent.NpcDie)                                        --事件注册：NPC死亡
-    Porxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)                       --事件注册：Fullchain
-    Porxy:RegisterEvent(EWorldEvent.NpcWrestleStart)                            --事件注册：角力成功
-    Porxy:RegisterEvent(EWorldEvent.NpcMultiParrySucceed)                          --事件注册：多人弹刀成功
-    Porxy:RegisterEvent(EWorldEvent.NpcWaitReboot)                                 --事件注册：进入复活
-    Porxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)                              --事件注册：怪物break
-    Porxy:RegisterEvent(EWorldEvent.NpcBrokenAfter)                               --事件注册：怪物破韧
-    Porxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                    --事件注册：上buff 用于白龙DPS检测通过/单人弹刀事件广播
-    Porxy:RegisterEvent(EWorldEvent.NpcTeamWorkSkillCast)                          --事件注册：极限技释放次数-
-    Porxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)                             --事件注册：进入OD
-    Porxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)                            --事件注册：释放技能
+    Proxy:RegisterEvent(EWorldEvent.NpcDamage)                                     --事件注册：NPC伤害
+    Proxy:RegisterEvent(EWorldEvent.NpcCure)                                       --事件注册：NPC治疗
+    Proxy:RegisterEvent(EWorldEvent.NpcDie)                                        --事件注册：NPC死亡
+    Proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)                       --事件注册：Fullchain
+    Proxy:RegisterEvent(EWorldEvent.NpcWrestleStart)                            --事件注册：角力成功
+    Proxy:RegisterEvent(EWorldEvent.NpcMultiParrySucceed)                          --事件注册：多人弹刀成功
+    Proxy:RegisterEvent(EWorldEvent.NpcWaitReboot)                                 --事件注册：进入复活
+    Proxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)                              --事件注册：怪物break
+    Proxy:RegisterEvent(EWorldEvent.NpcBrokenAfter)                               --事件注册：怪物破韧
+    Proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                    --事件注册：上buff 用于白龙DPS检测通过/单人弹刀事件广播
+    Proxy:RegisterEvent(EWorldEvent.NpcTeamWorkSkillCast)                          --事件注册：极限技释放次数-
+    Proxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)                             --事件注册：进入OD
+    Proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)                            --事件注册：释放技能
 
 end
 
@@ -133,7 +135,6 @@ function XRelinkEventRecord:AddPlayerNpc(playerId, uuid)        --初始化所�
     self._playerIdDictionary[uuid] = playerId
     self._data.TeamWorkSkillTimes[uuid] = 0
 end
-
 
 function XRelinkEventRecord:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcDamage then     --伤害事件
@@ -154,9 +155,20 @@ function XRelinkEventRecord:HandleEvent(eventType, eventArgs)
             self._data.Deaths[eventArgs.NpcId] = self._data.Deaths[eventArgs.NpcId] + 1
         end
 
-    elseif  eventType == EWorldEvent.CastFullChainFinalSkill then  --3人FullChain完成
-            self._data.FullChain_3 = self._data.FullChain_3 + 1
+    elseif  eventType == EWorldEvent.CastFullChainFinalSkill then  --FullChain完成
 
+        if eventArgs.ChainLevel == 3 then
+            self._data.FullChain_3 = self._data.FullChain_3 + 1
+        end
+        if eventArgs.ChainLevel == 2 then
+            self._data.FullChain_2 = self._data.FullChain_2 + 1
+        end
+        for uuid, _ in pairs(eventArgs.ChainNpcList) do
+            if self._data.FullChain[eventArgs.ChainNpcList[uuid]] ~= nil then
+                self._data.FullChain[eventArgs.ChainNpcList[uuid]] = self._data.FullChain[eventArgs.ChainNpcList[uuid]] + 1
+                XLog.Debug("UUID是"..eventArgs.ChainNpcList[uuid].."的玩家，chain次数+1")
+            end
+        end
     elseif  eventType == EWorldEvent.NpcWrestleStart then  --角力成功
         if self._data.WrestleTimes[eventArgs.TargetUUID] ~= nil then
             self._data.WrestleTimes[eventArgs.TargetUUID] = self._data.WrestleTimes[eventArgs.TargetUUID] + 1
@@ -241,7 +253,17 @@ function XRelinkEventRecord:SetResultData(Proxy)
         Proxy:SetFightResultCustomData(playerId, self._resultDataKey.OverDriveTimes, self._data.OverDriveTimes) --133024 OD次数
         Proxy:SetFightResultCustomData(playerId, self._resultDataKey.MultiGuardTimes, self._data.MultiGuardTimes)  --133008 多人弹刀
         Proxy:SetFightResultCustomData(playerId, self._resultDataKey.DragonDpsCheckFailTimes, self._data.DragonDpsCheckFailTimes) --133025 白龙DPS检测失败
+        Proxy:SetFightResultCustomData(playerId, self._resultDataKey.FullChain_2, self._data.FullChain_2) --133019 双人FC参与
+        
+        if Proxy:CheckLevelMemoryInt(133026) == true then
+            Proxy:SetFightResultCustomData(playerId, self._resultDataKey.MonsterLostLife, Proxy:GetLevelMemoryInt(133026)) --战斗失败，怪物已损失血量百分比
+            XLog.Debug("玩家"..playerId.."   怪物损失血量:"..Proxy:GetLevelMemoryInt(133026))
+        end
 
+        if Proxy:CheckLevelMemoryInt(133027) == true then
+            Proxy:SetFightResultCustomData(playerId, self._resultDataKey.IsPlayerWin, Proxy:GetLevelMemoryInt(133027)) --战斗结果传值
+            XLog.Debug("玩家"..playerId.."   胜利情况:"..Proxy:GetLevelMemoryInt(133027))
+        end
 
         XLog.Debug("玩家"..playerId.."   造成伤害:"..damage)
         XLog.Debug("玩家"..playerId.."   抗伤:"..takeOnDamage)
@@ -250,14 +272,17 @@ function XRelinkEventRecord:SetResultData(Proxy)
         XLog.Debug("玩家"..playerId.."   单人弹刀次数:"..counter)
         XLog.Debug("玩家"..playerId.."   死亡次数:"..deaths)
         XLog.Debug("玩家"..playerId.."   角力次数:"..wrestle)
-        XLog.Debug("玩家"..playerId.."   FullChain次数:"..self._data.FullChain_3)
+        XLog.Debug("玩家"..playerId.."   参与chain次数"..fullchain)
+        XLog.Debug("玩家"..playerId.."   3人FullChain次数:"..self._data.FullChain_3)
+        XLog.Debug("玩家"..playerId.."   2人FullChain次数:"..self._data.FullChain_2)
         XLog.Debug("玩家"..playerId.."   极限技次数:"..teamWorkSkillTimes)
         XLog.Debug("玩家"..playerId.."   QTE次数:"..qte)
         XLog.Debug("玩家"..playerId.."   OD次数:"..self._data.OverDriveTimes)
         XLog.Debug("玩家"..playerId.."   破韧次数:"..self._data.BreakCount)
         XLog.Debug("玩家"..playerId.."   Break次数:"..self._data.LinkTimes)
         XLog.Debug("玩家"..playerId.."   多人弹刀:"..self._data.MultiGuardTimes)
-
+        
+        
     end 
 end
 

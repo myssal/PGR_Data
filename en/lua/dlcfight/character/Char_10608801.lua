@@ -72,7 +72,7 @@ function XLuosaitaGardenState:InitStateConfig()
         },
         [EEcologyBubbleType.Near] = {
             Name = "301002",
-            TriggerDistance = 6,
+            TriggerDistance = 2.5,
             TriggerCD = 2,
             LoopTime = 3,
         },
@@ -102,8 +102,9 @@ function XLuosaitaGardenState:OnNpcInteractStart(eventArgs)
         return
     end
     self:PlayPerformAnim()
-    self:UpdateOptionActive()
     self.InteractTriggerCount = self.InteractTriggerCount + 1
+    self:UpdateOptionActive()
+
 end
 --endregion
 

@@ -49,9 +49,8 @@ end
 
 --region 配置获取
 function XUiAccumulateExpendShopMain:GetCurActivityConfig()
-    self.ShopDataEntity = self._Control:GetModel():GetAccumulateExpendShop()
-    local configId      = self.ShopDataEntity:GetActivityId()
-    self.ActivityConfig = self._Control:GetModel():GetAccumulateExpendShopActivityConfig(configId)
+    self.ShopDataEntity = self._Control:GetAccumulateExpendShopModel()
+    self.ActivityConfig = self.ShopDataEntity:GetActivityConfigs()
     self.ShopId         = self.ActivityConfig.ShopId
     self.IsNextDay      = self.ShopDataEntity:IsSign()
 end
@@ -75,6 +74,8 @@ function XUiAccumulateExpendShopMain:InitView()
     self.RImgGold:SetRawImage(goldIcon)
     self.RImgGold1:SetRawImage(goldIcon)
     self.TxtNum.text = self.ActivityConfig.ItemExchangeRate
+    self.HongkaNum.text = self.ActivityConfig.ItemExchangeRate
+
     self:HideBubble()
 end
 
@@ -85,10 +86,12 @@ function XUiAccumulateExpendShopMain:RefreshAccumemlateDataTxt()
         self.GridReward = self.GridReward or XUiGridCommon.New(self, self.Grid256New)
         self.GridReward:Refresh(rewardItems[1])
         self.PanelDailyReward.gameObject:SetActiveEx(true)
+        self.SignBtn:ShowReddot(true)
     else
         self.PanelDailyReward.gameObject:SetActiveEx(false)
+        self.SignBtn:ShowReddot(false)
     end
-    self.HongkaNum.text = self.ShopDataEntity:GetTotalConsumeCount()
+    -- self.HongkaNum.text = self.ShopDataEntity:GetTotalConsumeCount()
     self.CoinNum.text   = self.ShopDataEntity:GetConvertedCount()
     self.TxtMax.gameObject:SetActiveEx(self.ShopDataEntity:GetConvertedCount() >= self.ActivityConfig.ShopItemMaxCount)
 end
@@ -116,9 +119,14 @@ function XUiAccumulateExpendShopMain:_RegisterButtonClicks()
     self.BtnMainUi:AddEventListener(handler(self, XLuaUiManager.RunMain))
     self.BtnClose:AddEventListener(handler(self, self.HideBubble))
     self.BtnTips:AddEventListener(handler(self, self.ShowBubble))
+    self.BtnHelp:AddEventListener(handler(self, self.ShowHelp))
     self.SignBtn:AddEventListener(function()
         self._Control:AccumulateExpendShopSign()
     end)
+end
+
+function XUiAccumulateExpendShopMain:ShowHelp()
+    XLuaUiManager.Open("UiAccumulateExpendShopLog")
 end
 
 --region 商品展示
@@ -208,13 +216,13 @@ function XUiAccumulateExpendShopMain:GetTomorrowTime()
 end
 
 function XUiAccumulateExpendShopMain:CheckTimeEnd()
-    local configId = self._Control:GetModel():GetAccumulateExpendShop():GetActivityId()
+    local configId = self._Control:GetAccumulateExpendShopModel():GetActivityId()
     if configId == 0 then
         XUiManager.TipText("ActivityMainLineEnd")
         XLuaUiManager.RunMain()
         return
     end
-    local config = self._Control:GetModel():GetAccumulateExpendShopActivityConfig(configId)
+    local config = self.ShopDataEntity:GetActivityConfigs()
     if not config or not XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
         XUiManager.TipText("ActivityMainLineEnd")
         XLuaUiManager.RunMain()

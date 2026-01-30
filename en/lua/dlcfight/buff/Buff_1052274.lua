@@ -3,12 +3,14 @@ local Base = require("Buff/BuffBase/XBuffBase")
 local XBuffScript1052274 = XDlcScriptManager.RegBuffScript(1052274, "XBuffScript1052274", Base)
 
 --效果说明：添加时给予七实核心值*ShieldCoe*最大生命值的全伤害护盾，在buff移除时移除
-function XBuffScript1052274:Init()--初始化
-    Base.Init(self)
+function XBuffScript1052274:ScriptInit(isGainControl)--初始化
+    Base.ScriptInit(self, isGainControl)
     self.ShieldCoe = 0.001
     -----------------------------配置------------------------
     --XLog.Warning("盾斧切换剑盾护盾buff添加")
-    self:ShieldCal()
+    if not isGainControl then
+        self:ShieldCal()
+    end
 end
 
 ---@param dt number @ delta time 

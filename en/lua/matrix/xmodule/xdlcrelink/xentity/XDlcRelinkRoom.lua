@@ -17,7 +17,8 @@ function XDlcRelinkRoom:CloseFightUiLoading()
 end
 
 function XDlcRelinkRoom:OnDisconnect()
-    XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
+    -- 断线后，打开界面没有意义，所以覆盖父类方法
+    --XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
 end
 
 function XDlcRelinkRoom:OnRoomLeaderTimeOut()
@@ -34,6 +35,36 @@ end
 
 function XDlcRelinkRoom:OnCustomEnterTargetRoom()
     XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
+end
+
+function XDlcRelinkRoom:OnEnterWorld()
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupPlayerInvite")
+    XLuaUiManager.SafeClose("UiDlcRelinkCharacter")
+    XLuaUiManager.SafeClose("UiDlcRelinkCharacterOther")
+    XLuaUiManager.SafeClose("UiDlcRelinkEquipBag")
+    XLuaUiManager.SafeClose("UiDlcRelinkEquipReform")
+    XLuaUiManager.SafeClose("UiDlcRelinkEquipDecompose")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupEquipCompose")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupEquipAttributeDetail")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupEquipPresets")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupCharacterAttributeDetail")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupRename")
+    XLuaUiManager.SafeClose("UiDlcRelinkBubbleEquipDetail")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupCommon")
+    XLuaUiManager.SafeClose("UiDlcRelinkToastCommon")
+    XLuaUiManager.SafeClose("UiDlcRelinkToastCommonSmall")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupItemDetail")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupInvitation")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupResearch")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupSwitchCareer")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupExchangeWheel")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupSkillDetail")
+    XLuaUiManager.SafeClose("UiDlcRelinkLvReward")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupGetReward")
+    XLuaUiManager.SafeClose("UiDlcRelinkShopItem")
+    XLuaUiManager.SafeClose("UiDlcRelinkEncyclopedia")
+    XLuaUiManager.SafeClose("UiDlcRelinkPopupChooseAttribute")
 end
 
 return XDlcRelinkRoom

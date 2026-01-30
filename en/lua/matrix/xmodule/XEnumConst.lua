@@ -1305,7 +1305,14 @@ XEnumConst = {
         StoryLayoutBgType = { -- 好感度界面背景类型
             Default = 1, -- 默认旧版
             Style3_4 = 2, --3.4新增样式
-        }
+        },
+        CameraAnimStatus = {
+            Play = 1,
+            Pause = 2,
+            Resume = 3,
+            Close = 4,
+            Destory = 5,
+        },
     },
     CONNECTING_LINE = {
         OPERATION_TYPE = {

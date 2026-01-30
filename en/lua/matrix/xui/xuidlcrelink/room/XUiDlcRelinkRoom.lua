@@ -212,6 +212,10 @@ function XUiDlcRelinkRoom:RefreshButtonState()
         end
         self.BtnOpen.gameObject:SetActiveEx(isLeader)
         self:RefreshAutoMatchButton()
+        if isLeader then
+            -- 检查引导
+            XDataCenter.GuideManager.CheckGuideOpen()
+        end
     else
         local isMatching = XMVCA.XDlcRoom:IsMatching()
         self:SwitchButtonRightState(isMatching and ButtonRightState.Matching or ButtonRightState.Match)
@@ -372,6 +376,7 @@ function XUiDlcRelinkRoom:OnEnterRoom()
     self:RefreshMultiPlayerChar()
     self:RefreshButtonState()
     self:RefreshPanelBoss()
+    self:CheckShowMechanismTeach()
 end
 
 function XUiDlcRelinkRoom:OnKickOutRoom()
@@ -419,6 +424,7 @@ end
 ---@param roomData XDlcRoomData
 ---@param changeFlags { IsWorldIdChange : boolean, IsAutoMatchChange :boolean, IsAbilityChange : boolean }
 function XUiDlcRelinkRoom:OnRoomInfoChange(roomData, changeFlags)
+    self:RefreshMultiPlayerChar()
     self:RefreshPanelBoss()
     self:RefreshButtonState()
 end
@@ -481,7 +487,11 @@ function XUiDlcRelinkRoom:OnBtnTaskClick()
 end
 
 function XUiDlcRelinkRoom:OnBtnChatClick()
-    XUiHelper.OpenUiChatServeMain(false, ChatChannelType.Room, ChatChannelType.World)
+    if XMVCA.XDlcRoom:IsInRoom() then
+        XUiHelper.OpenUiChatServeMain(false, ChatChannelType.Room, ChatChannelType.World)
+    else
+        XUiHelper.OpenUiChatServeMain(false, ChatChannelType.World)
+    end
 end
 
 function XUiDlcRelinkRoom:OnBtnInviteClick()
@@ -542,6 +552,13 @@ function XUiDlcRelinkRoom:OnBtnFightClick()
     -- 队伍未全部准备
     if not team:IsAllReady() then
         self._Control:OpenCommonTipText("RoomWaitAllReadyTips")
+        return
+    end
+
+    -- 仓库是否已满
+    local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
+    if curCount >= maxCount then
+        self._Control:OpenCommonTipCode(XCode.RelinkEquipBagIsFull)
         return
     end
 
@@ -711,6 +728,7 @@ end
 function XUiDlcRelinkRoom:OnBtnExpClick()
     XLuaUiManager.Open("UiDlcRelinkPopupResearch", function()
         self:RefreshPanelExp()
+        self:RefreshBtnTask()
     end)
 end
 
@@ -723,6 +741,10 @@ end
 --region 机制教学
 
 function XUiDlcRelinkRoom:CheckShowMechanismTeach()
+    -- 引导中不弹
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
     local levelId = self.PanelBossNode.LevelId
     if not XTool.IsNumberValid(levelId) then
         return

@@ -20,6 +20,7 @@ function XBigWorldMessageModel:OnInit()
     self._MessageReadRecord = false
 
     self._IsShieldUnReadMessage = false
+    self._IsShieldMessageTip = false
 
     self:_InitTableKey()
 end
@@ -198,7 +199,7 @@ function XBigWorldMessageModel:UpdateAllMessageData(messages)
                 if messageData.State ~= XEnumConst.BWMessage.MessageState.Finish then
                     local messageType = self:GetBigWorldMessageTypeById(messageId)
 
-                    if messageType == XEnumConst.BWMessage.MessageType.ForcePlay then
+                    if messageType ~= XEnumConst.BWMessage.MessageType.Normal then
                         self._ForceMessageQueue:Enqueue(messageData)
                     end
 
@@ -267,6 +268,14 @@ end
 
 function XBigWorldMessageModel:GetIsShieldUnReadMessage()
     return self._IsShieldUnReadMessage
+end
+
+function XBigWorldMessageModel:SetIsShieldMessageTip(isShield)
+    self._IsShieldMessageTip = isShield or false
+end
+
+function XBigWorldMessageModel:GetIsShieldMessageTip()
+    return self._IsShieldMessageTip
 end
 
 function XBigWorldMessageModel:SetMessageRecord(messageId)

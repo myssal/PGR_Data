@@ -9,6 +9,7 @@ local EmptyVector3 = { x=0, y=0, z=0 }
 ---@field TriggerId number 触发器Id, 用以气泡和靠近等
 ---@field RegisterWorldEventList table<string> 该状态监听的事件
 ---@field BubbleDict table<number, XAiBubbleInfo> 气泡配置字典, key = EEcologyBubbleType, value = 气泡配置
+---@field IgnoreCharCollider bool 进入状态后是否要忽略玩家碰撞
 ---@field PathBubbleName string 寻路气泡
 ---@field PathTargetPosDict table<number, Vector3> 寻路目标点字典, Key = 状态枚举, value = 坐标
 
@@ -26,6 +27,9 @@ function XEcologyCharAIBaseState:OnStateEnter(lastStateEnum)
     end
     self.StateEnum = self.StateConfig.StateEnum
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.CurStateEnum, self.StateConfig.StateEnum)
+    if self.StateConfig.IgnoreCharCollider then
+        self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetLocalPlayerSelfNpcId(),true)
+    end
     self:RegisterWorldEvent()
     self:InitAiBubble()
     self:UpdateOptionActive()
@@ -36,6 +40,9 @@ end
 ---状态进入时
 ---@param nextStateEnum number 下个状态
 function XEcologyCharAIBaseState:OnStateLeave(nextStateEnum)
+    if self.StateConfig.IgnoreCharCollider then
+        self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetLocalPlayerSelfNpcId(),false)
+    end
     self:UnRegisterWorldEvent()
 end
 
@@ -201,17 +208,17 @@ function XEcologyCharAIBaseState:UpdateAiBubble(dt)
     local distance = 0
     local triggerBubbleType = EEcologyBubbleType.None
     local curBubbleInfo = self._bubbleDict[self._curPlayBubbleType]
-    
+
     for bubbleType, bubbleInfo in pairs(self._bubbleDict) do
         if bubbleInfo.TriggerDistance > playerDistance then
-            if distance == 0 or distance < bubbleInfo.TriggerDistance then
+            if distance == 0 or distance > bubbleInfo.TriggerDistance then
                 distance = bubbleInfo.TriggerDistance
                 triggerBubbleType = bubbleType
             end
         end
     end
     -- 离开范围之后气泡照常播放不计入CD
-    if triggerBubbleType == EEcologyBubbleType.None and 
+    if triggerBubbleType == EEcologyBubbleType.None and
             self._curPlayBubbleType ~= EEcologyBubbleType.None and
             curBubbleInfo ~= nil and
             curBubbleInfo.State == EEcologyBubbleState.Playing
@@ -251,6 +258,16 @@ end
 
 ---@private
 function XEcologyCharAIBaseState:SetCurBubbleType(bubbleType)
+    if self._curPlayBubbleType == bubbleType then
+        return
+    end
+    local lastBubble = self._bubbleDict[self._curPlayBubbleType]
+    local change = false
+    -- 恢复上个气泡的时间, 防止下次触发一下子结束
+    if lastBubble then
+        self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
+        change = true
+    end
     self._curPlayBubbleType = bubbleType
     local aiBubbleInfo = self._bubbleDict[bubbleType]
     if not aiBubbleInfo then
@@ -259,6 +276,9 @@ function XEcologyCharAIBaseState:SetCurBubbleType(bubbleType)
     if aiBubbleInfo.State == EEcologyBubbleState.None then
         aiBubbleInfo.State = EEcologyBubbleState.CD
         aiBubbleInfo.CurTime = aiBubbleInfo.TriggerCD
+        if change then
+            aiBubbleInfo.CurTime = aiBubbleInfo.CurTime - 0.5
+        end
     end
 end
 

@@ -89,6 +89,8 @@ function XDlcRelinkModel:OnInit()
     self._NeedPopWifiTips = true
     -- 是否开启了全局匹配
     self.GlobalMatchEnabled = false
+    -- 点赞信息缓存
+    self.LikeInfoCache = nil
 end
 
 function XDlcRelinkModel:ClearPrivate()
@@ -107,6 +109,7 @@ function XDlcRelinkModel:ResetAll()
 
     self._NeedPopWifiTips = true
     self.GlobalMatchEnabled = false
+    self.LikeInfoCache = nil
 end
 
 --region 服务端信息更新和获取
@@ -811,7 +814,13 @@ end
 
 --- 获取装备描述是否为详细
 function XDlcRelinkModel:GetEquipAttrDescIsDetail()
-    return self._SaveUtil:GetData('IsEquipAttrDescIsDetail') or false
+    local result = self._SaveUtil:GetData('IsEquipAttrDescIsDetail')
+
+    if result == nil then
+        return true
+    end
+    
+    return result
 end
 
 --- 设置装备描述是否为详细
@@ -870,6 +879,17 @@ end
 
 function XDlcRelinkModel:ClearWifiTipsPopMark()
     self._NeedPopWifiTips = false
+end
+
+--endregion
+
+--region 点赞信息相关
+
+--- 添加点赞信息缓存
+function XDlcRelinkModel:AddLikeInfoCache(fromPlayerId, targetPlayerId)
+    self.LikeInfoCache = self.LikeInfoCache or {}
+    self.LikeInfoCache[fromPlayerId] = self.LikeInfoCache[fromPlayerId] or {}
+    self.LikeInfoCache[fromPlayerId][targetPlayerId] = true
 end
 
 --endregion

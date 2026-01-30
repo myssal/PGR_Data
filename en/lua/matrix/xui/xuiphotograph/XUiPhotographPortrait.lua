@@ -954,6 +954,7 @@ function XUiPhotographPortrait:RefreshViewActive(show)
     else
         self.BtnSet.gameObject:SetActiveEx(show)
     end
+    self.PanelSceneChange.gameObject:SetActiveEx(show)
 end
 
 function XUiPhotographPortrait:RefreshBottom(show, ctrlPhotograph)

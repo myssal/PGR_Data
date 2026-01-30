@@ -34,7 +34,7 @@ function XUiGridDlcRelinkEquipAttribute:Refresh(attribute)
     self:SetNormal(attribute.FactorId, attribute.Level, isMaxLevel)
 end
 
-function XUiGridDlcRelinkEquipAttribute:RefreshDetailShow(isShow, attribute)
+function XUiGridDlcRelinkEquipAttribute:RefreshDetailShow(isShow, attribute, forceRefresh)
     if not self:IsNodeShow() then
         return
     end
@@ -58,6 +58,10 @@ function XUiGridDlcRelinkEquipAttribute:RefreshDetailShow(isShow, attribute)
 
         if self.DetailGo then
             self.DetailGo.gameObject:SetActiveEx(validShow)
+
+            if validShow and forceRefresh then
+                CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.DetailGo)
+            end
         end
     else
         if self.DetailGo then

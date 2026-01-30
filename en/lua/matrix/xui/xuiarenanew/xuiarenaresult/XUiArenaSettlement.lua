@@ -249,7 +249,7 @@ function XUiArenaSettlement:_InitUIState(data, markInfo)
     self:_InitDefaultValues()
     
     self.BtnReFight.gameObject:SetActiveEx(true)
-    self.PanelNewRecord.gameObject:SetActiveEx(data.Point > data.OldPoint)
+    self.PanelNewRecord.gameObject:SetActiveEx(data.Point > (data.ArenaMaxPoint or 0))
     self.PanelBossLoseHp.gameObject:SetActiveEx(markInfo.ShowEnemyHp)
     self.PanelSurplusHp.gameObject:SetActiveEx(markInfo.ShowMyHp)
     self.PanelGroupCount.gameObject:SetActiveEx(markInfo.ShowGroup)
@@ -359,8 +359,9 @@ function XUiArenaSettlement:_UpdateScoreDisplay(data, markInfo, progress)
     end
 
     -- 历史最高分
-    local highScore = math.floor(progress * data.OldPoint)
-    if data.OldPoint >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
+    -- 4.2 新增字段ArenaMaxPoint(Area), 与4.1的OldPoint功能(Stage)有区分, 如果 data.ArenaMaxPoint 为 nil，则使用 0 作为后备
+    local highScore = math.floor(progress * (data.ArenaMaxPoint or 0))
+    if (data.ArenaMaxPoint or 0) >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
         self.TxtHighScore.text = highScore .. "/" .. markInfo.MaxPoint
     else
         self.TxtHighScore.text = tostring(highScore)

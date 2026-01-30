@@ -23,9 +23,15 @@ function XSkyGardenGuideProxy:IsIntercept()
     --return false
 end
 
+---@param template XTableBigworldGuideGroup
 function XSkyGardenGuideProxy:ExecuteGuide(template, isUiOpen)
     if not template then
         return
+    end
+    if template.SequentialId == 2 then
+        isUiOpen = true
+    elseif template.SequentialId == 1 then
+        isUiOpen = false
     end
     if isUiOpen then
         XDataCenter.GuideManager.ExecuteGuide(template)

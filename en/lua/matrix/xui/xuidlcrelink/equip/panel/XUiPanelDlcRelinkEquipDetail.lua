@@ -79,6 +79,7 @@ function XUiPanelDlcRelinkEquipDetail:RefreshEquipInfo()
     -- 装备战力
     self.TxtLv.text = self._Control:GetEquipAbilityByUid(self.EquipUid, self.IsNotSelf)
     self.TxtMax.gameObject:SetActiveEx(self._Control:CheckEquipIsMaxAbility(self.EquipUid, self.IsNotSelf))
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.TxtMax.transform.parent)
     -- 顶部槽位扩展提示
     self.PanelTopTips.gameObject:SetActiveEx(equipType == XEnumConst.DlcRelink.EquipType.Main)
     self.TxtTip.text = self._Control:GetClientConfig("EquipSlotExpandTip")
@@ -251,8 +252,7 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     local attrCount = #attributes
 
     grid:GetObject("GridAttribute1").gameObject:SetActiveEx(attrCount >= 1)
-    
-    local panelDetail1 = grid:GetObject("PanelDetail1")
+    local panelDetail1 = grid:GetObject("PanelDetail1", false)
 
     if panelDetail1 then
         panelDetail1.gameObject:SetActiveEx(attrCount >= 1)
@@ -262,7 +262,7 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     grid:GetObject("Line").gameObject:SetActiveEx(hasSecond)
     grid:GetObject("GridAttribute2").gameObject:SetActiveEx(hasSecond)
 
-    local panelDetail2 = grid:GetObject("PanelDetail2")
+    local panelDetail2 = grid:GetObject("PanelDetail2", false)
 
     if panelDetail2 then
         panelDetail2.gameObject:SetActiveEx(hasSecond)
@@ -271,12 +271,12 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     self.DeputyAttributeNodes[index] = self.DeputyAttributeNodes[index] or {}
     for i = 1, math.min(attrCount, 2) do
         if not self.DeputyAttributeNodes[index][i] then
-            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self, grid:GetObject("PanelDetail" .. i))
+            self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self, grid:GetObject("PanelDetail" .. i, false))
         end
         local node = self.DeputyAttributeNodes[index][i]
         node:Open()
         node:Refresh(attributes[i])
-        node:RefreshDetailShow(self._IsShowDetail, attributes[i])
+        node:RefreshDetailShow(self._IsShowDetail, attributes[i], true)
         if i & 1 == 1 then
             node:ShowBg1()
         else

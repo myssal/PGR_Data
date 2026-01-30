@@ -20,7 +20,11 @@ function XUiDlcMultiPlayerCompetition:OnStart()
     ---@type XUiDlcMultiPlayerCompetitionCamp
     self._RedCamp = XUiDlcMultiPlayerCompetitionCamp.New(self.RedCampPanel, self, CampEnum.Camp2)
     self._ClickCount = 0
-    self:Refresh()
+    self._CurShowDiscussionStatus = nil -- 当前界面显示的状态
+    self:_SpecialkGetReward(function ()
+        self:Refresh()
+    end)
+    
 end
 
 function XUiDlcMultiPlayerCompetition:OnGetLuaEvents()
@@ -31,15 +35,25 @@ end
 
 function XUiDlcMultiPlayerCompetition:OnNotify(event, ...)
     if event == XEventId.EVENT_DLC_MOUSE_HUNTER_REFRESH_DISCUSSION_DATA then
+        -- 展示期时不刷新界面（无论是否跨期）
+        if self._CurShowDiscussionStatus == StatusEnum.Show then
+            return
+        end
         self:Refresh()
     end
 end
 
 function XUiDlcMultiPlayerCompetition:Refresh()
+    if self._Control == nil then
+        return
+    end
     local discussion = self._Control:GetDiscussion()
     local discussionConfig = discussion:GetPlayerTable() or discussion:GetTable()
     local discussionStatus = discussion:IsSameDiscussion() and discussion:GetStatus() or StatusEnum.Show
     self:_RemoveDiscussionTimer()
+
+    -- 记录当前界面显示的状态
+    self._CurShowDiscussionStatus = discussionStatus
 
     self.TxtTitle.text = discussionConfig.Discussion
     self.TxtTime.text = ""
@@ -74,6 +88,7 @@ function XUiDlcMultiPlayerCompetition:RefreshUnSelect(discussion)
     -- self:_RefreshSelectCamp(self._CurSelectCamp, true, XUiHelper.GetText("MultiMouseHunterUnVote"),
     --     )
     self:_RemoveDiscussionTimer()
+    self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     self._DiscussionTimer = XScheduleManager.ScheduleForever(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end, XScheduleManager.SECOND)
@@ -92,6 +107,7 @@ function XUiDlcMultiPlayerCompetition:RefreshSelected(discussion)
     self.BtnVote.enabled = false
     -- self:_RefreshSelectCamp(camp, false, XUiHelper.GetText("MultiMouseHunterVoted", campStr), XUiHelper.GetText("MultiMouseHunterSubVoted"))
     self:_RemoveDiscussionTimer()
+    self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     self._DiscussionTimer = XScheduleManager.ScheduleForever(function()
         self:_RefreshTxtDiscussionTime(discussion:GetVoteEndTimestamp())
     end, XScheduleManager.SECOND)
@@ -101,9 +117,9 @@ function XUiDlcMultiPlayerCompetition:RefreshShow(discussion)
     local discussionConfig = discussion:GetPlayerTable() or discussion:GetTable()
     self.TxtBpTips.text = XUiHelper.GetText("MultiMouseHunterVoteCount", self._Control:GetBpLevel())
     if discussion:IsPlayerCamp1Vectory() then
-        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory", string.format("“%s”", discussionConfig.Camp1))
+        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory", discussionConfig.Camp1)
     else
-        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory",string.format("“%s”", discussionConfig.Camp2))
+        self.TxtDiscussionVictory.text = XUiHelper.GetText("MultiMouseHunterVoteVictory", discussionConfig.Camp2)
     end
     self.TxtDiscussionVictory.transform.parent.gameObject:SetActiveEx(true)
     self._BlueCamp:RefreshShow(discussion)
@@ -119,6 +135,7 @@ function XUiDlcMultiPlayerCompetition:RefreshShow(discussion)
     self.BtnVote.enabled = false
     -- self:_RefreshSelectCamp(camp, false, XUiHelper.GetText("MultiMouseHunterVoted", campStr), XUiHelper.GetText("MultiMouseHunterSubVoted"))
     self:_RemoveDiscussionTimer()
+    self:_RefreshTxtDiscussionTime(discussion:GetDiscussionEndTimestamp())
     self._DiscussionTimer = XScheduleManager.ScheduleForever(function()
         self:_RefreshTxtDiscussionTime(discussion:GetDiscussionEndTimestamp())
     end, XScheduleManager.SECOND)
@@ -155,7 +172,7 @@ function XUiDlcMultiPlayerCompetition:RegisterUiEvents()
 end
 
 function XUiDlcMultiPlayerCompetition:OnBtnVoteClick()
-    XMVCA.XDlcMultiMouseHunter:RequestPlayerDiscussionVote(self._CurSelectCamp,function()
+    XMVCA.XDlcMultiMouseHunter:RequestPlayerDiscussionVote(self._CurSelectCamp, function()
         self._BulletChat:AddOwnDanmakuData(self._CurSelectCamp)
     end)
 end
@@ -174,6 +191,14 @@ end
 
 function XUiDlcMultiPlayerCompetition:OnBtnMonsterClick()
     self._ClickCount = self._ClickCount + 1
+    self.MonsterState:SetInitialState("hit")
+    if self.MonsetResetTimer then
+        XScheduleManager.UnSchedule(self.MonsetResetTimer)
+        self.MonsetResetTimer = nil
+    end
+    self.MonsetResetTimer = XScheduleManager.ScheduleOnce(function()
+        self.MonsterState:SetInitialState("normal")
+    end, 500)
 end
 
 function XUiDlcMultiPlayerCompetition:OnDestroy()
@@ -181,7 +206,12 @@ function XUiDlcMultiPlayerCompetition:OnDestroy()
         XMVCA.XDlcRoom:ClickCount(self._ClickCount)
     end
     self:_RemoveDiscussionTimer()
+    if self.MonsetResetTimer then
+        XScheduleManager.UnSchedule(self.MonsetResetTimer)
+        self.MonsetResetTimer = nil
+    end
 end
+
 function XUiDlcMultiPlayerCompetition:_CheckGetReward()
     local discussion = self._Control:GetDiscussion()
     if not discussion:CanGetReward() then
@@ -190,7 +220,8 @@ function XUiDlcMultiPlayerCompetition:_CheckGetReward()
 
     XMVCA.XDlcMultiMouseHunter:RequestGetDiscussionVoteReward(function()
         local activityConfig = self._Control:GetDlcMultiplayerActivityConfig()
-        local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or activityConfig.DiscussionFailExp
+        local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or
+            activityConfig.DiscussionFailExp
 
         local rewardList = {}
         table.insert(rewardList, XRewardManager.CreateRewardGoods(activityConfig.BpExpItem, rewardCount))
@@ -198,6 +229,39 @@ function XUiDlcMultiPlayerCompetition:_CheckGetReward()
     end)
 end
 
+function XUiDlcMultiPlayerCompetition:_SpecialkGetReward(callback)
+    local discussion = self._Control:GetDiscussion()
+    if not discussion:CanGetReward() then
+        if callback then
+            callback()
+        end
+        return
+    end
+    if discussion:GetPlayerCamp() == CampEnum.None then
+        if callback then
+            callback()
+        end
+        return
+    end
+    if discussion:IsSameDiscussion() == true and discussion:GetStatus() ~= nil then
+        if callback then
+            callback()
+        end
+        return
+    end
 
+    local activityConfig = self._Control:GetDlcMultiplayerActivityConfig()
+    local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or
+        activityConfig.DiscussionFailExp
+
+    local rewardList = {}
+    table.insert(rewardList, XRewardManager.CreateRewardGoods(activityConfig.BpExpItem, rewardCount))
+    XMVCA.XDlcMultiMouseHunter:RequestGetDiscussionVoteReward(function()
+        XUiManager.OpenUiObtain(rewardList)
+        if callback then
+            callback()
+        end
+    end)
+end
 
 return XUiDlcMultiPlayerCompetition

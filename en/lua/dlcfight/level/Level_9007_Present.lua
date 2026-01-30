@@ -1,7 +1,7 @@
 ---relink 白龙普通关
 local XLevelScript9007 = XDlcScriptManager.RegLevelPresentScript(9007, "XLevelPresentScript9007")
 local Timer = require("Level/Common/XTaskScheduler")
-
+local EFightCVAction = require("Enum/XFightCVAction")            --CV播放插件
 
 -- 脚本构造函数
 ---@param proxy XDlcCSharpFuncs
@@ -29,7 +29,7 @@ function XLevelScript9007:Init()
     self._initWinDialogPhase = false
     self._initEndPhase = false
     self._limitTimeToEnd = false
-    self.LimitTime = 1770
+    self.LimitTime = 1170
     self._deathZoneId = 1        -- 1为死区的PlacedID
     self.levelId = self._proxy:GetCurrentLevelId()  --当前关卡ID
     self._localPlayerID = self._proxy:GetPlayerIdByNpc(self._localPlayerNpc)
@@ -44,10 +44,16 @@ end
 function XLevelScript9007:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.ActorTrigger then
         if eventArgs.HostSceneObjectPlaceId == self._deathZoneId and eventArgs.TriggerState == 1 then 
-            if self._proxy:GetNpcCamp(eventArgs.EnteredActorUUID) == ENpcCampType.Camp1 then   --阵营为1的玩家方才会重置
+            if eventArgs.EnteredActorUUID == self._proxy:GetLocalPlayerNpcId() then   --是本端玩家就会重置并提示
                 self._proxy:SetNpcPosition(eventArgs.EnteredActorUUID,self._spawnPoint[2],false)
                 self._proxy:ShowTip(90204)
             end
+        end
+    elseif eventType == EWorldEvent.NpcAddBuff then 
+        if eventArgs.BuffTableId == 1000512 then
+            self._proxy:ShowStageInfo(90005211,90005212,1,false,{},{0, 1})
+        elseif eventArgs.BuffTableId == 1000513 then
+            self._proxy:ShowStageInfo(90005211,90005212,1,true,{},{1, 1})
         end
     end
 end
@@ -61,7 +67,7 @@ function XLevelScript9007:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,3)            --隐藏摇杆
         self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localPlayerNpc,3)         --隐藏右侧面板
         self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localPlayerNpc,3)              --隐藏目标面板
-        self._proxy:SetLevelUiState(EFightUiType.CommonTip,self._localPlayerNpc,3)          --隐藏关卡面板
+        --self._proxy:SetLevelUiState(EFightUiType.CommonTip,self._localPlayerNpc,3)          --隐藏关卡面板
         self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localPlayerNpc,3)          --隐藏锁定面板
         self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localPlayerNpc,3)                --隐藏从菜单面板
         self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localPlayerNpc,3)          --隐藏能量条面板
@@ -90,11 +96,11 @@ function XLevelScript9007:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball3,self._localPlayerNpc,3) 
         self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localPlayerNpc,3) 
 
-
     elseif SwitchType == UIControl.On then
         self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --显示摇杆
         self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localPlayerNpc,1)         --显示右侧面板
         self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localPlayerNpc,1)              --显示目标面板
+        --self._proxy:SetLevelUiState(EFightUiType.CommonTip,self._localPlayerNpc,1)          --显示关卡面板
         self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localPlayerNpc,1)          --显示锁定面板
         self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localPlayerNpc,1)                --显示从菜单面板
         self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localPlayerNpc,1)          --显示能量条面板
@@ -104,6 +110,7 @@ function XLevelScript9007:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localPlayerNpc,1)    --显示聊天记录
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localPlayerNpc,1)    --显示聊天轮盘
         self._proxy:SetLevelUiState(EFightUiType.RelinkTeammateIndicator,self._localPlayerNpc,1)    --显示队友信息
+        self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localPlayerNpc,1)    --显示任务
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localPlayerNpc,true)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localPlayerNpc,true)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localPlayerNpc,true)
@@ -132,30 +139,43 @@ function XLevelScript9007:Update(dt)
         self.haruCore = self._proxy:GetLevelMemoryInt(40001)
         if self.haruCore == 1 and self._ShowPhaseUiOff == false then 
             self:ControlLevelUI(UIControl.Off)
-            
             self._proxy:DispatchLuaEvent(2,EFightLuaEvent.RelinkAIBorn,{NpcUUid = self._proxy:GetLevelMemoryInt(50001)})    --通知BOSS播出场动画
             XLog.Debug("BOSS在出场动作过程中先关掉UI")
+            self._timer:Schedule(5.4, self, function()
+                self._proxy:PlayStayScreenEffectById(902999)
+            end)
+            self._backGrounSoundUid = self._proxy:PlaySound(6513,ETargetActorType.Npc,self._localPlayerNpc)                 --环境音
             self._ShowPhaseUiOff = true                                                               --防止重复执行
         elseif self.haruCore == 2 and self._ShowPhaseUiOn == false then                         --正式开打
             XLog.Debug("正式开打UI恢复")
-            self:ControlLevelUI(UIControl.On)                                                       --UI全开
             self._ShowPhaseUiOn = true   
-        
+            self._proxy:KillStayScreenEffectById(902999)
+            self._timer:Schedule(0.8, self, function()
+                self:ControlLevelUI(UIControl.On)    --UI全开
+            end)      
         elseif self.haruCore == 7 and self._WinStartPhaseUiOff == false then                         --要掉落了
             self:ControlLevelUI(UIControl.Off)
-            self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --只显示摇杆，屏蔽其他
+            self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localPlayerNpc,1)    --显示任务
+            self._proxy:PlaySound(7115)--胜利结算
+            self._timer:Schedule(1, self, function()
+                self._proxy:PlayNpcCV(self._localPlayerNpc,0,EFightCVAction.NotifyEnemyDead,EAudioLuaFuncSyncType.NpcController)       --播放角色自己的胜利语音
+            end)
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localPlayerNpc,true)
+            self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localPlayerNpc,1)
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localPlayerNpc,true)
+            self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Jump,self._localPlayerNpc,1)
+            self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --只显示摇杆和跳跃，屏蔽其他
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localPlayerNpc,false)
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.RelinkLimitSkill,self._localPlayerNpc,false)
+            self._proxy:StopAudioByUid(self._backGrounSoundUid)--停止环境音
             self._WinStartPhaseUiOff = true
-            -- self._proxy:PlayScreenEffectById(902999)
-            -- self._timer:Schedule(0.5, self, function()                --2秒关闭引导 
-            -- self._proxy:PlayScreenEffectById(902998)
-            -- end)
-            
         elseif self.haruCore == 100 and self._initLosedStartPhase == false then 
             XLog.Debug("检测到所有玩家死亡,关闭所有UI")
             self:ControlLevelUI(UIControl.Off)
             self._proxy:SetLevelUiState(EFightUiType.CommonReborn,self._localPlayerNpc,3)
             self._proxy:CloseTip(90203)
             self._initLosedStartPhase = true
+            self._proxy:StopAudioByUid(self._backGrounSoundUid)--停止环境音
         elseif self.haruCore == 200 and self._limitTimeToEnd == false then 
             self._limitTimeToEnd = true
         end
@@ -165,7 +185,6 @@ function XLevelScript9007:Update(dt)
                 self.timeToEnd = self.LimitTime - self.mainLevelTime 
                 if self.timeToEnd <= 1 then
                     self._proxy:CloseTip(90202)
-                    XLog.Debug("关闭倒计时")
                 elseif self.timeToEnd >= 2 then 
                     self._proxy:ShowTip(90202, math.floor(self.timeToEnd)-1 )
                 end

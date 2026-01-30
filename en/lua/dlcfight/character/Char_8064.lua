@@ -8,7 +8,7 @@ local XChar8064 = XDlcScriptManager.RegCharScript(8064, "XChar8064", Base)
 function XChar8064:SoftFuryConfig()
     Base.SoftFuryConfig(self)
     self.isHaveSoftFury = true --开启软狂暴
-    self.enterSoftFuryFightTime = 480 --战斗开始后5秒进入软狂暴
+    self.enterSoftFuryFightTime = 400 --战斗开始后5秒进入软狂暴
 end
 
 return XChar8064

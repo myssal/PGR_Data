@@ -9,6 +9,8 @@ function XMainLineLuosaitaModel:OnInit()
     self._SectionInfoDic = {}
     ---@type table<number, boolean> 击杀敌人哈希表
     self._KillEnemyDic = {}
+
+    self._CacheDataDic = {} -- 缓存数据
 end
 
 -- 退出玩法清理内部数据
@@ -21,6 +23,7 @@ function XMainLineLuosaitaModel:ResetAll()
     self._Config:ResetAll()
     self._SectionInfoDic = {}
     self._KillEnemyDic = {}
+    self._CacheDataDic = {}
 end
 
 --region Config
@@ -103,6 +106,18 @@ end
 --- 获取文件回顾蓝点缓存
 function XMainLineLuosaitaModel:GetDocumentReviewRed()
     return self._SaveUtil:GetData("DocumentReviewRed") or false
+end
+--endregion
+
+--region 登陆缓存
+-- 设置缓存
+function XMainLineLuosaitaModel:SetCacheData(key, value)
+    self._CacheDataDic[key] = value
+end
+
+-- 获取缓存
+function XMainLineLuosaitaModel:GetCacheData(key)
+    return self._CacheDataDic[key]
 end
 --endregion
 

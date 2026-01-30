@@ -22,8 +22,7 @@ function XUiBigWorldPhotographControl:OnNotify()
     if self._X3CExit then
         return
     end
-    XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
-    self._X3CExit = true
+    self:X3CCameraPhotographExit()
     self:Close()
 end
 
@@ -84,6 +83,7 @@ function XUiBigWorldPhotographControl:OnStart(data)
     self.BtnMinus.gameObject:SetActive(not self._DisableCameraOperation)
     self.BtnAdd.gameObject:SetActive(not self._DisableCameraOperation)
     self.BtnRestore.gameObject:SetActive(not self._ParamConfig.HideReset)
+    self._HideSwitchPersonButton = not self._ParamConfig.HidePersonSwitch
 
     self.ImgBg.gameObject:SetActive(false)
     self._isShowMenu = self.ImgBg.gameObject.activeSelf
@@ -210,9 +210,10 @@ function XUiBigWorldPhotographControl:InitSetting()
         configA.IsOn = false
         self._recordData["is_hide_npc"] = configA.IsOn and 1 or 0
         configA.Callback = function(isOn)
+            self._NpcAciveIsOn = isOn
             configA.IsOn = isOn
             self._recordData["is_hide_npc"] = configA.IsOn and 1 or 0
-            XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not isOn)
+            XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(not self._NpcAciveIsOn)
         end
         table.insert(self._SettingConfig, configA)
     end
@@ -555,10 +556,10 @@ function XUiBigWorldPhotographControl:OnDestroy()
     self:RemoveAnimTimer()
     if not XLoginManager.IsLogin() then return end
     XMVCA.XBigWorldAlbum:X3CCameraPhotographLookAtCam(false)
-    if not self._X3CExit then
-        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+    self:X3CCameraPhotographExit()
+    if self._NpcAciveIsOn then
+        XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(self._NpcAciveIsOn)
     end
-    XMVCA.XBigWorldGamePlay:SetNpcActiveExcludePlayerNpc(true)
     XMVCA.XBigWorldGamePlay:SetCurNpcActive(self._LastNpcActiveStatus)
     -- XMVCA.XBigWorldLoading:CloseBlackMaskLoading()
 end
@@ -707,12 +708,20 @@ function XUiBigWorldPhotographControl:OnBtnRestoreClick()
     XMVCA.XBigWorldAlbum:X3CCameraPhotographReset()
 end
 
+function XUiBigWorldPhotographControl:X3CCameraPhotographExit()
+    if not self._X3CExit then
+        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
+        self._X3CExit = true
+    end
+end
+
 function XUiBigWorldPhotographControl:OnBtnQuitClick()
+    if self._isQuit or self._X3CExit then return end
+    self._isQuit = true
     self:PlayAnimation("Disable")
     self:RemoveAnimTimer()
     XScheduleManager.ScheduleOnce(function()
-        XMVCA.XBigWorldAlbum:X3CCameraPhotographExit()
-        self._X3CExit = true
+        self:X3CCameraPhotographExit()
     end, 200)
     self._AnimTimerId = XScheduleManager.ScheduleOnce(function()
         self:Close()
@@ -721,8 +730,8 @@ end
 
 function XUiBigWorldPhotographControl:ShowPersonButton(isInit)
     local isUnlock, isShowRedDot = self._Control:IsShowRedDotContent(UnlockType.FirstPerson)
-    self.BtnFirstPerson.gameObject:SetActive(not self._ThirdPersonMode and isUnlock)
-    self.BtnThirdPerson.gameObject:SetActive(self._ThirdPersonMode and isUnlock)
+    self.BtnFirstPerson.gameObject:SetActive(not self._ThirdPersonMode and isUnlock and self._HideSwitchPersonButton)
+    self.BtnThirdPerson.gameObject:SetActive(self._ThirdPersonMode and isUnlock and self._HideSwitchPersonButton)
     self.BtnFirstPerson:ShowReddot(isShowRedDot)
     self.BtnThirdPerson:ShowReddot(isShowRedDot)
 

@@ -301,7 +301,7 @@
         "Key": "PveVersion",
         "Desc": "PVE Mode Version Number",
         "Values": [
-            4
+            5
         ]
     },
     {
@@ -389,6 +389,49 @@
             15,
             15,
             15
+        ]
+    },
+    {
+        "Key": "MissionFreshCnt",
+        "Desc": "Refresh Limit per Slot in Mission Selection",
+        "Values": [
+            1
+        ]
+    },
+    {
+        "Key": "CharacterInitExp",
+        "Desc": "PvP/PvE Character Initial EXP",
+        "Values": [
+            0
+        ]
+    },
+    {
+        "Key": "PvpMultiplierLimit",
+        "Desc": "PvP Multiplier Limit",
+        "Values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Key": "PveMultiplierLimit",
+        "Desc": "PvE Multiplier Limit",
+        "Values": [
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "Key": "MissionLevelUpForRound",
+        "Desc": "Upgrades Per Turn",
+        "Values": [
+            1
         ]
     }
 ]

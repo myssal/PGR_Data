@@ -1,17 +1,17 @@
----relink 白龙普通关
-local XLevelScript9002 = XDlcScriptManager.RegLevelPresentScript(9002, "XLevelPresentScript9002")
+--relink 木桩关
+local XLevelScript9012 = XDlcScriptManager.RegLevelPresentScript(9012, "XLevelPresentScript9012")
 local Timer = require("Level/Common/XTaskScheduler")
 
 
 -- 脚本构造函数
 ---@param proxy XDlcCSharpFuncs
-function XLevelScript9002:Ctor(proxy)
+function XLevelScript9012:Ctor(proxy)
     self._proxy = proxy
     self._timer = Timer.New()
 end
 
 -- 初始化
-function XLevelScript9002:Init()
+function XLevelScript9012:Init()
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._localPlayerNpc = self._proxy:GetLocalPlayerNpcId()                         -- 获取本端玩家npc
     self._ShowPhaseUiOff = false
@@ -34,12 +34,12 @@ end
 -- 事件
 ---@param eventType number
 ---@param eventArgs userdata
-function XLevelScript9002:HandleEvent(eventType, eventArgs)
+function XLevelScript9012:HandleEvent(eventType, eventArgs)
 end
 
 -- 每帧执行
 ---@param dt number @ delta time
-function XLevelScript9002:Update(dt)
+function XLevelScript9012:Update(dt)
     self._timer:Update(dt)
     self._levelTime = self._levelTime + dt
     if self._proxy:CheckLevelMemoryInt(40001) then 
@@ -69,8 +69,8 @@ end
 
 
 -- 脚本终止
-function XLevelScript9002:Terminate()
+function XLevelScript9012:Terminate()
 
 end
 
-return XLevelScript9002
+return XLevelScript9012

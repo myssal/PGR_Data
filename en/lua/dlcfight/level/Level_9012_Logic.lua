@@ -24,7 +24,8 @@ function XLevelScript9012:Init() --初始化逻辑
     self._currentPhase = 0                                                              --当前阶段
     self._lastPhase = 0                                                                  --上一阶段
     self._playerNpcList = {}                                                            --玩家列表
-    self.LimitTime = 1770
+    self.LimitTime = 1170
+    self.maxDamage = 99999999                                                           --最大伤害数值
     --拿到玩家列表和关卡编辑器中的所有点位
     self._playerNpcList = self._proxy:GetPlayerNpcList() --获取玩家列表
     for i = 1, 5 do
@@ -154,6 +155,7 @@ function XLevelScript9012:OnUpdatePhase(dt)
         if self._damage ~= 0  and  self.resetDamageTime <= 0 then 
             XLog.Debug("重置伤害")
             self._damage = 0
+            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001019)--回满血
         elseif self._damage == 0 then 
             self._finalDamageTime = self._levelTime 
         end
@@ -199,6 +201,9 @@ function XLevelScript9012:HandleEvent(eventType, eventArgs) --事件响应逻辑
     if eventType == EWorldEvent.NpcDamage then     --伤害事件
         if eventArgs.LauncherId == self._localNpc then 
             self._damage = self._damage + eventArgs.PhysicalDamage + eventArgs.ElementDamage + eventArgs.RealDamage
+            if self._damage >= self.maxDamage then 
+                self._damage = self.maxDamage
+            end
         end
         self._finalDamageTime = self._levelTime
     end

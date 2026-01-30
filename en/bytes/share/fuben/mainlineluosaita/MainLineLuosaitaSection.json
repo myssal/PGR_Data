@@ -1,0 +1,119 @@
+[
+    {
+        "Id": 1,
+        "MessageGroups": [],
+        "MapPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiMainLineLuosaita/UiMainLineLuosaitaPhase01.prefab",
+        "Name": "Phase 1"
+    },
+    {
+        "Id": 2,
+        "MessageGroups": [],
+        "MapPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiMainLineLuosaita/UiMainLineLuosaitaPhase02.prefab",
+        "Name": "Phase 2",
+        "ConditionIds": [
+            1007210
+        ],
+        "FocusPosUiNodeNames": [
+            "Pos90403",
+            "Pos110402"
+        ],
+        "EnableAnims": [
+            "AnimEnableSmoke",
+            "AnimHole"
+        ],
+        "LoopAnims": [
+            "AnimEnableSmoke",
+            "AnimHoleLoop"
+        ]
+    },
+    {
+        "Id": 3,
+        "MessageGroups": [],
+        "MapPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiMainLineLuosaita/UiMainLineLuosaitaPhase03.prefab",
+        "Name": "Phase 3",
+        "ConditionIds": [
+            1007210,
+            1007212,
+            1007227,
+            1007214
+        ],
+        "FocusPosUiNodeNames": [
+            "Pos110402",
+            "Pos30301",
+            "Pos200101",
+            "Pos200404"
+        ],
+        "EnableAnims": [
+            "AnimHole",
+            "AnimEnableJinYu",
+            "AnimCannon",
+            "AnimEnableRed"
+        ],
+        "LoopAnims": [
+            "AnimHoleLoop",
+            "AnimLoopJinYu",
+            "AnimCannonLoop",
+            "AnimEnableRedLoop"
+        ]
+    },
+    {
+        "Id": 4,
+        "MessageGroups": [],
+        "MapPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiMainLineLuosaita/UiMainLineLuosaitaPhase04.prefab",
+        "Name": "Phase 4",
+        "ConditionIds": [
+            1007210,
+            1007212,
+            1007227,
+            1007214,
+            1007219
+        ],
+        "FocusPosUiNodeNames": [
+            "Pos110402",
+            "Pos30301",
+            "Pos200101",
+            "Pos200404",
+            "Pos130201"
+        ],
+        "EnableAnims": [
+            "AnimHole",
+            "AnimEnableJinYu",
+            "AnimCannon",
+            "AnimEnableRed",
+            "AnimTaEnable"
+        ],
+        "LoopAnims": [
+            "AnimHoleLoop",
+            "AnimLoopJinYu",
+            "AnimCannonLoop",
+            "AnimEnableRedLoop",
+            "AnimTaLoop"
+        ]
+    },
+    {
+        "Id": 5,
+        "MessageGroups": [],
+        "MapPrefabPath": "Assets/Product/Ui/ComponentPrefab/UiMainLineLuosaita/UiMainLineLuosaitaPhase05.prefab",
+        "Name": "Phase 5",
+        "ConditionIds": [
+            1007210,
+            1007219,
+            1007210
+        ],
+        "FocusPosUiNodeNames": [
+            "Pos110409",
+            "Pos130201",
+            "Pos200101"
+        ],
+        "EnableAnims": [
+            "AnimEnableSmoke",
+            "AnimTaEnable",
+            "AnimHole"
+        ],
+        "LoopAnims": [
+            "AnimEnableSmoke",
+            "AnimTaLoop",
+            "AnimHoleLoop"
+        ]
+    }
+]

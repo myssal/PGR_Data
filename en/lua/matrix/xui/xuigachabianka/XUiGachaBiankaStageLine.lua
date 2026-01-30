@@ -19,6 +19,8 @@ function XUiGachaBiankaStageLine:OnStart(gachaId)
     self._ChapterId = self._GachaCfg.FestivalActivityId
     self._ChapterTemplate = XFestivalActivityConfig.GetFestivalById(self._ChapterId)
     self._Scene = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaScene").New(self.Transform, self)
+    ---@type XUiPanelSwitchableSceneAnim
+    self._SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
 end
 
 function XUiGachaBiankaStageLine:OnEnable()
@@ -40,12 +42,18 @@ function XUiGachaBiankaStageLine:OnEnable()
 
     self._Scene:PlayEnterStageLine()
     self._Scene:PlayEnableStory()
+    self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
 end
 
 function XUiGachaBiankaStageLine:OnDisable()
     for _, stage in pairs(self._Stages) do
         stage:Close()
     end
+    self._SwitchableScene:Stop()
+end
+
+function XUiGachaBiankaStageLine:OnDestory()
+    self._SwitchableScene:OnDestory()
 end
 
 function XUiGachaBiankaStageLine:InitButton()
@@ -227,7 +235,9 @@ function XUiGachaBiankaStageLine:OnGotoGacha()
     if XLuaUiManager.IsUiLoad("UiGachaBianka402Main") then
         self:Close()
     else
-        XLuaUiManager.Open("UiGachaBianka402Main", self._GachaId, self._IsFirstOpenGachaMain, true)
+        --v4.2优化：从活动打开剧情界面，再第一次进入研发界面时：如果【跳过剧情】则播AnimDisableStory，否则播AnimEnableLong
+        local isSkip = XSaveTool.GetData("UiGachaBianka")
+        XLuaUiManager.Open("UiGachaBianka402Main", self._GachaId, self._IsFirstOpenGachaMain and not isSkip, true)
         self._IsFirstOpenGachaMain = false
     end
 end

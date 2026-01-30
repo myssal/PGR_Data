@@ -11,6 +11,13 @@ function XUiDlcRelinkWiki:OnAwake()
 end
 
 function XUiDlcRelinkWiki:OnStart(jumpWikiId)
+    -- 设置自动关闭
+    self:SetAutoCloseInfo(self._Control:GetActivityEndTime(), function(isClose)
+        if isClose then
+            self._Control:HandleActivityEnd()
+        end
+    end)
+
     self._JumpWikiId = jumpWikiId
     ---@type XDynamicTableNormal
     self.DynamicTable = XDynamicTableNormal.New(self.ScrollTitleTab)
@@ -20,10 +27,6 @@ function XUiDlcRelinkWiki:OnStart(jumpWikiId)
 
     self:InitWikiData()
     self:ShowTab()
-end
-
-function XUiDlcRelinkWiki:OnEnable()
-
 end
 
 function XUiDlcRelinkWiki:OnDestroy()
@@ -121,6 +124,8 @@ function XUiDlcRelinkWiki:OnDynamicTableEvent(event, index, grid)
         self:SelectWiki(self._CurWiki)
         if XTool.IsNumberValid(self._ScrollTo) then
             self.DynamicTable:ScrollToIndex(self._ScrollTo, 0.5)
+        else
+            self:PlayGridAnimation()
         end
         self._ScrollTo = nil
     end
@@ -137,6 +142,8 @@ function XUiDlcRelinkWiki:SelectWiki(wiki)
         end
     end
     self:ShowWikiDetail(wiki)
+    -- 切换动画
+    self:PlayAnimation("QieHuan")
 end
 
 ---@param wiki XTableDlcRelinkWiki
@@ -215,6 +222,24 @@ function XUiDlcRelinkWiki:StopVideo()
     if self.Video then
         self.Video:Stop()
         self.VideoMask.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiDlcRelinkWiki:PlayGridAnimation()
+    ---@type XUiGridWikiTab[]
+    local grids = self.DynamicTable:GetGrids()
+    if XTool.IsTableEmpty(grids) then
+        return
+    end
+
+    for index, grid in ipairs(grids) do
+        grid:Close()
+        local delay = (index - 1) * 50
+        local timerId = XScheduleManager.ScheduleOnce(function()
+            grid:Open()
+            grid:PlayAnimationWithMask("WikiItemEnable")
+        end, delay)
+        self:_AddTimerId(timerId)
     end
 end
 

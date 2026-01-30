@@ -1156,9 +1156,9 @@ function XDlcRoomAgency:_OnJoinWorld(response, isRejoin)
             CS.StatusSyncFight.XFightClient.ExitFight(true)
         end
         if not self:IsSettled() then
-            self._Model:ClearAll()
             self:Settlement()
             self:_OnDisconnect()
+            self._Model:ClearAll()
         end
     end
     local connectCb = function(isSuccess)

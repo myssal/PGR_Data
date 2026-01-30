@@ -50,17 +50,20 @@ function XUiGridFashionShop:OnBtnBuyClick()
     buyData.ItemIcon = self.ItemIcon
     buyData.ItemCount = self.NeedCount
     buyData.GiftRewardId = self.GiftRewardId
+    if self.NeedCount ~= self.Data.ConsumeList[1].Count then
+        buyData.OriginCount = self.Data.ConsumeList[1].Count
+    end
     buyData.BuyCallBack = function()
         for _, consume in pairs(self.Data.ConsumeList) do
             if consume.Id == XDataCenter.ItemManager.ItemId.HongKa then
-                local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, consume.Count)
+                local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, self.NeedCount)
                 if not result then
                     XUiManager.TipText("ShopItemHongKaNotEnough")
                     XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay)
                     return
                 end
             elseif consume.Id == XDataCenter.ItemManager.ItemId.PaidGem then
-                local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, consume.Count)
+                local result = XDataCenter.ItemManager.CheckItemCountById(consume.Id, self.NeedCount)
                 if not result then
                     XUiManager.TipText("ShopItemPaidGemNotEnough")
                     XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.HK)
@@ -70,6 +73,14 @@ function XUiGridFashionShop:OnBtnBuyClick()
         end
 
         XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function(res)
+            local text = CS.XTextManager.GetText("BuySuccess")
+            XUiManager.TipMsg(text, nil, function()
+                if res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
+                    XUiManager.OpenUiObtain(res.GoodList)
+                    return
+                end
+            end)
+
             if XTool.UObjIsNil(self.ImgSellOut) then
                 return
             end
@@ -78,27 +89,20 @@ function XUiGridFashionShop:OnBtnBuyClick()
             self:RefreshOnSales()
             self:RefreshPrice()
             self:RefreshBuyCount()
-
-            local text = CS.XTextManager.GetText("BuySuccess")
-            XUiManager.TipMsg(text, nil, function()
-                if res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
-                    XUiManager.OpenUiObtain(res.GoodList)
-                    return
-                end
-            end)
             self.Parent:RefreshBuy()
-        end,function(errorCode) 
-        if errorCode == 20030022 then --写死活动过期错误码
-            XLuaUiManager.RunMain()
-        end
-        end,self.Data.ActivityIsOpen)
+        end, function(errorCode)
+            if errorCode == 20030022 then --写死活动过期错误码
+                XLuaUiManager.RunMain()
+            end
+        end, self.ActivityIsOpen)
     end
 
-    XMVCA.XShop:OpenFashionDetailUi(self.Id,buyData,{isWeaponFashion = self.IsWeaponFashion})
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion })
 end
 
 function XUiGridFashionShop:UpdateData(data)
     self.Data = data
+    self.ActivityIsOpen = XShopManager.GetShopActivityIsOpen(self.Parent:GetCurShopId())
     self:RefreshSellOut()
     self:RefreshCondition()
     self:RefreshIcon()
@@ -126,7 +130,7 @@ function XUiGridFashionShop:RefreshBuyCount()
         self.ImgLimitLable.gameObject:SetActiveEx(false)
     else
         local buynumber = self.Data.BuyTimesLimit - self.Data.TotalBuyTimes
-        local limitLabel =  XShopConfigs.GetBuyLimitLabel(self.Data.AutoResetClockId)
+        local limitLabel = XShopConfigs.GetBuyLimitLabel(self.Data.AutoResetClockId)
         local text = string.format(limitLabel, buynumber)
 
         self.TxtLimitLable.text = text
@@ -169,7 +173,6 @@ function XUiGridFashionShop:RefreshSellOut()
     end
 end
 
-
 function XUiGridFashionShop:RemoveTimer()
     if self.Timer then
         XScheduleManager.UnSchedule(self.Timer)
@@ -189,8 +192,8 @@ function XUiGridFashionShop:RefreshIcon()
         self.TemplateId = self.Data.RewardGoods
     else
         self.TemplateId = (self.Data.RewardGoods.TemplateId and self.Data.RewardGoods.TemplateId > 0) and
-        self.Data.RewardGoods.TemplateId or
-        self.Data.RewardGoods.Id
+            self.Data.RewardGoods.TemplateId or
+            self.Data.RewardGoods.Id
     end
 
     self.IsWeaponFashion = XDataCenter.ItemManager.IsWeaponFashion(self.TemplateId)
@@ -244,7 +247,7 @@ function XUiGridFashionShop:RefreshPrice()
         local txtNewPrice = self.TxtNewPrice[index]
         if txtNewPrice then
             self.NeedCount = math.floor(count.Count * self.Sales / 100)
-            if self.Data.ActivityIsOpen then
+            if self.ActivityIsOpen then
                 self.NeedCount = self.Data.ActivityConsumeCount
             end
             txtNewPrice.text = self.NeedCount
@@ -269,8 +272,8 @@ function XUiGridFashionShop:RefreshOnSales()
         table.insert(self.OnSalesLongTest, sales)
     end)
 
-    self.Sales = 100 
-    if self.Data.ActivityIsOpen then
+    self.Sales = 100
+    if self.ActivityIsOpen then
         self.Sales = self.Data.ActivityDiscount
     end
 
@@ -293,36 +296,38 @@ end
 function XUiGridFashionShop:RefreshPanelSale()
     local hideSales = false
     if self.TxtSaleRate then
-        if self.Data.Tags == XShopManager.ShopTags.DisCount then
+        if self.ActivityIsOpen then
+            self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
+            self.TxtSaleRate.gameObject:SetActiveEx(true)
+            if XOverseaManager.IsJPRegion() then
+                self.TxtSaleRate.text = XUiHelper.GetDiscountTextV2(math.floor(self.Sales / 100))
+            else
+                self.TxtSaleRate.text = XUiHelper.GetDiscountText(math.floor(self.Sales / 100))
+            end
+        elseif self.Data.Tags == XShopManager.ShopTags.DisCount then
             if self.Sales < 100 then
                 self.TxtSaleRate.text = self.Sales / 10 .. CS.XTextManager.GetText("Snap")
             else
                 hideSales = true
             end
-        end
-        if self.Data.Tags == XShopManager.ShopTags.TimeLimit then
+        elseif self.Data.Tags == XShopManager.ShopTags.TimeLimit then
             self.TxtSaleRate.text = CS.XTextManager.GetText("TimeLimit")
-        end
-        if self.Data.Tags == XShopManager.ShopTags.Recommend then
+        elseif self.Data.Tags == XShopManager.ShopTags.Recommend then
             self.TxtSaleRate.text = CS.XTextManager.GetText("Recommend")
-        end
-        if self.Data.Tags == XShopManager.ShopTags.HotSale then
+        elseif self.Data.Tags == XShopManager.ShopTags.HotSale then
             self.TxtSaleRate.text = CS.XTextManager.GetText("HotSell")
+        elseif self.Data.Tags == XShopManager.ShopTags.Not then
+            hideSales = true
         end
-        if self.Data.Tags == XShopManager.ShopTags.Not or hideSales then
+
+        -- 控制显示/隐藏
+        if hideSales then
             self.TxtSaleRate.gameObject:SetActiveEx(false)
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(false)
         else
             self.TxtSaleRate.gameObject:SetActiveEx(true)
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
-
         end
-    end
-    if self.Data.ActivityIsOpen then 
-        self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(true)
-        self.TxtSaleRate.gameObject:SetActiveEx(true)
-      
-        self.TxtSaleRate.text =   XUiHelper.GetDiscountText(self.Sales / 100)
     end
 end
 
@@ -384,7 +389,6 @@ function XUiGridFashionShop:RefreshGift()
     end
 end
 
-
 function XUiGridFashionShop:RefreshOnSaleTime(time)
     if not self.TxtOnSaleTime then
         return
@@ -420,9 +424,9 @@ function XUiGridFashionShop:RefreshOnSaleTime(time)
     func()
 
     self.OnSaleTimer = XScheduleManager.ScheduleForever(function()
-            SaleTime = SaleTime - 1
-            func()
-        end, 1000)
+        SaleTime = SaleTime - 1
+        func()
+    end, 1000)
 end
 
 return XUiGridFashionShop

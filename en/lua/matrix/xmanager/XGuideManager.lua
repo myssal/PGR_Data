@@ -85,6 +85,9 @@ XGuideManagerCreator = function()
         UiBigWorldBlackMaskLoading      = true,
         UiBigWorldBlackMaskNormal       = true,
         UiBigWorldShowLoading           = true,
+        UiDlcRelinkPopupInvitation      = true,
+        UiDlcRelinkToastCommon          = true,
+        UiDlcRelinkToastCommonSmall     = true,
     }
     local NextGridCb = nil
     local CbProxy = nil

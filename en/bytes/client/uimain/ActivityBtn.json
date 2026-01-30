@@ -119,13 +119,13 @@
     {
         "Id": 10,
         "Priority": 87,
-        "Name": "Cerulean Embrace",
-        "NameEN": "Cerulean Embrace",
+        "Name": "A Splendid Welcome",
+        "NameEN": "A Splendid Welcome",
         "IsAgency": false,
         "SkipId": 20226,
-        "TimeId": 39120,
+        "TimeId": 44203,
         "IsOrConditions": false,
-        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainBtnSummerSign306.png",
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainActivityShop04.png",
         "LeftTimeFun": "GetByTimeIdCommon",
         "Conditions": [
             771000
@@ -259,11 +259,11 @@
     {
         "Id": 19,
         "Priority": 89,
-        "Name": "Blissful Gift",
+        "Name": "Spring's First Moon",
         "NameEN": "Blissful Gift",
         "IsAgency": false,
         "SkipId": 90022,
-        "TimeId": 35322,
+        "TimeId": 44112,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainWeeklyChallenge.png",
         "LeftTimeFun": "GetByTimeIdCommon",
@@ -331,11 +331,29 @@
         "NameEN": "Christmas Bliss",
         "IsAgency": false,
         "SkipId": 189071,
-        "TimeId": 43410,
+        "TimeId": 43409,
         "IsOrConditions": false,
         "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainChristmas.png",
         "RedPointConditions": [
             "CONDITION_DAILY_RESET"
+        ]
+    },
+    {
+        "Id": 24,
+        "Priority": 0,
+        "Name": "Auspicious Treasury",
+        "NameEN": "Auspicious Treasury",
+        "IsAgency": false,
+        "SkipId": 1300626,
+        "TimeId": 44301,
+        "IsOrConditions": false,
+        "BtnIcon": "Assets/Product/Texture/Image/UiMain/MainAccumulateExpend.png",
+        "LeftTimeFun": "GetAccumulateExpendShopLeftTime",
+        "Conditions": [
+            774800
+        ],
+        "RedPointConditions": [
+            "CONDITION_ACCUMULATE_EXPEND_SHOP_NOTIFY"
         ]
     }
 ]

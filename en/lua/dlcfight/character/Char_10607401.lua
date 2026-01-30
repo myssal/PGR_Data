@@ -7,16 +7,16 @@ local XFindPath2OtherTransition = require("Common/StateMachine/Transition/XFindP
 --region 薇拉生态1.5期静态参数
 ---生态状态枚举
 local StateEnum = {
-     None = 0,
-     Cinema = 1,    ---电影院
-     Garden = 2,    ---生态花园
-     Port = 3,      ---货运中心
-     FindPath = 4,  ---寻路过程
+    None = 0,
+    Cinema = 1,    ---电影院
+    Garden = 2,    ---生态花园
+    Port = 3,      ---货运中心
+    FindPath = 4,  ---寻路过程
 }
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Cinema] = {x=582.651, y=194.068, z=1007.801},
+    [StateEnum.Cinema] = {x=581.2296, y=194.0679, z=1007.925},
     [StateEnum.Garden] = {x=469.0241, y=193.5831, z=1034.533},
     [StateEnum.Port] = {x=529.2028, y=185.877, z=957.3785},
 }
@@ -64,14 +64,14 @@ function XVeraCinemaState:InitStateConfig()
         [EEcologyBubbleType.Around] = {
             Name = "1216",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 3,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
             Name = "1217",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
+            TriggerCD = 5,
+            LoopTime = 6,
         }
     }
 end
@@ -91,6 +91,7 @@ function XVeraGardenState:InitStateConfig()
     self.StateConfig.StateLoopAnim = "Drama_SitUpright_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
+    self.StateConfig.IgnoreCharCollider = true
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -100,16 +101,24 @@ function XVeraGardenState:InitStateConfig()
         [EEcologyBubbleType.Around] = {
             Name = "1218",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 3,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
             Name = "1219",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
+            TriggerCD = 5,
             LoopTime = 3,
         }
     }
+end
+
+---@overload
+---状态进入时
+---@param lastStateEnum number 上个状态
+function XVeraGardenState:OnStateEnter(lastStateEnum)
+    self._proxy:SetNpcPosition(self._uuid, StatePos[StateEnum.Garden])
+    XEcologyCharAIBaseState.OnStateEnter(self, lastStateEnum)
 end
 
 function XVeraGardenState:PlayPerformAnim()
@@ -141,15 +150,15 @@ function XVeraPortState:InitStateConfig()
         [EEcologyBubbleType.Around] = {
             Name = "1220",
             TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
+            TriggerCD = 3,
+            LoopTime = 4,
         },
     }
 end
 
 function XVeraPortState:PlayPerformAnim()
     local GardenSitRot = {x=467.673248,y=193.583115,z=1032.74292}
-    self._proxy:TurnPos(self._uuid, GardenSitRot, self.StateConfig.StateAnim)
+    self._proxy:TurnPos(self._uuid, GardenSitRot, self.StateConfig.StateAnim,true)
 end
 --endregion
 
@@ -180,6 +189,11 @@ end
 ---@class XCharVeraEcology : XEcologyCharAIBase
 ---@field _stateMachine XStateMachineController 状态机
 local XCharVeraEcology = XDlcScriptManager.RegCharScript(10607401, "XCharVeraEcology", Base)
+
+function XCharVeraEcology:TryInitAIEnterState()
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1100080), true)
+    Base.TryInitAIEnterState(self)
+end
 
 function XCharVeraEcology:InitStateConfigData()
     ---状态点坐标, 

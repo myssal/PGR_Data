@@ -14,12 +14,44 @@
         "Name": "Exploration Progress",
         "ContentType": 2,
         "TaskProgressItemId": 0,
+        "BannerBg": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelAccumulate1.png",
         "ExploreRewardId": 7000141,
         "Priority": 2,
+        "ContentTip": "Complete Supply Crate exploration and reach 3-star in all Space Leap stages to claim the reward",
         "ConditionIds": []
     },
     {
         "ContentId": 103,
+        "Name": "Guide",
+        "ContentType": 3,
+        "TaskProgressItemId": 0,
+        "ExploreRewardId": 0,
+        "Priority": 1,
+        "ConditionIds": []
+    },
+    {
+        "ContentId": 201,
+        "Name": "Mission List",
+        "ContentType": 1,
+        "TaskProgressItemId": 950001,
+        "TaskProgressItemIcon": "Assets/Product/Texture/Atlas/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessIconEXP02White.png",
+        "ExploreRewardId": 0,
+        "Priority": 3,
+        "ConditionIds": []
+    },
+    {
+        "ContentId": 202,
+        "Name": "Exploration Progress",
+        "ContentType": 2,
+        "TaskProgressItemId": 0,
+        "BannerBg": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/ProcessBanner/UiBigWorldProcessPanelAccumulate2.png",
+        "ExploreRewardId": 7000208,
+        "Priority": 2,
+        "ContentTip": "Complete Supply Crate exploration to claim the reward",
+        "ConditionIds": []
+    },
+    {
+        "ContentId": 203,
         "Name": "Guide",
         "ContentType": 3,
         "TaskProgressItemId": 0,

@@ -17,6 +17,7 @@ function XBWMapPinData:Ctor()
     self.Radius = 0
     self.DisplayType = XMVCA.XBigWorldMap.MapPinDisplayType.Point
     self.IsOptionalQuestObjective = false
+    self._IsOut = false
 end
 
 function XBWMapPinData:UpdateDisplay(isDisplay)
@@ -190,6 +191,14 @@ function XBWMapPinData:GetWorldPosition(isAssisted)
     return self.WorldPosition
 end
 
+function XBWMapPinData:GetAiMemoryWorldPosition()
+    if self:IsAiMemoryGroup() then
+        return self.TrackPosition or self.WorldPosition
+    end
+
+    return self.WorldPosition
+end
+
 function XBWMapPinData:GetTeleportLevelId()
     if self:IsTeleportLevel() then
         return self.TeleportLevelId
@@ -232,6 +241,14 @@ end
 
 function XBWMapPinData:SetDisplayType(value)
     self.DisplayType = value
+end
+
+function XBWMapPinData:SetIsOut(isOut)
+    self._IsOut = isOut
+end
+
+function XBWMapPinData:IsOut()
+    return self._IsOut
 end
 
 return XBWMapPinData

@@ -198,279 +198,347 @@
     },
     {
         "Id": 400,
-        "Name": "Sightline Breach",
-        "GroupId": 228,
+        "Name": "Withering Crown",
+        "GroupId": 233,
         "SortId": 1,
-        "TimeId": 43505,
+        "TimeId": 44555,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev401.png",
-        "ActivityTitle": "Sightline Breach",
-        "ActivityDes": "Event Info: Play through the new story [Sightline Breach] and complete missions.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev402.png",
+        "ActivityTitle": "Withering Crown",
+        "ActivityDes": "Event Info: Play through the new story [Withering Crown] and complete missions.",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             0,
-            615
+            627
         ]
     },
     {
         "Id": 401,
         "Name": "Simulated Battlefield",
-        "GroupId": 228,
+        "GroupId": 233,
         "SortId": 2,
-        "TimeId": 43505,
+        "TimeId": 2160605,
         "ActivityType": 12,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
         "ActivityTitle": "Simulated Battlefield",
-        "ActivityDes": "Requirement:\\nClear Normal Story 2-2 to unlock.\\n\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on February 2, 2026, at 05:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
+        "ActivityDes": "Requirements:\\nComplete Normal Story 2-2 to unlock.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on March 16, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
         "ConditionId": 770403,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             20017,
-            594
+            620
         ]
     },
     {
         "Id": 402,
-        "Name": "Special Dispatch: Wasteland Merchant",
-        "GroupId": 228,
+        "Name": "Signal Calibration",
+        "GroupId": 233,
         "SortId": 3,
-        "TimeId": 43301,
+        "TimeId": 43920,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanjingv401.png",
-        "ActivityTitle": "Special Dispatch: Wasteland Merchant",
-        "ActivityDes": "Requirements:\\nCommandant Lv.52\\n\\nEvent Info:\\n1. Special Dispatch: Wasteland Merchant consists of 4 areas, which will be available over time. Each area consists of various blocks. Clear a block to unlock the adjacent blocks.\\n2. Consume [Floating Processors] on [Battle] or [Dispatch] to obtain Block Contribution and event token [Trial Prototypes].\\n3. When there is enough Block Contribution contributed by all the commandants on the server, the block will be cleared and all the commandants will receive the reward and bonuses of the block.\\n4. This event introduces a new Auction House system. You can clear stages to obtain collectibles and upgrade the Collection Room for rewards; you can also trade collectibles using tokens in the Auction House.\\n5. Use collectibles to upgrade the Collection Room and light up rare collectibles to receive generous rewards.\\n6. Clear a block of the designated character to receive the corresponding trial character. The character will also gain a huge boost in battles of the event.\\n7. Clear the [Dark Block] in the first area to unlock [Phase Results]. Results will be calculated every hour to grant [Trial Prototypes]. With the clearance of the [Dark Blocks] in the areas, the reward granted every hour will get better.\\n8. Special Supplies: [Trial Prototypes] earned from the event can be exchanged for amazing rewards in the [Special Supplies].",
-        "ConditionId": 84601200,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseskygardenv400.png",
+        "ActivityTitle": "Signal Calibration",
+        "ActivityDes": "Requirements: Commandant Lv.40.\\n\\nEvent Info:\\n1. Calibrate the signal to receive mysterious messages.\\n2. Claim the corresponding rewards after receiving the messages.",
+        "ConditionId": 30406,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
-            80176
+            90058
         ]
     },
     {
         "Id": 403,
-        "Name": "The Godfall Revelation",
-        "GroupId": 228,
+        "Name": "Hyperlink Array",
+        "GroupId": 233,
         "SortId": 4,
-        "TimeId": 43926,
+        "TimeId": 44910,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRoguev401.png",
-        "ActivityTitle": "The Godfall Revelation",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\n\\nEvent Info:\\n1. New final chapter story added to Path of Revelation. After completing the stories of Watanabe, Vera, Wanshi, and Lilith, tap any character on the event interface to enter.\\n2. New stamps and other items added to the permanent shop.\\n3. Balance adjustments made to character skills, accessories, and runes.",
-        "ConditionId": 770401,
-        "ShowBeginTime": "After the update on 2025-12-23",
-        "ShowEndTime": "Permanent",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRelinkv402.png",
+        "ActivityTitle": "Hyperlink Array",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. During the event, participate in online matchmaking or team up with friends to take on exclusive event bosses.\\n2. A team consists of 1-3 commandants. Strategically selecting characters and balancing class compositions will make challenges easier to complete.\\n3. This event features two bosses: [Radiant Dragon] and [Nocturne Stalker]. Each boss has multiple difficulty levels. Complete lower difficulties first to unlock higher ones.\\n4. Defeat bosses or sign in daily to obtain equipment. Enhance equipment to boost its power and make your characters stronger.\\n5. If the total equipment level of your deployed characters is below the stage requirement, you cannot join matchmaking or create rooms, but you may still invite friends to form a team and attempt the challenge.\\n6. Clear a difficulty for the first time or complete event missions to earn [Simulation Quantum], which can be used to redeem rewards in the [Quantum Exchange] shop.",
+        "ConditionId": 30406,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
-            89092
+            90047
         ]
     },
     {
         "Id": 404,
-        "Name": "Debugging Frenzy",
-        "GroupId": 228,
+        "Name": "Crouching Cat, Hidden Rat",
+        "GroupId": 233,
         "SortId": 5,
-        "TimeId": 43701,
+        "TimeId": 44101,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseChidouv401.png",
-        "ActivityTitle": "Debugging Frenzy",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\n\\nEvent Info:\\n1. Hack into the code world and complete emergency maintenance.\\n2. The event consists of 12 stages.\\n3. Control characters to avoid enemies, repair Code Blocks, and use specific items to defeat enemies to reclaim stolen Code Blocks and complete the repair work.\\n4. Various items will be provided to help you achieve objectives.\\n5. Beat the designated challenges to complete missions and claim Event Construct R&D Tickets, Trade Vouchers, and other items.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDuomaomaov402.png",
+        "ActivityTitle": "Crouching Cat, Hidden Rat",
+        "ActivityDes": "Requirements: Commandant Lv.40.\\n\\nEvent Info:\\n1. Invite friends to form a team of 1-3 commandants (solo matchmaking is allowed).\\n2. Upon successful matchmaking, you'll be directly placed into a match with up to 9 commandants, randomly assigned to either the Cats or Rats faction.\\n3. Cats can use charged attacks to capture all Rats to win.\\n4. Rats can disguise themselves within the environment to avoid capture and win by surviving until the match ends.\\n5. Cheese will spawn at designated locations in the environment. Both Cats and Rats can collect cheese to activate powerful skills and gain match advantages.\\n6. Participate in topic competition and daily matches to earn Prestige EXP. Increase Prestige Level and earn rewards in the event!",
         "ConditionId": 774800,
-        "ShowBeginTime": "After the update on 2025-12-23",
         "Params": [
-            90025
+            89057
         ]
     },
     {
         "Id": 405,
-        "Name": "Rapid Pursuit",
-        "GroupId": 228,
+        "Name": "Desperado Clash",
+        "GroupId": 233,
         "SortId": 6,
-        "TimeId": 43001,
+        "TimeId": 44559,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQuanxiv401.png",
-        "ActivityTitle": "Rapid Pursuit",
-        "ActivityDes": "Requirements:\\nCommandant Lv.42\\n\\nEvent Info:\\n1. This event features 4 stages, each with 4 difficulty levels.\\n2. Defeat Bosses of different difficulties in bounties with the required characters.\\n3. Complete bounty missions to claim rewards.",
-        "ConditionId": 774700,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRogev402.png",
+        "ActivityTitle": "Desperado Clash",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. A new limited-time season of [Desperado Clash] mode is now available.\\n2. This season introduces a new Commission system. Complete commissions, rank up, and earn Mammon's Blessings to boost your battle power and resource earnings.\\n3. A limited-time shop is open during the event. Play any mode in [The Godfall Revelation] to earn Cardinal Crystals, which can be exchanged for rewards. The event ends on April 20, 2026, at 05:00 (UTC).\\n4. Use [R&D Tickets] obtained from the event shop to increase your rank in Desperado Clash and earn exclusive [Nameplates]!",
+        "ConditionId": 770401,
+        "ShowEndTime": "2026-04-20 05:00",
         "Params": [
-            89093
+            90060
         ]
     },
     {
         "Id": 406,
-        "Name": "Liminal Rift",
-        "GroupId": 228,
+        "Name": "A Flash of Love",
+        "GroupId": 233,
         "SortId": 7,
-        "TimeId": 43101,
+        "TimeId": 44601,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv401.png",
-        "ActivityTitle": "Liminal Rift",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\n\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [The Pseudo-Unwinged] being your formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once you have earned a total of 3 stars. The more stars you earn, the higher the quality of the collectibles will be.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQingrenjiev402.png",
+        "ActivityTitle": "A Flash of Love",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. The event consists of 8 stages, each offering special cards for you to use.\\n2. Read your opponent's expressions or use your teammates' support to earn more points and win the game.\\n3. Complete stages to obtain character-exclusive story unlock items and use them to unlock new character stories.",
+        "ConditionId": 774800,
+        "Params": [
+            90018
+        ]
+    },
+    {
+        "Id": 407,
+        "Name": "Frostheart Amalgamated",
+        "GroupId": 233,
+        "SortId": 8,
+        "TimeId": 44701,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv402.png",
+        "ActivityTitle": "Frostheart Amalgamated",
+        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [Zack the Frostheart Emperor] being the formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once a total of 3 stars is earned. The more stars, the higher the quality of the collectibles will be.",
         "ConditionId": 1050141,
         "Params": [
             11724
         ]
     },
     {
-        "Id": 407,
+        "Id": 408,
         "Name": "Omniframe Target",
-        "GroupId": 228,
-        "SortId": 8,
-        "TimeId": 43506,
+        "GroupId": 233,
+        "SortId": 9,
+        "TimeId": 44556,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv401.png",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv402.png",
         "ActivityTitle": "Omniframe Target",
-        "ActivityDes": "New Character:\\n※S-Rank Ice Amplifier [Teddy: Spectre]\\nNew Weapon:\\n※6★ [Neon Wayfarer] (Digital Warboots)\\n\\nInfo:\\n1. Construct Research:\\n※[Teddy: Spectre] will be available in the [Themed Construct] Research Pool. You have a 100% chance to get [Teddy: Spectre] when getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Neon Wayfarer] will be available in the [Weapon Research] Research Pool with the same rules and rates as other weapons.",
+        "ActivityDes": "New Character:\\n※S-Rank Dark Breaker [Rosetta: Arete]\\nNew Weapon:\\n※6★ [Mirage Halberd: Amalga] (Radiant Halberd)\\n\\nInfo:\\n1. Construct Research:\\n※[Rosetta: Arete] will be available in the [Themed Construct] Research Pool. You have a 100% chance to get [Rosetta: Arete] when getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Mirage Halberd: Amalga] will be available in the [Weapon Research] Research Pool with the same rules and rates as other weapons.",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             7209
         ]
     },
     {
-        "Id": 408,
+        "Id": 409,
         "Name": "CUB Target",
-        "GroupId": 228,
-        "SortId": 9,
-        "TimeId": 43506,
+        "GroupId": 233,
+        "SortId": 10,
+        "TimeId": 44556,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv401.png",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv402.png",
         "ActivityTitle": "CUB Target",
-        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Beep-Boop]\\n※Recommended for the character [Teddy: Spectre]\\n※[Beep-Boop] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Beep-Boop] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
+        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Buzzling]\\n※Recommended for the character [Rosetta: Arete]\\n※[Buzzling] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Buzzling] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             7212
         ]
     },
     {
-        "Id": 409,
-        "Name": "New Coating - Poetic Journey",
-        "GroupId": 228,
-        "SortId": 10,
-        "TimeId": 43508,
-        "ActivityType": 3,
-        "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBuouxiongCoatingv401.png",
-        "ActivityTitle": "New Coating - Poetic Journey",
-        "ActivityDes": "New Coating:\\nOmniframe [Teddy: Spectre] Coating: [Poetic Journey]\\nInfo:\\n[Poetic Journey] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
-        "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2025-12-23",
-        "Params": [
-            20020
-        ]
-    },
-    {
         "Id": 410,
-        "Name": "Series Coating - The Godfall Revelation",
-        "GroupId": 228,
+        "Name": "New Coating - Gilded Creed",
+        "GroupId": 233,
         "SortId": 11,
-        "TimeId": 43508,
+        "TimeId": 44558,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRoguev401.png",
-        "ActivityTitle": "Series Coating - The Godfall Revelation",
-        "ActivityDes": "Coating Rerun:\\n[The Godfall Revelation] Series Coating Rerun\\nInfo:\\n[The Godfall Revelation] series Coatings will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuosaitaEffectCoatingv402.png",
+        "ActivityTitle": "New Coating - Gilded Creed",
+        "ActivityDes": "New Coating:\\nOmniframe [Rosetta: Arete] Coating: [Gilded Creed]\\nInfo:\\n[Gilded Creed] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             20020
         ]
     },
     {
         "Id": 411,
-        "Name": "Tactical Assessment Manual",
-        "GroupId": 228,
+        "Name": "New Coating - Chromatic ☆ Night",
+        "GroupId": 233,
         "SortId": 12,
-        "TimeId": 43507,
+        "TimeId": 44558,
         "ActivityType": 3,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPv401.png",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQishiEffectCoatingv402.png",
+        "ActivityTitle": "New Coating - Chromatic ☆ Night",
+        "ActivityDes": "New Coating:\\nOmniframe [Nanami: Startrail] Coating: [Chromatic ☆ Night]\\nInfo:\\n[Chromatic ☆ Night] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "Params": [
+            20020
+        ]
+    },
+    {
+        "Id": 412,
+        "Name": "New Coating - Night Sonata",
+        "GroupId": 233,
+        "SortId": 13,
+        "TimeId": 44501,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBiankaEffectCoatingv402.png",
+        "ActivityTitle": "New Coating - Night Sonata",
+        "ActivityDes": "New Coating:\\nOmniframe [Bianca: Crepuscule] Coating: [Night Sonata]\\nInfo:\\nDuring the event, it can be obtained through draws in [Night Sonata].",
+        "ConditionId": 770410,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "Params": [
+            20320
+        ]
+    },
+    {
+        "Id": 413,
+        "Name": "Tactical Assessment Manual",
+        "GroupId": 233,
+        "SortId": 14,
+        "TimeId": 44557,
+        "ActivityType": 3,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPv402.png",
         "ActivityTitle": "Tactical Assessment Manual",
         "ActivityDes": "Requirements: \\nCommandant Lv.40\\nEvent Info:\\n1. Accumulate Intel Value by completing the Rating Missions of the Daily, the Round, and the current Intel Manual.\\n2. Raise the Rating Level by reaching the required Intel Value.\\n3. You will obtain the corresponding reward upon reaching the required Rating Level.\\n4. You can also purchase additional Intel to get better rewards.",
         "ConditionId": 770401,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             20171
         ]
     },
     {
-        "Id": 412,
-        "Name": "Solver's Paradox",
-        "GroupId": 229,
+        "Id": 414,
+        "Name": "Farewell from the Departed",
+        "GroupId": 234,
         "SortId": 1,
-        "TimeId": 43911,
+        "TimeId": 44704,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv401.png",
-        "ActivityTitle": "Solver's Paradox",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv402.png",
+        "ActivityTitle": "Farewell from the Departed",
         "ActivityDes": "Requirements: Clear Normal Story 1-8",
         "ConditionId": 774501,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             20235,
-            616
+            628
         ]
     },
     {
-        "Id": 413,
-        "Name": "Adaptation Fitting - Beep-Boop",
-        "GroupId": 230,
+        "Id": 415,
+        "Name": "Adaptation Fitting - Buzzling",
+        "GroupId": 235,
         "SortId": 1,
-        "TimeId": 43201,
+        "TimeId": 44702,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv401.png",
-        "ActivityTitle": "Adaptation Fitting - Beep-Boop",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv402.png",
+        "ActivityTitle": "Adaptation Fitting - Buzzling",
         "ActivityDes": "Requirements: Commandant Lv.61.",
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             7107,
-            617
+            629
         ]
     },
     {
-        "Id": 414,
-        "Name": "Poetic Journey",
-        "GroupId": 231,
+        "Id": 416,
+        "Name": "Gilded Creed",
+        "GroupId": 236,
         "SortId": 1,
-        "TimeId": 43202,
+        "TimeId": 44703,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBuouxiongEffectCoatingv401.png",
-        "ActivityTitle": "Poetic Journey",
-        "ActivityDes": "New Coating:\\nOmniframe [Teddy: Spectre] Coating: [Poetic Journey]",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuosaitaEffectCoatingv402.png",
+        "ActivityTitle": "Gilded Creed",
+        "ActivityDes": "New Coating:\\nOmniframe [Rosetta: Arete] Coating: [Gilded Creed]",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on 2025-12-23",
+        "ShowBeginTime": "After the update on Feb 3, 2026",
         "Params": [
             10035,
-            618
+            630
+        ]
+    },
+    {
+        "Id": 417,
+        "Name": "Chromatic ☆ Night",
+        "GroupId": 237,
+        "SortId": 1,
+        "TimeId": 44705,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQishiEffectCoatingv402.png",
+        "ActivityTitle": "Chromatic ☆ Night",
+        "ActivityDes": "New Coating:\\nOmniframe [Nanami: Startrail] Coating: [Chromatic ☆ Night]",
+        "ConditionId": 770400,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "Params": [
+            10035,
+            631
         ]
     },
     {
         "Id": 418,
-        "Name": "Arctic Amalgamation",
-        "GroupId": 227,
+        "Name": "Night Sonata",
+        "GroupId": 238,
         "SortId": 1,
-        "TimeId": 43601,
+        "TimeId": 44501,
         "ActivityType": 1,
         "ActivityBgType": 1,
-        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv401.png",
-        "ActivityTitle": "Arctic Amalgamation",
-        "ActivityDes": "Event Info: Complete event missions to obtain [Whalesound Memory].",
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBiankaEffectCoatingv402.png",
+        "ActivityTitle": "Night Sonata",
+        "ActivityDes": "Info:\\nDuring the event, [Night Sonata] can be obtained through \"main interface - Night Sonata\" Coating Research Event for a limited time.",
+        "ConditionId": 770410,
+        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "Params": [
+            20320,
+            632
+        ]
+    },
+    {
+        "Id": 419,
+        "Name": "Nightmare Roulette",
+        "GroupId": 232,
+        "SortId": 1,
+        "TimeId": 44410,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv402.png",
+        "ActivityTitle": "Nightmare Roulette",
+        "ActivityDes": "Event Info: Complete event missions to obtain [Crimson Chips].",
         "ConditionId": 0,
         "Params": [
-            20076,
-            595
+            20107,
+            622
         ]
     }
 ]

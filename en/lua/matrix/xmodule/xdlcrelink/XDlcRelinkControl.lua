@@ -30,6 +30,7 @@ function XDlcRelinkControl:OnInit()
         DlcRelinkEquipRemoveFactorRequest = "DlcRelinkEquipRemoveFactorRequest", -- 装备移除属性
         DlcRelinkQueryRankRequest = "DlcRelinkQueryRankRequest", -- 查询排行榜
         DlcRelinkSwitchGlobalMatchFlagRequest = "DlcRelinkSwitchGlobalMatchFlagRequest", -- 切换全局匹配标记
+        DlcRelinkLikeRequest = "DlcRelinkLikeRequest", -- 点赞
     }
 
     self.FriendCache = nil
@@ -155,7 +156,6 @@ function XDlcRelinkControl:RequestSwitchBattleCharacter(id, cb)
             return
         end
         self._Model.ActivityData:SetFightCharacterId(res.CharacterId)
-        XEventManager.DispatchEvent(XEventId.EVENT_DLC_ROOM_SELECT_CHARACTER, res.CharacterId, XEnumConst.DlcRoom.RoomSelect.Character)
         if cb then cb() end
     end)
 end
@@ -466,6 +466,23 @@ function XDlcRelinkControl:RequestSwitchGlobalMatchFlag(enabled, cb)
     end)
 end
 
+--- 点赞
+---@param playerId number 玩家Id
+---@param cb function 回调函数
+function XDlcRelinkControl:RequestLike(playerId, cb)
+    local request = {
+        PlayerId = playerId,
+    }
+    XNetwork.Call(self.RequestName.DlcRelinkLikeRequest, request, function(res)
+        if res.Code ~= XCode.Success then
+            self:OpenCommonTipCode(res.Code)
+            return
+        end
+        self._Model:AddLikeInfoCache(XPlayer.Id, playerId)
+        if cb then cb() end
+    end)
+end
+
 --endregion
 
 --region 好友相关
@@ -748,7 +765,7 @@ end
 -- 处理活动结束
 function XDlcRelinkControl:HandleActivityEnd()
     XLuaUiManager.RunMain(true)
-    self:OpenCommonTipMsg(XUiHelper.GetText("CommonActivityEnd"))
+    XUiManager.TipText("CommonActivityEnd")
 end
 
 -- 获取活动名称
@@ -1291,7 +1308,7 @@ function XDlcRelinkControl:GetLevelUnlockDesc(levelId)
     if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
         local remainTime = XFunctionManager.GetStartTimeByTimeId(timeId) - XTime.GetServerNowTimestamp()
         if remainTime > 0 then
-            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME))
+            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.MOE_WAR))
         end
     end
 
@@ -2103,9 +2120,9 @@ function XDlcRelinkControl:GetEquipMaxAbilityByUid(equipUid, isNotSelf)
     local templateId = equipData:GetTemplateId()
     local ability = self:GetEquipAbility(templateId)
 
-    -- 主属性战力（包含主技能属性战力）
-    local mainSkillFactorId = self:GetEquipMainSkillFactorId(templateId)
+    -- 主属性战力
     for _, attribute in pairs(equipData:GetMainFactors()) do
+        local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
         if mainSkillFactorId ~= attribute.FactorId then
             ability = ability + self:GetAttributeAbilityInternal(attribute)
         else
@@ -2116,7 +2133,12 @@ function XDlcRelinkControl:GetEquipMaxAbilityByUid(equipUid, isNotSelf)
     -- 副属性战力
     for _, slotsValue in pairs(equipData:GetAttributeSlots()) do
         for _, attribute in pairs(slotsValue.Attributes) do
-            ability = ability + self:GetAttributeAbilityInternal(attribute)
+            local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
+            if mainSkillFactorId ~= attribute.FactorId then
+                ability = ability + self:GetAttributeAbilityInternal(attribute)
+            else
+                ability = ability + self:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
+            end
         end
     end
 
@@ -2220,13 +2242,10 @@ function XDlcRelinkControl:AccumulateEquipAttributes(equipUids, extendAddFactors
     end
 
     for _, equipUid in pairs(equipUids) do
-        -- 配置Id
-        local templateId = self:GetEquipTemplateIdByEquipUid(equipUid, isNotSelf)
-        local mainSkillFactorId = self:GetEquipMainSkillFactorId(templateId)
-
         -- 主属性
         local mainFactors = self:GetEquipAllMainFactorByUid(equipUid, isNotSelf)
         for _, attribute in pairs(mainFactors) do
+            local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
             local factorId = attribute.FactorId
             AddAttr(factorId, factorId == mainSkillFactorId, attribute.Level, true)
         end
@@ -2235,7 +2254,9 @@ function XDlcRelinkControl:AccumulateEquipAttributes(equipUids, extendAddFactors
         local attributeSlots = self:GetEquipAllDeputyFactorByUid(equipUid, isNotSelf)
         for _, slotsValue in pairs(attributeSlots) do
             for _, attribute in pairs(slotsValue.Attributes) do
-                AddAttr(attribute.FactorId, false, attribute.Level, true)
+                local mainSkillFactorId = self:GetEquipMainSkillFactorId(attribute.EquipTemplate)
+                local factorId = attribute.FactorId
+                AddAttr(factorId, factorId == mainSkillFactorId, attribute.Level, true)
             end
         end
     end
@@ -2325,11 +2346,13 @@ function XDlcRelinkControl:GetTotalAttributes(characterId, curPlayerLevel, equip
                 local attrStr = self:GetFactorDescAttributeName(factorId)
                 local attrType = self:GetFactorDescAttributeType(factorId)
 
-                -- 初始化属性数据结构
-                if not equipAttrData[attrStr] then
-                    equipAttrData[attrStr] = {}
+                if not string.IsNilOrEmpty(attrStr) then
+                    -- 初始化属性数据结构
+                    if not equipAttrData[attrStr] then
+                        equipAttrData[attrStr] = {}
+                    end
+                    equipAttrData[attrStr][attrType] = (equipAttrData[attrStr][attrType] or 0) + attrValue
                 end
-                equipAttrData[attrStr][attrType] = (equipAttrData[attrStr][attrType] or 0) + attrValue
             end
         end
     end
@@ -3229,7 +3252,7 @@ function XDlcRelinkControl:GetSkillMaxDamageLimit(skillId, characterId, isNotSel
     end
 
     local dmgLimitPValue = self:GetTotalAttributeValue(characterId, "DmgLimitP", isNotSelf)
-    return math.floor(baseDamageLimit * (1 + dmgLimitPValue / 10000))
+    return math.round(baseDamageLimit * (1 + dmgLimitPValue / 10000))
 end
 
 --- 获取技能属性类型映射
@@ -3384,14 +3407,12 @@ function XDlcRelinkControl:GetFirstUnCompleteTaskId()
 
     for _, id in ipairs(ids) do
         local params = self:GetShopTaskParamId(id)
-        local taskTimelimitId = params and params[1] or 0
-        if XTool.IsNumberValidEx(taskTimelimitId) then
-            local taskDatas = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelimitId)
-
-            if not XTool.IsTableEmpty(taskDatas) then
-                for _, taskData in ipairs(taskDatas) do
+        local taskTimelineId = params and params[1] or 0
+        if XTool.IsNumberValidEx(taskTimelineId) then
+            local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+            if not XTool.IsTableEmpty(taskDataList) then
+                for _, taskData in ipairs(taskDataList) do
                     local taskId = taskData.Id
-
                     if taskData and taskData.State ~= XDataCenter.TaskManager.TaskState.Finish then
                         return taskId
                     end
@@ -3505,6 +3526,16 @@ end
 function XDlcRelinkControl:GetShowLevelDropDesc(id)
     local config = self._Model:GetShowLevelDropConfig(id)
     return config and config.Desc or ""
+end
+
+function XDlcRelinkControl:GetShowLevelDropQuality(id)
+    local config = self._Model:GetShowLevelDropConfig(id)
+    return config and config.Quality or 0
+end
+
+function XDlcRelinkControl:GetShowLevelDropQualityIcon(id)
+    local quality = self:GetShowLevelDropQuality(id)
+    return self:GetEquipQualityAssets(quality)
 end
 
 --endregion
@@ -3641,6 +3672,7 @@ end
 --region 房间相关
 
 function XDlcRelinkControl:OnBeginMatching()
+    XDataCenter.GuideManager.SetDisableGuide(true)
     XLuaUiManager.Open("UiDlcRelinkMatching")
 end
 
@@ -3650,6 +3682,7 @@ function XDlcRelinkControl:OnCancelMatching()
     if luaUi then
         luaUi:OnClose()
     end
+    XDataCenter.GuideManager.SetDisableGuide(false)
 end
 
 function XDlcRelinkControl:OnMatchSuccess()
@@ -3675,6 +3708,10 @@ end
 
 --- 玩家收到邀请处理
 function XDlcRelinkControl:OnReceiveInvite()
+    -- 引导中不处理邀请
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
     -- 只在主界面和房间界面处理邀请
     if not XLuaUiManager.IsUiShow("UiDlcRelinkMain") and not XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
         return
@@ -4135,15 +4172,19 @@ function XDlcRelinkControl:CheckShopTaskRedPointByConfigId(configId)
         return false
     end
 
-    local taskIds = self:GetShopTaskParamId(configId)
-    if XTool.IsTableEmpty(taskIds) then
+    local taskTimelineIds = self:GetShopTaskParamId(configId)
+    if XTool.IsTableEmpty(taskTimelineIds) then
         return false
     end
 
-    for _, taskId in ipairs(taskIds) do
-        local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-        if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
-            return true
+    for _, taskTimelineId in ipairs(taskTimelineIds) do
+        local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+        if not XTool.IsTableEmpty(taskDataList) then
+            for _, taskData in ipairs(taskDataList) do
+                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+                    return true
+                end
+            end
         end
     end
     return false
@@ -4221,8 +4262,12 @@ function XDlcRelinkControl:CheckNeedPopWifiTips()
     local data = self:GetClientConfig("WifiSwitchTips")
 
     -- 只弹提示, 确认和取消都不需要其他动作
-    self:OpenCommonTipDialog(title, data)
-    self._Model:ClearWifiTipsPopMark()
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_Big)
+    XLuaUiManager.OpenWithCloseCallback("UiDlcRelinkPopupCommon", function()
+        if self._Model then
+            self._Model:ClearWifiTipsPopMark()
+        end
+    end, title, data)
 end
 
 --endregion
@@ -4442,7 +4487,7 @@ function XDlcRelinkControl:GetFixedScore(customData)
         end
     end
 
-    return score
+    return math.ceil(score)
 end
 
 function XDlcRelinkControl:GetFixedValue(key, value)
@@ -4457,7 +4502,8 @@ function XDlcRelinkControl:GetFixedValue(key, value)
 
         return value * factor
     else
-        return value
+        -- 没有配置视为不计入分数
+        return 0
     end
 end
 --endregion
@@ -4489,6 +4535,31 @@ end
 --- 是否开启了全局匹配
 function XDlcRelinkControl:IsGlobalMatchEnabled()
     return self._Model.GlobalMatchEnabled
+end
+
+--endregion
+
+--region 点赞相关
+
+--- 获取玩家被点赞次数
+---@param playerId number 玩家Id
+function XDlcRelinkControl:GetPlayerLikeCount(playerId)
+    if not self._Model.LikeInfoCache then
+        return 0
+    end
+
+    local count = 0
+    for _, toPlayerMap in pairs(self._Model.LikeInfoCache) do
+        if toPlayerMap and toPlayerMap[playerId] then
+            count = count + 1
+        end
+    end
+    return count
+end
+
+--- 清理点赞缓存数据
+function XDlcRelinkControl:ClearLikeInfoCache()
+    self._Model.LikeInfoCache = nil
 end
 
 --endregion

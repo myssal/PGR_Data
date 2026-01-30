@@ -20,16 +20,18 @@ local StateEnum = {
 ---生态状态坐标
 ---@type table<number, Vector3>
 local StatePos = {
-    [StateEnum.Cinema] = {x=617.937012,y=194.8526,z=1023.95758},
-    [StateEnum.Plaza] = {x=581.2,y=190.5, z=911.6},
-    [StateEnum.ArtGallery] = {x=583.260864, y=192.370224, z=848.190308},
+    [StateEnum.Cinema] = {x=617.938721,y=194.76062,z=1023.96503},
+    [StateEnum.Plaza] = {x=581.5,y=190.5,z=912.6},
+    [StateEnum.ArtGallery] = {x=583.260864,y=192.370224,z=848.190308},
 }
 ---寻路路径
 ---@type table<number, Vector3>
 local StatePath = {
     [StateEnum.Cinema] = {
         StatePos[StateEnum.Cinema],
+        {x=618.2,y=194.8,z=1026.1},
         {x=588.9,y=194.1,z=1010.9},
+        {x=589.2,y=194.1,z=999.8},
         {x=559.9,y=193.0,z=993.8},
         {x=559.9,y=193.0,z=993.8},
         {x=562.7,y=190.8,z=961.6},
@@ -43,6 +45,9 @@ local StatePath = {
     },
     [StateEnum.ArtGallery] = {
         StatePos[StateEnum.ArtGallery],
+        {x=582.3,y=192.4,z=851.7},
+        {x=580.8,y=192.4,z=856.4},
+        {x=592.4,y=192.4,z=854.7},
         {x=599.9,y=192.0,z=842.7},
         {x=600.9,y=191.9,z=869.7},
         {x=599.0,y=188.7,z=890.3},
@@ -51,6 +56,9 @@ local StatePath = {
         {x=610.2,y=194.1,z=966.7},
         {x=584.2,y=194.1,z=969.3},
         {x=584.9,y=194.1,z=997.0},
+        {x=589.6,y=194.1,z=1013.1},
+        {x=602.6,y=194.4,z=1024.7},
+        {x=618.2,y=194.8,z=1026.1},
         StatePos[StateEnum.Cinema],
     },
 }
@@ -69,6 +77,7 @@ function XBuouxiongCinemaState:InitStateConfig()
     self.StateConfig.StateLoopAnim = "Drama_Watching_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
+    self.StateConfig.IgnoreCharCollider = true
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -81,6 +90,7 @@ end
 ---@param lastStateEnum number 上个状态
 function XBuouxiongCinemaState:OnStateEnter(lastStateEnum)
     self.InteractTriggerCount = 1
+    self._proxy:SetNpcPosition(self._uuid, StatePos[StateEnum.Cinema])
     XEcologyCharAIBaseState.OnStateEnter(self, lastStateEnum)
 end
 
@@ -125,6 +135,7 @@ function XBuouxiongPlazaState:InitStateConfig()
     self.StateConfig.StateLoopAnim = "Drama_Watching_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
+    self.StateConfig.IgnoreCharCollider = true
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -132,11 +143,18 @@ function XBuouxiongPlazaState:InitStateConfig()
     }
 end
 
+---@overload
+---状态进入时
+---@param lastStateEnum number 上个状态
+function XBuouxiongPlazaState:OnStateEnter(lastStateEnum)
+    self._proxy:SetNpcPosition(self._uuid, StatePos[StateEnum.Plaza])
+    XEcologyCharAIBaseState.OnStateEnter(self, lastStateEnum)
+end
+
 function XBuouxiongPlazaState:PlayPerformAnim()
     local PlazaSitTurnPos={x=579.891968,y=190.512939,z=912.443176}
     self._proxy:TurnPos(self._uuid,PlazaSitTurnPos,"Drama_Watching")
 end
-
 --endregion
 
 
@@ -195,6 +213,13 @@ end
 ---@field _stateMachine XStateMachineController 状态机
 local XCharBuouxiongEcology = XDlcScriptManager.RegCharScript(10609401, "XCharBuouxiongEcology", Base)
 
+
+function XCharBuouxiongEcology:TryInitAIEnterState()
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600019), true)
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600020), true)
+    self._proxy:SetActorIgnoreCollision(self._uuid, self._proxy:GetSceneObjectUUID(1600002), true)
+    Base.TryInitAIEnterState(self)
+end
 
 function XCharBuouxiongEcology:InitStateConfigData()
     ---状态点坐标, 

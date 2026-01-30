@@ -88,23 +88,23 @@ function XChar8006:ScriptInit(isGainControl)
     }
 
     self._enterNoSkill = function()
-        self:SetSyncVar(self._syncKeys.battleLoopIdx, 1)
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.battleLoopIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
         self._curSkillSeq = self._intendSkillSeqs[1][1]
         self:RefreshSkillCD(false)
     end
     self._enterCommonSkill = function()
-        self:SetSyncVar(self._syncKeys.battleLoopIdx, 2)
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.battleLoopIdx, 2)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
         self._curSkillSeq = self._intendSkillSeqs[2][1]
         self:RefreshSkillCD(false)
     end
     self._enterCommonAndParrySkill = function()
-        self:SetSyncVar(self._syncKeys.battleLoopIdx, 3)
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.battleLoopIdx, 3)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
         self._curSkillSeq = self._intendSkillSeqs[3][1]
         self:RefreshSkillCD(false)
     end
@@ -145,8 +145,8 @@ function XChar8006:ScriptInit(isGainControl)
         end
 
         -- 不刷新大轴，仅确保重置技能索引和CD
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
         self._curSkillSeq = self._intendSkillSeqs[3][1]
         self:RefreshSkillCD(false)
     end

@@ -90,14 +90,7 @@ function XUiGridLuosaitaMemberStage:RefreshInfo()
         stageName = string.format("%s-%s %s", chapterTitle, stageCfg.OrderId, stageCfg.Name)
     end
     uiObj:GetObject("TxtName").text = stageName
-    local rImgIcon = uiObj:GetObject("RImgIcon", false)
-    local spriteIcon = uiObj:GetObject("SpriteIcon", false)
-    if rImgIcon then
-        rImgIcon:SetRawImage(stageCfg.Icon)
-    end
-    if spriteIcon then
-        spriteIcon:SetSprite(stageCfg.Icon)
-    end
+    uiObj:GetObject("RImgIcon"):SetRawImage(stageCfg.Icon)
 end
 
 -- 刷新关卡进度

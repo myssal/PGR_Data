@@ -4,11 +4,8 @@
 local XUiGridLuosaitaBlock = XClass(XUiNode, "XUiGridLuosaitaBlock")
 
 function XUiGridLuosaitaBlock:OnStart()
-    self.RImgRed = self.Transform:FindTransform("RImgRed").parent
-    self.RImgBlue = self.Transform:FindTransform("RImgBlue").parent
-    self.AnimEnableBlue = self.Transform:FindTransform("AnimEnableBlue")
-    self.BlueLoop = self.Transform:FindTransform("BlueLoop")
-    self.RedLoop = self.Transform:FindTransform("RedLoop")
+    self.RImgRed = self.Transform:FindTransform("a")
+    self.RImgBlue = self.Transform:FindTransform("b")
 end
 
 function XUiGridLuosaitaBlock:Refresh(blockData)
@@ -25,13 +22,9 @@ function XUiGridLuosaitaBlock:Refresh(blockData)
     
     -- 只有从未占领切换到占领的时候才播切换特效，其他时候播常驻特效
     if self.IsOccupied == false and isOccupied then
+        self.AnimEnableBlue = self.AnimEnableBlue or self.Transform:FindTransform("AnimEnableBlue")
+        self.AnimEnableBlue.gameObject:SetActiveEx(true)
         self.AnimEnableBlue:PlayTimelineAnimation()
-    else
-        if isOccupied then
-            self.BlueLoop:PlayTimelineAnimation()
-        else
-            self.RedLoop:PlayTimelineAnimation()
-        end
     end
     self.IsOccupied = isOccupied
 end

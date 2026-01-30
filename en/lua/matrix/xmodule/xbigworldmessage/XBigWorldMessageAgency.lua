@@ -65,7 +65,13 @@ end
 ---@param controlData XBWFunctionControlData
 function XBigWorldMessageAgency:OnShieldControl(controlData)
     if controlData and not controlData:IsEmpty() then
-        self._Model:SetIsShieldUnReadMessage(controlData:GetArgByIndex(1))
+        local isShieldUnReadMessage = controlData:GetArgByIndex(1)
+        local isShieldMessageTip = controlData:GetArgByIndex(2)
+
+        XLog.Debug("[短信][功能屏蔽] : 未读短信屏蔽 => " .. tostring(isShieldUnReadMessage) .. ", Tip屏蔽 => " .. tostring(isShieldMessageTip))
+
+        self._Model:SetIsShieldUnReadMessage(isShieldUnReadMessage)
+        self._Model:SetIsShieldMessageTip(isShieldMessageTip)
     end
 end
 
@@ -74,7 +80,12 @@ function XBigWorldMessageAgency:UpdateAllMessageData(data)
 end
 
 function XBigWorldMessageAgency:CheckCanPlayMessageTip()
-    return self._Model:HasForceMessageData() and XMVCA.XBigWorldGamePlay:IsInGame()
+    local isMessageShield = XMVCA.XBigWorldFunction:CheckFunctionShield(XMVCA.XBigWorldFunction.FunctionType.Message)
+    local isMessageTipShield = self._Model:GetIsShieldMessageTip()
+
+    XLog.Debug("[短信][功能屏蔽] : 短信Tip屏蔽 => " .. tostring(isMessageTipShield) .. ", 短信屏蔽 => " .. tostring(isMessageShield))
+
+    return self._Model:HasForceMessageData() and XMVCA.XBigWorldGamePlay:IsInGame() and not isMessageTipShield and not isMessageShield
 end
 
 function XBigWorldMessageAgency:CheckHaveForceMessage()

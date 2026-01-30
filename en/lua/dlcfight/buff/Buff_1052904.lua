@@ -5,12 +5,14 @@ local XBuffScript1052904 = XDlcScriptManager.RegBuffScript(1052904, "XBuffScript
 
 --效果说明：七实T;战吼（技能）;延长战吼增益时间，增加嘲讽持续时间；获得对嘲讽目标伤害提升，提升造成伤害仇恨系数
 
-function XBuffScript1052904:Init()
-    --初始化
-    Base.Init(self)
+function XBuffScript1052904:ScriptInit(isGainControl) --初始化
+    Base.ScriptInit(self, isGainControl)
     ------------配置------------
-    self._proxy:ApplyMagic(self._uuid,self._uuid,1052822,1) --仇恨系数提升
-    --XLog.Warning("Buff脚本1052904")
+    if  not isGainControl then
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052822,1) --仇恨系数提升
+        --XLog.Warning("Buff脚本1052904")
+    end
+
 end
 
 ---@param dt number @ delta time 

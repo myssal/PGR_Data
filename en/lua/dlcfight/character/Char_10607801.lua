@@ -21,7 +21,7 @@ local StateEnum = {
 ---@type table<number, Vector3>
 local StatePos = {
     [StateEnum.Garden] = {x=474.676971, y=192.719742, z=1013.74915},
-    [StateEnum.ArtGallery] = {x=567.688538, y=192.773804, z=841.810791},
+    [StateEnum.ArtGallery] = {x=561.2, y=192.8, z=852.7},
     [StateEnum.Port] = {x=486.910004, y=186.542755, z=957.331848},
 }
 ---寻路路径
@@ -29,6 +29,7 @@ local StatePos = {
 local StatePath = {
     [StateEnum.Garden] = {
         StatePos[StateEnum.Garden],
+        {x=512.6,y=193.4,z=1021.4},
         {x=512.4,y=193.5,z=1015.9},
         {x=501.5,y=189.6,z=989.9},
         StatePos[StateEnum.Port]
@@ -46,6 +47,9 @@ local StatePath = {
         {x=529.3,y=185.9,z=947.3},
         {x=501.5,y=189.6,z=989.9},
         {x=512.4,y=193.5,z=1015.9},
+        {x=512.6,y=193.4,z=1021.4},
+        {x=502.1,y=193.9,z=1020.3},
+        {x=485.2,y=193.6,z=1020.4},
         StatePos[StateEnum.Garden],
     },
 }

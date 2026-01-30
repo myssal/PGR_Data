@@ -41,10 +41,16 @@ function XRelinkLevelAudioPlayer:Init(cvKind)
 
     ---@type table<int, CVActionCoolDown>
     self._actionCDs = {
-        [EFightCVAction.CounterWarning] = { coolDown = 10, timer = 0, beginTimer = 0 },
+        [EFightCVAction.CounterWarning] = { coolDown = 14, timer = 0, beginTimer = 0 },
         [EFightCVAction.PraiseCounterSuccess] = { coolDown = 10, timer = 0, beginTimer = 0 },
-        [EFightCVAction.HighDmgSkillWarning] = { coolDown = 10, timer = 0, beginTimer = 0 }
+        [EFightCVAction.HighDmgSkillWarning] = { coolDown = 14, timer = 0, beginTimer = 0 }
     }
+
+    ---@type table<int, bool>
+    self._actionValidations = {}
+    for k, actionId in pairs(EFightCVAction) do
+        self._actionValidations[actionId] = true
+    end
 
     for actionType, coolDown in pairs(self._actionCDs) do
         coolDown.timer = coolDown.beginTimer
@@ -67,6 +73,11 @@ function XRelinkLevelAudioPlayer:Init(cvKind)
     self._hasMemberBPraiseFullChainSuccess = false
     self._praiseFullChainSuccessMemberB = nil
 
+    self._hasFullChainShowCv = true
+    self._fullChainShowCvTimer = 0
+    self._fullChainShowCvDelay = 2
+    self._chainNpcListBuffer = {}
+
     -- 注册事件
     self._proxy:RegisterEvent(EWorldEvent.NpcBrokenAfter)
     self._proxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)
@@ -74,6 +85,7 @@ function XRelinkLevelAudioPlayer:Init(cvKind)
     self._proxy:RegisterEvent(EWorldEvent.NpcWaitReboot)
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
     self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill)
+    self._proxy:RegisterEvent(EWorldEvent.FullChainShowStart)
 end
 
 ---更新
@@ -102,6 +114,21 @@ function XRelinkLevelAudioPlayer:Update(dt)
         if self._hasSelicaPraiseFullChainSuccess and self._hasMemberAPraiseFullChainSuccess and self._hasMemberBPraiseFullChainSuccess then
             self._canPraiseFullChainSuccess = false
         end
+    end
+
+    if not self._hasFullChainShowCv then
+        if self._fullChainShowCvTimer <= 0 then
+            for index, player in ipairs(self._chainNpcListBuffer) do
+                if self._bufferedChainLevel == 2 then
+                    self:PlayNpcCV(player, 0, EFightCVAction.TwoChainSuccess, EAudioLuaFuncSyncType.All)
+                elseif self._bufferedChainLevel == 3 then
+                    self:PlayNpcCV(player, 0, EFightCVAction.FullChainSuccess, EAudioLuaFuncSyncType.All)
+                end
+            end
+            self._hasFullChainShowCv = true
+        end
+
+        self._fullChainShowCvTimer = self._fullChainShowCvTimer - dt
     end
 
     self:CoolDownUpdate(dt)
@@ -135,6 +162,9 @@ function XRelinkLevelAudioPlayer:HandleEvent(eventType, eventArgs)
     end
     if eventType == EWorldEvent.CastFullChainFinalSkill then
         self:OnCastFullChainFinalSkill(eventArgs.GamePlayActive, eventArgs.IsInChain, eventArgs.ChainRemainTime, eventArgs.ChainNpcList, eventArgs.ChainLevel)
+    end
+    if eventType == EWorldEvent.FullChainShowStart then
+        self:OnFullChainShowStart(eventArgs.GamePlayActive, eventArgs.ChainNpcList, eventArgs.ChainLevel)
     end
 end
 
@@ -187,29 +217,6 @@ end
 function XRelinkLevelAudioPlayer:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     -- 弹刀技警告
     if buffId == self._cvEventMagics.CounterWarning then
-        --[[
-        local playerId = nil
-        if self._counterWarningLastNpcUUID == nil then
-            playerId = self:GetArrRandomEle(self:GetValidPlayers(true, nil))
-            if playerId ~= nil then
-                self._counterWarningLastNpcUUID = playerId
-            end
-        else
-            playerId = self:GetArrRandomEle(self:GetValidPlayers(true, { self._counterWarningLastNpcUUID }))
-            if playerId == nil then
-                playerId = self:GetArrRandomEle(self:GetValidPlayers(true, nil))
-                if playerId ~= nil then
-                    self._counterWarningLastNpcUUID = playerId
-                end
-            else
-                self._counterWarningLastNpcUUID = playerId
-            end
-        end
-
-        if playerId ~= nil then
-            self:PlayNpcCV(playerId, 0, EFightCVAction.CounterWarning, EAudioLuaFuncSyncType.All)
-        end
-        ]]
         self:PlayNpcCV(npcUUID, 0, EFightCVAction.CounterWarning, EAudioLuaFuncSyncType.All)
     end
 
@@ -254,6 +261,7 @@ function XRelinkLevelAudioPlayer:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffI
         end
     end
 
+    --[[
     -- TwoChain
     if buffId == self._cvEventMagics.TwoChainSuccess and self._bufferedChainLevel == 2 then
         self:PlayNpcCV(npcUUID, 0, EFightCVAction.TwoChainSuccess, EAudioLuaFuncSyncType.All)
@@ -263,6 +271,7 @@ function XRelinkLevelAudioPlayer:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffI
     if buffId == self._cvEventMagics.FullChainSuccess and self._bufferedChainLevel == 3 then
         self:PlayNpcCV(npcUUID, 0, EFightCVAction.FullChainSuccess, EAudioLuaFuncSyncType.All)
     end
+    ]]
 
     -- 团队极限技
     if buffId == self._cvEventMagics.CastTeamworkSkill then
@@ -305,6 +314,17 @@ end
 function XRelinkLevelAudioPlayer:PlayAudioFightLose()
     self:PlayLevelCV(self._cvKind, EFightCVAction.AllCharacterEliminated, EAudioLuaFuncSyncType.All)
 end
+
+---FullChainSkill表演开始
+---@param gameplayActive number 是否开启玩法
+---@param chainNpcList number 正在锁链的Npc
+---@param chainLevel number 当前连锁段数
+function XRelinkLevelAudioPlayer:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
+    self._fullChainShowCvTimer = self._fullChainShowCvDelay
+    self._bufferedChainLevel = chainLevel
+    self._chainNpcListBuffer = chainNpcList
+    self._hasFullChainShowCv = false
+end
 --endregion
 
 --region音效播放
@@ -314,6 +334,9 @@ function XRelinkLevelAudioPlayer:PlayLevelCV(npcCvKind, actionId, syncType)
         return
     end
     if self:IsActionInCD(actionId) then
+        return
+    end
+    if not self:CheckCvActionValidation(actionId) then
         return
     end
 
@@ -327,6 +350,9 @@ function XRelinkLevelAudioPlayer:PlayNpcCV(npcUUID, npcCvKind, actionId, syncTyp
         return
     end
     if self:IsActionInCD(actionId) then
+        return
+    end
+    if not self:CheckCvActionValidation(actionId) then
         return
     end
 
@@ -413,6 +439,24 @@ function XRelinkLevelAudioPlayer:Contain(tableToCheck, target)
     end
 
     return false
+end
+
+--- 设置CvAction可用性
+--- @param actionId int @ CvAction的ID
+--- @param isValid bool @ 是否可用
+function XRelinkLevelAudioPlayer:SetCvActionValidation(actionId, isValid)
+    if self._actionValidations[actionId] == nil then
+        return false
+    end
+    self._actionValidations[actionId] = isValid
+end
+
+--- 检测指定CvAction是否可用
+function XRelinkLevelAudioPlayer:CheckCvActionValidation(actionId)
+    if self._actionValidations[actionId] == nil then
+        return true
+    end
+    return self._actionValidations[actionId]
 end
 --endregion
 

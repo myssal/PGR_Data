@@ -7,7 +7,7 @@ local XEcologyCharAIFindPathState = XClass(XFindPathState, "XEcologyCharAIFindPa
 ---@overload
 function XEcologyCharAIFindPathState:SetPath(path, checkDistance)
     XFindPathState.SetPath(self, path, checkDistance)
-    self._waitTimeLimit = 120
+    self._waitTimeLimit = 10
     self._curWaitTime = 0
     -- 记录寻路目标状态
     for enum, pos in pairs(self.StateConfig.PathTargetPosDict) do
@@ -73,8 +73,10 @@ end
 ---@overload
 function XEcologyCharAIFindPathState:SetMoveState(value)
     self._isMove = value
-    if self._isMove then
+    if not self._isMove then
         self._curWaitTime = self._waitTimeLimit
+    else
+        self._curWaitTime = 0
     end
 end
 
@@ -115,6 +117,7 @@ function XEcologyCharAIFindPathState:OnNpcInteractStart(eventArgs)
     if self.StateConfig.PathBubbleName then
         self._proxy:StopDramaBubble(ETargetActorType.Npc, self._uuid)
     end
+    self:StopMove()
 end
 --endregion
 
@@ -134,6 +137,10 @@ end
 
 --region 
 function XEcologyCharAIFindPathState:OnMeetCommander()
+    -- 等待结束离开的npc在0.5秒内不停下
+    if self._curWaitTime > 0 then
+        return
+    end
     -- 行走中的npc在剧情时不停下
     if not self._isMove or self._proxy:HasRunningDrama() then
         return
@@ -163,7 +170,10 @@ function XEcologyCharAIFindPathState:UpdateStop2Move(dt)
         return
     end
     
-    self:OnLeaveCommander()
+    -- 离开后1s选择离开
+    if self._curWaitTime > 1 then
+        self._curWaitTime = 1
+    end
 end
 --endregion
 
@@ -171,6 +181,9 @@ end
 function XEcologyCharAIFindPathState:UpdateWait(dt)
     -- 停下时在剧情中则不计时离开
     if self._isMove then
+        if self._curWaitTime > 0 then
+            self._curWaitTime = self._curWaitTime - dt
+        end
         return
     end
     if self._proxy:HasRunningDrama() then
@@ -178,7 +191,9 @@ function XEcologyCharAIFindPathState:UpdateWait(dt)
     end
     self._curWaitTime = self._curWaitTime - dt
     if self._curWaitTime <= 0 then
-        self:ContinueMove()
+        self:OnLeaveCommander()
+        -- 主动离开的有0.5秒的停下冷却
+        self._curWaitTime = 0.5
     end
 end
 --endregion

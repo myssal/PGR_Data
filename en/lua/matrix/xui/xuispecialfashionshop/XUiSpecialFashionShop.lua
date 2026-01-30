@@ -27,8 +27,9 @@ function XUiSpecialFashionShop:OnAwake()
     self:InitTabList()
 
     -- 货币
-    self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelSpecialTool, self)
-
+    self._PanelAsset = XUiHelper.NewPanelActivityAssetSafe(
+        { XDataCenter.ItemManager.ItemId.HongKa },
+        self.PanelSpecialTool, self)
     -- 定时器
     self:StartTimer()
 end
@@ -63,7 +64,7 @@ end
 
 function XUiSpecialFashionShop:Refresh()
     -- 货币
-    self.AssetActivityPanel:Refresh(XShopManager.GetShopShowIdList(self.ShopId))
+
 
     -- 活动时间
     local timeInfo = XShopManager.GetShopTimeInfo(self.ShopId)
@@ -89,7 +90,7 @@ function XUiSpecialFashionShop:OnBuySuccessCb()
         return
     end
     self:RefreshDynamicTable()
-    self.AssetActivityPanel:Refresh(XShopManager.GetShopShowIdList(self.ShopId))
+
 end
 
 ------------------------------------------------------- 监听函数start -------------------------------------------------------

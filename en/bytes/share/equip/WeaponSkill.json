@@ -29,7 +29,7 @@
         "Ability": 100,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipTongyongGandianshanbi.png",
         "Name": "Matrix Lightning",
-        "Description": "Movement Speed greatly increases and all enemies' Extra DMG Reduction decreases by 10% in Matrix.",
+        "Description": "Movement Speed greatly increases and all enemies' Extra DMG Reduction decreases by 10% in Matrix/during Hypermatrix Deduction.",
         "DesLinkCharacterSkillId": 0,
         "BornMagic": [
             509201
@@ -221,7 +221,7 @@
         "Ability": 100,
         "Icon": "Assets/Product/Texture/Image/IconSkill/IconSkillEquipPool7.png",
         "Name": "Resonant Echo",
-        "Description": "The duration of effect inflicted by Tank class skill increases to 8s. Repeated triggering refreshes the duration.",
+        "Description": "The duration of effect inflicted by Tank/Breaker class skill increases to 8s. Duration resets every time the effect is triggered.",
         "DesLinkCharacterSkillId": 0,
         "BornMagic": [
             509020
@@ -2908,6 +2908,41 @@
         "Account": "ATK Boost",
         "BornMagic": [
             512418
+        ]
+    },
+    {
+        "Id": 2624001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "Aftershock System",
+        "Description": "ATK increases by 5%.",
+        "DesLinkCharacterSkillId": 0,
+        "BornMagic": [
+            512429
+        ]
+    },
+    {
+        "Id": 2625001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "Mirage Amplifier",
+        "Description": "Dark DMG increases by 10%.",
+        "DesLinkCharacterSkillId": 0,
+        "Account": "Beginner Transition",
+        "BornMagic": [
+            512430
+        ]
+    },
+    {
+        "Id": 2626001,
+        "SubSkillId": [],
+        "Ability": 0,
+        "Name": "Type-3 Amalgamation",
+        "Description": "ATK increases by 10%. Base DMG of Twin Rotation increases by 100%. Sin Engraving's DMG boost increases by 50%.",
+        "DesLinkCharacterSkillId": 0,
+        "Account": "ATK Boost",
+        "BornMagic": [
+            512431
         ]
     }
 ]

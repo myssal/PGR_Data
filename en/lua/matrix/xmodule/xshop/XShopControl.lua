@@ -18,12 +18,14 @@ function XShopControl:OnRelease()
     
 end
 
-function XShopControl:GetModel()
-    return self._Model
+---@return XAccumulateExpendShop
+function XShopControl:GetAccumulateExpendShopModel()
+    return self._Model:GetAccumulateExpendShop()
 end
+
 function XShopControl:AccumulateExpendShopSign()
 
-    if self._Model:GetAccumulateExpendShop():IsSign() then
+    if self:GetAccumulateExpendShopModel():IsSign() then
         XMVCA.XShop:AccumulateExpendShopSign(function()
             XMVCA.XShop:EnterAccumulateExpendShop()
          end)
@@ -34,6 +36,6 @@ function XShopControl:AccumulateExpendShopSign()
 end
 
 function XShopControl:EnterAccumulateExpendShop()
-    self._Model:GetAccumulateExpendShop():EnterShop()
+    self:GetAccumulateExpendShopModel():EnterShop()
 end
 return XShopControl

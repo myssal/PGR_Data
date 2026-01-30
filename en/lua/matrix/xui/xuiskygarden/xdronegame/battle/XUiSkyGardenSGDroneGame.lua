@@ -161,6 +161,11 @@ end
 function XUiSkyGardenSGDroneGame:OnDestroy()
     self:_RemoveListeners()
     self.AudioPlayer:StopByKeyName("BGM_DroneGame")
+
+    if not string.IsNilOrEmpty(self._CurrentDialogueAudioKey) then
+        self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
+    end
+
     CS.XAudioManager.BgmAreaTriggerEnable = true
 end
 
@@ -400,7 +405,7 @@ function XUiSkyGardenSGDroneGame:OnBehaviorTriggered(text, score)
     end
 
     if scoreGrid then
-        if #self._CurrentScore >= 3 then
+        if #self._CurrentScore >= 1 then
             local currentScore = table.remove(self._CurrentScore, 1)
 
             if currentScore then

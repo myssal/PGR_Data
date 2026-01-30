@@ -19,6 +19,7 @@
         "ItemKey": 49,
         "ItemCount": 23,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Low Battery Mode"
         ],
@@ -45,7 +46,8 @@
         "SceneRotation": 0,
         "ItemKey": 49,
         "ItemCount": 23,
-        "SkipId": 80153
+        "SkipId": 80153,
+        "IsEnvMusic": false
     },
     {
         "Id": 14000003,
@@ -66,6 +68,7 @@
         "ItemKey": 49,
         "ItemCount": 23,
         "SkipId": 80153,
+        "IsEnvMusic": false,
         "Tag": [
             "Low Battery Mode"
         ],
@@ -93,6 +96,7 @@
         "ItemKey": 49,
         "ItemCount": 23,
         "SkipId": 80153,
+        "IsEnvMusic": false,
         "Tag": [
             "Day/Dusk Mode"
         ],
@@ -120,6 +124,7 @@
         "ItemKey": 49,
         "ItemCount": 33,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Real-time Clock",
             "Exclusive Music"
@@ -136,14 +141,15 @@
         "BigIcon": "Assets/Product/Texture/Image/IconTools/IconMain3dSpace.png",
         "IconPath": "Assets/Product/Texture/Image/UiPhotograph/scene06.png",
         "SceneModelId": 8,
-        "LockDec": "From 4-Year Anniversary Gift Sign-in",
+        "LockDec": "From 4th Anniversary Gift Sign-in",
         "Priority": 15,
         "IsFree": 0,
         "IsMainScene": 0,
         "SceneRotation": 0,
         "ItemKey": 49,
         "ItemCount": 23,
-        "SkipId": 80153
+        "SkipId": 80153,
+        "IsEnvMusic": false
     },
     {
         "Id": 14000007,
@@ -164,6 +170,7 @@
         "ItemKey": 49,
         "ItemCount": 33,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Day & Night Mode",
             "Exclusive Music"
@@ -192,6 +199,7 @@
         "ItemKey": 49,
         "ItemCount": 33,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Day & Night Mode",
             "Exclusive Music"
@@ -204,7 +212,7 @@
     {
         "Id": 14000009,
         "Name": "Floral Serenity",
-        "Type": 1,
+        "Type": 3,
         "Quality": 5,
         "Description": "Unlocked after obtaining this scene",
         "WorldDescription": "A projected landscape modeled after a serene countryside. Bathed in sunlight, a river flows through blooming fields, exuding tranquility and peace.",
@@ -219,7 +227,8 @@
         "SceneRotation": 0,
         "ItemKey": 49,
         "ItemCount": 23,
-        "SkipId": 0
+        "SkipId": 0,
+        "IsEnvMusic": false
     },
     {
         "Id": 14000010,
@@ -240,6 +249,7 @@
         "ItemKey": 49,
         "ItemCount": 23,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Exclusive Music"
         ]
@@ -263,6 +273,7 @@
         "ItemKey": 49,
         "ItemCount": 33,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Day & Night Mode",
             "Exclusive Music"
@@ -291,6 +302,7 @@
         "ItemKey": 49,
         "ItemCount": 33,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
             "Day & Night Mode",
             "Exclusive Music"
@@ -318,7 +330,8 @@
         "SceneRotation": 1,
         "ItemKey": 49,
         "ItemCount": 23,
-        "SkipId": 0
+        "SkipId": 0,
+        "IsEnvMusic": false
     },
     {
         "Id": 14000014,
@@ -339,7 +352,33 @@
         "ItemKey": 49,
         "ItemCount": 23,
         "SkipId": 0,
+        "IsEnvMusic": false,
         "Tag": [
+            "Exclusive Music"
+        ]
+    },
+    {
+        "Id": 14000015,
+        "Name": "Behind the Curtain",
+        "Type": 4,
+        "Quality": 6,
+        "Description": "Unlocked after obtaining this scene",
+        "WorldDescription": "With the world watching, you take her hand and begin a story that will never fade.",
+        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconMain3dBianca2Sp.png",
+        "BigIcon": "Assets/Product/Texture/Image/IconTools/IconMain3dBianca2.png",
+        "IconPath": "Assets/Product/Texture/Image/UiPhotograph/scene15.png",
+        "SceneModelId": 17,
+        "LockDec": "Obtained from [Night Sonata] Research",
+        "Priority": 24,
+        "IsFree": 0,
+        "IsMainScene": 0,
+        "SceneRotation": 0,
+        "ItemKey": 49,
+        "ItemCount": 33,
+        "SkipId": 0,
+        "IsEnvMusic": true,
+        "Tag": [
+            "Gyroscope Mode",
             "Exclusive Music"
         ]
     }
