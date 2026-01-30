@@ -574,7 +574,6 @@ function XUiDlcRelinkEquipReform:RegisterUiEvents()
     self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
     self.BtnAbsorb:AddEventListener(handler(self, self.OnBtnAbsorbClick))
     self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
-    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 end
 
 function XUiDlcRelinkEquipReform:OnBtnBackClick()
@@ -677,10 +676,6 @@ end
 function XUiDlcRelinkEquipReform:OnBtnCloseClick()
     self.EquipDetailNode:CloseDeleteFactorPanel()
     self.MaskDelete.gameObject:SetActiveEx(false)
-end
-
-function XUiDlcRelinkEquipReform:OnBtnMainUiClick()
-    XLuaUiManager.RunMain()
 end
 
 return XUiDlcRelinkEquipReform

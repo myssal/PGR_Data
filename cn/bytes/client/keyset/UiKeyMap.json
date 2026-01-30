@@ -1559,7 +1559,7 @@
     },
     {
         "UiName": "UiSkyGardenSGDroneGame",
-        "InputMapSectionId": 0,
+        "InputMapSectionId": 1006,
         "BtnName": [
             "BtnSpeedUp",
             "BtnChange",
@@ -1568,41 +1568,225 @@
             "BtnSpecial4"
         ],
         "DefaultKeyMapIds": [
-            11514,
-            11515,
+            11575,
+            11576,
+            11541,
             11534,
-            11562,
-            11562
+            11534
         ]
     },
     {
         "UiName": "UiSkyGardenSGDronePopupStop",
-        "InputMapSectionId": 0,
+        "InputMapSectionId": 1008,
         "BtnName": [
             "BtnTanchuangClose",
             "UiSkyGardenSGDroneBtnConfirm",
-            "UiSkyGardenSGDroneBtnBigCancel(1)",
+            "UiSkyGardenSGDroneBtnBigRestart",
             "UiSkyGardenSGDroneBtnBigCancel"
         ],
         "DefaultKeyMapIds": [
             11541,
-            11564,
-            11565,
-            11564
+            11577,
+            11577,
+            11578
         ]
     },
     {
         "UiName": "UiSkyGardenSGDronePopupSettlement",
-        "InputMapSectionId": 0,
+        "InputMapSectionId": 1007,
         "BtnName": [
             "BtnTanchuangClose",
             "UiSkyGardenSGDroneBtnConfirm",
-            "UiSkyGardenSGDroneBtnBigCancel"
+            "UiSkyGardenSGDroneBtnBigCancel",
+            "UiSkyGardenSGDroneLostBtnBigCancel",
+            "UiSkyGardenSGDroneLostBtnConfirm"
         ],
         "DefaultKeyMapIds": [
             11541,
-            11514,
-            11565
+            11579,
+            11580,
+            11580,
+            11579
+        ]
+    },
+    {
+        "UiName": "UiFightDlcCommonControl",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "ButtonFocus",
+            "ButtonAttack",
+            "ButtonDodge",
+            "ButtonJump",
+            "ButtonExSkill",
+            "BtnSkill1",
+            "BtnSkill2",
+            "BtnSkill3",
+            "ButtonExit",
+            "BtnSkill4"
+        ],
+        "DefaultKeyMapIds": [
+            16024,
+            16010,
+            16011,
+            16012,
+            16013,
+            16014,
+            16015,
+            16016,
+            16025,
+            16017
+        ]
+    },
+    {
+        "UiName": "UiFightDlcCommonTeamInfo",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnTeamSkill"
+        ],
+        "DefaultKeyMapIds": [
+            16027
+        ]
+    },
+    {
+        "UiName": "UiFightDlcRelinkExtraControl",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnQTE2",
+            "BtnQTE1"
+        ],
+        "DefaultKeyMapIds": [
+            16028,
+            16029
+        ]
+    },
+    {
+        "UiName": "UiFightDlcRelinkChatRoulette",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnTalkWheel",
+            "BtnLike"
+        ],
+        "DefaultKeyMapIds": [
+            16030,
+            16031
+        ]
+    },
+    {
+        "UiName": "UiFightDlcCommonReborn",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnReborn"
+        ],
+        "DefaultKeyMapIds": [
+            16032
+        ]
+    },
+    {
+        "UiName": "UiFightDlcCommonMenu",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "ButtonExit"
+        ],
+        "DefaultKeyMapIds": [
+            16025
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneMain",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "BtnBack",
+            "UiSkyGardenSGDroneBtnConfirm",
+            "BtnStore",
+            "UiSkyGardenSGDroneBtnContinue",
+            "UiSkyGardenSGDroneBtnNegation"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11523,
+            11561,
+            11523,
+            11573
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneChapter",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "BtnBack",
+            "BtnStore"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11561
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStage",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "BtnBack",
+            "BtnTeach"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11534
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneStageDetail",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "BtnClose",
+            "TogEnableJoystick",
+            "UiSkyGardenSGDroneBtnGo",
+            "UiSkyGardenSGDroneBtnConfirm"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11561,
+            11523,
+            11523
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDroneShop",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnBack"
+        ],
+        "DefaultKeyMapIds": [
+            11541
+        ]
+    },
+    {
+        "UiName": "UiBigWorldPurchaseItem",
+        "InputMapSectionId": 151,
+        "BtnName": [
+            "BtnBack",
+            "BtnBuy",
+            "BtnAddSelect",
+            "BtnMinusSelect",
+            "BtnMax"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11523,
+            11531,
+            11532,
+            11533
+        ]
+    },
+    {
+        "UiName": "UiSkyGardenSGDronePopupDetail",
+        "InputMapSectionId": 0,
+        "BtnName": [
+            "BtnClose",
+            "VideoBtn"
+        ],
+        "DefaultKeyMapIds": [
+            11541,
+            11534
         ]
     }
 ]

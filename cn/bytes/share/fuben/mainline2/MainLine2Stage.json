@@ -2632,7 +2632,8 @@
         ],
         "AchievementUndoneDescs": [
             "<color=#989898>※预览到阿尔法的幻觉</color>",
-            "<color=#989898>※预览到拉弥亚和罗兰的幻觉</color>"
+            "<color=#989898>※预览到拉弥亚和罗兰的幻觉</color>",
+            "<color=#989898>※预览到指挥官的幻觉</color>"
         ]
     },
     {
@@ -4193,7 +4194,8 @@
         ],
         "AchievementUndoneDescs": [
             "<color=#989898>释放大招</color>",
-            "<color=#989898>选择【开枪】</color>"
+            "<color=#989898>选择【开枪】</color>",
+            "<color=#989898>选择【不开枪】</color>"
         ],
         "MonsterHeads": [
             "Assets/Product/Texture/Image/RoleCharacter/V210zjNormal01.png",
@@ -4927,7 +4929,8 @@
         ],
         "AchievementUndoneDescs": [
             "<color=#989898>※被丽芙救起次数小于5次</color>",
-            "<color=#989898>※不死的情况下击败冯·内古特</color>"
+            "<color=#989898>※不死的情况下击败冯·内古特</color>",
+            "<color=#989898>※被丽芙救起次数大于10次</color>"
         ]
     },
     {
@@ -5815,7 +5818,8 @@
         ],
         "AchievementUndoneDescs": [
             "<color=#989898>※使用落石砸死巡逻的怪物群</color>",
-            "<color=#989898>※解锁隐藏的篝火点</color>"
+            "<color=#989898>※解锁隐藏的篝火点</color>",
+            "<color=#989898>※成功通过循环矿洞</color>"
         ]
     },
     {
@@ -5881,7 +5885,8 @@
             "<color=#989898>※被BOSS的蛛网缠住次数少于5次</color>"
         ],
         "AchievementUndoneDescs": [
-            "<color=#989898>※躲过一阶段BOSS假装虚弱的投技</color>"
+            "<color=#989898>※躲过一阶段BOSS假装虚弱的投技</color>",
+            "<color=#989898>※被BOSS的蛛网缠住次数少于5次</color>"
         ]
     },
     {
@@ -6253,6 +6258,351 @@
         "TransformStageId": 0,
         "Ignore": false,
         "UnlockCondition": 0,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380101,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007222,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            1
+        ],
+        "AchievementNames": [
+            "断桥作战",
+            "我不会失手"
+        ],
+        "AchievementDescs": [
+            "先将两军隔开，然后从长计议。",
+            "里的狙击永远及时。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※超刻狙击茯神</color>"
+        ]
+    },
+    {
+        "Id": 10380102,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007200,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380103,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007201,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380104,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007202,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380105,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007223,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "冰心战争—始",
+            "极地尖峰",
+            "阵地联动"
+        ],
+        "AchievementDescs": [
+            "打响战争开始的第一枪。",
+            "这台机体不只是好看而已。",
+            "在需要的时候，里总会出手。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※5分钟内抵达最终区域并击败BOSS</color>",
+            "<color=#989898>※等到超刻的炮击支援</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※5分钟内抵达最终区域并击败BOSS</color>",
+            "<color=#989898>※等到超刻的炮击支援</color>"
+        ]
+    },
+    {
+        "Id": 10380106,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007224,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380107,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007205,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380108,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007225,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380109,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007207,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380110,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007208,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380111,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007226,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1
+        ],
+        "AchievementNames": [
+            "风雪中的歌"
+        ],
+        "AchievementDescs": [
+            "这首歌述说的不仅是这极地。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>"
+        ],
+        "MonsterHeads": [
+            "Assets/Product/Texture/Image/RoleCharacter/V210zjNormal01.png"
+        ],
+        "MonsterReplaceOrders": [
+            2
+        ]
+    },
+    {
+        "Id": 10380112,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007210,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380113,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007211,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380114,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007212,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380115,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007227,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380116,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007214,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380117,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007215,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380118,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007216,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380119,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007217,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380120,
+        "StageDetailType": 4,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007228,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            3,
+            3,
+            3
+        ],
+        "AchievementNames": [
+            "一骑当千",
+            "踏破冰雪",
+            "鲸歌",
+            "狙击精英"
+        ],
+        "AchievementDescs": [
+            "人马合一，这就是无双的力量。",
+            "没有这铁蹄不能踏破的事物。",
+            "这永远是最温柔的声音。",
+            "你们都在射程范围内了。"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※完成关卡流程</color>",
+            "<color=#989898>※冲破所有冰墙</color>",
+            "<color=#989898>※跟德雷克打招呼</color>",
+            "<color=#989898>※超刻狙断两条铁链</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※冲破所有冰墙</color>",
+            "<color=#989898>※跟德雷克打招呼</color>",
+            "<color=#989898>※超刻狙断两条铁链</color>"
+        ]
+    },
+    {
+        "Id": 10380121,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007219,
+        "ProgressConditions": [],
+        "VideoId": 0
+    },
+    {
+        "Id": 10380122,
+        "StageDetailType": 5,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007220,
+        "ProgressConditions": [],
+        "VideoId": 0,
+        "AchievementTpyes": [
+            1,
+            1,
+            2,
+            3
+        ],
+        "AchievementNames": [
+            "冰心战争—结",
+            "统合的性能",
+            "明镜止水",
+            "世代交替"
+        ],
+        "AchievementDescs": [
+            "皇冠凋零，尘埃落定。",
+            "让你看看马尔库特的性能。",
+            "极光已经映照出了一切。",
+            "就此终结——统合的系谱！"
+        ],
+        "AchievementBriefDescs": [
+            "<color=#989898>※正常击败扎克</color>",
+            "<color=#989898>※精准跳跃躲避过扎克的下段攻击</color>",
+            "<color=#989898>※完成5次或以上和boss的精准交互</color>",
+            "<color=#989898>※触发罗塞塔处决boss彩蛋</color>"
+        ],
+        "AchievementUndoneDescs": [
+            "<color=#989898>※完成5次或以上和boss的精准交互</color>",
+            "<color=#989898>※触发罗塞塔处决boss彩蛋</color>"
+        ]
+    },
+    {
+        "Id": 10380123,
+        "StageDetailType": 1,
+        "TransformCondition": 0,
+        "TransformStageId": 0,
+        "Ignore": false,
+        "UnlockCondition": 1007221,
         "ProgressConditions": [],
         "VideoId": 0
     }

@@ -32,12 +32,24 @@
         "Value": "[系统消息]"
     },
     {
+        "Key": "MessageVideoText",
+        "Value": "[视频]"
+    },
+    {
+        "Key": "MessageImageText",
+        "Value": "[图片]"
+    },
+    {
         "Key": "DramaSkipConfirmTip",
         "Value": "观看完整剧情有助于了故事发展，是否确认跳过？"
     },
     {
         "Key": "MapPinDesc",
         "Value": "图钉详情"
+    },
+    {
+        "Key": "ViewDetails",
+        "Value": "查看详情"
     },
     {
         "Key": "MapPinQuestDesc",
@@ -74,6 +86,10 @@
     {
         "Key": "MapQuickGoingFarTeleportDesc",
         "Value": "前往传送信标距离较远，是否继续传送"
+    },
+    {
+        "Key": "MapAiMemoryTitle",
+        "Value": "邂逅日志"
     },
     {
         "Key": "CommmonTipsTitle",
@@ -148,8 +164,24 @@
         "Value": "拍摄成功！"
     },
     {
+        "Key": "SG_P_DefaultFirstPersonSet",
+        "Value": "默认启用第一人称模式"
+    },
+    {
+        "Key": "SG_P_FakeSet",
+        "Value": "启动背景虚化"
+    },
+    {
+        "Key": "SG_P_FakePowerSet",
+        "Value": "虚化强度"
+    },
+    {
         "Key": "SG_P_SaveSucess",
         "Value": "保存成功"
+    },
+    {
+        "Key": "SG_P_QuestionTarget",
+        "Value": "？？？"
     },
     {
         "Key": "SG_SS_UpgradeSucess",
@@ -576,6 +608,10 @@
         "Value": "请前往任务目标"
     },
     {
+        "Key": "QuestGoToNewLevelText",
+        "Value": "即将离开当前场景，前往新的场景。"
+    },
+    {
         "Key": "SOMeshText0000_001_DLCLevel4001",
         "Value": "\"这是一个 SceneObject 特效字 Key 格式示例，【建议】格式为 $\"\"SOMeshText{叙事飘字队列全局编号}_{队列内飘字序号}_DLCLevel{飘字所在的关卡 Id}\"\"\""
     },
@@ -586,5 +622,85 @@
     {
         "Key": "SOMeshText0000_003_DLCLevel4001",
         "Value": "这是 0000 号组的第 3 个飘字，配置特效字文本时请注意长度和放置位置，避免穿模问题，并且为本地化后的文本考虑一下"
+    },
+    {
+        "Key": "DeliveryNotEnough",
+        "Value": "道具不足（临时提示）"
+    },
+    {
+        "Key": "SkipToFinshPreCondition",
+        "Value": "前往完成前置"
+    },
+    {
+        "Key": "SkipTo",
+        "Value": "前往"
+    },
+    {
+        "Key": "EarlyAccessTitle",
+        "Value": "提前体验"
+    },
+    {
+        "Key": "EarlyAccessSubtitle",
+        "Value": "以下为前置条件"
+    },
+    {
+        "Key": "EarlyAccessContent",
+        "Value": "您可以选择越过前置条件，提前体验相关内容。\\n此操作<color=#1272bb>不会影响前置条件的进度</color>。推荐以正常顺序进行游玩。"
+    },
+    {
+        "Key": "BigWorldPhotoSaveSuccessTip",
+        "Value": "照片已保存至:%s"
+    },
+    {
+        "Key": "BranchQuestAccepted",
+        "Value": "已经接取邀约，不可接取另一个角色的邀约任务"
+    },
+    {
+        "Key": "BranchQuestTips",
+        "Value": "接下来，您将与%s共度一段私人时光，进行情感交流，您可以自由选择是否体验。"
+    },
+    {
+        "Key": "LocalTextureExist",
+        "Value": "本地已经已经存在！"
+    },
+    {
+        "Key": "CourseCoreQuestProgressText",
+        "Value": "%s完成"
+    },
+    {
+        "Key": "InviteQuestFinishTotalText",
+        "Value": "结局达成数："
+    },
+    {
+        "Key": "EnvironmentQuestFinishTotalText",
+        "Value": "已完成邂逅:"
+    },
+    {
+        "Key": "InviteQuestBeginTip",
+        "Value": "即将与%s共度一段亲密的浪漫时光"
+    },
+    {
+        "Key": "QuestIsInActiveTip",
+        "Value": "任务尚未解锁"
+    },
+    {
+        "Key": "DramaPartSkipConfirmTip",
+        "Value": "观看完整剧情有助于了故事发展，是否确认跳过？"
+    },
+    {
+        "Key": "LoginWillNoLongerPrompt",
+        "Value": "本次登录不再提示"
+    },
+    {
+        "Key": "ShopBuySuccess",
+        "Value": "购买成功"
+    },
+    {
+        "Key": "ShopBuyNotEnough",
+        "Value": "购买所需材料不足"
+    },
+    {
+        "Key": "ShopBuyNotSales",
+        "Value": "未开始发售"
     }
 ]

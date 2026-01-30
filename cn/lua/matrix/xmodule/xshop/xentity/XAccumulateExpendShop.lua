@@ -17,7 +17,7 @@ function XAccumulateExpendShop:RefreshData(data)
     self._ActivityId            = data.ActivityId
     self._TotalConsumeCount     = data.TotalConsumeCount
     self._ConvertedCount        = data.ConvertedCount
-    self._ActivityConfig        = self._Model:GetAccumulateExpendShopActivityConfig(self._ActivityId)
+    self._ActivityConfig        = self:GetActivityConfigs()
     if not self:IsConsumeCountMax() then
         self._NotifyChange = self._NotifyChange or
             XSaveTool.GetData(SaveKey .. "TotalConsumeCount") ~=
@@ -71,7 +71,7 @@ function XAccumulateExpendShop:GetCurDateSignReward()
 end
 
 function XAccumulateExpendShop:IsRedPointShow()
-    return self._NotifyChange
+    return self._NotifyChange or self._CurDateSignRewardId ~= nil
 end
 
 function XAccumulateExpendShop:EnterShop()
@@ -120,6 +120,10 @@ function XAccumulateExpendShop:SortGoodList(shopId)
         end
     end)
     return goodsList
+end
+
+function XAccumulateExpendShop:GetActivityConfigs()
+    return self._Model:GetAccumulateExpendShopActivityConfig(self._ActivityId)
 end
 
 return XAccumulateExpendShop

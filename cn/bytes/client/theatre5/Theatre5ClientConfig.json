@@ -308,7 +308,7 @@
         "Key": "PVPNotOpenTips",
         "Values": [
             "玩法未开启",
-            "{0}日后开启"
+            "{0}后开启"
         ]
     },
     {
@@ -411,20 +411,20 @@
     {
         "Key": "PvpPopUpContent1",
         "Values": [
-            "全新赛季内容",
-            "全新赛季内容"
+            "全新委托系统",
+            "玛门事务所正在准备委托"
         ]
     },
     {
         "Key": "PvpPopUpContent2",
         "Values": [
-            "全新赛季内容"
+            "新增玛门的嘉赏"
         ]
     },
     {
         "Key": "PvpPopUpContent3",
         "Values": [
-            "全新赛季奖励"
+            "赛季限时奖励"
         ]
     },
     {
@@ -497,7 +497,8 @@
     {
         "Key": "MissionLvFormat",
         "Values": [
-            "Lv.{0}"
+            "Lv.{0}",
+            "MAX"
         ]
     },
     {
@@ -515,7 +516,7 @@
     {
         "Key": "MissionGridLevelLabel",
         "Values": [
-            "lv.{0}",
+            "Lv.{0}",
             "MAX"
         ]
     },
@@ -554,15 +555,21 @@
     {
         "Key": "PVPNotStartTips",
         "Values": [
-            "{0}日后开启",
+            "{0}后开启",
             "未开启"
         ]
     },
     {
         "Key": "PVPReasonTips",
         "Values": [
-            "{0}日后开启",
-            "赛季已开启"
+            "{0}  {1}后开启",
+            "{0}  赛季已开启"
+        ]
+    },
+    {
+        "Key": "PVPReasonTimeDuration",
+        "Values": [
+            "{0}.{1}-{2}.{3}"
         ]
     },
     {
@@ -574,7 +581,7 @@
     {
         "Key": "MissionFinishTipsInSkillChoicePart",
         "Values": [
-            "完成技能选择后，将结算委托"
+            "即将结算委托"
         ]
     },
     {
@@ -588,6 +595,20 @@
             "ConditionCompares",
             "ConditionCompareValues",
             "DescShowParam"
+        ]
+    },
+    {
+        "Key": "MissionStateLabelInRoundSettle",
+        "Values": [
+            "未接取委托",
+            "委托进行中"
+        ]
+    },
+    {
+        "Key": "MissionStateLabelInFinalSettle",
+        "Values": [
+            "未接取委托",
+            "委托进行中"
         ]
     }
 ]

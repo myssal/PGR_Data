@@ -257,7 +257,7 @@ function XUiDlcMultiPlayerCompetitionCamp:PreviewSelected()
         str = discussionConfig.Camp2
     end
     self.BtnSupport:SetName(XUiHelper.GetText("MultiMouseHunterSubVote", str))
-    self.Parent.BtnVote:SetName(XUiHelper.GetText("MultiMouseHunterSubVote",str))
+    self.Parent.BtnVote:SetName(XUiHelper.GetText("MultiMouseHunterVote",str))
     self.Parent.BtnVote:SetDisable(false)
     self.Parent.BtnVote.enabled = true
 end

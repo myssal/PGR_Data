@@ -113,6 +113,9 @@ end
 
 ---停止移动
 function XFindPathState:StopMove()
+    if not self._isMove then
+        return
+    end
     self._proxy:NpcStopMove(self._uuid)
     self._proxy:EnableNpcLookAt(self._uuid, self._proxy:GetLocalPlayerNpcId())
     self:SetMoveState(false)

@@ -489,13 +489,29 @@
         "TimeId": 0
     },
     {
+        "TaskId": 990050,
+        "ContentId": 201,
+        "UnlockType": 3,
+        "ConditionId": 0,
+        "Title": "空域启航",
+        "UnlockText": "可解锁「空域迷航」玩法",
+        "SkipId": 990050,
+        "TimeId": 0,
+        "UnlockParams": [
+            50002001
+        ]
+    },
+    {
         "TaskId": 990051,
         "ContentId": 201,
-        "UnlockType": 1,
+        "UnlockType": 2,
         "ConditionId": 0,
         "Title": "空域迷航1-1",
         "SkipId": 990051,
-        "TimeId": 0
+        "TimeId": 0,
+        "UnlockParams": [
+            990050
+        ]
     },
     {
         "TaskId": 990052,
@@ -656,11 +672,59 @@
     {
         "TaskId": 990065,
         "ContentId": 201,
-        "UnlockType": 1,
+        "UnlockType": 2,
         "ConditionId": 0,
         "Title": "净空回声",
         "SkipId": 990065,
+        "TimeId": 0,
+        "UnlockParams": [
+            990050
+        ]
+    },
+    {
+        "TaskId": 990066,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "记美好的回忆-1",
+        "SkipId": 990066,
         "TimeId": 0
+    },
+    {
+        "TaskId": 990067,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "ConditionId": 0,
+        "Title": "记美好的回忆-2",
+        "SkipId": 990067,
+        "TimeId": 0,
+        "UnlockParams": [
+            990066
+        ]
+    },
+    {
+        "TaskId": 990068,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "ConditionId": 0,
+        "Title": "记美好的回忆-3",
+        "SkipId": 990068,
+        "TimeId": 0,
+        "UnlockParams": [
+            990067
+        ]
+    },
+    {
+        "TaskId": 990069,
+        "ContentId": 201,
+        "UnlockType": 2,
+        "ConditionId": 0,
+        "Title": "记美好的回忆-4",
+        "SkipId": 990069,
+        "TimeId": 0,
+        "UnlockParams": [
+            990068
+        ]
     },
     {
         "TaskId": 990070,
@@ -674,11 +738,14 @@
     {
         "TaskId": 990071,
         "ContentId": 201,
-        "UnlockType": 1,
+        "UnlockType": 3,
         "ConditionId": 0,
         "Title": "库洛洛百相-1",
         "SkipId": 990071,
-        "TimeId": 0
+        "TimeId": 0,
+        "UnlockParams": [
+            50002001
+        ]
     },
     {
         "TaskId": 990072,
@@ -738,12 +805,66 @@
         ]
     },
     {
+        "TaskId": 990077,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-露西亚",
+        "SkipId": 200111,
+        "TimeId": 0
+    },
+    {
         "TaskId": 990078,
         "ContentId": 201,
         "UnlockType": 1,
         "ConditionId": 0,
         "Title": "邂逅时光-布偶熊",
         "SkipId": 200112,
+        "TimeId": 0
+    },
+    {
+        "TaskId": 990079,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-薇拉",
+        "SkipId": 200113,
+        "TimeId": 0
+    },
+    {
+        "TaskId": 990080,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-比安卡",
+        "SkipId": 200114,
+        "TimeId": 0
+    },
+    {
+        "TaskId": 990081,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-罗塞塔",
+        "SkipId": 200115,
+        "TimeId": 0
+    },
+    {
+        "TaskId": 990082,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-万事",
+        "SkipId": 200116,
+        "TimeId": 0
+    },
+    {
+        "TaskId": 990083,
+        "ContentId": 201,
+        "UnlockType": 1,
+        "ConditionId": 0,
+        "Title": "邂逅时光-里",
+        "SkipId": 200117,
         "TimeId": 0
     },
     {

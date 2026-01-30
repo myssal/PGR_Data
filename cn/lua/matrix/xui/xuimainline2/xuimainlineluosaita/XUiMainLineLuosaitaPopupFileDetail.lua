@@ -6,14 +6,10 @@ function XUiMainLineLuosaitaPopupFileDetail:OnAwake()
     self:RegisterUiEvents()
 end
 
-function XUiMainLineLuosaitaPopupFileDetail:OnStart(sectionId, docId, openCb, closeCb)
+function XUiMainLineLuosaitaPopupFileDetail:OnStart(sectionId, docId, closeCb)
     self.SectionId = sectionId
     self.DocId = docId
     self.CloseCb = closeCb
-
-    if openCb then
-        openCb()
-    end
 end
 
 function XUiMainLineLuosaitaPopupFileDetail:OnEnable()

@@ -167,6 +167,7 @@ function XBigWorldMapAgency:OnAssistedTrackMapPin(data)
 end
 
 function XBigWorldMapAgency:OnUpdateMapPinPosition(data)
+    self._Model:UpdatePinOutStatus(data.MapPinLevelId, data.MapPinId, false)
     self._Model:UpdatePinPosition(data.MapPinLevelId, data.MapPinId, data.Position)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE, data)
 end
@@ -198,6 +199,7 @@ function XBigWorldMapAgency:OnOpenBigMap(data)
 end
 
 function XBigWorldMapAgency:OnLittleMapPinRemove(data)
+    self._Model:UpdatePinOutStatus(data.MapPinLevelId, data.MapPinId, true)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, data.MapPinLevelId, data.MapPinId)
 end
 

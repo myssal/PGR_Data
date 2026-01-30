@@ -1,8 +1,7 @@
 [
     {
         "ChapterId": 1,
-        "TimeId": 0,
-        "Condition": [],
+        "TimeId": 44911,
         "Name": "光煌龙",
         "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian01.png",
         "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
@@ -19,7 +18,37 @@
             1,
             2,
             3,
-            4
+            4,
+            5
+        ],
+        "TrueOccupations": [
+            1,
+            2,
+            3
+        ]
+    },
+    {
+        "ChapterId": 2,
+        "TimeId": 44912,
+        "Name": "黯夜隐随者",
+        "Icon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkChooseBossJiedian011.png",
+        "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu2.png",
+        "OdSkills": [],
+        "IsTutorial": false,
+        "Condition": [
+            864003
+        ],
+        "LevelIds": [
+            9008,
+            9009,
+            9010,
+            9011
+        ],
+        "Skills": [
+            6,
+            7,
+            8,
+            9
         ],
         "TrueOccupations": [
             1,
@@ -30,13 +59,13 @@
     {
         "ChapterId": 3,
         "TimeId": 0,
-        "Condition": [],
-        "Name": "教学",
+        "Name": "模拟训练",
         "RoomIcon": "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkRoomBossTu.png",
         "OdSkills": [],
         "IsTutorial": true,
         "LevelIds": [
-            9001
+            9001,
+            9012
         ]
     }
 ]

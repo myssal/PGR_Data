@@ -52,7 +52,7 @@ function XUiTheatre5PopupNewSeason:Update()
 
         if now < startTime then
             local startLeftTime = startTime - now
-            leftTimeStr = math.ceil(startLeftTime / Day)
+            leftTimeStr = XUiHelper.GetTime(startLeftTime, XUiHelper.TimeFormatType.ACTIVITY)
             leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTips(TipsType.WillStart), timeRangeStr, leftTimeStr)
         elseif now < endTime then
             leftTimeStr = XUiHelper.FormatText(self._Control:GetClientConfigPVPReasonTips(TipsType.InTime), timeRangeStr)

@@ -2322,6 +2322,7 @@ local UiRegistry = {
     UiTheatre5PopupChooseTaskReward = "XUi/XUiTheatre5/XUiTheatre5PopupChooseTaskReward/XUiTheatre5PopupChooseTaskReward",
     UiAccumulateExpendShopMain = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopMain",
     UiAccumulateExpendShopPopupDailyReward = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopObtaion",
+    UiAccumulateExpendShopLog = "XUi/XUiAccumulateExpendShopLog/XUiAccumulateExpendShopLog",
 
     --region 比安卡卡池
     UiGachaBianka402BuyTicket = "XUi/XUiGachaBianka/XUiGachaBiankaBuyTicket",

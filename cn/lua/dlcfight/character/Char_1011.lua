@@ -30,9 +30,17 @@ function XCharTes1011:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     end
 
     if buffId == 1010584 then
+        local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
+        if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+            return
+        end
         self._proxy:AbortAction(self._uuid, true)
         self._proxy:CastAction(self._uuid, 101131)
         self._proxy:AddTimerTask(0.5, function()--延迟0.5秒后，释放子弹
+            local target2 = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
+            if not self._proxy:CheckActorExist(target2) then --检测目标是否存活
+                return
+            end
             self._proxy:AbortAction(self._uuid, true)
             self._proxy:CastAction(self._uuid, 101132)
         end)
@@ -58,6 +66,10 @@ function XCharTes1011:OnNpcDamageEvent(launcherId, targetId, magicId, kind, phys
 
     if self._proxy:CheckBuffByKind(self._uuid, 1010579) and self.kaiguan == true and self._proxy:CheckBuffByKind(self._uuid, 1010577) then
         self.kaiguan = false
+        local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
+        if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+            return
+        end
         self._proxy:ApplyMagic(self._uuid, self._uuid,  10510701, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid,  1010583, 1)
         self.jishu = self.jishu + 1
@@ -120,6 +132,10 @@ end
 function XCharTes1011:FaceTargetSide()--看向侧面
     local own = self._uuid
     local targetPosition = self._proxy:GetNpcPosition(self._proxy:GetFightTargetId(own))  --获取自己战斗目标的位置
+    local target = self._proxy:GetFightTargetId(own) --获取战斗目标
+    if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+        return
+    end
     local distance = 3
     local euler = {x=0,y=45,z=0} --概率左右，增加变化
     

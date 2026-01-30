@@ -40,6 +40,7 @@ function XChar1200:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.FullChainSkillEnd)       --OnFullChainSkillEnd
     self._proxy:RegisterEvent(EWorldEvent.CastFullChainFinalSkill) --OnCastFullChainFinalSkill
     self._proxy:RegisterEvent(EWorldEvent.FullChainStageEnd)       --OnFullChainStageEnd
+    self._proxy:RegisterEvent(EWorldEvent.FullChainShowStart)
     self._proxy:RegisterEvent(EWorldEvent.NpcBrokenAfter)
     self._proxy:RegisterEvent(EWorldEvent.NpcEnterOverDrive)
     self._proxy:RegisterEvent(EWorldEvent.NpcODBreakAfter)
@@ -56,31 +57,14 @@ end
 --region 事件回调
 
 function XChar1200:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel, curChainStartNpcId)
-    -- if (chainLevel == 1) then
-    --     XLog.Warning("1阶段连携")
-    --     local players = self._proxy:GetPlayerNpcList()
-    --     for k, playerID in ipairs(players) do
-    --         self._proxy:ApplyMagic(self._uuid, playerID, 12001001, 100)
-    --     end
-    -- elseif (chainLevel == 2) then
-    --     XLog.Warning("2阶段连携")
-    --     local players = self._proxy:GetPlayerNpcList()
-    --     for k, playerID in ipairs(players) do
-    --         self._proxy:ApplyMagic(self._uuid, playerID, 12002001, 100)
-    --     end
-    -- elseif (chainLevel == 3) then
-    --     XLog.Warning("3阶段连携")
-    --     local players = self._proxy:GetPlayerNpcList()
-    --     for k, playerID in ipairs(players) do
-    --         self._proxy:ApplyMagic(self._uuid, playerID, 12003001, 100)
-    --     end
-    -- end
-    --XLog.Warning("连携系统开启")
+    --添加充能限制
+    self._proxy:ApplyMagic(self._uuid, curChainStartNpcId, 1200008)
 
     local players = self._proxy:GetPlayerNpcList()
     for i, playerID in pairs(players) do
+        if playerID == curChainStartNpcId then goto continue end
         --XLog.Warning("添加能量 " .. tostring(curChainStartNpcId) .. " " .. tostring(playerID))
-        if (playerID == curChainStartNpcId) then goto continue end
+        if self._proxy:CheckBuffByKind(playerID, 1200008) then goto continue end
         --XLog.Error("添加能量" .. playerID)
         self._proxy:ApplyMagic(self._uuid, playerID, 12000109)
         ::continue::
@@ -107,16 +91,28 @@ function XChar1200:OnCastFullChainFinalSkill(gameplayActive, isInChain, chainRem
     self._proxy:ApplyMagic(self._uuid, targetNpc, 12000110)
 end
 
-function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
-    --XLog.Warning("奥义连携阶段结束" .. chainLevel)
-    self:ApplyMagicsToAllPlayer({12003002, 12002002, 12001002}, 100)
+-- function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpc, chainLevel)
+--     --XLog.Warning("奥义连携阶段结束" .. chainLevel)
+--     self:ApplyMagicsToAllPlayer({12003002, 12002002, 12001002}, 100)
+-- end
+
+function XChar1200:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
+    --给所有人加无敌
+    self:ApplyMagicToAllPlayer(12001001,1)
+end
+
+function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
+    --删除充能限制
+    self:ApplyMagicToAllPlayer(1200009, 1)
 end
 
 function XChar1200:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if npcUUID ~= self._uuid then
         return
     end
-
+    if buffId == 12001002 then
+        self:ApplyMagicToAllPlayer(12001002, 1)
+    end
     if buffId == 12000106 then
         self:ApplyMagicToAllPlayer(12000106, 1)
     end

@@ -1138,6 +1138,7 @@ local UIBindControl = {
 
     --region 商店系统
     UiAccumulateExpendShopMain = ModuleId.XShop,
+    UiAccumulateExpendShopLog = ModuleId.XShop,
     --endregion
 }
 

@@ -132,6 +132,11 @@ function XTheatre5Model:GetTheatre5ActivityCfgById(activityId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableNormal.Theatre5Activity, activityId, notips)
 end
 
+---@return XTableTheatre5Activity[]
+function XTheatre5Model:GetTheatre5ActivityCfgs()
+    return self._ConfigUtil:GetByTableKey(TableNormal.Theatre5Activity)
+end
+
 function XTheatre5Model:GetTheatre5PVPWorldIdByActivityId(activityId)
     ---@type XTableTheatre5Activity
     local cfg = self:GetTheatre5ActivityCfgById(activityId)

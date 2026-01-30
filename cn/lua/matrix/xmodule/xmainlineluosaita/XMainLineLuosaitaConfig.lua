@@ -228,6 +228,18 @@ function XMainLineLuosaitaConfig:GetArmyAttack(id)
     local config = self:GetConfigArmy(id)
     return config and config.Attack or 0
 end
+
+---@return number 友军动画播放条件
+function XMainLineLuosaitaConfig:GetArmyAnimConditionId(id)
+    local config = self:GetConfigArmy(id)
+    return config and config.AnimConditionId or 0
+end
+
+---@return number 友军动画名称
+function XMainLineLuosaitaConfig:GetArmyAnimName(id)
+    local config = self:GetConfigArmy(id)
+    return config and config.AnimName or ""
+end
 --endregion
 
 --region MainLineLuosaitaEnemy 敌军表
@@ -359,6 +371,18 @@ end
 function XMainLineLuosaitaConfig:GetCharacterHeadCircle(id)
     local config = self:GetConfigCharacter(id)
     return config and config.HeadCircle or ""
+end
+
+---@return string 角色动画条件
+function XMainLineLuosaitaConfig:GetCharacterAnimConditionId(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.AnimConditionId or ""
+end
+
+---@return string 角色动画名称
+function XMainLineLuosaitaConfig:GetCharacterAnimName(id)
+    local config = self:GetConfigCharacter(id)
+    return config and config.AnimName or ""
 end
 --endregion
 

@@ -31,11 +31,23 @@ function XUiDlcRelinkLoadingNew:OnStart()
     end
     ---@type table<number, XUiGridDlcRelinkLoadingCharacter> playerId -> grid
     self.CharacterGridList = {}
+
+    -- 清理点赞的缓存数据
+    self._Control:ClearLikeInfoCache()
 end
 
 function XUiDlcRelinkLoadingNew:OnEnable()
     self:RefreshInfo()
     self:RefreshCharacter()
+    XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
+        -- 重置引导，避免引导残留进入战斗
+        if XDataCenter.GuideManager.CheckIsInGuide() then
+            XDataCenter.GuideManager.ResetGuide()
+        end
+    end, 500)
 end
 
 function XUiDlcRelinkLoadingNew:OnGetLuaEvents()

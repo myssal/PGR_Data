@@ -4,7 +4,7 @@
         "Exp": 0,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -23,10 +23,10 @@
     },
     {
         "Level": 2,
-        "Exp": 40,
+        "Exp": 10,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -45,10 +45,10 @@
     },
     {
         "Level": 3,
-        "Exp": 50,
+        "Exp": 15,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -67,10 +67,10 @@
     },
     {
         "Level": 4,
-        "Exp": 60,
+        "Exp": 20,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -89,10 +89,10 @@
     },
     {
         "Level": 5,
-        "Exp": 70,
+        "Exp": 25,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -111,10 +111,10 @@
     },
     {
         "Level": 6,
-        "Exp": 80,
+        "Exp": 30,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -133,10 +133,10 @@
     },
     {
         "Level": 7,
-        "Exp": 90,
+        "Exp": 35,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
-        "ExtraSlotLimit": 2,
+        "ExtraSlotLimit": 0,
         "ConditionId": 0,
         "ComposeId": 1,
         "IsMax": 0,
@@ -155,12 +155,12 @@
     },
     {
         "Level": 8,
-        "Exp": 100,
+        "Exp": 40,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
         "ConditionId": 0,
-        "ComposeId": 1,
+        "ComposeId": 2,
         "IsMax": 0,
         "AttributeNames": [
             "Life",
@@ -173,16 +173,20 @@
             400,
             500,
             0
+        ],
+        "FinishOneOfLevelIds": [
+            9003,
+            9008
         ]
     },
     {
         "Level": 9,
-        "Exp": 110,
+        "Exp": 50,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
         "ConditionId": 0,
-        "ComposeId": 1,
+        "ComposeId": 2,
         "IsMax": 0,
         "AttributeNames": [
             "Life",
@@ -199,7 +203,7 @@
     },
     {
         "Level": 10,
-        "Exp": 180,
+        "Exp": 60,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -216,15 +220,12 @@
             2500,
             500,
             1000,
-            4300
-        ],
-        "FinishOneOfLevelIds": [
-            9003
+            0
         ]
     },
     {
         "Level": 11,
-        "Exp": 200,
+        "Exp": 70,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -241,12 +242,12 @@
             2750,
             550,
             1000,
-            4300
+            0
         ]
     },
     {
         "Level": 12,
-        "Exp": 220,
+        "Exp": 80,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -263,12 +264,12 @@
             3000,
             600,
             1000,
-            4300
+            0
         ]
     },
     {
         "Level": 13,
-        "Exp": 240,
+        "Exp": 90,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -285,12 +286,12 @@
             3250,
             650,
             1000,
-            4300
+            0
         ]
     },
     {
         "Level": 14,
-        "Exp": 260,
+        "Exp": 100,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -307,17 +308,17 @@
             3500,
             700,
             1000,
-            4300
+            0
         ]
     },
     {
         "Level": 15,
-        "Exp": 300,
+        "Exp": 110,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
         "ConditionId": 0,
-        "ComposeId": 2,
+        "ComposeId": 3,
         "IsMax": 0,
         "AttributeNames": [
             "Life",
@@ -329,12 +330,16 @@
             3750,
             750,
             1500,
-            4300
+            2000
+        ],
+        "FinishOneOfLevelIds": [
+            9004,
+            9009
         ]
     },
     {
         "Level": 16,
-        "Exp": 550,
+        "Exp": 300,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -351,15 +356,12 @@
             4000,
             800,
             1500,
-            11970
-        ],
-        "FinishOneOfLevelIds": [
-            9004
+            2000
         ]
     },
     {
         "Level": 17,
-        "Exp": 650,
+        "Exp": 350,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -376,12 +378,12 @@
             4250,
             850,
             1500,
-            11970
+            2000
         ]
     },
     {
         "Level": 18,
-        "Exp": 750,
+        "Exp": 400,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -398,12 +400,12 @@
             4500,
             900,
             1500,
-            11970
+            2000
         ]
     },
     {
         "Level": 19,
-        "Exp": 850,
+        "Exp": 420,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -420,12 +422,12 @@
             4750,
             950,
             1500,
-            11970
+            2000
         ]
     },
     {
         "Level": 20,
-        "Exp": 900,
+        "Exp": 450,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -442,15 +444,16 @@
             5000,
             1000,
             2000,
-            38050
+            4200
         ],
         "FinishOneOfLevelIds": [
-            9005
+            9005,
+            9010
         ]
     },
     {
         "Level": 21,
-        "Exp": 1000,
+        "Exp": 600,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -467,12 +470,12 @@
             5250,
             1050,
             2000,
-            38050
+            4200
         ]
     },
     {
         "Level": 22,
-        "Exp": 1100,
+        "Exp": 700,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -489,12 +492,12 @@
             5500,
             1100,
             2000,
-            38050
+            4200
         ]
     },
     {
         "Level": 23,
-        "Exp": 1250,
+        "Exp": 800,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -511,12 +514,12 @@
             5750,
             1150,
             2000,
-            38050
+            4200
         ]
     },
     {
         "Level": 24,
-        "Exp": 1350,
+        "Exp": 900,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -533,12 +536,12 @@
             6000,
             1200,
             2000,
-            38050
+            4200
         ]
     },
     {
         "Level": 25,
-        "Exp": 1800,
+        "Exp": 1000,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -555,15 +558,16 @@
             7500,
             1250,
             2500,
-            50250
+            4200
         ],
         "FinishOneOfLevelIds": [
-            9006
+            9006,
+            9011
         ]
     },
     {
         "Level": 26,
-        "Exp": 2100,
+        "Exp": 1200,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -580,12 +584,12 @@
             7500,
             1300,
             2500,
-            50250
+            4200
         ]
     },
     {
         "Level": 27,
-        "Exp": 2400,
+        "Exp": 1500,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -602,12 +606,12 @@
             7500,
             1350,
             2500,
-            50250
+            4200
         ]
     },
     {
         "Level": 28,
-        "Exp": 2700,
+        "Exp": 2000,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -624,12 +628,12 @@
             7500,
             1400,
             2500,
-            50250
+            4200
         ]
     },
     {
         "Level": 29,
-        "Exp": 3000,
+        "Exp": 2500,
         "CoinExpTransfer": 10,
         "NormalSlot": 2,
         "ExtraSlotLimit": 2,
@@ -646,7 +650,7 @@
             7500,
             1450,
             2500,
-            50250
+            4200
         ]
     },
     {
@@ -668,7 +672,7 @@
             7500,
             1500,
             3000,
-            50250
+            4200
         ]
     }
 ]

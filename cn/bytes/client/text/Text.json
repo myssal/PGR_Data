@@ -3648,7 +3648,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc10",
-        "Text": "（最高可获取{0}）"
+        "Text": "{0}"
     },
     {
         "Key": "BossSingleAutoFightDesc11",
@@ -3977,6 +3977,10 @@
     {
         "Key": "InTeamCantLookDorm",
         "Text": "联机房间中不能进入宿舍"
+    },
+    {
+        "Key": "InTeamCantLookFashion",
+        "Text": "联机房间中不能查看涂装详情"
     },
     {
         "Key": "DormNullFurniture",
@@ -5976,7 +5980,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=34>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -9839,7 +9843,7 @@
     },
     {
         "Key": "StrongholdTeamRestartConfirmContentOther",
-        "Text": "当前已在<color=blue>{0}</color>拥有挑战进度，挑战本关将撤回相关梯队，已压制关卡需要重新挑战，是否确认撤退？"
+        "Text": "当前已在{0}拥有挑战进度，挑战本关将撤回相关梯队，已压制关卡需要重新挑战，是否确认撤退？"
     },
     {
         "Key": "StrongholdElectricTeamMaxNum",
@@ -10955,23 +10959,23 @@
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextBlue",
-        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗鲸音存储器（<color=#ffe956>{1}</color>/{2}）"
+        "Text": "累计翻牌 <color=#744EF1>{0}</color> 次后，翻牌不消耗鲸音存储器（<color=#744EF1>{1}</color>/{2}）"
     },
     {
         "Key": "InvertCardGameMaxInvertConutTextNormal",
-        "Text": "累计翻牌 <color=#ffe956>{0}</color> 次后，翻牌不消耗鲸音存储器（{1}/{2}）"
+        "Text": "累计翻牌 <color=#744EF1>{0}</color> 次后，翻牌不消耗鲸音存储器（{1}/{2}）"
     },
     {
         "Key": "InvertCardGameCurInvertConutText",
-        "Text": "当前翻牌：<color=#ffe956>{0}/{1}</color>"
+        "Text": "当前翻牌：<color=#744EF1>{0}/{1}</color>"
     },
     {
         "Key": "InvertCardGameConstomCountBlue",
-        "Text": "<color=#ffe956>{0}</color> 可以翻开卡牌"
+        "Text": "<color=#744EF1>{0}</color> 可以翻开卡牌"
     },
     {
         "Key": "InvertCardGameConstomCountRed",
-        "Text": "<color=#da4a4a>{0}</color> 可以翻开卡牌"
+        "Text": "<color=#744EF1>{0}</color> 可以翻开卡牌"
     },
     {
         "Key": "InvertCardGameHaveNotEnoughItem",
@@ -12507,7 +12511,7 @@
     },
     {
         "Key": "DiceGameNoEnoughCoinHint",
-        "Text": "需要<color=#ff0000>{0}</color>个罐装茶叶才能进行操作"
+        "Text": "需要<color=#ff0000>{0}</color>个红酣筹码才能进行操作"
     },
     {
         "Key": "DiceGameCostFlagHint",
@@ -18210,6 +18214,38 @@
         "Text": "研发剩余不足10次"
     },
     {
+        "Key": "GachaBiankaFashionBtn",
+        "Text": "替换涂装"
+    },
+    {
+        "Key": "GachaBiankaBgBtn",
+        "Text": "立即使用"
+    },
+    {
+        "Key": "GachaBiankaRewardTitle1",
+        "Text": "已获得历程奖励——{0}"
+    },
+    {
+        "Key": "GachaBiankaRewardTitle2",
+        "Text": "历程奖励——{0}"
+    },
+    {
+        "Key": "GachaBiankaSettingSuccess",
+        "Text": "设置成功"
+    },
+    {
+        "Key": "GachaBiankaTime",
+        "Text": "{0}"
+    },
+    {
+        "Key": "GachaBiankaFashionDesc",
+        "Text": "* <color=#0E70BD>武器涂装</color>  可从【历程奖励】中获取"
+    },
+    {
+        "Key": "GachaBiankaItemNoEnough",
+        "Text": "研发剩余不足10次"
+    },
+    {
         "Key": "ResonanceSuccess",
         "Text": "共鸣成功"
     },
@@ -18279,7 +18315,7 @@
     },
     {
         "Key": "DlcMultiplayerCurrencyReward",
-        "Text": "<color=#60ffeb>{0}</color>/{1} (+{2})"
+        "Text": "<color=#be4f2f>{0}</color>/{1} (+{2})"
     },
     {
         "Key": "DlcMultiplayerCantInvitedTip",
@@ -19399,15 +19435,15 @@
     },
     {
         "Key": "MultiMouseHunterUnVote",
-        "Text": "<color=#ffc341>一键</color>支持"
+        "Text": "一键支持"
     },
     {
         "Key": "MultiMouseHunterVote",
-        "Text": "<color=#ffc43e>确定支持</color>{0}"
+        "Text": "确定支持{0}"
     },
     {
         "Key": "MultiMouseHunterVoted",
-        "Text": "<color=#ffc43e>已支持</color>{0}"
+        "Text": "已支持{0}"
     },
     {
         "Key": "MultiMouseHunterSubUnVote",
@@ -19431,7 +19467,7 @@
     },
     {
         "Key": "MultiMouseHunterVoteVictory",
-        "Text": "恭喜{0}获胜"
+        "Text": "恭喜“{0}”获胜"
     },
     {
         "Key": "MultiMouseHunterVoteVictoryGet",
@@ -19510,6 +19546,10 @@
         "Text": "匹配中无法跳转"
     },
     {
+        "Key": "InRoomSkipTip",
+        "Text": "联机房间中无法跳转"
+    },
+    {
         "Key": "VersionGiftLeftTime",
         "Text": "{0}"
     },
@@ -19567,11 +19607,11 @@
     },
     {
         "Key": "PokerGuessing2StoryInviteContent",
-        "Text": "使用一个七夕纪念币邀请角色后，可以观看该角色的专属剧情。确定使用吗?"
+        "Text": "使用一个情人节活动道具邀请角色后，可以观看该角色的专属剧情。确定使用吗?"
     },
     {
         "Key": "PokerGuessing2StoryInviteNoEnoughTicket",
-        "Text": "七夕纪念币数量不足"
+        "Text": "情人节活动道具数量不足"
     },
     {
         "Key": "PokerGuessing2UnknownName",
@@ -20194,6 +20234,10 @@
         "Text": "是否立即更换为该涂装？"
     },
     {
+        "Key": "FashionSuitDiscountActivityTip",
+        "Text": "折扣剩余时间：{0}"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "当前编队部分角色装备无法使用，请重新设置后上阵"
     },
@@ -20270,11 +20314,47 @@
         "Text": "本期战略评定手册购买时间已结束"
     },
     {
+        "Key": "FashionActivityFirstTag",
+        "Text": "活动"
+    },
+    {
+        "Key": "FashionActivitySecondTag",
+        "Text": "特惠"
+    },
+    {
+        "Key": "FashionActivityRemainDays",
+        "Text": "{0}天后恢复原价"
+    },
+    {
+        "Key": "FashionActivityRemainNotEnoughDay",
+        "Text": "不足1天恢复原价"
+    },
+    {
+        "Key": "SwitchableScenePcTip",
+        "Text": "按住Alt键移动鼠标，可与场景交互"
+    },
+    {
         "Key": "DrawCanLiverWeekTaskFinish",
         "Text": "本周相关活动任务已全部完成"
     },
     {
         "Key": "DrawCanLiverItemReachMax",
         "Text": "勤务证明已达获取上限，无法领取其余任务"
+    },
+    {
+        "Key": "DlcMultiPlayerSkillTips1",
+        "Text": "技能未装配满，请继续装配"
+    },
+    {
+        "Key": "DlcMultiPlayerSkillTips2",
+        "Text": "技能已满，请先卸下其他技能"
+    },
+    {
+        "Key": "DlcRelinkMateForceExit",
+        "Text": "联机出现网络异常导致中断，请检查联网环境。"
+    },
+    {
+        "Key": "DiscountActivityTip",
+        "Text": "<color=#626c78>折扣剩余时间：</color>{0}"
     }
 ]

@@ -379,7 +379,7 @@ function XKeyPadManager.SyncToServer()
     _SyncTimerId = XScheduleManager.ScheduleOnce(function()
         _SyncTimerId = nil
         DoSyncToServer()
-    end, 0.5)
+    end, 500)
 end
 
 ---清除本地缓存（用于测试第一次登录）

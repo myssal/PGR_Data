@@ -417,4 +417,16 @@ function XMainLineLuosaitaControl:IsEnemyShow(enemyId)
 end
 --endregion
 
+--region 登陆缓存
+-- 设置缓存
+function XMainLineLuosaitaControl:SetCacheData(key, value)
+    self._Model:SetCacheData(key, value)
+end
+
+-- 获取缓存
+function XMainLineLuosaitaControl:GetCacheData(key)
+    return self._Model:GetCacheData(key)
+end
+--endregion
+
 return XMainLineLuosaitaControl

@@ -59,7 +59,7 @@ function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, needCloseContro
                 self:OnTipMsgEnqueue()
                 self:QuestFinishToFight()
             end
-            self:PlayAnimation("Complete")
+            -- self:PlayAnimation("Complete")
         end)
     end, 150)
 end

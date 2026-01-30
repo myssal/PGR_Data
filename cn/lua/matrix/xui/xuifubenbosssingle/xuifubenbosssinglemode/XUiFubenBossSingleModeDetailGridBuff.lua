@@ -75,7 +75,7 @@ function XUiFubenBossSingleModeDetailGridBuff:Refresh(feature, index, featureGro
     self.TxtValue.text = feature:GetScore()
     self.TxtMax.text = "/" .. feature:GetTotalScore()
     self.PanelScoring.gameObject:SetActiveEx(feature:GetIsRecording())
-    
+
     -- v4.2 新增：显示讨伐值倍率
     if self.TxtScoreRate then
         local scoreRate = feature:GetScoreRate()
@@ -86,6 +86,8 @@ function XUiFubenBossSingleModeDetailGridBuff:Refresh(feature, index, featureGro
 
     -- 从Model同步选中状态数据（不显示UI，详情面板关闭时只需要同步数据）
     self:_SyncSelectableFeaturesFromModel()
+    
+    self:_RefreshSelectableFeatures()
 end
 
 function XUiFubenBossSingleModeDetailGridBuff:SetDetailActive(isActive)
@@ -287,16 +289,16 @@ function XUiFubenBossSingleModeDetailGridBuff:_SyncSelectableFeaturesFromModel()
     if not buffGroupId or buffGroupId <= 0 then
         return
     end
-    
+
     local buffFeatureIds = XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupBuffById(buffGroupId)
     if XTool.IsTableEmpty(buffFeatureIds) then
         return
     end
-    
+
     -- 只同步选中状态数据，不显示UI
     local buffFeatureId = self._Feature:GetFeatureId()
     local savedSelectedIds = self._Control:GetSelectedSelectableFeatureIds(buffFeatureId) or {}
-    
+
     for _, selectableFeatureId in ipairs(buffFeatureIds) do
         local isSelected = false
         for _, savedId in ipairs(savedSelectedIds) do
@@ -315,52 +317,55 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
         XLog.Error("[XUiFubenBossSingleModeDetailGridBuff] _Feature is nil")
         return
     end
-    
+
     -- 确保数据已从Model同步（如果还没同步的话）
     self:_SyncSelectableFeaturesFromModel()
-    
+
     local featureId = self._Feature:GetFeatureId()
     -- v4.2 修正：根据featureGroupId和featureId获取对应的BuffGroupId
     local buffGroupId = XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupIdByFeatureId(self._FeatureGroupId, featureId)
     if not buffGroupId or buffGroupId <= 0 then
         -- 没有对应的可选词缀组，隐藏UI
         self:_HideSelectableFeatureUI()
+        self.TxtTotalScoreRate.text = ""
         return
     end
-    
+
     -- 获取对应的BuffGroup配置
     local buffFeatureIds = XMVCA.XFubenBossSingle:GetBossSingleChallengeBuffGroupBuffById(buffGroupId)
     if XTool.IsTableEmpty(buffFeatureIds) then
         XLog.Error("[XUiFubenBossSingleModeDetailGridBuff] buffFeatureIds is empty")
         self:_HideSelectableFeatureUI()
+        self.TxtTotalScoreRate.text = ""
         return
     end
-    
+
     -- 显示可选词缀UI
     if self.PanelFeatureSelectable then
         self.PanelFeatureSelectable.gameObject:SetActiveEx(true)
     end
-    
+
     -- 显示战斗倍率面板（有可选feature时显示）
     if self.PanelScoreRate then
         self.PanelScoreRate.gameObject:SetActiveEx(true)
     end
-    
+
     if not self.ListSelectableFeature or not self.GridSelectableFeature then
         XLog.Error("[XUiFubenBossSingleModeDetailGridBuff] ListSelectableFeature or GridSelectableFeature is nil")
         return
     end
+    self.ListSelectableFeature.gameObject:SetActiveEx(true)
     self.GridSelectableFeature.gameObject:SetActiveEx(false)
-    
+
     -- 获取ChallengeData以创建Feature对象
     local challengeData = self._Control:GetBossSingleChallengeData()
     if not challengeData then
         XLog.Error("[XUiFubenBossSingleModeDetailGridBuff] challengeData is nil")
         return
     end
-    
+
     local count = 0
-    
+
     -- 遍历可选feature IDs，创建并显示
     for _, selectableFeatureId in ipairs(buffFeatureIds) do
         -- 从ChallengeData中查找对应的feature（可能不存在，需要创建）
@@ -371,43 +376,43 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
             local XBossSingleFeature = require("XModule/XFubenBossSingle/XData/XBossSingleFeature")
             selectableFeature = XBossSingleFeature.New(selectableFeatureId, stageId, {})
         end
-        
+
         -- 检查是否为可选feature（type=2）
         if selectableFeature and selectableFeature:IsSelectable() then
             count = count + 1
             local gridSelectable = self._GridSelectableFeatureUiList[count]
-            
+
             if not gridSelectable then
                 local grid = XUiHelper.Instantiate(self.GridSelectableFeature, self.ListSelectableFeature)
                 gridSelectable = XUiFubenBossSingleModeDetailGridSelectableFeature.New(grid, self)
-                gridSelectable.Parent = self  -- 设置Parent为GridBuff
+                gridSelectable.Parent = self -- 设置Parent为GridBuff
                 self._GridSelectableFeatureUiList[count] = gridSelectable
             end
-            
+
             gridSelectable:Open()
             gridSelectable:Refresh(selectableFeature)
-            
+
             -- 从已同步的数据中恢复UI选中状态
             local isSelected = self._SelectedSelectableFeatures[selectableFeatureId] or false
             gridSelectable:SetSelected(isSelected)
         end
     end
-    
+
     -- 关闭多余的Grid
     for i = count + 1, #self._GridSelectableFeatureUiList do
         self._GridSelectableFeatureUiList[i]:Close()
     end
-    
+
     -- 刷新当前feature的倍率（只刷新自己的）
     self:_RefreshTotalScoreRate()
 end
 
 -- v4.2 新增：隐藏可选词缀UI
 function XUiFubenBossSingleModeDetailGridBuff:_HideSelectableFeatureUI()
-    if self.PanelFeatureSelectable then
-        self.PanelFeatureSelectable.gameObject:SetActiveEx(false)
+    if self.ListSelectableFeature then
+        self.ListSelectableFeature.gameObject:SetActiveEx(false)
     end
-    
+
     -- 隐藏战斗倍率面板（没有可选feature时隐藏）
     if self.PanelScoreRate then
         self.PanelScoreRate.gameObject:SetActiveEx(false)
@@ -421,11 +426,11 @@ function XUiFubenBossSingleModeDetailGridBuff:OnSelectableFeatureChanged(feature
     if not feature then
         return
     end
-    
+
     local selectableFeatureId = feature:GetFeatureId()
     -- 更新选中状态记录
     self._SelectedSelectableFeatures[selectableFeatureId] = isSelected or nil
-    
+
     -- 同步到Model保存（跟随当前buff）
     if self._Feature then
         local buffFeatureId = self._Feature:GetFeatureId()
@@ -435,7 +440,7 @@ function XUiFubenBossSingleModeDetailGridBuff:OnSelectableFeatureChanged(feature
             self._Control:RemoveSelectedSelectableFeatureId(buffFeatureId, selectableFeatureId)
         end
     end
-    
+
     -- 实时计算并刷新当前feature的倍率（只刷新自己的）
     self:_RefreshTotalScoreRate()
 end
@@ -472,12 +477,12 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshTotalScoreRate()
     if self.PanelScoreRate then
         self.PanelScoreRate.gameObject:SetActiveEx(true)
     end
-    
+
     local totalRate = 0
-    
+
     -- 1. 计算当前feature（type=1）的倍率
     totalRate = totalRate * self._Feature:GetScoreRate()
-    
+
     -- 2. 计算当前feature对应的选中可选feature（type=2）的倍率
     for featureId, isSelected in pairs(self._SelectedSelectableFeatures) do
         if isSelected then
@@ -489,7 +494,7 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshTotalScoreRate()
             end
         end
     end
-    
+
     -- 3. 显示当前feature的倍率（如果有UI组件）
     if self.TxtTotalScoreRate then
         self.TxtTotalScoreRate.text = string.format("+%.1f%%", totalRate / 100)

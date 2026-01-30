@@ -3,6 +3,7 @@
         "Id": 1001,
         "Type": 1,
         "GetTextType": 1,
+        "Icon": "Assets/Product/Texture/Image/IconExpression/IconExpressA1.png",
         "Text": [
             "<color=#FFFFFF>连携开始！！！</color>"
         ]
@@ -12,7 +13,7 @@
         "Type": 1,
         "GetTextType": 1,
         "Text": [
-            "<color=#FFFFFF>超频！浮世业火！</color>"
+            "<color=#FFFFFF>极限技-浮世业火·改！</color>"
         ]
     },
     {
@@ -20,7 +21,7 @@
         "Type": 1,
         "GetTextType": 1,
         "Text": [
-            "<color=#FFFFFF>超频！穹宇装甲！</color>"
+            "<color=#FFFFFF>极限技-穹宇装甲！</color>"
         ]
     },
     {
@@ -28,31 +29,142 @@
         "Type": 1,
         "GetTextType": 1,
         "Text": [
-            "<color=#FFFFFF>超频！永昼重生！</color>"
+            "<color=#FFFFFF>极限技-恩典圣言！</color>"
         ]
     },
     {
         "Id": 105202,
-        "Type": 2,
+        "Type": 1,
         "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate2.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectBlue.prefab",
         "Text": [
-            "<color=#FFFFFF>對抗開始！支援協同！</color>"
+            "<color=#FFFFFF>对决开始！支援协同！</color>"
         ]
     },
     {
         "Id": 105203,
-        "Type": 2,
+        "Type": 1,
         "GetTextType": 1,
         "Text": [
-            "<color=#FFFFFF>對抗勝利！發起總攻！</color>"
+            "<color=#FFFFFF>目标压制！全面突击！</color>"
         ]
     },
     {
         "Id": 105204,
-        "Type": 2,
+        "Type": 1,
         "GetTextType": 1,
         "Text": [
-            "<color=#FFFFFF>抵挡弹开！请求支援！</color>"
+            "<color=#FFFFFF>迎击弹开！请求增援！</color>"
+        ]
+    },
+    {
+        "Id": 1051093,
+        "Type": 2,
+        "GetTextType": 1,
+        "Icon": "Assets/Product/Texture/Image/UiFightDlc/FightSkillIconRelinkPr.png",
+        "Text": [
+            "<color=#FFFFFF>失衡追击</color>"
+        ]
+    },
+    {
+        "Id": 800501,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>焚燎吐息</color>"
+        ]
+    },
+    {
+        "Id": 800502,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>逆鳞铁壁</color>"
+        ]
+    },
+    {
+        "Id": 800503,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>狱炎终界</color>"
+        ]
+    },
+    {
+        "Id": 800504,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>炽痕噬咬</color>"
+        ]
+    },
+    {
+        "Id": 800505,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>龙颚天光</color>"
+        ]
+    },
+    {
+        "Id": 800506,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>战斗僵持，敌方攻击强度提升！</color>"
+        ]
+    },
+    {
+        "Id": 805201,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>阻抗幽进</color>"
+        ]
+    },
+    {
+        "Id": 805202,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>驳影制导</color>"
+        ]
+    },
+    {
+        "Id": 805203,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>继刃斩别</color>"
+        ]
+    },
+    {
+        "Id": 805204,
+        "Type": 2,
+        "GetTextType": 1,
+        "TipsBg": "Assets/Product/Texture/Image/UiDlcRelink/Battle/UiDlcRelinkBossUltimate.png",
+        "TipsEffect": "Assets/Product/Ui/Prefab/UiEffect/FxUiRelinkFight/StagePanel/StagePanelEffectRed.prefab",
+        "Text": [
+            "<color=#FFFFFF>实域兵辉</color>"
         ]
     }
 ]

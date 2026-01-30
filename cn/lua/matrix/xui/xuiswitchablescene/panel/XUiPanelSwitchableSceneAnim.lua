@@ -13,7 +13,9 @@ local XDebugManager = CS.XDebugManager
 
 function XUiPanelSwitchableSceneAnim:Ctor()
     self._CurTime = 0
+    self._IsPlaying = false
     self._IsContinuePlay = true
+    self._ForceDisableGyro = false
     self._IsDebug = CS.XApplication.Debug
     self._AnimName = XMVCA.XSwitchableScene:GetClientConfigById("AnimName")
     self._GyroFrequency = XMVCA.XSwitchableScene:GetIntClientConfigById("GyroFrequency")
@@ -21,9 +23,10 @@ function XUiPanelSwitchableSceneAnim:Ctor()
     self._EulerZKeep = XMVCA.XSwitchableScene:GetIntClientConfigById("EulerZKeep")
     self._Acceleration = XMVCA.XSwitchableScene:GetIntClientConfigById("Acceleration")
     self._MoveXKeep = XMVCA.XSwitchableScene:GetIntClientConfigById("MoveXKeep")
+    self:AddEventListener()
 end
 
-function XUiPanelSwitchableSceneAnim:InitScene(sceneId, sceneTran)
+function XUiPanelSwitchableSceneAnim:InitScene(sceneTran)
     ---@type UnityEngine.Playables.PlayableDirector
     self._Playable = nil
     if XTool.UObjIsNil(sceneTran) then
@@ -53,11 +56,25 @@ function XUiPanelSwitchableSceneAnim:OnDestory()
     if not XTool.UObjIsNil(self._LuaBehaviour) then
         self._LuaBehaviour.LuaLateUpdate = nil
     end
+    self:RemoveEventListener()
+end
+
+function XUiPanelSwitchableSceneAnim:AddEventListener()
+    XEventManager.AddEventListener(XEventId.EVENT_SIGNBOARD_CAMERA_ANIM_STATUS_CHANGE, self.OnCamAnimStatusChange, self)
+end
+
+function XUiPanelSwitchableSceneAnim:RemoveEventListener()
+    XEventManager.RemoveEventListener(XEventId.EVENT_SIGNBOARD_CAMERA_ANIM_STATUS_CHANGE, self.OnCamAnimStatusChange, self)
 end
 
 ---是否接着上个界面的播放进度继续播放
 function XUiPanelSwitchableSceneAnim:IsContinuePlay(bo)
     self._IsContinuePlay = bo
+end
+
+---强制关闭陀螺仪交互模式
+function XUiPanelSwitchableSceneAnim:SetDisableGyro(bo)
+    self._ForceDisableGyro = bo
 end
 
 ---播放场景动画
@@ -70,7 +87,7 @@ function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
         return
     end
 
-    self:InitScene(sceneId, sceneTran)
+    self:InitScene(sceneTran)
     if XTool.UObjIsNil(self._Playable) then
         return
     end
@@ -83,6 +100,7 @@ function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
         CS.UnityEngine.Input.gyro.enabled = true
     end
     --关闭自动播放控制
+    self._Playable.gameObject:SetActiveEx(true)
     self._Playable.playOnAwake = false
     self._Playable.timeUpdateMode = CS.UnityEngine.Playables.DirectorUpdateMode.Manual
     self._Playable:Play()
@@ -96,6 +114,28 @@ function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
         local offsetTime = self._IsContinuePlay and XMVCA.XSwitchableScene:GetPlayProgress() or 0
         self._CurTime = XMath.Clamp(offsetTime, 0, self._Duration)
     end
+    self._IsPlaying = true
+end
+
+---仅播放 无交互
+function XUiPanelSwitchableSceneAnim:AutoPlay(sceneTran)
+    self:Pause()
+
+    self:InitScene(sceneTran)
+    if XTool.UObjIsNil(self._Playable) then
+        return
+    end
+
+    self._Playable.gameObject:SetActiveEx(true)
+    self._Playable.playOnAwake = false
+    self._Playable.timeUpdateMode = CS.UnityEngine.Playables.DirectorUpdateMode.Manual
+    self._Playable:Play()
+
+    self:InitPlayData()
+    self:SetDisableGyro(true)
+
+    local offsetTime = self._IsContinuePlay and XMVCA.XSwitchableScene:GetPlayProgress() or 0
+    self._CurTime = XMath.Clamp(offsetTime, 0, self._Duration)
     self._IsPlaying = true
 end
 
@@ -181,7 +221,9 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByGyro()
     local adjusted = Reference * deviceRotation
     local euler = adjusted.eulerAngles
 
-    self:ShowDebugInfo(string.format("X:%0.2f,Y:%0.2f,Z:%0.2f", euler.x, euler.y, euler.z))
+    if self._IsDebug then
+        self:ShowDebugInfo(string.format("X:%0.2f,Y:%0.2f,Z:%0.2f", euler.x, euler.y, euler.z))
+    end
 
     --在某个角度内时才进行陀螺仪判断
     -- euler.x：上下倾斜 -90°~90° 手机垂直桌面时为0
@@ -214,7 +256,9 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByMouse()
         local delta = Input.mousePosition.x - self._StartMouseX --离起点的距离（像素）
         local speedValue = XMVCA.XSwitchableScene:GetSpeedByDistance(self._SceneId, math.abs(delta))
 
-        self:ShowDebugInfo(string.format("delta:%0.2f,speed:%0.2f", delta, speedValue))
+        if self._IsDebug then
+            self:ShowDebugInfo(string.format("delta:%0.2f,speed:%0.2f", delta, speedValue))
+        end
 
         if math.abs(delta) > self._MoveXKeep then
             self._PlayOrder = delta >= 0 and Reverse or Sequential
@@ -276,15 +320,30 @@ end
 
 ---是否开启交互模式
 function XUiPanelSwitchableSceneAnim:IsEnterGyroMode()
+    if self._ForceDisableGyro then
+        return false
+    end
     return XMVCA.XSwitchableScene:GetGyroSetting(self._SceneId) == XEnumConst.SwitchableScene.Setting.Open
 end
 
 function XUiPanelSwitchableSceneAnim:ShowDebugInfo(value)
-    if self._IsDebug then
-        local debuggerGyroInfo = XDebugManager.DebuggerGyroInfo
-        if debuggerGyroInfo then
-            debuggerGyroInfo:SetEulerCustom(value)
-        end
+    local debuggerGyroInfo = XDebugManager.DebuggerGyroInfo
+    if debuggerGyroInfo then
+        debuggerGyroInfo:SetEulerCustom(value)
+    end
+end
+
+function XUiPanelSwitchableSceneAnim:OnCamAnimStatusChange(status, isUseNewCamAnim)
+    if not isUseNewCamAnim then
+        return
+    end
+    if XTool.UObjIsNil(self._Playable) or not XTool.IsNumberValid(self._SceneId) then
+        return
+    end
+    if status == XEnumConst.Favorability.CameraAnimStatus.Play then
+        self:Pause()
+    elseif status == XEnumConst.Favorability.CameraAnimStatus.Close then
+        self:Resume()
     end
 end
 

@@ -344,19 +344,23 @@
         "Titles": [
             "Boss技能",
             "规避方式",
-            "反击方式"
+            "反击方式",
+            "罗塞塔相关"
         ],
         "Contents": [
-            "扎克在战斗中会释放带有<color=#B87333>黄色双菱形</color>提示的<color=#B87333>下段攻击</color>。\\n看准时机释放<color=#0000FF>跳跃</color>，可躲避此次攻击。",
+            "扎克在战斗中会释放带<color=#B87333>黄色双菱形</color>提示的<color=#B87333>下段攻击</color>。\\n看准时机释放<color=#0000FF>跳跃</color>，可躲避此次攻击。",
             "<color=#0000FF>精准跳跃</color>躲避<color=#B87333>下段攻击</color>时，会进入短暂的时间减缓效果。",
-            "<color=#0000FF>精准跳跃</color>后在时间减缓效果内使用<color=#FF0000>普通攻击</color>可快速接近扎克并打断扎克的行动。"
+            "<color=#0000FF>精准跳跃</color>后在时间减缓效果内使用<color=#FF0000>普通攻击</color>可快速接近扎克并打断扎克的行动。",
+            "罗塞塔在守林者拟态中使用<color=#B87333>视幻陷落</color>，或在涅索斯拟态中使用<color=#FFFFFF>暗影回贯</color>以及<color=#FFFFFF>无方向闪避</color>时也可触发<color=#0000FF>精准跳跃</color>判定，请多多尝试吧"
         ],
         "AssetPaths": [
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V217Powered01.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V217Powered02.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/V217Powered03.png"
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V42Zakai01.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V42Zakai02.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V42Zakai03.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/V42Zakai04.png"
         ],
         "AssetTypes": [
+            2,
             2,
             2,
             2
@@ -607,6 +611,68 @@
             30018
         ],
         "AssetTypes": [
+            1,
+            1
+        ]
+    },
+    {
+        "Id": 96991791,
+        "Titles": [
+            "Placeholder_动摇状态",
+            "Placeholder_特写处决",
+            "Placeholder_评分升阶",
+            "Placeholder_临界模式",
+            "Placeholder_最高评分"
+        ],
+        "Contents": [
+            "Placeholder_关卡中，怪物受到一定程度的伤害后，会进入动摇状态，之后不会受到任何伤害。",
+            "Placeholder_渡边处于强袭模式状态下，释放出的逆势掣肘能将动摇状态的怪物处决",
+            "Placeholder_为了获得S评价，渡边需要在临界模式期间完成评价跃升任务；在临界模式结束前完成任务则评价跃升，获得改造效果；失败则评价等级不能跃升，并减少当前评分",
+            "Placeholder_评分到达A之后，每打满评分，渡边会进入名为临界模式的限时强化状态，这个期间，逆势掣肘将无视动摇状态，直接斩杀怪物。",
+            "Placeholder_在一对多关卡内，角色最多达到SSS评价，并在满评价时进入临界模式。SSS+评价将在2-1关卡中解锁。"
+        ],
+        "AssetPaths": [
+            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0401.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
+            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png"
+        ],
+        "AssetTypes": [
+            2,
+            2,
+            2,
+            2,
+            2
+        ]
+    },
+    {
+        "Id": 96991792,
+        "Titles": [
+            "Placeholder_BOSS战斗玩法",
+            "Placeholder_评分提升",
+            "Placeholder_打断特殊技能",
+            "Placeholder_打断反超算",
+            "Placeholder_处决临界模式"
+        ],
+        "Contents": [
+            "Placeholder_本关为BOSS关卡，BOSS只会在血量极低的时候进入动摇状态， 但是特写处决依旧可以重创BOSS并造成大量伤害。",
+            "Placeholder_玩家的华丽操作，依旧能够获得评分加成。获得评分进入临界模式，进行特写处决可有效消耗BOSS的血量。",
+            "Placeholder_当BOSS处于恶龙咆哮的蓄力阶段时，及时释放逆势掣肘击中BOSS可触发一次特写处决，获得大量评分",
+            "Placeholder_评价到达SSS之后，在BOSS释放反超算时，玩家拥有一个短暂的时间窗口，可以及时使用大招按键将BOSS的反超算流程打断，成功触发后进入处决临界模式。",
+            "Placeholder_处决临界模式期间，使用各种技能衔接特写处决可以获得评分，获得的评分能够延长处决临界模式的持续时间。SSS评分后进入临界模式期间，若怪物血量到达斩杀线，点击大招按键将BOSS进行终极技能处决。"
+        ],
+        "AssetPaths": [
+            30019,
+            30010,
+            30009,
+            30017,
+            30017
+        ],
+        "AssetTypes": [
+            1,
+            1,
+            1,
             1,
             1
         ]

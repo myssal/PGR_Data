@@ -790,17 +790,17 @@
     {
         "Id": 20003081,
         "Key": "FubenBossSingleChallengeNoFeatureGroupData",
-        "Text": "20003081囚笼鏖战点没有当前天气组数据"
+        "Text": "20003081囚笼鏖战点没有当前词缀组数据"
     },
     {
         "Id": 20003082,
         "Key": "FubenBossSingleChallengeNoBuffGroupData",
-        "Text": "20003082囚笼鏖战点没有当前Buff组数据"
+        "Text": "20003082囚笼鏖战点没有当前额外词缀组数据"
     },
     {
         "Id": 20003083,
         "Key": "FubenBossSingleChallengeBuffGroupNotMatchStage",
-        "Text": "20003083囚笼鏖战点Buff组与关卡不对应"
+        "Text": "20003083囚笼鏖战点额外词缀组与关卡不对应"
     },
     {
         "Id": 20003084,
@@ -2035,7 +2035,7 @@
     {
         "Id": 20012037,
         "Key": "ItemRestrictGainCountLimit",
-        "Text": "20012037累计获取的代币大于上限，不能领取任务的奖励"
+        "Text": "勤务证明获取数量已达上限，无法再获得任务奖励"
     },
     {
         "Id": 20014001,
@@ -3255,7 +3255,7 @@
     {
         "Id": 20030022,
         "Key": "ShopActivityStatusInconsistent",
-        "Text": "20030022无法购买商品，活动状态不一致"
+        "Text": "活动状态不一致，无法购买"
     },
     {
         "Id": 20031001,
@@ -3529,26 +3529,21 @@
     },
     {
         "Id": 20033011,
-        "Key": "ChatRoomInvalid",
-        "Text": "20033011您不在房间中，无法发言"
-    },
-    {
-        "Id": 20033012,
         "Key": "ChatContentTooLong",
         "Text": "聊天信息过长"
     },
     {
-        "Id": 20033013,
+        "Id": 20033012,
         "Key": "ChatIsBanned",
         "Text": "禁言中"
     },
     {
-        "Id": 20033014,
+        "Id": 20033013,
         "Key": "ChatChannelNotExist",
         "Text": "频道已解散"
     },
     {
-        "Id": 20033015,
+        "Id": 20033014,
         "Key": "ChatEmojiPackageIdsInvalid",
         "Text": "20033014表情包参数不合法"
     },
@@ -27408,162 +27403,162 @@
     {
         "Id": 20315001,
         "Key": "MainLineLuosaitaSectionInfoNotExist",
-        "Text": "20315001阶段数据不存在"
+        "Text": "地图阶段数据不存在"
     },
     {
         "Id": 20315002,
         "Key": "MainLineLuosaitaSectionFinished",
-        "Text": "20315002当前阶段已完成"
+        "Text": "当前阶段已完成"
     },
     {
         "Id": 20315003,
         "Key": "MainLineLuosaitaStageNotPass",
-        "Text": "20315003存在未通关关卡"
+        "Text": "存在未通关的主线关卡"
     },
     {
         "Id": 20315004,
         "Key": "MainLineLuosaitaPositionCfgNotExist",
-        "Text": "20315004位置配置不存在"
+        "Text": "单位的位置配置不存在"
     },
     {
         "Id": 20315005,
         "Key": "MainLineLuosaitaBlockInfoNotExist",
-        "Text": "20315005地块数据不存在"
+        "Text": "地块数据不存在"
     },
     {
         "Id": 20315006,
         "Key": "MainLineLuosaitaBlockCfgNotExist",
-        "Text": "20315006地块配置不存在"
+        "Text": "地块配置不存在"
     },
     {
         "Id": 20315007,
         "Key": "MainLineLuosaitaBlockNotAdjacent",
-        "Text": "20315007不是相邻地块"
+        "Text": "该地块不是相邻地块"
     },
     {
         "Id": 20315008,
         "Key": "MainLineLuosaitaArmyNotExist",
-        "Text": "20315008军队不存在"
+        "Text": "军队单位不存在"
     },
     {
         "Id": 20315009,
         "Key": "MainLineLuosaitaArmyCfgNotExist",
-        "Text": "20315009军队配置不存在"
+        "Text": "军队单位配置不存在"
     },
     {
         "Id": 20315010,
         "Key": "MainLineLuosaitaEnemyNotExist",
-        "Text": "20315010敌人不存在"
+        "Text": "敌人不存在"
     },
     {
         "Id": 20315011,
         "Key": "MainLineLuosaitaEnemyCfgNotExist",
-        "Text": "20315011敌人配置不存在"
+        "Text": "敌人配置不存在"
     },
     {
         "Id": 20315012,
         "Key": "MainLineLuosaitaArmyNotMatch",
-        "Text": "20315012不是指定战斗军队"
+        "Text": "该军队不能进行本次战斗"
     },
     {
         "Id": 20315013,
         "Key": "MainLineLuosaitaAttackInvalid",
-        "Text": "20315013攻击力非法"
+        "Text": "攻击力小于等于0"
     },
     {
         "Id": 20315014,
         "Key": "MainLineLuosaitaCanNotAttack",
-        "Text": "20315014不可挑战敌人"
+        "Text": "不可挑战该敌人"
     },
     {
         "Id": 20315015,
         "Key": "MainLineLuosaitaPositionBlocked",
-        "Text": "20315015位置被阻挡"
+        "Text": "点位被阻挡"
     },
     {
         "Id": 20315016,
         "Key": "MainLineLuosaitaDocCfgNotExist",
-        "Text": "20315016文件配置不存在"
+        "Text": "文件配置不存在"
     },
     {
         "Id": 20315017,
         "Key": "MainLineLuosaitaDocCfgParamError",
-        "Text": "20315017文件配置参数错误"
+        "Text": "文件配置参数错误"
     },
     {
         "Id": 20315018,
         "Key": "MainLineLuosaitaStageCfgNotExist",
-        "Text": "20315018关卡配置不存在"
+        "Text": "关卡配置不存在"
     },
     {
         "Id": 20315019,
         "Key": "MainLineLuosaitaBlockOccupied",
-        "Text": "20315019地块已占领"
+        "Text": "地块已占领"
     },
     {
         "Id": 20315020,
         "Key": "MainLineLuositaSectionCfgNotExist",
-        "Text": "20315020阶段配置不存在"
+        "Text": "阶段配置不存在"
     },
     {
         "Id": 20315021,
         "Key": "MainLineLuositaSectionNotFinished",
-        "Text": "20315021存在未完成阶段"
+        "Text": "存在未完成阶段"
     },
     {
         "Id": 20315022,
         "Key": "ConditionManagerMainLineLuosaitaConditionNotFinish",
-        "Text": "20315022条件未达成"
+        "Text": "条件未达成"
     },
     {
         "Id": 20315023,
         "Key": "MainLineLuosaitaDocNotExist",
-        "Text": "20315023文件不存在"
+        "Text": "文件不存在"
     },
     {
         "Id": 20315024,
         "Key": "MainLineLuosaitaDocAlreadyUsed",
-        "Text": "20315024文件已使用"
+        "Text": "文件已使用"
     },
     {
         "Id": 20315025,
         "Key": "MainLineLuosaitaMessageCfgNotExist",
-        "Text": "20315025通讯配置不存在"
+        "Text": "通讯配置不存在"
     },
     {
         "Id": 20315026,
         "Key": "MainLineLuosaitaSectionCfgNotExist",
-        "Text": "20315026阶段配置不存在"
+        "Text": "阶段配置不存在"
     },
     {
         "Id": 20315027,
         "Key": "MainLineLuositaMessageGroupNotInSection",
-        "Text": "20315027通讯组不属于当前阶段"
+        "Text": "提示信息不属于当前阶段"
     },
     {
         "Id": 20315028,
         "Key": "MainLineLuositaBlockNotOccupied",
-        "Text": "20315028地块未占领"
+        "Text": "地块未占领"
     },
     {
         "Id": 20315029,
         "Key": "MainLineLuosaitaCharacterMoveCfgNotExist",
-        "Text": "20315029角色移动配置不存在"
+        "Text": "角色单位移动配置不存在"
     },
     {
         "Id": 20315030,
         "Key": "MainLineLuosaitaCharacterInfoNotExist",
-        "Text": "20315030角色信息不存在"
+        "Text": "角色单位不存在"
     },
     {
         "Id": 20315031,
         "Key": "MainLineLuosaitaCharacterMoveAlreadyDone",
-        "Text": "20315031角色已移动"
+        "Text": "角色已移动"
     },
     {
         "Id": 20315032,
         "Key": "MainLineLuosaitaCharacterMoveConditionNotMeet",
-        "Text": "20315032不满足移动条件"
+        "Text": "角色单位不满足移动条件"
     },
     {
         "Id": 20320001,
@@ -27986,6 +27981,26 @@
         "Text": "20323002按键界面数量错误"
     },
     {
+        "Id": 20324001,
+        "Key": "FoolsDayClearOutActivityNotOpen",
+        "Text": "20324001活动未开启"
+    },
+    {
+        "Id": 20324002,
+        "Key": "FoolsDayClearOutFunctionNotOpen",
+        "Text": 20324002
+    },
+    {
+        "Id": 20324003,
+        "Key": "FoolsDayClearOutNoActivityData",
+        "Text": 20324003
+    },
+    {
+        "Id": 20324004,
+        "Key": "FoolsDayIsAtkComplete",
+        "Text": 20324004
+    },
+    {
         "Id": 20420001,
         "Key": "RadioSignActivityNotOpen",
         "Text": "20420001活动未开启"
@@ -28049,6 +28064,11 @@
         "Id": 25000007,
         "Key": "DlcCharacterAlreadyFighting",
         "Text": "25000006角色已出战"
+    },
+    {
+        "Id": 25000008,
+        "Key": "DlcOtherWorldInFight",
+        "Text": "25000008存在其他进行中的战斗"
     },
     {
         "Id": 25002001,
@@ -28433,7 +28453,7 @@
     {
         "Id": 25004015,
         "Key": "DlcMultiplayerActivityNotOpen",
-        "Text": "2025年12月31日起每天20:00-22:00开放"
+        "Text": "活动未开启"
     },
     {
         "Id": 25004016,
@@ -29548,7 +29568,7 @@
     {
         "Id": 25300040,
         "Key": "RelinkPreLevelNotPass",
-        "Text": "前置未通关"
+        "Text": "成员前置关卡未完成"
     },
     {
         "Id": 25300041,
@@ -29758,27 +29778,57 @@
     {
         "Id": 25300082,
         "Key": "RelinkMatchStateDonSwitchChar",
-        "Text": "25300082匹配状态下不可切换"
+        "Text": "匹配状态下不可切换"
     },
     {
         "Id": 25300083,
         "Key": "RelinkMatchCharacterIsNull",
-        "Text": "25300083匹配角色信息异常"
+        "Text": "匹配角色信息异常"
     },
     {
         "Id": 25300084,
         "Key": "RelinkMatchWorldNpcDataIsNull",
-        "Text": "25300084匹配关卡数据异常"
+        "Text": "匹配关卡数据异常"
     },
     {
         "Id": 25300085,
         "Key": "RelinkMatchNotStart",
-        "Text": "25300085未开始匹配"
+        "Text": "未开始匹配"
     },
     {
         "Id": 25300086,
         "Key": "RelinkMatchPoolNotExist",
-        "Text": "25300086匹配异常"
+        "Text": "匹配异常"
+    },
+    {
+        "Id": 25300087,
+        "Key": "RelinkCannotEnableGlobalMatch",
+        "Text": "未满足全局匹配开启条件"
+    },
+    {
+        "Id": 25300088,
+        "Key": "RelinkGlobalMatchRewardOver",
+        "Text": "全局匹配奖励获取超出上限"
+    },
+    {
+        "Id": 25300089,
+        "Key": "RelinkPlayerLevelComposeNotMatch",
+        "Text": "玩家研发等级和当前装备合成池不匹配"
+    },
+    {
+        "Id": 25300090,
+        "Key": "RelinkPlayerLikeSelf",
+        "Text": "不能点赞自己"
+    },
+    {
+        "Id": 25300091,
+        "Key": "RelinkPlayerNotInTheRoom",
+        "Text": "队伍不存在"
+    },
+    {
+        "Id": 25300092,
+        "Key": "RelinkPlayerIsMatching",
+        "Text": "匹配中无法操作"
     },
     {
         "Id": 30002001,

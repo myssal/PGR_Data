@@ -3,6 +3,8 @@ local XNpcFollowController = require("Character/Common/XNpcFollowController")
 local EGameplayTag = require("Enum/XGameplayTag")
 local GameplayTag = require("Tools/GameplayTag/GameplayTag")
 local RelinkStateMachine = require("Tools/StateMachine/RelinkStateMachine")
+local XFastBlackboard = require("Tools/Blackboard/XFastBlackboard")
+
 ---白龙
 ---@class XChar8005 : XFightBase
 local XChar8005 = XDlcScriptManager.RegCharScript(8005, "XChar8005", Base)
@@ -30,8 +32,8 @@ XChar8005.ESyncVarType = {
 function XChar8005:ScriptInit(isGainControl)
     Base.ScriptInit(self, isGainControl)
 
-    -- 同步作用域
-    self._syncDomain = 1
+    ---@type XFastBlackboard
+    self._bb = XFastBlackboard.New(self._proxy, self._uuid, "光煌龙", XVarDomain.Npc, true)
 
     -- !! syncKeys与syncVarLocalVals必须最早被初始化
     --- 参与网络变量同步的变量键值
@@ -49,27 +51,21 @@ function XChar8005:ScriptInit(isGainControl)
         curActionId = 8005010
     }
 
-    --- @class LocalSyncVar
-    --- @field value
-    --- @field type
-
-    --- @type table<int, LocalSyncVar>
-    self._syncVarLocalVals =
-    {
-        [8005001] = { value = true, type = XChar8005.ESyncVarType.Boolean },
-        [8005002] = { value = false, type = XChar8005.ESyncVarType.Boolean },
-        [8005003] = { value = 0, type = XChar8005.ESyncVarType.Integer },
-        [8005004] = { value = 0, type = XChar8005.ESyncVarType.Integer },
-        [8005005] = { value = 0, type = XChar8005.ESyncVarType.Integer },
-        [8005006] = { value = 0, type = XChar8005.ESyncVarType.Integer },
-        [8005007] = { value = 0, type = XChar8005.ESyncVarType.Integer },
-        [8005008] = { value = XChar8005.EFightState.Inactive, type = XChar8005.ESyncVarType.Integer },
-        [8005009] = { value = false, type = XChar8005.ESyncVarType.Boolean },
-        [8005010] = { value = 0, type = XChar8005.ESyncVarType.Integer }
+    self._syncVarConfig = {
+        [8005001] = { XFastBlackboard.ESyncVarType.Boolean, true },
+        [8005002] = { XFastBlackboard.ESyncVarType.Boolean, false },
+        [8005003] = { XFastBlackboard.ESyncVarType.Integer, 0 },
+        [8005004] = { XFastBlackboard.ESyncVarType.Integer, 0 },
+        [8005005] = { XFastBlackboard.ESyncVarType.Integer, 0 },
+        [8005006] = { XFastBlackboard.ESyncVarType.Integer, 0 },
+        [8005007] = { XFastBlackboard.ESyncVarType.Integer, 0 },
+        [8005008] = { XFastBlackboard.ESyncVarType.Integer, XChar8005.EFightState.Inactive },
+        [8005009] = { XFastBlackboard.ESyncVarType.Boolean, false },
+        [8005010] = { XFastBlackboard.ESyncVarType.Integer, 0 }
     }
 
-    for key, val in pairs(self._syncKeys) do
-        self:InitSyncVar(val)
+    for keyName, key in pairs(self._syncKeys) do
+        self._bb:InitBBSyncVar(key, self._syncVarConfig[key][1], self._syncVarConfig[key][2])
     end
 
     self:InitAggroSystem()
@@ -94,11 +90,11 @@ function XChar8005:ScriptInit(isGainControl)
     self:InitFightStateMachine()
 
     if isGainControl then
-        local stateId = self:GetSyncVarLocal(self._syncKeys.fightStateId)
+        local stateId = self._bb:GetSyncVarLocal(self._syncKeys.fightStateId)
         self._fightSM:SyncState(stateId)
 
         -- 同步技能轴
-        local battleLoopIdx = self:GetSyncVarLocal(self._syncKeys.battleLoopIdx)
+        local battleLoopIdx = self._bb:GetSyncVarLocal(self._syncKeys.battleLoopIdx)
         if stateId == XChar8005.EFightState.Normal then
             self._curSkillSeq = self._intendSkillSeqs[battleLoopIdx][1]
         end
@@ -125,11 +121,11 @@ end
 
 --- 换主控后，对于特殊Action的一些恢复操作（包括状态解锁）
 function XChar8005:GainControlActionRecoverHandler()
-    local actionId = self:GetSyncVarLocal(self._syncKeys.curActionId)
-    local stateId = self:GetSyncVarLocal(self._syncKeys.fightStateId)
+    local actionId = self._bb:GetSyncVarLocal(self._syncKeys.curActionId)
+    local stateId = self._bb:GetSyncVarLocal(self._syncKeys.fightStateId)
 
     -- 清除当前ActionId
-    self:SetSyncVar(self._syncKeys.curActionId, 0)
+    self._bb:SetSyncVar(self._syncKeys.curActionId, 0)
 
     -- 取消看向
     self._proxy:DisableNpcLookAt(self._uuid)
@@ -180,14 +176,14 @@ function XChar8005:GainControlActionRecoverHandler()
     end
 
     -- 角力联弹触发攻击恢复
-    if actionId == 8005505 and not self:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
+    if actionId == 8005505 and not self._bb:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
         self._isGainControlFullyHandled = false
         self._gainControlActionToCast = 8005505
         self._gainControlActionWaitSkillTarget = true
     end
 
     -- 角力/多人弹刀状态，强制解锁各种状态锁定
-    if self:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
+    if self._bb:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
         self:ExitQTEInteract()
     end
 end
@@ -196,11 +192,14 @@ end
 function XChar8005:Update(dt)
     Base.Update(self, dt)
 
+    -- 技能保底
+    self:UpdateComboSkillSafeProtection()
+
     -- 延迟调用
     self:UpdateDelayCallSystem(dt)
 
     -- 同步是否启动AI
-    if not self:GetSyncVarLocal(self._syncKeys.isAiActivated) then
+    if not self._bb:GetSyncVarLocal(self._syncKeys.isAiActivated) then
         return
     end
 
@@ -210,35 +209,37 @@ function XChar8005:Update(dt)
     -- 软狂暴设定
     if self._enableSoftFury then
         local fightTime = self._proxy:GetFightTime()
-        if not self:GetSyncVarLocal(self._syncKeys.isFury) and fightTime > self._softFuryTime then
+        if not self._bb:GetSyncVarLocal(self._syncKeys.isFury) and fightTime > self._softFuryTime then
             local curStateId = self._fightSM:GetCurStateId()
             if curStateId == XChar8005.EFightState.Normal or curStateId == XChar8005.EFightState.OD then
-                self:SetSyncVar(self._syncKeys.isFury, true)
+                self._bb:SetSyncVar(self._syncKeys.isFury, true)
 
                 -- 增加烦躁值上限，不希望在狂暴期间放补位技能
                 self._maxRectifyIrritation = 50
                 -- 施加狂暴所需的效果
                 self:ApplyMagicsToSelf(self._softFuryMagics, 1)
+                -- 延迟开始放落雷
+                self._softFuryDropMissileTimer = self._softFuryDropMissileStartDelay
 
                 if curStateId == XChar8005.EFightState.OD then
                     self._curSkillSeq = self._intendSkillSeqs[3][2]
 
                     if self._proxy:CheckBuffByKind(self._uuid, self._odMarkMagic) then
                         -- OD状态且有OD技能标记，说明已经实际在OD状态内，直接从第二个技能开始进入OD技能列表
-                        self:SetSyncVar(self._syncKeys.curSeqIdx, 1)
-                        self:SetSyncVar(self._syncKeys.nextSeqIdx, 2)
+                        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 1)
+                        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 2)
                     else
                         -- OD状态且没有实际OD标记，则为OD吼前，从第一个技能开始进OD技能列表
-                        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-                        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+                        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+                        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
                     end
                     -- 刷新CD
                     self:RefreshSkillCD(false)
                 else
                     self._curSkillSeq = self._intendSkillSeqs[3][1]
                     -- 技能索引刷新
-                    self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-                    self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+                    self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+                    self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
                     -- 刷新CD
                     self:RefreshSkillCD(false)
                 end
@@ -249,15 +250,18 @@ function XChar8005:Update(dt)
     -- 固定频率更新仇恨目标
     self:UpdateAggroSystem(dt)
 
-    -- 没仇恨目标则强制选择最近一名玩家作为目标
-    --[[
-    if self._curAggroTarUUID == nil or (not self._proxy:CheckNpc(self._curAggroTarUUID)) or self._proxy:IsNpcDead(self._curAggroTarUUID) then
-        self:ForceSetNearestAlivePlayerAsAggroTarget()
+    -- Break时阻断后续逻辑，并确保在break loop动作内(保底逻辑)
+    if self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreakStart or self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreaking then
+        local curActionId = self._bb:GetSyncVarLocal(self._syncKeys.curActionId)
+
+        if curActionId ~= self._odBreakEnterSkillSkill or curActionId ~= self._odBreakLoopSkill or curActionId ~= self._odBreakExitSkill then
+            self._proxy:CastAction(self._uuid, self._odBreakLoopSkill)
+            return
+        end
     end
-    ]]
 
     -- 角力/多人弹刀状态阻断后续逻辑
-    if self:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
+    if self._bb:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
         return
     end
 
@@ -367,26 +371,43 @@ function XChar8005:Terminate()
     self._proxy:UnregisterLuaEvent(EFightLuaEvent.RelinkAIBorn)
 
     -- 注销所有同步变量
-    for variable, key in pairs(self._syncKeys) do
-        self:UnregSyncVar(key)
-    end
+    self._bb:Terminate()
+
     Base.Terminate(self)
 end
 --endregion
 
 --region 连招类技能究极大保底
 function XChar8005:UpdateComboSkillSafeProtection()
-    local curActionId = self:GetSyncVarLocal(self._syncKeys.curActionId)
+    local curActionId = self._bb:GetSyncVarLocal(self._syncKeys.curActionId)
 
-    -- 狂暴标记
-    self:ProtectComboSkill(curActionId, 1000497, 1000498, {8005300, 8005301, 8005518, 8055519})
-    self:ProtectComboSkill(curActionId, 1000465, 1000466, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
-    self:ProtectComboSkill(curActionId, 1000467, 1000468, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
-    self:ProtectComboSkill(curActionId, 1000469, 1000470, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
-    self:ProtectComboSkill(curActionId, self._immuUltraAbortMagicId, self._cancelImmuUltraAbortMagicId, {8005298, 8005299, 8005300, 8005301, 8005518, 8005519})
+    -- 角力和多人弹刀为程序控制的状态，必然存在进入和退出，不做保底处理
+    if self._bb:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
+        return
+    end
+
+    -- 狂暴技magic保底
+    self:ProtectComboSkill(curActionId, 1000497, 1000498,
+            {8005300, 8005301, 8005518, 8055519}, false)
+    -- 锁OD保底
+    self:ProtectComboSkill(curActionId, 1000465, 1000466,
+            {8005298, 8005299, 8005300, 8005301, 8005505, 8005518, 8005519}, false)
+    -- 锁破韧保底
+    self:ProtectComboSkill(curActionId, 1000467, 1000468,
+            {8005298, 8005299, 8005300, 8005301, 8005505, 8005518, 8005519, self._odBreakEnterSkill, self._odBreakLoopSkill, self._odBreakExitSkill}, false)
+    -- 锁韧性保底
+    self:ProtectComboSkill(curActionId, 1000469, 1000470,
+            {8005298, 8005299, 8005300, 8005301, 8005505, 8005518, 8005519, self._odBreakEnterSkill, self._odBreakLoopSkill, self._odBreakExitSkill}, false)
+    -- 防打断保底
+    self:ProtectComboSkill(curActionId, self._immuUltraAbortMagicId, self._cancelImmuUltraAbortMagicId,
+            {8005298, 8005299, 8005300, 8005301, 8005505, 8005518, 8005519, self._odBreakEnterSkill, self._odBreakLoopSkill, self._odBreakExitSkill}, false)
+    -- DPS检测护盾保底
+    self:ProtectComboSkill(curActionId, 8005070, 8005082, {8005298, 8005299}, true)
+    -- 锁血保底
+    self:ProtectComboSkill(curActionId, 1000446, 1000447, {8005298, 8005299, 8005300}, false)
 end
 
-function XChar8005:ProtectComboSkill(curActionId, buffTemplateId, removeBuffTemplateId, actionIds)
+function XChar8005:ProtectComboSkill(curActionId, buffTemplateId, removeBuffTemplateId, actionIds, onlyCareRemove)
     local isInAnyAction = false
 
     -- 检测是否在任意一个连招action内
@@ -400,7 +421,7 @@ function XChar8005:ProtectComboSkill(curActionId, buffTemplateId, removeBuffTemp
     -- 如果在任意连招内，则确保该效果存在，否则移除该效果
     local hasBuff = self._proxy:CheckBuffByKind(self._uuid, buffTemplateId)
     if isInAnyAction then
-        if not hasBuff then
+        if not hasBuff and not onlyCareRemove then
             self._proxy:ApplyMagic(self._uuid, self._uuid, buffTemplateId, 1)
         end
     else
@@ -556,7 +577,11 @@ function XChar8005:UpdateAggroSystem(dt)
         -- 对于非仇恨列表的目标，强制拉入仇恨列表
         local players = self._proxy:GetPlayerNpcList()
         for i, player in ipairs(players) do
-            if not self._proxy:CheckNpcInThreatList(self._uuid, player) and not self._proxy:IsNpcDead(player) and not self._proxy:CheckNpcIsDisconnect(player) then
+            if not self._proxy:CheckNpcInThreatList(self._uuid, player) and
+                    not self._proxy:CheckNpcIsDisconnect(player) and
+                    not self._proxy:CheckNpcFullActionState(player, ENpcAction.Death, -1) and
+                    not self._proxy:CheckNpcFullActionState(player, ENpcAction.Reboot, -1) and
+                    not self._proxy:CheckNpcFullActionState(player, ENpcAction.Dying, -1) then
                 if self:IsPlayerTank(player) then
                     self._proxy:AddThreat(self._uuid, player, 0, 1000)
                 else
@@ -738,9 +763,13 @@ function XChar8005:UpdateCoreCombatSystem(dt)
         return
     end
 
-    -- 技能中的话，阻断后续逻辑，并进行连招检定
-    if self._proxy:CheckNpcFullActionState(self._uuid, 3, -1) then
-        self:UpdateCoreCombatInSkillSystem()
+    -- 检测能否放技能，分情况，如果在技能中，则走连招逻辑，其他状态则直接阻断
+    local internalCanCastCheck = self._proxy:CheckCanCastSkill(self._uuid)
+    local isInAction = self._proxy:CheckNpcFullActionState(self._uuid, 3, -1)
+    if not internalCanCastCheck or isInAction then
+        if isInAction then
+            self:UpdateCoreCombatInSkillSystem()
+        end
         return
     end
 
@@ -814,9 +843,11 @@ function XChar8005:InitCoreCombatStateControlSystem()
     --- 软狂暴点名子弹随机offset范围
     self._softFuryDropMissileOffset = {0, 1.5}
     --- 软狂暴点名子弹点名频率区间
-    self._softFuryDropMissileRate = {5, 8}
+    self._softFuryDropMissileRate = {5, 7}
     --- 软狂暴点名子弹计时器
     self._softFuryDropMissileTimer = 0
+    --- 软狂暴点名子弹开始生成延迟
+    self._softFuryDropMissileStartDelay = 10
 
     --- 当前Action释放目标
     self._curActionTarget = nil
@@ -844,18 +875,26 @@ end
 
 function XChar8005:UpdateCoreCombatStateControlSystem(dt)
     -- 狂暴点名子弹逻辑
-    local isFury = self:GetSyncVarLocal(self._syncKeys.isFury)
+    local isFury = self._bb:GetSyncVarLocal(self._syncKeys.isFury)
     if isFury then
+
+        -- Break期间不落雷
+        if self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreakStart or self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreaking then
+            return
+        end
+
         if self._softFuryDropMissileTimer <= 0 and self:GetSkillTarget() ~= nil then
             -- 重置计时器
             self._softFuryDropMissileTimer = self._proxy:RandomFloat(self._softFuryDropMissileRate[1], self._softFuryDropMissileRate[2])
 
             -- 随机落点后发射
-            local targetPos = self._proxy:GetNpcPosition(self:GetSkillTarget())
-            local xOffset = self._proxy:Random(-100, 100) * self._softFuryDropMissileOffset[1] / 100
-            local zOffset = self._proxy:Random(-100, 100) * self._softFuryDropMissileOffset[2] / 100
-            targetPos = {x = targetPos.x + xOffset, y = targetPos.y + 0.2, z = targetPos.z + zOffset }
-            self._proxy:LaunchMissileFromPosToPos(self._uuid, self._softFuryDropMissileLaunchId, self._softFuryDropMissileId, targetPos, targetPos, 1)
+            for k, player in ipairs(self._proxy:GetPlayerNpcList()) do
+                local targetPos = self._proxy:GetNpcPosition(player)
+                local xOffset = self._proxy:Random(-100, 100) * self._softFuryDropMissileOffset[1] / 100
+                local zOffset = self._proxy:Random(-100, 100) * self._softFuryDropMissileOffset[2] / 100
+                targetPos = {x = targetPos.x + xOffset, y = targetPos.y + 0.2, z = targetPos.z + zOffset }
+                self._proxy:LaunchMissileFromPosToPos(self._uuid, self._softFuryDropMissileLaunchId, self._softFuryDropMissileId, targetPos, targetPos, 1)
+            end
         end
         self._softFuryDropMissileTimer = self._softFuryDropMissileTimer - dt
     end
@@ -1085,6 +1124,7 @@ function XChar8005:InitCoreCombatSkillCastSystem()
     self._intendSkillSeqs = {
         [1] = {
             [1] = {
+                {9, 0},     -- 龙车
                 {3, 0},     -- 二连前咬
                 {24, 0},    -- 黄圈左扫(50%) or 黄圈右扫(50%)
                 {28, 0},    -- 小挥爪
@@ -1299,7 +1339,13 @@ function XChar8005:UpdateCoreCombatSkillCastSystem()
         local validIrritationSkills = {}
         local idx = 1
         for k, skillId in ipairs(self._irritationSkills) do
-            local curCdTimer = self._skillCdTimers[skillId]
+            local curCdTimer = 0
+            if self._skillInfos[skillId][1] > 0 then
+                curCdTimer = self._bb:GetSyncVarLocal(self._skillInfos[skillId][6])
+            end
+            if curCdTimer == nil then
+                curCdTimer = 0
+            end
             if curCdTimer <= 0 then
                 validIrritationSkills[idx] = skillId
                 idx = idx + 1
@@ -1322,20 +1368,29 @@ function XChar8005:UpdateCoreCombatSkillCastSystem()
     end
 
     -- 顺轴选择技能组(索引计算用Clamp保险，防止OutOfIndex)
-    local skillGroupIdx = self._curSkillSeq[self:GetSyncVarLocal(self._syncKeys.nextSeqIdx)][1]
+    local skillGroupIdx = self._curSkillSeq[self._bb:GetSyncVarLocal(self._syncKeys.nextSeqIdx)][1]
 
     local validSkillEleKeys, validSkillEleIdx = {}, 1
     local rotRecEleTotalWeight, rotRecEleKeys, rotRecEleIdx = 0, {}, 1
     local posRecEleTotalWeight, posRecEleKeys, posRecEleIdx = 0, {}, 1
     for key, skillGroupEle in ipairs(self._skillGroup[skillGroupIdx]) do
         local skillId, skillWeight = skillGroupEle[1], skillGroupEle[2]
+        local intendSkillInfo = self._skillInfos[skillId]
+        local cd = intendSkillInfo[1]
+        local allowRectify = intendSkillInfo[3]
+        local disCond = intendSkillInfo[4]
+        local angleCond = intendSkillInfo[5]
+        local syncKey = intendSkillInfo[6]
         -- CD检测，如果还在冷却就不管了
-        if self._skillCdTimers[skillId] <= 0 then
-            local intendSkillInfo = self._skillInfos[skillId]
-            local allowRectify = intendSkillInfo[3]
-            local disCond = intendSkillInfo[4]
-            local angleCond = intendSkillInfo[5]
 
+        local curCDTimer = 0
+        if cd > 0 then
+            curCDTimer = self._bb:GetSyncVarLocal(syncKey)
+        end
+        if curCDTimer == nil then
+            curCDTimer = 0
+        end
+        if curCDTimer <= 0 then
             -- 角度检测，是否能释放当前技能(如果长度为0，则说明无视角度条件)
             local isSatisfyAngle = true
             if #angleCond ~= 0 then
@@ -1406,7 +1461,7 @@ function XChar8005:UpdateCoreCombatSkillCastSystem()
                 local skillId = skillGroupEle[1]
 
                 -- 更新索引，释放技能，更新冷却
-                self:SetSyncVar(self._syncKeys.curSeqIdx, self:GetSyncVarLocal(self._syncKeys.nextSeqIdx))
+                self._bb:SetSyncVar(self._syncKeys.curSeqIdx, self._bb:GetSyncVarLocal(self._syncKeys.nextSeqIdx))
                 self:CastRegularSkill(skillId)
 
                 self:IncreNextSqrIdx(#self._curSkillSeq)
@@ -1455,11 +1510,11 @@ end
 
 --- 推进至下一个技能序号
 function XChar8005:IncreNextSqrIdx(seqLength)
-    local newNextSeqIdx = self:GetSyncVarLocal(self._syncKeys.nextSeqIdx) + 1
+    local newNextSeqIdx = self._bb:GetSyncVarLocal(self._syncKeys.nextSeqIdx) + 1
     if newNextSeqIdx > seqLength then
         newNextSeqIdx = 1
     end
-    self:SetSyncVar(self._syncKeys.nextSeqIdx, newNextSeqIdx)
+    self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, newNextSeqIdx)
 
     -- 处理点名
     local pickPossibility = self._curSkillSeq[newNextSeqIdx][2]
@@ -1511,15 +1566,11 @@ end
 function XChar8005:CastRegularSkill(skillId)
     self:CastActionToTarget(skillId, self:GetSkillTarget())
 
-    self._skillCdTimers[skillId] = self._skillInfos[skillId][1]
     local syncKey = self._skillInfos[skillId][6]
-    local hasSyncKey, val = self._proxy:TryGetBBFloat(self._syncDomain, self._uuid, syncKey)
-    if hasSyncKey then
-        self._proxy:SetBBFloat(self._syncDomain, self._uuid, syncKey, self._skillCdTimers[skillId])
-    end
+    self._bb:SetSyncVar(syncKey, self._skillInfos[skillId][1])
     -- 刷新连招序号和当前释放的技能索引
-    self:SetSyncVar(self._syncKeys.curComboId, 0)
-    self:SetSyncVar(self._syncKeys.curSkillId, skillId)
+    self._bb:SetSyncVar(self._syncKeys.curComboId, 0)
+    self._bb:SetSyncVar(self._syncKeys.curSkillId, skillId)
 end
 --endregion
 
@@ -1544,9 +1595,6 @@ function XChar8005:InitCoreCombatInSkillSystem()
         local curStateId = self._fightSM:GetCurStateId()
         return curStateId ~= nil and curStateId == XChar8005.EFightState.OD
     end
-    self._comboCond298Index02 = function()
-        return not self._proxy:CheckBuffByKind(self._uuid, 8005070)
-    end
     self._comboCond518Index01 = function()
         return self._proxy:CheckNpcPositionDistance(self._uuid, self._battleSceneCenter, 10, true)
     end
@@ -1554,7 +1602,7 @@ function XChar8005:InitCoreCombatInSkillSystem()
         return not self._proxy:CheckNpcPositionDistance(self._uuid, self._battleSceneCenter, 10, true)
     end
     self._comboCondInSoftFury = function()
-        return self:GetSyncVarLocal(self._syncKeys.isFury)
+        return self._bb:GetSyncVarLocal(self._syncKeys.isFury)
     end
     --endregion
 
@@ -1579,6 +1627,7 @@ function XChar8005:InitCoreCombatInSkillSystem()
         return { x = targetPosVec2[1], y = myPos.y, z = targetPosVec2[2] }
     end
     --endregion
+
 
     -- 如果前招式序号为0，则表示前招式为起手招
     --- @type table<int, table<int, ComboInfo>>
@@ -1631,8 +1680,6 @@ function XChar8005:InitCoreCombatInSkillSystem()
     self._ultraBeginActionId = 8005298
     --- DPS大招开始Action结束时间
     self._ultraBeginActionEndTime = 2.7
-    --- DPS大招循环Action
-    self._ultraLoopActionId = 8005299
     --- DPS大招循环Action结束时间
     self._ultraLoopActionEndTime = 30
     --- DPS大招结束Action
@@ -1677,7 +1724,7 @@ function XChar8005:UpdateCoreCombatInSkillSystem()
     end
 
     -- 检测当前技能是否有连招
-    local curSkillId = self:GetSyncVarLocal(self._syncKeys.curSkillId)
+    local curSkillId = self._bb:GetSyncVarLocal(self._syncKeys.curSkillId)
     local hasCombo = rawget(self._comboTable, curSkillId) ~= nil
     -- 寻找合适的连招
     if hasCombo then
@@ -1685,7 +1732,7 @@ function XChar8005:UpdateCoreCombatInSkillSystem()
         for i = 1, #comboInfos do
             local info = comboInfos[i]
 
-            if self:GetSyncVarLocal(self._syncKeys.curComboId) == info.preComboIdx                  -- 连招序号检定
+            if self._bb:GetSyncVarLocal(self._syncKeys.curComboId) == info.preComboIdx                  -- 连招序号检定
                     and self._skillTimer >= info.catchInterval[1]    -- 时间区间检定
                     and self._skillTimer <= info.catchInterval[2]
             then
@@ -1725,7 +1772,7 @@ function XChar8005:UpdateCoreCombatInSkillSystem()
                         self._proxy:CastActionEx(self._uuid, info.actionId, info.beginTime, info.endTime)
                     end
 
-                    self:SetSyncVar(self._syncKeys.curComboId, i)
+                    self._bb:SetSyncVar(self._syncKeys.curComboId, i)
                     break
                 end
             end
@@ -1985,9 +2032,6 @@ end
 
 --region 核心战斗系统：技能冷却系统
 function XChar8005:InitCoreCombatCoolDownSystem()
-    --- 技能冷却时间计时器
-    self._skillCdTimers = {}
-
     --- 每0.5秒给一次请求，CD不要高频的更新
     self._skillCdSyncInterval = 0.5
     self._skillCdSyncTimer = 0
@@ -1997,16 +2041,8 @@ function XChar8005:InitCoreCombatCoolDownSystem()
         local syncKey = info[6]
         local cd = info[1]
 
-        local hasSyncKey, val = self._proxy:TryGetBBFloat(self._syncDomain, self._uuid, syncKey)
-
-        if cd <= 0 then
-            self._skillCdTimers[skillId] = 0
-        elseif not hasSyncKey then
-            self._proxy:RegisterBBSync(self._syncDomain, self._uuid, syncKey)
-            self._proxy:SetBBFloat(self._syncDomain, self._uuid, syncKey, 0)
-            self._skillCdTimers[skillId] = 0
-        else
-            self._skillCdTimers[skillId] = val
+        if cd > 0 then
+            self._bb:InitBBSyncVar(syncKey, XFastBlackboard.ESyncVarType.Float, 0)
         end
     end
 end
@@ -2019,12 +2055,17 @@ function XChar8005:UpdateCoreCombatCoolDownSystem(dt)
     end
     self._skillCdSyncTimer = self._skillCdSyncTimer - dt
 
-    for id, t in pairs(self._skillCdTimers) do
-        self._skillCdTimers[id] = self._skillCdTimers[id] - dt
-        if self._canSyncSkillCD and self._skillInfos[id] ~= nil then
-            local hasSyncKey, val = self._proxy:TryGetBBFloat(self._syncDomain, self._uuid, self._skillInfos[id][6])
-            if hasSyncKey then
-                self._proxy:SetBBFloat(self._syncDomain, self._uuid, self._skillInfos[id][6], self._skillCdTimers[id])
+
+    for skillId, info in pairs(self._skillInfos) do
+        local syncKey = info[6]
+        local cd = info[1]
+
+        if cd > 0 then
+            local newTime = self._bb:GetSyncVarLocal(syncKey) - dt
+            if self._canSyncSkillCD then
+                self._bb:SetSyncVar(syncKey, newTime)
+            else
+                self._bb:SetSyncVarLocal(syncKey, newTime)
             end
         end
     end
@@ -2037,12 +2078,11 @@ end
 function XChar8005:RefreshSkillCD(forceRefresh)
     for skillId, info in pairs(self._skillInfos) do
         local syncKey = info[6]
-        local hasSyncKey, val = self._proxy:TryGetBBFloat(self._syncDomain, self._uuid, syncKey)
+        local cd = info[1]
 
-        if forceRefresh or info[2] then
-            self._skillCdTimers[skillId] = 0
-            if hasSyncKey then
-                self._proxy:SetBBFloat(self._syncDomain, self._uuid, syncKey, 0)
+        if cd > 0 then
+            if forceRefresh or info[2] then
+                self._bb:SetSyncVar(syncKey, 0)
             end
         end
     end
@@ -2074,7 +2114,7 @@ function XChar8005:HandleLuaEvent(eventType, eventArgs)
     -- 响应AI开启和停止
     if eventType == EFightLuaEvent.RelinkSetAIActivate then
         if eventArgs.NpcUUid == self._uuid then
-            self:SetSyncVar(self._syncKeys.isAiActivated, eventArgs.IsActivated)
+            self._bb:SetSyncVar(self._syncKeys.isAiActivated, eventArgs.IsActivated)
         end
     end
 
@@ -2099,7 +2139,7 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
         self._curActionTarget = targetId
     end
     -- 同步当前技能Id
-    self:SetSyncVar(self._syncKeys.curActionId, skillId)
+    self._bb:SetSyncVar(self._syncKeys.curActionId, skillId)
     -- 刷新技能计时器
     self._skillTimer = 0
 
@@ -2114,7 +2154,7 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
         self._proxy:ApplyMagic(self._uuid, self._uuid, 8005961, 1) -- 开护盾部位
         self:LockGameplayState(true, true, true, true, true, false)
         -- DPS检测语音
-        self:ApplyMagicsToSelf({ self._cvMagics.DPSCheckStart }, 1)
+        self:ApplyMagicsToAllPlayers({ self._cvMagics.DPSCheckStart }, 1)
     end
 
     -- DPS检测失败终结技
@@ -2151,6 +2191,7 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
     -- 软狂暴吼免疫打断
     if skillId == 8005013 then
         self:LockGameplayState(false, true, true, true, false, false)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000512, 1)
     end
 
     -- 入场动画
@@ -2195,7 +2236,7 @@ function XChar8005:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSce
     -- 清除技能目标
     self._curActionTarget = nil
     -- 清除当前ActionId
-    self:SetSyncVar(self._syncKeys.curActionId, 0)
+    self._bb:SetSyncVar(self._syncKeys.curActionId, 0)
     -- 重置技能计时器
     self._skillTimer = 0
 
@@ -2252,23 +2293,33 @@ function XChar8005:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physica
         end
     end
 
+    -- 不可打断状态
+    if self._proxy:CheckBuffByKind(self._uuid, self._immuUltraAbortMagicId) then
+        return
+    end
+
     -- 特殊受击(Fullchain终结Hit, 只会向后击退)
     if magicId == 12000108 or magicId == 12000112 or magicId == 12000113 then
         self._proxy:AbortAction(self._uuid, true)
         self._proxy:CastAction(self._uuid, 8005311)
         return
     end
-
     -- 特殊受击
+    if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_MultiSupQte}) then
+        self:CastUltraHitBySrcPos(launcherId, false)
+        return
+    end
+    if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_MultiEndQte}) then
+        self:CastUltraHitBySrcPos(launcherId, true)
+        return
+    end
     if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_Ultra}) then
-        if not self._proxy:CheckBuffByKind(self._uuid, self._immuUltraAbortMagicId) then
-            self:CastUltraHitBySrcPos(launcherId, false)
-        end
+        self:CastUltraHitBySrcPos(launcherId, false)
+        return
     end
     if GameplayTag.CSMatchAnyTag(magicTags, {EGameplayTag.Magic_RelinkDamage_HitType_Break}) then
-        if self._proxy:CheckBuffByKind(self._uuid, self._breakMagicId) then
-            self:CastBreakSkill(true)
-        end
+        self:CastBreakSkill(true)
+        return
     end
 end
 
@@ -2336,9 +2387,15 @@ function XChar8005:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
             self:ApplyMagicsToAllPlayers({ self._cvMagics.DPSCheckSuccess }, 1)
         else
             self._proxy:AbortAction(self._uuid, true)
+            -- 移除所有子弹
+            self._proxy:DestroyAllMissileDependOnLauncher(self._uuid)
             self._proxy:CastActionToPosition(self._uuid, self._ultraEndActionId, self._battleSceneCenter)
             --  DPS检测失败通知
             self:ApplyMagicsToSelf({8005916}, 1)
+            -- 由于循环走连招系统，这里要确保连招序号推进防止出bug
+            self._bb:SetSyncVar(self._syncKeys.curComboId, 1)
+            -- 强制关闭机制条
+            self._proxy:HideMechanismBar(3)
             -- 失败语音
             self:ApplyMagicsToAllPlayers({ self._cvMagics.DPSCheckFail }, 1)
         end
@@ -2374,8 +2431,12 @@ function XChar8005:OnNpcBrokenAfter(launcherUUID, targetUUID, magicId)
         return
     end
 
-    -- 根据目标位置播破韧动作
-    self:CastBreakSkill(false)
+    -- 确保可被打断，允许QTE
+    if not self._proxy:CheckBuffByKind(self._uuid, self._immuUltraAbortMagicId) then
+        -- 根据目标位置播破韧动作
+        self:CastBreakSkill(false)
+    end
+
     -- 破韧持续时间
     self._proxy:ApplyMagic(self._uuid, self._uuid, self._breakMagicId, 1)
     -- 破韧易伤
@@ -2439,17 +2500,18 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
 
     self._proxy:DispatchLuaEvent(ELuaEventTarget.All, EFightLuaEvent.RelinkCounterSuccess, { TriggerNpcUUid = triggerNpcUUID, NpcUUid = counterNpcUUID })
 
-    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain}) or
-            GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Light})
+    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain})
     -- 不打断拼刀(触发盒为sustain或反制盒为light)
     if isSustain then
         -- 通用逻辑部分
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._lightReflectSlomo, 1)    -- 弱顿帧（对自己）
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, self._lightReflectSlomo, 1)-- 弱顿帧（对目标）
 
-        -- 根据子弹ID的定制化表现,弹刀特效
-        if triggerMissileTemplateId == 8005064 or triggerMissileTemplateId == 8005067 then
-            self._proxy:LaunchMissile(self._uuid, counterNpcUUID, 8005012, 8005012,  1)
+        -- 根据子弹ID的定制化表现,弹刀特效，只有重弹刀（近距离弹）才能触发特效
+        if GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Heavy}) then
+            if triggerMissileTemplateId == 8005064 or triggerMissileTemplateId == 8005067 then
+                self._proxy:LaunchMissile(self._uuid, counterNpcUUID, 8005012, 8005012,  1)
+            end
         end
         return
     end
@@ -2492,7 +2554,7 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
         -- 角力减伤
         self:ApplyMagicsToSelf({8005554}, 1)
         -- 开启QTE交互状态
-        self:SetSyncVar(self._syncKeys.IsInQTEInteract, true)
+        self._bb:SetSyncVar(self._syncKeys.IsInQTEInteract, true)
         -- 移除所有角力前攻击镜头
         self:ApplyMagicsToAllPlayers({ 8005481 }, 1)
 
@@ -2583,7 +2645,7 @@ function XChar8005:ExitQTEInteract()
     self:ApplyMagicsToSelf({8005967}, 1)
     -- 隐藏机制条
     self._proxy:HideMechanismBar(4)
-    self:SetSyncVar(self._syncKeys.IsInQTEInteract, false)
+    self._bb:SetSyncVar(self._syncKeys.IsInQTEInteract, false)
 end
 
 function XChar8005:OnNpcDodge(SourceUUID, AttackerUUID, Type, MissileTemplateId)
@@ -2612,8 +2674,9 @@ function XChar8005:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerU
     end
 
     -- 死亡时如果在软狂暴，移除软狂暴相关状态
-    if self:GetSyncVarLocal(self._syncKeys.isFury) then
+    if self._bb:GetSyncVarLocal(self._syncKeys.isFury) then
         self:ApplyMagicsToSelf(self._softFuryDeadRemoveMagics, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 1000513, 1)
     end
 end
 --endregion
@@ -3116,78 +3179,6 @@ function XChar8005:UltraRayUpdateLogic()
 end
 --endregion
 
---region 黑板变量网络同步
---- 将同步变量键注册至黑板
-function XChar8005:RegSyncVar(key)
-    self._proxy:RegisterBBSync(self._syncDomain, self._uuid, key)
-end
-
---- 将同步变量键从黑板取消注册
-function XChar8005:UnregSyncVar(key)
-    self._proxy:UnregisterBBSync(self._syncDomain, self._uuid, key)
-end
-
---- 初始化同步变量，如果已经存在于服务器，则更新本端值，否则将本端值同步至服务器
---- @param key number @ 黑板键
---- @return bool @ 是否已经存在于服务器
-function XChar8005:InitSyncVar(key)
-    local hasSyncVar, val = self:GetSyncVar(key)
-    if val == nil then
-        return
-    end
-
-    if hasSyncVar then
-        -- 已有黑板键，直接应用给本地值
-        self._syncVarLocalVals[key].value = val
-        return true
-    else
-        -- 没黑板键，执行注册
-        local localVal = self._syncVarLocalVals[key].value
-        self:RegSyncVar(key)
-        self:SetSyncVar(key, localVal)
-        return false
-    end
-end
-
---- 从黑板获取同步变量值
-function XChar8005:GetSyncVar(key)
-    local hasSyncVar = false
-    local val = nil
-
-    local varType = self._syncVarLocalVals[key].type
-    if varType == XChar8005.ESyncVarType.Boolean then
-        hasSyncVar, val = self._proxy:TryGetBBBoolean(self._syncDomain, self._uuid, key)
-    elseif varType == XChar8005.ESyncVarType.Integer then
-        hasSyncVar, val = self._proxy:TryGetBBInt(self._syncDomain, self._uuid, key)
-    end
-
-    return hasSyncVar, val
-end
-
---- 获取同步变量的本地值
-function XChar8005:GetSyncVarLocal(key)
-    return self._syncVarLocalVals[key].value
-end
-
---- 设置同步变量的本地值，并同步至黑板
-function XChar8005:SetSyncVar(key, val)
-    -- 避免不存在的情况
-    if self._syncVarLocalVals[key] == nil then
-        return
-    end
-    -- 更新本地值
-    self._syncVarLocalVals[key].value = val
-
-    -- 更新黑板值
-    local varType = self._syncVarLocalVals[key].type
-    if varType == XChar8005.ESyncVarType.Boolean then
-        self._proxy:SetBBBoolean(self._syncDomain, self._uuid, key, val)
-    elseif varType == XChar8005.ESyncVarType.Integer then
-        self._proxy:SetBBInt(self._syncDomain, self._uuid, key, val)
-    end
-end
---endregion
-
 --region 状态机
 function XChar8005:InitFightStateMachine()
     self._fightSMTriggers =
@@ -3198,14 +3189,15 @@ function XChar8005:InitFightStateMachine()
         exitBreak = 3,
     }
 
+    --- @type RelinkStateMachine
     self._fightSM = RelinkStateMachine.New("白龙战斗状态机")
 
     self._enterNormal = function()
-        if self._enableSoftFury and self:GetSyncVarLocal(self._syncKeys.isFury) then
+        if self._enableSoftFury and self._bb:GetSyncVarLocal(self._syncKeys.isFury) then
             self._curSkillSeq = self._intendSkillSeqs[3][1]
         else
             -- 重置技能轴
-            local newBattleLoopIdx = self:GetSyncVarLocal(self._syncKeys.battleLoopIdx) + 1
+            local newBattleLoopIdx = self._bb:GetSyncVarLocal(self._syncKeys.battleLoopIdx) + 1
             if #self._skillSeqLoopKeys > 0 then
                 if newBattleLoopIdx > #self._skillSeqLoopKeys then
                     newBattleLoopIdx = 1
@@ -3213,7 +3205,7 @@ function XChar8005:InitFightStateMachine()
             else
                 newBattleLoopIdx = 0
             end
-            self:SetSyncVar(self._syncKeys.battleLoopIdx, newBattleLoopIdx)
+            self._bb:SetSyncVar(self._syncKeys.battleLoopIdx, newBattleLoopIdx)
 
             -- 设立技能轴
             if newBattleLoopIdx > 0 then
@@ -3223,17 +3215,17 @@ function XChar8005:InitFightStateMachine()
         end
 
         -- 技能索引刷新
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
         -- 刷新CD
         self:RefreshSkillCD(false)
     end
     self._enterOD = function()
-        if self._enableSoftFury and self:GetSyncVarLocal(self._syncKeys.isFury) then
+        if self._enableSoftFury and self._bb:GetSyncVarLocal(self._syncKeys.isFury) then
             self._curSkillSeq = self._intendSkillSeqs[3][2]
         else
             -- 设立技能轴
-            local battleLoopIdx = self:GetSyncVarLocal(self._syncKeys.battleLoopIdx)
+            local battleLoopIdx = self._bb:GetSyncVarLocal(self._syncKeys.battleLoopIdx)
             if battleLoopIdx > 0 then
                 local key = self._skillSeqLoopKeys[battleLoopIdx]
                 self._curSkillSeq = self._intendSkillSeqs[key][2]
@@ -3241,8 +3233,8 @@ function XChar8005:InitFightStateMachine()
         end
 
         -- 技能索引刷新
-        self:SetSyncVar(self._syncKeys.curSeqIdx, 0)
-        self:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
+        self._bb:SetSyncVar(self._syncKeys.curSeqIdx, 0)
+        self._bb:SetSyncVar(self._syncKeys.nextSeqIdx, 1)
 
         -- 刷新CD
         self:RefreshSkillCD(false)
@@ -3365,7 +3357,7 @@ function XChar8005:InitFightStateMachine()
             self._proxy:LaunchMissile(self._uuid, self._uuid, 8005000, 8005176, 1)
         end
 
-        self:SetSyncVar(self._syncKeys.fightStateId, nextStateId)
+        self._bb:SetSyncVar(self._syncKeys.fightStateId, nextStateId)
     end
     self._fightSM:RegisterOnStateChanged(self._onFightSMStateChangedHandler)
 end

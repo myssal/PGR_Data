@@ -1097,6 +1097,12 @@ function XLuaUi:AddCacheTexture(texture, key)
     self._CacheTextureDic[defaultKey] = texture
 end
 
+function XLuaUi:GetCacheTexture(key)
+    if not self._CacheTextureDic then return end
+    local defaultKey = key or 0
+    return self._CacheTextureDic[defaultKey]
+end
+
 function XLuaUi:RemoveAllCacheTexture()
     if not self._CacheTextureDic then return end
 

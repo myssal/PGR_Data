@@ -420,9 +420,10 @@ end
 
 function XFubenBossSingleControl:GetChooseLevelTypeNeedScore()
     local data = self:GetBossSingleData()
-    -- todo by zlb 这里是错的，+1不一定就等于下一关，到时候找橙子问一下，这要怎么改
     local levelType = data:GetBossSingleLevelType() + 1
-    local bossSingleGradeCfg = self._Model:GetBossSingleGradeConfigByLevelType(levelType)
+    -- +1不一定就等于下一关, 要根据配置表判断, 但是读入一个配置太浪费了, 所以单纯noTips, 没有配置, 保持原状就好
+    local noTips = true
+    local bossSingleGradeCfg = self._Model:GetBossSingleGradeConfigByLevelType(levelType, noTips)
 
     if bossSingleGradeCfg and bossSingleGradeCfg.NeedScore then
         return bossSingleGradeCfg.NeedScore

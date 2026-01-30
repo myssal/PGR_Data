@@ -1412,6 +1412,142 @@
         ]
     },
     {
+        "Id": 10906,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "复苏者普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            13
+        ]
+    },
+    {
+        "Id": 10907,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "惩戒天使普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            14
+        ]
+    },
+    {
+        "Id": 10908,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "腐朽者普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            15
+        ]
+    },
+    {
+        "Id": 10909,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "遗迹铁卫普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            16
+        ]
+    },
+    {
+        "Id": 10910,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "“玛门”普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            17
+        ]
+    },
+    {
+        "Id": 10911,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "天使长普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            18
+        ]
+    },
+    {
+        "Id": 10912,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "拉斐尔夫人普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            19
+        ]
+    },
+    {
+        "Id": 10913,
+        "Type": 1,
+        "Price": 0,
+        "DiscountPrice": 0,
+        "SellPrice": 0,
+        "Quality": 0,
+        "BuffType": 0,
+        "Name": "普通攻击",
+        "IconRes": "Assets/Product/Texture/Image/IconSkill/luxiyapugong1.png",
+        "Desc": "永夜君主普攻",
+        "IsShow": false,
+        "Order": 0,
+        "CharacterId": [
+            20
+        ]
+    },
+    {
         "Id": 20010,
         "Type": 2,
         "Price": 2,
@@ -2854,6 +2990,7 @@
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "相同效果，仅最高稀有度生效",
         "Desc": "生命值首次低于{0}%时，接下来的{1}秒内，免疫所有伤害，每次战斗可生效{2}次",
+        "AddDesc": "【祈死狂徒】类符纹触发期间，自身增加{0}%攻击力，同时燃烧敌人并对其造成{1}%<color=#ecd7bd>物理属性</color>伤害伤害，伤害值每秒提升{2}%，最大提升至{3}%，相同效果可叠加",
         "IsShow": true,
         "Order": 102,
         "DescDigit": [
@@ -2865,6 +3002,12 @@
             20,
             3,
             1
+        ],
+        "AddDigit": [
+            30,
+            40,
+            10,
+            80
         ],
         "Tags": [
             6
@@ -9397,25 +9540,6 @@
         ]
     },
     {
-        "Id": 61016,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "竞技场金币",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
-        "Desc": "获得{0}枚金币，此后每次进入诡魇客栈时，可获得{1}枚金币，连续胜利时可额外获得{2}枚金币",
-        "IsShow": true,
-        "Order": 6,
-        "DescDigit": [
-            46,
-            3,
-            2
-        ]
-    },
-    {
         "Id": 61021,
         "Type": 7,
         "Price": 16,
@@ -9502,24 +9626,6 @@
         "Order": 11,
         "DescDigit": [
             56,
-            2
-        ]
-    },
-    {
-        "Id": 61026,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "客栈贵宾卡",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
-        "Desc": "获得{0}枚金币，此后每次进入诡魇客栈时，可获得{1}次免费刷新机会",
-        "IsShow": true,
-        "Order": 12,
-        "DescDigit": [
-            64,
             2
         ]
     },
@@ -9614,25 +9720,6 @@
         "Order": 17,
         "DescDigit": [
             38,
-            2,
-            8
-        ]
-    },
-    {
-        "Id": 61036,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "幸运指环",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
-        "Desc": "获得{0}枚金币，随后每当你连胜后进入诡魇客栈时，可获得{1}倍连胜场次的金币，每次最高获得{2}枚",
-        "IsShow": true,
-        "Order": 18,
-        "DescDigit": [
-            46,
             2,
             8
         ]
@@ -9733,25 +9820,6 @@
         ]
     },
     {
-        "Id": 61046,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "历战勋章",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
-        "Desc": "获得{0}枚金币，进入战斗时获得{1}点攻击和{2}点生命",
-        "IsShow": true,
-        "Order": 24,
-        "DescDigit": [
-            12,
-            48,
-            1000
-        ]
-    },
-    {
         "Id": 61051,
         "Type": 7,
         "Price": 16,
@@ -9847,25 +9915,6 @@
         ]
     },
     {
-        "Id": 61056,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "盗贼之手",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/ItCharAprilFoolsDay01.png",
-        "Desc": "获得{0}枚金币，此后每次进入诡魇客栈时，可从商店随机偷取{1}枚符纹，但是自身会失去{2}枚金币",
-        "IsShow": true,
-        "Order": 30,
-        "DescDigit": [
-            26,
-            1,
-            1
-        ]
-    },
-    {
         "Id": 61061,
         "Type": 7,
         "Price": 16,
@@ -9956,24 +10005,6 @@
         ]
     },
     {
-        "Id": 61066,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "霓彩海螺",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2024001.png",
-        "Desc": "获得{0}枚金币，此后每次进入诡魇客栈时，获得已装备符纹中不同流派标签数量{1}倍的金币",
-        "IsShow": true,
-        "Order": 36,
-        "DescDigit": [
-            22,
-            2
-        ]
-    },
-    {
         "Id": 61071,
         "Type": 7,
         "Price": 16,
@@ -10059,23 +10090,6 @@
         ]
     },
     {
-        "Id": 61076,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "命运之骰",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
-        "Desc": "获得{0}枚金币，此后每次进入诡魇客栈时，背包栏最左侧栏位中的符纹会随机替换为高一级稀有度的其他符纹",
-        "IsShow": true,
-        "Order": 42,
-        "DescDigit": [
-            38
-        ]
-    },
-    {
         "Id": 61081,
         "Type": 7,
         "Price": 16,
@@ -10153,7 +10167,7 @@
         "BuffType": 0,
         "Name": "巨人杀手",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
-        "Desc": "在战斗中对生命最大值高于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
+        "Desc": "在战斗中对生命最大值大于等于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
         "IsShow": true,
         "Order": 47,
         "DescDigit": [
@@ -10171,7 +10185,7 @@
         "BuffType": 0,
         "Name": "巨人杀手",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
-        "Desc": "在战斗中对生命最大值高于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
+        "Desc": "在战斗中对生命最大值大于等于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
         "IsShow": true,
         "Order": 48,
         "DescDigit": [
@@ -10189,7 +10203,7 @@
         "BuffType": 0,
         "Name": "巨人杀手",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
-        "Desc": "在战斗中对生命最大值高于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
+        "Desc": "在战斗中对生命最大值大于等于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
         "IsShow": true,
         "Order": 49,
         "DescDigit": [
@@ -10207,7 +10221,7 @@
         "BuffType": 0,
         "Name": "巨人杀手",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
-        "Desc": "在战斗中对生命最大值高于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
+        "Desc": "在战斗中对生命最大值大于等于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
         "IsShow": true,
         "Order": 50,
         "DescDigit": [
@@ -10225,7 +10239,7 @@
         "BuffType": 0,
         "Name": "巨人杀手",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
-        "Desc": "在战斗中对生命最大值高于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
+        "Desc": "在战斗中对生命最大值大于等于自身生命最大值的{0}%的敌人，可造成伤害提升{1}%",
         "IsShow": true,
         "Order": 51,
         "DescDigit": [
@@ -10513,7 +10527,7 @@
         "BuffType": 0,
         "Name": "噬血祭器",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
-        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取损失量的等值护盾，此后10秒内全伤害提升{1}%",
+        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取原始损失量的等值护盾，此后10秒内全伤害提升{1}%",
         "IsShow": true,
         "Order": 67,
         "DescDigit": [
@@ -10531,7 +10545,7 @@
         "BuffType": 0,
         "Name": "噬血祭器",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
-        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取损失量的等值护盾，此后10秒内全伤害提升{1}%",
+        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取原始损失量的等值护盾，此后10秒内全伤害提升{1}%",
         "IsShow": true,
         "Order": 68,
         "DescDigit": [
@@ -10549,7 +10563,7 @@
         "BuffType": 0,
         "Name": "噬血祭器",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
-        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取损失量的等值护盾，此后10秒内全伤害提升{1}%",
+        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取原始损失量的等值护盾，此后10秒内全伤害提升{1}%",
         "IsShow": true,
         "Order": 69,
         "DescDigit": [
@@ -10567,7 +10581,7 @@
         "BuffType": 0,
         "Name": "噬血祭器",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
-        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取损失量的等值护盾，此后10秒内全伤害提升{1}%",
+        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取原始损失量的等值护盾，此后10秒内全伤害提升{1}%",
         "IsShow": true,
         "Order": 70,
         "DescDigit": [
@@ -10585,7 +10599,7 @@
         "BuffType": 0,
         "Name": "噬血祭器",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
-        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取损失量的等值护盾，此后10秒内全伤害提升{1}%",
+        "Desc": "在战斗中入场失去{0}%生命值（不会低于1%），获取原始损失量的等值护盾，此后10秒内全伤害提升{1}%",
         "IsShow": true,
         "Order": 71,
         "DescDigit": [
@@ -10963,7 +10977,7 @@
         "Order": 92,
         "DescDigit": [
             6,
-            160
+            60
         ]
     },
     {
@@ -10981,7 +10995,7 @@
         "Order": 93,
         "DescDigit": [
             16,
-            160
+            60
         ]
     },
     {
@@ -10999,7 +11013,7 @@
         "Order": 94,
         "DescDigit": [
             26,
-            160
+            60
         ]
     },
     {
@@ -11017,7 +11031,7 @@
         "Order": 95,
         "DescDigit": [
             36,
-            160
+            60
         ]
     },
     {
@@ -11035,25 +11049,7 @@
         "Order": 96,
         "DescDigit": [
             46,
-            160
-        ]
-    },
-    {
-        "Id": 61186,
-        "Type": 7,
-        "Price": 16,
-        "DiscountPrice": 12,
-        "SellPrice": 12,
-        "Quality": 1,
-        "BuffType": 0,
-        "Name": "魔鬼契约",
-        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
-        "Desc": "获得{0}枚金币，升至最高等级时，由符纹强化效果召唤的我方恶魔和火球，伤害提升{1}%",
-        "IsShow": true,
-        "Order": 97,
-        "DescDigit": [
-            56,
-            160
+            60
         ]
     },
     {
@@ -11064,9 +11060,9 @@
         "SellPrice": 12,
         "Quality": 1,
         "BuffType": 0,
-        "Name": "潜能刻痕",
+        "Name": "战争血晶",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
-        "Desc": "委托结算后，从2个渡边专属技能强化奖励中选择1个，强化程度将随嘉赏升阶提升",
+        "Desc": "委托结算后，从渡边专属技能【倾翼射击（圣源）】【爆裂强袭（回复）】强化奖励中选择1个，强化程度将随嘉赏升阶提升",
         "IsShow": true,
         "Order": 98
     },
@@ -11078,11 +11074,11 @@
         "SellPrice": 12,
         "Quality": 1,
         "BuffType": 0,
-        "Name": "潜能刻痕",
+        "Name": "死亡血晶",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
-        "Desc": "委托结算后，从2个薇拉专属技能强化奖励中选择1个，强化程度将随嘉赏升阶提升",
+        "Desc": "委托结算后，从薇拉专属技能【霆枪劫劈（灵源）】【炎渊诛罚（护盾）】强化奖励中选择1个，强化程度将随嘉赏升阶提升",
         "IsShow": true,
-        "Order": 99
+        "Order": 109
     },
     {
         "Id": 62031,
@@ -11092,11 +11088,11 @@
         "SellPrice": 12,
         "Quality": 1,
         "BuffType": 0,
-        "Name": "潜能刻痕",
+        "Name": "瘟疫血晶",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
-        "Desc": "委托结算后，从2个万事专属技能强化奖励中选择1个，强化程度将随嘉赏升阶提升",
+        "Desc": "委托结算后，从万事专属技能【寂灭灵辉（灵源）】【推锋铸构（护盾）】强化奖励中选择1个，强化程度将随嘉赏升阶提升",
         "IsShow": true,
-        "Order": 100
+        "Order": 120
     },
     {
         "Id": 62041,
@@ -11106,11 +11102,11 @@
         "SellPrice": 12,
         "Quality": 1,
         "BuffType": 0,
-        "Name": "潜能刻痕",
+        "Name": "饥荒血晶",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
-        "Desc": "委托结算后，从2个莉莉丝专属技能强化奖励中选择1个，强化程度将随嘉赏升阶提升",
+        "Desc": "委托结算后，从莉莉丝专属技能【晶境圣绽（圣源）】【劫烬涅槃（回复）】强化奖励中选择1个，强化程度将随嘉赏升阶提升",
         "IsShow": true,
-        "Order": 101
+        "Order": 131
     },
     {
         "Id": 62051,
@@ -11124,7 +11120,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Desc": "获得{0}枚金币，委托结算后自选流派，后续每次进入商店时，货架上可出现指定流派商品{1}个（初始为紫色符纹，3级后为橙色符纹，达到5级后可出现炼金锤）",
         "IsShow": true,
-        "Order": 102,
+        "Order": 142,
         "DescDigit": [
             4,
             1
@@ -11142,7 +11138,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Desc": "获得{0}枚金币，委托结算后自选流派，后续每次进入商店时，货架上可出现指定流派商品{1}个（初始为紫色符纹，3级后为橙色符纹，达到5级后可出现炼金锤）",
         "IsShow": true,
-        "Order": 103,
+        "Order": 143,
         "DescDigit": [
             8,
             1
@@ -11160,7 +11156,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Desc": "获得{0}枚金币，委托结算后自选流派，后续每次进入商店时，货架上可出现指定流派商品{1}个（初始为紫色符纹，3级后为橙色符纹，达到5级后可出现炼金锤）",
         "IsShow": true,
-        "Order": 104,
+        "Order": 144,
         "DescDigit": [
             12,
             1
@@ -11178,7 +11174,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Desc": "获得{0}枚金币，委托结算后自选流派，后续每次进入商店时，货架上可出现指定流派商品{1}个（初始为紫色符纹，3级后为橙色符纹，达到5级后可出现炼金锤）",
         "IsShow": true,
-        "Order": 105,
+        "Order": 145,
         "DescDigit": [
             16,
             1
@@ -11196,7 +11192,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Desc": "获得{0}枚金币，委托结算后自选流派，后续每次进入商店时，货架上可出现指定流派商品{1}个（初始为紫色符纹，3级后为橙色符纹，达到5级后可出现炼金锤）",
         "IsShow": true,
-        "Order": 106,
+        "Order": 146,
         "DescDigit": [
             20,
             1
@@ -11214,7 +11210,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Desc": "成功闪避后，连续使用{0}次【倾翼射击】，且技能的伤害倍率提升{1}%（每{2}秒可触发一次，最高提升{3}次）",
         "IsShow": true,
-        "Order": 107,
+        "Order": 99,
         "DescDigit": [
             1,
             5,
@@ -11234,7 +11230,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Desc": "成功闪避后，连续使用{0}次【倾翼射击】，且技能的伤害倍率提升{1}%（每{2}秒可触发一次，最高提升{3}次）",
         "IsShow": true,
-        "Order": 108,
+        "Order": 100,
         "DescDigit": [
             1,
             10,
@@ -11254,7 +11250,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Desc": "成功闪避后，连续使用{0}次【倾翼射击】，且技能的伤害倍率提升{1}%（每{2}秒可触发一次，最高提升{3}次）",
         "IsShow": true,
-        "Order": 109,
+        "Order": 101,
         "DescDigit": [
             1,
             15,
@@ -11274,7 +11270,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Desc": "成功闪避后，连续使用{0}次【倾翼射击】，且技能的伤害倍率提升{1}%（每{2}秒可触发一次，最高提升{3}次）",
         "IsShow": true,
-        "Order": 110,
+        "Order": 102,
         "DescDigit": [
             1,
             20,
@@ -11294,7 +11290,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Desc": "成功闪避后，连续使用{0}次【倾翼射击】，且技能的伤害倍率提升{1}%（每{2}秒可触发一次，最高提升{3}次）",
         "IsShow": true,
-        "Order": 111,
+        "Order": 103,
         "DescDigit": [
             1,
             25,
@@ -11314,7 +11310,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre14.png",
         "Desc": "当自身生命值比例高于敌人时，【爆裂强袭】造成的生命回复量提升至{0}%",
         "IsShow": true,
-        "Order": 112,
+        "Order": 104,
         "DescDigit": [
             125
         ]
@@ -11331,7 +11327,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre14.png",
         "Desc": "当自身生命值比例高于敌人时，【爆裂强袭】造成的生命回复量提升至{0}%",
         "IsShow": true,
-        "Order": 113,
+        "Order": 105,
         "DescDigit": [
             150
         ]
@@ -11348,7 +11344,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre14.png",
         "Desc": "当自身生命值比例高于敌人时，【爆裂强袭】造成的生命回复量提升至{0}%",
         "IsShow": true,
-        "Order": 114,
+        "Order": 106,
         "DescDigit": [
             175
         ]
@@ -11365,7 +11361,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre14.png",
         "Desc": "当自身生命值比例高于敌人时，【爆裂强袭】造成的生命回复量提升至{0}%",
         "IsShow": true,
-        "Order": 115,
+        "Order": 107,
         "DescDigit": [
             200
         ]
@@ -11382,7 +11378,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre14.png",
         "Desc": "当自身生命值比例高于敌人时，【爆裂强袭】造成的生命回复量提升至{0}%",
         "IsShow": true,
-        "Order": 116,
+        "Order": 108,
         "DescDigit": [
             225
         ]
@@ -11399,7 +11395,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiInvertCardGameItem06.png",
         "Desc": "【霆枪劫劈】在前{0}次释放时造成的伤害值，敌人将在生命值首次低于{1}%时，再次受到等量的伤害",
         "IsShow": true,
-        "Order": 117,
+        "Order": 110,
         "DescDigit": [
             1,
             40
@@ -11417,7 +11413,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiInvertCardGameItem06.png",
         "Desc": "【霆枪劫劈】在前{0}次释放时造成的伤害值，敌人将在生命值首次低于{1}%时，再次受到等量的伤害",
         "IsShow": true,
-        "Order": 118,
+        "Order": 111,
         "DescDigit": [
             2,
             40
@@ -11435,7 +11431,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiInvertCardGameItem06.png",
         "Desc": "【霆枪劫劈】在前{0}次释放时造成的伤害值，敌人将在生命值首次低于{1}%时，再次受到等量的伤害",
         "IsShow": true,
-        "Order": 119,
+        "Order": 112,
         "DescDigit": [
             3,
             40
@@ -11453,7 +11449,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiInvertCardGameItem06.png",
         "Desc": "【霆枪劫劈】在前{0}次释放时造成的伤害值，敌人将在生命值首次低于{1}%时，再次受到等量的伤害",
         "IsShow": true,
-        "Order": 120,
+        "Order": 113,
         "DescDigit": [
             4,
             40
@@ -11471,7 +11467,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiInvertCardGameItem06.png",
         "Desc": "【霆枪劫劈】在前{0}次释放时造成的伤害值，敌人将在生命值首次低于{1}%时，再次受到等量的伤害",
         "IsShow": true,
-        "Order": 121,
+        "Order": 114,
         "DescDigit": [
             5,
             40
@@ -11489,7 +11485,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2039001.png",
         "Desc": "装备【炎渊诛罚】时，每间隔{0}秒可为自身额外添加{1}%最大生命值的护盾，生命值低于{2}%时，添加的护盾修改为{3}%最大生命值的护盾值",
         "IsShow": true,
-        "Order": 122,
+        "Order": 115,
         "DescDigit": [
             10,
             2.5,
@@ -11509,7 +11505,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2039001.png",
         "Desc": "装备【炎渊诛罚】时，每间隔{0}秒可为自身额外添加{1}%最大生命值的护盾，生命值低于{2}%时，添加的护盾修改为{3}%最大生命值的护盾值",
         "IsShow": true,
-        "Order": 123,
+        "Order": 116,
         "DescDigit": [
             10,
             5,
@@ -11529,7 +11525,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2039001.png",
         "Desc": "装备【炎渊诛罚】时，每间隔{0}秒可为自身额外添加{1}%最大生命值的护盾，生命值低于{2}%时，添加的护盾修改为{3}%最大生命值的护盾值",
         "IsShow": true,
-        "Order": 124,
+        "Order": 117,
         "DescDigit": [
             10,
             7.5,
@@ -11549,7 +11545,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2039001.png",
         "Desc": "装备【炎渊诛罚】时，每间隔{0}秒可为自身额外添加{1}%最大生命值的护盾，生命值低于{2}%时，添加的护盾修改为{3}%最大生命值的护盾值",
         "IsShow": true,
-        "Order": 125,
+        "Order": 118,
         "DescDigit": [
             10,
             10,
@@ -11569,7 +11565,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2039001.png",
         "Desc": "装备【炎渊诛罚】时，每间隔{0}秒可为自身额外添加{1}%最大生命值的护盾，生命值低于{2}%时，添加的护盾修改为{3}%最大生命值的护盾值",
         "IsShow": true,
-        "Order": 126,
+        "Order": 119,
         "DescDigit": [
             10,
             12.5,
@@ -11589,7 +11585,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Desc": "【寂灭灵辉】在前{0}次释放时，会发射{1}枚子弹",
         "IsShow": true,
-        "Order": 127,
+        "Order": 121,
         "DescDigit": [
             1,
             2
@@ -11607,7 +11603,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Desc": "【寂灭灵辉】在前{0}次释放时，会发射{1}枚子弹",
         "IsShow": true,
-        "Order": 128,
+        "Order": 122,
         "DescDigit": [
             2,
             2
@@ -11625,7 +11621,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Desc": "【寂灭灵辉】在前{0}次释放时，会发射{1}枚子弹",
         "IsShow": true,
-        "Order": 129,
+        "Order": 123,
         "DescDigit": [
             3,
             2
@@ -11643,7 +11639,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Desc": "【寂灭灵辉】在前{0}次释放时，会发射{1}枚子弹",
         "IsShow": true,
-        "Order": 130,
+        "Order": 124,
         "DescDigit": [
             4,
             2
@@ -11661,7 +11657,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Desc": "【寂灭灵辉】在前{0}次释放时，会发射{1}枚子弹",
         "IsShow": true,
-        "Order": 131,
+        "Order": 125,
         "DescDigit": [
             5,
             2
@@ -11679,7 +11675,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem011.png",
         "Desc": "当任意一方生命值低于{0}%时，【推锋铸构】添加的护盾量提高至{1}倍",
         "IsShow": true,
-        "Order": 132,
+        "Order": 126,
         "DescDigit": [
             30,
             1.3
@@ -11697,7 +11693,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem011.png",
         "Desc": "当任意一方生命值低于{0}%时，【推锋铸构】添加的护盾量提高至{1}倍",
         "IsShow": true,
-        "Order": 133,
+        "Order": 127,
         "DescDigit": [
             30,
             1.6
@@ -11715,7 +11711,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem011.png",
         "Desc": "当任意一方生命值低于{0}%时，【推锋铸构】添加的护盾量提高至{1}倍",
         "IsShow": true,
-        "Order": 134,
+        "Order": 128,
         "DescDigit": [
             30,
             1.9
@@ -11733,7 +11729,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem011.png",
         "Desc": "当任意一方生命值低于{0}%时，【推锋铸构】添加的护盾量提高至{1}倍",
         "IsShow": true,
-        "Order": 135,
+        "Order": 129,
         "DescDigit": [
             30,
             2.2
@@ -11751,7 +11747,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem011.png",
         "Desc": "当任意一方生命值低于{0}%时，【推锋铸构】添加的护盾量提高至{1}倍",
         "IsShow": true,
-        "Order": 136,
+        "Order": 130,
         "DescDigit": [
             30,
             2.5
@@ -11769,7 +11765,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2007001.png",
         "Desc": "每次释放【晶境圣绽】后，【影牌】可以为为角色带来{0}%攻击力提升，持续至战斗结束，最多叠加{1}次",
         "IsShow": true,
-        "Order": 137,
+        "Order": 132,
         "DescDigit": [
             2.5,
             4
@@ -11787,7 +11783,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2007001.png",
         "Desc": "每次释放【晶境圣绽】后，【影牌】可以为为角色带来{0}%攻击力提升，持续至战斗结束，最多叠加{1}次",
         "IsShow": true,
-        "Order": 138,
+        "Order": 133,
         "DescDigit": [
             5,
             4
@@ -11805,7 +11801,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2007001.png",
         "Desc": "每次释放【晶境圣绽】后，【影牌】可以为为角色带来{0}%攻击力提升，持续至战斗结束，最多叠加{1}次",
         "IsShow": true,
-        "Order": 139,
+        "Order": 134,
         "DescDigit": [
             7.5,
             4
@@ -11823,7 +11819,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2007001.png",
         "Desc": "每次释放【晶境圣绽】后，【影牌】可以为为角色带来{0}%攻击力提升，持续至战斗结束，最多叠加{1}次",
         "IsShow": true,
-        "Order": 140,
+        "Order": 135,
         "DescDigit": [
             10,
             4
@@ -11841,7 +11837,7 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2007001.png",
         "Desc": "每次释放【晶境圣绽】后，【影牌】可以为为角色带来{0}%攻击力提升，持续至战斗结束，最多叠加{1}次",
         "IsShow": true,
-        "Order": 141,
+        "Order": 136,
         "DescDigit": [
             12.5,
             4
@@ -11857,12 +11853,12 @@
         "BuffType": 0,
         "Name": "不死鸟尾羽",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{1}%，绝命时速阶段提升至{2}%",
+        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{0}%，绝命时速阶段提升至{1}%",
         "IsShow": true,
-        "Order": 142,
+        "Order": 137,
         "DescDigit": [
-            2,
-            4
+            8,
+            16
         ]
     },
     {
@@ -11875,12 +11871,12 @@
         "BuffType": 0,
         "Name": "不死鸟尾羽",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{1}%，绝命时速阶段提升至{2}%",
+        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{0}%，绝命时速阶段提升至{1}%",
         "IsShow": true,
-        "Order": 143,
+        "Order": 138,
         "DescDigit": [
-            4,
-            8
+            16,
+            32
         ]
     },
     {
@@ -11893,12 +11889,12 @@
         "BuffType": 0,
         "Name": "不死鸟尾羽",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{1}%，绝命时速阶段提升至{2}%",
+        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{0}%，绝命时速阶段提升至{1}%",
         "IsShow": true,
-        "Order": 144,
+        "Order": 139,
         "DescDigit": [
-            6,
-            12
+            24,
+            48
         ]
     },
     {
@@ -11911,12 +11907,12 @@
         "BuffType": 0,
         "Name": "不死鸟尾羽",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{1}%，绝命时速阶段提升至{2}%",
+        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{0}%，绝命时速阶段提升至{1}%",
         "IsShow": true,
-        "Order": 145,
+        "Order": 140,
         "DescDigit": [
-            8,
-            16
+            32,
+            64
         ]
     },
     {
@@ -11929,12 +11925,12 @@
         "BuffType": 0,
         "Name": "不死鸟尾羽",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
-        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{1}%，绝命时速阶段提升至{2}%",
+        "Desc": "装备【劫烬涅槃】时，【劫烬涅槃】生命值回复量额外提升{0}%，绝命时速阶段提升至{1}%",
         "IsShow": true,
-        "Order": 146,
+        "Order": 141,
         "DescDigit": [
-            10,
-            20
+            40,
+            80
         ]
     },
     {
@@ -12037,7 +12033,7 @@
         "BuffType": 0,
         "Name": "沸血徽记",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无暇沐血类紫色符纹{1}个，直到所有符合条件的符纹都被购买为止",
+        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无瑕沐血类紫色符纹{1}个，直到所有符合条件的符纹都被购买为止",
         "IsShow": true,
         "Order": 152,
         "DescDigit": [
@@ -12055,7 +12051,7 @@
         "BuffType": 0,
         "Name": "沸血徽记",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无暇沐血类紫色符纹{1}个，直到所有符合条件的符纹都被购买为止",
+        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无瑕沐血类紫色符纹{1}个，直到所有符合条件的符纹都被购买为止",
         "IsShow": true,
         "Order": 153,
         "DescDigit": [
@@ -12073,7 +12069,7 @@
         "BuffType": 0,
         "Name": "沸血徽记",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无暇沐血类橙色符纹{1}个，直到所有符合条件的符纹都被购买为止",
+        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无瑕沐血类橙色符纹{1}个，直到所有符合条件的符纹都被购买为止",
         "IsShow": true,
         "Order": 154,
         "DescDigit": [
@@ -12091,7 +12087,7 @@
         "BuffType": 0,
         "Name": "沸血徽记",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无暇沐血类橙色符纹{1}个，直到所有符合条件的符纹都被购买为止",
+        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无瑕沐血类橙色符纹{1}个，直到所有符合条件的符纹都被购买为止",
         "IsShow": true,
         "Order": 155,
         "DescDigit": [
@@ -12109,7 +12105,7 @@
         "BuffType": 0,
         "Name": "沸血徽记",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
-        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无暇沐血类橙色商品{1}个（含炼金锤）",
+        "Desc": "获得{0}枚金币，每次进入商店时，货架上可出现无瑕沐血类橙色商品{1}个（含炼金锤）",
         "IsShow": true,
         "Order": 156,
         "DescDigit": [

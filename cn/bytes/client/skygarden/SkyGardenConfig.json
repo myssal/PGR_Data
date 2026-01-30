@@ -12,12 +12,12 @@
     {
         "Key": "DynamicLoadRange",
         "Type": "int",
-        "Value": 64
+        "Value": 60
     },
     {
         "Key": "DynamicUnloadRange",
         "Type": "int",
-        "Value": 80
+        "Value": 60
     },
     {
         "Key": "DynamicShowRangePC",
@@ -111,6 +111,11 @@
     },
     {
         "Key": "MaxShowLevel",
+        "Type": "int",
+        "Value": 8
+    },
+    {
+        "Key": "MaxShowLevelPC",
         "Type": "int",
         "Value": 8
     },

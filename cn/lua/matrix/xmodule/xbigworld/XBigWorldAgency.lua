@@ -500,12 +500,12 @@ end
 function XBigWorldAgency:UnloadGuide()
 end
 
----@return table<number, XTableGuideGroup>
+---@return table<number, XTableBigworldGuideGroup>
 function XBigWorldAgency:GetBigWorldGuideGroupTemplates()
     return self._Model:GetBigWorldGuideGroupTemplates()
 end
 
----@return XTableGuideGroup
+---@return XTableBigworldGuideGroup
 function XBigWorldAgency:GetBigWorldGuideGroupTemplateById(guideId)
     return self._Model:GetBigWorldGuideGroupTemplateById(guideId)
 end

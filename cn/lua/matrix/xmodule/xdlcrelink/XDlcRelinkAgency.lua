@@ -18,6 +18,7 @@ function XDlcRelinkAgency:InitRpc()
     XRpc.NotifyDlcRelinkEquipPreset = handler(self, self.NotifyDlcRelinkEquipPreset)
     XRpc.NotifyDlcRelinkCharacterData = handler(self, self.NotifyDlcRelinkCharacterData)
     XRpc.NotifyDlcRelinkDailyReset = handler(self, self.NotifyDlcRelinkDailyReset)
+    XRpc.DlcRelinkLikeNotify = handler(self, self.DlcRelinkLikeNotify)
 end
 
 function XDlcRelinkAgency:InitEvent()
@@ -106,6 +107,15 @@ function XDlcRelinkAgency:NotifyDlcRelinkDailyReset(data)
     self._Model.ActivityData:SetDailySign(data.DailySign)
     self._Model.ActivityData:SetGlobalMatchRewardTimes(data.GlobalMatchRewardTimes)
     XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_DAILY_RESET)
+end
+
+--- 点赞通知
+function XDlcRelinkAgency:DlcRelinkLikeNotify(data)
+    if not data then
+        return
+    end
+    self._Model:AddLikeInfoCache(data.FromPlayerId, data.TargetPlayerId)
+    XEventManager.DispatchEvent(XEventId.EVENT_DLC_RELINK_LIKE_NOTIFY, data.FromPlayerId, data.TargetPlayerId)
 end
 
 --endregion
@@ -219,10 +229,15 @@ end
 --- 自定义进入条件检测
 function XDlcRelinkAgency:DlcCheckCustomEnterCondition(roomId, nodeId, worldId, levelId, createTime)
     -- 未完成教学, 跳转到主界面并提示
-    local teachingLevelId = tonumber(self._Model:GetClientConfig("TeachingLevelId", 1))
+    local teachingLevelId = self._Model:GetTeachingLevelId()
     if XTool.IsNumberValid(teachingLevelId) and not self._Model:IsTutorialPassed() then
+        local tipContext = self._Model:GetClientConfig("TeachingNotPassedTips", 1)
+        if XLuaUiManager.IsUiShow("UiDlcRelinkMain") or XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
+            XUiManager.TipMsg(tipContext)
+            return false
+        end
         self:CommonRunRelinkMainUiHandle(function()
-            XUiManager.TipMsg(self._Model:GetClientConfig("TeachingNotPassedTips", 1))
+            XUiManager.TipMsg(tipContext)
         end)
         return false
     end
@@ -305,6 +320,10 @@ end
 
 --- 检查所有关卡是否有新解锁
 function XDlcRelinkAgency:CheckAllLevelHasNewUnlock()
+    local teachingLevelId = self._Model:GetTeachingLevelId()
+    if XTool.IsNumberValid(teachingLevelId) and not self._Model:IsTutorialPassed() then
+        return false
+    end
     local chapterIds = self._Model:GetActivityChapterIds()
     for _, chapterId in pairs(chapterIds) do
         if self._Model:CheckChapterHasAnyNewLevel(chapterId) then
@@ -322,11 +341,15 @@ function XDlcRelinkAgency:CheckAllTaskRedPoint()
     end
     for _, config in pairs(configs) do
         if config.Type == XEnumConst.DlcRelink.ShopTaskType.Task then
-            local taskIds = config.ParamId or {}
-            for _, taskId in ipairs(taskIds) do
-                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
-                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
-                    return true
+            local taskTimelineIds = config.ParamId or {}
+            for _, taskTimelineId in ipairs(taskTimelineIds) do
+                local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskTimelineId)
+                if not XTool.IsTableEmpty(taskDataList) then
+                    for _, taskData in ipairs(taskDataList) do
+                        if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
+                            return true
+                        end
+                    end
                 end
             end
         end
@@ -478,6 +501,40 @@ function XDlcRelinkAgency:CheckUseCharacterPassLevelTimes(characterId, styleType
     end
 
     return totalCount >= times
+end
+
+--- 背包界面引导条件检测
+--- 1. 研发等级达到指定等级
+--- 2. 背包界面已打开并且主槽位有装备
+---@param level number 等级
+---@return boolean
+function XDlcRelinkAgency:CheckBagUiGuideCondition(level)
+    if not self._Model.ActivityData then
+        return false
+    end
+
+    local playerLevel = self._Model.ActivityData:GetLevel()
+    if playerLevel < level then
+        return false
+    end
+
+    ---@type XUiDlcRelinkEquipBag
+    local luaUi = XLuaUiManager.GetTopLuaUi("UiDlcRelinkEquipBag")
+    if not luaUi then
+        return false
+    end
+
+    local characterId = luaUi.CharacterId
+    local characterInfo = self._Model.ActivityData:GetCharacterDataByCharacterId(characterId)
+    if not characterInfo then
+        return false
+    end
+
+    local equipUid = characterInfo:GetEquipBySlot(XEnumConst.DlcRelink.EquipSlotIndex.MainSlot)
+    if XTool.IsNumberValid(equipUid) then
+        return true
+    end
+    return false
 end
 
 --endregion

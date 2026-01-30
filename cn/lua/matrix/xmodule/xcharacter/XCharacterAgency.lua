@@ -4748,18 +4748,6 @@ function XCharacterAgency:GetUiCharacterV2P6LastTag() -- 目前只有涂装界�
     return self._Model.TempWholeDic.UiCharacterV2P6LastTag
 end
 
-function XCharacterAgency:RecordUiCharacterV2P6ClickCharacterCarrerByCharId(charId)
-    local carrer = self:GetCharacterCareer(charId)
-    local saveKey = stringFormat("RecordUiCharacterV2P6ClickCharacterCarrerByCharId%d_%d", carrer, XPlayer.Id)
-    XSaveTool.SaveData(saveKey, 1)
-end
-
-function XCharacterAgency:GetUiCharacterV2P6ClickCharacterCarrer(carrer)
-    local saveKey = stringFormat("RecordUiCharacterV2P6ClickCharacterCarrerByCharId%d_%d", carrer, XPlayer.Id)
-    local value = XSaveTool.GetData(saveKey)
-    return value == 1  -- 返回 true 表示已记录（已点击），false 表示未记录
-end
-
 -- 设置当前选中成员Id(武器超限引导用)
 function XCharacterAgency:SetCurSelectCharacterId(characterId)
     self._Model:SetCurSelectCharacterId(characterId)

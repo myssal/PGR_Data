@@ -256,7 +256,9 @@ function XUiPanelDlcRelinkCharacterRight:RegisterUiEvents()
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnSwitchClick()
-    XLuaUiManager.Open("UiDlcRelinkPopupSwitchCareer", self.CharacterId, self.StyleType)
+    XLuaUiManager.Open("UiDlcRelinkPopupSwitchCareer", self.CharacterId, self.StyleType, function()
+        self:RefreshBtn()
+    end)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnMoreClick()
@@ -275,7 +277,9 @@ function XUiPanelDlcRelinkCharacterRight:OnBtnBattleClick()
     if not self._Control:AbleSyncDataToMatchServer() then
         return
     end
-    self._Control:RequestSwitchBattleCharacter(self.CharacterId)
+    self._Control:RequestSwitchBattleCharacter(self.CharacterId, function()
+        self.Parent:OnBtnBackClick()
+    end)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnLvClick()

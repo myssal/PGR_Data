@@ -73,7 +73,7 @@
         "Key": "TargetingComposeConsumeConditionIds",
         "Desc": "定向合成出现条件",
         "Param": [
-            864000
+            864002
         ]
     },
     {
@@ -87,8 +87,35 @@
         "Key": "GlobalMatchEnableCondition",
         "Desc": "全局匹配开启条件",
         "Param": [
-            864000,
-            864001
+            864006
+        ]
+    },
+    {
+        "Key": "GlobalMatchDropGroupId",
+        "Desc": "全局匹配掉落奖励",
+        "Param": [
+            1016
+        ]
+    },
+    {
+        "Key": "GlobalMatchRewardTimes",
+        "Desc": "全局匹配奖励每日掉落次数",
+        "Param": [
+            3
+        ]
+    },
+    {
+        "Key": "LoserRewardMaxPercent",
+        "Desc": "失败时奖励最大倍率",
+        "Param": [
+            80
+        ]
+    },
+    {
+        "Key": "LoserEffectBossHpPercent",
+        "Desc": "失败时的奖励获取需要打掉的BOSS血量门槛",
+        "Param": [
+            15
         ]
     }
 ]

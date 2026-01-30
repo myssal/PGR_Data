@@ -85,13 +85,16 @@ function XCharR4LivH:ScriptInit(isGainControl)
     self._healSelfEffect = 105306020
     self._coreHealDotMagic = 1053080011
     self._coreHealHitMagic = 1053080012
-    self._skill31HealMagic = 105308002
-    self._skill31HealMagicPro = 1053080021
-    self._skill32HealMagic = 1053080022
+    self._skill31HealMagic = 105308002  --第一风格的治疗magic
+    self._skill31HealMagicPro = 1053080021  --核心改造1的治疗magic
+    self._skill32HealMagic = 1053080022 --第一风格的治疗magic
+    self._skill31HealMagic2 = 1053080023 --第二风格的治疗magic
+    self._skill32HealMagic2 = 1053080024 --第二风格的治疗magic
     self._ultHealMagicPro = 10530801
     self._limitHeal = 105308005
     --技能4增伤magicID
     self._skill4AtkUp = 105308004
+    self._skill4AtkUp2 = 10530812
     --核心buffID
     self._coreHealUp = 10530802
     self._coreAtkUp = 10530803
@@ -123,11 +126,17 @@ function XCharR4LivH:ScriptInit(isGainControl)
     self._secMod4 = 10531008
     --专属装备变量合集
     self._coreMod1Open = false
+    self._secMod1Open = false 
     --专属装备BUFFID合集
     self._coreMod1Atkup = 105308013
+    self._coreMod2DamgUp = 105308026
     self._coreMod2LazerDamgeUp = 105308020
     self._secMod3AddCore = 105308015
     self._secMod3ActiveCD = 105308025
+    --核心改造2红初始化时提升伤害上限
+    if self._proxy:CheckBuffByKind(self._uuid, self._coreMod2R) then
+        self._proxy:ApplyMagic(self._uuid, self._uuid, self._coreMod2DamgUp, 1)
+    end
     --次级改造3、4双风格特判减CD
     self._CDGroupID = 1
     if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
@@ -158,16 +167,6 @@ function XCharR4LivH:HandleEvent(eventType, eventArgs)
     Base.HandleEvent(self, eventType, eventArgs)
 end
 
---function XCharR4LivH:CheckLimitEnergyAddBuff()
---    if not self._proxy:CheckBuffByKind(self._uuid,105305013) then
---        local LimitSkillEnergy = self._proxy:GetTeamWorkEnergy(self._uuid)
---        if LimitSkillEnergy >= 100 then
---            --XLog.Warning("加极限技能buff效果")
---            self._proxy:ApplyMagic(self._uuid,self._uuid,1053050131,1)
---        end
---    end
---end
-
 function XCharR4LivH:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     Base.OnNpcAddBuffEvent(self, casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     --次要改造3-狂暴技逻辑1000497BOSS的狂暴技标记
@@ -176,7 +175,7 @@ function XCharR4LivH:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod3ActiveCD, 1)
         if not self._proxy:CheckBuffByKind(self._uuid, self._coreStateMagic) then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod3AddCore, 1)
-            self:CoreManager(true, 8)
+            self:CoreManager(true, 12)
         end
     end
 
@@ -223,11 +222,13 @@ function XCharR4LivH:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds
     --强化一技能改变技能组
     if buffId == 10580001 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._LivMod2_SG15Id)
+        self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Ball1,1.5)
     end
 
     --强化二技能改变技能组
     if buffId == 105305004 then
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball2, self._LivMod_SG12Id)
+        self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Ball2,2.5)
     end
 
     --极昼状态开启magic监听
@@ -235,9 +236,22 @@ function XCharR4LivH:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536011, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536012, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536013, 1)
-        --极昼状态切换技能3治疗为防护罩
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
+        --次级改造1变身时清除强化普攻2的条件buff（因为必定会变成强化普攻1所以不应该清楚对应条件buff），且重置技能组和按钮倒计时
+        if self._secMod1Open and self._proxy:CheckBuffByKind(self._uuid, self._secMod1) then
+            self._secMod1Open = false
+            self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050011, 1)
+            --极昼状态切换技能3治疗为防护罩，普攻替换为长按普攻1
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
+            --self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Attack)
+            self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Attack,8)
+        elseif not self._secMod1Open then
+            --常规变身，极昼状态切换技能3治疗为防护罩，普攻替换为长按普攻1
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
+            self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Attack,8)
+        end
+        --次级改造4逻辑
         if self._proxy:CheckBuffByKind(self._uuid, self._secMod4) then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod4Skill4CD[self._CDGroupID], 1)
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod4Skill31CD[self._CDGroupID], 1)
@@ -254,25 +268,39 @@ function XCharR4LivH:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKi
     if buffId == self._coreStateMagic then
         self._proxy:ApplyMagic(self._uuid, self._uuid, 105305003, 1)
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG07Id)
-        --第二风格：攻击力buff免疫关闭
-        if self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
-            self._proxy:ApplyMagic(self._uuid, self._uuid, 10530809, 1)
-        end
-        --通用换回技能组逻辑，且核心等于3时核心普攻不换做保底
-        if self._coreLevel ~= 3 then
+        self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Attack)
+        --通过装备改造技能4进入核心后，检查被动层数若符合修改技能组为核心强化普攻
+        if self._coreLevel == 3 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+            --第一风格：核心长按普攻开启
+            self._coreMod1Open = true
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG02Id)
+        elseif self._coreLevel >= 2 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            --第二风格：核心长按普攻开启
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill3Mod2Magic, 1)
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG02Id)
+        elseif self._coreLevel ~= 3 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+            --第一风格：以上检查都没有通过，走换回技能组逻辑，且核心等于3时核心普攻不换做保底
             self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)
+        elseif self._coreLevel >= 2 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            --第二风格：以上检查都没有通过，再走通用换回技能组逻辑，且核心等于3时核心普攻不换做保底
+            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)
+        end
+        --第二风格变身被动攻击力提升buff移除
+        if self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            self._proxy:RemoveBuffByKindAndCount(self._uuid, self._coreAtkUp, 1)
         end
         --XLog.Warning("极昼状态结束！！！") 
     end
-
     --第二风格：强化一技能还原技能组
     if buffId == 10580001 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._LivMod_SG04Id)
+        self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Ball1)
     end
 
     --强化二技能还原技能组
     if buffId == 105305004 then
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball2, self._LivMod_SG05Id)
+        self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Ball2)
     end
 
 end
@@ -288,14 +316,18 @@ function XCharR4LivH:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, T
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG14Id)
     end
     --次级改造1，技能组重置，强普条件重置
-    if SkillId == self._skill34Id then
-        --条件移除重置
-        self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050010, 1)
-        self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050011, 1)
+    if SkillId == self._skill34Id and self._proxy:CheckBuffByKind(self._uuid, self._secMod1) then
+        --变量记录本次变身是由技能4发起的
+        self._secMod1Open = true
+        self._proxy:RemoveBuffByKindAndCount(self._uuid, self._coreStateMagic, 1)
     end
     --第二风格核心变身后self._skill3Mod2Magic移除
     if SkillId == self._skill3Id then
         self._proxy:RemoveBuffByKindAndCount(self._uuid, self._skill3Mod2Magic, 1)
+    end
+    --防护罩快速信息逻辑
+    if SkillId == self._skill41Id then
+        self._proxy:ShowQuickMessage(3)
     end
 
 end
@@ -328,8 +360,13 @@ function XCharR4LivH:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, Ta
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._coreMagic20, 1)
             self:CoreManager(true, 2)
         end
-        --核心改造2逻辑
+        --核心改造2+被动buff移除逻辑
         if SkillId == self._skill33Id then
+            --第二风格：攻击力buff免疫关闭
+            if self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+                self._proxy:ApplyMagic(self._uuid, self._uuid, 10530809, 1)
+            end
+            --核心改造2
             if self._proxy:CheckBuffByKind(self._uuid, self._coreMod2G) or self._proxy:CheckBuffByKind(self._uuid, self._coreMod2R) then
                 self._proxy:ApplyMagic(self._uuid, self._uuid, self._coreMagic20, 1)
                 self:CoreManager(true, 2)
@@ -375,6 +412,7 @@ function XCharR4LivH:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, Ta
             for i, v in ipairs(self._teamList) do
                 --复活死去的队友并对其添加复活特效
                 self._proxy:RebornNpc(self._uuid, self._teamList[i])
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], 105306018, 1) --丽芙复活特效
                 self._proxy:ApplyMagic(self._uuid, self._teamList[i], 1000477, 1)
                 self._proxy:ApplyMagic(self._uuid, self._teamList[i], 1000478, 1)
                 --print("成功复活！玩家：", uuid)
@@ -428,10 +466,18 @@ function XCharR4LivH:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skil
 
     --技能4增伤
     if eventName == "Skill34_teamAtkUp" then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill4AtkUp, 1)
+        if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill4AtkUp, 1)
+        elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill4AtkUp2, 1)
+        end
         self:TeamListManager(1)
         for i, v in ipairs(self._teamList) do
-            self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill4AtkUp, 1)
+            if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill4AtkUp, 1)
+            elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill4AtkUp2, 1)
+            end
         end
         --次级改造1，启动被动时增加核心buff逻辑，区分第一第二风格
         if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) and self._proxy:CheckBuffByKind(self._uuid, self._secMod1) then
@@ -444,13 +490,21 @@ function XCharR4LivH:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skil
     --极昼全部的治疗逻辑
     --技能3-治疗
     if eventName == "Skill31_healSelf" then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill31HealMagic, 1)
+        if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill31HealMagic, 1)
+        elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill31HealMagic2, 1)
+        end
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._healSelfEffect, 1)
         --XLog.Warning("Skill31_healSelf 治疗自己！")
     elseif eventName == "Skill31_healTeam" then
         self:TeamListManager(1)
         for i, v in ipairs(self._teamList) do
-            self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill31HealMagic, 1)
+            if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill31HealMagic, 1)
+            elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill31HealMagic2, 1)
+            end
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._healTeamEffect, 1)
             --核心改造1逻辑
             if self._proxy:CheckBuffByKind(self._uuid, self._coreMod1R) and self._proxy:CheckBuffByKind(self._uuid, self._coreMod1G) and self._coreMod1Open then
@@ -473,7 +527,11 @@ function XCharR4LivH:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skil
     if eventName == "Skill32_healAll" then
         self:TeamListManager(1)
         for i, v in ipairs(self._teamList) do
-            self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill31HealMagic, 1)
+            if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill32HealMagic, 1)
+            elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+                self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._skill32HealMagic2, 1)
+            end
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._healTeamEffect, 1)
             --核心改造1逻辑
             if self._proxy:CheckBuffByKind(self._uuid, self._coreMod1R) and self._proxy:CheckBuffByKind(self._uuid, self._coreMod1G) and self._coreMod1Open then
@@ -491,14 +549,18 @@ function XCharR4LivH:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skil
             --XLog.Warning("Skill32_healAll 治疗队友！队友是？",self._teamList[i])
         end
         self._coreMod1Open = false
-        self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill32HealMagic, 1)
+        if self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill32HealMagic, 1)
+        elseif self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
+            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill32HealMagic2, 1)
+        end
     end
     --极限技
     if eventName == "Limit_heal" then
         self:TeamListManager(1)
         for i, v in ipairs(self._teamList) do
             self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._limitHeal, 1)
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self._healTeamEffect, 1)
+            self._proxy:ApplyMagic(self._uuid, self._teamList[i], self._healTeamEffect, 1)
             --XLog.Warning("Skill32_healAll 治疗队友！队友是？",self._teamList[i])
         end
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._limitHeal, 1)

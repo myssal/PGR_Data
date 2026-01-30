@@ -526,11 +526,7 @@ function XUiHelper.GetTime(second, timeFormatType)
     if timeFormatType == XUiHelper.TimeFormatType.CHATEMOJITIMER then
         local sumDas = mathFloor(second / D)
         if sumDas >= 1 then
-            if XOverseaManager.IsENRegion() then
-                return stringFormat("%d%s", days, STR_DAY)
-            else
-                return stringFormat("%d%s", sumDas, STR_DAY)
-            end
+            return stringFormat("%d%s", sumDas, STR_DAY)
         end
 
         if hours >= 1 then

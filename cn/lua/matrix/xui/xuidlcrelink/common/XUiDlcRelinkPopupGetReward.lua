@@ -21,7 +21,6 @@ end
 function XUiDlcRelinkPopupGetReward:OnStart(rewardGoodsList, equipUidList)
     self:RefreshReward(rewardGoodsList)
     self:RefreshEquip(equipUidList)
-    self:PlayAnimation("AniObtain")
 end
 
 function XUiDlcRelinkPopupGetReward:OnEnable()

@@ -125,15 +125,6 @@ function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
     end)
     self.PanelTabGroup:Init(btns, function(tabIndex)
         self:OnBtnTabClicked(tabIndex)
-        if self.LastIndex and tabIndex ~= self.LastIndex then
-            local button = btns[self.LastIndex]
-            XScheduleManager.ScheduleNextFrame(function()
-                local layoutGroup = button.transform:GetComponentInChildren(typeof(CS.UnityEngine.UI.VerticalLayoutGroup))
-                layoutGroup.enabled = false
-                layoutGroup.enabled = true
-            end)
-        end
-        self.LastIndex = tabIndex
     end)
     self.CurrentIndex = self:GetCurrentSelectIndex()
     if #btns > 0 then

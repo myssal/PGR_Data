@@ -14,13 +14,13 @@
     {
         "Key": "TrainingLevelId",
         "Params": [
-            0
+            9012
         ]
     },
     {
         "Key": "LevelPassProgressTip",
         "Params": [
-            "关卡进度%s"
+            "进度：%s"
         ]
     },
     {
@@ -78,7 +78,7 @@
         "Params": [
             "进攻",
             "装甲",
-            "辅助"
+            "增幅"
         ]
     },
     {
@@ -102,7 +102,7 @@
         "Params": [
             "进攻",
             "装甲",
-            "辅助"
+            "增幅"
         ]
     },
     {
@@ -382,7 +382,7 @@
     {
         "Key": "EquipBagFullMatchTipContent",
         "Params": [
-            "当前装备库存已满，继续挑战无法获得装备，是否继续匹配",
+            "当前装备库存已满，是否继续匹配",
             "继续挑战",
             "分解装备"
         ]
@@ -398,7 +398,7 @@
     {
         "Key": "RoomTeamEquipAbilityNotRationalTipContent",
         "Params": [
-            "当前队伍中有成员装备战力低于推荐，是否继续",
+            "当前队伍中有成员装备等级低于推荐，是否继续",
             "继续挑战",
             "取消"
         ]
@@ -412,7 +412,7 @@
     {
         "Key": "SwitchStyleSuccessDesc",
         "Params": [
-            "职业已切换为%s"
+            "形态已切换为%s"
         ]
     },
     {
@@ -467,13 +467,13 @@
     {
         "Key": "PlayerLevelUpConditionDesc",
         "Params": [
-            "请通关任意一个关卡%s"
+            "请通关任意%s难度的关卡"
         ]
     },
     {
         "Key": "SettlementFailTips",
         "Params": [
-            "推荐通过装备-改造提升装备等级",
+            "推荐通过装备-强化提升装备等级",
             "推荐玩家合理搭配队伍职业",
             "合理搭配装备可以有效提升角色实力",
             "合理利用极限技和必杀连携来逆转战局"
@@ -488,8 +488,8 @@
     {
         "Key": "SkillDamageSliderColor",
         "Params": [
-            "0F70BC",
-            "ff0000"
+            "AEBDFC",
+            "ffc85f"
         ]
     },
     {
@@ -503,13 +503,14 @@
         "Key": "ShopItemTextColor",
         "Params": [
             "FFFFFFFF",
-            "E53E3EFF"
+            "Fa7d81"
         ]
     },
     {
         "Key": "ShopCanBuyColor",
         "Params": [
-            "FFFFFFFF"
+            "FFFFFFFF",
+            "Fa7d81"
         ]
     },
     {
@@ -523,6 +524,13 @@
         "Params": [
             "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBg.png",
             "Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkSettlementBgFailure.png"
+        ]
+    },
+    {
+        "Key": "SettlementResultEffect",
+        "Params": [
+            "Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementWin01.prefab",
+            "Assets/Product/Effect/DlcPrefab/FxRelink/Prefeb/FxUi/FxUiDlcRelinkSettlementWinNew/FxUiDlcRelinkSettlementFailure01.prefab"
         ]
     },
     {
@@ -540,15 +548,16 @@
     {
         "Key": "SettlementResearchTitle",
         "Params": [
-            "研发进度 <color=#9db1e9>%s</color>"
+            "研发进度 <color=#9db1e9>%s</color>",
+            "研发进度 <color=#9db1e9>%s (Max)</color>"
         ]
     },
     {
         "Key": "EquipSlotNoUnlock",
         "Params": [
             "暂未解锁",
-            "提升研发进度",
-            "穿戴主控装备解锁槽位"
+            "研发等级达到10级后可解锁槽位",
+            "穿戴职业装备解锁槽位"
         ]
     },
     {
@@ -592,14 +601,16 @@
         "Key": "WikiTypeTabNormalIcon",
         "Params": [
             "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon05.png",
-            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon06.png"
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon06.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon07.png"
         ]
     },
     {
         "Key": "WikiTypeTabSelectIcon",
         "Params": [
             "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon02.png",
-            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon03.png"
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon03.png",
+            "Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEncyclopediaIcon08.png"
         ]
     },
     {
@@ -676,7 +687,7 @@
     {
         "Key": "TipsNotEffective",
         "Params": [
-            "加持不生效，装备类型不符合"
+            "额外加持未生效（装备职业类型不符）"
         ]
     },
     {
@@ -694,7 +705,7 @@
     {
         "Key": "ForbidSelectRoleTip",
         "Params": [
-            "完成教学后才可更换角色"
+            "教学关无法更换角色"
         ]
     },
     {
@@ -731,6 +742,32 @@
         "Key": "BattleSettleShowTitleMaxCount",
         "Params": [
             4
+        ]
+    },
+    {
+        "Key": "GlobalMatchRewardDesc",
+        "Params": [
+            "额外装备奖励 (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)",
+            "额外装备奖励 (<color=#fa7d81>%s</color><color=#a1b9ff>/%s</color>)"
+        ]
+    },
+    {
+        "Key": "GlobalMatchDetailTipContent",
+        "Params": [
+            "1.开启全局匹配后将快速加入任意关卡的房间\\n2.通过全局匹配进入房间完成挑战后可获得额外装备奖励\\n3.额外装备奖励每日5点刷新可获取次数"
+        ]
+    },
+    {
+        "Key": "GlobalMatchDisableChooseBossTip",
+        "Params": [
+            "全局匹配时无法选择关卡"
+        ]
+    },
+    {
+        "Key": "ChooseBossBtnName",
+        "Params": [
+            "未选关卡",
+            "随机关卡"
         ]
     }
 ]

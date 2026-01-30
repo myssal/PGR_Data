@@ -1134,7 +1134,17 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
     -- end
 
     -- 视频播放结束后，恢复 RMS 分析器
-    XAudioManager.ReplayCurrentMusic()
+    local musicAudioInfo = XAudioManager.CurrentMusicAudioInfo1
+    if musicAudioInfo ~= nil then
+        -- 安全地检查 Unity 对象是否存在
+        local isValid = true
+        if type(musicAudioInfo.Exist) == "function" then
+            isValid = musicAudioInfo:Exist()
+        end
+        if isValid then
+            XAudioManager.ReplayCurrentMusic()
+        end
+    end
     XAudioManager.StartAnalyzer()
 end
 

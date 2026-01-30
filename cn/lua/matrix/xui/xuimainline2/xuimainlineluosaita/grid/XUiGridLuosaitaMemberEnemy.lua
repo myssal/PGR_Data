@@ -8,7 +8,6 @@ local XUiGridLuosaitaMember = require("XUi/XUiMainLine2/XUiMainLineLuosaita/Grid
 local XUiGridLuosaitaMemberEnemy = XClass(XUiGridLuosaitaMember, "XUiGridLuosaitaMemberEnemy")
 
 function XUiGridLuosaitaMemberEnemy:OnStart()
-    self.RImgHead = self.RImgHead or self.Transform:FindTransform("RImgHead"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     self:RegisterUiEvents()
 end
 
@@ -49,10 +48,28 @@ function XUiGridLuosaitaMemberEnemy:Refresh(posInfo)
     if not isShow then
         self:Close()
     end
+
+    -- 首次显示播放Enable动画
+    if isShow and self.LastIsShow == false then
+        self:PlayAnimation("AnimEnable")
+    end
+    self.LastIsShow = isShow
 end
 
 function XUiGridLuosaitaMemberEnemy:OnDestory()
     self._LastScreenPoint = nil
+end
+
+-- 播放死亡动画
+function XUiGridLuosaitaMemberEnemy:PlayAnimDead(cb)
+    self:PlayAnimationWithMask("AnimDead", function()
+        if cb then cb() end
+    end)
+end
+
+-- 显示/隐藏选中特效
+function XUiGridLuosaitaMemberEnemy:ShowSelectEffect(isShow)
+    self.FxUiSelect.gameObject:SetActiveEx(isShow)
 end
 
 function XUiGridLuosaitaMemberEnemy:IsInSize(screenPointV2)

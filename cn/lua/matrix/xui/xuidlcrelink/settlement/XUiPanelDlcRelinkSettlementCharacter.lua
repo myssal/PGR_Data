@@ -86,24 +86,6 @@ function XUiPanelDlcRelinkSettlementCharacter:SetGridVisibility(playerCount)
     end
 end
 
--- 通过玩家Id获取玩家名称
----@param playerId number
----@return string
-function XUiPanelDlcRelinkSettlementCharacter:GetPlayerNameById(playerId)
-    if not XTool.IsNumberValid(playerId) then
-        return ""
-    end
-
-    if self.PlayerSettleResults then
-        for _, playerSettleResult in pairs(self.PlayerSettleResults) do
-            if playerSettleResult.PlayerId == playerId then
-                return playerSettleResult.Name
-            end
-        end
-    end
-    return ""
-end
-
 -- 根据人数调整玩家数据的位置索引
 -- 布局规则：
 --   1人：index=1 中间位置
