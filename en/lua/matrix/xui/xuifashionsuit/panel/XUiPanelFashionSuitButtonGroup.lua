@@ -716,6 +716,20 @@ function XUiPanelFashionSuitButtonGroup:GetDiscountActivityIsOpen(shopId,goodsDa
     end
     self.ActivityOpen = XShopManager.GetShopActivityIsOpen(shopId)
     self.NeedCount = goodsData.ActivityConsumeCount
+    if self.ActivityOpen and goodsData.ActivityConsumeCount == 0 then
+        XShopManager.GetShopInfo(shopId, function()
+            local data = XShopManager.GetShopGoodsInfo(self._GainParams[1], self._GainParams[2])
+            self.NeedCount = data.ActivityConsumeCount
+            self:ShowGoods(data)
+        end)
+    end
+    if not self.ActivityOpen and goodsData.ActivityConsumeCount ~= 0 then
+        XShopManager.GetShopInfo(shopId, function()
+            local data = XShopManager.GetShopGoodsInfo(self._GainParams[1], self._GainParams[2])
+            self.NeedCount = data.ActivityConsumeCount
+            self:ShowGoods(data)
+        end)
+    end
 end
 
 ---endregion
