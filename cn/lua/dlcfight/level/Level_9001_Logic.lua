@@ -46,7 +46,7 @@ function XLevelScript9001:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,1)                --显示从菜单面板
         self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localNpc,1)          --显示能量条面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkTeamInfo,self._localNpc,1)            --显示队伍信息面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --显示玩法面板
+        --self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --显示玩法面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localNpc,1)     --显示DLC额外面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localNpc,1)    --显示聊天记录
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localNpc,1)    --显示聊天轮盘
@@ -171,6 +171,7 @@ function XLevelScript9001:Init() --初始化逻辑
     self._audioPlayer:SetCvActionValidation(EFightCVAction.OverDriveBreak,false)  --ODbreak提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.PraiseConterSuccess,false) --拼刀语音提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.EnterOverDriveWarning,false) --OD状态开启提示
+    self._audioPlayer:SetCvActionValidation(EFightCVAction.NotifyEnemyDead,false) --BOSS死亡播报
 end
 
 --region 关卡阶段管理
@@ -314,7 +315,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self.hasDodgeVideo = false 
         self._hasbossfirstskill = false
     elseif phase == Phase.Dodge_2 then
-        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)
+        --self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)
         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=true})                  --打开白龙AI
         XLog.Debug("阶段进入!Phase.Dodge_2")
         self._proxy:SetLevelMemoryInt(40001, 6)
@@ -403,8 +404,8 @@ function XLevelScript9001:OnEnterPhase(phase)
     elseif phase == Phase.End then
         XLog.Debug("阶段进入!Phase.End")
         self._audioPlayer:PlayAudioFightWin()
-        self._proxy:StopAudioByUid(self._backGrounSoundUid)
-        self._timer:Schedule(5, self, function()               
+        self._timer:Schedule(5, self, function() 
+            self._proxy:StopAudioByUid(self._backGrounSoundUid)              
             self._proxy:FinishFight()
         end)
     elseif phase == Phase.Test then   --OD阶段对应的配置

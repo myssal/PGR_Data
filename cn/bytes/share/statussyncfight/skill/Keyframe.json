@@ -3039,6 +3039,8 @@
             "0||1;0|FullChainSkillStart",
             "999|||SendUiEvent|Relink技能提示|1001||",
             "4.6||1;1|FullChainSkillEnd|4",
+            "0||1;0|SendEvent|105109622|UltSkillUiOff|1",
+            "4.6||1;1|SendEvent|105109623|UltSkillUiOn|1",
             "0|||SendUiEvent|奥义CutIn||1|1"
         ]
     },
@@ -3118,6 +3120,8 @@
             "1|||Magic|1000500||",
             "0||1;0|FullChainSkillStart",
             "4.6||1;1|FullChainSkillEnd|4",
+            "0||1;0|SendEvent|105109622|UltSkillUiOff|1",
+            "4.6||1;1|SendEvent|105109623|UltSkillUiOn|1",
             "0|||SendUiEvent|Relink技能提示|105101|1|1"
         ]
     },
@@ -3942,7 +3946,7 @@
             "0|||AddSkillBuff|10524609|105210|1|0",
             "1|||RemoveSkillBuff|10524609",
             "0.3|||Magic|1052340||",
-            "0|||MoveXZ|2|0.9|180|10|-10|||",
+            "0|||MoveXZ|2|0.5|180|2|-2|||",
             "0.7|||Magic|1052326||",
             "0.7|||Magic|1052171||"
         ]
@@ -4172,7 +4176,7 @@
             "0.6|||AddSkillBuff|10525812|105210|1|0",
             "1.1|||RemoveSkillBuff|10525812",
             "0.1|||BindEffect|FxR5YongyechaoAtk211Hit||0|1|0.1|0.1|||||||||||",
-            "0.1|||BindEffect|FxR5YongyechaoAtk21203|WeaponCase3|0||||||||||||||",
+            "0.1|||BindEffect|FxR5YongyechaoAtk21203|WeaponCase3|1||||||||||||||",
             "0|||SendUiEvent|Relink技能提示|105202|2|"
         ]
     },
@@ -4181,7 +4185,7 @@
         "Key": [
             "0|||RelinkGameplayBindPosition||||",
             "0|||Magic|1052268||",
-            "0|||BindEffect|FxR5YongyechaoAtk21203|WeaponCase3|1|1|||||||||||||",
+            "0|||BindEffect|FxR5YongyechaoAtk21203|WeaponCase3|1||||||||||||||",
             "0|||AddSkillBuff|10525905|105243|1|0",
             "2|||RemoveSkillBuff|10525905",
             "0.1|||BindEffect|FxR5YongyechaoAtk212|WeaponCase3|1|1|0.1|0.1|||||||||||"
@@ -4201,7 +4205,8 @@
             "0|||Magic|1052269||",
             "0|||MoveXZ|2|0.9|180|10|-10|||",
             "0.7|||Magic|1052326||",
-            "0.7|||Magic|1052171||"
+            "0.7|||Magic|1052171||",
+            "1.4|||SendEvent|10526019|StandUp|1"
         ]
     },
     {
@@ -5162,7 +5167,7 @@
         "Id": 105301,
         "Key": [
             "0|||Move|2.5|1.5|0|3||",
-            "0|||LookAt|360|0.4|1|",
+            "0|||LookAt|360|0.4|2|",
             "0.25|10535001||Missile|10530103|10530103|0|||",
             "0.25|||BindEffect|FxR4LifuAtk0101|||1|0|0|-0.8,2.1,-0.1||||||||||",
             "0.25|||BindEffect|FxR4LifuAtk0101|||1|0|0|0.75,2.1,-0.1||||||||||",
@@ -5177,7 +5182,7 @@
         "Id": 105302,
         "Key": [
             "0|||Move|2.5|1.5|0|3||",
-            "0|||LookAt|360|0.4|1|",
+            "0|||LookAt|360|0.4|2|",
             "0.25|10535001||Missile|10530203|10530203|0|||",
             "0.25|||BindEffect|FxR4LifuAtk0201|||1|0|0|-0.75,1.08,0.5||||||||||",
             "0.25|||BindEffect|FxR4LifuAtk0201|||1|0|0|0.87,1.08,0.5||||||||||",
@@ -5192,7 +5197,7 @@
         "Id": 105303,
         "Key": [
             "0|||Move|3|1.5|0|3||",
-            "0|||LookAt|360|0.7|1|",
+            "0|||LookAt|360|0.7|2|",
             "0.3|10535001||Missile|10530303|10530303|0|||",
             "0|||BindEffect|FxR4LifuAtk0301Dilie||1|1|0|0.3|0,0,1|||0.3|||||||",
             "0|||BindEffect|FxR4LifuAtk0301Trail||1|1|0|0.3|0,0,1|||0.3|||||||",
@@ -5206,7 +5211,7 @@
         "Id": 105304,
         "Key": [
             "0|||Move|3|1.5|0|3||",
-            "0|||LookAt|360|0.5|1|",
+            "0|||LookAt|360|0.5|2|",
             "0.25|10535001||Missile|10530403|10530403|0|||",
             "0.25|||Missile|10530404|10530404|0|||",
             "0.25|||Magic|105301004||",
@@ -5219,7 +5224,7 @@
         "Id": 105305,
         "Key": [
             "0|||Move|2|1.5|0|3||",
-            "0|||LookAt|360|0.7|1|",
+            "0|||LookAt|360|0.7|2|",
             "0.1|10535001||Missile|10530503|10530503|0|||",
             "0.05|||BindEffect|FxR4LifuAtk0501Xuli||0|1|||||||||||||",
             "0.1|||Missile|10530505|10530505|0|||",
@@ -5233,7 +5238,7 @@
         "Id": 105306,
         "Key": [
             "0|||Move|2|1.5|0|3||",
-            "0|||LookAt|180|0.4|1|",
+            "0|||LookAt|180|0.4|2|",
             "0.05|10535001||Missile|10530603|10530603|0|||",
             "0.05|||Missile|10530604|10530604|0|||",
             "0.1|||Magic|105301006||",
@@ -5272,7 +5277,7 @@
         "Id": 105310,
         "Key": [
             "0.1|||BindEffect|FxR4LifuAtk3101||1|1|0.7||||||||||||",
-            "0.3|||LookAt|1200|0.3|1|",
+            "0.3|||LookAt|1200|0.3|2|",
             "0.15|||Magic|105303005||",
             "0.15|10535001||Missile|10531004|10531004|0|||",
             "0.15|10535001||Missile|10531005|10531005|0|||",
@@ -5306,7 +5311,7 @@
         "Id": 105311,
         "Key": [
             "0.1|||BindEffect|FxR4LifuAtk3101||1|1|0.7||||||||||||",
-            "0.3|||LookAt|1200|0.3|1|",
+            "0.3|||LookAt|1200|0.3|2|",
             "0.15|||Magic|105303005||",
             "0.2|||Move|30|0.1|-150|3||",
             "0.3|||Move|20|0.15|-100|3||",
@@ -5391,7 +5396,7 @@
         "Id": 105332,
         "Key": [
             "0.3|||MoveXZ|3|1|180|3|-2|||",
-            "0|||LookAt|360|0.7|1|",
+            "0|||LookAt|360|0.7|2|",
             "0.53|10535001||Missile|10533203|10533203|1|||",
             "0.9|10535001||Missile|10533204|10533204|1|||",
             "0.3|||BindEffect|FxR4LifuMd010031Atk62faZhen1WeaponCase3|WeaponCase3|1||||||||||||||",
@@ -5455,7 +5460,7 @@
         "Key": [
             "0|||Move|2.5|1.5|0|||",
             "0|||Magic|105303004||",
-            "0|||LookAt|240|1.5|1|",
+            "0|||LookAt|720|0.15|2|",
             "0|||BindEffect|FxR4LifuMd010031Attack61GlowBone001||1|0|||||||||||||1,105301,Bone001",
             "0|||BindEffect|FxR4LifuMd010031Attack61XuliBone001||1|1|||||||||||||1,105301,Bone001",
             "0.73|||BindEffect|FxR4LifuMd010031Attack61Boo||1|1|0|0||||||0.8|||||",
@@ -5620,17 +5625,16 @@
         "Id": 105370,
         "Key": [
             "0.45|||Missile|10530801|10530801|0|||",
-            "0.4|||RelinkGameplayMove|||||",
             "0|||RelinkGameplayRotation",
             "0|||BindEffect|FxR4LifuMd010031Attack82Tandao||0|1|||||||||||||",
-            "0.45|||MoveXZ|2|0.4|0|-40|100|0||",
+            "0.45|||MoveXZ|2|0.4|0|-30|75|0||",
             "0|||SendUiEvent|Relink技能提示|105204|2|"
         ]
     },
     {
         "Id": 105371,
         "Key": [
-            "0.95|||RelinkGameplayMove|0|1|1|-4,0,8|",
+            "0.95|||RelinkGameplayMove|2|1|1|-4,0,8|",
             "0|||RelinkGameplayRotation",
             "0.5|||BindEffect|FxR4LifuMd010031Attack88ShanXian||0|1|||||||||||||",
             "0.95|||SendEvent|10537105|ParryCounter1|1"
@@ -5640,7 +5644,7 @@
         "Id": 105372,
         "Key": [
             "0|||Magic|10530332||",
-            "0.9|||Missile|10533204|10537201|1|||",
+            "0.9|||Missile|10530103|10537201|1|||",
             "0.27|||SendEvent|10537212|MultiParry2_heal|1",
             "0.1|||BindEffect|FxR4LifuMd010031Attack88Glow|Bip001LHand||0|||||||||||||",
             "0.27|||BindEffect|FxR4LifuMd010031Attack88bao|||1|0|0|||||||||||",
@@ -5648,20 +5652,21 @@
             "0.75|||Magic|105301001||",
             "0|||BindEffect|FxR4LifuMd010031Attack88ShanXianEnd||1|1|||||||||||||",
             "0|||Magic|1057020||",
-            "0|||LookAt|480|0.15|1|",
+            "0|||LookAt|900|0.1|2|",
             "0.73|||BindEffect|FxR4LifuMd010031Attack88GlowBone001||1|0|||||||||||||1,105301,Bone001",
             "0.73|||BindEffect|FxR4LifuMd010031Atk88JiGuang1MA||1|1|0|0|||||||||||",
-            "0.75|1000517||Missile|10533204|10537202|1|||",
-            "0.75|!1000517||Missile|10533204|10537203|1|||",
-            "0|||Magic|1000501||"
+            "0.75|1000517||Missile|10530103|10537202|1|||",
+            "0.75|!1000517||Missile|10530103|10537203|1|||",
+            "0|||Magic|1000501||",
+            "0.45|||LookAt|300|0.5|2|"
         ]
     },
     {
         "Id": 105373,
         "Key": [
             "0|||Missile|10530701|10530701|0|||",
-            "0.95|||RelinkGameplayMove|0|1|1|-4,0,8|",
-            "0|||LookAt|480|0.3|1|",
+            "0.95|||RelinkGameplayMove|0|1|1|4,0,8|",
+            "0|||RelinkGameplayRotation",
             "0|||BindEffect|FxR4LifuMd010031Attack89YanWuBip001|Bip001|0|0|||||||||||||",
             "0.67|||BindEffect|FxR4LifuMd010031Attack89Trail||1|1|||||||||||||",
             "0.95|||SendEvent|10537305|ParryCounter2|1"
@@ -5675,7 +5680,7 @@
             "0.07|||BindEffect|FxR4LifuMd010031Attack89GlowBone001||1|0|||||||||||||1,105301,Bone001",
             "0|||Magic|10530335||",
             "0|||Magic|10530333||",
-            "0|||LookAt|480|0.15|1|",
+            "0|||LookAt|720|0.15|2|",
             "0|||Magic|1057020||",
             "0.6|||Magic|10530334||",
             "0|||Magic|1000502||"
@@ -7514,7 +7519,8 @@
             "999|||Missile|80520521|80520521||||",
             "0.45|||BindEffect|FxRelinkYujing02|Bip001LHand|0|4|||||||||||||",
             "2|||SendEvent|80520522|TryDoDodge|",
-            "1.3|||Missile|80520518|80520523|1|||"
+            "1.3|||Missile|80520518|80520523|1|||",
+            "0|||Magic|1000507||1"
         ]
     },
     {
@@ -7548,6 +7554,7 @@
             "0.05|||LookAt|540|0.5|2|",
             "1.75|||SendEvent|80520703|CrossFireConnect|",
             "0.75|||BindEffect|FxMb1StarknightAtk10||1||||||||||||||",
+            "1.3|||Missile|80520170|80520705||||",
             "1.65|||Magic|8052001|0|",
             "1.3|||Missile|80520707|80520707||||",
             "0.7|||BindEffect|FxMb1StarknightAtk10Bip001LHand|Bip001LHand|||||||||||||||",
@@ -7798,7 +7805,8 @@
             "1|||Missile|80520170|80522328|1|||",
             "1.4|||Missile|80522330|80522330||||",
             "0.7|||BindEffect|FxRelinkYujing01|Bip001LHand|0|3|||||||||||||",
-            "0.7|||BindEffect|FxRelinkYujing02|Bip001LHand|0|4|||||||||||||"
+            "0.7|||BindEffect|FxRelinkYujing02|Bip001LHand|0|4|||||||||||||",
+            "0|||Magic|1000507||1"
         ]
     },
     {
@@ -7973,6 +7981,8 @@
             "1|||BindEffect|FxMb1StarknightArmorBoneSL03Burst|ArmorBoneSL03|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR01Burst|ArmorBoneSR01|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR03Burst|ArmorBoneSR03|1||||||||||||||",
+            "0.8|||Magic|8052075||",
+            "1.65|||Magic|8052076||",
             "0.6|||Missile|80525806|80523209|1|||",
             "0.73|||MoveXZ|1|0.67|1|0||||",
             "1.55|||Missile|80522226|80523212||||",
@@ -8040,6 +8050,8 @@
             "1|||BindEffect|FxMb1StarknightArmorBoneSR01Burst|ArmorBoneSR01|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR03Burst|ArmorBoneSR03|1||||||||||||||",
             "0|||RecordTargetPos|80523907|999|1|",
+            "0.8|||Magic|8052075||",
+            "1.65|||Magic|8052076||",
             "0.6|||Missile|80525806|80523209|1|||",
             "0.73|||MoveXZ|1|0.67|1|0||||",
             "1.55|||Missile|80522226|80523212||||",
@@ -8115,6 +8127,8 @@
             "1|||BindEffect|FxMb1StarknightArmorBoneSL03Burst|ArmorBoneSL03|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR01Burst|ArmorBoneSR01|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR03Burst|ArmorBoneSR03|1||||||||||||||",
+            "0.8|||Magic|8052075||",
+            "1.65|||Magic|8052076||",
             "0.6|||Missile|80525806|80523209|1|||",
             "0.73|||MoveXZ|1|0.67|1|0||||",
             "1.55|||Missile|80522226|80523212||||",
@@ -8382,6 +8396,8 @@
             "1|||BindEffect|FxMb1StarknightArmorBoneSL03Burst|ArmorBoneSL03|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR01Burst|ArmorBoneSR01|1||||||||||||||",
             "1|||BindEffect|FxMb1StarknightArmorBoneSR03Burst|ArmorBoneSR03|1||||||||||||||",
+            "0.8|||Magic|8052075||",
+            "1.65|||Magic|8052076||",
             "0.6|||Missile|80525806|80523209|1|||",
             "0.73|||MoveXZ|1|0.67|1|0||||",
             "1.55|||Missile|80522226|80523212|1|||",

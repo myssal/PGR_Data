@@ -94,7 +94,7 @@ end
 ---跳跃控制武器显隐
 function XRelinkCharBase:JumpWeaponHidShowCheck()
     local isJumping = self._proxy:CheckNpcAction(self._uuid, ENpcAction.Jump) --当前是否在跳跃中
-    if self.lastActionIsJump and (not isJumping)then
+    if self.lastActionIsJump and (not isJumping) then
         self:OnExitJumpWeaponShow()
     end
 

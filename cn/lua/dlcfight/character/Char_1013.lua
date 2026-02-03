@@ -58,7 +58,7 @@ function XCharTes1013:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, 
         return
     end
 
-    if (skillId == 101303) or (skillId == 101304) or (skillId ==101307) or (skillId ==101308) or (skillId ==101309) or (skillId ==101328)then
+    if (skillId == 101303) or (skillId == 101304) or (skillId == 101307) or (skillId == 101308) or (skillId == 101309) or (skillId == 101328) then
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
     else
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)

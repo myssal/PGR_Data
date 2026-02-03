@@ -180,6 +180,12 @@ function XCharR5Nanami1:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,ski
         end
             self._proxy:ShowQuickMessage(messageid)
     end
+
+    if eventName == "StandUp" then
+        self._proxy:AbortAction(self._uuid,true)
+        --XLog.Warning("斧角力失败保底")
+        self._proxy:CastActionEx(self._uuid,105279,0,5)
+    end
 end
 
 function XCharR5Nanami1:Terminate()
@@ -1038,7 +1044,7 @@ end
 function XCharR5Nanami1:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     Base.OnNpcCounterSuccess(self,triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     if self._proxy:CheckNpcCurrentAction(self._uuid, 105206) or self._proxy:CheckNpcCurrentAction(self._uuid, 105224)
-            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236)then
+            or self._proxy:CheckNpcCurrentAction(self._uuid, 105235) or self._proxy:CheckNpcCurrentAction(self._uuid, 105236) then
         self._proxy:AbortAction(self._uuid, true)
         if self._proxy:CheckBuffByKind(self._uuid, 105217) then
             self._proxy:CastActionEx(self._uuid,105240,0.26,3.83) --剑盾受击触发弹刀释放精确格挡

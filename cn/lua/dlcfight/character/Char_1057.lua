@@ -201,6 +201,11 @@ function XCharR5Nanami2:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,ski
         self._proxy:ShowQuickMessage(messageid)
     end
 
+    if eventName == "StandUp" then
+        self._proxy:AbortAction(self._uuid,true)
+        --XLog.Warning("斧角力失败保底")
+        self._proxy:CastActionEx(self._uuid,105279,0,5)
+    end
 end
 
 function XCharR5Nanami2:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
@@ -248,13 +253,13 @@ function XCharR5Nanami2:ChangeDamageBeforeCalc(eventArgs)
     self._uuid = self._proxy:GetSelfNpcId()
     ----超解伤害修正
     if eventArgs.Id == 1057201 then
-        XLog.Warning("修正前："..eventArgs.PhysicalPermyraid)
+        --XLog.Warning("修正前："..eventArgs.PhysicalPermyraid)
         --XLog.Warning("能量点："..self.CustomPower2)
         local hasOverReleaseDamageModifyCoe,OverReleaseDamageModifyCoe = self:TryGetBBFloat(1057001)
         local hasCustomPower2,CustomPower2 = self:TryGetBBInt(1057002)
         local FinalDMGRate = math.floor(eventArgs.PhysicalPermyraid *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
         self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
-        XLog.Warning("修正后："..FinalDMGRate)
+        --XLog.Warning("修正后："..FinalDMGRate)
     end
 end
 function XCharR5Nanami2:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffTableId, buffKinds)
@@ -299,15 +304,21 @@ function XCharR5Nanami2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buf
         return
     end
     if buffId == 105219 then
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703)
+        end
     end
     if buffId == 1057001 then
         --XLog.Warning("退出红球派生")
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        end
     end
     if buffId == 1057003 then
         --XLog.Warning("退出斧红球派生")
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715)
+        if self._proxy:CheckBuffByKind(self._uuid,105218) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715)
+        end
     end
     if buffId == 1057005 then
         --XLog.Warning("退出龙车派生")
@@ -843,7 +854,7 @@ end
 function XCharR5Nanami2:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     Base.OnNpcCounterSuccess(self,triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     if self._proxy:CheckNpcCurrentAction(self._uuid, 105206) or self._proxy:CheckNpcCurrentAction(self._uuid, 105224)
-            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236)then
+            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236) then
         self._proxy:AbortAction(self._uuid, true)
         if self._proxy:CheckBuffByKind(self._uuid, 105217) then
             self._proxy:CastActionEx(self._uuid,105240,0.26,3.83) --剑盾受击触发弹刀释放精确格挡
@@ -859,8 +870,13 @@ end
 --region 角力监听节点(处理部分角力相关的保底内容)
 function XCharR5Nanami2:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
     Base.OnNpcWrestleStart(self,launcherNpcUUID, targetNpcUUID, succeed)
-    --角力进入强制设置锁定目标
     self.WrestleTarget = targetNpcUUID
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --使用旧有镜头设置
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1052284,1)
+    --角力进入强制设置锁定目标
     self.LockTargetKeeper = self._proxy:GetLockTarget()
     --XLog.Warning("程序角力进入 "..self.LockTargetKeeper .. " launcherUUID" .. launcherNpcUUID .. " targetNpcUUID" .. targetNpcUUID)
     self._proxy:SetHardLockToPart(targetNpcUUID,launcherNpcUUID,self.LockPartForWrestle)
@@ -884,6 +900,13 @@ function XCharR5Nanami2:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestlePursuit(self,launcherNpcUUID, targetNpcUUID)
     --XLog.Warning("角力失败")
     self.WrestleTarget = 0
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --延时移除角力镜头参数
+    self._proxy:AddTimerTask(0.5,function()
+        self._proxy:RemoveBuffByKindAndCount(targetNpcUUID,1052284,0)
+    end)
     self.AxeWrestleInput = false
     --角力退出还原锁定配置
     self._proxy:SetHardLock(targetNpcUUID,self.LockTargetKeeper)
@@ -902,6 +925,13 @@ function XCharR5Nanami2:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestleReversal(self,launcherNpcUUID, targetNpcUUID)
     --XLog.Warning("角力成功")
     self.WrestleTarget = 0
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --延时移除角力镜头参数
+    self._proxy:AddTimerTask(1.5,function()
+        self._proxy:RemoveBuffByKindAndCount(targetNpcUUID,1052284,0)
+    end)
     self.AxeWrestleInput = false
     --角力退出还原锁定配置
     self._proxy:SetHardLock(targetNpcUUID,self.LockTargetKeeper)

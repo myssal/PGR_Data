@@ -741,6 +741,10 @@ end
 --region 机制教学
 
 function XUiDlcRelinkRoom:CheckShowMechanismTeach()
+    -- 引导中不弹
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
     local levelId = self.PanelBossNode.LevelId
     if not XTool.IsNumberValid(levelId) then
         return

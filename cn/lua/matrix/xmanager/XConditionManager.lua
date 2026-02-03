@@ -2733,6 +2733,17 @@ PlayerCondition = {
         local level = condition.Params[1]
         return XMVCA.XDlcRelink:CheckBagUiGuideCondition(level), condition.Desc
     end,
+    -- Relink-玩家是否在房间中
+    [23006] = function(condition)
+        local isInRoom = condition.Params[1] == 1
+        local inRoom = XMVCA.XDlcRoom:IsInRoom() and true or false
+        return inRoom == isInRoom, condition.Desc
+    end,
+    -- Relink-网络切换提示
+    [23007] = function(condition)
+        local isShow = condition.Params[1] == 1
+        return XMVCA.XDlcRelink:IsShowNetworkSwitchTip(isShow), condition.Desc
+    end,
     --endregion
 }
 

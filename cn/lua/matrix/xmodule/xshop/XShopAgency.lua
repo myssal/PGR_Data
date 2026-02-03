@@ -104,7 +104,7 @@ function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
 end
 
 function XShopAgency:GetShopInfoList(shopIdList, cb, shopType, notTip)
-    if XTool.IsTableEmpty(shopIdList) then
+    if XTool.IsTableEmpty(shopIdList) or not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         if cb then
             cb()
         end
@@ -114,7 +114,7 @@ function XShopAgency:GetShopInfoList(shopIdList, cb, shopType, notTip)
 end
 
 function XShopAgency:GetBaseInfo(cb)
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         if cb then
             cb()
         end
