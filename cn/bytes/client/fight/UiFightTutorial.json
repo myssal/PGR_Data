@@ -618,29 +618,21 @@
     {
         "Id": 96991791,
         "Titles": [
-            "Placeholder_动摇状态",
-            "Placeholder_特写处决",
-            "Placeholder_评分升阶",
-            "Placeholder_临界模式",
-            "Placeholder_最高评分"
+            "多重映射",
+            "链路裁断",
+            "评分满阶"
         ],
         "Contents": [
-            "Placeholder_关卡中，怪物受到一定程度的伤害后，会进入动摇状态，之后不会受到任何伤害。",
-            "Placeholder_渡边处于强袭模式状态下，释放出的逆势掣肘能将动摇状态的怪物处决",
-            "Placeholder_为了获得S评价，渡边需要在临界模式期间完成评价跃升任务；在临界模式结束前完成任务则评价跃升，获得改造效果；失败则评价等级不能跃升，并减少当前评分",
-            "Placeholder_评分到达A之后，每打满评分，渡边会进入名为临界模式的限时强化状态，这个期间，逆势掣肘将无视动摇状态，直接斩杀怪物。",
-            "Placeholder_在一对多关卡内，角色最多达到SSS评价，并在满评价时进入临界模式。SSS+评价将在2-1关卡中解锁。"
+            "渡边处于强袭模式状态下，释放出的逆势掣肘能将70%锁血状态的怪物斩杀，进而获得评分奖励。",
+            "\"评分等级锁定时,可直接使用逆势掣肘处决怪物，无须怪物处于锁血状态，达成操作后评分等级提升\"",
+            "\"SSS满评分后,在短时间内可无限处决敌人\""
         ],
         "AssetPaths": [
-            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0401.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png",
-            "Assets/Product/Texture/Image/UiFightTutorialImage/v40StageMemoryShow0402.png"
+            31030,
+            31031,
+            31032
         ],
         "AssetTypes": [
-            2,
-            2,
             2,
             2,
             2
@@ -649,29 +641,21 @@
     {
         "Id": 96991792,
         "Titles": [
-            "Placeholder_BOSS战斗玩法",
-            "Placeholder_评分提升",
-            "Placeholder_打断特殊技能",
-            "Placeholder_打断反超算",
-            "Placeholder_处决临界模式"
+            "独身困斗",
+            "评分机制",
+            "超阈裁断"
         ],
         "Contents": [
-            "Placeholder_本关为BOSS关卡，BOSS只会在血量极低的时候进入动摇状态， 但是特写处决依旧可以重创BOSS并造成大量伤害。",
-            "Placeholder_玩家的华丽操作，依旧能够获得评分加成。获得评分进入临界模式，进行特写处决可有效消耗BOSS的血量。",
-            "Placeholder_当BOSS处于恶龙咆哮的蓄力阶段时，及时释放逆势掣肘击中BOSS可触发一次特写处决，获得大量评分",
-            "Placeholder_评价到达SSS之后，在BOSS释放反超算时，玩家拥有一个短暂的时间窗口，可以及时使用大招按键将BOSS的反超算流程打断，成功触发后进入处决临界模式。",
-            "Placeholder_处决临界模式期间，使用各种技能衔接特写处决可以获得评分，获得的评分能够延长处决临界模式的持续时间。SSS评分后进入临界模式期间，若怪物血量到达斩杀线，点击大招按键将BOSS进行终极技能处决。"
+            "在BOSS关卡中，玩家触发的处决效果可以重创BOSS并造成大量伤害。",
+            "玩家造成的伤害均能获得评分，评分等级提升后能更频繁地触发处决效果",
+            "BOSS处于锁血状态期间，使用渡边的二段必杀才能将BOSS处决"
         ],
         "AssetPaths": [
-            30019,
-            30010,
-            30009,
-            30017,
-            30017
+            31033,
+            31034,
+            31035
         ],
         "AssetTypes": [
-            1,
-            1,
             1,
             1,
             1

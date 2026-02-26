@@ -1,0 +1,1748 @@
+[
+    {
+        "Id": 99999,
+        "Type": 99,
+        "Quality": 0,
+        "Name": "删除币",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess99998.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "CanUseForBond": 0,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "造型奇特的硬币，可以在背包里<color=#0f70bc>删除</color>指定<color=#0f70bc>棋子</color>。"
+        ]
+    },
+    {
+        "Id": 99998,
+        "Type": 98,
+        "Quality": 0,
+        "Name": "刷新币",
+        "Value": 0,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess99999.png",
+        "CanDelete": 0,
+        "CanDie": 0,
+        "Priority": 0,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "CanUseForBond": 0,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "造型奇特的硬币，可以在补棋阶段<color=#0f70bc>刷新棋子</color>组。"
+        ]
+    },
+    {
+        "Id": 1,
+        "Type": 6,
+        "Quality": 1,
+        "Name": "金币",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess000.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "CanUseForBond": 0,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "不愧是万物快乐之源。"
+        ],
+        "TriggerState": [
+            6
+        ]
+    },
+    {
+        "Id": 2,
+        "Type": 7,
+        "Quality": 1,
+        "Name": "赤bug",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess001.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "CanUseForBond": 0,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "不知不觉间会侵蚀一切的小玩意。"
+        ],
+        "StateSkillId": [
+            202,
+            208,
+            210
+        ]
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "4级武器碎片",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess003.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "CanUseForBond": 0,
+        "DefaultLevel": 4,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "要变得更强吗？我指武器。"
+        ],
+        "TriggerState": [
+            3
+        ]
+    },
+    {
+        "Id": 4,
+        "Type": 2,
+        "Quality": 4,
+        "Name": "6级武器碎片",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess003.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "CanUseForBond": 0,
+        "DefaultLevel": 6,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "收集碎片，重铸锋刃。"
+        ],
+        "TriggerState": [
+            3
+        ]
+    },
+    {
+        "Id": 5,
+        "Type": 6,
+        "Quality": 2,
+        "Name": "绿钞",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess051.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "多么朝气蓬勃的道具啊。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 6,
+        "Type": 6,
+        "Quality": 2,
+        "Name": "纪念电子货币",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess051.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "已经忘了纪念之物是何等存在……"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 7,
+        "Type": 6,
+        "Quality": 3,
+        "Name": "理事招待劵",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess051.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "该劵唯一发行商：涅缇娅小姐。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 8,
+        "Type": 6,
+        "Quality": 3,
+        "Name": "典雅电子货币",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess050.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 3,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "命名有误，有用就行。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 9,
+        "Type": 6,
+        "Quality": 4,
+        "Name": "黑卡",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess057.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 6,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "总是会莫名消失……"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 10,
+        "Type": 6,
+        "Quality": 5,
+        "Name": "虹卡",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess058.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 12,
+        "BondId": 1,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "硬通货。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1,
+            209
+        ],
+        "StateSkillId": [
+            102
+        ]
+    },
+    {
+        "Id": 11,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "大头",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess009.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "呵，冷酷战士登场。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 12,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "无面",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess017.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "正在进行虔诚但无用的祷告。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 13,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "红眼",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess017.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "小心，它要变异喽。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 14,
+        "Type": 1,
+        "Quality": 2,
+        "Name": "阿壳",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess008.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "平平无奇的凑数单位。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 15,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "蔷薇之剑",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess011.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 3,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "看起来花和剑一样都未携带。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 16,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "斗笠生物",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess011.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "难以名状之物，斗笠才是本体。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 17,
+        "Type": 1,
+        "Quality": 3,
+        "Name": "阿花",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess012.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "绚烂，但不失丑陋，并且有毒。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 18,
+        "Type": 1,
+        "Quality": 4,
+        "Name": "阿光",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess014.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 5,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "别摆姿势，要打快打。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 19,
+        "Type": 1,
+        "Quality": 4,
+        "Name": "鲨士碧儿",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess013.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 4,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "吉祥物，挨打后只会螺旋转圈呦。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 20,
+        "Type": 1,
+        "Quality": 4,
+        "Name": "极地熊",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess013.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 3,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "似是误入战场的临时搬运工……"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 21,
+        "Type": 1,
+        "Quality": 5,
+        "Name": "华胥",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess026.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 9,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "就此破碎吧，华梦包裹的乐土。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 22,
+        "Type": 1,
+        "Quality": 5,
+        "Name": "聚合母体",
+        "Value": 9,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess015.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 7,
+        "BondId": 2,
+        "CanUseForBond": 2,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "灾厄温床，就此终结也好。"
+        ],
+        "Tag": [
+            2
+        ],
+        "StateSkillId": [
+            209
+        ]
+    },
+    {
+        "Id": 23,
+        "Type": 3,
+        "Quality": 2,
+        "Name": "苏菲亚",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess037.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "暂且成为我的锋刃吧，小修理工。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 24,
+        "Type": 3,
+        "Quality": 2,
+        "Name": "常羽",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess034.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "给他多多多多的金币好喽。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 25,
+        "Type": 3,
+        "Quality": 2,
+        "Name": "诺克提",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess020.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "头脑越简单，生活越愉快。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 26,
+        "Type": 3,
+        "Quality": 3,
+        "Name": "布偶熊",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess020.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "可爱，真的不可以抓熊耳朵嘛？"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 27,
+        "Type": 3,
+        "Quality": 3,
+        "Name": "赛琳娜",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess043.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "如午夜幽梦所织就的薄雾。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 28,
+        "Type": 3,
+        "Quality": 3,
+        "Name": "曲",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess041.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "快端来大人的王座！"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 29,
+        "Type": 3,
+        "Quality": 3,
+        "Name": "里",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess018.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "tag：靠谱"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 30,
+        "Type": 3,
+        "Quality": 4,
+        "Name": "小梅",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess018.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "好心小梅。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 31,
+        "Type": 3,
+        "Quality": 4,
+        "Name": "露西亚",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess025.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "今天我们要打哪个？"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 32,
+        "Type": 3,
+        "Quality": 4,
+        "Name": "涅缇娅",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess025.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "必要时，控局人也需以身入局。"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 33,
+        "Type": 3,
+        "Quality": 5,
+        "Name": "阿尔法",
+        "Value": 8,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess022.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "今天我们要打哪个?+1"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 34,
+        "Type": 3,
+        "Quality": 5,
+        "Name": "丽芙",
+        "Value": 8,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess022.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 3,
+        "CanUseForBond": 3,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "绵羊朵朵入梦来……"
+        ],
+        "Tag": [
+            3
+        ],
+        "StateSkillId": [
+            301
+        ]
+    },
+    {
+        "Id": 35,
+        "Type": 2,
+        "Quality": 2,
+        "Name": "枪",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess005.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "言语无法解决的争端，它可终结。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 36,
+        "Type": 2,
+        "Quality": 2,
+        "Name": "重拳出击",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "钢铁拳头，钢铁意志，钢铁统彻。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 37,
+        "Type": 2,
+        "Quality": 2,
+        "Name": "机械臂",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "适配性100%to勇士。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 38,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "战靴",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "仿佛被错误归类的“熊掌”？"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 39,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "弦剑",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "战力不详，艺术协会造物。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 40,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "龙游",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "沉眠之物，何时才会展露锋芒？"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 41,
+        "Type": 2,
+        "Quality": 3,
+        "Name": "核子熔断",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "空中花园顶级危险浪漫之作。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 42,
+        "Type": 2,
+        "Quality": 4,
+        "Name": "神之钥",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "小心，不要被它反控。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 43,
+        "Type": 2,
+        "Quality": 4,
+        "Name": "代号:终焉",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "终末之月，寂寥，疯狂，永滞……"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 44,
+        "Type": 2,
+        "Quality": 4,
+        "Name": "终极解释",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess006.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "镰刃，也是死神收割生命的器物。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 45,
+        "Type": 2,
+        "Quality": 5,
+        "Name": "绯刃",
+        "Value": 8,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess007.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "落樱时，绯雾涟漪吹波漾。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 46,
+        "Type": 2,
+        "Quality": 5,
+        "Name": "空悬之莲",
+        "Value": 8,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess007.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 4,
+        "CanUseForBond": 4,
+        "DefaultLevel": 1,
+        "CanUpgrade": 1,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "浮光流转，皆若空游。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ]
+    },
+    {
+        "Id": 47,
+        "Type": 4,
+        "Quality": 2,
+        "Name": "盲盒a型",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "普通盲盒，微型赌局。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 48,
+        "Type": 4,
+        "Quality": 2,
+        "Name": "盲盒b型",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "借力一个梦想。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 49,
+        "Type": 4,
+        "Quality": 2,
+        "Name": "盲盒c型",
+        "Value": 1,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 1,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "上限有限的盒子。"
+        ],
+        "Tag": [
+            1
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 50,
+        "Type": 4,
+        "Quality": 3,
+        "Name": "盲盒d型",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "正经盲盒。"
+        ],
+        "Tag": [
+            2
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 51,
+        "Type": 4,
+        "Quality": 3,
+        "Name": "盲盒e型",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "不正经盲盒。"
+        ],
+        "Tag": [
+            2
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 52,
+        "Type": 4,
+        "Quality": 3,
+        "Name": "盲盒f型",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "盲盒有危险，投资蓄谨慎。"
+        ],
+        "Tag": [
+            2
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 53,
+        "Type": 4,
+        "Quality": 3,
+        "Name": "盲盒g型",
+        "Value": 2,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 2,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "硬盘改装盲盒？"
+        ],
+        "Tag": [
+            2
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 54,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "中型盲盒·白虎",
+        "Value": 5,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 3,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "一旦盲盒有了名字，必然很贵。"
+        ],
+        "Tag": [
+            3
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 55,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "中型盲盒·猎豹",
+        "Value": 3,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 5,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "记住，它只是一个盲盒。"
+        ],
+        "Tag": [
+            5
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 56,
+        "Type": 4,
+        "Quality": 4,
+        "Name": "中型盲盒·斑虎",
+        "Value": 4,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 4,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "非必要收藏品。"
+        ],
+        "Tag": [
+            4
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 57,
+        "Type": 4,
+        "Quality": 5,
+        "Name": "大盲盒·黄霓",
+        "Value": 7,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 9,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "此时不入，等待何时？"
+        ],
+        "Tag": [
+            9
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 58,
+        "Type": 4,
+        "Quality": 5,
+        "Name": "大盲盒·紫露",
+        "Value": 9,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess049.png",
+        "CanDelete": 1,
+        "CanDie": 1,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 7,
+        "BondId": 5,
+        "CanUseForBond": 5,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 1,
+        "StateConditionId": [],
+        "Desc": [
+            "遗世独立之盒。"
+        ],
+        "Tag": [
+            7
+        ],
+        "TriggerState": [
+            1
+        ],
+        "StateSkillId": [
+            506,
+            508
+        ]
+    },
+    {
+        "Id": 59,
+        "Type": 5,
+        "Quality": 5,
+        "Name": "红雾",
+        "Value": 12,
+        "Icon": "Assets/Product/Texture/Image/UiLuckyTenant/Chess016.png",
+        "CanDelete": 1,
+        "CanDie": 0,
+        "Priority": 10,
+        "SkillId": [],
+        "ValueUponDeletion": 0,
+        "BondId": 6,
+        "CanUseForBond": 1,
+        "DefaultLevel": 0,
+        "CanUpgrade": 0,
+        "CanBeEliminated": 0,
+        "StateConditionId": [],
+        "Desc": [
+            "高危！勿要轻易探究。"
+        ]
+    }
+]

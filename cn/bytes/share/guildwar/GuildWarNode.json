@@ -40,6 +40,7 @@
         "FactorD": 0.0,
         "FightCostEnergy": 0,
         "SweepCostEnergy": 0,
+        "DeployCharacterMax": 0,
         "LinkIds": [
             102
         ]
@@ -88,9 +89,34 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             103,
             101
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -137,9 +163,34 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             104,
             102
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -186,12 +237,37 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "1.大量的怪物封锁了前进的道路，集中力量突破它们！\\n2.<color=#4169E1>击杀</color>或<color=#4169E1>击破</color>怪物霸体可进入超算空间。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240403
         ],
         "LinkIds": [
             105,
             103
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -238,9 +314,34 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             106,
             104
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -287,9 +388,34 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             107,
             105
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -297,7 +423,7 @@
         "GroupIndex": 3,
         "StageIndex": 6,
         "DifficultyId": 1,
-        "Name": "黑暗隘口",
+        "Name": "雷霆隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
@@ -334,17 +460,42 @@
         "FactorD": 680.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280
+            2240420
         ],
         "FightEventId": [
-            2240284
+            2240410
         ],
         "LinkIds": [
             110,
             106
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -354,11 +505,11 @@
         "DifficultyId": 1,
         "Name": "高危绝壁",
         "NameEn": "High-risk Cliffs",
-        "Desc": "领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
+        "Desc": "领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon8.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiGuildWar/UiGuildWarStageKuang7.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1LloydMd010001.png",
+        "ShowMonsterName": "罗伊德",
         "Type": 19,
         "RootId": 0,
         "RootGuardId": 0,
@@ -370,7 +521,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 131,
+        "GuildWarStageId": 167,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -390,17 +541,42 @@
         "FactorD": 1015.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
-        "HelpDetail": "1.领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累红潮，红潮满后释放终极必杀，并短暂开启暴走模式！",
-        "ModelId": "Mb1ScorpionMd010001UI",
+        "HelpTitle": "罗伊德",
+        "HelpDetail": "1.领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累迷雾，迷雾满后释放终极必杀，并短暂开启暴走模式！",
+        "ModelId": "Mb1LloydMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240418
         ],
         "FightEventId": [
             2240288
         ],
         "LinkIds": [
             107
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -448,11 +624,36 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -500,11 +701,36 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -551,12 +777,37 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415,
             2240403
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -604,11 +855,36 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -656,11 +932,36 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -706,15 +1007,40 @@
         "FactorD": 680.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280,
+            2240420,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240284
+            2240410
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -727,8 +1053,8 @@
         "Desc": "警告！领主进化出了终极形态",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon12.png",
         "BgIcon": "Assets/Product/Texture/Atlas/UiGuildWar/UiGuildWarStageKuang7.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1EphialtesMd010001.png",
+        "ShowMonsterName": "埃比阿提斯",
         "Type": 19,
         "RootId": 110,
         "RootGuardId": 0,
@@ -740,7 +1066,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 134,
+        "GuildWarStageId": 170,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -760,14 +1086,39 @@
         "FactorD": 1015.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
+        "HelpTitle": "埃比阿提斯",
         "HelpDetail": "警告！领主进化出了终极形态",
-        "ModelId": "Mb1ScorpionMd010001UI2",
+        "ModelId": "Mb1EphialtesMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240419
         ],
         "FightEventId": [
             2240288
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
         ]
     },
     {
@@ -812,7 +1163,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 1032,
@@ -856,7 +1232,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 1042,
@@ -900,7 +1301,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 1052,
@@ -944,7 +1370,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 1062,
@@ -988,7 +1439,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 1072,
@@ -1032,7 +1508,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            250,
+            500,
+            750,
+            1000,
+            1250,
+            1500,
+            1750,
+            2000,
+            2250,
+            2500
+        ]
     },
     {
         "Id": 201,
@@ -1075,9 +1576,34 @@
         "FactorD": 0.0,
         "FightCostEnergy": 0,
         "SweepCostEnergy": 0,
+        "DeployCharacterMax": 80,
         "LinkIds": [
             202,
             211
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1113,20 +1639,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             203,
             201
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1162,20 +1713,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             204,
             202
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1211,7 +1787,7 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1450,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 750,
         "FactorA": 0.5,
@@ -1222,6 +1798,7 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "1.大量的怪物封锁了前进的道路，集中力量突破它们！\\n2.<color=#4169E1>击杀</color>或<color=#4169E1>击破</color>怪物霸体可进入超算空间。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240403
         ],
@@ -1230,6 +1807,30 @@
             203,
             212,
             213
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1265,20 +1866,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             206,
             204
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1314,21 +1940,46 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             207,
             205,
             214
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1336,7 +1987,7 @@
         "GroupIndex": 3,
         "StageIndex": 6,
         "DifficultyId": 2,
-        "Name": "黑暗隘口",
+        "Name": "雷霆隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_2.png",
@@ -1364,26 +2015,51 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1150,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280
+            2240420
         ],
         "FightEventId": [
-            2240284
+            2240410
         ],
         "LinkIds": [
             220,
             206
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1419,20 +2095,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             212,
             201
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1468,20 +2169,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             204,
             211
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1517,20 +2243,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             214,
             204
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1566,21 +2317,46 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             215,
             213,
             206
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1588,7 +2364,7 @@
         "GroupIndex": 4,
         "StageIndex": 5,
         "DifficultyId": 2,
-        "Name": "火焰隘口",
+        "Name": "寒冰隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
@@ -1616,26 +2392,51 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1150,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "火焰隘口",
+        "HelpTitle": "寒冰隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240278
+            2240421
         ],
         "FightEventId": [
-            2240282
+            2240409
         ],
         "LinkIds": [
             220,
             214
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1645,10 +2446,10 @@
         "DifficultyId": 2,
         "Name": "高危绝壁",
         "NameEn": "High-risk Cliffs",
-        "Desc": "领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
+        "Desc": "领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon8.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1LloydMd010001.png",
+        "ShowMonsterName": "罗伊德",
         "Type": 19,
         "RootId": 0,
         "RootGuardId": 0,
@@ -1660,7 +2461,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 132,
+        "GuildWarStageId": 168,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -1671,20 +2472,21 @@
         "ResidueStageId": 97,
         "BaseSubHp": 580,
         "MaxSubHp": 1330,
-        "MaxPoint": 1515,
+        "MaxPoint": 1200,
         "BasePoint": 0,
         "MinSubDamage": 750,
         "FactorA": 0.625,
-        "FactorB": 67.5,
+        "FactorB": 54.0,
         "FactorC": 5.0,
-        "FactorD": 1515.0,
+        "FactorD": 1200.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
-        "HelpDetail": "1.领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累红潮，红潮满后释放终极必杀，并短暂开启暴走模式！",
-        "ModelId": "Mb1ScorpionMd010001UI",
+        "HelpTitle": "罗伊德",
+        "HelpDetail": "1.领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累迷雾，迷雾满后释放终极必杀，并短暂开启暴走模式！",
+        "ModelId": "Mb1LloydMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240418
         ],
         "FightEventId": [
             2240288
@@ -1692,6 +2494,30 @@
         "LinkIds": [
             207,
             215
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1728,22 +2554,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1780,22 +2631,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1832,7 +2708,7 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1450,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 750,
         "FactorA": 0.5,
@@ -1843,12 +2719,37 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415,
             2240403
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1885,22 +2786,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1937,22 +2863,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -1989,24 +2940,49 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1150,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280,
+            2240420,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240284
+            2240410
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2043,22 +3019,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2095,22 +3096,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2147,22 +3173,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2199,22 +3250,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2251,24 +3327,49 @@
         "ResidueStageId": 0,
         "BaseSubHp": 700,
         "MaxSubHp": 1150,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "火焰隘口",
+        "HelpTitle": "寒冰隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240278,
+            2240421,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240282
+            2240409
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2280,8 +3381,8 @@
         "NameEn": "High-risk Cliffs",
         "Desc": "警告！领主进化出了终极形态",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon12.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1EphialtesMd010001.png",
+        "ShowMonsterName": "埃比阿提斯",
         "Type": 19,
         "RootId": 220,
         "RootGuardId": 0,
@@ -2293,7 +3394,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 135,
+        "GuildWarStageId": 171,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -2304,23 +3405,48 @@
         "ResidueStageId": 97,
         "BaseSubHp": 580,
         "MaxSubHp": 1330,
-        "MaxPoint": 1515,
+        "MaxPoint": 1200,
         "BasePoint": 0,
         "MinSubDamage": 750,
         "FactorA": 0.625,
-        "FactorB": 67.5,
+        "FactorB": 54.0,
         "FactorC": 5.0,
-        "FactorD": 1515.0,
+        "FactorD": 1200.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
+        "HelpTitle": "埃比阿提斯",
         "HelpDetail": "警告！领主进化出了终极形态",
-        "ModelId": "Mb1ScorpionMd010001UI2",
+        "ModelId": "Mb1EphialtesMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240419
         ],
         "FightEventId": [
             2240288
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
         ]
     },
     {
@@ -2355,17 +3481,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2032,
@@ -2399,17 +3550,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2042,
@@ -2441,19 +3617,44 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 950,
-        "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "BaseSubHp": 700,
+        "MaxSubHp": 1450,
+        "MaxPoint": 810,
         "BasePoint": 0,
-        "MinSubDamage": 650,
-        "FactorA": 0.6,
-        "FactorB": 45.0,
-        "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "MinSubDamage": 750,
+        "FactorA": 0.5,
+        "FactorB": 250.0,
+        "FactorC": 265.0,
+        "FactorD": 680.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2052,
@@ -2487,17 +3688,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2062,
@@ -2531,17 +3757,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2072,
@@ -2573,19 +3824,44 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 950,
-        "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "BaseSubHp": 700,
+        "MaxSubHp": 1250,
+        "MaxPoint": 810,
         "BasePoint": 0,
-        "MinSubDamage": 650,
+        "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2112,
@@ -2619,17 +3895,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2122,
@@ -2663,17 +3964,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2132,
@@ -2707,17 +4033,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2142,
@@ -2751,17 +4102,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 950,
         "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "MaxPoint": 810,
         "BasePoint": 0,
         "MinSubDamage": 650,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 2152,
@@ -2793,19 +4169,44 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 950,
-        "MaxSubHp": 1600,
-        "MaxPoint": 1015,
+        "BaseSubHp": 700,
+        "MaxSubHp": 1250,
+        "MaxPoint": 810,
         "BasePoint": 0,
-        "MinSubDamage": 650,
+        "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 45.0,
+        "FactorB": 36.0,
         "FactorC": 5.0,
-        "FactorD": 1015.0,
+        "FactorD": 810.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            150,
+            300,
+            450,
+            600,
+            750,
+            900,
+            1050,
+            1200,
+            1350,
+            1500
+        ]
     },
     {
         "Id": 301,
@@ -2848,10 +4249,35 @@
         "FactorD": 0.0,
         "FightCostEnergy": 0,
         "SweepCostEnergy": 0,
+        "DeployCharacterMax": 80,
         "LinkIds": [
             302,
             311,
             321
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -2887,20 +4313,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             303,
             301
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -2936,20 +4387,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             304,
             302
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -2985,7 +4461,7 @@
         "ResidueStageId": 0,
         "BaseSubHp": 300,
         "MaxSubHp": 850,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 550,
         "FactorA": 0.5,
@@ -2996,6 +4472,7 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "1.大量的怪物封锁了前进的道路，集中力量突破它们！\\n2.<color=#4169E1>击杀</color>或<color=#4169E1>击破</color>怪物霸体可进入超算空间。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240403
         ],
@@ -3006,6 +4483,30 @@
             313,
             322,
             323
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3041,20 +4542,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             306,
             304
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3090,22 +4616,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             307,
             305,
             314,
             324
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3113,7 +4664,7 @@
         "GroupIndex": 3,
         "StageIndex": 6,
         "DifficultyId": 3,
-        "Name": "黑暗隘口",
+        "Name": "雷霆隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
@@ -3141,26 +4692,51 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280
+            2240420
         ],
         "FightEventId": [
-            2240284
+            2240410
         ],
         "LinkIds": [
             330,
             306
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3196,20 +4772,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             312,
             301
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3245,20 +4846,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             304,
             311
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3294,20 +4920,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             314,
             304
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3343,21 +4994,46 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             315,
             313,
             306
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3365,7 +5041,7 @@
         "GroupIndex": 4,
         "StageIndex": 5,
         "DifficultyId": 3,
-        "Name": "火焰隘口",
+        "Name": "寒冰隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_2.png",
@@ -3393,26 +5069,51 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "火焰隘口",
+        "HelpTitle": "寒冰隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240278
+            2240421
         ],
         "FightEventId": [
-            2240282
+            2240409
         ],
         "LinkIds": [
             330,
             314
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3448,20 +5149,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             322,
             301
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3497,20 +5223,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             304,
             321
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3546,20 +5297,45 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             324,
             304
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3595,21 +5371,46 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "1.蛐蛐小怪不足为惧！\\n2.<color=#4169E1>聚怪</color>并速度击杀",
+        "DeployCharacterMax": 80,
         "LinkIds": [
             325,
             323,
             306
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3617,7 +5418,7 @@
         "GroupIndex": 5,
         "StageIndex": 5,
         "DifficultyId": 3,
-        "Name": "物理隘口",
+        "Name": "黑暗隘口",
         "NameEn": "Treacherous Gap",
         "Desc": "BOSS前的最后一个防线",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_3.png",
@@ -3645,26 +5446,51 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "物理隘口",
+        "HelpTitle": "黑暗隘口",
         "HelpDetail": "1.击杀敌方怪物后，怪物变为<color=#4169E1>灵魂</color>攻击<color=#4169E1>核心护盾</color>。\\n2.每波怪物击杀后，可使核心短暂<color=#4169E1>解除无敌</color>状态。\\n3.趁核心<color=#4169E1>无敌状态</color>解除，集中火力击破核心。",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240281
+            2240280
         ],
         "FightEventId": [
-            2240286
+            2240284
         ],
         "LinkIds": [
             330,
             324
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3674,10 +5500,10 @@
         "DifficultyId": 3,
         "Name": "高危绝壁",
         "NameEn": "High-risk Cliffs",
-        "Desc": "领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
+        "Desc": "领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon8.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1LloydMd010001.png",
+        "ShowMonsterName": "罗伊德",
         "Type": 19,
         "RootId": 0,
         "RootGuardId": 0,
@@ -3689,7 +5515,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 133,
+        "GuildWarStageId": 169,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -3700,20 +5526,21 @@
         "ResidueStageId": 103,
         "BaseSubHp": 300,
         "MaxSubHp": 700,
-        "MaxPoint": 2270,
+        "MaxPoint": 1960,
         "BasePoint": 0,
         "MinSubDamage": 400,
         "FactorA": 0.625,
-        "FactorB": 101.25,
+        "FactorB": 87.75,
         "FactorC": 5.0,
-        "FactorD": 2270.0,
+        "FactorD": 1960.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
-        "HelpDetail": "1.领主被击败后将卷土重来，红潮等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累红潮，红潮满后释放终极必杀，并短暂开启暴走模式！",
-        "ModelId": "Mb1ScorpionMd010001UI",
+        "HelpTitle": "罗伊德",
+        "HelpDetail": "1.领主被击败后将卷土重来，迷雾等级提升，所有怪物<color=#4169E1>攻击和血量获得提升！</color>\\n2.领主受到攻击后会积累迷雾，迷雾满后释放终极必杀，并短暂开启暴走模式！",
+        "ModelId": "Mb1LloydMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240418
         ],
         "FightEventId": [
             2240288
@@ -3722,6 +5549,30 @@
             307,
             315,
             325
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3758,22 +5609,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3810,22 +5686,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3862,7 +5763,7 @@
         "ResidueStageId": 0,
         "BaseSubHp": 300,
         "MaxSubHp": 850,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 550,
         "FactorA": 0.5,
@@ -3873,12 +5774,37 @@
         "SweepCostEnergy": 20,
         "HelpTitle": "孤崖关塞",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415,
             2240403
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3915,22 +5841,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -3967,22 +5918,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4019,24 +5995,49 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "黑暗隘口",
+        "HelpTitle": "雷霆隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240280,
+            2240420,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240284
+            2240410
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4073,22 +6074,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4125,22 +6151,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4177,22 +6228,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4229,22 +6305,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4281,24 +6382,49 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "火焰隘口",
+        "HelpTitle": "寒冰隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240278,
+            2240421,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240282
+            2240409
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4335,22 +6461,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅰ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4387,22 +6538,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅱ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4439,22 +6615,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅲ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4491,22 +6692,47 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "关口Ⅳ",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
             2240415
         ],
         "FightEventId": [
             2240404
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4543,24 +6769,49 @@
         "ResidueStageId": 0,
         "BaseSubHp": 450,
         "MaxSubHp": 750,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "物理隘口",
+        "HelpTitle": "黑暗隘口",
         "HelpDetail": "受领主的影响，这片区域的怪物更加残暴，战斗变得异常困难！",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240281,
+            2240280,
             2240415
         ],
         "FightEventId": [
             2240404,
-            2240286
+            2240284
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4572,8 +6823,8 @@
         "NameEn": "High-risk Cliffs",
         "Desc": "警告！领主进化出了终极形态",
         "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon12.png",
-        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/ScorpionNormal01.png",
-        "ShowMonsterName": "“修特罗尔”",
+        "ShowMonsterIcon": "Assets/Product/Texture/Image/RoleCharacter/Mb1EphialtesMd010001.png",
+        "ShowMonsterName": "埃比阿提斯",
         "Type": 19,
         "RootId": 330,
         "RootGuardId": 0,
@@ -4585,7 +6836,7 @@
         "AttackBaseInterval": 0,
         "HpMax": 10000,
         "RewardId": 0,
-        "GuildWarStageId": 136,
+        "GuildWarStageId": 172,
         "EliteMonsterId": 0,
         "EliteMonsterBornInterval": 0,
         "BuffGroupId": 0,
@@ -4596,23 +6847,48 @@
         "ResidueStageId": 103,
         "BaseSubHp": 300,
         "MaxSubHp": 700,
-        "MaxPoint": 2270,
+        "MaxPoint": 1960,
         "BasePoint": 0,
         "MinSubDamage": 400,
         "FactorA": 0.625,
-        "FactorB": 101.25,
+        "FactorB": 87.75,
         "FactorC": 5.0,
-        "FactorD": 2270.0,
+        "FactorD": 1960.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
-        "HelpTitle": "“修特罗尔”",
+        "HelpTitle": "埃比阿提斯",
         "HelpDetail": "警告！领主进化出了终极形态",
-        "ModelId": "Mb1ScorpionMd010001UI2",
+        "ModelId": "Mb1EphialtesMd010001UI",
+        "DeployCharacterMax": 80,
         "ShowFightEventId": [
-            2240417
+            2240419
         ],
         "FightEventId": [
             2240288
+        ],
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
         ]
     },
     {
@@ -4647,17 +6923,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3032,
@@ -4691,17 +6992,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3042,
@@ -4733,11 +7059,11 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 650,
-        "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "BaseSubHp": 300,
+        "MaxSubHp": 850,
+        "MaxPoint": 1315,
         "BasePoint": 0,
-        "MinSubDamage": 450,
+        "MinSubDamage": 550,
         "FactorA": 0.5,
         "FactorB": 350.0,
         "FactorC": 475.0,
@@ -4745,7 +7071,32 @@
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3052,
@@ -4779,17 +7130,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3062,
@@ -4823,17 +7199,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3072,
@@ -4865,19 +7266,44 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 650,
-        "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "BaseSubHp": 450,
+        "MaxSubHp": 750,
+        "MaxPoint": 1315,
         "BasePoint": 0,
-        "MinSubDamage": 450,
+        "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3112,
@@ -4911,17 +7337,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3122,
@@ -4955,17 +7406,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3132,
@@ -4999,17 +7475,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3142,
@@ -5043,17 +7544,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3152,
@@ -5085,19 +7611,44 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 650,
-        "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "BaseSubHp": 450,
+        "MaxSubHp": 750,
+        "MaxPoint": 1315,
         "BasePoint": 0,
-        "MinSubDamage": 450,
+        "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3212,
@@ -5131,17 +7682,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3222,
@@ -5175,17 +7751,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3232,
@@ -5219,17 +7820,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3242,
@@ -5263,17 +7889,42 @@
         "ResidueStageId": 0,
         "BaseSubHp": 650,
         "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "MaxPoint": 1315,
         "BasePoint": 0,
         "MinSubDamage": 450,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     },
     {
         "Id": 3252,
@@ -5305,18 +7956,43 @@
         "RebuildMaxTime": 0,
         "RebuildGuildWarStageId": 0,
         "ResidueStageId": 0,
-        "BaseSubHp": 650,
-        "MaxSubHp": 1100,
-        "MaxPoint": 1525,
+        "BaseSubHp": 450,
+        "MaxSubHp": 750,
+        "MaxPoint": 1315,
         "BasePoint": 0,
-        "MinSubDamage": 450,
+        "MinSubDamage": 300,
         "FactorA": 0.6,
-        "FactorB": 67.5,
+        "FactorB": 58.5,
         "FactorC": 5.0,
-        "FactorD": 1525.0,
+        "FactorD": 1315.0,
         "FightCostEnergy": 20,
         "SweepCostEnergy": 20,
         "HelpTitle": "废墟",
-        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。"
+        "HelpDetail": "领主摧毁了这片区域，一切事物都化为了灰烬。",
+        "DeployCharacterMax": 80,
+        "DeployCharacterNum": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "DeployBuff": [
+            100,
+            200,
+            300,
+            400,
+            500,
+            600,
+            700,
+            800,
+            900,
+            1000
+        ]
     }
 ]

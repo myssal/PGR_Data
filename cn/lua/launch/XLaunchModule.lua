@@ -214,8 +214,12 @@ CheckUpdate = function(isReloaded)
     if VersionModule.CheckAppUpdate() then
     -- if IsApkTesting or VersionModule.CheckAppUpdate() then
         if CS.XUiPc.XUiPcManager.IsPcMode() then
-            CsTool.WaitCoroutine(CsApplication.CoDialog(CsApplication.GetText("Tip"), 
+            if CS.XInfo.IsCloudGame then 
+                CS.XWLinkAgent.Exit(CsApplication.GetText("CloudGameUpdateApplication"))
+            else 
+                CsTool.WaitCoroutine(CsApplication.CoDialog(CsApplication.GetText("Tip"), 
                 CsStringEx.Format(CsApplication.GetText("PCUpdateApplication"), CsInfo.Version), nil, CsApplication.Exit))
+            end
         else
             CsTool.WaitCoroutine(CsApplication.CoDialog(CsApplication.GetText("Tip"), 
                 CsStringEx.Format(CsApplication.GetText("UpdateApplication"), CsInfo.Version), nil, function()

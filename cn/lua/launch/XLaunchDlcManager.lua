@@ -8,7 +8,9 @@ local DLC_NEED_DOWNLOAD_KEY = "DLC_NEED_DOWNLOAD_KEY"
 local HAS_SELECT_DOWNLOAD_PART_KEY = "HAS_SELECT_DOWNLOAD_PART_KEY"
 local HAS_SELECT_ALL_DOWNLOAD_KEY = "HAS_SELECT_ALL_DOWNLOAD_KEY"
 local IS_SELECT_WIFI_AUTO_DOWNLOAD = "IS_SELECT_WIFI_AUTO_DOWNLOAD" --是否选中wifi自动下载
-local CsApplication = CS.XApplication
+local KEY_UNINSTALLED_RESID_LIST = "KEY_UNINSTALLED_RESID_LIST" -- 新增Key
+local KEY_SUBPACKAGE_FINISHED = "KEY_SUBPACKAGE_FINISHED_" -- 分包下载完成状态
+local KEY_SUBPACKAGE_ACTIVE = "KEY_SUBPACKAGE_ACTIVE_" -- 分包激活状态（用户意图）
 local CsLog = CS.XLog
 
 ---@class XLaunchDlcManager 分包资源-启动管理类
@@ -18,11 +20,11 @@ local XLaunchDlcManager = M
 local DlcIdList = {}
 local ApplicationIndexTable = {}
 
-local GameDownloadRecord = {} -- 游戏内已选择的下载
 local LaunchDownloadRecord = {} -- 热更时已选择的下载
 local DownloadedDic = {} -- 已下载
 
-local DlcIndexInfo = {} 
+local DlcIndexInfo = {}
+local DlcIgnoreDownloadIfNotDownload --未下载过的ResId在热更时进行忽略
 
 local NeedLaunchTest = CS.XResourceManager.NeedLaunchTest
 local IsInGame = false
@@ -68,9 +70,6 @@ M.Init = function(dlcIndexTable)
             IsRecordAllDlcId = false
         end
         
-        --这个字段只有在游戏内读取，避免下载时一次下载多个，不用存在本地
-        --GameDownloadRecord[dlcId] = UnityPlayerPrefs.GetInt(KEY_GAME_DOWNLOAD_RECORD .. dlcId, STATE_DEFAULT)
-
         local downloadState = UnityPlayerPrefs.GetInt(KEY_DOWNLOADED .. dlcId, STATE_DEFAULT)
         DownloadedDic[dlcId] = downloadState
     end
@@ -122,9 +121,6 @@ M.CheckNeedDownload = function(dlcId, needShowSelect)
         end
         return true
     end
-    if IsInGame then
-        return GameDownloadRecord[dlcId] == STATE_START
-    end
     return false
 end
 
@@ -142,16 +138,6 @@ end
 
 M.DoneDownloadInLaunch = function(dlcIds)
     for dlcId, v in pairs(LaunchDownloadRecord) do
-        if v == STATE_START then
-            DownloadedDic[dlcId] = STATE_START
-            UnityPlayerPrefs.SetInt(KEY_DOWNLOADED .. dlcId, STATE_START)
-        end
-    end
-end
-
--- 游戏内选择的dlc均设为“已下载”
-M.DoneDownloadInGame = function()
-    for dlcId, v in pairs(GameDownloadRecord) do
         if v == STATE_START then
             DownloadedDic[dlcId] = STATE_START
             UnityPlayerPrefs.SetInt(KEY_DOWNLOADED .. dlcId, STATE_START)
@@ -210,6 +196,105 @@ M.IsAllDlcIdRecord = function()
     return IsRecordAllDlcId
 end
 
+-- 新增：记录已卸载的ResId
+M.AddUninstalledResId = function(resId)
+    if not resId then return end
+    
+    local str = UnityPlayerPrefs.GetString(KEY_UNINSTALLED_RESID_LIST, "")
+    local dict = {}
+    
+    -- 解析旧数据防止重复
+    for id in string.gmatch(str, "[^,]+") do
+        dict[tonumber(id)] = true
+    end
+    
+    if not dict[resId] then
+        if str == "" then
+            str = tostring(resId)
+        else
+            str = str .. "," .. tostring(resId)
+        end
+        UnityPlayerPrefs.SetString(KEY_UNINSTALLED_RESID_LIST, str)
+        -- 立即保存，确保状态落地
+        UnityPlayerPrefs.Save()
+    end
+end
+
+-- 判断是否已经记录了该已卸载的 ResId
+M.HasUninstalledResId = function(resId)
+    if not resId then return false end
+    
+    local str = UnityPlayerPrefs.GetString(KEY_UNINSTALLED_RESID_LIST, "")
+    if str == "" then return false end
+
+    local targetId = tonumber(resId)
+    for idStr in string.gmatch(str, "[^,]+") do
+        if tonumber(idStr) == targetId then
+            return true
+        end
+    end
+    
+    return false
+end
+
+-- 清除特定的已卸载 ResId 记录
+M.RemoveUninstalledResId = function(resId)
+    if not resId then return end
+    
+    local str = UnityPlayerPrefs.GetString(KEY_UNINSTALLED_RESID_LIST, "")
+    if str == "" then return end
+
+    local targetId = tonumber(resId)
+    local idList = {}
+    local isChanged = false
+
+    -- 遍历并剔除目标 ID
+    for idStr in string.gmatch(str, "[^,]+") do
+        if tonumber(idStr) ~= targetId then
+            table.insert(idList, idStr)
+        else
+            isChanged = true
+        end
+    end
+
+    -- 如果发生了变化，重新拼接字符串并保存
+    if isChanged then
+        local newStr = table.concat(idList, ",")
+        UnityPlayerPrefs.SetString(KEY_UNINSTALLED_RESID_LIST, newStr)
+        UnityPlayerPrefs.Save()
+        CsLog.Debug("[XLaunchDlcManager] RemoveUninstalledResId: " .. tostring(resId))
+    end
+end
+
+M.ClearDownloadRecord = function(resId)
+    if not resId or resId <= 0 then
+        CsLog.Error("[XLaunchDlcManager] ClearDownloadRecord: resId 无效 -> " .. tostring(resId))
+        return
+    end
+
+    -- 1. 清除：KEY_DOWNLOADED..resId
+    UnityPlayerPrefs.SetInt(KEY_DOWNLOADED .. resId, STATE_DEFAULT)
+    DownloadedDic[resId] = STATE_DEFAULT
+
+    -- 2. 清除：KEY_LAUNCH_DOWNLOAD_RECORD..resId
+    UnityPlayerPrefs.SetInt(KEY_LAUNCH_DOWNLOAD_RECORD .. resId, STATE_DEFAULT)
+    LaunchDownloadRecord[resId] = STATE_DEFAULT
+
+    -- 3. 按文件名删除 DownloadedMap 记录
+    --（要求调用方提供 indexInfo，这里只删 ResId 对应的所有文件）
+    local indexInfo = XMVCA.XSubPackage:GetSubIndexInfo()[resId]
+    if indexInfo then
+        for _, info in pairs(indexInfo) do
+            local fileName = info[1]  -- fileName
+            DownloadedMap[fileName] = nil
+        end
+    end
+
+    UnityPlayerPrefs.Save()
+
+    CsLog.Debug("[XLaunchDlcManager] ClearDownloadRecord 完成, resId = " .. tostring(resId))
+end
+
 M.SetLaunchDownloadRecord = function (id)
     local state = STATE_START
     CsLog.Debug("SetLaunchDownloadRecord:" .. tostring(id))
@@ -244,27 +329,49 @@ M.GetRemoveResIdsRecord = function()
 
     return resIdDic
 end
+
+M.IsSubPackageFinished = function(subPackageId)
+    local key = KEY_SUBPACKAGE_FINISHED .. tostring(subPackageId)
+    local val = UnityPlayerPrefs.GetInt(key, 0)
+    return val == 1
+end
+
+M.SetSubPackageFinished = function(subPackageId, isFinished)
+    local key = KEY_SUBPACKAGE_FINISHED .. tostring(subPackageId)
+    local val = isFinished and 1 or 0
+    UnityPlayerPrefs.SetInt(key, val)
+    UnityPlayerPrefs.Save()
+    CsLog.Debug("[XLaunchDlcManager] SetSubPackageFinished: " .. tostring(subPackageId) .. " -> " .. tostring(isFinished))
+end
+
+-- 检查分包是否处于激活状态（用户点过下载且没卸载）
+M.IsSubPackageActive = function(subPackageId)
+    if not subPackageId then return false end
+    local key = KEY_SUBPACKAGE_ACTIVE .. tostring(subPackageId)
+    local val = UnityPlayerPrefs.GetInt(key, 0)
+    return val == 1
+end
+
+-- 设置分包激活状态
+M.SetSubPackageActive = function(subPackageId, isActive)
+    if not subPackageId then return end
+    local key = KEY_SUBPACKAGE_ACTIVE .. tostring(subPackageId)
+    local val = isActive and 1 or 0
+    UnityPlayerPrefs.SetInt(key, val)
+    UnityPlayerPrefs.Save()
+    CsLog.Debug("[XLaunchDlcManager] SetSubPackageActive: " .. tostring(subPackageId) .. " -> " .. tostring(isActive))
+end
 --====启动逻辑接口 end=====
 
 
 --======== 游戏业务层接口 begin ====
 
-M.SetGameDownloadRecord = function (id)
-    GameDownloadRecord[id] = STATE_START
-    --UnityPlayerPrefs.SetInt(KEY_GAME_DOWNLOAD_RECORD .. id, STATE_START)
-end
-
 --- 清除需要下载的DlcId标记(仅仅本次）
 --------------------------
-M.ClearGameDownloadRecord = function()
-    GameDownloadRecord = {}
-end
 
 M.CheckGameNeedDownload = function(dlcId)
     return not M.HasDownloadedDlc(dlcId)
 end
-local FileModule = nil
-local VersionModule = nil
 
 M.GetPathModule = function()
     if not PathModule then
@@ -292,38 +399,40 @@ M.GetVersionModule = function()
 end
 
 M.DoDownloadDlc = function(progressCb, doneCb, exitCb)
-    local PathModule = M.GetPathModule()
-    local DocFileModule = M.GetFileModule()
-    local VersionModule = M.GetVersionModule()
-    DocFileModule.SetIsInGame(IsInGame)
-    XMVCA.XSubPackage:SetFileModule(DocFileModule)
-    DocFileModule.Check(RES_FILE_TYPE.MATRIX_FILE, PathModule, VersionModule, doneCb, progressCb, exitCb)
+    CsLog.Error("此函数已经废弃，如果还有调用请联系牟文检查！")
+    --local PathModule = M.GetPathModule()
+    --local DocFileModule = M.GetFileModule()
+    --local VersionModule = M.GetVersionModule()
+    --DocFileModule.SetIsInGame(IsInGame)
+    --XMVCA.XSubPackage:SetFileModule(DocFileModule)
+    --DocFileModule.Check(RES_FILE_TYPE.MATRIX_FILE, PathModule, VersionModule, doneCb, progressCb, exitCb)
 end
 
 -- 游戏内调用下载
 M.DownloadDlc = function (ids, processCb, doneCb, exitCb)
-    IsInGame = true
-    --清除一下记录
-    M.ClearGameDownloadRecord()
-    --标记本次需要下载DLCId
-    for _, id in pairs(ids) do
-        M.SetGameDownloadRecord(id)
-    end
-    --CsLog.Error("Prepare Download" .. table.concat(ids, ", "))
-   -- todo 下载模块，无需界面
-   -- CS.XUiManager.Instance:OpenWithCallback("UiLaunch", function()
-        M.DoDownloadDlc(processCb, 
-            function(isPause)
-                XLuaUiManager.Close("UiLaunch")
-                if doneCb then
-                    doneCb(isPause)
-                end
-            end, 
-            function()
-                XLuaUiManager.Close("UiLaunch")
-                if exitCb then exitCb() end
-            end)
-    -- end)
+    CsLog.Error("此函数已经废弃，如果还有调用请联系牟文检查！")
+   -- IsInGame = true
+   -- --清除一下记录
+   -- M.ClearGameDownloadRecord()
+   -- --标记本次需要下载DLCId
+   -- for _, id in pairs(ids) do
+   --     M.SetGameDownloadRecord(id)
+   -- end
+   -- --CsLog.Error("Prepare Download" .. table.concat(ids, ", "))
+   ---- todo 下载模块，无需界面
+   ---- CS.XUiManager.Instance:OpenWithCallback("UiLaunch", function()
+   --     M.DoDownloadDlc(processCb, 
+   --         function(isPause)
+   --             XLuaUiManager.Close("UiLaunch")
+   --             if doneCb then
+   --                 doneCb(isPause)
+   --             end
+   --         end, 
+   --         function()
+   --             XLuaUiManager.Close("UiLaunch")
+   --             if exitCb then exitCb() end
+   --         end)
+   -- -- end)
 end
 
 M.GetIndexInfo = function()
@@ -360,6 +469,9 @@ M.CheckSubpackageChannel = function()
 end
 
 M.CheckSubpackageOpen = function()
+    if CS.XResourceManager.NeedLaunchTest then
+        return true
+    end
     if CS.XUiPc.XUiPcManager.IsPcMode() then
         return false
     end
@@ -380,6 +492,95 @@ M.CheckSubpackageOpen = function()
     end
     
     return M.CheckSubpackageChannel()
+end
+
+--- 切割ResIds resId|resId|resId.... , 如果
+---@return number[]
+M.SplitResIds = function(value, isMap, cache, separator) 
+    local resIds = cache or {}
+    if value == nil or value == "" then
+        return resIds
+    end
+    -- 兼容逗号和竖线分隔符
+    local pattern = separator and ("[^" .. separator .. "]+") or "[^,|]+"
+    for numStr in string.gmatch(tostring(value), pattern) do
+        if numStr ~= "" then
+            local num = tonumber(numStr)
+            if num then
+                if isMap then
+                    resIds[num] = true
+                else
+                    resIds[#resIds + 1] = num
+                end
+            else
+                error("无效数字格式: " .. numStr .. ", value: " .. tostring(value))
+            end
+        end
+    end
+    return resIds
+end
+
+M.CheckResIsIgnoreDownload = function(resId, needShowSelect, isOpen)
+    --分包不开启，则不忽略
+    if not isOpen then
+        return false
+    end
+    --如果展示选择框，则不忽略，在玩家选择完之后剔除
+    if needShowSelect then
+        return false
+    end
+    --如果已经下载，则不忽略
+    if XLaunchDlcManager.CheckNeedDownload(resId, needShowSelect) then
+        return false
+    end
+    if not DlcIgnoreDownloadIfNotDownload then
+        DlcIgnoreDownloadIfNotDownload = {}
+        local keyStr = CS.XLaunchManager.LaunchConfig:GetString("LaunchIgnoreSelectResKey")
+        local storage = CS.XLaunchManager.LaunchRemoveSelectSubPackageIds
+        --为空则不忽略
+        if storage == nil then
+            return false
+        end
+
+        local subPackageMap = {}
+        local subPackageStorage = CS.XLaunchManager.SubPackageTab
+        if subPackageStorage then
+            local spPairs = subPackageStorage.keyValuePairs
+            for i = 0, spPairs.Length - 1 do
+                local kv = spPairs[i]
+                subPackageMap[kv.Key] = kv.Value
+            end
+        end
+
+        if keyStr and keyStr ~= "" then
+            local split = keyStr .. "|"
+            local map = {}
+            for key in string.gmatch(split, "([^|]*)|") do
+                if key ~= "" then
+                    map[key] = true
+                end
+            end
+            for i = 0, storage.keyValuePairs.Length - 1 do
+                local kv = storage.keyValuePairs[i]
+                local k = kv.Key
+                if map[k] then
+                    for subId in string.gmatch(tostring(kv.Value), "[^,|]+") do
+                        local resIdsStr = subPackageMap[subId]
+                        if resIdsStr then
+                            XLaunchDlcManager.SplitResIds(resIdsStr, true, DlcIgnoreDownloadIfNotDownload)
+                        end
+                    end
+                end
+            end
+        end
+    end
+    --存在则不忽略
+    return DlcIgnoreDownloadIfNotDownload[resId] ~= nil
+end
+
+--- 清理在热更阶段产生的local变量
+M.ClearLaunchCache = function()
+    DlcIgnoreDownloadIfNotDownload = nil
 end
 
 --======== 业务层接口 end ====

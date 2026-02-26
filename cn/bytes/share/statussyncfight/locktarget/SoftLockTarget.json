@@ -2,13 +2,15 @@
     {
         "Id": 1,
         "UnlockMoveTime": 3.0,
-        "MaxLockDistance": 10.0,
-        "CameraLookAtTarget": true
+        "MaxLockDistance": 250.0,
+        "CameraLookAtTarget": true,
+        "CameraRotationThreshold": 150.0
     },
     {
         "Id": 2,
-        "UnlockMoveTime": 1.0,
-        "MaxLockDistance": 5.0,
-        "CameraLookAtTarget": false
+        "UnlockMoveTime": 5.0,
+        "MaxLockDistance": 250.0,
+        "CameraLookAtTarget": false,
+        "CameraRotationThreshold": 150.0
     }
 ]

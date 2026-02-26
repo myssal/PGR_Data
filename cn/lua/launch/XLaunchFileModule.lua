@@ -106,7 +106,7 @@ local module_creator = function()
     local CacheFileToolGetFileTable = nil -- 记录临时缓存的所有文件
     local AllFiles = nil
 
-    -- 
+    --
     local HasLocalFiles = false
     local IsDebugBuild = CS.XApplication.Debug
     local IsPause = false
@@ -118,7 +118,6 @@ local module_creator = function()
     local ResolveResIndex
     local PrepareDownload
     local DownloadFiles
-    local StopDownloading
     local CompleteDownload
     local OnCompleteResFilesInit
     local LoadIndexTable
@@ -129,8 +128,6 @@ local module_creator = function()
     local OnNotifyEvent
     local DoRecord
     local RemoveEvents
-    local IsFullDownloadSelectType
-    local GetDownloadTipsResSizeDic -- 获取登录前全包下载下可选择ResId对应的大小字典
 
     -- DLC分包相关
     local DLC_BASE_INDEX = 0 -- 基础包
@@ -145,7 +142,7 @@ local module_creator = function()
 
     -- 本地测试
     local NeedLaunchTest = CS.XResourceManager.NeedLaunchTest -- 调试用，debug环境下测试下载流程 ("Tools/本地下载测试/开启")
-    local LaunchTestPath = UnityApplication.dataPath .. "/../../../Product/Temp/LocalCdn" 
+    local LaunchTestPath = UnityApplication.dataPath .. "/../../../Product/Temp/LocalCdn"
     local LaunchTestDirApp = UnityApplication.dataPath .. "/../../../Product/Temp/LocalDirApp"
     local LaunchTestDirDoc = UnityApplication.dataPath .. "/../../../Product/Temp/LocalDirDoc"
     XLaunchFileModule.LaunchTestDirDoc = LaunchTestDirDoc
@@ -168,7 +165,6 @@ local module_creator = function()
         DocumentIndexDir = DocumentFilePath .. "/" .. ResFileType .. "/"
         DocumentIndexPath= DocumentIndexDir .. INDEX
 
-
         NeedUpdate = false
         NeedShowSelect = false
 
@@ -181,16 +177,6 @@ local module_creator = function()
             NeedUpdate = AppVersionModule.CheckDocUpdate()
             HasUpdated = AppVersionModule.HasDocUpdated()
             NewVersion = AppVersionModule.GetNewDocVersion()
-            --
-            --if IsDlcBuild then
-            --    --开启分包远程配置时
-            --    -- 1. 新包：一定会有弹窗
-            --    -- 2. 覆盖安装（本地没有标记时）
-            --    --   a. 原来是全量下载的，不用弹窗
-            --    --   b. 有新增分包Id时, 弹窗
-            --    -- 3. 覆盖安装, 本地有标记时, 不弹窗
-            --    NeedShowSelect = XLaunchDlcManager.NeedShowSelect()
-            --end
         end
 
         if CS.XRemoteConfig.IsHideFunc then
@@ -314,7 +300,7 @@ local module_creator = function()
         local documentFilePath = DocumentFilePath .. "/" .. ResFileType .. "/" .. INDEX
         local keepLocalIndex = CS.System.IO.File.Exists(DocumentFilePath .. "/DevelopmentIndex") -- 用于Release环境不清理本地index文件（兼顾覆盖安装和手动放资源的情况）
 
-        CsLog.Debug("[Download] CheckIndexFile:"..ResFileType .. ", documentFilePath:" .. tostring(CS.System.IO.File.Exists(documentFilePath)) 
+        CsLog.Debug("[Download] CheckIndexFile:"..ResFileType .. ", documentFilePath:" .. tostring(CS.System.IO.File.Exists(documentFilePath))
             .. ", Debug:" .. tostring(CsRemoteConfig.Debug) .. ", NeedUpdate:" .. tostring(NeedUpdate) .. ", keepLocalIndex:" .. tostring(keepLocalIndex))
         if not NeedUpdate then
             if CS.System.IO.File.Exists(documentFilePath) then
@@ -378,7 +364,7 @@ local module_creator = function()
         end)
     end
 
-     -- {[assetPath] = value{[1] = Name, [2] = Sha1, [3] = Size}, ... } 
+     -- {[assetPath] = value{[1] = Name, [2] = Sha1, [3] = Size}, ... }
     LoadIndexTable = function(indexPath)
         if NeedLaunchTest then
             if not CS.System.IO.File.Exists(indexPath) then
@@ -412,22 +398,42 @@ local module_creator = function()
     end
 
     local SetDlcTable
+
+    local ResId2SubIdMap = nil
+
+    local InitResIdToSubIdMap = function()
+        if ResId2SubIdMap then return end
+        ResId2SubIdMap = {}
+        local subPackageStorage = CS.XLaunchManager.SubPackageTab
+        if subPackageStorage then
+            local spPairs = subPackageStorage.keyValuePairs
+            for i = 0, spPairs.Length - 1 do
+                local kv = spPairs[i]
+                local subId = kv.Key
+                local resIdsStr = kv.Value
+                for resId in string.gmatch(tostring(resIdsStr), "[^,]+") do
+                     ResId2SubIdMap[tonumber(resId)] = subId
+                end
+            end
+        end
+    end
+
     -- 解析doc目录下index
     InitDocumentIndex = function()
-        if NeedLaunchTest then 
-            InitDocumentIndexTest()
-        else
-            if not CS.System.IO.File.Exists(DocumentIndexPath) then
-                CsLog.Error("[Download] Init DocumentIndex Failed, file not exist: " .. tostring(DocumentIndexPath))
-                return
-            end
+        --本地测试下，只处理matrix模块
+        if NeedLaunchTest and ResFileType == RES_FILE_TYPE.MATRIX_FILE then
+            DocumentIndexPath = LaunchTestDirDoc .. "/" .. ResFileType .. "/" .. INDEX
+        end
+        if not CS.System.IO.File.Exists(DocumentIndexPath) then
+            CsLog.Error("[Download] Init DocumentIndex Failed, file not exist: " .. tostring(DocumentIndexPath))
+            return
+        end
 
-            if not DocumentIndexTable then
-                if IsDlcBuild then
-                    DocumentIndexTable, DlcIndexTable = LoadIndexTableWithDlcInfo(DocumentIndexPath)
-                else
-                    DocumentIndexTable = LoadIndexTable(DocumentIndexPath) -- {[assetPath] = value{[1] = Name, [2] = Sha1, [3] = Size}, ... } 
-                end
+        if not DocumentIndexTable then
+            if IsDlcBuild then
+                DocumentIndexTable, DlcIndexTable = LoadIndexTableWithDlcInfo(DocumentIndexPath)
+            else
+                DocumentIndexTable = LoadIndexTable(DocumentIndexPath) -- {[assetPath] = value{[1] = Name, [2] = Sha1, [3] = Size}, ... }
             end
         end
 
@@ -469,10 +475,8 @@ local module_creator = function()
         if IsDlcBuild then
             if ResFileType == RES_FILE_TYPE.MATRIX_FILE and DlcIndexTable then
                 XLaunchDlcManager.Init(DlcIndexTable)
-                -- 新分包不需要记录基础资源，减少记录内存
-                --XLaunchDlcManager.SetDlcIndexInfo(DLC_BASE_INDEX, DocumentIndexTable)
-                -- 使用新分包构建方式后，暂时没有通用资源包了，设置为空
-                --XLaunchDlcManager.SetDlcIndexInfo(DLC_COMMON_INDEX, {})
+
+                InitResIdToSubIdMap()
 
                 --开启分包远程配置时
                 -- 1. 新包：一定会有弹窗
@@ -481,37 +485,63 @@ local module_creator = function()
                 --   b. 有新增分包Id时, 弹窗
                 -- 3. 覆盖安装, 本地有标记时, 不弹窗
                 NeedShowSelect = XLaunchDlcManager.NeedShowSelect()
-                
+
+                local isSubpackOpen = XLaunchDlcManager.CheckSubpackageOpen()
+
                 local dlcUseAppCount = 0
                 local dlcTableMap = {} -- 游戏内下载用
-                local needDownloadMap = {} -- 调试用
+                local needDownloadMap
+                if IsDebugBuild then
+                    needDownloadMap = {} -- 调试用
+                end
+                --不弹窗时走热更流程
+                local isHotUpdateRes = not NeedShowSelect --是否是热更流程
 
-                --下载全量资源 = 未开启分包
-                local isFull = XLaunchDlcManager.IsFullDownload()
-                local removeResIdsRecord = XLaunchDlcManager.GetRemoveResIdsRecord() -- 获取玩家选择的移除的resId
-                local isRemoveResIdsEmpty = not (removeResIdsRecord and next(removeResIdsRecord))
-                local isSelectFullOrSelectRemove = not XLaunchDlcManager.CheckSubpackageOpen()
-                if not IsInGame then --热更时
-                    --下载全量资源 = 未开启分包 or 上个版本选择了全量包 or 所有分包在本地均有完成记录
+                -- 走热更流程
+                -- 1. 不走热更流程时，基础包资源已经记录在CurrentFileTable内了，这里不需要再判断是否需要下载
+                -- 2. 走热更流程时，需要根据具体的规则进行判断
+                local isSelectFullOrSelectRemove = false
+                local removeResIdsRecord
+                if isHotUpdateRes then
+                    --下载全量资源 = 未开启分包
+                    local isFull = XLaunchDlcManager.IsFullDownload()
+                    removeResIdsRecord = XLaunchDlcManager.GetRemoveResIdsRecord() -- 获取玩家选择的移除的resId
+                    local isRemoveResIdsEmpty = not (removeResIdsRecord and next(removeResIdsRecord))
                     if not isRemoveResIdsEmpty then -- 如果玩家有选择 说明选的是全选按钮 但是有选择不下载的resId
                         isFull = true
                     end
-                    isSelectFullOrSelectRemove = isSelectFullOrSelectRemove or isFull or XLaunchDlcManager.IsAllDlcIdRecord()
+                    isSelectFullOrSelectRemove = not isSubpackOpen or isFull or XLaunchDlcManager.IsAllDlcIdRecord()
+                else
+                    removeResIdsRecord = {}
                 end
-                -- print("SP/DN checkFull", isFull, isSelectFullOrSelectRemove, isRemoveResIdsEmpty, NeedShowSelect)
 
                 -- 分包补丁
                 ResSizeDic = {}
-                
                 for resId, dlcTable in pairs(DlcIndexTable) do
                     dlcTableMap[resId] = dlcTable
-                    -- 此处重复记录（在local function SetDlcTable中）, 先移除掉。
-                    --XLaunchDlcManager.SetDlcIndexInfo(resId, dlcTable)
+                    -- 是否需要下载分包资源 = 是热更流程 && (是全量下载 || 已经下载过) && 未被移除 && 未被忽略
 
-                    -- 是否需要下载分包资源 = 全量下载 or 分包已经下载完成了，下次热更直接更补丁，不用到游戏内再次点击分包下载  记录玩家选择
-                    -- print("SP/DN removeResIdsRecord[resId]", resId, removeResIdsRecord[resId], XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect))
-                    local needDownloadDlc = (isSelectFullOrSelectRemove or XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect)) and (not removeResIdsRecord[resId])
-                    needDownloadMap[resId] = needDownloadDlc
+                    local isDownloadedOrSelected = XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect)
+
+                    if not isDownloadedOrSelected and isHotUpdateRes then
+                         local parentSubId = ResId2SubIdMap and ResId2SubIdMap[resId]
+                         if parentSubId and XLaunchDlcManager.IsSubPackageActive(parentSubId) then
+                              isDownloadedOrSelected = true
+                              CsLog.Debug("[DLC] Auto-complete resId: " .. tostring(resId) .. " for active subpackage: " .. tostring(parentSubId))
+                         end
+                    end
+
+                    local needDownloadDlc = isHotUpdateRes and (isSelectFullOrSelectRemove or isDownloadedOrSelected)
+                            and (not removeResIdsRecord[resId])
+                            and not XLaunchDlcManager.CheckResIsIgnoreDownload(resId, NeedShowSelect, isSubpackOpen)
+                    if IsDebugBuild then
+                        needDownloadMap[resId] = needDownloadDlc
+                        print(string.format("[Debug] resId: %s isHotUpdateRes: %s, isSelectFullOrSelectRemove: %s, checkNeedDownload: %s, removeResIdsRecord: %s, ignore: %s", resId,
+                                tostring(isHotUpdateRes), tostring(isSelectFullOrSelectRemove),
+                                tostring(XLaunchDlcManager.CheckNeedDownload(resId, NeedShowSelect)),
+                                tostring(not removeResIdsRecord[resId]),
+                                tostring(XLaunchDlcManager.CheckResIsIgnoreDownload(resId, NeedShowSelect, isSubpackOpen))))
+                    end
 
                     ResSizeDic[resId] = 0
                     local fileMap = {}
@@ -544,7 +574,7 @@ local module_creator = function()
                 end
             end
 
-            -- 剔除包内已有资源（需asset与Name都对应）            
+            -- 剔除包内已有资源（需asset与Name都对应）
             for asset, info in pairs(ApplicationIndexTable) do
                 local value = AllFileTableDlc[asset]
                 countApp = countApp + 1
@@ -556,7 +586,7 @@ local module_creator = function()
             end
         else
             CurrentFileTable = DocumentIndexTable
-            
+
             -- 剔除包内已有资源（需asset与Name都对应）
             for asset, info in pairs(ApplicationIndexTable) do
                 countApp = countApp + 1
@@ -568,7 +598,7 @@ local module_creator = function()
             end
         end
 
-        
+
         CsLog.Debug("[Download] 基础资源总量：" .. countAll .. "，app包内资源数量（记录/存在）：" .. countApp .. "/" .. countExist)
     end
 
@@ -580,7 +610,7 @@ local module_creator = function()
         local needLog = IsDebugBuild and CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.WindowsEditor
         local DownloadedMark = {}
         local logTab = {}
-        
+
         for dlcId, dlcTable in pairs(dlcTableMap) do
             local count, clearCount, downloadedCount = 0, 0, 0
             local size, clearSize, downloadedSize = 0, 0, 0
@@ -608,19 +638,19 @@ local module_creator = function()
                 end
             end
             if IsDebugBuild then
-                table.insert(logTab, "[DLC] DLC .." .. dlcId 
+                table.insert(logTab, "[DLC] DLC .." .. dlcId
                     .. ", appb包内 + doc已下载 = 总 - 余量，数量" .. clearCount .. " + " .. downloadedCount.. " = " .. count .. " - " .. (count-clearCount-downloadedCount)
                     .. ", 大小: " .. math.ceil(clearSize/1024/1024) .."mb"
                     .. " + " ..  math.ceil(downloadedSize/1024/1024) .. "mb"
                     .. " = " .. math.ceil(size/1024/1024) .. "mb"
                     .. " - " .. math.ceil((size - clearSize - downloadedSize)/1024/1024) .. "mb)")
             end
-            
+
             XLaunchDlcManager.SetDlcIndexInfo(dlcId, dlcTable) -- 记录总需下载资源
         end
 
         CacheFileToolGetFileTable = nil
-        
+
         if IsDebugBuild and #logTab > 0 then
             CsLog.Debug("DLC各分包下载情况：\n" .. table.concat(logTab, "\n"))
         end
@@ -636,13 +666,13 @@ local module_creator = function()
         ApplicationIndexTable = LoadIndexTable(applicationIndexPath)
 
         CsLog.Debug("[Download] ResolveResIndex. NeedUpdate:" .. tostring(NeedUpdate) .. ", applicationIndexPath:" .. applicationIndexPath .. ", documentIndexPath:" .. DocumentIndexPath)
-        if not NeedUpdate then -- 原始版本
+        if not NeedUpdate or (NeedLaunchTest and ResFileType == RES_FILE_TYPE.LAUNCH_MODULE) then -- 原始版本 or 本地测试时不更新Launch资源
             if CS.System.IO.File.Exists(DocumentIndexPath) then
                 CsLog.Debug("Local index:" .. DocumentIndexPath)
                 InitDocumentIndex()
                 HasLocalFiles = true
             end
-            
+
             OnCompleteResFilesInit() -- 无需更新，直接完成
             return
         end
@@ -679,7 +709,7 @@ local module_creator = function()
                 end
             end
         end
-        
+
         CsLog.Debug(string.format("[Download] UpdateSize: %d(mb), UpdateTableCount: %d, AllUpdateSize: %d(mb), AllUpdateTableCount: %d", math.ceil(UpdateSize/1024/1024), UpdateTableCount, math.ceil(AllUpdateSize/1024/1024), AllUpdateTableCount))
 
         local deleteKey = SPECIAL_DELETE_MATRIX_PREF_KEY .. tostring(AppVersionModule.GetAppVersion())
@@ -689,7 +719,7 @@ local module_creator = function()
         local isForceClean = ForceVersion[CsInfo.Version]
 
         if isMatrix and not isForceClean then -- 补充强删资源逻辑
-            
+
             local theDeleteKey = SPECIAL_DELETE_MATRIX_PREF_KEY .. "1." .. ForceVersionNum .. ".0"
             local theCleanFlag = CS.UnityEngine.PlayerPrefs.GetInt(theDeleteKey, 0)
             CsLog.Debug("key:" .. theDeleteKey .. ", cleanFlag:" .. tostring(cleanFlag) .. ", force cleanFlag :" .. tostring(theCleanFlag))
@@ -712,11 +742,11 @@ local module_creator = function()
                 end
             end
         end
-        
+
         CsLog.Debug("[Download] 上一版本资源key: " .. tostring(deleteKey) .. ", type: " .. tostring(ResFileType) .. ", checkClean: " .. tostring(checkClean) .. ", force:" .. tostring(isForceClean) .. ", CsInfo.Version:" .. tostring(CsInfo.Version))
 
         local files = AllFiles
-        
+
         local lastVerCount = 0
         local otherCount = 0
         local totalCount = 0
@@ -730,7 +760,7 @@ local module_creator = function()
         for i = 0, files.Count - 1 do
             local file = files[i]
             local name = CS.XFileTool.GetFileName(file)
-            totalCount = totalCount + 1 
+            totalCount = totalCount + 1
 
             local isIndex = IsDlcBuild and (string.sub(name,1,5) == INDEX) or (name == INDEX)
             if isIndex then
@@ -786,10 +816,10 @@ local module_creator = function()
 
             :: CONTINUE ::
         end
-        
+
         CsLog.Debug(string.format("[Download] 资源清理 本地总数：%d, 清理上版本数：%d, 其他清理：%d", totalCount, lastVerCount, otherCount))
-            
-        CsLog.Debug(string.format("[Download] 准备下载，本次需下载数: %d(%dmb)， dlc未下载：%d(%dmb)", 
+
+        CsLog.Debug(string.format("[Download] 准备下载，本次需下载数: %d(%dmb)， dlc未下载：%d(%dmb)",
             UpdateTableCount, math.ceil(UpdateSize/1024/1024), AllUpdateTableCount, math.ceil(AllUpdateSize/1024/1024)))
 
         if checkClean then
@@ -852,7 +882,7 @@ local module_creator = function()
                 table.insert(logTab, "dlc " .. dlcId .. ", 已下载数量：" .. num .. "(总" .. num2 .. " - 未下载" .. num3 .. "), 已下载大小：".. math.ceil(size/1024/1024).."mb")
             end
         end
-        
+
         if IsDebugBuild then
             CsLog.Debug("[DLC] ==== dlc检测前剔除 " .. table.concat(logTab, "\n"))
         end
@@ -974,7 +1004,7 @@ local module_creator = function()
 
     DoPrepareDownload = function()
         -- 分包且禁用，则全部下载
-        if IsDlcBuild and IsFullDownloadSelectType() then
+        if IsDlcBuild and not XLaunchDlcManager.CheckSubpackageOpen() then
             InitFullDownload()
         end
 
@@ -990,7 +1020,7 @@ local module_creator = function()
 
         if ResFileType == RES_FILE_TYPE.MATRIX_FILE and not IsInGame and not TipsOnce then
             TipsOnce = true
-            if CS.XInfo.IsCloudGame then 
+            if CS.XInfo.IsCloudGame then
                 -- 云游戏直接更新，不需要弹窗
                 DownloadFiles()
                 return
@@ -1029,8 +1059,8 @@ local module_creator = function()
         --3.重试状态
         --4.下载完成状态
         local urlPrefix = string.format("%s/%s/%s/", DocumentUrl, NewVersion, ResFileType)
-        local downloadDir = DocumentFilePath .. "/" .. ResFileType .. "/" 
-        
+        local downloadDir = DocumentFilePath .. "/" .. ResFileType .. "/"
+
         local allNameTable = {}
         local allSha1Table = {}
         local allSizeTable = {}
@@ -1164,7 +1194,7 @@ local module_creator = function()
         local useCache = true
         local lastProgress = nil
         local currentUpdateSize = 0
-        
+
         Loop = function()
             key, info = iter(t, iterKey)
 
@@ -1294,7 +1324,7 @@ local module_creator = function()
                         XLaunchDlcManager.SetDownloadedFile(info[1], true)
                     end
                 end
-                
+
                 CompleteDownload()
             else
                 return
@@ -1395,8 +1425,8 @@ local module_creator = function()
                 videoUrl = CS.XBundleManager.GetFile(bundleName)
                 if not videoUrl then
                     needCGBtn = false
-                else 
-                    if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then 
+                else
+                    if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
                         local path = videoUrl
                         local streamingAssetPath = CS.UnityEngine.Application.streamingAssetsPath
                         local len = string.len(streamingAssetPath)
@@ -1415,7 +1445,7 @@ local module_creator = function()
         end
         CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_CG, needCGBtn, needPlayCG, videoUrl)
     end
-    
+
     DownloadFiles = function()
         CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_START_DOWNLOAD, UpdateSize)
         CheckPlayCG()
@@ -1462,7 +1492,7 @@ local module_creator = function()
         --         CsApplication.Exit, function()
         --             DownloadFilesAction()
         --         end, CsApplication.GetText("Quit")))
-        -- else 
+        -- else
         --     DownloadFilesAction()
         -- end
     end
@@ -1476,7 +1506,7 @@ local module_creator = function()
         IsPause = true
         CompleteDownload()
     end
-    
+
     function XLaunchFileModule.ReleaseDownloader()
         CurrentDownloader = nil
         CsGameEventManager:Notify(CS.XEventId.EVENT_LAUNCH_DOWNLOAD_RELEASE)
@@ -1496,8 +1526,8 @@ local module_creator = function()
         if NeedLaunchTest then
             dirPath = LaunchTestDirDoc .. "/" .. ResFileType .. "/"
         end
-        
-        local fileMap = DlcNeedFileMap[dlcId]     
+
+        local fileMap = DlcNeedFileMap[dlcId]
         if not fileMap then
             CsLog.Error("[DLC] 清理dlc资源失败 fileMap is ni, dlcId:" .. tostring(dlcId))
             return
@@ -1537,7 +1567,7 @@ local module_creator = function()
             local UnityApplication = CS.UnityEngine.Application
             local cdnPath = LaunchTestPath .. "/" .. ResFileType
             local files = CS.XFileTool.GetAllFiles(cdnPath)
-            
+
             local function GetFileSize(path)
                 local file, err = io.open(path, "rb")
                 if not file then
@@ -1556,7 +1586,7 @@ local module_creator = function()
                     local size = GetFileSize(file)
                     table.insert(tab, "[LaunchTest] " .. tostring(i + 1) .. "、file:" .. tostring(file) .. ", name:" .. tostring(name) .. ", asset:" .. tostring(asset) .. ", size:" .. tostring(size))
                     DocumentIndexTable[asset] = {name, nil, size}
-                end    
+                end
             end
             if #tab > 0 then
                 print(table.concat(tab, "\n"))
@@ -1591,19 +1621,11 @@ local module_creator = function()
         DownloadedMap = nil
         CacheFileToolGetFileTable = nil
         AllFiles = nil
-    end
-    OnCompleteResFilesInit = function()
-        if IsInGame then
-            if not IsPause then
-                XLaunchDlcManager.DoneDownloadInGame()
-            end
-            ClearData()
-            if OnCompleteCallback then
-                OnCompleteCallback(IsPause)
-            end
-            return
-        end
 
+        XLaunchDlcManager.ClearLaunchCache()
+    end
+
+    OnCompleteResFilesInit = function()
         local urlTable = {}
         local appUrlTable = {}
         --local hashTable = {}
@@ -1639,7 +1661,7 @@ local module_creator = function()
                 urlTable[asset] = resourcePath
             end
         end
-        
+
         ClearData()
         RemoveEvents()
 
@@ -1663,11 +1685,6 @@ local module_creator = function()
             return
         end
         CS.XRecord.Record(...)
-    end
-    
-    IsFullDownloadSelectType = function() 
-        local selectType = CS.XRemoteConfig.LaunchSelectType
-        return selectType == nil or selectType == 0
     end
 
     return XLaunchFileModule

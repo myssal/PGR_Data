@@ -3553,6 +3553,26 @@
         "Text": "20033014表情包参数不合法"
     },
     {
+        "Id": 20033015,
+        "Key": "ChatNotInRoom",
+        "Text": "20033015您不存在房间中，无法发言"
+    },
+    {
+        "Id": 20033016,
+        "Key": "ChatNotInGuild",
+        "Text": "20033016您不在指挥局中，无法发言"
+    },
+    {
+        "Id": 20033017,
+        "Key": "ChatNotExistMentor",
+        "Text": "20033017指导不存在，无法发言"
+    },
+    {
+        "Id": 20033018,
+        "Key": "ChatNotInGuildDorm",
+        "Text": "20033018您不在宿舍中，无法发言"
+    },
+    {
         "Id": 20034001,
         "Key": "ConditionManagerParamsError",
         "Text": "条件参数错误"
@@ -26471,6 +26491,11 @@
         "Text": "20270002鬼泣卡池数据错误"
     },
     {
+        "Id": 20270003,
+        "Key": "DevilMayCryDataDbEnd",
+        "Text": "202700023鬼泣卡池已结束"
+    },
+    {
         "Id": 20280001,
         "Key": "Theatre5NotOpen",
         "Text": "活动未开启"
@@ -29823,12 +29848,12 @@
     {
         "Id": 25300090,
         "Key": "RelinkPlayerLikeSelf",
-        "Text": "不能点赞自己"
+        "Text": "25300090不能给自己点赞"
     },
     {
         "Id": 25300091,
         "Key": "RelinkPlayerNotInTheRoom",
-        "Text": "队伍不存在"
+        "Text": "25300091不在队伍中"
     },
     {
         "Id": 25300092,
@@ -30022,10 +30047,5 @@
         "Id": 40001030,
         "Key": "PayCheckReceiptCurrencyUnMatch",
         "Text": "40001026充值凭证币种不匹配"
-    },
-    {
-        "Id": 202700023,
-        "Key": "DevilMayCryDataDbEnd",
-        "Text": "202700023鬼泣卡池已结束"
     }
 ]

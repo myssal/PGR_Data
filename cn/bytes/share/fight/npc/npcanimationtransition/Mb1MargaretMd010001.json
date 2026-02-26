@@ -356,6 +356,12 @@
     {
         "Role": "Mb1MargaretMd010001",
         "Layer": 0,
+        "Target": "Attack10",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MargaretMd010001",
+        "Layer": 0,
         "Target": "Attack11",
         "TransitionDuration": 0.1
     },
@@ -369,6 +375,12 @@
         "Role": "Mb1MargaretMd010001",
         "Layer": 0,
         "Target": "Attack13",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MargaretMd010001",
+        "Layer": 0,
+        "Target": "Attack14",
         "TransitionDuration": 0.1
     },
     {
@@ -755,6 +767,13 @@
         "State": "Hitdown",
         "Target": "Lieonfloor",
         "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mb1MargaretMd010001",
+        "Layer": 0,
+        "State": "Lieonfloor",
+        "Target": "Standup",
+        "TransitionDuration": 0.2
     },
     {
         "Role": "Mb1MargaretMd010001",

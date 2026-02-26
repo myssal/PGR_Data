@@ -47,7 +47,7 @@ local module_creator = function()
         FileCount = 0
         PreFilesList = nil
 
-        PreloadDirPath = UnityApplication.persistentDataPath .. "/preload" .. "/" .. ResFileType
+        PreloadDirPath = UnityApplication.persistentDataPath .. "/preload/" .. ResFileType
         CsLog.Debug("[XLaunchPreloadModule] 开始检查预下载文件(多线程): " .. tostring(ResFileType))
         XLaunchPreloadModule.StartMovePreFiles()
     end

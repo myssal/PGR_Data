@@ -1,6 +1,7 @@
 
 
 ---@class XUiPanelDownloadTips
+---@field LaunchDlcManager XLaunchDlcManager
 local XUiPanelDownloadTips = {}
 
 function XUiPanelDownloadTips.New(gameObj, parentProxy)
@@ -13,6 +14,7 @@ end
 function XUiPanelDownloadTips:Init(gameObj, parentProxy)
     self.GameObject = gameObj
     self.Parent = parentProxy
+    self.LaunchDlcManager = require("XLaunchDlcManager")
     self:InitDynamicTable()
     self:RefreshDynamicTable()
 end
@@ -49,6 +51,7 @@ end
 
 function XUiPanelDownloadTips:GetRemoveResIdList()
     local res = {}
+    --todo hyx self.DynamicTable:GetGrids() 只能获取到已经刷新的格子，如果是动态列表，可能存在未创建的格子，这里的收集可能会有问题（所有这个接口都可能存在问题）
     for k, grid in pairs(self.DynamicTable:GetGrids()) do
         -- print("SP/DN GetRemoveResIdList ", k, grid, grid:GetDownFlag())
         if not grid:GetDownFlag() then
@@ -79,19 +82,31 @@ end
 function XUiPanelDownloadTips:RefreshDynamicTable()
     local t = {}
 
-    -- 遍历 LaunchRemoveSelectResIds 的所有键值对
-    local storage = CS.XLaunchManager.LaunchRemoveSelectResIds
+    local subPackageMap = {}
+    local subPackageStorage = CS.XLaunchManager.SubPackageTab
+    if subPackageStorage == nil then
+        error("SubPackageTab is nil")
+        return
+    end
+    local spPairs = subPackageStorage.keyValuePairs
+    for i = 0, spPairs.Length - 1 do
+        local kv = spPairs[i]
+        subPackageMap[kv.Key] = kv.Value
+    end
+
+    -- 遍历 LaunchRemoveSelectSubPackageIds 的所有键值对
+    local storage = CS.XLaunchManager.LaunchRemoveSelectSubPackageIds
     if storage == nil then
-        error("LaunchRemoveSelectResIds is nil")
+        error("LaunchRemoveSelectSubPackageIds is nil")
         return
     end
 
     -- keyValuePairs 是 List<KeyValueData>
-    local pairs = storage.keyValuePairs
-    for i = 0, pairs.Length - 1 do
-        local kv = pairs[i]
+    local kPairs = storage.keyValuePairs
+    for i = 0, kPairs.Length - 1 do
+        local kv = kPairs[i]
         local k = kv.Key
-        local v = kv.Value
+        local subpackageIdStr = kv.Value
 
         -- 通过 XBuiltinText 解析真实key
         local realKey = CS.XApplication.GetText(k)
@@ -104,26 +119,25 @@ function XUiPanelDownloadTips:RefreshDynamicTable()
             error("realKey 格式错误: " .. tostring(realKey))
         end
 
-        -- 解析 value，转成数字数组
-        local resIds = {}
-        local vWithDelimiter = v .. "|"
-        for numStr in string.gmatch(vWithDelimiter, "([^|]*)|") do
-            if numStr ~= "" then
-                local num = tonumber(numStr)
-                if num then
-                    table.insert(resIds, num)
-                else
-                    error("无效数字格式: " .. numStr .. ", key=" .. tostring(k))
-                end
+        local combinedResIds = {}
+        local foundAny = false
+        for subId in string.gmatch(tostring(subpackageIdStr), "[^|]+") do
+            local resIdsStr = subPackageMap[subId]
+            if resIdsStr then
+                self.LaunchDlcManager.SplitResIds(resIdsStr, false, combinedResIds, ",")
+                foundAny = true
+            else
+                print("XUiPanelDownloadTips:RefreshDynamicTable subpackageId not found: " .. tostring(subId))
             end
         end
 
-        -- 构建表结构
-        table.insert(t, {
-            Name = name,
-            Desc = desc,
-            ResIdList = resIds
-        })
+        if foundAny then
+            table.insert(t, {
+                Name = name,
+                Desc = desc,
+                ResIdList = combinedResIds
+            })
+        end
     end
 
     self.DynamicTable:SetDataSource(t)

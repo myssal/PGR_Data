@@ -1,47 +1,71 @@
 [
     {
         "UiName": "UiBigWorldMessageTips",
-        "IsModality": false,
-        "Priority": 1,
+        "IsModality": true,
+        "Priority": 2001,
         "SpecificModalityUi": [],
         "CustomModalityParams": [
             1
         ]
     },
     {
-        "UiName": "UiBigWorldPopupTeach",
+        "UiName": "UiBigWorldPopupMessageSingle",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 2001,
         "SpecificModalityUi": []
     },
     {
         "UiName": "UiBigWorldTaskObtain",
         "IsModality": true,
-        "Priority": 2,
+        "Priority": 1031,
+        "SpecificModalityUi": []
+    },
+    {
+        "UiName": "UiBigWorldTrialRolePopup",
+        "IsModality": true,
+        "Priority": 1031,
+        "SpecificModalityUi": []
+    },
+    {
+        "UiName": "UiBigWorldTaskObtainInvitation",
+        "IsModality": true,
+        "Priority": 1031,
         "SpecificModalityUi": []
     },
     {
         "UiName": "UiBigWorldTaskObtainDrama",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 1002,
         "SpecificModalityUi": []
     },
     {
         "UiName": "UiBigWorldTaskObtainDramaHeart",
         "IsModality": true,
-        "Priority": 3,
+        "Priority": 1001,
         "SpecificModalityUi": []
     },
     {
         "UiName": "UiBigWorldRewardSidebar",
-        "IsModality": true,
-        "Priority": 4,
+        "IsModality": false,
+        "Priority": 101,
         "SpecificModalityUi": []
     },
     {
-        "UiName": "UiBigWorldPopupMessageSingle",
+        "UiName": "UiBigWorldPopupTeach",
         "IsModality": true,
-        "Priority": 1,
+        "Priority": 3001,
+        "SpecificModalityUi": []
+    },
+    {
+        "UiName": "UiBigWorldTeachTips",
+        "IsModality": false,
+        "Priority": 3002,
+        "SpecificModalityUi": []
+    },
+    {
+        "UiName": "UiBigWorldTaskPopupEndingDetail",
+        "IsModality": true,
+        "Priority": 4001,
         "SpecificModalityUi": []
     }
 ]

@@ -913,6 +913,7 @@ XDrawManagerCreator = function()
         CanLiverActivityId = data.ActivityId
         CanLiverDrawCount = data.DrawCount or 0
         CanLiverRewardIndex = data.RewardIndex
+        XEventManager.DispatchEvent(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE)
     end
 
     function XDrawManager.GetCanLiverActivityId()
@@ -1211,6 +1212,7 @@ XDrawManagerCreator = function()
             if cb then
                 cb(res.RewardGoodsList)
             end
+            XEventManager.DispatchEvent(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE)
         end)
     end
     --endregion

@@ -49,6 +49,7 @@ function XUiTransfiniteBattlePrepare:OnAwake()
     self.BtnBattle.CallBack = function()
         self:OnClickFight()
     end
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 
     ---@type XUiGridCommon
     --self._GridReward = XUiGridCommon.New(self, self.GridReward)
@@ -202,6 +203,10 @@ function XUiTransfiniteBattlePrepare:OnClickScore()
     local itemId = XDataCenter.ItemManager.ItemId.TransfiniteScore
     local item = XDataCenter.ItemManager.GetItem(itemId)
     XLuaUiManager.Open("UiTip", item)
+end
+
+function XUiTransfiniteBattlePrepare:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
 end
 
 return XUiTransfiniteBattlePrepare

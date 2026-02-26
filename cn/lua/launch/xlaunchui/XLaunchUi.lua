@@ -11,6 +11,91 @@ local Creator = function()
     local IsHideFunc = CS.XRemoteConfig.IsHideFunc
     local IsHideFuncAndroid = CS.XRemoteConfig.IsHideFuncAndroid -- 安卓的提审模式
 
+    local XUiLaunchSwitchBackgournd = {}
+
+    function XUiLaunchSwitchBackgournd:Ctor(ui)
+        self.ui = ui
+        self.Transform = self.ui.transform
+        self.GameObject = self.ui.gameObject
+
+        local loginDownloadTr = self.Transform:Find("PanelBanner/LoginDownload")
+        if loginDownloadTr then
+            local rawImageTr = loginDownloadTr:Find("ImgDownloadB")
+            if rawImageTr then
+                self.RawImageB = rawImageTr:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            end
+            self.effectTr = loginDownloadTr:Find("Effect")
+            self.animationTr = loginDownloadTr:Find("Animation")
+
+            local rawImageFTr = loginDownloadTr:Find("Mask/ImgDownloadF")
+            if rawImageFTr then
+                self.RawImageF = rawImageFTr:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+            end
+
+            local animEnableBTr = loginDownloadTr:Find("Animation/AnimEnable")
+            if animEnableBTr then
+                self.AnimEnableGo = animEnableBTr.gameObject
+            end
+        end
+        return self
+    end
+
+    function XUiLaunchSwitchBackgournd:ClampIndex(index)
+        if index > #self.ResPathList then
+            return 1
+        elseif index < 1 then
+            return #self.ResPathList
+        else
+            return index
+        end
+    end
+
+    function XUiLaunchSwitchBackgournd:ShowIndex(index)
+        if not self.RawImageB then
+            return
+        end
+
+        local currentIndex = self:ClampIndex(index)
+        local lastIndex
+        if self.ResIndex then
+            lastIndex = self.ResIndex
+        else
+            lastIndex = currentIndex
+        end
+
+        local pathF = self.ResPathList[currentIndex]
+        local pathB = self.ResPathList[lastIndex]
+        self.RawImageF:SetRawImage(pathF)
+        self.RawImageB:SetRawImage(pathB)
+        self.ResIndex = currentIndex
+
+        self:PlayEnableAnim()
+    end
+
+    function XUiLaunchSwitchBackgournd:SetData(resPathList)
+        self.ResPathList = resPathList
+        self:ShowIndex(1)
+    end
+
+    function XUiLaunchSwitchBackgournd:PlayEnableAnim()
+        if not self.AnimEnableGo or not self.AnimEnableGo.activeInHierarchy then
+            return
+        end
+        self.AnimEnableGo:PlayTimelineAnimation()
+    end
+
+    function XUiLaunchSwitchBackgournd:BtnLast()
+        self:ShowIndex(self.ResIndex - 1)
+    end
+
+    function XUiLaunchSwitchBackgournd:BtnNext()
+        self:ShowIndex(self.ResIndex + 1)
+    end
+
+    function XUiLaunchSwitchBackgournd:AutoNext()
+        self:BtnNext()
+    end
+
     --====== XUiLaunchImageGrid ======
     local XUiLaunchImageGrid = {}
 
@@ -158,7 +243,7 @@ local Creator = function()
         self.WindowSize = 5
 
         -- 展示列表
-        local showPaths = CS.XLaunchManager.LaunchConfig:GetString("UiLaunchShowList") -- 注意：launch更新时只能使用包内资源（还未解析matrix的index文件及资源）
+        local showPaths = CS.XLaunchManager.LaunchConfig:GetString("UiLaunchShowImageList") -- 注意：launch更新时只能使用包内资源（还未解析matrix的index文件及资源）
         if not showPaths or showPaths == "null" or IsHideFunc or IsHideFuncAndroid then -- 没轮换图或提审模式下，不显示
             self.DefaultDownloadBG.gameObject:SetActiveEx(true)
             self.PanelList.gameObject:SetActiveEx(false)
@@ -183,31 +268,49 @@ local Creator = function()
             self.HasScrolled = false
 
             self.CurrentIndex = 1
-            self.DynamicTable = XDynamicTableCurveLaunch.New(self.PanelList)
-            self.DynamicTable:SetProxy(XUiLaunchImageGrid)
-            self.DynamicTable:SetDelegate(self)
-            self.GridPanel.gameObject:SetActiveEx(false)
+            self.UiLaunchSwitchBackgournd = XUiLaunchSwitchBackgournd.Ctor(XUiLaunchSwitchBackgournd, self.GridPanel)
+            self.UiLaunchSwitchBackgournd:SetData(self.DataList)
+            self.LastClickTime = 0
+            -- self.DynamicTable = XDynamicTableCurveLaunch.New(self.PanelList)
+            -- self.DynamicTable:SetProxy(XUiLaunchImageGrid)
+            -- self.DynamicTable:SetDelegate(self)
+            -- self.GridPanel.gameObject:SetActiveEx(false)
 
+            self.UiLaunchClickGapTime = (CS.XLaunchManager.LaunchConfig:TryGetInt("UiLaunchClickGapTime", false) or 1500) / 1000
             self.BtnLast.CallBack = function()
+                local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+                if currentTime - self.LastClickTime < self.UiLaunchClickGapTime then
+                    return
+                end
+                self.LastClickTime = currentTime
+                self.UiLaunchSwitchBackgournd:BtnLast()
                 self.HasScrolled = true
-                self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) - 1)
+                -- self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) - 1)
             end
 
             self.BtnNext.CallBack = function()
+                local currentTime = CS.UnityEngine.Time.realtimeSinceStartup
+                if currentTime - self.LastClickTime < self.UiLaunchClickGapTime then
+                    return
+                end
+                self.LastClickTime = currentTime
+                self.UiLaunchSwitchBackgournd:BtnNext()
                 self.HasScrolled = true
-                self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) + 1)
+                -- self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) + 1)
             end
 
             self.AutoScrollNextFunc = function() 
                 -- CS.XLog.Debug("====AutoScrollNext currentIndex:" .. self.CurrentIndex ..", HasScrolled:" .. tostring(self.HasScrolled) .. ", self.IsDraggging:" .. tostring(self.IsDraggging))
-                if self.IsDraggging  then
-                    return
-                end
+                -- if self.IsDraggging then
+                --     return
+                -- end
                 if self.HasScrolled then
                     self.HasScrolled = false
                     return
                 end
-                self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) + 1)
+                -- self.DynamicTable:TweenToIndex((self.CurrentIndex - 1) + 1)
+                self.UiLaunchSwitchBackgournd:AutoNext()
+                self.LastClickTime = CS.UnityEngine.Time.realtimeSinceStartup
             end
         end
     end
@@ -217,54 +320,50 @@ local Creator = function()
         return index + 1
     end
 
-    function XUiLaunchUi:OnDynamicTableEvent(event, index, grid)
-        if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-            local fixIndex = self:GetFixIndex(index)
-            grid:SetData(self.DynamicTable.DataSource[fixIndex])
-            if fixIndex == self.CurrentIndex then
-                grid:PlayAnim()
-            end
-            -- print(">>>> OnDynamicTableEvent, event:" .. event .. ", index: " .. tostring(index)  ..",fixIndex：" .. tostring(fixIndex) .. ", self.CurrentIndex:" .. tostring(self.CurrentIndex))
-        elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
-            if index < 0 then index = self.DynamicTable:GetTweenIndex() end
-            self.CurrentIndex = index + 1
-            local grid = self.DynamicTable:GetGridByIndex(self.CurrentIndex - 1)
-            grid:PlayAnim()
-            -- print(">>>>>>>> OnDynamicTableEvent, event:" .. event .. ", index: " .. tostring(index)  ..",fixIndex：" .. tostring(fixIndex) .. ", self.CurrentIndex:" .. tostring(self.CurrentIndex))
-            self.IsDraggging = false
-        elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
-            self.IsDraggging = true
-            self.HasScrolled = true -- 跳过下一次自动轮播
-        end
-    end
+    -- function XUiLaunchUi:OnDynamicTableEvent(event, index, grid)
+    --     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+    --         local fixIndex = self:GetFixIndex(index)
+    --         grid:SetData(self.DynamicTable.DataSource[fixIndex])
+    --         if fixIndex == self.CurrentIndex then
+    --             grid:PlayAnim()
+    --         end
+    --         -- print(">>>> OnDynamicTableEvent, event:" .. event .. ", index: " .. tostring(index)  ..",fixIndex：" .. tostring(fixIndex) .. ", self.CurrentIndex:" .. tostring(self.CurrentIndex))
+    --     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
+    --         if index < 0 then index = self.DynamicTable:GetTweenIndex() end
+    --         self.CurrentIndex = index + 1
+    --         local grid = self.DynamicTable:GetGridByIndex(self.CurrentIndex - 1)
+    --         grid:PlayAnim()
+    --         -- print(">>>>>>>> OnDynamicTableEvent, event:" .. event .. ", index: " .. tostring(index)  ..",fixIndex：" .. tostring(fixIndex) .. ", self.CurrentIndex:" .. tostring(self.CurrentIndex))
+    --         self.IsDraggging = false
+    --     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
+    --         self.IsDraggging = true
+    --         self.HasScrolled = true -- 跳过下一次自动轮播
+    --     end
+    -- end
     
     function XUiLaunchUi:OnRefresh()
-        if self.DynamicTable then
-            self.DynamicTable:SetDataSource(self.DataList)
-            self.DynamicTable:ReloadData(self.CurrentIndex - 1)
-        end
+        -- if self.DynamicTable then
+        --     self.DynamicTable:SetDataSource(self.DataList)
+        --     self.DynamicTable:ReloadData(self.CurrentIndex - 1)
+        -- end
     end
 
     function XUiLaunchUi:OnStartUi()
         self:OnStart()
+        self:InitHealthTip()
     end
 
     function XUiLaunchUi:OnStart()
         self._IsUseChannelCdn = CS.XUriPrefix.GetIsUseChannelCdn() --是否使用了分渠道cdn
-        
-        if CS.XKuro.Localization.Data.Language.CN ~= CS.XLocalizationManager.Instance.Language then
-            self:HideHealthTip()
-        end
     end
 
-    function XUiLaunchUi:HideHealthTip()
-        if self.UiLoading then -- 海外屏蔽健康提示十六字真言(不想改UI免得还得修改)
-            for i = 1, self.UiLoading.transform.childCount do
-                local child = self.UiLoading.transform:GetChild(i-1)
-                if child.name == "Text" then
-                    child.gameObject:SetActiveEx(false)
-                end
-            end
+    function XUiLaunchUi:InitHealthTip()
+        local active = CS.XKuro.Localization.Data.Language.CN == CS.XLocalizationManager.Instance.Language       
+        if self.TxthealthTip then 
+            self.TxthealthTip.gameObject:SetActiveEx(active)
+        end
+        if self.TxtPubOfficeTip then 
+            self.TxtPubOfficeTip.gameObject:SetActiveEx(active)
         end
     end
 
@@ -332,10 +431,10 @@ local Creator = function()
         self.BtnLast.CallBack = nil
         self.BtnNext.CallBack = nil
 
-        if self.DynamicTable then
-            self.DynamicTable:Clear()
-            self.DynamicTable = nil
-        end
+        -- if self.DynamicTable then
+        --     self.DynamicTable:Clear()
+        --     self.DynamicTable = nil
+        -- end
         if self.UiPanelDownloadTips then
             self.UiPanelDownloadTips:OnDestroy()
         end
@@ -562,9 +661,10 @@ local Creator = function()
         -- CS.XLog.Debug(" self.OnConfirmSelect")
         local removeResIdList = self.UiPanelDownloadTips:GetRemoveResIdList()
         local isFullDownload = self.CurrentDownloadSelect == 2
-        for k, v in pairs(removeResIdList or {}) do
+        --todo hyx 这里的遍历是不是可以移除或者注释掉
+        -- for k, v in pairs(removeResIdList or {}) do
             -- print("SP/DN removeResIdList 尝试剔除 ", k, v)
-        end
+        -- end
         -- 下基础包不要记录全选的剔除数据了
         if not isFullDownload then
             removeResIdList = {}

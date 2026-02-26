@@ -75,6 +75,19 @@ function XUiGridConsumeActivityShop:RefreshCommon()
             self.Parent:RefreshBuy()
         end)
     end
+    data.GroupBuyCallBack = function(fashionGroupId)
+        XMVCA.XFashionSuit:ShopBuyFashionGroup(fashionGroupId, function(goodList)
+            self:RefreshSellOut()
+            self:RefreshBuyCount()
+            self:RefreshPrice()
+
+            local text = CS.XTextManager.GetText("BuySuccess")
+            XUiManager.TipMsg(text, nil, function()
+                XUiManager.OpenUiObtain(goodList)
+            end)
+            self.Parent:RefreshBuy()
+        end)
+    end
     self.Grid:Refresh(data, nil, true)
 end
 

@@ -54978,6 +54978,31 @@
         ]
     },
     {
+        "Id": 4199,
+        "Group": 112209,
+        "Name": "必杀",
+        "Describe": "渡边-必杀",
+        "IconType": 1,
+        "Icon": 3,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            17
+        ],
+        "SkillId": [
+            103838,
+            103839
+        ]
+    },
+    {
         "Id": 4200,
         "Group": 112210,
         "Name": "必杀",
@@ -55023,8 +55048,9 @@
         ],
         "SkillId": [
             103855,
-            103848,
-            103856
+            193803,
+            193804,
+            103848
         ]
     },
     {
@@ -55037,7 +55063,7 @@
         "Icon2": 0,
         "TimeOut": 2000,
         "OnlyTrue": false,
-        "IsMySelf": true,
+        "IsMySelf": false,
         "AndOr": false,
         "ForbidMoveType": 0,
         "MoveType": 0,
@@ -55048,7 +55074,9 @@
             15
         ],
         "SkillId": [
-            103869
+            103805,
+            103869,
+            193805
         ]
     },
     {
@@ -55151,7 +55179,7 @@
             17
         ],
         "SkillId": [
-            103839
+            193807
         ]
     },
     {
@@ -55807,6 +55835,416 @@
         ],
         "SkillId": [
             104633
+        ]
+    },
+    {
+        "Id": 4233,
+        "Group": 112240,
+        "Name": "闪避",
+        "Describe": "伊什梅尔-闪避",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            103018,
+            103017
+        ]
+    },
+    {
+        "Id": 4234,
+        "Group": 112240,
+        "Name": "闪避",
+        "Describe": "伊什梅尔-闪避",
+        "IconType": 1,
+        "Icon": 2,
+        "Icon2": 0,
+        "TimeOut": 2000,
+        "OnlyTrue": false,
+        "IsMySelf": false,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            16
+        ],
+        "SkillId": [
+            103027
+        ]
+    },
+    {
+        "Id": 4235,
+        "Group": 112241,
+        "Name": "三消红球",
+        "Describe": "伊什梅尔-红三消",
+        "IconType": 1,
+        "Icon": 101,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103040,
+            103043
+        ]
+    },
+    {
+        "Id": 4236,
+        "Group": 112242,
+        "Name": "点击黄球",
+        "Describe": "伊什梅尔-黄球",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": false,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4237,
+        "Group": 112243,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4238,
+        "Group": 112244,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4239,
+        "Group": 112245,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4240,
+        "Group": 112246,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4241,
+        "Group": 112247,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4242,
+        "Group": 112248,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4243,
+        "Group": 112249,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4244,
+        "Group": 112250,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4245,
+        "Group": 112251,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4246,
+        "Group": 112252,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4247,
+        "Group": 112253,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4248,
+        "Group": 112254,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
+        ]
+    },
+    {
+        "Id": 4249,
+        "Group": 112255,
+        "Name": "必杀",
+        "Describe": "露娜-占坑",
+        "IconType": 1,
+        "Icon": 103,
+        "Icon2": 0,
+        "TimeOut": -1,
+        "OnlyTrue": true,
+        "IsMySelf": true,
+        "AndOr": false,
+        "ForbidMoveType": 0,
+        "MoveType": 0,
+        "EffectType": [
+            1
+        ],
+        "EffectButton": [
+            2
+        ],
+        "SkillId": [
+            103018
         ]
     },
     {

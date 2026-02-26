@@ -45,12 +45,13 @@ local Init = function()
 end
 
 PrintVersion = function()
-     CsLog.Debug("AppVersion: " .. tostring(AppVersion))
-     CsLog.Debug("OldDocVersion: " .. tostring(OldDocVersion))
-     CsLog.Debug("NewDocVersion: " .. tostring(NewDocVersion))
-     CsLog.Debug("OldLaunchModuleVersion: " .. tostring(OldLaunchModuleVersion))
-     CsLog.Debug("NewLaunchModuleVersion: " .. tostring(NewLaunchModuleVersion))
-     CsLog.Debug("IsCurDocVersionMatched: " .. tostring(IsCurDocVersionMatched))
+    local logStr = string.format("AppVersion: %s\nOldDocVersion: %s\
+NewDocVersion: %s\nOldLaunchModuleVersion: %s\
+NewLaunchModuleVersion: %s\nIsCurDocVersionMatched: %s", 
+        tostring(AppVersion), tostring(OldDocVersion), 
+        tostring(NewDocVersion), tostring(OldLaunchModuleVersion), 
+        tostring(NewLaunchModuleVersion), tostring(IsCurDocVersionMatched))
+     CsLog.Debug(logStr)
 end
 
 function XLaunchAppVersionModule.GetAppVersion()
