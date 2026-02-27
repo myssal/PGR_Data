@@ -54,6 +54,7 @@ function XUiSoloReformChapterDetail:InitPanel()
     self._FightEvent = XUiSoloReformChapterFightEvent.New(self.PanelReform, self)
     self._FightEvent:ResumeCurFightEventId(self._ResumeFightEvent)  
     self._StarInfo = XUiSoloReformChapterStarInfo.New(self.PanelTarget, self)
+    self.RImgBossBg4.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformChapterDetail:InitDifficultyList(chapterId)
@@ -113,9 +114,9 @@ function XUiSoloReformChapterDetail:RefreshSwitchDiff(stageId)
     self:RefreshCharacter()
     if not self.IsKillMode then
         self._FightEvent:Update(stageId)
-        self._StarInfo:Update(stageId)
-
+        
     end
+    self._StarInfo:Update(stageId)
     self.Logo01:SetRawImage(chapterCfg.StageLogo)
     self.Logo02:SetRawImage(chapterCfg.StageLogo)
 end

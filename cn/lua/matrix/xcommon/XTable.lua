@@ -22107,9 +22107,8 @@ XTable = {
         BuffIds = Type1ValueTypeint,
         BuffDesc = Type1ValueTypestring,
         StageId = Type1ValueTypeint,
-        MarkId = Type1ValueTypeint,
-        ActiveAutoFightStageStr = Type1ValueTypestring,
-        AutoFight = Type1ValueTypeint,
+        MarkId = ValueTypeint,
+        IsAbandoned = ValueTypebool,
     },
     XTableAreaDistributeType = {
         Id = ValueTypeint,

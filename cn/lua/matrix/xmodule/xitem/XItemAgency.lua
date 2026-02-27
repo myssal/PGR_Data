@@ -21,7 +21,7 @@ function XItemAgency:SelectBuyAssetType(useItemId, callBack, challengeCountData,
         and XDataCenter.ItemManager.CheckCoinPackageIsHave() then
         XLuaUiManager.Open("UiUseCoinPackage")
     end
-    local cfg = self._Model:GetItemUsePackageConfig(useItemId)
+    local cfg = self._Model:GetItemUsePackageConfig(useItemId,true)
     if not cfg then
         XLuaUiManager.Open("UiBuyAsset", useItemId, callBack, challengeCountData, buyAmount, isAutoClose)
         return
@@ -64,7 +64,7 @@ function XItemAgency:RequestExchange(itemId, count, useItemId, callback)
 end
 
 function XItemAgency:CheckItemHasConfig(id)
-    local cfg = self._Model:GetItemUsePackageConfig(id)
+    local cfg = self._Model:GetItemUsePackageConfig(id,true)
     if cfg then
         return true
     end

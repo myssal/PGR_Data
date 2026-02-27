@@ -60,7 +60,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     else
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
     end
-    self:InitGroupSales()
 
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then 
         --v1.31武器时装
@@ -75,7 +74,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     self.IsNeedCD = isNeedCD or false
     -- 记录初始时间
     self.LastBuyTime = CS.UnityEngine.Time.realtimeSinceStartup
-    self:SetDetailData()
     self:CheckWeaponFashionBtnShow()
 
     self.TrialLevelInfo = XDataCenter.FubenExperimentManager.GetTrialLevelByFashionID(fashionId)
@@ -86,6 +84,9 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
 end
 
 function XUiFashionDetail:OnEnable()
+    self:InitGroupSales()
+    self:SetDetailData()
+    
     if self._StartRun then
         self._StartRun = false
     else
@@ -128,6 +129,14 @@ end
 function XUiFashionDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
     CS.XGraphicManager.UseUiLightDir = false
+end
+
+function XUiFashionDetail:OnReleaseInst()
+    return self.IsEnableGroupSales
+end
+
+function XUiFashionDetail:OnResume(value)
+    self.IsEnableGroupSales = value
 end
 
 function XUiFashionDetail:OnUiSceneLoaded()
@@ -398,6 +407,7 @@ function XUiFashionDetail:SetDetailData()
             self.GridItemObj = XUiGridCommon.New(self, self.GridItem)
         end
         self.GridItemObj:Refresh({ TemplateId = id, Count = 1 }, { Disable = true })
+        self.GridItemObj:SetUiActive(self.GridItemObj.ImgIsHave, self.GridItemObj.TxtHave.gameObject.activeSelf)
     end
 
     if self.IsEnableGroupSales then
@@ -430,10 +440,9 @@ function XUiFashionDetail:OnDynamicTableEvent(event, index, grid)
         -- 已拥有图标显示
         -- 涂装子道具随绑定涂装的拥有而显示已拥有状态
         if (gridData.IsSubItem and self.IsHaveFashion) or (self.BuyData and self.BuyData.ItemCount == 0) then
-            grid.TxtHave.gameObject:SetActiveEx(true)
+            grid:SetUiActive(grid.TxtHave, true)
         end
-        local isHave = grid.TxtHave.gameObject.activeSelf
-        grid.ImgIsHave.gameObject:SetActiveEx(isHave)
+        grid:SetUiActive(grid.ImgIsHave, grid.TxtHave.gameObject.activeSelf)
     end
 end
 
@@ -631,14 +640,12 @@ function XUiFashionDetail:InitGroupSales()
     local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(self.FashionId)
     if isVisible then
         self.FashionGroup = XMVCA.XFashionSuit:GetFashionGroupByFashionId(self.FashionId)
-        self.ShopId = self.IsWeaponFashion and self.FashionGroup.WeaponFashionGainParams[1] or self.FashionGroup.FashionGainParams[1]
         if not self.FashionGroup then
             XLog.Error(string.format("【涂装：%s 是否武器：%s】找不到对应配置！", self.FashionId, self.IsWeaponFashion))
         end
     end
-    self.IsEnableGroupSales = false
     self.BtnBuySuit.gameObject:SetActiveEx(isVisible)
-    self.BtnBuySuit:SetButtonState(XUiButtonState.Normal)
+    self.BtnBuySuit:SetButtonState(self.IsEnableGroupSales and XUiButtonState.Select or XUiButtonState.Normal)
 end
 
 ---角色涂装Id、武器涂装Id

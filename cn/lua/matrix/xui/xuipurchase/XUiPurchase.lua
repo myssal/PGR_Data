@@ -106,6 +106,7 @@ function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
     self:CheckCustomParams()
     
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
 end
 
 function XUiPurchase:AddListener()
@@ -683,6 +684,7 @@ end
 
 function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
     self.Btns = nil
     if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
         XDataCenter.PurchaseManager.ClearData()
@@ -856,3 +858,7 @@ function XUiPurchase:IsTabLbAllSellOut(index)
     -- return active
 end
 --endregion
+
+function XUiPurchase:SignDontClearDataOnFight()
+    self.IsClearData = false
+end

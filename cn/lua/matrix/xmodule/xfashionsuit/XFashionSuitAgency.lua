@@ -332,7 +332,11 @@ function XFashionSuitAgency:OnMoneyNotEnough(skipIndex, leftTabIndex, payCount)
         if payCount then
             XLuaUiManager.Open("UiPurchaseQuickBuy", payCount, function(index)
                 XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
-                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                if XLuaUiManager.IsUiLoad("UiPurchase") then
+                    XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, index)
+                else
+                    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                end
             end)
         end
     else

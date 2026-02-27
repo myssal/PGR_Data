@@ -3,6 +3,7 @@
 local XUiSoloReformKillChapterDetailGrid = require(
     "XUi/XUiSoloReform/XUiSoloReformKillChapterDetail/XUiSoloReformKillChapterDetailGrid")
 local XUiSoloReformChapterDetail = require("XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterDetail")
+local XUiSoloReformChapterStarInfo = require("XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterStarInfo")
 
 local XUiSoloReformKillChapterDetail = XLuaUiManager.Register(XUiSoloReformChapterDetail, "UiSoloReformKillChapterDetail")
 
@@ -10,10 +11,11 @@ function XUiSoloReformKillChapterDetail:OnStart(chapterId, defaultSelectStage)
     self.IsKillMode = true
     self.Super.OnStart(self, chapterId, defaultSelectStage)
     self.PanelReform.gameObject:SetActiveEx(false)
+    self.BtnHelp.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformKillChapterDetail:InitPanel()
-
+    self._StarInfo = XUiSoloReformChapterStarInfo.New(self.PanelTarget, self)
 end
 
 function XUiSoloReformKillChapterDetail:InitDifficultyList(chapterId)
@@ -105,7 +107,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
     stageItemUi.BtnBoss:SetNameByGroup(1, score or "") --score
     stageItemUi.BtnBoss:SetRawImageVisible(score ~= nil)
     if score then
-        local levelicon = self._Control:GetScoreLevelIcon(score,stageCfg.Difficulty)
+        local levelicon = self._Control:GetScoreLevelIcon(score, stageCfg.Difficulty)
         stageItemUi.BtnBoss:SetRawImageVisible(levelicon ~= nil)
         stageItemUi.BtnBoss:SetRawImage(levelicon)
     end
@@ -115,7 +117,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
     local rimgBossGroup = { stageItemUi.RImgBoss, stageItemUi.RImgBossNormal, stageItemUi.RImgBossSelect, stageItemUi
         .RImgBossDisable }
     for _, value in pairs(rimgBossGroup) do
-        value:SetRawImage(stageCfg.Img)
+        value:SetRawImage(stageCfg.Icon)
     end
 end
 
@@ -153,7 +155,7 @@ function XUiSoloReformKillChapterDetail:RefreshPanelReform(stageType)
     for index, grid in pairs(self.UIPanelReform) do
         grid:Close()
     end
-    
+
     for index, cfg in pairs(self._ReformUis[self.StageType]) do
         local gridUi = self.UIPanelReform[index]
         if not gridUi then

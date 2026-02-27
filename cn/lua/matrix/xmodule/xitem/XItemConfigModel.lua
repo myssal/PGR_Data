@@ -1,5 +1,5 @@
 local TableKey = {
-    ItemUsePackage = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal, Identifier = "Itemid" },
+    ItemUsePackage = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     ItemExchange = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
 
 }
@@ -11,9 +11,9 @@ function XItemConfigModel:_InitTableKey()
 end
 
 ---@return XTableItemUsePackage
-function XItemConfigModel:GetItemUsePackageConfig(id)
+function XItemConfigModel:GetItemUsePackageConfig(id,noTips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(
-        TableKey.ItemUsePackage, id)
+        TableKey.ItemUsePackage, id, noTips)
 end
 
 ---@return XTableItemExchange
