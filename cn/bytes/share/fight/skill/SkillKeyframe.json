@@ -124508,7 +124508,8 @@
             "2|Cast|10400104",
             "1|Move|150|0.05|||",
             "1|Cast|10400107",
-            "4|Effect|FxR3NietiyaTongyongTrail|WeaponCase1|||||||1.13|||"
+            "4|Effect|FxR3NietiyaTongyongTrail|WeaponCase1|||||||1.13|||",
+            "2|Cast|10400109"
         ],
         "Condition": [
             "nil",
@@ -124516,28 +124517,33 @@
             "nil",
             "nil",
             "nil",
-            "nil"
+            "nil",
+            1040000
         ]
     },
     {
         "Id": 104002,
         "Key": [
+            "0|Effect|FxR3NietiyaAtk02RootS|root||||||||||",
             "0|Cast|10400203",
             "11|Cast|10400206",
             "1|Move|80|0.05|0||",
             "10|Cast|10400208",
             "0|Effect|FxR3NietiyaAtk02Root|root||||||||||",
             "11|Effect|FxR3NietiyaTongyongTrail|WeaponCase1|||||||1.05|||",
-            "10|Cast|10400211"
+            "10|Cast|10400211",
+            "10|Cast|10400212"
         ],
         "Condition": [
+            1040000,
             "nil",
             "nil",
             "nil",
             "nil",
             "nil",
             "nil",
-            "nil"
+            "nil",
+            1040000
         ]
     },
     {
@@ -124546,12 +124552,14 @@
             "1|Cast|10400302|10400305|10400306",
             "2|Cast|10400308",
             "1|Move|-15|0.1|0||",
+            "2|Cast|10400310",
             "1|Effect|FxR3NietiyaTongyongTrail|WeaponCase1|||||||0.6|||"
         ],
         "Condition": [
             "nil",
             "nil",
             "nil",
+            1040000,
             "nil"
         ]
     },
@@ -124592,7 +124600,7 @@
         "Key": [
             "3|Cast|10400602",
             "10|Cast|10400603|10400605|10400606",
-            "86|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "86|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",
@@ -124605,7 +124613,7 @@
         "Key": [
             "3|Cast|10400702",
             "10|Cast|10400703|10400705|10400706",
-            "86|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "86|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",
@@ -124618,7 +124626,7 @@
         "Key": [
             "3|Cast|10400802",
             "10|Cast|10400803|10400805|10400806",
-            "86|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "86|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",
@@ -124629,7 +124637,7 @@
     {
         "Id": 104009,
         "Key": [
-            "3|Effect|FxR3NietiyaAtk21Root|||||||||||",
+            "3|Effect|FxR3NietiyaAtk12Root|||||||||||",
             "14|Magic|104051|1|",
             "8|Effect|FxR3NietiyaAtk12Daoguang|||||||||||",
             "17|Cast|10400905",
@@ -124652,7 +124660,7 @@
     {
         "Id": 104010,
         "Key": [
-            "3|Effect|FxR3NietiyaAtk21Root|||||||||||",
+            "3|Effect|FxR3NietiyaAtk12Root|||||||||||",
             "14|Magic|104051|1|",
             "8|Effect|FxR3NietiyaAtk12Daoguang|||||||||||",
             "17|Cast|10401005",
@@ -124675,7 +124683,7 @@
     {
         "Id": 104011,
         "Key": [
-            "3|Effect|FxR3NietiyaAtk21Root|||||||||||",
+            "3|Effect|FxR3NietiyaAtk12Root|||||||||||",
             "14|Magic|104051|1|",
             "8|Effect|FxR3NietiyaAtk12Daoguang|||||||||||",
             "17|Cast|10401105",
@@ -124717,8 +124725,8 @@
         "Key": [
             "0|Cast|10401301",
             "3|Cast|10401302",
-            "8|Cast|10401303",
-            "14|Cast|10401304",
+            "11|Cast|10401303",
+            "17|Cast|10401304",
             "21|Cast|10401305",
             "22|Cast|10401306",
             "24|Cast|10401307",
@@ -124736,8 +124744,8 @@
             "-1|AddSkillBuff|154004|154004|0",
             "46|RemoveSkillBuff|154004",
             "3|Cast|10401321",
-            "8|Cast|10401322",
-            "14|Cast|10401323",
+            "11|Cast|10401322",
+            "17|Cast|10401323",
             "21|Cast|10401324",
             "22|Cast|10401325",
             "24|Cast|10401326",
@@ -124746,6 +124754,8 @@
             "-1|AddSkillBuff|194033|194033|0",
             "0|Cast|10401330",
             "46|Magic|194034|0|0",
+            "1|Magic|104031|5|0",
+            "2|Magic|104031|5|0",
             "27|Cast|10401337",
             "30|Cast|10401338",
             "33|Cast|10401339",
@@ -124794,6 +124804,8 @@
             "nil",
             "nil",
             "nil",
+            "nil",
+            "nil",
             1740040,
             1740040,
             1740040,
@@ -124809,22 +124821,26 @@
             "0|Cast|10401401",
             "-1|AddSkillBuff|104080|104080|0",
             "-1|AddSkillBuff|194033|194033|0",
-            "-1|Turn|3600|0.05|0",
-            "1|Move|-250|0.05|0||",
+            "-1|Turn|3550|0.05|0",
+            "1|Move|-340|0.05|0||",
             "8|Effect|FxR3NietiyaAtk43|||||||||||",
             "-1|AddSkillBuff|194028|194028|0",
             "32|Cast|10401409",
             "30|Cast|10401410",
             "0|Effect|FxR3NietiyaAtk43Bip001LHand|Bip001LHand||||||||||",
             "0|Effect|FxR3NietiyaAtk43Shunyi|| |||||||||",
+            "30|Cast|10401413",
             "-1|AddSkillBuff|194047|194047|0",
             "48|Magic|194034|0|0",
             "0|Effect|FxR3NietiyaAtk4208|||||||||||",
             "32|Cast|10401417",
-            "34|Shake|2|0.5|-2|10|0.35|2",
-            "54|Magic|194048|0|0"
+            "33|Shake|2|0.4|-2|10|0.2|2",
+            "54|Magic|194048|0|0",
+            "0|Cast|10401420|10401421"
         ],
         "Condition": [
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -124907,11 +124923,17 @@
             "-1|Magic|154053|0|0",
             "80|Magic|154054|0|0",
             "0|Cast|10401818",
-            "62|Shake|2|0.6|-2|10|0.35|2",
-            "16|Shake|3|0.1|-2|10|0.1|2",
-            "63|Cast|10401824"
+            "79|Magic|154058|0|0",
+            "63|Shake|3|0.1|-2|15|0.1|2",
+            "63|Cast|10401824",
+            "70|Magic|104082|0|0",
+            "1|Magic|104031|5|0",
+            "2|Magic|104031|5|0"
         ],
         "Condition": [
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -125070,7 +125092,7 @@
             "-1|Magic|154053|0|0",
             "48|Magic|154054|0|0",
             "0|Cast|10402417",
-            "42|Shake|2|0.5|-2|10|0.4|2",
+            "50|Magic|154058|0|0",
             "1|Magic|104031|5|0",
             "2|Magic|104031|5|0"
         ],
@@ -125123,9 +125145,15 @@
             "2|Cast|10402604",
             "0|Magic|413719|0|0",
             "-1|AddSkillBuff|10402607|104086|0",
-            "11|RemoveSkillBuff|10402607"
+            "11|RemoveSkillBuff|10402607",
+            "2|Cast|10402610",
+            "3|Cast|10402611",
+            "4|Cast|10402612"
         ],
         "Condition": [
+            "nil",
+            "nil",
+            "nil",
             "nil",
             "nil",
             "nil",
@@ -125208,7 +125236,7 @@
             "0|Move|100|0.05|||",
             "6|Cast|10403309",
             "15|Cast|10403310",
-            "28|Cast|10403311",
+            "27|Cast|10403311",
             "4|Magic|104053|1|13",
             "13|Magic|104057|1|5",
             "0|Effect|FxR3NietiyaAtk35Wuya|||||||||||",
@@ -125295,7 +125323,7 @@
             "5|Move|100|0.05|||",
             "6|Magic|194007|0|",
             "5|Cast|10403906",
-            "73|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "73|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",
@@ -125316,7 +125344,7 @@
             "5|Move|100|0.05|||",
             "6|Magic|194007|0|",
             "5|Cast|10404006",
-            "73|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "73|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",
@@ -125337,7 +125365,7 @@
             "5|Move|100|0.05|||",
             "6|Magic|194007|0|",
             "5|Cast|10404106",
-            "73|Effect|FxR3NietiyaWaponCase1Hide|WaponCase1||||||||||"
+            "73|Effect|FxR3NietiyaWeaponCase1Hide|WeaponCase1||||||||||"
         ],
         "Condition": [
             "nil",

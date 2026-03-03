@@ -48,7 +48,7 @@ end
 function XUiTheatre4Recruit:Update()
     -- 4.3 外网出现，Theatre4RefreshRecruitRequest回调后，此界面的监听还在，但是control已经被移除，迷惑事件
     -- 情况暂且不明，先关闭界面防止卡死
-    if XTool.UObjIsNil(self._Control) then
+    if not self._Control then
         XLog.Error("XUiTheatre4Recruit:Update error, _Control is nil")
         self:Close()
         return
