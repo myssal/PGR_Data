@@ -2951,6 +2951,19 @@
         "IsShowExplain": false
     },
     {
+        "SkipId": 40159,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 160,
+        "Explain": "v4.3可肝商店新增打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
         "SkipId": 40160,
         "Origin": 2,
         "UiName": "UiAutoWindow",
@@ -2969,6 +2982,32 @@
         "UiName": "UiAutoWindow",
         "ParamId": 163,
         "Explain": "4.3版本预热打脸",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40162,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 164,
+        "Explain": "4.3版本涂装打脸图",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 40163,
+        "Origin": 2,
+        "UiName": "UiAutoWindow",
+        "ParamId": 162,
+        "Explain": "4.3涅缇娅好感领取打脸图",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 0,
@@ -9247,7 +9286,7 @@
         "Origin": 7,
         "UiName": "SkipToMainLine2",
         "ParamId": 0,
-        "Explain": "New Main Story Chapter 39",
+        "Explain": "新主线第三十九章",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 10308,
@@ -9256,6 +9295,22 @@
         "IsShowExplain": false,
         "CustomParams": [
             1039
+        ]
+    },
+    {
+        "SkipId": 532,
+        "Origin": 7,
+        "UiName": "SkipToMainLine2",
+        "ParamId": 0,
+        "Explain": "新主线第四十章",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10308,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1040
         ]
     },
     {
@@ -25230,6 +25285,22 @@
         ]
     },
     {
+        "SkipId": 19078,
+        "Origin": 7,
+        "UiName": "SkipToCharacterV2P6",
+        "ParamId": 0,
+        "Explain": "Go to Members",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 101,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1391003
+        ]
+    },
+    {
         "SkipId": 20000,
         "Origin": 1,
         "UiName": "UiNewFuben",
@@ -28951,7 +29022,7 @@
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            45
+            46
         ]
     },
     {
@@ -30388,7 +30459,7 @@
         "Origin": 6,
         "UiName": "UiWelfare",
         "ParamId": 0,
-        "Explain": "Complete \"Dicey Mystery\" event missions",
+        "Explain": "完成“诡魇轮骰”活动任务",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 1,
@@ -30419,17 +30490,56 @@
     {
         "SkipId": 20324,
         "Origin": 6,
-        "UiName": "UiFavorabilityStory",
+        "UiName": "UiNewDrawMain",
         "ParamId": 0,
-        "Explain": "Go to Teddy Affection Story",
+        "Explain": "【v4.3涅缇娅】前往主题卡池",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            11
+        ]
+    },
+    {
+        "SkipId": 20325,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "【v4.3涅缇娅】前往涂装补给包",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 3,
+        "TimeId": 0,
+        "StartTime": "2025/12/23 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 20326,
+        "Origin": 6,
+        "UiName": "UiFubenPracticeStageListRoot",
+        "ParamId": 0,
+        "Explain": "【v4.3涅缇娅】赛利卡补习班跳转（33期之后，新增跳转id）",
         "IsRecord": true,
         "ConditionId": 0,
-        "FunctionalId": 0,
+        "FunctionalId": 10325,
         "TimeId": 0,
         "IsHideFunc": true,
         "IsShowExplain": false,
         "CustomParams": [
-            1141004
+            46
         ]
     },
     {
@@ -30469,6 +30579,71 @@
             2,
             0,
             4
+        ]
+    },
+    {
+        "SkipId": 20329,
+        "Origin": 7,
+        "UiName": "SkipToCharacterStory",
+        "ParamId": 0,
+        "Explain": "【v4.3涅缇娅】限时通关好感剧情领取角色跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1391003
+        ]
+    },
+    {
+        "SkipId": 20330,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往罗塞塔好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1141004
+        ]
+    },
+    {
+        "SkipId": 20331,
+        "Origin": 6,
+        "UiName": "UiFavorabilityStory",
+        "ParamId": 0,
+        "Explain": "前往涅缇娅好感度剧情",
+        "IsRecord": true,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1391003
+        ]
+    },
+    {
+        "SkipId": 20332,
+        "Origin": 6,
+        "UiName": "UiWelfare",
+        "ParamId": 0,
+        "Explain": "Placeholder_完成“诡魇轮骰”活动任务",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            106
         ]
     },
     {
@@ -40654,7 +40829,7 @@
     {
         "SkipId": 80247,
         "Origin": 7,
-        "UiName": "OnOpenPassportComb",
+        "UiName": "OnOpenPassport",
         "ParamId": 0,
         "Explain": "Tactical Assessment Manual",
         "IsRecord": false,
@@ -40804,7 +40979,7 @@
     {
         "SkipId": 80255,
         "Origin": 7,
-        "UiName": "OnOpenPassportComb",
+        "UiName": "OnOpenPassport",
         "ParamId": 0,
         "Explain": "Tactical Assessment Manual",
         "IsRecord": false,
@@ -40999,7 +41174,7 @@
     {
         "SkipId": 80265,
         "Origin": 7,
-        "UiName": "OnOpenPassportComb",
+        "UiName": "OnOpenPassport",
         "ParamId": 0,
         "Explain": "Tactical Assessment Manual",
         "IsRecord": false,
@@ -41311,7 +41486,7 @@
         "Origin": 7,
         "UiName": "OnOpenGacha",
         "ParamId": 0,
-        "Explain": "Go to event [Night Sonata]",
+        "Explain": "前往活动【旖夜咏奏】",
         "IsRecord": false,
         "ConditionId": 0,
         "FunctionalId": 403,
@@ -41396,6 +41571,140 @@
             1,
             0,
             502
+        ]
+    },
+    {
+        "SkipId": 80287,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80288,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80289,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80290,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 5:00",
+        "CloseTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
+        ]
+    },
+    {
+        "SkipId": 80291,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 3,
+        "Explain": "Coating Shop",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 1001,
+        "TimeId": 0,
+        "StartTime": "2026/4/20 5:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            502
+        ]
+    },
+    {
+        "SkipId": 80292,
+        "Origin": 7,
+        "UiName": "OnOpenPassport",
+        "ParamId": 0,
+        "Explain": "Tactical Assessment Manual",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10342,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 5:00",
+        "CloseTime": "2026/4/19 22:59",
+        "IsHideFunc": true,
+        "IsShowExplain": false
+    },
+    {
+        "SkipId": 80293,
+        "Origin": 6,
+        "UiName": "UiPurchase",
+        "ParamId": 0,
+        "Explain": "Purchase Coating Supply Pack",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 5,
+        "TimeId": 0,
+        "StartTime": "2026/3/17 0:00",
+        "CloseTime": "2026/4/19 23:00",
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            2,
+            0,
+            4
         ]
     },
     {
@@ -43900,10 +44209,10 @@
     {
         "SkipId": 90014,
         "Origin": 7,
-        "UiName": "SkipToLuckyTenant",
+        "UiName": "SkipToLuckyTenant2",
         "ParamId": 0,
         "Explain": "Lucky Tenant",
-        "IsRecord": false,
+        "IsRecord": true,
         "ConditionId": 0,
         "FunctionalId": 10481,
         "TimeId": 0,
@@ -44388,7 +44697,7 @@
         "ParamId": 0,
         "Explain": "前往联机共斗",
         "IsRecord": true,
-        "ConditionId": 1050153,
+        "ConditionId": 0,
         "FunctionalId": 10493,
         "TimeId": 0,
         "IsHideFunc": true,
@@ -44586,6 +44895,24 @@
         "TimeId": 44901,
         "IsHideFunc": true,
         "IsShowExplain": false
+    },
+    {
+        "SkipId": 90061,
+        "Origin": 6,
+        "UiName": "UiShop",
+        "ParamId": 0,
+        "Explain": "Skip to Grind Shop",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            0,
+            1460
+        ]
     },
     {
         "SkipId": 1300001,
@@ -47952,70 +48279,6 @@
         ]
     },
     {
-        "SkipId": 1300626,
-        "Origin": 2,
-        "UiName": "UiAccumulateExpendShopMain",
-        "ParamId": 0,
-        "Explain": "累销商店",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 0,
-        "TimeId": 0,
-        "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            1
-        ]
-    },
-    {
-        "SkipId": 1300627,
-        "Origin": 7,
-        "UiName": "OpenUiPaintingExperiencePass",
-        "ParamId": 0,
-        "Explain": "Coating Trial",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 0,
-        "TimeId": 0,
-        "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            58
-        ]
-    },
-    {
-        "SkipId": 1300629,
-        "Origin": 7,
-        "UiName": "OpenUiPaintingExperiencePass",
-        "ParamId": 0,
-        "Explain": "Coating Trial",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 0,
-        "TimeId": 0,
-        "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            117
-        ]
-    },
-    {
-        "SkipId": 1300630,
-        "Origin": 7,
-        "UiName": "OpenUiPaintingExperiencePass",
-        "ParamId": 0,
-        "Explain": "Coating Trial",
-        "IsRecord": false,
-        "ConditionId": 0,
-        "FunctionalId": 0,
-        "TimeId": 0,
-        "IsHideFunc": false,
-        "IsShowExplain": false,
-        "CustomParams": [
-            118
-        ]
-    },
-    {
         "SkipId": 1300700,
         "Origin": 6,
         "UiName": "UiActivityBriefBase",
@@ -48064,6 +48327,195 @@
         "IsShowExplain": false,
         "CustomParams": [
             40
+        ]
+    },
+    {
+        "SkipId": 1300703,
+        "Origin": 6,
+        "UiName": "UiActivityBriefBase",
+        "ParamId": 0,
+        "Explain": "KR4.3活动主题面板deeplink",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 10303,
+        "TimeId": 2160708,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            0,
+            0,
+            0
+        ]
+    },
+    {
+        "SkipId": 1300704,
+        "Origin": 6,
+        "UiName": "UiNewDrawMain",
+        "ParamId": 0,
+        "Explain": "KR4.3涅缇娅角色卡池deeplink",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 401,
+        "TimeId": 2160709,
+        "IsHideFunc": true,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            11
+        ]
+    },
+    {
+        "SkipId": 1300626,
+        "Origin": 2,
+        "UiName": "UiAccumulateExpendShopMain",
+        "ParamId": 0,
+        "Explain": "累销商店",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1
+        ]
+    },
+    {
+        "SkipId": 1300627,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "ParamId": 0,
+        "Explain": "Coating Trial",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            58
+        ]
+    },
+    {
+        "SkipId": 1300628,
+        "Origin": 7,
+        "UiName": "OpenUiSoloReformChapterDetail",
+        "ParamId": 0,
+        "Explain": "MiniRpg章节跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1,
+            30163345
+        ]
+    },
+    {
+        "SkipId": 1300629,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "ParamId": 0,
+        "Explain": "Coating Trial",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            117
+        ]
+    },
+    {
+        "SkipId": 1300630,
+        "Origin": 7,
+        "UiName": "OpenUiPaintingExperiencePass",
+        "ParamId": 0,
+        "Explain": "Coating Trial",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            118
+        ]
+    },
+    {
+        "SkipId": 1300631,
+        "Origin": 7,
+        "UiName": "OpenUiSoloReformChapterDetail",
+        "ParamId": 0,
+        "Explain": "MiniRpg章节跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1,
+            30163346
+        ]
+    },
+    {
+        "SkipId": 1300632,
+        "Origin": 7,
+        "UiName": "OpenUiSoloReformChapterDetail",
+        "ParamId": 0,
+        "Explain": "MiniRpg章节跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1,
+            30163347
+        ]
+    },
+    {
+        "SkipId": 1300633,
+        "Origin": 7,
+        "UiName": "OpenUiSoloReformChapterDetail",
+        "ParamId": 0,
+        "Explain": "MiniRpg章节跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1,
+            30163348
+        ]
+    },
+    {
+        "SkipId": 1300634,
+        "Origin": 7,
+        "UiName": "OpenUiSoloReformChapterDetail",
+        "ParamId": 0,
+        "Explain": "MiniRpg章节跳转",
+        "IsRecord": false,
+        "ConditionId": 0,
+        "FunctionalId": 0,
+        "TimeId": 0,
+        "IsHideFunc": false,
+        "IsShowExplain": false,
+        "CustomParams": [
+            1,
+            1,
+            30163349
         ]
     }
 ]

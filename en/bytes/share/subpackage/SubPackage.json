@@ -5,9 +5,14 @@
         "Index": 1,
         "Type": 1,
         "Desc": "Contains the necessary resources required for [Infection] and subsequent main story stages.",
+        "AllowDelete": false,
         "DownloadTaskId": 0,
         "ResIds": [
-            201
+            201,
+            3007,
+            3009,
+            3011,
+            3013
         ]
     },
     {
@@ -16,9 +21,15 @@
         "Index": 2,
         "Type": 1,
         "Desc": "Contains the necessary resources required for [Whirlpool] and subsequent main story stages.",
+        "AllowDelete": false,
         "DownloadTaskId": 0,
         "ResIds": [
-            202
+            202,
+            3015,
+            3016,
+            3017,
+            3018,
+            3023
         ],
         "PreIds": [
             201
@@ -30,9 +41,14 @@
         "Index": 3,
         "Type": 1,
         "Desc": "Contains the necessary resources required for [Catastrophe] and subsequent main story stages.",
+        "AllowDelete": false,
         "DownloadTaskId": 0,
         "ResIds": [
-            203
+            203,
+            3031,
+            3033,
+            3034,
+            3035
         ],
         "PreIds": [
             201,
@@ -45,9 +61,13 @@
         "Index": 4,
         "Type": 1,
         "Desc": "Contains the necessary resources required for [Destiny] and subsequent main story stages.",
+        "AllowDelete": false,
         "DownloadTaskId": 0,
         "ResIds": [
-            204
+            204,
+            3036,
+            3038,
+            3039
         ],
         "PreIds": [
             201,
@@ -61,6 +81,7 @@
         "Index": 1,
         "Type": 2,
         "Desc": "Necessary resources for experiencing Babylonia",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             301,
@@ -74,6 +95,7 @@
         "Index": 1,
         "Type": 2,
         "Desc": "Can use Cantonese voiceover once it's downloaded.",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             901
@@ -85,6 +107,7 @@
         "Index": 2,
         "Type": 2,
         "Desc": "Can use Japanese voiceover once it's downloaded.",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             902
@@ -96,6 +119,7 @@
         "Index": 3,
         "Type": 2,
         "Desc": "Can use English voiceover once it's downloaded.",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             903
@@ -107,6 +131,7 @@
         "Index": 4,
         "Type": 2,
         "Desc": "Download to play all story videos.",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             1002,
@@ -161,7 +186,9 @@
             1051,
             1052,
             1053,
-            1054
+            1054,
+            1055,
+            1056
         ]
     },
     {
@@ -170,6 +197,7 @@
         "Index": 5,
         "Type": 2,
         "Desc": "Download to play all game mode videos.",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             2000,
@@ -180,7 +208,9 @@
             2005,
             2006,
             2007,
-            2008
+            2008,
+            2009,
+            2010
         ]
     },
     {
@@ -189,6 +219,7 @@
         "Index": 6,
         "Type": 2,
         "Desc": "Necessary resources for using Music Player in Main Interface and Music Box in Guild",
+        "AllowDelete": true,
         "DownloadTaskId": 0,
         "ResIds": [
             3000,
@@ -202,9 +233,33 @@
         "Index": 5,
         "Type": 1,
         "Desc": "Contains the necessary resources required for new main story stages and events.",
+        "AllowDelete": false,
         "DownloadTaskId": 0,
         "ResIds": [
-            9999
+            9999,
+            3041,
+            3042,
+            3043,
+            3044,
+            3045,
+            3047,
+            3049,
+            3050,
+            3051,
+            3052,
+            3053,
+            3054,
+            3055,
+            3056,
+            3057,
+            3058,
+            3060,
+            3062,
+            3065,
+            3066,
+            3067,
+            3068,
+            3069
         ],
         "PreIds": [
             201,

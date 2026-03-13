@@ -3980,7 +3980,7 @@
     },
     {
         "Key": "InTeamCantLookFashion",
-        "Text": "Cannot view Coating details in Co-op room"
+        "Text": "联机房间中不能查看涂装详情"
     },
     {
         "Key": "DormNullFurniture",
@@ -5032,11 +5032,11 @@
     },
     {
         "Key": "PlayBeforeStory",
-        "Text": "Play Pre-combat Story"
+        "Text": "Play pre-combat Cutscene"
     },
     {
         "Key": "PlayAfterStory",
-        "Text": "Play Post-combat Story"
+        "Text": "Play post-combat Cutscene"
     },
     {
         "Key": "MovieSkipTipTitle",
@@ -9656,7 +9656,7 @@
     },
     {
         "Key": "SpecialFashionShopGiftTitle",
-        "Text": "   Gift Display"
+        "Text": "Display Items"
     },
     {
         "Key": "WhiteValenDateInvite",
@@ -9844,7 +9844,7 @@
     },
     {
         "Key": "StrongholdTeamRestartConfirmContentOther",
-        "Text": "Ongoing Challenge Progress found in {0}, challenging this stage will cause the retreat of that team, all cleared stages will need to be challenged again. Confirm retreat?"
+        "Text": "当前已在{0}拥有挑战进度，挑战本关将撤回相关梯队，已压制关卡需要重新挑战，是否确认撤退？"
     },
     {
         "Key": "StrongholdElectricTeamMaxNum",
@@ -10972,11 +10972,11 @@
     },
     {
         "Key": "InvertCardGameConstomCountBlue",
-        "Text": "<color=#744EF1>{0}</color> 可以翻开卡牌"
+        "Text": "*<color=#744EF1>{0}</color> to flip"
     },
     {
         "Key": "InvertCardGameConstomCountRed",
-        "Text": "<color=#744EF1>{0}</color> 可以翻开卡牌"
+        "Text": "*<color=#744EF1>{0}</color> to flip"
     },
     {
         "Key": "InvertCardGameHaveNotEnoughItem",
@@ -12516,7 +12516,7 @@
     },
     {
         "Key": "DiceGameCostFlagHint",
-        "Text": "<color=#8DD4FF>{0}</color> Marks have been converted into <color=#8DD4FF>{1}</color> points."
+        "Text": "<color=#8DD4FF>{0}</color> Markers have been converted into <color=#8DD4FF>{1}</color> points."
     },
     {
         "Key": "DiceGameOperationTitleVerb",
@@ -12524,15 +12524,15 @@
     },
     {
         "Key": "DiceGameOperationTitleA",
-        "Text": "<color=#9EDCFF>×{0}</color> points"
+        "Text": "Points equal to: Total number of dice with 1, 2 and 3 <color=#9EDCFF>×{0}</color>"
     },
     {
         "Key": "DiceGameOperationTitleB",
-        "Text": "<color=#9EDCFF>×{0}</color> + selections points"
+        "Text": "Points equal to: Total number of dice with 4 and 5 <color=#9EDCFF>×{0}</color> + <color=#9EDCFF>the number of times</color> this option is selected"
     },
     {
         "Key": "DiceGameOperationTitleC",
-        "Text": "<color=#9EDCFF>×{0}</color> marks"
+        "Text": "Markers equal to: Total number of dice with 6 <color=#9EDCFF>×{0}</color>"
     },
     {
         "Key": "DiceGameOperationResultAB",
@@ -12540,11 +12540,11 @@
     },
     {
         "Key": "DiceGameOperationResultC",
-        "Text": "Marks Earned"
+        "Text": "Markers Earned"
     },
     {
         "Key": "DiceGameOperationDescA",
-        "Text": "The more you have, the more points you earn."
+        "Text": "Get more points when there are more dice with 1, 2 and 3."
     },
     {
         "Key": "DiceGameOperationDescB",
@@ -12552,7 +12552,7 @@
     },
     {
         "Key": "DiceGameOperationDescC",
-        "Text": "Get <color=#8DD4FF>{1}</color> points for every <color=#8DD4FF>{0}</color> Marks."
+        "Text": "Get <color=#8DD4FF>{1}</color> points for every <color=#8DD4FF>{0}</color> Markers."
     },
     {
         "Key": "DiceGameOperationCountB",
@@ -12560,7 +12560,7 @@
     },
     {
         "Key": "DiceGameOperationCountC",
-        "Text": "Current Marks:"
+        "Text": "Current Markers:"
     },
     {
         "Key": "TheatreTxtOngoing",
@@ -14976,7 +14976,7 @@
     },
     {
         "Key": "EquipGuideEquipNotExist",
-        "Text": "No equipable items available."
+        "Text": "No equipment can be equipped for now."
     },
     {
         "Key": "EquipGuideEquipCanEquips",
@@ -17464,7 +17464,7 @@
     },
     {
         "Key": "ConnectingLineMoney",
-        "Text": "Insufficient [Black Gold Bear Cards]. Unable to unlock the stage."
+        "Text": "【黑金熊卡】不足，无法开启关卡"
     },
     {
         "Key": "ConnectingLineStage",
@@ -19395,6 +19395,30 @@
         "Text": "..."
     },
     {
+        "Key": "LuckyTenant2TotalTimes",
+        "Text": "第{0}回"
+    },
+    {
+        "Key": "LuckyTenant2Round",
+        "Text": "Round {0}"
+    },
+    {
+        "Key": "LuckyTenant2TimesRemain",
+        "Text": "剩余{0}回"
+    },
+    {
+        "Key": "LuckyTenant2BondLevelDown",
+        "Text": "<color=#43454a>{0}羁绊等级下降</color>"
+    },
+    {
+        "Key": "LuckyTenant2BondLevelUp",
+        "Text": "<color=#f09235>{0}</color><color=#356395>羁绊等级提升</color>"
+    },
+    {
+        "Key": "LuckyTenant2PopupSuccessRound",
+        "Text": " 轮数: <color=#5089c6>{0}</color>/{1}"
+    },
+    {
         "Key": "FavorabilityStoryUnlockProgressLabel",
         "Text": "Unlock Story"
     },
@@ -19436,7 +19460,7 @@
     },
     {
         "Key": "MultiMouseHunterUnVote",
-        "Text": "Support All"
+        "Text": "一键支持"
     },
     {
         "Key": "MultiMouseHunterVote",
@@ -19444,7 +19468,7 @@
     },
     {
         "Key": "MultiMouseHunterVoted",
-        "Text": "{0} supported"
+        "Text": "已支持{0}"
     },
     {
         "Key": "MultiMouseHunterSubUnVote",
@@ -19456,7 +19480,7 @@
     },
     {
         "Key": "MultiMouseHunterSubVoted",
-        "Text": "Support!"
+        "Text": "Support:!"
     },
     {
         "Key": "MultiMouseHunterChoice",
@@ -19468,7 +19492,7 @@
     },
     {
         "Key": "MultiMouseHunterVoteVictory",
-        "Text": "Congrats on {0}'s victory"
+        "Text": "恭喜“{0}”获胜"
     },
     {
         "Key": "MultiMouseHunterVoteVictoryGet",
@@ -19548,7 +19572,7 @@
     },
     {
         "Key": "InRoomSkipTip",
-        "Text": "Cannot navigate while in co-op room"
+        "Text": "联机房间中无法跳转"
     },
     {
         "Key": "VersionGiftLeftTime",
@@ -23515,10 +23539,6 @@
         "Text": "Switch to this Coating immediately?"
     },
     {
-        "Key": "FashionSuitDiscountActivityTip",
-        "Text": "Discount expires in: {0}"
-    },
-    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "Some equipment in the current team is unavailable. Adjust your setup before deploying."
     },
@@ -23600,19 +23620,55 @@
     },
     {
         "Key": "FashionActivitySecondTag",
-        "Text": "Special Offer"
+        "Text": "特惠"
     },
     {
         "Key": "FashionActivityRemainDays",
-        "Text": "Returns to original price in {0} day(s)."
+        "Text": "{0}天后恢复原价"
     },
     {
         "Key": "FashionActivityRemainNotEnoughDay",
-        "Text": "Returns to original price in under 1 day."
+        "Text": "不足1天恢复原价"
+    },
+    {
+        "Key": "FashionGroupSalesDesc",
+        "Text": "套装包含角色涂装、武器涂装和赠品头像"
+    },
+    {
+        "Key": "FashionDetailGroupSalesTitle1",
+        "Text": "Coating Set"
+    },
+    {
+        "Key": "FashionDetailGroupSalesTitle2",
+        "Text": "套装简介"
+    },
+    {
+        "Key": "FashionGroupSalesPopupTitle",
+        "Text": "是否确认花费<color=#0D70BC>{0}</color>{1}购买<color=#0D70BC>{2}</color>"
+    },
+    {
+        "Key": "FashionAddToRandomTip",
+        "Text": "已加入随机涂装"
+    },
+    {
+        "Key": "FashionSuitGroupSalesDesc",
+        "Text": "套装包含武器涂装、武器涂装和赠品头像。其中武器涂装不计入系列收集进度。"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem1",
+        "Text": "Character Coating"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem2",
+        "Text": "Weapon Coating"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem3",
+        "Text": "全套涂装"
     },
     {
         "Key": "SwitchableScenePcTip",
-        "Text": "Hold Alt and move the mouse to interact."
+        "Text": "按住Alt键移动鼠标，可与场景交互"
     },
     {
         "Key": "DrawCanLiverWeekTaskFinish",
@@ -23628,18 +23684,38 @@
     },
     {
         "Key": "DlcMultiPlayerSkillTips1",
-        "Text": "Skill slots not full. Please continue equipping."
+        "Text": "技能未装配满，请继续装配"
     },
     {
         "Key": "DlcMultiPlayerSkillTips2",
-        "Text": "The slots are full. Please remove a skill first."
+        "Text": "技能已满，请先卸下其他技能"
+    },
+    {
+        "Key": "SubPackageDeleteConfirm",
+        "Text": "确认要删除分包{0}吗？"
     },
     {
         "Key": "DlcRelinkMateForceExit",
-        "Text": "Co-op connection interrupted due to network error. Please check your network connection."
+        "Text": "联机出现网络异常导致中断，请检查联网环境。"
+    },
+    {
+        "Key": "UiShopBtnActivityTagName",
+        "Text": "上新"
     },
     {
         "Key": "DiscountActivityTip",
         "Text": "<color=#626c78>Discount expires in:</color> {0}"
+    },
+    {
+        "Key": "UiNewDrawMainShopBubbleText",
+        "Text": "可直接兑换"
+    },
+    {
+        "Key": "UiBuyAssetHasCount",
+        "Text": "现有:{0}"
+    },
+    {
+        "Key": "UsePackageOverMaxCount",
+        "Text": "使用{0}已到达上限"
     }
 ]

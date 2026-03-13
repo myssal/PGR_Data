@@ -198,17 +198,17 @@
     },
     {
         "Id": 400,
-        "Name": "Withering Crown",
+        "Name": "Sightline Breach",
         "GroupId": 233,
         "SortId": 1,
         "TimeId": 44555,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseMainLinev402.png",
-        "ActivityTitle": "Withering Crown",
-        "ActivityDes": "Event Info: Play through the new story [Withering Crown] and complete missions.",
+        "ActivityTitle": "Sightline Breach",
+        "ActivityDes": "活动说明：体验全新故事【冬冕的凋亡】，完成系列任务",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             0,
             627
@@ -219,15 +219,15 @@
         "Name": "Simulated Battlefield",
         "GroupId": 233,
         "SortId": 2,
-        "TimeId": 2160605,
+        "TimeId": 44555,
         "ActivityType": 12,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRepeatChallengeV213.png",
         "ActivityTitle": "Simulated Battlefield",
-        "ActivityDes": "Requirements:\\nComplete Normal Story 2-2 to unlock.\\nMission Info:\\n1. Earn Simulation Scores upon clearing a stage.\\n2. Spend Simulation Scores to purchase items at the Simulation Shop.\\n3. The limited-time shop exchange ends on March 16, 2026, at 23:00 (UTC).\\n4. During the event period, clear Simulated Battlefield stages and consume a certain amount of serum to claim rewards.",
+        "ActivityDes": "「参与条件」：\\n通关普通剧情2-2副本后开启\\n「副本说明」：\\n1、通关关卡可获得拟战绩分\\n2、消耗拟战绩分可在拟战商店购买物品\\n3、版本限定商店兑换结束：2026-03-17 05:00\\n4、版本时间内通关拟战场域关卡，累计消耗一定血清可领取奖励。",
         "ActivityPrefabPath": "Assets/Product/Ui/ComponentPrefab/ActivityBase/PanelRepeatActivity.prefab",
         "ConditionId": 770403,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20017,
             620
@@ -243,26 +243,26 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseskygardenv400.png",
         "ActivityTitle": "Signal Calibration",
-        "ActivityDes": "Requirements: Commandant Lv.40.\\n\\nEvent Info:\\n1. Calibrate the signal to receive mysterious messages.\\n2. Claim the corresponding rewards after receiving the messages.",
+        "ActivityDes": "「参与条件」：\\n40级及以上的指挥官\\n「活动说明」：\\n1.调频接收信号可查看神秘通讯信息。\\n2.完成讯息接收后可领取对应奖励。",
         "ConditionId": 30406,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             90058
         ]
     },
     {
         "Id": 403,
-        "Name": "Hyperlink Array",
+        "Name": "超链协阵",
         "GroupId": 233,
         "SortId": 4,
         "TimeId": 44910,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRelinkv402.png",
-        "ActivityTitle": "Hyperlink Array",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. During the event, participate in online matchmaking or team up with friends to take on exclusive event bosses.\\n2. A team consists of 1-3 commandants. Strategically selecting characters and balancing class compositions will make challenges easier to complete.\\n3. This event features two bosses: [Radiant Dragon] and [Nocturne Stalker]. Each boss has multiple difficulty levels. Complete lower difficulties first to unlock higher ones.\\n4. Defeat bosses or sign in daily to obtain equipment. Enhance equipment to boost its power and make your characters stronger.\\n5. If the total equipment level of your deployed characters is below the stage requirement, you cannot join matchmaking or create rooms, but you may still invite friends to form a team and attempt the challenge.\\n6. Clear a difficulty for the first time or complete event missions to earn [Simulation Quantum], which can be used to redeem rewards in the [Quantum Exchange] shop.",
+        "ActivityTitle": "超链协阵",
+        "ActivityDes": "「参与条件」：\\n40级及以上的指挥官\\n「活动说明」：\\n1、活动开放期间，可参与联机匹配或邀请好友组队挑战玩法专属BOSS。\\n2、小队规模为1-3人，合理选择角色和搭配职业可使挑战更为轻松。\\n3、本期可挑战BOSS为【光煌龙】和【黯夜隐随者】，每个BOSS分为多个难度，完成前置难度后可挑战更高难度。\\n4、完成BOSS挑战或每日签到可获得装备，对装备进行强化养成可提升装备强度，角色穿戴装备后会增强角色能力。\\n5、出战角色装备总等级低于关卡要求时，无法匹配或开放房间，但可以邀请好友组队进行挑战。\\n6、首通完成难度或完成任务可获得活动货币【拟算量子】，在商店【量子变换所】内可兑换奖励。",
         "ConditionId": 30406,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             90047
         ]
@@ -277,7 +277,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDuomaomaov402.png",
         "ActivityTitle": "Crouching Cat, Hidden Rat",
-        "ActivityDes": "Requirements: Commandant Lv.40.\\n\\nEvent Info:\\n1. Invite friends to form a team of 1-3 commandants (solo matchmaking is allowed).\\n2. Upon successful matchmaking, you'll be directly placed into a match with up to 9 commandants, randomly assigned to either the Cats or Rats faction.\\n3. Cats can use charged attacks to capture all Rats to win.\\n4. Rats can disguise themselves within the environment to avoid capture and win by surviving until the match ends.\\n5. Cheese will spawn at designated locations in the environment. Both Cats and Rats can collect cheese to activate powerful skills and gain match advantages.\\n6. Participate in topic competition and daily matches to earn Prestige EXP. Increase Prestige Level and earn rewards in the event!",
+        "ActivityDes": "「参与条件」：\\n40级及以上的指挥官\\n「活动说明」：\\n1、活动可邀请好友一同组队游玩，小队可容纳1-3人（允许单人匹配）\\n2、匹配成功直接进入对局，对局中最多有9名玩家，将随机分配至猫阵营或鼠阵营\\n3、猫阵营玩家可使用蓄力攻击，抓捕所有鼠阵营玩家则获胜\\n4、鼠阵营玩家可使用变身伪装于场景中，躲避抓捕直至对局结束则获胜\\n5、场景中会在指定地点刷新奶酪，猫、鼠阵营均可收集奶酪触发强力技能，取得对局优势\\n6、参与话题比拼、每日对局可获得声望经验，可在玩法内提升声望等级并获得游戏奖励",
         "ConditionId": 774800,
         "Params": [
             89057
@@ -293,7 +293,7 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseRogev402.png",
         "ActivityTitle": "Desperado Clash",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. A new limited-time season of [Desperado Clash] mode is now available.\\n2. This season introduces a new Commission system. Complete commissions, rank up, and earn Mammon's Blessings to boost your battle power and resource earnings.\\n3. A limited-time shop is open during the event. Play any mode in [The Godfall Revelation] to earn Cardinal Crystals, which can be exchanged for rewards. The event ends on April 20, 2026, at 05:00 (UTC).\\n4. Use [R&D Tickets] obtained from the event shop to increase your rank in Desperado Clash and earn exclusive [Nameplates]!",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n「活动说明」：\\n1、【亡命死竞】模式全新赛季限时开启。\\n2、在本赛季中，【亡命死竞】新增委托系统，完成委托、进行升阶并获取玛门的嘉赏，可帮助指挥官提升战斗实力与经济收益。\\n3、活动期间同步开启限时商店，参与【神寂启示录】任意模式均可获得活动商店代币-枢机魂晶；限时活动将于2026-04-20 05:00结束。\\n4、限时商店可获得[研发券]，提升【亡命死竞】模式的段位可获得【铭牌】。",
         "ConditionId": 770401,
         "ShowEndTime": "2026-04-20 05:00",
         "Params": [
@@ -302,15 +302,15 @@
     },
     {
         "Id": 406,
-        "Name": "A Flash of Love",
+        "Name": "瞬时恋语",
         "GroupId": 233,
         "SortId": 7,
         "TimeId": 44601,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQingrenjiev402.png",
-        "ActivityTitle": "A Flash of Love",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. The event consists of 8 stages, each offering special cards for you to use.\\n2. Read your opponent's expressions or use your teammates' support to earn more points and win the game.\\n3. Complete stages to obtain character-exclusive story unlock items and use them to unlock new character stories.",
+        "ActivityTitle": "瞬时恋语",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n「活动说明」：\\n1、活动共有八个关卡，每个关卡会有不同的特殊牌提供使用。\\n2、通过判断对手表情或使用队友助力，获取更多积分赢下对局。\\n3、完成关卡获取角色专属剧情解锁道具，可用于解锁角色新增专属剧情。",
         "ConditionId": 774800,
         "Params": [
             90018
@@ -318,15 +318,15 @@
     },
     {
         "Id": 407,
-        "Name": "Frostheart Amalgamated",
+        "Name": "冰心统合",
         "GroupId": 233,
         "SortId": 8,
         "TimeId": 44701,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseDifficultv402.png",
-        "ActivityTitle": "Frostheart Amalgamated",
-        "ActivityDes": "Requirements:\\nCommandant Lv.40\\nEvent Info:\\n1. There are a total of 6 difficulty levels, all of which are highly challenging with [Zack the Frostheart Emperor] being the formidable enemy.\\n2. All members will be reset once knocked out during the challenge, making the challenge easier to complete.\\n3. Each stage has its own 3-star clearance conditions. Collectibles will be rewarded once a total of 3 stars is earned. The more stars, the higher the quality of the collectibles will be.",
+        "ActivityTitle": "冰心统合",
+        "ActivityDes": "「参与条件」：\\n指挥官等级达到40\\n「活动说明」：\\n1、挑战关卡共分为6个难度，均为高难度挑战，将与【冰心皇·扎克】进行对战。\\n2、在挑战过程中，指挥官的角色在死亡时会重启，帮助指挥官完成挑战。\\n3、各关卡有3星条件，所有关卡中累计获得3星即可获得收藏品奖励。继续挑战获得更高星级可提升收藏品的品质。",
         "ConditionId": 1050141,
         "Params": [
             11724
@@ -342,9 +342,9 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterv402.png",
         "ActivityTitle": "Omniframe Target",
-        "ActivityDes": "New Character:\\n※S-Rank Dark Breaker [Rosetta: Arete]\\nNew Weapon:\\n※6★ [Mirage Halberd: Amalga] (Radiant Halberd)\\n\\nInfo:\\n1. Construct Research:\\n※[Rosetta: Arete] will be available in the [Themed Construct] Research Pool. You have a 100% chance to get [Rosetta: Arete] when getting an S-Rank Construct.\\n2. Weapon Research:\\n※[Mirage Halberd: Amalga] will be available in the [Weapon Research] Research Pool with the same rules and rates as other weapons.",
+        "ActivityDes": "「全新角色」：\\n※S级暗系破甲型【罗塞塔·极锋】\\n「新武器」：\\n※6星【幻象戟·统合】（辉光战戟）\\n\\n「说明」：\\n1.角色研发：\\n※【罗塞塔·极锋】将进入【主题研发】研发池，占S级出率100%\\n2.武器研发：\\n※【幻象戟·统合】将进入【武器研发】研发池，规则和出率与其他武器相同",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             7209
         ]
@@ -359,60 +359,60 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerv402.png",
         "ActivityTitle": "CUB Target",
-        "ActivityDes": "New CUB:\\n※S-Rank CUB: [Buzzling]\\n※Recommended for the character [Rosetta: Arete]\\n※[Buzzling] will be added to the [CUB Research] Pool.\\nWhen conducting CUB Research, it is allowed to choose any S-Rank CUB for target research.\\nDuring the event, if [Buzzling] is selected for target research, it will have a 100% drop rate among S-Rank CUBs.",
+        "ActivityDes": "「全新辅助机」：\\n※ S级辅助机【波灵】\\n※ 推荐搭配角色【罗塞塔·极锋】\\n※【波灵】 将进入【辅助机研发】研发池。\\n指挥官进行辅助机研发时，可以选择任意S级辅助机进行狙击研发\\n活动期间若选择【波灵】进行狙击，则【波灵】占S级辅助机出率的100%",
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             7212
         ]
     },
     {
         "Id": 410,
-        "Name": "New Coating - Gilded Creed",
+        "Name": "新涂装-圣律锢金",
         "GroupId": 233,
         "SortId": 11,
         "TimeId": 44558,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuosaitaEffectCoatingv402.png",
-        "ActivityTitle": "New Coating - Gilded Creed",
-        "ActivityDes": "New Coating:\\nOmniframe [Rosetta: Arete] Coating: [Gilded Creed]\\nInfo:\\n[Gilded Creed] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ActivityTitle": "新涂装-圣律锢金",
+        "ActivityDes": "「新涂装」：\\n泛用机体【罗塞塔·极锋】涂装【圣律锢金】\\n「说明」：\\n活动期间【圣律锢金】在“采购-涂装补给包”中以原价“7折”出售",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20020
         ]
     },
     {
         "Id": 411,
-        "Name": "New Coating - Chromatic ☆ Night",
+        "Name": "Tactical Assessment Manual",
         "GroupId": 233,
         "SortId": 12,
         "TimeId": 44558,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQishiEffectCoatingv402.png",
-        "ActivityTitle": "New Coating - Chromatic ☆ Night",
-        "ActivityDes": "New Coating:\\nOmniframe [Nanami: Startrail] Coating: [Chromatic ☆ Night]\\nInfo:\\n[Chromatic ☆ Night] will be on sale at \"30% off\" in \"Top-up - Coating Supply\" during the event.",
+        "ActivityTitle": "Tactical Assessment Manual",
+        "ActivityDes": "「新涂装」：\\n泛用机体【七实·芒星之迹】涂装【虹夜☆漫游】\\n「说明」：\\n活动期间【虹夜☆漫游】在“采购-涂装补给包”中以原价“7折”出售",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20020
         ]
     },
     {
         "Id": 412,
-        "Name": "New Coating - Night Sonata",
+        "Name": "Answer Seeker's Pain",
         "GroupId": 233,
         "SortId": 13,
         "TimeId": 44501,
         "ActivityType": 3,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBiankaEffectCoatingv402.png",
-        "ActivityTitle": "New Coating - Night Sonata",
-        "ActivityDes": "New Coating:\\nOmniframe [Bianca: Crepuscule] Coating: [Night Sonata]\\nInfo:\\nDuring the event, it can be obtained through draws in [Night Sonata].",
+        "ActivityTitle": "Answer Seeker's Pain",
+        "ActivityDes": "Requirements: Clear Normal Story 1-8",
         "ConditionId": 770410,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20320
         ]
@@ -427,26 +427,26 @@
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBPv402.png",
         "ActivityTitle": "Tactical Assessment Manual",
-        "ActivityDes": "Requirements: \\nCommandant Lv.40\\nEvent Info:\\n1. Accumulate Intel Value by completing the Rating Missions of the Daily, the Round, and the current Intel Manual.\\n2. Raise the Rating Level by reaching the required Intel Value.\\n3. You will obtain the corresponding reward upon reaching the required Rating Level.\\n4. You can also purchase additional Intel to get better rewards.",
+        "ActivityDes": "Requirements: Commandant Lv.61.",
         "ConditionId": 770401,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20171
         ]
     },
     {
         "Id": 414,
-        "Name": "Farewell from the Departed",
+        "Name": "Poetic Journey",
         "GroupId": 234,
         "SortId": 1,
         "TimeId": 44704,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseCharacterTryv402.png",
-        "ActivityTitle": "Farewell from the Departed",
+        "ActivityTitle": "Poetic Journey",
         "ActivityDes": "Requirements: Clear Normal Story 1-8",
         "ConditionId": 774501,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20235,
             628
@@ -454,17 +454,17 @@
     },
     {
         "Id": 415,
-        "Name": "Adaptation Fitting - Buzzling",
+        "Name": "适配拟合-波灵",
         "GroupId": 235,
         "SortId": 1,
         "TimeId": 44702,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBasePartnerTryv402.png",
-        "ActivityTitle": "Adaptation Fitting - Buzzling",
+        "ActivityTitle": "适配拟合-波灵",
         "ActivityDes": "Requirements: Commandant Lv.61.",
         "ConditionId": 8006,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             7107,
             629
@@ -472,17 +472,17 @@
     },
     {
         "Id": 416,
-        "Name": "Gilded Creed",
+        "Name": "圣律锢金",
         "GroupId": 236,
         "SortId": 1,
         "TimeId": 44703,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseLuosaitaEffectCoatingv402.png",
-        "ActivityTitle": "Gilded Creed",
-        "ActivityDes": "New Coating:\\nOmniframe [Rosetta: Arete] Coating: [Gilded Creed]",
+        "ActivityTitle": "圣律锢金",
+        "ActivityDes": "「新涂装」：\\n泛用机体【罗塞塔·极锋】涂装【圣律锢金】",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             10035,
             630
@@ -490,17 +490,17 @@
     },
     {
         "Id": 417,
-        "Name": "Chromatic ☆ Night",
+        "Name": "虹夜☆漫游",
         "GroupId": 237,
         "SortId": 1,
         "TimeId": 44705,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseQishiEffectCoatingv402.png",
-        "ActivityTitle": "Chromatic ☆ Night",
-        "ActivityDes": "New Coating:\\nOmniframe [Nanami: Startrail] Coating: [Chromatic ☆ Night]",
+        "ActivityTitle": "虹夜☆漫游",
+        "ActivityDes": "「新涂装」：\\n泛用机体【七实·芒星之迹】涂装【虹夜☆漫游】",
         "ConditionId": 770400,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             10035,
             631
@@ -508,17 +508,17 @@
     },
     {
         "Id": 418,
-        "Name": "Night Sonata",
+        "Name": "旖夜咏奏",
         "GroupId": 238,
         "SortId": 1,
         "TimeId": 44501,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseBiankaEffectCoatingv402.png",
-        "ActivityTitle": "Night Sonata",
-        "ActivityDes": "Info:\\nDuring the event, [Night Sonata] can be obtained through \"main interface - Night Sonata\" Coating Research Event for a limited time.",
+        "ActivityTitle": "旖夜咏奏",
+        "ActivityDes": "「活动说明」：\\n活动期间【旖夜咏奏】可通过“主界面-旖夜咏奏”涂装研发活动限时获取。",
         "ConditionId": 770410,
-        "ShowBeginTime": "After the update on Feb 3, 2026",
+        "ShowBeginTime": "2026-02-03 更新后",
         "Params": [
             20320,
             632
@@ -526,19 +526,36 @@
     },
     {
         "Id": 419,
-        "Name": "Dicey Mystery",
+        "Name": "诡魇轮骰",
         "GroupId": 232,
         "SortId": 1,
         "TimeId": 44410,
         "ActivityType": 1,
         "ActivityBgType": 1,
         "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv402.png",
-        "ActivityTitle": "Dicey Mystery",
-        "ActivityDes": "Event Info: Complete event missions to obtain [Crimson Chips].",
+        "ActivityTitle": "诡魇轮骰",
+        "ActivityDes": "任务说明：完成活动任务，获取【红酣筹码】",
         "ConditionId": 0,
         "Params": [
             20107,
             622
+        ]
+    },
+    {
+        "Id": 420,
+        "Name": "Placeholder_璃心誓语",
+        "GroupId": 239,
+        "SortId": 1,
+        "TimeId": 45715,
+        "ActivityType": 1,
+        "ActivityBgType": 1,
+        "ActivityBg": "Assets/Product/Texture/Image/UiActivityBase/UiActivityBaseYureguanv402.png",
+        "ActivityTitle": "Placeholder_璃心誓语",
+        "ActivityDes": "Placeholder_任务说明：完成活动任务，获取【璃心人偶】",
+        "ConditionId": 0,
+        "Params": [
+            20154,
+            639
         ]
     }
 ]

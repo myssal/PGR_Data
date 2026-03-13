@@ -164,7 +164,17 @@ function XUiPartnerCarry:UpdatePanelPartnerCarryInfo(data)
         local qualityIcon = XMVCA.XCharacter:GetCharacterQualityIcon(data:GetQuality())
         self.RImgPartnerIcon:SetRawImage(data:GetIcon())
         self.RawImageQuality:SetRawImage(qualityIcon)
-
+        local recommendCharacterId = data:GetRecommendCharacterId()
+        if recommendCharacterId and recommendCharacterId ~= 0 then
+            local fashionId = XMVCA.XCharacter:GetShowFashionId(recommendCharacterId)
+            self.RImgCharacterIcon.transform.parent.parent.gameObject:SetActiveEx(fashionId ~= nil)
+            if fashionId then
+            local characterIcon = XMVCA.XCharacter:GetCharRoundnessHeadIcon(recommendCharacterId)
+            self.RImgCharacterIcon:SetRawImage(characterIcon)
+            end
+        else
+            self.RImgCharacterIcon.transform.parent.parent.gameObject:SetActiveEx(false)
+        end
         self:ShowLock()
         self:ShowPanelSkill()
 

@@ -1,169 +1,247 @@
 [
     {
-        "Id": 30163323,
+        "Id": 30061695,
         "Difficulty": 1,
-        "StarNum": 2,
+        "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90910.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ShenmirenNormal01.png",
+        "StageType": 1,
+        "TitleUnlock": 0,
+        "TitleName": "EASY",
+        "StageEnemyName": "多重映射",
+        "FightEventIds": [
+            2340111
+        ],
         "StarTalks": [
             "Clear the stage.",
-            "Exit Inferno Cyclone early once"
+            "关卡内的评分升阶到SS",
+            "关卡内的评分升阶到SSS"
         ]
     },
     {
-        "Id": 30163324,
+        "Id": 30061696,
         "Difficulty": 2,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85100.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/GaodaNormal01.png",
+        "StageType": 1,
+        "TitleUnlock": 30061695,
+        "TitleName": "NORMAL",
+        "StageEnemyName": "多重映射",
+        "FightEventIds": [
+            2340111
+        ],
         "StarTalks": [
             "Clear the stage.",
-            "Obtain 500 Starlight Points",
-            "Exit Inferno Cyclone early 3 times"
+            "关卡内的评分升阶到SSS",
+            "用时2分钟以下获得关卡内的SSS评分"
         ]
     },
     {
-        "Id": 30163325,
+        "Id": 30163347,
         "Difficulty": 3,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster81530.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/GodzillaNormal01.png",
+        "StageType": 2,
+        "TitleUnlock": 30061695,
+        "TitleName": "EASY",
+        "StageEnemyName": "Solitary Ordeal",
+        "FightEventIds": [
+            2340112
+        ],
         "StarTalks": [
             "Clear the stage.",
-            "Deal DMG to enemies affected by Ignition with Basic Attacks 5 times",
-            "Exit Inferno Cyclone early 5 times"
+            "关卡内的评分升阶到SS",
+            "关卡内的评分升阶到SSS"
         ]
     },
     {
-        "Id": 30163326,
+        "Id": 30163342,
         "Difficulty": 1,
         "StarNum": 2,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster90800.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/YunluNormal01.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340105
+            2340110
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Consume 5 Signal Orbs with Rippling Shadows"
+            "长按闪避进入2次鸦影形态"
         ]
     },
     {
-        "Id": 30163327,
+        "Id": 30163343,
         "Difficulty": 2,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85751.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/V130klrdNormal01.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340105
+            2340110
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Use 2 Harmonic Orbs",
-            "Consume 9 Signal Orbs with Rippling Shadows"
+            "长按闪避进入3次鸦影形态",
+            "使用2次归墟悼曲（黄球）"
         ]
     },
     {
-        "Id": 30163328,
+        "Id": 30163344,
         "Difficulty": 3,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster87651.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1JusticeMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340105
+            2340110
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Activate Signature Move twice",
-            "Consume 12 Signal Orbs with Rippling Shadows"
+            "长按闪避进入3次鸦影形态",
+            "使用必杀：死与吻2次"
         ]
     },
     {
-        "Id": 30163329,
+        "Id": 30163336,
         "Difficulty": 1,
         "StarNum": 2,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93070.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/ShengtangNormal01.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340106
+            2340108
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Use Kindled Blaze twice"
+            "长按闪避使用降维坍坠2次"
         ]
     },
     {
-        "Id": 30163330,
+        "Id": 30163337,
         "Difficulty": 2,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster85670.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1EmperorMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340106
+            2340108
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Use Signature Move 3 times",
-            "Use Kindled Blaze 4 times"
+            "长按闪避使用降维坍坠5次",
+            "Use Yellow Orb twice"
         ]
     },
     {
-        "Id": 30163331,
+        "Id": 30163338,
         "Difficulty": 3,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster80400.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1ChainsawkillerMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340106
+            2340108
         ],
         "StarTalks": [
             "Clear the stage.",
-            "使用坼地逆罔移除20层焚烧2次",
-            "Use Kindled Blaze 6 times"
+            "长按闪避使用降维坍坠5次",
+            "使用必杀：寂灭绝罚2次"
         ]
     },
     {
-        "Id": 30163332,
+        "Id": 30163339,
         "Difficulty": 1,
         "StarNum": 2,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93681.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Me1PerfectrobotMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340107
+            2340109
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Use Blue Orb 3 times"
+            "长按普攻使用2次始序惩斥或终临惩斥"
         ]
     },
     {
-        "Id": 30163333,
+        "Id": 30163340,
         "Difficulty": 2,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster93492.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Me1PikemanMd000001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
-            2340107
+            2340109
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Consume 5 or more Musical Notes",
-            "Clear the stage within 90s"
+            "使用必杀：赤月裁星2次",
+            "使用长按必杀获得的终临球3次"
         ]
     },
     {
-        "Id": 30163334,
+        "Id": 30163341,
         "Difficulty": 3,
         "StarNum": 3,
         "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster80210.png",
         "Icon": "Assets/Product/Texture/Image/RoleCharacter/Mb1TerminatorMd010001.png",
+        "StageType": 0,
+        "TitleUnlock": 0,
         "FightEventIds": [
             2340107
         ],
         "StarTalks": [
             "Clear the stage.",
-            "Consume 15 or more Musical Notes",
-            "Clear the stage within 120s"
+            "长按普攻使用2次始序惩斥或终临惩斥",
+            "使用长按必杀获得的终临球5次"
+        ]
+    },
+    {
+        "Id": 30163348,
+        "Difficulty": 4,
+        "StarNum": 3,
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster81530.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/GodzillaNormal01.png",
+        "StageType": 2,
+        "TitleUnlock": 30163347,
+        "TitleName": "NORMAL",
+        "StageEnemyName": "Solitary Ordeal",
+        "FightEventIds": [
+            2340112
+        ],
+        "StarTalks": [
+            "Clear the stage.",
+            "关卡内的评分升阶到SSS",
+            "用时2分钟以下获得关卡内的SSS评分"
+        ]
+    },
+    {
+        "Id": 30163349,
+        "Difficulty": 5,
+        "StarNum": 3,
+        "Img": "Assets/Product/Texture/Image/RoleMonster/RoleMonster81530.png",
+        "Icon": "Assets/Product/Texture/Image/RoleCharacter/GodzillaNormal01.png",
+        "StageType": 2,
+        "TitleUnlock": 30163348,
+        "TitleName": "HARD",
+        "StageEnemyName": "Solitary Ordeal",
+        "FightEventIds": [
+            2340112
+        ],
+        "StarTalks": [
+            "Placeholder_进行1次反超算",
+            "Placeholder_进入5次临界模式",
+            "Placeholder_进行3次特殊技能应对"
         ]
     }
 ]

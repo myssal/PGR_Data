@@ -2507,7 +2507,7 @@
         "CharacterID": 1031005,
         "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR5Lifu.png",
         "Title": "Mirror Flight",
-        "Description": "During Dream Dive, tap a Mirror Blade Orb to ping White Orbs, dealing DMG and gaining Flow Points and Delicate Heart.",
+        "Description": "During Dream Dive, tap a Mirror Blade Orb to consume White Orbs, dealing DMG and gaining Flow Points and Delicate Heart.",
         "NextTrialID": 318
     },
     {
@@ -2677,5 +2677,61 @@
         "Title": "Omniversal Step",
         "Description": "Tap Signature to charge forward with spear, delivering a finishing blow to enemies and dealing DMG. Triggers Time Lag Calculation in the meantime.",
         "NextTrialID": 331
+    },
+    {
+        "Id": 339,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "葬仪典章",
+        "Description": "消除蓝球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
+        "NextTrialID": 340
+    },
+    {
+        "Id": 340,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "渡鸦祭礼",
+        "Description": "点击黄球，消耗兆丧值释放渡鸦祭礼，获得必杀能量。",
+        "NextTrialID": 341
+    },
+    {
+        "Id": 341,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "双鸦赴誓",
+        "Description": "长按闪避进入鸦影形态，期间可移动，若在闪光后松开，消耗一枚蓝球额外获得兆丧值、必杀能量，重复该操作至多攻击三段。",
+        "NextTrialID": 342
+    },
+    {
+        "Id": 342,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "夺心一吻",
+        "Description": "常态下点击必杀释放夺心一吻，进入寻血异客形态，该形态下使用红球。",
+        "NextTrialID": 343
+    },
+    {
+        "Id": 343,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "审判刈临",
+        "Description": "寻血异客形态下，消除红球可获得兆丧值，至多连消两次。消除后立即闪避可造成伤害。",
+        "NextTrialID": 344
+    },
+    {
+        "Id": 344,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "绞刑幽灵",
+        "Description": "寻血异客形态下，长按黄球，消耗兆丧值造成多段伤害并获得必杀能量。",
+        "NextTrialID": 345
+    },
+    {
+        "Id": 345,
+        "CharacterID": 1391003,
+        "Pic": "Assets/Product/Texture/Image/UiFightTips/UiFightTipsJiaoxueR3Nietiya.png",
+        "Title": "赴亡末约",
+        "Description": "寻血异客形态下，点击必杀释放赴亡末约，结束后进入常态。",
+        "NextTrialID": 339
     }
 ]

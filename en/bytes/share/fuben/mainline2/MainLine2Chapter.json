@@ -951,6 +951,21 @@
         "ProgressTextColors": [
             "#ffffff"
         ],
+        "SkipIds": [
+            531
+        ],
+        "SkipConditions": [
+            1007143
+        ],
+        "SkipIcons": [
+            "Assets/Product/Texture/Image/StoryJump/StoryMainLineJump40.png"
+        ],
+        "SkipNames": [
+            "Next Chapter"
+        ],
+        "SkipChapterNames": [
+            "Withering Crown"
+        ],
         "EggIds": [
             1
         ]
@@ -960,7 +975,7 @@
         "Difficult": 1,
         "DifficultName": "NORMAL",
         "DifficultEnName": "Difficulty",
-        "ActivityTimeId": 44801,
+        "ActivityTimeId": 0,
         "ActivityCondition": 770400,
         "OpenCondition": 770400,
         "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor37.prefab",
@@ -980,6 +995,45 @@
         ],
         "ProgressTextColors": [
             "#ffffff"
+        ]
+    },
+    {
+        "ChapterId": 1040,
+        "Difficult": 1,
+        "DifficultName": "NORMAL",
+        "DifficultEnName": "Difficulty",
+        "ActivityTimeId": 0,
+        "ActivityCondition": 770400,
+        "OpenCondition": 770400,
+        "PrefabName": "Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor40.prefab",
+        "TreasureId": 0,
+        "AchievementId": 0,
+        "StageGroupIds": [
+            59
+        ],
+        "BgStageIndexs": [
+            1
+        ],
+        "TitleTextColors": [
+            "#ffffff"
+        ],
+        "LeftTimeTextColors": [
+            "#0f70BC"
+        ],
+        "ProgressTextColors": [
+            "#ffffff"
+        ],
+        "SpineStageIndexs": [
+            2,
+            5,
+            11,
+            19
+        ],
+        "SpineProgressWans": [
+            2000,
+            4133,
+            6266,
+            8000
         ]
     }
 ]
